@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/08/2019
-ms.openlocfilehash: facd52ea1fdaa2ad30d6b1544cb1f2d6d5833bfa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1f3dd1fa4b70fcdbec7e62c84bbfc1df14d3502e
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450558"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425091"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
 Данная статья содержит сведения об устранении неполадок, относящихся к средствами диагностики Azure. Дополнительные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](diagnostics-extension-overview.md).
@@ -27,7 +27,7 @@ ms.locfileid: "75450558"
 ## <a name="logartifact-paths"></a>Пути к журналам и артефактам
 В таблицах ниже приведены расположения некоторых важных журналов и артефактов. Эти сведения используются в остальной части документа.
 
-### <a name="azure-cloud-services"></a>Облачные службы Azure
+### <a name="azure-cloud-services"></a>Oблачныe службы Azure
 | Артефакт | путь |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\Config.txt |
@@ -51,7 +51,7 @@ ms.locfileid: "75450558"
 | **Файл журнала MonAgentHost** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>\WAD0107\Configuration\MonAgentHost.<текущ._номер>.log |
 
 ## <a name="metric-data-doesnt-appear-in-the-azure-portal"></a>Данные метрик не отображается на портале Azure
-Система диагностики Azure предоставляет данные метрик, которые могут отображаться на портале Azure. Если возникли проблемы с просмотром этих данных на портале, необходимо проверить таблицу WADMetrics\* в учетной записи хранения системы диагностики Azure, чтобы узнать, имеются ли соответствующие записи метрики.
+Система диагностики Azure предоставляет данные метрик, которые могут отображаться на портале Azure. Если у вас возникли проблемы с просмотром данных на портале, проверьте таблицу WADMetrics\* в учетной записи хранения система диагностики Azure, чтобы узнать, есть ли соответствующие записи метрик, и убедитесь, что [поставщик ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) Microsoft. Insights зарегистрирован.
 
 Здесь **PartitionKey** таблицы — это идентификатор ресурса, виртуальной машины или масштабируемого набора виртуальных машин. **RowKey** — это имя метрики (также известное как имя счетчика производительности).
 
@@ -206,7 +206,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 ```
 Этот код создает четыре таблицы:
 
-| Мероприятие | Имя таблицы |
+| Событие | Имя таблицы |
 | --- | --- |
 | Provider = "prov1" &lt;событие с ИД = "1"/&gt; |Вадевент + MD5 ("prov1") + "1" |
 | Provider = "prov1" &lt;событие с ИД = "2" Евентдестинатион = "dest1"/&gt; |WADdest1 |

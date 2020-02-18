@@ -3,12 +3,12 @@ title: Справочник по файлу host.json для службы "Фу�
 description: Справочная документация по файлу host.json для Функций Azure в среде выполнения версии V2.
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: cc982d3f810c944a5273cbf0cf9778076d119692
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 9b0d078a8c6df21e8000930e72856e92e2d40af7
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77208830"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425210"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Справочник по Host. JSON для функций Azure 2. x и более поздних версий 
 
@@ -21,9 +21,9 @@ ms.locfileid: "77208830"
 > [!NOTE]
 > Эта статья предназначена для функций Azure 2. x и более поздних версий.  Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
 
-В [параметрах приложения](functions-app-settings.md) можно управлять другими настройками приложения-функции.
+Другие параметры конфигурации приложения-функции управляются в [параметрах приложения](functions-app-settings.md) (для развернутых приложений) или в файле [Local. Settings. JSON](functions-run-local.md#local-settings-file) (для локальной разработки).
 
-Некоторые параметры host.json используются только при локальном запуске в файле [local.settings.json](functions-run-local.md#local-settings-file).
+Конфигурации в Host. JSON, связанные с привязками, применяются одинаково к каждой функции в приложении функции. 
 
 ## <a name="sample-hostjson-file"></a>Пример файла host.json
 
@@ -69,11 +69,11 @@ ms.locfileid: "77208830"
               "isEnabled": true,
               "maxTelemetryItemsPerSecond" : 20,
               "evaluationInterval": "01:00:00",
-              "initialSamplingPercentage": 1.0, 
+              "initialSamplingPercentage": 100.0, 
               "samplingPercentageIncreaseTimeout" : "00:00:01",
               "samplingPercentageDecreaseTimeout" : "00:00:01",
               "minSamplingPercentage": 0.1,
-              "maxSamplingPercentage": 0.1,
+              "maxSamplingPercentage": 100.0,
               "movingAverageRatio": 1.0,
               "excludedTypes" : "Dependency;Event",
               "includedTypes" : "PageView;Trace"

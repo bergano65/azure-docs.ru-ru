@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: f7a796408267fda08d765425a3c529895a251782
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: e73f5e578ef498d3c6be8422fbbcfa7ac8856adf
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281110"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425822"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-preview-using-portal"></a>Создание и управление частной ссылкой для базы данных Azure для PostgreSQL — один сервер (Предварительная версия) с помощью портала
 
@@ -22,7 +22,7 @@ ms.locfileid: "76281110"
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-an-azure-vm"></a>Создание виртуальной машины Azure
@@ -40,8 +40,8 @@ ms.locfileid: "76281110"
     | Имя | Введите *myVirtualNetwork*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
     | Subscription | Выберите свою подписку.|
-    | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
-    | Расположение | Выберите **Западная Европа**.|
+    | группа ресурсов. | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
+    | Location | Выберите **Западная Европа**.|
     | Имя подсети | Введите *mySubnet*. |
     | Диапазон адреса подсети | Введите *10.1.0.0/24*. |
     |||
@@ -57,12 +57,12 @@ ms.locfileid: "76281110"
     | ------- | ----- |
     | **Сведения о проекте** | |
     | Subscription | Выберите свою подписку. |
-    | Группа ресурсов | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.  |
+    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.  |
     | **Подробности об экземпляре** |  |
     | Имя виртуальной машины | Введите *myVm*. |
     | Регион | Выберите **Западная Европа**. |
     | Параметры доступности | Оставьте значение по умолчанию **No infrastructure redundancy required** (Избыточность инфраструктуры не требуется). |
-    | Изображение | Выберите **Центр обработки данных Windows Server 2019**. |
+    | Образ — | Выберите **Центр обработки данных Windows Server 2019**. |
     | Размер | Оставьте значение по умолчанию **Standard DS1 v2**. |
     | **Учетная запись администратора** |  |
     | Имя пользователя | Введите выбранное имя пользователя. |
@@ -107,12 +107,12 @@ ms.locfileid: "76281110"
     | ------- | ----- |
     | **Сведения о проекте** | |
     | Subscription | Выберите свою подписку. |
-    | Группа ресурсов | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
+    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
     | **Сведения о сервере** |  |
     |Имя сервера  | Введите *myserve*. Если это имя используется, создайте уникальное имя.|
     | Имя администратора| Введите выбранное имя администратора. |
     | Пароль | Введите выбранный пароль. Пароль должен включать минимум 8 символов и соответствовать определенным требованиям. |
-    | Расположение | Выберите регион Azure, в котором должен находиться сервер PostgreSQL. |
+    | Location | Выберите регион Azure, в котором должен находиться сервер PostgreSQL. |
     |Версия  | Выберите необходимую версию базы данных сервера PostgreSQL.|
     | Вычисление + хранение| Выберите ценовую категорию, необходимую для сервера в зависимости от рабочей нагрузки. |
     |||
@@ -137,7 +137,7 @@ ms.locfileid: "76281110"
     | ------- | ----- |
     | **Сведения о проекте** | |
     | Subscription | Выберите свою подписку. |
-    | Группа ресурсов | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
+    | группа ресурсов. | Выберите **myResourceGroup**. Вы создали ее в предыдущем разделе.|
     | **Сведения об экземпляре** |  |
     | Имя | Введите *myPrivateEndpoint*. Если это имя используется, создайте уникальное имя. |
     |Регион|Выберите **Западная Европа**.|
@@ -210,35 +210,36 @@ ms.locfileid: "76281110"
     Non-authoritative answer:
     Name:    mydemopostgresserver.privatelink.postgres.database.azure.com
     Address:  10.1.3.4
+    ```
 
-3. Test the private link connection for the PostgreSQL server using any available client. In the example below I have used [Azure Data studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) to do the operation.
+3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) для выполнения этой операции.
 
-4. In **New connection**, enter or select this information:
+4. В окне **новое подключение**введите или выберите следующие сведения:
 
-    | Setting | Value |
+    | Параметр | Значение |
     | ------- | ----- |
-    | Server type| Select **PostgreSQL**.|
-    | Server name| Select *mydemopostgresserver.privatelink.postgres.database.azure.com* |
-    | User name | Enter username as username@servername which is provided during the PostgreSQL server creation. |
-    |Password |Enter a password provided during the PostgreSQL server creation. |
-    |SSL|Select **Required**.|
+    | Тип сервера| Выберите **PostgreSQL**.|
+    | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
+    | Имя пользователя | Введите Username как username@servername, которое предоставляется во время создания сервера PostgreSQL. |
+    |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
+    |SSL|Выберите **обязательный**.|
     ||
 
-5. Select Connect.
+5. Выберите Подключить.
 
-6. Browse databases from left menu.
+6. Просмотр баз данных из левого меню.
 
-7. (Optionally) Create or query information from the postgreSQL server.
+7. При необходимости Создание или запрос информации с сервера postgreSQL.
 
-8. Close the remote desktop connection to myVm.
+8. Закройте подключение к удаленному рабочему столу myVm.
 
-## Clean up resources
-When you're done using the private endpoint, PostgreSQL server, and the VM, delete the resource group and all of the resources it contains:
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Завершив использование частной конечной точки, сервера PostgreSQL и виртуальной машины, удалите группу ресурсов и все содержащиеся в ней ресурсы.
 
-1. Enter *myResourceGroup* in the **Search** box at the top of the portal and select *myResourceGroup* from the search results.
-2. Select **Delete resource group**.
-3. Enter myResourceGroup for **TYPE THE RESOURCE GROUP NAME** and select **Delete**.
+1. Введите *myResourceGroup* в поле **Поиск** в верхней части портала и выберите *myResourceGroup* в результатах поиска.
+2. Выберите **Удалить группу ресурсов**.
+3. Введите myResourceGroup в поле **Введите имя группы ресурсов** и нажмите кнопку **Удалить**.
 
-## Next steps
+## <a name="next-steps"></a>Дальнейшие действия
 
-In this how-to, you created a VM on a virtual network, an Azure Database for PostgreSQL - Single server, and a private endpoint for private access. You connected to one VM from the internet and securely communicated to the PostgreSQL server using Private Link. To learn more about private endpoints, see [What is Azure private endpoint](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
+В этом пошаговом режиме вы создали виртуальную машину в виртуальной сети, базу данных Azure для PostgreSQL-Single Server и закрытую конечную точку для закрытого доступа. Вы подключились к одной виртуальной машине из Интернета и безопасно взаимодействовали с сервером PostgreSQL, используя закрытую ссылку. Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).

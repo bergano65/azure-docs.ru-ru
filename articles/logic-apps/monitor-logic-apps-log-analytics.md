@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
-ms.openlocfilehash: 1948151dfa07e565a929b4506273e3f88f5408c4
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3e41f92f9e41f7a05102e8c0e1c2edb81fa50bf3
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76907829"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77426332"
 ---
 # <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-azure-logic-apps"></a>Настройка журналов Azure Monitor и получение диагностических данных для Azure Logic Apps
 
@@ -21,7 +21,7 @@ ms.locfileid: "76907829"
 
 В этой статье показано, как включить Log Analytics при создании приложений логики, установке и настройке решения для управления Logic Apps, а также о настройке и создании запросов для журналов Azure Monitor.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы вам потребуется [Рабочая область log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md). Если у вас нет рабочей области, Узнайте, [как создать рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
@@ -111,7 +111,7 @@ ms.locfileid: "76907829"
 
    1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
-   Пример.
+   Пример:
 
    ![Выберите рабочую область Log Analytics и данные для ведения журнала](./media/monitor-logic-apps-log-analytics/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -179,7 +179,7 @@ ms.locfileid: "76907829"
 * [Архивация журналов ресурсов Azure в учетную запись хранения](../azure-monitor/platform/resource-logs-collect-storage.md)
 * [Потоковая передача журналов платформы Azure в концентраторы событий Azure](../azure-monitor/platform/resource-logs-stream-event-hubs.md)
 
-После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Пример.
+После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Пример:
 
 * [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)

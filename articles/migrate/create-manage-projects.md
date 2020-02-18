@@ -1,18 +1,18 @@
 ---
-title: Создание проектов службы "миграция Azure" и управление ими
+title: Создание и администрирование проектов Миграции Azure
 description: Поиск, создание, управление и удаление проектов в службе "миграция Azure".
 ms.topic: how-to
-ms.date: 01/01/2020
-ms.openlocfilehash: 548e51cbd215dd9b5e69c68b9bd8fc81625240a2
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.date: 02/17/2020
+ms.openlocfilehash: a49595f0580e71048239d5c5d8f4d1a66e24fe6d
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725888"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425669"
 ---
-# <a name="create-and-manage-azure-migrate-projects"></a>Создание проектов службы "миграция Azure" и управление ими
+# <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
-В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) "
+В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) ".
 
 
 ## <a name="create-a-project-for-the-first-time"></a>Создание проекта в первый раз

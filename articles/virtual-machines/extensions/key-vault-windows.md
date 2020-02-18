@@ -8,12 +8,12 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 1d2606296ba55c0ef66d118091f6764f7a285137
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: d0491a5178331c53248d9c764d9ff1c6a6970683
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806785"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425788"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -23,8 +23,8 @@ ms.locfileid: "74806785"
 
 Расширение Key Vault VM поддерживает следующие версии Windows:
 
-- Windows Server 2019
-- Windows Server 2016
+- Windows Server 2019
+- Windows Server 2016
 - Windows Server 2012
 
 ## <a name="extension-schema"></a>Схема расширения
@@ -66,17 +66,17 @@ ms.locfileid: "74806785"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Name | Значение и пример | Тип данных |
+| Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2019-07-01 | date |
-| publisher | Microsoft.Azure.KeyVault | string |
-| Тип | KeyVaultForWindows | string |
-| typeHandlerVersion | 1.0 | int |
-| pollingIntervalInS | 3600 | string |
-| certificateStoreName | MY | string |
+| версия_API | 2019-07-01 | Дата |
+| publisher | Microsoft.Azure.KeyVault | строка |
+| type | KeyVaultForWindows | строка |
+| typeHandlerVersion | 1.0 | INT |
+| pollingIntervalInS | 3600 | строка |
+| certificateStoreName | MY | строка |
 | линконреневал | false | Логическое |
-| certificateStoreLocation  | LocalMachine | string |
-| рекуирединитиалсинк | true | Логическое |
+| certificateStoreLocation  | LocalMachine | строка |
+| рекуирединитиалсинк | Да | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
 
 
@@ -169,7 +169,7 @@ Azure CLI можно использовать для развертывания 
          az vm extension set -n "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
          -g "<resourcegroup>" `
-         --vmss-name "<vmName>" `
+         --vm-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\ <observedCerts>\"] }}'
     ```
 
@@ -192,7 +192,7 @@ Azure CLI можно использовать для развертывания 
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертываний расширения можно получить на портале Azure, а также с помощью Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure PowerShell.
 
@@ -201,7 +201,7 @@ Azure CLI можно использовать для развертывания 
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```

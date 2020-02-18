@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 0f444838c87e14fa88f2785030c29915df637cf8
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 45977f52226fac0a3e23455ce9457a721947a8cc
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552208"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425890"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
 
@@ -63,7 +63,7 @@ ms.locfileid: "75552208"
 
 1. Создайте две новые группы ресурсов:
 
-    |Группа ресурсов | Расположение |
+    |Группа ресурсов | Location |
     |---|---|
     | Kafka-PRIMARY-RG | Центральная часть США |
     | Kafka-Secondary-RG | Центрально-северная часть США |
@@ -302,10 +302,10 @@ ms.locfileid: "75552208"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого документа вы узнали, как создать реплику кластера [Apache Kafka](https://kafka.apache.org/) с помощью [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330). Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
+Из этого документа вы узнали, как создать реплику кластера [Apache Kafka](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) с помощью [MirrorMaker](https://kafka.apache.org/). Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 
 * [Документация по Apache Kafka MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) на сайте cwiki.apache.org.
+* [Рекомендации для Kafka Mirror Maker](https://community.cloudera.com/t5/Community-Articles/Kafka-Mirror-Maker-Best-Practices/ta-p/249269)
 * [Get started with Apache Kafka on HDInsight (preview)](apache-kafka-get-started.md) (Приступая к работе с Apache Kafka в HDInsight (предварительная версия))
 * [Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
-* [Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)
 * [Подключение к Apache Kafka с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md)

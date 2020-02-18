@@ -9,12 +9,12 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9ee989a079366a470d086a8b931685a6c1dbc757
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: a088a90642a0394b0ede3c163590f64112799d1a
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75889356"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425295"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "75889356"
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-Для развертывания WAR-файлов можно использовать [подключаемый модуль Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) . Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij) или [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse).
+Вы можете использовать [подключаемый модуль веб-приложения Azure для Maven](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для развертывания файлов WAR. Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij) или [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse).
 
 В противном случае ваш метод развертывания будет зависеть от типа архива:
 
@@ -209,7 +209,7 @@ public int getServerPort()
 
 Эти инструкции применимы ко всем подключениям к базе данных. Необходимо будет заменить значения заполнителей на имя класса драйвера и JAR-файл выбранной базы данных. Ниже приведена таблица с именами классов и ссылками для скачивания драйверов для распространенных баз данных.
 
-| База данных   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
+| Database   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
@@ -317,7 +317,7 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 Разработчики могут [сообщить о проблеме](/azure/azure-portal/supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом разделе содержится инструкция поддержки Java для службы приложений Azure в Windows.
 

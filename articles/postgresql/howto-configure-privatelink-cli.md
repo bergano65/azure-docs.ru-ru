@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 19dd0051985231a0274baf550755cc61782ce740
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: d982771d5c7ebc864991026e399e9648d333cc8f
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281314"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425533"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-preview-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для PostgreSQL — один сервер (Предварительная версия) с помощью интерфейса командной строки
 
@@ -20,7 +20,7 @@ ms.locfileid: "76281314"
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -131,7 +131,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
-1. Откройте скачанный RDP-файл*.
+1. Откройте файл *downloaded.rdp*.
 
     1. При появлении запроса выберите **Подключиться**.
 
@@ -159,30 +159,31 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     Non-authoritative answer:
     Name:    mydemopostgresserver.privatelink.postgres.database.azure.com
     Address:  10.1.3.4
+    ```
 
-3. Test the private link connection for the PostgreSQL server using any available client. In the example below I have used [Azure Data studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) to do the operation.
+3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) для выполнения этой операции.
 
-4. In **New connection**, enter or select this information:
+4. В окне **новое подключение**введите или выберите следующие сведения:
 
-    | Setting | Value |
+    | Параметр | Значение |
     | ------- | ----- |
-    | Server type| Select **PostgreSQL**.|
-    | Server name| Select *mydemopostgresserver.privatelink.postgres.database.azure.com* |
-    | User name | Enter username as username@servername which is provided during the PostgreSQL server creation. |
-    |Password |Enter a password provided during the PostgreSQL server creation. |
-    |SSL|Select **Required**.|
+    | Тип сервера| Выберите **PostgreSQL**.|
+    | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
+    | Имя пользователя | Введите Username как username@servername, которое предоставляется во время создания сервера PostgreSQL. |
+    |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
+    |SSL|Выберите **обязательный**.|
     ||
 
-5. Select Connect.
+5. Выберите Подключить.
 
-6. Browse databases from left menu.
+6. Просмотр баз данных из левого меню.
 
-7. (Optionally) Create or query information from the postgreSQL server.
+7. При необходимости Создание или запрос информации с сервера postgreSQL.
 
-8. Close the remote desktop connection to myVm.
+8. Закройте подключение к удаленному рабочему столу myVm.
 
-## Clean up resources 
-When no longer needed, you can use az group delete to remove the resource group and all the resources it has: 
+## <a name="clean-up-resources"></a>Очистка ресурсов 
+Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete". 
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes 

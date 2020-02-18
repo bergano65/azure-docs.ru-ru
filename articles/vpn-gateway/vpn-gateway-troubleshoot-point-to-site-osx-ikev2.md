@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: f76fd7bce539ebcf79216aabb5bf868b2d18107a
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: f88053c93884e10e46a0f7d70106bda67b057562
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75780187"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425733"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 
@@ -48,7 +48,7 @@ ms.locfileid: "75780187"
 4. Поле **локального идентификатора** можно оставить пустым.
 5. Нажмите кнопку **Authentication Setting** (Параметры проверки подлинности) и убедитесь, что в раскрывающемся списке выбран вариант Username (Имя пользователя).
 
-   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.jpg)
+   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.png)
 6. Убедитесь, что введены правильные учетные данные.
 
 ## <a name="additional"></a>Дополнительные действия
@@ -60,7 +60,7 @@ ms.locfileid: "75780187"
 
    ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
   
-3. Если нет ответа сервера для трассировок сети, убедитесь, что вы включили протокол IKEv2 на странице настройки шлюза Azure на сайте портала Azure.
+3. Если в трассировке сети нет ответа сервера, проверьте, включен ли протокол IKEv2 на странице конфигурации шлюза Azure на веб-сайте портал Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Если потребуется дополнительная поддержка, обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

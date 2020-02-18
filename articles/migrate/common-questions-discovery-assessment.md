@@ -2,21 +2,22 @@
 title: 'Распространенные вопросы: обнаружение, оценка и анализ зависимостей в службе "миграция Azure"'
 description: Получите ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure".
 ms.topic: conceptual
-ms.date: 12/29/2019
-ms.openlocfilehash: 201d67c38e9583de16cb6075cc1c4bf826c204fd
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.date: 02/17/2020
+ms.openlocfilehash: 2ae534e50cbee3ebd17d703f957aa7200460dbfe
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77059493"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77426298"
 ---
 # <a name="common-questions-about-discovery-assessment-and-dependency-analysis"></a>Распространенные вопросы об обнаружении, оценке и анализе зависимостей
 
-В этой статье содержатся ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure". При наличии дальнейших запросов после прочтения этой статьи опубликуйте их на [форуме по миграции Azure](https://aka.ms/AzureMigrateForum). Если у вас есть другие вопросы, ознакомьтесь со следующими статьями:
+В этой статье содержатся ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure". Если у вас есть другие вопросы, ознакомьтесь со следующими статьями:
 
 - [Общие вопросы](resources-faq.md) о службе "миграция Azure".
 - [Вопросы](common-questions-appliance.md) об устройстве миграции Azure.
 - [Вопросы](common-questions-server-migration.md) о миграции сервера.
+- Отправка вопросов на [форуме по миграции Azure](https://aka.ms/AzureMigrateForum)
 
 
 

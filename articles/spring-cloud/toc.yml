@@ -76,3 +76,5 @@
       href: spring-cloud-faq.md
     - name: Руководство по устранению неполадок
       href: spring-cloud-troubleshoot.md
+    - name: Справочник по REST API
+      href: 'https://docs.microsoft.com/rest/api/azurespringclould/'

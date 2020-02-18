@@ -1,17 +1,14 @@
 ---
 title: Визуализация зависимостей в службе "Миграция Azure"
 description: Содержит общие сведения о вычислениях оценки в службе оценки серверов в Azure.
-author: rayne-wiselman
-ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 10/23/2019
-ms.author: hamusa
-ms.openlocfilehash: 75b2120b9fef904114d532e83d571c08e1a1034d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 02/17/2020
+ms.openlocfilehash: 65a99e230262ae05d34dc8c04e87252c15133fda
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75772318"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425686"
 ---
 # <a name="dependency-visualization"></a>Визуализация зависимостей
 
@@ -33,7 +30,7 @@ ms.locfileid: "75772318"
 Существует два варианта развертывания визуализации зависимостей:
 
 - **Визуализация зависимостей без агента**. Сейчас этот параметр доступен в режиме предварительной версии, и его можно использовать только для виртуальных машин VMware. Для этого не требуется устанавливать агенты на компьютерах. 
-    - Он работает путем записи данных о подключении TCP с компьютеров, для которых он включен. [Узнайте больше](how-to-create-group-machine-dependencies-agentless.md).
+    - Он работает путем записи данных о подключении TCP с компьютеров, для которых он включен. [Дополнительные сведения](how-to-create-group-machine-dependencies-agentless.md)
 После запуска обнаружения зависимостей устройство собирает данные с компьютеров через интервал опроса, равный пяти минутам.
     - Собираются следующие данные:
         - TCP-подключения
