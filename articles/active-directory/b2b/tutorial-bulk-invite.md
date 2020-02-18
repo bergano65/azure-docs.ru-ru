@@ -18,7 +18,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 01/31/2020
 ms.locfileid: "76908842"
 ---
-# <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users-preview"></a>Руководство. массовой отправке приглашений пользователям службы совместной работы Azure Active Directory B2B (предварительная версия)
+# <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users-preview"></a>Руководство по массовой отправке приглашений пользователям службы совместной работы Azure Active Directory B2B (предварительная версия)
 
 |     |
 | --- |
