@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 11/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 9a260577906ec94ecba87bb1be02fe35d8c763b3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 882904ec09014df821c648bb4823d7a0930abba5
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75467461"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156538"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
@@ -58,7 +58,7 @@ ms.locfileid: "75467461"
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
-1. Кроме того, замените строку `YourServiceRegion` на [регион](~/articles/cognitive-services/Speech-Service/regions.md), связанный с вашей подпиской. Например, используйте `westus` для подписки с бесплатной пробной версией.
+1. Замените строку `YourServiceRegion` параметром пакета SDK для службы "Речь" в зависимости от [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, используйте `westus` для подписки с бесплатной пробной версией.
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 

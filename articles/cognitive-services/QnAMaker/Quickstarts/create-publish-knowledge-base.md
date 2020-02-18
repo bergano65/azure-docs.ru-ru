@@ -1,59 +1,53 @@
 ---
 title: Краткое руководство. Создание, обучение и публикация базы знаний QnA Maker
-titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве показано, как создать базу знаний QnA Maker из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этом примере база знаний QnA Maker создается на основе простой веб-страницы с часто задаваемыми вопросами о восстановлении ключа BitLocker.
-author: diberry
-manager: nitinme
-services: cognitive-services
-ms.service: cognitive-services
-ms.subservice: qna-maker
+description: Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этой статье описано, как создать базу знаний QnA Maker на основе простой веб-страницы с часто задаваемыми вопросами, чтобы ответить на вопросы QnA Maker.
 ms.topic: quickstart
-ms.date: 01/29/2020
-ms.author: diberry
-ms.openlocfilehash: a3bdc118be96630ebcf3bf63a2948976dc9b4261
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 02/08/2020
+ms.openlocfilehash: a4c4d9b2e8f4b816510fb35a75b3c9b8b2afa5e2
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901674"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77108728"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker
 
-Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этой статье описано, как создать базу знаний QnA Maker на основе простой веб-страницы с часто задаваемыми вопросами о восстановлении ключа BitLocker.
+Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этой статье описано, как создать базу знаний QnA Maker на основе простой веб-страницы с часто задаваемыми вопросами, чтобы ответить на вопросы QnA Maker.
 
-Добавьте персонажа для беседы, чтобы сделать базу знаний более привлекательной для пользователей.
-
-[!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
-
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+> * [Ресурс](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) QnA Maker, созданный на портале Azure. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
 
-## <a name="create-a-new-qna-maker-knowledge-base"></a>Создание новой базы знаний QnA Maker
+## <a name="create-your-first-qna-maker-knowledge-base"></a>Создание первой базы знаний QnA Maker
 
 1. Войдите на портал [QnAMaker.ai](https://QnAMaker.ai), используя учетные данные Azure.
 
 1. На портале QnA Maker выберите **Create a knowledge base** (Создать базу знаний).
 
-1. На странице **Создание** выберите **Создать службу QnA**. Откроется [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) для настройки службы QnA Maker в вашей подписке.
+1. Пропустите **шаг 1** на странице **создания**, если у вас уже есть ресурс QnA Maker.
 
-1. На портале Azure щелкните ресурс. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
-1. Вернитесь на портал QnA Maker и обновите веб-страницу на нем, чтобы продолжить создание базы знаний. Выберите существующий клиент, подписку и новый ресурс. Выберите язык. Этот язык будет использоваться для всех баз знаний в службе QnA Maker.
+    Если вы еще не создали ресурс, выберите **Create a QnA service** (Создать службу QnA). Откроется [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) для настройки службы QnA Maker в вашей подписке. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
+
+    Завершив создание ресурса на портале Azure, вернитесь на портал QnA Maker, обновите страницу браузера и продолжайте с **шага 2**.
+
+1. На **шаге 3** выберите Active Directory, подписку, службу (ресурс) и язык для всех баз знаний, созданных в службе.
 
    ![Снимок экрана с выбранной базой данных и службой QnA Maker](../media/qnamaker-quickstart-kb/qnaservice-selection.png)
 
-1. Назовите свою базу знаний **Мой пример базы знаний QnA**.
+1. На **шаге 3** назовите свою базу знаний **Мой пример базы знаний QnA**.
 
-1. Добавьте образец документа Word в качестве URL-адреса:
+1. На **шаге 4** настройте параметры, используя значения из приведенной ниже таблицы.
 
-    `https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`
+    |Параметр|Значение|
+    |--|--|
+    |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx).|Флажок установлен|
+    |**Текст ответа по умолчанию**| `Quickstart - default answer not found.`|
+    |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
 
-1. Выберите `+ Add URL`.
-
-1. Добавьте **_профессиональную_ беседу** в свою базу знаний.
-
-1. Выберите **Create your KB** (Создать базу знаний).
+1. На **шаге 5** выберите **Create your KB** (Создать базу знаний).
 
     Процесс извлечения, во время которого прочитывается документ и определяются вопросы и ответы, занимает несколько минут.
 
@@ -78,7 +72,7 @@ ms.locfileid: "76901674"
 
 ## <a name="save-and-train"></a>Сохранение и обучение
 
-В правом верхнем углу выберите **Save and train** (Сохранить и обучить), чтобы сохранить изменения и обучить модель QnA Maker. Изменения не вступят в силу, если они не сохранены.
+В правом верхнем углу выберите **Сохранить и обучить**, чтобы сохранить изменения и обучить QnA Maker. Изменения не вступят в силу, если они не сохранены.
 
 ## <a name="test-the-knowledge-base"></a>Проверка базы знаний
 
@@ -145,13 +139,16 @@ ms.locfileid: "76901674"
 
 После публикации базы знаний вы создали бот и проверили его.
 
-Это сделано всего за несколько минут без написания кода и очистки содержимого.
+Это сделано всего за несколько минут без написания кода или очистки содержимого.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Очистите ресурсы QnA Maker и платформы бота на портале Azure.
+Если вы не переходите к следующему краткому руководству, удалите ресурсы платформы QnA Maker и Bot на портале Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
+> [!div class="nextstepaction"]
+> [Добавление вопросов с использованием метаданных](add-question-metadata-portal.md)
 
 Дополнительные сведения
 
@@ -159,5 +156,4 @@ ms.locfileid: "76901674"
 * [Источники данных](../concepts/knowledge-base.md) QnA Maker.
 * [Параметры конфигурации ресурса бота](../tutorials/create-qna-bot.md).
 
-> [!div class="nextstepaction"]
-> [Добавление вопросов с использованием метаданных](add-question-metadata-portal.md)
+

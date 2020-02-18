@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d0793c863f4f682c967c7a5ae61c5a0b78cdb4d
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 564e8dd8e6d7c4c0e3747469875e030be30b1a9b
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292541"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77046711"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство. Интеграция единого входа Azure Active Directory с Salesforce
 
@@ -50,7 +50,7 @@ ms.locfileid: "76292541"
 * Salesforce поддерживает подготовку пользователей **JIT**
 
 * Теперь для мобильного приложения "Salesforce" можно настроить Azure AD для обеспечения единого входа. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
-* После настройки Salesforce можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Salesforce можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-salesforce-from-the-gallery"></a>Добавление Salesforce из коллекции
 
@@ -243,6 +243,6 @@ ms.locfileid: "76292541"
 
 - [Пробное использование Salesforce с Azure AD](https://aad.portal.azure.com)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/protect-salesforce)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/protect-salesforce)

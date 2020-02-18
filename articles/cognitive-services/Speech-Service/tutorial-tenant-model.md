@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 4fec6b93ad206ae3052df5f7763f3c146b7aa680
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 02ae140568150b0db8ebdea065ee683e4f4eec9c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446804"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188999"
 ---
 # <a name="tutorial-create-a-tenant-model-preview"></a>Руководство. Создание клиентской модели (предварительная версия)
 
@@ -39,11 +39,11 @@ ms.locfileid: "75446804"
 
 1. Выполните вход в [центр администрирования Microsoft 365](https://admin.microsoft.com).
 
-1. На панели слева выберите **Параметры**, затем **Приложения** и **Службы речи Azure**.
+1. В области слева выберите **Настройки**, а затем во вложенном меню выберите **Параметры** и щелкните **Azure Speech Services** в главном окне.
 
    ![Панель "Службы и надстройки"](media/tenant-language-model/tenant-language-model-enrollment.png)
 
-1. Установите флажок **Разрешить языковую модель уровня организации** и щелкните **Сохранить изменения**. 
+1. Установите флажок **Разрешить языковую модель уровня организации** и щелкните **Сохранить изменения**.
 
    ![Панель служб речи Azure](media/tenant-language-model/tenant-language-model-enrollment-2.png)
 
@@ -62,7 +62,7 @@ ms.locfileid: "75446804"
 1. Создайте ресурс, следуя выводимым на экран инструкциям. Убедитесь, что выполнены следующие условия:
    * Параметр **Расположение** имеет значение **eastus** или **westus**.
    * Параметр **Ценовая категория** имеет значение **S0**.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
    Создание ресурса займет несколько минут. Ключ подписки будет представлен в разделе **Обзор** для вашего ресурса.
 
@@ -79,11 +79,11 @@ ms.locfileid: "75446804"
 
    > [!NOTE]
    > Создавать клиентскую модель на английском языке могут корпоративные клиенты Office 365 из Северной Америки. Если вы используете защищенное хранилище, ключ клиента или Office 365 для государственных организаций, эта возможность будет недоступна. Чтобы определить, используете ли вы защищенное хранилище клиента или ключ клиента, воспользуйтесь следующей информацией.
-   > * [Защищенное хранилище клиента](https://docs.microsoft.com/office365/securitycompliance/controlling-your-data-using-customer-key#FastTrack)
-   > * [Ключ клиента](https://docs.microsoft.com/microsoft-365/compliance/customer-lockbox-requests)
-   > * [Office 365 для государственных организаций](https://www.microsoft.com/microsoft-365/government)
+   > * [Защищенное хранилище клиента](/microsoft-365/compliance/customer-lockbox-requests)
+   > * [Ключ клиента](/microsoft-365/compliance/customer-key-overview)
+   > * [Office 365 для государственных организаций](/microsoft-365/government)
 
-1. Выберите **Согласиться**. 
+1. Выберите **Согласиться**.
 
    Когда клиентская модель будет готова, вы получите сообщение электронной почты с подтверждением и дальнейшими инструкциями.
 

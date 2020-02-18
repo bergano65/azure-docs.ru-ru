@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 01/21/2020
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: b35c23e6dd88af01391bf7f01a7e736a1a744fff
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 4e896c5fa6f8656be29eed7eb8d4e8854a94ecfa
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76714429"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116617"
 ---
 # <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство. использованию ссылок Key Vault в приложении ASP.NET Core
 
@@ -172,7 +172,7 @@ ms.locfileid: "76714429"
     using Azure.Identity;
     ```
 
-1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration`. Добавьте параметр `UseAzureKeyVault`, чтобы передать в Key Vault новую ссылку `KeyVaultClient`.
+1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration`. Добавьте параметр `ConfigureKeyVault` и передайте правильные учетные данные в Key Vault.
 
     #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
 
@@ -195,7 +195,7 @@ ms.locfileid: "76714429"
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -217,7 +217,7 @@ ms.locfileid: "76714429"
             .UseStartup<Startup>());
     ```
 
-1. При инициализации подключения к службе "Конфигурация приложений Azure" вы передали ссылку `KeyVaultClient` в метод `UseAzureKeyVault`. После инициализации можно получить доступ к значениям ссылок на Key Vault так же, как и к значениям обычных ключей "Конфигурация приложений Azure".
+1. При инициализации подключения к службе "Конфигурация приложений" устанавливается подключение к Key Vault путем вызова метода `ConfigureKeyVault`. После инициализации можно получить доступ к значениям ссылок на Key Vault так же, как и к значениям обычных ключей "Конфигурация приложений Azure".
 
     Чтобы увидеть этот процесс в действии, откройте файл *Index.cshtml* в папке **Представления** > **Главная страница**. Замените содержимое файла приведенным ниже кодом.
 

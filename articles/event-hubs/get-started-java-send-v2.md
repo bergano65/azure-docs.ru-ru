@@ -6,31 +6,30 @@ author: spelluru
 ms.service: event-hubs
 ms.workload: core
 ms.topic: quickstart
-ms.date: 01/15/2020
+ms.date: 02/11/2020
 ms.author: spelluru
-ms.openlocfilehash: d9d22374868f3befd659918c532f339d49ba1642
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 4ebb52aa3e8d4ccfee6b36fb60c7f041df08a69a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77032052"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77163030"
 ---
 # <a name="use-java-to-send-events-to-or-receive-events-from-azure-event-hubs-azure-messaging-eventhubs"></a>Использование Java для отправки и получения событий в Центрах событий Azure (azure-messaging-eventhubs)
-В этом кратком руководстве описано, как создавать приложения Java для отправки и получения событий через Центры событий Azure. 
-
-Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
+В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью пакета Java **azure-messaging-eventhubs**.
 
 > [!IMPORTANT]
-> В этом кратком руководстве используется новый пакет **azure-messaging-eventhubs**. Краткое руководство, в котором используются старые пакеты **azure-eventhubs** и **azure-eventhubs-eph**, см. в [этой статье](event-hubs-java-get-started-send.md). 
+> В этом кратком руководстве используется новый пакет **azure-messaging-eventhubs**. Сведения о том, как отправлять события в концентратор событий и получать события из него с помощью старых пакетов **azure-eventhubs** и **azure-eventhubs-eph**, см. в [этом кратком руководстве](event-hubs-java-get-started-send.md). 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
+Если вы впервые используете Центры событий Azure, ознакомьтесь с общими сведениями в [этой статье](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
 
-Для работы с данным руководством вам потребуется:
+Для работы с данным руководством необходимо следующее:
 
-- Активная учетная запись Azure. Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-- Среда разработки Java. В этом руководстве используется среда [Eclipse](https://www.eclipse.org/). Необходим комплект SDK Java (JDK) версии 8 или более поздней. 
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите значение ключа доступа для концентратора событий, следуя инструкциям в приведенных ниже статьях. [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее в рамках этого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**.
+- **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
+- Среда разработки Java. В рамках этого краткого руководства используется [Eclipse](https://www.eclipse.org/). Необходим комплект SDK Java (JDK) версии 8 или более поздней. 
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
 Из этого раздела вы узнаете, как создать приложение Java, которое отправляет события в концентратор событий. 
@@ -75,7 +74,7 @@ String eventHubName = "<EVENT HUB NAME>";
 ```java
 EventHubProducerClient producer = new EventHubClientBuilder()
     .connectionString(connectionString, eventHubName)
-    .buildProducer();
+    .buildProducerClient();
 ```
 
 ### <a name="prepare-a-batch-of-events"></a>Подготовка пакета событий
@@ -117,7 +116,7 @@ public class Sender {
         // create a producer using the namespace connection string and event hub name
         EventHubProducerClient producer = new EventHubClientBuilder()
             .connectionString(connectionString, eventHubName)
-            .buildProducer();
+            .buildProducerClient();
 
         // prepare a batch of events to send to the event hub    
         EventDataBatch batch = producer.createBatch();
@@ -158,54 +157,55 @@ public class Sender {
 1. Создайте новый класс с именем `Receiver`с помощью следующего кода: Замените значения заполнителей значениями, которые использовались при создании концентратора событий и учетной записи хранения:
    
    ```java
-    import com.azure.messaging.eventhubs.*;
-    import com.azure.messaging.eventhubs.models.ErrorContext;
-    import com.azure.messaging.eventhubs.models.EventContext;
-    import java.util.concurrent.TimeUnit;
-    import java.util.function.Consumer;
-
-    public class Receiver {
-
-        private static final String connectionString = "EVENT HUBS NAMESPACE CONNECTION STRING";
-        private static final String eventHubName = "EVENT HUB NAME";
+     import com.azure.messaging.eventhubs.*;
+     import com.azure.messaging.eventhubs.models.ErrorContext;
+     import com.azure.messaging.eventhubs.models.EventContext;
+     import java.util.concurrent.TimeUnit;
+     import java.util.function.Consumer;
     
-        public static void main(String[] args) throws Exception {
-
-            // function to process events
-            Consumer<EventContext> processEvent = eventContext  -> {
-                System.out.print("Received event: ");
-                // print the body of the event
-                System.out.println(eventContext.getEventData().getBodyAsString());
-                eventContext.updateCheckpoint();
-            };
-
-            // function to process errors
-            Consumer<ErrorContext> processError = errorContext -> {
-                // print the error message
-                System.out.println(errorContext.getThrowable().getMessage());
-            };
-
-            EventProcessorBuilder eventProcessorBuilder = new EventProcessorBuilder()
-                .consumerGroup(EventHubClientBuilder.DEFAULT_CONSUMER_GROUP_NAME)
-                .connectionString(connectionString, eventHubName)
-                .processEvent(processEvent)
-                .processError(processError)
-                .checkpointStore(new InMemoryCheckpointStore());
-        
-            EventProcessorClient eventProcessorClient = eventProcessorClientBuilder.buildEventProcessorClient();
-            System.out.println("Starting event processor");
-            eventProcessorClient.start();
-
-            System.out.println("Press enter to stop.");
-            System.in.read();
-
-            System.out.println("Stopping event processor");
-            eventProcessor.stop();
-            System.out.println("Event processor stopped.");
+     public class Receiver {
     
-            System.out.println("Exiting process");
-        }
-    }
+         final static String connectionString = "<EVENT HUBS NAMESPACE - CONNECTION STRING>";
+         final static String eventHubName = "<EVENT HUB NAME>";
+         
+         public static void main(String[] args) throws Exception {
+    
+             // function to process events
+             Consumer<EventContext> processEvent = eventContext  -> {
+                 System.out.print("Received event: ");
+                 // print the body of the event
+                 System.out.println(eventContext.getEventData().getBodyAsString());
+                 eventContext.updateCheckpoint();
+             };
+    
+             // function to process errors
+             Consumer<ErrorContext> processError = errorContext -> {
+                 // print the error message
+                 System.out.println(errorContext.getThrowable().getMessage());
+             };
+    
+            
+             EventProcessorClient eventProcessorClient = new EventProcessorClientBuilder()
+                     .connectionString(connectionString, eventHubName)
+                     .processEvent(processEvent)
+                     .processError(processError)
+                     .consumerGroup(EventHubClientBuilder.DEFAULT_CONSUMER_GROUP_NAME)
+                     .checkpointStore(new InMemoryCheckpointStore())
+                     .buildEventProcessorClient();
+    
+             System.out.println("Starting event processor");
+             eventProcessorClient.start();
+    
+             System.out.println("Press enter to stop.");
+             System.in.read();
+    
+             System.out.println("Stopping event processor");
+             eventProcessorClient.stop();
+             System.out.println("Event processor stopped.");
+    
+             System.out.println("Exiting process");
+         }
+     }
     ```
     
 2. Скачайте файл **InMemoryCheckpointStore.java** из [GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs) и добавьте его в проект. 

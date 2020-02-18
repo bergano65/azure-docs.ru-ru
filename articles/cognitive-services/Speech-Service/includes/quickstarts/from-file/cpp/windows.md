@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 01/14/2020
 ms.author: erhopf
-ms.openlocfilehash: cc73464c52fd970f7353f1dfce77b909be969346
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 51c9972e73f5e097ea9fe2d54150461e6d5597cd
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748894"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156430"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,7 +37,7 @@ ms.locfileid: "76748894"
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
-1. Замените строку `YourServiceRegion` значением [региона](~/articles/cognitive-services/Speech-Service/regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. Замените строку `YourServiceRegion` параметром пакета SDK для службы "Речь" на основе [региона](https://aka.ms/speech/sdkregion), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 
 1. Замените строку `whatstheweatherlike.wav` собственным именем файла.
 

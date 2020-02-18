@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Выполнение задания пакетной службы Azure с помощью API Python
+title: Выполнение задания пакетной службы Azure с помощью API Python
 description: Быстрый запуск примера задания и задач пакетной службы Azure с помощью пакетной службы клиентской библиотеки Python. Ознакомьтесь с основными понятиями пакетной службы.
 services: batch
 author: LauraBrenner
@@ -12,30 +12,26 @@ ms.author: labrenne
 ms.custom:
 - seo-python-october2019
 - mvc
-ms.openlocfilehash: 87c08c403a1e5eefd7645572f593b20037a8212b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 140ae0fc9f9a8daba193aa05e0800d83b7b6b963
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77017111"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77086048"
 ---
-# <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство. Выполнение пакетного задания с помощью API Python
+# <a name="quickstart-use-python-api-to-run-an-azure-batch-job"></a>Краткое руководство. Выполнение задания пакетной службы Azure с помощью API Python
 
-В этом кратком руководстве описаны действия по запуску задания пакетной службы Azure из приложения, созданного в API Python пакетной службы Azure.  Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
+В этом кратком руководстве мы с помощью API Python запустим из приложения задание пакетной службы Azure. Приложение отправляет несколько входных файлов данных в Службу хранилища Azure, а затем создает *пул* вычислительных узлов пакетной службы (виртуальные машины). Затем, используя простую команду, оно создает *задание*, которое запускает *задачи* по обработке каждого входного файла в пуле.
 
-Приложение отправляет несколько файлов входных данных в службу хранилища Azure, а затем создает *пул* вычислительных узлов пакетной службы (виртуальных машин). Затем оно создает образец *задания*, которое запускает *задачи* для обработки каждого входного файла в пуле путем использования основных команд.
- 
+Вы изучите основные понятия пакетной службы и научитесь использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
+
 ![Общие сведения о рабочем процессе пакетной службы Azure](./media/quick-run-python/overview-of-the-azure-batch-workflow.png)
-
-[!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Python версии 2.7 или 3.3 и более поздней](https://www.python.org/downloads/).
-
-* Диспетчер пакетов [pip](https://pip.pypa.io/en/stable/installing/).
-
-* учетная запись пакетной службы Azure и связанная учетная запись службы хранилища Azure. Чтобы создать эти учетные записи, см. примеры быстрого начала работы с пакетной службой с помощью [портала Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md). 
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- Учетная запись **пакетной службы Azure** и связанная учетная запись **Службы хранилища Azure**. Чтобы создать эти учетные записи, воспользуйтесь [порталом Azure](quick-create-portal.md) или [CLI](quick-create-cli.md).
+- [Python](https://python.org/downloads) версии 2.7, 3.3 или новее, включая диспетчер пакетов [pip](https://pip.pypa.io/en/stable/installing/).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

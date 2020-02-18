@@ -11,16 +11,14 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java
-ms.openlocfilehash: 7534d425a9a7e00c4e57c0d9faea0750d311dcaf
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 3e1369901e259af6722d9e5a14fababac80f1d02
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549947"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160565"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
-
-[!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 В этом кратком руководстве вы узнаете, как интегрировать веб-приложение Java с Платформой удостоверений Майкрософт. Ваше приложение сможет авторизовать пользователя, получить маркер доступа для вызова API Microsoft Graph и выполнить запрос к API Microsoft Graph.
 
@@ -28,7 +26,7 @@ ms.locfileid: "75549947"
 
 ![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-java-webapp/java-quickstart.svg)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для запуска этого примера потребуется:
 
@@ -61,7 +59,7 @@ ms.locfileid: "75549947"
 >    - Оставьте поле **URI-перенаправление** пустым, и выберите **Регистрация**.
 > 1. На странице **Обзор** найдите **идентификатор приложения (клиента)** и **каталога (клиента)** . Скопируйте эти значения для дальнейшего использования.
 > 1. В меню выберите **Проверка подлинности**, а затем добавьте следующие сведения:
->    - В поле**URI-перенаправление** добавьте `http://localhost:8080/msal4jsample/secure/aad` и `http://localhost:8080/msal4jsample/graph/me`.
+>    - В поле**URI-перенаправление** добавьте `https://localhost:8080/msal4jsample/secure/aad` и `https://localhost:8080/msal4jsample/graph/me`.
 >    - Щелкните **Сохранить**.
 > 1. В меню выберите **Сертификаты и секреты**, а затем в разделе **Секреты клиента** щелкните **Новый секрет клиента**:
 >
@@ -75,7 +73,7 @@ ms.locfileid: "75549947"
 >
 > Для работы примера кода в этом кратком руководстве необходимо:
 >
-> 1. Добавить URL-адрес ответа, как `http://localhost:8080/msal4jsamples/secure/aad` и `http://localhost:8080/msal4jsamples/graph/me`.
+> 1. Добавить URL-адрес ответа, как `https://localhost:8080/msal4jsamples/secure/aad` и `https://localhost:8080/msal4jsamples/graph/me`.
 > 1. Создание Секрета клиента.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
@@ -91,23 +89,36 @@ ms.locfileid: "75549947"
 
  1. Извлеките ZIP-файл в локальную папку.
  1. Если вы используете интегрированную среду разработки, откройте образец в вашей избранной интегрированной среде разработки (необязательно).
-
  1. Откройте файл application.properties, расположенный в папке src/main/resources/, и замените значения полей *aad.clientId*, *aad.authority* и *aad.secretKey* соответствующими значениями **идентификатора приложения**, **идентификатора клиента** и **секрета клиента** следующим образом:
 
     ```file
     aad.clientId=Enter_the_Application_Id_here
     aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
     aad.secretKey=Enter_the_Client_Secret_Here
-    aad.redirectUriSignin=http://localhost:8080/msal4jsample/secure/aad
-    aad.redirectUriGraph=http://localhost:8080/msal4jsample/graph/me
+    aad.redirectUriSignin=https://localhost:8080/msal4jsample/secure/aad
+    aad.redirectUriGraph=https://localhost:8080/msal4jsample/graph/me
     ```
 
-> [!div renderon="docs"]
-> Где:
->
-> - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
-> - `Enter_the_Client_Secret_Here` — это **секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
-> - `Enter_the_Tenant_Info_Here` — это значение **Идентификатор каталога (клиента)** приложения, которое вы зарегистрировали.
+    > [!div renderon="docs"]
+    > Где:
+    >
+    > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
+    > - `Enter_the_Client_Secret_Here` — это **секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
+    > - `Enter_the_Tenant_Info_Here` — это значение **Идентификатор каталога (клиента)** приложения, которое вы зарегистрировали.
+
+ 1. Для использования протокола HTTPS с localhost нужно указать значения для свойств server.ssl.key. Чтобы создать самозаверяющий сертификат, используйте служебную программу keytool (входит в JRE).
+
+   ```
+   Example: 
+   keytool -genkeypair -alias testCert -keyalg RSA -storetype PKCS12 -keystore keystore.p12 -storepass password
+
+   server.ssl.key-store-type=PKCS12  
+   server.ssl.key-store=classpath:keystore.p12  
+   server.ssl.key-store-password=password  
+   server.ssl.key-alias=testCert 
+   ```
+
+   Поместите созданный файл хранилища ключей в папку "resources".
 
 #### <a name="step-4-run-the-code-sample"></a>Шаг 4. Запуск примера кода
 
@@ -117,11 +128,11 @@ ms.locfileid: "75549947"
 
 ##### <a name="running-from-ide"></a>Запуск из интегрированной среды разработки
 
-Если вы запускаете веб-приложение из интегрированной среды разработки, щелкните "Запустить", а затем перейдите на домашнюю страницу проекта. В этом примере стандартная домашняя страница имеет следующий URL-адрес: http://localhost:8080.
+Если вы запускаете веб-приложение из интегрированной среды разработки, щелкните "Запустить", а затем перейдите на домашнюю страницу проекта. В этом примере стандартная домашняя страница имеет следующий URL-адрес: https://localhost:8080.
 
 1. На основной странице нажмите кнопку **Вход**, чтобы перенаправиться в Azure Active Directory и запросить у пользователя учетные данные.
 
-1. После проверки подлинности пользователь перенаправляется на страницу *http://localhost:8080/msal4jsample/secure/aad* . После входа на странице появятся сведения об учетной записи, с помощью которой выполнен вход. В примере пользовательского интерфейса есть следующие кнопки:
+1. После проверки подлинности пользователь перенаправляется на страницу *https://localhost:8080/msal4jsample/secure/aad* . После входа на странице появятся сведения об учетной записи, с помощью которой выполнен вход. В примере пользовательского интерфейса есть следующие кнопки:
     - *Выход*: пользователь выходит из приложения и перенаправляется на домашнюю страницу.
     - *Показать сведения о пользователе*: получение маркера Microsoft Graph и вызов Microsoft Graph с помощью запроса, содержащего этот маркер. Этот запрос возвращает сведения о пользователе, который выполнил вход в систему.
 

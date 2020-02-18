@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 01/28/2020
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: c32d2fb45bbd4f4a9b4845bb4ef27a439d536677
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9bf33aae5de600d6e5b0ab836c99da1d56935db3
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905868"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169381"
 ---
 # <a name="integrate-azure-key-vault-with-azure-policy"></a>Интеграция Azure Key Vault с Политикой Azure
 
@@ -152,5 +152,4 @@ Key Vault создал набор политик, которые можно н�
 ## <a name="next-steps"></a>Next Steps
 
 - Дополнительные сведения о [службе "Политика Azure"](../governance/policy/overview.md)
-- См. пример: [хранилища Key Vault без конечных точек виртуальной сети](../governance/policy/samples/keyvault-no-vnet-rules.md)
-
+- См. примеры для Key Vault: [Определения встроенных политик для Key Vault](../governance/policy/samples/built-in-policies.md#key-vault)

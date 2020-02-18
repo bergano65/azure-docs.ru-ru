@@ -6,41 +6,31 @@ ms.topic: quickstart
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 257fd02c2f7ec2aff9d55b91b2cbd54b6eb55431
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fc615149b092aebfdde767fb3b716fb897bfd551
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75464403"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121506"
 ---
 # <a name="quickstart--deploy-a-java-app-to-azure-service-fabric-on-linux"></a>Краткое руководство.  Развертывание приложения Java в Azure Service Fabric в Linux
 
-В этом кратком руководстве показано, как развернуть первое приложение Java в Azure Service Fabric с использованием интегрированной среды разработки Eclipse на компьютере разработчика Linux. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере.
+В этом кратком руководстве мы развернем приложение Java в Azure Service Fabric, используя интегрированную среду разработки Eclipse на компьютере разработчика Linux. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере.
 
 Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими.
 
-![Пример для голосования Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-voting-sample.png)
+## <a name="prerequisites"></a>Предварительные требования
 
-Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
-
-* Использование Eclipse в качестве средства для приложений Java Service Fabric.
-* Развертывание приложения в локальном кластере.
-* Масштабирование приложения на несколько узлов
-
-## <a name="prerequisites"></a>предварительные требования
-
-Для работы с этим кратким руководством сделайте следующее:
-
-1. [Установите пакет SDK и интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods).
-2. [установите Git](https://git-scm.com/);
-3. [Установите Eclipse](https://www.eclipse.org/downloads/).
-4. [Настройте среду Java](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development), следуя дополнительным шагам по установке подключаемого модуля Eclipse.
+- [Среда Java](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development) и [Yeoman](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables).
+- [Eclipse Neon версии 4.6 или новее](https://www.eclipse.org/downloads/packages/) и [подключаемый модуль Eclipse для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#install-the-eclipse-plug-in-optional).
+- [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods).
+- [Git](https://git-scm.com/downloads);
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
 В окне терминала выполните следующую команду, чтобы клонировать репозиторий с примером приложения на локальный компьютер.
 
-```git
+```bash
 git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 ```
 
@@ -51,13 +41,13 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
     ```bash
     sudo /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh
     ```
-    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080** . Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает.
+    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер работает, откройте Service Fabric Explorer по адресу `http://localhost:19080`. Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает.
 
     ![В Service Fabric Explorer Azure отображаются работоспособные узлы](./media/service-fabric-quickstart-java/service-fabric-explorer-healthy-nodes.png)
 
 2. Откройте Eclipse.
 3. Щелкните **File** > **Import** > **Gradle** > **Existing Gradle Project** (Файл > Импорт > Gradle > Существующий проект Gradle) и следуйте указаниям мастера.
-4. Щелкните **Каталог** и выберите каталог `Voting` в папке `service-fabric-java-quickstart`, клонированной из GitHub. Нажмите кнопку **Готово**.
+4. Щелкните **Directory** (Каталог) и в клонированной из GitHub папке **service-fabric-java-quickstart** выберите каталог **Voting** (Голосование). Нажмите кнопку **Готово**.
 
     ![Импорт проекта Gradle в Eclipse](./media/service-fabric-quickstart-java/eclipse-import-gradle-project.png)
 
@@ -72,15 +62,17 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 Теперь можно добавить варианты для выбора в голосовании и начать прием голосов. Приложение запускается и хранит все данные в кластере Service Fabric без необходимости использования отдельной базы данных.
 
+![Пример для голосования Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-voting-sample.png)
+
 ## <a name="scale-applications-and-services-in-a-cluster"></a>Масштабирование приложений и служб в кластере
 
-Службы могут легко масштабироваться в кластере с учетом изменения нагрузки на службы. Масштабирование службы осуществляется путем изменения числа экземпляров, запущенных в кластере. Существует множество способов масштабирования служб. Например, можно использовать скрипты или команды интерфейса командной строки Service Fabric (sfctl). В следующих шагах используется Service Fabric Explorer.
+Службы могут легко масштабироваться в кластере с учетом изменения нагрузки на службы. Масштабирование службы осуществляется путем изменения числа экземпляров, запущенных в кластере. Существует много способов масштабировать службы. Например, можно использовать скрипты или команды CLI для Service Fabric (`sfctl`). В следующих шагах используется Service Fabric Explorer.
 
-Средство Service Fabric Explorer работает во всех кластерах Service Fabric. Чтобы его открыть, укажите адрес кластера и порт управления HTTP (19080) для кластера в адресной строке браузера, например `http://localhost:19080`.
+Средство Service Fabric Explorer работает во всех кластерах Service Fabric. Чтобы открыть его, укажите в браузере порт управления HTTP (19080) для нужного кластера. Например, `http://localhost:19080`.
 
 Для масштабирования службы веб-интерфейса сделайте следующее:
 
-1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `https://localhost:19080`).
+1. Откройте Service Fabric Explorer в своем кластере. Например, `https://localhost:19080`.
 2. Щелкните многоточие ( **...** ) рядом с узлом **fabric:/Voting/VotingWeb** в дереве и выберите **Масштабировать службу**.
 
     ![Масштабирование службы в Azure Service Fabric](./media/service-fabric-quickstart-java/service-fabric-scale-service.png)

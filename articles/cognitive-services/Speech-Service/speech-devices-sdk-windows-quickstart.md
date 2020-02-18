@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 11/13/2019
+ms.date: 02/12/2020
 ms.author: erhopf
-ms.openlocfilehash: e3764dbfa7de52bf210a1e6cc8bd240d64d64aeb
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 78d9dc8c2302de6a9bdbfef62d47d10d252cf0c5
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815554"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189027"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-windows"></a>Краткое руководство. Запустите пример приложения Speech Devices SDK в Windows
 
@@ -39,7 +39,7 @@ ms.locfileid: "74815554"
 * Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 * Скачайте последнюю версию [пакета SDK для речевых устройств](https://aka.ms/sdsdk-download-JRE) для Java и извлеките ZIP-файл в рабочую папку.
    > [!NOTE]
-   > В ZIP-файл JRE-Sample-Release входит пример приложения JRE. В рамках этого краткого руководства допускается следующий путь для извлечения приложения: "C:\SDSDK\JRE-Sample-Release".
+   > В этом кратком руководстве предполагается, что приложение извлечено в папку C:\SDSDK\JRE-Sample-Release.
 
 Сейчас транскрибирование бесед доступно для американского английского и китайского языков в регионах "центральная часть США" и "Восточная Азия". Для использования транскрибирования бесед вам понадобится речевой ключ в одном из упомянутых регионов.
 
@@ -57,11 +57,11 @@ ms.locfileid: "74815554"
 
 1. В строке меню Eclipse создайте новый проект, выбрав **File** > **New** > **Java Project** (Файл > Создать > Проект Java). Если последнего пункта нет, выберите **Project** (Проект), а затем — **Java Project** (Проект Java).
 
-1. После этого запустится мастер **создания проектов Java**. **Перейдите** к расположению примера проекта. Выберите **Готово**.
+1. После этого запустится мастер **создания проектов Java**. **Перейдите** к расположению примера проекта. Нажмите кнопку **Готово**.
 
    ![Снимок экрана с изображением мастера создания проекта Java](media/speech-devices-sdk/eclipse-new-java-project.png)
 
-1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Выберите **Готово**.
+1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Нажмите кнопку **Готово**.
 
    ![Снимок экрана обозревателя пакетов](media/speech-devices-sdk/eclipse-convert-to-maven.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "74815554"
         <dependency>
              <groupId>com.microsoft.cognitiveservices.speech</groupId>
              <artifactId>client-sdk</artifactId>
-             <version>1.7.0</version>
+             <version>1.9.0</version>
         </dependency>
     </dependencies>
    ```
@@ -160,7 +160,7 @@ ms.locfileid: "74815554"
    java -jar SpeechDemo.jar
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Просмотр заметки о выпуске](devices-sdk-release-notes.md)

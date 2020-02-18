@@ -9,16 +9,16 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/21/2019
 ms.custom: mvc
-ms.openlocfilehash: 647182389ec0ad4cb2b80a0676812961cb9be770
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 1337870fc871282f84af17b34ba26b3b0271316b
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890429"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110719"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 
-# <a name="tutorial-configure-your-devices-from-a-back-end-service"></a>Руководство по Настройка устройств из внутренней службы
+# <a name="tutorial-configure-your-devices-from-a-back-end-service"></a>Руководство. Настройка устройств из внутренней службы
 
 Кроме получения данных телеметрии с устройств, вам, возможно, потребуется настроить устройства из внутренней службы. При отправке требуемой конфигурации на устройства вам могут понадобиться обновления состояния и соответствия с этих устройств. Например, вы можете задать целевой рабочий диапазон температур для устройства или получить сведения о версии встроенного ПО устройства.
 
@@ -50,6 +50,8 @@ node --version
 ```
 
 Скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip и извлеките ZIP-архив.
+
+Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="set-up-azure-resources"></a>Настройка ресурсов Azure
 
@@ -253,7 +255,7 @@ node ServiceClient.js "{your service connection string}"
 az group delete --name tutorial-iot-hub-rg
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как синхронизировать сведения о состоянии между устройствами и Центром Интернета вещей. Перейдите к следующему руководству, чтобы научиться использовать двойники устройств для обновления встроенного ПО.
 

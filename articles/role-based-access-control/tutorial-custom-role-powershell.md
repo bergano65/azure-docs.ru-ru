@@ -1,5 +1,5 @@
 ---
-title: Учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
+title: Руководство. Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
 description: Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell.
 services: active-directory
 documentationCenter: ''
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: 176e465163d92156308eda64c4187467cc10ee15
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: d337e31f554c0aabbb94771aa7bfca4afb19a431
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419747"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138282"
 ---
-# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство по Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
+# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
 
 Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание настраиваемой роли
@@ -32,13 +32,13 @@ ms.locfileid: "74419747"
 > * Обновление пользовательской роли
 > * Удаление настраиваемой роли
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником требуется:
+Для выполнения этого руководства потребуется следующее:
 
 - разрешения на создание пользовательских ролей, такие как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователя](built-in-roles.md#user-access-administrator);
 - [Azure Cloud Shell](../cloud-shell/overview.md) или [Azure PowerShell](/powershell/azure/install-az-ps).
@@ -274,7 +274,7 @@ ms.locfileid: "74419747"
 
 1. В запросе на подтверждение выберите **Да**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание пользовательских ролей с помощью PowerShell](custom-roles-powershell.md)
+> [Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell](custom-roles-powershell.md).

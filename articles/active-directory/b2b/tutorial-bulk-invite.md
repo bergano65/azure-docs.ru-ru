@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: tutorial
-ms.date: 9/19/2019
+ms.date: 2/11/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c78d2a8b4ccc51bc7afaef82a6c0dd609acdcab9
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: c429648adeb0c81799bff2dca1650de965395a60
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76908842"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77166438"
 ---
 # <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users-preview"></a>Руководство. массовой отправке приглашений пользователям службы совместной работы Azure Active Directory B2B (предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "76908842"
 
 > [!NOTE]
 > Начиная с 22.12.2019 функция "Массовое приглашение пользователей" (предварительная версия) временно отключена.
-> Пока что дата, когда эта функция будет снова включена, неизвестна. 
+> Пока что дата, когда эта функция будет снова включена на портале Azure, неизвестна. Чтобы создать массовое приглашение для гостевых пользователей с помощью PowerShell, ознакомьтесь с руководством по [использованию массового приглашения в B2B](bulk-invite-powershell.md) или [кодом B2B и примерами для PowerShell](code-samples.md).
 
 Если вы используете службу совместной работы Azure Active Directory (Azure AD) B2B для работы с внешними партнерами, вы можете одновременно пригласить несколько гостевых пользователей к вашей организации. Из этого руководства вы узнаете, как с помощью портала Azure выполнять массовую отправку приглашений внешним пользователям. В частности, вы выполните описанные ниже действия:
 

@@ -5,13 +5,13 @@ author: djpmsft
 ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 01/14/2020
-ms.openlocfilehash: dee8c919b815c6f22b171f58be9fc6a38167056a
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.date: 02/06/2020
+ms.openlocfilehash: 00b51c14a24b525d98e9634a4f416177364228cb
+ms.sourcegitcommit: a460fdc19d6d7af6d2b5a4527e1b5c4e0c49942f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76030035"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77069596"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -42,6 +42,8 @@ ms.locfileid: "76030035"
 [Derived Column transformation](https://www.youtube.com/watch?v=FFCbU4ujCiY) (Преобразование "Производственный столбец")
 
 [Join transformation](https://www.youtube.com/watch?v=zukwayEXRtg) (Преобразование "Соединение")
+
+[Шаблон самосоединения](https://www.youtube.com/watch?v=Dx1kANfnvmk&feature=youtu.be&hd=1)
 
 [Преобразование "Уточняющий запрос"](https://www.youtube.com/watch?v=9U-0VPU2ZPU)
 
@@ -130,3 +132,7 @@ ms.locfileid: "76030035"
 [Logical Models vs. Physical Models](http://youtu.be/K5tgzLjEE9Q) (Сравнение логических и физических моделей)
 
 [Detect source data changes](http://youtu.be/CaxIlI7oXfI?hd=1) (Обнаружение изменений исходных данных)
+
+## <a name="data-flow-expressions"></a>Выражения для потока данных
+
+[Выражения для даты и времени](https://www.youtube.com/watch?v=uboyCZ25r_E&feature=youtu.be&hd=1)

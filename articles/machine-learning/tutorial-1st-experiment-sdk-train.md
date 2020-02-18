@@ -9,13 +9,13 @@ ms.topic: tutorial
 author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
-ms.date: 11/04/2019
-ms.openlocfilehash: c38347a03ddc0ef5f6c1bd3118696062db9a8254
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 02/10/2020
+ms.openlocfilehash: aa90655ecb14abe38ec8fdfc6c18e7d292abbef3
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75532427"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116540"
 ---
 # <a name="tutorial-train-your-first-ml-model"></a>Руководство. обучению модели Машинного обучения
 
@@ -31,11 +31,11 @@ ms.locfileid: "75532427"
 > * просмотр результатов обучения на портале;
 > * Извлечение наиболее эффективной модели
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Требуется только одно — выполнить инструкции из первой части этого руководства под названием [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
-В этой части руководства вы выполните код в примере записной книжки Jupyter `tutorials/tutorial-1st-experiment-sdk-train.ipynb`, открытой в конце первой части. В этой статье рассматривается тот же код, который приведен в записной книжке.
+В этой части руководства описано, как выполнить код в примере записной книжки Jupyter *tutorials/create-first-ml-experiment/tutorial-1st-experiment-sdk-train.ipynb*, открытой в конце первой части. В этой статье рассматривается тот же код, который приведен в записной книжке.
 
 ## <a name="open-the-notebook"></a>Открытие записной книжки
 
@@ -45,7 +45,7 @@ ms.locfileid: "75532427"
 
 
 > [!Warning]
-> **Не** создавайте *другую* записную книжку в интерфейсе Jupyter! Записная книжка `tutorials/tutorial-1st-experiment-sdk-train.ipynb` содержит **все данные и код**, необходимые при работе с этим учебником.
+> **Не** создавайте *другую* записную книжку в интерфейсе Jupyter! Записная книжка *tutorials/create-first-ml-experiment/tutorial-1st-experiment-sdk-train.ipynb* содержит **все данные и код**, необходимые для работы с этим руководством.
 
 ## <a name="connect-workspace-and-create-experiment"></a>Подключение рабочей области и создание эксперимента
 

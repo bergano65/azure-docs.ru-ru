@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: overview
-ms.date: 11/13/2019
+ms.date: 02/05/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: 3b33015b3a69372f6783d59b28a111ec279dd860
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 9ac70252ce7c818ccbdecfd996b9970f011aa967
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048469"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77056348"
 ---
 # <a name="about-azure-virtual-wan"></a>Сведения о виртуальной глобальной сети Azure
 
@@ -37,6 +37,13 @@ ms.locfileid: "74048469"
 
 Действия по обновлению виртуальной глобальной сети см. в статье [Обновление виртуальной глобальной сети с уровня "Базовый" на уровень "Стандартный"](upgrade-virtual-wan.md).
 
+## <a name="architecture"></a>Архитектура
+
+Дополнительные сведения об архитектуре Виртуальной глобальной сети и переходе на Виртуальную глобальную сеть см. в следующих статьях:
+
+* [Архитектура Виртуальной глобальной сети](migrate-from-hub-spoke-topology.md)
+* [Архитектура глобальной транзитной сети](virtual-wan-global-transit-network-architecture.md)
+
 ## <a name="resources"></a>Ресурсы Виртуальной глобальной сети
 
 Чтобы настроить виртуальную глобальную сеть "узел — узел", необходимо создать следующие ресурсы.
@@ -57,7 +64,7 @@ ms.locfileid: "74048469"
 
   * **Сайт.** Этот ресурс используется только для подключений типа "сеть — сеть". Ресурс узла **vpnsite**. Он представляет локальное VPN-устройство и его параметры. При работе с участником Виртуальной глобальной сети экспорт информации в Azure осуществляется автоматически.
 
-## <a name="connectivity"></a>Подключение
+## <a name="connectivity"></a>Типы подключения
 
 Виртуальная глобальная сеть поддерживает следующие типы подключений: VPN типа "сеть — сеть", пользовательская VPN (точка — сеть) и ExpressRoute.
 
@@ -94,6 +101,6 @@ ExpressRoute позволяет подключать локальные сети
 
 [!INCLUDE [Virtual WAN FAQ](../../includes/virtual-wan-faq-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство. Создание подключения "сеть — сеть" с помощью Виртуальной глобальной сети Azure](virtual-wan-site-to-site-portal.md)

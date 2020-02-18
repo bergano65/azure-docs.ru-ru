@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 01/30/2020
 ms.author: spelluru
-ms.openlocfilehash: 788fcf15ebd68aae525c2895340f437594c9c58c
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 34583ef49b2f919391af3fe5700a558b2dc40700
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906412"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187242"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub-version-5"></a>Запись данных Центров событий в Хранилище Azure и их чтение с помощью Python (azure-eventhub версии 5)
 
-Концентратор событий можно настроить таким образом, чтобы данные, отправляемые в концентратор событий, собирались в учетной записи хранения Azure или Azure Data Lake Storage. В этой статье показано, как написать код Python, чтобы отправить события в концентратор событий и считывать собранные данные с Хранилища BLOB-объектов Azure. Дополнительные сведения об этой функции см. [Capture events through Azure Event Hubs in Azure Blob Storage or Azure Data Lake Storage](event-hubs-capture-overview.md) (Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage).
+Концентратор событий можно настроить таким образом, чтобы данные, отправляемые в него, собирались в учетной записи хранения Azure либо в Azure Data Lake Storage 1-го поколения или 2-го поколения. В этой статье показано, как написать код Python, чтобы отправлять события в концентратор событий и считывать собранные данные из **хранилища BLOB-объектов Azure**. Дополнительные сведения об этой функции см. [Capture events through Azure Event Hubs in Azure Blob Storage or Azure Data Lake Storage](event-hubs-capture-overview.md) (Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage).
 
 В приведенном кратком руководстве для демонстрации функции сбор используется [пакет SDK для Azure Python](https://azure.microsoft.com/develop/python/). Приложение *sender.py* отправляет имитацию телеметрии среды в концентраторы событий в формате JSON. В настройках концентратора событий предусмотрено использование функции записи для пакетной записи этих данных в хранилище BLOB-объектов. Приложение *capturereader.py* считывает эти большие двоичные объекты и создает для каждого устройства дополнительный файл. Затем приложение записывает данные в CSV-файлы.
 

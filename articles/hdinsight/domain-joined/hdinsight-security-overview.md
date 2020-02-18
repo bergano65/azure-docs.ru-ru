@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: overview
 ms.date: 09/23/2019
-ms.openlocfilehash: 7fadb17476c2a071de767573994bb1120b476cdf
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.openlocfilehash: 0e7b2db188ef6ee7d6b80ba5da4010112008ad70
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053735"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77122109"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -74,24 +74,24 @@ Azure HDInsight предлагает ряд методов для соответ
 
 | Область безопасности | Доступные решения | Ответственное лицо |
 |---|---|---|
-| Безопасность доступа к данным | Настройка [списков управления доступом (ACL)](../../storage/blobs/data-lake-storage-access-control.md) для Azure Data Lake Storage 1-го поколения и 2-го поколения  | Клиент |
-|  | Включите свойство [Требуется безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) в учетной записи хранения. | Клиент |
-|  | Настройка [брандмауэров службы хранилища Azure](../../storage/common/storage-network-security.md) и виртуальных сетей | Клиент |
-|  | Настройка [конечных точек службы для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) для Cosmos DB и [Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) | Клиент |
-|  | Убедитесь, что [шифрование TLS](../../storage/common/storage-security-tls.md) включено для передаваемых данных. | Клиент |
-|  | Настройка [управляемых пользователем ключей](../../storage/common/storage-encryption-keys-portal.md) для шифрования службы хранилища Azure | Клиент |
-| Безопасность приложений и ПО промежуточного слоя | Интеграция с AAD-DS и [настройка проверки подлинности](apache-domain-joined-configure-using-azure-adds.md) | Клиент |
-|  | Настройка политик [авторизации Apache Ranger](apache-domain-joined-run-hive.md) | Клиент |
-|  | Использование [журналов Azure Monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md) | Клиент |
-| Безопасность операционной системы | Создание кластеров с помощью последних безопасных базовых образов | Клиент |
-|  | Обеспечение [установки исправлений для ОС](../hdinsight-os-patching.md) через регулярные интервалы | Клиент |
+| Безопасность доступа к данным | Настройка [списков управления доступом (ACL)](../../storage/blobs/data-lake-storage-access-control.md) для Azure Data Lake Storage 1-го поколения и 2-го поколения  | Customer |
+|  | Включите свойство [Требуется безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) в учетной записи хранения. | Customer |
+|  | Настройка [брандмауэров службы хранилища Azure](../../storage/common/storage-network-security.md) и виртуальных сетей | Customer |
+|  | Настройка [конечных точек службы для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) для Cosmos DB и [Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) | Customer |
+|  | Убедитесь, что [шифрование TLS](../../storage/common/storage-security-tls.md) включено для передаваемых данных. | Customer |
+|  | Настройка [управляемых пользователем ключей](../../storage/common/storage-encryption-keys-portal.md) для шифрования службы хранилища Azure | Customer |
+| Безопасность приложений и ПО промежуточного слоя | Интеграция с AAD-DS и [настройка проверки подлинности](apache-domain-joined-configure-using-azure-adds.md) | Customer |
+|  | Настройка политик [авторизации Apache Ranger](apache-domain-joined-run-hive.md) | Customer |
+|  | Использование [журналов Azure Monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md) | Customer |
+| Безопасность операционной системы | Создание кластеров с помощью последних безопасных базовых образов | Customer |
+|  | Обеспечение [установки исправлений для ОС](../hdinsight-os-patching.md) через регулярные интервалы | Customer |
 | Безопасность сети | Настройка [виртуальной сети](../hdinsight-plan-virtual-network-deployment.md) |
-|  | Настройка [правил для входящего трафика группы безопасности сети (NSG)](../hdinsight-plan-virtual-network-deployment.md#networktraffic) | Клиент |
-|  | Настройка [ограничения исходящего трафика](../hdinsight-restrict-outbound-traffic.md) с помощью брандмауэра (предварительная версия) | Клиент |
+|  | Настройка [правил для входящего трафика группы безопасности сети (NSG)](../hdinsight-plan-virtual-network-deployment.md#networktraffic) | Customer |
+|  | Настройка [ограничения исходящего трафика](../hdinsight-restrict-outbound-traffic.md) с помощью брандмауэра | Customer |
 | Виртуализированная инфраструктура | Недоступно | HDInsight (поставщик облачных служб) |
 | Безопасность физической инфраструктуры | Недоступно | HDInsight (поставщик облачных служб) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Корпоративный пакет безопасности для HDInsight](apache-domain-joined-architecture.md)
 * [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md)

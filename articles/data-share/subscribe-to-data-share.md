@@ -6,12 +6,12 @@ ms.author: joanpo
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
-ms.openlocfilehash: f2acb89597ef877543a2c4cc46f395aede41034b
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 5b7d9cd7e7d438cf2beac76d5d8bcc78d377a8f4
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964504"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083107"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство. Прием и получение данных с помощью Azure Data Share  
 
@@ -30,7 +30,7 @@ ms.locfileid: "76964504"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Приглашение Data Share. Приглашение от Microsoft Azure с темой "Приглашение Azure Data Share от **<yourdataprovider@domain.com>** ".
-* Зарегистрируйте поставщик ресурсов Microsoft.DataShare. Следуйте инструкциям, изложенным в статье [Troubleshoot common issues in Azure Data Share](data-share-troubleshoot.md) (Устранение распространенных неполадок в общей папке данных Azure), чтобы зарегистрировать поставщик ресурсов для общего ресурса данных.
+* Зарегистрируйте [поставщик ресурсов Microsoft.DataShare](concepts-roles-permissions.md#resource-provider-registration) в подписке Azure, где вы создадите ресурс Data Share и подписку Azure, в которой находятся целевые хранилища данных Azure.
 
 ### <a name="receive-data-into-a-storage-account"></a>Получение данных в учетную запись хранения 
 
@@ -57,7 +57,7 @@ ms.locfileid: "76964504"
 * Доступ к брандмауэру для IP-адреса клиента SQL Server. Это можно обеспечить следующим образом. 
     1. В SQL Server на портале Azure перейдите к разделу *Брандмауэры и виртуальные сети*
     1. Чтобы разрешить доступ к службам Azure, щелкните переключатель **Вкл.**
-    1. Щелкните **+Добавить IP-адрес клиента**, а затем **Сохранить**. IP-адрес клиента можно изменить. При следующем совместном использовании данных SQL из портала Azure может потребоваться повторение этого процесса. Вы можете также добавить диапазон IP-адресов. 
+    1. Щелкните **+Добавить IP-адрес клиента**, а затем **Сохранить**. IP-адрес клиента можно изменить. При следующем поступлении данных в целевое расположение SQL с портала Azure может потребоваться повторение этого процесса. Вы можете также добавить диапазон IP-адресов. 
 
 
 ### <a name="receive-data-into-an-azure-data-explorer-cluster"></a>Получение данных в кластере Azure Data Explorer: 

@@ -1,5 +1,5 @@
 ---
-title: Учебник. Предоставление доступа пользователю к ресурсам Azure с помощью RBAC и Azure PowerShell
+title: Руководство. Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и Azure PowerShell
 description: Узнайте, как предоставить пользователю доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
 services: active-directory
 documentationCenter: ''
@@ -13,43 +13,43 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: c5570c6b1d2cdd168dbaeb0a91d80a61e171e5d1
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: f4ba56bf79d707200bf361ab4c717bb63d081953
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74418633"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138227"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство по Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Предоставление доступа пользователям в разных областях
 > * Вывод списка доступа
 > * Запрет доступа
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником требуется:
+Для выполнения этого руководства потребуется следующее:
 
 - разрешения на создание пользователей в Azure Active Directory (или наличие существующего пользователя);
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell);
 
 ## <a name="role-assignments"></a>Назначения ролей
 
-Чтобы в RBAC предоставить доступ, нужно создать назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Ниже приведены два варианта назначения роли, которые мы выполним в ходе работы с этим руководством.
+При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Ниже приведены два варианта назначения роли, которые мы выполним в ходе работы с этим руководством.
 
 | Субъект безопасности | Определение роли | Область |
 | --- | --- | --- |
-| Пользователь<br>(Пользователь из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Subscription |
-| Пользователь<br>(Пользователь из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | группа ресурсов.<br>(группа-ресурсов-из-руководства-по-rbac) |
+| Пользователь<br>(Пользователь из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Подписка |
+| Пользователь<br>(Пользователь из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | Группа ресурсов<br>(группа-ресурсов-из-руководства-по-rbac) |
 
    ![Назначения ролей для пользователя](./media/tutorial-role-assignments-user-powershell/rbac-role-assignments-user.png)
 
@@ -276,7 +276,7 @@ ms.locfileid: "74418633"
     Remove-AzureADUser -ObjectId "rbacuser@example.com"
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Управление доступом с помощью RBAC и Azure PowerShell](role-assignments-powershell.md)

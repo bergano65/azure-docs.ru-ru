@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
-description: В этом руководстве содержатся сведения о развертывании примера приложения в Azure Spring Cloud с помощью портала Azure.
+title: Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure
+description: В этом руководстве содержатся сведения о развертывании приложения Spring Cloud в Azure Spring Cloud с помощью портала Azure.
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 11/4/2019
+ms.date: 02/03/2020
 ms.author: brendm
-ms.openlocfilehash: f88319319b366ec8b726d5cf6cce540008497b57
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 67ad112021c2fadb5ea93ffefcf5e58e9404e92a
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278907"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137754"
 ---
-# <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
+# <a name="quickstart-launch-an-existing-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure
 
-Azure Spring Cloud позволяет легко выполнять приложения микрослужб Spring Cloud в Azure.
+В этом кратком руководстве описано, как развернуть имеющееся приложение Spring Cloud в Azure. Azure Spring Cloud позволяет легко выполнять приложения микрослужб Spring Cloud в Azure. 
 
-В этом кратком руководстве описано, как развернуть имеющееся приложение Spring Cloud в Azure.  Пример кода приложения, используемый в этом руководстве, можно найти в [репозитории примеров GitHub](https://github.com/Azure-Samples/PiggyMetrics). После завершения работы предоставленный пример приложения будет доступен в сети и готов к управлению с помощью портала Azure.
+Пример кода приложения, используемый в этом руководстве, можно найти в [репозитории примеров GitHub](https://github.com/Azure-Samples/PiggyMetrics). После завершения работы предоставленный пример приложения будет доступен в сети и готов к управлению с помощью портала Azure.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 

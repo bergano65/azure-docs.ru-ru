@@ -1,17 +1,17 @@
 ---
-title: Создание функции Python, активируемой HTTP, в Azure
+title: Создание бессерверной функции Python для HTTP-запросов в решении "Функции Azure"
 description: Создание и развертывание в облаке бессерверного кода Python с использованием функций Azure.
-ms.date: 01/15/2020
+ms.date: 02/11/2020
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: c665f807d78c699423db457bf57dca2f16109913
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: a781e10cee4cf433de5e837490d901020a875205
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898565"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157896"
 ---
-# <a name="quickstart-create-an-http-triggered-python-function-in-azure"></a>Краткое руководство. Создание функции Python, активируемой HTTP, в Azure
+# <a name="quickstart-create-a-python-function-in-azure-that-responds-to-http-requests"></a>Краткое руководство. Создание функции Python в Azure, которая отвечает на HTTP-запросы
 
 В этой статье используются средства командной строки для создания функции Python, которая отвечает на HTTP-запросы. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. Выполнение этого краткого руководства предполагает небольшую дополнительную плату в несколько центов США в учетной записи Azure.
 
@@ -107,7 +107,7 @@ py -m venv .venv
 
 При необходимости можно сразу перейти к [локальному запуску функции](#run-the-function-locally) и просмотреть содержимое файла позже.
 
-### <a name="__init__py"></a>\_\_init\_\_.py
+#### <a name="__init__py"></a>\_\_init\_\_.py
 
 *\_\_init\_\_.py* содержит функцию Python `main()`, которая активируется в соответствии с конфигурацией в *function.json*.
 
@@ -140,7 +140,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 Для триггера HTTP функция получает данные запроса в переменной `req` как определено в файле *function.json*. `req` — это экземпляр [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). Возвращаемый объект, определенный как `$return` в файле *function.json*, — это экземпляр класса [azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](functions-bindings-http-webhook.md).
 
-### <a name="functionjson"></a>function.json
+#### <a name="functionjson"></a>function.json
 
 *function.json* — это файл конфигурации, который определяет входные и выходные данные для функции `bindings`, в том числе тип триггера. При необходимости можно изменить `scriptFile`, чтобы вызывать другой файл Python.
 
@@ -199,7 +199,7 @@ Http Functions:
 
 ## <a name="create-supporting-azure-resources-for-your-function"></a>Создание вспомогательных ресурсов Azure для функции
 
-Чтобы развернуть код функции в Azure, необходимо создать три ресурса:
+Прежде чем развернуть код функции в Azure, необходимо создать три ресурса:
 
 - группу ресурсов — логический контейнер связанных ресурсов;
 - учетную запись хранения Azure — для сохранения состояния и других сведений о проектах;

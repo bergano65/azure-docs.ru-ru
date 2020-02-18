@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 08/26/2019
+ms.date: 02/10/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3c0ff63a360d96d0e9db18d430e755e567197de1
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 071a8dd40d87e5df6fc5c65b789bb63b515dc60a
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122089"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116503"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство. Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "76122089"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Развертывание модели классификации изображений в Экземплярах контейнеров Azure](tutorial-train-models-with-aml.md).   Затем откройте записную книжку **/img-classification-part2-deploy.ipynb** в клонированной папке **tutorials**.
+Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Развертывание модели классификации изображений в Экземплярах контейнеров Azure](tutorial-train-models-with-aml.md).   Откройте записную книжку *img-classification-part2-deploy.ipynb* в клонированной папке *tutorials/image-classification-mnist-data*.
 
 Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать его в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что вы установили `matplotlib` и `scikit-learn` в своей среде. 
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 11/13/2019
+ms.date: 02/12/2020
 ms.author: erhopf
-ms.openlocfilehash: c9175f1f592c72e047b02a06a174d3013b0c7ef6
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 8035cce1482c3c441cc956272a7300f0d0ea8194
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815304"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189083"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-linux"></a>Краткое руководство. Запуск примера приложения пакета SDK для речевых устройств в Linux
 
@@ -32,17 +32,17 @@ ms.locfileid: "74815304"
 Для работы с этим кратким руководством вам понадобится:
 
 * Операционная система: 64-разрядная версия Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9).
-* [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/).
+* [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * Только [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 * Скачайте последнюю версию [пакета SDK для речевых устройств](https://aka.ms/sdsdk-download-JRE) для Java и извлеките ZIP-файл в рабочую папку.
    > [!NOTE]
-   > В ZIP-файл JRE-Sample-Release входит пример приложения JRE. В рамках этого краткого руководства допускается следующий путь для извлечения приложения: /home/wcaltest/JRE-Sample-Release.
+   > В этом кратком руководстве предполагается, что приложение извлечено в папку /home/wcaltest/JRE-Sample-Release.
 
 Перед запуском Eclipse убедитесь, что установлены следующие зависимости.
 
-* Для Ubuntu.
+* В Ubuntu:
 
   ```sh
   sudo apt-get update
@@ -72,11 +72,11 @@ ms.locfileid: "74815304"
 
 1. В строке меню Eclipse создайте новый проект, выбрав **File** > **New** > **Java Project** (Файл > Создать > Проект Java). Если последнего пункта нет, выберите **Project** (Проект), а затем — **Java Project** (Проект Java).
 
-1. После этого запустится мастер **создания проектов Java**. **Перейдите** к расположению примера проекта. Выберите **Готово**.
+1. После этого запустится мастер **создания проектов Java**. **Перейдите** к расположению примера проекта. Нажмите кнопку **Готово**.
 
    ![Снимок экрана с изображением мастера создания проекта Java](media/speech-devices-sdk/eclipse-new-java-project-linux.png)
 
-1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Выберите **Готово**.
+1. В **обозревателе пакетов** щелкните проект правой кнопкой мыши. В контекстном меню выберите **Настроить** > **Convert to Maven Project** (Преобразовать в проект Maven). Нажмите кнопку **Готово**.
 
    ![Снимок экрана обозревателя пакетов](media/speech-devices-sdk/eclipse-convert-to-maven.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "74815304"
         <dependency>
              <groupId>com.microsoft.cognitiveservices.speech</groupId>
              <artifactId>client-sdk</artifactId>
-             <version>1.7.0</version>
+             <version>1.9.0</version>
         </dependency>
     </dependencies>
    ```
@@ -188,7 +188,7 @@ ms.locfileid: "74815304"
      java -jar SpeechDemo.jar
      ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Просмотр заметки о выпуске](devices-sdk-release-notes.md)

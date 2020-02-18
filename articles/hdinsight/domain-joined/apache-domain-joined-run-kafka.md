@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: a0205d57fa68585b1a91b99b19e008eb92e73c0d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a0ffa6e20b42ed8ac145b50c062f5c0a8998add0
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435856"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77061647"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
 Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales` и `marketingspend`.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание пользователей домена
@@ -143,9 +143,11 @@ ms.locfileid: "75435856"
    export KAFKABROKERS=<brokerlist>:9092
    ```
 
-   Пример: `export KAFKABROKERS=wn0-khdicl.contoso.com:9092,wn1-khdicl.contoso.com:9092`
+   Например, `export KAFKABROKERS=wn0-khdicl.contoso.com:9092,wn1-khdicl.contoso.com:9092`.
 
 4. Выполните шаг 3 в разделе **Создание и развертывание примера** в статье [Руководство. Используйте API производителя и потребителя Apache Kafka](../kafka/apache-kafka-producer-consumer-api.md#build-and-deploy-the-example), чтобы убедиться, что `kafka-producer-consumer.jar` также доступно для **sales_user**.
+
+**Примечание.  Для работы с этим руководством используйте файл kafka-producer-consumer.jar в проекте DomainJoined-Producer-Consumer (не в проекте Producer-Consumer, который предназначен для сценариев без присоединения к домену).**
 
 5. Убедитесь, что **sales_user1** может работать с разделом `salesevents`, выполнив следующую команду.
 
@@ -194,6 +196,9 @@ ms.locfileid: "75435856"
 1. Выберите **Кластеры HDInsight** в разделе **Службы**.
 1. В списке кластеров HDInsight, который отобразится, щелкните **...** рядом с кластером, созданным при работе с этим руководством. 
 1. Щелкните **Удалить**. Нажмите кнопку **Да**.
+
+## <a name="troubleshooting"></a>Устранение неполадок
+Если файл kafka-producer-consumer.jar не работает в кластере, присоединенном к домену, используйте файл kafka-producer-consumer.jar в проекте DomainJoined-Producer-Consumer (не в проекте Producer-Consumer, который предназначен для сценариев без присоединения к домену).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

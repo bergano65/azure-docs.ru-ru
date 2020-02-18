@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: b86f58a1b6b9e3a952861dbe7dbeef4dfe06a644
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 90d39635ac6302f816f39ca19cc00a39cfbbf850
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964842"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121015"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-preview-device-application-to-iot-hub-c"></a>Краткое руководство. Подключение примера приложения IoT Plug and Play (предварительная версия) к Центру Интернета вещей (с использованием C#)
 
@@ -25,7 +25,7 @@ ms.locfileid: "76964842"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения инструкций, приведенных в этом кратком руководстве, необходимо установить .NET Core 2.2 на компьютере для разработки. Вы можете скачать версию пакета SDK для .NET Core 2.2 для нескольких платформ по [этой ссылке](https://dotnet.microsoft.com/download/dotnet-core/2.2).
+Для выполнения инструкций, приведенных в этом кратком руководстве, необходимо установить .NET Core 3.0 на компьютере для разработки. Вы можете скачать версию пакета SDK для .NET Core 3.0 для нескольких платформ по [этой ссылке](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 Версию .NET, которая находится на компьютере разработки, можно проверить, выполнив следующую команду в окне локального терминала: 
 
@@ -72,7 +72,7 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp
 1. Запустите пример приложения для имитации устройства IoT Plug and Play, отправляющего данные телеметрии в ваш Центр Интернета вещей. В том же окне терминала выполните указанную ниже команду, чтобы создать необходимые пакеты и запустить пример приложения.
 
     ```cmd\sh
-        dotnet run
+    dotnet run --framework=netcoreapp3.0
     ```
 
 Вы увидите сообщения о том, что устройство успешно зарегистрировано и ожидает обновлений из облака. Это указывает на то, что устройство готово к получению команд и обновлений свойств и начало отправлять данные телеметрии в центр. Продолжите работу примера, после того как выполните следующие действия.

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -8,65 +8,398 @@ ms.service: cognitive-services
 ms.subservice: luis
 ms.topic: include
 ms.custom: include file
-ms.date: 11/20/2019
+ms.date: 02/08/2020
 ms.author: diberry
-ms.openlocfilehash: 0b442c8cccf8ee9ed5194a7d3dfbfb4d7aa055a3
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 46947579ea72e2199af116442472eec330b38009
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74424183"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77112350"
 ---
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью Postman.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Последняя версия [**Postman**](https://www.getpostman.com/).
-* Необходимо иметь [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md) и [базу знаний с вопросами и ответами](../Tutorials/create-publish-query-in-portal.md). 
+* Вам понадобится:
+    * [Служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
+    * Обученная и опубликованная [база знаний с вопросами и ответами](../Quickstarts/add-question-metadata-portal.md), созданная на основе краткого руководства, с настроенными метаданными и беседой.
 
-## <a name="publish-to-get-endpoint"></a>Публикация для получения конечной точки
+> [!NOTE]
+> Когда вы будете готовы создать ответ на вопрос из базы знаний, [обучите](../Quickstarts/create-publish-knowledge-base.md#save-and-train) и [опубликуйте](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) эту базу знаний. После публикации базы знаний на странице **публикации** отображаются параметры запроса HTTP для создания ответа. На вкладке **Postman** отображаются параметры, необходимые для создания ответа.
 
-Когда вы будете готовы создать ответ на вопрос из вашей базы знаний, [опубликуйте](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) базу знаний.
+## <a name="set-up-postman-for-requests"></a>Настройка получения запросов в Postman
 
-## <a name="use-production-endpoint-with-postman"></a>Использование рабочей конечной точки с помощью Postman
+В этом кратком руководстве применяются те же параметры для запроса **POST** через Postman, а затем настраивается отправка JSON в теле запроса POST, где служба-получатель выбирается в зависимости от нужного результата запроса.
 
-После публикации базы знаний на странице **публикации** отображаются параметры запроса HTTP для создания ответа. В представлении по умолчанию отображаются параметры, необходимые для создания ответа от [Postman](https://www.getpostman.com).
+Используйте эту процедуру, чтобы настроить Postman, а из следующих разделов вы узнаете, как настроить JSON в теле запроса POST.
 
-Желтые цифры на следующем рисунке обозначают пары "имя – значение", которые нужно использовать на следующих этапах.
+1. На странице **Параметры** для базы знаний щелкните вкладку **Postman**, чтобы увидеть конфигурацию, используемую для создания ответа из базы знаний. Скопируйте следующие данные для использования в Postman.
 
-[![Публикация результатов](../media/qnamaker-quickstart-get-answer-with-postman/publish-settings.png)](../media/qnamaker-quickstart-get-answer-with-postman/publish-settings.png#lightbox)
+    |Имя|Параметр|Цель и значение|
+    |--|--|--|
+    |`POST`| `/knowledgebases/replace-with-your-knowledge-base-id/generateAnswer`|Это метод HTTP и маршрут для URL-адреса.|
+    |`Host`|`https://diberry-qna-s0-s.azurewebsites.net/qnamaker`|Это узел URL-адреса. Объедините значения Host и Post, чтобы получить полный URL-адрес generateAnswer.|
+    |`Authorization`|`EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`|Значение заголовка для авторизации запроса в Azure. |
+    |`Content-type`|`application/json`|Значение заголовка для содержимого.|
+    ||`{"question":"<Your question>"}`|Текст запроса POST в формате объекта JSON. Это значение будет изменяться в каждом из следующих разделов в зависимости от того, для чего предназначен очередной запрос.|
 
-Для создания ответа с помощью Postman выполните следующие действия:
+1. Откройте Postman и создайте простой запрос **POST** с параметрами опубликованной ранее базы знаний. В следующих разделах JSON в теле POST будет изменяться в соответствии с новыми запросами к базе знаний.
 
-1. Откройте Postman. Если вам необходимо выбрать стандартный блок, выберите **Базовый запрос**. Укажите в качестве **имени запроса** `Generate QnA Maker answer`, а в качестве **коллекции** — `Generate QnA Maker answers`. Нажмите кнопку **Отмена**, чтобы не сохранять коллекцию.
-1. В рабочей области выберите метод HTTP **POST**.
+## <a name="use-metadata-to-filter-answer"></a>Применение метаданных для фильтрации ответов
 
-    [![Метод POST назначен в Postman](../media/qnamaker-quickstart-get-answer-with-postman/postman-select-post-method.png)](../media/qnamaker-quickstart-get-answer-with-postman/postman-select-post-method.png#lightbox)
+В предыдущем кратком руководстве мы добавили метаданные в два набора вопросов и ответов, чтобы различать два разных вопроса. Добавьте метаданные в запрос, чтобы отфильтровать только один нужный нам набор вопросов и ответов.
 
-1. В строке URL-адреса объедините значения HOST (#2 на изображении) и POST (#1 на изображении), чтобы создать полный URL-адрес. Пример URL-адреса выглядит так: 
+1. В Postman измените только объект JSON в запросе, добавив свойство `strictFilters` с парой "имя — значение" следующего вида: `service:qna_maker`. Теперь текст JSON будет выглядеть так:
 
-    `https://qnamaker-f0.azurewebsites.net/qnamaker/knowledgebases/e1115f8c-d01b-4698-a2ed-85b0dbf3348c/generateAnswer`
+    ```json
+    {
+        'question':'size',
+        'strictFilters': [
+            {
+                'name':'service','value':'qna_maker'
+            }
+        ]
+    }
+    ```
 
-    [![Введение полного URL-адреса в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-method-and-url.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-method-and-url.png#lightbox)
+    Этот вопрос состоит всего из одного слова (`size`), по которому может возвращаться любой набор из вопроса и ответа. Массив `strictFilters` указывает, что ответ нужно сократить до `qna_maker` ответов.
 
-1. Выберите вкладку **Headers** (Заголовки) под строкой URL-адреса, а затем выберите **Bulk Edit** (Массовое изменение). 
+1. Ответ включает только тот ответ, который соответствует критериям фильтра.
 
-1. Скопируйте заголовки (#3 и #4 из изображения) в текстовую область.
+    Следующий ответ был отформатирован для удобства чтения:
 
-    [![Указание заголовков в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-headers.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-headers.png#lightbox)
+    ```JSON
+    {
+        "answers": [
+            {
+                "questions": [
+                    "How large a knowledge base can I create?",
+                    "What is the max size of a knowledge base?",
+                    "How many GB of data can a knowledge base hold?"
+                ],
+                "answer": "The size of the knowledge base depends on the SKU of Azure search you choose when creating the QnA Maker service. Read [here](https://docs.microsoft.com/azure/cognitive-services/qnamaker/tutorials/choosing-capacity-qnamaker-deployment) for more details.",
+                "score": 68.76,
+                "id": 3,
+                "source": "https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting",
+                "metadata": [
+                    {
+                        "name": "link_in_answer",
+                        "value": "true"
+                    },
+                    {
+                        "name": "service",
+                        "value": "qna_maker"
+                    }
+                ],
+                "context": {
+                    "isContextOnly": false,
+                    "prompts": []
+                }
+            }
+        ],
+        "debugInfo": null
+    }
+    ```
 
-1. Выберите вкладку **Body** (Текст).
-1. Выберите формат **необработанных данных** и введите JSON (#5 из изображения), что представляет вопрос.
+    Если существует набор вопросов и ответов, который не соответствует поисковому запросу, но соответствует фильтру, он не будет возвращен. Вместо этого возвращается общий ответ `No good match found in KB.`.
 
-    `{"question":"How do I programmatically update my Knowledge Base?"}`
+## <a name="use-debug-query-property"></a>Использование свойства debug в запросе
 
-    [![Указание значения JSON текста в Postman](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-body-json-value.png)](../media/qnamaker-quickstart-get-answer-with-postman/set-postman-body-json-value.png#lightbox)
+Отладочная информация поможет понять, как был определен возвращаемый ответ. Это иногда полезно, но необязательно. Чтобы создать ответ с отладочной информацией, добавьте свойство `debug`:
 
-1. Нажмите кнопку **Send** (Отправить).
-1. Будет возвращен ответ, а также другие сведения, которые могут быть важны для клиентского приложения. 
+1. В Postman измените только объект JSON, добавив свойство `debug`. Теперь JSON будет выглядеть так:
 
-    [![Указание значения JSON текста в Postman](../media/qnamaker-quickstart-get-answer-with-postman/receive-postman-response.png)](../media/qnamaker-quickstart-get-answer-with-postman/receive-postman-response.png#lightbox)
+    ```json
+    {
+        'question':'size',
+        'Debug': {
+            'Enable':true
+        }
 
-## <a name="use-staging-endpoint"></a>Использование промежуточной конечной точки
+    }
+    ```
 
-Если вы хотите получить ответ от промежуточной конечной точки, добавьте к URL-адресу свойство текста `isTest`.
+1. Ответ включает необходимые сведения об ответе. В следующих выходных данных JSON некоторые отладочные сведения заменены многоточиями.
+
+    ```console
+    {
+        "answers": [
+            {
+                "questions": [
+                    "How do I share a knowledge base with others?"
+                ],
+                "answer": "Sharing works at the level of a QnA Maker service, that is, all knowledge bases in the service will be shared. Read [here](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/collaborate-knowledge-base) how to collaborate on a knowledge base.",
+                "score": 56.07,
+                "id": 5,
+                "source": "https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting",
+                "metadata": [],
+                "context": {
+                    "isContextOnly": false,
+                    "prompts": []
+                }
+            }
+        ],
+        "debugInfo": {
+            "userQuery": {
+                "question": "How do I programmatically update my Knowledge Base?",
+                "top": 1,
+                "userId": null,
+                "strictFilters": [],
+                "isTest": false,
+                "debug": {
+                    "enable": true,
+                    "recordL1SearchLatency": false,
+                    "mockQnaL1Content": null
+                },
+                "rankerType": 0,
+                "context": null,
+                "qnaId": 0,
+                "scoreThreshold": 0.0
+            },
+            "rankerInfo": {
+                "specialFuzzyQuery": "how do i programmatically~6 update my knowledge base",
+                "synonyms": "what s...",
+                "rankerLanguage": "English",
+                "rankerFileName": "https://qnamakerstore.blob.core.windows.net/qnamakerdata/rankers/ranker-English.ini",
+                "rankersDirectory": "D:\\home\\site\\wwwroot\\Data\\QnAMaker\\rd0003ffa60fc45.24.0\\RankerData\\Rankers",
+                "allQnAsfeatureValues": {
+                    "WordnetSimilarity": {
+                        "5": 0.54706300120043716,...
+                    },
+                    ...
+                },
+                "rankerVersion": "V2",
+                "rankerModelType": "TreeEnsemble",
+                "rankerType": 0,
+                "indexResultsCount": 25,
+                "reRankerResultsCount": 1
+            },
+            "runtimeVersion": "5.24.0",
+            "indexDebugInfo": {
+                "indexDefinition": {
+                    "name": "064a4112-bd65-42e8-b01d-141c4c9cd09e",
+                    "fields": [...
+                    ],
+                    "scoringProfiles": [],
+                    "defaultScoringProfile": null,
+                    "corsOptions": null,
+                    "suggesters": [],
+                    "analyzers": [],
+                    "tokenizers": [],
+                    "tokenFilters": [],
+                    "charFilters": [],
+                    "@odata.etag": "\"0x8D7A920EA5EE6FE\""
+                },
+                "qnaCount": 117,
+                "parameters": {},
+                "azureSearchResult": {
+                    "continuationToken": null,
+                    "@odata.count": null,
+                    "@search.coverage": null,
+                    "@search.facets": null,
+                    "@search.nextPageParameters": null,
+                    "value": [...],
+                    "@odata.nextLink": null
+                }
+            },
+            "l1SearchLatencyInMs": 0,
+            "qnaL1Results": {...}
+        },
+        "activeLearningEnabled": true
+    }
+    ```
+
+## <a name="use-test-knowledge-base"></a>Использование тестовой базы знаний
+
+Если вы хотите получить ответ от тестовой базы знаний, используйте в тексте свойство `isTest`.
+
+В Postman измените только объект JSON в запросе, добавив свойство `isTest`. Теперь JSON будет выглядеть так:
+
+```json
+{
+    'question':'size',
+    'isTest': true
+}
+```
+
+В ответе в формате JSON используется та же схема, что и в запросе к опубликованной базе знаний.
+
+> [!NOTE]
+> Если тестовая и опубликованная базы знаний полностью совпадают, незначительные вариации могут возникать из-за того, что тестовый индекс является общим для всех баз знаний в ресурсе.
+
+## <a name="query-for-a-chit-chat-answer"></a>Запрос ответа в беседе
+
+1. В Postman измените только объект JSON, включив инструкцию завершения диалога от пользователя. Теперь JSON будет выглядеть так:
+
+    ```json
+    {
+        'question':'thank you'
+    }
+    ```
+
+1. Результат содержит оценку и ответ.
+
+    ```json
+    {
+      "answers": [
+          {
+              "questions": [
+                  "I thank you",
+                  "Oh, thank you",
+                  "My sincere thanks",
+                  "My humblest thanks to you",
+                  "Marvelous, thanks",
+                  "Marvelous, thank you kindly",
+                  "Marvelous, thank you",
+                  "Many thanks to you",
+                  "Many thanks",
+                  "Kthx",
+                  "I'm grateful, thanks",
+                  "Ahh, thanks",
+                  "I'm grateful for that, thank you",
+                  "Perfecto, thanks",
+                  "I appreciate you",
+                  "I appreciate that",
+                  "I appreciate it",
+                  "I am very thankful for that",
+                  "How kind, thank you",
+                  "Great, thanks",
+                  "Great, thank you",
+                  "Gracias",
+                  "Gotcha, thanks",
+                  "Gotcha, thank you",
+                  "Awesome thanks!",
+                  "I'm grateful for that, thank you kindly",
+                  "thank you pal",
+                  "Wonderful, thank you!",
+                  "Wonderful, thank you very much",
+                  "Why thank you",
+                  "Thx",
+                  "Thnx",
+                  "That's very kind",
+                  "That's great, thanks",
+                  "That is lovely, thanks",
+                  "That is awesome, thanks!",
+                  "Thanks bot",
+                  "Thanks a lot",
+                  "Okay, thanks!",
+                  "Thank you so much",
+                  "Perfect, thanks",
+                  "Thank you my friend",
+                  "Thank you kindly",
+                  "Thank you for that",
+                  "Thank you bot",
+                  "Thank you",
+                  "Right on, thanks very much",
+                  "Right on, thanks a lot",
+                  "Radical, thanks",
+                  "Rad, thanks",
+                  "Rad thank you",
+                  "Wonderful, thanks!",
+                  "Thanks"
+              ],
+              "answer": "You're welcome.",
+              "score": 100.0,
+              "id": 75,
+              "source": "qna_chitchat_Professional.tsv",
+              "metadata": [
+                  {
+                      "name": "editorial",
+                      "value": "chitchat"
+                  }
+              ],
+              "context": {
+                  "isContextOnly": false,
+                  "prompts": []
+              }
+          }
+      ],
+      "debugInfo": null,
+      "activeLearningEnabled": true
+    }
+    ```
+
+    Так как вопрос `Thank you` точно соответствует вопросу в беседе, достоверность QnA Maker составляет 100 %. QnA Maker также возвращает все связанные вопросы и свойство метаданных, содержащее сведения о теге метаданных беседы.
+
+## <a name="use-threshold-and-default-answer"></a>Использование порога и ответа по умолчанию
+
+Вы можете запросить минимальный порог для возвращаемого ответа. Если указанное пороговое значение не достигается, возвращается ответ по умолчанию.
+
+1. В Postman измените только объект JSON, включив инструкцию завершения диалога от пользователя. Теперь JSON будет выглядеть так:
+
+    ```json
+    {
+        'question':'size',
+        'scoreThreshold':80.00
+    }
+    ```
+
+    База знаний не должна найти этот ответ, так как оценка вопроса составляет всего 71 %, поэтому вместо него возвращается ответ по умолчанию, указанный при создании базы знаний.
+
+    Ответ JSON, содержащий оценку и ответ, будет выглядеть так:
+
+    ```json
+    {
+        "answers": [
+            {
+                "questions": [],
+                "answer": "No good match found in KB.",
+                "score": 0.0,
+                "id": -1,
+                "source": null,
+                "metadata": []
+            }
+        ],
+        "debugInfo": null,
+        "activeLearningEnabled": true
+    }
+    ```
+
+    QnA Maker возвращает оценку `0`. Это означает, что достоверного ответа нет, но также возвращается ответ по умолчанию.
+
+1. Измените пороговое значение на 60 % и повторите запрос.
+
+    ```json
+    {
+        'question':'size',
+        'scoreThreshold':60.00
+    }
+    ```
+
+    Теперь JSON возвращает найденный ответ.
+
+    ```json
+    {
+        "answers": [
+            {
+                "questions": [
+                    "How large a knowledge base can I create?",
+                    "What is the max size of a knowledge base?",
+                    "How many GB of data can a knowledge base hold?"
+                ],
+                "answer": "The size of the knowledge base depends on the SKU of Azure search you choose when creating the QnA Maker service. Read [here](https://docs.microsoft.com/azure/cognitive-services/qnamaker/tutorials/choosing-capacity-qnamaker-deployment) for more details.",
+                "score": 71.1,
+                "id": 3,
+                "source": "https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting",
+                "metadata": [
+                    {
+                        "name": "link_in_answer",
+                        "value": "true"
+                    },
+                    {
+                        "name": "server",
+                        "value": "qna_maker"
+                    }
+                ],
+                "context": {
+                    "isContextOnly": false,
+                    "prompts": []
+                }
+            }
+        ],
+        "debugInfo": null,
+        "activeLearningEnabled": true
+    }
+    ```

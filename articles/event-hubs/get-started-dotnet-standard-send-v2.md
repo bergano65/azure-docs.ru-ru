@@ -11,28 +11,31 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/15/2020
+ms.date: 02/11/2020
 ms.author: spelluru
-ms.openlocfilehash: c8c6e2741eeeadf2afc0c027da8f9cf957c29c95
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 022af5ce0774ff106a29a2ef0bcf3fe11acfda15
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023248"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187203"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs---net-core-azuremessagingeventhubs"></a>Отправка и получение событий с помощью .NET Core в Центрах событий Azure (Azure.Messaging.EventHubs) 
-Центры событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. Собираемые в Центрах событий данные можно сохранять в кластере хранилища или сразу обрабатывать. Например, можно преобразовать данные событий с помощью поставщика данных аналитики в режиме реального времени. Эта возможность сбора и обработки большого объема сведений о событиях — ключевой компонент в современных архитектурах приложений, включая "Интернет вещей". Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
-
-В этом руководстве демонстрируется, как отправлять и получать события через концентратор событий с применением пакета SDK Центров событий для .NET Core. 
+# <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-core-azuremessagingeventhubs"></a>Отправка и получение событий с помощью .NET Core в Центрах событий Azure (Azure.Messaging.EventHubs) 
+В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью библиотеки .NET Core **Azure.Messaging.EventHubs**. 
 
 > [!IMPORTANT]
-> В рамках этого краткого руководства применяется библиотека **Azure.Messaging.EventHubs**. Краткое руководство с примерами для старой библиотеки **Microsoft.Azure.EventHubs** вы найдете [здесь](event-hubs-dotnet-standard-getstarted-send.md). 
+> В рамках этого краткого руководства применяется библиотека **Azure.Messaging.EventHubs**. Краткое руководство, в рамках которого используется старая библиотека **Microsoft.Azure.EventHubs**, можно найти в статье об [отправке и получении событий с помощью библиотеки Microsoft.Azure.EventHubs](event-hubs-dotnet-standard-getstarted-send.md). 
+
+
 
 ## <a name="prerequisites"></a>Предварительные требования
+Если вы впервые используете Центры событий Azure, ознакомьтесь с общими сведениями в [этой статье](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
+
+Для работы с данным руководством необходимо следующее:
 
 - **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
 - **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы можете применять эту библиотеку и с более старыми версиями C#, но тогда некоторые функции будут недоступны.  Чтобы включить эти возможности, настройте [нацеливание на .NET Core 3.0](/dotnet/standard/frameworks#how-to-specify-target-frameworks) или [укажите требуемую версию языка](/dotnet/csharp/language-reference/configure-language-version#override-a-default) (не ниже 8.0). Если вы используете Visual Studio, учитывайте, что версии старше Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
 В этом разделе показано, как создать консольное приложение .NET Core, которое отправляет события в концентратор событий. 
@@ -228,3 +231,4 @@ ms.locfileid: "77023248"
 
 - [Azure Event Hubs samples](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs/samples) (Примеры Центров событий Azure)
 - [Примеры обработчика событий в GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples)
+- [Пример управления доступом на основе ролей (RBAC)](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)

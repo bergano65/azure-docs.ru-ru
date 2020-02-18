@@ -1,21 +1,20 @@
 ---
 title: Руководство. Создание и управление бюджетами Azure | Документация Майкрософт
 description: Это руководство помогает планировать и учитывать расходы на потребляемые услуги Azure.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/22/2020
+ms.date: 02/10/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: adwise
+ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: bb02c4903348a3b8c1d129f02be64109ec0f48eb
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9900a2f7a41a6b35be75326b9412ec628328e39b
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76769813"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132107"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство. Создание бюджетов Azure и управление ими
 
@@ -34,6 +33,7 @@ ms.locfileid: "76769813"
 
 > [!div class="checklist"]
 > * Создание бюджета на портале Azure
+> * Создание и изменение бюджетов с помощью PowerShell
 > * Изменение бюджета
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -62,7 +62,7 @@ ms.locfileid: "76769813"
 
 После создания бюджетов вы увидите упрощенную схему текущих затрат.
 
-Нажмите кнопку **Добавить**.
+Выберите **Добавить**.
 
 ![Пример, в котором показан список уже созданных бюджетов](./media/tutorial-acm-create-budgets/budgets01.png)
 
@@ -78,15 +78,19 @@ ms.locfileid: "76769813"
 
 ![Пример, демонстрирующий создание бюджета с использованием данных о месячных затратах ](./media/tutorial-acm-create-budgets/monthly-budget01.png)
 
-После настройки суммы бюджета щелкните **Далее**, чтобы настроить оповещения бюджета. Для бюджета требуется указать как минимум одно пороговое значение (% бюджета) и соответствующий адрес электронной почты. При необходимости можно добавить не более пяти пороговых значений и пяти адресов электронной почты в один бюджет. При достижении порога бюджета уведомления по электронной почте обычно принимаются менее чем через 20 часов. Дополнительные сведения об уведомлениях см. в статье [Use cost alerts to monitor usage and spending](../../cost-management/cost-mgt-alerts-monitor-usage-spending.md) (Мониторинг использования и расходов с помощью уведомлений о затратах). В приведенном ниже примере оповещение по электронной почте генерируется при достижении 90 % бюджета. При создании бюджета с помощью API бюджетов можно также назначать роли пользователям для получения оповещений. Назначение ролей пользователям не поддерживается на портале Azure. Дополнительные сведения об API бюджетов Azure см. в статье [Budgets](/rest/api/consumption/budgets) (Бюджеты).
+После настройки суммы бюджета выберите **Далее**, чтобы настроить оповещения бюджета. Для бюджета требуется указать как минимум одно пороговое значение (% бюджета) и соответствующий адрес электронной почты. При необходимости можно добавить не более пяти пороговых значений и пяти адресов электронной почты в один бюджет. При достижении порога бюджета уведомления по электронной почте обычно принимаются менее чем через 20 часов.
+
+Если вы хотите получать сообщения по электронной почте, добавьте azure-noreply@microsoft.com в список утвержденных отправителей, чтобы сообщения не отправлялись в папку спама. Дополнительные сведения об уведомлениях см. в статье [Use cost alerts to monitor usage and spending](../../cost-management/cost-mgt-alerts-monitor-usage-spending.md) (Мониторинг использования и расходов с помощью уведомлений о затратах).
+
+В приведенном ниже примере оповещение по электронной почте генерируется при достижении 90 % бюджета. При создании бюджета с помощью API бюджетов можно также назначать роли пользователям для получения оповещений. Назначение ролей пользователям не поддерживается на портале Azure. Дополнительные сведения об API бюджетов Azure см. в статье [Budgets](/rest/api/consumption/budgets) (Бюджеты).
 
 ![Пример отображения условий оповещения](./media/tutorial-acm-create-budgets/monthly-budget-alert.png)
 
-После создания бюджета, отображается анализ затрат. Просмотр бюджета по отношению к вашей тенденции расходов является одним из первых шагов при начале [анализа затраты и расходов](../../cost-management/quick-acm-cost-analysis.md).
+После создания бюджета, отображается анализ затрат. Просмотр бюджета по вашей тенденции расходов является одним из начальных шагов [анализа затраты и расходов](../../cost-management/quick-acm-cost-analysis.md).
 
 ![Пример бюджета и расходов в анализе затрат](./media/tutorial-acm-create-budgets/cost-analysis.png)
 
-В приведенном выше примере вы создали бюджет для подписки. Тем не менее можно также создать бюджет для группы ресурсов. Если вы хотите создать бюджет для группы ресурсов, перейдите к **Cost Management + Billing** (Управление затратами и выставление счетов) &gt; **Подписки** &gt; выберите подписку > **Группа ресурсов** > выберите группу ресурсов > **Бюджеты** > и затем **Добавить** бюджет.
+В приведенном выше примере вы создали бюджет для подписки. Можно также создать бюджет для группы ресурсов. Если вы хотите создать бюджет для группы ресурсов, перейдите к **Cost Management + Billing** (Управление затратами и выставление счетов) &gt; **Подписки** &gt; выберите подписку > **Группа ресурсов** > выберите группу ресурсов > **Бюджеты** > и затем **Добавить** бюджет.
 
 ## <a name="costs-in-budget-evaluations"></a>Затраты на вычисления бюджета
 
@@ -106,12 +110,12 @@ ms.locfileid: "76769813"
 
 
 
-Чтобы создать или обновить группы действий, щелкните **Управление группами действий** во время создания или изменения бюджета.
+Чтобы создать или обновить группы действий, выберите **Управление группами действий** во время создания или изменения бюджета.
 
 ![Пример создания бюджета для отображения управления группами действий](./media/tutorial-acm-create-budgets/manage-action-groups01.png)
 
 
-Затем щелкните **Добавить группу действий** и создайте группу действий.
+Затем выберите **Добавить группу действий** и создайте группу действий.
 
 
 ![Изображение поля "Добавление группы действий"](./media/tutorial-acm-create-budgets/manage-action-groups02.png)
@@ -128,12 +132,42 @@ ms.locfileid: "76769813"
 
 Интеграция бюджета с группами действий работает только для групп действий, для которых отключена общая схема предупреждений. Дополнительные сведения об отключении схемы см. в разделе [How do I enable the common alert schema?](../../azure-monitor/platform/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) (Как включить общую схему оповещений?)
 
+## <a name="create-and-edit-budgets-with-powershell"></a>Создание и изменение бюджетов с помощью PowerShell
+
+Клиенты EA могут создавать и изменять бюджет программным способом с помощью модуля Azure PowerShell.  Чтобы скачать последнюю версию Azure PowerShell, выполните следующую команду.
+
+```azurepowershell-interactive
+install-module -name AzureRm
+```
+
+Следующие примеры команд создают бюджет.
+
+```azurepowershell-interactive
+#Sign into Azure Powershell with your account
+
+Connect-AzureRmAccount
+
+#Select a subscription to to monitor with a budget
+
+select-AzureRmSubscription -Subscription "Your Subscription"
+
+#Create an action group email receiver and corresponding action group
+
+$email1 = New-AzureRmActionGroupReceiver -EmailAddress test@test.com -Name EmailReceiver1
+$ActionGroupId = (Set-AzureRmActionGroup -ResourceGroupName YourResourceGroup -Name TestAG -ShortName TestAG -Receiver $email1).Id
+
+#Create a monthly budget that sends an email and triggers an Action Group to send a second email. Make sure the StartDate for your monthly budget is set to the first day of the current month. Note that Action Groups can also be used to trigger automation such as Azure Functions or Webhooks.
+
+New-AzureRmConsumptionBudget -Amount 100 -Name TestPSBudget -Category Cost -StartDate 2020-02-01 -TimeGrain Monthly -EndDate 2022-12-31 -ContactEmail test@test.com -NotificationKey Key1 -NotificationThreshold 0.8 -NotificationEnabled -ContactGroup $ActionGroupId
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание бюджета на портале Azure
+> * Создание и изменение бюджетов с помощью PowerShell
 > * Изменение бюджета
 
 Перейдите к следующему руководству, чтобы создать повторяющийся экспорт данных управления затратами.

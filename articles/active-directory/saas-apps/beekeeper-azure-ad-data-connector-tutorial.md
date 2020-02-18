@@ -1,0 +1,185 @@
+---
+title: Руководство. Интеграция единого входа Azure Active Directory с Beekeeper Azure AD Data Connector | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Beekeeper Azure AD Data Connector.
+services: active-directory
+documentationCenter: na
+author: jeevansd
+manager: mtillman
+ms.reviewer: barbkess
+ms.assetid: 26c8789a-1bfe-4371-94d5-febe34f0b0e4
+ms.service: active-directory
+ms.subservice: saas-app-tutorial
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.topic: tutorial
+ms.date: 02/04/2020
+ms.author: jeedes
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7484d71c6032b97341537a0564d8d52b3996cc8e
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77050220"
+---
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-beekeeper-azure-ad-data-connector"></a>Руководство. Интеграция единого входа Azure Active Directory с Beekeeper Azure AD Data Connector
+
+В этом руководстве описано, как интегрировать Beekeeper Azure AD Data Connector с Azure Active Directory (Azure AD). Интеграция Beekeeper Azure AD Data Connector с Azure AD обеспечивает следующие возможности:
+
+* контроль доступа к Beekeeper Azure AD Data Connector с помощью Azure AD;
+* включение автоматического входа пользователей в Beekeeper Azure AD Data Connector с использованием учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
+
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Чтобы приступить к работе, потребуется следующее.
+
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Beekeeper Azure AD Data Connector с поддержкой единого входа.
+
+## <a name="scenario-description"></a>Описание сценария
+
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Beekeeper Azure AD Data Connector поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
+* Beekeeper Azure AD Data Connector поддерживает **JIT**-подготовку пользователей.
+* После настройки Beekeeper Azure AD Data Connector можно применять средства для управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+## <a name="adding-beekeeper-azure-ad-data-connector-from-the-gallery"></a>Добавление Beekeeper Azure AD Data Connector из коллекции
+
+Чтобы настроить интеграцию Beekeeper Azure AD Data Connector с Azure AD, нужно добавить Beekeeper Azure AD Data Connector из коллекции в список управляемых приложений SaaS.
+
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Beekeeper Azure AD Data Connector**.
+1. Выберите **Beekeeper Azure AD Data Connector** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+
+
+## <a name="configure-and-test-azure-ad-single-sign-on-for-beekeeper-azure-ad-data-connector"></a>Настройка и проверка единого входа Azure AD для Beekeeper Azure AD Data Connector
+
+Настройте и проверьте единый вход Azure AD в Beekeeper Azure AD Data Connector с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Beekeeper Azure AD Data Connector.
+
+Чтобы настроить и проверить единый вход Beekeeper Azure AD Data Connector, выполните действия из следующих стандартных блоков:
+
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Beekeeper Azure AD Data Connector](#configure-beekeeper-azure-ad-data-connector-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя Beekeeper Azure AD Data Connector](#create-beekeeper-azure-ad-data-connector-test-user)** требуется для того, чтобы в Beekeeper Azure AD Data Connector существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
+
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
+
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
+
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Beekeeper Azure AD Data Connector** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+
+1. Если вам нужно настроить единый вход, инициируемый **поставщиком удостоверений**, и у вас есть **файл метаданных поставщика услуг**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
+
+    а. Щелкните **Отправить файл метаданных**.
+
+    ![Передача файла метаданных](common/upload-metadata.png)
+
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+
+    ![Выбор файла метаданных](common/browse-upload-metadata.png)
+
+    c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
+
+    ![Изображение](common/idp-intiated.png)
+
+    > [!Note]
+    > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
+
+1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<your_company>.beekeeper.io/login`.
+
+    > [!NOTE]
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Beekeeper Azure AD Data Connector](mailto:support@beekeeper.io). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+
+1. Приложение Beekeeper Azure AD Data Connector ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![Изображение](common/default-attributes.png)
+
+1. В дополнение к описанному выше приложение Beekeeper Azure AD Data Connector ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+
+    | Имя | Исходный атрибут|
+    | ------------ | --------- |
+    | firstname | user.givenname |
+    | lastname | user.surname |
+    | email | user.mail |
+    | username | user.principalname |
+    | position | user.jobtitle |
+
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+1. Требуемые URL-адреса вы можете скопировать в разделе **Настройка Beekeeper Azure AD Data Connector**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
+
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Beekeeper Azure AD Data Connector.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. В списке приложений выберите **Beekeeper Azure AD Data Connector**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+## <a name="configure-beekeeper-azure-ad-data-connector-sso"></a>Настройка единого входа в приложении Beekeeper Azure AD Data Connector
+
+Чтобы настроить единый вход на стороне **Beekeeper Azure AD Data Connector**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [службе поддержки Beekeeper Azure AD Data Connector](mailto:support@beekeeper.io). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-beekeeper-azure-ad-data-connector-test-user"></a>Создание тестового пользователя Beekeeper Azure AD Data Connector
+
+В этом разделе объясняется, как создать пользователя Britta Simon в Beekeeper Azure AD Data Connector. Beekeeper Azure AD Data Connector поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Beekeeper Azure AD Data Connector, он создается после выполнения аутентификации.
+
+## <a name="test-sso"></a>Проверка единого входа 
+
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Щелкнув плитку Beekeeper Azure AD Data Connector на Панели доступа, вы автоматически войдете в это приложение, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+## <a name="additional-resources"></a>Дополнительные ресурсы
+
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Использование Beekeeper Azure AD Data Connector с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

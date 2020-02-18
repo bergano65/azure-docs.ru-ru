@@ -1,5 +1,5 @@
 ---
-title: Учебник по предоставлению доступа к ресурсам Azure с помощью RBAC и шаблона Resource Manager
+title: Руководство. Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и шаблона Resource Manager
 description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и шаблона Azure Resource Manager.
 services: role-based-access-control,azure-resource-manager
 documentationCenter: ''
@@ -13,26 +13,26 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 05/15/2019
 ms.author: rolyon
-ms.openlocfilehash: ed143f85b4372348baa1d74b4ec7a7447943a74f
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 96ca4f65d2def5f5004388c533410f09cc2a71fa
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74418486"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138203"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-resource-manager-template"></a>Руководство по предоставлению доступа к ресурсам Azure с помощью RBAC и шаблона Resource Manager
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-resource-manager-template"></a>Руководство. предоставлению доступа к ресурсам Azure с помощью RBAC и шаблона Resource Manager
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. В этом учебнике объясняется, как создать группу ресурсов и предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов. Кроме того, здесь рассматривается процесс развертывания шаблона Resource Manager для предоставления доступа. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.authorization/allversions
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом учебнике объясняется, как создать группу ресурсов и предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов. Кроме того, здесь рассматривается процесс развертывания шаблона Resource Manager для предоставления доступа. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.authorization/allversions
 ).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Предоставление доступа пользователю в области действия группы ресурсов
 > * Проверка развертывания
 > * Очистка
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -63,7 +63,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Откройте группу ресурсов, созданную в предыдущей процедуре. Имя по умолчанию — имя проекта с добавлением **rg**.
 1. В меню слева выберите **Управление доступом (IAM)** .
 1. Выберите **Назначения ролей**. 
@@ -80,7 +80,7 @@ $resourceGroupName = "${projectName}rg"
 Remove-AzResourceGroup -Name $resourceGroupName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)

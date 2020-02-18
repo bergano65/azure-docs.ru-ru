@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Бессерверная служба Azure SignalR с использованием Java
+title: Создание комнаты чата с помощью служб "Функции Azure" и SignalR с использованием Java
 description: Краткое руководство по использованию служб "Функции Azure" и SignalR для создания чат-комнаты.
 author: sffamily
 ms.service: signalr
@@ -7,36 +7,34 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: 9e4e64b99a69e523547bae04146c7460d08bc1df
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 890fc381afe0146e721e084e2dcd7eae9215d004
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59261179"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083197"
 ---
-# <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-java"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с использованием Java
+# <a name="quickstart-use-java-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>Краткое руководство. Создание комнаты чата с помощью служб "Функции Azure" и SignalR с использованием Java
 
-Служба Azure SignalR позволяет легко добавлять в приложение функции реального времени. Функции Azure — бессерверная платформа, которая позволяет выполнять код без необходимости управлять какой-либо инфраструктурой. В этом кратком руководстве вы научитесь использовать службы SignalR и "Функции Azure" для построения бессерверного чат-приложения, работающего в режиме реального времени.
+Служба Azure SignalR позволяет без труда добавлять в приложение функции для работы в реальном времени. Функции Azure — это бессерверная платформа, которая позволяет выполнять код без управления инфраструктурой. В рамках этого краткого руководства вы создадите бессерверное приложение чата на языке Java, работающее в реальном времени, с помощью службы SignalR и Функций.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Это краткое руководство предназначено для macOS, Windows или Linux.
+- Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools#installing). Используется для локального запуска приложений-функций Azure.
 
-Скачайте и установите редактор кодов [Visual Studio Code](https://code.visualstudio.com/).
+   > [!NOTE]
+   > Требуемые привязки службы SignalR в Java поддерживаются только в Azure Functions Core Tools версии 2.4.419 (версия хоста 2.0.12332) или выше.
 
-Установите [Основные инструменты службы "Функции Azure" (версии 2)](https://github.com/Azure/azure-functions-core-tools#installing) для локального запуска приложения "Функции Azure".
+   > [!NOTE]
+   > Чтобы установить расширения, для Azure Functions Core Tools необходимо, чтобы был установлен [пакет SDK для .NET Core](https://www.microsoft.com/net/download). Тем не менее для создания приложения "Функции Azure" для JavaScript не требуются знания платформы .NET.
+
+- [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
+- [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 
 > [!NOTE]
-> Чтобы использовать привязку Службы SignalR в Java, версия основных инструментов службы "Функции Azure" должна быть 2.4.419 или более поздней (версия узла 2.0.12332).
-
-Чтобы установить расширения основных инструментов Функции Azure в настоящее время требуется, чтобы был установлен [пакет SDK для .NET Core](https://www.microsoft.com/net/download). Тем не менее для создания приложения "Функции Azure" для JavaScript не требуются знания платформы .NET.
-
-Для разработки функций приложения с помощью Java, должны быть установлены следующие компоненты:
-
-* [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.
-* [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+> Это краткое руководство предназначено для macOS, Windows или Linux.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -85,7 +83,7 @@ ms.locfileid: "59261179"
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали и запустили бессерверное приложение в режиме реального времени с помощью Maven. Узнайте, как создавать функции Azure на языке Java с нуля.
 

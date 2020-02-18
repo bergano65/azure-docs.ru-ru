@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: a8698bf74d8be4a57d5928b8be74bcf35cee008f
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: 429b8845e49158c906c02773f654c9487ff98d1e
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56586143"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134774"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-nodejs-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Node.js и Azure Cosmos DB
 
@@ -24,17 +24,13 @@ ms.locfileid: "56586143"
 > * [Python](create-cassandra-python.md)
 >  
 
-В этом руководстве показано, как использовать Node.js и [API Cassandra](cassandra-introduction.md) Azure Cosmos DB для создания приложения профиля путем клонирования примера с сайта GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB на веб-портале Azure.
-
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, таблицы, пары "ключ — значение" и базы данных графов, используя возможности глобального распределения и горизонтального масштабирования Azure Cosmos DB. 
+В этом кратком руководстве вы создадите учетную запись API Cassandra Azure Cosmos DB и используете приложение Cassandra Node.js, клонированное из GitHub, чтобы создать базу данных и контейнер Cassandra. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
-
-Кроме того, вам потребуется:
-* [Node.js](https://nodejs.org/en/) версии 0.10.29 или более поздней.
-* [Git](https://git-scm.com/)
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure.
+- [Node.js 0.10.29+](https://nodejs.org/).
+- [Git](https://www.git-scm.com/downloads).
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -46,7 +42,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь необходимо клонировать приложение API Cassandra из GitHub, задать строку подключения и запустить приложение. Вы узнаете, как можно упростить работу с данными программным способом. 
 
-1. Откройте окно командной строки. Создайте папку с именем `git-samples`. Затем закройте командную строку.
+1. Откройте командную строку. Создайте папку с именем `git-samples`. Затем закройте командную строку.
 
     ```bash
     md "C:\git-samples"
@@ -66,7 +62,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Все фрагменты кода взяты из файла `uprofile.js`, расположенного в папке `C:\git-samples\azure-cosmos-db-cassandra-nodejs-getting-started`. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
+Это необязательный шаг. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Все фрагменты кода взяты из файла `uprofile.js`, расположенного в папке `C:\git-samples\azure-cosmos-db-cassandra-nodejs-getting-started`. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
 
 * Для указания имени пользователя и пароля используется страница строки подключения на портале Azure. `path\to\cert` указывает путь к сертификату X509. 
 
@@ -117,7 +113,7 @@ Azure Cosmos DB — это глобально распределенная мн
     ...
        {
           query: 'INSERT INTO  uprofile.user  (user_id, user_name , user_bcity) VALUES (?,?,?)',
-          params: [5, 'IvanaV', 'Belgaum', '2017-10-3136']
+          params: [5, 'IvanaV', 'Belgaum']
         }
     ];
     client.batch(queries, { prepare: true}, next);
@@ -156,9 +152,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Строка подключения обеспечивает обмен данными между вашим приложением и размещенной базой данных.
 
-1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
+1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-    Вы можете использовать кнопку ![Кнопка "Скопировать"](./media/create-cassandra-nodejs/copy.png) в правой части экрана, чтобы скопировать значение параметра Contact point (Контакт).
+    Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-nodejs/copy.png) в правой части экрана, чтобы скопировать значение параметра Contact point (Контакт).
 
     ![Просмотр и копирование значений параметров Contact point (Контакт), "Пользователь" и "Пароль" с портала Azure (на странице строки подключения)](./media/create-cassandra-nodejs/keys.png)
 
@@ -204,7 +200,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     ![Просмотр и проверка выходных данных](./media/create-cassandra-nodejs/output.png)
 
-    Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
+    Нажмите клавиши Ctrl+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
@@ -218,9 +214,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве описано, как создать учетную запись Azure Cosmos DB и контейнер с помощью обозревателя данных, а также как запустить приложение. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB. 
+Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB с помощью API Cassandra и запустить приложение Cassandra Node.js, которое создает базу данных и контейнер Cassandra. Теперь вы можете импортировать дополнительные данные в учетную запись Azure Cosmos DB. 
 
 > [!div class="nextstepaction"]
 > [Импорт данных Cassandra в Azure Cosmos DB](cassandra-import-data.md)

@@ -5,22 +5,22 @@ services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 12/02/2019
+ms.date: 02/07/2019
 ms.author: alzam
-ms.openlocfilehash: 19aa029311584b5a9762691d24ed10c1666a032c
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: b3508c4c8da5b4987fb5f38cf3bf701f2dda1097
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781731"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77122031"
 ---
-# <a name="tutorial-create-a-user-vpn-connection-by-using-azure-virtual-wan"></a>Руководство по созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
+# <a name="tutorial-create-a-user-vpn-connection-by-using-azure-virtual-wan"></a>Руководство. созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
 
 В этом руководстве показано, как настроить проверку подлинности Azure AD для VPN пользователей в Виртуальной глобальной сети для подключения к ресурсам в Azure через VPN-подключение OpenVPN. Проверка подлинности Azure Active Directory доступна только для шлюзов, использующих протокол OpenVPN и клиенты под управлением Windows.
 
 Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание глобальной сети.
@@ -35,7 +35,7 @@ ms.locfileid: "74781731"
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwanp2s.png)
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -86,19 +86,17 @@ ms.locfileid: "74781731"
 
 Конфигурации подключения "точка — сеть" определяет параметры для подключения удаленных клиентов.
 
-1. Установите следующие переменные, заменив по мере необходимости значения в вашей среде.
+1. В своей виртуальной глобальной сети щелкните **Пользовательские конфигурации VPN**.
 
-   ```powershell
-   $aadAudience = "00000000-abcd-abcd-abcd-999999999999"
-   $aadIssuer = "https://sts.windows.net/00000000-abcd-abcd-abcd-999999999999/"
-   $aadTenant = "https://login.microsoftonline.com/00000000-abcd-abcd-abcd-999999999999"    
-   ```
+   ![новая конфигурация](media/virtual-wan-point-to-site-azure-ad/aadportal1.jpg)
 
-2. Чтобы создать конфигурацию, выполните следующие команды:
+2. Щелкните **+Создать пользовательскую конфигурацию VPN**.
 
-   ```powershell
-   $aadConfig = New-AzVpnServerConfiguration -ResourceGroupName <ResourceGroup> -Name newAADConfig -VpnProtocol OpenVPN -VpnAuthenticationType AAD -AadTenant $aadTenant -AadIssuer $aadIssuer -AadAudience $aadAudience -Location westcentralus
-   ```
+   ![новая конфигурация](media/virtual-wan-point-to-site-azure-ad/aadportal2.jpg)
+
+3. Введите данные и нажмите кнопку **Создать**.
+
+   ![новая конфигурация](media/virtual-wan-point-to-site-azure-ad/aadportal3.jpg)
 
 ## <a name="hub"></a>Изменение назначения концентратора
 
@@ -125,7 +123,7 @@ ms.locfileid: "74781731"
 
 ## <a name="configure-user-vpn-clients"></a>Настройка VPN-клиентов пользователя
 
-Для подключения необходимо скачать VPN-клиент Azure (Предварительная версия) и импортировать профиль VPN-клиента, скачанный на предыдущих шагах на каждый компьютер, который нужно подключить к виртуальной сети.
+Для подключения необходимо скачать VPN-клиент Azure и импортировать профиль VPN-клиента, скачанный на предыдущих шагах, на каждый компьютер, который нужно подключить к виртуальной сети.
 
 > [!NOTE]
 > Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
@@ -133,7 +131,7 @@ ms.locfileid: "74781731"
 
 #### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
 
-Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure (Предварительная версия).
+Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure.
 
 #### <a name="import"></a>Импорт профиля клиента
 
@@ -205,6 +203,6 @@ ms.locfileid: "74781731"
 Remove-AzureRmResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).

@@ -9,17 +9,17 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: 149ec84732171cd57b3f8a9590d5340107536eac
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 894c9d34f3e9874a51f5939021f908ac4ecaaaa9
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75928106"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156656"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
@@ -42,7 +42,7 @@ ms.locfileid: "75928106"
 1. В поле **Project Name** (Имя проекта) введите **csharp-unity**.
 1. В области **Templates** (Шаблоны) выберите **3D**.
 1. В поле **Location** (Расположение) укажите или создайте папку, в которой будет сохранен проект.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 Через некоторое время отобразится окно Unity Editor.
 
@@ -90,7 +90,7 @@ ms.locfileid: "75928106"
 
 1. Найдите и замените строку `YourSubscriptionKey` ключом подписки службы "Речь".
 
-1. Найдите строку `YourServiceRegion` и замените ее на [регион](~/articles/cognitive-services/Speech-Service/regions.md) своей подписки. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
+1. Найдите строку `YourServiceRegion` и замените ее параметром пакета SDK для службы "Речь" на основе [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
 
 1. Сохраните изменения в скрипте.
 

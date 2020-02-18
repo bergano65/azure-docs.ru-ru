@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/12/2019
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1aa2d58a40c623cc451ca30aaa9d75a4a6b3d4c0
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 7902112c1694bacfeb45b5f20db80d5136642169
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983884"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77047953"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство. Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
 
@@ -45,6 +45,7 @@ ms.locfileid: "76983884"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Azure AD SAML Toolkit поддерживает единый вход, инициируемый **поставщиком службы**.
+* После настройки Azure AD SAML Toolkit можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-azure-ad-saml-toolkit-from-the-gallery"></a>Добавление Azure AD SAML Toolkit из коллекции
 
@@ -76,17 +77,17 @@ ms.locfileid: "76983884"
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Azure AD SAML Toolkit** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры. Параметры можно получить на странице настройки SAML в наборе средств SAML. 
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения для следующих полей.
 
-    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://samltoolkit.azurewebsites.net/SAML/Login/<3digitnumber>`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://samltoolkit.azurewebsites.net/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://samltoolkit.azurewebsites.net`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://samltoolkit.azurewebsites.net/SAML/Consume/<3digitnumber>`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://samltoolkit.azurewebsites.net/SAML/Consume`
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -173,3 +174,7 @@ ms.locfileid: "76983884"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте Azure AD SAML Toolkit с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Как Cloud App Security помогает защитить среду Azure](https://docs.microsoft.com/cloud-app-security/protect-azure)

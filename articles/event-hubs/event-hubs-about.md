@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 242f2fa9885f3f85439caddd061f650baafb8df4
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: e8a91647d7532a9904901c247bb0b4096ffa0a1c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314411"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161704"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Центры событий Azure — платформа потоковой передачи больших данных и служба приема событий
 Центры событий Azure представляют собой платформу потоковой передачи больших данных и службу приема событий. Она может получать и обрабатывать миллионы событий в секунду. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения.
@@ -61,7 +61,7 @@ ms.locfileid: "68314411"
 
 [Центры событий для экосистем Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) позволяют клиентам и приложениям [Apache Kafka (версии 1.0 и более поздних)](https://kafka.apache.org/) работать со службой "Центры событий". Вам не нужно устанавливать, настраивать собственные кластеры Kafka и управлять ими.
 
-Благодаря широкому спектру поддерживаемых экосистем [на различных языках (.NET, Java, Python, Go, Node.js)](https://github.com/Azure/azure-event-hubs) вы сможете с легкостью приступить к обработке потоков из Центров событий. Все поддерживаемые языки клиентов реализуют низкоуровневую интеграцию. Экосистема также обеспечивает тесную интеграцию со службами Azure (Azure Stream Analytics и Функции Azure), что позволяет создавать бессерверную архитектуру.
+Благодаря широкому спектру поддерживаемых экосистем [на различных языках (.NET, Java, Python, Go, JavaScript)](https://github.com/Azure/azure-event-hubs) вы сможете с легкостью приступить к обработке потоков из Центров событий. Все поддерживаемые языки клиентов реализуют низкоуровневую интеграцию. Экосистема также обеспечивает тесную интеграцию со службами Azure (Azure Stream Analytics и Функции Azure), что позволяет создавать бессерверную архитектуру.
 
 ## <a name="key-architecture-components"></a>Основные компоненты архитектуры
 Центры событий содержат следующие [основные компоненты](event-hubs-features.md):
@@ -77,15 +77,14 @@ ms.locfileid: "68314411"
 ![Центры событий](./media/event-hubs-about/event_hubs_architecture.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с Центрами событий Azure, см. следующие руководства по **отправке и приему событий**:
 
-- [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
-- [.NET Framework](event-hubs-dotnet-framework-getstarted-send.md)
-- [Java](event-hubs-java-get-started-send.md)
-- [Python](event-hubs-python-get-started-send.md)
-- [Node.js](event-hubs-node-get-started-send.md)
+- [.NET Core](get-started-dotnet-standard-send-v2.md)
+- [Java](get-started-java-send-v2.md)
+- [Python](get-started-python-send-v2.md)
+- [JavaScript](get-started-java-send-v2.md)
 - [GO](event-hubs-go-get-started-send.md)
 - [C (только отправка)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (только получение)](event-hubs-storm-getstarted-receive.md)

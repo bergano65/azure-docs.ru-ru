@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 02/12/2020
 ms.author: erhopf
-ms.openlocfilehash: 2def0eaa2e1ee22498202228cf62257605d940e5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 657cf0a0648cd53e5692a2cf5333ba29951b77a4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75380326"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189123"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения на базе пакета SDK для речевых устройств в Android
 
@@ -25,7 +25,7 @@ ms.locfileid: "75380326"
 
 Исходный код для примера приложения входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать использовать пакет SDK для речевых устройств, необходимо:
 
@@ -34,7 +34,7 @@ ms.locfileid: "75380326"
 - Загрузить последнюю версию [пакета SDK для речевых устройств](https://aka.ms/sdsdk-download) и извлечь ZIP-файл в свой рабочий каталог.
 
   > [!NOTE]
-  > Файл Android-Sample-Release.zip содержит пример приложения для Android. В этом кратком руководстве предполагается, что приложение распаковано в папку "C:\SDSDK\Android-Sample-Release".
+  > В этом кратком руководстве предполагается, что приложение извлечено в папку C:\SDSDK\Android-Sample-Release.
 
 - Получение [ключа подписки Azure для службы "Речь"](get-started.md)
 
@@ -83,6 +83,29 @@ ms.locfileid: "75380326"
 
 1. Перейдите в каталог C:\SDSDK\Android-Sample-Release\example. Нажмите кнопку **ОК**, чтобы открыть пример проекта.
 
+1. Настройте в Gradle ссылку на пакет SDK для службы "Речь". Указанные ниже файлы можно найти в разделе **Gradle Scripts** (Скрипты Gradle) в Android Studio.
+
+    Обновите **build.gradle(Project:example)** , чтобы блок allprojects соответствовал приведенному ниже. Для этого необходимо добавить строки maven.
+
+    ```xml
+    allprojects {
+        repositories {
+            google()
+            jcenter()
+            mavenCentral()
+            maven {
+                url 'https://csspeechstorage.blob.core.windows.net/maven/'
+            }
+        }
+    }
+    ```
+
+    Обновите **build.gradle(Module:app)** , добавив следующую строку в раздел зависимостей. 
+    
+    ```xml
+    implementation'com.microsoft.cognitiveservices.speech:client-sdk:1.9.0'
+    ```
+    
 1. Добавьте свой ключ подписки на речевые службы в исходный код. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
 
    При использовании служб речи и LUIS ваша информация отправляется в MainActivity.java:

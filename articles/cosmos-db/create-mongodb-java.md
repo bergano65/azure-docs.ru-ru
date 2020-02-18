@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 12/26/2018
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 05a796e5bf197bf9ea4f8f47adfbf30851b300ca
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 35c6944ddcfac1553ffb2c1cc28472f2a56d4515
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445502"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77061726"
 ---
 # <a name="quickstart-create-a-console-app-with-java-and-the-mongodb-api-in-azure-cosmos-db"></a>Краткое руководство. Создание консольного приложения с использованием Java и API MongoDB в Azure Cosmos DB
 
@@ -27,18 +27,13 @@ ms.locfileid: "75445502"
 > * [Golang](create-mongodb-golang.md)
 >  
 
-В этом кратком руководстве используется API Azure Cosmos DB для Mongo DB и пакет SDK Java для создания консольного веб-приложения. Azure Cosmos DB позволяет быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования Cosmos DB.
+В этом кратком руководстве вы создадите учетную запись API Azure Cosmos DB для MongoDB и будете управлять ею из портала Azure, после чего добавите данные с помощью приложения Java SDK, клонированного из GitHub. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
 
-В этом кратком руководстве показано, как создать учетную запись Cosmos с [API Azure Cosmos DB для MongoDB](mongodb-introduction.md). Затем вы создадите и развернете веб-приложение с использованием [драйвера Java MongoDB](https://docs.mongodb.com/ecosystem/drivers/java/). 
-
-## <a name="prerequisites"></a>предварительные требования
-
-Для выполнения этого примера вам потребуется:
-* [Установка JDK для Azure и Azure Stack JDK версии 8](https://aka.ms/azure-jdks)
-* Maven (если у вас нет Maven, выполните `apt-get install maven`).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-[!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
+## <a name="prerequisites"></a>Предварительные требования
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) со строкой подключения `.mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10255/admin?ssl=true`.
+- [Комплект SDK для Java (JDK) версии 8](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts&architecture=x86-64-bit&package=jdk). 
+- [Maven](https://maven.apache.org/download.cgi). Или выполните команду `apt-get install maven`, чтобы установить Maven.
+- [Git](https://git-scm.com/downloads). 
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -78,7 +73,9 @@ ms.locfileid: "75445502"
 
 Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
 
-Приведенные ниже фрагменты кода взяты из файла Program.java.
+Приведенные ниже фрагменты кода взяты из файла *Program.java*.
+
+Это консольное приложение использует [драйвер Java для MongoDB](https://docs.mongodb.com/ecosystem/drivers/java/). 
 
 * Инициализация экземпляра DocumentClient.
 
@@ -114,9 +111,9 @@ ms.locfileid: "75445502"
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. В колонке учетной записи щелкните **Быстрый запуск**, выберите **Java**, а затем скопируйте строку подключения в буфер обмена.
+1. В учетной записи Azure Cosmos DB щелкните **Быстрый запуск**, выберите **Java**, а затем скопируйте строку подключения в буфер обмена.
 
-2. Откройте файл `Program.java`, замените аргумент конструктора MongoClientURI строкой подключения. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
+2. Откройте файл *Program.java*, замените аргумент конструктора MongoClientURI строкой подключения. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
     
 ## <a name="run-the-console-app"></a>Запуск консольного приложения
 
@@ -136,7 +133,7 @@ ms.locfileid: "75445502"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать учетную запись и коллекцию Cosmos и запустить консольное приложение. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos.
+Из этого краткого руководства вы узнали, как создать учетную запись API Azure Cosmos DB для MongoDB, добавить базу данных и контейнер с помощью обозревателя данных, а также добавить данные с помощью консольного приложения Java. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos. 
 
 > [!div class="nextstepaction"]
 > [Перенос данных MongoDB в Azure Cosmos DB](mongodb-migrate.md)

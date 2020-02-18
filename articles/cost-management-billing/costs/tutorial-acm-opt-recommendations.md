@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 37253bb4c6001afe436e22597e75e2bc869fbbc8
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 04b3802ae17440fe7cb96b424727600ab53aefce
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75990298"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168765"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство. Рекомендации по оптимизации затрат
 
@@ -79,7 +79,7 @@ ms.locfileid: "75990298"
 
 Обратите внимание на текущий размер виртуальной машины. После проверки на необходимость изменения размера виртуальной машины, закройте сведения о виртуальной машине, чтобы просмотреть список виртуальных машин.
 
-В списке кандидатов для завершения работы или изменения размера выберите **Изменить размер *&lt;FromVirtualMachineSKU&gt;* на *&lt;ToVirtualMachineSKU&gt;***.
+В списке кандидатов для завершения работы или изменения размера выберите **Изменить размер _&lt;FromVirtualMachineSKU&gt;_ на _&lt;ToVirtualMachineSKU&gt;_** .
 ![Пример рекомендации с параметром "Измените размер виртуальной машины"](./media/tutorial-acm-opt-recommendations/resize-vm.png)
 
 После этого вы увидите список доступных параметров для изменения размера. Выберите тот, который обеспечит вашему сценарию самую лучшую производительность и экономичность. В следующем примере выбранный параметр меняет размер с **Standard_D8s_v3** на **Standard_D2s_v3**.

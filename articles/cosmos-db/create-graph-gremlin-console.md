@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/23/2019
 ms.author: lbosq
-ms.openlocfilehash: b873cdc65ed483836dc4c3cf9904a8fab1d2f09f
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: 78dfbabdcddaafefe77711e8f7b0ea1028f15c58
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75665179"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117909"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -33,7 +33,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Консоль Gremlin создана на базе Groovy и Java и работает на компьютерах Linux, Mac и Windows. Ее можно скачать с [сайта Apache TinkerPop](https://tinkerpop.apache.org/downloads.html).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для создания учетной записи Azure Cosmos DB во время работы с этим кратким руководством вам потребуется подписка Azure.
 
@@ -49,11 +49,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmos-db-create-graph](../../includes/cosmos-db-create-graph.md)]
 
-## <a id="ConnectAppService"></a>Подключение к службе приложений
+## <a id="ConnectAppService"></a>Подключение к службе приложений или графу
 1. Перед запуском консоли Gremlin создайте или измените файл конфигурации remote-secure.yaml в каталоге `apache-tinkerpop-gremlin-console-3.2.5/conf`.
 2. Укажите *узел*, *порт*, *имя пользователя*, *пароль*, *пул подключений* и *сериализатор* согласно определениям в следующей таблице:
 
-    Параметр|Рекомендуемое значение|Description
+    Параметр|Рекомендуемое значение|Описание
     ---|---|---
     Узлы|[*имя_учетной_записи*.**gremlin**.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение **Gremlin URI** на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/. Примечание. Обязательно используйте значение Gremlin, а **не** универсальный код ресурса (URI), который заканчивается на [*имя_учетной_записи*.documents.azure.com] (его использование может привести к появлению исключения Host did not respond in a timely fashion (Узел не ответил вовремя) при попытке выполнить запросы Gremlin позже). 
     порт|443|Задайте значение 443.

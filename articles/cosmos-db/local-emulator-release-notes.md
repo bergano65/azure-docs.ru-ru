@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: milismsft
 ms.author: adrianmi
 ms.date: 06/20/2019
-ms.openlocfilehash: 3878f6d01a2adfff2adc6a22aad20a5f83992b8d
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 4dffe169908d0dd3effa4e46140b5f6696805a3e
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719693"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168651"
 ---
 # <a name="azure-cosmos-emulator---release-notes-and-download-information"></a>Эмулятор Azure Cosmos. Заметки о выпуске и сведения о скачивании
 
@@ -25,6 +25,10 @@ ms.locfileid: "76719693"
 |**Начало работы**|[Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде](local-emulator.md)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="291"></a>2.9.1
+
+- В этом выпуске устранено несколько проблем, связанных с поддержкой API запросов, и восстановлена совместимость с более старыми версиями ОС, такими как Windows Server 2012.
 
 ### <a name="290"></a>2.9.0
 

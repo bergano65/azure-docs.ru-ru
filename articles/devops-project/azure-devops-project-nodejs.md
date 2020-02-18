@@ -16,28 +16,31 @@ ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
 monikerRange: vsts
-ms.openlocfilehash: 11edeb35119e2c598fd83fd89c65ba4dc4679650
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 35eebeaa393ff75ada11752aaf9f195efddfa12b
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256107"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049805"
 ---
 #  <a name="quickstart-create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-projects"></a>Краткое руководство. Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Projects
 
-Azure DevOps Projects представляет собой упрощенный интерфейс, который создает ресурсы Azure и конвейер непрерывной интеграции (CI) и непрерывной доставки (CD) для приложения Node.js в Azure Pipelines.  
+В этом кратком руководстве объясняется, как с помощью простого интерфейса Azure DevOps Projects настроить конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) для приложения Node.js в Azure Pipelines. С помощью Azure DevOps Projects вы можете установить все компоненты, необходимые для разработки, развертывания и мониторинга приложения. 
 
-Если у вас нет подписки Azure, вы можете получить ее бесплатно с помощью [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/).
+## <a name="prerequisites"></a>Предварительные требования
+
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно. 
+- Организация и учетная запись [Azure DevOps](https://azure.microsoft.com/services/devops/).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 DevOps Projects позволяет создать конвейер CI/CD в Azure Pipelines. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Projects также создает ресурсы Azure в требуемой подписке Azure.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com) и на панели слева выберите элемент **Создать ресурс**. 
 
-1. Выберите **Создать ресурс** в области слева и выполните поиск по запросу **DevOps Projects**. 
+   ![Создание ресурса Azure на портале Azure](_img/azure-devops-project-nodejs/create-azure-resource.png)
 
-    ![Создание ресурса настройки непрерывной поставки](_img/azure-devops-project-nodejs/create-azure-resource.png)
+1. Найдите и выберите пункт **DevOps Projects**, а затем щелкните элемент **Создать**.
 
 ## <a name="select-a-sample-application-and-azure-service"></a>Выбор примера приложения и службы Azure
 
@@ -49,19 +52,19 @@ DevOps Projects позволяет создать конвейер CI/CD в Azur
 
 2. Оставьте службу по умолчанию и нажмите кнопку **Далее**.
  
-## <a name="configure-azure-devops-and-an-azure-subscription"></a>Настройка Azure DevOps и подписки Azure 
+## <a name="configure-azure-devops-and-an-azure-subscription"></a>настройка Azure DevOps и подписки Azure; 
 
 1. Создайте новую организацию Azure DevOps или выберите существующую. 
+   
+   1. Введите имя проекта.
+      
+   1. Выберите подписку Azure и расположение, введите имя приложения и нажмите кнопку **Готово**.  
+      Через несколько минут панель мониторинга DevOps Projects отобразится на портале Azure. Пример приложения настраивается в репозитории в организации Azure DevOps, после чего выполняется сборка и развертывание приложения в Azure. Эта панель мониторинга позволяет просматривать репозиторий кода, конвейер CI/CD и приложение в Azure.
+   
+1. Выберите **Обзор**, чтобы просмотреть выполняющееся приложение.
+   
+   ![Представление панели мониторинга для конвейера CI/CD](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
 
-    a. Введите имя проекта.
-
-    b. Выберите подписку Azure и расположение, введите имя приложения и нажмите кнопку **Готово**.  
-    Через несколько минут панель мониторинга DevOps Projects отобразится на портале Azure. Пример приложения настраивается в репозитории в организации Azure DevOps, после чего выполняется сборка и развертывание приложения в Azure. Эта панель мониторинга позволяет просматривать репозиторий кода, конвейер CI/CD и приложение в Azure.
-     
-3. Выберите **Обзор**, чтобы просмотреть выполняющееся приложение.
-
-    ![Представление панели мониторинга для конвейера CI/CD](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
-    
 DevOps Projects автоматически настраивает сборку непрерывной интеграции и триггер выпуска.  Теперь вы готовы к совместной работе над приложением Node.js с использованием процесса CI/CD, который позволяет автоматически развернуть последние результаты работы на веб-сайте.
 
 ## <a name="commit-code-changes-and-execute-cicd"></a>Фиксация изменений, внесенных в код, и выполнение CI/CD
@@ -94,7 +97,7 @@ DevOps Projects создает репозиторий Git в Azure Repos или 
 1. Выберите поле **Состояние** и щелкните значок многоточия (…).  
     После этого откроется меню, в котором можно начать выполнение нескольких действий, таких как постановка новой сборки в очередь, приостановка создания и изменение конвейера сборки.
 
-1. Выберите **Изменить**
+1. Выберите команду **Изменить**.
 
 1. В этой области можно просмотреть различные задачи для конвейера сборки.  
 При сборке выполняются различные задачи, такие как получение исходного кода из репозитория Git, восстановление зависимостей и публикация результатов, используемых для развертывания.
@@ -146,7 +149,7 @@ DevOps Projects создает репозиторий Git в Azure Repos или 
 Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Для этого воспользуйтесь функцией **Удалить** на панели мониторинга DevOps Projects.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки процесса CI/CD конвейеры сборки и выпуска создаются автоматически. Вы можете изменить эти конвейеры сборки и выпуска в соответствии с потребностями вашей команды. См. дополнительные сведения о конвейере CI/CD:
 

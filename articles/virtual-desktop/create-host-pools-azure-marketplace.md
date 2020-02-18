@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: 25dd4810cf8cccab8bcbf211da4f6abbcd147056
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 40659414848adb9be86b6163cf456809e9cb750f
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77020035"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134597"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство. Создание пула узлов с использованием Azure Marketplace
 
@@ -65,6 +65,10 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 В колонке **Configure virtual machines** (Настройка виртуальных машин) сделайте следующее:
 
 1. Примите значения по умолчанию или укажите количество и размер виртуальных машин.
+    
+    >[!NOTE]
+    >Если конкретный размер виртуальной машины не отображается в селекторе размеров виртуальных машин, это связано с тем, что мы еще не подключили этот размер к средству Azure Marketplace. Чтобы запросить размер виртуальной машины, создайте новый запрос или проголосуйте за существующий на [форуме UserVoice по Виртуальному рабочему столу Windows](https://windowsvirtualdesktop.uservoice.com/forums/921118-general).
+    
 2. Введите префикс для имен виртуальных машин. Например, если вы введете имя prefix, имена виртуальных машин будут prefix-0, prefix-1 и т. д.
 3. Выберите **Далее: параметры виртуальной машины**.
 

@@ -1,5 +1,5 @@
 ---
-title: Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD | Документация Майкрософт
+title: Роли классического администратора подписки, роли RBAC Azure и роли Azure AD
 description: 'В этом документе описываются различные роли в Azure: роли классического администратора подписки, роли управления доступом на основе ролей Azure (RBAC), а также роли администратора Azure Active Directory (Azure AD)'
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.date: 10/01/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 1d0966737964c44fc4a6778cdb811a4ecc732ffc
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 08c14135ba17df4de446de5625352c8cffdc60a1
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979313"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138075"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Бессерверная служба Azure SignalR для JavaScript
+title: Использование JavaScript для создания чат-комнаты с помощью служб "Функции Azure" и SignalR
 description: Краткое руководство по использованию служб "Функции Azure" и SignalR для создания чат-комнаты.
 author: sffamily
 ms.service: signalr
@@ -7,28 +7,29 @@ ms.devlang: javascript
 ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: zhshang
-ms.openlocfilehash: eadeb0f0203868c2a1a37190fdd46e47bf26e8f7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2726d5da2613be4ae2065246543d206cf814f353
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450263"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083193"
 ---
-# <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-javascript"></a>Краткое руководство. Создание чат-комнаты с помощью служб "Функции Azure" и SignalR с использованием JavaScript
+# <a name="quickstart-use-javascript-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>Краткое руководство. Использование JavaScript для создания чат-комнаты с помощью служб "Функции Azure" и SignalR
 
-Служба Azure SignalR позволяет легко добавлять в приложение функции реального времени. Функции Azure — бессерверная платформа, которая позволяет выполнять код без необходимости управлять какой-либо инфраструктурой. В этом кратком руководстве вы научитесь использовать службы SignalR и "Функции Azure" для построения бессерверного чат-приложения, работающего в режиме реального времени.
+Служба Azure SignalR позволяет без труда добавлять в приложение функции для работы в режиме реального времени. Функции Azure — это бессерверная платформа, которая позволяет выполнять код без управления инфраструктурой. В рамках этого краткого руководства вы создадите бессерверное чат-приложение на JavaScript, работающее в режиме реального времени, с помощью Службы SignalR и Функций.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Это краткое руководство предназначено для macOS, Windows или Linux.
+- Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools#installing) 2 или более поздней версии. Используется для локального запуска приложений-функций Azure.
+- [Node.js](https://nodejs.org/en/download/) (версия 10.x).
 
-Скачайте и установите редактор кодов [Visual Studio Code](https://code.visualstudio.com/).
+   > [!NOTE]
+   > Примеры должны работать и с другими версиями Node.js. Дополнительные сведения см. в [документации по версиям среды выполнения Функций Azure](../azure-functions/functions-versions.md#languages).
 
-Установите [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools#installing) (версии 2 и выше) для локального запуска приложений-функций Azure.
-
-В этом кратком руководстве используется [Node.js](https://nodejs.org/en/download/) 10.x, но другие версии также должны работать. Дополнительные сведения о поддерживаемых версиях Node.js см. в [этой статье](../azure-functions/functions-versions.md#languages).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+> [!NOTE]
+> Это краткое руководство предназначено для macOS, Windows или Linux.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 

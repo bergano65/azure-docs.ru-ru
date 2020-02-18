@@ -9,13 +9,13 @@ ms.topic: tutorial
 author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
-ms.date: 11/04/2019
-ms.openlocfilehash: 4850a58ae96b9fc5e8293efbac0de447915289ca
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 02/10/2020
+ms.openlocfilehash: 3dc0af3f0d1236e902f6fa845fae95e3f2a500d1
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75763357"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116465"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Руководство. Создание конвейеров Машинного обучения Azure для пакетной оценки
 
@@ -37,10 +37,10 @@ ms.locfileid: "75763357"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет рабочей области Машинного обучения Azure или виртуальной машины записной книжки, выполните инструкции, приведенные в [первой части руководства по установке](tutorial-1st-experiment-sdk-setup.md).
-* Завершив установку, используйте тот же сервер записной книжки, чтобы открыть записную книжку *tutorials/tutorial-pipeline-batch-scoring-classification.ipynb*.
+* Завершив настройку, используйте тот же сервер записных книжек, чтобы открыть записную книжку *tutorials/machine-learning-pipelines-advanced/tutorial-pipeline-batch-scoring-classification.ipynb*.
 
 Если вы хотите открыть руководство по установке в собственной [локальной среде](how-to-configure-environment.md#local), доступ к нему можно получить на [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials). Выполните команду `pip install azureml-sdk[notebooks] azureml-pipeline-core azureml-pipeline-steps pandas requests`, чтобы получить необходимые пакеты.
 
