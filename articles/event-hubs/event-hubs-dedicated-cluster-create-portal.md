@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 12/20/2019
 ms.author: femila
-ms.openlocfilehash: 7003cc90bdb456eba9cfaebc1e24332d2e4a6251
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 5b1574eaac8771043e09500225b65e4835c8e627
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77029934"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157488"
 ---
 # <a name="quickstart-create-a-dedicated-event-hubs-cluster-using-azure-portal"></a>Краткое руководство. Создание выделенного кластера Центров событий с помощью портала Azure 
 Кластеры Центров событий предоставляют однотенантные развертывания для удовлетворения самых высоких требований к потоковой передаче. Для этого предложения предусмотрено Соглашение об уровне обслуживания на уровне 99,99 %, доступное только для ценовой категории "Выделенный". [Кластер Центров событий](event-hubs-dedicated-overview.md) может принимать миллионы событий в секунду с гарантированной емкостью и задержкой менее секунды. Пространства имен и концентраторы событий, созданные в кластере, используют все возможности предложения ценовой категории "Стандартный" и даже больше, но без ограничения объема входящих данных. Кроме того, ценовая категория "Выделенный" предоставляет популярную возможность ["Сбор" в Центрах событий](event-hubs-capture-overview.md) без дополнительных затрат, что позволит вам автоматически в пакетном резжиме обрабатывать и передавать потоки данных в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) или [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md).
@@ -106,6 +106,10 @@ ms.locfileid: "77029934"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье описано, как создать кластер Центров событий. Пошаговые инструкции по отправке и получению событий через концентраторы событий и сбору событий в хранилище Azure или Azure Data Lake Store см. в следующих руководствах:
 
-- [Send and receive events on .NET Core](event-hubs-dotnet-standard-getstarted-send.md) (Отправка и получение событий в .NET Core)
+- Отправка и получение событий 
+    - [.NET Core](get-started-dotnet-standard-send-v2.md)
+    - [Java](get-started-java-send-v2.md)
+    - [Python](get-started-python-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)
 - [Использование портала Azure для включения функции "Сбор" в Центрах событий](event-hubs-capture-enable-through-portal.md)
 - [Use Azure Event Hubs for Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) (Использование Центров событий Azure для Apache Kafka)

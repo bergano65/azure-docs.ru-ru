@@ -78,7 +78,9 @@ ms.locfileid: "76758345"
 
     ![Снимок экрана с приглашением](media/quickstart-add-users-portal/quickstart-users-portal-email-small.png)
 
+
 3. В тексте сообщения электронной почты выберите **Начать**. В браузере откроется страница **Проверка разрешений**.
+
 
     ![Снимок экрана со страницей "Проверить разрешения"](media/quickstart-add-users-portal/quickstart-users-portal-accept.png)
 

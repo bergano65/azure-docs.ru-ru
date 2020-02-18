@@ -1,5 +1,5 @@
 ---
-title: Добавление и удаление назначений ролей с помощью Azure RBAC и REST API
+title: Добавление или удаление назначений ролей с помощью RBAC и REST API
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и REST API.
 services: active-directory
 documentationcenter: na
@@ -15,18 +15,18 @@ ms.topic: conceptual
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 3c7b7dac649548b8b21cc13761009c11609c8904
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ae6fce5ab962637fe477ade75cf81b6ac237bdd2
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981038"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138312"
 ---
 # <a name="add-or-remove-role-assignments-using-azure-rbac-and-the-rest-api"></a>Добавление и удаление назначений ролей с помощью Azure RBAC и REST API
 
 в [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] этой статье описывается назначение ролей с помощью REST API.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для добавления или удаления назначений ролей необходимо иметь следующее:
 
@@ -57,22 +57,22 @@ ms.locfileid: "75981038"
 
 1. Внутри URI замените *{scope}* областью для назначения роли.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
 
 1. В тексте запроса замените *{Scope}* областью для назначения роли.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleDefinitionId}* идентификатором определения роли.
@@ -93,11 +93,11 @@ ms.locfileid: "75981038"
 
 1. Внутри URI замените *{scope}* областью для удаления назначения роли.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.

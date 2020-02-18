@@ -52,6 +52,17 @@
         - name: Инструкции по развертыванию
           displayName: 'standards, cis'
           href: ./samples/cis-azure-1.1.0/deploy.md
+    - name: "Уровень влияния DoD\_4"
+      items:
+        - name: Обзор
+          displayName: 'standards, DoD, IL4'
+          href: ./samples/dod-impact-level-4/index.md
+        - name: Сопоставление элементов управления
+          displayName: 'standards, DoD, IL4'
+          href: ./samples/dod-impact-level-4/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, DoD, IL4'
+          href: ./samples/dod-impact-level-4/deploy.md
     - name: FedRAMP — средний уровень
       items:
         - name: Обзор

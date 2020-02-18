@@ -6,14 +6,14 @@ author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 01/28/2020
+ms.date: 02/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3ea5b63642328db6996a322e64360c3af5d757b2
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 8fc58c1bcf594bf7d5660399be42b55b09bc7e3d
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022483"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186902"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -82,13 +82,16 @@ ms.locfileid: "77022483"
 | **[Aryaka Networks](https://www.aryaka.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Далласе, Гонконг, САР Сан-Паулу, Сиэтл, Silicon впадина, Сингапур, Токио, Вашингтон (округ Колумбия) |
 | **[Ascenty Data Centers](https://www.ascenty.com/en/cloud/microsoft-express-route)** |Поддерживается |Поддерживается |Сан-Паулу |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживается |Поддерживается |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Сидней, Сингапур, Токио, Торонто, Чикаго |
+| **[бккс](https://www.bcx.co.za/solutions)** |Поддерживается |Поддерживается |Кабо — городской|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Поддерживается |Поддерживается |Квебек, Монреаль, Торонто |
 | **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Поддерживается |Поддерживается |Амстердам, Гонконг, САР, Йоханнесбург, Лондон, Ньюпорт (штат Вашингтон), Сан-Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[C3ntro](https://www.c3ntro.com/data1/express-route1.php)** |Поддерживается |Поддерживается |Майами |
 | **CDC** | Поддерживается | Поддерживается | Канберра, Канберра 2 |
-| **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Amsterdam2, Чикаго, Гонконг, Лас деньги, Нью Йорк, Париж, Сан Сан Антонио, Silicon впадина, Токио, Торонто, Вашингтон (округ Колумбия), штат Вашингтон |
+| **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Amsterdam2, Чикаго, Гонконг, Лас деньги, London2, Нью Йорк, Париж, Сан Сан Антонио, Silicon впадина, Токио, Торонто, Вашингтон (округ Колумбия), штат Вашингтон |
 | **[Главный телекоммуникации](https://www.chief.com.tw/dispPageBox/ct.aspx?ddsPageID=ENCLOUDSERVICE&dbid=4852937342)** |Поддерживается |Поддерживается |Гонконг (САР), Тайбэй |
+| **Китайский (Международная)** |Поддерживается |Поддерживается | Сингапур |
 | **China Telecom Global** |Поддерживается |Поддерживается |Гонконг, САР |
+| **Уником (Китайская, Глобальная)** |Поддерживается |Поддерживается | Сингапур 2 |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Поддерживается |Поддерживается |Чикаго, Даллас, Монреаль, Торонто, Вашингтон (округ Колумбия) |
 | **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Чикаго, Дублин, Франкфурт, Лондон, London2, Ньюпорт, Нью Йорк, Осака, Париж, впадина, Silicon Valley2, Сингапур 2, Токио, Вашингтон (округ Колумбия) |
 | **[Comcast](https://business.comcast.com/landingpage/microsoft-azure)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
@@ -99,19 +102,19 @@ ms.locfileid: "77022483"
 | **eir** |Поддерживается |Поддерживается |Дублин|
 | **[Глобальная связь Эпсилон](https://www.epsilontel.com/solutions/direct-cloud-connect)** |Поддерживается |Поддерживается |Сингапур, Сингапур 2 |
 | **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Чикаго, Далласе, Дублин, Франкфурт, Geneva, Гонконг, САР, Лондон, London2, Лос-Анджелес, Мельбурн, Майами, Нью-Йорк, Осака, Париж, Сан--Паулу, Сиэтл, впадина, Сингапур, Стокгольм, Вашингтон, округ Колумбия |
-| **Етисалат ОАЭ** |Поддерживается |Поддерживается |Дубай|
+| **Етисалат ОАЭ** |Поддерживается |Поддерживается |Дубаи|
 | **[еунетворкс](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Дублин, Лондон |
-| **фареастоне** |Поддерживается |Поддерживается |Тайбэй;|
+| **фареастоне** |Поддерживается |Поддерживается |Тайбэй|
 | **GÉANT** |Поддерживается |Поддерживается |Амстердам, Франкфурт, Марселе |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживается| Поддерживается | Ченнаи, Мумбаи |
-| **интелсат** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2; |
+| **интелсат** | Поддерживается | Поддерживается | Штат Вашингтон DC2 |
 | **[InterCloud](https://www.intercloud.com/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Гонконг, Лондон, Нью Йорк, Париж, Silicon впадина, Сингапур, Вашингтон (округ Колумбия), Цюрих |
 | **[Internet2](https://www.internet2.edu/products-services/cloud-services-applications/microsoft-azure/#service-cloud-connect)** |Поддерживается |Поддерживается |Чикаго, Dallas, Silicon впадин, Вашингтон (округ Колумбия) |
 | **[Internet Initiative Japan Inc. - IIJ](https://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |Поддерживается |Поддерживается |Осака, Токио |
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург, Лондон |
 | **[Interxion](https://www.interxion.com/why-interxion/colocate-with-the-clouds/Microsoft-Azure/)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Копенгаген, Дублин, Франкфурт, Лондон, Марселе, Париж, Цюрих |
 | **[IX Reach](https://www.ixreach.com/partners/cloud-partners/microsoft-azure/)**|Поддерживается |Поддерживается | Амстердам, London2, Silicon впадина, Торонто, Вашингтон (округ Колумбия) |
-| **Жагуар сеть** |Поддерживается |Поддерживается |Марсель|
+| **Жагуар сеть** |Поддерживается |Поддерживается |Марселе|
 | **[JISC](https://www.jisc.ac.uk/microsoft-azure-expressroute)** |Поддерживается |Поддерживается |Лондон |
 | **[KINX](https://www.kinx.net/service/network/cloudhub/ms-expressroute/?lang=en)** |Поддерживается |Поддерживается |Сеул |
 | **[кордиа](https://www.kordia.co.nz/cloudconnect)** | Поддерживается |Поддерживается |О., Сидней |
@@ -154,7 +157,7 @@ ms.locfileid: "77022483"
 | **[Transtelco](https://transtelco.net/enterprise-services/)** |Поддерживается |Поддерживается |Даллас, Лос-Анджелес|
 | **[UOLDIVEO](https://www.uoldiveo.com.br/)** |Поддерживается |Поддерживается |Сан-Паулу |
 | **[Verizon](https://enterprise.verizon.com/products/network/application-enablement/secure-cloud-interconnect/)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Далласе, Гонконг ОАР, Лондон, Мумбаи, Silicon впадина, Сингапур, Сидней, Токио, Торонто, Вашингтон (округ Колумбия) |
-| **[виасат](http://www.directcloud.viasatbusiness.com/)** | Поддерживается | Поддерживается | Вашингтон (округ Колумбия) 2; |
+| **[виасат](http://www.directcloud.viasatbusiness.com/)** | Поддерживается | Поддерживается | Штат Вашингтон DC2 |
 | **[Вокус Group NZ](https://www.vocus.co.nz/business/cloud-data-centres)** | Поддерживается | Поддерживается | О., Сидней |
 | **[Vodafone](https://www.vodafone.com/business/global-enterprise/global-connectivity/vodafone-ip-vpn-cloud-connect)** |Поддерживается |Поддерживается |Amsterdam2, Лондон, Сингапур |
 | **[Идея Vodafone](https://discover.vodafone.in/business/enterprise-solutions/connectivity/vpn-extended-connect)** | Поддерживается | Поддерживается | Мумбаи, Мумбаи 2 |
@@ -187,7 +190,7 @@ ms.locfileid: "77022483"
 
 Дополнительные сведения см. на странице [ExpressRoute в Китае](http://www.windowsazure.cn/home/features/expressroute/).
 
-### <a name="germany"></a>Германия
+### <a name="germany"></a>Germany
 
 | **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
 | --- | --- | --- | --- |
@@ -240,7 +243,7 @@ ms.locfileid: "77022483"
 | **[BICS](https://bics.com/bics-solutions-suite/cloud-connect/)** | Equinix | Амстердам, Франкфурт, Лондон, Сингапур, Вашингтон (округ Колумбия) |
 | **[BroadBand Tower, Inc.](https://www.bbtower.co.jp/product-service/data-center/network/dcconnect-for-azure/)** | Equinix | Токио |
 | **[C3ntro Telecom](https://www.c3ntro.com/data/express-route)** | Equinix, Megaport | Даллас |
-| **[Chief](https://www.chief.com.tw/dispPageBox/ct.aspx?ddsPageID=ENCLOUDSERVICE&dbid=4852937342)** | Equinix | Гонконг, САР |
+| **[Chief](https://www.chief.com.tw/dispPageBox/ct.aspx?ddsPageID=ENCLOUDSERVICE&dbid=4852937342)** | Equinix | Гонконг (САР) |
 | **[Cinia](https://www.cinia.fi/en/services/connectivity-services/direct-public-cloud-connection.html)** | Equinix, Megaport | Франкфурт, Германия |
 | **[CloudXpress](https://www2.telenet.be/fr/business/produits-services/internet/cloudxpress/)** | Equinix | Амстердам | 
 | **[Телекоммуникации CMC](https://cmctelecom.vn/san-pham/value-added-service-and-it/cmc-telecom-cloud-express-en/)** | Equinix | Сингапур | 
@@ -260,7 +263,7 @@ ms.locfileid: "77022483"
 | **[IVedha Inc](http://www.ivedha.com/cloud/manage-azure-cloud/express-route-4/)**| Equinix | Торонто |
 | **[Каалам телекоммуникации Бахрейн B. S. C](http://www.kalaam-telecom.com/en/inbusiness/expressroute.html)**| Связь уровня 3 |Амстердам |
 | **LGA Telecom** |Equinix |Сингапур|
-| **[Macroview Telecom](http://www.macroview.com/en/scripts/catitem.php?catid=solution&sectionid=expressroute)** |Equinix |Гонконг, САР 
+| **[Macroview Telecom](http://www.macroview.com/en/scripts/catitem.php?catid=solution&sectionid=expressroute)** |Equinix |Гонконг (САР) 
 | **[Macquarie Telecom Group](https://macquariegovernment.com/secure-cloud/secure-cloud-exchange/)** | Megaport | Сидней |
 | **[MainOne](https://www.mainone.net/services/connectivity/cloud-connect/)** |Equinix | Амстердам |
 | **[Masergy](https://www.masergy.com/solutions/hybrid-networking/cloud-marketplace/microsoft-azure)** | Equinix | Вашингтон, округ Колумбия |
@@ -346,7 +349,7 @@ ms.locfileid: "77022483"
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Южная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

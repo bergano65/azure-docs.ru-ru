@@ -10,7 +10,7 @@
     - name: Развертывание шаблона решения Ansible в CentOS
       href: ./ansible-deploy-solution-template.md
     - name: Установка Ansible на виртуальные машины Linux
-      href: /azure/virtual-machines/linux/ansible-install-configure
+      href: ./ansible-install-configure.md
       maintainContext: true
     - name: Запуск модулей playbook в Cloud Shell
       href: ./ansible-run-playbook-in-cloudshell.md
@@ -18,10 +18,10 @@
       expanded: true
       items:
         - name: Настройка виртуальных машин Linux
-          href: /azure/virtual-machines/linux/ansible-create-vm
+          href: ./ansible-create-vm.md
           maintainContext: true
         - name: Управление виртуальными машинами Linux
-          href: /azure/virtual-machines/linux/ansible-manage-linux-vm
+          href: ./ansible-manage-linux-vm.md
           maintainContext: true
 - name: Учебники
   items:
@@ -77,7 +77,7 @@
           href: ansible-vm-create-from-shared-generalized-image.md
     - name: Масштабируемые наборы виртуальных машин
       items:
-        - name: Настройка
+        - name: Configure
           href: ./ansible-create-configure-vmss.md
         - name: Развертывание
           href: ./ansible-deploy-app-vmss.md
@@ -99,7 +99,7 @@
       href: 'https://github.com/microsoft/ansiblelabs'
     - name: Примеры для сборника схем Ansible для Azure
       href: 'https://github.com/Azure-Samples/ansible-playbooks'
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Роли в сборнике схем
       items:
@@ -111,7 +111,7 @@
       href: ./ansible-matrix.md
     - name: Все модули для Azure
       href: 'https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure'
-- name: Средства
+- name: Инструменты
   items:
     - name: Расширение Visual Studio Code для Ansible
       href: 'https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible'

@@ -16,12 +16,12 @@ ms.workload: data-services
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 12a20abb4014712f26e5827bcd1d3c822e8b25a1
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 68aa62ad34f8db531d439a581ef024862da0f90c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750729"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162316"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
 
@@ -139,6 +139,10 @@ Example:
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
-* [Общие сведения об API Центров событий](event-hubs-api-overview.md)
-* [Начало работы с Центрами событий](event-hubs-dotnet-standard-getstarted-send.md)
+- [Что такое Центры событий Azure?](event-hubs-what-is-event-hubs.md)
+- [Общие сведения об API Центров событий](event-hubs-api-overview.md)
+- Приступая к работе с Центрами событий
+    - [.NET Core](get-started-dotnet-standard-send-v2.md)
+    - [Java](get-started-java-send-v2.md)
+    - [Python](get-started-python-send-v2.md)
+    - [JavaScript](get-started-java-send-v2.md)

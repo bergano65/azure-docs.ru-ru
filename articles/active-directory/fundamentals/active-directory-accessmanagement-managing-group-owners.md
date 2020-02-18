@@ -12,17 +12,17 @@ ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ee4b452d087bfef0e9f5f7c820870da0df8dc3e
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: f83a48ad13fe4ae217319b2aa85adf976aa6a7ae
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74683934"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149853"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Добавление или удаление владельцев группы в Azure Active Directory
 Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы групп могут быть пользователями или субъектами-службами и могут управлять группой, включая членство. Назначать владельцев групп могут только существующие владельцы групп или администраторы групп. Владельцы группы не должны быть участниками группы.
 
-Если у группы нет владельца, администраторы групп по-прежнему могут управлять группой.
+Если у группы нет владельца, администраторы групп по-прежнему могут управлять группой. Рекомендуется, чтобы каждая группа соимела по крайней мере одного владельца. Когда владельцы назначены к группе, последний владелец группы не может быть удален. Прежде чем удалять последнего владельца из группы, обязательно выберите другого владельца.
 
 ## <a name="add-an-owner-to-a-group"></a>Добавление владельца группы
 Ниже приведены инструкции по добавлению пользователя в качестве владельца группы с помощью портала Azure AD. Чтобы добавить субъект-службу в качестве владельца группы, следуйте инструкциям по выполнению этой задачи с помощью [PowerShell](https://docs.microsoft.com/powershell/module/Azuread/Add-AzureADGroupOwner?view=azureadps-2.0).
@@ -63,10 +63,10 @@ ms.locfileid: "74683934"
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md)
 
-- [Azure Active Directory cmdlets for configuring group settings](../users-groups-roles/groups-settings-cmdlets.md)
+- [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md)
 
 - [Использование групп для назначения доступа к интегрированному приложению SaaS](../users-groups-roles/groups-saasapps.md)
 
 - [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)
 
-- [Azure Active Directory cmdlets for configuring group settings](../users-groups-roles/groups-settings-v2-cmdlets.md)
+- [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md)

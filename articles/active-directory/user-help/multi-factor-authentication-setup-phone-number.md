@@ -2,20 +2,20 @@
 title: Настройка мобильного устройства в качестве метода двухфакторной проверки подлинности в Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке мобильного устройства в качестве метода двухфакторной проверки подлинности.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: overview
 ms.date: 08/12/2019
-ms.author: lizross
-ms.openlocfilehash: c01a7a9c5adb050d98840938260c8486ecdeb199
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: b0bfaa87c77ba9fff9f6605c1989e48ffbc3fb35
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705196"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062512"
 ---
 # <a name="set-up-a-mobile-device-as-your-two-factor-verification-method"></a>Настройка мобильного устройства в качестве метода двухфакторной проверки подлинности
 

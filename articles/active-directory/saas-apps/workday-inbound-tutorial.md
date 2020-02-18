@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acc458c59858196ea110d0ff2030ccd7f7b6fc58
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: feedce112110b1c944e3cb0af79e76fe1bda4778
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121744"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77365635"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по настройке Workday для автоматической подготовки пользователей
 
@@ -93,7 +93,7 @@ ms.locfileid: "77121744"
 * [Интеграция с несколькими доменами Active Directory](#integrating-with-multiple-active-directory-domains).
 * [Планирование трансформации и сопоставления атрибутов пользователей Workday и Active Directory](#planning-workday-to-active-directory-user-attribute-mapping-and-transformations).
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -245,7 +245,7 @@ ms.locfileid: "77121744"
    * Для параметра **Session Timeout Minutes** (Время ожидания сеанса в минутах) оставьте значение по умолчанию 0, что не позволит сеансам пользователя завершаться раньше времени.
    * Выберите параметр **Do Not Allow UI Sessions** (Не разрешать сеансы пользовательского интерфейса), так как он предоставляет пользователю пароль системы интеграции при входе в Workday.
 
-   ![Создание пользователя системы интеграции](./media/workday-inbound-tutorial/wd_isu_02.png "Create Integration System User")
+   ![Создание пользователя системы интеграции](./media/workday-inbound-tutorial/wd_isu_02.png "Создать пользователя системы интеграции")
 
 ### <a name="creating-an-integration-security-group"></a>Создание группы безопасности интеграции
 
@@ -300,11 +300,11 @@ ms.locfileid: "77121744"
 
 4. Прокрутите страницу **Edit Domain Security Policy Permissions** (Изменение разрешений политики безопасности для домена) до раздела **Integration Permissions** (Разрешения интеграции). Нажмите значок "+", чтобы добавить группу системы интеграции в список групп безопасности с разрешениями интеграции **Get** и **Put**.
 
-    ![Изменение разрешения](./media/workday-inbound-tutorial/wd_isu_10.png "Изменить разрешение")  
+    ![Изменение разрешения](./media/workday-inbound-tutorial/wd_isu_10.png "Изменение разрешений")  
 
 5. Нажмите значок "+", чтобы добавить группу системы интеграции в список групп безопасности с разрешениями интеграции **Get** и **Put**.
 
-    ![Изменение разрешения](./media/workday-inbound-tutorial/wd_isu_11.png "Изменить разрешение")  
+    ![Изменение разрешения](./media/workday-inbound-tutorial/wd_isu_11.png "Изменение разрешений")  
 
 6. Повторите указанные выше этапы 3–5 для каждой из оставшихся политик безопасности:
 
@@ -345,12 +345,12 @@ ms.locfileid: "77121744"
 
 1. Введите "активировать" в поле поиска и затем нажмите ссылку **Активировать ожидающие изменения политики безопасности**.
 
-    ![Активировать](./media/workday-inbound-tutorial/wd_isu_16.png "Активировать")
+    ![Активировать](./media/workday-inbound-tutorial/wd_isu_16.png "Включить")
 
 1. Начните выполнять задачу активации ожидающих изменений политики безопасности: введите комментарий для проведения аудита и нажмите кнопку **ОК**.
 1. Завершите задачу на следующем экране, установив флажок **Confirm** (Подтверждаю) и нажав кнопку **ОК**.
 
-    ![Активация ожидающей безопасности](./media/workday-inbound-tutorial/wd_isu_18.png "Активировать ожидающие изменения безопасности")  
+    ![Активация ожидающей безопасности](./media/workday-inbound-tutorial/wd_isu_18.png "Активировать ожидающую функцию безопасности")  
 
 ## <a name="configuring-user-provisioning-from-workday-to-active-directory"></a>Настройка подготовки пользователей из Workday в Active Directory
 
@@ -418,7 +418,7 @@ ms.locfileid: "77121744"
   
 1. Вам будет предложено ввести учетные данные, необходимые для подключения к домену AD. На том же экране можно использовать команду **Select domain controller priority** (Выбрать приоритет контроллеров домена), чтобы указать контроллеры домена, которые агент должен использовать для отправки запросов на подготовку.
 
-   ![Учетные данные домена](./media/workday-inbound-tutorial/pa_install_screen_5.png)
+   ![Доменные учетные данные](./media/workday-inbound-tutorial/pa_install_screen_5.png)
    
 1. После настройки домена установщик выводит список настроенных доменов. На этом экране можно повторить действия 5 и 6, чтобы добавить другие домены, или нажать кнопку **Next** (Далее), чтобы перейти к регистрации агента.
 
@@ -564,11 +564,11 @@ ms.locfileid: "77121744"
 | **AddressLineData**    |  streetAddress  |     |   Создание и обновление |
 | **Municipality**   |   l   |     | Создание и обновление |
 | **CountryReferenceTwoLetter**      |   co |     |   Создание и обновление |
-| **CountryReferenceTwoLetter**    |  с  |     |         Создание и обновление |
+| **CountryReferenceTwoLetter**    |  c  |     |         Создание и обновление |
 | **CountryRegionReference** |  st     |     | Создание и обновление |
 | **WorkSpaceReference** | physicalDeliveryOfficeName    |     |  Создание и обновление |
 | **PostalCode**  |   postalCode  |     | Создание и обновление |
-| **PrimaryWorkTelephone**  |  TelephoneNumber   |     | Создание и обновление |
+| **PrimaryWorkTelephone**  |  telephoneNumber   |     | Создание и обновление |
 | **Fax**      | facsimileTelephoneNumber     |     |    Создание и обновление |
 | **Mobile**  |    mobile       |     |       Создание и обновление |
 | **LocalReference** |  preferredLanguage  |     |  Создание и обновление |                                               
@@ -737,7 +737,7 @@ ms.locfileid: "77121744"
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. Выберите команду **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 3. Будет запущена начальная синхронизация, которая может длиться переменное число часов в зависимости от количества пользователей в клиенте Workday. 
 
@@ -801,7 +801,7 @@ ms.locfileid: "77121744"
 
 #### <a name="does-the-solution-support-assigning-on-premises-ad-groups-to-the-user"></a>Поддерживает ли решение назначение локальных групп AD пользователю?
 
-Сейчас такая возможность не поддерживается. Рекомендуется развернуть сценарий PowerShell, запрашивающий конечную точку API Graph Azure AD для получения данных журнала аудита, и использовать его для запуска сценариев, таких как назначение групп. Этот сценарий PowerShell можно присоединить к планировщику задач и развернуть в том же окне, где запущен агент подготовки.  
+Сейчас такая возможность не поддерживается. Рекомендуемый обходной путь заключается в развертывании скрипта PowerShell, который запрашивает у конечной точки Microsoft Graph API [данные журнала аудита](https://docs.microsoft.com/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-beta) и использует их для запуска таких сценариев, как назначение групп. Этот сценарий PowerShell можно присоединить к планировщику задач и развернуть в том же окне, где запущен агент подготовки.  
 
 #### <a name="which-workday-apis-does-the-solution-use-to-query-and-update-workday-worker-profiles"></a>Какие API-интерфейсы Workday решение использует для запроса и обновления профилей работников Workday?
 
@@ -1360,7 +1360,7 @@ SelectUniqueValue(
 
 Что касается хранения данных, служба подготовки Azure AD не создает отчеты, не выполняет аналитику и не предоставляет аналитику более чем за 30 дней. Таким образом, в службе подготовки Azure AD не хранятся и не обрабатываются данные за период более 30 дней. Такой подход является совместимым с нормами GDPR, требованиями соответствия нормативам корпорации Майкрософт о конфиденциальности и политике хранения данных Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).

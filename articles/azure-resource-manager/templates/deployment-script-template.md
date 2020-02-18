@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 01/24/2020
 ms.author: jgao
-ms.openlocfilehash: f18c9c6efb17f84446b9fee3d2df2c0977bed0c4
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: a67f360aa08f306d6462342d96f59e06a4d3b501
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76757309"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251861"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Использование скриптов развертывания в шаблонах (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "76757309"
 
 - Простая в кодировании, использовании и отладка. Сценарии развертывания можно разрабатывать в избранных средах разработки. Скрипты можно внедрять в шаблоны или во внешние файлы скриптов.
 - Можно указать язык скрипта и платформу. В настоящее время поддерживаются только скрипты развертывания Azure PowerShell в среде Linux.
-- Разрешить указание удостоверений, используемых для выполнения скриптов. В настоящее время поддерживается только [управляемое пользователем удостоверение Azure](../../active-directory/managed-identities-azure-resources/overview.md) .
+- Разрешить указание удостоверений, используемых для выполнения скриптов. В настоящее время поддерживается только [управляемое пользователем удостоверение Azure](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) .
 - Разрешает передавать скрипту аргументы командной строки.
 - Может указывать выходные данные скрипта и передавать их обратно в развертывание.
 
@@ -40,7 +40,7 @@ ms.locfileid: "76757309"
 > [!IMPORTANT]
 > Два ресурса скрипта развертывания, учетная запись хранения и экземпляр контейнера, создаются в одной группе ресурсов для выполнения сценариев и устранения неполадок. Эти ресурсы обычно удаляются службой сценариев, когда выполнение скрипта развертывания получает состояние терминала. Плата взимается за ресурсы, пока они не будут удалены. Дополнительные сведения см. в разделе [Очистка ресурсов скрипта развертывания](#clean-up-deployment-script-resources).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о создании см. в разделе [Создание назначаемого пользователем управляемого удостоверения с помощью портал Azure](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)или с [помощью Azure CLI](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)или с [помощью Azure PowerShell](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
@@ -59,7 +59,7 @@ ms.locfileid: "76757309"
 
 - **Azure PowerShell версии 2.7.0, 2.8.0 или 3.0.0**. Эти версии не требуются для развертывания шаблонов. Но эти версии необходимы для локального тестирования сценариев развертывания. См. статью [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). Вы можете использовать предварительно настроенный образ DOCKER.  См. раздел [Настройка среды разработки](#configure-development-environment).
 
-## <a name="resource-schema"></a>Схема ресурса
+## <a name="sample-template"></a>Пример шаблона
 
 Ниже приведен пример JSON.  Последнюю схему шаблона можно найти [здесь](/azure/templates/microsoft.resources/deploymentscripts).
 
@@ -87,7 +87,7 @@ ms.locfileid: "76757309"
       $DeploymentScriptOutputs = @{}
       $DeploymentScriptOutputs['text'] = $output
     ",
-    "primaryScriptUri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.json",
+    "primaryScriptUri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",
     "supportingScriptUris":[],
     "timeout": "PT30M",
     "cleanupPreference": "OnSuccess",
@@ -122,7 +122,7 @@ ms.locfileid: "76757309"
 > [!NOTE]
 > Так как встроенные скрипты развертывания заключены в двойные кавычки, строки внутри скриптов развертывания необходимо заключать в одинарные кавычки. Для PowerShell используется escape- **&#92;** символ. Можно также использовать подстановку строк, как показано в предыдущем примере JSON. См. значение по умолчанию для параметра Name.
 
-Скрипт принимает один параметр и выводит значение параметра. **Деплойментскриптаутпутс** используется для хранения выходных данных.  В разделе выходные данные в строке **значение** показано, как получить доступ к сохраненным значениям. `Write-Output` используется для целей отладки. Сведения о том, как получить доступ к выходному файлу, см. в разделе [Отладка скриптов развертывания](#debug-deployment-scripts).  Описания свойств см. в разделе [схема ресурсов](#resource-schema).
+Скрипт принимает один параметр и выводит значение параметра. **Деплойментскриптаутпутс** используется для хранения выходных данных.  В разделе выходные данные в строке **значение** показано, как получить доступ к сохраненным значениям. `Write-Output` используется для целей отладки. Сведения о том, как получить доступ к выходному файлу, см. в разделе [Отладка скриптов развертывания](#debug-deployment-scripts).  Описания свойств см. в разделе [Пример шаблона](#sample-template).
 
 Чтобы запустить скрипт, выберите **попробовать** открыть Cloud Shell, а затем вставьте следующий код в область оболочки.
 
@@ -144,7 +144,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="use-external-scripts"></a>Использование внешних скриптов
 
-В дополнение к встроенным сценариям можно также использовать внешние файлы скриптов. В настоящее время поддерживаются только скрипты PowerShell с расширением файла **PS1** . Чтобы использовать внешние файлы скриптов, замените `scriptContent` на `primaryScriptUri`. Пример.
+В дополнение к встроенным сценариям можно также использовать внешние файлы скриптов. В настоящее время поддерживаются только скрипты PowerShell с расширением файла **PS1** . Чтобы использовать внешние файлы скриптов, замените `scriptContent` на `primaryScriptUri`. Например:
 
 ```json
 "primaryScriptURI": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",
@@ -304,7 +304,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 
 После успешного тестирования скрипта PowerShell его можно использовать в качестве скрипта развертывания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как использовать скрипты развертывания. Для просмотра учебника по скриптам развертывания выполните следующие действия.
 

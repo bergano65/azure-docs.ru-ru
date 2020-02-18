@@ -1,5 +1,5 @@
 ---
-title: Azure CLI пример скрипта. Настройка конечных точек виртуальной сети IPv6 — Load Balancer (цен. категория "Стандартный") (Предварительная версия)
+title: Azure CLI пример скрипта. Настройка внешнего интерфейса IPv6 Load Balancer (цен. категория "Стандартный")
 titlesuffix: Azure Virtual Network
 description: Включение конечных точек IPv6 с помощью Azure CLI в виртуальной сети Azure
 services: virtual-network
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: afeb0c83c6e9afca16d0f0b21adafac4b7f3f2c2
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 86c8acedb230989fa7a7f28690bd4be9c51ead9e
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269719"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201345"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-using-standard-load-balancerpreview"></a>Настройка конечных точек IPv6 в примере сценария виртуальной сети с помощью Load Balancer (цен. категория "Стандартный") (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "68269719"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку только один раз следующим образом.
 
 ```azurecli
@@ -299,7 +299,7 @@ az group delete --name <resourcegroupname> --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Command | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |

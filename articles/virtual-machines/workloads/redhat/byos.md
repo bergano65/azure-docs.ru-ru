@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 1/14/2020
+ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: afda502bcd89423ecdd008c0297c85dd8a5b61fb
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: a54e1c9cbc9a80139d71a89f86ac51ecf5ce9902
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989847"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190502"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -175,9 +175,9 @@ ms.locfileid: "76989847"
 
 Для защиты образов Gold с собственными подписками можно использовать [Шифрование дисков Azure](../../linux/disk-encryption-overview.md). Red Hat Enterprise Linux Однако перед включением шифрования **необходимо** зарегистрировать подписку.  Сведения о регистрации образа RHEL BYOS Gold доступны на сайте Red Hat. См. раздел [Регистрация и подписка системы на портале клиента Red Hat с помощью Red Hat Subscription-Manager](https://access.redhat.com/solutions/253273). Если у вас есть активная подписка Red Hat, вы также можете ознакомиться с [созданием ключей активации для клиентских порталов Red Hat](https://access.redhat.com/articles/1378093).
 
-Шифрование дисков Azure не поддерживается в [пользовательских образах Red Hat](/linux/redhat-create-upload-vhd). Дополнительные требования к ADE и предварительные требования описаны в статье [Шифрование дисков Azure для виртуальных машин Linux](../../linux/disk-encryption-overview.md#additional-vm-requirements).
+Шифрование дисков Azure не поддерживается в [пользовательских образах Red Hat](../../linux/redhat-create-upload-vhd.md). Дополнительные требования к ADE и предварительные требования описаны в статье [Шифрование дисков Azure для виртуальных машин Linux](../../linux/disk-encryption-overview.md#additional-vm-requirements).
 
-Действия по применению шифрования дисков Azure доступны в [сценариях шифрования дисков Azure на виртуальных машинах Linux](../../linux/disk-encryption-linux.md) и связанных статьях.  
+Действия по применению шифрования дисков Azure доступны в [сценариях шифрования дисков Azure на виртуальных машинах Linux](../../linux/disk-encryption-linux.md) и связанных статьях.
 
 ## <a name="additional-information"></a>Дополнительные сведения
 
@@ -186,7 +186,7 @@ ms.locfileid: "76989847"
     ```
     "Offer with PublisherId: redhat, OfferId: rhel-byos, PlanId: rhel-lvm75 is private and can not be purchased by subscriptionId: GUID"
     ```
-    
+
     В этом случае обратитесь в корпорацию Майкрософт или к Red Hat, чтобы включить подписку.
 
 - Если вы изменяете моментальный снимок из образа RHEL BYOS и пытаетесь опубликовать этот пользовательский образ в [коллекции общих образов](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries), необходимо предоставить сведения о плане, соответствующие исходному источнику моментального снимка. Например, команда может выглядеть следующим образом:
@@ -203,7 +203,7 @@ ms.locfileid: "76989847"
 
 - Если вы используете автоматизацию для инициализации виртуальных машин из образов RHEL BYOS, необходимо указать параметры плана, аналогичные показанным выше. Например, если вы используете terraform, сведения о плане можно указать в [блоке плана](https://www.terraform.io/docs/providers/azurerm/r/virtual_machine.html#plan).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Пошаговые руководства и сведения о программе для доступа к облаку доступны в [документации по облачному доступу к Red Hat.](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index)
 - Узнайте больше о [инфраструктуре обновления Azure Red Hat](./redhat-rhui.md).
 - Чтобы узнать больше о всех образах Red Hat в Azure, перейдите на [страницу документации](./redhat-images.md).

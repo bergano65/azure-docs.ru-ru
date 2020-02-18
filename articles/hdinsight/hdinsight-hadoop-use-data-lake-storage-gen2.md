@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/03/2020
-ms.openlocfilehash: 6ed0742a214b001ab773e33e851abfb94495984b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: aeb86823ddb25bbe0340630b55360806faef59e9
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75767676"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186883"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -57,7 +57,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 1. Нажмите кнопку **Создать**.
 1. На экране **Создание учетной записи хранения** выполните следующие действия.
     1. Выберите подходящую подписку и группу ресурсов.
-    1. Введите имя учетной записи Data Lake Storage 2-го поколения. Дополнительные сведения о соглашениях об именовании учетных записей хранения см. в разделе [соглашения об именовании для ресурсов Azure](/azure/architecture/best-practices/resource-naming#storage).
+    1. Введите имя учетной записи Data Lake Storage 2-го поколения. Дополнительные сведения о соглашениях об именовании учетных записей хранения см. в разделе [соглашения об именовании для ресурсов Azure](/azure/azure-resource-manager/management/resource-name-rules#microsoftstorage).
     1. Перейдите на вкладку **Дополнительно** .
     1. Щелкните **включено** рядом с **иерархическим пространством имен** в разделе **Data Lake Storage 2-го поколения**.
     1. Щелкните **Review + create** (Просмотреть и создать).
@@ -81,7 +81,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 
     ![Снимок экрана, на котором показано, как назначить роль RBAC](./media/hdinsight-hadoop-use-data-lake-storage-gen2/add-rbac-role3-window.png)
 
-1. Щелкните **Сохранить**. Выбранное пользователем удостоверение теперь отображается под выбранной ролью.
+1. Нажмите кнопку **Сохранить**. Выбранное пользователем удостоверение теперь отображается под выбранной ролью.
 1. После завершения первоначальной настройки вы можете создать кластер на портале. Кластер должен быть расположен в том же регионе Azure, что и учетная запись хранения. В разделе меню создания кластера **Хранилище** выберите следующие параметры:
 
     * В качестве **основного типа хранилища**выберите **Azure Data Lake Storage 2-го поколения**.
@@ -102,7 +102,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 
 Вы можете [скачать пример файла шаблона](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/hdinsight-adls-gen2-template.json) и [скачать пример файла параметров](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/parameters.json). Перед использованием шаблона и приведенного ниже фрагмента кода Azure CLI Замените следующие заполнители их правильными значениями:
 
-| Заполнитель | Description |
+| Заместитель | Описание |
 |---|---|
 | `<SUBSCRIPTION_ID>` | Идентификатор подписки Azure |
 | `<RESOURCEGROUPNAME>` | Группа ресурсов, в которой вы хотите создать новый кластер и учетную запись хранения. |
@@ -256,7 +256,7 @@ LOCATION 'abfs:///example/data/';
 LOCATION '/example/data/';
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure HDInsight integration with Data Lake Storage Gen2 preview - ACL and security update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/) (Интеграция Azure HDInsight с Data Lake Storage 2-го поколения (предварительная версия) — обновление списка управления доступом и системы безопасности)
 * [Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)](../storage/blobs/data-lake-storage-introduction.md)

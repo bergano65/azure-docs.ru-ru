@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 6e9eddbec3cdc46c04f9c9ae78f937e20bfa8270
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: e053222d3b79668c2f6044417e31e104ce0f4222
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901983"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118489"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-curl"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и cURL
 
@@ -25,7 +25,6 @@ ms.locfileid: "76901983"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством требуется следующее:
-- Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess).
 - Установленная программа [cURL](https://curl.haxx.se/windows/).
 - URL-адрес изображения квитанции. Вы можете использовать [пример изображения](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/contoso-allinone.jpg?raw=true) при изучении этого краткого руководства.
 

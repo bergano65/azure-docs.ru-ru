@@ -9,20 +9,20 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/30/2019
 ms.author: iainfou
-ms.openlocfilehash: d8a5f4756f3a6799c7f1b08973e0a84603cb4571
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 73402420bdfee7fecbd7901deefe7f4314a76d51
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74703651"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931580"
 ---
-# <a name="tutorial-create-a-management-vm-to-configure-and-administer-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure Active Directory
+# <a name="tutorial-create-a-management-vm-to-configure-and-administer-an-azure-active-directory-domain-services-managed-domain"></a>Руководство. Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure Active Directory
 
 Доменные службы Azure Active Directory (AD DS) предоставляют управляемые доменные службы, отвечающие за присоединение к домену, применение групповой политики, использование протокола LDAP, выполнение аутентификации Kerberos или NTLM, которые полностью совместимы с Windows Server Active Directory. Администрирование этого управляемого домена выполняется теми же средствами удаленного администрирования сервера (RSAT), что и для локального домена доменных служб Active Directory. Azure AD DS является управляемой службой, а значит, вы не можете выполнять некоторые задачи администрирования, например использовать протокол удаленного рабочего стола (RDP) для подключения к контроллерам домена.
 
 В этом учебнике показано, как создать в Azure виртуальную машину Windows Server и установить на ней средства для администрирования управляемого домена Azure AD DS.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * изучение доступных задач администрирования в управляемом домене Azure AD DS;
@@ -39,10 +39,10 @@ ms.locfileid: "74703651"
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, по инструкциям из первого учебника [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Виртуальная машина Windows Server, присоединенная к управляемому домену Azure AD DS.
-    * Если потребуется, по инструкциям из предыдущего учебника [создайте виртуальную машину Windows Server и присоедините ее к управляемому домену.][create-join-windows-vm]
+    * Если потребуется, по инструкциям из предыдущего учебника [создайте виртуальную машину Windows Server и присоедините ее к управляемому домену][create-join-windows-vm].
 * Учетная запись пользователя, входящая в группу *администраторов Azure AD DC* в клиенте Azure AD.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
@@ -141,9 +141,9 @@ Azure AD DS предоставляет управляемый домен, кот
 
 Можно также использовать *модуль Active Directory для Windows PowerShell*, который устанавливается в составе средств администрирования, для управления типичными действиями в управляемом домене Azure AD DS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * изучение доступных задач администрирования в управляемом домене Azure AD DS;

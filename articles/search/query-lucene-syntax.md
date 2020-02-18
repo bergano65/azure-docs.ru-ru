@@ -1,5 +1,5 @@
 ---
-title: синтаксис запросов Lucene
+title: Синтаксис запросов Lucene
 titleSuffix: Azure Cognitive Search
 description: Справочник по полному синтаксису запросов Lucene, используемому в Azure Когнитивный поиск для подстановочных знаков, нечетких поисков, регулярных выражений и других расширенных конструкций запросов.
 manager: nitinme
@@ -7,7 +7,7 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 02/10/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,16 +19,19 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 0bb8474b30c05e21a62ded1fa2cb8a6df8e4e321
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d35c96657f48905f37c9ebe246d81ebb9545cf27
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112183"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149887"
 ---
 # <a name="lucene-query-syntax-in-azure-cognitive-search"></a>Синтаксис запроса Lucene в Azure Когнитивный поиск
 
 Вы можете создавать запросы к Когнитивный поиск Azure на основе расширенного синтаксиса [синтаксического анализатора запросов Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) для специализированных форм запросов: шаблон, нечеткий поиск, поиск с учетом расположения, регулярные выражения — несколько примеров. Большая часть синтаксиса синтаксического анализатора запросов Lucene [реализована не в azure когнитивный Поиск](search-lucene-query-architecture.md), за исключением *операций поиска по диапазонам* , созданных в Azure Когнитивный поиск с помощью выражений `$filter`. 
+
+> [!NOTE]
+> Полный синтаксис Lucene используется для выражений запроса, передаваемых в параметре **поиска** API [документов поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents) , не путать с [синтаксисом OData](query-odata-filter-orderby-syntax.md) , используемым для параметра [$Filter](search-filters.md) этого API. Эти разные синтаксисы имеют собственные правила для построения запросов, экранирования строк и т. д.
 
 ## <a name="how-to-invoke-full-parsing"></a>Способы вызова полного синтаксического анализа
 
@@ -123,7 +126,7 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06
  Azure Когнитивный поиск использует оценку на основе частоты ([TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)) для текстовых запросов. Однако для запросов с подстановочными знаками и регулярными выражениями, где область терминов может быть широкой, фактор частоты игнорируется, чтобы предотвратить смещение ранжирования в сторону совпадений с более редкими терминами. Все совпадения обрабатываются одинаково для поиска с подстановочными знаками и с регулярными выражениями.
 
 ##  <a name="bkmk_fields"></a>Поиск по полям  
-Можно определить операцию поиска по полю с помощью синтаксиса `fieldName:searchExpression`, где выражение поиска может представлять собой одно слово или фразу или более сложное выражение в круглых скобках, при необходимости с логическими операторами. Некоторые примеры:  
+Можно определить операцию поиска по полю с помощью синтаксиса `fieldName:searchExpression`, где выражение поиска может представлять собой одно слово или фразу или более сложное выражение в круглых скобках, при необходимости с логическими операторами. Вот несколько примеров.  
 
 - genre:jazz NOT history  
 
@@ -169,7 +172,7 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06
 >  Символ "*" или "?" не может находиться в начале поискового запроса.  
 >  Анализ текста для поисковых запросов с использованием подстановочных знаков не выполняется. Во время выполнения запроса термины запроса с подстановочным знаком сравниваются с проанализированными терминами в индексе поиска и расширяются.
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 + [Поиск документов](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
 + [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](query-odata-filter-orderby-syntax.md)   

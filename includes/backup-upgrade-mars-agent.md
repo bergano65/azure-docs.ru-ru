@@ -12,13 +12,13 @@ ms.devlang: <optional>
 ms.topic: article
 ms.date: 8/29/2018
 ms.author: dacurwin
-ms.openlocfilehash: ea1295b08aa77a3e1a03d944ddbcbf37b6d17702
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: c22fbcd07286ddffedd8fc2fdc12017b9338d7f7
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71251544"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161865"
 ---
 ## <a name="upgrade-the-mars-agent"></a>Обновление агента MARS
 
-Версии агента Microsoft Azure Recovery Service (MARS) ранее 2.0.9083.0 зависят от Службы контроля доступа Azure (ACS). Агент MARS также называется агентом Azure Backup. В 2018 году Azure [отказался от службы контроля доступа Azure (ACS)](../articles/active-directory/develop/active-directory-acs-migration.md). Начиная с 19 марта 2018 г. использование любых версий агента MARS ниже 2.0.9083.0 будет приводить к сбою резервного копирования. Чтобы избежать сбоев резервного копирования или устранить их, [установите последнюю версию агента MARS](https://go.microsoft.com/fwlink/?linkid=229525). Для идентификации серверов, для которых требуется обновление агента MARS, следуйте инструкциям [по обновлению агентов MARS в блоге службы Backup](https://blogs.technet.microsoft.com/srinathv/2018/01/17/updating-azure-backup-agents/). Агент MARS используется для резервного копирования файлов, папок и данных состояния системы в Azure. System Center DPM и Azure Backup Server используют агент MARS для резервного копирования данных в Azure.
+Версии агента Microsoft Azure Recovery Service (MARS) ранее 2.0.9083.0 зависят от Службы контроля доступа Azure (ACS). Агент MARS также называется агентом Azure Backup. В 2018 году Azure [отказался от службы контроля доступа Azure (ACS)](../articles/active-directory/azuread-dev/active-directory-acs-migration.md). Начиная с 19 марта 2018 г. использование любых версий агента MARS ниже 2.0.9083.0 будет приводить к сбою резервного копирования. Чтобы избежать сбоев резервного копирования или устранить их, [установите последнюю версию агента MARS](https://go.microsoft.com/fwlink/?linkid=229525). Для идентификации серверов, для которых требуется обновление агента MARS, следуйте инструкциям [по обновлению агентов MARS в блоге службы Backup](https://blogs.technet.microsoft.com/srinathv/2018/01/17/updating-azure-backup-agents/). Агент MARS используется для резервного копирования файлов, папок и данных состояния системы в Azure. System Center DPM и Azure Backup Server используют агент MARS для резервного копирования данных в Azure.

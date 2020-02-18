@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: b60a00828cfed8ef5d47704de2b2d7ede309ed6d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 5f4eca88614a98f0caf87d04847029328042edd8
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76276300"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368733"
 ---
 # <a name="create-and-use-shared-images-for-virtual-machine-scale-sets-with-the-azure-powershell"></a>Создание и использование общих образов для масштабируемых наборов виртуальных машин с помощью Azure PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "76276300"
 
 Функция коллекции общих образов имеет несколько типов ресурсов. Мы будем использовать или создавать в этой статье следующие ресурсы:
 
-| Ресурс | Description|
+| Ресурс | Описание|
 |----------|------------|
 | **Управляемый образ** | Это базовый образ, который можно использовать отдельно или для создания **версии образа** в коллекции образов. Управляемые образы создаются на основе обобщенных виртуальных машин. Управляемый образ — это специальный тип виртуального жесткого диска, который может применяться для создания нескольких виртуальных машин. Теперь его можно использовать для создания версий общих образов. |
 | **Коллекция образов** | Как и Azure Marketplace, **коллекция образов** — это репозиторий для управления и совместного использования образов, но в отличие от Azure Marketplace доступ к коллекции образов контролируете вы. |
@@ -36,7 +36,7 @@ ms.locfileid: "76276300"
 
 [!INCLUDE [updated-for-az.md](../../includes/updated-for-az.md)]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Ниже подробно описано, как преобразовать существующую виртуальную машину в многократно используемый пользовательский образ, на основе которого можно создавать экземпляры виртуальной машины.
 
@@ -130,7 +130,7 @@ $vmssConfig = New-AzVmssConfig `
 # Reference the image version
 Set-AzVmssStorageProfile $vmssConfig `
   -OsDiskCreateOption "FromImage" `
-  -Id $imageVersion.Id
+  -ImageReferenceId $imageVersion.Id
 
 # Complete the configuration
 Set-AzVmssOsProfile $vmssConfig `
@@ -157,7 +157,7 @@ New-AzVmss `
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-ps](../../includes/virtual-machines-common-shared-images-update-delete-ps.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

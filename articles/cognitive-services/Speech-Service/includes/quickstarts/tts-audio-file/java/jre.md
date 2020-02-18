@@ -4,19 +4,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: abe40898643fa2fd11952d2fb6626034fb408133
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e1ea2a90d8eaf26d514457fbf7d4b08f9204dad3
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505262"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156674"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=jre).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=jre).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -46,10 +46,14 @@ ms.locfileid: "73505262"
            try {
                // Replace below with your own subscription key
                String speechSubscriptionKey = "YourSubscriptionKey";
-               // Replace below with your own service region (e.g., "westus").
+
+               // Replace below with your own service region (e.g., "westus", use the one of SpeechSDKParameters
+               // from here: https://aka.ms/speech/sdkregion).               
                String serviceRegion = "YourServiceRegion";
+
                // Replace below with your own filename.
                String audioFileName = "helloworld.wav";
+
                // Replace below with your own filename.
                String text = "Hello world!";
 
@@ -117,11 +121,11 @@ ms.locfileid: "73505262"
    Speech synthesized to [helloworld.wav] for text [Hello world!]
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

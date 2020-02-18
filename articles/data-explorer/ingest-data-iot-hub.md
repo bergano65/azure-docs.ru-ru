@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 93c0b3e27156655acee24d424cd890b48bb8e4e7
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 78455c90bab694b77a5e4a56d0b40518867d8d8c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064994"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188366"
 ---
 # <a name="ingest-data-from-iot-hub-into-azure-data-explorer"></a>Прием данных из центра Интернета вещей в Azure обозреватель данных 
 
@@ -24,7 +24,7 @@ ms.locfileid: "77064994"
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных обеспечивает прием (загрузку данных) из центра Интернета вещей, платформы потоковой передачи больших данных и службы приема Интернета вещей.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * Создайте [тестовый кластер и базу данных](create-cluster-database-portal.md) с именем базы данных *TestDB*.
@@ -83,7 +83,7 @@ ms.locfileid: "77064994"
     | Центр Интернета вещей | Имя Центра Интернета вещей |
     | Политика общего доступа | Имя политики общего доступа. Должны иметь разрешения на чтение |
     | Группа потребителей |  Группа потребителей, определенная в встроенной конечной точке центра Интернета вещей |
-    | Свойства системы событий | [Свойства системы событий центра Интернета вещей](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages). При добавлении системных свойств [Создайте](/azure/kusto/management/tables#create-table) или [Обновите](/azure/kusto/management/tables#alter-table-and-alter-merge-table) схему таблицы и [сопоставление](/azure/kusto/management/mappings) , чтобы включить выбранные свойства. | | | 
+    | Свойства системы событий | [Свойства системы событий центра Интернета вещей](/azure/iot-hub/iot-hub-devguide-messages-construct#system-properties-of-d2c-iot-hub-messages). При добавлении системных свойств [Создайте](/azure/kusto/management/create-table-command) или [Обновите](/azure/kusto/management/alter-table-command) схему таблицы и [сопоставление](/azure/kusto/management/mappings) , чтобы включить выбранные свойства. | | | 
 
     > [!NOTE]
     > В случае [отработки отказа вручную](/azure/iot-hub/iot-hub-ha-dr#manual-failover)необходимо создать подключение к данным.
@@ -95,7 +95,7 @@ ms.locfileid: "77064994"
 
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
-    | Таблица | *TestTable* | Таблица, созданная в **TestDB**. |
+    | Table | *TestTable* | Таблица, созданная в **TestDB**. |
     | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. |
     | Сопоставление столбцов | *TestMapping* | [Сопоставление](/azure/kusto/management/mappings) , созданное в **TestDB**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestDB**. Требуется для JSON, многострочного JSON и AVRO, а для других форматов — необязательно.|
     | | |
@@ -177,6 +177,6 @@ ms.locfileid: "77064994"
 
 1. В новом окне введите имя удаляемой группы ресурсов (*test-hub-rg*) и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Запрос данных в обозреватель данных Azure](web-query-data.md)

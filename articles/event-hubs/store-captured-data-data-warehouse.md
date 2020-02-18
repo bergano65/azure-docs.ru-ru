@@ -1,22 +1,22 @@
 ---
-title: Руководство по Перенос данных о событиях в Хранилище данных SQL (Центры событий Azure)
-description: Руководство по В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
+title: Руководство. Перенос данных о событиях в Хранилище данных SQL (Центры событий Azure)
+description: Руководство. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: ''
 ms.author: shvija
 ms.custom: seodec18
-ms.date: 11/05/2019
+ms.date: 01/15/2020
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: 92c414afbb8121eb03353c79dfe3a51e0cfa7ec0
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: a83d65e497688fa97fbb2bdb5a4a72c6d29d81ae
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718886"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905696"
 ---
-# <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство по Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
+# <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство. Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
 Функция [Сбор](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в хранилище данных SQL или Cosmos DB. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой [Сетка событий](https://docs.microsoft.com/azure/event-grid/overview).
 
@@ -31,7 +31,7 @@ ms.locfileid: "73718886"
 > [!div class="checklist"]
 > * Развертывание инфраструктуры
 > * Публикация кода в приложение-функцию.
-> * Создание подписки "Сетка событий" из приложения-функции.
+> * Создание подписки "Сетка событий" из приложения-функции
 > * Потоковая передача примера данных в концентратор событий. 
 > * Проверка собранных данных в хранилище данных SQL.
 
@@ -40,9 +40,11 @@ ms.locfileid: "73718886"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 - [Visual Studio 2019](https://www.visualstudio.com/vs/). Вместе с программой нужно установить следующие рабочие нагрузки: разработка классических приложений .NET, разработка Azure, разработка ASP.NET и веб-разработка, разработка Node.js и Python.
-- Скачайте [пример Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo). Пример решения состоит из следующих компонентов:
+- Скачайте пример решения в [репозитории Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/EventHubsCaptureEventGridDemo). Этот пример состоит из следующих компонентов:
     - *WindTurbineDataGenerator* — простой издатель, который отправляет образцы данных ветровой турбины в концентратор событий с поддержкой функции "Сбор".
     - *FunctionDWDumper* — функция Azure, которая получает уведомление Сетки событий, когда файл AVRO записывается в большой двоичный объект в службе хранилища Azure. Она получает путь универсального кода ресурса (URI) большого двоичного объекта, считывает его содержимое и помещает эти данные в хранилище данных SQL.
+
+    Для этого примера используется новый пакет Azure.Messaging.EventHubs. Старый пример, в котором используется пакет Microsoft.Azure.EventHubs, можно найти [здесь](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo). 
 
 ### <a name="deploy-the-infrastructure"></a>Развертывание инфраструктуры
 Разверните необходимую для этого руководства инфраструктуру с помощью Azure PowerShell или Azure CLI, используя [этот шаблон Azure Resource Manager](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json). Этот шаблон создает следующие ресурсы:
@@ -68,7 +70,7 @@ ms.locfileid: "73718886"
 
 Чтобы создать все артефакты в Azure, этим сценариям понадобится некоторое время. Дождитесь завершения сценария, прежде чем продолжать. Если по какой-либо причине развертывание завершается сбоем, удалите группу ресурсов, исправьте проблему и повторите команду. 
 
-#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+#### <a name="azure-cli"></a>Azure CLI
 Чтобы развернуть этот шаблон с помощью Azure CLI, выполните следующие команды.
 
 ```azurecli-interactive
@@ -116,7 +118,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
    ![Целевое приложение-функция](./media/store-captured-data-data-warehouse/pick-target.png)
 
-1. Выберите приложение-функцию, развернутое с помощью шаблона. Нажмите кнопку **ОК**.
+1. Выберите приложение-функцию, развернутое с помощью шаблона. Щелкните **ОК**.
 
    ![Выбор приложения-функции](./media/store-captured-data-data-warehouse/select-function-app.png)
 
@@ -139,9 +141,9 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
 1. Выберите **Добавление подписки для службы "Сетка событий"** .
 
-   ![Добавить подписку](./media/store-captured-data-data-warehouse/add-event-grid-subscription.png)
+   ![Добавление подписки](./media/store-captured-data-data-warehouse/add-event-grid-subscription.png)
 
-1. Присвойте имя подписке для службы "Сетка событий". Используйте тип события **Пространства имен Центров событий**. Укажите значения для экземпляра пространства имен в службе "Центры событий". Оставьте для конечной точки подписчика указанное значение. Нажмите кнопку **Создать**.
+1. Присвойте имя подписке для службы "Сетка событий". Используйте тип события **Пространства имен Центров событий**. Укажите значения для экземпляра пространства имен в службе "Центры событий". Оставьте для конечной точки подписчика указанное значение. Нажмите кнопку **создания**.
 
    ![Создание подписки](./media/store-captured-data-data-warehouse/set-subscription-values.png)
 
@@ -174,7 +176,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 ## <a name="verify-captured-data-in-data-warehouse"></a>Проверка собранных данных в хранилище данных
 Через пару минут запросите таблицу в хранилище данных SQL. Обратите внимание, что данные, созданные WindTurbineDataGenerator, были переданы потоком в концентратор событий, записаны в контейнер службы хранилища Azure, а затем перенесены в таблицу хранилища данных SQL с помощью приложения-функции Azure.  
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 Вы можете использовать мощные инструменты визуализации данных в хранилище данных, чтобы получить аналитические сведения.
 
 В этой статье описано, как использовать [Power BI с хранилищем данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-integrate-power-bi).

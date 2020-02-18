@@ -1,0 +1,193 @@
+- name: Azure Active Directory для разработчиков
+  href: index.yml
+- name: Обзор
+  href: v1-overview.md
+- name: Примеры
+  href: sample-v1-code.md
+- name: Основные понятия
+  items:
+    - name: "Преимущества обновления до версии\_2.0"
+      href: azure-ad-endpoint-comparison.md
+    - name: Типы приложений
+      items:
+        - name: Типы приложений
+          href: app-types.md
+        - name: Одностраничное приложение
+          href: single-page-application.md
+        - name: Веб-приложение
+          href: web-app.md
+        - name: Веб-API
+          href: web-api.md
+        - name: Классические и мобильные приложения
+          href: native-app.md
+        - name: Управляющая программа или серверное приложение
+          href: service-to-service.md
+    - name: Аутентификация
+      items:
+        - name: Основные сведения об аутентификации
+          href: v1-authentication-scenarios.md
+        - name: Протоколы OAuth 2.0 и OpenID Connect
+          items:
+            - name: OpenID Connect
+              href: v1-protocols-openid-connect-code.md
+            - name: "Процесс предоставления неявных разрешений OAuth\_2.0"
+              href: v1-oauth2-implicit-grant-flow.md
+            - name: "Предоставление кода аутентификации OAuth\_2.0"
+              href: v1-protocols-oauth-code.md
+            - name: "Поток On-Behalf-Of в OAuth\_2.0"
+              href: v1-oauth2-on-behalf-of-flow.md
+            - name: "Предоставление учетных данных клиента OAuth\_2.0"
+              href: v1-oauth2-client-creds-grant-flow.md
+        - name: "Протокол SAML\_2.0"
+          items:
+            - name: Единый вход
+              href: ../develop/single-sign-on-saml-protocol.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Функция выхода
+              href: ../develop/single-sign-out-saml-protocol.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Как в Azure AD используется протокол SAML
+              href: ../develop/active-directory-saml-protocol-reference.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: WS-Federation
+          items:
+            - name: Метаданные федерации
+              href: azure-ad-federation-metadata.md
+        - name: Смена ключей подписывания
+          href: ../develop/active-directory-signing-key-rollover.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Маркеры идентификации
+          href: ../develop/id-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Маркеры доступа
+          href: ../develop/access-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Учетные данные сертификата
+          href: ../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Токены SAML
+          href: ../develop/reference-saml-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Конфигурация приложений
+      items:
+        - name: Приложения и субъекты-службы
+          href: ../develop/app-objects-and-service-principals.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: "Добавление приложений в Azure\_AD"
+          href: ../develop/active-directory-how-applications-are-added.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Одно- и мультитенантные приложения
+          href: ../develop/single-and-multi-tenant-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Разрешения и согласие
+      displayName: Scopes
+      items:
+        - name: Типы разрешений и согласие
+          href: v1-permissions-consent.md
+        - name: Платформа предоставления согласия
+          href: ../develop/consent-framework.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Предоставление согласия для приложений
+          href: ../develop/application-consent-experience.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Условный доступ
+      href: conditional-access-dev-guide.md
+    - name: Национальные облака
+      href: ../develop/authentication-national-cloud.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+- name: Практические руководства
+  items:
+    - name: Аутентификация
+      items:
+        - name: Настройка единого входа
+          displayName: SSO
+          items:
+            - name: Включение единого входа в Android
+              href: howto-v1-enable-sso-android.md
+            - name: Включение единого входа в iOS
+              href: howto-v1-enable-sso-ios.md
+            - name: Отладка единого входа на основе SAML
+              href: howto-v1-debug-saml-sso-issues.md
+        - name: Настройка утверждений
+          items:
+            - name: Настройка утверждений ролей
+              href: ../develop/active-directory-enterprise-app-role-management.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Настройка утверждений с помощью портала
+              href: ../develop/active-directory-saml-claims-customization.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Настройка утверждений с помощью PowerShell
+              href: ../develop/active-directory-claims-mapping.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Настройка необязательных утверждений
+              href: ../develop/active-directory-optional-claims.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Настройка времени существования маркеров
+              href: ../develop/active-directory-configurable-token-lifetimes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Рекомендации по обработке ошибок ADAL
+          href: active-directory-devhowto-adal-error-handling.md
+    - name: Конфигурация приложений
+      items:
+        - name: Преобразование однотенантного приложения в мультитенантное
+          href: ../develop/howto-convert-app-to-be-multi-tenant.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Создание субъекта-службы
+          items:
+            - name: Использование Azure PowerShell
+              href: ../develop/howto-authenticate-service-principal-powershell.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+            - name: Использование портала Azure
+              href: ../develop/howto-create-service-principal-portal.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Ограничение набора пользователей приложения
+          href: ../develop/howto-restrict-your-app-to-a-set-of-users.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Добавление ролей приложения
+          href: ../develop/howto-add-app-roles-in-azure-ad-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Рекомендации по фирменной символике
+          href: ../develop/howto-add-branding-in-azure-ad-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Условия предоставления услуг и заявление о конфиденциальности
+          href: ../develop/howto-add-terms-of-service-privacy-statement.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы Active Directory
+          href: ../develop/vs-active-directory-add-connected-service.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Начало работы с проектами .NET MVC
+          href: ../develop/vs-active-directory-dotnet-getting-started.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Что произошло с моим проектом .NET MVC?
+          href: ../develop/vs-active-directory-dotnet-what-happened.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Начало работы с проектами веб-API
+          href: ../develop/vs-active-directory-webapi-getting-started.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Что произошло с моим проектом веб-API?
+          href: ../develop/vs-active-directory-webapi-what-happened.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+        - name: Ошибка при обнаружении аутентификации
+          href: ../develop/vs-active-directory-error.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Вывод приложения на рынок
+      items:
+        - name: Публикация в AppSource
+          href: howto-get-appsource-certified.md
+        - name: "Публикация в коллекции приложений Azure\_AD"
+          href: howto-app-gallery-listing.md
+        - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
+          href: 'https://docs.microsoft.com/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store'
+    - name: Служба контроля доступа Azure
+      displayName: ACS
+      items:
+        - name: Перенос из службы контроля доступа Azure
+          href: active-directory-acs-migration.md
+        - name: Повторная активация отключенных пространств имен службы контроля доступа
+          href: howto-reactivate-disabled-acs-namespaces.md
+    - name: Использование API Graph Azure AD
+      href: ../develop/active-directory-graph-api-quickstart.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: AD FS для разработчиков
+      href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers'
+- name: Ссылки
+  items:
+    - name: Библиотеки проверки подлинности
+      displayName: ADAL
+      href: active-directory-authentication-libraries.md
+    - name: "API Graph Azure\_AD"
+      href: ../develop/active-directory-graph-api.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Манифест приложения
+      href: ../develop/reference-app-manifest.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Коды ошибок проверки подлинности и авторизации
+      href: ../develop/reference-aadsts-error-codes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Критические изменения
+      href: ../develop/reference-breaking-changes.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+- name: Ресурсы
+  items:
+    - name: Глоссарий
+      href: ../develop/developer-glossary.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Видео
+      href: videos.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: Блог по Azure AD
+      href: 'https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory'
+    - name: 'Платформа удостоверений Майкрософт: блог для разработчиков'
+      href: 'https://developer.microsoft.com/identity/blogs/'
+    - name: Выполнение входа с помощью учетной записи Майкрософт
+      href: 'https://azure.microsoft.com/develop/identity/signin/'
+    - name: Получение справки
+      displayName: 'support, help options'
+      href: ../develop/developer-support-help-options.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Управляемые удостоверения для ресурсов Azure
+      href: 'https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview'

@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: a2a404a03c06dde59edc88436afdc9dba3d74797
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 53de4608616cb8f3b85bb88f1dbc5a4a79f4c02b
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76170165"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77188849"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Создание иммерсивного ресурса чтения и Настройка проверки подлинности Azure Active Directory
 
@@ -109,6 +109,10 @@ ms.locfileid: "76170165"
             Write-Host "New service principal created successfully"
         }
 
+        # Sleep for 5 seconds to allow the new service principal to propagate
+        Write-Host "Sleeping for 5 seconds"
+        Start-Sleep -Seconds 5
+
         Write-Host "Granting service principal access to the newly created Immersive Reader resource"
         $accessResult = az role assignment create --assignee $principalId --scope $resourceId --role "Cognitive Services User"
         if (-not $accessResult) {
@@ -136,21 +140,21 @@ ms.locfileid: "76170165"
 
     ```azurepowershell-interactive
     Create-ImmersiveReaderResource
-      -SubscriptionName <SUBSCRIPTION_NAME> `
-      -ResourceName <RESOURCE_NAME> `
-      -ResourceSubdomain <RESOURCE_SUBDOMAIN> `
-      -ResourceSKU <RESOURCE_SKU> `
-      -ResourceLocation <RESOURCE_LOCATION> `
-      -ResourceGroupName <RESOURCE_GROUP_NAME> `
-      -ResourceGroupLocation <RESOURCE_GROUP_LOCATION> `
-      -AADAppDisplayName <AAD_APP_DISPLAY_NAME> `
-      -AADAppIdentifierUri <AAD_APP_IDENTIFIER_URI> `
-      -AADAppClientSecret <AAD_APP_CLIENT_SECRET>
+      -SubscriptionName '<SUBSCRIPTION_NAME>' `
+      -ResourceName '<RESOURCE_NAME>' `
+      -ResourceSubdomain '<RESOURCE_SUBDOMAIN>' `
+      -ResourceSKU '<RESOURCE_SKU>' `
+      -ResourceLocation '<RESOURCE_LOCATION>' `
+      -ResourceGroupName '<RESOURCE_GROUP_NAME>' `
+      -ResourceGroupLocation '<RESOURCE_GROUP_LOCATION>' `
+      -AADAppDisplayName '<AAD_APP_DISPLAY_NAME>' `
+      -AADAppIdentifierUri '<AAD_APP_IDENTIFIER_URI>' `
+      -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>'
     ```
 
-    | Параметр | Комментарии |
+    | Параметр | Comments |
     | --- | --- |
-    | Параметр SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
+    | SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
     | ResourceName |  Должен быть буквенно-цифровым и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов.|
     | ресаурцесубдомаин |Для иммерсивного ресурса чтения требуется пользовательский поддомен. Поддомен используется пакетом SDK при вызове иммерсивное службу чтения для запуска средства чтения. Поддомен должен быть глобально уникальным. Поддомен должен состоять из букв и цифр и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов. Этот параметр является необязательным, если ресурс уже существует. |
     | ресаурцеску |Параметры: `S0`. Дополнительные сведения о каждом доступном номере SKU см. на [странице цен на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) . Этот параметр является необязательным, если ресурс уже существует. |
@@ -172,9 +176,9 @@ ms.locfileid: "76170165"
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Ознакомьтесь с [кратким руководством по Node. js](./quickstart-nodejs.md) , чтобы узнать, что еще можно сделать с помощью пакета SDK для иммерсивное средство чтения с использованием Node. js.
+* Ознакомьтесь с [кратким руководством для разработчиков Node.js](./quickstart-nodejs.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Node.js
 * Ознакомьтесь с [руководством для разработчиков Python](./tutorial-python.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Python.
 * Просмотрите [учебник по SWIFT](./tutorial-ios-picture-immersive-reader.md) , чтобы узнать, что еще можно сделать с помощью пакета SDK для иммерсивное средство чтения, используя SWIFT.
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).

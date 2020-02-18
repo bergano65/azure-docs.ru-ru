@@ -1,11 +1,9 @@
 ---
-title: Установка пирингового подключения между виртуальными сетями — PowerShell | Документация Майкрософт
+title: Подключение виртуальных сетей с помощью пиринга виртуальной сети — Azure PowerShell
 description: В этой статье вы узнаете, как подключить виртуальные сети между собой с помощью пиринга, используя Azure PowerShell.
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
-manager: twooley
-editor: ''
 tags: azure-resource-manager
 Customer intent: I want to connect two virtual networks so that virtual machines in one virtual network can communicate with virtual machines in the other virtual network.
 ms.assetid: ''
@@ -17,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 18a252e1e169aeb094e4aa6a507ff1e3d5ee931f
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: caa620c2389bb6e2387636bc262ceb2de99d8e34
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022075"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201311"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-powershell"></a>Установка пирингового подключения между виртуальными сетями с помощью PowerShell
 
@@ -35,7 +33,7 @@ ms.locfileid: "77022075"
 * развертывание виртуальной машины в каждой из виртуальных сетей;
 * Взаимодействие между виртуальными машинами
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -206,7 +204,7 @@ ping 10.0.0.4
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как с помощью пиринга соединить две виртуальные сети в одном регионе Azure. Пиринг можно использовать и для подключения виртуальных сетей из разных [поддерживаемых регионов](virtual-network-manage-peering.md#cross-region) или [разных подписок Azure](create-peering-different-subscriptions.md#powershell), а также для создания [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke#virtual-network-peering). Чтобы узнать больше о пиринге виртуальных сетей, ознакомьтесь с разделами [Пиринг между виртуальными сетями](virtual-network-peering-overview.md) и [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md).
 

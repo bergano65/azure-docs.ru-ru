@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: bc7c8a059e1e17b7b280a7061206b10ed6c530aa
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 11c6da0b79f169b250dc0178f76dcd885ce91668
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "69015840"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162894"
 ---
 # <a name="how-to-perform-live-streaming-with-on-premises-encoders-using-net"></a>Как вести потоковую трансляцию с помощью локальных кодировщиков и .NET
 > [!div class="op_single_selector"]
@@ -40,7 +40,7 @@ ms.locfileid: "69015840"
 * Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * Убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое потоком, находится в состоянии **Выполняется**. 
 * Настройка среды разработки. Дополнительные сведения см. в статье [Настройка среды](media-services-set-up-computer.md).
-* Веб-камера, например [кодировщик Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm).
+* Веб-камера, например [кодировщик Telestream Wirecast](media-services-configure-wirecast-live-encoder.md).
 
 Рекомендуется ознакомиться со следующими разделами.
 
@@ -56,7 +56,7 @@ ms.locfileid: "69015840"
 В следующем примере кода показано, как выполнить приведенные ниже задачи.
 
 * Подключение к службам мультимедиа
-* Создать канал
+* Создание канала
 * Обновление канала
 * Получение входной конечной точки канала. Локальному динамическому кодировщику необходимо предоставить входную конечную точку. Динамический кодировщик преобразует сигналы от камеры в потоки, которые отправляются на входную конечную точку канала (точку приема).
 * Получение конечной точки предварительного просмотра канала
@@ -404,6 +404,6 @@ namespace AMSLiveTest
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

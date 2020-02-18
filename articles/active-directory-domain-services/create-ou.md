@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: iainfou
-ms.openlocfilehash: e202eed8e3694245b5b4527578c02cfb518723f4
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 4db6ad83c44e0c811df0a3b91a473861e4e1ab87
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705346"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367142"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-ad-domain-services-managed-domain"></a>Создание подразделения (OU) в управляемом домене доменных служб Azure AD
 
@@ -30,7 +30,7 @@ ms.locfileid: "74705346"
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 
@@ -38,7 +38,7 @@ ms.locfileid: "74705346"
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * При необходимости выполните инструкции из руководства по [созданию и настройке Azure Active Directory экземпляра доменных служб][create-azure-ad-ds-instance].
 * Виртуальная машина управления Windows Server, присоединенная к управляемому домену AD DS Azure.
     * При необходимости выполните инструкции из руководства по [созданию виртуальной машины управления][tutorial-create-management-vm].
@@ -54,7 +54,7 @@ ms.locfileid: "74705346"
 * Будет создано подразделение по умолчанию для *пользователей AADDC* , которое содержит все синхронизированные учетные записи пользователей из вашего клиента Azure AD.
     * Вы не можете перемещать пользователей или группы из подразделения *AADDC Users* в пользовательские подразделения, которые вы создаете. В пользовательские подразделения можно перемещать только учетные записи пользователей или ресурсы, созданные в управляемом домене AD DS Azure.
 * Учетные записи пользователей, группы, учетные записи служб и объекты компьютеров, созданные в пользовательских подразделениях, недоступны в клиенте Azure AD.
-    * Эти объекты не отображаются с помощью API Graph Azure AD или в пользовательском интерфейсе Azure AD. они доступны только в управляемом домене Azure AD DS.
+    * Эти объекты не отображаются с помощью API Microsoft Graph или в пользовательском интерфейсе Azure AD; они доступны только в управляемом домене Azure AD DS.
 
 ## <a name="create-a-custom-ou"></a>Создание настраиваемого подразделения
 
@@ -82,7 +82,7 @@ ms.locfileid: "74705346"
 
     ![Настраиваемое подразделение, доступное для использования в центр администрирования Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-done.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании средств администрирования или создании и использовании учетных записей служб см. в следующих статьях:
 

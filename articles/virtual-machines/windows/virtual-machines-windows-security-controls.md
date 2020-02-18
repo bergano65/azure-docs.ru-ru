@@ -9,12 +9,12 @@ manager: barbkess
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 0e35efc0da929136a889b1611a48a60671ed2af8
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: f105eac0f6f21ea3358340a4e2aaec7d1f1a95ad
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828331"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190559"
 ---
 # <a name="security-controls-for-windows-virtual-machines"></a>Элементы управления безопасностью для Виртуальные машины Windows
 
@@ -39,22 +39,22 @@ ms.locfileid: "71828331"
 | Ведение журнала и аудит в плоскости управления и управления| Да |  |
 | Ведение журнала и аудит в плоскости данных | Нет |  |
 
-## <a name="identity"></a>идентификации
+## <a name="identity"></a>Тождество
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Да |  |
-| Authorization| Да |  |
+| Аутентификация| Да |  |
+| Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
 
 | Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Шифрование неактивных на стороне сервера: Ключи, управляемые корпорацией Майкрософт | Да | См. раздел [шифрование виртуальных дисков на виртуальной машине Windows](/azure/virtual-machines/windows/encrypt-disks). |
+| Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [шифрование виртуальных дисков на виртуальной машине Windows](/azure/virtual-machines/windows/encrypt-disks). |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
 | Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
-| Вызовы API в зашифрованном виде| Да | Через HTTPS и SSL. |
+| Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
 
 
 

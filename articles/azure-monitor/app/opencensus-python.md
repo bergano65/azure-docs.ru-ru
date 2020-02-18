@@ -8,20 +8,20 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 091cf26a0c18aba0925ad23e61950f8622f6080b
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b9d2bda1d3f01d2bf4bb152c0f62ade87bb61b4c
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989524"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368268"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
 Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается процесс настройки Опенценсус для Python и отправки данных мониторинга в Azure Monitor.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Установка Python. В этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными изменениями.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
@@ -38,13 +38,13 @@ Azure Monitor поддерживает распределенную трасси
 
 1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
 
-   | Параметр        | Значение           | Description  |
+   | Параметр        | Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **имя**;      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **Название**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Расположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Местоположение** | Восток США | Расположение рядом с вами или рядом с размещением приложения |
 
-1. Щелкните **Создать**.
+1. Выберите **Создать**.
 
 ## <a name="instrument-with-opencensus-python-sdk-for-azure-monitor"></a>Инструмент с пакетом SDK для Опенценсус Python для Azure Monitor
 
@@ -107,7 +107,7 @@ python -m pip install opencensus-ext-azure
     [SpanData(name='test', context=SpanContext(trace_id=8aa41bc469f1a705aed1bdb20c342603, span_id=None, trace_options=TraceOptions(enabled=True), tracestate=None), span_id='f3f9f9ee6db4740a', parent_span_id=None, attributes=BoundedDict({}, maxlen=32), start_time='2019-06-27T18:21:46.157732Z', end_time='2019-06-27T18:21:47.269583Z', child_span_count=0, stack_trace=None, annotations=BoundedList([], maxlen=32), message_events=BoundedList([], maxlen=128), links=BoundedList([], maxlen=32), status=None, same_process_as_parent_span=None, span_kind=0)]
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдать `SpanData` для Azure Monitor. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдать `SpanData` для Azure Monitor. Передайте строку подключения непосредственно в средство экспорта или укажите ее в переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING`. Измените код с предыдущего шага на основе следующего примера кода:
 
     ```python
     from opencensus.ext.azure.trace_exporter import AzureExporter
@@ -193,7 +193,7 @@ python -m pip install opencensus-ext-azure
     Point(value=ValueLong(7), timestamp=2019-10-09 20:58:07.138614)
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдавать данные метрики Azure Monitor. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете мы хотим выдавать данные метрики Azure Monitor. Передайте строку подключения непосредственно в средство экспорта или укажите ее в переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING`. Измените код с предыдущего шага на основе следующего примера кода:
 
     ```python
     from datetime import datetime
@@ -277,7 +277,7 @@ python -m pip install opencensus-ext-azure
     90
     ```
 
-3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете, мы хотим выдавать данные журнала в Azure Monitor. Измените код с предыдущего шага на основе следующего примера кода:
+3. Хотя ввод значений полезен в демонстрационных целях, в конечном счете, мы хотим выдавать данные журнала в Azure Monitor. Передайте строку подключения непосредственно в средство экспорта или укажите ее в переменной среды `APPLICATIONINSIGHTS_CONNECTION_STRING`. Измените код с предыдущего шага на основе следующего примера кода:
 
     ```python
     import logging
@@ -388,12 +388,12 @@ python -m pip install opencensus-ext-azure
 * [Интеграция MySQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-mysql)
 * [PostgreSQL](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-postgresql)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>Предупреждения
 
 * [Тесты доступности.](../../azure-monitor/app/monitor-web-app-availability.md) Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
 * [Интеллектуальная диагностика.](../../azure-monitor/app/proactive-diagnostics.md) Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.

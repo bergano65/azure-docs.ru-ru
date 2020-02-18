@@ -6,32 +6,25 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Node.js в службе Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 557e5a541b175f1641142779de23bb83ab212831
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: cd784ed616b2938f4c57bad47045f0d44ad25a69
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76290515"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022534"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-nodejs---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Node.js и Azure Dev Spaces в Kubernetes
 
-Из этого руководства вы узнаете, как выполнить следующие задачи:
-
-- Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
-- Итеративная разработка кода в контейнерах с помощью Visual Studio Code.
-- Отладка кода в среде разработки с помощью Visual Studio Code.
-
-Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью таких средств:
-- [Java и Visual Studio Code](quickstart-java.md);
-- [.NET Core и Visual Studio Code](quickstart-netcore.md);
-- [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
+В этом кратком руководстве вы настроите Azure Dev Spaces с управляемой средой кластера Kubernetes и используете приложение Node.js в Visual Studio Code для итеративной разработки и отладки кода в контейнерах. Azure Dev Spaces позволяет выполнять отладку и тестирование всех компонентов приложения в службе Azure Kubernetes (AKS) с минимальной настройкой компьютера для разработки. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
-- [Средство Visual Studio Code](https://code.visualstudio.com/download).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно. 
+- [Последняя версия Node.js](https://nodejs.org/download/).
+- [Visual Studio Code](https://code.visualstudio.com/download).
 - Расширение [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) для Visual Studio Code.
-- [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+- [Git](https://www.git-scm.com/downloads).
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
@@ -79,11 +72,11 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="prepare-the-sample-application-in-visual-studio-code"></a>Подготовка примера приложения в Visual Studio Code
 
-Откройте Visual Studio Code, выберите *Файл*, *Открыть*, а затем перейдите в каталог *dev-spaces/samples/nodejs/getting-started/webfrontend* и щелкните *Открыть*.
+Откройте Visual Studio Code, выберите **Файл**, **Открыть**, а затем перейдите в каталог *dev-spaces/samples/nodejs/getting-started/webfrontend* и выберите **Открыть**.
 
 Теперь проект *webfrontend* открыт в Visual Studio Code. Для запуска приложения в области разработки создайте ресурсы диаграмм Docker и Helm, используя расширение Azure Dev Spaces в палитре команд.
 
-Чтобы открыть палитру команд в Visual Studio Code, щелкните *Представление*, а затем — *Палитра команд*. Начните вводить `Azure Dev Spaces` и щелкните `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
+Чтобы открыть палитру команд в Visual Studio Code, выберите **Представление**, а затем — **Палитра команд**. Начните вводить `Azure Dev Spaces` и выберите **Azure Dev Spaces. Подготовка файлов конфигурации для Azure Dev Spaces**.
 
 ![Подготовка файлов конфигурации для Azure Dev Spaces](./media/common/command-palette.png)
 
@@ -98,24 +91,24 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="build-and-run-code-in-kubernetes-from-visual-studio-code"></a>Сборка и запуск кода в Kubernetes из Visual Studio Code
 
-Щелкните значок *Отладка* слева, а затем *Запустить сервер (AZDS)* вверху.
+Выберите значок **Отладка** слева, а затем **Launch Server (AZDS)** (Запустить программу на Java (AZDS)) сверху.
 
 ![Launch Server (Запустить сервер)](media/get-started-node/debug-configuration-nodejs.png)
 
-Эта команда создает службы в Azure Dev Spaces. Окно *Терминал* внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
+Эта команда создает службы в Azure Dev Spaces. Окно **Терминал** внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В **консоли отладки** показаны выходные данные журнала.
 
 > [!Note]
-> Если вы не видите никаких команд Azure Dev Spaces в *палитре команд*, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/nodejs/getting-started/webfrontend* в Visual Studio Code.
+> Если вы не видите никаких команд Azure Dev Spaces в **палитре команд**, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/nodejs/getting-started/webfrontend* в Visual Studio Code.
 
 Вы увидите, что служба запущена, перейдя по общедоступному URL-адресу.
 
-Щелкните *Отладка*, а затем выберите *Остановить отладку*, чтобы остановить отладчик.
+Выберите **Отладка**, а затем выберите **Остановить отладку**, чтобы остановить отладчик.
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду *Launch Server* (Запустить сервер). Пример:
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду **Launch Server** (Запустить сервер). Пример:
 
-1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
+1. Если ваше приложение по-прежнему работает, выберите пункт **Отладка**, а затем — **Остановить отладку**, чтобы остановить его.
 1. Измените [строку 13 в `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13) следующим образом:
     
     ```javascript
@@ -123,27 +116,27 @@ git clone https://github.com/Azure/dev-spaces
     ```
 
 1. Сохраните изменения.
-1. Повторите команду *Launch Server* (Запустить сервер).
+1. Повторите команду **Launch Server** (Запустить сервер).
 1. Перейдите к запущенной службе и просмотрите внесенные изменения.
-1. Нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить приложение.
+1. Выберите пункт **Отладка**, а затем **Остановить отладку**, чтобы остановить приложение.
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Настройка и использование точек останова для отладки
 
-Запуск службы осуществляется с помощью пункта *Запустить сервер (AZDS)* .
+Запуск службы осуществляется с помощью пункта **Запустить сервер (AZDS)** .
 
-Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `server.js` и щелкните строку 13, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
+Вернитесь в представление Explorer, выбрав **Представление**, а затем — **Explorer**. Откройте *server.js* и щелкните строку 13, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу **F9** или выберите пункт **Отладка** и **Переключить точку останова**.
 
-Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code. Вы увидите, что строка 13 выделена. Заданная вами точка останова приостановила выполнение службы на строке 13. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
+Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code. Вы увидите, что строка 13 выделена. Заданная вами точка останова приостановила выполнение службы на строке 13. Чтобы возобновить работу службы, нажмите клавишу **F5** или выберите пункт **Отладка**, а затем **Продолжить**. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
 
 Во время выполнения службы в Kubernetes с присоединенным отладчиком у вас есть полный доступ к отладочным сведениям, включая стек вызовов, локальные переменные и данные об исключениях.
 
-Удалите точку останова, поместив курсор в строке 13 в `server.js` и нажав клавишу *F9*.
+Удалите точку останова, поместив курсор в строке 13 в *server.js* и нажав клавишу **F9**.
 
-Щелкните *Отладка*, а затем выберите *Остановить отладку*, чтобы остановить отладчик.
+Выберите **Отладка**, а затем выберите **Остановить отладку**, чтобы остановить отладчик.
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Измените режим отладки на *Подключить к серверу (AZDS)* и запустите службу:
+Измените режим отладки на **Подключить к серверу (AZDS)** и запустите службу:
 
 ![](media/get-started-node/attach-nodejs.png)
 
@@ -151,7 +144,7 @@ git clone https://github.com/Azure/dev-spaces
 
 Перейдите к запущенной службе с помощью браузера и поработайте с ней.
 
-Пока служба выполняется, вернитесь в VS Code и обновите строку 13 в `server.js`. Пример:
+Пока служба выполняется, вернитесь в VS Code и обновите строку 13 в *server.js*. Пример:
 ```javascript
     res.send('Hello from webfrontend in Azure while debugging!');
 ```

@@ -8,29 +8,33 @@ ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019
 ms.topic: quickstart
 ms.devlang: java
 ms.date: 12/02/2019
-ms.openlocfilehash: 5f463434261dd782bb180f55986cc0f05c71cbe9
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 18a61c215f6c10bb399beaa83ec53ad2ebc62970
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770753"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938987"
 ---
 # <a name="quickstart-use-java-to-connect-to-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение к Базе данных Azure для MySQL и запрос данных с помощью Java
 
-В этом кратком руководстве описано, как подключиться к Базе данных Azure для MySQL с помощью приложения Java и драйвера JDBC [MariaDB Connector/J](https://mariadb.com/kb/en/library/mariadb-connector-j/). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на языке Java и вы только начали работу со службой "База данных Azure для MySQL".
+В этом кратком руководстве вы подключитесь к Базе данных Azure для MySQL с помощью приложения Java и драйвера JDBC MariaDB Connector/J. Также вы узнаете, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных на платформах Windows, Mac и Ubuntu Linux. 
+
+В этой статье предполагается, что у вас уже есть опыт разработки на языке Java, но вы только начали работу со службой "База данных Azure для MySQL".
 
 ## <a name="prerequisites"></a>Предварительные требования
-1. В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
-   - [Create an Azure Database for MySQL server using Azure portal](./quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
-   - [Create an Azure Database for MySQL server using Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md) (Создание сервера базы данных Azure для MySQL с помощью Azure CLI)
 
-2. Убедиться, что безопасность подключения базы данных Azure для MySQL настроена с открытым брандмауэром и параметры SSL настроены для успешного подключения приложения.
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- Сервер Базы данных Azure для MySQL. Создайте сервер Базы данных Azure для MySQL с помощью [портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+- Безопасность подключения базы данных Azure для MySQL настроена с открытым брандмауэром и параметры SSL-подключения настроены для вашего приложения.
 
-3. Получите соединитель MariaDB Connector/J, выполнив одно из следующих действий:
+## <a name="obtain-the-mariadb-connector"></a>Получение соединителя MariaDB
+
+Получите соединитель [MariaDB Connector/J](https://mariadb.com/kb/en/library/mariadb-connector-j/), выполнив одно из следующих действий:
    - С помощью пакета Maven [mariadb-java-client](https://search.maven.org/search?q=a:mariadb-java-client) включите [зависимость mariadb-java-client](https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client) в файл POM для проекта.
-   - Скачайте драйвер JDBC [MariaDB Connector/J](https://downloads.mariadb.org/connector-java/) и включите JAR-файл JDBC (например, mariadb-java-client-2.4.3.jar) в путь к классу приложения. Если возникнут сложности, изучите в документации по своей среде информацию о путях классов (например, [Apache Tomcat](https://tomcat.apache.org/tomcat-7.0-doc/class-loader-howto.html) или [Java SE](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html)).
+   - Скачайте драйвер JDBC [MariaDB Connector/J](https://downloads.mariadb.org/connector-java/) и включите JAR-файл JDBC (например, mariadb-java-client-2.4.3.jar) в путь к классу приложения. Изучите в документации по своей среде информацию о путях классов (например, [Apache Tomcat](https://tomcat.apache.org/tomcat-7.0-doc/class-loader-howto.html) или [Java SE](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/classpath.html))
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
+
 Получите сведения о подключении, необходимые для подключения к базе данных Azure.для MySQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
@@ -40,6 +44,7 @@ ms.locfileid: "74770753"
  ![Имя сервера базы данных Azure для MySQL](./media/connect-java/azure-database-mysql-server-name.png)
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
+
 Используйте указанный ниже код для подключения и загрузки данных с помощью функции с инструкцией SQL **INSERT**. Метод [getConnection()](https://mariadb.com/kb/en/library/about-mariadb-connector-j/#using-drivermanager) используется для подключения к MySQL. Методы [createStatement()](https://mariadb.com/kb/en/library/about-mariadb-connector-j/#creating-a-table-on-a-mariadb-or-mysql-server) и execute() используются для удаления и создания таблицы. Объект prepareStatement используется для создания команд вставки, а методы setString() и setInt() — для привязки значений параметров. Метод executeUpdate() запускает команду для каждого набора параметров, чтобы вставить значения. 
 
 Замените значения параметров host, database, user и password значениями, указанными при создании сервера и базы данных.
@@ -141,7 +146,8 @@ public class CreateTableInsertRows {
 
 ```
 
-## <a name="read-data"></a>Считывание данных
+## <a name="read-data"></a>Чтение данных
+
 Используйте указанный ниже код с инструкцией SQL **SELECT** для чтения данных. Метод [getConnection()](https://mariadb.com/kb/en/library/about-mariadb-connector-j/#using-drivermanager) используется для подключения к MySQL. Методы [createStatement()](https://mariadb.com/kb/en/library/about-mariadb-connector-j/#creating-a-table-on-a-mariadb-or-mysql-server) и executeQuery() используются для подключения и выполнения инструкции SELECT. Результаты обрабатываются с помощью объекта ResultSet. 
 
 Замените значения параметров host, database, user и password значениями, указанными при создании сервера и базы данных.
@@ -229,6 +235,7 @@ public class ReadTable {
 ```
 
 ## <a name="update-data"></a>Обновление данных
+
 Используйте указанный ниже код с инструкцией SQL **UPDATE** для изменения данных. Метод [getConnection()](https://mariadb.com/kb/en/library/about-mariadb-connector-j/#using-drivermanager) используется для подключения к MySQL. Методы [prepareStatement()](https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html) и executeUpdate() используются для подготовки и выполнения инструкции UPDATE. 
 
 Замените значения параметров host, database, user и password значениями, указанными при создании сервера и базы данных.
@@ -311,6 +318,7 @@ public class UpdateTable {
 ```
 
 ## <a name="delete-data"></a>Удаление данных
+
 Используйте указанный ниже код с инструкцией SQL **DELETE** для удаления данных. Метод [getConnection()](https://mariadb.com/kb/en/library/about-mariadb-connector-j/#using-drivermanager) используется для подключения к MySQL.  Методы [prepareStatement()](https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html) и executeUpdate() используются для подготовки и выполнения инструкции DELETE. 
 
 Замените значения параметров host, database, user и password значениями, указанными при создании сервера и базы данных.
@@ -391,7 +399,7 @@ public class DeleteTable {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перенос базы данных MySQL в базу данных Azure для MySQL с помощью резервного копирования и восстановления](concepts-migrate-dump-restore.md)

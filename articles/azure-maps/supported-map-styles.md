@@ -1,19 +1,19 @@
 ---
 title: Поддерживаемые стили карт | Карты Microsoft Azure
 description: В этой статье вы узнаете о различных стилях рендеринга карт, поддерживаемых картами Microsoft Azure.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 05/06/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 92e48486777d82589a56074790dd709c5d525859
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 9cdfd0d029057e36e010203b7c35a5aafee4b574
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910642"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208290"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -31,7 +31,7 @@ ms.locfileid: "75910642"
 
 ## <a name="blank-and-blank_accessible"></a>пусто и blank_accessible
 
-**Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** продолжит предоставлять обновления средства чтения с экрана с подробными сведениями о расположении, где расположена схема, даже если базовая схема не отображается.
+**Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** будет по-прежнему предоставлять обновления средства чтения с экрана сведениями о расположении, даже если базовая схема не отображается.
 
 > [!Note]
 > В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` элемента Map DIV.
@@ -100,7 +100,7 @@ ms.locfileid: "75910642"
 * Элемент управления картой Android
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как задать стиль схемы в Azure Maps.
 

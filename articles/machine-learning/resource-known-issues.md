@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 3243aa4c68e1cd6030986dc44cca47a555dc5356
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 40749a80d99782a1ea84b27e68376ea2870e8eb7
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77087149"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138007"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -312,3 +312,8 @@ run.log_list("my metric name", my_metric[N:])
 Эксперименты можно архивировать с помощью метода [экспериментировани. Archive](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#archive--) или в режиме вкладки эксперимента в машинное обучение Azure Studio Client. Это действие скрывает эксперимент из списка запросов и представлений, но не удаляет его.
 
 Постоянное удаление отдельных экспериментов или запусков в настоящее время не поддерживается. Дополнительные сведения об удалении ресурсов рабочей области см. в разделе [Экспорт или удаление данных рабочей области службы машинное обучение](how-to-export-delete-data.md).
+
+## <a name="moving-the-workspace"></a>Перемещение рабочей области
+
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.

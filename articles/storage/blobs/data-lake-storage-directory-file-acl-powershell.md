@@ -6,15 +6,15 @@ author: normesta
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.topic: conceptual
-ms.date: 11/24/2019
+ms.date: 12/13/2019
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: 87ee0a931fd3b72a4acd36ecb600fd333aec21ab
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: a5ad4cbd11d6468413a43576e2156ee807067aa8
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031107"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153355"
 ---
 # <a name="use-powershell-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Использование PowerShell для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "77031107"
 
 [Gen1 Gen2 сопоставления](#gen1-gen2-map) | [Отправить отзыв](https://github.com/Azure/azure-powershell/issues)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
@@ -83,7 +83,7 @@ $ctx = New-AzStorageContext -StorageAccountName '<storage-account-name>' -UseCon
 
 ### <a name="option-2-obtain-authorization-by-using-the-storage-account-key"></a>Вариант 2. получение авторизации с помощью ключа учетной записи хранения
 
-При таком подходе система не проверяет разрешения RBAC или ACL ресурса.
+При таком подходе система не проверяет разрешения RBAC или ACL.
 
 ```powershell
 $storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>" -AccountName "<storage-account-name>"
@@ -431,7 +431,7 @@ Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $filesystemName -Recurse -
 
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 * [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
 * [Использование Azure PowerShell со службой хранилища Azure](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

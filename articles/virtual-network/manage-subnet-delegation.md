@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: d7fbb4c6f30754569b0aeea60f10d4a10e792ba7
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 6f767abdf8673e3adffc6c4e3748733054ba723d
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933924"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201872"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
 
@@ -25,7 +25,7 @@ ms.locfileid: "76933924"
 
 ## <a name="portal"></a>Портал
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
@@ -40,7 +40,7 @@ ms.locfileid: "76933924"
     | ------- | ----- |
     | Имя | Введите *myVirtualNetwork*. |
     | Пространство адресов | Введите *10.0.0.0/16*. |
-    | Подписка | Выберите свою подписку.|
+    | Subscription | Выберите свою подписку.|
     | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
     | Расположение | Выберите **EastUS**.|
     | Имя подсети | Введите *mySubnet*. |
@@ -70,7 +70,7 @@ ms.locfileid: "76933924"
 3. Выберите **подсети**, в разделе **Параметры**, а затем выберите **mySubnet**.
 4. На странице *mySubnet* в списке **Делегирование подсети** выберите **нет** из списка служб, перечисленных в разделе **Делегирование подсети к службе**. 
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -90,7 +90,7 @@ ms.locfileid: "76933924"
 ```
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-С помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) создайте виртуальную сеть с именем **myVnet**, содержащую подсеть **mySubnet**, в группе ресурсов **myResourceGroup**.
+С помощью команды **az network vnet create** создайте виртуальную сеть с именем **myVnet**, содержащую подсеть **mySubnet**, в группе ресурсов [myResourceGroup](https://docs.microsoft.com/cli/azure/network/vnet).
 
 ```azurecli-interactive
   az network vnet create \
@@ -162,7 +162,7 @@ ms.locfileid: "76933924"
 Чтобы проверить, было ли делегирование удалено, используйте команду [AZ Network vnet подсеть показывать](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show). Убедитесь, что служба удалена из подсети в свойстве **ServiceName**:
 
 ```azurecli-interactive
-  az network vnet show \
+  az network vnet subnet show \
   --resource-group myResourceGroup \
   --name mySubnet \
   --vnet-name myVnet \
@@ -252,5 +252,5 @@ ms.locfileid: "76933924"
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [управлять подсетями в Azure](virtual-network-manage-subnet.md).

@@ -1,27 +1,27 @@
 ---
 title: Управление учетной записью Azure Maps в портал Azure | Карты Microsoft Azure
 description: В этой статье вы узнаете, как использовать портал Azure для управления учетной записью Microsoft Azure Maps.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 01/27/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: a983eab03e948d092af652962d75211eb8ee3e7b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 1186c3ab0fc333896f3be4db5d103bcd6d12abf9
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025611"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209976"
 ---
 # <a name="manage-your-azure-maps-account"></a>Управление учетной записью Azure Maps
 
 Вы можете управлять учетной записью Azure Maps с помощью портала Azure. Если у вас есть учетная запись, вы можете реализовать API-интерфейсы на своем веб-сайте или в мобильном приложении.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-new-account"></a>Создание новой учетной записи
+## <a name="create-a-new-account"></a>Создание учетной записи
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
@@ -41,7 +41,7 @@ ms.locfileid: "77025611"
 
 Откроется страница подтверждения. Вы можете подтвердить удаление вашей учетной записи, введя ее имя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Настройте проверку подлинности с помощью Azure Maps и Узнайте, как получить ключ подписки Azure Maps.
 > [!div class="nextstepaction"]

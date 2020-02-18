@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5034aaaee335bbd87e7ea42b448e4e8fbf6aacca
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 11fdaa0d547e588daa9d264c2393606705554a17
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274535"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157280"
 ---
 # <a name="storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -115,11 +115,9 @@ ms.locfileid: "76274535"
 > [!IMPORTANT]
 > Изменение уровня доступа для имеющейся учетной записи хранения или большого двоичного объекта может привести к дополнительным затратам. Дополнительные сведения см. в разделе [Выставление счетов за использование учетной записи хранения](#storage-account-billing).
 
-## <a name="replication"></a>Репликация
+## <a name="redundancy"></a>Избыточность
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
-
-См. дополнительные сведения о [репликации службы хранилища Azure](storage-redundancy.md).
 
 ## <a name="encryption"></a>Шифрование
 

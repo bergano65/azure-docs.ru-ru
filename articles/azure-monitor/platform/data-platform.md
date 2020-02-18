@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: b5d35fc14d69da2246c0ef5d4ef6d19a9e0c8462
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 74ede523c9747de4746fe1854bd1e352eba2f7e3
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750997"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77148901"
 ---
 # <a name="azure-monitor-data-platform"></a>Платформа данных Azure Monitor
 
@@ -38,7 +38,7 @@ ms.locfileid: "75750997"
 
 Метрики в Azure Monitor хранятся в базе данных временных рядов, которая оптимизирована для анализа данных с отметками времени. Это делает метрики особенно оптимальными для предупреждений и быстрого обнаружения проблем. Они могут сообщить вам, как работает система, но обычно необходимо объединить с журналами, чтобы определить основную причину проблем.
 
-Метрики доступны для интерактивного анализа в портал Azure с [Обозреватель метрик](../app/metrics-explorer.md). Их можно добавить на [панель мониторинга Azure](../learn/tutorial-app-dashboards.md) для визуализации в сочетании с другими данными и использовать для [оповещений](alerts-metric.md) практически в реальном времени.
+Метрики доступны для интерактивного анализа в портал Azure с помощью [Обозреватель метрик Azure](../platform/metrics-getting-started.md). Их можно добавить на [панель мониторинга Azure](../learn/tutorial-app-dashboards.md) для визуализации в сочетании с другими данными и использовать для [оповещений](alerts-metric.md)практически в реальном времени.
 
 Дополнительные сведения о метриках Azure Monitor, включая источники данных в метриках, см. [в Azure Monitor](data-platform-metrics.md).
 

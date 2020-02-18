@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: mlearned
-ms.openlocfilehash: a1ed1eccd7a10d78cd503559469654e5562cde0c
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 5d29598b0962fc42c855e7a26917a34269c30ddb
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67615866"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158068"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)
 
@@ -40,9 +40,9 @@ ms.locfileid: "67615866"
 
 ![Интеграция Azure Active Directory с кластерами AKS](media/concepts-identity/aad-integration.png)
 
-При использовании кластеров Azure AKS, интегрированных с Azure AD, можно предоставить пользователям или группам доступ к ресурсам Kubernetes, размещенным в определенном пространстве имен или кластере. Чтобы получить `kubectl` контекст конфигурации, пользователь может выполнить команду [AZ AKS Get-Credential][az-aks-get-credentials] . Когда после этого пользователь будет взаимодействовать с кластером AKS с помощью `kubectl`, ему будет предложено войти с учетными данными Azure AD. Такой подход обеспечивает единый источник для управления учетными записями пользователя и хранения паролей. Пользователь имеет доступ только к ресурсам, определенным администратором кластера.
+При использовании кластеров Azure AKS, интегрированных с Azure AD, можно предоставить пользователям или группам доступ к ресурсам Kubernetes, размещенным в определенном пространстве имен или кластере. Чтобы получить контекст конфигурации `kubectl`, пользователь может выполнить команду [AZ AKS Get-Credential][az-aks-get-credentials] . Когда после этого пользователь будет взаимодействовать с кластером AKS с помощью `kubectl`, ему будет предложено войти с учетными данными Azure AD. Такой подход обеспечивает единый источник для управления учетными записями пользователя и хранения паролей. Пользователь имеет доступ только к ресурсам, определенным администратором кластера.
 
-Для аутентификации Azure AD в кластерах AKS используется OpenID Connect — уровень идентификации, созданный на основе протокола OAuth 2.0. Протокол OAuth 2.0 определяет механизмы получения и использования маркеров доступа для обращения к защищенным ресурсам. OpenID Connect реализует функции аутентификации в качестве расширения процесса авторизации OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][openid-connect]. Для проверки маркеров аутентификации, полученных из Azure AD с помощью OpenID Connect, кластеры AKS используют аутентификацию маркеров с помощью веб-перехватчика Kubernetes. Дополнительные сведения см. в [документации по проверке подлинности маркеров веб][webhook-token-docs]-перехватчика.
+Для аутентификации Azure AD в кластерах AKS используется OpenID Connect — уровень идентификации, созданный на основе протокола OAuth 2.0. Протокол OAuth 2.0 определяет механизмы получения и использования маркеров доступа для обращения к защищенным ресурсам. OpenID Connect реализует функции аутентификации в качестве расширения процесса авторизации OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][openid-connect]. Для проверки маркеров аутентификации, полученных из Azure AD с помощью OpenID Connect, кластеры AKS используют аутентификацию маркеров с помощью веб-перехватчика Kubernetes. Дополнительные сведения см. в [документации по проверке подлинности маркеров веб-перехватчика][webhook-token-docs].
 
 ## <a name="role-based-access-controls-rbac"></a>Управление доступом на основе ролей (RBAC)
 
@@ -71,7 +71,7 @@ ms.locfileid: "67615866"
 
 Элемент ClusterRoleBinding действует аналогичным образом, привязывая роли к пользователям, но его можно применить к ресурсам в пределах всего кластера, а не в определенном пространстве имен. Такой подход позволяет предоставить администраторам или инженерам службы поддержки доступ ко всем ресурсам в кластере AKS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с Azure AD и Kubernetes RBAC, см. статью [интеграция Azure Active Directory с AKS][aks-aad].
 
@@ -91,7 +91,7 @@ ms.locfileid: "67615866"
 [kubernetes-rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 
 <!-- LINKS - Internal -->
-[openid-connect]: ../active-directory/develop/v1-protocols-openid-connect-code.md
+[openid-connect]: ../active-directory/develop/v2-protocols-oidc.md
 [az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
 [azure-rbac]: ../role-based-access-control/overview.md
 [aks-aad]: azure-ad-integration-cli.md

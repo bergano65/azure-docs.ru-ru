@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: reference
 ms.date: 11/08/2019
 ms.author: alkarche
-ms.openlocfilehash: 108294e3f125da9fb009eb0a85585dab026c8d01
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: c3ed780bc50b690b2f5c3285024695ec6426b9b3
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933322"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167316"
 ---
 # <a name="azure-functions-warm-up-trigger"></a>Триггер прогрева функций Azure
 
@@ -171,25 +171,9 @@ def main(warmupContext: func.Context) -> None:
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-В следующем примере показан триггер прогрева в файле *Function. JSON* и [функции Java](functions-reference-java.md) , которые будут выполняться на каждом новом экземпляре при добавлении в приложение.
+В следующем примере показан триггер прогрева, который выполняется при добавлении каждого нового экземпляра в приложение.
 
-Функция должна называться ```warmup``` (без учета регистра), и для каждого приложения может существовать только одна функция прогрева.
-
-Ниже показан файл *function.json*.
-
-```json
-{
-    "bindings": [
-        {
-            "type": "warmupTrigger",
-            "direction": "in",
-            "name": "warmupContext"
-        }
-    ]
-}
-```
-
-Ниже приведен код Java.
+Функция должна называться `warmup` (без учета регистра), и для каждого приложения может существовать только одна функция прогрева.
 
 ```java
 @FunctionName("Warmup")
@@ -245,9 +229,9 @@ public void run( ExecutionContext context) {
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-| **type** | Н/Д| Обязательное. Необходимо задать значение `warmupTrigger`. |
-| **direction** | Н/Д| Обязательное. Необходимо задать значение `in`. |
-| **name** | Н/Д| Обязательное. имя переменной, используемое в коде функции.|
+| **type** | Недоступно| Обязательное. Необходимо задать значение `warmupTrigger`. |
+| **direction** | Недоступно| Обязательное. Необходимо задать значение `in`. |
+| **name** | Недоступно| Обязательное. имя переменной, используемое в коде функции.|
 
 ## <a name="trigger---usage"></a>Использование триггера
 

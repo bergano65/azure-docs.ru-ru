@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, jehollan, logicappspm
 ms.topic: article
 ms.date: 05/26/2017
-ms.openlocfilehash: e4200d09a02da1fd95f9bf5051b7f9d5fca5aa98
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: bb6c99ea12e5b53631d42a04b36b7bfef2337e42
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793227"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191444"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "74793227"
 
 Пользовательские API для работы с приложениями логики предоставляют [*действия*](./logic-apps-overview.md#logic-app-concepts) для выполнения определенных задач в рабочих процессах приложений логики. Кроме того, API может действовать как [*триггер*](./logic-apps-overview.md#logic-app-concepts), запускающий рабочий процесс приложения логики, если новые данные или событие соответствует заданному условию. В этом разделе описаны общие модели для создания действий и триггеров в API в зависимости от ожидаемого поведения интерфейса.
 
-Интерфейсы API можно разместить в [службе приложений Azure](../app-service/overview.md). Это служба PaaS (платформа как услуга), предоставляющая удобный способ размещения API с высоким уровнем масштабирования.
+API-интерфейсы можно разместить в [службе приложений Azure](../app-service/overview.md). Это служба PaaS (платформа как услуга), предоставляющая удобное размещение API с высоким уровнем масштабирования.
 
 > [!TIP] 
 > Интерфейсы API можно развернуть в качестве веб-приложений, но лучше развернуть их в качестве приложений API, что облегчит создание, размещение и использование интерфейсов API, как в облаке, так и локально. Не нужно изменять код в API-интерфейсах, просто разверните свой код в приложении API. Например, узнайте, как создавать приложения API с помощью таких языков: 
@@ -172,7 +172,7 @@ ms.locfileid: "74793227"
 | Включает ли запрос `triggerState`? | Ответ API | 
 | -------------------------------- | -------------| 
 | Нет | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
-| ДА | Проверка службы на наличие файлов, добавленных после `DateTime` для `triggerState`. | 
+| Да | Проверка службы на наличие файлов, добавленных после `DateTime` для `triggerState`. | 
 ||| 
 
 | Количество найденных файлов | Ответ API | 
@@ -206,9 +206,9 @@ ms.locfileid: "74793227"
 > [!TIP]
 > Пример модели веб-перехватчика см. в [образце контроллера триггера веб-перехватчика в GitHub](https://github.com/logicappsio/LogicAppTriggersExample/blob/master/LogicAppTriggers/Controllers/WebhookTriggerController.cs).
 
-## <a name="secure-calls-to-your-apis-from-logic-apps"></a>Защита вызовов к API из приложений логики
+## <a name="improve-security-for-calls-to-your-apis-from-logic-apps"></a>Повышение безопасности при вызовах API из приложений логики
 
-После создания пользовательских API настройте аутентификацию для API, чтобы обеспечить безопасность при их вызове из приложений логики. Узнайте, [как защитить вызовы к пользовательским API из приложений логики](../logic-apps/logic-apps-custom-api-authentication.md).
+После создания пользовательских API настройте аутентификацию для API, чтобы обеспечить безопасность при их вызове из приложений логики. Узнайте [, как повысить безопасность вызовов пользовательских API из приложений логики](../logic-apps/logic-apps-custom-api-authentication.md).
 
 ## <a name="deploy-and-call-your-apis"></a>Развертывание и вызов интерфейсов API
 
@@ -226,9 +226,9 @@ ms.locfileid: "74793227"
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 
-* Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish). 
+* Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обработка ошибок и исключений](../logic-apps/logic-apps-exception-handling.md)
 * [Вызовы, срабатывания триггеров и создание вложенных приложений логики с конечными точками HTTP](../logic-apps/logic-apps-http-endpoint.md)

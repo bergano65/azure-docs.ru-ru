@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 16689982156743f5dc4e2ed09a0f9bc097a51b9b
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 6e1b162d17e2369b579fc1210c57e0409b0546bc
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903036"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77148476"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-p2s-radius-authentication"></a>Создание и установка файлов конфигурации VPN-клиента для аутентификации при подключениях типа "точка — сеть" с использованием RADIUS
 
@@ -38,7 +38,6 @@ ms.locfileid: "75903036"
 
 Чтобы использовать разделы этой статьи, сначала решите, какой тип аутентификации вы хотите использовать: по имени пользователя и паролю, на основе сертификата или другие типы аутентификации. В каждом разделе есть инструкции для Windows, Mac OS X и Linux (сейчас доступны ограниченные инструкции).
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="adeap"></a>Проверка имени пользователя и пароля
 
@@ -259,7 +258,7 @@ Get-AzVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNet1GW" | fl
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем нажмите кнопку **Continue** (Продолжить).
 
    ![Список Choose An Identity (Выбор удостоверения)](./media/point-to-site-vpn-client-configuration-radius/identity.png)
-8. В поле **Local ID** (Локальный ИД) укажите имя сертификата (из шага 6). В нашем примере это **ikev2Client.com**. Затем нажмите кнопку **Apply (применить** ), чтобы сохранить изменения.
+8. В поле **Local ID** (Локальный ИД) укажите имя сертификата (из шага 6). В нашем примере это **ikev2Client.com**. Нажмите кнопку **Apply** (Применить), чтобы сохранить изменения.
 
    ![Поле Local ID (Локальный ИД)](./media/point-to-site-vpn-client-configuration-radius/applyconnect.png)
 9. В диалоговом окне **Network** (Сеть) выберите **Apply** (Применить), чтобы сохранить все изменения. Затем выберите **Connect** (Подключиться), чтобы установить подключение "точка — сеть" к виртуальной сети Azure.

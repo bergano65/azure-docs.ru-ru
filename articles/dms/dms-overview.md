@@ -9,13 +9,13 @@ ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.topic: article
-ms.date: 05/31/2019
-ms.openlocfilehash: 634f949daa4926f2707c0611b819800441e76610
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 06/01/2019
+ms.openlocfilehash: d573378bc5e729eb75b6c3b51d3671492f7f98f1
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438029"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209381"
 ---
 # <a name="what-is-azure-database-migration-service"></a>Что такое служба Azure Database Migration Service?
 
@@ -32,11 +32,11 @@ Azure Database Migration Service интегрирует некоторые фу�
 
 Актуальные сведения о доступности Azure Database Migration Service см. в разделе [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration).
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 Актуальные сведения о ценах на Azure Database Migration Service см. [на этой странице с ценами](https://azure.microsoft.com/pricing/details/database-migration/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Состояние сценариев миграции, поддерживаемых Azure Database Migration Service](resource-scenario-status.md).
 * [Создайте экземпляр Azure Database Migration Service с помощью портал Azure](quickstart-create-data-migration-service-portal.md).

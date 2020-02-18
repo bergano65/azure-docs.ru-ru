@@ -6,12 +6,12 @@ author: lisaguthrie
 ms.topic: conceptual
 ms.date: 12/29/2019
 ms.author: lcozzens
-ms.openlocfilehash: 7461f378a4f95a43971f5893fe70739511e942ff
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: f85f63af94beb5c0d99632be69368c0c7c727b7b
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732007"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212214"
 ---
 # <a name="integrate-with-azure-managed-identities"></a>Интеграция с управляемыми удостоверениями Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "75732007"
 > * настройка приложения на использование управляемого удостоверения при подключении к службе "Конфигурация приложений".
 > * При необходимости настройте приложение для использования управляемого удостоверения при подключении к Key Vault через конфигурацию приложения Key Vault ссылке.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством требуется:
 
@@ -67,7 +67,7 @@ ms.locfileid: "75732007"
 
 1. В поле **Подписка** выберите подписку Azure. Выберите ресурс Службы приложений для своего приложения.
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
     ![Добавление управляемого удостоверения](./media/add-managed-identity.png)
 
@@ -95,7 +95,6 @@ ms.locfileid: "75732007"
 
     ```csharp-interactive
     using Azure.Identity;
-    using Microsoft.Azure.Services.AppAuthentication;
     ```
 
 1. Если вы хотите получить доступ только к значениям, хранящимся непосредственно в конфигурации приложения, обновите метод `CreateWebHostBuilder`, заменив метод `config.AddAzureAppConfiguration()`.
@@ -117,7 +116,7 @@ ms.locfileid: "75732007"
                 .UseStartup<Startup>();
     ```
 
-    ### <a name="net-core-3xtabcore3x"></a>[.NET Core 3. x](#tab/core3x)
+    ### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -151,7 +150,7 @@ ms.locfileid: "75732007"
                     .UseStartup<Startup>();
     ```
 
-    ### <a name="net-core-3xtabcore3x"></a>[.NET Core 3. x](#tab/core3x)
+    ### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -206,7 +205,7 @@ az webapp deployment source config-local-git --name <app_name> --resource-group 
 
 ### <a name="deploy-your-project"></a>Развертывание проекта
 
-В _окне терминала на локальном_компьютере добавьте удаленное хранилище Azure в локальный репозиторий Git. Замените _URL-адрес\<_ URL-адресом удаленного репозитория Git, полученным на странице [Включение локального репозитория Git с KUDU](#enable-local-git-with-kudu).
+В _окне терминала на локальном_компьютере добавьте удаленное хранилище Azure в локальный репозиторий Git. Замените _URL-адрес\<>_ URL-адресом удаленного репозитория Git, полученным на странице [Включение локального репозитория Git с KUDU](#enable-local-git-with-kudu).
 
 ```bash
 git remote add azure <url>
@@ -258,7 +257,7 @@ http://<app_name>.azurewebsites.net
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом руководстве вы добавили управляемое удостоверение Azure для упрощения доступа к конфигурации приложения и улучшения управления учетными данными для приложения. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]

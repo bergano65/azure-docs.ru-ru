@@ -7,16 +7,16 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
-ms.openlocfilehash: 879e1911c715688c2fed4044e23f437b3bbef7b2
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 93a77d73b5cc249c39609f98f055a7b1927dd6ed
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890674"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025492"
 ---
-# <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Руководство по развертыванию шаблона приложения цифрового центра дистрибуции и его использованию
+# <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Руководство. развертыванию шаблона приложения цифрового центра дистрибуции и его использованию
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 В этом руководстве показано, как приступить к работе, развернув шаблон приложения **цифрового центра дистрибуции** для IoT Central. Вы узнаете, как развернуть шаблон, который готов к использованию, и что можно будет сделать дальше.
 
@@ -34,19 +34,22 @@ ms.locfileid: "73890674"
 
 1. Перейдите на веб-сайт диспетчера приложений в Azure IoT Central. Выберите **Build** (Сборка) в области навигации слева, а затем перейдите на вкладку **Retail** (Розничная торговля).
 
-> [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
+    > [!div class="mx-imgBorder"]
+    > ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
 
 2. Выберите вкладку **Retail** (Розничная торговля) и щелкните **Create app** (Создать) в разделе **digital distribution center application** (Приложение цифрового центра дистрибуции).
 
 3. Для **создания приложения** откроется форма нового приложения, которая будет заполнена запрошенными данными, как показано ниже.
    **Application name** (Имя приложения): можно использовать предложенное имя по умолчанию или ввести понятное имя приложения.
-   **URL** (URL-адрес): можно использовать предложенный URL-адрес по умолчанию или ввести понятный уникальный URL-адрес. Если у вас уже есть подписка Azure, то рекомендуется использовать параметр по умолчанию. В противном случае вы можете начать с 7-дневной бесплатной пробной версии и затем перейти на оплату по мере использования в любое время до истечения срока действия бесплатной пробной версии.
+   **URL** (URL-адрес): можно использовать предложенный URL-адрес по умолчанию или ввести понятный уникальный URL-адрес. Если у вас уже есть подписка Azure, то рекомендуется использовать параметр по умолчанию. Вы можете начать с 7-дневной бесплатной пробной версии тарифного плана и выбрать преобразование в стандартный тарифный план в любое время до истечения срока действия бесплатной версии.
    **Billing Info** (Данные для выставления счетов): сведения о каталоге, подписке Azure и регионе необходимы для подготовки ресурсов.
    **Создание**. Выберите "Create" (Создать) в нижней части страницы, чтобы развернуть приложение.
 
-> [!div class="mx-imgBorder"]
-> ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-create.png)
+    > [!div class="mx-imgBorder"]
+    > ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-create.png)
+
+    > [!div class="mx-imgBorder"]
+    > ![Данные для выставления счетов в цифровом центре дистрибуции](./media/tutorial-iot-central-ddc/ddc-create-billinginfo.png)
 
 ## <a name="walk-through-the-application-dashboard"></a>Знакомство с панелью мониторинга приложения 
 
@@ -105,12 +108,12 @@ ms.locfileid: "73890674"
 > ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-jobs.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Если вы не собираетесь в дальнейшем использовать это приложение, удалите шаблон приложения, выбрав **Administration** (Администрирование)  >  **Application settings** (Параметры приложения) и щелкнув **Delete** (Удалить).
+Если вы не собираетесь в дальнейшем использовать это приложение, удалите шаблон приложения, выбрав **Administration** (Администрирование)  > **Application settings** (Параметры приложения) и щелкнув **Delete** (Удалить).
 
 > [!div class="mx-imgBorder"]
 > ![Цифровой центр дистрибуции](./media/tutorial-iot-central-ddc/ddc-cleanup.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об архитектуре решения цифрового центра дистрибуции и [его принципах действия](./architecture-digital-distribution-center-pnp.md).
 * Узнайте больше о других [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail-pnp.md).
-* См. сведения об [IoT Central](../preview/overview-iot-central.md).
+* См. сведения об [IoT Central](../core/overview-iot-central.md).

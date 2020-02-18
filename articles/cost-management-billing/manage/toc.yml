@@ -119,12 +119,22 @@
       href: ../../azure-portal/supportability/how-to-create-azure-support-request.md
 - name: Примеры
   items:
-    - name: Пример кода API счетов
-      href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
-    - name: Пример кода API использования ресурсов
-      href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
-    - name: Пример кода API RateCard
-      href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
+    - name: REST API
+      items:
+        - name: Просмотр корпоративных затрат
+          href: review-enterprise-billing.md
+        - name: Просмотр данных об использовании подписки
+          href: review-subscription-billing.md
+        - name: Просмотр данных использования ресурсов
+          href: review-service-usage-api.md
+    - name: Примеры для .NET
+      items:
+        - name: Пример кода API счетов
+          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
+        - name: Пример кода API использования ресурсов
+          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
+        - name: Пример кода API RateCard
+          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
 - name: Справочник
   items:
     - name: Сценарии автоматизации выставления счетов

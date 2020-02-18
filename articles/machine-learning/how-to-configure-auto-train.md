@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 00ab3e9c7902e253d39a38eb0e98ee166244bca2
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: b7f837c56214d2d01d0f119e0107a095bcfd782b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048580"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198775"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -174,12 +174,14 @@ automl_config = AutoMLConfig(task = "classification")
 
 Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) для ([классификация](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification), [Прогнозирование](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting)и [регрессия](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression)).
 
+Для автоматического выполнения проверки машинного обучения необходимо, чтобы в `experiment_timeout_minutes` был установлен минимальный тайм-аут, равный 15 минутам, чтобы избежать ошибок времени ожидания эксперимента.
+
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика определяет метрику, используемую во время обучения модели для оптимизации. Доступные метрики, которые можно выбрать, определяются выбранным типом задачи, а в следующей таблице показаны допустимые основные метрики для каждого типа задачи.
 
 |Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-|accuracy| spearman_correlation; | spearman_correlation;
+|точность| spearman_correlation; | spearman_correlation;
 |AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
 |average_precision_score_weighted | r2_score; | r2_score;
 |norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
@@ -193,7 +195,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 При настройке экспериментов можно включить дополнительные параметры `featurization`. В следующей таблице показаны допустимые параметры для Добавление признаков в [классе`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
 
-|Конфигурация Добавление признаков | Description |
+|Конфигурация Добавление признаков | Описание |
 | ------------- | ------------- |
 |`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг добавление признаков. [Узнайте, как настроить добавление признаков](how-to-configure-auto-train.md#customize-feature-engineering).|
 |`"featurization": 'off'`| Указывает, что шаг добавление признаков не должен выполняться автоматически.|
@@ -379,7 +381,7 @@ best_run, fitted_model = automl_run.get_output()
   >[!Note]
   >Используйте "тимесериестрансформер" для задачи = "прогнозирование"; в противном случае используйте "Преобразователь" для задачи "регрессия" или "Классификация".
 
-  Выходные данные:
+  Выходные данные.
   ```
   [{'RawFeatureName': 'A',
     'TypeDetected': 'Numeric',
@@ -405,7 +407,7 @@ best_run, fitted_model = automl_run.get_output()
 
    Где:
 
-   |Выходные данные|Определение|
+   |Вывод|Определение|
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|
@@ -519,7 +521,7 @@ class_prob = fitted_model.predict_proba(X_test)
 
 Общие сведения о том, как пояснения к модели и важность признаков можно включить в других областях пакета SDK за пределами автоматизированного машинного обучения, см. в статье о [концепции](how-to-machine-learning-interpretability.md) , посвященной возможностям интерпретации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 

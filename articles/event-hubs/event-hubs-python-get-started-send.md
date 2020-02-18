@@ -1,35 +1,34 @@
 ---
-title: Краткое руководство. Отправка и получение событий с помощью Python (Центры событий Azure)
-description: Краткое руководство. В этом пошаговом руководстве показано, как создать и выполнить скрипты Python, которые отправляют или получают события через Центры событий Azure.
+title: Отправка и получение событий через Центры событий Azure с помощью Python (старая версия)
+description: В этом пошаговом руководстве показано, как создать и выполнить скрипты Python, которые отправляют или получают события через Центры событий Azure с помощью старого пакета azure/event-hub версии 1.
 services: event-hubs
-author: ShubhaVijayasarathy
+author: spelluru
 manager: femila
 ms.service: event-hubs
 ms.workload: core
 ms.topic: quickstart
-ms.date: 01/08/2020
-ms.author: shvija
-ms.openlocfilehash: c4fa9e6038f4007246552610f537825f9def92a8
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.date: 01/15/2020
+ms.author: spelluru
+ms.openlocfilehash: 654ccd6352dc0b671cc3becdafd2f1e1102dd39e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75939952"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76902933"
 ---
-# <a name="quickstart-send-and-receive-events-with-event-hubs-using-python"></a>Краткое руководство. Отправка и получение событий через Центры событий Azure с использованием Python
+# <a name="quickstart-send-and-receive-events-with-event-hubs-using-python-azure-eventhub-version-1"></a>Краткое руководство. Отправка и получение событий через Центры событий с использованием Python (azure-eventhub, версия 1)
 
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию от распределенных программных и аппаратных систем. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Дополнительные сведения о Центрах событий см. в статьях [Центры событий Azure — платформа потоковой передачи больших данных и служба приема событий](event-hubs-about.md) и [Features and terminology in Azure Event Hubs](event-hubs-features.md) (Функции и терминология в Центрах событий Azure).
 
 В этом кратком руководстве показано, как создать приложения Python, которые отправляют или получают события через концентратор событий. 
 
-> [!IMPORTANT]
-> В рамках этого краткого руководства используется версия 1 пакета SDK Центров событий Azure для Python. Если вы не знакомы с Центрами событий Azure, используйте пакет SDK для Python версии 5. Краткое руководство по использованию пакета SDK для Python версии 5 см. [здесь](get-started-python-send-v2.md). Чтобы перенести существующий код с версии 1 на версию 5, ознакомьтесь с [этим руководством по миграции](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md).
+> [!WARNING]
+> Для этого краткого руководства используется версия 1 пакета SDK Центров событий Azure для Python. Рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md) код в [версию 5 пакета SDK для Python](get-started-python-send-v2.md).
 
+ 
+ 
 
-> [!NOTE]
-> Вы можете пропустить работу с кратким руководством и сразу скачать [примеры приложений](https://github.com/Azure/azure-event-hubs-python/tree/master/examples) с сайта GitHub. Замените строки `EventHubConnectionString` и `EventHubName` значениями для реального концентратора событий. 
-
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с данным руководством необходимо следующее:
 
@@ -40,15 +39,16 @@ ms.locfileid: "75939952"
 - Пакет Python для Центров событий. Чтобы установить этот пакет, выполните следующую команду в окне командной строки, где путь к Python сохранен в переменной окружения path. 
   
   ```cmd
-  pip install azure-eventhub
+  pip install azure-eventhub==1.3.*
   ```
-  
-  > [!NOTE]
-  > Код в этом кратком руководстве использует текущую стабильную версию 1.3.1 пакета SDK для Центров событий. Пример кода для предварительной версии пакета SDK см. на странице [https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhubs/examples](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhubs/examples).
+
 
 ## <a name="send-events"></a>Отправка событий
 
 Чтобы создать приложение Python, которое отправляет события в концентратор событий, выполните следующее.
+
+> [!NOTE]
+> Вы можете пропустить работу с кратким руководством и сразу скачать [примеры приложений](https://github.com/Azure/azure-event-hubs-python/tree/master/examples) с сайта GitHub. Замените строки `EventHubConnectionString` и `EventHubName` значениями для реального концентратора событий.
 
 1. Откройте редактор Python, например [Visual Studio Code](https://code.visualstudio.com/).
 2. Создайте новый файл с именем *send.py*. Этот сценарий отправляет 100 событий в ваш концентратор событий.

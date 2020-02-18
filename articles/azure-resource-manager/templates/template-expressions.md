@@ -2,13 +2,13 @@
 title: Синтаксис и выражения шаблона
 description: Описывает декларативный синтаксис JSON для шаблонов Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 02/10/2020
-ms.openlocfilehash: 42649d4b04b03de32b82335fce68401192de75a3
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.date: 02/13/2020
+ms.openlocfilehash: 7bca3125f80225d2180734f483194a63e39d9cf5
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120605"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207406"
 ---
 # <a name="syntax-and-expressions-in-azure-resource-manager-templates"></a>Синтаксис и выражения в шаблонах Azure Resource Manager
 
@@ -16,11 +16,9 @@ ms.locfileid: "77120605"
 
 Выражение шаблона не может содержать более 24 576 символов.
 
-Выражения поддерживают JSON ("null"), а свойства поддерживают литеральное значение null. В обоих случаях диспетчер ресурсов шаблоны обрабатывают его так, как если бы свойство отсутствует.
-
 ## <a name="use-functions"></a>Использование функций
 
-В следующем примере показано выражение в значении параметра по умолчанию:
+Azure Resource Manager предоставляет [функции](template-functions.md) , которые можно использовать в шаблоне. В следующем примере показано выражение, использующее функцию в значении по умолчанию для параметра:
 
 ```json
 "parameters": {
@@ -40,6 +38,12 @@ ms.locfileid: "77120605"
 ```json
 "name": "[concat('storage', uniqueString(resourceGroup().id))]"
 ```
+
+Большинство функций работают одинаково при развертывании в группе ресурсов, подписке, группе управления или клиенте. Следующие функции имеют ограничения в зависимости от области действия:
+
+* [resourceGroup](template-functions-resource.md#resourcegroup) — может использоваться только в развертываниях для группы ресурсов.
+* [resourceId](template-functions-resource.md#resourceid) — может использоваться в любой области, но допустимые параметры изменяются в зависимости от области.
+* [Подписка](template-functions-resource.md#subscription) — может использоваться только в развертываниях для группы ресурсов или подписки.
 
 ## <a name="escape-characters"></a>Escape-символы
 
@@ -67,7 +71,16 @@ ms.locfileid: "77120605"
 },
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="null-values"></a>Значения NULL
+
+Чтобы установить свойство в значение null, можно использовать **значение NULL** или **[JSON (' null ')]** . [Функция JSON](template-functions-array.md#json) возвращает пустой объект при предоставлении `null` в качестве параметра. В обоих случаях диспетчер ресурсов шаблоны обрабатывают его так, как если бы свойство отсутствует.
+
+```json
+"stringValue": null,
+"objectValue": "[json('null')]"
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Полный список функций шаблонов см. в статье [Функции шаблонов диспетчера ресурсов Azure](template-functions.md).
 * Дополнительные сведения о файлах шаблонов см. [в разделе сведения о структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).

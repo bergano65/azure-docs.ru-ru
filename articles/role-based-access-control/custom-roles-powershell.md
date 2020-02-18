@@ -1,5 +1,5 @@
 ---
-title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure PowerShell | Документация Майкрософт
+title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
 description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя Azure PowerShell.
 services: active-directory
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: fa4ff5f35df0f541d8a7e633df024af81676e58b
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 52057477fdba9757be2737c223d569b9e9a3e749
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74703096"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137439"
 ---
 # <a name="create-or-update-custom-roles-for-azure-resources-using-azure-powershell"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
 
@@ -29,7 +29,7 @@ ms.locfileid: "74703096"
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для создания пользовательских ролей в Azure требуются:
 

@@ -1,5 +1,5 @@
 ---
-title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API Azure | Документация Майкрософт
+title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
 description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя REST API.
 services: active-directory
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 474de8934ec7e27df601fe80809566a801e6af61
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 145bc45e1b7faeddc23cf5f0662337e15ab51c29
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452940"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137360"
 ---
 # <a name="create-or-update-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
 
@@ -38,7 +38,7 @@ ms.locfileid: "75452940"
 
 1. Замените *{Filter}* типом роли.
 
-    | Фильтр | Description |
+    | Filter | Description |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
@@ -54,15 +54,15 @@ ms.locfileid: "75452940"
 
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{Filter}* типом роли.
 
-    | Фильтр | Description |
+    | Filter | Description |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
@@ -78,15 +78,15 @@ ms.locfileid: "75452940"
 
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{Filter}* отображаемым именем роли.
 
-    | Фильтр | Description |
+    | Filter | Description |
     | --- | --- |
     | `$filter=roleName%20eq%20'{roleDisplayName}'` | Используйте точное отображаемое имя роли в формате URL-адреса. Например, `$filter=roleName%20eq%20'Virtual%20Machine%20Contributor'` |
 
@@ -104,10 +104,10 @@ ms.locfileid: "75452940"
 
 1. В URI замените *{scope}* на область, для которой нужно получить список ролей.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleDefinitionId}* на идентификатор GUID определения роли.
@@ -152,10 +152,10 @@ ms.locfileid: "75452940"
 
 1. В URI замените *{scope}* на первую область `assignableScopes` пользовательской роли.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
@@ -217,10 +217,10 @@ ms.locfileid: "75452940"
 
 1. В URI замените *{scope}* на первую область `assignableScopes` пользовательской роли.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
@@ -301,10 +301,10 @@ ms.locfileid: "75452940"
 
 1. В URI замените *{scope}* на область, для которой нужно удалить пользовательскую роль.
 
-    | Область действия | Тип |
+    | Область | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.

@@ -8,14 +8,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 01/29/2020
 ms.author: diberry
-ms.openlocfilehash: 26c7996d6a955a183121a59254131dcb1dc6706f
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: a3bdc118be96630ebcf3bf63a2948976dc9b4261
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844268"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901674"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -39,7 +39,7 @@ ms.locfileid: "76844268"
 1. На странице **Создание** выберите **Создать службу QnA**. Откроется [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) для настройки службы QnA Maker в вашей подписке.
 
 1. На портале Azure щелкните ресурс. Запишите идентификатор Azure Active Directory, подписку и имя ресурса QnA, выбранное при создании ресурса.
-1. Вернитесь на портал QnA Maker и обновите веб-страницу на нем, чтобы продолжить создание базы знаний.
+1. Вернитесь на портал QnA Maker и обновите веб-страницу на нем, чтобы продолжить создание базы знаний. Выберите существующий клиент, подписку и новый ресурс. Выберите язык. Этот язык будет использоваться для всех баз знаний в службе QnA Maker.
 
    ![Снимок экрана с выбранной базой данных и службой QnA Maker](../media/qnamaker-quickstart-kb/qnaservice-selection.png)
 

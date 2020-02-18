@@ -9,14 +9,14 @@ ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.date: 01/16/2020
-ms.openlocfilehash: 5df00d68b7114cc489b0708f5c2e401c87d0be15
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: d41b0499df1a62440e8c1991e29f7963224a50d6
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314034"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138156"
 ---
-# <a name="import-your-data-into-azure-machine-learning-designer"></a>Импорт данных в конструктор Машинное обучение Azure
+# <a name="import-your-data-into-azure-machine-learning-designer-preview"></a>Импорт данных в конструктор Машинное обучение Azure (Предварительная версия)
 
 Из этой статьи вы узнаете, как импортировать собственные данные в конструктор для создания пользовательских решений. Импортировать данные в конструктор можно двумя способами: 
 
@@ -45,7 +45,7 @@ ms.locfileid: "76314034"
 
 ![Снимок экрана, показывающий расположение сохраненных наборов данных в палитре конструктора](media/how-to-designer-import-data/use-datasets-designer.png)
 
-Любой [Файловый набор данных](how-to-create-register-datasets.md#dataset-types) , зарегистрированный в рабочей области машинного обучения, появится на палитре модулей. Вы не ограничены использованием наборов данных, созданных в конструкторе.
+
 
 > [!NOTE]
 > В настоящее время конструктор поддерживает только обработку [табличных наборов данных](how-to-create-register-datasets.md#dataset-types). Если вы хотите использовать [Файловые наборы данных](how-to-create-register-datasets.md#dataset-types), используйте пакет SDK для машинное обучение Azure, доступный для Python и R.

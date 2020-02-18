@@ -4,22 +4,21 @@ description: Узнайте, как включить проверку подли
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/08/2019
+ms.date: 01/06/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 489cb9e652d571b5322a1bd92663ca089e28b8cd
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 06ff14b23057755a643e5a57fbaf711798cca00e
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980778"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210488"
 ---
-# <a name="enable-azure-active-directory-domain-services-authentication-over-smb-for-azure-files"></a>Включение проверки подлинности Azure Active Directory доменных служб по протоколу SMB для файлов Azure
+# <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure
 
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
 
-Общие сведения о проверке подлинности Azure AD по протоколу SMB для службы файлов Azure см. в статье [обзор Azure Active Directory проверки подлинности по протоколу SMB для службы файлов Azure](storage-files-active-directory-overview.md).
-
+Общие сведения о проверке подлинности на основе удостоверений в службе файлов Azure см. в статье [Общие сведения о Azure Active Directory аутентификации в SMB для файлов Azure](storage-files-active-directory-overview.md). В этой статье рассказывается о том, как включить проверку подлинности с помощью Azure Active Directory доменных служб (Azure AD DS) в службе файлов Azure. 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="overview-of-the-workflow"></a>Обзор рабочего процесса
@@ -37,7 +36,7 @@ ms.locfileid: "75980778"
 
 ![Схема, показывающая рабочий процесс включения Azure AD по протоколу SMB для службы файлов Azure](media/storage-files-active-directory-enable/azure-active-directory-over-smb-workflow.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем включать Azure AD по протоколу SMB для службы файлов Azure, убедитесь, что выполнены следующие предварительные требования.
 
@@ -71,9 +70,9 @@ ms.locfileid: "75980778"
 
 ## <a name="enable-azure-ad-ds-authentication-for-your-account"></a>Включение аутентификации Azure AD DS для учетной записи
 
-Чтобы включить аутентификацию Azure AD DS по протоколу SMB для файлов Azure, можно задать свойство учетных записей хранения, созданных после 24 сентября 2018, с помощью портал Azure, Azure PowerShell или Azure CLI. Задание этого свойства регистрирует учетную запись хранения с помощью связанного развертывания Azure AD DS. Затем проверка подлинности Azure AD DS через SMB включается для всех новых и существующих файловых ресурсов в учетной записи хранения.
+Чтобы включить аутентификацию Azure AD DS по протоколу SMB для файлов Azure, можно задать свойство в учетных записях хранения с помощью портал Azure, Azure PowerShell или Azure CLI. Неявное задание этого свойства: "домен присоединяет" к учетной записи хранения с соответствующим развертыванием AD DS Azure. Затем проверка подлинности Azure AD DS через SMB включается для всех новых и существующих файловых ресурсов в учетной записи хранения.
 
-Помните, что вы можете включить проверку подлинности Azure AD DS по протоколу SMB только после успешного развертывания AD DS Azure в клиенте Azure AD. Дополнительные сведения см. в разделе [Необходимые условия](#prerequisites).
+Помните, что вы можете включить проверку подлинности Azure AD DS по протоколу SMB только после успешного развертывания AD DS Azure в клиенте Azure AD. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites).
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -113,7 +112,7 @@ Set-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
 ```
 
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы включить проверку подлинности Azure AD по протоколу SMB с Azure CLI, установите последнюю версию CLI (2.0.70 или более поздней версии). Дополнительные сведения об установке Azure CLI см. [в разделе установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -171,7 +170,7 @@ $scope = "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/provi
 New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $FileShareContributorRole.Name -Scope $scope
 ```
 
-#### <a name="cli"></a>Интерфейс командной строки
+#### <a name="cli"></a>CLI
 
 Следующая команда CLI 2,0 показывает, как назначить роль RBAC удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей RBAC с Azure CLI см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
@@ -243,7 +242,7 @@ net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<
 
 Вы успешно включили проверку подлинности Azure AD через SMB и назначили настраиваемую роль, которая предоставляет доступ к файловому ресурсу Azure с удостоверением Azure AD. Чтобы предоставить дополнительным пользователям доступ к общему файловому ресурсу, следуйте инструкциям в разделе [Назначение разрешений доступа удостоверению](#assign-access-permissions-to-an-identity) и [Настройка разрешений NTFS](#configure-ntfs-permissions-over-smb) в разделах SMB.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о службе файлов Azure и использовании Azure AD через SMB см. в следующих ресурсах:
 

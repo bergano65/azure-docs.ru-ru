@@ -21,7 +21,11 @@
 - name: Основные понятия
   items:
     - name: Расположения и партнеры
-      href: virtual-wan-locations-partners.md
+      items:
+        - name: Расположения концентраторов и партнеры
+          href: virtual-wan-locations-partners.md
+        - name: Рекомендации по автоматизации для партнеров
+          href: virtual-wan-configure-automation-providers.md
     - name: Политики IPsec
       href: virtual-wan-ipsec.md
 - name: Практические руководства
@@ -46,8 +50,6 @@
       href: virtual-wan-point-to-site-azure-ad.md
     - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
       href: openvpn-azure-ad-tenant-multi-app.md
-    - name: Настройка автоматизации (участники Виртуальной глобальной сети)
-      href: virtual-wan-configure-automation-providers.md
     - name: Скачивание глобальных профилей VPN и профилей VPN на основе концентраторов
       href: global-hub-profile.md
     - name: Настройка маршрутизации

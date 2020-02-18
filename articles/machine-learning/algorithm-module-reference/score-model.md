@@ -6,19 +6,19 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
-ms.date: 10/22/2019
-ms.openlocfilehash: 27838aae1d829598bed44a6c16f7a1d38a95b727
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+author: likebupt
+ms.author: keli19
+ms.date: 02/11/2020
+ms.openlocfilehash: c06d1268abe8afdeb03668131c3c61cfbafa44cd
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314102"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138180"
 ---
 # <a name="score-model-module"></a>Модуль "Оценка модели"
 
-В этой статье описывается модуль в конструкторе Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Этот модуль используется для создания прогнозов с помощью обученной модели классификации или регрессии.
 
@@ -44,7 +44,7 @@ ms.locfileid: "76314102"
 
 - Для моделей классификации [модель оценки](./score-model.md) выводит прогнозируемое значение для класса, а также вероятность прогнозируемого значения.
 - Для моделей регрессии [модель оценки](./score-model.md) создает только прогнозируемое числовое значение.
-- При использовании модели классификации изображений оценка может быть классом объекта в изображении или логическим значением, указывающим, найдена ли та или иная функция.
+
 
 ## <a name="publish-scores-as-a-web-service"></a>Публикация оценок как веб-службы
 

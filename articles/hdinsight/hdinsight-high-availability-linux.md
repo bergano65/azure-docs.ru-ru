@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: 8c3e377faef4e18bff01fd7001751d1f1e347b8d
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 085933f9a74ee37779ce63ce499d89ea53a9f7d6
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77030882"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198945"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "77030882"
 Узлы в кластере HDInsight реализуются с помощью виртуальных машин Azure. В следующих разделах рассматриваются отдельные типы узлов, которые используются с HDInsight.
 
 > [!NOTE]  
-> Не все типы узлов используются для определенного типа кластера. Например, тип кластера Hadoop не содержит узлы Nimbus. Дополнительные сведения об узлах, используемых типами кластеров HDInsight, см. в разделе "Типы кластеров" статьи [Создание кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md#cluster-types).
+> Не все типы узлов используются для определенного типа кластера. Например, тип кластера Hadoop не содержит узлы Nimbus. Дополнительные сведения об узлах, используемых типами кластеров HDInsight, см. в разделе "Типы кластеров" статьи [Создание кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md#cluster-type).
 
 ### <a name="head-nodes"></a>Головные узлы
 

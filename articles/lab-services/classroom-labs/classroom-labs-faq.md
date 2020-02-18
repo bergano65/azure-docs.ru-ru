@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 02/14/2020
 ms.author: spelluru
-ms.openlocfilehash: 551167cda28a2bb6007e66c1b4b458a0a7b2e396
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: a0361203f4a8a2e57d179b39ba6da2fb62f68720
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76718016"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252065"
 ---
 # <a name="classroom-labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Учебные лаборатории в службах лаборатории Azure — часто задаваемые вопросы
 Получите ответы на некоторые наиболее распространенные вопросы о занятиях лаборатории в службах лаборатории Azure. 
@@ -47,7 +47,13 @@ ms.locfileid: "76718016"
 ### <a name="what-public-ip-address-range-should-i-open-on-my-organizations-firewall-settings-to-connect-to-lab-virtual-machines-via-rdpssh"></a>Какой диапазон общедоступных IP-адресов следует открыть в настройках брандмауэра моей организации для подключения к виртуальным машинам лаборатории через RDP или SSH?
 См. раздел [диапазоны IP-адресов и теги служб Azure — общедоступное облако](https://www.microsoft.com/download/details.aspx?id=56519), которое предоставляет диапазон общедоступного IP-адреса для центров обработки данных в Azure. Вы можете открыть IP-адреса для регионов, в которых находятся учетные записи лаборатории.
 
-## <a name="users"></a>Пользователи
+## <a name="virtual-machine-images"></a>Образы виртуальных машин
+
+### <a name="as-a-lab-creator-why-cant-i-enable-additional-image-options-in-the-virtual-machine-images-dropdown-when-creating-a-new-lab"></a>Почему в качестве создателя лаборатории не удается включить дополнительные параметры изображения в раскрывающемся списке образы виртуальных машин при создании лабораторной работы?
+
+Когда администратор добавляет вас в качестве создателя лаборатории для учетной записи лаборатории, вам предоставляются разрешения на создание лабораторий. Но у вас нет разрешений на изменение параметров в учетной записи лаборатории, включая список включенных образов виртуальных машин. Чтобы включить дополнительные образы, обратитесь к администратору учетных записей лаборатории, чтобы сделать это самостоятельно, или попросите администратора добавить вас в качестве роли участника для учетной записи лаборатории. Роль участник предоставит вам разрешения на изменение списка образов виртуальных машин в учетной записи лаборатории.
+
+## <a name="users"></a>Users
 
 ### <a name="how-many-users-can-be-in-a-classroom-lab"></a>Сколько пользователей может быть в лаборатории аудитории?
 В лабораторную работу можно добавить до 400 пользователей. 
@@ -58,7 +64,7 @@ ms.locfileid: "76718016"
 ## <a name="update-notifications"></a>Уведомления об обновлениях
 Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями служб лаборатории.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 

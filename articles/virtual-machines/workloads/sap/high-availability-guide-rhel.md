@@ -1,10 +1,10 @@
 ---
-title: Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux | Документы Майкрософт
+title: Высокий уровень доступности виртуальных машин Azure для SAP NW в RHEL | Документация Майкрософт
 description: Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: mssedusch
-manager: timlt
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 11/07/2019
-ms.author: sedusch
-ms.openlocfilehash: a618a2cb976c90174125e54af645123c6b0a9dcd
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.date: 02/13/2020
+ms.author: radeltch
+ms.openlocfilehash: f3b540fb9122655d0b2c12c90995daa181dd227f
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73905039"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212796"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux
 
@@ -161,7 +161,7 @@ SAP NetWeaver требует общее хранилище для каталог
 Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах.
 
 1. Создание группы ресурсов
-1. Создайте виртуальную сеть
+1. Создание виртуальной сети
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  
@@ -178,7 +178,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Откройте подсистему балансировки нагрузки, выберите пул внешних IP-адресов и щелкните "Добавить".
          1. Введите имя нового внешнего пула IP-адресов (например, **nw1-ascs-frontend**).
          1. Выберите для параметра "Назначение" значение "Статическое" и введите IP-адрес (например, **10.0.0.7**).
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. IP-адрес 10.0.0.8 для ASCS ERS
          * Чтобы создать IP-адреса для ERS, повторите предыдущие шаги (например, **10.0.0.8** и **nw1-aers-backend**).
    1. Создайте внутренние пулы.
@@ -188,7 +188,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Щелкните "Добавить виртуальную машину".
          1. Выберите виртуальную машину.
          1. Выберите виртуальные машины кластера (A) SCS и их IP-адреса.
-         1. Нажмите "Добавить"
+         1. Нажмите кнопку Добавить.
       1. Создайте серверный пул для ASCS ERS.
          * Чтобы создать серверный пул для ERS, повторите предыдущие шаги (например, **nw1-aers-backend**).
    1. Создайте пробы работоспособности.
@@ -196,7 +196,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Выберите подсистему балансировки нагрузки, щелкните "Зонды работоспособности" и нажмите кнопку "Добавить".
          1. Введите имя новой проверки работоспособности (например, **nw1-ascs-hp**).
          1. Выберите протокол TCP, порт 620**00**, интервал, равный 5, и порог состояния неработоспособности, равный 2.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Порт 621**02** для ASCS ERS
          * Чтобы создать проверку работоспособности для ERS, повторите предыдущие шаги (например, 621**02** и **nw1-aers-hp**).
    1. Правила балансировки нагрузки
@@ -207,7 +207,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Выбор **портов высокой доступности**
          1. Увеличьте время ожидания до 30 минут.
          1. **Не забудьте включить плавающий IP-адрес**.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
          * Повторите описанные выше действия, чтобы создать правила балансировки нагрузки для ERS (например, **NW1-фунтов-ERS**).
 1. Кроме того, если в сценарии требуется базовая подсистема балансировки нагрузки (внутренняя), выполните следующие действия.  
    1. Создайте IP-адреса внешнего интерфейса.
@@ -215,7 +215,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Откройте подсистему балансировки нагрузки, выберите пул внешних IP-адресов и щелкните "Добавить".
          1. Введите имя нового внешнего пула IP-адресов (например, **nw1-ascs-frontend**).
          1. Выберите для параметра "Назначение" значение "Статическое" и введите IP-адрес (например, **10.0.0.7**).
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. IP-адрес 10.0.0.8 для ASCS ERS
          * Чтобы создать IP-адреса для ERS, повторите предыдущие шаги (например, **10.0.0.8** и **nw1-aers-backend**).
    1. Создайте внутренние пулы.
@@ -225,7 +225,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Щелкните "Добавить виртуальную машину".
          1. Выберите ранее созданную группу доступности.
          1. Выберите виртуальные машины кластера (A)SCS.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Создайте серверный пул для ASCS ERS.
          * Чтобы создать серверный пул для ERS, повторите предыдущие шаги (например, **nw1-aers-backend**).
    1. Создайте пробы работоспособности.
@@ -233,7 +233,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Выберите подсистему балансировки нагрузки, щелкните "Зонды работоспособности" и нажмите кнопку "Добавить".
          1. Введите имя новой проверки работоспособности (например, **nw1-ascs-hp**).
          1. Выберите протокол TCP, порт 620**00**, интервал, равный 5, и порог состояния неработоспособности, равный 2.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Порт 621**02** для ASCS ERS
          * Чтобы создать проверку работоспособности для ERS, повторите предыдущие шаги (например, 621**02** и **nw1-aers-hp**).
    1. Правила балансировки нагрузки
@@ -244,7 +244,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Оставьте выбранным протокол **TCP** и введите порт **3200**.
          1. Увеличьте время ожидания до 30 минут.
          1. **Не забудьте включить плавающий IP-адрес**.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Дополнительные порты для ASCS
          * Повторите предыдущие шаги, указав порты 36**00**, 39**00**, 81**00**, 5**00**13, 5**00**14, 5**00**16 и TCP в качестве протокола для ASCS.
       1. Дополнительные порты для ASCS ERS
@@ -535,12 +535,15 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo pcs resource create rsc_sap_<b>NW1</b>_ASCS00 SAPInstance \
     InstanceName=<b>NW1</b>_ASCS00_<b>nw1-ascs</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ASCS00_<b>nw1-ascs</b>" \
     AUTOMATIC_RECOVER=false \
-    meta resource-stickiness=5000 migration-threshold=1 \
+    meta resource-stickiness=5000 migration-threshold=1 failure-timeout=60 \
+    op monitor interval=20 on-fail=restart timeout=60 \
+    op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-<b>NW1</b>_ASCS
    
    sudo pcs resource create rsc_sap_<b>NW1</b>_ERS<b>02</b> SAPInstance \
     InstanceName=<b>NW1</b>_ERS02_<b>nw1-aers</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ERS02_<b>nw1-aers</b>" \
     AUTOMATIC_RECOVER=false IS_ERS=true \
+    op monitor interval=20 on-fail=restart timeout=60 op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-<b>NW1</b>_AERS
       
    sudo pcs constraint colocation add g-<b>NW1</b>_AERS with g-<b>NW1</b>_ASCS -5000
@@ -559,12 +562,15 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo pcs resource create rsc_sap_<b>NW1</b>_ASCS00 SAPInstance \
     InstanceName=<b>NW1</b>_ASCS00_<b>nw1-ascs</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ASCS00_<b>nw1-ascs</b>" \
     AUTOMATIC_RECOVER=false \
-    meta resource-stickiness=5000 \
+    meta resource-stickiness=5000 migration-threshold=1 failure-timeout=60 \
+    op monitor interval=20 on-fail=restart timeout=60 \
+    op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-<b>NW1</b>_ASCS
    
    sudo pcs resource create rsc_sap_<b>NW1</b>_ERS<b>02</b> SAPInstance \
     InstanceName=<b>NW1</b>_ERS02_<b>nw1-aers</b> START_PROFILE="/sapmnt/<b>NW1</b>/profile/<b>NW1</b>_ERS02_<b>nw1-aers</b>" \
     AUTOMATIC_RECOVER=false IS_ERS=true \
+    op monitor interval=20 on-fail=restart timeout=60 op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-<b>NW1</b>_AERS
       
    sudo pcs constraint colocation add g-<b>NW1</b>_AERS with g-<b>NW1</b>_ASCS -5000
@@ -575,6 +581,9 @@ SAP NetWeaver требует общее хранилище для каталог
    </code></pre>
 
    Если вы обновляете старую версию и переходите на сервер очереди 2, см. Примечание SAP [2641322](https://launchpad.support.sap.com/#/notes/2641322). 
+
+   > [!NOTE]
+   > Время ожидания в приведенной выше конфигурации является просто примерами и может потребоваться адаптироваться к конкретной установке SAP. 
 
    Убедитесь, что состояние кластера — "ОК" и что запущены все ресурсы. Не важно, на каком узле выполняются ресурсы.
 
@@ -1041,7 +1050,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started nw1-cl-1
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

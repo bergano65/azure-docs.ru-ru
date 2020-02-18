@@ -2,13 +2,13 @@
 title: Настройка кластеров OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается настройка мониторинга кластера Kubernetes с Azure Monitor, размещенных в Azure Red Hat OpenShift.
 ms.topic: conceptual
-ms.date: 01/13/2020
-ms.openlocfilehash: 0d5ed362d6eb76e2fa04b88e9e45c890118a53eb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 02/12/2020
+ms.openlocfilehash: 215835c04a1877ccdb6454c4c3902332b9dc1ab2
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979786"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190080"
 ---
 # <a name="configure-azure-red-hat-openshift-clusters-with-azure-monitor-for-containers"></a>Настройка кластеров OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров
 
@@ -20,8 +20,8 @@ Azure Monitor для контейнеров предоставляет широ�
 
 Azure Monitor для контейнеров можно включить для новых или нескольких существующих развертываний Azure Red Hat OpenShift, используя следующие поддерживаемые методы:
 
-- Для существующего кластера из портал Azure или с помощью шаблона Azure Resource Manager
-- Для нового кластера с помощью шаблона Azure Resource Manager
+- Для существующего кластера из портал Azure или с помощью шаблона Azure Resource Manager.
+- Для нового кластера с помощью шаблона Azure Resource Manager или при создании нового кластера с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
 
 ## <a name="supported-and-unsupported-features"></a>Поддерживаемые и неподдерживаемые функции
 
@@ -30,7 +30,7 @@ Azure Monitor для контейнеров поддерживает монит�
 - Данные в режиме реального времени (Предварительная версия)
 - [Получение метрик](container-insights-update-metrics.md) из узлов кластера и модулей Pod и их сохранение в базе данных метрик Azure Monitor
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Чтобы включить функции и получить доступ к ним в Azure Monitor для контейнеров, как минимум необходимо быть участником роли *участника* Azure в подписке Azure и членом роли [*участника log Analytics*](../platform/manage-access.md#manage-access-using-azure-permissions) log Analytics рабочей области, настроенной с Azure Monitor для контейнеров.
 
@@ -78,7 +78,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
     `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aro/enable_monitoring_to_new_cluster/newClusterWithMonitoringParam.json`
 
-2. Войдите в Azure
+2. Вход в Azure
 
     ```azurecli
     az login    
@@ -167,7 +167,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
     `curl -LO https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs/aro/enable_monitoring_to_existing_cluster/existingClusterParam.json`
 
-2. Войдите в Azure
+2. Вход в Azure
 
     ```azurecli
     az login    
@@ -201,7 +201,7 @@ Azure Monitor для контейнеров поддерживает монит�
     provisioningState       : Succeeded
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов в кластере RedHat OpenShift и рабочих нагрузках на них вы узнаете, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
 

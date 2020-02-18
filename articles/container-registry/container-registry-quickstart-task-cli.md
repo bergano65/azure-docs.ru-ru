@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Сборка и запуск образа контейнера
-description: Быстрый запуск задач с помощью Реестра контейнеров Azure для создания и запуска в облаке образов контейнеров по требованию.
+description: Быстрый запуск задач с помощью Реестра контейнеров Azure для создания и запуска образа контейнера Docker в облаке или по требованию.
 ms.topic: quickstart
-ms.date: 04/02/2019
-ms.openlocfilehash: f0b510607a4d0acf12e0b9caa43835c1cfe6a83d
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.date: 01/31/2020
+ms.openlocfilehash: f08f10dd170acaa8594ad5a47f5ef58e27288b10
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454947"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986280"
 ---
 # <a name="quickstart-build-and-run-a-container-image-using-azure-container-registry-tasks"></a>Краткое руководство. Сборка и запуск образа контейнера с помощью Задач Реестра контейнеров Azure
 
@@ -16,7 +16,7 @@ ms.locfileid: "74454947"
 
 После знакомства с этим кратким руководством ознакомьтесь с более сложными функциями Задач Реестра контейнеров Azure. Задачи Реестра контейнеров Azure позволяют автоматизировать создание образов на основе фиксированного кода или обновления базовых образов или проверять несколько контейнеров параллельно, а также использовать другие сценарии. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -44,7 +44,7 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry008 --s
 
 ## <a name="build-an-image-from-a-dockerfile"></a>Создание образа с помощью Dockerfile
 
-Теперь используйте Реестр контейнеров Azure для создания образа. Во-первых, создайте рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile* и следующим содержимым. Это простой пример создания образа контейнера Linux, но вы можете создавать собственные стандартные Dockerfile и создавать образы для других платформ.
+Теперь используйте Реестр контейнеров Azure для создания образа. Во-первых, создайте рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile* и следующим содержимым. Это простой пример создания образа контейнера Linux, но вы можете создавать собственные стандартные Dockerfile и создавать образы для других платформ. Примеры команд в этой статье отформатированы для выполнения в оболочке bash.
 
 ```bash
 echo FROM hello-world > Dockerfile
@@ -53,7 +53,9 @@ echo FROM hello-world > Dockerfile
 Выполните команду [az acr build][az-acr-build], чтобы создать образ. После успешной сборки образ помещается в реестр. В примере ниже показан перенос образа `sample/hello-world:v1`. Символ `.` в конце команды задает расположение Dockerfile, в данном случае это текущий каталог.
 
 ```azurecli-interactive
-az acr build --image sample/hello-world:v1 --registry myContainerRegistry008 --file Dockerfile . 
+az acr build --image sample/hello-world:v1 \
+  --registry myContainerRegistry008 \
+  --file Dockerfile . 
 ```
 
 Результат успешной сборки и перенос образа может иметь следующий вид:
@@ -110,22 +112,16 @@ Run ID: ca8 was successful after 10s
 
 ## <a name="run-the-image"></a>Запуск образа
 
-Теперь быстро запустите созданный и переданный в реестр образ. В рабочем процессе разработки контейнера можно реализовать этап проверки перед развертыванием образа.
+Теперь быстро запустите созданный и переданный в реестр образ. Здесь вы используете [az acr run][az-acr-run] для запуска команды контейнера. В рабочем процессе разработки контейнера можно реализовать этап проверки перед развертыванием образа. Также можно включить команду в [многошаговый YAML-файл][container-registry-tasks-multi-step]. 
 
-Создайте в локальном рабочем каталоге файл *quickrun.yaml* со следующим содержимым для отдельного этапа. Замените имя сервера входа вашего реестра на *\<acrLoginServer\>* . Имя сервера входа имеет формат *\<имя_реестра\>.azurecr.io* (в нижнем регистре), например *mycontainerregistry008.azurecr.io*. В этом примере предполагается, что в предыдущем разделе вы создали и отправили в реестр образ `sample/hello-world:v1`:
-
-```yml
-steps:
-  - cmd: <acrLoginServer>/sample/hello-world:v1
-```
-
-Этап `cmd` в этом примере охватывает запуск контейнера в конфигурации по умолчанию, но `cmd` поддерживает дополнительные параметры `docker run` или другие команды `docker`.
-
-Запустите контейнер с помощью следующей команды:
+В следующем примере `$Registry` используется для указания реестра, в котором выполняется команда.
 
 ```azurecli-interactive
-az acr run --registry myContainerRegistry008 --file quickrun.yaml .
+az acr run --registry myContainerRegistry008 \
+  --cmd '$Registry/sample/hello-world:v1' /dev/null
 ```
+
+Параметр `cmd` в этом примере охватывает запуск контейнера в конфигурации по умолчанию, но `cmd` поддерживает дополнительные параметры `docker run` или другие команды `docker`.
 
 Результат аналогичен приведенному ниже:
 
@@ -180,12 +176,12 @@ Run ID: cab was successful after 6s
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы использовали функции Задач Реестра контейнеров Azure, чтобы быстро создавать, передавать и запускать образы контейнеров Docker непосредственно в Azure. Чтобы узнать больше об использовании Задач Реестра контейнеров Azure для автоматизации создания и обновления образов, ознакомьтесь с руководствами по Задачам Реестра контейнеров Azure.
+В этом кратком руководстве вы использовали функции Задач Реестра контейнеров Azure, чтобы быстро создавать, передавать и запускать образ контейнера Docker непосредственно в Azure без установки локальной системы Docker. Дополнительные сведения об использовании Задач Реестра контейнеров Azure для автоматизации создания и обновления образов, см. в руководствах по Задачам Реестра контейнеров Azure.
 
 > [!div class="nextstepaction"]
-> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-quick-task]
+> [Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"][container-registry-tutorial-quick-task]
 
 <!-- LINKS - external -->
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms
@@ -201,10 +197,12 @@ az group delete --name myResourceGroup
 <!-- LINKS - internal -->
 [az-acr-create]: /cli/azure/acr#az-acr-create
 [az-acr-build]: /cli/azure/acr#az-acr-build
+[az-acr-run]: /cli/azure/acr#az-acr-run
 [az-group-create]: /cli/azure/group#az-group-create
 [az-group-delete]: /cli/azure/group#az-group-delete
 [azure-cli]: /cli/azure/install-azure-cli
 [container-registry-tasks-overview]: container-registry-tasks-overview.md
+[container-registry-tasks-multi-step]: container-registry-tasks-multi-step.md
 [container-registry-tutorial-quick-task]: container-registry-tutorial-quick-task.md
 [container-registry-skus]: container-registry-skus.md
 [azure-cli-install]: /cli/azure/install-azure-cli

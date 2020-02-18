@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: mlearned
-ms.openlocfilehash: d1d04ab3ebb96d2739b991620b05aa307d9eaf91
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 0583e773a344a6786d13a5da30be24369d75f11f
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76767442"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251708"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр. Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
 
@@ -24,13 +24,13 @@ ms.locfileid: "76767442"
 
 В этой статье предполагается базовое понимание концепций Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 После создания кластера, который может запускать контейнеры Windows Server, необходимо добавить дополнительный пул узлов. Добавление дополнительного пула узлов рассматривается на более позднем этапе, но сначала необходимо включить несколько предварительных версий функций.
 
@@ -148,6 +148,10 @@ az aks create \
 > [!Note]
 > Если вы получаете сообщение об ошибке проверки пароля, попробуйте создать группу ресурсов в другом регионе.
 > Затем попытайтесь создать кластер с новой группой ресурсов.
+
+> [!Note]
+> Если не удается создать кластер AKS, так как версия не поддерживается в этом регионе, можно использовать команду [AZ AKS get-versions--Location eastus], чтобы найти список поддерживаемых версий для этого региона.
+
 
 Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON. Время от времени для инициализации кластера может потребоваться больше нескольких минут. В таких случаях допускайте до 10 минут. 
 
@@ -289,6 +293,9 @@ sample  LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 ![Изображение с примером приложения ASP.NET](media/windows-container/asp-net-sample-app.png)
 
+> [!Note]
+> Если при попытке загрузить страницу выдается время ожидания подключения, необходимо убедиться, что пример приложения готов к выполнению следующей команды [kubectl Get Pods--Watch]. Иногда контейнер Windows не будет запущен на момент, когда внешний IP-адрес станет доступным.
+
 ## <a name="delete-cluster"></a>Удаление кластера
 
 Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete][az-group-delete].
@@ -300,7 +307,7 @@ az group delete --name myResourceGroup --yes --no-wait
 > [!NOTE]
 > Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе с [дополнительными замечаниями][sp-delete].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы развернули кластер Kubernetes и развернули пример приложения ASP.NET в контейнере Windows Server. [Доступ к веб-панели мониторинга Kubernetes][kubernetes-dashboard] для только что созданного кластера.
 

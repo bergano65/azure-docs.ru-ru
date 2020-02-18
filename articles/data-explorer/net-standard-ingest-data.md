@@ -1,24 +1,24 @@
 ---
 title: Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
-description: В этой статье вы узнаете, как прием данных (загрузка) в обозреватель данных Azure с помощью пакета SDK для .NET Standard.
+description: Из этой статьи вы узнаете, как принимать (загружать) данные в Azure обозреватель данных с помощью пакета SDK для .NET Standard.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 53cf055a0900a25923fe67b961755c1f4367e1fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1fb1301ae7e0cdff36f3771a44769c8bf9cc9c62
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66496889"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187914"
 ---
 # <a name="ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
 
-Обозреватель данных Azure (ADX)— это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. ADX предоставляет две клиентские библиотеки для .NET Standard: [библиотеку приема](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) и [библиотеку данных](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard). Они позволяют принимать (загружать) данные в кластер и запрашивать данные из кода. В этой статье необходимо сначала создать таблицу и сопоставление данных в кластер тестирования. Затем вы поставите в очередь прием данных в кластер и проверите результаты.
+Обозреватель данных Azure (ADX)— это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. ADX предоставляет две клиентские библиотеки для .NET Standard: [библиотеку приема](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) и [библиотеку данных](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard). Они позволяют принимать (загружать) данные в кластер и запрашивать данные из кода. В этой статье вы сначала создадите таблицу и сопоставление данных в тестовом кластере. Затем вы поставите в очередь прием данных в кластер и проверите результаты.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -30,7 +30,7 @@ ms.locfileid: "66496889"
 Install-Package Microsoft.Azure.Kusto.Ingest.NETStandard
 ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Аутентификация
 
 Чтобы проверить подлинность приложения, обозреватель данных Azure использует идентификатор клиента AAD. Чтобы найти идентификатор клиента, используйте следующий URL-адрес, заменив домен на *имя_вашего_домена*.
 
@@ -123,7 +123,7 @@ using (var kustoClient = KustoClientFactory.CreateCslAdminProvider(kustoConnecti
 ## <a name="define-ingestion-mapping"></a>Определение сопоставления приема
 
 Выполните сопоставление входящих данных CSV с именами столбцов, использованными при создании таблицы.
-Подготовка [объекта сопоставления столбца CSV](/azure/kusto/management/tables#create-ingestion-mapping) для таблицы
+Подготовка [объекта сопоставления столбца CSV](/azure/kusto/management/create-ingestion-mapping-command) для таблицы
 
 ```csharp
 var tableMapping = "StormEvents_CSV_Mapping";
@@ -226,12 +226,12 @@ using (var cslQueryProvider = KustoClientFactory.CreateCslQueryProvider(kustoCon
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы планируете выполнить другие статьи, сохраните созданные ресурсы. В противном случае выполните в своей базе данных следующую команду, чтобы очистить таблицу `StormEvents`.
+Если вы планируете следовать нашим другим статьям, не заполняйте созданные ресурсы. В противном случае выполните в своей базе данных следующую команду, чтобы очистить таблицу `StormEvents`.
 
 ```Kusto
 .drop table StormEvents
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Написание запросов](write-queries.md)

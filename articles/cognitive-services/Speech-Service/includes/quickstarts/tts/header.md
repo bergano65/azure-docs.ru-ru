@@ -1,25 +1,20 @@
 ---
-title: Краткое руководство. Синтез речи в службе "Речь"
-titleSuffix: Azure Cognitive Services
-description: Узнайте, как синтезировать речь, используя пакет SDK службы "Речь"
-services: cognitive-services
-author: yulin-li
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 09/20/2019
-ms.author: yulili
-ms.openlocfilehash: d19f779f67cc0dea8cc7f06aa275885d75c3092e
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.date: 01/31/2020
+ms.author: dapine
+ms.openlocfilehash: e9f02f95693552180a0eed1550cc59d8f975416b
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818255"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76961521"
 ---
-В этом кратком руководстве будет использоваться [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для преобразования текста в синтезированную речь. После выполнения нескольких предварительных требований преобразование синтезированной речи с помощью говорящих по умолчанию укладывается всего в четыре шага:
+При работе с этим кратким руководством будет использоваться [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для преобразования текста в синтезированную речь. В службе преобразования текста в речь предоставляется множество вариантов синтезированных голосов в рамках [поддерживаемых языков для преобразования текста в речь](../../../language-support.md#text-to-speech). После выполнения нескольких предварительных требований преобразование синтезированной речи с помощью говорящих по умолчанию укладывается всего в четыре шага:
 > [!div class="checklist"]
-> * Создайте объект ````SpeechConfig````, содержащий ключ и регион подписки.
-> * Создайте объект ````SpeechSynthesizer````, используя приведенный выше объект ````SpeechConfig````.
-> * Используйте объект ````SpeechSynthesizer```` для диктовки текста.
-> * Проверьте возвращенный результат ````SpeechSynthesisResult```` на наличие ошибок.
+> * Создайте объект `SpeechConfig`, содержащий ключ и регион подписки.
+> * Создайте объект `SpeechSynthesizer`, используя приведенный выше объект `SpeechConfig`.
+> * Используйте объект `SpeechSynthesizer` для диктовки текста.
+> * Проверьте возвращенный результат `SpeechSynthesisResult` на наличие ошибок.

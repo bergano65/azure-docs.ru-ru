@@ -15,12 +15,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aee049f91aaa071595ab42e9bb4d6b2f5e8616d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: d970bbc5619bc25a1cf5d6abbdcf41fb4a0ae196
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74021844"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77195527"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -99,6 +99,11 @@ ms.locfileid: "74021844"
 
 С 18 ноября 2019 г. гостевые пользователи в каталоге (определенные как учетные записи пользователей, для которых свойство **userType** имеет значение **Guest**) блокируются с помощью модуля AzureAD PowerShell v1. В дальнейшем пользователь должен быть пользователем-членом (где **userType** равен **member**) или использовать модуль AzureAD PowerShell v2.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="in-an-azure-us-government-tenant-i-cant-invite-a-b2b-collaboration-guest-user"></a>В клиенте Azure для государственных организаций США не удается пригласить гостевого пользователя службы совместной работы B2B
+
+В облаке Azure для государственных организаций США служба совместной работы B2B поддерживается только между клиентами, которые находятся в облаке Azure для государственных организаций США и поддерживают службу совместной работы B2B. Если вы приглашаете пользователя в клиенте, который не входит в облако Azure для государственных организаций США или что еще не поддерживает службу совместной работы B2B, вы получите сообщение об ошибке. Дополнительные сведения и ограничения см. в разделе [варианты Azure Active Directory Premium P1 и P2](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2).
+
+
+## <a name="next-steps"></a>Следующие шаги
 
 [Получение поддержки для службы совместной работы B2B](get-support.md)

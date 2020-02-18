@@ -7,16 +7,16 @@ ms.date: 10/23/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 2905a7ab7999c66bde0a705ff129fa049617df10
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 763fb82e0725e5a98112af3a79856c3703a5c2c3
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498866"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016091"
 ---
 # <a name="connected-waste-monitoring-reference-architecture"></a>Эталонная архитектура решения для интеллектуального мониторинга отходов 
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 Веб-решение для контроля и утилизации отходов можно создать в виде стартового приложения Интернета вещей с помощью **шаблона приложения Azure IoT Central**. В этой статье представлено общее справочное руководство по эталонной архитектуре для создания комплексного решения. 
 
@@ -33,7 +33,7 @@ ms.locfileid: "73498866"
 Давайте рассмотрим ключевые компоненты, которые обычно играют роль в решении для мониторинга потребления воды.
 
 ## <a name="devices-and-connectivity"></a>Устройства и подключение. 
-Устройства, используемые в открытых средах, например мусоросборниках, обычно подключаются по глобальным сетям с низким энергопотреблением (LPWAN) через сторонний сетевой оператор. Для отправки данных устройства такого типа в приложение Интернета вещей в Azure IoT Central можно использовать [мост устройства IoT Central Azure](https://docs.microsoft.com/azure/iot-central/core/howto-build-iotc-device-bridge). Кроме того, у вас могут быть шлюзы устройств, которые поддерживают IP-адреса и могут подключаться непосредственно к IoT Central.
+Устройства, используемые в открытых средах, например мусорные контейнеры, обычно подключаются по энергоэффективным сетям дальнего радиуса действия (LPWAN) через стороннего сетевого оператора. Для отправки данных с устройств такого типа в приложение Интернета вещей в Azure IoT Central можно использовать [мост устройства IoT Central Azure](https://docs.microsoft.com/azure/iot-central/core/howto-build-iotc-device-bridge). Кроме того, у вас могут быть шлюзы устройств, которые поддерживают IP-адреса и могут подключаться непосредственно к IoT Central.
 
 ## <a name="iot-central"></a>IoT Central 
 Azure IoT Central — это платформа приложений Интернета вещей, которая позволяет быстро подготовить решение Интернета вещей. Вы можете создать фирменную символику для своего решения, настроить его и интегрировать со сторонними службами.
@@ -48,7 +48,7 @@ Azure IoT Central — это платформа приложений Интер
 ## <a name="business-applications"></a>Бизнес-приложения. 
 Данные Интернета вещей могут быть полезны для работы множества бизнес-приложений в рамках службы водоснабжения. Чтобы узнать, как подключить веб-приложение IoT Central для контроля и утилизации отходов к службам выездного обслуживания, следуйте указаниям в руководстве по [интеграции со службами Dynamics 365 Field Services](./how-to-configure-connected-field-services.md). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [создать веб-приложение IoT Central для контроля и утилизации отходов](./tutorial-connected-waste-management.md).
 * Узнайте больше о [шаблонах IoT Central для государственных организаций](./overview-iot-central-government.md).
 * Чтобы узнать больше об IoT Central, прочитайте [общие сведения об IoT Central](https://docs.microsoft.com/azure/iot-central/core/overview-iot-central).

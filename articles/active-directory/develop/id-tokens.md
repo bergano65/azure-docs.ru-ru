@@ -13,16 +13,16 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 912287200097906af7a8a9d6d12eb1421f3edadc
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 1efd027edb85cabcfdc2a170771ef19182b5c9f8
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76696764"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160956"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Маркеры ИДЕНТИФИКАТОРов платформы Microsoft Identity
 
-`id_tokens` отправляются клиентскому приложению как часть потока [Подключение OpenID](v1-protocols-openid-connect-code.md). Они могут отправляться вместе или вместо маркера доступа и использоваться клиентом для проверки подлинности пользователя.
+`id_tokens` отправляются клиентскому приложению как часть потока [Подключение OpenID](v2-protocols-oidc.md). Они могут отправляться вместе или вместо маркера доступа и использоваться клиентом для проверки подлинности пользователя.
 
 ## <a name="using-the-id_token"></a>Использование маркера идентификатора
 

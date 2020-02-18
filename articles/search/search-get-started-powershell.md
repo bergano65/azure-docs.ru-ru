@@ -3,18 +3,18 @@ title: Краткое руководство. Создание индекса п
 titleSuffix: Azure Cognitive Search
 description: В этом кратком руководстве приведено описание процессов создания индекса, загрузки данных и выполнения запросов с помощью командлета Invoke-RestMethod PowerShell и REST API службы "Когнитивный поиск Azure".
 manager: nitinme
-author: heidisteen
-ms.author: heidist
+author: tchristiani
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 11/04/2019
-ms.openlocfilehash: db474b7e880ec2d65b9b9a71194964740e4fb329
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.date: 02/10/2020
+ms.openlocfilehash: 612751c2405cd55ad0b3760aa8e093e434a22f57
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406914"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121607"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-powershell-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в PowerShell с помощью REST API
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "74406914"
 
 Эта статья поможет вам создать, загрузить и запросить индекс службы "Когнитивный поиск Azure" с помощью PowerShell и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). Здесь содержатся сведения о выполнении команд PowerShell в интерактивном режиме. Вы также можете [скачать и запустить сценарий PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart), выполняющий те же операции.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -399,7 +399,7 @@ $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quicksta
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы использовали PowerShell для выполнения базового рабочего процесса создания содержимого в службе "Когнитивный поиск Azure" и получения к нему доступа. Помня об этих концепциях, мы рекомендуем перейти к изучению более сложных сценариев, таких как индексирование из источников данных Azure.
 

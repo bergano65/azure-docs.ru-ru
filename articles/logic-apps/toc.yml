@@ -87,7 +87,7 @@
           href: logic-apps-handle-large-messages.md
         - name: Безопасность
           items:
-            - name: Защита приложений логики
+            - name: Повышение безопасности для приложений логики
               href: logic-apps-securing-a-logic-app.md
             - name: Аутентификация на основе управляемых удостоверений
               href: create-managed-service-identity.md
@@ -97,7 +97,7 @@
           items:
             - name: Создание настраиваемых API для приложений логики
               href: logic-apps-create-api-app.md
-            - name: Отправка безопасных вызовов к настраиваемым API
+            - name: 'Повышение безопасности для вызовов, отправляемых к пользовательским API'
               href: logic-apps-custom-api-authentication.md
             - name: Развертывание и вызов настраиваемых API
               href: logic-apps-custom-api-host-deploy-call.md
@@ -135,7 +135,7 @@
           href: logic-apps-enterprise-integration-certificates.md
         - name: Метаданные артефактов
           href: logic-apps-enterprise-integration-metadata.md
-        - name: Получение сообщений B2B
+        - name: Получение и отправка сообщений B2B
           href: logic-apps-enterprise-integration-b2b.md
         - name: Обмен сообщениями AS2
           href: logic-apps-enterprise-integration-as2.md

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: mialdrid
-ms.openlocfilehash: 143f2f36cc93a9d67a3ab800782c9a6bb8a52af0
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: b4a83013d2cbeb2871a3963ec0c95144c02f4d66
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77067361"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187014"
 ---
 # <a name="expressroute-crossconnnections-api-development-and-integration"></a>Разработка и интеграция API Кроссконннектионс ExpressRoute
 
@@ -51,7 +51,7 @@ API-интерфейс диспетчер ресурсов для партнер
 
 ### <a name="2-register-the-dev_provider-subscription-to-access-the-expressroutecrossconnections-api"></a>2. Зарегистрируйте Dev_Provider подписку для доступа к API Експрессраутекроссконнектионс.
 
-Чтобы получить доступ к API Експрессраутекроссконнектионс, необходимо зарегистрировать партнерскую подписку в **поставщике ресурсов Microsoft. Network**. Выполните действия, описанные в статье [поставщики ресурсов Azure и типы](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types#portal) , чтобы завершить процесс регистрации.
+Чтобы получить доступ к API Експрессраутекроссконнектионс, необходимо зарегистрировать партнерскую подписку в **поставщике ресурсов Microsoft. Network**. Выполните действия, описанные в статье [поставщики ресурсов Azure и типы](/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) , чтобы завершить процесс регистрации.
 
 ### <a name="3-set-up-authentication-for-azure-resource-manager-rest-api-calls"></a>3. Настройка проверки подлинности для вызовов Azure Resource Manager REST API
 
@@ -72,7 +72,7 @@ API-интерфейс диспетчер ресурсов для партнер
 4. Выбор роли "участник сети"
 5. Назначение доступа пользователю Azure AD, группе или субъекту-службе
 6. Выберите клиентское приложение
-7. Сохранение изменений
+7. Сохранить изменения
 
 ### <a name="5-develop"></a>5. Разработка
 
@@ -82,6 +82,6 @@ API-интерфейс диспетчер ресурсов для партнер
 
 См. раздел [ExpressRoute кроссконнектионс REST API](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections) для REST APIной документации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о всех API-интерфейсах RESTFUL для ExpressRoute см. в разделе [API-интерфейсы RESTful для expressroute](https://docs.microsoft.com/rest/api/expressroute/).

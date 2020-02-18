@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 01/16/2020
 ms.author: glenga
-ms.openlocfilehash: c54145cf48912d3911a39e681d85cb6907be8e52
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 916aa2552e5dd004ec767df98ce7c78f7320efd0
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842322"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964148"
 ---
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
@@ -28,11 +28,17 @@ ms.locfileid: "76842322"
     Hello PowerShell
     ```
 
-    Вы также можете выполнить запрос GET в браузере.
+    Вы также можете выполнить запрос GET в браузере по следующему URL-адресу:
 
-    Когда вы вызываете конечную точку HttpTrigger, не передавая `name` в качестве параметра запроса или в теле, функция возвращает ошибку [HttpStatusCode]::BadRequest. Когда вы просматриваете код в run.ps1, вы поймете, что эта ошибка возникла намеренно.
+    <http://localhost:7071/api/HttpExample?name=PowerShell>
 
-1. Нажмите клавиши SHIFT+F5, чтобы остановить отладку.
+    Когда вы вызываете конечную точку HttpTrigger, не передавая `name` в качестве параметра запроса или в тексте, функция возвращает ошибку `BadRequest`. Когда вы просматриваете код в run.ps1, вы поймете, что эта ошибка возникла намеренно.
+
+1. Сведения о запросе отображаются на панели **Терминал**.
+
+    ![Выполнение функции на панели "Терминал"](./media/functions-run-function-test-local-vs-code-ps/function-execution-terminal.png)
+
+1. Чтобы остановить отладку и работу Core Tools, нажмите клавиши CTRL+C.
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
 

@@ -6,13 +6,13 @@ ms.author: bwren
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/19/2019
-ms.openlocfilehash: 07dd4c96ba51b1ac1e0cb2807c9e26df87a6daa7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/02/2020
+ms.openlocfilehash: ce58aae3b1db1f0f338d353025d4f277aeb6944f
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364974"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137492"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
 В этой статье описывается, как запрашивать и просматривать все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены нерекомендуемых Соединитель Application Insights. Количество Application Insights ресурсов, которые можно включить в один запрос, ограничено 100.
@@ -20,12 +20,7 @@ ms.locfileid: "75364974"
 ## <a name="recommended-approach-to-query-multiple-application-insights-resources"></a>Рекомендуемый подход для запроса нескольких ресурсов Application Insights 
 Перечисление нескольких ресурсов Application Insights в запросе может быть весьма трудоемким и трудным в поддержке процессом. Вместо этого вы можете использовать функции для отделения логики запросов и области приложений.  
 
-В примере ниже показано, как отслеживать несколько ресурсов Application Insights и визуализировать количество неудачных запросов по имени приложения. Перед началом работы выполните этот запрос в рабочей области, которая подключена к ресурсам Application Insights, чтобы получить список подключенных приложений: 
-
-```
-ApplicationInsights
-| summarize by ApplicationName
-```
+В примере ниже показано, как отслеживать несколько ресурсов Application Insights и визуализировать количество неудачных запросов по имени приложения.
 
 Создайте функцию с помощью оператора union со списком приложений, затем сохраните запрос в рабочей области в качестве функции с псевдонимом *applicationsScoping*. 
 
@@ -61,32 +56,8 @@ applicationsScoping
 
 ![Пример результатов по нескольким запросам](media/unify-app-resource-data/app-insights-query-results.png)
 
-## <a name="query-across-application-insights-resources-and-workspace-data"></a>Запрос в ресурсах Application Insights и данных рабочей области 
-При остановке работы Соединителя и необходимости выполнения запросов за промежуток времени, который был усечен при хранении данных Application Insights (90 дней), вам необходимо выполнить [межресурсные запросы](../../azure-monitor/log-query/cross-workspace-query.md) по рабочей области и ресурсам Application Insights за промежуточный период. Это происходит до тех пор, пока данные приложений не будут накапливаться в соответствии с новым параметром хранения данных Application Insights, упомянутым выше. Запрос требует некоторых манипуляций, так как схемы в Application Insights и в рабочей области отличаются. Различия схемы описаны в указанной ниже таблице в этом разделе. 
-
 >[!NOTE]
 >[Запрос между разными ресурсами](../log-query/cross-workspace-query.md) в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Вы можете создать правила генерации оповещений журнала [запросов между разными ресурсами](../log-query/cross-workspace-query.md), не переключаясь, с помощью [шаблона ARM для API правил запросов по расписанию](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template), но этим правилом оповещения можно управлять с помощью [API правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules), а не с помощью портала Azure.
-
-Например, если соединитель перестал работать 2018-11-01, тогда при запросе журналов по ресурсам Application Insights и данным приложений в рабочей области ваш запрос будет построен следующим образом:
-
-```
-applicationsScoping //this brings data from Application Insights resources 
-| where timestamp between (datetime("2018-11-01") .. now()) 
-| where success == 'False' 
-| where duration > 1000 
-| union ( 
-    ApplicationInsights //this is Application Insights data in Log Analytics workspace 
-    | where TimeGenerated < (datetime("2018-12-01") 
-    | where RequestSuccess == 'False' 
-    | where RequestDuration > 1000 
-    | extend duration = RequestDuration //align to Application Insights schema 
-    | extend timestamp = TimeGenerated //align to Application Insights schema 
-    | extend name = RequestName //align to Application Insights schema 
-    | extend resultCode = ResponseCode //align to Application Insights schema 
-    | project-away RequestDuration , RequestName , ResponseCode , TimeGenerated 
-) 
-| project timestamp , duration , name , resultCode 
-```
 
 ## <a name="application-insights-and-log-analytics-workspace-schema-differences"></a>Различия схем рабочей области Application Insights и Log Analytics
 В следующей таблице показаны различия схем Log Analytics и Application Insights.  
@@ -108,7 +79,7 @@ applicationsScoping //this brings data from Application Insights resources
 | Город | client_city |
 | ClientIP | client_IP |
 | Компьютер | cloud_RoleInstance | 
-| Страна | client_CountryOrRegion | 
+| Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -120,7 +91,7 @@ applicationsScoping //this brings data from Application Insights resources
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| ОС | client_OS | 
+| OS | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | длительность | 
 | PageViewName | name | 

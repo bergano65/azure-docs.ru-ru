@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-ms.date: 02/03/2019
-ms.openlocfilehash: 305af8e8acd7e7a54fae8c831d36bee0aad4ad6b
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.date: 02/12/2020
+ms.openlocfilehash: 8e91bb9223f3e6ccd4c76614d75db8591dbed045
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990986"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201528"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом
 
@@ -65,6 +65,7 @@ ms.locfileid: "76990986"
 
 Аудиторы могут использовать Azure Monitor для просмотра журналов AuditEvent хранилища ключей, если ведение журнала включено.
 
+[!INCLUDE [sql-database-akv-permission-delay](includes/sql-database-akv-permission-delay.md)]
 
 ## <a name="requirements-for-configuring-customer-managed-tde"></a>Требования для настройки управляемого клиентом TDE
 
@@ -192,7 +193,7 @@ ms.locfileid: "76990986"
 
 Чтобы протестировать отработку отказа, выполните действия, описанные в разделе [Общие сведения об активной георепликации](sql-database-geo-replication-overview.md). Это необходимо сделать регулярно, чтобы убедиться, что разрешения на доступ к SQL для обоих хранилищ ключей сохранены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы также можете проверить следующие примеры сценариев PowerShell для распространенных операций с управляемыми клиентом TDE:
 

@@ -1,19 +1,19 @@
 ---
 title: Формат данных геоjson для геозоны | Карты Microsoft Azure
 description: В этой статье вы узнаете, как подготавливать данные геозоны, которые можно использовать в API-интерфейсе Microsoft Azure Maps GET и POST геозоны.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 02/14/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: f853962bba7302affd78d5ef267460893ea80a33
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 7d1c9a1587771a020f5c9f89e2497a25eb1bba70
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911595"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210027"
 ---
 # <a name="geofencing-geojson-data"></a>Данные GeoJSON для геозон
 
@@ -30,7 +30,7 @@ ms.locfileid: "75911595"
 * `expiredTime` обозначает дату и время истечения срока действия для данных геозон. Если в запросе указано более позднее значение `userTime`, чем значение этого свойства, соответствующие данные геозон считаются устаревшими и не включаются в запросы. При запросе идентификатор geometryId этих данных геозон включается в массив `expiredGeofenceGeometryId` в ответе о геозонах.
 * `validityPeriod` содержит список периодов действия для геозон. Если значение `userTime` в запросе не попадает в период действия, соответствующие данные геозоны считаются недопустимыми и не включаются в запрос. Идентификатор geometryId этих данных геозон включается в массив `invalidPeriodGeofenceGeometryId` в ответе о геозонах. В следующей таблице приведены свойства для элемента validityPeriod.
 
-| Имя | Тип | Обязательно для заполнения  | Description |
+| Имя | Тип | Обязательно  | Описание |
 | :------------ |:------------: |:---------------:| :-----|
 | startTime | Datetime  | true | Дата и время начала периода действия. |
 | endTime   | Datetime  | true |  Дата и время окончания периода действия. |

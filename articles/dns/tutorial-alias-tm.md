@@ -8,12 +8,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
-ms.openlocfilehash: 749e5eae64aa0d33c90ef8694da9a093647b8a8b
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 4bdfc950cc1277809811dc2c548a57cc2138a8e4
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76937922"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149955"
 ---
 # <a name="tutorial-configure-an-alias-record-to-support-apex-domain-names-with-traffic-manager"></a>Руководство. Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика 
 
@@ -40,7 +40,7 @@ ms.locfileid: "76937922"
 
 ## <a name="create-the-network-infrastructure"></a>Создание сетевой инфраструктуры
 Сначала создайте виртуальную сеть и подсеть для размещения веб-серверов.
-1. Войдите на портал Azure по адресу https://portal.azure.com.
+1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. На портале слева вверху выберите **Создать ресурс**. В поле поиска введите *группу ресурсов* и создайте группу ресурсов с именем **RG-DNS-Alias-TM**.
 3. Щелкните **Создать ресурс** > **Сети** > **Виртуальная сеть**.
 4. Создайте виртуальную сеть с именем **VNet-Servers**. Поместите ее в группу ресурсов **RG-DNS-Alias-TM** и присвойте этой подсети имя **SN-Web**.

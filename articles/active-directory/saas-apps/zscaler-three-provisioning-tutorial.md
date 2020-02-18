@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке Zscaler Three для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. настройке Zscaler Three для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Zscaler Three.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 43ae028e57578634c34c69357a264fdb180b8a1f
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 177bc34162c2b5e4dadc54e1166c5f6061068bae
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68515361"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064110"
 ---
-# <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Руководство по настройке Zscaler Three для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-three-for-automatic-user-provisioning"></a>Руководство. настройке Zscaler Three для автоматической подготовки пользователей
 
 Узнайте, как настроить Azure Active Directory (Azure AD) для автоматической подготовки и отзыва учетных записей пользователей и (или) групп в Zscaler Three.
 
@@ -153,10 +153,10 @@ ms.locfileid: "68515361"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

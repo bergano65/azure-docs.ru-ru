@@ -1,25 +1,25 @@
 ---
 title: Добавление проверки подлинности для защиты вызовов настраиваемых API
-description: Настройка проверки подлинности для обеспечения безопасности вызовов пользовательских API из Azure Logic Apps
+description: Настройка проверки подлинности для повышения безопасности вызовов пользовательских API из Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/22/2017
-ms.openlocfilehash: 2f8b1cc002fe3f340ff6d5329329507316577885
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: 110a684cf6ad21c13411d3bc2ada84750744f00e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75666913"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191409"
 ---
-# <a name="secure-calls-to-custom-apis-from-azure-logic-apps"></a>Защита вызовов к пользовательским API из Azure Logic Apps
+# <a name="increase-security-for-calls-to-custom-apis-from-azure-logic-apps"></a>Повышение безопасности при вызове пользовательских API из Azure Logic Apps
 
-Для защиты вызовов к интерфейсам API настройте аутентификацию Azure Active Directory (Azure AD) на портале Azure, чтобы не обновлять код. Вы можете также применить обязательную проверку подлинности с помощью кода API.
+Чтобы повысить безопасность вызовов API, можно настроить проверку подлинности Azure Active Directory (Azure AD) с помощью портал Azure, чтобы не обновлять код. Вы можете также применить обязательную проверку подлинности с помощью кода API.
 
 ## <a name="authentication-options-for-your-api"></a>Параметры аутентификации для API
 
-Защитить вызовы к настраиваемому API можно следующими способами:
+Вы можете повысить безопасность вызовов пользовательского API следующим образом:
 
 * [Без изменения кода.](#no-code) Защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
 
@@ -197,16 +197,16 @@ ms.locfileid: "75666913"
 }
 ```
 
-| Свойство | Обязательно для заполнения | Description | 
+| Свойство | Обязательно | Описание | 
 | -------- | -------- | ----------- | 
 | tenant | Да | GUID для арендатора Azure AD. | 
 | audience | Да | GUID целевого ресурса, к которому требуется доступ, являющийся идентификатором клиента из удостоверения приложения для веб-приложения или приложения API. | 
-| clientid | Да | GUID клиента, запрашивающего доступ, являющийся идентификатором клиента из удостоверения приложения логики. | 
+| clientId | Да | GUID клиента, запрашивающего доступ, являющийся идентификатором клиента из удостоверения приложения логики. | 
 | secret | Да | Ключ или пароль из удостоверения приложения для клиента, который запрашивает маркер доступа. | 
-| type | Да | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
+| тип | Да | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
 |||| 
 
-Пример.
+Например:
 
 ``` json
 {
@@ -234,7 +234,7 @@ ms.locfileid: "75666913"
 
 <a name="certificate"></a>
 
-#### <a name="certificate-authentication"></a>Проверка подлинности на основе сертификата
+#### <a name="certificate-authentication"></a>Проверка подлинности с помощью сертификатов
 
 Вы можете использовать сертификаты клиента для проверки входящих запросов из приложения логики к веб-приложению или приложению API. Чтобы узнать, как настроить код, см. статью о [настройке взаимной проверки подлинности TLS](../app-service/app-service-web-configure-tls-mutual-auth.md).
 
@@ -248,7 +248,7 @@ ms.locfileid: "75666913"
 } 
 ```
 
-| Свойство | Обязательно для заполнения | Description |
+| Свойство | Обязательно | Описание |
 | -------- | -------- | ----------- |
 | `type` | Да | Тип проверки подлинности. Для SSL-сертификатов клиента используйте значение `ClientCertificate`. |
 | `password` | Нет | Пароль для доступа к сертификату клиента (PFX-файл). |
@@ -271,11 +271,11 @@ ms.locfileid: "75666913"
 }
 ```
 
-| Свойство | Обязательно для заполнения | Description | 
+| Свойство | Обязательно | Описание | 
 | -------- | -------- | ----------- | 
-| type | Да | Тип аутентификации, который будет использоваться. Для обычной проверки подлинности используйте значение `Basic`. | 
+| тип | Да | Тип аутентификации, который будет использоваться. Для обычной проверки подлинности используйте значение `Basic`. | 
 | username | Да | Имя пользователя, которое будет использоваться для аутентификации. | 
-| password | Да | Пароль, который будет использоваться для аутентификации. | 
+| пароль | Да | Пароль, который будет использоваться для аутентификации. | 
 |||| 
 
 <a name="azure-ad-code"></a>
@@ -293,6 +293,6 @@ and not use the Azure portal, learn how to
 To create an application identity for your logic app and use that identity to call your API, 
 you must follow the previous steps. -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Deploy and call custom APIs from logic app workflows](../logic-apps/logic-apps-custom-api-host-deploy-call.md) (Развертывание и вызов пользовательских API из рабочих процессов приложения логики)

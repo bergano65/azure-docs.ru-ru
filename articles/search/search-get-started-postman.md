@@ -2,19 +2,19 @@
 title: Краткое руководство. Создание индекса службы поиска в Postman с помощью REST API
 titleSuffix: Azure Cognitive Search
 description: Из этого краткого руководства вы узнаете, как вызывать REST API Когнитивного поиска Azure с помощью Postman, определений и примера данных.
-author: HeidiSteen
+author: tchristiani
 manager: nitinme
-ms.author: heidist
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 11/04/2019
-ms.openlocfilehash: 9014a83596a3eee71f43d12a73188c1c43b832af
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.date: 02/10/2020
+ms.openlocfilehash: c502886aac9d13f7a470a9b83f1fc12334913beb
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406945"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121631"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-postman-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Postman с помощью REST API
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "74406945"
 
 В этой статье описывается, как интерактивно формулировать запросы. Кроме того, вы можете [скачать и импортировать коллекцию Postman](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/Quickstart) для использования готовых запросов.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -296,7 +296,7 @@ https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/hotels-quickstart/
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы умеете выполнять основные задачи, вы можете изучить другие вызовы REST API для более сложных функций, таких как индексаторы или [настройка конвейера Когнитивного поиска](cognitive-search-tutorial-blob.md). Далее мы рекомендуем изучить следующие материалы:
 

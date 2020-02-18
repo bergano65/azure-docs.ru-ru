@@ -16,12 +16,12 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 03f88b0b1369020d0ba5e8cb1e1b416059def21d
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 7798cb86606c206f027a1014802770a74aba909a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76703054"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160383"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Коды ошибок аутентификация Azure AD и авторизации
 
@@ -152,7 +152,7 @@ ms.locfileid: "76703054"
 | AADSTS67003 | ActorNotValidServiceIdentity |
 | AADSTS70000 | InvalidGrant — сбой проверки подлинности. Маркер обновления является недопустимым. Эта ошибка может быть вызвана следующими причинами:<ul><li>заголовок привязки в маркере пуст;</li><li>хэш привязки маркера не совпадает с ожидаемым.</li></ul> |
 | AADSTS70001 | UnauthorizedClient — приложение отключено. |
-| AADSTS70002 | InvalidClient — ошибка при проверке учетных данных. Указанное значение client_secret не соответствует ожидаемому значению для этого клиента. Исправьте значение client_secret и повторите попытку. Дополнительные сведения см. в разделе [Использование кода авторизации для запроса маркера доступа](v1-protocols-oauth-code.md#use-the-authorization-code-to-request-an-access-token). |
+| AADSTS70002 | InvalidClient — ошибка при проверке учетных данных. Указанное значение client_secret не соответствует ожидаемому значению для этого клиента. Исправьте значение client_secret и повторите попытку. Дополнительные сведения см. в разделе [Использование кода авторизации для запроса маркера доступа](v2-oauth2-auth-code-flow.md#request-an-access-token). |
 | AADSTS70003 | UnsupportedGrantType — приложение вернуло недопустимый тип предоставления разрешения. |
 | AADSTS70004 | InvalidRedirectUri — приложение вернуло недопустимый URI перенаправления. Адрес перенаправления, указанный с помощью клиента, не соответствует ни одному настроенному адресу или же не совпадает ни с одним из адресов в списке адресов, утвержденных OIDC. |
 | AADSTS70005 | UnsupportedResponseType — приложение вернуло неподдерживаемый тип ответа. Возможные причины:<ul><li>для приложения не включен тип ответа token;</li><li>для типа ответа id_token требуется область OpenID — содержит неподдерживаемое значение параметра OAuth в кодировке wctx.</li></ul> |

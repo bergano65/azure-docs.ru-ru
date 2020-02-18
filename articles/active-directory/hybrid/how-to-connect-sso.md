@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Простой единый вход | Документация Майкрософт'
+title: 'Azure AD Connect: простой единый вход | Документы Майкрософт'
 description: В этом разделе описывается простой единый вход Azure Active Directory (Azure AD) и то, как он обеспечивает действительно единый вход пользователей корпоративных компьютеров в корпоративной сети.
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7791e7b50a963d2f92a2cbc460e36f9e83bb1b52
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.openlocfilehash: 4ef8f1ef381c86b6eec62c96ff6dcf87522de040
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72025700"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367963"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -36,7 +36,7 @@ ms.locfileid: "72025700"
 ![Простой единый вход](./media/how-to-connect-sso/sso1.png)
 
 >[!IMPORTANT]
->Для функционирования простого единого входа устройство пользователя должно быть **присоединено к домену**. Устройство не обязательно должно быть [присоединено к Azure AD](../active-directory-azureadjoin-overview.md).
+>Для простого единого входа необходимо, чтобы устройство пользователя было **присоединено только к домену** , но оно не используется в [присоединенном к Azure AD](../active-directory-azureadjoin-overview.md) или [гибридном присоединенном к Azure AD] (.. /active-directory-azureadjoin-overview.md). Единый вход: PN. присоединение к Azure AD и гибридное присоединение к Azure AD осуществляется на основе [основного маркера обновления] (.. /активе-директори/девицес/концепт-ПРИМАРИ-РЕФРЕШ-токен.МД)
 
 ## <a name="key-benefits"></a>Основные преимущества
 
@@ -53,8 +53,8 @@ ms.locfileid: "72025700"
 
 - Именем пользователя для входа может быть либо локальное имя пользователя по умолчанию (`userPrincipalName`), либо другой атрибут, настроенный в Azure AD Connect (`Alternate ID`). Оба варианта использования работают, так как служба простого единого входа использует утверждение `securityIdentifier` в билете Kerberos для поиска соответствующего объекта-пользователя в Azure AD.
 - Простой единый вход — ситуативно-обусловленная функция. Если в ней происходит сбой, процедура входа выполняется стандартно, то есть пользователь, как и прежде, должен просто ввести пароль на странице входа.
-- Если приложение (например, `https://myapps.microsoft.com/contoso.com`) пересылает параметр `domain_hint` (OpenID Connect Connect) или `whr` (SAML), идентифицируя клиент, или параметр `login_hint`, идентифицирующий пользователя, в запросе на вход в Azure AD пользователи автоматически входят в систему без них. ввод имен пользователей или паролей.
-- Пользователи также получают возможность автоматического входа, если приложение (например, `https://contoso.sharepoint.com`) отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть `https://login.microsoftonline.com/contoso.com/<..>` или `https://login.microsoftonline.com/<tenant_ID>/<..>`, вместо общей конечной точки Azure AD, т. е. `https://login.microsoftonline.com/common/<...>`.
+- Если приложение (например, `https://myapps.microsoft.com/contoso.com`) пересылает параметр `domain_hint` (OpenID Connect Connect) или `whr` (SAML), идентифицирующий клиент, или `login_hint` параметр идентификации пользователя в запросе на вход в Azure AD, пользователи автоматически входят в систему, не вводя имена пользователей или пароли.
+- Пользователи также получают возможность автоматического входа в систему, если приложение (например, `https://contoso.sharepoint.com`) отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть `https://login.microsoftonline.com/contoso.com/<..>` или `https://login.microsoftonline.com/<tenant_ID>/<..>`, вместо общей конечной точки Azure AD, т. е. `https://login.microsoftonline.com/common/<...>`.
 - Поддерживается выход. Это позволяет пользователям выбрать другую учетную запись Azure AD для входа вместо того, чтобы автоматически входить с помощью простого единого входа.
 - Для поддержки клиентов Office 365 для 32-разрядной версии Windows (Outlook, Word, Excel и другие) версии 16.0.8730.xxxx и выше используется неинтерактивная процедура. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
 - Функцию можно включить с помощью Azure AD Connect.
@@ -64,11 +64,11 @@ ms.locfileid: "72025700"
 | Операционная система и браузер |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
 |Windows 10|Да\*|Да|Да|Да\*\*\*|Н/Д
-|Windows 8.1|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
+|Windows 8.1|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
 |Windows 8|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
-|Windows 7|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
+|Windows 7|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
 |Windows Server 2012 R2 или более поздней версии|Да\*\*|Н/Д|Да|Да\*\*\*|Н/Д
-|Mac OS X|Н/Д|Н/Д|Да\*\*\*|Да\*\*\*|Да\*\*\*
+|Mac OS X|Н/Д|Н/Д|Да\*\*\*|Да\*\*\*|Да\*\*\*
 
 
 \*Требуется Internet Explorer версии 10 или более поздней.

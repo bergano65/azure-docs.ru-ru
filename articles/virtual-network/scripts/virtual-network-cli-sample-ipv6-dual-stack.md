@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure CLI. Настройка конечных точек виртуальной сети IPv6 (Предварительная версия)
+title: Azure CLI пример скрипта. Настройка внешнего интерфейса IPv6
 titlesuffix: Azure Virtual Network
 description: Включение конечных точек IPv6 с помощью Azure CLI в виртуальной сети Azure
 services: virtual-network
@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 04/23/2019
 ms.author: kumud
-ms.openlocfilehash: 3df475ce89a3b1f5a1acfb20dc427fdb7a9b7d16
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 0661c5231e2fce4d6a675c07be6b0ae914c99997
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68248901"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201374"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "68248901"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку только один раз следующим образом.
 
 ```azurecli
@@ -273,7 +273,7 @@ az group delete --name <resourcegroupname> --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Command | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |

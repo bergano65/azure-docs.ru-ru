@@ -10,19 +10,19 @@ ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: df50654b8673306a6bee544d9b5fcc2cb578795d
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 5a1d3753dfec673338bdde67656afd9c5f413ef0
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988198"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137594"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинное обучение Azure и управление ими в портал Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) в портал Azure для [машинное обучение Azure](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или с [помощью расширения VS Code](tutorial-setup-vscode-extension.md).
 
-## <a name="create-a-workspace"></a>Создание рабочего пространства
+## <a name="create-a-workspace"></a>Создание рабочей области
 
 Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -43,9 +43,9 @@ ms.locfileid: "76988198"
    Поле|Description 
    ---|---
    имя рабочей области. |Введите уникальное имя для идентификации рабочей области. В этом примере мы используем **docs-ws**. Имена должны быть уникальными в группе ресурсов. Используйте имя, которое позволит легко запомнить рабочую область и отличить ее от областей, созданных другими пользователями. Имя рабочей области не учитывает регистр.
-   Подписка |Выберите подписку Azure, которую нужно использовать.
-   Группа ресурсов | Используйте группу ресурсов, которая уже есть в подписке, или введите имя, чтобы создать группу ресурсов. Группа ресурсов содержит связанные ресурсы для решения Azure. В этом примере мы используем **docs-aml**. 
-   Расположение | Выберите ближайшее к пользователям и ресурсам данных расположение, чтобы создать рабочую область.
+   Subscription |Выберите подписку Azure, которую нужно использовать.
+   группа ресурсов. | Используйте группу ресурсов, которая уже есть в подписке, или введите имя, чтобы создать группу ресурсов. Группа ресурсов содержит связанные ресурсы для решения Azure. В этом примере мы используем **docs-aml**. 
+   Location | Выберите ближайшее к пользователям и ресурсам данных расположение, чтобы создать рабочую область.
    Выпуск рабочей области | Выберите **базовый** или **Корпоративный**.  Этот выпуск рабочей области определяет функции, к которым у вас есть доступ и цены. Узнайте больше о [предложениях Basic и Enterprise Edition](overview-what-is-azure-ml.md#sku). 
 
     ![Настройка рабочей области.](./media/how-to-manage-workspace/select-edition.png)
@@ -105,16 +105,20 @@ ms.locfileid: "76988198"
 
   ![Кнопка "Удалить"](./media/how-to-manage-workspace/delete-workspace.png)
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-delete-resource-group](../../includes/aml-delete-resource-group.md)]
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="resource-provider-errors"></a>Ошибки поставщика ресурсов
 
 [!INCLUDE [machine-learning-resource-provider](../../includes/machine-learning-resource-provider.md)]
+
+### <a name="moving-the-workspace"></a>Перемещение рабочей области
+
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
