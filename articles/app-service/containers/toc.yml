@@ -43,8 +43,6 @@
           href: tutorial-python-postgresql-app.md
         - name: Java со Spring Data
           href: tutorial-java-spring-cosmosdb.md
-        - name: Java Enterprise с Postgres
-          href: tutorial-java-enterprise-postgresql-app.md
     - name: Многоконтейнерное приложение
       href: tutorial-multi-container-app.md
     - name: Запуск контейнера из Реестра контейнеров Azure
