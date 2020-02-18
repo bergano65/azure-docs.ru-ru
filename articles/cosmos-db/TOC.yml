@@ -176,6 +176,9 @@
         - name: Keywords
           displayName: 'keywords, distinct, between, in, top'
           href: sql-query-keywords.md
+        - name: Константы
+          displayName: 'object, number,array'
+          href: sql-query-constants.md
         - name: Операторы
           displayName: 'operators, operator, logical operators, equality, comparison'
           href: sql-query-operators.md
@@ -582,8 +585,7 @@
             - name: Канал изменений
               href: cassandra-change-feed.md
             - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db
-              maintainContext: true
+              href: 'https://docs.microsoft.com/azure/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json'
             - name: Cassandra и Spark
               items:
                 - name: Введение
@@ -658,8 +660,7 @@
                   href: tutorial-develop-mongodb-react.md
             - name: "2.\_Перенос данных"
               displayName: import
-              href: /azure/dms/tutorial-mongodb-cosmos-db
-              maintainContext: true
+              href: ../dms/tutorial-mongodb-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
             - name: "3.\_Запрос данных"
               href: tutorial-query-mongodb.md
             - name: "4.\_Глобальное распределение данных"
@@ -690,8 +691,7 @@
             - name: Управление индексированием данных
               href: mongodb-indexing.md
             - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-mongodb-with-cosmos-db
-              maintainContext: true
+              href: 'https://docs.microsoft.com/azure/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json'
             - name: Команды расширения MongoDB
               href: mongodb-custom-commands.md
               displayName: custom commands
@@ -755,8 +755,7 @@
             - name: Визуализация данных графа
               href: graph-visualization.md
             - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db
-              maintainContext: true
+              href: 'https://docs.microsoft.com/azure/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json'
             - name: Управление с помощью шаблонов Resource Manager
               href: manage-gremlin-with-resource-manager.md
             - name: Управление с помощью PowerShell
@@ -951,8 +950,7 @@
         - name: Соединитель Spark для Azure Databricks
           href: spark-connector.md
         - name: "Потоковая передача с использованием Apache Kafka и Cosmos\_DB"
-          href: /azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb
-          maintainContext: true
+          href: ../hdinsight/apache-kafka-spark-structured-streaming-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
     - name: Встроенные записные книжки Jupyter
       items:
         - name: Включение записных книжек
@@ -976,8 +974,7 @@
         - name: Настройка доступа из частных конечных точек
           href: how-to-configure-private-endpoints.md
         - name: "Частное подключение к учетной записи Cosmos\_DB"
-          href: /azure/private-link/create-private-endpoint-cosmosdb-portal
-          maintainContext: true
+          href: ../private-link/create-private-endpoint-cosmosdb-portal.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Настройка предоставления общего доступа к ресурсам (CORS)
           href: how-to-configure-cross-origin-resource-sharing.md
         - name: Защита ключей Azure Cosmos с помощью Key Vault
@@ -999,12 +996,11 @@
         - name: Мониторинг с помощью журналов диагностики
           href: cosmosdb-monitor-resource-logs.md
         - name: Azure Monitor для Cosmos (предварительная версия)
-          href: ../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json
+          href: ../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: "Просмотр метрик с использованием учетной записи Cosmos\_DB"
           href: use-metrics.md
         - name: Вход в приложения с помощью Logic Apps
-          href: /azure/logic-apps/logic-apps-scenario-error-and-exception-handling
-          maintainContext: true
+          href: ../logic-apps/logic-apps-scenario-error-and-exception-handling.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Справочник по данным мониторинга
           href: monitor-cosmos-db-reference.md
     - name: Разработка в локальной среде
@@ -1032,29 +1028,23 @@
         - name: Служба приложений Azure
           href: create-website.md
         - name: Индексатор службы "Когнитивный поиск Azure"
-          href: /azure/search/search-howto-index-cosmosdb
-          maintainContext: true
+          href: ../search/search-howto-index-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Функции Azure
           items:
             - name: Бессерверные вычисления
               href: serverless-computing-database.md
             - name: Привязки Функций Azure
-              href: /azure/azure-functions/functions-bindings-cosmosdb
-              maintainContext: true
+              href: ../azure-functions/functions-bindings-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Фабрика данных Azure
-          href: /azure/data-factory/connector-azure-cosmos-db
-          maintainContext: true
+          href: ../data-factory/connector-azure-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Azure Stream Analytics
-          href: '/azure/stream-analytics/stream-analytics-define-outputs#azure-cosmos-db'
-          maintainContext: true
+          href: ../stream-analytics/stream-analytics-documentdb-output.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Центры событий Azure и служба хранилища Azure
           href: 'https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md'
         - name: Использование начального приложения Spring Boot
-          href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db
-          maintainContext: true
+          href: 'https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json'
         - name: Руководство для разработчиков Spring Data
-          href: /java/azure/spring-framework/how-to-guides-spring-data-cosmosdb
-          maintainContext: true
+          href: 'https://docs.microsoft.com/azure/java/spring-framework/how-to-guides-spring-data-cosmosdb?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json'
         - name: Драйвер ODBC
           href: odbc-driver.md
     - name: "Перенос данных в Cosmos\_DB"
