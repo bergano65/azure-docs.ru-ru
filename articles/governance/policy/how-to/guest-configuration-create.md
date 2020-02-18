@@ -3,12 +3,12 @@ title: Создание политик конфигурации гостя
 description: Узнайте, как создать политику гостевой конфигурации политики Azure для виртуальных машин Windows или Linux с Azure PowerShell.
 ms.date: 12/16/2019
 ms.topic: how-to
-ms.openlocfilehash: 7a6c6bb68302d41cd750c59062432a40cf01e8bd
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 8bd769b61ed87c9ded45ceca11586cfe105740c9
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278459"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167186"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
@@ -269,7 +269,7 @@ New-GuestConfigurationPolicy
     -Verbose
 ```
 
-Для политик Linux Включите свойство **аттрибутесимлконтент** в конфигурацию и при необходимости перезапишите значения. Агент конфигурации гостя автоматически создает файл YAML, используемый в параметре спец для хранения атрибутов. Ознакомьтесь с примером ниже.
+Для политик Linux Включите свойство **аттрибутесимлконтент** в конфигурацию и при необходимости перезапишите значения. Агент конфигурации гостя автоматически создает файл YAML, используемый в параметре спец для хранения атрибутов. См. пример ниже.
 
 ```powershell
 Configuration FirewalldEnabled {
@@ -374,7 +374,7 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Хороший справочник по созданию ключей GPG для использования с компьютерами Linux приведен в статье на сайте GitHub, [создающей новый ключ GPG](https://help.github.com/en/articles/generating-a-new-gpg-key).
 
-После публикации содержимого добавьте тег с именем `GuestConfigPolicyCertificateValidation` и значением `enabled` на все виртуальные машины, где требуется подписывание кода. Этот тег можно доставлять в масштабе с помощью политики Azure. См. [тег Apply и пример значения по умолчанию](../samples/apply-tag-default-value.md) . После создания тега определение политики, созданное с помощью командлета `New-GuestConfigurationPolicy`, обеспечивает требование с помощью модуля настройки гостевой конфигурации.
+После публикации содержимого добавьте тег с именем `GuestConfigPolicyCertificateValidation` и значением `enabled` на все виртуальные машины, где требуется подписывание кода. См. [Примеры тегов](../samples/built-in-policies.md#tags) для доставки тегов в масштабе с помощью политики Azure. После создания тега определение политики, созданное с помощью командлета `New-GuestConfigurationPolicy`, обеспечивает требование с помощью модуля настройки гостевой конфигурации.
 
 ## <a name="troubleshooting-guest-configuration-policy-assignments-preview"></a>Устранение неполадок назначений политик гостевой конфигурации (Предварительная версия)
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: 7527cd59ef812c108cc53f84ad19f4d2cff9ec5e
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: fdc6834f3fb5ee97f27a6397645b965863e90a6b
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893567"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190535"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU AMD на виртуальных машинах серии N под управлением Windows
 
@@ -29,15 +29,15 @@ ms.locfileid: "75893567"
 
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
-| ОС | Драйвер |
+| OS | Драйвер |
 | -------- |------------- |
-| Windows 10 ЕВД — сборка 1903 <br/><br/>Windows 10 — сборка 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [19. q 4.1](https://download.microsoft.com/download/7/e/5/7e558ac0-3fff-413d-af62-800285a2fc53/Radeon-Pro-Software-for-Enterprise-19.Q4.1-Technical-Preview.exe) (. exe) |
+| Windows 10 ЕВД — сборка 1903 <br/><br/>Windows 10 — сборка 1809<br/><br/>Windows Server 2016<br/><br/>Windows Server 2019 | [19. q 4.1](https://download.microsoft.com/download/7/e/5/7e558ac0-3fff-413d-af62-800285a2fc53/Radeon-Pro-Software-for-Enterprise-19.Q4.1-Technical-Preview.exe) (. exe) |
 
 ## <a name="driver-installation"></a>Установка драйвера
 
 1. Подключитесь по удаленный рабочий стол к каждой виртуальной машине серии NVv4.
 
-1. Довнлоа и извлеките файлы установки драйверов. Перейдите в папку и запустите программу Setup. exe, чтобы установить поддерживаемый драйвер для операционной системы Windows.
+1. Скачайте и извлеките файлы установки драйверов. Перейдите в папку и запустите программу Setup. exe, чтобы установить поддерживаемый драйвер для операционной системы Windows.
 
 ## <a name="verify-driver-installation"></a>Проверка установки драйверов
 

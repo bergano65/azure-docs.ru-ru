@@ -1,5 +1,5 @@
 ---
-title: Руководство по Azure Notebook. Персонализатор
+title: Руководство. Azure Notebook. Персонализатор
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как смоделировать в Azure Notebook цикл _system Персонализатора, который предлагает типы кофе для клиентов. Пользователи и их предпочтения хранятся в наборе данных о пользователях. Также доступны сведения о видах кофе, сохраненные в наборе данных о кофе.
 services: cognitive-services
@@ -8,30 +8,30 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 02/03/2020
 ms.author: diberry
-ms.openlocfilehash: 669ebbf595629e8093c51d76b0816edeb5f80f93
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 03e8b658f7edf4640d738e5ea3af84953185d0f5
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74007607"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986841"
 ---
-# <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство по Использование Персонализатора в Azure Notebook
+# <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство. Использование Персонализатора в Azure Notebook
 
-В этом руководстве описано, как в Azure Notebook выполняется цикл Персонализатора, на примере которого мы рассмотрим соответствующий полный жизненный цикл. 
+В этом руководстве описано, как в Azure Notebook выполняется цикл Персонализатора, на примере которого мы рассмотрим соответствующий полный жизненный цикл.
 
 Этот цикл предлагает виды кофе, которые могут заказывать клиенты. Пользователи и их предпочтения хранятся в наборе данных о пользователях. Сведения о кофе хранятся в наборе данных о кофе.
 
 ## <a name="users-and-coffee"></a>Пользователи и кофе
 
-Записная книжка случайным образом выбирает из набора данных пользователя, время суток и тип погоды. Сводка сведений о пользователе.
+Записная книжка, моделирующая взаимодействие пользователя с веб-сайтом, случайным образом выбирает из набора данных пользователя, время суток и тип погоды. Сводка сведений о пользователе.
 
 |Клиенты — компоненты контекста|Время суток|Тип погоды|
 |--|--|--|
-|Алиса<br>Владимир<br>Катя<br>Данил|Утро<br>День<br>Вечер|Солнечно<br>Дождь<br>Снег| 
+|Алиса<br>Владимир<br>Катя<br>Данил|Утро<br>День<br>Вечер|Солнечно<br>Дождь<br>Снег|
 
-Чтобы Персонализатор постепенно запоминал вид кофе, предпочитаемый каждым человеком, цикл _system_ использует сведения о кофе.
+Чтобы Персонализатор постепенно запоминал сведения, цикл _system_ также использует сведения о выборе кофе для каждого человека.
 
 |Кофе — компоненты действия|Типы сущностей temperature|Источники происхождения|Типы обжарки|Органический|
 |--|--|--|--|--|
@@ -40,64 +40,63 @@ ms.locfileid: "74007607"
 |Мокко со льдом|Холодный|Эфиопия|Светлый|Не органический|
 |Латте|Горячий|Бразилия|Dark|Не органический|
 
-
-**Задачей** цикла Персонализатора является поиск наилучшего соответствия между пользователями и видом кофе в максимальном количестве случаев. 
+**Задачей** цикла Персонализатора является поиск наилучшего соответствия между пользователями и видом кофе в максимальном количестве случаев.
 
 Исходный код для этого краткого руководства размещен в [репозитории GitHub с примерами для Персонализатора](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/tree/master/samples/azurenotebook).
 
 ## <a name="how-the-simulation-works"></a>Принцип работы моделирования
 
-Вначале предложения Персонализатора будут успешными (с показателем вознаграждения 1) только в 20–30 % случаев. После некоторого количества запросов работа системы оптимизируется.
+Вначале предложения Персонализатора будут успешными только в 20–30 % случаев. Этот успешный результат обозначается вознаграждением, отправленному в API вознаграждения Персонализатора с оценкой 1. Система улучшается после некоторых вызовов ранжирования и вознаграждения.
 
-Выполните автономную оценку после первых 10 000 запросов. Это позволит Персонализатору изучить данные и создать оптимальную политику обучения. Примените новую политику обучения и снова запустите записную книжку с 2000 запросов. Теперь результаты цикла будут более точными.
+Выполните автономную оценку после первых запросов. Это позволит Персонализатору изучить данные и создать оптимальную политику обучения. Примените новую политику обучения и снова запустите записную книжку с 20 % предыдущего числа запросов. С новой политикой обучения цикл будет работать лучше.
 
 ## <a name="rank-and-reward-calls"></a>Оценка и вознаграждение вызовов
 
 Для каждого из нескольких тысяч вызовов к службе Персонализатора Azure Notebook отправляет запрос оценки (**Rank**) в REST API:
 
 * Уникальный идентификатор для события "оценка — запрос".
-* Контекст — случайное сочетание пользователя, погоды и времени суток, который моделирует поведение пользователя на веб-сайте или мобильном устройстве.
-* Компоненты — _все_ данные о кофе, на основе которых Персонализатор создает предложения.
+* Компоненты контекста — случайное сочетание пользователя, погоды и времени суток, который моделирует поведение пользователя на веб-сайте или мобильном устройстве
+* Действия с компонентами — _все_ данные о кофе, на основе которых Персонализатор создает предложения
 
-Система получает ранжированные результаты выбора кофе, а затем сравнивает прогноз с известным вариантом пользователя в то же время дня и в ту же погоду. Если известный вариант совпадает с предложенным вариантом, Персонализатору возвращается параметр **Reward** со значением 1. В противном случае возвращается значение 0. 
+Система получает запрос, а затем сравнивает прогноз с известным вариантом пользователя в то же время дня и в ту же погоду. Если известный вариант совпадает с предложенным вариантом, Персонализатору возвращается параметр **Reward** со значением 1. В противном случае возвращается значение 0.
 
 > [!Note]
-> Для этой имитации используется очень простой алгоритм вознаграждения. В реальном сценарии для определения оценки вознаграждения в этом алгоритме нужно применять для оценки бизнес-логику, возможно, с весовыми коэффициентами для разных аспектов взаимодействия с клиентом. 
+> Для этой имитации используется очень простой алгоритм вознаграждения. В реальном сценарии для определения оценки вознаграждения в этом алгоритме нужно применять для оценки бизнес-логику, возможно, с весовыми коэффициентами для разных аспектов взаимодействия с клиентом.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись [Azure Notebook](https://notebooks.azure.com/). 
-* [Ресурс Персонализатора Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer). 
-    * Если вы уже использовали ресурс Персонализатора, не забудьте [очистить данные](how-to-settings.md#clear-data-for-your-learning-loop) для этого ресурса на портале Azure. 
-* Отправьте все файлы [этого примера](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/tree/master/samples/azurenotebook) в проект Azure Notebook. 
+* Учетная запись [Azure Notebook](https://notebooks.azure.com/).
+* [Ресурс Персонализатора Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer).
+    * Если вы уже использовали ресурс Персонализатора, не забудьте [очистить данные](how-to-settings.md#clear-data-for-your-learning-loop) для этого ресурса на портале Azure.
+* Отправьте все файлы [этого примера](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/tree/master/samples/azurenotebook) в проект Azure Notebook.
 
 Описание файлов.
 
 * [Personalizer.ipynb](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/samples/azurenotebook/Personalizer.ipynb) содержит записную книжку Jupyter для этого руководства.
 * [Набор данных о пользователях](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/samples/azurenotebook/users.json) хранится в виде объекта JSON.
-* [Набор данных о кофе](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/samples/azurenotebook/coffee.json) хранится в виде объекта JSON. 
+* [Набор данных о кофе](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/samples/azurenotebook/coffee.json) хранится в виде объекта JSON.
 * [Пример запроса в формате JSON](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/samples/azurenotebook/example-rankrequest.json) описывает ожидаемый формат запроса POST к API оценки.
 
 ## <a name="configure-personalizer-resource"></a>Настройка ресурса Персонализатора
 
-На портале Azure настройте [ресурс Персонализатора](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer), указав **частоту обновления модели** в 15 секунд и **время ожидания вознаграждения** в 15 секунд. Эти значения находятся на странице **[Настройка](how-to-settings.md#configure-service-settings-in-the-azure-portal)** . 
+На портале Azure настройте [ресурс Персонализатора](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer), указав **частоту обновления модели** в 15 секунд и **время ожидания вознаграждения** в 15 секунд. Эти значения находятся на странице **[Настройка](how-to-settings.md#configure-service-settings-in-the-azure-portal)** .
 
 |Параметр|Значение|
 |--|--|
 |Частота обновления модели|15 секунд|
 |Время ожидания вознаграждения|15 секунд|
 
-Мы используем небольшие значения длительности, чтобы быстро отображать изменения при работе с руководством. Такие значения не следует использовать в рабочем сценарии, не проверив предварительно, подходят ли они для конкретных задач цикла Персонализатора. 
+Мы используем небольшие значения длительности, чтобы быстро отображать изменения при работе с руководством. Такие значения не следует использовать в рабочем сценарии, не проверив предварительно, подходят ли они для конкретных задач цикла Персонализатора.
 
 ## <a name="set-up-the-azure-notebook"></a>Настройка Azure Notebook
 
-1. Укажите для ядра значение `Python 3.6`. 
+1. Укажите для ядра значение `Python 3.6`.
 1. Откройте файл `Personalizer.ipynb` .
 
 ## <a name="run-notebook-cells"></a>Выполнение ячеек записной книжки
 
-Запустите каждую из исполняемых ячеек и дождитесь завершения работы. Когда работа ячейки завершается, в скобках рядом с ней вместо `*` отображается числовое значение. В следующих разделах описаны программы каждой из ячеек и их ожидаемые выходные данные. 
+Запустите каждую из исполняемых ячеек и дождитесь завершения работы. Когда работа ячейки завершается, в скобках рядом с ней вместо `*` отображается числовое значение. В следующих разделах описаны программы каждой из ячеек и их ожидаемые выходные данные.
 
 ### <a name="include-the-python-modules"></a>Включение модулей Python
 
@@ -106,7 +105,7 @@ ms.locfileid: "74007607"
 ```python
 import json
 import matplotlib.pyplot as plt
-import random 
+import random
 import requests
 import time
 import uuid
@@ -114,7 +113,7 @@ import uuid
 
 ### <a name="set-personalizer-resource-key-and-name"></a>Настройка ключа и имени ресурса Персонализатора
 
-На портале Azure найдите значения ключа и конечной точки на странице **Быстрое начало** для ресурса персонализации. Измените значение `<your-resource-name>` на реальное имя ресурса Персонализатора. Измените значение `<your-resource-key>` на реальное значение ключа Персонализатора. 
+На портале Azure найдите значения ключа и конечной точки на странице **Быстрое начало** для ресурса персонализации. Измените значение `<your-resource-name>` на реальное имя ресурса Персонализатора. Измените значение `<your-resource-key>` на реальное значение ключа Персонализатора.
 
 ```python
 # Replace 'personalization_base_url' and 'resource_key' with your valid endpoint values.
@@ -136,11 +135,11 @@ def currentDateTime():
 
 ### <a name="get-the-last-model-update-time"></a>Получение времени последнего обновления модели
 
-Вызываемая функция `get_last_updated` выводит дату и время последнего изменения модели. 
+Вызываемая функция `get_last_updated` выводит дату и время последнего изменения модели.
 
 Эти ячейки не имеют выходных данных. Эта функция выводит дату и время последнего обучения модели.
 
-Функция использует метод GET REST API для [получения свойств модели](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/GetModelProperties). 
+Функция использует метод GET REST API для [получения свойств модели](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/GetModelProperties).
 
 ```python
 # ititialize variable for model's last modified date
@@ -149,18 +148,18 @@ modelLastModified = ""
 
 ```python
 def get_last_updated(currentModifiedDate):
-    
+
     print('-----checking model')
-    
+
     # get model properties
     response = requests.get(personalization_model_properties_url, headers = headers, params = None)
-    
+
     print(response)
     print(response.json())
 
     # get lastModifiedTime
     lastModifiedTime = json.dumps(response.json()["lastModifiedTime"])
-    
+
     if (currentModifiedDate != lastModifiedTime):
         currentModifiedDate = lastModifiedTime
         print(f'-----model updated: {lastModifiedTime}')
@@ -174,28 +173,28 @@ def get_last_updated(currentModifiedDate):
 
 ```python
 def get_service_settings():
-    
+
     print('-----checking service settings')
-    
+
     # get learning policy
     response = requests.get(personalization_model_policy_url, headers = headers, params = None)
-    
+
     print(response)
     print(response.json())
-    
+
     # get service settings
     response = requests.get(personalization_service_configuration_url, headers = headers, params = None)
-    
+
     print(response)
     print(response.json())
 ```
 
 ### <a name="construct-urls-and-read-json-data-files"></a>Создание URL-адресов и чтение файлов данных JSON
 
-Эта ячейка: 
+Эта ячейка:
 
-* создает URL-адреса, которые используются в вызовах REST; 
-* задает заголовок безопасности с помощью ключа ресурса Персонализатора; 
+* создает URL-адреса, которые используются в вызовах REST;
+* задает заголовок безопасности с помощью ключа ресурса Персонализатора;
 * задает случайное начальное значение для идентификатора события оценки (Rank);
 * считывает данные из файлов JSON;
 * вызывает метод `get_last_updated` (из выходных данных в примере удалена политика обучения);
@@ -225,8 +224,8 @@ requestpath = "example-rankrequest.json"
 # initialize random
 random.seed(time.time())
 
-userpref = None 
-rankactionsjsonobj = None 
+userpref = None
+rankactionsjsonobj = None
 actionfeaturesobj = None
 
 with open(users) as handle:
@@ -234,10 +233,10 @@ with open(users) as handle:
 
 with open(coffee) as handle:
     actionfeaturesobj = json.loads(handle.read())
-    
+
 with open(requestpath) as handle:
-    rankactionsjsonobj = json.loads(handle.read())  
-    
+    rankactionsjsonobj = json.loads(handle.read())
+
 get_last_updated(modelLastModified)
 get_service_settings()
 
@@ -245,8 +244,8 @@ print(f'User count {len(userpref)}')
 print(f'Coffee count {len(actionfeaturesobj)}')
 ```
 
-Убедитесь, что в этих выходных данных параметры `rewardWaitTime` и `modelExportFrequency` имеют значение 15 секунд. 
-    
+Убедитесь, что в этих выходных данных параметры `rewardWaitTime` и `modelExportFrequency` имеют значение 15 секунд.
+
 ```console
 -----checking model
 <Response [200]>
@@ -265,21 +264,21 @@ Coffee count 4
 
 Описанная выше ячейка создает первый запрос к Персонализатору. Убедитесь, что в выходных данных код состояния для вызова REST имеет значение `<Response [200]>`. Если вы получаете сообщение об ошибке (например, 404), но уверены в правильности значений ключа и имени ресурса, перезагрузите записную книжку.
 
-Убедитесь, что количество значений для видов кофе и пользователей равно 4. При возникновении ошибки убедитесь, что вы загрузили все 3 файла JSON. 
+Убедитесь, что количество значений для видов кофе и пользователей равно 4. При возникновении ошибки убедитесь, что вы загрузили все 3 файла JSON.
 
 ### <a name="set-up-metric-chart-in-azure-portal"></a>Настройка схемы метрик на портале Azure
 
 Далее в этом руководстве описан длительный процесс обработки 10 000 запросов, который отображается в браузере с обновляющимся значением в текстовом поле. Возможно, эти данные проще изучать на диаграмме или в виде итоговой суммы, которые будут доступны по завершении длительного процесса. Чтобы просмотреть эти сведения, используйте предоставляемые с ресурсом метрики. Теперь, после выполнения запроса к службе, вы можете создать диаграмму и периодически обновлять ее, пока выполняется длительный процесс.
 
 1. Выберите ресурс "Персонализатор" на портале Azure.
-1. В области навигации по ресурсам выберите **Метрики** под разделом "Мониторинг". 
+1. В области навигации по ресурсам выберите **Метрики** под разделом "Мониторинг".
 1. В диаграмме щелкните **Добавить метрику**.
 1. Здесь уже заполнены значения ресурса и пространства имен для метрики. Вам осталось лишь выбрать метрику **successful calls** (успешные вызовы) и агрегирование по функции **sum** (сумма).
 1. Укажите для фильтра времени последние 4 часа.
 
     ![Настройте диаграмму метрик на портале Azure, добавив метрику для успешных вызовов за последние 4 часа.](./media/tutorial-azure-notebook/metric-chart-setting.png)
 
-    Теперь в диаграмме вы увидите 3 успешных вызова. 
+    Теперь в диаграмме вы увидите 3 успешных вызова.
 
 ### <a name="generate-a-unique-event-id"></a>Создание уникального идентификатора события
 
@@ -300,7 +299,7 @@ def add_event_id(rankjsonobj):
 
 Эта ячейка не имеет выходных данных. При вызове эта функция возвращает выбранные случайным образом значения имени пользователя, погоды и времени суток.
 
-Список содержит 4 пользователя и их предпочтения. Для краткости мы приводим его не полностью. 
+Список содержит 4 пользователя и их предпочтения. Для краткости мы приводим его не полностью.
 
 ```json
 {
@@ -336,7 +335,7 @@ def add_event_id(rankjsonobj):
 ```
 
 ```python
-def add_random_user_and_contextfeatures(namesoption, weatheropt, timeofdayopt, rankjsonobj):   
+def add_random_user_and_contextfeatures(namesoption, weatheropt, timeofdayopt, rankjsonobj):
     name = namesoption[random.randint(0,3)]
     weather = weatheropt[random.randint(0,2)]
     timeofday = timeofdayopt[random.randint(0,2)]
@@ -347,12 +346,12 @@ def add_random_user_and_contextfeatures(namesoption, weatheropt, timeofdayopt, r
 
 ### <a name="add-all-coffee-data"></a>Добавление данных о кофе
 
-Эта функция добавляет весь список вариантов кофе в объект JSON для отправки в запрос оценки. 
+Эта функция добавляет весь список вариантов кофе в объект JSON для отправки в запрос оценки.
 
 Эта ячейка не имеет выходных данных. Функция изменяет значение `rankjsonobj` при вызове.
 
 
-Ниже приведен пример характеристик кофе: 
+Ниже приведен пример характеристик кофе:
 
 ```json
 {
@@ -363,7 +362,7 @@ def add_random_user_and_contextfeatures(namesoption, weatheropt, timeofdayopt, r
         "origin": "kenya",
         "organic": "yes",
         "roast": "dark"
-        
+
     }
 }
 ```
@@ -382,34 +381,34 @@ def add_action_features(rankjsonobj):
 ```python
 def get_reward_from_simulated_data(name, weather, timeofday, prediction):
     if(userpref[name][weather][timeofday] == str(prediction)):
-        return 1 
+        return 1
     return 0
-``` 
+```
 
 ### <a name="loop-through-calls-to-rank-and-reward"></a>Циклический перебор вызовов для оценки и вознаграждений
 
-Следующая ячейка содержит _основной_ рабочий процесс записной книжки, который случайным образом получает пользователя и список кофе, а также отправляет эти данные в API оценки. Сравнение прогноза с известными предпочтениями пользователя с последующей отправкой вознаграждений обратно в службу Персонализатора. 
+Следующая ячейка содержит _основной_ рабочий процесс записной книжки, который случайным образом получает пользователя и список кофе, а также отправляет эти данные в API оценки. Сравнение прогноза с известными предпочтениями пользователя с последующей отправкой вознаграждений обратно в службу Персонализатора.
 
-Этот цикл выполняется соответствующее количество раз: `num_requests`. При создании модели Персонализатор выполняет несколько тысяч вызовов для получения оценки и вознаграждения. 
+Этот цикл выполняется соответствующее количество раз: `num_requests`. При создании модели Персонализатор выполняет несколько тысяч вызовов для получения оценки и вознаграждения.
 
 Ниже приведен пример данных в формате JSON, которые отправляются в API оценки. Список видов кофе для краткости приводится не полностью. Полный код JSON с данными о кофе вы можете найти в `coffee.json`.
 
 Код JSON, который отправляется в API оценки:
 
 ```json
-{ 
-   'contextFeatures':[ 
-      { 
+{
+   'contextFeatures':[
+      {
          'timeofday':'Evening',
          'weather':'Snowy',
          'name':'Alice'
       }
    ],
-   'actions':[ 
-      { 
+   'actions':[
+      {
          'id':'Cappucino',
-         'features':[ 
-            { 
+         'features':[
+            {
                'type':'hot',
                'origin':'kenya',
                'organic':'yes',
@@ -419,7 +418,7 @@ def get_reward_from_simulated_data(name, weather, timeofday, prediction):
       }
         ...rest of coffee list
    ],
-   'excludedActions':[ 
+   'excludedActions':[
 
    ],
    'eventId':'b5c4ef3e8c434f358382b04be8963f62',
@@ -436,8 +435,8 @@ def get_reward_from_simulated_data(name, weather, timeofday, prediction):
         {'id': 'Iced mocha', 'probability': 0.05 },
         {'id': 'Cappucino', 'probability': 0.05 },
         {'id': 'Cold brew', 'probability': 0.05 }
-    ], 
-    'eventId': '5001bcfe3bb542a1a238e6d18d57f2d2', 
+    ],
+    'eventId': '5001bcfe3bb542a1a238e6d18d57f2d2',
     'rewardActionId': 'Latte'
 }
 ```
@@ -450,14 +449,14 @@ def get_reward_from_simulated_data(name, weather, timeofday, prediction):
 
 Эта функция использует следующее:
 
-* Оценка — запрос POST к REST API для [получения оценки](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank). 
+* Оценка — запрос POST к REST API для [получения оценки](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank).
 * Вознаграждение — запрос POST к REST API для [передачи вознаграждения](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Reward).
 
 ```python
 def iterations(n, modelCheck, jsonFormat):
 
     i = 1
-    
+
     # default reward value - assumes failed prediction
     reward = 0
 
@@ -473,8 +472,8 @@ def iterations(n, modelCheck, jsonFormat):
     namesopt = ['Alice', 'Bob', 'Cathy', 'Dave']
     weatheropt = ['Sunny', 'Rainy', 'Snowy']
     timeofdayopt = ['Morning', 'Afternoon', 'Evening']
-    
-    
+
+
     while(i <= n):
 
         # create unique id to associate with an event
@@ -484,16 +483,16 @@ def iterations(n, modelCheck, jsonFormat):
         [name, weather, timeofday] = add_random_user_and_contextfeatures(namesopt, weatheropt, timeofdayopt, jsonFormat)
 
         # add action features to rank
-        add_action_features(jsonFormat) 
+        add_action_features(jsonFormat)
 
         # show JSON to send to Rank
-        print('To: ', jsonFormat)    
+        print('To: ', jsonFormat)
 
         # choose an action - get prediction from Personalizer
         response = requests.post(personalization_rank_url, headers = headers, params = None, json = jsonFormat)
 
-        # show Rank prediction 
-        print ('From: ',response.json())    
+        # show Rank prediction
+        print ('From: ',response.json())
 
         # compare personalization service recommendation with the simulated data to generate a reward value
         prediction = json.dumps(response.json()["rewardActionId"]).replace('"','')
@@ -502,7 +501,7 @@ def iterations(n, modelCheck, jsonFormat):
         # show result for iteration
         print(f'   {i} {currentDateTime()} {name} {weather} {timeofday} {prediction} {reward}')
 
-        # send the reward to the service 
+        # send the reward to the service
         response = requests.post(personalization_reward_url + eventid + "/reward", headers = headers, params= None, json = { "value" : reward })
 
         # for every N rank requests, compute total correct  total
@@ -513,7 +512,7 @@ def iterations(n, modelCheck, jsonFormat):
 
             print("**** 10% of loop found")
 
-            get_last_updated(modelLastModified) 
+            get_last_updated(modelLastModified)
 
         # aggregate so chart is easier to read
         if(i % 10 == 0):
@@ -522,7 +521,7 @@ def iterations(n, modelCheck, jsonFormat):
              total = 0
 
         i = i + 1
-        
+
     # Print out dateTime
     currentDateTime()
 
@@ -530,7 +529,7 @@ def iterations(n, modelCheck, jsonFormat):
 ```
 
 ## <a name="run-for-10000-iterations"></a>Выполнение 10 000 итераций
-Выполните цикл Персонализатора 10 000 раз. Это длительный процесс. Не закрывайте браузер, пока в нем выполняется записная книжка. Время от времени обновляйте диаграмму метрик на портале Azure, чтобы отслеживать количество вызовов службы. Когда счетчик дойдет до 20 000 вызовов (вызов оценки и вызов вознаграждения для каждой итерации цикла), процесс завершится. 
+Выполните цикл Персонализатора 10 000 раз. Это длительный процесс. Не закрывайте браузер, пока в нем выполняется записная книжка. Время от времени обновляйте диаграмму метрик на портале Azure, чтобы отслеживать количество вызовов службы. Когда счетчик дойдет до 20 000 вызовов (вызов оценки и вызов вознаграждения для каждой итерации цикла), процесс завершится.
 
 ```python
 # max iterations
@@ -547,7 +546,7 @@ jsonTemplate = rankactionsjsonobj
 
 
 
-## <a name="chart-results-to-see-improvement"></a>Откройте диаграмму результатов, чтобы оценить улучшения 
+## <a name="chart-results-to-see-improvement"></a>Откройте диаграмму результатов, чтобы оценить улучшения
 
 Диаграмма создается на основе `count` и `rewards`.
 
@@ -569,16 +568,16 @@ createChart(count,rewards)
 
 ## <a name="reading-the-chart"></a>Анализ данных на диаграмме
 
-Эта диаграмма демонстрирует успешность модели для текущей политики обучения по умолчанию. 
+Эта диаграмма демонстрирует успешность модели для текущей политики обучения по умолчанию.
 
 ![На диаграмме отображается успешность текущей политики обучения на протяжении выполнения теста.](./media/tutorial-azure-notebook/azure-notebook-chart-results.png)
 
 
-В идеале к моменту завершения теста цикл должен демонстрировать близкую к 100 % долю успешных прогнозов, без учета исследований. Значение исследования по умолчанию составляет 20 %. 
+В идеале к моменту завершения теста цикл должен демонстрировать близкую к 100 % долю успешных прогнозов, без учета исследований. Значение исследования по умолчанию составляет 20 %.
 
 `100-20=80`
 
-Это значение исследования можно найти на портале Azure на странице **Настройка** для ресурса Персонализатора. 
+Это значение исследования можно найти на портале Azure на странице **Настройка** для ресурса Персонализатора.
 
 Чтобы определить более эффективную политику обучения на основе данных, предоставленных в API оценки, выполните на портале [автономную оценку](how-to-offline-evaluation.md) для цикла Персонализатора.
 
@@ -586,19 +585,19 @@ createChart(count,rewards)
 
 1. На портале Azure откройте страницу **Оценки** для ресурса Персонализатора.
 1. Щелкните **Создать оценку**.
-1. Введите необходимые данные: имя оценки и диапазон дат для оценки цикла. Диапазон дат должен включать только дни, для которых вы хотите получить оценку. 
+1. Введите необходимые данные: имя оценки и диапазон дат для оценки цикла. Диапазон дат должен включать только дни, для которых вы хотите получить оценку.
     ![На портале Azure откройте страницу "Оценки" для ресурса Персонализатора. Выберите "Создать оценку". Введите имя оценки и диапазон дат.](./media/tutorial-azure-notebook/create-offline-evaluation.png)
 
     Цель выполнения этой автономной оценки заключается в определении более эффективной политики обучения по тем компонентам и действиям, которые используются в этом цикле. Чтобы найти более эффективную политику обучения, не забудьте включить **обнаружение оптимизации**.
 
-1. Выберите **ОК**, чтобы начать процесс оценки. 
-1. На странице **Оценки** отобразится новая оценка и ее текущее состояние. В зависимости от объема данных процесс оценки может занять некоторое время. Вы можете вернуться на эту страницу через несколько минут, чтобы увидеть результаты. 
-1. Когда процесс завершится, выберите эту оценку и щелкните **Сравнение разных политик обучения**. Это действие отображает доступные политики обучения и их эффективность для предоставленных данных. 
-1. Выберите в таблице наиболее эффективную политику обучения и щелкните **Применить**. Это действие применяет к модели _лучшую_ политику обучения и выполняет переобучение. 
+1. Выберите **ОК**, чтобы начать процесс оценки.
+1. На странице **Оценки** отобразится новая оценка и ее текущее состояние. В зависимости от объема данных процесс оценки может занять некоторое время. Вы можете вернуться на эту страницу через несколько минут, чтобы увидеть результаты.
+1. Когда процесс завершится, выберите эту оценку и щелкните **Сравнение разных политик обучения**. Это действие отображает доступные политики обучения и их эффективность для предоставленных данных.
+1. Выберите в таблице наиболее эффективную политику обучения и щелкните **Применить**. Это действие применяет к модели _лучшую_ политику обучения и выполняет переобучение.
 
 ## <a name="change-update-model-frequency-to-5-minutes"></a>Изменение интервала обновления модели на 5 минут
 
-1. На портале Azure выберите страницу **Настройка** для ресурса Персонализатора. 
+1. На портале Azure выберите страницу **Настройка** для ресурса Персонализатора.
 1. Измените значения **частоты обновления модели** и **времени ожидания вознаграждения** на 5 минут и щелкните **Сохранить**.
 
 Изучите дополнительные сведения о [времени ожидания вознаграждения](concept-rewards.md#reward-wait-time) и [частоте обновления модели](how-to-settings.md#model-update-frequency).
@@ -608,7 +607,7 @@ createChart(count,rewards)
 get_service_settings()
 ```
 
-Убедитесь, что в выходных данных параметры `rewardWaitTime` и `modelExportFrequency` имеют значение 5 минут. 
+Убедитесь, что в выходных данных параметры `rewardWaitTime` и `modelExportFrequency` имеют значение 5 минут.
 ```console
 -----checking model
 <Response [200]>
@@ -623,9 +622,9 @@ User count 4
 Coffee count 4
 ```
 
-## <a name="validate-new-learning-policy"></a>Проверка новой политики обучения 
+## <a name="validate-new-learning-policy"></a>Проверка новой политики обучения
 
-Вернитесь к записной книжке Azure и повторите тот же цикл, но на этот раз по 2000 итераций. Время от времени обновляйте диаграмму метрик на портале Azure, чтобы отслеживать количество вызовов службы. Когда счетчик отобразит приблизительно 4000 вызовов (вызов оценки и вызов вознаграждения для каждой итерации цикла), процесс завершится. 
+Вернитесь к записной книжке Azure и повторите тот же цикл, но на этот раз по 2000 итераций. Время от времени обновляйте диаграмму метрик на портале Azure, чтобы отслеживать количество вызовов службы. Когда счетчик отобразит приблизительно 4000 вызовов (вызов оценки и вызов вознаграждения для каждой итерации цикла), процесс завершится.
 
 ```python
 # max iterations
@@ -650,7 +649,7 @@ createChart(count2,rewards2)
 
 ## <a name="review-the-second-chart"></a>Анализ второй диаграммы
 
-Вторая диаграмма демонстрирует заметное увеличение совпадений между прогнозами оценки и предпочтениями пользователей. 
+Вторая диаграмма демонстрирует заметное увеличение совпадений между прогнозами оценки и предпочтениями пользователей.
 
 ![Вторая диаграмма демонстрирует заметное увеличение совпадений между прогнозами оценки и предпочтениями пользователей.](./media/tutorial-azure-notebook/azure-notebook-chart-results-happy-graph.png)
 
@@ -658,10 +657,10 @@ createChart(count2,rewards2)
 
 Если вы не собираетесь продолжать работу с этой серией руководств, очистите следующие ресурсы:
 
-* Удалите проект Azure Notebook. 
-* Удалите ресурс Персонализатора. 
+* Удалите проект Azure Notebook.
+* Удалите ресурс Персонализатора.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Записная книжка Jupyter и файлы данных](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/tree/master/samples/azurenotebook), которые используются в этом примере, можно получить в репозитории GitHub для Персонализатора. 
+[Записная книжка Jupyter и файлы данных](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/tree/master/samples/azurenotebook), которые используются в этом примере, можно получить в репозитории GitHub для Персонализатора.
 

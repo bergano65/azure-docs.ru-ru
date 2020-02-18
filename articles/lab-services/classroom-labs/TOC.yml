@@ -52,6 +52,8 @@
           href: how-to-manage-lab-accounts.md
         - name: Настройка учетных записей лаборатории
           href: how-to-configure-lab-accounts.md
+        - name: Разрешение создателю лаборатории выбирать ее расположение
+          href: allow-lab-creator-pick-lab-location.md
         - name: Подключение лабораторий к пиринговой виртуальной сети
           href: how-to-connect-peer-virtual-network.md
         - name: Подключение и отключение коллекции общих образов

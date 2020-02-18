@@ -7,16 +7,16 @@ manager: rochakm
 ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: 254f64c6405fb214bfbc61b3e45747d9e119565d
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 583511194fb100add1d5fc4ea9c06a869cf652b5
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509331"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212279"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
-В этой статье описано, как настроить и проверить аварийное восстановление для виртуальных машин Azure с помощью Azure PowerShell.
+Из этой статьи вы узнаете, как настроить и проверить аварийное восстановление для виртуальных машин Azure с помощью Azure PowerShell.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -28,7 +28,7 @@ ms.locfileid: "76509331"
 > - Создание целевых учетных записей хранения для репликации виртуальных машин.
 > - репликация виртуальных машин Azure в регион восстановления для аварийного восстановления;
 > - Выполнение тестовой отработки отказа, проверка и очистка после тестовой отработки отказа.
-> - отработка отказа в регион восстановления.
+> - Отработка отказа в регион восстановления.
 
 > [!NOTE]
 > Azure PowerShell пока поддерживает не все возможности этого сценария, доступные через портал. Ниже перечислены некоторые возможности, которые пока недоступны через Azure PowerShell:
@@ -36,14 +36,14 @@ ms.locfileid: "76509331"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом:
+Перед началом.
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
 - [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
 - У вас есть модуль Azure PowerShell `Az`. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
-## <a name="log-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
+## <a name="sign-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
 
 Войдите в подписку Azure с помощью командлета `Connect-AzAccount`.
 
@@ -57,9 +57,9 @@ Connect-AzAccount
 Set-AzContext -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
-## <a name="get-details-of-the-virtual-machines-to-be-replicated"></a>Получение сведений о реплицируемой виртуальной машине
+## <a name="get-details-of-the-virtual-machine-to-be-replicated"></a>Получение сведений о реплицируемой виртуальной машине
 
-В примере для этой статьи виртуальная машина из региона "Восточная часть США" будет реплицирована в регион "Западная часть США 2" и затем восстановлена в нем же. Для репликации используется виртуальная машина с одним диском ОС и одним диском данных. В примере используется имя виртуальной машины `AzureDemoVM`.
+В этой статье виртуальная машина в регионе "Восточная часть США" реплицируется и восстанавливается в регионе "Западная часть США 2". Виртуальная машина, для которой выполняется репликация, имеет диск операционной системы и один диск данных. В примере используется имя виртуальной машины `AzureDemoVM`.
 
 ```azurepowershell
 # Get details of the virtual machine
@@ -68,7 +68,7 @@ $VM = Get-AzVM -ResourceGroupName "A2AdemoRG" -Name "AzureDemoVM"
 Write-Output $VM
 ```
 
-```
+```Output
 ResourceGroupName  : A2AdemoRG
 Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/A2AdemoRG/providers/Microsoft.Compute/virtualMachines/AzureDemoVM
 VmId               : 1b864902-c7ea-499a-ad0f-65da2930b81b
@@ -84,7 +84,7 @@ ProvisioningState  : Succeeded
 StorageProfile     : {ImageReference, OsDisk, DataDisks}
 ```
 
-Получите сведения о дисках виртуальной машины. Сведения о дисках потребуются позже для запуска репликации виртуальной машины.
+Получение сведений о диске для дисков виртуальной машины. Сведения о дисках потребуются позже для запуска репликации виртуальной машины.
 
 ```azurepowershell
 $OSDiskVhdURI = $VM.StorageProfile.OsDisk.Vhd
@@ -100,14 +100,14 @@ $DataDisk1VhdURI = $VM.StorageProfile.DataDisks[0].Vhd
 > * Группа ресурсов для хранилища служб восстановления и защищаемые виртуальные машины должны находиться в разных расположениях Azure.
 > * Хранилище служб восстановления и группа ресурсов, к которой оно относится, могут размещаться в одном расположении Azure.
 
-В примере для этой статьи защищаемая виртуальная машина находится в регионе "Восточная часть США". Для аварийного восстановления выбран регион "Западная часть США 2". Хранилище служб восстановления и группа ресурсов хранилища находятся в регионе восстановления (Западная часть США 2).
+В примере для этой статьи защищаемая виртуальная машина находится в регионе "Восточная часть США". Для аварийного восстановления выбран регион "Западная часть США 2". Хранилище служб восстановления и группа ресурсов хранилища находятся в регионе восстановления, Западная часть США 2.
 
 ```azurepowershell
 #Create a resource group for the recovery services vault in the recovery Azure region
 New-AzResourceGroup -Name "a2ademorecoveryrg" -Location "West US 2"
 ```
 
-```
+```Output
 ResourceGroupName : a2ademorecoveryrg
 Location          : westus2
 ProvisioningState : Succeeded
@@ -115,7 +115,7 @@ Tags              :
 ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/a2ademorecoveryrg
 ```
 
-Создайте хранилище служб восстановления. В примере ниже хранилище служб восстановления с именем `a2aDemoRecoveryVault` создается в регионе "Западная часть США 2".
+Создайте хранилище служб восстановления. В этом примере хранилище служб восстановления с именем `a2aDemoRecoveryVault` создается в регионе "Западная часть США 2".
 
 ```azurepowershell
 #Create a new Recovery services vault in the recovery region
@@ -124,7 +124,7 @@ $vault = New-AzRecoveryServicesVault -Name "a2aDemoRecoveryVault" -ResourceGroup
 Write-Output $vault
 ```
 
-```
+```Output
 Name              : a2aDemoRecoveryVault
 ID                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/a2ademorecoveryrg/providers/Microsoft.RecoveryServices/vaults/a2aDemoRecoveryVault
 Type              : Microsoft.RecoveryServices/vaults
@@ -136,14 +136,14 @@ Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 
 ## <a name="set-the-vault-context"></a>Задание контекста хранилища
 
-Настройте контекст хранилища для сеанса PowerShell. После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища.
+Настройте контекст хранилища для сеанса PowerShell. После установки контекста хранилища Azure Site Recovery операции в сеансе PowerShell выполняются в контексте выбранного хранилища.
 
 ```azurepowershell
 #Setting the vault context.
 Set-AzRecoveryServicesAsrVaultContext -Vault $vault
 ```
 
-```
+```Output
 ResourceName         ResourceGroupName ResourceNamespace          ResourceType
 ------------         ----------------- -----------------          -----------
 a2aDemoRecoveryVault a2ademorecoveryrg Microsoft.RecoveryServices Vaults
@@ -170,7 +170,7 @@ Set-AzRecoveryServicesAsrVaultContext -Vault $vault
 - Можно создать только один объект структуры для каждого региона.
 - Если была ранее включена репликация Site Recovery для виртуальной машины на портале Azure, Site Recovery автоматически создает объект структуры. Если в регионе уже существует объект структуры, новый создать не удастся.
 
-Прежде чем начать, обратите внимание, что операции Azure Site Recovery выполняются асинхронно. При запуске операции отправляется задание Azure Site Recovery и возвращается объект отслеживания задания. Используйте объект отслеживания заданий, чтобы получить Последнее состояние задания (`Get-AzRecoveryServicesAsrJob`), а также для наблюдения за состоянием операции.
+Прежде чем начать, изучите, что операции Site Recovery выполняются асинхронно. При запуске операции отправляется задание Azure Site Recovery и возвращается объект отслеживания задания. Используйте объект отслеживания заданий, чтобы получить Последнее состояние задания (`Get-AzRecoveryServicesAsrJob`), а также для наблюдения за состоянием операции.
 
 ```azurepowershell
 #Create Primary ASR fabric
@@ -193,7 +193,7 @@ $PrimaryFabric = Get-AzRecoveryServicesAsrFabric -Name "A2Ademo-EastUS"
 
 ### <a name="create-a-site-recovery-fabric-object-to-represent-the-recovery-region"></a>Создание объекта структуры Site Recovery, который будет представлять регион восстановления
 
-Объект целевой структуры представляет расположение восстановления в Azure. Репликация и восстановление (при отработке отказа) для виртуальных машин будут выполняться в целевом регионе, который представлен структурой восстановления. В нашем примере регионом восстановления (целевым) Azure является регион "Западная часть США 2".
+Объект целевой структуры представляет расположение восстановления в Azure. При отработке отказа виртуальные машины реплицируются и восстанавливаются в регион восстановления, представленный структурой восстановления. В нашем примере регионом восстановления (целевым) Azure является регион "Западная часть США 2".
 
 ```azurepowershell
 #Create Recovery ASR fabric
@@ -289,10 +289,10 @@ $EusToWusPCMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -Protec
 
 ### <a name="create-a-protection-container-mapping-for-failback-reverse-replication-after-a-failover"></a>Создание сопоставления контейнеров защиты для восстановления размещения (обратной репликации после отработки отказа)
 
-После отработки отказа, когда вы будете готовы перевести виртуальную машину, для которой выполнен переход на другой ресурс, обратно в исходный регион Azure, восстановление размещения выполняется. При восстановлении размещения та виртуальная машина, для которой выполнена отработка отказа, реплицируется обратно из региона отработки отказа в исходный регион. Для обратной репликации исходный и целевой регионы меняются ролями. Исходный регион становится новым регионом восстановления, а бывший регион восстановления становится исходным регионом. Сопоставление контейнеров защиты для обратной репликации отражает эту смену ролей исходного и целевого регионов.
+После отработки отказа, когда вы будете готовы перевести виртуальную машину, для которой выполнен переход на другой ресурс, обратно в исходный регион Azure, восстановление размещения выполняется. Для восстановления после сбоя виртуальная машина, для которой выполнена отработка отказа, реплицируется из отработки отказа в исходный регион. Для обратной репликации исходный и целевой регионы меняются ролями. Исходный регион становится новым регионом восстановления, а бывший регион восстановления становится исходным регионом. Сопоставление контейнеров защиты для обратной репликации отражает эту смену ролей исходного и целевого регионов.
 
 ```azurepowershell
-#Create Protection container mapping (for failback) between the Recovery and Primary Protection Containers with the Replication policy
+#Create Protection container mapping (for fail back) between the Recovery and Primary Protection Containers with the Replication policy
 $TempASRJob = New-AzRecoveryServicesAsrProtectionContainerMapping -Name "A2ARecoveryToPrimary" -Policy $ReplicationPolicy -PrimaryProtectionContainer $RecoveryProtContainer -RecoveryProtectionContainer $PrimaryProtContainer
 
 #Track Job status to check for completion
@@ -303,18 +303,20 @@ while (($TempASRJob.State -eq "InProgress") -or ($TempASRJob.State -eq "NotStart
 
 #Check if the Job completed successfully. The updated job state of a successfully completed job should be "Succeeded"
 Write-Output $TempASRJob.State
+
+$WusToEusPCMapping = Get-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionContainer $RecoveryProtContainer -Name "A2ARecoveryToPrimary"
 ```
 
-## <a name="create-cache-storage-accounts-and-target-storage-accounts"></a>Создание учетных записей хранения для кэша и целевого хранилища
+## <a name="create-cache-storage-account-and-target-storage-account"></a>Создать учетную запись хранения кэша и целевую учетную запись хранения
 
-Учетная запись хранения кэша — это стандартная учетная запись хранения в том же регионе Azure, где расположена реплицируемая виртуальная машина. Учетная запись хранения кэша используется для временного хранения реплицируемых изменений перед их перемещением в регион восстановления Azure. Вы можете (но это не обязательно) указать разные учетные записи хранения кэша для разных дисков виртуальной машины.
+Учетная запись хранения кэша — это стандартная учетная запись хранения в том же регионе Azure, где расположена реплицируемая виртуальная машина. Учетная запись хранения кэша используется для временного хранения реплицируемых изменений перед их перемещением в регион восстановления Azure. Вы можете выбрать, но это необязательно, чтобы указать разные учетные записи хранения кэша для разных дисков виртуальной машины.
 
 ```azurepowershell
 #Create Cache storage account for replication logs in the primary region
 $EastUSCacheStorageAccount = New-AzStorageAccount -Name "a2acachestorage" -ResourceGroupName "A2AdemoRG" -Location 'East US' -SkuName Standard_LRS -Kind Storage
 ```
 
-Если виртуальная машина **не использует управляемые диски**, целевая учетная запись хранения размещается в регионе восстановления, в который реплицируются диски этой виртуальной машины. Целевая учетная запись хранения может иметь категорию "Стандартная" или "Премиум". Выберите тип учетной записи хранения, необходимый в зависимости от скорости изменения данных (скорость записи ввода-вывода) для дисков и Azure Site Recovery поддерживаемые ограничения на количество обновлений для типа хранилища.
+Для виртуальных машин, **не использующих управляемые диски**, Целевая учетная запись хранения — это учетная запись хранения в регионе восстановления, в которой реплицируются диски виртуальной машины. Целевая учетная запись хранения может иметь категорию "Стандартная" или "Премиум". Выберите тип учетной записи хранения, необходимый в зависимости от скорости изменения данных (скорость записи ввода-вывода) для дисков и Azure Site Recovery поддерживаемые ограничения на количество обновлений для типа хранилища.
 
 ```azurepowershell
 #Create Target storage account in the recovery region. In this case a Standard Storage account
@@ -323,9 +325,9 @@ $WestUSTargetStorageAccount = New-AzStorageAccount -Name "a2atargetstorage" -Res
 
 ## <a name="create-network-mappings"></a>Создание сетевых сопоставлений
 
-Сетевое сопоставление связывает виртуальные сети исходного региона с виртуальными сетями в целевом регионе. Сетевое сопоставление указывает, в какой виртуальной сети Azure целевого региона будет создаваться виртуальная машина при отработке отказа. Виртуальную сеть Azure можно сопоставить только с одной виртуальной сетью Azure в регионе восстановления.
+Сетевое сопоставление связывает виртуальные сети исходного региона с виртуальными сетями в целевом регионе. Сетевое сопоставление указывает виртуальную сеть Azure в регионе восстановления, на которую должна выполняться отработка отказа виртуальной машины в основной виртуальной сети. Виртуальную сеть Azure можно сопоставить только с одной виртуальной сетью Azure в регионе восстановления.
 
-- Создайте виртуальную сеть Azure в регионе восстановления для отработки отказа в:
+- Создайте виртуальную сеть Azure в регионе восстановления, чтобы выполнить отработку отказа на:
 
    ```azurepowershell
     #Create a Recovery Network in the recovery region
@@ -336,7 +338,7 @@ $WestUSTargetStorageAccount = New-AzStorageAccount -Name "a2atargetstorage" -Res
     $WestUSRecoveryNetwork = $WestUSRecoveryVnet.Id
    ```
 
-- Получите основную виртуальную сеть, к которой подключена виртуальная машина.
+- Получите основную виртуальную сеть. Виртуальной сети, к которой подключена виртуальная машина:
 
    ```azurepowershell
     #Retrieve the virtual network that the virtual machine is connected to
@@ -376,10 +378,10 @@ $WestUSTargetStorageAccount = New-AzStorageAccount -Name "a2atargetstorage" -Res
     Write-Output $TempASRJob.State
    ```
 
-- Создать сетевое сопоставление для обратного направления (восстановление размещения):
+- Создать сетевое сопоставление для обратного направления (восстановления после сбоя):
 
     ```azurepowershell
-    #Create an ASR network mapping for failback between the recovery Azure virtual network and the primary Azure virtual network
+    #Create an ASR network mapping for fail back between the recovery Azure virtual network and the primary Azure virtual network
     $TempASRJob = New-AzRecoveryServicesAsrNetworkMapping -AzureToAzure -Name "A2AWusToEusNWMapping" -PrimaryFabric $RecoveryFabric -PrimaryAzureNetworkId $WestUSRecoveryNetwork -RecoveryFabric $PrimaryFabric -RecoveryAzureNetworkId $EastUSPrimaryNetwork
 
     #Track Job status to check for completion
@@ -463,7 +465,7 @@ Write-Output $TempASRJob.State
 
 Процесс репликации начинается с того, что в регионе восстановления создаются копии реплицируемых дисков виртуальной машины. Этот этап называется начальной репликацией.
 
-После завершения начальной репликации начинается этап разностной синхронизации. На этом этапе виртуальная машина считается защищенной и для нее можно выполнять тестовую отработку отказа. Состояние репликации реплицированного элемента, представляющего виртуальную машину, переходит в **защищенное** состояние после завершения начальной репликации.
+После завершения начальной репликации репликация перемещается на фазу разностной синхронизации. На этом этапе виртуальная машина считается защищенной и для нее можно выполнять тестовую отработку отказа. Состояние репликации реплицированного элемента, представляющего виртуальную машину, переходит в **защищенное** состояние после завершения начальной репликации.
 
 Чтобы отследить текущее состояние и работоспособность репликации для виртуальной машины, получите сведения о репликации для соответствующего защищенного элемента.
 
@@ -477,9 +479,9 @@ FriendlyName ProtectionState ReplicationHealth
 AzureDemoVM  Protected       Normal
 ```
 
-## <a name="perform-a-test-failover-validate-and-cleanup-test-failover"></a>Выполнение тестовой отработки отказа, проверка и очистка после тестовой отработки отказа
+## <a name="do-a-test-failover-validate-and-cleanup-test-failover"></a>Проверка отработки отказа, проверка и очистка тестовой отработки отказа
 
-После того как репликация для виртуальной машины достигнет защищенного состояния, операцию тестовой отработки отказа можно выполнить на виртуальной машине (в элементе, защищенном репликацией виртуальной машины).
+После того как репликация для виртуальной машины достигнет защищенного состояния, на виртуальной машине можно выполнить операцию тестовой отработки отказа (в элементе, защищенном репликацией виртуальной машины).
 
 ```azurepowershell
 #Create a separate network for test failover (not connected to my DR network)
@@ -490,7 +492,7 @@ Add-AzVirtualNetworkSubnetConfig -Name "default" -VirtualNetwork $TFOVnet -Addre
 $TFONetwork= $TFOVnet.Id
 ```
 
-Выполните тестовую отработка отказа.
+Выполните тестовую отработку отказа.
 
 ```azurepowershell
 $ReplicationProtectedItem = Get-AzRecoveryServicesAsrReplicationProtectedItem -FriendlyName "AzureDemoVM" -ProtectionContainer $PrimaryProtContainer
@@ -504,7 +506,7 @@ $TFOJob = Start-AzRecoveryServicesAsrTestFailoverJob -ReplicationProtectedItem $
 Get-AzRecoveryServicesAsrJob -Job $TFOJob
 ```
 
-```
+```Output
 Name             : 3dcb043e-3c6d-4e0e-a42e-8d4245668547
 ID               : /Subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/a2ademorecoveryrg/providers/Microsoft.RecoveryServices/vaults/a2aDemoR
                    ecoveryVault/replicationJobs/3dcb043e-3c6d-4e0e-a42e-8d4245668547
@@ -524,7 +526,7 @@ Tasks            : {Prerequisites check for test failover, Create test virtual m
 Errors           : {}
 ```
 
-Когда это задание успешно завершится, вы сможете подключиться к созданной виртуальной машине и проверить правильность тестовой отработки отказа.
+После успешного завершения задания тестовой отработки отказа можно подключиться к виртуальной машине теста, для которого произошел сбой, и проверить тестовую отработку отказа.
 
 Когда проверка созданной тестовой виртуальной машины завершится, удалите эту тестовую копию, запустив операцию очистки после тестовой отработки отказа. Эта операция удаляет тестовую копию виртуальной машины, созданную в процессе тестовой отработки отказа.
 
@@ -534,15 +536,15 @@ $Job_TFOCleanup = Start-AzRecoveryServicesAsrTestFailoverCleanupJob -Replication
 Get-AzRecoveryServicesAsrJob -Job $Job_TFOCleanup | Select State
 ```
 
-```
+```Output
 State
 -----
 Succeeded
 ```
 
-## <a name="failover-to-azure"></a>Отработка отказа в Azure
+## <a name="fail-over-to-azure"></a>Отработка отказа с переходом в Azure
 
-Выполните отработку отказа виртуальной машины до определенной точки восстановления.
+Отработка отказа виртуальной машины на определенную точку восстановления.
 
 ```azurepowershell
 $RecoveryPoints = Get-AzRecoveryServicesAsrRecoveryPoint -ReplicationProtectedItem $ReplicationProtectedItem
@@ -551,12 +553,12 @@ $RecoveryPoints = Get-AzRecoveryServicesAsrRecoveryPoint -ReplicationProtectedIt
 "{0} {1}" -f $RecoveryPoints[0].RecoveryPointType, $RecoveryPoints[-1].RecoveryPointTime
 ```
 
-```
+```Output
 CrashConsistent 4/24/2018 11:10:25 PM
 ```
 
 ```azurepowershell
-#Start the failover job
+#Start the fail over job
 $Job_Failover = Start-AzRecoveryServicesAsrUnplannedFailoverJob -ReplicationProtectedItem $ReplicationProtectedItem -Direction PrimaryToRecovery -RecoveryPoint $RecoveryPoints[-1]
 
 do {
@@ -567,11 +569,11 @@ do {
 $Job_Failover.State
 ```
 
-```
+```Output
 Succeeded
 ```
 
-Проверив успешность операции, вы можете зафиксировать изменения, внесенные при отработке отказа.
+После успешного выполнения задания отработки отказа можно применить операцию отработки отказа.
 
 ```azurepowershell
 $CommitFailoverJOb = Start-AzRecoveryServicesAsrCommitFailoverJob -ReplicationProtectedItem $ReplicationProtectedItem
@@ -579,7 +581,7 @@ $CommitFailoverJOb = Start-AzRecoveryServicesAsrCommitFailoverJob -ReplicationPr
 Get-AzRecoveryServicesAsrJob -Job $CommitFailoverJOb
 ```
 
-```
+```Output
 Name             : 58afc2b7-5cfe-4da9-83b2-6df358c6e4ff
 ID               : /Subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/a2ademorecoveryrg/providers/Microsoft.RecoveryServices/vaults/a2aDemoR
                    ecoveryVault/replicationJobs/58afc2b7-5cfe-4da9-83b2-6df358c6e4ff
@@ -599,7 +601,7 @@ Tasks            : {Prerequisite check, Commit}
 Errors           : {}
 ```
 
-## <a name="reprotect-and-failback-to-source-region"></a>Повторное включение защиты и восстановление размещения в исходном регионе
+## <a name="reprotect-and-fail-back-to-the-source-region"></a>Повторное включение защиты и возвращение к исходному региону
 
 После отработки отказа, когда вы будете готовы вернуться к исходному региону, запустите обратную репликацию для защищенного элемента репликации с помощью командлета `Update-AzRecoveryServicesAsrProtectionDirection`.
 
@@ -609,12 +611,12 @@ $WestUSCacheStorageAccount = New-AzStorageAccount -Name "a2acachestoragewestus" 
 ```
 
 ```azurepowershell
-#Use the recovery protection container, new cache storage accountin West US and the source region VM resource group
+#Use the recovery protection container, new cache storage account in West US and the source region VM resource group
 Update-AzRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $ReplicationProtectedItem -AzureToAzure
--ProtectionContainerMapping $RecoveryProtContainer -LogStorageAccountId $WestUSCacheStorageAccount.Id -RecoveryResourceGroupID $sourceVMResourcegroup.Id
+-ProtectionContainerMapping $WusToEusPCMapping -LogStorageAccountId $WestUSCacheStorageAccount.Id -RecoveryResourceGroupID $sourceVMResourcegroup.ResourceId
 ```
 
-После завершения повторной защиты можно инициировать отработку отказа в обратном направлении (Западная часть США в Восточная часть США) и восстановление размещения в исходном регионе.
+После завершения повторной защиты можно выполнить отработку отказа в обратном направлении, Западная часть США — Восточная часть США и восстановить расположение в исходном регионе.
 
 ## <a name="disable-replication"></a>Отключение репликации
 
@@ -624,6 +626,6 @@ Update-AzRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $Repli
 Remove-AzRecoveryServicesAsrReplicationProtectedItem -ReplicationProtectedItem $ReplicatedItem
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотрите [Справочник по Azure Site Recovery PowerShell](/powershell/module/az.RecoveryServices) , чтобы узнать, как можно выполнять другие задачи, такие как создание планов восстановления и тестирование отработки отказа планов восстановления с помощью PowerShell.

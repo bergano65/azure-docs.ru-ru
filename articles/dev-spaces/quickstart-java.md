@@ -6,33 +6,26 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Java в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: a814516eb002eadb19100182d1917fd4aaa0cec6
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 8ceb48bf60438442b63fab698091fdb5064793af
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293578"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025203"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-java---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 
-Из этого руководства вы узнаете, как выполнить следующие задачи:
-
-- Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
-- Итеративная разработка кода в контейнерах с помощью Visual Studio Code.
-- Отладка кода в среде разработки с помощью Visual Studio Code.
-
-Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью таких средств:
-- [Node.js и Visual Studio Code](quickstart-nodejs.md);
-- [.NET Core и Visual Studio Code](quickstart-netcore.md);
-- [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
+В этом кратком руководстве вы настроите Azure Dev Spaces с управляемой средой кластера Kubernetes и используете приложение Java в Visual Studio Code для итеративной разработки и отладки кода в контейнерах. Azure Dev Spaces позволяет выполнять отладку и тестирование всех компонентов приложения в службе Azure Kubernetes (AKS) с минимальной настройкой компьютера для разработки. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-- [Средство Visual Studio Code](https://code.visualstudio.com/download).
-- Расширения [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и [отладчик Java для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debugger-azds) для Visual Studio Code установлены.
-- [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
-- [Инструмент Maven установлен и настроен](https://maven.apache.org).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно. 
+- [Пакет SDK для Java (JDK) версии 1.8.0+](https://aka.ms/azure-jdks)
+- [Maven версии 3.5.0+](https://maven.apache.org/download.cgi).
+- [Visual Studio Code](https://code.visualstudio.com/download).
+- Расширения [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и [отладчик Java для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debugger-azds) для Visual Studio Code.
+- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+- [Git](https://www.git-scm.com/downloads).
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
@@ -52,6 +45,7 @@ az aks create -g MyResourceGroup -n MyAKS --location eastus --disable-rbac --gen
 
 ```cmd
 $ az aks use-dev-spaces -g MyResourceGroup -n MyAKS
+
 
 'An Azure Dev Spaces Controller' will be created that targets resource 'MyAKS' in resource group 'MyResourceGroup'. Continue? (y/N): y
 
@@ -80,11 +74,11 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="prepare-the-sample-application-in-visual-studio-code"></a>Подготовка примера приложения в Visual Studio Code
 
-Откройте Visual Studio Code, щелкните *Файл*, *Открыть...* , а затем перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend* и щелкните *Открыть*.
+Откройте Visual Studio Code, выберите **Файл**, **Открыть**, а затем перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend* и выберите **Открыть**.
 
 Теперь проект *webfrontend* открыт в Visual Studio Code. Для запуска приложения в области разработки создайте ресурсы диаграмм Docker и Helm, используя расширение Azure Dev Spaces в палитре команд.
 
-Чтобы открыть палитру команд в Visual Studio Code, щелкните *Представление*, а затем — *Палитра команд*. Начните вводить `Azure Dev Spaces` и щелкните `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
+Чтобы открыть палитру команд в Visual Studio Code, выберите **Представление**, а затем — **Палитра команд**. Начните вводить `Azure Dev Spaces` и выберите **Azure Dev Spaces. Подготовка файлов конфигурации для Azure Dev Spaces**.
 
 ![Подготовка файлов конфигурации для Azure Dev Spaces](./media/common/command-palette.png)
 
@@ -101,26 +95,26 @@ git clone https://github.com/Azure/dev-spaces
 > [!TIP]
 > Azure Dev Spaces использует [Dockerfile и диаграмму Helm](how-dev-spaces-works.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
-## <a name="build-and-run-code-in-kubernetes-from-visual-studio"></a>Сборка и запуск кода в Kubernetes из Visual Studio
+## <a name="build-and-run-code-in-kubernetes-from-visual-studio-code"></a>Сборка и запуск кода в Kubernetes из Visual Studio Code
 
-Щелкните значок *Отладка* слева, а затем *Launch Java Program (AZDS)* (Запустить программу на Java (AZDS)) сверху.
+Выберите значок **Отладка** слева, а затем **Launch Java Program (AZDS)** (Запустить программу на Java (AZDS)) сверху.
 
 ![Запуск программы на Java](media/get-started-java/debug-configuration.png)
 
-Эта команда создает службы в Azure Dev Spaces. Окно *Терминал* внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
+Эта команда создает службы в Azure Dev Spaces. Окно **Терминал** внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В **консоли отладки** показаны выходные данные журнала.
 
 > [!Note]
-> Если вы не видите никаких команд Azure Dev Spaces в *палитре команд*, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/java/getting-started/webfrontend* в Visual Studio Code.
+> Если вы не видите никаких команд Azure Dev Spaces в **палитре команд**, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/java/getting-started/webfrontend* в Visual Studio Code.
 
 Вы увидите, что служба запущена, перейдя по общедоступному URL-адресу.
 
-Щелкните *Отладка*, а затем выберите *Остановить отладку*, чтобы остановить отладчик.
+Выберите **Отладка**, а затем выберите **Остановить отладку**, чтобы остановить отладчик.
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните *Запуск Java Program (AZDS)* . Пример:
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните **Запуск Java Program (AZDS)** . Пример:
 
-1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
+1. Если ваше приложение по-прежнему работает, выберите пункт **Отладка**, а затем — **Остановить отладку**, чтобы остановить его.
 1. Измените [строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19):
     
     ```java
@@ -128,30 +122,30 @@ git clone https://github.com/Azure/dev-spaces
     ```
 
 1. Сохраните изменения.
-1. Повторите *Запуск Java Program (AZDS)* .
+1. Повторите **Запуск Java Program (AZDS)** .
 1. Перейдите к запущенной службе и просмотрите внесенные изменения.
-1. Нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить приложение.
+1. Выберите пункт **Отладка**, а затем **Остановить отладку**, чтобы остановить приложение.
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Настройка и использование точек останова для отладки
 
-Запуск службы осуществляется с помощью *Launch Java Program (AZDS)* (Запуск программы Java (AZDS)). Таким образом служба также будет запущена в режиме отладки.
+Запуск службы осуществляется с помощью **Launch Java Program (AZDS)** (Запуск программы Java (AZDS)). Таким образом служба также будет запущена в режиме отладки.
 
-Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `src/main/java/com/ms/sample/webfrontend/Application.java` и щелкните строку 19, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
+Вернитесь в представление **Explorer**, выбрав **Представление**, а затем — **Explorer**. Откройте *src/main/java/com/ms/sample/webfrontend/Application.java* и щелкните где-нибудь в строке 19, чтобы поместить в нее курсор. Чтобы задать точку останова, нажмите клавишу **F9** или выберите пункт **Отладка** и **Переключить точку останова**.
 
-Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code. Вы увидите, что строка 19 выделена. Заданная вами точка останова приостановила выполнение службы на строке 19. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
+Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code. Вы увидите, что строка 19 выделена. Заданная вами точка останова приостановила выполнение службы на строке 19. Чтобы возобновить работу службы, нажмите клавишу **F5** или выберите пункт **Отладка**, а затем **Продолжить**. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
 
 Во время выполнения службы в Kubernetes с присоединенным отладчиком у вас есть полный доступ к отладочным сведениям, включая стек вызовов, локальные переменные и данные об исключениях.
 
-Удалите точку останова, поместив курсор в строке 19 в `src/main/java/com/ms/sample/webfrontend/Application.java` и нажав клавишу *F9*.
+Удалите точку останова, поместив курсор в строку 19 в *src/main/java/com/ms/sample/webfrontend/Application.java* и нажав клавишу **F9**.
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Пока служба выполняется в режиме отладки, обновите строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`. Пример:
+Пока служба работает в режиме отладки, обновите строку 19 в *src/main/java/com/ms/sample/webfrontend/Application.java*. Пример:
 ```java
 return "Hello from webfrontend in Azure while debugging!";
 ```
 
-Сохраните файл. Выберите *Отладка*, а затем — *Restart Debugging* (Перезапустить отладку) или на *панели инструментов отладки* нажмите кнопку *Restart Debugging* (Перезапустить отладку).
+Сохраните файл. Выберите **Отладка**, а затем — **Restart Debugging** (Перезапустить отладку) или на **панели инструментов отладки** нажмите кнопку **Restart Debugging** (Перезапустить отладку).
 
 ![Обновление отладки](media/common/debug-action-refresh.png)
 

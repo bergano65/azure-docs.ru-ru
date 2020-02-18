@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 02/08/2018
 ms.author: kumud
 ms.custom: include file
-ms.openlocfilehash: 4b419bd8c19cffaf84582cb4fa9e46592746da3f
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: 4219df03f74f737c5f2435f9bc0842189dc1fd49
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751598"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76909105"
 ---
 | | SKU "Стандартный" | SKU "Базовый" |
 | --- | --- | --- |
-| Размер серверного пула | Поддерживается до 1000 экземпляров. | Поддерживается до 100 экземпляров. |
+| Размер серверного пула | Поддерживается до 1000 экземпляров. | Поддерживается до 300 экземпляров. |
 | Конечные точки серверного пула | Любая виртуальная машина в одной виртуальной сети, включая комбинации виртуальных машин, групп доступности и масштабируемых наборов виртуальных машин. | Виртуальные машины в одной группе доступности или масштабируемом наборе виртуальных машин. |
 | [Проверки работоспособности](../articles/load-balancer/load-balancer-custom-probe-overview.md#types) | TCP, HTTP, HTTPS | TCP, HTTP |
 | [Реакция на сбой проверки работоспособности](../articles/load-balancer/load-balancer-custom-probe-overview.md#probedown) | TCP-подключения остаются активными при сбое проверки экземпляра __и__ сбое всех проверок. | TCP-подключения остаются активными при сбое проверки экземпляра. Все TCP-подключения завершаются при сбое всех проверок. |

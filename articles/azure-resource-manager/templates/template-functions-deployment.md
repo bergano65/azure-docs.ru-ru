@@ -3,12 +3,12 @@ title: Функции шаблонов — развертывание
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.openlocfilehash: f2939efc9481255233fbdda29f4fa30adcd24b7f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b241aaf43ee3204c9960d0099ce3c61d4c1a80ee
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484042"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207287"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
 
@@ -239,9 +239,9 @@ ms.locfileid: "75484042"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
-| parameterName |Да |string |Имя параметра, который требуется вернуть. |
+| parameterName |Да |строка |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -330,7 +330,7 @@ ms.locfileid: "75484042"
 | ---- | ---- | ----- |
 | stringOutput | String | вариант 1 |
 | intOutput | Int | 1 |
-| objectOutput | Объекты | {"one": "a", "two": "b"} |
+| objectOutput | Объект | {"one": "a", "two": "b"} |
 | arrayOutput | Array | [1, 2, 3] |
 | crossOutput | String | вариант 1 |
 
@@ -344,7 +344,7 @@ ms.locfileid: "75484042"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
 | variableName |Да |String |Имя переменной, которую необходимо вернуть. |
 
@@ -423,13 +423,13 @@ ms.locfileid: "75484042"
 | exampleOutput1 | String | myVariable |
 | exampleOutput2 | Array | [1, 2, 3, 4] |
 | exampleOutput3 | String | myVariable |
-| exampleOutput4 |  Объекты | {"property1": "value1", "property2": "value2"} |
+| exampleOutput4 |  Объект | {"property1": "value1", "property2": "value2"} |
 
 Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне Azure Resource Manager](template-variables.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](linked-templates.md).
-* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](create-multiple-instances.md).
+* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
 

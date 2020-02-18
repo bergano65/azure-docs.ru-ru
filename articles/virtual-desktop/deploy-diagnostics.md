@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: helohr
-ms.openlocfilehash: b6b310bf1958671583aab873ab42a70845f93f9a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5eff53119362cd03c9a6497e3133984627e513c1
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452429"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368852"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -25,7 +25,7 @@ ms.locfileid: "75452429"
 - Отправка сообщения активным пользователям на определенном узле сеансов.
 - Подписывать пользователей из узла сеансов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем можно будет развернуть шаблон Azure Resource Manager для средства, необходимо создать регистрацию приложения Azure Active Directory и рабочую область Log Analytics. Для этого вам или администратору требуются следующие разрешения:
 
@@ -36,8 +36,8 @@ ms.locfileid: "75452429"
 
 Кроме того, перед началом работы необходимо установить эти два модуля PowerShell:
 
-- [Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-2.4.0) (Общие сведения об Azure PowerShell)
-- [Модуль Azure AD](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
+- [Overview of Azure PowerShell](/powershell/azure/install-az-ps?view=azps-2.4.0/) (Общие сведения об Azure PowerShell)
+- [Модуль Azure AD](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0/)
 
 Убедитесь, что ваш идентификатор подписки готов для входа в систему.
 
@@ -50,7 +50,7 @@ ms.locfileid: "75452429"
 >[!NOTE]
 >Разрешения API представляют собой виртуальные рабочие столы Windows, Log Analytics и Microsoft Graph разрешения API добавляются в приложение Azure Active Directory.
 
-1. Откройте PowerShell от имени администратора.
+1. Откройте PowerShell с правами администратора.
 2. Войдите в Azure с помощью учетной записи, имеющей разрешения владельца или участника на подписку Azure, которую вы хотите использовать для средства диагностики:
    ```powershell
    Login-AzAccount
@@ -83,7 +83,7 @@ ms.locfileid: "75452429"
 
 Чтобы запустить сценарий PowerShell, выполните следующие действия.
 
-1.  Откройте PowerShell от имени администратора.
+1.  Откройте PowerShell с правами администратора.
 2.  Перейдите в [репозиторий GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy/scripts) и запустите сценарий **креателоганалитиксворкспацефордиагностикс. ps1** в PowerShell.
 3. Введите следующие значения параметров.
 
@@ -253,11 +253,11 @@ ms.locfileid: "75452429"
 
     - Пороговое значение: выше 80% помечается как неработоспособное.
 
-- [Задержка ввода данных пользователем на сеанс (\*)\\максимальная задержка ввода](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters):
+- [Задержка ввода данных пользователем на сеанс (\*)\\максимальная задержка ввода](/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters/):
 
     - Пороговое значение: выше 2000 мс помечено как неработоспособное.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как отслеживать журналы действий при [использовании диагностики с log Analytics](diagnostics-log-analytics.md).
 - Ознакомьтесь с распространенными сценариями ошибок и способами их устранения в статье [Обнаружение и диагностика проблем](diagnostics-role-service.md).

@@ -2,19 +2,19 @@
 title: Краткое руководство. Создание индекса поиска в Python с помощью интерфейсов REST API
 titleSuffix: Azure Cognitive Search
 description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Python, Jupyter Notebook и REST API службы "Когнитивный поиск Azure".
-author: heidisteen
+author: tchristiani
 manager: nitinme
-ms.author: heidist
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 11/04/2019
-ms.openlocfilehash: c663fae47de1e161314aa3bf2fdb9966ae80d3c6
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.date: 02/10/2020
+ms.openlocfilehash: 15a3801a7ea99d6d799bcd8adf340b03f36bc196
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792263"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121618"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter
 
@@ -28,7 +28,7 @@ ms.locfileid: "72792263"
 
 Создайте записную книжку Jupyter, которая создает, загружает и запрашивает индекс службы "Когнитивный поиск Azure", с помощью Python и [REST API службы "Когнитивный поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/). В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -305,9 +305,9 @@ ms.locfileid: "72792263"
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для упрощения в этом кратком руководстве используется сокращенная версия индекса Hotels. Вы можете создать полную версию, чтобы выполнить более интересные запросы. Чтобы получить полную версию и все 50 документов, запустите мастер **импорта данных**, выбрав *hotels-sample* из встроенных примеров источников данных.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Создание индекса службы "Поиск Azure" с помощью портала Azure](search-get-started-portal.md)
+> [Краткое руководство. Создание индекса службы "Поиск Azure" с помощью портала Azure](search-get-started-portal.md)

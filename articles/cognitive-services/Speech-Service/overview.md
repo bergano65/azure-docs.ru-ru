@@ -3,19 +3,19 @@ title: Что собой представляет служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Служба "Речь" — это средства преобразования речи в текст, текста в речь и перевода речи, предоставляемые в рамках одной подписки Azure. Используя пакет SDK службы "Речь", пакет SDK для устройств, подключаемых к службе "Речь", или REST API, добавьте в свои приложения, инструменты и устройства функции для работы с речью.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
-ms.date: 11/05/2019
-ms.author: erhopf
-ms.openlocfilehash: df0ce5efefe86ed3b7e2e8ccf5a2bd9011e168e6
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 7ddfae430e6aa4ec9549e40c937e5edcfd927f6d
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76261438"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119923"
 ---
 # <a name="what-is-the-speech-service"></a>Что собой представляет служба "Речь"
 
@@ -37,24 +37,6 @@ ms.locfileid: "76261438"
 | | [Создание настраиваемых голосовых моделей](#customize-your-speech-experience) | Создание пользовательских голосовых моделей, уникальных для вашего бренда или продукта. | нет | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 | [Перевод речи](speech-translation.md) | Перевод речи | Перевод речи позволяет применить в инструментах, приложениях и устройствах полнофункциональное решение для перевода устной речи на многих языках в режиме реального времени. Используйте эту службу для перевода речи и преобразования речи в текст. | [Да](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) | нет |
 | [Голосовые помощники](voice-assistants.md) | Голосовые помощники | Голосовые помощники, использующие службу "Речь", позволяют разработчикам создавать естественные и привычные для человека разговорные функции для своих приложений и возможностей. Служба голосового помощника обеспечивает быстрое и надежное взаимодействие между устройством и реализацией помощника, которая использует канал Bot Framework Direct Line Speech или интегрированную службу "Пользовательские команды" (предварительная версия) для завершения задач. | [Да](voice-assistants.md) | нет |
-
-## <a name="news-and-updates"></a>Новости и обновления
-
-Узнайте о новых возможностях службы "Речь".
-
-- Ноябрь 2019 г.
-  - Добавлены два новых стиля речи: [`newscast`](speech-synthesis-markup.md#adjust-speaking-styles) и [`customerservice`](speech-synthesis-markup.md#adjust-speaking-styles) для голоса `en-US-JessaNeural`.
-- Сентябрь 2019 г.
-  - Выпущен пакет SDK версии 1.7.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-- Август 2019 г.
-  - **Новое руководство**. [Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#](tutorial-voice-enable-your-bot-speech-sdk.md)
-  - Добавлен новый стиль речи [`chat`](speech-synthesis-markup.md#adjust-speaking-styles) для голоса `en-US-JessaNeural`.
-- Июнь 2019 г.
-  - Выпущен пакет SDK версии 1.6.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-- Май 2019 г. Доступна документация по [транскрибированию бесед](conversation-transcription-service.md), [транскрибированию обращений в центры обработки вызовов](call-center-transcription.md) и [голосовым помощникам](voice-assistants.md).
-- Май 2019 г.
-  - Выпущен пакет SDK версии 1.5.1 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-  - Выпущен пакет SDK версии 1.5.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
 
 ## <a name="try-the-speech-service"></a>Попробуйте использовать службу "Речь" бесплатно
 

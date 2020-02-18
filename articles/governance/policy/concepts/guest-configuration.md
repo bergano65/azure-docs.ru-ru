@@ -3,12 +3,12 @@ title: Изучение аудита содержимого виртуальны
 description: Узнайте, как политика Azure использует агент гостевой конфигурации для аудита параметров в виртуальных машинах.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 205aa5a9292d0f70fed8247a8af1fe575ad3614e
-ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
+ms.openlocfilehash: 128baa0df1d3e555fe9629005529710202e1bbf6
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75830502"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169524"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -76,8 +76,8 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 |-|-|-|
 |Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
-|Майкрософт|Windows Server|2012 Datacenter, 2012 R2 Datacenter, 2016 Datacenter, 2019 Datacenter|
-|Майкрософт|Клиент Windows|Windows 10|
+|Microsoft|Windows Server|2012 Datacenter, 2012 R2 Datacenter, 2016 Datacenter, 2019 Datacenter|
+|Microsoft|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5|
 |Red Hat|Red Hat Enterprise Linux|7.4, 7.5|
 |Suse|SLES|12 с пакетом обновления 3|
@@ -183,10 +183,10 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 
 ## <a name="guest-configuration-samples"></a>Примеры настройки гостевой виртуальной машины
 
-Примеры настройки гостевой конфигурации политики доступны в следующих расположениях:
+Источник для политики встроенных инициатив настройки гостевой конфигурации доступен в следующих расположениях:
 
-- [Индекс выборок — конфигурация гостя](../samples/index.md#guest-configuration)
-- [Репозиторий с примерами политик Azure](https://github.com/Azure/azure-policy/tree/master/samples/GuestConfiguration)
+- [Встроенные инициативы — конфигурация гостя](../samples/built-in-initiatives.md#guest-configuration)
+- [Репозиторий с примерами политик Azure](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest Configuration)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

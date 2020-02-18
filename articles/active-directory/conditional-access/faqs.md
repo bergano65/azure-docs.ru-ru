@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2cc562f155fe3b84e5d28b2e0e22d50238d480c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6842338bd27e4bea3436f0b249380ab773d60de6
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73816213"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368092"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>Azure Active Directory часто задаваемые вопросы о условном доступе
 
 ## <a name="which-applications-work-with-conditional-access-policies"></a>Какие приложения работают с политиками условного доступа?
 
-Сведения о приложениях, которые работают с политиками условного доступа, см. [в разделе приложения и браузеры, использующие правила условного доступа в Azure Active Directory](technical-reference.md).
+Сведения о приложениях, которые работают с политиками условного доступа, см. [в разделе приложения и браузеры, использующие правила условного доступа в Azure Active Directory](concept-conditional-access-cloud-apps.md).
 
 ## <a name="are-conditional-access-policies-enforced-for-b2b-collaboration-and-guest-users"></a>Применяются ли политики условного доступа к службе совместной работы B2B и гостевым пользователям?
 
@@ -40,7 +40,7 @@ ms.locfileid: "73816213"
 
 Политики условного доступа применяются ко всем учетным записям пользователей. Это относится и к учетным записям пользователей, которые используются как учетные записи служб. Часто учетная запись службы, которая запускается автоматически, не может удовлетворять требованиям политики условного доступа. Например, может потребоваться многофакторная проверка подлинности. Учетные записи служб можно исключить из политики с помощью параметров управления политиками условного доступа. 
 
-## <a name="are-graph-apis-available-for-configuring-conditional-access-policies"></a>Доступны ли API Graph для настройки политик условного доступа?
+## <a name="are-microsoft-graph-apis-available-for-configuring-conditional-access-policies"></a>Доступны Microsoft Graph API для настройки политик условного доступа?
 
 В настоящее время нет. 
 
@@ -56,6 +56,6 @@ Microsoft Teams также поддерживается отдельно в ка
 
 Клиенты рабочего стола Microsoft Teams для Windows и Mac поддерживают современные методы проверки подлинности. Современные методы проверки подлинности используют вход на основе библиотеки проверки подлинности Active Directory (ADAL) для клиентских приложений Microsoft Office на всех платформах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы настроить политики условного доступа для своей среды, ознакомьтесь с [рекомендациями по условному доступу в Azure Active Directory](best-practices.md). 

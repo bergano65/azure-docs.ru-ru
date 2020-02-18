@@ -1,19 +1,19 @@
 ---
 title: Управление ценовой категорией учетной записи Azure Maps | Карты Microsoft Azure
 description: Вы можете использовать портал Azure для управления учетной записью Microsoft Azure Maps и ценовой категорией.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 01/27/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: c5f222c429ecfd27f5f217e0cb4aaba0ee50596e
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 08a00487df70e9bcce394ad06c9d7e4d5c9e1c20
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025594"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209925"
 ---
 # <a name="manage-the-pricing-tier-of-your-azure-maps-account"></a>Управление ценовой категорией для учетной записи Azure Maps
 
@@ -36,7 +36,7 @@ ms.locfileid: "77025594"
 > [!NOTE]
 > При повышении или понижении ценовой категории для учетной записи Azure Maps не требуется создавать новые ключи подписок или идентификатор клиента (для проверки подлинности с помощью Azure Active Directory).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как просматривать метрики использования API для учетной записи Azure Maps:
 

@@ -3,25 +3,25 @@ title: Краткое руководство по Azure. Создание кон
 description: В этом кратком руководстве показано, как создать концентратор событий с помощью портала Azure и как затем отправлять и получать данные используя .NET Standard.
 services: event-hubs
 documentationcenter: ''
-author: ShubhaVijayasarathy
+author: spelluru
 ms.service: event-hubs
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 12/02/2019
-ms.author: shvija
-ms.openlocfilehash: 8b6a9978d6db1a8978f993abf16d7cfbfb2f44a9
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 02/11/2020
+ms.author: spelluru
+ms.openlocfilehash: 5e80ab6d5ed0076e03f5378cbe975b15d0a28f47
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771025"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157667"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Краткое руководство. Создание концентратора событий с помощью портала Azure
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
 В этом кратком руководстве вы создадите концентратор событий на [портале Azure](https://portal.azure.com).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 
@@ -41,7 +41,7 @@ ms.locfileid: "75771025"
 2. В поле **Подписка** выберите имя подписки Azure, в которой необходимо создать группу ресурсов.
 3. Введите уникальное **имя группы ресурсов**. Система мгновенно проверит, доступно ли имя в текущей выбранной подписке Azure.
 4. Выберите **регион** для группы ресурсов.
-5. Выберите **Review + Create** (Просмотреть и создать).
+5. Выберите **Review + Create** (Просмотреть и создать).
 
    ![Создание группы ресурсов](./media/event-hubs-quickstart-portal/resource-groups2.png)
 6. На странице **Отзыв и создание** выберите **Создать**. 
@@ -64,7 +64,7 @@ ms.locfileid: "75771025"
     4. Выберите **подписку**, в которой нужно создать пространство имен.
     5. Выберите существующую **группу ресурсов** или создайте другую. 
     4. Выберите **расположение** для пространства имен.
-    5. Нажмите кнопку **Создать**. Полная подготовка ресурсов для системы может занять несколько минут.
+    5. Нажмите кнопку **создания**. Полная подготовка ресурсов для системы может занять несколько минут.
 
        ![Создание пространства имен концентратора событий](./media/event-hubs-quickstart-portal/create-event-hub1.png)
 5. Обновите страницу **Центров событий**, чтобы увидеть пространство имен концентратора событий. Вы можете проверить состояние создания концентратора событий в оповещениях. 
@@ -95,11 +95,10 @@ ms.locfileid: "75771025"
 
 В этой статье вы создали группу ресурсов, пространство имен Центров событий и концентратор событий. Пошаговые инструкции по отправке событий в концентратор и получении событий из него см. в следующих руководствах по **отправке и получению событий**: 
 
-- [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
-- [.NET Framework](event-hubs-dotnet-framework-getstarted-send.md)
-- [Java](event-hubs-java-get-started-send.md)
-- [Python](event-hubs-python-get-started-send.md)
-- [Node.js](event-hubs-node-get-started-send.md)
+- [.NET Core](get-started-dotnet-standard-send-v2.md)
+- [Java](get-started-java-send-v2.md)
+- [Python](get-started-python-send-v2.md)
+- [JavaScript](get-started-java-send-v2.md)
 - [GO](event-hubs-go-get-started-send.md)
 - [C (только отправка)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (только получение)](event-hubs-storm-getstarted-receive.md)

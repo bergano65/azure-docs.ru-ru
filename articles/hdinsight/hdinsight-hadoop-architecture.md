@@ -5,15 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/28/2019
-ms.openlocfilehash: 2da9e41323a308782dad509c628a3677ab0cd21f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.custom: hdinsightactive
+ms.date: 02/07/2020
+ms.openlocfilehash: 3feacd94558ba275c81469827993aef106ae633c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162878"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162214"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
 
@@ -28,7 +28,7 @@ ms.locfileid: "73162878"
 
 Платформа YARN управляет обработкой данных в Hadoop. Она состоит из двух основных служб, выполняющихся в качестве процессов на узлах кластера:
 
-* ResourceManager;
+* ResourceManager
 * Диспетчер узлов
 
 ResourceManager (диспетчер ресурсов) предоставляет вычислительные ресурсы кластера приложениям (например, заданиям MapReduce). Эти ресурсы предоставляются в качестве контейнеров, каждый из которых состоит из выделенных ядер ЦП и объема оперативной памяти. Если вы объединили все ресурсы, доступные в кластере, а затем распределили ядра и объем памяти в блоки, то каждый блок ресурсов — это контейнер. Каждый узел в кластере может содержать определенное число контейнеров. Таким образом, кластер имеет фиксированное ограничение на количество доступных контейнеров. Распределение ресурсов в контейнере можно настроить.
@@ -47,7 +47,28 @@ YARN развертывается во всех типах кластера HDIn
 
 ![Apache YARN в Azure HDInsight](./media/hdinsight-hadoop-architecture/apache-yarn-on-hdinsight.png)
 
+## <a name="soft-delete"></a>Обратимое удаление
+
+Чтобы отменить удаление файла из учетной записи хранения, см.:
+
+### <a name="azure-storage"></a>Хранилище Azure
+
+* [Soft delete for Azure Storage blobs](../storage/blobs/storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
+* [Отменить удаление BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/undelete-blob)
+
+### <a name="azure-data-lake-storage-gen-1"></a>Azure Data Lake Storage Gen 1
+
+[Restore-Аздаталакестоределетедитем](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
+
+### <a name="azure-data-lake-storage-gen-2"></a>Azure Data Lake Storage 2-го поколения
+
+[Известные проблемы с Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-known-issues.md)
+
+## <a name="trash-purging"></a>Удаление корзины
+
+Свойство `fs.trash.interval` из **HDFS** > **Advanced Core — сайт** должно оставаться на значении по умолчанию `0`, так как не следует хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование MapReduce в Apache Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
-* [Общие сведения об Azure HDInsight и стеке технологий Hadoop и Spark](hadoop/apache-hadoop-introduction.md)
+* [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

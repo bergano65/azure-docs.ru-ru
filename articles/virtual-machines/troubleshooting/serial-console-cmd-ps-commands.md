@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: a106984bc60d0ccfe29a1956213aec6f87ad30dd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70090166"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167030"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
 
@@ -28,7 +28,7 @@ SAC включена во все версии Windows, начиная с Windows
 
 SAC позволяет подключаться к вашей операционной системе через последовательный порт. Когда вы запускаете CMD из SAC, `sacsess.exe` запускает `cmd.exe` в вашей операционной системе. Если вы подключаетесь к виртуальной машине по RDP, в диспетчере задач можно увидеть, что вы одновременно подключаетесь к SAC через функцию последовательной консоли. CMD, к которой вы обращаетесь через SAC, аналогична `cmd.exe`, которую вы используете при подключении через RDP. Доступны все те же команды и средства, в том числе возможность запуска PowerShell из этого экземпляра CMD. Основное различие между SAC и средой восстановления Windows (Windows RE) заключается в том, что SAC позволяет вам управлять вашей операционной системой, в то время как WinRE загружается в другую минимальную сборку ОС. Хотя виртуальные машины Azure не поддерживают возможность доступа к WinRE с помощью функции последовательной консоли, управление виртуальными машинами Azure можно осуществлять с помощью SAC.
 
-Так как SAC ограничена буфером экрана размером 80 x 24 и не имеет обратной прокрутки, добавьте `| more` к командам для отображения выходных данных по одной странице за раз. Используйте `<spacebar>` для просмотра следующей страницы или `<enter>` для просмотра следующей строки.  
+Так как SAC ограничена буфером экрана размером 80 x 24 и не имеет обратной прокрутки, добавьте `| more` к командам для отображения выходных данных по одной странице за раз. Используйте `<spacebar>` для просмотра следующей страницы или `<enter>` для просмотра следующей строки.
 
 `SHIFT+INSERT` — сочетание клавиш для вставки в окно последовательной консоли.
 
@@ -45,7 +45,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="enable-rdp"></a>Включите RDP:
 `reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0`
 
-`reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections /t REG_DWORD /d 0` 
+`reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections /t REG_DWORD /d 0`
 
 Второй ключ (в \Policies) потребуется только в том случае, если настроен соответствующий параметр групповой политики. Значение будет перезаписано при следующем обновлении групповой политики, если оно настроено в групповой политике.
 
@@ -55,12 +55,12 @@ SAC позволяет подключаться к вашей операцион
 `sc query termservice`
 ###  <a name="view-service-logon-account"></a>Отображение учетной записи для входа в службу
 `sc qc termservice`
-### <a name="set-service-logon-account"></a>Настройка учетной записи для входа в службу 
+### <a name="set-service-logon-account"></a>Настройка учетной записи для входа в службу
 `sc config termservice obj= "NT Authority\NetworkService"`
 
 После знака равенства требуется пробел.
 ### <a name="set-service-start-type"></a>Настройка типа запуска службы
-`sc config termservice start= demand` 
+`sc config termservice start= demand`
 
 После знака равенства требуется пробел. Возможные значения запуска: `boot`, `system`, `auto`, `demand`, `disabled` и `delayed-auto`.
 ### <a name="set-service-dependencies"></a>Настройка зависимостей служб
@@ -81,27 +81,27 @@ SAC позволяет подключаться к вашей операцион
 `sc stop termservice`
 ## <a name="manage-networking-features"></a>Управление компонентами сети
 ### <a name="show-nic-properties"></a>Отображение свойств сетевого адаптера
-`netsh interface show interface` 
+`netsh interface show interface`
 ### <a name="show-ip-properties"></a>Отображение свойств IP
 `netsh interface ip show config`
 ### <a name="show-ipsec-configuration"></a>Отображение конфигурации IPSec
-`netsh nap client show configuration`  
+`netsh nap client show configuration`
 ### <a name="enable-nic"></a>Включение сетевого адаптера
 `netsh interface set interface name="<interface name>" admin=enabled`
 ### <a name="set-nic-to-use-dhcp"></a>Настройка сетевого адаптера для использования DHCP
 `netsh interface ip set address name="<interface name>" source=dhcp`
 
-Дополнительные сведения о `netsh` [см. здесь](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-contexts).
+Дополнительные сведения о `netsh`[см. здесь](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-contexts).
 
 Виртуальные машины Azure всегда должны использовать DHCP в гостевой ОС, чтобы получить IP-адрес. Параметр статического IP-адреса Azure по-прежнему использует DHCP, чтобы предоставить статический IP-адрес виртуальной машине.
 ### <a name="ping"></a>Проверка связи
-`ping 8.8.8.8` 
-### <a name="port-ping"></a>Проверка связи с портом  
+`ping 8.8.8.8`
+### <a name="port-ping"></a>Проверка связи с портом
 Установка клиента telnet
 
 `dism /online /Enable-Feature /FeatureName:TelnetClient`
 
-Тестирование подключения
+Проверка подключения
 
 `telnet bing.com 80`
 
@@ -130,7 +130,7 @@ SAC позволяет подключаться к вашей операцион
 
 Виртуальные машины Azure, созданные из обобщенного образа, будут иметь учетную запись локального администратора, переименованную на имя, указанное во время подготовки виртуальной машины. Таким образом, обычно оно не может быть `Administrator`.
 ### <a name="enable-user-account"></a>Включение учетной записи пользователя
-`net user <username> /active:yes`  
+`net user <username> /active:yes`
 ### <a name="view-user-account-properties"></a>Просмотр свойств учетной записи пользователя
 `net user <username>`
 
@@ -191,15 +191,15 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="export-file-permissions-to-text-file"></a>Экспорт разрешений для файла в текстовый файл
 `icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /t /c > %temp%\MachineKeys_permissions_before.txt`
 ### <a name="save-file-permissions-to-acl-file"></a>Сохранение разрешений для файла в файл ACL
-`icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /save %temp%\MachineKeys_permissions_before.aclfile /t`  
+`icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /save %temp%\MachineKeys_permissions_before.aclfile /t`
 ### <a name="restore-file-permissions-from-acl-file"></a>Восстановление разрешений для файла из файла ACL
 `icacls %programdata%\Microsoft\Crypto\RSA /save %temp%\MachineKeys_permissions_before.aclfile /t`
 
 При использовании `/restore` путь должен быть родительской папкой папки, указанной вами при использовании `/save`. В этом примере `\RSA` является родительской папкой папки `\MachineKeys`, указанной в примере `/save` выше.
 ### <a name="take-ntfs-ownership-of-a-folder"></a>Получение прав владельца NTFS для папки
-`takeown /f %programdata%\Microsoft\Crypto\RSA\MachineKeys /a /r`  
+`takeown /f %programdata%\Microsoft\Crypto\RSA\MachineKeys /a /r`
 ### <a name="grant-ntfs-permissions-to-a-folder-recursively"></a>Рекурсивное предоставление разрешений NTFS для папки
-`icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "BUILTIN\Administrators:(F)"`  
+`icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "BUILTIN\Administrators:(F)"`
 ## <a name="manage-devices"></a>Управление устройствами
 ### <a name="remove-non-present-pnp-devices"></a>Удаление отсутствующих устройств PNP
 `%windir%\System32\RUNDLL32.exe %windir%\System32\pnpclean.dll,RunDLL_PnpClean /Devices /Maxclean`
@@ -210,11 +210,11 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-os-version"></a>Отображение версии ОС
 `ver`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `wmic os get caption,version,buildnumber /format:list`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `systeminfo  find /i "os name"`
 
@@ -222,7 +222,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-os-install-date"></a>Отображение даты установки ОС
 `systeminfo | find /i "original"`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `wmic os get installdate`
 ### <a name="view-last-boot-time"></a>Отображение времени последней загрузки
@@ -238,7 +238,7 @@ SAC позволяет подключаться к вашей операцион
 
 Если добавить `/f`, запускаемые приложения будут закрываться без предупреждения.
 ### <a name="detect-safe-mode-boot"></a>Определение загрузки в безопасном режиме
-`bcdedit /enum | find /i "safeboot"` 
+`bcdedit /enum | find /i "safeboot"`
 
 ## <a name="windows-commands---powershell"></a>Команды Windows — PowerShell
 
@@ -249,7 +249,7 @@ SAC позволяет подключаться к вашей операцион
 > [!CAUTION]
 > Удалите модуль PSReadLine из сеанса PowerShell перед запуском каких-либо других команд PowerShell. Существует известная проблема, когда дополнительные символы могут быть введены в текст, вставленный из буфера обмена, если в сеансе PowerShell в SAC выполняется PSReadLine.
 
-Сначала проверьте, загружен ли PSReadLine. Он загружается по умолчанию в Windows Server 2016, Windows 10 и более поздних версиях Windows. В более ранних версиях Windows его потребуется установить вручную. 
+Сначала проверьте, загружен ли PSReadLine. Он загружается по умолчанию в Windows Server 2016, Windows 10 и более поздних версиях Windows. В более ранних версиях Windows его потребуется установить вручную.
 
 Если эта команда не вернет выходные данные в строке, значить модуль не загружен и можно продолжать использовать сеанс PowerShell в SAC в обычном режиме.
 
@@ -295,7 +295,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-nic-properties"></a>Отображение свойств сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} |  format-list status,name,ifdesc,macadDresS,driverversion,MediaConNectState,MediaDuplexState`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `get-wmiobject win32_networkadapter -filter "servicename='netvsc'" |  format-list netenabled,name,macaddress`
 
@@ -319,6 +319,9 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="ping"></a>Проверка связи
 `test-netconnection`
 
+> [!NOTE]
+> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно запустить `$ProgressPreference = "SilentlyContinue"` в PowerShell.
+
 или диспетчер конфигурации служб
 
 `get-wmiobject Win32_PingStatus -Filter 'Address="8.8.8.8"' | format-table -autosize IPV4Address,ReplySize,ResponseTime`
@@ -333,15 +336,15 @@ SAC позволяет подключаться к вашей операцион
 
 Команда `Test-NetConnection` доступна в версии 2012 и выше. В версии 2008R2 используйте `Net.Sockets.TcpClient`.
 ### <a name="test-dns-name-resolution"></a>Тестирование разрешений DNS-имен
-`resolve-dnsname bing.com` 
+`resolve-dnsname bing.com`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `[System.Net.Dns]::GetHostAddresses('bing.com')`
 
 Команда `Resolve-DnsName` доступна в версии 2012 и выше. В версии 2008R2 используйте `System.Net.DNS`.
 ### <a name="show-windows-firewall-rule-by-name"></a>Отображение правила брандмауэра Windows по имени
-`get-netfirewallrule -name RemoteDesktop-UserMode-In-TCP` 
+`get-netfirewallrule -name RemoteDesktop-UserMode-In-TCP`
 ### <a name="show-windows-firewall-rule-by-port"></a>Отображение правила брандмауэра Windows по номеру порта
 `get-netfirewallportfilter | where {$_.localport -eq 3389} | foreach {Get-NetFirewallRule -Name $_.InstanceId} | format-list Name,Enabled,Profile,Direction,Action`
 
@@ -349,7 +352,7 @@ SAC позволяет подключаться к вашей операцион
 
 `(new-object -ComObject hnetcfg.fwpolicy2).rules | where {$_.localports -eq 3389 -and $_.direction -eq 1} | format-table Name,Enabled`
 
-Команда `Get-NetFirewallPortFilter` доступна в версии 2012 и выше. В версии 2008R2 используйте COM-объект `hnetcfg.fwpolicy2`. 
+Команда `Get-NetFirewallPortFilter` доступна в версии 2012 и выше. В версии 2008R2 используйте COM-объект `hnetcfg.fwpolicy2`.
 ### <a name="disable-windows-firewall"></a>Отключение брандмауэра Windows
 `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False`
 
@@ -360,7 +363,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="verify-user-account-is-enabled"></a>Проверка включения учетной записи пользователя
 `(get-localuser | where {$_.SID -like "S-1-5-21-*-500"}).Enabled`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `(get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'").Disabled`
 
@@ -368,13 +371,13 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="add-local-user-to-local-group"></a>Добавление локального пользователя в локальную группу
 `add-localgroupmember -group Administrators -member <username>`
 ### <a name="enable-local-user-account"></a>Включение локальной учетной записи пользователя
-`get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | enable-localuser` 
+`get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | enable-localuser`
 
 В этом примере включается встроенная учетная запись локального администратора, которая всегда имеет идентификатор SID `S-1-5-21-*-500`. Виртуальные машины Azure, созданные из обобщенного образа, будут иметь учетную запись локального администратора, переименованную на имя, указанное во время подготовки виртуальной машины. Таким образом, обычно оно не может быть `Administrator`.
 ### <a name="view-user-account-properties"></a>Просмотр свойств учетной записи пользователя
 `get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | format-list *`
 
-или диспетчер конфигурации служб 
+или диспетчер конфигурации служб
 
 `get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'" |  format-list Name,Disabled,Status,Lockout,Description,SID`
 
@@ -414,7 +417,7 @@ SAC позволяет подключаться к вашей операцион
 В этом примере создается папка `c:\bin`, затем загружается и извлекается набор инструментов Sysinternals в `c:\bin`.
 ## <a name="miscellaneous-tasks"></a>Прочие задачи
 ### <a name="show-os-version"></a>Отображение версии ОС
-`get-wmiobject win32_operatingsystem | format-list caption,version,buildnumber` 
+`get-wmiobject win32_operatingsystem | format-list caption,version,buildnumber`
 ### <a name="view-os-install-date"></a>Отображение даты установки ОС
 `(get-wmiobject win32_operatingsystem).converttodatetime((get-wmiobject win32_operatingsystem).installdate)`
 ### <a name="view-last-boot-time"></a>Отображение времени последней загрузки
@@ -422,7 +425,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-windows-uptime"></a>Отображение времени непрерывной работы
 `"{0:dd}:{0:hh}:{0:mm}:{0:ss}.{0:ff}" -f ((get-date)-(get-wmiobject win32_operatingsystem).converttodatetime((get-wmiobject win32_operatingsystem).lastbootuptime))`
 
-Возвращает время непрерывной работы в виде `<days>:<hours>:<minutes>:<seconds>:<milliseconds>`, например `49:16:48:00.00`. 
+Возвращает время непрерывной работы в виде `<days>:<hours>:<minutes>:<seconds>:<milliseconds>`, например `49:16:48:00.00`.
 ### <a name="restart-windows"></a>Перезапуск Windows
 `restart-computer`
 
@@ -474,7 +477,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="mac-address-instance-metadata"></a>MAC-адрес (метаданные экземпляра)
 `$im.network.interface.macAddress`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
 * См. дополнительные сведения в статье [Устранение неполадок виртуальных машин Windows в Azure с использованием диагностики загрузки](boot-diagnostics.md).

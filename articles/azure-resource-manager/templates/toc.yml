@@ -132,7 +132,16 @@
           displayName: 'linked templates, nested templates'
           href: linked-templates.md
         - name: Развертывание нескольких экземпляров
-          href: create-multiple-instances.md
+          items:
+            - name: Ресурсы
+              displayName: 'iteration,copy'
+              href: copy-resources.md
+            - name: Свойства
+              displayName: 'iteration,copy'
+              href: copy-properties.md
+            - name: Переменные
+              displayName: 'iteration,copy'
+              href: copy-variables.md
         - name: Ресурсы на уровне подписки
           href: deploy-to-subscription.md
         - name: Ресурсы уровня группы управления

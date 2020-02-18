@@ -1,6 +1,6 @@
 ---
-title: Руководство по созданию приложения для мониторинга качества воды с помощью Azure IoT Central
-description: Руководство по созданию приложения для мониторинга качества воды с помощью шаблонов приложений Azure IoT Central.
+title: Руководство. созданию приложения для мониторинга качества воды с помощью Azure IoT Central
+description: Руководство. созданию приложения для мониторинга качества воды с помощью шаблонов приложений Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
 ms.date: 11/12/2019
@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 7014882e7da9eb7ab7df65cd20403982a46018a3
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: d738868e0e4ca7599f4aaf8d6e09d22f26a8db92
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112607"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016380"
 ---
-# <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Руководство по созданию приложения для мониторинга качества воды в Azure IoT Central
+# <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Руководство. Создание приложения для мониторинга качества воды в Azure IoT Central
 
-[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
+
 
 В этом учебнике описывается создание приложения для мониторинга качества воды в Azure IoT Central. Вы создадите приложение на основе шаблона приложения **Мониторинг качества воды** Azure IoT Central.
 
@@ -63,6 +63,8 @@ ms.locfileid: "74112607"
 1. Нажмите кнопку **Создать** в нижней левой части страницы.
 
     ![Страница нового приложения Azure IoT Central](./media/tutorial-waterqualitymonitoring/new-application-waterqualitymonitoring1.png)
+
+    ![Данные о выставление счетов на странице нового приложения Azure IoT Central](./media/tutorial-waterqualitymonitoring/new-application-waterqualitymonitoring1-billinginfo.png)
 
 Вы создали приложение для мониторинга качества воды с помощью шаблона **Мониторинг качества воды** Azure IoT Central.
 
@@ -252,6 +254,6 @@ ms.locfileid: "74112607"
 
     ![Удаление приложения](./media/tutorial-waterqualitymonitoring/waterqualitymonitoring-application-settings-delete-app1.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Эталонная архитектура решения для мониторинга качества воды](./concepts-waterqualitymonitoring-architecture.md)

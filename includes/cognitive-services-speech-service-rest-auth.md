@@ -4,21 +4,21 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: 22a95be43f06e95a6067b179b3023ba94ee5795d
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 020055c1629a66ec1aa82beb050501803b2a0f18
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68362614"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168309"
 ---
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Для каждого запроса требуется заголовок Authorization. В этой таблице показано, какие заголовки поддерживаются для каждой службы:
 
 | Поддерживаемые заголовки авторизации | Преобразование речи в текст | Преобразование текста в речь |
 |------------------------|----------------|----------------|
-| Ocp-Apim-Subscription-Key | Да | Нет |
-| Авторизация: Носитель | Да | Да |
+| Ocp-Apim-Subscription-Key | Да | нет |
+| Authorization: Bearer | Да | Да |
 
 При использовании заголовка `Ocp-Apim-Subscription-Key` необходимо предоставить только ключ подписки. Пример:
 
@@ -32,9 +32,15 @@ ms.locfileid: "68362614"
 
 Чтобы получить маркер доступа, необходимо отправить запрос в конечную точку `issueToken`, используя заголовок `Ocp-Apim-Subscription-Key` и ключ подписки.
 
-Поддерживаются следующие регионы и конечные точки:
+Конечная точка `issueToken` имеет следующий формат:
 
-[!INCLUDE [](./cognitive-services-speech-service-endpoints-token-service.md)]
+```
+https://<REGION_IDENTIFIER>.api.cognitive.microsoft.com/sts/v1.0/issueToken
+```
+
+Замените `<REGION_IDENTIFIER>` идентификатором, соответствующим региону подписки, из следующей таблицы:
+
+[!INCLUDE [](cognitive-services-speech-service-region-identifier.md)]
 
 Используйте эти примеры, чтобы создать запрос на получение маркера доступа.
 

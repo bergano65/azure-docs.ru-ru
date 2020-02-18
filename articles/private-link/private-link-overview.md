@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 01/09/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6e2c1af03d5d6ccfbcb15a2dd33bc2e987be4d48
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 810f2b376e9983743617dae77d74d596a7fbe663
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543126"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77084198"
 ---
 # <a name="what-is-azure-private-link-preview"></a>Что собой представляет Приватный канал Azure? (предварительная версия)
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure, Azure Cosmos DB и Базе данных SQL), а также размещенным в Azure службам клиентов или партнеров через [частную конечную точку](private-endpoint-overview.md) виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Кроме того, вы можете создать в своей виртуальной сети (VNet) собственную службу [Приватный канал](private-link-service-overview.md) и предоставлять ее клиентам в частном порядке. Настройка и потребление с использованием Приватного канала Azure согласованы между службами Azure PaaS, владельцами и общими партнерскими службами.
@@ -50,6 +50,7 @@ ms.locfileid: "76543126"
 |  |  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
 |  |  База данных Azure для MySQL         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
 |  |  База данных Azure для MariaDB         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
+|  |  Azure Key Vault         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

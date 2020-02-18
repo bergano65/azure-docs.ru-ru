@@ -6,14 +6,14 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/20/2019
+ms.date: 01/31/2020
 ms.author: diberry
-ms.openlocfilehash: 37249cc560d4493c34dd4be6139de03f9c152a08
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 23ac98f91c989c9bedb6b91e6a7ce26dc164ac5a
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74414521"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987805"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -21,9 +21,22 @@ ms.locfileid: "74414521"
 * [Visual Studio Code](https://code.visualstudio.com/)
 * Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`.
 
-## <a name="get-luis-key"></a>Получение ключа LUIS
+## <a name="create-luis-runtime-key-for-predictions"></a>Создание ключа среды выполнения LUIS для прогнозирования
 
-[!INCLUDE [Use authoring key for endpoint](../includes/get-key-quickstart.md)]
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Щелкните [Создать **Распознавание речи**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne).
+1. Введите все необходимые параметры для ключа **Среды выполнения**:
+
+    |Параметр|Значение|
+    |--|--|
+    |Имя|Требуемое имя (от 2 до 64 символов)|
+    |Подписка|Выберите соответствующую подписку|
+    |Расположение|Выберите доступное поблизости расположение|
+    |Ценовая категория|`F0` — минимальная ценовая категория|
+    |Группа ресурсов|Выберите доступную группу ресурсов|
+
+1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
+1. Получите настроенные `endpoint` и `key`.
 
 ## <a name="get-intent-from-the-prediction-endpoint"></a>Получение намерений из конечной точки прогноза
 
@@ -34,17 +47,17 @@ ms.locfileid: "74414521"
     ```python
     ########### Python 3.6 #############
     import requests
-    
+
     try:
-    
-        key = 'YOUR-KEY'
-        endpoint = 'YOUR-ENDPOINT' # such as 'westus2.api.cognitive.microsoft.com' 
+
+        key = 'YOUR-KEY' # your Runtime key
+        endpoint = 'YOUR-ENDPOINT' # such as 'your-resource-name.api.cognitive.microsoft.com'
         appId = 'df67dcdb-c37d-46af-88e1-8b97951ca1c2'
         utterance = 'turn on all lights'
-    
+
         headers = {
         }
-    
+
         params ={
             'query': utterance,
             'timezoneOffset': '0',
@@ -54,18 +67,20 @@ ms.locfileid: "74414521"
             'staging': 'false',
             'subscription-key': key
         }
-    
+
         r = requests.get(f'https://{endpoint}/luis/prediction/v3.0/apps/{appId}/slots/production/predict',headers=headers, params=params)
         print(r.json())
-    
+
     except Exception as e:
         print(f'{e}')
     ```
 
-1. Замените следующие значения:
+1. Замените значения `YOUR-KEY` и `YOUR-ENDPOINT` собственным ключом и конечной точкой **среды выполнения** прогнозирования.
 
-    * `YOUR-KEY` на ключ для начала работы.
-    * `YOUR-ENDPOINT` на конечную точку. Например, `westus2.api.cognitive.microsoft.com`.
+    |Сведения|Назначение|
+    |--|--|
+    |`YOUR-KEY`|Ваш ключ (32 символа) **среды выполнения** прогнозирования.|
+    |`YOUR-ENDPOINT`| Конечная точка URL-адреса прогнозирования. Например, `replace-with-your-resource-name.api.cognitive.microsoft.com`.|
 
 1. Установите зависимость `requests`. Это нужно для создания HTTP-запросов:
 
@@ -77,7 +92,7 @@ ms.locfileid: "74414521"
 
     ```console
     python predict.py
-    ``` 
+    ```
 
 1. Проверьте ответ прогноза, который возвращается в формате JSON:
 
@@ -85,7 +100,7 @@ ms.locfileid: "74414521"
     {'query': 'turn on all lights', 'prediction': {'topIntent': 'HomeAutomation.TurnOn', 'intents': {'HomeAutomation.TurnOn': {'score': 0.5375382}, 'None': {'score': 0.08687421}, 'HomeAutomation.TurnOff': {'score': 0.0207554}}, 'entities': {'HomeAutomation.Operation': ['on'], '$instance': {'HomeAutomation.Operation': [{'type': 'HomeAutomation.Operation', 'text': 'on', 'startIndex': 5, 'length': 2, 'score': 0.724984169, 'modelTypeId': -1, 'modelType': 'Unknown', 'recognitionSources': ['model']}]}}}}
     ```
 
-    Ниже приведен ответ JSON, отформатированный для удобочитаемости: 
+    Ниже приведен ответ JSON, отформатированный для удобочитаемости:
 
     ```JSON
     {
@@ -128,15 +143,11 @@ ms.locfileid: "74414521"
     }
     ```
 
-## <a name="luis-keys"></a>Ключи LUIS
-
-[!INCLUDE [Use authoring key for endpoint](../includes/starter-key-explanation.md)]
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-По завершении работы с этим кратким руководством удалите файл из файловой системы. 
+По завершении работы с этим кратким руководством удалите файл из файловой системы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Добавление высказываний и обучение](../get-started-get-model-rest-apis.md)

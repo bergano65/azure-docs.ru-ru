@@ -6,12 +6,12 @@ ms.workload: integration
 ms.reviewer: klam, jehollan, logicappspm
 ms.topic: article
 ms.date: 11/04/2019
-ms.openlocfilehash: dbb91106ad00e1a82e2e6e9c470e61764a4ad4c4
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: d5b5a69c7927d07c0ae6b3b56ec97b6551e5d46b
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792028"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191338"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-http-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTP в Azure Logic Apps
 
@@ -20,7 +20,7 @@ ms.locfileid: "74792028"
 Чтобы настроить конечную точку HTTP, можно использовать любой из следующих типов триггеров, которые позволяют приложениям логики получать входящие запросы:
 
 * [Запрос](../connectors/connectors-native-reqres.md)
-* [webhook HTTP](../connectors/connectors-native-webhook.md).
+* [webhook HTTP](../connectors/connectors-native-webhook.md)
 * Триггеры управляемых соединителей, которые имеют [тип ApiConnectionWebhook](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-trigger) и могут принимать входящие HTTP-запросы
 
 > [!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "74792028"
 
 Если вы не знакомы с приложениями логики, см. статью [что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -36,7 +36,7 @@ ms.locfileid: "74792028"
 
 ## <a name="create-a-callable-endpoint"></a>Создание вызываемой конечной точки
 
-1. Войдите на [портале Azure](https://portal.azure.com). Создайте и откройте пустое приложение логики в конструкторе приложений логики.
+1. Войдите на [портал Azure](https://portal.azure.com). Создайте и откройте пустое приложение логики в конструкторе приложений логики.
 
    В этом примере используется триггер запроса, но можно использовать любой триггер, который может принимать входящие HTTP-запросы. Все принципы одинаково применяются к этим триггерам. Дополнительные сведения о триггере запросов см. [в разделе Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md).
 
@@ -302,17 +302,17 @@ ms.locfileid: "74792028"
 }
 ```
 
-## <a name="q--a"></a>Контроль качества
+## <a name="q--a"></a>Вопросы и ответы
 
 #### <a name="q-what-about-url-security"></a>Вопрос. Как обеспечивается безопасность URL-адресов?
 
 Ответ **. Azure**безопасно создает URL-адреса обратного вызова приложения логики с помощью [подписанного общего доступа (SAS)](https://docs.microsoft.com/rest/api/storageservices/delegate-access-with-shared-access-signature). Эта подпись передается в качестве параметра запроса и должна быть проверена перед запуском приложения логики. Azure создает эту подпись на основе уникального сочетания секретного ключа для каждого приложения логики, имени триггера и выполняемой операции. Не имея доступа к секретному ключу приложения логики, создать действительную подпись невозможно.
 
 > [!IMPORTANT]
-> Для рабочих и безопасных систем мы настоятельно рекомендуем вызывать приложение логики непосредственно из браузера по следующим причинам:
+> Для производственных и более высоких систем безопасности мы настоятельно рекомендуем вызывать приложение логики непосредственно из браузера по следующим причинам:
 >
 > * ключ общего доступа отображается в URL-адресе;
-> * Вы не можете управлять политиками безопасного содержимого из-за общих доменов для клиентов Azure Logic Apps.
+> * Вы не можете управлять политиками содержимого безопасности из-за общих доменов для Azure Logic Apps клиентов.
 
 #### <a name="q-can-i-configure-http-endpoints-further"></a>Вопрос. Могу ли я дополнительно настроить конечные точки HTTP?
 
@@ -323,6 +323,6 @@ ms.locfileid: "74792028"
 * Настройка доменов управления API в [портал Azure](https://portal.azure.com/)
 * настройка политики для проверки базовой проверки подлинности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md)

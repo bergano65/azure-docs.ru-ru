@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f4ce3cd0db20f76aa6169f15254cf36ee64151a5
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 03333e853a2ab7606ebe60cc3f68bcb5facfbdb4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406747"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191018"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
 
@@ -51,7 +51,7 @@ ms.locfileid: "74406747"
 
 + Параметр `$select` используется, чтобы указать поля, которые требуется включить в результирующий набор для эффективной обрезки ответа перед его отправкой вызывающему приложению. Этот параметр не позволяет уточнить запрос или сократить коллекцию документов, но если вы не отвечаете за более маленький ответ, этот параметр можно рассмотреть. 
 
-Дополнительные сведения о параметрах запроса см. в подразделе ["Параметры запроса" раздела "Запрос" статьи Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents#request) (Поиск документов (REST API службы "Поиск" Azure)).
+Дополнительные сведения о параметрах запроса см. в подразделе ["Параметры запроса" раздела "Запрос" статьи Search Documents (Azure Search Service REST API)](/rest/api/searchservice/search-documents#query-parameters) (Поиск документов (REST API службы "Поиск" Azure)).
 
 
 ## <a name="how-filters-are-executed"></a>Как выполняются фильтры
@@ -156,7 +156,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ### <a name="approaches-for-filtering-on-text"></a>Подходы к фильтрации по тексту
 
-| Подход | ОПИСАНИЕ | Сценарии использования |
+| Подход | Описание | Назначение |
 |----------|-------------|-------------|
 | [`search.in`](search-query-odata-search-in-function.md) | Функция, которая сопоставляет поле со списком строк с разделителями. | Рекомендуется для [фильтров безопасности](search-security-trimming-for-azure-search.md) и для любых фильтров, в которых несколько необработанных текстовых значений должны сопоставляться с строковым полем. Функция **Search.in** разработана для ускорения и намного быстрее, чем явно сравнивать поле с каждой строкой с помощью `eq` и `or`. | 
 | [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. | Используйте **Поиск. Match** (или его эквивалент, **Search. исматчскоринг**), если требуется несколько сочетаний фильтра поиска в одном запросе. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |
@@ -168,7 +168,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Документы, содержащие числовые поля (цена, размер, SKU, идентификатор), предоставляют эти значения в результатах поиска, если поле отмечено `retrievable`. Суть в том, что полнотекстовый поиск не применим к числовым типам полей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Сначала попробуйте использовать **обозреватель поиска** на портале, чтобы отправить запросы с параметрами **$filter**. [Пример индекса выборки недвижимости](search-get-started-portal.md) предоставляет полезные результаты для следующих отфильтрованных запросов при их вставке в строку поиска:
 
@@ -195,10 +195,10 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 
 Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
-+ [Как работает полнотекстовый поиск в Azure Когнитивный поиск](search-lucene-query-architecture.md)
++ [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
 + [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure))
-+ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
 + [Supported data types (Azure Search)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) (Поддерживаемые типы данных (служба "Поиск Azure")).

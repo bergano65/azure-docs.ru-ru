@@ -3,12 +3,12 @@ title: Рекомендации по работе с шаблонами
 description: Описание рекомендуемых подходов для разработки шаблонов Azure Resource Manager. Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: b87f66f194b9e1daf8fa6a546c02aa4e86caabc3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f623255a64404f0e041173fd29488ded24cd03b3
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484250"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207491"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
 
@@ -156,7 +156,7 @@ ms.locfileid: "75484250"
 
 * Добавьте переменные для имен ресурсов, которые должны быть уникальными.
 
-* Используйте [цикл копирования переменных](create-multiple-instances.md#variable-iteration), чтобы создать повторяющийся шаблон объектов JSON.
+* Используйте [цикл копирования переменных](copy-variables.md), чтобы создать повторяющийся шаблон объектов JSON.
 
 * Удалите неиспользуемые переменные.
 
@@ -277,7 +277,7 @@ ms.locfileid: "75484250"
    > 
    > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о структуре файла шаблона Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](template-syntax.md).
 * Рекомендации о том, как создавать шаблоны, которые работают во всех облачных средах Azure, см. в статье [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).

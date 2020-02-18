@@ -1,6 +1,6 @@
 ---
-title: Использование API-интерфейсов MS Graph для настройки подготовки — Azure Active Directory | Документация Майкрософт
-description: Необходимо настроить подготовку для нескольких экземпляров приложения? Узнайте, как сэкономить время с помощью API-интерфейсов MS Graph для автоматизации настройки автоматической подготовки.
+title: Использование Microsoft Graph API для настройки подготовки — Azure Active Directory | Документация Майкрософт
+description: Необходимо настроить подготовку для нескольких экземпляров приложения? Узнайте, как сэкономить время с помощью API-интерфейсов Microsoft Graph для автоматизации настройки автоматической подготовки.
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -16,16 +16,16 @@ ms.date: 11/15/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f19f6e4add9bd677b05e09c627532a7a48354ce
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: f5780227274e8f9574fcdfcd388d75e333cc3d42
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77067192"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367824"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
-Портал Azure — это удобный способ настройки подготовки для отдельных приложений по одному за раз. Но если вы создаете несколько (или даже сотни) экземпляров приложения, проще автоматизировать создание и настройку приложений с помощью Microsoft Graph API. В этой статье описано, как автоматизировать подготовку конфигурации с помощью интерфейсов API. Этот метод обычно используется для таких приложений, как [Amazon Web Services](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
+Портал Azure — это удобный способ настройки подготовки для отдельных приложений по одному за раз. Но если вы создаете несколько или даже сотни экземпляров приложения, можно легко автоматизировать создание и настройку приложений с помощью Microsoft Graph API. В этой статье описано, как автоматизировать подготовку конфигурации с помощью интерфейсов API. Этот метод обычно используется для таких приложений, как [Amazon Web Services](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
 
 **Общие сведения о действиях по использованию Microsoft Graph API для автоматизации настройки подготовки**
 

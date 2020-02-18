@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 06/20/2019
-ms.openlocfilehash: 5ada5db0d9f3ea72eab93796d20023d89b7dd1ed
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 01/29/2020
+ms.openlocfilehash: a505145eeba47eda9950c5a4c8221e4c9ae4b3a4
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75889268"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024081"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -43,7 +43,7 @@ ms.locfileid: "75889268"
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
 > Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
      
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать работу с этим руководством, выполните следующие задачи:
 
@@ -63,7 +63,7 @@ ms.locfileid: "75889268"
 
       Если вы предпочитаете использовать список управления доступом (ACL), чтобы связать субъект-службу с определенным файлом или каталогом, ознакомьтесь со статьей [Access control in Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-access-control.md) (Управление доступом в Azure Data Lake Storage 2-го поколения).
 
-   * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, идентификатор приложения и значения паролей в текстовый файл. Они вам скоро понадобятся.
+   * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте значения идентификатора клиента, идентификатора приложения и секрета в текстовый файл. Они вам скоро понадобятся.
 
 * Войдите на [портал Azure](https://portal.azure.com/).
 
@@ -101,12 +101,12 @@ ms.locfileid: "75889268"
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать службу Databricks.
 
-    |Свойство  |Description  |
+    |Свойство  |Описание  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
-    |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/management/overview.md). |
-    |**Местоположение**     | Выберите **Западная часть США 2**.  Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).      |
+    |**Подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
+    |**Группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/management/overview.md). |
+    |**Расположение**     | Выберите **Западная часть США 2**.  Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).      |
     |**Ценовая категория**     |  Выберите **Стандартная**.     |
 
 3. Создание учетной записи займет несколько минут. Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
@@ -147,7 +147,7 @@ ms.locfileid: "75889268"
 
     ![Указание сведений для записной книжки в Databricks](./media/databricks-extract-load-sql-data-warehouse/databricks-notebook-details.png "Указание сведений для записной книжки в Databricks")
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
 5. Следующий блок кода устанавливает учетные данные субъекта-службы по умолчанию для любой учетной записи ADLS 2-го поколения, доступ к которой осуществляется в сеансе Spark. Второй блок кода добавляет имя учетной записи к параметру, чтобы указать учетные данные для конкретной учетной записи ADLS 2-го поколения.  Скопируйте и вставьте любой блок кода в первую ячейку записной книжки Azure Databricks.
 
@@ -171,23 +171,23 @@ ms.locfileid: "75889268"
    ```scala
    val storageAccountName = "<storage-account-name>"
    val appID = "<app-id>"
-   val password = "<password>"
+   val secret = "<secret>"
    val fileSystemName = "<file-system-name>"
    val tenantID = "<tenant-id>"
 
    spark.conf.set("fs.azure.account.auth.type." + storageAccountName + ".dfs.core.windows.net", "OAuth")
    spark.conf.set("fs.azure.account.oauth.provider.type." + storageAccountName + ".dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
    spark.conf.set("fs.azure.account.oauth2.client.id." + storageAccountName + ".dfs.core.windows.net", "" + appID + "")
-   spark.conf.set("fs.azure.account.oauth2.client.secret." + storageAccountName + ".dfs.core.windows.net", "" + password + "")
+   spark.conf.set("fs.azure.account.oauth2.client.secret." + storageAccountName + ".dfs.core.windows.net", "" + secret + "")
    spark.conf.set("fs.azure.account.oauth2.client.endpoint." + storageAccountName + ".dfs.core.windows.net", "https://login.microsoftonline.com/" + tenantID + "/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
    dbutils.fs.ls("abfss://" + fileSystemName  + "@" + storageAccountName + ".dfs.core.windows.net/")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
    ```
 
-6. В этом блоке кода замените значения заполнителя `<app-id>`, `<password>`, `<tenant-id>` и `<storage-account-name>` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `<file-system-name>` замените на имя файловой системы.
+6. В этом блоке кода замените значения заполнителя `<app-id>`, `<secret>`, `<tenant-id>` и `<storage-account-name>` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `<file-system-name>` замените на имя файловой системы.
 
-   * `<app-id>` и `<password>` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
+   * `<app-id>` и `<secret>` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
 
    * Значение `<tenant-id>` берется из подписки.
 
@@ -216,7 +216,7 @@ ms.locfileid: "75889268"
 1. Теперь можно загрузить пример JSON-файла в виде кадра данных в Azure Databricks. Вставьте следующий код в новую ячейку. Замените значения заменителей, показанные в скобках, собственными.
 
    ```scala
-   val df = spark.read.json("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/small_radio_json.json")
+   val df = spark.read.json("abfss://" + fileSystemName + "@" + storageAccountName + ".dfs.core.windows.net/small_radio_json.json")
    ```
 2. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 

@@ -4,16 +4,16 @@ description: В этой статье описано, как запускать 
 author: dominicbetts
 ms.author: dobett
 ms.date: 06/10/2019
-ms.topic: overview
+ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 2f99f50ffcccb052526981a712ac5046836a44ae
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
-ms.translationtype: HT
+ms.openlocfilehash: 4f5d57bab51d537b64ce4b800737219663c3d7a7
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76712899"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198792"
 ---
 # <a name="run-opc-publisher"></a>Выполнение издателя OPC
 
@@ -687,7 +687,7 @@ current working set in MB: 90
 
 Чтобы выполнить отладку приложения, откройте файл решения **opcpublisher.sln** в Visual Studio и воспользуйтесь средствами отладки Visual Studio.
 
-Если вам требуется доступ к серверу OPC UA из издателя OPC, убедитесь, что брандмауэр разрешает доступ к порту, который прослушивает сервер. По умолчанию используется порт: 62222.
+Если вам требуется доступ к серверу OPC UA из издателя OPC, убедитесь, что брандмауэр разрешает доступ к порту, который прослушивает сервер. Порт по умолчанию: 62222.
 
 ## <a name="control-the-application-remotely"></a>Удаленное управление приложением
 
@@ -710,6 +710,6 @@ current working set in MB: 90
 
 Он реализует несколько тегов, которые генерируют случайные данные и теги с аномальными результатами. Этот пример можно расширить, если потребуется имитировать значения других тегов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как запускать издателя OPC, мы рекомендуем перейти к изучению [двойника OPC](overview-opc-twin.md) и [хранилища OPC](overview-opc-vault.md).

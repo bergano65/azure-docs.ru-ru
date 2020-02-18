@@ -1,19 +1,19 @@
 ---
-title: Расположения партнеров Виртуальной глобальной сети Azure | Документация Майкрософт
+title: Партнеры и расположения виртуальной глобальной сети Azure | Документация Майкрософт
 description: Эта статья содержит список партнеров и узлов виртуальной глобальной сети Azure.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 11/11/2019
+ms.date: 02/12/2020
 ms.author: cherylmc
-Customer intent: As someone with a networking background, I want to connect find a Virtual WAN partner
-ms.openlocfilehash: b7a3d443b64943c097a51eeae4be6253a0466e18
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
+ms.openlocfilehash: 68379fd2334e517df4011c05bb32543f7ce4a173
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933712"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190407"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Расположения партнеров и виртуального концентратора Виртуальной глобальной сети
 
@@ -34,20 +34,20 @@ ms.locfileid: "76933712"
 * Автоматическая загрузка информации о подключении Azure.
 * Конфигурация локального устройства ветви. 
 
-Некоторые партнеры по подключению могут расширить автоматизацию, включив в нее создание виртуального концентратора виртуальной сети Azure и VPN-шлюз. Если вы хотите узнать больше об автоматизации, см. статью [Настройка автоматизации Виртуальной глобальной сети для партнеров Виртуальной глобальной сети (предварительная версия)](virtual-wan-configure-automation-providers.md).
+Некоторые партнеры по подключению могут расширить автоматизацию, включив в нее создание виртуального концентратора виртуальной сети Azure и VPN-шлюз. Если вы хотите получить дополнительные сведения об автоматизации, см. статью [рекомендации по автоматизации для виртуальных сетей WAN](virtual-wan-configure-automation-providers.md).
 
 ## <a name="partners"></a>Подключение через партнеров
 
 [!INCLUDE [partners](../../includes/virtual-wan-partners-include.md)]
 
-Следующие партнеры посвящены нашей стратегии в ближайшем будущем: Ариста, Aruba HPE, Cisco Systems, F5 Networks, Open Systems, Oracle талари, Шарплинк и VMWare Велоклауд.
+Следующие партнеры посвящены нашей стратегии в ближайшем будущем: Ариста, Aruba HPE, Cisco Systems, F5 Networks, Open Systems, Oracle SD-WAN, Шарплинк и VMWare Велоклауд.
 
 ## <a name="locations"></a>Расположения
 
 [!INCLUDE [regions](../../includes/virtual-wan-regions-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в статье [Часто задаваемые вопросы по виртуальным глобальным сетям (предварительная версия)](virtual-wan-faq.md).
 
-* Дополнительные сведения о том, как автоматизировать подключение к Виртуальной глобальной сети Azure, см. в статье [Настройка автоматизации Виртуальной глобальной сети для партнеров Виртуальной глобальной сети (предварительная версия)](virtual-wan-configure-automation-providers.md).
+* Дополнительные сведения об автоматизации подключения к виртуальной глобальной сети Azure см. в статье [рекомендации по автоматизации для виртуальных сетей WAN](virtual-wan-configure-automation-providers.md).

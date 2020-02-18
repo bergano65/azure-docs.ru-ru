@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: d7d3182ad00d0ce151c6d327b29584c7e2ff1323
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 67846293257661a4f7a907d76402d2e98c339225
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457862"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251640"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -21,11 +21,11 @@ ms.locfileid: "75457862"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
-* [Код Visual Studio](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
 * [Git](https://git-scm.com/)
 * [Пакет SDK для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started)
@@ -69,7 +69,7 @@ ms.locfileid: "75457862"
 
 С помощью команды **Service Fabric: Create Application** (Service Fabric: создать приложение) в текущей рабочей области создается приложение Service Fabric. В зависимости от того, какие генераторы Yeoman установлены на компьютере разработки, возможно создание нескольких типов приложения Service Fabric, в том числе проектов Java, C#, а также контейнерных и гостевых проектов. 
 
-1.  Выберите команду **Service Fabric: Add Service** (Service Fabric: добавить службу).
+1.  Выберите команду **Service Fabric: создать приложение.**
 2.  Выберите тип нового приложения Service Fabric. 
 3.  Введите имя приложения, которое необходимо создать.
 3.  Выберите тип службы, которую необходимо добавить в приложение Service Fabric. 

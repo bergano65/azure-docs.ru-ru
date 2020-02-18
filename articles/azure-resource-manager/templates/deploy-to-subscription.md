@@ -3,12 +3,12 @@ title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: c53d274303a203a427a36f8f729f6b43cee44e40
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 50db0b4d46ff4e367411829aa75fa017a168372f
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120611"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207661"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -29,7 +29,7 @@ ms.locfileid: "77120611"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>схема
+### <a name="schema"></a>Схема
 
 Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
@@ -135,7 +135,7 @@ New-AzDeployment `
 }
 ```
 
-Используйте [элемент copy](create-multiple-instances.md) с группами ресурсов, чтобы создать несколько групп ресурсов.
+Используйте [элемент copy](copy-resources.md) с группами ресурсов, чтобы создать несколько групп ресурсов.
 
 ```json
 {
@@ -170,7 +170,7 @@ New-AzDeployment `
 }
 ```
 
-Сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса или свойства в Azure Resource Manager Templates](./create-multiple-instances.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./template-tutorial-create-multiple-instances.md).
+Дополнительные сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса в Azure Resource Manager шаблонах](./copy-resources.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./template-tutorial-create-multiple-instances.md).
 
 ## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
 
@@ -377,7 +377,7 @@ New-AzDeployment `
 * Создайте группу ресурсов, заблокируйте ее и предоставьте ей разрешения. Дополнительные сведения см. [здесь](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
 * Создайте группу ресурсов, политику и назначение политики.  Дополнительные сведения см. [здесь](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).

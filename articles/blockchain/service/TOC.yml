@@ -23,14 +23,18 @@
           href: connect-truffle.md
 - name: Учебники
   items:
-    - name: Использование смарт-контрактов
+    - name: Создание смарт-контрактов
       href: send-transaction.md
+    - name: Публикация данных с помощью Диспетчера данных
+      href: data-manager-cosmosdb.md
 - name: Основные понятия
   items:
     - name: Консорциум
       href: consortium.md
     - name: Доступ к данным и безопасность
       href: data-security.md
+    - name: Общие сведения о Диспетчере данных
+      href: data-manager.md
     - name: Разработка
       href: develop.md
     - name: Ограничения
@@ -41,6 +45,10 @@
   items:
     - name: "Настройка доступа к Azure\_AD"
       href: configure-aad.md
+    - name: Настройка Диспетчера данных на портале
+      href: data-manager-portal.md
+    - name: Настройка Диспетчера данных с помощью CLI
+      href: data-manager-cli.md
     - name: Настройка узлов транзакции
       href: configure-transaction-nodes.md
     - name: Управление с помощью Azure CLI
@@ -51,16 +59,6 @@
       href: ethereum-logic-app.md
     - name: Мониторинг службы "Блокчейн Azure"
       href: monitor-azure-blockchain-service.md
-- name: Диспетчер данных блокчейна
-  items:
-    - name: Общие сведения о Диспетчере данных
-      href: data-manager.md
-    - name: Настройка Диспетчера данных на портале
-      href: data-manager-portal.md
-    - name: Настройка Диспетчера данных с помощью CLI
-      href: data-manager-cli.md
-    - name: "Публикация данных в Cosmos\_DB"
-      href: data-manager-cosmosdb.md
 - name: Ресурсы
   items:
     - name: Комплект SDK для службы "Блокчейн Azure"

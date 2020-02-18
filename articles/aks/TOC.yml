@@ -64,7 +64,7 @@
       href: concepts-clusters-workloads.md
     - name: Параметры доступа и идентификации
       href: concepts-identity.md
-    - name: безопасность
+    - name: Безопасность
       href: concepts-security.md
       items: null
     - name: Сеть
@@ -174,6 +174,8 @@
           href: internal-lb.md
         - name: Использование Load Balancer ценовой категории "Стандартный"
           href: load-balancer-standard.md
+        - name: Использование определяемого пользователем маршрута для исходящего трафика
+          href: egress-outboundtype.md
         - name: Использование статического IP-адреса
           href: static-ip.md
         - name: Входящий трафик

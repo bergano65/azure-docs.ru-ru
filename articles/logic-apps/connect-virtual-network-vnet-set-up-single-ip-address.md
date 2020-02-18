@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
-ms.date: 12/16/2019
-ms.openlocfilehash: b2b07882afb6c89c6920726db3c313dbb6a6dfc4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/10/2020
+ms.openlocfilehash: 619c68b84291bc35b8216194ac4534393fde454c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453483"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191488"
 ---
 # <a name="set-up-a-single-ip-address-for-one-or-more-integration-service-environments-in-azure-logic-apps"></a>Настройте один IP-адрес для одной или нескольких сред службы интеграции в Azure Logic Apps
 
@@ -19,7 +19,7 @@ ms.locfileid: "75453483"
 
 В этом разделе показано, как маршрутизировать исходящий трафик через брандмауэр Azure, но вы можете применить аналогичные концепции к сетевому виртуальному устройству, такому как сторонний брандмауэр из Azure Marketplace. Хотя в этом разделе основное внимание уделяется установке нескольких экземпляров ISE, этот подход можно также использовать для одной интегрированной среды сценариев, если в сценарии требуется ограничить количество IP-адресов, которым требуется доступ. Определите, имеет ли смысл дополнительные затраты на брандмауэр или устройство виртуальной сети для вашего сценария. Дополнительные сведения о [ценах на брандмауэр Azure](https://azure.microsoft.com/pricing/details/azure-firewall/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Брандмауэр Azure, работающий в той же виртуальной сети, что и интегрированная среда сценариев. Если у вас нет брандмауэра, сначала [добавьте подсеть](../virtual-network/virtual-network-manage-subnet.md#add-a-subnet) с именем `AzureFirewallSubnet` в виртуальную сеть. Затем можно [создать и развернуть брандмауэр](../firewall/tutorial-firewall-deploy-portal.md#deploy-the-firewall) в виртуальной сети.
 
@@ -49,7 +49,7 @@ ms.locfileid: "75453483"
 
    ![Настройка правила для направления исходящего трафика](./media/connect-virtual-network-vnet-set-up-single-ip-address/add-rule-to-route-table.png)
 
-   | Свойство | Значение | Description |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **Имя маршрута** | <*UNIQUE-Route-name*> | Уникальное имя маршрута в таблице маршрутов |
    | **Префикс адреса** | <*конечный адрес*> | Адрес целевой системы, куда должен быть отправлен трафик. Убедитесь, что для этого адреса используется [нотация между междоменной маршрутизацией (CIDR)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) . |
@@ -71,7 +71,7 @@ ms.locfileid: "75453483"
 
    **Свойства коллекции сетевых правил**
 
-   | Свойство | Значение | Description |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **Название** | <*сеть-Rule-Collection-name*> | Имя коллекции правил сети |
    | **Приоритет** | <> *уровня приоритета* | Порядок приоритета, используемый для запуска коллекции правил. Дополнительные сведения см. в статье [что такое основные понятия брандмауэра Azure](../firewall/firewall-faq.md#what-are-some-azure-firewall-concepts)? |
@@ -80,7 +80,7 @@ ms.locfileid: "75453483"
 
    **Свойства правила сети**
 
-   | Свойство | Значение | Description |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **Название** | <*Сетевое имя-правила*> | Имя правила сети |
    | **Протокол** | <*подключения — протоколы*> | Используемые протоколы соединения. Например, если вы используете правила NSG, выберите **TCP** и **UDP**, а не только **TCP**. |
@@ -97,6 +97,6 @@ ms.locfileid: "75453483"
    * [Azure PowerShell: New-Азфиреваллнетворкруле](https://docs.microsoft.com/powershell/module/az.network/new-azfirewallnetworkrule)
    * [Azure CLI: az Network Firewall Network — Rule](https://docs.microsoft.com/cli/azure/ext/azure-firewall/network/firewall/network-rule?view=azure-cli-latest#ext-azure-firewall-az-network-firewall-network-rule-create)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подключение к виртуальным сетям Azure из Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)

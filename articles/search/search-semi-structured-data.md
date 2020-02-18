@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: d8d3204c8a5ace17ae47a17d4c4ffec2ec7977f2
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/14/2020
+ms.openlocfilehash: 0603ad1fbecf33e5880fd7f18d35af51795f8e39
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112250"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251997"
 ---
 # <a name="rest-tutorial-index-and-search-semi-structured-data-json-blobs-in-azure-cognitive-search"></a>Руководство по работе с другими компонентами: индексирование и поиск частично структурированных данных (BLOB-объекты JSON) в Azure Когнитивный поиск
 
@@ -27,7 +27,7 @@ ms.locfileid: "74112250"
 > * Настройка и запуск индексатора для чтения контейнера и извлечения содержимого для поиска из хранилища BLOB-объектов Azure.
 > * Поиск по индексу, который вы только что создали.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом кратком руководстве используются приведенные ниже службы, инструменты и данные. 
 
@@ -63,7 +63,7 @@ ms.locfileid: "74112250"
 
 1. Перейдите к папке, содержащей примеры файлов. Выберите их, а затем щелкните **Загрузить**.
 
-   ![Передача файлов](media/search-semi-structured-data/clinicalupload.png "Отправка файлов")
+   ![Передача файлов](media/search-semi-structured-data/clinicalupload.png "Upload files")
 
 После завершения отправки файлы должны появиться в собственной вложенной папке внутри контейнера данных.
 
@@ -83,7 +83,7 @@ ms.locfileid: "74112250"
 
 ## <a name="create-a-data-source"></a>Создание источника данных
 
-[API создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) создает объект службы "Когнитивный поиск Azure", в котором указываются данные для индексирования.
+[API создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) создает объект когнитивный Поиск Azure, указывающий, какие данные индексировать.
 
 Конечная точка этого вызова — `https://[service name].search.windows.net/datasources?api-version=2019-05-06`. Замените `[service name]` именем службы поиска. 
 
@@ -126,7 +126,7 @@ ms.locfileid: "74112250"
 
 ## <a name="create-an-index"></a>Создание индекса
     
-Второй вызов — [API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-indexer), создающий индекс службы "Когнитивный поиск Azure", в котором хранятся все доступные для поиска данные. Индекс указывает все параметры и их атрибуты.
+Второй вызов — [API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index), создающий индекс службы "Когнитивный поиск Azure", в котором хранятся все доступные для поиска данные. Индекс указывает все параметры и их атрибуты.
 
 URL-адрес этого вызова — `https://[service name].search.windows.net/indexes?api-version=2019-05-06`. Замените `[service name]` именем службы поиска.
 
@@ -287,7 +287,7 @@ URL-адрес этого вызова — `https://[service name].search.window
 
 Самый быстрый способ очистки по завершении работы с учебником — удалить группу ресурсов, содержащую службу "Когнитивный поиск Azure". Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Когнитивный поиск Azure".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Существует ряд подходов и несколько вариантов индексирования больших двоичных объектов JSON. Следующим шагом будет рассмотрение и тестирование различных вариантов. Это позволит понять, что лучше всего подходит для вашего сценария.
 

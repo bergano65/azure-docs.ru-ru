@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: efc070491ca1ea84dc8ef095a2144df9d0bf1bcb
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: fbc6d6fa8f9a3b424eaec1f04a61b5ca24fe14fc
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311909"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161789"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом 
 
@@ -213,7 +213,7 @@ ms.locfileid: "76311909"
 
 Сведения об Azure AD:
 
-* Сведения для разработчиков см. в [руководстве разработчика по Azure Active Directory](../../active-directory/develop/v1-overview.md).
+* Сведения для разработчиков см. в [руководстве разработчика по Azure Active Directory](../../active-directory/develop/v2-overview.md).
 * Сведения для администраторов см. в статье [Управление каталогом Azure AD](../../active-directory/fundamentals/active-directory-administer.md).
 
 ### <a name="some-issues-in-implementation"></a>Некоторые проблемы в реализации

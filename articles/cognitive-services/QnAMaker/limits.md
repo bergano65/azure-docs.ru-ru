@@ -2,13 +2,13 @@
 title: Лимиты и границы —QnA Maker
 description: Для QnA Maker предусмотрены метаограничения для частей базы знаний и службы. Для тестирования и публикации важно хранить базу знаний, учитывая эти ограничения.
 ms.topic: article
-ms.date: 01/23/2020
-ms.openlocfilehash: 32e12d9e983795d2fb403a5b6bc304289ece92c2
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.date: 02/14/2020
+ms.openlocfilehash: 7fdf45a4a22f6d9ffe123f5998592739402be55f
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760238"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252014"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 
@@ -54,6 +54,8 @@ ms.locfileid: "76760238"
 Максимальное число глубоких ссылок, которые можно просканировать для извлечения QnA из страницы URL-адреса, равно **20**.
 
 ## <a name="metadata-limits"></a>Ограничения на метаданные
+
+Метаданные хранятся и сравниваются в нижнем регистре.
 
 ### <a name="by-azure-cognitive-search-pricing-tier"></a>По ценовой категории Azure Когнитивный поиск
 

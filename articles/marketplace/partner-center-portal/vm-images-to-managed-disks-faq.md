@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: d85f6ba9d50b7d30930322ca34cb15edb30e1472
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 683b35661a41325cfd5baa877acdb0e37529bb94
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775013"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198740"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Вы перемещаете образы виртуальных машин в Azure Marketplace в управляемый дисковый накопитель
 
@@ -25,7 +25,7 @@ ms.locfileid: "76775013"
 
 Если у вас возникнут вопросы, [свяжитесь с нами](https://support.microsoft.com/supportforbusiness/productselection?sapId=48734891-ee9a-5d77-bf29-82bf8d8111ff).
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>ЧЗВ
 
 ### <a name="would-the-users-of-my-vm-images-experience-an-outage"></a>Будут ли пользователи виртуальных машин испытывать сбой?
 
@@ -61,6 +61,6 @@ ms.locfileid: "76775013"
 
 Нет, процесс публикации останется неизменным. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="can-the-publisher-move-their-offers-to-managed-disk"></a>Может ли издатель переместить свои предложения на управляемый диск?
 
-Посетите страницу с [руководством по созданию для издателя виртуальной машины](https://docs.microsoft.com/azure/marketplace/marketplace-virtual-machines) .
+Нет, издатели не могут переместить свои предложения на управляемый диск. Они должны подождать, и их изображения будут перемещены автоматически. Прежде чем вносить изменения, мы отправим уведомление на издатель.

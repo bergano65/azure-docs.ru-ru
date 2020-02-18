@@ -4,19 +4,19 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 05/09/2019
 ms.author: glenga
-ms.openlocfilehash: 8946da455b4a395814d4cb5a833932c2e3d56f0a
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 4643bb7f95e4fd1249d3ab6699c1f835c77f18fe
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75658531"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198349"
 ---
 | Ресурс | [План потребления](../articles/azure-functions/functions-scale.md#consumption-plan) | [План Premium](../articles/azure-functions/functions-scale.md#premium-plan) | [План службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)<sup>1</sup> |
 | --- | --- | --- | --- |
-| Масштабирование | Управление на основе событий | Управление на основе событий | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
+| Масштабирование | Управляемые событиями | Управляемые событиями | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
 | Максимальное число экземпляров | 200 | 100 | 10-20 |
 |[Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) по умолчанию (мин.) |5 | 30 |30<sup>2</sup> |
-|Макс. [Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) (мин.) |10 | 60 | без привязки<sup>3</sup> |
+|Макс. [Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) (мин.) |10 | без привязки<sup>8</sup> | без привязки<sup>3</sup> |
 | Максимальное число исходящих подключений (на экземпляр) | 600 активна (всего 1200) | unbounded | unbounded |
 | Максимальный размер запроса (МБ)<sup>4</sup> | 100 | 100 | 100 |
 | Максимальная длина строки запроса<sup>4</sup> | 4096 | 4096 | 4096 |
@@ -35,4 +35,5 @@ ms.locfileid: "75658531"
 <sup>4</sup> эти ограничения [задаются в узле](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/web.config).  
 <sup>5</sup> фактическое число приложений функций, которые можно разместить, зависит от активности приложений, размера экземпляров компьютера и соответствующего использования ресурсов.  
 <sup>6</sup> предел хранилища — это общий размер содержимого во временном хранилище во всех приложениях в том же плане службы приложений. План потребления использует службы файлов Azure для временного хранения.  
-<sup>7</sup> если приложение-функция размещено в [плане потребления](../articles/azure-functions/functions-scale.md#consumption-plan), поддерживается только параметр CNAME. Для приложений-функций в [плане Premium](../articles/azure-functions/functions-scale.md#premium-plan) или в [плане службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)можно сопоставлять личный домен с помощью записи CNAME или a.
+<sup>7</sup> если приложение-функция размещено в [плане потребления](../articles/azure-functions/functions-scale.md#consumption-plan), поддерживается только параметр CNAME. Для приложений-функций в [плане Premium](../articles/azure-functions/functions-scale.md#premium-plan) или в [плане службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)можно сопоставлять личный домен с помощью записи CNAME или a.  
+<sup>8</sup> гарантируется до 60 минут.

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: ba1ad7c533ea1dc9e88c8337373e607db653ac24
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 42b7ceb86e360f192c55fc1090f291f5b7fe7ac5
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048544"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252031"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-portal"></a>Шифрование данных для базы данных Azure для MySQL с помощью портал Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "77048544"
   * [Обратимое удаление](../key-vault/key-vault-ovw-soft-delete.md)
 
     ```azurecli-interactive
-    az resource update --id $(az keyvault show --name \ <key_vault_name> -test -o tsv | awk '{print $1}') --set \ properties.enableSoftDelete=true
+    az resource update --id $(az keyvault show --name \ <key_vault_name> -o tsv | awk '{print $1}') --set \ properties.enableSoftDelete=true
     ```
 
   * [Очистить защищенные](../key-vault/key-vault-ovw-soft-delete.md#purge-protection)
@@ -49,7 +49,7 @@ ms.locfileid: "77048544"
 
    ![Общие сведения о политике доступа](media/concepts-data-access-and-security-data-encryption/access-policy-wrap-unwrap.png)
 
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
 ## <a name="set-data-encryption-for-azure-database-for-mysql"></a>Настройка шифрования данных для базы данных Azure для MySQL
 
@@ -61,7 +61,7 @@ ms.locfileid: "77048544"
 
    ![Снимок экрана базы данных Azure для MySQL с выделенными параметрами шифрования данных](media/concepts-data-access-and-security-data-encryption/setting-data-encryption.png)
 
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
 4. Чтобы убедиться, что все файлы (включая временные файлы) полностью зашифрованы, перезапустите сервер.
 
@@ -94,6 +94,6 @@ ms.locfileid: "77048544"
 
    ![Снимок экрана базы данных Azure для MySQL с восстановленными функциями](media/concepts-data-access-and-security-data-encryption/restore-successful.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
  Дополнительные сведения о шифровании данных см. в статье [Шифрование данных в базе данных Azure для MySQL с помощью ключа, управляемого клиентом](concepts-data-encryption-mysql.md).

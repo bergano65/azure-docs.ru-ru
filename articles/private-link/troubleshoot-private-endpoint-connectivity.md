@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: 1c3fc4ebaffe2347a9c46b626b94042d1c9cfe11
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: df4ec6ddbba029eb29d2440717697968f8c79302
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031859"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191065"
 ---
-# <a name="troubleshoot-private-endpoint-connectivity-problems"></a>Устранение неполадок с подключением к частным конечным точкам
+# <a name="troubleshoot-private-endpoint-connectivity-problems"></a>Устранение проблем с подключением к частной конечной точке
 
 Это руководство содержит пошаговые инструкции по проверке и диагностике настройки подключения к частной конечной точке. 
 
@@ -100,7 +100,7 @@ ms.locfileid: "77031859"
        ![Правила исходящих подключений NSG](./media/private-endpoint-tsg/nsg-outbound-rules.png)
 
 5. Если подключение проверено, проблемы с подключением могут быть связаны с другими аспектами, такими как секреты, токены и пароли на уровне приложения.
-   - В этом случае проверьте конфигурацию ресурса частной связи, связанного с частной конечной точкой. См. [руководство по устранению неполадок в частной связи](https://docs.microsoft.com/azure/private-link/private-link-connectivity-troubleshooting). 
+   - В этом случае проверьте конфигурацию ресурса частной связи, связанного с частной конечной точкой. См. [руководство по устранению неполадок в частной связи](troubleshoot-private-link-connectivity.md). 
 
 6. Обратитесь в службу [поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , если проблема не устранена, а проблема с подключением все еще существует. 
 
@@ -108,4 +108,4 @@ ms.locfileid: "77031859"
 
  * [Создание частной конечной точки в обновленной подсети (портал Azure)](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal)
 
- * [Руководство по устранению неполадок в частной ссылке](https://docs.microsoft.com/azure/private-link/private-link-connectivity-troubleshooting)
+ * [Руководство по устранению неполадок в частной ссылке](troubleshoot-private-link-connectivity.md)

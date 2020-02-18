@@ -12,13 +12,13 @@ ms.topic: quickstart
 ms.date: 02/05/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
-ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 860577938eab0f7561e9b66d0f58c9fc0d077b26
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.custom: aaddev, identityplatformtop40, fasttrack-edit
+ms.openlocfilehash: 74747e1bc5247e2a95a180b7361eafe8ca795bc2
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704159"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160712"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -57,7 +57,7 @@ ms.locfileid: "76704159"
 
 ### <a name="create-a-new-azure-ad-tenant"></a>Создание нового клиента Azure AD
 
-Если у вас еще нет клиента Azure AD или вы хотите создать клиент для разработки, используйте [процедуру создания каталога](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
+Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) или используйте [процедуру создания каталога](../fundamentals/active-directory-access-create-new-tenant.md). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
 
 - **Название организации**
 - **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.

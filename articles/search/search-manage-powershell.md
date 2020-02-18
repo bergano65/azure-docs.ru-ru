@@ -8,39 +8,35 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: fdb558267d823657f6a735d8b96efde33cdb8383
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 02/11/2020
+ms.openlocfilehash: 711071e08a52a0075512bc8b3ffe14707238cdfe
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466531"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209302"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-powershell"></a>Управление службой Когнитивный поиск Azure с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [Портал](search-manage.md)
 > * [PowerShell](search-manage-powershell.md)
-> * [ИНТЕРФЕЙС REST API](https://docs.microsoft.com/rest/api/searchmanagement/)
+> * [REST API](https://docs.microsoft.com/rest/api/searchmanagement/)
 > * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
-Вы можете запускать командлеты и скрипты PowerShell в Windows, Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки когнитивный Поиск Azure. Модуль **AZ. Search** расширяет Azure PowerShell] с полным контролем четности для [API-интерфейсов службы Azure когнитивный Поиск Management](https://docs.microsoft.com/rest/api/searchmanagement). С помощью Azure PowerShell и **AZ. Search**можно выполнять следующие задачи:
+Вы можете запускать командлеты и скрипты PowerShell в Windows, Linux или в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) для создания и настройки когнитивный Поиск Azure. Модуль **AZ. Search** расширяет [Azure PowerShell](https://docs.microsoft.com/powershell/) с полным контролем четности к [API-интерфейсам управления поиском](https://docs.microsoft.com/rest/api/searchmanagement) и позволяет выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * [Список всех служб поиска в подписке](#list-search-services)
-> * [Получение сведений о конкретной службе поиска](#get-search-service-information)
+> * [Перечисление служб поиска в подписке](#list-search-services)
+> * [Возврат сведений о службе](#get-search-service-information)
 > * [Создание или удаление службы](#create-or-delete-a-service)
 > * [Повторное создание ключей API администратора](#regenerate-admin-keys)
 > * [Создание или удаление ключей API запроса](#create-or-delete-query-keys)
-> * [Масштабирование службы путем увеличения или уменьшения количества реплик и секций](#scale-replicas-and-partitions)
+> * [Увеличение или уменьшение масштаба с помощью реплик и секций](#scale-replicas-and-partitions)
 
-PowerShell нельзя использовать для изменения имени, региона или уровня службы. Выделенные ресурсы выделяются при создании службы. Для изменения базового оборудования (расположения или типа узла) требуется новая служба. Нет средств или интерфейсов API для передачи содержимого из одной службы в другую. Все управление содержимым осуществляется с помощью API-интерфейсов [RESTful](https://docs.microsoft.com/rest/api/searchservice/) или [.NET](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search) . Если вы хотите переместить индексы, необходимо будет повторно создать и перезагрузить их в новой службе. 
+Иногда вопросы задаются *не* в приведенном выше списке. В настоящее время нельзя использовать модуль **AZ. Search** или REST API управления для изменения имени сервера, региона или уровня. Выделенные ресурсы выделяются при создании службы. Таким образом, для изменения базового оборудования (расположения или типа узла) требуется новая служба. Аналогично, отсутствуют средства или интерфейсы API для передачи содержимого, например индекса, из одной службы в другую.
 
-Хотя для управления содержимым не существует выделенных команд PowerShell, можно написать сценарий PowerShell, который вызывает функцию RESTFUL или .NET для создания и загрузки индексов. Модуль **AZ. Search** сам по себе не предоставляет эти операции.
-
-Другие задачи, не поддерживаемые с помощью PowerShell или других API-интерфейсов (только на портале), включают:
-+ [Присоедините ресурс](cognitive-search-attach-cognitive-services.md) « [обогащенные службы» для индексирования искусственного интеллекта](cognitive-search-concept-intro.md). Переданная служба присоединяется к набору навыков, а не к подписке или службе.
-+ [Решения для мониторинга надстроек](search-monitor-usage.md#add-on-monitoring-solutions) для мониторинга когнитивный Поиск Azure.
+В рамках службы создание и управление содержимым осуществляется с помощью [Служба поиска REST API](https://docs.microsoft.com/rest/api/searchservice/) или [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/?term=microsoft.azure.search). Хотя для содержимого нет выделенных команд PowerShell, можно написать сценарий PowerShell, который вызывает API-интерфейсы RESTFUL или .NET для создания и загрузки индексов.
 
 <a name="check-versions-and-load"></a>
 
@@ -92,7 +88,7 @@ Select-AzSubscription -SubscriptionName ContosoSubscription
 
 <a name="list-search-services"></a>
 
-## <a name="list-all-azure-cognitive-search-services-in-your-subscription"></a>Вывод списка всех служб Когнитивный поиск Azure в вашей подписке
+## <a name="list-services-in-a-subscription"></a>Перечисление служб в подписке
 
 Следующие команды относятся к [**AZ. Resources**](https://docs.microsoft.com/powershell/module/az.resources/?view=azps-1.4.0#resources)и возвращают сведения о существующих ресурсах и службах, уже подготовленных в вашей подписке. Если вы не уверены, сколько служб поиска уже создано, эти команды возвращают эту информацию, экономя на портале.
 
@@ -252,8 +248,7 @@ HostingMode       : Default
 Id                : /subscriptions/65a1016d-0f67-45d2-b838-b8f373d6d52e/resourceGroups/demo-westus/providers/Microsoft.Search/searchServices/my-demo-searchapp
 ```
 
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте [индекс](search-what-is-an-index.md), [запросите индекс](search-query-overview.md) с помощью портала, API-интерфейсов и пакета SDK для .NET.
 

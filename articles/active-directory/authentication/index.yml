@@ -10,14 +10,14 @@ metadata:
   ms.topic: landing-page
   author: iainfoulds
   ms.author: iainfou
-  ms.date: 08/20/2019
+  ms.date: 02/11/2020
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 01e1fe5ed73275078fc37dbec9a0857a8c4a8619
-  ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+  ms.openlocfilehash: 3c431b81c0da54045e9b9b020de5275912b394c6
+  ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74847157"
+  ms.lasthandoff: 02/12/2020
+  ms.locfileid: "77166421"
 landingContent:
 - title: Об аутентификации
   linkLists:
@@ -39,16 +39,16 @@ landingContent:
       url: concept-sspr-howitworks.md
     - text: Компонент обратной записи паролей
       url: concept-sspr-writeback.md
-  - linkListType: quickstart
+  - linkListType: tutorial
     links:
-    - text: Краткое руководство. Самостоятельный сброс пароля
-      url: quickstart-sspr.md
+    - text: Включение самостоятельного сброса пароля
+      url: tutorial-enable-sspr.md
+    - text: Включение компонента обратной записи паролей в локальной среде
+      url: tutorial-enable-writeback.md
   - linkListType: deploy
     links:
-    - text: Развертывание самостоятельного сброса пароля Azure AD
+    - text: Руководство по развертыванию для самостоятельного сброса паролей
       url: howto-sspr-deployment.md
-    - text: Включение компонента обратной записи паролей
-      url: howto-sspr-writeback.md
     - text: Включение сброса пароля на экране входа в Windows
       url: howto-sspr-windows.md
 - title: Включение Многофакторной идентификации Azure
@@ -59,13 +59,13 @@ landingContent:
       url: concept-mfa-howitworks.md
   - linkListType: tutorial
     links:
-    - text: Пилотное развертывание Azure MFA для конкретных приложений
-      url: tutorial-mfa-applications.md
-    - text: Использование обнаружения рисков для активации Многофакторной идентификации и изменения пароля
+    - text: Включение Многофакторной идентификации Azure
+      url: tutorial-enable-azure-mfa.md
+    - text: Включение Многофакторной идентификации Azure на основе рисков
       url: tutorial-risk-based-sspr-mfa.md
   - linkListType: deploy
     links:
-    - text: Развертывание Многофакторной идентификации Azure
+    - text: Руководство по развертыванию Многофакторной идентификации Azure
       url: howto-mfa-getstarted.md
     - text: Использование расширения NPS для интеграции локальных приложений
       url: howto-mfa-nps-extension.md

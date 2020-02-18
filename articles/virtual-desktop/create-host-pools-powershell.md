@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: f510879e7df967944f5e7a3deac308a430d53d0c
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: f9baaf6c39f85f82b034bee42f01cf3c0dd2a610
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771314"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367459"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "75771314"
 
 ## <a name="use-your-powershell-client-to-create-a-host-pool"></a>Создание пула узлов с помощью клиента PowerShell
 
-Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
+Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](/powershell/windows-virtual-desktop/overview/) для использования в сеансе PowerShell (если вы еще это не сделали).
 
 Выполните следующий командлет, чтобы войти в среду виртуальных рабочих столов Windows
 
@@ -60,9 +60,9 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 
 Создать виртуальную машину можно несколькими способами.
 
-- [Создание виртуальной машины из образа из коллекции Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine)
-- [Создание виртуальной машины из управляемого образа](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-generalized-managed)
-- [Создание виртуальной машины из неуправляемого образа](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)
+- [Создание виртуальной машины из образа из коллекции Azure](../virtual-machines/windows/quick-create-portal.md#create-virtual-machine)
+- [Создание виртуальной машины из управляемого образа](../virtual-machines/windows/create-vm-generalized-managed.md)
+- [Создание виртуальной машины из неуправляемого образа](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image.md)
 
 >[!NOTE]
 >Если вы развертываете виртуальную машину с Windows 7 в качестве ОС узла, процесс создания и развертывания будет немного иным. Дополнительные сведения см. в статье [развертывание виртуальной машины Windows 7 в виртуальном рабочем столе Windows](deploy-windows-7-virtual-machine.md).
@@ -78,7 +78,7 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 
 Чтобы успешно присоединиться к домену, выполните следующие действия на каждой виртуальной машине.
 
-1. [Подключитесь к виртуальной машине](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal#connect-to-virtual-machine) с помощью учетных данных, указанных при создании виртуальной машины.
+1. [Подключитесь к виртуальной машине](../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine) с помощью учетных данных, указанных при создании виртуальной машины.
 2. На виртуальной машине откройте **Панель управления** и выберите пункт **система**.
 3. Выберите **имя компьютера**, щелкните **изменить параметры**, а затем выберите **изменить...**
 4. Выберите **домен** , а затем введите домен Active Directory в виртуальной сети.
@@ -93,7 +93,7 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 
 Чтобы зарегистрировать агенты виртуальных рабочих столов Windows, выполните следующие действия на каждой виртуальной машине:
 
-1. [Подключитесь к виртуальной машине](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal#connect-to-virtual-machine) с помощью учетных данных, указанных при создании виртуальной машины.
+1. [Подключитесь к виртуальной машине](../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine) с помощью учетных данных, указанных при создании виртуальной машины.
 2. Скачайте и установите агент виртуальных рабочих столов Windows.
    - Скачайте [Агент виртуальных рабочих столов Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrmXv).
    - Щелкните правой кнопкой мыши скачанный установщик, выберите пункт **Свойства**, выберите **разблокировать**, а затем нажмите кнопку **ОК**. Это позволит системе доверять установщику.
@@ -104,9 +104,9 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
    - Запустите установщик.
 
 >[!IMPORTANT]
->Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](https://docs.microsoft.com/azure/security-center/security-center-just-in-time).
+>Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](../security-center/security-center-just-in-time.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда пул узлов создан, его можно заполнить удаленными приложениями. Дополнительные сведения о том, как управлять приложениями в Виртуальном рабочем столе Windows см. в руководстве по управлению группами приложений.
 

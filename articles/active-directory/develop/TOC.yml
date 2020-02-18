@@ -1,398 +1,272 @@
 - name: Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)
   href: index.yml
-- name: Развитие платформы удостоверений Майкрософт
-  href: about-microsoft-identity-platform.md
-- name: Версия 2.0
-  expanded: true
+- name: Обзор
   items:
     - name: Обзор
       href: v2-overview.md
-    - name: Краткие руководства
+    - name: Развитие платформы удостоверений Майкрософт
+      href: about-microsoft-identity-platform.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Настройка клиента
+      href: quickstart-create-new-tenant.md
+    - name: Настройка приложения
       items:
-        - name: Настройка клиента
-          href: quickstart-create-new-tenant.md
-        - name: Настройка приложения
+        - name: Регистрация приложения
+          href: quickstart-register-app.md
+        - name: Настройка приложения для доступа к веб-API
+          href: quickstart-configure-app-access-web-apis.md
+        - name: Настройка приложения для предоставления веб-API
+          href: quickstart-configure-app-expose-web-apis.md
+        - name: 'Изменение учетных записей, поддерживаемых приложением'
+          href: quickstart-modify-supported-accounts.md
+        - name: Удаление приложения
+          href: quickstart-remove-app.md
+    - name: Одностраничные приложения
+      items:
+        - name: JavaScript
+          href: quickstart-v2-javascript.md
+    - name: Веб-приложения
+      items:
+        - name: ASP.NET
+          href: quickstart-v2-aspnet-webapp.md
+        - name: ASP.NET Core
+          href: quickstart-v2-aspnet-core-webapp.md
+        - name: Node.js
+          href: quickstart-v2-nodejs-webapp.md
+          displayName: OIDC
+        - name: Java
+          href: quickstart-v2-java-webapp.md
+        - name: Python
+          href: quickstart-v2-python-webapp.md
+    - name: Веб-API
+      items:
+        - name: ASP.NET
+          href: quickstart-v2-dotnet-native-aspnet.md
+        - name: ASP.NET Core
+          href: 'https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2'
+    - name: Мобильные и классические приложения
+      items:
+        - name: Android
+          href: quickstart-v2-android.md
+        - name: iOS и macOS
+          href: quickstart-v2-ios.md
+        - name: Универсальная платформа Windows
+          href: quickstart-v2-uwp.md
+        - name: Платформа .NET для классических приложений Windows
+          href: quickstart-v2-windows-desktop.md
+    - name: Управляющие программы
+      items:
+        - name: "Консоль .NET\_Core (управляющая программа)"
+          href: quickstart-v2-netcore-daemon.md
+        - name: Управляющая программа консоли Python
+          href: quickstart-v2-python-daemon.md
+- name: Учебники
+  items:
+    - name: Одностраничные приложения
+      items:
+        - name: JavaScript
+          href: tutorial-v2-javascript-spa.md
+    - name: Веб-приложения
+      items:
+        - name: ASP.NET
+          href: tutorial-v2-asp-webapp.md
+    - name: Мобильные и классические приложения
+      items:
+        - name: Android
+          href: tutorial-v2-android.md
+        - name: iOS и macOS
+          href: tutorial-v2-ios.md
+        - name: Универсальная платформа Windows
+          href: tutorial-v2-windows-uwp.md
+        - name: Платформа .NET для классических приложений Windows
+          href: tutorial-v2-windows-desktop.md
+        - name: Использование режима совместной работы с устройством в приложении Android
+          href: tutorial-v2-shared-device-mode.md
+    - name: Управляющие программы
+      items:
+        - name: Веб-приложение управляющей программы ASP.NET
+          href: tutorial-v2-aspnet-daemon-web-app.md
+- name: Примеры
+  href: sample-v2-code.md
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: Основные сведения об аутентификации
+      href: authentication-scenarios.md
+    - name: Потоки аутентификации и сценарии приложений
+      href: authentication-flows-app-scenarios.md
+    - name: Рекомендации по использованию платформы удостоверений
+      href: identity-platform-integration-checklist.md
+    - name: Сценарии приложений
+      items:
+        - name: Аудитория для входа
+          href: v2-supported-account-types.md
+        - name: Одностраничное приложение
           items:
+            - name: Обзор
+              href: scenario-spa-overview.md
             - name: Регистрация приложения
-              href: quickstart-register-app.md
-            - name: Настройка приложения для доступа к веб-API
-              href: quickstart-configure-app-access-web-apis.md
-            - name: Настройка приложения для предоставления веб-API
-              href: quickstart-configure-app-expose-web-apis.md
-            - name: 'Изменение учетных записей, поддерживаемых приложением'
-              href: quickstart-modify-supported-accounts.md
-            - name: Удаление приложения
-              href: quickstart-remove-app.md
-        - name: Одностраничные приложения
-          items:
-            - name: JavaScript
-              href: quickstart-v2-javascript.md
-        - name: Веб-приложения
-          items:
-            - name: ASP.NET
-              href: quickstart-v2-aspnet-webapp.md
-            - name: ASP.NET Core
-              href: quickstart-v2-aspnet-core-webapp.md
-            - name: Node.js
-              href: quickstart-v2-nodejs-webapp.md
-              displayName: OIDC
-            - name: Java
-              href: quickstart-v2-java-webapp.md
-            - name: Python
-              href: quickstart-v2-python-webapp.md
-        - name: Веб-API
-          items:
-            - name: ASP.NET
-              href: quickstart-v2-dotnet-native-aspnet.md
-            - name: ASP.NET Core
-              href: 'https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2'
-        - name: Мобильные и классические приложения
-          items:
-            - name: Android
-              href: quickstart-v2-android.md
-            - name: iOS и macOS
-              href: quickstart-v2-ios.md
-            - name: Универсальная платформа Windows
-              href: quickstart-v2-uwp.md
-            - name: Платформа .NET для классических приложений Windows
-              href: quickstart-v2-windows-desktop.md
-        - name: Управляющие программы
-          items:
-            - name: "Консоль .NET\_Core (управляющая программа)"
-              href: quickstart-v2-netcore-daemon.md
-            - name: Управляющая программа консоли Python
-              href: quickstart-v2-python-daemon.md
-    - name: Учебники
-      items:
-        - name: Одностраничные приложения
-          items:
-            - name: JavaScript
-              href: tutorial-v2-javascript-spa.md
-        - name: Веб-приложения
-          items:
-            - name: ASP.NET
-              href: tutorial-v2-asp-webapp.md
-        - name: Мобильные и классические приложения
-          items:
-            - name: Android
-              href: tutorial-v2-android.md
-            - name: iOS и macOS
-              href: tutorial-v2-ios.md
-            - name: Универсальная платформа Windows
-              href: tutorial-v2-windows-uwp.md
-            - name: Платформа .NET для классических приложений Windows
-              href: tutorial-v2-windows-desktop.md
-            - name: Использование режима совместной работы с устройством в приложении Android
-              href: tutorial-v2-shared-device-mode.md
-        - name: Управляющие программы
-          items:
-            - name: Веб-приложение управляющей программы ASP.NET
-              href: tutorial-v2-aspnet-daemon-web-app.md
-    - name: Примеры
-      href: sample-v2-code.md
-    - name: Основные понятия
-      items:
-        - name: Основные сведения об аутентификации
-          href: authentication-scenarios.md
-        - name: Потоки аутентификации и сценарии приложений
-          href: authentication-flows-app-scenarios.md
-        - name: Рекомендации по использованию платформы удостоверений
-          href: identity-platform-integration-checklist.md
-        - name: Сценарии приложений
-          items:
-            - name: Аудитория для входа
-              href: v2-supported-account-types.md
-            - name: Одностраничное приложение
-              items:
-                - name: Обзор
-                  href: scenario-spa-overview.md
-                - name: Регистрация приложения
-                  href: scenario-spa-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-spa-app-configuration.md
-                - name: Функции входа и выхода
-                  href: scenario-spa-sign-in.md
-                - name: Получение маркера для API
-                  href: scenario-spa-acquire-token.md
-                - name: Вызов веб-API
-                  href: scenario-spa-call-api.md
-                - name: Перенос в рабочую среду
-                  href: scenario-spa-production.md
-            - name: 'Веб-приложение, которое поддерживает вход пользователей'
-              items:
-                - name: Обзор
-                  href: scenario-web-app-sign-user-overview.md
-                - name: Регистрация приложения
-                  href: scenario-web-app-sign-user-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-web-app-sign-user-app-configuration.md
-                - name: Функции входа и выхода
-                  href: scenario-web-app-sign-user-sign-in.md
-                - name: Перенос в рабочую среду
-                  href: scenario-web-app-sign-user-production.md
-            - name: 'Веб-приложение, которое вызывает веб-API'
-              items:
-                - name: Обзор
-                  href: scenario-web-app-call-api-overview.md
-                - name: Регистрация приложения
-                  href: scenario-web-app-call-api-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-web-app-call-api-app-configuration.md
-                - name: Глобальный выход
-                  href: scenario-web-app-call-api-sign-in.md
-                - name: Получение маркера для приложения
-                  href: scenario-web-app-call-api-acquire-token.md
-                - name: Вызов веб-API
-                  href: scenario-web-app-call-api-call-api.md
-                - name: Перенос в рабочую среду
-                  href: scenario-web-app-call-api-production.md
-            - name: Защищенный веб-API
-              items:
-                - name: Обзор
-                  href: scenario-protected-web-api-overview.md
-                - name: Регистрация приложения
-                  href: scenario-protected-web-api-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-protected-web-api-app-configuration.md
-                - name: Проверка области действия или ролей приложения
-                  href: scenario-protected-web-api-verification-scope-app-roles.md
-                - name: Перенос в рабочую среду
-                  href: scenario-protected-web-api-production.md
-            - name: 'Веб-API, которые вызывают веб-API'
-              items:
-                - name: Обзор
-                  href: scenario-web-api-call-api-overview.md
-                - name: Регистрация приложения
-                  href: scenario-web-api-call-api-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-web-api-call-api-app-configuration.md
-                - name: Получение маркера
-                  href: scenario-web-api-call-api-acquire-token.md
-                - name: Вызов веб-API
-                  href: scenario-web-api-call-api-call-api.md
-                - name: Перенос в рабочую среду
-                  href: scenario-web-api-call-api-production.md
-            - name: 'Классическое приложение, которое вызывает веб-API'
-              items:
-                - name: Обзор
-                  href: scenario-desktop-overview.md
-                - name: Регистрация приложения
-                  href: scenario-desktop-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-desktop-app-configuration.md
-                - name: Получение маркера
-                  href: scenario-desktop-acquire-token.md
-                - name: Вызов веб-API
-                  href: scenario-desktop-call-api.md
-                - name: Перенос в рабочую среду
-                  href: scenario-desktop-production.md
-            - name: Управляющая программа
-              items:
-                - name: Обзор
-                  href: scenario-daemon-overview.md
-                - name: Регистрация приложения
-                  href: scenario-daemon-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-daemon-app-configuration.md
-                - name: Получение маркера
-                  href: scenario-daemon-acquire-token.md
-                - name: Вызов веб-API
-                  href: scenario-daemon-call-api.md
-                - name: Перенос в рабочую среду
-                  href: scenario-daemon-production.md
-            - name: 'Мобильное приложение, которое вызывает веб-API'
-              items:
-                - name: Обзор
-                  href: scenario-mobile-overview.md
-                - name: Регистрация приложения
-                  href: scenario-mobile-app-registration.md
-                - name: Конфигурация кода
-                  href: scenario-mobile-app-configuration.md
-                - name: Конфигурация для конкретных мобильных платформ
-                  items:
-                    - name: Режим совместной работы с устройством Android
-                      href: shared-device-mode.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
-                    - name: Системный браузер в Android
-                      href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
-                    - name: Использование брокеров с Xamarin iOS и Android
-                      displayName: Microsoft Authenticator Microsoft Intune
-                      href: msal-net-use-brokers-with-xamarin-apps.md
-                    - name: Универсальная платформа Windows
-                      href: msal-net-uwp-considerations.md
-                - name: Получение маркера для приложения
-                  href: scenario-mobile-acquire-token.md
-                - name: Вызов веб-API
-                  href: scenario-mobile-call-api.md
-                - name: Перенос в рабочую среду
-                  href: scenario-mobile-production.md
-        - name: Библиотека проверки подлинности Майкрософт (MSAL)
+              href: scenario-spa-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-spa-app-configuration.md
+            - name: Функции входа и выхода
+              href: scenario-spa-sign-in.md
+            - name: Получение маркера для API
+              href: scenario-spa-acquire-token.md
+            - name: Вызов веб-API
+              href: scenario-spa-call-api.md
+            - name: Перенос в рабочую среду
+              href: scenario-spa-production.md
+        - name: 'Веб-приложение, которое поддерживает вход пользователей'
           items:
             - name: Обзор
-              href: msal-overview.md
-            - name: Учетные записи и профили клиентов (Android)
-              href: accounts-overview.md
-            - name: Агенты авторизации (Android)
-              href: authorization-agents.md
-            - name: Аутентификация с использованием брокера (Android)
-              href: brokered-auth.md
-            - name: Миграция
+              href: scenario-web-app-sign-user-overview.md
+            - name: Регистрация приложения
+              href: scenario-web-app-sign-user-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-web-app-sign-user-app-configuration.md
+            - name: Функции входа и выхода
+              href: scenario-web-app-sign-user-sign-in.md
+            - name: Перенос в рабочую среду
+              href: scenario-web-app-sign-user-production.md
+        - name: 'Веб-приложение, которое вызывает веб-API'
+          items:
+            - name: Обзор
+              href: scenario-web-app-call-api-overview.md
+            - name: Регистрация приложения
+              href: scenario-web-app-call-api-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-web-app-call-api-app-configuration.md
+            - name: Глобальный выход
+              href: scenario-web-app-call-api-sign-in.md
+            - name: Получение маркера для приложения
+              href: scenario-web-app-call-api-acquire-token.md
+            - name: Вызов веб-API
+              href: scenario-web-app-call-api-call-api.md
+            - name: Перенос в рабочую среду
+              href: scenario-web-app-call-api-production.md
+        - name: Защищенный веб-API
+          items:
+            - name: Обзор
+              href: scenario-protected-web-api-overview.md
+            - name: Регистрация приложения
+              href: scenario-protected-web-api-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-protected-web-api-app-configuration.md
+            - name: Проверка области действия или ролей приложения
+              href: scenario-protected-web-api-verification-scope-app-roles.md
+            - name: Перенос в рабочую среду
+              href: scenario-protected-web-api-production.md
+        - name: 'Веб-API, которые вызывают веб-API'
+          items:
+            - name: Обзор
+              href: scenario-web-api-call-api-overview.md
+            - name: Регистрация приложения
+              href: scenario-web-api-call-api-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-web-api-call-api-app-configuration.md
+            - name: Получение маркера
+              href: scenario-web-api-call-api-acquire-token.md
+            - name: Вызов веб-API
+              href: scenario-web-api-call-api-call-api.md
+            - name: Перенос в рабочую среду
+              href: scenario-web-api-call-api-production.md
+        - name: 'Классическое приложение, которое вызывает веб-API'
+          items:
+            - name: Обзор
+              href: scenario-desktop-overview.md
+            - name: Регистрация приложения
+              href: scenario-desktop-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-desktop-app-configuration.md
+            - name: Получение маркера
+              href: scenario-desktop-acquire-token.md
+            - name: Вызов веб-API
+              href: scenario-desktop-call-api.md
+            - name: Перенос в рабочую среду
+              href: scenario-desktop-production.md
+        - name: Управляющая программа
+          items:
+            - name: Обзор
+              href: scenario-daemon-overview.md
+            - name: Регистрация приложения
+              href: scenario-daemon-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-daemon-app-configuration.md
+            - name: Получение маркера
+              href: scenario-daemon-acquire-token.md
+            - name: Вызов веб-API
+              href: scenario-daemon-call-api.md
+            - name: Перенос в рабочую среду
+              href: scenario-daemon-production.md
+        - name: 'Мобильное приложение, которое вызывает веб-API'
+          items:
+            - name: Обзор
+              href: scenario-mobile-overview.md
+            - name: Регистрация приложения
+              href: scenario-mobile-app-registration.md
+            - name: Конфигурация кода
+              href: scenario-mobile-app-configuration.md
+            - name: Конфигурация для конкретных мобильных платформ
               items:
-                - name: Миграция в MSAL.NET
-                  href: msal-net-migration.md
-                - name: Миграция в MSAL.js
-                  href: msal-compare-msal-js-and-adal-js.md
-                - name: Переход на MSAL.Android
-                  href: migrate-android-adal-msal.md
-                - name: Миграция в MSAL для iOS и macOS
-                  href: migrate-objc-adal-msal.md
-                - name: Переход на MSAL для Python
-                  href: migrate-python-adal-msal.md
-                - name: Переход на MSAL для Java
-                  href: migrate-adal-msal-java.md
-                - name: Перенос приложений Xamarin в MSAL.NET с помощью брокеров
-                  href: msal-net-migration-ios-broker.md
-            - name: Поддерживаемые потоки аутентификации
-              href: msal-authentication-flows.md
-            - name: Общедоступные клиентские приложения для одной и нескольких учетных записей (Android)
-              href: single-multi-account.md
+                - name: Режим совместной работы с устройством Android
+                  href: shared-device-mode.md
+                - name: Xamarin Android
+                  href: msal-net-xamarin-android-considerations.md
+                - name: Системный браузер в Android
+                  href: msal-net-system-browser-android-considerations.md
+                - name: Xamarin iOS
+                  href: msal-net-xamarin-ios-considerations.md
+                - name: Использование брокеров с Xamarin iOS и Android
+                  displayName: Microsoft Authenticator Microsoft Intune
+                  href: msal-net-use-brokers-with-xamarin-apps.md
+                - name: Универсальная платформа Windows
+                  href: msal-net-uwp-considerations.md
+            - name: Получение маркера для приложения
+              href: scenario-mobile-acquire-token.md
+            - name: Вызов веб-API
+              href: scenario-mobile-call-api.md
+            - name: Перенос в рабочую среду
+              href: scenario-mobile-production.md
+    - name: Библиотека проверки подлинности Майкрософт (MSAL)
+      items:
+        - name: Обзор
+          href: msal-overview.md
+        - name: Учетные записи и профили клиентов (Android)
+          href: accounts-overview.md
+        - name: Агенты авторизации (Android)
+          href: authorization-agents.md
+        - name: Аутентификация с использованием брокера (Android)
+          href: brokered-auth.md
+        - name: Миграция
+          items:
+            - name: Миграция в MSAL.NET
+              href: msal-net-migration.md
+            - name: Миграция в MSAL.js
+              href: msal-compare-msal-js-and-adal-js.md
+            - name: Переход на MSAL.Android
+              href: migrate-android-adal-msal.md
+            - name: Миграция в MSAL для iOS и macOS
+              href: migrate-objc-adal-msal.md
+            - name: Переход на MSAL для Python
+              href: migrate-python-adal-msal.md
+            - name: Переход на MSAL для Java
+              href: migrate-adal-msal-java.md
+            - name: Перенос приложений Xamarin в MSAL.NET с помощью брокеров
+              href: msal-net-migration-ios-broker.md
+        - name: Поддерживаемые потоки аутентификации
+          href: msal-authentication-flows.md
+        - name: Общедоступные клиентские приложения для одной и нескольких учетных записей (Android)
+          href: single-multi-account.md
+        - name: Получение и кэширование маркеров
+          items:
             - name: Получение и кэширование маркеров
-              items:
-                - name: Получение и кэширование маркеров
-                  href: msal-acquire-cache-tokens.md
-                - name: "Области для приложений версии\_1.0"
-                  href: msal-v1-app-scopes.md
-            - name: Клиентские приложения
-              items:
-                - name: Клиентские приложения
-                  href: msal-client-applications.md
-                - name: Конфигурация приложений
-                  href: msal-client-application-configuration.md
-                - name: Инициализация приложений (.NET)
-                  href: msal-net-initializing-client-applications.md
-                - name: Утверждения клиента (.NET)
-                  href: msal-net-client-assertions.md
-                - name: Инициализация приложений (JS)
-                  href: msal-js-initializing-client-applications.md
-            - name: Обработка ошибок и исключений
-              href: msal-handling-exceptions.md
-            - name: Logging
-              href: msal-logging.md
-            - name: Единый вход
-              items:
-                - name: Единый вход с использованием MSAL.js
-                  href: msal-js-sso.md
-                - name: Единый вход с использованием MSAL для iOS и macOS
-                  items:
-                    - name: Единый вход между приложениями MSAL
-                      href: single-sign-on-macos-ios.md
-                    - name: Единый вход между приложениями ADAL и MSAL
-                      href: sso-between-adal-msal-apps-macos-ios.md
-            - name: Интеграция с ADFS
-              items:
-                - name: Поддержка ADFS в MSAL.NET
-                  href: msal-net-adfs-support.md
-                - name: Поддержка ADFS в MSAL для Python
-                  href: msal-python-adfs-support.md
-                - name: Поддержка ADFS в MSAL для Java
-                  href: msal-java-adfs-support.md
-            - name: "Интеграция с Azure\_AD\_B2C"
-              items:
-                - name: Android
-                  href: msal-android-b2c.md
-                - name: JavaScript
-                  href: msal-b2c-overview.md
-                - name: .NET
-                  href: msal-net-aad-b2c-considerations.md
-                - name: iOS и macOS
-                  href: 'config-authority.md#b2c'
-            - name: Рекомендации и известные проблемы
-              items:
-                - name: MSAL.NET
-                  items:
-                    - name: Веб-браузеры
-                      href: msal-net-web-browsers.md
-                - name: MSAL.js
-                  items:
-                    - name: Рекомендации по использованию Internet Explorer
-                      href: msal-js-use-ie-browser.md
-                    - name: Известные проблемы c Internet Explorer и Microsoft Edge
-                      href: msal-js-known-issues-ie-edge-browsers.md
-                    - name: Известные проблемы c Safari
-                      href: msal-js-known-issues-safari-browser.md
-                - name: Устранение неполадок с протоколом SSL (MSAL для iOS и macOS)
-                  href: ssl-issues.md
-        - name: Протокол аутентификации
-          items:
-            - name: "Типы приложений и OAuth\_2.0"
-              href: v2-app-types.md
-            - name: Протоколы OAuth 2.0 и OpenID Connect
-              href: active-directory-v2-protocols.md
-            - name: OpenID Connect
-              href: v2-protocols-oidc.md
-            - name: "Процесс предоставления неявных разрешений OAuth\_2.0"
-              href: v2-oauth2-implicit-grant-flow.md
-            - name: "Предоставление кода аутентификации OAuth\_2.0"
-              href: v2-oauth2-auth-code-flow.md
-            - name: "Поток On-Behalf-Of в OAuth\_2.0"
-              href: v2-oauth2-on-behalf-of-flow.md
-            - name: "Предоставление учетных данных клиента OAuth\_2.0"
-              href: v2-oauth2-client-creds-grant-flow.md
-            - name: "Поток кода для авторизации устройства в OAuth\_2.0"
-              href: v2-oauth2-device-code.md
-            - name: "Предоставление учетных данных владельца ресурса OAuth\_2.0"
-              href: v2-oauth-ropc.md
-            - name: "Поток утверждения носителя в OAuth\_2.0 SAML"
-              href: v2-saml-bearer-assertion.md
-            - name: Смена ключей подписывания
-              href: active-directory-signing-key-rollover.md
-            - name: Маркеры идентификации
-              href: id-tokens.md
-            - name: Маркеры доступа
-              href: access-tokens.md
-            - name: Учетные данные сертификата
-              href: active-directory-certificate-credentials.md
-        - name: Конфигурация приложений
-          items:
-            - name: Приложения и субъекты-службы
-              href: app-objects-and-service-principals.md
-            - name: "Добавление приложений в Azure\_AD"
-              href: active-directory-how-applications-are-added.md
-            - name: Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
-              href: reply-url.md
-            - name: Различия при проверке по поддерживаемым типам учетных записей
-              href: supported-accounts-validation.md
-            - name: Одно- и мультитенантные приложения
-              href: single-and-multi-tenant-apps.md
-        - name: Разрешения и согласие
-          displayName: Scopes
-          items:
-            - name: Типы разрешений и согласие
-              href: v2-permissions-and-consent.md
-            - name: Платформа предоставления согласия
-              href: consent-framework.md
-            - name: Согласие администратора
-              href: v2-admin-consent.md
-            - name: Предоставление согласия для приложений
-              href: application-consent-experience.md
-        - name: Национальные облака
-          items:
-            - name: Обзор
-              href: authentication-national-cloud.md
-            - name: Аутентификация
-              href: msal-national-cloud.md
-        - name: Автоматическая подготовка пользователей (SCIM)
-          items:
-            - name: Что собой представляет автоматическая подготовка пользователей?
-              href: /azure/active-directory/manage-apps/user-provisioning
-            - name: Создание и интеграция конечной точки SCIM
-              href: /azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups
-    - name: Практические руководства
-      items:
-        - name: Аутентификация
+              href: msal-acquire-cache-tokens.md
+            - name: "Области для приложений версии\_1.0"
+              href: msal-v1-app-scopes.md
+        - name: Клиентские приложения
           items:
             - name: Настройка утверждения роли
               href: active-directory-enterprise-app-role-management.md
@@ -408,334 +282,254 @@
               href: howto-handle-samesite-cookie-changes-chrome-browser.md
         - name: Конфигурация приложений
           items:
-            - name: Новое учебное руководство по регистрации приложений на портале Azure
-              href: app-registrations-training-guide-for-app-registrations-legacy-users.md
-            - name: Новый интерфейс для регистрации приложений на портале Azure
-              href: app-registration-portal-training-guide.md
-            - name: Преобразование однотенантного приложения в мультитенантное
-              href: howto-convert-app-to-be-multi-tenant.md
-            - name: Создание субъекта-службы
+            - name: Клиентские приложения
+              href: msal-client-applications.md
+            - name: Конфигурация приложений
+              href: msal-client-application-configuration.md
+            - name: Инициализация приложений (.NET)
+              href: msal-net-initializing-client-applications.md
+            - name: Утверждения клиента (.NET)
+              href: msal-net-client-assertions.md
+            - name: Инициализация приложений (JS)
+              href: msal-js-initializing-client-applications.md
+        - name: Обработка ошибок и исключений
+          href: msal-handling-exceptions.md
+        - name: Logging
+          href: msal-logging.md
+        - name: Единый вход
+          items:
+            - name: Единый вход с использованием MSAL.js
+              href: msal-js-sso.md
+            - name: Единый вход с использованием MSAL для iOS и macOS
               items:
-                - name: Использование Azure PowerShell
-                  href: howto-authenticate-service-principal-powershell.md
-                - name: Использование портала Azure
-                  href: howto-create-service-principal-portal.md
-            - name: Ограничение набора пользователей приложения
-              href: howto-restrict-your-app-to-a-set-of-users.md
-            - name: Добавление ролей приложения
-              href: howto-add-app-roles-in-azure-ad-apps.md
-            - name: Рекомендации по фирменной символике
-              href: howto-add-branding-in-azure-ad-apps.md
-            - name: Настройка домена издателя
-              href: howto-configure-publisher-domain.md
-            - name: Условия предоставления услуг и заявление о конфиденциальности
-              href: howto-add-terms-of-service-privacy-statement.md
-        - name: Использование библиотеки аутентификации Майкрософт
+                - name: Единый вход между приложениями MSAL
+                  href: single-sign-on-macos-ios.md
+                - name: Единый вход между приложениями ADAL и MSAL
+                  href: sso-between-adal-msal-apps-macos-ios.md
+        - name: Интеграция с ADFS
+          items:
+            - name: Поддержка ADFS в MSAL.NET
+              href: msal-net-adfs-support.md
+            - name: Поддержка ADFS в MSAL для Python
+              href: msal-python-adfs-support.md
+            - name: Поддержка ADFS в MSAL для Java
+              href: msal-java-adfs-support.md
+        - name: "Интеграция с Azure\_AD\_B2C"
+          items:
+            - name: Android
+              href: msal-android-b2c.md
+            - name: JavaScript
+              href: msal-b2c-overview.md
+            - name: .NET
+              href: msal-net-aad-b2c-considerations.md
+            - name: iOS и macOS
+              href: 'config-authority.md#b2c'
+        - name: Рекомендации и известные проблемы
           items:
             - name: MSAL.NET
               items:
-                - name: Получение маркера из кэша
-                  href: msal-net-acquire-token-silently.md
-                - name: Сериализация кэша маркеров
-                  href: msal-net-token-cache-serialization.md
-                - name: Очистка кэша маркеров
-                  href: msal-net-clear-token-cache.md
-                - name: Создание экземпляра общедоступного клиентского приложения
-                  href: msal-net-instantiate-public-client-config-options.md
-                - name: Создание экземпляра конфиденциального клиента с параметрами
-                  href: msal-net-instantiate-confidential-client-config-options.md
-                - name: Получение согласия для нескольких ресурсов
-                  href: msal-net-user-gets-consent-for-multiple-resources.md
-                - name: Предоставление собственного клиента HttpClient
-                  href: msal-net-provide-httpclient.md
+                - name: Веб-браузеры
+                  href: msal-net-web-browsers.md
             - name: MSAL.js
               items:
-                - name: Предотвращение перезагрузок страницы
-                  href: msal-js-avoid-page-reloads.md
-                - name: Передача пользовательского состояния в запросах на аутентификацию
-                  href: msal-js-pass-custom-state-authentication-request.md
-                - name: Поведения запроса
-                  href: msal-js-prompt-behavior.md
-            - name: MSAL для iOS и MacOS
-              items:
-                - name: Разница между MSAL для iOS и для macOS
-                  href: msal-differences-ios-macos.md
-                - name: Настройка цепочки ключей
-                  href: howto-v2-keychain-objc.md
-                - name: Настройка браузеров и веб-представлений
-                  href: customize-webviews.md
-                - name: Запрашивание пользовательских утверждений
-                  href: request-custom-claims.md
-                - name: Настройка URI перенаправления
-                  href: redirect-uris-ios.md
-            - name: MSAL для Python
-              items:
-                - name: Пользовательская сериализация кэша маркеров
-                  href: msal-python-token-cache-serialization.md
-            - name: MSAL для Java
-              items:
-                - name: Пользовательская сериализация кэша маркеров
-                  href: msal-java-token-cache-serialization.md
-                - name: Получение и удаление учетных записей из кэша маркеров
-                  href: msal-java-get-remove-accounts-token-cache.md
-        - name: Работа с Visual Studio
-          items:
-            - name: Использование подключенной службы Active Directory
-              href: vs-active-directory-add-connected-service.md
-            - name: Начало работы с проектами .NET MVC
-              href: vs-active-directory-dotnet-getting-started.md
-            - name: Что произошло с моим проектом .NET MVC?
-              href: vs-active-directory-dotnet-what-happened.md
-            - name: Начало работы с проектами веб-API
-              href: vs-active-directory-webapi-getting-started.md
-            - name: Что произошло с моим проектом веб-API?
-              href: vs-active-directory-webapi-what-happened.md
-            - name: Диагностика ошибок при проверки подлинности
-              href: vs-active-directory-error.md
-    - name: Ссылки
+                - name: Рекомендации по использованию Internet Explorer
+                  href: msal-js-use-ie-browser.md
+                - name: Известные проблемы c Internet Explorer и Microsoft Edge
+                  href: msal-js-known-issues-ie-edge-browsers.md
+                - name: Известные проблемы c Safari
+                  href: msal-js-known-issues-safari-browser.md
+            - name: Устранение неполадок с протоколом SSL (MSAL для iOS и macOS)
+              href: ssl-issues.md
+    - name: Протокол аутентификации
       items:
-        - name: Библиотеки проверки подлинности
-          displayName: MSAL
-          href: reference-v2-libraries.md
-        - name: Идентификация и доступ к API-интерфейсам в Microsoft Graph
-          href: 'https://docs.microsoft.com/graph/api/resources/azure-ad-overview?view=graph-rest-beta'
-        - name: Манифест приложения
-          href: reference-app-manifest.md
-        - name: Файл конфигурации MSAL для Android
-          href: msal-configuration.md
-        - name: Коды ошибок проверки подлинности и авторизации
-          href: reference-aadsts-error-codes.md
-        - name: Критические изменения
-          href: reference-breaking-changes.md
-- name: Версия 1.0
-  expanded: false
-  items:
-    - name: Обзор
-      href: v1-overview.md
-    - name: Краткие руководства
-      items:
-        - name: Настройка клиента
-          href: quickstart-create-new-tenant.md
-        - name: Настройка приложения
+        - name: "Типы приложений и OAuth\_2.0"
+          href: v2-app-types.md
+        - name: Протоколы OAuth 2.0 и OpenID Connect
+          href: active-directory-v2-protocols.md
+        - name: OpenID Connect
+          href: v2-protocols-oidc.md
+        - name: "Процесс предоставления неявных разрешений OAuth\_2.0"
+          href: v2-oauth2-implicit-grant-flow.md
+        - name: "Предоставление кода аутентификации OAuth\_2.0"
+          href: v2-oauth2-auth-code-flow.md
+        - name: "Поток On-Behalf-Of в OAuth\_2.0"
+          href: v2-oauth2-on-behalf-of-flow.md
+        - name: "Предоставление учетных данных клиента OAuth\_2.0"
+          href: v2-oauth2-client-creds-grant-flow.md
+        - name: "Поток кода для авторизации устройства в OAuth\_2.0"
+          href: v2-oauth2-device-code.md
+        - name: "Предоставление учетных данных владельца ресурса OAuth\_2.0"
+          href: v2-oauth-ropc.md
+        - name: "Поток утверждения носителя в OAuth\_2.0 SAML"
+          href: v2-saml-bearer-assertion.md
+        - name: Смена ключей подписывания
+          href: active-directory-signing-key-rollover.md
+        - name: Маркеры идентификации
+          href: id-tokens.md
+        - name: Маркеры доступа
+          href: access-tokens.md
+        - name: Учетные данные сертификата
+          href: active-directory-certificate-credentials.md
+        - name: "Протокол SAML\_2.0"
           items:
-            - name: Регистрация приложения
-              href: quickstart-register-app.md
-            - name: Настройка приложения для доступа к веб-API
-              href: quickstart-configure-app-access-web-apis.md
-            - name: Настройка приложения для предоставления веб-API
-              href: quickstart-configure-app-expose-web-apis.md
-            - name: 'Изменение учетных записей, поддерживаемых приложением'
-              href: quickstart-modify-supported-accounts.md
-            - name: Удаление приложения
-              href: quickstart-remove-app.md
-        - name: Одностраничные приложения
-          items:
-            - name: AngularJS
-              href: quickstart-v1-angularjs-spa.md
-            - name: JavaScript
-              href: 'https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi'
-        - name: Веб-приложения
-          items:
-            - name: ASP.NET
-              href: quickstart-v1-aspnet-webapp.md
-            - name: Java
-              href: 'https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect'
-            - name: Node.js
-              href: 'https://github.com/AzureADQuickStarts/WebApp-OpenIDConnect-NodeJS'
-            - name: Python
-              href: 'https://github.com/Azure-Samples/active-directory-python-webapp-graphapi'
-        - name: Веб-API
-          items:
-            - name: ASP.NET
-              href: quickstart-v1-dotnet-webapi.md
-            - name: Node.js
-              href: quickstart-v1-nodejs-webapi.md
-        - name: Мобильные и классические приложения
-          items:
-            - name: Android
-              href: quickstart-v1-android.md
-            - name: iOS
-              href: quickstart-v1-ios.md
-            - name: Платформа .NET для классических приложений Windows
-              href: quickstart-v1-dotnet.md
-            - name: Xamarin
-              href: quickstart-v1-xamarin.md
-        - name: Обмен между службами
-          href: quickstart-v1-dotnet.md
-        - name: Управляющие программы
-          items:
-            - name: "Консоль .NET\_Core (управляющая программа)"
-              href: quickstart-v1-netcore-daemon.md
-    - name: Примеры
-      href: sample-v1-code.md
-    - name: Основные понятия
-      items:
-        - name: "Преимущества обновления до версии\_2.0"
-          href: azure-ad-endpoint-comparison.md
-        - name: Типы приложений
-          items:
-            - name: Типы приложений
-              href: app-types.md
-            - name: Одностраничное приложение
-              href: single-page-application.md
-            - name: Веб-приложение
-              href: web-app.md
-            - name: Веб-API
-              href: web-api.md
-            - name: Классические и мобильные приложения
-              href: native-app.md
-            - name: Управляющая программа или серверное приложение
-              href: service-to-service.md
-        - name: Аутентификация
-          items:
-            - name: Основные сведения об аутентификации
-              href: v1-authentication-scenarios.md
-            - name: Протоколы OAuth 2.0 и OpenID Connect
-              items:
-                - name: OpenID Connect
-                  href: v1-protocols-openid-connect-code.md
-                - name: "Процесс предоставления неявных разрешений OAuth\_2.0"
-                  href: v1-oauth2-implicit-grant-flow.md
-                - name: "Предоставление кода аутентификации OAuth\_2.0"
-                  href: v1-protocols-oauth-code.md
-                - name: "Поток On-Behalf-Of в OAuth\_2.0"
-                  href: v1-oauth2-on-behalf-of-flow.md
-                - name: "Предоставление учетных данных клиента OAuth\_2.0"
-                  href: v1-oauth2-client-creds-grant-flow.md
-            - name: "Протокол SAML\_2.0"
-              items:
-                - name: Единый вход
-                  href: single-sign-on-saml-protocol.md
-                - name: Функция выхода
-                  href: single-sign-out-saml-protocol.md
-                - name: Как в Azure AD используется протокол SAML
-                  href: active-directory-saml-protocol-reference.md
-            - name: WS-Federation
-              items:
-                - name: Метаданные федерации
-                  href: azure-ad-federation-metadata.md
-            - name: Смена ключей подписывания
-              href: active-directory-signing-key-rollover.md
-            - name: Маркеры идентификации
-              href: id-tokens.md
-            - name: Маркеры доступа
-              href: access-tokens.md
-            - name: Учетные данные сертификата
-              href: active-directory-certificate-credentials.md
+            - name: Единый вход
+              href: single-sign-on-saml-protocol.md
+            - name: Функция выхода
+              href: single-sign-out-saml-protocol.md
+            - name: Как в Azure AD используется протокол SAML
+              href: active-directory-saml-protocol-reference.md
             - name: Токены SAML
               href: reference-saml-tokens.md
-        - name: Конфигурация приложений
-          items:
-            - name: Приложения и субъекты-службы
-              href: app-objects-and-service-principals.md
-            - name: "Добавление приложений в Azure\_AD"
-              href: active-directory-how-applications-are-added.md
-            - name: Одно- и мультитенантные приложения
-              href: single-and-multi-tenant-apps.md
-        - name: Разрешения и согласие
-          displayName: Scopes
-          items:
-            - name: Типы разрешений и согласие
-              href: v1-permissions-and-consent.md
-            - name: Платформа предоставления согласия
-              href: consent-framework.md
-            - name: Предоставление согласия для приложений
-              href: application-consent-experience.md
-        - name: Условный доступ
-          href: conditional-access-dev-guide.md
-        - name: Национальные облака
+    - name: Конфигурация приложений
+      items:
+        - name: Приложения и субъекты-службы
+          href: app-objects-and-service-principals.md
+        - name: "Добавление приложений в Azure\_AD"
+          href: active-directory-how-applications-are-added.md
+        - name: Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
+          href: reply-url.md
+        - name: Различия при проверке по поддерживаемым типам учетных записей
+          href: supported-accounts-validation.md
+        - name: Одно- и мультитенантные приложения
+          href: single-and-multi-tenant-apps.md
+    - name: Разрешения и согласие
+      displayName: Scopes
+      items:
+        - name: Типы разрешений и согласие
+          href: v2-permissions-and-consent.md
+        - name: Платформа предоставления согласия
+          href: consent-framework.md
+        - name: Согласие администратора
+          href: v2-admin-consent.md
+        - name: Предоставление согласия для приложений
+          href: application-consent-experience.md
+    - name: Национальные облака
+      items:
+        - name: Обзор
           href: authentication-national-cloud.md
-    - name: Практические руководства
-      items:
         - name: Аутентификация
-          items:
-            - name: Настройка единого входа
-              displayName: SSO
-              items:
-                - name: Включение единого входа в Android
-                  href: howto-v1-enable-sso-android.md
-                - name: Включение единого входа в iOS
-                  href: howto-v1-enable-sso-ios.md
-                - name: Отладка единого входа на основе SAML
-                  href: howto-v1-debug-saml-sso-issues.md
-            - name: Настройка утверждений
-              items:
-                - name: Настройка утверждений ролей
-                  href: active-directory-enterprise-app-role-management.md
-                - name: Настройка утверждений с помощью портала
-                  href: active-directory-saml-claims-customization.md
-                - name: Настройка утверждений с помощью PowerShell
-                  href: active-directory-claims-mapping.md
-                - name: Настройка необязательных утверждений
-                  href: active-directory-optional-claims.md
-                - name: Настройка времени существования маркеров
-                  href: active-directory-configurable-token-lifetimes.md
-            - name: Рекомендации по обработке ошибок ADAL
-              href: active-directory-devhowto-adal-error-handling.md
-        - name: Конфигурация приложений
-          items:
-            - name: Преобразование однотенантного приложения в мультитенантное
-              href: howto-convert-app-to-be-multi-tenant.md
-            - name: Создание субъекта-службы
-              items:
-                - name: Использование Azure PowerShell
-                  href: howto-authenticate-service-principal-powershell.md
-                - name: Использование портала Azure
-                  href: howto-create-service-principal-portal.md
-            - name: Ограничение набора пользователей приложения
-              href: howto-restrict-your-app-to-a-set-of-users.md
-            - name: Добавление ролей приложения
-              href: howto-add-app-roles-in-azure-ad-apps.md
-            - name: Рекомендации по фирменной символике
-              href: howto-add-branding-in-azure-ad-apps.md
-            - name: Условия предоставления услуг и заявление о конфиденциальности
-              href: howto-add-terms-of-service-privacy-statement.md
-        - name: Работа с Visual Studio
-          items:
-            - name: Использование подключенной службы Active Directory
-              href: vs-active-directory-add-connected-service.md
-            - name: Начало работы с проектами .NET MVC
-              href: vs-active-directory-dotnet-getting-started.md
-            - name: Что произошло с моим проектом .NET MVC?
-              href: vs-active-directory-dotnet-what-happened.md
-            - name: Начало работы с проектами веб-API
-              href: vs-active-directory-webapi-getting-started.md
-            - name: Что произошло с моим проектом веб-API?
-              href: vs-active-directory-webapi-what-happened.md
-            - name: Ошибка при обнаружении аутентификации
-              href: vs-active-directory-error.md
-        - name: Вывод приложения на рынок
-          items:
-            - name: Публикация в AppSource
-              href: howto-get-appsource-certified.md
-            - name: "Публикация в коллекции приложений Azure\_AD"
-              href: howto-app-gallery-listing.md
-            - name: "Публикация в службе \"Панель мониторинга продаж\" для Office\_365"
-              href: 'https://docs.microsoft.com/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store'
-        - name: Служба контроля доступа Azure
-          displayName: ACS
-          items:
-            - name: Перенос из службы контроля доступа Azure
-              href: active-directory-acs-migration.md
-            - name: Повторная активация отключенных пространств имен службы контроля доступа
-              href: howto-reactivate-disabled-acs-namespaces.md
-        - name: Использование API Graph Azure AD
-          href: active-directory-graph-api-quickstart.md
-        - name: AD FS для разработчиков
-          href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers'
-    - name: Ссылки
+          href: msal-national-cloud.md
+    - name: Автоматическая подготовка пользователей (SCIM)
       items:
-        - name: Библиотеки проверки подлинности
-          displayName: ADAL
-          href: active-directory-authentication-libraries.md
-        - name: "API Graph Azure\_AD"
-          href: active-directory-graph-api.md
-        - name: Манифест приложения
-          href: reference-app-manifest.md
-        - name: Коды ошибок проверки подлинности и авторизации
-          href: reference-aadsts-error-codes.md
-        - name: Критические изменения
-          href: reference-breaking-changes.md
+        - name: Что собой представляет автоматическая подготовка пользователей?
+          href: /azure/active-directory/manage-apps/user-provisioning
+        - name: Создание и интеграция конечной точки SCIM
+          href: /azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups
+- name: Практические руководства
+  items:
+    - name: Аутентификация
+      items:
+        - name: Настройка утверждения роли
+          href: active-directory-enterprise-app-role-management.md
+        - name: Настройка утверждений с помощью портала
+          href: active-directory-saml-claims-customization.md
+        - name: Настройка утверждений с помощью PowerShell
+          href: active-directory-claims-mapping.md
+        - name: Настройка необязательных утверждений
+          href: active-directory-optional-claims.md
+        - name: Настройка времени существования маркеров
+          href: active-directory-configurable-token-lifetimes.md
+    - name: Конфигурация приложений
+      items:
+        - name: Новое учебное руководство по регистрации приложений на портале Azure
+          href: app-registrations-training-guide-for-app-registrations-legacy-users.md
+        - name: Новый интерфейс для регистрации приложений на портале Azure
+          href: app-registration-portal-training-guide.md
+        - name: Преобразование однотенантного приложения в мультитенантное
+          href: howto-convert-app-to-be-multi-tenant.md
+        - name: Создание субъекта-службы
+          items:
+            - name: Использование Azure PowerShell
+              href: howto-authenticate-service-principal-powershell.md
+            - name: Использование портала Azure
+              href: howto-create-service-principal-portal.md
+        - name: Ограничение набора пользователей приложения
+          href: howto-restrict-your-app-to-a-set-of-users.md
+        - name: Добавление ролей приложения
+          href: howto-add-app-roles-in-azure-ad-apps.md
+        - name: Рекомендации по фирменной символике
+          href: howto-add-branding-in-azure-ad-apps.md
+        - name: Настройка домена издателя
+          href: howto-configure-publisher-domain.md
+        - name: Условия предоставления услуг и заявление о конфиденциальности
+          href: howto-add-terms-of-service-privacy-statement.md
+    - name: Использование библиотеки аутентификации Майкрософт
+      items:
+        - name: MSAL.NET
+          items:
+            - name: Получение маркера из кэша
+              href: msal-net-acquire-token-silently.md
+            - name: Сериализация кэша маркеров
+              href: msal-net-token-cache-serialization.md
+            - name: Очистка кэша маркеров
+              href: msal-net-clear-token-cache.md
+            - name: Создание экземпляра общедоступного клиентского приложения
+              href: msal-net-instantiate-public-client-config-options.md
+            - name: Создание экземпляра конфиденциального клиента с параметрами
+              href: msal-net-instantiate-confidential-client-config-options.md
+            - name: Получение согласия для нескольких ресурсов
+              href: msal-net-user-gets-consent-for-multiple-resources.md
+            - name: Предоставление собственного клиента HttpClient
+              href: msal-net-provide-httpclient.md
+        - name: MSAL.js
+          items:
+            - name: Предотвращение перезагрузок страницы
+              href: msal-js-avoid-page-reloads.md
+            - name: Передача пользовательского состояния в запросах на аутентификацию
+              href: msal-js-pass-custom-state-authentication-request.md
+            - name: Поведения запроса
+              href: msal-js-prompt-behavior.md
+        - name: MSAL для iOS и MacOS
+          items:
+            - name: Разница между MSAL для iOS и для macOS
+              href: msal-differences-ios-macos.md
+            - name: Настройка цепочки ключей
+              href: howto-v2-keychain-objc.md
+            - name: Настройка браузеров и веб-представлений
+              href: customize-webviews.md
+            - name: Запрашивание пользовательских утверждений
+              href: request-custom-claims.md
+            - name: Настройка URI перенаправления
+              href: redirect-uris-ios.md
+        - name: MSAL для Python
+          items:
+            - name: Пользовательская сериализация кэша маркеров
+              href: msal-python-token-cache-serialization.md
+        - name: MSAL для Java
+          items:
+            - name: Пользовательская сериализация кэша маркеров
+              href: msal-java-token-cache-serialization.md
+            - name: Получение и удаление учетных записей из кэша маркеров
+              href: msal-java-get-remove-accounts-token-cache.md
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы Active Directory
+          href: vs-active-directory-add-connected-service.md
+        - name: Начало работы с проектами .NET MVC
+          href: vs-active-directory-dotnet-getting-started.md
+        - name: Что произошло с моим проектом .NET MVC?
+          href: vs-active-directory-dotnet-what-happened.md
+        - name: Начало работы с проектами веб-API
+          href: vs-active-directory-webapi-getting-started.md
+        - name: Что произошло с моим проектом веб-API?
+          href: vs-active-directory-webapi-what-happened.md
+        - name: Диагностика ошибок при проверки подлинности
+          href: vs-active-directory-error.md
+- name: Ссылки
+  items:
+    - name: Библиотеки проверки подлинности
+      displayName: MSAL
+      href: reference-v2-libraries.md
+    - name: Идентификация и доступ к API-интерфейсам в Microsoft Graph
+      href: 'https://docs.microsoft.com/graph/api/resources/azure-ad-overview?view=graph-rest-beta'
+    - name: Манифест приложения
+      href: reference-app-manifest.md
+    - name: Файл конфигурации MSAL для Android
+      href: msal-configuration.md
+    - name: Коды ошибок проверки подлинности и авторизации
+      href: reference-aadsts-error-codes.md
+    - name: Критические изменения
+      href: reference-breaking-changes.md
 - name: Ресурсы
   items:
     - name: Глоссарий

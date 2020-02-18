@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: ae7c6f2d5f05b3d4ed3744be57112a62606cf622
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 5cd82635f3aec2cca251e122aadf96f70d377c8a
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75833833"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190517"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "75833833"
 ## <a name="limitations"></a>Ограничения
 
 - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-- Поддерживаются следующие серии виртуальных машин: DSv3 и ESv3. 
+- Поддерживаются следующие серии виртуальных машин: DSv3, ESv3 и серия fsv2. 
 
 ## <a name="create-a-host-group"></a>Создание группы узлов
 
@@ -56,7 +56,7 @@ $hostGroup = New-AzHostGroup `
 
 ## <a name="create-a-host"></a>Создание узла
 
-Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  В ходе предварительной версии будут поддерживаться следующие значения номера SKU узла: DSv3_Type1 и ESv3_Type1.
+Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.
 
 
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
@@ -74,7 +74,7 @@ $dHost = New-AzHost `
    -PlatformFaultDomain 1
 ```
 
-## <a name="create-a-vm"></a>Создание ВМ
+## <a name="create-a-vm"></a>Создание виртуальной машины
 
 Создайте виртуальную машину на выделенном узле. 
 
@@ -99,7 +99,7 @@ New-AzVM `
 
 ## <a name="check-the-status-of-the-host"></a>Проверка состояния узла
 
-Вы можете проверить состояние работоспособности узла и количество виртуальных машин, которые вы по-прежнему можете развернуть на [GetAzHost](/powershell/module/az.compute/get-azhost) узле с помощью с параметром `-InstanceView`.
+Вы можете проверить состояние работоспособности узла и количество виртуальных машин, которые можно развернуть на узле с помощью [жетазост](/powershell/module/az.compute/get-azhost) с параметром `-InstanceView`.
 
 ```
 Get-AzHost `
@@ -199,7 +199,7 @@ Remove-AzResourceGroup -Name $rgName
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)приведен пример шаблона, который использует зоны и домены сбоя для максимальной устойчивости в регионе.
 

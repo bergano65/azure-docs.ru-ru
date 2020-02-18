@@ -1,19 +1,19 @@
 ---
 title: Основные понятия служб погоды | Карты Microsoft Azure
 description: В этой статье вы узнаете о концепциях, которые относятся к Microsoft Azureным службам погоды.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: bcf100236d4a2a707a007a24e9e51105cc9ca0ac
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: af7ea5c6e9d09b05b2f9271d6954162c0fd429c6
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76991397"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208732"
 ---
 # <a name="weather-services-in-azure-maps"></a>Службы погоды в Azure Maps
 
@@ -23,11 +23,11 @@ ms.locfileid: "76991397"
 
 Некоторые API-интерфейсы службы погоды позволяют пользователю указать, должны ли данные возвращаться в метрике или в германской единицах. Возвращаемые ответы для этих API включают единицах UnitType и числовое значение, которое можно использовать для переводов единиц. Чтобы интерпретировать эти значения, см. таблицу ниже.
 
-|Единицах UnitType|Description         |
+|Единицах UnitType|Описание         |
 |--------|--------------------|
 |0       |футах                |
 |1       |ражают              |
-|2       |километров               |
+|2       |км               |
 |3       |миллиметр          |
 |4       |сантиметр          |
 |5       |хода               |
@@ -45,7 +45,7 @@ ms.locfileid: "76991397"
 |17      |Цельсия             |
 |18      |Фаренгейта          |
 |19      |Кельвина              |
-|20      |абсолютно             |
+|20      |percent             |
 |21      |FLOAT               |
 |22      |integer             |
 
@@ -54,7 +54,7 @@ ms.locfileid: "76991397"
 
 Некоторые API службы погоды возвращают `iconCode` в ответе. `iconCode` является числовым значением, используемым для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
 
-| Номер значка |Значок| День | Ночной | Текст |
+| Номер значка |Значок| День | Ночной | Text |
 |-------------|:----:|-----|-------|------|
 | 1           |![](./media/weather-services-concepts/sunny-i.png)                      | Да |  Нет    | Солнечно|
 | 2           |![](./media/weather-services-concepts/mostly-sunny.png)                | Да |  Нет    | В основном Sunny|
@@ -71,7 +71,7 @@ ms.locfileid: "76991397"
 | 15           |![](./media/weather-services-concepts/tstorms-i.png)                   | Да |  Да   | сундерстормс|
 | 16           |![](./media/weather-services-concepts/mostly-cloudy-tstorms.png)       | Да |  Нет    | В основном облачное с Сундерстормс|
 | 17           |![](./media/weather-services-concepts/partly-sunny-tstorms.png)        | Да |  Нет    | Частично Sunny с Сундерстормс|
-| 18           |![](./media/weather-services-concepts/rain-i.png)                      | Да |  Да   | дождь.|
+| 18           |![](./media/weather-services-concepts/rain-i.png)                      | Да |  Да   | Дождя|
 | 19           |![](./media/weather-services-concepts/flurries-i.png)                  | Да |  Да   | флурриес|
 | 20           |![](./media/weather-services-concepts/mostly-cloudy-flurries.png)      | Да |  Нет    | В основном облачное с Флурриес|
 | 21           |![](./media/weather-services-concepts/partly-sunny-flurries.png)       | Да |  Нет    | Частично Sunny с Флурриес|
@@ -81,8 +81,8 @@ ms.locfileid: "76991397"
 | 25           |![](./media/weather-services-concepts/sleet-i.png)                     | Да |  Да   | слит|
 | 26           |![](./media/weather-services-concepts/freezing-rain.png)              | Да |  Да   | Замораживание дождя|
 | 29           |![](./media/weather-services-concepts/rain-snow.png)                  | Да |  Да   | Дождя и снег|
-| 30           |![](./media/weather-services-concepts/hot-i.png)                       | Да |  Да   | Горячий|
-| 31           |![](./media/weather-services-concepts/cold-i.png)                      | Да |  Да   | Холодный|
+| 30           |![](./media/weather-services-concepts/hot-i.png)                       | Да |  Да   | Высокий|
+| 31           |![](./media/weather-services-concepts/cold-i.png)                      | Да |  Да   | Низкий|
 | 32           |![](./media/weather-services-concepts/windy-i.png)                     | Да |  Да   | Ветрено|
 | 33           |![](./media/weather-services-concepts/clear-night.png)                | Нет  |  Да   | Очистить|
 | 34           |![](./media/weather-services-concepts/mostly-clear-night.png)          | Нет  |  Да   | В основном ясно|

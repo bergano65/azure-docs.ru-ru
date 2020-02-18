@@ -1,9 +1,9 @@
 ---
-title: Руководство по настройке приоритетной маршрутизации трафика с помощью диспетчера трафика Azure
-description: В этом учебнике объясняется, как настроить метод маршрутизации трафика по приоритету в диспетчере трафика.
+title: Руководство. Настройка метода маршрутизации трафика по приоритету с помощью Диспетчера трафика Azure
+description: В этом руководстве объясняется, как настроить метод маршрутизации трафика по приоритету с помощью Диспетчера трафика.
 services: traffic-manager
 documentationcenter: ''
-author: asudbring
+author: rohinkoul
 manager: kumudD
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,15 +11,15 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/20/2017
-ms.author: allensu
-ms.openlocfilehash: d5d58ec39841274b78ababf9f73f00a262cc37be
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.author: rohink
+ms.openlocfilehash: ca223a19ff7ddeae95878f941f3cf295664e62b4
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420303"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938729"
 ---
-# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Учебник. Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
+# <a name="tutorial-configure-priority-traffic-routing-method-in-traffic-manager"></a>Руководство. Настройка метода маршрутизации трафика по приоритету в диспетчере трафика
 
 Независимо от режима веб-сайта веб-сайты Azure уже обеспечивают отработку отказов для веб-сайтов в центре данных (регионе). Диспетчер трафика обеспечивает отработку отказа для веб-сайтов в различных центрах данных.
 
@@ -49,7 +49,7 @@ ms.locfileid: "74420303"
 
 ![Настройка метода маршрутизации трафика по приоритету с помощью диспетчера трафика][1]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).

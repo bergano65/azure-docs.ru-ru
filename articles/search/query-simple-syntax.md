@@ -1,5 +1,5 @@
 ---
-title: Синтаксис простых запросов
+title: Простой синтаксис запросов
 titleSuffix: Azure Cognitive Search
 description: Справочник по синтаксису простого запроса, который используется для запросов полнотекстового поиска в Когнитивный поиск Azure.
 manager: nitinme
@@ -7,7 +7,7 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 02/10/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,19 +19,21 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: fb98be9975de38ec9f65e723e078a1db8755b4ed
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: fc1eb1836badc3ced688750bbc7c7a164773d022
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792555"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152675"
 ---
 # <a name="simple-query-syntax-in-azure-cognitive-search"></a>Простой синтаксис запросов в Azure Когнитивный поиск
 
 Когнитивный поиск Azure реализует два языка запросов на основе Lucene: [простое средство синтаксического анализа запросов](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/simple/SimpleQueryParser.html) и [средство синтаксического анализа запросов Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html). В Когнитивный поиск Azure простой синтаксис запроса исключает параметры нечеткого/слоп.  
 
-> [!NOTE]  
->  Azure Когнитивный поиск предоставляет альтернативный [синтаксис запроса Lucene](query-lucene-syntax.md) для более сложных запросов. Дополнительные сведения об архитектуре анализа запросов и преимуществах каждого синтаксиса см. [в статье работа полнотекстового поиска в Azure когнитивный Поиск](search-lucene-query-architecture.md).
+> [!NOTE]
+> Простой синтаксис запросов используется для выражений запросов, передаваемых в параметре **поиска** API [поисковых документов](https://docs.microsoft.com/rest/api/searchservice/search-documents) , не путать с [синтаксисом OData](query-odata-filter-orderby-syntax.md) , используемым для параметра [$Filter](search-filters.md) этого API. Эти разные синтаксисы имеют собственные правила для построения запросов, экранирования строк и т. д.
+>
+> Когнитивный поиск Azure предоставляет альтернативный [полный синтаксис запроса Lucene](query-lucene-syntax.md) для более сложных запросов в параметре **поиска** . Дополнительные сведения об архитектуре анализа запросов и преимуществах каждого синтаксиса см. [в статье работа полнотекстового поиска в Azure когнитивный Поиск](search-lucene-query-architecture.md).
 
 ## <a name="how-to-invoke-simple-parsing"></a>Вызов простого синтаксического анализа
 
@@ -88,7 +90,7 @@ ms.locfileid: "72792555"
 > [!NOTE]  
 >  Хотя экранирование сохраняет токены вместе, при анализе текста они могут разделяться в зависимости от режима анализа. Дополнительные сведения см. в разделе [Поддержка &#40;языков&#41; REST API когнитивный Поиск Azure](index-add-language-analyzers.md) .  
 
-## <a name="see-also"></a>Дополнительные материалы  
+## <a name="see-also"></a>См. также раздел  
 
 + [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) 
 + [Синтаксис запросов Lucene](query-lucene-syntax.md)

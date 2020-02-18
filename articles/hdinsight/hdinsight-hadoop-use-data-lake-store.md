@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 23c292a950deea262ee063b4141b07a4f64f9f84
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.custom: hdinsightactive,hdiseo17may2017
+ms.date: 02/05/2020
+ms.openlocfilehash: c67fb21783a926f813d165528520b9d088154412
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77061334"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162418"
 ---
 # <a name="use-data-lake-storage-gen1-with-azure-hdinsight-clusters"></a>Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight
 
@@ -130,6 +130,8 @@ Data Lake Storage 1-го поколения можно использоват�
 
 > [!NOTE]  
 > Если вы собираетесь добавить Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища для кластера HDInsight, мы настоятельно рекомендуем сделать это во время создания кластера, как описано в этой статье. Сценарий с добавлением Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища для существующего кластера HDInsight не поддерживается.
+
+Дополнительные сведения об основах модели управления доступом для Data Lake Storage 1-го поколения см. [в разделе Контроль доступа в Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-access-control.md).
 
 ## <a name="access-files-from-the-cluster"></a>Доступ к файлам из кластера
 

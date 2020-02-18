@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 0c145c84f9dea3b6212bb6c608eb1a4eb586ff60
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 109bffe7b5ab9bb322c4ddb2f7b8ec4ac87a54cc
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77056824"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168339"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-powershell"></a>Перенос ресурсов IaaS из классической модели в Azure Resource Manager с помощью PowerShell
 Ниже последовательно описано, как использовать команды Azure PowerShell для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -52,8 +52,6 @@ ms.locfileid: "77056824"
 Есть два основных способа установки Azure PowerShell — с помощью [коллекции PowerShell](https://www.powershellgallery.com/profiles/azure-sdk/) и [установщика веб-платформы (WebPI)](https://aka.ms/webpi-azps). Обновления для установщика веб-платформы выпускаются ежемесячно. Обновления для коллекции PowerShell выпускаются на постоянной основе. В этой статье используется Azure PowerShell 2.1.0.
 
 Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
-
-<br>
 
 ## <a name="step-3-ensure-that-youre-an-administrator-for-the-subscription"></a>Шаг 3. Убедитесь, что вы являетесь администратором подписки.
 Чтобы выполнить эту миграцию, необходимо добавить учетную запись соадминистратора для подписки в [портал Azure](https://portal.azure.com).
@@ -104,6 +102,14 @@ ms.locfileid: "77056824"
 
 Убедитесь, что RegistrationState имеет значение `Registered` , прежде чем продолжить.
 
+Перед переключением на классическую модель развертывания убедитесь в наличии достаточного Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#managing-limits).
+
+В этом примере проверяется доступность в регионе **Западная часть США**. Замените регион в примере своим собственным значением.
+
+```powershell
+    Get-AzVMUsage -Location "West US"
+```
+
 Теперь войдите в свою учетную запись для классической модели развертывания.
 
 ```powershell
@@ -122,27 +128,17 @@ ms.locfileid: "77056824"
     Select-AzureSubscription –SubscriptionName "My Azure Subscription"
 ```
 
-<br>
 
-## <a name="step-5-have-enough-resource-manager-vm-vcpus"></a>Шаг 5. достаточно диспетчер ресурсов виртуальной машины виртуальных ЦП
-Убедитесь, что у вас достаточно Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#limits-and-azure-resource-manager).
-
-В этом примере проверяется доступность в регионе **Западная часть США**. Замените регион в примере своим собственным значением.
-
-```powershell
-Get-AzVMUsage -Location "West US"
-```
-
-## <a name="step-6-run-commands-to-migrate-your-iaas-resources"></a>Шаг 6. Выполнение команд для переноса ресурсов IaaS
-* [Перенос виртуальных машин в облачную службу (не в виртуальной сети)](#step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network)
-* [Перенос виртуальных машин в виртуальную сеть](#step-61-option-2---migrate-virtual-machines-in-a-virtual-network).
-* [Перенос учетной записи хранения](#step-62-migrate-a-storage-account)
+## <a name="step-5-run-commands-to-migrate-your-iaas-resources"></a>Шаг 5. Выполнение команд для переноса ресурсов IaaS
+* [Перенос виртуальных машин в облачную службу (не в виртуальной сети)](#step-51-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network)
+* [Перенос виртуальных машин в виртуальную сеть](#step-51-option-2---migrate-virtual-machines-in-a-virtual-network).
+* [Перенос учетной записи хранения](#step-52-migrate-a-storage-account)
 
 > [!NOTE]
 > Все операции, описанные здесь, являются идемпотентными. Если вы столкнетесь с какой-либо проблемой, не связанной с неподдерживаемой функцией или ошибкой конфигурации, мы рекомендуем повторить подготовку, прервать или зафиксировать текущую операцию. Платформа попытается повторить это действие.
 
 
-### <a name="step-61-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network"></a>Шаг. 6.1. Вариант 1. Миграция виртуальных машин в облачную службу (не в виртуальную сеть)
+### <a name="step-51-option-1---migrate-virtual-machines-in-a-cloud-service-not-in-a-virtual-network"></a>Шаг 5,1. вариант 1. Перенос виртуальных машин в облачной службе (не в виртуальной сети)
 Получите список облачных служб с помощью следующей команды. Затем выберите облачную службу, которую требуется перенести. Если виртуальные машины в облачной службе размещены в виртуальной сети или им назначены веб-роли или рабочие роли, то команда возвращает сообщение об ошибке.
 
 ```powershell
@@ -223,7 +219,7 @@ Get-AzVMUsage -Location "West US"
     Move-AzureService -Commit -ServiceName $serviceName -DeploymentName $deploymentName
 ```
 
-### <a name="step-61-option-2---migrate-virtual-machines-in-a-virtual-network"></a>Шаг 6.1. Вариант 2. Миграция виртуальных машин в виртуальной сети
+### <a name="step-51-option-2---migrate-virtual-machines-in-a-virtual-network"></a>Шаг 5,1. вариант 2. Миграция виртуальных машин в виртуальной сети
 
 Для миграции виртуальных машин в виртуальной сети переносится сама виртуальная сеть. Виртуальные машины автоматически переносятся вместе с ней. Выберите виртуальную сеть, в которую будете переносить ресурсы.
 > [!NOTE]
@@ -266,7 +262,7 @@ Get-AzVMUsage -Location "West US"
     Move-AzureVirtualNetwork -Commit -VirtualNetworkName $vnetName
 ```
 
-### <a name="step-62-migrate-a-storage-account"></a>Шаг 6,2. Миграция учетной записи хранения
+### <a name="step-52-migrate-a-storage-account"></a>Шаг 5,2. Миграция учетной записи хранения
 После завершения миграции виртуальных машин выполните следующие проверки готовности перед переносом учетных записей хранения.
 
 > [!NOTE]

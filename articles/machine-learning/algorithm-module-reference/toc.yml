@@ -26,6 +26,8 @@
       href: convert-to-csv.md
     - name: Преобразование в набор данных
       href: convert-to-dataset.md
+    - name: Преобразование в значения индикатора
+      href: convert-to-indicator-values.md
     - name: Очистка недостающих данных
       href: clean-missing-data.md
     - name: Правка метаданных
@@ -70,7 +72,7 @@
       items:
         - name: Кластеризация методом K-средних
           href: k-means-clustering.md
-    - name: классификация;
+    - name: Классификация
       items:
         - name: Мультиклассовое увеличивающееся дерево принятия решений
           href: multiclass-boosted-decision-tree.md
@@ -132,7 +134,7 @@
       href: feature-hashing.md
     - name: Preprocess Text
       href: preprocess-text.md
-- name: Рекомендации
+- name: Рекомендация
   items:
     - name: Оценка рекомендателя
       href: evaluate-recommender.md

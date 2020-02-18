@@ -11,22 +11,22 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9338c1a42737180ec5395f30060b4eed35ce5eda
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: be447b001b0b2e14999aac98ba2125f8cbfe9853
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74381073"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186608"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса с помощью условного доступа Azure Active Directory  
 
-Чтобы обеспечить защиту среды, может потребоваться блокировка входа подозрительных пользователей в систему. [Azure Active Directory (Azure AD) Identity Protection](../active-directory-identityprotection.md) анализирует каждый вход в систему и вычисляет вероятность того, что попытка входа не была выполнена законным владельцем учетной записи пользователя. Вероятность (низкая, средняя, высокая) указывается в виде вычисляемого значения, называемого [уровни риска при входе](conditions.md#sign-in-risk). Задавая условие риска при входе, можно настроить политику условного доступа так, что она будет реагировать на определенные уровни риска при входе в систему.
+Чтобы обеспечить защиту среды, может потребоваться блокировка входа подозрительных пользователей в систему. [Azure Active Directory (Azure AD) Identity Protection](../active-directory-identityprotection.md) анализирует каждый вход в систему и вычисляет вероятность того, что попытка входа не была выполнена законным владельцем учетной записи пользователя. Вероятность (низкая, средняя, высокая) указывается в виде вычисляемого значения, называемого [уровни риска при входе](concept-conditional-access-conditions.md#sign-in-risk). Задавая условие риска при входе, можно настроить политику условного доступа так, что она будет реагировать на определенные уровни риска при входе в систему.
 
 В этом учебнике показано, как настроить [политику условного доступа](../active-directory-conditional-access-azure-portal.md), чтобы блокировать вход в систему при обнаружении настроенного уровня риска при входе в систему.
 
 ![Создание политики](./media/app-sign-in-risk/1000.png)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -57,7 +57,7 @@ ms.locfileid: "74381073"
 | Пользователи и группы | Alain Charon  |
 | Облачные приложения | Все облачные приложения |
 | Риск при входе | Средний |
-| Предоставление доступа | Заблокировать доступ |
+| Предоставить | Заблокировать доступ |
 
 ![Создание политики](./media/app-sign-in-risk/130.png)
 
@@ -74,11 +74,11 @@ ms.locfileid: "74381073"
 
 1. На странице **Условный доступ** на панели инструментов сверху нажмите кнопку **Добавить**.
 
-   ![ИМЯ](./media/app-sign-in-risk/108.png)
+   ![Имя](./media/app-sign-in-risk/108.png)
 
 1. На странице **Создать** в поле **Имя** введите **Блокировать доступ для среднего уровня риска**.
 
-   ![ИМЯ](./media/app-sign-in-risk/104.png)
+   ![Имя](./media/app-sign-in-risk/104.png)
 
 1. В разделе **Назначение** щелкните **Пользователи и группы**.
 
@@ -174,7 +174,7 @@ ms.locfileid: "74381073"
 
 - Инструкции по удалению обозревателя Tor см. в разделе [Uninstalling](https://tb-manual.torproject.org/uninstalling/) (Удаление).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Обеспечение принятия условий использования](require-tou.md)

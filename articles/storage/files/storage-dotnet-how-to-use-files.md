@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: dfb1d71a02ae3bf06a5f2d8a93bcb3ac83433a86
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 361ee5179b20d9488bb477a4e3c9fc0f0e6f266e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460362"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190664"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -36,10 +36,10 @@ ms.locfileid: "75460362"
 
 Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET API-интерфейсы `System.IO` и `WindowsAzure.Storage` абстрактно представляют эти подходы.
 
-API | Сценарии использования | Примечания
+API | Назначение | Примечания
 ----|-------------|------
 [System.IO](https://docs.microsoft.com/dotnet/api/system.io) | Требования вашего приложения: <ul><li>Требуется чтение и запись файлов с помощью SMB</li><li>выполнение на устройстве, которое получает доступ к учетной записи службы файлов Azure через порт 445;</li><li>не требуется управлять параметрами администрирования общей папки.</li></ul> | Файловый ввод-вывод, реализованный в службе файлов Azure по протоколу SMB, обычно аналогичен вводу-выводу с любым сетевым файловым ресурсом или локальным устройством хранения. Общие сведения о ряде функций .NET, включая ввод-вывод файлов, см. в руководстве по [консольному приложению](https://docs.microsoft.com/dotnet/csharp/tutorials/console-teleprompter) .
-[Microsoft. Azure. Storage. File](https://docs.microsoft.com/dotnet/api/overview/azure/storage#client-library) | Требования вашего приложения: <ul><li>Не удается получить доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета.</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье показано использование `Microsoft.Azure.Storage.File` для файлового ввода-вывода с помощью функции RESTFUL вместо протокола SMB и управления файловым ресурсом.
+[Microsoft. Azure. Storage. File](/dotnet/api/overview/azure/storage?view=azure-dotnet#version-11x) | Требования вашего приложения: <ul><li>Не удается получить доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета.</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье показано использование `Microsoft.Azure.Storage.File` для файлового ввода-вывода с помощью функции RESTFUL вместо протокола SMB и управления файловым ресурсом.
 
 ## <a name="create-the-console-application-and-obtain-the-assembly"></a>Создание консольного приложения и получение сборки
 
@@ -480,7 +480,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о службе файлов Azure см. в следующих ресурсах:
 
@@ -495,9 +495,9 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 * [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
 * [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
-### <a name="reference"></a>Справочные материалы
+### <a name="reference"></a>Ссылки
 
-* [API-интерфейсы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
+* [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
 * [File Service REST API](/rest/api/storageservices/File-Service-REST-API) (API-интерфейс REST файловой службы)
 
 ### <a name="blog-posts"></a>Записи блога

@@ -3,7 +3,7 @@ title: Документация по Распознаванию речи (LUIS)
 summary: Узнайте, как с помощью службы "Распознавание речи" приложения могут распознавать желания людей, исходя из их слов.
 metadata:
   ms.topic: landing-page
-  ms.date: 11/22/2019
+  ms.date: 02/11/2020
   ms.author: nitinme
   author: nitinme
   ms.service: cognitive-services
@@ -12,12 +12,12 @@ metadata:
   title: Документация по Распознаванию речи (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
-  ms.openlocfilehash: f45461b49b51d6d25464ffa7d2084b1bbb1f9e0e
-  ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+  ms.openlocfilehash: 1d9b17bcf6817d3c94d191d54be26ce0ff1f14c2
+  ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/17/2020
-  ms.locfileid: "76169659"
+  ms.lasthandoff: 02/11/2020
+  ms.locfileid: "77137336"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)
   linkLists:
@@ -39,8 +39,8 @@ landingContent:
       url: whats-new.md
   - linkListType: video
     links:
-    - text: 'Презентация решений для ИИ: LUIS'
-      url: https://azure.microsoft.com/resources/videos/whats-new-with-language-understanding-service-luis
+    - text: 'Ignite 2019: сложные модели распознавания естественного языка (NLU) с использованием LUIS'
+      url: https://www.youtube.com/watch?v=JdJEV2jV0_Y
 - title: Создание намерений, сущностей и признаков
   linkLists:
   - linkListType: concept

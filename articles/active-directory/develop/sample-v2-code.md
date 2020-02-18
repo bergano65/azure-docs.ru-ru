@@ -17,12 +17,12 @@ ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 3c77b74eb97f03b1234cb2735b4a680b030d2073
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: 0282336cb5df7d010571a15e9d1f9d93b82d461e
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77108195"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160328"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода платформы удостоверений Microsoft Identity (версия 2.0, конечная точка)
 
@@ -34,7 +34,7 @@ ms.locfileid: "77108195"
 В этой статье кратко описаны ссылки на примеры для конечной точки платформы идентификации Майкрософт. В этих примерах показано, как это делается, а также приведены фрагменты кода, которые можно использовать в приложениях. На странице образец кода вы найдете подробные разделы readme, которые помогут в требованиях, установке и настройке. Комментарии в коде помогают понять критически важные разделы.
 
 > [!NOTE]
-> Если вы заинтересованы в примерах версии 1.0, ознакомьтесь с [примерами кода Azure AD (конечная точка версии 1.0)](sample-v1-code.md).
+> Если вы заинтересованы в примерах версии 1.0, ознакомьтесь с [примерами кода Azure AD (конечная точка версии 1.0)](../azuread-dev/sample-v1-code.md).
 
 Основные сведения о базовом сценарии для каждого типа выборки см. в разделе [типы приложений для конечной точки платформы Microsoft Identity](v2-app-types.md).
 
@@ -132,6 +132,6 @@ ms.locfileid: "77108195"
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Azure Active Directory (версия 1.0): руководством разработчика](v1-overview.md)
+- [Azure Active Directory (версия 1.0): руководством разработчика](../azuread-dev/v1-overview.md)
 - [Основные понятия и справочные материалы по Azure AD API Graph](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 - [Библиотека вспомогательных методов для Azure AD Graph API](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)

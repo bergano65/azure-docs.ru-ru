@@ -6,29 +6,29 @@ author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.author: mhopkins
-ms.date: 08/29/2019
+ms.date: 01/24/2020
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 7d481b115650c72df95f7516bb3b39411201bf83
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 257af309ebdb9080c3cd60b8b89a2c992ecf5145
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75862906"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906507"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
-# <a name="quickstart-upload-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascripthtml-in-the-browser"></a>Краткое руководство. Передача, вывод списка и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript и HTML в браузере
+# <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-browser"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в браузере
 
-Из этого краткого руководства вы узнаете, как использовать библиотеку [пакета SDK службы хранилища Azure версии 10 для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob#readme) для управления большими двоичными объектами из кода JavaScript, полностью выполняемого в браузере. Этот подход позволяет реализовать требуемые меры безопасности, чтобы обеспечить безопасный доступ к вашей учетной записи хранилища больших двоичных объектов.
+Из этого краткого руководства вы узнаете, как управлять большими двоичными объектами с помощью кода JavaScript, который полностью выполняется в браузере. Большие двоичные объекты — это объекты, которые могут содержать большие объемы текстовых или двоичных данных, включая изображения, документы, потоковое мультимедиа и архивные данные. Вы узнаете, как использовать требуемые меры безопасности, чтобы обеспечить защищенный доступ к вашей учетной записи хранилища больших двоичных объектов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
-
-Клиентские библиотеки JavaScript для службы хранилища Azure не работают непосредственно из файловой системы и должны обрабатываться с веб-сервера. В этом разделе для запуска базового сервера используется [Node.js](https://nodejs.org). Если вы предпочтете не устанавливать Node.js, то вы можете использовать любые другие средства запуска локального веб-сервера.
-
-Чтобы выполнить действия по отладке, вам потребуется [Visual Studio Code](https://code.visualstudio.com) и либо расширение [Debugger for Chrome](vscode:extension/msjsdiag.debugger-for-chrome), либо расширение [Debugger for Microsoft Edge](vscode:extension/msjsdiag.debugger-for-edge).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- Учетная запись хранения Azure. [Создание учетной записи хранения](../common/storage-account-create.md).
+- Локальный веб-сервер. В примере из этой статьи для открытия основного сервера используется [Node.js](https://nodejs.org).
+- [Visual Studio Code](https://code.visualstudio.com).
+- Расширение VS Code для отладки в браузере, например [отладчик для Chrome](vscode:extension/msjsdiag.debugger-for-chrome) или [отладчик для Microsoft Edge](vscode:extension/msjsdiag.debugger-for-edge).
 
 ## <a name="setting-up-storage-account-cors-rules"></a>Настройка учетных записей хранения CORS
 
@@ -40,7 +40,7 @@ ms.locfileid: "75862906"
 
 В следующей таблице описывается каждый параметр CORS и объясняются значения, используемые для определения правила.
 
-|Параметр  |Значение  | Description |
+|Параметр  |Значение  | Описание |
 |---------|---------|---------|
 | Разрешенные источники | * | Принимает список доменов, разделенных запятыми, как допустимые источники. При установке значения `*` разрешает всем доменам получать доступ к учетной записи хранения. |
 | Допустимые команды     | DELETE, GET, HEAD, MERGE, POST, OPTIONS и PUT | Список HTTP-команд, которые можно выполнять в учетной записи хранения. В этом руководстве установите все доступные параметры. |
@@ -61,7 +61,7 @@ ms.locfileid: "75862906"
 
 Можно создать подписанный URL-адрес с помощью Azure CLI с использованием Azure Cloud Shell или с помощью портала Azure либо Обозревателя службы хранилища Azure. В таблице ниже описаны параметры, для которых необходимо указать значения, чтобы создать подписанный URL-адрес с помощью интерфейса командной строки.
 
-| Параметр      |Description  | Заполнитель |
+| Параметр      |Описание  | Заполнитель |
 |----------------|-------------|-------------|
 | *expiry*       | Дата окончания срока действия маркера доступа в формате ГГГГ-ММ-ДД. Введите завтрашнюю дату для использования в этом руководстве. | *FUTURE_DATE* |
 | *account-name* | имя учетной записи хранения. Используйте имя из предыдущего шага. | *YOUR_STORAGE_ACCOUNT_NAME* |
@@ -81,7 +81,7 @@ az storage account generate-sas \
 
 Ряд значений после некоторых параметров могут показаться немного странными. Эти значения параметров берутся из первой буквы соответствующего разрешения. В следующей таблице поясняется, откуда берутся значения:
 
-| Параметр        | Значение   | Description  |
+| Параметр        | Значение   | Описание  |
 |------------------|---------|---------|
 | *разрешения*    | racwdl  | Этот SAS позволяет выполнять *чтение*, *добавление*, *создание*, *запись*, *удаление* и *перечисление*. |
 | *resource-types* | SCO     | SAS влияет на такие ресурсы, как *службы*, *контейнеры* и *объекты*. |

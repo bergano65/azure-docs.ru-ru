@@ -1,20 +1,20 @@
 ---
 title: Добавление слоя объема фигуры в карту | Карты Microsoft Azure
 description: Добавление слоя объемной фигуры в веб-пакет SDK Microsoft Azure Maps.
-author: walsehgal
-ms.author: v-musehg
+author: farah-alyasari
+ms.author: v-faalya
 ms.date: 10/08/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: f01e07ea2bbfd0f6b3b0cc19dd219d71984a0d45
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 38a7e6c5f4c139343e735ae82616c11a224ae7ca
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988572"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209687"
 ---
 # <a name="add-a-polygon-extrusion-layer-to-the-map"></a>Добавление слоя объема фигуры многоугольника к карте
 
@@ -45,7 +45,7 @@ ms.locfileid: "76988572"
 
 ## <a name="add-a-circle-to-the-map"></a>Добавление окружности к карте
 
-Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг можно визуализировать на карте, создав `point`ную функцию со свойством `subType` `Circle` и числовым свойством `Radius`, представляющим радиус в **метрах**. Пример.
+Azure Maps использует расширенную версию схемы геоjson, которая предоставляет определение для кругов, как указано [здесь](https://docs.microsoft.com/azure/azure-maps/extend-geojson#circle). Вытянутый круг можно визуализировать на карте, создав `point`ную функцию со свойством `subType` `Circle` и числовым свойством `Radius`, представляющим радиус в **метрах**. Например:
 
 ```Javascript
 {
@@ -78,7 +78,7 @@ Azure Maps веб-пакет SDK преобразует эти `Point` функ�
 <iframe height='700' scrolling='no' title='пугбрж' src='//codepen.io/azuremaps/embed/PoogBRJ/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>См. <a href='https://codepen.io/azuremaps/pen/PoogBRJ/'>Пугбрж</a> пера by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
