@@ -39,6 +39,12 @@
       href: virtual-network-disaster-recovery-guidance.md
     - name: Соединение
       items:
+        - name: NAT
+          items:
+            - name: Обзор
+              href: nat-overview.md
+            - name: Ресурс
+              href: nat-gateway-resource.md
         - name: Взаимодействие компонентов при подключении к серверной части
           items:
             - name: Вводная часть и сведения о настройке теста
@@ -67,7 +73,7 @@
           href: ipv6-overview.md
         - name: Префикс общедоступного IP версии 6
           href: ipv6-public-ip-address-prefix.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Защита от атак DDoS
           href: ddos-protection-overview.md
@@ -111,6 +117,20 @@
           href: virtual-network-nsg-manage-log.md
     - name: Соединение
       items:
+        - name: NAT
+          items:
+            - name: "Создание шлюза NAT\_— портал"
+              href: quickstart-create-nat-gateway-portal.md
+            - name: "Создание шлюза NAT\_— PowerShell"
+              href: quickstart-create-nat-gateway-powershell.md
+            - name: "Создание шлюза NAT\_— CLI"
+              href: quickstart-create-nat-gateway-cli.md
+            - name: "Создание и проверка шлюза NAT\_— портал"
+              href: tutorial-create-validate-nat-gateway-portal.md
+            - name: "Создание и проверка шлюза NAT\_— PowerShell"
+              href: tutorial-create-validate-nat-gateway-powershell.md
+            - name: "Создание и проверка шлюза NAT\_— CLI"
+              href: tutorial-create-validate-nat-gateway-cli.md
         - name: Управление сетевыми картами
           href: virtual-network-network-interface.md
         - name: Управление виртуальной сетью
@@ -191,7 +211,7 @@
               href: manage-public-ip-address-prefix.md
             - name: Создание и удаление IP-адресов в сетевых картах
               href: virtual-network-network-interface-addresses.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Управление защитой от атак DDoS
           href: manage-ddos-protection.md

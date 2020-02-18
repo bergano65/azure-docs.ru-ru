@@ -95,8 +95,6 @@
           href: concepts-data-access-security-private-link.md
         - name: Шифрование данных
           href: concepts-data-encryption-mysql.md
-        - name: Шифрование данных
-          href: concepts-data-encryption-mysql.md
         - name: "Аутентификация Azure\_AD"
           href: concepts-azure-ad-authentication.md
     - name: Непрерывность бизнес-процессов
@@ -222,6 +220,8 @@
           href: howto-troubleshoot-query-performance.md
         - name: Как использовать представления в схеме sys
           href: howto-troubleshoot-sys-schema.md
+        - name: Устранение неполадок с шифрованием данных
+          href: howto-data-encryption-troubleshoot.md
     - name: Расширенная защита от угроз
       items:
         - name: Портал Azure

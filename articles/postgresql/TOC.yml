@@ -245,6 +245,8 @@
           items:
             - name: Устранение ошибок подключения
               href: howto-troubleshoot-common-connection-issues.md
+            - name: Устранение неполадок с шифрованием данных
+              href: howto-data-encryption-troubleshoot.md
         - name: Расширенная защита от угроз
           items:
             - name: Портал Azure

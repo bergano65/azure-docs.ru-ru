@@ -32,6 +32,10 @@
         - name: Общие сведения о приеме данных
           displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
           href: ingest-data-overview.md
+    - name: Язык запросов Kusto
+      items:
+        - name: Краткое справочное руководство
+          href: kql-quick-reference.md
     - name: Обзор визуализации данных
       href: viz-overview.md
     - name: Общие сведения о безопасности

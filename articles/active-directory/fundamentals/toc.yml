@@ -19,7 +19,7 @@
   items:
     - name: Оценка безопасности удостоверений
       href: identity-secure-score.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Включение MFA
           href: concept-fundamentals-mfa-get-started.md
@@ -39,8 +39,8 @@
       href: active-directory-deployment-checklist-p2.md
     - name: Хранилище данных удостоверений для ЕС
       href: active-directory-data-storage-eu.md
-    - name: Хранилище данных удостоверений для Австралии
-      href: active-directory-data-storage-australia.md
+    - name: Хранилище данных удостоверений для Австралии и Новой Зеландии
+      href: active-directory-data-storage-australia-newzealand.md
     - name: "Новые возможности Microsoft\_365 для государственных организаций"
       href: whats-new-microsoft-365-government.md
     - name: Справочник по операциям Azure AD

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/13/2020
+ms.date: 02/17/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1734b063530f9e8a8f0429111c4c39d628bfad4e
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 4434c877f69391f5dc5926c6aed07049ba46b7b7
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251776"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425652"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -46,16 +46,16 @@ ms.locfileid: "77251776"
 
 ### <a name="culture"></a>Язык и региональные параметры
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
-| {Culture:RegionName} | Двухбуквенный код ISO для региона. | US |
+| {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
 | {Culture:RFC5646} | Код языка RFC5646. | ru-RU |
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -64,26 +64,26 @@ ms.locfileid: "77251776"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
-| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
+| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
 | {OIDC:DomainHint} |Параметр `domain_hint` строки запроса. | facebook.com |
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
-| {OIDC:MaxAge} | `max_age`. | Н/Д |
+| {OIDC:MaxAge} | `max_age`. | Недоступно |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | login |
-| {OIDC:Resource} |Параметр `resource` строки запроса. | Н/Д |
+| {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
 | {OIDC:scope} |Параметр `scope` строки запроса. | OpenId |
 
 ### <a name="context"></a>Контекст
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
-| {Context:DeploymentMode} |Режим развертывания политики.  | Рабочие |
+| {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
 
 
@@ -91,18 +91,30 @@ ms.locfileid: "77251776"
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
-| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1234 |
-| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
+| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1 234 |
+| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------------------- | --------|
-| {oauth2:access_token} | Маркер доступа. | Н/Д |
+| {oauth2:access_token} | Маркер доступа. | Недоступно |
+
+
+### <a name="saml"></a>SAML
+
+| Утверждение | Description | Пример |
+| ----- | ----------- | --------|
+| {SAML: Ауснконтекстклассреференцес} | Значение элемента `AuthnContextClassRef` из запроса SAML. | urn: Oasis: Names: TC: SAML: 2.0: AC: Classes: Пассвордпротектедтранспорт |
+| {SAML: Намеидполициформат} | Атрибут `Format` из элемента `NameIDPolicy` запроса SAML. | urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress |
+| {SAML: Issuer} |  Значение элемента `Issuer` SAML для запроса SAML.| https://contoso.com |
+| {SAML: Алловкреате} | Значение атрибута `AllowCreate`, из элемента `NameIDPolicy` запроса SAML. | True |
+| {SAML: Форцеаусн} | Значение атрибута `ForceAuthN`, из элемента `AuthnRequest` запроса SAML. | True |
+| {SAML: ProviderName} | Значение атрибута `ProviderName`, из элемента `AuthnRequest` запроса SAML.| Contoso.com |
 
 ## <a name="using-claim-resolvers"></a>Использование арбитров утверждений 
 
@@ -122,7 +134,7 @@ ms.locfileid: "77251776"
 |[контентдефинитионпараметерс](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
 |Технический профиль [релингпарти](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
 
-Параметры: 
+Параметры 
 1. Для метаданных `IncludeClaimResolvingInClaimsHandling` должно быть задано значение `true`.
 1. `AlwaysUseDefaultValue` атрибута входящих или исходящих утверждений должен быть установлен в значение `true`.
 
@@ -160,7 +172,7 @@ ms.locfileid: "77251776"
 
 ### <a name="dynamic-ui-customization"></a>Настройка динамического пользовательского интерфейса
 
-Azure AD B2C позволяет передавать параметры строки запроса конечным точкам определения содержимого HTML для динамического отображения содержимого страницы. Например, это позволяет изменять фоновое изображение на Azure AD B2C странице регистрации или входа в систему на основе настраиваемого параметра, передаваемого из веб-приложения или с помощью мобильных приложений. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization-dynamic.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
+Azure AD B2C позволяет передавать параметры строки запроса конечным точкам определения содержимого HTML для динамического отображения содержимого страницы. Например, это позволяет изменять фоновое изображение на Azure AD B2C странице регистрации или входа в систему на основе настраиваемого параметра, передаваемого из веб-приложения или с помощью мобильных приложений. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
 
 Следующий пример передает параметр строки запроса с именем **campaignId** со значением `hawaii`, кодом **языка** `en-US`и **приложением** , представляющим идентификатор клиента:
 

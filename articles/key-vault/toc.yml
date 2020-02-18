@@ -68,7 +68,7 @@
   items:
     - name: Основные понятия
       href: basic-concepts.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
@@ -102,7 +102,7 @@
           href: create-certificate-scenarios.md
 - name: Практические руководства
   items:
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Рекомендации
           href: security-recommendations.md
@@ -112,6 +112,14 @@
           href: managed-identity.md
         - name: Использование политики управления доступом
           href: key-vault-group-permissions-for-apps.md
+        - name: 'Импорт ключей, защищенных модулем HSM'
+          items:
+            - name: Обзор
+              href: key-vault-hsm-protected-keys.md
+            - name: 'Импорт ключей, защищенных модулем HSM, в Key Vault (предварительная версия)'
+              href: hsm-protected-keys-vendor-agnostic-byok.md
+            - name: 'Импорт ключей, защищенных модулем HSM, в Key Vault (устаревшая версия)'
+              href: hsm-protected-keys-legacy.md
     - name: Маршрутизация уведомлений о хранилище ключей с помощью службы "Сетка событий"
       href: event-grid-tutorial.md
     - name: Получение уведомлений с помощью Сетки событий и Logic Apps
@@ -170,8 +178,6 @@
       items:
         - name: Руководство разработчика
           href: key-vault-developers-guide.md
-        - name: 'Ключи, защищенные модулем HSM'
-          href: key-vault-hsm-protected-keys.md
         - name: "Переход на .NET\_2.0"
           href: key-vault-dotnet2api-release-notes.md
         - name: Сохранение секретов веб-приложений

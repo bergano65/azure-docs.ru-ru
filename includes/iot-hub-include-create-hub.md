@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/13/2020
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: bbdafde85097d0052edd5984b594fd37066dc1e6
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: 775e9fc737798a0e5517f9eb3314c71b14c5be07
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77279565"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77371938"
 ---
 В этом разделе описывается создание центра Интернета вещей с помощью [портала Azure](https://portal.azure.com).
 
@@ -54,7 +54,7 @@ ms.locfileid: "77279565"
 
 1. Для работы с этим руководством подтвердите значения по умолчанию, а затем выберите **Далее: Теги**, чтобы перейти к следующему экрану.
 
-    Теги — это пары "имя — значение". Один и тот же тег можно присвоить нескольким ресурсам и группам ресурсов для их классификации и объединения счетов.
+    Теги — это пары "имя — значение". Один и тот же тег можно присвоить нескольким ресурсам и группам ресурсов для их классификации и объединения счетов. Дополнительные сведения см. в статье об [использовании тегов для организации ресурсов в Azure](../articles/azure-resource-manager/management/tag-resources.md).
 
    ![Настройка параметров размера и масштаба для концентратора на портале Azure](./media/iot-hub-include-create-hub/iot-hub-create-tabs.png)
 
