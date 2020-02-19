@@ -56,6 +56,10 @@
           href: create-cluster-database-resource-manager.md
     - name: Прием данных
       items:
+        - name: Прием данных одним щелчком
+          href: ingest-data-one-click.md
+        - name: Прием потоковой передачи
+          href: ingest-data-streaming.md
         - name: Концентратор событий
           items:
             - name: Портал Azure
@@ -86,10 +90,6 @@
               href: data-connection-iot-hub-python.md
             - name: Шаблон Azure Resource Manager
               href: data-connection-iot-hub-resource-manager.md
-        - name: Прием данных одним щелчком
-          href: ingest-data-one-click.md
-        - name: Прием потоковой передачи
-          href: ingest-data-streaming.md
         - name: Использование пакетов SDK
           items:
             - name: Python
