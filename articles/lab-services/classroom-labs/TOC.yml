@@ -52,16 +52,20 @@
           href: how-to-manage-lab-accounts.md
         - name: Настройка учетных записей лаборатории
           href: how-to-configure-lab-accounts.md
+        - name: Добавление создателя лаборатории
+          href: add-lab-creator.md
         - name: Разрешение создателю лаборатории выбирать ее расположение
           href: allow-lab-creator-pick-lab-location.md
-        - name: Подключение лабораторий к пиринговой виртуальной сети
+        - name: Подключение к одноранговой виртуальной сети
           href: how-to-connect-peer-virtual-network.md
         - name: Подключение и отключение коллекции общих образов
           href: how-to-attach-detach-shared-image-gallery.md
-        - name: Добавление пользователя в качестве владельца в лабораторию для аудитории
+        - name: Добавление владельцев в аудиторную лабораторию
           href: how-to-add-user-lab-owner.md
-        - name: Параметры брандмауэра для Служб лабораторий Azure
+        - name: Настройка параметров брандмауэра
           href: how-to-configure-firewall-settings.md
+        - name: Выбор образов Marketplace для лабораторий
+          href: specify-marketplace-images.md
     - name: Создание и настройка лаборатории для аудитории (инструктор)
       items:
         - name: Создание и администрирование лабораторий для аудитории

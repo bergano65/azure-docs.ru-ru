@@ -852,6 +852,8 @@
           href: ./domain-joined/hdinsight-use-oozie-domain-joined-clusters.md
     - name: Основные понятия
       items:
+        - name: Общие рекомендации по корпоративной безопасности
+          href: ./domain-joined/general-guidelines.md
         - name: План для кластеров ESP
           href: ./domain-joined/apache-domain-joined-architecture.md
         - name: Архитектура виртуальной сети HDInsight
@@ -864,6 +866,8 @@
           href: ./hdinsight-service-tags.md
         - name: Шифрование управляемых клиентом ключей
           href: ./disk-encryption.md
+        - name: Синхронизация по протоколу LDAP в Ranger и Apache Ambari
+          href: ./domain-joined/ldap-sync.md
     - name: Практическое руководство
       items:
         - name: Управление учетными данными с помощью брокера удостоверений

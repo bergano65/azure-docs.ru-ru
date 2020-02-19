@@ -81,7 +81,7 @@
           href: container-instances-managed-identity.md
         - name: Использование ресурсов GPU (предварительная версия)
           href: container-instances-gpu.md
-        - name: Включение конечной точки SSL
+        - name: Включение конечной точки SSL в контейнере расширения
           href: container-instances-container-group-ssl.md
     - name: Подключение томов данных
       items:

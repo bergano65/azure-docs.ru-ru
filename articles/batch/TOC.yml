@@ -55,7 +55,7 @@
       href: high-availability-disaster-recovery.md
     - name: Переменные среды выполнения задания
       href: batch-compute-node-environment-variables.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Управление учетными записями пакетной службы
       items:
@@ -71,6 +71,8 @@
           href: batch-aad-auth.md
         - name: Azure AD и управление пакетной службой
           href: batch-aad-auth-management.md
+        - name: Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
+          href: credential-access-key-vault.md
     - name: Использование пакетов приложений
       href: batch-application-packages.md
     - name: Создание пулов и управление ими
@@ -172,7 +174,7 @@
           href: batch-rendering-architectures.md
     - name: Обработка данных с помощью пакетной службы и Фабрики данных
       href: ../data-factory/transform-data-using-dotnet-custom-activity.md?toc=%2fazure%2fbatch%2ftoc.json
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/batch

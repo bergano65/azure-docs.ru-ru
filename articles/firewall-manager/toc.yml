@@ -7,10 +7,14 @@
 - name: Учебники
   expanded: true
   items:
-    - name: Защита облачной сети с помощью портала
+    - name: Защита глобальной сети с помощью портала
       href: secure-cloud-network.md
+    - name: Защита виртуальной сети с центральной станцией с помощью портала
+      href: secure-hybrid-network.md
 - name: Основные понятия
   items:
+    - name: Общие сведения о политике
+      href: policy-overview.md
     - name: Что такое защищенный виртуальный концентратор?
       href: secured-virtual-hub.md
     - name: Общий процесс развертывания
@@ -19,11 +23,13 @@
       href: trusted-security-partners.md
     - name: Логика обработки правил
       href: rule-processing.md
+    - name: Варианты архитектуры
+      href: vhubs-and-vnets.md
 - name: Практические руководства
   items:
     - name: Развертывание для доверенных партнеров по безопасности
       href: deploy-trusted-security-partner.md
-    - name: Переход на политику брандмауэра
+    - name: Переход на политику брандмауэра (PowerShell)
       href: migrate-to-policy.md
 - name: Справочник
   items:

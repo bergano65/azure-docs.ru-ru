@@ -34,7 +34,7 @@
       href: connect-virtual-network-gateway-vwan.md
     - name: Настройка глобального пиринга виртуальных сетей
       href: global-peering-vnet.md
-    - name: Создание VPN-подключения с помощью ExpressRoute
+    - name: Настройка шифрования ExpressRoute
       href: vpn-over-expressroute.md
     - name: Обновление номера SKU Виртуальной глобальной сети
       href: upgrade-virtual-wan.md

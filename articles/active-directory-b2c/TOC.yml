@@ -351,6 +351,12 @@
           href: view-usage-reports.md
         - name: Управление учетными записями
           href: manage-user-accounts-graph-api.md
+        - name: Развертывание с использованием Azure Pipelines
+          href: deploy-custom-policies-devops.md
+          displayName: 'azure devops, ci/cd, cicd, custom policy, policies'
+        - name: Управление политиками с помощью PowerShell
+          href: manage-custom-policies-powershell.md
+          displayName: 'scripting, scripts, psh, custom policy'
     - name: Журналы аудита
       href: view-audit-logs.md
     - name: "Управление пользователями\_— портал Azure"
