@@ -19,13 +19,13 @@ ms.locfileid: "77121483"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-#### <a name="linuxtablinux"></a>[Linux](#tab/linux)
+#### <a name="linux"></a>[Linux](#tab/linux)
 
 - [Среда Java](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development) и [Yeoman](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables).
 - [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods).
 - [Git](https://git-scm.com/downloads);
 
-#### <a name="macostabmacos"></a>[MacOS](#tab/macos)
+#### <a name="macos"></a>[MacOS](#tab/macos)
 
 - [Среда Java и Yeoman](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman).
 - [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli#cli-mac).

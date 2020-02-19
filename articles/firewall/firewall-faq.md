@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.author: victorh
-ms.openlocfilehash: 8b55f31f12ab1057ac2e0f625a0285b6518cc44a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 78269461bf01d61bffeed504b0168b4913c6e131
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845767"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77442995"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -22,8 +22,8 @@ ms.locfileid: "76845767"
 
 ## <a name="what-capabilities-are-supported-in-azure-firewall"></a>Характеристики и функции Брандмауэра Azure:
 
-* Брандмауэр как услуга с отслеживанием состояния
-* Встроенные функции высокой доступности и неограниченная масштабируемость в облаке.
+* Брандмауэр как услуга с отслеживанием состояния.
+* Встроенные функции обеспечения высокой доступности и неограниченная масштабируемость в облаке.
 * фильтрацию FQDN;
 * Теги FQDN
 * правила фильтрации трафика;
@@ -88,7 +88,7 @@ ms.locfileid: "76845767"
 
 Вы можете использовать методы Azure PowerShell *deallocate* и *allocate*.
 
-Пример.
+Пример:
 
 ```azurepowershell
 # Stop an existing firewall
@@ -125,7 +125,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="does-azure-firewall-outbound-snat-between-private-networks"></a>Использует ли брандмауэр Azure исходящий SNAT для частных сетей?
 
-Брандмауэр Azure не поддерживает SNAT, если IP-адрес назначения является диапазоном частных IP-адресов для каждого [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). Если в вашей организации используется диапазон общедоступных IP-адресов для частных сетей, брандмауэр Azure Снатс трафик на один из частных IP-адресов брандмауэра в Азурефиреваллсубнет.
+Брандмауэр Azure не поддерживает SNAT, если IP-адрес назначения является диапазоном частных IP-адресов для каждого [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). Если в вашей организации используется диапазон общедоступных IP-адресов для частных сетей, брандмауэр Azure Снатс трафик на один из частных IP-адресов брандмауэра в Азурефиреваллсубнет. Вы можете настроить для брандмауэра Azure диапазон общедоступных IP-адресов, **отличный** от SNAT. Дополнительные сведения см. в разделе [диапазоны частных IP-адресов SNAT в брандмауэре Azure](snat-private-range.md).
 
 ## <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>Поддерживается ли принудительное туннелирование или привязка к сетевому виртуальному устройству?
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 01/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9e03ba960ab6542198372d75de7e0d34bf8d9e1b
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: aec46a1914fa2361ea15ba34dd1510cfe53a4dc0
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513326"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77443845"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -67,12 +67,12 @@ ms.locfileid: "76513326"
 
 ### <a name="supported-client-types"></a>Поддерживаемые типы клиентов
 
-В следующей таблице перечислены операционные системы, поддерживаемые для оценки обновлений. Для установки исправлений требуется Гибридная Рабочая роль Runbook. Сведения о требованиях к гибридной рабочей роли Runbook см. в руководствах по установке для установки [гибридной рабочей роли Runbook Windows](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) и [гибридной рабочей роли Runbook Linux](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker).
+В следующей таблице перечислены операционные системы, поддерживаемые для оценки обновлений. Для установки исправлений требуется Гибридная Рабочая роль Runbook. Сведения о требованиях к гибридной рабочей роли Runbook см. в руководствах по установке для установки [гибридной рабочей роли Runbook Windows](automation-windows-hrw-install.md) и [гибридной рабочей роли Runbook Linux](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker).
 
 |Операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2012 || 
-|Windows Server 2008 R2 (RTM и SP1 Standard)| Управление обновлениями поддерживает только выполнение оценок для этой операционной системы. Установка исправлений не поддерживается, так как [Гибридная Рабочая роль Runbook](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) не поддерживается для Windows Server 2008 R2. |
+|Windows Server 2008 R2 (RTM и SP1 Standard)| Управление обновлениями поддерживает только выполнение оценок для этой операционной системы. Установка исправлений не поддерживается, так как [Гибридная Рабочая роль Runbook](automation-windows-hrw-install.md) не поддерживается для Windows Server 2008 R2. |
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для установки исправлений на основе классификации необходимо, чтобы `yum` возвращали данные безопасности, которые CentOS отсутствуют в выпусках RTM. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в [статье классификации обновлений в Linux](automation-view-update-assessments.md#linux-2).          |
 |Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
 |SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
@@ -206,7 +206,7 @@ ms.locfileid: "76513326"
 
 Выберите **Отсутствующие обновления**, чтобы просмотреть список обновлений, отсутствующих на ваших компьютерах. Каждое обновление перечислено и может быть выбрано. Отображается информация о количестве компьютеров, которым оно требуется, операционная система и ссылка для получения дополнительных сведений. В области **Поиск журналов** отображаются дополнительные сведения об обновлениях.
 
-![отсутствующие обновления.](./media/automation-view-update-assessments/automation-view-update-assessments-missing-updates.png)
+![Отсутствующие обновления](./media/automation-view-update-assessments/automation-view-update-assessments-missing-updates.png)
 
 ## <a name="update-classifications"></a>Классификации обновлений
 
@@ -222,7 +222,7 @@ ms.locfileid: "76513326"
 |пакеты дополнительных компонентов;     | Новые функции продукта, которые распространяются вне выпуска продукта.        |
 |пакеты обновления;     | Накопительный набор исправлений, применяемых к приложению.        |
 |обновления определений;     | Обновление для вирусов или других файлов определений.        |
-|Средства     | Служебная программа или функция, которая помогает выполнить одну или несколько задач.        |
+|Инструменты     | Служебная программа или функция, которая помогает выполнить одну или несколько задач.        |
 |Обновления     | Обновление приложения или файла, установленного в настоящее время.        |
 
 ### <a name="linux-2"></a>Linux

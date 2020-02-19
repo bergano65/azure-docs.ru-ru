@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 10/18/2019
+ms.date: 01/08/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 14e33bf77144e4cd5728ec85d3012dc0ba717ece
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: fb8bebb46903366c5e51497e3011a20b4a981e6d
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945654"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77442678"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -47,7 +47,7 @@ ms.locfileid: "75945654"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -64,7 +64,7 @@ ms.locfileid: "75945654"
 >[!NOTE]
 >Брандмауэр Azure должен быть напрямую подключен к Интернету. Если сеть AzureFirewallSubnet использует стандартный маршрут к локальной сети через BGP, установите пользовательский маршрут 0.0.0.0/0 и задайте для параметра **NextHopType** значение **Интернет**, чтобы обеспечить прямое подключение к Интернету.
 >
->В настоящее время Брандмауэр Azure не поддерживает принудительное туннелирование. Если для вашей конфигурации требуется принудительное туннелирование в локальной сети и вы можете определить префиксы целевых IP-адресов для назначений в Интернете, эти диапазоны можно настроить с помощью локальной сети в качестве следующего прыжка через определяемый пользователем маршрут в AzureFirewallSubnet. Для определения этих маршрутов можно также использовать BGP.
+>Брандмауэр Azure можно настроить для поддержки принудительного туннелирования. Дополнительные сведения см. в статье [принудительное туннелирование в брандмауэре Azure](forced-tunneling.md).
 
 >[!NOTE]
 >Трафик между виртуальными сетями с прямым пирингом передается напрямую, даже если маршрут UDR указывает на Брандмауэр Azure как шлюз по умолчанию. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в UDR для обеих подсетей нужно явно указать префикс целевой подсети.

@@ -7,24 +7,26 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 2c32e67bb2b47a24036a341ea4e1b83037abbaee
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: ebd65f2dcbb0040b764290627bbfd2901aa9a7d3
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827527"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77443981"
 ---
 # <a name="query-data-using-the-azure-data-explorer-python-library"></a>Запрос данных с помощью библиотеки Python в Azure Data Explorer
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет [клиентскую библиотеку данных для Python](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Эта библиотека позволяет выполнять запросы данных из кода. В этой статье вы подключитесь к таблице в кластере *справки* , который мы настроили для помощи в обучении. Затем вы запросите таблицу в этом кластере и получите результаты.
+В этой статье вы запрашиваете данные с помощью обозреватель данных Azure. Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии.
+
+Обозреватель данных Azure предоставляет [клиентскую библиотеку данных для Python](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Эта библиотека позволяет выполнять запросы данных из кода. Подключитесь к таблице в *справочном кластере* , который мы настроили для помощи в обучении. Вы можете запросить таблицу в этом кластере и вернуть результаты.
 
 Эта статья также доступна в качестве [записной книжки Azure](https://notebooks.azure.com/ManojRaheja/libraries/KustoPythonSamples/html/QueryKusto.ipynb).
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Учетная запись электронной почты организации, которая входит в Azure Active Directory (AAD)
+* [Python 3.4 +](https://www.python.org/downloads/)
 
-* [Python](https://www.python.org/downloads/) на компьютере, на котором ведется разработка
+* Учетная запись электронной почты организации, которая входит в Azure Active Directory (AAD)
 
 ## <a name="install-the-data-library"></a>Установка библиотеки данных
 
@@ -75,7 +77,7 @@ KCSB.authority_id = AAD_TENANT_ID
 
 ## <a name="connect-to-azure-data-explorer-and-execute-a-query"></a>Подключение к обозревателю данных Azure и выполнение запроса
 
-Выполните запрос к кластеру и сохраните выходные данных в кадр данных. При выполнении этого кода возвращается примерно такое сообщение: *Чтобы войти, воспользуйтесь браузером и откройте страницу https://microsoft.com/devicelogin. Введите код F3W4VWZDM для прохождения проверки подлинности*. Следуйте инструкциям по входу, а затем выполните следующий блок кода.
+Выполните запрос к кластеру и сохраните выходные данных в кадр данных. При выполнении код возвращает примерно следующее сообщение: *Чтобы войти, откройте страницу https://microsoft.com/devicelogin с помощью веб-браузера и введите код F3W4VWZDM для проверки подлинности*. Следуйте инструкциям по входу, а затем выполните следующий блок кода.
 
 ```python
 KUSTO_CLIENT = KustoClient(KCSB)
@@ -95,7 +97,7 @@ df
 
 Вы увидите десять самых первых результатов из таблицы StormEvents.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)

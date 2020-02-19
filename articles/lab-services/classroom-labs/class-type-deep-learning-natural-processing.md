@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/30/2019
 ms.author: spelluru
-ms.openlocfilehash: 21a11863bd2bc9882d4336f5c5d2bf1d7b7f49da
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 49ef78ac5a7d58d86583d91bf072f0f3131796fe
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133765"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77444100"
 ---
 # <a name="set-up-a-lab-focused-on-deep-learning-in-natural-language-processing-using-azure-lab-services"></a>Настройка лаборатории для глубокого обучения в обработке на естественном языке с помощью служб лабораторий Azure
 В этой статье показано, как настроить лабораторную работу для глубокого обучения в обработке на естественном языке (NLP) с помощью служб лаборатории Azure. Обработка естественного языка (NLP) – это форма искусственного интеллекта (AI), которая предоставляет компьютерам возможности перевода, распознавания речи и понимания других языков.  
@@ -32,7 +32,7 @@ ms.locfileid: "77133765"
 
 | Параметр учетной записи лаборатории | Instructions |
 | ----------- | ------------ |  
-| Образы Marketplace | Включите образ виртуальной машины для обработки и анализа данных для Linux (Ubuntu), который будет использоваться в вашей учетной записи лаборатории.  Инструкции см. в следующих статьях: [укажите образы Marketplace, доступные авторам лабораторий](how-to-configure-lab-accounts.md#specify-marketplace-images-available-to-lab-creators). | 
+| Образы Marketplace | Включите образ виртуальной машины для обработки и анализа данных для Linux (Ubuntu), который будет использоваться в вашей учетной записи лаборатории.  Инструкции см. в следующей статье: [Указание образов Marketplace, доступных авторам лабораторий](specify-marketplace-images.md). | 
 
 Следуйте указаниям [этого учебника](tutorial-setup-classroom-lab.md) , чтобы создать лабораторию и применить следующие параметры.
 

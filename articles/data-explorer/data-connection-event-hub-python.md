@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: 81aded7639cc0bed86c3d3ab3be9e6ef7b355734
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: c08271286373ab8c3e621ee6fa59782ba2d16fb4
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964538"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77444185"
 ---
 # <a name="create-an-event-hub-data-connection-for-azure-data-explorer-by-using-python"></a>Создание подключения к данным концентратора событий для Azure обозреватель данных с помощью Python
 
@@ -22,15 +22,21 @@ ms.locfileid: "76964538"
 > * [Python](data-connection-event-hub-python.md)
 > * [Шаблон Azure Resource Manager](data-connection-event-hub-resource-manager.md)
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных обеспечивает прием (загрузку данных) из концентраторов событий, центров Интернета вещей и больших двоичных объектов, записанных в контейнеры больших двоичных объектов. В этой статье вы создадите подключение к данным концентратора событий для Azure обозреватель данных с помощью Python.
+В этой статье вы создадите подключение к данным концентратора событий для Azure обозреватель данных с помощью Python. Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных предлагает прием или загрузку данных из концентраторов событий, центров Интернета вещей и больших двоичных объектов, записанных в контейнеры больших двоичных объектов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-* Создание [кластера и базы данных](create-cluster-database-python.md)
-* Создание [сопоставления таблиц и столбцов](python-ingest-data.md#create-a-table-on-your-cluster)
-* Задание [политик базы данных и таблиц](database-table-policies-python.md) (необязательно)
-* Создание [концентратора событий с данными для приема](ingest-data-event-hub.md#create-an-event-hub). 
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+
+* [Python версии 3.4+](https://www.python.org/downloads/).
+
+* [Кластер и база данных](create-cluster-database-python.md).
+
+* [Сопоставление таблиц и столбцов](net-standard-ingest-data.md#create-a-table-on-your-test-cluster).
+
+* [Политики базы данных и таблиц](database-table-policies-python.md) (необязательно).
+
+* [Концентратор событий с данными для приема](ingest-data-event-hub.md#create-an-event-hub).
 
 [!INCLUDE [data-explorer-data-connection-install-package-python](../../includes/data-explorer-data-connection-install-package-python.md)]
 

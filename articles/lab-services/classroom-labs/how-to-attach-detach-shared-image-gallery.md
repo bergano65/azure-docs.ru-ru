@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 02/14/2020
 ms.author: spelluru
-ms.openlocfilehash: 98a21e9fa846d5a91ed1242701484afaa641cddc
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 1267487e44556a468db26a2ffaaa163dce540571
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76718039"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77443488"
 ---
 # <a name="attach-or-detach-a-shared-image-gallery-in-azure-lab-services"></a>Присоединение или отсоединение общей коллекции образов в службах лаборатории Azure
 Преподаватели и администраторы Lab могут сохранить шаблон образа виртуальной машины в [коллекции общих образов](../../virtual-machines/windows/shared-image-galleries.md) Azure, чтобы он повторно использовался другими пользователями. В качестве первого шага Администратор лаборатории Присоединяет существующую коллекцию общих образов к учетной записи лаборатории. После присоединения коллекции общих образов лаборатории, созданные в учетной записи лаборатории, могут сохранять образы в общей коллекции образов. Другие преподаватели могут выбрать этот образ из коллекции общих образов, чтобы создать шаблон для своих классов. 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 02/14/2020
 ms.author: mlearned
-ms.openlocfilehash: 20cef402a81ef348d4492daf05e6b16a8d9f709f
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: e77710fe446810ec566ebc7088d802f0721806d2
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77365177"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77443930"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -483,7 +483,7 @@ az aks nodepool add \
 > [!NOTE]
 > Можно также использовать параметр `--tags` при использовании команды [AZ AKS нодепул Update][az-aks-nodepool-update] , а также во время создания кластера. Во время создания кластера параметр `--tags` применяет тег к начальному пулу узлов, созданному с помощью кластера. Все имена тегов должны соответствовать ограничениям [использования тегов для Организации ресурсов Azure][tag-limitation]. При обновлении пула узлов с параметром `--tags` обновляются все существующие значения тегов и добавляются новые теги. Например, если в пуле узлов имелся *отдел = ИТ* и *CostCenter = 9999* для тегов и вы обновили его с помощью *команды = dev* и *CostCenter = 111* для тегов, нодепул будет иметь *отдел = IT*, *CostCenter = 111*, а *команда = dev* для тегов.
 
-В следующем примере выходных данных команды [AZ AKS нодепул List][az-aks-nodepool-list] показано, что *тагжеднодепул* *создает* узлы с указанным *тегом*:
+В следующем примере выходных данных команды [AZ AKS нодепул List][az-aks-nodepool-list] показано, что *тагнодепул* *создает* узлы с указанным *тегом*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
@@ -645,7 +645,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как создавать и администрировать несколько пулов узлов в кластере AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
 

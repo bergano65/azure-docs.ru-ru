@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: enewman
-ms.openlocfilehash: 695b87540178fb5c1012a095c2a86937a189ef24
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: dfb133f9aa3dd9b76f8b4ea4c6188cfaf9a67b75
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133747"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77444117"
 ---
 # <a name="set-up-a-lab-to-teach-data-science-with-python-and-jupyter-notebooks"></a>Настройка лаборатории для обучения обработки и анализа данных с помощью записных книжек Python и Jupyter
 
@@ -30,7 +30,7 @@ ms.locfileid: "77133747"
 
 ### <a name="lab-account-settings"></a>Параметры учетной записи лаборатории
 
-Включите параметры, описанные в таблице ниже, для учетной записи лаборатории. Дополнительные сведения о том, как включить образы Marketplace, см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](how-to-configure-lab-accounts.md#specify-marketplace-images-available-to-lab-creators).
+Включите параметры, описанные в таблице ниже, для учетной записи лаборатории. Дополнительные сведения о том, как включить образы Marketplace, см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](specify-marketplace-images.md).
 
 | Параметр учетной записи лаборатории | Instructions |
 | ------------------- | ------------ |

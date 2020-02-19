@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: reference
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: dd9ac9654f916653af974e816485630423466ae5
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: fcc43caf895dadfaf832a47c3254f9b828bcb71a
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815426"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77430811"
 ---
 # <a name="swagger-documentation"></a>Документация по Swagger
 
@@ -28,7 +28,7 @@ ms.locfileid: "74815426"
 
 [Спецификация Swagger](https://cris.ai/swagger/ui/index) содержит возможности, которые позволяют быстро протестировать различные пути. Тем не менее иногда желательно сгенерировать код для всех путей, создав единую библиотеку вызовов, на основе которой потом можно будет создавать решения. Давайте рассмотрим процесс создания библиотеки Python.
 
-Необходимо настроить Swagger в том же регионе, что и подписка на службу распознавания речи. Вы можете подтвердить свой регион в портал Azure под Вашим ресурсом службы речи. Полный список поддерживаемых регионов см. в разделе [Регионы](regions.md).
+Необходимо настроить Swagger в том же регионе, что и подписка на службу распознавания речи. Вы можете подтвердить свой регион в портал Azure под Вашим ресурсом службы речи. Полный список поддерживаемых регионов см. в разделе [регионы](regions.md).
 
 1. Перейдите на сайт https://editor.swagger.io.
 2. В меню **File** (Файл) выберите **Import** (Импортировать).
@@ -38,7 +38,7 @@ ms.locfileid: "74815426"
 
 Вы можете использовать библиотеку Python, созданную с [примерами службы распознавания речи на GitHub](https://aka.ms/csspeech/samples).
 
-## <a name="reference-docs"></a>Справочные документы
+## <a name="reference-docs"></a>Справочная документация
 
 * [ОСТАВШАЯся (Swagger): пакетная запись и настройка](https://westus.cris.ai/swagger/ui/index)
 * [REST API: преобразование речи в текст](rest-speech-to-text.md)

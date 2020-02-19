@@ -7,26 +7,28 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: f109f2dd45fe90884d3947b244b3dafffd547725
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 91401031945d0ec3ac22fc8cbcea8ba73580ee50
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68355934"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77442009"
 ---
 # <a name="ingest-data-using-the-azure-data-explorer-python-library"></a>Прием данных с помощью библиотеки Python в Azure Data Explorer
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет две клиентские библиотеки для Python: [библиотеку приема](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-ingest) и [библиотеку данных](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Они позволяют принимать (загружать) данные в кластер и запрашивать данные из кода. В этой статье вы сначала создадите таблицу и сопоставление данных в кластере. Затем вы поставите в очередь прием данных в кластер и проверите результаты.
+В этой статье вы принимаете данные с помощью библиотеки Azure обозреватель данных Python. Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет две клиентские библиотеки для Python: [библиотеку приема](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-ingest) и [библиотеку данных](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Эти библиотеки позволяют принимать или загружать данные в кластер и запрашивать данные из кода.
+
+Сначала создайте таблицу и сопоставление данных в кластере. Затем вы поставите в очередь прием данных в кластер и проверите результаты.
 
 Эта статья также доступна в качестве [записной книжки Azure](https://notebooks.azure.com/ManojRaheja/libraries/KustoPythonSamples/html/QueuedIngestSingleBlob.ipynb).
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+
+* [Python версии 3.4+](https://www.python.org/downloads/).
 
 * [Кластер и база данных](create-cluster-database-portal.md).
-
-* [Python](https://www.python.org/downloads/) на компьютере, на котором ведется разработка
 
 ## <a name="install-the-data-and-ingest-libraries"></a>Установка библиотек данных и приема
 
@@ -103,7 +105,7 @@ BLOB_PATH = "https://" + ACCOUNT_NAME + ".blob.core.windows.net/" + \
 
 ## <a name="create-a-table-on-your-cluster"></a>Создание таблицы в кластере
 
-Создайте таблицу, которая соответствует схеме данных в файле StormEvents.csv. При выполнении этого кода возвращается примерно следующее сообщение: *Чтобы войти, воспользуйтесь браузером и откройте страницу https://microsoft.com/devicelogin. Введите код F3W4VWZDM для прохождения проверки подлинности*. Следуйте инструкциям по входу, а затем выполните следующий блок кода. Для выполнения последующих блоков кода, устанавливающих соединение, необходимо повторно выполнить вход.
+Создайте таблицу, которая соответствует схеме данных в файле StormEvents.csv. При выполнении код возвращает примерно следующее сообщение: *Чтобы войти, откройте страницу https://microsoft.com/devicelogin с помощью веб-браузера и введите код F3W4VWZDM для проверки подлинности*. Следуйте инструкциям по входу, а затем выполните следующий блок кода. Для выполнения последующих блоков кода, устанавливающих соединение, необходимо повторно выполнить вход.
 
 ```python
 KUSTO_CLIENT = KustoClient(KCSB_DATA)
@@ -181,6 +183,6 @@ dataframe_from_result_table(RESPONSE.primary_results[0])
 .drop table StormEvents
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запрос данных с помощью Python](python-query-data.md)

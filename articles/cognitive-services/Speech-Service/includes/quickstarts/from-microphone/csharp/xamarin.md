@@ -54,7 +54,7 @@ ms.locfileid: "77156360"
 
    [!code-csharp[Quickstart code](~/samples-cognitive-services-speech-sdk/quickstart/csharp/xamarin/helloworld/helloworld/Services/IMicrophoneService.cs)]
 
-#### <a name="androidtabx-android"></a>[Android](#tab/x-android)
+#### <a name="android"></a>[Android](#tab/x-android)
 ## <a name="add-sample-code-for-the-helloworldandroid-project"></a>Добавление примера кода для проекта `helloworld.Android`
 
 Теперь добавьте код C#, определяющий специфическую часть приложения для Android.
@@ -75,7 +75,7 @@ ms.locfileid: "77156360"
    <uses-permission android:name="android.permission.RECORD_AUDIO" />
    ```
    
-#### <a name="iostabios"></a>[iOS](#tab/ios)
+#### <a name="ios"></a>[iOS](#tab/ios)
 ## <a name="add-sample-code-for-the-helloworldios-project"></a>Добавление примера кода для проекта `helloworld.iOS`
 
 Теперь добавьте код C#, определяющий специфическую часть приложения для iOS. Кроме того, создайте специфические конфигурации для устройств Apple в проекте helloworld.iOS.
@@ -100,7 +100,7 @@ ms.locfileid: "77156360"
 
 1. Если вы работаете на компьютере с Windows, вам необходимо установить соединение с устройством Mac для сборки, выбрав элементы **Инструменты** > **iOS** > **Связать с Mac**. Следуйте инструкциям мастера Visual Studio, чтобы включить подключение к устройству Mac.
 
-#### <a name="uwptabhelloworlduwp"></a>[UWP](#tab/helloworlduwp)
+#### <a name="uwp"></a>[UWP](#tab/helloworlduwp)
 ## <a name="add-sample-code-for-the-helloworlduwp-project"></a>Добавление примера кода для проекта `helloworld.UWP`
 
 ## <a name="add-sample-code-for-the-helloworlduwp-project"></a>Добавление примера кода для проекта helloworld.UWP

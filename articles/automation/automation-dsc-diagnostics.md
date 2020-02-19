@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 69801909c6bc8d215ca7dd3ccb7ac349201e8774
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 578fcf4cd03a2d4fc8400b9e84f53206750a588c
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198570"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77430726"
 ---
 # <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor
 
@@ -31,7 +31,7 @@ ms.locfileid: "77198570"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы начать отправку отчетов о конфигурации состояния автоматизации в журналы Azure Monitor, вам потребуется:
 
@@ -39,7 +39,7 @@ ms.locfileid: "77198570"
 - Учетная запись службы автоматизации Azure. Дополнительные сведения см. в статье [Введение в службу автоматизации Azure](automation-intro.md).
 - Рабочая область Log Analytics с предложением службы управления & автоматизации. Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal).
 - Как минимум один узел службы "Настройка состояния службы автоматизации Azure". Дополнительные сведения см. в статье подключение [компьютеров для управления с помощью конфигурации состояния службы автоматизации Azure](automation-dsc-onboarding.md).
-- Модуль [xDscDiagnostics](https://www.powershellgallery.com/packages/xDscDiagnostics/2.7.0.0) версии 2.7.0.0 или более поздней. Инструкции по установке см. в разделе [Устранение неполадок настройки требуемого состояния службы автоматизации Azure](./troubleshoot/desired-state-configuration.md#steps-to-troubleshoot-desired-state-configuration-dsc).
+- Модуль [xDscDiagnostics](https://www.powershellgallery.com/packages/xDscDiagnostics/2.7.0.0) версии 2.7.0.0 или более поздней. Инструкции по установке см. в разделе [Устранение неполадок настройки требуемого состояния службы автоматизации Azure](./troubleshoot/desired-state-configuration.md).
 
 ## <a name="set-up-integration-with-azure-monitor-logs"></a>Настройка интеграции с журналами Azure Monitor
 
@@ -132,15 +132,15 @@ ms.locfileid: "77198570"
 
 ### <a name="dscnodestatusdata"></a>DscNodeStatusData
 
-| Свойство | Описание |
+| Свойство | Description |
 | --- | --- |
-| Время создания |Дата и время запуска проверки соответствия. |
+| TimeGenerated |Дата и время запуска проверки соответствия. |
 | OperationName |DscNodeStatusData. |
 | ResultType |Подтверждено ли соответствие узла. |
 | NodeName_s |Имя управляемого узла. |
 | NodeComplianceStatus_s |Подтверждено ли соответствие узла. |
 | DscReportStatus |Успешно ли прошла проверка соответствия. |
-| ConfigurationMode | Применение конфигурации к узлу. Возможны следующие значения: <ul><li>*ApplyOnly* — DSC применяет конфигурацию и не выполняет дальнейшие действия, пока новая конфигурация не будет отправлена в целевой узел или получена с сервера. После первого применения новой конфигурации DSC не проверяет наличие отклонений от настроенного ранее состояния. DSC пытается применить конфигурацию до тех пор, пока не вступит в силу значение *ApplyOnly* . </li><li>*ApplyAndMonitor* — значение по умолчанию. LCM применяет все новые конфигурации. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах. DSC пытается применить конфигурацию до тех пор, пока не вступит в силу значение *ApplyAndMonitor* .</li><li>*ApplyAndAutoCorrect*: DSC применяет все новые конфигурации. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах, а затем повторно применяет текущую конфигурацию.</li></ul> |
+| ConfigurationMode | Применение конфигурации к узлу. Возможны следующие значения: <ul><li>*ApplyOnly* — DSC применяет конфигурацию и не выполняет дальнейшие действия, пока новая конфигурация не будет отправлена в целевой узел или получена с сервера. После первоначального применения новой конфигурации DSC не проверяет наличие отклонений от ранее настроенного состояния. DSC пытается применить конфигурацию до тех пор, пока не вступит в силу значение *ApplyOnly* . </li><li>*ApplyAndMonitor* — значение по умолчанию. LCM применяет любую новую конфигурацию. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах. DSC пытается применить конфигурацию до тех пор, пока не вступит в силу значение *ApplyAndMonitor* .</li><li>*ApplyAndAutoCorrect*: DSC применяет все новые конфигурации. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах, а затем повторно применяет текущую конфигурацию.</li></ul> |
 | HostName_s | Имя управляемого узла. |
 | IPAddress | Адрес IPv4 управляемого узла. |
 | Категория | Дскнодестатус. |
@@ -154,7 +154,7 @@ ms.locfileid: "77198570"
 | NumberOfResources_d |Количество ресурсов DSC, которые вызывались в примененной к узлу конфигурации. |
 | SourceSystem | Как Azure Monitor журналы собирают данные. Всегда "Azure" для системы диагностики Azure. |
 | ResourceId |Идентификатор учетной записи службы автоматизации Azure. |
-| ResultDescription | Описание этой операции. |
+| ResultDescription | Описание для этой операции. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | NNTP. Средствами. |
@@ -163,9 +163,9 @@ ms.locfileid: "77198570"
 
 ### <a name="dscresourcestatusdata"></a>DscResourceStatusData
 
-| Свойство | Описание |
+| Свойство | Description |
 | --- | --- |
-| Время создания |Дата и время запуска проверки соответствия. |
+| TimeGenerated |Дата и время запуска проверки соответствия. |
 | OperationName |DscResourceStatusData|
 | ResultType |Подтверждено ли соответствие ресурса. |
 | NodeName_s |Имя управляемого узла. |
@@ -185,7 +185,7 @@ ms.locfileid: "77198570"
 | DscResourceDuration_d |Период выполнения ресурса DSC в секундах. |
 | SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResourceId |Указывает учетную запись службы автоматизации Azure. |
-| ResultDescription | Описание этой операции. |
+| ResultDescription | Описание для этой операции. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | NNTP. Средствами. |
@@ -201,7 +201,7 @@ ms.locfileid: "77198570"
 
 Журналы Azure Monitor обеспечивают более высокую оперативную видимость данных конфигурации состояния службы автоматизации и позволяют быстрее решать инциденты.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения см. в статье с [обзором "Настройка состояния службы автоматизации Azure"](automation-dsc-overview.md).
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).

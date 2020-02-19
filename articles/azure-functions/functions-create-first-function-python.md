@@ -36,7 +36,7 @@ ms.locfileid: "77157896"
 В подходящей папке выполните следующие команды, чтобы создать и активировать виртуальную среду с именем `.venv`. Обязательно используйте версию Python 3.7, которую поддерживают Функции Azure.
 
 
-# <a name="bashtabbash"></a>[bash](#tab/bash)
+# <a name="bash"></a>[bash](#tab/bash)
 
 ```bash
 python -m venv .venv
@@ -52,7 +52,7 @@ source .venv/bin/activate
 sudo apt-get install python3-venv
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 py -m venv .venv
@@ -62,7 +62,7 @@ py -m venv .venv
 .venv\scripts\activate
 ```
 
-# <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+# <a name="cmd"></a>[Cmd](#tab/cmd)
 
 ```cmd
 py -m venv .venv
@@ -269,14 +269,14 @@ Functions in msdocs-azurefunctions-qs:
 
 Функция использует триггер HTTP, поэтому ее необходимо вызывать через HTTP-запрос по URL-адресу в браузере или с помощью такого средства, как cURL. В обоих экземплярах параметр URL-адреса `code` является уникальным ключом функции, который разрешает вызов с использованием конечной точкой функции.
 
-# <a name="browsertabbrowser"></a>[Браузер](#tab/browser)
+# <a name="browser"></a>[Браузер](#tab/browser)
 
 Скопируйте полный URL-адрес вызова **Invoke url**, показанный в выходных данных команды publish, в адресную строку браузера, добавив параметр запроса `&name=Azure`. В браузере должны отображаться выходные данные, аналогичные данным при локальном запуске функции.
 
 ![Выходные данные функции, выполняемой в Azure в браузере](./media/functions-create-first-function-python/function-test-cloud-browser.png)
 
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
+# <a name="curl"></a>[curl](#tab/curl)
 
 Запустите [cURL](https://curl.haxx.se/), используя **Invoke url** и добавив параметр `&name=Azure`. Результатом выполнения этой команды должен быть текст "Hello Azure".
 

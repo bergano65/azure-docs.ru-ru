@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по безопасности в центре безопасности Azure | Документация Майкрософт
+title: Рекомендации по безопасности в Центре безопасности Azure
 description: В этом документе рассматриваются рекомендации в Центре безопасности Azure, которые помогают защитить ваши ресурсы Azure и обеспечить соответствие политикам безопасности.
 services: security-center
 documentationcenter: na
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/29/2019
 ms.author: memildin
-ms.openlocfilehash: 6a01ddbc733ce52c02e9abef2569adbfbd19c6a8
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: 4f41f4996f230a373245633b9449e93c403a1dfc
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73520734"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77430301"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Рекомендации по безопасности в Центре безопасности Azure 
 В этом разделе объясняется, как просмотреть и изучить рекомендации в центре безопасности Azure, которые помогут защитить ресурсы Azure.
