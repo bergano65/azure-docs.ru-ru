@@ -39,7 +39,7 @@
       href: service-dependencies.md
     - name: Условия расположения
       href: location-condition.md
-    - name: Средство "Что если"
+    - name: Средство What-If
       href: what-if-tool.md
     - name: Управление
       href: controls.md
@@ -92,7 +92,7 @@
       href: policy-migration-mfa.md
     - name: Устранение неполадок
       items:
-        - name: Устранение неполадок с помощью средства What If
+        - name: Устранение неполадок с помощью средства What-If
           href: troubleshoot-conditional-access-what-if.md
 - name: Ресурсы
   items:
