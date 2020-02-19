@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Документация по Индексатору видео в Службах мультимедиа Azure
 metadata:
-  document_id: null
   title: "Документация по Индексатору видео в Службах мультимедиа Azure\_| Документация Майкрософт"
   description: Сведения об Индексаторе видео.
   services: media-services

@@ -8,12 +8,12 @@
   expanded: true
   items:
     - name: Установка и настройка Terraform
-      href: /azure/virtual-machines/linux/terraform-install-configure
+      href: terraform-install-configure.md
       maintainContext: true
     - name: Создание конфигурации Terraform
       href: terraform-create-configuration.md
     - name: Создание виртуальной машины Linux
-      href: /azure/virtual-machines/linux/terraform-create-complete-vm
+      href: terraform-create-complete-vm.md
       maintainContext: true
 - name: Учебники
   items:
@@ -35,8 +35,6 @@
           href: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
     - name: Инфраструктура
       items:
-        - name: 'Создание виртуальной машины Terraform, на которой включены управляемые удостоверения для ресурсов Azure'
-          href: terraform-vm-managed-identities-for-azure-resources.md
         - name: Создание кластера виртуальных машин с помощью модулей Terraform
           href: terraform-create-vm-cluster-module.md
         - name: Создание кластера виртуальных машин с помощью Terraform и HCL
@@ -61,7 +59,7 @@
               href: terraform-hub-spoke-spoke-network.md
             - name: 6. Проверка подключения в топологии сети
               href: terraform-hub-spoke-validation.md
-    - name: Средства
+    - name: Инструменты
       items:
         - name: Установка расширения Visual Studio Code для Terraform
           href: terraform-vscode-extension.md
@@ -73,7 +71,7 @@
   items:
     - name: Шаблоны конфигурации
       href: 'https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples'
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Реестр модулей Azure
       href: 'https://registry.terraform.io/modules/Azure'
