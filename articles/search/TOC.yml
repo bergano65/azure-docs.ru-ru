@@ -323,10 +323,10 @@
       items:
         - name: Основные сведения
           href: search-monitor-usage.md
-        - name: Мониторинг действий запросов
-          href: search-monitor-queries.md
         - name: Ведение журнала диагностики
           href: search-monitor-logs.md
+        - name: Мониторинг действий запросов
+          href: search-monitor-queries.md
         - name: Поиск в аналитике трафика
           href: search-traffic-analytics.md
     - name: Диагностика

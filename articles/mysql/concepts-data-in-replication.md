@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 58882f7569e26ebcba237158db2eb23e76bcd015
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 18c53a53a57b3ddca1168fc1075ae09bcd86f000
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765092"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77462502"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -28,7 +28,7 @@ ms.locfileid: "74765092"
 ## <a name="limitations-and-considerations"></a>Ограничения и рекомендации
 
 ### <a name="data-not-replicated"></a>Нереплицируемые данные
-[*Системная база данных MySQL*](https://dev.mysql.com/doc/refman/5.7/en/system-database.html) на главном сервере не реплицируется. Изменения учетных записей и разрешений на главном сервере не реплицируются. Если вы создаете на главном сервере учетную запись, которой необходим доступ к серверу-реплике, вручную создайте ту же учетную запись на стороне сервера-реплики. Чтобы узнать, какие таблицы хранятся в системной базе данных, ознакомьтесь с [руководством по MySQL](https://dev.mysql.com/doc/refman/5.7/en/system-database.html).
+[*Системная база данных MySQL*](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html) на главном сервере не реплицируется. Изменения учетных записей и разрешений на главном сервере не реплицируются. Если вы создаете на главном сервере учетную запись, которой необходим доступ к серверу-реплике, вручную создайте ту же учетную запись на стороне сервера-реплики. Чтобы узнать, какие таблицы хранятся в системной базе данных, ознакомьтесь с [руководством по MySQL](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html).
 
 ### <a name="requirements"></a>Требования
 - На главном сервере должна быть установлена система MySQL по крайней мере версии 5.6. 
@@ -45,7 +45,7 @@ ms.locfileid: "74765092"
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).
 - Сведения о [переносе данных с минимальным временем простоя с помощью DMS](howto-migrate-online.md)

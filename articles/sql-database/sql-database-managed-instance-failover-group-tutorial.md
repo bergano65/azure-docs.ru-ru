@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: sashan, carlrab
 manager: jroth
 ms.date: 08/27/2019
-ms.openlocfilehash: b7c406c1d7f55b364d72b2b5626b3c17a34d8338
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: bf83155e971061f22e5f5fc33d216b58621c9249
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552769"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77462655"
 ---
 # <a name="tutorial-add-a-sql-database-managed-instance-to-a-failover-group"></a>Учебник. Добавление управляемого экземпляра базы данных SQL в группу отработки отказа
 
@@ -34,15 +34,15 @@ ms.locfileid: "75552769"
   > - Управляемые экземпляры, участвующие в группе отработки отказа, должны иметь либо [ExpressRoute](../expressroute/expressroute-howto-circuit-portal-resource-manager.md) , либо два ПОДКЛЮЧЕННЫХ VPN-шлюза. В этом руководстве содержатся инструкции по созданию и подключению VPN-шлюзов. Если вы уже настроили ExpressRoute, пропустите эти шаги. 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 В рамках этого руководства вам потребуются: 
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
@@ -55,7 +55,7 @@ ms.locfileid: "75552769"
 На этом шаге вы создадите группу ресурсов и основной управляемый экземпляр для группы отработки отказа с помощью портал Azure или PowerShell. 
 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal) 
+# <a name="portal"></a>[Портал](#tab/azure-portal) 
 
 Создайте группу ресурсов и основной управляемый экземпляр с помощью портал Azure. 
 
@@ -75,7 +75,7 @@ ms.locfileid: "75552769"
 1. Оставьте остальные параметры со значениями по умолчанию и выберите проверить и **создать** , чтобы проверить параметры управляемого экземпляра. 
 1. Выберите **создать** , чтобы создать основной управляемый экземпляр. 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Создайте группу ресурсов и основной управляемый экземпляр с помощью PowerShell. 
 
@@ -382,7 +382,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группы ресурсов Azure.  |
 | [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) | Создает виртуальную сеть.  |
@@ -405,7 +405,7 @@ ms.locfileid: "75552769"
 ## <a name="2---create-secondary-virtual-network"></a>2\. Создание вторичной виртуальной сети
 Если вы используете портал Azure для создания управляемого экземпляра, необходимо отдельно создать виртуальную сеть, так как в подсети первичного и вторичного управляемых экземпляров нет перекрывающихся диапазонов. Если вы используете PowerShell для настройки управляемого экземпляра, перейдите к шагу 3. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal) 
+# <a name="portal"></a>[Портал](#tab/azure-portal) 
 Чтобы проверить диапазон подсети основной виртуальной сети, выполните следующие действия.
 1. В [портал Azure](https://portal.azure.com)перейдите к группе ресурсов и выберите виртуальную сеть для основного экземпляра. 
 1. Выберите **подсети** в разделе **Параметры** и запишите **диапазон адресов**. Диапазон адресов подсети виртуальной сети для вторичного управляемого экземпляра не может перекрывать эту область. 
@@ -433,7 +433,7 @@ ms.locfileid: "75552769"
 
     ![Значения вторичной виртуальной сети](media/sql-database-managed-instance-failover-group-tutorial/secondary-virtual-network.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Этот шаг необходим только в том случае, если вы используете портал Azure для развертывания управляемого экземпляра. Если вы используете PowerShell, перейдите к шагу 3. 
 
@@ -446,7 +446,7 @@ ms.locfileid: "75552769"
 - Быть пустым. 
 - Имеют разные подсети и диапазоны IP-адресов, чем у основного управляемого экземпляра. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal) 
+# <a name="portal"></a>[Портал](#tab/azure-portal) 
 
 Создайте вторичный управляемый экземпляр с помощью портал Azure. 
 
@@ -482,7 +482,7 @@ ms.locfileid: "75552769"
 1. Выберите **проверить и создать** , чтобы проверить параметры для вторичного управляемого экземпляра. 
 1. Выберите **создать** , чтобы создать вторичный управляемый экземпляр. 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Создайте вторичный управляемый экземпляр с помощью PowerShell. 
 
@@ -708,7 +708,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группы ресурсов Azure.  |
 | [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) | Создает виртуальную сеть.  |
@@ -734,7 +734,7 @@ ms.locfileid: "75552769"
 В этой статье приводятся шаги по созданию двух VPN-шлюзов и их подключению, но вы можете сразу перейти к созданию группы отработки отказа, если вместо этого вы настроили ExpressRoute. 
 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Создайте шлюз для виртуальной сети основного управляемого экземпляра с помощью портал Azure. 
 
@@ -773,7 +773,7 @@ ms.locfileid: "75552769"
 1. Выберите **создать** , чтобы создать новый шлюз виртуальной сети. 
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Создайте шлюз для виртуальной сети основного управляемого экземпляра с помощью PowerShell. 
 
@@ -810,7 +810,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
@@ -828,7 +828,7 @@ ms.locfileid: "75552769"
 На этом шаге создайте шлюз для виртуальной сети вторичного управляемого экземпляра с помощью портал Azure 
 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 С помощью портал Azure повторите действия, описанные в предыдущем разделе, чтобы создать подсеть и шлюз виртуальной сети для вторичного управляемого экземпляра. Заполните обязательные поля, чтобы настроить шлюз для вторичного управляемого экземпляра. 
 
@@ -851,7 +851,7 @@ ms.locfileid: "75552769"
    ![Параметры дополнительного шлюза](media/sql-database-managed-instance-failover-group-tutorial/settings-for-secondary-gateway.png)
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Создайте шлюз для виртуальной сети вторичного управляемого экземпляра с помощью PowerShell. 
 
@@ -891,7 +891,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork) | Получает виртуальную сеть в группе ресурсов. |
 | [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) | Добавляет конфигурацию подсети в виртуальную сеть. | 
@@ -908,7 +908,7 @@ ms.locfileid: "75552769"
 На этом шаге создайте двунаправленное подключение между двумя шлюзами двух виртуальных сетей. 
 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Подключите два шлюза с помощью портал Azure. 
 
@@ -933,7 +933,7 @@ ms.locfileid: "75552769"
 1. На вкладке **Сводка** проверьте параметры двунаправленного подключения и нажмите кнопку **ОК** , чтобы создать подключение. 
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Подключите два шлюза с помощью PowerShell. 
 
@@ -956,7 +956,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используется следующий командлет PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzVirtualNetworkGatewayConnection](/powershell/module/az.network/new-azvirtualnetworkgatewayconnection) | Создает подключение между двумя шлюзами виртуальной сети.   |
 
@@ -967,11 +967,11 @@ ms.locfileid: "75552769"
 На этом шаге вы создадите группу отработки отказа и добавите в нее оба управляемых экземпляра. 
 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Создайте группу отработки отказа с помощью портал Azure. 
 
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
+1. На **портале Azure** в меню слева выберите [Azure SQL](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
 1. Выберите основной управляемый экземпляр, созданный в первом разделе, например `sql-mi-primary`. 
 1. В разделе **Параметры**перейдите к **экземпляру группы отработки отказа** и выберите **Добавить группу** , чтобы открыть страницу **группы отработки отказа экземпляра** . 
 
@@ -984,7 +984,7 @@ ms.locfileid: "75552769"
 1. После завершения развертывания группы отработки отказа будет выполнен переход на страницу **группы отработки отказа** . 
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Создайте группу отработки отказа с помощью PowerShell. 
 
    ```powershell-interactive
@@ -998,7 +998,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используется следующий командлет PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/new-azsqldatabaseinstancefailovergroup)| Создает новую группу отработки отказа управляемого экземпляра Базы данных SQL Azure.  |
 
@@ -1010,11 +1010,11 @@ ms.locfileid: "75552769"
 На этом шаге группа отработки отказа будет передаваться на сервер-получатель, а затем восстановлена с помощью портал Azure. 
 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Тестовая отработка отказа с помощью портал Azure. 
 
 
-1. Перейдите к управляемому экземпляру в [портал Azure](https://portal.azure.com) и выберите **группы отработки отказа экземпляра** в разделе Параметры. 
+1. Перейдите к _дополнительному_ управляемому экземпляру в [портал Azure](https://portal.azure.com) и выберите **группы отработки отказа экземпляра** в разделе Параметры. 
 1. Проверьте, какой управляемый экземпляр является первичным и какой управляемый экземпляр является вторичным. 
 1. Выберите **отработка отказа** и нажмите **кнопку Да** в предупреждении о том, что сеансы TDS отключены. 
 
@@ -1024,10 +1024,10 @@ ms.locfileid: "75552769"
 
    ![Управляемые экземпляры с переключением ролей после отработки отказа](media/sql-database-managed-instance-failover-group-tutorial/mi-switched-after-failover.png)
 
-1. Снова выберите **отработку отказа** , чтобы восстановить первичный экземпляр в первичную роль. 
+1. Перейдите к новому управляемому экземпляру- _получателю_ и снова выберите **отработку отказа** , чтобы восстановить первичный экземпляр в первичную роль. 
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Тестовая отработка отказа с помощью PowerShell. 
 
    ```powershell-interactive
@@ -1064,7 +1064,7 @@ ms.locfileid: "75552769"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [Get-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/get-azsqldatabaseinstancefailovergroup) | Возвращает или перечисляет группы отработки отказа управляемого экземпляра.| 
 | [Switch-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) | Выполняет отработку отказа для группы отработки отказа управляемого экземпляра. | 
@@ -1076,14 +1076,14 @@ ms.locfileid: "75552769"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Очистите ресурсы, сначала удалив управляемый экземпляр, затем виртуальный кластер, остальные ресурсы и, наконец, группу ресурсов. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
-1. Перейдите к группе ресурсов в [портал Azure](https://portal.azure.com). 
-1. Выберите управляемые экземпляры, а затем щелкните **Удалить**. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. Этот процесс может занять некоторое время в фоновом режиме, и пока он не будет завершен, вы не сможете удалить *виртуальный кластер* или другие зависимые ресурсы. Проследите за удалением на вкладке действие, чтобы подтвердить удаление управляемого экземпляра. 
-1. После удаления управляемого экземпляра удалите *виртуальный кластер* , выбрав его в группе ресурсов, а затем нажмите кнопку **Удалить**. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. 
-1. Удалите все оставшиеся ресурсы. В текстовом поле введите `yes`, чтобы подтвердить удаление ресурса, а затем выберите **Удалить**. 
-1. Удалите группу ресурсов, выбрав **Удалить группу ресурсов**, введя имя группы ресурсов `myResourceGroup`и выбрав **Удалить**. 
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+1. На [портале Azure](https://portal.azure.com) перейдите к используемой группе ресурсов. 
+1. Выберите один или несколько управляемых экземпляров и щелкните **Удалить**. Введите `yes` в текстовое поле, чтобы подтвердить удаление ресурса, а затем щелкните **Удалить**. Этот процесс может занять некоторое время в фоновом режиме, и пока он не будет завершен, вы не сможете удалить *виртуальный кластер* или другие зависимые ресурсы. Вы можете проверить состояние процесса удаления на вкладке "Действие", чтобы убедиться в удалении управляемого экземпляра. 
+1. После удаления управляемого экземпляра удалите *виртуальный кластер*, выбрав его в группе ресурсов и щелкнув **Удалить**. Введите `yes` в текстовое поле, чтобы подтвердить удаление ресурса, а затем щелкните **Удалить**. 
+1. Удалите все остальные ресурсы. Введите `yes` в текстовое поле, чтобы подтвердить удаление ресурса, а затем щелкните **Удалить**. 
+1. Удалите группу ресурсов, выбрав **Удалить группу ресурсов**, введя в текстовом поле имя группы ресурсов `myResourceGroup` и щелкнув **Удалить**. 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Группу ресурсов необходимо будет удалить дважды. При первом удалении группы ресурсов будет удален управляемый экземпляр и виртуальные кластеры, но после этого будет выдаваться сообщение об ошибке `Remove-AzResourceGroup : Long running operation failed with status 'Conflict'.`. Выполните команду Remove-AzResourceGroup еще раз, чтобы удалить все остаточные ресурсы, а также группу ресурсов.
 
@@ -1096,7 +1096,7 @@ Write-host "Removing residual resources and resouce group..."
 
 В этой части руководства используется следующий командлет PowerShell:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. |
 
@@ -1104,12 +1104,12 @@ Write-host "Removing residual resources and resouce group..."
 
 ## <a name="full-script"></a>Полный сценарий
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 [!code-powershell-interactive[main](../../powershell_scripts/sql-database/failover-groups/add-managed-instance-to-failover-group-az-ps.ps1 "Add managed instance to a failover group")]
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группы ресурсов Azure.  |
 | [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) | Создает виртуальную сеть.  |
@@ -1136,13 +1136,13 @@ Write-host "Removing residual resources and resouce group..."
 | [Switch-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/switch-azsqldatabaseinstancefailovergroup) | Выполняет отработку отказа для группы отработки отказа управляемого экземпляра. | 
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal) 
+# <a name="portal"></a>[Портал](#tab/azure-portal) 
 
 Для портал Azure нет доступных скриптов.
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы настроили группу отработки отказа между двумя управляемыми экземплярами. Вы ознакомились с выполнением следующих задач:
 
