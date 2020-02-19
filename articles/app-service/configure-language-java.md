@@ -9,12 +9,12 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: f6f334ed6b84d4688849b6dfd8cb1f79f8db57bf
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
-ms.translationtype: HT
+ms.openlocfilehash: e5beb60107b3632da336a20f167e1c2f5b53140a
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443900"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461272"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -29,6 +29,7 @@ ms.locfileid: "77443900"
 В противном случае ваш метод развертывания будет зависеть от типа архива:
 
 - Чтобы развернуть файлы WAR в Tomcat, используйте конечную точку `/api/wardeploy/` для публикации файла архива. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#deploy-war-file).
+- Чтобы развернуть JAR-файлы в Java SE, используйте конечную точку `/api/zipdeploy/` сайта KUDU. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#rest).
 
 Не развертывайте WAR-файл с помощью FTP. Средство FTP предназначено для передачи сценариев запуска, зависимостей или других файлов среды выполнения. Оно не является оптимальным решением для развертывания веб-приложений.
 
@@ -209,11 +210,11 @@ public int getServerPort()
 
 Эти инструкции применимы ко всем подключениям к базе данных. Необходимо будет заменить значения заполнителей на имя класса драйвера и JAR-файл выбранной базы данных. Ниже приведена таблица с именами классов и ссылками для скачивания драйверов для распространенных баз данных.
 
-| База данных   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
+| Database   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -287,6 +288,10 @@ public int getServerPort()
 
 Наконец, перезапустите службу приложений. Развертывания должны переходить на `D:\home\site\wwwroot\webapps`, как и раньше.
 
+## <a name="configure-java-se"></a>Настройка Java SE
+
+При запуске. JAR-приложение на Java SE в Windows, `server.port` передается как параметр командной строки при запуске приложения. Можно вручную разрешить HTTP-порт из переменной среды `HTTP_PLATFORM_PORT`. Значение этой переменной среды будет HTTP-портом, который приложение должно прослушивать. 
+
 ## <a name="java-runtime-statement-of-support"></a>Заявление о поддержке среды выполнения Java
 
 ### <a name="jdk-versions-and-maintenance"></a>Версии JDK и обслуживание
@@ -300,6 +305,8 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 ### <a name="security-updates"></a>Обновления для системы безопасности
 
 Исправления для устранения серьезных уязвимостей в системе безопасности будут выпускаться по мере выпуска компанией Azul Systems. "Серьезными" считаются уязвимости с базовым индексом не меньше 9.0 в [NIST Common Vulnerability Scoring System версии 2](https://nvd.nist.gov/cvss.cfm).
+
+Tomcat 8,0 достигла [окончания срока жизни (конца строки) с 30 сентября 2018 г](https://tomcat.apache.org/tomcat-80-eol.html). Хотя среда выполнения по-прежнему авиалабле в службе приложений Azure, Azure не будет применять обновления безопасности к Tomcat 8,0. По возможности перенесите приложения на Tomcat 8,5 или 9,0. В службе приложений Azure доступны как Tomcat 8,5, так и 9,0. Дополнительные сведения см. на [официальном веб-сайте Tomcat](https://tomcat.apache.org/whichversion.html) . 
 
 ### <a name="deprecation-and-retirement"></a>Нерекомендуемые версии и прекращение использования
 
@@ -317,7 +324,7 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 Разработчики могут [сообщить о проблеме](/azure/azure-portal/supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом разделе содержится инструкция поддержки Java для службы приложений Azure в Windows.
 

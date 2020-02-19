@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/25/2019
 ms.author: mlottner
-ms.openlocfilehash: c189ece9763e484b969b91f9c1ab9120e5665261
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: c385be0c21e7a61f66eb274ec293f4aabd4208ba
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71305955"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77458891"
 ---
 # <a name="customize-your-azure-security-center-for-iot-solution"></a>Настройка центра безопасности Azure для решения IoT 
 
@@ -32,7 +32,7 @@ ms.locfileid: "71305955"
 
 ## <a name="change-settings"></a>Изменить параметры
 
-Управление параметром центра безопасности Azure для IoT:
+Управление параметрами центра безопасности Azure для IoT:
 
 В центре Интернета вещей перейдите к колонке "Обзор безопасности" в левом верхнем углу экрана, а затем в разделе "Параметры" настройте центр безопасности Azure для параметров Интернета вещей и выполните следующие действия.
 

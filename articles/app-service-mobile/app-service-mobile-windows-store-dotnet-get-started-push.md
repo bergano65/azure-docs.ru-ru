@@ -6,27 +6,22 @@ ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/25/2019
-ms.openlocfilehash: e2178322c7006a6ddd2ca6daffca066f04fff68c
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 4438084a9471bf816b371b7e663856205f87f8ba
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74668734"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461425"
 ---
 # <a name="add-push-notifications-to-your-windows-app"></a>Добавление push-уведомлений в приложение Windows
 
 [!INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
-> [!NOTE]
-> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы, необходимые для разработки мобильных приложений. Разработчики могут использовать службы **Build**, **Test** и **Distribute** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать его состояние и использование с помощью служб **Analytics** и **Diagnostics**, а также взаимодействовать с пользователями с помощью службы **Push**. Разработчики также могут использовать **Auth** для реализации проверки подлинности пользователей и службу **Data** для хранения и синхронизации данных приложений в облаке.
->
-> Если вы хотите интегрировать облачные службы с мобильным приложением, зарегистрируйтесь в [Центре приложений](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) сегодня.
-
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В этом руководстве мы добавим push-уведомления в [простое приложение Windows](app-service-mobile-windows-store-dotnet-get-started.md), чтобы при каждом добавлении новой записи на устройство отправлялось push-уведомление.
 
-Если вы не используете скачанный проект сервера, вам потребуется добавить пакет расширений для push-уведомлений. Дополнительные сведения о пакетах расширений для сервера см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
+Если вы не используете скачанный проект сервера, необходимо добавить пакет расширений для push-уведомлений. Дополнительные сведения о пакетах расширений для сервера см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
 ## <a name="configure-hub"></a>Настройка концентратора уведомлений
 
@@ -58,7 +53,7 @@ ms.locfileid: "74668734"
 
 ## <a id="update-service"></a>Обновление сервера для отправки push-уведомлений
 
-Используйте приведенную ниже процедуру, которая соответствует типу вашего серверного проекта &mdash; [серверный проект .NET](#dotnet) или [серверный проект Node.js](#nodejs).
+Используйте приведенную ниже процедуру, которая соответствует типу вашего серверного проекта &mdash;[серверный проект .NET](#dotnet) или [серверный проект Node.js](#nodejs).
 
 ### <a name="dotnet"></a>Серверный проект .NET
 
@@ -206,7 +201,7 @@ ms.locfileid: "74668734"
 
 [!INCLUDE [app-service-mobile-windows-universal-test-push](../../includes/app-service-mobile-windows-universal-test-push.md)]
 
-## <a id="more"></a>Дальнейшие действия
+## <a id="more"></a>Следующие шаги
 
 Дополнительные сведения о push-уведомлениях:
 

@@ -6,22 +6,17 @@ ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: article
 ms.date: 06/25/2019
-ms.openlocfilehash: f68b4f8477d5b21a7107270370af387a7e88756e
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 705ebb5809840155e6bbf3f8eef091eb95f63e63
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74668952"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461646"
 ---
 # <a name="add-authentication-to-your-android-app"></a>Добавление проверки подлинности в приложение Android
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
 
-> [!NOTE]
-> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы, необходимые для разработки мобильных приложений. Разработчики могут использовать службы **Build**, **Test** и **Distribute** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать его состояние и использование с помощью служб **Analytics** и **Diagnostics**, а также взаимодействовать с пользователями с помощью службы **Push**. Разработчики также могут использовать **Auth** для реализации проверки подлинности пользователей и службу **Data** для хранения и синхронизации данных приложений в облаке.
->
-> Если вы хотите интегрировать облачные службы с мобильным приложением, зарегистрируйтесь в [Центре приложений](https://appcenter.ms/signup?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) сегодня.
-
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 В этом руководстве вы добавите аутентификацию в проект быстрого запуска ToDoList для Android с помощью поддерживаемого поставщика удостоверений. Этот учебник создан на основе учебника [Начало работы с мобильными приложениями] , который необходимо изучить в первую очередь.
 
 ## <a name="register"></a>Регистрация приложения для аутентификации и настройка службы приложений Azure
@@ -37,9 +32,9 @@ ms.locfileid: "74668952"
 
 3. В поле **Разрешенные URL-адреса внешнего перенаправления** введите `appname://easyauth.callback`.  _appname_ в этой строке — это схема URL-адресов для вашего мобильного приложения.  Она должна соответствовать обычной спецификации URL-адресов для протокола (можно использовать буквы и цифры, и адрес должен начинаться с буквы).  Необходимо записать выбранную строку, так как потребуется в нескольких местах настроить код мобильного приложения с использованием схемы URL-адресов.
 
-4. Последовательно выберите **ОК**.
+4. Нажмите кнопку **ОК**.
 
-5. В нижней части страницы нажмите кнопку **Save**.
+5. Нажмите кнопку **Сохранить**.
 
 ## <a name="permissions"></a>Предоставление разрешений только пользователям, прошедшим проверку подлинности
 [!INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
@@ -58,7 +53,7 @@ ms.locfileid: "74668952"
 ## <a name="cache-tokens"></a>Кэширование маркеров проверки подлинности на клиенте
 [!INCLUDE [mobile-android-authenticate-app-with-token](../../includes/mobile-android-authenticate-app-with-token.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы прошли этот учебник по обычной проверке подлинности и теперь можете перейти к одному из следующих учебников:
 
 * [Добавление push-уведомлений в приложение Android](app-service-mobile-android-get-started-push.md).

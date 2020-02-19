@@ -6,28 +6,23 @@ ms.tgt_pltfrm: mobile-xamarin
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.openlocfilehash: 69a9b3294bf080f7ae1516b0acbfc4be077518f4
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 9ae97ccbcc358a150e914a6e950579a972fef0bc
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74668660"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461340"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
-> [!NOTE]
-> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы, необходимые для разработки мобильных приложений. Разработчики могут использовать службы **Build**, **Test** и **Distribute** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать его состояние и использование с помощью служб **Analytics** и **Diagnostics**, а также взаимодействовать с пользователями с помощью службы **Push**. Разработчики также могут использовать **Auth** для реализации проверки подлинности пользователей и службу **Data** для хранения и синхронизации данных приложений в облаке.
->
-> Если вы хотите интегрировать облачные службы с мобильным приложением, зарегистрируйтесь в [Центре приложений](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) сегодня.
-
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 В этом учебнике рассказывается, как добавить облачную серверную службу в мобильное приложение Xamarin.Forms с помощью функции "Мобильные приложения" службы приложений Azure в качестве серверной части. Вы создадите новую серверную часть при помощи функции "Мобильные приложения" и простое приложение Xamarin.Forms для списка дел, в котором в Azure хранятся данные приложения.
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными мобильным приложениям для приложений Xamarin.Forms.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -57,7 +52,7 @@ ms.locfileid: "74668660"
 
     `public static string ApplicationURL = @"ZUMOAPPURL";`
 
-    обретает
+    преобразуется в
 
     `public static string ApplicationURL = @"https://test123.azurewebsites.net";`
     
@@ -150,7 +145,7 @@ ms.locfileid: "74668660"
 > Код, который обращается к серверной части мобильного приложения, располагается в файле C# **TodoItemManager.cs** в проекте переносимой библиотеки классов для вашего решения.
 >
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 При проблемах со сборкой проекта запустите диспетчер пакетов NuGet и выполните обновление до последней версии `Xamarin.Forms`, а для проекта Android — обновите еще и пакеты поддержки `Xamarin.Android`. Проекты быстрого запуска не всегда включают самые свежие версии.
 

@@ -1,16 +1,16 @@
 ---
-title: Включение SSL в группе контейнеров
-description: Создание конечной точки SSL или TLS для группы контейнеров, работающей в службе "экземпляры контейнеров Azure"
+title: Включение SSL с помощью контейнера расширения
+description: Создайте конечную точку SSL или TLS для группы контейнеров, работающей в службе "экземпляры контейнеров Azure", запустив nginx в контейнере расширения.
 ms.topic: article
-ms.date: 04/03/2019
-ms.openlocfilehash: 541d53a9a9530f7ac80227dbae598b3da2691301
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.date: 02/14/2020
+ms.openlocfilehash: 524e997cf6c7c464cc352048b1abf4be119d2f37
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773075"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77460592"
 ---
-# <a name="enable-an-ssl-endpoint-in-a-container-group"></a>Включение конечной точки SSL в группе контейнеров
+# <a name="enable-an-ssl-endpoint-in-a-sidecar-container"></a>Включение конечной точки SSL в контейнере расширения
 
 В этой статье показано, как создать [группу контейнеров](container-instances-container-groups.md) с контейнером приложения и контейнером расширения, на котором работает поставщик SSL. Настроив группу контейнеров с отдельной конечной точкой SSL, вы включите SSL-подключения для приложения, не изменяя код приложения.
 
@@ -18,7 +18,9 @@ ms.locfileid: "76773075"
 * Контейнер приложения, в котором выполняется простое веб-приложение, использующее общедоступное изображение Microsoft [ACI-HelloWorld](https://hub.docker.com/_/microsoft-azuredocs-aci-helloworld) . 
 * Контейнер расширения, в котором выполняется общедоступный образ [nginx](https://hub.docker.com/_/nginx) , настроенный для использования SSL. 
 
-В этом примере группа контейнеров предоставляет только порт 443 для nginx с его общедоступным IP-адресом. Nginx направляет запросы HTTPS в сопутствующее веб-приложение, которое прослушивает внутренний порт 80. Вы можете адаптировать пример для приложений контейнера, прослушиваемых другими портами. Другие подходы к включению SSL в группе контейнеров см. в разделе [дальнейшие действия](#next-steps) .
+В этом примере группа контейнеров предоставляет только порт 443 для nginx с его общедоступным IP-адресом. Nginx направляет запросы HTTPS в сопутствующее веб-приложение, которое прослушивает внутренний порт 80. Вы можете адаптировать пример для приложений контейнера, прослушиваемых другими портами. 
+
+Другие подходы к включению SSL в группе контейнеров см. в разделе [дальнейшие действия](#next-steps) .
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -38,7 +40,7 @@ openssl req -new -newkey rsa:2048 -nodes -keyout ssl.key -out ssl.csr
 
 Следуйте инструкциям на экране, чтобы добавить идентификационные данные. В поле Common Name (общее имя) введите имя узла, связанное с сертификатом. При запросе пароля нажмите клавишу ВВОД без ввода текста, чтобы пропустить Добавление пароля.
 
-Выполните следующую команду, чтобы создать самозаверяющий сертификат (CRT-файл) из запроса на сертификат. Пример.
+Выполните следующую команду, чтобы создать самозаверяющий сертификат (CRT-файл) из запроса на сертификат. Например:
 
 ```console
 openssl x509 -req -days 365 -in ssl.csr -signkey ssl.key -out ssl.crt
@@ -50,7 +52,7 @@ openssl x509 -req -days 365 -in ssl.csr -signkey ssl.key -out ssl.crt
 
 ### <a name="create-nginx-configuration-file"></a>Создать файл конфигурации nginx
 
-В этом разделе вы создадите файл конфигурации для nginx, чтобы использовать SSL. Начните с копирования следующего текста в новый файл с именем`nginx.conf`. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
+В этом разделе вы создадите файл конфигурации для nginx, чтобы использовать SSL. Начните с копирования следующего текста в новый файл с именем `nginx.conf`. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
 
 ```console
 code nginx.conf
@@ -85,7 +87,7 @@ http {
 
         # Protect against the BEAST attack by not using SSLv3 at all. If you need to support older browsers (IE6) you may need to add
         # SSLv3 to the list of protocols below.
-        ssl_protocols              TLSv1 TLSv1.1 TLSv1.2;
+        ssl_protocols              TLSv1.2;
 
         # Ciphers set to best allow protection from Beast, while providing forwarding secrecy, as defined by Mozilla - https://wiki.mozilla.org/Security/Server_Side_TLS#Nginx
         ssl_ciphers                ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:AES128:AES256:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK;
@@ -125,9 +127,9 @@ http {
 Base64 кодирует файл конфигурации nginx, SSL-сертификат и ключ SSL. В следующем разделе вы вводите закодированное содержимое в файл YAML, используемый для развертывания группы контейнеров.
 
 ```console
-cat nginx.conf | base64 -w 0 > base64-nginx.conf
-cat ssl.crt | base64 -w 0 > base64-ssl.crt
-cat ssl.key | base64 -w 0 > base64-ssl.key
+cat nginx.conf | base64 > base64-nginx.conf
+cat ssl.crt | base64 > base64-ssl.crt
+cat ssl.key | base64 > base64-ssl.key
 ```
 
 ## <a name="deploy-container-group"></a>Развернуть группу контейнеров
@@ -216,20 +218,21 @@ az container show --resource-group <myResourceGroup> --name app-with-ssl --outpu
 ```console
 Name          ResourceGroup    Status    Image                                                    IP:ports             Network    CPU/Memory       OsType    Location
 ------------  ---------------  --------  -------------------------------------------------------  -------------------  ---------  ---------------  --------  ----------
-app-with-ssl  myresourcegroup  Running   mcr.microsoft.com/azuredocs/nginx, aci-helloworld        52.157.22.76:443     Public     1.0 core/1.5 gb  Linux     westus
+app-with-ssl  myresourcegroup  Running   nginx, mcr.microsoft.com/azuredocs/aci-helloworld        52.157.22.76:443     Public     1.0 core/1.5 gb  Linux     westus
 ```
 
 ## <a name="verify-ssl-connection"></a>Проверка SSL-подключения
 
-Чтобы просмотреть работающее приложение, перейдите к его IP-адресу в браузере. Например, IP-адрес, показанный в этом примере, `52.157.22.76`. Для просмотра работающего приложения необходимо использовать `https://<IP-ADDRESS>` из-за конфигурации сервера nginx. Сбой попытки подключения с `http://<IP-ADDRESS>`.
+С помощью браузера перейдите по общедоступному IP-адресу группы контейнеров. IP-адрес, показанный в этом примере, `52.157.22.76`, поэтому URL-адрес **https://52.157.22.76** . Для просмотра работающего приложения необходимо использовать протокол HTTPS из-за конфигурации сервера nginx. Сбой при попытке подключения по протоколу HTTP.
 
 ![Снимок экрана браузера: приложение, выполняющееся в экземпляре контейнера Azure](./media/container-instances-container-group-ssl/aci-app-ssl-browser.png)
 
 > [!NOTE]
-> Так как в этом примере используется самозаверяющий сертификат, а не один из центра сертификации, браузер отображает предупреждение системы безопасности при подключении к сайту по протоколу HTTPS. Это ожидаемое поведение.
+> Так как в этом примере используется самозаверяющий сертификат, а не один из центра сертификации, браузер отображает предупреждение системы безопасности при подключении к сайту по протоколу HTTPS. Может потребоваться принять предупреждение или настроить параметры браузера или сертификата, чтобы перейти к странице. Это нормально.
+
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как настроить контейнер Nginx для подключения SSL к веб-приложению, работающему в группе контейнеров. Этот пример можно адаптировать для приложений, прослушиваемых через порты, отличные от порта 80. Кроме того, можно обновить файл конфигурации nginx, чтобы автоматически перенаправлять подключения сервера через порт 80 (HTTP) для использования протокола HTTPS.
 
@@ -239,6 +242,4 @@ app-with-ssl  myresourcegroup  Running   mcr.microsoft.com/azuredocs/nginx, aci-
 
 * [Прокси-серверы Функций Azure](../azure-functions/functions-proxies.md)
 * [Управление API Azure](../api-management/api-management-key-concepts.md)
-* [Шлюз приложений Azure](../application-gateway/overview.md)
-
-Сведения об использовании шлюза приложений см. в разделе пример [шаблона развертывания](https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress-vnet).
+* [Шлюз приложений Azure](../application-gateway/overview.md) — см. пример [шаблона развертывания](https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-wordpress-vnet).

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: aahi
-ms.openlocfilehash: 5d3aba2f6010ba16656be96433c521d2adae4c58
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 3e5fd2315a5d352ed5abee9253b5c84eea3b73a9
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169162"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77462281"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -25,7 +25,7 @@ ms.locfileid: "76169162"
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -76,7 +76,7 @@ az group create \
 
 ### <a name="multi-service"></a>Несколько служб
 
-| Служба                    | Вид                      |
+| Service                    | Вид                      |
 |----------------------------|---------------------------|
 | Несколько служб. Дополнительные сведения см. на странице с [ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) .            | `CognitiveServices`     |
 
@@ -86,35 +86,35 @@ az group create \
 
 ### <a name="vision"></a>Зрение
 
-| Служба                    | Вид                      |
+| Service                    | Вид                      |
 |----------------------------|---------------------------|
-| Компьютерное зрение            | `ComputerVision`          |
+| API Компьютерного зрения            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
-| API распознавания лиц                       | `Face`                    |
+| Распознавание лиц                       | `Face`                    |
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
 
 ### <a name="search"></a>Поиск
 
-| Служба            | Вид                  |
+| Service            | Вид                  |
 |--------------------|-----------------------|
-| API автозаполнения Bing   | `Bing.Autosuggest.v7` |
+| API Автозаполнения Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Bing для поиска сущностей | `Bing.EntitySearch`   |
+| API Поиска сущностей Bing | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| API проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
+| API Проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
-| Служба            | Вид                 |
+| Service            | Вид                 |
 |--------------------|----------------------|
-| Службы речи    | `SpeechServices`     |
+| Службы "Речь"    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
 
-| Служба            | Вид                |
+| Service            | Вид                |
 |--------------------|---------------------|
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
@@ -124,7 +124,7 @@ az group create \
 
 ### <a name="decision"></a>Решение
 
-| Служба           | Вид               |
+| Service           | Вид               |
 |-------------------|--------------------|
 | Детектор аномалий  | `AnomalyDetector`  |
 | Content Moderator | `ContentModerator` |
@@ -195,10 +195,10 @@ az cognitiveservices account list-usage \
 Чтобы удалить группу ресурсов и связанные с ней ресурсы, используйте команду AZ Group DELETE.
 
 ```azurecli-interactive
-az group delete --name storage-resource-group
+az group delete --name cognitive-services-resource-group
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Что такое Azure Cognitive Services?](Welcome.md)

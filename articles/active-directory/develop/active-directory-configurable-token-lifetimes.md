@@ -5,21 +5,20 @@ description: Сведения о настройке времени жизни м
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: 06f5b317-053e-44c3-aaaa-cf07d8692735
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/07/2019
+ms.date: 02/19/2020
 ms.author: ryanwi
-ms.custom: aaddev, annaba, identityplatformtop40
-ms.reviewer: hirsin
-ms.openlocfilehash: 55c7ee6711c6001745053b850c1b4e1859af5dbe
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.custom: aaddev, identityplatformtop40
+ms.reviewer: hirsin, jlu, annaba
+ms.openlocfilehash: 0b2b9dbe52a5696f21b287402fc4cbaa32b29c73
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76699025"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461204"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-preview"></a>Настройка времени существования маркеров в Azure Active Directory (предварительная версия)
 
@@ -33,9 +32,8 @@ ms.locfileid: "76699025"
 Для организации можно назначить политику по умолчанию. Она будет применяться ко всем приложениям в организации, если только не будет переопределена политикой с более высоким приоритетом. Политику можно также назначить и для отдельных приложений. Приоритетность политики определяется ее типом.
 
 > [!NOTE]
-> Настраиваемые политики времени существования токенов не поддерживается в SharePoint Online.  Хотя имеется возможность создать такую политику с помощью PowerShell, SharePoint Online не признает ее. Ознакомьтесь с [блогом о SharePoint Online](https://techcommunity.microsoft.com/t5/SharePoint-Blog/Introducing-Idle-Session-Timeout-in-SharePoint-and-OneDrive/ba-p/119208), чтобы получить дополнительные сведения о настройке времени ожидания бездействующих сеансов.
->* Время существования по умолчанию для маркера доступа SharePoint Online составляет 1 час. 
->* Максимальный период бездействия по умолчанию для маркера обновления SharePoint Online составляет 90 дней.
+> Настраиваемая политика времени существования маркера применяется только к мобильным и настольным клиентам, которые обращаются к SharePoint Online и OneDrive для бизнеса и не применяются к сеансам веб-браузера.
+> Чтобы управлять временем существования сеансов веб-браузера для SharePoint Online и OneDrive для бизнеса, используйте функцию [время существования сеанса условного доступа](../conditional-access/howto-conditional-access-session-lifetime.md) . Ознакомьтесь с [блогом о SharePoint Online](https://techcommunity.microsoft.com/t5/SharePoint-Blog/Introducing-Idle-Session-Timeout-in-SharePoint-and-OneDrive/ba-p/119208), чтобы получить дополнительные сведения о настройке времени ожидания бездействующих сеансов.
 
 ## <a name="token-types"></a>Типы маркеров
 
@@ -85,10 +83,10 @@ ms.locfileid: "76699025"
 Политика времени жизни маркера — это объект политики, который содержит правила времени жизни маркера. Свойства этой политики и определяют срок действия соответствующих маркеров. Если политика не задана, система использует стандартное значение для времени жизни.
 
 ### <a name="configurable-token-lifetime-properties"></a>Свойства для настройки времени жизни маркера
-| Свойство | Строка свойства политики | Область применения | По умолчанию | Минимальные | Максимальная |
+| Свойство | Строка свойства политики | Область применения | По умолчанию | Минимум | Максимальное значение |
 | --- | --- | --- | --- | --- | --- |
-| Время жизни маркера доступа |Акцесстокенлифетиме<sup>2</sup> |Маркеры доступа, маркеры безопасности, маркеры SAML2 |1 ч |10 минут. |1 дн. |
-| Максимальное время неактивности для маркеров обновления |MaxInactiveTime |Маркеры обновления |90 дней |10 минут. |90 дней |
+| Время жизни маркера доступа |Акцесстокенлифетиме<sup>2</sup> |Маркеры доступа, маркеры безопасности, маркеры SAML2 |1 час |10 минут. |1 день |
+| Максимальное время неактивности для маркеров обновления |MaxInactiveTime |Маркеры обновления |90 дней |10 минут. |90 дней |
 | Максимальный возраст однофакторного маркера обновления |MaxAgeSingleFactor |Маркеры обновления (для всех пользователей) |Пока не будет отозван |10 минут. |Пока не будет отозван<sup>1</sup> |
 | Максимальный возраст многофакторного маркера обновления |MaxAgeMultiFactor |Маркеры обновления (для всех пользователей) |Пока не будет отозван |10 минут. |Пока не будет отозван<sup>1</sup> |
 | Максимальный возраст однофакторного маркера сеанса |MaxAgeSessionSingleFactor |Маркеры сеанса (постоянные и временные) |Пока не будет отозван |10 минут. |Пока не будет отозван<sup>1</sup> |
@@ -101,7 +99,7 @@ ms.locfileid: "76699025"
 | Свойство | Область применения | По умолчанию |
 | --- | --- | --- |
 | Обновление максимального возраста маркеров (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |Маркеры обновления (выданные для федеративных пользователей с недостаточной информацией об отзыве <sup>1</sup>) |12 часов |
-| Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
+| Максимальное время неактивности для маркера обновления (выданного для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |90 дней |
 | Максимальный возраст маркеров обновления (выданных для конфиденциальных клиентов) |Маркеры обновления (выданные для конфиденциальных клиентов) |Пока не будет отозван |
 
 * <sup>1</sup> Федеративные пользователи с недостаточной информацией об отзыве включают любых пользователей, не имеющих синхронизированного атрибута LastPasswordChangeTimestamp. Этим пользователям предоставляется короткий максимальный возраст, так как служба AAD не может проверить, когда отменять маркеры, привязанные к старым учетным данным (например, пароль, который был изменен), и должна проверять его чаще, чтобы гарантировать, что пользователь и связанные с ним маркеры все еще находятся в хорошем состоянии. Для улучшения взаимодействия с пользователем администраторам клиента необходимо убедиться, что они синхронизировали атрибут LastPasswordChangeTimestamp (это можно задать в объекте пользователя, используя PowerShell или AADSync).
@@ -210,7 +208,7 @@ ms.locfileid: "76699025"
 * как создать политику для собственного приложения, которое вызывает веб-API;
 * как управлять расширенной политикой.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для приложений, субъектов-служб и организации в целом. Если вы еще не работали с Azure AD, прежде чем продолжить работу с этими примерами, советуем ознакомиться со статьей [Как получить клиент Azure Active Directory](quickstart-create-new-tenant.md).  
 
 Чтобы начать работу, сделайте следующее:
@@ -375,7 +373,7 @@ ms.locfileid: "76699025"
 
     Теперь ваша исходная политика связана с субъектом-службой, а организации назначена новая политика по умолчанию. Важно помнить, что политики, примененные к субъектам-службам, имеют более высокий приоритет, чем политики по умолчанию для организации.
 
-## <a name="cmdlet-reference"></a>Справочник по командлетам
+## <a name="cmdlet-reference"></a>Справка по командлетам
 
 ### <a name="manage-policies"></a>Управление политиками
 
@@ -389,7 +387,7 @@ ms.locfileid: "76699025"
 New-AzureADPolicy -Definition <Array of Rules> -DisplayName <Name of Policy> -IsOrganizationDefault <boolean> -Type <Policy Type>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Definition</code> |Переведенный в строку массив JSON, который содержит все правила политики. | `-Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"20:00:00"}}')` |
 | <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
@@ -406,7 +404,7 @@ New-AzureADPolicy -Definition <Array of Rules> -DisplayName <Name of Policy> -Is
 Get-AzureADPolicy
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> (необязательный параметр) |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
 
@@ -419,7 +417,7 @@ Get-AzureADPolicy
 Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
 
@@ -432,7 +430,7 @@ Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
 Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. |`-Id <ObjectId of Policy>` |
 | <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
@@ -450,7 +448,7 @@ Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
  Remove-AzureADPolicy -Id <ObjectId of Policy>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** нужной политики. | `-Id <ObjectId of Policy>` |
 
@@ -466,7 +464,7 @@ Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectId of Policy>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
@@ -480,7 +478,7 @@ Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectI
 Get-AzureADApplicationPolicy -Id <ObjectId of Application>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 
@@ -493,7 +491,7 @@ Get-AzureADApplicationPolicy -Id <ObjectId of Application>
 Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectId of Policy>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |
@@ -510,7 +508,7 @@ Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectI
 Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectId <ObjectId of Policy>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
@@ -524,7 +522,7 @@ Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectI
 Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 
@@ -537,7 +535,7 @@ Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
 Remove-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>  -PolicyId <ObjectId of Policy>
 ```
 
-| Параметры | Description | Пример |
+| Параметры | Описание | Пример |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectID (идентификатор)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |

@@ -6,23 +6,18 @@ ms.tgt_pltfrm: mobile-html
 ms.devlang: javascript
 ms.topic: article
 ms.date: 06/25/2019
-ms.openlocfilehash: 6ec214c0f1a4f8333bf88790de8d2936fce39002
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 08260437076728421cb6fa393f481d27b95b1782
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74668908"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461612"
 ---
 # <a name="add-push-notifications-to-your-apache-cordova-app"></a>Добавление push-уведомлений в приложение Apache Cordova
 
 [!INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
-> [!NOTE]
-> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы, необходимые для разработки мобильных приложений. Разработчики могут использовать службы **Build**, **Test** и **Distribute** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать его состояние и использование с помощью служб **Analytics** и **Diagnostics**, а также взаимодействовать с пользователями с помощью службы **Push**. Разработчики также могут использовать **Auth** для реализации проверки подлинности пользователей и службу **Data** для хранения и синхронизации данных приложений в облаке.
->
-> Если вы хотите интегрировать облачные службы с мобильным приложением, зарегистрируйтесь в [Центре приложений](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) сегодня.
-
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В этом руководстве вы добавите push-уведомления в проект быстрого запуска [Apache Cordova][5] , чтобы при каждом добавлении записи отправлялось push-уведомление на устройство.
 
@@ -374,7 +369,7 @@ pushRegistration = PushNotification.init({
 
 После добавления элемента должно отобразиться соответствующее уведомление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о push-уведомлениях см. в статье о [центрах уведомлений][17].
 * Если вы еще не сделали этого, продолжите работу с руководством, [добавив проверку подлинности][14] в приложение Apache Cordova.

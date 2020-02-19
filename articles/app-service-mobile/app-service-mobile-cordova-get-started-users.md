@@ -6,22 +6,17 @@ ms.tgt_pltfrm: mobile-html
 ms.devlang: javascript
 ms.topic: article
 ms.date: 06/25/2019
-ms.openlocfilehash: f85c8e4f8eedccf3039038308f2262727fb18197
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 3714ce2a8098608851991115aa82afdc00d08a47
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74668553"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77459394"
 ---
 # <a name="add-authentication-to-your-apache-cordova-app"></a>Добавление проверки подлинности в приложение Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
 
-> [!NOTE]
-> Центр приложений Visual Studio поддерживает комплексные и интегрированные службы, необходимые для разработки мобильных приложений. Разработчики могут использовать службы **Build**, **Test** и **Distribute** для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения разработчики могут отслеживать его состояние и использование с помощью служб **Analytics** и **Diagnostics**, а также взаимодействовать с пользователями с помощью службы **Push**. Разработчики также могут использовать **Auth** для реализации проверки подлинности пользователей и службу **Data** для хранения и синхронизации данных приложений в облаке.
->
-> Если вы хотите интегрировать облачные службы с мобильным приложением, зарегистрируйтесь в [Центре приложений](https://appcenter.ms/?utm_source=zumo&utm_medium=Azure&utm_campaign=zumo%20doc) сегодня.
-
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 В этом учебнике вы добавляете проверку подлинности в учебный проект ToDoList для Apache Cordova с помощью поддерживаемого поставщика удостоверений. Этот учебник создан на основе учебника [Начало работы с мобильными приложениями] , который необходимо изучить в первую очередь.
 
 ## <a name="register"></a>Регистрация приложения для проверки подлинности и настройка службы приложений
@@ -47,9 +42,9 @@ ms.locfileid: "74668553"
    | Поставщик | Имя поставщика SDK | Узел OAuth |
    |:--- |:--- |:--- |
    | Azure Active Directory | aad | https://login.microsoftonline.com |
-   | Facebook | Facebook | https://www.facebook.com |
+   | Facebook | facebook | https://www.facebook.com |
    | Google | Google | https://accounts.google.com |
-   | Майкрософт | microsoftaccount | https://login.live.com |
+   | Microsoft | microsoftaccount | https://login.live.com |
    | Twitter | Twitter | https://api.twitter.com |
 
     Пример политики безопасности содержимого (для Azure Active Directory):
@@ -88,7 +83,7 @@ ms.locfileid: "74668553"
     Метод login() запускает аутентификацию с использованием поставщика. Метод login() — это асинхронная функция, которая возвращает обещание JavaScript.  Остальная часть инициализации помещается в ответ обещания и до завершения метода login() не выполняется.
 
 4. В коде, который вы только что добавили, замените `SDK_Provider_Name` именем своего поставщика входа. Например, для Azure Active Directory используйте `client.login('aad')`.
-5. Запустите проект.  Когда инициализация проекта будет завершена, в приложении откроется страница входа OAth для выбранного поставщика аутентификации.
+5. Выполните проект.  Когда инициализация проекта будет завершена, в приложении откроется страница входа OAth для выбранного поставщика аутентификации.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше об [аутентификации] с использованием службы приложений Azure.

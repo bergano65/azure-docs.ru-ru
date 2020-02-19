@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: ambapat
-ms.openlocfilehash: bd70cfb58c9d89f1d454537721e22f36b1fd3d3e
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 2f5269587d222be9a1628b72c1f3f0dc1b105f3c
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77429297"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77461749"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-preview"></a>Импорт ключей, защищенных HSM, в Key Vault (Предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "77429297"
 * KEK должен находиться в том же хранилище ключей, в котором будет импортирован целевой ключ.
 * Когда файл BYOK загружается в Key Vault, Key Vault HSM использовать закрытый ключ KEK для расшифровки материала целевого ключа и импорта его в качестве ключа HSM. Эта операция выполняется полностью в Key Vault HSM, а целевой ключ всегда остается на границе защиты HSM.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Список предварительных требований для реализации сценария BYOK для хранилища ключей Azure к см. в приведенной ниже таблице.
 
@@ -52,13 +52,13 @@ ms.locfileid: "77429297"
 | Подписка на Azure |Для создания хранилища ключей Azure требуется подписка Azure: [зарегистрируйтесь для получения бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/) |
 | Хранилище ключей (SKU Premium) для импорта ключей, защищенных АППАРАТным модулем безопасности |Дополнительные сведения об уровнях служб и возможностях хранилища ключей Azure см. на веб-сайте [Цены на хранилище ключей Azure](https://azure.microsoft.com/pricing/details/key-vault/). |
 | Модуль HSM из поддерживаемого списка HSM вместе со средством BYOK и инструкциями, предоставленными поставщиком HSM | Необходимо иметь доступ к аппаратному модулю безопасности и базовым знаниям о работе HSM. См. раздел [Supported HSM](#supported-hsms). |
-| Azure CLI версии 2.0.82 или более поздней | Дополнительные сведения см. [в разделе установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) .|
+| Azure CLI версии 2.1.0 или более поздней | Дополнительные сведения см. [в разделе установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) .|
 
 ## <a name="supported-hsms"></a>Поддерживаемые HSM
 
-|Имя поставщика HSM|Поддерживаемые модели HSM|Дополнительная информация|
+|Имя поставщика HSM|Поддерживаемые модели HSM|Дополнительные сведения|
 |---|---|---|
-|Thales|Семейство компании SafeNet Luna HSM 7 с микропрограммным обеспечением версии 7,3 или более поздней| [Средство и документация по компании SafeNet Luna BYOK](https://safenet.gemalto.com/blah-blah)|
+|Thales|Семейство компании SafeNet Luna HSM 7 с микропрограммным обеспечением версии 7,3 или более поздней| [Средство и документация по компании SafeNet Luna BYOK](https://supportportal.thalesgroup.com/csm?id=kb_article_view&sys_kb_id=3892db6ddb8fc45005c9143b0b961987&sysparm_article=KB0021016)|
 
 
 > [!NOTE]
@@ -120,6 +120,6 @@ az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey
 
 Если отправка прошла успешно, отобразятся свойства только что импортированного ключа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь ключ, защищенный с помощью аппаратного модуля безопасности, можно использовать в хранилище ключей. Дополнительные сведения см. в этой цене и [сравнении](https://azure.microsoft.com/pricing/details/key-vault/)характеристик.
