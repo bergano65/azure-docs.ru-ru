@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 06/11/2019
 ms.author: helohr
-ms.openlocfilehash: b5fa5fc13c8ce0c98c04d2451f3a50e89b986c16
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 8c062c1ce8e938ac426a10c41161eb7e28f3dcba
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71676450"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368768"
 ---
 # <a name="tutorial-set-up-service-alerts"></a>Руководство по Настройка оповещений служб
 
@@ -27,9 +27,9 @@ ms.locfileid: "71676450"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Руководство. Создание клиента в Виртуальном рабочем столе Windows](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory)
-- [Руководство. Создание субъектов-служб и назначений ролей с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-service-principal-role-powershell).
-- [Руководство. Создание пула узлов с помощью Azure Marketplace](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-azure-marketplace)
+- [Руководство. Создание клиента в Виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md)
+- [Руководство. Создание субъектов-служб и назначений ролей с помощью PowerShell](create-service-principal-role-powershell.md).
+- [Руководство. Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
 
 ## <a name="create-service-alerts"></a>Создание оповещений служб
 
@@ -48,11 +48,11 @@ ms.locfileid: "71676450"
 
 Чтобы настроить оповещения служб:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Выберите **Работоспособность служб**.
 3. Используйте инструкции в разделе [Создание оповещения журнала действий по уведомлениям службы](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log-service-notifications?toc=%2Fazure%2Fservice-health%2Ftoc.json#alert-and-new-action-group-using-azure-portal) для настройки оповещений и уведомлений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы узнали, как настраивать и использовать Работоспособность служб Azure, чтобы отслеживать проблемы служб и рекомендации по работоспособности для Виртуального рабочего стола Windows. Чтобы узнать о том, как можно выполнить вход в Виртуальный рабочий стол Windows, перейдите к учебникам по подключению к Виртуальному рабочему столу Windows.
 

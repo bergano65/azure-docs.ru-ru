@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: thvankra
-ms.openlocfilehash: 668e9ddadf151a86be0d8c09fc91b4c70db12f3a
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: e2967a6d12fba2d81dad9de31e7476a027a39d1c
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210792"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77468836"
 ---
 # <a name="elastically-scale-an-azure-cosmos-db-cassandra-api-account"></a>Эластичное масштабирование учетной записи API Cassandra Azure Cosmos DB
 
@@ -23,7 +23,7 @@ ms.locfileid: "77210792"
 
 Azure Cosmos DB возвращают ошибки с частотой (429), если клиенты потребляют больше ресурсов (единиц запросов в секунду), чем подготовлено. API Cassandra в Azure Cosmos DB преобразует эти исключения в ошибки перегрузки в собственном протоколе Cassandra. 
 
-Если система не чувствительна к задержке, может быть достаточно для обработки ограничения скорости пропускной способности с помощью повторных попыток. См. [пример кода Java](https://github.com/Azure-Samples/azure-cosmos-cassandra-java-retry-sample) для прозрачного управления ограничением скорости с помощью [расширения Azure Cosmos DB](https://github.com/Azure/azure-cosmos-cassandra-extensions) для [политики повтора Cassandra](https://docs.datastax.com/drivers/java/2.0/com/datastax/driver/core/policies/RetryPolicy.html) в Java. Для обработки ограничения скорости можно также использовать [расширение Spark](https://mvnrepository.com/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper) .
+Если система не чувствительна к задержке, может быть достаточно для обработки ограничения скорости пропускной способности с помощью повторных попыток. См. [пример кода Java](https://github.com/Azure-Samples/azure-cosmos-cassandra-java-retry-sample) для прозрачного управления ограничением скорости с помощью [расширения Azure Cosmos DB](https://github.com/Azure/azure-cosmos-cassandra-extensions) для [политики повтора Cassandra](https://docs.datastax.com/en/developer/java-driver/4.4/manual/core/retries/) в Java. Для обработки ограничения скорости можно также использовать [расширение Spark](https://mvnrepository.com/artifact/com.microsoft.azure.cosmosdb/azure-cosmos-cassandra-spark-helper) .
 
 ## <a name="manage-scaling"></a>Управление масштабированием
 

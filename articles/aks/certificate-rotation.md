@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 11/15/2019
 ms.author: zarhoads
-ms.openlocfilehash: 9c2da82034a3742f789c736d8c0410f005f20edb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 774a0354c6262598c7d5e1f51e2e475fd17fe2d7
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422301"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77468286"
 ---
 # <a name="rotate-certificates-in-azure-kubernetes-service-aks"></a>Смена сертификатов в службе Kubernetes Azure (AKS)
 
@@ -20,7 +20,7 @@ ms.locfileid: "75422301"
 
 В этой статье показано, как поворачивать сертификаты в кластере AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей требуется Azure CLI версии 2.0.77 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
@@ -42,7 +42,7 @@ AKS создает и использует следующие сертифика
 > 
 > Кроме того, можно проверить дату окончания срока действия сертификата кластера. Например, следующая команда отображает сведения о сертификате для кластера *myAKSCluster* .
 > ```console
-> kubectl config view --raw -o jsonpath='{.clusters[?(@.name == "myAKSCluster")].cluster.certificate-authority-data}' | base64 -d > my-cert.crt
+> kubectl config view --raw -o jsonpath="{.clusters[?(@.name == 'myAKSCluster')].cluster.certificate-authority-data}" | base64 -d > my-cert.crt
 > openssl x509 -in my-cert.crt -text
 > ```
 
@@ -66,7 +66,7 @@ az aks rotate-certs -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME
 > [!IMPORTANT]
 > Выполнение `az aks rotate-certs` может занять до 30 минут. Если перед завершением команды произошел сбой, используйте `az aks show` для проверки состояния кластера на *вращение сертификата*. Если кластер находится в состоянии сбоя, повторно запустите `az aks rotate-certs`, чтобы снова повернуть сертификаты.
 
-Убедитесь, что старые сертификаты больше не являются допустимыми, выполнив команду `kubectl`. Так как вы не обновили сертификаты, используемые `kubectl`, вы увидите ошибку.  Пример.
+Убедитесь, что старые сертификаты больше не являются допустимыми, выполнив команду `kubectl`. Так как вы не обновили сертификаты, используемые `kubectl`, вы увидите ошибку.  Например:
 
 ```console
 $ kubectl get no
@@ -79,13 +79,13 @@ Unable to connect to the server: x509: certificate signed by unknown authority (
 az aks get-credentials -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME --overwrite-existing
 ```
 
-Убедитесь, что сертификаты обновлены, выполнив команду `kubectl`, которая теперь будет выполнена успешно. Пример.
+Убедитесь, что сертификаты обновлены, выполнив команду `kubectl`, которая теперь будет выполнена успешно. Например:
 
 ```console
 kubectl get no
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как автоматически поворачивать сертификаты, CAs и SAs кластера. Рекомендации [по обеспечению безопасности и обновления кластера в службе Azure Kubernetes (AKS)][aks-best-practices-security-upgrades] см. в статье рекомендации по обеспечению безопасности AKS.
 

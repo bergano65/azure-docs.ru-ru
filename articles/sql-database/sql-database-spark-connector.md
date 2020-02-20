@@ -7,33 +7,33 @@ ms.subservice: development
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: allenwux
-ms.author: xiwu
+author: denzilribeiro
+ms.author: denzilr
 ms.reviewer: carlrab
 ms.date: 09/25/2018
-ms.openlocfilehash: 03150ef3a8799cd0f84fb1bc03f2fd712cddd541
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: b22ec475c0281a54d65921bc450b35723aa23219
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889794"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471658"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью Базы данных SQL Azure и SQL Server
 
 Соединитель Spark для Базы данных SQL Azure и SQL Server разрешает использовать базы данных SQL, включая Базу данных SQL Azure и SQL Server, в качестве источника входных данных или приемника выходных данных для заданий Spark. Это позволяет использовать данные о транзакциях в реальном времени при анализе больших данных и сохранять результаты нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность массовой вставки данных в базы данных SQL. Он может в 10-20 раз превосходить по производительности вставку по строкам. Соединитель Spark для Базы данных SQL Azure и SQL Server также поддерживает аутентификацию AAD. Это позволяет безопасно подключаться к базе данных SQL Azure из Azure Databricks, используя учетную запись AAD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
 
-## <a name="download"></a>Скачивание
+## <a name="download"></a>Загрузить
 Чтобы приступить к работе, скачайте соединитель Spark для базы данных SQL из репозитория [azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) на сайте GitHub.
 
 ## <a name="official-supported-versions"></a>Официальные поддерживаемые версии
 
-| Компонент                            |Версия                  |
-| :----------------------------------- | :---------------------- |
-| Apache Spark                         |2.0.2 или более поздние версии           |
-| Scala                                |2.10 или более поздние версии            |
-| Microsoft JDBC Driver для SQL Server |6.2 или более поздние версии             |
-| Microsoft SQL Server                 |SQL Server 2008 или более поздняя версия |
-| База данных SQL Azure                   |Поддерживаются                |
+| Компонент                            | Версия                  |
+| :----------------------------------- | :----------------------- |
+| Apache Spark                         | 2.0.2 или более поздние версии           |
+| Scala                                | 2.10 или более поздние версии            |
+| Драйвер Microsoft JDBC для SQL Server | 6.2 или более поздние версии             |
+| Microsoft SQL Server                 | SQL Server 2008 или более поздняя версия |
+| База данных SQL Azure                   | Поддерживается                |
 
 Соединитель Spark для Базы данных SQL Azure и SQL Server использует Microsoft JDBC Driver для SQL Server, чтобы перемещать данные между рабочими узлами Spark и базами данных SQL:
  
@@ -89,7 +89,7 @@ val config = Config(Map(
 ))
 
 //Read all data in table dbo.Clients
-val collection = sqlContext.read.sqlDb(config)
+val collection = sqlContext.read.sqlDB(config)
 collection.show()
 ```
 
@@ -118,7 +118,7 @@ import com.microsoft.azure.sqldb.spark.config.Config
 import com.microsoft.azure.sqldb.spark.query._
 val query = """
               |UPDATE Customers
-              |SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+              |SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
               |WHERE CustomerID = 1;
             """.stripMargin
 
@@ -134,7 +134,7 @@ sqlContext.sqlDBQuery(config)
 ```
 
 ## <a name="connect-spark-to-azure-sql-database-using-aad-authentication"></a>Подключение Spark к базе данных SQL Azure с использованием аутентификации AAD
-К базе данных SQL Azure можно подключиться с использованием аутентификации Azure Active Directory. Используйте аутентификацию AAD для централизованного управления удостоверениями пользователей базы данных и как альтернативу аутентификации SQL Server.
+К базе данных SQL Azure можно подключиться с использованием аутентификации Azure Active Directory. Проверка подлинности AAD используется для централизованного управления удостоверениями пользователей базы данных и в качестве альтернативы проверке подлинности SQL Server.
 ### <a name="connecting-using-activedirectorypassword-authentication-mode"></a>Подключение с использованием режима аутентификации ActiveDirectoryPassword
 #### <a name="setup-requirement"></a>Настройка требований
 При использовании режима аутентификации ActiveDirectoryPassword необходимо скачать [azure-activedirectory-library-for-java](https://github.com/AzureAD/azure-activedirectory-library-for-java) и его зависимости, а затем включить их в путь сборки Java.
@@ -146,13 +146,13 @@ import com.microsoft.azure.sqldb.spark.connect._
 val config = Config(Map(
   "url"            -> "mysqlserver.database.windows.net",
   "databaseName"   -> "MyDatabase",
-  "user"           -> "username ",
+  "user"           -> "username",
   "password"       -> "*********",
   "authentication" -> "ActiveDirectoryPassword",
   "encrypt"        -> "true"
 ))
 
-val collection = sqlContext.read.SqlDB(config)
+val collection = sqlContext.read.sqlDB(config)
 collection.show()
 ```
 
@@ -169,12 +169,12 @@ import com.microsoft.azure.sqldb.spark.connect._
 val config = Config(Map(
   "url"                   -> "mysqlserver.database.windows.net",
   "databaseName"          -> "MyDatabase",
-  "accessToken"           -> "access_token ",
+  "accessToken"           -> "access_token",
   "hostNameInCertificate" -> "*.database.windows.net",
   "encrypt"               -> "true"
 ))
 
-val collection = sqlContext.read.SqlDB(config)
+val collection = sqlContext.read.sqlDB(config)
 collection.show()
 ```
 
@@ -211,10 +211,10 @@ df.bulkCopyToSqlDB(bulkCopyConfig, bulkCopyMetadata)
 //df.bulkCopyToSqlDB(bulkCopyConfig) if no metadata is specified.
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 Если это еще не сделано, скачайте соединитель для Базы данных SQL Azure и SQL Server из [репозитория GitHub azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) и изучите дополнительные ресурсы в репозитории:
 
--   [Примеры записных книжек Azure Databricks](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/notebooks).
+- [Примеры записных книжек Azure Databricks](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/notebooks).
 - [Пример сценариев (Scala)](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/scripts)
 
 Дополнительные сведения см. также в [руководстве по SQL, таблицам и наборам данных Apache Spark](https://spark.apache.org/docs/latest/sql-programming-guide.html) и в [документации по Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).

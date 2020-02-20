@@ -1,24 +1,17 @@
 ---
 title: Просмотр использования ресурса службы Azure с помощью REST API | Документация Майкрософт
 description: Узнайте, как использовать интерфейсы REST API для просмотра использования ресурса службы Azure.
-services: billing
-documentationcenter: na
 author: lleonard-msft
-manager: ''
-editor: ''
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: eb444f090c1b2047e3d71c1b2ec52699a61bd880
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f421ddc7cd509527053b099c7e4e538ab84b814e
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989310"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200577"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>Просмотр использования ресурса службы Azure с помощью REST API
 
@@ -41,7 +34,7 @@ Authorization: Bearer
 
 Для этого также требуется параметр `{subscriptionGuid}`, который должен содержать идентификатор подписки, который может быть считан с помощью учетных данных, предоставленных в токене API. Компонент `{reportName}`
 
-Ниже приведены обязательные заголовки. 
+Ниже приведены обязательные заголовки.
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
@@ -93,7 +86,7 @@ Authorization: Bearer
 
 ## <a name="filtering-reports"></a>Фильтрация отчетов
 
-При создании отчета разделы `filter` и `dimensions` тела запроса позволяют сосредоточиться на стоимости отдельных типов ресурсов. В предыдущем теле запроса показано, как фильтровать все ресурсы в регионе. 
+При создании отчета разделы `filter` и `dimensions` тела запроса позволяют сосредоточиться на стоимости отдельных типов ресурсов. В предыдущем теле запроса показано, как фильтровать все ресурсы в регионе.
 
 ### <a name="get-all-compute-usage"></a>Получение всех сведений об использовании вычислений
 
@@ -105,9 +98,9 @@ Authorization: Bearer
         "name": "ResourceType",
         "operator": "In",
         "values": [
-                "Microsoft.ClassicCompute/virtualMachines", 
+                "Microsoft.ClassicCompute/virtualMachines",
                 "Microsoft.Compute/virtualMachines"
-        ] 
+        ]
     }
 }
 ```
@@ -123,7 +116,7 @@ Authorization: Bearer
         "operator": "In",
         "values": [
                 "Microsoft.Sql/servers"
-        ] 
+        ]
     }
 }
 ```

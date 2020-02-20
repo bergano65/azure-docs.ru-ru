@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 12/15/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: e99a0e8e42bcfb5c7967a9cb1c91631bacbea53a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: f4109359adaaeae0a1ba027ac04439ff60b5a939
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980079"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77467187"
 ---
 # <a name="archive-azure-resource-logs-to-storage-account"></a>Архивация журналов ресурсов Azure в учетную запись хранения
 [Журналы платформы](platform-logs-overview.md) в Azure, в том числе журнал действий Azure и журналы ресурсов, предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят.  В этой статье описывается сбор журналов платформы в учетную запись хранения Azure для хранения данных для архивирования.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Если у вас еще нет [учетной записи хранения Azure](../../storage/common/storage-account-create.md) , ее необходимо создать. Учетная запись хранения не обязательно должна находиться в той же подписке, что и журнал, отправляющий журналы, если пользователь, настроив параметр, имеет соответствующий доступ RBAC к обеим подпискам.
 
 
@@ -33,7 +33,7 @@ ms.locfileid: "75980079"
 
 
 ## <a name="collect-data-from-compute-resources"></a>Получение данных из ресурсов вычислений
-Параметры диагностики будут выполнять сбор журналов ресурсов для ресурсов Azure, таких как любые другие ресурсы, но не их гостевой операционной системы или рабочих нагрузок. Чтобы получить эти данные, установите [Агент Windows система диагностики Azure](diagnostics-extension-overview.md). Дополнительные сведения см. [в статье хранение и Просмотр диагностических данных в службе хранилища Azure](diagnostics-extension-to-storage.md) .
+Параметры диагностики будут выполнять сбор журналов ресурсов для ресурсов Azure, таких как любые другие ресурсы, но не их гостевой операционной системы или рабочих нагрузок. Чтобы получить эти данные, установите [Агент Windows система диагностики Azure](diagnostics-extension-overview.md). 
 
 
 ## <a name="schema-of-platform-logs-in-storage-account"></a>Схема журналов платформы в учетной записи хранения
@@ -61,7 +61,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/xxxxxxxx
 > [!NOTE]
 > Журналы платформы записываются в хранилище BLOB-объектов с помощью [строк JSON](http://jsonlines.org/), где каждое событие является линией, а символ новой строки обозначает новое событие. Этот формат был реализован в ноябре 2018. До этой даты журналы были записаны в хранилище BLOB-объектов в виде массива записей JSON, как описано в разделе [Подготовка к изменению формата для Azure Monitor журналов платформы, архивов которых является учетная запись хранения](resource-logs-blob-format.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения см. в статье о журналах ресурсов](platform-logs-overview.md).
 * [Создайте параметр диагностики для сбора журналов и метрик в Azure](diagnostic-settings.md).

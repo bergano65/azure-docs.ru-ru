@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 12/10/2019
+ms.date: 02/19/2020
 ms.author: ryanwi
-ms.reviewer: jmprieur, lenalepa, sureshja
+ms.reviewer: jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: 197379b5edd3f59c83c557590445fc5dac8fc43a
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: b3338edf644aee8409cfca05d4ac801594cbf66b
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77212230"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77467765"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -37,7 +37,7 @@ ms.locfileid: "77212230"
 3. [Обновите код для обработки нескольких значений издателя.](#update-your-code-to-handle-multiple-issuer-values)
 4. [Изучите особенности получения согласия пользователя и администратора и внесите соответствующие изменения в код.](#understand-user-and-admin-consent)
 
-Давайте рассмотрим каждый из этих шагов подробнее. Вы также можете перейти непосредственно к [этому списку примеров с несколькими клиентами](https://docs.microsoft.com/samples/browse/?products=azure-active-directory).
+Давайте рассмотрим каждый из этих шагов подробнее. Вы также можете перейти непосредственно к образцу [создать многоклиентское веб-приложение SaaS, которое вызывает Microsoft Graph с помощью Azure AD и OpenID Connect Connect](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-3-Multi-Tenant/README.md).
 
 ## <a name="update-registration-to-be-multi-tenant"></a>Обновление регистрации с изменением ее на мультитенантную
 

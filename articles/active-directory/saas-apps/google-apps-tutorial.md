@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с G Suite | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с G Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и G Suite.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 02/14/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf148ec64ceed28577224741033258bad0e62372
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: d5ef5816759074073c57ef0f616ddea4a159956f
+ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77047959"
+ms.lasthandoff: 02/16/2020
+ms.locfileid: "77370353"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-g-suite"></a>Руководство. интеграции единого входа Azure Active Directory с G Suite
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-g-suite"></a>Руководство по интеграции единого входа Azure Active Directory с G Suite
 
 В этом руководстве описано, как интегрировать G Suite с Azure Active Directory (Azure AD). Интеграция G Suite с Azure AD обеспечивает следующие возможности:
 
@@ -30,7 +30,7 @@ ms.locfileid: "77047959"
 * Автоматический вход пользователей в G Suite с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -136,6 +136,14 @@ ms.locfileid: "77047959"
     | `https://google.com` |
     | `https://google.com/a/<yourdomain.com>` |
 
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+
+    | |
+    |--|
+    | `https://google.com` |
+    | `https://google.com/a/<yourdomain.com>` |
+
+
 1. Чтобы настроить **Google Cloud Platform**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
 
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://console.cloud.google.com`
@@ -149,6 +157,13 @@ ms.locfileid: "77047959"
     | `https://google.com` |
     | `https://google.com/a/<yourdomain.com>` |
     
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    
+    | |
+    |--|
+    | `https://google.com` |
+    | `https://google.com/a/<yourdomain.com>` |
+
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. G Suite не предоставляет значение идентификатора сущности для конфигурации единого входа, поэтому при снятии флажка **Издатель для определенного домена** значение идентификатора будет равно "`google.com`". Если установить флажок **Издатель для определенного домена**, он будет равен "`google.com/a/<yourdomainname.com>`". Чтобы установить или снять флажок **Издатель для определенного домена**, необходимо перейти в раздел **Configure G Suite** (Настройка G Suite), который описан далее в этом руководстве. Дополнительные сведения можно получить, обратившись в [службу поддержки клиентов G Suite](https://www.google.com/contact/).
 
@@ -247,14 +262,18 @@ G Suite также поддерживает автоматическую под�
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-provisioning-tutorial)
+
 - [Попробуйте G Suite с Azure AD](https://aad.portal.azure.com/)
+
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
 - [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/protect-gsuite)
+
 <!--Image references-->
 
 [10]: ./media/google-apps-tutorial/gapps-security.png

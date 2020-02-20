@@ -2,21 +2,18 @@
 title: Изменение кредитной карты, используемой для Azure
 description: Описание процедуры изменения кредитной карты, используемой для оплаты подписки Azure.
 author: bandersmsft
-manager: judupont
+ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/10/2020
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 10d475b9c0c33dfd17c3d87beed00154511e1ab6
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 0cf0911193cd379da60edb3064d3c6f195cf0190
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/13/2020
-ms.locfileid: "77188410"
+ms.locfileid: "77199863"
 ---
 # <a name="add-update-or-remove-a-credit-card-for-azure"></a>Добавление, обновление или удаление кредитной карты для Azure
 
@@ -118,7 +115,7 @@ ms.locfileid: "77188410"
 
 Следующие разделы относятся к клиентам, которые используют Клиентское соглашение Майкрософт и регистрировались в Azure через Интернет с использованием кредитной карты. [Процедура проверки наличия Клиентского соглашения Майкрософт](#check-the-type-of-your-account).
 
-### <a name="change-default-credit-card"></a>Изменение кредитной карты, используемой по умолчанию 
+### <a name="change-default-credit-card"></a>Изменение кредитной карты, используемой по умолчанию
 Если у вас есть Клиентское соглашение Майкрософт, ваша кредитная карта сопоставлена с профилем выставления счетов. Изменить метод оплаты для профиля выставления счетов может только пользователь, который выполнил регистрацию в Azure и создал эту учетную запись выставления счетов.
 
 Если вы хотите изменить метод оплаты по умолчанию на оплату чеком или банковским переводом, см. статью [об оплате подписок Azure по накладным](pay-by-invoice.md).

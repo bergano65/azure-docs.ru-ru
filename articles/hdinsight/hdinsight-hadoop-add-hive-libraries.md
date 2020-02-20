@@ -7,19 +7,19 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.date: 12/23/2019
-ms.openlocfilehash: 57b4440a29dde470f91bbaae091bf65a0d2a1b51
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.date: 02/14/2020
+ms.openlocfilehash: 0b746963cea5a950ba47d8b4dfeb074cb0910436
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552276"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471029"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
 Дополнительные сведения о предварительной загрузке библиотек [Apache Hive](https://hive.apache.org/) в HDInsight. Этот документ содержит сведения об использовании действия скрипта по предварительной загрузке библиотек во время создания кластера. Библиотеки, добавленные с помощью действий, описанных в этом документе, глобально доступны в Hive — нет необходимости использовать [Добавление JAR](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli) -файла для их загрузки.
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 При создании кластера можно использовать действие скрипта для изменения узлов кластера по мере их создания. Скрипт в этом документе принимает один параметр, определяющий расположение библиотек. Это расположение должно быть в пределах учетной записи хранилища Azure, а библиотеки должны быть в формате JAR.
 
@@ -33,7 +33,7 @@ ms.locfileid: "75552276"
 
 [https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1](https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1)
 
-**Требования**
+### <a name="requirements"></a>Требования
 
 * Скрипты необходимо применять к **головным узлам** и **рабочим узлам**.
 
@@ -50,7 +50,7 @@ ms.locfileid: "75552276"
 
 ## <a name="create-a-cluster-using-the-script"></a>Создание кластера с помощью сценария
 
-1. Начните подготовку кластера, выполнив действия, описанные в разделе [Подготовка кластеров HDInsight в Linux](hdinsight-hadoop-provision-linux-clusters.md), но не завершение подготовки. Для создания кластера с помощью этого сценария также можно использовать Azure PowerShell или пакет SDK HDInsight для .NET. Дополнительные сведения об использовании этих методов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md). Для портал Azure необходимо выбрать **классический режим создания** , а затем — **Пользовательский (размер, параметры, приложения)** .
+1. Начните подготовку кластера, выполнив действия, описанные в разделе [Подготовка кластеров HDInsight в Linux](hdinsight-hadoop-provision-linux-clusters.md), но не завершение подготовки. Для создания кластера с помощью этого сценария также можно использовать Azure PowerShell или пакет SDK HDInsight для .NET. Дополнительные сведения об использовании этих методов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md). Для портал Azure на вкладке **Конфигурация + цены** выберите **действие + Добавить скрипт**.
 
 1. Для **хранилища**, если учетная запись хранения, содержащая библиотеку JAR-файлов, будет отличаться от учетной записи, используемой для кластера, завершите **дополнительные учетные записи хранения**.
 
@@ -64,10 +64,13 @@ ms.locfileid: "75552276"
     |Типы узлов|Головной, Рабочий|
     |Параметры|введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например, `wasbs://libs@mystorage.blob.core.windows.net/`.|
 
+    > [!NOTE]
+    > Для Apache Spark 2,1 используйте следующий URI Bash: `https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v00.sh`.
+
 1. Продолжите подготовку кластера, как описано в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
-После завершения создания кластера можно использовать JAR, добавленные с помощью этого скрипта из Hive без использования инструкции `ADD JAR`.
+После завершения создания кластера вы сможете использовать JAR, добавленные с помощью этого скрипта из Hive, без использования инструкции `ADD JAR`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о работе с Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).

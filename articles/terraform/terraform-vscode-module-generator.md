@@ -3,12 +3,12 @@ title: Учебник. Создание базового шаблона Terrafor
 description: Здесь вы узнаете, как создать базовый шаблон Terraform в Azure с использованием Yeoman.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: ba81d0ee797fd879fdadc3a6b25ca8f310383f61
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 82c3f5e640789547abb716b55959e1821a61e6d0
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159172"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472151"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>Руководство по Создание базового шаблона Terraform в Azure с использованием Yeoman
 
@@ -23,9 +23,9 @@ ms.locfileid: "74159172"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/) , прежде чем начинать работу.
+- **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - **Visual Studio Code**. [Скачайте Visual Studio Code](https://code.visualstudio.com/download) для вашей платформы
-- **Terraform**. Чтобы запускать модуль, созданный с помощью Yeoman, необходимо [установить Terraform](/azure/virtual-machines/linux/terraform-install-configure ).
+- **Terraform**. Чтобы запускать модуль, созданный с помощью Yeoman, необходимо [установить Terraform](terraform-install-configure.md).
 - **Docker**. [Установка Docker](https://www.docker.com/get-started) используется для запуска модуля, созданного с помощью генератора Yeoman.
 - **Язык программирования Go**. [Установка Go](https://golang.org/) в виде тестовых случаев, создаваемых Yeoman, — это код, использующий язык Go.
 
@@ -174,7 +174,7 @@ yo --version
 
     ![Список, содержащий новый модуль](media/terraform-vscode-module-generator/ymg-repository-results.png)
 
-1. Укажите `docker run -it terra-mod-example /bin/sh`. После выполнения команды `docker run` вы перейдете в среду Docker. На этом этапе файл можно обнаружить с помощью команды `ls`.
+1. Введите `docker run -it terra-mod-example /bin/sh`. После выполнения команды `docker run` вы перейдете в среду Docker. На этом этапе файл можно обнаружить с помощью команды `ls`.
 
     ![Список файлов в Docker](media/terraform-vscode-module-generator/ymg-list-docker-file.png)
 
@@ -204,7 +204,7 @@ yo --version
 
 1. Через несколько секунд появится сообщение **Проверка пройдена**.
 
-    ![Проверка пройдена](media/terraform-vscode-module-generator/ymg-pass.png)
+    ![PASS](media/terraform-vscode-module-generator/ymg-pass.png)
 
 1. Введите `exit`, чтобы завершить тест и выйти из среды Docker.
 
@@ -236,7 +236,7 @@ yo --version
 
 1. На этом этапе служба Cloud Shell уже настроила для вас расположение GOPATH в переменных среды. Введите `go env`, чтобы увидеть путь.
 
-1. Создайте каталог $GOPATH, если он еще не существует. Укажите `mkdir ~/go`.
+1. Создайте каталог $GOPATH, если он еще не существует. Введите `mkdir ~/go`.
 
 1. Создайте каталог в каталоге $GOPATH. Этот каталог используется для хранения различных каталогов проектов, созданных в этом примере. 
 
@@ -286,7 +286,7 @@ yo --version
 
     ![Тест — результаты теста](media/terraform-vscode-module-generator/ymg-pass.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Установка и использование расширения Visual Studio Code для Azure Terraform](/azure/terraform/terraform-vscode-extension).

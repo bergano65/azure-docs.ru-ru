@@ -2,25 +2,19 @@
 title: Скачивание счета на оплату и данных о ежедневном использовании в Azure | Документация Майкрософт
 description: Описывается, как скачать или просмотреть счет на оплату и данные о ежедневном использовании в Azure.
 keywords: счет на оплату,скачать счет,счет azure,использование azure
-services: billing
-documentationcenter: ''
 author: genlin
-manager: dcscontentpm
-editor: ''
+ms.reviewer: dcscontentpm
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: c5068dc38597d64634f19297fa7784de8d55d590
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: af2184d7faa2ace8ed1043eaf2aaec0d525bc937
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75992560"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200869"
 ---
 # <a name="download-or-view-your-azure-billing-invoice-and-daily-usage-data"></a>Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure
 

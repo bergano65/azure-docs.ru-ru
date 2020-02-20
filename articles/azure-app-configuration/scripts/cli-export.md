@@ -15,12 +15,12 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 0cdefaa60c9e7a1aab418042c037ef76b63e7804
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: c4fc8f1cd1159f296d37fd67634d1c3171f7d7a9
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898671"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77468291"
 ---
 # <a name="export-from-an-azure-app-configuration-store"></a>Экспорт из хранилища конфигураций для приложения Azure
 
@@ -31,10 +31,6 @@ ms.locfileid: "76898671"
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Сначала необходимо установить расширение CLI для службы "Конфигурация приложений Azure", выполнив следующую команду:
-
-        az extension add -n appconfig
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -53,7 +49,7 @@ az appconfig kv export --name myTestAppConfigStore --file ~/Export.json
 
 | Get-Help | Примечания |
 |---|---|
-| [az appconfig kv export](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-export) | Экспортирует данные из ресурса хранилища Конфигурации приложений. |
+| [az appconfig kv export](/cli/azure/appconfig/kv#az-appconfig-kv-export) | Экспортирует данные из ресурса хранилища Конфигурации приложений. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
