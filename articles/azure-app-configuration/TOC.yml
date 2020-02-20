@@ -1,4 +1,4 @@
-- name: Документация по предварительной версии службы "Конфигурация приложений Azure"
+- name: Документация по службе "Конфигурация приложений Azure"
   href: index.yml
 - name: Обзор
   items:
@@ -59,6 +59,8 @@
   items:
     - name: Хранилище ключ-значение
       href: concept-key-value.md
+    - name: Шифрование с помощью управляемых клиентом ключей
+      href: concept-customer-managed-keys.md
     - name: Моментальный снимок на определенный момент времени
       href: concept-point-time-snapshot.md
     - name: Управление функциями
@@ -67,14 +69,18 @@
       href: concept-github-action.md
     - name: Обработка событий
       href: concept-app-configuration-event.md
+    - name: Аутентификация
+      items:
+        - name: Интеграции с управляемыми удостоверениями Azure
+          href: howto-integrate-azure-managed-service-identity.md
+        - name: Предоставление доступа с помощью Azure Active Directory
+          href: concept-enable-rbac.md
     - name: Высокий уровень доступности
       items:
         - name: Устойчивость и аварийное восстановление
           href: concept-disaster-recovery.md
 - name: Практические руководства
   items:
-    - name: Интеграции с управляемыми удостоверениями Azure
-      href: howto-integrate-azure-managed-service-identity.md
     - name: Импорт и экспорт данных конфигурации
       href: howto-import-export-data.md
     - name: Маршрутизация событий в пользовательскую конечную точку
@@ -86,12 +92,12 @@
     - name: Конфигурация
       items:
         - name: Azure CLI
-          href: 'https://docs.microsoft.com/cli/azure/ext/appconfig/appconfig?view=azure-cli-latest'
+          href: 'https://docs.microsoft.com/cli/azure/appconfig?view=azure-cli-latest'
         - name: Поставщик .NET Core
           href: 'https://go.microsoft.com/fwlink/?linkid=2074664'
         - name: Построитель .NET Framework
           href: 'https://go.microsoft.com/fwlink/?linkid=2074663'
-        - name: Пакет Azure SDK для .NET
+        - name: Azure SDK для .NET
           href: 'https://go.microsoft.com/fwlink/?linkid=2092056'
         - name: Поставщик Java Spring
           href: 'https://go.microsoft.com/fwlink/?linkid=2074659'

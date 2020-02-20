@@ -527,7 +527,7 @@
               href: platform/resource-logs-blob-format.md
         - name: Потоковая передача данных в Центры событий
           href: platform/stream-monitoring-data-event-hubs.md
-    - name: Мониторинг виртуальных машин и вычислительных ресурсов
+    - name: Мониторинг виртуальных машин и гостевой ОС
       items:
         - name: Агенты
           items:
@@ -537,13 +537,15 @@
               href: 'faq.md#agents'
             - name: Расширение службы "Диагностика Azure"
               items:
+                - name: Обзор
+                  href: platform/diagnostics-extension-overview.md
                 - name: Windows
                   displayname: diagnostics extension
                   items:
-                    - name: Обзор
-                      href: platform/diagnostics-extension-overview.md
                     - name: Установка и настройка.
                       items:
+                        - name: Варианты установки
+                          href: platform/diagnostics-extension-windows-install.md
                         - name: PowerShell
                           href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
                         - name: Шаблон Resource Manager
@@ -561,13 +563,11 @@
                     - name: Отправка в Центры событий
                       href: platform/diagnostics-extension-stream-event-hubs.md
                     - name: Отправка данных в журналы
-                      href: platform/azure-storage-iis-table.md
-                    - name: Отправка в службу хранилища Azure
-                      href: platform/diagnostics-extension-to-storage.md
+                      href: platform/diagnostics-extension-logs.md
                     - name: Отправка в Application Insights
                       href: platform/diagnostics-extension-to-application-insights.md
                     - name: Журнал версий
-                      href: platform/diagnostics-extension-schema.md
+                      href: platform/diagnostics-extension-versions.md
                     - name: Формат JSON Lines для журналов ресурсов
                       href: platform/diagnostic-logs-append-blobs.md
                     - name: Устранение неполадок
@@ -588,9 +588,9 @@
                 - name: Агенты Linux
                   href: platform/agent-linux.md
                 - name: Расширение виртуальной машины для Windows
-                  href: ../virtual-machines/windows/extensions-oms.md
+                  href: ../virtual-machines/windows/extensions-oms.md?toc=/azure/azure-monitor/toc.json
                 - name: Расширение виртуальной машины для Linux
-                  href: ../virtual-machines/linux/extensions-oms.md
+                  href: ../virtual-machines/linux/extensions-oms.md?toc=/azure/azure-monitor/toc.json
                 - name: Шлюз службы анализа журналов
                   href: platform/gateway.md
                 - name: Управление агентами
@@ -1151,8 +1151,8 @@
       href: service-limits.md
     - name: Расширение системы диагностики
       items:
-        - name: схема
-          href: platform/diagnostics-extension-schema-1dot3.md
+        - name: Схема конфигурации Windows
+          href: platform/diagnostics-extension-schema-windows.md
     - name: Изменения в терминологии
       href: terminology.md
     - name: Application Insights

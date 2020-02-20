@@ -11,8 +11,8 @@
       href: tutorial-enable-sspr.md
     - name: Включение Многофакторной идентификации Azure
       href: tutorial-enable-azure-mfa.md
-    - name: Интеграция SSPR с локальной средой
-      href: tutorial-enable-writeback.md
+    - name: Включение компонента обратной записи паролей в локальной среде
+      href: tutorial-enable-sspr-writeback.md
     - name: Интеграция службы защиты идентификации Azure AD
       href: tutorial-risk-based-sspr-mfa.md
 - name: Основные понятия
@@ -68,8 +68,6 @@
           href: howto-sspr-deployment.md
         - name: Предварительная регистрация данных проверки подлинности
           href: howto-sspr-authenticationdata.md
-        - name: Включение компонента обратной записи паролей
-          href: howto-sspr-writeback.md
         - name: Самостоятельный сброс пароля для клиентов Windows
           href: howto-sspr-windows.md
     - name: MFA в облаке

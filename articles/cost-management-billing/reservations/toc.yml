@@ -36,6 +36,8 @@
           href: exchange-and-refund-azure-reservations.md
         - name: Управление резервированиями
           href: manage-reserved-vm-instance.md
+        - name: Изменение параметра оптимизации
+          href: 'manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances'
         - name: Просмотр резервирований
           href: view-reservations.md
     - name: Основные понятия

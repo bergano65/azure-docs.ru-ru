@@ -8,18 +8,18 @@ ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: f5737dccca6baa2dc2c1d98233b80d871cf86007
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: ea1cae1f5a30d4cd76df39fec43f3818178fc213
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974722"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484202"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Краткое руководство. Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве описано создание центра Интернета вещей и службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью Azure CLI, а также связывание этих двух служб. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!IMPORTANT]
 > Центр Интернета вещей и служба подготовки, которые вы создадите в рамках этого краткого руководства, будут общедоступными как конечные точки DNS, поэтому не используйте конфиденциальную информацию при изменении имен этих ресурсов.
@@ -64,7 +64,7 @@ az iot dps create --name my-sample-dps --resource-group my-sample-resource-group
 ```
 
 > [!TIP]
-> В примере создается служба подготовки устройств в расположении "Западная часть США". Чтобы просмотреть список доступных расположений, выполните команду `az provider show --namespace Microsoft.Devices --query "resourceTypes[?resourceType=='ProvisioningServices'].locations | [0]" --out table`, или перейдите на страницу [Состояние Azure](https://azure.microsoft.com/status/) и введите в строке поиска "Служба подготовки устройств". В командах расположения можно указать, используя одно слово или несколько. Например: westus, West US, WEST US и т. д. Обратите внимание, что регистр не учитывается. Если для указания расположения вы используете несколько слов, укажите значение поиска в кавычках, например `-- location "West US"`.
+> В примере создается служба подготовки устройств в расположении "Западная часть США". Чтобы просмотреть список доступных расположений, выполните команду `az provider show --namespace Microsoft.Devices --query "resourceTypes[?resourceType=='ProvisioningServices'].locations | [0]" --out table`, или перейдите на страницу [Состояние Azure](https://azure.microsoft.com/status/) и введите в строке поиска "Служба подготовки устройств". В командах расположения можно указать, используя одно слово или несколько. Например: westus, West US, WEST US и т. д. Обратите внимание, что регистр не учитывается. Если для указания расположения вы используете несколько слов, укажите значение поиска в кавычках, например `--location "West US"`.
 >
 
 ## <a name="get-the-connection-string-for-the-iot-hub"></a>Получение строки подключения для Центра Интернета вещей
@@ -133,7 +133,7 @@ az iot hub delete --name my-sample-hub --resource-group my-sample-resource-group
 az group delete --name my-sample-resource-group
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы развернули центр Интернета вещей и экземпляр службы подготовки устройств, а затем связали эти два ресурса. Чтобы узнать, как подготовить виртуальное устройство, см. краткое руководство по созданию имитированного устройства.
 
