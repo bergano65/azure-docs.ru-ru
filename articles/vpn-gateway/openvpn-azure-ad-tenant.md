@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 01/03/2020
 ms.author: alzam
-ms.openlocfilehash: 6b0b6707f6851ef674d0045c7cf1686af13ea856
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: b9627862002a70dc84b0e268128c53a97df0ebe8
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77137837"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472304"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений по протоколу P2S Опенвпн
 
@@ -29,7 +29,7 @@ ms.locfileid: "77137837"
 * Название организации
 * Исходное доменное имя
 
-Пример
+Пример.
 
    ![Новый клиент Azure AD](./media/openvpn-create-azure-ad-tenant/newtenant.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "77137837"
 
 4. Затем предоставьте администратору согласие. Скопируйте и вставьте URL-адрес, относящийся к расположению развертывания, в адресной строке браузера:
 
-    Общедоступные
+    Открытый
 
     ```
     https://login.microsoftonline.com/common/oauth2/authorize?client_id=41b23e61-6c1e-4545-b367-cd054e0ed4b4&response_type=code&redirect_uri=https://portal.azure.com&nonce=1234&prompt=admin_consent
@@ -103,6 +103,9 @@ ms.locfileid: "77137837"
     Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -AadTenantUri "https://login.microsoftonline.com/<your Directory ID>" -AadAudienceId "41b23e61-6c1e-4545-b367-cd054e0ed4b4" -AadIssuerUri "https://sts.windows.net/<your Directory ID>/" -VpnClientAddressPool 192.168.0.0/24 -VpnClientProtocol OpenVPN
     ```
 
+   > [!NOTE]
+   > Убедитесь, что в конце значения `AadIssuerUri` указана завершающая косая черта. В противном случае команда завершится ошибкой.
+
 10. Создайте и скачайте профиль, выполнив следующие команды. Измените значения-ResourceGroupName и-Name в соответствии со своими собственными.
 
     ```azurepowershell-interactive
@@ -120,6 +123,6 @@ ms.locfileid: "77137837"
 
 14. Запишите расположение файла "азуревпнконфиг. XML". Азуревпнконфиг. XML содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).

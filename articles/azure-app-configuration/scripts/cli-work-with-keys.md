@@ -15,12 +15,12 @@ ms.workload: azure-app-configuration
 ms.date: 11/08/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 366485c8c735af5689e1b2c2e63eb192218f5ce0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 931c2f738556404e2d58381f7152acb0613a057b
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433577"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77468190"
 ---
 # <a name="work-with-key-values-in-an-azure-app-configuration-store"></a>Использование пар "ключ-значение" в хранилище конфигураций приложения Azure
 
@@ -31,10 +31,6 @@ ms.locfileid: "75433577"
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Сначала необходимо установить расширение CLI для службы "Конфигурация приложений Azure", выполнив следующую команду:
-
-        az extension add -n appconfig
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -89,9 +85,9 @@ az appconfig kv list --name $appConfigName
 
 | Get-Help | Примечания |
 |---|---|
-| [az appconfig kv set](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-set) | Создает или обновляет пары "ключ-значение". |
-| [az appconfig kv list](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-list) | Выводит список пар "ключ —значение" в хранилище Конфигурации приложений. |
-| [az appconfig kv delete](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-delete) | Удаляет пару "ключ-значение". |
+| [az appconfig kv set](/cli/azure/appconfig/kv#az-appconfig-kv-set) | Создает или обновляет пары "ключ-значение". |
+| [az appconfig kv list](/cli/azure/appconfig/kv#az-appconfig-kv-list) | Выводит список пар "ключ —значение" в хранилище Конфигурации приложений. |
+| [az appconfig kv delete](/cli/azure/appconfig/kv#az-appconfig-kv-delete) | Удаляет пару "ключ-значение". |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

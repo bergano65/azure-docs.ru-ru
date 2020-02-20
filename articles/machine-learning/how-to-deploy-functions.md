@@ -10,12 +10,12 @@ ms.author: vaidyas
 author: vaidyas
 ms.reviewer: larryfr
 ms.date: 11/22/2019
-ms.openlocfilehash: 321f985bd375e6fa4337e060bb15d318ea306ab4
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 29c91cf14413a11804de82eeaf08d628b125d76a
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77116734"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471947"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "77116734"
 
 С помощью Машинное обучение Azure можно создавать образы DOCKER из обученных моделей машинного обучения. Машинное обучение Azure теперь имеет функции предварительной версии для создания этих моделей машинного обучения в приложениях функций, которые можно [развернуть в функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-deployment-technologies#docker-container).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -111,7 +111,7 @@ print(blob.location)
 При `show_output=True`отображаются выходные данные процесса сборки DOCKER. После завершения процесса образ будет создан в реестре контейнеров Azure для вашей рабочей области. После построения образа в реестре контейнеров Azure отобразится расположение. Возвращаемое расположение имеет формат `<acrinstance>.azurecr.io/package@sha256:<hash>`.
 
 > [!NOTE]
-> Упаковка для функций в настоящее время поддерживает триггеры HTTP, триггеры больших двоичных объектов и триггеры служебной шины. Дополнительные сведения о триггерах см. в статье [привязки функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob?tabs=csharp#trigger---blob-name-patterns).
+> Упаковка для функций в настоящее время поддерживает триггеры HTTP, триггеры больших двоичных объектов и триггеры служебной шины. Дополнительные сведения о триггерах см. в статье [привязки функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob-trigger#blob-name-patterns).
 
 > [!IMPORTANT]
 > Сохраните сведения о расположении, так как они используются при развертывании образа.
@@ -247,7 +247,7 @@ print(blob.location)
 > [!IMPORTANT]
 > Загрузка образа может занять несколько минут. Ход выполнения можно отслеживать с помощью портала Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Научитесь настраивать приложение функций в документации по [функциям](/azure/azure-functions/functions-create-function-linux-custom-image) .
 * Дополнительные сведения о службе хранилища BLOB-объектов см. в статье триггеры [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).

@@ -1,31 +1,23 @@
 ---
 title: Проверка данных для выставления счетов по регистрации учетных записей Azure корпоративных пользователей с помощью REST API | Документация Майкрософт
 description: Узнайте, как применить REST API Azure для проверки данных для выставления счетов по регистрации учетных записей корпоративных пользователей.
-services: billing
-documentationcenter: na
 author: lleonard-msft
-manager: ''
-editor: ''
-ms.assetid: 82D50B98-40F2-44B1-A445-4391EA9EBBAA
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 222b0358f027e0a6687ca0710e3cf5b80f292c4e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 24c4d9b74d68a05a253f05521ee62a0881a90988
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75993470"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77199574"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Проверка данных для выставления счетов по регистрации учетных записей корпоративных пользователей с помощью REST API
 
 Интерфейсы API отчетов Azure позволяют проверять данные о расходах на Azure и управлять ими.
 
-Из этой статьи вы узнаете, как получать данные для выставления счетов, связанные с учетными записями счетов, отделов или соглашениями предприятий (EA), используя REST API Azure. 
+Из этой статьи вы узнаете, как получать данные для выставления счетов, связанные с учетными записями счетов, отделов или соглашениями предприятий (EA), используя REST API Azure.
 
 ## <a name="individual-account-billing"></a>Отдельная учетная запись выставления счетов
 
@@ -39,7 +31,7 @@ Authorization: Bearer
 
 Параметр `{billingAccountId}` является обязательным и должен содержать идентификатор регистрации для учетной записи.
 
-Ниже приведены обязательные заголовки. 
+Ниже приведены обязательные заголовки.
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
@@ -80,9 +72,9 @@ Authorization: Bearer
 
 Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Billing Account](/rest/api/consumption/usagedetails/list#billingaccountusagedetailslist-legacy) (Подробные сведения об использовании, список учетной записи выставления счетов).
 
-## <a name="department-billing"></a>Выставление счетов в отделе 
+## <a name="department-billing"></a>Выставление счетов в отделе
 
-Получение сведений об использовании, объединенных для всех учетных записей в отделе. 
+Получение сведений об использовании, объединенных для всех учетных записей в отделе.
 
 ```http
 GET https://management.azure.com/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Consumption/usageDetails?api-version=2018-06-30
@@ -92,7 +84,7 @@ Authorization: Bearer
 
 Параметр `{departmentId}` является обязательным и должен содержать идентификатор отдела в учетной записи регистрации.
 
-Ниже приведены обязательные заголовки. 
+Ниже приведены обязательные заголовки.
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
@@ -148,7 +140,7 @@ Authorization: Bearer
 
 Параметр `{enrollmentAccountId}` является обязательным и должен содержать идентификатор учетной записи регистрации.
 
-Ниже приведены обязательные заголовки. 
+Ниже приведены обязательные заголовки.
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
@@ -185,11 +177,11 @@ Authorization: Bearer
     }
   ]
 }
-``` 
+```
 
 Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Enrollment Account](/rest/api/consumption/usagedetails/list#enrollmentaccountusagedetailslist-legacy) (Подробные сведения об использовании, список для учетной записи регистрации).
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)
 - Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)   
 - [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)   

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/08/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: fb8bebb46903366c5e51497e3011a20b4a981e6d
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 37bb28419f23fee2c179171a2e5c0e4e851ac9a0
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77442678"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471760"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -47,7 +47,7 @@ ms.locfileid: "77442678"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -291,7 +291,7 @@ New-AzVirtualNetworkGatewayConnection -Name $ConnectionNameHub -ResourceGroupNam
   -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3'
   ```
 
-#### <a name="verify-the-connection"></a>Проверка подключения
+#### <a name="verify-the-connection"></a>Проверка соединения
 
 Убедиться в успешном выполнении подключения можно с помощью командлета *Get-AzVirtualNetworkGatewayConnection* с параметром *-Debug* или без него. Используйте командлет из следующего примера, подставив свои значения. При появлении запроса выберите **A**, чтобы выполнить команду **All** (Все). В примере параметр *-Name* — это имя подключения, которое требуется проверить.
 
@@ -367,7 +367,7 @@ Get-AzRouteTable `
   -ResourceGroupName $RG1 `
   -Name UDR-DG `
   | Add-AzRouteConfig `
-  -Name "ToSpoke" `
+  -Name "ToFirewall" `
   -AddressPrefix 0.0.0.0/0 `
   -NextHopType "VirtualAppliance" `
   -NextHopIpAddress $AzfwPrivateIP `
@@ -493,7 +493,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 Вы можете сохранить ресурсы брандмауэра для следующего руководства или, если он больше не нужен, удалить группу ресурсов **FW-Hybrid-Test**, чтобы удалить ресурсы, связанные с брандмауэром.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь вы можете отследить журналы Брандмауэра Azure.
 

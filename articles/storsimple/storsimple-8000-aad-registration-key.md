@@ -1,17 +1,17 @@
 ---
-title: Использование новой проверки подлинности для службы StorSimple 8000 Device Manager в Azure
+title: Аутентификация Azure AD для StorSimple 8000 в Device Manager
 description: Из этой статьи вы узнаете, как использовать для службы аутентификацию на основе AAD, создать ключ регистрации и регистрировать устройства вручную.
 author: alkohli
 ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 798b3bf054d5ade2a441bbef5875bb014f526aee
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: b16132c24d35ee2c9902fa2b21c44416d8376b4d
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76276947"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470910"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
 
@@ -39,7 +39,7 @@ ms.locfileid: "76276947"
 
 Если вы используете StorSimple серии 8000, убедитесь, что в правила брандмауэра включен следующий URL-адрес:
 
-| Шаблон URL-адреса                         | В облаке | Компонент или функция         |
+| Шаблон URL-адреса                         | облако | Компонент или функция         |
 |------------------------------------|-------|----------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
 | `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
@@ -88,7 +88,7 @@ ms.locfileid: "76276947"
     > [!NOTE] 
     > Если вы создаете облачное устройство StorSimple в службе, зарегистрированной на устройстве StorSimple серии 8000, во время этого процесса не создавайте регистрационный ключ. Дождитесь завершения создания устройства, а затем создайте регистрационный ключ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md)
 

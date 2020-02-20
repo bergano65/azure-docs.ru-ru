@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/20/2019
+ms.date: 02/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: 591233154ab79b9493d77030727462bae68ea7d5
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 39ebbf99ad31cce20eabc20fbdc056c889235713
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152363"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470757"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
@@ -166,7 +166,7 @@ ms.locfileid: "76152363"
 
 1. Подтвердите удаление, выбрав **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о модели временных рядов см. в статье [моделирование данных](./time-series-insights-update-tsm.md).
 

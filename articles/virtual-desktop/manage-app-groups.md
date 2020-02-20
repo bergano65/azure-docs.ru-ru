@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: e158c0a6090493bec0169c144f030300de921516
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: 8469b54afe01d9ee42dda8cf99f2f0125a4a1982
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679453"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367320"
 ---
 # <a name="tutorial-manage-app-groups-for-windows-virtual-desktop"></a>Руководство по Управление группами приложений для Виртуального рабочего стола Windows
 
@@ -24,7 +24,7 @@ ms.locfileid: "71679453"
 > * создание группы приложений RemoteApp;
 > * предоставление доступа к программам RemoteApp.
 
-Перед началом работы при необходимости [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell. После этого выполните следующий командлет, чтобы войти в учетную запись:
+Перед началом работы при необходимости [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](/powershell/windows-virtual-desktop/overview/) для использования в сеансе PowerShell. После этого выполните следующий командлет, чтобы войти в учетную запись:
 
 ```powershell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
@@ -75,7 +75,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
    Add-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname> -UserPrincipalName <userupn>
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы узнали, как создать группу приложений, заполнить группу приложений с помощью программ RemoteApp и назначить для нее пользователей. Дополнительные сведения о том, как создать пул узлов проверки, см. в следующем учебнике. Вы может использовать пул узлов проверки, чтобы отслеживать обновления служб перед их развертыванием в рабочую среду.
 

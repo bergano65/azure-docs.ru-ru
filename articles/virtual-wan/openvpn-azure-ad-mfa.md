@@ -7,33 +7,33 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: alzam
-ms.openlocfilehash: fcb60e80189da89b3f634c14582be606307536e6
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 13f012af95bb2b6098317e59e5293fb72804a6a6
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76166697"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471591"
 ---
 # <a name="enable-azure-multi-factor-authentication-mfa-for-vpn-users"></a>Включение многофакторной идентификации Azure (MFA) для VPN-пользователей
 
-Если вы хотите, чтобы пользователи запрашивают второй фактор проверки подлинности перед предоставлением доступа, вы можете настроить многофакторную идентификацию Azure (MFA) для вашего клиента Azure AD. Действия, описанные в этой статье, помогут включить двухфакторную проверку подлинности.
+[!INCLUDE [overview](../../includes/vpn-gateway-vwan-openvpn-enable-mfa-overview.md)]
 
-## <a name="prereq"></a>Готовности к установке
+## <a name="enableauth"></a>Включить проверку подлинности
 
-Необходимым условием для этой конфигурации является настроенный клиент Azure AD, выполнив действия, описанные в разделе [Настройка клиента](openvpn-azure-ad-tenant.md).
-
-[!INCLUDE [MFA steps](../../includes/vpn-gateway-vwan-openvpn-azure-ad-mfa.md)]
+[!INCLUDE [enable authentication](../../includes/vpn-gateway-vwan-openvpn-enable-auth.md)]
 
 ## <a name="enablesign"></a>Настройка параметров входа
 
-На странице **Azure VPN — свойства** настройте параметры входа.
+[!INCLUDE [sign in](../../includes/vpn-gateway-vwan-openvpn-sign-in.md)]
 
-1. Задайте для параметра **включить вход пользователей** значение **Да**. Это позволит всем пользователям в клиенте AD успешно подключаться к VPN.
-2. Задать **Назначение пользователя?** чтобы ограничить вход только пользователями, имеющими разрешения на VPN-подключение к Azure, выберите **"Да"** .
-3. Сохраните изменения.
+## <a name="peruser"></a>Вариант 1. доступ на пользователя
 
-   ![Разрешения](./media/openvpn-azure-ad-mfa/user2.jpg)
+[!INCLUDE [per user](../../includes/vpn-gateway-vwan-openvpn-per-user.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="conditional"></a>Вариант 2. Условный доступ
+
+[!INCLUDE [conditional access](../../includes/vpn-gateway-vwan-openvpn-conditional.md)]
+
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. статью [Настройка аутентификации Azure AD для подключения "точка — сеть" к Azure](virtual-wan-point-to-site-azure-ad.md).

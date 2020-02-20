@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: 7ec18cab74d683e4547843f965d22026e7ba22aa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 254c912114e3f1c7a495f389bc6a6416cbde7e11
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461138"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472457"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Подключение Cognitive Services ресурса к набору навыков в Azure Когнитивный поиск 
 
@@ -48,7 +48,7 @@ ms.locfileid: "75461138"
 
 Для завершения учебника по созданию искусственного интеллекта и краткого руководства можно использовать ограниченный бесплатный режим обработки.
 
-Бесплатные (ограниченные) ресурсы ограничены 20 документами в день на подписку.
+Для бесплатных (ограниченных) ресурсов ограничено 20 документов в день на индексатор. Чтобы сбросить счетчик, можно удалить и повторно создать индексатор.
 
 1. Откройте мастер импорта данных.
 
@@ -167,7 +167,7 @@ Content-Type: application/json
 
 Поместив все вместе, вы платите примерно $57,00, чтобы принять 1 000 PDF-документов этого типа с описанным набором навыков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 + [Страница цен на Когнитивный поиск Azure](https://azure.microsoft.com/pricing/details/search/)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 32865b84de2dc1c1f8a3fd6beca80a2659f1e3d9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 74c8c7dfc2beda2d242bc21e12293dc6f3c1cffe
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75370771"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470842"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -60,6 +60,9 @@ ms.locfileid: "75370771"
 
    <pre><code>sudo zypper update
    </code></pre>
+
+   > [!NOTE]
+   > После обновления ОС или обновления операционной системы может потребоваться перезагрузка операционной системы. 
 
 1. Удалите пакеты.
 
@@ -568,7 +571,7 @@ o- / ...........................................................................
 1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Нажмите кнопку "Сохранить".
+1. Нажмите кнопку Сохранить.
 
 Повторите предыдущие шаги для второго узла кластера.
 
@@ -630,7 +633,7 @@ sudo crm configure property maintenance-mode=false
      Предупреждение: ЦИБ-начальной загрузки — параметры: неизвестный атрибут "hostName_ <strong>HostName</strong>"  
    > Эти предупреждения можно игнорировать.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

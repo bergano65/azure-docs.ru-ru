@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 12/14/2019
 ms.author: helohr
-ms.openlocfilehash: f6a8e4b9129018686aa5833a2ac260075e5627f9
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 5db60160540fc59465e13bd2e68680f49ee0aa2b
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367630"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470893"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
@@ -407,7 +407,7 @@ rmdir $packageName -Force -Verbose
 
 Вот как можно настроить лицензии для автономного использования: 
 
-1. Скачайте пакет приложения, лицензии и необходимые платформы из Microsoft Store для бизнеса. Необходимы как закодированные, так и незакодированные файлы лицензий. Подробные инструкции по скачиванию можно найти [здесь](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app/).
+1. Скачайте пакет приложения, лицензии и необходимые платформы из Microsoft Store для бизнеса. Необходимы как закодированные, так и незакодированные файлы лицензий. Подробные инструкции по скачиванию можно найти [здесь](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
 2. Обновите следующие переменные в скрипте для шага 3.
       1. `$contentID` — это значение ContentID из файла незакодированной лицензии (. XML). Файл лицензии можно открыть в текстовом редакторе по своему усмотрению.
       2. `$licenseBlob` — это вся строка для большого двоичного объекта лицензии в закодированном файле лицензии (. bin). Файл закодированной лицензии можно открыть в текстовом редакторе по своему усмотрению. 

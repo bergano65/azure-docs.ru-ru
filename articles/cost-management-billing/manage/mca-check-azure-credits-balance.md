@@ -2,21 +2,18 @@
 title: Отслеживание кредитного баланса Azure для Клиентского соглашения Майкрософт
 description: Узнайте, как проверить кредитный баланс Azure для Клиентского соглашения Майкрософт.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/13/2019
 ms.author: banders
-ms.openlocfilehash: c8ea083e216331904c9d5741b97f69b7f5a8249a
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: e65637f20d14b93c212b1af2f20695ff5dfeb350
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75991338"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77199693"
 ---
 # <a name="track-microsoft-customer-agreement-azure-credit-balance"></a>Отслеживание кредитного баланса Azure для Клиентского соглашения Майкрософт
 
@@ -28,7 +25,7 @@ ms.locfileid: "75991338"
 
 ## <a name="check-your-credit-balance"></a>Проверьте свой кредитный баланс
 
-### <a name="azure-portaltabportal"></a>[Портал Azure](#tab/portal)
+### <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
@@ -99,7 +96,7 @@ ms.locfileid: "75991338"
 
     ![Снимок экрана со списком с данными о деньгах на счете в профиле выставления счетов](./media/mca-check-azure-credits-balance/mca-account-credit-list.png)
 
-### <a name="rest-apitabrest"></a>[REST API](#tab/rest)
+### <a name="rest-api"></a>[REST API](#tab/rest)
 
 Вы можете использовать API [Выставления счетов Azure](https://docs.microsoft.com/rest/api/billing/) и [Потребление](https://docs.microsoft.com/rest/api/consumption/), чтобы проверить кредитный баланс для своего платежного счета программным способом.
 

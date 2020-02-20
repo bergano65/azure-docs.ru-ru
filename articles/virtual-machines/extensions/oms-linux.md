@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальной машины Azure Monitor для Linux
+title: Расширение виртуальной машины Log Analytics для Linux
 description: Развертывание агента Log Analytics на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -12,38 +12,38 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 08/06/2019
+ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: a431ae8130e258664328fa32a364eb76c28ea811
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 9ddac229fc38a91a8b97b24dc2807080b2295758
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544741"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77468785"
 ---
-# <a name="azure-monitor-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure Monitor для Linux
+# <a name="log-analytics-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Log Analytics для Linux
 
 ## <a name="overview"></a>Обзор
 
-Журналы Azure Monitor предоставляют возможности мониторинга, предупреждений и исправления оповещений в облачных и локальных ресурсах. Расширение виртуальной машины агента Log Analytics для Linux предоставляет и поддерживает корпорация Майкрософт. Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей рабочей области Log Analytics. В этом документе описаны поддерживаемые платформы, конфигурации и варианты развертывания для Azure Monitor расширения виртуальной машины для Linux.
+Журналы Azure Monitor предоставляют возможности мониторинга, предупреждений и исправления оповещений в облачных и локальных ресурсах. Log Analytics расширение виртуальной машины для Linux Опубликовано и поддерживается корпорацией Майкрософт. Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей рабочей области Log Analytics. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины Log Analytics для Linux.
 
 >[!NOTE]
 >В рамках текущей передачи материалов из Microsoft Operations Management Suite (OMS) в Azure Monitor агент OMS для операционных систем будет называться агентом Log Analytics для Windows и Log Analytics для Linux.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
 Дополнительные сведения о поддерживаемых дистрибутивах Linux см. в статье [Обзор агента log Analytics](../../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) .
 
 ### <a name="agent-and-vm-extension-version"></a>Версия агента и расширения виртуальной машины
-В следующей таблице представлено сопоставление версии Azure Monitor расширения ВМ и пакета Log Analytics агента для каждого выпуска. В ней также указана ссылка на заметки о выпуске для версии пакета агента Log Analytics. Заметки о выпуске содержат сведения об исправлениях ошибок и новых функциях, доступных в данном выпуске агента.  
+Приведенная ниже таблица содержит сопоставление версий расширения виртуальной машины Log Analytics и пакетов агента Log Analytics для каждого выпуска. В ней также указана ссылка на заметки о выпуске для версии пакета агента Log Analytics. Заметки о выпуске содержат сведения об исправлениях ошибок и новых функциях, доступных в данном выпуске агента.  
 
-| Версия расширения виртуальной машины Azure Monitor Linux | Версия пакета агента Log Analytics | 
+| Версия расширения виртуальной машины Log Analytics для Linux | Версия пакета агента Log Analytics | 
 |--------------------------------|--------------------------|
-| 1.12.15 | [1.12.15-0](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.12.15-0) |
+| 1.12.25 | [1.12.15-0](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.12.15-0) |
 | 1.11.15 | [1.11.0-9](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.11.0-9) |
 | 1.10.0 | [1.10.0-1](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.10.0-1) |
 | 1.9.1 | [1.9.0-0](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.9.0-0) |
@@ -100,7 +100,6 @@ ms.locfileid: "76544741"
 
 >[!NOTE]
 >В приведенной выше схеме предполагается, что он будет размещен на корневом уровне шаблона. Если поместить его в ресурс виртуальной машины в шаблоне, свойства `type` и `name` следует изменить, как это описано [далее](#template-deployment).
->
 
 ### <a name="property-values"></a>Значения свойств
 
@@ -108,7 +107,7 @@ ms.locfileid: "76544741"
 | ---- | ---- |
 | версия_API | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| type | OmsAgentForLinux |
+| тип | OmsAgentForLinux |
 | typeHandlerVersion | 1.7 |
 | workspaceID (пример) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |

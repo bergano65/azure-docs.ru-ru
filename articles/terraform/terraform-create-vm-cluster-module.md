@@ -3,12 +3,12 @@ title: Руководство. Создание кластера виртуал�
 description: Узнайте, как использовать модули Terraform для создания кластера виртуальных машин в Azure
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 3ddc80e8f5a81e89e4574ff6524055f12a4a618a
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: d17a0d7c26cc1a16ab73350fe6e8c28ba4af6ff2
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185551"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472215"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Руководство по Создание кластера виртуальных машин Azure с помощью Terraform и реестра модулей
 
@@ -17,17 +17,17 @@ ms.locfileid: "74185551"
 > [!div class="checklist"]
 > * настройка аутентификации в Azure;
 > * создание шаблона Terraform;
-> * Визуализация изменений с планом
+> * визуализация изменений с планом;
 > * применение конфигурации для создания кластера виртуальных машин.
 
 Дополнительные сведения о Terraform см. в [документации по Terraform](https://www.terraform.io/docs/index.html).
 
-## <a name="set-up-authentication-with-azure"></a>Настройка аутентификации в Azure
+## <a name="set-up-authentication-with-azure"></a>настройка аутентификации в Azure;
 
 > [!TIP]
-> При [использовании переменной среды Terraform](/azure/virtual-machines/linux/terraform-install-configure) или выполнении этого руководства в [Azure Cloud Shell](/azure/cloud-shell/overview) пропустите этот шаг.
+> При [использовании переменной среды Terraform](terraform-install-configure.md) или выполнении этого руководства в [Azure Cloud Shell](/azure/cloud-shell/overview) пропустите этот шаг.
 
- Просмотрите статью об [установке Terraform и настройке доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure), чтобы создать субъект-службу Azure. Используйте этот субъект-службу для заполнения нового файла `azureProviderAndCreds.tf` в пустом каталоге с помощью следующего кода:
+ Просмотрите статью об [установке Terraform и настройке доступа к Azure](terraform-install-configure.md), чтобы создать субъект-службу Azure. Используйте этот субъект-службу для заполнения нового файла `azureProviderAndCreds.tf` в пустом каталоге с помощью следующего кода:
 
 ```hcl
 variable subscription_id {}
@@ -84,7 +84,7 @@ output "vm_private_ips" {
 
 ![Terraform Init](media/terraformInitWithModules.png)
 
-## <a name="visualize-the-changes-with-plan"></a>Визуализация изменений с планом
+## <a name="visualize-the-changes-with-plan"></a>визуализация изменений с планом;
 
 Выполните команду `terraform plan` для предварительного просмотра инфраструктуры виртуальных машин, созданной шаблоном.
 
@@ -97,7 +97,7 @@ output "vm_private_ips" {
 
 ![Применение Terraform](media/terraform-create-vm-cluster-with-infrastructure/terraform-apply.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Просмотрите список модулей Azure Terraform](https://registry.terraform.io/modules/Azure)

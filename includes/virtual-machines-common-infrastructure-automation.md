@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: 4259868ff3b3c9ca9f9818532acd7e865e0300d7
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 525eba8a5a4e891526eb32a24287ea3887ee6743
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77205699"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77474273"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
@@ -48,7 +48,7 @@ ms.locfileid: "77205699"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/puppet.puppet-enterprise-2017-2?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
+- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/Puppet.puppet-agent-windows-asm?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
 
 
 ## <a name="cloud-init"></a>Cloud-init
@@ -99,8 +99,8 @@ ms.locfileid: "77205699"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](../articles/virtual-machines/linux/terraform-install-configure.md)
-- [Создание базовой инфраструктуры в Azure с помощью Terraform](../articles/virtual-machines/linux/terraform-create-complete-vm.md)
+- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](../articles/terraform/terraform-install-configure.md)
+- [Создание базовой инфраструктуры в Azure с помощью Terraform](../articles/terraform/terraform-create-complete-vm.md)
 
 
 ## <a name="azure-automation"></a>Служба автоматизации Azure
@@ -131,5 +131,5 @@ ms.locfileid: "77205699"
 - [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../articles/virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md) или [Windows](../articles/virtual-machines/windows/tutorial-automate-vm-deployment.md).

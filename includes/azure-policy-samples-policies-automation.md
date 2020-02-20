@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/10/2020
+ms.date: 02/13/2020
 ms.author: dacoulte
-ms.openlocfilehash: 76083e2cf3c0441c25e6b534f973bbaeee5e8ebc
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: b173c389a96055f3f8b4b42490fd76fe9afd100e
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77170092"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77370937"
 ---
-|Имя |Описание |Действие |Версия |
+|Имя |Описание |Действие |Версия |Источник |
 |---|---|---|---|
-|[Необходимо включить шифрование для переменных учетной записи службы автоматизации](https://github.com/Azure/azure-policy/blob/masterbuilt-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |Обязательно включайте шифрование ресурсов переменных в учетной записи службы автоматизации при хранении конфиденциальных данных. |Audit, Disabled |1.0.0 |
+|[Необходимо включить шифрование для переменных учетной записи службы автоматизации](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |Обязательно включайте шифрование ресурсов переменных в учетной записи службы автоматизации при хранении конфиденциальных данных. |Audit, Disabled |1.0.0 |[GitHub](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json)

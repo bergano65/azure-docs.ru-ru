@@ -8,12 +8,12 @@ ms.service: azure-app-configuration
 ms.topic: sample
 ms.date: 01/24/2020
 ms.author: lcozzens
-ms.openlocfilehash: 7cc8454ca8dc8d6313e1cf353292adb47b15ef47
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 11f3aec10aed0dc8bc0c9831d563dca2b0c1a6fb
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898715"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77468377"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Создание хранилища конфигураций для приложения Azure
 
@@ -24,10 +24,6 @@ ms.locfileid: "76898715"
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Сначала необходимо установить расширение CLI для службы "Конфигурация приложений Azure", выполнив следующую команду:
-
-        az extension add -n appconfig
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -71,8 +67,8 @@ echo "$appConfigConnectionString"
 | Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az appconfig create](/cli/azure/ext/appconfig/appconfig#ext-appconfig-az-appconfig-create) | Создает ресурс хранилища Конфигурации приложений. |
-| [az appconfig credential list](/cli/azure/ext/appconfig/appconfig/credential?view=azure-cli-latest) | Вывод списка ключей доступа для хранилища службы "Конфигурация приложений". |
+| [az appconfig create](/cli/azure/appconfig#az-appconfig-create) | Создает ресурс хранилища Конфигурации приложений. |
+| [az appconfig credential list](/cli/azure/appconfig/credential#az-appconfig-credential-list) | Вывод списка ключей доступа для хранилища службы "Конфигурация приложений". |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

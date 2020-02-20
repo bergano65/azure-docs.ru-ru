@@ -8,17 +8,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/17/2019
-ms.openlocfilehash: 7be3a7913559947be1291db35ac3531f152dfae9
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 02/13/2020
+ms.openlocfilehash: ed067e4bbde737cb08afe7c9429854e54e2ef3d9
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995550"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77199319"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-database-for-mysql"></a>Применение скидки на резервирование к Базе данных Azure для MySQL
 
-После того как вы купили зарезервированную емкость Базы данных Azure для MySQL, скидка на резервирование автоматически применяется к серверам MySQL, атрибуты и количество которых совпадают с резервированием. Резервирование охватывает только затраты на вычисление для Базы данных Azure для MySQL. С вас взимается плата за хранение и сеть по обычным тарифам. 
+После того как вы купили зарезервированную емкость Базы данных Azure для MySQL, скидка на резервирование автоматически применяется к серверам MySQL, атрибуты и количество которых совпадают с резервированием. Резервирование охватывает только затраты на вычисление для Базы данных Azure для MySQL. С вас взимается плата за хранение и сеть по обычным тарифам.
 
 ## <a name="how-reservation-discount-is-applied"></a>Применение скидки на резервирование
 

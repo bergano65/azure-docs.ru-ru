@@ -5,52 +5,35 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 02/14/2020
 ms.author: alzam
-ms.openlocfilehash: 771dea2d9ae2979bc71880368ed3a9a538e8a803
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 34ef1b73b06870fd4eaabe88147cd98b281c1f11
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964744"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472355"
 ---
 # <a name="enable-azure-multi-factor-authentication-mfa-for-vpn-users"></a>Включение многофакторной идентификации Azure (MFA) для VPN-пользователей
 
-Если вы хотите, чтобы пользователи запрашивают второй фактор проверки подлинности перед предоставлением доступа, можно настроить многофакторную идентификацию Azure (MFA) для каждого пользователя или использовать многофакторную проверку подлинности (MFA) с помощью [условного доступа](../active-directory/conditional-access/overview.md) для более точного управления. Настройка многофакторной идентификации для каждого пользователя может быть включена без дополнительных затрат, однако при включении MFA для каждого пользователя пользователю будет предложено использовать вторую проверку подлинности для всех приложений, привязанных к клиенту Azure AD. Условный доступ позволяет более точно контролировать, как должен быть повышен второй фактор, и может разрешить назначение MFA только VPN, а не других приложений, привязанных к клиенту Azure AD.
+[!INCLUDE [overview](../../includes/vpn-gateway-vwan-openvpn-enable-mfa-overview.md)]
 
 ## <a name="enableauth"></a>Включить проверку подлинности
 
-1. Перейдите в раздел **Azure Active Directory-> корпоративные приложения — > все приложения**.
-2. На странице **корпоративные приложения — все приложения** выберите **VPN-подключение Azure**.
-
-   ![Идентификатор каталога](../../includes/media/vpn-gateway-vwan-openvpn-azure-ad-mfa/user1.jpg)
+[!INCLUDE [enable authentication](../../includes/vpn-gateway-vwan-openvpn-enable-auth.md)]
 
 ## <a name="enablesign"></a>Настройка параметров входа
 
-На странице **Azure VPN — свойства** настройте параметры входа.
+[!INCLUDE [sign in](../../includes/vpn-gateway-vwan-openvpn-sign-in.md)]
 
-1. Задайте для параметра **включить вход пользователей** значение **Да**. Это позволит всем пользователям в клиенте AD успешно подключаться к VPN.
-2. Задать **Назначение пользователя?** чтобы ограничить вход только пользователями, имеющими разрешения на VPN-подключение к Azure, выберите **"Да"** .
-3. Сохраните изменения.
+## <a name="peruser"></a>Вариант 1. доступ на пользователя
 
-   ![Разрешения](./media/openvpn-azure-ad-mfa/user2.jpg)
+[!INCLUDE [per user](../../includes/vpn-gateway-vwan-openvpn-per-user.md)]
 
-## <a name="option-1---enable-multi-factor-authentication-mfa-via-conditional-access"></a>Вариант 1. Включение многофакторной проверки подлинности (MFA) с помощью условного доступа
+## <a name="conditional"></a>Вариант 2. Условный доступ
 
-Условный доступ обеспечивает детальное управление доступом для отдельных приложений.  Обратите внимание, что для использования условного доступа необходимо иметь Azure AD Premium 1 или более высокий лицензионный параметр, применяемый к пользователям, которые будут подвергаться правилам условного доступа.
+[!INCLUDE [conditional access](../../includes/vpn-gateway-vwan-openvpn-conditional.md)]
 
-1. На странице **корпоративные приложения — все приложения** выберите **VPN-подключение Azure**, выберите **Условный доступ**и щелкните **создать политику**.
-2. В разделе "пользователи и группы" на вкладке " *включить* " установите флажок " **Пользователи и группы**", "Проверка **пользователей и групп**" и выберите группу или набор пользователей, которые должны подвергаться mfa.  Нажмите кнопку **Done**(Готово).
-![Назначения](../../includes/media/vpn-gateway-vwan-openvpn-azure-ad-mfa/mfa-ca-assignments.png)
-3. В разделе **предоставление**, установите флажок **Разрешить доступ** **, установите флажок Требовать наличие** **всех выбранных элементов управления**и нажмите кнопку **выбрать** .
-![предоставления доступа к](../../includes/media/vpn-gateway-vwan-openvpn-azure-ad-mfa/mfa-ca-grant-mfa.png) MFA
-4. Установите **флажок** **включить политику** и нажмите кнопку **создать** .
-![включить](../../includes/media/vpn-gateway-vwan-openvpn-azure-ad-mfa/mfa-ca-enable-policy.png) политики
-
-## <a name="option-2---enable-multi-factor-authentication-mfa-per-user"></a>Вариант 2. Включение многофакторной проверки подлинности (MFA) для каждого пользователя
-
-[!INCLUDE [MFA steps](../../includes/vpn-gateway-vwan-openvpn-azure-ad-mfa.md)]
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль клиента VPN. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).

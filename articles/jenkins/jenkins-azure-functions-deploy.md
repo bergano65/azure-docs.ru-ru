@@ -4,12 +4,12 @@ description: Узнайте, как выполнить развертывани�
 keywords: jenkins, azure, devops, java, azure functions
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: af3e8dfd6e2bfc676e659a03d92658af66b5bcde
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: edf8c763a46a6f519175842a6525b2c1b314fb66
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158770"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470672"
 ---
 # <a name="deploy-to-azure-functions-using-the-jenkins-azure-functions-plug-in"></a>Развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "74158770"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
+- **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - **Сервер Jenkins**. Если у вас не установлен сервер Jenkins, см. статью о [создании сервера Jenkins в Azure](./install-jenkins-solution-template.md).
 
   > [!TIP]
@@ -131,7 +131,7 @@ ms.locfileid: "74158770"
 
 Теперь можно выполнить задание Jenkins.
 
-1. Сначала получите ключ авторизации, выполнив инструкции из статьи [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook#authorization-keys).
+1. Сначала получите ключ авторизации, выполнив инструкции из статьи [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook-trigger#authorization-keys).
 
 1. Введите URL-адрес приложения в окне браузера. Замените заполнители соответствующими значениями и укажите числовое значение для заполнителя **&lt;input_number>** в качестве ввода для функции Java.
 
@@ -152,7 +152,7 @@ ms.locfileid: "74158770"
 az group delete -y --no-wait -n <resource_group>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Функциях Azure:
 > [!div class="nextstepaction"]

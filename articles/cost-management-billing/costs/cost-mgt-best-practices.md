@@ -1,21 +1,20 @@
 ---
 title: Оптимизация инвестиций в облако с помощью службы "Управление затратами Azure" | Документация Майкрософт
 description: Эта статья поможет извлечь максимальную выгоду из инвестиций в облако, сократить затраты и оценить, на что тратятся ваши деньги.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/21/2019
+ms.date: 02/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: vitavor
+ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 47a53136a8f299e5c8654d122d8e319be4ae29db
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 6d13bf4b2a3abd3a1552ac656a6a15fed8c7cb60
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988387"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201073"
 ---
 # <a name="how-to-optimize-your-cloud-investment-with-azure-cost-management"></a>Как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure"
 
@@ -85,20 +84,20 @@ Azure предоставляет средства, помогающие с пр�
 
 Дополнительные сведения о различных вариантах приобретения Azure см. на [этой странице](https://azure.microsoft.com/pricing/purchase-options/). Ниже приведены некоторые из наиболее распространенных моделей выставления счетов.
 
-#### <a name="freehttpsazuremicrosoftcomfree"></a>[Бесплатный](https://azure.microsoft.com/free/)
+#### <a name="free"></a>[Бесплатный](https://azure.microsoft.com/free/)
 
 - 12 месяцев использования популярных бесплатных служб.
 - 200 долл. США на счете для работы со службами в течение 30 дней.
 - Более 25 служб, которые всегда предоставляются бесплатно.
 
-#### <a name="pay-as-you-gohttpsazuremicrosoftcomoffersms-azr-0003p"></a>[Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)
+#### <a name="pay-as-you-go"></a>[Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)
 
 - Отсутствие минимальных платежей и обязательств.
 - Конкурентные цены.
 - Оплата по мере использования
 - Отмена в любое время.
 
-#### <a name="enterprise-agreementhttpsazuremicrosoftcompricingenterprise-agreement"></a>[Соглашение Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/)
+#### <a name="enterprise-agreement"></a>[Соглашение Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/)
 
 - Варианты для предварительных денежных обязательств.
 - Доступ к сниженным ценам на предложения Azure.

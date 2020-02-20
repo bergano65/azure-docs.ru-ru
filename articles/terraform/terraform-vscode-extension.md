@@ -3,27 +3,27 @@ title: Руководство. Настройка расширения Visual St
 description: Сведения о том, как установить и использовать расширение Azure Terraform в Visual Studio Code.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 7f2f15c3a45480b8922f34e191fb965d5e83d9fa
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: fcb47024fd26f061ca4475b01d00f1ae13303b61
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159233"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472287"
 ---
 # <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>Руководство по Настройка расширения Visual Studio Code для Azure Terraform
 
 Расширение Visual Studio Code для Azure Terraform позволяет работать с Terraform в редакторе. С помощью этого расширения можно создавать, тестировать и выполнять конфигурации Terraform. Это расширение также поддерживает визуализацию графа ресурсов.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * автоматизация подготовки служб Azure с помощью Terraform;
 > * установка и использование расширения Visual Studio Code Terraform для служб Azure;
 > * использование Visual Studio Code для разработки, проектирования и выполнения планов Terraform.
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
+- **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
-- **Terraform**. [Установите и настройте Terraform](/azure/virtual-machines/linux/terraform-install-configure).
+- **Terraform**. [Установите и настройте Terraform](terraform-install-configure.md).
 
 - **Visual Studio Code**. Установите подходящую для вашей среды версию [Visual Studio Code](https://code.visualstudio.com/download).
 
@@ -70,7 +70,7 @@ ms.locfileid: "74159233"
 
     ![Поиск расширений Visual Studio Code в Marketplace](media/terraform-vscode-extension/tf-search-extensions.png)
 
-1. Щелкните **Установить**.
+1. Выберите пункт **Установить**.
 
     >[!NOTE]
     >Когда вы щелкнете **Установить** рядом с расширением Azure Terraform, Visual Studio Code автоматически установит расширение Azure Account. Azure Account — это файл зависимостей для расширения Azure Terraform, который используется для аутентификации подписки Azure и расширений, имеющих отношение к Azure.
@@ -190,7 +190,7 @@ ms.locfileid: "74159233"
 
     ![Применение Terraform](media/terraform-vscode-extension/tf-terraform-apply.png)
 
-1. Укажите `yes`.
+1. Введите `yes`.
 
     ![Согласие на выполнение команды Terraform apply](media/terraform-vscode-extension/tf-terraform-apply-yes.png)
 
@@ -198,7 +198,7 @@ ms.locfileid: "74159233"
 
 Чтобы проверить создание группы ресурсов Azure, сделайте следующее:
 
-1. Перейдите на портал Azure.
+1. Откройте портал Azure.
 
 1. В области навигации слева выберите **Группа ресурсов**.
 
@@ -300,6 +300,6 @@ ms.locfileid: "74159233"
 
 ![Результаты проверки](media/terraform-vscode-extension/tf-end-to-end-test-results.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Список модулей Terraform, доступных для Azure и других поддерживаемых поставщиков](https://registry.terraform.io/)

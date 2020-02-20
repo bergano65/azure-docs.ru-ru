@@ -4,15 +4,15 @@ description: Настройка управляемого диска Azure с о�
 author: roygara
 ms.service: virtual-machines-windows
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 02/18/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 7eb2f808269ec0f91725644d5afb82e12cbb885d
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: e7ada64a50d6ace6ea4d34db87e0501d0311071d
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77202363"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471715"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 

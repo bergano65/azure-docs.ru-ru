@@ -7,14 +7,14 @@ ms.author: brysmith
 ms.service: machine-learning
 ms.topic: tutorial
 ms.date: 02/10/2020
-ms.openlocfilehash: 1be97f9754733561111cedcf95fe237b7788583e
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: b929dd8979ecf587872092af2fa44e5ae03626d1
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77122559"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472491"
 ---
-# <a name="tutorial-convert-ml-experimental-code-to-production-code"></a>Руководство. Преобразование экспериментального кода машинного обучения в рабочий код
+# <a name="tutorial-convert-ml-experimental-code-to-production-code"></a>Руководство по Преобразование экспериментального кода машинного обучения в рабочий код
 
 Проект машинного обучения требует экспериментирования, в котором гипотезы проверяются на реальных наборах данных с помощью таких гибких инструментов, как Jupyter Notebook. Когда модель будет готова к рабочей среде, ее код следует поместить в репозиторий рабочего кода. В некоторых случаях для размещения в репозитории рабочего кода код модели необходимо преобразовать в сценарии Python. В этом руководстве рассматривается рекомендуемый подход к экспорту кода экспериментов в сценарии Python.  
 
@@ -409,4 +409,4 @@ class TestTrain:
 
 > [!div class="nextstepaction"]
 > [Мониторинг запусков и метрик экспериментов в Машинном обучении Azure](https://docs.microsoft.com/azure/machine-learning/how-to-track-experiments)
-> [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](https://docs.microsoft.com/azure/machine-learning/how-to-enable-app-insight)
+> [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](https://docs.microsoft.com/azure/machine-learning/how-to-enable-app-insights)
