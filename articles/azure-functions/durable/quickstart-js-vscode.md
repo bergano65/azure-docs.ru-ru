@@ -5,12 +5,12 @@ author: ColbyTresness
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.reviewer: azfuncdf, cotresne
-ms.openlocfilehash: b0a1d1a9305f6de2a072ee1ded310d8de174436b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 431bd45763cbe24e44d47342b32c5c452a27b0f6
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845727"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210299"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
@@ -57,7 +57,7 @@ ms.locfileid: "76845727"
     | Выбор версии | Функции Azure версии 2 | Этот параметр отображается, только если вы еще не установили Core Tools. В этом случае Core Tools устанавливается при первом запуске приложения. |
     | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | Создание функции, активируемой HTTP, в новом приложении-функции. |
     | Provide a function name (Укажите имя функции) | HTTPTrigger | Нажмите клавишу "ВВОД", чтобы использовать имя по умолчанию. |
-    | Уровень авторизации | Компонент | Уровень авторизации `function` требует предоставления ключа доступа при вызове конечной точки HTTP функции. Это усложняет доступ к незащищенной конечной точке. Дополнительные сведения см. [Ключи авторизации](../functions-bindings-http-webhook.md#authorization-keys).  |
+    | Уровень авторизации | Компонент | Уровень авторизации `function` требует предоставления ключа доступа при вызове конечной точки HTTP функции. Это усложняет доступ к незащищенной конечной точке. Дополнительные сведения см. [Ключи авторизации](../functions-bindings-http-webhook-trigger.md#authorization-keys).  |
     | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область | Создает приложение-функцию в текущей рабочей области. |
 
 При необходимости Visual Studio Code устанавливает Azure Functions Core Tools. Он также создаст проект приложения-функции в новой рабочей области. Проект будет содержать файлы конфигурации [host.json](../functions-host-json.md) и [local.settings.json](../functions-run-local.md#local-settings-file). Он также создает папку HttpExample, содержащую файл определения [function.json](../functions-reference-node.md#folder-structure), файл [index.js](../functions-reference-node.md#exporting-a-function) и файл Node.js, содержащий код функции.

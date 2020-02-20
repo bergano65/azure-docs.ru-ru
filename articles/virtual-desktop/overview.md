@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 01/27/2020
 ms.author: helohr
-ms.openlocfilehash: 168a345427be47dc1c33f43be1af47daa8f638ef
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 6cb8362b2de1f8345f693b00df021afe84f2d5a5
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772784"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471777"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -72,7 +72,7 @@ ms.locfileid: "76772784"
 
 Требования к инфраструктуре для включения поддержки Виртуального рабочего стола Windows следующие:
 
-* Наличие [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
+* Наличие [Azure Active Directory](/azure/active-directory/).
 * Windows Server Active Directory с синхронизацией с Azure Active Directory. Это можно реализовать с помощью следующих компонентов:
   * Azure AD Connect (для гибридных организаций);
   * доменные службы Azure AD (для гибридных или облачных организаций).
@@ -80,7 +80,7 @@ ms.locfileid: "76772784"
   
 Требования к виртуальным машинам Azure, созданным для Виртуального рабочего стола Windows, следующие:
 
-* [Стандартное присоединение к домену](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison) или [гибридное присоединение к AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). Виртуальные машины не могут быть присоединены к Azure AD.
+* [Стандартное присоединение к домену](../active-directory-domain-services/active-directory-ds-comparison.md) или [гибридное присоединение к AD](../active-directory/devices/hybrid-azuread-join-plan.md). Виртуальные машины не могут быть присоединены к Azure AD.
 * Использование одного из следующих [поддерживаемых образов ОС](#supported-virtual-machine-os-images).
 
 >[!NOTE]

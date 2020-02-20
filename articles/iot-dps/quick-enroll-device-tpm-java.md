@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: cadee1b72c15ded7c29d1eea341c1ea21b346a37
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: df18e721a7400a1e45b7f1fcd74fdafdbfdf026c
+ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976831"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77462264"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-java-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Java
 
@@ -56,7 +56,7 @@ ms.locfileid: "74976831"
 
 В этом разделе показано, как добавить в пример кода сведения о подготовке устройства TPM. 
 
-1. Откройте окно командной строки. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя пакет SDK для службы Java:
+1. Откройте командную строку. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя пакет SDK для службы Java:
     
     ```cmd\sh
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
@@ -124,7 +124,7 @@ ms.locfileid: "74976831"
     mvn install -DskipTests
     ```
 
-   С помощью этой команды можно скачать на компьютер пакет Maven [`com.microsoft.azure.sdk.iot.provisioning.service`](https://www.mvnrepository.com/artifact/com.microsoft.azure.sdk.iot.provisioning/provisioning-service-client). Пакет содержит двоичные файлы пакета SDK для службы Java, которую должен собрать пример кода. 
+   С помощью этой команды можно скачать на компьютер пакет Maven [`com.microsoft.azure.sdk.iot.provisioning.service`](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot.provisioning/provisioning-service-client). Пакет содержит двоичные файлы пакета SDK для службы Java, которую должен собрать пример кода. 
 
 3. Запустите пример кода, выполнив в окне командной строки следующие команды:
 
@@ -146,7 +146,7 @@ ms.locfileid: "74976831"
 1. Закройте окно симулятора TPM, созданное для имитации устройства TPM.
 1. Перейдите к службе подготовки устройств на портале Azure, откройте раздел **Управление регистрациями** и выберите вкладку **Индивидуальные регистрации**. Выберите флажок рядом с *идентификатором регистрации* для записи регистрации, которую вы создали в процессе работы с этим кратким руководством, и нажмите кнопку **Удалить** в верхней части панели.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В рамках этого краткого руководства вы зарегистрировали имитированное устройство TPM в службе подготовки устройств. Дополнительные сведения о подготовке устройств см. в руководстве по настройке службы подготовки устройств на портале Azure. 
 
 > [!div class="nextstepaction"]

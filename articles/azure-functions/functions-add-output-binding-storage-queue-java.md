@@ -3,12 +3,12 @@ title: Подключение функции Java к службе хранили
 description: Узнайте, как подключить функцию Java, активируемую HTTP, к службе хранилища Azure с помощью выходной привязки хранилища очередей.
 ms.date: 10/14/2019
 ms.topic: quickstart
-ms.openlocfilehash: 98f49338f0df935347a26798aceccb80f9f43f50
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 72e3aad15ea8ef922d89a67891e223b65473b909
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926900"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198553"
 ---
 # <a name="connect-your-java-function-to-azure-storage"></a>Подключение функции Java к службе хранилища Azure
 
@@ -118,7 +118,7 @@ mvn azure-functions:run
 ```
 
 > [!NOTE]  
-> Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#packages---functions-2x-and-higher).
+> Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#add-to-your-functions-app).
 
 Как и прежде, запустите функцию из командной строки, используя cURL в новом окне терминала:
 
@@ -152,7 +152,7 @@ curl -w "\n" https://fabrikam-functions-20190929094703749.azurewebsites.net/api/
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь службы хранилища. Чтобы получить дополнительные сведения о разработке Функций Azure с помощью Java, просмотрите статьи [Руководство разработчика Java по Функциям Azure](functions-reference-java.md) и [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md). Примеры завершенных проектов Функций в Java см. в [этой статье](/samples/browse/?products=azure-functions&languages=Java). 
 

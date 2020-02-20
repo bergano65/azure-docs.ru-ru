@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 01/10/2020
 ms.custom: mvc, devcenter
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 26313c68305f4d7e6411d31fa12366442ce4bd38
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: cf71f051b014c6ce56290acda5c4b931c23934e2
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964179"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208954"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-visual-studio-code"></a>Краткое руководство. Создание проекта Функций Azure в Visual Studio Code
 
@@ -93,7 +93,7 @@ ms.locfileid: "76964179"
     + **Укажите пространство имен**. Введите `My.Functions`. 
     ::: zone-end
 
-    + **Уровень авторизации**: выберите `Anonymous`, что позволит любому пользователю вызывать конечную точку функции. Дополнительные сведения об уровне авторизации см. в разделе [Authorization keys](functions-bindings-http-webhook.md#authorization-keys) (Ключи авторизации).
+    + **Уровень авторизации**: выберите `Anonymous`, что позволит любому пользователю вызывать конечную точку функции. Дополнительные сведения об уровне авторизации см. в разделе [Authorization keys](functions-bindings-http-webhook-trigger.md#authorization-keys) (Ключи авторизации).
 
     + **Выберите, как вы хотели бы открыть свой проект**. Выберите `Add to workspace`.
 

@@ -1,22 +1,22 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.custom: include file
 ms.service: cognitive-services
-ms.subservice: luis
+ms.subservice: language-understanding
+ms.date: 02/14/2020
 ms.topic: include
-ms.date: 07/26/2019
 ms.author: diberry
-ms.openlocfilehash: 10a4c0b90a94433301923d2b1bcc0893b09bf935
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 7c028127343fe522c7546fc68adcf950c7777df0
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74451660"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77371905"
 ---
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите приложение LUIS, если оно больше не нужно. Для этого выберите **Мои приложения** в меню слева вверху. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**. 
+Удалите приложение LUIS, если оно больше не нужно. Для этого выберите **Мои приложения** в меню слева вверху. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.

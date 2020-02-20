@@ -4,12 +4,12 @@ description: В этом кратком руководстве в узнаете
 keywords: ansible, azure, devops, solution template, virtual machine, managed identities for azure resources, centos, red hat
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: ebd01411ff27b0e95be21ef147098a90b6f62742
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: cc3a6c1f0ef36b51b62e6aa58f317aee13149589
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74156335"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193792"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS
 
@@ -29,9 +29,9 @@ ms.locfileid: "74156335"
 
 1. Выберите **Загрузить сейчас**.
 
-1. Появится окно с подробным описанием условий использования, политики конфиденциальности и условий использования Microsoft Azure Marketplace. Выберите **Продолжить**.
+1. Появится окно с подробным описанием условий использования, политики конфиденциальности и условий использования Microsoft Azure Marketplace. Выберите **Continue** (Продолжить).
 
-1. После этого откроется портал Azure на странице Ansible, описывающей шаблон решения. Нажмите кнопку **Создать**.
+1. После этого откроется портал Azure на странице Ansible, описывающей шаблон решения. Нажмите кнопку **создания**.
 
 1. На странице **создания Ansible** вы увидите несколько вкладок. На вкладке **Основные сведения** введите необходимые данные.
 
@@ -46,7 +46,7 @@ ms.locfileid: "74156335"
 
      ![Вкладка основных параметров Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-1.png)
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. На вкладке **Дополнительные параметры** введите необходимые сведения:
 
@@ -60,19 +60,19 @@ ms.locfileid: "74156335"
 
      ![Вкладка дополнительных параметров Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-2.png)
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. На вкладке **Ansible Integration Settings** (Параметры интеграции Ansible) задайте тип проверки подлинности. Дополнительные сведения о защите ресурсов Azure см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview).
 
     ![Вкладка параметров интеграции Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-3.png)
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. На странице **Сводка** отображается процесс проверки и список указанных критериев для развертывания Ansible. Ссылка в нижней части вкладки позволяет **загрузить шаблон и параметры** для использования с поддерживаемыми языками и платформами Azure. 
 
      ![Вкладка сводки для Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-4.png)
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. Когда появится вкладка **Создать**, нажмите кнопку **ОК** для развертывания Ansible.
 
@@ -82,7 +82,7 @@ ms.locfileid: "74156335"
 
 1. На странице группы ресурсов получите IP-адрес узла Ansible и войдите для управления ресурсами Azure с помощью Ansible.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство Настройка виртуальной машины Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство. Настройка виртуальной машины Linux в Azure с помощью Ansible](./ansible-create-vm.md)

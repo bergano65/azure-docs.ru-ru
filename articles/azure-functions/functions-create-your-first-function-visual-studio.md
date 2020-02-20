@@ -5,12 +5,12 @@ ms.assetid: 82db1177-2295-4e39-bd42-763f6082e796
 ms.topic: quickstart
 ms.date: 07/19/2019
 ms.custom: mvc, devcenter, vs-azure, 23113853-34f2-4f
-ms.openlocfilehash: 6d09453db0fdf8c09ad6d90c63b27f48508302be
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b343adeed5abeecdf55f71f8bc4298659a106e09
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230710"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198400"
 ---
 # <a name="create-your-first-function-using-visual-studio"></a>Создание первой функции с помощью Visual Studio
 
@@ -32,7 +32,7 @@ ms.locfileid: "74230710"
 
 [!INCLUDE [Create a project using the Azure Functions template](../../includes/functions-vstools-create.md)]
 
-Visual Studio создает проект и класс, содержащий стандартный код для типа функции триггера HTTP. Атрибут `FunctionName` метода задает имя функции. По умолчанию — `HttpTrigger`. Атрибут `HttpTrigger` указывает, что функция вызывается HTTP-запросом. Стандартный код отправляет HTTP-ответ, включающий в себя значение из текста или строки запроса.
+Visual Studio создает проект и класс, содержащий стандартный код для типа функции триггера HTTP. Атрибут `FunctionName` метода задает имя функции. По умолчанию — `Function1`. Атрибут `HttpTrigger` указывает, что функция вызывается HTTP-запросом. Стандартный код отправляет HTTP-ответ, включающий в себя значение из текста или строки запроса.
 
 Вы можете расширить возможности функции, используя входные и выходные привязки данных, применив для метода соответствующие атрибуты. Дополнительные сведения см. в разделе [Триггеры и привязки](functions-dotnet-class-library.md#triggers-and-bindings) в статье [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md).
 
@@ -64,7 +64,7 @@ Visual Studio интегрируется с Azure Functions Core Tools, поэт
 
     ![Ответ функции в браузере](./media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-azure.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью Visual Studio вы создали и опубликовали в Azure приложение-функцию C# с простой функцией, активируемой HTTP. Дополнительные сведения о разработке функций, таких как библиотеки класса .NET, см. в статье [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md).
 

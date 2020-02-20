@@ -3,12 +3,12 @@ title: Добавление привязки очереди службы хра�
 description: Интеграция очереди службы хранилища Azure с функцией Python с использованием выходной привязки.
 ms.date: 01/15/2020
 ms.topic: quickstart
-ms.openlocfilehash: 14a381d13da052fd67679ed17bbb6b6711f7a0e6
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: f5527e0e636c3f8c9ee3723570ed9811f0df3641
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715373"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198485"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-python-function"></a>Добавление привязки очереди службы хранилища Azure к функции Python
 
@@ -156,7 +156,7 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
 1. Когда все будет готово, завершите работу узла, нажав клавиши **Ctrl**+**C**.
 
 > [!TIP]
-> Во время запуска узел скачивает и устанавливает [расширение привязки хранилища](functions-bindings-storage-blob.md#packages---functions-2x-and-higher) и другие расширения привязки Майкрософт. Эта установка происходит, потому что расширения привязки включены по умолчанию в файле *host.json* со следующими свойствами:
+> Во время запуска узел скачивает и устанавливает [расширение привязки хранилища](functions-bindings-storage-blob.md#add-to-your-functions-app) и другие расширения привязки Майкрософт. Эта установка происходит, потому что расширения привязки включены по умолчанию в файле *host.json* со следующими свойствами:
 >
 > ```json
 > {
@@ -176,19 +176,19 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
 
 1. Откройте файл *local.setting.json* проекта функций и скопируйте значение строки подключения. В окне терминала или командной строки выполните следующую команду, чтобы создать переменную среды с именем `AZURE_STORAGE_CONNECTION_STRING`. Вставьте конкретную строку подключения вместо `<connection_string>`. (Эта переменная среды означает, что вам не нужно указывать строку подключения для каждой последующей команды с помощью аргумента `--connection-string`.)
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     $env:AZURE_STORAGE_CONNECTION_STRING = "<connection_string>"
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     ```cmd
     set AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
@@ -198,19 +198,19 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
     
 1. (Дополнительно) Команду [`az storage queue list`](/cli/azure/storage/queue#az-storage-queue-list) можно использовать для просмотра очередей службы хранилища в учетной записи. В выходных данных этой команды должна быть очередь с именем `outqueue`, созданная при написании функцией первого сообщения в этой очереди.
     
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     az storage queue list --output tsv
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     az storage queue list --output tsv
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     ```cmd
     az storage queue list --output tsv
@@ -221,19 +221,19 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
 
 1. Используйте команду [`az storage message peek`](/cli/azure/storage/message#az-storage-message-peek), чтобы просматривать сообщения в этой очереди. Необходимо указывать первое имя, использованное ранее при проверке функции. Команда получает первое сообщение в очереди в [кодировке Base64](functions-bindings-storage-queue.md#encoding), поэтому необходимо также декодировать сообщение, чтобы просмотреть его в виде текста.
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     echo `echo $(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}') | base64 --decode`
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}')))
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     Коллекцию сообщений требуется разыменовать и раскодировать из base64, поэтому запустите PowerShell и выполните соответствующую команду PowerShell.
 
@@ -251,13 +251,13 @@ def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
     
 1. Как и в предыдущем кратком руководстве, используйте браузер или cURL для проверки повторно развернутой функции.
 
-    # <a name="browsertabbrowser"></a>[Браузер](#tab/browser)
+    # <a name="browser"></a>[Браузер](#tab/browser)
     
     Скопируйте полный URL-адрес вызова **Invoke url**, показанный в выходных данных команды publish, в адресную строку браузера, добавив параметр запроса `&name=Azure`. В браузере должны отображаться выходные данные, аналогичные данным при локальном запуске функции.
 
     ![Выходные данные функции, выполняемой в Azure в браузере](./media/functions-create-first-function-python/function-test-cloud-browser.png)
 
-    # <a name="curltabcurl"></a>[curl](#tab/curl)
+    # <a name="curl"></a>[curl](#tab/curl)
     
     Запустите [cURL](https://curl.haxx.se/), используя **Invoke url** и добавив параметр `&name=Azure`. Результатом выполнения этой команды должен быть текст "Hello Azure".
     

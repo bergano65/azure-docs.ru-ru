@@ -8,19 +8,15 @@ ms.topic: overview
 ms.date: 01/09/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 810f2b376e9983743617dae77d74d596a7fbe663
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 452202555734a208a9f32d6f8899e1f679df4a68
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77084198"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77443998"
 ---
-# <a name="what-is-azure-private-link-preview"></a>Что собой представляет Приватный канал Azure? (предварительная версия)
+# <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure, Azure Cosmos DB и Базе данных SQL), а также размещенным в Azure службам клиентов или партнеров через [частную конечную точку](private-endpoint-overview.md) виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Кроме того, вы можете создать в своей виртуальной сети (VNet) собственную службу [Приватный канал](private-link-service-overview.md) и предоставлять ее клиентам в частном порядке. Настройка и потребление с использованием Приватного канала Azure согласованы между службами Azure PaaS, владельцами и общими партнерскими службами.
-
-> [!IMPORTANT]
-> Эта общедоступная предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Сведения об известных ограничениях см. в разделах о [частной конечной точке](private-endpoint-overview.md#limitations) и [службе "Приватный канал"](private-link-service-overview.md#limitations).
-
 
 ![Обзор закрытой конечной точки](media/private-link-overview/private-endpoint.png)
 

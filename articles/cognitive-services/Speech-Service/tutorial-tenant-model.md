@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 02ae140568150b0db8ebdea065ee683e4f4eec9c
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: a83ed5c9cec994c1bc4cadd5cf6208c159823658
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77188999"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77469023"
 ---
-# <a name="tutorial-create-a-tenant-model-preview"></a>Руководство. Создание клиентской модели (предварительная версия)
+# <a name="tutorial-create-a-tenant-model-preview"></a>Руководство по Создание клиентской модели (предварительная версия)
 
 Клиентская модель (служба "Пользовательское распознавание речи" с данными из Office 365) предоставляется корпоративным клиентам Office 365 по запросу и позволяет автоматически создать пользовательскую модель распознавания речи на основе данных Office 365 в организации. Эта модель будет оптимизирована для безопасного и соответствующего требованиям распознавания технических и жаргонных терминов, а также имен сотрудников, используемых в организации.
 
@@ -81,7 +81,7 @@ ms.locfileid: "77188999"
    > Создавать клиентскую модель на английском языке могут корпоративные клиенты Office 365 из Северной Америки. Если вы используете защищенное хранилище, ключ клиента или Office 365 для государственных организаций, эта возможность будет недоступна. Чтобы определить, используете ли вы защищенное хранилище клиента или ключ клиента, воспользуйтесь следующей информацией.
    > * [Защищенное хранилище клиента](/microsoft-365/compliance/customer-lockbox-requests)
    > * [Ключ клиента](/microsoft-365/compliance/customer-key-overview)
-   > * [Office 365 для государственных организаций](/microsoft-365/government)
+   > * [Office 365 для государственных организаций](https://www.microsoft.com/microsoft-365/government)
 
 1. Выберите **Согласиться**.
 

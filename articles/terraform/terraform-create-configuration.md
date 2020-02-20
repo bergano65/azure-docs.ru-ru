@@ -3,12 +3,12 @@ title: Краткое руководство. Создание конфигур�
 description: Начните работу с Terraform в Azure с помощью развертывания Azure Cosmos DB и Экземпляров контейнеров Azure.
 ms.topic: quickstart
 ms.date: 10/26/2019
-ms.openlocfilehash: 47eec1f238d3fdff99b75953bc6d7e92137cca2d
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 92f66fcfeac69b66eb8cdb0dc58b7a3171d45e10
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159314"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470027"
 ---
 # <a name="quickstart-create-a-terraform-configuration-for-azure"></a>Краткое руководство. Создание конфигурации Terraform для Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "74159314"
 
 В этом разделе будет создана конфигурация для экземпляра Azure Cosmos DB.
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Откройте Azure Cloud Shell.
 
@@ -170,7 +170,7 @@ ms.locfileid: "74159314"
 terraform destroy -auto-approve
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Install and configure Terraform to provision Azure resources](../virtual-machines/linux/terraform-install-configure.md) (Установка и настройка Terraform для подготовки ресурсов Azure)
+> [Install and configure Terraform to provision Azure resources](terraform-install-configure.md) (Установка и настройка Terraform для подготовки ресурсов Azure)

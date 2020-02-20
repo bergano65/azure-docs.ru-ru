@@ -8,16 +8,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 09/17/2019
-ms.openlocfilehash: 3e0fddc03ad880d36876276827198b0ac180a00d
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: f03797a8c7df1609a32f934bc090c7adc899aa9a
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076360"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198928"
 ---
 # <a name="what-is-interactive-query-in-azure-hdinsight"></a>Общие сведения об интерактивном запросе в Azure HDInsight
 
-Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-types) Azure HDInsight. Interactive Query поддерживает кэширование в памяти, благодаря чему запросы Apache Hive становятся более быстрыми и интерактивными. Клиенты используют интерактивный запрос для сверхбыстрого запроса данных, хранящихся в службе хранилища Azure и Azure Data Lake Storage. Интерактивный запрос упрощает разработчикам и специалистам по обработке и анализу данных работу с большими данными с помощью предпочитаемых средств бизнес-аналитики. Интерактивный запрос HDInsight поддерживает несколько инструментов для простого доступа к большим данным.
+Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-type) Azure HDInsight. Interactive Query поддерживает кэширование в памяти, благодаря чему запросы Apache Hive становятся более быстрыми и интерактивными. Клиенты используют интерактивный запрос для сверхбыстрого запроса данных, хранящихся в службе хранилища Azure и Azure Data Lake Storage. Интерактивный запрос упрощает разработчикам и специалистам по обработке и анализу данных работу с большими данными с помощью предпочитаемых средств бизнес-аналитики. Интерактивный запрос HDInsight поддерживает несколько инструментов для простого доступа к большим данным.
 
 [!INCLUDE [hdinsight-price-change](../../../includes/hdinsight-enhancements.md)]
 
@@ -44,7 +44,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 
     Ознакомьтесь с разделом [Выполнение интерактивных запросов Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md#run-interactive-apache-hive-queries).
 
-* С помощью Visual Studio Code
+* Использование Visual Studio Code
 
     Ознакомьтесь со статьей [Use Azure HDInsight Tools for Visual Studio Code](../hdinsight-for-vscode.md) (Использование средств Azure HDInsight для Visual Studio Code).
 * Запуск Apache Hive с помощью представления Hive Apache Ambari.
@@ -68,7 +68,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 
    ![JDBC для кластеров HDInsight Hadoop типа Interactive Query на LLAP](./media/apache-interactive-query-get-started/hdinsight-hadoop-use-interactive-hive-jdbc.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создавать кластеры Interactive Query в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 * Узнайте, как [визуализировать большие данные с помощью Power BI в Azure HDInsight](../hadoop/apache-hadoop-connect-hive-power-bi.md).

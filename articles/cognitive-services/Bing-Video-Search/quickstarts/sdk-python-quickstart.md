@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 02/11/2020
 ms.author: aahi
-ms.openlocfilehash: c1afea4e6cacc1f6e9ac84ca20e638836540396e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9d7b2a8950134e530e042e862a1c19abe89fd78d
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448387"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201226"
 ---
 # <a name="quickstart-perform-a-video-search-with-the-bing-video-search-sdk-for-python"></a>Краткое руководство. Поиск видео с помощью пакета SDK Поиска видео Bing для Python
 
@@ -23,7 +23,7 @@ ms.locfileid: "75448387"
 
 [!INCLUDE [cognitive-services-bing-video-search-signup-requirements](../../../../includes/cognitive-services-bing-video-search-signup-requirements.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Python](https://www.python.org/) 2.x или 3.x.
 - Пакет SDK Поиска видео Bing для Python
@@ -46,7 +46,7 @@ python -m pip install azure-cognitiveservices-search-videosearch
 1. Создайте файл Python в любой интегрированной среде разработки или редакторе и добавьте следующие инструкции импорта. 
 
     ```python
-    from azure.cognitiveservices.search.videosearch import VideoSearchAPI
+    from azure.cognitiveservices.search.videosearch import VideoSearchClient
     from azure.cognitiveservices.search.videosearch.models import VideoPricing, VideoLength, VideoResolution, VideoInsightModule
     from msrest.authentication import CognitiveServicesCredentials
     ```
@@ -55,6 +55,7 @@ python -m pip install azure-cognitiveservices-search-videosearch
 
     ```python
     subscription_key = "YOUR-SUBSCRIPTION-KEY"
+    endpoint = "YOUR-ENDPOINT"
     ```
 
 ## <a name="create-the-search-client"></a>Создание клиента для поиска
@@ -62,7 +63,7 @@ python -m pip install azure-cognitiveservices-search-videosearch
 Создайте экземпляр `CognitiveServicesCredentials`, а затем создайте экземпляр клиента:
 
 ```python
-client = VideoSearchAPI(CognitiveServicesCredentials(subscription_key))
+client = VideoSearchAPI(endpoint, CognitiveServicesCredentials(subscription_key))
 ```
 
 ## <a name="send-a-search-request-and-get-a-response"></a>Отправка поискового запроса и получение ответа

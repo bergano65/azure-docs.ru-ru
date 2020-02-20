@@ -4,12 +4,12 @@ description: Основные сведения об использовании A
 keywords: ansible, azure, devops, overview, cloud provision, configuration management, application deployment, ansible modules, ansible playbooks
 ms.topic: overview
 ms.date: 04/30/2019
-ms.openlocfilehash: eab2a44257c6769106124c4c9ab6711ba3be531e
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: e9d5b8858f052083b157c7d4809fe21018518bcd
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74155774"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193571"
 ---
 # <a name="using-ansible-with-azure"></a>Использование Ansible с Azure
 
@@ -54,7 +54,7 @@ Ansible Tower — это пользовательский веб-интерфе�
 
 Ansible содержит набор модулей для подготовки и настройки ресурсов Azure. Эти ресурсы включают в себя виртуальные машины, масштабируемые наборы, сетевые службы и службы контейнеров. В [матрице Ansible](./ansible-matrix.md) перечислены модули Ansible для Azure и версии Ansible, в которые они входят.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство Развертывание шаблона решения Ansible для Azure в CentOS](./ansible-deploy-solution-template.md)
-- [Краткое руководство Настройка виртуальных машин Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-install-configure?toc=%2Fazure%2Fansible%2Ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json)
+- [Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS](./ansible-deploy-solution-template.md)
+- [Краткое руководство. Настройка виртуальных машин Linux в Azure с помощью Ansible](./ansible-install-configure.md)

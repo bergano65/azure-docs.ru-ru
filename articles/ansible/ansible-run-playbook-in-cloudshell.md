@@ -4,12 +4,12 @@ description: В этом кратком руководстве вы узнает
 keywords: ansible, azure, devops, bash, cloudshell, сборник тренировочных заданий, bash
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: d04708be82a704c2ce20a928380fca1d325493da
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 0eb89bcacae1629bdb1f6dcda8f9a25efdb6eedf
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74155971"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193656"
 ---
 # <a name="quickstart-run-ansible-playbooks-via-bash-in-azure-cloud-shell"></a>Краткое руководство. Запуск сборников схем Ansible с помощью Bash в Azure Cloud Shell
 
@@ -44,7 +44,7 @@ export AZURE_SUBSCRIPTION_ID=<your-subscription-id>
 
 [!INCLUDE [create-resource-group-with-ansible.md](../../includes/ansible-snippet-create-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство Настройка виртуальных машин в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство. Настройка виртуальных машин в Azure с помощью Ansible](./ansible-create-vm.md)
