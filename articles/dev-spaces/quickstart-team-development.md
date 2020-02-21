@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как выполнить командную разработку Kubernetes с помощью контейнеров и микрослужб, используя Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: d2b31cce6604cef31de6f034566ebd46a4e92750
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 1b36cf30574c0c9892a0383bee7e2f914bc9feac
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721597"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77482400"
 ---
 # <a name="quickstart-team-development-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces
 
@@ -86,7 +86,7 @@ MyAKS               MyResourceGroup   dev       fedcab0987.eus.azds.io
 
 ```cmd
 cd charts/
-helm install bikesharing . --dependency-update --namespace dev --atomic
+helm install bikesharingsampleappsampleapp . --dependency-update --namespace dev --atomic
 ```
 
 Выполнение команды `helm install` может занять несколько минут. По завершении установки примера приложения в кластере, для которого включена служба Dev Spaces, вы можете с помощью команды `azds list-uris` отобразить URL-адреса примера приложения в пространстве разработки *dev*, которое выбрано в данный момент.
