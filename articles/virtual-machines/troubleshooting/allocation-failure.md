@@ -12,12 +12,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 04/13/2018
 ms.author: cjiang
-ms.openlocfilehash: 9bb228725d5ad8e3583c73be09c582478f74a1e8
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: b4750ad9fdfa214aa4d7b6a0355c319e7eb1d9c3
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77471896"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484406"
 ---
 # <a name="troubleshoot-allocation-failures-when-you-create-restart-or-resize-vms-in-azure"></a>Устранение ошибок выделения ресурсов при создании, перезагрузке или изменении размера виртуальных машин в Azure
 
@@ -87,9 +87,9 @@ ms.locfileid: "77471896"
 
 |Устаревшая серия или размер виртуальной машины|Рекомендуемая серия или размер виртуальной машины|Дополнительные сведения|
 |----------------------|----------------------------|--------------------|
-|Серия Av1|[Серия Av2](../windows/sizes-general.md#av2-series)|https://azure.microsoft.com/blog/new-av2-series-vm-sizes/
-|Серия Dv1 или DSv1 (с D1 по D5)|[Серия Dv3 или DSv3](../windows/sizes-general.md#dsv3-series-1)|https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/
-|Серия Dv1 или DSv1 (с D11 по D14)|[Серия Ev3 или ESv3](../windows/sizes-memory.md#ev3-series)|
+|Серия Av1|[Серия Av2](../av2-series.md)|https://azure.microsoft.com/blog/new-av2-series-vm-sizes/
+|Серия Dv1 или DSv1 (с D1 по D5)|[Серия Dv3 или DSv3](../dv3-dsv3-series.md)|https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/
+|Серия Dv1 или DSv1 (с D11 по D14)|[Серия Ev3 или ESv3](../ev3-esv3-series.md)|
 |Серия D15v2 или DS15v2|Если вы используете модель развертывания с помощью Resource Manager, чтобы использовать преимущества более крупных размеров виртуальных машин, рассмотрите возможность перехода на серию D16v3, DS16v3, D32v3 или DS32v3. Они предназначены для оборудования последнего поколения. Если вы используете модель развертывания с помощью Resource Manager, чтобы изолировать экземпляр виртуальной машины, выполняя его на оборудовании, выделенном для отдельного клиента, рассмотрите возможность перехода на новый размер изолированной виртуальной машины, E64i_v3 или E64is_v3. Они предназначены для оборудования последнего поколения. |https://azure.microsoft.com/blog/new-isolated-vm-sizes-now-available/
 
 ## <a name="allocation-failures-for-large-deployments-more-than-500-cores"></a>Сбои при выделении ресурсов для больших развертываний (более 500 ядер)

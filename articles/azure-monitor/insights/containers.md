@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 07/22/2019
-ms.openlocfilehash: b71818d5d840a0466b5ff6f271df117043341f7b
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 7dab80f901304a727b75c7861c5d865fee03bec3
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899109"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77483004"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -26,7 +26,7 @@ ms.locfileid: "72899109"
 
 - Docker Swarm
 - DC/OS
-- kubernetes
+- Kubernetes
 - Service Fabric
 - Red Hat OpenShift.
 
@@ -46,15 +46,15 @@ ms.locfileid: "72899109"
 
 В следующей таблице показано, как система управления DOCKER и отслеживание операционной системы поддерживают инвентаризацию контейнеров, производительность и журналы с Azure Monitor.   
 
-| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Ориентированное на производительность | Контейнер<br>Мероприятие | Мероприятие<br>Журнал | Контейнер<br>Журнал |
+| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Производительность | Контейнер<br>Событие | Событие<br>Журнал | Контейнер<br>Журнал |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
+| Kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Mesosphere<br>DC/OS | &#8226; | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; |
 | Docker<br>Swarm | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
 | Служба<br>Fabric | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Red Hat Open<br>Shift | | &#8226; | | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; | | &#8226; |
 | Windows Server<br>(изолированный) | | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
-| Сервер Linux<br>(изолированный) | | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
+| Linux Server<br>(изолированный) | | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
 
 ### <a name="docker-versions-supported-on-linux"></a>Версии Docker, поддерживаемые в Linux
 
@@ -81,7 +81,7 @@ ms.locfileid: "72899109"
 
 ### <a name="supported-windows-operating-system"></a>Поддерживаемая операционная система Windows
 
-- Windows Server 2016
+- Windows Server 2016
 - Юбилейный выпуск Windows 10 (профессиональный или корпоративный)
 
 ### <a name="docker-versions-supported-on-windows"></a>Версии Docker, поддерживаемые в Windows
@@ -253,19 +253,18 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     Выходные данные должны выглядеть примерно так:  
 
     ```
-    [ocpadmin@khocp-master-0 ~]$ oc describe ds oms  
-    Name:           oms  
-    Image(s):       microsoft/oms  
-    Selector:       name=omsagent  
-    Node-Selector:  zone=default  
-    Labels:         agentVersion=1.4.0-12  
-                    dockerProviderVersion=10.0.0-25  
-                    name=omsagent  
-    Desired Number of Nodes Scheduled: 3  
-    Current Number of Nodes Scheduled: 3  
-    Number of Nodes Misscheduled: 0  
-    Pods Status:    3 Running / 0 Waiting / 0 Succeeded / 0 Failed  
-    No events.  
+    [ocpadmin@khocp-master-0 ~]$ oc describe secret omsagent-secret  
+    Name:           omsagent-secret  
+    Namespace:      omslogging  
+    Labels:         <none>  
+    Annotations:    <none>  
+
+    Type:   Opaque  
+
+    Data  
+    ====  
+    KEY:    89 bytes  
+    WSID:   37 bytes  
     ```
 
 5. Разверните YAML-файл набора daemon-set агента Log Analytics, выполнив следующую команду:
@@ -279,18 +278,19 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     Выходные данные должны выглядеть примерно так:
 
     ```
-    [ocpadmin@khocp-master-0 ~]$ oc describe secret omsagent-secret  
-    Name:           omsagent-secret  
-    Namespace:      omslogging  
-    Labels:         <none>  
-    Annotations:    <none>  
-
-    Type:   Opaque  
-
-     Data  
-     ====  
-     KEY:    89 bytes  
-     WSID:   37 bytes  
+    [ocpadmin@khocp-master-0 ~]$ oc describe ds oms  
+    Name:           oms  
+    Image(s):       microsoft/oms  
+    Selector:       name=omsagent  
+    Node-Selector:  zone=default  
+    Labels:         agentVersion=1.4.0-12  
+                    dockerProviderVersion=10.0.0-25  
+                    name=omsagent  
+    Desired Number of Nodes Scheduled: 3  
+    Current Number of Nodes Scheduled: 3  
+    Number of Nodes Misscheduled: 0  
+    Pods Status:    3 Running / 0 Waiting / 0 Succeeded / 0 Failed  
+    No events.  
     ```
 
 #### <a name="configure-a-log-analytics-linux-agent-for-kubernetes"></a>Настройка агента Log Analytics в Linux для Kubernetes

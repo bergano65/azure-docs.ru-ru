@@ -1,7 +1,7 @@
 ---
 title: Отладка и устранение неполадок в конвейерах машинного обучения
 titleSuffix: Azure Machine Learning
-description: Отладка и устранение неполадок конвейеров машинного обучения в пакете SDK для Машинное обучение Azure для Python. Изучите распространенные ловушки для разработки конвейеров и советы по отладке сценариев до и во время удаленного выполнения.
+description: Отладка и устранение неполадок конвейеров машинного обучения в пакете SDK для Машинное обучение Azure для Python. Изучите распространенные ловушки для разработки конвейеров и советы по отладке сценариев до и во время удаленного выполнения. Узнайте, как использовать Visual Studio Code для интерактивной отладки конвейеров машинного обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,17 +9,22 @@ ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 12/12/2019
-ms.openlocfilehash: 5ba26584f08e705b24749a76d6f607aa84b48fab
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 0080b64e16b979b32aa5a91f9ee497e5f9ec47fb
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76769123"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77485375"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [конструкторе машинное обучение Azure (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/concept-designer).
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [конструкторе машинное обучение Azure (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/concept-designer). Сведения приведены в следующих руководствах:
+
+* Отладка с помощью пакета SDK для Машинное обучение Azure
+* Отладка с помощью конструктора Машинное обучение Azure
+* Отладка с использованием Application Insights
+* Отладка в интерактивном режиме с помощью Visual Studio Code (VS Code) и Инструменты Python для Visual Studio (PTVSD)
 
 ## <a name="debug-and-troubleshoot-in-the-azure-machine-learning-sdk"></a>Отладка и устранение неполадок в пакете SDK для Машинное обучение Azure
 В следующих разделах представлен обзор распространенных ловушек при построении конвейеров, а также различные стратегии отладки кода, выполняемого в конвейере. При возникновении проблем с получением ожидаемого запуска конвейера используйте следующие советы.
@@ -83,7 +88,7 @@ ms.locfileid: "76769123"
 
 В таблице ниже приведены сведения о различных параметрах отладки для конвейеров. Он не является исчерпывающим списком, так как существуют другие варианты, кроме только Машинное обучение Azure, Python и Опенценсус, показанных здесь.
 
-| Библиотека                    | Тип   | Пример                                                          | Место назначения                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
+| Библиотека                    | Тип   | Пример                                                          | Назначение                                  | Ресурсы                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|--------|------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Пакет SDK для Машинное обучение Azure | Метрика | `run.log(name, val)`                                             | Пользовательский интерфейс портала Машинное обучение Azure             | [Как отвести эксперименты](how-to-track-experiments.md#available-metrics-to-track)<br>[класс azureml. Core. Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=experimental)                                                                                                                                                 |
 | Печать и ведение журнала Python    | Журнал    | `print(val)`<br>`logging.info(message)`                          | Журналы драйверов, конструктор Машинное обучение Azure | [Как отвести эксперименты](how-to-track-experiments.md#available-metrics-to-track)<br><br>[Ведение журнала Python](https://docs.python.org/2/library/logging.html)                                                                                                                                                                       |
@@ -148,6 +153,239 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 ## <a name="debug-and-troubleshoot-in-application-insights"></a>Отладка и устранение неполадок в Application Insights
 Дополнительные сведения об использовании библиотеки Опенценсус Python таким образом см. в разделе [Отладка и устранение неполадок конвейеров машинного обучения в Application Insights](how-to-debug-pipelines-application-insights.md)
+
+## <a name="debug-and-troubleshoot-in-visual-studio-code"></a>Отладка и устранение неполадок в Visual Studio Code
+
+В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и Инструменты Python для Visual Studio (PTVSD) можно присоединяться к коду, как он выполняется в среде обучения.
+
+### <a name="prerequisites"></a>предварительные требования
+
+* __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
+* __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.
+* Машинное обучение Azureного кластерного кластера, который находится __в виртуальной сети__ и __используется конвейером для обучения__.
+* __Среда разработки__ , которая находится __в виртуальной сети__. Среда разработки может быть одной из следующих:
+
+    * Виртуальная машина Azure в виртуальной сети
+    * Вычислительный экземпляр виртуальной машины записной книжки в виртуальной сети
+    * Клиентский компьютер, подключенный к виртуальной сети через виртуальную частную сеть (VPN).
+
+Дополнительные сведения об использовании виртуальной сети Azure с Машинное обучение Azure см. в статье [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md).
+
+### <a name="how-it-works"></a>Принцип работы
+
+Этапы конвейера машинного обучения запускают скрипты Python. Эти скрипты изменяются для выполнения следующих действий.
+    
+1. Регистрировать IP-адрес узла, на котором они выполняются. Используйте IP-адрес для подключения отладчика к сценарию.
+
+2. Запустите компонент отладки PTVSD и дождитесь подключения отладчика.
+
+3. В среде разработки вы отслеживаете журналы, созданные процессом обучения, чтобы найти IP-адрес, на котором выполняется сценарий.
+
+4. Вы указываете VS Code IP-адрес для подключения отладчика к с помощью файла `launch.json`.
+
+5. Вы подключаете отладчик и интерактивно пройдите по сценарию.
+
+### <a name="configure-python-scripts"></a>Настройка скриптов Python
+
+Чтобы включить отладку, внесите следующие изменения в скрипты Python, используемые шагами в конвейере ML:
+
+1. Добавьте следующие операторы импорта:
+
+    ```python
+    import ptvsd
+    import socket
+    from azureml.core import Run
+    ```
+
+1. Добавьте следующие аргументы. Эти аргументы позволяют включить отладчик по мере необходимости и задать время ожидания для подключения отладчика:
+
+    ```python
+    parser.add_argument('--remote_debug', action='store_true')
+    parser.add_argument('--remote_debug_connection_timeout', type=int,
+                    default=300,
+                    help=f'Defines how much time the Azure ML compute target '
+                    f'will await a connection from a debugger client (VSCODE).')
+    ```
+
+1. Добавьте следующие инструкции. Эти инструкции загружают текущий контекст выполнения, чтобы можно было зарегистрировать IP-адрес узла, на котором выполняется код:
+
+    ```python
+    global run
+    run = Run.get_context()
+    ```
+
+1. Добавьте инструкцию `if`, которая запускает PTVSD и ожидает присоединения отладчика. Если отладчик не подключается до истечения времени ожидания, сценарий продолжится в нормальном режиме.
+
+    ```python
+    if args.remote_debug:
+        print(f'Timeout for debug connection: {args.remote_debug_connection_timeout}')
+        # Log the IP and port
+        ip = socket.gethostbyname(socket.gethostname())
+        print(f'ip_address: {ip}')
+        ptvsd.enable_attach(address=('0.0.0.0', 5678),
+                            redirect_output=True)
+        # Wait for the timeout for debugger to attach
+        ptvsd.wait_for_attach(timeout=args.remote_debug_connection_timeout)
+        print(f'Debugger attached = {ptvsd.is_attached()}')
+    ```
+
+В следующем примере Python показан базовый файл `train.py`, который включает отладку:
+
+```python
+# Copyright (c) Microsoft. All rights reserved.
+# Licensed under the MIT license.
+
+import argparse
+import os
+import ptvsd
+import socket
+from azureml.core import Run
+
+print("In train.py")
+print("As a data scientist, this is where I use my training code.")
+
+parser = argparse.ArgumentParser("train")
+
+parser.add_argument("--input_data", type=str, help="input data")
+parser.add_argument("--output_train", type=str, help="output_train directory")
+
+# Argument check for remote debugging
+parser.add_argument('--remote_debug', action='store_true')
+parser.add_argument('--remote_debug_connection_timeout', type=int,
+                    default=300,
+                    help=f'Defines how much time the AML compute target '
+                    f'will await a connection from a debugger client (VSCODE).')
+# Get run object, so we can find and log the IP of the host instance
+global run
+run = Run.get_context()
+
+args = parser.parse_args()
+
+# Start debugger if remote_debug is enabled
+if args.remote_debug:
+    print(f'Timeout for debug connection: {args.remote_debug_connection_timeout}')
+    # Log the IP and port
+    ip = socket.gethostbyname(socket.gethostname())
+    print(f'ip_address: {ip}')
+    ptvsd.enable_attach(address=('0.0.0.0', 5678),
+                        redirect_output=True)
+    # Wait for the timeout for debugger to attach
+    ptvsd.wait_for_attach(timeout=args.remote_debug_connection_timeout)
+    print(f'Debugger attached = {ptvsd.is_attached()}')
+
+print("Argument 1: %s" % args.input_data)
+print("Argument 2: %s" % args.output_train)
+
+if not (args.output_train is None):
+    os.makedirs(args.output_train, exist_ok=True)
+    print("%s created" % args.output_train)
+```
+
+### <a name="configure-ml-pipeline"></a>Настройка конвейера машинного обучения
+
+Чтобы предоставить пакеты Python, необходимые для запуска PTVSD и получения контекста выполнения, создайте [среду]() и задайте `pip_packages=['ptvsd', 'azureml-sdk==1.0.83']`. Измените версию пакета SDK, чтобы она соответствовала используемой. В следующем фрагменте кода показано, как создать среду.
+
+```python
+# Use a RunConfiguration to specify some additional requirements for this step.
+from azureml.core.runconfig import RunConfiguration
+from azureml.core.conda_dependencies import CondaDependencies
+from azureml.core.runconfig import DEFAULT_CPU_IMAGE
+
+# create a new runconfig object
+run_config = RunConfiguration()
+
+# enable Docker 
+run_config.environment.docker.enabled = True
+
+# set Docker base image to the default CPU-based image
+run_config.environment.docker.base_image = DEFAULT_CPU_IMAGE
+
+# use conda_dependencies.yml to create a conda environment in the Docker image for execution
+run_config.environment.python.user_managed_dependencies = False
+
+# specify CondaDependencies obj
+run_config.environment.python.conda_dependencies = CondaDependencies.create(conda_packages=['scikit-learn'],
+                                                                           pip_packages=['ptvsd', 'azureml-sdk==1.0.83'])
+```
+
+В разделе [Настройка скриптов Python](#configure-python-scripts) в скрипты, используемые этапами КОНВЕЙЕРа машинного обучения, были добавлены два новых аргумента. В следующем фрагменте кода показано, как использовать эти аргументы, чтобы включить отладку для компонента и установить время ожидания. Здесь также показано, как использовать созданную ранее среду, установив `runconfig=run_config`:
+
+```python
+# Use RunConfig from a pipeline step
+step1 = PythonScriptStep(name="train_step",
+                         script_name="train.py",
+                         arguments=['--remote_debug', '--remote_debug_connection_timeout', 300],
+                         compute_target=aml_compute, 
+                         source_directory=source_directory,
+                         runconfig=run_config,
+                         allow_reuse=False)
+```
+
+При выполнении конвейера каждый шаг создает дочерний запуск. Если включена отладка, то измененный сценарий записывает сведения, аналогичные приведенным ниже, в `70_driver_log.txt` для дочернего выполнения:
+
+```text
+Timeout for debug connection: 300
+ip_address: 10.3.0.5
+```
+
+Сохраните значение `ip_address`. Они будут использоваться в следующем разделе.
+
+> [!TIP]
+> Вы также можете найти IP-адрес из журналов выполнения для дочернего выполнения этого шага конвейера. Дополнительные сведения о просмотре этих сведений см. в статье [мониторинг запусков и метрик эксперимента машинного обучения Azure](how-to-track-experiments.md).
+
+### <a name="configure-development-environment"></a>Настройка среды разработки
+
+1. Чтобы установить Инструменты Python для Visual Studio (PTVSD) в среде разработки VS Code, используйте следующую команду:
+
+    ```
+    python -m pip install --upgrade ptvsd
+    ```
+
+    Дополнительные сведения об использовании PTVSD с VS Code см. в разделе [Удаленная отладка](https://code.visualstudio.com/docs/python/debugging#_remote-debugging).
+
+1. Чтобы настроить VS Code для взаимодействия с Машинное обучение Azure вычислений, в котором работает отладчик, создайте новую конфигурацию отладки:
+
+    1. В VS Code откройте меню __Отладка__ и выберите пункт __Открыть конфигурации__. Откроется файл с именем __Launch. JSON__ .
+
+    1. В файле __Launch. JSON__ найдите строку, содержащую `"configurations": [`, и вставьте следующий текст после него. Измените запись `"host": "10.3.0.5"` на IP-адрес, возвращенный в журналах из предыдущего раздела. Измените запись `"localRoot": "${workspaceFolder}/code/step"` на локальный каталог, содержащий копию отлаживаемого скрипта:
+
+        ```json
+        {
+            "name": "Azure Machine Learning Compute: remote debug",
+            "type": "python",
+            "request": "attach",
+            "port": 5678,
+            "host": "10.3.0.5",
+            "redirectOutput": true,
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/code/step1",
+                    "remoteRoot": "."
+                }
+            ]
+        }
+        ```
+
+        > [!IMPORTANT]
+        > Если в разделе конфигурации уже есть другие записи, добавьте запятую (,) после вставленного кода.
+
+        > [!TIP]
+        > Рекомендуется размещать ресурсы для сценариев в отдельных каталогах, поэтому `localRoot` пример значения ссылается на `/code/step1`.
+        >
+        > При отладке нескольких скриптов в разных каталогах создайте отдельный раздел конфигурации для каждого скрипта.
+
+    1. Сохраните файл __Launch. JSON__ .
+
+### <a name="connect-the-debugger"></a>Подключение отладчика
+
+1. Откройте VS Code и откройте локальную копию скрипта.
+2. Задайте точки останова, где сценарий должен останавливаться после присоединения.
+3. Пока в дочернем процессе выполняется сценарий, а `Timeout for debug connection` отображается в журналах, используйте клавишу F5 или выберите __Отладка__. При появлении запроса выберите конфигурацию __удаленной отладки машинное обучение Azure вычисление: Удаленная отладка__ . Можно также выбрать значок отладки на боковой панели, в раскрывающемся меню Отладка выберите __машинное обучение Azure: Удаленная отладка__ , а затем с помощью зеленой стрелки присоединить отладчик.
+
+    На этом этапе VS Code подключается к PTVSD на кластерном узле и останавливается в точке останова, заданной ранее. Теперь можно выполнять код по мере выполнения, просматривать переменные и т. д.
+
+    > [!NOTE]
+    > Если в журнале отображается запись, содержащая `Debugger attached = False`, время ожидания истекает, и скрипт продолжает работу без отладчика. Снова отправьте конвейер и Подключите отладчик после `Timeout for debug connection` сообщения и до истечения времени ожидания.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

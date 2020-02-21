@@ -16,18 +16,19 @@ ms.date: 12/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69c633dd3e28047d542e16a58211f997669188f0
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3f7bc881cee362103fc611cbf8a094e07ad50699
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76896424"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77499045"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Возможности управления для ролей Azure AD в управление привилегированными пользователями
 
 Интерфейс управления для ролей Azure AD в управление привилегированными пользователями был обновлен, чтобы унифицировать управление ролями Azure AD и ролями ресурсов Azure. Ранее в управление привилегированными пользователями для ролей ресурсов Azure существовало несколько ключевых функций, которые не были доступны для ролей Azure AD.
 
 После обновления в настоящее время мы объединяем эти две функции в единый процесс управления, и в нем вы получаете те же функциональные возможности для ролей Azure AD, что и для ролей ресурсов Azure. Эта статья информирует вас о обновленных функциях и требованиях.
+
 
 ## <a name="time-bound-assignments"></a>Назначения с ограниченным временем
 

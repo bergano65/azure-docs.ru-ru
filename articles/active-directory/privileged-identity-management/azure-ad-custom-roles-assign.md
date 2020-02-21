@@ -16,12 +16,12 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 410ee39a3984c4e6adde7dd2763808f776c71bd5
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 0303d37ef5bbbf266feb5456b0bc224ce272ee13
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77046939"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77499252"
 ---
 # <a name="assign-an-azure-ad-custom-role-in-privileged-identity-management"></a>Присвоение настраиваемой роли AAD через Privileged Identity Management (PIM)
 
@@ -32,7 +32,9 @@ ms.locfileid: "77046939"
 - Сведения о том, как предоставить другим администраторам доступ к управлению управление привилегированными пользователями, см. [в разделе Предоставление доступа другим администраторам для управления Управление привилегированными пользователями](pim-how-to-give-access-to-pim.md).
 
 > [!NOTE]
-> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей.
+> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [во встроенной функции ролей](pim-how-to-activate-role.md) , и эта статья не применяется.
+>
+> [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 ## <a name="assign-a-role"></a>Назначение роли
 

@@ -5,18 +5,18 @@ ms.date: 12/10/2019
 ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных NGINX и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: c6158c3229f4cb81df69b05c6973425c346a2046
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 39f17636779c4160867311af67ebc621b685f2d3
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77466881"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77486208"
 ---
 # <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных NGINX и настройка HTTPS
 
 В этой статье показано, как настроить Azure Dev Spaces для использования пользовательского контроллера входящего трафика NGINX. В этой статье также показано, как настроить этот настраиваемый контроллер входящего трафика для использования протокола HTTPS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись][azure-account-create].
 * [Установленный Azure CLI][az-cli].
@@ -55,7 +55,7 @@ helm install nginx stable/nginx-ingress --namespace nginx --version 1.27.0
 ```
 
 > [!NOTE]
-> В приведенном выше примере создается общедоступная конечная точка для контроллера входящего трафика. Если вместо этого необходимо использовать частную конечную точку для контроллера входящего трафика, добавьте параметр *--Set Controller. Service. Annotations. Служба\\. бета-\\. kubernetes\\. IO/Azure-Load-балансировщик — внутренний параметр = true* для команды *Helm Install* . Например:
+> В приведенном выше примере создается общедоступная конечная точка для контроллера входящего трафика. Если вместо этого необходимо использовать частную конечную точку для контроллера входящего трафика, добавьте параметр *--Set Controller. Service. Annotations. Служба\\. бета-\\. kubernetes\\. IO/Azure-Load-балансировщик — внутренний параметр = true* для команды *Helm Install* . Пример:
 > ```console
 > helm install nginx stable/nginx-ingress --namespace nginx --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-internal"=true --version 1.27.0
 > ```
@@ -128,7 +128,7 @@ azds space select -n dev -y
 Разверните пример приложения с помощью `helm install`.
 
 ```console
-helm install bikesharing . --dependency-update --namespace dev --atomic
+helm install bikesharingsampleapp . --dependency-update --namespace dev --atomic
 ```
 
 В приведенном выше примере пример приложения развертывается в пространстве имен *dev* .
@@ -245,7 +245,7 @@ gateway:
 helm upgrade bikesharing . --namespace dev --atomic
 ```
 
-Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS. Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Например:
+Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS. Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Пример:
 
 ```console
 Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/devsignin' was loaded over HTTPS, but requested an insecure resource 'http://azureuser1.s.dev.gateway.nginx.MY_CUSTOM_DOMAIN/api/user/allUsers'. This request has been blocked; the content must be served over HTTPS.
@@ -307,7 +307,7 @@ azds up
 
 Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS без ошибок.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

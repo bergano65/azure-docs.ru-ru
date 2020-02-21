@@ -16,12 +16,12 @@ ms.date: 04/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06dfe1e76682d70170bfea104050b1000269c38f
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 2cfa5e2117b2d6fce525e66b25ec44f696d7d450
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75932391"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484423"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -35,11 +35,11 @@ ms.locfileid: "75932391"
 
 Функция сквозной аутентификации предоставляется бесплатно. Для ее использования не требуются платные выпуски Azure AD.
 
-## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
+## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloud-and-the-microsoft-azure-government-cloud"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
 
 Нет. Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD.
 
-## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../active-directory-conditional-access-azure-portal.md) со сквозной проверкой подлинности?
+## <a name="does-conditional-access-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../active-directory-conditional-access-azure-portal.md) со сквозной проверкой подлинности?
 
 Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
@@ -54,7 +54,7 @@ ms.locfileid: "75932391"
 
 При использовании Azure AD Connect для переключения метода входа с синхронизации хэша паролей на сквозную аутентификацию сквозная проверка подлинности станет основным методом входа для пользователей в управляемых доменах. Обратите внимание, что для всех хэшей паролей пользователей, которые ранее были синхронизированы при синхронизации хэша паролей, сохраняются в Azure AD.
 
-## <a name="can-i-install-an-azure-ad-application-proxymanage-appsapplication-proxymd-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Можно ли установить соединитель [прокси приложения Azure AD](../manage-apps/application-proxy.md) на одном сервере с агентом сквозной проверки подлинности?
+## <a name="can-i-install-an-azure-ad-application-proxy-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Можно ли установить соединитель [прокси приложения Azure AD](../manage-apps/application-proxy.md) на одном сервере с агентом сквозной проверки подлинности?
 
 Да. Эта конфигурация поддерживается в переработанной версии агента сквозной аутентификации (версия 1.5.193.0 или более поздняя).
 
@@ -107,7 +107,7 @@ ms.locfileid: "75932391"
 
 ## <a name="do-i-have-to-manually-renew-certificates-used-by-pass-through-authentication-agents"></a>Нужно ли вручную продлевать сертификаты, используемые агентами сквозной проверки подлинности?
 
-Обмен данными между каждым агентом сквозной проверки подлинности и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти [сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD](how-to-connect-pta-security-deep-dive.md#operational-security-of -the-authentication-agents). Нет необходимости вручную продлевать их действие. Старые просроченные сертификаты при необходимости можно удалить.
+Обмен данными между каждым агентом сквозной проверки подлинности и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти [сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD](how-to-connect-pta-security-deep-dive.md#operational-security-of-the-authentication-agents). Нет необходимости вручную продлевать их действие. Старые просроченные сертификаты при необходимости можно удалить.
 
 ## <a name="how-do-i-remove-a-pass-through-authentication-agent"></a>Ка удалить агент сквозной аутентификации?
 
@@ -174,7 +174,7 @@ ms.locfileid: "75932391"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Краткое руководство по сквозной аутентификации Azure Active Directory](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.

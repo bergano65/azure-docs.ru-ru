@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/02/2019
+ms.date: 02/18/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd013b44454cc0283ef84d6a978b15400eca8786
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 0d6d621646aaa5c8c44a20cf327cd10fa31990b0
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022500"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484542"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Общие сведения о схеме Azure AD
 Объект в Azure Active Directory (Azure AD), как и любой каталог, представляет собой программную конструкцию высокого уровня данных, представляющую такие вещи, как пользователи, группы и контакты. При создании нового пользователя или контакта в Azure AD создается новый экземпляр этого объекта. Эти экземпляры можно отличить в зависимости от их свойств.
@@ -58,21 +58,24 @@ ms.locfileid: "77022500"
 
 |Локальная служба Active Directory|Тип сопоставления|Azure AD|
 |-----|-----|-----|
-|cn|Direct|commonName
-|countryCode|Direct|countryCode|
-|displayName|Direct|displayName|
-|givenName|Expression|givenName|
-|objectGUID|Direct|sourceAnchorBinary|  
-|userprincipalName|Direct|userPrincipalName|
-|проксядресс|Direct|ProxyAddress|
+|cn|Прямой доступ|commonName
+|countryCode|Прямой доступ|countryCode|
+|displayName|Прямой доступ|displayName|
+|givenName|Выражение|givenName|
+|objectGUID|Прямой доступ|sourceAnchorBinary|  
+|userprincipalName|Прямой доступ|userPrincipalName|
+|проксядресс|Прямой доступ|ProxyAddress|
 
 ## <a name="view-the-schema"></a>Просмотр схемы
+> [!WARNING]
+> В конфигурации подготовки облака создается субъект-служба. Субъект-служба отображается в портал Azure. Не следует изменять сопоставления атрибутов с помощью интерфейса субъекта-службы в портал Azure.  Такой режим работы не поддерживается.
+
 Чтобы просмотреть схему и проверить ее, выполните следующие действия.
 
 1.  Перейдите в [проводник Graph](https://developer.microsoft.com/graph/graph-explorer).
 1.  Войдите с помощью учетной записи глобального администратора.
 1.  В левой части экрана выберите **изменить разрешения** и убедитесь, что параметр **Directory. ReadWrite. ALL** *имеет значение.*
-1.  Выполните запрос https://graph.microsoft.com/beta/serviceprincipals/? $filter = StartsWith (DisplayName, ' Active '). Этот запрос возвращает отфильтрованный список субъектов-служб.
+1.  Выполните запрос https://graph.microsoft.com/beta/serviceprincipals/?$filter = StartsWith (DisplayName, ' Active '). Этот запрос возвращает отфильтрованный список субъектов-служб.
 1.  Найдите `"appDisplayName": "Active Directory to Azure Active Directory Provisioning"` и запишите значение для `"id"`.
     ```
     "value": [
@@ -240,7 +243,7 @@ ms.locfileid: "77022500"
     ```
 1. Теперь выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal Id}/synchronization/jobs/{AD2AAD Provisioning id}/schema`.
  
-    Например, https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema.
+    Пример: https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema
 
    Замените `{Service Principal Id}` и `{AD2ADD Provisioning Id}` своими значениями.
 

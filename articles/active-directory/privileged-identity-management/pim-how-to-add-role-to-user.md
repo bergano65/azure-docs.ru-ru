@@ -10,15 +10,15 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 01/05/2020
+ms.date: 02/07/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bec73ee7286ea831920fc20bd46cf43c2874081
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 5048cefaae10cd55091dd72f0b73a3cf9d731a35
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77047102"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77498845"
 ---
 # <a name="assign-azure-ad-roles-in-privileged-identity-management"></a>Назначение ролей Azure AD в управление привилегированными пользователями
 
@@ -33,9 +33,9 @@ ms.locfileid: "77047102"
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте страницу **Azure AD Privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-    ![Новая версия ролей Azure AD](./media/pim-how-to-add-role-to-user/pim-new-version.png)
+  [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
-# <a name="new-versiontabnew"></a>[Новая версия](#tab/new)
+# <a name="new-version"></a>[Новая версия](#tab/new)
 
 ## <a name="assign-a-role"></a>Назначение роли
 
@@ -75,11 +75,11 @@ ms.locfileid: "77047102"
 
 1. Чтобы указать конкретную продолжительность назначения, снимите флажок и измените поля даты и времени начала и окончания. По завершении нажмите кнопку **Готово**.
 
-    ![Параметры членства — дата и время](./media/pim-resource-roles-assign-roles/resources-membership-settings-date.png)
+    ![Параметры членства — дата и время](./media/pim-how-to-add-role-to-user/start-and-end-dates.png)
 
 1. Чтобы создать новое назначение ролей, нажмите кнопку **Добавить**. Отображается уведомление о состоянии.
 
-    ![Новое назначение — уведомление](./media/pim-resource-roles-assign-roles/resources-new-assignment-notification.png)
+    ![Новое назначение — уведомление](./media/pim-how-to-add-role-to-user/assignment-notification.png)
 
 ## <a name="update-or-remove-an-existing-role-assignment"></a>Обновление или удаление существующего назначения роли
 
@@ -87,23 +87,19 @@ ms.locfileid: "77047102"
 
 1. Откройте страницу **Azure AD Privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **роли Azure AD**.
 
-1. Выберите ресурс, которым требуется управлять, например подписку или группу управления.
-
-1. В разделе Управление выберите **роли** , чтобы просмотреть список ролей для ресурсов Azure.
+1. Выберите **роли** , чтобы просмотреть список ролей для Azure AD.
 
 1. Щелкните роль, которую нужно обновить или удалить.
 
 1. Найдите назначение роли на вкладках **Доступные роли** или **Активные роли**.
 
-    ![Обновление или удаление назначения роли](./media/pim-resource-roles-assign-roles/resources-update-remove.png)
+    ![Обновление или удаление назначения роли](./media/pim-how-to-add-role-to-user/remove-update-assignments.png)
 
 1. Нажмите кнопку **Обновить** или **Удалить**, чтобы обновить или удалить назначение роли.
 
-    Дополнительные сведения о расширении назначения ролей см. [в разделе расширение или обновление ролей ресурсов Azure в Управление привилегированными пользователями](pim-resource-roles-renew-extend.md).
-
-# <a name="previous-versiontabprevious"></a>[Предыдущая версия](#tab/previous)
+# <a name="previous-version"></a>[Предыдущая версия](#tab/previous)
 
 ## <a name="make-a-user-eligible-for-a-role"></a>Предоставление пользователю разрешения на роль
 

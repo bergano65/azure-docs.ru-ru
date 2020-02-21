@@ -6,12 +6,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.topic: conceptual
 ms.date: 01/29/2020
-ms.openlocfilehash: ac06521df38bdc91ca717d888c73cd541576014d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 73905483850a47a9d036bef1b9e1ee60d3484555
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905456"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484593"
 ---
 # <a name="parse-json-and-avro-data-in-azure-stream-analytics"></a>Анализ данных JSON и AVRO в Azure Stream Analytics
 
@@ -63,7 +63,7 @@ FROM input
 
 Результат:
 
-|DeviceID|Lat|Длинные|Температура|Версия|
+|DeviceID|Lat|Long|температура;|Версия|
 |-|-|-|-|-|
 |12345|47|122|80|1.2.45|
 
@@ -80,7 +80,7 @@ FROM input
 
 Результат:
 
-|DeviceID|Lat|Длинные|
+|DeviceID|Lat|Long|
 |-|-|-|
 |12345|47|122|
 
@@ -146,7 +146,7 @@ CROSS APPLY GetRecordProperties(event.SensorReadings) AS sensorReading
 
 |DeviceID|сенсорнаме|AlertMessage|
 |-|-|-|
-|12345|Температура|80|
+|12345|температура;|80|
 |12345|влажность.|70|
 |12345|CustomSensor01|5|
 |12345|CustomSensor02|99|
@@ -167,6 +167,38 @@ WITH Stage0 AS
 
 SELECT DeviceID, PropertyValue AS Temperature INTO TemperatureOutput FROM Stage0 WHERE PropertyName = 'Temperature'
 SELECT DeviceID, PropertyValue AS Humidity INTO HumidityOutput FROM Stage0 WHERE PropertyName = 'Humidity'
+```
+
+### <a name="parse-json-record-in-sql-reference-data"></a>Анализ записи JSON в ссылочных данных SQL
+При использовании базы данных SQL Azure в качестве ссылочных данных в задании может существовать столбец, содержащий данные в формате JSON. Ниже приведен пример такого файла.
+
+|DeviceID|Данные|
+|-|-|
+|12345|{"ключ": "значение1"}|
+|54321|{"ключ": "value2"}|
+
+Можно выполнить синтаксический анализ записи JSON в столбце *данных* , написав простую определяемую пользователем функцию JavaScript.
+
+```javascript
+function parseJson(string) {
+return JSON.parse(string);
+}
+```
+
+Затем можно создать шаг в Stream Analytics запросе, как показано ниже, чтобы получить доступ к полям записей JSON.
+
+ ```SQL
+ WITH parseJson as
+ (
+ SELECT DeviceID, udf.parseJson(sqlRefInput.Data) as metadata,
+ FROM sqlRefInput
+ )
+ 
+ SELECT metadata.key
+ INTO output
+ FROM streamInput
+ JOIN parseJson 
+ ON streamInput.DeviceID = parseJson.DeviceID
 ```
 
 ## <a name="array-data-types"></a>Тип данных "массив"
@@ -291,7 +323,7 @@ LEFT JOIN DynamicCTE M ON M.smKey = 'Manufacturer' and M.DeviceId = i.DeviceId A
 
 Результат:
 
-|deviceId|Lat|Длинные|смверсион|сммануфактурер|
+|deviceId|Lat|Long|смверсион|сммануфактурер|
 |-|-|-|-|-|
 |12345|47|122|1.2.45|ABC|
 

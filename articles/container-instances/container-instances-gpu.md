@@ -3,12 +3,12 @@ title: Развернуть экземпляр контейнера с подд�
 description: Узнайте, как развертывать экземпляры контейнеров Azure для запуска приложений-контейнеров с ресурсоемкими вычислениями с помощью ресурсов GPU.
 ms.topic: article
 ms.date: 04/17/2019
-ms.openlocfilehash: ea3b0ccba2d84487356f4bbd404cec3af1d0979a
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
-ms.translationtype: MT
+ms.openlocfilehash: c3b202d1f35194d59090c3cc310226d6cfc4dfea
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484181"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77482961"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 
@@ -40,11 +40,11 @@ ms.locfileid: "74484181"
 * **Count** — число GPU: **1**, **2**или **4**.
 * **SKU** — номер SKU GPU: **K80**, **P100**или **V100**. Каждый номер SKU сопоставляется с графическим процессором NVIDIA Tesla в одном из следующих семейств виртуальных машин с поддержкой GPU Azure:
 
-  | Sku | Семейство виртуальных машин |
+  | номер SKU | Семейство виртуальных машин |
   | --- | --- |
-  | K80 | [NC](../virtual-machines/linux/sizes-gpu.md#nc-series) |
-  | P100 | [NCv2](../virtual-machines/linux/sizes-gpu.md#ncv2-series) |
-  | V100 | [NCv3](../virtual-machines/linux/sizes-gpu.md#ncv3-series) |
+  | K80 | [NC](../virtual-machines/nc-series.md) |
+  | P100 | [NCv2](../virtual-machines/ncv2-series.md) |
+  | V100 | [NCv3](../virtual-machines/ncv3-series.md) |
 
 [!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
 
@@ -206,7 +206,7 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте контейнеры в портал Azure или проверьте состояние группы контейнеров с помощью команды [AZ Container показывать][az-container-show] . Например,
+Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте контейнеры в портал Azure или проверьте состояние группы контейнеров с помощью команды [AZ Container показывать][az-container-show] . Пример:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table
@@ -219,7 +219,7 @@ az container delete --resource-group myResourceGroup --name gpucontainergroup -y
 az container delete --resource-group myResourceGroup --name gpucontainergrouprm -y
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со сведениями о развертывании группы контейнеров с помощью [файла YAML](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md).
 * Ознакомьтесь со статьей [Размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/linux/sizes-gpu.md).

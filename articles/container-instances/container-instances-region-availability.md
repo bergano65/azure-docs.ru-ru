@@ -2,14 +2,14 @@
 title: Доступность ресурсов по регионам
 description: Доступность вычислительных ресурсов и памяти для службы "Экземпляры контейнеров Azure" в разных регионах Azure.
 ms.topic: article
-ms.date: 01/31/2020
+ms.date: 02/19/2020
 ms.author: danlep
-ms.openlocfilehash: 3f64a13331658c1360c9d54f6f57a68c2c91fc6f
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: f429a165fe26cc9fc7aa973231f5a77163feef4a
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77117825"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77525309"
 ---
 # <a name="resource-availability-for-azure-container-instances-in-azure-regions"></a>Доступность ресурсов службы "Экземпляры контейнеров Azure" в регионах Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "77117825"
 
 ## <a name="availability---general"></a>Доступность: общая
 
-Для групп контейнеров Linux и [поддерживаемых](container-instances-faq.md#what-windows-base-os-images-are-supported) контейнеров на базе Windows Server 2016 доступны следующие регионы и ресурсы.
+Следующие регионы и максимальные ресурсы доступны для групп контейнеров с Linux и [поддерживаемыми](container-instances-faq.md#what-windows-base-os-images-are-supported) контейнерами на базе Windows Server 2016.
 
 | Регионы | OS | максимальная загрузка ЦП; | Максимальный объем памяти (ГБ) | Хранилище (ГБ) |
 | -------- | -- | :---: | :-----------: | :---: |
@@ -37,7 +37,7 @@ ms.locfileid: "77117825"
 
 ## <a name="availability---windows-server-2019-ltsc-1809-deployments-preview"></a>Доступность — Windows Server 2019 LTSC, развертывания версии 1809 (предварительная версия)
 
-Для групп контейнеров на базе Windows Server 2019 (предварительная версия) доступны следующие регионы и ресурсы.
+Следующие регионы и максимальные ресурсы доступны для групп контейнеров с контейнерами на базе Windows Server 2019 (Предварительная версия).
 
 | Регионы | OS | максимальная загрузка ЦП; | Максимальный объем памяти (ГБ) | Хранилище (ГБ) |
 | -------- | -- | :---: | :-----------: | :---: |
@@ -47,13 +47,16 @@ ms.locfileid: "77117825"
 
 ## <a name="availability---virtual-network-deployment"></a>Доступность — развертывание виртуальной сети
 
-Следующие регионы и ресурсы доступны для группы контейнеров, развернутой в [виртуальной сети Azure](container-instances-vnet.md).
+Следующие регионы и максимальные ресурсы доступны для группы контейнеров, развернутой в [виртуальной сети Azure](container-instances-vnet.md).
 
 [!INCLUDE [container-instances-vnet-limits](../../includes/container-instances-vnet-limits.md)]
 
 ## <a name="availability---gpu-resources-preview"></a>Доступность: ресурсы GPU (предварительная версия)
 
-Для групп контейнеров, развернутых с помощью [ресурсов GPU](container-instances-gpu.md) (предварительная версия) доступны следующие регионы и ресурсы.
+Следующие регионы и максимальные ресурсы доступны для группы контейнеров, развернутой с помощью [ресурсов GPU](container-instances-gpu.md) (Предварительная версия).
+
+> [!IMPORTANT]
+> Ресурсы GPU доступны только при запросе. Чтобы запросить доступ к ресурсам GPU, отправьте запрос в [службу поддержки Azure][azure-support].
 
 [!INCLUDE [container-instances-gpu-regions](../../includes/container-instances-gpu-regions.md)]
 [!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
@@ -63,3 +66,6 @@ ms.locfileid: "77117825"
 Если вы хотите увидеть дополнительные регионы или увеличить доступность ресурсов, сообщите об этом команде, перейдя по адресу [​​aka.ms/aci/feedback](https://aka.ms/aci/feedback).
 
 Сведения об устранении неполадок развертывания экземпляра контейнера см. в статье [Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"](container-instances-troubleshooting.md).
+
+
+[azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest

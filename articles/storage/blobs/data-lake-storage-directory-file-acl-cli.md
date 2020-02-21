@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 11/24/2019
 ms.author: normesta
 ms.reviewer: prishet
-ms.openlocfilehash: e833ca92004c678808ec5e294de2df7c90121be7
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: ce2b4200496938e6cffb935207df8c7027eaf37a
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75835114"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77486140"
 ---
 # <a name="use-azure-cli-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Azure CLI для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -24,11 +24,11 @@ ms.locfileid: "75835114"
 > Расширение `storage-preview`, представленное в этой статье, сейчас находится в общедоступной предварительной версии.
 
 [Пример](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#adls-gen2-support) | [Gen1 Gen2 сопоставления](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#mapping-from-adls-gen1-to-adls-gen2) | [Отправить отзыв](https://github.com/Azure/azure-cli-extensions/issues)
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его, выполните [следующие](data-lake-storage-quickstart-create-account.md) инструкции.
+> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 > * Azure CLI версии `2.0.67` или более поздней.
 
 ## <a name="install-the-storage-cli-extension"></a>Установка расширения CLI хранилища
@@ -77,7 +77,7 @@ ms.locfileid: "75835114"
 В этом примере создается файловая система с именем `my-file-system`.
 
 ```azurecli
-az storage container create --name my-file-system
+az storage container create --name my-file-system --account-name mystorageaccount
 ```
 
 ## <a name="create-a-directory"></a>Создание каталога
@@ -239,6 +239,12 @@ az storage blob access show -b my-directory/upload.txt -c my-file-system --accou
 az storage blob directory access set -a "user::rw-,group::rw-,other::-wx" -d my-directory -c my-file-system --account-name mystorageaccount
 ```
 
+В этом примере задается список ACL *по умолчанию* для каталога пользователя-владельца, группы-владельца или других пользователей, а затем на консоль выводится список ACL.
+
+```azurecli
+az storage blob directory access set -a "default:user::rw-,group::rw-,other::-wx" -d my-directory -c my-file-system --account-name mystorageaccount
+```
+
 Чтобы задать список управления доступом для **файла**, используйте команду `az storage blob access set`. 
 
 В этом примере список ACL задается для файла, владеющего пользователем, группой-владельцем или другими пользователями, а затем на консоль выводится список ACL.
@@ -299,7 +305,7 @@ az storage blob directory metadata update --metadata tag1=value1 tag2=value2 -c 
 az storage blob directory metadata show -c my-file-system -d my-directory --account-name mystorageaccount
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Образец](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview)
 * [Сопоставление Gen1 с Gen2](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview#mapping-from-adls-gen1-to-adls-gen2)

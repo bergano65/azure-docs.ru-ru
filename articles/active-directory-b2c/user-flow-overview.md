@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 846819c3a05baf4ef1174d4e086f09893e834b2a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: fdc7d9fce3ebce4603369262f164ba72b1e39499
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847801"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484321"
 ---
 # <a name="user-flows-in-azure-active-directory-b2c"></a>Потоки пользователей в Azure Active Directory B2C
 
@@ -81,10 +81,8 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e      // Your registered Applicati
 
 Проверка адреса электронной почты не гарантируется в любом из этих вариантов. Администратор клиента может отключить проверку адреса электронной почты в базовых политиках для локальных учетных записей. Даже если проверка адреса электронной почты включена, адреса не проверяются, если они исходят от поставщика удостоверений социальных сетей и они еще не были изменены.
 
-Только свойства **otherMails** и **signInNames** предоставляются через API Graph Active Directory. Адрес электронной почты в свойстве сведений строгой проверки подлинности недоступен.
+Через API Microsoft Graph доступны только свойства **осермаилс** и **signInNames** . Адрес электронной почты в свойстве сведений строгой проверки подлинности недоступен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы создать рекомендованные пользовательские потоки, следуйте инструкциям в разделе [учебник. Создание потока пользователя](tutorial-create-user-flows.md).
-
-

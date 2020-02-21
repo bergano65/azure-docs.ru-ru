@@ -9,18 +9,18 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/31/2020
-ms.openlocfilehash: 6d6e7d564722d1c2ad4713dd1d39e7cba5ed0605
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: e1e19f985c9aa02759c6fff3c634c216c7ef42ef
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964960"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77525555"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azureml-sdk/?view=azure-ml-py). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
+Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -32,7 +32,7 @@ ms.locfileid: "76964960"
 > * Использование запросов на удаление для очистки ресурсов 
 > * Использование авторизации на основе ключей для оценки развернутых моделей
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - **Подписка Azure** , для которой у вас есть права администратора. Если у вас нет такой подписки, попробуйте использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree) .
 - [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
@@ -201,9 +201,9 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 
 Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` при перечислении моделей путь начинается с `modelmanagement/v1.0`. REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. В справочных документах по API по ссылкам ниже перечислены операции, параметры и коды ответов для различных операций.
 
-|Область|путь|Справочные материалы|
+|Область|путь|Справочник|
 |-|-|-|
-|Artifacts|артефакт/версия 2.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/artifacts)|
+|Артефакты|артефакт/версия 2.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/artifacts)|
 |Хранилища данных|хранилище данных/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/datastores)|
 |Настройка параметров|устройство/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/hyperparametertuning)|
 |Модели|моделманажемент/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/modelsanddeployments/mlmodels)|

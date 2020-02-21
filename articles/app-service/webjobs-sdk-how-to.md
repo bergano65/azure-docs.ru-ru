@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 83884447e9856b5e3db26e4829ccbd3ab1baed13
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 715415929afaad36e4854e75a2b7b5360d22a6bf
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549093"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77486348"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -453,7 +453,7 @@ static async Task Main()
 }
 ```
 
-Дополнительные сведения см. в статье [Привязка хранилища очередей](../azure-functions/functions-bindings-storage-queue.md#hostjson-settings) .
+Дополнительные сведения см. в статье [Привязка хранилища очередей](../azure-functions/functions-bindings-storage-queue-trigger.md#hostjson-properties) .
 
 #### <a name="version-2x"></a>Версия 2. *x*
 
@@ -524,7 +524,7 @@ static async Task Main()
 }
 ```
 
-Дополнительные сведения см. в статье [Привязка служебной шины](../azure-functions/functions-bindings-service-bus.md#hostjson-settings) .
+Дополнительные сведения см. в статье [Привязка служебной шины](../azure-functions/functions-bindings-service-bus-output.md#hostjson-settings) .
 
 ### <a name="configuration-for-other-bindings"></a>Конфигурация для других привязок
 
@@ -680,11 +680,11 @@ public static void CreateQueueMessage(
 
 В документации по функциям Azure содержатся справочные сведения о каждом типе привязки. В каждой справочной статье привязок содержатся следующие сведения. (Этот пример основан на очереди хранилища.)
 
-* [Пакеты](../azure-functions/functions-bindings-storage-queue.md#packages---functions-1x). Пакет, который необходимо установить, включает поддержку привязки в проекте пакета SDK веб-заданий.
-* [Примеры](../azure-functions/functions-bindings-storage-queue.md#trigger). Примеры кода. Пример C# библиотеки классов применяется к пакету SDK для веб-заданий. Просто опустите атрибут `FunctionName`.
-* [Атрибуты](../azure-functions/functions-bindings-storage-queue.md#trigger---attributes-and-annotations). Атрибуты, используемые для типа привязки.
-* [Конфигурация](../azure-functions/functions-bindings-storage-queue.md#trigger---configuration). Пояснения к свойствам атрибута и параметрам конструктора.
-* [Использование](../azure-functions/functions-bindings-storage-queue.md#trigger---usage). Типы, к которым можно выполнить привязку, и сведения о принципах работы привязки. Например: алгоритм опроса, обработка подозрительной очереди.
+* [Пакеты](../azure-functions/functions-bindings-storage-queue.md). Пакет, который необходимо установить, включает поддержку привязки в проекте пакета SDK веб-заданий.
+* [Примеры](../azure-functions/functions-bindings-storage-queue-trigger.md). Примеры кода. Пример C# библиотеки классов применяется к пакету SDK для веб-заданий. Просто опустите атрибут `FunctionName`.
+* [Атрибуты](../azure-functions/functions-bindings-storage-queue-trigger.md#attributes-and-annotations). Атрибуты, используемые для типа привязки.
+* [Конфигурация](../azure-functions/functions-bindings-storage-queue-trigger.md#configuration). Пояснения к свойствам атрибута и параметрам конструктора.
+* [Использование](../azure-functions/functions-bindings-storage-queue-trigger.md#usage). Типы, к которым можно выполнить привязку, и сведения о принципах работы привязки. Например: алгоритм опроса, обработка подозрительной очереди.
   
 Список справочных статей по привязке см. в разделе "поддерживаемые привязки" статьи [триггеры и привязки](../azure-functions/functions-triggers-bindings.md#supported-bindings) для функций Azure. В этом списке привязки HTTP, веб-перехватчиков и службы "Сетка событий" поддерживаются только функциями Azure, а не пакетом SDK веб-заданий.
 
@@ -825,11 +825,11 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 |------------|---|
 |Трассировка       | 0 |
 |Отладка       | 1 |
-|Информация | 2 |
+|Сведения | 2 |
 |Предупреждение     | 3 |
 |Ошибка       | 4 |
-|Критический    | 5 |
-|Нет        | 6 |
+|Critical    | 5 |
+|None        | 6 |
 
 Каждую категорию можно независимо отфильтровать с определенным [`LogLevel`](/dotnet/api/microsoft.extensions.logging.loglevel). Например, вы можете просмотреть все журналы для обработки триггера большого двоичного объекта, но только `Error` и выше для всего остального.
 

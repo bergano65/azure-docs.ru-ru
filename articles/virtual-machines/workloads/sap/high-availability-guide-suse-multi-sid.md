@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 01/16/2020
+ms.date: 02/20/2020
 ms.author: radeltch
-ms.openlocfilehash: 7471fc6d7f10c849ba79fedf88961d6c3c99913f
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: e48cb1baa515e6a1549bf913a3c3e4cf50e1fff6
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314204"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77525487"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications-multi-sid-guide"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для многоид безопасности приложений SAP
 
@@ -83,7 +83,7 @@ ms.locfileid: "76314204"
 * [Развертывание СУБД на виртуальных машинах Azure для SAP в Linux][dbms-guide]
 * [Лучшие рекомендации по использованию SUSE SAP][suse-ha-guide] В руководствах содержатся все необходимые сведения для настройки системной репликации NetWeaver HA и SAP HANA в локальной среде. Придерживайтесь этих общих рекомендаций. Они содержат намного более подробные сведения.
 * [Заметки о выпуске расширения высокой доступности SUSE 12 SP3][suse-ha-12sp3-relnotes]
-* [Поддержка SUSE для кластера с несколькими ИД безопасности](https://www.suse.com/c/sap-workloads-going-green/)
+* [Путеводитель по кластеру SUSE Multi-SID для SLES 12 и SLES 15](https://documentation.suse.com/sbp/all/html/SBP-SAP-MULTI-SID/index.html)
 
 ## <a name="overview"></a>Обзор
 
@@ -175,7 +175,7 @@ SAP NetWeaver требует наличия общего хранилища дл
 
 Ниже приведены элементы с префиксами: **[A]**  — применяется ко всем узлам, **[1**] — применяется только к узлу 1, **[2]**  — применяется только к узлу 2.
 
-### <a name="prerequisites"></a>Технические условия 
+### <a name="prerequisites"></a>предварительные требования 
 
 > [!IMPORTANT]
 > Прежде чем следовать инструкциям по развертыванию дополнительных систем SAP в кластере, следуйте инструкциям по развертыванию первой системы SAP в кластере, так как существуют шаги, необходимые только при первом развертывании системы.  

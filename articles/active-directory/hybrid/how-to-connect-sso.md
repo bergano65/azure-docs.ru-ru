@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ef8f1ef381c86b6eec62c96ff6dcf87522de040
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: f1b7e4716e731e6b73e3ac60b64baa71043906fc
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367963"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77483760"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -36,7 +36,7 @@ ms.locfileid: "77367963"
 ![Простой единый вход](./media/how-to-connect-sso/sso1.png)
 
 >[!IMPORTANT]
->Для простого единого входа необходимо, чтобы устройство пользователя было **присоединено только к домену** , но оно не используется в [присоединенном к Azure AD](../active-directory-azureadjoin-overview.md) или [гибридном присоединенном к Azure AD] (.. /active-directory-azureadjoin-overview.md). Единый вход: PN. присоединение к Azure AD и гибридное присоединение к Azure AD осуществляется на основе [основного маркера обновления] (.. /активе-директори/девицес/концепт-ПРИМАРИ-РЕФРЕШ-токен.МД)
+>Для простого единого входа необходимо, чтобы устройство пользователя было **присоединено только к домену** , но оно не используется в [присоединенных к Azure AD](../devices/concept-azure-ad-join.md) или [гибридных устройствах, присоединенных к Azure AD](../devices/concept-azure-ad-join-hybrid.md) . Единый вход для присоединения к Azure AD и гибридного присоединенного Azure AD работает на основе [основного маркера обновления](../devices/concept-primary-refresh-token.md).
 
 ## <a name="key-benefits"></a>Основные преимущества
 
@@ -78,7 +78,7 @@ ms.locfileid: "77367963"
 \*\*\*Требуется [дополнительная настройка](how-to-connect-sso-quick-start.md#browser-considerations).
 
 >[!NOTE]
->Чтобы обеспечить максимальное удобство единого входа в Azure AD, мы рекомендуем использовать в Windows 10 функцию [присоединения к Azure AD](../active-directory-azureadjoin-overview.md).
+>Чтобы обеспечить максимальное удобство единого входа в Azure AD, мы рекомендуем использовать в Windows 10 функцию [присоединения к Azure AD](../devices/concept-azure-ad-join.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

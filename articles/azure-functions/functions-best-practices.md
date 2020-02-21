@@ -5,12 +5,12 @@ ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fd52c4cc5cd9d4c01ddb355bdfb28d0952e65759
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: a41a5828a82d81c5e7e8749fee70cd15e17bb9d0
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210265"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77486331"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Оптимизация производительности и надежности Функций Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "77210265"
 
 Если элемент очереди уже обработан, разрешите холостой цикл выполнения функции.
 
-Воспользуйтесь предоставленными возможностями защиты для компонентов, используемых на платформе Функций Azure. Например, ознакомьтесь с разделом **Обработка подозрительных сообщений очереди** в документации по [триггерам и привязкам очереди службы хранилища Azure](functions-bindings-storage-queue.md#trigger---poison-messages). 
+Воспользуйтесь предоставленными возможностями защиты для компонентов, используемых на платформе Функций Azure. Например, ознакомьтесь с разделом **Обработка подозрительных сообщений очереди** в документации по [триггерам и привязкам очереди службы хранилища Azure](functions-bindings-storage-queue-trigger.md#poison-messages). 
 
 ## <a name="scalability-best-practices"></a>Рекомендации по масштабируемости
 
@@ -116,9 +116,9 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 Другие параметры конфигурации узла находятся в [статье Настройка Host. JSON](functions-host-json.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих источниках.
+Для получения дополнительных сведений см. следующие ресурсы:
 
 * [Способы управления подключениями в службе "Функции Azure"](manage-connections.md)
 * [Рекомендации по использованию службы приложений Azure](../app-service/app-service-best-practices.md)

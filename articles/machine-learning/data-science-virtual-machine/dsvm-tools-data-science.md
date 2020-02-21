@@ -1,5 +1,6 @@
 ---
 title: Средства машинного обучения и обработки и анализа данных
+titleSuffix: Azure Data Science Virtual Machine
 description: Узнайте о средствах и платформах машинного обучения, предустановленных на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
@@ -9,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: c77e1834804dba0d2e5fd6eaec574ffce19d1d45
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: c6b7e3da6cb6fd87e3b43d6f310e3b76f8fc4d30
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771212"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77526099"
 ---
 # <a name="machine-learning-and-data-science-tools-on-azure-data-science-virtual-machines"></a>Машинное обучение и средства обработки и анализа данных на виртуальных машинах Azure для обработки и анализа данных
 Виртуальные машины Azure для обработки и анализа данных (Dsvm) имеют широкий набор средств и библиотек для машинного обучения, доступных на популярных языках, таких как Python, R и Julia.
@@ -77,7 +78,7 @@ ms.locfileid: "75771212"
 | Поддерживаемые выпуски     | Windows, Linux     |
 | Распространенные способы применения      | Общая библиотека машинного обучения      |
 | Настройка и установка      |  Windows: установщик MSI<br/>Linux: APT — получение |
-| Запуск и использование      | В качестве программы командной строки пути (`/usr/bin/vw` в Linux и `C:\Program Files\VowpalWabbit\vw.exe` в Windows).    |
+| Запуск и использование      | В качестве программы командной строки пути (`C:\Program Files\VowpalWabbit\vw.exe` в Linux и `/usr/bin/vw` в Windows).    |
 | Ссылка на примеры      | [Примеры Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit/wiki/Examples) |
 | Связанные инструменты      |LightGBM, MXNet, XGBoost   |
 

@@ -1,6 +1,6 @@
 ---
 title: Как это работает в Azure MFA — Azure Active Directory
-description: Многофакторная идентификация Azure защищает доступ к вашим данным и приложениям, а также предоставляет пользователям простой вход в систему.
+description: Многофакторная идентификация Azure помогает защитить доступ к данным и приложениям, при этом не усложняя процесс входа пользователя в систему.
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0982f6fb70cd6866af48feab640d5dc36bcb6b28
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 39948214f5bd080be417ed515bea6bff87d3b303
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848686"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484066"
 ---
 # <a name="how-it-works-azure-multi-factor-authentication"></a>Как это работает: служба Многофакторной идентификации Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "74848686"
 
 * **Azure Active Directory Premium** или **Microsoft 365 бизнес** — полнофункциональное использование многофакторной идентификации Azure с использованием политик условного доступа, чтобы требовать многофакторную проверку подлинности.
 
-* **Azure AD Free** или автономные лицензии **Office 365** . Используйте предварительно созданные [политики защиты для условного доступа](../conditional-access/concept-baseline-protection.md) , чтобы требовать многофакторную проверку подлинности для пользователей и администраторов.
+* **Azure AD Free** или автономные лицензии **Office 365** . Используйте [Параметры безопасности по умолчанию](../fundamentals/concept-fundamentals-security-defaults.md) , чтобы требовать многофакторную проверку подлинности для пользователей и администраторов.
 
 * **Глобальные администраторы Azure Active Directory**. Для защиты учетных записей глобальных администраторов доступны некоторые возможности службы Многофакторной идентификации Azure.
 

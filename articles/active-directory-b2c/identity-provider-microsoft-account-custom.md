@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/08/2019
+ms.date: 02/19/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b1489ce6bee2ce25ffb268ef20cc8fa587664619
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: f4265659df786cf0a972b6dcf4f122bfc68535c1
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848932"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77483284"
 ---
 # <a name="set-up-sign-in-with-a-microsoft-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Майкрософт с использованием пользовательских политик
 
@@ -24,12 +24,12 @@ ms.locfileid: "76848932"
 
 В этой статье показано, как включить вход для пользователей из учетная запись Майкрософт с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Создайте учетную запись Майкрософт на сайте [https://www.live.com/](https://www.live.com/), если у вас ее еще нет.
 
-## <a name="add-an-application"></a>Добавление приложения
+## <a name="register-an-application"></a>Регистрация приложения
 
 Чтобы включить вход для пользователей с учетная запись Майкрософт, необходимо зарегистрировать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C.
 
@@ -46,6 +46,19 @@ ms.locfileid: "76848932"
 1. Щелкните **новый секрет клиента**
 1. Введите **Описание** секрета, например " *секрет клиента для приложения MSA*", а затем нажмите кнопку **добавить**.
 1. Запишите пароль приложения, показанный в столбце **значение** . Это значение используется в следующем разделе.
+
+## <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
+
+Если вы хотите получить `family_name` и `given_name` утверждения из Azure AD, можно настроить дополнительные утверждения для приложения в пользовательском интерфейсе портал Azure или манифесте приложения. Дополнительные сведения см. в статье [предоставление дополнительных утверждений для приложения Azure AD](../active-directory/develop/active-directory-optional-claims.md).
+
+1. Войдите на [портал Azure](https://portal.azure.com). Найдите и выберите **Azure Active Directory**.
+1. В разделе **Управление** выберите **Регистрация приложений**.
+1. В списке выберите приложение, для которого нужно настроить необязательные утверждения.
+1. В разделе **Управление** выберите **Конфигурация токена (Предварительная версия)** .
+1. Выберите **добавить необязательное утверждение**.
+1. Выберите тип токена, который требуется настроить.
+1. Выберите необязательные утверждения для добавления.
+1. Нажмите кнопку **Добавить**.
 
 ## <a name="create-a-policy-key"></a>Создание ключа политики
 
@@ -94,10 +107,12 @@ ms.locfileid: "76848932"
             <Key Id="client_secret" StorageReferenceId="B2C_1A_MSASecret" />
           </CryptographicKeys>
           <OutputClaims>
-            <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="live.com" />
-            <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="socialIdpAuthentication" />
-            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="sub" />
+            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="oid" />
+            <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="given_name" />
+            <OutputClaim ClaimTypeReferenceId="surName" PartnerClaimType="family_name" />
             <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
+            <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="socialIdpAuthentication" />
+            <OutputClaim ClaimTypeReferenceId="identityProvider" PartnerClaimType="iss" />
             <OutputClaim ClaimTypeReferenceId="email" />
           </OutputClaims>
           <OutputClaimsTransformations>

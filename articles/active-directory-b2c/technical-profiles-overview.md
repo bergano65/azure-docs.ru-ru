@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/11/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f3a9265c1f9a5c6c63931798718e4d0679cd126b
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 3b0e59912d740e30b0e29fb882542f1995ab6f54
+ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77136229"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77505654"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "77136229"
 - [SAML2](saml-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу SAML.
 - [Самостоятельное подтверждение](self-asserted-technical-profile.md): взаимодействие с пользователем. Например, получение учетных данных пользователя для входа, а затем отображение страницы регистрации или сброса пароля.
 - [Управление сеансами](custom-policy-reference-sso.md): работа с различными типами сеансов.
-- **Application Insights**
+- [Application Insights](../azure-monitor/app/usage-overview.md)
 - [Одноразовый пароль](one-time-password-technical-profile.md) . обеспечивает поддержку управления поколением и проверкой одноразового пароля. 
 
 ## <a name="technical-profile-flow"></a>Процесс работы с техническим профилем

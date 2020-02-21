@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 07/08/2019
 ms.author: cshoe
-ms.openlocfilehash: 35df4c6c20345053bcc39a267a90a7bb1b227241
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 1688fe848beb62731391bf4399a0dabec5265320
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76766235"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484729"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "76766235"
 |Портал Azure|Автоматически|Автоматически|
 |Разработка Non-.NET языков или локальных средств Azure Core Tools|Автоматически|[Использование Azure Functions Core Tools и пакетов расширений](#extension-bundles)|
 |C#Библиотека классов с помощью Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
-|Библиотека классов C# с использованием Visual Studio Code|Н/Д|[С помощью .NET Core CLI](#vs-code)|
+|Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#vs-code)|
 
 ## <a name="extension-bundles"></a>Пакеты расширений для локальной разработки
 
@@ -55,7 +55,7 @@ ms.locfileid: "76766235"
 Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_VERSION>
 ```
 
-Имя пакета, используемого для данной привязки, приведено в справочной статье для этой привязки. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
+Имя пакета, используемого для данной привязки, приведено в справочной статье для этой привязки. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#functions-1x).
 
 Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 

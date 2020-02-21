@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 10/02/2019
 ms.author: juliako
-ms.openlocfilehash: 3520b7d6b0fd67fdbff3e1dd78d038f36ad5f0af
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: dc3b122ab7f4a243f3a4ecd6f220caa00beb044e
+ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133423"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77505773"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -79,7 +79,7 @@ ms.locfileid: "77133423"
 * В версии 2 [входные](../previous/media-services-input-metadata-schema.md) и [выходные](../previous/media-services-output-metadata-schema.md) XML-файлы метаданных создаются в результате задания кодирования. В версии 3 формат метаданных изменился с XML на JSON. 
 
 > [!NOTE]
-> Ознакомьтесь с соглашениями об именовании, которые применяются к [ресурсам служб мультимедиа v3](media-services-apis-overview.md#naming-conventions). Также проверьте [имена больших двоичных объектов](assets-concept.md#naming-blobs).
+> Ознакомьтесь с соглашениями об именовании, которые применяются к [ресурсам служб мультимедиа v3](media-services-apis-overview.md#naming-conventions). Также проверьте [имена больших двоичных объектов](assets-concept.md#naming).
 
 ## <a name="feature-gaps-with-respect-to-v2-apis"></a>Недочеты функций по отношению к API версии 2
 

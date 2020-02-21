@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 006ea071ce1ab0354ecf191cdde2e031255ef4ce
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: cc7d58f0557e620c273043af8ffb2e8ec4d8ec87
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407698"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77485154"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -77,7 +77,7 @@ ms.locfileid: "75407698"
 
 ![Снимок экрана с аналитическими возможностями. Линейный график, суммирующий среднюю продолжительность ответа запроса за последние 12 часов.](media/app-map/log-analytics.png)
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>видны узлы
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -236,11 +236,11 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общие
+### <a name="general"></a>Общие сведения
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
@@ -276,6 +276,6 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
+* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](correlation.md).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.
 * Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в статье [Track Custom Operations](custom-operations-tracking.md) .

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: mlearned
-ms.openlocfilehash: 1b0d3dec3925518922c5f668560889edd6f5de0b
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 62fc95ed7179dc4188c0c40e4c15aa9940bf2eb5
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867169"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77524245"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -20,7 +20,7 @@ ms.locfileid: "75867169"
 
 В этой статье показано как создать и использовать субъект-службу для кластеров AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Чтобы создать субъект-службу в Azure AD, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Если у вас нет необходимых разрешений, может потребоваться попросить администратора Azure AD или администратора подписки предоставить их или предварительно создать субъект-службу для использования с кластером AKS.
 
@@ -70,6 +70,9 @@ az aks create \
     --client-secret <password>
 ```
 
+> [!NOTE]
+> Если вы используете существующий субъект-службу с настроенным секретом, убедитесь, что секрет не превышает 190 байт.
+
 При развертывании кластера AKS с помощью портала Azure на странице *Проверка подлинности* диалогового окна **Create Kubernetes cluster** (Создание кластера Kubernetes) выберите **Настроить субъект-службу**. Выберите **Использовать существующую**и укажите следующие значения:
 
 - **Service principal client ID** (Идентификатор клиента для субъект-службы) — это *appId*;
@@ -95,7 +98,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 Если вы используете реестр контейнеров Azure (запись контроля доступа) в качестве хранилища образов контейнеров, вам необходимо предоставить разрешения на чтение и извлечение образов для субъекта-службы в кластере AKS. В настоящее время рекомендуемой конфигурацией является использование команды [AZ AKS Create][az-aks-create] или [AZ AKS Update][az-aks-update] для интеграции с реестром и назначения соответствующей роли для субъекта-службы. Подробные инструкции см. в статье [Аутентификация в реестре контейнеров Azure из службы Kubernetes Azure][aks-to-acr].
 
-### <a name="networking"></a>Работа в сети
+### <a name="networking"></a>Сеть
 
 Вы можете использовать расширенное сетевое взаимодействие, где виртуальная сеть и подсеть или общедоступные IP-адреса находятся в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
 
@@ -108,7 +111,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
   - *Microsoft.Network/publicIPAddresses/write*
 - Или назначьте встроенную роль " [участник сети][rbac-network-contributor] " в подсети в виртуальной сети.
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 
 Вам может потребоваться доступ к существующим дисковым ресурсам в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
 
@@ -117,7 +120,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
   - *Microsoft.Compute/disks/write*
 - Или назначьте встроенную роль [участника учетной записи хранения][rbac-storage-contributor] в группе ресурсов.
 
-### <a name="azure-container-instances"></a>Служба "Экземпляры контейнеров Azure"
+### <a name="azure-container-instances"></a>Экземпляры контейнеров Azure
 
 Если вы используете интеграцию Virtual Kubelet и AKS и решили запустить службу "Экземпляры контейнеров Azure" (ACI) в группе ресурсов, отличной от группы для кластера AKS, предоставьте субъекту-службе AKS разрешения *Участник* на доступ к группе ресурсов ACI.
 
@@ -140,7 +143,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 Учетные данные субъекта-службы для кластера AKS кэшируются Azure CLI. Если срок действия этих учетных данных истек, возникнут ошибки при развертывании кластеров AKS. Следующее сообщение об ошибке при выполнении команды [AZ AKS Create][az-aks-create] может указывать на проблему с кэшированными учетными данными субъекта-службы:
 

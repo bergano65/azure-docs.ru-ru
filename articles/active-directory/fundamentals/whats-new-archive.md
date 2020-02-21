@@ -13,12 +13,12 @@ ms.author: mimart
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ff7cda6a593b1517ad711a56f73d29a14345baf
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: d4d5c91966f8c490e056a84c89073e4da7cfdfd6
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368016"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484491"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архивировать для новых возможностей Azure Active Directory?
 
@@ -1426,7 +1426,7 @@ Azure AD Connect находится в процессе переноса сис�
 **Категория службы:** Условный доступ  
 **Возможности продукта:** безопасность и защита идентификации
 
-Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/technical-reference#approved-client-app-requirement):
+Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview):
 
 - Microsoft To-Do
 
@@ -2753,7 +2753,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 Дополнительные сведения можно найти в разделе
 
-- [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
+- [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview)
 - [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
@@ -3044,14 +3044,14 @@ Azure AD Connect предпочтительней использовать дл�
 **Категория службы:** Условный доступ  
 **Возможности продукта:** безопасность и защита идентификации
 
-Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement):
+Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview):
 
 - [Microsoft Kaizala](https://www.microsoft.com/garage/profiles/kaizala/);
 - Microsoft StaffHub
 
 Дополнительные сведения можно найти в разделе
 
-- [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
+- [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview)
 - [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
@@ -3089,7 +3089,7 @@ Azure AD Connect предпочтительней использовать дл�
 **Категория службы:** Azure AD  
 **Возможности продукта:** безопасность и защита идентификации
 
-Теперь вы можете ограничить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, с [утвержденными клиентскими приложениями](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement) , поддерживающими политики защиты приложений Intune, с помощью [условного доступа на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). Политики защиты приложений Intune используются для настройки и защиты данных компании в этих клиентских приложениях.
+Теперь вы можете ограничить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, с [утвержденными клиентскими приложениями](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview) , поддерживающими политики защиты приложений Intune, с помощью [условного доступа на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). Политики защиты приложений Intune используются для настройки и защиты данных компании в этих клиентских приложениях.
 
 Объединив [приложения на основе приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) с политиками условного доступа [на основе устройств](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications) , вы получаете гибкие возможности для защиты данных персональных и корпоративных устройств.
 
@@ -3189,14 +3189,14 @@ Azure AD Connect предпочтительней использовать дл�
 **Категория службы:** Условный доступ  
 **Возможности продукта:** безопасность и защита идентификации
 
-Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement):
+Следующие приложения добавлены в список [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview):
 
 - Планировщик (Майкрософт);
 - Azure Information Protection 
 
 Дополнительные сведения можно найти в разделе
 
-- [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
+- [Требование утвержденного клиентского приложения](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps-preview)
 - [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---

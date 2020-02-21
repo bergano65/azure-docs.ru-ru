@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: ef5571e6a059eedeba169765785bb0f840c8f256
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 25ea84ba00648e2f515f96885cfdb5bb662c8575
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76710860"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77483148"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -111,7 +111,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Сведения | По умолчанию |
+| Параметр | Подробности | По умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -122,7 +122,7 @@ MARSAgentInstaller.exe /?
 | /ph |Адрес узла прокси-сервера. |- |
 | /po |Номер порта узла прокси-сервера. |- |
 | /pu |Имя пользователя узла прокси-сервера. |- |
-| /pw |Пароль прокси-сервера. |- |
+| /pw |Пароль прокси |- |
 
 ## <a name="registering-windows-server-or-windows-client-machine-to-a-recovery-services-vault"></a>Регистрация Windows Server или клиентского компьютера Windows в хранилище служб восстановления
 
@@ -135,14 +135,16 @@ $CredsFilename = Get-AzRecoveryServicesVaultSettingsFile -Backup -Vault $Vault1 
 
 ### <a name="registering-using-the-ps-az-module"></a>Регистрация с помощью модуля PS AZ
 
+> [!NOTE]
+> Ошибка с созданием сертификата хранилища исправлена в выпуске AZ 3.5.0. Чтобы скачать сертификат хранилища, используйте команду AZ 3.5.0 RELEASE версии или более позднюю.
+
 В последней версии модуля AZ PowerShell из-за ограничений базовой платформы для загрузки учетных данных хранилища требуется самозаверяющий сертификат. В следующем примере показано, как предоставить самозаверяющий сертификат и скачать учетные данные хранилища.
 
 ```powershell
-$Vault = Get-AzRecoveryServicesVault -ResourceGroupName $rgName -Name $VaultName
-$cert = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname xxxxxxxxxxxxx
-$certificate =[System.Convert]::ToBase64String($cert.RawData)
-$CredsPath = "C:\downloads"
-$CredsFilename = Get-AzRecoveryServicesVaultSettingsFile -Certificate $certificate -Vault $vault -Backup -Path $CredsPath
+$dt = $(Get-Date).ToString("M-d-yyyy")
+$cert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -FriendlyName 'test-vaultcredentials' -subject "Windows Azure Tools" -KeyExportPolicy Exportable -NotAfter $(Get-Date).AddHours(48) -NotBefore $(Get-Date).AddHours(-24) -KeyProtection None -KeyUsage None -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2") -Provider "Microsoft Enhanced Cryptographic Provider v1.0"
+$certficate = [convert]::ToBase64String($cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx))
+$CredsFilename = Get-AzRecoveryServicesVaultSettingsFile -Backup -Vault $Vault -Path $CredsPath -Certificate $certficate
 ```
 
 На сервере Windows Server или DPM запустите командлет [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx) , чтобы зарегистрировать компьютер в хранилище.
@@ -203,7 +205,7 @@ Set-OBMachineSetting -NoThrottle
 Server properties updated successfully.
 ```
 
-## <a name="encryption-settings"></a>Параметры шифрования.
+## <a name="encryption-settings"></a>Параметры шифрования
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления.
 
@@ -733,7 +735,7 @@ $Session = New-PSSession -ComputerName REMOTESERVER01
 Invoke-Command -Session $Session -Script { param($D, $A) Start-Process -FilePath $D $A -Wait } -ArgumentList $Agent, $Args
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Azure Backup для Windows Server и клиента:
 

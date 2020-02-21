@@ -3,12 +3,12 @@ title: Подключение клиента к системе делегиро�
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
 ms.date: 01/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: b3868987fa76d4ce0d4c34e81b46301ea106203d
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 34c6173211a9125cace59d77ea942d301919aa26
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543415"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77526218"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Подключение клиента к системе делегированного управления ресурсами Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "76543415"
 Select-AzSubscription <subscriptionId>
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -89,7 +89,7 @@ az account show
 (Get-AzRoleDefinition -Name '<roleName>').id
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -120,17 +120,14 @@ az role definition list --name "<roleName>" | grep name
 |**managedByTenantId**     |Идентификатор клиента.          |
 |**Авторизации**     |Значения **principalId** для пользователей/групп или имен участников-служб из клиента, каждый из которых имеет **принЦипалиддисплайнаме** , чтобы помочь клиенту понять назначение авторизации и сопоставить его со встроенным значением **roleDefinitionId** , чтобы указать уровень доступа.      |
 
-> [!TIP]
-> Убедитесь, что записи **манажедбитенантид**, **принЦипалиддисплайнаме**и **roleDefinitionId** идентичны значениям, используемым Azure. Не используйте прописные буквы в этих значениях.
-
-Для процесса адаптации требуется шаблон Azure Resource Manager (указанный в [репозитории примеров](https://github.com/Azure/Azure-Lighthouse-samples/) и соответствующий файл параметров, который изменяется в соответствии с конфигурацией, и определяются разрешения.
+Для процесса адаптации требуется шаблон Azure Resource Manager (в нашем [репозитории примеров](https://github.com/Azure/Azure-Lighthouse-samples/)) и соответствующий файл параметров, который изменяется в соответствии с конфигурацией, и определяются разрешения.
 
 Выбранный шаблон будет зависеть от того, выполняется ли подключение ко всей подписке, группе ресурсов или нескольким группам ресурсов в рамках подписки. Мы также предоставляем шаблон для клиентов, которые приобрели предложение управляемых служб, опубликованное в Azure Marketplace, если вы предпочитаете таким образом подключать свои подписки.
 
 |Чтобы подключить  |Используйте этот шаблон Azure Resource Manager  |И измените этот файл параметров |
 |---------|---------|---------|
 |Subscription   |[delegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/delegated-resource-management/delegatedResourceManagement.json)  |[delegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/delegated-resource-management/delegatedResourceManagement.parameters.json)    |
-|Группа ресурсов   |[rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)  |[rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)    |
+|группа ресурсов.   |[rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)  |[rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)    |
 |Несколько групп ресурсов в рамках подписки   |[multipleRgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/multipleRgDelegatedResourceManagement.json)  |[multipleRgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/multipleRgDelegatedResourceManagement.parameters.json)    |
 |Подписка (при использовании предложения, опубликованного в Azure Marketplace)   |[marketplaceDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.json)  |[marketplaceDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.parameters.json)    |
 
@@ -223,7 +220,7 @@ New-AzDeployment -Name <deploymentName> `
                  -Verbose
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -275,7 +272,7 @@ az deployment create --name <deploymentName> \
 Get-AzContext
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -331,7 +328,7 @@ Get-AzManagedServicesAssignment -Scope "/subscriptions/{delegatedSubscriptionId}
 Remove-AzManagedServicesAssignment -ResourceId "/subscriptions/{delegatedSubscriptionId}/providers/Microsoft.ManagedServices/registrationAssignments/{assignmentGuid}"
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell

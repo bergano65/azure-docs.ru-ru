@@ -8,12 +8,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: pabutler
-ms.openlocfilehash: ae5a55c6d640852cbd873bc6b36e502b5fe17165
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 7d050b32b212f66623a24bcf87d40111fc5973a5
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73817953"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77481380"
 ---
 # <a name="configure-winrm-after-virtual-machine-creation"></a>Настройка WinRM после создания виртуальной машины
 
@@ -25,7 +25,7 @@ ms.locfileid: "73817953"
 
 ## <a name="enabling-port-traffic"></a>Включение передачи трафика через порт
 
-Для WinRM по протоколу HTTPS используется порт 5896, который не включен по умолчанию на предварительно настроенных виртуальных машин с Windows, предлагаемых в Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
+Протокол WinRM через HTTPS использует порт 5986, который не включен по умолчанию на предварительно настроенных виртуальных машинах Windows, предлагаемых в Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
 
 1.  Перейдите к колонке **Виртуальные машины >**   <*имя_виртуальной_машины*>    **> Параметры/Сети**.
 2.  Щелкните имя группы безопасности сети (в этом примере **testvm11002**) для отображения ее свойств:

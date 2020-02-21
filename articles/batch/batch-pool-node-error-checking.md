@@ -7,12 +7,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/23/2019
 ms.topic: conceptual
-ms.openlocfilehash: dea45cec29101c3b085ab8098c3b05906e1049cd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 88382a5b6e0364145d8504b5e25ef1a9bfd0111a
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75449791"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484134"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Проверка на наличие ошибок в пуле и узле
 
@@ -56,7 +56,7 @@ ms.locfileid: "75449791"
 
 Сведения обо всех оценках автоматически фиксируются в [событии завершения изменения размера пула](https://docs.microsoft.com/azure/batch/batch-pool-resize-complete-event).
 
-### <a name="delete"></a>Удалить
+### <a name="delete"></a>DELETE
 
 При удалении пула, содержащего узлы, первый пакет удаляет узлы. Затем он удаляет сам объект пула. Удаление узлов пула может занять несколько минут.
 
@@ -104,7 +104,7 @@ ms.locfileid: "75449791"
 
 - Виртуальная машина перемещена из-за сбоя инфраструктуры или обновления нижнего уровня. Пакетная служба восстанавливает узел.
 
-- Образ виртуальной машины был развернут на оборудовании, который его не поддерживает. Например, при попытке запустить образ HPC CentOS на виртуальной машине [Standard_D1_v2](../virtual-machines/linux/sizes-general.md#dv2-series) .
+- Образ виртуальной машины был развернут на оборудовании, который его не поддерживает. Например, при попытке запустить образ HPC CentOS на виртуальной машине [Standard_D1_v2](../virtual-machines/dv2-dsv2-series.md) .
 
 - Виртуальные машины находятся в [виртуальной сети Azure](batch-virtual-network.md), а трафик заблокирован на ключевые порты.
 

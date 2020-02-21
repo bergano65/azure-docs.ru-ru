@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/05/2019
-ms.openlocfilehash: 75811382867b93c778641ece42971018eff39949
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: hdinsightactive
+ms.date: 02/18/2020
+ms.openlocfilehash: c5c8a41aef92876ceaa66fb23c01c6ece1609f91
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73664608"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484814"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight
 
@@ -21,9 +21,8 @@ ms.locfileid: "73664608"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
-* Схема URI для основного хранилища кластеров. Это будет `wasb://` для хранилища BLOB-объектов Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет `wasbs://`.  Дополнительные сведения см. также [в статье требование безопасной пересылки в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
+* Схема URI для основного хранилища кластеров. Это будет `wasb://` для хранилища BLOB-объектов Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет `wasbs://`.  Дополнительные сведения см. [в статье обязательное безопасное перемещение в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
 
 ## <a name="launch-an-apache-zeppelin-notebook"></a>Запуск записной книжки Apache Zeppelin
 
@@ -136,11 +135,11 @@ ms.locfileid: "73664608"
 
     а. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
 
-    b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
+    б. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
 
     ![Использование внешних пакетов с записной книжкой Jupyter](./media/apache-spark-zeppelin-notebook/use-external-packages-with-jupyter.png "Использование внешних пакетов с записной книжкой Jupyter")
 
-    c. Объедините три значения, разделив их двоеточием ( **:** ).
+    в. Объедините три значения, разделив их двоеточием ( **:** ).
 
         com.databricks:spark-csv_2.10:1.4.0
 
@@ -154,7 +153,7 @@ ms.locfileid: "73664608"
 
 ## <a name="livy-session-management"></a>Управление сеансом Livy
 
-При выполнении первого абзаца кода в записной книжке Zeppelin в кластере HDInsight Spark создается новый сеанс Livy. Этот сеанс будет общим в записных книжках Zeppelin, которые вы затем создадите. Если по какой-то причине сеанс Livy будет завершен (перезагрузка кластера и т. д.), вы не сможете запускать задания из записной книжки Zeppelin.
+При выполнении первого абзаца кода в записной книжке Zeppelin в кластере HDInsight Spark создается новый сеанс Livy. Этот сеанс будет общим в записных книжках Zeppelin, которые вы затем создадите. Если по какой-либо причине сеанс Livy был прерван (перезагрузка кластера и т. д.), вы не сможете запускать задания из записной книжки Zeppelin.
 
 В этом случае перед началом выполнения заданий из записной книжки Zeppelin необходимо сделать следующее:  
 
@@ -168,16 +167,51 @@ ms.locfileid: "73664608"
 
 3. Запустите ячейку кода из имеющейся записной книжки Zeppelin. При этом в кластере HDInsight будет создан сеанс Livy.
 
-## <a name="seealso"></a>Дополнительные материалы
+## <a name="general-information"></a>Общие сведения
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+### <a name="validate-service"></a>Проверка службы
+
+Чтобы проверить службу из Ambari, перейдите по адресу `https://CLUSTERNAME.azurehdinsight.net/#/main/services/ZEPPELIN/summary`, где ИМЯ_КЛАСТЕРА — это имя кластера.
+
+Чтобы проверить службу из командной строки, подключитесь к головному узлу по протоколу SSH. Переключите пользователя в Zeppelin с помощью команды `sudo su zeppelin`. Команды состояния:
+
+|Команда |Описание |
+|---|---|
+|`/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh status`|Состояние службы.|
+|`/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh --version`|Версия службы.|
+|`ps -aux | grep zeppelin`|Определение PID.|
+
+### <a name="log-locations"></a>Расположения журналов
+
+|Service |путь |
+|---|---|
+|Zeppelin — сервер|/уср/хдп/куррент/зеппелин-сервер/|
+|Журналы сервера|/вар/лог/зеппелин|
+|Интерпретатор конфигурации, широ, site. XML, log4j|/УСР/ХДП/куррент/Зеппелин-сервер/конф или/ЕТК/Зеппелин/конф|
+|Каталог PID|/вар/рун/зеппелин|
+
+### <a name="enable-debug-logging"></a>Включение ведения журнала отладки
+
+1. Перейдите к `https://CLUSTERNAME.azurehdinsight.net/#/main/services/ZEPPELIN/summary`, где ИМЯ_КЛАСТЕРА — имя кластера.
+
+1. Перейдите в раздел **конфигурации** > **Дополнительные Zeppelin-log4j-Properties** > **log4j_properties_content**.
+
+1. Измените `log4j.appender.dailyfile.Threshold = INFO` на `log4j.appender.dailyfile.Threshold = DEBUG`.
+
+1. Добавьте `log4j.logger.org.apache.zeppelin.realm=DEBUG`.
+
+1. Сохраните изменения и перезапустите службу.
+
+## <a name="next-steps"></a>Следующие шаги
+
+[Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 
 * [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журнала веб-сайта с использованием Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 
@@ -187,8 +221,8 @@ ms.locfileid: "73664608"
 ### <a name="tools-and-extensions"></a>Средства и расширения
 
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Apache Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 

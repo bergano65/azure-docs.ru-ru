@@ -1,18 +1,18 @@
 ---
 title: Публикация встроенных приложений в виртуальных рабочих столах Windows в Azure
-description: Как опубликовать современные приложения в виртуальном рабочем столе Windows.
+description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: helohr
-ms.openlocfilehash: 37fc089ab68bfb3cd26e1656ba84610fe8a47bc6
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: e8e8512fa9f6a64fb0db688b7badcb699f6ccaa5
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367273"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484627"
 ---
 # <a name="publish-built-in-apps-in-windows-virtual-desktop"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows
 
@@ -45,7 +45,7 @@ ms.locfileid: "77367273"
 New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -FriendlyName <remoteappname> -FilePath "shell:Appsfolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как настроить веб-каналы, чтобы организовать отображение приложений для пользователей в [настраиваемом веб-канале для пользователей виртуальных рабочих столов Windows](customize-feed-for-virtual-desktop-users.md).
 - Дополнительные сведения о функции присоединения приложения MSIX см. в статье Настройка присоединения приложения [MSIX](app-attach.md).

@@ -1,33 +1,59 @@
 ---
-title: Моментальный снимок точки конфигурации приложения Azure
-description: Общие сведения о функционировании моментального снимка на определенный момент времени в службе "Конфигурация приложений Azure"
+title: Получение пар "ключ-значение" на момент времени
+titleSuffix: Azure App Configuration
+description: Получение старых пар "ключ-значение" с помощью моментальных снимков на момент времени в конфигурации приложения Azure
 services: azure-app-configuration
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: conceptual
-ms.date: 02/24/2019
-ms.openlocfilehash: 4a352ba913b6ad4e3c8607677078e21070f294fd
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 02/20/2020
+ms.openlocfilehash: 1e2a4f7a7bc5db1b6a49f085821f7fa2bde54229
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899590"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77523668"
 ---
 # <a name="point-in-time-snapshot"></a>Моментальный снимок на определенный момент времени
 
-В службе "Конфигурация приложений Azure" сохраняются записи с точным временем создания новой пары "ключ — значение" и ее изменения в дальнейшем. Эти записи образуют полную временную шкалу изменений пары "ключ — значение". С помощью хранилища Конфигурации приложений можно восстановить журнал пары "ключ — значение" и воспроизвести ее последнее значение в любой момент времени до текущего. Эта функция позволяет "переместиться назад во времени" и получить старую пару "ключ — значение". Например, вы можете получить вчерашние параметры конфигурации, которые были активны непосредственно перед последним развертыванием, чтобы восстановить предыдущую конфигурацию и откатить приложение.
+В конфигурации приложений Azure сохраняется запись об изменениях в парах "ключ-значение". Эта запись представляет собой временную шкалу изменений "ключ — значение". Вы можете восстановить историю любого значения ключа и предоставить свое значение в любое время в течение предыдущих семи дней. С помощью этой функции можно «пройти по времени» назад и получить старое значение ключа. Например, можно восстановить параметры конфигурации, используемые до последнего развертывания, чтобы выполнить откат приложения к предыдущей конфигурации.
 
 ## <a name="key-value-retrieval"></a>Получение пары "ключ — значение"
 
-Для получения прошлой пары "ключ — значение" укажите время, когда был создан моментальный снимок этой пары, в заголовке HTTP вызова REST API. Пример.
+Можно использовать Azure PowerShell для получения значений прежних ключей.  Используйте `az appconfig revision list`, добавив соответствующие параметры для получения необходимых значений.  Укажите экземпляр конфигурации приложения Azure, указав имя хранилища (`--name {app-config-store-name}`) или строку подключения (`--connection-string {your-connection-string}`). Ограничьте вывод, указав конкретный момент времени (`--datetime`) и указав максимальное число возвращаемых элементов (`--top`).
 
-```rest
-GET /kv HTTP/1.1
-Accept-Datetime: Sat, 1 Jan 2019 02:10:00 GMT
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+Извлеките все записанные изменения в значения ключей.
+
+```azurepowershell
+az appconfig revision list --name {your-app-config-store-name}.
 ```
 
-Сейчас в службе "Конфигурация приложений" сохраняется журнал изменений за 7 дней.
+Получение всех записанных изменений для ключа `environment`, а также меток `test` и `prod`.
+
+```azurepowershell
+az appconfig revision list --name {your-app-config-store-name} --key environment --label test,prod
+```
+
+Получение всех записанных изменений в иерархическом пространстве ключа `environment:prod`.
+
+```azurepowershell
+az appconfig revision list --name {your-app-config-store-name} --key environment:prod:* 
+```
+
+Получение всех записанных изменений для ключа `color` в заданный момент времени.
+
+```azurepowershell
+az appconfig revision list --connection-string {your-app-config-connection-string} --key color --datetime "2019-05-01T11:24:12Z" 
+```
+
+Извлеките последние 10 записанных изменений в значения ключа и возвратите только значения для `key`, `label`и отметок времени `last-modified`.
+
+```azurepowershell
+az appconfig revision list --name {your-app-config-store-name} --top 10 --fields key,label,last-modified
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

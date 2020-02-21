@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f8c98149d9e9ff65b7b18762f0f17d19053f2f49
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: ec97f986c4472f793c2d38ded2a1c6873b1ee08d
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846761"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77482791"
 ---
 # <a name="application-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, которые можно использовать в Active Directory B2C
 
@@ -125,7 +125,7 @@ Accept: application/json
 
 #### <a name="web-api-chains-on-behalf-of-flow"></a>Цепочки веб-API (поток On-Behalf-Of)
 
-Многие архитектуры включают в себя интерфейс веб-API, которому требуется вызывать другой нисходящий веб-API. При этом Azure AD B2C защищает оба интерфейса. Этот сценарий распространен в собственных клиентах с серверной стороны веб-API и вызывает службу Microsoft Online Service, например Microsoft Graph API или Azure AD API Graph.
+Многие архитектуры включают в себя интерфейс веб-API, которому требуется вызывать другой нисходящий веб-API. При этом Azure AD B2C защищает оба интерфейса. Этот сценарий распространен в собственных клиентах, имеющих серверный веб-API, и вызывает службу Microsoft Online Service, например Microsoft Graph API.
 
 Этот сценарий веб-API с цепочками может поддерживаться путем предоставления учетных данных носителя JWT OAuth 2.0 или потока On-Behalf-Of.  Однако в Azure AD B2C поток On-Behalf-Of еще не реализован.
 

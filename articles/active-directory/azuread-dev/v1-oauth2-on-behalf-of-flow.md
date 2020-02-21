@@ -17,12 +17,12 @@ ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: fbef4d84e86c3d35e35a8bbeb04a399ad87a1b89
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 084c15c7ac3ec782dc48a55e65bf4d7aa43b58a1
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77164088"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484185"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 
@@ -267,7 +267,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdW
 - **SubjectConfirmationData для утверждения SAML, полученного из вызова OBO.** Если целевому приложению необходимо значение получателя в параметре **SubjectConfirmationData**, то значением должен быть URL-адрес ответа без подстановочных знаков в конфигурации приложения-ресурса.
 - **Узел SubjectConfirmationData.** Узел не может содержать атрибут **InResponseTo**, так как он не входит в состав отклика SAML. Приложение, получающее токен SAML, должно иметь возможность принимать утверждение SAML без атрибута **InResponseTo**.
 
-- **Согласие.** Должно быть предоставлено согласие на получение токена SAML, содержащего данные пользователей в потоке OAuth. Сведения о разрешениях и получении согласия администратора см. в статье [Разрешения и согласие в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-permissions-and-consent).
+- **Согласие.** Должно быть предоставлено согласие на получение токена SAML, содержащего данные пользователей в потоке OAuth. Сведения о разрешениях и получении согласия администратора см. в статье [Разрешения и согласие в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/azuread-dev/v1-permissions-consent).
 
 ### <a name="response-with-saml-assertion"></a>Отклик с утверждением SAML
 

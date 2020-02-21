@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 11/04/2019
-ms.openlocfilehash: 2869384d4f4072e1e71ab0a69af81edc68e7a5b7
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 2ef3cbc83cd67647709a53fee2c32b444c5d86f4
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77366244"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77526133"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -83,7 +83,7 @@ ms.locfileid: "77366244"
 
 В каждом автоматическом эксперименте машинного обучения данные автоматически масштабируются или нормализованы, что способствует эффективному выполнению алгоритмов.  Во время обучения модели для каждой модели будет применен один из следующих методов масштабирования или нормализации.
 
-|Масштабирование&nbsp;&&nbsp;нормализация| Описание |
+|Масштабирование&nbsp;&&nbsp;нормализация| Description |
 | ------------- | ------------- |
 | [стандардскалевраппер](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Стандартизация функций путем удаления среднего и масштабирования в дисперсию единиц  |
 | [минмаксскалар](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Преобразует функции путем масштабирования каждой функции по минимальному и максимальному столбцам.  |
@@ -141,7 +141,7 @@ ms.locfileid: "77366244"
 
 | Модель | Точность обучения | Точность теста |
 |-------|----------------|---------------|
-| А | 99,9 % | 95% |
+| Объект | 99,9 % | 95% |
 | B | 87% | 87% |
 | C | 99,9 % | 45% |
 
@@ -193,7 +193,7 @@ ms.locfileid: "77366244"
 
 Кроме того, автоматические запуски ML автоматически создают следующие диаграммы, которые помогут понять правильность классификаций модели и определить модели, потенциально влияющие на несбалансированные данные.
 
-Диаграмма| Описание
+Диаграмма| Description
 ---|---
 [Матрица путаницы](how-to-understand-automated-ml.md#confusion-matrix)| Оценивает правильно классифицированные метки относительно фактических меток данных. 
 [Точность и отзыв](how-to-understand-automated-ml.md#precision-recall-chart)| Оценивает отношение правильных меток относительно соотношения найденных экземпляров меток данных 
@@ -215,7 +215,7 @@ ms.locfileid: "77366244"
 
 Машинное обучение Azure предлагает два опыта работы с автоматизированным ML
 
-* Для клиентов с опытом работы с кодом [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azureml-sdk/?view=azure-ml-py) 
+* Для клиентов с опытом работы с кодом [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) 
 
 * Для клиентов с ограниченными возможностями кода или без него Машинное обучение Azure Studio на [https://ml.azure.com](https://ml.azure.com/)  
 
@@ -271,7 +271,7 @@ ms.locfileid: "77366244"
 Приостановить выполнение| ✓| 
 Возобновить выполнение| ✓| 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. примеры и научитесь создавать модели с помощью автоматизированного машинного обучения.
 

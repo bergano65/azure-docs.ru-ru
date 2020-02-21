@@ -10,12 +10,12 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: trbye
 ms.date: 10/25/2019
-ms.openlocfilehash: 9cacc0a1faa66e5d265f7f80830e13c54a88a68c
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 4ab3bc43cf8ef479cb91d187a4c177db03415b86
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77366270"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77525589"
 ---
 # <a name="model-interpretability-in-automated-machine-learning"></a>Интерпретируемость модели в автоматизированном машинном обучении
 
@@ -29,7 +29,7 @@ ms.locfileid: "77366270"
 - Включите визуализации, чтобы видеть закономерности в данных и объяснениях.
 - Реализуйте интерпретируемость во время вывода или оценки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Функции интерпретации. Запустите `pip install azureml-interpret azureml-contrib-interpret`, чтобы получить необходимые пакеты.
 - Знание создания автоматических экспериментов ML. Дополнительные сведения об использовании пакета SDK для Машинное обучение Azure см. в руководстве по [модели регрессии](tutorial-auto-train-models.md) или о [настройке автоматизированных экспериментов ML](how-to-configure-auto-train.md).
@@ -89,12 +89,13 @@ automl_explainer_setup_obj = automl_setup_model_explanations(fitted_model, X=X_t
 Мимиквраппер также принимает объект `automl_run`, в который будут отправлены необработанные и инженерные объяснения.
 
 ```python
-from azureml.interpret.mimic.models.lightgbm_model import LGBMExplainableModel
-from azureml.interpret.mimic_wrapper import MimicWrapper
+from azureml.explain.model.mimic.models.lightgbm_model import LGBMExplainableModel
+from azureml.explain.model.mimic_wrapper import MimicWrapper
 
-explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMExplainableModel, 
+# Initialize the Mimic Explainer
+explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMExplainableModel,
                          init_dataset=automl_explainer_setup_obj.X_transform, run=automl_run,
-                         features=automl_explainer_setup_obj.engineered_feature_names, 
+                         features=automl_explainer_setup_obj.engineered_feature_names,
                          feature_maps=[automl_explainer_setup_obj.feature_map],
                          classes=automl_explainer_setup_obj.classes)
 ```
@@ -230,6 +231,6 @@ if service.state == 'Healthy':
 
 [Архитектура интерпретации Машинное обучение ![](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как включить пояснения к модели и важность признаков в областях пакета SDK Машинное обучение Azure, отличного от автоматизированного машинного обучения, см. в [статье о концепции, посвященной возможностям интерпретации](how-to-machine-learning-interpretability.md).

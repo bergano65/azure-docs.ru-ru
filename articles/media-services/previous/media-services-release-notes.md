@@ -13,19 +13,19 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: 310b3778a43c74db30940368d35c39c99f64a28c
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: cfe5ea47ad2cbed7bd2779ee535d7bef447475e5
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77049987"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500348"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> Новые компоненты не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Мы ждем отзывов от наших заказчиков, чтобы уделить внимание исправлению проблем, влияющих на вашу работу. Сообщения о проблемах и вопросы размещайте на [форуме MSDN по службам мультимедиа Azure]. 
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/14/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 21fde69f404ee535bfe0019a91843297b1752a92
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 8649537a2992ba11a2b664a9b36207e06c8b1274
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463145"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77498551"
 ---
 # <a name="deploy-custom-policies-with-azure-pipelines"></a>Развертывание настраиваемых политик с помощью Azure Pipelines
 
@@ -31,10 +31,11 @@ ms.locfileid: "77463145"
 > [!IMPORTANT]
 > Управление Azure AD B2C пользовательскими политиками с помощью конвейера Azure в настоящее время использует операции **предварительной версии** , доступные в конечной точке Microsoft Graph API `/beta`. Использование этих API для приложений в рабочей среде не поддерживается. Дополнительные сведения см. в [справочнике по конечной точке бета-версии Microsoft Graph REST API](https://docs.microsoft.com/graph/api/overview?toc=./ref/toc.json&view=graph-rest-beta).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/users-groups-roles/directory-assign-admin-roles.md#b2c-ief-policy-administrator)
 * [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
+* [Приложение управления](microsoft-graph-get-started.md) , зарегистрированное в клиенте с помощью политики разрешений Microsoft Graph API *. ReadWrite. TrustFramework*
 * [Конвейер Azure](https://azure.microsoft.com/services/devops/pipelines/)и доступ к [Azure DevOps Services проекту][devops-create-project]
 
 ## <a name="client-credentials-grant-flow"></a>Поток предоставления учетных данных клиента
@@ -43,47 +44,11 @@ ms.locfileid: "77463145"
 
 ## <a name="register-an-application-for-management-tasks"></a>Регистрация приложения для задач управления
 
-Начните с создания регистрации приложения, которую сценарии PowerShell выполняли Azure Pipelines будут использовать для взаимодействия с Azure AD B2C. Если у вас уже есть регистрация приложения, которая используется для задач автоматизации, можно перейти к разделу [предоставление разрешений](#grant-permissions) .
+Как упоминалось в [предварительных требованиях](#prerequisites), требуется регистрация приложения, выполняемая сценариями PowerShell, с помощью Azure pipelines--может использоваться для доступа к ресурсам в клиенте.
 
-### <a name="register-application"></a>Регистрация приложения
+Если у вас уже есть регистрация приложения, которая используется для задач автоматизации, убедитесь, что ей предоставлено разрешение **политики** **Microsoft Graph** >  > **Policy. ReadWrite. TrustFramework** в **разрешениях API** регистрации приложения.
 
-[!INCLUDE [active-directory-b2c-appreg-mgmt](../../includes/active-directory-b2c-appreg-mgmt.md)]
-
-### <a name="grant-permissions"></a>Предоставление разрешений
-
-Затем предоставьте приложению разрешение на использование API Microsoft Graph для чтения и записи пользовательских политик в клиенте Azure AD B2C.
-
-#### <a name="applications"></a>[Приложения](#tab/applications/)
-
-1. На странице Обзор **зарегистрированного приложения** выберите **Параметры**.
-1. В разделе **доступ через API**выберите **необходимые разрешения**.
-1. Нажмите кнопку **Добавить**, а затем **выберите API**.
-1. Выберите **Microsoft Graph**, а затем **выберите**.
-1. В разделе **разрешения приложения**выберите **чтение и запись политик инфраструктуры доверия вашей организации**.
-1. Щелкните **выбрать**, затем **Готово**.
-1. Щелкните **Предоставить разрешения** и затем выберите **Да**. Для полного распространения разрешений может потребоваться несколько минут.
-
-#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
-
-1. Выберите **Регистрация приложений (Предварительная версия)** , а затем выберите веб-приложение, которое должно иметь доступ к Microsoft Graph API. Например, *managementapp1*.
-1. В разделе **Управление** выберите **Разрешения API**.
-1. В разделе **Настроенные разрешения** выберите **Добавить разрешение**.
-1. Перейдите на вкладку **API-интерфейсы Майкрософт** и выберите **Microsoft Graph**.
-1. Выберите **Разрешения приложений**.
-1. Разверните **политику** и выберите **Policy. ReadWrite. TrustFramework**.
-1. Выберите **Добавить разрешения**. В соответствии с инструкциями подождите несколько минут, прежде чем перейти к следующему шагу.
-1. Выберите **Предоставить согласие администратора для (имя арендатора)** .
-1. Выберите учетную запись администратора, с которой выполнен вход, или выполните вход с учетной записью в арендаторе Azure AD B2C, которой назначена по крайней мере роль *Администратор облачных приложений*.
-1. Нажмите кнопку **Принять**.
-1. Выберите **Обновить**и убедитесь, что "предоставлено..." отображается в разделе **состояние**. Распространение разрешений может занять несколько минут.
-
-* * *
-
-### <a name="create-client-secret"></a>Создать секрет клиента
-
-Для проверки подлинности с помощью Azure AD B2C сценарий PowerShell должен указать секрет клиента, создаваемый для приложения.
-
-[!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
+Инструкции по регистрации приложения управления см. в статье [управление Azure AD B2C с помощью Microsoft Graph](microsoft-graph-get-started.md).
 
 ## <a name="configure-an-azure-repo"></a>Настройка репозитория Azure
 
@@ -200,7 +165,7 @@ ms.locfileid: "77463145"
 
         ```PowerShell
         # After
-        -ClientID $(clientId) -ClientSecret $(clientSecret) -TenantId $(tenantId) -PolicyId B2C_1A_TrustFrameworkBase -PathToFile $(System.DefaultWorkingDirectory)/contosob2cpolicies/B2CAssets/TrustFrameworkBase.xml
+        -ClientID $(clientId) -ClientSecret $(clientSecret) -TenantId $(tenantId) -PolicyId B2C_1A_TrustFrameworkBase -PathToFile $(System.DefaultWorkingDirectory)/policyRepo/B2CAssets/TrustFrameworkBase.xml
         ```
 
 1. Нажмите кнопку **сохранить** , чтобы сохранить задание агента.
@@ -242,7 +207,7 @@ PublicPolicyUri="http://contoso.onmicrosoft.com/B2C_1A_TrustFrameworkBase">
 
 Вы увидите баннер с уведомлением о том, что выпуск поставлен в очередь. Чтобы просмотреть его состояние, выберите ссылку в баннере уведомления или выберите ее в списке на вкладке **выпуски** .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. также:
 
