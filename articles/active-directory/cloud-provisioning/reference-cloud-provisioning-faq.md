@@ -75,4 +75,4 @@ ms.locfileid: "77020766"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое подготовка облака Azure AD Connect?](what-is-cloud-provisioning.md)

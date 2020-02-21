@@ -710,7 +710,7 @@
             - name: ВОПРОСЫ И ОТВЕТЫ
               href: migration-classic-resource-manager-faq.md
 - name: Диагностика
-  href: ../troubleshooting/index.md
+  href: ../troubleshooting/index.yml
 - name: Справочник
   items:
     - name: Azure CLI
