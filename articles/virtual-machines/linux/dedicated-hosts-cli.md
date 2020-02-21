@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 01/09/2020
 ms.author: cynthn
-ms.openlocfilehash: b301012425e0a2590fa5ac22985abe9c96fbd419
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: ab9d7128748e99b75b7e1a7187a7958e18300759
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834923"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77483488"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-cli"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure CLI
  
@@ -27,7 +27,7 @@ ms.locfileid: "75834923"
 ## <a name="limitations"></a>Ограничения
 
 - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-- В первоначальном выпуске поддерживается Следующая серия виртуальных машин: DSv3 и ESv3. 
+- В первоначальном выпуске поддерживается Следующая серия виртуальных машин: DSv3, ESv3, серия fsv2, LSv2 и MSv2. 
  
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов 

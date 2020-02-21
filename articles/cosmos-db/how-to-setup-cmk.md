@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: thweiss
 ROBOTS: noindex, nofollow
-ms.openlocfilehash: 56cbae7ae56c4b482ac6de201c7a2c8aacb81e59
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 44bbd7eab80ecb1cbfef9738e42b4070dff31180
+ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048590"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506048"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Настройка ключей, управляемых клиентом, для учетной записи Azure Cosmos с помощью Azure Key Vault
 
@@ -61,7 +61,7 @@ ms.locfileid: "77048590"
 
    ![Выбор нужных разрешений](./media/how-to-setup-cmk/portal-akv-add-ap-perm2.png)
 
-1. В разделе **Выбор субъекта**выберите **нет выбрано**. Затем найдите **Azure Cosmos DB** участника и выберите его. Наконец, нажмите кнопку **выбрать** в нижней части страницы. Если субъект **Azure Cosmos DB** отсутствует в списке, может потребоваться повторная регистрация поставщика ресурсов **Microsoft. DocumentDB** , как описано в разделе [Регистрация поставщика ресурсов](#register-resource-provider) этой статьи.
+1. В разделе **Выбор субъекта**выберите **нет выбрано**. Затем найдите субъект **Azure Cosmos DB** и выберите его (чтобы упростить поиск, можно также выполнить поиск по идентификатору участника: `a232010e-820c-4083-83bb-3ace5fc29d0b` для любого региона Azure, за исключением регионов Azure для государственных организаций, где идентификатор субъекта — `57506a73-e302-42a9-b869-6f12d9ec29e9`). Наконец, нажмите кнопку **выбрать** в нижней части страницы. Если субъект **Azure Cosmos DB** отсутствует в списке, может потребоваться повторная регистрация поставщика ресурсов **Microsoft. DocumentDB** , как описано в разделе [Регистрация поставщика ресурсов](#register-resource-provider) этой статьи.
 
    ![Выберите субъект Azure Cosmos DB](./media/how-to-setup-cmk/portal-akv-add-ap.png)
 

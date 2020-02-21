@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
-ms.openlocfilehash: 11c964bedce7a8b979434b888d756c2121d06a60
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 815976c672272270e465610e17fef3aea79387f6
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873834"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77526643"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-data-plane-analysis"></a>Взаимодействие в функциях подключения к серверной части в Azure. Анализ плоскости данных
 
@@ -171,14 +171,14 @@ ms.locfileid: "74873834"
 Ниже представлена трассировка маршрута пакетов из периферийной виртуальной сети на виртуальную машину в локальном расположении 2.
 
 
-    C:\Users\rb>tracert 10.2.30.10
+    C:\Users\rb>tracert 10.1.31.10
 
-    Tracing route to 10.2.30.10 over a maximum of 30 hops
+    Tracing route to 10.1.31.10 over a maximum of 30 hops
 
-      1    24 ms     2 ms     3 ms  10.10.30.132
+      1    76 ms    75 ms    76 ms  10.10.30.134
       2     *        *        *     Request timed out.
       3     *        *        *     Request timed out.
-      4     3 ms     2 ms     2 ms  10.2.30.10
+      4    75 ms    75 ms    75 ms  10.1.31.10
 
     Trace complete.
 
@@ -302,7 +302,7 @@ ms.locfileid: "74873834"
 
 На следующем рисунке показано представление топологии для подключения виртуальной машины из локального расположения 1 к виртуальной машине в центральной сети через ExpressRoute.
 
-![4..][4]
+![4][4]
 
 Как говорилось ранее, в тестовой конфигурации VPN-подключение типа "сеть — сеть" используется в качестве резервного, а основным служит подключение ExpressRoute между локальным расположением 1 и центральной виртуальной сетью. Чтобы протестировать обратный путь данных, мы смоделируем сбой канала ExpressRoute между основным маршрутизатором CE в локальном расположении 1 и соответствующим MSEE. Чтобы вызвать сбой соединения ExpressRoute, завершите работу интерфейса CE, подключенного к MSEE:
 
@@ -506,7 +506,7 @@ ExpressRoute предоставляется в виде пары каналов,
 [Вопросы и ответы по ExpressRoute][ExR-FAQ] см. в следующих статьях:
 -   количество каналов ExpressRoute, которые можно подключить к шлюзу ExpressRoute;
 -   количество шлюзов ExpressRoute, которые можно подключить к каналу ExpressRoute;
--   Дополнительные ограничения масштаба ExpressRoute.
+-   дополнительные ограничения масштаба для ExpressRoute.
 
 
 <!--Image References-->

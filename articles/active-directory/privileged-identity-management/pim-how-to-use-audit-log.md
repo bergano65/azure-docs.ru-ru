@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 11/13/2019
+ms.date: 02/07/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d46036efa04b4e0225cad6e8a70cd31ad3c10bd
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: a4a2eccc02d13bf5a2dfc8bf3ceb7887e4962489
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024183"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77498503"
 ---
 # <a name="view-audit-history-for-azure-ad-roles-in-pim"></a>Просмотр журнала аудита для ролей Azure AD в PIM
 
@@ -32,9 +32,9 @@ ms.locfileid: "77024183"
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте страницу **Azure AD Privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-    ![Новая версия ролей Azure AD](./media/pim-how-to-add-role-to-user/pim-new-version.png)
+    [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
-# <a name="new-versiontabnew"></a>[Новая версия](#tab/new)
+# <a name="new-version"></a>[Новая версия](#tab/new)
 
 Чтобы просмотреть журнал аудита для ролей Azure AD, выполните следующие действия.
 
@@ -50,7 +50,7 @@ ms.locfileid: "77024183"
 
 1. Отфильтруйте журнал по предопределенной дате или настраиваемому диапазону.
 
-    ![Список аудита ресурсов с фильтрами](media/azure-pim-resource-rbac/rbac-resource-audit.png)
+    ![Список аудита ресурсов с фильтрами](media/pim-how-to-use-audit-log/resource-audit.png)
 
 ## <a name="view-my-audit"></a>Просмотр раздела "Мой аудит"
 
@@ -66,9 +66,9 @@ ms.locfileid: "77024183"
 
 1. Отфильтруйте журнал по предопределенной дате или настраиваемому диапазону.
 
-    ![Список аудита для текущего пользователя](media/azure-pim-resource-rbac/my-audit-time.png)
+    ![Список аудита для текущего пользователя](media/pim-how-to-use-audit-log/audit-time-span.png)
 
-# <a name="previous-versiontabprevious"></a>[Предыдущая версия](#tab/previous)
+# <a name="previous-version"></a>[Предыдущая версия](#tab/previous)
 
 ## <a name="view-audit-history"></a>Просмотр журнала аудита
 
@@ -90,12 +90,12 @@ ms.locfileid: "77024183"
 
     | Столбец | Description |
     | --- | --- |
-    | Время | Когда произошло действие. |
+    | Time | Когда произошло действие. |
     | Запрашивающей стороны | Пользователь, который запросил активацию или изменение роли. Если это значение является **системой Azure**, дополнительные сведения см. в журнале аудита Azure. |
-    | Действия | Действия, предпринятые запрашивающей стороны. Действия могут включать назначение, отмену назначения, активацию, деактивацию или Аддедаутсидепим. |
+    | Действие | Действия, предпринятые запрашивающей стороны. Действия могут включать назначение, отмену назначения, активацию, деактивацию или Аддедаутсидепим. |
     | Участник | Пользователь, который активирует или назначается роли. |
     | Роль | Роль, назначенная или активированная пользователем. |
-    | Мотивация | Текст, который был указан в поле Reason во время активации. |
+    | Обоснование | Текст, который был указан в поле Reason во время активации. |
     | Окончание срока действия | По истечении срока действия активированной роли. Применяется только к подходящим назначениям ролей. |
 
 1. Чтобы отсортировать журнал аудита, нажмите кнопки **время**, **действие**и **роль** .

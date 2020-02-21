@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 12/17/2019
+ms.date: 02/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 9b106ea43e6a11d616ed2212636975bbbbf65631
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: be858e9200191de7e0bda0ae227519666d80fb7a
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75752408"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500583"
 ---
 ### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Сколько конечных точек VPN-клиента можно настроить в конфигурации "точка — сеть"?
 
@@ -29,7 +29,7 @@ ms.locfileid: "75752408"
 * Windows Server 2012 (только 64-разрядная версия)
 * Windows Server 2012 R2 (только 64-разрядная версия)
 * Windows Server 2016 (только 64-разрядная версия)
-* Windows 10
+* Windows 10
 * Mac OS X версии 10.11 или более поздней
 * Linux (StrongSwan)
 * iOS
@@ -80,7 +80,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
    | Версия ОС | Дата | Номер или ссылка |
    |---|---|---|
-   | Windows Server 2016<br>Windows 10 версии 1607 | 17 января 2018 г. | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
+   | Windows Server 2016<br>Windows 10 версии 1607 | 17 января 2018 г. | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10 версии 1703 | 17 января 2018 г. | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |
    | Windows 10 версии 1709 | 22 марта 2018 г. | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
    |  |  |  |
@@ -98,3 +98,21 @@ Azure поддерживает VPN-подключения "точка — сет
 ### <a name="i-already-have-an-azure-vpn-gateway-deployed-can-i-enable-radius-andor-ikev2-vpn-on-it"></a>У меня уже развернут VPN-шлюз Azure. Можно ли включить на нем RADIUS и/или IKEv2 для VPN?
 
 Да, эти новые функции можно включить для уже развернутых шлюзов с помощью Powershell или портала Azure при условии, что используемый шлюз SKU поддерживает RADIUS и/или IKEv2. Например, VPN-шлюз со SKU "Базовый" не поддерживает RADIUS или IKEv2.
+
+### <a name="removeconfig"></a>Разделы справки удалить конфигурацию подключения P2S?
+
+Конфигурацию P2S можно удалить с помощью Azure CLI и PowerShell с помощью следующих команд:
+
+#### <a name="azure-powershell"></a>Azure PowerShell
+
+```azurepowershell-interactive
+$gw=Get-AzVirtualNetworkGateway -name <gateway-name>`  
+$gw.VPNClientConfiguration = $null`  
+Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw`
+```
+
+#### <a name="azure-cli"></a>Azure CLI
+
+```azurecli-interactive
+az network vnet-gateway update --name <gateway-name> --resource-group <resource-group name> --remove "vpnClientConfiguration"
+```

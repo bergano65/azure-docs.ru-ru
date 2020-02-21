@@ -7,19 +7,19 @@ documentationcenter: na
 manager: jodadzie
 ms.assetid: afb77f2d-5ddd-4c2e-a840-09021b0efef1
 ms.service: active-directory
-ms.subservice: app-mgmt
+ms.subservice: app-provisioning
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
-ms.openlocfilehash: 6f7497e62be0036c13d5c33fa82301469df16f26
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 00b16f969525e7b802c008ba247ecba015875689
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066191"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522362"
 ---
 # <a name="sap-successfactors-attribute-reference"></a>Справочник по атрибутам SAP SuccessFactors
 
@@ -71,8 +71,8 @@ ms.locfileid: "77066191"
 | 38 | Пользователь                                   | zipCode                      | Чтение           |
 | 39 | перфоне                               | ареакоде                     | Чтение           |
 | 40 | перфоне                               | countryCode                  | Чтение           |
-| 41 | перфоне                               | Расширение                    | Чтение           |
-| 42 | перфоне                               | PhoneNumber                  | Чтение           |
+| 41 | перфоне                               | модуль                    | Чтение           |
+| 42 | перфоне                               | phoneNumber                  | Чтение           |
 | 43 | перфоне                               | фонетипе                    | Чтение           |
 | 44 | перемаил                               | emailAddress                 | Чтение и запись    |
 | 45 | перемаил                               | емаилтипе                    | Чтение           |
@@ -98,7 +98,7 @@ ms.locfileid: "77066191"
 | 64 | Емпжоб\.CostCenter                     | костцентердескриптион        | Чтение           |
 | 65 | Емпжоб\.                     | department                   | Чтение           |
 | 66 | Емпжоб\.                     | departmentId                 | Чтение           |
-| 67 | Емпжоб\.                       | division                     | Чтение           |
+| 67 | Емпжоб\.                       | деление                     | Чтение           |
 | 68 | Емпжоб\.                       | divisionId                   | Чтение           |
 | 69 | Емпжоб\.Жобкоде                        | жобкоде                      | Чтение           |
 | 70 | Емпжоб\.Жобкоде                        | жобкодеид                    | Чтение           |
@@ -129,12 +129,12 @@ ms.locfileid: "77066191"
 | 9  | Пользователь                                   | state                    | st                                      | Н/Д                                                                                           |
 | 10 | Пользователь                                   | username                 | samAccountName                          | Н/Д                                                                                           |
 | 11 | Пользователь                                   | zipCode                  | postalCode                              | Н/Д                                                                                           |
-| 12 | перемаил                               | emailAddress             | mail                                    | Н/Д                                                                                           |
+| 12 | перемаил                               | emailAddress             | почта                                    | Н/Д                                                                                           |
 | 13 | емпжоб                                 | jobTitle                 | title                                   | Н/Д                                                                                           |
 | 14 | емпжоб                                 | managerId                | manager                                 | Н/Д                                                                                           |
-| 15 | Емпжоб\.компании\.Каунтрйофрегистратион | твочаркаунтрикоде       | с                                       | Н/Д                                                                                           |
+| 15 | Емпжоб\.компании\.Каунтрйофрегистратион | твочаркаунтрикоде       | c                                       | Н/Д                                                                                           |
 | 16 | Емпжоб\.                     | department               | department                              | Н/Д                                                                                           |
-| 17 | Емпжоб\.                       | division                 | company                                 | Н/Д                                                                                           |
+| 17 | Емпжоб\.                       | деление                 | company                                 | Н/Д                                                                                           |
 | 18 | Расположение\.Емпжоб                       | оффицелокатионаддресс    | streetAddress                           | Н/Д                                                                                           |
 | 19 | Расположение\.Емпжоб                       | оффицелокатионзипкоде    | postalCode                              | Н/Д                                                                                           |
 | 20 | емпемплойменттерминатион               | активимплойментскаунт   | AccountEnabled                          | Если Активимплойментскаунт = 0, отключите аккаунт\.                                           |

@@ -17,12 +17,12 @@ ms.date: 01/31/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 8a847afa2253223ebe9450d350cd18f5f659e0e3
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 686a9681394a2d23dafbc03cb533d80ca0f8723b
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77159783"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77484474"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Поток кода авторизации для платформы Microsoft Identity и OAuth 2,0
 
@@ -142,7 +142,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &grant_type=authorization_code
-&client_secret=JqQX2PNo9bpM0uEihUPzyrh    // NOTE: Only required for web apps
+&client_secret=JqQX2PNo9bpM0uEihUPzyrh    // NOTE: Only required for web apps. This secret needs to be URL-Encoded.
 ```
 
 > [!TIP]
@@ -156,7 +156,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `scope`      | обязательно   | Список областей с разделителями-пробелами. Области, запрашиваемые на этом участке, должны быть эквивалентны областям, запрашиваемым на первом участке, или являться их подмножеством. Все области должны быть из одного ресурса, а также с областями OIDC (`profile`, `openid`, `email`). Более подробное описание областей можно найти в разделе, посвященном [разрешениям, согласию на их предоставление и областям](v2-permissions-and-consent.md). |
 | `code`          | обязательно  | Код авторизации, полученный на первом участке потока. |
 | `redirect_uri`  | обязательно  | Значение redirect_uri, которое использовалось для получения кода authorization_code. |
-| `client_secret` | необходим для веб-приложений | Секрет приложения, созданный на портале регистрации для приложения. Не следует использовать секрет приложения в собственном приложении, так как client_secrets не могут быть надежно сохранены на устройствах. Он необходим для веб-приложений и веб-API, которые позволяют безопасно хранить client_secret на стороне сервера.  Секрет клиента должен быть преобразован в формат URL-адреса перед отправкой.  |
+| `client_secret` | необходим для веб-приложений | Секрет приложения, созданный на портале регистрации для приложения. Не следует использовать секрет приложения в собственном приложении, так как client_secrets не могут быть надежно сохранены на устройствах. Он необходим для веб-приложений и веб-API, которые позволяют безопасно хранить client_secret на стороне сервера.  Секрет клиента должен быть преобразован в формат URL-адреса перед отправкой. Для получения дополнительных сведений щелкните [здесь](https://tools.ietf.org/html/rfc3986#page-12). |
 | `code_verifier` | необязательный  | Это тот же параметр code_verifier, который использовался для получения кода авторизации (authorization_code). Является обязательным, если в запросе на код авторизации использовался PKCE. Дополнительные сведения см. в описании [PKCE RFC](https://tools.ietf.org/html/rfc7636). |
 
 ### <a name="successful-response"></a>Успешный ответ
@@ -254,7 +254,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &refresh_token=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq...
 &grant_type=refresh_token
-&client_secret=JqQX2PNo9bpM0uEihUPzyrh      // NOTE: Only required for web apps
+&client_secret=JqQX2PNo9bpM0uEihUPzyrh      // NOTE: Only required for web apps. This secret needs to be URL-Encoded
 ```
 
 > [!TIP]
@@ -268,7 +268,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `grant_type`    | обязательно    | Должен быть `refresh_token` для этого участка потока кода авторизации. |
 | `scope`         | обязательно    | Список областей с разделителями-пробелами. Области, запрашиваемые на этом участке, должны быть эквивалентны областям, запрашиваемым на исходном участке запроса кода авторизации, или являться их подмножеством. Если области, указанные в этом запросе, охватывают несколько серверов ресурсов, конечная точка платформы Microsoft Identity возвратит маркер для ресурса, указанного в первой области. Более подробное описание областей можно найти в разделе, посвященном [разрешениям, согласию на их предоставление и областям](v2-permissions-and-consent.md). |
 | `refresh_token` | обязательно    | Токен обновления, полученный на втором участке потока. |
-| `client_secret` | необходим для веб-приложений | Секрет приложения, созданный на портале регистрации для приложения. Его не следует использовать в собственном приложении, так как client_secrets нельзя надежно хранить на устройствах. Он необходим для веб-приложений и веб-API, которые позволяют безопасно хранить client_secret на стороне сервера. |
+| `client_secret` | необходим для веб-приложений | Секрет приложения, созданный на портале регистрации для приложения. Его не следует использовать в собственном приложении, так как client_secrets нельзя надежно хранить на устройствах. Он необходим для веб-приложений и веб-API, которые позволяют безопасно хранить client_secret на стороне сервера. Этот секрет должен быть закодирован в виде URL-адреса. Дополнительные сведения см. [здесь](https://tools.ietf.org/html/rfc3986#page-12). |
 
 #### <a name="successful-response"></a>Успешный ответ
 

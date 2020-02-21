@@ -6,7 +6,7 @@ documentationcenter: ''
 author: msmimart
 manager: CelesteDG
 ms.service: active-directory
-ms.subservice: app-mgmt
+ms.subservice: app-provisioning
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a44cf9aa5b3287a01617be6439cd04b9a5caa73
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
-ms.translationtype: HT
+ms.openlocfilehash: 4cb1a57c5b18f1da25e3843b55e86705d05f43c5
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484236"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522345"
 ---
 # <a name="build-a-scim-endpoint-and-configure-user-provisioning-with-azure-active-directory-azure-ad"></a>Создание конечной точки SCIM и Настройка подготовки пользователей с помощью Azure Active Directory (Azure AD)
 
@@ -60,10 +60,10 @@ SCIM — это стандартизированное определение д
 |loginName|userName|userPrincipalName|
 |firstName|name.givenName|givenName|
 |lastName|Name. lastName|lastName|
-|воркмаил|Сообщения электронной почты [Type EQ "Рабочая"]. Value|Mail|
+|воркмаил|Сообщения электронной почты [Type EQ "Рабочая"]. Value|Почта|
 |manager|manager|manager|
 |tag|urn: IETF: params: scim: схемы: расширение: 2.0: Кустомекстенсион: TAG|extensionAttribute1|
-|status|active|Иссофтделетед (вычисленное значение не хранится на пользователе)|
+|состояние|активно|Иссофтделетед (вычисленное значение не хранится на пользователе)|
 
 Схема, определенная выше, будет представлена с помощью полезных данных JSON ниже. Обратите внимание, что в дополнение к атрибутам, необходимым для приложения, представление JSON содержит обязательные атрибуты "ID", "externalId" и "META".
 
@@ -99,14 +99,14 @@ SCIM — это стандартизированное определение д
 
 | Пользователь Azure Active Directory | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" |
 | --- | --- |
-| IsSoftDeleted |active |
+| IsSoftDeleted |активно |
 |department|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|
 | displayName |displayName |
 |employeeId|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Емплойинумбер|
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |externalId |
 | manager |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер |
 | mobile |phoneNumbers[type eq "mobile"].value |
@@ -124,16 +124,16 @@ SCIM — это стандартизированное определение д
 | Группа Azure Active Directory | urn: IETF: params: scim: схемы: Core: 2.0: Group |
 | --- | --- |
 | displayName |displayName |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |displayName |
-| members |members |
+| члены |члены |
 | objectId |externalId |
 | proxyAddresses |emails[type eq "other"].Value |
 
 В SCIM RFC определено несколько конечных точек. Можно приступить к работе с конечной точкой/User, а затем развернуть отсюда. Конечная точка/Счемас полезна при использовании настраиваемых атрибутов или при частом изменении схемы. Он позволяет клиенту автоматически получать самую последнюю схему. Конечная точка/Булк особенно полезна при поддержке групп. В следующей таблице описаны различные конечные точки, определенные в стандарте SCIM. Конечная точка/Счемас полезна при использовании настраиваемых атрибутов или при частом изменении схемы. Он позволяет клиенту автоматически получать самую последнюю версию схемы. Конечная точка/Булк особенно полезна при поддержке групп. В следующей таблице описаны различные конечные точки, определенные в стандарте SCIM. 
  
 ### <a name="table-4-determine-the-endpoints-that-you-would-like-to-develop"></a>Таблица 4. Определение конечных точек, которые вы хотите разрабатывать
-|ENDPOINT|DESCRIPTION|
+|ENDPOINT|ОПИСАНИЕ|
 |--|--|
 |WMIC|Выполнение операций CRUD над объектом пользователя.|
 |/Group|Выполнение операций CRUD над объектом группы.|
@@ -560,7 +560,7 @@ SCIM — это стандартизированное определение д
 * Обновление запроса исправления группы должно привести к возникновению в ответе *HTTP 204 без содержимого* . Не рекомендуется возвращать текст со списком всех членов.
 * Не требуется поддерживать возврат всех членов группы.
 
-#### <a name="create-group"></a>Создание группы
+#### <a name="create-group"></a>Создать группу
 
 ##### <a name="request-7"></a>Получения
 
@@ -918,7 +918,7 @@ SCIM — это стандартизированное определение д
 * DigiCert;
 * GeoTrust;
 * GlobalSign;
-* Go Daddy;
+* Go Daddy
 * VeriSign;
 * WoSign.
 

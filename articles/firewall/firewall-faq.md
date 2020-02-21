@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: victorh
-ms.openlocfilehash: 41cc058d09c3bca114ba5a469f23a27ff88fed19
-ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
-ms.translationtype: HT
+ms.openlocfilehash: b28d228dd950796265c5412be30e5d7777cf94c6
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77505799"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77526518"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -137,7 +137,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="are-there-any-firewall-resource-group-restrictions"></a>Существуют ли какие-либо ограничения для групп ресурсов брандмауэра?
 
-Да. Брандмауэр, подсеть, виртуальная сеть и общедоступный IP-адрес должны относиться к одной группе ресурсов.
+Да. Брандмауэр, виртуальная сеть и общедоступный IP-адрес должны находиться в одной группе ресурсов.
 
 ## <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
 

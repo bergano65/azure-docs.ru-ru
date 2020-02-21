@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/02/2020
-ms.openlocfilehash: ef136345c7c41c720efd3c79923b6ce646de41e2
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: d1723b6c5d56554fbff576f6a07e37455845bda4
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75642171"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77498630"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
 
@@ -29,13 +29,13 @@ ms.locfileid: "75642171"
 
 Так как терминология может быть запутанной, стоит отметить, что [Azure Cosmos DB индексирование](https://docs.microsoft.com/azure/cosmos-db/index-overview) и [индексирование Azure когнитивный Поиск](search-what-is-an-index.md) являются различными операциями, уникальными для каждой службы. Перед началом индексирования Azure Когнитивный поиск необходимо, чтобы база данных Azure Cosmos DB уже существовала и содержала данные.
 
-Индексатор Cosmos DB в Azure Когнитивный поиск может выполнять обход [Azure Cosmos DB элементов](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items#azure-cosmos-items) , доступ к которым осуществляется через различные протоколы.
+Индексатор Cosmos DB в Azure Когнитивный поиск может выполнять обход [Azure Cosmos DB элементов](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items#azure-cosmos-items) , доступ к которым осуществляется через различные протоколы. 
 
-+ Для [API SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-query-reference), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](https://docs.microsoft.com/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet).
++ Для [API SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-query-reference), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](https://docs.microsoft.com/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet) , чтобы создать источник данных и индексатор.
 
-+ Для [API MongoDB (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction) и [API Gremlin (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)можно использовать либо [портал](#cosmos-indexer-portal) , либо [REST API версии 2019-05-06-Preview](search-api-preview.md) в вызове [CREATE индексатора (RESTful)](https://docs.microsoft.com/rest/api/searchservice/create-indexer) для создания индексатора.
++ Для [MONGODB API (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)можно создать источник данных и индексатор с помощью [портала](#cosmos-indexer-portal) или [REST API версии 2019-05-06-Preview](search-api-preview.md) .
 
-+ Для [API Cassandra (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction)можно использовать только [REST API версии 2019-05-06-Preview](search-api-preview.md) в вызове [CREATE индексатора (RESTful)](https://docs.microsoft.com/rest/api/searchservice/create-indexer) .
++ Для [API Cassandra (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction) и [API Gremlin (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)для создания источника данных и индексатора можно использовать только [REST API версии 2019-05-06-Preview](search-api-preview.md) .
 
 
 > [!Note]
@@ -261,7 +261,7 @@ ms.locfileid: "75642171"
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |Н/Д |
+| Другие объекты JSON |Недоступно |
 
 ### <a name="4---configure-and-run-the-indexer"></a>4\. Настройка и запуск индексатора
 

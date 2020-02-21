@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: dd36895a34b36bbdf8e796cf629ab031613663cd
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 0b15b35f6fc83097e94f7d69815a163a0e98a228
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77208890"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77523277"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -43,6 +43,9 @@ ms.locfileid: "77208890"
 
 [Основные инструменты службы "Функции Azure"] являются локальной версией среды выполнения "Функции Azure", которую можно запускать на локальном компьютере для разработки. Она также предоставляет команды для создания функций, подключения к Azure и развертывания проектов функций.
 
+>[!IMPORTANT]
+>Чтобы иметь возможность публиковать в Azure из Azure Functions Core Tools, необходимо локально установить [Azure CLI](/cli/azure/install-azure-cli) .  
+
 ### <a name="v2"></a>Версии 2. x и 3. x
 
 Версия 2. x/3. x инструментов использует среду выполнения функций Azure, созданную на основе .NET Core. Эта версия поддерживается на всех платформах .NET Core, включая [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2). 
@@ -50,7 +53,7 @@ ms.locfileid: "77208890"
 > [!IMPORTANT]
 > Вы можете обойти требование для установки пакет SDK для .NET Core с помощью [пакетов расширений].
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
@@ -76,7 +79,7 @@ ms.locfileid: "77208890"
 
 1. Если вы не планируете использовать [пакетов расширений], установите [пакет SDK для .NET Core 2. x для Windows](https://www.microsoft.com/net/download/windows).
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macos)
+# <a name="macos"></a>[MacOS](#tab/macos)
 
 На следующих шагах Homebrew используется для установки основных инструментов на компьютерах macOS.
 
@@ -100,7 +103,7 @@ ms.locfileid: "77208890"
     brew link --overwrite azure-functions-core-tools@3
     ```
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 На следующих шагах [APT](https://wiki.debian.org/Apt) используется для установки основных инструментов на дистрибутив Linux Ubuntu/Debian. Чтобы выполнить установку на другие дистрибутивы Linux, ознакомьтесь с [файлом сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#linux).
 
@@ -190,7 +193,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 `func init` поддерживает следующие параметры, которые подходят только для версии 2.x, если не указано иное:
 
-| Параметр     | Описание                            |
+| Параметр     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--csharp`**<br/> **`--dotnet`** | Инициализирует [ C# проект библиотеки классов (CS)](functions-dotnet-class-library.md). |
 | **`--csx`** | Инициализирует [ C# проект скрипта (. CSX)](functions-reference-csharp.md). Необходимо указать `--csx` в последующих командах. |
@@ -291,7 +294,7 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 
 Эти параметры можно также задать в команде, указав следующие аргументы.
 
-| Аргумент     | Описание                            |
+| Аргумент     | Description                            |
 | ------------------------------------------ | -------------------------------------- |
 | **`--csx`** | (Версия 2.x). Создаются те же шаблоны сценариев C# (.csx), которые используются в версии 1.x и на портале. |
 | **`--language`** , **`-l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. Не используйте этот параметр в версии 2.x или выберите язык, который совпадает со средой выполнения рабочей роли. |
@@ -347,7 +350,7 @@ func host start
 
 `func start` имеет указанные ниже параметры.
 
-| Параметр     | Описание                            |
+| Параметр     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--no-build`** | Не выполняйте сборку текущего проекта перед запуском. Только для проектов .NET. По умолчанию установлено значение false. Только версия 2.x. |
 | **`--cert`** | Путь к PFX-файлу, который содержит закрытый ключ. Используется только с `--useHttps`. Только версия 2.x. |
@@ -437,7 +440,7 @@ curl --request POST -H "Content-Type:application/json" --data '{"input":"sample 
 
 `func run` имеет указанные ниже параметры.
 
-| Параметр     | Описание                            |
+| Параметр     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--content`** , **`-c`** | Встроенное содержимое. |
 | **`--debug`** , **`-d`** | Подключение отладчика к хост-процессу перед выполнением функции.|
@@ -454,6 +457,9 @@ func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 ## <a name="publish"></a>Публикация в Azure
 
 Azure Functions Core Tools поддерживает два типа развертывания: развертывание файлов проекта функции непосредственно в приложение-функцию через Zip- [развертывание](functions-deployment-technologies.md#zip-deploy) и [Развертывание пользовательского контейнера DOCKER](functions-deployment-technologies.md#docker-container). Вы должны уже [создали приложение-функцию в подписке Azure](functions-cli-samples.md#create), в которой вы развернете свой код. Проекты, для которых требуется компиляция, должны быть созданы таким образом, чтобы двоичные файлы можно было развернуть.
+
+>[!IMPORTANT]
+>Чтобы иметь возможность публиковать в Azure из основных средств, необходимо локально установить [Azure CLI](/cli/azure/install-azure-cli) .  
 
 Папка проекта может содержать файлы и каталоги, относящиеся к языку, которые не должны публиковаться. Исключенные элементы перечислены в файле фунЦигноре в корневой папке проекта.     
 
@@ -473,14 +479,14 @@ func azure functionapp publish <FunctionAppName>
 
 Следующие параметры публикации применяются к обеим версиям, 1. x и 2. x:
 
-| Параметр     | Описание                            |
+| Параметр     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. При использовании эмулятор хранения Microsoft Azure сначала измените параметр приложения на [реальное подключение к хранилищу](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Отключите запрос на перезапись параметров приложения при использовании `--publish-local-settings -i`.|
 
 Следующие параметры публикации поддерживаются только в версии 2.x:
 
-| Параметр     | Описание                            |
+| Параметр     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--publish-settings-only`** , **`-o`** |  Только публикует параметры и пропускает содержимое. Значение по умолчанию — запрос. |
 |**`--list-ignored-files`** | Отображает основанный на файле FUNCIGNORE список файлов, которые будут проигнорированы во время публикации. |
@@ -504,7 +510,7 @@ func deploy
 
 Для пользовательского контейнера доступны следующие параметры развертывания:
 
-| Параметр     | Описание                            |
+| Параметр     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | Имя реестра Docker, в который вошел текущий пользователь. |
 | **`--platform`** | Платформа размещения для приложения-функции. Допустимые параметры: `kubernetes`. |
@@ -534,7 +540,7 @@ func deploy
 Для этого типа журналов потоковой передачи требуется включить интеграцию Application Insights для приложения функции.   
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](https://docs.microsoft.com/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).

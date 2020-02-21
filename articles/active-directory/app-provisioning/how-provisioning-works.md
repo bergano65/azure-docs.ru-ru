@@ -6,7 +6,7 @@ documentationcenter: ''
 author: msmimart
 manager: CelesteDG
 ms.service: active-directory
-ms.subservice: app-mgmt
+ms.subservice: app-provisioning
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
@@ -15,12 +15,12 @@ ms.date: 12/10/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3b1b38063dcef1c61fbfb6fec529aeeed40a662
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 892cdeea20780c90ce325e8be9b7b91fee0d9fad
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367773"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522532"
 ---
 # <a name="how-provisioning-works"></a>Описание процесса подготовки
 
@@ -62,7 +62,7 @@ ms.locfileid: "77367773"
 
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этих сопоставлений необходимо написать выражение, аналогичное сценарию, которое позволяет преобразовывать данные пользователей в форматы, которые более приемлемы для приложения SaaS. Дополнительные сведения см. в разделе [Написание выражений для сопоставления атрибутов](functions-for-customizing-application-data.md).
 
-## <a name="scoping"></a>Область 
+## <a name="scoping"></a>Scoping 
 ### <a name="assignment-based-scoping"></a>Определение области на основе назначения
 
 Для исходящей подготовки из Azure AD в приложение SaaS наиболее распространенным способом определения того, какие пользователи входят в область подготовки, является [Назначение пользователей или групп](../manage-apps/assign-user-or-group-access-portal.md) . Так как назначения пользователей также используются для включения единого входа, один и тот же метод можно использовать для управления доступом и подготовкой. Области, основанные на назначении, не применяются к входящим сценариям подготовки, таким как Workday и Successfactors.
@@ -190,7 +190,7 @@ ms.locfileid: "77367773"
 
 Если в сопоставлениях атрибутов отображается атрибут Иссофтделетед, он используется для определения состояния пользователя и отправки запроса на обновление с параметром Active = false для обратимого удаления пользователя. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 [Планирование развертывания автоматической подготовки пользователей](../app-provisioning/plan-auto-user-provisioning.md)
 

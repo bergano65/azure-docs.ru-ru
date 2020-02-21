@@ -7,7 +7,7 @@ author: msmimart
 manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
-ms.subservice: app-mgmt
+ms.subservice: app-provisioning
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,12 +16,12 @@ ms.date: 11/15/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5780227274e8f9574fcdfcd388d75e333cc3d42
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 50b59bceb07facd944d7159eeb416c7e9e91557c
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367824"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522736"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
@@ -30,7 +30,7 @@ ms.locfileid: "77367824"
 **Общие сведения о действиях по использованию Microsoft Graph API для автоматизации настройки подготовки**
 
 
-|Шаг  |Подробности  |
+|Шаг  |Сведения  |
 |---------|---------|
 |[Шаг 1. Создание приложения коллекции](#step-1-create-the-gallery-application)     |Вход в клиент API <br> Получение шаблона приложения коллекции <br> Создание приложения коллекции         |
 |[Шаг 2. Создание задания подготовки на основе шаблона](#step-2-create-the-provisioning-job-based-on-the-template)     |Получение шаблона для соединителя подготовки <br> Создание задания подготовки         |

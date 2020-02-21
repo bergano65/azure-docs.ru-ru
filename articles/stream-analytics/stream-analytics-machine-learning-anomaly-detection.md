@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: e29ac6671d71ea02b432c9843541796984737c8b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 51b9c827d453eef2e2e75e1aa5222204eaa38d0e
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459608"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77525538"
 ---
 # <a name="anomaly-detection-in-azure-stream-analytics"></a>Обнаружение аномалий в Azure Stream Analytics
 
@@ -21,6 +21,12 @@ Azure Stream Analytics, доступный в облаке и в Azure IoT Edge,
 Модели машинного обучения предполагают наличие временных рядов с равномерной выборкой. Если временные ряды неоднородны, можно вставить шаг агрегирования с "переворачивающимся" окном перед вызовом обнаружения аномалий.
 
 В настоящее время операции машинного обучения не поддерживают сезонностиные тенденции и несколько вариате корреляций.
+
+## <a name="anomaly-detection-using-machine-learning-in-azure-stream-analytics"></a>Обнаружение аномалий с помощью машинного обучения в Azure Stream Analytics
+
+В следующем видео показано, как определить аномалию в режиме реального времени с помощью функций машинного обучения в Azure Stream Analytics. 
+
+> [!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Real-Time-ML-Based-Anomaly-Detection-In-Azure-Stream-Analytics/player]
 
 ## <a name="model-behavior"></a>Поведение модели
 
@@ -120,12 +126,12 @@ FROM AnomalyDetectionStep
 
 При секционировании функции по deviceId добавьте "PARTITION BY deviceId" в вызов функции обнаружения аномалий.
 
-### <a name="observations"></a>Анализ результатов
+### <a name="observations"></a>Рассмотрен
 В следующей таблице приведены наблюдения за пропускной способностью для одного узла (6 SU) для несекционированного варианта:
 
 | Размер журнала (события) | Длительность окна (МС) | Всего входных событий в секунду |
 | --------------------- | -------------------- | -------------------------- |
-| 60 | 55 | 2 200 |
+| 60 | 55 | 2200 |
 | 600 | 728 | 1 650 |
 | 6000 | 10 910 | 1100 |
 
@@ -147,12 +153,6 @@ FROM AnomalyDetectionStep
 
 ### <a name="identifying-bottlenecks"></a>Определение узких мест
 Используйте панель метрики в задании Azure Stream Analytics для выявления узких мест в конвейере. Просмотрите **события ввода-вывода** для пропускной способности и ["задержка водяного знака"](https://azure.microsoft.com/blog/new-metric-in-azure-stream-analytics-tracks-latency-of-your-streaming-pipeline/) , а также **событий с невыполненной записью** , чтобы определить, имеет ли задание скорость ввода. Для метрик концентратора событий ищите **регулируемые запросы** и соответственно скорректируйте пороговые единицы. Для метрик Cosmos DB ознакомьтесь с **максимальным потреблением единиц запросов в секунду на диапазон ключей секций** в разделе пропускная способность, чтобы обеспечить единообразное использование диапазонов ключей разделов. Для базы данных SQL Azure Отслеживайте **операции ввода-вывода журнала** и **ЦП**.
-
-## <a name="anomaly-detection-using-machine-learning-in-azure-stream-analytics"></a>Обнаружение аномалий с помощью машинного обучения в Azure Stream Analytics
-
-В следующем видео показано, как определить аномалию в режиме реального времени с помощью функций машинного обучения в Azure Stream Analytics. 
-
-> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Anomaly-detection-using-machine-learning-in-Azure-Stream-Analytics/player]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

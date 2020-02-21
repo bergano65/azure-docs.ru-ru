@@ -16,16 +16,21 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6251c1576d38b191ca1cba48075cc869c48d004
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 3f087ffe824a198c578f076857cca7fdf0f0a60c
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048112"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77498676"
 ---
 # <a name="configure-azure-ad-custom-roles-in-privileged-identity-management"></a>Настройка настраиваемой роли AAD через Privileged Identity Management
 
 Администратор привилегированных ролей может изменить параметры роли, применяемые к пользователю при активации назначения настраиваемой роли, и параметры для других администраторов приложений, которые назначают настраиваемые роли.
+
+> [!NOTE]
+> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [во встроенной функции ролей](pim-how-to-activate-role.md) , и эта статья не применяется.
+>
+> [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 ## <a name="open-role-settings"></a>Открытие параметров роли
 
@@ -95,7 +100,7 @@ ms.locfileid: "77048112"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
+- [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-activate.md)
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)
 - [Administrator role permissions in Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md) (Разрешения роли администратора в Azure Active Directory)

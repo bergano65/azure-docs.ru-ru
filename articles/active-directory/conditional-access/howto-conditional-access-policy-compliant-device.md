@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/12/2019
+ms.date: 02/20/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a18f0b1f83ae02b06344c332cfdd1cc093f37fc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1d19cc39147608dafc4576f4c8bad0533ad1b32d
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75424881"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521920"
 ---
 # <a name="conditional-access-require-compliant-devices"></a>Условный доступ: требовать соответствующие требованиям устройства
 
@@ -27,14 +27,14 @@ ms.locfileid: "75424881"
 * Требовать минимальную или максимальную версию операционной системы
 * Обязательное устройство не имеет защиты или корневого каталога
 
-Эта информация о соответствии политики пересылается в Azure AD, где условный доступ может принимать решения о предоставлении или блокировании доступа к ресурсам.
+Эта информация о соответствии политики пересылается в Azure AD, где условный доступ может принимать решения о предоставлении или блокировании доступа к ресурсам. Дополнительные сведения о политиках соответствия устройств можно найти в статье [Настройка правил на устройствах для разрешения доступа к ресурсам в Организации с помощью Intune](/intune/protect/device-compliance-get-started) .
 
 ## <a name="create-a-conditional-access-policy"></a>Создание политики условного доступа
 
 Следующие шаги помогут создать политику условного доступа, чтобы требовать, чтобы устройства, обращающиеся к ресурсам, были помечены как соответствующие политикам соответствия Организации Intune.
 
 1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
-1. Перейдите к **Azure Active Directory** > **Безопасность** > **Условный доступ**.
+1. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ**.
 1. Выберите **Новая политика**.
 1. Присвойте политике имя. Корпорация Майкрософт рекомендует организациям создавать осмысленные стандартные имена политик.
 1. В разделе **назначения**выберите **Пользователи и группы** .
@@ -53,7 +53,7 @@ ms.locfileid: "75424881"
 
 В Windows 7, iOS, Android, macOS и некоторых сторонних веб-браузерах Azure AD определяет устройство с помощью сертификата клиента, подготовленного при регистрации устройства в Azure AD. При первом входе пользователя в систему через браузер пользователю предлагается выбрать сертификат. Конечный пользователь должен выбрать этот сертификат, прежде чем он сможет продолжить работу с браузером.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
 
@@ -61,4 +61,4 @@ ms.locfileid: "75424881"
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 
-[Политики соответствия устройств работают с Azure AD](https://docs.microsoft.com/intune/device-compliance-get-started#device-compliance-policies-work-with-azure-ad)
+[Политики соответствия устройств работают с Azure AD](/intune/device-compliance-get-started#device-compliance-policies-work-with-azure-ad)
