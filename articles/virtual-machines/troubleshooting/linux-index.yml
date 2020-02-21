@@ -1,0 +1,139 @@
+### YamlMime:Landing
+title: Устранение неполадок с виртуальными машинами Linux в Azure
+summary: Документация по устранению неполадок с виртуальными машинами Linux в Azure.
+metadata:
+  title: Устранение неполадок с виртуальными машинами Linux в Azure
+  description: Документация по устранению неполадок с виртуальными машинами Linux и управлению ими в Azure.
+  services: virtual-machines-linux
+  ms.service: virtual-machines-linux
+  ms.topic: landing-page
+  author: genlin
+  ms.author: genli
+  ms.date: 09/09/2019
+  ms.openlocfilehash: 5b5ef5ee550100eed4bd8a236fb102c2870c70ed
+  ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/20/2020
+  ms.locfileid: "77519280"
+landingContent:
+- title: Устранение сбоев развертывания
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение ошибок выделения ресурсов при создании, перезагрузке или изменении размера виртуальных машин в Azure
+      url: allocation-failure.md
+    - text: Устранение неполадок развертывания при создании виртуальной машины в Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-troubleshoot-deployment-new-vm
+    - text: Устранение ошибок, связанных с недопустимым шаблоном
+      url: ../../azure-resource-manager/templates/error-invalid-template.md
+    - text: Устранение ошибок, связанных с недоступностью номера SKU
+      url: https://docs.microsoft.com/azure/azure-resource-manager/templates/error-sku-not-available
+- title: Руководство по развертыванию виртуальных машин
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Подготовка и отправка нерекомендованного образа для Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic
+    - text: Создание или клонирование образа универсальной виртуальной машины в Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/capture-image
+- title: Не удается подключиться к виртуальной машине
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование диагностики загрузки для устранения неполадок виртуальных машин Linux в Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/boot-diagnostics
+    - text: Как сбросить локальный пароль Linux на виртуальных машинах Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/reset-password
+    - text: Сброс параметров удаленного доступа для устранения проблем, связанных с удаленным сервером, с помощью PowerShell или CLI
+      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-ssh-connection
+    - text: Быстрые действия для диагностики и решения распространенных неполадок при SSH-подключении
+      url: https://azure.microsoft.com/documentation/articles/virtual-machines-troubleshoot-ssh-connections/
+- title: Сброс паролей
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Сброс ключа SSH или пароля с помощью расширения VMAccess
+      url: https://docs.microsoft.com/azure/virtual-machines/extensions/vmaccess#ways-to-use-the-vmaccess-extension
+    - text: Сброс локального пароля для виртуальной машины Azure с Linux вне сети
+      url: https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/reset-password
+- title: Виртуальная машина не загружается
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение ошибок загрузки при запуске виртуальной машины после применения определенных изменений ядра
+      url: https://support.microsoft.com/help/4091524/how-recovery-azure-linux-vm-from-kernel-related-boot-related-issues
+    - text: Получение доступа к GRUB с помощью Серийной консоли для изменения режима конфигурации загрузки
+      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-single-user-mode
+    - text: Использование диагностики загрузки для устранения неполадок виртуальных машин Linux в Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/boot-diagnostics
+    - text: Основные сведения об ошибках FSTAB и инструкции по их устранению
+      url: https://support.microsoft.com/help/3206699/azure-linux-vm-cannot-start-because-of-fstab-errors
+- title: Не удается запустить или остановить виртуальную машину
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение неполадок при развертывании виртуальных машин Windows в Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/windows/restart-resize-error-troubleshooting
+    - text: Устранение неполадок с распределением (классическая модель развертывания)
+      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/allocation-failure-classic
+- title: Непредвиденный перезапуск виртуальной машины
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Как просмотреть журналы перезагрузки виртуальной машины для определения причины перезагрузки
+      url: https://azure.microsoft.com/blog/viewing-vm-reboot-logs
+- title: Проблемы с управлением виртуальными дисками
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Часто задаваемые вопросы о виртуальных дисках
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/faq-for-disks
+    - text: Устранение неполадок с выделением ресурсов при изменении размера виртуальных машин
+      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/allocation-failure
+    - text: Временный диск виртуальной машины
+      url: https://docs.microsoft.com/azure/storage/storage-about-disks-and-vhds-linux#temporary-disk
+    - text: Обзор Управляемых дисков Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/managed-disks-overview
+    - text: Часто задаваемые вопросы о дисках виртуальных машин Azure, а также об управляемых и неуправляемых дисках уровня "Премиум"
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks
+- title: Проблемы с шифрованием дисков
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Сценарии шифрования дисков Azure для виртуальных машин Linux
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux
+    - text: Устранение проблем с шифрованием дисков
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-troubleshooting
+    - text: 'Шифрование дисков Azure: часто задаваемые вопросы'
+      url: https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-faq
+- title: Проблемы с производительностью виртуальной машины
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение проблем с производительностью виртуальной машины Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-performance-virtual-machine-linux-windows
+    - text: Диагностика производительности для виртуальной машины Azure
+      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/performance-diagnostics
+- title: Проблемы с расширением виртуальной машины
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Общие действия по устранению неполадок с расширениями
+      url: https://docs.microsoft.com/azure/virtual-machines/extensions/troubleshoot
+    - text: Установка расширения в виртуальной машине
+      url: https://docs.microsoft.com/azure/virtual-machines/extensions/diagnostics-linux#installing-the-extension-in-your-vm
+    - text: Расширение Custom Script в ОС Windows
+      url: https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows#tips-and-tricks
+- title: Резервное копирование и восстановление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение неполадок с резервным копированием виртуальных машин Azure на портале Azure
+      url: https://docs.microsoft.com/azure/backup/backup-azure-vms-troubleshoot
+    - text: Устранение неполадок Azure Backup Server
+      url: https://docs.microsoft.com/azure/backup/backup-azure-mabs-troubleshoot
+    - text: Обзор функций Azure Backup
+      url: https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup#using-premium-storage-vms-with-azure-backup
+    - text: Основные сведения о резервном копировании виртуальных машин Azure в хранилища Служб восстановления
+      url: https://docs.microsoft.com/azure/backup/backup-azure-vms-first-look-arm

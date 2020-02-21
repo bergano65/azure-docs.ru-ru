@@ -431,53 +431,9 @@
           items:
             - name: Использование песочницы Apache Hadoop
               href: ./hadoop/apache-hadoop-emulator-get-started.md
+            - name: Использование Apache Pig
+              href: use-pig.md
         - name: Разработка
-          items:
-            - name: Использование MapReduce с Apache Hadoop
-              items:
-                - name: Сведения о MapReduce
-                  href: ./hadoop/hdinsight-use-mapreduce.md
-                - name: Использование протокола SSH
-                  href: ./hadoop/apache-hadoop-use-mapreduce-ssh.md
-                - name: Использование cURL
-                  href: ./hadoop/apache-hadoop-use-mapreduce-curl.md
-                - name: Использование Azure PowerShell
-                  href: ./hadoop/apache-hadoop-use-mapreduce-powershell.md
-                - name: Использование пакета SDK для .NET
-                  href: ./hadoop/apache-hadoop-use-mapreduce-dotnet-sdk.md
-                - name: Выполнение примеров MapReduce
-                  href: ./hadoop/apache-hadoop-run-samples-linux.md
-                - name: Запуск пользовательских программ Apache Hadoop MapReduce
-                  href: ./hadoop/apache-hadoop-run-custom-programs.md
-                - name: 'Разработка программ MapReduce для потоковой передачи на C#'
-                  href: ./hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md
-                - name: Разработка программ Java MapReduce
-                  href: ./hadoop/apache-hadoop-develop-deploy-java-mapreduce-linux.md
-            - name: 'Использование Apache Hive как средства для извлечения, преобразования и загрузки'
-              href: ./hadoop/apache-hadoop-using-apache-hive-as-an-etl-tool.md
-            - name: 'Извлечение, преобразование и загрузка в нужном масштабе'
-              href: ./hadoop/apache-hadoop-etl-at-scale.md
-            - name: Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности
-              href: ./hdinsight-create-non-interactive-authentication-dotnet-applications.md
-            - name: Анализ больших данных
-              items:
-                - name: Анализ с помощью Power Query
-                  href: ./hadoop/apache-hadoop-connect-excel-power-query.md
-                - name: "Подключение Power\_BI к Interactive Query"
-                  href: ./interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md
-                - name: "Подключение Power\_BI к Apache Hadoop"
-                  href: ./hadoop/apache-hadoop-connect-hive-power-bi.md
-                - name: Подключение Excel к Apache Hadoop
-                  href: ./hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md
-                - name: Подключение с помощью драйвера Apache Hive JDBC
-                  href: ./hadoop/apache-hadoop-connect-hive-jdbc-driver.md
-                - name: Анализ сохраненных твитов
-                  href: ./hdinsight-analyze-twitter-data-linux.md
-                - name: Формирование рекомендаций с помощью Apache Mahout
-                  href: ./hadoop/apache-hadoop-mahout-linux-mac.md
-                - name: Расширенная аналитика для HDInsight
-                  href: ./hadoop/apache-hadoop-deep-dive-advanced-analytics.md
-        - name: Управление
           items:
             - name: Использование пустых граничных узлов
               href: ./hdinsight-apps-use-edge-node.md

@@ -44,15 +44,15 @@
     - name: Руководство по регулируемым запросам
       displayName: 'pagination, batching, throttling, parallel'
       href: ./concepts/guidance-for-throttled-requests.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Получение данных об изменении ресурса
       displayName: 'resource, change, history, snapshot, details'
       href: ./how-to/get-resource-changes.md
-- name: Устранение неполадок
+- name: Диагностика
   displayName: 'errors, violation'
   href: ./troubleshoot/general.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/ext/resource-graph/graph
@@ -78,6 +78,8 @@
       href: /rest/api/azure-resourcegraph/
     - name: OpenAPI
       href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/stable/2019-04-01'
+    - name: Таблицы и типы ресурсов Resource Graph
+      href: ./reference/supported-tables-resources.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

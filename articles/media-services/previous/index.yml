@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Службы мультимедиа Azure, версия 2 (прежняя версия)
+summary: В Службы мультимедиа версии 2 больше не добавляются новые функции. Ознакомьтесь с новейшей версией Служб мультимедиа — версией 3.
+metadata:
+  title: Документация по Службам мультимедиа Azure версии 2
+  description: Сведения о безопасной потоковой передаче по запросу и прямой трансляции видео высокого качества в Службах мультимедиа версии 2.
+  services: media-services
+  ms.service: media-services
+  ms.subservice: 
+  ms.topic: landing-page
+  ms.collection: collection
+  author: Juliako
+  ms.author: juliako
+  ms.date: 02/18/2020
+  ms.openlocfilehash: c222a7c0603e9b57518993216711076659b51e4c
+  ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/20/2020
+  ms.locfileid: "77500779"
+landingContent:
+- title: Сведения о Службах мультимедиа Azure версии 2
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Службах мультимедиа Azure версии 2
+      url: media-services-overview.md
+    - text: Миграция в Службы мультимедиа версии 3
+      url: https://docs.microsoft.com/azure/media-services/latest/migrate-from-v2-to-v3
+  - linkListType: whats-new
+    links:
+    - text: Новые возможности в Службах мультимедиа версии 2
+      url: media-services-release-notes.md
+  - linkListType: concept
+    links:
+    - text: Устаревшие компоненты
+      url: legacy-components.md
+- title: Потоковая передача в реальном времени
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Обзор
+      url: media-services-manage-channels-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание учетной записи Служб мультимедиа с помощью портала
+      url: media-services-portal-create-account.md
+    - text: Подключение программными средствами
+      url: media-services-use-aad-auth-to-access-ams-api.md
+    - text: Потоковая трансляция с помощью портала Azure
+      url: media-services-portal-live-passthrough-get-started.md
+    - text: Потоковая трансляция с помощью .NET
+      url: media-services-dotnet-live-encode-with-onpremises-encoders.md
+- title: Предоставление видео по запросу
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование портала Azure
+      url: media-services-portal-vod-get-started.md
+    - text: Использование .NET
+      url: media-services-dotnet-get-started.md
+    - text: Использование REST
+      url: media-services-rest-get-started.md

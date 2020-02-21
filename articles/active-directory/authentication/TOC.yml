@@ -130,10 +130,14 @@
       items:
         - name: Развертывание без пароля
           href: howto-authentication-passwordless-deployment.md
-        - name: Ключи безопасности без пароля
-          href: howto-authentication-passwordless-security-key.md
-        - name: Вход без пароля в Windows 10
-          href: howto-authentication-passwordless-security-key-windows.md
+        - name: Ключи безопасности FIDO2 без пароля
+          items:
+            - name: Включение ключей безопасности FIDO2 для клиента
+              href: howto-authentication-passwordless-security-key.md
+            - name: "Вход на устройства с Windows\_10"
+              href: howto-authentication-passwordless-security-key-windows.md
+            - name: Единый вход для доступа к локальным ресурсам
+              href: howto-authentication-passwordless-security-key-on-premises.md
         - name: Вход без пароля с помощью телефона
           href: howto-authentication-passwordless-phone.md
         - name: Windows Hello для бизнеса

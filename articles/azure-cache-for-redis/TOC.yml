@@ -53,6 +53,8 @@
           href: cache-how-to-premium-vnet.md
         - name: Настройка георепликации
           href: cache-how-to-geo-replication.md
+        - name: Экономия средств за счет зарезервированной емкости
+          href: cache-reserved-pricing.md
         - name: Перенос из управляемой службы кэша
           href: cache-migrate-to-redis.md
     - name: Автоматизация

@@ -33,7 +33,7 @@
       href: concepts-events-routing.md
     - name: Ограничения в общедоступной предварительной версии службы
       href: concepts-service-limits.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Лучшие методики обеспечения безопасности
           href: security-best-practices.md
@@ -72,54 +72,47 @@
     - name: Клиентская библиотека определяемых пользователем функций
       href: reference-user-defined-functions-client-library.md
 - name: Ресурсы
+  expanded: true
   items:
+    - name: Ресурсы для разработчиков
+      items:
+        - name: Средство просмотра графов для Azure Digital Twins
+          href: 'https://github.com/Azure/azure-digital-twins-graph-viewer'
+        - name: 'Примеры Azure Digital Twins для C# (.NET)'
+          href: 'https://github.com/Azure-Samples/digital-twins-samples-csharp'
+        - name: REST API для Azure Digital Twins
+          href: 'https://docs.westcentralus.azuresmartspaces.net/management/swagger'
+    - name: Цены и доступность
+      items:
+        - name: Цены
+          href: 'https://azure.microsoft.com/pricing/details/digital-twins/'
+        - name: Калькулятор цен
+          href: 'https://azure.microsoft.com/pricing/calculator/'
+        - name: Доступность по регионам
+          href: 'https://azure.microsoft.com/regions/services/'
     - name: Возможности получения поддержки и справки
-      href: /azure/iot-fundamentals/iot-support-help
-    - name: 'Примеры Azure Digital Twins для C# (.NET)'
-      href: 'https://github.com/Azure-Samples/digital-twins-samples-csharp'
-    - name: REST API для Azure Digital Twins
-      href: 'https://docs.westcentralus.azuresmartspaces.net/management/swagger'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/digital-twins/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Средство просмотра графов для Azure Digital Twins
-      href: 'https://github.com/Azure/azure-digital-twins-graph-viewer'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-digital-twins'
+      items:
+        - name: Варианты поддержки Azure
+          href: 'https://azure.microsoft.com/support/options/'
+        - name: Параметры справки и поддержки Azure IoT
+          href: 'https://docs.microsoft.com/azure/iot-fundamentals/iot-support-help'
+        - name: Stack Overflow
+          href: 'https://stackoverflow.com/questions/tagged/azure-digital-twins'
+        - name: Форум MSDN
+          href: 'https://social.msdn.microsoft.com/Forums/home?category=&forum=&filter=&sort=relevancedesc&brandIgnore=true&searchTerm=Azure+Digital+Twins'
+        - name: Примеры кода для Azure IoT
+          href: 'https://docs.microsoft.com/samples/browse/?term=iot'
+    - name: Обратная связь и форумы
+      items:
+        - name: Форум MSDN
+          href: 'https://social.msdn.microsoft.com/Forums/home?category=&forum=&filter=&sort=relevancedesc&brandIgnore=true&searchTerm=Azure+Digital+Twins'
+        - name: Запросы и рекомендации по улучшению продукта
+          href: 'https://feedback.azure.com/forums/916621-azure-digital-twins'
     - name: Истории клиентов
-      href: 'https://blogs.microsoft.com/iot/2018/09/24/announcing-azure-digital-twins-create-digital-replicas-of-spaces-and-infrastructure-using-cloud-ai-and-iot/'
-    - name: Центр разработчика Azure IoT
-      href: 'https://azure.microsoft.com/develop/iot/'
-    - name: Стратегия развития Azure
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
+    - name: Видео по Azure
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=digital-twins&sort=newest'
+    - name: Видео на Channel 9
+      href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
+    - name: Обновления Azure IoT
       href: 'https://azure.microsoft.com/roadmap/?category=iot'
-    - name: Видео
-      href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22&lang-en=true'
-- name: Сопутствующие материалы
-  items:
-    - name: Решения
-      items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-suite
-        - name: IoT Central
-          href: /azure/iot-central/iot-support-help
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: IoT Plug and Play
-          href: /azure/iot-pnp
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Maps
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов
-          href: /azure/time-series-insights
-    - name: Решения с Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

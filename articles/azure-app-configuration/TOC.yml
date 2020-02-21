@@ -75,6 +75,8 @@
           href: howto-integrate-azure-managed-service-identity.md
         - name: Предоставление доступа с помощью Azure Active Directory
           href: concept-enable-rbac.md
+        - name: Назначение управляемого удостоверения Azure
+          href: overview-managed-identity.md
     - name: Высокий уровень доступности
       items:
         - name: Устойчивость и аварийное восстановление

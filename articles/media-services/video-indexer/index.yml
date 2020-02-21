@@ -1,52 +1,71 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Индексатору видео в Службах мультимедиа Azure
+### YamlMime:Landing
+title: Сведения об Индексаторе видео в Службах мультимедиа Azure
+summary: Индексатор видео в Службах мультимедиа Azure —это облачное приложение, созданное на основе служб "Аналитика мультимедиа", "Когнитивный поиск" и Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и пользовательская служба распознавания речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей.
 metadata:
-  title: "Документация по Индексатору видео в Службах мультимедиа Azure\_| Документация Майкрософт"
-  description: Сведения об Индексаторе видео.
+  title: Документация по Индексатору видео в Службах мультимедиа Azure
+  description: Индексатор видео в Службах мультимедиа Azure —это облачное приложение, созданное на основе служб "Аналитика мультимедиа", "Когнитивный поиск" и Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и пользовательская служба распознавания речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей.
   services: media-services
-  author: juliako
-  manager: femila
   ms.service: media-services
-  ms.subservice: video-indexer
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: 
   ms.topic: landing-page
-  ms.date: 03/11/2019
+  ms.collection: collection
+  author: Juliako
   ms.author: juliako
-abstract:
-  description: "Индексатор видео в Службах мультимедиа Azure\_—это облачное приложение, созданное на основе служб \"Аналитика мультимедиа\", \"Когнитивный поиск\" и Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и пользовательская служба распознавания речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей.<br/>Чтобы определить, в каких случаях вам лучше использовать Индексатор видео, а в каких — предустановки анализатора Служб мультимедиа, ознакомьтесь со статьей, в которой приводится <a href=\"/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets\">сравнение</a> этих инструментов."
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: video-indexer-overview.md
-            html: '<p>В Индексаторе видео используются технологии ИИ для анализа мультимедиа, которые упрощают извлечение аналитических сведений из видео.</p>'
-            image:
-              src: media/index/AMSIcons-media_servicesV3.svg
-            title: Общие сведения об Индексаторе видео в Службах мультимедиа Azure
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Войдите на веб-сайт Индексатора видео и отправьте свое первое видео:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/AMSIcons-media_analytics.svg
-            text: Извлечение аналитических сведений
-            href: /azure/media-services/video-indexer/video-indexer-get-started
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как для извлекать аналитические сведения из видео с помощью API Индексатора видео:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/AMSIcons-media_analytics.svg
-            text: Извлечение аналитических сведений
-            href: /azure/media-services/video-indexer/video-indexer-use-apis
+  ms.date: 02/18/2020
+  ms.openlocfilehash: a3e1ec7b97d76287614b4e154143899acf7fd902
+  ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/20/2020
+  ms.locfileid: "77485120"
+landingContent:
+- title: Информация об Индексаторе видео в Службах мультимедиа Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Индексатор видео?
+      url: video-indexer-overview.md
+    - text: Сравнение предустановок Служб мультимедиа версии 3 и Индексатора видео
+      url: compare-video-indexer-with-media-services-presets.md
+    - text: Часто задаваемые вопросы
+      url: faq.md
+    - text: UserVoice
+      url: https://cognitive.uservoice.com/forums/598144-video-indexer
+  - linkListType: whats-new
+    links:
+    - text: Новые возможности Индексатора видео
+      url: release-notes.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Зарегистрируйтесь и отправьте видео
+      url: video-indexer-get-started.md
+    - text: Приглашение пользователей
+      url: invite-users.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание учетной записи, подключенной к Azure
+      url: connect-to-azure.md
+    - text: Использование API Индексатора видео
+      url: video-indexer-use-apis.md
+    - text: Отправка и индексирование видео
+      url: upload-index-videos.md
+    - text: Изучение выходных данных API
+      url: video-indexer-output-json-v2.md
+    - text: Внедрение мини-приложений Индексатора видео в приложения
+      url: video-indexer-embed-widgets.md
+  - linkListType: sample
+    links:
+    - text: Примеры кода
+      url: https://github.com/Azure-Samples/media-services-video-indexer
+- title: Настройка моделей содержимого
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка модели обнаружения торговых марок
+      url: customize-brands-model-with-website.md
+    - text: Настройка языковой модели
+      url: customize-language-model-with-website.md
+    - text: Настройка модели пользователя
+      url: customize-person-model-with-website.md

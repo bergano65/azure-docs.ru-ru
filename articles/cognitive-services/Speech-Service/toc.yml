@@ -305,46 +305,50 @@
       items:
         - name: Что такое голосовой помощник?
           href: voice-assistants.md
-    - name: Создание помощника
+    - name: Настраиваемые команды (предварительная версия)
       items:
-        - name: Настраиваемые команды (предварительная версия)
+        - name: Что собой представляют пользовательские команды?
           href: custom-commands.md
-        - name: Канал Direct Line Speech
+        - name: Краткие руководства
+          items:
+            - name: Создание настраиваемой команды (предварительная версия)
+              href: quickstart-custom-speech-commands-create-new.md
+            - name: Создание настраиваемой команды с параметрами (предварительная версия)
+              href: quickstart-custom-speech-commands-create-parameters.md
+            - name: Использование настраиваемых команд с Пользовательским голосом (предварительная версия)
+              href: quickstart-custom-speech-commands-select-custom-voice.md
+            - name: Использование настраиваемых команд с пакетом SDK службы "Речь" (предварительная версия)
+              href: quickstart-custom-speech-commands-speech-sdk.md
+        - name: Практические руководства
+          items:
+            - name: Выполнение пользовательских команд с пакетом SDK службы "Речь" (предварительная версия)
+              href: how-to-custom-speech-commands-fulfill-sdk.md
+            - name: Добавление проверки параметров в настраиваемые команды
+              href: how-to-custom-speech-commands-validations.md
+            - name: Добавление подтверждения в настраиваемую команду
+              href: how-to-custom-speech-commands-confirmations.md
+            - name: Добавление одноэтапного исправления в настраиваемую команду
+              href: how-to-custom-speech-commands-one-step-correction.md
+    - name: Канал Direct Line Speech
+      items:
+        - name: Что такое Direct Line Speech?
           href: direct-line-speech.md
-    - name: Краткие руководства
-      items:
-        - name: 'C# (UWP)'
-          href: quickstart-voice-assistant-csharp-uwp.md
-        - name: 'Java (Windows, macOS, Linux)'
-          href: quickstart-voice-assistant-java-jre.md
-        - name: Java (Android)
-          href: quickstart-voice-assistant-java-android.md
-        - name: Создание настраиваемой команды (предварительная версия)
-          href: quickstart-custom-speech-commands-create-new.md
-        - name: Создание настраиваемой команды с параметрами (предварительная версия)
-          href: quickstart-custom-speech-commands-create-parameters.md
-        - name: Использование настраиваемых команд с Пользовательским голосом (предварительная версия)
-          href: quickstart-custom-speech-commands-select-custom-voice.md
-        - name: Использование настраиваемых команд с пакетом SDK службы "Речь" (предварительная версия)
-          href: quickstart-custom-speech-commands-speech-sdk.md
-    - name: Практические руководства
-      items:
-        - name: Выполнение пользовательских команд с пакетом SDK службы "Речь" (предварительная версия)
-          href: how-to-custom-speech-commands-fulfill-sdk.md
-        - name: Добавление проверки параметров в настраиваемые команды
-          href: how-to-custom-speech-commands-validations.md
-        - name: Добавление подтверждения в настраиваемую команду
-          href: how-to-custom-speech-commands-confirmations.md
-        - name: Добавление одноэтапного исправления в настраиваемую команду
-          href: how-to-custom-speech-commands-one-step-correction.md
-    - name: Учебники
-      items:
-        - name: Включение голосовых команд в боте с помощью пакета SDK службы "Речь"
-          href: tutorial-voice-enable-your-bot-speech-sdk.md
-    - name: Ресурсы
-      items:
-        - name: 'Голосовые помощники: часто задаваемые вопросы'
-          href: faq-voice-assistants.md
+        - name: Краткие руководства
+          items:
+            - name: 'C# (UWP)'
+              href: quickstart-voice-assistant-csharp-uwp.md
+            - name: 'Java (Windows, macOS, Linux)'
+              href: quickstart-voice-assistant-java-jre.md
+            - name: Java (Android)
+              href: quickstart-voice-assistant-java-android.md
+        - name: Учебники
+          items:
+            - name: Включение голосовых команд в боте с помощью пакета SDK службы "Речь"
+              href: tutorial-voice-enable-your-bot-speech-sdk.md
+        - name: Ресурсы
+          items:
+            - name: 'Голосовые помощники: часто задаваемые вопросы'
+              href: faq-voice-assistants.md
 - name: Настройка
   expanded: false
   items:

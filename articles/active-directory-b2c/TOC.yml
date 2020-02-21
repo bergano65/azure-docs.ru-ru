@@ -81,6 +81,9 @@
         - name: Регистрация поставщика служб SAML
           href: connect-with-saml-service-providers.md
           displayName: 'SP, RP, service provider, connect'
+        - name: Регистрация приложения Graph
+          href: microsoft-graph-get-started.md
+          displayName: 'migrate, migration, microsoft graph'
         - name: Добавление приложения веб-API
           href: add-web-application.md
         - name: Добавление собственного клиентского приложения
@@ -276,7 +279,7 @@
                       href: social-transformations.md
                     - name: StringCollection
                       href: stringcollection-transformations.md
-                    - name: String
+                    - name: Строка
                       href: string-transformations.md
                 - name: Предикаты
                   href: predicates.md
@@ -377,8 +380,6 @@
       items:
         - name: Перенос пользователей
           href: user-migration.md
-        - name: Перенос учетных записей пользователей с использованием внешних удостоверений
-          href: migrate-social-identities.md
 - name: Справочник
   items:
     - name: Заметки о выпуске Identity Experience Framework
@@ -392,9 +393,11 @@
       displayName: 'cookies, SameSite'
     - name: Коды ошибок
       href: error-codes.md
+    - name: Операции Microsoft Graph API
+      href: microsoft-graph-operations.md
     - name: Доступность в регионах и размещение данных
       href: data-residency.md
-    - name: Включение выставления счетов
+    - name: Модель выставления счетов
       href: billing.md
     - name: Управление угрозами
       href: threat-management.md

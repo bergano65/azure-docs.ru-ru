@@ -77,6 +77,8 @@
       href: application-provisioning-configure-api.md
 - name: Справочник
   items:
+    - name: "Соответствие протоколу SCIM\_2.0"
+      href: application-provisioning-config-problem-scim-compatibility.md
     - name: Выбор метода подготовки
       href: isv-automatic-provisioning-multi-tenant-apps.md
     - name: Подготовка к управлению кадрами
