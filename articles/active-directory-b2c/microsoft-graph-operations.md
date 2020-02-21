@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/14/2020
+ms.date: 02/20/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1f23d3ffa14deccae9825568dee2f3c8b9ac7e7e
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
-ms.translationtype: HT
+ms.openlocfilehash: 5eeae1ab6866435311eeec944b4a51ecf2793dee
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492959"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522974"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph операции, доступные для Azure AD B2C
 
@@ -44,7 +44,7 @@ ms.locfileid: "77492959"
 - [Обновление поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-update)
 - [Удаление поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-delete)
 
-## <a name="user-flow"></a>Поток пользователя
+## <a name="user-flow"></a>Поток пользователей
 
 Настройте предварительно созданные политики для регистрации, входа, объединения и входа в систему, сброса пароля и обновления профиля.
 
@@ -53,11 +53,11 @@ ms.locfileid: "77492959"
 - [Получение потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-get)
 - [Удаление потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-delete)
 
-## <a name="custom-policies"></a>Пользовательские политики
+## <a name="custom-policies"></a>Настраиваемые политики
 
 Следующие операции позволяют управлять политиками инфраструктуры доверия Azure AD B2C, называемыми [пользовательскими политиками](custom-policy-overview.md).
 
-- [Вывод списка всех политик инфраструктуры доверия, настроенных в клиенте](https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies.md)
+- [Вывод списка всех политик инфраструктуры доверия, настроенных в клиенте](https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies)
 - [Создание политики инфраструктуры доверия](https://docs.microsoft.com/graph/api/trustframework-post-trustframeworkpolicy)
 - [Чтение свойств существующей политики инфраструктуры доверия](https://docs.microsoft.com/graph/api/trustframeworkpolicy-get)
 - [Обновите или создайте политику инфраструктуры доверия.](https://docs.microsoft.com/graph/api/trustframework-put-trustframeworkpolicy)

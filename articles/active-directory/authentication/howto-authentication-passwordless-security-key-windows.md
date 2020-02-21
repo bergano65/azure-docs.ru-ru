@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd3ebb40ff101f4d2e3fecd05afed834a9ddc688
-ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
-ms.translationtype: HT
+ms.openlocfilehash: 327f53fb39e58f7b70040eb41b6cd80aca18e510
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77505692"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522039"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "77505692"
 
 ## <a name="requirements"></a>Требования
 
-| тип устройства; | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
+| Тип устройства | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
 | --- | --- | --- |
 | [Многофакторная идентификация Azure](howto-mfa-getstarted.md) | X | X |
 | [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md) | X | X |
@@ -107,7 +107,7 @@ ms.locfileid: "77505692"
 
 ### <a name="enable-with-a-provisioning-package"></a>Включить с помощью пакета подготовки
 
-Для устройств, не управляемых Intune, можно установить пакет подготовки, чтобы включить функциональные возможности. Приложение "конструктор конфигураций Windows" можно установить из [Microsoft Store](https://www.microsoft.com/en-us/p/windows-configuration-designer/9nblggh4tx22). Чтобы создать пакет подготовки, выполните следующие действия.
+Для устройств, не управляемых Intune, можно установить пакет подготовки, чтобы включить функциональные возможности. Приложение "конструктор конфигураций Windows" можно установить из [Microsoft Store](https://www.microsoft.com/p/windows-configuration-designer/9nblggh4tx22). Чтобы создать пакет подготовки, выполните следующие действия.
 
 1. Запустите конструктор конфигураций Windows.
 1. Выберите **файл** > **Новый проект**.
@@ -159,7 +159,7 @@ ms.locfileid: "77505692"
    - Подкатегория: FIDO
 1. Для записи журналов используйте параметр, чтобы **повторно создать мою проблему**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Разрешение доступа к локальным ресурсам для Azure AD и гибридных устройств, присоединенных к Azure AD](howto-authentication-passwordless-security-key-on-premises.md)
 

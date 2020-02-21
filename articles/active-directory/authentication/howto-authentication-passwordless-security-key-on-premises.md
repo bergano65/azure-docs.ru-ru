@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25b569377fd5408f40df080ad63fdfea720a8f9e
-ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
-ms.translationtype: HT
+ms.openlocfilehash: 9e28403d905a25e9e792b3b1f31b79c39cd7728b
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506564"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77522103"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Включение входа в систему с помощью ключа безопасности без пароля для локальных ресурсов с Azure Active Directory (Предварительная версия)
 
@@ -33,7 +33,7 @@ Azure Active Directory (AD) может выдавать билеты Kerberos н
 
 Объект сервера Kerberos Azure AD создается в локальной Active Directory, а затем безопасно публикуется в Azure Active Directory. Объект не связан ни с одним физическим сервером. Это просто ресурс, который может использоваться Azure Active Directory для создания TGT Kerberos для домен Active Directory.
 
-![Получение билета TGT и PRT из Azure AD и AD DS](./media/howto-authentication-passwordless-on-premises/fido2-tgt-exchange-process.png)
+![Получение билета предоставления билета (TGT) из Azure AD и AD DS](./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png)
 
 1. Пользователь входит в систему на устройстве Windows 10 с помощью ключа безопасности FIDO2 и выполняет проверку подлинности в Azure AD.
 1. Azure AD проверяет каталог на наличие ключа сервера Kerberos, соответствующего локальному домену AD пользователя.
@@ -110,9 +110,9 @@ Get-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -DomainCre
 
 Эта команда выводит свойства сервера Azure AD Kerberos. Можно проверить свойства, чтобы убедиться, что все находится в правильном порядке.
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
-| ID | Уникальный идентификатор объекта AD DS контроллера домена. Этот идентификатор иногда называют "слотом" или "ИДЕНТИФИКАТОРом ветви". |
+| ИДЕНТИФИКАТОР | Уникальный идентификатор объекта AD DS контроллера домена. Этот идентификатор иногда называют "слотом" или "ИДЕНТИФИКАТОРом ветви". |
 | домаинднснаме | Доменное имя DNS домен Active Directory. |
 | компутераккаунт | Объект учетной записи компьютера для объекта сервера Kerberos Azure AD (DC). |
 | UserAccount | Отключенный объект учетной записи пользователя, содержащий ключ шифрования TGT сервера Kerberos Azure AD. DN этой учетной записи `CN=krbtgt_AzureAD,CN=Users,<Domain-DN>` |
@@ -198,6 +198,6 @@ Remove-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -Domain
 
 Убедитесь, что все контроллеры домена исправлены на время ответа на обслуживание запроса ресурсов. Чтобы проверить, доступен ли контроллер домена, на котором работает эта функция, просмотрите выходные данные `nltest /dsgetdc:contoso /keylist /kdc`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о пароле](concept-authentication-passwordless.md)

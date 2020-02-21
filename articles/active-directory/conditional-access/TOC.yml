@@ -6,12 +6,14 @@
       href: overview.md
 - name: Краткие руководства
   items:
-    - name: Требование многофакторной проверки подлинности для конкретных приложений
-      href: app-based-mfa.md
     - name: Обеспечение принятия условий использования
       href: require-tou.md
     - name: Блокировка доступа при обнаружении риска для безопасности сеанса
       href: app-sign-in-risk.md
+- name: Учебники
+  items:
+    - name: Требование многофакторной идентификации Azure
+      href: /authentication/tutorial-enable-azure-mfa.md?toc=/azure/conditional-access/toc.json&bc=/azure/conditional-access/breadcrumb/toc.json
 - name: Основные понятия
   expanded: false
   items:
