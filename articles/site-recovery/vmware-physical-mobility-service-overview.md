@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: b2c59fd6ee925d531a5a5ff3bb26fdebea025b83
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: c5acc9637fe5afe8f7dd32d23fbdbb80373b4f61
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513564"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539388"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -21,6 +21,9 @@ ms.locfileid: "76513564"
 - [Принудительная установка](#push-installation): Site Recovery устанавливает агент мобильности на сервере при включении защиты с помощью портал Azure.
 - Установка вручную. службу Mobility Service можно установить вручную на каждом компьютере с помощью [пользовательского интерфейса](#install-mobility-agent-through-ui) или [командной строки](#install-mobility-agent-through-command-prompt).
 - [Автоматическое развертывание](vmware-azure-mobility-install-configuration-mgr.md). можно автоматизировать установку с помощью средств развертывания программного обеспечения, таких как Configuration Manager.
+
+> [!NOTE]
+> Агент мобильности использует примерно 6%-10% памяти на исходных компьютерах для виртуальных машин VMware или физических компьютеров.
 
 ## <a name="anti-virus-on-replicated-machines"></a>Антивирусное ПО на реплицированных компьютерах
 
@@ -35,7 +38,7 @@ ms.locfileid: "76513564"
 
 Сведения о рабочем процессе принудительной установки описаны в следующих разделах.
 
-### <a name="from-923-versionhttpssupportmicrosoftcomen-inhelp4494485update-rollup-35-for-azure-site-recovery-onwards"></a>Начиная с [версии 9,23](https://support.microsoft.com/en-in/help/4494485/update-rollup-35-for-azure-site-recovery)
+### <a name="from-923-version-onwards"></a>Начиная с [версии 9,23](https://support.microsoft.com/en-in/help/4494485/update-rollup-35-for-azure-site-recovery)
 
 Во время принудительной установки агента Mobility Agent выполняются следующие действия.
 
@@ -45,7 +48,7 @@ ms.locfileid: "76513564"
 4. Если установка агента завершилась успешно, но установка поставщика VSS завершается сбоем, то состояние задания помечается как "предупреждение". Это не влияет на создание точек согласованности.
 
     а. Чтобы создать точки, связанные с приложениями, см. [рекомендации](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) по завершению установки Site Recovery поставщика VSS вручную. </br>
-    b.  Если вы не хотите создавать точки с единообразным применением, [измените политику репликации](vmware-azure-set-up-replication.md#create-a-policy) , чтобы отключить точки, учитывающие состояние приложений.
+    б.  Если вы не хотите создавать точки с единообразным применением, [измените политику репликации](vmware-azure-set-up-replication.md#create-a-policy) , чтобы отключить точки, учитывающие состояние приложений.
 
 ### <a name="before-922-versions"></a>До 9,22 версий
 
@@ -55,7 +58,7 @@ ms.locfileid: "76513564"
 
 ## <a name="install-mobility-agent-through-ui"></a>Установка агента мобильности с помощью пользовательского интерфейса
 
-### <a name="prerequisite"></a>Необходимое условие
+### <a name="prerequisite"></a>Предварительные требования
 
 - Убедитесь, что все конфигурации серверов находятся в разделе [Поддержка матрицы VMware в сценарии аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Нахождение установщика](#locate-installer-files) на основе операционной системы сервера.
@@ -73,7 +76,7 @@ ms.locfileid: "76513564"
 
     ![Страница регистрации Mobility Service](./media/vmware-physical-mobility-service-install-manual/mobility3.png)
 
-5. На странице **сведения о сервере конфигурации**укажите НАСТРОЕННЫЙ IP-адрес и парольную фразу.  
+5. На странице **сведения о сервере конфигурации**укажите НАСТРОЕННЫЙ IP-адрес и парольную фразу.
 
     ![Страница регистрации Mobility Service](./media/vmware-physical-mobility-service-install-manual/mobility4.png)
 
@@ -83,7 +86,7 @@ ms.locfileid: "76513564"
 
 ## <a name="install-mobility-agent-through-command-prompt"></a>Установка агента мобильности с помощью командной строки
 
-### <a name="prerequisite"></a>Необходимое условие
+### <a name="prerequisite"></a>Предварительные требования
 
 - Убедитесь, что все конфигурации серверов находятся в разделе [Поддержка матрицы VMware в сценарии аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Нахождение установщика](#locate-installer-files) на основе операционной системы сервера.
@@ -120,7 +123,7 @@ ms.locfileid: "76513564"
 /Role | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 /InstallLocation| Необязательный параметр. Указывает расположение установки (любая папка).
 /Platform | Mandatory. Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.<br/><br/> Если виртуальные машины Azure разрабатывается как физические компьютеры, укажите **VMware**.
-/Silent| Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+/Silent| Необязательно. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**
@@ -158,7 +161,7 @@ ms.locfileid: "76513564"
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 -d | Необязательный параметр. Указывает расположение установки службы Mobility Service: /usr/local/ASR.
 -v | Mandatory. Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.
--Q | Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+-q | Необязательно. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**
@@ -190,6 +193,6 @@ Microsoft-ASR\_UA\*UBUNTU-16.04-64\*release.tar.gz | Сервер Ubuntu Linux 1
 Microsoft-ASR_UA\*DEBIAN7-64\*release.tar.gz | Debian 7
 Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов](vmware-azure-install-mobility-service.md)

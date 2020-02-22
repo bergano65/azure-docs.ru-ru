@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: ed477dddeb499023f4803929d9433ed37c302159
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: c3291746558dbec2147ebea24eadd0febd317033
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77212490"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539541"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -308,8 +308,8 @@ AzureDiagnostics
 1. Устройство Интернета вещей отправляет сообщение в Центр Интернета вещей.
 1. Сообщение поступает в шлюз Центра Интернета вещей.
 1. Центр Интернета вещей выполняет поиск `tracestate` в свойствах приложения сообщения и проверяет, находится ли оно в правильном формате.
-1. Если да, Центр Интернета вещей создает `trace-id` и `span-id`, и записывает их в журналы диагностики Azure Monitor в категории `DiagnosticIoTHubD2C`.
-1. После завершения обработки сообщения, Центр Интернета вещей создает другое свойство `span-id` и записывает его в журнал наряду с существующим свойством `trace-id` категории `DiagnosticIoTHubIngress`.
+1. Если это так, центр Интернета вещей создает глобально уникальный `trace-id` для сообщения, `span-id` для "прыжка" и записывает их в журнал Azure Monitor журналов диагностики в `DiagnosticIoTHubD2C`операции.
+1. После завершения обработки сообщения центр Интернета вещей создает еще один `span-id` и регистрирует его вместе с существующим `trace-id` в операции `DiagnosticIoTHubIngress`.
 1. Если для сообщения включена маршрутизация, Центр Интернета вещей записывает его в пользовательскую конечную точку и записывает в журнал другой `span-id` с тем же `trace-id` в категории `DiagnosticIoTHubEgress`.
 1. Описанные выше действия повторяются для каждого созданного сообщения.
 

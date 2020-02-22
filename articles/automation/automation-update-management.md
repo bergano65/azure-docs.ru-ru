@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 01/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: aec46a1914fa2361ea15ba34dd1510cfe53a4dc0
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: e7a86f3a709566bcf18241ce3c329c0355be2743
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443845"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539558"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -115,7 +115,7 @@ ms.locfileid: "77443845"
 
 Сведения о том, как установить агент Log Analytics для Linux и загрузить последнюю версию, см. в статье [log Analytics Agent for Linux](https://github.com/microsoft/oms-agent-for-linux). Сведения об установке агента Log Analytics для Windows см. [в разделе Подключение компьютеров Windows к Azure Monitor](../log-analytics/log-analytics-windows-agent.md).
 
-Виртуальные машины, созданные на основе образов Red Hat Enterprise Linux по требованию (RHEL), доступных в Azure Marketplace, регистрируются для доступа к [инфраструктуре Red Hat Update Framework (RHUI)](../virtual-machines/virtual-machines-linux-update-infrastructure-redhat.md) , которая развернута в Azure. Любой другой дистрибутив Linux должен быть обновлен из репозитория файлов в сети распространения с помощью поддерживаемых методов распространения.
+Виртуальные машины, созданные на основе образов Red Hat Enterprise Linux по требованию (RHEL), доступных в Azure Marketplace, регистрируются для доступа к [инфраструктуре Red Hat Update Framework (RHUI)](../virtual-machines/workloads/redhat/redhat-rhui.md) , которая развернута в Azure. Любой другой дистрибутив Linux должен быть обновлен из репозитория файлов в сети распространения с помощью поддерживаемых методов распространения.
 
 ## <a name="permissions"></a>Разрешения
 
@@ -155,7 +155,7 @@ ms.locfileid: "77443845"
 
 В приведенной ниже таблице описаны подключенные источники, которые поддерживает это решение.
 
-| Подключенный источник | Поддерживается | Description |
+| Подключенный источник | Поддерживается | Описание |
 | --- | --- | --- |
 | Агенты Windows |Да |Решение собирает сведения об обновлениях системы с агентов Windows и запускает установку требуемых обновлений. |
 | Агенты Linux |Да |Решение собирает сведения об обновлениях системы с агентов Linux и запускает установку требуемых обновлений для поддерживаемых дистрибутивов. |
@@ -184,7 +184,7 @@ ms.locfileid: "77443845"
 
 Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows. Обновленный список обязательных конечных точек можно найти в [проблемах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в [ключе WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
 
-Для компьютеров с Red Hat Linux см. раздел [IP-адреса для серверов доставки содержимого RHUI](../virtual-machines/linux/update-infrastructure-redhat.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
+Для компьютеров с Red Hat Linux см. раздел [IP-адреса для серверов доставки содержимого RHUI](../virtual-machines/workloads/redhat/redhat-rhui.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
 
 Дополнительные сведения о портах, которым необходима гибридная рабочая роль Runbook, см. в статье [Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-worker-role).
 
@@ -208,13 +208,13 @@ ms.locfileid: "77443845"
 
 ![Отсутствующие обновления](./media/automation-view-update-assessments/automation-view-update-assessments-missing-updates.png)
 
-## <a name="update-classifications"></a>Классификации обновлений
+## <a name="update-classifications"></a>Классификаций обновлений
 
 В следующих таблицах содержатся списки классификаций обновлений в Управлении обновлениями с определениями для каждой классификации.
 
 ### <a name="windows"></a>Windows
 
-|Классификация  |Description  |
+|Классификация  |Описание  |
 |---------|---------|
 |критические обновления;     | Обновление для конкретной проблемы, которая относится к критической, не связанной с безопасностью ошибке.        |
 |Обновления для системы безопасности     | Обновление для ошибки, связанной с безопасностью конкретного продукта.        |
@@ -222,12 +222,12 @@ ms.locfileid: "77443845"
 |пакеты дополнительных компонентов;     | Новые функции продукта, которые распространяются вне выпуска продукта.        |
 |пакеты обновления;     | Накопительный набор исправлений, применяемых к приложению.        |
 |обновления определений;     | Обновление для вирусов или других файлов определений.        |
-|Инструменты     | Служебная программа или функция, которая помогает выполнить одну или несколько задач.        |
+|Сервис     | Служебная программа или функция, которая помогает выполнить одну или несколько задач.        |
 |Обновления     | Обновление приложения или файла, установленного в настоящее время.        |
 
 ### <a name="linux-2"></a>Linux
 
-|Классификация  |Description  |
+|Классификация  |Описание  |
 |---------|---------|
 |критические обновления и обновления для системы безопасности;     | Обновления для конкретной проблемы или проблемы, связанной с безопасностью продукта.         |
 |Другие обновления     | Все остальные обновления, не являющиеся критически важными или не являющиеся обновлениями для системы безопасности.        |
@@ -298,7 +298,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 * [в учетной записи службы автоматизации](automation-onboard-solutions-from-automation-account.md);
 * [с помощью модуля runbook службы автоматизации Azure](automation-onboard-solutions.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте следующее руководство, чтобы узнать, как управлять обновлениями для виртуальных машин Windows.
 

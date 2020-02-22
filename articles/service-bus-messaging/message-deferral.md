@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 249cf7414143f59540d198bb460d8b215f6a7664
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 5e32c461902c1e340c6cece22669a59847e660cd
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76756357"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77538402"
 ---
 # <a name="message-deferral"></a>Откладывание сообщений
 
@@ -36,12 +36,12 @@ API-интерфейс — [BrokeredMessage. Отсрочка](/dotnet/api/micro
 
 Отложенные сообщения остаются в основной очереди вместе с другими активными сообщениями (в отличие от недоставленных сообщений, находящихся в подочереди), но их больше невозможно получить с помощью обычных функций Receive и ReceiveAsync. Отложенные сообщения можно будет обнаружить посредством [обзора сообщений](message-browsing.md), если приложение потеряет их.
 
-Для получения отложенного сообщения его владелец обязан запомнить значение [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), присваиваемое при откладывании. Любой получатель, который знает последовательный номер отложенного сообщения, позже сможет получить сообщение явным образом с помощью функции `Receive(sequenceNumber)`. Для очередей можно использовать [QueueClient](/dotnet/api/microsoft.servicebus.messaging.queueclient)подписки раздела, использующие [SubscriptionClient](/dotnet/api/microsoft.servicebus.messaging.subscriptionclient).
+Для получения отложенного сообщения его владелец обязан запомнить значение [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), присваиваемое при откладывании. Любой получатель, который знает последовательный номер отложенного сообщения, позже сможет получить сообщение явным образом с помощью функции `Receive(sequenceNumber)`.
 
 Если сообщение не удается обработать, так как конкретный ресурс для его обработки временно недоступен, но обработку этого сообщения нельзя бесцеремонно приостанавливать, можно отложить это сообщение в сторону на несколько минут, запомнив значение **SequenceNumber** в [запланированном сообщении](message-sequencing.md), которое должно быть опубликовано через несколько минут, и повторно получить отложенное сообщение при получении этого запланированного сообщения. Если все операции обработчика сообщений зависят от базы данных, и она временно недоступна, то следует не откладывать, а полностью приостанавливать получение сообщений, пока эта база данных снова не будет доступна.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

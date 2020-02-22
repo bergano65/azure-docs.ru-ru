@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: mlearned
-ms.openlocfilehash: 520557c80bf2630a359188dd86ec0987e0d5326b
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 32138c228284f9487b816583dd1f701556bbcb95
+ms.sourcegitcommit: 78f367310e243380b591ff10f2500feca93f5d0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77158151"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544221"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "77158151"
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
-Действительны следующие ограничения.
+Действуют следующие ограничения.
 
 - Azure Active Directory можно включить только при создании нового кластера с поддержкой RBAC. Вы не можете включить эту службу в существующем кластере AKS.
 
@@ -77,7 +77,7 @@ serverApplicationSecret=$(az ad sp credential reset \
 
 Azure AD требуются разрешения для выполнения следующих действий:
 
-* Прочитать данные каталога
+* Чтение данных каталога
 * Вход в систему и чтение профиля пользователя.
 
 Назначьте эти разрешения с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] :
@@ -123,7 +123,7 @@ oAuthPermissionId=$(az ad app show --id $serverApplicationId --query "oauth2Perm
 Добавьте разрешения для клиентских приложений и компонентов серверного приложения, чтобы использовать поток обмена данными oAuth2 с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] . Затем предоставьте разрешения на обмен данными между клиентским приложением и серверным приложением с помощью команды [AZ AD App Grant][az-ad-app-permission-grant] .
 
 ```azurecli-interactive
-az ad app permission add --id $clientApplicationId --api $serverApplicationId --api-permissions $oAuthPermissionId=Scope
+az ad app permission add --id $clientApplicationId --api $serverApplicationId --api-permissions ${oAuthPermissionId}=Scope
 az ad app permission grant --id $clientApplicationId --api $serverApplicationId
 ```
 
@@ -240,7 +240,7 @@ error: You must be logged in to the server (Unauthorized)
 * Пользователь не может быть членом более чем 200 групп.
 * Секрет, определенный в регистрации приложения для сервера, совпадает со значением, настроенным с помощью `--aad-server-app-secret`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Полный сценарий, содержащий команды, приведенные в этой статье, см. в разделе [сценарий интеграции Azure AD в репозитории примеров AKS][complete-script].
 

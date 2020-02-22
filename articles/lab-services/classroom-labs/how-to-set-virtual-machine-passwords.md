@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/31/2019
+ms.date: 02/20/2020
 ms.author: spelluru
-ms.openlocfilehash: 99c6ee5d58655350d14add61530fae647a675508
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: c01106bf7288e777e601c06558b1408960f4e49b
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443233"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539439"
 ---
 # <a name="set-up-and-manage-virtual-machine-pool"></a>Настройка и администрирование пула виртуальных машин 
 В этой статье показано, как выполнить следующие задачи.
@@ -100,7 +100,7 @@ ms.locfileid: "77443233"
 > [!NOTE]
 > Когда профессор запускает виртуальную машину и подключается к ней, квота учащегося не затрагивается. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о других вариантах использования учащихся, которые можно настроить (в качестве владельца лаборатории), см. в следующей статье: [Настройка использования учащихся](how-to-configure-student-usage.md).
 
 Дополнительные сведения о том, как студенты могут сбрасывать пароли для виртуальных машин, см. [в статье Установка и сброс пароля для виртуальной машины в учебных лабораториях (учащихся)](how-to-set-virtual-machine-passwords-student.md).

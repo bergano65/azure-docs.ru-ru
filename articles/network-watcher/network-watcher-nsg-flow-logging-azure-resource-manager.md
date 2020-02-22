@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/26/2020
 ms.author: damendo
-ms.openlocfilehash: 6980518da00e6849c327ca712bbeadaa816ae479
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 35d185a625a81a259c366a45999769ecf76c6a7d
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77056671"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77538164"
 ---
 # <a name="configure-nsg-flow-logs-from-an-azure-resource-manager-template"></a>Настройка журналов потоков NSG из шаблона Azure Resource Manager
 
@@ -132,9 +132,11 @@ ms.locfileid: "77056671"
       "storageId": "/subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/MyCanaryFlowLog/providers/Microsoft.Storage/storageAccounts/storagev2ira",
       "enabled": true,
       "flowAnalyticsConfiguration": {
+        "networkWatcherFlowAnalyticsConfiguration": {
             "enabled": true,
-        "workspaceResourceId": "91a3d1e9-698e-4a49-96dc-f6fc585ae888",
-        "trafficAnalyticsInterval": 10
+            "workspaceResourceId": "/subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/defaultresourcegroup-wcus/providers/Microsoft.OperationalInsights/workspaces/1c4f42e5-3a02-4146-ac9b-3051d8501db0",
+            "trafficAnalyticsInterval": 10
+                }
       },
       "retentionPolicy": {
         "days": 5,
@@ -142,7 +144,7 @@ ms.locfileid: "77056671"
       },
       "format": {
         "type": "JSON",
-        "version": 1
+        "version": 2            
       }
     }
 
@@ -168,7 +170,7 @@ New-AzResourceGroupDeployment -Name EnableFlowLog -ResourceGroupName NetworkWatc
 Существует несколько способов проверить, успешно ли прошло развертывание. Консоль PowerShell должна показывать "ProvisioningState" как "успех". Кроме того, для подтверждения изменений можно посетить [страницу портала журналов потоков NSG](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) . Если возникли проблемы с развертыванием, ознакомьтесь со статьей [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/common-deployment-errors).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как визуализировать данные NSG Flow с помощью:
 * [Microsoft Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md)

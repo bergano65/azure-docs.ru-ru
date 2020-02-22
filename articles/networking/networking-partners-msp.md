@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: sukishen
-ms.openlocfilehash: 38711c9f1cee07b04dad0ccfeff5694e61dd5b53
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: ef9efcea1c06149e084dc261f5add7b408ae7b92
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484967"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539269"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
@@ -50,7 +50,7 @@ Azure Networking MSP — это специализированный набор 
 |[Бдительным ИТ](https://vigilant.it/manage-cloud-service/)|[Проверка работоспособности Azure: 5-дневная оценка](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.ahc01)|[ExpressRoute: реализация на 5 дней](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.erd01)|||
 |[вандис](https://www.vandis.com/microsoft-azure-practice/)||[Вандис Managed ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Вандис управляемый вван на базе Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Вандис Managed вван на базе Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|
 
-В Azure Marketplace предлагаются новые управляемые службы безопасности и управляемые службы MEC из следующих партнеров по сетям MSP Azure: [Амдокс](https://www.amdocs.com/); [CenturyLink](https://www.centurylink.com/business/networking/cloud-connectivity.html);    [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Orange](https://www.megaport.com/services/microsoft-expressroute/);  [Омниклаудс](https://omniclouds.com/services/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms);  [Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx)
+В Azure Marketplace предлагаются новые управляемые службы безопасности и управляемые службы MEC из следующих партнеров по сетям MSP Azure: [Амдокс](https://www.amdocs.com/); [CenturyLink](https://www.centurylink.com/business/networking/cloud-connectivity.html);    [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Orange](https://www.megaport.com/services/microsoft-expressroute/);  [Омниклаудс](https://omniclouds.com/services/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms);  [Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx); [Федеративная беспроводная сеть](https://www.federatedwireless.com/caas/)
 
 ## <a name="expressroute"></a>Партнеры ExpressRoute
 
