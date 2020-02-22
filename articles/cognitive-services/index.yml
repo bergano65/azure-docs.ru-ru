@@ -1,22 +1,22 @@
 ### YamlMime:Hub
 title: Документация по Cognitive Services
 summary: Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные и поддерживаемые алгоритмы, позволяющие видеть, слышать, говорить, понимать и интерпретировать потребности пользователей.
+brand: azure
 metadata:
   title: Документация по Cognitive Services
   description: Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные и поддерживаемые алгоритмы, позволяющие видеть, слышать, говорить, понимать и интерпретировать потребности пользователей.
   ms.service: cognitive-services
   ms.topic: hub-page
-  brand: azure
   author: nitinme
   ms.author: nitinme
   manager: nitinme
-  ms.date: 11/04/2019
-  ms.openlocfilehash: e0fc6aaaedc5eff98017eb62187575ab9afbba59
-  ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+  ms.date: 01/21/2020
+  ms.openlocfilehash: f39f2a6360363131eb346f613cf0f7a25910404a
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/14/2020
-  ms.locfileid: "75945199"
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77560768"
 highlightedContent:
   items:
   - title: Что такое Cognitive Services?
@@ -71,7 +71,7 @@ conceptualContent:
     links:
     - url: ./immersive-reader/index.yml
       itemType: overview
-      text: Иммерсивное средство чтения
+      text: Иммерсивное средство чтения (предварительная версия)
     - url: ./luis/index.yml
       itemType: overview
       text: Распознавание речи (LUIS)
@@ -87,7 +87,7 @@ conceptualContent:
   - title: Речь
     summary: Преобразуйте речь в текст или текст в естественно звучащую речь. Переводите текст на другой язык, а также выполняйте проверку и распознавание говорящего.
     links:
-    - url: ./speech-service/index.md
+    - url: ./speech-service/index.yml
       itemType: overview
       text: Служба "Речь"
     - url: ./speaker-recognition/home.md
