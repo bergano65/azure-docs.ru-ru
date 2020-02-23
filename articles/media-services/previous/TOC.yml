@@ -397,8 +397,6 @@
       items:
         - name: Воспроизведение мультимедиа с помощью существующих проигрывателей
           href: media-services-playback-content-with-existing-players.md
-        - name: Воспроизведение мультимедиа с помощью Проигрывателя мультимедиа
-          href: media-services-develop-video-players.md
         - name: Другие параметры воспроизведения
           items:
             - name: Приложение для Магазина Windows с потоковой передачей Smooth Streaming
