@@ -2,18 +2,18 @@
 title: Подготовка компьютеров к миграции с помощью Миграции Azure
 description: Подготовка локальных компьютеров к миграции в Azure с помощью службы "Миграция Azure"
 ms.topic: tutorial
-ms.date: 12/10/2019
+ms.date: 02/17/2020
 ms.custom: MVC
-ms.openlocfilehash: c3c10321e8d49ac6ecfe80024d23f24711298651
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: adbe9e4b30bf57e8a2038b970306c126035abbe1
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028752"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77426254"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Подготовка локальных компьютеров к миграции в Azure
 
-В этой статье описывается подготовка локальных компьютеров перед миграцией в Azure с помощью [миграции сервера службы "Миграция Azure"](migrate-services-overview.md#azure-migrate-server-migration-tool).
+В этой статье описывается подготовка локальных компьютеров перед миграцией в Azure с помощью функции [Azure Migrate: Server Migration](migrate-services-overview.md#azure-migrate-server-migration-tool) (Миграция Azure: миграция сервера).
 
 
 Работая с этой статьей, вы выполните следующие задачи:
@@ -40,7 +40,7 @@ ms.locfileid: "76028752"
 
 ## <a name="check-whats-supported"></a>Проверка поддерживаемых функций
 
-- Для виртуальных машин VMware миграция сервера службы "Миграция Azure" поддерживает [миграцию без агентов или на основе агентов](server-migrate-overview.md). Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-vmware-migration.md) виртуальных машин VMware.
+- Для виртуальных машин VMware средство миграции сервера поддерживает [миграцию без агентов или на основе агентов](server-migrate-overview.md). Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-vmware-migration.md) виртуальных машин VMware.
 - Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-hyper-v-migration.md) для Hyper-V.
 - Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-physical-migration.md) для локальных физических компьютеров или других виртуализированных серверов. 
 
@@ -74,7 +74,7 @@ ms.locfileid: "76028752"
 При миграции компьютера с Windows перед выполнением операции необходимо внести описанные ниже изменения. Если вы перенесете виртуальную машину до внесения изменений, она может не загрузиться в Azure.
 
 1. [Включите консоль последовательного доступа Azure](../virtual-machines/troubleshooting/serial-console-windows.md) для виртуальной машины Azure. Это помогает при устранении неполадок. Перезагружать виртуальную машину не нужно. Виртуальная машина будет загружаться с помощью образа диска. Это действие эквивалентно перезагрузке для новой виртуальной машины. 
-2. Если вы переносите машины под управлением Windows Server 2003, установите Hyper-V Guest Integration Services в операционной системе виртуальной машины. [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#install-or-update-integration-services).
+2. Если вы переносите машины под управлением Windows Server 2003, установите Hyper-V Guest Integration Services в операционной системе виртуальной машины. [Подробнее](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#install-or-update-integration-services).
 
 ### <a name="prepare-linux-machines"></a>Подготовка компьютеров с Linux
 
@@ -132,7 +132,7 @@ ms.locfileid: "76028752"
 
 После миграции выполните следующие действия на созданных виртуальных машинах Azure.
 
-1. Чтобы подключиться к виртуальной машине через Интернет, назначьте ей общедоступный IP-адрес. Для виртуальной машины Azure нельзя указывать общедоступный IP-адрес, ранее используемый для локального компьютера. [Узнайте больше](../virtual-network/virtual-network-public-ip-address.md).
+1. Чтобы подключиться к виртуальной машине через Интернет, назначьте ей общедоступный IP-адрес. Для виртуальной машины Azure нельзя указывать общедоступный IP-адрес, ранее используемый для локального компьютера. [Подробнее](../virtual-network/virtual-network-public-ip-address.md).
 2. Убедитесь, что правила группы безопасности сети (NSG) на виртуальной машине разрешают входящие подключения к порту RDP или SSH.
 3. Перейдите в раздел [Диагностика загрузки](../virtual-machines/troubleshooting/boot-diagnostics.md#enable-boot-diagnostics-on-existing-virtual-machine), чтобы просмотреть сведения о виртуальной машине.
 

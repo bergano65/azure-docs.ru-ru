@@ -4,14 +4,14 @@ description: Из этого краткого руководства вы узн
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 11/04/2019
+ms.date: 02/15/2020
 ms.author: brendm
-ms.openlocfilehash: adb5b64456de743142ffb464ebb2c5e9f8dc8f86
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 1e30da0844efa48f64a5e2501c79d2167ca4be92
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190772"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77431267"
 ---
 # <a name="quickstart-launch-a-java-spring-application-using-the-azure-cli"></a>Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 
@@ -143,28 +143,34 @@ az spring-cloud app deploy -n auth-service --jar-path ./auth-service/target/auth
 
 ## <a name="assign-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
-Нам нужен способ доступа к приложению через веб-браузер. Приложению шлюза требуется общедоступная конечная точка, которую можно назначить с помощью следующей команды:
+Нам нужен способ доступа к приложению через веб-браузер. Приложению шлюза требуется общедоступная конечная точка.
+
+1. Назначьте конечную точку, использую следующую команду:
 
 ```azurecli
 az spring-cloud app update -n gateway --is-public true
 ```
+2. Отправьте к приложению **gateway** запрос на получение общедоступного IP-адреса, чтобы убедиться, что приложение запущено:
 
-Наконец, отправьте к приложению **gateway** запрос на получение общедоступного IP-адреса, чтобы убедиться, что приложение запущено:
-
+Linux:
 ```azurecli
 az spring-cloud app show --name gateway | grep url
 ```
-
-Перейдите по URL-адресу, полученному с помощью предыдущей команды, чтобы запустить приложение PiggyMetrics.
+Windows:
+```azurecli
+az spring-cloud app show --name gateway | findstr url
+```
+3. Перейдите по URL-адресу, полученному с помощью предыдущей команды, чтобы запустить приложение PiggyMetrics.
     ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/launch-app.png)
 
 URL-адрес можно найти на портале Azure. 
 1. Перейдите к службе.
-1. Выберите **Приложения**.
-1. Выберите **шлюз**.
+2. Выберите **Приложения**.
+3. Выберите **шлюз**.
 
     ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app1.png)
-1. Найдите URL-адрес на странице **общих сведений о шлюзе**. ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app2-url.png)
+    
+4. Найдите URL-адрес на странице **общих сведений о шлюзе**. ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app2-url.png)
 
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=public-endpoint)

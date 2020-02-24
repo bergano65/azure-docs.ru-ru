@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: elisolMS
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3a43ce4c560e89d88594d173aae7b2ad2db99ee
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 03a7a9c0c9ed308944b57e7659fefa81178af78b
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74273110"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368131"
 ---
 # <a name="azure-active-directory-b2b-collaboration-code-and-powershell-samples"></a>Примеры кода и команд PowerShell для службы совместной работы Azure Active Directory B2B
 
@@ -26,7 +26,7 @@ ms.locfileid: "74273110"
 
 1. Подготовьте CSV-файл. Создайте CSV-файл и назовите его invitations.csv. В этом примере файл сохранен в папке C:\data. Он содержит следующие сведения:
   
-   ИМЯ                  |  InvitedUserEmailAddress
+   Имя                  |  InvitedUserEmailAddress
    --------------------- | --------------------------
    Приглашенный Gmail B2B     | b2binvitee@gmail.com
    Приглашенный B2B Outlook   | b2binvitee@outlook.com
@@ -56,7 +56,7 @@ ms.locfileid: "74273110"
 - отправка копий сообщений или полное подавление электронных сообщений.
 
 ## <a name="code-sample"></a>Пример кода
-Ниже показано, как вызвать API приглашения в режиме "только приложение" и получить URL-адрес активации для ресурса, в который вы приглашаете пользователя службы B2B. Цель этого действия — отправить настраиваемое сообщение с приглашением. Электронное сообщение можно составить, используя HTTP-клиент, чтобы настроить его внешний вид, и отправить его с помощью API Graph.
+Ниже показано, как вызвать API приглашения в режиме "только приложение" и получить URL-адрес активации для ресурса, в который вы приглашаете пользователя службы B2B. Цель этого действия — отправить настраиваемое сообщение с приглашением. Электронное сообщение можно составить, используя HTTP-клиент, чтобы настроить его внешний вид, и отправить его с помощью API Microsoft Graph.
 
 ```csharp
 namespace SampleInviteApp
@@ -70,12 +70,12 @@ namespace SampleInviteApp
     class Program
     {
         /// <summary>
-        /// Microsoft graph resource.
+        /// Microsoft Graph resource.
         /// </summary>
         static readonly string GraphResource = "https://graph.microsoft.com";
  
         /// <summary>
-        /// Microsoft graph invite endpoint.
+        /// Microsoft Graph invite endpoint.
         /// </summary>
         static readonly string InviteEndPoint = "https://graph.microsoft.com/v1.0/invitations";
  
@@ -173,14 +173,14 @@ namespace SampleInviteApp
         }
  
         /// <summary>
-        /// Get the access token for our application to talk to microsoft graph.
+        /// Get the access token for our application to talk to Microsoft Graph.
         /// </summary>
-        /// <returns>Returns the access token for our application to talk to microsoft graph.</returns>
+        /// <returns>Returns the access token for our application to talk to Microsoft Graph.</returns>
         private static string GetAccessToken()
         {
             string accessToken = null;
  
-            // Get the access token for our application to talk to microsoft graph.
+            // Get the access token for our application to talk to Microsoft Graph.
             try
             {
                 AuthenticationContext testAuthContext =
@@ -229,7 +229,7 @@ namespace SampleInviteApp
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 

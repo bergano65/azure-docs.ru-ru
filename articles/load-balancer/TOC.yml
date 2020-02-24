@@ -64,6 +64,8 @@
   items:
     - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый" до общедоступной версии ценовой категории "Стандартный"
       href: upgrade-basic-standard.md
+    - name: Обновление внутренней подсистемы Load Balancer ценовой категории "Базовый" до ценовой категории "Стандартный"
+      href: upgrade-basicInternal-standard.md
     - name: Настройка правил для исходящего трафика
       items:
         - name: Azure CLI

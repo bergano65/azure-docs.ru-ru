@@ -1,26 +1,30 @@
 - name: Документация по службе "Речь"
-  href: index.md
+  href: index.yml
 - name: Обзор
   expanded: true
   items:
     - name: Что собой представляет служба "Речь"
       href: overview.md
+    - name: Бесплатная пробная версия службы "Речь"
+      href: get-started.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
       displayName: 'languages,locales,region,voice,gender,language code,locale,locale code,neural voice,standard voice'
 - name: Преобразование речи в текст
   expanded: false
   items:
+    - name: Документация по преобразованию речи в текст
+      href: index-speech-to-text.yml
     - name: Обзор
       items:
         - name: Что такое преобразование речи в текст?
           href: speech-to-text.md
-    - name: Краткие руководства
+    - name: Краткое руководство
       items:
-        - name: Распознавание речи из звукового файла
-          href: quickstarts/speech-to-text-from-file.md
         - name: Распознавание речи при вводе с микрофона
           href: quickstarts/speech-to-text-from-microphone.md
+        - name: Распознавание речи из звукового файла
+          href: quickstarts/speech-to-text-from-file.md
         - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
           href: quickstarts/from-blob.md
     - name: Практические руководства
@@ -45,8 +49,20 @@
           href: how-to-use-codec-compressed-audio-input-streams-ios.md
         - name: Использование форматов сжатых входных звуковых данных (Android)
           href: how-to-use-codec-compressed-audio-input-streams-android.md
-        - name: Использование распознавания речи с контейнерами Docker
-          href: speech-container-howto.md?tabs=stt
+    - name: Настройка
+      items:
+        - name: Подготовка данных
+          href: how-to-custom-speech-test-data.md
+        - name: Данные проверки
+          href: how-to-custom-speech-inspect-data.md
+        - name: Точность оценки
+          href: how-to-custom-speech-evaluate-data.md
+        - name: Обучение пользовательской модели
+          href: how-to-custom-speech-train-model.md
+        - name: Развертывание пользовательской модели
+          href: how-to-custom-speech-deploy-model.md
+        - name: Создание транскрипций с подписями человека
+          href: how-to-custom-speech-human-labeled-transcriptions.md
     - name: Справочник
       items:
         - name: API для работы с пакетом SDK службы "Речь"
@@ -86,33 +102,68 @@
 - name: Преобразование текста в речь
   expanded: false
   items:
+    - name: Документация по преобразованию текста в речь
+      href: index-text-to-speech.yml
     - name: Обзор
       items:
         - name: Что такое преобразование текста в речь?
           href: text-to-speech.md
-    - name: Краткие руководства
+    - name: Краткое руководство
       items:
-        - name: Синтезирование речи в звуковой файл
-          href: quickstarts/text-to-speech-audio-file.md
         - name: Синтезирование речи в виде речи докладчика
           href: quickstarts/text-to-speech.md
-        - name: Асинхронное синтезирование для больших звуковых файлов
+        - name: Синтезирование речи в звуковой файл
+          href: quickstarts/text-to-speech-audio-file.md
+        - name: Синтез речи с использованием длинных аудиоматериалов
           href: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
     - name: Практические руководства
       items:
-        - name: Улучшение выходных данных с помощью SSML
+        - name: Улучшение синтеза с помощью SSML
           href: speech-synthesis-markup.md
-        - name: Улучшение выходных данных с помощью пользовательских голосов
+        - name: Улучшение синтеза с помощью Пользовательского голоса
           href: how-to-custom-voice.md
           displayName: custom voice
         - name: Синтезирование речи с помощью API длинных аудиоматериалов
           href: long-audio-api.md
-        - name: Использование синтеза речи с контейнерами Docker
-          href: speech-container-howto.md?tabs=tts
         - name: Получение списка голосовых моделей с помощью REST (Python)
           href: quickstart-python-get-text-to-speech-voices.md
         - name: Преобразование текста в речь с помощью REST (Python)
           href: quickstart-python-text-to-speech.md
+    - name: Настройка
+      items:
+        - name: Ответственное развертывание
+          items:
+            - name: Фильтрация Пользовательского голоса
+              href: concepts-gating-overview.md
+            - name: Развертывание технологии для синтеза
+              href: concepts-guidelines-responsible-deployment-synthetic.md
+            - name: Предоставление сведений специалистам по озвучиванию
+              href: 'https://aka.ms/disclosure-voice-talent'
+            - name: Рекомендации по проектированию для раскрытия информации
+              href: concepts-disclosure-guidelines.md
+            - name: Конструктивные шаблоны для раскрытия информации
+              href: concepts-disclosure-patterns.md
+            - name: Правила поведения
+              href: 'https://aka.ms/custom-neural-code-of-conduct'
+        - name: Портал Пользовательского голоса
+          items:
+            - name: Начало работы с настраиваемыми голосовыми моделями
+              href: how-to-custom-voice.md
+              displayName: 'custom voice, neural voice'
+            - name: Подготовка данных
+              href: how-to-custom-voice-prepare-data.md
+            - name: Создание и использование настраиваемых голосовых моделей
+              href: how-to-custom-voice-create-voice.md
+            - name: Запись образцов голосов
+              href: record-custom-voice-samples.md
+            - name: Рекомендации по именованию настраиваемых ключевых слов
+              href: speech-devices-sdk-kws-guidelines.md
+            - name: Выявление пользовательских ключевых слов
+              href: speech-devices-sdk-create-kws.md
+        - name: Создание звукового содержимого
+          items:
+            - name: Создание звукового содержимого
+              href: how-to-audio-content-creation.md
     - name: Справочник
       items:
         - name: Пакет SDK для службы "Речь"
@@ -147,55 +198,16 @@
         - name: Вопросы и ответы. Преобразование текста в речь
           href: faq-text-to-speech.md
           displayName: 'FAQ,TTS FAQ,SS FAQ,frequently asked questions'
-- name: Распознавание намерений
-  expanded: false
-  items:
-    - name: Краткие руководства
-      items:
-        - name: 'Распознавание речи, намерений и сущностей'
-          href: quickstarts/intent-recognition.md
-          displayName: 'Recognize intents and entities with LUIS, LUIS, Language Understanding, prebuilt domains'
-    - name: Практические руководства
-      items:
-        - name: 'Распознавание намерений в речи с помощью LUIS (C#)'
-          href: how-to-recognize-intents-from-speech-csharp.md
-    - name: Справочник
-      items:
-        - name: Пакет SDK для службы "Речь"
-          items:
-            - name: C++
-              href: 'https://aka.ms/csspeech/cppref'
-              displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
-            - name: 'C#'
-              href: 'https://aka.ms/csspeech/csharpref'
-              displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
-            - name: Java
-              href: 'https://aka.ms/csspeech/javaref'
-              displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
-            - name: JavaScript
-              href: 'https://aka.ms/csspeech/javascriptref'
-              displayName: 'JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
-            - name: Objective-C
-              href: 'https://aka.ms/csspeech/objectivecref'
-              displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
-            - name: Python
-              href: 'https://aka.ms/csspeech/pythonref'
-              displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
-            - name: Заметки о выпуске
-              href: releasenotes.md
-              displayName: 'release notes,updates,what''s new,what is new,changes'
-        - name: Служба LUIS
-          items:
-            - name: Ресурсы для разработчиков LUIS
-              href: 'https://docs.microsoft.com/azure/cognitive-services/luis/developer-reference-resource'
 - name: Перевод речи
   expanded: false
   items:
+    - name: Документация по переводу речи
+      href: index-speech-translation.yml
     - name: Обзор
       items:
         - name: Что такое перевод речи?
           href: speech-translation.md
-    - name: Краткие руководства
+    - name: Краткое руководство
       items:
         - name: Преобразование речи в текст
           href: quickstarts/translate-speech-to-text.md
@@ -236,17 +248,65 @@
       items:
         - name: Вопросы и ответы. Перевод речи
           href: 'https://www.microsoft.com/translator/faq.aspx'
+- name: Распознавание намерений
+  expanded: false
+  items:
+    - name: Документация по распознаванию намерений
+      href: index-intent-recognition.yml
+    - name: Краткое руководство
+      items:
+        - name: 'Распознавание речи, намерений и сущностей'
+          href: quickstarts/intent-recognition.md
+          displayName: 'Recognize intents and entities with LUIS, LUIS, Language Understanding, prebuilt domains'
+    - name: Практические руководства
+      items:
+        - name: 'Распознавание намерений в речи с помощью LUIS (C#)'
+          href: how-to-recognize-intents-from-speech-csharp.md
+    - name: Справочник
+      items:
+        - name: Пакет SDK для службы "Речь"
+          items:
+            - name: C++
+              href: 'https://aka.ms/csspeech/cppref'
+              displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
+            - name: 'C#'
+              href: 'https://aka.ms/csspeech/csharpref'
+              displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
+            - name: Java
+              href: 'https://aka.ms/csspeech/javaref'
+              displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
+            - name: JavaScript
+              href: 'https://aka.ms/csspeech/javascriptref'
+              displayName: 'JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
+            - name: Objective-C
+              href: 'https://aka.ms/csspeech/objectivecref'
+              displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
+            - name: Python
+              href: 'https://aka.ms/csspeech/pythonref'
+              displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
+            - name: Заметки о выпуске
+              href: releasenotes.md
+              displayName: 'release notes,updates,what''s new,what is new,changes'
+        - name: Служба LUIS
+          items:
+            - name: Ресурсы для разработчиков LUIS
+              href: 'https://docs.microsoft.com/azure/cognitive-services/luis/developer-reference-resource'
 - name: Сценарии бесед
   expanded: false
   items:
+    - name: Документация по сценариям бесед
+      href: index-conversation-scenarios.yml
     - name: Транскрибирование бесед
       items:
         - name: Обзор
           items:
-            - name: Что такое транскрибирование бесед?
+            - name: Транскрибирование бесед
               href: conversation-transcription.md
         - name: Практические руководства
           items:
+            - name: Работа со сценариями центра обработки вызовов
+              href: call-center-transcription.md
+              displayName: 'IVRs, IVR, Telephony Data, Transcription for Telephony Data, Real-time Transcription for Call Centers'
             - name: Транскрибирование бесед в реальном времени
               href: how-to-use-conversation-transcription.md
             - name: Асинхронное транскрибирование бесед
@@ -284,9 +344,9 @@
       items:
         - name: Обзор
           items:
-            - name: Что такое беседа с использованием нескольких устройств?
+            - name: Ведение беседы с использованием нескольких устройств
               href: multi-device-conversation.md
-        - name: Краткие руководства
+        - name: Краткое руководство
           items:
             - name: Начало беседы и присоединение к ней
               href: quickstarts/multi-device-conversation.md
@@ -301,6 +361,8 @@
 - name: Голосовые помощники
   expanded: false
   items:
+    - name: Документация по голосовым помощникам
+      href: index-voice-assistants.yml
     - name: Обзор
       items:
         - name: Что такое голосовой помощник?
@@ -349,115 +411,25 @@
           items:
             - name: 'Голосовые помощники: часто задаваемые вопросы'
               href: faq-voice-assistants.md
-- name: Настройка
+- name: Hosting
   expanded: false
   items:
-    - name: Преобразование речи в текст
-      items:
-        - name: Портал пользовательской службы распознавания речи
-          items:
-            - name: Начало работы с пользовательской службой распознавания речи
-              href: how-to-custom-speech.md
-            - name: Подготовка данных
-              href: how-to-custom-speech-test-data.md
-            - name: Данные проверки
-              href: how-to-custom-speech-inspect-data.md
-            - name: Точность оценки
-              href: how-to-custom-speech-evaluate-data.md
-            - name: Обучение пользовательской модели
-              href: how-to-custom-speech-train-model.md
-            - name: Развертывание пользовательской модели
-              href: how-to-custom-speech-deploy-model.md
-            - name: Создание транскрипций с подписями человека
-              href: how-to-custom-speech-human-labeled-transcriptions.md
-        - name: Модели клиентов
-          items:
-            - name: 'Создание, публикация и использование модели'
-              href: tutorial-tenant-model.md
-    - name: Преобразование текста в речь
-      items:
-        - name: Ответственное развертывание
-          items:
-            - name: Фильтрация Пользовательского голоса
-              href: concepts-gating-overview.md
-            - name: Развертывание технологии для синтеза
-              href: concepts-guidelines-responsible-deployment-synthetic.md
-            - name: Предоставление сведений специалистам по озвучиванию
-              href: 'https://aka.ms/disclosure-voice-talent'
-            - name: Рекомендации по проектированию для раскрытия информации
-              href: concepts-disclosure-guidelines.md
-            - name: Конструктивные шаблоны для раскрытия информации
-              href: concepts-disclosure-patterns.md
-            - name: Правила поведения
-              href: 'https://aka.ms/custom-neural-code-of-conduct'
-        - name: Портал Пользовательского голоса
-          items:
-            - name: Начало работы с настраиваемыми голосовыми моделями
-              href: how-to-custom-voice.md
-              displayName: 'custom voice, neural voice'
-            - name: Подготовка данных
-              href: how-to-custom-voice-prepare-data.md
-            - name: Создание и использование настраиваемых голосовых моделей
-              href: how-to-custom-voice-create-voice.md
-            - name: Запись образцов голосов
-              href: record-custom-voice-samples.md
-        - name: Создание звукового содержимого
-          items:
-            - name: Создание звукового содержимого
-              href: how-to-audio-content-creation.md
-    - name: Рекомендации по именованию настраиваемых ключевых слов
-      href: speech-devices-sdk-kws-guidelines.md
-    - name: Выявление пользовательских ключевых слов
-      href: speech-devices-sdk-create-kws.md
-- name: Служба "Речь"
-  expanded: false
-  items:
-    - name: Сценарии
-      items:
-        - name: Центры обработки вызовов
-          href: call-center-transcription.md
-          displayName: 'IVRs, IVR, Telephony Data, Transcription for Telephony Data, Real-time Transcription for Call Centers'
+    - name: Документация по размещению
+      href: index-hosting.yml
     - name: Практические руководства
       items:
-        - name: Бесплатная пробная версия службы "Речь"
-          href: get-started.md
-        - name: Создание ресурса службы "Речь"
-          href: 'get-started.md#create-a-speech-resource-in-azure'
-        - name: Контейнеры
-          expanded: false
-          items:
-            - name: Установка и запуск контейнеров
-              href: speech-container-howto.md
-              displayName: 'containers,install container,run container'
-            - name: Настройка контейнеров
-              href: speech-container-configuration.md
-              displayName: 'containers,configure containers,container config,configuration'
-            - name: Kubernetes и Helm
-              href: speech-container-howto-on-premises.md
-              displayName: 'containers,kubernetes,k8s,helm,orchestration,on-prem,on-premises'
-            - name: Экземпляры контейнеров Azure
-              href: deploy-speech-on-container-instances.md
-              displayName: 'ACI,azure container instances,container instances,containers'
-    - name: Примеры
-      items:
-        - name: Примеры REST для преобразования текста в речь
-          href: 'https://github.com/Azure-Samples/Cognitive-Speech-TTS'
-        - name: Примеры REST для пакетного транскрибирования
-          href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch'
-    - name: Справочник
-      items:
-        - name: Интерфейсы REST API
-          items:
-            - name: REST API для пакетного транскрибирования и настройки
-              href: 'https://westus.cris.ai/swagger/ui/index'
-            - name: REST API для транскрибирования бесед
-              href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
-            - name: REST API преобразования речи в текст;
-              href: rest-speech-to-text.md
-            - name: REST API преобразования текста в речь.
-              href: rest-text-to-speech.md
-        - name: Документация по Swagger
-          href: swagger-documentation.md
+        - name: Установка и запуск контейнеров
+          href: speech-container-howto.md
+          displayName: 'containers,install container,run container'
+        - name: Настройка контейнеров
+          href: speech-container-configuration.md
+          displayName: 'containers,configure containers,container config,configuration'
+        - name: Kubernetes и Helm
+          href: speech-container-howto-on-premises.md
+          displayName: 'containers,kubernetes,k8s,helm,orchestration,on-prem,on-premises'
+        - name: Экземпляры контейнеров Azure
+          href: deploy-speech-on-container-instances.md
+          displayName: 'ACI,azure container instances,container instances,containers'
 - name: Пакет SDK для службы "Речь"
   expanded: false
   items:
@@ -469,7 +441,7 @@
           href: scenario-availability.md
         - name: Доставка приложения
           href: ship-application.md
-    - name: Краткие руководства
+    - name: Краткое руководство
       items:
         - name: Создание проекта
           href: quickstarts/create-project.md
@@ -510,6 +482,8 @@
 - name: Устройства
   expanded: false
   items:
+    - name: 'Документация по устройствам, подключаемым к службе "Речь"'
+      href: index-devices.yml
     - name: Обзор
       items:
         - name: Сведения о пакете SDK для устройств в службе "Речь"
@@ -522,14 +496,10 @@
           href: speech-devices-sdk-microphone.md
         - name: "Комплект Roobo версии\_1"
           href: speech-devices-sdk-roobo-v1.md
-    - name: Краткие руководства
+    - name: Краткое руководство
       items:
-        - name: Windows
-          href: speech-devices-sdk-windows-quickstart.md
-        - name: Linux
-          href: speech-devices-sdk-linux-quickstart.md
-        - name: Android
-          href: speech-devices-sdk-android-quickstart.md
+        - name: 'Использование пакета SDK для устройств, подключаемых к службе "Речь"'
+          href: speech-devices-sdk-quickstart.md
     - name: Ресурсы
       items:
         - name: 'Устранение неполадок пакета SDK для устройств, подключаемых к службе "Речь"'
@@ -555,6 +525,8 @@
       displayName: 'support,help,release notes,search,scoped search,azure support,github support,stack overflow,github issues,bugs,feedback,uservoice'
     - name: Регионы
       href: regions.md
+    - name: Документация по Swagger
+      href: swagger-documentation.md
     - name: Национальные облака
       href: sovereign-clouds.md
       displayName: 'fairfax,mooncake,compliant,secret,compliance,government,government cloud,dod,china'

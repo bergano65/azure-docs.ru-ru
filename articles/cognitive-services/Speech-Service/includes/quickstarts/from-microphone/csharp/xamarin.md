@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: 3f315f29eab107c9e0e145bd25db71a8cb8b2ace
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: ed37e4f5b84431355b63b3d59b0e49b78eaeed86
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156360"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77445838"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ ms.locfileid: "77156360"
 1. В обработчике `OnRecognitionButtonClicked` исходного файла найдите строку `YourSubscriptionKey` и замените ее своим ключом подписки.
 
 
-1. В обработчике `OnRecognitionButtonClicked` найдите строку `YourServiceregion` и замените ее параметром пакета SDK для службы "Речь" на основе [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. (Например, используйте `westus` для подписки с бесплатной пробной версией.)
+1. В обработчике `OnRecognitionButtonClicked` найдите строку `YourServiceregion` и замените ее **идентификатором региона** на основе [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. (Например, используйте `westus` для подписки с бесплатной пробной версией.)
 
 1. Далее необходимо создать сервис [Xamarin Service](https://docs.microsoft.com/xamarin/android/app-fundamentals/services/creating-a-service/), который используется для запроса разрешений на доступ к микрофону с различных проектов платформы (UWP, Android и iOS). Для этого добавьте в проект helloworld новую папку с именем *Службы* и создайте в ней новый исходный файл C#. Вы можете щелкнуть правой кнопкой мыши папку *Службы* и выбрать пункт **Добавить** > **Новый элемент** > **Файл кода**. Переименуйте файл `IMicrophoneService.cs` и поместите в него весь код из следующего фрагмента:
 

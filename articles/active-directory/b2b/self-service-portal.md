@@ -5,32 +5,32 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: sample
-ms.date: 05/08/2018
+ms.date: 02/12/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 794a13a3f863c732d4e7ed8cedcbd73f7cbc0d0b
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: cfa67f529408efcc2a703a4f80b15143c774f0b9
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74272107"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77195799"
 ---
-# <a name="self-service-portal-for-azure-ad-b2b-collaboration-sign-up"></a>Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B
+# <a name="self-service-for-azure-ad-b2b-collaboration-sign-up"></a>Самостоятельная регистрация на портале для службы совместной работы Azure AD B2B
 
-С помощью встроенных функций, доступных на [портале Azure](https://portal.azure.com) и [панели доступа к приложениям](https://myapps.microsoft.com) для пользователей, клиенты могут выполнять разные операции. Тем не менее необходимо настроить рабочий процесс подключения для пользователей B2B в соответствии с потребностями вашей организации. Это можно сделать с помощью [API приглашения](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation).
+С помощью встроенных функций, доступных на [портале Azure](https://portal.azure.com) и [панели доступа к приложениям](https://myapps.microsoft.com) для пользователей, клиенты могут выполнять разные операции. Тем не менее необходимо настроить рабочий процесс подключения для пользователей B2B в соответствии с потребностями вашей организации.
 
-Ваша приглашающая организация не может знать наперед, каким отдельным внешним сотрудникам необходимо получить доступ к вашим ресурсам. Вам необходимо, чтобы пользователи из компаний-партнеров могли самостоятельно регистрироваться с применением набора политик, контролируемых вашей приглашающей организацией. Этот сценарий можно выполнить с помощью API. Для этого есть [пример проекта на GitHub](https://github.com/Azure/active-directory-dotnet-graphapi-b2bportal-web).
+## <a name="azure-ad-entitlement-management-for-b2b-guest-user-sign-up"></a>Управление правами Azure AD для регистрации гостевых пользователей B2B
 
-Этот проект на портале GitHub демонстрирует, как с помощью API-интерфейсов организации могут предоставлять своим доверенным партнерам возможность самостоятельно регистрироваться на основе политики с правилами, определяющими, к каким приложениям они могут получать доступ. Пользователи из компаний-партнеров получают безопасный доступ к ресурсам, когда им это требуется, а со стороны приглашающей организации никто не должен их регистрировать вручную. Вы можете с легкостью развернуть проект в любую подписку Azure.
+Ваша приглашающая организация не может знать наперед, каким отдельным внешним сотрудникам необходимо получить доступ к вашим ресурсам. Вам нужно, чтобы пользователи из партнерских компаний могли сами регистрироваться с применением управляемых вами политик. Если вы хотите разрешить пользователям из других организаций запрашивать доступ, а при утверждении получать учетную запись гостя и назначение в группу, к приложениям и сайтам SharePoint Online, можно использовать [управление правами Azure AD](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-overview), чтобы настроить политики, которые будут [управлять доступом для внешних пользователей](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users#how-access-works-for-external-users).
 
-## <a name="as-is-code"></a>Код "как есть"
+## <a name="azure-active-directory-b2b-invitation-api"></a>API-интерфейс B2B-приглашения Azure Active Directory
 
-Этот код предоставлен в качестве примера для демонстрации использования API приглашения службы Azure Active Directory B2B. Перед развертыванием в рабочем сценарии его должна настроить и проверить команда разработчиков или партнер.
+Организации могут использовать [API диспетчера приглашений Microsoft Graph](https://docs.microsoft.com/graph/api/resources/invitation?view=graph-rest-1.0) для создания собственных возможностей подключения гостевых пользователей B2B. Если вы хотите предложить самостоятельную регистрацию гостевых пользователей B2B, рекомендуется использовать [управление правами Azure AD](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-overview). Но если вы хотите создать собственный интерфейс, можно использовать [API создания приглашения](https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0&tabs=http) для автоматической отправки настраиваемого сообщения с приглашением непосредственно пользователю B2B, например. Или ваше приложение может использовать inviteRedeemUrl, возвращенный в ответе на создание, чтобы создать собственное приглашение (с помощью выбранного механизма связи) приглашенному пользователю.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](licensing-guidance.md)

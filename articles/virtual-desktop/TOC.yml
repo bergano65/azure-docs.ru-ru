@@ -42,6 +42,8 @@
           href: deploy-windows-7-virtual-machine.md
         - name: Развертывание узла сеансов на основе GPU
           href: configure-vm-gpu.md
+        - name: Развертывание существующего пула узлов
+          href: expand-existing-host-pool.md
     - name: Создание контейнера профилей
       items:
         - name: Использование файлового ресурса на основе виртуальной машины

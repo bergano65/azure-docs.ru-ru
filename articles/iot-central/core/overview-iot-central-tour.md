@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: 4e699b0fdbc22594a181d83c9650d569b35c52f3
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: b905b1e86810b25c4c94072d6cd414b993e2a883
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024166"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77426192"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Общие сведения о пользовательском интерфейсе Azure IoT Central
 
@@ -59,10 +59,10 @@ ms.locfileid: "77024166"
 
 ## <a name="navigate-your-application"></a>Навигация по приложению
 
-В области слева можно получить доступ к разным областям приложения Интернета вещей. Вы можете развернуть или свернуть панель навигации, щелкнув значок с тремя линиями в верхней части панели навигации:
+В области слева можно получить доступ к разным областям приложения Интернета вещей. Вы можете развернуть или свернуть панель слева, щелкнув значок с тремя линиями в верхней части панели:
 
 > [!NOTE]
-> Элементы, отображаемые на панели навигации, зависят от роли пользователя. Дополнительные сведения об управлении учетными записями пользователей и ролями см. [здесь](howto-manage-users-roles.md). 
+> Элементы, отображаемые на панели слева, зависят от роли пользователя. Дополнительные сведения об управлении учетными записями пользователей и ролями см. [здесь](howto-manage-users-roles.md). 
 
 :::row:::
   :::column span="":::

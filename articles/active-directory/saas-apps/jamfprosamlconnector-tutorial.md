@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Jamf Pro | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Jamf Pro | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и Jamf Pro.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 02/11/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dc99e23e1b885de25bd2159d7916790cad851108
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 1d83dbe756e8e6acdb58861ac359801bc13a63c4
+ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77150323"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77373192"
 ---
-# <a name="tutorial-azure-active-directory-sso-integration-with-jamf-pro"></a>Руководство. Интеграция единого входа Azure Active Directory с Jamf Pro
+# <a name="tutorial-azure-active-directory-sso-integration-with-jamf-pro"></a>Руководство по Интеграция единого входа Azure Active Directory с Jamf Pro
 
 В этом учебнике описано, как интегрировать Jamf Pro с Azure Active Directory (Azure AD). Интеграция Jamf Pro с Azure AD обеспечивает следующие возможности:
 
@@ -31,7 +31,7 @@ ms.locfileid: "77150323"
 * Включите автоматический вход пользователей в Jamf Pro с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Single sign-on to applications in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) (Единый вход в приложения с помощью Azure Active Directory).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Single sign-on to applications in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on) (Единый вход в приложения с помощью Azure Active Directory).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,7 +42,10 @@ ms.locfileid: "77150323"
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Jamf Pro поддерживает единый вход, инициируемый **поставщиком службы** и **поставщиком удостоверений**.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. 
+
+* Jamf Pro поддерживает единый вход, инициируемый **поставщиком службы** и **поставщиком удостоверений**.
+* После настройки Jamf Pro можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="add-jamf-pro-from-the-gallery"></a>Добавление Jamf Pro из коллекции
 
@@ -147,20 +150,20 @@ ms.locfileid: "77150323"
 
     ![Страница "Единый вход" в Jamf Pro](./media/jamfprosamlconnector-tutorial/configure3.png)
 
-  а. Выберите команду **Изменить**.
+    а. Выберите команду **Изменить**.
 
-  b. Установите флажок **Enable Single Sign-On Authentication** (Включить проверку подлинности с помощью единого входа).
+    b. Установите флажок **Enable Single Sign-On Authentication** (Включить проверку подлинности с помощью единого входа).
 
-    c. Выберите пункт **Azure** в раскрывающемся меню **Identity Provider** (Поставщик удостоверений).
+  c. Выберите пункт **Azure** в раскрывающемся меню **Identity Provider** (Поставщик удостоверений).
 
-    d. Скопируйте значение **идентификатора сущности** и вставьте его в поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
+  d. Скопируйте значение **идентификатора сущности** и вставьте его в поле **Идентификатор (сущности)** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    > [!NOTE]
-    > Используйте значение в поле `<SUBDOMAIN>` для заполнения URL-адреса входа и URL-адреса ответа в разделе **Базовая конфигурация SAML** на портале Azure.
+> [!NOTE]
+> Используйте значение в поле `<SUBDOMAIN>` для заполнения URL-адреса входа и URL-адреса ответа в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    д) Выберите **Metadata URL** (URL-адрес метаданных) в раскрывающемся меню **Identity provider metadata source** (Источник метаданных поставщика удостоверений). В появившееся поле вставьте **значение URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
+  д) Выберите **Metadata URL** (URL-адрес метаданных) в раскрывающемся меню **Identity provider metadata source** (Источник метаданных поставщика удостоверений). В появившееся поле вставьте **значение URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
 
-    е) (Необязательно) Измените срок действия токена или выберите Disable SAML token expiration (Отключить истечение срока действия токена SAML).
+  е) (Необязательно) Измените срок действия токена или выберите Disable SAML token expiration (Отключить истечение срока действия токена SAML).
 
 7. На той же странице прокрутите вниз до раздела **User Mapping** (Сопоставление пользователей). Затем выполните следующие действия:
 
@@ -228,8 +231,8 @@ ms.locfileid: "77150323"
 
 - [Tutorials for integrating SaaS applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) (Руководства по интеграции приложений SaaS с Azure Active Directory)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 - [Попробуйте использовать Jamf Pro с Azure AD](https://aad.portal.azure.com/)

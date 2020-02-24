@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 429b8845e49158c906c02773f654c9487ff98d1e
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: ffc2681e487a51ce630d9433d6ded86961b5276c
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77134774"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210379"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-nodejs-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Node.js и Azure Cosmos DB
 
@@ -28,9 +28,11 @@ ms.locfileid: "77134774"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure.
-- [Node.js 0.10.29+](https://nodejs.org/).
-- [Git](https://www.git-scm.com/downloads).
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
+
+Кроме того, вам потребуется:
+* [Node.js](https://nodejs.org/dist/v0.10.29/x64/node-v0.10.29-x64.msi) версии 0.10.29 или более поздней.
+* [Git](https://git-scm.com/);
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -110,42 +112,54 @@ ms.locfileid: "77134774"
 * Вставляются сущности ключа и значения.
 
     ```javascript
-    ...
-       {
-          query: 'INSERT INTO  uprofile.user  (user_id, user_name , user_bcity) VALUES (?,?,?)',
-          params: [5, 'IvanaV', 'Belgaum']
-        }
-    ];
-    client.batch(queries, { prepare: true}, next);
+        function insert(next) {
+            console.log("\insert");
+            const arr = ['INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (1, \'AdrianaS\', \'Seattle\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (2, \'JiriK\', \'Toronto\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (3, \'IvanH\', \'Mumbai\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (4, \'IvanH\', \'Seattle\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (5, \'IvanaV\', \'Belgaum\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (6, \'LiliyaB\', \'Seattle\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (7, \'JindrichH\', \'Buenos Aires\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (8, \'AdrianaS\', \'Seattle\')',
+                        'INSERT INTO  uprofile.user (user_id, user_name , user_bcity) VALUES (9, \'JozefM\', \'Seattle\')'];
+            arr.forEach(element => {
+            client.execute(element);
+            });
+            next();
+        },
     ```
 
 * Запрос на получение всех значений ключа.
 
     ```javascript
-   var query = 'SELECT * FROM uprofile.user';
-    client.execute(query, { prepare: true}, function (err, result) {
-      if (err) return next(err);
-      result.rows.forEach(function(row) {
-        console.log('Obtained row: %d | %s | %s ',row.user_id, row.user_name, row.user_bcity);
-      }, this);
-      next();
-    });
+        function selectAll(next) {
+            console.log("\Select ALL");
+            var query = 'SELECT * FROM uprofile.user';
+            client.execute(query, function (err, result) {
+            if (err) return next(err);
+            result.rows.forEach(function(row) {
+                console.log('Obtained row: %d | %s | %s ',row.user_id, row.user_name, row.user_bcity);
+            }, this);
+            next();
+            });
+        },
     ```  
     
 * Запрос на получение значения ключа.
 
     ```javascript
-    function selectById(next) {
-        console.log("\Getting by id");
-        var query = 'SELECT * FROM uprofile.user where user_id=1';
-        client.execute(query, { prepare: true}, function (err, result) {
-        if (err) return next(err);
+        function selectById(next) {
+            console.log("\Getting by id");
+            var query = 'SELECT * FROM uprofile.user where user_id=1';
+            client.execute(query, function (err, result) {
+            if (err) return next(err);
             result.rows.forEach(function(row) {
-            console.log('Obtained row: %d | %s | %s ',row.user_id, row.user_name, row.user_bcity);
-        }, this);
-        next();
-        });
-    }
+                console.log('Obtained row: %d | %s | %s ',row.user_id, row.user_name, row.user_bcity);
+            }, this);
+            next();
+            });
+        }
     ```  
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
@@ -190,19 +204,41 @@ ms.locfileid: "77134774"
 
 3. Сохраните `uprofile.js`.
 
+> [!NOTE]
+> Если на последующих этапах возникнет ошибка, связанная с сертификатом,при работе на компьютере Windows, убедитесь, что правильно выполнены все приведенные ниже инструкции по преобразованию CRT-файла в формат Майкрософт CER.
+> 
+> Дважды щелкните CRT-файл, чтобы открыть его в средстве отображения сертификатов. 
+>
+> ![Просмотр и проверка выходных данных](./media/create-cassandra-nodejs/crtcer1.gif)
+>
+> Нажмите кнопку "Далее" в мастере сертификатов. Выберите элемент "Файлы X.509 (.CER) в кодировке Base-64" и нажмите кнопку "Далее".
+>
+> ![Просмотр и проверка выходных данных](./media/create-cassandra-nodejs/crtcer2.gif)
+>
+> Нажмите кнопку "Обзор" (чтобы определить назначение) и введите имя файла.
+> Последовательно нажмите кнопки "Далее" и "Готово".
+>
+> Теперь у вас должен быть правильно отформатированный CER-файл. Убедитесь, что путь в `uprofile.js` указывает на этот файл.
+
 ## <a name="run-the-nodejs-app"></a>Запуск приложения Node.js
 
-1. В окне терминала git введите команду `npm install`, чтобы установить необходимые модули npm.
+1. В окне терминала Git убедитесь, что открыт каталог примеров, который вы клонировали ранее:
 
-2. Запустите `node uprofile.js`, чтобы запустить приложение Node.
+    ```bash
+    cd azure-cosmos-db-cassandra-nodejs-getting-started
+    ```
 
-3. Проверьте результаты из командной строки.
+2. Выполните `npm install`, чтобы установить необходимые модули npm.
+
+3. Запустите `node uprofile.js`, чтобы запустить приложение Node.
+
+4. Проверьте результаты из командной строки.
 
     ![Просмотр и проверка выходных данных](./media/create-cassandra-nodejs/output.png)
 
     Нажмите клавиши Ctrl+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
-4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
+5. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
     ![Просмотр данных в обозревателе данных](./media/create-cassandra-nodejs/data-explorer.png) 
 
@@ -220,5 +256,3 @@ ms.locfileid: "77134774"
 
 > [!div class="nextstepaction"]
 > [Импорт данных Cassandra в Azure Cosmos DB](cassandra-import-data.md)
-
-

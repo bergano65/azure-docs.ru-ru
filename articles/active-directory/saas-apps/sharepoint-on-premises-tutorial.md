@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с локальной версией SharePoint | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с локальной версией SharePoint | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и локальной версией SharePoint.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 7feb62bb3e38452a441c505107569457d7c90a3f
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 60ff8769192191ba112008e7baee23740147dfe9
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233450"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367032"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
+# <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство по Интеграция Azure Active Directory с локальной версией SharePoint
 
 В этом руководстве описано, как интегрировать локальную версию SharePoint с Azure Active Directory (Azure AD).
 Интеграция локальной версии SharePoint с Azure AD дает указанные ниже преимущества:
@@ -38,7 +38,7 @@ ms.locfileid: "74233450"
 
 Чтобы настроить интеграцию Azure AD с локальной версией SharePoint, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на локальную версию SharePoint с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -103,13 +103,13 @@ ms.locfileid: "74233450"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для локальной версии SharePoint](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `urn:sharepoint:federation`.
 
@@ -132,7 +132,7 @@ ms.locfileid: "74233450"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -168,7 +168,7 @@ ms.locfileid: "74233450"
 
     Далее включите доверенный поставщик удостоверений для вашего приложения, выполнив следующие действия:
 
-    a. В центре администрирования перейдите в раздел **Управление веб-приложениями** и выберите веб-приложение, которое необходимо защитить с помощью Azure AD.
+    а. В центре администрирования перейдите в раздел **Управление веб-приложениями** и выберите веб-приложение, которое необходимо защитить с помощью Azure AD.
 
     b. На ленте щелкните **Поставщики проверки подлинности** и выберите зону, которую нужно использовать.
 
@@ -176,7 +176,7 @@ ms.locfileid: "74233450"
 
     d. В разделе параметра URL-адреса страницы входа щелкните **Настраиваемая страница входа** и укажите значение /_trust/.
 
-    д. Последовательно выберите **ОК**.
+    д) Нажмите кнопку **ОК**.
 
     ![Настройка поставщика проверки подлинности](./media/sharepoint-on-premises-tutorial/fig10-configauthprovider.png)
 
@@ -330,7 +330,7 @@ ms.locfileid: "74233450"
 
 Система не проверяет значения, по которым вы выполняете поиск. Это может привести к опечаткам и к тому, что пользователи могут случайно выбрать неправильный тип утверждения для назначения, например утверждение **SurName**. Это может помешать пользователям получить доступ к ресурсам.
 
-Для этого сценария можно использовать решение с открытым кодом [AzureCP](https://yvand.github.io/AzureCP/), в котором есть настраиваемый поставщик утверждений для SharePoint 2016. С помощью Azure AD Graph он разрешает и проверяет вводимые пользователями данные. Дополнительные сведения см. в статье об [AzureCP](https://yvand.github.io/AzureCP/).
+Для этого сценария можно использовать решение с открытым кодом [AzureCP](https://yvand.github.io/AzureCP/), в котором есть настраиваемый поставщик утверждений для SharePoint 2016. С помощью API Microsoft Graph он разрешает и проверяет вводимые пользователями данные. Дополнительные сведения см. в статье об [AzureCP](https://yvand.github.io/AzureCP/).
 
 ### <a name="assign-the-azure-ad-security-group-in-the-azure-portal"></a>Назначение группы безопасности на портале Azure
 

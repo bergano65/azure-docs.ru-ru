@@ -6,15 +6,15 @@ ms.service: firewall
 services: firewall
 ms.topic: overview
 ms.custom: mvc
-ms.date: 01/28/2020
+ms.date: 02/18/2020
 ms.author: victorh
 Customer intent: As an administrator, I want to evaluate Azure Firewall so I can determine if I want to use it.
-ms.openlocfilehash: b19d8f26795dadb14f00aadd86ba99ae664b1a76
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 6a045a55772d1d9266663571fc2ecc6911aa5125
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76764945"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77442894"
 ---
 # <a name="what-is-azure-firewall"></a>Что такое Брандмауэр Azure?
 
@@ -71,7 +71,9 @@ ms.locfileid: "76764945"
 
 ## <a name="outbound-snat-support"></a>поддержку исходящих данных SNAT;
 
-Все исходящие IP-адреса виртуального трафика преобразовываются к общедоступному IP-адресу брандмауэра Azure (преобразование исходных сетевых адресов (NAT)). Можно определить и разрешить трафик, исходящий из виртуальной сети, к удаленным интернет-адресатам. Брандмауэр Azure не использует SNAT, в то время когда назначений IP-адрес является IP-адресом частного диапазона согласно [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). Если для частных сетей в организации используются общедоступные IP-адреса, брандмауэр Azure будет использовать SNAT трафика для одного из своих частных IP-адресов AzureFirewallSubnet.
+Все исходящие IP-адреса виртуального трафика преобразовываются к общедоступному IP-адресу брандмауэра Azure (преобразование исходных сетевых адресов (NAT)). Можно определить и разрешить трафик, исходящий из виртуальной сети, к удаленным интернет-адресатам. Брандмауэр Azure не использует SNAT, в то время когда назначений IP-адрес является IP-адресом частного диапазона согласно [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). 
+
+Если для частных сетей в организации используются общедоступные IP-адреса, брандмауэр Azure будет использовать SNAT трафика для одного из своих частных IP-адресов AzureFirewallSubnet. В настройках Брандмауэра Azure можно указать, что **не нужно** использовать SNAT для диапазона общедоступный IP-адресов. Дополнительные сведения см. в статье об [использовании SNAT для диапазонов частных IP-адресов в Брандмауэре Azure](snat-private-range.md).
 
 ## <a name="inbound-dnat-support"></a>Поддержка DNAT для входящего трафика
 

@@ -10,40 +10,38 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: 6d1a011f2aa446d8d6f9a7a474b174e3005aa1d9
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: 6c7428a4f34f0be64423c42efc06667cb18aa025
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110340"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77471284"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
-Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы телеметрии с ваших устройств Центра Интернета вещей в облаке на хранение или обработку. В рамках этого краткого руководства вы отправите данные телеметрии в Центр Интернета вещей из приложения Android, запущенного на физическом или имитированном устройстве.
-
-В рамках этого руководства для отправки данных телеметрии используется заранее разработанное приложение Android. Для считывания данных телеметрии из Центра Интернета вещей используется Azure Cloud Shell. Прежде чем запускать приложение, создайте центр Интернета вещей и зарегистрируйте устройство в центре.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+В этом кратком руководстве описано, как отправлять данные телеметрии в Центр Интернета вещей Azure из приложения Android, запущенного на физическом или имитированном устройстве. Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы телеметрии с ваших устройств Центра Интернета вещей в облаке на хранение или обработку. В рамках этого руководства для отправки данных телеметрии используется заранее разработанное приложение Android. Для считывания данных телеметрии из Центра Интернета вещей используется Azure Cloud Shell. Прежде чем запускать приложение, создайте центр Интернета вещей и зарегистрируйте устройство в центре.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Скачайте Android Studio по ссылке https://developer.android.com/studio/. Дополнительные сведения об установке Android Studio см. на [этой странице](https://developer.android.com/studio/install).
+* Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-* Пакет SDK для Android 27, используемый в примере, который описан в этой статье.
+* [Android Studio с пакетом SDK для Android версии 27](https://developer.android.com/studio/). Дополнительные сведения см. в разделе [об установке Android Studio](https://developer.android.com/studio/install). Пакет SDK для Android 27, используемый в примере, который описан в этой статье.
 
-* Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+* [Пример приложения Android](https://github.com/Azure-Samples/azure-iot-samples-java/tree/master/iot-hub/Samples/device/AndroidSample). Этот пример содержится в репозитории [azure-iot-samples-java](https://github.com/Azure-Samples/azure-iot-samples-java).
 
-   ```azurecli-interactive
-   az extension add --name azure-cli-iot-ext
-   ```
+* Порт 8883, открытый в брандмауэре. Пример устройства в этом кратком руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
-* [Пример приложения Android](https://github.com/Azure-Samples/azure-iot-samples-java/tree/master/iot-hub/Samples/device/AndroidSample), которое запускается при работе с этим кратким руководством, содержится в репозитории azure-iot-samples-java на сайте GitHub. Скачайте или клонируйте репозиторий [azure-iot-samples-java](https://github.com/Azure-Samples/azure-iot-samples-java).
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-* Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом кратком руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+### <a name="add-azure-iot-extension"></a>Добавление расширения Azure IoT
+
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+
+```azurecli-interactive
+az extension add --name azure-cli-iot-ext
+```
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 

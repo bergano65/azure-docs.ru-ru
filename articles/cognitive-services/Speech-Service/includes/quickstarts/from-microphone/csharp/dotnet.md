@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: 4b8f58fbfa9de929139646ad267a433645e2db35
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 9c16e2e1726fcbf1e0b55ee0e9808a607b611ea6
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156338"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77445834"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ ms.locfileid: "77156338"
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Перед инициализацией объекта `SpeechRecognizer` необходимо создать конфигурацию, использующую ключ и регион подписки (выберите параметр пакета SDK для службы "Речь" в зависимости от [региона](https://aka.ms/speech/sdkregion)). Вставьте код в метод `RecognizeSpeechAsync()`.
+Перед инициализацией объекта `SpeechRecognizer` необходимо создать конфигурацию, использующую ключ и регион подписки (выберите **идентификатор региона** на основе [региона](https://aka.ms/speech/sdkregion)). Вставьте код в метод `RecognizeSpeechAsync()`.
 
 > [!NOTE]
 > В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?view=azure-dotnet) (Класс SpeechConfig).

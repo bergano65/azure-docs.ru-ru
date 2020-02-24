@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 12/30/2019
-ms.openlocfilehash: 7dd1f07d44bd3b71bb83becee5405cf5c100460c
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 478a7e03b432006b429c96e03307fd8e494c88ff
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754089"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472321"
 ---
 # <a name="create-a-knowledge-store-using-rest-and-postman"></a>Создание хранилища знаний с помощью REST и Postman
 
@@ -26,7 +26,7 @@ ms.locfileid: "75754089"
 
 После создания хранилища знаний вы можете узнать, как получить к нему доступ с помощью [Обозревателя службы хранилища](knowledge-store-view-storage-explorer.md) или [Power BI](knowledge-store-connect-power-bi.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!TIP]
 > При работе с этой статьей мы рекомендуем использовать [классическое приложение Postman](https://www.getpostman.com/). [Исходный код](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/knowledge-store) для этой статьи содержит коллекцию Postman со всеми запросами. 
@@ -35,7 +35,7 @@ ms.locfileid: "75754089"
 
 В этом кратком руководстве используется Когнитивный поиск Azure, хранилище BLOB-объектов Azure и [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) для искусственного интеллекта. 
 
-Так как рабочая нагрузка мала, Cognitive Services работает в фоновом режиме, чтобы обеспечить бесплатную обработку до 20 транзакций ежедневно при вызове из Когнитивного поиска Azure. Если вы используете демонстрационные данные, которые мы предоставляем, можно пропустить создание или присоединение ресурса Cognitive Services.
+Так как рабочая нагрузка мала, Cognitive Services работает в фоновом режиме, чтобы обеспечить бесплатную обработку до 20 транзакций в день. Так как набор данных небольшой, вы можете пропустить создание или присоединение ресурса Cognitive Services.
 
 1. [Скачайте HotelReviews_Free.csv](https://knowledgestoredemo.blob.core.windows.net/hotel-reviews/HotelReviews_Free.csv?sp=r&st=2019-11-04T01:23:53Z&se=2025-11-04T16:00:00Z&spr=https&sv=2019-02-02&sr=b&sig=siQgWOnI%2FDamhwOgxmj11qwBqqtKMaztQKFNqWx00AY%3D). Это данные отзывов об отелях, сохраненные в CSV-файле (с сайта Kaggle.com) и содержащие 19 элементов отзывов клиентов об одном отеле. 
 

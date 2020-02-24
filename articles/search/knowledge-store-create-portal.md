@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 01/29/2020
-ms.openlocfilehash: b75b760704511627c74301ae3fff82c24a262e17
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 21279b2b4735a25210e8373d76d0d63f9c711bfc
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76904890"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77472372"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-knowledge-store-in-the-azure-portal"></a>Краткое руководство. Создание хранилища знаний службы "Когнитивный поиск Azure" на портале Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "76904890"
 
 В этом кратком руководстве используется Когнитивный поиск Azure, хранилище BLOB-объектов Azure и [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) для искусственного интеллекта. 
 
-Так как рабочая нагрузка мала, Cognitive Services работает в фоновом режиме, чтобы обеспечить бесплатную обработку до 20 транзакций ежедневно при вызове из Когнитивного поиска Azure. Если вы используете демонстрационные данные, которые мы предоставляем, можно пропустить создание или присоединение ресурса Cognitive Services.
+Так как рабочая нагрузка мала, Cognitive Services работает в фоновом режиме, чтобы обеспечить бесплатную обработку до 20 транзакций в день. Так как набор данных небольшой, вы можете пропустить создание или присоединение ресурса Cognitive Services.
 
 1. [Скачайте HotelReviews_Free.csv](https://knowledgestoredemo.blob.core.windows.net/hotel-reviews/HotelReviews_Free.csv?sp=r&st=2019-11-04T01:23:53Z&se=2025-11-04T16:00:00Z&spr=https&sv=2019-02-02&sr=b&sig=siQgWOnI%2FDamhwOgxmj11qwBqqtKMaztQKFNqWx00AY%3D). Это данные отзывов об отелях, сохраненные в CSV-файле (с сайта Kaggle.com) и содержащие 19 элементов отзывов клиентов об одном отеле. 
 

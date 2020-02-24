@@ -2,20 +2,16 @@
 title: Самостоятельный обмен и возмещение средств для резервирований Azure
 description: Узнайте, как можно обменять Azure Reserved Virtual Machine Instances или вернуть деньги за них.
 author: yashesvi
-manager: yashesvi
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/24/2020
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 5f0c0c50ffd639109fdbb90c76e4ec036a8bc975
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 393db5d2e14e047ade04e0b688582e272c6ca44f
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76773877"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200441"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Самостоятельный обмен и возмещение средств для резервирований Azure
 
@@ -72,12 +68,10 @@ Azure Reserved Virtual Machine Instances обеспечивают гибкост
 - За обмен не предусмотрены штрафы или годовые ограничения.
 
 **Политики возврата денег**
-- Если отменить резервирование, возможно, с вас будет взиматься плата за досрочное аннулирование (12 %).
-- Полученные средства, возмещенные за отмену, включают оставшийся пропорциональный баланс за вычетом 12 % за досрочное аннулирование. Для отмены перейдите к резервированию на портале Azure и выберите **Возмещение**.
+- Возможно, в будущем с вас будет взиматься плата за досрочное аннулирование (12 %). Сейчас такой штраф не взимается.
 - Общая сумма возмещения не может превышать 50 000 долларов США в течение 12 месяцев.
 - Сумма возмещенных средств рассчитывается на основе наименьшей стоимости, например на стоимости покупки или текущей стоимости резервирования.
-- Только владельцы резервирования могут осуществлять возмещение. [Узнайте, как добавлять или изменять пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
-- Корпорация Майкрософт оставляет за собой право взимать 12-процентную пеню за любые возвраты. Пеня в настоящее время не применяется, но будет применяться в будущем.
+- Только владельцы заказа на резервирование могут осуществлять возмещение. [Узнайте, как добавлять или изменять пользователей, которые могут управлять резервированием](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
 
 ## <a name="exchange-non-premium-storage-for-premium-storage"></a>Обмен хранилища класса, отличного от Premium, на хранилище класса Premium
 

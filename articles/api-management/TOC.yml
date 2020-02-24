@@ -51,7 +51,7 @@
           href: api-management-howto-policies.md
         - name: Индекс справочника по политикам
           href: api-management-policies.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Встроенные средства управления безопасностью
           href: api-management-security-controls.md
@@ -123,6 +123,8 @@
       items:
         - name: Защита API с помощью Azure AD
           href: api-management-howto-protect-backend-with-aad.md
+        - name: Защита API серверной части одностраничного приложения с помощью Azure AD B2C
+          href: howto-protect-backend-frontend-azure-ad-b2c.md
         - name: Подключение к виртуальной сети
           href: api-management-using-with-vnet.md
         - name: Подключение к внутренней виртуальной сети

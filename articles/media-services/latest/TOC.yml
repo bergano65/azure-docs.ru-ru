@@ -99,6 +99,8 @@
         - name: Конечные точки потоковой передачи
           displayName: 'origin, packager, cdn'
           href: streaming-endpoint-concept.md
+        - name: Масштабирование потоковой передачи с помощью CDN
+          href: scale-streaming-cdn.md
         - name: Указатели потоковой передачи
           displayName: URLs
           href: streaming-locators-concept.md
@@ -228,6 +230,8 @@
           href: cli-create-transform.md
         - name: "Создание заданий\_— CLI"
           href: cli-create-jobs.md
+        - name: Задания с несколькими результатами преобразования
+          href: job-multiple-transform-outputs.md
     - name: Кодирование контента
       items:
         - name: "URL-адрес HTTPS в качестве входных данных для задания\_— .NET"
