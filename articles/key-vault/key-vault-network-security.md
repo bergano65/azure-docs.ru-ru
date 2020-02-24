@@ -8,26 +8,26 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: 60378632a55fe4578bb376a3a00de5efffc5d275
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 870064406c86e9cef6a45dfbe47c61cdaa9ecab0
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976955"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77426315"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Настройка брандмауэров и виртуальных сетей Azure Key Vault
 
 В этой статье описываются пошаговые инструкции по настройке брандмауэров и виртуальных сетей Azure Key Vault для ограничения доступа к хранилищу ключей. [Конечные точки служб для виртуальной сети для Key Vault](key-vault-overview-vnet-service-endpoints.md) позволяют предоставить доступ для указанной виртуальной сети или набора диапазонов адресов IPv4 (протокол IP версии 4).
 
 > [!IMPORTANT]
-> Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](../key-vault/key-vault-secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают их клиентские компьютеры.
+> Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](../key-vault/key-vault-secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают доступ их клиентским компьютерам.
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
 Брандмауэры и виртуальные сети Key Vault можно настроить с помощью портала Azure следующим образом:
 
 1. Перейдите к хранилищу ключей, которое нужно защитить.
-2. Выберите **Брандмауэры и виртуальные сети**.
+2. Щелкните **Сеть** и выберите вкладку **Брандмауэры и виртуальные сети**.
 3. В разделе **Разрешить доступ из** щелкните **Выбранные сети**.
 4. Чтобы добавить имеющиеся виртуальные сети в правила брандмауэров и виртуальных сетей, выберите **+ Добавить существующие виртуальные сети**.
 5. В новой открывшейся колонке выберите подписку, виртуальные сети и подсети, которым нужно предоставить доступ к этому хранилищу ключей. Если в выбранных вами виртуальных сетях и подсетях нет включенных конечных точек службы, подтвердите, что вы хотите включить конечные точки службы, и нажмите кнопку **Включить**. Эта настройка вступит в силу в течение 15 минут.
@@ -112,12 +112,12 @@ ms.locfileid: "68976955"
    Update-AzKeyVaultNetworkRuleSet -VaultName "mykeyvault" -DefaultAction Deny
    ```
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 * Команда Azure CLI: [az keyvault network-rule](https://docs.microsoft.com/cli/azure/keyvault/network-rule?view=azure-cli-latest).
 * Командлеты Azure PowerShell: [Get-AzKeyVault](https://docs.microsoft.com/powershell/module/az.keyvault/get-azkeyvault), [Add-AzKeyVaultNetworkRule](https://docs.microsoft.com/powershell/module/az.KeyVault/Add-azKeyVaultNetworkRule), [Remove-AzKeyVaultNetworkRule](https://docs.microsoft.com/powershell/module/az.KeyVault/Remove-azKeyVaultNetworkRule), [Update-AzKeyVaultNetworkRuleSet](https://docs.microsoft.com/powershell/module/az.KeyVault/Update-azKeyVaultNetworkRuleSet).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Конечные точки служб для виртуальной сети для Key Vault](key-vault-overview-vnet-service-endpoints.md)
 * [Защита хранилища ключей](key-vault-secure-your-key-vault.md)

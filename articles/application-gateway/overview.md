@@ -8,12 +8,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 11/23/2019
 ms.author: victorh
-ms.openlocfilehash: a72e98341ecafcda98cc2fde34cf1f9d4eaff94c
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 1e80fa23519104c3c62f6a0bf5d65cbbe0848ae2
+ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658276"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77443828"
 ---
 # <a name="what-is-azure-application-gateway"></a>Что такое шлюз приложений Azure?
 
@@ -61,7 +61,7 @@ ms.locfileid: "75658276"
 ## <a name="ingress-controller-for-aks"></a>Контроллер входящего трафика для AKS
 Контроллер входящего трафика Шлюза приложений (AGIC) позволяет использовать трафик от Шлюза приложений в качестве входящего трафика для кластера [Службы Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service/). 
 
-Контроллер входящего трафика выполняется как модуль pod в кластере AKS, использует [ресурсы входящего трафика Kubernetes](https://kubernetes.io/docs/concepts/services-networking/ingress/) и преобразует их в конфигурацию Шлюза приложений, которая позволяет шлюзу выполнять балансировку нагрузки трафика в модули pod Kubernetes. Контроллер входящего трафика поддерживает только SKU Шлюза приложений версии 2. 
+Контроллер входящего трафика выполняется как модуль pod в кластере AKS, использует [ресурсы входящего трафика Kubernetes](https://kubernetes.io/docs/concepts/services-networking/ingress/) и преобразует их в конфигурацию Шлюза приложений, которая позволяет шлюзу выполнять балансировку нагрузки трафика в модули pod Kubernetes. Контроллер входящего трафика поддерживает только SKU Шлюза приложений Standard_v2 и WAF_v2. 
 
 Дополнительные сведения о контроллере входящего трафика Шлюза приложений см. в [этой статье](ingress-controller-overview.md).
 

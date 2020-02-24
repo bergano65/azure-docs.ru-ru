@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: 894c9d34f3e9874a51f5939021f908ac4ecaaaa9
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 531e9dbec55c5a6a305b321df7a11067c0ade92a
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156656"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77445616"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
@@ -90,7 +90,7 @@ ms.locfileid: "77156656"
 
 1. Найдите и замените строку `YourSubscriptionKey` ключом подписки службы "Речь".
 
-1. Найдите строку `YourServiceRegion` и замените ее параметром пакета SDK для службы "Речь" на основе [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
+1. Найдите строку `YourServiceRegion` и замените ее **идентификатором региона** из [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
 
 1. Сохраните изменения в скрипте.
 

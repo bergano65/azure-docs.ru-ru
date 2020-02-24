@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 5df8ae89c16a453b008afed9ee9f8881a0ac4750
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 310bf168b701ba6c37f71bc968da8e9114458e6f
+ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77046411"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77425313"
 ---
 # <a name="add-an-ssl-certificate-in-azure-app-service"></a>Добавление SSL-сертификата в Службу приложений Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "77046411"
 ## <a name="private-certificate-requirements"></a>Требования к закрытым сертификатам
 
 > [!NOTE]
-> Веб-приложения Azure **не** поддерживают AES256, поэтому все PFX-файлы должны быть зашифрованы с помощью TrippleDES.
+> Веб-приложения Azure **не** поддерживают AES256, поэтому все PFX-файлы должны быть зашифрованы с помощью TripleDES.
 
 И [бесплатный управляемый сертификат Службы приложений](#create-a-free-certificate-preview), и [сертификат Службы приложений](#import-an-app-service-certificate) соответствуют требованиям Службы приложений. Если вы решили передать или импортировать закрытый сертификат в Службу приложений, то этот сертификат должен соответствовать следующим требованиям. Он:
 

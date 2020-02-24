@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 8ef24630d255876c45d9cbc072fc989288f2ac5f
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: fdbd002ac946f3ac3a1a67980905d4ed6f5510c5
+ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76837312"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77470349"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -58,7 +58,10 @@ ms.locfileid: "76837312"
   az network public-ip create --resource-group myResourceGroupSLB --name myPublicIP --sku standard --zone 1
 ```
 
- Для создания базового общедоступного IP-адреса используйте ```--sku basic```. Базовый адрес не поддерживает зоны доступности. Для производственных рабочих нагрузок корпорация Майкрософт рекомендует использовать номера SKU ценовой категории "Стандартный".
+Для создания базового общедоступного IP-адреса используйте ```-SKU Basic```. Общедоступные IP-адреса ценовой категории "Базовый" несовместимы с подсистемой балансировки нагрузки ценовой категории **Стандартный**. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать ценовую категорию **Стандартный**.
+
+> [!IMPORTANT]
+> Далее в этом кратком руководстве предполагается, что вы выбрали SKU ценовой категории **Стандартный**, как описано выше.
 
 ## <a name="create-azure-load-balancer"></a>Создание Azure Load Balancer
 
@@ -81,6 +84,9 @@ ms.locfileid: "76837312"
     --frontend-ip-name myFrontEnd \
     --backend-pool-name myBackEndPool       
   ```
+
+> [!IMPORTANT]
+> Далее в этом кратком руководстве предполагается, что вы выбрали SKU ценовой категории **Стандартный**, как описано выше.
 
 ### <a name="create-the-health-probe"></a>Создание зонда работоспособности
 

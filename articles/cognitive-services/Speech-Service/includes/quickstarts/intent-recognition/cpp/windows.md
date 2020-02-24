@@ -6,12 +6,12 @@ ms.date: 01/27/2020
 ms.topic: include
 ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 292eba09b151d8de50fc379051091a4d2990a105
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 1c5411778bf2e8ab25ce3e71dba92227b2653c3d
+ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156560"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77446380"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -47,7 +47,7 @@ ms.locfileid: "77156560"
 Вставьте код в метод `recognizeIntent()`. Обязательно обновите следующие значения:
 
 * Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.  Используйте параметр пакета SDK для службы "Речь" из [региона](https://aka.ms/speech/sdkregion).
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.  Используйте **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion).
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).

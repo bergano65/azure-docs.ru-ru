@@ -1,5 +1,5 @@
 ---
-title: Руководство. Подключение виртуальных сетей с помощью пиринговой связи с помощью портала Azure | Документация Майкрософт
+title: Руководство. Подключение виртуальных сетей с помощью Пиринга виртуальных сетей — портал Azure
 description: Из этой статьи вы узнаете, как подключить виртуальные сети с помощью пиринга и портала Azure.
 services: virtual-network
 documentationcenter: virtual-network
@@ -13,14 +13,14 @@ ms.workload: infrastructure
 ms.date: 01/22/2020
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 65749182bf93e84c8712409cd16bd3a60184c7ca
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: e95441aab6c8ce7de37ba5f6b08d5f7d54e13347
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77016057"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201304"
 ---
-# <a name="tutorial-connect-virtual-networks-with-virtual-network-peering-using-the-azure-portal"></a>Руководство. Подключение виртуальных сетей с помощью пиринговой связи на портале Azure
+# <a name="tutorial-connect-virtual-networks-with-virtual-network-peering-using-the-azure-portal"></a>Руководство по Подключение виртуальных сетей с помощью пиринговой связи на портале Azure
 
 Виртуальные сети можно подключить друг к другу с помощью пиринговой связи. Эти виртуальные сети могут быть расположены как в одном регионе, так и в разных. Установка пиринговой связи между виртуальными сетями в разных регионах называется глобальным пирингом виртуальных сетей. После установки пиринговой связи ресурсы в обеих виртуальных сетях могут взаимодействовать друг с другом с такой же задержкой и пропускной способностью, как если бы эти ресурсы находились в одной виртуальной сети. В этом руководстве описано следующее:
 
@@ -34,7 +34,7 @@ ms.locfileid: "77016057"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="log-in-to-azure"></a>Вход в Azure 
+## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 

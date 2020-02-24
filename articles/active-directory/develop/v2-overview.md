@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 8bf4039ac968883628a72974b64d90faf707c9af
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 6280f3784247b671521a4994be1f233d4913d90c
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700300"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77194506"
 ---
 # <a name="microsoft-identity-platform-v20-overview"></a>Общие сведения о платформе удостоверений Майкрософт версии 2.0
 
@@ -42,7 +42,11 @@ ms.locfileid: "76700300"
 
 ## <a name="getting-started"></a>Начало работы
 
-Работа с удостоверениями не обязательно должна быть сложной. Выберите подходящий [сценарий](authentication-flows-app-scenarios.md). Для каждого сценария предоставляются краткое руководство и обзорная страница, чтобы вы могли быстро начать работу:
+Работа с удостоверениями не обязательно должна быть сложной. 
+
+Просмотрите [видео по платформе удостоверений Майкрософт](identity-videos.md), чтобы ознакомиться с основными сведениями. 
+
+Выберите подходящий [сценарий](authentication-flows-app-scenarios.md). Для каждого сценария предоставляются краткое руководство и обзорная страница, чтобы вы могли быстро начать работу:
 
 - [Создание одностраничного приложения](scenario-spa-overview.md)
 - [Создание веб-приложения, которое поддерживает вход пользователей](scenario-web-app-sign-user-overview.md)

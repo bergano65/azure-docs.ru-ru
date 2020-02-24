@@ -1,24 +1,21 @@
 ---
-title: Просмотр счета в рамках Соглашения с партнером Майкрософт в Azure
+title: Просмотр счета в рамках Соглашения с партнером Майкрософт — Azure
 description: Узнайте, как просматривать счет и использование ресурсов, а затем проверять расходы по счету Соглашения с партнером Майкрософт.
-author: jureid
-manager: jureid
+author: bandersmsft
+ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 11/22/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: e3823a9eb2e0713f7f42e4e02808ef957efc5944
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: dd0d53fb89df5372d3974b85cdb659f6cfbbedd8
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75990844"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77199098"
 ---
-# <a name="tutorial-review-your-microsoft-partner-agreement-invoice"></a>Руководство. Просмотр счета в рамках Соглашения с партнером Майкрософт
+# <a name="tutorial-review-your-microsoft-partner-agreement-invoice"></a>Руководство по Просмотр счета в рамках Соглашения с партнером Майкрософт
 
  В учетной записи выставления счетов Соглашения с партнером Майкрософт в каждом профиле выставления счетов ежемесячно создается счет. В счет входят все расходы клиента за предыдущий месяц. Вы можете интерпретировать расходы, включенные в счет, проанализировав отдельные транзакции на портале Azure. Вы можете также просмотреть счета на портале Azure и сравнить расходы в файле сведений об использовании.
 
