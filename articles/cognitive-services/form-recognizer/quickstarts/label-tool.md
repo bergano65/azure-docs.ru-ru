@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 11/14/2019
+ms.date: 02/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 8ab673c1a268f5ab663e8f423dd9b60cdfde14ab
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 812680e587ac5c5c8b3d949199a615fcd85fa610
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77118374"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77485358"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -28,10 +28,14 @@ ms.locfileid: "77118374"
 
 - Минимум шесть документов одного типа. Вы будете использовать эти данные для обучения модели и тестирования формы. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера хранилища BLOB-объектов в учетной записи хранения Azure.
 
+## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
+
+[!INCLUDE [create resource](../includes/create-resource.md)]
+
 ## <a name="set-up-the-sample-labeling-tool"></a>Настройка средства маркировки данных
 
 Для запуска средства маркировки данных используется модуль Docker. Чтобы настроить контейнер Docker, сделайте следующее. Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).
-1. Для начала установите Docker на главный компьютер. Роль главного компьютера может выполнять локальный компьютер под управлением [Windows](https://docs.docker.com/docker-for-windows/), [MacOS](https://docs.docker.com/docker-for-mac/) или [Linux](https://docs.docker.com/install/). Вы также можете использовать службу размещения Docker в Azure, например [Службу Azure Kubernetes](https://docs.microsoft.com/azure/aks/index) и [Экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/index), или в кластере Kubernetes, [развернутом в Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-solution-template-kubernetes-deploy?view=azs-1910). Главный компьютер должен отвечать следующим требованиям к аппаратному обеспечению.
+1. Для начала установите Docker на главный компьютер. Роль главного компьютера может выполнять локальный компьютер под управлением [Windows](https://docs.docker.com/docker-for-windows/), [macOS](https://docs.docker.com/docker-for-mac/) или [Linux](https://docs.docker.com/install/). Вы также можете использовать службу размещения Docker в Azure, например [Службу Azure Kubernetes](https://docs.microsoft.com/azure/aks/index) и [Экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/index), или в кластере Kubernetes, [развернутом в Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-solution-template-kubernetes-deploy?view=azs-1910). Главный компьютер должен отвечать следующим требованиям к аппаратному обеспечению.
 
     | Контейнер | Минимальные | Рекомендуемая|
     |:--|:--|:--|
@@ -70,7 +74,7 @@ ms.locfileid: "77118374"
 
 ## <a name="connect-to-the-sample-labeling-tool"></a>Подключение к средству маркировки данных
 
-Средство маркировки данных подключается к источнику (где находятся исходные формы) и целевому объекту (расположению, куда экспортируются созданные метки и выходные данные).
+Средство маркировки данных подключается к источнику (где находятся исходные формы) и целевому объекту (куда экспортируются созданные метки и выходные данные).
 
 Подключения можно настраивать и совместно использовать для нескольких проектов. При этом используется расширяемая модель поставщика, что позволяет легко добавлять новых поставщиков источника и назначения.
 

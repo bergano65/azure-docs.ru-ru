@@ -104,9 +104,9 @@
       href: how-to-assess.md
     - name: Группирование компьютеров для оценки
       href: how-to-create-a-group.md
-    - name: Группирование компьютеров с помощью визуализации зависимостей
+    - name: Анализ зависимостей компьютера (с помощью агентов)
       href: how-to-create-group-machine-dependencies.md
-    - name: Группирование компьютеров с помощью визуализации зависимостей без агентов
+    - name: Анализ зависимостей компьютера (без агентов)
       href: how-to-create-group-machine-dependencies-agentless.md
     - name: Создание оценки
       href: how-to-create-assessment.md

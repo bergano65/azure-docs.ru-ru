@@ -3,108 +3,421 @@ title: Примеры для службы хранилища Azure с испол
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища JavaScript/Node.js.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/26/2019
+ms.date: 02/19/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 44fe68b8b04a1192c928e04c7d2a9d147f400130
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 1d6b4d37a3d7c4accc3e407fb6cf841600ac1c16
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75748294"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77485851"
 ---
-# <a name="azure-storage-samples-using-javascript"></a>Примеры для службы хранилища Azure с использованием JavaScript
+# <a name="azure-storage-samples-using-v12-javascript-client-libraries"></a>Примеры использования службы хранилища Azure с помощью клиентских библиотек версии 12 для JavaScript
 
 В таблицах ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
 > [!NOTE]
-> В этих примерах используется библиотека JavaScript версии 10 службы хранилища Azure. Сведения о коде версии 12 см. в разделе [примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples) в репозитории GitHub.
+> В этих примерах используется последняя библиотека JavaScript версии 11 службы хранилища Azure. Сведения об устаревшем коде версии 11 см. в руководстве по [началу работы со службой BLOB-объектов Azure в Node.js](https://github.com/Azure-Samples/storage-blob-node-getting-started) в репозитории GitHub.
 
-## <a name="blob-samples-v10"></a>Примеры больших двоичных объектов (версия 10)
+## <a name="blob-samples"></a>Примеры больших двоичных объектов
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Блочный BLOB-объект | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L43) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью JavaScript](https://github.com/Azure-Samples/key-vault-node-storage-accounts) |
-| Копирование BLOB-объекта | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L73) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Create Container (Создание контейнера) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L54) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Delete BLOB (Удаление BLOB-объекта) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L103) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Delete Container (Удаление контейнера) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L110) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Метаданные больших двоичных объектов | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L538) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Свойства большого двоичного объекта | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L478) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Container ACL (Список управления доступом для контейнера) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L444) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Метаданные контейнера | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L409) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Container Properties (Свойства контейнера) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L377) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Get Page Ranges (Получение диапазона страницы) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L170) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Lease Blob (Аренда BLOB-объекта) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L216) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Lease Container (Аренда контейнера) | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L185) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Список больших двоичных объектов и контейнеров | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L134) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Страничный BLOB-объект | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L129) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| SAS | [Использование подписанного URL-адреса на языке JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L257) |
-| Свойства службы | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L308) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Настройка правил CORS | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L152) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
-| Создание моментального снимка большого двоичного объекта | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L79) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
+### <a name="authentication"></a>Аутентификация
 
-## <a name="file-samples-v10"></a>Примеры файлов (версия 10)
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью строки подключения](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/withConnString.js#L14)
+   :::column-end:::
+   :::column span="":::
+      [Проверка подлинности с помощью строки подключения SAS](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/withConnString.js#L14)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Аутентификация с помощью учетных данных общего ключа](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/sharedKeyCred.js#L5)
+   :::column-end:::
+   :::column span="":::
+      [Проверка подлинности с помощью AnonymousCredential](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/anonymousCred.js#L18)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью Azure Active Directory](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/azureAdAuth.js#L47)
+   :::column-end:::
+   :::column span="":::
+      [Проверка подлинности с помощью прокси-сервера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/proxyAuth.js#L28)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Подключение с помощью пользовательского конвейера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/customPipeline.js#L26)
+   :::column-end:::
+:::row-end:::
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Создание общих папок, каталогов и файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L97) (Приступая к работе со службой файлов Azure на языке JavaScript) |
-| Удаление общих папок, каталогов и файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L135) (Приступая к работе со службой файлов Azure на языке JavaScript) |
-| Скачивание файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L128) (Приступая к работе со службой файлов Azure на языке JavaScript) |
-| Список каталогов и файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L115) (Приступая к работе со службой файлов Azure на языке JavaScript) |
-| Список общих папок | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L187) (Приступая к работе со службой файлов Azure на языке JavaScript) |
+### <a name="blob-service"></a>Служба больших двоичных объектов
 
-## <a name="queue-samples-v10"></a>Примеры очередей (версия 10)
+:::row:::
+   :::column span="2":::
+      [Создание клиента службы BLOB-объектов с использованием URL-адреса SAS](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/advanced.js#L39)
+   :::column-end:::
+:::row-end:::
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Добавление сообщения | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L142) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью JavaScript](https://github.com/Azure-Samples/key-vault-node-storage-accounts) |
-| Создание очередей | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L57) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Удалить сообщение | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L164) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Удаление очереди. | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L203) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Перечисление очередей | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L111) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Просмотр сообщения | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L170) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| ACL очереди | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/advanced.js#L192) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Правила очереди CORS | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/advanced.js#L55) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| метаданные в очереди | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/advanced.js#L161) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Свойства службы очередей | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/advanced.js#L94) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Статистика очереди | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/advanced.js#L149) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
-| Сообщение об обновлении | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L176) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
+### <a name="container"></a>Контейнер
 
-## <a name="table-samples-v10"></a>Примеры таблиц (версия 10)
+:::row:::
+   :::column span="":::
+      [Создание контейнера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/basic.js#L53)
+   :::column-end:::
+   :::column span="":::
+      [Создание контейнера с использованием учетных данных общего ключа](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/readingSnapshot.js#L38)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление контейнеров](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/basic.js#L48)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление контейнеров с помощью итератора](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/iterators-containers.js#L28)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление контейнеров по страницам](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/iterators-containers.js#L53)
+   :::column-end:::
+   :::column span="":::
+      [Удаление контейнера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/basic.js#L82)
+   :::column-end:::
+:::row-end:::
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Пакетная служба сущностей | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L87) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Создание таблицы | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L41) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Удаление сущности или таблицы | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L67) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Вставка, слияние или замена сущностей | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L49) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Вывод списка таблиц | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L63) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Query Entities (Сущности запроса) | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L59) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Запросы к таблицам | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L140) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Запрос в диапазоне | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L102) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| SAS | [Использование подписанного URL-адреса на языке JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L87) |
-| Таблица ACL | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L255) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Правила таблицы CORS | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L149) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Свойства таблицы | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L188) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Статистика таблицы | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L243) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
-| Update Entity (Обновление сущности) | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L49) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
+### <a name="blob"></a>BLOB-объект
 
-## <a name="azure-code-samples-library"></a>Библиотека примеров кода Azure
+:::row:::
+   :::column span="":::
+      [Создание BLOB-объекта](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/basic.js#L60)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление больших двоичных объектов](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/basic.js#L67)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Скачивание большого двоичного объекта](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/basic.js#L73)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление больших двоичных объектов с помощью итератора](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/iterators-blobs.js#L41)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление больших двоичных объектов по страницам](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/iterators-blobs.js#L66)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление больших двоичных объектов по иерархии](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/iterators-blobs-hierarchy.js#L70)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление больших двоичных объектов без использования await](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/iterators-without-await.js#L42)
+   :::column-end:::
+   :::column span="":::
+      [Создание моментального снимка BLOB-объекта](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/readingSnapshot.js#L56)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Скачивание моментального снимка большого двоичного объекта](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/readingSnapshot.js#L61)
+   :::column-end:::
+   :::column span="":::
+      [Параллельная отправка потока в BLOB-объект](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/advanced.js#L74)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Параллельное скачивание блочного BLOB-объекта](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/advanced.js#L99)
+   :::column-end:::
+   :::column span="":::
+      [Определение уровня доступа для BLOB-объекта](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/advanced.js#L118)
+   :::column-end:::
+:::row-end:::
 
-Чтобы просмотреть полную библиотеку примеров, перейдите в [библиотеку примеров кода Azure](https://azure.microsoft.com/resources/samples/?service=storage), включающую примеры для службы хранилища Azure, которые можно скачать и запустить локально. Пример библиотеки кода содержит пример кода в формате ZIP. Кроме того, можно просмотреть и клонировать репозиторий GitHub для каждого примера.
+### <a name="troubleshooting"></a>Устранение неполадок
 
-[!INCLUDE [storage-node-samples-include](../../../includes/storage-node-samples-include.md)]
+:::row:::
+   :::column span="2":::
+      [Активация устранимой ошибки с помощью клиента контейнера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/samples/javascript/errorsAndResponses.js#L33)
+   :::column-end:::
+:::row-end:::
+
+
+## <a name="data-lake-storage-gen2-samples"></a>Примеры для Data Lake Storage 2-го поколения
+
+:::row:::
+   :::column span="":::
+      [Создание клиента службы Data Lake](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L36)
+   :::column-end:::
+   :::column span="":::
+      [Создание файловой системы](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L47)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление файловых систем](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L42)
+   :::column-end:::
+   :::column span="":::
+      [Создание файла](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L54)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление путей в файловой системе](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L63)
+   :::column-end:::
+   :::column span="":::
+      [Скачивание файла](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L69)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Удаление файловой системы](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-datalake/samples/javascript/basic.js#L78)
+   :::column-end:::
+:::row-end:::
+
+## <a name="azure-files-samples"></a>Примеры для Файлов Azure
+
+### <a name="authentication"></a>Аутентификация
+
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью строки подключения](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/withConnString.js)
+   :::column-end:::
+   :::column span="":::
+      [Аутентификация с помощью учетных данных общего ключа](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/sharedKeyCred.js)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью AnonymousCredential](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/anonymousCred.js)
+   :::column-end:::
+   :::column span="":::
+      [Подключение с помощью пользовательского конвейера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/customPipeline.js)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Подключение с помощью прокси-сервера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/proxyAuth.js)
+   :::column-end:::
+:::row-end:::
+
+### <a name="share"></a>Share (Предоставить общий доступ)
+
+:::row:::
+   :::column span="":::
+      [Создание общей папки](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/advanced.js#L48)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление общих папок](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/iterators-shares.js#L27)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление общих папок по страницам](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/iterators-shares.js#L51)
+   :::column-end:::
+   :::column span="":::
+      [Удаление общей папки](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/advanced.js#L104)
+   :::column-end:::
+:::row-end:::
+
+### <a name="directory"></a>Каталог
+
+:::row:::
+   :::column span="":::
+      [Создание каталога](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/advanced.js#L54)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление файлов и каталогов](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/iterators-files-and-directories.js#L56)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Перечисление файлов и каталогов по страницам](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/iterators-files-and-directories.js#L90)
+   :::column-end:::
+:::row-end:::
+
+### <a name="file"></a>Файл
+
+:::row:::
+   :::column span="":::
+      [Параллельная отправка файла](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/advanced.js#L65)
+   :::column-end:::
+   :::column span="":::
+      [Параллельная отправка считываемого потока](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/advanced.js#L74)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Параллельное скачивание файла](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/advanced.js#L93)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление файловых дескрипторов](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/iterators-handles.js#L43)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Перечисление файловых дескрипторов по страницам](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-file-share/samples/javascript/iterators-handles.js#L79)
+   :::column-end:::
+:::row-end:::
+
+## <a name="queue-samples"></a>Примеры очередей
+
+### <a name="authentication"></a>Аутентификация
+
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью строки подключения](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/withConnString.js)
+   :::column-end:::
+   :::column span="":::
+      [Аутентификация с помощью учетных данных общего ключа](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/sharedKeyCred.js)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью AnonymousCredential](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/anonymousCred.js)
+   :::column-end:::
+   :::column span="":::
+      [Подключение с помощью пользовательского конвейера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/customPipeline.js)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Подключение с помощью прокси-сервера](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/proxyAuth.js)
+   :::column-end:::
+   :::column span="":::
+      [Проверка подлинности с помощью Azure Active Directory](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/azureAdAuth.js)
+   :::column-end:::
+:::row-end:::
+
+### <a name="queue-service"></a>Служба очередей
+
+:::row:::
+   :::column span="2":::
+      [Создание клиента службы очередей](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L42)
+   :::column-end:::
+:::row-end:::
+
+### <a name="queue"></a>Очередь
+
+:::row:::
+   :::column span="":::
+      [Создание очереди](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L54)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление очередей](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/iterators.js#L27)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление очередей по страницам](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/iterators.js#L51)
+   :::column-end:::
+   :::column span="":::
+      [Удаление очереди](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L89)
+   :::column-end:::
+:::row-end:::
+
+### <a name="message"></a>Сообщение
+
+:::row:::
+   :::column span="":::
+      [Отправка сообщения в очередь](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L62)
+   :::column-end:::
+   :::column span="":::
+      [Просмотр сообщений](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L68)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение сообщений](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L76)
+   :::column-end:::
+   :::column span="":::
+      [Удаление сообщений](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-queue/samples/javascript/basic.js#L80)
+   :::column-end:::
+:::row-end:::
+
+## <a name="table-samples-v11"></a>Примеры таблиц (версия 11)
+
+:::row:::
+   :::column span="":::
+      [Пакетная обработка сущностей](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L87)
+   :::column-end:::
+   :::column span="":::
+      [Создание таблицы](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L41)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление сущности или таблицы](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L67)
+   :::column-end:::
+   :::column span="":::
+      [Вставка, слияние или замена сущностей](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L49)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление таблиц](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L63)
+   :::column-end:::
+   :::column span="":::
+      [Запросы к сущностям](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L59)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Запросы к таблицам](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L140)
+   :::column-end:::
+   :::column span="":::
+      [Запрос в диапазоне](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L102)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Подписанный URL-адрес](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L87)
+   :::column-end:::
+   :::column span="":::
+      [Таблица ACL](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L255)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Правила общего доступа к ресурсам таблицы независимо от источника (CORS)](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L149)
+   :::column-end:::
+   :::column span="":::
+      [Свойства таблицы](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L188)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Статистика таблицы](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/advanced.js#L243)
+   :::column-end:::
+   :::column span="":::
+      [Обновление сущности](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L49)
+   :::column-end:::
+:::row-end:::
+
+## <a name="azure-code-sample-libraries"></a>Библиотеки примеров кода Azure
+
+Список библиотек примеров для JavaScript см. по следующим ссылкам:
+
+* [Примеры кода для больших двоичных объектов Azure](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples/javascript)
+* [Примеры кода для Azure Data Lake](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples/javascript)
+* [Примеры кода для Файлов Azure](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-share/samples/javascript)
+* [Примеры кода для очередей Azure](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples/javascript)
+
+Вы можете просмотреть и клонировать репозиторий GitHub для каждой библиотеки.
 
 ## <a name="getting-started-guides"></a>Руководства по началу работы
 
 Ознакомьтесь со следующими руководствами, если вам нужны инструкции по установке клиентских библиотек службы хранилища Azure и началу работы с ними.
 
 * [Getting Started with Azure Blob Service in JavaScript](../blobs/storage-quickstart-blobs-nodejs.md) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript)
-* [Getting Started with Azure Queue Service in JavaScript](../queues/storage-nodejs-how-to-use-queues.md) (Приступая к работе со Службой очередей Azure на языке JavaScript)
+* [Getting Started with Azure Queue Service in JavaScript](../queues/storage-quickstart-queues-nodejs.md) (Приступая к работе со Службой очередей Azure на языке JavaScript)
 * [Getting Started with Azure Table Service in JavaScript](../../cosmos-db/table-storage-how-to-use-nodejs.md) (Приступая к работе со службой таблиц Azure на языке JavaScript)
 
 ## <a name="next-steps"></a>Дальнейшие действия

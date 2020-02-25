@@ -93,7 +93,7 @@
       href: service-bus-outages-disasters.md
     - name: Регулирование
       href: service-bus-throttling.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Аутентификация и авторизация
           href: service-bus-authentication-and-authorization.md
@@ -114,6 +114,8 @@
           href: service-bus-messaging-security-controls.md
 - name: Практические руководства
   items:
+    - name: Миграция из API Azure Service Manager (классическая модель) в API Resource Manager
+      href: deprecate-service-bus-management.md
     - name: Создание пространства имен
       href: service-bus-create-namespace-portal.md
     - name: Разработка

@@ -1,6 +1,6 @@
 ---
-title: Руководство. настройке среды в службе "Машинное обучение Azure" для Azure IoT Edge
-description: Руководство. Подготовка среды для разработки и развертывания модулей для машинного обучения на пограничных устройствах.
+title: Руководство по настройке среды в службе "Машинное обучение Azure" для Azure IoT Edge
+description: Руководство по Подготовка среды для разработки и развертывания модулей для машинного обучения на пограничных устройствах.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,14 +8,14 @@ ms.date: 1/23/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a36427616691b0a0d400dadb4e35c2f7fbf23b22
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 572441fe13dfeff550e2e541c3d775bd4c3d433e
+ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722304"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77482910"
 ---
-# <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство. настройке среды для машинного обучения в IoT Edge
+# <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
 > [!NOTE]
 > Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
@@ -26,7 +26,7 @@ ms.locfileid: "76722304"
 
 Этот шаг обычно выполняет разработчик облачных решений. Некоторое программное обеспечение, возможно, будет полезным также для специалиста по обработке и анализу данных.
 
-Мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/windows/sizes-general.md#dsv3-series-1).
+Мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md).
 
 На виртуальной машине для разработки будут настроены следующие инструменты:
 
@@ -35,7 +35,7 @@ ms.locfileid: "76722304"
 * [Docker Desktop для Windows](https://www.docker.com/products/docker-desktop);
 * [Git для Windows](https://gitforwindows.org/)
 * [диспетчер учетных данных Git для Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows);
-* [пакет SDK для .NET Core](https://dotnet.microsoft.com/).
+* [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/)
 * [Python 3](https://www.python.org/);
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0)

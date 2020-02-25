@@ -28,3 +28,15 @@
       href: security-control-incident-response.md
     - name: Тесты на проникновение и попытки нарушения безопасности "красной командой"
       href: security-control-penetration-tests-red-team-exercises.md
+- name: Базовые показатели безопасности
+  items:
+    - name: Сведения об элементах управления безопасностью Azure
+      href: security-baselines-overview.md
+    - name: Базовый уровень безопасности пакетной службы
+      href: ../../batch/security-baseline.md
+    - name: Базовый уровень безопасности Key Vault
+      href: ../../key-vault/security-baseline.md
+    - name: Базовый уровень безопасности HDInsight
+      href: ../../hdinsight/security-baseline.md
+    - name: Базовый уровень безопасности Базы данных SQL
+      href: ../../sql-database/security-baseline.md

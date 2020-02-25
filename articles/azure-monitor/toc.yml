@@ -890,8 +890,8 @@
                   href: log-query/examples.md
                 - name: Примеры смарт-аналитики
                   href: log-query/smart-analytics.md
-                - name: Создание эффективных запросов
-                  href: log-query/log-query-performance.md
+                - name: Оптимизация запросов
+                  href: log-query/query-optimization.md
                 - name: Анализ текстовых данных
                   href: log-query/parse-text.md
         - name: Flow / Logic Apps
