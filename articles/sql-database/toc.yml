@@ -64,7 +64,7 @@
       href: sql-database-features.md
     - name: Практическое руководство
       href: sql-database-howto.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Общие сведения о безопасности
           href: sql-database-security-overview.md
@@ -150,6 +150,8 @@
               href: sql-database-managed-instance-public-endpoint-securely.md
             - name: Аудит управляемого экземпляра
               href: sql-database-managed-instance-auditing.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Подключение и выполнение запросов
       href: sql-database-connect-query.md
       items:

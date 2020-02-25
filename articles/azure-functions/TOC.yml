@@ -353,9 +353,27 @@
             - name: Выходные данные
               href: functions-bindings-event-grid-output.md
         - name: Центры событий
-          href: functions-bindings-event-hubs.md
+          items:
+            - name: Обзор
+              href: functions-bindings-event-hubs.md
+              displayName: Azure Event Hubs
+            - name: Триггер
+              href: functions-bindings-event-hubs-trigger.md
+              displayName: Azure Event Hubs
+            - name: Выходные данные
+              href: functions-bindings-event-hubs-output.md
+              displayName: Azure Event Hubs
         - name: Центр Интернета вещей
-          href: functions-bindings-event-iot.md
+          items:
+            - name: Обзор
+              href: functions-bindings-event-iot.md
+              displayName: Azure IoT Hubs
+            - name: Триггер
+              href: functions-bindings-event-iot-trigger.md
+              displayName: Azure IoT Hubs
+            - name: Выходные данные
+              href: functions-bindings-event-iot-output.md
+              displayName: Azure IoT Hubs
         - name: HTTP и веб-перехватчики
           items:
             - name: Обзор

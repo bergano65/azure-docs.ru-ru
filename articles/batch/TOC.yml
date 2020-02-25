@@ -41,6 +41,10 @@
       href: cli-samples.md
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Возможности разработчика
       href: batch-api-basics.md
     - name: API-интерфейсы и средства

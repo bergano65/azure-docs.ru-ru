@@ -8,7 +8,7 @@
       href: ./chef-habitat-overview.md
     - name: Сведения об InSpec в Azure
       href: ./chef-inspec-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Chef
@@ -21,8 +21,8 @@
     - name: Chef
       items:
         - name: Создание виртуальной машины Windows
-          href: /azure/virtual-machines/windows/chef-automation
-- name: Справочные материалы
+          href: ./chef-automation.md
+- name: Справочник
   items:
     - name: Расширение Azure для Chef
       href: 'https://docs.chef.io/azure_portal.html#azure-chef-extension'
@@ -36,11 +36,11 @@
           href: 'https://docs.chef.io/install_chef_automate.html'
         - name: Chef Automate в Microsoft Azure Marketplace
           href: 'https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chef-software.chef-automate'
-    - name: Новости Chef Software
+    - name: Новинки ПО Chef
       items:
         - name: Блог Chef Software
           href: 'https://blog.chef.io/'
-- name: Средства
+- name: Инструменты
   items:
     - name: Расширение Chef для Azure DevOps Services
       href: 'https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-chef-tasks'

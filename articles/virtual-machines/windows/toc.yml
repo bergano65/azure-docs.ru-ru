@@ -352,7 +352,7 @@
         - name: 'Использование шаблона с C#'
           href: csharp-template.md
         - name: Создание виртуальной машины с помощью Chef
-          href: chef-automation.md
+          href: ../../chef/chef-automation.md
         - name: Использование Java
           href: java.md
         - name: Использование Python

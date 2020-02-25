@@ -72,12 +72,12 @@
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Системы безопасности
           href: key-vault-ovw-security-worlds.md
         - name: Защита хранилища ключей
           href: key-vault-secure-your-key-vault.md
-        - name: Встроенные средства управления безопасностью
-          href: key-vault-security-controls.md
     - name: Обратимое удаление
       href: key-vault-ovw-soft-delete.md
     - name: Мониторинг событий Key Vault
