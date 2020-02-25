@@ -14,12 +14,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: jonbeck
-ms.openlocfilehash: 3ee7a2ffed9c2c50829f237fdf4c8d3b5a6f1531
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.openlocfilehash: d88c76afb3426dce8c68ae4bcda366fe17700aa7
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77538778"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77566052"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -31,7 +31,7 @@ ms.locfileid: "77538778"
 
 - Размеры серий [NV](nv-series.md) и [NVv3](nvv3-series.md) оптимизированы и предназначены для удаленной визуализации, потоковой передачи, игр, кодирования и сценариев VDI с использованием таких платформ, как OpenGL и DirectX. Эти виртуальные машины работают на базе графического процессора NVIDIA Tesla M60.
 
-- [Серия NVv4](nvv4-series.md) Размеры виртуальных машин оптимизированы и предназначены для VDI и удаленной визуализации. При использовании секционированных GPU NVv4 предлагает правильный размер для рабочих нагрузок, для которых требуются небольшие ресурсы GPU. Эти виртуальные машины поддерживаются графическим процессором AMD Radeon порывом MI25.
+- [Серия NVv4](nvv4-series.md) Размеры виртуальных машин оптимизированы и предназначены для VDI и удаленной визуализации. При использовании секционированных GPU NVv4 предлагает правильный размер для рабочих нагрузок, для которых требуются небольшие ресурсы GPU. Эти виртуальные машины поддерживаются графическим процессором AMD Radeon порывом MI25. В настоящее время виртуальные машины NVv4 поддерживают только гостевую операционную систему Windows.
 
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 

@@ -1,0 +1,45 @@
+### YamlMime:Landing
+title: Документация по распознаванию намерения
+summary: Распознавание намерения с помощью служб распознавания речи и Language Understanding (LUIS) позволяет в реальном времени проголосовать звуковые потоки в текст, определяя намерение и сущности.
+metadata:
+  title: Документация по распознаванию намерения. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: 278dc182b682615d621bfd8a891cc77591a511f1
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562848"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Распознавание речи, намерений и сущностей
+      url: quickstarts/intent-recognition.md
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Распознавание речевых целей с помощью LUIS иC#
+      url: how-to-recognize-intents-from-speech-csharp.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Портал службы "Распознавание речи" (LUIS)
+      url: https://www.luis.ai
+    - text: Ресурсы для разработчиков LUIS
+      url: ../luis/developer-reference-resource.md
+    - text: Языковая поддержка
+      url: ../luis/luis-language-support.md#languages-supported
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services

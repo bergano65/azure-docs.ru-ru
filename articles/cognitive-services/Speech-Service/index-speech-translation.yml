@@ -1,0 +1,55 @@
+### YamlMime:Landing
+title: Документация по переводу речи
+summary: Трансляция речи из службы распознавания речи обеспечивает преобразование речевых потоков в режиме реального времени и преобразования речи в текст в речь
+metadata:
+  title: Документация по переводу речи. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: c45c16b4421bf48e5728f95e7043ef7ffc109c3a
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562925"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое перевод речи?
+      url: speech-translation.md
+  - linkListType: quickstart
+    links:
+    - text: Преобразование речи в текст
+      url: quickstarts/translate-speech-to-text.md
+    - text: Перевод речи на несколько целевых языков
+      url: quickstarts/translate-speech-to-text-multiple-languages.md
+    - text: Перевод речи в речь
+      url: quickstarts/translate-speech-to-speech.md
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Перевод речи в режиме реального времени
+      url: https://docs.microsoft.com/learn/modules/convert-speech-to-text
+  - linkListType: tutorial
+    links:
+    - text: Перевод и синтезирование текста с помощью интерфейсов API
+      url: ../translator/tutorial-build-flask-app-translation-synthesis.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Языковая поддержка
+      url: language-support.md#speech-translation
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/
+    - text: Вопросы и ответы. Перевод речи
+      url: https://www.microsoft.com/translator/business/faq/

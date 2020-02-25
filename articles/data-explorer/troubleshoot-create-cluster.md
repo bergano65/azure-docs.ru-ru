@@ -1,5 +1,5 @@
 ---
-title: Устранение сбоя создания кластера Azure Data Explorer
+title: Устранение сбоев при создании кластера Azure обозреватель данных
 description: В этой статье описываются действия по устранению неполадок при создании кластера в обозревателе данных Azure.
 author: orspod
 ms.author: orspodek
@@ -7,14 +7,14 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 9e6b3f53f07ac86d6b648a8562be4ef45879c37e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 863d9ecedf095e0ab284a0d7fd86363b69ae5658
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60829282"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562417"
 ---
-# <a name="troubleshoot-failed-cluster-creation-of-azure-data-explorer"></a>Устранение неполадок, Создание кластера неудачных обозревателя данных Azure
+# <a name="troubleshoot-failed-cluster-creation-of-azure-data-explorer"></a>Устранение неполадок: не удалось создать кластер обозреватель данных Azure
 
 Маловероятно, что при создании кластера в обозревателе данных Azure произойдет сбой. Но если это все-таки случится, выполните следующие действия.
 

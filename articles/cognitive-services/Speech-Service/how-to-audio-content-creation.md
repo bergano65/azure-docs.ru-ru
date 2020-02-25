@@ -3,21 +3,21 @@ title: Создание звукового содержимого — служб
 titleSuffix: Azure Cognitive Services
 description: Создание звукового содержимого — это интерактивное средство, которое позволяет настраивать и тонко настраивать вывод текста в речь для приложений и продуктов Майкрософт.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.author: erhopf
-ms.openlocfilehash: b65a39489f0823a411a9dddf79ec3abd1e5ee20d
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.date: 01/31/2020
+ms.author: dapine
+ms.openlocfilehash: aed9c0a72af063c84c0744757772e11c689ac14c
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806211"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561040"
 ---
-# <a name="audio-content-creation"></a>Создание звукового содержимого
+# <a name="improve-synthesis-with-audio-content-creation"></a>Улучшение синтеза с помощью создания звукового содержимого
 
 [Создание звукового содержимого](https://aka.ms/audiocontentcreation) — это интерактивное средство, которое позволяет настраивать и тонко настраивать вывод текста в речь для приложений и продуктов Майкрософт. Это средство можно использовать для точной настройки открытых и пользовательских голосов для более точных естественных выражений, а также для управления выходными данными в облаке.
 
@@ -95,7 +95,7 @@ Welcome to use Audio Content Creation to customize audio output for your product
 2. Выберите формат выходных данных для настроенного звука. Список поддерживаемых форматов и частот выборки см. ниже.
 3. Состояние задачи можно просмотреть на вкладке **задача экспорта** . Если задача завершается неудачно, см. страницу подробных сведений для полного отчета.
 4. После завершения задачи ваш звук будет доступен для загрузки на вкладке **Библиотека аудио** .
-5. Щелкните элемент **Загрузить**. Теперь вы готовы использовать настраиваемый звуковой элемент в своих приложениях или продуктах.
+5. Нажмите кнопку **Загрузить**. Теперь вы готовы использовать настраиваемый звуковой элемент в своих приложениях или продуктах.
 
 ### <a name="supported-audio-formats"></a>Поддерживаемые аудиоформаты
 
@@ -104,11 +104,11 @@ Welcome to use Audio Content Creation to customize audio output for your product
 | WAV | Metallica-16khz-16-разрядный-Mono-PCM | Metallica-24khz-16-разрядный-Mono-PCM |
 | MP3 | Audio-16khz-128kbitrate-Mono-MP3 | Audio-24khz-160kbitrate-Mono-MP3 |
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также:
 
 * [Длинный аудио API](https://aka.ms/long-audio-api)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Speech Studio](https://speech.microsoft.com)

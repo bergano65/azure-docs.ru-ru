@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/12/2020
-ms.openlocfilehash: d030e44f59d41c32c9a76c0b89c0bce1c8c54a69
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: b9d923b3272f9d8b3da39d7cdb771a766eee4eab
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77186851"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561788"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure
 
@@ -229,18 +229,6 @@ Ambari предоставляет интуитивно понятный и пр�
    | Сохранить этот скрипт… |Оставьте это поле без изменений. |
 
 6. Выберите **Создать**, чтобы применить сценарий. После завершения сценария вы сможете подключиться к кластеру с помощью SSH с новым паролем.
-
-## <a name="grantrevoke-access"></a>Предоставление и отмена доступа
-
-В кластерах HDInsight имеются следующие веб-службы HTTP (все эти службы имеют конечные точки RESTful):
-
-- ODBC
-- JDBC
-- Ambari
-- Oozie,
-- Templeton
-
-По умолчанию эти службы предоставляются для доступа. Вы можете отозвать или предоставить доступ с помощью [Azure PowerShell](hdinsight-administer-use-powershell.md#grantrevoke-access).
 
 ## <a name="find-the-subscription-id"></a>Поиск идентификатора подписки
 

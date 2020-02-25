@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 02/20/2020
+ms.date: 02/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f49240c29b4ec0a5fa1cb38861da3d4060db2f82
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: abbacf57f6e00411c6041422cfc47e68fd46bb15
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77525450"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77566035"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -48,7 +48,7 @@ ms.locfileid: "77525450"
 - [Высокий уровень доступности и аварийное восстановление SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery)
 - [Устранение неполадок и мониторинг SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/troubleshooting-monitoring)
 
-Дальнейшие действия:
+Следующие шаги
 
 - Ознакомьтесь [с обзором и архитектурой SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) .
 
@@ -120,7 +120,7 @@ ms.locfileid: "77525450"
 
 
 ## <a name="change-log"></a>Журнал изменений
-
+- 02/21/2020: изменение [высокой доступности для SAP NetWeaver на](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel) виртуальных машинах Azure в RHEL и [Azure для SAP NetWeaver на RHEL с Azure NetApp Files](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files) для настройки ограничений кластера для архитектуры сервера постановки в очередь репликации 2 (ENSA2)
 - 02/20/2020: изменение [высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure в SLES с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid) для добавления ссылки на руководство по использованию кластера SUSE Multi-SID
 - 02/13/2020: изменение [высокой доступности для SAP NetWeaver на](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel) виртуальных машинах Azure в RHEL и [Azure для SAP NetWeaver на RHEL с Azure NetApp Files](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files) для согласования времени ожидания ресурсов кластера с рекомендациями по времени ожидания Red Hat
 - 02/11/2020: выпуск [SAP HANA для миграции крупных экземпляров Azure на виртуальные машины Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-large-instance-virtual-machine-migration)

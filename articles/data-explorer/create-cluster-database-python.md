@@ -1,5 +1,5 @@
 ---
-title: Создание кластера и базы данных Azure Data Explorer с использованием Python
+title: Создание кластера Azure обозреватель данных & DB с помощью Python
 description: Сведения о создании кластера и базы данных Azure Data Explorer с использованием Python.
 author: lucygoldbergmicrosoft
 ms.author: lugoldbe
@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 50e050a05fd364a4b1f880e3501b04274ffd360c
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 8425058c9f6ac5b90c37a99f749a810672b406fc
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77444236"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560513"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-python"></a>Создание кластера и базы данных Azure Data Explorer с использованием Python
 
@@ -26,7 +26,7 @@ ms.locfileid: "77444236"
 
 В этой статье вы создадите кластер и базу данных Azure обозреватель данных с помощью Python. Azure Data Explorer — это быстрая и полностью управляемая служба для аналитики большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала создайте кластер, а затем создайте одну или несколько баз данных в этом кластере. Затем принимаете или загружает данные в базу данных, чтобы можно было выполнять запросы к ней.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
@@ -36,7 +36,7 @@ ms.locfileid: "77444236"
 
 ## <a name="install-python-package"></a>Установка пакета Python
 
-Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните следующую команду:
+Чтобы установить пакет Python для Azure Data Explorer (Kusto), откройте окно командной строки с Python в пути. Выполните команду:
 
 ```
 pip install azure-common
@@ -86,7 +86,7 @@ pip install azure-mgmt-kusto
    |---|---|---|
    | cluster_name | *mykustocluster* | Необходимое имя кластера.|
    | sku_name | *Standard_D13_v2* | Номер SKU, который будет использоваться для кластера. |
-   | Уровень | *Standard Edition* | Уровень SKU. |
+   | уровень | *Standard Edition* | Уровень SKU. |
    | capacity | *number* | Число экземпляров кластера. |
    | resource_group_name | *testrg* | Имя группы ресурсов, в которой будет создан кластер. |
 
@@ -150,6 +150,6 @@ pip install azure-mgmt-kusto
     cluster_operations.delete(resource_group_name = resource_group_name, cluster_name = clusterName)
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)

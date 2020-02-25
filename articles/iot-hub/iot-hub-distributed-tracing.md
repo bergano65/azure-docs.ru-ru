@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: c3291746558dbec2147ebea24eadd0febd317033
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.openlocfilehash: efee34ddfb2b2f6090d5dc8c43647c7ee1c53ce2
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77539541"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562434"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -131,7 +131,7 @@ ms.locfileid: "77539541"
 ### <a name="edit-the-send-telemetry-sample-to-enable-distributed-tracing"></a>Изменение примера отправки данных телеметрии для включения распределенной трассировки
 
 > [!div class="button"]
-> <a href="https://github.com/Azure-Samples/azure-iot-distributed-tracing-sample/blob/master/iothub_ll_telemetry_sample-c/iothub_ll_telemetry_sample.c" target="_blank">Получить пример когда на GitHub</a>
+> <a href="https://github.com/Azure-Samples/azure-iot-distributed-tracing-sample/blob/master/iothub_ll_telemetry_sample-c/iothub_ll_telemetry_sample.c" target="_blank">Получение примера на GitHub</a>
 
 1. Используйте редактор, чтобы открыть исходный файл `azure-iot-sdk-c/iothub_client/samples/iothub_ll_telemetry_sample/iothub_ll_telemetry_sample.c`.
 
@@ -280,7 +280,7 @@ AzureDiagnostics
 Чтобы визуализировать поток сообщений Интернета вещей, настройте пример приложения схемы приложений. Пример приложения отправляет журналы распределенной трассировки в [схему приложений](../application-insights/app-insights-app-map.md) с помощью функции Azure и концентратора событий.
 
 > [!div class="button"]
-> <a href="https://github.com/Azure-Samples/e2e-diagnostic-provision-cli" target="_blank">Получить пример когда на GitHub</a>
+> <a href="https://github.com/Azure-Samples/e2e-diagnostic-provision-cli" target="_blank">Получение примера на GitHub</a>
 
 На изображении ниже показана распределенная трассировка в схеме приложений с тремя конечными точками маршрутизации:
 

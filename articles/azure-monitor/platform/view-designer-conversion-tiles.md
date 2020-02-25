@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 5bb02edce4a3aef30f8f9528a846c99d6d8d3b39
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: b1cce6d1aafabda62b71ecd38ff5ac7df1033b26
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77170868"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561992"
 ---
 # <a name="azure-monitor-view-designer-tile-conversions"></a>Преобразования плиток конструктора представлений Azure Monitor
 [Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они выводятся и заменяются книгами, которые предоставляют дополнительные функциональные возможности. В этой статье приводятся сведения о преобразовании различных плиток в книги.
@@ -62,8 +62,9 @@ search *
 ```KQL
 search * 
 | summarize AggregatedValue = count() by Type
+```
 
-Updated query
+Обновленный запрос
 ```KQL
 search * 
 | make-series Count = count() default=0 on TimeGenerated from {TimeRange:start} to {TimeRange:end} step {TimeRange:grain} by Type
@@ -159,6 +160,6 @@ search *
 
 ![Книги из списка временной шкалы](media/view-designer-conversion-tiles/time-workbooks.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обзор конструктора представлений для перехода к книгам](view-designer-conversion-overview.md)

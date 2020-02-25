@@ -1,5 +1,5 @@
 ---
-title: Подключение к устройству Microsoft Azure Шлюз Data Box и управление им с помощью интерфейса Windows PowerShell | Документация Майкрософт
+title: Использование Windows PowerShell для подключения к устройству Шлюз Azure Data Box и управления им
 description: Описывает подключение к Шлюз Data Box и управление им с помощью интерфейса Windows PowerShell.
 services: databox
 author: alkohli
@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 08/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 650777d849e172686e8b46502a84db8c519174e7
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 6c9f3455a07001a8d1b9b8a1e84f2af3392b5690
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775194"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561873"
 ---
 # <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Управление устройством Шлюз Azure Data Box с помощью Windows PowerShell
 

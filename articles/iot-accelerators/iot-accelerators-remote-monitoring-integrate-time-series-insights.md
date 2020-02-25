@@ -1,19 +1,19 @@
 ---
 title: Интеграция службы "Аналитика временных рядов" с решением удаленного мониторинга Azure| Документация Майкрософт
 description: В этом практическом руководстве вы узнаете, как настроить Аналитику временных рядов для существующего решения для удаленного мониторинга, в котором еще нет этой службы.
-author: aditidugar
+author: Philmea
 manager: timlt
-ms.author: adugar
+ms.author: philmea
 ms.date: 09/12/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 4cc9b0051eaa12eee07f067352126ad159107a83
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 752529454a5b6293d9cbfdf8378b46947aed5a0e
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61443033"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77564650"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
 
@@ -24,11 +24,11 @@ ms.locfileid: "61443033"
 > [!NOTE]
 > Аналитика временных рядов в настоящее время недоступна в облаке Azure для Китая. Развертывания акселератора решения для удаленного мониторинга в облаке Azure для Китая используют Cosmos DB для хранения всех данных.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимо развернутое решение для удаленного мониторинга:
 
-* [Развертывание акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Развертывание акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 
 ## <a name="create-a-consumer-group"></a>Создание группы потребителей
 
@@ -49,7 +49,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 Далее разверните Аналитику временных рядов в качестве дополнительного ресурса в решении для удаленного мониторинга и подключите ее к центру Интернета вещей.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Выберите **Создать ресурс** > **Интернет вещей** > **Аналитика временных рядов**.
 
@@ -60,7 +60,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
     | Параметр | Значение |
     | ------- | ----- |
     | Имя среды | На следующем снимке экрана используется имя **contorosrmtsi**. Выберите собственное уникальное имя после завершения этого шага. |
-    | Подписка | Выберите подписку Azure в раскрывающемся списке. |
+    | Subscription | Выберите подписку Azure в раскрывающемся списке. |
     | Группа ресурсов | **Использовать имеющуюся**. Выберите имя существующей группы ресурсов удаленного мониторинга. |
     | Расположение | Мы используем регион **Восточная часть США**. Создайте среду в том же регионе, что и решение для удаленного мониторинга, если это возможно. |
     | Sku |**S1** |
@@ -80,7 +80,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
     ![Просмотр источников событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-sources.png)
 
-1. Щелкните **Добавить**.
+1. Нажмите кнопку **Добавить**.
 
     ![Добавление источника событий](./media/iot-accelerators-remote-monitoring-integrate-time-series-insights/time-series-insights-event-sources-add.png)
 
@@ -238,7 +238,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 1. Перезапустите контейнеры Docker, выполнив команду `sudo ./start.sh` из виртуальной машины.
 
 > [!NOTE]
-> Является допустимым для удаленного мониторинга версиях, предшествующих версии 1.0.2 представленной выше конфигурации переменных среды
+> Приведенная выше конфигурация переменных среды является допустимой для удаленных версий мониторинга до версии 1.0.2.
 
 ### <a name="standard-deployments"></a>Стандартные развертывания
 
@@ -296,7 +296,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
             key: telemetry.storage.type
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения об изучении данных и диагностике оповещений в обозревателе Аналитики временных рядов см. в учебнике по [проведению анализа первопричин](iot-accelerators-remote-monitoring-root-cause-analysis.md).
 

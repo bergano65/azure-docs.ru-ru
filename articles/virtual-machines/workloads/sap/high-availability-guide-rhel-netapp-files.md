@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 02/13/2020
+ms.date: 02/21/2020
 ms.author: radeltch
-ms.openlocfilehash: ed18928237d19e9fad2548ee502f9a24266f12c0
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: 015fb6c720fee9ed219ec9ffa2ece14d26bb4ac9
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77212874"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77566222"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP
 
@@ -689,6 +689,7 @@ SAP NetWeaver требует общее хранилище для каталог
       
     sudo pcs constraint colocation add g-QAS_AERS with g-QAS_ASCS -5000
     sudo pcs constraint order g-QAS_ASCS then g-QAS_AERS kind=Optional symmetrical=false
+    sudo pcs constraint order start g-QAS_ASCS then stop g-QAS_AERS symmetrical=false
    
     sudo pcs node unstandby anftstsapcl1
     sudo pcs property set maintenance-mode=false

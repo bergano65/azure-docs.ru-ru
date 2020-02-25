@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 798c80ec2290a96b6f76116120292720c05c9198
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 7d9a401bfbf1f0c63995c8f7773abb6e8e874e7e
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77426264"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561703"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-preview-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MySQL (Предварительная версия) с помощью интерфейса командной строки
 
@@ -20,7 +20,7 @@ ms.locfileid: "77426264"
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для MySQL поддерживает общего назначения и оптимизированные для памяти ценовые категории.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "77426264"
 az group create --name myResourceGroup --location westeurope
 ```
 
-## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
@@ -117,6 +117,9 @@ az network private-dns record-set a create --name myserver --zone-name privateli
 az network private-dns record-set a add-record --record-set-name myserver --zone-name privatelink.mysql.database.azure.com --resource-group myResourceGroup -a <Private IP Address>
 ```
 
+> [!NOTE] 
+> Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
+
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
@@ -164,8 +167,8 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя подключения| Выберите нужное имя подключения.|
-    | Имя узла | Выбор *mydemoserver.privatelink.MySQL.Database.Azure.com* |
+    | Имя соединения| Выберите нужное имя подключения.|
+    | Hostname | Выбор *mydemoserver.privatelink.MySQL.Database.Azure.com* |
     | Имя пользователя | Введите Username как *username@servername* , которое предоставляется при создании сервера MySQL. |
     | Пароль | Введите пароль, предоставленный при создании сервера MySQL. |
     ||
@@ -185,5 +188,5 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)

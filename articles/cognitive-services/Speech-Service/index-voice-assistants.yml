@@ -1,0 +1,73 @@
+### YamlMime:Landing
+title: Документация по голосовым помощникам
+summary: Речевые помощники, использующие службу распознавания речи, позволяют разработчикам создавать естественные, человеческие в своем опыте интерфейсы общения для своих приложений и работы.
+metadata:
+  title: Документация по голосовым помощникам. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: b411ef91dd84916e9ace544f26ed88f3f316dc02
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562892"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: О помощниках
+      url: voice-assistants.md
+    - text: О прямой голосовой речи
+      url: direct-line-speech.md
+  - linkListType: quickstart
+    links:
+    - text: C# (UWP)
+      url: quickstart-voice-assistant-csharp-uwp.md
+    - text: Java (Windows, macOS, Linux)
+      url: quickstart-voice-assistant-java-jre.md
+    - text: Java (Android)
+      url: quickstart-voice-assistant-java-android.md
+    - text: Создание настраиваемой команды (предварительная версия)
+      url: quickstart-custom-speech-commands-create-new.md
+    - text: Создание настраиваемой команды с параметрами (предварительная версия)
+      url: quickstart-custom-speech-commands-create-parameters.md
+    - text: Использование настраиваемых команд с Пользовательским голосом (предварительная версия)
+      url: quickstart-custom-speech-commands-select-custom-voice.md
+    - text: Использование настраиваемых команд с пакетом SDK службы "Речь" (предварительная версия)
+      url: quickstart-custom-speech-commands-speech-sdk.md
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Включение голосовых команд в боте с помощью пакета SDK службы "Речь"
+      url: tutorial-voice-enable-your-bot-speech-sdk.md
+  - linkListType: how-to-guide
+    links:
+    - text: Пользовательские команды (предварительная версия)
+      url: custom-commands.md
+    - text: Пользовательские команды с помощью пакета SDK для распознавания речи
+      url: how-to-custom-speech-commands-fulfill-sdk.md
+    - text: Выполнение пользовательских команд с пакетом SDK службы "Речь" (предварительная версия)
+      url: how-to-custom-speech-commands-fulfill-sdk.md
+    - text: Добавление проверки параметров в настраиваемые команды
+      url: how-to-custom-speech-commands-validations.md
+    - text: Добавление подтверждения в настраиваемую команду
+      url: how-to-custom-speech-commands-confirmations.md
+    - text: Добавление одноэтапного исправления в настраиваемую команду
+      url: how-to-custom-speech-commands-one-step-correction.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services
+    - text: 'Голосовые помощники: часто задаваемые вопросы'
+      url: faq-voice-assistants.md

@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок при настройке HSR Pacemaker для горизонтального масштабирования SAP HANA 2.0 в SLES 12 с пакетом обновления 3 (SP3) на виртуальных машинах Azure | Документация Майкрософт
+title: SAP HANA Scale-out HSR-Pacemaker с SLES в устранении неполадок виртуальных машин Azure | Документация Майкрософт
 description: Руководство по проверке и устранению неполадок сложной конфигурации горизонтального масштабирования SAP HANA с высоким уровнем доступности на основе репликации системы SAP HANA (HSR) и Pacemaker в SLES 12 с пакетом обновления 3 (SP3) на виртуальных машинах Azure
 services: virtual-machines-linux
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: 299fba8a082f19f17ab581a6ac2bfac9fd3f8cf1
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fb90bfff72f41d8d7ccc34d3ad6dd0e9206bb88e
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099659"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77566239"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
 
@@ -65,7 +65,7 @@ SUSE опубликовал [подробное описание этой нас
  Для проверки и сертификации высокого уровня доступности при горизонтальном масштабировании SAP HANA использовалась тестовая конфигурация. Она состояла из двух систем, каждая из которых включала три узла SAP HANA: один главный и два рабочих. В приведенной ниже таблице перечислены имена и внутренние IP-адреса виртуальных машин. Все приведенные ниже примеры проверки реализовывались на этих виртуальных машинах. Используя эти имена и IP-адреса виртуальных машин в примерах команд, вы можете лучше понять команды и их выходные данные.
 
 
-| Тип узла | Имя виртуальной машины | IP-адрес |
+| Тип узла | имя виртуальной машины; | IP-адрес |
 | --- | --- | --- |
 | Главный узел на сайте 1 | hso-hana-vm-s1-0 | 10.0.0.30 |
 | Рабочий узел 1 на сайте 1 | hso-hana-vm-s1-1 | 10.0.0.31 |
@@ -172,7 +172,7 @@ nc: connect to 10.0.2.40 port 40002 (tcp) failed: Connection refused
 
 В качестве примера приведено содержимое файла **corosync.conf** из тестовой системы.
 
-Первый раздел — это **totem**, как описано в разделе [Установка кластера](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#cluster-installation) (шаг 11). Вы можете игнорировать значение для **mcastaddr**. Просто сохраните существующую запись. Записи для **токена** и **консенсуса** должны быть заданы в соответствии с документацией [по Microsoft Azure SAP HANA][sles-pacemaker-ha-guide].
+Первый раздел — это **totem**, как описано в разделе [Установка кластера](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#cluster-installation) (шаг 11). Вы можете игнорировать значение для **mcastaddr**. Просто сохраните существующую запись. Записи для **токена** и **консенсуса** должны быть заданы в соответствии с [документацией по Microsoft Azure SAP HANA][sles-pacemaker-ha-guide].
 
 <pre><code>
 totem {
@@ -344,7 +344,7 @@ InitiatorName=iqn.2006-04.hso-db-1.local:hso-db-1
 iscsiadm -m discovery --type=st --portal=10.0.0.19:3260
 </code></pre>
 
-Полученный результат должен выглядеть примерно так:
+Выходные данные должны выглядеть так, как в следующем примере:
 
 <pre><code>
 10.0.0.19:3260,1 iqn.2006-04.dbhso.local:dbhso
@@ -722,7 +722,7 @@ Transition Summary:
 
 
 
-## <a name="planned-maintenance"></a>Плановое обслуживание 
+## <a name="planned-maintenance"></a>Плановое техническое обслуживание 
 
 Когда речь идет о плановом обслуживании, существуют различные варианты использования. Важно отличать простое обслуживание инфраструктуры, например изменения на уровне ОС и настройку диска, от обновления HANA.
 Дополнительные сведения можно найти в документах из SUSE, например в [сторону нулевого времени простоя][sles-zero-downtime-paper] или в [сценарии оптимизации производительности SR SAP HANA][sles-12-for-sap]. В этих документах также приводятся примеры того, как вручную перенести основной сайт.
@@ -963,7 +963,7 @@ https://&ltnode&gt:7630
 ![Ограничения списков Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-2.png)
 
 
-Вы также можете отправить выходные данные **hb_report** в Hawk в разделе **History** (Журнал), как показано ниже. См. раздел hb_report to собирающие файлы журналов: 
+Вы также можете отправить выходные данные **hb_report** в Hawk в разделе **History** (Журнал), как показано ниже. См. hb_report для получения файлов журналов: 
 
 ![Выходные данные hb_report передачи Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-3.png)
 

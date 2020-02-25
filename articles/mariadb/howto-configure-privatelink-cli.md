@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 19613ab917d303863a8d90133bcce2e1353289c1
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: b2d9fb9d4dc8268c0be45f8a6f24759a7be58427
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77426213"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561805"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-preview-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB (Предварительная версия) с помощью интерфейса командной строки
 
@@ -20,7 +20,7 @@ ms.locfileid: "77426213"
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для MariaDB поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -38,7 +38,7 @@ ms.locfileid: "77426213"
 az group create --name myResourceGroup --location westeurope
 ```
 
-## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
@@ -121,6 +121,9 @@ az network private-dns record-set a create --name mydemoserver --zone-name priva
 az network private-dns record-set a add-record --record-set-name mydemoserver --zone-name privatelink.mariadb.database.windows.net --resource-group myResourceGroup -a <Private IP Address>
 ```
 
+> [!NOTE] 
+> Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
+
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
@@ -167,8 +170,8 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя подключения| Выберите нужное имя подключения.|
-    | Имя узла | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
+    | Имя соединения| Выберите нужное имя подключения.|
+    | Hostname | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
     | Имя пользователя | Введите Username как *username@servername* , которое предоставляется во время создания сервера MariaDB. |
     | Пароль | Введите пароль, указанный при создании сервера MariaDB. |
     ||
@@ -186,5 +189,5 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)

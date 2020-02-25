@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d19cc39147608dafc4576f4c8bad0533ad1b32d
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 90d958d2adc8920e4e6ccbccef20acf20aedca4c
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521920"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561618"
 ---
 # <a name="conditional-access-require-compliant-devices"></a>Условный доступ: требовать соответствующие требованиям устройства
 
@@ -48,6 +48,9 @@ ms.locfileid: "77521920"
    1. Щелкните **Выбрать**.
 1. Подтвердите параметры и установите для **параметра включить политику** значение **вкл**.
 1. Выберите **создать** , чтобы создать, чтобы включить политику.
+
+> [!NOTE]
+> Вы можете зарегистрировать новые устройства в Intune, даже если вы выбрали параметр **требовать, чтобы устройство было помечено как соответствующее требованиям** для **всех пользователей** и **всех облачных приложений** , выполнив описанные выше действия. **Требовать, чтобы устройство было помечено как соответствующее** контролю, не блокирует регистрацию в Intune. 
 
 ### <a name="known-behavior"></a>Известное поведение
 

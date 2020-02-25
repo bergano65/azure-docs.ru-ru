@@ -8,12 +8,12 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/28/2020
-ms.openlocfilehash: d39ffa05448600fe3bd09baf6080aa1565ae19ba
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: c7e98c31c0db1db3051ad66df6526dcbddb265c5
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843597"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560428"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Запрос данных в Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "76843597"
 
 ![Поток прокси-сервера ADX](media/adx-proxy/adx-proxy-flow.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!NOTE]
 > Прокси-сервер ADX находится в режиме предварительного просмотра. [Подключитесь к прокси-](#connect-to-the-proxy) серверу, чтобы включить функцию прокси-сервера ADX для кластеров. Свяжитесь с командой [адкспрокси](mailto:adxproxy@microsoft.com) с любыми вопросами.
@@ -34,7 +34,7 @@ ms.locfileid: "76843597"
 
     ![ADX собственный кластер](media/adx-proxy/web-ui-help-cluster.png)
 
-1. В пользовательском интерфейсе Azure обозреватель данных (https://dataexplorer.azure.com/clusters) выберите **Добавить кластер**.
+1. В пользовательском интерфейсе Azure обозреватель данных (https://dataexplorer.azure.com/clusters)выберите **Добавить кластер**.
 
 1. В окне **Добавление кластера** добавьте URL-адрес для кластера La или искусственного интеллекта. 
     
@@ -100,6 +100,6 @@ union <ADX table>, cluster(CL1).database(<workspace-name>).<table name>
 |Кластер, содержащий все приложения и рабочие области в подписке и входящие в эту группу ресурсов    |   кластер (`https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>`)      |    кластер (`https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>`)      |
 |Кластер, содержащий только определенный ресурс в этой подписке      |    кластер (`https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`)    |  кластер (`https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`)     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Написание запросов](write-queries.md)

@@ -1,5 +1,5 @@
 ---
-title: Управление вертикальным масштабированием кластера (увеличение масштаба) в обозреватель данных Azure для поддержки изменения спроса
+title: Управление вертикальным масштабированием кластера (масштабирование) для соответствия спросу в Azure обозреватель данных
 description: В этой статье описываются шаги по увеличению и уменьшению масштаба кластера обозреватель данных Azure на основе изменения спроса.
 author: radennis
 ms.author: radennis
@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/14/2019
-ms.openlocfilehash: 80bbdf3a5d936719b06782cd78d56088b36cb21d
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 95275598febae2b6b0355a7bc3e512490dae500d
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67985479"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560445"
 ---
 # <a name="manage-cluster-vertical-scaling-scale-up-in-azure-data-explorer-to-accommodate-changing-demand"></a>Управление вертикальным масштабированием кластера (увеличение масштаба) в обозреватель данных Azure для поддержки изменения спроса
 
@@ -50,5 +50,5 @@ ms.locfileid: "67985479"
 
 * [Управление горизонтальным масштабированием кластера](manage-cluster-horizontal-scaling.md) для динамического масштабирования количества экземпляров на основе указанных метрик.
 
-* Отслеживайте использование ресурсов, выполнив следующую статью: [Отслеживайте производительность, работоспособность и использование Azure обозреватель данных с помощью метрик](using-metrics.md).
+* Отслеживайте использование ресурсов, следуя этой статье: [мониторинг производительности, работоспособности и использования Azure обозреватель данных с помощью метрик](using-metrics.md).
 

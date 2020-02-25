@@ -1,23 +1,23 @@
 ---
-title: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server | Документация Майкрософт
+title: Высокий уровень доступности SAP HANA на виртуальных машинах Azure в SLES | Документация Майкрософт
 description: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 services: virtual-machines-linux
 documentationcenter: ''
-author: MSSedusch
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/06/2019
-ms.author: sedusch
-ms.openlocfilehash: ffa2f937a14aa14750480d1c45498fb4c49fcc30
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.author: radeltch
+ms.openlocfilehash: 65ba7c0d8115e7125f1318e7fdca979cfab02474
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721500"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77565848"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
@@ -382,7 +382,7 @@ ms.locfileid: "73721500"
    * Enter Database User (SYSTEM) Password (Введите пароль пользователя базы данных (SYSTEM)): введите пароль пользователя базы данных.
    * Confirm Database User (SYSTEM) Password (Подтвердите пароль пользователя базы данных (SYSTEM)): повторно введите пароль пользователя базы данных.
    * "Restart system after machine reboot?" [n]: нажмите клавишу ВВОД.
-   * "Do you want to continue? (y/n)" (y/n): подтвердите введенные данные. Для продолжения введите **y**.
+   * Вы хотите продолжить? (y/n): подтвердите введенные данные. Для продолжения введите **y**.
 
 1. **[A]** . Обновите агент узла SAP.
 
@@ -582,7 +582,7 @@ sudo crm configure rsc_defaults migration-threshold=5000
 
 В этом разделе описано, как проверить настроенную систему. Для каждого теста предполагается, что он выполняется от имени привилегированного пользователя, а главный узел SAP HANA выполняется на виртуальной машине **hn1-db-0**.
 
-### <a name="test-the-migration"></a>Тестирование миграции
+### <a name="test-the-migration"></a>Проверка миграции
 
 Перед началом теста убедитесь, что в Pacemaker не зарегистрировано действий, завершившихся ошибкой (с помощью команды crm_mon - r), нет непредвиденных ограничений на расположение (например, лишних элементов после теста миграции) и HANA находится в синхронизированном состоянии (например, с помощью SAPHanaSR-showAttr):
 
@@ -1125,7 +1125,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

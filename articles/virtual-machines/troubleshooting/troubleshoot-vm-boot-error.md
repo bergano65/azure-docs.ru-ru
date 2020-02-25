@@ -6,20 +6,19 @@ documentationcenter: ''
 author: v-miegge
 manager: dcscontentpm
 editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 08/28/2019
 ms.author: tiag
-ms.openlocfilehash: 29242b802dbbff4218506422293082a495c4d21e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: c24a840716841d04537ac5b77bcaf26fca4b78cf
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685127"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561955"
 ---
 # <a name="linux-vm-boots-to-grub-rescue"></a>Виртуальная машина Linux загружается в GRUB
 
@@ -66,7 +65,7 @@ ms.locfileid: "73685127"
 
    * Если отсутствующий файл является `/boot/grub/menu.lst`, эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут быть отложены. Запустите старый сервер и проверьте его, чтобы убедиться, что указаны правильные команды.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор агента виртуальной машины Azure](../extensions/agent-windows.md)
 * [Обзор расширений и компонентов виртуальной машины под управлением Windows](../extensions/features-windows.md)

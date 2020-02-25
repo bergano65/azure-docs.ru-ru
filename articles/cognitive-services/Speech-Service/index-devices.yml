@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: Документация по голосовым устройствам
+summary: Пакет SDK для речевых устройств — это предварительно настроенная библиотека, связанная со специально созданными пакетами разработки для микрофонной решетки.
+metadata:
+  title: Документация по голосовым устройствам. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: f7105a4f0330c61ee10d8dee00d40ce17bc40188
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562859"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о пакете SDK для устройств в службе "Речь"
+      url: speech-devices-sdk.md
+  - linkListType: quickstart
+    links:
+    - text: Использование пакета SDK для речевых устройств (Windows)
+      url: speech-devices-sdk-quickstart.md?pivots=platform-windows
+    - text: Использование пакета SDK для речевых устройств (Linux)
+      url: speech-devices-sdk-quickstart.md?pivots=platform-linux
+    - text: Использование пакета SDK для речевых устройств (Android)
+      url: speech-devices-sdk-quickstart.md?pivots=platform-android
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Проектирование массива микрофонов
+      url: speech-devices-sdk-microphone.md
+    - text: Настройка комплекта Рубо v1
+      url: speech-devices-sdk-roobo-v1.md
+- title: Ссылки
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Заметки о выпуске
+      url: devices-sdk-release-notes.md
+  - linkListType: reference
+    links:
+    - text: Устранение неполадок
+      url: speech-devices-sdk-troubleshooting.md

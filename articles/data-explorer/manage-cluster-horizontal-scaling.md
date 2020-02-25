@@ -1,5 +1,5 @@
 ---
-title: Управление горизонтальным масштабированием кластера (развертывание) в обозреватель данных Azure для поддержки изменения спроса
+title: Управление горизонтальным масштабированием кластера (развертывание) для сопоставления спроса в Azure обозреватель данных
 description: В этой статье описываются шаги по масштабированию и масштабированию в кластере Azure обозреватель данных в соответствии с изменением спроса.
 author: orspod
 ms.author: orspodek
@@ -7,12 +7,12 @@ ms.reviewer: gabil
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 8ab192957ead806b4bb3ae8e7395589f3b1ecbbe
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: d0c9fe9ebd040ee59ae8717e95fd1911eaef61be
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76833300"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560462"
 ---
 # <a name="manage-cluster-horizontal-scaling-scale-out-in-azure-data-explorer-to-accommodate-changing-demand"></a>Управление горизонтальным масштабированием кластера (развертывание) в обозреватель данных Azure для поддержки изменения спроса
 
@@ -45,7 +45,7 @@ ms.locfileid: "76833300"
 
 1. Выберите минимальное число экземпляров и максимальное число экземпляров. Автоматическое масштабирование кластера между этими двумя числами в зависимости от нагрузки.
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
    ![Оптимизированный метод автомасштабирования](media/manage-cluster-horizontal-scaling/optimized-autoscale-method.png)
 
@@ -125,11 +125,11 @@ ms.locfileid: "76833300"
     | **Default** | Число экземпляров по умолчанию. Этот параметр используется при наличии проблем с чтением метрик ресурсов. |
     |  |  |
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 Теперь вы настроили горизонтальное масштабирование для кластера Azure обозреватель данных. Добавьте еще одно правило для вертикального масштабирования. Если вам нужна помощь с проблемами масштабирования кластеров, отправьте [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) в портал Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Мониторинг производительности, работоспособности и использования Azure обозреватель данных с помощью метрик](using-metrics.md)
 * [Управление вертикальным масштабированием кластера](manage-cluster-vertical-scaling.md) для соответствующего размера кластера.

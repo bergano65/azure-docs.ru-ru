@@ -79,7 +79,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 ## <a name="text-to-speech"></a>Преобразование текста в речь
 
-Как Microsoft Speech SDK, так и интерфейсы API для Windows поддерживают эти голоса, каждый из которых поддерживает определенный язык и диалект, определяемые языковым стандартом.
+Как Microsoft Speech SDK, так и интерфейсы API для Windows поддерживают эти голоса, каждый из которых поддерживает определенный язык и региональный язык, определяемые языковым стандартом.
 
 > [!IMPORTANT]
 > Стандартные, пользовательские и нейронные голосовые модели предлагаются по разным ценам. Дополнительные сведения см. на странице [Цены на Cognitive Services, службы речи](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).

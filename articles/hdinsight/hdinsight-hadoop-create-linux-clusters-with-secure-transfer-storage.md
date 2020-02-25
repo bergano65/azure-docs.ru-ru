@@ -7,52 +7,40 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 01/22/2020
-ms.openlocfilehash: a8176cc07296b7de7b6aba5356485280ef5ebde1
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.date: 02/18/2020
+ms.openlocfilehash: c1e5ca8b0bb828e5e8ce896bba6a5278266b118e
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548821"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560088"
 ---
-# <a name="create-apache-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Apache Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
+# <a name="apache-hadoop-clusters-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Apache Hadoop кластеры с учетными записями хранения с безопасной переносю в Azure HDInsight
 
 Функция [Secure transfer required](../storage/common/storage-require-secure-transfer.md) (Необходима безопасная передача) усиливает безопасность учетной записи хранения Azure путем принудительной передачи всех запросов к вашей учетной записи через безопасное подключение. Эта функция и схема wasbs поддерживаются только кластером HDInsight версии 3.6 или более новым.
 
-**Включение безопасного обмена хранилищами после создания кластера может привести к ошибкам с помощью учетной записи хранения и не рекомендуется. Лучше создать новый кластер с включенным свойством.**
+> [!IMPORTANT]
+> Включение безопасного обмена хранилищами после создания кластера может привести к ошибкам с помощью учетной записи хранения и не рекомендуется. Лучше создать новый кластер с использованием учетной записи хранения с уже включенной безопасной защитой.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="storage-accounts"></a>Учетные записи хранения
 
-Прежде чем приступать к этой статье, необходимо:
+### <a name="azure-portal"></a>Портал Azure
 
-* Подписка Azure. чтобы создать бесплатную пробную учетную запись на один месяц, перейдите по [Azure.Microsoft.com/Free](https://azure.microsoft.com/free).
-* Учетная запись хранения Azure с включенной безопасной переносю. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-account-create.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md). 
-* Контейнер больших двоичных объектов в учетной записи хранения.
+По умолчанию при создании учетной записи хранения в портал Azure включается свойство Обязательное безопасное перемещение.
 
-## <a name="create-cluster"></a>Создание кластера
+Сведения об обновлении существующей учетной записи хранения с портал Azure см. в разделе [Обязательное безопасное перемещение с помощью портал Azure](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-for-an-existing-storage-account).
 
-[!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+### <a name="powershell"></a>PowerShell
 
-В этом разделе вы создадите в HDInsight кластер Hadoop, используя [шаблон Azure Resource Manager](../azure-resource-manager/templates/deploy-powershell.md). Шаблон можно найти на сайте [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-with-existing-default-storage-account/). Для работы с этой статьей диспетчер ресурсов шаблона не требуется. Сведения о других способах создания кластера и о свойствах, используемых в этой статье, см. в разделе [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что параметр `-EnableHttpsTrafficOnly` имеет значение `1`.
 
-1. Щелкните следующее изображение, чтобы войти в Azure и открыть шаблон Resource Manager на портале Azure.
+Сведения об обновлении существующей учетной записи хранения с помощью PowerShell см. в статье [требование безопасной пересылки с помощью PowerShell](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-powershell).
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-existing-default-storage-account%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
+### <a name="azure-cli"></a>Azure CLI
 
-2. Следуйте инструкциям, чтобы создать кластер со следующими характеристиками:
+Для команды Azure CLI [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create), убедитесь, что параметр `--https-only` имеет значение `true`.
 
-    * Укажите HDInsight версии 3.6. Требуется версия 3.6 или более новая.
-    * Укажите учетную запись хранения с включенной безопасной передачей.
-    * Введите короткое имя для учетной записи хранения.
-    * Учетную запись хранения и контейнер больших двоичных объектов необходимо создать заранее.
-
-      Инструкции см. в [этой статье](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).
-
-При использовании действия скрипта для предоставления собственных файлов конфигурации необходимо использовать wasbs в следующих параметрах:
-
-* fs.defaultFS (core-site)
-* spark.eventLog.dir
-* spark.history.fs.logDirectory
+Сведения об обновлении существующей учетной записи хранения с Azure CLI см. в разделе [Обязательное безопасное перемещение с помощью Azure CLI](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-azure-cli).
 
 ## <a name="add-additional-storage-accounts"></a>Добавление дополнительных учетных записей хранения
 
@@ -62,27 +50,8 @@ ms.locfileid: "76548821"
 * Создайте кластер с помощью [портала Azure](https://portal.azure.com) и укажите связанную учетную запись хранения.
 * Используйте действия скриптов для добавления дополнительных учетных записей хранения с включенной безопасной передачей в имеющийся кластер HDInsight. Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы узнали, как создать кластер HDInsight и включить безопасную пересылку учетных записей хранения.
-
-Дополнительные сведения об анализе данных с помощью HDInsight см. в следующих статьях:
-
-* Дополнительные сведения об использовании [Apache Hive](https://hive.apache.org/) с hdinsight, в том числе о выполнении запросов Hive из Visual Studio, см. в статье [использование Apache Hive с hdinsight](hadoop/hdinsight-use-hive.md).
-* Дополнительные сведения о [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)— способах написания программ, обрабатывающих данные в Hadoop, см. в статье [использование Apache Hadoop MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md).
-* Дополнительные сведения об анализе данных в HDInsight с помощью средств HDInsight для Visual Studio см. в статье [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio](hadoop/apache-hadoop-visual-studio-tools-get-started.md).
-
-Чтобы узнать, как HDInsight хранит данные или получает их, ознакомьтесь со следующими статьями:
-
+* использование службы хранилища Azure (WASB) вместо [Apache Hadoop HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html) в качестве хранилища данных по умолчанию.
 * Сведения о том, как HDInsight использует службу хранилища Azure, см. в статье [Использование службы хранилища Azure в HDInsight](hdinsight-hadoop-use-blob-storage.md).
 * Сведения об отправке данных в HDInsight см. в статье [Отправка данных в HDInsight](hdinsight-upload-data.md).
-
-Дополнительные сведения о создании кластера HDInsight и управлении этим кластером см. в следующих статьях:
-
-* Сведения об управлении кластером HDInsight под управлением Linux см. в руководстве по [управлению кластерами HDInsight с помощью Apache Ambari](hdinsight-hadoop-manage-ambari.md).
-* Дополнительные сведения о параметрах, которые можно выбрать при создании кластера HDInsight, см. в статье [Создание кластеров HDInsight в Linux с пользовательскими параметрами](hdinsight-hadoop-provision-linux-clusters.md).
-* Если вы знакомы с Linux и Apache Hadoop, но хотите узнать о конкретных особенностях Hadoop в HDInsight, см. статью [Работа с hdinsight в Linux](hdinsight-hadoop-linux-information.md). Эта статья содержит следующую информацию:
-
-  * URL-адреса для служб, размещенных в кластере, например [Apache Ambari](https://ambari.apache.org/) и [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)
-  * расположение файлов [Apache Hadoop](https://hadoop.apache.org/) и примеры в локальной файловой системе;
-  * использование службы хранилища Azure (WASB) вместо [Apache Hadoop HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html) в качестве хранилища данных по умолчанию.

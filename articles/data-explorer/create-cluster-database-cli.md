@@ -1,5 +1,5 @@
 ---
-title: Создание кластера и базы данных Azure Data Explorer с помощью Azure CLI
+title: Создание кластера Azure обозреватель данных & DB с Azure CLI
 description: Сведения о создании кластера и базы данных Azure Data Explorer с помощью Azure CLI
 author: radennis
 ms.author: radennis
@@ -7,18 +7,18 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: bd53a8e29254af617b6cfa68935a191a50fc526c
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 6b8c2924e50da095c3bc5c7db2d2bf48ef5a27c2
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326770"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561941"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-azure-cli"></a>Создание кластера и базы данных Azure Data Explorer с помощью Azure CLI
 
 > [!div class="op_single_selector"]
 > * [Портал](create-cluster-database-portal.md)
-> * [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](create-cluster-database-cli.md)
+> * [CLI](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
 > * [Python](create-cluster-database-python.md)

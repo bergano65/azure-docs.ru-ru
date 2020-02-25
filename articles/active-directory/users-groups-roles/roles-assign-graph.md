@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f5be5829843e9857239ca5ea9a7395f569f563a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 3632f8a360df8837569104232b7380fdc8383953
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74025344"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77559153"
 ---
-# <a name="assign-custom-admin-roles-using-graph-api-in-azure-active-directory"></a>Назначение пользовательских ролей администратора с помощью API Graph в Azure Active Directory 
+# <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Назначение пользовательских ролей администратора с помощью Microsoft Graph API в Azure Active Directory 
 
-Вы можете автоматизировать назначение ролей учетным записям пользователей Microsoft Graph API. В этой статье рассматриваются операции POST, GET и DELETE в roleAssignments.
+Способ назначения ролей учетным записям пользователей можно автоматизировать с помощью API Microsoft Graph. В этой статье рассматриваются операции POST, GET и DELETE в roleAssignments.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -32,10 +32,11 @@ ms.locfileid: "74025344"
 
 HTTP-запрос на создание назначения роли между пользователем и определением роли.
 
-ПУБЛИКАЦИЯ
+POST
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal
+POST https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
+Content-type: application/json
 ```
 
 Текст
@@ -56,10 +57,10 @@ HTTP/1.1 201 Created
 
 HTTP-запрос на создание назначения роли, в котором не существует субъект или определение роли
 
-ПУБЛИКАЦИЯ
+POST
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal
+https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 ```
 
 Текст
@@ -83,10 +84,10 @@ HTTP-запрос на создание одного назначения рол
 > [!NOTE] 
 > В настоящее время встроенные роли имеют ограничение, где их можно ограничить только областью "/" всей организации или областью "/Ау/*". Область одного ресурса не работает для встроенных ролей, но работает для пользовательских ролей.
 
-ПУБЛИКАЦИЯ
+POST
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal
+https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 ```
 
 Текст
@@ -127,10 +128,10 @@ HTTP/1.1 400 Bad Request
 
 HTTP-запрос на получение назначения роли для данного участника
 
-ПОЛУЧЕНИЕ
+GET
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal&$filter=principalId eq ‘<object-id-of-principal>’
+https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments&$filter=principalId eq ‘<object-id-of-principal>’
 ```
 
 Ответ
@@ -153,10 +154,10 @@ HTTP/1.1 200 OK
 
 HTTP-запрос на получение назначения роли для заданного определения роли.
 
-ПОЛУЧЕНИЕ
+GET
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal&$filter=roleDefinitionId eq ‘<object-id-or-template-id-of-role-definition>’
+https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments&$filter=roleDefinitionId eq ‘<object-id-or-template-id-of-role-definition>’
 ```
 
 Ответ
@@ -173,10 +174,10 @@ HTTP/1.1 200 OK
 
 HTTP-запрос на получение назначения роли по ИДЕНТИФИКАТОРу.
 
-ПОЛУЧЕНИЕ
+GET
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
+GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
 ```
 
 Ответ
@@ -184,7 +185,7 @@ https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role
 ``` HTTP
 HTTP/1.1 200 OK
 { 
-    "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
+    "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1",
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
     "resourceScopes":["/"]
@@ -195,10 +196,10 @@ HTTP/1.1 200 OK
 
 HTTP-запрос на удаление назначения роли между пользователем и определением роли.
 
-УДАЛИТЬ
+DELETE
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
+GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
 ```
 
 Ответ
@@ -208,10 +209,10 @@ HTTP/1.1 204 No Content
 
 HTTP-запрос на удаление назначения роли, которое больше не существует
 
-УДАЛИТЬ
+DELETE
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
+GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
 ```
 
 Ответ
@@ -222,10 +223,10 @@ HTTP/1.1 404 Not Found
 
 HTTP-запрос на удаление назначения роли между самои встроенным определением роли
 
-УДАЛИТЬ
+DELETE
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments/<id-of-role-assignment>?api-version=1.61-internal
+GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
 ```
 
 Ответ
@@ -246,7 +247,7 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

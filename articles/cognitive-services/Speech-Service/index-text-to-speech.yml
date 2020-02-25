@@ -1,0 +1,85 @@
+### YamlMime:Landing
+title: Документация по тексту в речь
+summary: Преобразование текста в речь из службы распознавания речи позволяет вашим приложениям, средствам или устройствам преобразовывать текст в человеческий синтезатор.
+metadata:
+  title: Документация по тексту в речь. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: 64d8c636aa4b0f8b75ba3a6f92d7792c91a9271d
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562903"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое преобразование текста в речь?
+      url: text-to-speech.md
+  - linkListType: quickstart
+    links:
+    - text: Синтезирование речи в виде речи докладчика
+      url: quickstarts/text-to-speech.md
+    - text: Синтезирование речи в звуковой файл
+      url: quickstarts/text-to-speech-audio-file.md
+    - text: Синтезирование речи с помощью звуковых функций длинной формы
+      url: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Улучшение синтеза с помощью SSML
+      url: speech-synthesis-markup.md
+    - text: Улучшение синтеза с помощью Пользовательского голоса
+      url: how-to-custom-voice.md
+    - text: Синтезирование речи с помощью API длинных аудиоматериалов
+      url: long-audio-api.md
+    - text: Получение списка голосовых моделей с помощью REST (Python)
+      url: quickstart-python-get-text-to-speech-voices.md
+    - text: Преобразование текста в речь с помощью REST (Python)
+      url: quickstart-python-text-to-speech.md
+    - text: Улучшение синтеза с помощью создания звукового содержимого
+      url: how-to-audio-content-creation.md
+  - linkListType: concept
+    links:
+    - text: Начало работы с настраиваемыми голосовыми моделями
+      url: how-to-custom-voice.md
+    - text: Подготовка настраиваемых голосов данных
+      url: how-to-custom-voice-prepare-data.md
+    - text: Создание и использование настраиваемых голосовых моделей
+      url: how-to-custom-voice-create-voice.md
+    - text: Запись образцов голосов
+      url: record-custom-voice-samples.md
+    - text: Рекомендации по именованию настраиваемых ключевых слов
+      url: speech-devices-sdk-kws-guidelines.md
+    - text: Выявление пользовательских ключевых слов
+      url: speech-devices-sdk-create-kws.md
+    - text: Фильтрация Пользовательского голоса
+      url: concepts-gating-overview.md
+    - text: Развертывание технологии для синтеза
+      url: concepts-guidelines-responsible-deployment-synthetic.md
+    - text: Рекомендации по проектированию для раскрытия информации
+      url: concepts-disclosure-guidelines.md
+    - text: Конструктивные шаблоны для раскрытия информации
+      url: concepts-disclosure-patterns.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Языковая поддержка
+      url: language-support.md#text-to-speech
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services
+    - text: Правила поведения
+      url: https://aka.ms/custom-neural-code-of-conduct
+    - text: Предоставление сведений специалистам по озвучиванию
+      url: https://aka.ms/disclosure-voice-talent

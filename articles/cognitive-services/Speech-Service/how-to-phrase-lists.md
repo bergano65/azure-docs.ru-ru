@@ -3,20 +3,20 @@ title: Списки фраз — служба речи
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как предоставить речевой службе список фраз с помощью объекта `PhraseListGrammar`, чтобы улучшить результаты распознавания речи в текст.
 services: cognitive-services
-author: rhurey
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
-ms.author: rhurey
+ms.date: 02/04/2020
+ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 2ceb53b50810aef501278710ae990c57fc45030c
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: f84ea6b2b0f1e8246e1d765e54f663cd01f29b1d
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74971678"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560853"
 ---
 # <a name="phrase-lists-for-speech-to-text"></a>Списки фраз для преобразования речи в текст
 
@@ -136,6 +136,6 @@ phraseListGrammar.clear();
 > [!NOTE]
 > Изменения объекта `PhraseListGrammar` вступают в силу при следующем распознавании или после повторного подключения к службе речи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

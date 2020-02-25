@@ -1,0 +1,47 @@
+### YamlMime:Landing
+title: Документация по размещению
+summary: Контейнеры службы речи доступны для сценариев преобразования речи в текст и преобразования текста в речь, охватывающих стандартные или настроенные модели.
+metadata:
+  title: Документация по размещению. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: 1e8a57f6132af467975714e585f18059cf9b569e
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562947"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Контейнеры службы речи
+      url: speech-container-howto.md
+    - text: Контейнеры службы речи с Kubernetes
+      url: speech-container-howto-on-premises.md
+    - text: Контейнеры службы речи в службе "экземпляры контейнеров Azure"
+      url: deploy-speech-on-container-instances.md
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание ресурса речи Azure
+      url: get-started.md#create-a-speech-resource-in-azure
+    - text: Настройка контейнеров
+      url: speech-container-configuration.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Поддерживаемые регионы
+      url: regions.md
+    - text: Облака независимых
+      url: sovereign-clouds.md

@@ -1,0 +1,83 @@
+### YamlMime:Landing
+title: Документация по голосовым обтекание
+summary: Преобразование речи в текст из речевой службы, известной также как распознавание речи, позволяет подсчитать звуковые потоки в режиме реального времени в текст.
+metadata:
+  title: Документация по голосовым функциям в тексте. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: 2dd9fa8c9af53c69a1790dd890b48a7092f5a5da
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562936"
+landingContent:
+- title: Начало работы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое преобразование речи в текст?
+      url: speech-to-text.md
+  - linkListType: quickstart
+    links:
+    - text: Распознавание речи при вводе с микрофона
+      url: quickstarts/speech-to-text-from-microphone.md
+    - text: Распознавание речи из звукового файла
+      url: quickstarts/speech-to-text-from-file.md
+    - text: Распознавание речи из файлов, находящихся в хранилище BLOB-объектов
+      url: quickstarts/from-blob.md
+- title: Пошаговые руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Изменение исходного языка при распознавании речи
+      url: how-to-specify-source-language.md
+    - text: Выбор режима распознавания речи
+      url: how-to-choose-recognition-mode.md
+    - text: Повышение точности с помощью списков фраз
+      url: how-to-phrase-lists.md
+    - text: Повышение точности с помощью моделей клиентов
+      url: tutorial-tenant-model.md
+    - text: Повышение точности с помощью пользовательского распознавания речи
+      url: how-to-custom-speech.md
+    - text: Выбор устройства для ввода с микрофона
+      url: how-to-select-audio-input-devices.md
+    - text: Использование автоматического определения исходного языка
+      url: how-to-automatic-language-detection.md
+    - text: Использование форматов сжатых входных звуковых данных
+      url: how-to-use-codec-compressed-audio-input-streams.md
+    - text: Использование форматов сжатых входных звуковых данных (iOS)
+      url: how-to-use-codec-compressed-audio-input-streams-ios.md
+    - text: Использование форматов сжатых входных звуковых данных (Android)
+      url: how-to-use-codec-compressed-audio-input-streams-android.md
+  - linkListType: concept
+    links:
+    - text: Подготовка Пользовательское распознавание речи данных
+      url: how-to-custom-speech-test-data.md
+    - text: Проверка данных Пользовательское распознавание речи
+      url: how-to-custom-speech-inspect-data.md
+    - text: Оценка точности Пользовательское распознавание речи
+      url: how-to-custom-speech-evaluate-data.md
+    - text: Обучение пользовательской модели
+      url: how-to-custom-speech-train-model.md
+    - text: Развертывание пользовательской модели
+      url: how-to-custom-speech-deploy-model.md
+    - text: Создание транскрипций с подписями человека
+      url: how-to-custom-speech-human-labeled-transcriptions.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Языковая поддержка
+      url: language-support.md#speech-to-text
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services
+    - text: Вопросы и ответы. Преобразование речи в текст
+      url: faq-stt.md

@@ -14,14 +14,14 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a455f0e1959ad496a04f531cc0c3ece240c757ad
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 9eec896e6cccaf58c83820161c54c4f10cfadadd
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68987151"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561567"
 ---
-# <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензирование на основе групп в Azure Active Directory?
+# <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензии групп в Azure Active Directory?
 
 Платные облачные службы Майкрософт (например, Office 365, Enterprise Mobility + Security, Dynamics 365 и другие аналогичные продукты) требуют лицензий. Эти лицензии назначаются каждому пользователю, которому нужен доступ к этим службам. Для управления лицензиями администраторы используют один из порталов управления (Office или Azure) и командлеты PowerShell. Azure Active Directory (Azure AD) — это базовая инфраструктура, обеспечивающая управление удостоверениями для всех облачных служб Майкрософт. Azure AD хранит сведения о состоянии назначения лицензии для пользователей.
 
@@ -34,7 +34,7 @@ ms.locfileid: "68987151"
 
 - Платная или пробная подписка для Azure AD Premium P1 и более поздних версий
 
-- Платная или пробная версия Office 365 Enterprise E3 или Office 365 a3 или Office 365 GCC G3 и выше
+- Платный или пробный выпуск Office 365 Enterprise E3 или Office 365 a3 или Office 365 GCC G3 или Office 365 E3 для ГКЧ или Office 365 E3 для DOD и более поздних версий
 
 ### <a name="required-number-of-licenses"></a>Необходимое количество лицензий
 Если каким-либо группам назначена лицензия, то их каждому уникальному участнику тоже нужно назначить лицензию. Хотя назначить лицензии каждому участнику группы по-отдельности не требуется, необходимо иметь достаточное количество лицензий для всех участников. Например, если имеются 1000 уникальных участников, которые входят в лицензированные группы в клиенте, необходимо иметь по крайней мере 1000 лицензий, чтобы выполнить условия лицензионного соглашения.

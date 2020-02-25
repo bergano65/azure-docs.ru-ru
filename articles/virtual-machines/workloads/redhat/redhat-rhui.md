@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: dc4762cbda5ad2877d2d69953d2514dea17c8b46
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: d989553dc2248e7e0c830bb8cf169a80354dbab2
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368903"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562553"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -28,7 +28,7 @@ ms.locfileid: "77368903"
 Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
 
 > [!IMPORTANT]
-> RHUI предназначен только для образов с оплатой по мере использования (ПАЙГО). Для пользовательских и Золотой образов, также известных как собственные подписки (BYOS), необходимо подключить систему к RHSM или спутнику для получения обновлений. Дополнительные сведения см. в [статье Red Hat](https://access.redhat.com/solutions/253273) .
+> RHUI предназначен только для образов с оплатой по мере использования (PAYG). Для пользовательских и Золотой образов, также известных как собственные подписки (BYOS), необходимо подключить систему к RHSM или спутнику для получения обновлений. Дополнительные сведения см. в [статье Red Hat](https://access.redhat.com/solutions/253273) .
 
 
 ## <a name="important-information-about-azure-rhui"></a>Важные сведения об Azure RHUI
@@ -105,7 +105,7 @@ RedHat:RHEL:7.6:7.6.2019062116
     yum --config='https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7-eus.config' install 'rhui-azure-rhel7-eus'
     ```
 
-1. Блокировка переменной релеасевер (Запуск от имени привилегированного пользователя):
+1. Заблокировать переменную `releasever` (Запуск от имени root):
     ```bash
     echo $(. /etc/os-release && echo $VERSION_ID) > /etc/yum/vars/releasever
     ```
@@ -120,7 +120,7 @@ RedHat:RHEL:7.6:7.6.2019062116
 
 ### <a name="switch-a-rhel-vm-back-to-non-eus-remove-a-version-lock"></a>Переключение виртуальной машины RHEL обратно на non-ЕУС (удаление блокировки версии)
 Выполните следующую команду в качестве корневого:
-1. Удалите файл релеасевер:
+1. Удалите файл `releasever`:
     ```bash
     rm /etc/yum/vars/releasever
      ```

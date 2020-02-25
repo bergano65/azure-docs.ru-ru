@@ -1,17 +1,19 @@
 ---
 title: Восстановление контейнера учетной записи хранения
 description: Восстановление контейнера учетной записи хранения
+services: storage
 author: v-miegge
 ms.topic: troubleshooting
 ms.author: kartup
 ms.date: 10/30/2019
 ms.service: storage
-ms.openlocfilehash: f095bdfe7bbb5777a2ad2aabb3bda92d0974457d
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+manager: dcscontentpm
+ms.openlocfilehash: 8b9b69fb32edab54fb2df558ea292df264e00cbb
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73693583"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562281"
 ---
 # <a name="storage-account-container-recovery"></a>Восстановление контейнера учетной записи хранения
 
@@ -25,7 +27,7 @@ ms.locfileid: "73693583"
 
 3. В разделе **Обзор** проверьте наличие **репликации**.
 
-   ![Образ —](media/storage-account-container-recovery/1.png)
+   ![Изображение](media/storage-account-container-recovery/1.png)
 
 4. Если тип репликации — **GRS/RA-GRS**, восстановление контейнера учетной записи возможно без гарантии. Для всех остальных типов репликации это невозможно.
 
@@ -54,7 +56,7 @@ ms.locfileid: "73693583"
 
 2. Мы также рекомендуем использовать функцию [создания моментальных снимков](https://docs.microsoft.com/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob) .
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже приведены два образца кода для этой функции:
 

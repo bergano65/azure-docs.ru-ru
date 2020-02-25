@@ -1,0 +1,55 @@
+### YamlMime:Landing
+title: Документация по сценариям диалога
+summary: Изучите различные сценарии беседы, запись разговора или беседы с несколькими устройствами.
+metadata:
+  title: Документация по сценариям диалога. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: IEvangelist
+  manager: nitinme
+  layout: LandingPage
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 02/11/2020
+  ms.author: dapine
+  ms.openlocfilehash: d6ea318c2745f7d80a49e5fcb1b47381a9f276f7
+  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/22/2020
+  ms.locfileid: "77562958"
+landingContent:
+- title: Транскрибирование бесед
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: О транскрипции беседы
+      url: conversation-transcription.md
+  - linkListType: how-to-guide
+    links:
+    - text: Транскрибирование беседы в реальном времени
+      url: how-to-use-conversation-transcription.md
+    - text: Асинхронное транскрибирование бесед
+      url: how-to-async-conversation-transcription.md
+    - text: Работа с сценариями центра обработки вызовов
+      url: call-center-transcription.md
+- title: Ведение беседы с использованием нескольких устройств
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: О беседе с несколькими устройствами
+      url: multi-device-conversation.md
+  - linkListType: quickstart
+    links:
+    - text: Начало беседы и присоединение к ней
+      url: quickstarts/multi-device-conversation.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Поддержка языка для транскрипции
+      url: conversation-transcription.md#language-support
+    - text: Поддержка языков бесед на нескольких устройствах
+      url: multi-device-conversation.md#language-support
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/

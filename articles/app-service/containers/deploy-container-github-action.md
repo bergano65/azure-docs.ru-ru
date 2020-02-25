@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: 127dd8645596b605980bf3c6fbc87bf159f7c03e
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: f32ea2ae0be66259ff153c24bfd10e179fddbbe5
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671807"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77559034"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
@@ -27,7 +27,7 @@ ms.locfileid: "74671807"
 
 |Section  |Задачи  |
 |---------|---------|
-|**Authentication** (Аутентификация) | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
+|**Аутентификация** | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
 |**Сборка** | 1. Настройте среду. <br /> 2. Создайте образ контейнера. |
 |**Развертывание** | 1. Разверните образ контейнера. |
 
@@ -64,7 +64,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 1. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > Добавить новый секрет**
 
-2. Вставьте содержимое приведенной ниже `az cli` команды в качестве значения переменной Secret. Пример: `AZURE_CREDENTIALS`.
+2. Вставьте содержимое приведенной ниже `az cli` команды в качестве значения переменной Secret. Например, `AZURE_CREDENTIALS`.
 
     
     ```azurecli
@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
     
     - name: 'Login via Azure CLI'
@@ -143,7 +143,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
     
     - name: 'Login via Azure CLI'
@@ -171,7 +171,7 @@ jobs:
         az logout
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Наш набор действий, сгруппированных в различные репозитории в GitHub, можно найти в каждом из них, содержащих документацию и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 

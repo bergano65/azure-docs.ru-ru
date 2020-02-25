@@ -1,5 +1,5 @@
 ---
-title: Что такое пользовательские голосовые модели — Служба речи
+title: Улучшение синтеза с помощью пользовательской службы голосовой речи
 titleSuffix: Azure Cognitive Services
 description: Настраиваемый Voice — это набор интерактивных средств, позволяющих создавать распознаваемые, односторонние голоса для вашей торговой марки. Все, что нужно для начала работы, — это несколько звуковых файлов и связанных с ними транскрипций. Перейдите по ссылкам ниже, чтобы приступить к созданию пользовательского интерфейса преобразования речи в текст.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: dapine
-ms.openlocfilehash: 15d15ce2d4dfc55a51bf21ba005512606cc4997a
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 786cf687e569af172eabfaa9068ae61ffd6b2988
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77424972"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562502"
 ---
 # <a name="get-started-with-custom-voice"></a>Начало работы с настраиваемыми голосовыми моделями
 
@@ -67,7 +67,7 @@ ms.locfileid: "77424972"
 > [!IMPORTANT]
 > [Пользовательское голосовое портал](https://aka.ms/custom-voice) недавно обновлялось! Если вы создали предыдущие данные, модели, тесты и опубликованные конечные точки на портале CRIS.ai или с помощью API, необходимо создать новый проект на новом портале для подключения к этим старым сущностям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Подготовка настраиваемых голосов данных](how-to-custom-voice-prepare-data.md)
 - [Создание пользовательского голоса](how-to-custom-voice-create-voice.md)

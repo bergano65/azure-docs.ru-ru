@@ -1,23 +1,23 @@
 ---
-title: Что такое беседа с несколькими устройствами (Предварительная версия) — служба речи
+title: О беседе с несколькими устройствами (Предварительная версия) — служба речи
 titleSuffix: Azure Cognitive Services
 description: ''
 services: cognitive-services
-author: ralphe
-manager: cpoulain
+author: IEvangelist
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 1/15/2020
-ms.author: ralphe
-ms.openlocfilehash: 8d73c896f784507c2336a79130ff5f35aa61d30f
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.date: 01/31/2020
+ms.author: dapine
+ms.openlocfilehash: d94b3392d6bd5ab539d49c8a4cfdd568fbbb1cd0
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76268078"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560819"
 ---
-# <a name="what-is-multi-device-conversation-preview"></a>Что такое беседа с несколькими устройствами (Предварительная версия)?
+# <a name="about-multi-device-conversation-preview"></a>О беседе с несколькими устройствами (Предварительная версия)
 
 **Беседа с несколькими устройствами** позволяет легко создавать голосовые и текстовые беседы между несколькими клиентами и координировать обмен сообщениями между ними.
 
@@ -43,7 +43,7 @@ ms.locfileid: "76268078"
 - **Ретранслятор сообщений** . Служба бесед с несколькими устройствами будет распространять сообщения, отправленные одним клиентом, на все остальные языки по своему усмотрению.
 - **Идентификация сообщений** — каждое сообщение, которое пользователи получают в диалоге, помечаются псевдонимом пользователя, отправившего его.
 
-## <a name="use-cases"></a>Примеры использования
+## <a name="use-cases"></a>Варианты использования
 
 ### <a name="lightweight-conversations"></a>Упрощенные диалоги
 
@@ -62,7 +62,7 @@ ms.locfileid: "76268078"
 > [!NOTE]
 > Чтобы увидеть пример, ознакомьтесь с преобразованием [конвертера презентаций](https://www.microsoft.com/translator/apps/presentation-translator/), надстройкой PowerPoint, которая использует службу бесед с несколькими устройствами. Его можно скачать [здесь](https://www.microsoft.com/download/details.aspx?id=55024).
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 Все клиенты будут использовать речевой пакет SDK, чтобы создать или присоединиться к беседе. Речевой пакет SDK взаимодействует со службой бесед с несколькими устройствами, которая управляет жизненным циклом диалога, включая список участников, выбранные языки и отправленные сообщения для каждого клиента.  
 
@@ -98,7 +98,7 @@ ms.locfileid: "76268078"
 > [!NOTE]
 > Каждый диалог может содержать до 100 участников, из которых 10 можно одновременно говорить в любой момент времени.
 
-## <a name="language-support"></a>Поддержка языков
+## <a name="language-support"></a>Языковая поддержка
 
 При создании или присоединении диалога каждый пользователь должен выбрать **основной язык**: язык, на котором они будут говориться и отправлять мгновенные сообщения, а также язык, на котором будут отображаться сообщения других пользователей.
 
@@ -123,7 +123,7 @@ ms.locfileid: "76268078"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Преобразование диалогов в режиме реального времени](quickstarts/multi-device-conversation.md)

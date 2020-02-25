@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 3d5b1ab4e72ec759098e9c71515200f89a8dfe82
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: aec8048c7ef2eb0d944cdd2a863e23578f4f87e5
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931209"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561686"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -60,6 +60,17 @@ ms.locfileid: "74931209"
 
 В настоящее время у нас нет решения RBAC, связанного с этой проблемой. В качестве обходного решения можно запросить URI SAS для [подключения к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-shared-access-signature-uri).
 
+### <a name="recommended-built-in-rbac-roles"></a>Рекомендуемые встроенные роли RBAC
+
+Существует несколько встроенных ролей RBAC, которые могут предоставить разрешения, необходимые для использования Обозреватель службы хранилища. Ниже приведены некоторые из этих ролей.
+- [Владелец](/azure/role-based-access-control/built-in-roles#owner): управление всеми ресурсами, включая доступ к ресурсам. **Примечание**. Эта роль предоставит вам доступ к ключам.
+- [Участник](/azure/role-based-access-control/built-in-roles#contributor): управление всеми ресурсами без доступа к ресурсам. **Примечание**. Эта роль предоставит вам доступ к ключам.
+- [Читатель](/azure/role-based-access-control/built-in-roles#reader): чтение и вывод списка ресурсов.
+- [Участник учетной записи хранения](/azure/role-based-access-control/built-in-roles#storage-account-contributor). полное управление учетными записями хранения. **Примечание**. Эта роль предоставит вам доступ к ключам.
+- [Владелец данных BLOB-объекта хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner): полный доступ к контейнерам и данным больших двоичных объектов службы хранилища Azure.
+- [Участник данных BLOB-объектов службы хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor): чтение, запись и удаление контейнеров и больших двоичных объектов службы хранилища Azure.
+- [Модуль чтения BLOB-объектов хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-reader): чтение и перечисление контейнеров хранилища Azure и больших двоичных объектов.
+
 ## <a name="error-self-signed-certificate-in-certificate-chain-and-similar-errors"></a>Ошибка: самозаверяющий сертификат в цепочке сертификатов (и аналогичные ошибки)
 
 Ошибки сертификатов обычно возникают в одной из следующих ситуаций.
@@ -82,7 +93,7 @@ ms.locfileid: "74931209"
 2. Выполните команду OpenSSL.
     * Windows: Откройте каталог установки, выберите **/bin/** , а затем дважды щелкните **файл OpenSSL. exe**.
     * Mac и Linux: запустите `openssl` из терминала.
-3. Запустите `s_client -showcerts -connect microsoft.com:443`.
+3. Выполните `s_client -showcerts -connect microsoft.com:443`.
 4. Найдите самозаверяющие сертификаты. Если вы не знаете, какие сертификаты являются самозаверяющими, обратите внимание на то, что тема `("s:")` и `("i:")` издателя одинаковы.
 5. При обнаружении самозаверяющих сертификатов для каждого из них скопируйте и вставьте все из `-----BEGIN CERTIFICATE-----` в `-----END CERTIFICATE-----` в новый CER-файл.
 6. Откройте Обозреватель службы хранилища и перейдите к разделу **Edit** > **SSL Certificates** > **Import Certificates**. Затем с помощью средства выбора файлов найдите, выберите и откройте созданные CER файлы.
@@ -93,7 +104,7 @@ ms.locfileid: "74931209"
 
 ### <a name="blank-sign-in-dialog-box"></a>Диалоговое окно «пустой вход»
 
-Пустые диалоговые окна входа чаще всего возникают, когда службы федерации Active Directory (AD FS) (AD FS) предложит Обозреватель службы хранилища выполнить перенаправление, которое не поддерживается электронными адресами. Чтобы обойти эту ошибку, можно попытаться использовать поток кода устройства для входа. Для этого выполните следующие действия.
+Пустые диалоговые окна входа чаще всего возникают, когда службы федерации Active Directory (AD FS) (AD FS) предложит Обозреватель службы хранилища выполнить перенаправление, которое не поддерживается электронными адресами. Чтобы обойти эту ошибку, можно попытаться использовать поток кода устройства для входа. Для этого выполните действия, описанные ниже.
 
 1. На левой вертикальной панели инструментов откройте **Параметры**. На панели Параметры выберите **приложение** > **войти**. Включите **Вход с помощью потока кода устройства**.
 2. Откройте диалоговое окно **Подключение** (с помощью значка подключения на левой вертикальной панели или выбрав **Добавить учетную запись** на панели учетной записи).
@@ -195,7 +206,7 @@ ms.locfileid: "74931209"
 * Проверьте номер порта, используемый средством для работы с сетью.
 * Введите URL-адрес локального узла и номер порта сетевого средства как параметры прокси-сервера в обозревателе хранилищ. После этого средство работы с сетью начнет вести журнал сетевых запросов, сделанных Обозреватель службы хранилища в конечные точки управления и службы. Например, введите `https://cawablobgrs.blob.core.windows.net/` для конечной точки большого двоичного объекта в браузере, и вы получите ответ, похожий на следующий:
 
-  ![Пример кода](./media/storage-explorer-troubleshooting/4022502_en_2.png)
+  ![Образец кода](./media/storage-explorer-troubleshooting/4022502_en_2.png)
 
   Этот ответ предполагает, что ресурс существует, даже если у вас нет доступа к нему.
 
@@ -244,20 +255,20 @@ ms.locfileid: "74931209"
 
 После прохождения всех подключений для всех соединений с именами, которые не добавляются обратно, необходимо очистить поврежденные данные (если они есть) и добавить их обратно с помощью стандартных действий в Обозреватель службы хранилища.
 
-# <a name="windowstabwindows"></a>[Windows](#tab/Windows)
+# <a name="windows"></a>[Windows](#tab/Windows)
 
 1. В меню **Пуск** найдите **Диспетчер учетных данных** и откройте его.
 2. Перейдите в раздел **учетные данные Windows**.
 3. В разделе **Общие учетные данные**найдите записи с ключом `<connection_type_key>/<corrupted_connection_name>` (например, `StorageExplorer_CustomConnections_Accounts_v1/account1`).
 4. Удалите эти записи и повторно добавьте подключения.
 
-# <a name="macostabmacos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[macOS](#tab/macOS)
 
 1. Откройте "Spotlight" (Command + пробел) и найдите **доступ к цепочке ключей**.
 2. Найдите записи с ключом `<connection_type_key>/<corrupted_connection_name>` (например, `StorageExplorer_CustomConnections_Accounts_v1/account1`).
 3. Удалите эти записи и повторно добавьте подключения.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/Linux)
+# <a name="linux"></a>[Linux](#tab/Linux)
 
 Локальное управление учетными данными зависит от дистрибутива Linux. Если дистрибутив Linux не предоставляет встроенное средство графического пользовательского интерфейса для управления локальными учетными данными, можно установить стороннее средство для управления локальными учетными данными. Например, можно использовать [сеахорсе](https://wiki.gnome.org/Apps/Seahorse/), средство графического пользовательского интерфейса с открытым исходным кодом для управления локальными учетными данными Linux.
 
@@ -303,13 +314,13 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 
 * [Среда выполнения .NET Core 2,2](/dotnet/core/install/dependencies?tabs=netcore22&pivots=os-linux)
 * `libgconf-2-4`
-* `libgnome-keyring0` или `libgnome-keyring-dev`
+* `libgnome-keyring0` либо `libgnome-keyring-dev`
 * `libgnome-keyring-common`
 
 > [!NOTE]
 > Для Обозреватель службы хранилища версии 1.7.0 и более ранних требуется .NET Core 2,0. Если установлена более новая версия .NET Core, необходимо [исправить обозреватель службы хранилища](#patching-storage-explorer-for-newer-versions-of-net-core). Если вы используете Обозреватель службы хранилища 1.8.0 или более поздней версии, вы можете использовать до .NET Core 2,2. В настоящее время не были проверены версии, превышающие 2,2.
 
-# <a name="ubuntu-1904tab1904"></a>[Ubuntu 19,04](#tab/1904)
+# <a name="ubuntu-1904"></a>[Ubuntu 19,04](#tab/1904)
 
 1. Скачайте Обозреватель службы хранилища.
 2. Установите [среду выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu19-04/runtime-current).
@@ -318,7 +329,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
    sudo apt-get install libgconf-2-4 libgnome-keyring0
    ```
 
-# <a name="ubuntu-1804tab1804"></a>[Ubuntu 18,04](#tab/1804)
+# <a name="ubuntu-1804"></a>[Ubuntu 18,04](#tab/1804)
 
 1. Скачайте Обозреватель службы хранилища.
 2. Установите [среду выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-current).
@@ -327,7 +338,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
    sudo apt-get install libgconf-2-4 libgnome-keyring-common libgnome-keyring0
    ```
 
-# <a name="ubuntu-1604tab1604"></a>[Ubuntu 16.04](#tab/1604)
+# <a name="ubuntu-1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Скачайте Обозреватель службы хранилища.
 2. Установите [среду выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/runtime-current).
@@ -336,7 +347,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
    sudo apt install libgnome-keyring-dev
    ```
 
-# <a name="ubuntu-1404tab1404"></a>[Ubuntu 14.04](#tab/1404)
+# <a name="ubuntu-1404"></a>[Ubuntu 14.04](#tab/1404)
 
 1. Скачайте Обозреватель службы хранилища.
 2. Установите [среду выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu14-04/runtime-current).
@@ -366,8 +377,8 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 * Google Chrome
 * Microsoft Internet Explorer
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если ни одно из этих решений не работает, [откройте вопрос в GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues). Это можно также сделать, нажав кнопку **сообщить об ошибке в GitHub** в левом нижнем углу.
 
-![Обратная связь](./media/storage-explorer-troubleshooting/feedback-button.PNG)
+![Отзывы](./media/storage-explorer-troubleshooting/feedback-button.PNG)

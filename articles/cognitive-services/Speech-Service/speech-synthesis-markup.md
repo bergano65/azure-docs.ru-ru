@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.author: dapine
-ms.openlocfilehash: ac891e96e350f73b7728ee4b572d9e16a8794ff7
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: c4a27db8bec6dbbd2f1b2be8acfdd034d45d37d5
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77461000"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561926"
 ---
-# <a name="speech-synthesis-markup-language-ssml"></a>Язык разметки синтеза речи (SSML)
+# <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
 Язык разметки речи (SSML) — это язык разметки на основе XML, позволяющий разработчикам указать способ преобразования текста ввода в синтезированное речевое сообщение с помощью службы "преобразование текста в речь". По сравнению с обычным текстом, SSML позволяет разработчикам точно настраивать тон, произношение, скорость речи, громкость и другие выходные данные текста в речь. Обычные знаки препинания, такие как пауза после точки, или использование правильного интонатион, когда предложение заканчивается вопросительным знаком, автоматически обрабатывается.
 

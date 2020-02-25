@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: e3d6e730846388c4b74cfa0b6361629e836b0517
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 4a8b3cf47235e061e5dbcc08a409fce84d421771
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670196"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562213"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в службе приложений с помощью действий GitHub
 
@@ -27,7 +27,7 @@ ms.locfileid: "74670196"
 
 |Section  |Задачи  |
 |---------|---------|
-|**Authentication** (Аутентификация) | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
+|**Аутентификация** | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
 |**Сборка** | 1. Настройка среды <br /> 2. Создание веб-приложения |
 |**Развертывание** | 1. Развертывание веб-приложения |
 
@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
     
     - name: Setup Node 10.x
@@ -239,7 +239,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
    
     - uses: azure/login@v1
@@ -268,7 +268,7 @@ jobs:
         az logout
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Наш набор действий, сгруппированных в различные репозитории в GitHub, можно найти в каждом из них, содержащих документацию и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 

@@ -1,5 +1,5 @@
 ---
-title: Использование подключения ODBC к Azure обозреватель данных для визуализации данных с помощью Tableau
+title: Визуализация данных Tableau с помощью Azure обозреватель данных ODBC Connector
 description: Из этой статьи вы узнаете, как использовать подключение ODBC к Azure обозреватель данных для визуализации данных с помощью Tableau.
 author: orspod
 ms.author: orspodek
@@ -7,18 +7,18 @@ ms.reviewer: gabil
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 4dd8fbd761a3442536919e17bae5465adf6b945f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 903daf450800a7f060899d736c2b31920c1b51f6
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74023864"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77562451"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-tableau"></a>Визуализация данных из обозреватель данных Azure в Tableau
 
  [Tableau](https://www.tableau.com/) — это платформа визуальной аналитики для бизнес-аналитики. Чтобы подключиться к Azure обозреватель данных из Tableau и перенести данные из примера кластера, используйте драйвер SQL Server Open Database Connectivity (ODBC). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой статьи необходимо следующее:
 
@@ -56,6 +56,6 @@ ms.locfileid: "74023864"
 
 1. Теперь вы можете создавать визуализации в Tableau на основе данных, которые вы добавили из обозреватель данных Azure. Дополнительные сведения см. в разделе [Tableau Learning](https://www.tableau.com/learn).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Написание запросов для обозревателя данных Azure](write-queries.md)

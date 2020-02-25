@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 12/09/2019
-ms.openlocfilehash: e37571b0078b4966aab9f505ddf88c2edb353197
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/13/2020
+ms.openlocfilehash: 104975e6424ed96d43434a588997957033c31d93
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435628"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560360"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-azure-powershell"></a>Управление кластерами Apache Hadoop в HDInsight с помощью Azure PowerShell
 
@@ -23,7 +23,7 @@ Azure PowerShell можно использовать для контроля и
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -73,47 +73,16 @@ Set-AzHDInsightClusterSize -ClusterName <Cluster Name> -TargetInstanceCount <New
 
  Дополнительные сведения о масштабировании кластеров см. в статье [масштабирование кластеров HDInsight](./hdinsight-scaling-best-practices.md).
 
-## <a name="grantrevoke-access"></a>Предоставление и отмена доступа
-
-В кластерах HDInsight имеются следующие веб-службы HTTP (все эти службы имеют конечные точки RESTful):
-
-* ODBC
-* JDBC
-* Ambari
-* Oozie,
-* Templeton
-
-По умолчанию эти службы предоставляются для доступа. Вы можете отменить или предоставить доступ. Для отмены:
-
-```powershell
-Revoke-AzHDInsightHttpServicesAccess -ClusterName <Cluster Name>
-```
-
-Для предоставления:
-
-```powershell
-$clusterName = "<HDInsight Cluster Name>"
-
-# Credential option 1
-$hadoopUserName = "admin"
-$hadoopUserPassword = '<Enter the Password>'
-$hadoopUserPW = ConvertTo-SecureString -String $hadoopUserPassword -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential($hadoopUserName,$hadoopUserPW)
-
-# Credential option 2
-#$credential = Get-Credential -Message "Enter the HTTP username and password:" -UserName "admin"
-
-Grant-AzHDInsightHttpServicesAccess -ClusterName $clusterName -HttpCredential $credential
-```
-
-> [!NOTE]  
-> Предоставляя или отменяя доступ, вы сбрасываете имя пользователя кластера и его пароль.
-
-Предоставить и отменить доступ можно также на портале. См. раздел [Управление кластерами Apache Hadoop в HDInsight с помощью портал Azure](hdinsight-administer-use-portal-linux.md).
-
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 
-Это та же процедура, что и предоставление или отзыв доступа по протоколу HTTP. Если кластеру был предоставлен доступ по протоколу HTTP, то сначала его необходимо отменить.  После этого предоставьте доступ с новыми учетными данными пользователя HTTP.
+[Set-аздинсигхтгатевайкредентиал](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightgatewaycredential) задает учетные данные HTTP шлюза для кластера Azure HDInsight.
+
+```powershell
+$clusterName = "CLUSTERNAME"
+$credential = Get-Credential -Message "Enter the HTTP username and password:" -UserName "admin"
+
+Set-AzHDInsightGatewayCredential -ClusterName $clusterName -HttpCredential $credential
+```
 
 ## <a name="find-the-default-storage-account"></a>Поиск учетной записи хранения по умолчанию
 
