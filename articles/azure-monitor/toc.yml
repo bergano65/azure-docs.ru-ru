@@ -1235,8 +1235,6 @@
           href: platform/monitoring-classic-retirement.md
         - name: Переход на новый API оповещений журнала
           href: platform/alerts-log-api-switch.md
-        - name: Данные HockeyApp
-          href: app/hockeyapp-bridge-app.md
         - name: Решение для анализа веб-приложений Azure
           href: insights/azure-web-apps-analytics.md
         - name: Соединитель Application Insights
