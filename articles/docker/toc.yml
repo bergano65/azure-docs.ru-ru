@@ -1,6 +1,6 @@
 - name: Документация Docker
   href: index.md
-- name: Быстрый запуск
+- name: Краткое руководство
   expanded: true
   items:
     - name: Шаблон Docker в Marketplace
@@ -12,7 +12,7 @@
     - name: CI/CD с использованием Docker Swarm и Azure DevOps
       href: /azure/container-service/container-service-docker-swarm-mode-setup-ci-cd-acs-engine
     - name: 'CI/CD и Docker, Jenkins, Linux'
-      href: /azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd
+      href: /azure/jenkins/tutorial-jenkins-github-docker-cicd
 - name: Практические руководства
   items:
     - name: Расширение виртуальной машины Docker

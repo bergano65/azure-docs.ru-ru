@@ -342,8 +342,20 @@
               href: functions-bindings-cosmosdb.md
               displayName: Azure Cosmos DB
             - name: Функции 2.x
-              href: functions-bindings-cosmosdb-v2.md
               displayName: Azure Cosmos DB
+              items:
+                - name: Обзор
+                  href: functions-bindings-cosmosdb-v2.md
+                  displayName: Azure Cosmos DB
+                - name: Триггер
+                  href: functions-bindings-cosmosdb-v2-trigger.md
+                  displayName: Azure Cosmos DB
+                - name: Входные данные
+                  href: functions-bindings-cosmosdb-v2-input.md
+                  displayName: Azure Cosmos DB
+                - name: Выходные данные
+                  href: functions-bindings-cosmosdb-v2-output.md
+                  displayName: Azure Cosmos DB
         - name: Сетка событий Azure
           items:
             - name: Обзор
