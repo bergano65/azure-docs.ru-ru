@@ -3,7 +3,7 @@ title: Использование поиска облаку в Azure Sentinel д
 description: В этой статье описывается использование поиска облаку в Azure Sentinel для хранения данных.
 services: sentinel
 documentationcenter: na
-author: cabailey
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -14,13 +14,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2019
-ms.author: cabailey
-ms.openlocfilehash: 5b347848c9c6a58a70ab1093a6f9c70b62f3f769
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.author: yelevin
+ms.openlocfilehash: b392644e504fa8187e637278bef8718c9c2caa3f
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74900458"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77582132"
 ---
 # <a name="use-hunting-livestream-in-azure-sentinel-to-detect-threats"></a>Использование поиска облаку в Azure Sentinel для обнаружения угроз
 
@@ -53,7 +53,7 @@ ms.locfileid: "74900458"
 2. Создание сеанса облаку из запроса поиска:
     
     1. На вкладке **запросы** выберите запрос поиска для использования.
-    2. Щелкните запрос правой кнопкой мыши и выберите **Добавить в облаку**. Пример.
+    2. Щелкните запрос правой кнопкой мыши и выберите **Добавить в облаку**. Например:
     
     > [!div class="mx-imgBorder"]
     > ![создать сеанс облаку из запроса поиска Sentinel Azure](./media/livestream/livestream-from-query.png)
@@ -83,7 +83,7 @@ ms.locfileid: "74900458"
 
 1. В портал Azure перейдите к пункту **Sentinel** > **управление угрозами** ** > Поиск** > **облаку** .
 
-2. Выберите сеанс облаку, который нужно просмотреть или изменить. Пример.
+2. Выберите сеанс облаку, который нужно просмотреть или изменить. Например:
     
     > [!div class="mx-imgBorder"]
     > ![создать сеанс облаку из запроса поиска Sentinel Azure](./media/livestream/livestream-tab.png)
@@ -92,7 +92,7 @@ ms.locfileid: "74900458"
 
 ## <a name="receive-notifications-when-new-events-occur"></a>Получать уведомления при возникновении новых событий
 
-Поскольку уведомления облаку для новых событий используют Уведомления портал Azure, эти уведомления отображаются при каждом использовании портал Azure. Пример.
+Поскольку уведомления облаку для новых событий используют Уведомления портал Azure, эти уведомления отображаются при каждом использовании портал Azure. Например:
 
 ![Уведомление портал Azure для облаку](./media/livestream/notification.png)
 
@@ -107,7 +107,7 @@ ms.locfileid: "74900458"
 
 Это действие открывает мастер создания правил, который предварительно заполняется запросом, связанным с сеансом облаку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как использовать поиск облаку в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

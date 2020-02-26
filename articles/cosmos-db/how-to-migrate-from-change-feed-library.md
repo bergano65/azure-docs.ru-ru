@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/17/2019
 ms.author: maquaran
-ms.openlocfilehash: 9570a8512e3437b12ecce2ef0c708a74a8806482
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: f651beb181430f65d0b4c86f285e74958f8366eb
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71077559"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588889"
 ---
 # <a name="migrate-from-the-change-feed-processor-library-to-the-azure-cosmos-db-net-v3-sdk"></a>Миграция из библиотеки обработчика веб-канала изменений в пакет SDK для .NET v3 Azure Cosmos DB
 
@@ -21,23 +21,23 @@ ms.locfileid: "71077559"
 
 Пакет SDK для .NET v3 имеет несколько критических изменений, поэтому ниже приведены основные этапы миграции приложения.
 
-1. Преобразуйте `Container` экземпляры в ссылки для контейнеров отслеживаемых и арендных адресов. `DocumentCollectionInfo`
-1. Настройки, `WithProcessorOptions` использующие, должны обновляться для использования `WithLeaseConfiguration` и `WithPollInterval` для интервалов `WithStartTime` [времени начала](how-to-configure-change-feed-start-time.md), а `WithMaxItems` также для определения максимального числа элементов.
-1. Установите значение `GetChangeFeedProcessorBuilder` `ChangeFeedProcessorOptions.LeasePrefix`on в параметре, совпадающее со значением, `string.Empty` настроенным в, или используйте в противном случае. `processorName`
-1. Изменения больше не доставляются в виде `IReadOnlyList<Document>`, а `IReadOnlyCollection<T>` именно, где `T` — это тип, который необходимо определить, но класс базового элемента больше не существует.
+1. Преобразуйте `DocumentCollectionInfo` экземпляры в ссылки `Container` для контейнеров отслеживаемых и арендных адресов.
+1. Настройки, использующие `WithProcessorOptions`, должны быть обновлены для использования `WithLeaseConfiguration` и `WithPollInterval` для интервалов, `WithStartTime` [для времени начала](how-to-configure-change-feed-start-time.md)и `WithMaxItems` для определения максимального числа элементов.
+1. Установите `processorName` на `GetChangeFeedProcessorBuilder` в соответствии со значением, настроенным в `ChangeFeedProcessorOptions.LeasePrefix`, или используйте `string.Empty` в противном случае.
+1. Изменения больше не доставляются в качестве `IReadOnlyList<Document>`, вместо этого `IReadOnlyCollection<T>`, где `T` — это тип, который необходимо определить, но класс базового элемента больше не существует.
 1. Чтобы обрабатывал изменения, больше не требуется реализация, вместо этого необходимо [определить делегат](change-feed-processor.md#implementing-the-change-feed-processor). Делегат может быть статической функцией или, если необходимо поддерживать состояние между выполнениями, можно создать собственный класс и передать метод экземпляра в качестве делегата.
 
 Например, если исходный код для сборки обработчика веб-канала изменений выглядит следующим образом:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=ChangeFeedProcessorLibrary)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="ChangeFeedProcessorLibrary":::
 
 Перенесенный код будет выглядеть следующим образом:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=ChangeFeedProcessorMigrated)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="ChangeFeedProcessorMigrated":::
 
 Делегат может быть статическим методом:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=Delegate)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="Delegate":::
 
 ## <a name="state-and-lease-container"></a>Контейнер состояния и аренды
 
@@ -57,7 +57,7 @@ ms.locfileid: "71077559"
 * [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 

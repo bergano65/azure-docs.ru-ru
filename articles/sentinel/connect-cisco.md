@@ -3,7 +3,7 @@ title: Подключение данных Cisco к Azure Sentinel | Докум�
 description: Узнайте, как подключить данные Cisco к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: 62029b5c-29d3-4336-8a22-a9db8214eb7e
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: 67a76f1fcd4cfcdd372407ae62eb03d5905cda68
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: 264dab4fabc890ffe03d911f8ee3c08ef51375d8
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610664"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588405"
 ---
 # <a name="connect-cisco-asa-to-azure-sentinel"></a>Подключение Cisco ASA к Azure Sentinel
 
@@ -45,7 +45,7 @@ Cisco ASA не поддерживает CEF, поэтому журналы от�
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить устройства Cisco ASA к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

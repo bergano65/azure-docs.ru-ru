@@ -3,12 +3,12 @@ title: Матрица поддержки для агента MARS
 description: В этой статье приводится сводка Azure Backup поддержки при резервном копировании компьютеров, на которых выполняется агент Службы восстановления Microsoft Azure (MARS).
 ms.date: 08/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8f5ce33b5057b11caa33c0ae80cf72e1b13da5d0
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: ef57688dd7b5ccee4e71ac0a54138ac567320aa2
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425023"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77582642"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Матрица поддержки для резервного копирования с помощью агента Служб восстановления Microsoft Azure (MARS)
 
@@ -66,6 +66,29 @@ Azure Backup использует агент MARS для резервного к
 - 40.126.0.0/18
 
 Для доступа ко всем указанным выше URL-адресам и IP-адреса используется протокол HTTPS через порт 443.
+
+### <a name="azure-expressroute-support"></a>Поддержка Azure ExpressRoute
+
+Вы можете выполнять резервное копирование данных через Azure ExpressRoute с помощью общедоступного пиринга (для старых каналов) и пиринга Майкрософт. Резервное копирование через частный пиринг не поддерживается.
+
+С общедоступным пирингом: Обеспечьте доступ к следующим доменам и адресам:
+
+- `http://www.msftncsi.com/ncsi.txt`
+- `microsoft.com`
+- `.WindowsAzure.com`
+- `.microsoftonline.com`
+- `.windows.net`
+
+С помощью пиринга Майкрософт выберите следующие службы или регионы и соответствующие значения сообщества:
+
+- Azure Active Directory (12076:5060)
+- Microsoft Azure региона (в соответствии с расположением хранилища служб восстановления)
+- Служба хранилища Azure (в соответствии с расположением хранилища служб восстановления)
+
+Дополнительные сведения см. в разделе [требования к маршрутизации ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-routing).
+
+>[!NOTE]
+>Общедоступный пиринг не рекомендуется использовать для новых каналов.
 
 ### <a name="throttling-support"></a>Поддержка регулирования
 

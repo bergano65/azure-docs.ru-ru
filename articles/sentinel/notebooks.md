@@ -2,20 +2,20 @@
 title: Использование записных книжек с Sentinel Azure для подсистемы безопасности
 description: В этой статье описывается, как использовать записные книжки с возможностями Поиск Sentinel маркеров Azure.
 services: sentinel
-author: rkarlin
-ms.author: rkarlin
+author: yelevin
+ms.author: yelevin
 ms.assetid: 1721d0da-c91e-4c96-82de-5c7458df566b
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.custom: mvc
 ms.date: 11/25/2019
-ms.openlocfilehash: 44a37fb8d06040b0d872f15ab25bdd2c7ff685b8
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 84b72a71ed2de910bce44b0c3f3309782f096680
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563706"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77581843"
 ---
 # <a name="use-jupyter-notebooks-to-hunt-for-security-threats"></a>Использование записных книжек Jupyter для поиска угроз безопасности
 
@@ -62,7 +62,7 @@ ms.locfileid: "75563706"
  
 1. В портал Azure перейдите в раздел **Azure sentinel** > **управление угрозами** > **записные книжки**, где можно просмотреть записные книжки, предоставляемые Azure Sentinel. 
 
-2. Выберите отдельные записные книжки, чтобы прочитать их описания, необходимые типы данных и источники данных. Пример.
+2. Выберите отдельные записные книжки, чтобы прочитать их описания, необходимые типы данных и источники данных. Например:
     
     > [!div class="mx-imgBorder"]
     > ![запустить записную книжку](./media/notebooks/sentinel-azure-notebooks-launch.png)
@@ -86,7 +86,7 @@ ms.locfileid: "75563706"
 
    ![Импорт записной книжки](./media/notebooks/sentinel-create-project.png)
 
-4. Откройте только что созданный проект, а затем откройте папку " **записные книжки** ", чтобы просмотреть записные книжки. Пример.
+4. Откройте только что созданный проект, а затем откройте папку " **записные книжки** ", чтобы просмотреть записные книжки. Например:
 
    ![Импорт репозитория](./media/notebooks/sentinel-open-notebook1.png)
 
@@ -123,7 +123,7 @@ ms.locfileid: "75563706"
     
     Теперь вы готовы к запуску или редактированию выбранной записной книжки.
 
-Рекомендации
+Рекомендации:
 
 - Для быстрого ознакомления с запросом данных в Azure Sentinel просмотрите записную книжку в папке "главные **записные книжки** [".](https://github.com/Azure/Azure-Sentinel/blob/master/Notebooks/Get%20Started.ipynb) 
 
@@ -135,7 +135,7 @@ ms.locfileid: "75563706"
 
 Мы ждем отзывов, предложений, запросов на функции, предоставленных записных книжек, отчетов об ошибках, улучшений и дополнений к существующим записным книжкам. Перейдите на портал [Azure Sentinel Community GitHub](https://github.com/Azure/Azure-Sentinel) , чтобы создать вопрос или вилку и отправить публикацию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как приступить к использованию записных книжек Jupyter в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

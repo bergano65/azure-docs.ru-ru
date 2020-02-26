@@ -3,7 +3,7 @@ title: Возможности поискового заметок в Azure Senti
 description: В этой статье описывается, как использовать возможности Поиск Sentinel маркеров Azure.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: 6aa9dd27-6506-49c5-8e97-cc1aebecee87
@@ -15,13 +15,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2019
-ms.author: rkarlin
-ms.openlocfilehash: edba2a18e3b086a132f0bba7622df5df389671c3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.author: yelevin
+ms.openlocfilehash: 54ddf6818b95a4037188ab222501ddfa69b28149
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489185"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587904"
 ---
 # <a name="hunt-for-threats-with-azure-sentinel"></a>Поиск угроз с помощью Azure Sentinel
 
@@ -117,7 +117,7 @@ ms.locfileid: "73489185"
 
 Можно создать или изменить запрос и сохранить его как собственный запрос или предоставить к нему доступ пользователям, наявляющимся в том же клиенте.
 
-   ![Сохранение запроса](./media/tutorial-hunting/save-query.png)
+   ![Сохранить запрос](./media/tutorial-hunting/save-query.png)
 
 Создать новый запрос поиска:
 
@@ -138,7 +138,7 @@ ms.locfileid: "73489185"
 
    ![Пользовательский запрос](./media/tutorial-hunting/custom-query.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы узнали, как выполнить поиск с помощью Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 
 

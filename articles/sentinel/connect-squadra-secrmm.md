@@ -2,7 +2,7 @@
 title: Подключение скуадра Technologies Секрмм Data к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить скуадра Technologies Секрмм Data to Azure Sentinel.
 services: sentinel
-author: rkarlin
+author: yelevin
 editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/20/2020
-ms.author: rkarlin
-ms.openlocfilehash: 1e35cd4a5b27b87fd5a022c5e798f4590b0bba1c
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.author: yelevin
+ms.openlocfilehash: d904e51321870fb4b61a237c23e425034b76dc0b
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77501242"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588116"
 ---
 # <a name="connect-your-squadra-technologies-secrmm-data-to-azure-sentinel"></a>Подключение данных Секрмм скуадра Technologies к Azure Sentinel 
 
@@ -49,7 +49,7 @@ ms.locfileid: "77501242"
 Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить скуадра Technologies Секрмм к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

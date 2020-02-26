@@ -5,15 +5,15 @@ author: harelbr
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 2/17/2020
+ms.date: 2/24/2020
 ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: f402effe40042740e74220d177c54963f6c45916
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 2f2940496682372b0d00d2b419aa941dcedd533c
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77444015"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586535"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
@@ -1251,7 +1251,7 @@ az group deployment create \
 
 Дополнительные сведения о пользовательских метриках в Azure Monitor см. в разделе [пользовательские метрики в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview).
 
-При создании правила генерации оповещений для пользовательской метрики необходимо указать как имя метрики, так и пространство имен метрики.
+При создании правила генерации оповещений для пользовательской метрики необходимо указать как имя метрики, так и пространство имен метрики. Также следует убедиться, что пользовательская метрика уже включена в отчет, так как вы не можете создать правило генерации оповещений для пользовательской метрики, которая еще не существует.
 
 Сохраните пример JSON ниже как кустомстатикметрикалерт. JSON в целях этого пошагового руководства.
 

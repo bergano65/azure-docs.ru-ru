@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: e2201eb678aafe14c86b7faedde67e6b4d92f2b5
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: e4c18d93f07cb2143dcc5bf9c93b9ac7298d2f7b
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980601"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587640"
 ---
 # <a name="manage-azure-cosmos-db-gremlin-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами Azure Cosmos DB Gremlin API с помощью шаблонов Azure Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "75980601"
 > Имена учетных записей должны быть в нижнем регистре, 44 или меньше.
 > Чтобы обновить единицы запросов в секунду, повторно отправьте шаблон с обновленными значениями свойств пропускной способности.
 
-[!code-json[create-cosmos-gremlin](~/quickstart-templates/101-cosmosdb-gremlin/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-cosmosdb-gremlin/azuredeploy.json":::
 
 ## <a name="deploy-with-the-azure-cli"></a>Развертывание с помощью Azure CLI
 
@@ -53,7 +53,7 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Если вы решили использовать локально установленную версию Azure CLI вместо использования Cloud Shell, см. статью [Azure CLI](/cli/azure/) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже приведены некоторые дополнительные ресурсы.
 

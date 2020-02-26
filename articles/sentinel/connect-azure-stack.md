@@ -3,7 +3,7 @@ title: Подключение Azure Stack виртуальных машин к A
 description: В этой статье показано, как подготавливать расширение виртуальной машины Azure Monitor, Update и Configuration Management на Azure Stack виртуальных машинах и приступить к их мониторингу с помощью Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: fb306ec3f8abe2eedb97f83d01836745779db914
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.author: yelevin
+ms.openlocfilehash: a8213bd57936f95870324950204dbd6c1473739a
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240760"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588524"
 ---
 # <a name="connect-azure-stack-virtual-machines-to-azure-sentinel"></a>Подключение Azure Stack виртуальных машин к Azure Sentinel
 
@@ -37,7 +37,7 @@ ms.locfileid: "71240760"
 1. На новой вкладке браузера Войдите на [портал Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal#access-the-portal).
 2. Перейдите на страницу **виртуальные машины** , выберите виртуальную машину, которую необходимо защитить с помощью Azure Sentinel. Сведения о том, как создать виртуальную машину на Azure Stack, см. в статье Создание виртуальной машины [Windows Server с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) или [Создание виртуальной машины сервера Linux с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal).
 3. Выберите **Расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
-4. Откройте вкладку **Добавить**. Откроется колонка меню **Новый ресурс** и отобразится список доступных расширений виртуальных машин. 
+4. Щелкните вкладку **Добавить** . Откроется колонка меню **новый ресурс** , в которой будет показан список доступных расширений виртуальной машины. 
 5. Выберите расширение **управления Azure Monitor, обновление и настройка** и нажмите кнопку **создать**. Откроется окно **Установка расширения** конфигурации.
 
    ![Параметры управления Azure Monitor, обновления и конфигурации](./media/connect-azure-stack/azure-monitor-extension-fix.png)  
@@ -68,6 +68,6 @@ ms.locfileid: "71240760"
 ## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- Потоковая передача данных из [стандартных форматов ошибок](connect-common-event-format.md) в Azure Sentinel.
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как выполнять потоковую передачу из [устройств Common Event Format](connect-common-event-format.md) в Azure Sentinel.
