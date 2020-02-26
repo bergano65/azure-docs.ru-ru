@@ -15,14 +15,14 @@
           href: b2b-quickstart-invite-powershell.md
     - name: Учебники
       items:
-        - name: Массовое приглашение гостевых пользователей B2B
+        - name: Массовое приглашение с помощью PowerShell
+          href: bulk-invite-powershell.md
+        - name: Массовое приглашение с помощью портала (предварительная версия)
           href: tutorial-bulk-invite.md
         - name: Применение многофакторной проверки подлинности
           href: b2b-tutorial-require-mfa.md
     - name: Примеры
       items:
-        - name: Пример самостоятельной регистрации на портале
-          href: self-service-portal.md
         - name: Примеры кода и сценариев Azure PowerShell
           href: code-samples.md
     - name: Основные понятия
@@ -32,7 +32,7 @@
           href: b2b-fundamentals.md
         - name: Лицензирование B2B
           href: licensing-guidance.md
-        - name: "Доступ внешних пользователей к B2B и Office\_365"
+        - name: Доступ внешних пользователей к B2B и Office\_365
           href: o365-external-user.md
         - name: Активация приглашения
           href: redemption-experience.md
@@ -48,6 +48,8 @@
           href: conditional-access.md
         - name: B2B для гибридных организаций
           href: hybrid-organizations.md
+        - name: Самостоятельная регистрация
+          href: self-service-portal.md
         - name: Текущие ограничения
           href: current-limitations.md
     - name: Практические руководства
@@ -67,7 +69,7 @@
               href: one-time-passcode.md
             - name: Прямая федерация
               href: direct-federation.md
-            - name: "Пример прямой федерации с AD\_FS"
+            - name: Пример прямой федерации с AD\_FS
               href: direct-federation-adfs.md
             - name: Предоставление или отзыв приглашений
               href: allow-deny-list.md
@@ -83,7 +85,7 @@
               href: use-dynamic-groups.md
             - name: Общие сведения о B2B-пользователе
               href: user-properties.md
-            - name: "B2B для интегрированных приложений Azure\_AD"
+            - name: B2B для интегрированных приложений Azure\_AD
               href: configure-saas-apps.md
         - name: Управление доступом в гибридной организации
           items:

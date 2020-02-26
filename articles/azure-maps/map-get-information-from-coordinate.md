@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 0b1ab7b2c233eb1e6e231b0ae7935b6c24363948
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 1a6b3b4665e6141fb4c95508a8d8405268de6d19
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988538"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208528"
 ---
 # <a name="get-information-from-a-coordinate"></a>Получение сведений из координат
 
@@ -37,7 +37,7 @@ ms.locfileid: "76988538"
 
 Пятый блок кода настраивает HTML-содержимое всплывающего окна для вывода адреса отклика для нажатой координаты.
 
-Изменения курсора, всплывающего объекта и события щелчка создаются в [прослушивателе событий Load](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) , чтобы обеспечить полную загрузку карт до получения сведений о координатах.
+Изменения курсора, всплывающего объекта и события щелчка создаются в [прослушивателе событий загрузки](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Эта структура кода обеспечивает полную загрузку карт перед получением сведений о координатах.
 
 ## <a name="make-a-reverse-search-request-via-fetch-api"></a>Создание запроса на обратный поиск с помощью API FETCH
 
@@ -52,9 +52,9 @@ ms.locfileid: "76988538"
 
 В третьем блоке кода добавляется прослушиватель событий для щелчков мышью. При щелчке мышью он использует [API выборки](https://fetch.spec.whatwg.org/) , чтобы запросить [api-интерфейс Azure Maps обратный поиск адреса](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) для выбранного адреса координат. Для успешного ответа он собирает адрес для щелчка. Он определяет содержимое и расположение всплывающего окна с помощью функции [сетоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#setoptions-popupoptions-) класса Popup.
 
-Изменения курсора, всплывающего объекта и события щелчка создаются в [прослушивателе событий Load](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) , чтобы обеспечить полную загрузку карт перед получением сведений о координатах.
+Изменения курсора, всплывающего объекта и события щелчка создаются в [прослушивателе событий загрузки](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Эта структура кода обеспечивает полную загрузку Map перед получением сведений о координатах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

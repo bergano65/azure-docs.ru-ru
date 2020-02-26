@@ -14,10 +14,10 @@ ms.date: 01/17/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d2bbfd7f4ddc5fc34c0bec3612783dfef5074d83
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "76270861"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
@@ -86,7 +86,7 @@ ms.locfileid: "76270861"
 
 ## <a name="transfer-billing-ownership-of-enterprise-agreement-ea-subscriptions"></a>Передача права владения на выставление счетов для подписок EA
 
-Администратор предприятия может передать любой учетной записи права владения подпиской в рамках соглашения о регистрации. Дополнительные сведения см. в статье [изменение владельца учетной записи](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-get-started#change-account-owner) на портале EA.
+Администратор предприятия может передать любой учетной записи права владения подпиской в рамках соглашения о регистрации. Дополнительные сведения см. в статье [об изменении владельца учетной записи на портале EA](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-get-started#change-account-owner).
 
 ## <a name="next-steps-after-accepting-billing-ownership"></a>Шаги после подтверждения прав владения на выставление счетов
 
@@ -112,7 +112,7 @@ ms.locfileid: "76270861"
 - [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/)
 - [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/)
-- [Visual Studio Enterprise: Bizspark](https://azure.microsoft.com/offers/ms-azr-0064p/)
+- [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p/)
 - [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/)
 - [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/)
 - [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g/)\*\*
@@ -207,7 +207,7 @@ ms.locfileid: "76270861"
 
 Администратор предприятия может обновить права владения учетной записью для любой учетной записи, даже если исходный владелец учетной записи больше не работает в организации. Он может сделать это, выполнив инструкции по [передаче прав владения учетной записью для всех подписок](https://ea.azure.com/helpdocs/changeAccountOwnerForASubscription) на EA Portal.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 
@@ -222,7 +222,7 @@ ms.locfileid: "76270861"
 Такая ошибка возникает, если вы пытаетесь переместить подписку плана Microsoft Azure, но у вас нет необходимых разрешений. Чтобы переместить подписку плана Microsoft Azure, необходимо быть владельцем или участником в разделе счета, по которому оплачивается эта подписка. Дополнительные сведения см. в разделе об [управлении подписками в разделе счета](understand-mca-roles.md#manage-subscriptions-for-invoice-section).
 
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

@@ -1,26 +1,26 @@
 ---
 title: Добавочное копирование нескольких таблиц с помощью PowerShell
-description: В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL Azure.
+description: В этом руководстве вы создадите конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в Базу данных SQL Azure.
 services: data-factory
 ms.author: yexu
 author: dearandyxu
 manager: anandsub
-ms.reviewer: douglasl
+ms.reviewer: douglasl, maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 01/22/2018
-ms.openlocfilehash: f9d426562f4403776e3926564857b4cdbf0d4390
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/30/2020
+ms.openlocfilehash: 5654e1f8b8a55c705798368df70ce300241c9dff
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75439236"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989095"
 ---
-# <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
+# <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure
 
-В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
+В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в Базу данных SQL Azure.    
 
 В этом руководстве вы выполните следующие шаги:
 
@@ -41,12 +41,14 @@ ms.locfileid: "75439236"
 Ниже приведены важные действия для создания этого решения. 
 
 1. **Выберите столбец для предела.**
+
     Выберите один столбец из каждой таблицы в исходном хранилище данных, который можно использовать для идентификации новых или обновленных записей при каждом запуске. Как правило, данные в этом выбранном столбце (например, последнее_время_изменения или идентификатор) продолжают увеличиваться по мере создания или обновления строк. В качестве предела используется максимальное значение в этом столбце.
 
-1. **Подготовьте хранилище данных для хранения значений предела.**   
+2. **Подготовьте хранилище данных для хранения значений предела.**
+
     В этом руководстве вы сохраните значение предела в базе данных SQL.
 
-1. **Создайте конвейер, следуя инструкциям ниже**. 
+3. **Создайте конвейер, следуя инструкциям ниже**.
     
     а. Создайте действие ForEach, которое выполняет итерацию по списку имен исходной таблицы. Этот список передается в конвейер в качестве параметра. В каждой исходной таблице этот параметр вызывает следующие действия для загрузки разностных данных для этой таблицы.
 
@@ -63,17 +65,18 @@ ms.locfileid: "75439236"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
+
 * **SQL Server.** В этом руководстве используйте локальную базу данных SQL Server в качестве исходного хранилища данных. 
 * **База данных SQL Azure**. Базу данных SQL используйте в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). 
 
 ### <a name="create-source-tables-in-your-sql-server-database"></a>Создание исходных таблиц в базе данных SQL Server
 
-1. Откройте SQL Server Management Studio и подключитесь к локальной базе данных SQL Server.
+1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к локальной базе данных SQL Server.
 
-1. В **обозревателе сервера** щелкните правой кнопкой мыши базу данных и выберите **Создать запрос**.
+2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
-1. Выполните следующую команду SQL в базе данных, чтобы создать таблицы с именами `customer_table` и `project_table`.
+3. Выполните следующую команду SQL в базе данных, чтобы создать таблицы с именами `customer_table` и `project_table`.
 
     ```sql
     create table customer_table
@@ -104,16 +107,16 @@ ms.locfileid: "75439236"
     ('project1','1/1/2015 0:00:00 AM'),
     ('project2','2/2/2016 1:23:00 AM'),
     ('project3','3/4/2017 5:16:00 AM');
-    
     ```
 
 ### <a name="create-destination-tables-in-your-azure-sql-database"></a>Создание целевых таблиц в базе данных SQL Azure
-1. Откройте SQL Server Management Studio и подключитесь к базе данных SQL Server.
 
-1. В **обозревателе сервера** щелкните правой кнопкой мыши базу данных и выберите **Создать запрос**.
+1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к локальной базе данных SQL Server.
 
-1. Выполните следующую команду SQL для базы данных SQL, чтобы создать таблицы с именами `customer_table` и `project_table`.  
-    
+2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
+
+3. Выполните следующую команду SQL для базы данных SQL, чтобы создать таблицы с именами `customer_table` и `project_table`.  
+
     ```sql
     create table customer_table
     (
@@ -127,10 +130,10 @@ ms.locfileid: "75439236"
         Project varchar(255),
         Creationtime datetime
     );
-
     ```
 
-### <a name="create-another-table-in-the-azure-sql-database-to-store-the-high-watermark-value"></a>Создание дополнительной таблицы в базе данных SQL Azure для хранения значения верхнего предела
+### <a name="create-another-table-in-the-azure-sql-database-to-store-the-high-watermark-value"></a>Создание дополнительной таблицы в Базе данных SQL Azure для хранения значения верхнего предела
+
 1. Выполните указанную ниже команду SQL для базы данных SQL, чтобы создать таблицу с именем `watermarktable` для хранения значения предела. 
     
     ```sql
@@ -141,7 +144,7 @@ ms.locfileid: "75439236"
         WatermarkValue datetime,
     );
     ```
-1. Вставьте исходные значения предела для обеих исходных таблиц в таблицу значений предела.
+2. Вставьте исходные значения предела для обеих исходных таблиц в таблицу значений предела.
 
     ```sql
 
@@ -152,7 +155,7 @@ ms.locfileid: "75439236"
     
     ```
 
-### <a name="create-a-stored-procedure-in-the-azure-sql-database"></a>Создание хранимой процедуры в базе данных SQL Azure 
+### <a name="create-a-stored-procedure-in-the-azure-sql-database"></a>Создание хранимой процедуры в Базе данных SQL Azure 
 
 Выполните указанную ниже команду, чтобы создать хранимую процедуру в базе данных SQL. Эта хранимая процедура обновляет значение предела после каждого запуска конвейера. 
 
@@ -170,10 +173,11 @@ END
 
 ```
 
-### <a name="create-data-types-and-additional-stored-procedures-in-the-azure-sql-database"></a>Создание типов данных и дополнительных хранимых процедур в базе данных Azure SQL
+### <a name="create-data-types-and-additional-stored-procedures-in-the-azure-sql-database"></a>Создание типов данных и дополнительных хранимых процедур в Базе данных Azure SQL
+
 Выполните следующий запрос для создания двух хранимых процедур и двух типов данных в базе данных SQL. Они используются для объединения данных из исходных в целевые таблицы. 
 
-Чтобы упростить начало работы, мы непосредственно используем эти хранимые процедуры, передающие разностные данные в табличной переменной, а затем объединяем их в целевое хранилище. Учтите, что для хранения в табличной переменной не ожидается большое число строк разностных данных (более 100).  
+Чтобы упростить начало работы, мы непосредственно используем эти хранимые процедуры, передающие разностные данные в табличной переменной, а затем объединяем их в целевое хранилище. Учтите, что для хранения в табличной переменной не ожидается большое число строк разностных данных (более 100).  
 
 Если нужно объединить большое количество строк разностных данных в целевом хранилище, мы рекомендуем с помощью действия копирования сначала скопировать разностные данные во временную "промежуточную" таблицу в целевом хранилище, а затем создать собственную хранимую процедуру, не используя табличную переменную для их объединения из "промежуточной" таблицы в "итоговую". 
 
@@ -223,34 +227,35 @@ BEGIN
       INSERT (Project, Creationtime)
       VALUES (source.Project, source.Creationtime);
 END
-
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
+
 Чтобы установить новые модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
-1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../azure-resource-manager/management/overview.md) в двойных кавычках, а затем выполните команду. Например, `"adfrg"`. 
-   
+
+1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../azure-resource-manager/management/overview.md) в двойных кавычках, а затем выполните команду. Например, `"adfrg"`.
+
     ```powershell
     $resourceGroupName = "ADFTutorialResourceGroup";
     ```
 
     Если группа ресурсов уже имеется, вы можете не перезаписывать ее. Назначьте переменной `$resourceGroupName` другое значение и еще раз выполните команду.
 
-1. Определите переменную для расположения фабрики данных. 
+2. Определите переменную для расположения фабрики данных. 
 
     ```powershell
     $location = "East US"
     ```
-1. Чтобы создать группу ресурсов Azure, выполните следующую команду: 
+3. Чтобы создать группу ресурсов Azure, выполните следующую команду: 
 
     ```powershell
     New-AzResourceGroup $resourceGroupName $location
     ``` 
     Если группа ресурсов уже имеется, вы можете не перезаписывать ее. Назначьте переменной `$resourceGroupName` другое значение и еще раз выполните команду.
 
-1. Определите переменную для имени фабрики данных. 
+4. Определите переменную для имени фабрики данных. 
 
     > [!IMPORTANT]
     >  Измените имя фабрики данных, чтобы сделать его глобально уникальным. Например, ADFIncMultiCopyTutorialFactorySP1127. 
@@ -258,9 +263,9 @@ END
     ```powershell
     $dataFactoryName = "ADFIncMultiCopyTutorialFactory";
     ```
-1. Чтобы создать фабрику данных, выполните командлет **Set-AzDataFactoryV2**. 
+5. Чтобы создать фабрику данных, выполните командлет **Set-AzDataFactoryV2**. 
     
-    ```powershell       
+    ```powershell
     Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Location $location -Name $dataFactoryName 
     ```
 
@@ -268,22 +273,27 @@ END
 
 * Имя фабрики данных должно быть глобально уникальным. Если появляется следующая ошибка, измените имя и повторите попытку.
 
+    ```powershell
+    Set-AzDataFactoryV2 : HTTP Status Code: Conflict
+    Error Code: DataFactoryNameInUse
+    Error Message: The specified resource name 'ADFIncMultiCopyTutorialFactory' is already in use. Resource names must be globally unique.
     ```
-    The specified Data Factory name 'ADFIncMultiCopyTutorialFactory' is already in use. Data Factory names must be globally unique.
-    ```
+
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль участника, владельца либо администратора подписки Azure.
+
 * Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL и т. д.) и вычисления (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 [!INCLUDE [data-factory-create-install-integration-runtime](../../includes/data-factory-create-install-integration-runtime.md)]
 
-
 ## <a name="create-linked-services"></a>Создание связанных служб
-Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом разделе вы создадите связанные службы локальной базы данных SQL Server и базы данных SQL Azure. 
+
+Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом разделе вы создадите связанные службы локальной базы данных SQL Server и Базы данных SQL Azure. 
 
 ### <a name="create-the-sql-server-linked-service"></a>Создание связанной службы SQL Server
+
 На этом шаге вы свяжете локальную базу данных SQL Server с фабрикой данных.
 
-1. Создайте JSON-файл с именем**SqlServerLinkedService.json** в папке C:\ADFTutorials\IncCopyMultiTableTutorial со следующим содержимым. Выберите правильный раздел в зависимости от типа проверки подлинности, используемого для подключения к SQL Server. Создайте локальные папки, если они еще не существуют. 
+1. Создайте JSON-файл с именем**SqlServerLinkedService.json** в папке C:\ADFTutorials\IncCopyMultiTableTutorial (создайте локальные папки, если они не существуют) со следующим содержимым. Выберите правильный раздел в зависимости от типа проверки подлинности, используемого для подключения к SQL Server.  
 
     > [!IMPORTANT]
     > Выберите правильный раздел в зависимости от типа проверки подлинности, используемого для подключения к SQL Server.
@@ -339,13 +349,13 @@ END
     > - Перед сохранением файла замените &lt;servername>, &lt;databasename>, &lt;username> и &lt;password> значениями имени сервера, базы данных, пользователя и пароля для базы данных SQL Server.
     > - Если в имени учетной записи пользователя или имени сервера необходимо использовать символ косой черты (`\`), добавьте escape-символ (`\`). Например, `mydomain\\myuser`.
 
-1. В PowerShell запустите следующий командлет, чтобы перейти к папке C:\ADFTutorials\IncCopyMultiTableTutorial.
+2. В PowerShell запустите следующий командлет, чтобы перейти к папке C:\ADFTutorials\IncCopyMultiTableTutorial.
 
     ```powershell
     Set-Location 'C:\ADFTutorials\IncCopyMultiTableTutorial'
     ```
 
-1. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу AzureStorageLinkedService. В указанном ниже примере вы передадите значения для параметров *ResourceGroupName* и *DataFactoryName*. 
+3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу AzureStorageLinkedService. В указанном ниже примере вы передадите значения для параметров *ResourceGroupName* и *DataFactoryName*. 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SqlServerLinkedService" -File ".\SqlServerLinkedService.json"
@@ -361,6 +371,7 @@ END
     ```
 
 ### <a name="create-the-sql-database-linked-service"></a>Создание связанной службы базы данных SQL
+
 1. Создайте JSON-файл с именем**AzureSQLDatabaseLinkedService.json** в папке C:\ADFTutorials\IncCopyMultiTableTutorial и добавьте в него следующее содержимое. (Если папка ADF отсутствует, создайте ее.) Вместо значений &lt;servername&gt;, &lt;database name&gt;, &lt;user name&gt; и &lt;password&gt; укажите имя сервера SQL Server, имя базы данных, имя пользователя и пароль, прежде чем сохранить файл. 
 
     ```json
@@ -377,7 +388,7 @@ END
         }
     }
     ```
-1. В PowerShell выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу AzureSQLDatabaseLinkedService. 
+2. В PowerShell выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу AzureSQLDatabaseLinkedService. 
 
     ```powershell
     Set-AzDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureSQLDatabaseLinkedService" -File ".\AzureSQLDatabaseLinkedService.json"
@@ -393,6 +404,7 @@ END
     ```
 
 ## <a name="create-datasets"></a>Создание наборов данных
+
 На этом шаге вы создадите наборы данных для представления источника данных, назначение данных и место для хранения предела.
 
 ### <a name="create-a-source-dataset"></a>Создание исходного набора данных
@@ -421,7 +433,7 @@ END
 
     Действие копирования в конвейере использует SQL-запрос для загрузки данных, вместо того чтобы загружать всю таблицу.
 
-1. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных SourceDataset.
+2. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных SourceDataset.
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SourceDataset" -File ".\SourceDataset.json"
@@ -468,7 +480,7 @@ END
     }
     ```
 
-1. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных SinkDataset.
+2. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных SinkDataset.
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "SinkDataset" -File ".\SinkDataset.json"
@@ -485,6 +497,7 @@ END
     ```
 
 ### <a name="create-a-dataset-for-a-watermark"></a>Создание набора данных для предела
+
 На этом шаге вы создадите набор данных для хранения значения верхнего предела. 
 
 1. Создайте файл JSON с именем **WatermarkDataset.json** в той же папке со следующим содержимым: 
@@ -504,7 +517,7 @@ END
         }
     }    
     ```
-1. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных WatermarkDataset.
+2. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных WatermarkDataset.
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "WatermarkDataset" -File ".\WatermarkDataset.json"
@@ -521,17 +534,19 @@ END
     ```
 
 ## <a name="create-a-pipeline"></a>Создание конвейера
+
 Этот конвейер принимает список имен таблиц в качестве параметра. Действие **ForEach** выполняет итерацию по списку имен таблиц, а затем выполняет следующие операции: 
 
 1. Использует **действие поиска**, чтобы получить старое значение предела (начальное значение или значение, используемое в последней итерации).
 
-1. Использует **действие поиска**, чтобы получить новое значение предела (максимальное значение в столбце предела в исходной таблице).
+2. Использует **действие поиска**, чтобы получить новое значение предела (максимальное значение в столбце предела в исходной таблице).
 
-1. Использует **действие копирования**, чтобы скопировать данные между двумя значениями пределов из исходной в целевую базу данных.
+3. Использует **действие копирования**, чтобы скопировать данные между двумя значениями пределов из исходной в целевую базу данных.
 
-1. Использует **действие хранимой процедуры**, чтобы обновить старое значение предела для использования на первом шаге следующей итерации. 
+4. Использует **действие хранимой процедуры**, чтобы обновить старое значение предела для использования на первом шаге следующей итерации. 
 
 ### <a name="create-the-pipeline"></a>Создание конвейера
+
 1. Создайте JSON-файл с именем **IncrementalCopyPipeline.json** в той же папке со следующим содержимым: 
 
     ```json
@@ -748,7 +763,7 @@ END
         }
     }
     ```
-1. Выполните командлет **Set-AzDataFactoryV2Pipeline**, чтобы создать конвейер IncrementalCopyPipeline.
+2. Выполните командлет **Set-AzDataFactoryV2Pipeline**, чтобы создать конвейер IncrementalCopyPipeline.
     
    ```powershell
    Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "IncrementalCopyPipeline" -File ".\IncrementalCopyPipeline.json"
@@ -787,7 +802,7 @@ END
         ]
     }
     ```
-1. Запустите конвейер IncrementalCopyPipeline, выполнив командлет **Invoke-AzDataFactoryV2Pipeline**. Замените заполнители собственными именами группы ресурсов и фабрики данных.
+2. Запустите конвейер IncrementalCopyPipeline, выполнив командлет **Invoke-AzDataFactoryV2Pipeline**. Замените заполнители собственными именами группы ресурсов и фабрики данных.
 
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupName -dataFactoryName $dataFactoryName -ParameterFile ".\Parameters.json"        
@@ -797,23 +812,24 @@ END
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Выберите **Все службы**, выполните поиск по фразе *Фабрики данных* и выберите **Фабрики данных**. 
+2. Выберите **Все службы**, выполните поиск по фразе *Фабрики данных* и выберите **Фабрики данных**. 
 
-1. Найдите и выберите в списке свою фабрику данных, чтобы открыть страницу **Фабрика данных**. 
+3. Найдите и выберите в списке свою фабрику данных, чтобы открыть страницу **Фабрика данных**. 
 
-1. На странице **Фабрика данных** выберите **Создание и мониторинг**, чтобы запустить Фабрику данных Azure на отдельной вкладке.
+4. На странице **Фабрика данных** выберите **Создание и мониторинг**, чтобы запустить Фабрику данных Azure на отдельной вкладке.
 
-1. На странице **Начало работы** выберите **Мониторинг** слева. 
+5. На странице **Начало работы** выберите **Мониторинг** слева. 
 ![Запуски конвейера](media/doc-common-process/get-started-page-monitor-button.png)    
 
-1. Вы можете увидеть все запуски конвейеров и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, щелкните ссылку в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**.
+6. Вы можете увидеть все запуски конвейеров и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, щелкните ссылку в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**.
 
     ![Запуски конвейера](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-4.png)    
-1. Если щелкнуть ссылку в столбце **Действия**, вы увидите все выполняемые действия в конвейере. 
+7. Если щелкнуть ссылку в столбце **Действия**, вы увидите все выполняемые действия в конвейере. 
 
-1. Выберите **All Pipeline Runs** (Все запуски конвейера), чтобы вернуться к представлению **Pipeline Runs** (Запуски конвейера). 
+8. Выберите **All Pipeline Runs** (Все запуски конвейера), чтобы вернуться к представлению **Pipeline Runs** (Запуски конвейера). 
 
 ## <a name="review-the-results"></a>Просмотр результатов
+
 В SQL Server Management Studio выполните следующие запросы в целевой базе данных SQL. Так вы проверите, что данные скопированы из исходных таблиц в целевые. 
 
 **Запрос** 
@@ -889,13 +905,14 @@ VALUES
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroup $resourceGroupname -dataFactoryName $dataFactoryName -ParameterFile ".\Parameters.json"
     ```
-1. Чтобы отслеживать выполнение конвейера, следуйте инструкциям из раздела [Мониторинг конвейера](#monitor-the-pipeline). Когда конвейер находится в состоянии **Выполняется**, отображается ссылка на другое действие в столбце **Действия**, с помощью которой можно отменить выполнение конвейера. 
+2. Чтобы отслеживать выполнение конвейера, следуйте инструкциям из раздела [Мониторинг конвейера](#monitor-the-pipeline). Когда конвейер находится в состоянии **Выполняется**, отображается ссылка на другое действие в столбце **Действия**, с помощью которой можно отменить выполнение конвейера. 
 
-1. Выберите **Обновить**, чтобы обновить список, пока конвейер не будет выполнен. 
+3. Выберите **Обновить**, чтобы обновить список, пока конвейер не будет выполнен. 
 
-1. (Необязательно.) Щелкните ссылку **View Activity Runs** (Просмотреть выполнения действий) в области **Действия**, чтобы просмотреть все выполнения действий, связанные с этим запуском конвейера. 
+4. (Необязательно.) Щелкните ссылку **View Activity Runs** (Просмотреть выполнения действий) в области **Действия**, чтобы просмотреть все выполнения действий, связанные с этим запуском конвейера. 
 
 ## <a name="review-the-final-results"></a>Просмотр окончательных результатов
+
 В SQL Server Management Studio выполните следующие запросы в целевой базе данных SQL Azure. Так вы проверите, что обновленные и новые данные скопированы из исходных таблиц в целевые. 
 
 **Запрос** 
@@ -954,7 +971,7 @@ project_table   2017-10-01 00:00:00.000
 ```
 
 Обратите внимание, что значения предела для обеих таблиц обновились.
-     
+
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы выполнили следующие шаги: 
 

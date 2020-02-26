@@ -5,16 +5,18 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: 696885fa3e082ae7096954fb55b17da5b77788bc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0c9abb7333434e64fca32ce6d9c518e3f0137133
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75418898"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116356"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
 Гибридную рабочую роль Runbook службы автоматизации Azure можно использовать для выполнения модулей runbook непосредственно на компьютере, размещающем роль, для работы с ресурсами в среде, что позволяет управлять этими локальными ресурсами. Для хранения модулей runbook и управления ими используется служба автоматизации Azure, затем они передаются на один или несколько целевых компьютеров. В этой статье описано, как установить гибридную рабочую роль Runbook на компьютере Windows.
+
+[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="installing-the-windows-hybrid-runbook-worker"></a>Установка гибридной рабочей роли Runbook Windows
 
@@ -31,11 +33,11 @@ ms.locfileid: "75418898"
 
 Ниже приведены минимальные требования для гибридной рабочей роли Runbook Windows.
 
-* Windows Server 2012 или более поздней версии.
-* Windows PowerShell версии 5.1 или более поздней ([скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)).
+* Windows Server 2012 или более поздней версии;
+* Windows PowerShell 5,1 или более поздней версии ([Загрузка WMF 5,1](https://www.microsoft.com/download/details.aspx?id=54616))
 * .NET Framework 4.6.2 или более поздней версии.
-* Два ядра.
-* 4 ГБ ОЗУ.
+* два ядра;
+* 4 ГБ ОЗУ;
 * Порт 443 (исходящий).
 
 Дополнительные требования к сети для гибридной рабочей роли Runbook см. в разделе [Настройка сети](automation-hybrid-runbook-worker.md#network-planning).
@@ -51,17 +53,17 @@ ms.locfileid: "75418898"
 
 Выполните следующие действия для автоматизации установки и настройки гибридной рабочей роли Windows:
 
-1. Скачайте сценарий New-OnPremiseHybridWorker.ps1 из [коллекции PowerShell](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker) непосредственно на компьютер, на котором выполняется гибридная рабочая роль Runbook, или на другой компьютер в вашей среде. Скопируйте этот сценарий в рабочую роль.
+1. Скачайте сценарий New-OnPremiseHybridWorker.ps1 из [коллекции PowerShell](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker) непосредственно на компьютер, на котором выполняется гибридная рабочая роль Runbook, или на другой компьютер в вашей среде. Скопируйте этот сценарий в рабочую роль. Для выполнения сценария New-OnPremiseHybridWorker.ps1 необходимо задать следующие параметры.
 
-   Для выполнения сценария New-OnPremiseHybridWorker.ps1 необходимо задать следующие параметры.
-
-   * *AutomationAccountName* (обязательный) — имя учетной записи службы автоматизации.
    * *AAResourceGroupName* (обязательный) — имя группы ресурсов, связанной с вашей учетной записью службы автоматизации.
    * *OMSResourceGroupName* (необязательный) — имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется *AAResourceGroupName*.
-   * *HybridGroupName* (обязательный) — имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий.
-   * *SubscriptionID* (обязательный) — идентификатор подписки Azure, которая используется для учетной записи службы автоматизации.
+   * *SubscriptionID* (обязательный): идентификатор подписки Azure, в которой находится ваша учетная запись службы автоматизации.
+   * *TenantID* (необязательно): идентификатор организации клиента, связанной с учетной записью службы автоматизации.
    * *WorkspaceName* (необязательный) — имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
-
+   * *AutomationAccountName* (обязательно) — имя учетной записи службы автоматизации.
+   * *HybridGroupName* (обязательный) — имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий.
+   * *Credential* (необязательно). учетные данные, используемые для входа в среду Azure.
+  
    > [!NOTE]
    > При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
    >
@@ -81,7 +83,7 @@ ms.locfileid: "75418898"
 
 4. Также вы получите предложение подтвердить установку пакета NuGet и указать учетные данные Azure для аутентификации.
 
-5. После завершения выполнения сценария на странице **Группы гибридных рабочих ролей** отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице **Группы гибридных рабочих ролей** и щелкнуть плитку **Гибридные рабочие роли**. На странице **Гибридные рабочие роли** отображается список элементов группы.
+5. После завершения выполнения сценария на странице **Группы гибридных рабочих ролей** отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице " **группы гибридных рабочих ролей** " и выбрать плитку **гибридные рабочие роли** . На странице **Гибридные рабочие роли** отображается список элементов группы.
 
 ### <a name="manual-deployment"></a>Развертывание вручную
 
@@ -97,10 +99,10 @@ ms.locfileid: "75418898"
 
 Решение автоматизации расширяет функциональные возможности службы автоматизации Azure, включая поддержку гибридных рабочих ролей Runbook. При добавлении решения в рабочую область Log Analytics автоматически отправляет рабочие компоненты на компьютер агента, который будет установлен на следующем шаге.
 
-Чтобы добавить решение для **автоматизации** в рабочую область, выполните следующую команду PowerShell.
+Чтобы добавить решение для **автоматизации** в рабочую область, выполните следующий командлет PowerShell.
 
 ```powershell-interactive
-Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <LogAnalyticsWorkspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true
+Set-AzOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsResourceGroup> -WorkspaceName <LogAnalyticsWorkspaceName> -IntelligencePackName "AzureAutomation" -Enabled $true -DefaultProfile <IAzureContextContainer>
 ```
 
 #### <a name="3-install-the-log-analytics-agent-for-windows"></a>3. Установка агента Log Analytics для Windows
@@ -109,7 +111,7 @@ Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName <logAnalyticsR
 
 Чтобы установить агент на компьютере, следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor журналах](../log-analytics/log-analytics-windows-agent.md). Выполните эту процедуру на нескольких компьютерах, чтобы добавить в среду несколько компонентов Worker.
 
-Когда агент успешно подключился к рабочей области Log Analytics, через несколько минут можно выполнить следующий запрос, чтобы убедиться, что он отправляет данные пульса в рабочую область:
+Когда агент успешно подключился к рабочей области Log Analytics через несколько минут, можно выполнить следующий запрос, чтобы убедиться, что он отправляет данные пульса в рабочую область:
 
 ```kusto
 Heartbeat 
@@ -117,7 +119,7 @@ Heartbeat
 | where TimeGenerated > ago(30m)
 ```
 
-В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу. Запись пульса пересылается из каждого агента по умолчанию в назначенную ему рабочую область. Если агент скачал решение службы автоматизации правильно, в каталоге C:\Program Files\Microsoft Monitoring Agent\Agent появится папка **AzureAutomationFiles**. Чтобы проверить версию гибридной рабочей роли Runbook, откройте папку C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\ и найдите вложенную папку \\*version*.
+В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу. Запись пульса пересылается из каждого агента по умолчанию в назначенную ему рабочую область. Если агент скачал решение службы автоматизации правильно, в каталоге C:\Program Files\Microsoft Monitoring Agent\Agent появится папка **AzureAutomationFiles**. Чтобы подтвердить версию гибридной рабочей роли Runbook, перейдите к папке C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\ и обратите внимание на вложенную папку \\*Version* .
 
 #### <a name="4-install-the-runbook-environment-and-connect-to-azure-automation"></a>4. Установка среды Runbook и подключение к службе автоматизации Azure
 
@@ -152,7 +154,7 @@ Add-HybridRunbookWorker –GroupName <String> -EndPoint <Url> -Token <String>
 
 Так как главной целью функции гибридной рабочей роли Runbook является управление локальными ресурсами, вам могут потребоваться модули, которые поддерживают эти ресурсы. Сведения об установке модулей Windows PowerShell см. в [этой статье](/powershell/scripting/developer/windows-powershell). 
 
-Устанавливаемые модули должны находиться в расположении, указанном в переменной среды **PSModulePath**, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. в статье об [изменении пути установки PSModulePath](/powershell/scripting/developer/windows-powershell).
+Установленные модули должны находиться в расположении, на которое ссылается переменная среды **PSModulePath** , чтобы Гибридная Рабочая роль могла автоматически импортировать их. Дополнительные сведения см. в статье об [изменении пути установки PSModulePath](/powershell/scripting/developer/windows-powershell).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

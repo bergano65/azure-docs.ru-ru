@@ -1,5 +1,5 @@
 ---
-title: включение файла
+title: включить файл
 description: Включение файла, который содержит код для создания проекта серверной части веб-API ASP.NET.
 services: notification-hubs
 author: spelluru
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 60d5d8efb10cce54743038599238cc6f61922369
-ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
+ms.openlocfilehash: 6911f769b95967aac933dd9762263e7506aef4b5
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70934104"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193024"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
 
@@ -108,7 +108,7 @@ ms.locfileid: "70934104"
                 string user = authorizationUserAndPwd.Split(':')[0];
                 string password = authorizationUserAndPwd.Split(':')[1];
 
-                if (verifyUserAndPwd(user, password))
+                if (VerifyUserAndPwd(user, password))
                 {
                     // Attach the new principal object to the current HttpContext object
                     HttpContext.Current.User =
@@ -123,7 +123,7 @@ ms.locfileid: "70934104"
             return base.SendAsync(request, cancellationToken);
         }
 
-        private bool verifyUserAndPwd(string user, string password)
+        private bool VerifyUserAndPwd(string user, string password)
         {
             // This is not a real authentication scheme.
             return user == password;
@@ -392,7 +392,7 @@ ms.locfileid: "70934104"
 
 3. В окне **Создание службы приложений** выберите свою учетную запись Azure. Выберите **Изменить тип** > **Веб-приложение**. Не изменяйте стандартное **имя веб-приложения**. Выберите **подписку**, **группу ресурсов** и **план службы приложений**.
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
 5. Запишите свойство **URL-адрес сайта** в разделе **Сводка**. Это URL-адрес *конечной точки внутренней части*.
 

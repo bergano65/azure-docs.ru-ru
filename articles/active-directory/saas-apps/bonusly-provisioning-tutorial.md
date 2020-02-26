@@ -1,5 +1,5 @@
 ---
-title: Учебник. Настройка Bonusly для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по настройке Bonusly для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Bonusly.
 services: active-directory
 documentationcenter: ''
@@ -16,21 +16,21 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 692eff26dbbc2289ec589a327dbe58958b414a56
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 7694e441a59680a9b9544d3479100c1f779964ff
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70842725"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77058951"
 ---
-# <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Учебник. Настройка Bonusly для автоматической подготовки пользователей
+# <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Руководство по настройке Bonusly для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Bonusly и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Bonusly.
 
 > [!NOTE]
-> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
+> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -128,7 +128,7 @@ ms.locfileid: "70842725"
 
     ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/EmailNotification.png)
 
-10. Нажмите кнопку **Сохранить**.
+10. Выберите команду **Сохранить**.
 
 11. В разделе **Сопоставления** выберите **Synchronize Azure Active Directory Users to Bonusly** (Синхронизировать пользователей Azure Active Directory с Bonusly).
 
@@ -138,7 +138,7 @@ ms.locfileid: "70842725"
 
     ![Подготовка Bonusly](./media/bonusly-provisioning-tutorial/UserAttributeMapping.png)
 
-13. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+13. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 14. Чтобы включить службу подготовки Azure AD для Bonusly, в разделе **Параметры** измените значение параметра **Состояние подготовки** на **Включено**.
 
@@ -154,16 +154,16 @@ ms.locfileid: "70842725"
 
 После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Bonusly.
 
-Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
+Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/bonusly-provisioning-tutorial/tutorial_general_01.png

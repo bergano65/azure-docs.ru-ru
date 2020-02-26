@@ -320,26 +320,45 @@
         - name: FileStore
           href: /azure/databricks/data/filestore
           maintainContext: true
-    - name: Средства бизнес-аналитики
+    - name: Интеграции
       items:
-        - name: Подключение средств бизнес-аналитики
-          href: /azure/databricks/bi/jdbc-odbc-bi
+        - name: Обзор интеграции
+          href: /azure/databricks/integrations/index
           maintainContext: true
-        - name: Tableau
-          href: /azure/databricks/bi/tableau
-          maintainContext: true
-        - name: Power BI
-          href: /azure/databricks/bi/power-bi
-          maintainContext: true
-        - name: Alteryx
-          href: /azure/databricks/bi/alteryx
-          maintainContext: true
-        - name: Looker
-          href: /azure/databricks/bi/looker
-          maintainContext: true
-        - name: SQL Workbench/J
-          href: /azure/databricks/bi/workbenchj
-          maintainContext: true
+        - name: Средства бизнес-аналитики
+          items:
+            - name: Подключение средств бизнес-аналитики
+              href: /azure/databricks/bi/jdbc-odbc-bi
+              maintainContext: true
+            - name: Tableau
+              href: /azure/databricks/bi/tableau
+              maintainContext: true
+            - name: Power BI
+              href: /azure/databricks/bi/power-bi
+              maintainContext: true
+            - name: Alteryx
+              href: /azure/databricks/bi/alteryx
+              maintainContext: true
+            - name: Looker
+              href: /azure/databricks/bi/looker
+              maintainContext: true
+            - name: SQL Workbench/J
+              href: /azure/databricks/bi/workbenchj
+              maintainContext: true
+        - name: Интеграция с партнерскими данными
+          items:
+            - name: Обзор интеграции с партнерскими решениями
+              href: /azure/databricks/integrations/ingestion/index
+            - name: Интеграция с Qlik
+              href: /azure/databricks/integrations/ingestion/qlik
+            - name: Интеграция с Fivetran
+              href: /azure/databricks/integrations/ingestion/fivetran
+            - name: Интеграция с InfoWorks
+              href: /azure/databricks/integrations/ingestion/infoworks
+            - name: Интеграция со StreamSets
+              href: /azure/databricks/integrations/ingestion/streamsets
+            - name: Интеграция с Syncsort
+              href: /azure/databricks/integrations/ingestion/syncsort
     - name: Delta Lake
       items:
         - name: Основные сведения о Delta Lake
@@ -1087,9 +1106,20 @@
             - name: Включение сквозного режима учетных данных Azure Data Lake Storage
               href: /azure/databricks/administration-guide/access-control/credential-passthrough
               maintainContext: true
-        - name: Управление хранилищем рабочей области
-          href: /azure/databricks/administration-guide/workspace-storage/storage
-          maintainContext: true
+        - name: Управление объектами и реакцией на события для рабочей области
+          items:
+            - name: 'Управление рабочими областями: общие сведения'
+              href: /azure/databricks/administration-guide/workspace/index
+              maintainContext: true
+            - name: Управление хранилищем рабочей области
+              href: /azure/databricks/administration-guide/workspace/storage
+              maintainContext: true
+            - name: Управление заголовками безопасности рабочей области
+              href: /azure/databricks/administration-guide/workspace/security
+              maintainContext: true
+            - name: Управление доступом к функциям записных книжек
+              href: /azure/databricks/administration-guide/workspace/notebooks
+              maintainContext: true
         - name: Включение конфигураций кластера
           items:
             - name: Общие сведения о конфигурации кластера
@@ -1609,6 +1639,9 @@
             - name: Заметки о выпуске платформы
               href: /azure/databricks/release-notes/product/index
               maintainContext: true
+            - name: "Февраль 2020\_г."
+              href: /azure/databricks/release-notes/product/2020/february
+              maintainContext: true
             - name: "Январь 2020\_г."
               href: /azure/databricks/release-notes/product/2020/january
               maintainContext: true
@@ -1757,9 +1790,6 @@
                 - name: Databricks Runtime 5.2 ML
                   href: /azure/databricks/release-notes/runtime/5.2ml
                   maintainContext: true
-                - name: Databricks Runtime 3.5
-                  href: /azure/databricks/release-notes/runtime/3.5
-                  maintainContext: true
             - name: Не поддерживается
               items:
                 - name: Не поддерживаемые выпуски среды выполнения
@@ -1792,6 +1822,9 @@
                 - name: Databricks Runtime 4.0
                   href: /azure/databricks/release-notes/runtime/4.0
                   maintainContext: true
+                - name: "Databricks Runtime\_3.5\_LTS"
+                  href: /azure/databricks/release-notes/runtime/3.5
+                  maintainContext: true
                 - name: Databricks Runtime 3.4
                   href: /azure/databricks/release-notes/runtime/3.4
                   maintainContext: true
@@ -1804,6 +1837,9 @@
         - name: Типы выпусков
           href: /azure/databricks/release-notes/release-types
           maintainContext: true
+    - name: Страница состояния Azure Databricks
+      href: /azure/databricks/status
+      maintainContext: true
     - name: Руководство для разработчиков R
       href: /azure/machine-learning/r-developers-guide
     - name: Стратегия развития Azure

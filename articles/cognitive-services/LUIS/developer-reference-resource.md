@@ -1,25 +1,18 @@
 ---
 title: Ресурсы для разработчиков — Language Understanding
-titleSuffix: Azure Cognitive Services
-description: У разработчиков есть как интерфейсы API, так и пакеты SDK для Language Understanding.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: language-understanding
-ms.topic: conceptual
-ms.date: 01/22/2020
-ms.author: diberry
-ms.openlocfilehash: 2f351ac570080c83e78697bbca94340bb96cbcf7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+description: Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
+ms.topic: reference
+ms.date: 02/11/2020
+ms.openlocfilehash: fda4301a0851e6a36cbb6493dcf48293b2c5db37
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716133"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152692"
 ---
-# <a name="developer-resources-for-language-understanding"></a>Ресурсы для разработчиков Language Understanding
+# <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Language Understanding (LUIS)
 
-Разработчики могут использовать интерфейсы API и пакеты SDK для Language Understanding.
+Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
 
 ## <a name="azure-resource-management"></a>Управление ресурсами Azure
 
@@ -31,11 +24,21 @@ ms.locfileid: "76716133"
 
 * [Azure RM PowerShell](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services)
 
+
 ## <a name="language-understanding-authoring-and-prediction-requests"></a>Language Understanding создания и прогнозирования запросов
 
-Доступ к Language Understandingной службе осуществляется из ресурса Azure, который необходимо создать. Существует два ресурса: ресурсы конечной точки создания и прогнозирования. Оба этих ресурса позволяют управлять ресурсами LUIS.
+Доступ к Language Understandingной службе осуществляется из ресурса Azure, который необходимо создать. Существует два ресурса:
+
+* Используйте ресурс **разработки** для обучения, чтобы создавать, изменять, обучать и публиковать их.
+* Используйте **Прогноз** для среды выполнения для отправки текста пользователя и получения прогноза.
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+Используйте [Cognitive Services пример кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code) для изучения и использования наиболее распространенных задач.
+
+### <a name="rest-specifications"></a>Спецификации RESTFUL
+
+[Спецификации Luis RESTful](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS), а также все [спецификации Azure для других](https://github.com/Azure/azure-rest-api-specs)пользователей доступны в GitHub.
 
 ### <a name="rest-apis"></a>Интерфейсы REST API
 
@@ -45,6 +48,29 @@ ms.locfileid: "76716133"
 |--|--|
 |Разработка|[Шаблон](https://go.microsoft.com/fwlink/?linkid=2092087)<br>[Предварительный просмотр v3](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview)|
 |Прогнозирование|[Шаблон](https://go.microsoft.com/fwlink/?linkid=2092356)<br>[Том](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/)|
+
+### <a name="rest-endpoints"></a>Конечные точки RESTFUL
+
+В настоящее время в LUIS есть 2 типа конечных точек:
+
+* Разработка в конечной точке обучения
+* Прогнозирование запросов в конечной точке среды выполнения.
+
+|Назначение|URL-адрес|
+|--|--|
+|Создание конечной точки обучения|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appID}/`|
+|Среда выполнения v2 — все прогнозы на конечной точке среды выполнения|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q={q}[&timezoneOffset][&verbose][&spellCheck][&staging][&bing-spell-check-subscription-key][&log]`|
+|Версия среды выполнения v3 — прогнозирование версий на конечной точке времени выполнения|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/{appId}/versions/{versionId}/predict?query={query}[&verbose][&log][&show-all-intents]`|
+|V3 — прогнозирование слотов на конечной точке времени выполнения|`https://{your-resource-name}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/{appId}/slots/{slotName}/predict?query={query}[&verbose][&log][&show-all-intents]`|
+
+В следующей таблице описаны параметры, обозначенные фигурными скобками `{}` в предыдущей таблице.
+
+|Параметр|Назначение|
+|--|--|
+|`your-resource-name`|Имя ресурса Azure|
+|`q` либо `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
+|`version`|имя версии с 10 символами|
+|`slot`| `production` либо `staging`|
 
 ### <a name="language-based-sdks"></a>Пакеты SDK на основе языка
 
@@ -77,8 +103,8 @@ Language Understanding предоставляет возможность упр�
 * [Luis CLI](https://github.com/microsoft/botbuilder-tools/blob/master/packages/LUIS) . создание приложений Luis.AI и управление ими
 * [Диспетчеризация](https://github.com/microsoft/botbuilder-tools/blob/master/packages/Dispatch)— Управление родительскими и дочерними приложениями
 * [Луисжен](https://github.com/microsoft/botbuilder-tools/blob/master/packages/LUISGen) — автоматическое создание резервных C#классов/типескрипт для целей и сущностей Luis.
-* [Эмулятор Bot](https://github.com/Microsoft/BotFramework-Emulator/releases) — классическое приложение, позволяющее Bot-разработчикам тестировать и отлаживать программы-роботы, созданные с помощью пакета SDK для Bot Framework.
-
+* [Эмулятор Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases) — классическое приложение, позволяющее Bot-разработчикам тестировать и отлаживать программы-роботы, созданные с помощью пакета SDK для Bot Framework.
+* [Композитор Framework Composer](https://github.com/microsoft/BotFramework-Composer/blob/stable/README.md) — интегрированное средство разработки для разработчиков и групп могут, предназначенное для создания программы-роботы и общения с помощью платформы Microsoft Bot Framework
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

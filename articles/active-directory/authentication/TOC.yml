@@ -4,16 +4,13 @@
   items:
     - name: Что такое проверка подлинности?
       href: overview-authentication.md
-- name: Краткое руководство
-  items:
-    - name: Настройка сброса паролей
-      href: quickstart-sspr.md
 - name: Учебники
+  expanded: true
   items:
-    - name: 1. Включение MFA для приложений
-      href: tutorial-mfa-applications.md
-    - name: 2. Включение пилотного проекта SSPR
-      href: tutorial-sspr-pilot.md
+    - name: Включение самостоятельного сброса пароля
+      href: tutorial-enable-sspr.md
+    - name: Включение Многофакторной идентификации Azure
+      href: tutorial-enable-azure-mfa.md
     - name: Интеграция SSPR с локальной средой
       href: tutorial-enable-writeback.md
     - name: Интеграция службы защиты идентификации Azure AD
@@ -67,7 +64,7 @@
   items:
     - name: Самостоятельный сброс пароля
       items:
-        - name: Развертывание самостоятельного сброса пароля
+        - name: Руководство по развертыванию
           href: howto-sspr-deployment.md
         - name: Предварительная регистрация данных проверки подлинности
           href: howto-sspr-authenticationdata.md
@@ -77,7 +74,7 @@
           href: howto-sspr-windows.md
     - name: MFA в облаке
       items:
-        - name: Развертывание MFA в облаке
+        - name: Руководство по развертыванию
           href: howto-mfa-getstarted.md
         - name: MFA для отдельных пользователей
           href: howto-mfa-userstates.md

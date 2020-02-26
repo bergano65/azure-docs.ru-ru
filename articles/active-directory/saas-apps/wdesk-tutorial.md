@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wdesk.
 services: active-directory
 documentationCenter: na
@@ -11,79 +11,66 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/28/2019
+ms.date: 01/31/2020
 ms.author: jeedes
-ms.openlocfilehash: 0f614838ae44b5c4263bc9eac81e43fd13f87baa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a4cfcf20fc7a6a3532f65c3e797da6c876844d2c
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087290"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76985571"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-wdesk"></a>Руководство по Интеграция Azure Active Directory с Wdesk
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>Руководство. Интеграция единого входа Azure Active Directory с Wdesk
 
-В этом руководстве описано, как интегрировать Wdesk с Azure Active Directory (Azure AD).
-Интеграция приложения Wdesk с Azure AD обеспечивает следующие преимущества.
+В этом руководстве вы узнаете, как интегрировать Wdesk с Azure Active Directory (Azure AD). Интеграция Wdesk с Azure AD обеспечивает следующие возможности:
 
-* С помощью Azure Active Directory вы можете контролировать, у кого есть доступ к приложению Wdesk.
-* Вы можете включить автоматический вход для пользователей во Wdesk (единый вход) с помощью учетных записей Azure Active Directory.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Контроль доступа к Wdesk с помощью Azure AD.
+* Автоматический вход пользователей в Wdesk с помощью учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Wdesk, вам потребуется:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
-* подписка Wdesk с поддержкой единого входа.
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Wdesk с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Приложение Wdesk поддерживает единый вход, инициированный **поставщиком услуг** и **поставщиком удостоверений**.
+* После настройки Wdesk можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-wdesk-from-the-gallery"></a>Добавление Wdesk из коллекции
 
 Чтобы настроить интеграцию приложения Wdesk с Azure AD, вам нужно добавить это приложение из коллекции в свой список управляемых приложений SaaS.
 
-**Добавление приложения Wdesk из коллекции**
-
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
-
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
-
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
-
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
-
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
-
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
-
-4. В поле поиска введите **Wdesk**, выберите **Wdesk** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
-
-     ![Wdesk в списке результатов](common/search-new-app.png)
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Wdesk**.
+1. Выберите **Wdesk** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
 В этом разделе описана настройка и проверка единого входа Azure Active Directory в приложение Wdesk с использованием тестового пользователя **Britta Simon**.
 Для обеспечения работы единого входа необходимо установить связь между пользователем Azure Active Directory и соответствующим пользователем во Wdesk.
 
-Чтобы настроить и проверить единый вход Azure AD в Wdesk, выполните следующие действия:
+Чтобы настроить и проверить единый вход Azure AD в Wdesk, выполните действия в следующих стандартных блоках:
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа во Wdesk](#configure-wdesk-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Wdesk](#create-wdesk-test-user)** требуется для того, чтобы в приложении Wdesk существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure Active Directory.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Wdesk](#configure-wdesk-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Wdesk](#create-wdesk-test-user)** требуется для того, чтобы в приложении Wdesk существовал пользователь B.Simon, связанный с одноименным пользователем в Azure Active Directory.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
+### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
@@ -99,15 +86,15 @@ ms.locfileid: "67087290"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Wdesk](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.wdesk.com/auth/saml/sp/metadata/<instancename>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.wdesk.com/auth/saml/sp/metadata/<instancename>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.wdesk.com/auth/saml/sp/consumer/<instancename>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.wdesk.com/auth/saml/sp/consumer/<instancename>`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -126,47 +113,11 @@ ms.locfileid: "67087290"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
     c. URL-адрес выхода.
-
-### <a name="configure-wdesk-single-sign-on"></a>Настройка единого входа во Wdesk
-
-1. В другом окне браузера войдите в приложение Wdesk с правами администратора безопасности.
-
-2. В нижнем левом углу щелкните **Admin** (Администрирование) и выберите **Account Admin** (Администрирование учетных записей):
- 
-     ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
-
-3. В разделе администрирования Wdesk откройте **Security** (Безопасность), затем **SAML** > **SAML Settings** (Параметры SAML):
-
-    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig2.png)
-
-4. В разделе **General Settings** (Общие параметры) установите флажок **Enable SAML Single Sign On** (Включить единый вход SAML):
-
-    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig3.png)
-
-5. В разделе **Service Provider Details** (Сведения о поставщике SAML) выполните следующие действия:
-
-    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig4.png)
-
-      a. Скопируйте значение **Login URL** (URL-адрес входа) и вставьте его в текстовое поле **URL-адрес входа** на портале Azure.
-   
-      b. Скопируйте значение **Metadata Url** (URL-адрес метаданных) и вставьте его в текстовое поле **Идентификатор** на портале Azure.
-       
-      c. Скопируйте значение **Consumer URL** (URL-адрес потребителя) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
-   
-      d. На портале Azure нажмите кнопку **Сохранить**, чтобы сохранить изменения.      
-
-6. Щелкните **Configure IdP Settings** (Настройка параметров поставщика удостоверений), чтобы открыть диалоговое окно **изменения параметров поставщика удостоверений**. Щелкните **Choose File** (Выбрать файл) и найдите файл **Metadata.xml**, который вы сохранили с портала Azure, а затем отправьте его.
-    
-    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig5.png)
-  
-7. Нажмите кнопку **Сохранить изменения**.
-
-    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfigsavebutton.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -218,6 +169,42 @@ ms.locfileid: "67087290"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
+## <a name="configure-wdesk-sso"></a>Настройка единого входа для Wdesk
+
+1. В другом окне браузера войдите в приложение Wdesk с правами администратора безопасности.
+
+2. В нижнем левом углу щелкните **Admin** (Администрирование) и выберите **Account Admin** (Администрирование учетных записей):
+ 
+     ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
+
+3. В разделе администрирования Wdesk откройте **Security** (Безопасность), затем **SAML** > **SAML Settings** (Параметры SAML):
+
+    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig2.png)
+
+4. В разделе **General Settings** (Общие параметры) установите флажок **Enable SAML Single Sign On** (Включить единый вход SAML):
+
+    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig3.png)
+
+5. В разделе **Service Provider Details** (Сведения о поставщике SAML) выполните следующие действия:
+
+    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig4.png)
+
+      а. Скопируйте значение **Login URL** (URL-адрес входа) и вставьте его в текстовое поле **URL-адрес входа** на портале Azure.
+   
+      b. Скопируйте значение **Metadata Url** (URL-адрес метаданных) и вставьте его в текстовое поле **Идентификатор** на портале Azure.
+       
+      c. Скопируйте значение **Consumer URL** (URL-адрес потребителя) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
+   
+      d. На портале Azure нажмите кнопку **Сохранить**, чтобы сохранить изменения.      
+
+6. Щелкните **Configure IdP Settings** (Настройка параметров поставщика удостоверений), чтобы открыть диалоговое окно **изменения параметров поставщика удостоверений**. Щелкните **Choose File** (Выбрать файл) и найдите файл **Metadata.xml**, который вы сохранили с портала Azure, а затем отправьте его.
+    
+    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig5.png)
+  
+7. Нажмите кнопку **Сохранить изменения**.
+
+    ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfigsavebutton.png)
+
 ### <a name="create-wdesk-test-user"></a>Создание тестового пользователя Wdesk
 
 Чтобы пользователи Azure Active Directory могли выполнять вход во Wdesk, их следует подготовить во Wdesk. В Wdesk подготовка выполняется вручную.
@@ -244,7 +231,7 @@ ms.locfileid: "67087290"
   
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser4.png)
  
-    a. В текстовом поле **Адрес электронной почты** введите адрес электронной почты пользователя, например brittasimon@contoso.com.
+    а. В текстовом поле **Адрес электронной почты** введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -254,7 +241,7 @@ ms.locfileid: "67087290"
 
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser5.png)
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+### <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -266,5 +253,6 @@ ms.locfileid: "67087290"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

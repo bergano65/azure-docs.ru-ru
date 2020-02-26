@@ -3,22 +3,22 @@ title: Потоки проверки подлинности MSAL | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения о потоках проверки подлинности и предоставлении разрешений, используемых библиотекой проверки подлинности Майкрософт (MSAL).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/30/2020
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: bc906e1026dcc051ef152ff9fba94525ac700761
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: ace636152f6a0c9bf3896860eb17cc291bef2887
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76962103"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77085126"
 ---
 # <a name="authentication-flows"></a>Потоки проверки подлинности
 

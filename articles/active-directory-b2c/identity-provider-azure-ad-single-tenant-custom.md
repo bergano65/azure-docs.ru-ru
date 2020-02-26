@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 02/11/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1802c3a92ed18dec5cba974c54c92f01324245eb
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 64934dd5bc591415c0bad6ac3dc6a4a2d98dd005
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847619"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77136311"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Azure Active Directory с использованием пользовательских политик
 
@@ -24,7 +24,7 @@ ms.locfileid: "76847619"
 
 В этой статье показано, как включить вход для пользователей из Организации Azure Active Directory (Azure AD) с помощью [настраиваемых политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -50,6 +50,19 @@ ms.locfileid: "76847619"
 1. Выберите **сертификаты & секреты**, а затем выберите **новый секрет клиента**.
 1. Введите **Описание** секрета, выберите срок действия, а затем нажмите кнопку **Добавить**. Запишите **значение** секрета для использования на следующем шаге.
 
+## <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
+
+Если вы хотите получить `family_name` и `given_name` утверждения из Azure AD, можно настроить дополнительные утверждения для приложения в пользовательском интерфейсе портал Azure или манифесте приложения. Дополнительные сведения см. в статье [предоставление дополнительных утверждений для приложения Azure AD](../active-directory/develop/active-directory-optional-claims.md).
+
+1. Войдите на [портал Azure](https://portal.azure.com). Найдите и выберите **Azure Active Directory**.
+1. В разделе **Управление** выберите **Регистрация приложений**.
+1. В списке выберите приложение, для которого нужно настроить необязательные утверждения.
+1. В разделе **Управление** выберите **Конфигурация токена (Предварительная версия)** .
+1. Выберите **добавить необязательное утверждение**.
+1. Выберите тип токена, который требуется настроить.
+1. Выберите необязательные утверждения для добавления.
+1. Нажмите кнопку **Добавить**.
+
 ## <a name="create-a-policy-key"></a>Создание ключа политики
 
 Вам необходимо сохранить ключ приложения, который вы создали в клиенте Azure AD B2C.
@@ -62,7 +75,7 @@ ms.locfileid: "76847619"
 1. Введите **имя** ключа политики. Например, `ContosoAppSecret`.  Префикс `B2C_1A_` автоматически добавляется к имени ключа при его создании, поэтому ссылка в XML-файле в следующем разделе будет *B2C_1A_ContosoAppSecret*.
 1. В качестве **секрета**введите секрет клиента, записанный ранее.
 1. Для параметра **Использование ключа** выберите `Signature`.
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
@@ -73,23 +86,20 @@ ms.locfileid: "76847619"
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 2. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
 3. Добавьте новый элемент **ClaimsProvider** следующим образом.
-
-    ```XML
+    ```xml
     <ClaimsProvider>
       <Domain>Contoso</Domain>
       <DisplayName>Login using Contoso</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="ContosoProfile">
+        <TechnicalProfile Id="OIDC-Contoso">
           <DisplayName>Contoso Employee</DisplayName>
           <Description>Login with your Contoso account</Description>
           <Protocol Name="OpenIdConnect"/>
           <Metadata>
-            <Item Key="METADATA">https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration</Item>
-            <Item Key="ProviderName">https://sts.windows.net/00000000-0000-0000-0000-000000000000/</Item>
-            <!-- Update the Client ID below to the Application ID -->
+            <Item Key="METADATA">https://login.microsoftonline.com/tenant-name.onmicrosoft.com/v2.0/.well-known/openid-configuration</Item>
             <Item Key="client_id">00000000-0000-0000-0000-000000000000</Item>
             <Item Key="response_types">code</Item>
-            <Item Key="scope">openid</Item>
+            <Item Key="scope">openid profile</Item>
             <Item Key="response_mode">form_post</Item>
             <Item Key="HttpBinding">POST</Item>
             <Item Key="UsePolicyInRedirectUri">false</Item>
@@ -125,12 +135,11 @@ ms.locfileid: "76847619"
 
 Чтобы получить токен из конечной точки Azure AD, вам необходимо определить протоколы, используемые Azure AD B2C для взаимодействия с Azure AD. Этот выполняется в элементе **TechnicalProfile** в **ClaimsProvider**.
 
-1. Обновите идентификатор элемента **TechnicalProfile**. Этот идентификатор используется для ссылки на этот технический профиль из других частей политики.
+1. Обновите идентификатор элемента **TechnicalProfile**. Этот идентификатор используется для ссылки на этот технический профиль из других частей политики, например `OIDC-Contoso`.
 1. Обновите значение **DisplayName**. Это значение будет отображаться на кнопке входа на экране входа в систему.
 1. Обновите значение **Description**.
 1. Azure AD использует протокол OpenID Connect, поэтому для параметра **Protocol** должно быть задано значение `OpenIdConnect`.
-1. Задайте для параметра **METADATA** значение `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, где `your-AD-tenant-name` — это имя клиента Azure AD. Например `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`.
-1. Откройте браузер и перейдите к только что обновленному URL-адресу **метаданных** , найдите объект **Issuer** , а затем скопируйте и вставьте значение в значение для **providerName** в XML-файле.
+1. Задайте для параметра **METADATA** значение `https://login.microsoftonline.com/tenant-name.onmicrosoft.com/v2.0/.well-known/openid-configuration`, где `tenant-name` — это имя клиента Azure AD. Например `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`.
 1. Задайте для параметра **client_id** значение идентификатора приложения из регистрации приложения.
 1. В разделе **криптографиккэйс**измените значение **идентификатором storagereferenceid** на имя созданного ранее ключа политики. Например, `B2C_1A_ContosoAppSecret`.
 
@@ -171,10 +180,10 @@ ms.locfileid: "76847619"
 1. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
 
     ```XML
-    <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="ContosoProfile" />
+    <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="OIDC-Contoso" />
     ```
 
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `ContosoProfile`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `OIDC-Contoso`.
 
 1. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 

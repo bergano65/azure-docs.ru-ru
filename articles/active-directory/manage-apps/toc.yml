@@ -5,10 +5,10 @@
   items:
     - name: Что собой представляет управление облачными приложениями и единый вход?
       href: what-is-application-management.md
-    - name: Что собой представляет подготовка приложения?
-      href: user-provisioning.md
     - name: Что собой представляет прокси приложения для локальных приложений?
       href: what-is-application-proxy.md
+    - name: Что собой представляет подготовка приложения?
+      href: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
 - name: Краткие руководства
   items:
     - name: Добавление облачного приложения из коллекции
@@ -72,16 +72,8 @@
               href: howto-saml-token-encryption.md
             - name: Порталы пользователей
               href: end-user-experiences.md
-    - name: Подготовка приложения (SCIM)
-      items:
-        - name: Описание процесса подготовки
-          href: how-provisioning-works.md
-        - name: Планирование развертывания автоматической подготовки пользователей
-          href: plan-auto-user-provisioning.md
-    - name: Подготовка к управлению кадрами
-      items:
-        - name: Планирование развертывания подготовки пользователей к управлению кадрами
-          href: plan-cloud-hr-provision.md
+    - name: Видимость облачных приложений и управление ими
+      href: cloud-app-security.md
     - name: Прокси приложения для локальных приложений
       items:
         - name: Прокси приложения
@@ -237,60 +229,6 @@
                   href: access-panel-extension-problem-installing.md
                 - name: Ошибка при использовании самостоятельного доступа к приложению
                   href: access-panel-troubleshoot-self-service-access.md
-    - name: Подготовка приложения (SCIM)
-      items:
-        - name: Настройка подготовки для приложения из коллекции
-          href: configure-automatic-user-provisioning-portal.md
-        - name: Создание конечной точки SCIM и настройка подготовки
-          href: use-scim-to-provision-users-and-groups.md
-        - name: Изменение сопоставлений атрибутов
-          items:
-            - name: Настройка сопоставлений атрибутов
-              href: Customize-application-attributes.md
-            - name: Написание выражений для сопоставления атрибутов
-              href: functions-for-customizing-application-data.md
-        - name: Включение и пользователей и групп в область и их исключение оттуда
-          items:
-            - name: Фильтрация подготавливаемых пользователей или групп по областям
-              href: define-conditional-rules-for-provisioning-user-accounts.md
-            - name: 'Пропуск пользователей, которые не входят в текущую область, при удалении'
-              href: skip-out-of-scope-deletions.md
-        - name: Мониторинг и отчет о подготовке
-          items:
-            - name: Мониторинг состояния подготовки и производительности
-              href: application-provisioning-when-will-provisioning-finish-specific-user.md
-            - name: Отчет о подготовке приложений
-              href: check-status-user-account-provisioning.md
-            - name: Импорт и экспорт конфигурации
-              href: export-import-provisioning-configuration.md
-        - name: Автоматизация настройки с помощью MS Graph
-          href: application-provisioning-configure-api.md
-        - name: Устранение неполадок с подготовкой пользователей
-          items:
-            - name: Устранение неполадок с подготовкой приложений
-              href: application-provisioning-config-problem.md
-            - name: Состояние карантина
-              href: application-provisioning-quarantine-status.md
-            - name: Подготовка журналов
-              href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/manage-apps/context/manage-apps-context
-            - name: Синхронизация атрибутов для сопоставления (приложение из коллекции)
-              href: user-provisioning-sync-attributes-for-mapping.md
-            - name: Подготовка в течение нескольких часов для приложения из коллекции
-              href: application-provisioning-when-will-provisioning-finish.md
-            - name: Ошибка с авторизацией (не удалось сохранить учетные данные администратора)
-              href: application-provisioning-config-problem-storage-limit.md
-            - name: Не удается подготовить пользователей
-              href: application-provisioning-config-problem-no-users-provisioned.md
-            - name: Подготовлены не те пользователи
-              href: application-provisioning-config-problem-wrong-users-provisioned.md
-            - name: Задание подготовки на карантине
-              href: application-provisioning-quarantine-status.md
-            - name: Отсутствует исходный атрибут
-              href: user-provisioning-sync-attributes-for-mapping.md
-            - name: Задание подготовки выполняется медленно
-              href: application-provisioning-when-will-provisioning-finish.md
-            - name: Подготовка журналов
-              href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/manage-apps/context/manage-apps-context
     - name: Прокси приложения для локальных приложений
       items:
         - name: Настройка соединителей
@@ -331,6 +269,8 @@
                   href: application-proxy-configure-single-sign-on-on-premises-apps.md
             - name: Пошаговые руководства по публикации
               items:
+                - name: Интеграция с прокси приложения на сервере NDES
+                  href: active-directory-app-proxy-protect-ndes.md
                 - name: Интеграция с доменными службами Azure AD
                   href: /azure/active-directory-domain-services/deploy-azure-app-proxy?context=azure/active-directory/manage-apps/context/manage-apps-context
                 - name: Интеграция с Power BI
@@ -389,28 +329,10 @@
           href: secure-hybrid-access.md
 - name: Справочник
   items:
-    - name: Подготовка приложения (SCIM)
-      items:
-        - name: Написание выражений для сопоставления атрибутов
-          href: functions-for-customizing-application-data.md
-        - name: Выбор метода подготовки
-          href: isv-automatic-provisioning-multi-tenant-apps.md
-    - name: Подготовка к управлению кадрами
-      items:
-        - name: Справочник по атрибутам SuccessFactors
-          href: sap-successfactors-attribute-reference.md
-        - name: Справочник по атрибутам Workday
-          href: workday-attribute-reference.md
-    - name: "Агент подготовки Azure\_AD Connect"
-      items:
-        - name: Журнал версий агента подготовки
-          href: provisioning-agent-release-version-history.md
-    - name: Прокси приложения для локальных приложений
-      items:
-        - name: 'Прокси приложения: вопросы и ответы'
-          href: application-proxy-faq.md
-        - name: Журнал версий прокси приложения
-          href: application-proxy-release-version-history.md
+    - name: 'Прокси приложения: вопросы и ответы'
+      href: application-proxy-faq.md
+    - name: Журнал версий прокси приложения
+      href: application-proxy-release-version-history.md
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки для разработчиков

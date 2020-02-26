@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство по добавлению флагов функций в ASP.NET Core
 description: Добавление флагов функций в приложения ASP.NET Core и управление ими с помощью Конфигурации приложений Azure
-author: jpconnock
+author: lisaguthrie
 ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 01/14/2020
-ms.author: jeconnoc
-ms.openlocfilehash: 6858648bc07546f30d4ebb92150c52f8c7729acd
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.author: lcozzens
+ms.openlocfilehash: fda0e8072984a25b33731a775780231538e92e3d
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260295"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898683"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
@@ -57,7 +57,7 @@ ms.locfileid: "76260295"
 1. Откройте *CSPROJ*-файл.
 1. Добавьте элемент `UserSecretsId`, как показано в примере ниже, и замените его значение своим значением, которое обычно является идентификатором GUID.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
 
@@ -73,7 +73,7 @@ ms.locfileid: "76260295"
 
     </Project>
     ```
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
     
@@ -119,7 +119,7 @@ ms.locfileid: "76260295"
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
     
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -135,7 +135,7 @@ ms.locfileid: "76260295"
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
     
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -161,7 +161,7 @@ ms.locfileid: "76260295"
 
 1. Обновите метод `ConfigureServices`, добавив поддержку флагов функций с помощью вызова метода `services.AddFeatureManagement()`. При необходимости можно добавить любой фильтр для флагов функций, вызвав `services.AddFeatureFilter<FilterType>()`.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
@@ -169,7 +169,7 @@ ms.locfileid: "76260295"
         services.AddFeatureManagement();
     }
     ```
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
     ```csharp    
     public void ConfigureServices(IServiceCollection services)
     {
@@ -181,7 +181,7 @@ ms.locfileid: "76260295"
 
 1. Обновите метод `Configure`, чтобы добавить ПО промежуточного слоя. Оно позволит периодически обновлять значения флагов функций, пока веб-приложение ASP.NET Core продолжает получать запросы.
     
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
@@ -205,7 +205,7 @@ ms.locfileid: "76260295"
             });
     }
     ```
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {

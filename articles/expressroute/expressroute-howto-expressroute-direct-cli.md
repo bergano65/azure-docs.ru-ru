@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: 6a17570a62728d5b4f9c99e3c4c939b5c77cb3df
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 47ee05113d46f66efd02978fed09cf72edc5ac1c
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74080217"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049940"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
@@ -38,7 +38,12 @@ ms.locfileid: "74080217"
    az account set --subscription "<subscription ID>"
    ```
 
-2. Вывод списка всех расположений, где поддерживается ExpressRoute Direct:
+2. Повторно зарегистрируйте подписку в Microsoft. Network для доступа к API-интерфейсам експрессраутепортслокатион и експрессраутепорт.
+
+   ```azurecli
+   az provider register --namespace Microsoft.Network
+   ```
+3. Вывод списка всех расположений, где поддерживается ExpressRoute Direct:
     
    ```azurecli
    az network express-route port location list
@@ -105,7 +110,7 @@ ms.locfileid: "74080217"
    }
    ]
    ```
-3. Проверка наличия доступной пропускной способности в любом из расположений, полученных на предыдущем шаге:
+4. Проверка наличия доступной пропускной способности в любом из расположений, полученных на предыдущем шаге:
 
    ```azurecli
    az network express-route port location show -l "Equinix-Ashburn-DC2"
@@ -131,7 +136,7 @@ ms.locfileid: "74080217"
    "type": "Microsoft.Network/expressRoutePortsLocations"
    }
    ```
-4. Создайте ресурс ExpressRoute Direct на основе расположений, выбранных на предыдущих шагах.
+5. Создайте ресурс ExpressRoute Direct на основе расположений, выбранных на предыдущих шагах.
 
    ExpressRoute Direct поддерживает инкапсуляцию как QinQ, так и Dot1Q. Если вы выберете QinQ, каждому каналу ExpressRoute динамически назначается S-тег и каналы будут уникальными в пределах ресурса ExpressRoute Direct. Каждый C-тег в канале должен быть уникальным в пределах канала, но не для всего ресурса ExpressRoute Direct.  
 
@@ -326,6 +331,6 @@ ms.locfileid: "74080217"
   }  
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [сведений о подключении ExpressRoute Direct](expressroute-erdirect-about.md).

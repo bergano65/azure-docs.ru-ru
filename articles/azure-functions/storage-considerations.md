@@ -3,12 +3,12 @@ title: Рекомендации по хранению для функций Azur
 description: Узнайте о требованиях к хранению в службе "функции Azure" и о шифровании хранимых данных.
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 353fdd3bf7775e3bc7a9d017a9e8dd8238b09830
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: f094996ca44ec36d46330e54eac56b28794ef22e
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964986"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190300"
 ---
 # <a name="storage-considerations-for-azure-functions"></a>Рекомендации по хранению для функций Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "76964986"
 
 |Служба хранилища  | Использование функций  |
 |---------|---------|
-| [Хранилище BLOB-объектов Azure](/storage/blobs/storage-blobs-overview.md)     | Поддерживать состояние привязок и функциональные ключи.  <br/>Также используется [центрами задач в устойчивые функции](durable/durable-functions-task-hubs.md). |
+| [Хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md)     | Поддерживать состояние привязок и функциональные ключи.  <br/>Также используется [центрами задач в устойчивые функции](durable/durable-functions-task-hubs.md). |
 | [Файлы Azure](../storage/files/storage-files-introduction.md)  | Общая папка, используемая для хранения и запуска кода приложения-функции в [плане потребления](functions-scale.md#consumption-plan). |
 | [хранилище очередей Azure](../storage/queues/storage-queues-introduction.md);     | Используется [центрами задач в устойчивые функции](durable/durable-functions-task-hubs.md).   |
 | [Хранилище таблиц Azure](../storage/tables/table-storage-overview.md)  |  Используется [центрами задач в устойчивые функции](durable/durable-functions-task-hubs.md).       |
@@ -57,7 +57,7 @@ ms.locfileid: "76964986"
 
 По умолчанию данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. Для дополнительного управления ключами шифрования можно предоставить ключи, управляемые клиентом, для шифрования больших двоичных объектов и данных файлов. Эти ключи должны присутствовать в Azure Key Vault, чтобы функции могли получить доступ к учетной записи хранения. Дополнительные сведения см. в статье о [настройке ключей, управляемых клиентом, с помощью Azure Key Vault с помощью портал Azure](../storage/common/storage-encryption-keys-portal.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о параметрах размещения функций Azure.
 

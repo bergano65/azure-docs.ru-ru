@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 01/10/2020
 ms.custom: mvc, devcenter
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 0540c7b01d693975f34515c7d13f0477ac74d4a1
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 26313c68305f4d7e6411d31fa12366442ce4bd38
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842262"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964179"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-visual-studio-code"></a>Краткое руководство. Создание проекта Функций Azure в Visual Studio Code
 
@@ -18,31 +18,39 @@ ms.locfileid: "76842262"
 
 Существует также версия этой статьи для [интерфейса командной строки](functions-create-first-azure-function-azure-cli.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="configure-your-environment"></a>Настройка среды
 
-+ [Visual Studio Code](https://code.visualstudio.com/) на одной из [поддерживаемых платформ](https://code.visualstudio.com/docs/supporting/requirements#_platforms). 
-::: zone pivot="programming-language-csharp"
-+ [Расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) для Visual Studio Code.
-::: zone-end
-::: zone pivot="programming-language-javascript,programming-language-typescript"
-+ [Node.js](https://nodejs.org/), активная версия LTS и версия Maintenance LTS (рекомендуются версии 8.11.1 и 10.14.1).
-::: zone-end
+Перед началом работы убедитесь, что выполнены следующие предварительные требования.
+
++ Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+
+::: zone pivot="programming-language-csharp,programming-language-powershell,programming-language-python"  
++ [Node.js](https://nodejs.org/), необходимый Windows для npm. Только [Активная версия LTS и версия Maintenance LTS ](https://nodejs.org/about/releases/). Используйте команду `npm --version`, чтобы проверить установленную версию.
+    Не требуется для локальной разработки на MacOS и Linux.   
+::: zone-end  
+::: zone pivot="programming-language-javascript,programming-language-typescript"  
++ [Node.js](https://nodejs.org/), активная версия LTS и версия Maintenance LTS (рекомендуется 10.14.1). Используйте команду `npm --version`, чтобы проверить установленную версию.
+::: zone-end 
 ::: zone pivot="programming-language-python"
 + [Python 3.7](https://www.python.org/downloads/release/python-375/) или [Python 3.6](https://www.python.org/downloads/release/python-368/), поддерживаемый Функциями Azure. Python 3.8 пока не поддерживается. 
-
-+ [Расширение Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) для Visual Studio Code.
-::: zone-end
+::: zone-end   
 ::: zone pivot="programming-language-powershell"
 + [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows)
 
-+ [Пакет SDK для .NET Core 2.2 и более поздних версий](https://www.microsoft.com/net/download).
-
-+ [Расширение PowerShell для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
-::: zone-end
++ [Пакет SDK для .NET Core 2.2 и более поздних версий](https://www.microsoft.com/net/download).  
+::: zone-end  
++ [Visual Studio Code](https://code.visualstudio.com/) на одной из [поддерживаемых платформ](https://code.visualstudio.com/docs/supporting/requirements#_platforms).  
+::: zone pivot="programming-language-csharp"  
++ [Расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) для Visual Studio Code.  
+::: zone-end  
+::: zone pivot="programming-language-python"
++ [Расширение Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) для Visual Studio Code.  
+::: zone-end  
+::: zone pivot="programming-language-powershell"
++ [Расширение PowerShell для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).  
+::: zone-end  
 
 + [Расширение "Функции Azure"](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) для Visual Studio Code. 
-
-+ [Учетная запись Azure](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing) с активной подпиской. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
 ## <a name="create-an-azure-functions-project"></a>Создание локального проекта 
 
@@ -60,111 +68,36 @@ ms.locfileid: "76842262"
 1. Введите следующие сведения по соответствующим запросам:
 
     ::: zone pivot="programming-language-csharp"
-
-    | prompt | Значение | 
-    | ------ | ----- | 
-    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | C# |
-    | Выбор версии | Функции Azure версии 2 | 
-    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | 
-    | Provide a function name (Укажите имя функции) | HttpExample | 
-    | Provide a namespace (Укажите пространство имен) | My.Functions | 
-    | Уровень авторизации | Анонимные | 
-    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область |
-
+    + **Выберите язык для проекта приложения-функции**: Выберите `C#`.
     ::: zone-end
-
     ::: zone pivot="programming-language-javascript"
-
-    | prompt | Значение | 
-    | ------ | ----- | 
-    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | JavaScript | 
-    | Выбор версии | Функции Azure версии 2 | 
-    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | 
-    | Provide a function name (Укажите имя функции) | HttpExample | 
-    | Уровень авторизации | Анонимные | 
-    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область |
-
+    + **Выберите язык для проекта приложения-функции**: Выберите `JavaScript`.
     ::: zone-end
-
     ::: zone pivot="programming-language-typescript"
-
-    | prompt | Значение | 
-    | ------ | ----- | 
-    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | TypeScript | 
-    | Выбор версии | Функции Azure версии 2 | 
-    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | 
-    | Provide a function name (Укажите имя функции) | HttpExample | 
-    | Уровень авторизации | Анонимные | 
-    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область |
-
+    + **Выберите язык для проекта приложения-функции**: Выберите `TypeScript`.
     ::: zone-end
-
     ::: zone pivot="programming-language-powershell"
-
-    | prompt | Значение | 
-    | ------ | ----- | 
-    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | PowerShell | 
-    | Выбор версии | Функции Azure версии 2 | 
-    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | 
-    | Provide a function name (Укажите имя функции) | HttpExample | 
-    | Уровень авторизации | Анонимные | 
-    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область |
-
+    + **Выберите язык для проекта приложения-функции**: Выберите `PowerShell`.
     ::: zone-end
-
     ::: zone pivot="programming-language-python"
+    + **Выберите язык для проекта приложения-функции**: Выберите `Python`.
 
-    | prompt | Значение | 
-    | ------ | ----- | 
-    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | Python | 
-    | Выбор версии | Функции Azure версии 2 | 
-    | Select a Python alias to create a virtual environment (Выберите псевдоним Python для создания виртуальной среды) | Псевдоним Python | 
-    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | 
-    | Provide a function name (Укажите имя функции) | HttpExample | 
-    | Уровень авторизации | Анонимные | 
-    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область | 
-
+    + **Выберите псевдоним Python для создания виртуальной среды**. Выберите расположение интерпретатора Python. Если расположение не отображается, введите полный путь к двоичному файлу Python.  
     ::: zone-end
 
-1. Visual Studio Code делает следующее:
-
-    + Создает проект Функций Azure в новой рабочей области, которая содержит файлы конфигурации [host.json](functions-host-json.md) и [local.settings.json](functions-run-local.md#local-settings-file). 
-
+    + **Выберите шаблон для первой функции вашего проекта**. Выберите `HTTP trigger`.
+    
+    + **Укажите имя функции**. Введите `HttpExample`.
+    
     ::: zone pivot="programming-language-csharp"
+    + **Укажите пространство имен**. Введите `My.Functions`. 
+    ::: zone-end
 
-    + Создает [файл библиотеки класса HttpExample.cs](functions-dotnet-class-library.md#functions-class-library-project), реализующий функцию.
+    + **Уровень авторизации**: выберите `Anonymous`, что позволит любому пользователю вызывать конечную точку функции. Дополнительные сведения об уровне авторизации см. в разделе [Authorization keys](functions-bindings-http-webhook.md#authorization-keys) (Ключи авторизации).
 
-    ::: zone-end
-        
-    ::: zone pivot="programming-language-javascript"
-    
-    + Создает файл package.json в корневой папке.
+    + **Выберите, как вы хотели бы открыть свой проект**. Выберите `Add to workspace`.
 
-    + Создает папку HttpExample, содержащую файл определения [function.json](functions-reference-node.md#folder-structure), файл [index.js](functions-reference-node.md#exporting-a-function) и файл Node.js, содержащий код функции.
-    
-    ::: zone-end
-    
-    ::: zone pivot="programming-language-typescript"
-    
-    + Создает файлы package.json и tsconfig.json в корневой папке.
-
-    + Создает папку HttpExample, содержащую файл определения [function.json](functions-reference-node.md#folder-structure), файл [index.ts](functions-reference-node.md#typescript) и файл TypeScript, содержащий код функции.
-    
-    ::: zone-end
-    
-    ::: zone pivot="programming-language-powershell"
-    
-    + Создает папку HttpExample, содержащую файл определения [function.json](functions-reference-python.md#programming-model) и файл run.ps1, содержащий код функции.
-    
-    ::: zone-end
-    
-    ::: zone pivot="programming-language-python"
-    
-    + Создает файл requirements.txt на уровне проекта, в котором перечислены пакеты, необходимые для Функций.
-    
-    + Создает папку HttpExample, содержащую [файл определения function.json](functions-reference-python.md#programming-model) и файл \_\_init\_\_.py, содержащий код функции.
-    
-    ::: zone-end
+1. Используя эти сведения, Visual Studio Code создает проект функций Azure с триггером HTTP. Файлы локального проекта можно просмотреть в Explorer. Дополнительные сведения см. в разделе [Generated project files](functions-develop-vs-code.md#generated-project-files) (Созданные файлы проекта). 
 
 ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-python"
 
@@ -186,13 +119,15 @@ ms.locfileid: "76842262"
 
 ## <a name="run-the-function-in-azure"></a>Запуск функции в Azure
 
-1. Скопируйте URL-адрес HTTP-триггера на панели **Output** (Выходные данные). Как и в предыдущем случае, добавьте строку запроса `name` в виде `?name=<yourname>` в конец этого URL-адреса и выполните запрос.
+1. Вернитесь в область **Azure: Functions** (Azure: Функции) на панели слева и откройте новое приложение-функцию в своей подписке. Разверните **Функции**, щелкните правой кнопкой мыши (Windows) или щелкните при зажатой клавише Ctrl (MacOS) элемент **HttpExample**, а затем выберите команду **Copy function URL** (Копировать URL-адрес функции).
 
-    URL-адрес для вызова функции, активируемой HTTP-запросом, должен быть указан в таком формате:
+    ![Скопируйте URL-адрес функции для создания нового HTTP-триггера](./media/functions-create-first-function-vs-code/function-copy-endpoint-url.png)
 
-        http://<functionappname>.azurewebsites.net/api/httpexample?name=<yourname> 
+1. Вставьте этот URL-адрес для HTTP-запроса в адресную строку браузера, добавьте строку запроса `name` в качестве `?name=Functions` в конец этого URL-адреса, а затем выполните запрос. URL-адрес для вызова функции, активируемой HTTP-запросом, должен быть указан в таком формате:
 
-1. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. В примере ниже показан ответ в браузере на удаленный запрос GET, возвращаемый функцией: 
+        http://<functionappname>.azurewebsites.net/api/httpexample?name=Functions 
+        
+    В примере ниже показан ответ в браузере на удаленный запрос GET, возвращаемый функцией: 
 
     ![Ответ функции в браузере](./media/functions-create-first-function-vs-code/functions-test-remote-browser.png)
 

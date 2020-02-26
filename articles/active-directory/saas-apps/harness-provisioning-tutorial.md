@@ -15,23 +15,23 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/29/2019
 ms.author: Zhchia
-ms.openlocfilehash: 9d00024351c18789e26120cc2af006b9aac4232d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 518d86fff04a23f1c1e63c44c53485b99f30637d
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75767846"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77057844"
 ---
 # <a name="tutorial-configure-harness-for-automatic-user-provisioning"></a>Учебник. Настройка программы для автоматической подготовки пользователей
 
 Из этой статьи вы узнаете, как настроить Azure Active Directory (Azure AD) для автоматической подготовки и отмены предоставления пользователей или групп для работы.
 
 > [!NOTE]
-> В этой статье описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Важные сведения об этой службе и ответы на часто задаваемые вопросы см. в статье [Автоматизация подготовки пользователей и ее отмене в приложениях SaaS с помощью Azure Active Directory](../manage-apps/user-provisioning.md).
+> В этой статье описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Важные сведения об этой службе и ответы на часто задаваемые вопросы см. в статье [Автоматизация подготовки пользователей и ее отмене в приложениях SaaS с помощью Azure Active Directory](../app-provisioning/user-provisioning.md).
 >
 > Сейчас этот соединитель доступен в режиме предварительной версии. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В сценарии, описанном в этой статье, предполагается, что у вас уже есть следующие необходимые компоненты.
 
@@ -156,7 +156,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Панель "сопоставления атрибутов" группы окружений](media/harness-provisioning-tutorial/groupattributes.png)
 
-1. Сведения о настройке фильтров области см. в разделе [Подготовка приложений на основе атрибутов с помощью фильтров области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Сведения о настройке фильтров области см. в разделе [Подготовка приложений на основе атрибутов с помощью фильтров области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. В разделе **Параметры**, чтобы включить службу подготовки Azure AD для программы, установите переключатель **состояние подготовки** в положение **вкл**.
 
@@ -172,13 +172,13 @@ Azure Active Directory использует концепцию, называем
 
 Эта операция запускает начальную синхронизацию пользователей или групп, которые вы подготавливаете. Начальная синхронизация выполняется дольше, чем позже. Синхронизация выполняется примерно каждые 40 минут, если служба подготовки Azure AD запущена. Чтобы отслеживать ход выполнения, перейдите к разделу **сведения о синхронизации** . Вы также можете перейти по ссылкам на отчет о действиях по подготовке, в котором описаны все действия, выполняемые службой подготовки Azure AD.
 
-Дополнительные сведения о том, как читать журналы подготовки Azure AD, см. в разделе [отчет об автоматической подготовке учетных записей пользователей](../manage-apps/check-status-user-account-provisioning.md).
+Дополнительные сведения о том, как читать журналы подготовки Azure AD, см. в разделе [отчет об автоматической подготовке учетных записей пользователей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

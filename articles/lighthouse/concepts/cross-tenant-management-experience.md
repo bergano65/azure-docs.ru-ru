@@ -1,14 +1,14 @@
 ---
 title: Интерфейсы управления для различных клиентов
 description: Делегированное управление ресурсами Azure предоставляет интерфейсы управления для различных клиентов.
-ms.date: 01/06/2020
+ms.date: 02/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: 661ada4e5d620d4977290986f5649b91363202fe
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: f5d68be1226a026f8fdfd7595cb2812ce51dfdb6
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706994"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77122050"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -55,6 +55,7 @@ ms.locfileid: "75706994"
 [Azure Backup.](../../backup/index.yml)
 
 - Резервное копирование и восстановление данных пользователей в клиентах.
+- Используйте [Обозреватель резервных копий](../../backup/monitor-azure-backup-with-backup-explorer.md) для просмотра оперативной информации об элементах резервного копирования (включая ресурсы Azure, которые еще не настроены для резервного копирования) и сведения о мониторинге (задания и оповещения) для делегированных подписок. В настоящее время обозреватель резервного копирования доступен только для данных виртуальной машины Azure.
 
 [Служба Azure Kubernetes (AKS)](../../aks/index.yml):
 

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: helohr
-ms.openlocfilehash: 0db1ffe46165d91148b6980abbf89d03340e646e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8065be841b18fa0f8706a3bea3739ee2cb013323
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75486694"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367589"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов личного рабочего стола
 
@@ -27,7 +27,7 @@ ms.locfileid: "75486694"
 
 Чтобы автоматически назначить пользователей, сначала назначьте им пул узлов личного рабочего стола, чтобы они могли видеть Рабочий стол в своем канале. Когда назначенный пользователь запускает рабочий стол в своем веб-канале, он запросит доступный узел сеансов, если они еще не подключены к пулу узлов, что завершает процесс назначения.
 
-Прежде чем начать, [скачайте и импортируйте модуль PowerShell для виртуальных рабочих столов Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) , если вы еще этого не сделали. 
+Прежде чем начать, [скачайте и импортируйте модуль PowerShell для виртуальных рабочих столов Windows](/powershell/windows-virtual-desktop/overview/) , если вы еще этого не сделали. 
 
 > [!NOTE]
 > Перед выполнением инструкций убедитесь, что вы установили модуль PowerShell для виртуальных рабочих столов Windows версии 1.0.1534.2001 или более поздней.
@@ -72,7 +72,7 @@ Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -Use
 Set-RdsSessionHost <tenantname> <hostpoolname> -Name <sessionhostname> -AssignedUser <userupn>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы настроили тип назначения личный рабочий стол, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его в рамках сеанса пользователя. Эти две следующие инструкции помогут вам подключиться к сеансу с помощью выбранного клиента:
 

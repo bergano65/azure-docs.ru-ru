@@ -1,0 +1,107 @@
+- name: Документация по подготовке приложений по управлению персоналом и других приложений
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что собой представляет подготовка приложения?
+      href: user-provisioning.md
+- name: Учебники
+  items:
+    - name: G Suite
+      href: /azure/active-directory/saas-apps/google-apps-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: ServiceNow
+      href: /azure/active-directory/saas-apps/servicenow-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: "Amazon Web Services (AWS)\_— подготовка ролей"
+      href: '/azure/active-directory/saas-apps/amazon-web-service-tutorial#configure-azure-ad-single-sign-ont?context=azure/active-directory/app-provisioning/context/app-provisioning-context'
+    - name: Workday
+      href: /azure/active-directory/saas-apps/workday-inbound-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: SAP SuccessFactors
+      href: /azure/active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: Все интегрированные приложения из коллекции
+      href: /azure/active-directory/saas-apps
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: Принцип подготовки приложений
+      href: how-provisioning-works.md
+    - name: Планирование развертывания для подготовки приложений
+      href: plan-auto-user-provisioning.md
+    - name: Планирование развертывания для подготовки облачного приложения по управлению персоналом
+      href: plan-cloud-hr-provision.md
+- name: Практические руководства
+  expanded: true
+  items:
+    - name: Настройка подготовки для приложения из коллекции
+      href: configure-automatic-user-provisioning-portal.md
+    - name: Изменение сопоставлений атрибутов
+      items:
+        - name: Настройка сопоставлений атрибутов
+          href: customize-application-attributes.md
+        - name: Написание выражений для сопоставления атрибутов
+          href: functions-for-customizing-application-data.md
+    - name: Включение и пользователей и групп в область и их исключение оттуда
+      items:
+        - name: Фильтрация подготавливаемых пользователей или групп по областям
+          href: define-conditional-rules-for-provisioning-user-accounts.md
+        - name: 'Пропуск пользователей, которые не входят в текущую область, при удалении'
+          href: skip-out-of-scope-deletions.md
+    - name: Мониторинг и отчет о подготовке
+      items:
+        - name: Мониторинг состояния подготовки и производительности
+          href: application-provisioning-when-will-provisioning-finish-specific-user.md
+        - name: Отчет о подготовке приложений
+          href: check-status-user-account-provisioning.md
+        - name: Импорт и экспорт конфигурации
+          href: export-import-provisioning-configuration.md
+    - name: Устранение неполадок при подготовке приложений
+      items:
+        - name: Устранение неполадок с подготовкой приложений
+          href: application-provisioning-config-problem.md
+        - name: Состояние карантина
+          href: application-provisioning-quarantine-status.md
+        - name: Ошибка с авторизацией (не удалось сохранить учетные данные администратора)
+          href: application-provisioning-config-problem-storage-limit.md
+        - name: Не удается подготовить пользователей
+          href: application-provisioning-config-problem-no-users-provisioned.md
+        - name: Подготовлены не те пользователи
+          href: application-provisioning-config-problem-wrong-users-provisioned.md
+        - name: Отсутствует исходный атрибут
+          href: user-provisioning-sync-attributes-for-mapping.md
+        - name: Задание подготовки выполняется медленно
+          href: application-provisioning-when-will-provisioning-finish.md
+        - name: Подготовка журналов
+          href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - name: Создание конечной точки SCIM и настройка подготовки
+      href: use-scim-to-provision-users-and-groups.md
+    - name: Автоматизация настройки с помощью MS Graph
+      href: application-provisioning-configure-api.md
+- name: Справочник
+  items:
+    - name: Выбор метода подготовки
+      href: isv-automatic-provisioning-multi-tenant-apps.md
+    - name: Подготовка к управлению кадрами
+      items:
+        - name: Справочник по атрибутам SuccessFactors
+          href: sap-successfactors-attribute-reference.md
+        - name: Справочник по атрибутам Workday
+          href: workday-attribute-reference.md
+    - name: "Агент подготовки Azure\_AD Connect"
+      items:
+        - name: Журнал версий агента подготовки
+          href: provisioning-agent-release-version-history.md
+- name: Ресурсы
+  items:
+    - name: Возможности получения поддержки и справки для разработчиков
+      href: /azure/active-directory/develop/developer-support-help-options
+    - name: Форум отзывов и предложений по Azure
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=active-directory'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
+    - name: Видео
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'

@@ -2,18 +2,18 @@
 title: Краткое руководство по Конфигурации приложения Azure с ASP.NET Core | Документация Майкрософт
 description: Краткое руководство по использованию Конфигурации приложений Azure с приложениями ASP.NET Core
 services: azure-app-configuration
-author: jpconnock
+author: lisaguthrie
 ms.service: azure-app-configuration
 ms.devlang: csharp
 ms.topic: quickstart
 ms.date: 01/21/2020
-ms.author: jeconnoc
-ms.openlocfilehash: 782c18344732362dee96842bcc7c9a6c4ed14a68
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.author: lcozzens
+ms.openlocfilehash: 657edbac67a53952ab79aee74b63c59a44b7de18
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76711236"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898656"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -63,7 +63,7 @@ dotnet new mvc --no-https
 > [!IMPORTANT]
 > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-#### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+#### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -81,7 +81,7 @@ dotnet new mvc --no-https
 </Project>
 ```
 
-#### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+#### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -139,7 +139,7 @@ dotnet new mvc --no-https
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -152,7 +152,7 @@ dotnet new mvc --no-https
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>

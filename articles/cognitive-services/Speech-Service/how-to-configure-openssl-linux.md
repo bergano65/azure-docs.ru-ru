@@ -10,26 +10,46 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: jhakulin
-ms.openlocfilehash: cadf31dede8ee81323076013d00b9431f597bda6
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: ff8772f7c3c3213c010b0bdbd0d0aa8897404bac
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156494"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119981"
 ---
 # <a name="configure-openssl-for-linux"></a>Настройка OpenSSL для Linux
 
 При использовании любой версии пакета SDK для распознавания речи перед 1.9.0, [OpenSSL](https://www.openssl.org) динамически настраивается в качестве версии системы узла. В более поздних версиях пакета SDK OpenSSL (версия [1.1.1 b](https://mta.openssl.org/pipermail/openssl-announce/2019-February/000147.html)) статически связывается с основной библиотекой пакета SDK для распознавания речи.
 
-## <a name="troubleshoot-connectivity"></a>Устранение неполадок с подключением
-
-Если при использовании 1.9.0 выпуска пакета SDK для распознавания речи возникают ошибки подключения, убедитесь, что каталог `ssl/certs` существует в `/usr/lib` Directory, который находится в файловой системе Linux. Если каталог `ssl/certs` *не существует*, проверьте, установлен ли в системе параметр OpenSSL, используя следующую команду:
-
+Чтобы обеспечить подключение, убедитесь, что сертификаты OpenSSL установлены в системе. Выполните команду:
 ```bash
-which openssl
+openssl version -d
 ```
 
-Затем найдите каталог OpenSSL `certs` и скопируйте содержимое этого каталога в каталог `/usr/lib/ssl/certs`. Затем повторите попытку, чтобы узнать, были ли устранены проблемы с подключением.
+Выходные данные в системах на базе Ubuntu/Debian должны быть:
+```
+OPENSSLDIR: "/usr/lib/ssl"
+```
+
+Проверьте наличие `certs` подкаталога в разделе ОПЕНССЛДИР. В приведенном выше примере это будет `/usr/lib/ssl/certs`.
+
+* Если имеется `/usr/lib/ssl/certs` и он содержит много отдельных файлов сертификатов (с `.crt` или расширением `.pem`), дальнейшие действия не требуются.
+
+* Если ОПЕНССЛДИР — что-то другое, чем `/usr/lib/ssl` и/или имеется отдельный файл пакета сертификатов, а не несколько отдельных файлов, необходимо задать соответствующую переменную среды SSL, чтобы указать, где можно найти сертификаты.
+
+## <a name="examples"></a>Примеры
+
+- ОПЕНССЛДИР — `/opt/ssl`. Существует `certs` подкаталог с множеством `.crt` или `.pem` файлов.
+Перед запуском программы, использующей пакет SDK для распознавания речи, в качестве значения переменной среды `SSL_CERT_DIR` указывать на `/opt/ssl/certs`. Пример:
+```bash
+SSL_CERT_DIR=/opt/ssl/certs ./helloworld
+```
+
+- ОПЕНССЛДИР — `/etc/pki/tls`. Существует файл пакета сертификатов, например `ca-bundle.pem` или `ca-bundle.crt`.
+Перед запуском программы, использующей пакет SDK для распознавания речи, в качестве значения переменной среды `SSL_CERT_FILE` указывать на `/etc/pki/tls/ca-bundle.pem`. Пример:
+```bash
+SSL_CERT_FILE=/etc/pki/tls/ca-bundle.pem ./helloworld
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: helohr
-ms.openlocfilehash: 059748f6f08b1c73d56aa3a127aa785f55eb63ee
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: 1637cb7621d6071bbce2af66f3a106770139ad4e
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539135"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368818"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Установка Office в главный образ VHD
 
@@ -20,20 +20,20 @@ ms.locfileid: "74539135"
 
 В этой статье предполагается, что вы уже создали виртуальную машину (ВМ). Если нет, см. статью [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md#create-a-vm) .
 
-Кроме того, в этой статье предполагается, что у вас есть повышенный доступ к виртуальной машине, будь то ее подготовка в Azure или диспетчере Hyper-V. Если нет, см. статью [повышение уровня доступа для управления всеми подписками Azure и группами управления](https://docs.microsoft.com/azure/role-based-access-control/elevate-access-global-admin).
+Кроме того, в этой статье предполагается, что у вас есть повышенный доступ к виртуальной машине, будь то ее подготовка в Azure или диспетчере Hyper-V. Если нет, см. статью [повышение уровня доступа для управления всеми подписками Azure и группами управления](../role-based-access-control/elevate-access-global-admin.md).
 
 >[!NOTE]
 >Эти инструкции предназначены для конфигурации Виртуального рабочего стола Windows, которую можно использовать в имеющихся процессах вашей организации.
 
 ## <a name="install-office-in-shared-computer-activation-mode"></a>Установить Office в режиме активации общего компьютера
 
-Активация на общем компьютере позволяет развернуть Office 365 профессиональный плюс на компьютере в Организации, к которому обращается несколько пользователей. Дополнительные сведения об активации общего компьютера см. в разделе [Обзор активации общего компьютера для Office 365 профессиональный плюс](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
+Активация на общем компьютере позволяет развернуть Office 365 профессиональный плюс на компьютере в Организации, к которому обращается несколько пользователей. Дополнительные сведения об активации общего компьютера см. в разделе [Обзор активации общего компьютера для Office 365 профессиональный плюс](/deployoffice/overview-of-shared-computer-activation-for-office-365-proplus/).
 
 Используйте [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117) для установки Office. Многосеансовая поддержка Windows 10 Enterprise поддерживает только следующие версии Office:
-- Office 365 профессиональный плюс
+- Office 365 профессиональный плюс.
 - Office 365 Business, входящий в состав подписки Microsoft 365 бизнес
 
-Средству развертывания Office требуется XML-файл конфигурации. Чтобы настроить следующий пример, см. раздел [Параметры конфигурации средства развертывания Office](https://docs.microsoft.com/deployoffice/configuration-options-for-the-office-2016-deployment-tool).
+Средству развертывания Office требуется XML-файл конфигурации. Чтобы настроить следующий пример, см. раздел [Параметры конфигурации средства развертывания Office](/deployoffice/configuration-options-for-the-office-2016-deployment-tool/).
 
 Этот пример XML-файла конфигурации, который мы предоставили, выполняет следующие действия:
 
@@ -159,6 +159,6 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Виртуальный рабочий стол Windows не поддерживает Skype для бизнеса и команды.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы добавили Office в образ, вы можете продолжить настройку главного образа VHD. См. раздел [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).

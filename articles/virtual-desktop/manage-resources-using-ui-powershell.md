@@ -7,18 +7,18 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 01/10/2020
 ms.author: helohr
-ms.openlocfilehash: e3ea11f4faad204756f9e1296b5190e1f81a5cc0
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: e55641457e1ed27928e6bf380701b646b672cae8
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772799"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368832"
 ---
 # <a name="deploy-a-management-tool-with-powershell"></a>Развертывание средства управления с помощью PowerShell
 
 В этой статье показано, как развернуть средство управления с помощью PowerShell.
 
-## <a name="important-considerations"></a>Важные сведения
+## <a name="important-considerations"></a>Важные замечания
 
 Каждой подписке клиента Azure Active Directory (Azure AD) требуется отдельное развертывание средства управления. Это средство не поддерживает сценарии Azure AD "бизнес — бизнес" (B2B). 
 
@@ -36,7 +36,7 @@ ms.locfileid: "76772799"
 Перед развертыванием средства управления потребуется пользователь Azure Active Directory (Azure AD), чтобы создать регистрацию приложения и развернуть пользовательский интерфейс управления. Этот пользователь должен:
 
 - получить разрешение на создание ресурсов в своей подписке Azure;
-- получить разрешение на создание приложения Azure AD. Чтобы проверить, есть ли у пользователя необходимые разрешения, выполните действия, перечисленные в разделе [Необходимые разрешения](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+- получить разрешение на создание приложения Azure AD. Чтобы проверить, есть ли у пользователя необходимые разрешения, выполните действия, перечисленные в разделе [Необходимые разрешения](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
 
 Чтобы успешно развернуть и настроить средство управления, сначала необходимо скачать следующие скрипты PowerShell из [репозитория GitHub RDS-Templates](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/wvd-management-ux/deploy/scripts) и сохранить их в той же папке на локальном компьютере.
 
@@ -109,7 +109,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
 ```powershell
 $webApp = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 $redirectUri = "https://" + $webApp.DefaultHostName + "/"
-Get-AzureADApplication | where { $_.AppId -match $servicePrincipalCredentials.UserName } | Set-AzureADApplication -ReplyUrls $redirectUri  
+Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCredentials.UserName } | Set-AzureADApplication -ReplyUrls $redirectUri  
 ```
 
 Теперь, когда вы добавили URI перенаправления, вам потребуется обновить URL-адрес API, чтобы средство управления могла взаимодействовать со службой внутренней службы API.
@@ -161,6 +161,6 @@ Get-AzureADApplication | where { $_.AppId -match $servicePrincipalCredentials.Us
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании Работоспособности служб Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](./set-up-service-alerts.md).

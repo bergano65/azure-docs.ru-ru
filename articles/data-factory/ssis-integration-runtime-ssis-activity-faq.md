@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: c0aa33cce8dc163722557b1ef868cf0de8bea8fe
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1c2db107302e4851641ef430db61ec9b29ee151f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928732"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187481"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -142,7 +142,7 @@ ms.locfileid: "74928732"
 
 ### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-the-requested-ole-db-provider--is-not-registered-if-the-64-bit-driver-is-not-installed-run-the-package-in-32-bit-mode"></a>Сообщение об ошибке: "ошибка промежуточной задачи: ErrorCode: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {" Оператионеррормессажес ":" Error: запрошенный поставщик OLE DB... не зарегистрировано. Если 64-разрядный драйвер не установлен, запустите пакет в 32-разрядном режиме...
 
-Убедитесь, что соответствующий поставщик, используемый соединителями OLE DB в вашем пакете, правильно установлен на компьютере локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) .
+Убедитесь, что соответствующий поставщик, используемый соединителями OLE DB в вашем пакете, правильно установлен на компьютере локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
 
 ### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: "ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {" Оператионеррормессажес ":" Error: System. IO. FileLoadException: не удалось загрузить файл или сборку "Microsoft. WindowsAzure. Storage", версия =... Culture = Neutral, PublicKeyToken = 31bf3856ad364e35 ' или одну из его зависимостей. Определение манифеста найденной сборки не соответствует ссылке на сборку. ..."
 
@@ -157,7 +157,7 @@ ms.locfileid: "74928732"
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выход: {"Оператионеррормессажес": "код выхода исполнителя служб SSIS:-1. \ n", "LogLocation": "...\\Ссистелеметри\\ExecutionLog\\...", "Еффективеинтегратионрунтиме": "...", "Ексекутиондуратион":..., "durationInQueue": {"integrationRuntimeQueue":...}} "
 
-Убедитесь, что C++ среда Visual Runtime установлена на компьютере с локальной средой выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-self-hosted-ir) .
+Убедитесь, что C++ среда Visual Runtime установлена на компьютере с локальной средой выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
 
 ### <a name="multiple-package-executions-are-triggered-unexpectedly"></a>Несколько запусков пакета вызываются неожиданно
 

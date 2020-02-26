@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c83aa6e476bbd898999fb6efe490c7847a809ff
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 0d770336099611d69fa9e44d04fff4dd37696707
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74382154"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120132"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Уведомления защиты идентификации Azure Active Directory
 
@@ -26,6 +26,9 @@ ms.locfileid: "74382154"
 - сообщение электронной почты еженедельного дайджеста.
 
 В этой статье рассматриваются оба уведомления по электронной почте.
+
+>[!NOTE]
+>Уведомления по электронной почте доступны только в общедоступном облаке и сейчас недоступны в облаке для государственных организаций США.
 
 ## <a name="users-at-risk-detected-email"></a>сообщение электронной почты об обнаружении пользователей в группе риска;
 
@@ -50,7 +53,7 @@ ms.locfileid: "74382154"
 Еженедельное сообщение сводки содержит сводку новых обнаружений рисков.  
 Сюда входят:
 
-- пользователи под угрозой;
+- Пользователи, подверженные риску
 - подозрительные действия;
 - обнаруженные уязвимости;
 - ссылки на связанные отчеты в службе защиты идентификации.
@@ -65,6 +68,6 @@ ms.locfileid: "74382154"
 
 Настройте Еженедельный дайджест-адрес в **портал Azure** в разделе **Azure Active Directory** > **Безопасность** > **Идентификация** > **Еженедельный дайджест**.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md)

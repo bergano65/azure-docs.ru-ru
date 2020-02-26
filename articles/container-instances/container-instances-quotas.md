@@ -3,18 +3,18 @@ title: Квоты службы и доступность по регионам
 description: Квоты, ограничения и доступность по регионам службы "Экземпляры контейнеров Azure".
 ms.topic: article
 ms.date: 03/01/2019
-ms.openlocfilehash: 91681130e32cf8a76829b8bfc3e2a1e97a59ff6b
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: b3e7f2f67d806bd2fca74f58d446b0de9a4b8f44
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533512"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117901"
 ---
 # <a name="quotas-and-limits-for-azure-container-instances"></a>Квоты и ограничения службы "Экземпляры контейнеров Azure"
 
 Все службы Azure включают несколько стандартных ограничений и квот для ресурсов и функций. В этой статье подробно описываются квоты и ограничения по умолчанию для Экземпляров контейнеров Azure.
 
-Доступность функций и ресурсов Экземпляров контейнеров Azure в регионах Azure см. в статье [Resource availability for Azure Container Instances](container-instances-region-availability.md) (Доступность ресурсов для Экземпляров контейнеров Azure).
+Доступность ресурсов вычислений, памяти и хранилища для экземпляров контейнеров Azure зависит от региона и операционной системы. Дополнительные сведения см. в статье [доступность ресурсов для службы "экземпляры контейнеров Azure](container-instances-region-availability.md)".
 
 ## <a name="service-quotas-and-limits"></a>Квоты и ограничения службы
 

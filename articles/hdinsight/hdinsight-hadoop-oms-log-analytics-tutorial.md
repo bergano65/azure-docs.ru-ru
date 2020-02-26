@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 08/05/2019
-ms.openlocfilehash: a693b14bb61eb52a09ab1f1ecd5d00b339357d5d
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.date: 02/06/2020
+ms.openlocfilehash: e4b33e132e660fba7d06ff33c7db06c7727dd26c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240372"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162792"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Использование журналов Azure Monitor для мониторинга кластеров HDInsight
 
@@ -24,22 +24,22 @@ ms.locfileid: "71240372"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* **Рабочая область Log Analytics**. Эту рабочую область можно рассматривать как уникальную Azure Monitor среду журналов с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace).
+* Рабочая область Log Analytics. Эту рабочую область можно рассматривать как уникальную Azure Monitor среду журналов с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace).
 
-* **Кластер Azure HDInsight**. В настоящее время журналы Azure Monitor можно использовать со следующими типами кластеров HDInsight:
+* Кластер Azure HDInsight. В настоящее время журналы Azure Monitor можно использовать со следующими типами кластеров HDInsight:
 
   * Hadoop
   * HBase
-  * Интерактивные запросы
+  * Интерактивный запрос
   * Kafka
   * Spark
   * Storm
 
   Инструкции по созданию кластера HDInsight см. в руководстве по [началу работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).  
 
-* **Azure PowerShell AZ Module**.  См. статью [Знакомство с новым модулем Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
+* Azure PowerShell AZ Module.  См. статью [Знакомство с новым модулем Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az). Убедитесь, что у вас установлена последняя версия. При необходимости запустите `Update-Module -Name Az`.
 
 > [!NOTE]  
 > Для повышения производительности рекомендуется разместить кластер HDInsight и рабочую область Log Analytics в одном регионе. Журналы Azure Monitor недоступны во всех регионах Azure.
@@ -50,19 +50,19 @@ ms.locfileid: "71240372"
 
 1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [Отображение кластеров](./hdinsight-administer-use-portal-linux.md#showClusters). Кластер открывается на новой странице портала.
 
-1. Слева в разделе **Мониторинг** выберите **Operations Management Suite**.
+1. Слева в разделе **мониторинг**выберите **Azure Monitor**.
 
-1. В главном представлении в разделе **Мониторинг OMS** щелкните **Включить**.
+1. В главном представлении в разделе **Интеграция с Azure Monitor**выберите **включить**.
 
 1. В раскрывающемся списке **Выберите рабочую область** выберите существующую рабочую область Log Analytics.
 
 1. Щелкните **Сохранить**.  Параметр сохраняется в течение нескольких секунд.
 
-    ![Включение мониторинга кластеров HDInsight](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring.png "Включение мониторинга кластеров HDInsight")
+    ![Включение мониторинга для кластеров HDInsight](./media/hdinsight-hadoop-oms-log-analytics-tutorial/azure-portal-monitoring.png "Включение мониторинга для кластеров HDInsight")
 
 ## <a name="enable-azure-monitor-logs-by-using-azure-powershell"></a>Включение журналов Azure Monitor с помощью Azure PowerShell
 
-Вы можете включить Azure Monitor журналов с помощью командлета Azure PowerShell AZ Module [Enable-аздинсигхтоператионсманажементсуите](https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightoperationsmanagementsuite) .
+Вы можете включить Azure Monitor журналов с помощью командлета Azure PowerShell AZ Module [Enable-аздинсигхтмониторинг](https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightmonitoring) .
 
 ```powershell
 # Enter user information
@@ -72,19 +72,32 @@ $LAW = "<your-Log-Analytics-workspace>"
 # End of user input
 
 # obtain workspace id for defined Log Analytics workspace
-$WorkspaceId = (Get-AzOperationalInsightsWorkspace -ResourceGroupName $resourceGroup -Name $LAW).CustomerId
+$WorkspaceId = (Get-AzOperationalInsightsWorkspace `
+                    -ResourceGroupName $resourceGroup `
+                    -Name $LAW).CustomerId
 
 # obtain primary key for defined Log Analytics workspace
-$PrimaryKey = (Get-AzOperationalInsightsWorkspace -ResourceGroupName $resourceGroup -Name $LAW | Get-AzOperationalInsightsWorkspaceSharedKeys).PrimarySharedKey
+$PrimaryKey = (Get-AzOperationalInsightsWorkspace `
+                    -ResourceGroupName $resourceGroup `
+                    -Name $LAW | Get-AzOperationalInsightsWorkspaceSharedKeys).PrimarySharedKey
 
-# Enables Operations Management Suite
-Enable-AzHDInsightOperationsManagementSuite -ResourceGroupName $resourceGroup -Name $cluster -WorkspaceId $WorkspaceId -PrimaryKey $PrimaryKey
+# Enables monitoring and relevant logs will be sent to the specified workspace.
+Enable-AzHDInsightMonitoring `
+    -ResourceGroupName $resourceGroup `
+    -Name $cluster `
+    -WorkspaceId $WorkspaceId `
+    -PrimaryKey $PrimaryKey
+
+# Gets the status of monitoring installation on the cluster.
+Get-AzHDInsightMonitoring `
+    -ResourceGroupName $resourceGroup `
+    -Name $cluster
 ```
 
-Чтобы отключить, используйте командлет [Disable-аздинсигхтоператионсманажементсуите](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightoperationsmanagementsuite) :
+Чтобы отключить, используйте командлет [Disable-аздинсигхтмониторинг](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightmonitoring) :
 
 ```powershell
-Disable-AzHDInsightOperationsManagementSuite -Name "<your-cluster>"
+Disable-AzHDInsightMonitoring -Name "<your-cluster>"
 ```
 
 ## <a name="install-hdinsight-cluster-management-solutions"></a>Установка решений по управлению кластерами HDInsight
@@ -94,13 +107,13 @@ HDInsight предоставляет решения по управлению к
 Вот доступные решения HDInsight:
 
 * Мониторинг HDInsight Hadoop
-* Мониторинг HDInsight HBase
+* HDInsight HBase Monitoring
 * мониторинг HDInsight Interactive Query;
 * Мониторинг Kafka HDInsight
 * Мониторинг HDInsight Spark
 * Мониторинг HDInsight Storm
 
-Инструкции по установке решения управления см. в [этом](../azure-monitor/insights/solutions.md#install-a-monitoring-solution) разделе. Чтобы поэкспериментировать, установите решение для мониторинга Hadoop в HDInsight. После установки вы увидите элемент **HDInsightHadoop** под разделом **сводки**. Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
+Инструкции по установке решения управления см. в [этом](../azure-monitor/insights/solutions.md#install-a-monitoring-solution) разделе. Чтобы поэкспериментировать, установите решение для мониторинга Hadoop в HDInsight. По завершении вы увидите плитку **хдинсигхсадуп** в разделе Summary ( **Сводка**). Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
 
 ![Решение HDInsight для мониторинга](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
 
@@ -114,11 +127,11 @@ Azure Monitor также поддерживает сбор и анализ ме�
 
 HDInsight поддерживает аудит кластеров с помощью журналов Azure Monitor, импортируя следующие типы журналов:
 
-* `log_gateway_audit_CL`— Эта таблица предоставляет журналы аудита из узлов шлюза кластера, которые показывают успешные и неудачные попытки входа.
-* `log_auth_CL`— Эта таблица предоставляет журналы SSH с успешным и неудачным попытками входа.
-* `log_ambari_audit_CL`— Эта таблица предоставляет журналы аудита из Ambari.
-* `log_ranger_audti_CL`— Эта таблица предоставляет журналы аудита из Apache Ranger в кластерах ESP.
+* `log_gateway_audit_CL` — эта таблица содержит журналы аудита узлов шлюза кластера, которые показывают успешные и неудачные попытки входа.
+* `log_auth_CL` — эта таблица предоставляет журналы SSH с успешными и неудачными попытками входа.
+* `log_ambari_audit_CL` — эта таблица предоставляет журналы аудита из Ambari.
+* `log_ranger_audti_CL` — эта таблица предоставляет журналы аудита из Apache Ranger в кластерах ESP.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запрос журналов Azure Monitor для мониторинга кластеров HDInsight](hdinsight-hadoop-oms-log-analytics-use-queries.md)

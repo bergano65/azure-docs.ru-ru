@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: fdd91b62355b11ba99aafcda04f86282ce5a4f71
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 35046d33a85eaed913454f188f2a4526715526a9
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454744"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168780"
 ---
 # <a name="define-custom-r-modules-for-azure-machine-learning-studio-classic"></a>Определение пользовательских модулей R для Машинное обучение Azure Studio (классическая модель)
 
@@ -288,12 +288,12 @@ ms.locfileid: "75454744"
     * категориальные;
     * String
     * Метка
-    * Функция
+    * Компонент
     * Оценка
-    * Все
+    * All
   * **по умолчанию** — варианты выбора по умолчанию, допустимые для выбора столбца: 
     
-    * Нет
+    * None
     * NumericFeature
     * NumericLabel
     * NumericScore
@@ -313,7 +313,7 @@ ms.locfileid: "75454744"
     * AllLabel
     * AllFeature
     * AllScore
-    * Все
+    * All
 
 **DropDown**— указанный пользователем пронумерованный (раскрывающийся) список. Раскрывающийся список элементов, заданных в элементе **Properties** с помощью элемента **Item**. Элемент **id** для каждого параметра **Item** должен быть уникальной и допустимой переменной R. Значение элемента **name** параметра **Item** выступает в качестве отображаемого текста и значения, передаваемого в функцию R.
 

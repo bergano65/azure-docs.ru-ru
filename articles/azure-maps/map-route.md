@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: codepen
-ms.openlocfilehash: 359f2b42ca6f56087be53a5aeb328fe43a478d63
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 63f7eac52a555be1877f235bd2f7f1d9315d53d5
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988294"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77208511"
 ---
 # <a name="show-directions-from-a-to-b"></a>Отображение направлений от точки А до точки Б
 
@@ -43,7 +43,7 @@ ms.locfileid: "76988294"
 
 Последний блок кода задает границы сопоставлений с помощью свойства [сеткамера](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) на карте.
 
-Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются и задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Эта структура кода гарантирует, что результаты будут отображаться только после полной загрузки схемы.
+Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются внутри [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Эта структура кода гарантирует, что результаты будут отображаться только после полной загрузки схемы.
 
 ## <a name="query-the-route-via-fetch-api"></a>Отправка запроса через API FETCH
 
@@ -54,7 +54,7 @@ ms.locfileid: "76988294"
 
 Второй блок кода создает и добавляет на карту объект [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest).
 
-Третий блок кода создает точки начала и назначения для маршрута и добавляет их в источник данных. Инструкции по использованию [addPins](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) см. в разделе о [добавлении булавки на карту](map-add-pin.md).
+Третий блок кода создает начальную и конечную точки для маршрута. Затем он добавляет их в источник данных. Инструкции по использованию [addPins](map-add-pin.md) см. в разделе о [добавлении булавки на карту](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest).
 
 [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) отвечает за отображение линейных объектов в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) в качестве линий на карте. Четвертый блок кода позволяет создать и добавить на карту слой линий. Ознакомьтесь со свойствами слоя линий в разделе о классе [LineLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest).
 
@@ -64,9 +64,9 @@ ms.locfileid: "76988294"
 
 Последний блок кода использует [API выборки](https://fetch.spec.whatwg.org/) для выполнения запроса поиска в [Azure Maps API маршрута](https://docs.microsoft.com/rest/api/maps/route/getroutedirections). Затем выполняется синтаксический анализ ответа. Если ответ был успешным, сведения широты и долготы используются для создания массива с линией, соединяющей эти точки. Затем данные строки добавляются в источник данных для отрисовки маршрута на карте. См. инструкции по [добавлению линий на карту](map-add-line-layer.md).
 
-Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются и задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Опять же, мы хотим убедиться, что результаты отображаются после полной загрузки карт.
+Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются внутри [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Опять же, мы хотим убедиться, что результаты отображаются после полной загрузки карт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

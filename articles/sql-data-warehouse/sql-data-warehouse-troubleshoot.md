@@ -11,12 +11,12 @@ ms.date: 11/25/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: ce57c48e568e840f3a651a5530f3fba6c0be60b7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 4eec340a04b9cdbc85a2c8712a11d31132766206
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721053"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153372"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Устранение неполадок хранилища данных SQL Azure
 В этой статье даны рекомендации по устранению распространенных неполадок.
@@ -53,7 +53,7 @@ ms.locfileid: "76721053"
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Сообщение 40847: не удалось выполнить операцию, так как сервер достиг допустимой квоты в 45 000 единиц транзакций базы данных (DTU). | Либо Сократите [DWU](what-is-a-data-warehouse-unit-dwu-cdwu.md) базы данных, которую вы пытаетесь создать, либо [запросите увеличение квоты](sql-data-warehouse-get-started-create-support-ticket.md). |
 | Анализ использования пространства                              | Сведения об использовании пространства в системе см. в разделе [размеры таблиц]( ../sql-data-warehouse/sql-data-warehouse-tables-overview.md#table-size-queries) . |
-| Справка по управлению таблицами                                    | Дополнительные сведения об управлении таблицами см. в статье [Общие сведения о таблице] [обзор].  В этой статье также содержатся ссылки на более подробные разделы, такие как [типы данных таблиц](sql-data-warehouse-tables-data-types.md), [распространение таблицы](sql-data-warehouse-tables-distribute.md), [индексирование таблицы](sql-data-warehouse-tables-index.md), [секционирование таблицы](sql-data-warehouse-tables-partition.md), [Ведение статистики таблицы](sql-data-warehouse-tables-statistics.md) и [временные таблицы](sql-data-warehouse-tables-temporary.md). |
+| Справка по управлению таблицами                                    | Дополнительные сведения об управлении таблицами см. в статье [Обзор таблиц](../sql-data-warehouse/sql-data-warehouse-tables-overview.md) .  В этой статье также содержатся ссылки на более подробные разделы, такие как [типы данных таблиц](sql-data-warehouse-tables-data-types.md), [распространение таблицы](sql-data-warehouse-tables-distribute.md), [индексирование таблицы](sql-data-warehouse-tables-index.md), [секционирование таблицы](sql-data-warehouse-tables-partition.md), [Ведение статистики таблицы](sql-data-warehouse-tables-statistics.md) и [временные таблицы](sql-data-warehouse-tables-temporary.md). |
 | Индикатор выполнения прозрачного шифрования данных (TDE) не обновляется в портал Azure | Состояние прозрачного шифрования данных можно узнать с помощью [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption). |
 
 

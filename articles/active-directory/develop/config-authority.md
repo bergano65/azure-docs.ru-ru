@@ -3,22 +3,22 @@ title: Настройка поставщиков удостоверений (MSA
 titleSuffix: Microsoft identity platform
 description: Узнайте, как использовать различные центры, такие как B2C, облака независимых и гостевые пользователи, с MSAL для iOS и macOS.
 services: active-directory
-author: tylermsft
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/28/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: aaef7c4c0e2fa295e6e20976df5cce1523a70c43
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 4810de772e44be22ee5bd4a9fb6ef0ef756e62f4
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697784"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77085208"
 ---
 # <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Как настроить MSAL для iOS и macOS для использования разных поставщиков удостоверений
 
@@ -180,7 +180,7 @@ do{
 
 Если URL-адрес центра имеет значение `"login.microsoftonline.com/common"`, пользователь будет входить в его домашний клиент. Однако некоторым приложениям может потребоваться подписать пользователя в другом клиенте, и некоторые приложения работают только с одним клиентом.
 
-Чтобы подписать пользователя в определенном клиенте, настройте `MSALPublicClientApplication` с помощью определенного центра. Пример.
+Чтобы подписать пользователя в определенном клиенте, настройте `MSALPublicClientApplication` с помощью определенного центра. Пример:
 
 `https://login.microsoftonline.com/469fdeb4-d4fd-4fde-991e-308a78e4bea4`
 

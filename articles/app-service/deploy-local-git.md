@@ -6,18 +6,18 @@ ms.topic: article
 ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 2ae8b71a7d48949cd82765112752192aba54521f
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: efe4c07a6231e0b2c95b049db056a4e5d055db98
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75680959"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152998"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
 В этом пошаговом руководство показано, как развернуть приложение в [службе приложений Azure](overview.md) из репозитория Git на локальном компьютере.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните следующие шаги для изучения данного руководства.
 
@@ -50,6 +50,9 @@ ms.locfileid: "75680959"
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
 ```
+> [!NOTE]
+> Если вы используете план App-Service для Linux, необходимо добавить этот параметр:--Runtime Python | 3.7
+
 
 Чтобы создать приложение с поддержкой Git, выполните [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) в Cloud Shell с параметром `--deployment-local-git`. Замените \<App-name >, \<имя группы > и \<Plan-name > именами для нового приложения Git, его группой ресурсов Azure и планом службы приложений Azure.
 
@@ -142,14 +145,14 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
 
 При использовании Git для публикации в приложении службы приложений в Azure могут отобразиться следующие распространенные сообщения об ошибках:
 
-|Сообщение|Причина|Разрешение
+|Сообщение|Причина|Решение
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|Приложение не работает.|запуск приложения на портале Azure. Развертывание Git недоступно, если веб-приложение остановлено.|
-|`Couldn't resolve host 'hostname'`|Неверные сведения об адресе удаленного ресурса "Azure".|Используйте команду `git remote -v`, чтобы вывести список всех удаленных, а также связанный URL-адрес. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.|
+|`Couldn't resolve host 'hostname'`|Неверные сведения об адресе удаленного ресурса "Azure".|используйте команду `git remote -v`, чтобы вывести список всех удаленных репозиториев с соответствующими URL-адресами. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.|
 |`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|Вы не указали ветвь во время `git push`или не установили значение `push.default` в `.gitconfig`.|Снова запустите `git push`, указав главную ветвь: `git push azure master`.|
 |`src refspec [branchname] does not match any.`|Предпринята попытка принудительной отправки в ветвь, отличную от главной, в удаленной службе Azure.|Снова запустите `git push`, указав главную ветвь: `git push azure master`.|
 |`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию Git на локальном компьютере, чтобы увеличить `postBuffer`. Например: `git config --global http.postBuffer 524288000`.|
-|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node. js с файлом _Package. JSON_ , который указывает дополнительные необходимые модули.|Проверьте `npm ERR!` сообщения об ошибках до этой ошибки, чтобы получить дополнительные сведения о контексте сбоя. Ниже приведены известные причины этой ошибки, а также соответствующие сообщения `npm ERR!`.<br /><br />**Неправильный формат файла Package. JSON**: `npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
+|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node. js с файлом _Package. JSON_ , который указывает дополнительные необходимые модули.|Проверьте `npm ERR!` сообщения об ошибках до этой ошибки, чтобы получить дополнительные сведения о контексте сбоя. Ниже приведены известные причины этой ошибки, а также соответствующие сообщения `npm ERR!`.<br /><br />**Неправильный формат файла Package. JSON**: `npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или диспетчер конфигурации служб <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

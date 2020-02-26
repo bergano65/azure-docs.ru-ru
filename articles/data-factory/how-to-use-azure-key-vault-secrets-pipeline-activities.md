@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
-ms.openlocfilehash: 9ca2ea6a45bdf37f15f2ab4fd9c685f11f6d7f64
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 09051ad3633ddc720cb34d3d145ccf649fa9cb08
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031498"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77200118"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
@@ -63,7 +63,7 @@ ms.locfileid: "77031498"
     > [!CAUTION]
     > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, использующих это значение, параметр Secure input должен иметь значение true.
 
-5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity("Web"). Output. Value**.
+5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity(' web1 '). Output. Value**.
 
     ![Выражение кода](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 

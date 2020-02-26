@@ -8,23 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/13/2019
+ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: 4d5d3cc6159a4601f0a398e87b89eea9b8d3aba6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c12aaea1dbc99a3f6db064e03b4b49e569f15194
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446942"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77189055"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>Заметки о выпуске: пакет SDK для речевых устройств
 
 В следующих разделах перечислены изменения в последних выпусках.
 
+## <a name="speech-devices-sdk-190"></a>1\.9.0 пакета SDK для речевых устройств:
+
+- Предоставляются исходные двоичные файлы для [DDK урбеттер](https://aka.ms/sdsdk-download-urbetter) (Linux ARM64).
+- Теперь в Рубо v1 используется Maven для речевого пакета SDK
+- Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.9.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+
 ## <a name="speech-devices-sdk-170"></a>1\.7.0 пакета SDK для речевых устройств:
 
 - Поддержка ARM для Linux теперь поддерживается.
-- Предоставляются исходные двоичные файлы для Рубо v2 (Linux ARM64).
+- Предоставляются исходные двоичные файлы для [Рубо v2 DDK](https://aka.ms/sdsdk-download-roobov2) (Linux ARM64).
 - Пользователи Windows могут использовать `AudioConfig.fromDefaultMicrophoneInput()` или `AudioConfig.fromMicrophoneInput(deviceName)`, чтобы указать используемый микрофон.
 - Размер библиотеки оптимизирован.
 - Поддержка многофакторного распознавания с помощью одного объекта распознавателя речи и намерения.

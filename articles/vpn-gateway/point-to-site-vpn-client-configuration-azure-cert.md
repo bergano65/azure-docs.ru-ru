@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 9342a70e539c4a2717fe45426c26595285172681
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 18a9578cc454ea5259b9564d64dcd4308ee5ef87
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045782"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77148986"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -46,7 +46,6 @@ ms.locfileid: "76045782"
 
 ### <a name="zipps"></a>Создание файлов с помощью PowerShell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 1. При создании файлов конфигурации VPN-клиента установите для параметра AuthenticationMethod значение EapTls. Создайте конфигурацию VPN-клиента с помощью следующей команды:
 
@@ -112,7 +111,7 @@ ms.locfileid: "76045782"
    ![сертификат](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем щелкните **Continue** (Продолжить).
 
-   ![удостоверение](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
+   ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
    ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)

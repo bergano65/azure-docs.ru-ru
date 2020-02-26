@@ -6,14 +6,14 @@ tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 02/11/2020
 ms.author: cynthn
-ms.openlocfilehash: a7afb80276147c1562a5963a3ae9a319a8b73264
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 37e914fe6bafe9587be525faf3e01c897cdd8230
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544792"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162690"
 ---
 # <a name="preview-azure-spot-vms-for-virtual-machine-scale-sets"></a>Предварительная версия: виртуальные машины Azure для масштабируемых наборов виртуальных машин 
 
@@ -25,9 +25,8 @@ ms.locfileid: "76544792"
 > Экземпляры смесевых цветов в настоящее время доступны в общедоступной предварительной версии.
 > Эта предварительная версия не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >
-> На ранних этапах общедоступной предварительной версии экземпляры смесевых цветов будут иметь фиксированную цену, поэтому на основе цен не будет никаких вытеснения.
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 Цены на экземпляры смесевых переменных основаны на регионе и номере SKU. Дополнительные сведения см. в статье цены на [Linux](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/) и [Windows](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/windows/). 
 
@@ -58,7 +57,7 @@ ms.locfileid: "76544792"
 Процесс создания масштабируемого набора, использующего плашечные виртуальные машины, аналогичен описанному в [статье Приступая к работе](quick-create-portal.md). При развертывании масштабируемого набора можно задать параметр точки и политику вытеснения: ![создать масштабируемый набор с развернутыми виртуальными машинами](media/virtual-machine-scale-sets-use-spot/vmss-spot-portal-max-price.png)
 
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Процесс создания масштабируемого набора с плашечными виртуальными машинами аналогичен описанному в [статье Приступая к работе](quick-create-cli.md). Просто добавьте точку с приоритетом "--Priority" и добавьте `--max-price`. В этом примере мы используем `-1` для `--max-price`, поэтому экземпляр не будет удален на основе цены.
 
@@ -89,7 +88,7 @@ $vmssConfig = New-AzVmssConfig `
     --max-price -1
 ```
 
-## <a name="resource-manager-templates"></a>Шаблоны диспетчера ресурсов
+## <a name="resource-manager-templates"></a>Шаблоны Resource Manager
 
 Процесс создания масштабируемого набора, использующего плашечные виртуальные машины, аналогичен описанному в статье Приступая к работе для [Linux](quick-create-template-linux.md) или [Windows](quick-create-template-windows.md). 
 
@@ -105,7 +104,7 @@ $vmssConfig = New-AzVmssConfig `
 
 Чтобы удалить экземпляр после его исключения, измените параметр `evictionPolicy` на `Delete`.
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Вопрос.** После создания экземпляр будет таким же, как и стандартный экземпляр?
 
@@ -164,8 +163,8 @@ $vmssConfig = New-AzVmssConfig `
 | Оплата по мере использования                | Да                               |
 | Поставщик облачных служб (CSP) | [Обратитесь к партнеру](https://docs.microsoft.com/partner-center/azure-plan-get-started) |
 | Преимущества                     | Недоступно                     |
-| Организованные спонсорами презентации                    | Недоступно                     |
-| Бесплатное пробное использование                   | Недоступно                     |
+| Спонсируемой                    | Недоступно                     |
+| "Бесплатная пробная версия"                   | Недоступно                     |
 
 
 **Вопрос.** Где можно разместить вопросы?

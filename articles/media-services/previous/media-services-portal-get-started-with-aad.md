@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: b7962f42b4244121a67b88ef3bf789ce40f7b1e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4428187c985c1004c88f2ac20b0e5811803cce2a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64719622"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162775"
 ---
 # <a name="get-started-with-azure-ad-authentication-by-using-the-azure-portal"></a>Приступая к работе с аутентификацией Azure AD с помощью портала Azure
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Узнайте, как использовать аутентификацию Azure Active Directory (Azure AD) для доступа к API служб мультимедиа Azure с помощью портала Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure. Если у вас нет учетной записи Azure, начните с получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -64,7 +64,7 @@ ms.locfileid: "64719622"
 
 При подключении к API служб мультимедиа с помощью пакета SDK служб мультимедиа для Microsoft .NET требуемые значения доступны в самом пакете SDK. Дополнительные сведения см. в разделе [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью .NET](media-services-dotnet-get-started-with-aad.md).
 
-Если вы не используете клиентский пакет SDK служб мультимедиа для .NET, то вам необходимо вручную создать запрос маркера Azure AD, указав параметры, описанные ранее. Дополнительные сведения см. в разделе [Библиотеки проверки подлинности Azure Active Directory](../../active-directory/develop/active-directory-authentication-libraries.md).
+Если вы не используете клиентский пакет SDK служб мультимедиа для .NET, то вам необходимо вручную создать запрос маркера Azure AD, указав параметры, описанные ранее. Дополнительные сведения см. в разделе [Библиотеки проверки подлинности Azure Active Directory](../../active-directory/azuread-dev/active-directory-authentication-libraries.md).
 
 ## <a name="service-principal-authentication"></a>Проверка подлинности субъекта-службы
 
@@ -90,7 +90,7 @@ ms.locfileid: "64719622"
 
 Подключение к API служб мультимедиа с помощью пакета SDK служб мультимедиа для .NET описывается в разделе [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью .NET](media-services-dotnet-get-started-with-aad.md).
 
-Если вы не используете клиентский пакет SDK служб мультимедиа для .NET, то вам необходимо вручную создать запрос маркера Azure AD, указав параметры, описанные ранее. Дополнительные сведения см. в разделе [Библиотеки проверки подлинности Azure Active Directory](../../active-directory/develop/active-directory-authentication-libraries.md).
+Если вы не используете клиентский пакет SDK служб мультимедиа для .NET, то вам необходимо вручную создать запрос маркера Azure AD, указав параметры, описанные ранее. Дополнительные сведения см. в разделе [Библиотеки проверки подлинности Azure Active Directory](../../active-directory/azuread-dev/active-directory-authentication-libraries.md).
 
 ### <a name="get-the-client-id-and-client-secret"></a>Получение идентификатора клиента и секрета клиента
 

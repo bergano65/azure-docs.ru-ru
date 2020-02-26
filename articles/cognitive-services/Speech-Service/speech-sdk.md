@@ -3,25 +3,25 @@ title: О пакете SDK для распознавания речи — реч
 titleSuffix: Azure Cognitive Services
 description: Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям встроенный доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Эта статья содержит дополнительные сведения о пакете SDK для Windows, Linux и Android.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/10/2019
-ms.author: wolfma
-ms.openlocfilehash: ea879cbfc3b9b1d1a627add52f26a473aca53cdf
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.date: 02/13/2020
+ms.author: dapine
+ms.openlocfilehash: 04546883e6742086fa05fc450920b1026702bd08
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759881"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212522"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
 Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям доступ к функциям службы "Речь", что облегчает разработку программного обеспечения с поддержкой речи. В настоящее время пакеты SDK предоставляют доступ к **речевым** **трансляциям, преобразованию** **текста в речь**, **распознаванию**речи и **каналу голосовой речи прямой линии**.
 
-С помощью речевого пакета SDK можно легко записывать звук с микрофона, читать из потока или получать доступ к звуковым файлам из хранилища. Пакет SDK для служб "Речь" поддерживает распознавание речи для одноканальных 16-битных аудиофайлов в формате WAV/PCM с частотой 16 кГц/8 кГц. Дополнительные звуковые форматы поддерживаются с помощью [конечной точки передачи речи в текст](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) или [службы транскрипции пакетов](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
+С помощью речевого пакета SDK можно легко записывать звук с микрофона, читать из потока или получать доступ к звуковым файлам из хранилища. Пакет SDK для распознавания речи поддерживает 16-разрядный, 16 кГц/8 кГц, один канал для распознавания речи. Дополнительные звуковые форматы поддерживаются с помощью [конечной точки передачи речи в текст](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) или [службы транскрипции пакетов](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
 
 Общий обзор возможностей и поддерживаемых платформ можно найти на [странице записи](https://aka.ms/csspeech)документации.
 
@@ -31,7 +31,7 @@ ms.locfileid: "76759881"
 
 ## <a name="get-the-sdk"></a>Получение пакета SDK
 
-### <a name="windows"></a>Windows
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 > [!WARNING]
 > Пакет SDK для распознавания речи поддерживает Windows 10 или более поздние версии. Более ранние версии Windows **не поддерживаются**.
@@ -42,7 +42,7 @@ ms.locfileid: "76759881"
 
 * Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.8.0` в качестве зависимости.
 
-### <a name="linux"></a>Linux
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 > [!NOTE]
 > Сейчас поддерживаются только Ubuntu 16,04, Ubuntu 18,04 и Debian 9 на следующих целевых архитектурах:
@@ -76,9 +76,9 @@ sudo apt-get install libssl1.0.2 libasound2
 
 * C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
 
-  |путь|Description|
+  |путь|Описание|
   |-|-|
-  |`license.md`|Лицензия|
+  |`license.md`|лицензия|
   |`ThirdPartyNotices.md`|Уведомления сторонних производителей|
   |`include`|Файлы заголовков для C и C++|
   |`lib/x64`|Собственная библиотека x64 для связывания с приложением|
@@ -86,7 +86,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
   Чтобы создать приложение, скопируйте или переместите необходимые двоичные файлы (и библиотеки) в среду разработки. Включите их как обязательные в процесс сборки.
 
-### <a name="android"></a>Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0`.
 
@@ -106,9 +106,11 @@ sudo apt-get install libssl1.0.2 libasound2
 
 Пакет SDK для Java также входит в [пакет SDK для устройств распознавания речи](speech-devices-sdk.md).
 
+---
+
 [!INCLUDE [Get the samples](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

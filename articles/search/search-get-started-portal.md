@@ -2,18 +2,18 @@
 title: Создание индекса службы "Поиск Azure" на портале Azure
 titleSuffix: Azure Cognitive Search
 description: В этом кратком руководстве по порталу приводятся сведения об использовании мастера импорта данных для создания, загрузки и запроса первого индекса поиска службы "Когнитивный поиск Azure".
-author: HeidiSteen
+author: tchristiani
 manager: nitinme
-ms.author: heidist
+ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 11/04/2019
-ms.openlocfilehash: 2ae0e5b53d735b95ce1c3d2f9275456e41319242
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.date: 02/10/2020
+ms.openlocfilehash: 6a3bbdae0d3fa898621c1c805388252beb891ecf
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74901001"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121670"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "74901001"
 
 Если этих инструментов вам недостаточно, попробуйте применить [программирование службы "Когнитивный поиск Azure" в приложении .NET с помощью кода](search-howto-dotnet-sdk.md) или [Postman для выполнения вызовов REST API](search-get-started-postman.md). 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -266,7 +266,7 @@ ms.locfileid: "74901001"
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью мастера портала можно создать готовое к использованию веб-приложение, выполняемое в браузере. Вы можете испытать этот мастер с небольшим индексом, который вы создали, или использовать один из встроенных примеров набора данных для расширенного поиска.
 

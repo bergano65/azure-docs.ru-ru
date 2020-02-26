@@ -77,7 +77,7 @@
           href: notifications.md
         - name: Удаление управляемого домена
           href: delete-aadds.md
-        - name: Миграция из классического развертывания (предварительная версия)
+        - name: Миграция из классического развертывания
           href: migrate-from-classic-vnet.md
         - name: Изменение SKU
           href: change-sku.md

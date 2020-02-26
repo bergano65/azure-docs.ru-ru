@@ -6,13 +6,13 @@ ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 11/22/2019
-ms.openlocfilehash: 0649908e4767e48d23306c72b8db92dea9f26284
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.date: 02/05/2020
+ms.openlocfilehash: 035f819cfaad82373f7cb55a7bb2d14fc53bb49b
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77030934"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064637"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -29,7 +29,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 
 Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
-|Служебная программа | Описание|
+|Служебная программа | Description|
 |---|---|
 |[PowerShell AZ](https://docs.microsoft.com/powershell/azure)|[Set-аздинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
 |[AzureRM PowerShell](https://docs.microsoft.com/powershell/azure/azurerm) |[Set-азурермхдинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
@@ -126,7 +126,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 yarn application -kill <application_id>
 ```
 
-Например:
+Пример:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -217,6 +217,10 @@ org.apache.http.conn.HttpHostConnectException: Connect to active-headnode-name.s
 
 Размещение трех рабочих узлов является более дорогостоящим, чем масштабирование до одного рабочего узла, но не позволит кластеру зависнуть в защищенном режиме.
 
+### <a name="scale-hdinsight-down-to-one-worker-node"></a>Масштабирование HDInsight до одного рабочего узла
+
+Даже если кластер масштабируется до 1 узла, Рабочий узел 0 по-прежнему будет оставаться нестабильным. Рабочий узел 0 не может быть списан.
+
 #### <a name="run-the-command-to-leave-safe-mode"></a>Выполнение команды для отключения безопасного режима
 
 Последний вариант — выполнить команду "выйти из безопасного режима". Если известно, что причина, по которой HDFS входит в режим безопасного режима, заключается в наличии файла Hive в разделе-Replication, можно выполнить следующую команду, чтобы выйти из безопасного режима:
@@ -243,7 +247,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

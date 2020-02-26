@@ -1,5 +1,5 @@
 ---
-title: Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
+title: Добавление назначений ролей с помощью шаблонов RBAC и Azure Resource Manager
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и шаблонов Azure Resource Manager.
 services: active-directory
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: aeb4bfbc40196575e2cb812738a9ab5de991d2aa
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 9f817880f938f5d03024e3aacd9b84817a5ac721
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981020"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138299"
 ---
 # <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
 

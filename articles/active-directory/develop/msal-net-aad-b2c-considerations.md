@@ -3,7 +3,7 @@ title: Azure AD B2C (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании Azure AD B2C с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -13,12 +13,12 @@ ms.date: 10/29/2019
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: f28b7abc2b3a9ba753a2f7923c9cfed1897c8522
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 697b4bc8e3a25085ac6f7d600ea2227dd30a6624
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76834201"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77084005"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -78,7 +78,7 @@ AuthenticationResult ar = await application .AcquireTokenInteractive(scopes)
 
 - `policy` быть одной из предыдущих строк (например, `PolicySignUpSignIn`).
 - `ParentActivityOrWindow` требуется для Android (действие) и необязательно для других платформ, поддерживающих родительский пользовательский интерфейс, например Windows в Windows и UIViewController в iOS. Дополнительные сведения см. в [диалоговом окне пользовательского интерфейса](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively#withparentactivityorwindow).
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — это метод, который находит учетную запись для данной политики. Пример.
+- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — это метод, который находит учетную запись для данной политики. Пример:
 
   ```csharp
   private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
@@ -182,6 +182,6 @@ MSAL.Net поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 
-| Пример | Платформа | Description|
+| Образец | Платформа | Description|
 |------ | -------- | -----------|
 |[Active-Directory-B2C-Xamarin-Native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Простое приложение Xamarin Forms, демонстрирующие использование MSAL.NET для проверки подлинности пользователей с помощью Azure AD B2C, а также доступа к веб-API с результирующими маркерами.|

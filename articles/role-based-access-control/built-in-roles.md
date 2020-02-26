@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 01/17/2020
+ms.date: 02/13/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: b2a49528ca3c2b55c02f3bda89b3722ee8fef535
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 9858f7ac25f2063e62dce0322f1859a0a7fcf83b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264260"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198672"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "76264260"
 
 
 > [!div class="mx-tableFixed"]
-> | Встроенные роли | Description | Идентификатор |
+> | Встроенные роли | Описание | Id |
 > | --- | --- | --- |
 > | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. | 8e3af657-a8ff-443c-a75c-2fe8c4bcb635 |
 > | [Участник](#contributor) | Позволяет управлять всем, кроме предоставления доступа к ресурсам. | b24988ac-6180-42a0-ab88-20f7382dd24c |
@@ -152,9 +152,9 @@ ms.locfileid: "76264260"
 > | [владелец данных BLOB-объектов хранилища](#storage-blob-data-owner); | Предоставляет полный доступ к контейнерам и данным больших двоичных объектов службы хранилища Azure, включая назначение управления доступом POSIX. Чтобы узнать, какие действия необходимы для конкретной операции с данными, см. раздел [разрешения на вызов операций с данными BLOB-объектов и очередей](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | [читатель данных больших двоичных объектов хранилища](#storage-blob-data-reader). | Прочтите и перечислите контейнеры и большие двоичные объекты службы хранилища Azure. Чтобы узнать, какие действия необходимы для конкретной операции с данными, см. раздел [разрешения на вызов операций с данными BLOB-объектов и очередей](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | [Делегирование BLOB-объектов хранилища](#storage-blob-delegator) | Получите ключ делегирования пользователя, который затем можно использовать для создания подписи общего доступа для контейнера или большого двоичного объекта, подписанного с помощью учетных данных Azure AD. Дополнительные сведения см. [в разделе Создание SAS для делегирования пользователей](https://docs.microsoft.com/rest/api/storageservices/create-user-delegation-sas). | db58b8e5-c6ad-4a2a-8342-4190687cbf4a |
-> | [Участник общей папки SMB данных файлов хранилища](#storage-file-data-smb-share-contributor) | Разрешает доступ на чтение, запись и удаление в общих файловых ресурсах службы хранилища Azure через SMB. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
-> | [Участник хранилища данных файлового ресурса SMB с повышенными правами](#storage-file-data-smb-share-elevated-contributor) | Разрешение на чтение, запись, удаление и изменение разрешений NTFS в общих файловых ресурсах службы хранилища Azure через SMB. | a7264617-510b-434b-a828-9731dc254ea7 |
-> | [Средство чтения общего ресурса SMB с данными файлов хранилища](#storage-file-data-smb-share-reader) | Разрешает доступ на чтение к файловому ресурсу Azure через SMB. | aba4ae5f-2193-4029-9191-0cb91df5e314 |
+> | [Участник общей папки SMB данных файлов хранилища](#storage-file-data-smb-share-contributor) | Разрешает доступ на чтение, запись и удаление для файлов и каталогов в общих файловых ресурсах Azure. Эта роль не имеет встроенных эквивалентов на файловых серверах Windows. | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
+> | [Участник хранилища данных файлового ресурса SMB с повышенными правами](#storage-file-data-smb-share-elevated-contributor) | Разрешение на чтение, запись, удаление и изменение списков управления доступом для файлов и каталогов в общих папках Azure. Эта роль эквивалентна общей папке ACL для изменения файловых серверов Windows. | a7264617-510b-434b-a828-9731dc254ea7 |
+> | [Средство чтения общего ресурса SMB с данными файлов хранилища](#storage-file-data-smb-share-reader) | Разрешает доступ на чтение к файлам и каталогам в общих файловых ресурсах Azure. Эта роль эквивалентна общей папке ACL для чтения на файловых серверах Windows. | aba4ae5f-2193-4029-9191-0cb91df5e314 |
 > | [Участник данных очереди хранилища](#storage-queue-data-contributor) | Чтение, запись и удаление очередей службы хранилища Azure и сообщений очереди. Чтобы узнать, какие действия необходимы для конкретной операции с данными, см. раздел [разрешения на вызов операций с данными BLOB-объектов и очередей](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
 > | [Обработчик сообщений данных очереди хранилища](#storage-queue-data-message-processor) | Просмотр, извлечение и удаление сообщения из очереди службы хранилища Azure. Чтобы узнать, какие действия необходимы для конкретной операции с данными, см. раздел [разрешения на вызов операций с данными BLOB-объектов и очередей](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
 > | [Отправитель сообщений очереди хранилища](#storage-queue-data-message-sender) | Добавление сообщений в очередь службы хранилища Azure. Чтобы узнать, какие действия необходимы для конкретной операции с данными, см. раздел [разрешения на вызов операций с данными BLOB-объектов и очередей](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
@@ -184,7 +184,7 @@ ms.locfileid: "76264260"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="contributor"></a>Участник
+## <a name="contributor"></a>Contributor
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -422,7 +422,8 @@ ms.locfileid: "76264260"
 > | **Id** | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
-> | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
+> | Microsoft.Insights/alertRules/* | Создание классических правил генерации оповещений и управление ими |
+> | Microsoft. Insights/Метрикалертс/* | Создание новых правил генерации оповещений и управление ими |
 > | Microsoft.Insights/components/* | Создание компонентов Insights и управление ими |
 > | Microsoft.Insights/webtests/* | Создание веб-тестов и управление ими |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
@@ -2482,7 +2483,7 @@ ms.locfileid: "76264260"
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/switchprotection/action | Переключает контейнер защиты. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailover/action | Тестирование отработки отказа |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailoverCleanup/action | Тестирует очистку отработки отказа. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Переход на другой ресурс |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Отработка отказа |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/updateMobilityService/action | Обновляет службу Mobility Service. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывание сопоставлений контейнера защиты |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
@@ -2915,7 +2916,7 @@ ms.locfileid: "76264260"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на чтение, запись и удаление в общих файловых ресурсах службы хранилища Azure через SMB. |
+> | **Описание** | Разрешает доступ на чтение, запись и удаление для файлов и каталогов в общих файловых ресурсах Azure. Эта роль не имеет встроенных эквивалентов на файловых серверах Windows. |
 > | **Id** | 0c867c2a-1d8c-454a-a3db-ab2ea1bdc8bb |
 > | **Действия** |  |
 > | *Нет* |  |
@@ -2932,7 +2933,7 @@ ms.locfileid: "76264260"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешение на чтение, запись, удаление и изменение разрешений NTFS в общих файловых ресурсах службы хранилища Azure через SMB. |
+> | **Описание** | Разрешение на чтение, запись, удаление и изменение списков управления доступом для файлов и каталогов в общих папках Azure. Эта роль эквивалентна общей папке ACL для изменения файловых серверов Windows. |
 > | **Id** | a7264617-510b-434b-a828-9731dc254ea7 |
 > | **Действия** |  |
 > | *Нет* |  |
@@ -2950,7 +2951,7 @@ ms.locfileid: "76264260"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ на чтение к файловому ресурсу Azure через SMB. |
+> | **Описание** | Разрешает доступ на чтение к файлам и каталогам в общих файловых ресурсах Azure. Эта роль эквивалентна общей папке ACL для чтения на файловых серверах Windows. |
 > | **Id** | aba4ae5f-2193-4029-9191-0cb91df5e314 |
 > | **Действия** |  |
 > | *Нет* |  |
@@ -3220,7 +3221,7 @@ ms.locfileid: "76264260"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)

@@ -5,17 +5,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 06/20/2019
+ms.date: 01/16/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 4725329ace12a2bfb285253c52249f242da31619
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ddd4f45e88c0bcc63fb62cc816fae4dbad255841
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75970214"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157590"
 ---
-# <a name="introduction-to-azure-storage"></a>Общие сведения о хранилище Azure
+# <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
 Служба хранилища Azure — это облачное решение от Майкрософт, позволяющее реализовать современные сценарии хранения данных. В службе хранилища Azure предоставляется хранилище с высокой масштабируемостью для объектов данных, служба файловой системы для облака, хранилище сообщений для надежного обмена сообщениями, а также хранилище NoSQL. Служба хранилища Azure отличается следующими преимуществами:
 
@@ -120,17 +120,15 @@ ms.locfileid: "75970214"
 
 ## <a name="redundancy"></a>Избыточность
 
-Чтобы обеспечить сохранность данных, служба хранилища Azure реплицирует несколько копий данных. При настройке учетной записи хранения вы выбираете опцию репликации.
+Чтобы обеспечить устойчивую работу с данными, служба хранилища Azure хранит несколько копий данных. При настройке учетной записи хранения вы выбираете опцию репликации.
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
-
-См. дополнительные сведения об аварийном восстановлении в статье [Аварийное восстановление и отработка отказа хранилища учетной записи (предварительная версия) в службе хранилища Azure](storage-disaster-recovery-guidance.md).
 
 ## <a name="transferring-data-to-and-from-azure-storage"></a>Перемещение данных в службу хранилища Azure и обратно
 
 Существует несколько способов для перемещения данных в службу хранилища Azure и из нее. Выбор способа зависит от размера набора данных и пропускной способности сети. Дополнительные сведения см. в статье [Выбор решения Azure для передачи данных](storage-choose-data-transfer-solution.md).
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 Подробные сведения о ценах на службу хранилища Azure см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/blobs/).
 

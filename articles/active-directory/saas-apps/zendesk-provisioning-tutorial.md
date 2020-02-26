@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка автоматической подготовки пользователей с помощью Azure Active Directory для приложения Zendesk | Документация Майкрософт
+title: Руководство по настройке автоматической подготовки пользователей с помощью Azure Active Directory для приложения Zendesk | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отмены предоставления учетных записей пользователей в zendesk.
 services: active-directory
 documentationcenter: ''
@@ -16,19 +16,19 @@ ms.topic: article
 ms.date: 08/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f9d819533b97a126a324ab867b7185fd6415847
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: a480119ee88521b920be88669f6d80e3754d24d3
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851965"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062758"
 ---
-# <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Учебник. Настройка Zendesk для автоматической подготовки пользователей
+# <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство по настройке Zendesk для автоматической подготовки пользователей
 
 В этом руководстве описываются действия, которые необходимо выполнить в Zendesk и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отмены наполнения пользователей и групп в zendesk.
 
 > [!NOTE]
-> В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в статье Автоматизация подготовки пользователей и ее отработки в приложения SaaS (программное обеспечение как услуга) с Azure Active Directory](../manage-apps/user-provisioning.md).
+> В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в статье Автоматизация подготовки пользователей и ее отработки в приложения SaaS (программное обеспечение как услуга) с Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 ## <a name="prerequisites"></a>предварительные требования
 
@@ -62,7 +62,7 @@ ms.locfileid: "68851965"
 
 ## <a name="assign-users-to-zendesk"></a>Назначение пользователей в Zendesk
 
-Azure Active Directory использует концепцию, называемую назначениями, чтобы определить, какие пользователи должны получать доступ к выбранным приложениям. В контексте автоматической подготовки учетных записей пользователей синхронизируются только те пользователи или группы, которые были назначены приложению в Azure AD.
+Azure Active Directory использует концепцию, называемую *назначениями* , чтобы определить, какие пользователи должны получать доступ к выбранным приложениям. В контексте автоматической подготовки учетных записей пользователей синхронизируются только те пользователи или группы, которые были назначены приложению в Azure AD.
 
 Перед настройкой и включением автоматической подготовки пользователей решите, каким пользователям или группам в Azure AD нужен доступ к zendesk. Чтобы назначить этих пользователей или группы для Zendesk, следуйте инструкциям в статье [Назначение пользователя или группы корпоративному приложению](../manage-apps/assign-user-or-group-access-portal.md).
 
@@ -83,7 +83,7 @@ Azure Active Directory использует концепцию, называем
 
 ### <a name="configure-automatic-user-provisioning-for-zendesk-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zendesk в Azure AD
 
-1. Войдите на [портале Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > **Zendesk**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > **Zendesk**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -105,9 +105,9 @@ Azure Active Directory использует концепцию, называем
 
    * В поле **секретный токен** введите маркер секрета, как описано в шаге 6.
 
-   * В поле **домен введите поддомен** клиента zendesk. Например, для учетной записи с URL-адресом `https://my-tenant.zendesk.com`клиента в качестве дочернего домена используется **Мой клиент**.
+   * В поле **домен введите поддомен** клиента zendesk. Например, для учетной записи с URL-адресом клиента `https://my-tenant.zendesk.com`поддоменом является **My-клиент**.
 
-6. Секретный маркер для учетной записи Zendesk находится в параметрах**API** >  **администратора** > . Убедитесь, что для **доступа к маркеру** задано значение **включено**.
+6. Секретный маркер для учетной записи Zendesk находится в **параметрах** >  > **API** **администратора** . Убедитесь, что для **доступа к маркеру** задано значение **включено**.
 
     ![Параметры администратора Zendesk](./media/zendesk-provisioning-tutorial/ZenDesk4.png)
 
@@ -139,7 +139,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Атрибуты группы сопоставления Zendesk](./media/zendesk-provisioning-tutorial/ZenDesk13.png)
 
-14. Чтобы настроить фильтры области, следуйте инструкциям в [руководстве по фильтрации областей](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+14. Чтобы настроить фильтры области, следуйте инструкциям в [руководстве по фильтрации областей](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 15. Чтобы включить службу подготовки Azure AD для Zendesk, в разделе **Параметры** измените значение параметра **состояние подготовки** на **включено**.
 
@@ -157,7 +157,7 @@ Azure Active Directory использует концепцию, называем
 
 В разделе **сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам в отчет о действиях по подготовке. В отчете описаны все действия, выполняемые службой подготовки Azure AD в zendesk.
 
-Сведения о журналах подготовки Azure AD см. в руководстве [по отчетам об автоматической подготовке учетных записей пользователей](../manage-apps/check-status-user-account-provisioning.md).
+Сведения о журналах подготовки Azure AD см. в руководстве [по отчетам об автоматической подготовке учетных записей пользователей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
@@ -167,12 +167,12 @@ Azure Active Directory использует концепцию, называем
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 [1]: ./media/zendesk-tutorial/tutorial_general_01.png

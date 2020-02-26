@@ -2,21 +2,21 @@
 title: Задачи администратора учетной записи на портале Azure
 description: Описание выполнения операций по оплате на портале Azure
 author: bandersmsft
-manager: jureid
+manager: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 02/10/2020
 ms.author: banders
-ms.openlocfilehash: 2fadd0b6eb0951031a9d577b2fd3a3d497076dd8
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: 2f858fa7715145d55cf1c978b9c368e1f6586dce
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75990116"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132133"
 ---
 # <a name="account-administrator-tasks-in-the-azure-portal"></a>Задачи администратора учетной записи на портале Azure
 
@@ -29,13 +29,18 @@ ms.locfileid: "75990116"
 
 ## <a name="navigate-to-your-subscriptions-payment-methods"></a>Переход к методам оплаты подписки
 
-1. Войдите на [портал Azure](https://portal.azure.com) в качестве администратора учетной записи.
+1. Войдите на [портал Azure](https://portal.azure.com) в качестве администратора учетной записи. 
+
 1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
     
     ![Снимок экрана: поиск по фразе "Управление затратами + выставление счетов" ](./media/account-admin-tasks/search-bar.png)
 
-1. В списке **Мои подписки** выберите подписку, для которой вы хотите добавить кредитную карту.
-    ![Снимок экрана: обзор сетки "Мои подписки"](./media/account-admin-tasks/cost-management-billing-overview-x.png)
+1. В списке **Мои подписки** выберите подписку, для которой вы хотите добавить кредитную карту. 
+   
+   ![Снимок экрана: обзор сетки "Мои подписки"](./media/account-admin-tasks/cost-management-billing-overview-x.png)
+   
+   > [!NOTE]
+   > Если вы не видите некоторые подписки, это может быть вызвано тем, что в какой-то момент вы изменили каталог подписки. Для этих подписок необходимо переключить каталог в исходный каталог (каталог, в котором вы первоначально подписались). Затем повторите шаг 2. 
 
 1. Выберите **Методы оплаты**.
 
@@ -119,10 +124,13 @@ ms.locfileid: "75990116"
 
     ![Снимок экрана: поиск по фразе "Управление затратами + выставление счетов" ](./media/account-admin-tasks/search-bar.png)
 
-1. В списке **Мои подписки** выберите подписку Visual Studio Enterprise.
-    
-    ![Снимок экрана: обзор сетки "Мои подписки"](./media/account-admin-tasks/cost-management-overview-msdn-x.png)
+1. В списке **Мои подписки** выберите подписку Visual Studio Enterprise. 
 
+   ![Снимок экрана: обзор сетки "Мои подписки"](./media/account-admin-tasks/cost-management-overview-msdn-x.png)
+
+    > [!NOTE]
+    > Если вы не видите некоторые подписки Visual Studio, это может быть вызвано тем, что в какой-то момент вы изменили каталог подписки. Для этих подписок необходимо переключить каталог в исходный каталог (каталог, в котором вы первоначально подписались). Затем повторите шаг 2.
+    
 1. В разделе обзора подписки щелкните оранжевый баннер, чтобы снять ограничение на предельную сумму расходов.
     
     ![Снимок экрана: баннер для удаления предельной суммы расходов](./media/account-admin-tasks/msdn-remove-spending-limit-banner-x.png)
@@ -144,10 +152,13 @@ ms.locfileid: "75990116"
 
     ![Снимок экрана: поиск по фразе "Управление затратами + выставление счетов" ](./media/account-admin-tasks/search-bar.png)
 
-1. В списке **Мои подписки** выберите подписку Azure с открытой лицензией.
-   
+1. В списке **Мои подписки** выберите подписку Azure с открытой лицензией. 
+
     ![Снимок экрана: обзор сетки "Мои подписки"](./media/account-admin-tasks/cost-management-overview-aio-x.png)
 
+   > [!NOTE]
+   > Если вы не видите ваши подписки, это может быть вызвано тем, что в какой-то момент вы изменили ее каталог. Вам нужно переключить каталог подписки в исходный каталог (каталог, в котором вы первоначально подписались). Затем повторите шаг 2.
+    
 1. Выберите **Кредитная история**.
     
     ![Снимок экрана: кредитная история](./media/account-admin-tasks/aio-credit-history-blade.png)
@@ -170,7 +181,7 @@ ms.locfileid: "75990116"
 
 1. Щелкните **Применить**.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 Мы не поддерживаем виртуальные или предоплатные карты. Если при добавлении или изменении данных действительной кредитной карты возникают ошибки, запустите браузер в конфиденциальном режиме.
 
 ## <a name="next-steps"></a>Дальнейшие действия

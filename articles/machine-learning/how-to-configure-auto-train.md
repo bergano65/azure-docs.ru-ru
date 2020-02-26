@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: b4396c82851969b39841ba77fb8aba9679363474
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b7f837c56214d2d01d0f119e0107a095bcfd782b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986501"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198775"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -174,12 +174,14 @@ automl_config = AutoMLConfig(task = "classification")
 
 Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) для ([классификация](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification), [Прогнозирование](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting)и [регрессия](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression)).
 
+Для автоматического выполнения проверки машинного обучения необходимо, чтобы в `experiment_timeout_minutes` был установлен минимальный тайм-аут, равный 15 минутам, чтобы избежать ошибок времени ожидания эксперимента.
+
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика определяет метрику, используемую во время обучения модели для оптимизации. Доступные метрики, которые можно выбрать, определяются выбранным типом задачи, а в следующей таблице показаны допустимые основные метрики для каждого типа задачи.
 
 |Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-|accuracy| spearman_correlation; | spearman_correlation;
+|точность| spearman_correlation; | spearman_correlation;
 |AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
 |average_precision_score_weighted | r2_score; | r2_score;
 |norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
@@ -189,12 +191,18 @@ automl_config = AutoMLConfig(task = "classification")
 
 ### <a name="data-featurization"></a>Добавление признаков данных
 
-В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) для помощи в *определенных* алгоритмах, которые чувствительны к функциям различных масштабов.  Однако можно также включить дополнительные Добавление признаков, например отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess).
+В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) для помощи в *определенных* алгоритмах, которые чувствительны к функциям различных масштабов.  Однако можно также включить дополнительные Добавление признаков, например отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#featurization).
 
-Чтобы включить этот Добавление признаков, укажите `"featurization": 'auto'` для [класса`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
+При настройке экспериментов можно включить дополнительные параметры `featurization`. В следующей таблице показаны допустимые параметры для Добавление признаков в [классе`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
+
+|Конфигурация Добавление признаков | Описание |
+| ------------- | ------------- |
+|`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг добавление признаков. [Узнайте, как настроить добавление признаков](how-to-configure-auto-train.md#customize-feature-engineering).|
+|`"featurization": 'off'`| Указывает, что шаг добавление признаков не должен выполняться автоматически.|
+|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [шаги снятие данных и добавление признаков](how-to-create-portal-experiments.md#advanced-featurization-options) выполняются автоматически.|
 
 > [!NOTE]
-> Этапы предварительной обработки автоматизированного машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовой формат и т. д.) становятся частью базовой модели. При использовании модели для прогнозирования эти этапы предварительной обработки, которые выполнялись во время обучения, автоматически выполняются для входных данных.
+> Автоматические шаги Добавление признаков машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовые и т. д.) становятся частью базовой модели. При использовании модели для прогнозов те же действия Добавление признаков, которые применяются во время обучения, автоматически применяются к входным данным.
 
 ### <a name="time-series-forecasting"></a>Прогнозирование временных рядов
 Для задачи "`forecasting` временных рядов" требуются дополнительные параметры в объекте конфигурации:
@@ -373,7 +381,7 @@ best_run, fitted_model = automl_run.get_output()
   >[!Note]
   >Используйте "тимесериестрансформер" для задачи = "прогнозирование"; в противном случае используйте "Преобразователь" для задачи "регрессия" или "Классификация".
 
-  Выходные данные:
+  Выходные данные.
   ```
   [{'RawFeatureName': 'A',
     'TypeDetected': 'Numeric',
@@ -399,16 +407,16 @@ best_run, fitted_model = automl_run.get_output()
 
    Где:
 
-   |Выходные данные|Определение|
+   |Вывод|Определение|
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|
-   |Рывает|Указывает, была ли функция ввода удалена или использована.|
+   |Выполнен сброс|Указывает, была ли функция ввода удалена или использована.|
    |енгинирингфеатурекаунт|Количество функций, созданных с помощью автоматизированных преобразований «разработка компонентов».|
    |Преобразования|Список преобразований, применяемых к функциям ввода для создания сконструированных функций.|
    
 ### <a name="customize-feature-engineering"></a>Настройка проектирования характеристик
-Чтобы настроить проектирование характеристик, укажите `"feauturization":FeaturizationConfig`.
+Чтобы настроить проектирование характеристик, укажите `"featurization": FeaturizationConfig`.
 
 Поддерживаемые настройки включают в себя:
 
@@ -513,7 +521,7 @@ class_prob = fitted_model.predict_proba(X_test)
 
 Общие сведения о том, как пояснения к модели и важность признаков можно включить в других областях пакета SDK за пределами автоматизированного машинного обучения, см. в статье о [концепции](how-to-machine-learning-interpretability.md) , посвященной возможностям интерпретации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 

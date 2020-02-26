@@ -1,0 +1,11 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Active Directory
+      tocHref: /azure/active-directory/
+      topicHref: /azure/active-directory/index
+      items:
+        - name: "Azure\_AD для разработчиков"
+          tocHref: /azure/active-directory/develop/
+          topicHref: /azure/active-directory/azuread-dev/index

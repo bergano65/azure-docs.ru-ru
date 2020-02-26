@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 83717f9a78d80923f020ab699be9ddabbbcc12ef
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 0f426e7a87204acd4be6529f7dd11a954f23491a
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700011"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159477"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 
@@ -32,7 +32,7 @@ ms.locfileid: "76700011"
 
 Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
 
-| Тип | Справочные материалы |
+| Тип | Справочник |
 | --- | --- |
 | .NET; NuGet | Microsoft.IdentityModel.Protocol.Extensions |
 | .NET; NuGet | Microsoft.Owin |
@@ -47,7 +47,7 @@ ms.locfileid: "76700011"
 
 Дополнительные ссылки, если выбран параметр **Чтение данных каталога**
 
-| Тип | Справочные материалы |
+| Тип | Справочник |
 | --- | --- |
 | .NET; NuGet | EntityFramework |
 | .NET        | EntityFramework.SqlServer (только для Visual Studio 2015) |
@@ -61,7 +61,7 @@ ms.locfileid: "76700011"
 
 Следующие ссылки удалены (только для проектов ASP.NET 4, например в Visual Studio 2015):
 
-| Тип | Справочные материалы |
+| Тип | Справочник |
 | --- | --- |
 | .NET; NuGet | Microsoft.AspNet.Identity.Core |
 | .NET; NuGet | Microsoft.AspNet.Identity.EntityFramework |
@@ -164,4 +164,4 @@ ms.locfileid: "76700011"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
-- [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)
+- [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

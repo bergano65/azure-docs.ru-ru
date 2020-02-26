@@ -94,21 +94,17 @@
       href: user-help-device-remediation.md
 - name: Справка по порталу "Мои приложения"
   items:
-    - name: Доступ к порталу "Мои приложения" и его использование
+    - name: Вход на портал "Мои приложения" и его использование
       href: my-apps-portal-end-user-access.md
     - name: Изменение или обновление данных профиля
       href: my-apps-portal-end-user-update-profile.md
     - name: Обновление сведений о группах
       href: my-apps-portal-end-user-groups.md
+    - name: Упорядочение приложений с использованием коллекций
+      href: my-applications-portal-workspaces.md
+    - name: Изменение или отмена разрешений приложения
+      href: my-applications-portal-permissions-saved-accounts.md
     - name: Выполнение собственных проверок доступа
       href: my-apps-portal-end-user-access-reviews.md
     - name: Устранение неполадок
       href: my-apps-portal-end-user-troubleshoot.md
-- name: Справка по предварительной версии раздела "Мои приложения" на портале
-  items:
-    - name: Доступ к порталу "Мои приложения" и его использование
-      href: my-applications-portal-access.md
-    - name: Доступ к рабочим областям и их использование
-      href: my-applications-portal-workspaces.md
-    - name: Изменение или отмена разрешений приложения
-      href: my-applications-portal-permissions-saved-accounts.md

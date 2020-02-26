@@ -7,33 +7,33 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 480ceb4e13843ebeedf155f31aedacc5439a38de
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: ca742483bc8977327003ee18e9716ef9c43ebfe3
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74047419"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251725"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью Azure PowerShell
 
 Вы можете создать [шлюз приложений](overview.md) с сертификатом для выполнения функций моста SSL с помощью Azure PowerShell. Правило маршрутизации используется для перенаправления трафика HTTP в HTTPS-порт в шлюзе приложений. В этом примере также создается [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) с двумя экземплярами виртуальных машин, предназначенный для внутреннего пула шлюза приложений. 
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создать самозаверяющий сертификат;
+> * Создание самозаверяющего сертификата
 > * настройка сети;
 > * создание шлюза приложений с сертификатом;
 > * добавление прослушивателя и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с внутренним пулом по умолчанию.
+> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Для работы с этим руководством требуется модуль Azure PowerShell версии 1.0.0 и выше. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд в этом руководстве необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="create-a-self-signed-certificate"></a>создать самозаверяющий сертификат;
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
 Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этом руководстве мы создадим самозаверяющий сертификат с помощью [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate). Вы можете использовать [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) с возвращенным отпечатком, чтобы экспортировать PFX-файл из сертификата.
 
@@ -134,9 +134,9 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-default-listener-and-rule"></a>Создание прослушивателя по умолчанию и правила
 
-Прослушиватель требуется, чтобы шлюз приложений правильно маршрутизировал трафик в серверный пул. В этом примере создается базовый прослушиватель, который ожидает передачи трафика HTTPS по корневому URL-адресу. 
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом примере создается базовый прослушиватель, который ожидает передачи трафика HTTPS по корневому URL-адресу. 
 
-Создайте объект сертификата с помощью команды [New-азаппликатионгатевайсслцертификате](/powershell/module/az.network/new-azapplicationgatewaysslcertificate) , а затем создайте прослушиватель с именем *AppGatewayHttpListener* , используя [New-азаппликатионгатевайхттплистенер](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с интерфейсной конфигурацией, интерфейсным портом и ранее созданным сертификатом. Правило требуется, чтобы указать прослушивателю, какой серверный пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Создайте объект сертификата с помощью команды [New-азаппликатионгатевайсслцертификате](/powershell/module/az.network/new-azapplicationgatewaysslcertificate) , а затем создайте прослушиватель с именем *AppGatewayHttpListener* , используя [New-азаппликатионгатевайхттплистенер](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с интерфейсной конфигурацией, интерфейсным портом и ранее созданным сертификатом. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
 ```powershell
 $pwd = ConvertTo-SecureString `
@@ -258,7 +258,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ## <a name="create-a-virtual-machine-scale-set"></a>создавать масштабируемый набор виртуальных машин;
 
-В этом примере создается масштабируемый набор виртуальных машин, чтобы предоставить серверы для внутреннего пула в шлюзе приложений. Масштабируемый набор назначается серверному пулу при настройке параметров IP-адреса.
+В этом примере создается масштабируемый набор виртуальных машин, чтобы предоставить серверы для серверного пула в шлюзе приложений. Масштабируемый набор назначается серверному пулу при настройке параметров IP-адреса.
 
 ```powershell
 $vnet = Get-AzVirtualNetwork `
@@ -283,7 +283,7 @@ Set-AzVmssStorageProfile $vmssConfig `
   -ImageReferencePublisher MicrosoftWindowsServer `
   -ImageReferenceOffer WindowsServer `
   -ImageReferenceSku 2016-Datacenter `
-  -ImageReferenceVersion latest
+  -ImageReferenceVersion latest `
   -OsDiskCreateOption FromImage
 Set-AzVmssOsProfile $vmssConfig `
   -AdminUsername azureuser `
@@ -320,7 +320,7 @@ Update-AzVmss `
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Вы можете использовать командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, http://52.170.203.149
+Вы можете использовать командлет [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например http://52.170.203.149.
 
 ```powershell
 Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress
@@ -332,13 +332,13 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/redirect-http-to-https-powershell/application-gateway-iistest.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создать самозаверяющий сертификат;
+> * Создание самозаверяющего сертификата
 > * настройка сети;
 > * создание шлюза приложений с сертификатом;
 > * добавление прослушивателя и правила перенаправления;
-> * создание масштабируемого набора виртуальных машин с внутренним пулом по умолчанию.
+> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.

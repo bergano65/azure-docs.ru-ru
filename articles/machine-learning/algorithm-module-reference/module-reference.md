@@ -9,12 +9,12 @@ ms.topic: reference
 author: peterclu
 ms.author: peterlu
 ms.date: 12/17/2019
-ms.openlocfilehash: 7f2d282541e8a5a3752a0784a3f00a48ad2fb303
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: d3feb62c0c7fa24dd998add08d17ebd1d4e9ee6c
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76769158"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162588"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Ссылка на модуль & алгоритма для конструктора Машинное обучение Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "76769158"
 | Функциональность | Description | Модуль |
 | --- |--- | --- |
 | Входные и выходные данные | Перемещение данных из облачных источников в конвейер. Запишите результаты или промежуточные данные в службу хранилища Azure, базу данных SQL или Hive, во время выполнения конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Импорт данных](import-data.md) |
-| Преобразование данных | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, уменьшение размерности и преобразование данных в различные форматы файлов.| [Добавить столбцы](add-columns.md) <br/> [Добавить строки](add-rows.md) <br/> [Применить математическую операцию](apply-math-operation.md) <br/> [Применить преобразование SQL](apply-sql-transformation.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/> [Отсеченные значения](clip-values.md) <br/> [Преобразовать в CSV-файл](convert-to-csv.md) <br/> [Преобразовать в набор данных](convert-to-dataset.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md)  <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [смоте](smote.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Split Data](split-data.md) (Разделение данных); |
+| Преобразование данных. | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, уменьшение размерности и преобразование данных в различные форматы файлов.| [Добавить столбцы](add-columns.md) <br/> [Добавить строки](add-rows.md) <br/> [Применить математическую операцию](apply-math-operation.md) <br/> [Применить преобразование SQL](apply-sql-transformation.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/> [Отсеченные значения](clip-values.md) <br/> [Преобразовать в CSV-файл](convert-to-csv.md) <br/> [Преобразовать в набор данных](convert-to-dataset.md) <br/> [Преобразовать в значения индикатора](convert-to-indicator-values.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md)  <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [смоте](smote.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Split Data](split-data.md) (Разделение данных); |
 | Выбор компонентов | Выберите подмножество важных, полезных функций, используемых при построении аналитической модели. | [Выбор компонентов на основе фильтра](filter-based-feature-selection.md) <br/> [Важность функции перестановки](permutation-feature-importance.md) |
 | Статистические функции | Предоставляют широкий спектр статистических методов, связанных с обработкой и анализом данных. | [Суммировать данные](summarize-data.md)|
 

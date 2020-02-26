@@ -14,32 +14,32 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
-ms.openlocfilehash: 2ae951896e9c97826264990dc33b9a1930b0eec2
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 09501a80d6ddcbbc9fa6cc08e36f47beb13d1663
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530057"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063228"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning-preview"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей в Azure AD (Предварительная версия)
-Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить рабочие данные от SuccessFactors сотрудника к Azure Active Directory с дополнительным адресом электронной почты, перезаписываемым в SuccessFactors. Эта интеграция доступна в общедоступной предварительной версии и поддерживает получение более [70 атрибутов пользователей](../manage-apps/sap-successfactors-attribute-reference.md) из SuccessFactors Employee Central. 
+Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить рабочие данные от SuccessFactors сотрудника к Azure Active Directory с дополнительным адресом электронной почты, перезаписываемым в SuccessFactors. Эта интеграция доступна в общедоступной предварительной версии и поддерживает получение более [70 атрибутов пользователей](../app-provisioning/sap-successfactors-attribute-reference.md) из SuccessFactors Employee Central. 
 
 >[!NOTE]
 >Используйте этот учебник, если пользователи, которые вы хотите подготавливать из SuccessFactors, являются только облачными пользователями, которым не требуется локальная учетная запись AD. Если пользователям требуется только локальная учетная запись AD или учетная запись AD и Azure AD, обратитесь к руководству по [настройке SAP SuccessFactors для Active Directory](sap-successfactors-inbound-provisioning-tutorial.md#overview) подготовки пользователей. 
 
 ## <a name="overview"></a>Обзор
 
-[Служба подготовки пользователей Azure Active Directory](../manage-apps/user-provisioning.md) интегрируется с [центральным сотрудником SuccessFactors](https://www.successfactors.com/products-services/core-hr-payroll/employee-central.html) для управления жизненным циклом идентификации пользователей. 
+[Служба подготовки пользователей Azure Active Directory](../app-provisioning/user-provisioning.md) интегрируется с [центральным сотрудником SuccessFactors](https://www.successfactors.com/products-services/core-hr-payroll/employee-central.html) для управления жизненным циклом идентификации пользователей. 
 
 Рабочие процессы подготовки пользователей SuccessFactors, поддерживаемые службой подготовки пользователей Azure AD, обеспечивают автоматизацию следующих сценариев управления персоналом и жизненным циклом удостоверений.
 
-* **Наем новых сотрудников** . при добавлении нового сотрудника в SuccessFactors учетная запись пользователя автоматически создается в Azure Active Directory и дополнительно Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md), с обратным записью адреса электронной почты в SuccessFactors.
+* **Наем новых сотрудников** . при добавлении нового сотрудника в SuccessFactors учетная запись пользователя автоматически создается в Azure Active Directory и дополнительно Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратным записью адреса электронной почты в SuccessFactors.
 
-* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в SuccessFactors (например, ее имени, должности или руководителя) учетная запись пользователя будет автоматически обновлена Azure Active Directory и дополнительно Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md).
+* **Обновление атрибутов и профилей сотрудников** . при обновлении записи сотрудника в SuccessFactors (например, ее имени, должности или руководителя) учетная запись пользователя будет автоматически обновлена Azure Active Directory и дополнительно Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Прекращение сотрудников** . когда сотрудник завершает работу в SuccessFactors, его учетная запись автоматически отключается в Azure Active Directory и при необходимости Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md).
+* **Прекращение сотрудников** . когда сотрудник завершает работу в SuccessFactors, его учетная запись автоматически отключается в Azure Active Directory и при необходимости Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* Повторный **прием сотрудников** . когда сотрудник переключается в SuccessFactors, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от ваших предпочтений), чтобы Azure Active Directory и дополнительно Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md).
+* Повторный **прием сотрудников** . когда сотрудник переключается в SuccessFactors, его старая учетная запись может быть автоматически повторно активирована или повторно подготовлена (в зависимости от ваших предпочтений), чтобы Azure Active Directory и дополнительно Office 365 и [других приложений SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Кому это решение подготовки пользователей подходит лучше всего?
 
@@ -79,7 +79,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 * Преобразование атрибута 
 * Фильтры области
 
-Подробные рекомендации по этим темам см. в [плане развертывания Cloud HR](../manage-apps/plan-cloud-hr-provision.md) . 
+Подробные рекомендации по этим темам см. в [плане развертывания Cloud HR](../app-provisioning/plan-cloud-hr-provision.md) . 
 
 ## <a name="configuring-successfactors-for-the-integration"></a>Настройка SuccessFactors для интеграции
 
@@ -211,14 +211,14 @@ SuccessFactors решение Azure Active Directory для подготовки
    > При первой настройке приложения подготовки необходимо проверить сопоставления атрибутов и выражения, чтобы получить желаемый результат. Корпорация Майкрософт рекомендует использовать фильтры области в **области объекта источника** , чтобы проверить сопоставления с помощью нескольких тестовых пользователей из SuccessFactors. После проверки работоспособности сопоставлений можно либо удалить фильтр, либо постепенно расширять его, добавляя больше пользователей.
 
    > [!CAUTION] 
-   > Поведение подсистемы подготовки по умолчанию заключается в том, чтобы отключить или удалить пользователей, которые выходят за пределы области. Это может быть нежелательно в SuccessFactors для интеграции с Azure AD. Чтобы переопределить это поведение по умолчанию, см. статью [пропуск удаления учетных записей пользователей, которые выходят за пределы области](../manage-apps/skip-out-of-scope-deletions.md)
+   > Поведение подсистемы подготовки по умолчанию заключается в том, чтобы отключить или удалить пользователей, которые выходят за пределы области. Это может быть нежелательно в SuccessFactors для интеграции с Azure AD. Чтобы переопределить это поведение по умолчанию, см. статью [пропуск удаления учетных записей пользователей, которые выходят за пределы области](../app-provisioning/skip-out-of-scope-deletions.md)
   
 1. В поле **Действия с целевыми объектами** можно в глобальном масштабе отфильтровать, какие действия доступны для выполнения в Active Directory. Самыми распространенными являются **создание** и **обновление**.
 
 1. В разделе **сопоставления атрибутов** можно определить, как отдельные атрибуты SuccessFactors сопоставляются с атрибутами Active Directory.
 
   >[!NOTE]
-  >Полный список атрибута SuccessFactors, поддерживаемого приложением, см. в [справочнике по атрибуту SuccessFactors](../manage-apps/sap-successfactors-attribute-reference.md) .
+  >Полный список атрибута SuccessFactors, поддерживаемого приложением, см. в [справочнике по атрибуту SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md) .
 
 
 1. Щелкните существующее сопоставление атрибута, чтобы его обновить, или **Добавить новое сопоставление** в нижней части экрана, чтобы добавить новые сопоставления. Отдельное сопоставление атрибутов поддерживает следующие свойства:
@@ -229,7 +229,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 
          * **Константа** — записывает статическое постоянное строковое значение в атрибут AD.
 
-         * **Выражение** — позволяет записать пользовательское значение в атрибут AD на основе одного или нескольких атрибутов SuccessFactors. [Дополнительные сведения см. в статье о выражениях](../manage-apps/functions-for-customizing-application-data.md).
+         * **Выражение** — позволяет записать пользовательское значение в атрибут AD на основе одного или нескольких атрибутов SuccessFactors. [Дополнительные сведения см. в статье о выражениях](../app-provisioning/functions-for-customizing-application-data.md).
 
       * **Исходный атрибут** — атрибут пользователя из SuccessFactors
 
@@ -274,11 +274,11 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Дополнительные сведения о поддерживаемых атрибутах SuccessFactors для входящей подготовки](../manage-apps/sap-successfactors-attribute-reference.md)
+* [Дополнительные сведения о поддерживаемых атрибутах SuccessFactors для входящей подготовки](../app-provisioning/sap-successfactors-attribute-reference.md)
 * [Узнайте, как настроить обратную запись электронной почты в SuccessFactors](sap-successfactors-writeback-tutorial.md)
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход между SuccessFactors и Azure Active Directory](successfactors-tutorial.md)
 * [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
-* [Узнайте, как экспортировать и импортировать конфигурации подготовки.](../manage-apps/export-import-provisioning-configuration.md)
+* [Узнайте, как экспортировать и импортировать конфигурации подготовки.](../app-provisioning/export-import-provisioning-configuration.md)
 
 

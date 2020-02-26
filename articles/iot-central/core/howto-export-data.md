@@ -8,12 +8,12 @@ ms.date: 01/30/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: corywink
-ms.openlocfilehash: 058fe9aea87879fe85dcbc6dcb864fd841fcb049
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: a3d60bf38c4a9dad13dacf8ba9798c4078c1df1a
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026800"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049694"
 ---
 # <a name="export-your-azure-iot-central-data"></a>Экспорт данных IoT Central Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "77026800"
 > [!Note]
 > С момента включения экспорта непрерывных данных вы получаете только поступающие данные. Сейчас невозможно получить данные за то время, когда непрерывный экспорт данных был отключен. Чтобы сохранить больше исторических данных, включите экспорт непрерывных данных раньше.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимо быть администратором в IoT Central приложении или иметь разрешения на экспорт данных.
 
@@ -62,10 +62,14 @@ ms.locfileid: "77026800"
 
 Если у вас нет существующей учетной записи хранения Azure для экспорта, выполните следующие действия.
 
-1. Создайте [учетную запись хранения на портале Azure](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Вы можете узнать больше о создании новых [учетных записей хранения BLOB-объектов Azure](https://aka.ms/blobdocscreatestorageaccount) или [учетных записей хранения Azure Data Lake Storage v2](../../storage/blobs/data-lake-storage-quickstart-create-account.md).
+1. Создайте [учетную запись хранения на портале Azure](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Вы можете узнать больше о создании новых [учетных записей хранения BLOB-объектов Azure](https://aka.ms/blobdocscreatestorageaccount) или [учетных записей хранения Azure Data Lake Storage v2](../../storage/blobs/data-lake-storage-quickstart-create-account.md). Экспорт данных может записывать данные только в учетные записи хранения, поддерживающие блочные BLOB-объекты. Ниже приведен список известных совместимых типов учетных записей хранения. 
 
-    - Если вы решили экспортировать данные в учетную запись хранения Azure Data Lake Storage v2, необходимо выбрать **блобстораже** в качестве **типа учетной записи**.
-    - Вы можете экспортировать данные в учетные записи хранения в подписках, отличных от тех, которые используются для приложения IoT Central. В этом случае вы подключаетесь с использованием строки подключения.
+    |Уровень производительности|Тип учетной записи|
+    |-|-|
+    |Standard|общего назначения v2|
+    |Standard|общего назначения v1|
+    |Standard|Хранилище BLOB-объектов|
+    |Premium|Блочное хранилище BLOB-объектов|
 
 2. Создайте контейнер в учетной записи хранения. Войдите в свою учетную запись хранения. Выберите **Обзор BLOB-объектов** в разделе **Служба BLOB-объектов**. Выберите **+ Контейнер** в верхней части экрана, чтобы создать контейнер.
 

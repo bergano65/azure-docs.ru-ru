@@ -1,5 +1,5 @@
 ---
-title: Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+title: Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
 description: Это одностраничное приложение показывает, как можно использовать API Bing для поиска в Интернете, чтобы извлекать, анализировать и отображать актуальные результаты поиска в одностраничном приложении.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: bing-web-search
 ms.topic: tutorial
 ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: ec6c1ef31b6cf92629be600b3b139bb2e1a0d3ce
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 1acc17f9c2fbeb53b992891174866433d14f128d
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977256"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986667"
 ---
-# <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+# <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
 Это одностраничное приложение показывает, как можно извлекать, анализировать и отображать актуальные результаты поиска из API Bing для поиска в Интернете. fВ этом руководстве используется стандартный HTML и CSS и оно ориентировано на код JavaScript. HTML, CSS и JS-файлы доступны на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/Tutorials/Bing-Web-Search) вместе с кратким руководством.
 
@@ -82,7 +82,7 @@ npm install
 
 HTML-форма содержит параметры, которые соответствуют параметрам запросов в [API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters). В этой таблице содержатся подробные сведения о том, как пользователи могут фильтровать результаты поиска с помощью примера приложения:
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |-----------|-------------|
 | `query` | Текстовое поле для ввода строки запроса. |
 | `where` | Раскрывающееся меню для выбора рынка (язык и страна). |
@@ -105,7 +105,7 @@ function bingSearchOptions(form) {
     // Where option.
     options.push("mkt=" + form.where.value);
     // SafeSearch option.
-    options.push("SafeSearch=" + (form.safe.checked ? "strict" : "off"));
+    options.push("SafeSearch=" + (form.safe.checked ? "strict" : "moderate"));
     // Freshness option.
     if (form.when.value.length) options.push("freshness=" + form.when.value);
     var what = [];
@@ -128,7 +128,7 @@ function bingSearchOptions(form) {
 }
 ```
 
-Параметру `SafeSearch` можно присвоить значение `strict`, `moderate` или `off`. `moderate` — значение по умолчанию для службы "Поиск в Интернете Bing". В этой форме используется флажок, у которого есть два состояния. В этом фрагменте кода SafeSearch присваивается значение `strict` или `off`, значение `moderate` не используется.
+Параметру `SafeSearch` можно присвоить значение `strict`, `moderate` или `off`. `moderate` — значение по умолчанию для службы "Поиск в Интернете Bing". В этой форме используется флажок, у которого есть два состояния: `strict` или `moderate`.
 
 Если выбраны какие-либо флажки **повышения уровня**, то параметр `answerCount` также добавится к запросу. `answerCount` необходим при использовании параметра `promote`. В этом фрагменте кода установлено значение `9` для возврата всех доступных типов результатов.
 > [!NOTE]
@@ -386,7 +386,7 @@ searchItemRenderers = {
 
 Контекстные аргументы:
 
-| Параметр  | ОПИСАНИЕ |
+| Параметр  | Описание |
 |------------|-------------|
 | `section` | Раздел результатов (`pole`, `mainline` или `sidebar`), в котором содержится элемент. |
 | `index`<br>`count` | Доступен, когда элемент `RankingResponse` указывает, что все результаты в данной коллекции должны отображаться. В противном случае `undefined`. Это индекс элемента и общее число элементов коллекции. Вы можете использовать эту информацию для подсчета результатов, для создания разного HTML-кода для первого или последнего результата и т. д. |
@@ -464,7 +464,7 @@ cors-proxy-server
 
 Не закрывайте командное окно, пока используете пример приложения. Если закрыть окно, это приведет к остановке прокси-сервера. В развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID`. Убедитесь, что он одинаковый для всех запросов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справка по API Bing для поиска в Интернете версии 7](//docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference)

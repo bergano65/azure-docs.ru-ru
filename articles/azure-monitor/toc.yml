@@ -4,10 +4,10 @@
   items:
     - name: Общие сведения об Azure Monitor
       href: overview.md
-    - name: Изменения в терминологии
-      href: terminology.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   items:
     - name: Мониторинг ресурса Azure
@@ -907,22 +907,6 @@
           href: platform/rest-api-walkthrough.md
     - name: Визуализируйте данные
       items:
-        - name: Представления
-          items:
-            - name: Конструктор представлений
-              href: platform/view-designer.md
-            - name: Справочник по плиткам
-              href: platform/view-designer-tiles.md
-            - name: Справочник по элементам визуализации
-              href: platform/view-designer-parts.md
-            - name: Фильтры
-              href: platform/view-designer-filters.md
-        - name: Power BI
-          items:
-            - name: Экспорт данных журналов
-              href: platform/powerbi.md
-            - name: Экспорт данных приложения
-              href: app/export-power-bi.md
         - name: Workbooks
           items:
             - name: Обзор
@@ -949,6 +933,36 @@
                       href: platform/workbooks-time.md
                     - name: Параметры текста
                       href: platform/workbooks-text.md
+        - name: Представления
+          items:
+            - name: Преобразование представлений в книги
+              items:
+                - name: Общие сведения о преобразовании
+                  href: platform/view-designer-conversion-overview.md
+                - name: Параметры преобразования
+                  href: platform/view-designer-conversion-options.md
+                - name: Общие сведения и доступ
+                  href: platform/view-designer-conversion-access.md
+                - name: Стандартные задачи
+                  href: platform/view-designer-conversion-tasks.md
+                - name: Преобразование плиток
+                  href: platform/view-designer-conversion-tiles.md
+                - name: Примеры
+                  href: platform/view-designer-conversion-examples.md
+            - name: Конструктор представлений
+              href: platform/view-designer.md
+            - name: Справочник по плиткам
+              href: platform/view-designer-tiles.md
+            - name: Справочник по элементам визуализации
+              href: platform/view-designer-parts.md
+            - name: Фильтры
+              href: platform/view-designer-filters.md
+        - name: Power BI
+          items:
+            - name: Экспорт данных журналов
+              href: platform/powerbi.md
+            - name: Экспорт данных приложения
+              href: app/export-power-bi.md
         - name: Панели мониторинга
           items:
             - name: Панель мониторинга с использованием данных журнала
@@ -1139,6 +1153,8 @@
       items:
         - name: схема
           href: platform/diagnostics-extension-schema-1dot3.md
+    - name: Изменения в терминологии
+      href: terminology.md
     - name: Application Insights
       items:
         - name: Автоматический сбор зависимостей

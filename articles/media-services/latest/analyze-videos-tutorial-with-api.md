@@ -10,17 +10,17 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
-ms.date: 06/19/2019
+ms.date: 02/02/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: f803bcafb1966e32e894b4caeaa8fafb5f73e8e7
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: abd4a3a3a3e8494ea325e65a78eea7fb56b78f94
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186283"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988368"
 ---
-# <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3
+# <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство. Анализ видео с помощью Служб мультимедиа версии 3
 
 > [!NOTE]
 > Несмотря на то что в этом учебнике используются примеры для [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet), общие шаги одинаковы для [REST API](https://docs.microsoft.com/rest/api/media/liveevents), [CLI](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest) или других поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
@@ -37,6 +37,10 @@ ms.locfileid: "74186283"
 > * Очистка ресурсов.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="compliance-privacy-and-security"></a>Соответствие требованиям, конфиденциальность и безопасность
+ 
+Хотим напомнить, что при использовании Индексатора видео вы должны соблюдать все применимые законы, и не имеете права использовать Индексатор видео или любые другие службы Azure каким либо способом, который нарушает права других лиц или может нанести им вред. Перед отправкой любого видеосодержимого, включая любые биометрические данные, в службу "Индексатор видео" для обработки и хранения данных необходимо иметь все необходимые права, включая все возможные разрешения, от отдельных пользователей, содержащихся в видеосодержимом. Чтобы узнать о соответствии требованиям, конфиденциальности и безопасности в Индексаторе видео, см. [Условия Microsoft Cognitive Services](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Обязательства Майкрософт по обеспечению конфиденциальности и обработке ваших данных см. в [Заявлении о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [Условиях использования веб-служб](https://www.microsoft.com/licensing/product-licensing/products) ("OST") и [Приложение к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Дополнительные сведения о конфиденциальности, включая хранение данных, их удаление или уничтожение, доступны в OST и [здесь](../video-indexer/faq.md). Используя Индексатор видео, обязуетесь соблюдать Условия Cognitive Services, OST, DPA и Заявление о конфиденциальности.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -174,7 +178,7 @@ az group delete --name amsResourceGroup
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Отправка, кодирование и потоковая передача видео с помощью API](stream-files-tutorial-with-api.md)

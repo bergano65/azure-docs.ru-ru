@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 01/10/2020
-ms.openlocfilehash: bf07a165b6ea933719eb06b6625a91033030a120
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 16e4a7e2f06d2630c970f8daa4428e7a184a79df
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895461"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77163047"
 ---
 # <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Руководство. развертыванию Azure Digital Twins (предварительная версия) и настройке пространственного графа
 
@@ -36,7 +36,7 @@ ms.locfileid: "75895461"
 
 В этих руководствах для более детального и глубокого освещения концепций используются и изменяются те же примеры, что и [в руководстве по обнаружению свободных комнат](quickstart-view-occupancy-dotnet.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -52,7 +52,7 @@ ms.locfileid: "75895461"
 
 ## <a name="grant-permissions-to-your-app"></a>предоставление разрешений приложению;
 
-Служба Digital Twins использует [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD) для управления [доступом на чтение и запись](../active-directory/develop/v1-permissions-and-consent.md) к службе. Любое приложение, которое будет подключаться к вашему экземпляру Digital Twins, должно быть зарегистрировано в Azure AD. В этом разделе показано, как зарегистрировать пример приложения.
+Служба Digital Twins использует [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD) для управления [доступом на чтение и запись](../active-directory/develop/v2-permissions-and-consent.md) к службе. Любое приложение, которое будет подключаться к вашему экземпляру Digital Twins, должно быть зарегистрировано в Azure AD. В этом разделе показано, как зарегистрировать пример приложения.
 
 Если у вас уже есть зарегистрированное приложение, вы можете повторно использовать его для своего примера. Однако просмотрите этот раздел, чтобы убедиться, что регистрация вашего приложения настроена правильно.
 

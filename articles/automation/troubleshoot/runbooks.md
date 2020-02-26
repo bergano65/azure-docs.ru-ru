@@ -8,12 +8,12 @@ ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 65006b8357db44c3e1b8f8d9e819615b5dd9db6e
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: 571be831d337c71a084780da18b480cdd1e42d20
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031754"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77365208"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -188,7 +188,7 @@ Exception: A task was canceled.
 
 Эту ошибку можно устранить, обновив модули Azure до последней версии.
 
-В учетной записи службы автоматизации щелкните **Модули** и **Обновить модули Azure**. Обновление занимает примерно 15 минут. После его завершения перезапустите проблемный модуль. Дополнительные сведения об обновлении модулей см. в разделе [Обновление модулей Azure в службе автоматизации Azure](../automation-update-azure-modules.md).
+В учетной записи службы автоматизации щелкните **модули**и щелкните **обновить модули Azure**. Обновление занимает примерно 15 минут. После его завершения перезапустите проблемный модуль. Дополнительные сведения об обновлении модулей см. в разделе [Обновление модулей Azure в службе автоматизации Azure](../automation-update-azure-modules.md).
 
 ## <a name="runbook-auth-failure"></a>Сценарий: Сбой модулей Runbook при работе с несколькими подписками
 
@@ -254,7 +254,7 @@ The term 'Connect-AzureRmAccount' is not recognized as the name of a cmdlet, fun
 
 Если модуль является модулем Azure, см. статью [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md) , чтобы узнать, как обновить модули в учетной записи службы автоматизации.
 
-Если это отдельный модуль, убедитесь, что он импортирован в учетную запись службы автоматизации.
+Если это отдельный модуль, убедитесь, что модуль импортируется в учетную запись службы автоматизации.
 
 ## <a name="job-attempted-3-times"></a>Сценарий: предпринята попытка запуска задания Runbook три раза, но не удалось запустить каждый раз
 
@@ -457,7 +457,7 @@ The quota for the monthly total job run time has been reached for this subscript
 Эту проблему можно устранить одним из следующих способов.
 
 * Проверьте правильность ввода имени командлета.
-* Убедитесь, что командлет существует в учетной записи службы автоматизации и что конфликтов нет. Чтобы проверить наличие командлета, откройте модуль Runbook в режиме редактирования и найдите требуемый командлет в библиотеке или выполните команду `Get-Command <CommandName>`. Убедившись в наличии командлета в учетной записи и отсутствии конфликта имен с другими командлетами или модулями runbook, добавьте его на холст. При этом в runbook должен использоваться допустимый набор параметров.
+* Убедитесь, что командлет существует в учетной записи службы автоматизации, а конфликты отсутствуют. Чтобы проверить наличие командлета, откройте модуль Runbook в режиме редактирования и найдите требуемый командлет в библиотеке или выполните команду `Get-Command <CommandName>`. Убедившись в наличии командлета в учетной записи и отсутствии конфликта имен с другими командлетами или модулями runbook, добавьте его на холст. При этом в runbook должен использоваться допустимый набор параметров.
 * Если обнаружен конфликт имен, а сам командлет доступен в двух разных модулях, эту проблему можно решить использованием полного имени командлета. Например, можно использовать следующий формат: **имя_модуля\имя_командлета**.
 * Если runbook выполняется локально в группе гибридных рабочих ролей, убедитесь, что на компьютере, на котором размещена гибридная рабочая роль, установлен соответствующий модуль или командлет.
 
@@ -569,53 +569,77 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 * Проверьте конфигурацию учетной записи нксаутоматионусер в файле "Sudo". См. раздел [Запуск модулей Runbook в гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md) .
 
+## <a name="scenario-cmdlet-failing-in-pnp-powershell-runbook-on-azure-automation"></a>Сценарий: сбой командлета в Runbook PowerShell PnP в службе автоматизации Azure
+
+### <a name="issue"></a>Проблема
+
+Когда модуль Runbook записывает автоматически созданный объект PnP PowerShell в выходные данные службы автоматизации Azure, выходные данные командлета не могут выполнять потоковую передачу в службу автоматизации.
+
+### <a name="cause"></a>Причина
+
+Чаще всего эта проблема возникает, когда служба автоматизации Azure обрабатывает модули Runbook, которые вызывают командлеты PnP PowerShell, например **Add-пнплиститем**, без перехвата возвращаемых объектов.
+
+### <a name="resolution"></a>Решение
+
+Измените скрипты, чтобы присвоить значения переменным, чтобы командлеты не предпринимали попытку записи целых объектов в стандартный вывод. Скрипт может перенаправить поток вывода в командлет, как показано ниже.
+
+```azurecli
+  $null = add-pnplistitem
+```
+Если сценарий анализирует выходные данные командлета, сценарий должен сохранить выходные данные в переменной и манипулировать переменной вместо просто потоковой передачи выходных данных.
+
+```azurecli
+$SomeVariable = add-pnplistitem ....
+if ($SomeVariable.someproperty -eq ....
+```
+
 ## <a name="other"></a>Моя проблема не указана выше
 
 В следующих разделах перечислены другие распространенные ошибки, а также сопутствующая документация, помогающая устранить проблему.
 
-## <a name="hybrid-runbook-worker-doesnt-run-jobs-or-isnt-responding"></a>Гибридная рабочая роль runbook не выполняет задания или не отвечает
+### <a name="hybrid-runbook-worker-doesnt-run-jobs-or-isnt-responding"></a>Гибридная рабочая роль runbook не выполняет задания или не отвечает
 
 Если вы используете задания с помощью гибридной рабочей роли, а не в службе автоматизации Azure, вам может потребоваться [устранить неполадки в работе гибридной рабочей роли](https://docs.microsoft.com/azure/automation/troubleshoot/hybrid-runbook-worker).
 
-## <a name="runbook-fails-with-no-permission-or-some-variation"></a>Модуль runbook прекратил работу с ошибкой "Нет разрешения" или аналогичной
+### <a name="runbook-fails-with-no-permission-or-some-variation"></a>Модуль runbook прекратил работу с ошибкой "Нет разрешения" или аналогичной
 
 Учетные записи запуска от имени могут не иметь тех же разрешений на ресурсы Azure, что и текущая учетная запись. Убедитесь, что учетная запись запуска от имени имеет [разрешения на доступ к любым ресурсам](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) , используемым в скрипте.
 
-## <a name="runbooks-were-working-but-suddenly-stopped"></a>Модули runbook работали, но внезапно были остановлены
+### <a name="runbooks-were-working-but-suddenly-stopped"></a>Модули runbook работали, но внезапно были остановлены
 
 * Если модули Runbook ранее выполнялись, но остановлены, убедитесь, что срок действия [учетной записи запуска от имени](https://docs.microsoft.com/azure/automation/manage-runas-account#cert-renewal) не истек.
 * Если вы используете веб-перехватчики для запуска модулей Runbook, убедитесь, что срок действия [веб-перехватчика](https://docs.microsoft.com/azure/automation/automation-webhooks#renew-webhook) не истек.
 
-## <a name="issues-passing-parameters-into-webhooks"></a>Проблемы при передаче параметров в веб-перехватчики
+### <a name="issues-passing-parameters-into-webhooks"></a>Проблемы при передаче параметров в веб-перехватчики
 
 Дополнительные сведения о передаче параметров в веб-перехватчики см. в статье [Запуск Runbook из веб-перехватчика](https://docs.microsoft.com/azure/automation/automation-webhooks#parameters).
 
-## <a name="issues-using-az-modules"></a>Проблемы с использованием модулей AZ
+### <a name="issues-using-az-modules"></a>Проблемы с использованием модулей AZ
 
-Использование модулей Az и AzureRM в одной учетной записи службы автоматизации не поддерживается. Дополнительные сведения см. в статье о [модулях AZ modules в модулях Runbook](https://docs.microsoft.com/azure/automation/az-modules) .
+Использование модулей AZ modules и AzureRM modules в одной учетной записи службы автоматизации не поддерживается. Дополнительные сведения см. в статье о [модулях AZ modules в модулях Runbook](https://docs.microsoft.com/azure/automation/az-modules) .
 
-## <a name="inconsistent-behavior-in-runbooks"></a>Несогласованное поведение модулей runbook
+### <a name="inconsistent-behavior-in-runbooks"></a>Несогласованное поведение модулей runbook
 
 Следуйте указаниям в [выполнении модуля Runbook](https://docs.microsoft.com/azure/automation/automation-runbook-execution#runbook-behavior) , чтобы избежать проблем с параллельными заданиями, ресурсами, созданными несколько раз, или другой логикой с учетом времени в модулях Runbook.
 
-## <a name="runbook-fails-with-the-error-no-permission-forbidden-403-or-some-variation"></a>Модуль Runbook завершается ошибкой без разрешения, запрещен (403) или какой-либо вариант
+### <a name="runbook-fails-with-the-error-no-permission-forbidden-403-or-some-variation"></a>Модуль Runbook завершается ошибкой без разрешения, запрещен (403) или какой-либо вариант
 
 Учетные записи запуска от имени могут не иметь тех же разрешений на ресурсы Azure, что и текущая учетная запись. Убедитесь, что учетная запись запуска от имени имеет [разрешения на доступ к любым ресурсам](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) , используемым в скрипте.
 
-## <a name="runbooks-were-working-but-suddenly-stopped"></a>Модули runbook работали, но внезапно были остановлены
+### <a name="runbooks-were-working-but-suddenly-stopped"></a>Модули runbook работали, но внезапно были остановлены
 
 * Если модули Runbook ранее выполнялись, но остановлены, убедитесь, что срок действия учетной записи запуска от имени не истек. См. статью [продление сертификации](https://docs.microsoft.com/azure/automation/manage-runas-account#cert-renewal).
 * Если вы используете веб-перехватчики для запуска модулей Runbook, убедитесь, что срок действия веб-перехватчика [не истек](https://docs.microsoft.com/azure/automation/automation-webhooks#renew-webhook).
 
-## <a name="passing-parameters-into-webhooks"></a>Передача параметров в веб-перехватчики
+### <a name="passing-parameters-into-webhooks"></a>Передача параметров в веб-перехватчики
 
 Дополнительные сведения о передаче параметров в веб-перехватчики см. в статье [Запуск Runbook из веб-перехватчика](https://docs.microsoft.com/azure/automation/automation-webhooks#parameters).
 
-## <a name="using-az-modules"></a>Использование модулей Az
+### <a name="using-az-modules"></a>Использование модулей Az
 
-Использование модулей Az и AzureRM в одной учетной записи службы автоматизации не поддерживается. См. раздел [AZ modules in runbooks](https://docs.microsoft.com/azure/automation/az-modules).
+Использование модулей AZ modules и AzureRM modules в одной учетной записи службы автоматизации не поддерживается. См. раздел [AZ modules in runbooks](https://docs.microsoft.com/azure/automation/az-modules).
 
-## <a name="using-self-signed-certificates"></a>Использование самозаверяющих сертификатов
+### <a name="using-self-signed-certificates"></a>Использование самозаверяющих сертификатов
 
 Сведения о том, как использовать самозаверяющие сертификаты, см. в разделе [Создание нового сертификата](https://docs.microsoft.com/azure/automation/shared-resources/certificates#creating-a-new-certificate).
 

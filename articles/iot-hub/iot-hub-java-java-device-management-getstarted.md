@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 52d7eb035ed06c368214b8b5cb7ef583cd99b51b
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: f68e25a618f5c6499ccc9d76c510eab8f1650330
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70162002"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110883"
 ---
 # <a name="get-started-with-device-management-java"></a>Начало работы с управлением устройствами (Java)
 
@@ -51,13 +51,15 @@ ms.locfileid: "70162002"
 > [!NOTE]
 > Статья о [пакетах SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md) содержит сведения о различных пакетах SDK, которые можно использовать для создания приложений, работающих на устройствах и в серверной части решения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Обязательно выберите **Java 8** в разделе **долгосрочная поддержка** , чтобы скачать файлы для JDK 8.
+* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -146,7 +148,7 @@ ms.locfileid: "70162002"
     import java.util.concurrent.ExecutorService;
     ```
 
-9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения центра Интернета вещей, скопированной ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
+9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения центра Интернета вещей, скопированным ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -244,7 +246,7 @@ ms.locfileid: "70162002"
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-2. В командной строке перейдите в папку имитация **устройства** .
+2. В командной строке перейдите в папку **имитация устройства** .
 
 3. В текстовом редакторе откройте файл **POM. XML** в папке **имитации устройства** и добавьте следующую зависимость в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
 
@@ -450,7 +452,7 @@ ms.locfileid: "70162002"
 
 19. Сохраните и закройте файл simulated-device\src\main\java\com\mycompany\app\App.java.
 
-20. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку имитируемed **-Device** и выполните следующую команду:
+20. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку **имитируемed-Device** и выполните следующую команду:
 
     ```cmd/sh
     mvn clean package -DskipTests

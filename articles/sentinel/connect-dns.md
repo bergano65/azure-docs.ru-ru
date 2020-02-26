@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: rkarlin
-ms.openlocfilehash: c5e58f496176ec0f1b8317c8b862a8ef2ffa434d
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 96515d81668bf172325f88e3e5bac8d8cccfa999
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71262729"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190857"
 ---
 # <a name="connect-your-domain-name-server"></a>Подключение сервера доменных имен
 
@@ -73,7 +73,17 @@ ms.locfileid: "71262729"
 
 В Log Analytics найдите схему **днсевентс** и убедитесь в наличии событий.
 
+## <a name="troubleshooting"></a>Диагностика
+
+Если поисковые запросы не отображаются в Azure Sentinel, выполните следующие действия, чтобы запросы отображались правильно:
+1. Включите [журналы Аналитика DNS на серверах](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)).
+2. Убедитесь, что Днсевентс отображается в списке коллекций Log Analytics.
+3. Включите [Azure DNS Analytics](../azure-monitor/insights/dns-analytics.md).
+4. В Azure DNS Analytics в разделе **Конфигурация**измените любые параметры, сохраните его, а затем измените его обратно, если нужно, а затем сохраните его снова.
+5. Проверьте Azure DNS аналитику, чтобы убедиться, что запросы отображаются.
+
 ## <a name="next-steps"></a>Следующие шаги
+
 В этом документе вы узнали, как подключить локальные устройства DNS к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

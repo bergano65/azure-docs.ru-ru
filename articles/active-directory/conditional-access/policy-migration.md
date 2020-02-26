@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16c6ce46af8fb9a9ab4be5fcc63ccd4909374e4f
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 33b1f76dd1489e00115d0f805add8d754038df84
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74846183"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185906"
 ---
 # <a name="conditional-access-classic-policy-migration"></a>Миграция классической политики условного доступа
 
@@ -89,7 +89,7 @@ ms.locfileid: "74846183"
 
 ![Условия условного доступа](./media/policy-migration/16.png)
  
-Классические политики [на основе приложений](technical-reference.md#approved-client-app-requirement) для Office 365 Exchange Online, которые содержат условие клиентских приложений **Exchange Active Sync**, разрешают **поддерживаемые** и **неподдерживаемые** [платформы устройств](technical-reference.md#device-platform-condition). Хотя невозможно настроить отдельные платформы устройств в связанной новой политике, можно ограничить их поддержку только [поддерживаемыми платформами устройств](technical-reference.md#device-platform-condition). 
+Классические политики на основе приложений для Office 365 Exchange Online, которые включают в себя **Exchange Active Sync** как условия клиентских приложений, разрешают **Поддерживаемые** и **неподдерживаемые** платформы устройств. Хотя невозможно настроить отдельные платформы устройств в связанной новой политике, можно ограничить их поддержку только [поддерживаемыми платформами устройств](concept-conditional-access-conditions.md#device-platforms). 
 
 ![Условный доступ выбор Exchange ActiveSync](./media/policy-migration/65.png)
 
@@ -109,13 +109,13 @@ ms.locfileid: "74846183"
 
 ### <a name="device-platforms"></a>Платформы устройств
 
-Классические политики с [элементами управления на основе приложений](technical-reference.md#approved-client-app-requirement) предварительно настроены в iOS и Android в качестве [условий платформы устройств](technical-reference.md#device-platform-condition). 
+Классические политики с элементами управления на основе приложений предварительно настроены с помощью iOS и Android в качестве условия платформы устройства. 
 
-В новой политике необходимо отдельно выбрать [платформы устройств](technical-reference.md#device-platform-condition), поддержка которых необходима.
+В новой политике необходимо отдельно выбрать [платформы устройств](concept-conditional-access-conditions.md#device-platforms), поддержка которых необходима.
 
 ![Выбор платформ устройств условного доступа](./media/policy-migration/41.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Используйте режим "только отчет" для условного доступа, чтобы определить влияние новых политик.](concept-conditional-access-report-only.md)
 - Если вы хотите узнать, как настроить политику условного доступа, см. раздел [Общие политики условного доступа](concept-conditional-access-policy-common.md).

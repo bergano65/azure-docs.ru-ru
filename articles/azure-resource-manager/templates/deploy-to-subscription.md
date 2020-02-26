@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.openlocfilehash: aed22cab9281f272421a574efebcf346139348d5
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.date: 02/10/2020
+ms.openlocfilehash: 50db0b4d46ff4e367411829aa75fa017a168372f
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76121885"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207661"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -29,7 +29,7 @@ ms.locfileid: "76121885"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>схема
+### <a name="schema"></a>Схема
 
 Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
@@ -86,8 +86,22 @@ New-AzDeployment `
 Важные рекомендации при использовании функций шаблонов для развертываний на уровне подписки:
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
-* Функция [resourceId()](template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Например, получите идентификатор ресурса для определения политики с `resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))`. Или используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурса уровня подписки.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
+* Функция [resourceId()](template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Не следует указывать значение параметра группы ресурсов.
+
+  Например, чтобы получить идентификатор ресурса для определения политики, используйте:
+  
+  ```json
+  resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
+  ```
+  
+  Возвращенный идентификатор ресурса имеет следующий формат:
+
+  ```json
+  /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+  ```
+
+  Или используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурса уровня подписки.
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
 
@@ -98,7 +112,7 @@ New-AzDeployment `
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.1",
+  "contentVersion": "1.0.0.0",
   "parameters": {
     "rgName": {
       "type": "string"
@@ -121,12 +135,12 @@ New-AzDeployment `
 }
 ```
 
-Используйте [элемент copy](create-multiple-instances.md) с группами ресурсов, чтобы создать несколько групп ресурсов.
+Используйте [элемент copy](copy-resources.md) с группами ресурсов, чтобы создать несколько групп ресурсов.
 
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.1",
+  "contentVersion": "1.0.0.0",
   "parameters": {
     "rgNamePrefix": {
       "type": "string"
@@ -156,7 +170,7 @@ New-AzDeployment `
 }
 ```
 
-Сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса или свойства в Azure Resource Manager Templates](./create-multiple-instances.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./template-tutorial-create-multiple-instances.md).
+Дополнительные сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса в Azure Resource Manager шаблонах](./copy-resources.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./template-tutorial-create-multiple-instances.md).
 
 ## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
 
@@ -167,7 +181,7 @@ New-AzDeployment `
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.1",
+  "contentVersion": "1.0.0.0",
   "parameters": {
     "rgName": {
       "type": "string"
@@ -358,7 +372,12 @@ New-AzDeployment `
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policydefineandassign.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="template-samples"></a>Примеры шаблона
+
+* Создайте группу ресурсов, заблокируйте ее и предоставьте ей разрешения. Дополнительные сведения см. [здесь](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
+* Создайте группу ресурсов, политику и назначение политики.  Дополнительные сведения см. [здесь](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).

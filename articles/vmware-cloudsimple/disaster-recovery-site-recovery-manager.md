@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 0bbd8a12820432ce2f131dda29af6740a2f04e18
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: ccdf385d2581923e1fad4fa5c42f351c4f0947ca
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024727"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083150"
 ---
 # <a name="set-up-avs-private-cloud-as-a-disaster-recovery-target-with-vmware-site-recovery-manager"></a>Настройка частного облака AVS в качестве цели аварийного восстановления с помощью VMware Site Recovery Manager
 
@@ -101,7 +101,7 @@ ms.locfileid: "77024727"
 
 Чтобы обеспечить поиск IP-адресов, управление IP-адресами и службы разрешения имен для рабочих нагрузок в частном облаке AVS, настройте DHCP-и DNS-сервер, как описано в разделе [Настройка приложений и рабочих нагрузок DNS в частном облаке AVS](dns-dhcp-setup.md).
 
-Домен *. avs.io используется виртуальными машинами и узлами управления в частном облаке AVS. Чтобы разрешить запросы к этому домену, Настройте пересылку DNS на DNS-сервере, как описано в разделе [Создание сервера условной пересылки](on-premises-dns-setup.md#create-a-conditional-forwarder).
+Домен *. cloudsimple.io используется виртуальными машинами и узлами управления в частном облаке AVS. Чтобы разрешить запросы к этому домену, Настройте пересылку DNS на DNS-сервере, как описано в разделе [Создание сервера условной пересылки](on-premises-dns-setup.md#create-a-conditional-forwarder).
 
 ### <a name="install-vsphere-replication-appliance-in-your-on-premises-environment"></a>Установка устройства репликации vSphere в локальной среде
 
@@ -133,7 +133,7 @@ ms.locfileid: "77024727"
 Установка состоит из следующих общих этапов:
 
 1. [Эскалировать привилегии](escalate-private-cloud-privileges.md).
-2. Создайте пользователя в частном облаке AVS для репликации vSphere и установки СРМ. Описание ниже в [пользовательском интерфейсе vCenter: создание пользователя в частном облаке AVS для вра & СРМ установки](#vcenter-ui-create-a-user-in-the-avs-private-cloud-for-vra-and-srm-installation).
+2. Создайте пользователя в частном облаке AVS для репликации vSphere и установки СРМ. Описание ниже в [пользовательском интерфейсе vCenter: создание пользователя в частном облаке AVS для вра &AMP; СРМ установки](#vcenter-ui-create-a-user-in-the-avs-private-cloud-for-vra-and-srm-installation).
 3. Подготовьте среду частного облака AVS к установке вра.
 4. Разверните вра в частном облаке AVS с помощью OVF в образе VR ISO из vmware.com. Для вра 6,5 [этот блог VMware](https://blogs.vmware.com/virtualblocks/2017/01/20/vr-65-ovf-choices) содержит актуальные сведения.
 5. Настройте правила брандмауэра для вра. Описание ниже на [портале AVS: Настройка правил брандмауэра для вра](#avs-portal-configure-firewall-rules-for-vra).

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 1f34c4fb89d28a001a4af4d21879403a9ac5e860
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: e5ee43af97e79f1e835787d61bd79cfb256ef445
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024710"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083130"
 ---
 # <a name="set-up-avs-private-cloud-as-a-disaster-recovery-site-for-on-premises-vmware-workloads"></a>Настройка частного облака AVS в качестве сайта аварийного восстановления для локальных рабочих нагрузок VMware
 
@@ -35,7 +35,7 @@ ms.locfileid: "77024710"
 
 На следующем рисунке показана архитектура решения Zerto.
 
-![Архитектура](media/cloudsimple-zerto-architecture.png)
+![Architecture](media/cloudsimple-zerto-architecture.png)
 
 ## <a name="how-to-deploy-the-solution"></a>Развертывание решения
 
@@ -46,12 +46,12 @@ ms.locfileid: "77024710"
 3. [Настройка ЗВМ и ВРА в частном облаке "AVS"](#set-up-zvm-and-vra-on-your-avs-private-cloud)
 4. [Настройка виртуальной группы защиты Zerto](#set-up-zerto-virtual-protection-group)
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 Чтобы включить виртуальную репликацию Zerto из локальной среды в частное облако AVS, выполните следующие предварительные требования.
 
 1. [Настройте VPN-подключение типа "сеть — сеть" между локальной сетью и частным облаком AVS](set-up-vpn.md).
-2. [Настройте поиск DNS, чтобы компоненты управления частным облаком AVS перенаправлялись на DNS-серверы в частном облаке AVS](on-premises-dns-setup.md). Чтобы включить пересылку DNS, создайте запись зоны перенаправления на локальном DNS-сервере для `*.AVS.io` DNS-серверам AVS.
+2. [Настройте поиск DNS, чтобы компоненты управления частным облаком AVS перенаправлялись на DNS-серверы в частном облаке AVS](on-premises-dns-setup.md). Чтобы включить пересылку DNS, создайте запись зоны перенаправления на локальном DNS-сервере для `*.cloudsimple.io` DNS-серверам AVS.
 3. Настройте поиск DNS, чтобы локальные компоненты vCenter направлялись на локальные DNS-серверы. DNS-серверы должны быть доступны из частного облака AVS через VPN типа "сеть — сеть". Для получения помощи отправьте [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest), предоставив следующие сведения. 
 
     * Локальное доменное имя DNS
@@ -93,6 +93,6 @@ ms.locfileid: "77024710"
 6. При необходимости настройте параметры сети для отдельных виртуальных машин и создайте ВПГ.
 7. Протестируйте отработку отказа после завершения репликации.
 
-## <a name="reference"></a>Справочные материалы
+## <a name="reference"></a>Справочник
 
 [Документация по Zerto](https://www.zerto.com/myzerto/technical-documentation/)

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 12/11/2019
+ms.date: 01/28/2020
 ms.author: diberry
-ms.openlocfilehash: 0ddce3e4112dfb14309878927493abb3cb6b451a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a9afef07af1332910cc9e25f9d66db5930df3bd4
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447367"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901665"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v4"></a>Руководство. Создание бота QnA с помощью службы Azure Bot версии 4
 
@@ -29,7 +29,7 @@ ms.locfileid: "75447367"
 > * Создайте службу Azure Bot из существующей базы знаний
 > * диалог с ботом для проверки правильности работы;
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется опубликованная база знаний. Если у вас ее нет, выполните инструкции в статье [Руководство по созданию базы знаний на портале QnA Maker](create-publish-query-in-portal.md), чтобы создать базу знаний QnA Maker с вопросами и ответами.
 
@@ -41,7 +41,7 @@ ms.locfileid: "75447367"
 
 1. На портале QnA Maker перейдите на страницу **Публикация** и опубликуйте базу знаний. Нажмите кнопку **Создать бот**.
 
-    ![На портале QnA Maker перейдите на страницу публикации и опубликуйте базу знаний. Нажмите кнопку "Create Bot" (Создать бота).](../media/qnamaker-tutorials-create-bot/create-bot-from-published-knowledge-base-page.png)
+    [![На портале QnA Maker перейдите на страницу "Публикация" и опубликуйте базу знаний. Нажмите кнопку "Создать бот".](../media/qnamaker-tutorials-create-bot/create-bot-from-published-knowledge-base-page.png)](../media/qnamaker-tutorials-create-bot/create-bot-from-published-knowledge-base-page.png#lightbox)
 
     Портал Azure открывается на странице конфигурации создания ботов.
 
@@ -50,9 +50,9 @@ ms.locfileid: "75447367"
     |Параметр|Значение|Назначение|
     |--|--|--|
     |Bot handle (Дескриптор бота)|`qna-maker-central-us-bot`|Это — имя ресурса Azure для бота.|
-    |Subscription|Просмотрите назначение.|Выберите ту же подписку, которую вы использовали для создания ресурсов QnA Maker.|
-    |группа ресурсов.|`docs`|Группа ресурсов, используемая для всех ресурсов Azure, связанных с ботами.|
-    |Location|`west us`|Расположение ресурса Azure бота.|
+    |Подписка|Просмотрите назначение.|Выберите ту же подписку, которую вы использовали для создания ресурсов QnA Maker.|
+    |Группа ресурсов|`docs`|Группа ресурсов, используемая для всех ресурсов Azure, связанных с ботами.|
+    |Расположение|`west us`|Расположение ресурса Azure бота.|
     |Ценовая категория|`F0`|Уровень "Бесплатный" для службы ботов Azure.|
     |Имя приложения.|`qna-maker-central-us-bot-app`|Это — веб-приложение для поддержки только вашего бота. Оно не должно совпадать с именем приложения, которое уже используется службой QnA Maker. Общий доступ к веб-приложению QnA Maker ни с каким другим ресурсом не поддерживается.|
     |Язык пакета SDK|C#|Это — основной язык программирования, используемый в пакете SDK Bot Framework. Возможны следующие варианты: [C#](https://github.com/Microsoft/botbuilder-dotnet) или [Node.js](https://github.com/Microsoft/botbuilder-js).|
@@ -101,8 +101,6 @@ ms.locfileid: "75447367"
 
 ## <a name="related-to-qna-maker-bots"></a>Связанные с ботами QnA Maker
 
-* Бот раздела справки QnA Maker, используемый на портале QnA Maker, доступен в виде [примера бота](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/qnamaker-support).
-    ![Значок бота справки QnA Maker — красный робот](../media/qnamaker-tutorials-create-bot/answer-bot-icon.PNG)
 * [Боты оценки работоспособности](https://docs.microsoft.com/HealthBot/qna_model_howto) используют QnA Maker в качестве одной из [языковых моделей](https://docs.microsoft.com/HealthBot/qna_model_howto).
 
 

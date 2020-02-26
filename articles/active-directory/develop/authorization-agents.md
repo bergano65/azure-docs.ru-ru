@@ -2,22 +2,22 @@
 title: Агенты авторизации и их включение | Службы
 description: Узнайте о различных агентах авторизации, которые библиотека проверки подлинности Майкрософт (MSAL) позволяет использовать приложение Android и как их включить.
 services: active-directory
-author: tylermsft
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 09/05/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: shoatman, brianmel, hahamil
 ms.custom: aaddev
-ms.openlocfilehash: c2d0c8a877ba856aa7a93bfc960c44b63cbe8f9c
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 4f1b3fc5b60069cfa47d437e4341ded141204418
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698005"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77085332"
 ---
 # <a name="authorization-agents-android"></a>Агенты авторизации (Android)
 
@@ -78,12 +78,12 @@ MSAL извлекает полный список браузеров, устан
 
 | | Встроенный браузер | Chrome | Opera  | Microsoft Edge | Браузер UC | Firefox |
 | -- |:-------------:| -----:|-----:|-----:|-----:|-----:|
-| Хранилища 4 (API 17) | pass | pass |Не применяется |Не применяется |Не применяется |Не применяется |
+| Хранилища 4 (API 17) | pass | pass |неприменимо |неприменимо |неприменимо |неприменимо |
 | Samsung S7 (API 25) | проходит | pass | pass | pass | не пройден |pass |
 | Huawei (API 26) |Pass * * | pass | не пройден | pass | pass |pass |
 | VIVO (API 26) |pass|pass|pass|pass|pass|не пройден|
 | Пиксель 2 (API 26) |pass | pass | pass | pass | не пройден |pass |
-| Oppo | pass | неприменимо * * * |Не применяется  |Не применяется |Не применяется | Не применяется|
+| Oppo | pass | неприменимо * * * |неприменимо  |неприменимо |неприменимо | неприменимо|
 | Онеплус (API 25) |pass | pass | pass | pass | не пройден |pass |
 | Хранилища (API 28) |pass | pass | pass | pass | не пройден |pass |
 |MI | pass | pass | pass | pass | не пройден |pass |

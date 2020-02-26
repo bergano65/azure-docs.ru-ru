@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: robinsh
-ms.openlocfilehash: 150927ac05cba058d1d152ce568d7a462043d076
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 694697be85b61ad2d59a0a4be1ced3581873cb77
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76937762"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111751"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -34,23 +34,40 @@ ms.locfileid: "76937762"
 * Библиотеки в пакетах [SDK для Интернета вещей Azure](https://github.com/Azure/azure-iot-sdks).
 * Протокол MQTT напрямую.
 
+Порт MQTT (8883) блокируется во многих корпоративных и образовательных сетевых средах. Если в брандмауэре не удается открыть порт 8883, рекомендуется использовать MQTT через веб-сокеты. MQTT через веб-сокеты взаимодействуют через порт 443, который почти всегда открыт в сетевых средах. Сведения о том, как указать протоколы MQTT и MQTT через веб-сокеты при использовании пакетов SDK для Интернета вещей Azure, см. в разделе [Использование пакетов SDK для устройств](#using-the-device-sdks).
+
 ## <a name="using-the-device-sdks"></a>Использование пакетов SDK для устройств
 
-[Пакеты SDK для устройств](https://github.com/Azure/azure-iot-sdks) , поддерживающие протокол MQTT, доступны для Java, Node. js, C#C, и Python. Для установки подключения к Центру Интернета вещей пакеты SDK для устройств используют стандартную строку подключения к Центру Интернета вещей. Чтобы использовать протокол MQTT, параметр протокола клиента должен быть задан как **MQTT**. По умолчанию пакеты SDK для устройств подключаются к Центру Интернета вещей, если для флага **CleanSession** установлено значение **0**, и используют **качество обслуживания первого уровня** для обмена сообщениями с Центром Интернета вещей.
+[Пакеты SDK для устройств](https://github.com/Azure/azure-iot-sdks) , поддерживающие протокол MQTT, доступны для Java, Node. js, C#C, и Python. Для установки подключения к Центру Интернета вещей пакеты SDK для устройств используют стандартную строку подключения к Центру Интернета вещей. Чтобы использовать протокол MQTT, параметр протокола клиента должен быть задан как **MQTT**. В параметре протокола клиента можно также указать MQTT через веб-сокеты. По умолчанию пакеты SDK для устройств подключаются к Центру Интернета вещей, если для флага **CleanSession** установлено значение **0**, и используют **качество обслуживания первого уровня** для обмена сообщениями с Центром Интернета вещей.
 
 Когда устройство подключено к Центру Интернета вещей, пакеты SDK для устройства предоставляют методы, позволяющие устройству осуществлять обмен сообщениями с Центром Интернета вещей.
 
-В следующей таблице содержатся ссылки на примеры кода для каждого поддерживаемого языка и указаны параметры, используемые для подключения к Центру Интернета вещей по протоколу MQTT.
+В следующей таблице приведены ссылки на примеры кода для каждого поддерживаемого языка и указывается параметр, используемый для установления подключения к центру Интернета вещей с помощью MQTT или протокола MQTT через веб-сокеты.
 
-| Язык | Параметр протокола |
-| --- | --- |
-| [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) |azure-iot-device-mqtt |
-| [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |IotHubClientProtocol.MQTT |
-| [C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) |MQTT_Protocol |
-| [C#](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) |TransportType.Mqtt |
-| [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples) |Всегда поддерживает MQTT по умолчанию |
+| Язык | Параметр протокола MQTT | Параметр протокола MQTT через веб-сокеты
+| --- | --- | --- |
+| [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) | Azure-IOT-Device-mqtt. Mqtt | Azure-IOT-Device-mqtt. мкттвс |
+| [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |[Иосубклиентпротокол](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.iothubclientprotocol?view=azure-java-stable). MQTT | Иосубклиентпротокол. MQTT_WS |
+| [C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) | [MQTT_Protocol](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothubtransportmqtt-h/mqtt-protocol) | [MQTT_WebSocket_Protocol](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothubtransportmqtt-websockets-h/mqtt-websocket-protocol) |
+| [C#](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) | [TransportType](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.transporttype?view=azure-dotnet). Mqtt | TransportType. Mqtt возвращается к MQTT через веб-сокеты, если происходит сбой MQTT. Чтобы указать только MQTT через веб-сокеты, используйте TransportType. Mqtt_WebSocket_Only |
+| [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples) | Поддержка MQTT по умолчанию | Добавление `websockets=True` в вызове для создания клиента |
 
-### <a name="default-keep-alive-timeout"></a>Время ожидания проверки активности по умолчанию 
+В следующем фрагменте показано, как указать протокол MQTT через веб-сокеты при использовании пакета SDK для Node. js для Azure IoT:
+
+```javascript
+var Client = require('azure-iot-device').Client;
+var Protocol = require('azure-iot-device-mqtt').MqttWs;
+var client = Client.fromConnectionString(deviceConnectionString, Protocol);
+```
+
+В следующем фрагменте показано, как указать протокол MQTT через веб-сокеты при использовании пакета SDK для Azure IoT Python:
+
+```python
+from azure.iot.device.aio import IoTHubDeviceClient
+device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectionString, websockets=True)
+```
+
+### <a name="default-keep-alive-timeout"></a>Время ожидания проверки активности по умолчанию
 
 Чтобы обеспечить постоянную активность подключения клиента или центра Интернета вещей, служба и клиент регулярно отправляют проверку связи проверки *активности* . Клиент, использующий пакет SDK для IoT, отправляет данные о неактивном состоянии через интервал, определенный в следующей таблице.
 
@@ -158,7 +175,7 @@ ms.locfileid: "76937762"
 
 • LinuxConsoleVS2019: содержит тот же код, но в проекте VS2019, предназначенном для WSL (подсистему Windows Linux). Этот проект позволяет выполнять отладку кода, выполняемого на Linux, пошагово в Visual Studio.
 
-**Для mosquito_pub:**
+**Для mosquitto_pub:**
 
 • Эта папка содержит две команды, которые используются с mosquitto_pub служебной программой, предоставляемой Mosquitto.org.
 
@@ -270,7 +287,7 @@ client.connect(iot_hub_name+".azure-devices.net", port=8883)
 
 ## <a name="sending-device-to-cloud-messages"></a>Отправка сообщений из устройства в облако
 
-После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Пример.
+После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Например:
 
 ```text
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
@@ -323,7 +340,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Состояние | Description |
+|Состояние | Описание |
 | ----- | ----------- |
 | 204 | Успех (содержимое не возвращается) |
 | 429 | Слишком много запросов (регулируется) в соответствии с [регулированием центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
@@ -343,7 +360,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Пример.
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например:
 
 ```json
 {
@@ -354,9 +371,9 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Состояние | Description |
+|Состояние | Описание |
 | ----- | ----------- |
-| 200 | Успешно |
+| 200 | Выполнено |
 | 400 | Недопустимый запрос. Неправильно сформированный JSON. |
 | 429 | Слишком много запросов (регулируется) в соответствии с [регулированием центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
 | 5** | ошибки сервера; |
@@ -381,7 +398,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" +
 
 ## <a name="receiving-desired-properties-update-notifications"></a>Получение уведомлений об обновлении требуемых свойств
 
-При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Пример.
+При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Например:
 
 ```json
 {
@@ -410,7 +427,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" +
 
 Конечно, если вам нужно настроить поведение протокола MQTT на стороне облака, следует ознакомиться с [шлюзом протокола Интернета вещей Azure](iot-hub-protocol-gateway.md). Это программное обеспечение позволяет развернуть шлюз протокола с высокой производительностью, который взаимодействует непосредственно с Центром Интернета вещей. Шлюз протокола Azure IoT позволяет настроить протокол устройства для уже существующих развертываний MQTT или других настраиваемых протоколов. Однако при этом подходе необходимо запустить настраиваемый шлюз протокола и управлять им.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о протоколе MQTT см. в [документации по MQTT](https://mqtt.org/documentation).
 

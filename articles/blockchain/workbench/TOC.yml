@@ -71,7 +71,5 @@
   items:
     - name: Консорциум PoA в Ethereum
       href: ../templates/ethereum-poa-deployment.md
-    - name: Консорциум Hyperledger Fabric
-      href: ../templates/hyperledger-fabric-consortium-blockchain.md
     - name: Служба Azure Kubernetes в консорциуме Hyperledger Fabric
       href: ../templates/hyperledger-fabric-consortium-azure-kubernetes-service.md

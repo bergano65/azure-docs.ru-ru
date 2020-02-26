@@ -5,16 +5,16 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 12/18/2019
+ms.date: 02/10/2020
 ms.author: alzam
-ms.openlocfilehash: 59af4189b52c2ad7a1109ffb03accedbc69dc6c6
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 4b9678f72dd69db24b105d4b1d708928e29a09ba
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647923"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134521"
 ---
-# <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication-preview"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD (Предварительная версия)
+# <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD
 
 Эта статья поможет настроить VPN-клиент для подключения к виртуальной сети с помощью VPN типа "точка — сеть" и Azure Active Directory проверки подлинности. Прежде чем можно будет подключиться и пройти проверку подлинности с помощью Azure AD, необходимо сначала настроить клиент Azure AD. Дополнительные сведения см. в статье [Настройка клиента Azure AD](openvpn-azure-ad-tenant.md).
 
@@ -24,11 +24,11 @@ ms.locfileid: "75647923"
 
 ## <a name="profile"></a>Работа с профилями клиентов
 
-Для подключения необходимо скачать VPN-клиент Azure (Предварительная версия) и настроить профиль VPN-клиента на каждом компьютере, который хочет подключиться к виртуальной сети. Можно создать клиентский профиль на компьютере, экспортировать его, а затем импортировать на дополнительные компьютеры.
+Для подключения необходимо скачать VPN-клиент Azure и настроить профиль VPN-клиента на каждом компьютере, который хочет подключиться к виртуальной сети. Можно создать клиентский профиль на компьютере, экспортировать его, а затем импортировать на дополнительные компьютеры.
 
 ### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
 
-Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure (Предварительная версия).
+Используйте эту [ссылку](https://go.microsoft.com/fwlink/?linkid=2117554) , чтобы скачать VPN-клиент Azure.
 
 ### <a name="cert"></a>Создание профиля клиента на основе сертификата
 
@@ -148,7 +148,7 @@ ms.locfileid: "75647923"
 
     ![диагностика](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
 
@@ -163,6 +163,24 @@ ms.locfileid: "75647923"
           <dnssuffix>.xyz.com</dnssuffix>
           <dnssuffix>.etc.net</dnssuffix>
     </dnssuffixes>
+    
+</clientconfig>
+</azvpnprofile>
+```
+
+### <a name="how-do-i-add-custom-routes-to-the-vpn-client"></a>Разделы справки добавить настраиваемые маршруты к VPN-клиенту?
+
+Вы можете изменить скачанный XML-файл профиля и добавить **\<маршрут >\<инклудераутес >\<назначение >\<mask > \</рауте >\</инклудераутес >\</дестинатион >\</маск >** Теги
+
+```
+<azvpnprofile>
+<clientconfig>
+
+    <includeroutes>
+        <route>
+            <destination>x.x.x.x</destination><mask>24</mask>
+        </route>
+    </includeroutes>
     
 </clientconfig>
 </azvpnprofile>

@@ -71,7 +71,11 @@
     - name: Справочник по PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
     - name: API Анализа текста
-      href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7'
+      items:
+        - name: "Версия\_3.0 (предварительная версия)"
+          href: 'https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1'
+        - name: "Версия\_2"
+          href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1'
     - name: Пакеты SDK
       items:
         - name: "Версия\_3.0 (предварительная версия)"

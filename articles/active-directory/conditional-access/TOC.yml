@@ -19,20 +19,30 @@
       href: concept-conditional-access-policy-common.md
     - name: Компоненты политики условного доступа
       href: concept-conditional-access-policies.md
-    - name: Облачные приложения и действия
-      href: concept-conditional-access-cloud-apps.md
-    - name: Условия
-      href: conditions.md
-    - name: Условия расположения
-      href: location-condition.md
-    - name: Управление
-      href: controls.md
+    - name: Назначения
+      items:
+        - name: Пользователи и группы
+          href: concept-conditional-access-users-groups.md
+        - name: Облачные приложения или действия
+          href: concept-conditional-access-cloud-apps.md
+        - name: Условия
+          href: concept-conditional-access-conditions.md
+    - name: Элементы управления доступом
+      items:
+        - name: Предоставить
+          href: concept-conditional-access-grant.md
+        - name: Сеанс
+          href: concept-conditional-access-session.md
     - name: Режим "Только отчет"
       href: concept-conditional-access-report-only.md
     - name: Зависимости служб
       href: service-dependencies.md
+    - name: Условия расположения
+      href: location-condition.md
     - name: Средство "Что если"
       href: what-if-tool.md
+    - name: Управление
+      href: controls.md
     - name: Перенос классической политики
       href: policy-migration.md
     - name: Базовые политики защиты
@@ -84,10 +94,6 @@
       items:
         - name: Устранение неполадок с помощью средства What If
           href: troubleshoot-conditional-access-what-if.md
-- name: Справочник
-  items:
-    - name: Технический справочник
-      href: technical-reference.md
 - name: Ресурсы
   items:
     - name: Форум отзывов и предложений по Azure

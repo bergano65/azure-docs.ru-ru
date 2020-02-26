@@ -1,5 +1,5 @@
 ---
-title: Потоковая трансляция с помощью локальных кодировщиков, с помощью портала Azure | Документация Майкрософт
+title: Динамический поток с локальными кодировщиками с помощью портал Azure | Документация Майкрософт
 description: В этом руководстве рассматривается создание канала, настроенного для сквозной доставки.
 services: media-services
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 9a8ab024443744f50482dd2ca1cfb33db43359e9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a83d6ae2e3ed13f0d03e0fdc87a3b45a4119ba88
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61463378"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162758"
 ---
-# <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Потоковая трансляция с помощью локальных кодировщиков, с помощью портала Azure
+# <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Проведите динамическую потоковую передачу с помощью локальных кодировщиков, используя портал Azure
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
@@ -30,16 +30,16 @@ ms.locfileid: "61463378"
 > 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 В этом руководстве рассматривается создание **канала** , настроенного для сквозной доставки, с помощью портала Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
 * Учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
 * Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
-* Веб-камера, например [кодировщик Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm).
+* Веб-камера, например [кодировщик Telestream Wirecast](media-services-configure-wirecast-live-encoder.md). 
 
 Настоятельно рекомендуется ознакомиться со следующими статьями:
 
@@ -55,7 +55,7 @@ ms.locfileid: "61463378"
 > Убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое потоком, находится в состоянии **Выполняется**. 
     
 1. Подключите видеокамеру к компьютеру. <br/>Чтобы установить оборудование, ознакомьтесь с записью блога [Simple and portable event video gear setup]( https://link.medium.com/KNTtiN6IeT) (Настройка простого портативного оборудования для сьемки).
-1. Запустите и настройте локальный динамический кодировщик, который выводит поток с разными скоростями RTMP или фрагментированный поток MP4. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](https://go.microsoft.com/fwlink/?LinkId=532824).<br/>Ознакомьтесь также с записью блога [Live streaming production with OBS](https://link.medium.com/ttuwHpaJeT) (Потоковая трансляция с помощью OBS).
+1. Запустите и настройте локальный динамический кодировщик, который выводит поток с разными скоростями RTMP или фрагментированный поток MP4. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](https://go.microsoft.com/fwlink/?LinkId=532824).<br/>Кроме того, ознакомьтесь с этим блогом: [потоковая передача в реальном времени с помощью OBS](https://link.medium.com/ttuwHpaJeT).
    
     Это действие также можно выполнить после создания канала.
 1. Создайте и запустите сквозной канал.
@@ -111,7 +111,7 @@ ms.locfileid: "61463378"
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
 2. В окне **Параметры** щелкните элемент **Потоковая трансляция**. 
    
-    ![Приступая к работе](./media/media-services-portal-passthrough-get-started/media-services-getting-started.png)
+    ![Начало работы](./media/media-services-portal-passthrough-get-started/media-services-getting-started.png)
    
     Появится окно **Live streaming** (Потоковая трансляция).
 3. Щелкните элемент **Быстрое создание** , чтобы создать сквозной канал с протоколом приема RTMP.
@@ -130,12 +130,12 @@ ms.locfileid: "61463378"
 ## <a name="get-ingest-urls"></a>Получение URL-адресов приема
 После создания канала можно получить URL-адреса приема, которые необходимо передать динамическому кодировщику. Он использует эти адреса для передачи динамического потока на вход.
 
-![Создано](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
+![Создание](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
 
 ## <a name="watch-the-event"></a>Просмотр события
 Чтобы просмотреть событие, щелкните **Посмотреть** на портале Azure или скопируйте URL-адрес потоковой передачи и используйте проигрыватель по своему усмотрению. 
 
-![Создано](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
+![Создание](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
 
 После остановки интерактивное событие автоматически преобразуется в содержимое по запросу.
 
@@ -150,9 +150,9 @@ ms.locfileid: "61463378"
 
 Для управления ресурсами последовательно выберите **Параметры** и **Ресурсы**.
 
-![ресурсы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
+![Активы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

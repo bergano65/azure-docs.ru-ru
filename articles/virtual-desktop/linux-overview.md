@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: helohr
-ms.openlocfilehash: f7d62487605c26a68e7c71b6d95d7814da0a07c9
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 47e38d79e8aa4656b8164c94b4ef439bf431e01d
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76776395"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049669"
 ---
 # <a name="linux-support"></a>Поддержка Linux
 
@@ -55,7 +55,7 @@ ms.locfileid: "76776395"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы можете запросить доступ к пакету SDK для Linux на нашем [форуме технического сообщества](https://go.microsoft.com/fwlink/?linkid=2116541).
+Пакет SDK в настоящее время разрабатывается. Мы будем обновлять этот документ с инструкциями по доступу к пакету SDK, если он доступен.
 
 Ознакомьтесь с документацией по следующим клиентам:
 

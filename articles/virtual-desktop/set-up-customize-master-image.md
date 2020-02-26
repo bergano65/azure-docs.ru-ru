@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: helohr
-ms.openlocfilehash: 30895af3e973fd5c9ae0de559df440f18cec1563
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 23763123ce8e92b6bb15b2b33a196ed1a1d75c9f
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013144"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368795"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -22,13 +22,13 @@ ms.locfileid: "74013144"
 
 Многосеансовая поддержка Windows 10 Enterprise доступна в коллекции образов Azure. Существует два варианта настройки этого образа.
 
-Первый вариант — подготовить виртуальную машину в Azure, выполнив инструкции из раздела Создание ВИРТУАЛЬНОЙ машины на [основе управляемого образа](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-generalized-managed), а затем перейти к [подготовке и установке программного обеспечения](set-up-customize-master-image.md#software-preparation-and-installation).
+Первый вариант — подготовить виртуальную машину в Azure, выполнив инструкции из раздела Создание ВИРТУАЛЬНОЙ машины на [основе управляемого образа](../virtual-machines/windows/create-vm-generalized-managed.md), а затем перейти к [подготовке и установке программного обеспечения](set-up-customize-master-image.md#software-preparation-and-installation).
 
 Второй вариант — создать образ локально, загрузив образ, подготавливая виртуальную машину Hyper-V и настроив ее в соответствии с вашими потребностями, которые мы рассмотрим в следующем разделе.
 
 ### <a name="local-image-creation"></a>Создание локального образа
 
-После загрузки образа в локальное расположение откройте **Диспетчер Hyper-V** , чтобы создать виртуальную машину с скопированным VHD-диском. Ниже приведены инструкции по простой версии, но более подробные инструкции см. в статье [Создание виртуальной машины в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v).
+После загрузки образа в локальное расположение откройте **Диспетчер Hyper-V** , чтобы создать виртуальную машину с скопированным VHD-диском. Ниже приведены инструкции по простой версии, но более подробные инструкции см. в статье [Создание виртуальной машины в Hyper-V](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v/).
 
 Чтобы создать виртуальную машину с скопированным виртуальным жестким диском:
 
@@ -50,7 +50,7 @@ Set-VM -Name <VMNAME> -CheckpointType Disabled
 
 ### <a name="fixed-disk"></a>Фиксированный диск
 
-При создании виртуальной машины из существующего виртуального жесткого диска по умолчанию создается динамический диск. Его можно изменить на фиксированный диск, нажав кнопку **изменить диск...** , как показано на следующем рисунке. Более подробные инструкции см. [в статье Подготовка VHD или VHDX Windows к отправке в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
+При создании виртуальной машины из существующего виртуального жесткого диска по умолчанию создается динамический диск. Его можно изменить на фиксированный диск, нажав кнопку **изменить диск...** , как показано на следующем рисунке. Более подробные инструкции см. [в статье Подготовка VHD или VHDX Windows к отправке в Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md).
 
 ![Снимок экрана с параметром "изменить диск".](media/35772414b5a0f81f06f54065561d1414.png)
 
@@ -70,7 +70,7 @@ Convert-VHD –Path c:\\test\\MY-VM.vhdx –DestinationPath c:\\test\\MY-NEW-VM.
 
 ### <a name="set-up-user-profile-container-fslogix"></a>Настройка контейнера профиля пользователя (Фслогикс)
 
-Чтобы включить контейнер Фслогикс как часть образа, следуйте инструкциям в разделе [Создание контейнера профилей для пула узлов с помощью общей папки](create-host-pools-user-profile.md#configure-the-fslogix-profile-container). С помощью [этого краткого руководства](https://docs.microsoft.com/fslogix/configure-cloud-cache-tutorial)вы можете протестировать функциональные возможности контейнера фслогикс.
+Чтобы включить контейнер Фслогикс как часть образа, следуйте инструкциям в разделе [Создание контейнера профилей для пула узлов с помощью общей папки](create-host-pools-user-profile.md#configure-the-fslogix-profile-container). С помощью [этого краткого руководства](/fslogix/configure-cloud-cache-tutorial/)вы можете протестировать функциональные возможности контейнера фслогикс.
 
 ### <a name="configure-windows-defender"></a>Настройка защитника Windows
 
@@ -78,9 +78,9 @@ Convert-VHD –Path c:\\test\\MY-VM.vhdx –DestinationPath c:\\test\\MY-NEW-VM.
 
 Эта конфигурация удаляет только сканирование VHD-и VHDX-файлов во время вложения, но не влияет на проверку в реальном времени.
 
-Более подробные инструкции по настройке защитника Windows в Windows Server см. в разделе [Настройка исключений антивирусной программы защитника Windows в Windows Server](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus).
+Более подробные инструкции по настройке защитника Windows в Windows Server см. в разделе [Настройка исключений антивирусной программы защитника Windows в Windows Server](/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus/).
 
-Дополнительные сведения о настройке защитника Windows для исключения определенных файлов из проверки см. в разделе [Настройка и проверка исключений на основе расширения файла и расположения папки](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-extension-file-exclusions-windows-defender-antivirus).
+Дополнительные сведения о настройке защитника Windows для исключения определенных файлов из проверки см. в разделе [Настройка и проверка исключений на основе расширения файла и расположения папки](/windows/security/threat-protection/windows-defender-antivirus/configure-extension-file-exclusions-windows-defender-antivirus/).
 
 ### <a name="disable-automatic-updates"></a>Отключить автоматическое обновление
 
@@ -137,9 +137,9 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\
 
 В этой статье не рассматривается настройка языковой и региональной поддержки. Дополнительные сведения см. в следующих статьях:
 
-- [Добавление языков в образы Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-language-packs-to-windows)
-- [Функции по запросу](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)
-- [Возможности языка и региона по запросу (FOD)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-language-fod)
+- [Добавление языков в образы Windows](/windows-hardware/manufacture/desktop/add-language-packs-to-windows/)
+- [Функции по запросу](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities/)
+- [Возможности языка и региона по запросу (FOD)](/windows-hardware/manufacture/desktop/features-on-demand-language-fod/)
 
 ### <a name="other-applications-and-registry-configuration"></a>Другие приложения и конфигурация реестра
 
@@ -174,7 +174,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
 
 ## <a name="prepare-the-image-for-upload-to-azure"></a>Подготовка образа к отправке в Azure
 
-После завершения настройки и установки всех приложений следуйте инструкциям в статье [Подготовка VHD-или VHDX Windows к отправке в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) для подготовки образа.
+После завершения настройки и установки всех приложений следуйте инструкциям в статье [Подготовка VHD-или VHDX Windows к отправке в Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md) для подготовки образа.
 
 После подготовки образа для передачи убедитесь, что виртуальная машина остается в состоянии OFF или освобождено.
 
@@ -198,7 +198,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
 
     ![Снимок экрана уведомления об успешно созданном образе.](media/1f41b7192824a2950718a2b7bb9e9d69.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о создании и обновлении пулов узлов см. в следующих статьях:
 

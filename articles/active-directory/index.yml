@@ -12,12 +12,12 @@ metadata:
   ms.author: mtillman
   manager: daveba
   ms.date: 07/27/2019
-  ms.openlocfilehash: d212a7223eea2ccbaaddeb9c45db85e13c7ff9c8
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.openlocfilehash: e11e0edf214d3362784285cc24ee209855383119
+  ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75443461"
+  ms.lasthandoff: 02/12/2020
+  ms.locfileid: "77166165"
 highlightedContent:
   items:
   - title: Что такое Azure AD?
@@ -54,17 +54,31 @@ conceptualContent:
     footerLink:
       url: ./manage-apps/index.yml
       text: Подробнее
+  - title: Подготовка приложений по управлению персоналом и других приложений
+    links:
+    - url: ./app-provisioning/user-provisioning.md
+      itemType: overview
+      text: Что собой представляет подготовка приложения?
+    - url: ./app-provisioning/how-provisioning-works.md
+      itemType: concept
+      text: Принцип подготовки приложений
+    - url: ./app-provisioning/plan-cloud-hr-provision.md
+      itemType: how-to-guide
+      text: Планирование развертывания для подготовки облачного приложения по управлению персоналом
+    footerLink:
+      url: ./app-provisioning/index.yml
+      text: Подробнее
   - title: Аутентификация
     links:
-    - url: ./authentication/concept-mfa-howitworks.md
+    - url: ./authentication/overview-authentication.md
       itemType: concept
-      text: Принцип работы. Многофакторная идентификация Azure
-    - url: ./authentication/concept-sspr-howitworks.md
-      itemType: concept
-      text: Самостоятельный сброс пароля в Azure AD
-    - url: ./authentication/concept-password-ban-bad.md
-      itemType: concept
-      text: Защита паролей Azure AD
+      text: Что такое аутентификация Azure AD?
+    - url: ./authentication/tutorial-enable-sspr.md
+      itemType: tutorial
+      text: Включение самостоятельного сброса пароля
+    - url: ./authentication/tutorial-enable-azure-mfa.md
+      itemType: tutorial
+      text: Включение Многофакторной идентификации Azure
     footerLink:
       url: ./authentication/index.yml
       text: Подробнее

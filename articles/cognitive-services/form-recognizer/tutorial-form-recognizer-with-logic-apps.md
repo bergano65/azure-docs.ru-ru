@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 01/27/2020
 ms.author: nitinme
-ms.openlocfilehash: 0de0c83b0c459d29c304dbf51eaa44a62e895760
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: d71d9c7e6570e562fe4c692ede1d07b70c923cb6
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773079"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118268"
 ---
 # <a name="tutorial-use-form-recognizer-with-azure-logic-apps-to-analyze-invoices"></a>Руководство. использованию Распознавателя документов с Azure Logic Apps для анализа счетов
 
@@ -34,10 +34,6 @@ ms.locfileid: "76773079"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-
-## <a name="request-access-for-form-recognizer"></a>запрос доступа для Распознавателя документов;
-
-Распознаватель документов доступен в качестве предварительной версии с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess). Когда команда Azure Cognitive Services утвердит запрос, вы получите электронное письмо с инструкциями о том, как получить доступ к службе.
 
 ## <a name="understand-the-invoice-to-be-analyzed"></a>Анализ счета
 

@@ -4,6 +4,12 @@
   items:
     - name: Общие сведения о Виртуальной глобальной сети
       href: virtual-wan-about.md
+    - name: Architecture
+      items:
+        - name: Переход на Виртуальную глобальную сеть
+          href: migrate-from-hub-spoke-topology.md
+        - name: Архитектура глобальной транзитной сети
+          href: virtual-wan-global-transit-network-architecture.md
 - name: Учебники
   items:
     - name: Создание подключения "сеть — сеть"
@@ -15,15 +21,13 @@
 - name: Основные понятия
   items:
     - name: Расположения и партнеры
-      href: virtual-wan-locations-partners.md
+      items:
+        - name: Расположения концентраторов и партнеры
+          href: virtual-wan-locations-partners.md
+        - name: Рекомендации по автоматизации для партнеров
+          href: virtual-wan-configure-automation-providers.md
     - name: Политики IPsec
       href: virtual-wan-ipsec.md
-    - name: Architecture
-      items:
-        - name: Переход на Виртуальную глобальную сеть
-          href: migrate-from-hub-spoke-topology.md
-        - name: Архитектура глобальной транзитной сети
-          href: virtual-wan-global-transit-network-architecture.md
 - name: Практические руководства
   items:
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
@@ -42,12 +46,10 @@
       href: openvpn-azure-ad-tenant.md
     - name: Включение многофакторной идентификации для VPN пользователя
       href: openvpn-azure-ad-mfa.md
-    - name: Настройка аутентификации Azure AD для VPN пользователя (предварительная версия)
+    - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
       href: virtual-wan-point-to-site-azure-ad.md
-    - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях (предварительная версия)"
+    - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
       href: openvpn-azure-ad-tenant-multi-app.md
-    - name: Настройка автоматизации (участники Виртуальной глобальной сети)
-      href: virtual-wan-configure-automation-providers.md
     - name: Скачивание глобальных профилей VPN и профилей VPN на основе концентраторов
       href: global-hub-profile.md
     - name: Настройка маршрутизации

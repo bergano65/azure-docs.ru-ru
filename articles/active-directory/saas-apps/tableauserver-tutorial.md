@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграции единого входа Azure Active Directory с Tableau Server | Документация Майкрософт
+title: Руководство. Интеграции единого входа Azure Active Directory с Tableau Server | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Tableau Server.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/09/2019
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b07c6d6317d8ca284008d271f507b965414bfbc1
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: d19a7cc8d81f9e6e913f147b24c5cce03ff82027
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71257504"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986739"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>Руководство по интеграции единого входа Azure Active Directory с Tableau Server
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>Руководство. интеграции единого входа Azure Active Directory с Tableau Server
 
 В этом руководстве описано, как интегрировать Tableau Server с Azure Active Directory (Azure AD). Интеграция Tableau Server с Azure AD обеспечивает приведенные ниже возможности.
 
@@ -35,9 +34,9 @@ ms.locfileid: "71257504"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Tableau Server с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -45,6 +44,7 @@ ms.locfileid: "71257504"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Tableau Server поддерживает единый вход, инициированный **поставщиком услуг**.
+* После настройки Tableau Server можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-tableau-server-from-the-gallery"></a>Добавление сервера Tableau Server из коллекции
 
@@ -68,7 +68,7 @@ ms.locfileid: "71257504"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Tableau Server](#configure-tableau-server-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Tableau Server](#create-tableau-server-test-user)** требуется для создания в Tableau Server пользователя B.Simon, связанного с одноименным пользователем в Azure Active Directory.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,11 +78,11 @@ ms.locfileid: "71257504"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`.
 
@@ -115,7 +115,7 @@ ms.locfileid: "71257504"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к приложению Tableau Server.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Tableau Server**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -141,7 +141,7 @@ ms.locfileid: "71257504"
 
     ![Настройка единого входа](./media/tableauserver-tutorial/tutorial-tableauserver-config.png)
 
-    a. В качестве **метода проверки подлинности** выберите SAML.
+    а. В качестве **метода проверки подлинности** выберите SAML.
 
     b. Установите флажок **Включить проверку подлинности SAML для сервера**.
 
@@ -149,13 +149,13 @@ ms.locfileid: "71257504"
 
     d. Идентификатор сущности SAML — идентификатор сущности однозначно определяет установку Tableau Server для поставщика удостоверений. Если нужно, здесь можно еще раз ввести URL-адрес Tableau Server, но это необязательно должен быть URL-адрес Tableau Server. Скопируйте **Идентификатор сущности SAML** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    д. Нажмите кнопку **Скачать XML-файл метаданных** и откройте его в текстовом редакторе. Найдите URL-адрес службы обработчика утверждений с Http Post и индексом 0 и скопируйте URL-адрес. Вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    д) Нажмите кнопку **Скачать XML-файл метаданных** и откройте его в текстовом редакторе. Найдите URL-адрес службы обработчика утверждений с Http Post и индексом 0 и скопируйте URL-адрес. Вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    Е. Найдите файл метаданных федерации, скачанный с портала Azure, и отправьте его в разделе **файл метаданных поставщика удостоверений SAML**.
+    е) Найдите файл метаданных федерации, скачанный с портала Azure, и отправьте его в разделе **файл метаданных поставщика удостоверений SAML**.
 
     ж. Введите имена атрибутов, которые поставщик удостоверений использует для хранения имен пользователей, отображаемых имен и адресов электронной почты.
 
-    h. Нажмите кнопку **Сохранить**
+    h. Щелкните **Сохранить**.
 
     > [!NOTE]
     > Клиенту необходимо отправить любой сертификат во время настройки единого входа SAML Tableau Server, и этот сертификат будет проигнорирован в потоке единого входа. Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm).
@@ -177,10 +177,12 @@ ms.locfileid: "71257504"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Пробное использование Tableau Server с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

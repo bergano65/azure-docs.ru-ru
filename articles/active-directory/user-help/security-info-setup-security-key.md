@@ -2,7 +2,7 @@
 title: Настройка ключа безопасности в качестве метода проверки — Azure AD
 description: Настройка страницы сведений о безопасности (Предварительная версия) для проверки удостоверения на использование ключа безопасности быстрого удостоверения Online (FIDO2) в качестве метода проверки.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: librown
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.workload: identity
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 07/18/2019
-ms.author: lizross
-ms.openlocfilehash: 3e16602128a70077d0a7962522ad3898421c8997
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: ee868ded0dc3a46f2ec20d0141aa2576cbf71f45
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704924"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062342"
 ---
 # <a name="set-up-a-security-key-as-your-verification-method"></a>Настройка ключа безопасности в качестве метода проверки
 
@@ -27,9 +27,9 @@ ms.locfileid: "76704924"
 >[!Note]
 > Если вы не видите параметр ключ безопасности, возможно, ваша организация не разрешает использовать этот параметр для проверки. В этом случае вам нужно будет выбрать другой метод или обратиться в службу поддержки вашей организации для получения дополнительной помощи.
 
-## <a name="security-verification-versus-password-reset-authentication"></a>Проверка безопасности и проверка подлинности для сброса пароля
+## <a name="security-verification-versus-password-reset-authentication"></a>Сравнение проверки безопасности и аутентификации для сброса пароля
 
-Методы сведений о безопасности используются как для двухфакторной проверки безопасности, так и для сброса пароля. При этом не все методы можно использовать для обоих видов аутентификации.
+Методы проверки сведений для защиты используются как при двухфакторной проверке безопасности, так и при сбросе пароля. При этом не все методы можно использовать для обоих видов аутентификации.
 
 | Метод | Используется для |
 | ------ | -------- |
@@ -49,7 +49,7 @@ ms.locfileid: "76704924"
 > [!Note]
 > Если вы не можете использовать ключ безопасности FIDO2, можно использовать другие методы проверки, не имеющие пароля, такие как Microsoft Authenticatorное приложение или Windows Hello. Дополнительные сведения о Microsoft Authenticator приложении см. в разделе [что такое Microsoft Authenticator приложение?](user-help-auth-app-overview.md). Дополнительные сведения о Windows Hello см. в статье [Общие сведения о Windows Hello](https://www.microsoft.com/windows/windows-hello).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем вы сможете зарегистрировать ключ безопасности, должны выполняться следующие условия.
 

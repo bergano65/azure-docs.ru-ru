@@ -9,24 +9,23 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 11/14/2019
 ms.author: pafarley
-ms.openlocfilehash: f00702326cf6fe2efd8d4abbfce7174815ea0b1d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 8ab673c1a268f5ab663e8f423dd9b60cdfde14ab
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770294"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118374"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
 В этом кратком руководстве описано, как с помощью REST API Распознавателя документов и средства маркировки данных обучить настраиваемую модель с использованием данных с метками, присвоенными вручную. Дополнительные сведения об этой функции см. в разделе об [обучении с использованием меток](../overview.md#train-with-labels).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством требуется следующее:
-- Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess). Вы получите сообщение электронной почты со ссылкой для создания ресурса Распознавателя документов.
-- Получите доступ к средству маркировки данных Распознавателя документов. Для этого заполните и отправьте [форму запроса на доступ к средству маркировки данных Распознавателя документов](https://aka.ms/LabelToolRequestAccess). Вы получите сообщение электронной почты с инструкциями по получению учетных данных и доступа к закрытому реестру контейнеров. 
+
 - Минимум шесть документов одного типа. Вы будете использовать эти данные для обучения модели и тестирования формы. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера хранилища BLOB-объектов в учетной записи хранения Azure.
 
 ## <a name="set-up-the-sample-labeling-tool"></a>Настройка средства маркировки данных
@@ -38,18 +37,13 @@ ms.locfileid: "75770294"
     |:--|:--|:--|
     |Средство маркировки данных|2 ядра, 4 ГБ памяти|4 ядра, 8 ГБ памяти|
     
-1. Также вам потребуется [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Установите его на своем компьютере, если вы еще не сделали этого.
-1. Затем введите в командной строке следующую команду. Значения для `<username>` и `<password>` вы найдете в сообщении электронной почты с приглашением к использованию Распознавателя документов.
-    ```
-    docker login containerpreview.azurecr.io -u <username> -p <password>
-    ```
 1. Получите контейнер средства маркировки данных с помощью команды `docker pull`.
     ```
-    docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer-custom-supervised-labeltool:latest
+    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool
     ```
 1. Теперь все готово к тому, чтобы запустить контейнер с помощью команды `docker run`.
     ```
-    docker run -it -p 3000:80 containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer-custom-supervised-labeltool eula=accept
+    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool eula=accept
     ```
 
    Так средство маркировки данных станет доступным в веб-браузере. Перейдите на сайт [http://localhost:3000](http://localhost:3000).

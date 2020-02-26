@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df823776208418eae3e465693dd51e108c5a8bb
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: da983f87977de922ec547c3ade2972dfb4d69363
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841035"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77206265"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -91,7 +91,7 @@ user.department -eq "Sales"
 | AccountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
-### <a name="properties-of-type-string"></a>Свойства строкового типа
+### <a name="properties-of-type-string"></a>Свойства типа строка
 
 | Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
@@ -104,7 +104,7 @@ user.department -eq "Sales"
 | facsimileTelephoneNumber |Любое строковое значение или *null*. |(user.facsimileTelephoneNumber -eq "value") |
 | givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
 | jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
-| mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
+| почта |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
 | mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
@@ -117,12 +117,12 @@ user.department -eq "Sales"
 | state |Любое строковое значение или *null*. |(user.state -eq "value") |
 | streetAddress |Любое строковое значение или *null*. |(user.streetAddress -eq "value") |
 | surname |Любое строковое значение или *null*. |(user.surname -eq "value") |
-| TelephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |
+| telephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |
 | usageLocation |Двухбуквенный код страны. |(user.usageLocation -eq "US") |
 | userPrincipalName |Любое строковое значение |(user.userPrincipalName -eq "alias@domain") |
 | userType |member, guest, *null* |(user.userType -eq "Member") |
 
-### <a name="properties-of-type-string-collection"></a>Свойства типа коллекции строк
+### <a name="properties-of-type-string-collection"></a>Свойства типа коллекция строк
 
 | Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
@@ -160,7 +160,7 @@ user.department -eq "Sales"
 
 
 ### <a name="using-the--match-operator"></a>Используйте оператор -match 
-Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры.
+Оператор **-match** используется для сопоставления с любым регулярным выражением. Примеры:
 
 ```
 user.displayName -match "Da.*"   
@@ -176,9 +176,9 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 Используемые в выражении значения могут состоять из нескольких типов, включая следующие:
 
-* строк
+* Строки
 * логическое (true или false);
-* Числа
+* Номера
 * массивы (чисел или строк).
 
 Включая значение в выражение, важно использовать правильный синтаксис, чтобы избежать ошибок. Вот несколько советов по синтаксису:
@@ -341,13 +341,13 @@ device.objectId -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>Свойства расширения и пользовательские свойства расширения
 
-Атрибуты расширения и пользовательские свойства расширения поддерживаются в качестве строковых свойств в правилах динамического членства. Атрибуты расширения синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
+Атрибуты расширения и пользовательские свойства расширения поддерживаются в качестве строковых свойств в правилах динамического членства. [Атрибуты расширения](https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0) синхронизируются из локального окна сервера AD и имеют формат "ExtensionAttributeX", где X равняется 1-15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
 
 ```
 (user.extensionAttribute15 -eq "Marketing")
 ```
 
-Пользовательские свойства расширения синхронизируются из локальной службы Windows Server AD или из подключенного приложения SaaS и имеют формат `user.extension_[GUID]_[Attribute]`, где:
+[Пользовательские свойства модуля](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions) синхронизируются из локальной среды Windows Server AD или из подключенного приложения SaaS и имеют формат `user.extension_[GUID]_[Attribute]`, где:
 
 * [GUID] — уникальный идентификатор Azure AD для приложения, которое создало это свойство в Azure AD;
 * [Attribute] — имя свойства, с которым оно было создано.
@@ -395,7 +395,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 > [!Note]  
 > При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

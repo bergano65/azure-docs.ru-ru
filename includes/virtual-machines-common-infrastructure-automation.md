@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: f7dcf342a1b9b2107138044dfc207d6dbcb42e9e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4259868ff3b3c9ca9f9818532acd7e865e0300d7
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260857"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77205699"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
@@ -29,9 +29,9 @@ ms.locfileid: "74260857"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Установка и настройка Ansible для управления виртуальными машинами в Azure](../articles/virtual-machines/linux/ansible-install-configure.md)
-- [Создание виртуальной машины Linux](../articles/virtual-machines/linux/ansible-create-vm.md)
-- [Управление виртуальной машиной Linux](../articles/virtual-machines/linux/ansible-manage-linux-vm.md)
+- [Установка и настройка Ansible для управления виртуальными машинами в Azure](../articles/ansible/ansible-install-configure.md)
+- [Создание виртуальной машины Linux](../articles/ansible/ansible-create-vm.md)
+- [Управление виртуальной машиной Linux](../articles/ansible/ansible-manage-linux-vm.md)
 
 
 ## <a name="chef"></a>Chef
@@ -52,7 +52,7 @@ ms.locfileid: "74260857"
 
 
 ## <a name="cloud-init"></a>Cloud-init
-[Пакет cloud-init](https://cloudinit.readthedocs.io) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агенты.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  Файлы `#cloud-config` — это текстовые файлы, закодированные в формате base64.
+[Пакет cloud-init](https://cloudinit.readthedocs.io) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  Файлы `#cloud-config` — это текстовые файлы, закодированные в формате base64.
 
 Кроме того, cloud-init работает с разными дистрибутивами. Например, для установки пакета не используется **apt-get install** или **yum install**. Вместо этого можно определить список пакетов для установки. Файл cloud-init автоматически использует собственный инструмент управления пакетами из выбранного дистрибутива.
 
@@ -103,7 +103,7 @@ ms.locfileid: "74260857"
 - [Создание базовой инфраструктуры в Azure с помощью Terraform](../articles/virtual-machines/linux/terraform-create-complete-vm.md)
 
 
-## <a name="azure-automation"></a>службы автоматизации Azure
+## <a name="azure-automation"></a>Служба автоматизации Azure
 [Служба автоматизации Azure](https://azure.microsoft.com/services/automation/) обрабатывает набор задач, выполняемых на целевых виртуальны машинах, с помощью модулей runbook. Эта служба позволяет управлять имеющимися виртуальными машинами. С ее помощью вы не сможете создать инфраструктуру. Службу автоматизации Azure можно запустить на виртуальных машинах Windows и Linux, а также на локальных виртуальных или физических виртуальных машинах с помощью гибридной рабочей роли Runbook. Модули runbook можно хранить в репозитории системы управления версиями, например GitHub. Эти модули можно выполнять вручную или по заданному расписанию.
 
 Служба автоматизации Azure также предоставляет службу DSC, которая позволяет создавать определения настройки заданного набора виртуальных машин. DSC гарантирует применение необходимой конфигурации и обеспечивает согласованность виртуальной машины. Azure Automation DSC можно запустить на виртуальных машинах Windows и Linux.
@@ -131,5 +131,5 @@ ms.locfileid: "74260857"
 - [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../articles/virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md) или [Windows](../articles/virtual-machines/windows/tutorial-automate-vm-deployment.md).

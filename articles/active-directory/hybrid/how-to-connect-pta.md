@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: сквозная аутентификация | Документация Майкрософт'
+title: 'Azure AD Connect: сквозная аутентификация | Документация Майкрософт'
 description: В этой статье описывается сквозная проверка подлинности Azure Active Directory (Azure AD) и ее применение для входа в Azure AD c помощью проверки пользовательских паролей в локальном каталоге Active Directory.
 services: active-directory
 keywords: Что такое сквозная аутентификация Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
@@ -16,12 +16,12 @@ ms.date: 10/21/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 814c81b6092c4af3778617e165a0bdbce09d71d7
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: d4b52a3025bfb15e2679709353cebf28254a75c2
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779108"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185497"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -49,7 +49,7 @@ ms.locfileid: "68779108"
   - Отсутствие накладных расходов на управление. Агент автоматически получает усовершенствования и исправления ошибок.
 - *Безопасность*
   - Локальные пароли ни в каком виде не хранятся в облаке.
-  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../conditional-access/conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
+  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../conditional-access/concept-conditional-access-conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
   - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
   - Обмен данными между агентом и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD.
 - *Высокая доступность*
@@ -70,8 +70,8 @@ ms.locfileid: "68779108"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Краткое руководство](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure AD.
-- [Переход с AD FS на сквозную аутентификацию](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.
+- [Краткое руководство](how-to-connect-pta-quick-start.md) . получение и запуск сквозной проверки подлинности Azure AD.
+- [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройка возможности интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Подробное техническое руководство.](how-to-connect-pta-how-it-works.md) Сведения о том, как работает эта функция.

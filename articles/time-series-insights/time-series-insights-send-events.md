@@ -9,14 +9,14 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 02/11/2020
 ms.custom: seodec18
-ms.openlocfilehash: b9d64c347881f78e832a39bca8404fdad98cbf17
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: c3c7f59ecb3a06d80012917e2da4425a899859d7
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76981112"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152522"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Отправка событий в среду службы "Аналитика временных рядов" с помощью концентратора событий
 
@@ -73,12 +73,18 @@ ms.locfileid: "76981112"
 
     [![скопировать значение для строки подключения по первичному ключу](media/send-events/configure-sample-code-connection-string.png)](media/send-events/configure-sample-code-connection-string.png#lightbox)
 
-1. Перейдите к https://tsiclientsample.azurewebsites.net/windFarmGen.html. После перехода по этому URL-адресу будут запущены имитированные устройства ветряных мельниц.
+1. Перейдите к https://tsiclientsample.azurewebsites.net/windFarmGen.html. URL-адрес создает и запускает имитацию устройств Виндмилл.
 1. В поле **строка подключения концентратора событий** на веб-странице вставьте строку подключения, скопированную в [поле ввода Виндмилл](#push-events-to-windmills-sample).
   
     [![вставить строку подключения первичного ключа в поле Строка подключения к концентратору событий](media/send-events/configure-wind-mill-sim.png)](media/send-events/configure-wind-mill-sim.png#lightbox)
 
-1. Выберите **Click to start** (Запустить). Симулятор создаст JSON-файл экземпляра, который вы можете использовать напрямую.
+1. Выберите **Click to start** (Запустить). 
+
+    > [!TIP]
+    > Имитатор Виндмилл также создает JSON, который можно использовать в качестве полезных данных с [API-интерфейсами "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query)".
+
+    > [!NOTE]
+    > Симулятор продолжит отправку данных, пока вкладка браузер не закроется.
 
 1. Перейдите к концентратору событий на портале Azure. На странице **Обзор** отображаются новые события, полученные концентратором событий.
 

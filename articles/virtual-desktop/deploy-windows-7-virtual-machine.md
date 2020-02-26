@@ -7,18 +7,18 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: helohr
-ms.openlocfilehash: 28111e45d365069f80f10b88c38618dbb2b4651d
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: f8aebee72105e4f3218e7ae5f867962d0ed8e23d
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896217"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367362"
 ---
 # <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop"></a>Развертывание виртуальной машины Windows 7 в службе "Виртуальный рабочий стол Windows"
 
 Процесс развертывания виртуальной машины Windows 7 на виртуальном рабочем столе Windows немного отличается от процесса для виртуальных машин под управлением более поздних версий Windows. В этом руководство вы узнаете, как развернуть Windows 7.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, следуйте инструкциям в статье [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) для создания пула узлов. После этого следуйте инструкциям в статье [Создание пулов узлов в Azure Marketplace](create-host-pools-azure-marketplace.md#optional-assign-additional-users-to-the-desktop-application-group) , чтобы назначить одного или нескольких пользователей группе приложений для настольных систем.
 
@@ -44,14 +44,14 @@ ms.locfileid: "75896217"
      shutdown /r /t 0
      ```
     
-12. Чтобы получить маркер регистрации, следуйте инструкциям, приведенным [здесь](https://docs.microsoft.com/powershell/module/windowsvirtualdesktop/export-rdsregistrationinfo) .
+12. Чтобы получить маркер регистрации, следуйте инструкциям, приведенным [здесь](/powershell/module/windowsvirtualdesktop/export-rdsregistrationinfo/) .
 13. [Скачайте агент виртуальных рабочих столов Windows для Windows 7](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3JZCm).
 14. [Скачайте Windows Virtual Desktop диспетчер агентов для Windows 7](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3K2e3).
 15. Откройте установщик агента виртуальных рабочих столов Windows и следуйте инструкциям. При появлении запроса введите ключ регистрации, созданный на шаге 12.
 16. Откройте установщик виртуальных рабочих столов Windows и следуйте инструкциям.
 17. При необходимости можно заблокировать порт TCP/3389, чтобы удалить прямой протокол удаленного рабочего столаный доступ к виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь развертывание виртуальных рабочих столов Windows готово к использованию. [Скачайте последнюю версию клиента виртуальных рабочих столов Windows](https://aka.ms/wvd/clients/windows) , чтобы приступить к работе.
 

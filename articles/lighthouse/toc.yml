@@ -33,7 +33,7 @@
     - name: Использование Azure Lighthouse в корпоративных сценариях
       displayName: 'corporation, IT, consolidate'
       href: ./concepts/enterprise.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Подключение клиента к системе делегированного управления ресурсами Azure
       displayName: resource management
@@ -44,6 +44,9 @@
     - name: Просмотр клиентов и управление ими
       displayName: my customers
       href: ./how-to/view-manage-customers.md
+    - name: Использование журналов Azure Monitor в большом масштабе
+      displayName: 'log, analytics, analyze, activity'
+      href: ./how-to/monitor-at-scale.md
     - name: Интеграция Политики Azure
       items:
         - name: Развертывание политики в любом масштабе
@@ -60,7 +63,7 @@
         - name: Просмотр действий поставщика служб
           displayName: 'monitor, log'
           href: ./how-to/view-service-provider-activity.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/managedservices?view=azure-cli-latest'

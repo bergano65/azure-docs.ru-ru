@@ -3,22 +3,22 @@ title: Настройка браузеров & представлений (MSAL 
 titleSuffix: Microsoft identity platform
 description: Узнайте, как настроить интерфейс MSAL iOS/macOS в браузере для входа пользователей.
 services: active-directory
-author: tylermsft
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/28/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: fad3a90bd11104b4d770ddc1c527cba7d299d150
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 759f61860c62bcb668db6844df28c52fa28eac80
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697631"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77085905"
 ---
 # <a name="how-to-customize-browsers-and-webviews-for-iosmacos"></a>Как настроить браузеры и представления для iOS/macOS
 
@@ -65,11 +65,11 @@ MSAL для macOS поддерживает только `WKWebView`.
 
 | Технология    | Тип браузера  | доступность iOS | доступность macOS | Совместное использование файлов cookie и других данных  | Доступность MSAL | Единый вход |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|-------------:|
-| [асвебаусентикатионсессион](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) | Система | iOS12 и выше | macOS 10,15 и выше | Да | Только iOS | экземпляры «w/Safari»
-| [сфаусентикатионсессион](https://developer.apple.com/documentation/safariservices/sfauthenticationsession) | Система | iOS11 и выше | Н/Д | Да | Только iOS |  экземпляры «w/Safari»
-| [сфсафаривиевконтроллер](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) | Система | iOS11 и выше | Н/Д | Нет | Только iOS | Нет * *
-| **сфсафаривиевконтроллер** | Система | iOS10 | Н/Д | Да | Только iOS |  экземпляры «w/Safari»
-| **вквебвиев**  | В приложении | iOS8 и выше | macOS 10,10 и выше | Нет | iOS и macOS | Нет * *
+| [асвебаусентикатионсессион](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) | Система | iOS12 и выше | macOS 10,15 и выше | Да | только iOS | экземпляры «w/Safari»
+| [сфаусентикатионсессион](https://developer.apple.com/documentation/safariservices/sfauthenticationsession) | Система | iOS11 и выше | Недоступно | Да | только iOS |  экземпляры «w/Safari»
+| [сфсафаривиевконтроллер](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) | Система | iOS11 и выше | Недоступно | нет | только iOS | Нет * *
+| **сфсафаривиевконтроллер** | Система | iOS10 | Недоступно | Да | только iOS |  экземпляры «w/Safari»
+| **вквебвиев**  | В приложении | iOS8 и выше | macOS 10,10 и выше | нет | iOS и macOS | Нет * *
 
 \* * Чтобы единый вход работал, маркеры должны совместно использоваться приложениями. Для этого требуется кэш маркеров или приложение брокера, например Microsoft Authenticator для iOS.
 
@@ -87,7 +87,7 @@ MSAL для macOS поддерживает только `WKWebView`.
 
 Кроме того, MSAL поддерживает передачу пользовательских `WKWebView` путем установки свойства `MSALInteractiveTokenParameters.webviewParameters.customWebView`.
 
-Пример.
+Пример:
 
 Objective-C
 ```objc

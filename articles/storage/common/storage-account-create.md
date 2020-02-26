@@ -1,20 +1,20 @@
 ---
-title: Создание учетной записи хранилища
+title: Создание учетной записи хранения
 titleSuffix: Azure Storage
 description: Узнайте, как создать учетную запись хранения с помощью портал Azure, Azure PowerShell или Azure CLI. Учетная запись хранения Azure предоставляет уникальное пространство имен в Microsoft Azure для хранения данных и доступа к ним.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/17/2020
+ms.date: 02/07/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 2ef90e1cb883a2d22b355ff4105ae0ce3c73ad6d
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 86aaebe652968a2ea33fd8e15f9de9c1dff31a30
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759861"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77086966"
 ---
 # <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -24,17 +24,25 @@ ms.locfileid: "76759861"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
-Нет подходящих вариантов.
+Нет.
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
-Для работы с этой статьей требуется модуль Azure PowerShell AZ версии 0,7 или более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
+Чтобы создать учетную запись хранения Azure с помощью PowerShell, убедитесь, что установлен модуль Azure PowerShell AZ версии 0,7 или более поздней. Дополнительные сведения см. [в разделе Введение в модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
+
+Чтобы найти текущую версию, выполните следующую команду:
+
+```powershell
+Get-InstalledModule -Name "Az"
+```
+
+Сведения об установке или обновлении Azure PowerShell см. в разделе [install Azure PowerShell Module](/powershell/azure/install-Az-ps).
 
 # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -59,11 +67,11 @@ Azure CLI также можно установить и применять ло�
 
 # <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
 
-Нет подходящих вариантов.
+Нет.
 
 ---
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
@@ -83,17 +91,17 @@ Connect-AzAccount
 
 Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](/cli/azure/reference-index#az-login) :
 
-```cli
+```azurecli-interactive
 az login
 ```
 
 # <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
 
-Н/Д
+Недоступно
 
 ---
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранилища
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Теперь все готово для создания учетной записи хранения.
 
@@ -113,6 +121,7 @@ az login
 # put resource group in a variable so you can use the same group name going forward,
 # without hard-coding it repeatedly
 $resourceGroup = "storage-resource-group"
+$location = "westus"
 New-AzResourceGroup -Name $resourceGroup -Location $location
 ```
 
@@ -120,7 +129,6 @@ New-AzResourceGroup -Name $resourceGroup -Location $location
 
 ```powershell
 Get-AzLocation | select Location
-$location = "westus"
 ```
 
 Затем создайте учетную запись хранения общего назначения версии 2 с геоизбыточным хранилищем с доступом на чтение (RA-GRS) с помощью команды [New-азсторажеаккаунт](/powershell/module/az.storage/New-azStorageAccount) . Помните, что имя вашей учетной записи хранения должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
@@ -134,7 +142,7 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 ```
 
 > [!IMPORTANT]
-> Если вы планируете использовать [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), включите `-EnableHierarchicalNamespace $True` в этот список параметров. 
+> Если вы планируете использовать [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), включите `-EnableHierarchicalNamespace $True` в этот список параметров.
 
 Чтобы создать учетную запись хранения общего назначения версии 2 с другим вариантом репликации, замените требуемое значение в таблице ниже для параметра **SkuName** .
 

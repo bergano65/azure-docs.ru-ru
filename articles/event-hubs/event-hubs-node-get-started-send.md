@@ -1,39 +1,36 @@
 ---
-title: Краткое руководство. Отправка и получение событий с помощью Node.js (Центры событий Azure)
-description: Краткое руководство. В статье описано, как создать приложение Node.js, которое отправляет сообщения в Центры событий Azure.
+title: Отправка и получение событий через Центры событий Azure с помощью Node.js (устаревшая версия)
+description: В статье описано, как создать приложение Node.js, которое отправляет события или получает их из службы "Центры событий Azure" с помощью старого пакета azure/event-hubs версии 2.
 services: event-hubs
 author: spelluru
-manager: kamalb
 ms.service: event-hubs
 ms.workload: core
 ms.topic: quickstart
-ms.custom: seodec18
-ms.date: 01/08/2020
+ms.date: 01/15/2020
 ms.author: spelluru
-ms.openlocfilehash: 39087b189c424866fffcc3ea8723c712883f288c
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 9aa2418657c2d3bcab9ef8883e5bd57422ce5e29
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75940725"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899899"
 ---
-# <a name="quickstart-send-events-to-or-receive-events-from-azure-event-hubs-using-nodejs"></a>Краткое руководство. Отправка и получение событий через Центры событий Azure с помощью Node.js
+# <a name="quickstart-send-events-to-or-receive-events-from-azure-event-hubs-using-nodejs-azureevent-hubs-version-2"></a>Краткое руководство. Отправка и получение событий через Центры событий Azure с помощью Node.js (@azure/event-hubs версия 2)
 
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
 В этом руководстве описано, как создавать приложения Node.js для отправки и получения событий через концентратор событий.
 
-> [!IMPORTANT]
-> В рамках этого краткого руководства используется версия 2 пакета SDK Центров событий Azure для JavaScript. Если вы не знакомы с Центрами событий Azure, используйте пакет SDK для JavaScript версии 5. Краткое руководство по использованию пакета SDK для JavaScript версии 5 см. [здесь](get-started-node-send-v2.md). Чтобы перенести существующий код с версии 2 на версию 5, ознакомьтесь с [этим руководством по миграции](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md).
+> [!WARNING]
+> Для этого краткого руководства используется версия 2 пакета SDK Центров событий Azure для JavaScript. Рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md) код в [версию 5 пакета SDK для Java Script](get-started-node-send-v2.md). 
 
-> [!NOTE]
-> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs-node/tree/master/client), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>предварительные требования
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
-- Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - Node.js версии 8.x или более поздней. Скачайте последнюю версию LTS с сайта [https://nodejs.org](https://nodejs.org).
 - Visual Studio Code (рекомендуется) или любой другой интерфейс IDE.
 - **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве. Получите строку подключения для пространства имен концентратора событий, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
@@ -55,6 +52,9 @@ npm install @azure/event-processor-host
 ## <a name="send-events"></a>Отправка событий
 
 Из этого раздела вы узнаете, как создать приложение Node.js, которое отправляет события в концентратор событий. 
+
+> [!NOTE]
+> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs-node/tree/master/client), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com). 
 2. Создайте файл с именем `send.js` и вставьте в него приведенный ниже код. Получите строку подключения для пространства имен концентратора событий, следуя [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). 

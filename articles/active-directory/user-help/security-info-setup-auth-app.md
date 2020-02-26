@@ -2,7 +2,7 @@
 title: Настройка Microsoft Authenticator приложения в качестве метода проверки — Azure AD
 description: Настройка страницы сведений о безопасности (Предварительная версия) для проверки личности с помощью приложения Microsoft Authenticator в качестве метода проверки.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.workload: identity
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 02/13/2019
-ms.author: lizross
-ms.openlocfilehash: 9a3efc6f6b1b7137e8e29e37edd968765712fef5
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: 16cb512d3f8f8afcc199cb52c13e09b12107576f
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704975"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062427"
 ---
 # <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>Настройка Microsoft Authenticator приложения в качестве метода проверки
 
@@ -31,7 +31,7 @@ ms.locfileid: "76704975"
 
 ## <a name="security-vs-password-reset-verification"></a>Безопасность и проверка на сброс пароля
 
-Методы сведений о безопасности используются как для двухфакторной проверки безопасности, так и для сброса пароля. При этом не все методы можно использовать для обоих видов аутентификации.
+Методы проверки сведений для защиты используются как при двухфакторной проверке безопасности, так и при сбросе пароля. При этом не все методы можно использовать для обоих видов аутентификации.
 
 | Метод | Используется для |
 | ------ | -------- |

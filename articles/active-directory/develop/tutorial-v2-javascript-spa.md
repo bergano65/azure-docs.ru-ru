@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 33e1037a0fe261f9fb0d06a9ebb0b3b323fe8d5f
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 5657a2d2c348b371f81aed74c92e52b5199cdc61
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701269"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159886"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -50,8 +50,8 @@ ms.locfileid: "76701269"
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|Библиотека аутентификации Майкрософт для JavaScript (предварительная версия)|
 
 > [!NOTE]
-> В качестве целевого объекта в библиотеке *msal.js* задана конечная точка платформы удостоверений Майкрософт. Это позволяет выполнять вход и запрашивать маркеры, используя личные, рабочие и учебные учетные записи. К конечной точке платформы удостоверений Майкрософт применяются [некоторые ограничения](azure-ad-endpoint-comparison.md#limitations).
-> См. [сравнение конечных точек версии 1.0 и 2.0](azure-ad-endpoint-comparison.md).
+> В качестве целевого объекта в библиотеке *msal.js* задана конечная точка платформы удостоверений Майкрософт. Это позволяет выполнять вход и запрашивать маркеры, используя личные, рабочие и учебные учетные записи. К конечной точке платформы удостоверений Майкрософт применяются [некоторые ограничения](../azuread-dev/azure-ad-endpoint-comparison.md#limitations).
+> См. [сравнение конечных точек версии 1.0 и 2.0](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 <!--end-collapse-->
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f4f625999ff9cbdad6aeefb662e39a6b30a1881
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 7ab2dc71f39164988e0d229fc994548a00447986
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291538"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185618"
 ---
 # <a name="tutorial-integrate-azure-active-directory-single-sign-on-sso-with-contractsafe-saml2-sso"></a>Руководство. Интеграция единого входа Azure Active Directory с ContractSafe Saml2 SSO
 
@@ -85,7 +85,7 @@ ms.locfileid: "76291538"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.contractsafe.com/saml2_auth/<UNIQUEID>/acs/`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов ContractSafe Saml2 SSO](mailto:donne@contractsafe.com). Кроме того, вы можете изучить допустимые форматы в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов ContractSafe Saml2 SSO](mailto:support@contractsafe.com). Кроме того, вы можете изучить допустимые форматы в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. ContractSafe Saml2 SSO ожидает проверочные утверждения SAML в определенном формате, и для этого нужно добавить сопоставления настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
@@ -138,11 +138,11 @@ ms.locfileid: "76291538"
 
 ## <a name="configure-contractsafe-saml2-sso"></a>Настройка единого входа на стороне ContractSafe Saml2 SSO
 
-Чтобы настроить единый вход на стороне **ContractSafe Saml2 SSO**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки ContractSafe Saml2 SSO](mailto:donne@contractsafe.com). Эта группа отвечает за правильную настройку подключения единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **ContractSafe Saml2 SSO**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки ContractSafe Saml2 SSO](mailto:support@contractsafe.com). Эта группа отвечает за правильную настройку подключения единого входа SAML на обеих сторонах.
 
 ## <a name="create-a-contractsafe-saml2-sso-test-user"></a>Создание тестового пользователя в ContractSafe Saml2 SSO
 
-Создайте пользователя B. Simon в приложении ContractSafe Saml2 SSO. Чтобы добавить пользователей на платформу ContractSafe Saml2 SSO, обратитесь к [группе поддержки ContractSafe Saml2 SSO](mailto:donne@contractsafe.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+Создайте пользователя B. Simon в приложении ContractSafe Saml2 SSO. Чтобы добавить пользователей на платформу ContractSafe Saml2 SSO, обратитесь к [группе поддержки ContractSafe Saml2 SSO](mailto:support@contractsafe.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа
 

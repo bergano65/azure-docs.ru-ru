@@ -15,19 +15,18 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: 0e793a5aa7d619b0bb7a1d3efcdf665ea400c555
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 7909fbb958a66d00616d4ed1b844d02bb47d997e
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "69016743"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152505"
 ---
 # <a name="use-the-newtek-tricaster-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока  
 > [!div class="op_single_selector"]
 > * [Tricaster](media-services-configure-tricaster-live-encoder.md)
 > * [Elemental Live](media-services-configure-elemental-live-encoder.md)
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
-> * [FMLE](media-services-configure-fmle-live-encoder.md)
 >
 >
 
@@ -35,10 +34,10 @@ ms.locfileid: "69016743"
 
 В этом учебнике показано, как управлять службами мультимедиа Azure (AMS) с помощью Обозревателя служб мультимедиа Azure. Это средство запускается только на компьютерах с ОС Windows. Если вы используете Mac или Linux, воспользуйтесь классическим порталом Azure для создания [каналов](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) и [программ](media-services-portal-creating-live-encoder-enabled-channel.md).
 
+При использовании Tricaster для отправки веб-канала доставки в каналы AMS с поддержкой кодирования в реальном времени возможны временные сбои видео или звука интерактивного события, если используются некоторые возможности Tricaster, например быстрый монтаж разных веб-каналов или переключение на баннеры и обратно. Команда AMS работает над устранением этих проблем. Сейчас не рекомендуется использовать эти возможности.
+
 > [!NOTE]
-> При использовании Tricaster для отправки веб-канала доставки в каналы AMS с поддержкой кодирования в реальном времени возможны временные сбои видео или звука интерактивного события, если используются некоторые возможности Tricaster, например быстрый монтаж разных веб-каналов или переключение на баннеры и обратно. Команда AMS работает над устранением этих проблем. Сейчас не рекомендуется использовать эти возможности.
->
->
+>  Рассмотрите возможность перехода на TLS 1,2, версию префферред TLS.
 
 ## <a name="prerequisites"></a>предварительные требования
 
@@ -53,7 +52,7 @@ ms.locfileid: "69016743"
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
-## <a name="create-a-channel"></a>Создать канал
+## <a name="create-a-channel"></a>Создание канала
 
 1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
 
@@ -167,12 +166,12 @@ ms.locfileid: "69016743"
 
 Дополнительные сведения см. в руководстве по [устранению неполадок](media-services-troubleshooting-live-streaming.md).
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Оставить отзыв
+## <a name="provide-feedback"></a>Отзывы
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

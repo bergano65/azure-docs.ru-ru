@@ -1,31 +1,29 @@
 ---
-title: Краткое руководство. Преобразование текста в речь на Python в службе "Речь"
+title: Преобразование текста в речь на Python в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
+description: В этой статье описано, как преобразовать текст в речь с помощью Python и REST API "Преобразование текста в речь". В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 12/09/2019
-ms.author: erhopf
-ms.openlocfilehash: 639120b283775bcdb5fe4316d78c538c9db9cf4a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
-ms.translationtype: HT
+ms.topic: how-to
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 63e6a2a47265eae08a653f3eadaf6bad86dd0635
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975913"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119710"
 ---
-# <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство. Преобразование текста в речь с использованием Python
+# <a name="convert-text-to-speech-using-python"></a>Преобразование текста в речь с использованием Python
 
-В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. Текст запроса в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
+В этой статье описано, как преобразовать текст в речь с помощью Python и REST API "Преобразование текста в речь". Текст запроса в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
+Для выполнения инструкций из этой статьи требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) и ресурс службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Для работы с этим кратким руководством вам понадобится:
 
 * Python 2.7.x или 3.x;
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
@@ -165,12 +163,12 @@ python tts.py
 
 Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Quickstart: Synthesize speech with the Speech SDK for Python](quickstarts/speech-to-text-from-microphone.md) (Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Python)

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: 781c5a579fa0cd0383e95b79df1f81f74008111c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: ffb610634399594788afcb9b600ba00c6803dfdd
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73679955"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207031"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
@@ -30,22 +30,22 @@ ms.locfileid: "73679955"
 
 Тип возвращаемого значения функции Azure должен быть допустимым объектом `JObject`. (Помните, что [жаррай](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm) *не является* `JObject`ом.) Любой тип возвращаемого значения, отличный от `JObject`, завершается ошибкой и создает содержимое ответа об ошибке пользователя *не является допустимым JObject*.
 
-| **Свойство** | **Описание** | **Обязательный** |
+| **Свойство** | **Описание** | **Обязательно** |
 | --- | --- | --- |
-| type   | Для свойства Type необходимо задать значение **азурефунктион** . | Да |
-| function app url | URL-адрес для приложения-функции Azure. Формат – `https://<accountname>.azurewebsites.net`. Этот URL-адрес – это значение в разделе **URL** при просмотре приложения-функции на портале Azure  | Да |
-| function key | Ключ доступа для функции Azure. Щелкните раздел **Управление** для соответствующей функции и скопируйте **Function Key** (ключ функции) или **Host key** (ключ хоста). Дополнительные сведения см. здесь: [триггеры и привязки HTTP для функций Azure](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) . | Да |
+| тип   | Для свойства Type необходимо задать значение **азурефунктион** . | да |
+| function app url | URL-адрес для приложения-функции Azure. Формат – `https://<accountname>.azurewebsites.net`. Этот URL-адрес – это значение в разделе **URL** при просмотре приложения-функции на портале Azure  | да |
+| function key | Ключ доступа для функции Azure. Щелкните раздел **Управление** для соответствующей функции и скопируйте **Function Key** (ключ функции) или **Host key** (ключ хоста). Дополнительные сведения см. здесь: [триггеры и привязки HTTP для функций Azure](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys) . | да |
 |   |   |   |
 
 ## <a name="azure-function-activity"></a>Действие функции Azure
 
-| **Свойство**  | **Описание** | **Допустимые значения** | **Обязательный** |
+| **Свойство**  | **Описание** | **Допустимые значения** | **Обязательно** |
 | --- | --- | --- | --- |
-| Имя  | Имя действия в конвейере.  | Строка, | Да |
-| type  | Тип действия – "AzureFunctionActivity" | Строка, | Да |
-| linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | Да |
-| function name  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка, | Да |
-| метод  | Метод REST API для вызова функции | Поддерживаемые строковые типы: "GET", "POST", "постановка"   | Да |
+| name  | Имя действия в конвейере.  | String | да |
+| тип  | Тип действия – "AzureFunctionActivity" | String | да |
+| linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | да |
+| имя функции  | Имя функции, которую вызывает это действие в приложении-функции Azure | String | да |
+| Метод  | Метод REST API для вызова функции | Поддерживаемые строковые типы: "GET", "POST", "постановка"   | да |
 | Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет |
 | body  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
 |   |   |   | |
@@ -65,10 +65,10 @@ ms.locfileid: "73679955"
 Дополнительные сведения о Устойчивые функции см. в [этой статье](../azure-functions/durable/durable-functions-overview.md). Вы можете настроить действие функции Azure для вызова устойчивой функции, которая вернет ответ с другим URI, например в [этом примере](../azure-functions/durable/durable-functions-http-features.md#http-api-url-discovery). Поскольку `statusQueryGetUri` возвращает состояние HTTP 202 во время выполнения функции, можно опросить состояние функции с помощью веб-действия. Просто настройте веб-действие, указав для поля `url` значение `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri`. После завершения устойчивой функции выходные данные функции будут выходом веб-действия.
 
 
-## <a name="sample"></a>Образец
+## <a name="sample"></a>Пример
 
 Образец фабрики данных, который использует функцию Azure для извлечения содержимого tar-файла, можно найти [здесь](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о действиях в Фабрике данных см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md).

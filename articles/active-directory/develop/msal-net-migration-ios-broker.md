@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 17c7949f2bbd6d75343bb2e6825be36b56a20967
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: de259daa7fd27cc4f138c294a7f347502ca482a4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695336"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185828"
 ---
 # <a name="migrate-ios-applications-that-use-microsoft-authenticator-from-adalnet-to-msalnet"></a>Перенос приложений iOS, использующих Microsoft Authenticator из ADAL.NET в MSAL.NET
 
@@ -25,10 +25,10 @@ ms.locfileid: "76695336"
 
 Где начать? Эта статья поможет вам перенести приложение Xamarin iOS из ADAL в MSAL.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что у вас уже есть приложение Xamarin iOS, интегрированное с брокером iOS. Если этого не сделать, перейдите непосредственно к MSAL.NET и начните реализацию брокера. Сведения о том, как вызвать брокер iOS в MSAL.NET с помощью нового приложения, см. в [этой документации](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Leveraging-the-broker-on-iOS#why-use-brokers-on-xamarinios-and-xamarinandroid-applications).
 
-## <a name="background"></a>Историческая справка
+## <a name="background"></a>Фон
 
 ### <a name="what-are-brokers"></a>Что такое брокеры?
 
@@ -37,7 +37,7 @@ ms.locfileid: "76695336"
 Они включают:
 
 - Единый вход.
-- Идентификация устройства, необходимая для некоторых [политик условного доступа](../conditional-access/overview.md). Дополнительные сведения см. в разделе [Управление устройствами](../conditional-access/conditions.md#device-platforms).
+- Идентификация устройства, необходимая для некоторых [политик условного доступа](../conditional-access/overview.md). Дополнительные сведения см. в разделе [Управление устройствами](../conditional-access/concept-conditional-access-conditions.md#device-platforms).
 - Проверка идентификации приложения, которая также необходима в некоторых корпоративных сценариях. Дополнительные сведения см. в статье [Управление мобильными приложениями Intune (MAM)](https://docs.microsoft.com/intune/mam-faq).
 
 ## <a name="migrate-from-adal-to-msal"></a>Миграция из ADAL в MSAL
@@ -151,7 +151,7 @@ ADAL.NET и MSAL.NET используют URL-адреса для вызова �
 <tr><td>
 Схема URL-адресов уникальна для вашего приложения.
 </td><td>
-Компонент 
+Параметр 
 
 имя `CFBundleURLSchemes` должно включать 
 
@@ -224,14 +224,14 @@ ADAL.NET и MSAL.NET добавляют дополнительные требо�
 
 `"<app-scheme>://<your.bundle.id>"`
 
-Пример: 
+Пример. 
 
 `mytestiosapp://com.mycompany.myapp`
 </td><td>
 
 `$"msauth.{BundleId}://auth"`
 
-Пример:
+Пример.
 
 `public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth"; `
 
@@ -239,6 +239,6 @@ ADAL.NET и MSAL.NET добавляют дополнительные требо�
 
 Дополнительные сведения о регистрации URI перенаправления на портале см. в разделе [Использование брокера в приложениях Xamarin. iOS](msal-net-use-brokers-with-xamarin-apps.md#step-8-make-sure-the-redirect-uri-is-registered-with-your-app).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о [вопросах, связанных с Xamarin iOS, в MSAL.NET](msal-net-xamarin-ios-considerations.md). 

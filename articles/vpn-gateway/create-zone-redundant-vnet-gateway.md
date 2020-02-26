@@ -6,42 +6,26 @@ titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 04/26/2019
+ms.date: 02/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 250ced13696d6ec34e7c434b26a2917a3c55e91d
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: d8c6b68a38d4b60cf7a3194e6a5ded8804cc416f
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834636"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150205"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones"></a>Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
 
 Вы можете развернуть VPN-шлюзы и шлюзы ExpressRoute в Зонах доступности Azure. В результате шлюзы виртуальной сети смогут работать на более высоких уровнях отказоустойчивости, масштабируемости и доступности. При развертывании в зонах доступности Azure происходит физическое и логическое разделение шлюзов в пределах региона с одновременной защитой локального сетевого подключения к Azure от сбоев на уровне зоны. Дополнительные сведения см. в статье [об избыточных между зонами шлюзах виртуальной сети](about-zone-redundant-vnet-gateways.md) и статье [Что такое Зоны доступности в Azure?](../availability-zones/az-overview.md).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-Можно использовать оболочку PowerShell, установленную локально на компьютере, или Azure Cloud Shell. Чтобы установить и использовать PowerShell локально, вам понадобится модуль PowerShell последней версии.
-
-[!INCLUDE [Cloud shell](../../includes/vpn-gateway-cloud-shell-powershell.md)]
-
-### <a name="to-use-powershell-locally"></a>Локальное использование PowerShell
-
-Если вместо Cloud Shell вы используете PowerShell локально на компьютере, необходимо установить модуль PowerShell 1.0.0 или последующих версий. Чтобы узнать, какая версия PowerShell установлена, используйте приведенную ниже команду.
-
-```azurepowershell
-Get-Module Az -ListAvailable | Select-Object -Property Name,Version,Path
-```
-
-Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
-
-[!INCLUDE [PowerShell login](../../includes/vpn-gateway-ps-login-include.md)]
+[!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
 ## <a name="variables"></a>1. Объявите переменные
 
-Ниже перечислены значения, применяемые для выполняемых в примере действий. Кроме того, на шагах в некоторых примерах используются объявленные переменные. Если вы следуете эти шагам в собственной среде, необходимо заменить эти значения собственными. При указании расположения проверьте, поддерживается ли задаваемый регион. Дополнительные сведения см. в разделе [Часто задаваемые вопросы](#faq).
+Объявите переменные, которые вы хотите использовать. Используйте следующий пример, подставив собственные значения в соответствующих параметрах. Если необходимо закрыть сеанс PowerShell / Cloud Shell во время выполнения упражнения, просто скопируйте и вставьте значения в повторно объявленные переменные. При указании расположения проверьте, поддерживается ли задаваемый регион. Дополнительные сведения см. в разделе [Часто задаваемые вопросы](#faq).
 
 ```azurepowershell-interactive
 $RG1         = "TestRG1"

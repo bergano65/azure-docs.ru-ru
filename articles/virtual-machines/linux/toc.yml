@@ -160,6 +160,8 @@
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
           href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+        - name: Общие диски
+          href: disks-shared.md
         - name: Временные диски ОС
           href: ephemeral-os-disks.md
     - name: Сеть
@@ -168,7 +170,7 @@
       href: ../../virtual-machine-scale-sets/overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Автоматизация инфраструктуры
       href: infrastructure-automation.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Безопасность и политика
           href: security-policy.md
@@ -261,6 +263,8 @@
               href: create-ssh-keys-detailed.md
     - name: Защита виртуальных машин
       items:
+        - name: Аварийное восстановление
+          href: ../virtual-machines-disaster-recovery-guidance.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Резервное копирование виртуальных машин
           href: ../../backup/backup-introduction-to-azure-backup.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
           items:
@@ -551,6 +555,8 @@
         - name: Развертывание дисков с помощью шаблона
           displayName: 'Azure Resource Manager, ARM'
           href: using-managed-disks-template-deployments.md
+        - name: Включение общих дисков
+          href: disks-shared-enable.md
         - name: "Отправка VHD-файла на диск\_— CLI"
           href: disks-upload-vhd-to-managed-disk-cli.md
         - name: Изменение размера диска

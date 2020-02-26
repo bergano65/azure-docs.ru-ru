@@ -2,7 +2,7 @@
 title: Настройка номера телефона в качестве метода проверки — Azure AD
 description: Настройка страницы сведений о безопасности (Предварительная версия) для проверки личности с использованием номера телефона и мобильного устройства в качестве метода проверки.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.workload: identity
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 02/13/2019
-ms.author: lizross
-ms.openlocfilehash: 93302388813f09a37628d16b4ede3f7d6cc08752
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: e85be9140aabe5b66e63d3ccdd4a3ea907a1d6fc
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704941"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062410"
 ---
 # <a name="set-up-a-phone-number-as-your-verification-method"></a>Настройка номера телефона в качестве метода проверки
 
@@ -31,9 +31,9 @@ ms.locfileid: "76704941"
 >
 > Если вы не видите параметр Телефон, возможно, ваша организация не разрешает использовать этот параметр для проверки. В этом случае вам нужно будет выбрать другой метод или обратиться в службу поддержки вашей организации для получения дополнительной помощи.
 
-## <a name="security-verification-versus-password-reset-authentication"></a>Проверка безопасности и проверка подлинности для сброса пароля
+## <a name="security-verification-versus-password-reset-authentication"></a>Сравнение проверки безопасности и аутентификации для сброса пароля
 
-Методы сведений о безопасности используются как для двухфакторной проверки безопасности, так и для сброса пароля. При этом не все методы можно использовать для обоих видов аутентификации.
+Методы проверки сведений для защиты используются как при двухфакторной проверке безопасности, так и при сбросе пароля. При этом не все методы можно использовать для обоих видов аутентификации.
 
 | Метод | Используется для |
 | ------ | -------- |

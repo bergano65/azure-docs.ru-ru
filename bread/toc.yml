@@ -27,6 +27,9 @@
         - name: Разработка
           tocHref: /azure/active-directory/develop/
           topicHref: /azure/active-directory/develop/
+        - name: "Azure\_AD для разработчиков"
+          tocHref: /azure/active-directory/azuread-dev/
+          topicHref: /azure/active-directory/azuread-dev/
         - name: Управление привилегированными пользователями (PIM)
           tocHref: /azure/active-directory/privileged-identity-management/
           topicHref: /azure/active-directory/privileged-identity-management/
@@ -152,9 +155,6 @@
     - name: Реестр контейнеров
       tocHref: /azure/container-registry/
       topicHref: /azure/container-registry/
-    - name: Управление затратами
-      tocHref: /azure/cost-management/
-      topicHref: /azure/cost-management/
     - name: Функции
       tocHref: /azure/azure-functions/
       topicHref: /azure/azure-functions/
@@ -261,9 +261,6 @@
     - name: Batch AI
       tocHref: /azure/batch-ai/
       topicHref: /azure/batch-ai/
-    - name: Управление затратами и выставление счетов
-      tocHref: /azure/billing/
-      topicHref: /azure/billing/
     - name: Службы BizTalk
       tocHref: /azure/biztalk-services/
       topicHref: /azure/biztalk-services/
@@ -663,7 +660,7 @@
     - name: Планировщик
       tocHref: /azure/scheduler/
       topicHref: /azure/scheduler/
-    - name: безопасность
+    - name: Безопасность
       tocHref: /azure/security/
       topicHref: /azure/security/
       items:
@@ -798,3 +795,19 @@
     - name: Виртуальный рабочий стол Windows
       tocHref: /azure/virtual-desktop/
       topicHref: /azure/virtual-desktop/
+    - name: Управление затратами и выставление счетов
+      tocHref: /azure/cost-management-billing/
+      topicHref: /azure/cost-management-billing/
+      items:
+        - name: Начало работы
+          tocHref: /azure/cost-management-billing/understand/
+          topicHref: /azure/cost-management-billing/understand/
+        - name: Управление затратами и использованием
+          tocHref: /azure/cost-management-billing/costs/
+          topicHref: /azure/cost-management-billing/costs/
+        - name: Управление учетными записями и подписками
+          tocHref: /azure/cost-management-billing/manage/
+          topicHref: /azure/cost-management-billing/manage/
+        - name: Резервирование
+          tocHref: /azure/cost-management-billing/reservations/
+          topicHref: /azure/cost-management-billing/reservations/

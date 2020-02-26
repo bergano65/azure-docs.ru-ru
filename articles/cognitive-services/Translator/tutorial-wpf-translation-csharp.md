@@ -1,5 +1,5 @@
 ---
-title: Руководство по Создание приложения для перевода текста с помощью WPF и C# — API "Перевод текстов"
+title: Руководство. Создание приложения для перевода текста с помощью WPF и C# — API "Перевод текстов"
 titleSuffix: Azure Cognitive Services
 description: В рамках этого руководства вы создадите приложение WPF для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
-ms.date: 12/09/2019
+ms.date: 02/10/2020
 ms.author: swmachan
-ms.openlocfilehash: 25c51067f713b5d713684e5d267c133c21b17c93
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: ecb42d200eb8808f6bfa4cfb91e98909e350038b
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978532"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118606"
 ---
-# <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
+# <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство. Создание приложения для перевода текста с помощью WPF
 
 В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](https://docs.microsoft.com/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы "Перевод текстов" и ["Проверка орфографии Bing"](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 
@@ -31,13 +31,13 @@ ms.locfileid: "74978532"
 > * создание пользовательского интерфейса для приложения с помощью XAML;
 > * применение API "Перевод текстов" для получения списка языков, перевода текста и определения исходного языка;
 > * применение API "Проверка орфографии Bing" для проверки вводимого текста и повышения точности перевода;
-> * запуск приложения WPF.
+> * Запуск приложения WPF
 
 ### <a name="cognitive-services-used-in-this-tutorial"></a>Службы Cognitive Services, используемые в этом руководстве
 
 В этом списке представлены службы Cognitive Services, которые используются в этом руководстве. Чтобы получить дополнительные сведения о каждой функции, перейдите в справочник по API.
 
-| Service | Функция | ОПИСАНИЕ |
+| Служба | Компонент | Описание |
 |---------|---------|-------------|
 | Перевод текстов | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
 | Перевод текстов | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 60 языков. |
@@ -59,7 +59,7 @@ ms.locfileid: "74978532"
 
 Прежде всего, настройте проект в Visual Studio.
 
-1. Откройте Visual Studio. Выберите **Создать новый проект**.
+1. Запустите Visual Studio. Выберите **Создать новый проект**.
 1. В окне **Создать новый проект**, найдите и выберите **Приложение WPF (.NET Framework)** . Чтобы ограничить параметры, вы можете выбрать C# в параметре **Язык**.
 1. Нажмите кнопку **Далее** и задайте имя проекту `MSTranslatorTextDemo`.
 1. Установите платформу версии **.NET Framework 4.7.2** или более поздней и выберите **Создать**.
@@ -114,10 +114,10 @@ ms.locfileid: "74978532"
 
 Пользовательский интерфейс состоит из следующих компонентов:
 
-| ИМЯ | type | ОПИСАНИЕ |
+| Имя | Тип | Описание |
 |------|------|-------------|
-| `FromLanguageComboBox` | Поле со списком | Содержит список языков, поддерживаемых Microsoft Translator для перевода текста. Пользователь выбирает язык, с которого нужно переводить. |
-| `ToLanguageComboBox` | Поле со списком | Содержит тот же список языков, что и `FromComboBox`, но используется для выбора языка перевода. |
+| `FromLanguageComboBox` | ComboBox | Содержит список языков, поддерживаемых Microsoft Translator для перевода текста. Пользователь выбирает язык, с которого нужно переводить. |
+| `ToLanguageComboBox` | ComboBox | Содержит тот же список языков, что и `FromComboBox`, но используется для выбора языка перевода. |
 | `TextToTranslate` | TextBox | Позволяет пользователю вводить текст для перевода. |
 | `TranslateButton` | Кнопка | Воспользуйтесь этой кнопкой, чтобы перевести текст. |
 | `TranslatedTextLabel` | Метка | Позволяет отобразить перевод. |
@@ -250,7 +250,7 @@ ms.locfileid: "74978532"
 
 В этом блоке кода мы объявили две переменные-члена класса, в которых содержатся данные о языках, доступных для перевода:
 
-| Переменная | type | ОПИСАНИЕ |
+| Переменная | Тип | Описание |
 |----------|------|-------------|
 |`languageCodes` | Массив строк |Кэширует коды языков. Служба Translator использует короткие коды, например `en` для английского языка, чтобы идентифицировать язык. |
 |`languageCodesAndTitles` | Отсортированный словарь | Отображает понятные имена в пользовательском интерфейсе вместо коротких кодов, используемых в API. Они сортируются в алфавитном порядке без учета регистра. |
@@ -577,7 +577,7 @@ private string CorrectSpelling(string text)
 
 * [Ознакомьтесь с исходным кодом](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp-Tutorial)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Microsoft Translator Text API reference](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference) (Руководство по API для работы с текстами Microsoft Translator)

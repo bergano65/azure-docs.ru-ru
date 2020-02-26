@@ -6,14 +6,14 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 02/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: ff2a7e571c771a73c46959f35e341d861533bb55
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7e4a1cf43931b56cfdb3c31ffe870a07dbaa75af
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426336"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201761"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
  
@@ -104,7 +104,7 @@ ASA развертывает задания Edge на устройства с п
 ##### <a name="add-asa-to-your-deployment"></a>Добавление развертывания ASA
 - На портале Azure откройте Центр Интернета вещей, перейдите в обозреватель **IoT Edge** и щелкните устройство, для которого следует применить параметры.
 - Щелкните **Задание модулей**, а затем выберите **+Добавить** и **Azure Stream Analytics Module** (Модуль Azure Stream Analytics).
-- Выберите подписку и созданное задание ASA Edge. Нажмите кнопку "Сохранить".
+- Выберите подписку и созданное задание ASA Edge. Нажмите кнопку Сохранить.
 ![Добавление модуля ASA в развертывание](media/stream-analytics-edge/add-stream-analytics-module.png)
 
 
@@ -141,7 +141,7 @@ IoT Edge предоставляет способ декларативно мар
 - Все выходные данные модуля **ASA** отправляются в конечную точку **control** **tempSensor**.
 
 
-## <a name="technical-information"></a>Технические сведения
+## <a name="technical-information"></a>Техническая информация
 ### <a name="current-limitations-for-iot-edge-jobs-compared-to-cloud-jobs"></a>Текущие ограничения заданий IoT Edge в сравнении с облачными заданиями
 Целью является обеспечение соответствия между заданиями IoT Edge и облачными заданиями. Поддерживаются большинство функций языка запросов SQL, что позволяет запускать одну и ту же логику как в облаке, так и в IoT Edge.
 Тем не менее для заданий Edge пока не поддерживаются следующие компоненты:
@@ -206,29 +206,29 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 
 Сведения о версии были обновлены в последний раз 2019-06-27:
 
-- изображение — `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-linux-amd64`.
+- Изображение: `mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5-linux-amd64`
    - базовый образ: Microsoft/DotNet: 2.1.6-Runtime-Alpine 3.7
    - платформы
       - Архитектура: AMD64
       - ОС: Linux
   
-- изображение — `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-linux-arm32v7`.
+- Изображение: `mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5-linux-arm32v7`
    - базовый образ: Microsoft/DotNet: 2.1.6-Runtime-Бионик-arm32v7
    - платформы
       - Архитектура: ARM
       - ОС: Linux
   
-- изображение — `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-windows-amd64`.
+- Изображение: `mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5-windows-amd64`
    - базовый образ: Microsoft/DotNet: 2.1.6-Runtime-Server-1809
    - платформы
       - Архитектура: AMD64
       - ОС: Windows
       
       
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получение справки
 За дополнительной помощью обращайтесь на [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Azure IoT Edge (предварительная версия)](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
 * [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))

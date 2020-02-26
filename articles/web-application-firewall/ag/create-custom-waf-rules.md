@@ -8,12 +8,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 4efa60a48a540efdd835b106afa5872057ae3d53
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: bfa6690c636e15fa933f50698cd81359600b5c05
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74046413"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368301"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2 на шлюзе приложений
 
@@ -126,7 +126,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-### <a name="example-2"></a>Пример 2
+## <a name="example-2"></a>Пример 2
 
 Вы хотите разрешить трафик из США с помощью оператора геосоответствия:
 
@@ -161,10 +161,10 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
         "action": "Allow",
         "matchConditions": [
           {
-            "matchVariable": "RequestHeaders",
-            "operator": "User-Agent",
+            "matchVariable": "RemoteAddr",
+            "operator": "GeoMatch",
             "matchValues": [
-              "evilbot"
+              "US"
             ]
           }
         ]
@@ -543,7 +543,7 @@ $rule3 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 После создания настраиваемых правил можно узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 

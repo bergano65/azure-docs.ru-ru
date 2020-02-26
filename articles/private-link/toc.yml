@@ -40,6 +40,12 @@
       href: disable-private-link-service-network-policy.md
     - name: Управление частными конечными точками
       href: manage-private-endpoint.md
+    - name: Диагностика
+      items:
+        - name: Устранение проблем с подключением к частной конечной точке
+          href: troubleshoot-private-endpoint-connectivity.md
+        - name: Устранение проблем с подключением к службе "Приватный канал"
+          href: troubleshoot-private-link-connectivity.md
 - name: Справочник
   items:
     - name: Azure CLI

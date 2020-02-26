@@ -1,5 +1,5 @@
 ---
-title: Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files | Документация Майкрософт
+title: Высокая доступность виртуальных машин Azure для SAP NW в RHEL с Azure NetApp Files | Документация Майкрософт
 description: Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 01/10/2020
+ms.date: 02/13/2020
 ms.author: radeltch
-ms.openlocfilehash: 8acb4819c6ef7a1969a85a056dfdde1fd021a5e6
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: ed18928237d19e9fad2548ee502f9a24266f12c0
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894656"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212874"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>Высокая доступность виртуальных машин Azure для SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP
 
@@ -150,7 +150,7 @@ SAP NetWeaver требует общее хранилище для каталог
 Архитектура SAP NetWeaver, представленная в этой статье, использует один Azure NetApp Files пул емкости, SKU уровня "Премиум". Рекомендуем Azure NetApp Files SKU уровня "Премиум" для рабочей нагрузки приложения SAP NetWeaver в Azure.  
 4. Делегируйте подсеть в файлы Azure NetApp, как описано в [инструкциях делегирование подсети в Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).  
 
-5. Разверните Azure NetApp Files тома, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в указанной [подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets) Azure NetApp Files. Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. В этом примере используются два Azure NetApp Files томов: SAP<b>Оценка качества</b> и транссап. Пути к файлам, подключенные к соответствующим точкам подключения, —/усрсап<b>Оценка качества</b>/sapmnt<b>Оценка качества</b>,/усрсап<b>Оценка качества</b>/усрсап<b>Оценка качества</b>sys и т. д.  
+5. Разверните Azure NetApp Files тома, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в указанной [подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets)Azure NetApp Files. Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. В этом примере используются два Azure NetApp Files томов: SAP<b>Оценка качества</b> и транссап. Пути к файлам, подключенные к соответствующим точкам подключения, —/усрсап<b>Оценка качества</b>/sapmnt<b>Оценка качества</b>,/усрсап<b>Оценка качества</b>/усрсап<b>Оценка качества</b>sys и т. д.  
 
    1. Volume SAP<b>Оценка качества</b> (NFS://192.168.24.5/usrsap<b>Оценка качества</b>/sapmnt<b>Оценка качества</b>)
    2. Volume SAP<b>Оценка качества</b> (NFS://192.168.24.5/usrsap<b>Оценка качества</b>/усрсап<b>Оценка качества</b>ASCS)
@@ -162,7 +162,7 @@ SAP NetWeaver требует общее хранилище для каталог
   
 В этом примере мы использовали Azure NetApp Files для всех файловых систем SAP NetWeaver, чтобы продемонстрировать, как можно использовать Azure NetApp Files. Файловые системы SAP, которые не требуется подключить через NFS, также можно развернуть в качестве [хранилища дисков Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#premium-ssd) . В этом примере <b>a-e</b> должен быть на Azure NetApp Files и <b>f-g</b> (т. е./usr/SAP/<b>Оценка качества</b>/d<b>02</b>,/usr/SAP/<b>Оценка качества</b>/d<b>03</b>) можно развернуть в качестве хранилища дисков Azure. 
 
-### <a name="important-considerations"></a>Важные сведения
+### <a name="important-considerations"></a>Важные замечания
 
 При рассмотрении Azure NetApp Files для архитектуры с высоким уровнем доступности SAP NetWeaver в SUSE учитывайте следующие важные моменты.
 
@@ -188,7 +188,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Откройте подсистему балансировки нагрузки, выберите пул внешних IP-адресов и щелкните "Добавить".
          1. Введите имя нового внешнего пула IP-адресов (например, внешний **интерфейс. Оценка качества. ASCS**)
          1. Задайте для назначения значение static и введите IP-адрес (например, **192.168.14.9**).
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. IP-адрес 192.168.14.10 для ASCS ERS
          * Повторите описанные выше шаги в разделе "a", чтобы создать IP-адрес для ERS (например, **192.168.14.10** и **интерфейсного интерфейса). Оценка качества. ERS**)
    1. Создайте внутренние пулы.
@@ -198,13 +198,13 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Щелкните "Добавить виртуальную машину".
          1. Выберите виртуальную машину. 
          1. Выберите виртуальные машины кластера (A) SCS и их IP-адреса.
-         1. Нажмите "Добавить"
+         1. Нажмите кнопку Добавить.
    1. Создайте пробы работоспособности.
       1. Порт 620**00** для ASCS
          1. Выберите подсистему балансировки нагрузки, щелкните "Зонды работоспособности" и нажмите кнопку "Добавить".
          1. Введите имя новой проверки работоспособности (например, **работоспособность). Оценка качества. ASCS**)
          1. Выберите протокол TCP, порт 620**00**, интервал, равный 5, и порог состояния неработоспособности, равный 2.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Порт 621**01** для ASCS ERS
             * Повторите действия, описанные в разделе "c", чтобы создать пробу работоспособности для ERS (например, 621**01** и **Health). Оценка качества. ERS**)
    1. Правила балансировки нагрузки
@@ -215,7 +215,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Выбор **портов высокой доступности**
          1. Увеличьте время ожидания до 30 минут.
          1. **Не забудьте включить плавающий IP-адрес**.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
          * Повторите описанные выше действия, чтобы создать правила балансировки нагрузки для ERS (например **, фунтов. Оценка качества. ERS**)
 1. Кроме того, если в сценарии требуется базовая подсистема балансировки нагрузки (внутренняя), выполните следующие действия.  
    1. Создайте IP-адреса внешнего интерфейса.
@@ -223,7 +223,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Откройте подсистему балансировки нагрузки, выберите пул внешних IP-адресов и щелкните "Добавить".
          1. Введите имя нового внешнего пула IP-адресов (например, внешний **интерфейс. Оценка качества. ASCS**)
          1. Задайте для назначения значение static и введите IP-адрес (например, **192.168.14.9**).
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. IP-адрес 192.168.14.10 для ASCS ERS
          * Повторите описанные выше шаги в разделе "a", чтобы создать IP-адрес для ERS (например, **192.168.14.10** и **интерфейсного интерфейса). Оценка качества. ERS**)
    1. Создайте внутренние пулы.
@@ -233,13 +233,13 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Щелкните "Добавить виртуальную машину".
          1. Выберите группу доступности, созданную ранее для ASCS 
          1. Выберите виртуальные машины кластера (A)SCS.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
    1. Создайте пробы работоспособности.
       1. Порт 620**00** для ASCS
          1. Выберите подсистему балансировки нагрузки, щелкните "Зонды работоспособности" и нажмите кнопку "Добавить".
          1. Введите имя новой проверки работоспособности (например, **работоспособность). Оценка качества. ASCS**)
          1. Выберите протокол TCP, порт 620**00**, интервал, равный 5, и порог состояния неработоспособности, равный 2.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Порт 621**01** для ASCS ERS
             * Повторите действия, описанные в разделе "c", чтобы создать пробу работоспособности для ERS (например, 621**01** и **Health). Оценка качества. ERS**)
    1. Правила балансировки нагрузки
@@ -250,7 +250,7 @@ SAP NetWeaver требует общее хранилище для каталог
          1. Оставьте выбранным протокол **TCP** и введите порт **3200**.
          1. Увеличьте время ожидания до 30 минут.
          1. **Не забудьте включить плавающий IP-адрес**.
-         1. Нажмите кнопку "ОК"
+         1. Нажмите кнопку ОК.
       1. Дополнительные порты для ASCS
          * Повторите описанные выше действия в разделе "d" для портов 36**00**, 39**00**, 81**00**, 5**00**13, 5**00**14, 5**00**16 и TCP для ASCS
       1. Дополнительные порты для ASCS ERS
@@ -462,12 +462,14 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo pcs node standby anftstsapcl2
    # If using NFSv3
    sudo pcs resource create fs_QAS_ASCS Filesystem device='192.168.24.5:/sapQAS/usrsapQASascs' \
-     directory='/usr/sap/QAS/ASCS00' fstype='nfs' \
+     directory='/usr/sap/QAS/ASCS00' fstype='nfs' force_unmount=safe \
+     op start interval=0 timeout=60 op stop interval=0 timeout=120 op monitor interval=200 timeout=40 \
      --group g-QAS_ASCS
    
    # If using NFSv4.1
    sudo pcs resource create fs_QAS_ASCS Filesystem device='192.168.24.5:/sapQAS/usrsapQASascs' \
-     directory='/usr/sap/QAS/ASCS00' fstype='nfs' options='sec=sys,vers=4.1' \
+     directory='/usr/sap/QAS/ASCS00' fstype='nfs' force_unmount=safe options='sec=sys,vers=4.1' \
+     op start interval=0 timeout=60 op stop interval=0 timeout=120 op monitor interval=200 timeout=40 \
      --group g-QAS_ASCS
    
    sudo pcs resource create vip_QAS_ASCS IPaddr2 \
@@ -523,12 +525,14 @@ SAP NetWeaver требует общее хранилище для каталог
    
    # If using NFSv3
    sudo pcs resource create fs_QAS_AERS Filesystem device='192.168.24.5:/sapQAS/usrsapQASers' \
-     directory='/usr/sap/QAS/ERS01' fstype='nfs' \
+     directory='/usr/sap/QAS/ERS01' fstype='nfs' force_unmount=safe \
+     op start interval=0 timeout=60 op stop interval=0 timeout=120 op monitor interval=200 timeout=40 \
     --group g-QAS_AERS
    
    # If using NFSv4.1
    sudo pcs resource create fs_QAS_AERS Filesystem device='192.168.24.5:/sapQAS/usrsapQASers' \
-     directory='/usr/sap/QAS/ERS01' fstype='nfs' options='sec=sys,vers=4.1' \
+     directory='/usr/sap/QAS/ERS01' fstype='nfs' force_unmount=safe options='sec=sys,vers=4.1' \
+     op start interval=0 timeout=60 op stop interval=0 timeout=120 op monitor interval=200 timeout=40 \
     --group g-QAS_AERS
    
    sudo pcs resource create vip_QAS_AERS IPaddr2 \
@@ -644,12 +648,15 @@ SAP NetWeaver требует общее хранилище для каталог
     sudo pcs resource create rsc_sap_QAS_ASCS00 SAPInstance \
     InstanceName=QAS_ASCS00_anftstsapvh START_PROFILE="/sapmnt/QAS/profile/QAS_ASCS00_anftstsapvh" \
     AUTOMATIC_RECOVER=false \
-    meta resource-stickiness=5000 migration-threshold=1 \
+    meta resource-stickiness=5000 migration-threshold=1 failure-timeout=60 \
+    op monitor interval=20 on-fail=restart timeout=60 \
+    op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-QAS_ASCS
    
     sudo pcs resource create rsc_sap_QAS_ERS01 SAPInstance \
     InstanceName=QAS_ERS01_anftstsapers START_PROFILE="/sapmnt/QAS/profile/QAS_ERS01_anftstsapers" \
     AUTOMATIC_RECOVER=false IS_ERS=true \
+    op monitor interval=20 on-fail=restart timeout=60 op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-QAS_AERS
       
     sudo pcs constraint colocation add g-QAS_AERS with g-QAS_ASCS -5000
@@ -669,12 +676,15 @@ SAP NetWeaver требует общее хранилище для каталог
     sudo pcs resource create rsc_sap_QAS_ASCS00 SAPInstance \
     InstanceName=QAS_ASCS00_anftstsapvh START_PROFILE="/sapmnt/QAS/profile/QAS_ASCS00_anftstsapvh" \
     AUTOMATIC_RECOVER=false \
-    meta resource-stickiness=5000 \
+    meta resource-stickiness=5000 migration-threshold=1 failure-timeout=60 \
+    op monitor interval=20 on-fail=restart timeout=60 \
+    op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-QAS_ASCS
    
     sudo pcs resource create rsc_sap_QAS_ERS01 SAPInstance \
     InstanceName=QAS_ERS01_anftstsapers START_PROFILE="/sapmnt/QAS/profile/QAS_ERS01_anftstsapers" \
     AUTOMATIC_RECOVER=false IS_ERS=true \
+    op monitor interval=20 on-fail=restart timeout=60 op start interval=0 timeout=600 op stop interval=0 timeout=600 \
     --group g-QAS_AERS
       
     sudo pcs constraint colocation add g-QAS_AERS with g-QAS_ASCS -5000
@@ -685,6 +695,9 @@ SAP NetWeaver требует общее хранилище для каталог
     ```
 
    Если вы обновляете старую версию и переходите на сервер очереди 2, см. Примечание SAP [2641322](https://launchpad.support.sap.com/#/notes/2641322). 
+
+   > [!NOTE]
+   > Время ожидания в приведенной выше конфигурации является просто примерами и может потребоваться адаптироваться к конкретной установке SAP. 
 
    Убедитесь, что состояние кластера — "ОК" и что запущены все ресурсы. Не важно, на каком узле выполняются ресурсы.
 
@@ -1240,7 +1253,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_QAS_ERS01  (ocf::heartbeat:SAPInstance):   Started anftstsapcl2
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

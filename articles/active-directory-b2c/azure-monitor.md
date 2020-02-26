@@ -10,27 +10,27 @@ ms.workload: identity
 ms.topic: conceptual
 ms.author: marsma
 ms.subservice: B2C
-ms.date: 02/03/2020
-ms.openlocfilehash: 108c9c1112327a3fcadeff4c4074f31f976a4e3d
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.date: 02/10/2020
+ms.openlocfilehash: 6f7f0252a6377397ccaccdc44c9c8561da7c9d29
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026761"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121382"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
-Используйте Azure Monitor для маршрутизации событий действий по использованию Azure Active Directory B2C (Azure AD B2C) с различными решениями для мониторинга. Вы можете хранить журналы для долгосрочного использования или интегрировать их со сторонними средствами управления сведениями о безопасности и событиями (SIEM) для получения ценных сведений о среде.
+Используйте Azure Monitor для маршрутизации Azure Active Directory B2C (Azure AD B2C) для входа и [аудита](view-audit-logs.md) в различные решения мониторинга. Вы можете хранить журналы для долгосрочного использования или интегрировать их со сторонними средствами управления сведениями о безопасности и событиями (SIEM) для получения ценных сведений о среде.
 
 События журнала можно направить в:
 
-* Учетная запись хранения Azure.
-* Концентратор событий Azure (и интегрируется с экземплярами логики Splunk и Sumo).
-* Рабочая область Azure Log Analytics (для анализа данных, создания панелей мониторинга и оповещения о конкретных событиях).
+* [Учетная запись хранения](../storage/blobs/storage-blobs-introduction.md)Azure.
+* [Концентратор событий](../event-hubs/event-hubs-about.md) Azure (и интегрируется с экземплярами логики Splunk и Sumo).
+* [Рабочая область log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md) (для анализа данных, создания панелей мониторинга и оповещения о конкретных событиях).
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо развернуть шаблон Azure Resource Manager с помощью модуля Azure PowerShell.
 
@@ -42,15 +42,15 @@ ms.locfileid: "77026761"
 
 Azure AD B2C использует [мониторинг Azure Active Directory](../active-directory/reports-monitoring/overview-monitoring.md). Чтобы включить *параметры диагностики* в Azure Active Directory в клиенте Azure AD B2C, используйте [Управление делегированными ресурсами](../lighthouse/concepts/azure-delegated-resource-management.md).
 
-Вы уполномочены пользователю в каталоге Azure AD B2C ( **поставщик услуг**) настроить экземпляр Azure Monitor в клиенте, который содержит подписку Azure ( **клиент**). Чтобы создать авторизацию, необходимо развернуть шаблон [Azure Resource Manager](../azure-resource-manager/index.yml) в клиенте Azure AD, который содержит подписку. В следующих разделах описывается процесс.
+Вы уполномочены пользователю или группе в каталоге Azure AD B2C ( **поставщик услуг**) настроить экземпляр Azure Monitor в клиенте, который содержит подписку Azure ( **клиент**). Чтобы создать авторизацию, необходимо развернуть шаблон [Azure Resource Manager](../azure-resource-manager/index.yml) в клиенте Azure AD, который содержит подписку. В следующих разделах описывается процесс.
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-or-choose-resource-group"></a>Создание или выбор группы ресурсов
 
-В клиенте Azure Active Directory (Azure AD), который содержит подписку Azure (*не* каталог, содержащий ваш клиент Azure AD B2C), [Создайте группу ресурсов](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups). Используйте следующие значения:
+Это группа ресурсов, содержащая целевую учетную запись хранения Azure, концентратор событий или рабочую область Log Analytics для получения данных от Azure Monitor. Имя группы ресурсов указывается при развертывании шаблона Azure Resource Manager.
 
-* **Подписка**. Выберите подписку Azure.
-* **Группа ресурсов**: введите имя группы ресурсов. Например, *Azure-AD-B2C-Monitor*.
-* **Регион**: выберите расположение Azure. Например, *центральная часть США*.
+[Создайте группу ресурсов](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) или выберите существующую в клиенте Azure Active Directory (Azure AD), который содержит подписку Azure, а *не* в каталоге, содержащем клиент Azure AD B2C.
+
+В этом примере используется группа ресурсов с именем *Azure-AD-B2C-Monitor* в *центральном регионе США* .
 
 ## <a name="delegate-resource-management"></a>Делегирование управления ресурсами
 
@@ -209,7 +209,17 @@ Parameters              :
 
 ## <a name="configure-diagnostic-settings"></a>Настройка параметров диагностики
 
-После делегирования управления ресурсами и выбора подписки можно приступать к [созданию параметров диагностики](../active-directory/reports-monitoring/overview-monitoring.md) в портал Azure.
+Параметры диагностики определяют, где должны отправляться журналы и метрики для ресурса. Возможные места назначения:
+
+- [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs-collect-storage.md)
+- Решения для [концентраторов событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+- [Рабочая область Log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md)
+
+Если вы этого еще не сделали, создайте экземпляр выбранного типа назначения в группе ресурсов, указанной в [шаблоне Azure Resource Manager](#create-an-azure-resource-manager-template).
+
+### <a name="create-diagnostic-settings"></a>Создание параметров диагностики
+
+Вы можете [создавать параметры диагностики](../active-directory/reports-monitoring/overview-monitoring.md) в портал Azure.
 
 Чтобы настроить параметры мониторинга для журналов действий Azure AD B2C:
 
@@ -217,12 +227,24 @@ Parameters              :
 1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. Выберите **Azure Active Directory**
 1. В разделе **Мониторинг** выберите **Параметры диагностики**.
-1. Выберите **+ Добавить параметр диагностики**.
+1. Если в ресурсе есть параметры, вы увидите список уже настроенных параметров. Либо выберите **Добавить параметр диагностики** , чтобы добавить новый параметр, либо **измените** параметр, чтобы изменить существующий. Каждый параметр может иметь не более одного из целевых типов.
 
     ![Панель "параметры диагностики" в портал Azure](./media/azure-monitor/azure-monitor-portal-05-diagnostic-settings-pane-enabled.png)
 
+1. Присвойте параметру имя, если его еще нет.
+1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры, как описано в следующей таблице.
+
+    | Параметр | Description |
+    |:---|:---|
+    | "Архивировать в учетной записи хранения"; | Имя учетной записи хранения. |
+    | "Передать в концентратор событий"; | Пространство имен, в котором создается концентратор событий (если это первый журнал потоковой передачи) или потоковая передача (если уже есть ресурсы, которые используют потоковую передачу категории журнала в это пространство имен).
+    | Отправка в Log Analytics | Имя рабочей области. |
+
+1. Выберите **AuditLogs** и **сигнинлогс**.
+1. Щелкните **Сохранить**.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о добавлении и настройке параметров диагностики в Azure Monitor см. в руководстве по Azure Monitor.
+Дополнительные сведения о добавлении и настройке параметров диагностики в Azure Monitor см. в разделе [учебник. сбор и анализ журналов ресурсов из ресурса Azure](../azure-monitor/insights/monitor-azure-resource.md).
 
-[Учебник. получение и анализ журналов ресурсов из ресурса Azure](/azure-monitor/learn/tutorial-resource-logs.md)
+Сведения о потоковой передаче журналов Azure AD в концентратор событий см. в статье [учебник. потоковая Azure Active Directory журналов в концентратор событий Azure](../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md).

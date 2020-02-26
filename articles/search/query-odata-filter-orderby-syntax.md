@@ -7,7 +7,7 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 02/10/2020
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: e0db41098287ff011416932a0d44a1cb9f76127d
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: f3a1be435e297ab4a9ba7f8bfbd5f3ce3451d8a8
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72786157"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153882"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>Общие сведения о языке OData для `$filter`, `$orderby`и `$select` в Azure Когнитивный поиск
 
@@ -93,7 +93,7 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 | API | Имя параметра | Ограничения |
 | --- | --- | --- |
-| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | Отсутствуют |
+| [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `suggesters/sourceFields` | None |
 | [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/text/weights` | Может ссылаться только на поля с **возможностью поиска** |
 | [Создать](https://docs.microsoft.com/rest/api/searchservice/create-index) или [Обновить](https://docs.microsoft.com/rest/api/searchservice/update-index) индекс | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемые** поля |
 | [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search`, когда `queryType` `full` | Может ссылаться только на поля с **возможностью поиска** |
@@ -105,7 +105,7 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 | [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) и [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | Может ссылаться только на поля, доступные для **сортировки** |
 | [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложение](https://docs.microsoft.com/rest/api/searchservice/suggestions)и [Поиск](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | Может ссылаться только на **извлекаемые** поля |
 
-## <a name="constants"></a>Постоянным
+## <a name="constants"></a>Константы
 
 Константы в OData — это литеральные значения заданного типа [EDM](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) (EDM). Список поддерживаемых типов см. в разделе [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) когнитивный Поиск Azure. Константы типов коллекций не поддерживаются.
 
@@ -121,6 +121,17 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 | `Edm.Int32` | `123`, `-456` |
 | `Edm.Int64` | `283032927235` |
 | `Edm.String` | `'hello'` |
+
+### <a name="escaping-special-characters-in-string-constants"></a>Экранирование специальных символов в строковых константах
+
+Строковые константы в OData разделяются одинарными кавычками. Если необходимо создать запрос со строковой константой, которая может содержать одинарные кавычки, можно попытаться поэкранировать внедренные кавычки, выполнив их удвоение.
+
+Например, фраза с неформатированным апострофом, например "Мария-автомобиль", будет представлена в OData в качестве строковой константы `'Alice''s car'`.
+
+> [!IMPORTANT]
+> При создании фильтров программным способом важно помнить о том, что строковые константы поступают из вводимых пользователем данных. Это позволяет снизить вероятность [атак путем внедрения](https://wikipedia.org/wiki/SQL_injection), особенно при использовании фильтров для реализации [фильтрации по безопасности](search-security-trimming-for-azure-search.md).
+
+### <a name="constants-syntax"></a>Синтаксис констант
 
 Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для большинства констант, показанных в приведенной выше таблице. Грамматику для геопространственных типов можно найти в [геопространственных функциях OData в Azure когнитивный Поиск](search-query-odata-geo-spatial-functions.md).
 
@@ -226,7 +237,7 @@ select_expression ::= '*' | field_path(',' field_path)*
 - [Синтаксис $orderby OData в Azure Когнитивный поиск](search-query-odata-orderby.md)
 - [Синтаксис $select OData в Azure Когнитивный поиск](search-query-odata-select.md)
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
 
 - [Навигация с аспектами в Azure Когнитивный поиск](search-faceted-navigation.md)
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)

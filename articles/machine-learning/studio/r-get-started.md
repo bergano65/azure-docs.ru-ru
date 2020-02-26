@@ -6,22 +6,22 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2019
-ms.openlocfilehash: 81e232e37e437c4fa9d23a49a720b88511423905
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9e010a5179f2da2d5bbce5526d59ac075a9270b0
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427578"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169263"
 ---
 # <a name="getting-started-with-the-r-programming-language-in-azure-machine-learning-studio-classic"></a>Приступая к работе с языком программирования R в Машинное обучение Azure Studio (классическая модель)
 
 <!-- Stephen F Elston, Ph.D. -->
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 
 Этот учебник поможет вам начать расширять Машинное обучение Azure Studio (классическая модель) с помощью языка программирования R. Следуйте инструкциям этого руководства по программированию на R, чтобы создать, протестировать и выполнить код R в среде Studio (классическая модель). При работе с руководством вы создадите полное решение для прогнозирования, используя язык R в студии Studio (классическая модель).  
 
@@ -37,7 +37,7 @@ ms.locfileid: "75427578"
 
 Данные, используемые в этой статье вместе с скриптами R, можно скачать из [мачинелеарнингсамплес-Notebooks/Studio-Samples](https://github.com/Azure-Samples/MachineLearningSamples-Notebooks/tree/master/studio-samples). Данные в файле `cadairydata.csv` были первоначально синтезированы на основе информации, доступной в Университете Висконсина на [https://dairymarkets.com](https://dairymarkets.com).
 
-### <a name="organization"></a>Организация
+### <a name="organization"></a>План
 
 Мы рассмотрим несколько шагов, чтобы узнать, как создать, протестировать и выполнить аналитический код R и манипулирование данными в среде Машинное обучение Azure Studio (классической).  
 

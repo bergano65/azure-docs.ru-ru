@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.author: ajburnle
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24e82abd2c95bcbfdde843a6636a809bb3aeb70c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5895ed256fa5f0337b74d9dbe14c4074dad4b522
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422644"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120236"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -51,6 +51,10 @@ ms.locfileid: "75422644"
 
 1. Нажмите кнопку **создать** , чтобы создать каталог.
 
+### <a name="creating-a-catalog-programmatically"></a>Создание каталога программным способом
+
+Вы также можете создать каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [создания акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-post?view=graph-rest-beta).
+
 ## <a name="add-resources-to-a-catalog"></a>Добавление ресурсов в каталог
 
 Чтобы включить ресурсы в пакет Access, ресурсы должны находиться в каталоге. К типам ресурсов, которые можно добавить, относятся группы, приложения и сайты SharePoint Online. Это могут быть группы Office 365, созданные в облаке, или созданные в облаке группы безопасности Azure AD. Приложения могут быть корпоративными приложениями Azure AD, включая приложения SaaS и собственные приложения, Федеративные в Azure AD. Сайтами могут быть сайты SharePoint Online или семейства веб-сайтов SharePoint Online.
@@ -76,6 +80,10 @@ ms.locfileid: "75422644"
 1. По завершении нажмите кнопку **Добавить**.
 
     Теперь эти ресурсы можно включать в пакеты Access в каталоге.
+
+### <a name="adding-a-resource-to-a-catalog-programmatically"></a>Программное добавление ресурса в каталог
+
+Вы также можете добавить ресурс в каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли, каталог и владелец ресурса, с приложением, имеющим делегированное `EntitlementManagement.ReadWrite.All` разрешение, может вызывать API для [создания акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta).
 
 ## <a name="remove-resources-from-a-catalog"></a>Удаление ресурсов из каталога
 
@@ -144,6 +152,10 @@ ms.locfileid: "75422644"
 1. В разделе **Обзор**каталога щелкните **Удалить**.
 
 1. Щелкните **Да** в появившемся диалоговом окне.
+
+### <a name="deleting-a-catalog-programmatically"></a>Удаление каталога программным способом
+
+Также можно удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [удаления акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

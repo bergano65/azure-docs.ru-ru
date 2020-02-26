@@ -1,30 +1,30 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по обозревателю данных Azure
+title: Документация по Azure Data Explorer
 metadata:
-  title: 'Документация по Azure Data Explorer. Краткие руководства, учебные материалы и справочники по языку и API'
-  description: "Обозреватель данных Azure\_— это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных."
+  title: 'Краткие руководства, учебные материалы, документация по языкам и API для Azure Data Explorer'
+  description: "Azure Data Explorer\_— это облачная платформа Log Analytics, оптимизированная для ad-hoc-обработки запросов больших данных."
   author: orspod
   ms.author: orspodek
   ms.service: data-explorer
   ms.topic: landing-page
   ms.date: 03/24/2019
 abstract:
-  description: "<p>Azure Data Explorer\_— это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т.\_д. С помощью Azure Data Explorer вы можете собирать, хранить и анализировать разные данные, чтобы улучшать качество продуктов, создавать новые возможности для клиентов, выполнять мониторинг устройств и повышать производительность.</p><p>Узнайте, как использовать обозреватель данных Azure, ознакомившись с нашими краткими руководствами и справочными материалами.</p>"
+  description: "<p>Azure Data Explorer\_— это быстрая и полностью управляемая служба для аналитики большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т.\_д. С помощью Azure Data Explorer вы можете собирать, хранить и анализировать разные данные, чтобы улучшать качество продуктов, создавать новые возможности для клиентов, выполнять мониторинг устройств и повышать производительность.</p><p>Узнайте, как использовать Azure Data Explorer, ознакомившись с нашими краткими руководствами и справочными материалами.</p>"
   aside:
     image:
       alt: null
       height: 110
       src: media/index/video.png
       width: 250
-    title: 'Что такое обозреватель данных Azure? (19:47)'
+    title: 'Что такое Azure Data Explorer? (19:47)'
     href: 'https://youtu.be/D_AJk2lAepw'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Узнайте, как подготовить к работе и использовать обозреватель данных Azure:'
+        text: 'Узнайте, как подготовить к работе и использовать Azure Data Explorer:'
       - type: list
         style: icon48
         items:
@@ -48,26 +48,26 @@ sections:
               src: /azure/data-explorer/media/index/logo-python.svg
             text: Запрашивание данных с помощью Python
             href: /azure/data-explorer/python-query-data
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как создавать комплексные решения:'
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure/data-explorer/visualize-power-bi">Визуализация данных из обозревателя данных Azure в Power BI</a>
-  - title: Бесплатные видеоуроки PluralSight
+          - html: <a href="/azure/data-explorer/visualize-power-bi">Визуализация данных из Azure Data Explorer в Power BI</a>
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
         className: cardsFTitle
         items:
-          - title: Язык запросов для обозревателя данных Azure
+          - title: Язык запросов для Azure Data Explorer
             href: 'https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch'
             image:
               src: /azure/data-explorer/media/index/logo-pluralsight.svg
               href: 'https://app.pluralsight.com/library/courses/kusto-query-language-kql-from-scratch'
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: cards

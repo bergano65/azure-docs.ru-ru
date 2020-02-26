@@ -14,15 +14,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 09/17/2019
+ms.date: 02/03/2020
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: c17f1094e562960e851204b40281f5b04c1d40ce
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 559050d11b6b85a9842c679b94e0e5b2fd5dd0f8
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186059"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987719"
 ---
 # <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -32,6 +32,14 @@ ms.locfileid: "74186059"
 
 > [!NOTE]
 > В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+
+## <a name="compliance-privacy-and-security"></a>Соответствие требованиям, конфиденциальность и безопасность
+ 
+Хотим напомнить, что при использовании AMS вы должны соблюдать все применимые законы, и не имеете права использовать AMS или любые другие службы Azure каким либо способом, который нарушает права других лиц или может нанести им вред. 
+
+Перед загрузкой видео или изображений, включая биометрические данные, в Службы мультимедиа для обработки и хранения вы должны (1) иметь все соответствующие права на видео или изображения; и (2) иметь все соответствующие разрешения от лица (лиц) на видео или изображениях, позволяющие использовать и хранить их биометрические данные в Службах мультимедиа. 
+
+Чтобы узнать о соответствии требованиям, конфиденциальности и том, как корпорация Майкрософт защищает данные в Службах мультимедиа Azure, посетите [центр управления безопасностью Azure](https://www.microsoft.com/trust-center/?rtc=1). Обязательства Майкрософт по обеспечению конфиденциальности и обработке ваших данных см. в [Заявлении о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [Условиях использования веб-служб](https://www.microsoft.com/licensing/product-licensing/products) ("OST") и [Приложение к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Сведения о хранении и удалении данных клиента доступны в DPA. Используя Azure Media Services, вы соглашаетесь соблюдать OST, DPA и Заявление о конфиденциальности.
 
 ## <a name="what-can-i-do-with-media-services"></a>Какие функциональные возможности представлены в Службах мультимедиа?
 
@@ -80,7 +88,7 @@ ms.locfileid: "74186059"
 
 Примеры кода Служб мультимедиа Azure доступны на [этой странице](https://docs.microsoft.com/samples/browse/?products=azure-media-services).
 
-### <a name="how-to-guides"></a>Руководства
+### <a name="how-to-guides"></a>Практические руководства
 
 В руководствах показаны примеры кода для выполнения задания. В этом разделе приведено множество примеров. Вот некоторые из них:
 
@@ -95,7 +103,7 @@ ms.locfileid: "74186059"
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Learn about fundamental concepts](concepts-overview.md) (Основные понятия служб мультимедиа)
 

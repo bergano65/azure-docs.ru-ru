@@ -10,13 +10,13 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: 2e14b1bcc991a009ed9b3267477933706e1ec474
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.date: 02/12/2020
+ms.openlocfilehash: 7c9f22d27351b0f57c5a0158821f347073ae60b4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76289957"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187812"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывная интеграция и доставка в фабрике данных Azure
 
@@ -114,11 +114,11 @@ ms.locfileid: "76289957"
 
     ![Представление "этап"](media/continuous-integration-deployment/continuous-integration-image14.png)
 
-    b.  Создайте новое задание. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
+    б.  Создайте новое задание. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
 
-    c.  В задаче развертывание выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости укажите учетные данные.
+    в.  В задаче развертывание выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости укажите учетные данные.
 
-    d.  В списке **действие** выберите **создать или обновить группу ресурсов**.
+    .  В списке **действие** выберите **создать или обновить группу ресурсов**.
 
     д)  Нажмите кнопку с многоточием ( **...** ) рядом с полем **шаблон** . Найдите шаблон Azure Resource Manager, созданный с помощью **шаблона Импорт ARM** , в разделе [Создание диспетчер ресурсов шаблона для каждого окружения](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment) этой статьи. Найдите этот файл в папке <FactoryName> ветви adf_publish.
 
@@ -138,6 +138,9 @@ ms.locfileid: "76289957"
 1. Чтобы запустить выпуск, выберите **создать выпуск**.
 
    ![Выбор создания выпуска](media/continuous-integration-deployment/continuous-integration-image10.png)
+
+> [!IMPORTANT]
+> В сценариях CI/CD тип среды выполнения интеграции (IR) в разных средах должен быть одинаковым. Например, если в среде разработки есть локальная среда IR, то такой же тип IR также должен быть автономным в других средах, таких как тестовая и Рабочая. Аналогично, при совместном использовании сред выполнения интеграции на нескольких этапах необходимо настроить среды выполнения интеграции как связанные автономные размещения во всех средах, таких как разработка, тестирование и производство.
 
 ### <a name="get-secrets-from-azure-key-vault"></a>Получение секретов от Azure Key Vault
 
@@ -184,11 +187,11 @@ ms.locfileid: "76289957"
 
 При попытке обновления активных триггеров развертывание может завершиться сбоем. Чтобы обновить активные триггеры, необходимо вручную закрыть их, а затем перезапустить после развертывания. Это можно сделать с помощью задачи Azure PowerShell:
 
-1.  На вкладке **задачи** выпуска добавьте **Azure PowerShell** задачу.
+1.  На вкладке **задачи** выпуска добавьте **Azure PowerShell** задачу. Выберите задачу версия 4. *. 
 
-1.  Выберите **Azure Resource Manager** в качестве типа подключения, а затем выберите свою подписку.
+1.  Выберите подписку, в которой находится ваша фабрика.
 
-1.  Выберите **встроенный скрипт** в качестве типа скрипта, а затем укажите код. Следующий код останавливает триггеры:
+1.  Выберите **путь к файлу скрипта** в качестве типа скрипта. Для этого необходимо сохранить сценарий PowerShell в репозитории. Для отключения триггеров можно использовать следующий сценарий PowerShell:
 
     ```powershell
     $triggersADF = Get-AzDataFactoryV2Trigger -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
@@ -196,21 +199,28 @@ ms.locfileid: "76289957"
     $triggersADF | ForEach-Object { Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.name -Force }
     ```
 
-    ![Задача Azure PowerShell](media/continuous-integration-deployment/continuous-integration-image11.png)
-
 Вы можете выполнить аналогичные действия (с помощью функции `Start-AzDataFactoryV2Trigger`), чтобы перезапустить триггеры после развертывания.
 
-> [!IMPORTANT]
-> В сценариях CI/CD тип среды выполнения интеграции (IR) в разных средах должен быть одинаковым. Например, если в среде разработки есть локальная среда IR, то такой же тип IR также должен быть автономным в других средах, таких как тестовая и Рабочая. Аналогично, при совместном использовании сред выполнения интеграции на нескольких этапах необходимо настроить среды выполнения интеграции как связанные автономные размещения во всех средах, таких как разработка, тестирование и производство.
+### <a name="sample-pre--and-post-deployment-script"></a>Пример скрипта, выполняемого до и после развертывания
 
-#### <a name="sample-pre--and-post-deployment-script"></a>Пример скрипта, выполняемого до и после развертывания
+Следующий пример скрипта можно использовать для завершения триггеров перед развертыванием и их перезапуска. Скрипт также содержит код для удаления ресурсов. Сохраните скрипт в репозитории Azure DevOps Git и сослаться на него с помощью Azure PowerShell задачи, используя версию 4. *.
 
-В следующем примере скрипта показано, как отключить триггеры перед развертыванием и перезапустить их позже. Скрипт также содержит код для удаления ресурсов. Чтобы установить последнюю версию Azure PowerShell, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps).
+При выполнении скрипта, выполняемого перед развертыванием, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $true -deleteDeployment $false`
+
+
+При выполнении скрипта, выполняемого после развертывания, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $false -deleteDeployment $true`
+
+    ![Azure PowerShell task](media/continuous-integration-deployment/continuous-integration-image11.png)
+
+Ниже приведен скрипт, который можно использовать для выполнения до и после развертывания. Учетные записи для удаленных ресурсов и ссылок на ресурсы.
 
 ```powershell
 param
 (
-    [parameter(Mandatory = $false)] [String] $rootFolder,
     [parameter(Mandatory = $false)] [String] $armTemplate,
     [parameter(Mandatory = $false)] [String] $ResourceGroupName,
     [parameter(Mandatory = $false)] [String] $DataFactoryName,
@@ -218,12 +228,133 @@ param
     [parameter(Mandatory = $false)] [Bool] $deleteDeployment=$false
 )
 
+function getPipelineDependencies {
+    param([System.Object] $activity)
+    if ($activity.Pipeline) {
+        return @($activity.Pipeline.ReferenceName)
+    } elseif ($activity.Activities) {
+        $result = @()
+        return $activity.Activities | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+    } elseif ($activity.ifFalseActivities -or $activity.ifTrueActivities) {
+        $result = @()
+        $activity.ifFalseActivities | Where-Object {$_ -ne $null} | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+        $activity.ifTrueActivities | Where-Object {$_ -ne $null} | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+    } elseif ($activity.defaultActivities) {
+        $result = @()
+        $activity.defaultActivities | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+        if ($activity.cases) {
+            $activity.cases | ForEach-Object{ $_.activities } | ForEach-Object{$result += getPipelineDependencies -activity $_ }
+        }
+        return $result
+    }
+}
+
+function pipelineSortUtil {
+    param([Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline]$pipeline,
+    [Hashtable] $pipelineNameResourceDict,
+    [Hashtable] $visited,
+    [System.Collections.Stack] $sortedList)
+    if ($visited[$pipeline.Name] -eq $true) {
+        return;
+    }
+    $visited[$pipeline.Name] = $true;
+    $pipeline.Activities | ForEach-Object{ getPipelineDependencies -activity $_ -pipelineNameResourceDict $pipelineNameResourceDict}  | ForEach-Object{
+        pipelineSortUtil -pipeline $pipelineNameResourceDict[$_] -pipelineNameResourceDict $pipelineNameResourceDict -visited $visited -sortedList $sortedList
+    }
+    $sortedList.Push($pipeline)
+
+}
+
+function Get-SortedPipelines {
+    param(
+        [string] $DataFactoryName,
+        [string] $ResourceGroupName
+    )
+    $pipelines = Get-AzDataFactoryV2Pipeline -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $ppDict = @{}
+    $visited = @{}
+    $stack = new-object System.Collections.Stack
+    $pipelines | ForEach-Object{ $ppDict[$_.Name] = $_ }
+    $pipelines | ForEach-Object{ pipelineSortUtil -pipeline $_ -pipelineNameResourceDict $ppDict -visited $visited -sortedList $stack }
+    $sortedList = new-object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline]
+    
+    while ($stack.Count -gt 0) {
+        $sortedList.Add($stack.Pop())
+    }
+    $sortedList
+}
+
+function triggerSortUtil {
+    param([Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger]$trigger,
+    [Hashtable] $triggerNameResourceDict,
+    [Hashtable] $visited,
+    [System.Collections.Stack] $sortedList)
+    if ($visited[$trigger.Name] -eq $true) {
+        return;
+    }
+    $visited[$trigger.Name] = $true;
+    $trigger.Properties.DependsOn | Where-Object {$_ -and $_.ReferenceTrigger} | ForEach-Object{
+        triggerSortUtil -trigger $triggerNameResourceDict[$_.ReferenceTrigger.ReferenceName] -triggerNameResourceDict $triggerNameResourceDict -visited $visited -sortedList $sortedList
+    }
+    $sortedList.Push($trigger)
+}
+
+function Get-SortedTriggers {
+    param(
+        [string] $DataFactoryName,
+        [string] $ResourceGroupName
+    )
+    $triggers = Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
+    $triggerDict = @{}
+    $visited = @{}
+    $stack = new-object System.Collections.Stack
+    $triggers | ForEach-Object{ $triggerDict[$_.Name] = $_ }
+    $triggers | ForEach-Object{ triggerSortUtil -trigger $_ -triggerNameResourceDict $triggerDict -visited $visited -sortedList $stack }
+    $sortedList = new-object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger]
+    
+    while ($stack.Count -gt 0) {
+        $sortedList.Add($stack.Pop())
+    }
+    $sortedList
+}
+
+function Get-SortedLinkedServices {
+    param(
+        [string] $DataFactoryName,
+        [string] $ResourceGroupName
+    )
+    $linkedServices = Get-AzDataFactoryV2LinkedService -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
+    $LinkedServiceHasDependencies = @('HDInsightLinkedService', 'HDInsightOnDemandLinkedService', 'AzureBatchLinkedService')
+    $Akv = 'AzureKeyVaultLinkedService'
+    $HighOrderList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
+    $RegularList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
+    $AkvList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
+
+    $linkedServices | ForEach-Object {
+        if ($_.Properties.GetType().Name -in $LinkedServiceHasDependencies) {
+            $HighOrderList.Add($_)
+        }
+        elseif ($_.Properties.GetType().Name -eq $Akv) {
+            $AkvList.Add($_)
+        }
+        else {
+            $RegularList.Add($_)
+        }
+    }
+
+    $SortedList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]($HighOrderList.Count + $RegularList.Count + $AkvList.Count)
+    $SortedList.AddRange($HighOrderList)
+    $SortedList.AddRange($RegularList)
+    $SortedList.AddRange($AkvList)
+    $SortedList
+}
+
 $templateJson = Get-Content $armTemplate | ConvertFrom-Json
 $resources = $templateJson.resources
 
 #Triggers 
 Write-Host "Getting triggers"
-$triggersADF = Get-AzDataFactoryV2Trigger -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+$triggersADF = Get-SortedTriggers -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
 $triggersTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/triggers" }
 $triggerNames = $triggersTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
 $activeTriggerNames = $triggersTemplate | Where-Object { $_.properties.runtimeState -eq "Started" -and ($_.properties.pipelines.Count -gt 0 -or $_.properties.pipeline.pipelineReference -ne $null)} | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
@@ -242,10 +373,15 @@ else {
     #Deleted resources
     #pipelines
     Write-Host "Getting pipelines"
-    $pipelinesADF = Get-AzDataFactoryV2Pipeline -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $pipelinesADF = Get-SortedPipelines -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
     $pipelinesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/pipelines" }
     $pipelinesNames = $pipelinesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
     $deletedpipelines = $pipelinesADF | Where-Object { $pipelinesNames -notcontains $_.Name }
+    #dataflows
+    $dataflowsADF = Get-AzDataFactoryV2DataFlow -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $dataflowsTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/dataflows" }
+    $dataflowsNames = $dataflowsTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40) }
+    $deleteddataflow = $dataflowsADF | Where-Object { $dataflowsNames -notcontains $_.Name }
     #datasets
     Write-Host "Getting datasets"
     $datasetsADF = Get-AzDataFactoryV2Dataset -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
@@ -254,7 +390,7 @@ else {
     $deleteddataset = $datasetsADF | Where-Object { $datasetsNames -notcontains $_.Name }
     #linkedservices
     Write-Host "Getting linked services"
-    $linkedservicesADF = Get-AzDataFactoryV2LinkedService -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $linkedservicesADF = Get-SortedLinkedServices -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
     $linkedservicesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/linkedservices" }
     $linkedservicesNames = $linkedservicesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
     $deletedlinkedservices = $linkedservicesADF | Where-Object { $linkedservicesNames -notcontains $_.Name }
@@ -279,6 +415,11 @@ else {
     $deletedpipelines | ForEach-Object { 
         Write-Host "Deleting pipeline " $_.Name
         Remove-AzDataFactoryV2Pipeline -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+    Write-Host "Deleting dataflows"
+    $deleteddataflow | ForEach-Object { 
+        Write-Host "Deleting dataflow " $_.Name
+        Remove-AzDataFactoryV2DataFlow -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
     }
     Write-Host "Deleting datasets"
     $deleteddataset | ForEach-Object { 
@@ -445,6 +586,8 @@ else {
 {
     "Microsoft.DataFactory/factories/pipelines": {
     },
+    "Microsoft.DataFactory/factories/dataflows": {
+    },
     "Microsoft.DataFactory/factories/integrationRuntimes":{
         "properties": {
             "typeProperties": {
@@ -514,6 +657,7 @@ else {
                     "database": "=",
                     "serviceEndpoint": "=",
                     "batchUri": "=",
+            "poolName": "=",
                     "databaseName": "=",
                     "systemNumber": "=",
                     "server": "=",
@@ -551,6 +695,8 @@ else {
 ```json
 {
     "Microsoft.DataFactory/factories/pipelines": {
+    },
+    "Microsoft.DataFactory/factories/dataflows": {
     },
     "Microsoft.DataFactory/factories/integrationRuntimes":{
         "properties": {
@@ -621,6 +767,7 @@ else {
                     "database": "=",
                     "serviceEndpoint": "=",
                     "batchUri": "=",
+            "poolName": "=",
                     "databaseName": "=",
                     "systemNumber": "=",
                     "server": "=",

@@ -1,5 +1,6 @@
 ---
-title: ContentDefinitions — Azure Active Directory B2C | Документация Майкрософт
+title: ContentDefinitions
+titleSuffix: Azure AD B2C
 description: Сведения об указании элемента ContentDefinitions настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -7,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 02/11/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 50e17fae88f16d7579997b3b356638777ec3163a
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 3e5fb1ebb763cc5ecd7dfe8724347c03a487bc13
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77014289"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157879"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -56,12 +57,11 @@ ms.locfileid: "77014289"
   ...
 ```
 
-
 ## <a name="contentdefinition"></a>ContentDefinition
 
 Элемент **ContentDefinition** содержит следующий атрибут:
 
-| attribute | Обязательно для заполнения | Description |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Идентификатор определения содержимого. Значение указано в разделе **Идентификаторы определения содержимого** далее на этой странице. |
 
@@ -72,22 +72,82 @@ ms.locfileid: "77014289"
 | LoadUri | 1:1 | Строка, содержащая URL-адрес страницы HTML5 для определения содержимого. |
 | RecoveryUri | 0:1 | Строка, содержащая URL-адрес страницы HTML для отображения ошибки, связанной с определением содержимого. |
 | DataUri | 1:1 | Строка, содержащая относительный URL-адрес HTML-файла, который предоставляет пользовательский интерфейс для вызова соответствующего шага. |
-| Метаданные | 1:1 | Коллекция пар "ключ — значение", содержащая метаданные, используемые в определении содержимого. |
+| Метаданные | 0:1 | Коллекция пар "ключ — значение", содержащая метаданные, используемые в определении содержимого. |
 | LocalizedResourcesReferences | 0:1 | Коллекция ссылок на локализованные ресурсы. Этот элемент позволяет настроить локализацию пользовательского интерфейса и атрибута утверждений (claims). |
 
 ### <a name="datauri"></a>DataUri
 
-Элемент **DataUri** используется для указания идентификатора страницы. В Azure AD B2C идентификатор страницы используется для загрузки и запуска элементов пользовательского интерфейса и JavaScript на стороне клиента. Формат значения — `urn:com:microsoft:aad:b2c:elements:page-name:version`.  В следующей таблице перечислены идентификаторы страниц, которые можно использовать.
+Элемент **DataUri** используется для указания идентификатора страницы. В Azure AD B2C идентификатор страницы используется для загрузки и запуска элементов пользовательского интерфейса и JavaScript на стороне клиента. Формат значения — `urn:com:microsoft:aad:b2c:elements:page-name:version`. В следующей таблице перечислены идентификаторы страниц, которые можно использовать.
 
-| Значение |   Description |
+| Идентификатор страницы | Description |
 | ----- | ----------- |
-| `urn:com:microsoft:aad:b2c:elements:globalexception:1.1.0` | Отображает страницу ошибки при обнаружении исключения или ошибки. |
-| `urn:com:microsoft:aad:b2c:elements:idpselection:1.0.0` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа. |
-| `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.0.0` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). Это значение также предоставляет функцию "Оставаться в системе" и ссылку "Забыли пароль?" . |
-| `urn:com:microsoft:aad:b2c:elements:unifiedssd:1.0.0` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). |
-| `urn:com:microsoft:aad:b2c:elements:multifactor:1.1.0` | Проверяет номера телефонов с помощью SMS-сообщения или голосового вызова во время регистрации или входа. |
-| `urn:com:microsoft:aad:b2c:elements:selfasserted:1.1.0` | Отображает форму, которая позволяет пользователям создать или обновить свой профиль. |
+| `globalexception` | Отображает страницу ошибки при обнаружении исключения или ошибки. |
+| `providerselection` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа. |
+| `unifiedssp` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). Это значение также предоставляет функцию "Оставаться в системе" и ссылку "Забыли пароль?" . |
+| `unifiedssd` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). |
+| `multifactor` | Проверяет номера телефонов с помощью SMS-сообщения или голосового вызова во время регистрации или входа. |
+| `selfasserted` | Отображает форму, которая позволяет пользователям создать или обновить свой профиль. |
 
+### <a name="select-a-page-layout"></a>Выберите макет страницы
+
+[Код на стороне клиента JavaScript](javascript-samples.md) можно включить путем вставки `contract` между `elements` и типом страницы. Например, `urn:com:microsoft:aad:b2c:elements:contract:page-name:version`.
+
+[!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
+
+В [части `DataUri` указан пакет](page-layout.md) содержимого, содержащий HTML, CSS и JavaScript для элементов пользовательского интерфейса в политике. Если вы планируете включить код на стороне клиента JavaScript, элементы, которые основаны на коде JavaScript, должны быть неизменными. Если они не являются неизменяемыми, то любые изменения могут привести к непредвиденному поведению пользовательских страниц. Чтобы избежать этих проблем, принудительно примените макет страницы и укажите версию макета страницы. Это гарантирует, что все определения содержимого, основанные на JavaScript, будут неизменными. Даже если вы не планируете включать JavaScript, необходимо по-прежнему указать версию макета страницы для страниц.
+
+В следующем примере показана **DataUri** `selfasserted` версии `1.2.0`:
+
+```xml
+<ContentDefinition Id="api.localaccountpasswordreset">
+<LoadUri>~/tenant/templates/AzureBlue/selfAsserted.cshtml</LoadUri>
+<RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+<DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+<Metadata>
+    <Item Key="DisplayName">Local account change password page</Item>
+</Metadata>
+</ContentDefinition>
+```
+
+#### <a name="migrating-to-page-layout"></a>Переход на макет страницы
+
+Формат значения должен содержать слово `contract`: _urn: com: Microsoft: AAD: B2C: Elements:**контракт**:p Age-Name: версия_. Чтобы указать макет страницы в пользовательских политиках, использующих старое значение **DataUri** , используйте следующую таблицу для перехода к новому формату.
+
+| Старое значение DataUri | Новое значение DataUri |
+| ----------------- | ----------------- |
+| `urn:com:microsoft:aad:b2c:elements:globalexception:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:globalexception:1.1.0` | `urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:idpselection:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:multifactor:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:multifactor:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:multifactor:1.1.0` | `urn:com:microsoft:aad:b2c:elements:contract:multifactor:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:selfasserted:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:selfasserted:1.1.0` | `urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:unifiedssd:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssd:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0` |
+| `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.1.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0` |
+
+
+### <a name="metadata"></a>Метаданные
+
+Элемент **Metadata** содержит следующие элементы.
+
+| Элемент | Вхождения | Description |
+| ------- | ----------- | ----------- |
+| Элемент | 0:n | Метаданные, относящиеся к определению содержимого. |
+
+Элемент **Item** из элемента **Metadata** содержит следующие атрибуты:
+
+| attribute | Обязательно | Description |
+| --------- | -------- | ----------- |
+| Клавиши | Да | Ключ метаданных.  |
+
+#### <a name="metadata-keys"></a>Ключи метаданных
+
+Определение содержимого поддерживает следующие элементы метаданных: 
+
+| Клавиши | Обязательно | Description |
+| --------- | -------- | ----------- |
+| DisplayName | нет | Строка, содержащая имя определения содержимого. |
 
 ### <a name="localizedresourcesreferences"></a>LocalizedResourcesReferences
 
@@ -97,25 +157,12 @@ ms.locfileid: "77014289"
 | ------- | ----------- | ----------- |
 | LocalizedResourcesReference | 1:n | Список ссылок на локализованные ресурсы для определения содержимого. |
 
-Элемент **LocalizedResourcesReferences** содержит следующие атрибуты:
+Элемент **локализедресаурцесреференце** содержит следующие атрибуты:
 
-| attribute | Обязательно для заполнения | Description |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | Язык | Да | Строка, содержащая поддерживаемый язык для политики согласно стандарту RFC 5646 "Tags for Identifying Languages" (Теги для идентификации языков). |
 | LocalizedResourcesReferenceId | Да | Идентификатор элемента **LocalizedResources**. |
-
-В следующем примере показано определение содержимого для регистрации или входа в систему:
-
-```XML
-<ContentDefinition Id="api.signuporsignin">
-  <LoadUri>~/tenant/default/unified.cshtml</LoadUri>
-  <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
-  <DataUri>urn:com:microsoft:aad:b2c:elements:unifiedssp:1.0.0</DataUri>
-  <Metadata>
-    <Item Key="DisplayName">Signin and Signup</Item>
-  </Metadata>
-</ContentDefinition>
-```
 
 Следующий пример показывает определение содержимого регистрации или входа в систему со ссылкой на локализацию для английского, французского и испанского языков:
 
@@ -154,3 +201,8 @@ ms.locfileid: "77014289"
 | **api.selfasserted.profileupdate** | [упдатепрофиле. cshtml](https://login.microsoftonline.com/static/tenant/default/updateProfile.cshtml) | **Страница обновления профиля** — отображает форму для обновления профиля пользователя. Эта страница аналогична странице регистрации локальных учетных записей, за исключением полей для ввода пароля. |
 | **api.signuporsignin** | [Unified. cshtml](https://login.microsoftonline.com/static/tenant/default/unified.cshtml) | **Унифицированная страница регистрации и входа** — обрабатывает процесс регистрации и входа пользователей. Пользователи могут использовать поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальные учетные записи. |
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+Пример настройки пользовательского интерфейса с помощью определений содержимого см. в следующих статьях:
+
+[Настройка пользовательского интерфейса приложения с помощью настраиваемой политики](custom-policy-ui-customization.md)

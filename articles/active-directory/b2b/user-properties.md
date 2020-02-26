@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa282afdf910c2449b5d5ea0bc5e38a396f3aa02
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 70156335d0d5617b4c1ccb2d11ce8e9f8dc9d036
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75608862"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368122"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -73,7 +73,7 @@ ms.locfileid: "75608862"
 
 - Приглашенный пользователь. Это пользователь, который был приглашен, но еще не активировал свое приглашение.
 
-- Внешний каталог Active Directory. Этот пользователь зарегистрирован во внешней организации и проходит проверку подлинности с помощью учетной записи Azure AD, принадлежащей другой организации. Этот тип входа соответствует состоянию 1.
+- Внешние Azure Active Directory. Этот пользователь находится во внешней организации и проходит проверку подлинности с помощью учетной записи Azure AD, которая принадлежит другой организации. Этот тип входа соответствует состоянию 1.
 
 - Учетная запись Майкрософт. У этого пользователя есть учетная запись Майкрософт, которую он использует для проверки подлинности. Этот тип входа соответствует состоянию 2.
 
@@ -103,7 +103,7 @@ ms.locfileid: "75608862"
 ## <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
 Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Can I make guest objects visible in the global address list?** (Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?) статьи [Manage guest access in Office 365 Groups](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?redirectSourcePath=%252fen-us%252farticle%252fmanage-guest-access-in-office-365-groups-9de497a9-2f5c-43d6-ae18-767f2e6fe6e0&view=o365-worldwide#add-guests-to-the-global-address-list) (Управление гостевым доступом в Группах Office 365). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Основные сведения о токенах пользователей в службе совместной работы Azure Active Directory B2B](user-token.md)

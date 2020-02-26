@@ -4,7 +4,7 @@ titleSuffix: Microsoft identity platform
 description: Узнайте, как запросить настраиваемые утверждения.
 services: active-directory
 documentationcenter: ''
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 editor: ''
 ms.service: active-directory
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: ''
 ms.custom: aaddev
-ms.openlocfilehash: 0aa4648d3d5e76c2d0ebd7524ad8dfa52da3fb30
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 44158296faaf238fd72f2360149d3d93f68c5ba0
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702493"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77085607"
 ---
 # <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS
 
@@ -30,7 +30,7 @@ OpenID Connect Connect позволяет при необходимости за
 
 Библиотека проверки подлинности Microsoft (MSAL) для iOS и macOS позволяет запрашивать определенные утверждения как в интерактивном, так и в автоматическом режиме получения маркеров. Это делается с помощью параметра `claimsRequest`.
 
-Существует несколько сценариев, в которых это необходимо. Пример.
+Существует несколько сценариев, в которых это необходимо. Пример:
 
 - Запрос утверждений за пределами стандартного набора для вашего приложения.
 - Запрос определенных сочетаний стандартных заявок, которые не могут быть указаны с помощью областей для приложения. Например, если маркер доступа отклоняется из-за отсутствия утверждений, приложение может запросить недостающие утверждения с помощью MSAL.

@@ -2,7 +2,7 @@
 title: Настройка контрольных вопросов в качестве метода проверки — Azure AD
 description: Настройка страницы сведений о безопасности (Предварительная версия) для проверки личности с помощью заранее определенных контрольных вопросов в качестве метода проверки.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.workload: identity
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 02/13/2019
-ms.author: lizross
-ms.openlocfilehash: e578b545a48468de347db0e0abc69dd0d3906606
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: 236f1e4e41488b926d9fc2e5e717e68090a0ed7b
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704856"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063974"
 ---
 # <a name="set-up-security-questions-as-your-verification-method"></a>Настройка контрольных вопросов в качестве метода проверки
 
@@ -27,9 +27,9 @@ ms.locfileid: "76704856"
 >[!Note]
 >Если вы не видите параметр контрольные вопросы, возможно, ваша организация не разрешает использовать этот параметр для метода сброса пароля. В этом случае необходимо выбрать другой метод или обратиться в службу поддержки вашей организации для получения дополнительной помощи.
 
-## <a name="security-verification-versus-password-reset-authentication"></a>Проверка безопасности и проверка подлинности для сброса пароля
+## <a name="security-verification-versus-password-reset-authentication"></a>Сравнение проверки безопасности и аутентификации для сброса пароля
 
-Методы сведений о безопасности используются как для двухфакторной проверки безопасности, так и для сброса пароля. При этом не все методы можно использовать для обоих видов аутентификации.
+Методы проверки сведений для защиты используются как при двухфакторной проверке безопасности, так и при сбросе пароля. При этом не все методы можно использовать для обоих видов аутентификации.
 
 | Метод | Используется для |
 | ------ | -------- |

@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 01/30/2020
 ms.author: victorh
-ms.openlocfilehash: c49c37ced4a5d5cc7cdde0737b889aad3b538f7f
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f56929e14aef34f675139782328ed5c559df12c7
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899008"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198638"
 ---
 # <a name="configure-an-application-gateway-with-an-internal-load-balancer-ilb-endpoint"></a>Настройка шлюза приложений с конечной точкой внутренней подсистемы балансировки нагрузки (ILB)
 
@@ -25,9 +25,9 @@ ms.locfileid: "76899008"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите в портал Azure по адресу <https://portal.azure.com>KV
+Войдите на портал Azure по адресу <https://portal.azure.com>.
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
@@ -153,6 +153,6 @@ ms.locfileid: "76899008"
     ![Private-frontendip-5](./media/configure-application-gateway-with-private-frontend-ip/private-frontendip-5.png)
 2. Скопируйте частный IP-адрес и вставьте его в адресную строку браузера на виртуальной машине в той же виртуальной сети или в локальной среде, которая имеет подключение к этой виртуальной сети, и попытайтесь получить доступ к шлюзу приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите отслеживать работоспособность серверной части, см. раздел [журналы работоспособности и диагностики для шлюза приложений](application-gateway-diagnostics.md).

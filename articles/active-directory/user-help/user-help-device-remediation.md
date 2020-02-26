@@ -2,7 +2,7 @@
 title: Исправления для "ошибка не удается получить отсюда" — Azure AD
 description: Найдите возможные исправления, по которым вы получаете сообщение об ошибке "не удается получить отсюда".
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.assetid: 8ad0156c-0812-4855-8563-6fbff6194174
 ms.service: active-directory
@@ -10,15 +10,15 @@ ms.subservice: user-help
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/10/2018
-ms.author: lizross
+ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 55a6e9976706cb12a53dd5d540a2b6f2edb9e41b
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 2484de4e554d16ba049d206981a44654ede28a3f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704635"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190027"
 ---
 # <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>Возможные исправления для сообщения об ошибке "не удается получить отсюда"
 
@@ -29,7 +29,7 @@ ms.locfileid: "76704635"
 
 ![Сообщение об ошибке, связанное с поддержкой браузера](media/user-help-device-remediation/browser-version.png)
 
-Чтобы устранить эту проблему, необходимо установить и запустить поддерживаемый браузер в зависимости от операционной системы. Если вы используете Windows 10, поддерживаемые браузеры включают Microsoft Edge, Internet Explorer и Google Chrome. Если вы используете другую операционную систему, вы можете проверить полный список [поддерживаемых браузеров](../conditional-access/technical-reference.md#supported-browsers).
+Чтобы устранить эту проблему, необходимо установить и запустить поддерживаемый браузер в зависимости от операционной системы. Если вы используете Windows 10, поддерживаемые браузеры включают Microsoft Edge, Internet Explorer и Google Chrome. Если вы используете другую операционную систему, вы можете проверить полный список [поддерживаемых браузеров](../conditional-access/concept-conditional-access-conditions.md#supported-browsers).
 
 ## <a name="make-sure-youre-using-a-supported-operating-system"></a>Проверка использования поддерживаемой операционной системы
 Убедитесь, что вы используете поддерживаемую версию операционной системы, в частности:
@@ -67,7 +67,7 @@ ms.locfileid: "76704635"
 
 - **Зарегистрировать личное устройство для работы.** Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации. Дополнительные сведения и пошаговые инструкции см. в статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
 
 - [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

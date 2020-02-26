@@ -10,12 +10,12 @@ ms.author: vaidyas
 author: vaidyas
 ms.reviewer: larryfr
 ms.date: 11/22/2019
-ms.openlocfilehash: 00a62e970e27d689eb639a62938376f73410c270
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 321f985bd375e6fa4337e060bb15d318ea306ab4
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76024909"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116734"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "76024909"
 
 С помощью Машинное обучение Azure можно создавать образы DOCKER из обученных моделей машинного обучения. Машинное обучение Azure теперь имеет функции предварительной версии для создания этих моделей машинного обучения в приложениях функций, которые можно [развернуть в функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-deployment-technologies#docker-container).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -58,7 +58,7 @@ ms.locfileid: "76024909"
 
 * **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
-Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
+Эти сущности инкапсулированы в __конфигурацию вывода__. Конфигурация вывода ссылается на скрипт записи и другие зависимости.
 
 > [!IMPORTANT]
 > При создании конфигурации вывода для использования с функциями Azure необходимо использовать объект [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией > = 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
@@ -118,7 +118,7 @@ print(blob.location)
 
 ## <a name="deploy-image-as-a-web-app"></a>Развертывание образа как веб-приложения
 
-1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<acrinstance>` значением, которое было возвращено из `package.location`: 
+1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<myacr>` значением, которое было возвращено из `package.location`: 
 
     ```azurecli-interactive
     az acr credential show --name <myacr>
@@ -177,7 +177,7 @@ print(blob.location)
 1. Создайте учетную запись хранения, которая будет использоваться для хранилища триггеров BLOB-объектов, и получите ее строку подключения. Замените `<triggerStorage>` именем, которое вы хотите использовать.
 
     ```azurecli-interactive
-    az storage account create --name triggerStorage --location westeurope --resource-group myresourcegroup --sku Standard_LRS
+    az storage account create --name <triggerStorage> --location westeurope --resource-group myresourcegroup --sku Standard_LRS
     ```
     ```azurecli-interactive
     az storage account show-connection-string --resource-group myresourcegroup --name <triggerStorage> --query connectionString --output tsv

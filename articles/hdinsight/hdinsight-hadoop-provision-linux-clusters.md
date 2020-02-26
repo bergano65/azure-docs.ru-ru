@@ -1,26 +1,25 @@
 ---
-title: Установка кластера для Apache и R Server в Azure HDInsight
+title: Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 description: Сведения об установке кластеров Hadoop, Kafka, Spark, HBase, Microsoft R Server или Storm для HDInsight из браузера с помощью классического Azure CLI, Azure PowerShell, REST или пакета SDK.
-keywords: установка кластера hadoop, установка кластера kafka, установка кластера spark, что такое кластер hadoop
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
-ms.date: 02/03/2020
-ms.openlocfilehash: 2c9c5b35110be8f9e51d2205f9fe63dfa4ef8e10
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.date: 02/12/2020
+ms.openlocfilehash: b4922326b92efa88552eb100488a29fc53e1f914
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031070"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198992"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-Узнайте, как установить и настроить кластеры в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka, Interactive Query, Apache HBase, Служб машинного обучения или Apache Storm. Кроме того, вы узнаете, как повысить безопасность кластеров путем их присоединения к домену.
+Узнайте, как настроить и настроить Apache Hadoop, Apache Spark, Apache Kafka, интерактивный запрос, Apache HBase, службы ML или Apache Storm в HDInsight. Кроме того, вы узнаете, как повысить безопасность кластеров путем их присоединения к домену.
 
 Кластер Hadoop включает в себя несколько виртуальных машин (узлов), которые используются для распределенной обработки задач. Azure HDInsight управляет сведениями об установке и настройке отдельных узлов, поэтому вам нужно указать только общие сведения о конфигурации.
 
@@ -40,25 +39,33 @@ ms.locfileid: "77031070"
 | [cURL](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
 | [Шаблоны диспетчера ресурсов Azure](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 
-## <a name="basic-cluster-setup"></a>установка базового кластера
-
 В этой статье описывается настройка в [портал Azure](https://portal.azure.com), где можно создать кластер HDInsight с помощью представления по умолчанию или *классической*модели.
 
-![hdinsight create options custom quick create](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-basics-blank-fs.png)
+## <a name="basics"></a>Основы
 
-Следуйте инструкциям на экране. Ниже приведены сведения для следующих элементов:
+![быстрое создание параметров hdinsight — настраиваемая Быстрая](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-basics-blank-fs.png)
 
-* [Имя группы ресурсов](#resource-group-name)
-* [Типы и конфигурация кластеров](#cluster-types)
-* [Имя кластера](#cluster-name)
-* [Имя входа в кластер и имя пользователя SSH](#cluster-login-and-ssh-username)
-* [Местоположение](#location)
+### <a name="project-details"></a>сведения о проекте;
 
-## <a name="resource-group-name"></a>Имя группы ресурсов
+[Azure Resource Manager](../azure-resource-manager/management/overview.md) помогает работать с ресурсами в приложении в виде группы, называемой [группой ресурсов](../azure-resource-manager/management/overview.md#resource-groups)Azure. Вы можете развертывать, обновлять, отслеживать или удалять все ресурсы для приложения в рамках одной скоординированной операции.
 
-[Azure Resource Manager](../azure-resource-manager/management/overview.md) позволяет работать с ресурсами в приложении в виде группы, которая называется группой ресурсов Azure. Вы можете развертывать, обновлять, отслеживать или удалять все ресурсы для приложения в рамках одной скоординированной операции.
+### <a name="cluster-details"></a>Сведения о кластере
 
-## <a name="cluster-types"></a> Типы и конфигурация кластеров
+#### <a name="cluster-name"></a>Имя кластера
+
+Имена кластеров HDInsight имеют следующие ограничения.
+
+* Допустимые символы: a – z, 0-9, A – Z
+* Максимальная длина: 59
+* Зарезервированные имена: приложения
+* Область именования кластера предназначена для всех Azure во всех подписках. Поэтому имя кластера должно быть уникальным по всему миру.
+* Первые шесть символов должны быть уникальными в пределах виртуальной сети.
+
+#### <a name="region"></a>Регион
+
+Расположение кластера не требуется указывать явно: кластер находится в том же расположении, что и хранилище по умолчанию. Чтобы получить список поддерживаемых регионов, выберите раскрывающийся список **регион** на странице [цен на HDInsight](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
+
+#### <a name="cluster-type"></a>Тип кластера
 
 В настоящее время Azure HDInsight предоставляет указанные ниже типы кластеров, каждый из которых имеет набор компонентов для предоставления определенных функциональных возможностей.
 
@@ -75,47 +82,33 @@ ms.locfileid: "77031070"
 | [Spark](spark/apache-spark-overview.md) |Обработка в памяти, интерактивные запросы, обработка потоков микро-пакетов |
 | [Storm](storm/apache-storm-overview.md) |Обработка событий в режиме реального времени |
 
-### <a name="hdinsight-version"></a>Версия HDInsight
+#### <a name="version"></a>Версия
 
 Выберите версию HDInsight для этого кластера. Дополнительные сведения см. в разделе [Поддерживаемые версии HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 
-## <a name="cluster-name"></a>Имя кластера
-
-Имена кластеров HDInsight имеют следующие ограничения.
-
-* Допустимые символы: a – z, 0-9, A – Z
-* Максимальная длина: 59
-* Зарезервированные имена: приложения
-* Область именования кластера предназначена для всех Azure во всех подписках. Поэтому имя кластера должно быть уникальным по всему миру.
-* Первые шесть символов должны быть уникальными в пределах виртуальной сети.
-
-## <a name="cluster-login-and-ssh-username"></a>Имя входа в кластер и имя пользователя SSH
+### <a name="cluster-credentials"></a>Учетные данные кластера
 
 Во время создания кластера HDInsight можно настроить две учетные записи пользователя.
 
-* Пользователь HTTP: имя пользователя по умолчанию — *Admin*. В нем используется базовая конфигурация портал Azure. Иногда его называют "пользователем кластера".
-* Пользователь SSH. используется для подключения к кластеру по протоколу SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
+* Имя пользователя для входа в кластер: имя пользователя по умолчанию — *Admin*. В нем используется базовая конфигурация портал Azure. Иногда он называется "пользователь кластера" или "пользователь HTTP".
+* Secure Shell (SSH) имя пользователя: используется для подключения к кластеру по протоколу SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 Имя пользователя HTTP имеет следующие ограничения.
 
-* Разрешенные специальные символы: _ и @
+* Разрешенные специальные символы: `_` и `@`
 * Недопустимые символы: #;. "",\/: "! *? $ (){}[] < > | &--= +% ~ ^ Space
 * Максимальная длина: 20
 
 Имя пользователя SSH имеет следующие ограничения.
 
-* Разрешенные специальные символы: _ и @
+* Разрешенные специальные символы:`_` и `@`
 * Недопустимые символы: #;. "",\/: "! *? $ (){}[] < > | &--= +% ~ ^ Space
 * Максимальная длина: 64
 * Зарезервированные имена: Hadoop, Users, Oozie, Hive, mapred, ambari-QA, Zookeeper, TEZ, HDFS, sqoop, Yarn, хкат, AMS, HBase, множество, администратор, Admin, пользователь, Пользователь1, тест, Пользователь2, test1, user3, admin1, 1, 123, a, актусер, ADM, Admin2, ASPNET, Backup, Console, Дэвид, гость, Джон, владелец, корень, сервер, SQL, поддержка, support_388945a0, sys, test2, test3, user4, User5, Spark
 
-Пакет безопасности предприятия позволяет интегрировать HDInsight с Active Directory и Apache Ranger. При помощи пакета безопасности корпоративного уровня можно создать нескольких пользователей.
+## <a name="storage"></a>Память
 
-## <a name="location"></a>Расположение (регионы) для кластеров и хранилища
-
-Расположение кластера не требуется указывать явно: кластер находится в том же расположении, что и хранилище по умолчанию. Просмотреть поддерживаемые регионы можно в раскрывающемся списке **Регион** на странице [Цены на HDInsight](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
-
-## <a name="storage-endpoints-for-clusters"></a>Конечные точки хранилища для кластеров
+![Параметры хранилища кластера: конечные точки, совместимые с HDFS](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-storage.png)
 
 Хотя при локальной установке кластера Hadoop для хранилища используется распределенная файловая система Hadoop (HDFS), в облаке применяются конечные точки хранилища, подключенные к кластеру. Использование облачного хранилища позволяет безопасно удалять кластеры HDInsight, используемые для вычислений, сохраняя при этом данные.
 
@@ -134,11 +127,9 @@ ms.locfileid: "77031070"
 
 Во время настройки вы указываете контейнер BLOB-объектов в учетной записи хранения Azure или хранилище Data Lake Storage для конечной точки хранилища по умолчанию. Хранилище по умолчанию содержит журналы приложений и системный журнал. При необходимости вы можете указать дополнительные связанные учетные записи хранения Azure и учетные записи Data Lake Storage, к которым кластер может получать доступ. Кластер HDInsight должен находиться в том же расположении Azure, что и зависимые учетные записи хранения.
 
-![Параметры хранилища кластера: конечные точки хранилища, совместимые с HDFS](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-storage.png)
-
 [!INCLUDE [secure-transfer-enabled-storage-account](../../includes/hdinsight-secure-transfer.md)]
 
-### <a name="optional-metastores"></a>Дополнительные хранилища метаданных
+### <a name="metastore-settings"></a>Параметры хранилище метаданных
 
 Вы можете создать дополнительные хранилища метаданных Hive или Apache Oozie. Однако не все типы кластеров поддерживают хранилища метаданных, а хранилище данных SQL Azure не совместимо с хранилищами метаданных.
 
@@ -147,28 +138,40 @@ ms.locfileid: "77031070"
 > [!IMPORTANT]  
 > Создавая пользовательское хранилище метаданных, не используйте в имени базы данных тире, дефисы и пробелы. Это может привести к сбою при создании кластера.
 
-### <a name="use-hiveoozie-metastore"></a>Хранилище метаданных Hive
+#### <a name="sql-database-for-hive"></a>База данных SQL для Hive
 
 Если вы хотите сохранить таблицы Hive после удаления кластера HDInsight, используйте пользовательское хранилище метаданных. Затем можно будет подключить это хранилище к другому кластеру HDInsight.
 
-Хранилище метаданных HDInsight, созданное для одной версии кластера HDInsight, не может использоваться в других версиях такого кластера. Список версий HDInsight см. в разделе [Поддерживаемые версии HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
+HDInsight An хранилище метаданных, созданный для одной версии кластера HDInsight, нельзя совместно использовать в разных версиях кластера HDInsight. Список версий HDInsight см. в разделе [Поддерживаемые версии HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 
-### <a name="oozie-metastore"></a>Хранилище метаданных Oozie
+#### <a name="sql-database-for-oozie"></a>База данных SQL для Oozie
 
 Для повышения производительности Oozie используйте пользовательское хранилище метаданных. Хранилище метаданных также позволяет осуществлять доступ к данным задания Oozie после удаления кластера.
+
+#### <a name="sql-database-for-ambari"></a>База данных SQL для Ambari
+
+Ambari используется для мониторинга кластеров HDInsight, внесения изменений в конфигурацию и хранения сведений об управлении кластерами, а также истории заданий. Функция Custom Ambari DB позволяет развернуть новый кластер и настроить Ambari во внешней управляемой базе данных. Дополнительные сведения см. в статье [Custom AMBARI DB](./hdinsight-custom-ambari-db.md).
 
 > [!IMPORTANT]  
 > Повторно использовать хранилище метаданных Oozie невозможно. Чтобы использовать пользовательское хранилище метаданных Oozie, при создании кластера HDInsight необходимо предоставить пустую базу данных SQL Azure.
 
-## <a name="enterprise-security-package"></a>Пакет безопасности корпоративного уровня
+## <a name="security--networking"></a>Безопасность и работа в сети
+
+![hdinsight create options choose enterprise security package](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-security-networking.png)
+
+### <a name="enterprise-security-package"></a>Пакет безопасности корпоративного уровня
 
 Для кластеров типа Hadoop, Spark, HBase, Kafka и Interactive Query вы можете включить **Корпоративный пакет безопасности**. Этот пакет содержит параметр для более безопасной настройки кластера с помощью Apache Ranger и интеграции с Azure Active Directory. Дополнительные сведения см. [в статье обзор корпоративной безопасности в Azure HDInsight](./domain-joined/hdinsight-security-overview.md).
 
-![hdinsight create options choose enterprise security package](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-security-networking-esp.png)
+Пакет безопасности предприятия позволяет интегрировать HDInsight с Active Directory и Apache Ranger. При помощи пакета безопасности корпоративного уровня можно создать нескольких пользователей.
 
 Дополнительные сведения о создании присоединенного к домену кластера HDInsight см. в статье о [создании присоединенной к домену среды песочницы HDInsight](./domain-joined/apache-domain-joined-configure.md).
 
-## <a name="extend-clusters-with-a-virtual-network"></a>Расширение кластеров с помощью виртуальной сети
+### <a name="tls"></a>TLS
+
+Дополнительные сведения см. в разделе [безопасность транспортного уровня](./hdinsight-plan-virtual-network-deployment.md#transport-layer-security) .
+
+### <a name="virtual-network"></a>Виртуальная сеть
 
 Если для решения нужны технологии, распределенные по нескольким типам кластеров HDInsight, [виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network) может объединять необходимые типы кластеров. Благодаря такой конфигурации кластеры и любой развернутый в них код могут взаимодействовать друг с другом напрямую.
 
@@ -176,11 +179,25 @@ ms.locfileid: "77031070"
 
 Пример использования двух типов кластера в виртуальной сети Azure см. в статье об [использовании структурированного потока Apache Spark при помощи Apache Kafka](hdinsight-apache-kafka-spark-structured-streaming.md). Дополнительные сведения об использовании HDInsight с виртуальной сетью, включая конкретные требования к конфигурации для виртуальной сети, см. в статье [планирование виртуальной сети для HDInsight](hdinsight-plan-virtual-network-deployment.md).
 
-## <a name="configure-cluster-size"></a>Настройка размера кластера
+### <a name="disk-encryption-setting"></a>Параметр шифрования диска
 
-Плата за использование узлов взимается, пока существует кластер. Начисление оплаты начинается после создания кластера и прекращается только после его удаления. Перевести кластер в режим ожидания или отменить его выделение невозможно.
+Дополнительные сведения см. в разделе [Шифрование диска, управляемого клиентом](./disk-encryption.md).
 
-### <a name="number-of-nodes-for-each-cluster-type"></a>Количество узлов для каждого типа кластера
+### <a name="kafka-rest-proxy"></a>Прокси-сервер REST для Kafka
+
+Этот параметр доступен только для типа кластера Kafka. Дополнительные сведения см. в разделе [использование прокси-сервера RESTful](./kafka/rest-proxy.md).
+
+### <a name="identity"></a>Тождество
+
+Дополнительные сведения см. [в статье управляемые удостоверения в Azure HDInsight](./hdinsight-managed-identities.md).
+
+## <a name="configuration--pricing"></a>Настройка и цены
+
+![HDInsight выберите размер узла](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration.png)
+
+За использование узла взимается плата, если кластер существует. Начисление оплаты начинается после создания кластера и прекращается только после его удаления. Перевести кластер в режим ожидания или отменить его выделение невозможно.
+
+### <a name="node-configuration"></a>конфигурация узла;
 
 Для каждого типа кластера используется своя терминология. Кроме того, типы отличаются количеством узлов и стандартными размерами виртуальных машин. В следующей таблице число узлов каждого типа указано в скобках.
 
@@ -211,8 +228,6 @@ ms.locfileid: "77031070"
 
 При использовании портал Azure для настройки кластера размер узла можно получить на вкладке **Настройка и цены** . На портале также можно просмотреть затраты, связанные с различными размерами узлов.
 
-![HDInsight выберите размер узла](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration.png)
-
 ### <a name="virtual-machine-sizes"></a>Размер виртуальных машин
 
 При развертывании кластеров выберите вычислительные ресурсы в зависимости от решения, которое планируется развернуть. Для кластеров HDInsight используются следующие виртуальные машины:
@@ -227,19 +242,15 @@ ms.locfileid: "77031070"
 
 Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).
 
-## <a name="install-hdinsight-applications-on-clusters"></a>Установка приложений HDInsight в кластерах
+### <a name="add-application"></a>Добавление приложения
 
 Пользователи могут устанавливать приложения HDInsight в кластере HDInsight под управлением Linux. Вы можете использовать приложения, предоставляемые корпорацией Майкрософт, сторонними производителями или разработанные самостоятельно. Дополнительные сведения см. в статье [Установка сторонних приложений Apache Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
 
 Большинство приложений HDInsight устанавливаются в пустой граничный узел.  Пустой граничный узел — это виртуальная машина Linux, на которой установлены и настроены те же клиентские инструменты, что и на головном узле. Граничный узел можно использовать для доступа к кластеру, а также тестирования и размещения клиентских приложений. Подробные сведения см. в статье [Использование пустых граничных узлов в HDInsight](hdinsight-apps-use-edge-node.md).
 
-![портал Azure приложений конфигурации кластера](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration-applications.png)
-
-## <a name="script-actions"></a>Действия сценария
+### <a name="script-actions"></a>Действия сценария
 
 Можно установить дополнительные компоненты или настроить конфигурацию кластера с помощью сценариев во время создания. Такие скрипты вызываются с помощью **действия скрипта** — параметра конфигурации, который может использоваться с помощью портала Azure, командлетов HDInsight PowerShell или пакета SDK для HDInsight .NET. Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
-
-![Действия скрипта конфигурации кластера портал Azure](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration-scriptaction.png)
 
 Некоторые собственные компоненты Java, такие как Apache Mahout и Cascading, могут выполняться в кластере как архивные файлы (JAR) Java. Эти JAR-файлы можно распространить в службе хранилища Azure и отправить в кластеры HDInsight с помощью механизмов отправки заданий Hadoop. См. дополнительные сведения об [отправке заданий Apache Hadoop программными средствами](hadoop/submit-apache-hadoop-jobs-programmatically.md).
 

@@ -2,29 +2,29 @@
 title: Краткое руководство. Распознавание речи из звукового файла в службе "Речь" с помощью Python
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: chlandsi
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 01/14/2020
-ms.author: chlandsi
-ms.openlocfilehash: 587a0e83eb6b8c96b44589f7f5701526c23e2aae
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.date: 01/30/2020
+ms.author: dapine
+ms.openlocfilehash: 4dd668a587013a8ae275f6c7b7b7b615c6dc89c2
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76037917"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77156238"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?pivots=programming-language-python)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?pivots=programming-language-python)
 
 [!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 
@@ -57,7 +57,8 @@ python quickstart.py
 import azure.cognitiveservices.speech as speechsdk
 
 # Creates an instance of a speech config with specified subscription key and service region.
-# Replace with your own subscription key and service region (e.g., "westus").
+# Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
+# from here: https://aka.ms/speech/sdkregion).
 speech_key, service_region = "YourSubscriptionKey", "YourServiceRegion"
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 

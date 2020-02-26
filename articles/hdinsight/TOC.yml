@@ -39,6 +39,8 @@
           href: ./hdinsight-component-versioning.md
         - name: Компоненты высокого уровня доступности
           href: ./hdinsight-high-availability-components.md
+        - name: Apache Ambari в Azure HDInsight
+          href: ./apache-ambari-usage.md
         - name: Машинное обучение в HDInsight
           href: ./hdinsight-machine-learning-overview.md
         - name: Потоковая передача в нужном масштабе в HDInsight
@@ -344,6 +346,8 @@
               href: ./spark/apache-azure-spark-history-server.md
             - name: Включение кэширования с помощью службы кэша операций ввода-вывода
               href: ./spark/apache-spark-improve-performance-iocache.md
+            - name: Управление зависимостями JAR
+              href: ./spark/manage-jar-dependency.md
             - name: Использование записных книжек с Apache Spark
               items:
                 - name: Использование локальной записной книжки Jupyter
@@ -368,6 +372,8 @@
                   href: ./spark/apache-spark-run-machine-learning-automl.md
         - name: Диагностика
           items:
+            - name: Не удается создать записную книжку Jupyter
+              href: ./spark/troubleshoot-jupyter-notebook-convert.md
             - name: Исключение OutOfMemoryError
               href: ./spark/apache-spark-troubleshoot-outofmemory.md
             - name: "Не удается выполнить задание Apache Spark\_— NoClassDefFoundError"
@@ -392,6 +398,8 @@
               href: ./spark/apache-spark-troubleshoot-event-log-requestbodytoolarge.md
             - name: Отладка заданий Apache Spark
               href: ./spark/apache-spark-job-debugging.md
+            - name: Отладка файловых операций WASB
+              href: ./spark/troubleshoot-debug-wasb.md
             - name: Использование IntelliJ для отладки заданий Apache Spark
               href: ./spark/apache-spark-intellij-tool-debug-remotely-through-ssh.md
             - name: Устранение неполадок с Apache Spark
@@ -519,6 +527,8 @@
               href: ./hadoop/troubleshoot-port-conflict.md
             - name: Потеря доступа к Key Vault
               href: ./hadoop/troubleshoot-lost-key-vault-access.md
+            - name: Исключение хранилища WASBS
+              href: ./hadoop/troubleshoot-wasbs-storage-exception.md
 - name: Apache Kafka
   items:
     - name: Обзор

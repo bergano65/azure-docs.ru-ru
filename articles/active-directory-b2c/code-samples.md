@@ -5,17 +5,17 @@ services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.author: marsma
-ms.date: 01/23/2018
+ms.date: 01/29/2020
 ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 5db3b978193ab51fc60f1bcb97d83b4d24037b54
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 69e6b7beecb95c0e89b60640353155fc7802a881
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66511405"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982948"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "66511405"
 
 ## <a name="mobile-and-desktop-apps"></a>Мобильные и классические приложения
 
-| Образец | ОПИСАНИЕ |
+| Образец | Описание |
 |--------| ----------- |
 | [ios-swift-native-msal](https://github.com/Azure-Samples/active-directory-b2c-ios-swift-native-msal) | Приложение iOS в Swift для аутентификации пользователей Azure AD B2C и вызова API с помощью OAuth 2.0. |
 | [android-native-msal](https://github.com/Azure-Samples/active-directory-b2c-android-native-msal) | Простое приложение Android для аутентификации пользователей с помощью Azure Active Directory B2C и MSAL и получения доступа к веб-API с помощью полученных маркеров. |
@@ -34,17 +34,18 @@ ms.locfileid: "66511405"
 
 ## <a name="web-apps-and-apis"></a>Веб-приложения и API
 
-| Образец | ОПИСАНИЕ |
+| Образец | Описание |
 |--------| ----------- |
 | [dotnet-webapp-and-webapi](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi) | Веб-приложение .NET для вызова веб-API .NET (оба компонента защищены с помощью Azure AD B2C). |
 | [dotnetcore-webapp](https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapp) | Веб-приложение ASP.NET Core для входа пользователей с помощью Azure AD B2C, получения маркера доступа с помощью MSAL.NET и вызова API. |
 | [openidconnect-nodejs](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS) | Приложение Node.js для быстрой и простой настройки веб-приложения с помощью компонента "Экспресс" и OpenID Connect. |
 | [javascript-nodejs-webapp](https://github.com/AzureADQuickStarts/active-directory-b2c-javascript-nodejs-webapp) | Сервер Node.js для быстрой и простой настройки службы REST API с помощью протокола OAuth2. |
 | [javascript-nodejs-webapi](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi) | Небольшой веб-API Node.js для защиты веб-API и принятия маркеров доступа B2C с помощью passport.js в Azure AD B2C. |
+| [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/master/README_B2C.md) | Демонстрация интеграции (на уровне B2C) платформы удостоверений Майкрософт с веб-приложением Python.  |
 
 ## <a name="single-page-apps"></a>Одностраничные приложения
 
-| Образец | ОПИСАНИЕ |
+| Образец | Описание |
 |--------| ----------- |
 | [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Одностраничное приложение (SPA) для вызова веб-API. Аутентификация осуществляется с помощью Azure AD B2C и MSAL.js. | 
 | [javascript-hellojs-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-hellojs-singlepageapp) | Одностраничное приложение, реализуемое с использованием серверного веб-API ASP.NET для регистрации и входа пользователей с помощью Azure AD B2C и вызова веб-API с помощью маркера доступа OAuth 2.0. |

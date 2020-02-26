@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: da05dc7136a75d519660412f2ce176f7530eb392
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 3ef2fdcaefeedb0769eac34d292e67a99524a6f2
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547444"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168066"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
@@ -173,22 +173,7 @@ namespace CosmosDBSamplesV2
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция Java](functions-reference-java.md), которая использует эту привязку. Функция вызывается при наличии вставок или обновлений в указанной базе данных и коллекции.
-
-```json
-{
-    "type": "cosmosDBTrigger",
-    "name": "items",
-    "direction": "in",
-    "leaseCollectionName": "leases",
-    "connectionStringSetting": "AzureCosmosDBConnection",
-    "databaseName": "ToDoList",
-    "collectionName": "Items",
-    "createLeaseCollectionIfNotExists": false
-}
-```
-
-Ниже приведен код Java.
+Эта функция вызывается при наличии вставок или обновлений в указанной базе данных и коллекции.
 
 ```java
     @FunctionName("cosmosDBMonitor")
@@ -254,9 +239,9 @@ namespace CosmosDBSamplesV2
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type** | Н/Д | Нужно задать значение `cosmosDBTrigger`. |
-|**direction** | Н/Д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
-|**name** | Н/Д | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
+|**type** | Недоступно | Нужно задать значение `cosmosDBTrigger`. |
+|**direction** | Недоступно | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
+|**name** | Недоступно | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
 |**connectionStringSetting**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**databaseName**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
 |**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
@@ -1699,9 +1684,9 @@ public class DocsFromRouteSqlQuery {
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**     | Н/Д | Нужно задать значение `cosmosDB`.        |
-|**direction**     | Н/Д | Нужно задать значение `in`.         |
-|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Недоступно | Нужно задать значение `cosmosDB`.        |
+|**direction**     | Недоступно | Нужно задать значение `in`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
 |**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства `id` и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
@@ -2284,9 +2269,9 @@ public String cosmosDbQueryById(
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**     | Н/Д | Нужно задать значение `cosmosDB`.        |
-|**direction**     | Н/Д | Нужно задать значение `out`.         |
-|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Недоступно | Нужно задать значение `cosmosDB`.        |
+|**direction**     | Недоступно | Нужно задать значение `out`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/cosmos-db/).  |
@@ -2305,9 +2290,9 @@ public String cosmosDbQueryById(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочные материалы |
+| Привязка | Справочник |
 |---|---|
-| Cosmos DB; | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
+| Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
 <a name="host-json"></a>
 
@@ -2334,7 +2319,7 @@ public String cosmosDbQueryById(
 |---------|---------|---------|
 |GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
 |Протокол|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)|
-|leasePrefix|Н/Д|Префикс аренды для использования во всех функциях приложения.|
+|leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

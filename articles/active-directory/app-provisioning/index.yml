@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: Документация по подготовке приложений по управлению персоналом и других приложений
+summary: Подготовка приложений в Azure Active Directory позволяет автоматически создавать удостоверения пользователей и управлять ими в облачных приложениях (SaaS). Кроме того, в Azure AD можно подготавливать облачные приложения для управления персоналом. Узнайте, как развертывать и администрировать облачные приложения и приложения для управления персоналом, из наших кратких руководств, учебных материалов и инструкций.
+metadata:
+  title: Документация по подготовке приложений
+  description: Подготовка приложений в Azure Active Directory позволяет автоматически создавать удостоверения пользователей и управлять ими в облачных приложениях (SaaS). Кроме того, в Azure AD можно подготавливать облачные приложения для управления персоналом. Узнайте, как развертывать и администрировать облачные приложения и приложения для управления персоналом, из наших кратких руководств, учебных материалов и инструкций.
+  ms.service: active-directory
+  ms.subservice: app-mgmt
+  ms.workload: identity
+  ms.topic: landing-page
+  ms.date: 02/06/2020
+  author: msmimart
+  ms.author: mimart
+  manager: celested
+  ms.openlocfilehash: 02d9ee235de798e0c6095e0cbf60c08eabec53cd
+  ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77065507"
+landingContent:
+- title: Подготовка пользователей и групп для облачного приложения
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет подготовка приложения?
+      url: user-provisioning.md
+    - text: Описание процесса подготовки
+      url: how-provisioning-works.md
+  - linkListType: tutorial
+    links:
+    - text: Подготовка SAP Cloud Platform Identity Authentication
+      url: /azure/active-directory/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - text: Подготовка Oracle Fusion ERP
+      url: /azure/active-directory/saas-apps/oracle-fusion-erp-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - text: Подготовка Atlassian Cloud
+      url: /azure/active-directory/saas-apps/atlassian-cloud-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+  - linkListType: how-to-guide
+    links:
+    - text: Добавляете приложение из коллекции? Настройка процесса подготовки для приложения
+      url: configure-automatic-user-provisioning-portal.md
+    - text: Настройка сопоставлений атрибутов
+      url: customize-application-attributes.md
+    - text: Использование фильтров области
+      url: define-conditional-rules-for-provisioning-user-accounts.md
+- title: Разработка приложения с использованием SCIM для подготовки
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Подготовка с помощью SCIM (блог по стандартам идентификации)
+      url: https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010
+  - linkListType: how-to-guide
+    links:
+    - text: Разрабатываете приложение? Автоматическая подготовка с помощью SCIM
+      url: use-scim-to-provision-users-and-groups.md
+- title: Управление входящей подготовкой облачных приложений по управлению персоналом
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Планирование развертывания подготовки пользователей для облачного приложения по управлению персоналом
+      url: plan-cloud-hr-provision.md
+  - linkListType: tutorial
+    links:
+    - text: Подготовка Workday
+      url: /azure/active-directory/saas-apps/workday-inbound-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+    - text: Подготовка SAP SuccessFactors
+      url: /azure/active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context

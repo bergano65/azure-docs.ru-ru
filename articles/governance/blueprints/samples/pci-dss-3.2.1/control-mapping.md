@@ -1,14 +1,14 @@
 ---
 title: Элементы управления примера схемы PCI-DSS версии 3.2.1
 description: Сопоставление элементов управления примера схемы Payment Card Industry Data Security Standard версии 3.2.1.1 с применением Политики Azure и RBAC.
-ms.date: 06/24/2019
+ms.date: 01/29/2020
 ms.topic: sample
-ms.openlocfilehash: 38db59a7f0b93e2c87b3c7acdfbcc2b8cbd11489
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: db21ac9d628e777b6ff2cc86516cfb1497f5a62f
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546571"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905632"
 ---
 # <a name="control-mapping-of-the-pci-dss-v321-blueprint-sample"></a>Сопоставление элементов управления примера схемы PCI-DSS версии 3.2.1
 
@@ -122,7 +122,7 @@ Azure реализует управление доступом на основе
 - Допустимые расположения
 - Разрешенные расположения для групп ресурсов
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с сопоставлением элементов управления схемы PCI-DSS версии 3.2.1, просмотрите общие сведения и сведения о развертывании этого примера по следующим ссылкам:
 

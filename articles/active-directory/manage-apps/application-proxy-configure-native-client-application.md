@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cbee6bfcca3ddb356abe9dceab2fca07c152b07
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 3d2a2bb9dd543da7455a276075a829ef06032edb
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961806"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159290"
 ---
 # <a name="how-to-enable-native-client-applications-to-interact-with-proxy-applications"></a>Как включить собственные клиентские приложения для взаимодействия с приложениями прокси-сервера
 
@@ -31,7 +31,7 @@ ms.locfileid: "73961806"
 
 ![Отношение между конечными пользователями, Azure AD и опубликованными приложениями](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-Для публикации собственных приложений используйте библиотеку аутентификация Azure AD, которая выполняет проверку подлинности и поддерживает множество клиентских сред. Прокси приложения вписывается в [сценарий вызова веб-API собственным приложением](../develop/native-app.md).
+Для публикации собственных приложений используйте библиотеку аутентификация Azure AD, которая выполняет проверку подлинности и поддерживает множество клиентских сред. Прокси приложения вписывается в [сценарий вызова веб-API собственным приложением](../azuread-dev/native-app.md).
 
 В этой статье рассматриваются четыре действия, которые нужно выполнить, чтобы опубликовать собственное приложение с помощью прокси приложения и библиотеки аутентификации Azure AD.
 
@@ -60,7 +60,7 @@ ms.locfileid: "73961806"
 1. В заголовке **URI перенаправления** выберите **общедоступный клиент (мобильный & Рабочий стол)** , а затем введите URI перенаправления для приложения.
 1. Выберите и прочтите **политики платформы Майкрософт**и нажмите кнопку **зарегистрировать**. Будет создана и отображена страница обзора для новой регистрации приложения.
 
-Более подробные сведения о создании регистрации приложения см. в статье [Интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md).
+Более подробные сведения о создании регистрации приложения см. в статье [Интеграция приложений с Azure Active Directory](../develop/quickstart-register-app.md).
 
 ## <a name="step-3-grant-access-to-your-proxy-application"></a>Шаг 3. предоставление доступа к прокси-приложению
 
@@ -103,8 +103,8 @@ HttpResponseMessage response = await httpClient.GetAsync("< Proxy App API Url >"
 
 После редактирования ADAL с помощью этих параметров пользователи могут проходить проверку подлинности в собственных клиентских приложениях, даже если они находятся за пределами корпоративной сети.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о потоке собственного приложения см. [в разделе собственные приложения в Azure Active Directory](../develop/native-app.md).
+Дополнительные сведения о потоке собственного приложения см. [в разделе собственные приложения в Azure Active Directory](../azuread-dev/native-app.md).
 
 Узнайте, как настроить [единый вход для приложений в Azure Active Directory](what-is-single-sign-on.md#choosing-a-single-sign-on-method).

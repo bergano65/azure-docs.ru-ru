@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/21/2020
-ms.custom: seodec18
-ms.openlocfilehash: 71041012bc77da6d7613deb178c3cec1413e57e2
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.date: 02/07/2020
+ms.custom: seodec18~~~~
+ms.openlocfilehash: 79628ed44753577023464ef6208027e1b7996d30
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314897"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087249"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "76314897"
 
 Ретроактивное объединение с эталонными данными не поддерживается. Таким же, только текущие и будущие входящие данные сопоставляются и соединяются со ссылочной датой после настройки и отправки.
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 ### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>Сведения о модели ссылочных данных аналитики временных рядов.</br>
 

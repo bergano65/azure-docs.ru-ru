@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 12/13/2019
 ms.author: saudas
-ms.openlocfilehash: df3ca877570b6b3e3a34dd20d617ce3896f1dd99
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 663a1dc597493c7b534b54eab7ccc4bed0ff0e11
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76120967"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209228"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -23,7 +23,7 @@ ms.locfileid: "76120967"
 [Вот официальное руководство по устранению неполадок с кластерами Kubernetes](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 [Это руководство по устранению неполадок](https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/index.md) модулей pod, узлов, кластеров и т. д., опубликованное инженером Майкрософт.
 
-## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Я получаю ошибку превышения квоты во время создания или обновления. Что мне делать? 
+## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Я получаю ошибку превышения квоты во время создания или обновления. Что нужно сделать? 
 
 Вам необходимо [запросить ядра](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request).
 
@@ -32,7 +32,7 @@ ms.locfileid: "76120967"
 Если вы развертываете кластер AKS на портале Azure, максимальное число модулей pod на узел по умолчанию составляет 30.
 Если вы развертываете кластер AKS в Azure CLI, максимальное число модулей pod на узел по умолчанию составляет 110. Убедитесь, что используется последняя версия Azure CLI. Этот параметр по умолчанию можно изменить с помощью флага `–-max-pods` в команде `az aks create`.
 
-## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку insufficientSubnetSize при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что мне делать?
+## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку insufficientSubnetSize при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что нужно сделать?
 
 Если используется Azure CNI (Advanced Networking), AKS выделяет IP-адреса на основе параметра "Max-Pod" на каждый узел. На основе настроенного максимального числа модулей для каждого узла размер подсети должен быть больше, чем произведение числа узлов и параметра max Pod на узел. В следующем уравнении показано следующее:
 
@@ -40,7 +40,7 @@ ms.locfileid: "76120967"
 
 Дополнительные сведения см. в разделе [Планирование назначения IP-адресов для кластера](configure-azure-cni.md#plan-ip-addressing-for-your-cluster).
 
-## <a name="my-pod-is-stuck-in-crashloopbackoff-mode-what-should-i-do"></a>Мой модуль pod завис в режиме CrashLoopBackOff. Что мне делать?
+## <a name="my-pod-is-stuck-in-crashloopbackoff-mode-what-should-i-do"></a>Мой модуль pod завис в режиме CrashLoopBackOff. Что нужно сделать?
 
 Модуль pod может зависнуть в этом режиме по различным причинам. Вы можете просмотреть:
 
@@ -53,17 +53,17 @@ ms.locfileid: "76120967"
 
 К сожалению, включение RBAC в существующих кластерах в настоящее время не поддерживается. Необходимо явно создать кластеры. Если вы используете CLI, RBAC включается по умолчанию. Если вы используете портал AKS, в рабочем процессе создания будет доступен переключатель для включения RBAC.
 
-## <a name="i-created-a-cluster-with-rbac-enabled-by-using-either-the-azure-cli-with-defaults-or-the-azure-portal-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Кластер создан с поддержкой RBAC помощью Azure CLI со значениями по умолчанию или на портале Azure, при этом на панели мониторинга Kubernetes появились многочисленные предупреждения. Ранее на панели мониторинга не возникало никаких предупреждений. Что мне делать?
+## <a name="i-created-a-cluster-with-rbac-enabled-by-using-either-the-azure-cli-with-defaults-or-the-azure-portal-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Кластер создан с поддержкой RBAC помощью Azure CLI со значениями по умолчанию или на портале Azure, при этом на панели мониторинга Kubernetes появились многочисленные предупреждения. Ранее на панели мониторинга не возникало никаких предупреждений. Что нужно сделать?
 
 Причина отображения предупреждений на панели мониторинга заключается в том, что теперь в кластере включена функция RBAC, в которой доступ к этой панели отключен по умолчанию. В целом этот подход является рекомендуемым, так как раскрытие панели мониторинга по умолчанию для всех пользователей кластера может привести к угрозам безопасности. Если вы по-прежнему хотите включить панель мониторинга, следуйте указаниям в этом [блоге](https://pascalnaber.wordpress.com/2018/06/17/access-dashboard-on-aks-with-rbac-enabled/).
 
-## <a name="i-cant-connect-to-the-dashboard-what-should-i-do"></a>Мне не удается подключиться к панели мониторинга. Что мне делать?
+## <a name="i-cant-connect-to-the-dashboard-what-should-i-do"></a>Мне не удается подключиться к панели мониторинга. Что нужно сделать?
 
 Самый простой способ получить доступ к службе за пределами кластера — запустить `kubectl proxy`, который будет запрашивать ваш локальный порт 8001 для подключения к серверу API Kubernetes. После этого сервер API может установить прокси-подключение к вашей службе: `http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/#!/node?namespace=default`.
 
 Если вы не видите панель мониторинга Kubernetes, проверьте, запущен ли модуль pod `kube-proxy` в пространстве имен `kube-system`. Если модуль pod находится в нерабочем состоянии, удалите его, и он перезапустится.
 
-## <a name="i-cant-get-logs-by-using-kubectl-logs-or-i-cant-connect-to-the-api-server-im-getting-error-from-server-error-dialing-backend-dial-tcp-what-should-i-do"></a>Мне не удается получить журналы kubectl, или подключение к серверу API завершается сбоем. Я получаю сообщение об ошибке "сервер: ошибка при вызове внутреннего сервера: вызов TCP...". Что мне делать?
+## <a name="i-cant-get-logs-by-using-kubectl-logs-or-i-cant-connect-to-the-api-server-im-getting-error-from-server-error-dialing-backend-dial-tcp-what-should-i-do"></a>Мне не удается получить журналы kubectl, или подключение к серверу API завершается сбоем. Я получаю сообщение об ошибке "сервер: ошибка при вызове внутреннего сервера: вызов TCP...". Что нужно сделать?
 
 Убедитесь, что группа безопасности сети по умолчанию не изменена и что порт 22 и 9000 открыты для подключения к серверу API. Проверьте, выполняется ли модуль `tunnelfront` в пространстве имен *KUBE-System* с помощью команды `kubectl get pods --namespace kube-system`. Если он не запущен, принудительно удалите его, и он перезапустится.
 
@@ -120,7 +120,7 @@ ms.locfileid: "76120967"
 
 * Имена кластеров должны содержать 1-63 символов. Допустимыми являются только буквы, цифры, тире и символы подчеркивания. Первый и последний символы должны быть буквами или цифрами.
 * Имя группы ресурсов AKS *MC_* объединяет имя группы ресурсов и имя ресурса. Автоматически созданный синтаксис `MC_resourceGroupName_resourceName_AzureRegion` не должен превышать 80 символов. При необходимости Сократите длину имени группы ресурсов или имени кластера AKS.
-* *DnsPrefix* должен начинаться и заканчиваться буквенно-цифровыми значениями. Допустимые символы включают буквенно-цифровые значения и дефисы (–). *DnsPrefix* не может содержать специальные символы, такие как точка (.).
+* *DnsPrefix* должен начинаться и заканчиваться буквенно-цифровыми значениями, а его длина должна составлять от 1-54 символов. Допустимые символы включают буквенно-цифровые значения и дефисы (–). *DnsPrefix* не может содержать специальные символы, такие как точка (.).
 
 ## <a name="im-receiving-errors-when-trying-to-create-update-scale-delete-or-upgrade-cluster-that-operation-is-not-allowed-as-another-operation-is-in-progress"></a>При попытке создать, обновить, масштабировать, удалить или обновить кластер возникают ошибки. Эта операция запрещена, так как выполняется другая операция.
 
@@ -155,8 +155,8 @@ ms.locfileid: "76120967"
 
 | Версия Kubernetes | Рекомендуемая версия |
 | -- | :--: |
-| 1.12 | 1.12.9 или более поздняя версия |
-| 1.13 | 1.13.6 или более поздняя версия |
+| 1,12 | 1.12.9 или более поздняя версия |
+| 1,13 | 1.13.6 или более поздняя версия |
 | 1,14 | 1.14.2 или более поздняя версия |
 
 
@@ -164,8 +164,8 @@ ms.locfileid: "76120967"
 
 | Версия Kubernetes | Рекомендуемая версия |
 | -- | :--: |
-| 1.12 | 1.12.0 или более поздняя версия |
-| 1.13 | 1.13.0 или более поздняя версия |
+| 1,12 | 1.12.0 или более поздняя версия |
+| 1,13 | 1.13.0 или более поздняя версия |
 | 1,14 | 1.14.0 или более поздняя версия |
 
 
@@ -173,14 +173,14 @@ ms.locfileid: "76120967"
 
 В Kubernetes версии 1,10 Маунтволуме. Ваитфораттач может завершиться ошибкой с помощью повторного подключения диска Azure.
 
-В Linux может появиться сообщение об ошибке формата DevicePath. Пример.
+В Linux может появиться сообщение об ошибке формата DevicePath. Например:
 
 ```console
 MountVolume.WaitForAttach failed for volume "pvc-f1562ecb-3e5f-11e8-ab6b-000d3af9f967" : azureDisk - Wait for attach expect device path as a lun number, instead got: /dev/disk/azure/scsi1/lun1 (strconv.Atoi: parsing "/dev/disk/azure/scsi1/lun1": invalid syntax)
   Warning  FailedMount             1m (x10 over 21m)   kubelet, k8s-agentpool-66825246-0  Unable to mount volumes for pod
 ```
 
-В Windows может появиться неверный номер устройства DevicePath (LUN). Пример.
+В Windows может появиться неверный номер устройства DevicePath (LUN). Например:
 
 ```console
 Warning  FailedMount             1m    kubelet, 15282k8s9010    MountVolume.WaitForAttach failed for volume "disk01" : azureDisk - WaitForAttach failed within timeout node (15282k8s9010) diskId:(andy-mghyb
@@ -226,7 +226,7 @@ spec:
   >[!NOTE]
   > Поскольку GID и UID монтируются по умолчанию как root или 0. Если GID или UID задан как не являющийся корневым, например 1000, Kubernetes будет использовать `chown` для изменения всех каталогов и файлов на этом диске. Эта операция может занять много времени и может привести к очень низкому подключению диска.
 
-* Используйте `chown` в Инитконтаинерс, чтобы задать GID и UID. Пример.
+* Используйте `chown` в Инитконтаинерс, чтобы задать GID и UID. Например:
 
 ```yaml
 initContainers:
@@ -240,7 +240,7 @@ initContainers:
 
 ### <a name="error-when-deleting-azure-disk-persistentvolumeclaim-in-use-by-a-pod"></a>Ошибка при удалении диска Azure Персистентволумеклаим, используемого в Pod
 
-При попытке удаления дискового Персистентволумеклаима Azure, используемого в Pod, может появиться сообщение об ошибке. Пример.
+При попытке удаления дискового Персистентволумеклаима Azure, используемого в Pod, может появиться сообщение об ошибке. Например:
 
 ```console
 $ kubectl describe pv pvc-d8eebc1d-74d3-11e8-902b-e22b71bb1c06
@@ -265,8 +265,8 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 | -- | :--: |
 | 1,10 | 1.10.10 или более поздняя версия |
 | 1.11 | 1.11.5 или более поздняя версия |
-| 1.12 | 1.12.3 или более поздняя версия |
-| 1.13 | 1.13.0 или более поздняя версия |
+| 1,12 | 1.12.3 или более поздняя версия |
+| 1,13 | 1.13.0 или более поздняя версия |
 | 1,14 и более поздние версии | Н/Д |
 
 Если вы используете версию Kubernetes, которая не имеет исправления для этой проблемы, можно устранить проблему, добавив несколько минут и повторив повторную попытку.
@@ -286,8 +286,8 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 | -- | :--: |
 | 1,10 | 1.10.12 или более поздняя версия |
 | 1.11 | 1.11.6 или более поздняя версия |
-| 1.12 | 1.12.4 или более поздняя версия |
-| 1.13 | 1.13.0 или более поздняя версия |
+| 1,12 | 1.12.4 или более поздняя версия |
+| 1,13 | 1.13.0 или более поздняя версия |
 | 1,14 и более поздние версии | Н/Д |
 
 Если вы используете версию Kubernetes, которая не имеет исправления для этой проблемы, можно устранить проблему, выполнив следующие действия.
@@ -296,7 +296,7 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 
 ### <a name="azure-disk-waiting-to-detach-indefinitely"></a>Диск Azure, ожидающий отсоединения бессрочно
 
-В некоторых случаях, если операция отсоединения диска Azure завершается сбоем при первой попытке, она не будет повторять операцию отсоединения и останется подключенной к виртуальной машине исходного узла. Эта ошибка может возникать при перемещении диска с одного узла на другой. Пример.
+В некоторых случаях, если операция отсоединения диска Azure завершается сбоем при первой попытке, она не будет повторять операцию отсоединения и останется подключенной к виртуальной машине исходного узла. Эта ошибка может возникать при перемещении диска с одного узла на другой. Например:
 
 ```console
 [Warning] AttachVolume.Attach failed for volume “pvc-7b7976d7-3a46-11e9-93d5-dee1946e6ce9” : Attach volume “kubernetes-dynamic-pvc-7b7976d7-3a46-11e9-93d5-dee1946e6ce9" to instance “/subscriptions/XXX/resourceGroups/XXX/providers/Microsoft.Compute/virtualMachines/aks-agentpool-57634498-0” failed with compute.VirtualMachinesClient#CreateOrUpdate: Failure sending request: StatusCode=0 -- Original Error: autorest/azure: Service returned an error. Status= Code=“ConflictingUserInput” Message=“Disk ‘/subscriptions/XXX/resourceGroups/XXX/providers/Microsoft.Compute/disks/kubernetes-dynamic-pvc-7b7976d7-3a46-11e9-93d5-dee1946e6ce9’ cannot be attached as the disk is already owned by VM ‘/subscriptions/XXX/resourceGroups/XXX/providers/Microsoft.Compute/virtualMachines/aks-agentpool-57634498-1’.”
@@ -307,8 +307,8 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 | Версия Kubernetes | Фиксированная версия |
 | -- | :--: |
 | 1.11 | 1.11.9 или более поздняя версия |
-| 1.12 | 1.12.7 или более поздняя версия |
-| 1.13 | 1.13.4 или более поздняя версия |
+| 1,12 | 1.12.7 или более поздняя версия |
+| 1,13 | 1.13.4 или более поздняя версия |
 | 1,14 и более поздние версии | Н/Д |
 
 Если вы используете версию Kubernetes, которая не имеет исправления для этой проблемы, можно устранить проблему, выполнив отсоединение диска вручную.
@@ -321,8 +321,8 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 
 | Версия Kubernetes | Фиксированная версия |
 | -- | :--: |
-| 1.12 | 1.12.9 или более поздняя версия |
-| 1.13 | 1.13.6 или более поздняя версия |
+| 1,12 | 1.12.9 или более поздняя версия |
+| 1,13 | 1.13.6 или более поздняя версия |
 | 1,14 | 1.14.2 или более поздняя версия |
 | 1,15 и более поздние версии | Н/Д |
 
@@ -341,8 +341,8 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
 
 | Версия Kubernetes | Фиксированная версия |
 | -- | :--: |
-| 1.12 | 1.12.10 или более поздняя версия |
-| 1.13 | 1.13.8 или более поздняя версия |
+| 1,12 | 1.12.10 или более поздняя версия |
+| 1,13 | 1.13.8 или более поздняя версия |
 | 1,14 | 1.14.4 или более поздняя версия |
 | 1,15 и более поздние версии | Н/Д |
 
@@ -364,16 +364,16 @@ MountVolume.WaitForAttach failed for volume "pvc-12b458f4-c23f-11e8-8d27-46799c2
  
 | Версия Kubernetes | Рекомендуемая версия |
 | -- | :--: |
-| 1.12 | 1.12.6 или более поздняя версия |
-| 1.13 | 1.13.4 или более поздняя версия |
+| 1,12 | 1.12.6 или более поздняя версия |
+| 1,13 | 1.13.4 или более поздняя версия |
 | 1,14 | 1.14.0 или более поздняя версия |
 
 ### <a name="what-versions-of-kubernetes-have-azure-files-support-on-the-sovereign-cloud"></a>Какие версии Kubernetes имеют поддержку файлов Azure в облаке независимых?
 
 | Версия Kubernetes | Рекомендуемая версия |
 | -- | :--: |
-| 1.12 | 1.12.0 или более поздняя версия |
-| 1.13 | 1.13.0 или более поздняя версия |
+| 1,12 | 1.12.0 или более поздняя версия |
+| 1,13 | 1.13.0 или более поздняя версия |
 | 1,14 | 1.14.0 или более поздняя версия |
 
 ### <a name="what-are-the-default-mountoptions-when-using-azure-files"></a>Что такое Маунтоптионс по умолчанию при использовании службы "файлы Azure"?
@@ -459,8 +459,8 @@ E0118 08:15:52.041014    2112 nestedpendingoperations.go:267] Operation for "\"k
 
 | Версия Kubernetes | Фиксированная версия |
 | -- | :--: |
-| 1.12 | 1.12.6 или более поздняя версия |
-| 1.13 | 1.13.4 или более поздняя версия |
+| 1,12 | 1.12.6 или более поздняя версия |
+| 1,13 | 1.13.4 или более поздняя версия |
 | 1,14 и более поздние версии | Н/Д |
 
 ### <a name="azure-files-mount-fails-due-to-storage-account-key-changed"></a>Сбой подключения файлов Azure из-за изменения ключа учетной записи хранения
@@ -469,13 +469,13 @@ E0118 08:15:52.041014    2112 nestedpendingoperations.go:267] Operation for "\"k
 
 Чтобы устранить эту ошибку, вручную обновите поле *азуресторажеаккаунткэй* вручную в секрете файла Azure с помощью ключа учетной записи хранения в кодировке Base64.
 
-Чтобы закодировать ключ учетной записи хранения в Base64, можно использовать `base64`. Пример.
+Чтобы закодировать ключ учетной записи хранения в Base64, можно использовать `base64`. Например:
 
 ```console
 echo X+ALAAUgMhWHL7QmQ87E1kSfIqLKfgC03Guy7/xk9MyIg2w4Jzqeu60CVw2r/dm6v6E0DWHTnJUEJGVQAoPaBc== | base64
 ```
 
-Чтобы обновить секретный файл Azure, используйте `kubectl edit secret`. Пример.
+Чтобы обновить секретный файл Azure, используйте `kubectl edit secret`. Например:
 
 ```console
 kubectl edit secret azure-storage-account-{storage-account-name}-secret

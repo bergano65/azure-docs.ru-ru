@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c44f37c37bff2ddeb0fbba83d170054bf21129a6
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 98ea416305f080850d85498f74693eb2d45b0944
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72791838"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162350"
 ---
 #   <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
 
@@ -29,10 +29,10 @@ Microsoft.Skills.Text.MergeSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | Описание |
+| Имя параметра     | Description |
 |--------------------|-------------|
-| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. По умолчанию используется значение `" "`. Чтобы исключить пробел, задайте значение `""`.  |
-| insertPostTag | Строка, которая должна быть включена после каждой вставки. По умолчанию используется значение `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| insertPostTag | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
 
 
 ##  <a name="sample-input"></a>Пример ввода
@@ -47,7 +47,7 @@ Microsoft.Skills.Text.MergeSkill
       {
         "text": "The brown fox jumps over the dog",
         "itemsToInsert": ["quick", "lazy"],
-        "offsets": [3, 28],
+        "offsets": [3, 28]
       }
     }
   ]
@@ -140,8 +140,8 @@ Microsoft.Skills.Text.MergeSkill
 }
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также раздел
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

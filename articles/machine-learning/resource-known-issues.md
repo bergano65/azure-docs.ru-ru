@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9824f5cfd7b42860079536232b8a5ad40ea608c9
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 40749a80d99782a1ea84b27e68376ea2870e8eb7
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75638363"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138007"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -125,7 +125,7 @@ pip install --upgrade azureml-dataprep
 
 ### <a name="failure-when-installing-packages"></a>Сбой при установке пакетов
 
-Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример:
+Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример
 
 ```python
 psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
@@ -306,3 +306,14 @@ run.log_list("my metric name", my_metric[N:])
 ### <a name="pressing-esc-key-while-labeling-for-object-detection-creates-a-zero-size-label-on-the-top-left-corner-submitting-labels-in-this-state-fails"></a>Нажатие клавиши ESC при пометке для обнаружения объектов создает метку нулевого размера в левом верхнем углу. Отправка меток в этом состоянии завершается ошибкой.
 
 Удалите метку, щелкнув рядом с ней крестик.
+
+## <a name="run-or-experiment-deletion"></a>Запуск или экспериментирование удаление
+
+Эксперименты можно архивировать с помощью метода [экспериментировани. Archive](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#archive--) или в режиме вкладки эксперимента в машинное обучение Azure Studio Client. Это действие скрывает эксперимент из списка запросов и представлений, но не удаляет его.
+
+Постоянное удаление отдельных экспериментов или запусков в настоящее время не поддерживается. Дополнительные сведения об удалении ресурсов рабочей области см. в разделе [Экспорт или удаление данных рабочей области службы машинное обучение](how-to-export-delete-data.md).
+
+## <a name="moving-the-workspace"></a>Перемещение рабочей области
+
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.

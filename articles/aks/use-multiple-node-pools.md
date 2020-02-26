@@ -5,14 +5,14 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 01/22/2020
+ms.date: 02/14/2020
 ms.author: mlearned
-ms.openlocfilehash: 62be78df28d65c2ed16a9f45295edec8c5c360c4
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 20cef402a81ef348d4492daf05e6b16a8d9f709f
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901529"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77365177"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -23,7 +23,7 @@ ms.locfileid: "76901529"
 
 В этой статье показано, как создать несколько пулов узлов и управлять ими в кластере AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Требуется Azure CLI версии 2.0.76 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
@@ -31,13 +31,12 @@ ms.locfileid: "76901529"
 
 При создании кластеров AKS, поддерживающих несколько пулов узлов, и управлении ими действуют следующие ограничения.
 
+* См. раздел [квоты, ограничения размера виртуальной машины и доступность регионов в службе Azure Kubernetes (AKS)][quotas-skus-regions].
 * Нельзя удалить пул узлов по умолчанию (First).
 * Не удается использовать надстройку маршрутизации приложений HTTP.
 * Кластер AKS должен использовать подсистему балансировки нагрузки уровня "Стандартный" для использования нескольких пулов узлов. Эта функция не поддерживается для подсистем балансировки нагрузки уровня "базовый".
 * Кластер AKS должен использовать масштабируемые наборы виртуальных машин для узлов.
 * Имя пула узлов может содержать только буквы в нижнем регистре и должно начинаться с буквы в нижнем регистре. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. для пулов узлов Windows длина должна составлять от 1 до 6 символов.
-* Кластер AKS может иметь не более 10 пулов узлов.
-* Кластер AKS может иметь максимум 1000 узлов для этих 10 пулов узлов.
 * Все пулы узлов должны находиться в одной и той же виртуальной сети и подсеть.
 * При создании нескольких пулов узлов во время создания кластера все версии Kubernetes, используемые пулами узлов, должны соответствовать набору версий для плоскости управления. Его можно обновить после подготовки кластера с помощью операций пула для каждого узла.
 
@@ -454,6 +453,61 @@ Events:
 
 На узлах в *гпунодепул*можно планировать только модули Pod, к которым применен этот таинт. Любой другой модуль будет запланирован в пуле узлов *nodepool1* . Если вы создаете дополнительные пулы узлов, вы можете использовать дополнительные таинтс и допуски, чтобы ограничить возможности планирования модулей в этих ресурсах узла.
 
+## <a name="specify-a-tag-for-a-node-pool"></a>Укажите тег для пула узлов
+
+Вы можете применить тег Azure к пулам узлов в кластере AKS. Теги, применяемые к пулу узлов, применяются к каждому узлу в пуле узлов и сохраняются с помощью обновлений. Теги также применяются к новым узлам, добавленным в пул узлов во время операций масштабирования. Добавление тега может помочь в таких задачах, как отслеживание политик или оценка затрат.
+
+> [!IMPORTANT]
+> Для использования тегов пула узлов требуется расширение CLI *AKS-Preview* версии 0.4.29 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
+> 
+> ```azurecli-interactive
+> # Install the aks-preview extension
+> az extension add --name aks-preview
+> 
+> # Update the extension to make sure you have the latest version installed
+> az extension update --name aks-preview
+> ```
+
+Создайте пул узлов с помощью команды [AZ AKS node Pool Add][az-aks-nodepool-add]. Укажите имя *тагнодепул* и используйте параметр `--tag`, чтобы указать *отдел = IT* и *CostCenter = 9999* для тегов.
+
+```azurecli-interactive
+az aks nodepool add \
+    --resource-group myResourceGroup \
+    --cluster-name myAKSCluster \
+    --name tagnodepool \
+    --node-count 1 \
+    --tags dept=IT costcenter=9999 \
+    --no-wait
+```
+
+> [!NOTE]
+> Можно также использовать параметр `--tags` при использовании команды [AZ AKS нодепул Update][az-aks-nodepool-update] , а также во время создания кластера. Во время создания кластера параметр `--tags` применяет тег к начальному пулу узлов, созданному с помощью кластера. Все имена тегов должны соответствовать ограничениям [использования тегов для Организации ресурсов Azure][tag-limitation]. При обновлении пула узлов с параметром `--tags` обновляются все существующие значения тегов и добавляются новые теги. Например, если в пуле узлов имелся *отдел = ИТ* и *CostCenter = 9999* для тегов и вы обновили его с помощью *команды = dev* и *CostCenter = 111* для тегов, нодепул будет иметь *отдел = IT*, *CostCenter = 111*, а *команда = dev* для тегов.
+
+В следующем примере выходных данных команды [AZ AKS нодепул List][az-aks-nodepool-list] показано, что *тагжеднодепул* *создает* узлы с указанным *тегом*:
+
+```console
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+
+[
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "tagnodepool",
+    "orchestratorVersion": "1.15.7",
+    ...
+    "provisioningState": "Creating",
+    ...
+    "tags": {
+      "dept": "IT",
+      "costcenter": "9999"
+    },
+    ...
+  },
+ ...
+]
+```
+
 ## <a name="manage-node-pools-using-a-resource-manager-template"></a>Управление пулами узлов с помощью шаблона диспетчер ресурсов
 
 При использовании шаблона Azure Resource Manager для создания и управления ресурсами, как правило, можно обновить параметры в шаблоне и повторно развернуть, чтобы обновить ресурс. При использовании пулов узлов в AKS профиль пула узлов не может быть обновлен после создания кластера AKS. Такое поведение означает, что вы не можете обновить существующий шаблон диспетчер ресурсов, внести изменения в пулы узлов и повторно развернуть. Вместо этого необходимо создать отдельный шаблон диспетчер ресурсов, который обновляет только пулы узлов для существующего кластера AKS.
@@ -565,7 +619,7 @@ az group deployment create \
 ## <a name="assign-a-public-ip-per-node-in-a-node-pool"></a>Назначение общедоступного IP-адреса для каждого узла в пуле узлов
 
 > [!WARNING]
-> При предварительном просмотре назначения общедоступного IP-адреса на узел он не может использоваться с *Load Balancer (цен. Категория "Стандартный") SKU в AKS* из-за возможных правил подсистемы балансировки нагрузки, конфликтующих с подготовкой виртуальной машины. В предварительной версии необходимо использовать *базовый Load Balancer SKU* , если необходимо назначить общедоступный IP-адрес для каждого узла.
+> При предварительном просмотре назначения общедоступного IP-адреса на узел он не может использоваться с *Load Balancer (цен. Категория "Стандартный") SKU в AKS* из-за возможных правил подсистемы балансировки нагрузки, конфликтующих с подготовкой виртуальной машины. В результате этого ограничения Пулы агентов Windows не поддерживаются в этой предварительной версии функции. В предварительной версии необходимо использовать *базовый Load Balancer SKU* , если необходимо назначить общедоступный IP-адрес для каждого узла.
 
 Узлы AKS не нуждаются в собственных общедоступных IP-адресах для обмена данными. Однако некоторые сценарии могут потребовать, чтобы узлы в пуле узлов имели собственные общедоступные IP-адреса. В качестве примера можно привести игры, в которых консоль должна установить прямое подключение к облачной виртуальной машине для снижения числа прыжков. Для этого можно зарегистрировать отдельную предварительную версию функции, общедоступный IP-адрес узла (Предварительная версия).
 
@@ -591,7 +645,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как создавать и администрировать несколько пулов узлов в кластере AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
 
@@ -604,20 +658,25 @@ az group delete --name myResourceGroup --yes --no-wait
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
 
 <!-- INTERNAL LINKS -->
-[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
-[az-group-create]: /cli/azure/group#az-group-create
-[az-aks-create]: /cli/azure/aks#az-aks-create
-[az-aks-nodepool-add]: /cli/azure/ext/aks-preview/aks/nodepool#ext-aks-preview-az-aks-nodepool-add
-[az-aks-nodepool-list]: /cli/azure/ext/aks-preview/aks/nodepool#ext-aks-preview-az-aks-nodepool-list
-[az-aks-nodepool-upgrade]: /cli/azure/ext/aks-preview/aks/nodepool#ext-aks-preview-az-aks-nodepool-upgrade
-[az-aks-nodepool-scale]: /cli/azure/ext/aks-preview/aks/nodepool#ext-aks-preview-az-aks-nodepool-scale
-[az-aks-nodepool-delete]: /cli/azure/ext/aks-preview/aks/nodepool#ext-aks-preview-az-aks-nodepool-delete
-[vm-sizes]: ../virtual-machines/linux/sizes.md
-[taints-tolerations]: operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations
-[gpu-cluster]: gpu-cluster.md
-[az-group-delete]: /cli/azure/group#az-group-delete
-[install-azure-cli]: /cli/azure/install-azure-cli
-[supported-versions]: supported-kubernetes-versions.md
-[operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [aks-windows]: windows-container-cli.md
+[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[az-aks-create]: /cli/azure/aks#az-aks-create
+[az-aks-nodepool-add]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-add
+[az-aks-nodepool-list]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-list
+[az-aks-nodepool-update]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-update
+[az-aks-nodepool-upgrade]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-upgrade
+[az-aks-nodepool-scale]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-scale
+[az-aks-nodepool-delete]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-delete
+[az-extension-add]: /cli/azure/extension#az-extension-add
+[az-extension-update]: /cli/azure/extension#az-extension-update
+[az-group-create]: /cli/azure/group#az-group-create
+[az-group-delete]: /cli/azure/group#az-group-delete
 [az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[gpu-cluster]: gpu-cluster.md
+[install-azure-cli]: /cli/azure/install-azure-cli
+[operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
+[quotas-skus-regions]: quotas-skus-regions.md
+[supported-versions]: supported-kubernetes-versions.md
+[tag-limitation]: ../azure-resource-manager/resource-group-using-tags.md
+[taints-tolerations]: operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations
+[vm-sizes]: ../virtual-machines/linux/sizes.md

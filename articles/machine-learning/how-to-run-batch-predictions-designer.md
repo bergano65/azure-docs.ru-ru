@@ -1,5 +1,5 @@
 ---
-title: Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
+title: Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure (предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Узнайте, как обучить модель и настроить конвейер пакетного прогнозирования с помощью конструктора. Разверните конвейер как параметризованную веб-службу, которая может быть активирована из любой библиотеки HTTP.
 services: machine-learning
@@ -10,12 +10,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 01/13/2020
 ms.custom: Ignite2019
-ms.openlocfilehash: d2653699a69cb468e8490c2cba579b73e526d1ed
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 95a3c1b892cacd802f359fdc03de74fa60a1e118
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311892"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138109"
 ---
 # <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "76311892"
 
 Дополнительные сведения о настройке служб оценки пакетной службы с помощью пакета SDK [см. в](how-to-run-batch-predictions.md)соответствующем разделе.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В этом способе предполагается, что у вас уже есть обучающий конвейер. Чтобы ознакомиться с руководством по конструктору, выполните часть руководства по работе с [конструктором](tutorial-designer-automobile-price-train-score.md). 
 
@@ -41,7 +41,7 @@ ms.locfileid: "76311892"
 
 1. Перейдите на вкладку **конструктор** в рабочей области.
 
-1. Выберите обучающий конвейер, в котором модель будет использоваться для создания прогноза.
+1. Выберите обучающий конвейер, который обучает модель, которую вы хотите использовать для прогнозирования.
 
 1. **Запустите** конвейер.
 

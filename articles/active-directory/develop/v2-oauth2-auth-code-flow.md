@@ -17,16 +17,14 @@ ms.date: 01/31/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 031890b389e78c4ca01e6d6ae52430db865ede2f
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 8a847afa2253223ebe9450d350cd18f5f659e0e3
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76931060"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77159783"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Поток кода авторизации для платформы Microsoft Identity и OAuth 2,0
-
-[!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 
 Код авторизации OAuth 2.0 может использоваться в приложениях, установленных на устройстве, для получения доступа к защищенным ресурсам, таким как веб-API. Используя реализацию OAuth 2,0 на платформе Microsoft Identity, вы можете добавить доступ для входа и API для мобильных и классических приложений. Для выполнения задач этого руководства не предусмотрено использование конкретного языка. Здесь объясняется, как отправлять и получать сообщения HTTP без применения [библиотек аутентификации Azure с открытым кодом](reference-v2-libraries.md).
 

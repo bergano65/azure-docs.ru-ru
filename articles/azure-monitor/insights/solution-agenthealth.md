@@ -6,18 +6,18 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/19/2017
-ms.openlocfilehash: cbeaa3e148d6fbe20d7ddb4d04cd00d6300f9818
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/06/2020
+ms.openlocfilehash: 9a7cb80b5510ff0ac4a2491d896aded866180c19
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75402443"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062138"
 ---
 #  <a name="agent-health-solution-in-azure-monitor"></a>Работоспособность агентов решение в Azure Monitor
 Решение Работоспособность агентов в Azure помогает понять, что для всех агентов, отправляющих отчеты непосредственно в рабочую область Log Analytics в Azure Monitor или группу управления System Center Operations Manager, подключенную к Azure Monitor, которая не отвечает и идет отправка рабочих данных.  Вы также можете отслеживать число развернутых агентов и их географическое распределение, а также выполнять другие запросы, чтобы знать о распределении агентов, развернутых в Azure, других облачных средах или в локальной среде.    
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Перед развертыванием этого решения убедитесь, что у вас есть поддерживаемые [агенты Windows](../../log-analytics/log-analytics-windows-agent.md), которые отправляют отчеты в рабочую область Log Analytics или [группу управления Operations Manager](../../azure-monitor/platform/om-agents.md), интегрированную с вашей рабочей областью.
 
 ## <a name="solution-components"></a>Компоненты решения
@@ -31,7 +31,7 @@ ms.locfileid: "75402443"
 
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 Добавьте решение для мониторинга работоспособности агентов в рабочую область Log Analytics, как описано в статье [Добавление решений](solutions.md). Дополнительная настройка не требуется.
 
 
@@ -79,7 +79,7 @@ ms.locfileid: "75402443"
 | `Version` | Версия агента Log Analytics или агента Operations Manager.|
 | `SCAgentChannel` | Значение — *Прямой* и (или) *SCManagementServer*.|
 | `IsGatewayInstalled` | Если шлюз Log Analytics установлен, этот параметр имеет значение *true*, в противном случае — значение *false*.|
-| `ComputerIP` | IP-адрес компьютера.|
+| `ComputerIP` | Общедоступный IP-адрес компьютера. На виртуальных машинах Azure отображается общедоступный IP-адрес, если он доступен. Для виртуальных машин, использующих частные IP-адреса, отображается адрес Azure SNAT (а не частный). |
 | `RemoteIPCountry` | Географическое расположение, в котором развернут компьютер.|
 | `ManagementGroupName` | Имя группы управления Operations Manager.|
 | `SourceComputerId` | Уникальный идентификатор компьютера.|

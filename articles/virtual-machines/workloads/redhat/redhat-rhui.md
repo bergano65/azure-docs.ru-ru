@@ -9,14 +9,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 12/18/2019
+ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 1a63b388725823695c41339ae173c8d8e34839ef
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: dc4762cbda5ad2877d2d69953d2514dea17c8b46
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941404"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368903"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -27,6 +27,10 @@ ms.locfileid: "75941404"
 
 Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
 
+> [!IMPORTANT]
+> RHUI предназначен только для образов с оплатой по мере использования (ПАЙГО). Для пользовательских и Золотой образов, также известных как собственные подписки (BYOS), необходимо подключить систему к RHSM или спутнику для получения обновлений. Дополнительные сведения см. в [статье Red Hat](https://access.redhat.com/solutions/253273) .
+
+
 ## <a name="important-information-about-azure-rhui"></a>Важные сведения об Azure RHUI
 
 * Azure RHUI — это инфраструктура обновления, которая поддерживает все виртуальные машины RHEL PAYG, созданные в Azure. Это не позволит вам зарегистрировать виртуальные машины PAYG RHEL с помощью диспетчера подписки или вспомогательного или другого источника обновлений, но это приведет к непрямой двойной оплате с помощью виртуальной машины PAYG. Дополнительные сведения см. в следующей точке.
@@ -35,6 +39,7 @@ ms.locfileid: "75941404"
 * Образы RHEL (SAP PAYG) в Azure (RHEL for SAP, RHEL for SAP HANA и RHEL for SAP Business Applications) подключаются к выделенным каналам RHUI, которые остаются на определенной версии RHEL с дополнительным номером, что требуется для сертификации SAP.
 
 * Доступ к размещенной в Azure инфраструктуре RHUI могут получать виртуальные машины с IP-адресами в рамках [диапазонов IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Если весь трафик виртуальной машины перенаправляется через локальную сетевую инфраструктуру, может потребоваться настройка определяемых пользователем маршрутов, чтобы виртуальные машины RHEL (PAYG) могли получить доступ к инфраструктуре RHUI в Azure. В этом случае необходимо добавить определяемые пользователем маршруты для _всех_ IP-адресов RHUI.
+
 
 ## <a name="image-update-behavior"></a>Поведение при обновлении изображения
 
@@ -210,6 +215,30 @@ sudo yum makecache
   ```bash
   yum --config='https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7.config' install 'rhui-azure-rhel7'
   ```
+
+- Для RHEL 8:
+    1. Создайте файл конфигурации:
+        ```bash
+        vi rhel8.config
+        ```
+    1. Добавьте следующее содержимое в файл конфигурации:
+        ```bash
+        [rhui-microsoft-azure-rhel8]
+        name=Microsoft Azure RPMs for Red Hat Enterprise Linux 8
+        baseurl=https://rhui-1.microsoft.com/pulp/repos/microsoft-azure-rhel8 https://rhui-2.microsoft.com/pulp/repos/microsoft-azure-rhel8 https://rhui-3.microsoft.com/pulp/repos/microsoft-azure-rhel8
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://rhelimage.blob.core.windows.net/repositories/RPM-GPG-KEY-microsoft-azure-release sslverify=1
+        ```
+    1. Сохраните файл и выполните следующую команду:
+        ```bash
+        dnf --config rhel8.config install 'rhui-azure-rhel8'
+        ```
+    1. Обновление виртуальной машины
+        ```bash
+        sudo dnf update
+        ```
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о создании виртуальной машины Red Hat Enterprise Linux на основе образа с оплатой по мере использования (PAYG) и о применении размещенной в Azure инфраструктуры RHUI см. на странице [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redhat/).
