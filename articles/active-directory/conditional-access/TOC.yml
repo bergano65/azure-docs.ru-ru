@@ -43,7 +43,7 @@
       href: location-condition.md
     - name: Средство "Что если"
       href: what-if-tool.md
-    - name: Управление
+    - name: Пользовательские элементы управления
       href: controls.md
     - name: Перенос классической политики
       href: policy-migration.md

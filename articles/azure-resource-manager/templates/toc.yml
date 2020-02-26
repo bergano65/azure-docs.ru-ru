@@ -142,6 +142,9 @@
             - name: Переменные
               displayName: 'iteration,copy'
               href: copy-variables.md
+            - name: Выходные данные
+              displayName: 'iteration,copy'
+              href: copy-outputs.md
         - name: Ресурсы на уровне подписки
           href: deploy-to-subscription.md
         - name: Ресурсы уровня группы управления
