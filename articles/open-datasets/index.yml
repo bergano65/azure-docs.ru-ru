@@ -4,20 +4,18 @@ summary: Открытые наборы данных Azure — это курир
 metadata:
   title: Документация по платформе "Открытые наборы данных" в Azure. Руководства и справочник по API
   description: Открытые наборы данных Azure — это курируемые и очищаемые данные. В наборы включены сведения о погоде, данные переписи и информация о выходных, что позволяет усовершенствовать модели ML с минимальной подготовкой.
-  services: machine-learning
-  ms.service: machine-learning
-  ms.subservice: data-science-vm
+  ms.service: open-datasets
   ms.topic: landing-page
   ms.collection: collection
   author: cjgronlund
   ms.author: cgronlun
   ms.date: 11/04/2019
-  ms.openlocfilehash: 76baa1362eb1eaa4c062fccd4eea84815cb08c50
-  ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+  ms.openlocfilehash: 2c99c349119dea148f9867817c81c22546099c13
+  ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73603641"
+  ms.lasthandoff: 02/26/2020
+  ms.locfileid: "77617513"
 landingContent:
 - title: Сведения об Открытых наборах данных
   linkLists:

@@ -18,7 +18,7 @@
     - name: 2. Configure
       items:
         - name: Масштабирование с помощью службы "Экземпляры контейнеров Azure"
-          href: /azure/container-instances/container-instances-jenkins
+          href: container-instances-jenkins.md
           maintainContext: true
         - name: Масштабирование с помощью агентов виртуальных машин Azure
           href: jenkins-azure-vm-agents.md
