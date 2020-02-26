@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/27/2019
-ms.openlocfilehash: 86ade45cd00e82e8787a117c23003d2a74750cf0
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.date: 02/24/2020
+ms.openlocfilehash: e9cdfd40a9672d19ef32dede0baadcdd56266bab
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552174"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77589102"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Как использовать API управления Azure Digital Twins
 
@@ -39,7 +39,7 @@ API управления Azure Digital Twins предоставляют эффе
 
 * [/матчерс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Matchers). Эти API позволяют указать условия, которые необходимо оценить на основе данных входящих устройств. Дополнительные сведения см. в [этой статье](concepts-user-defined-functions.md#matchers). 
 
-* [/усердефинедфунктионс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/UserDefinedFunctions). Эти API-интерфейсы позволяют создавать, удалять или обновлять пользовательские функции, которые будут выполняться при возникновении условий, определенных *соответствующими критериями* , для обработки данных, поступающих из программы установки. Дополнительные сведения об этих настраиваемых функциях, которые также называются *определяемыми пользователем*, см. [в этой статье](concepts-user-defined-functions.md#user-defined-functions). 
+* [/усердефинедфунктионс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/UserDefinedFunctions). Эти API-интерфейсы позволяют создавать, удалять или обновлять пользовательские функции, которые будут выполняться при возникновении условий, определенных *соответствующими критериями* , для обработки данных, поступающих из программы установки. Дополнительные сведения об этих настраиваемых функциях, которые также называются [определяемыми пользователем](concepts-user-defined-functions.md#user-defined-functions), см. *в этой статье*. 
 
 * [/ендпоинтс](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#/Endpoints). Эти API позволяют создавать конечные точки, чтобы ваше решение Digital двойников может взаимодействовать с другими службами Azure для хранения и аналитики данных. Дополнительные сведения см. в [этой статье](concepts-events-routing.md). 
 
@@ -56,7 +56,7 @@ API управления Azure Digital Twins предоставляют эффе
 
 Программные интерфейсы Digital Twins поддерживают фильтрацию и навигацию по пространственному графу с использованием следующих параметров:
 
-- **спацеид**: API будет фильтровать результаты по заданному идентификатору пространства. Кроме того, к API [/spaces](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Spaces) можно применить логический флаг **useParentSpace**, который указывает, что данный идентификатор пространства ссылается на родительское пространство вместо текущего. 
+- **спацеид**: API будет фильтровать результаты по заданному идентификатору пространства. Кроме того, к API **/spaces** можно применить логический флаг [useParentSpace](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Spaces), который указывает, что данный идентификатор пространства ссылается на родительское пространство вместо текущего. 
 
 - **минлевел** и **МАКСЛЕВЕЛ**: корневые пространства считаются на уровне 1. Пространства в родительском пространстве на уровне *n* располагаются на уровне *n+1*. С помощью этих значений можно фильтровать результаты по определенных уровнях. При установке эти значения становятся инклюзивными. Устройства, датчики и другие объекты находятся на одном уровне с ближайшим пространством. Чтобы получить все объекты на определенном уровне, задайте для параметров **minLevel** и **maxLevel** одинаковое значение.
 

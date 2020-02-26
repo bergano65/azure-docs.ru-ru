@@ -11,17 +11,20 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/31/2019
+ms.date: 02/24/2020
 ms.author: spelluru
-ms.openlocfilehash: f438c32deb7e923f08396b0580d807d6e5b5e69a
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 79aea7d8a4a969e0ccd42ef94d77a9aa396ab91c
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73585034"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77591325"
 ---
 # <a name="use-a-shared-image-gallery-in-azure-lab-services"></a>Использование общей коллекции образов в службах лаборатории Azure
 В этой статье показано, как преподаватели и Администраторы лаборатории могут сохранить образ виртуальной машины шаблона для повторного использования другими пользователями. Эти образы сохраняются в [коллекции общих образов](../../virtual-machines/windows/shared-image-galleries.md)Azure. В качестве первого шага Администратор лаборатории Присоединяет существующую коллекцию общих образов к учетной записи лаборатории. После присоединения коллекции общих образов лаборатории, созданные в учетной записи лаборатории, могут сохранять образы в общей коллекции образов. Другие преподаватели могут выбрать этот образ из коллекции общих образов, чтобы создать шаблон для своих классов. 
+
+> [!NOTE]
+> Сейчас службы лаборатории Azure поддерживают создание виртуальных машин на основе только **обобщенных** образов виртуальных машин (не специализированных образов) в общей коллекции образов. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Создайте коллекцию общих образов, используя [Azure PowerShell](../../virtual-machines/windows/shared-images.md) или [Azure CLI](../../virtual-machines/linux/shared-images.md).
@@ -51,5 +54,5 @@ ms.locfileid: "73585034"
 
 ![Использование образа виртуальной машины из коллекции](../media/how-to-use-shared-image-gallery/use-shared-image.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об общих галереях изображений см. в разделе [Коллекция общих образов](../../virtual-machines/windows/shared-image-galleries.md).

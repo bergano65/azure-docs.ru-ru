@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/13/2020
+ms.date: 02/24/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: edad748bc2192f98b9674b80dada5b03aa9ee2d1
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 80298ca4df01a93730fc831fc495b3123ead5f97
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77197992"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77585685"
 ---
 # <a name="define-a-restful-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля RESTful в пользовательской политике Azure Active Directory B2C
 
@@ -130,6 +130,7 @@ REST API технический профиль позволяет отправи
 | клаимуседфоррекуестпайлоад| Нет | Имя строкового утверждения, содержащего полезные данные, отправляемые в REST API. |
 | DebugMode | Нет | Выполняет технический профиль в режиме отладки. Возможные значения: `true`или `false` (по умолчанию). В режиме отладки REST API может возвращать больше информации. См. раздел [возврат сообщения об ошибке](#returning-error-message) . |
 | инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true`или `false` (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true`. |
+| ресолвежсонпассинжсонтокенс  | Нет | Указывает, разрешает ли технический профиль пути JSON. Возможные значения: `true`или `false` (по умолчанию). Используйте эти метаданные для чтения данных из вложенного элемента JSON. В [OutputClaim](technicalprofiles.md#outputclaims)задайте для `PartnerClaimType` элемент пути JSON, который требуется вывести. Например: `firstName.localized`или `data.0.to.0.email`.|
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 

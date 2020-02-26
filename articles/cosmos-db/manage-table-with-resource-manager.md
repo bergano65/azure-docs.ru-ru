@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: 0435198af09b087e1449541df078b47758148d42
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 6ab54e56368e7e26e807e4d1dc0592536dc9374a
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980566"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588765"
 ---
 # <a name="manage-azure-cosmos-db-table-api-resources-using-azure-resource-manager-templates"></a>Управление Azure Cosmos DB API таблиц ресурсами с помощью шаблонов Azure Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "75980566"
 > Имена учетных записей должны быть в нижнем регистре, 44 или меньше.
 > Чтобы обновить единицы запросов в секунду, повторно отправьте шаблон с обновленными значениями свойств пропускной способности.
 
-[!code-json[create-cosmos-table](~/quickstart-templates/101-cosmosdb-table/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-cosmosdb-table/azuredeploy.json":::
 
 ### <a name="deploy-via-powershell"></a>Развертывание с помощью PowerShell
 
@@ -75,7 +75,7 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Если вы решили использовать локально установленную версию Azure CLI вместо использования Cloud Shell, см. статью [Azure CLI](/cli/azure/) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже приведены некоторые дополнительные ресурсы.
 

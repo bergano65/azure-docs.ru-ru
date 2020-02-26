@@ -3,7 +3,7 @@ title: Подключение данных Fortinet к Azure Sentinel | Доку
 description: Узнайте, как подключить данные Fortinet к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: add92907-0d7c-42b8-a773-f570f2d705ff
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: 3ed83f794cdb92f709cbf5c0ea236a5a9b4c187b
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: aabc95fcb8d3b32b89bb83f4f6892c3d40b03417
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610545"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588201"
 ---
 # <a name="connect-fortinet-to-azure-sentinel"></a>Подключение Fortinet к Azure Sentinel
 
@@ -39,7 +39,6 @@ ms.locfileid: "75610545"
         config log syslogd setting
         set format cef
         set port 514
-        set reliable disable
         set server <ip_address_of_Receiver>
         set status enable
         end
@@ -56,7 +55,7 @@ ms.locfileid: "75610545"
 1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Из этой статьи вы узнали, как подключить устройства Fortinet к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

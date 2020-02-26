@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/31/2020
-ms.openlocfilehash: e1e19f985c9aa02759c6fff3c634c216c7ef42ef
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 419dbd998abc5cbd2da64a990e13d46f3fb2efbe
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77525555"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77580634"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
@@ -32,7 +32,7 @@ ms.locfileid: "77525555"
 > * Использование запросов на удаление для очистки ресурсов 
 > * Использование авторизации на основе ключей для оценки развернутых моделей
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure** , для которой у вас есть права администратора. Если у вас нет такой подписки, попробуйте использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree) .
 - [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
@@ -201,7 +201,7 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 
 Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` при перечислении моделей путь начинается с `modelmanagement/v1.0`. REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. В справочных документах по API по ссылкам ниже перечислены операции, параметры и коды ответов для различных операций.
 
-|Область|путь|Справочник|
+|Область|путь|Ссылки|
 |-|-|-|
 |Артефакты|артефакт/версия 2.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/artifacts)|
 |Хранилища данных|хранилище данных/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/datastores)|
@@ -402,7 +402,24 @@ providers/Microsoft.Storage/storageAccounts/{your-storage-account-name}"
 
 Вы должны получить ответ `202 Accepted` и в возвращенных заголовках `Location` URI. Этот универсальный код ресурса (URI) можно получить для получения сведений о развертывании, включая полезные сведения об отладке, если возникла проблема с одним из зависимых ресурсов (например, если вы забыли включить административный доступ в реестре контейнеров). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="troubleshooting"></a>Диагностика
+
+### <a name="resource-provider-errors"></a>Ошибки поставщика ресурсов
+
+[!INCLUDE [machine-learning-resource-provider](../../includes/machine-learning-resource-provider.md)]
+
+### <a name="moving-the-workspace"></a>Перемещение рабочей области
+
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
+
+### <a name="deleting-the-azure-container-registry"></a>Удаление реестра контейнеров Azure
+
+Для некоторых операций в рабочей области Машинное обучение Azure используется реестр контейнеров Azure (запись контроля доступа). Он автоматически создает экземпляр записи контроля доступа, когда ему требуется первый.
+
+[!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
+
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с полным [справочником по AzureML REST API](https://docs.microsoft.com/rest/api/azureml/).
 - Узнайте, как использовать конструктор & Studio для [прогнозирования стоимости автомобилей с помощью конструктора (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-train-score).

@@ -3,7 +3,7 @@ title: Визуализация данных с помощью панелей м
 description: Используйте этот учебник, чтобы узнать, как визуализировать данные с помощью панелей мониторинга на основе книг в Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/01/2020
-ms.author: rkarlin
-ms.openlocfilehash: 7baf8cf2e954d773376b7c3c989bce01f60ae0a6
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: b4461ac43e9356536914b345ef28f5de62fc9f82
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610460"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77585226"
 ---
 # <a name="tutorial-visualize-and-monitor-your-data"></a>Руководство. Визуализация и мониторинг данных
 
@@ -33,7 +33,7 @@ ms.locfileid: "75610460"
 > * Использование встроенных книг
 > * Создание новых книг
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - У вас должно быть по крайней мере разрешение на доступ к книге или участник книги в группе ресурсов рабочей области "Sentinel" Azure.
 
@@ -86,7 +86,7 @@ ms.locfileid: "75610460"
 > [!NOTE]
 > При этом удаляется ресурс, а также все изменения, внесенные в шаблон. Исходный шаблон останется доступным.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как просматривать данные в Azure Sentinel.
 

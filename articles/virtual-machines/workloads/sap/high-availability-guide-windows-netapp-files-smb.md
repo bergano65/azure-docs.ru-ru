@@ -1,5 +1,5 @@
 ---
-title: Высокая доступность виртуальных машин Azure для SAP NetWeaver в Windows с Azure NetApp Files (SMB) | Документация Майкрософт
+title: ДОСТУПНОСТЬ виртуальных машин Azure для SAP NW в Windows с Azure NetApp Files (SMB) | Документация Майкрософт
 description: Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: radeltch
-ms.openlocfilehash: d7c2bfbe3f277bbaf652191977434ea5fe4dbffd
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: b41db629c5308348f632b3dc51c75822ba361c60
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74555302"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77591359"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 
@@ -83,7 +83,7 @@ ms.locfileid: "74555302"
 * [Создание тома SMB для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb#requirements-for-active-directory-connections)
 * [NetApp приложений SAP на Microsoft Azure с помощью Azure NetApp Files][anf-sap-applications-azure]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В SAP разработан новый подход и альтернатива общим дискам кластера для кластеризации экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows. Вместо использования общих дисков кластера один из них может использовать файловый ресурс SMB для развертывания файлов глобального узла SAP. Azure NetApp Files поддерживает SMBv3 (вместе с NFS) с ACL NTFS с помощью Active Directory. Azure NetApp Files автоматически становится высокодоступным (как и служба PaaS). Эти функции делают Azure NetApp Files отличным вариантом для размещения общего файлового ресурса SMB для глобального SAP.  
 Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут находиться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В этой статье мы будем использовать контроллер домена на виртуальной машине Azure.  
@@ -193,7 +193,7 @@ ms.locfileid: "74555302"
 ![Рис. 3. запись блокировки сохраняется после теста отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-3.png)  
 
 Дополнительные сведения см. [в разделе Устранение неполадок при отработке отказа в очереди в ASCS с ERS](https://wiki.scn.sap.com/wiki/display/SI/Troubleshooting+for+Enqueue+Failover+in+ASCS+with+ERS)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

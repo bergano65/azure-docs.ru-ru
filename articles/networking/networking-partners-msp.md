@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: sukishen
-ms.openlocfilehash: ef9efcea1c06149e084dc261f5add7b408ae7b92
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.openlocfilehash: 14f9d698f36fd26563677ef5b3cb82fc8ecf3a4c
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77539269"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588966"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
@@ -43,7 +43,7 @@ Azure Networking MSP — это специализированный набор 
 |[Жидкостный телекоммуникации](https://liquidcloud.africa/azure-networking)|[Готовность облака — 2-часовая Оценка](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/liquidtelecommunicationsoperationslimited.liquid_cloud_readiness_assessment)|||||
 |[Телекоммуникации маккуарие](https://macquariecloudservices.com/azure-managed-services/)|[Маккуарие облачных служб: 2 — семинар по персоналу](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/macquariecloudservices.clear_for_takeoff_consulting_service)||[SD-установка Virtual ребро с помощью Маккуарие Cloud](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/macquariecloudservices.nanaged_network_services?tab=Overview)|||
 |[Облачные службы oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)||[Универсаледже для Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/oncore_cloud_services-4944214.universaledge_for_expressroute?tab=Overview)||||
-|[орикском]( https://www.orixcom.com/cloud-solutions/)|||[Орикском SD-WAN](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/orixcom.orixcom_sd_wan?tab=Overview)|||
+|[орикском]( https://www.orixcom.com/cloud-solutions/)||[Орикском Managed ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/orixcom.orixcom_managed_expressroute?tab=Overview)|[Орикском SD-WAN](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/orixcom.orixcom_sd_wan?tab=Overview)|||
 |[SoftBank]( https://www.softbank.jp/biz/nw/nwp/cloud_access/direct_access_for_az/)|[Служба консалтинга в сети Azure: 1 — Wkная Оценка](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/sbmpn.softbank_nw_msp_service_azure); [Служба оценки Azure: 1Week](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/sbmpn.softbank_msp_service_azure_01?tab=Overview&pub_source=email&pub_status=success)|||||
 |[тктс](https://www.tatacommunications-ts.com/index.php)|[Миграция Azure: Оценка за 3 недели](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/tcs.azure_migration_assessment)|||||
 |[Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/)||[Управляемый Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tata_communications.managed_expressroute?tab=Overview)|[Управляемая Виртуальная глобальная сеть](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tata_communications.managed_azure_vwan_for_sdwan?tab=Overview)|||

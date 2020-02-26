@@ -2,7 +2,7 @@
 title: Подключение Forcepoint DLP к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить Forcepoint DLP к Azure Sentinel.
 services: sentinel
-author: rkarlin
+author: yelevin
 editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/20/2020
-ms.author: rkarlin
-ms.openlocfilehash: bd3940af1553ec65731ed743fd23027403e9ec53
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.author: yelevin
+ms.openlocfilehash: 3bdb9d2b23ce05929ba5612e0c6a03fe1aab05de
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77500956"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588252"
 ---
 # <a name="connect-your-forcepoint-dlp-to-azure-sentinel"></a>Подключение Forcepoint DLP к Azure Sentinel
 
@@ -48,7 +48,7 @@ ms.locfileid: "77500956"
 
 Если журналы начнут появляться в Log Analytics, это может занять до 20 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали, как подключить Forcepoint DLP к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

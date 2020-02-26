@@ -4,12 +4,12 @@ description: Отслеживайте Azure Backup рабочие нагрузк
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: acdd7ae870334fe3a77a37505fac5e02b3af360d
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: 0673291ac6bd1692c6ebe07540e05077e3025d55
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77500667"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77583880"
 ---
 # <a name="monitor-at-scale-by-using-azure-monitor"></a>Мониторинг в масштабе с помощью Azure Monitor
 
@@ -29,11 +29,11 @@ Azure Backup предоставляет [встроенные возможнос
 > [!IMPORTANT]
 > Сведения о затратах на создание этого запроса см. в разделе [цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 
-Выберите любой из диаграмм, чтобы открыть раздел **журналы** рабочей области log Analytics. В разделе **журналы** измените запросы и создайте оповещения для них.
+Откройте раздел **журналы** рабочей области log Analytics и создайте запрос к собственным журналам. При выборе **нового правила генерации оповещений**открывается страница Azure Monitor создание оповещений, как показано на следующем рисунке.
 
-![Создание оповещения в рабочей области Log Analytics](media/backup-azure-monitoring-laworkspace/la-azurebackup-customalerts.png)
+![Создание оповещения в рабочей области Log Analytics](media/backup-azure-monitoring-laworkspace/custom-alert.png)
 
-При выборе **нового правила генерации оповещений**открывается страница Azure Monitor создание оповещений, как показано на следующем рисунке. Ресурс уже помечен как Рабочая область Log Analytics, и предоставляется интеграция группы действий.
+Ресурс уже помечен как Рабочая область Log Analytics, и предоставляется интеграция группы действий.
 
 ![Страница создания оповещений Log Analytics](media/backup-azure-monitoring-laworkspace/inkedla-azurebackup-createalert.jpg)
 
@@ -122,6 +122,26 @@ Azure Backup предоставляет [встроенные возможнос
     )
     on BackupItemUniqueId
     ````
+
+- Используемое хранилище резервных копий для каждого элемента резервного копирования
+
+    ````Kusto
+    CoreAzureBackup
+    //Get all Backup Items
+    | where OperationName == "BackupItem"
+    //Get distinct Backup Items
+    | distinct BackupItemUniqueId, BackupItemFriendlyName
+    | join kind=leftouter
+    (AddonAzureBackupStorage
+    | where OperationName == "StorageAssociation"
+    //Get latest record for each Backup Item
+    | summarize arg_max(TimeGenerated, *) by BackupItemUniqueId 
+    | project BackupItemUniqueId , StorageConsumedInMBs)
+    on BackupItemUniqueId
+    | project BackupItemUniqueId , BackupItemFriendlyName , StorageConsumedInMBs 
+    | sort by StorageConsumedInMBs desc
+    ````
+
 
 ### <a name="diagnostic-data-update-frequency"></a>Частота обновления диагностических данных
 

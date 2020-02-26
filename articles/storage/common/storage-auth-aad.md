@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/12/2019
+ms.date: 2/23/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 820e7187332b02993d3d8bcba9c01958cfbdd61d
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: b8a42723a9b56665160e660c0ea1451253c3d185
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965817"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588983"
 ---
 # <a name="authorize-access-to-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "75965817"
 
 Кроме того, хранилище BLOB-объектов поддерживает создание подписей общего доступа (SAS), подписанных с помощью учетных данных Azure AD. Дополнительные сведения см. в разделе [предоставление ограниченного доступа к данным с помощью подписанных](storage-sas-overview.md)URL.
 
-Служба файлов Azure поддерживает авторизацию в Azure AD через SMB только для виртуальных машин, присоединенных к домену. Дополнительные сведения об использовании Azure AD через SMB для службы файлов Azure см. в статье [обзор Azure Active Directory авторизации по протоколу SMB для службы файлов Azure](../files/storage-files-active-directory-overview.md).
+Служба файлов Azure поддерживает авторизацию в AD (Предварительная версия) или Azure AD DS (GA) по протоколу SMB только для виртуальных машин, присоединенных к домену. Сведения об использовании Active Directory (Предварительная версия) или Azure AD DS (GA) по протоколу SMB для службы файлов Azure см. в статье [Поддержка проверки подлинности на основе удостоверений в службе файлов Azure для доступа по протоколу SMB](../files/storage-files-active-directory-overview.md).
 
 Авторизация с помощью Azure AD не поддерживается для табличного хранилища Azure. Используйте общий ключ для авторизации запросов к хранилищу таблиц.
 

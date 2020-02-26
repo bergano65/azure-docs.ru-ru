@@ -1,10 +1,10 @@
 ---
-title: GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver | Документы Майкрософт
+title: Глустерфс на виртуальных машинах Azure в RHEL для SAP NetWeaver | Документация Майкрософт
 description: GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: mssedusch
-manager: timlt
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
-ms.author: sedusch
-ms.openlocfilehash: 2ae9a1419232cca051f7cab4e9bd8c70f885df73
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.author: radeltch
+ms.openlocfilehash: 388a2db2c888be541d89c5f4274bd38b37e4ca28
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749044"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77591920"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 
@@ -105,7 +105,7 @@ ms.locfileid: "73749044"
 Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Рекомендуется использовать [стандартную подсистему балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).  
 
 1. Создание группы ресурсов
-1. Создайте виртуальную сеть
+1. Создание виртуальной сети
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  
@@ -348,7 +348,7 @@ ms.locfileid: "73749044"
    sudo gluster volume start <b>NW2</b>-aers
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]

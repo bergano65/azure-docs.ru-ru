@@ -3,7 +3,7 @@ title: Подключение данных контрольной точки к 
 description: Узнайте, как подключить данные контрольной точки к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: 94658e34679a4cf99ad0e1ad02e60c6a1d190361
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: 70836ec557eff1be035d92e8e7db30a882e05fc6
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610681"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588422"
 ---
 # <a name="connect-check-point-to-azure-sentinel"></a>Подключение точки проверки к Azure Sentinel
 
@@ -40,7 +40,7 @@ ms.locfileid: "75610681"
 1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить устройства проверки точек к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - [Проверьте подключение](connect-cef-verify.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

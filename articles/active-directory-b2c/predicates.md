@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/28/2019
+ms.date: 02/24/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a09478bd2e32a1ab484b85fec33ae03878ebb10c
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 8e38f422189ce001063276ddc7c7f82b2acb5929
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951026"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77585770"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Элементы Predicates и PredicateValidations
 
@@ -42,16 +42,17 @@ ms.locfileid: "74951026"
 
 Элемент **Predicate** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для предиката. Другие элементы могут использовать этот идентификатор в политике. |
-| Метод | ДА | Тип метода для проверки. Возможные значения: **IsLengthRange**, **MatchesRegex**, **IncludesCharacters** или **IsDateRange**. Значение **IsLengthRange** проверяет, находится ли длина строкового значения утверждения в заданном диапазоне (от минимального до максимального параметра). Значение **MatchesRegex** проверяет, соответствует ли строковое значение утверждения регулярному выражению. Значение **IncludesCharacters** проверяет, содержит ли строковое значение утверждения набор знаков. Значение **IsDateRange** проверяет, находится ли значение утверждения даты в заданном диапазоне (от минимального до максимального параметра). |
+| Id | Да | Идентификатор, который используется для предиката. Другие элементы могут использовать этот идентификатор в политике. |
+| Метод | Да | Тип метода для проверки. Возможные значения: **IsLengthRange**, **MatchesRegex**, **IncludesCharacters** или **IsDateRange**. Значение **IsLengthRange** проверяет, находится ли длина строкового значения утверждения в заданном диапазоне (от минимального до максимального параметра). Значение **MatchesRegex** проверяет, соответствует ли строковое значение утверждения регулярному выражению. Значение **IncludesCharacters** проверяет, содержит ли строковое значение утверждения набор знаков. Значение **IsDateRange** проверяет, находится ли значение утверждения даты в заданном диапазоне (от минимального до максимального параметра). |
+| HelpText | Нет | Сообщение об ошибке для пользователей при неудачном завершении проверки. Эту строку можно локализовать с помощью [настройки языка](localization.md). |
 
 Элемент **Predicate** содержит следующие элементы.
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| UserHelpText | 1:1 | Сообщение об ошибке для пользователей при неудачном завершении проверки. Эту строку можно локализовать с помощью [настройки языка](localization.md). |
+| UserHelpText | 0:1 | Не рекомендуется Сообщение об ошибке для пользователей, если проверка не пройдена. |
 | Параметры | 1:1 | Параметры для типа метода проверки строки. |
 
 Элемент **Parameters** содержит следующие элементы.
@@ -64,16 +65,15 @@ ms.locfileid: "74951026"
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| Идентификатор | 1:1 | Идентификатор параметра. |
+| Id | 1:1 | Идентификатор параметра. |
 
 В следующем примере показан метод `IsLengthRange` с параметрами `Minimum` и `Maximum`, которые указывают диапазон длины строки:
 
 ```XML
-<Predicate Id="IsLengthBetween8And64" Method="IsLengthRange">
-  <UserHelpText>The password must be between 8 and 64 characters.</UserHelpText>
-    <Parameters>
-      <Parameter Id="Minimum">8</Parameter>
-      <Parameter Id="Maximum">64</Parameter>
+<Predicate Id="IsLengthBetween8And64" Method="IsLengthRange" HelpText="The password must be between 8 and 64 characters.">
+  <Parameters>
+    <Parameter Id="Minimum">8</Parameter>
+    <Parameter Id="Maximum">64</Parameter>
   </Parameters>
 </Predicate>
 ```
@@ -81,8 +81,7 @@ ms.locfileid: "74951026"
 В следующем примере показан метод `MatchesRegex` с параметром `RegularExpression`, определяющим регулярное выражение:
 
 ```XML
-<Predicate Id="PIN" Method="MatchesRegex">
-  <UserHelpText>The password must be numbers only.</UserHelpText>
+<Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be numbers only.">
   <Parameters>
     <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
   </Parameters>
@@ -92,8 +91,7 @@ ms.locfileid: "74951026"
 В следующем примере показан метод `IncludesCharacters` с параметром `CharacterSet`, определяющим набор знаков:
 
 ```XML
-<Predicate Id="Lowercase" Method="IncludesCharacters">
-  <UserHelpText>a lowercase letter</UserHelpText>
+<Predicate Id="Lowercase" Method="IncludesCharacters" HelpText="a lowercase letter">
   <Parameters>
     <Parameter Id="CharacterSet">a-z</Parameter>
   </Parameters>
@@ -143,9 +141,9 @@ ms.locfileid: "74951026"
 
 Элемент **PredicateValidation** содержит следующий атрибут.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для проверки предиката. Элемент **ClaimType** может использовать этот идентификатор в политике. |
+| Id | Да | Идентификатор, который используется для проверки предиката. Элемент **ClaimType** может использовать этот идентификатор в политике. |
 
 Элемент **PredicateValidation** содержит следующий элемент.
 
@@ -161,22 +159,22 @@ ms.locfileid: "74951026"
 
 Элемент **PredicateGroup** содержит следующий атрибут.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для группы предикатов.  |
+| Id | Да | Идентификатор, который используется для группы предикатов.  |
 
 Элемент **PredicateGroup** содержит следующие элементы.
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| UserHelpText | 1:1 |  Описание предиката, которое помогает пользователям понять, какое значение следует вводить. |
+| UserHelpText | 0:1 |  Описание предиката, которое помогает пользователям понять, какое значение следует вводить. |
 | PredicateReferences | 1:n | Список ссылок на предикаты. |
 
 Элемент **PredicateReferences** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| MatchAtLeast | Нет | Указывает, какому минимальному количеству определений предикатов значение должно соответствовать, чтобы ввод был принят. |
+| MatchAtLeast | Нет | Указывает, какому минимальному количеству определений предикатов значение должно соответствовать, чтобы ввод был принят. Если значение не указано, оно должно соответствовать всем определениям предикатов. |
 
 Элемент **PredicateReferences** содержит следующие элементы.
 
@@ -186,9 +184,9 @@ ms.locfileid: "74951026"
 
 Элемент **PredicateReference** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для проверки предиката.  |
+| Id | Да | Идентификатор, который используется для проверки предиката.  |
 
 
 ## <a name="configure-password-complexity"></a>Настройка сложности пароля
@@ -206,58 +204,50 @@ ms.locfileid: "74951026"
 
 ```XML
 <Predicates>
-  <Predicate Id="IsLengthBetween8And64" Method="IsLengthRange">
-    <UserHelpText>The password must be between 8 and 64 characters.</UserHelpText>
+  <Predicate Id="IsLengthBetween8And64" Method="IsLengthRange" HelpText="The password must be between 8 and 64 characters.">
     <Parameters>
       <Parameter Id="Minimum">8</Parameter>
       <Parameter Id="Maximum">64</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Lowercase" Method="IncludesCharacters">
-    <UserHelpText>a lowercase letter</UserHelpText>
+  <Predicate Id="Lowercase" Method="IncludesCharacters" HelpText="a lowercase letter">
     <Parameters>
       <Parameter Id="CharacterSet">a-z</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Uppercase" Method="IncludesCharacters">
-    <UserHelpText>an uppercase letter</UserHelpText>
+  <Predicate Id="Uppercase" Method="IncludesCharacters" HelpText="an uppercase letter">
     <Parameters>
       <Parameter Id="CharacterSet">A-Z</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Number" Method="IncludesCharacters">
-    <UserHelpText>a digit</UserHelpText>
+  <Predicate Id="Number" Method="IncludesCharacters" HelpText="a digit">
     <Parameters>
       <Parameter Id="CharacterSet">0-9</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Symbol" Method="IncludesCharacters">
-    <UserHelpText>a symbol</UserHelpText>
+  <Predicate Id="Symbol" Method="IncludesCharacters" HelpText="a symbol">
     <Parameters>
       <Parameter Id="CharacterSet">@#$%^&amp;*\-_+=[]{}|\\:',.?/`~"();!</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="PIN" Method="MatchesRegex">
-    <UserHelpText>The password must be numbers only.</UserHelpText>
+  <Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be numbers only.">
     <Parameters>
       <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="AllowedAADCharacters" Method="MatchesRegex">
-    <UserHelpText>An invalid character was provided.</UserHelpText>
+  <Predicate Id="AllowedAADCharacters" Method="MatchesRegex" HelpText="An invalid character was provided.">
     <Parameters>
       <Parameter Id="RegularExpression">(^([0-9A-Za-z\d@#$%^&amp;*\-_+=[\]{}|\\:',?/`~"();! ]|(\.(?!@)))+$)|(^$)</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="DisallowedWhitespace" Method="MatchesRegex">
-    <UserHelpText>The password must not begin or end with a whitespace character.</UserHelpText>
+  <Predicate Id="DisallowedWhitespace" Method="MatchesRegex" HelpText="The password must not begin or end with a whitespace character.">
     <Parameters>
       <Parameter Id="RegularExpression">(^\S.*\S$)|(^\S+$)|(^$)</Parameter>
     </Parameters>
@@ -361,8 +351,7 @@ ms.locfileid: "74951026"
 
 ```XML
 <Predicates>
-  <Predicate Id="DateRange" Method="IsDateRange">
-    <UserHelpText>The date must be between 01-01-1980 and today.</UserHelpText>
+  <Predicate Id="DateRange" Method="IsDateRange" HelpText="The date must be between 01-01-1980 and today.">
     <Parameters>
       <Parameter Id="Minimum">1980-01-01</Parameter>
       <Parameter Id="Maximum">Today</Parameter>

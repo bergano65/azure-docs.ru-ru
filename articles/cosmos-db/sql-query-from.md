@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
-ms.openlocfilehash: 4f6d7580ea7ff0e8968c0c3ce4b3ca6111c86ac8
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 3939594064b63c567720378b9d316acca64d3266
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873375"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587691"
 ---
 # <a name="from-clause-in-azure-cosmos-db"></a>Предложение FROM в Azure Cosmos DB
 
@@ -79,9 +79,9 @@ FROM <from_specification>
   
   Указывает, что документ необходимо извлечь из источника, определенного предоставленным псевдонимом.  
   
-- `<container_expression> '.' property_`  
+- `<container_expression> '.' property_name`  
   
-  Указывает, что документ необходимо извлечь из свойства `property_name` или элемента массива array_index всех документов, полученных указанным выражением контейнера.  
+  Указывает, что документ должен быть извлечен путем доступа к свойству `property_name`.  
   
 - `<container_expression> '[' "property_name" | array_index ']'`  
   
@@ -114,7 +114,7 @@ FROM <from_specification>
     FROM Families.children
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -154,7 +154,7 @@ FROM <from_specification>
     FROM Families.address.state
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -163,7 +163,7 @@ FROM <from_specification>
     ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Начало работы](sql-query-getting-started.md)
 - [Предложение SELECT](sql-query-select.md)

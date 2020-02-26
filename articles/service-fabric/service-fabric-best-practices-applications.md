@@ -5,12 +5,12 @@ author: markfussell
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: mfussell
-ms.openlocfilehash: 755e3c1eb649bc6c8ecc084d18e9904cc90b1282
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 876980bd6a59bace9ab4e490358964d19fa52c7e
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551851"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586093"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Рекомендации по проектированию приложений Service Fabric Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "75551851"
 Используйте службу шлюза API, которая взаимодействует со службами серверной части, которые затем можно масштабировать. Ниже перечислены наиболее часто используемые службы шлюза API.
 
 - [Управление API Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-api-management-overview), [интегрированное с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-api-management).
-- [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/), использующие [Сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor) для чтения из разделов концентратора событий.
+- [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/), использующие [Сервицефабрикпроцессор](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.EventHubs.ServiceFabricProcessor) для чтения из разделов концентратора событий.
 - [Трæфик обратный прокси-сервер](https://blogs.msdn.microsoft.com/azureservicefabric/2018/04/05/intelligent-routing-on-service-fabric-with-traefik/)с помощью [поставщика Service Fabric Azure](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/).
 - [Шлюз приложений Azure.](https://docs.microsoft.com/azure/application-gateway/)
 

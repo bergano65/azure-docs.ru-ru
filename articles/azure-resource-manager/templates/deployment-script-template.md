@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 02/20/2020
+ms.date: 02/24/2020
 ms.author: jgao
-ms.openlocfilehash: d8212fb55b20f051c6479071010ef4f828792baa
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 19ef5a08b66b8d1a09ddf9a6b73a3856f745485d
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561159"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586712"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Использование скриптов развертывания в шаблонах (Предварительная версия)
 
@@ -40,9 +40,14 @@ ms.locfileid: "77561159"
 > [!IMPORTANT]
 > Два ресурса скрипта развертывания, учетная запись хранения и экземпляр контейнера, создаются в одной группе ресурсов для выполнения сценариев и устранения неполадок. Эти ресурсы обычно удаляются службой сценариев, когда выполнение скрипта развертывания получает состояние терминала. Плата взимается за ресурсы, пока они не будут удалены. Дополнительные сведения см. в разделе [Очистка ресурсов скрипта развертывания](#clean-up-deployment-script-resources).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-- **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о создании см. в разделе [Создание назначаемого пользователем управляемого удостоверения с помощью портал Azure](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)или с [помощью Azure CLI](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)или с [помощью Azure PowerShell](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
+- **Назначаемое пользователем управляемое удостоверение с ролью участника в целевую группу ресурсов**. Это удостоверение используется для выполнения скриптов развертывания. Для выполнения операций вне группы ресурсов необходимо предоставить дополнительные разрешения. Например, назначьте удостоверению уровень подписки, если хотите создать новую группу ресурсов.
+
+  > [!NOTE]
+  > Обработчику сценариев развертывания необходимо создать учетную запись хранения и экземпляр контейнера в фоновом режиме.  Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки является обязательным, если подписка не зарегистрировала учетную запись хранения Azure (Microsoft. Storage) и ресурс экземпляра контейнера Azure (Microsoft. Контаинеринстанце). поставщик.
+
+  Сведения о создании удостоверения см. в разделе [Создание назначаемого пользователем управляемого удостоверения с помощью портал Azure](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)или с [помощью Azure CLI](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)или с [помощью Azure PowerShell](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
   ```json
   /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityID>
@@ -99,8 +104,7 @@ ms.locfileid: "77561159"
       Write-Output $output
       $DeploymentScriptOutputs = @{}
       $DeploymentScriptOutputs['text'] = $output
-    ",
-    "primaryScriptUri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",
+    ", // or "primaryScriptUri": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",
     "supportingScriptUris":[],
     "timeout": "PT30M",
     "cleanupPreference": "OnSuccess",
@@ -157,7 +161,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="use-external-scripts"></a>Использование внешних скриптов
 
-В дополнение к встроенным сценариям можно также использовать внешние файлы скриптов. Поддерживаются только основные скрипты PowerShell с расширением файла **PS1** . Для скриптов CLI первичные скрипты могут иметь расширения (или без расширения), если скрипты являются допустимыми скриптами bash. Чтобы использовать внешние файлы скриптов, замените `scriptContent` на `primaryScriptUri`. Например:
+В дополнение к встроенным сценариям можно также использовать внешние файлы скриптов. Поддерживаются только основные скрипты PowerShell с расширением файла **PS1** . Для скриптов CLI первичные скрипты могут иметь расширения (или без расширения), если скрипты являются допустимыми скриптами bash. Чтобы использовать внешние файлы скриптов, замените `scriptContent` на `primaryScriptUri`. Пример:
 
 ```json
 "primaryScriptURI": "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.ps1",
@@ -208,6 +212,12 @@ reference('<ResourceName>').output.text
 [!code-json[](~/resourcemanager-templates/deployment-script/deploymentscript-basic-cli.json?range=1-44)]
 
 [JQ](https://stedolan.github.io/jq/) используется в предыдущем примере. Он поставляется с образами контейнеров. См. раздел [Настройка среды разработки](#configure-development-environment).
+
+## <a name="handle-non-terminating-errors"></a>Обработано устранимые ошибки
+
+Вы можете управлять тем, как PowerShell реагирует на устранимые ошибки, используя переменную [ **$ErrorActionPreference**](/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7#erroractionpreference
+) в скрипте развертывания. Обработчик скриптов развертывания не устанавливает или не изменяет значение.  Несмотря на значение, заданное для $ErrorActionPreference, сценарий развертывания задает для состояния подготовки ресурсов значение *Failed* при возникновении ошибки в скрипте.
+
 
 ## <a name="debug-deployment-scripts"></a>Отладка скриптов развертывания
 
@@ -341,7 +351,7 @@ armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups
 
 После успешного тестирования скрипта его можно использовать в качестве скрипта развертывания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать скрипты развертывания. Для просмотра учебника по скриптам развертывания выполните следующие действия.
 

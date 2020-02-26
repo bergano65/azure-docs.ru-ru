@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/20/2020
 ms.author: spelluru
-ms.openlocfilehash: c01106bf7288e777e601c06558b1408960f4e49b
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.openlocfilehash: 0af2b5f7d756060d463d2b4f3ef71bdd135710ee
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77539439"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77591529"
 ---
 # <a name="set-up-and-manage-virtual-machine-pool"></a>Настройка и администрирование пула виртуальных машин 
 В этой статье показано, как выполнить следующие задачи.
@@ -58,6 +58,9 @@ ms.locfileid: "77539439"
 ![Запуск выбранных виртуальных машин](../media/how-to-set-virtual-machine-passwords/start-selected-vms.png)
 
 Аналогичным образом можно отключить одну или несколько виртуальных машин, переключив кнопку в столбце **состояние** или выбрав пункт **Закрыть** на панели инструментов. 
+
+> [!NOTE]
+> Когда преподаватель включает виртуальную машину учащихся, квота для учащегося не затрагивается. Квота для пользователя указывает количество часов лаборатории, доступных пользователю за пределами запланированного времени класса. Дополнительные сведения о квотах см. в разделе [Задание квот для пользователей](how-to-configure-student-usage.md?#set-quotas-for-users).
 
 ## <a name="reset-vms"></a>Сброс виртуальных машин
 Чтобы сбросить одну или несколько виртуальных машин, выберите их в списке и нажмите кнопку **Сброс** на панели инструментов. 

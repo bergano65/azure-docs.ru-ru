@@ -3,7 +3,7 @@ title: Подключение тенденция Micro Deep Security к Azure Se
 description: Узнайте, как подключить тенденции Micro Deep Security к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: cabailey
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,20 +13,20 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: cabailey
-ms.openlocfilehash: ba5b560f068d453f07e2dbbfdf5140ca1f4ac2b8
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: a25d76b4b8a6f516de70604146bd1b236ba3ca1e
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610443"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588031"
 ---
 # <a name="connect-trend-micro-deep-security"></a>Подключение трендов Micro Deep Security
 
 Соединитель Trend Micro глубокий уровень безопасности позволяет легко подключать журналы глубокой безопасности с помощью Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. Это позволяет получить более подробные сведения о сетях и системах организации, а также улучшить возможности обеспечения безопасности.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Разрешения на чтение и запись в рабочей области "Sentinel" Azure.
 
@@ -38,7 +38,7 @@ ms.locfileid: "75610443"
 
 3. Следуйте инструкциям и дальнейшим действиям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить тенденция Micro Deep Security к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

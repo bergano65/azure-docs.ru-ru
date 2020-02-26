@@ -5,12 +5,12 @@ ms.assetid: 5b63649c-ec7f-4564-b168-e0a74cb7e0f3
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fb36b81d1b2a343da334d63d9c0555ed537ef122
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: c4ff3ebf6239f9b62409ff0885f23115711e33cb
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024659"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77584547"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Масштабирование и размещение Функций Azure
 
@@ -39,8 +39,8 @@ ms.locfileid: "77024659"
 
 | | План потребления | План "Премиум" | Выделенный план |
 |-|:----------------:|:------------:|:----------------:|
-| Windows | Общая доступность | Общая доступность | Общая доступность |
-| Linux | Общая доступность | Общая доступность | Общая доступность |
+| Windows | GA | GA | GA |
+| Linux | GA | GA | GA |
 
 ## <a name="consumption-plan"></a>План потребления
 
@@ -109,7 +109,7 @@ ms.locfileid: "77024659"
 
 ## <a name="determine-the-hosting-plan-of-an-existing-application"></a>Определение плана размещения существующего приложения
 
-Чтобы определить план размещения, используемый приложением-функцией, на [портале Azure](https://portal.azure.com) просмотрите для приложения-функции раздел **План службы приложений/ценовая категория** на вкладке **Обзор**. Для планов службы приложений также указывается ценовая категория.
+Чтобы определить план размещения, используемый приложением-функцией, на **портале Azure** просмотрите для приложения-функции раздел **План службы приложений/ценовая категория** на вкладке [Обзор](https://portal.azure.com). Для планов службы приложений также указывается ценовая категория.
 
 ![Просмотр плана масштабирования на портале](./media/functions-scale/function-app-overview-portal.png)
 
@@ -158,7 +158,7 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 Для различных триггеров также могут быть установлены разные ограничения масштабирования, а также ограничения, указанные в следующем документе:
 
-* [Концентратор событий](functions-bindings-event-hubs.md#trigger---scaling)
+* [Концентратор событий](functions-bindings-event-hubs-trigger.md#scaling)
 
 ### <a name="best-practices-and-patterns-for-scalable-apps"></a>Рекомендации и шаблоны для масштабируемых приложений
 
@@ -166,7 +166,7 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 Дополнительные сведения о масштабировании в Python и Node. js см. в статье о [функциях Azure для разработчиков Python: масштабирование и параллелизм](functions-reference-python.md#scaling-and-concurrency) и [функции Azure Node. js. Обзор масштабирования и параллелизма](functions-reference-node.md#scaling-and-concurrency).
 
-### <a name="billing-model"></a>Модель оплаты
+### <a name="billing-model"></a>Модель выставления счетов
 
 Сведения о выставлении счетов для разных планов подробно описаны на [странице цен на функции Azure](https://azure.microsoft.com/pricing/details/functions/). Использование вычисляется на уровне приложения-функции. При этом учитывается только время выполнения кода функции. Счета выставляются по следующим единицам:
 
@@ -177,7 +177,7 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 [Azure Functions pricing page]: https://azure.microsoft.com/pricing/details/functions
 
-## <a name="service-limits"></a>Ограничения обслуживания
+## <a name="service-limits"></a>Ограничения службы
 
 В следующей таблице указаны ограничения, которые применяются к приложениям функций при выполнении в различных планах размещения.
 

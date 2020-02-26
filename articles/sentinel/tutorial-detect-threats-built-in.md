@@ -3,7 +3,7 @@ title: Анализ оповещений с помощью Azure Sentinel | До
 description: Используйте этот учебник, чтобы узнать, как исследовать оповещения с помощью Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: 6d61b94a50716966ac0b3c75551ddd9d8e291965
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.author: yelevin
+ms.openlocfilehash: df855aa768fdeb279482b8407259be1a644322d9
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72024456"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77585209"
 ---
 # <a name="tutorial-detect-threats-out-of-the-box"></a>Руководство. Обнаружение встроенных угроз
 
@@ -62,7 +62,7 @@ ms.locfileid: "72024456"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 В этом руководстве вы узнали, как приступить к обнаружению угроз с помощью Sentinel Azure. 
 
 Чтобы узнать, как автоматизировать реагирование на угрозы, [Настройте автоматические ответы на угрозы в Azure Sentinel](tutorial-respond-threats-playbook.md).

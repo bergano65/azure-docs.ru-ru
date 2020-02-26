@@ -6,16 +6,16 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: ce9ca202ee57fe9c42906ebeb62a44c724bd1a52
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 72a87c3b23e0eed6cfbf1614388702443f4e99d0
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978731"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588793"
 ---
 # <a name="manage-azure-cosmos-db-sql-core-api-resources-with-azure-resource-manager-templates"></a>Управление ресурсами API Azure Cosmos DB SQL (Core) с помощью шаблонов Azure Resource Manager
 
-Из этой статьи вы узнаете, как использовать шаблоны Azure Resource Manager для автоматизации управления учетными записями Azure Cosmos DB, базами данных и контейнерами.
+Из этой статьи вы узнаете, как использовать шаблоны Azure Resource Manager для автоматизации управления учетными записями, базами данных и контейнерами Azure Cosmos DB.
 
 В этой статье показаны Azure Resource Manager примеры шаблонов для учетных записей API SQL. Вы также можете найти примеры шаблонов для API-интерфейсов [Cassandra](manage-cassandra-with-resource-manager.md), [Gremlin](manage-gremlin-with-resource-manager.md), [MongoDB](manage-mongodb-with-resource-manager.md)и [Table](manage-table-with-resource-manager.md) .
 
@@ -39,7 +39,7 @@ ms.locfileid: "75978731"
 > * Длина имен учетных записей ограничена 44 символами, строчными буквами.
 > * Чтобы изменить значения пропускной способности, повторно отправьте шаблон с обновленными единицами запросов в секунду.
 
-[!code-json[create-cosmosdb-sql](~/quickstart-templates/101-cosmosdb-sql/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-cosmosdb-sql/azuredeploy.json":::
 
 > [!NOTE]
 > Чтобы создать контейнер с большим ключом секции, измените предыдущий шаблон, включив в него свойство `"version":2` в объекте `partitionKey`.
@@ -136,7 +136,7 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 * При необходимости вы можете посетить коллекцию быстрого запуска [Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql-container-sprocs/) и развернуть шаблон из портал Azure.
 * Можно также загрузить шаблон на локальный компьютер или создать новый шаблон и указать локальный путь с помощью параметра `--template-file`.
 
-[!code-json[create-cosmosdb-sql-sprocs](~/quickstart-templates/101-cosmosdb-sql-container-sprocs/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-cosmosdb-sql-container-sprocs/azuredeploy.json":::
 
 ### <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 
@@ -172,7 +172,7 @@ New-AzResourceGroupDeployment `
 
 Вы можете развернуть шаблон с помощью локально установленной версии PowerShell вместо Azure Cloud Shell. Необходимо [установить модуль Azure PowerShell](/powershell/azure/install-az-ps). Запустите `Get-Module -ListAvailable Az`, чтобы найти требуемую версию.
 
-### <a name="deploy-with-azure-cli"></a>Развертывание с помощью Azure CLI
+### <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
 
 Чтобы использовать Azure CLI для развертывания шаблона Azure Resource Manager:
 

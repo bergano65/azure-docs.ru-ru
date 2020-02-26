@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 09/25/2019
-ms.openlocfilehash: f87dbedb1428b5884e20a9f7daabea792387fe88
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 2e48b47967e29a421a96bb09dd17b2cdcdbaff3c
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543313"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77580544"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,9 +27,9 @@ ms.locfileid: "76543313"
 
 - Вариант 2. при наличии неструктурированных данных создайте Филедатасет и подключите или Скачайте файлы на удаленное вычисление для обучения.
 
-Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими [продуктами, такими](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py)как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) и подсистему.
+Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими продуктами, такими как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) [, а также](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -100,11 +100,12 @@ experiment_run = experiment.submit(est)
 experiment_run.wait_for_completion(show_output=True)
 ```
 
+
 ## <a name="option-2--mount-files-to-a-remote-compute-target"></a>Вариант 2. подключение файлов к удаленному целевому объекту вычислений
 
 Если вы хотите сделать файлы данных доступными в целевом объекте вычислений для обучения, используйте [филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) для подключения или загрузки файлов, на которые они ссылаются.
 
-### <a name="mount-vs-download"></a>Подключить в.с. Загрузить
+### <a name="mount-vs-download"></a>Подключение и загрузка
 При подключении набора данных необходимо прикрепить файлы, на которые ссылается набор данных, к каталогу (точке подключения) и сделать его доступным в целевом объекте вычислений. Поддерживается подключение для вычислений на основе Linux, в том числе Машинное обучение Azure вычислений, виртуальных машин и HDInsight. Если размер данных превышает размер расчетного диска или вы загружаете часть набора данных в скрипт, рекомендуется использовать монтирование. Поскольку загрузка набора данных, превышающего размер диска, завершится ошибкой, а при подключении будет загружена только часть данных, используемая сценарием во время обработки. 
 
 При скачивании набора данных все файлы, на которые ссылается набор данных, будут скачаны в целевой объект вычислений. Загрузка поддерживается для всех типов вычислений. Если сценарий обрабатывает все файлы, на которые ссылается набор данных, и ваш вычислительный диск может поместиться в полный набор данных, рекомендуется загружаться, чтобы избежать издержек, связанных с потоковой передачей данных из служб хранилища.
@@ -193,10 +194,10 @@ y_test = load_data(y_test, True).reshape(-1)
 
 В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс
 
 * [Обучение моделей классификации изображений](https://aka.ms/filedataset-samplenotebook) с помощью филедатасетс
 
-* [Создание сред для обучения и развертывания и управление ими](how-to-use-environments.md)
+* [Обучение с наборами данных с помощью конвейеров](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb)

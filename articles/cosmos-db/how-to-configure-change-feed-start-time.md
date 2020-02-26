@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: maquaran
-ms.openlocfilehash: 600556a06d3f58c4d2ec79a49fdee5e8e04d4036
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8a5507d11c9545e4053dde832b7305f9bf35e39e
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093651"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586280"
 ---
 # <a name="how-to-configure-the-change-feed-processor-start-time"></a>Настройка времени запуска обработчика канала изменений
 
@@ -25,7 +25,7 @@ ms.locfileid: "70093651"
 
 Обработчик канала изменений можно инициализировать для чтения изменений, начиная с **указанной даты и времени**, передавая экземпляр `DateTime` в `WithStartTime` расширение построителя:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=TimeInitialization)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="TimeInitialization":::
 
 Обработчик канала изменений будет инициализирован для указанной даты и времени и начнет считывать изменения, произошедшие после.
 
@@ -33,7 +33,7 @@ ms.locfileid: "70093651"
 
 В других сценариях, таких как перенос данных или анализ всей истории контейнера, нам нужно прочитать канал изменений с **начала времени существования этого контейнера**. Для этого мы можем использовать `WithStartTime` в расширении построителя, но передать `DateTime.MinValue.ToUniversalTime()`который создаст представление времени в формате UTC для минимального `DateTime` значения, например:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=StartFromBeginningInitialization)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs" id="StartFromBeginningInitialization":::
 
 Обработчик канала изменений будет инициализирован и начнет считывать изменения с начала времени существования контейнера.
 
@@ -49,7 +49,7 @@ ms.locfileid: "70093651"
 * [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 
