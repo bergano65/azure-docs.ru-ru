@@ -1,16 +1,16 @@
 ---
-title: Устранение неисправностей
+title: Диагностика
 services: azure-dev-spaces
 ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранить распространенные проблемы, возникающие при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 3a2eb98af2c73b5a920f3e3bcedb7ab18e9f0430
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
-ms.translationtype: MT
+ms.openlocfilehash: 0c6a712f1dfb4410f3eee0fbd0192c6147618f96
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548855"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539592"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок Azure Dev Spaces
 
@@ -18,7 +18,7 @@ ms.locfileid: "76548855"
 
 Если при использовании Azure Dev Spaces возникла проблема, создайте [проблему в репозитории Azure dev Spaces GitHub](https://github.com/Azure/dev-spaces/issues).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Чтобы более эффективно устранять неполадки, можно создать более подробные журналы для проверки.
 
@@ -52,13 +52,13 @@ az aks use-dev-spaces -g <resource group name> -n <cluster name>
 
 ### <a name="controller-create-failing-because-of-controller-name-length"></a>Сбой создания контроллера из-за длины имени контроллера
 
-Длина имени контроллера Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ при включении пространств разработки в кластере AKS или создании контроллера, появится сообщение об ошибке. Пример.
+Длина имени контроллера Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ при включении пространств разработки в кластере AKS или создании контроллера, появится сообщение об ошибке. Например:
 
 ```console
 Failed to create a Dev Spaces controller for cluster 'a-controller-name-that-is-way-too-long-aks-east-us': Azure Dev Spaces Controller name 'a-controller-name-that-is-way-too-long-aks-east-us' is invalid. Constraint(s) violated: Azure Dev Spaces Controller names can only be at most 31 characters long*
 ```
 
-Чтобы устранить эту проблему, создайте контроллер с альтернативным именем. Пример.
+Чтобы устранить эту проблему, создайте контроллер с альтернативным именем. Например:
 
 ```cmd
 azds controller create --name my-controller --target-name MyAKS --resource-group MyResourceGroup
@@ -159,7 +159,7 @@ Container image build failed
 
 Настройте службу Azure Dev Spaces так, чтобы она указывала на конкретный файл _Dockerfile_ в вашем проекте. Если Azure Dev Spaces не использует файл _Dockerfile_, который вы хотели использовать для сборки своих контейнеров, то можно явно указать Azure Dev Spaces, какой файл Dockerfile нужно использовать. 
 
-Чтобы устранить эту проблему, откройте файл _аздс. YAML_ , который Azure dev Spaces создан в проекте. *Конфигурации обновления: Разработка: сборка: dockerfile* , указывающая на dockerfile, который вы хотите использовать. Пример.
+Чтобы устранить эту проблему, откройте файл _аздс. YAML_ , который Azure dev Spaces создан в проекте. *Конфигурации обновления: Разработка: сборка: dockerfile* , указывающая на dockerfile, который вы хотите использовать. Например:
 
 ```yaml
 ...
@@ -206,7 +206,7 @@ install:
 
 Эта ошибка может возникать, когда не удается запустить код службы. Чаще всего причина в пользовательском коде. Чтобы получить дополнительные диагностические сведения, включите более подробное ведение журнала при запуске службы.
 
-В командной строке используйте `--verbose`, чтобы включить более подробное ведение журнала. Можно также указать формат выходных данных с помощью `--output`. Пример.
+В командной строке используйте `--verbose`, чтобы включить более подробное ведение журнала. Можно также указать формат выходных данных с помощью `--output`. Например:
 
 ```cmd
 azds up --verbose --output json
@@ -265,7 +265,7 @@ Service cannot be started.
 Например, для отмены и отключения службы *Windows BranchCache* :
 * Запустите `services.msc` из командной строки.
 * Щелкните *BranchCache* правой кнопкой мыши и выберите пункт *свойства*.
-* Нажмите *Остановить*.
+* Нажмите кнопку " *Закрыть*".
 * При необходимости можно отключить его, установив для параметра *Тип запуска* значение *отключено*.
 * Нажмите кнопку *ОК*.
 
@@ -335,7 +335,7 @@ Service cannot be started.
 
 ### <a name="authorization-error-microsoftdevspacesregisteraction"></a>Ошибка авторизации "Microsoft. Девспацес/Register/Action"
 
-Вам потребуется доступ *владельца* или *участника* в подписке Azure, чтобы управлять Azure Dev Spaces. Если вы пытаетесь управлять пространствами разработки и у вас нет доступа *владельца* или *участника* к связанной подписке Azure, может появиться сообщение об ошибке авторизации. Пример.
+Вам потребуется доступ *владельца* или *участника* в подписке Azure, чтобы управлять Azure Dev Spaces. Если вы пытаетесь управлять пространствами разработки и у вас нет доступа *владельца* или *участника* к связанной подписке Azure, может появиться сообщение об ошибке авторизации. Например:
 
 ```console
 The client '<User email/Id>' with object id '<Guid>' does not have authorization to perform action 'Microsoft.DevSpaces/register/action' over scope '/subscriptions/<Subscription Id>'.
@@ -391,11 +391,11 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
     * В качестве *роли*выберите *участник* или *владелец*.
     * В поле *Назначение доступа к* выберите *Пользователь, группа или субъект-служба Azure AD*.
     * В поле *выбрать*найдите пользователя, которого нужно предоставить разрешения.
-1. Выберите команду *Сохранить*.
+1. Нажмите кнопку *Сохранить*.
 
 ### <a name="dns-name-resolution-fails-for-a-public-url-associated-with-a-dev-spaces-service"></a>Сбой разрешения DNS-имен для общедоступных URL-адресов, связанных со службой Dev Spaces
 
-Вы можете настроить общедоступную конечную точку URL-адреса для службы, указав параметр `--public` в команде `azds prep` или установив флажок `Publicly Accessible` в Visual Studio. Общедоступное DNS-имя автоматически регистрируется при запуске службы в Dev Spaces. Если DNS-имя не зарегистрировано, в веб-браузере во время подключения к общедоступному URL-адресу вы увидите ошибки *Не удается отобразить страницу* или *Этот сайт недоступен*.
+Вы можете настроить общедоступную конечную точку URL-адреса для службы, указав параметр `--enable-ingress` в команде `azds prep` или установив флажок `Publicly Accessible` в Visual Studio. Общедоступное DNS-имя автоматически регистрируется при запуске службы в Dev Spaces. Если DNS-имя не зарегистрировано, в веб-браузере во время подключения к общедоступному URL-адресу вы увидите ошибки *Не удается отобразить страницу* или *Этот сайт недоступен*.
 
 Чтобы устранить эту проблему:
 
@@ -469,7 +469,7 @@ kubectl -n my-namespace delete pod --all
 
 Чтобы включить Azure Dev Spaces в кластере AKS, для которого исходящий трафик от узлов кластера ограничен, необходимо разрешить следующие полные доменные имена:
 
-| Полное доменное имя.                                    | Port      | Использование      |
+| Полное доменное имя.                                    | Порт      | Применение      |
 |-----------------------------------------|-----------|----------|
 | cloudflare.docker.com | HTTPS:443 | Извлечение образов Linux Alpine и других Azure Dev Spaces |
 | gcr.io | HTTP: 443 | Извлечение Helm/с образами|
