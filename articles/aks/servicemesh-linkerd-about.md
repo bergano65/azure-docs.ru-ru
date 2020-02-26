@@ -2,20 +2,19 @@
 title: Общие сведения о Linkerd
 description: Получите общие сведения о Linkerd
 author: paulbouwer
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: 9d0a65f2cf557120ec5a551494e697c876ad5c59
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 3181be62a14ec1b3450bd181172b5323ca176427
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530216"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593773"
 ---
 # <a name="linkerd"></a>Linkerd
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 [Linkerd][linkerd] — это простая в использовании и упрощенная сетка служб.
 
@@ -82,7 +81,7 @@ Linkerd хорошо подходит и предлагается для сле�
 - Низкая задержка, низкая нагрузка, с целью сосредоточиться на наблюдаемой и простой системе управления трафиком
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующей документации описывается, как можно установить Linkerd в службе Kubernetes Azure (AKS).
 

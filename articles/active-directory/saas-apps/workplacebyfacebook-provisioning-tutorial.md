@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7d8a7881c00427023e5f174461b3d8b24d83444
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 22576be8dec021f0f18a6e2dda16891ce70d4f13
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121442"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603206"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
@@ -51,7 +51,7 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 
  
 #### <a name="when-will-these-changes-happen"></a>Когда будут происходить эти изменения?
-На всех новых экземплярах рабочей области уже будет использоваться новый метод интеграции или авторизации. Существующие интеграции будут постепенно перенесены в феврале. Миграция будет завершена для всех клиентов в конце месяца. 
+На всех новых экземплярах рабочей области уже будет использоваться новый метод интеграции или авторизации. Существующие интеграции будут постепенно перенесены в мае. Группа рабочей области предоставила расширение на крайний срок от Фев-28 до мая-1. 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
@@ -60,7 +60,7 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 > * Обеспечение синхронизации атрибутов пользователей между Azure AD и рабочей областью Facebook
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/workplacebyfacebook-tutorial) на рабочее место с помощью Facebook (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -127,17 +127,17 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с рабочей**областью Facebook.
 
 9. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD, с рабочей областью по Facebook в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching**, используются для сопоставления учетных записей пользователей в Workplace by Facebook для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что на рабочем месте в API Facebook поддерживается фильтрация пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |attribute|Тип|
+   |Атрибут|Тип|
    |---|---|
    |userName|String|
    |displayName|String|
-   |active|Логическое|
+   |активно|Логическое|
    |title|Логическое|
    |emails[type eq "work"].value|String|
    |name.givenName|String|
@@ -189,6 +189,6 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

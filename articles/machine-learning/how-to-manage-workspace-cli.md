@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.author: larryfr
 author: Blackmist
 ms.date: 11/05/2019
-ms.openlocfilehash: 715ea6239e070fe5ebb78c2e2766aabf1f491fcc
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 06b890a9186ec38ce3f851c9f36b778ec7549f76
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988164"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77580556"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинное обучение Azure с Azure CLI
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как создать Машинное обучение Azure рабочую область с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения для интерфейса командной строки предоставляет команды для работы с Машинное обучение Azureными ресурсами.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
@@ -52,14 +52,14 @@ az login
 az extension add -n azure-cli-ml
 ```
 
-## <a name="create-a-workspace"></a>Создание рабочего пространства
+## <a name="create-a-workspace"></a>Создать рабочую область
 
 Машинное обучение Azure рабочей области полагаются следующие службы или сущности Azure:
 
 > [!IMPORTANT]
 > Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Необходимо всегда указывать группу ресурсов.
 
-| Служба | Параметр для указания существующего экземпляра |
+| Service | Параметр для указания существующего экземпляра |
 | ---- | ---- |
 | **Группа ресурсов Azure** | `-g <resource-group-name>`
 | **Учетная запись хранения Azure** | `--storage-account <service-id>` |
@@ -344,12 +344,23 @@ az group delete -g <resource-group-name>
 
 Дополнительные сведения см. в документации об [удалении рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-delete) .
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="resource-provider-errors"></a>Ошибки поставщика ресурсов
 
 [!INCLUDE [machine-learning-resource-provider](../../includes/machine-learning-resource-provider.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="moving-the-workspace"></a>Перемещение рабочей области
+
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
+
+### <a name="deleting-the-azure-container-registry"></a>Удаление реестра контейнеров Azure
+
+Для некоторых операций в рабочей области Машинное обучение Azure используется реестр контейнеров Azure (запись контроля доступа). Он автоматически создает экземпляр записи контроля доступа, когда ему требуется первый.
+
+[!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
+
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о расширении Azure CLI для машинного обучения см. в документации по [AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest) .

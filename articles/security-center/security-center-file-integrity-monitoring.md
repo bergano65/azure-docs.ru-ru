@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/13/2019
 ms.author: memildin
-ms.openlocfilehash: cfa767a42800ceaf78fe007a8468fe9113a2d412
-ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
+ms.openlocfilehash: 4d65ca8d97e1cca81886259d4f15cc880e45be9c
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74558787"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604287"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Мониторинг целостности файлов в центре безопасности Azure
 В этом руководстве объясняется, как настроить мониторинг целостности файлов в центре безопасности Azure.
@@ -206,7 +206,6 @@ FIM использует решение "Отслеживание изменен
 * [Мониторинг работоспособности системы безопасности](security-center-monitoring.md) — сведения об отслеживании работоспособности ресурсов Azure.
 * [Управление оповещениями о безопасности](security-center-managing-and-responding-alerts.md). Узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Мониторинг решений партнеров](security-center-partner-solutions.md). Узнайте, как отслеживать работоспособность решений партнеров.
-* [Центр безопасности: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/)— последние новости и информация об обеспечении безопасности в Azure.
 
 <!--Image references-->

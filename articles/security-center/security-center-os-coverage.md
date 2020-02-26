@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: 6ec818ff77664fcc038412f79fffc1e3e05b82f0
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 089fcc89f330e47a09187b5338176bf23fd801bb
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294258"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603748"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -41,12 +41,12 @@ ms.locfileid: "76294258"
 
 ### Операционные системы Windows Server<a name="os-windows"></a>
 
-|ОС|Поддерживается центром безопасности Azure|Поддержка интеграции с ATP в защитнике Майкрософт|
+|OS|Поддерживается центром безопасности Azure|Поддержка интеграции с ATP в защитнике Майкрософт|
 |:---|:-:|:-:|
-|Windows Server 2019|✔|X|
-|Windows Server 2016|✔|✔|
-|Windows Server 2012 R2|✔|✔|
-|Windows Server 2008 R2|✔|✔|
+|Windows Server 2019|✔|X|
+|Windows Server 2016|✔|✔|
+|Windows Server 2012 R2|✔|✔|
+|Windows Server 2008 R2|✔|✔|
 
 Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md#vm-server-features).
 
@@ -93,7 +93,7 @@ ms.locfileid: "76294258"
 * SQL
 * PostGreSQL
 * MySQL
-* Cosmos DB;
+* Cosmos DB
 * Учетная запись хранения
 * Служба приложений
 * Компонент
@@ -110,22 +110,20 @@ ms.locfileid: "76294258"
 * Пространство имен служебной шины
 * Stream Analytics
 * Пространство имен концентратора событий
-* Логические приложения
+* приложениях логики.
 * Redis
 * Data Lake Analytics
-* Data Lake Store
-* Key Vault;
+* Data Lake Storage
+* Хранилище ключей
 
 Дополнительные сведения о поддерживаемых функциях для приведенного выше списка ресурсов PaaS см. в разделе [службы PaaS поддерживаемые функции](security-center-services.md#paas-services).
 
 Также поддерживается защита виртуальных машин, размещенных в Azure Stack. Дополнительные сведения об интеграции центра безопасности с Azure Stack см. в статье подключение [Azure Stack виртуальных машин к центру безопасности](https://docs.microsoft.com/azure/security-center/quick-onboard-azure-stack).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).
 - Узнайте, как [спланировать работу в Центре безопасности Azure, и получите рекомендации по переходу к его использованию](security-center-planning-and-operations-guide.md).
 - Сведения о [функциях, доступных для различных облачных сред](security-center-services.md).
 - Дополнительные сведения об [обнаружении угроз для виртуальных машин & серверах в центре безопасности Azure](security-center-alerts-iaas.md).
-- Ознакомьтесь с [часто задаваемыми вопросами об использовании Центра безопасности Azure](security-center-faq.md).
-- Изучите [записи блога, посвященные безопасности и соответствию требованиям в Azure](https://blogs.msdn.com/b/azuresecurity/).

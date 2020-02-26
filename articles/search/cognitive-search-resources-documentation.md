@@ -6,14 +6,14 @@ manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
-ms.topic: quickstart
+ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: e73e69f90b1228154d7f209c54c6b52cc03d5eb4
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
-ms.translationtype: HT
+ms.openlocfilehash: 9f8a14c348f4f8eddcd60c6946c831c90262757b
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76837796"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77589000"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
 
@@ -23,9 +23,9 @@ ms.locfileid: "76837796"
 
 ## <a name="getting-started"></a>Начало работы
 + [Общие сведения об ИИ в Когнитивном поиске Azure](cognitive-search-concept-intro.md)
-+ [Краткое руководство. Создание когнитивного набора навыков на портале Azure](cognitive-search-quickstart-blob.md)
-+ [Руководство. Обогащенное индексирование с помощью ИИ](cognitive-search-tutorial-blob.md)
-+ [Пример. Создание пользовательского навыка для обогащения ИИ](cognitive-search-create-custom-skill-example.md)
++ [Краткое руководство. Создание набора квалификационных навыков в портал Azure](cognitive-search-quickstart-blob.md)
++ [Учебник. обогащенное индексирование с помощью искусственного интеллекта](cognitive-search-tutorial-blob.md)
++ [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Практические руководства
 + [Определение набора навыков](cognitive-search-defining-skillset.md)

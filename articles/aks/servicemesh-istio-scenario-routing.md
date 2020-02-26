@@ -2,17 +2,16 @@
 title: Интеллектуальная маршрутизация и ранние выпуски с использованием Istio в Службе Azure Kubernetes (AKS)
 description: Сведения об использовании Istio для обеспечения интеллектуальной маршрутизации и развертывания ранних выпусков в кластере Службы Azure Kubernetes (AKS)
 author: paulbouwer
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 48daf2be4a05922982479a86e6574f3aa85d2130
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 4c29658473aaa50168175c76234dfca34fcdad83
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530294"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594169"
 ---
 # <a name="use-intelligent-routing-and-canary-releases-with-istio-in-azure-kubernetes-service-aks"></a>Интеллектуальная маршрутизация и ранние выпуски с использованием Istio в службе Azure Kubernetes (AKS)
 
@@ -20,7 +19,7 @@ ms.locfileid: "72530294"
 
 В этой статье показано, как использовать возможности управления трафиком в Istio. Пример приложения AKS для голосования позволит ознакомиться с интеллектуальной маршрутизацией и ранними выпусками.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Развертывание приложения
@@ -28,7 +27,7 @@ ms.locfileid: "72530294"
 > * Ранний выпуск приложения
 > * Финализация выпуска
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 > [!NOTE]
 > Этот сценарий был протестирован с Istio версии `1.3.2`.
@@ -351,7 +350,7 @@ voting-storage.voting.svc.cluster.local:6379     OK         mTLS       mTLS     
 
 ## <a name="roll-out-a-canary-release-of-the-application"></a>Ранний выпуск приложения
 
-Теперь выполним развертывание новой версии `2.0` `voting-app`, `voting-analytics` и компонентов `voting-storage`. Новый компонент `voting-storage` использует MySQL вместо Redis, а `voting-app` и `voting-analytics` компоненты обновляются, чтобы их можно было использовать в новом компоненте `voting-storage`.
+Теперь выполним развертывание новой версии `2.0` `voting-app`, `voting-analytics`и компонентов `voting-storage`. Новый компонент `voting-storage` использует MySQL вместо Redis, а `voting-app` и `voting-analytics` компоненты обновляются, чтобы их можно было использовать в новом компоненте `voting-storage`.
 
 Компонент `voting-app` теперь поддерживает функции флагов функций. Флаг компонента позволяет протестировать возможность Istio осуществить ранний выпуск для группы пользователей.
 

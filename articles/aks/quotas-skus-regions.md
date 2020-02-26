@@ -2,17 +2,14 @@
 title: Квоты, номера SKU и доступность регионов в службе Azure Kubernetes (AKS)
 description: Сведения о квотах по умолчанию, размерах SKU виртуальных машин с ограниченным доступом к узлу и доступности региона службы Azure Kubernetes (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/09/2019
-ms.author: mlearned
-ms.openlocfilehash: 1bb928f8e7a1f56c4b6b437f260d875662bff60f
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 03e7396932f0813ef4bd00d644dcdaddfe229e6a
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77469840"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594555"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Квоты, ограничения размера виртуальной машины и доступность региона в службе Kubernetes Azure (AKS)
 
@@ -49,7 +46,7 @@ ms.locfileid: "77469840"
 
 Последнюю версию списка, в котором можно развернуть и запустить кластеры, см. в статье о [доступности AKS Region][region-availability].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете повысить лимит нескольких ограничений и квот. Если ресурс поддерживает увеличение, запросите увеличение через запрос на [поддержку Azure][azure-support] (для **типа проблемы**выберите **Квота**).
 

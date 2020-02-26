@@ -2,17 +2,14 @@
 title: Защита контейнеров pod с помощью политик сети в службе Azure Kubernetes (AKS)
 description: Узнайте, как защитить входящий и исходящий трафик в модулях Pod с помощью политик сети Kubernetes в службе Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: mlearned
-ms.openlocfilehash: 350e553563aa152c61c922727fb87937bedd14b5
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 92e726529f2c81b169dc5ad485148ad8118bbc81
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72928498"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77592872"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Защита трафика между контейнерами pod с использованием политик сети в Службе Azure Kubernetes (AKS)
 
@@ -20,7 +17,7 @@ ms.locfileid: "72928498"
 
 В этой статье показано, как установить модуль политики сети и создать Kubernetes сетевые политики для управления потоком трафика между модулями Pod в AKS. Сетевую политику следует использовать только для узлов под управлением Linux и модулей Pod в AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
@@ -52,14 +49,14 @@ Azure предоставляет два способа реализации се
 
 ### <a name="differences-between-azure-and-calico-policies-and-their-capabilities"></a>Различия между политиками Azure и Калико и их возможностями
 
-| Возможность                               | Azure                      | калико                      |
+| Функция                               | Azure                      | калико                      |
 |------------------------------------------|----------------------------|-----------------------------|
 | Поддерживаемые платформы                      | Linux                      | Linux                       |
 | Поддерживаемые параметры сети             | Azure CNI                  | Azure CNI и кубенет       |
 | Соответствие спецификации Kubernetes | Все поддерживаемые типы политик |  Все поддерживаемые типы политик |
 | Дополнительные функции                      | Нет                       | Расширенная модель политики, состоящая из глобальной сетевой политики, набора глобальных сетей и конечной точки узла. Дополнительные сведения об использовании интерфейса командной строки `calicoctl` для управления этими расширенными функциями см. в разделе [Справочник пользователя по каликоктл][calicoctl]. |
 | Поддержка                                  | Поддерживаются группой поддержки и инженеров по технической поддержке Azure | Поддержка сообщества Калико. Дополнительные сведения о дополнительной платной поддержке см. в разделе [варианты поддержки Project Калико][calico-support]. |
-| Ведение журнала                                  | Правила, добавленные или удаленные в IPTables, регистрируются на каждом узле в разделе */Вар/лог/Азуре-НПМ.лог* | Дополнительные сведения см. в разделе [журналы компонентов Калико][calico-logs] . |
+| Logging                                  | Правила, добавленные или удаленные в IPTables, регистрируются на каждом узле в разделе */Вар/лог/Азуре-НПМ.лог* | Дополнительные сведения см. в разделе [журналы компонентов Калико][calico-logs] . |
 
 ## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Создание кластера AKS и включение политики сети
 
@@ -453,7 +450,7 @@ kubectl delete namespace production
 kubectl delete namespace development
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о сетевых ресурсах см. [в разделе Основные понятия сети для приложений в службе Azure Kubernetes Service (AKS)][concepts-network].
 

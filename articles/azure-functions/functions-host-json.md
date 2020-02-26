@@ -3,12 +3,12 @@ title: Справочник по файлу host.json для службы "Фу�
 description: Справочная документация по файлу host.json для Функций Azure в среде выполнения версии V2.
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: b9c57378df1510179c5a45b6aa669bab804aca5e
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 949d4f2c5d8c1d8034ccc392915bc40f1f2fddda
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484440"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77605141"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Справочник по Host. JSON для функций Azure 2. x и более поздних версий 
 
@@ -208,7 +208,7 @@ ms.locfileid: "77484440"
 
 ## <a name="cosmosdb"></a>СosmosDB
 
-Параметры конфигурации можно найти в разделе [host.json settings](functions-bindings-cosmosdb-v2.md#host-json) (параметры файла host.json).
+Параметры конфигурации можно найти в разделе [host.json settings](functions-bindings-cosmosdb-v2-output.md#host-json) (параметры файла host.json).
 
 ## <a name="durabletask"></a>durableTask
 
@@ -216,7 +216,7 @@ ms.locfileid: "77484440"
 
 ## <a name="eventhub"></a>eventHub
 
-Параметры конфигурации можно найти в разделе [host.json settings](functions-bindings-event-hubs.md#host-json) (параметры файла host.json). 
+Параметры конфигурации можно найти в разделе [host.json settings](functions-bindings-event-hubs-output.md#host-json) (параметры файла host.json). 
 
 ## <a name="extensions"></a>extensions
 

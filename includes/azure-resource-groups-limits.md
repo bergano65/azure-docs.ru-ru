@@ -2,18 +2,19 @@
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: include
-ms.date: 08/19/2019
+ms.date: 02/24/2020
 ms.author: tomfitz
-ms.openlocfilehash: b4338560d515289d3e9aedfa716ec7c3ace51131
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c1a52e1bc2dde74289cb270fcae832be24de5a06
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75392273"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77592441"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/management/overview.md#resource-groups)на каждый тип ресурсов |800 |Некоторые типы ресурсов могут превышать ограничение в 800. См. [ресурсы, не ограниченные 800 экземплярами на группу ресурсов](../articles/azure-resource-manager/management/resources-without-resource-group-limit.md). |
+| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/management/overview.md#resource-groups) | Н/Д | Ресурсы не ограничиваются группой ресурсов. Вместо этого они ограничиваются типом ресурса в группе ресурсов. См. следующую строку. | 
+| Ресурсов на группу ресурсов на каждый тип ресурсов |800 |Некоторые типы ресурсов могут превышать ограничение в 800. См. [ресурсы, не ограниченные 800 экземплярами на группу ресурсов](../articles/azure-resource-manager/management/resources-without-resource-group-limit.md). |
 | Развертываний на группу ресурсов в журнале развертывания |800<sup>1</sup> |800 |
 | Ресурсов в развертывании |800 |800 |
 | Блокировок управления на уникальную область |20 |20 |
@@ -30,7 +31,7 @@ ms.locfileid: "75392273"
 | Параметры |256 |256 |
 | Переменные |256 |256 |
 | Ресурсы (включая число копий) |800 |800 |
-| Выходные данные |64 |64 |
+| Outputs |64 |64 |
 | Выражение шаблона |24 576 символов |24 576 символов |
 | Ресурсы в экспортированных шаблонах |200 |200 | 
 | Размер шаблона |4 МБ |4 МБ |

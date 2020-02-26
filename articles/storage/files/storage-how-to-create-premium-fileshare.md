@@ -7,19 +7,19 @@ ms.topic: conceptual
 ms.date: 05/05/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 4b3e51b5e8d0ee9b62a7e7bc39955396f327c7e7
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 237846ec3adda208126aeb22e7900cbf5118ee95
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74209537"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598669"
 ---
 # <a name="how-to-create-an-premium-azure-file-share"></a>Создание файлового ресурса Azure уровня "Премиум"
 Общие файловые ресурсы уровня "Премиум" предоставляются на носителях с твердотельным накопителем (SSD) и полезны для рабочих нагрузок, интенсивно использующих ввод-вывод, включая размещение баз данных и высокопроизводительных вычислений (HPC). Общие файловые ресурсы уровня "Премиум" размещаются в специальном типе учетной записи хранения, который называется учетной записью Филестораже. Файловые ресурсы уровня "Премиум" предназначены для высокопроизводительных и масштабируемых приложений, обеспечивая постоянную задержку, высокую скорость операций ввода-вывода и высокую пропускную способность.
 
 В этой статье показано, как создать новый тип учетной записи с помощью [портал Azure](https://portal.azure.com/), Azure PowerShell и Azure CLI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы получить доступ к ресурсам Azure, включая общие файловые ресурсы Azure уровня "Премиум", вам потребуется подписка Azure. Если у вас еще нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -27,7 +27,7 @@ ms.locfileid: "74209537"
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ### <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения филестораже
 
@@ -77,7 +77,7 @@ ms.locfileid: "74209537"
 
 Сначала установите последнюю версию модуля [PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
-Затем обновите модуль PowerShell, войдите в подписку Azure, создайте группу ресурсов и учетную запись хранения.
+Затем обновите модуль PowerShell, войдите в свою подписку Azure, создайте группу ресурсов, а затем создайте учетную запись хранения.
 
 ### <a name="upgrade-your-powershell-module"></a>Обновление модуля PowerShell
 
@@ -113,7 +113,7 @@ New-AzResourceGroup -Name $resourceGroup -Location $location
 
 ### <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения Филестораже
 
-Чтобы создать учетную запись хранения филестораже из PowerShell, используйте команду [New-азсторажеаккаунт](/powershell/module/az.storage/New-azStorageAccount) :
+Чтобы создать учетную запись хранения Филестораже из PowerShell, используйте команду [New-азсторажеаккаунт](/powershell/module/az.storage/New-azStorageAccount) :
 
 ```powershell
 $storageAcct = New-AzStorageAccount -ResourceGroupName $resourceGroup -Name "fileshowto" -SkuName "Premium_LRS" -Location "westus2" -Kind "FileStorage"
@@ -206,9 +206,9 @@ az storage share create \
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали файловый ресурс уровня "Премиум". Чтобы узнать о производительности, предлагаемой этой учетной записью, перейдите к разделу "уровень производительности" в разделе "планирование по планированию".
 
 > [!div class="nextstepaction"]
-> [Уровни производительности файловых ресурсов](storage-files-planning.md#file-share-performance-tiers)
+> [Уровни файлового ресурса](storage-files-planning.md#storage-tiers)

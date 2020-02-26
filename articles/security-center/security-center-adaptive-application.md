@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/23/2019
 ms.author: memildin
-ms.openlocfilehash: 862fb4f8a9dcd357148f73a729ffc7e92ba0083a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1dc94c5ec08cc27fb1819ccc16fd766c62aad796
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75353442"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604674"
 ---
 # <a name="adaptive-application-controls"></a>Адаптивные элементы управления приложениями
 В этом руководстве приведены сведения о настройке адаптивного элемента управления приложениями в центре безопасности Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "75353442"
 
 1. Перейдите на вкладку **рекомендуемый** список групп с рекомендациями по управлению приложениями.
 
-   ![Рекомендуется](./media/security-center-adaptive-application/security-center-adaptive-application-fig3.png)
+   ![Рекомендуемая](./media/security-center-adaptive-application/security-center-adaptive-application-fig3.png)
 
    Этот список содержит следующие параметры:
 
@@ -180,5 +180,4 @@ ms.locfileid: "75353442"
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
 * [Основные сведения об оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Дополнительные сведения о различных типах оповещений безопасности.
 * [Руководство по устранению неполадок в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Узнайте, как устранять типичные неполадки в центре безопасности.
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/). Записи блога, посвященные безопасности и соответствию требованиям в Azure.

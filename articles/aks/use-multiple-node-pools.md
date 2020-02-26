@@ -2,17 +2,14 @@
 title: Использование пулов нескольких узлов в службе Kubernetes Azure (AKS)
 description: Узнайте, как создать несколько пулов узлов для кластера в службе Kubernetes Azure (AKS) и управлять ими.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 02/14/2020
-ms.author: mlearned
-ms.openlocfilehash: e77710fe446810ec566ebc7088d802f0721806d2
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 846425e6d36462636ea1f4e82d6c7233dcb28ac9
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443930"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77592889"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -645,7 +642,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как создавать и администрировать несколько пулов узлов в кластере AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
 

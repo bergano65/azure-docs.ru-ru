@@ -8,12 +8,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
 ms.date: 02/04/2020
-ms.openlocfilehash: fb576b81adeec99e4080c744749097390d1add1d
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: ff2be6972bb4e8af266d0aa8a56d1879bc1b8b78
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77111102"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586161"
 ---
 # <a name="request-quota-increases-for-azure-sql-database"></a>Увеличение квот запросов для базы данных SQL Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "77111102"
 
 Дополнительные сведения см. в статье [ограничения ресурсов базы данных SQL и управление ресурсами](sql-database-resource-limits-database-server.md).
 
-### <a name="enable-subscription-access-to-a-region"></a>Включение доступа к подписке для региона
+### <a id="other"></a>Включение доступа к подписке для региона
 
 Некоторые типы предложений доступны не в каждом регионе. Может появиться следующее сообщение об ошибке:
 
@@ -116,7 +116,7 @@ ms.locfileid: "77111102"
 
 Последним шагом является заполнение оставшихся сведений о запросе квоты базы данных SQL. Затем выберите **Далее: Проверка и создание > >** и после просмотра сведений о запросе нажмите кнопку **создать** , чтобы отправить запрос.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После отправки запроса он будет проверен. Вы будете связываться с ответом на информацию, указанную в форме.
 

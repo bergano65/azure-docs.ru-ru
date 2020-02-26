@@ -2,17 +2,14 @@
 title: Подключение RDP к узлам Windows Server кластера Azure Kubernetes Service (AKS)
 description: Узнайте, как создать подключение по протоколу RDP с узлами Windows Server в кластере Azure Kubernetes Service (AKS) для решения задач по устранению неполадок и обслуживанию.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 06/04/2019
-ms.author: mlearned
-ms.openlocfilehash: e3a4ea2e81e6c428b51d164336282f8f929d414b
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 897504aa9902d0feaf4245c719d3a4a3c6fd2241
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639804"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594487"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу RDP к узлам Windows Server в кластере Kubernetes Service (AKS) для обслуживания или устранения неполадок
 
@@ -22,7 +19,7 @@ ms.locfileid: "69639804"
 
 В этой статье показано, как создать подключение RDP с узлом AKS, используя их частные IP-адреса.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас уже есть кластер AKS с узлом Windows Server. Если вам нужен кластер AKS, см. статью о [создании кластера AKS с контейнером Windows с помощью Azure CLI][aks-windows-cli]. Необходимо имя пользователя и пароль администратора Windows для узла Windows Server, для которого требуется устранить неполадки. Вам также потребуется клиент RDP, например [Удаленный рабочий стол (Майкрософт)][rdp-mac].
 
@@ -151,7 +148,7 @@ NSG_NAME=$(az network nsg list -g $CLUSTER_RG --query [].name -o tsv)
 az network nsg rule delete --resource-group $CLUSTER_RG --nsg-name $NSG_NAME --name tempRDPAccess
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если требуются дополнительные данные по устранению неполадок, можно [Просмотреть журналы главного узла Kubernetes][view-master-logs] или [Azure Monitor][azure-monitor-containers].
 

@@ -6,19 +6,19 @@ ms.service: storage
 ms.topic: article
 ms.date: 02/21/2020
 ms.author: rogarana
-ms.openlocfilehash: 3a9a2a903bd9979cd0f9a09b7589edc6d4fd8962
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 673bf3be59d72b2cc62b9f92af353fee235c5ddc
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77565096"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598822"
 ---
 # <a name="overview-of-azure-files-identity-based-authentication-support-for-smb-access"></a>Обзор поддержки проверки подлинности на основе удостоверений в службе файлов Azure для доступа по протоколу SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
 
-Сведения о включении проверки подлинности AD для файловых ресурсов Azure см. в статье [Включение проверки подлинности Active Directory для файловых ресурсов](storage-files-active-directory-domain-services-enable.md)Azure.
+Сведения о включении проверки подлинности AD для файловых ресурсов Azure см. в статье [Включение проверки подлинности Active Directory для файловых ресурсов](storage-files-identity-auth-active-directory-enable.md)Azure.
 
-Сведения о том, как включить проверку подлинности Azure AD DS для файловых ресурсов Azure, см. в статье [Включение проверки подлинности службы домена Azure Active Directory для файлов Azure](storage-files-active-directory-enable.md).
+Сведения о том, как включить аутентификацию Azure AD DS для файловых ресурсов Azure, см. в статье [Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md).
 
 ## <a name="glossary"></a>Глоссарий 
 Полезно понимать некоторые ключевые термины, связанные с проверкой подлинности службы домена Azure AD по протоколу SMB для файловых ресурсов Azure:
@@ -98,7 +98,7 @@ ms.locfileid: "77565096"
 
 ### <a name="enable-identity-based-authentication"></a>Включить проверку подлинности на основе удостоверений
 
-Вы можете включить проверку подлинности на основе удостоверений с помощью Azure AD DS (общедоступной версии) или AD (Предварительная версия) для файловых ресурсов Azure в новых и существующих учетных записях хранения. Для проверки подлинности доступа к файлам в учетной записи хранения можно использовать только одну службу домена, которая применяется ко всем файловым ресурсам в учетной записи. Подробное пошаговое руководство по настройке файловых ресурсов для проверки подлинности с помощью Azure AD DS (общедоступная версия) в статье [Azure Active Directory включение проверки подлинности доменных служб для службы файлов Azure](storage-files-active-directory-enable.md) и руководство по AD (Preview) см. в этой статье. [включите Active Directory по протоколу SMB для файловых ресурсов Azure](storage-files-active-directory-domain-services-enable.md).
+Вы можете включить проверку подлинности на основе удостоверений с помощью Azure AD DS (общедоступной версии) или AD (Предварительная версия) для файловых ресурсов Azure в новых и существующих учетных записях хранения. Для проверки подлинности доступа к файлам в учетной записи хранения можно использовать только одну службу домена, которая применяется ко всем файловым ресурсам в учетной записи. Подробное пошаговое руководство по настройке общих файловых ресурсов для проверки подлинности с помощью Azure AD DS (общедоступная версия) в нашей статье Включение проверки подлинности [Azure Active Directory доменных служб в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md) и руководство по AD (Preview) в этой статье [включает Active Directoryную проверку подлинности в SMB для файловых ресурсов Azure](storage-files-identity-auth-active-directory-enable.md).
 
 ### <a name="configure-share-level-permissions-for-azure-files"></a>Настройка разрешений на уровне общего ресурса для файлов Azure
 
@@ -122,10 +122,10 @@ ms.locfileid: "77565096"
 ## <a name="pricing"></a>Цены
 Для включения проверки подлинности на основе удостоверений через SMB в вашей учетной записи хранения дополнительная плата за обслуживание не взимается. Дополнительные сведения о ценах см. в статье цены на службы [файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [цены доменных служб Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/) , если вы ищете сведения о службах домена AAD.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure и аутентификации на основе удостоверений по протоколу SMB см. в следующих ресурсах:
 
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-- [Включение проверки подлинности Active Directory в SMB для файловых ресурсов Azure](storage-files-active-directory-domain-services-enable.md)
-- [Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure](storage-files-active-directory-enable.md)
+- [Включение проверки подлинности Active Directory в SMB для файловых ресурсов Azure](storage-files-identity-auth-active-directory-enable.md)
+- [Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure](storage-files-identity-auth-active-directory-domain-service-enable.md)
 - [Часто задаваемые вопросы](storage-files-faq.md)

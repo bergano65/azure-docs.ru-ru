@@ -4,16 +4,15 @@ description: Узнайте, как использовать управляем�
 services: container-service
 author: saudas
 manager: saudas
-ms.service: container-service
 ms.topic: article
 ms.date: 09/11/2019
 ms.author: saudas
-ms.openlocfilehash: 10ec07cab94184810e083c643e862cebe8e2431c
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 6d00fd72c338fc101420bf78b5608516715d44ad
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121434"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77592974"
 ---
 # <a name="preview---use-managed-identities-in-azure-kubernetes-service"></a>Предварительный просмотр — использование управляемых удостоверений в службе Kubernetes Azure
 

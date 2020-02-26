@@ -3,7 +3,7 @@ title: Настройка ключей, управляемых клиентом,
 description: Узнайте, как настроить ключи, управляемые клиентом (CMK) в Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: 4858e2099baa82226766ecfce32b39471c3b96cd
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.author: yelevin
+ms.openlocfilehash: bc2fa02925e7f5c671085eb87ca0431d3fca7691
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845317"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587963"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Настройка ключа, управляемого клиентом Azure Sentinel
 
@@ -52,7 +52,7 @@ ms.locfileid: "76845317"
 
 5.  Включите CMK в Azure Sentinel.
 
-6.  включение Azure Sentinel;
+6.  Включите метку Azure.
 
 ### <a name="step-1-create-an-azure-key-vault-and-storing-key"></a>Шаг 1. Создание Azure Key Vault и хранение ключа
 
@@ -126,7 +126,7 @@ Azure Sentinel работает с Cosmos DB в качестве дополни�
 
 Если вы используете один и тот же ключ в Azure Sentinel и в Log Analytics, необходимо явным образом обновить ресурс кластера в Log Analytics с помощью новой версии ключа Azure Key Vault. Дополнительные сведения см. в разделе [Azure Monitor CMKный поворот](../azure-monitor/platform/customer-managed-keys.md#cmk-kek-rotation).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как настроить ключ, управляемый клиентом, в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

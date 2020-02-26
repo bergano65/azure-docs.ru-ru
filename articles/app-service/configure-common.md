@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: seodec18
-ms.openlocfilehash: 021941339bbbf72112628c54f5b05d5fd305bd0f
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: ce0a170a629f347e2687a2e9f63fb3438fe2bd2f
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198587"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77592532"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -168,6 +168,8 @@ ms.locfileid: "77198587"
     - **Разрядность: 32**-разрядная или 64-разрядная.
     - **Протокол WebSocket**: например, для [ASP.NET SignalR] или [Socket.IO](https://socket.io/).
     - **Always on**: Обеспечьте загрузку приложения даже при отсутствии трафика. Он необходим для непрерывных веб-заданий или для веб-заданий, запускаемых с помощью выражения CRON.
+      > [!NOTE]
+      > С помощью функции Always On нельзя управлять конечной точкой. Он всегда отправляет запрос в корневую папку приложения.
     - **Версия управляемого конвейера**: [режим конвейера]IIS. Если у вас есть устаревшее приложение, для которого требуется более старая версия IIS, задайте **классический** .
     - **Версия HTTP**: значение **2,0** , чтобы включить поддержку протокола [HTTPS/2](https://wikipedia.org/wiki/HTTP/2) .
     > [!NOTE]

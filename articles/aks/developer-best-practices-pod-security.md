@@ -3,16 +3,15 @@ title: Рекомендации для разработчиков. Обеспе�
 description: Рекомендации для разработчиков по защите групп pod в службе контейнеров Azure (AKS)
 services: container-service
 author: zr-msft
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: zarhoads
-ms.openlocfilehash: 17f281aeb2ef3f1f32f3e13fe66fe8b74b1d9116
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: eaeb81d7f93124f1f3dedf9676314b1b786d8571
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547682"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595847"
 ---
 # <a name="best-practices-for-pod-security-in-azure-kubernetes-service-aks"></a>Рекомендации по защите групп pod в Службе контейнеров Azure (AKS)
 

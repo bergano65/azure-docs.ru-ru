@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 1d82261d4b5c1a66498c33610670d7a38acbb197
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 91480b3ba0a2bbd3e8c31adb931f5baabe1b07ce
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152335"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77605595"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -91,7 +91,7 @@ os.system(f"pip install scikit-misc")
 
     ![Выполнить входную карту Python](media/module/python-module.png)
 
-4. Чтобы включить новые пакеты или код Python, добавьте сжатый ZIP-файл, содержащий эти настраиваемые ресурсы, в **пакет сценариев**. Вход в **пакет сценариев** должен быть ZIP-файлом, уже загруженным в рабочую область. 
+4. Чтобы включить новые пакеты или код Python, добавьте сжатый ZIP-файл, содержащий эти настраиваемые ресурсы, в **пакет сценариев**. Вход в **пакет сценариев** должен быть ZIP-файлом, переданным в рабочую область в виде набора данных типа файлов. 
 
     Любой файл, содержащийся в загруженном ZIP-архиве, можно использовать во время выполнения конвейера. Если архив содержит структуру каталогов, структура сохраняется, но необходимо добавить в путь каталог с именем **src** .
 

@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 01/27/2019
 ms.author: memildin
-ms.openlocfilehash: 81ef598c846d98548be2d3e7647166d655398921
-ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
+ms.openlocfilehash: c286efcfad78a8f7acf9974605d53ed3cc06a09e
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75912811"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604534"
 ---
 # <a name="protect-your-azure-app-service-web-apps-and-apis"></a>Защита веб-приложений и API службы приложений Azure
 
@@ -57,12 +57,11 @@ ms.locfileid: "75912811"
 
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 В этой статье вы ознакомились с подробными сведениями о возможностях мониторинга в центре безопасности Azure. Дополнительные сведения о центре безопасности Azure см. в следующих статьях:
 
 * [Настройка политик безопасности в центре безопасности Azure](tutorial-security-policy.md) — узнайте, как настроить параметры безопасности в центре безопасности Azure.
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) — узнайте, как управлять оповещениями системы безопасности и реагировать на них.
 * [Службы приложений](security-center-virtual-machine-protection.md#app-services). Просмотрите список сред службы приложений с помощью сводок работоспособности.
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

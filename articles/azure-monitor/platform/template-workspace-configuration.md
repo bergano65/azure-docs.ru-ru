@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
-ms.openlocfilehash: 936008a074944c79b8b0bab3beaf3a5aaa5ecc12
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 5fb33a592601a0511fa2523ee0cf8114bc66ca99
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77151825"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77591971"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
@@ -40,10 +40,10 @@ ms.locfileid: "77151825"
 
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область   | workspaces    | 2017-03-15-preview |
+| Рабочая область   | рабочие области    | 2017-03-15-preview |
 | Поиск      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
-| Решение    | solutions     | 2015-11-01-preview |
+| Решение    | решения     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
@@ -77,52 +77,52 @@ ms.locfileid: "77151825"
             }
         },
       "pricingTier": {
-      "type": "string",
-      "allowedValues": [
-        "pergb2018",
-        "Free",
-        "Standalone",
-        "PerNode",
-        "Standard",
-        "Premium"
-      ],
-      "defaultValue": "pergb2018",
-      "metadata": {
+        "type": "string",
+        "allowedValues": [
+          "pergb2018",
+          "Free",
+          "Standalone",
+          "PerNode",
+          "Standard",
+          "Premium"
+          ],
+        "defaultValue": "pergb2018",
+        "metadata": {
         "description": "Pricing tier: PerGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
-           }
-       },
-        "location": {
-            "type": "String",
-            "allowedValues": [
-              "australiacentral", 
-              "australiaeast", 
-              "australiasoutheast", 
-              "brazilsouth",
-              "canadacentral", 
-              "centralindia", 
-              "centralus", 
-              "eastasia", 
-              "eastus", 
-              "eastus2", 
-              "francecentral", 
-              "japaneast", 
-              "koreacentral", 
-              "northcentralus", 
-              "northeurope", 
-              "southafricanorth", 
-              "southcentralus", 
-              "southeastasia", 
-              "uksouth", 
-              "ukwest", 
-              "westcentralus", 
-              "westeurope", 
-              "westus", 
-              "westus2" 
-            ],
-            "metadata": {
-              "description": "Specifies the location in which to create the workspace."
-            }
         }
+      },
+      "location": {
+        "type": "String",
+        "allowedValues": [
+        "australiacentral", 
+        "australiaeast", 
+        "australiasoutheast", 
+        "brazilsouth",
+        "canadacentral", 
+        "centralindia", 
+        "centralus", 
+        "eastasia", 
+        "eastus", 
+        "eastus2", 
+        "francecentral", 
+        "japaneast", 
+        "koreacentral", 
+        "northcentralus", 
+        "northeurope", 
+        "southafricanorth", 
+        "southcentralus", 
+        "southeastasia", 
+        "uksouth", 
+        "ukwest", 
+        "westcentralus", 
+        "westeurope", 
+        "westus", 
+        "westus2" 
+        ],
+      "metadata": {
+        "description": "Specifies the location in which to create the workspace."
+        }
+      }
     },
     "resources": [
         {
@@ -131,9 +131,8 @@ ms.locfileid: "77151825"
             "apiVersion": "2017-03-15-preview",
             "location": "[parameters('location')]",
             "properties": {
-                "sku": { 
-                    "name": "CapacityReservation",
-                    "capacityReservationLevel": 100
+                "sku": {
+          "name": "[parameters('pricingTier')]"
                 },
                 "retentionInDays": 120,
                 "features": {
@@ -146,6 +145,13 @@ ms.locfileid: "77151825"
        ]
     }
     ```
+
+> [Сведения] для параметров резервирования емкости используйте следующие свойства в разделе "SKU":
+
+>   "Name": "КапаЦитиресерватион",
+
+>   "КапаЦитиресерватионлевел": 100
+
 
 2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
@@ -651,7 +657,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 

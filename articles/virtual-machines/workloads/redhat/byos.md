@@ -14,16 +14,19 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: a54e1c9cbc9a80139d71a89f86ac51ecf5ce9902
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: a53a27a92b393c38d1f49efbd50d91fa1a2e9657
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190502"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77597700"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
 Образы Red Hat Enterprise Linux (RHEL) доступны в Azure посредством модели с оплатой по мере использования (PAYG) или с помощью собственной подписки (образ Red Hat Gold). В этом документе представлен обзор образов Red Hat Gold в Azure.
+
+>[!NOTE]
+> Образы RHEL BYOS Gold доступны в общедоступных (коммерческих) и облачных облаках Azure. Они недоступны в Azure для Китая или в облаке Блаккфорест Azure.
 
 ## <a name="important-points-to-consider"></a>Важные моменты, которые следует учитывать
 
