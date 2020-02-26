@@ -2,17 +2,14 @@
 title: Основные понятия хранения данных в Службе Azure Kubernetes (AKS)
 description: Узнайте о хранении данных в Службе Azure Kubernetes (AKS), включая тома, постоянные тома, классы хранилищ и утверждения.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/01/2019
-ms.author: mlearned
-ms.openlocfilehash: d6c14f78fd3cefa5ec41a686ca385639eb3fcb67
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 4bb19d7da971a82aef9c0e1fc092cc648ac49c4c
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549280"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596000"
 ---
 # <a name="storage-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности хранения данных в Службе Azure Kubernetes (AKS)
 
@@ -121,7 +118,7 @@ spec:
         claimName: azure-managed-disk
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
 

@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
-ms.openlocfilehash: e95a0b4b9f071a0fd3949d50eeee17b811dfb8ea
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: e01be0442f6d968613ffd800f076705d33e3e16e
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064824"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598210"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Синтаксис запросов маршрутизации сообщений центра Интернета вещей
 
@@ -88,7 +88,7 @@ $contentEncoding = 'UTF-8' AND processingPath = 'hot'
 
 Полный список поддерживаемых операторов и функций показан в [выражении и условиях](iot-hub-devguide-query-language.md#expressions-and-conditions).
 
-## <a name="message-routing-query-based-on-message-body"></a>Запрос маршрутизации сообщений на основе текста сообщения 
+## <a name="message-routing-query-based-on-message-body"></a>Запрос маршрутизации сообщений на основе текста сообщения
 
 Чтобы включить обработку запросов к тексту сообщения, сообщение должно быть в формате JSON в кодировке UTF-8, UTF-16 или UTF-32. Свойству `contentType` должно быть присвоено значение `application/JSON`, а `contentEncoding` — одна из поддерживаемых кодировок UTF в системном свойстве. Если эти свойства не указаны, центр Интернета вещей не будет вычислять выражение запроса к тексту сообщения. 
 
@@ -140,6 +140,10 @@ deviceClient.sendEvent(message, (err, res) => {
     if (res) console.log('status: ' + res.constructor.name);
 });
 ```
+
+> [!NOTE] 
+> В этом примере показано, как управлять кодировкой текста в JavaScript. Если вы хотите просмотреть пример в C#, скачайте [примеры Azure IOT C# ](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip). Распакуйте файл master.zip. В файле Program.cs решения Visual Studio *SimulatedDevice*показано, как кодировать и отправить сообщения в центр Интернета вещей. Это тот же пример, который используется для проверки маршрутизации сообщений, как описано в [руководстве по маршрутизации сообщений](tutorial-routing.md). В нижней части Program.cs он также имеет метод для чтения в одном из закодированных файлов, декодирует его и записывает обратно в виде ASCII, чтобы можно было прочитать его. 
+
 
 ### <a name="query-expressions"></a>Выражения запросов
 

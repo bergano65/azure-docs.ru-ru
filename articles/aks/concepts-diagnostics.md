@@ -3,16 +3,15 @@ title: Обзор диагностики службы Azure Kubernetes (AKS)
 description: Узнайте, как самостоятельно диагностировать кластеры в службе Kubernetes Azure.
 services: container-service
 author: yunjchoi
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: yunjchoi
-ms.openlocfilehash: 2148c6c8c9d78355847b3240b54349f1e7789921
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 11b469425a80d588462e0332c973260cc3b56992
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291385"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596187"
 ---
 # <a name="azure-kubernetes-service-aks-diagnostics-overview"></a>Обзор диагностики службы Azure Kubernetes (AKS)
 
@@ -76,9 +75,9 @@ ms.locfileid: "76291385"
 
 - Сбои авторизации узла
 - ошибки 401
-- Ошибки 403
+- ошибки 403
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Собирайте журналы, чтобы упростить устранение неполадок кластера с помощью [AKS Periscope](https://aka.ms/aksperiscope).
 

@@ -1,10 +1,10 @@
 ---
-title: Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure | Документация Майкрософт
+title: Настройка Pacemaker в SLES в Azure | Документация Майкрософт
 description: Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: mssedusch
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
-ms.author: sedusch
-ms.openlocfilehash: 74c8c7dfc2beda2d242bc21e12293dc6f3c1cffe
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.author: radeltch
+ms.openlocfilehash: 06c92797f2cab96a9e0c423b0f0f754e57b99b14
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77470842"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598448"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -571,7 +571,7 @@ o- / ...........................................................................
 1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Нажмите кнопку Сохранить.
+1. Щелкните Сохранить
 
 Повторите предыдущие шаги для второго узла кластера.
 
@@ -633,7 +633,7 @@ sudo crm configure property maintenance-mode=false
      Предупреждение: ЦИБ-начальной загрузки — параметры: неизвестный атрибут "hostName_ <strong>HostName</strong>"  
    > Эти предупреждения можно игнорировать.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

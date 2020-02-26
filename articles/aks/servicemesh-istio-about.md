@@ -2,20 +2,19 @@
 title: Общие сведения о Istio
 description: Получите общие сведения о Istio
 author: paulbouwer
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: 3db2a3d75df08e7c668b1983ad9b4493446475df
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 8518e30a54c2486abf84cd9ac026cc4dccb3fa84
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530515"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593906"
 ---
 # <a name="istio"></a>Istio
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 [Istio][istio] — это полнофункциональная, настраиваемая и расширяемая сетка служб.
 
@@ -85,7 +84,7 @@ Istio хорошо подходит и предлагается для след�
 
 - Сетка службы с несколькими кластерами
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующей документации описывается, как можно установить Istio в службе Kubernetes Azure (AKS).
 

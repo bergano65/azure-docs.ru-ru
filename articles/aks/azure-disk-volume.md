@@ -2,17 +2,14 @@
 title: Создание тома "Статический" для групп контейнеров в Службе Azure Kubernetes (AKS)
 description: Сведения о том, как вручную создавать том с дисками Azure для использования с группой контейнеров в Службе Azure Kubernetes (AKS)
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
-ms.author: mlearned
-ms.openlocfilehash: 9017c8cf721fbb9c493dc18da769b9d6e83ddf05
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: b84f62dd02aa29a4c1aa64e3235c0a1e7cc66522
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "67616134"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596748"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Создание вручную и использование тома с дисками в Службе Azure Kubernetes (AKS)
 
@@ -23,7 +20,7 @@ ms.locfileid: "67616134"
 
 Дополнительные сведения о томах Kubernetes см. [в статье параметры хранения для приложений в AKS][concepts-storage].
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
@@ -33,7 +30,7 @@ ms.locfileid: "67616134"
 
 При создании диска Azure для использования с AKS можно создать ресурс диска в группе ресурсов **узла**. Такой подход позволит кластеру AKS получить доступ к ресурсу диска и управлять им. Если вместо этого вы создадите диск в отдельной группе ресурсов, необходимо предоставить для субъекта-службы Azure Kubernetes (AKS) кластера роль `Contributor` в группе ресурсов диска.
 
-В рамках этой статьи создайте диск в группе ресурсов узла. Сначала получите имя группы ресурсов с помощью команды [AZ AKS показывать][az-aks-show] и добавьте `--query nodeResourceGroup` параметр запроса. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
+В рамках этой статьи создайте диск в группе ресурсов узла. Сначала получите имя группы ресурсов с помощью команды [AZ AKS показывать][az-aks-show] и добавьте параметр запроса `--query nodeResourceGroup`. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
 ```azurecli-interactive
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -41,7 +38,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeR
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Теперь создайте диск с помощью команды [AZ Disk Create][az-disk-create] . Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса диска, например *myAKSDisk*. В следующем примере создается *20*-гиб диск и выводится идентификатор диска после его создания. Если необходимо создать диск для использования с контейнерами Windows Server (в настоящее время в предварительной версии в AKS), `--os-type windows` добавьте параметр для правильного форматирования диска.
+Теперь создайте диск с помощью команды [AZ Disk Create][az-disk-create] . Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса диска, например *myAKSDisk*. В следующем примере создается *20*-гиб диск и выводится идентификатор диска после его создания. Если необходимо создать диск для использования с контейнерами Windows Server (в настоящее время это предварительная версия в AKS), добавьте параметр `--os-type windows`, чтобы правильно отформатировать диск.
 
 ```azurecli-interactive
 az disk create \
@@ -62,7 +59,7 @@ az disk create \
 
 ## <a name="mount-disk-as-volume"></a>Подключите диска в качестве тома
 
-Чтобы установить диск Azure в pod, настройте том в спецификации контейнера. Создайте файл `azure-disk-pod.yaml` со следующим содержимым. Обновите `diskName`, указав имя диска, созданного на предыдущем шаге, и `diskURI`, указав идентификатор диска, содержащийся в выходных данных команды создания диска. При необходимости обновите `mountPath`. Это путь, по которому диск Azure подключен в pod. Для контейнеров Windows Server (в настоящее время на этапе предварительной версии в AKS) укажите *mountPath* с помощью соглашения о пути Windows, например *"d:"* .
+Чтобы подключить диск Azure к модулю Pod, настройте том в спецификации контейнера. Создайте новый файл с именем `azure-disk-pod.yaml` со следующим содержимым. Обновите `diskName`, указав имя диска, созданного на предыдущем шаге, и `diskURI`, указав идентификатор диска, содержащийся в выходных данных команды создания диска. При необходимости обновите `mountPath`. Это путь, по которому диск Azure подключен в pod. Для контейнеров Windows Server (в настоящее время на этапе предварительной версии в AKS) укажите *mountPath* с помощью соглашения о пути Windows, например *"d:"* .
 
 ```yaml
 apiVersion: v1

@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 79e7f2a8dad59de4dc9d84a26d24c82889c14c2f
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 6c002838d5a4f515a594d61e5137196c4d391795
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77493323"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77605434"
 ---
 # <a name="updated-ndv2-series-preview"></a>Обновленные серии NDv2 (Предварительная версия)
 
@@ -24,13 +24,16 @@ NDv2 работает на основе 8 видеопроцессоров NVIDI
 
 Как критически, NDv2 построены как для вычислительно-интенсивного масштабирования (с помощью 8 GPU на каждую виртуальную машину), так и для горизонтального масштабирования (работа нескольких виртуальных машин). Серия NDv2 теперь поддерживает серверную сеть 100-Gigabit InfiniBand ЕДР, аналогичную той, которая доступна на серии ХБ виртуальной машины HPC, чтобы обеспечить высокопроизводительную кластеризацию для параллельных сценариев, включая распределенное обучение для AI и ML. Эта Серверная сеть поддерживает все основные протоколы InfiniBand, включая те, которые используются библиотеками NCCL2 NVIDIA, что позволяет эффективно выполнять кластеризацию GPU.
 
+
+> [!NOTE]
 > При [включении InfiniBand](https://docs.microsoft.com/azure/virtual-machines/workloads/hpc/enable-infiniband) на ND40rs_v2 виртуальной машине используйте драйвер Mellanox офед 4.7-1.0.0.1.
-
+>
 > Из-за увеличения памяти GPU для новой виртуальной машины ND40rs_v2 требуется использование [виртуальных машин поколения 2](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) и образов Marketplace. 
-
+>
 > [Зарегистрируйтесь, чтобы запросить ранний доступ к предварительной версии виртуальной машины NDv2.](https://aka.ms/AzureNDrv2Preview)
-
+>
 > Примечание. ND40s_v2 с 16 ГБ памяти для каждого GPU больше не доступен для предварительной версии и заменен обновленной ND40rs_v2.
+
 <br>
 
 Хранилище класса Premium: поддерживается

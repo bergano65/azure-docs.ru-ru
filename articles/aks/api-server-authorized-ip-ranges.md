@@ -2,17 +2,14 @@
 title: IP-диапазоны авторизации сервера API в службе Kubernetes Azure (AKS)
 description: Узнайте, как защитить кластер с помощью диапазона IP-адресов для доступа к серверу API в службе Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 11/05/2019
-ms.author: mlearned
-ms.openlocfilehash: 5f3e6cf8c5de8d5f3de17ad0b5d4bb4c004c06df
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 80a8504e42eda966554d0151f54668015cf7ee83
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442984"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596715"
 ---
 # <a name="secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Безопасный доступ к серверу API с помощью диапазонов полномочных IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -23,7 +20,7 @@ ms.locfileid: "75442984"
 > [!IMPORTANT]
 > В новых кластерах разрешенные диапазоны IP-адресов сервера API поддерживаются только в подсистеме балансировки нагрузки уровня " *стандартный* ". Существующие кластеры с подсистемой балансировки нагрузки уровня " *базовый* " и "ПОЛНОМОЧНЫЙ IP-адрес сервера API" будут продолжать работать, как есть, но не могут быть перенесены в *стандартный* балансировщик нагрузки SKU. Эти существующие кластеры также продолжат работать при обновлении Kubernetes версии или плоскости управления.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Допустимые диапазоны IP-адресов сервера API работают только для создаваемых кластеров AKS. В этой статье показано, как создать кластер AKS с помощью Azure CLI.
 
@@ -65,7 +62,7 @@ az aks create \
 
 ### <a name="specify-the-outbound-ips-for-the-standard-sku-load-balancer"></a>Укажите исходящие IP-адреса для стандартного балансировщика нагрузки SKU
 
-При создании кластера AKS, если указаны исходящие IP-адреса или префиксы для кластера, эти адреса или префиксы также разрешены. Пример.
+При создании кластера AKS, если указаны исходящие IP-адреса или префиксы для кластера, эти адреса или префиксы также разрешены. Например:
 
 ```azurecli-interactive
 az aks create \
@@ -117,7 +114,7 @@ az aks update \
 
 ## <a name="disable-authorized-ip-ranges"></a>Отключение диапазонов IP-адресов с правом доступа
 
-Чтобы отключить допустимые диапазоны IP-адресов, выполните команду [AZ AKS Update][az-aks-update] и укажите пустой диапазон, чтобы отключить полномочные IP-адреса сервера API. Пример.
+Чтобы отключить допустимые диапазоны IP-адресов, выполните команду [AZ AKS Update][az-aks-update] и укажите пустой диапазон, чтобы отключить полномочные IP-адреса сервера API. Например:
 
 ```azurecli-interactive
 az aks update \
@@ -126,7 +123,7 @@ az aks update \
     --api-server-authorized-ip-ranges ""
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы включили IP-диапазоны разрешенных серверов API. Этот подход является одной из частей того, как можно запустить защищенный кластер AKS.
 

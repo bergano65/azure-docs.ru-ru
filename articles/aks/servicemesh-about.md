@@ -2,16 +2,15 @@
 title: О сетчатых службах
 description: Получите общие сведения о сетевых картах, их архитектуре и возможностях, а также критерии, которые следует учитывать при выборе одного из них для развертывания.
 author: paulbouwer
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: 226a4e5cf97be2e23ef13a95b80be07b7fbf5d7a
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: eca49a3fac1ea0398ebe1d05bde20fbca3c81232
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530710"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594317"
 ---
 # <a name="about-service-meshes"></a>О сетчатых службах
 
@@ -29,7 +28,7 @@ ms.locfileid: "72530710"
 
 - **Наблюдаемость** — понимание того, как ваши службы соединяются с трафиком, который проходит между ними. Получение метрик, журналов и трассировок для всего трафика в кластере, входящих и исходящих данных. Добавьте в приложения возможности распределенной трассировки.
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Сетка служб обычно состоит из плоскости управления и плоскости данных.
 
@@ -51,7 +50,7 @@ ms.locfileid: "72530710"
 - **Политика** — контроль доступа, пределы скорости, квоты
 - **Тестирование** — внедрение ошибок
 
-### <a name="security"></a>Безопасность
+### <a name="security"></a>безопасность
 
 - **Шифрование** — mTLS, Управление сертификатами, внешний ЦС
 - **Strong удостоверение** — спиффе или аналогичное

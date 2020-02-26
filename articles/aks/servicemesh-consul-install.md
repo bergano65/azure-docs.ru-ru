@@ -2,17 +2,16 @@
 title: Установка Consul в службе Kubernetes Azure (AKS)
 description: Узнайте, как установить и использовать Consul для создания сетки службы в кластере службы Kubernetes Azure (AKS).
 author: dstrebel
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: dastrebe
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: d5d0a575c3fb662df034b66a48135ac33393f95c
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 06ca2327b2859ffb0f5b314d7b92082d5a83dc48
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73885405"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594287"
 ---
 # <a name="install-and-use-consul-in-azure-kubernetes-service-aks"></a>Установка и использование Consul в службе Kubernetes Azure (AKS)
 
@@ -25,14 +24,14 @@ ms.locfileid: "73885405"
 >
 > Выпуски `1.6.x` Consul можно запускать для Kubernetes версий `1.13+`. Дополнительные версии Consul можно найти в [выпусках GitHub-Consul][consul-github-releases] , а сведения о каждой из выпусков см. в [заметках о выпуске Consul][consul-release-notes].
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Установка компонентов Consul на AKS
 > * Проверка установки Consul
 > * Удаление Consul из AKS
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` подключение к кластеру. Если вам нужна помощь по любому из этих элементов, см. [Краткое руководство по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
 
@@ -157,7 +156,7 @@ helm delete --purge consul
 kubectl delete namespace consul
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об установке и параметрах конфигурации для Consul см. в следующих официальных статьях по Consul:
 

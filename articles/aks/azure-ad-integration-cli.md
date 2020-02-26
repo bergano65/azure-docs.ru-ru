@@ -2,17 +2,14 @@
 title: rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 04/16/2019
-ms.author: mlearned
-ms.openlocfilehash: 32138c228284f9487b816583dd1f701556bbcb95
-ms.sourcegitcommit: 78f367310e243380b591ff10f2500feca93f5d0a
+ms.openlocfilehash: fef22b1b2d81f76e95a15c0e3a746440b95df8ca
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544221"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596612"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 

@@ -2,17 +2,14 @@
 title: Вход через SSH в узлы кластера Службы Azure Kubernetes (AKS)
 description: Узнайте, как создать SSL-подключение к узлам кластера Службы Azure Kubernetes (AKS) для задач устранения неполадок и обслуживания.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 07/31/2019
-ms.author: mlearned
-ms.openlocfilehash: 5ff79dc597571f4e6ef3d7c2c20bce61c0d061ad
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: dfdcda40a24142f85bbeb360aacf0971d72d181f
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926376"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593637"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
@@ -20,7 +17,7 @@ ms.locfileid: "74926376"
 
 В этой статье показано, как создать SSH-подключение к узлу AKS с использованием его частного IP-адреса.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
@@ -199,7 +196,7 @@ aks-nodepool1-79590246-0  10.240.0.4
 
 Закончив, `exit` из сеанса SSH, а затем `exit` из интерактивного сеанса контейнера. Когда сеанса с этим контейнером закроется, модуль pod, используемый для доступа по протоколу SSH, будет удален из кластера AKS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если требуются дополнительные данные по устранению неполадок, можно [Просмотреть журналы kubelet][view-kubelet-logs] или [Просмотреть журналы главного узла Kubernetes][view-master-logs].
 

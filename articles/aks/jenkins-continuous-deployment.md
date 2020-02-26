@@ -2,17 +2,16 @@
 title: Руководство. Развертывание из GitHub в Службе Azure Kubernetes (AKS) с помощью Jenkins
 description: Настройка Jenkins для обеспечения непрерывной интеграции (CI) и непрерывного развертывания (CD) из GitHub в Службе Azure Kubernetes (AKS)
 services: container-service
-ms.service: container-service
 author: zr-msft
 ms.author: zarhoads
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: e46e2c2933ee9afda860b68b10c135ac75a5d247
-ms.sourcegitcommit: b4665f444dcafccd74415fb6cc3d3b65746a1a31
+ms.openlocfilehash: fd754b539a9b0ba3d47ddd2228365dbd09d6e6df
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72263926"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595490"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-aks-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе Azure Kubernetes (AKS) с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
@@ -27,7 +26,7 @@ ms.locfileid: "72263926"
 > * создание задания сборки Jenkins и веб-перехватчика GitHub для автоматических сборок;
 > * тестирование конвейера CI/CD для обновления приложения в AKS на основе фиксаций кода в GitHub.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -311,7 +310,7 @@ SHOWHOST = 'false'
 
 ![Пример приложения для голосования Azure в AKS, обновленный с помощью задания сборки Jenkins](media/aks-jenkins/azure-vote-updated.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как использовать Jenkins в рамках решения CI/CD. AKS можно интегрировать с другими решениями CI/CD и средствами автоматизации, такими как [проект DevOps Azure][azure-devops] или [созданием кластера AKS с Ansible][aks-ansible].
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 11fdaa0d547e588daa9d264c2393606705554a17
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 2983be507fdc40d033623afa37c72eb2507d99ca
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77157280"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77597174"
 ---
 # <a name="storage-account-overview"></a>Общие сведения об учетной записи хранения
 
@@ -72,7 +72,7 @@ ms.locfileid: "77157280"
 
 Учетная запись Филестораже — это специализированная учетная запись хранения, используемая для хранения и создания общих файловых ресурсов уровня "Премиум". Этот тип учетной записи хранения поддерживает файлы, но не блочные, добавочные, страничные BLOB-объекты, таблицы или очереди.
 
-Учетные записи Филестораже предлагают уникальные характеристики производительности, такие как пакетная операция ввода-вывода в секунду. Дополнительные сведения об этих характеристиках см. в разделе " [уровни производительности файлового ресурса](../files/storage-files-planning.md#file-share-performance-tiers) " раздела "рекомендации по планированию файлов".
+Учетные записи Филестораже обеспечивают уникальные характеристики производительности, такие как разбивка на количество операций ввода-вывода в секунду. Дополнительные сведения об этих характеристиках см. в разделе " [уровни хранилища общей папки](../files/storage-files-planning.md#storage-tiers) " раздела "планирование файлов".
 
 ## <a name="naming-storage-accounts"></a>Именование учетных записей хранения
 
@@ -185,7 +185,7 @@ AzCopy — это программа командной строки Windows, п
 
 [!INCLUDE [storage-account-billing-include](../../../includes/storage-account-billing-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [создать учетную запись хранения;](storage-account-create.md)
 - [Создание учетной записи хранения блочных BLOB-объектов](../blobs/storage-blob-create-account-block-blob.md)

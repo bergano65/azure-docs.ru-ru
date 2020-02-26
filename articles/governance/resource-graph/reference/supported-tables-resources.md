@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов диспетчер ресурсов
 description: Укажите список типов ресурсов диспетчер ресурсов, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 02/20/2020
+ms.date: 02/25/2020
 ms.topic: reference
-ms.openlocfilehash: 130b11f0060f7f27091a21652aa481f0340b288f
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: dc08c4a33ec9e0c20b865ffa4d7c6ff9d5248e90
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77530228"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77602559"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Graph ресурсов Azure и Справочник по типам ресурсов
 
@@ -34,7 +34,7 @@ ms.locfileid: "77530228"
 - Microsoft. Resources/Subscriptions
 - Microsoft. Resources/Subscriptions/resourcegroups
 
-## <a name="resources"></a>ресурсов
+## <a name="resources"></a>ресурсы
 
 - 84codes. клаудамкп/серверы
 - Citrix. Services/ксенаппессентиалс
@@ -116,6 +116,7 @@ ms.locfileid: "77530228"
 - Microsoft. COMPUTE/шаредвмимажес
 - Microsoft. COMPUTE/шаредвмимажес/Versions
 - Microsoft. COMPUTE/моментальные снимки
+- Microsoft. COMPUTE/сшпубликкэйс
 - Microsoft. COMPUTE/virtualmachines
 - Microsoft. COMPUTE/virtualmachines/Extensions
 - Microsoft. COMPUTE/virtualmachinescalesets
@@ -277,6 +278,7 @@ ms.locfileid: "77530228"
 - Microsoft. Network/фиреваллполиЦиес
 - Microsoft. Network/фронтдурс
 - Microsoft. Network/фронтдурвебаппликатионфиреваллполиЦиес
+- Microsoft. Network/ипаллокатионс
 - Microsoft. Network/ипграупс
 - Microsoft. Network/loadbalancers
 - Microsoft. Network/локалнетворкгатевайс
@@ -454,7 +456,7 @@ ms.locfileid: "77530228"
 - Microsoft. Security/секуритистатусес/virtualmachines
 - Microsoft. Security/секуритистатусессуммариес
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [языке запросов](../concepts/query-language.md).
 - Узнайте больше о том, как [изучать ресурсы](../concepts/explore-resources.md).

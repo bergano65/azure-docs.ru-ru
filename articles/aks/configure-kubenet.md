@@ -2,18 +2,15 @@
 title: Настройка сети kubenet в Службе Azure Kubernetes (AKS)
 description: Узнайте, как настроить сеть kubenet (базовую) в Службе Azure Kubernetes (AKS), чтобы развернуть кластер AKS в существующей виртуальной сети и подсети.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 06/26/2019
-ms.author: mlearned
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: 382895c1b5a4cb2bc88ff2371cec59267ea4e176
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9931c752d5ce33beb41dc00194c27d06b9469807
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442937"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595899"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -23,7 +20,7 @@ ms.locfileid: "75442937"
 
 В этой статье показано, как с помощью сети *kubenet* создать и использовать подсеть виртуальной сети для кластера AKS. Дополнительные сведения о сетевых параметрах и вопросах см. в разделе [Основные понятия сети для Kubernetes и AKS][aks-network-concepts].
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Виртуальная сеть для кластера AKS должна разрешать исходящее подключение к Интернету.
 * Не создавайте больше одного кластера AKS в одной подсети.
@@ -35,7 +32,7 @@ ms.locfileid: "75442937"
 > [!WARNING]
 > Чтобы использовать пулы узлов Windows Server (в настоящее время в предварительной версии в AKS), необходимо использовать Azure CNI. Использование кубенет в качестве сетевой модели недоступно для контейнеров Windows Server.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Требуется Azure CLI версии 2.0.65 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
@@ -198,7 +195,7 @@ az aks create \
 
 При создании кластера AKS создается группа безопасности сети и таблица маршрутов. Эти сетевые ресурсы управляются плоскостью управления AKS. Группа безопасности сети автоматически связывается с виртуальными сетевыми адаптерами на узлах. Таблица маршрутов автоматически связывается с подсетью виртуальной сети. Правила группы безопасности сети и таблицы маршрутов и автоматически обновляются по мере создания и предоставления служб.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Приступите к [созданию приложений с помощью Azure dev Spaces][dev-spaces] или [с помощью черновика][use-draft]или [развертыванию приложений с помощью Helm][use-helm].
 

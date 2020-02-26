@@ -3,16 +3,15 @@ title: Создание сервера Ubuntu NFS (сетевой файлово
 description: Узнайте, как вручную создать том сервера Ubuntu Linux NFS для использования с модулями Pod в службе Azure Kubernetes Service (AKS).
 services: container-service
 author: ozboms
-ms.service: container-service
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: obboms
-ms.openlocfilehash: 9b9c4b326596887774d9dfc0dd792052ec672be2
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: e5676710bc47557318f3e2adcf36ec0ed13d47de
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77063821"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596629"
 ---
 # <a name="manually-create-and-use-an-nfs-network-file-system-linux-server-volume-with-azure-kubernetes-service-aks"></a>Создание и использование тома NFS сервера Linux (сетевой файловой системы) вручную с помощью службы Kubernetes Azure (AKS)
 Обмен данными между контейнерами часто является необходимым компонентом служб и приложений, основанных на контейнерах. Обычно у вас есть различные модули, которым требуется доступ к одной и той же информации на внешнем постоянном томе.    
@@ -141,7 +140,7 @@ spec:
       type: nfs
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 Если не удается подключиться к серверу из кластера, то проблема может быть в экспортированном или родительском каталоге и не имеет достаточных разрешений для доступа к серверу.
 
 Убедитесь, что каталог экспорта и его родительский каталог имеют разрешения 777.
@@ -155,7 +154,7 @@ ls -l
 Чтобы получить полное пошаговое руководство или помочь вам в отладке программы установки сервера NFS, ознакомьтесь с подробным руководством:
   - [Учебник по NFS][nfs-tutorial]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
 

@@ -2,17 +2,14 @@
 title: Использование политик безопасности Pod в службе Kubernetes Azure (AKS)
 description: Узнайте, как управлять допуском Pod с помощью Подсекуритиполици в службе Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 04/17/2019
-ms.author: mlearned
-ms.openlocfilehash: 5aec645c19ee5f813fdefb57d728c14688da8712
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: bc22a577777e50724fbafa04cf01f28362113cc7
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926410"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77592838"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительная версия — защита кластера с помощью политик безопасности Pod в службе Kubernetes Azure (AKS)
 
@@ -24,7 +21,7 @@ ms.locfileid: "74926410"
 > * [Политики поддержки AKS][aks-support-policies]
 > * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
@@ -498,7 +495,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как создать политику безопасности Pod, чтобы предотвратить использование привилегированного доступа. Существует множество функций, которые может применять политика, например тип тома или пользователя запуска от имени. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам безопасности Kubernetes Pod][kubernetes-policy-reference].
 

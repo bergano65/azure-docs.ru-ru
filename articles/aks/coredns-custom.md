@@ -3,16 +3,15 @@ title: Настройка Кореднс для службы Kubernetes Azure (A
 description: Узнайте, как настроить Кореднс для добавления поддоменов или расширения пользовательских конечных точек DNS с помощью службы Kubernetes Azure (AKS).
 services: container-service
 author: jnoller
-ms.service: container-service
 ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
-ms.openlocfilehash: 7dd22a6803f5248298afddffaee9c4b83891f5f1
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 78132a53313f4a8ee5c10af340c8dab08c3e42c2
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547920"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595830"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка Кореднс с помощью службы Kubernetes Azure
 
@@ -25,7 +24,7 @@ ms.locfileid: "76547920"
 > [!NOTE]
 > `kube-dns` предлагает различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
@@ -160,7 +159,7 @@ kubectl delete pod --namespace kube-system --selector k8s-app=kube-dns
 
 ## <a name="hosts-plugin"></a>Подключаемый модуль узлов
 
-Так как поддерживаются все встроенные подключаемые модули, это означает, что CoreDNS [Hosts][coredns hosts] также можно настроить подключаемый модуль.
+Так как поддерживаются все встроенные подключаемые модули, это означает, что также можно настроить подключаемый модуль Кореднс [hosts][coredns hosts] .
 
 ```yaml
 apiVersion: v1

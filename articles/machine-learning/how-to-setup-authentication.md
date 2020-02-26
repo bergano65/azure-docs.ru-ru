@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: ce85c45d80a776af84a0987cfbc3f496c2bbb72b
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: fcaa7a0c44851d6b48b40b01af4c8ec992c330b8
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893960"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77602588"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Настройка проверки подлинности для ресурсов Машинное обучение Azure и рабочих процессов
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "75893960"
 
 Общие сведения о безопасности и проверке подлинности в Машинное обучение Azure см. в [статье концепции](concept-enterprise-security.md) .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте [рабочую область Машинного обучения Azure](how-to-manage-workspace.md).
 * [Настройте среду разработки](how-to-configure-environment.md) , чтобы установить пакет sdk для машинное обучение Azure, или используйте [виртуальную машину машинное обучение Azure Notebook](concept-azure-machine-learning-architecture.md#compute-instance) с уже установленным пакетом SDK.
@@ -266,7 +266,7 @@ from azureml.core.webservice import AciWebservice
 
 aci_config = AciWebservice.deploy_configuration(cpu_cores = 1,
                                                 memory_gb = 1,
-                                                auth_enable=True)
+                                                auth_enabled=True)
 ```
 
 Затем можно использовать настраиваемую конфигурацию ACI в развертывании с помощью класса `Model`.
@@ -320,7 +320,7 @@ print(token)
 >
 > Кроме того, чем больше расстояние между регионом кластера и регионом рабочей области, тем дольше будет получена лексема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обучение и развертывание модели классификации изображений](tutorial-train-models-with-aml.md).
 * [Использование модели машинное обучение Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md).

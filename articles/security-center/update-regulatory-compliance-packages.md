@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: f76b5443d6c1e3fd2cebf87cba39ba0a6bbdeaee
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: cfa39799e44cee0a2d36efccd454ccf8ca15157f
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73521791"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603227"
 ---
 # <a name="update-to-dynamic-compliance-packages-in-your-regulatory-compliance-dashboard-preview"></a>Обновление пакетов обеспечения совместимости на панели мониторинга соответствия нормативным требованиям (Предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "73521791"
 
 1. В разделе "отраслевые & нормативные стандарты (Предварительная версия)" вы увидите, что Azure CIS 1.1.0 можно обновить для получения нового содержимого. Нажмите кнопку **Обновить сейчас**. 
 
-1. При необходимости щелкните **добавить дополнительные стандарты** , чтобы открыть страницу **Добавление стандартов соответствия нормативным требованиям** . Там вы можете выполнить поиск вручную для **Azure CI 1.1.0 (новый)** и динамических пакетов для других стандартов соответствия, таких как **NIST SP 800-53 R4**, **SWIFT CSP CSCF-v2020**, **UKO и NHS (Соединенное Королевство)** или **PBMM (Канада)** .
+1. При необходимости щелкните **добавить дополнительные стандарты** , чтобы открыть страницу **Добавление стандартов соответствия нормативным требованиям** . Там вы можете выполнить поиск вручную для **Azure CI 1.1.0 (новый)** и динамических пакетов для других стандартов соответствия, таких **как NIST SP 800-53 R4**, **SWIFT CSP КСКФ-V2020**, **УКО и Великобритания отделения**и **Канада пбмм**.
     
     ![Добавление нормативных пакетов на панель мониторинга соответствия нормативным требованиям центра безопасности Azure](./media/update-regulatory-compliance-packages/security-center-dynamic-regulatory-compliance-additional-standards.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "73521791"
     [панель мониторинга соответствия нормативным требованиям ![, в которой показаны старые и новые Azure CI](media/update-regulatory-compliance-packages/security-center-dynamic-regulatory-compliance-cis-old-and-new.png)](media/update-regulatory-compliance-packages/security-center-dynamic-regulatory-compliance-cis-old-and-new.png#lightbox)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали следующее:
 
@@ -75,6 +75,5 @@ ms.locfileid: "73521791"
 Другие связанные материалы см. в следующих статьях: 
 
 - [Панель мониторинга соответствия нормативным требованиям для центра безопасности](security-center-compliance-dashboard.md)
-- [Работа с политиками безопасности](tutorial-security-policy.md)
-- [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md) . Узнайте, как использовать рекомендации в центре безопасности Azure для защиты ресурсов Azure.
-- [Часто](security-center-faq.md) задаваемые вопросы об использовании центра безопасности Azure.
+- [Использование политик безопасности](tutorial-security-policy.md)
+- [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md). Узнайте о том, как рекомендации Центра безопасности Azure могут помочь вам защитить ресурсы Azure.

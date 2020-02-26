@@ -6,19 +6,16 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: raynew
-ms.openlocfilehash: 99ccd00dbcea7f8eaed2e8e51a64b89c1e0b42a2
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: b60a30e5e30ee81cbaca7d5e4691ccedac2462b6
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028840"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598176"
 ---
 # <a name="set-up-an-appliance-for-physical-servers"></a>Настройка устройства для физических серверов
 
 В этой статье описывается, как настроить устройство службы "миграция Azure", если вы оцениваете физические серверы с помощью средства Azure Migrate: Server (средство оценки серверов).
-
-> [!NOTE]
-> Если упомянутые здесь компоненты еще не отображаются на портале службы "миграция Azure", зависает. Предположительно, они появятся в течение следующей недели.
 
 Устройство "миграция Azure" — это упрощенное устройство, используемое службой "миграция Azure: Оценка серверов" для выполнения следующих задач.
 
@@ -44,7 +41,7 @@ ms.locfileid: "76028840"
 2. В разделе**Обнаружение компьютеров** > **Ваши компьютеры виртуализированы?** выберите **Not virtualized/Other** (Не виртуализированы/Другое).
 3. Нажмите кнопку **Скачать**, чтобы скачать ZIP-файл.
 
-    ![Скачивание виртуальной машины](./media/how-to-set-up-appliance-hyper-v/download-appliance-hyperv.png)
+    ![Скачивание виртуальной машины](./media/tutorial-assess-physical/download-appliance.png)
 
 
 ### <a name="verify-security"></a>Проверка безопасности
@@ -55,21 +52,16 @@ ms.locfileid: "76028840"
 2. Выполните следующую команду, чтобы создать хэш VHD-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
-3.  Для последней версии устройства созданный хэш должен соответствовать этим параметрам.
-
-  **Алгоритм** | **Значение хэша**
-  --- | ---
-  MD5 | 96fd99581072c400aa605ab036a0a7c0
-  SHA256 | f5454beef510c0aa38ac1c6be6346207c351d5361afa0c9cea4772d566fcdc36
+3.  Для последней версии устройства созданный хэш должен соответствовать этим [параметрам](https://docs.microsoft.com/azure/migrate/tutorial-assess-physical#verify-security).
 
 
 
 ## <a name="run-the-azure-migrate-installer-script"></a>Запуск скрипта установщика службы "Миграция Azure"
-= Скрипт установщика выполняет следующие операции.
+Скрипт установщика выполняет следующие операции.
 
 - Устанавливает агенты и веб-приложения для обнаружения и оценки физических серверов.
 - Устанавливает роли Windows, включая службу активации Windows, IIS и интегрированную среду разработку PowerShell.
-- Скачивает и устанавливает доступный для записи модуль IIS. [Узнайте больше](https://www.microsoft.com/download/details.aspx?id=7435).
+- Скачивает и устанавливает доступный для записи модуль IIS. [Дополнительные сведения](https://www.microsoft.com/download/details.aspx?id=7435)
 - Обновляет раздел реестра (HKLM), используя постоянные значения параметров для службы "Миграция Azure".
 - Создает следующие файлы по указанному пути.
     - **Файлы конфигурации**: %Programdata%\Microsoft Azure\Config
@@ -80,13 +72,16 @@ ms.locfileid: "76028840"
 1. Извлеките ZIP-файл в папку на сервере, на котором будет размещено устройство.
 2. Запустите PowerShell на указанном сервере с повышенными правами (права администратора).
 3. Измените каталог PowerShell на папку, в которую было извлечено содержимое скачанного ZIP-файла.
-4. Запустите скрипт, выполнив следующую команду:
+4. Запустите скрипт с именем **AzureMigrateInstaller.ps1**, выполнив следующую команду:
     ```
-    AzureMigrateInstaller.ps1
+    PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1
     ```
 После успешного завершения скрипт запустит веб-приложение устройства.
 
+Для устранения возникающих проблем можно получить доступ к журналам скриптов здесь: C:\ProgramData\Microsoft Azure\Logs\AzureMigrateScenarioInstaller_<em>Timestamp</em>.log.
 
+> [!NOTE]
+> Не выполняйте скрипт установщика службы "Миграция Azure" на имеющемся устройстве Миграции Azure.
 
 ### <a name="verify-appliance-access-to-azure"></a>Проверка доступа устройства к Azure
 

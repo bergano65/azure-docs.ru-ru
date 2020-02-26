@@ -3,16 +3,15 @@ title: Разработка в Azure Kubernetes Service (AKS) с чернови�
 description: Использование Draft с AKS и реестром контейнеров Azure
 services: container-service
 author: zr-msft
-ms.service: container-service
 ms.topic: article
 ms.date: 06/20/2019
 ms.author: zarhoads
-ms.openlocfilehash: 07e267af307fedd9b896e08919b7026a3a1c2bac
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: b03256ee65a3c40d8a64d70b877c49e44e68f822
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292968"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595227"
 ---
 # <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-draft"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с черновиком
 
@@ -21,7 +20,7 @@ ms.locfileid: "76292968"
 В этой статье показано, как использовать черновик для упаковки и запуска приложения в AKS.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).

@@ -2,23 +2,22 @@
 title: Запуск задания Apache Spark с помощью Службы Azure Kubernetes (AKS)
 description: Использование Службы Azure Kubernetes (AKS) для выполнения задания Apache Spark
 author: lenadroid
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 72e87acf418d5085a76f18c595bf31d43b0d64ac
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 7465f8eb4357fcb6faa1d0fee0173837b6cb019b
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274651"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593655"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
 [Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с [выпуска Spark 2.3.0][spark-latest-release], Apache Spark поддерживает собственную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -269,7 +268,7 @@ kubectl port-forward spark-pi-2232778d0f663768ab27edc35cb73040-driver 4040:4040
 kubectl get pods --show-all
 ```
 
-Выходные данные:
+Выходные данные.
 
 ```bash
 NAME                                               READY     STATUS      RESTARTS   AGE
@@ -328,7 +327,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 > [!WARNING]
 > Из [документации по][spark-docs]Spark: "Планировщик Kubernetes в настоящее время экспериментальен. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в документации по Spark.
 

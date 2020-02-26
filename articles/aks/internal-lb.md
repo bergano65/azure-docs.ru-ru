@@ -2,17 +2,14 @@
 title: Создание внутренней подсистемы балансировки нагрузки в Службе Azure Kubernetes (AKS)
 description: Узнайте, как создать и использовать внутреннюю подсистему балансировки нагрузки для предоставления доступа к службам через AKS (Службу Azure Kubernetes).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.author: mlearned
-ms.openlocfilehash: 8b0b0358534c30407c9841d5c23560623545cf64
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: ff102ebe50dd4d2169090718ced9e550701b1b09
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045006"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595473"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Использование внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS)
 
@@ -21,7 +18,7 @@ ms.locfileid: "76045006"
 > [!NOTE]
 > Доступны два номера SKU Azure Load Balancer: ценовых категорий *Базовый* и *Стандартный*. По умолчанию при создании кластера AKS используется номер SKU "Стандартный".  При создании службы с типом "подсистема балансировки нагрузки" вы получаете тот же тип балансировки нагрузки, что и при подготовке кластера. Дополнительные сведения см. в статье [Сравнение SKU в подсистеме балансировки нагрузки Azure][azure-lb-comparison].
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 

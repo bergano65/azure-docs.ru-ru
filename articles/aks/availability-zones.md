@@ -2,18 +2,15 @@
 title: Использование зон доступности в службе Kubernetes Azure (AKS)
 description: Узнайте, как создать кластер, который распределяет узлы между зонами доступности в службе Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
 ms.custom: fasttrack-edit
-ms.service: container-service
 ms.topic: article
 ms.date: 06/24/2019
-ms.author: mlearned
-ms.openlocfilehash: b73cb09f95fa2b23fb23fb719fe57143e1731ceb
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 5693d9e90de9ba68e7b76e0f2bd5b75141dbda71
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086523"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596816"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Создание кластера Azure Kubernetes Service (AKS), использующего зоны доступности
 
@@ -33,7 +30,7 @@ ms.locfileid: "77086523"
 
 * Центральная часть США
 * восточная часть США 2
-* Восточная часть США
+* Восток США
 * Центральная Франция
 * Восточная Япония
 * Северная Европа
@@ -170,7 +167,7 @@ Node:         aks-nodepool1-28993262-vmss000004/10.240.0.8
 
 Как видно из предыдущих выходных данных, первый модуль выполняется на узле 0, который находится в зоне доступности `eastus2-1`. Второй модуль выполняется на узле 2, который соответствует `eastus2-3`, а третий — в узле 4 в `eastus2-2`. Без какой-либо дополнительной настройки Kubernetes правильно распределяет модули Pod по всем трем зонам доступности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье подробно описано, как создать кластер AKS, использующий зоны доступности. Дополнительные сведения о кластерах высокой доступности см. [в статье рекомендации по обеспечению непрерывности бизнес-процессов и аварийному восстановлению в AKS][best-practices-bc-dr].
 

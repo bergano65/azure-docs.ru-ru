@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: memildin
-ms.openlocfilehash: b2ab769fc2595af9fd1ea41f1ef492944cb5e7fa
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: a600b17ce25a467b788671e12e3c2425ad20b809
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75665774"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604079"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Управление инцидентами безопасности в центре безопасности Azure
 
@@ -57,11 +57,10 @@ ms.locfileid: "75665774"
 * [Предупреждения уровня службы](security-center-alerts-service-layer.md)
 * [Обнаружение угроз для Azure WAF и Azure от атак DDoS Protection](security-center-alerts-integration.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Этот документ содержит подробные сведения о функции инцидентов в центре безопасности Azure. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Оповещения системы безопасности в центре безопасности Azure](security-center-alerts-overview.md).
 * [Управление оповещениями системы безопасности](security-center-managing-and-responding-alerts.md)
 * [Руководство по планированию использования центра безопасности Azure и работе в нем](security-center-planning-and-operations-guide.md)
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md)— часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

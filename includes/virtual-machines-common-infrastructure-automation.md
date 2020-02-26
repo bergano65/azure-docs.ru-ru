@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: 525eba8a5a4e891526eb32a24287ea3887ee6743
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 9cbc48d8bca2f7491d0464be1c5bd64054927dc9
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77474273"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77608714"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
@@ -40,7 +40,7 @@ ms.locfileid: "77474273"
 Вы узнаете, как выполнять следующие задачи:
 
 - [Build, deploy, and manage with Chef Automate, the Continuous Automation Platform](https://azuremarketplace.microsoft.com/marketplace/apps/chef-software.chef-automate?tab=Overview) (Создание, развертывание и управление с помощью платформы непрерывной автоматизации Chef Automate)
-- [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../articles/virtual-machines/windows/chef-automation.md)
+- [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../articles/chef/chef-automation.md)
 
 
 ## <a name="puppet"></a>Puppet
@@ -128,7 +128,7 @@ ms.locfileid: "77474273"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../articles/virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md)
+- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../articles/jenkins/tutorial-jenkins-github-docker-cicd.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -3,22 +3,21 @@ title: Интеграция Azure NetApp Files со службой Kubernetes Az
 description: Узнайте, как интегрировать Azure NetApp Files со службой Kubernetes Azure
 services: container-service
 author: zr-msft
-ms.service: container-service
 ms.topic: article
 ms.date: 09/26/2019
 ms.author: zarhoads
-ms.openlocfilehash: 84192a831e3b1f24e20eb07a6c8695516c28970f
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 42985e57d63c01553532928b2ba04ed5ee3dd8fb
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329335"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596646"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
 [Azure NetApp Files][anf] — это высокопроизводительная служба хранилища файлов в масштабе корпоративного класса, работающая в Azure. В этой статье показано, как интегрировать Azure NetApp Files со службой Azure Kubernetes (AKS).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
 > [!IMPORTANT]
@@ -33,7 +32,8 @@ ms.locfileid: "71329335"
 * Azure NetApp Files доступен только [в выбранных регионах Azure][anf-regions].
 * Прежде чем можно будет использовать Azure NetApp Files, необходимо предоставить доступ к службе Azure NetApp Files. Для применения к Access можно использовать [форму Azure NetApp Files отправки ваитлист][anf-waitlist]. Вы не можете получить доступ к службе Azure NetApp Files, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
 * Служба Azure NetApp Files должна быть создана в той же виртуальной сети, что и кластер AKS.
-* В AKS поддерживается только статическая подготовка для Azure NetApp Files.
+* После первоначального развертывания кластера AKS поддерживается только статическая подготовка для Azure NetApp Files.
+* Чтобы использовать динамическую подготовку с Azure NetApp Files, установите и настройте [NetApp Trident](https://netapp-trident.readthedocs.io/) версии 19,07 или более поздней.
 
 ## <a name="configure-azure-netapp-files"></a>Настройка Azure NetApp Files
 
@@ -57,7 +57,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeR
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Создайте учетную запись Azure NetApp Files в группе ресурсов **узла** и в том же регионе, что и кластер AKS, выполнив команду [AZ нетаппфилес Account Create][az-netappfiles-account-create]. В следующем примере создается учетная запись с именем *myaccount1* в группе ресурсов *MC_myResourceGroup_myAKSCluster_eastus* и регионе *eastus* :
+Создайте учетную запись Azure NetApp Files в группе ресурсов **узла** и в том же регионе, что и кластер AKS, выполнив команду [AZ нетаппфилес Account Create][az-netappfiles-account-create]. В следующем примере создается учетная запись с именем *myaccount1* в *MC_myResourceGroup_myAKSCluster_eastus* группе ресурсов и *eastus* регионе.
 
 ```azure-cli
 az netappfiles account create \
@@ -143,7 +143,7 @@ $ az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $AN
 }
 ```
 
-Создайте `pv-nfs.yaml`, определив Персистентволуме. Замените `path` на *креатионтокен* и `server` с *ipAddress* из предыдущей команды. Пример:
+Создайте `pv-nfs.yaml` определяющий Персистентволуме. Замените `path` на *креатионтокен* и `server` с *ipAddress* из предыдущей команды. Например:
 
 ```yaml
 ---
@@ -175,7 +175,7 @@ kubectl describe pv pv-nfs
 
 ## <a name="create-the-persistentvolumeclaim"></a>Создание Персистентволумеклаим
 
-Создайте `pvc-nfs.yaml`, определив Персистентволуме. Пример:
+Создайте `pvc-nfs.yaml` определяющий Персистентволуме. Например:
 
 ```yaml
 apiVersion: v1
@@ -205,7 +205,7 @@ kubectl describe pvc pvc-nfs
 
 ## <a name="mount-with-a-pod"></a>Подключение с помощью Pod
 
-Создайте `nginx-nfs.yaml`, определив модуль, использующий Персистентволумеклаим. Пример:
+Создайте `nginx-nfs.yaml` определяющий Pod, использующий Персистентволумеклаим. Например:
 
 ```yaml
 kind: Pod
@@ -241,7 +241,7 @@ kubectl apply -f nginx-nfs.yaml
 kubectl describe pod nginx-nfs
 ```
 
-Убедитесь, что том подключен к модулю, используя [kubectl Exec][kubectl-exec] для подключения к Pod, затем `df -h`, чтобы проверить, подключен ли том.
+Убедитесь, что том подключен к модулю, используя [kubectl Exec][kubectl-exec] для подключения к Pod, а затем `df -h`, чтобы проверить, подключен ли том.
 
 ```console
 $ kubectl exec -it nginx-nfs -- bash

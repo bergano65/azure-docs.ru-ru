@@ -2,17 +2,14 @@
 title: Основные понятия безопасности в Службе Azure Kubernetes (AKS)
 description: Узнайте о безопасности в Службе Azure Kubernetes (AKS), включая взаимодействие главных компонентов и узлов, политики сети и секреты Kubernetes.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/01/2019
-ms.author: mlearned
-ms.openlocfilehash: e461f9de8b20e4f6c8f027b1ae81ae21e54ece86
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 7238e6cd7ab3625e2953a4408c82802d43372256
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547937"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595949"
 ---
 # <a name="security-concepts-for-applications-and-clusters-in-azure-kubernetes-service-aks"></a>Основные понятия безопасности приложений и кластеров в Службе Azure Kubernetes (AKS)
 
@@ -61,7 +58,7 @@ ms.locfileid: "76547937"
 
 Дополнительные сведения см. в статье [Обновление кластера AKS][aks-upgrade-cluster].
 
-## <a name="network-security"></a>Безопасность сети
+## <a name="network-security"></a>Сетевая безопасность
 
 Для подключения к локальным сетям и обеспечения безопасности можно развернуть кластер AKS в имеющейся подсети виртуальной сети Azure. Эти виртуальные сети могут использовать VPN-подключение Azure типа "сеть – сеть" или подключение ExpressRoute к локальной сети. Для контроллеров входящего трафика Kubernetes можно определить частные внутренние IP-адреса, чтобы службы были доступны только через это подключение к внутренней сети.
 
@@ -75,7 +72,7 @@ ms.locfileid: "76547937"
 
 Использование секретов уменьшает объем конфиденциальных сведений, определяемых в pod или YAML-файле манифеста службы. Вместо этого запрашивается секрет, хранимый на сервере API Kubernetes в YAML-файле манифеста. Это позволяет предоставлять секрет только определенным элементам pod. Примечание. необработанные секретные файлы манифеста содержат секретные данные в формате Base64 (Дополнительные сведения см. в [официальной документации][secret-risks] ). Поэтому этот файл должен рассматриваться как конфиденциальная информация и никогда не зафиксирован в системе управления версиями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к защите кластеров AKS, см. статью [Обновление кластера AKS][aks-upgrade-cluster].
 

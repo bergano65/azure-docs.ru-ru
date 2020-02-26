@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 01/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6d68599af644e5bb03fc850a880b07c6a4d262a9
-ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
+ms.openlocfilehash: 54ad9109a23b0fb25470987c2bc863934864b83f
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2020
-ms.locfileid: "77370481"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77580684"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -58,9 +58,9 @@ ms.locfileid: "77370481"
 База данных SQL Azure&nbsp;&nbsp;| Проверка подлинности SQL <br>Субъект-служба| ✓ | ✓ | ✓ |✓
 Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ | ✓ |✓
 &nbsp;базы данных Azure&nbsp;для&nbsp;MySQL | Проверка подлинности SQL|  | ✓ | ✓ |✓
-Кирпичи&nbsp;файловая&nbsp;система| Нет проверки подлинности | | ✓ | ✓ |✓ 
+Кирпичи&nbsp;файловая&nbsp;система| Нет проверки подлинности | | ✓ * * | ✓ * * |✓ * * 
 
-\* поддерживается только для локальных целевых сценариев вычислений
+*MySQL поддерживается только для конвейера [дататрансферстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?view=azure-ml-py). <br> \** Модуль обработки блоков обработки информации поддерживается только для [датабрикксстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep?view=azure-ml-py) конвейера
 
 ### <a name="storage-guidance"></a>Рекомендации по выбору хранилища
 
@@ -77,7 +77,7 @@ Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ |
 
 >[!IMPORTANT]
 > В ходе создания и регистрации текущего хранилища данных Машинное обучение Azure проверяет, имеет ли предоставленный пользователем субъект (имя пользователя, субъект-служба или маркер SAS) доступ к базовой службе хранилища. 
-<br>
+<br><br>
 Однако для Azure Data Lake Storage 1 и 2 хранилищ данных эта проверка происходит позже, когда вызываются методы доступа к данным, такие как [`from_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py) или [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-parquet-files-path--validate-true--include-path-false--set-column-types-none--partition-format-none-) . 
 
 ### <a name="python-sdk"></a>Пакет SDK для Python
@@ -87,10 +87,13 @@ Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ |
 Сведения, необходимые для заполнения метода `register()`, можно найти с помощью [портал Azure](https://portal.azure.com).
 
 1. Выберите **учетные записи хранения** на левой панели и выберите учетную запись хранения, которую требуется зарегистрировать. 
-2. Сведения, такие как имя учетной записи, контейнер и имя общей папки, можно найти на странице **Обзор** . Чтобы получить сведения о проверке подлинности, например ключ учетной записи или маркер SAS, перейдите в **раздел ключи доступа** на панели **Параметры** . 
+2. Сведения, такие как имя учетной записи, контейнер и имя общей папки, можно найти на странице **Обзор** . 
+3. Чтобы получить сведения о проверке подлинности, например ключ учетной записи или маркер SAS, перейдите в **раздел ключи доступа** на панели **Параметры** . 
+
+4. Для элементов субъекта-службы, таких как, идентификатор клиента и идентификатор пользователя, перейдите на страницу **обзора** **Регистрация приложений**. 
 
 > [!IMPORTANT]
-> Если ваша учетная запись хранения находится в виртуальной сети, поддерживается только создание хранилища данных BLOB-объектов Azure. Чтобы предоставить рабочей области доступ к вашей учетной записи хранения, задайте для параметра `grant_workspace_access` значение `True`.
+> Если ваша учетная запись хранения находится в виртуальной сети, поддерживается только создание больших двоичных объектов, файловых ресурсов, ADLS Gen 1 и ADLS Gen 2 **с помощью пакета SDK** . Чтобы предоставить рабочей области доступ к вашей учетной записи хранения, задайте для параметра `grant_workspace_access` значение `True`.
 
 В следующих примерах показано, как зарегистрировать контейнер больших двоичных объектов Azure, файловый ресурс Azure и Azure Data Lake Storage поколение 2 в качестве хранилища данных. Сведения о других службах хранилища см. в [справочной документации по методам `register_azure_*`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#methods).
 
@@ -134,7 +137,7 @@ file_datastore = Datastore.register_azure_file_share(workspace=ws,
 
 #### <a name="azure-data-lake-storage-generation-2"></a>Поколение Azure Data Lake Storage 2
 
-Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals). Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
 
 Следующий код создает и регистрирует хранилище данных `adlsgen2_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к файловой системе `test` в учетной записи хранения `account_name`, используя предоставленные учетные данные субъекта-службы.
 
@@ -162,12 +165,19 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
 
 Создайте хранилище данных, выполнив несколько шагов в Машинное обучение Azure Studio:
 
+> [!IMPORTANT]
+> Если ваша учетная запись хранения находится в виртуальной сети, поддерживается только создание хранилищ данных [с помощью пакета SDK](#python-sdk) . 
+
 1. Войдите в [Студию машинного обучения Azure](https://ml.azure.com/).
 1. Выберите **хранилища данных** на левой панели в разделе **Управление**.
 1. Выберите **+ создать хранилище данных**.
 1. Заполните форму для нового хранилища данных. Форма интеллектуального обновления обновляется на основе выбора типа службы хранилища Azure и типа проверки подлинности.
   
-Сведения, необходимые для заполнения формы, можно найти на [портал Azure](https://portal.azure.com). Выберите **учетные записи хранения** на левой панели и выберите учетную запись хранения, которую требуется зарегистрировать. На странице **Обзор** содержатся такие сведения, как имя учетной записи, контейнер и имя общего файлового ресурса. Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к **разделу ключи учетной записи** на панели **Параметры** .
+Сведения, необходимые для заполнения формы, можно найти на [портал Azure](https://portal.azure.com). Выберите **учетные записи хранения** на левой панели и выберите учетную запись хранения, которую требуется зарегистрировать. На странице **Обзор** содержатся такие сведения, как имя учетной записи, контейнер и имя общего файлового ресурса. 
+
+* Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к **разделу ключи учетной записи** на панели **Параметры** . 
+
+* Для элементов субъекта-службы, таких как, идентификатор клиента и идентификатор пользователя, перейдите на страницу **обзора** **Регистрация приложений**. 
 
 В следующем примере показано, как выглядит форма при создании хранилища BLOB-объектов Azure. 
     

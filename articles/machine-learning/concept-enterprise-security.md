@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 01/09/2020
-ms.openlocfilehash: 7b6bd33346df9496c4c30353b68c11bdd7fad7a2
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: b37b386273947f8c39fe182e4f29b7b080addf7b
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486399"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77605623"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Корпоративная безопасность для Машинное обучение Azure
 
@@ -37,7 +37,6 @@ ms.locfileid: "77486399"
 [![проверки подлинности в Машинное обучение Azure](media/concept-enterprise-security/authentication.png)](media/concept-enterprise-security/authentication-expanded.png#lightbox)
 
 Дополнительные сведения см. в разделе [Настройка проверки подлинности для машинное обучение Azure ресурсов и рабочих процессов](how-to-setup-authentication.md). В этой статье содержатся сведения и примеры проверки подлинности, включая использование субъектов-служб и автоматических рабочих процессов.
-
 
 ### <a name="authentication-for-web-service-deployment"></a>Проверка подлинности для развертывания веб-службы
 
@@ -77,6 +76,9 @@ ms.locfileid: "77486399"
 | Вызвать веб-службу | ✓ | ✓ | ✓ |
 
 Если встроенные роли не соответствуют вашим потребностям, можно создать пользовательские роли. Пользовательские роли поддерживаются только для операций в рабочей области и Вычислительная среда Машинного обучения. Пользовательские роли могут иметь разрешения на чтение, запись или удаление в рабочей области и на ресурсе вычислений в этой рабочей области. Роль можно сделать доступной на определенном уровне рабочей области, определенном уровне группы ресурсов или определенном уровне подписки. Дополнительные сведения см. [в статье Manage Users and Roles in a машинное обучение Azure Workspace](how-to-assign-roles.md).
+
+> [!WARNING]
+> Машинное обучение Azure в настоящее время не поддерживается для совместной работы Azure Active Directory.
 
 ### <a name="securing-compute-targets-and-data"></a>Обеспечение безопасности целевых объектов вычислений и данных
 

@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/18/2020
-ms.openlocfilehash: c5c8a41aef92876ceaa66fb23c01c6ece1609f91
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: e313048986beca1991e38ce2e65ea12f954170d2
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484814"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598278"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight
 
 Кластеры Spark HDInsight включают в себя записные книжки [Apache Zeppelin](https://zeppelin.apache.org/), которые можно использовать для выполнения заданий [Apache Spark](https://spark.apache.org/). Из этой статьи вы узнаете, как использовать записную книжку Zeppelin в кластере HDInsight.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 * Схема URI для основного хранилища кластеров. Это будет `wasb://` для хранилища BLOB-объектов Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет `wasbs://`.  Дополнительные сведения см. [в статье обязательное безопасное перемещение в службе хранилища Azure](../../storage/common/storage-require-secure-transfer.md) .
@@ -135,11 +135,11 @@ ms.locfileid: "77484814"
 
     а. Найдите пакет в репозитории Maven. В этой статье мы использовали [Spark-CSV](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
 
-    б. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
+    b. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**.
 
     ![Использование внешних пакетов с записной книжкой Jupyter](./media/apache-spark-zeppelin-notebook/use-external-packages-with-jupyter.png "Использование внешних пакетов с записной книжкой Jupyter")
 
-    в. Объедините три значения, разделив их двоеточием ( **:** ).
+    c. Объедините три значения, разделив их двоеточием ( **:** ).
 
         com.databricks:spark-csv_2.10:1.4.0
 
@@ -150,6 +150,25 @@ ms.locfileid: "77484814"
 ![Скачать записную книжку](./media/apache-spark-zeppelin-notebook/zeppelin-download-notebook.png "Скачать записную книжку")
 
 Это действие сохраняет записную книжку в формате JSON в расположение для скачивания.
+
+## <a name="use-shiro-to-configure-access-to-zeppelin-interpreters-in-enterprise-security-package-esp-clusters"></a>Использование широ для настройки доступа к интерпретаторам Zeppelin в кластерах Корпоративный пакет безопасности (ESP)
+Как отмечалось выше, `%sh` интерпретатор не поддерживается из HDInsight 4,0. Кроме того, поскольку интерпретатор `%sh` создает потенциальные проблемы безопасности, такие как доступ к кэйтабс с помощью команд оболочки, он также удаляется из кластеров HDInsight 3,6 ESP. Это означает, `%sh` интерпретатор недоступен при нажатии кнопки **создать новую заметку** или в пользовательском интерфейсе интерпретатора по умолчанию. 
+
+Пользователи привилегированного домена могут использовать файл `Shiro.ini` для управления доступом к пользовательскому интерфейсу интерпретатора. Таким же, только эти пользователи могут создавать новые `%sh` интерпретаторы и устанавливать разрешения для каждого нового интерпретатора `%sh`. Чтобы управлять доступом с помощью файла `shiro.ini`, выполните следующие действия.
+
+1. Определите новую роль, используя существующее имя группы домена. В следующем примере `adminGroupName` — это группа привилегированных пользователей в AAD. Не используйте в имени группы специальные символы или пробелы. Символы после `=` предоставляют разрешения для этой роли. `*` означает, что группа имеет полные разрешения.
+
+    ```
+    [roles]
+    adminGroupName = *
+    ```
+
+2. Добавьте новую роль для доступа к интерпретаторам Zeppelin. В следующем примере всем пользователям `adminGroupName` предоставляется доступ к интерпретаторам Zeppelin и они могут создавать новые интерпретаторы. Можно разместить несколько ролей между квадратными скобками в `roles[]`, разделяя их запятыми. Затем пользователи, имеющие необходимые разрешения, могут получить доступ к интерпретаторам Zeppelin.
+
+    ```
+    [urls]
+    /api/interpreter/** = authc, roles[adminGroupName]
+    ```
 
 ## <a name="livy-session-management"></a>Управление сеансом Livy
 
@@ -175,7 +194,7 @@ ms.locfileid: "77484814"
 
 Чтобы проверить службу из командной строки, подключитесь к головному узлу по протоколу SSH. Переключите пользователя в Zeppelin с помощью команды `sudo su zeppelin`. Команды состояния:
 
-|Команда |Описание |
+|Get-Help |Description |
 |---|---|
 |`/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh status`|Состояние службы.|
 |`/usr/hdp/current/zeppelin-server/bin/zeppelin-daemon.sh --version`|Версия службы.|
@@ -183,7 +202,7 @@ ms.locfileid: "77484814"
 
 ### <a name="log-locations"></a>Расположения журналов
 
-|Service |путь |
+|Служба |путь |
 |---|---|
 |Zeppelin — сервер|/уср/хдп/куррент/зеппелин-сервер/|
 |Журналы сервера|/вар/лог/зеппелин|
@@ -202,7 +221,7 @@ ms.locfileid: "77484814"
 
 1. Сохраните изменения и перезапустите службу.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 

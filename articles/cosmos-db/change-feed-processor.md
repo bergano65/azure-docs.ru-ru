@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 3e7f5e46068844da538864fdfaa03ca7023e4372
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f8ae85ffc16bd953f04f1c3d7790231939c1f2cf
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445580"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588913"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB 
 
@@ -41,13 +41,13 @@ ms.locfileid: "75445580"
 
 Точка входа всегда является отслеживаемым контейнером из экземпляра `Container`, который вызывается `GetChangeFeedProcessorBuilder`:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs?name=DefineProcessor)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs" id="DefineProcessor":::
 
 Где первый параметр представляет собой уникальное имя, описывающее цель этого процессора, а второе имя — это реализация делегата, которая будет выполнять обработку изменений. 
 
 Пример делегата:
 
-[!code-csharp[Main](~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs?name=Delegate)]
+:::code language="csharp" source="~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs" id="Delegate":::
 
 Наконец, определите имя для этого экземпляра процессора с помощью `WithInstanceName` и контейнер для поддержания состояния аренды с `WithLeaseContainer`.
 

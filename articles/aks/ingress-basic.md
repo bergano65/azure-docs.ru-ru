@@ -2,17 +2,14 @@
 title: Создание базового контроллера входящего трафика в Службе Azure Kubernetes (AKS)
 description: Узнайте, как установить и настроить базовый контроллер входящего трафика NGINX в кластере Службы Azure Kubernetes (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 12/20/2019
-ms.author: mlearned
-ms.openlocfilehash: 4299846f48524799084efa5456c169d18af4185d
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: e37f7aa677be129aa9fe568880c53cc860947e30
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728877"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595643"
 ---
 # <a name="create-an-ingress-controller-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)
 
@@ -27,7 +24,7 @@ ms.locfileid: "75728877"
 - [Создание контроллера входящего трафика, использующего собственные сертификаты TLS][aks-ingress-own-tls]
 - Создайте входной контроллер, который использует шифрование для автоматического создания сертификатов TLS [с динамическим общедоступным IP-адресом][aks-ingress-tls] или [со статическим общедоступным IP-адресом][aks-ingress-static-tls] .
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье для установки контроллера входящего трафика NGINX и примера веб-приложения используется Helm.
 

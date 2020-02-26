@@ -2,17 +2,14 @@
 title: Настройка определяемых пользователем маршрутов (UDR) в службе Kubernetes Azure (AKS)
 description: Узнайте, как определить пользовательский маршрут исходящего трафика в службе Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 01/31/2020
-ms.author: mlearned
-ms.openlocfilehash: bd55c7fbf017aec55cee4c9121ede606278a7334
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: d108c6f49a8f483dc489fd644db6b480fc0e74fc
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77212949"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595813"
 ---
 # <a name="customize-cluster-egress-with-a-user-defined-route-preview"></a>Настройка исходящего трафика кластера с помощью определяемого пользователем маршрута (Предварительная версия)
 
@@ -26,7 +23,7 @@ ms.locfileid: "77212949"
 > * [Политики поддержки AKS](support-policies.md)
 > * [Часто задаваемые вопросы о поддержке Azure](faq.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * Azure CLI версии 2.0.81 или выше
 * Azure CLI предварительной версии расширения 0.4.28 или выше
 * Версия API `2020-01-01` или более поздняя
@@ -530,7 +527,7 @@ az group delete -g $RG
 
 Вы должны увидеть образ приложения для голосования Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. [Обзор сетевых UDR Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview).
 

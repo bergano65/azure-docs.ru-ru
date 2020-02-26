@@ -3,12 +3,12 @@ title: Настройка устройства "миграция Azure" для V
 description: Узнайте, как настроить устройство "миграция Azure" для оценки и миграции виртуальных машин VMware.
 ms.topic: article
 ms.date: 11/18/2019
-ms.openlocfilehash: 139b694bafb9d67192e6f182ff879e86e2b73ce4
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: e331d45d3e87f8007642675a0349839e7494958c
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291946"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598159"
 ---
 # <a name="set-up-an-appliance-for-vmware-vms"></a>Настройка устройства для виртуальных машин VMware
 
@@ -35,7 +35,7 @@ ms.locfileid: "76291946"
 2. В разделе **Обнаружение компьютеров** > **Ваши компьютеры виртуализированы?** щелкните **Да, с VMware vSphere Hypervisor**.
 3. Щелкните **Скачать**, чтобы скачать файл шаблона .OVA.
 
-
+  ![Выбор параметров для скачивания OVA-файла](./media/tutorial-assess-vmware/download-ova.png)
 
 ### <a name="verify-security"></a>Проверка безопасности
 
@@ -45,12 +45,8 @@ ms.locfileid: "76291946"
 2. Выполните следующую команду, чтобы создать хэш для OVA:
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
-3. Для последней версии устройства созданный хэш должен соответствовать этим параметрам.
+3. Для последней версии устройства созданный хэш должен соответствовать этим [параметрам](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware#verify-security).
 
-  **Алгоритм** | **Значение хэша**
-  --- | ---
-  MD5 | c06ac2a2c0f870d3b274a0b7a73b78b1
-  SHA256 | 4ce4faa3a78189a09a26bfa5b817c7afcf5b555eb46999c2fad9d2ebc808540c
 
 
 ## <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
@@ -58,6 +54,8 @@ ms.locfileid: "76291946"
 Импортируйте скачанный файл и создайте виртуальную машину.
 
 1. В консоли клиента vSphere щелкните **File** (Файл)  > **Deploy OVF Template** (Развернуть шаблон OVF).
+команда меню ![для развертывания шаблона OVF](./media/tutorial-assess-vmware/deploy-ovf.png)
+
 2. В мастере развертывания шаблона OVF выберите **Source** (Источник) и укажите расположение OVA-файла.
 3. В полях **Name** (Имя) и **Location** (Расположение) укажите понятное имя для виртуальной машины. Выберите объект инвентаризации, в котором будет размещена эта виртуальная машина.
 5. В поле **Host/Cluster** (Узел или кластер) укажите узел или кластер, в котором будет работать виртуальная машина.

@@ -2,17 +2,14 @@
 title: Управление кластером Службы Azure Kubernetes с помощью веб-панели мониторинга
 description: Узнайте, как использовать панель мониторинга пользовательского веб-интерфейса Kubernetes для управления кластером Службы Azure Kubernetes (AKS)
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 10/08/2018
-ms.author: mlearned
-ms.openlocfilehash: f150103c8e9534bfd1bb93d20e3d65d715767184
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 15fcf765be0a754575713eebcdaa7d68e1c299b9
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996965"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77595354"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -20,9 +17,9 @@ ms.locfileid: "70996965"
 
 Дополнительные сведения о панели мониторинга Kubernetes см. в разделе [панель мониторинга пользовательского веб-интерфейса Kubernetes][kubernetes-dashboard].
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
-В действиях, описанных в этом документе, предполагается, что кластер AKS создан и к нему установлено подключение `kubectl`. Если необходимо создать кластер AKS, см. раздел [Краткое руководство по AKS][aks-quickstart].
+В действиях, описанных в этом документе, предполагается, что создан кластер AKS и с ним установлено подключение `kubectl`. Если необходимо создать кластер AKS, см. раздел [Краткое руководство по AKS][aks-quickstart].
 
 Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version` . Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
@@ -128,7 +125,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 
 ![Просмотр сведений о наборе реплик](./media/kubernetes-dashboard/view-replica-set.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о панели мониторинга Kubernetes см. на панели [мониторинга веб-интерфейса Kubernetes][kubernetes-dashboard].
 

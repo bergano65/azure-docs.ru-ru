@@ -3,12 +3,12 @@ title: Настройка устройства "миграция Azure" для H
 description: Узнайте, как настроить устройство миграции Azure для оценки и миграции виртуальных машин Hyper-V.
 ms.topic: article
 ms.date: 11/19/2019
-ms.openlocfilehash: 0704adda314b94736b01fe114c3643ef8bd83753
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 8199525a118ffca2cfc03734283eb26facba8483
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029087"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598346"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Настройка устройства для виртуальных машин Hyper-V
 
@@ -48,12 +48,8 @@ ms.locfileid: "76029087"
 2. Выполните следующую команду, чтобы создать хэш VHD-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.vhd SHA256```
-3.  Для устройства версии 2.19.11.12 созданный хэш должен соответствовать этим параметрам.
+3.  Для устройства версии 2.19.11.12 созданный хэш должен соответствовать этим [параметрам](https://docs.microsoft.com/azure/migrate/tutorial-assess-hyper-v#verify-security).
 
-  **Алгоритм** | **Значение хэша**
-  --- | ---
-  MD5 | 29a7531f32bcf69f32d964fa5ae950bc
-  SHA256 | 37b3f27bc44f475872e355f04fcb8f38606c84534c117d1609f2d12444569b31
 
 
 

@@ -1,10 +1,10 @@
 ---
-title: Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server | Документация Майкрософт
-description: Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server.
+title: Высокий уровень доступности NFS на виртуальных машинах Azure в SLES | Документация Майкрософт
+description: Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: mssedusch
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -13,15 +13,15 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/15/2019
-ms.author: sedusch
-ms.openlocfilehash: c20fc2142718d3cc49d4b80c6a5e22e26a350335
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: radeltch
+ms.openlocfilehash: efba617f9aeefa2e9374f5a7551338e003e70f56
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824862"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598737"
 ---
-# <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server.
+# <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
 [dbms-guide]:dbms-guide.md
 [deployment-guide]:deployment-guide.md
@@ -153,7 +153,7 @@ NFS-сервер использует выделенное виртуально�
             1. Выбор виртуальной сети
             1. Щелкните "Добавить виртуальную машину".
             1. Выберите виртуальные машины кластера NFS и их IP-адреса.
-            1. Нажмите Добавить.
+            1. Нажмите кнопку «Добавить».
          1. Пулы, подключенные к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера NFS для NW2.
             * Повторите предыдущие действия, чтобы создать внутренний пул для NW2.
       1. Создайте пробы работоспособности.
@@ -579,7 +579,7 @@ NFS-сервер использует выделенное виртуально�
    <pre><code>sudo crm configure property maintenance-mode=false
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-suse.md)
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]

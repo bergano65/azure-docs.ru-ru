@@ -3,16 +3,15 @@ title: Поддерживаемые версии Kubernetes в Службе Azur
 description: Сведения о политике поддержки версии Kubernetes и жизненном цикле кластеров в Службе Azure Kubernetes (AKS).
 services: container-service
 author: sauryadas
-ms.service: container-service
 ms.topic: article
 ms.date: 12/09/2019
 ms.author: saudas
-ms.openlocfilehash: 625b44ae3f8a1d5d474d980693d92840b1317f09
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 77d64391888957a1697a5823a1485413686682d1
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425771"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593450"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -135,11 +134,11 @@ AKS выбирает значение по умолчанию N-1, чтобы п
 az aks get-versions --location eastus --output table
 ```
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>Вопросы и ответы
 
 **Что происходит, когда клиент обновляет кластер Kubernetes с неподдерживаемой дополнительной версией?**
 
-Если вы используете версию *n-3* , вы выходите из поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, теперь вы используете наши политики поддержки. Пример:
+Если вы используете версию *n-3* , вы выходите из поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, теперь вы используете наши политики поддержки. Например:
 
 - Если самая старая поддерживаемая версия AKS — *1.13.* а и вы используете *1.12. b* или более раннюю версию, вы не поддерживаете.
 - Если обновление с *1.12. b* до *1.13. a* или выше выполнено, вы вернетесь в наши политики поддержки.
@@ -162,7 +161,7 @@ az aks get-versions --location eastus --output table
 
 Плоскость управления должна находиться в пределах окна версий из всех пулов узлов. Дополнительные сведения об обновлении плоскости управления или пулов узлов см. в документации по [обновлению пулов узлов](use-multiple-node-pools.md#upgrade-a-cluster-control-plane-with-multiple-node-pools).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о том, как обновить кластер, см. в статье [Обновление кластера Azure Kubernetes Service (AKS)][aks-upgrade].
 

@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 68d37bfbc629062a788ba32793b95c6f1653ff42
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 55a4aa066739203f8697fb4c9083869f5a05ef4f
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749656"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603377"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Руководство по устранению неполадок в центре безопасности Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "75749656"
 
 Центр безопасности использует Microsoft Monitoring Agent для накопления и хранения данных. См. дополнительные сведения о [миграции платформы центра безопасности Azure](security-center-platform-migration.md). В этой статье описывается, как будет работать центр безопасности после перехода к использованию Microsoft Monitoring Agent.
 
-## <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
+## <a name="troubleshooting-guide"></a>Troubleshooting guide (Руководство по устранению неполадок)
 
 В этом руководстве описывается устранение неполадок, связанных с центром безопасности Azure.
 
@@ -58,7 +58,7 @@ ms.locfileid: "75749656"
 
 Центр безопасности использует Microsoft Monitoring Agent — это тот же агент, который используется службой Azure Monitor — для получения данных безопасности с виртуальных машин Azure. После включения сбора данных и правильной установки агента на целевом компьютере будет запущен следующий процесс:
 
-* HealthService.exe.
+* HealthService.exe
 
 Если открыть консоль управления службами (services.msc), вы увидите, что служба Microsoft Monitoring Agent уже выполняется, как показано ниже:
 
@@ -66,7 +66,7 @@ ms.locfileid: "75749656"
 
 Чтобы узнать версию агента, на вкладке **Процессы** откройте **диспетчер задач**, правой кнопкой мыши щелкните пункт **Служба агента наблюдения (Майкрософт)** и выберите **Свойства**. На вкладке **Сведения** будет указана версия файла, как показано ниже:
 
-![Файлы](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig6.png)
+![Файл](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig6.png)
 
 ## <a name="microsoft-monitoring-agent-installation-scenarios"></a>Сценарии установки Microsoft Monitoring Agent
 
@@ -83,7 +83,7 @@ ms.locfileid: "75749656"
 
 **Состояние мониторинга** определяет причину, по которой центру безопасности не удалось выполнить мониторинг виртуальных машин и компьютеров, инициализированных для автоматической подготовки. В следующей таблице показаны значения, описания и действия для разрешения ошибок **Состояния мониторинга**.
 
-| Состояние мониторинга | Description | Способы устранения |
+| Состояние мониторинга | Описание | Способы устранения |
 |---|---|---|
 | Ожидающая установка агента | Установка Microsoft Monitoring Agent по-прежнему выполняется.  Установка может занять несколько часов. | Дождитесь завершения автоматической установки. |
 | Питание отключено | Виртуальная машина остановилась.  Microsoft Monitoring Agent можно установить только на виртуальной машине, которая работает. | Перезапустите виртуальную машину. |
@@ -105,7 +105,7 @@ ms.locfileid: "75749656"
 
 В следующей таблице показаны ресурсы, необходимые для обмена данными.
 
-| Ресурс агента | порты; | Обход проверки HTTPS |
+| Ресурс агента | Порты | Обход проверки HTTPS |
 |---|---|---|
 | *.ods.opinsights.azure.com | 443 | Да |
 | *.oms.opinsights.azure.com | 443 | Да |
@@ -136,9 +136,9 @@ ms.locfileid: "75749656"
 
 Некоторые проблемы можно определить с помощью этого руководства. Другие доступны в материалах общедоступного [форума](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureSecurityCenter), посвященного центру безопасности. Если требуется дальнейшее устранение неполадок, вы можете обратиться в службу поддержки на **портале Azure**, как показано ниже.
 
-![Служба поддержки Майкрософт](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig2.png)
+![службы поддержки Майкрософт](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig2.png)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 В этом документе вы ознакомились с подробными сведениями о настройке политик безопасности в Центре безопасности Azure. Дополнительные сведения о Центре безопасности Azure см. в следующих статьях:
 
@@ -154,5 +154,5 @@ ms.locfileid: "75749656"
 * [Investigate Incidents and Alerts in Azure Security Center](security-center-investigation.md) (Изучение инцидентов и оповещений в Центре безопасности Azure)
 * [Возможности обнаружения центра безопасности Azure](security-center-detection-capabilities.md)
 * [Мониторинг решений партнеров с помощью центра безопасности Azure](security-center-partner-solutions.md) — узнайте, как отслеживать состояние работоспособности решений партнеров.
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md) — часто задаваемые вопросы об использовании этой службы.
+* [Центр безопасности Azure: часто задаваемые вопросы](faq-general.md) — часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

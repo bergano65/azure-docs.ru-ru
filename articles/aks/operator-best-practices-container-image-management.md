@@ -2,17 +2,14 @@
 title: Рекомендации для операторов по управлению образами контейнеров в Службах Azure Kubernetes (AKS)
 description: Ознакомьтесь с рекомендациями по управлению и защите образов контейнеров в Службе Azure Kubernetes (AKS) для операторов кластеров.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.author: mlearned
-ms.openlocfilehash: cd859a4009782ca39732ec004a3d3e05edd377b0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: efe72157f598c336248e407c57bce92fe87da23a
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442900"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594753"
 ---
 # <a name="best-practices-for-container-image-management-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по управлению и защите образов контейнеров в Службе Azure Kubernetes (AKS)
 

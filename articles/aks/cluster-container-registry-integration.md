@@ -2,18 +2,15 @@
 title: Интеграция реестра контейнеров Azure с помощью службы Kubernetes Azure
 description: Узнайте, как интегрировать службу Kubernetes Azure (AKS) с реестром контейнеров Azure (запись контроля доступа).
 services: container-service
-author: mlearned
 manager: gwallace
-ms.service: container-service
 ms.topic: article
 ms.date: 09/17/2018
-ms.author: mlearned
-ms.openlocfilehash: ba52cac4ebe923b7217550ed90948d908d8daf7f
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: b1f4449728589eca4f64035d7e70d01dbc187bc4
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73900667"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596204"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -21,7 +18,7 @@ ms.locfileid: "73900667"
 
 Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для этих примеров требуется:
 
@@ -68,7 +65,7 @@ az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
 ```
-или
+или диспетчер конфигурации служб
 ```
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
 ```

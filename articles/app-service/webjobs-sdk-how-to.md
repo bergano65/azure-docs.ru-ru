@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 715415929afaad36e4854e75a2b7b5360d22a6bf
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: c606f6e60b1c906a0d5c29992287d126aaa37b7b
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486348"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77602937"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -395,7 +395,7 @@ static async Task Main()
 }
 ```
 
-Дополнительные сведения см. в статье о [привязке CosmosDB для Azure](../azure-functions/functions-bindings-cosmosdb-v2.md#hostjson-settings) .
+Дополнительные сведения см. в статье о [привязке CosmosDB для Azure](../azure-functions/functions-bindings-cosmosdb-v2-output.md#hostjson-settings) .
 
 ### <a name="event-hubs-trigger-configuration-version-3x"></a>Конфигурация триггеров концентраторов событий (версия 3). *x*)
 
@@ -423,7 +423,7 @@ static async Task Main()
 }
 ```
 
-Дополнительные сведения см. в статье [Привязка концентраторов событий](../azure-functions/functions-bindings-event-hubs.md#hostjson-settings) .
+Дополнительные сведения см. в статье [Привязка концентраторов событий](../azure-functions/functions-bindings-event-hubs-output.md#hostjson-settings) .
 
 ### <a name="queue-storage-trigger-configuration"></a>Настройка триггера хранилища очередей
 
@@ -809,7 +809,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 
 Если необходимо обеспечить выполнение только одного экземпляра функции даже при наличии нескольких экземпляров ведущего веб-приложения, можно использовать атрибут [`Singleton`](#singleton-attribute) .
 
-## <a name="filters"></a>Фильтры
+## <a name="filters"></a>Фильтры.
 
 Функциональные фильтры (предварительная версия) обеспечивают способ настройки конвейера выполнения WebJobs с помощью вашей собственной логики. Фильтры похожи на [фильтры ASP.NET Core](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters). Их можно реализовать как декларативные атрибуты, применяемые к функциям или классам. Дополнительные сведения см. на странице о [фильтрах функции](https://github.com/Azure/azure-webjobs-sdk/wiki/Function-Filters).
 
@@ -828,8 +828,8 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 |Сведения | 2 |
 |Предупреждение     | 3 |
 |Ошибка       | 4 |
-|Critical    | 5 |
-|None        | 6 |
+|Критические важное    | 5 |
+|Нет        | 6 |
 
 Каждую категорию можно независимо отфильтровать с определенным [`LogLevel`](/dotnet/api/microsoft.extensions.logging.loglevel). Например, вы можете просмотреть все журналы для обработки триггера большого двоичного объекта, но только `Error` и выше для всего остального.
 

@@ -2,17 +2,16 @@
 title: Установка Linkerd в службе Kubernetes Azure (AKS)
 description: Узнайте, как установить и использовать Linkerd для создания сетки службы в кластере службы Kubernetes Azure (AKS).
 author: paulbouwer
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: f70052a62152a20f808c1e491a663d1406fbd407
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 419b61527b68299c82dec4f2f5da6b0220859cc1
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747709"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593747"
 ---
 # <a name="install-linkerd-in-azure-kubernetes-service-aks"></a>Установка Linkerd в службе Kubernetes Azure (AKS)
 
@@ -25,7 +24,7 @@ ms.locfileid: "73747709"
 >
 > `stable-2.6.x` Linkerd можно запускать в `1.13+`версиях Kubernetes. Дополнительные стабильные и граничные версии Linkerd можно найти в [выпусках GitHub-Linkerd][linkerd-github-releases].
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Скачивание и установка двоичного файла клиента Linkerd Linkerd
@@ -34,7 +33,7 @@ ms.locfileid: "73747709"
 > * Доступ к панели мониторинга
 > * Удаление Linkerd из AKS
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` подключение к кластеру. Если вам нужна помощь по любому из этих элементов, см. [Краткое руководство по AKS][aks-quickstart].
 
@@ -256,7 +255,7 @@ Opening Linkerd dashboard in the default browser
 linkerd install --ignore-cluster | kubectl delete -f -
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об установке и параметрах конфигурации для Linkerd см. в следующих официальных руководствах по Linkerd:
 

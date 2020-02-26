@@ -1,10 +1,10 @@
 ---
-title: Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure | Документы Майкрософт
+title: Настройка Pacemaker в RHEL в Azure | Документация Майкрософт
 description: Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: mssedusch
-manager: timlt
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
-ms.author: sedusch
-ms.openlocfilehash: 9ccbd67348a8dae7391471ccd1dcc1ba9b135ea2
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.author: radeltch
+ms.openlocfilehash: 21c551721815847eea4cb1435298ea6f7bf37966
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941825"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598805"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -250,7 +250,7 @@ ms.locfileid: "75941825"
 1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Нажмите кнопку "Сохранить".
+1. Щелкните Сохранить
 
 Повторите предыдущие шаги для второго узла кластера.
 

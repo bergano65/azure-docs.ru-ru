@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2020
 ms.author: memildin
-ms.openlocfilehash: 7ffab200b50a7c4d1af60a230f237b18e8afc621
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 8700421551af227f158abaa38d5f96c8e2987ba3
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754223"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603405"
 ---
 # <a name="supported-features-available-in-azure-security-center"></a>Поддерживаемые функции, доступные в центре безопасности Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "75754223"
 
 ## Поддерживаемые функции виртуальных машин и серверов<a name="vm-server-features"></a>
 
-### <a name="windowstabfeatures-windows"></a>[Windows](#tab/features-windows)
+### <a name="windows"></a>[Windows](#tab/features-windows)
 
 |||||||||
 |----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -51,15 +51,15 @@ ms.locfileid: "75754223"
 |Адаптивные элементы управления сетью|✔|✔|-|Стандартный|
 |[& Отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Стандартный|
 |Рекомендации и обнаружение угроз в контейнерах IaaS, размещенных в DOCKER|-|-|-|Стандартный|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|Бесплатные|
-|Оценка ненастроек безопасности|✔|✔|✔|Бесплатные|
-|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Бесплатные|
-|Оценка шифрования диска|✔|✔|-|Бесплатные|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Бесплатные|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Бесплатные|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Free|
+|Оценка ненастроек безопасности|✔|✔|✔|Free|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Free|
+|Оценка шифрования диска|✔|✔|-|Free|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Free|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
 
 
-### <a name="linuxtabfeatures-linux"></a>[Linux](#tab/features-linux)
+### <a name="linux"></a>[Linux](#tab/features-linux)
 
 |||||||||
 |----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -77,12 +77,12 @@ ms.locfileid: "75754223"
 |Адаптивные элементы управления сетью|✔|✔|-|Стандартный|
 |[& Отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Стандартный|
 |Рекомендации и обнаружение угроз в контейнерах IaaS, размещенных в DOCKER|✔|✔|✔|Стандартный|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|Бесплатные|
-|Оценка ненастроек безопасности|✔|✔|✔|Бесплатные|
-|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Бесплатные|
-|Оценка шифрования диска|✔|✔|-|Бесплатные|
-|Оценка уязвимостей сторонних производителей|✔|-|-|Бесплатные|
-|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Бесплатные|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Free|
+|Оценка ненастроек безопасности|✔|✔|✔|Free|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Free|
+|Оценка шифрования диска|✔|✔|-|Free|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Free|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Free|
 
 --- 
 
@@ -97,7 +97,7 @@ ms.locfileid: "75754223"
 
 | Endpoint Protection| Платформы | Установка центра безопасности | Обнаружение центра безопасности |
 |------|------|-----|-----|
-| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016| Нет, встроен в ОС| Да |
+| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016| Нет, встроен в ОС| Да |
 | System Center Endpoint Protection (антивредоносное ПО Майкрософт) | Windows Server 2012 R2, 2012, 2008 R2 (см. примечание ниже) | Через расширение | Да |
 | Trend Micro — все версии * | Семейство Windows Server  | Нет | Да |
 | Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
@@ -116,7 +116,7 @@ ms.locfileid: "75754223"
 
 Центр безопасности Azure поддерживает следующие ресурсы PaaS:
 
-|Служба|Рекомендации (бесплатные)|Оповещения об обнаружении угроз (Standard)|Оценка уязвимостей (стандартная)|
+|Service|Рекомендации (бесплатные)|Оповещения об обнаружении угроз (Standard)|Оценка уязвимостей (стандартная)|
 |----|:----:|:----:|:----:|
 |Базы данных SQL|✔|✔|✔|
 |Реестр контейнеров Azure|-|-|✔|
@@ -126,38 +126,38 @@ ms.locfileid: "75754223"
 |Azure CosmosDB *|-|✔|-|
 |Учетные записи хранения|✔|-|-|
 |Хранилище BLOB-объектов|✔|✔|-|
-|App Service|✔|✔|-|
+|Служба приложений|✔|✔|-|
 |Приложение-функция|✔|-|-|
 |Облачные службы|✔|-|-|
 |Виртуальная сеть|✔|-|-|
 |Подсеть|✔|-|-|
 |Сетевая карта|✔|-|-|
-|Группы безопасности сети|✔|-|-|
+|группы сетевой безопасности;|✔|-|-|
 |Subscription|✔ * *|✔|-|
 |Учетная запись Пакетной службы|✔|-|-|
 |Учетная запись Service Fabric|✔|-|-|
 |Учетная запись службы автоматизации|✔|-|-|
 |Load Balancer|✔|-|-|
-|Поиск с помощью служб Cognitive Services|✔|-|-|
+|Когнитивный поиск|✔|-|-|
 |Пространство имен служебной шины|✔|-|-|
 |Stream Analytics|✔|-|-|
 |Пространство имен концентратора событий|✔|-|-|
-|Логические приложения|✔|-|-|
+|приложениях логики.|✔|-|-|
 |Кэш для Redis|✔|-|-|
 |Data Lake Analytics|✔|-|-|
-|Служба хранилища Azure Data Lake|✔|-|-|
+|Azure Data Lake Storage|✔|-|-|
 |Key Vault|✔|✔ *|-|
 
 \* эти функции в настоящее время поддерживаются в предварительной версии.
 
 рекомендации по \*\* Azure Active Directory (Azure AD) доступны только для стандартных подписок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).
 - Узнайте, как [спланировать работу в Центре безопасности Azure, и получите рекомендации по переходу к его использованию](security-center-planning-and-operations-guide.md).
 - Ознакомьтесь с [платформами, поддерживающими центр безопасности](security-center-os-coverage.md).
 - Дополнительные сведения об [обнаружении угроз для виртуальных машин & серверах в центре безопасности Azure](security-center-alerts-iaas.md).
-- Ознакомьтесь с [часто задаваемыми вопросами об использовании Центра безопасности Azure](security-center-faq.md).
+- [Часто задаваемые вопросы о центре безопасности Azure](faq-general.md).
 - Изучите [записи блога, посвященные безопасности и соответствию требованиям в Azure](https://blogs.msdn.com/b/azuresecurity/).

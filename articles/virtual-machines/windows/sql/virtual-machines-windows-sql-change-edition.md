@@ -14,12 +14,12 @@ ms.date: 01/14/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7d096f721869e43e9a860733d0f6893f224a6776
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: bd9622d3e34198402bc45e5d855d05b0c8e35eb8
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772573"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77605464"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>Изменение SQL Server выпуска на месте на виртуальной машине Azure
 
@@ -29,13 +29,13 @@ ms.locfileid: "76772573"
 
 После того как выпуск SQL Server будет изменен внутренне на SQL Server виртуальной машине, необходимо обновить свойство Edition SQL Server в портал Azure для выставления счетов. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить изменение выпуска SQL Server на месте, вам потребуется следующее: 
 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - [SQL Server виртуальную машину в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) , зарегистрированную с помощью [поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).
-- Установочный носитель с **нужным выпуском** SQL Server. Клиенты, у которых есть [Программа Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) , могут получить установочный носитель из [центра корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из SQL Server образа виртуальной машины Azure Marketplace, который имеет нужный выпуск (обычно находится в `c:\SQLInstalls`). 
+- Установочный носитель с **нужным выпуском** SQL Server. Клиенты, у которых есть [Программа Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) , могут получить установочный носитель из [центра корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из SQL Server образа виртуальной машины Azure Marketplace, который имеет нужный выпуск (обычно находится в `C:\SQLServerFull`). 
 
 
 ## <a name="upgrade-an-edition"></a>Обновление выпуска

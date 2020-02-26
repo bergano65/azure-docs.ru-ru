@@ -3,17 +3,16 @@ title: Усиление безопасности на узлах виртуал�
 description: Сведения о усилении безопасности в ОС узла виртуальной машины AKS
 services: container-service
 author: saudas
-ms.service: container-service
 ms.topic: article
 ms.date: 09/11/2019
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: 8b7e50fdc02ab47c50cecb95073f1b51393db898
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: d4105a9fba3c40c563198040afb811625727ead0
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73885642"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77594386"
 ---
 # <a name="security-hardening-in-aks-virtual-machine-hosts"></a>Усиление безопасности на узлах виртуальных машин AKS 
 
@@ -83,7 +82,7 @@ AKS-Engine в настоящее время не применяет или не 
 
 * Операционная система с усиленной защитой не поддерживается за пределами платформы AKS. 
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 Дополнительные сведения о безопасности AKS см. в следующих статьях: 
 
