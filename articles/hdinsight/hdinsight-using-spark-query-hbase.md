@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/02/2019
-ms.openlocfilehash: fdfd026be1a10410cd7c875dbdf0de9660c8412c
-ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.custom: hdinsightactive
+ms.date: 02/24/2020
+ms.openlocfilehash: 888f24e13ce67c878592068927383dd8cbfefa60
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71937620"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623100"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
@@ -21,13 +21,13 @@ ms.locfileid: "71937620"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Два отдельных кластера HDInsight развернуты в одной виртуальной сети. Одна HBase и одна Spark с установленным как минимум Spark 2,1 (HDInsight 3,6). Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
+* Два отдельных кластера HDInsight развернуты в одной [виртуальной сети](./hdinsight-plan-virtual-network-deployment.md). Одна HBase и одна Spark с установленным как минимум Spark 2,1 (HDInsight 3,6). Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* [Схема универсального кода ресурса (URI)](hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это будет wasb://для хранилища BLOB-объектов Azure, abfs://для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь `wasbs://`значение.  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
+* [Схема универсального кода ресурса (URI)](hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Эта схема будет wasb://для хранилища BLOB-объектов Azure, abfs://для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет `wasbs://`.  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
 
-## <a name="overall-process"></a>Общий процесс
+## <a name="overall-process"></a>Общее описание процесса
 
 Ниже приведен общий процесс, чтобы позволить кластеру Spark запрашивать кластер HDInsight.
 
@@ -42,25 +42,25 @@ ms.locfileid: "71937620"
 
 На этом шаге вы создадите и заполните таблицу в Apache HBase, которую затем можно будет запрашивать с помощью Spark.
 
-1. `ssh` Используйте команду для подключения к кластеру HBase. Измените приведенную ниже команду, `HBASECLUSTER` заменив именем кластера HBase, а затем введите следующую команду:
+1. Используйте команду `ssh` для подключения к кластеру HBase. Измените приведенную ниже команду, заменив `HBASECLUSTER` именем кластера HBase, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@HBASECLUSTER-ssh.azurehdinsight.net
     ```
 
-2. `hbase shell` Используйте команду, чтобы запустить интерактивную оболочку HBase. В строку SSH-подключения введите следующую команду:
+2. Используйте команду `hbase shell`, чтобы запустить интерактивную оболочку HBase. В строку SSH-подключения введите следующую команду:
 
     ```bash
     hbase shell
     ```
 
-3. Используйте команду `create` , чтобы создать таблицу HBase с семейством из двух столбцов. Введите следующую команду:
+3. Используйте команду `create`, чтобы создать таблицу HBase с семейством из двух столбцов. Введите следующую команду:
 
     ```hbase
     create 'Contacts', 'Personal', 'Office'
     ```
 
-4. `put` Используйте команду, чтобы вставить значения из указанного столбца в указанную строку в определенной таблице. Введите следующую команду:
+4. Используйте команду `put`, чтобы вставить значения из указанного столбца в указанной строке в определенной таблице. Введите следующую команду:
 
     ```hbase
     put 'Contacts', '1000', 'Personal:Name', 'John Dole'
@@ -73,7 +73,7 @@ ms.locfileid: "71937620"
     put 'Contacts', '8396', 'Office:Address', '5415 San Gabriel Dr.'
     ```
 
-5. `exit` Используйте команду, чтобы прерывать интерактивную оболочку HBase. Введите следующую команду:
+5. Чтобы прерывать интерактивную оболочку HBase, используйте команду `exit`. Введите следующую команду:
 
     ```hbase
     exit
@@ -95,11 +95,19 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
 
 Затем завершите подключение SSH к кластеру HBase.
 
+```bash
+exit
+```
+
 ## <a name="put-hbase-sitexml-on-your-spark-cluster"></a>Помещение файла hbase-site.xml в кластер Spark
 
-1. Подключитесь к головному узлу кластера Spark с помощью SSH.
+1. Подключитесь к головному узлу кластера Spark с помощью SSH. Измените приведенную ниже команду, заменив `SPARKCLUSTER` именем кластера Spark, а затем введите команду:
 
-2. Введите следующую команду, чтобы скопировать `hbase-site.xml` данные из хранилища по умолчанию кластера Spark в папку конфигурации Spark 2 в локальном хранилище кластера:
+    ```cmd
+    ssh sshuser@SPARKCLUSTER-ssh.azurehdinsight.net
+    ```
+
+2. Введите следующую команду, чтобы скопировать `hbase-site.xml` из хранилища по умолчанию кластера Spark в папку конфигурации Spark 2 в локальном хранилище кластера:
 
     ```bash
     sudo hdfs dfs -copyToLocal /hbase-site.xml /etc/spark2/conf
@@ -119,7 +127,7 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
 
 На этом этапе вы определяете объект каталога, который сопоставляет схему из Spark с Apache HBase.  
 
-1. В открытой оболочке Spark введите следующие `import` инструкции:
+1. В открытой оболочке Spark введите следующие инструкции `import`:
 
     ```scala
     import org.apache.spark.sql.{SQLContext, _}
@@ -128,7 +136,7 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
     import spark.sqlContext.implicits._
     ```  
 
-2. Введите следующую команду, чтобы определить каталог для таблицы Contacts, созданной в HBase:
+1. Введите следующую команду, чтобы определить каталог для таблицы Contacts, созданной в HBase:
 
     ```scala
     def catalog = s"""{
@@ -146,11 +154,11 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
 
     Код делает следующее:  
 
-     1\. Определите схему каталога для таблицы HBase с именем `Contacts`.  
-     2\. Определите rowkey как `key` и сопоставьте имена столбцов, используемые в Spark, с семейством столбцов, именем столбца и типом столбца, используемыми в HBase.  
-     В. rowkey также должен быть определен как именованный столбец (`rowkey`), который содержит определенное семейство столбцов `cf` из `rowkey`.  
+     а. Определите схему каталога для таблицы HBase с именем `Contacts`.  
+     б. Определите rowkey как `key` и сопоставьте имена столбцов, используемые в Spark, с семейством столбцов, именем столбца и типом столбца, используемыми в HBase.  
+     в. rowkey также должен быть определен как именованный столбец (`rowkey`), который содержит определенное семейство столбцов `cf` из `rowkey`.  
 
-3. Введите следующую команду, чтобы определить метод, который предоставляет кадр `Contacts` данных для таблицы в HBase:
+1. Введите следующую команду, чтобы определить метод, предоставляющий таблицу данных для таблицы `Contacts` в HBase:
 
     ```scala
     def withCatalog(cat: String): DataFrame = {
@@ -162,40 +170,42 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
      }
     ```
 
-4. Создайте экземпляр таблицы данных:
+1. Создайте экземпляр таблицы данных:
 
     ```scala
     val df = withCatalog(catalog)
     ```  
 
-5. Выполните запрос таблицы данных:
+1. Выполните запрос таблицы данных:
 
     ```scala
     df.show()
     ```
 
-6. Вы должны увидеть две строки данных:
+    Вы должны увидеть две строки данных:
 
-        +------+--------------------+--------------+-------------+--------------+
-        |rowkey|       officeAddress|   officePhone| personalName| personalPhone|
-        +------+--------------------+--------------+-------------+--------------+
-        |  1000|1111 San Gabriel Dr.|1-425-000-0002|    John Dole|1-425-000-0001|
-        |  8396|5415 San Gabriel Dr.|  230-555-0191|  Calvin Raji|  230-555-0191|
-        +------+--------------------+--------------+-------------+--------------+
+    ```output
+    +------+--------------------+--------------+-------------+--------------+
+    |rowkey|       officeAddress|   officePhone| personalName| personalPhone|
+    +------+--------------------+--------------+-------------+--------------+
+    |  1000|1111 San Gabriel Dr.|1-425-000-0002|    John Dole|1-425-000-0001|
+    |  8396|5415 San Gabriel Dr.|  230-555-0191|  Calvin Raji|  230-555-0191|
+    +------+--------------------+--------------+-------------+--------------+
+    ```
 
-7. Зарегистрируйте временную таблицу, чтобы запрашивать таблицу HBase с помощью Spark SQL:
+1. Зарегистрируйте временную таблицу, чтобы запрашивать таблицу HBase с помощью Spark SQL:
 
     ```scala
     df.createTempView("contacts")
     ```
 
-8. Выполните SQL-запрос к таблице `contacts`:
+1. Выполните SQL-запрос к таблице `contacts`:
 
     ```scala
     spark.sqlContext.sql("select personalName, officeAddress from contacts").show
     ```
 
-9. Вы должны увидеть примерно такой результат:
+    Вы должны увидеть примерно такой результат:
 
     ```output
     +-------------+--------------------+
@@ -220,7 +230,7 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
         )
     ```
 
-2. Создайте экземпляр `ContactRecord` и поместите его в массив:
+1. Создайте экземпляр `ContactRecord` и поместите его в массив:
 
     ```scala
     val newContact = ContactRecord("16891", "40 Ellis St.", "674-555-0110", "John Jackson","230-555-0194")
@@ -229,19 +239,19 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
     newData(0) = newContact
     ```
 
-3. Сохраните массив новых данных в HBase:
+1. Сохраните массив новых данных в HBase:
 
     ```scala
     sc.parallelize(newData).toDF.write.options(Map(HBaseTableCatalog.tableCatalog -> catalog, HBaseTableCatalog.newTable -> "5")).format("org.apache.spark.sql.execution.datasources.hbase").save()
     ```
 
-4. Изучите результаты:
+1. Изучите результаты:
 
     ```scala  
     df.show()
     ```
 
-5. Вы должны увидеть примерно такой результат:
+    Окно вывода должно иметь примерно следующий вид:
 
     ```output
     +------+--------------------+--------------+------------+--------------+
@@ -253,7 +263,7 @@ hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CON
     +------+--------------------+--------------+------------+--------------+
     ```
 
-6. Закройте оболочку Spark, введя следующую команду:
+1. Закройте оболочку Spark, введя следующую команду:
 
     ```scala
     :q

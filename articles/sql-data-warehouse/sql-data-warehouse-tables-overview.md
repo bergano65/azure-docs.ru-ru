@@ -11,12 +11,12 @@ ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 9220d3adb31005551b6358034207f1071065b1a7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: da06112b0990898227191c919b209c8a95d15197
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692380"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616535"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -41,9 +41,9 @@ CREATE SCHEMA wwi;
 
 Чтобы показать организацию таблиц в хранилище данных SQL, можно использовать в качестве префиксов имен таблиц значения fact, dim и int. В следующей таблице показаны некоторые имена схем и таблиц для WideWorldImportersDW.  
 
-| Таблица WideWorldImportersDW  | Тип таблицы | Хранилище данных SQL. |
+| Таблица WideWorldImportersDW  | Тип таблицы | Хранилище данных SQL |
 |:-----|:-----|:------|:-----|
-| City | Измерение | wwi.DimCity |
+| Город | Измерение | wwi.DimCity |
 | Порядок | Факты | wwi.FactOrder |
 
 
@@ -116,11 +116,11 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 ## <a name="commands-for-creating-tables"></a>Команды для создания таблиц
 Вы можете создать пустую таблицу. Вы также можете создать и заполнить таблицу результатами инструкции Select. Ниже приведены команды T-SQL для создания таблицы.
 
-| Инструкция T-SQL | Description (Описание) |
+| Инструкция Т-SQL | Description |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse) | Создает пустую таблицу, определив все столбцы и параметры таблицы. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql) | Создает внешнюю таблицу. Определение таблицы хранится в хранилище данных SQL. Данные таблицы хранятся в хранилище BLOB-объектов Azure или в Azure Data Lake Store. |
-| [Инструкция CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) | Задает новую таблицу с результатами инструкции Select. Столбцы и типы данных таблицы основаны на результатах инструкции Select. Чтобы импортировать данные, эта инструкция может выбрать данные из внешней таблицы. |
+| [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) | Задает новую таблицу с результатами инструкции Select. Столбцы и типы данных таблицы основаны на результатах инструкции Select. Чтобы импортировать данные, эта инструкция может выбрать данные из внешней таблицы. |
 | [CREATE EXTERNAL TABLE AS SELECT](/sql/t-sql/statements/create-external-table-as-select-transact-sql) | Создает новую внешнюю таблицу, экспортируя результаты инструкции Select во внешнее расположение.  Расположением является либо хранилище BLOB-объектов Azure, либо Azure Data Lake Store. |
 
 ## <a name="aligning-source-data-with-the-data-warehouse"></a>Согласование исходных данных с хранилищем данных
@@ -138,8 +138,8 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns)
 - Суррогатные ключи (реализация посредством [удостоверения](sql-data-warehouse-tables-identity.md));
-- [синонимы;](/sql/t-sql/statements/create-synonym-transact-sql)
-- [триггеры;](/sql/t-sql/statements/create-trigger-transact-sql)
+- [Синонимы](/sql/t-sql/statements/create-synonym-transact-sql)
+- [Триггеры](/sql/t-sql/statements/create-trigger-transact-sql)
 - [Уникальные индексы](/sql/t-sql/statements/create-index-transact-sql)
 - [Пользовательские типы](/sql/relational-databases/native-client/features/using-user-defined-types)
 
@@ -213,6 +213,7 @@ LEFT OUTER JOIN (select * from sys.pdw_column_distribution_properties where dist
 LEFT OUTER JOIN sys.columns c
     ON cdp.[object_id] = c.[object_id]
     AND cdp.[column_id] = c.[column_id]
+WHERE pn.[type] = 'COMPUTE'
 )
 , size
 AS

@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 826cc155bae037121ddc303a6e1bf300e2d50a27
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 514de1435519282335124bfd67bac82669240b78
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589306"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616517"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Оповещения безопасности в Центре безопасности Azure
 
@@ -98,14 +98,20 @@ ms.locfileid: "77589306"
 
 В следующих разделах описываются различные предупреждения в соответствии с типами ресурсов.
 
-* [Предупреждения о виртуальных машинах и серверах IaaS](security-center-alerts-iaas.md)
-* [Встроенные предупреждения вычислений](security-center-alerts-compute.md)
-* [Оповещения служб данных](security-center-alerts-data-services.md)
+* [Оповещения для компьютеров с Windows IaaS](threat-protection.md#windows-machines)
+* [Оповещения для компьютеров IaaS Linux](threat-protection.md#linux-machines)
+* [Оповещения для службы приложений Azure](threat-protection.md#app-services)
+* [Оповещения для контейнеров Azure](threat-protection.md#azure-containers)
+* [Оповещения для базы данных SQL и хранилища данных SQL](threat-protection.md#data-sql)
+* [Оповещения для службы хранилища Azure](threat-protection.md#azure-storage)
+* [Оповещения для Cosmos DB](threat-protection.md#cosmos-db)
 
 В следующих разделах объясняется, как центр безопасности использует различные данные телеметрии, собираемые при интеграции с инфраструктурой Azure, чтобы применить дополнительные уровни защиты для ресурсов, развернутых в Azure:
 
-* [Предупреждения уровня службы](security-center-alerts-service-layer.md)
-* [Обнаружение угроз для Azure WAF и Azure от атак DDoS Protection](security-center-alerts-integration.md)
+* [Оповещения для уровня управления Azure (Azure Resource Manager) (Предварительная версия)](threat-protection.md#management-layer)
+* [Оповещения для Azure Key Vault (Предварительная версия)](threat-protection.md#azure-keyvault)
+* [Оповещения для сетевого уровня Azure](threat-protection.md#network-layer)
+* [Оповещения из других служб](threat-protection.md#alerts-other)
 
 ## <a name="what-are-security-incidents"></a>Что такое инциденты безопасности?
 

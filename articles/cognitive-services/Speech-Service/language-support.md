@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/19/2020
+ms.date: 02/25/2020
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 86224508b9f24906abce157b92a77c0a2f24d882
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 13d12bfbf64af9e19b66e63c88c9d7e0534571f3
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77605730"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617286"
 ---
 # <a name="language-and-region-support-for-the-speech-service"></a>Поддержка языков и регионов для службы речи
 
@@ -36,12 +36,12 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
  Локаль | Язык | Поддерживается | Настройки
 ------|------------|-----------|-------------
-`ar-AE` | Арабский (ОАЭ) | Да | нет
-`ar-BH` | Арабский (Бахрейн) | Да | Языковая модель
-`ar-EG` | арабский (Египет), современный стандартный | Да | Языковая модель
-`ar-KW` | Арабский (Кувейт) | Да | нет
-`ar-QA` | Арабский (Катар) | Да | нет
-`ar-SA` | Арабский (Саудовская Аравия) | Да | нет
+`ar-AE` | Арабский (ОАЭ) | Да | Нет
+`ar-BH` | Арабский (Бахрейн), современный стандарт | Да | Языковая модель
+`ar-EG` | Арабский (Египет) | Да | Языковая модель
+`ar-KW` | Арабский (Кувейт) | Да | Нет
+`ar-QA` | Арабский (Катар) | Да | Нет
+`ar-SA` | Арабский (Саудовская Аравия) | Да | Нет
 `ca-ES` | Каталонский | Да | Языковая модель
 `da-DK` | Датский (Дания) | Да | Языковая модель
 `de-DE` | Немецкий (Германия) | Да | Акустическая модель<br>Языковая модель<br>Произношение
@@ -70,9 +70,9 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 `ru-RU` | Русский (Россия) | Да | Акустическая модель<br>Языковая модель
 `sv-SE` | Шведский (Швеция) | Да | Языковая модель
 `ta-IN` | Тамильский (Индия) | Да | Языковая модель
-`te-IN` | Телугу (Индия) | Да | нет
-`th-TH` | Тайский (Таиланд) | Да | нет
-`tr-TR` | Турецкий (Турция) | Да | нет
+`te-IN` | Телугу (Индия) | Да | Нет
+`th-TH` | Тайский (Таиланд) | Да | Нет
+`tr-TR` | Турецкий (Турция) | Да | Нет
 `zh-CN` | китайский (мандаринский, упрощенное письмо) | Да | Акустическая модель<br>Языковая модель
 `zh-HK` | Китайский (кантонский, традиционный) | Да | Языковая модель
 `zh-TW` | Китайский (тайваньский, мандаринский диалект) | Да | Языковая модель
@@ -92,7 +92,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 Дополнительные сведения о доступности по регионам см. на [этой странице](regions.md#standard-and-neural-voices).
 
-Локаль | Язык | пол; | Полное сопоставление имени службы | Короткое имя голоса
+Локаль | Язык | Пол | Полное сопоставление имени службы | Короткое имя голоса
 --------|----------|--------|---------|------------
 `de-DE` | Немецкий (Германия) | Жен. | "Microsoft Server Speech Преобразование текста в речь Voice (de-DE, Катжанеурал)" | "de-DE-Катжанеурал"
 `en-US` | Английский (США) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, JessaNeural)" | "en-US-Жессанеурал"
@@ -110,7 +110,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 Свыше 75 стандартных голосовых моделей доступны в более 45 языках и языковых стандартах, что позволит вам преобразовать текст в синтезированную речь. Дополнительные сведения о доступности по регионам см. на [этой странице](regions.md#standard-and-neural-voices).
 
-Локаль | Язык | пол; | Полное сопоставление имени службы | короткое имя;
+Локаль | Язык | Пол | Полное сопоставление имени службы | Краткое имя
 -------|----------|---------|----------|----------
 <sup>1</sup>`ar-EG` | Арабский (Египет) | Жен. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ar-EG, Hoda)" | "ar-EG-хода"
 `ar-SA` | Арабский (Саудовская Аравия) | Муж. | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ar-SA, Naayf)" | "AR-SA-Наайф"
@@ -221,7 +221,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Болгарский      | `bg`          |
 | Кантонский (традиционное письмо)      | `yue`          |
 | Каталонский      | `ca`          |
-| Китайский (упрощенный)      | `zh-Hans`          |
+| Китайский (упрощенное письмо)      | `zh-Hans`          |
 | Китайский (традиционное письмо)      | `zh-Hant`          |
 | Хорватский      | `hr`          |
 | Чешский      | `cs`          |
@@ -284,7 +284,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Юкатекский майя      | `yua`          |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Получите пробную подписку на службу распознавания речи](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-chsarp)

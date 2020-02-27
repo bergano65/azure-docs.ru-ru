@@ -7,14 +7,14 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 02/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 543227ac9c07207112177dfaccbd00723b61a314
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 8d3f4294a5c8b09a132d56cd72ccb36ce766e0dd
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566404"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616717"
 ---
-# <a name="upgrade-azure-internal-load-balancer-from-basic-sku-to-standard-sku"></a>Обновление внутреннего Load Balancer Azure с SKU "базовый" до SKU "Стандартный"
+# <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — не требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus).
 
 Обновление выполняется в два этапа.
@@ -28,12 +28,12 @@ ms.locfileid: "77566404"
 
 Доступен сценарий Azure PowerShell, который выполняет следующие действия:
 
-* Создает стандартный внутренний номер SKU Load Balancer в группе ресурсов и расположении, которое вы указали.
-* Без проблем копирует конфигурации базового SKU уровня "базовый" Load Balancer на новый внутренний Load Balancer "Стандартный".
+* Создает стандартный внутренний номер SKU Load Balancer в указанном расположении. Обратите внимание, что [исходящее подключение](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) не будет предоставляться стандартным внутренним Load Balancer.
+* Без проблем копирует конфигурации базового номера SKU Load Balancer на новую Load Balancer (цен. категория "Стандартный") создания.
 
 ### <a name="caveatslimitations"></a>кавеатс\лимитатионс
 
-* Скрипт поддерживает только внутреннее Load Balancer обновление. Для внутреннего базового Load Balancer обновления создайте стандартную внутреннюю Load Balancer, если не требуется исходящее подключение, и создайте стандартное внутреннее Load Balancer и стандартный внутренний Load Balancer, если необходимо исходящее подключение.
+* Сценарий поддерживает только внутреннее Load Balancer обновление, когда исходящие подключения не требуются. Если для некоторых виртуальных машин требуется [исходящее подключение](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , обратитесь к этой [странице](upgrade-InternalBasic-To-PublicStandard.md) за инструкциями. 
 * Load Balancer (цен. категория "Стандартный") содержит новые общедоступные адреса. Невозможно легко переместить IP-адреса, связанные с существующими базовыми Load Balancer, в Load Balancer (цен. категория "Стандартный"), так как они имеют разные номера SKU.
 * Если стандартный балансировщик нагрузки создан в другом регионе, вы не сможете связать существующие виртуальные машины в старом регионе с вновь созданной Load Balancer (цен. категория "Стандартный"). Чтобы обойти это ограничение, обязательно создайте новую виртуальную машину в новом регионе.
 * Если у Load Balancer нет внешней IP-конфигурации или серверного пула, то, скорее всего, будет обнаружена ошибка, которая вызвала бы выполнение скрипта. Убедитесь, что они не пусты.

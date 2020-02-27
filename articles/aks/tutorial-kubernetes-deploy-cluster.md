@@ -2,20 +2,17 @@
 title: Руководство по Kubernetes в Azure. Развертывание кластера
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы создаете кластер AKS и используете kubectl для подключения к главному узлу Kubernetes.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: tutorial
-ms.date: 12/19/2018
-ms.author: mlearned
+ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 130cb973f2de1de0d4c4636a4752a06e22edf65b
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 1e977d927a301bee4be6cf3856114692542981b4
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76932563"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77621215"
 ---
-# <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Руководство. Развертывание кластера службы Azure Kubernetes (AKS)
+# <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Руководство по Развертывание кластера службы Azure Kubernetes (AKS)
 
 Kubernetes предоставляет распределенную платформу для контейнерных приложений. AKS позволяет быстро создать готовый производственный кластер Kubernetes. В этом руководстве (третья часть из восьми) кластер Kubernetes развертывается в AKS. Вы узнаете, как выполнять следующие задачи:
 
@@ -76,7 +73,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 $ kubectl get nodes
 
 NAME                       STATUS   ROLES   AGE   VERSION
-aks-nodepool1-12345678-0   Ready    agent   32m   v1.13.10
+aks-nodepool1-12345678-0   Ready    agent   32m   v1.14.8
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

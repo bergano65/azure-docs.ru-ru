@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 016107248399e84b7a82a656c9d590c3cbe0cdbe
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 7d1a77800093ae01bc4eb1e1269d1e9a60f9ce26
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77466932"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616656"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "77466932"
 
 Дополнительные сведения об интерфейсе JDBC Hive см. в статье [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер HDInsight Hadoop. Дополнительные сведения о создании кластера см. в статье [Приступая к работе с Hadoop в HDInsight](apache-hadoop-linux-tutorial-get-started.md). Убедитесь, что служба HiveServer2 запущена.
 * [Пакет Java Developer Kit (JDK) версии 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) или более поздней.
@@ -36,6 +36,18 @@ ms.locfileid: "77466932"
     jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2
 
 Замените `CLUSTERNAME` на имя вашего кластера HDInsight.
+
+Вы также можете получить подключение через **Пользовательский интерфейс Ambari > Hive > конфигурации > Advanced**.
+
+![Получение строки подключения JDBC через Ambari](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-get-connection-string-through-ambari.png)
+
+### <a name="host-name-in-connection-string"></a>Имя узла в строке подключения
+
+Имя узла "CLUSTERNAME.azurehdinsight.net" в строке подключения совпадает с URL-адресом кластера. Его можно получить с помощью портал Azure. 
+
+### <a name="port-in-connection-string"></a>Порт в строке подключения
+
+**Порт 443** можно использовать только для подключения к кластеру из некоторых мест за пределами виртуальной сети Azure. HDInsight — это управляемая служба, которая означает, что все подключения к кластеру управляются через безопасный шлюз. Вы не можете подключиться к HiveServer 2 напрямую через порты 10001 или 10000, так как эти порты недоступны снаружи. 
 
 ## <a name="authentication"></a>Аутентификация
 
@@ -119,7 +131,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 Пример использования клиента Java для запросов Hive доступен в [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc). Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="unexpected-error-occurred-attempting-to-open-an-sql-connection"></a>Непредвиденная ошибка при попытке открыть подключение к SQL
 
@@ -139,7 +151,16 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
 1. Перезапустите SQuirreL. При последующих подключениях к Hive в HDInsight ошибка больше не должна возникать.
 
-## <a name="next-steps"></a>Следующие шаги
+### <a name="connection-disconnected-by-hdinsight"></a>Подключение отключено с помощью HDInsight
+
+**Симптомы**. при попытке загрузить огромный объем данных (например, несколько ГБ) через JDBC/ODBC соединение неожиданно отключается из HDInsight при скачивании. 
+
+**Причина**: Эта ошибка вызвана ограничением на узлы шлюза. При получении данных из JDBC/ODBC все данные должны проходить через узел шлюза. Однако шлюз не предназначен для загрузки огромного объема данных, поэтому подключение может быть закрыто шлюзом, если он не может обрабатывать трафик.
+
+**Решение**. Избегайте использования драйвера JDBC/ODBC для загрузки огромных объемов данных. Вместо этого следует копировать данные непосредственно из хранилища BLOB-объектов.
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать JDBC для работы с Hive, воспользуйтесь следующими ссылками для изучения других способов работы с Azure HDInsight.
 
