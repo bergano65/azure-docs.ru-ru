@@ -3,21 +3,21 @@ title: 'PowerShell: миграция SQL Server в управляемый экз
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из локальной SQL Server в управляемый экземпляр базы данных SQL Azure с помощью Azure PowerShell и Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: 3b434bc8a495f47f7fb2de8429069283821cf397
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 02/20/2020
+ms.openlocfilehash: 9ea9f55681b93e79eec836f5808d2c6feaa6bb29
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746631"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650730"
 ---
 # <a name="migrate-sql-server-to-sql-database-managed-instance-with-powershell--azure-database-migration-service"></a>Миграция SQL Server в управляемый экземпляр базы данных SQL с помощью PowerShell & Azure Database Migration Service
 
@@ -35,7 +35,7 @@ ms.locfileid: "75746631"
 
 Эта статья содержит подробные сведения о том, как выполнять оперативную и автономную миграцию.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 

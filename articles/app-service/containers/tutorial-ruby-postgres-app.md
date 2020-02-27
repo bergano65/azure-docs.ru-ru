@@ -1,16 +1,16 @@
 ---
-title: Руководство. приложению Ruby в Linux на основе Postgres
+title: Руководство по приложению Ruby в Linux на основе Postgres
 description: Узнайте, как создать приложение Ruby в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом руководстве используется Rails.
 ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3238de3f1d3416964af05db031b5ecec20e4f140
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: 6ce52b9754f69ef9c6eaf1f59062b6366670985f
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720197"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77524042"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
@@ -18,7 +18,7 @@ ms.locfileid: "75720197"
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных PostgreSQL в Azure
@@ -30,9 +30,9 @@ ms.locfileid: "75720197"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * [установите Git](https://git-scm.com/);
 * [установите Ruby 2.3](https://www.ruby-lang.org/en/documentation/installation/);

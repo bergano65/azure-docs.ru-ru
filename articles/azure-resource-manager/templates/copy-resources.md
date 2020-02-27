@@ -3,18 +3,18 @@ title: Развертывание нескольких экземпляров р
 description: Используйте операцию копирования и массивы в шаблоне Azure Resource Manager, чтобы несколько раз развернуть тип ресурса.
 ms.topic: conceptual
 ms.date: 09/27/2019
-ms.openlocfilehash: 38b5bcd38e0dc8ba8c758e9aa8371857541ba55e
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: e90673504ceaccdc25a477e856defa77eed37d86
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210831"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620224"
 ---
 # <a name="resource-iteration-in-azure-resource-manager-templates"></a>Итерация ресурсов в шаблонах Azure Resource Manager
 
 В этой статье показано, как создать более одного экземпляра ресурса в шаблоне Azure Resource Manager. Добавив элемент **Copy** в раздел ресурсов шаблона, можно динамически задать число развертываемых ресурсов. Кроме того, не нужно повторять синтаксис шаблона.
 
-Можно также использовать Copy со [свойствами](copy-properties.md) и [переменными](copy-variables.md).
+Можно также использовать Copy со [свойствами](copy-properties.md), [переменными](copy-variables.md) и [выходными данными](copy-outputs.md).
 
 Если вам нужно указать, развернут ли ресурс, см. описание [элемента condition](conditional-resource-deployment.md).
 
@@ -130,6 +130,8 @@ ms.locfileid: "77210831"
   "outputs": {}
 }
 ```
+
+Если требуется возвращать значения из развернутых ресурсов, можно использовать [Copy в разделе Outputs](copy-outputs.md).
 
 ## <a name="serial-or-parallel"></a>Последовательный или параллельный
 
@@ -268,7 +270,7 @@ ms.locfileid: "77210831"
 
 Ниже приведены примеры распространенных сценариев для создания нескольких экземпляров ресурса или свойства.
 
-|Шаблон  |Описание  |
+|Шаблон  |Description  |
 |---------|---------|
 |[Копирования хранилища](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystorage.json) |Развертывает несколько учетных записей хранения с номером индекса в имени. |
 |[Последовательное копирование хранилища](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/serialcopystorage.json) |Последовательно развертывает несколько учетных записей хранения. Имя содержит номер индекса. |
@@ -276,10 +278,13 @@ ms.locfileid: "77210831"
 |[Развертывание виртуальной машины с переменным количеством дисков данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-windows-copy-datadisks) |Развертывает несколько дисков данных с виртуальной машиной. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](template-tutorial-create-multiple-instances.md).
-* Другие способы использования элемента copy см. в разделе [Итерация свойств в шаблонах Azure Resource Manager](copy-properties.md) и [Переменная iteration в шаблонах Azure Resource Manager](copy-variables.md).
+* Другие способы использования элемента copy см. в следующих статьях:
+  * [Итерация свойств в шаблонах Azure Resource Manager](copy-properties.md)
+  * [Итерация переменных в шаблонах Azure Resource Manager](copy-variables.md)
+  * [Выходная итерация в шаблонах Azure Resource Manager](copy-outputs.md)
 * Сведения об использовании инструкции Copy с вложенными шаблонами см. [в разделе Использование копирования](linked-templates.md#using-copy).
 * Сведения о разделах шаблона см. в статье, посвященной [созданию шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по развертыванию шаблонов см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).

@@ -3,18 +3,18 @@ title: Определение нескольких экземпляров пер
 description: Используйте операцию копирования в шаблоне Azure Resource Manager для многократного прохода при создании переменной.
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: 9e252a0b9721ffec99535c5d30e609e12e9e67eb
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: ea4caf3553b3cd14eec194b8cef0db59499a4f4c
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210818"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622881"
 ---
 # <a name="variable-iteration-in-azure-resource-manager-templates"></a>Итерация переменных в шаблонах Azure Resource Manager
 
 В этой статье показано, как создать более одного значения для переменной в шаблоне Azure Resource Manager. Добавив элемент **Copy** в раздел Variables шаблона, можно динамически задать число элементов для переменной во время развертывания. Кроме того, не нужно повторять синтаксис шаблона.
 
-Вы также можете использовать копию с [ресурсами](copy-resources.md) и [свойствами в ресурсе](copy-properties.md).
+Можно также использовать Copy с [ресурсами](copy-resources.md), [свойствами в ресурсе](copy-properties.md)и [выходами](copy-outputs.md).
 
 ## <a name="variable-iteration"></a>Итерация переменной
 
@@ -305,15 +305,18 @@ ms.locfileid: "77210818"
 
 В следующих примерах показаны распространенные сценарии для создания более одного значения для переменной.
 
-|Шаблон  |Описание  |
+|Шаблон  |Description  |
 |---------|---------|
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) |Демонстрирует разные способы итерации переменных. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](template-tutorial-create-multiple-instances.md).
-* Другие способы использования элемента copy см. в разделе [Итерация ресурсов в Azure Resource Manager шаблоны](copy-resources.md) и [Итерация свойств в шаблонах Azure Resource Manager](copy-properties.md).
+* Другие способы использования элемента copy см. в следующих статьях:
+  * [Итерация ресурсов в шаблонах Azure Resource Manager](copy-resources.md)
+  * [Итерация свойств в шаблонах Azure Resource Manager](copy-properties.md)
+  * [Выходная итерация в шаблонах Azure Resource Manager](copy-outputs.md)
 * Сведения о разделах шаблона см. в статье, посвященной [созданию шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по развертыванию шаблонов см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
 

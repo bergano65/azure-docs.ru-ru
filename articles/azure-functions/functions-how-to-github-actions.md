@@ -1,16 +1,16 @@
 ---
 title: Использование действий GitHub для внесения обновлений в код в функциях Azure
 description: Узнайте, как использовать действия GitHub, чтобы определить рабочий процесс для создания и развертывания проектов функций Azure в GitHub.
-author: ahmedelnably
+author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/16/2019
-ms.author: aelnably
-ms.openlocfilehash: c34847577b7e83228fafad431f541497be9a21ae
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.author: cshoe
+ms.openlocfilehash: dd74fd5c38e5a8800d2092afc1db1b412b126861
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769155"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77649914"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -69,7 +69,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Настройка среды выполняется с помощью действия по настройке публикации для конкретного языка.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-node` для настройки среды.
 
@@ -84,7 +84,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         node-version: '10.x'
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-python` для настройки среды.
 
@@ -99,7 +99,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         python-version: 3.6
 ```
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-dotnet` для настройки среды.
 
@@ -114,7 +114,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         dotnet-version: '2.2.300'
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-java` для настройки среды.
 
@@ -138,7 +138,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 В следующем примере показана часть рабочего процесса, который создает приложение-функцию, которое зависит от языка:
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```yaml
     - name: 'Run npm'
@@ -153,7 +153,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```yaml
     - name: 'Run pip'
@@ -167,7 +167,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```yaml
     - name: 'Run dotnet build'
@@ -180,7 +180,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```yaml
     - name: 'Run mvn'
@@ -199,7 +199,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Чтобы развернуть код в приложении-функции, необходимо использовать действие `Azure/functions-action`. Это действие имеет два параметра:
 
-|Параметр |Объяснение  |
+|Параметр |Пояснение  |
 |---------|---------|
 |**_имя приложения_** | Заполнен Имя приложения функции. |
 |_**имя слота**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
@@ -215,7 +215,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         app-name: PLEASE_REPLACE_THIS_WITH_YOUR_FUNCTION_APP_NAME
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы просмотреть полный рабочий процесс. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , которые имеют `functionapp` в имени. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 

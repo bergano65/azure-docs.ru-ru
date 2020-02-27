@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 9d6c823b5dc85676b15188c8f1783e50e5ed441b
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: cb76c7d7804a7d39e8a18c7a4cf41e9b4e0a7593
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76717818"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623640"
 ---
 # <a name="reuse-environments-for-training-and-deployment-by-using-azure-machine-learning"></a>Повторное использование сред для обучения и развертывания с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -231,7 +231,7 @@ build.wait_for_completion(show_output=True)
 
  [`DockerSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.dockersection?view=azure-ml-py) класса машинное обучение Azure `Environment` позволяет точно настраивать и контролировать операционную систему на виртуальной машине, в которой выполняется обучение.
 
-При `enable` DOCKER служба создает образ DOCKER. Он также создает среду Python, которая использует ваши спецификации в контейнере DOCKER. Эта функция обеспечивает дополнительную изоляцию и воспроизводимость для учебных запусков.
+При включении DOCKER служба создает образ DOCKER. Он также создает среду Python, которая использует ваши спецификации в контейнере DOCKER. Эта функция обеспечивает дополнительную изоляцию и воспроизводимость для учебных запусков.
 
 ```python
 # Creates the environment inside a Docker container.

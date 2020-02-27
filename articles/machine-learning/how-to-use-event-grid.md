@@ -10,12 +10,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 11/04/2019
-ms.openlocfilehash: 0da5fe56bd56d360cd8052976bdde0cdc910c9a5
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 49ee00d43820d5aeb50e44cff1b6c5a448b4ce81
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76904283"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623912"
 ---
 # <a name="create-event-driven-machine-learning-workflows-preview"></a>Создание рабочих процессов машинного обучения на основе событий (Предварительная версия)
 
@@ -25,15 +25,15 @@ ms.locfileid: "76904283"
 
 Используйте сетку событий, чтобы включить такие распространенные сценарии, как:
 
-* Активация конвейеров для повторного обучения
+* Отправка сообщений электронной почты по завершении выполнения
+* Использование функции Azure после регистрации модели
 * Потоковая передача событий из Машинное обучение Azure в различные конечные точки
+* Запускать конвейер машинного обучения при обнаружении смещения
 
-## <a name="prerequisites"></a>Технические условия
-
+## <a name="prerequisites"></a>предварительные требования
 * Участник или владелец доступ к рабочей области Машинное обучение Azure, для которой будут создаваться события.
-* Выберите конечную точку обработчика событий, например веб-перехватчик или концентратор событий. Дополнительные сведения см. в разделе [обработчики событий](https://docs.microsoft.com/azure/event-grid/event-handlers). 
 
-## <a name="configure-machine-learning-events-using-the-azure-portal"></a>Настройка событий машинного обучения с помощью портал Azure
+### <a name="configure-eventgrid-using-the-azure-portal"></a>Настройка EventGrid с помощью портал Azure
 
 1. Откройте [портал Azure](https://portal.azure.com) и перейдите в рабочую область машинное обучение Azure.
 
@@ -51,7 +51,7 @@ ms.locfileid: "76904283"
 
 После подтверждения выбора нажмите кнопку __создать__. После настройки эти события будут отправлены в конечную точку.
 
-## <a name="set-up-azure-event-grid-using-cli"></a>Настройка службы "Сетка событий Azure" с помощью интерфейса командной строки
+### <a name="configure-eventgrid-using-the-cli"></a>Настройка EventGrid с помощью интерфейса командной строки
 
 Можно либо установить последнюю [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), либо использовать Azure Cloud Shell, предоставляемый в рамках подписки Azure.
 
@@ -61,7 +61,7 @@ ms.locfileid: "76904283"
 az add extension --name eventgrid
 ```
 
-В следующем примере показано, как выбрать подписку Azure, а затем создать новую подписку на события для Машинное обучение Azure:
+В следующем примере показано, как выбрать подписку Azure и создать новую подписку на события для Машинное обучение Azure:
 
 ```azurecli-interactive
 # Select the Azure subscription that contains the workspace
@@ -77,6 +77,12 @@ az eventgrid event-subscription create \
 ```
 
 ## <a name="sample-scenarios"></a>Примеры сценариев
+
+### <a name="use-azure-functions-to-deploy-a-model-based-on-tags"></a>Развертывание модели на основе тегов с помощью функций Azure
+
+Объект модели Машинное обучение Azure содержит параметры, на которых можно выполнить сведение развертываний, таких как имя модели, версия, тег и свойство. Событие регистрации модели может активировать конечную точку, и вы можете использовать функцию Azure для развертывания модели на основе значений этих параметров.
+
+Пример см. в репозитории [https://github.com/Azure-Samples/MachineLearningSamples-NoCodeDeploymentTriggeredByEventGrid](https://github.com/Azure-Samples/MachineLearningSamples-NoCodeDeploymentTriggeredByEventGrid) и выполните действия, описанные в файле **сведений** .
 
 ### <a name="use-a-logic-app-to-send-email-alerts"></a>Использование приложения логики для отправки оповещений по электронной почте
 
@@ -158,12 +164,6 @@ az eventgrid event-subscription create \
 
 ![представление — в рабочей области](./media/how-to-use-event-grid/view-in-workspace.png)
 
-
-### <a name="use-azure-functions-to-deploy-a-model-based-on-tags"></a>Развертывание модели на основе тегов с помощью функций Azure
-
-Объект модели Машинное обучение Azure содержит параметры, на которых можно выполнить сведение развертываний, таких как имя модели, версия, тег и свойство. Событие регистрации модели может активировать конечную точку, и вы можете использовать функцию Azure для развертывания модели на основе значений этих параметров.
-
-Пример см. в репозитории [https://github.com/Azure-Samples/MachineLearningSamples-NoCodeDeploymentTriggeredByEventGrid](https://github.com/Azure-Samples/MachineLearningSamples-NoCodeDeploymentTriggeredByEventGrid) и выполните действия, описанные в файле **сведений** .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

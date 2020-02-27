@@ -3,27 +3,27 @@ title: Многоуровневое хранение данных и узлы р
 description: Многоуровневое хранение данных и узлы расширения для SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
-author: RicksterCDN
-manager: gwallace
+author: msjuergent
+manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/04/2018
-ms.author: saghorpa
+ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 261009edc20f946fa86f0482d8ab5045f4b4f84b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c3553ac9704ac26d0bdaae0f93b89f41a87ac716
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099847"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617165"
 ---
 # <a name="use-sap-hana-data-tiering-and-extension-nodes"></a>Использование многоуровневого хранения данных и узлов расширения SAP HANA
 
 SAP поддерживает модель многоуровневого хранения данных для SAP BW различных выпусков SAP NetWeaver и SAP BW/4HANA. Сведения о модели многоуровневого хранения данных можно найти в этой документации [SAP BW/4HANA and SAP BW-on-HANA with SAP HANA Extension Nodes](https://www.sap.com/documents/2017/05/ac051285-bc7c-0010-82c7-eda71af511fa.html#) (SAP BW/4HANA и SAP BW в HANA с узлами расширения SAP HANA).
-Как описано в блоге SAP и документе с вопросами и ответами, вместе с крупными экземплярами HANA можно использовать конфигурацию варианта 1 узлов расширения SAP HANA. Конфигурации Option-2 можно настроить со следующими номерами SKU крупных экземпляров HANA: S72m, S192, S192m, S384 и S384m. 
+Как описано в блоге SAP и документе с вопросами и ответами, вместе с крупными экземплярами HANA можно использовать конфигурацию варианта 1 узлов расширения SAP HANA. Конфигурацию варианта 2 можно настроить со следующими номерами SKU для крупных экземпляров HANA: S72m, S192, S192m, S384 и S384m. 
 
 При просмотре документации преимущество может быть заметно не сразу. Однако, посмотрев рекомендации по размерам SAP, вы увидите преимущество использования вариантов 1 и 2 узлов расширения SAP HANA. Ниже приведены некоторые примеры.
 

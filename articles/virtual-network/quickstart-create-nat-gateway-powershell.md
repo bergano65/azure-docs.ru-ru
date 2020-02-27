@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: d2df67479d8b6ab490bf06bda1ec033f9bf7866e
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: fadf42e7bd7d754dea64542f06866a439eb460ec
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77429125"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588779"
 ---
 # <a name="quickstart-create-a-nat-gateway-using-azure-powershell"></a>Краткое руководство. Создание шлюза NAT с помощью Azure PowerShell
 
@@ -34,9 +34,6 @@ ms.locfileid: "77429125"
 Инструкции из этого учебника можно выполнить, используя Azure Cloud Shell или запустив команды локально.  Если вы никогда не использовали Azure Cloud Shell, [выполните вход](https://shell.azure.com) сейчас.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-> [!IMPORTANT]
-> После [включения предварительной версии](./nat-overview.md#enable-preview) NAT виртуальной сети в подписке перейдите по адресу https://aka.ms/natportal, чтобы войти на портал.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 02/20/2020
+ms.date: 02/26/2020
 ms.author: victorh
-ms.openlocfilehash: b28d228dd950796265c5412be30e5d7777cf94c6
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 4792c0bce7d9119f5198490d62f49f000e1567d3
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77526518"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77621968"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -50,11 +50,11 @@ ms.locfileid: "77526518"
 
 * *Правила приложения*. Настройте полные доменные имена (FQDN), к которым можно получить доступ из подсети.
 * *Сетевые правила*. Настройте правила, содержащие исходные адреса, протоколы, порты назначения и адреса назначения.
-* *Правила NAT*. Настройте правила ДНаТ, разрешающие входящие подключения.
+* *Правила NAT*. Настройте правила ДНаТ, разрешающие входящие подключения к Интернету.
 
 ## <a name="does-azure-firewall-support-inbound-traffic-filtering"></a>Поддерживает ли служба "Брандмауэр Azure" фильтрацию входящего трафика?
 
-Брандмауэр Azure поддерживает фильтрацию входящего и исходящего трафика. Защита для входящего трафика обычно используется для протоколов, отличных от HTTP и S. Например, RDP, SSH, FTP. Для получения наилучшей входящей защиты HTTP/S используйте брандмауэр веб-приложения, например [брандмауэр веб-приложения Azure, в шлюзе приложений Azure](../web-application-firewall/ag/ag-overview.md).
+Брандмауэр Azure поддерживает фильтрацию входящего и исходящего трафика. Защита для входящего трафика обычно используется для протоколов, отличных от HTTP и S. Например, RDP, SSH, FTP. Для получения наилучшей входящей защиты HTTP/S используйте брандмауэр веб-приложения, например [брандмауэр веб-приложения Azure (WAF)](../web-application-firewall/overview.md).
 
 ## <a name="which-logging-and-analytics-services-are-supported-by-the-azure-firewall"></a>Какие службы ведения журнала и аналитики поддерживаются в службе "Брандмауэр Azure"?
 
@@ -88,7 +88,7 @@ ms.locfileid: "77526518"
 
 Вы можете использовать методы Azure PowerShell *deallocate* и *allocate*.
 
-Пример:
+Например:
 
 ```azurepowershell
 # Stop an existing firewall
@@ -139,7 +139,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 Да. Брандмауэр, виртуальная сеть и общедоступный IP-адрес должны находиться в одной группе ресурсов.
 
-## <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
+## <a name="when-configuring-dnat-for-inbound-internet-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>При настройке ДНаТ для входящего трафика Интернета необходимо также настроить соответствующее правило сети, чтобы разрешить этот трафик?
 
 Нет. Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](rule-processing.md).
 

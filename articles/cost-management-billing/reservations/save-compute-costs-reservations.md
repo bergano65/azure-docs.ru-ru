@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.author: banders
-ms.openlocfilehash: c6a8547235c302f52aacd0e6ae4a8fbf08b538b8
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: c1cced862bee1ec4579f3e6e5145968dec7613e4
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443641"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500568"
 ---
 # <a name="what-are-azure-reservations"></a>Общие сведения о резервированиях в Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "77443641"
 
 Вы можете оплачивать резервирование заранее или ежемесячно. Общие затраты на резервирование с предварительными или ежемесячными платежами одинаковы, и вы не будете переплачивать, если выберете ежемесячную оплату. Вариант помесячной оплаты доступен для резервирований Azure, но не для сторонних продуктов.
 
-Резервирование можно приобрести на [портале Azure](https://ms.portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade).
+Резервирование можно приобрести на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade).
 
 ## <a name="why-buy-a-reservation"></a>Зачем приобретать резервирование?
 

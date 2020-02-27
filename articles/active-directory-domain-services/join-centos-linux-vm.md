@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: iainfou
-ms.openlocfilehash: 0c49624a28950cd3625ee5f6bb565fe8a1e7fd7a
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 0f0cf1f066257413f23dd83ffc5ecad0169f7e77
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76712635"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77613828"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Присоединение виртуальной машины CentOS Linux к управляемому домену доменных служб Azure AD
 
@@ -24,7 +24,7 @@ ms.locfileid: "76712635"
 
 В этой статье показано, как присоединить виртуальную машину CentOS Linux к управляемому домену AD DS Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
@@ -63,13 +63,13 @@ sudo vi /etc/hosts
 
 В файле *hosts* обновите адрес *localhost* . Рассмотрим следующий пример:
 
-* *aadds.contoso.com* — это доменное DNS-имя управляемого домена AD DS Azure.
+* *aaddscontoso.com* — это доменное DNS-имя управляемого домена AD DS Azure.
 * *CentOS* — это имя узла виртуальной машины CentOS, присоединяемой к управляемому домену.
 
 Обновите эти имена собственными значениями:
 
 ```console
-127.0.0.1 centos.aadds.contoso.com centos
+127.0.0.1 centos.aaddscontoso.com centos
 ```
 
 По завершении сохраните и закройте файл *hosts* с помощью команды `:wq` редактора.
@@ -86,30 +86,30 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 
 Теперь, когда необходимые пакеты установлены на виртуальной машине, присоедините виртуальную машину к управляемому домену Azure AD DS.
 
-1. Используйте команду `realm discover` для обнаружения управляемого домена AD DS Azure. В следующем примере обнаруживается *AADDS области. CONTOSO.COM*. Укажите собственное имя управляемого домена AD DS Azure в верхнем регистре:
+1. Используйте команду `realm discover` для обнаружения управляемого домена AD DS Azure. В следующем примере обнаруживается *AADDSCONTOSO.com*области. Укажите собственное имя управляемого домена AD DS Azure в верхнем регистре:
 
     ```console
-    sudo realm discover AADDS.CONTOSO.COM
+    sudo realm discover AADDSCONTOSO.COM
     ```
 
    Если команде `realm discover` не удается найти управляемый домен AD DS Azure, ознакомьтесь со следующими действиями по устранению неполадок.
 
-    * Убедитесь, что домен доступен с виртуальной машины. Попробуйте `ping aadds.contoso.com`, чтобы проверить, возвращен ли положительный ответ.
+    * Убедитесь, что домен доступен с виртуальной машины. Попробуйте `ping aaddscontoso.com`, чтобы проверить, возвращен ли положительный ответ.
     * Убедитесь, что виртуальная машина развернута в том же или в одноранговой виртуальной сети, в которой доступен управляемый домен Azure AD DS.
     * Убедитесь, что параметры DNS-сервера для виртуальной сети были обновлены, чтобы они указывали на контроллеры домена управляемого домена AD DS Azure.
 
 1. Теперь инициализируйте Kerberos с помощью команды `kinit`. Укажите пользователя, который принадлежит к группе *администраторов контроллера домена AAD* . При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md).
 
-    Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере учетная запись с именем `contosoadmin@aadds.contoso.com` используется для инициализации Kerberos. Введите собственную учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* :
+    Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере учетная запись с именем `contosoadmin@aaddscontoso.com` используется для инициализации Kerberos. Введите собственную учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* :
 
     ```console
-    kinit contosoadmin@AADDS.CONTOSO.COM
+    kinit contosoadmin@AADDSCONTOSO.COM
     ```
 
-1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с помощью команды `realm join`. Используйте ту же учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* , указанной в предыдущей команде `kinit`, например `contosoadmin@AADDS.CONTOSO.COM`.
+1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с помощью команды `realm join`. Используйте ту же учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* , указанной в предыдущей команде `kinit`, например `contosoadmin@AADDSCONTOSO.COM`.
 
     ```console
-    sudo realm join --verbose AADDS.CONTOSO.COM -U 'contosoadmin@AADDS.CONTOSO.COM'
+    sudo realm join --verbose AADDSCONTOSO.COM -U 'contosoadmin@AADDSCONTOSO.COM'
     ```
 
 Присоединение виртуальной машины к управляемому домену Azure AD DS займет несколько секунд. В следующем примере выходных данных показано, что виртуальная машина успешно присоединена к управляемому домену Azure AD DS.
@@ -154,11 +154,11 @@ Successfully enrolled machine in realm
     sudo visudo
     ```
 
-1. Добавьте следующую запись в конец файла */etc/sudoers* . Группа *администраторов контроллера домена AAD* содержит пробелы в имени, поэтому включите escape-символ обратной косой черты в имя группы. Добавьте собственное доменное имя, например *aadds.contoso.com*:
+1. Добавьте следующую запись в конец файла */etc/sudoers* . Группа *администраторов контроллера домена AAD* содержит пробелы в имени, поэтому включите escape-символ обратной косой черты в имя группы. Добавьте собственное доменное имя, например *aaddscontoso.com*:
 
     ```console
     # Add 'AAD DC Administrators' group members as admins.
-    %AAD\ DC\ Administrators@aadds.contoso.com ALL=(ALL) NOPASSWD:ALL
+    %AAD\ DC\ Administrators@aaddscontoso.com ALL=(ALL) NOPASSWD:ALL
     ```
 
     По завершении сохраните и закройте редактор с помощью команды `:wq` редактора.
@@ -167,10 +167,10 @@ Successfully enrolled machine in realm
 
 Чтобы убедиться, что виртуальная машина успешно присоединена к управляемому домену Azure AD DS, запустите новое SSH-подключение, используя учетную запись пользователя домена. Убедитесь, что был создан корневой каталог и применяется членство в группе из домена.
 
-1. Создайте новое SSH-подключение из консоли. Используйте учетную запись домена, принадлежащую к управляемому домену, с помощью команды `ssh -l`, например `contosoadmin@contoso.com`, а затем введите адрес виртуальной машины, например *CentOS.aadds.contoso.com*. При использовании Azure Cloud Shell Используйте общедоступный IP-адрес виртуальной машины, а не внутреннее DNS-имя.
+1. Создайте новое SSH-подключение из консоли. Используйте учетную запись домена, принадлежащую к управляемому домену, с помощью команды `ssh -l`, например `contosoadmin@aaddscontoso.com`, а затем введите адрес виртуальной машины, например *CentOS.aaddscontoso.com*. При использовании Azure Cloud Shell Используйте общедоступный IP-адрес виртуальной машины, а не внутреннее DNS-имя.
 
     ```console
-    ssh -l contosoadmin@AADDS.CONTOSO.com centos.aadds.contoso.com
+    ssh -l contosoadmin@AADDSCONTOSO.com centos.aaddscontoso.com
     ```
 
 1. После успешного подключения к виртуальной машине убедитесь, что корневой каталог был инициализирован правильно:
@@ -195,7 +195,7 @@ Successfully enrolled machine in realm
     sudo yum update
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если при подключении виртуальной машины к управляемому домену AD DS Azure или при входе с помощью учетной записи домена возникли проблемы, см. раздел [Устранение неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 

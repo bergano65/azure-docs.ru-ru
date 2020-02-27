@@ -4,20 +4,20 @@ description: Узнайте, как служба приложений Azure по
 ms.assetid: a820e400-06af-4852-8627-12b3db4a8e70
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 11/21/2018
+ms.date: 02/11/2020
 ms.custom: seodec18
-ms.openlocfilehash: e2eca624fabf30eae86c480ede6c4bdffc2226bc
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 28848d8b676bb5f4182a887f5efdd48c6221041a
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671121"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500065"
 ---
 # <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство по Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Кроме того, служба приложений включает встроенную поддержку [общего доступа к ресурсам независимо от источника (CORS)](https://wikipedia.org/wiki/Cross-Origin_Resource_Sharing) для API-интерфейсов RESTful. В этом руководстве рассматривается развертывание приложения API ASP.NET Core в службу приложений с поддержкой CORS. Вы настроите приложение с помощью программ командной строки и развернете его с помощью Git. 
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Кроме того, служба приложений включает встроенную поддержку [общего доступа к ресурсам независимо от источника (CORS)](https://wikipedia.org/wiki/Cross-Origin_Resource_Sharing) для API-интерфейсов RESTful. В этом руководстве рассматривается развертывание приложения API ASP.NET Core в службу приложений с поддержкой CORS. Вы настроите приложение с помощью программ командной строки и развернете его с помощью Git. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создавать ресурсы службы приложений с помощью Azure CLI;
@@ -30,7 +30,7 @@ ms.locfileid: "74671121"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * [Установка Git](https://git-scm.com/).
 * [Установите .NET Core](https://www.microsoft.com/net/core/).
@@ -190,7 +190,7 @@ az resource update --name web --resource-group myResourceGroup --namespace Micro
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
 <a name="next"></a>
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

@@ -3,21 +3,21 @@ title: Повторное развертывание пакетов служб S
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию или повторное развертывание пакетов SQL Server Integration Services и проектов в базе данных SQL Azure с помощью Azure Database Migration Service и Помощник по миграции данных.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 06/08/2019
-ms.openlocfilehash: b1889410a6c6925ebba5632a08c34bc967ced627
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/20/2020
+ms.openlocfilehash: 90a39b8fe3604a05f1d35a875ae4e34491b47d72
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437971"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77648535"
 ---
 # <a name="redeploy-ssis-packages-to-azure-sql-database-with-azure-database-migration-service"></a>Повторное развертывание пакетов служб SSIS в базе данных SQL Azure с помощью Azure Database Migration Service
 
@@ -34,7 +34,7 @@ ms.locfileid: "75437971"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 

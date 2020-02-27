@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/21/2020
 tags: connectors
-ms.openlocfilehash: 2e2fea90f125cae6de44afbc82dd749a421ff3e2
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: eb943bfe36be10d1e95d569a5c1bf48563e909c1
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566018"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650867"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-by-using-azure-logic-apps"></a>Создание больших двоичных объектов и управление ими в хранилище BLOB-объектов Azure с помощью Azure Logic Apps
 
@@ -37,7 +37,7 @@ ms.locfileid: "77566018"
 
   * Следуйте указаниям триггера с действием **Получение содержимого BLOB** -объекта в хранилище BLOB-объектов Azure, которое считывает полный файл и неявно использует фрагментацию.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -121,13 +121,13 @@ ms.locfileid: "77566018"
 
 1. При появлении запроса на создание подключения укажите следующие сведения:
 
-   | Свойство | Обязательно | Значение | Описание |
+   | Свойство | Обязательно | Значение | Description |
    |----------|----------|-------|-------------|
    | **Имя соединения** | Да | <*имя_соединения*> | Имя создаваемого подключения |
    | **Учетная запись хранения** | Да | <*учетная_запись_хранения*> | Выберите свою учетную запись хранения в списке. |
    ||||
 
-   Например:
+   Пример:
 
    ![Создание подключения к учетной записи хранилища BLOB-объектов Azure](./media/connectors-create-api-azureblobstorage/create-storage-account-connection.png) 
 
@@ -137,7 +137,10 @@ ms.locfileid: "77566018"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Технические сведения, такие как триггеры, действия и ограничения, описанные в файле Open API (ранее — Swagger) соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/azureblobconnector/).
+Дополнительные технические сведения об этом соединителе, такие как триггеры, действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/azureblobconnector/).
+
+> [!NOTE]
+> Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений интегрированной](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) среды сценариев.
 
 <a name="storage-firewalls"></a>
 
@@ -201,6 +204,6 @@ ms.locfileid: "77566018"
 
 Если вы используете выделенный уровень для [управления API](../api-management/api-management-key-concepts.md), вы можете использовать интерфейс API хранилища с помощью службы управления API и разрешить другим IP-адресам через брандмауэр. По сути, добавьте виртуальную сеть Azure, используемую службой управления API, в параметр брандмауэра учетной записи хранения. Затем можно использовать действие управления API или действие HTTP для вызова API-интерфейсов службы хранилища Azure. Однако при выборе этого параметра необходимо самостоятельно обработать процесс проверки подлинности. Дополнительные сведения см. в статье [Простая архитектура корпоративной интеграции](https://aka.ms/aisarch).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

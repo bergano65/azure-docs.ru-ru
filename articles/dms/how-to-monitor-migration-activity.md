@@ -2,21 +2,21 @@
 title: Мониторинг действий миграции — Azure Database Migration Service
 description: Сведения об использовании Azure Database Migration Service для мониторинга действий по миграции.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 03/12/2019
-ms.openlocfilehash: b3ba634ddb084b5637d0a0c97c0ac4ff72193c1d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/20/2020
+ms.openlocfilehash: 31b49cdd9e0e5569981b2a0b0c6efcab7239e019
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437936"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77648518"
 ---
 # <a name="monitor-migration-activity-using-the-azure-database-migration-service"></a>Мониторинг действий миграции с помощью Azure Database Migration Service
 В этой статье вы узнаете, как отслеживать ход миграции на уровне базы данных и таблицы.
@@ -63,11 +63,11 @@ ms.locfileid: "75437936"
       <td>Конвейер DMS работает и выполняет миграцию.</td>
     </tr>
     <tr>
-      <td>Полное</td>
+      <td>Завершение</td>
       <td>Миграция завершена.</td>
     </tr>
     <tr>
-      <td>Сбой</td>
+      <td>Ошибка</td>
       <td>Сбой миграции. Щелкните сведения о миграции, чтобы просмотреть ошибки миграции.</td>
     </tr>
     <tr>
@@ -93,7 +93,7 @@ ms.locfileid: "75437936"
     </tr>
     <tr>
       <td rowspan="1" class="duration"><strong>Длительность</strong></td>
-      <td>Н/Д</td>
+      <td>Недоступно</td>
       <td>Общее время от инициализации действия миграции до завершения или ошибки миграции.</td>
     </tr>
      </tbody>

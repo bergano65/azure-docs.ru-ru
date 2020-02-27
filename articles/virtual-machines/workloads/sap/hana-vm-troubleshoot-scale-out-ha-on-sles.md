@@ -3,8 +3,8 @@ title: SAP HANA Scale-out HSR-Pacemaker с SLES в устранении непо
 description: Руководство по проверке и устранению неполадок сложной конфигурации горизонтального масштабирования SAP HANA с высоким уровнем доступности на основе репликации системы SAP HANA (HSR) и Pacemaker в SLES 12 с пакетом обновления 3 (SP3) на виртуальных машинах Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: hermannd
-manager: gwallace
+author: hermanndms
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: fb90bfff72f41d8d7ccc34d3ad6dd0e9206bb88e
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: e93b3412785817050ac53030be9ff2172a678c06
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566239"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617121"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
 

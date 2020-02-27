@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 05/04/2017
 ms.custom: seodec18
-ms.openlocfilehash: 7d0a1d89b0547b1cd982b2717ac7548bec848a77
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 2ab67743a349c33000d4b6f8b8566ff48e5e1d24
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671307"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500020"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "74671307"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 1. [установите Git](https://git-scm.com/);
 2. [установите Node.j и NPM](https://nodejs.org/).
@@ -490,7 +490,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
 <a name="next"></a>
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

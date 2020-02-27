@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.date: 10/10/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.openlocfilehash: c6c07c48bf94b50d46a50a47f57857fdd15a0e8e
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 8e428732fb49d27e3991071b87abee53b6e375b2
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697257"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77648435"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство по использованию Azure PowerShell для создания субъекта-службы с сертификатом
 
@@ -50,7 +50,7 @@ ms.locfileid: "76697257"
 
 ## <a name="create-service-principal-with-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
 
-Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-AzureRmRoleAssignment](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](/azure/role-based-access-control/built-in-roles#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
+Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](/azure/role-based-access-control/built-in-roles#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
 
 > [!NOTE]
 > Командлет New-SelfSignedCertificate и модуль PKI сейчас не поддерживаются в PowerShell Core. 

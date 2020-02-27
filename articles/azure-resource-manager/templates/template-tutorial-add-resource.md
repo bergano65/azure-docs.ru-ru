@@ -2,17 +2,17 @@
 title: Учебник. Добавление ресурса в шаблон
 description: Описание создания первого шаблона Azure Resource Manager Вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 02/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8686b15501e267ab23efe654d28a3e67369a8d03
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: af571b6503f04c809b62c530f6d6254082b838be
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76765593"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586688"
 ---
-# <a name="tutorial-add-a-resource-to-your-resource-manager-template"></a>Руководство. добавлению ресурсов в шаблон Azure Resource Manager
+# <a name="tutorial-add-a-resource-to-your-resource-manager-template"></a>Руководство по добавлению ресурсов в шаблон Azure Resource Manager
 
 Из [предыдущего учебника](template-tutorial-create-first-template.md) вы узнали, как создавать пустой шаблон и развертывать его. Теперь все готово для развертывания ресурса. В этом учебнике вы узнаете, как добавить учетную запись хранения. Для работы с этим учебником потребуется около **9 минут**.
 
@@ -26,7 +26,10 @@ ms.locfileid: "76765593"
 
 Чтобы добавить определение учетной записи хранения в имеющийся шаблон, посмотрите на выделенный JSON в следующем примере. Вместо того, чтобы пытаться скопировать разделы шаблона, скопируйте весь файл и замените свой шаблон его содержимым.
 
-Замените **{provide-unique-name}** на уникальное имя учетной записи хранения. Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Вы можете попробовать использовать шаблон именования (например, **store1**) в качестве префикса, а затем добавить свои инициалы и сегодняшнюю дату. Например, имя, которое вы используете, может выглядеть таким образом: **store1abc09092019**.
+Замените **{provide-unique-name}** на уникальное имя учетной записи хранения.
+
+> [!IMPORTANT]
+> Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Вы можете попробовать использовать шаблон именования (например, **store1**) в качестве префикса, а затем добавить свои инициалы и сегодняшнюю дату. Например, имя, которое вы используете, может выглядеть таким образом: **store1abc09092019**.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-storage/azuredeploy.json" range="1-19" highlight="5-17":::
 
@@ -58,7 +61,7 @@ ms.locfileid: "76765593"
 
 Если вы еще не создали группу ресурсов, см. [этот раздел](template-tutorial-create-first-template.md#create-resource-group). В этом примере предполагается, что для переменной **templateFile** указан путь к файлу шаблона, как показано в [первом учебнике](template-tutorial-create-first-template.md#deploy-template).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -67,7 +70,7 @@ New-AzResourceGroupDeployment `
   -TemplateFile $templateFile
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az group deployment create \

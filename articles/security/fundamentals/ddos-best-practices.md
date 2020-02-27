@@ -1,5 +1,5 @@
 ---
-title: Azure от атак DDoS Protection. Проектирование отказоустойчивых решений | Документация Майкрософт
+title: Разработка устойчивых решений с помощью Azure от атак DDoS Protection
 description: Узнайте, как использовать данные журналов для получения подробных сведений о приложении.
 services: security
 author: barclayn
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2018
 ms.author: barclayn
-ms.openlocfilehash: ac36a4c59dbec8bf27850de1565e86b78643148a
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 8d3fc809999508bf3d49c3765c90017e89e80fa7
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72595423"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77624055"
 ---
 # <a name="azure-ddos-protection---designing-resilient-solutions"></a>Azure от атак DDoS Protection. Проектирование отказоустойчивых решений
 
@@ -266,7 +266,7 @@ Azure предлагает два вида услуг DDoS, которые об�
 > [!NOTE]
 > Среда Службы приложений Azure для PowerApps и управление API в виртуальной сети с общедоступным IP-адресом не поддерживаются на уровне системы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Общая ответственность в облаке](shared-responsibility.md)
 
