@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e49a07f591731a1deb2838751852c0134548966d
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: e74a7ab0c003aaf9d90211484b39f8322cd9c329
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521852"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77648008"
 ---
 # <a name="features-and-licenses-for-azure-multi-factor-authentication"></a>Функции и лицензии для службы многофакторной идентификации Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "77521852"
 
 | Компонент | Azure AD Free параметры безопасности по умолчанию | Azure AD Free — глобальные администраторы Azure AD | Office 365 Business Premium, E3 или «е» | Azure AD Premium (P1 или P2) |
 | --- |:---:|:---:|:---:|:---:|
-| Защита учетных записей администраторов Azure AD с помощью MFA | ● | ● (Только учетные записи*глобального администратора Azure AD* ) | ● | ● |
+| Защита учетных записей администратора клиента Azure AD с помощью MFA | ● | ● (Только учетные записи*глобального администратора Azure AD* ) | ● | ● |
 | Мобильное приложение в качестве второго фактора | ● | ● | ● | ● |
 | Телефонный вызов в качестве второго фактора | | ● | ● | ● |
 | SMS в качестве второго фактора | | ● | ● | ● |
@@ -84,6 +84,6 @@ ms.locfileid: "77521852"
 * Если вы используете учетную запись Майкрософт, [Зарегистрируйтесь для использования многофакторной проверки подлинности](https://support.microsoft.com/help/12408/microsoft-account-about-two-step-verification).
 * Если вы не используете учетную запись Майкрософт, [включите многофакторную проверку подлинности для пользователя или группы в Azure AD](howto-mfa-userstates.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о затратах см. в статье [цены на многофакторную идентификацию Azure](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).

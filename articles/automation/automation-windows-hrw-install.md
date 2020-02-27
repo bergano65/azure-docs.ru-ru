@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: a6d2e2d912f176a88dc993803d750e37cff1acb6
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 9f3e06f66996be4a2b43b64e6100c62a2fa41381
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443670"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77649965"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -19,6 +19,9 @@ ms.locfileid: "77443670"
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="windows-hybrid-runbook-worker-installation-and-configuration"></a>Установка и настройка гибридной рабочей роли Runbook Windows
 
@@ -50,8 +53,9 @@ ms.locfileid: "77443670"
 
 ### <a name="server-onboarding-for-management-with-automation-dsc"></a>Серверная адаптация для управления с помощью Automation DSC
 
-Дополнительные сведения о развертывании серверов для управления с помощью DSC см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).
-Если вы включаете [решение Управление обновлениями](../operations-management-suite/oms-solution-update-management.md), любой компьютер Windows, подключенный к рабочей области log Analytics, автоматически настраивается как гибридная Рабочая роль Runbook для поддержки модулей Runbook, включенных в это решение. Но он не регистрируется в группах гибридных рабочих ролей, которые уже определены в вашей учетной записи службы автоматизации. 
+Сведения о подключении серверов для управления с помощью DSC см. в статье подключение [компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).
+
+Если вы включаете [решение Управление обновлениями](../operations-management-suite/oms-solution-update-management.md), любой компьютер Windows, подключенный к рабочей области log Analytics, автоматически настраивается как гибридная Рабочая роль Runbook для поддержки модулей Runbook, включенных в это решение. Но он не регистрируется в группах гибридных рабочих ролей, которые уже определены в вашей учетной записи службы автоматизации.
 
 ### <a name="adding-the-computer-to-a-hybrid-runbook-worker-group"></a>Добавление компьютера в группу гибридных рабочих ролей Runbook
 
@@ -65,19 +69,17 @@ ms.locfileid: "77443670"
 
 Скачайте сценарий New-OnPremiseHybridWorker.ps1 из [коллекции PowerShell](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker) непосредственно на компьютер, на котором выполняется гибридная рабочая роль Runbook, или на другой компьютер в вашей среде. Скопируйте этот сценарий в рабочую роль. Для выполнения сценария New-OnPremiseHybridWorker.ps1 необходимо задать следующие параметры.
 
-   * *AAResourceGroupName* (обязательный) — имя группы ресурсов, связанной с вашей учетной записью службы автоматизации.
-   * *OMSResourceGroupName* (необязательный) — имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется *AAResourceGroupName*.
-   * *SubscriptionID* (обязательный): идентификатор подписки Azure, в которой находится ваша учетная запись службы автоматизации.
-   * *TenantID* (необязательно): идентификатор организации клиента, связанной с учетной записью службы автоматизации.
-   * *WorkspaceName* (необязательный) — имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
-   * *AutomationAccountName* (обязательно) — имя учетной записи службы автоматизации.
-   * *HybridGroupName* (обязательный) — имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий.
-   * *Credential* (необязательно). учетные данные, используемые для входа в среду Azure.
+* *AAResourceGroupName* (обязательный) — имя группы ресурсов, связанной с вашей учетной записью службы автоматизации.
+* *OMSResourceGroupName* (необязательный) — имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется *AAResourceGroupName*.
+* *SubscriptionID* (обязательный): идентификатор подписки Azure, в которой находится ваша учетная запись службы автоматизации.
+* *TenantID* (необязательно): идентификатор организации клиента, связанной с учетной записью службы автоматизации.
+* *WorkspaceName* (необязательный) — имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
+* *AutomationAccountName* (обязательно) — имя учетной записи службы автоматизации.
+* *HybridGroupName* (обязательный) — имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий.
+* *Credential* (необязательно). учетные данные, используемые для входа в среду Azure.
   
-   > [!NOTE]
-   > При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
-   >
-   > Список поддерживаемых пар сопоставлений см. в разделе [сопоставление регионов для учетной записи службы автоматизации и log Analytics рабочей области](how-to/region-mappings.md).
+> [!NOTE]
+> При включении решений поддерживаются только определенные регионы для связывания рабочей области Log Analytics и учетной записи службы автоматизации. Список поддерживаемых пар сопоставлений см. в разделе [сопоставление регионов для учетной записи службы автоматизации и log Analytics рабочей области](how-to/region-mappings.md).
 
 ### <a name="2-open-windows-powershell-command-line-shell"></a>2. Откройте оболочку командной строки Windows PowerShell.
 
@@ -172,7 +174,7 @@ Add-HybridRunbookWorker –GroupName <String> -EndPoint <Url> -Token <String>
 
 Установленные модули должны находиться в расположении, на которое ссылается переменная среды PSModulePath, чтобы Гибридная Рабочая роль могла автоматически импортировать их. Дополнительные сведения см. [в разделе Install modules in PSModulePath](https://docs.microsoft.com/powershell/scripting/developer/module/installing-a-powershell-module?view=powershell-7).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".
