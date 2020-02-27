@@ -9,16 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: ee8b166077c64ae5e0f2cce18ee0bc77e8c996f4
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 171219c001f43137a52f29b282fb1705b3d836aa
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210129"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77649829"
 ---
 # <a name="authentication-with-azure-maps"></a>Аутентификация в Azure Maps
 
 Azure Maps поддерживает два способа проверки подлинности запросов: Аутентификация с помощью общего ключа и проверка подлинности Azure Active Directory. В этой статье объясняются методы проверки подлинности, которые помогут вам реализовать Azure Maps служб.
+
+> [!NOTE]
+> Чтобы улучшить безопасное взаимодействие с Azure Maps, мы теперь поддерживаем протокол TLS 1,2, и мы исправим поддержку TLS 1,0 и 1,1. Чтобы избежать перерывов в работе служб, **Обновите серверы и приложения, чтобы использовать TLS 1,2 до 2 апреля 2020**.  Если в настоящее время используется TLS 1. x, оцените готовность TLS 1,2 и разработайте план миграции с помощью тестирования, описанного в статье [решение проблемы tls 1,0](https://docs.microsoft.com/security/solving-tls1-problem).
 
 ## <a name="shared-key-authentication"></a>Аутентификация на основе общего ключа
 

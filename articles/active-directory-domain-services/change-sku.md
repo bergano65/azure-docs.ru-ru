@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: iainfou
-ms.openlocfilehash: 46557d802222190c0ed82f6243dd2a9b997ecaa5
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 18395f2b839aef88491f71aeed660eb2ce011e2c
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960572"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77614238"
 ---
 # <a name="change-the-sku-for-an-existing-azure-ad-domain-services-managed-domain"></a>Изменение номера SKU для существующего управляемого домена доменных служб Azure AD
 
@@ -23,7 +23,7 @@ ms.locfileid: "76960572"
 
 В этой статье показано, как изменить номер SKU для существующего управляемого домена AD DS Azure с помощью портал Azure.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 
@@ -46,7 +46,7 @@ ms.locfileid: "76960572"
 
 Чтобы изменить номер SKU для управляемого домена AD DS Azure с помощью портал Azure, выполните следующие действия.
 
-1. В верхней части портал Azure найдите и выберите **доменные службы Azure AD**. Выберите управляемый домен из списка, например *aadds.contoso.com*.
+1. В верхней части портал Azure найдите и выберите **доменные службы Azure AD**. Выберите управляемый домен из списка, например *aaddscontoso.com*.
 1. В меню в левой части страницы AD DS Azure выберите **параметры > SKU**.
 
     ![Выберите параметр меню SKU для управляемого домена Azure AD DS в портал Azure](media/change-sku/overview-change-sku.png)
@@ -59,7 +59,7 @@ ms.locfileid: "76960572"
 
 Изменение типа номера SKU может занять одну или две минуты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если у вас есть лес ресурсов и вы хотите создать дополнительные отношения доверия после изменения номера SKU, см. статью [Создание исходящего доверия леса для локального домена в AD DS Azure (Предварительная версия)][create-trust].
 

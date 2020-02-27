@@ -3,8 +3,8 @@ title: Установка SAP NetWeaver высокого уровня досту
 description: Узнайте, как установить SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS.
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: goraco
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -14,14 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/05/2017
-ms.author: rclaus
+ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bfbff1f95eaad41813ee0741a6b133dccdae181d
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: e50733c843dfd21e35572f00fc6690e1e84aba97
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647532"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617356"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>Установка SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS в Azure
 
@@ -148,7 +148,7 @@ ms.locfileid: "75647532"
 
 В этой статье описывается, как установить и настроить в Azure систему SAP высокого уровня доступности, используя отказоустойчивый кластер Windows Server и общий диск для кластеризации экземпляра SAP ASCS/SCS.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом установки изучите следующие документы:
 

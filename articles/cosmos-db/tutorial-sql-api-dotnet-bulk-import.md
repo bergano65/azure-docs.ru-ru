@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 79771e082a4a6ffae15f33f636b0300e93bcdaba
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 40dd7066d959b56f4554ea9d0390e8b1eb41e77f
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74896277"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587572"
 ---
 # <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
 
@@ -31,7 +31,7 @@ ms.locfileid: "74896277"
 
 Перед выполнением инструкций, приведенных в этой статье, подготовьте следующие ресурсы:
 
-* Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "74896277"
 
 Чтобы использовать пример приложения, нужно выполнить проверку подлинности доступа к вашей учетной записи хранения Azure Cosmos. Для проверки подлинности необходимо передать учетную запись Azure Cosmos в приложение. Чтобы просмотреть учетные данные учетной записи Azure Cosmos, сделайте следующее:
 
-1.  Войдите на [портале Azure](https://portal.azure.com/).
+1.  Войдите на [портал Azure](https://portal.azure.com/).
 1.  Перейдите к своей учетной записи Azure Cosmos.
 1.  Откройте панель **Ключи** и скопируйте **URI** и **первичный ключ** своей учетной записи.
 
@@ -120,13 +120,13 @@ ms.locfileid: "74896277"
 
 В метод `Main` добавьте следующий код для инициализации объекта CosmosClient.
 
-[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=CreateClient)]
+:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="CreateClient":::
 
 После включения массового выполнения CosmosClient выполняет внутреннее группирование параллельных операций в отдельные вызовы службы. Это позволяет оптимизировать использование пропускной способности за счет распределения вызовов службы между секциями и последующего назначения отдельных результатов исходным вызывающим сторонам.
 
 Затем можно будет создать контейнер для хранения всех элементов.  Определите `/pk` в качестве ключа секции, подготовленную пропускную способность в 50 000 ЕЗ/с и настраиваемую политику индексации, которая будет исключать все поля для оптимизации пропускной способности записи. Добавьте приведенный ниже код после инструкции инициализации CosmosClient.
 
-[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Initialize)]
+:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Initialize":::
 
 ## <a name="step-6-populate-a-list-of-concurrent-tasks"></a>Шаг 6. Заполнение списка параллельных задач
 
@@ -141,22 +141,22 @@ ms.locfileid: "74896277"
 
 Добавьте определение элементов, которые необходимо сохранить. Необходимо определить класс `Item` в файле `Program.cs`.
 
-[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Model)]
+:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Model":::
 
 Затем создайте вспомогательную функцию внутри класса `Program`. Эта вспомогательная функция получит число элементов, которые вы определили для добавления, и создаст случайные данные.
 
-[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Bogus)]
+:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Bogus":::
 
 Считайте элементы и выполните их сериализацию в экземпляры потока с помощью класса `System.Text.Json`. Ввиду характера автоматически созданных данных они сериализуются в потоки. Кроме того, обращаясь к экземплярам элементов напрямую, но преобразовывая их в потоки, можно воспользоваться производительностью потоковых интерфейсов API в CosmosClient. Обычно к данным можно обращаться напрямую, если известен ключ секции. 
 
 
 Чтобы преобразовать данные в экземпляры потока, в метод `Main` добавьте следующий код сразу после создания контейнера.
 
-[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Operations)]
+:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Operations":::
 
 Далее используйте потоки данных для создания параллельных задач и заполните список задач для добавления элементов в контейнер. Чтобы выполнить эту операцию, добавьте следующий код в класс `Program`.
 
-[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=ConcurrentTasks)]
+:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="ConcurrentTasks":::
 
 Все эти параллельные операции с точками будут выполняться одновременно (то есть массово), как описано во вводном разделе.
 
@@ -181,7 +181,7 @@ ms.locfileid: "74896277"
    dotnet run
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили следующие действия:
 

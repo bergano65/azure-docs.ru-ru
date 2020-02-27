@@ -1,5 +1,5 @@
 ---
-title: Учебник по копированию данных в хранилище BLOB-объектов Azure Data Box Heavy с помощью REST API | Документация Майкрософт
+title: Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API
 description: Узнайте, как копировать данные в хранилище BLOB-объектов Azure Data Box Heavy с помощью REST API
 services: databox
 author: alkohli
@@ -8,18 +8,18 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: adc48acbadaef56958587dc79be377b76a21fdc0
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 43f6404a483cad8377e70591f5454180f0dd07a6
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73606294"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560343"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
 В этом руководстве описываются процедуры по подключению к хранилищу BLOB-объектов Azure Data Box через REST API по протоколу *HTTP* или *HTTPS*. Рассматриваются также шаги после подключения, необходимые для копирования данных в хранилище BLOB-объектов Data Box.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Предварительные требования
@@ -107,7 +107,7 @@ ms.locfileid: "73606294"
 #### <a name="use-windows-powershell"></a>Использование Windows PowerShell
 
 1. Запустите сеанс Windows PowerShell от имени администратора.
-2. В командной строке выполните следующую команду:
+2. В командной строке введите:
 
     ```
     Import-Certificate -FilePath C:\temp\localuihttps.cer -CertStoreLocation Cert:\LocalMachine\Root
@@ -124,7 +124,7 @@ ms.locfileid: "73606294"
 
     ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-2.png)
 
-4.  Нажмите кнопку **Готово** Появится сообщение о том, что импорт успешно выполнен.
+4.  Нажмите кнопку **Готово**. Появится сообщение о том, что импорт успешно выполнен.
 
     ![Импорт сертификата с помощью PowerShell](media/data-box-deploy-copy-data-via-rest/import-cert-ws-3.png)
 
@@ -143,7 +143,7 @@ ms.locfileid: "73606294"
 В последних версиях RHEL, Fedora и CentOS используется команда `update-ca-trust`.
 
 - Скопируйте файл сертификата в каталог `/etc/pki/ca-trust/source/anchors`.
-- Запустите `update-ca-trust`.
+- Выполните `update-ca-trust`.
 
 Дополнительные сведения см. в документации по своему дистрибутиву.
 
@@ -167,8 +167,8 @@ ms.locfileid: "73606294"
 Процедура копирования включает в себя следующие действия:
 
 - Создание контейнера
-- отправка содержимого папки в хранилище BLOB-объектов Data Box;
-- отправка измененных файлов в хранилище BLOB-объектов Data Box.
+- Отправка содержимого папки в хранилище BLOB-объектов Data Box
+- Отправка измененных файлов в хранилище BLOB-объектов Data Box
 
 
 В следующих разделах каждый этап рассматривается более подробно.
@@ -236,7 +236,7 @@ ms.locfileid: "73606294"
 
 Следующий шаг — подготовка устройства к отправке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве были освещены следующие темы относительно Azure Data Box.
 

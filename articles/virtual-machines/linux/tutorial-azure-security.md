@@ -15,19 +15,19 @@ ms.workload: infrastructure
 ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 4046aac5e8362bf315eca11d9cd96a6e862e2c55
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 5c5a8bc06c676121c20f6e1f83a26dd9343e6847
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034607"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77605526"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство по Использование Центра безопасности Azure для мониторинга виртуальных машин Linux
 
 Центр безопасности Azure поможет получить рекомендации по безопасности ресурсов Azure. Центр безопасности предлагает встроенный мониторинг безопасности. Это позволяет распознавать угрозы, которые в противном случае могли быть не замечены. В этом руководстве вы узнаете о центре безопасности Azure и научитесь:
  
 > [!div class="checklist"]
-> * Настраивать сбор данных.
+> * Настройка сбора данных
 > * Устанавливать политики безопасности.
 > * Просматривать и устранять неполадки конфигурации.
 > * Просматривать обнаруженные угрозы.
@@ -122,8 +122,8 @@ ms.locfileid: "74034607"
 
 ![Атака по протоколу RDP](./media/tutorial-azure-security/rdp-attack.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы настроили центр безопасности Azure, а затем проверили в нем виртуальные машины. Вы научились выполнять следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы настроили центр безопасности Azure, а затем проверили в нем виртуальные машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Настройка сбора данных
@@ -134,5 +134,5 @@ ms.locfileid: "74034607"
 Перейдите к следующему руководству, чтобы узнать больше о создании конвейера CI/CD с помощью Jenkins, GitHub и Docker.
 
 > [!div class="nextstepaction"]
-> [Создание конвейера для непрерывной интеграции и доставки с использованием Jenkins, GitHub и Docker](tutorial-jenkins-github-docker-cicd.md)
+> [Создание конвейера для непрерывной интеграции и доставки с использованием Jenkins, GitHub и Docker](../../jenkins/tutorial-jenkins-github-docker-cicd.md)
 

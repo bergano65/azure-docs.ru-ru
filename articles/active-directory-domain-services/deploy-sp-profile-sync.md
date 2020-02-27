@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: iainfou
-ms.openlocfilehash: f51744d79d34b734c9cc24cf72785a076a91a4f5
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 9d983015927d2635f69a327a9c5b168056542519
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509059"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77613866"
 ---
 # <a name="configure-azure-active-directory-domain-services-to-support-user-profile-synchronization-for-sharepoint-server"></a>Настройка доменных служб Azure Active Directory для поддержки синхронизации профилей пользователей для SharePoint Server
 
@@ -24,7 +24,7 @@ ms.locfileid: "76509059"
 
 В этой статье показано, как настроить AD DS Azure, чтобы разрешить службу синхронизации профилей пользователей SharePoint Server.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 
@@ -62,14 +62,14 @@ ms.locfileid: "76509059"
 
 1. На начальном экране выберите **Администрирование**. Отобразится список доступных средств управления, которые были установлены в руководстве по [созданию виртуальной машины управления][tutorial-create-management-vm].
 1. Чтобы управлять членством в группе, выберите **центр администрирования Active Directory** в списке средств администрирования.
-1. В левой области выберите управляемый домен Azure AD DS, например *aadds.contoso.com*. Отобразится список имеющихся подразделений и ресурсов.
+1. В левой области выберите управляемый домен Azure AD DS, например *aaddscontoso.com*. Отобразится список имеющихся подразделений и ресурсов.
 1. Выберите подразделение **Пользователи** , а затем выберите группу безопасности *учетные записи службы контроллера домена AAD* .
 1. Выберите **элементы**, а затем нажмите кнопку **Добавить...** .
 1. Введите имя учетной записи службы SharePoint, а затем нажмите кнопку **ОК**. В следующем примере учетной записи службы SharePoint присваивается имя *Admin*:
 
     ![Добавление учетной записи службы SharePoint в группу безопасности учетных записей службы контроллера домена AAD](./media/deploy-sp-profile-sync/add-member-to-aad-dc-service-accounts-group.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. [в разделе Предоставление разрешений домен Active Directory Services для синхронизации профилей в SharePoint Server](https://technet.microsoft.com/library/hh296982.aspx) .
 

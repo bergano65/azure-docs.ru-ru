@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: bb2371fc7732e8fa6fcfea53bf2822fcf3d7d2fa
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 48d98d6fef896f9288be88824a62fa1c8179217f
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76963960"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77621056"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -28,8 +28,8 @@ ms.locfileid: "76963960"
 
 | Ресурс                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |   |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
-| Приложение-функция.                                                                     | Обязательно для заполнения    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
-| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно для заполнения    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
+| Приложение-функция.                                                                     | Обязательно    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
+| [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
 | Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |   |
 | [План размещения](./functions-scale.md)                                             | Необязательно<sup>1</sup>    | [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |   |
 
@@ -309,17 +309,25 @@ ms.locfileid: "76963960"
 
 ### <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
-План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с помощью `EP1`, `EP2`или `EP3` значения свойства `sku`.
+План "Премиум" — это особый тип ресурса "ферма серверов". Его можно указать с помощью `EP1`, `EP2`или `EP3` для значения свойства `Name` в [объекте описания](https://docs.microsoft.com/azure/templates/microsoft.web/2018-02-01/serverfarms#skudescription-object)`sku`.
 
 ```json
 {
     "type": "Microsoft.Web/serverfarms",
-    "apiVersion": "2015-04-01",
-    "name": "[variables('hostingPlanName')]",
+    "apiVersion": "2018-02-01",
+    "name": "[parameters('hostingPlanName')]",
     "location": "[resourceGroup().location]",
     "properties": {
-        "name": "[variables('hostingPlanName')]",
-        "sku": "EP1"
+        "name": "[parameters('hostingPlanName')]",
+        "workerSize": "[parameters('workerSize')]",
+        "workerSizeId": "[parameters('workerSizeId')]",
+        "numberOfWorkers": "[parameters('numberOfWorkers')]",
+        "hostingEnvironment": "[parameters('hostingEnvironment')]",
+        "maximumElasticWorkerCount": "20"
+    },
+    "sku": {
+        "Tier": "ElasticPremium",
+        "Name": "EP1"
     }
 }
 ```
@@ -646,7 +654,7 @@ ms.locfileid: "76963960"
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
 
-Замените ```<url-encoded-path-to-azuredeploy-json>``` версией необработанного пути к файлу `azuredeploy.json` на сайте GitHub, указав его в формате [URL-адреса](https://www.bing.com/search?q=url+encode).
+Замените ```<url-encoded-path-to-azuredeploy-json>``` версией необработанного пути к файлу [ на сайте GitHub, указав его в формате ](https://www.bing.com/search?q=url+encode)URL-адреса`azuredeploy.json`.
 
 Ниже приведен пример использования разметки:
 
@@ -660,7 +668,7 @@ ms.locfileid: "76963960"
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/<url-encoded-path-to-azuredeploy-json>" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"></a>
 ```
 
-### <a name="deploy-using-powershell"></a>Развертывание с использованием PowerShell
+### <a name="deploy-using-powershell"></a>Развертывание с помощью PowerShell
 
 Следующие команды PowerShell создают группу ресурсов и развертывают шаблон, который создает приложение-функцию с необходимыми ресурсами. Для локального запуска необходимо установить [Azure PowerShell](/powershell/azure/install-az-ps) . Запустите [`Connect-AzAccount`](/powershell/module/az.accounts/connect-azaccount) , чтобы войти.
 

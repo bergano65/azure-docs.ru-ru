@@ -1,30 +1,26 @@
 ---
-title: Руководство. Использование службы "Конфигурация приложений Azure" для отправки событий в конечную веб-точку
-titleSuffix: Azure App Configuration
-description: Из этого руководства вы узнаете, как настроить подписки на события Конфигурации приложений Azure для отправки событий изменения значения ключа в конечную веб-точку.
+title: Отправка событий в веб-конечную точку с помощью конфигурации приложения Azure
+description: Узнайте, как использовать подписки на события конфигурации приложений Azure для отправки событий изменения ключа в веб-конечную точку.
 services: azure-app-configuration
-documentationcenter: ''
-author: jimmyca
-editor: ''
+author: lisaguthrie
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.devlang: csharp
-ms.topic: tutorial
-ms.date: 05/30/2019
+ms.topic: how-to
+ms.date: 02/25/2020
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: 2a80f931f2060d421483b9e26940985091c9bb5c
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
-ms.translationtype: HT
+ms.openlocfilehash: 93700af5e7fb3a4a1253424996ed04532c01f88c
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899695"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77619589"
 ---
-# <a name="quickstart-route-azure-app-configuration-events-to-a-web-endpoint-with-azure-cli"></a>Краткое руководство. Направляйте события Конфигурации приложений Azure в конечную веб-точку с помощью Azure CLI
+# <a name="route-azure-app-configuration-events-to-a-web-endpoint-with-azure-cli"></a>Направляйте события Конфигурации приложений Azure в конечную веб-точку с помощью Azure CLI
 
-Из этого краткого руководства вы узнаете, как настроить подписки на события Конфигурации приложений Azure для отправки событий изменения значения ключа в конечную веб-точку. Пользователи Конфигурации приложений Azure могут подписаться на события, которые создаются при изменении значений ключа. Эти события могут активировать веб-перехватчики, Функции Azure, очереди службы хранилища Azure или любой другой обработчик событий, который поддерживается Сеткой событий Azure. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
+Из этой статьи вы узнаете, как настроить подписки на события настройки приложений Azure для отправки событий изменения значения ключа в конечную точку веб-узла. Пользователи конфигурации приложений Azure могут подписываться на события, созданные при каждом изменении значений ключей. Эти события могут активировать веб-перехватчики, функции Azure, очереди службы хранилища Azure или любой другой обработчик событий, поддерживаемый службой "Сетка событий Azure". Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). При желании вы также можете использовать Azure Cloud Shell.
 
@@ -46,15 +42,16 @@ ms.locfileid: "76899695"
 az group create --name <resource_group_name> --location westus
 ```
 
-## <a name="create-an-app-configuration"></a>Создание Конфигурации приложений
+## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
-Замените `<appconfig_name>` уникальным именем своей конфигурации приложений, а `<resource_group_name>` — именем группы ресурсов, созданной ранее. Имя должно быть уникальным, поскольку оно используется в качестве имени DNS.
+Замените `<appconfig_name>` уникальным именем для хранилища конфигураций и `<resource_group_name>` с группой ресурсов, созданной ранее. Имя должно быть уникальным, поскольку оно используется в качестве имени DNS.
 
 ```azurecli-interactive
 az appconfig create \
   --name <appconfig_name> \
   --location westus \
-  --resource-group <resource_group_name>
+  --resource-group <resource_group_name> \
+  --sku free
 ```
 
 ## <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
@@ -78,7 +75,7 @@ az group deployment create \
 
 [!INCLUDE [event-grid-register-provider-cli.md](../../includes/event-grid-register-provider-cli.md)]
 
-## <a name="subscribe-to-your-app-configuration"></a>Подписка на Конфигурацию приложений
+## <a name="subscribe-to-your-app-configuration-store"></a>Подпишитесь на хранилище конфигураций приложений
 
 Подписка на раздел предоставляет Сетке событий Azure информацию о том, какие события вы намерены отслеживать и куда их следует отправлять. В следующем примере создается подписка на созданную Конфигурацию приложений и передается URL-адрес веб-приложения в качестве конечной точки для уведомления о событиях. Замените `<event_subscription_name>` именем подписки на событие. Для `<resource_group_name>` и `<appconfig_name>` используйте созданные ранее значения.
 
@@ -122,7 +119,6 @@ az appconfig kv set --name <appconfig_name> --key Foo --value Bar --yes
   "dataVersion": "1",
   "metadataVersion": "1"
 }]
-
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b2a5a66f2801804b354dd8945ea7d8eb565e82cb
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 2ba69e6447c686230412c33e74196c4bb594e0de
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702221"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77611826"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Классическое приложение, вызывающее веб-API: конфигурация кода
 
@@ -29,7 +29,7 @@ ms.locfileid: "76702221"
 
 Следующие библиотеки проверки подлинности Майкрософт (Мсалс) поддерживают классические приложения.
 
-  Библиотека проверки подлинности Майкрософт | Description
+  Библиотека проверки подлинности Майкрософт | Описание
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживает создание классических приложений на нескольких платформах, таких как Linux, Windows и macOS.
   ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание классических приложений на нескольких платформах.
@@ -40,7 +40,7 @@ ms.locfileid: "76702221"
 
 С точки зрения кода, классические приложения являются общедоступными клиентскими приложениями. Конфигурация будет немного отличаться в зависимости от того, используется ли Интерактивная проверка подлинности.
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 Вам потребуется создать MSAL.NET `IPublicClientApplication`и управлять ими.
 
@@ -106,7 +106,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-### <a name="learn-more"></a>Подробнее…
+### <a name="learn-more"></a>Дополнительные сведения
 
 Дополнительные сведения о настройке классического приложения MSAL.NET:
 
@@ -185,17 +185,17 @@ var app = PublicClientApplicationBuilder.CreateWithApplicationOptions(config.Pub
 
 Перед вызовом метода `.Build()` можно переопределить конфигурацию с помощью вызовов методов `.WithXXX`, как показано выше.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
 
 ```Java
-PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
-        .authority(TestData.AUTHORITY_COMMON)
+PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
+        .authority(AUTHORITY)
         .build();
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 config = json.load(open(sys.argv[1]))
@@ -208,7 +208,7 @@ app = msal.PublicClientApplication(
     )
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Следующий код создает открытое клиентское приложение и выполняет вход пользователей в Microsoft Azure общедоступное облако с рабочей или учебной учетной записью или личным учетная запись Майкрософт.
 
@@ -262,7 +262,7 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Получение маркера для классического приложения](scenario-desktop-acquire-token.md)

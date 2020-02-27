@@ -1,21 +1,21 @@
 ---
 title: Управление устройствами, подключенными к решению для удаленного мониторинга, в пакетном режиме в Azure | Документация Майкрософт
 description: В этом руководстве объясняется, как управлять устройствами, подключенными к решению для удаленного мониторинга, в пакетном режиме.
-author: aditidugar
+author: Philmea
 manager: philmea
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: tutorial
 ms.date: 11/29/2018
-ms.author: adugar
-ms.openlocfilehash: 8ba2d4eca3287efc746c0d4902b6bcc4bd0c796e
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.author: philmea
+ms.openlocfilehash: eaca93ac8a4e8c660be9618aefb27921a4e0a2eb
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980548"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77565584"
 ---
-# <a name="tutorial-manage-your-connected-devices-in-bulk"></a>Руководство. управлению подключенными устройствами в пакетном режиме
+# <a name="tutorial-manage-your-connected-devices-in-bulk"></a>Руководство по управлению подключенными устройствами в пакетном режиме
 
 В этом руководстве показано, как управлять конфигурацией подключенных устройств в пакетном режиме с помощью акселератора решений для удаленного мониторинга.
 
@@ -31,7 +31,7 @@ ms.locfileid: "75980548"
 > * развернете конфигурацию на устройства в группе устройств.
 > * Мониторинг развертывания
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 <!--
 If this is going to be a tutorial - we need to split this include into two so that we can accommodate the additional prerequisites:
@@ -39,7 +39,7 @@ If this is going to be a tutorial - we need to split this include into two so th
 [!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 -->
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам понадобится развернутый экземпляр акселератора решения для удаленного мониторинга в подписке Azure.
 

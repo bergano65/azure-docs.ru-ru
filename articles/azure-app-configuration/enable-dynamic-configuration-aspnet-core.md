@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 8032a9b206be4a5eb70a1f40fd33667a1dbdfaa7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 3c461e543e3b01501ec47589a9eab3d74820491a
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76714730"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500235"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство. Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -53,12 +53,12 @@ ASP.NET Core имеет подключаемую систему конфигур
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
     ```CLI
-    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-011100002-1192
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore
     ```
 
 1. Откройте файл *Program.cs* и обновите метод `CreateWebHostBuilder`, чтобы добавить метод `config.AddAzureAppConfiguration()`.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
+    #### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -81,7 +81,7 @@ ASP.NET Core имеет подключаемую систему конфигур
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -124,7 +124,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 3. Откройте файл *Startup.cs* и укажите `IServiceCollection.Configure<T>` в методе `ConfigureServices`, чтобы создать привязку между данными конфигурации и классом `Settings`.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
+    #### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -134,7 +134,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -148,7 +148,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 4. Обновите метод `Configure`, добавив ПО промежуточного слоя `UseAzureAppConfiguration`, чтобы обновлять зарегистрированные для обновления параметры конфигурации, в то время как веб-приложение ASP.NET Core продолжает получать запросы.
 
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
+    #### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -165,7 +165,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -217,7 +217,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 2. Обновите класс `HomeController` для получения класса `Settings` путем внедрения зависимости и воспользуйтесь его значениями.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
+    #### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public class HomeController : Controller
@@ -240,7 +240,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public class HomeController : Controller

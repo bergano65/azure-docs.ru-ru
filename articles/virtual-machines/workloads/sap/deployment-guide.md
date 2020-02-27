@@ -4,7 +4,7 @@ description: Сведения о развертывании программно
 services: virtual-machines-linux,virtual-machines-windows
 documentationcenter: ''
 author: MSSedusch
-manager: gwallace
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/16/2019
 ms.author: sedusch
-ms.openlocfilehash: e7a61cc64ae72adfcbeb347ddd076065ccc3a321
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 19dc9f25cc7355eb540b68f009a77b1ca1e5fb86
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75645860"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77614901"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -315,7 +315,7 @@ ms.locfileid: "75645860"
 
 В этой статье описаны действия, необходимые для развертывания приложений SAP на виртуальных машинах Azure, а также приведены сведения о дополнительных вариантах развертывания и устранении неполадок. В этой статье содержатся сведения о [планировании и реализации SAP NetWeaver на виртуальных машинах Azure][planning-guide]. Она также дополняет документацию по установке SAP и примечания к SAP, которые являются основными ресурсами по установке и развертыванию ПО SAP.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 

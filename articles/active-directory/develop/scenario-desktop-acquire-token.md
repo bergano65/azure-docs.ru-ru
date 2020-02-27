@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 50ac62ded92b69f44324f4f9c5eacee939159449
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 636c7c654b98ced5f93c3ace0e4a99bfc9bf7def
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76834133"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77611800"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, вызывающее веб-API: получение маркера
 
@@ -33,7 +33,7 @@ ms.locfileid: "76834133"
 - Систематически попытайтесь получить маркер из кэша маркеров, вызвав `AcquireTokenSilent`.
 - Если этот вызов завершается неудачей, используйте поток `AcquireToken`, который вы хотите использовать, который представлен `AcquireTokenXX`.
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 ### <a name="in-msalnet"></a>В MSAL.NET
 
@@ -55,41 +55,46 @@ catch(MsalUiRequiredException ex)
 }
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```java
-CompletableFuture<IAuthenticationResult> future = app.acquireToken(parameters);
 
-future.handle((res, ex) -> {
-    if(ex != null) {
-        System.out.println("Oops! We have an exception - " + ex.getMessage());
-        return "Unknown!";
+Set<IAccount> accountsInCache = pca.getAccounts().join();
+// Take first account in the cache. In a production application, you would filter
+// accountsInCache to get the right account for the user authenticating.
+IAccount account = accountsInCache.iterator().next();
+
+IAuthenticationResult result;
+try {
+    SilentParameters silentParameters =
+            SilentParameters
+                    .builder(SCOPE, account)
+                    .build();
+
+    // try to acquire token silently. This call will fail since the token cache
+    // does not have any data for the user you are trying to acquire a token for
+    result = pca.acquireTokenSilently(silentParameters).join();
+} catch (Exception ex) {
+    if (ex.getCause() instanceof MsalException) {
+
+        InteractiveRequestParameters parameters = InteractiveRequestParameters
+                .builder(new URI("http://localhost"))
+                .scopes(SCOPE)
+                .build();
+
+        // Try to acquire a token interactively with system browser. If successful, you should see
+        // the token and account information printed out to console
+        result = pca.acquireToken(parameters).join();
+    } else {
+        // Handle other exceptions accordingly
+        throw ex;
     }
+}
+return result;
 
-    Collection<IAccount> accounts = app.getAccounts().join();
-
-    CompletableFuture<IAuthenticationResult> future1;
-    try {
-        future1 = app.acquireTokenSilently
-                (SilentParameters.builder(Collections.singleton(TestData.GRAPH_DEFAULT_SCOPE),
-                        accounts.iterator().next())
-                        .forceRefresh(true)
-                        .build());
-
-    } catch (MalformedURLException e) {
-        e.printStackTrace();
-        throw new RuntimeException();
-    }
-
-    future1.join();
-    IAccount account = app.getAccounts().join().iterator().next();
-    app.removeAccount(account).join();
-
-    return res;
-}).join();
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 result = None
@@ -103,7 +108,7 @@ if not result:
     result = app.acquire_token_by_xxx(scopes=config["scope"])
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>В MSAL для iOS и macOS
 
@@ -151,7 +156,7 @@ application.acquireTokenSilent(with: silentParameters) { (result, error) in
 
 В следующем примере показан минимальный код для интерактивного получения маркера для чтения профиля пользователя с Microsoft Graph.
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 ### <a name="in-msalnet"></a>В MSAL.NET
 
 ```csharp
@@ -240,7 +245,7 @@ MSAL предоставляет реализации пользовательс�
 - Необходимо протестировать приложение пользовательского интерфейса и использовать автоматизированный браузер, который можно использовать с Selenium.
 - Браузер и приложение, в котором выполняется MSAL, находятся в отдельных процессах.
 
-##### <a name="at-a-glance"></a>Краткие сведения
+##### <a name="at-a-glance"></a>Вкратце
 
 Для этого вы передаете MSAL `start Url`, который должен отображаться в выбранном браузере, чтобы конечный пользователь мог ввести такие элементы, как имя пользователя.
 После завершения проверки подлинности приложение необходимо передать обратно в MSAL `end Url`, которое содержит код, предоставленный Azure AD.
@@ -280,7 +285,7 @@ MSAL предоставляет реализации пользовательс�
 
 - URI для перехода к (`BrowserRedirectError`) или отображаемый фрагмент HTML (`HtmlMessageError`) в случае ошибок входа или согласия в системном веб-браузере.
 - URI для перехода к (`BrowserRedirectSuccess`) или отображаемый фрагмент HTML (`HtmlMessageSuccess`) в случае успешного входа или согласия.
-- действие, выполняемое для запуска браузера системы. Вы можете предоставить собственную реализацию, установив делегат `OpenBrowserAsync`. Класс также предоставляет реализацию по умолчанию для двух браузеров: `OpenWithEdgeBrowserAsync` и `OpenWithChromeEdgeBrowserAsync` для Microsoft ребр и [Microsoft ребра в Chromium](https://www.windowscentral.com/faq-edge-chromium)соответственно.
+- Действие, выполняемое для запуска браузера системы. Вы можете предоставить собственную реализацию, установив делегат `OpenBrowserAsync`. Класс также предоставляет реализацию по умолчанию для двух браузеров: `OpenWithEdgeBrowserAsync` и `OpenWithChromeEdgeBrowserAsync` для Microsoft ребр и [Microsoft ребра в Chromium](https://www.windowscentral.com/faq-edge-chromium)соответственно.
 
 Чтобы использовать эту структуру, напишите нечто вроде следующего:
 
@@ -304,46 +309,56 @@ var result = app.AcquireTokenInteractive(scopes)
 
 Дополнительные сведения о других необязательных параметрах для `AcquireTokenInteractive`см. в разделе [аккуиретокенинтерактивепараметербуилдер](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods).
 
-# <a name="javatabjava"></a>[Java](#tab/java)
-
-MSAL Java не предоставляет прямой интерактивный метод получения маркера. Вместо этого для получения кода авторизации приложение должно отправить запрос авторизации в своей реализации потока взаимодействия с пользователем. Этот код затем может быть передан методу `acquireToken` для получения маркера.
+# <a name="java"></a>[Java](#tab/java)
 
 ```java
-AuthorizationCodeParameters parameters =  AuthorizationCodeParameters.builder(
-                authorizationCode, redirectUri)
-                .build();
-CompletableFuture<IAuthenticationResult> future = app.acquireToken(parameters);
+private static IAuthenticationResult acquireTokenInteractive() throws Exception {
 
-future.handle((res, ex) -> {
-    if(ex != null) {
-        System.out.println("Oops! We have an exception - " + ex.getMessage());
-        return "Unknown!";
-    }
+    // Load token cache from file and initialize token cache aspect. The token cache will have
+    // dummy data, so the acquireTokenSilently call will fail.
+    TokenCacheAspect tokenCacheAspect = new TokenCacheAspect("sample_cache.json");
 
-    Collection<IAccount> accounts = app.getAccounts().join();
+    PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
+            .authority(AUTHORITY)
+            .setTokenCacheAccessAspect(tokenCacheAspect)
+            .build();
 
-    CompletableFuture<IAuthenticationResult> future1;
+    Set<IAccount> accountsInCache = pca.getAccounts().join();
+    // Take first account in the cache. In a production application, you would filter
+    // accountsInCache to get the right account for the user authenticating.
+    IAccount account = accountsInCache.iterator().next();
+
+    IAuthenticationResult result;
     try {
-        future1 = app.acquireTokenSilently
-                (SilentParameters.builder(Collections.singleton(TestData.GRAPH_DEFAULT_SCOPE),
-                        accounts.iterator().next())
-                        .forceRefresh(true)
-                        .build());
+        SilentParameters silentParameters =
+                SilentParameters
+                        .builder(SCOPE, account)
+                        .build();
 
-    } catch (MalformedURLException e) {
-        e.printStackTrace();
-        throw new RuntimeException();
+        // try to acquire token silently. This call will fail since the token cache
+        // does not have any data for the user you are trying to acquire a token for
+        result = pca.acquireTokenSilently(silentParameters).join();
+    } catch (Exception ex) {
+        if (ex.getCause() instanceof MsalException) {
+
+            InteractiveRequestParameters parameters = InteractiveRequestParameters
+                    .builder(new URI("http://localhost"))
+                    .scopes(SCOPE)
+                    .build();
+
+            // Try to acquire a token interactively with system browser. If successful, you should see
+            // the token and account information printed out to console
+            result = pca.acquireToken(parameters).join();
+        } else {
+            // Handle other exceptions accordingly
+            throw ex;
+        }
     }
-
-    future1.join();
-    IAccount account = app.getAccounts().join().iterator().next();
-    app.removeAccount(account).join();
-
-    return res;
-}).join();
+    return result;
+}
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 MSAL Python не предоставляет прямой интерактивный метод получения маркера. Вместо этого для получения кода авторизации приложение должно отправить запрос авторизации в своей реализации потока взаимодействия с пользователем. Этот код затем может быть передан методу `acquire_token_by_authorization_code` для получения маркера.
 
@@ -362,7 +377,7 @@ if not result:
 
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>В MSAL для iOS и macOS
 
@@ -431,7 +446,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 
 ### <a name="learn-how-to-use-it"></a>Сведения об использовании
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 В MSAL.NET необходимо использовать:
 
@@ -522,39 +537,69 @@ static async Task GetATokenForGraph()
 
 Список возможных модификаторов в Аккуиретокенбинтегратедвиндовсаусентикатион см. в разделе [аккуиретокенбинтегратедвиндовсауспараметербуилдер](/dotnet/api/microsoft.identity.client.acquiretokenbyintegratedwindowsauthparameterbuilder?view=azure-dotnet-preview#methods).
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/).
 
 ```Java
-PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
-         .authority(TestData.AUTHORITY_ORGANIZATION)
-         .telemetryConsumer(new Telemetry.MyTelemetryConsumer().telemetryConsumer)
-         .build();
+private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
- IntegratedWindowsAuthenticationParameters parameters =
-         IntegratedWindowsAuthenticationParameters.builder(
-                 Collections.singleton(TestData.GRAPH_DEFAULT_SCOPE), TestData.USER_NAME)
-                 .build();
+    // Load token cache from file and initialize token cache aspect. The token cache will have
+    // dummy data, so the acquireTokenSilently call will fail.
+    TokenCacheAspect tokenCacheAspect = new TokenCacheAspect("sample_cache.json");
 
- Future<IAuthenticationResult> future = app.acquireToken(parameters);
+    PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
+            .authority(AUTHORITY)
+            .setTokenCacheAccessAspect(tokenCacheAspect)
+            .build();
 
- IAuthenticationResult result = future.get();
+    Set<IAccount> accountsInCache = pca.getAccounts().join();
+    // Take first account in the cache. In a production application, you would filter
+    // accountsInCache to get the right account for the user authenticating.
+    IAccount account = accountsInCache.iterator().next();
 
- return result;
+    IAuthenticationResult result;
+    try {
+        SilentParameters silentParameters =
+                SilentParameters
+                        .builder(SCOPE, account)
+                        .build();
+
+        // try to acquire token silently. This call will fail since the token cache
+        // does not have any data for the user you are trying to acquire a token for
+        result = pca.acquireTokenSilently(silentParameters).join();
+    } catch (Exception ex) {
+        if (ex.getCause() instanceof MsalException) {
+
+            IntegratedWindowsAuthenticationParameters parameters =
+                    IntegratedWindowsAuthenticationParameters
+                            .builder(SCOPE, USER_NAME)
+                            .build();
+
+            // Try to acquire a IWA. You will need to generate a Kerberos ticket.
+            // If successful, you should see the token and account information printed out to
+            // console
+            result = pca.acquireToken(parameters).join();
+        } else {
+            // Handle other exceptions accordingly
+            throw ex;
+        }
+    }
+    return result;
+}
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Эта последовательность пока не поддерживается в MSAL Python.
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Этот поток не применяется к MacOS.
 
 ---
 
-## <a name="username-and-password"></a>Имя пользователя и пароль
+## <a name="username-and-password"></a>Имя пользователя и пароль
 
 Можно также получить маркер, указав имя пользователя и пароль. Этот поток ограничен и не рекомендуется, но по-прежнему используются случаи, когда это необходимо.
 
@@ -583,7 +628,7 @@ PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CL
 
 ### <a name="use-it"></a>Используйте его
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 `IPublicClientApplication`содержит метод `AcquireTokenByUsernamePassword`.
 
@@ -792,54 +837,56 @@ static async Task GetATokenForGraph()
 
 Дополнительные сведения обо всех модификаторах, которые можно применить к `AcquireTokenByUsernamePassword`, см. в разделе [аккуиретокенбюсернамепассвордпараметербуилдер](/dotnet/api/microsoft.identity.client.acquiretokenbyusernamepasswordparameterbuilder?view=azure-dotnet-preview#methods).
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Приведенные ниже примеры извлекаются из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Приведенные ниже примеры извлекаются из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/).
 
 ```Java
-PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
-        .authority(TestData.AUTHORITY_ORGANIZATION)
-        .build();
+private static IAuthenticationResult acquireTokenUsernamePassword() throws Exception {
 
-UserNamePasswordParameters parameters = UserNamePasswordParameters.builder(
-        Collections.singleton(TestData.GRAPH_DEFAULT_SCOPE),
-        TestData.USER_NAME,
-        TestData.USER_PASSWORD.toCharArray())
-        .build();
+    // Load token cache from file and initialize token cache aspect. The token cache will have
+    // dummy data, so the acquireTokenSilently call will fail.
+    TokenCacheAspect tokenCacheAspect = new TokenCacheAspect("sample_cache.json");
 
-CompletableFuture<IAuthenticationResult> future = app.acquireToken(parameters);
+    PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
+            .authority(AUTHORITY)
+            .setTokenCacheAccessAspect(tokenCacheAspect)
+            .build();
 
-future.handle((res, ex) -> {
-    if(ex != null) {
-        System.out.println("Oops! We have an exception - " + ex.getMessage());
-        return "Unknown!";
-    }
+    Set<IAccount> accountsInCache = pca.getAccounts().join();
+    // Take first account in the cache. In a production application, you would filter
+    // accountsInCache to get the right account for the user authenticating.
+    IAccount account = accountsInCache.iterator().next();
 
-    Collection<IAccount> accounts = app.getAccounts().join();
-
-    CompletableFuture<IAuthenticationResult> future1;
+    IAuthenticationResult result;
     try {
-        future1 = app.acquireTokenSilently
-                (SilentParameters.builder(Collections.singleton(TestData.GRAPH_DEFAULT_SCOPE),
-                        accounts.iterator().next())
-                        .forceRefresh(true)
-                        .build());
+        SilentParameters silentParameters =
+                SilentParameters
+                        .builder(SCOPE, account)
+                        .build();
+        // try to acquire token silently. This call will fail since the token cache
+        // does not have any data for the user you are trying to acquire a token for
+        result = pca.acquireTokenSilently(silentParameters).join();
+    } catch (Exception ex) {
+        if (ex.getCause() instanceof MsalException) {
 
-    } catch (MalformedURLException e) {
-        e.printStackTrace();
-        throw new RuntimeException();
+            UserNamePasswordParameters parameters =
+                    UserNamePasswordParameters
+                            .builder(SCOPE, USER_NAME, USER_PASSWORD.toCharArray())
+                            .build();
+            // Try to acquire a token via username/password. If successful, you should see
+            // the token and account information printed out to console
+            result = pca.acquireToken(parameters).join();
+        } else {
+            // Handle other exceptions accordingly
+            throw ex;
+        }
     }
-
-    future1.join();
-
-    IAccount account = app.getAccounts().join().iterator().next();
-    app.removeAccount(account).join();
-
-    return res;
-}).join();
+    return result;
+}
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Это извлечение из примеров для [разработчиков MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
 
@@ -869,7 +916,7 @@ if not result:
         config["username"], config["password"], scopes=config["scope"])
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Эта последовательность не поддерживается в MSAL для macOS.
 
@@ -889,7 +936,7 @@ if not result:
 
 ### <a name="use-it"></a>Используйте его
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 `IPublicClientApplication`содержит метод с именем `AcquireTokenWithDeviceCode`.
 
@@ -994,40 +1041,62 @@ private async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientA
     }
 }
 ```
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/).
 
 ```java
-PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
-        .authority(TestData.AUTHORITY_COMMON)
-        .build();
+private static IAuthenticationResult acquireTokenDeviceCode() throws Exception {
 
-Consumer<DeviceCode> deviceCodeConsumer = (DeviceCode deviceCode) -> {
-    System.out.println(deviceCode.message());
-};
+    // Load token cache from file and initialize token cache aspect. The token cache will have
+    // dummy data, so the acquireTokenSilently call will fail.
+    TokenCacheAspect tokenCacheAspect = new TokenCacheAspect("sample_cache.json");
 
-CompletableFuture<IAuthenticationResult> future = app.acquireToken(
-        DeviceCodeFlowParameters.builder(
-                Collections.singleton(TestData.GRAPH_DEFAULT_SCOPE),
-                deviceCodeConsumer)
-                .build());
+    PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
+            .authority(AUTHORITY)
+            .setTokenCacheAccessAspect(tokenCacheAspect)
+            .build();
 
-future.handle((res, ex) -> {
-    if(ex != null) {
-        System.out.println("Oops! We have an exception of type - " + ex.getClass());
-        System.out.println("message - " + ex.getMessage());
-        return "Unknown!";
+    Set<IAccount> accountsInCache = pca.getAccounts().join();
+    // Take first account in the cache. In a production application, you would filter
+    // accountsInCache to get the right account for the user authenticating.
+    IAccount account = accountsInCache.iterator().next();
+
+    IAuthenticationResult result;
+    try {
+        SilentParameters silentParameters =
+                SilentParameters
+                        .builder(SCOPE, account)
+                        .build();
+
+        // try to acquire token silently. This call will fail since the token cache
+        // does not have any data for the user you are trying to acquire a token for
+        result = pca.acquireTokenSilently(silentParameters).join();
+    } catch (Exception ex) {
+        if (ex.getCause() instanceof MsalException) {
+
+            Consumer<DeviceCode> deviceCodeConsumer = (DeviceCode deviceCode) ->
+                    System.out.println(deviceCode.message());
+
+            DeviceCodeFlowParameters parameters =
+                    DeviceCodeFlowParameters
+                            .builder(SCOPE, deviceCodeConsumer)
+                            .build();
+
+            // Try to acquire a token via device code flow. If successful, you should see
+            // the token and account information printed out to console, and the sample_cache.json
+            // file should have been updated with the latest tokens.
+            result = pca.acquireToken(parameters).join();
+        } else {
+            // Handle other exceptions accordingly
+            throw ex;
+        }
     }
-    System.out.println("Returned ok - " + res);
-
-    return res;
-});
-
-future.join();
+    return result;
+}
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Это извлечение из примеров для [разработчиков MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
 
@@ -1078,7 +1147,7 @@ if not result:
         # and then keep calling acquire_token_by_device_flow(flow) in your own customized loop
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Этот поток не применяется к MacOS.
 
@@ -1322,7 +1391,7 @@ namespace CommonCacheMsalV3
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API из классического приложения](scenario-desktop-call-api.md)

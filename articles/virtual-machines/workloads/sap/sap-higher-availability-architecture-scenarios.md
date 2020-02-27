@@ -1,10 +1,10 @@
 ---
-title: Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности системы SAP | Документация Майкрософт
+title: Использование перезапуска виртуальных машин Azure для "повышения доступности" системы SAP | Документация Майкрософт
 description: Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности приложений SAP
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: goraco
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -14,14 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/05/2017
-ms.author: rclaus
+ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d2e15765d5acdfe79bbf9e58135a62614ff7caf9
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 86094fd7ff9550946e1b1c13e0773f025a0e977c
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647481"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623818"
 ---
 # <a name="utilize-azure-infrastructure-vm-restart-to-achieve-higher-availability-of-an-sap-system"></a>Использование перезапуска виртуальной машины в инфраструктуре Azure для косвенного повышения доступности системы SAP
 
@@ -280,6 +280,6 @@ ms.locfileid: "75647481"
   * [Start/Stop SAP along with your Unix Server Start/Stop](https://scn.sap.com/community/unix/blog/2012/08/07/startstop-sap-along-with-your-unix-server-startstop) (Запуск и остановка SAP одновременно с запуском и остановкой сервера UNIX)
   * [Starting and Stopping SAP NetWeaver Management Agents](https://help.sap.com/saphelp_nwpi711/helpdata/en/49/9a15525b20423ee10000000a421938/content.htm) (Запуск и остановка агентов управления SAP NetWeaver)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о высоком уровне доступности, поддерживающем приложения SAP NetWeaver, см. в статье о [высоком уровне доступности приложений SAP в Azure IaaS][sap-high-availability-architecture-scenarios-sap-app-ha].

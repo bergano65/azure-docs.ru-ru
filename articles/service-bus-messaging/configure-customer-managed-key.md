@@ -6,14 +6,14 @@ ms.service: service-bus
 documentationcenter: ''
 author: axisc
 ms.topic: conceptual
-ms.date: 11/15/2019
+ms.date: 02/25/2020
 ms.author: aschhab
-ms.openlocfilehash: 6d20d4031f0ed4d1be4dddf9e33946251d6dd523
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: aeb9a9730ddc61793e49c9e042906457e0068d9a
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903322"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77624093"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-service-bus-data-at-rest-by-using-the-azure-portal"></a>Настройка управляемых клиентом ключей для шифрования неактивных данных служебной шины Azure с помощью портал Azure
 Служебная шина Azure Premium обеспечивает шифрование неактивных данных с помощью Azure Шифрование службы хранилища (Azure SSE). Расширенная служебная шина использует хранилище Azure для хранения данных. по умолчанию все данные, хранящиеся в службе хранилища Azure, шифруются с помощью ключей, управляемых корпорацией Майкрософт. 
@@ -78,22 +78,22 @@ ms.locfileid: "75903322"
     1. Введите сведения о ключе и нажмите кнопку **выбрать**. Это обеспечивает шифрование неактивных данных в пространстве имен с помощью управляемого клиентом ключа. 
 
 
-> [!IMPORTANT]
-> Если вы хотите использовать управляемый клиентом ключ вместе с географическим аварийным восстановлением, ознакомьтесь с приведенными ниже разделами. 
->
-> Чтобы включить шифрование неактивных данных с помощью управляемого клиентом ключа, [Политика доступа](../key-vault/key-vault-secure-your-key-vault.md) настраивается для управляемого удостоверения служебной шины на указанном KeyVault Azure. Это обеспечит контролируемый доступ к KeyVault Azure из пространства имен служебной шины Azure.
->
-> Из-за этого:
-> 
->   * Если [географическое аварийное восстановление](service-bus-geo-dr.md) уже включено для пространства имен служебной шины и вы хотите включить управляемый клиентом ключ, то 
->     * Разорвать связывание
->     * [Настройте политику доступа](../key-vault/managed-identity.md) для управляемого удостоверения как для основного, так и для дополнительного пространств имен в хранилище ключей.
->     * Настройте шифрование для основного пространства имен.
->     * Повторно свяжите первичные и вторичные пространства имен.
-> 
->   * Если вы хотите включить геоаварийное восстановление в пространстве имен служебной шины, где уже настроен управляемый ключ клиента, то-
->     * [Настройте политику доступа](../key-vault/managed-identity.md) для управляемого удостоверения для дополнительного пространства имен в хранилище ключей.
->     * Свяжите первичные и вторичные пространства имен.
+    > [!IMPORTANT]
+    > Если вы хотите использовать управляемый клиентом ключ вместе с географическим аварийным восстановлением, ознакомьтесь с приведенными ниже разделами. 
+    >
+    > Чтобы включить шифрование неактивных данных с помощью управляемого клиентом ключа, [Политика доступа](../key-vault/key-vault-secure-your-key-vault.md) настраивается для управляемого удостоверения служебной шины на указанном KeyVault Azure. Это обеспечит контролируемый доступ к KeyVault Azure из пространства имен служебной шины Azure.
+    >
+    > Из-за этого:
+    > 
+    >   * Если [географическое аварийное восстановление](service-bus-geo-dr.md) уже включено для пространства имен служебной шины и вы хотите включить управляемый клиентом ключ, то 
+    >     * Разорвать связывание
+    >     * [Настройте политику доступа](../key-vault/managed-identity.md) для управляемого удостоверения как для основного, так и для дополнительного пространств имен в хранилище ключей.
+    >     * Настройте шифрование для основного пространства имен.
+    >     * Повторно свяжите первичные и вторичные пространства имен.
+    > 
+    >   * Если вы хотите включить геоаварийное восстановление в пространстве имен служебной шины, где уже настроен управляемый ключ клиента, то-
+    >     * [Настройте политику доступа](../key-vault/managed-identity.md) для управляемого удостоверения для дополнительного пространства имен в хранилище ключей.
+    >     * Свяжите первичные и вторичные пространства имен.
 
 
 ## <a name="rotate-your-encryption-keys"></a>Смена ключей шифрования
@@ -105,6 +105,224 @@ ms.locfileid: "75903322"
 Отмена доступа к ключам шифрования не приводит к очистке данных из служебной шины. Однако доступ к данным из пространства имен служебной шины невозможен. Вы можете отозвать ключ шифрования с помощью политики доступа или путем удаления ключа. Узнайте больше о политиках доступа и защите хранилища ключей от [безопасного доступа к хранилищу ключей](../key-vault/key-vault-secure-your-key-vault.md).
 
 После отзыва ключа шифрования служба служебной шины в зашифрованном пространстве имен станет неработоспособной. Если доступ к ключу включен или восстановлен удаленный ключ, служба служебной шины выберет ключ, чтобы получить доступ к данным из зашифрованного пространства имен служебной шины.
+
+## <a name="use-resource-manager-template-to-enable-encryption"></a>Использование шаблона диспетчер ресурсов для включения шифрования
+В этом разделе показано, как выполнять следующие задачи с помощью **шаблонов Azure Resource Manager**. 
+
+1. Создайте пространство имен служебной шины **Premium** с помощью **управляемого удостоверения службы**.
+2. Создайте **хранилище ключей** и предоставьте удостоверению службы доступ к хранилищу ключей. 
+3. Обновите пространство имен служебной шины, указав сведения о хранилище ключей (ключ/значение). 
+
+
+### <a name="create-a-premium-service-bus-namespace-with-managed-service-identity"></a>Создание пространства имен служебной шины Premium с удостоверением управляемой службы
+В этом разделе показано, как создать пространство имен служебной шины Azure с удостоверением управляемой службы с помощью шаблона Azure Resource Manager и PowerShell. 
+
+1. Создайте шаблон Azure Resource Manager, чтобы создать пространство имен уровня Premium служебной шины с управляемым удостоверением службы. Назовите файл: **креатесервицебуспремиумнамеспаце. JSON**: 
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "namespaceName":{
+             "type":"string",
+             "metadata":{
+                "description":"Name for the Namespace."
+             }
+          },
+          "location":{
+             "type":"string",
+             "defaultValue":"[resourceGroup().location]",
+             "metadata":{
+                "description":"Specifies the Azure location for all resources."
+             }
+          }
+       },
+       "resources":[
+          {
+             "type":"Microsoft.ServiceBus/namespaces",
+             "apiVersion":"2018-01-01-preview",
+             "name":"[parameters('namespaceName')]",
+             "location":"[parameters('location')]",
+             "identity":{
+                "type":"SystemAssigned"
+             },
+             "sku":{
+                "name":"Premium",
+                "tier":"Premium",
+                "capacity":1
+             },
+             "properties":{
+    
+             }
+          }
+       ],
+       "outputs":{
+          "ServiceBusNamespaceId":{
+             "type":"string",
+             "value":"[resourceId('Microsoft.ServiceBus/namespaces',parameters('namespaceName'))]"
+          }
+       }
+    }
+    ```
+2. Создайте файл параметров шаблона с именем: **креатесервицебуспремиумнамеспацепарамс. JSON**. 
+
+    > [!NOTE]
+    > Измените следующие значения: 
+    > - `<ServiceBusNamespaceName>` имя пространства имен служебной шины
+    > - `<Location>`-расположение пространства имен служебной шины
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "namespaceName":{
+             "value":"<ServiceBusNamespaceName>"
+          },
+          "location":{
+             "value":"<Location>"
+          }
+       }
+    }
+    ```
+3. Выполните следующую команду PowerShell, чтобы развернуть шаблон для создания пространства имен служебной шины Premium. Затем получите идентификатор пространства имен служебной шины, чтобы использовать его позже. Замените `{MyRG}` именем группы ресурсов перед выполнением команды.  
+
+    ```powershell
+    $outputs = New-AzResourceGroupDeployment -Name CreateServiceBusPremiumNamespace -ResourceGroupName {MyRG} -TemplateFile ./CreateServiceBusPremiumNamespace.json -TemplateParameterFile ./CreateServiceBusPremiumNamespaceParams.json
+    
+    $ServiceBusNamespaceId = $outputs.Outputs["serviceBusNamespaceId"].value
+    ```
+ 
+### <a name="grant-service-bus-namespace-identity-access-to-key-vault"></a>Предоставление удостоверению пространства имен служебной шины доступ к хранилищу ключей
+
+1. Выполните следующую команду, чтобы создать хранилище ключей с включенной **защитой очистки** и **обратимого удаления** . 
+
+    ```powershell
+    New-AzureRmKeyVault -Name "{keyVaultName}" -ResourceGroupName {RGName}  -Location "{location}" -EnableSoftDelete -EnablePurgeProtection    
+    ```
+    
+    (ИЛИ)
+    
+    Выполните следующую команду, чтобы обновить **существующее хранилище ключей**. Перед выполнением команды укажите значения для имен группы ресурсов и хранилища ключей. 
+    
+    ```powershell
+    ($updatedKeyVault = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -ResourceGroupName {RGName} -VaultName {keyVaultName}).ResourceId).Properties| Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"-Force | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true" -Force
+    ``` 
+2. Настройте политику доступа к хранилищу ключей таким образом, чтобы управляемое удостоверение пространства имен служебной шины может получить доступ к значению ключа в хранилище ключей. Используйте идентификатор пространства имен служебной шины из предыдущего раздела. 
+
+    ```powershell
+    $identity = (Get-AzureRmResource -ResourceId $ServiceBusNamespaceId -ExpandProperties).Identity
+    
+    Set-AzureRmKeyVaultAccessPolicy -VaultName {keyVaultName} -ResourceGroupName {RGName} -ObjectId $identity.PrincipalId -PermissionsToKeys get,wrapKey,unwrapKey,list
+    ```
+
+### <a name="encrypt-data-in-service-bus-namespace-with-customer-managed-key-from-key-vault"></a>Шифрование данных в пространстве имен служебной шины с помощью ключа, управляемого клиентом, из хранилища ключей
+На данный момент вы выполнили следующие действия: 
+
+1. Создано пространство имен Premium с управляемым удостоверением.
+2. Создание хранилища ключей и предоставление управляемому удостоверению доступа к хранилищу ключей. 
+
+На этом шаге вы обновите пространство имен служебной шины с помощью сведений о хранилище ключей. 
+
+1. Создайте JSON-файл с именем **упдатесервицебуснамеспацевисенкриптион. JSON** со следующим содержимым: 
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "namespaceName":{
+             "type":"string",
+             "metadata":{
+                "description":"Name for the Namespace to be created in cluster."
+             }
+          },
+          "location":{
+             "type":"string",
+             "defaultValue":"[resourceGroup().location]",
+             "metadata":{
+                "description":"Specifies the Azure location for all resources."
+             }
+          },
+          "keyVaultUri":{
+             "type":"string",
+             "metadata":{
+                "description":"URI of the KeyVault."
+             }
+          },
+          "keyName":{
+             "type":"string",
+             "metadata":{
+                "description":"KeyName."
+             }
+          }
+       },
+       "resources":[
+          {
+             "type":"Microsoft.ServiceBus/namespaces",
+             "apiVersion":"2018-01-01-preview",
+             "name":"[parameters('namespaceName')]",
+             "location":"[parameters('location')]",
+             "identity":{
+                "type":"SystemAssigned"
+             },
+             "sku":{
+                "name":"Premium",
+                "tier":"Premium",
+                "capacity":1
+             },
+             "properties":{
+                "encryption":{
+                   "keySource":"Microsoft.KeyVault",
+                   "keyVaultProperties":[
+                      {
+                         "keyName":"[parameters('keyName')]",
+                         "keyVaultUri":"[parameters('keyVaultUri')]"
+                      }
+                   ]
+                }
+             }
+          }
+       ]
+    }
+    ``` 
+
+2. Создайте файл параметров шаблона: **упдатесервицебуснамеспацевисенкриптионпарамс. JSON**.
+
+    > [!NOTE]
+    > Измените следующие значения: 
+    > - `<ServiceBusNamespaceName>` имя пространства имен служебной шины
+    > - `<Location>`-расположение пространства имен служебной шины
+    > - `<KeyVaultName>`-имя хранилища ключей
+    > - `<KeyName>` — имя ключа в хранилище ключей.  
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "namespaceName":{
+             "value":"<ServiceBusNamespaceName>"
+          },
+          "location":{
+             "value":"<Location>"
+          },
+          "keyName":{
+             "value":"<KeyName>"
+          },
+          "keyVaultUri":{
+             "value":"https://<KeyVaultName>.vault.azure.net"
+          }
+       }
+    }
+    ```             
+3. Выполните следующую команду PowerShell, чтобы развернуть шаблон диспетчер ресурсов. Перед выполнением команды замените `{MyRG}` именем группы ресурсов. 
+
+    ```powershell
+    New-AzResourceGroupDeployment -Name UpdateServiceBusNamespaceWithEncryption -ResourceGroupName {MyRG} -TemplateFile ./UpdateServiceBusNamespaceWithEncryption.json -TemplateParameterFile ./UpdateServiceBusNamespaceWithEncryptionParams.json
+    ```
+    
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:

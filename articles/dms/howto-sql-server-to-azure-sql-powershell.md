@@ -3,21 +3,21 @@ title: 'PowerShell: миграция SQL Server в базу данных SQL'
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из локальной SQL Server в базу данных SQL Azure с помощью Azure PowerShell с Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: f67572adc3b40115b2c6d4618718867eacf8c95e
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 02/20/2020
+ms.openlocfilehash: f63f79402b457017257f1762c6ddc7e04c0ee1af
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746304"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650696"
 ---
 # <a name="migrate-sql-server-on-premises-to-azure-sql-database-using-azure-powershell"></a>Перенос данных из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Azure PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "75746304"
 > * создание проекта миграции в экземпляре Azure Database Migration Service;
 > * выполнение миграции.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 

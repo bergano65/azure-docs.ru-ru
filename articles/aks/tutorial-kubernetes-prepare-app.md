@@ -2,18 +2,15 @@
 title: Руководство по Kubernetes в Azure. Подготовка приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как подготовить и создать многоконтейнерное приложение с помощью Docker Compose, которое можно затем развернуть в AKS.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 3ff93d006b7599eaa3f97c33efb047ce480c301c
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: feab8495536b3306fd96793323d51644570b401b
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71264475"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77593166"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство по Подготовка приложения для Службы Azure Kubernetes (AKS)
 
@@ -30,7 +27,7 @@ ms.locfileid: "71264475"
 
 В дополнительных руководствах образ контейнера отправляется в Реестр контейнеров Azure, а затем развертывается в кластере AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для выполнения действий, описанных в этом руководстве, необходимо базовое понимание основных понятий Docker, таких как контейнеры, образы контейнеров и команды `docker`. [Руководство по началу работы с Docker][docker-get-started] содержит базовые сведения о контейнерах.
 
@@ -105,9 +102,9 @@ docker-compose down
 
 При удалении локального приложения у вас остается образ Docker, содержащий приложение Azure для голосования (*azure-vote-front*), которое используется в следующем руководстве.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы протестировали приложение и создали для него образы контейнеров. Вы научились выполнять следующие задачи:
+В этом руководстве вы протестировали приложение и создали для него образы контейнеров. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Клонирование источника примера приложения с GitHub.

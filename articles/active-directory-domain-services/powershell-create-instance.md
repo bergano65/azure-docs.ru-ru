@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: iainfou
-ms.openlocfilehash: dddbc15a80fe741b9ad1634aac18cb13819dc235
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: ee85002aea962dfa675ac6c09a6bfbaeba8e9e79
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74704428"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77613235"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Включение доменных служб Azure Active Directory с помощью PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "74704428"
 
 [!INCLUDE [updated-for-az.md](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей вам потребуются следующие ресурсы:
 
@@ -64,7 +64,7 @@ New-AzureADGroup -DisplayName "AAD DC Administrators" `
 
 Создав группу *администраторов контроллера домена AAD* , добавьте пользователя в группу с помощью командлета [Add-AzureADGroupMember][Add-AzureADGroupMember] . Сначала необходимо получить идентификатор объекта группы *администраторов контроллера домена AAD* с помощью командлета [Get-AzureADGroup][Get-AzureADGroup] , а затем идентификатор объекта нужного пользователя с помощью командлета [Get-AzureADUser][Get-AzureADUser] .
 
-В следующем примере это идентификатор объекта пользователя для учетной записи с именем участника `admin@contoso.onmicrosoft.com`. Замените эту учетную запись пользователя именем участника-пользователя, которого вы хотите добавить в группу *администраторов контроллера домена AAD* :
+В следующем примере это идентификатор объекта пользователя для учетной записи с именем участника `admin@aaddscontoso.onmicrosoft.com`. Замените эту учетную запись пользователя именем участника-пользователя, которого вы хотите добавить в группу *администраторов контроллера домена AAD* :
 
 ```powershell
 # First, retrieve the object ID of the newly created 'AAD DC Administrators' group.
@@ -74,7 +74,7 @@ $GroupObjectId = Get-AzureADGroup `
 
 # Now, retrieve the object ID of the user you'd like to add to the group.
 $UserObjectId = Get-AzureADUser `
-  -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
+  -Filter "UserPrincipalName eq 'admin@aaddscontoso.onmicrosoft.com'" | `
   Select-Object ObjectId
 
 # Add the user to the 'AAD DC Administrators' group.
@@ -128,7 +128,7 @@ $Vnet= New-AzVirtualNetwork `
 
 ## <a name="create-an-azure-ad-ds-managed-domain"></a>Создание управляемого домена AD DS Azure
 
-Теперь создадим управляемый домен Azure AD DS. Задайте идентификатор подписки Azure, а затем укажите имя управляемого домена, например *aadds.contoso.com*. Идентификатор подписки можно получить с помощью командлета [Get-азсубскриптион][Get-AzSubscription] .
+Теперь создадим управляемый домен Azure AD DS. Задайте идентификатор подписки Azure, а затем укажите имя управляемого домена, например *aaddscontoso.com*. Идентификатор подписки можно получить с помощью командлета [Get-азсубскриптион][Get-AzSubscription] .
 
 Если вы выбрали регион, который поддерживает зоны доступности, ресурсы Azure AD DS распределяются между зонами для дополнительной избыточности.
 
@@ -138,7 +138,7 @@ $Vnet= New-AzVirtualNetwork `
 
 ```powershell
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "aadds.contoso.com"
+$ManagedDomainName = "aaddscontoso.com"
 
 # Enable Azure AD Domain Services for the directory.
 New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.AAD/DomainServices/$ManagedDomainName" `
@@ -167,12 +167,12 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
 
 ```powershell
 # Change the following values to match your deployment.
-$AaddsAdminUserUpn = "admin@contoso.onmicrosoft.com"
+$AaddsAdminUserUpn = "admin@aaddscontoso.onmicrosoft.com"
 $ResourceGroupName = "myResourceGroup"
 $VnetName = "myVnet"
 $AzureLocation = "westus"
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "aadds.contoso.com"
+$ManagedDomainName = "aaddscontoso.com"
 
 # Connect to your Azure AD directory.
 Connect-AzureAD
@@ -245,7 +245,7 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
     * Чтобы создать группу безопасности сети и необходимые правила, выберите управляемый домен Azure AD DS на портале. В окне **Обзор** появится запрос на автоматическое создание и настройку группы безопасности сети.
 * [Включите синхронизацию паролей с доменными службами Azure AD](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) , чтобы конечные пользователи могли входить в управляемый домен с использованием своих корпоративных учетных данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы просмотреть управляемый домен Azure AD DS в действии, можно [присоединить к домену виртуальную машину Windows][windows-join], [настроить защищенный протокол LDAP][tutorial-ldaps]и [настроить синхронизацию хэша паролей][tutorial-phs].
 

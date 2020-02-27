@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: e6645a131766b7ec055ba1c8bb639f054f50c80b
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: cc126af67a0d8627d61e595cee56f3df8973340d
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74704388"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77613042"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services"></a>Настройка синхронизации с заданной областью из Azure AD в Azure Active Directory доменных служб
 
@@ -40,7 +40,7 @@ ms.locfileid: "74704388"
 
 Для настройки параметров синхронизации с областью действия используется портал Azure или PowerShell:
 
-| Действия | | |
+| Действие | | |
 |--|--|--|
 | Создание управляемого домена Azure AD DS и Настройка синхронизации с заданной областью | [Портал Azure](#enable-scoped-synchronization-using-the-azure-portal) | [PowerShell](#enable-scoped-synchronization-using-powershell) |
 | Изменение синхронизации с заданной областью | [Портал Azure](#modify-scoped-synchronization-using-the-azure-portal) | [PowerShell](#modify-scoped-synchronization-using-powershell) |
@@ -70,7 +70,7 @@ ms.locfileid: "74704388"
 
 Чтобы изменить список групп, пользователей которых нужно синхронизировать с управляемым доменом AD DS Azure, выполните следующие действия.
 
-1. В портал Azure найдите и выберите **доменные службы Azure AD**. Выберите свой экземпляр, например *aadds.contoso.com*.
+1. В портал Azure найдите и выберите **доменные службы Azure AD**. Выберите свой экземпляр, например *aaddscontoso.com*.
 1. Выберите **Синхронизация** в меню в левой части.
 1. Чтобы добавить группу, в верхней части щелкните **+ выбрать группы** , а затем выберите группы для добавления.
 1. Чтобы удалить группу из области синхронизации, выберите ее из списка синхронизированных групп и нажмите кнопку **удалить группы**.
@@ -82,7 +82,7 @@ ms.locfileid: "74704388"
 
 Чтобы отключить синхронизацию с областью действия группы для управляемого домена Azure AD DS, выполните следующие действия.
 
-1. В портал Azure найдите и выберите **доменные службы Azure AD**. Выберите свой экземпляр, например *aadds.contoso.com*.
+1. В портал Azure найдите и выберите **доменные службы Azure AD**. Выберите свой экземпляр, например *aaddscontoso.com*.
 1. Выберите **Синхронизация** в меню в левой части.
 1. Задайте **для области синхронизации значение** **все**, а затем выберите **Сохранить область синхронизации**.
 
@@ -194,11 +194,11 @@ Write-Output "******************************************************************
 
 1. Теперь создайте управляемый домен Azure AD DS и включите синхронизацию с областью действия на уровне группы. Включите *"филтередсинк" = "Enabled"* в параметр *-Properties* .
 
-    Задайте идентификатор подписки Azure, а затем укажите имя управляемого домена, например *aadds.contoso.com*. Идентификатор подписки можно получить с помощью командлета [Get-азсубскриптион][Get-AzSubscription] . Задайте для имени группы ресурсов, имени виртуальной сети и региона значения, которые использовались на предыдущих шагах для создания вспомогательных ресурсов Azure.
+    Задайте идентификатор подписки Azure, а затем укажите имя управляемого домена, например *aaddscontoso.com*. Идентификатор подписки можно получить с помощью командлета [Get-азсубскриптион][Get-AzSubscription] . Задайте для имени группы ресурсов, имени виртуальной сети и региона значения, которые использовались на предыдущих шагах для создания вспомогательных ресурсов Azure.
 
    ```powershell
    $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-   $ManagedDomainName = "aadds.contoso.com"
+   $ManagedDomainName = "aaddscontoso.com"
    $ResourceGroupName = "myResourceGroup"
    $VnetName = "myVnet"
    $AzureLocation = "westus"
@@ -251,7 +251,7 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $disableScoped
 
 Изменение области синхронизации приводит к тому, что управляемый домен Azure AD DS будет повторно синхронизировать все данные. Объекты, которые больше не требуются в управляемом домене Azure AD DS, удаляются, и повторная синхронизация может занять длительное время.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о процессе синхронизации см. в разделе [Общие сведения о синхронизации в доменных службах Azure AD](synchronization.md).
 

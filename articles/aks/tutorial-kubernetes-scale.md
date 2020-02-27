@@ -2,20 +2,17 @@
 title: Руководство по Kubernetes в Azure. Масштабирование приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как выполнить масштабирование узлов и модулей pod в Kubernetes и реализовать горизонтальное автомасштабирование модулей pod.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: tutorial
 ms.date: 01/14/2019
-ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: b668d2bfecfba53c2a1b0904a8b6b77805ad965b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 7db80e9bf0bd864762a88680132d77a3c5d21f19
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75967419"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77621099"
 ---
-# <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство. Масштабирование приложений в Службе Azure Kubernetes (AKS)
+# <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство по Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
 Если вы выполнили инструкции в руководствах, то у вас имеется работающий кластер Kubernetes в AKS, и вы развернули в нем пример приложения для голосования Azure. В этом руководстве (часть 5 из 7) описывается масштабирование pod, содержащихся в приложении, и их автомасштабирование. Вы также узнаете, как масштабировать количество узлов виртуальной машины Azure, чтобы менять емкость кластера для размещения рабочих нагрузок. Вы узнаете, как выполнять следующие задачи:
 
@@ -57,7 +54,7 @@ kubectl scale --replicas=5 deployment/azure-vote-front
 Выполните команду [kubectl get pods][kubectl-get] еще раз, чтобы убедиться, что AKS создает дополнительные модули pod. Они становятся доступными примерно через минуту.
 
 ```console
-$ kubectl get pods
+kubectl get pods
 
                                     READY     STATUS    RESTARTS   AGE
 azure-vote-back-2606967446-nmpcf    1/1       Running   0          15m
@@ -134,13 +131,13 @@ spec:
 Используйте `kubectl apply`, чтобы применить инструмент автомасштабирования, определенный в файле манифеста `azure-vote-hpa.yaml`.
 
 ```
-$ kubectl apply -f azure-vote-hpa.yaml
+kubectl apply -f azure-vote-hpa.yaml
 ```
 
 Чтобы просмотреть состояние инструмента автомасштабирования, используйте команду `kubectl get hpa` следующим образом:
 
 ```
-$ kubectl get hpa
+kubectl get hpa
 
 NAME               REFERENCE                     TARGETS    MINPODS   MAXPODS   REPLICAS   AGE
 azure-vote-front   Deployment/azure-vote-front   0% / 50%   3         10        3          2m

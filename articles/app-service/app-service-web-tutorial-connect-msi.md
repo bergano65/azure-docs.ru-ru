@@ -4,13 +4,13 @@ description: Сведения об обеспечении безопасного
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/18/2019
-ms.custom: mvc
-ms.openlocfilehash: 53dc6291d699ce08e08d3504bfcd63a525eb9196
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.custom: mvc, cli-validate
+ms.openlocfilehash: b57ee458b857db5692f34e51f388ca8374a3c03b
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671196"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77524399"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -125,7 +125,7 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
     </SqlAuthenticationProviders>
     ```    
 
-- Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и  _\<db-name>_ на имя вашего сервера и имя базы данных.
+- Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и _\<db-name>_ на имя вашего сервера и имя базы данных.
 
 Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
 
@@ -274,7 +274,7 @@ git push azure master
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

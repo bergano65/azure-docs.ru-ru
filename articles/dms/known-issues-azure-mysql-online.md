@@ -3,8 +3,8 @@ title: 'Известные проблемы: оперативная миграц
 titleSuffix: Azure Database Migration Service
 description: Сведения об известных проблемах и ограничениях миграции при оперативной миграции в базу данных Azure для MySQL при использовании Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -13,13 +13,13 @@ ms.custom:
 - seo-lt-2019
 - seo-dt-2019
 ms.topic: article
-ms.date: 11/08/2019
-ms.openlocfilehash: 905a14bd78d120e27ebc4d44ede86e9f0e3783cf
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/20/2020
+ms.openlocfilehash: afbff1c0b001d00f2791a869850729171782701c
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437840"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650254"
 ---
 # <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Проблемы оперативной миграции & ограничения для базы данных Azure для MySQL с Azure Database Migration Service
 
@@ -126,7 +126,7 @@ ms.locfileid: "75437840"
 - Следующие инструкции DDL не поддерживаются:
   - все инструкции DDL, обрабатывающие разделы;
   - Удаление таблицы
-  - Переименование таблицы
+  - Переименовать таблицу
 - Использование инструкции *alter table <имя_таблицы> add column <имя_столбца>* для добавления столбцов в начало или в середину таблицы не поддерживается. Инструкция *alter table <имя_таблицы> add column <имя_столбца>* добавляет столбец в конец таблицы.
 - Индексы, созданные только для части данных столбца, не поддерживаются. Приведенная ниже инструкция представляет пример создания индекса, используя только часть данных столбца:
 

@@ -4,7 +4,7 @@ description: Установка высокого уровня доступнос
 services: virtual-machines-linux
 documentationcenter: ''
 author: saghorpa
-manager: gwallace
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0f23fe2aa17934b967e7aecf41687cc555b9552c
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 4060dbe936af8ff1f9dd8c958f64834cb06525de
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71212529"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77615087"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -54,7 +54,7 @@ ms.locfileid: "71212529"
 
 Для настройки сквозной высокой доступности с помощью STONITH выполните такие действия:
 
-1.  Идентифицируйте устройство SBD.
+1.  Идентификация устройства SBD
 2.  Инициализация устройства SBD
 3.  Настройка кластера
 4.  Настройка службы наблюдения Softdog
@@ -77,7 +77,7 @@ iqn.1996-04.de.suse:01:<Tenant><Location><SID><NodeNumber>
 
 1.2. Измените */etc/iscsi/iscsid.conf*: задайте *node.session.timeo.replacement_timeout=5* и *node.startup = automatic*. Измените файл на **обоих** узлах.
 
-1.3. Выполните команду обнаружения. Отобразится четыре сеанса. Запустите его на обоих узлах.
+1.3. Выполните команду обнаружения. Отобразится четыре сеанса. Запустите ее на обоих узлах.
 
 ```
 iscsiadm -m discovery -t st -p <IP address provided by Service Management>:3260
@@ -92,14 +92,14 @@ iscsiadm -m node -l
 ```
 ![iSCSIadmLogin.png](media/HowToHLI/HASetupWithStonith/iSCSIadmLogin.png)
 
-1,5. Выполните скрипт повторного сканирования: *Rescan-SCSI-Bus.sh*.  Этот сценарий показывает новые созданные диски.  Запустите его на обоих узлах. Отобразится номер LUN больше нуля (например, 1, 2 и т. д.).
+1,5. Выполните скрипт повторного сканирования: *Rescan-SCSI-Bus.sh*.  Этот сценарий показывает новые созданные диски.  Запустите ее на обоих узлах. Отобразится номер LUN больше нуля (например, 1, 2 и т. д.).
 
 ```
 rescan-scsi-bus.sh
 ```
 ![rescanscsibus.png](media/HowToHLI/HASetupWithStonith/rescanscsibus.png)
 
-1.6. Чтобы получить имя устройства, выполните команду *fdisk –l*. Запустите его на обоих узлах. Выберите устройство с размером **178 МиБ**.
+1.6. Чтобы получить имя устройства, выполните команду *fdisk –l*. Запустите ее на обоих узлах. Выберите устройство с размером **178 МиБ**.
 
 ```
   fdisk –l
@@ -154,7 +154,7 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 ![yast-key-file.png](media/HowToHLI/HASetupWithStonith/yast-key-file.png)
 
-Нажмите кнопку **ОК**
+Нажмите кнопку **ОК**.
 
 Аутентификация выполняется с помощью IP-адреса и предопределенных ключей в Csync2. Файл ключа создается с помощью csync2 -k /etc/csync2/key_hagroup. Файл key_hagroup нужно скопировать во все элементы кластера вручную после его создания. **Убедитесь, что файл скопирован с узла 1 на узел 2**.
 
@@ -422,7 +422,7 @@ zypper -n install libyui-qt
 
 - Базовый сервер SAP HANA.
 - Компилятор и средства C/C++.
-- высокой доступности
+- Высокий уровень доступности
 - Базовый сервер приложений SAP.
 
 На следующем экране показаны шаги по установке шаблонов.

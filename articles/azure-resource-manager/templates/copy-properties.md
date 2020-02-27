@@ -3,18 +3,18 @@ title: Определение нескольких экземпляров сво
 description: Используйте операцию копирования в шаблоне Azure Resource Manager для многократного выполнения итерации при создании свойства ресурса.
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: b1e31f981f361b4cfbe7e7930f2c70bfce8b8656
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: b759389cd1065c399658bd8d0c1ddd263054697c
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210870"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622861"
 ---
 # <a name="property-iteration-in-azure-resource-manager-templates"></a>Итерация свойств в шаблонах Azure Resource Manager
 
 В этой статье показано, как создать более одного экземпляра свойства в шаблоне Azure Resource Manager. Добавив элемент **Copy** в раздел свойств ресурса в шаблоне, можно динамически задать количество элементов для свойства во время развертывания. Кроме того, не нужно повторять синтаксис шаблона.
 
-Можно также использовать Copy с [ресурсами](copy-resources.md) и [переменными](copy-variables.md).
+Можно также использовать Copy с [ресурсами](copy-resources.md), [переменными](copy-variables.md)и [выходными данными](copy-outputs.md).
 
 ## <a name="property-iteration"></a>Итерация свойства
 
@@ -192,7 +192,10 @@ ms.locfileid: "77210870"
 ## <a name="next-steps"></a>Следующие шаги
 
 * См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](template-tutorial-create-multiple-instances.md).
-* Другие способы использования элемента copy см. в разделе [Итерация ресурсов в шаблонах Azure Resource Manager](copy-resources.md) и [переменная Iteration в Azure Resource Manager Templates](copy-variables.md).
+* Другие способы использования элемента copy см. в следующих статьях:
+  * [Итерация ресурсов в шаблонах Azure Resource Manager](copy-resources.md)
+  * [Итерация переменных в шаблонах Azure Resource Manager](copy-variables.md)
+  * [Выходная итерация в шаблонах Azure Resource Manager](copy-outputs.md)
 * Сведения о разделах шаблона см. в статье, посвященной [созданию шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по развертыванию шаблонов см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
 

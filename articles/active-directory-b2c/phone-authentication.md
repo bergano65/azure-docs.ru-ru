@@ -1,24 +1,24 @@
 ---
-title: Регистрация и вход с помощью настраиваемых политик для телефона
+title: Регистрация и вход с помощью настраиваемых политик (Предварительная версия)
 titleSuffix: Azure AD B2C
-description: Узнайте, как отправить одноразовые пароли в текстовых сообщениях для телефонов пользователей приложения с пользовательскими политиками в Azure Active Directory B2C.
+description: Отправка одноразовых паролей (OTP) в текстовых сообщениях на телефоны пользователей приложения с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/17/2019
+ms.date: 02/25/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8cb0340d9e04db2bfbf088bce9505351d7588cd9
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 50e7d66fef67e2728c95790947393de8d58398c2
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840338"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77647531"
 ---
-# <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Настройка регистрации телефона и входа в систему с помощью пользовательских политик в Azure AD B2C
+# <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c-preview"></a>Настройка регистрации и входа в систему с помощью настраиваемых политик в Azure AD B2C (Предварительная версия)
 
 Регистрация и вход в систему в Azure Active Directory B2C (Azure AD B2C) позволяет пользователям регистрироваться и входить в приложения с помощью одноразового пароля (OTP), отправленного в текстовом сообщении на телефон. Одноразовые пароли могут помочь в минимальном риске пользователей, которые забывают или нарушают свой пароль.
 
@@ -26,7 +26,13 @@ ms.locfileid: "76840338"
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="pricing"></a>Цены
+
+Одноразовые пароли отправляются пользователям с помощью SMS-сообщений, и вам может потребоваться оплатить каждое отправленное сообщение. Сведения о ценах см. в разделе " **Специальные расходы** " статьи [Azure Active Directory B2C цены](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
+
+## <a name="prerequisites"></a>предварительные требования
+
+Перед настройкой OTP вам потребуются следующие ресурсы.
 
 * [клиент Azure AD B2C](tutorial-create-tenant.md);
 * [Веб-приложение, зарегистрированное](tutorial-register-applications.md) в клиенте
@@ -69,6 +75,22 @@ ms.locfileid: "76840338"
 1. В качестве **URL-адреса ответа выберите**`https://jwt.ms`.
 1. Выберите **Запустить сейчас** и зарегистрируйтесь, используя адрес электронной почты или номер телефона.
 1. Выберите **выполнить** еще раз и войдите с помощью той же учетной записи, чтобы подтвердить правильность конфигурации.
+
+## <a name="get-user-account-by-phone-number"></a>Получение учетной записи пользователя по номеру телефона
+
+Пользователь, который регистрируется с номером телефона, но не предоставляет адрес электронной почты для восстановления, записывается в Azure AD B2C каталог с номером телефона в качестве имени для входа. Если пользователь хочет изменить свой номер телефона, ваша служба технической поддержки или специалисты по технической поддержке должны сначала найти свою учетную запись, а затем обновить свой номер телефона.
+
+Вы можете найти пользователя по номеру телефона (имени для входа) с помощью [Microsoft Graph](manage-user-accounts-graph-api.md):
+
+```http
+GET https://graph.microsoft.com/v1.0/users?$filter=identities/any(c:c/issuerAssignedId eq '+{phone number}' and c/issuer eq '{tenant name}.onmicrosoft.com')
+```
+
+Пример:
+
+```http
+GET https://graph.microsoft.com/v1.0/users?$filter=identities/any(c:c/issuerAssignedId eq '+450334567890' and c/issuer eq 'contosob2c.onmicrosoft.com')
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
