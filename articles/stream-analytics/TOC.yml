@@ -195,6 +195,8 @@
           href: setup-cicd-vs-code.md
         - name: Обзор заданий
           href: visual-studio-code-explore-jobs.md
+        - name: Поля JobConfig.json
+          href: job-config-json.md
     - name: Диагностика
       items:
         - name: Входные данные

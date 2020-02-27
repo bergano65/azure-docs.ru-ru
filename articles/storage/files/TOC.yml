@@ -37,18 +37,12 @@
       href: storage-snapshots-files.md
     - name: Целевые показатели масштабируемости и производительности хранилища
       href: storage-files-scale-targets.md
-    - name: Безопасность
-      items:
-        - name: Авторизация
-          href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Шифрование службы хранилища Azure
-          href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Проверка подлинности и авторизация на основе удостоверений
-          href: storage-files-active-directory-overview.md
-        - name: Использование частных конечных точек Azure
-          href: ../common/storage-private-endpoints.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Предложения для соответствия требованиям
-          href: ../common/storage-compliance-offerings.md
+    - name: Проверка подлинности и авторизация на основе удостоверений
+      href: storage-files-active-directory-overview.md
+    - name: Шифрование неактивных данных
+      href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+    - name: Предложения для соответствия требованиям
+      href: ../common/storage-compliance-offerings.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Разработка
       items:
         - name: Управление параллелизмом
@@ -67,17 +61,13 @@
           href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Метрики решения "Аналитика Службы хранилища" (классические)
           href: ../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Избыточность данных
-      href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Аварийное восстановление и отработка отказа
-      href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: storage-files-faq.md
 - name: Практические руководства
   items:
     - name: Создание
       items:
-        - name: Создание общей папки (цен. категория "Стандартный")
+        - name: Создание общей папки
           href: storage-how-to-create-file-share.md
         - name: Поддержка больших файловых ресурсов
           href: storage-files-how-to-create-large-file-share.md
@@ -129,20 +119,8 @@
       items:
         - name: Миграция в службу "Синхронизация файлов Azure"
           href: storage-sync-offline-data-transfer.md
-        - name: Перемещение данных в службу хранилища Azure и из нее
-          href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Миграция в Синхронизацию файлов Azure из StorSimple
           href: storage-sync-files-storsimple-migration.md
-        - name: Перемещение данных с помощью AzCopy
-          items:
-            - name: Начало работы
-              href: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-            - name: Использование со службой "Файлы"
-              href: ../common/storage-use-azcopy-files.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-            - name: 'Настройка, оптимизация и устранение неполадок'
-              href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-            - name: Перенос данных с помощью библиотеки перемещения данных
-              href: ../common/storage-use-data-movement-library.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Разработка
       items:
         - name: Настройка строк подключения
@@ -174,9 +152,9 @@
         - name: Требование безопасной передачи
           href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: "Включение проверки подлинности и авторизации Azure\_AD"
-          href: storage-files-active-directory-domain-services-enable.md
+          href: storage-files-identity-auth-active-directory-enable.md
         - name: "Включение проверки подлинности и авторизации Azure\_AD\_DS"
-          href: storage-files-active-directory-enable.md
+          href: storage-files-identity-auth-active-directory-domain-service-enable.md
         - name: Включение безопасного TLS для клиента службы хранилища Azure
           href: ../common/storage-security-tls.md
     - name: Диагностика
@@ -235,42 +213,6 @@
       href: 'https://azure.github.io/azure-storage-ios/'
     - name: Android
       href: 'https://azure.github.io/azure-storage-android'
-    - name: "AzCopy версии\_10"
-      items:
-        - name: azcopy
-          href: ../common/storage-ref-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy bench
-          href: ../common/storage-ref-azcopy-bench.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy copy
-          href: ../common/storage-ref-azcopy-copy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy doc
-          href: ../common/storage-ref-azcopy-doc.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy env
-          href: ../common/storage-ref-azcopy-env.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy jobs
-          href: ../common/storage-ref-azcopy-jobs.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy jobs clean
-          href: ../common/storage-ref-azcopy-jobs-clean.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy jobs list
-          href: ../common/storage-ref-azcopy-jobs-list.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy jobs remove
-          href: ../common/storage-ref-azcopy-jobs-remove.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy jobs resume
-          href: ../common/storage-ref-azcopy-jobs-resume.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy jobs show
-          href: ../common/storage-ref-azcopy-jobs-show.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy list
-          href: ../common/storage-ref-azcopy-list.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy login
-          href: ../common/storage-ref-azcopy-login.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy logout
-          href: ../common/storage-ref-azcopy-logout.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy make
-          href: ../common/storage-ref-azcopy-make.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy remove
-          href: ../common/storage-ref-azcopy-remove.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: azcopy sync
-          href: ../common/storage-ref-azcopy-sync.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Шаблон Resource Manager
       displayName: arm
       href: /azure/templates/microsoft.storage/allversions
@@ -282,18 +224,6 @@
       href: 'https://azure.microsoft.com/updates/?category=storage'
     - name: Заметки о выпуске службы "Синхронизация файлов Azure"
       href: storage-files-release-notes.md
-    - name: Обозреватель службы хранилища Azure
-      items:
-        - name: Скачивание Обозревателя службы хранилища
-          href: 'https://azure.microsoft.com/features/storage-explorer/'
-        - name: Начало работы с Обозревателем службы хранилища
-          href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Заметки о выпуске Обозревателя службы хранилища
-          href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Устранение неполадок с Обозревателем службы хранилища
-          href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Специальные возможности Обозревателя службы хранилища
-          href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Форум службы хранилища Azure
       href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
     - name: Служба хранилища Azure на форуме Stack Overflow

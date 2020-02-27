@@ -2,14 +2,14 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Поиск в Интернете Bing
+    - name: Что такое API Поиска в Интернете Bing?
       href: overview.md
       expanded: true
     - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
 - name: Краткие руководства
   items:
-    - name: "Интерфейсы REST\_API"
+    - name: Интерфейсы REST API
       items:
         - name: 'C#'
           href: quickstarts/csharp.md
@@ -27,15 +27,9 @@
           href: quickstarts/ruby.md
     - name: Пакеты SDK
       items:
-        - name: 'C#'
-          href: web-search-sdk-quickstart.md
-        - name: Java
-          href: web-sdk-java-quickstart.md
-        - name: Node.js
-          href: web-search-sdk-node-quickstart.md
-        - name: Python
-          href: web-sdk-python-quickstart.md
-- name: Руководства
+        - name: Клиентские библиотеки Поиска в Интернете Bing
+          href: ./quickstarts/client-libraries.md
+- name: Учебники
   items:
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-web-search-single-page-app.md
@@ -45,7 +39,7 @@
       href: 'https://github.com/Azure-Samples/cognitive-services-REST-api-samples'
     - name: Примеры пакета SDK
       href: sdk-samples.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Фильтрация ответов
       href: filter-answers.md
@@ -67,7 +61,7 @@
       href: search-responses.md
     - name: Запросы на регулирование
       href: throttling-requests.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Поиска в Интернете Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference'
@@ -105,7 +99,7 @@
       href: language-support.md
     - name: Аналитика для API Поиска в Интернете Bing
       href: bing-web-stats.md
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Поддержка
       items:

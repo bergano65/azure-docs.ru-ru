@@ -141,15 +141,17 @@
       items:
         - name: Автоматизация сборок образов контейнеров
           items:
-            - name: Выполнение сборки на основе контекста источника
+            - name: 1. Сборка на основе контекста источника
               href: container-registry-tutorial-quick-task.md
-            - name: Сборка на основе фиксации кода
+            - name: 2а. Сборка на основе фиксации кода
               href: container-registry-tutorial-build-task.md
-            - name: Многоэтапная задача при фиксации кода
+            - name: "2б.\_Многошаговые задачи при фиксации кода"
               href: container-registry-tutorial-multistep-task.md
-            - name: Сборка на основе обновления образа
+            - name: 3а. Сборка на основе обновления образа
               href: container-registry-tutorial-base-image-update.md
-            - name: Планирование задачи
+            - name: 3б. Сборка на основе обновления образа
+              href: container-registry-tutorial-private-base-image-update.md
+            - name: 4. Сборка по расписанию
               href: container-registry-tasks-scheduled.md
     - name: Примеры
       expanded: false
@@ -160,6 +162,8 @@
       items:
         - name: Многошаговые задачи
           href: container-registry-tasks-multi-step.md
+        - name: Обновления базового образа
+          href: container-registry-tasks-base-images.md
     - name: Практические руководства
       expanded: false
       items:

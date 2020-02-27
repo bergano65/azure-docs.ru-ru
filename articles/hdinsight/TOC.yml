@@ -69,7 +69,7 @@
               href: ./hdinsight-hadoop-create-linux-clusters-portal.md
             - name: "Создание кластеров\_— шаблоны"
               href: ./hdinsight-hadoop-create-linux-clusters-arm-templates.md
-            - name: "Создание кластеров\_— CLI"
+            - name: Создание кластеров с помощью Azure CLI
               href: ./hdinsight-hadoop-create-linux-clusters-azure-cli.md
             - name: "Создание кластеров\_— PowerShell"
               href: ./hdinsight-hadoop-create-linux-clusters-azure-powershell.md

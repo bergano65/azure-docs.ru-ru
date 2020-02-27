@@ -120,6 +120,11 @@
       href: sap-deployment-checklist.md
     - name: Планирование и реализация SAP NetWeaver в Azure
       href: planning-guide.md
+      items:
+        - name: Поддерживаемые сценарии использования рабочей нагрузки SAP в виртуальных машинах Azure
+          href: sap-planning-supported-configurations.md
+        - name: 'Программное обеспечение SAP, поддерживаемое для развертываний Azure'
+          href: sap-supported-product-on-azure.md
     - name: Руководство по развертыванию SAP NetWeaver
       href: deployment-guide.md
     - name: Руководства по развертыванию СУБД для рабочих нагрузок SAP

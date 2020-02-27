@@ -59,6 +59,8 @@
       href: high-availability-disaster-recovery.md
     - name: Переменные среды выполнения задания
       href: batch-compute-node-environment-variables.md
+    - name: Интеграция пакетной службы с Политиками Azure
+      href: batch-integration-policies.md
 - name: Практические руководства
   items:
     - name: Управление учетными записями пакетной службы

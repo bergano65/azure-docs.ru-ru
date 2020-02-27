@@ -21,6 +21,8 @@
   items:
     - name: Подключение
       items:
+        - name: Подключение устройства
+          href: tutorial-connect-device.md
         - name: Подключение устройства Plug and Play (предварительная версия)
           href: tutorial-connect-pnp-device.md
         - name: Создание шаблона для устройства шлюза

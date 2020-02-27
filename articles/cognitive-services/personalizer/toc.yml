@@ -23,9 +23,11 @@
     - name: Принцип работы Персонализатора
       href: how-personalizer-works.md
       displayName: 'rank, reward, api, explore, exploit, score, design, research, loop, action, context, feature, JSON, event, inactive, model'
-    - name: Где можно использовать Персонализатор
+    - name: Где используется Персонализатор?
       href: where-can-you-use-personalizer.md
       displayName: 'checklist, considerations, effectiveness, recommendation engine'
+    - name: Терминология
+      href: terminology.md
     - name: Этика и ответственное использование
       href: ethics-responsible-use.md
       displayName: 'best practice, design'
@@ -34,9 +36,11 @@
         - name: 'Признаки: действие и контекст'
           href: concepts-features.md
           displayName: 'action, context, feature, namespace, JSON, best practice, set, ID, guid, event id,'
-        - name: Активные и неактивные события
+        - name: Политики обучения
           href: concept-active-learning.md
           displayName: 'active, inactive'
+        - name: Активные и неактивные события
+          href: concept-active-inactive-events.md
         - name: Вознаграждения
           href: concept-rewards.md
           displayName: 'reward, wait time, default reward'
@@ -56,15 +60,15 @@
       href: concepts-scalability-performance.md
 - name: Практические руководства
   items:
-    - name: Создание и настройка Персонализатора
+    - name: Создание ресурса Персонализатора
+      href: how-to-create-resource.md
+    - name: Создание цикла обучения
       href: how-to-settings.md
       displayName: 'azure, portal, settings, evaluation, offline, policy, export, model, configure'
-    - name: Управление политикой обучения
-      href: how-to-learning-policy.md
-    - name: Анализ
-      items:
-        - name: Автономная оценка
-          href: how-to-offline-evaluation.md
+    - name: Управление параметрами модели и обучения
+      href: how-to-manage-model.md
+    - name: Анализ с помощью автономной оценки
+      href: how-to-offline-evaluation.md
 - name: Справочник
   items:
     - name: Примеры

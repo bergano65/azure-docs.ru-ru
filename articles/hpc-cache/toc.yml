@@ -8,7 +8,7 @@
   items:
     - name: Проектирование агрегированного пространства имен
       href: hpc-cache-namespace.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Предварительные требования
       href: hpc-cache-prereqs.md
@@ -42,6 +42,8 @@
       href: hpc-cache-support-ticket.md
     - name: Обход параметров брандмауэра для учетной записи хранения больших двоичных объектов
       href: hpc-cache-blob-firewall-fix.md
+    - name: Устранение неполадок с созданием целевого расположения хранилища NFS
+      href: troubleshoot-nas.md
     - name: Восстановление после регионального сбоя
       href: hpc-region-recovery.md
     - name: Использование Azure NetApp Files с Azure HPC Cache

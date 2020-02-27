@@ -1,0 +1,302 @@
+### YamlMime:Hub
+title: Документация по обеспечению надежности информационных систем
+summary: Обеспечение надежности информационных систем (SRE) — это техническая дисциплина, позволяющая организациям постепенно достичь нужного уровня надежности систем, служб и продуктов.
+brand: azure
+metadata:
+  title: Документация по обеспечению надежности информационных систем
+  description: Обеспечение надежности информационных систем (SRE) — это техническая дисциплина, позволяющая организациям постепенно достичь нужного уровня надежности систем, служб и продуктов.
+  services: site-reliability-engineering
+  ms.service: site-reliability-engineering
+  ms.topic: hub-page
+  author: dnblankedelman
+  ms.author: dnb
+  ms.date: 02/18/2020
+  ms.openlocfilehash: a89b50cb23d87c9495b24e4ac2ae562b637ec6fa
+  ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/25/2020
+  ms.locfileid: "77598941"
+highlightedContent:
+  items:
+  - title: Введение в SRE.  Что такое SRE? (1/3)
+    itemType: video
+    url: https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-1/player
+  - title: Введение в SRE. Основные принципы и методы (2/3)
+    itemType: video
+    url: https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-2/player
+  - title: Введение в SRE. Начало работы (3/3)
+    itemType: video
+    url: https://channel9.msdn.com/Shows/IT-Ops-Talk/Introduction-to-Site-Reliability-Engineering--Part-3/player
+productDirectory:
+  items:
+  - title: Повышение надежности с помощью современных методов работы
+    imageSrc: ./media/index/video.svg
+    links:
+    - url: https://myignite.techcommunity.microsoft.com/sessions/82996
+      text: 'Создание основы для реализации современных методов работы: мониторинг'
+    - url: https://myignite.techcommunity.microsoft.com/sessions/82997
+      text: Реагирование на инциденты
+    - url: https://myignite.techcommunity.microsoft.com/sessions/82998
+      text: Обучение на ошибках
+    - url: https://myignite.techcommunity.microsoft.com/sessions/82999
+      text: Рекомендации по развертыванию для обеспечения более высокого уровня надежности
+    - url: https://myignite.techcommunity.microsoft.com/sessions/83001
+      text: 'Подготовка к расширению: планирование ресурсов и масштабирование'
+  - title: Онлайн-курс по основам SRE
+    imageSrc: ./media/index/learn.svg
+    links:
+    - url: https://docs.microsoft.com/learn/modules/intro-to-site-reliability-engineering/
+      text: Ознакомьтесь с основами SRE, пройдя бесплатный онлайн-курс
+  - title: Информационные ресурсы по SRE
+    imageSrc: ./media/index/reference.svg
+    links:
+    - url: resources/books.md
+      text: Книги
+    - url: resources/events.md
+      text: События
+    - url: resources/links.md
+      text: Ссылки и сводки
+conceptualContent:
+  title: SRE в Azure
+  summary: Документация для специалистов по SRE
+  items:
+  - title: Architecture
+    links:
+    - url: https://docs.microsoft.com/azure/architecture/framework/
+      itemType: reference
+      text: Платформа архитектуры Azure
+    - url: https://docs.microsoft.com/azure/architecture/guide
+      itemType: reference
+      text: Руководство по архитектуре приложений Azure
+    - url: https://docs.microsoft.com/azure/architecture/architectures/?filter=reference-architecture
+      itemType: reference
+      text: Эталонные образцы архитектуры
+    - url: https://docs.microsoft.com/azure/architecture/cloud-adoption/
+      itemType: reference
+      text: Microsoft Cloud Adoption Framework для Azure
+    - url: https://docs.microsoft.com/azure/architecture/architectures/?filter=example-workload
+      itemType: reference
+      text: Примеры рабочих нагрузок
+    - url: https://docs.microsoft.com/azure/architecture/microservices
+      itemType: reference
+      text: Создание микрослужб в Azure
+    - url: https://docs.microsoft.com/azure/architecture/data-guide/
+      itemType: reference
+      text: Руководство по архитектуре данных в Azure
+    - url: https://docs.microsoft.com/azure/architecture/best-practices/
+      itemType: reference
+      text: Рекомендации по работе с облаком
+    - url: https://docs.microsoft.com/azure/architecture/framework/resiliency/overview
+      itemType: reference
+      text: Разработка надежных приложений Azure
+    - url: https://docs.microsoft.com/azure/architecture/patterns
+      itemType: reference
+      text: Конструктивные шаблоны облачных решений
+    - url: https://docs.microsoft.com/azure/architecture/aws-professional
+      itemType: reference
+      text: Azure для специалистов AWS
+    - url: https://docs.microsoft.com/azure/architecture/performance
+      itemType: reference
+      text: Настройка производительности
+    footerLink:
+      url: https://docs.microsoft.com/azure/architecture/
+      text: Дополнительные сведения в Центре архитектуры Azure
+  - title: Наблюдение
+    links:
+    - url: https://docs.microsoft.com/azure/azure-monitor/overview
+      itemType: get-started
+      text: Общие сведения о службе Azure Monitor
+    - url: https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics
+      itemType: get-started
+      text: Работа с метриками в Azure Monitor
+    - url: https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-logs
+      itemType: get-started
+      text: Работа с журналами в Azure Monitor
+    - url: https://docs.microsoft.com/azure/azure-monitor/azure-monitor-app-hub
+      itemType: get-started
+      text: Управление производительностью приложений с помощью Application Insights
+    - url: https://docs.microsoft.com/azure/azure-monitor/app/distributed-tracing
+      itemType: get-started
+      text: Распределенная трассировка в Azure Monitor
+    footerLink:
+      url: https://docs.microsoft.com/en-us/azure/azure-monitor/
+      text: Подробнее о службе Azure Monitor
+  - title: Подготовка и доставка
+    links:
+    - url: https://docs.microsoft.com/azure/azure-resource-manager/
+      itemType: get-started
+      text: Azure Resource Manager
+    - url: https://docs.microsoft.com/azure/terraform/
+      itemType: get-started
+      text: Terraform в Azure
+    - url: https://help.github.com/actions
+      itemType: get-started
+      text: Действия GitHub
+    - url: https://docs.microsoft.com/azure/devops/pipelines/index?view=azure-devops
+      itemType: get-started
+      text: Azure Pipelines
+  - title: Масштабирование
+    links:
+    - url: https://docs.microsoft.com/azure/azure-monitor/platform/autoscale-overview
+      itemType: get-started
+      text: Обзор автомасштабирования
+    - url: https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling
+      itemType: get-started
+      text: Руководство по автоматическому масштабированию
+    - url: https://www.pluralsight.com/courses/microsoft-azure-autoscaling-developing
+      itemType: get-started
+      text: Разработка с учетом автомасштабирования
+    - url: https://docs.microsoft.com/azure/architecture/framework/scalability/overview
+      itemType: get-started
+      text: Основы масштабируемости архитектуры Azure
+    - url: https://docs.microsoft.com/azure/architecture/guide/design-principles/scale-out
+      itemType: get-started
+      text: Разработка с учетом горизонтального масштабирования
+    - url: https://docs.microsoft.com/en-us/azure/architecture/patterns/category/performance-scalability
+      itemType: get-started
+      text: Шаблоны производительности и масштабирования
+additionalContent:
+  sections:
+  - title: Доклады по SRE от специалистов Майкрософт
+    items:
+    - title: Язык и региональные параметры
+      links:
+      - text: Развитие обеспечения надежности информационных систем
+        url: https://www.usenix.org/conference/srecon18asia/presentation/purgason
+      - text: Реализация SRE. Формирование культуры со стороны организации
+        url: https://www.usenix.org/conference/srecon18asia/presentation/palino
+      - text: Культурные особенности и эффективная совместная работа в мультикультурных коллективах
+        url: https://www.usenix.org/conference/srecon18asia/presentation/ravindran
+      - text: Эволюция SRE и растущая потребность в факторах, способствующих развитию SRE
+        url: https://www.usenix.org/conference/srecon18asia/presentation/ganeriwal
+      - text: Циклы обратной связи. Преимущества специалистов по SRE и необходимые факторы для реализации их потенциала
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/tangi
+      - text: Понимание бизнес-метрик поможет улучшить SRE
+        url: https://www.usenix.org/conference/srecon19asia/presentation/suley
+      - text: Бесконечная история повышения надежности информационных систем
+        url: https://www.usenix.org/conference/srecon17europe/conference-program/presentation/andersen
+      - text: Для специалистов по обслуживанию систем каждый день — понедельник
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/purgason
+    - title: Реагирование на инциденты и проверки после инцидентов
+      links:
+      - text: Реализация устойчивости. Как извлечь больше полезной информации из инцидентов
+        url: https://www.usenix.org/conference/srecon19emea/presentation/stenning
+      - text: Заключительный анализ двух инцидентов с учетом человеческих факторов
+        url: https://www.usenix.org/conference/srecon19asia/presentation/lund-postmortem
+      - text: Парадоксы автоматизации. Комедия в трех частях
+        url: https://www.usenix.org/conference/srecon19asia/presentation/lund-comedy
+      - text: Отрицательные стороны работы "по вызову". Полемика
+        url: https://www.usenix.org/conference/srecon18europe/presentation/murphy
+      - text: Наедине с SRE.
+        url: https://www.usenix.org/conference/srecon19americas/presentation/tobey
+    - title: Мониторинг и наблюдаемость
+      links:
+      - text: Более 600 000 000 членов и сотни микрослужб. Как мы масштабировали нашу систему мониторинга, чтобы оставаться на плаву
+        url: https://www.usenix.org/conference/srecon19asia/presentation/lamba
+      - text: Нетривиальные методы. Перемещение фокуса наблюдения со службы на клиента
+        url: https://www.usenix.org/conference/lisa19/presentation/suley
+      - text: Вы получаете то, что измеряете. Важность метрик
+        url: https://www.usenix.org/conference/srecon18asia/presentation/srinivasamurthy-metrics
+      - text: Пережить шторм. Как своевременные предупреждения помогают сохранить ферму
+        url: https://www.usenix.org/conference/srecon19emea/presentation/sherwin
+      - text: Сбор и анализ миллионов запросов без дополнительных издержек
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/appigatla
+      - text: Корреляция событий. Новый подход к снижению MTTR
+        url: https://www.usenix.org/conference/srecon17asia/program/presentation/rajan
+      - text: Как надежный мониторинг обеспечивает высокий уровень доступности для веб-канала LinkedIn
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/barot
+      - text: Снижение MTTR и количества ложных эскалаций. Корреляция событий в LinkedIn
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/kehoe-0
+    - title: Принципы и методы
+      links:
+      - text: Доступность — это не только много девяток
+        url: https://www.usenix.org/conference/srecon19asia/presentation/srinivasamurthy
+      - text: Модели мышления для специалистов по SRE
+        url: https://www.usenix.org/conference/srecon18asia/presentation/suley-mental
+      - text: Определение приоритетов доверия при создании приложений
+        url: https://www.usenix.org/conference/srecon19emea/presentation/davis
+      - text: Java против Linux. Как с этим жить
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/banks
+      - text: Основные сведения об этапах реализации SRE и их характеристики
+        url: https://www.usenix.org/conference/srecon18asia/presentation/andersen
+      - text: Безопасность и SRE. Естественные способы повышения безопасности
+        url: https://www.usenix.org/conference/srecon18americas/presentation/scott
+      - text: Общие сведения об улучшении рабочей среды. Поэтапное устранение недоработок в процессе исправления
+        url: https://www.usenix.org/conference/srecon16europe/program/presentation/check
+      - text: Обеспечение надежности для высокопроизводительных приложений
+        url: https://www.usenix.org/conference/srecon18asia/presentation/nayak
+      - text: Карта оценки службы. Достижение максимальной эффективности работы через игру
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/lawrence
+      - text: Улучшение службы с помощью критического анализа
+        url: https://www.usenix.org/conference/srecon16/program/presentation/dickson
+    - title: Команды и управление
+      links:
+      - text: Код желтый. Умный подход к помощи специалистам высокого уровня
+        url: https://www.usenix.org/conference/srecon19americas/presentation/kehoe
+      - text: Лидерство без управления. Как стать техническим лидером по SRE
+        url: https://www.usenix.org/conference/srecon19asia/presentation/palino-leading
+      - text: Различия в реализациях SRE в разных компаниях
+        url: https://www.usenix.org/conference/srecon19americas/presentation/andersen
+      - text: 100 команд — 100 способов потерпеть провал
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/keiser
+      - text: 'Почему, что и как: начало реализации SRE'
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/clawson
+      - text: Формирование команд специалистов по SRE и управление ими
+        url: https://www.usenix.org/conference/srecon16europe/program/presentation/andersen
+      - text: От студента колледжа до специалиста по SRE. Адаптация перспективного сотрудника без опыта работы
+        url: https://www.usenix.org/conference/srecon16/program/presentation/kehoe
+      - text: SRE в LinkedIn. От начала реализации до глобальных масштабов
+        url: https://www.usenix.org/conference/srecon17asia/program/presentation/connelly
+      - text: "\"Объединение фрагментов ДНК\" SRE в крупнейше в мире компании по разработке программного обеспечения"
+        url: https://www.usenix.org/conference/srecon16europe/program/presentation/splicing-sre-dna-sequences-biggest-software-company
+      - text: Превращение гусениц уровня 1 в бабочек
+        url: https://www.usenix.org/conference/srecon16/program/presentation/mushiana
+    - title: Средства и технологии
+      links:
+      - text: Azure SREBot — больше, чем чат-бот. Интеллектуальный бот для сокращения времени на устранение неполадок
+        url: https://www.usenix.org/conference/srecon17asia/program/presentation/guimaraes
+      - text: 'TrafficShift: предотвращение аварий в большом масштабе'
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/kehoe_trafficshift
+      - text: Создание распределенной файловой системы
+        url: https://www.usenix.org/conference/srecon19asia/presentation/patel
+      - text: Архитектура, улучшения и настройка TCP
+        url: https://www.usenix.org/conference/srecon19asia/presentation/dhakal
+      - text: BGP как основа Интернета
+        url: https://www.usenix.org/conference/srecon19asia/presentation/kehoe
+      - text: Операции на бессерверных платформах
+        url: https://www.usenix.org/conference/srecon19americas/presentation/davis
+      - text: Как мы использовали Kafka для масштабирования инфраструктуры базы данных
+        url: https://www.usenix.org/conference/srecon19asia/presentation/thambara
+      - text: Сети для SRE. Что нужно знать для устранения неполадок в приложениях
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/kehoe
+      - text: Ambry — распределенное неизменяемое хранилище объектов LinkedIn
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/shenoy
+      - text: BPerf — профилирование облака Bing.com в рабочей среде
+        url: https://www.usenix.org/conference/srecon17americas/program/presentation/sabharwal
+      - text: DNS — старое решение новых проблем
+        url: https://www.usenix.org/conference/srecon16europe/program/presentation/jackson
+      - text: Регулировка трафика с помощью Rum DNS в LinkedIn
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/rastogi
+    - title: Масштабирование
+      links:
+      - text: Инфраструктура для прогнозирования трафика и нагрузочного тестирования
+        url: https://www.usenix.org/conference/srecon19asia/presentation/sulakhe
+      - text: Машинное обучение в большом масштабе — сложная задача. Анализ закономерностей сбоев и некорректные данные
+        url: https://www.usenix.org/conference/srecon18americas/presentation/lund
+      - text: Масштабирование распределенной системы с отслеживанием состояния. Пример реализации в LinkedIn
+        url: https://www.usenix.org/conference/srecon18asia/presentation/kanuri
+      - text: Отладка в большом масштабе. Переход от отладки единого готового решения к отладке в рабочей среде
+        url: https://www.usenix.org/conference/srecon18asia/presentation/srinivasamurthy-debugging
+      - text: Создание централизованной инфраструктуры кэширования в большом масштабе
+        url: https://www.usenix.org/conference/srecon19asia/presentation/won
+      - text: Масштабируемое кодирование. Поиск ошибок
+        url: https://www.usenix.org/conference/srecon18europe/presentation/ebner-de-carvalho
+      - text: Управление емкостью в LinkedIn
+        url: https://www.usenix.org/conference/srecon17asia/program/presentation/harkare
+      - text: InStream. Распространение в большом масштабе с помощью BitTorrent, Python, Salt и Kafka
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/sharma
+      - text: Предотвращение и устранение ограничений емкости
+        url: https://www.usenix.org/conference/srecon17europe/program/presentation/welch
+      - text: Эволюция маршрутизации глобального трафика и отработки отказа
+        url: https://www.usenix.org/conference/srecon16/program/presentation/heady

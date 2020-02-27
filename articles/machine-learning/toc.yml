@@ -329,23 +329,18 @@
           href: how-to-deploy-existing-model.md
         - name: Устранение неполадок и отладка
           href: how-to-troubleshoot-deployment.md
-    - name: Использование веб-служб
-      items:
-        - name: Использование в режиме реального времени
+        - name: Создание клиентов
           displayName: create client consume request response synchronous
           href: how-to-consume-web-service.md
-        - name: Пакетные прогнозы конструктора
-          displayName: score scoring asynchronous consume pipeline parallelrunstep inference designer
-          href: how-to-run-batch-predictions-designer.md
-    - name: Мониторинг моделей
-      items:
-        - name: Сбор и оценка данных модели
-          displayName: track production
-          href: how-to-enable-data-collection.md
-        - name: Определение смещения данных
-          href: how-to-monitor-data-drift.md
-        - name: Мониторинг с помощью Application Insights
-          href: how-to-enable-app-insights.md
+        - name: Мониторинг моделей
+          items:
+            - name: Сбор и оценка данных модели
+              displayName: track production
+              href: how-to-enable-data-collection.md
+            - name: Определение смещения данных
+              href: how-to-monitor-data-drift.md
+            - name: Мониторинг с помощью Application Insights
+              href: how-to-enable-app-insights.md
     - name: Создание и использование конвейеров ML
       displayName: pipelines
       items:
@@ -372,6 +367,9 @@
         - name: Отладка и устранение неполадок с параллельным выполнением шагов
           displayName: debug_batch consume pipeline parallelrunstep inference
           href: how-to-debug-parallel-run-step.md
+        - name: Пакетные прогнозы конструктора
+          displayName: score scoring asynchronous consume pipeline parallelrunstep inference designer
+          href: how-to-run-batch-predictions-designer.md
     - name: Управление квотами ресурсов
       displayName: limits
       href: how-to-manage-quotas.md

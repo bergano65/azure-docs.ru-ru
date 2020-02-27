@@ -62,10 +62,14 @@
       href: load-balancer-security-controls.md
 - name: Практическое руководство
   items:
-    - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый" до общедоступной версии ценовой категории "Стандартный"
-      href: upgrade-basic-standard.md
-    - name: Обновление внутренней подсистемы Load Balancer ценовой категории "Базовый" до ценовой категории "Стандартный"
-      href: upgrade-basicInternal-standard.md
+    - name: Обновление Load Balancer с ценовой категории "Базовый" до ценовой категории "Стандартный"
+      items:
+        - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый"
+          href: upgrade-basic-standard.md
+        - name: Обновление Load Balancer (внутренняя подсистема балансировки нагрузки) ценовой категории "Базовый" без исходящего подключения
+          href: upgrade-basicInternal-standard.md
+        - name: Обновление Load Balancer (внутренняя подсистема балансировки нагрузки) ценовой категории "Базовый" с исходящим подключением
+          href: upgrade-InternalBasic-To-PublicStandard.md
     - name: Настройка правил для исходящего трафика
       items:
         - name: Портал Azure

@@ -100,28 +100,20 @@
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
 - name: Практические руководства
   items:
-    - name: Редактирование базы знаний
+    - name: Управление ресурсами Azure
       items:
-        - name: Редактирование базы знаний
-          href: How-To/edit-knowledge-base.md
-        - name: Создание диалогов с несколькими шагами и последующими запросами
-          href: How-To/multiturn-conversation.md
-          displayName: 'multi-turn dialogs, parent question, child question, filtering, metadata, state, context, prompt, follow-up, followup, flow, conversation, previous question'
-        - name: Добавление беседы
-          href: How-to/chit-chat-knowledge-base.md
-        - name: Добавление защищенного файла SharePoint
-          href: How-To/add-sharepoint-datasources.md
-          displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
+        - name: Управление ресурсами
+          href: How-To/set-up-qnamaker-service-azure.md
+          displayName: 'azure, resource, key, upgrade, pricing, tier,'
+        - name: Получение аналитики
+          href: How-To/get-analytics-knowledge-base.md
+        - name: Создание плана обеспечения непрерывности бизнес-процессов
+          href: How-To/business-continuity-plan.md
     - name: Управление базой знаний
       items:
         - name: Создание и публикация базы знаний
           href: Quickstarts/create-publish-knowledge-base.md
           displayName: 'create bot, bot, publish to bot, test, edit'
-        - name: Получение ответа с помощью метаданных
-          href: How-To/metadata-generateanswer-usage.md
-          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
-        - name: Выбор ответа по умолчанию
-          href: How-to/change-default-answer.md
         - name: Создание бота с помощью QnA Maker и LUIS
           href: Tutorials/integrate-qnamaker-luis.md
         - name: Выбор языка
@@ -136,17 +128,27 @@
         - name: Использование активного обучения для расширения базы знаний
           href: How-to/improve-knowledge-base.md
           displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
-    - name: Управление службой
+        - name: Редактирование базы знаний
+          href: How-To/edit-knowledge-base.md
+        - name: Создание диалогов с несколькими шагами и последующими запросами
+          href: How-To/multiturn-conversation.md
+          displayName: 'multi-turn dialogs, parent question, child question, filtering, metadata, state, context, prompt, follow-up, followup, flow, conversation, previous question'
+        - name: Добавление беседы
+          href: How-to/chit-chat-knowledge-base.md
+        - name: Добавление защищенного файла SharePoint
+          href: How-To/add-sharepoint-datasources.md
+          displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
+        - name: Обращение к базе знаний
+          href: How-To/metadata-generateanswer-usage.md
+          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
+    - name: Использование с клиентским приложением
       items:
-        - name: Управление ресурсами
-          href: How-To/set-up-qnamaker-service-azure.md
-          displayName: 'azure, resource, key, upgrade, pricing, tier,'
-        - name: Получение аналитики
-          href: How-To/get-analytics-knowledge-base.md
-        - name: Выбор емкости
-          href: Tutorials/choosing-capacity-qnamaker-deployment.md
-        - name: Создание плана обеспечения непрерывности бизнес-процессов
-          href: How-To/business-continuity-plan.md
+        - name: Bot Framework
+          href: Tutorials/create-qna-bot.md
+        - name: LUIS и QnA Maker
+          href: Tutorials/integrate-qnamaker-luis.md
+    - name: Аналитика и телеметрия
+      href: How-To/get-analytics-knowledge-base.md
 - name: Справочник
   items:
     - name: Языки
@@ -155,12 +157,20 @@
       href: limits.md
     - name: Устранение неполадок
       href: troubleshooting.md
-    - name: Форматы файлов
+    - name: Конфигурация службы
+      href: reference-app-service.md
+    - name: Форматы содержимого и данных
       items:
-        - name: Справочник по Markdown
-          href: reference-markdown-format.md
-        - name: Пакетное тестирование TSV
-          href: reference-tsv-format-batch-testing.md
+        - name: Рекомендации по формату содержимого
+          href: reference-document-format-guidelines.md
+        - name: URL-адреса
+          href: reference-document-type-url.md
+        - name: Рекомендации по импорту и экспорту данных
+          href: reference-data-guidelines.md
+    - name: Формат отображения
+      href: reference-markdown-format.md
+    - name: Формат пакетного тестирования
+      href: reference-tsv-format-batch-testing.md
     - name: Справочник по REST API
       items:
         - name: Разработка API-интерфейсов
@@ -169,7 +179,6 @@
           href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer'
         - name: API обучения
           href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train'
-      href: 'https://go.microsoft.com/fwlink/?linkid=2092179'
     - name: Примеры
       items:
         - name: Бот-помощник QnA Maker
@@ -197,7 +206,7 @@
             - name: Справочная документация
               href: 'https://docs.microsoft.com/javascript/api/%40azure/cognitiveservices-qnamaker/index?view=azure-node-latest'
             - name: npm
-              href: 'https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker'
+              href: 'https://www.npmjs.com/package/azure-cognitiveservices-qnamaker'
             - name: Примеры
               href: 'https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs'
         - name: Python

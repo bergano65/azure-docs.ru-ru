@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Документация по мобильным приложениям Azure
+summary: Узнайте, как использовать мобильные приложения в Службе приложений Azure для создания и размещения собственных приложений iOS, Android и Windows, а также кроссплатформенных приложений с помощью Xamarin или Cordova.
+metadata:
+  title: Документация по мобильным приложениям Azure
+  description: Узнайте, как использовать мобильные приложения в Службе приложений Azure для создания и размещения собственных приложений iOS, Android и Windows, а также кроссплатформенных приложений с помощью Xamarin или Cordova.
+  ms.topic: landing-page
+  ms.service: app-service-mobile
+  author: georgewallace
+  ms.author: gwallace
+  manager: gwallace
+  ms.date: 02/19/2020
+  ms.openlocfilehash: 024d1588a0897a6f312f25fa83c7e58f4e30aec2
+  ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/26/2020
+  ms.locfileid: "77617658"
+landingContent:
+- title: Обзор
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое мобильные приложения?
+      url: app-service-mobile-value-prop.md
+    - text: Планы службы приложений
+      url: ../app-service/overview-hosting-plans.md
+    - text: Библиотека видео по Службе приложений
+      url: https://azure.microsoft.com/documentation/videos/index/?services=app-service
+- title: Краткие руководства
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание приложения Android
+      url: app-service-mobile-android-get-started.md
+    - text: Создание приложения Apache Cordova
+      url: app-service-mobile-cordova-get-started.md
+    - text: Создание приложения iOS
+      url: app-service-mobile-ios-get-started.md
+    - text: Создание приложения Windows
+      url: app-service-mobile-windows-store-dotnet-get-started.md
+    - text: Создание приложения Xamarin.Android
+      url: app-service-mobile-xamarin-android-get-started.md
+    - text: Создание приложения Xamarin.iOS
+      url: app-service-mobile-xamarin-ios-get-started.md
+    - text: Создание приложения Xamarin.Forms
+      url: app-service-mobile-xamarin-forms-get-started.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Серверный пакет SDK для .NET
+      url: /dotnet/api/overview/azure/mobile
+    - text: Серверный пакет SDK для Node.js
+      url: https://azure.github.io/azure-mobile-apps-node/
+    - text: Клиентский пакет SDK для Android
+      url: https://azure.github.io/azure-mobile-apps-android-client/
+    - text: Клиентский пакет SDK для iOS
+      url: https://azure.github.io/azure-mobile-apps-ios-client/
+    - text: Клиентский пакет SDK для JavaScript и Cordova
+      url: https://azure.github.io/azure-mobile-apps-js-client/
+    - text: Клиентский пакет SDK для Windows и Xamarin
+      url: /dotnet/api/overview/azure/mobileapps/client

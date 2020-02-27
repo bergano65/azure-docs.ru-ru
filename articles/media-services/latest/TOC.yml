@@ -148,6 +148,8 @@
           href: live-event-states-billing.md
         - name: Задержка
           href: live-event-latency.md
+        - name: 'Коды ошибок, связанных с трансляцией'
+          href: live-event-error-codes.md
     - name: Наблюдение
       items:
         - name: События в Сетке событий
@@ -175,6 +177,8 @@
           items:
             - name: Коды ошибок конечной точки потоковой передачи
               href: streaming-endpoint-error-codes.md
+            - name: 'Коды ошибок, связанных с трансляцией'
+              href: live-event-error-codes.md
             - name: Коды ошибок задания
               href: job-error-codes.md
     - name: Руководство по миграции из версии 2 в версию 3
@@ -325,6 +329,8 @@
       items:
         - name: Коды ошибок конечной точки потоковой передачи
           href: streaming-endpoint-error-codes.md
+        - name: 'Коды ошибок, связанных с трансляцией'
+          href: live-event-error-codes.md
         - name: Коды ошибок задания
           href: job-error-codes.md
 - name: Ресурсы
