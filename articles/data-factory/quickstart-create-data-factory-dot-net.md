@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/24/2019
 ms.author: jingwang
-ms.openlocfilehash: 71a256b0350742f0e7a7b95519fafff5bc32f58b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: a2b775afcd9e603a11b560bb7c42d6cf76be9b34
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928790"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77597921"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
 
@@ -48,7 +48,7 @@ ms.locfileid: "74928790"
 1. В разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) создайте приложение, которое представляет приложение .NET, создаваемое в этом руководстве. В качестве URL-адреса входа можно указать фиктивный URL-адрес, как показано в статье (`https://contoso.org/exampleapp`).
 2. В разделе [Получение значений для входа](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in) получите **код приложения**, а также **идентификатор арендатора** и запишите эти значения. Они потребуются в дальнейшем при выполнении инструкций этого руководства. 
 3. В разделе [Сертификаты и секреты](../active-directory/develop/howto-create-service-principal-portal.md#certificates-and-secrets) получите **ключ аутентификации** и запишите это значение. Оно потребуется в дальнейшем при выполнении инструкций этого руководства.
-4. В разделе [Назначение приложению роли](../active-directory/develop/howto-create-service-principal-portal.md#assign-the-application-to-a-role) назначьте приложению роль **Участник** на уровне подписки, чтобы приложение могло создавать фабрики данных в подписке.
+4. В разделе [Назначение приложению роли](../active-directory/develop/howto-create-service-principal-portal.md#assign-a-role-to-the-application) назначьте приложению роль **Участник** на уровне подписки, чтобы приложение могло создавать фабрики данных в подписке.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -443,6 +443,6 @@ Console.WriteLine("Deleting the data factory");
 client.Factories.Delete(resourceGroup, dataFactoryName);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях. 

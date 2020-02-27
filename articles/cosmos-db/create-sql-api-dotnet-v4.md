@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 01/10/2020
-ms.openlocfilehash: b69d67a5c4fc1d907f676cf4e400f9fa7df2653b
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 6587b6d5ceb18bcc2374594aef91da91f792bb84
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867261"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77585940"
 ---
 # <a name="quickstart-build-a-console-app-using-the-net-v4-sdk-to-manage-azure-cosmos-db-sql-api-account-resources"></a>Краткое руководство. Создание консольного приложения c помощью пакета SDK для .NET версии 4 для управления ресурсами учетной записи API SQL для Azure Cosmos DB.
 
@@ -36,7 +36,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [Исходный код библиотеки](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/v4) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Cosmos)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [можно создать](https://azure.microsoft.com/free/) или [воспользоваться бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств. 
 * [Пакет SDK для .NET Core 3](https://dotnet.microsoft.com/download/dotnet-core). Чтобы проверить, какая версия доступна в вашей среде, выполните `dotnet --version`.
@@ -151,64 +151,64 @@ Time Elapsed 00:00:34.17
 
 Пример кода, описанный в этой статье, создает семейную базу данных в Azure Cosmos DB. База данных семьи содержит сведения о семье, такие как имя, адрес, местоположение, родители, дети и домашние животные. Перед заполнением данных в своей учетной записи Azure Cosmos определите свойства элемента семьи. Создайте класс с именем `Family.cs` на корневом уровне вашего примера приложения и добавьте в него следующий код:
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Family.cs)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Family.cs":::
 
 ### <a name="add-the-using-directives--define-the-client-object"></a>Добавление директив using и определение объекта клиента
 
 В каталоге проекта откройте файл `Program.cs` в редакторе и добавьте следующие директивы using в верхней части приложения:
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=Usings)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="Usings":::
 
 
 В класс `Program` добавьте следующие глобальные переменные: конечные точки, ключи авторизации, имя базы данных и контейнер, которые будут созданы. Не забудьте заменить значения конечных точек и ключей авторизации в соответствии с вашей средой. 
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=Constants)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="Constants":::
 
 Наконец, замените метод `Main`:
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=Main)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="Main":::
 
 ### <a name="create-a-database"></a>Создание базы данных 
 
 Определите метод `CreateDatabaseAsync` в классе `program.cs`. Этот метод создает `FamilyDatabase`, если он еще не существует.
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=CreateDatabaseAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="CreateDatabaseAsync":::
 
 ### <a name="create-a-container"></a>Создание контейнера
 
 Определите метод `CreateContainerAsync` в классе `Program`. Этот метод создает `FamilyContainer`, если он еще не существует. 
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=CreateContainerAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="CreateContainerAsync":::
 
 ### <a name="create-an-item"></a>Создание элемента
 
 Создайте элемент семейства, добавив в метод `AddItemsToContainerAsync` следующий код. Для создания элемента можно использовать метод `CreateItemAsync` или `UpsertItemAsync`.
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=AddItemsToContainerAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="AddItemsToContainerAsync":::
 
 ### <a name="query-the-items"></a>Запрос элементов
 
 После вставки элемента вы можете выполнить запрос, чтобы получить подробную информацию о семействе "Андерсен". В следующем коде показано, как выполнить запрос, используя запрос SQL напрямую. SQL-запрос для получения сведений о семействе "Андерсон": `SELECT * FROM c WHERE c.LastName = 'Andersen'`. Определите метод `QueryItemsAsync` в классе `Program` и добавьте в него следующий код:
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=QueryItemsAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="QueryItemsAsync":::
 
 ### <a name="replace-an-item"></a>Замена элемента 
 
 Прочитайте элемент семейства и обновите его, добавив в метод `ReplaceFamilyItemAsync` следующий код.
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=ReplaceFamilyItemAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="ReplaceFamilyItemAsync":::
 
 ### <a name="delete-an-item"></a>Удаление элемента 
 
 Удалите элемент семейства, добавив в метод `DeleteFamilyItemAsync` следующий код.
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=DeleteFamilyItemAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="DeleteFamilyItemAsync":::
 
 ### <a name="delete-the-database"></a>Удаление базы данных 
 
 Наконец, вы можете удалить базу данных, добавив в метод `DeleteDatabaseAndCleanupAsync` следующий код:
 
-[!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=DeleteDatabaseAndCleanupAsync)]
+:::code language="csharp" source="~/cosmos-dotnet-v4-getting-started/src/Program.cs" id="DeleteDatabaseAndCleanupAsync":::
 
 После добавления всех необходимых методов сохраните файл `Program`. 
 

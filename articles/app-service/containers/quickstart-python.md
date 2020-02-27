@@ -3,15 +3,15 @@ title: Краткое руководство. Создание приложен�
 description: Начните работу с приложениями Linux в Службе приложений Azure, развернув первое приложение Python в контейнере Linux в Службе приложений.
 ms.topic: quickstart
 ms.date: 10/22/2019
-ms.custom: seo-python-october2019
+ms.custom: cli-validate
 experimental: true
 experiment_id: 01a9132f-eaab-4c
-ms.openlocfilehash: aaf1f5cb6a11e0a5358d6c8a59581b46e57a3274
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 567e87b43c3fc3d7d2fb0c894ced53c89a133978
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045919"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77524069"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
@@ -19,11 +19,11 @@ ms.locfileid: "76045919"
 
 Если вы предпочитаете развертывать приложения с помощью интегрированной среды разработки, см. статью [Развертывание приложений Python в службе приложений из Visual Studio Code](/azure/python/tutorial-deploy-app-service-on-linux-01).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - <a href="https://www.python.org/downloads/" target="_blank">Python 3.7</a> (также поддерживается Python 3.6)
-- <a href="https://git-scm.com/downloads" target="_blank">Git</a>
+- <a href="https://git-scm.com/downloads" target="_blank">Git</a>;
 - <a href="https://docs.microsoft.com/cli/azure/install-azure-cli" target="_blank">Azure CLI</a>
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
@@ -46,7 +46,7 @@ cd python-docs-hello-world
 
 В окне терминала выполните приведенные ниже команды (в зависимости от операционной системы), чтобы установить необходимые зависимости и запустить встроенный сервер разработки. 
 
-# <a name="bashtabbash"></a>[Bash](#tab/bash)
+# <a name="bash"></a>[Bash](#tab/bash)
 
 ```bash
 python3 -m venv venv
@@ -56,7 +56,7 @@ export FLASK_APP=application.py
 flask run
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 py -3 -m venv env
@@ -66,7 +66,7 @@ Set-Item Env:FLASK_APP ".\application.py"
 flask run
 ```
 
-# <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+# <a name="cmd"></a>[Cmd](#tab/cmd)
 
 ```cmd
 py -3 -m venv env

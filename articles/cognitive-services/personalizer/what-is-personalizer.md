@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 01/21/2020
 ms.author: diberry
-ms.openlocfilehash: 685e4f841ba077c81f46a27af8040fa6c57c0021
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: bf0710ebef21226d8d8582a920d64027bb015d34
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846216"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622720"
 ---
 # <a name="what-is-personalizer"></a>Что такое служба "Персонализатор"?
 
@@ -63,7 +63,7 @@ ms.locfileid: "76846216"
 
 Персонализатор подходит для сценариев, в которых содержимое отвечает следующим условиям:
 
-* Ограниченный набор элементов для выбора (не более 50). Если ваш список содержит больше элементов, [используйте модуль рекомендаций](where-can-you-use-personalizer.md#use-personalizer-with-recommendation-engines) для сокращения их количества до 50 элементов;
+* Ограниченный набор элементов для выбора (не более 50). Если ваш список содержит больше элементов, [используйте модуль рекомендаций](where-can-you-use-personalizer.md#how-to-use-personalizer-with-a-recommendation-solution) для сокращения их количества до 50 элементов;
 * содержит сведения с описанием содержимого для ранжирования: _действия с признаками_ и _признаки контекста_;
 * для эффективной работы Персонализатор должен получать не менее 1000 событий, связанных с контекстом, ежедневно. Если Персонализатор не получает требуемый минимальный трафик, выбор наиболее подходящего элемента содержимого будет выполняться дольше.
 

@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 04/27/2017
 ms.author: sewatson
-ms.openlocfilehash: b0a8deb5f656fafde358dbcf2e1a2724f1a84113
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: ff439083ca9c648ceec95b89b041bb5b60785c91
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "64727629"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603007"
 ---
 # <a name="linux-virtual-machines-documentation"></a>Документация по виртуальным машинам Linux
 
@@ -23,26 +23,26 @@ ms.locfileid: "64727629"
 
 Сведения о развертывании веб сервера NGINX на виртуальной машине под управлением Ubuntu:
 
-- [портал Azure](/azure/virtual-machines/virtual-machines-linux-quick-create-portal?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [портале Azure](/azure/virtual-machines/virtual-machines-linux-quick-create-portal?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Azure PowerShell](/azure/virtual-machines/virtual-machines-linux-quick-create-powershell?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Интерфейс командной строки Azure](/azure/virtual-machines/virtual-machines-linux-quick-create-cli?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Azure CLI](/azure/virtual-machines/virtual-machines-linux-quick-create-cli?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## <a name="step-by-step-tutorials"></a>Пошаговые руководства
+## <a name="step-by-step-tutorials"></a>Пошаговые инструкции
 
 Сведения о развертывании, администрировании и масштабировании виртуальных машин Linux в Azure.
 
-- [Manage Linux virtual machines with the Azure CLI](/azure/virtual-machines/linux/tutorial-manage-vm) (Управление виртуальными машинами Linux с помощью Azure CLI)
-- [Manage Azure disks with the Azure CLI](/azure/virtual-machines/linux/tutorial-manage-disks) (Управление дисками Azure с помощью Azure CLI)
+- [Создание и администрирование виртуальных машин Linux](/azure/virtual-machines/linux/tutorial-manage-vm)
+- [Создание дисков виртуальных машин и управление ими](/azure/virtual-machines/linux/tutorial-manage-disks)
 - [Автоматизация настройки виртуальной машины](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)
-- [Создание образа настраиваемой виртуальной машины](/azure/virtual-machines/linux/tutorial-custom-images)
+- [Создание пользовательских образов виртуальной машины](/azure/virtual-machines/linux/tutorial-custom-images)
 - [Создание высокодоступных виртуальных машин](/azure/virtual-machines/linux/tutorial-availability-sets)
-- [Create a Virtual Machine Scale Set and deploy a highly available app on Linux](/azure/virtual-machines/linux/tutorial-create-vmss) (Создание масштабируемого набора виртуальных машин и развертывание высокодоступного приложения в Linux)
-- [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](/azure/virtual-machines/linux/tutorial-load-balancer)
-- [Управление виртуальными сетями Azure и виртуальными машинами Linux с помощью Azure CLI](/azure/virtual-machines/linux/tutorial-virtual-network)
-- [Back up Linux virtual machines in Azure](/azure/virtual-machines/linux/tutorial-backup-vms) (Резервное копирование виртуальных машин Linux в Azure)
-- [How to monitor a Linux virtual machine in Azure](/azure/virtual-machines/linux/tutorial-monitoring) (Мониторинг виртуальной машины Linux в Azure)
-- [Monitor VM security with the Azure Security Center](/azure/virtual-machines/linux/tutorial-azure-security) (Мониторинг безопасности виртуальных машин с помощью центра безопасности Azure)
-- [Create a CI/CD infrastructure with Jenkins, Docker, and GitHub](/azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd) (Создание инфраструктуры непрерывной интеграции и доставки с помощью Jenkins, Docker и GitHub)
+- [Создание масштабируемого набора виртуальной машины](/azure/virtual-machines/linux/tutorial-create-vmss)
+- [Балансировка нагрузки виртуальных машин](/azure/virtual-machines/linux/tutorial-load-balancer)
+- [Управление виртуальными сетями и виртуальными машинами](/azure/virtual-machines/linux/tutorial-virtual-network)
+- [Резервное копирование виртуальных машин](/azure/virtual-machines/linux/tutorial-backup-vms)
+- [Монитор виртуальных машин](/azure/virtual-machines/linux/tutorial-monitoring)
+- [Управление безопасностью на виртуальных машинах](/azure/virtual-machines/linux/tutorial-azure-security)
+- [Создание инфраструктуры CI/CD с помощью Jenkins, Docker и GitHub](/azure/jenkins/tutorial-jenkins-github-docker-cicd)
 
 ## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки Pluralsight
 
@@ -52,7 +52,7 @@ ms.locfileid: "64727629"
 
 Развертывание первого приложения в Azure.
 
-- [Интерфейс командной строки Azure](/azure/virtual-machines/virtual-machines-linux-cli-samples)
+- [Azure CLI](/azure/virtual-machines/virtual-machines-linux-cli-samples)
 - [Azure PowerShell](/azure/virtual-machines/virtual-machines-linux-powershell-samples)
 
 ## <a name="more"></a>Подробнее

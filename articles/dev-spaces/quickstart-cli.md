@@ -1,17 +1,17 @@
 ---
 title: Разработка приложения в Kubernetes
 services: azure-dev-spaces
-ms.date: 07/08/2019
+ms.date: 02/20/2020
 ms.topic: quickstart
 description: В этом кратком руководстве показано, как использовать Azure Dev Spaces и командную строку для разработки приложения в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 553c316587d27e0921fbbbf78b02ddb048532c43
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 2d3a498d72264d3084e45202b7daa99806d45ce3
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867249"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77602614"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Разработка приложения в Kubernetes с помощью Azure Dev Spaces
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -19,7 +19,7 @@ ms.locfileid: "75867249"
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
 - Разработка и выполнение кода в контейнерах с помощью командной строки.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -30,7 +30,7 @@ ms.locfileid: "75867249"
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
-az aks create -g MyResourceGroup -n MyAKS --location eastus --disable-rbac --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location eastus --generate-ssh-keys
 ```
 
 ## <a name="enable-azure-dev-spaces-on-your-aks-cluster"></a>Включение Azure Dev Spaces в кластере AKS
@@ -76,7 +76,7 @@ cd dev-spaces/samples/nodejs/getting-started/webfrontend
 Создайте ресурсы диаграмм Docker и Helm для выполнения приложения в Kubernetes с помощью команды `azds prep`:
 
 ```cmd
-azds prep --public
+azds prep --enable-ingress
 ```
 
 Вам нужно выполнить команду `prep` из каталога *dev-spaces/samples/nodejs/getting-started/webfrontend*, чтобы правильно создать ресурсы диаграмм Docker и Helm.
