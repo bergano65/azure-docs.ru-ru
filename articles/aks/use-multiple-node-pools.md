@@ -4,12 +4,12 @@ description: Узнайте, как создать несколько пулов
 services: container-service
 ms.topic: article
 ms.date: 02/14/2020
-ms.openlocfilehash: 846425e6d36462636ea1f4e82d6c7233dcb28ac9
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 3e0890a0e8600526da2047cabc0b50af8177ea37
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77592889"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77615698"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -29,8 +29,7 @@ ms.locfileid: "77592889"
 При создании кластеров AKS, поддерживающих несколько пулов узлов, и управлении ими действуют следующие ограничения.
 
 * См. раздел [квоты, ограничения размера виртуальной машины и доступность регионов в службе Azure Kubernetes (AKS)][quotas-skus-regions].
-* Нельзя удалить пул узлов по умолчанию (First).
-* Не удается использовать надстройку маршрутизации приложений HTTP.
+* Пул системных узлов нельзя удалить по умолчанию для первого пула узлов.
 * Кластер AKS должен использовать подсистему балансировки нагрузки уровня "Стандартный" для использования нескольких пулов узлов. Эта функция не поддерживается для подсистем балансировки нагрузки уровня "базовый".
 * Кластер AKS должен использовать масштабируемые наборы виртуальных машин для узлов.
 * Имя пула узлов может содержать только буквы в нижнем регистре и должно начинаться с буквы в нижнем регистре. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. для пулов узлов Windows длина должна составлять от 1 до 6 символов.
@@ -642,7 +641,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как создавать и администрировать несколько пулов узлов в кластере AKS. Дополнительные сведения об управлении модулями Pod в пулах узлов см. в разделе рекомендации [по использованию расширенных функций планировщика в AKS][operator-best-practices-advanced-scheduler].
 

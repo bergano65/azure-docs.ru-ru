@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: dech
 Customer intent: As a developer, I want to build a Node.js console application to access and manage SQL API account resources in Azure Cosmos DB, so that customers can better use the service.
-ms.openlocfilehash: a273b89d864d97d9bc71acff476371f77cfff066
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 5204c7cf80a5b52b0c30b3165d522aa2648cd95c
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754821"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587436"
 ---
-# <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство. Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
+# <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство по Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-get-started.md)
@@ -27,7 +27,7 @@ ms.locfileid: "72754821"
 
 Как у разработчика у вас могут быть приложения, использующие данные документов NoSQL. Вы можете использовать учетную запись API SQL в Azure Cosmos DB для хранения этих данных документов и получения доступа к ним. В этом руководстве показано, как создать консольное приложение Node.js, которое создает ресурсы Azure Cosmos DB, и запросить эти ресурсы.
 
-Изучив данный учебник, вы научитесь:
+Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
 > * создавать учетную запись Azure Cosmos DB и подключаться к ней;
@@ -95,7 +95,7 @@ ms.locfileid: "72754821"
 
 1. Скопируйте данные ```database```, ```container``` и ```items```, а затем вставьте их в объект ```config``` ниже, где задавались значения свойств ```config.endpoint``` и ```config.key```. Если у вас уже есть данные, которые вы хотите сохранить в своей базе данных, вы можете использовать средство переноса данных в Azure Cosmos DB вместо определения данных здесь. Файл config.js должен содержать следующий код:
 
-   [!code-javascript[nodejs-get-started](~/cosmosdb-nodejs-get-started/config.js)]
+   :::code language="javascript" source="~/cosmosdb-nodejs-get-started/config.js":::
 
    Пакет SDK для JavaScript использует универсальные термины: *контейнер* и *элемент*. Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. 
    
@@ -602,7 +602,7 @@ Azure Cosmos DB поддерживает удаление элементов JSO
 
 В целом, код должен выглядеть следующим образом:
 
-[!code-javascript[nodejs-get-started](~/cosmosdb-nodejs-get-started/app.js)]
+:::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js":::
 
 В окне терминала перейдите к файлу ```app.js``` и выполните эту команду: 
 
@@ -674,7 +674,7 @@ node app.js
 
 Можно удалить группу ресурсов, учетную запись Azure Cosmos DB и все связанные ресурсы, когда они больше не нужны. Для этого выберите группу ресурсов, которая использовалась для учетной записи Azure Cosmos DB, выберите **Удалить**, а затем подтвердите имя удаляемой группы ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Мониторинг Azure Cosmos DB](monitor-accounts.md)

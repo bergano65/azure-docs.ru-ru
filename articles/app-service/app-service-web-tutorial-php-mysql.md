@@ -6,12 +6,12 @@ ms.devlang: php
 ms.topic: tutorial
 ms.date: 11/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: d827270c89160097f76a7fdb36f9a6f97525064b
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 9375a59fedcd134a64cfa3bf8b92e33d326ee925
+ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671993"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77500048"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure"></a>Руководство по Создание приложения PHP в Azure с подключением к базе данных MySQL
 
@@ -19,11 +19,11 @@ ms.locfileid: "74671993"
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в Службе приложений в _Linux_, обратитесь к руководству по [созданию приложений PHP с подключением к MySQL в Службе приложений Azure в Linux](./containers/tutorial-php-mysql-app.md).
 >
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать приложение PHP в Azure и подключить его к базе данных MySQL. По завершении вы получите приложение [Laravel](https://laravel.com/), работающее в Службе приложений Azure.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать приложение PHP в Azure и подключить его к базе данных MySQL. По завершении вы получите приложение [Laravel](https://laravel.com/), работающее в Службе приложений Azure.
 
 ![Приложение PHP, работающее в службе приложений Azure](./media/app-service-web-tutorial-php-mysql/complete-checkbox-published.png)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных MySQL в Azure.
@@ -37,7 +37,7 @@ ms.locfileid: "74671993"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * [установите Git](https://git-scm.com/);
 * [PHP 5.6.4 или более поздней версии](https://php.net/downloads.php);
@@ -613,9 +613,9 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 
 <a name="next"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных MySQL в Azure.

@@ -5,12 +5,12 @@ ms.devlang: php
 ms.topic: tutorial
 ms.date: 11/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: be8bbfde7e9873f9cef3a85cacc2dfcf4db9039b
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 89b8d9fb1d929e0598469ba582049c61216e923a
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687428"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77524031"
 ---
 # <a name="build-a-php-and-mysql-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе PHP и MySQL в Службе приложений Azure в Linux
 
@@ -22,7 +22,7 @@ ms.locfileid: "74687428"
 
 ![Приложение PHP, работающее в службе приложений Azure](./media/tutorial-php-mysql-app/complete-checkbox-published.png)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных MySQL в Azure.
@@ -36,7 +36,7 @@ ms.locfileid: "74687428"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * [установите Git](https://git-scm.com/);
 * [PHP 5.6.4 или более поздней версии](https://php.net/downloads.php);
@@ -188,7 +188,7 @@ az mysql server firewall-rule create --name allAzureIPs --server <mysql-server-n
 > Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](../overview-inbound-outbound-ips.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
 >
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<your-ip-address>* [локальным IPv4-адресом](https://www.whatsmyip.org/).
+В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<your-ip-address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
 
 ```azurecli-interactive
 az mysql server firewall-rule create --name AllowLocalClient --server <mysql-server-name> --resource-group myResourceGroup --start-ip-address=<your-ip-address> --end-ip-address=<your-ip-address>
@@ -585,9 +585,9 @@ git push azure master
 
 <a name="next"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных MySQL в Azure.

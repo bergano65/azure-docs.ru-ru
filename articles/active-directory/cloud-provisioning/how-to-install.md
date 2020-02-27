@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f4e8450593b8ff0f73c09f236f17eb4ef09334c
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: e4581ab89f74425682f569425f62714ead2c27c5
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549508"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620932"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>Установка агента подготовки облака Azure AD Connect
 В этом документе описывается процесс установки агента подготовки Azure Active Directory (Azure AD) Connect и его первоначальной настройки в портал Azure.
@@ -55,7 +55,7 @@ ms.locfileid: "75549508"
 
 1. После завершения этой операции вы увидите уведомление о том, что **Конфигурация агента успешно проверена.** Выберите **выход**.
 
-   ![кнопка выхода;](media/how-to-install/install5.png)</br>
+   ![Кнопка "выход"](media/how-to-install/install5.png)</br>
 1. Если вы по-прежнему видите экран начальный **пакет агента подготовки Microsoft Azure AD подключения** , нажмите кнопку **Закрыть**.
 
 ## <a name="verify-agent-installation"></a>Проверка установки агента
@@ -96,7 +96,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
     ![Экран служб](media/how-to-troubleshoot/troubleshoot1.png)
 
 >[!IMPORTANT]
->Агент был установлен, но его необходимо настроить и включить, прежде чем начнется синхронизация пользователей. Сведения о настройке нового агента см. в разделе [Azure AD Connect Cloud подготовка новой конфигурации агента](how-to-configure.md).
+>Агент был установлен, но его необходимо настроить и включить, прежде чем начнется синхронизация пользователей. Сведения о настройке нового агента см. в статье [Создание новой конфигурации для Azure AD Connect облачной подготовки](how-to-configure.md).
 
 
 

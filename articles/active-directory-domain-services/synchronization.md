@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: b2a1bcedcc459a21bbc8a461ba9c8d9a8d65aebe
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 7e0e904b182a57a51b5d76f0acebc13bce5902b2
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77132208"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77612932"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация объектов и учетных данных в управляемом домене доменных служб Azure AD
 
@@ -47,9 +47,9 @@ ms.locfileid: "77132208"
 | Журнал идентификаторов безопасности для пользователей и групп | Локальный основной идентификатор безопасности пользователя и группы | Атрибут *SIDHistory* для пользователей и групп в Azure AD DS настроен в соответствии с соответствующим идентификатором безопасности основного пользователя или группы в локальной среде AD DS. Эта функция позволяет выполнять перенос локальных приложений в Azure AD DS проще, так как не требуется повторно использовать ресурсы ACL. |
 
 > [!TIP]
-> **Войдите в управляемый домен, используя формат имени участника-пользователя** Атрибут *SamAccountName* , например `CONTOSO\driley`, может быть автоматически создан для некоторых учетных записей пользователей в управляемом домене AD DS Azure. Автоматически созданный пользователь *SamAccountName* может отличаться от префикса имени участника-пользователя, поэтому не всегда надежный способ входа в систему.
+> **Войдите в управляемый домен, используя формат имени участника-пользователя** Атрибут *SamAccountName* , например `AADDSCONTOSO\driley`, может быть автоматически создан для некоторых учетных записей пользователей в управляемом домене AD DS Azure. Автоматически созданный пользователь *SamAccountName* может отличаться от префикса имени участника-пользователя, поэтому не всегда надежный способ входа в систему.
 >
-> Например, если несколько пользователей имеют одинаковый атрибут *mailNickname* или пользователи имеют более длинные префиксы имени участника-пользователя, *SamAccountName* для этих пользователей может быть создан автоматически. Используйте формат имени участника-пользователя, например `driley@contoso.com`, для надежного входа в управляемый домен AD DS Azure.
+> Например, если несколько пользователей имеют одинаковый атрибут *mailNickname* или пользователи имеют более длинные префиксы имени участника-пользователя, *SamAccountName* для этих пользователей может быть создан автоматически. Используйте формат имени участника-пользователя, например `driley@aaddscontoso.com`, для надежного входа в управляемый домен AD DS Azure.
 
 ### <a name="attribute-mapping-for-user-accounts"></a>Сопоставление атрибутов для учетных записей пользователей
 
@@ -65,7 +65,7 @@ ms.locfileid: "77132208"
 | facsimileTelephoneNumber |facsimileTelephoneNumber |
 | givenName |givenName |
 | jobTitle |title |
-| mail |mail |
+| почта |почта |
 | mailNickname |msDS-AzureADMailNickname |
 | mailNickname |SAMAccountName (иногда может быть автоматически создан) |
 | mobile |mobile |
@@ -78,7 +78,7 @@ ms.locfileid: "77132208"
 | state |st |
 | streetAddress |streetAddress |
 | surname |sn |
-| TelephoneNumber |TelephoneNumber |
+| telephoneNumber |telephoneNumber |
 | userPrincipalName |userPrincipalName |
 
 ### <a name="attribute-mapping-for-groups"></a>Сопоставление атрибутов для групп
@@ -89,7 +89,7 @@ ms.locfileid: "77132208"
 |:--- |:--- |
 | displayName |displayName |
 | displayName |SAMAccountName (иногда может быть автоматически создан) |
-| mail |mail |
+| почта |почта |
 | mailNickname |msDS-AzureADMailNickname |
 | objectid |msDS-AzureADObjectId |
 | onPremiseSecurityIdentifier |sidHistory |
@@ -138,7 +138,7 @@ Azure AD имеет гораздо более простое и неструкт
 
 Для гибридных учетных записей пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, необходимо [настроить Azure AD Connect для синхронизации хэшей паролей в форматах, совместимых с NTLM и Kerberos](tutorial-configure-password-hash-sync.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об особенностях синхронизации паролей см. в статье [как работает синхронизация хэшей паролей с Azure AD Connect](../active-directory/hybrid/how-to-connect-password-hash-synchronization.md?context=/azure/active-directory-domain-services/context/azure-ad-ds-context).
 

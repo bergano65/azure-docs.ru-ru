@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/04/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0ca9ed8781a13f9ab5e949e0e5f019a851dc75f4
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 1404854e054c8fc4967ba863486969b8a87db526
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77057487"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77621513"
 ---
 # <a name="tutorial-configure-insight4grc-for-automatic-user-provisioning"></a>Учебник. Настройка Insight4GRC для автоматической подготовки пользователей
 
@@ -90,7 +90,7 @@ ms.locfileid: "77057487"
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите учетные данные администратора Insight4GRC и имя пользователя. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Insight4GRC. Если подключение не выполняется, убедитесь, что у учетной записи Insight4GRC есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите URL-адрес КОНЕЧНОЙ точки scim в поле **URL-адрес клиента**. URL-адрес енпоинт должен быть в формате `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2 ` где **Insight4GRC доменное имя** — это значение, полученное на предыдущих шагах. Введите значение токена носителя, полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Insight4GRC. Если подключение не выполняется, убедитесь, что у учетной записи Insight4GRC есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/insight4grc-provisioning-tutorial/provisioning.png)
 

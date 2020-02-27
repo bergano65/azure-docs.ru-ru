@@ -5,19 +5,19 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: pepogors
-ms.openlocfilehash: d5a03629a134a0b2c7d6ee95dba9ea3ad06e99ba
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: f40e54f5260f827f0b18c833d23d1f57b5ebc3a3
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75609831"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617470"
 ---
 # <a name="reliable-services-application-and-service-manifest-examples"></a>Примеры манифестов приложений Reliable Services и служб
 Ниже приведены примеры манифестов приложений и служб для приложения Service Fabric с внешним веб-интерфейсном ASP.NET Core и серверной частью с отслеживанием состояния. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [в кратком руководстве по Service Fabric для .NET](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
 Показаны следующие функции:
 
-|Manifest|Возможности|
+|Manifest|Компоненты|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Управление ресурсами](service-fabric-resource-governance.md), [запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md), [применение политики по умолчанию для всех пакетов кода службы](service-fabric-application-runas-security.md#apply-a-default-policy-to-all-service-code-packages), [создание субъектов пользователей и групп](service-fabric-application-runas-security.md), совместное использование пакета данных экземплярами служб, [переопределение конечных точек службы](service-fabric-service-manifest-resources.md#overriding-endpoints-in-servicemanifestxml)| 
 |Манифест службы FrontEndService| [Выполнение сценария при запуске службы](service-fabric-run-script-at-service-startup.md), [определение конечной точки HTTPS](service-fabric-tutorial-dotnet-app-enable-https-endpoint.md#define-an-https-endpoint-in-the-service-manifest) | 
@@ -69,7 +69,7 @@ ms.locfileid: "75609831"
                                 MemorySwapInMB="[MemorySwapInMB]"/>
 
       <!-- Share the data package across multiple instances of the VotingData service-->
-      <PackageSharingPolicy PackageRef="VotingDataPkg.Data"/>
+      <PackageSharingPolicy PackageRef="Data"/>
 
       <!-- Give read rights on the "DataEndpoint" endpoint to the Customer2 account.-->
       <SecurityAccessPolicy GrantRights="Read" PrincipalRef="Customer2" ResourceRef="DataEndpoint" ResourceType="Endpoint"/>         

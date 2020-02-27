@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/05/2020
+ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 5453793c7e1bb1ef766939d2e7fdf32a1ac1ec72
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: 01397ad078bc741977c4928f67d1834f05e1db8d
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77499944"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623974"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Оповещения системы безопасности — справочное руководство
 
@@ -33,7 +33,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-windows"></a>Оповещения для компьютеров Windows
 
-[Дополнительные сведения и примечания](security-center-alerts-iaas.md#windows-)
+[Дополнительные сведения и примечания](threat-protection.md#windows-machines)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -124,7 +124,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-linux"></a>Оповещения для компьютеров Linux
 
-[Дополнительные сведения и примечания](security-center-alerts-iaas.md#linux-)
+[Дополнительные сведения и примечания](threat-protection.md#linux-machines)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -213,7 +213,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azureappserv"></a>Оповещения для службы приложений Azure
 
-[Дополнительные сведения и примечания](security-center-alerts-compute.md#azure-app-service-)
+[Дополнительные сведения и примечания](threat-protection.md#app-services)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -238,7 +238,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-akscluster"></a>Оповещения для контейнеров — кластеры службы Kubernetes Azure
 
-[Дополнительные сведения и примечания](security-center-alerts-compute.md#azure-containers-)
+[Дополнительные сведения и примечания](threat-protection.md#azure-containers)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -253,7 +253,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-containerhost"></a>Оповещения для контейнеров — уровень узла
 
-[Дополнительные сведения и примечания](security-center-alerts-compute.md#azure-containers-)
+[Дополнительные сведения и примечания](threat-protection.md#azure-containers)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -269,7 +269,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-sql-db-and-warehouse"></a>Оповещения для базы данных SQL и хранилища данных SQL
 
-[Дополнительные сведения и примечания](security-center-alerts-data-services.md#sql-database-and-sql-data-warehouse-)
+[Дополнительные сведения и примечания](threat-protection.md#data-sql)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -287,7 +287,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azurestorage"></a>Оповещения для службы хранилища Azure
 
-[Дополнительные сведения и примечания](security-center-alerts-data-services.md#azure-storage-)
+[Дополнительные сведения и примечания](threat-protection.md#azure-storage)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -308,7 +308,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azurecosmos"></a>Оповещения для Azure Cosmos DB (Предварительная версия)
 
-[Дополнительные сведения и примечания](security-center-alerts-data-services.md#azure-cosmos-db)
+[Дополнительные сведения и примечания](threat-protection.md#cosmos-db)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -319,7 +319,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azurenetlayer"></a>Оповещения для сетевого уровня Azure
 
-[Дополнительные сведения и примечания](security-center-alerts-service-layer.md#azure-network-layer)
+[Дополнительные сведения и примечания](threat-protection.md#network-layer)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -344,7 +344,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azureresourceman"></a>Оповещения для Azure Resource Manager (Предварительная версия)
 
-[Дополнительные сведения и примечания](security-center-alerts-service-layer.md#azure-management-layer-azure-resource-manager-preview)
+[Дополнительные сведения и примечания](threat-protection.md#management-layer)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -363,7 +363,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azurekv"></a>Оповещения для Azure Key Vault (Предварительная версия)
 
-[Дополнительные сведения и примечания](security-center-alerts-service-layer.md#azure-keyvault)
+[Дополнительные сведения и примечания](threat-protection.md#azure-keyvault)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -381,7 +381,7 @@ ms.locfileid: "77499944"
 
 ## <a name="alerts-azureddos"></a>Оповещения для службы защиты Azure от атак DDoS
 
-[Дополнительные сведения и примечания](security-center-alerts-integration.md#azure-ddos)
+[Дополнительные сведения и примечания](threat-protection.md#azure-ddos)
 
 |Предупреждение|Description|Намерение ([Дополнительные сведения](#intentions))|
 |----|----|:----:|
@@ -418,6 +418,7 @@ ms.locfileid: "77499944"
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об оповещениях см. в следующих статьях:
 
+* [Защита от угроз в центре безопасности Azure](threat-protection.md)
 * [Оповещения безопасности в Центре безопасности Azure](security-center-alerts-overview.md)
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)
 * [Экспорт оповещений системы безопасности и рекомендаций (Предварительная версия)](continuous-export.md)

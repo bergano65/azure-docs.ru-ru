@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 9d8c5f98cfd8b4b3831bcbd7e65285f93e6c323f
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 0743499b019bd1c7b985636e886eee9352284a55
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441958"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616071"
 ---
 # <a name="azure-kubernetes-services-integration-with-security-center-preview"></a>Интеграция Azure Kubernetes Services с центром безопасности (Предварительная версия)
 Служба Azure Kubernetes Service (AKS) — это управляемая служба Майкрософт для разработки и развертывания контейнерных приложений и управления ими. 
@@ -45,7 +45,7 @@ ms.locfileid: "77441958"
     * Необработанные события безопасности, такие как данные сети и создание процессов;
     * Журнал аудита Kubernetes
 
-    Дополнительные сведения см. в статье [обнаружение угроз для контейнеров Azure](security-center-alerts-compute.md#azure-containers-) .
+    Дополнительные сведения см. в статье [Защита от угроз для контейнеров Azure](threat-protection.md#azure-containers) .
 
     Список возможных оповещений см. в следующих разделах справочника по оповещениям: [AKS на уровне кластера](alerts-reference.md#alerts-akscluster) и [предупреждения на уровне узла контейнера](alerts-reference.md#alerts-containerhost).  
 

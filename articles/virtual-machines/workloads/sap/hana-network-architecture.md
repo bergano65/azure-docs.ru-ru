@@ -3,8 +3,8 @@ title: Сетевая архитектура SAP HANA в Azure (крупные �
 description: Сетевая архитектура развертывания SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
-author: RicksterCDN
-manager: gwallace
+author: msjuergent
+manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3777180a4d62f8b253ac4cd096bff15613f33565
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 068cc2ed9743a62aa2249a815893c71499711092
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74206626"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617018"
 ---
 # <a name="sap-hana-large-instances-network-architecture"></a>Сетевая архитектура SAP HANA в Azure (крупные экземпляры)
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/04/2020
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: f9889f58ead8d1dd35ceb50fa100b2b466cbe7cf
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: d97b63aa87bfd8cf8ca1a3f5b213d6b16ca066df
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022398"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616851"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-storage"></a>Настройка расширенной защиты от угроз для службы хранилища Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "77022398"
 
 Расширенную защиту от угроз можно настроить любым из нескольких способов, описанных в следующих разделах.
 
-### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Запустите [портал Azure](https://portal.azure.com/).
 1. Перейдите к своей учетной записи хранения Azure. В разделе **Параметры**выберите пункт **Расширенная безопасность**.
@@ -41,7 +41,7 @@ ms.locfileid: "77022398"
 
     ![Включение Расширенной защиты от угроз для службы хранилища Azure](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-turn-on.png)
 
-### <a name="azure-security-centertabazure-security-center"></a>[Центр безопасности Azure](#tab/azure-security-center)
+### <a name="azure-security-center"></a>[Центр безопасности Azure](#tab/azure-security-center)
 
 При оформлении подписки на уровень "Стандартный" в центре безопасности Azure автоматически настраивается для всех учетных записей хранения. Вы можете включить или отключить расширенную защиту от угроз для учетных записей хранения в определенной подписке следующим образом:
 
@@ -55,13 +55,13 @@ ms.locfileid: "77022398"
 1. В разделе **Выбор ценовой категории по типу ресурса** в строке **учетные записи хранения** щелкните **включено** или **отключено**.
 
     ![Включение ATP в центре безопасности](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-pricing2.png)
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
-### <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+### <a name="template"></a>[Шаблон](#tab/template)
 
 Используйте шаблон Azure Resource Manager, чтобы развернуть учетную запись хранения Azure с включенной службой Advanced Threat protection. Дополнительные сведения см. [в разделе Учетная запись хранения с расширенной защитой угроз](https://azure.microsoft.com/resources/templates/201-storage-advanced-threat-protection-create/).
 
-### <a name="azure-policytabazure-policy"></a>[Политика Azure](#tab/azure-policy)
+### <a name="azure-policy"></a>[Политика Azure](#tab/azure-policy)
 
 Используйте политику Azure, чтобы включить расширенную защиту от угроз для учетных записей хранения в определенной подписке или группе ресурсов.
 
@@ -79,14 +79,14 @@ ms.locfileid: "77022398"
 
     ![Страница "определения политик"](./media/storage-advanced-threat-protection/storage-atp-policy1.png)
 
-### <a name="rest-apitabrest-api"></a>[REST API](#tab/rest-api)
+### <a name="rest-api"></a>[REST API](#tab/rest-api)
 
 Используйте команды API-интерфейса для создания, обновления или получения параметра Advanced Threat Protection для конкретной учетной записи хранения.
 
 * [Расширенная защита от угроз — создание](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/create)
 * [Расширенная защита от угроз — получение](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/get)
 
-### <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Используйте следующие командлеты PowerShell:
 
@@ -116,11 +116,11 @@ ms.locfileid: "77022398"
 
 ![Расширенная защита от угроз для службы хранилища Azure: оповещение по электронной почте](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-alert.png)
 
-## <a name="protection-alerts"></a>Оповещения о защите
+## <a name="security-alerts"></a>Оповещения безопасности
 
-Оповещения создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям хранения или использовать их. Список предупреждений для службы хранилища Azure см. в разделе " **хранилище** " в статье [обнаружение угроз для служб данных в оповещениях центра безопасности Azure](../../security-center/security-center-alerts-data-services.md#azure-storage) .
+Оповещения создаются при нестандартных и потенциально вредоносных попытках получить доступ к учетным записям хранения или использовать их. Список оповещений для службы хранилища Azure см. в разделе " **хранилище** " статьи [Защита от угроз для служб данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurestorage).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [журналах в учетных записях хранения Azure](/rest/api/storageservices/About-Storage-Analytics-Logging)
 * Узнайте больше о [центре безопасности Azure](../../security-center/security-center-intro.md).

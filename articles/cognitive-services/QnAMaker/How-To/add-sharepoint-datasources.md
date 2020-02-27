@@ -3,12 +3,12 @@ title: Файлы SharePoint — QnA Maker
 description: Добавьте защищенные источники данных SharePoint в базу знаний, чтобы расширить базу знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: ec77d3ac217991ff191d80249bc86805e7c8ba35
-ms.sourcegitcommit: 78f367310e243380b591ff10f2500feca93f5d0a
+ms.openlocfilehash: 402d8239ee9fbac01e64e3624a7e4d8a13f2e7d8
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544170"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650441"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление защищенного источника данных SharePoint в базу знаний
 
@@ -20,7 +20,8 @@ ms.locfileid: "77544170"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-QnA Maker использует Microsoft Graph для разрешений. Если SharePoint находится в локальной среде, вы не сможете извлечь из SharePoint, так как Microsoft Graph не сможет определить разрешения.
+* В облачном SharePoint-QnA Maker для разрешений используется Microsoft Graph. Если SharePoint находится в локальной среде, вы не сможете извлечь из SharePoint, так как Microsoft Graph не сможет определить разрешения.
+* Формат URL-QnA Maker поддерживает только URL-адреса SharePoint, которые создаются для общего доступа и имеют формат HTTPS://*. SharePoint. com
 
 ## <a name="add-supported-file-types-to-knowledge-base"></a>Добавить Поддерживаемые типы файлов в базу знаний
 

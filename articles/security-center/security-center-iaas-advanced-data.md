@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/11/2019
 ms.author: memildin
-ms.openlocfilehash: 068fb9f61b7dcb3948e4f03c284ddfa680522c85
-ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
+ms.openlocfilehash: a2970ea3f5ad360deaedd7efc82154cd3bc50337
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73907066"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617112"
 ---
 # <a name="advanced-data-security-for-sql-servers-on-azure-virtual-machines-preview"></a>Расширенная защита данных для серверов SQL Server на виртуальных машинах Azure (Предварительная версия)
 Расширенная защита данных для серверов SQL Server на виртуальных машинах Azure — это единый пакет для расширенных возможностей обеспечения безопасности SQL. Эта предварительная версия функции включает функции для определения и устранения потенциальных уязвимостей базы данных и обнаружения аномальных действий, которые могут указывать на угрозы для базы данных. 
@@ -61,7 +61,7 @@ ms.locfileid: "73907066"
 Чтобы подключить узел SQL Server к рабочей области, следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows).
 
 
-## <a name="set-up-email-notification-for-atp-alerts"></a>Настройка уведомлений по электронной почте для оповещений ATP 
+## <a name="set-up-email-notification-for-security-alerts"></a>Настройка уведомлений по электронной почте для оповещений системы безопасности 
 
 Вы можете задать список получателей уведомлений по электронной почте при создании оповещений центра безопасности. Сообщение электронной почты содержит прямую ссылку на оповещение в центре безопасности Azure со всеми релевантными сведениями. 
 
@@ -158,7 +158,7 @@ ms.locfileid: "73907066"
     * Чтобы повысить уровень безопасности, используйте рекомендации центра безопасности для главного компьютера, указанного в каждом оповещении. Это снизит риски, возникающие в будущих атаках. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Связанные материалы см. в следующей статье:
 

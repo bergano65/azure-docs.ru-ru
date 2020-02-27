@@ -5,12 +5,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Node.js в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: de60a45126539cdd39b951eeb503fc349004797a
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 1ad30a5dd7504c7e224e4b2d26d1f5a4fe1da38a
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121351"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77602875"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-nodejs-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio Code и Node.js в Azure Dev Spaces
 
@@ -61,7 +61,7 @@ az group create --name MyResourceGroup --location <region>
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
 ```cmd
-az aks create -g MyResourceGroup -n MyAKS --location <region> --disable-rbac --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-keys
 ```
 
 Создание кластера занимает несколько минут.
@@ -98,7 +98,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --disable-rbac --g
 1. Запустите эту команду (убедитесь, что ваша текущая папка — **webfrontend**):
 
     ```cmd
-    azds prep --public
+    azds prep --enable-ingress
     ```
 
 Команда `azds prep` Azure CLI создает ресурсы Docker и Kubernetes с параметрами по умолчанию:

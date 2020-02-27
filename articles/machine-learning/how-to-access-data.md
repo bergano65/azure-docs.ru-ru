@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 01/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 54ad9109a23b0fb25470987c2bc863934864b83f
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: b31d0237f04ef535fa6528d5b3a04e5ee7256e22
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77580684"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623681"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -84,13 +84,12 @@ Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ |
 
 Все методы Register относятся к классу [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) и имеют форму `register_azure_*`.
 
-Сведения, необходимые для заполнения метода `register()`, можно найти с помощью [портал Azure](https://portal.azure.com).
+Сведения, необходимые для заполнения метода `register()`, можно найти в [портал Azure](https://portal.azure.com).
+Выберите **учетные записи хранения** на левой панели и выберите учетную запись хранения, которую требуется зарегистрировать. На странице **Обзор** содержатся такие сведения, как имя учетной записи, контейнер и имя общего файлового ресурса. 
 
-1. Выберите **учетные записи хранения** на левой панели и выберите учетную запись хранения, которую требуется зарегистрировать. 
-2. Сведения, такие как имя учетной записи, контейнер и имя общей папки, можно найти на странице **Обзор** . 
-3. Чтобы получить сведения о проверке подлинности, например ключ учетной записи или маркер SAS, перейдите в **раздел ключи доступа** на панели **Параметры** . 
+* Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к **разделу ключи учетной записи** на панели **Параметры** . 
 
-4. Для элементов субъекта-службы, таких как, идентификатор клиента и идентификатор пользователя, перейдите на страницу **обзора** **Регистрация приложений**. 
+* В качестве элементов субъекта-службы, таких как, идентификатор клиента и клиентский идентификатор, перейдите к **Регистрация приложений** и выберите приложение, которое требуется использовать. На соответствующей странице **обзора** будут содержаться эти элементы.
 
 > [!IMPORTANT]
 > Если ваша учетная запись хранения находится в виртуальной сети, поддерживается только создание больших двоичных объектов, файловых ресурсов, ADLS Gen 1 и ADLS Gen 2 **с помощью пакета SDK** . Чтобы предоставить рабочей области доступ к вашей учетной записи хранения, задайте для параметра `grant_workspace_access` значение `True`.
@@ -137,7 +136,7 @@ file_datastore = Datastore.register_azure_file_share(workspace=ws,
 
 #### <a name="azure-data-lake-storage-generation-2"></a>Поколение Azure Data Lake Storage 2
 
-Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals). Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Чтобы использовать субъект-службу, необходимо [зарегистрировать приложение](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) и задать назначения ролей для чтения и доступа к данным. Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
 
 Следующий код создает и регистрирует хранилище данных `adlsgen2_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к файловой системе `test` в учетной записи хранения `account_name`, используя предоставленные учетные данные субъекта-службы.
 
@@ -177,7 +176,7 @@ adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
 
 * Для элементов проверки подлинности, таких как ключ учетной записи или маркер SAS, перейдите к **разделу ключи учетной записи** на панели **Параметры** . 
 
-* Для элементов субъекта-службы, таких как, идентификатор клиента и идентификатор пользователя, перейдите на страницу **обзора** **Регистрация приложений**. 
+* В качестве элементов субъекта-службы, таких как, идентификатор клиента и клиентский идентификатор, перейдите к **Регистрация приложений** и выберите приложение, которое требуется использовать. На соответствующей странице **обзора** будут содержаться эти элементы. 
 
 В следующем примере показано, как выглядит форма при создании хранилища BLOB-объектов Azure. 
     

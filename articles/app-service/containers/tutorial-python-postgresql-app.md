@@ -1,5 +1,5 @@
 ---
-title: Руководство. использованию приложения Python в Linux с PostgreSQL
+title: Руководство по использованию приложения Python в Linux с PostgreSQL
 description: Узнайте, как создать приложение Python в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом учебнике используется Django.
 ms.devlang: python
 ms.topic: tutorial
@@ -8,14 +8,15 @@ ms.custom:
 - mvc
 - seodec18
 - seo-python-october2019
-ms.openlocfilehash: 3aa5b5085a6120ca513f0aeba344e7f541f0fd72
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+- cli-validate
+ms.openlocfilehash: 13431b62e64774a4c31cf95200def3ba77f973d7
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76713409"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77523943"
 ---
-# <a name="tutorial-run-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство. Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure
+# <a name="tutorial-run-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure
 
 [Служба приложений Azure](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Узнайте, как подключить управляемое данными веб-приложение Python (Django) к Базе данных Azure для PostgreSQL, а также как развернуть и запустить приложение в Службе приложений Azure.
 

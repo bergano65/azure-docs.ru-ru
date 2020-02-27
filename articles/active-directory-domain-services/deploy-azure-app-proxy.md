@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/6/2019
 ms.author: iainfou
-ms.openlocfilehash: c0fcb8c2c5f9afa7fabe2ffa63a715ec24aa4a26
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: c6e4e6a45fbbeab64184d8ae4b0684ba055d7735
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720500"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77613987"
 ---
 # <a name="deploy-azure-ad-application-proxy-for-secure-access-to-internal-applications-in-an-azure-ad-domain-services-managed-domain"></a>Развертывание AD Application Proxy Azure для безопасного доступа к внутренним приложениям в управляемом домене доменных служб Azure AD
 
@@ -28,16 +28,16 @@ ms.locfileid: "73720500"
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 
 * Активная подписка Azure.
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
-    * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure Active Directory со своей учетной записью][associate-azure-ad-tenant].
+    * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
     * Для использования AD Application Proxy Azure требуется **Лицензия на Azure AD Premium** .
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 
 ## <a name="create-a-domain-joined-windows-vm"></a>Создание присоединенной к домену виртуальной машины Windows
@@ -74,7 +74,7 @@ ms.locfileid: "73720500"
         > [!NOTE]
         > Учетная запись глобального администратора, используемая для регистрации соединителя, должна принадлежать тому же каталогу, в котором включена служба прокси приложения.
         >
-        > Например, если домен Azure AD — *contoso.com*, глобальный администратор должен `admin@contoso.com` или другой допустимый псевдоним в этом домене.
+        > Например, если домен Azure AD — *aaddscontoso.com*, глобальный администратор должен `admin@aaddscontoso.com` или другой допустимый псевдоним в этом домене.
 
    * Если для виртуальной машины, в которой устанавливается соединитель, включена конфигурация усиленной безопасности Internet Explorer, экран регистрации может быть заблокирован. Чтобы разрешить доступ, следуйте инструкциям в сообщении об ошибке или отключите усиленную безопасность Internet Explorer во время процесса установки.
    * Если регистрация соединителя завершается неудачно, см. раздел [Устранение неполадок прокси приложения](../active-directory/manage-apps/application-proxy-troubleshoot.md).
@@ -99,16 +99,16 @@ ms.locfileid: "73720500"
 
 Используйте [Get-ADComputer][Get-ADComputer] , чтобы получить параметры для компьютера, на котором установлен соединитель Azure AD application proxy. На виртуальной машине управления, присоединенной к домену, и войдите в систему под учетной записью пользователя, которая является членом группы *администраторов контроллера домена Azure AD* , выполните следующие командлеты.
 
-В следующем примере показано получение сведений о учетной записи компьютера с именем *appproxy.contoso.com*. Укажите собственное имя компьютера для виртуальной машины Azure AD Application Proxy, настроенной на предыдущих шагах.
+В следующем примере показано получение сведений о учетной записи компьютера с именем *appproxy.aaddscontoso.com*. Укажите собственное имя компьютера для виртуальной машины Azure AD Application Proxy, настроенной на предыдущих шагах.
 
 ```powershell
-$ImpersonatingAccount = Get-ADComputer -Identity appproxy.contoso.com
+$ImpersonatingAccount = Get-ADComputer -Identity appproxy.aaddscontoso.com
 ```
 
-Для каждого сервера приложений, на котором работают приложения AD Application Proxy Azure, используйте командлет PowerShell [Set-ADComputer][Set-ADComputer] , чтобы настроить KCD на основе ресурсов. В следующем примере для соединителя Azure AD Application Proxy предоставляются разрешения на использование компьютера *appserver.contoso.com* :
+Для каждого сервера приложений, на котором работают приложения AD Application Proxy Azure, используйте командлет PowerShell [Set-ADComputer][Set-ADComputer] , чтобы настроить KCD на основе ресурсов. В следующем примере для соединителя Azure AD Application Proxy предоставляются разрешения на использование компьютера *appserver.aaddscontoso.com* :
 
 ```powershell
-Set-ADComputer appserver.contoso.com -PrincipalsAllowedToDelegateToAccount $ImpersonatingAccount
+Set-ADComputer appserver.aaddscontoso.com -PrincipalsAllowedToDelegateToAccount $ImpersonatingAccount
 ```
 
 При развертывании нескольких соединителей Azure AD Application Proxy необходимо настроить KCD на основе ресурсов для каждого экземпляра соединителя.

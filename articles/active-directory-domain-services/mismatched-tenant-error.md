@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: iainfou
-ms.openlocfilehash: 601574cc2a478dc53a261cfcb074e43a556dd4c0
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 76dc964b7fe7f5e8acfcfb03b2e89bebb2caa176
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979514"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77613384"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-ad-domain-services-managed-domains"></a>Устранение ошибок несоответствия каталога для существующих управляемых доменов доменных служб Azure AD
 
@@ -26,7 +26,7 @@ ms.locfileid: "75979514"
 
 ## <a name="what-causes-this-error"></a>В чем причина этой ошибки?
 
-Несоответствующая ошибка каталога возникает, когда управляемый домен AD DS Azure и виртуальная сеть принадлежат двум разным клиентам Azure AD. Например, у вас может быть управляемый домен AD DS Azure с именем *aadds.contoso.com* , работающий в клиенте Azure AD contoso. Однако виртуальная сеть Azure для управляемого домена входит в состав клиента Azure AD Fabrikam.
+Несоответствующая ошибка каталога возникает, когда управляемый домен AD DS Azure и виртуальная сеть принадлежат двум разным клиентам Azure AD. Например, у вас может быть управляемый домен AD DS Azure с именем *aaddscontoso.com* , работающий в клиенте Azure AD contoso. Однако виртуальная сеть Azure для управляемого домена входит в состав клиента Azure AD Fabrikam.
 
 Azure использует управление доступом на основе ролей (RBAC) для ограничения доступа к ресурсам. При включении AD DS Azure в клиенте Azure AD хэши учетных данных синхронизируются с управляемым доменом. Для этой операции требуется, чтобы вы были администратором клиента для каталога Azure AD, а доступ к учетным данным должен контролироваться. Для развертывания ресурсов в виртуальной сети Azure и управления трафиком необходимо иметь права администратора в виртуальной сети, в которой развертывается AD DS Azure.
 
@@ -58,6 +58,6 @@ Azure использует управление доступом на основ
 * [Удалите управляемый домен AD DS Azure](delete-aadds.md) из существующего каталога Azure AD. [Создайте заменяющий управляемый домен azure AD DS](tutorial-create-instance.md) в том же каталоге Azure AD, что и виртуальная сеть, которую вы хотите использовать. Когда все будет готово, присоедините все компьютеры, которые ранее присоединились к удаленному домену, к повторно созданному управляемому домену.
 * [Переместите подписку Azure](../cost-management-billing/manage/billing-subscription-transfer.md) , содержащую виртуальную сеть, в тот же каталог Azure AD, что и управляемый домен Azure AD DS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об устранении неполадок, связанных с AD DS Azure, см. в разделе [руководство по устранению неполадок](troubleshoot.md).

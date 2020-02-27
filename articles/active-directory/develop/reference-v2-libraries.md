@@ -17,12 +17,12 @@ ms.date: 07/25/2019
 ms.author: negoe
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 09d0def2ebd012670b9502f6f9b02ad18a02922d
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 9d2df175fa9d1ed33eb17ae85e01a4fd7a24e728
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77160413"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77611936"
 ---
 # <a name="microsoft-identity-platform-authentication-libraries"></a>Библиотеки проверки подлинности платформы Microsoft Identity
 
@@ -53,7 +53,7 @@ ms.locfileid: "77160413"
 
 Используйте библиотеки проверки подлинности клиента, чтобы получить маркер для вызова защищенного веб-API.
 
-| Платформа | Библиотека | Скачивание | Исходный код | Образец | Справочник | Основная документация | Схема действий |
+| Платформа | Библиотека | Загрузить | Исходный код | Пример | Ссылки | Основная документация | Путеводитель |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | ![JavaScript](media/sample-v2-code/logo_js.png) | MSAL.js  | [NPM](https://www.npmjs.com/package/msal) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/README.md) |  [Одностраничное приложение](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) | [Справочные материалы](https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/) | [Основные документы](msal-overview.md)| [План выхода продуктов](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
 |![Angular JS](media/sample-v2-code/logo_angular.png) | MSAL для Angular JS | [NPM](https://www.npmjs.com/package/@azure/msal-angularjs) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md) |  |  | |
@@ -68,7 +68,7 @@ ms.locfileid: "77160413"
 
 Используйте библиотеки по промежуточного слоя для защиты веб-приложений и веб-API. Веб-приложения или веб-API, написанные с помощью ASP.NET или ASP.NET Core, используют библиотеки по промежуточного слоя.
 
-| Платформа | Библиотека | Скачивание | Исходный код | Образец | Справочник
+| Платформа | Библиотека | Загрузить | Исходный код | Пример | Ссылки
 | --- | --- | --- | --- | --- | --- |
 | ![.NET](media/sample-v2-code/logo_NET.png) ![.NET Core](media/sample-v2-code/logo_NETcore.png) | Безопасность ASP.NET |[NuGet](https://www.nuget.org/packages/Microsoft.AspNet.Mvc/) |[GitHub](https://github.com/aspnet/AspNetCore) |[Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочник по API для ASP.NET](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0) |
 | ![.NET](media/sample-v2-code/logo_NET.png)| Расширения модели идентификации для .NET| |[GitHub](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | [Приложение MVC](quickstart-v2-aspnet-webapp.md) |[Справочные материалы](https://docs.microsoft.com/dotnet/api/overview/azure/activedirectory/client?view=azure-dotnet) |
@@ -91,9 +91,9 @@ ms.locfileid: "77160413"
 
 ## <a name="compatible-client-libraries"></a>Совместимые клиентские библиотеки
 
-| Платформа | Имя библиотеки | Проверенные версии | Исходный код | Образец |
+| Платформа | Имя библиотеки | Проверенные версии | Исходный код | Пример |
 |:---:|:---:|:---:|:---:|:---:|
-|![JavaScript](media/sample-v2-code/logo_js.png)|[Hello.js](https://adodson.com/hello.js/) | Версия 1.13.5 |[Hello.js](https://github.com/MrSwitch/hello.js) |[Безопасная проверка пароля](https://github.com/Azure-Samples/active-directory-javascript-graphapi-web-v2) |
+|![JavaScript](media/sample-v2-code/logo_js.png)|[Hello.js](https://adodson.com/hello.js/) | Версия 1.13.5 |[Hello.js](https://github.com/MrSwitch/hello.js) |[Безопасная проверка пароля](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
 | ![Java](media/sample-v2-code/logo_java.png) | [Scribe Java](https://github.com/scribejava/scribejava) | [Версия 3.2.0](https://github.com/scribejava/scribejava/releases/tag/scribejava-3.2.0) | [ScribeJava](https://github.com/scribejava/scribejava/) | |
 | ![Java](media/sample-v2-code/logo_java.png) | [Библиотека глуу OpenID Connect Connect](https://github.com/GluuFederation/oxAuth) | [Версия 3.0.2](https://github.com/GluuFederation/oxAuth/releases/tag/3.0.2) | [Библиотека глуу OpenID Connect Connect](https://github.com/GluuFederation/oxAuth) | |
 | ![Python](media/sample-v2-code/logo_python.png) | [Запросы — Оауслиб](https://github.com/requests/requests-oauthlib) | [Версия 1.2.0](https://github.com/requests/requests-oauthlib/releases/tag/v1.2.0) | [Запросы — Оауслиб](https://github.com/requests/requests-oauthlib) | |

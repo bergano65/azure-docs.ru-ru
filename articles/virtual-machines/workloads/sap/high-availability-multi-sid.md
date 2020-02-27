@@ -3,8 +3,8 @@ title: Создание конфигурации с несколькими ид�
 description: Руководство по обеспечению высокого уровня доступности для конфигурации SAP NetWeaver с несколькими ИД безопасности на виртуальных машинах Windows
 services: virtual-machines-windows, virtual-network, storage
 documentationcenter: saponazure
-author: goraco
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -14,14 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/09/2016
-ms.author: goraco
+ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2726e9e5de53607d6bb766bf1506d6a09d714701
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 8c7c6b797605da2884c6bffc47e593ffc9a3faca
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647600"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77615132"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -455,7 +455,7 @@ ms.locfileid: "75647600"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, как описано в статье [о высоком уровне доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide] , как показано на этой схеме.
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]

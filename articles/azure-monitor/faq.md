@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/23/2020
-ms.openlocfilehash: 33af9c8f3fbe4de57d65be432f249d4aeb5d3e27
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 169cc3f6a195a7339ab33eb9f00d9937451a93e0
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77485341"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620454"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor часто задаваемые вопросы
 
@@ -56,7 +56,7 @@ Azure Monitor собирает данные из различных источн
 Azure Monitor собирает данные из различных источников в [журналы](platform/data-platform-logs.md) или [метрики](platform/data-platform-metrics.md). Каждый тип данных имеет свои собственные относительные преимущества, каждый из которых поддерживает определенный набор функций в Azure Monitor. Для каждой подписки Azure существует одна база данных метрик, в то время как вы можете создать несколько Log Analytics рабочих областей для сбора журналов в зависимости от ваших требований. См. статью [Azure Monitor Data Platform](platform/data-platform.md).
 
 ### <a name="is-there-a-maximum-amount-of-data-that-i-can-collect-in-azure-monitor"></a>Существует ли максимальный объем данных, которые можно получить в Azure Monitor?
-Количество данных метрик, которые можно собираются, не ограничено, но эти данные хранятся не более 93 дней. См. раздел [Хранение метрик](platform/data-platform-metrics.md#retention-of-metrics). Объем данных журнала, которые можно собирать, не ограничен, но на него может влиять ценовая категория, выбранная для Log Analytics рабочей области. См. сведения о [ценах](https://azure.microsoft.com/pricing/details/monitor/).
+Количество данных метрик, которые можно собираются, не ограничено, но эти данные хранятся не более 93 дней. См. раздел [Хранение метрик](platform/data-platform-metrics.md#retention-of-metrics). Не существует ограничения на объем данных журнала, которые можно получить, но на это может повлиять ценовая категория, выбранная для Log Analytics рабочей области. См. сведения о [ценах](https://azure.microsoft.com/pricing/details/monitor/).
 
 ### <a name="how-do-i-access-data-collected-by-azure-monitor"></a>Разделы справки получить доступ к данным, собранным Azure Monitor?
 Аналитические сведения и решения предоставляют пользовательский интерфейс для работы с данными, хранящимися в Azure Monitor. Вы можете работать непосредственно с данными журнала, используя запрос журнала, написанный на языке запросов Kusto (ККЛ). В портал Azure можно создавать и выполнять запросы и интерактивно анализировать данные с помощью Log Analytics. Анализируйте метрики в портал Azure с обозреватель метрик. См. статью [анализ данных журнала в Azure Monitor](log-query/log-query-overview.md) и начало [работы с обозреватель метрик Azure](platform/metrics-getting-started.md).

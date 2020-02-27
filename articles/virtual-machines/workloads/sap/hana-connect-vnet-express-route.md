@@ -3,22 +3,22 @@ title: Подключение, настроенное из виртуально�
 description: Подключение, настроенное из виртуальной сети для использования SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
-author: RicksterCDN
-manager: gwallace
+author: msjuergent
+manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/25/2019
-ms.author: rclaus
+ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5fbcc6ace4923d8aa2d938cd9fffe7a16c4fc1ff
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f7ac8e69c4e149fdd0f365e19f7a0282a547af43
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74206742"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617188"
 ---
 # <a name="connect-a-virtual-network-to-hana-large-instances"></a>Подключение виртуальной сети к крупным экземплярам HANA
 
@@ -157,6 +157,6 @@ New-AzVirtualNetworkGatewayConnection -Name $myConnectionName `
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 - [Дополнительные требования к сети для крупных экземпляров HANA](hana-additional-network-requirements.md)

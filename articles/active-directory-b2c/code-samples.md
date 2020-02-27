@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 69e6b7beecb95c0e89b60640353155fc7802a881
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: d0a5790e84364bf34072977d5d3976fd880996bb
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982948"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620589"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
 
@@ -39,7 +39,6 @@ ms.locfileid: "76982948"
 | [dotnet-webapp-and-webapi](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi) | Веб-приложение .NET для вызова веб-API .NET (оба компонента защищены с помощью Azure AD B2C). |
 | [dotnetcore-webapp](https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapp) | Веб-приложение ASP.NET Core для входа пользователей с помощью Azure AD B2C, получения маркера доступа с помощью MSAL.NET и вызова API. |
 | [openidconnect-nodejs](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS) | Приложение Node.js для быстрой и простой настройки веб-приложения с помощью компонента "Экспресс" и OpenID Connect. |
-| [javascript-nodejs-webapp](https://github.com/AzureADQuickStarts/active-directory-b2c-javascript-nodejs-webapp) | Сервер Node.js для быстрой и простой настройки службы REST API с помощью протокола OAuth2. |
 | [javascript-nodejs-webapi](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi) | Небольшой веб-API Node.js для защиты веб-API и принятия маркеров доступа B2C с помощью passport.js в Azure AD B2C. |
 | [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/master/README_B2C.md) | Демонстрация интеграции (на уровне B2C) платформы удостоверений Майкрософт с веб-приложением Python.  |
 

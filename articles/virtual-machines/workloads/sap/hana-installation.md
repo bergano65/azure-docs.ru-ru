@@ -4,7 +4,7 @@ description: Установка SAP HANA на SAP HANA в Azure (крупные 
 services: virtual-machines-linux
 documentationcenter: ''
 author: hermanndms
-manager: gwallace
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c08036f16cd30a1c10963accd8d486d77c9683ee
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: ca59305b22fcf1e81ef518612910731cb6edea5d
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264175"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617091"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -124,7 +124,7 @@ ms.locfileid: "76264175"
 В результате потребуется отдельный сервер времени, который будут использовать серверы приложений SAP, работающие на виртуальных машинах Azure, и экземпляры баз данных SAP HANA, работающие на HANA (крупные экземпляры). Для инфраструктуры хранения в стеках крупных экземпляров время синхронизируется с серверами NTP.
 
 
-## <a name="networking"></a>Работа в сети
+## <a name="networking"></a>Сеть
 В этом разделе предполагается, что вы следовали рекомендациям по проектированию виртуальных сетей Azure и их подключению к крупным экземплярам HANA, приведенным в следующих документах:
 
 - [Обзор и описание архитектуры SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
@@ -134,7 +134,7 @@ ms.locfileid: "76264175"
 
 Дополнительные сведения о Ethernet по архитектуре см. в разделе [Поддерживаемые сценарии для крупных экземпляров HANA](hana-supported-scenario.md).
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
 Структура хранилища для SAP HANA в Azure (крупные экземпляры) настраивается SAP HANA в `service management` Azure с помощью рекомендуемых рекомендаций SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
 

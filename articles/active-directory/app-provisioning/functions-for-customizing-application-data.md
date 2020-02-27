@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 02/05/2020
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd78c78a711b64c58290f09eb2ee52263375002f
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: cc41a18063202bfefb9ddf7238de17fc691984af
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77522515"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77612136"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -29,16 +29,16 @@ ms.locfileid: "77522515"
 
 * Все выражение должно определяться функциями, состоящими из имени и следующих за ним в скобках аргументов: <br>
   *FunctionName(`<<argument 1>>`,`<<argument N>>`)*
-* Функции можно вкладывать одну в другую. Пример: <br> *FunctionOne(FunctionTwo(`<<argument1>>`))*
+* Функции можно вкладывать одну в другую. Например: <br> *FunctionOne(FunctionTwo(`<<argument1>>`))*
 * В функцию можно передавать следующие три типа аргументов.
   
   1. Атрибуты, которые должны быть заключены в квадратные скобки. Например: [имя_атрибута].
-  2. Строковые константы, которые должны быть заключены в двойные кавычки. Например: "США".
+  2. Строковые константы, которые заключаются в двойные кавычки. Например: "США".
   3. Другие функции. Например: Функтиононе (`<<argument1>>`, Функтионтво (`<<argument2>>`))
 * Если в строковых константах необходимо использовать обратную косую черту (\) или кавычки (""), такие символы следует экранировать обратной косой чертой (\). Например: "название компании: \\" Contoso\\""
 
 ## <a name="list-of-functions"></a>Список функций
-[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;[FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Guid](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [NumFromDate](#numfromdate) &nbsp;&nbsp;&nbsp;&nbsp;[RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)&nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
+[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [BitAnd](#bitand) &nbsp;&nbsp;&nbsp;&nbsp; [CBool](#cbool) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToBase64](#converttobase64) &nbsp;&nbsp;&nbsp;&nbsp; [ConvertToUTF8Hex](#converttoutf8hex) &nbsp;&nbsp;&nbsp;&nbsp; [Count](#count) &nbsp;&nbsp;&nbsp;&nbsp; [CStr](#cstr) &nbsp;&nbsp;&nbsp;&nbsp; [DateFromNum](#datefromnum) &nbsp;[FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Guid](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [IIF](#iif) &nbsp;&nbsp;&nbsp;&nbsp;[InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring) &nbsp;&nbsp;&nbsp;&nbsp; [Item](#item) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [RemoveDuplicates](#removeduplicates) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)&nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
 
 ---
 ### <a name="append"></a>Append
@@ -137,7 +137,7 @@ ConvertToUTF8Hex("Hello world!")
 Возвращает 48656C6C6F20776F726C6421.
 
 ---
-### <a name="count"></a>Count
+### <a name="count"></a>Число
 **Функция:**<br> Count (атрибут)
 
 **Описание.**<br> Функция Count возвращает количество элементов в атрибуте с несколькими значениями.
@@ -158,7 +158,7 @@ ConvertToUTF8Hex("Hello world!")
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **value** |Обязательно | Числовой, ссылочный или логический | может быть числовым значением, ссылочным атрибутом или логическим значением. |
+| **value** |Обязательно | Числовой, ссылочный или логический | может быть числом, ссылочным атрибутом или логическим значением. |
 
 **Пример**.<br>
 CStr([dn])                                                            
@@ -202,6 +202,23 @@ DateFromNum(129699324000000000)
 **Описание.**<br> Функция Guid создает случайный идентификатор GUID.
 
 ---
+### <a name="iif"></a>IIF
+**Функция:**<br> IIF (Condition, true, значение для false)
+
+**Описание.**<br> Функция IIF возвращает один из наборов возможных значений на основе заданного условия.
+
+**Параметры:**<br> 
+
+| Имя | Обязательно/повторяется | Тип | Примечания |
+| --- | --- | --- | --- |
+| **выполняет** |Обязательно |Переменная или выражение |Любое значение или выражение, которое может вычисляться как true или false. |
+| **True** |Обязательно |Переменная или строка | возвращаемое значение, если условие принимает значение true. |
+| **Значение для false** |Обязательно |Переменная или строка |возвращаемое значение, если условие принимает значение false.|
+
+**Пример**.<br>
+IIF ([страна] = "USA", [страна], [Отдел])
+
+---
 ### <a name="instr"></a>InStr
 **Функция:**<br> InStr (значение1, значение2, начало, Компаретипе)
 
@@ -214,7 +231,7 @@ DateFromNum(129699324000000000)
 | **Значение1** |Обязательно |String |Строка для поиска |
 | **value2** |Обязательно |String |Строка для поиска |
 | **start** |Необязательно |Целое число |Начальная Расположение для поиска подстроки|
-| **компаретипе** |Необязательно |Перечисление. |Может быть Вбтексткомпаре или Вббинарикомпаре |
+| **компаретипе** |Необязательно |Enum |Может быть Вбтексткомпаре или Вббинарикомпаре |
 
 **Пример**.<br>
 InStr("The quick brown fox","quick")                                                                             
@@ -293,7 +310,7 @@ Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager])
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **версию** |Обязательно |attribute |Атрибут с несколькими значениями для поиска |
+| **версию** |Обязательно |Атрибут |Атрибут с несколькими значениями для поиска |
 | **index** |Обязательно |Целое число | Индексирование элемента в строке с несколькими значениями|
 
 **Пример**.<br>
@@ -303,7 +320,7 @@ Item ([proxyAddresses], 1)
 ### <a name="join"></a>Join
 **Функция:**<br> Join(separator, source1, source2, …)
 
-**Описание.**<br> Функция Join() схожа с функцией Append() за исключением того, что она может объединять несколько строковых значений **source** в одну строку. При этом каждое значение разделяется строкой **separator**.
+**Описание.**<br> Функция Join() действует аналогично функции Append(), но может объединять несколько **исходных** строковых значений в одну строку, а между значениями будет строка **разделителя**.
 
 Если одно из исходных значений является атрибутом с несколькими значениями, все значения в этом атрибуте будут объединены, а между ними будет значение разделителя.
 
@@ -327,7 +344,7 @@ Item ([proxyAddresses], 1)
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **String** |Обязательно |attribute | Строка, из которой возвращаются символы |
+| **String** |Обязательно |Атрибут | Строка, из которой возвращаются символы |
 | **NumChars** |Обязательно |Целое число | Число, определяющее количество символов, возвращаемых с начала (слева) строки|
 
 **Пример**.<br>
@@ -345,7 +362,7 @@ Left ("Джон Петров", 3)
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
 | **источник** |Обязательно |String |Как правило, имя атрибута. |
-| **start** |Обязательно |integer |Индекс положения в строке **source**, откуда должна начинаться подстрока. Первый символ в строке будет иметь индекс 1, второй символ — индекс 2 и т. д. |
+| **start** |Обязательно |integer |Индекс положения начала подстроки в **исходной** строке. Первый символ в строке будет иметь индекс 1, второй символ — индекс 2 и т. д. |
 | **length** |Обязательно |integer |Длина подстроки. Если длина превышает размер **исходной** строки, функция возвращает подстроку из **начала** индекса и до конца **исходной** строки. |
 
 ---
@@ -364,13 +381,13 @@ Left ("Джон Петров", 3)
 ### <a name="not"></a>Not
 **Функция:**<br> Not(источник)
 
-**Описание.**<br> Обращает логическое значение **source**. Если значение **source** равно *True*, возвращается значение *False*. В противном случае возвращает значение*True*.
+**Описание.**<br> Изменяет логическое значение **исходной строки** на обратное. Если значение **исходной строки** — "*True*", возвращает "*False*". В противном случае возвращает "*True*".
 
 **Параметры:**<br> 
 
 | Имя | Обязательно/повторяется | Тип | Примечания |
 | --- | --- | --- | --- |
-| **источник** |Обязательно |Логическая строка |Предполагаемые значения **source**: True или False. |
+| **источник** |Обязательно |Логическая строка |Предполагаемые **исходные** значения — "True" или "False". |
 
 ---
 ### <a name="numfromdate"></a>NumFromDate
@@ -417,12 +434,12 @@ RemoveDuplicates([proxyAddresses])
 **Описание.**<br>
 Заменяет значения в пределах строки. Ее работа зависит от указанных параметров.
 
-* Если указаны параметры **oldValue** и **replacementValue**:
+* Если указаны параметры **старое_значение** и **заменяющее_значение**:
   
   * заменяет все вхождения параметра **oldValue** в **source** параметром **replacementValue**.
-* Если указаны параметры **oldValue** и **template**:
+* Если указаны параметры **старое_значение** и **шаблон**:
   
-  * заменяет все экземпляры **oldValue** в **template** значением **source**.
+  * Заменяет все вхождения **старого значения** в **шаблоне** на **исходное** значение
 * Если указаны параметры **regexPattern** и **replacementValue**:
 
   * функция применяет параметр **regexPattern** к строке **source** и вы можете использовать имена групп регулярных выражений для создания строки для параметра **replacementValue**.
@@ -440,7 +457,7 @@ RemoveDuplicates([proxyAddresses])
 | --- | --- | --- | --- |
 | **источник** |Обязательно |String |Как правило, имя атрибута из объекта **source**. |
 | **старое_значение** |Необязательно |String |Значение для замены в **source** или **template**. |
-| **шаблон_регулярного_выражения** |Необязательно |String |Шаблон регулярного выражения для значения, заменяемого в **source**. Или, при использовании **replacementPropertyName**, шаблон для извлечения значения из **replacementPropertyName**. |
+| **шаблон_регулярного_выражения** |Необязательно |String |Шаблон регулярного выражения для значения, которое должно быть заменено в **источнике**. Или, при использовании **replacementPropertyName**, шаблон для извлечения значения из **replacementPropertyName**. |
 | **имя_группы_регулярного_выражения** |Необязательно |String |Имя группы в **regexPattern**. Значение этой группы будет извлечено из **replacementPropertyName** как **replacementValue**, только если используется **replacementPropertyName**. |
 | **значение_замены** |Необязательно |String |Новое значение для замены старого. |
 | **имя_атрибута_замены** |Необязательно |String |Имя атрибута, используемого для значения замены. |
@@ -479,7 +496,7 @@ RemoveDuplicates([proxyAddresses])
 | **[appRoleAssignments]** |Обязательно |String |Объект **[appRoleAssignments]** . |
 
 ---
-### <a name="split"></a>разделение;
+### <a name="split"></a>Разделить
 **Функция:**<br> Split(source, delimiter)
 
 **Описание.**<br> Разделяет строку на многозначный массив с помощью определенного символа разделителя.
@@ -507,7 +524,7 @@ RemoveDuplicates([proxyAddresses])
 ### <a name="switch"></a>Параметр
 **Функция:**<br> Switch(source, defaultValue, key1, value1, key2, value2, …)
 
-**Описание.**<br> Если значение **source** соответствует **key**, возвращается **value** для этого параметра **key**. Если значение **source** не соответствует ни одному параметру, то возвращается **defaultValue**.  Параметры **key** и **value** должны всегда быть парными. Для функции необходимо всегда использовать четное количество параметров. Функция не должна использоваться для ссылочных атрибутов, таких как диспетчер. 
+**Описание.**<br> Когда значение **источника** совпадает с **ключом**, возвращает**значение** для этого **ключа**. Если значение**источника** не совпадает ни с одним ключом, возвращает **значение по умолчанию**.  Параметры **key** и **value** должны всегда быть парными. Для функции необходимо всегда использовать четное количество параметров. Функция не должна использоваться для ссылочных атрибутов, таких как диспетчер. 
 
 **Параметры:**<br> 
 
@@ -645,7 +662,7 @@ Split([extensionAttribute5], ",")
 ### <a name="replace-a-value-based-on-predefined-set-of-options"></a>Замена значения на основе предопределенного набора параметров
 
 Необходимо определить часовой пояс пользователя на основе кода государства, сохраненного в Azure AD. <br>
-Если код государства не совпадает с предопределенными параметрами, используйте значение по умолчанию «Australia/Sydney».
+Если код состояния не совпадает с предопределенными параметрами, использовать значение по умолчанию — Australia/Sydney.
 
 **Выражение:** <br>
 `Switch([state], "Australia/Sydney", "NSW", "Australia/Sydney","QLD", "Australia/Brisbane", "SA", "Australia/Adelaide")`

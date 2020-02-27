@@ -3,8 +3,8 @@ title: Номера SKU для SAP HANA в Azure (крупные экземпл�
 description: Номера SKU для SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
-author: RicksterCDN
-manager: gwallace
+author: msjuergent
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,19 +13,19 @@ ms.workload: infrastructure
 ms.date: 02/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f31d742dc78e16d4786216259a8fce5349152c63
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: aad4e3ff3df8b4aeecbbbee7883ba383b9fd0d9c
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77591257"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617263"
 ---
 # <a name="available-skus-for-hli"></a>Доступные номера SKU для HLI
 
 SAP HANA в службе Azure (крупные экземпляры), основанной на метках версии 3, можно найти в нескольких конфигурациях в следующих регионах Azure:
 
-- западная часть США
-- Восточная часть США
+- Запад США
+- Восток США
 - Восточная Австралия
 - Юго-Восточная часть Австралии
 - Западная Европа
@@ -36,7 +36,7 @@ SAP HANA в службе Azure (крупные экземпляры), основ
 SAP HANA в службе Azure (крупные экземпляры), основанной на метках версии 4, можно найти в нескольких конфигурациях в следующих регионах Azure:
 
 - западная часть США 2
-- Восточная часть США
+- Восток США
 - Центрально-южная часть США
 - Западная Европа
 - Северная Европа

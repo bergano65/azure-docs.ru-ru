@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 940ac7b0a2720283b669fc7ea5a9dbc163ddbe64
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 5681efc202df511745532e4a314e88b319e9880a
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77460217"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623410"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты служб Azure Cosmos DB
 
@@ -26,7 +26,7 @@ ms.locfileid: "77460217"
 | Максимальное число записей на контейнер ([выделенный режим подготовки пропускной способности](databases-containers-items.md#azure-cosmos-containers)) | 1 000 000 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) . |
 | Максимальное число получателей в базе данных ([подготовленный режим с общей пропускной способностью](databases-containers-items.md#azure-cosmos-containers)) | 1 000 000 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) . |
 | Максимальное число получателей/с (логический) ключа секции | 10 000 |
-| Максимальный объем хранилища для всех элементов на (логический) ключ секции| 10 ГБ |
+| Максимальный объем хранилища для всех элементов на (логический) ключ секции| 20 ГБ |
 | Максимальное число уникальных (логических) ключей разделов | Без ограничений |
 | Максимальный объем хранилища на контейнер | Без ограничений |
 | Максимальный объем хранилища на базу данных | Без ограничений |

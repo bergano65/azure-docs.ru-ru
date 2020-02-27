@@ -3,21 +3,21 @@ title: Миграция пакетов служб SSIS в управляемый
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как перенести пакеты и проекты SQL Server Integration Services (SSIS) в управляемый экземпляр базы данных SQL Azure с помощью Azure Database Migration Service или Помощник по миграции данных.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: 22f3e6a0e4c041024e826a7ed724d788ce77da62
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 02/20/2020
+ms.openlocfilehash: a0669724888f02672d18ef9e8f725eef1c744f90
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751219"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650970"
 ---
 # <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-database-managed-instance"></a>Миграция пакетов SQL Server Integration Services в управляемый экземпляр базы данных SQL Azure
 Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной базы данных SSISDB, размещенной SQL Server, в целевую SSISDB, размещенную в управляемом экземпляре SQL Azure, можно использовать Azure Database Migration Service.
@@ -33,7 +33,7 @@ ms.locfileid: "75751219"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 

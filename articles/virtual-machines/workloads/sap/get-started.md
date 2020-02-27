@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/25/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d6efad8160115347469fb387108812ddc9adecc1
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: c9d287d5bfc091fcbbff46095da5458fa08de73d
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601934"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77624167"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -34,23 +34,20 @@ ms.locfileid: "77601934"
 Размещение сценариев рабочей нагрузки SAP в Azure также может привести к созданию требований интеграции удостоверений и единого входа. Такая ситуация может возникать, если вы используете Azure Active Directory (Azure AD) для подключения различных компонентов SAP и программного обеспечения SAP или платформы как услуги (PaaS). Список сценариев интеграции и единого входа с сущностями Azure AD и SAP описан в разделе "Интеграция AAD SAP и единый вход".
 
 ## <a name="changes-to-the-sap-workload-section"></a>Изменения в разделе рабочей нагрузки SAP
-Изменения в документах в разделе "Рабочая нагрузка SAP в Azure" перечислены в конце этой статьи.
+Изменения в документах в разделе "Рабочая нагрузка SAP в Azure" перечислены в конце этой статьи. Записи в журнале изменений хранятся около 180 дней.
 
+## <a name="you-want-to-know"></a>Вы хотите получить сведения
+Если у вас есть определенные вопросы, мы будем указывать на конкретные документы или последовательности в этом разделе начальной страницы. Вы хотите получить информацию:
 
+- Какие виртуальные машины Azure и единицы крупных экземпляров HANA поддерживаются для программных версий SAP и операционных систем. Прочитайте документ [о том, какое программное обеспечение SAP поддерживается для развертывания Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-supported-product-on-azure) , для ответов и процесса поиска информации.
+- Какие сценарии развертывания SAP поддерживаются с виртуальными машинами Azure и крупными экземплярами HANA. Сведения о поддерживаемых сценариях можно найти в документах:
+    - [Рабочая нагрузка SAP в поддерживаемых сценариях виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-planning-supported-configurations)
+    - [Поддерживаемые сценарии для крупных экземпляров HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-supported-scenario)
+
+ 
 ## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
 
-Серия документов поможет вам SAP HANA в Azure (крупные экземпляры) или для коротких экземпляров HANA (крупные экземпляры). Сведения о следующих областях крупных экземпляров HANA см. в разделе:
-
-- [Основные сведения о SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
-- [Архитектура SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-architecture)
-- [Инфраструктура и подключение к SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-infrastructure-connectivity)
-- [Установка SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-installation)
-- [Высокий уровень доступности и аварийное восстановление SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery)
-- [Устранение неполадок и мониторинг SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/troubleshooting-monitoring)
-
-Следующие шаги
-
-- Ознакомьтесь [с обзором и архитектурой SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) .
+Серия документов поможет вам SAP HANA в Azure (крупные экземпляры) или для коротких экземпляров HANA (крупные экземпляры). Сведения о крупных экземплярах HANA см. в статье [Обзор документов и архитектура SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) и просмотрите соответствующую документацию в разделе крупные экземпляры Hana.
 
 
 
@@ -120,7 +117,9 @@ ms.locfileid: "77601934"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 02/25/2020: измените [архитектуру высокого уровня доступности и сценарии для SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios) , чтобы добавить ссылки на более новые статьи высокой доступности
 - 02/25/2020: измените [высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure на SUSE Linux Enterprise Server с Pacemaker](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms-guide-ha-ibm) для указания документа, описывающего доступ к общедоступной конечной точке с помощью стандартного балансировщика нагрузки Azure.
+- 02/21/2020: Полная редакция статьи [SAP ASE Azure Virtual Machines Deployment для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sapase)
 - 02/21/2020: измените [SAP HANA конфигурацию хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) , чтобы представить новую рекомендацию в чередующемся размере для/Hana/Data и добавить параметр планировщика ввода-вывода.
 - 02/21/2020: изменения в документах крупных экземпляров HANA для представления новых сертифицированных номеров SKU S224 и S224m
 - 02/21/2020: изменение [высокой доступности для SAP NetWeaver на](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel) виртуальных машинах Azure в RHEL и [Azure для SAP NetWeaver на RHEL с Azure NetApp Files](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files) для настройки ограничений кластера для архитектуры сервера постановки в очередь репликации 2 (ENSA2)

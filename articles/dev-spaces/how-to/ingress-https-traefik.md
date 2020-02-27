@@ -5,18 +5,18 @@ ms.date: 12/10/2019
 ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных траефик и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 4fc9dfbb4c437210de3ab9a88aafca2680dd363c
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 9e0c726d97fc87a25d559ecc3478d3f85df4eeb8
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486191"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623160"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
 
 В этой статье показано, как настроить Azure Dev Spaces для использования пользовательского контроллера входящего трафика траефик. В этой статье также показано, как настроить этот настраиваемый контроллер входящего трафика для использования протокола HTTPS.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись][azure-account-create].
 * [Установленный Azure CLI][az-cli].
@@ -49,15 +49,18 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 Создайте пространство имен Kubernetes для контроллера входящих данных траефик и установите его с помощью `helm`.
 
+> [!NOTE]
+> Если AKS не включен RBAC, удалите параметр *--Set RBAC. Enabled = True* .
+
 ```console
 kubectl create ns traefik
-helm install traefik stable/traefik --namespace traefik --set kubernetes.ingressClass=traefik --set kubernetes.ingressEndpoint.useDefaultPublishedService=true --version 1.85.0
+helm install traefik stable/traefik --namespace traefik --set kubernetes.ingressClass=traefik --set rbac.enabled=true --set fullnameOverride=customtraefik --set kubernetes.ingressEndpoint.useDefaultPublishedService=true --version 1.85.0
 ```
 
 > [!NOTE]
 > В приведенном выше примере создается общедоступная конечная точка для контроллера входящего трафика. Если вместо этого необходимо использовать частную конечную точку для контроллера входящего трафика, добавьте параметр *--Set Service. Annotations. Служба\\. бета-\\. kubernetes\\. IO/Azure-Load-балансировщик — внутренний параметр = true* для команды *Helm Install* .
 > ```console
-> helm install traefik stable/traefik --namespace traefik --set kubernetes.ingressClass=traefik --set kubernetes.ingressEndpoint.useDefaultPublishedService=true --set service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-internal"=true --version 1.85.0
+> helm install traefik stable/traefik --namespace traefik --set kubernetes.ingressClass=traefik --set rbac.enabled=true --set fullnameOverride=customtraefik --set kubernetes.ingressEndpoint.useDefaultPublishedService=true --set service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-internal"=true --version 1.85.0
 > ```
 > Эта частная конечная точка предоставляется в виртуальной сети, в которой развернут кластер AKS.
 
@@ -95,7 +98,11 @@ git clone https://github.com/Azure/dev-spaces
 cd dev-spaces/samples/BikeSharingApp/charts
 ```
 
-Откройте [Values. YAML][values-yaml] и замените все экземпляры *< REPLACE_ME_WITH_HOST_SUFFIX >* на *траефик. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN*. Также замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: Траефик # Custom входной*вход. Ниже приведен пример обновленного файла `values.yaml`.
+Откройте [Values. YAML][values-yaml] и внесите следующие обновления:
+* Замените все экземпляры *< REPLACE_ME_WITH_HOST_SUFFIX >* *траефик. MY_CUSTOM_DOMAIN* использование домена для *MY_CUSTOM_DOMAIN*. 
+* Замените *kubernetes.IO/Ingress.class: траефик-аздс # dev Spaces, относящийся* к *kubernetes.IO/Ingress.class: Траефик # Custom входной*вход. 
+
+Ниже приведен пример обновленного файла `values.yaml`.
 
 ```yaml
 # This is a YAML-formatted file.
@@ -148,6 +155,9 @@ http://dev.gateway.traefik.MY_CUSTOM_DOMAIN/         Available
 ```
 
 Перейдите к службе *bikesharingweb* по общедоступному URL-адресу, который вам предоставила команда `azds list-uris`. В примере выше для службы *bikesharingweb* используется общедоступный URL-адрес `http://dev.bikesharingweb.traefik.MY_CUSTOM_DOMAIN/`.
+
+> [!NOTE]
+> Если вместо службы *бикешарингвеб* отображается страница ошибки, убедитесь **, что вы обновили** заметку *kubernetes.IO/Ingress.class* и узел в файле *Values. YAML* .
 
 Используйте команду `azds space select`, чтобы создать дочернее пространство в разделе *dev* и вывести список URL-адресов для доступа к дочернему пространству разработки.
 
@@ -250,13 +260,13 @@ gateway:
 helm upgrade bikesharing . --namespace dev --atomic
 ```
 
-Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS. Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Пример:
+Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS. Также обратите внимание, что страница загружается, но в браузере отображаются некоторые ошибки. При открытии консоли браузера отображается ошибка, связанная с HTTPS-страницей, пытающейся загрузить ресурсы HTTP. Например:
 
 ```console
 Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.traefik.MY_CUSTOM_DOMAIN/devsignin' was loaded over HTTPS, but requested an insecure resource 'http://azureuser1.s.dev.gateway.traefik.MY_CUSTOM_DOMAIN/api/user/allUsers'. This request has been blocked; the content must be served over HTTPS.
 ```
 
-Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)* . Пример:
+Чтобы устранить эту ошибку, обновите [бикешарингвеб/аздс. YAML][azds-yaml] , чтобы использовать *траефик* для *kubernetes.IO/Ingress.class* , и личный домен для *$ (хостсуффикс)* . Например:
 
 ```yaml
 ...
@@ -307,7 +317,7 @@ azds up
 
 Перейдите к образцу приложения в дочернем пространстве *dev/azureuser1* и обратите внимание, что вы перенаправлялись на использование протокола HTTPS без ошибок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

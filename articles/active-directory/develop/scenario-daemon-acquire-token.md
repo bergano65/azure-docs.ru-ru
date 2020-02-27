@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b2d388160c6ca744b10c17bda17c59e22940f98b
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 7f1010949a72f95ef2836c43666e6cea9281e04d
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775245"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77611908"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
@@ -30,14 +30,14 @@ ms.locfileid: "76775245"
 
 Область запроса учетных данных клиента — это имя ресурса, за которым следует `/.default`. Эта нотация указывает Azure Active Directory (Azure AD) использовать *разрешения уровня приложения* , объявленные статически во время регистрации приложения. Кроме того, эти разрешения API должны быть предоставлены администратором клиента.
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 ```csharp
 ResourceId = "someAppIDURI";
 var scopes = new [] {  ResourceId+"/.default"};
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 В MSAL Python файл конфигурации выглядит как следующий фрагмент кода:
 
@@ -47,7 +47,7 @@ var scopes = new [] {  ResourceId+"/.default"};
 }
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```Java
 final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default";
@@ -67,7 +67,7 @@ final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default"
 
 Чтобы получить маркер для приложения, вы будете использовать `AcquireTokenForClient` или его эквивалент в зависимости от платформы.
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -96,7 +96,7 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 }
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 # The pattern to acquire a token looks like this.
@@ -120,29 +120,53 @@ else:
     print(result.get("correlation_id"))  # You might need this when reporting a bug.
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Этот код извлекается из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/confidential-client/).
 
 ```Java
-ClientCredentialParameters clientCredentialParam = ClientCredentialParameters.builder(
-        Collections.singleton(GRAPH_DEFAULT_SCOPE))
-        .build();
+private static IAuthenticationResult acquireToken() throws Exception {
 
-CompletableFuture<IAuthenticationResult> future = app.acquireToken(clientCredentialParam);
+     // Load token cache from file and initialize token cache aspect. The token cache will have
+     // dummy data, so the acquireTokenSilently call will fail.
+     TokenCacheAspect tokenCacheAspect = new TokenCacheAspect("sample_cache.json");
 
-BiConsumer<IAuthenticationResult, Throwable> processAuthResult = (res, ex) -> {
-    if (ex != null) {
-        System.out.println("Oops! We have an exception - " + ex.getMessage());
-    }
-    System.out.println("Returned ok - " + res);
-    System.out.println("ID Token - " + res.idToken());
+     IClientCredential credential = ClientCredentialFactory.createFromSecret(CLIENT_SECRET);
+     ConfidentialClientApplication cca =
+             ConfidentialClientApplication
+                     .builder(CLIENT_ID, credential)
+                     .authority(AUTHORITY)
+                     .setTokenCacheAccessAspect(tokenCacheAspect)
+                     .build();
 
-    /* Call a protected API with res.accessToken() */
-};
+     IAuthenticationResult result;
+     try {
+         SilentParameters silentParameters =
+                 SilentParameters
+                         .builder(SCOPE)
+                         .build();
 
-future.whenCompleteAsync(processAuthResult);
-future.join();
+         // try to acquire token silently. This call will fail since the token cache does not
+         // have a token for the application you are requesting an access token for
+         result = cca.acquireTokenSilently(silentParameters).join();
+     } catch (Exception ex) {
+         if (ex.getCause() instanceof MsalException) {
+
+             ClientCredentialParameters parameters =
+                     ClientCredentialParameters
+                             .builder(SCOPE)
+                             .build();
+
+             // Try to acquire a token. If successful, you should see
+             // the token information printed out to console
+             result = cca.acquireToken(parameters).join();
+         } else {
+             // Handle other exceptions accordingly
+             throw ex;
+         }
+     }
+     return result;
+ }
 ```
 
 ---
@@ -184,7 +208,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken*XX* используют кэш пользовательских маркеров.) Не вызывайте `AcquireTokenSilent` перед вызовом `AcquireTokenForClient`, так как `AcquireTokenSilent` использует кэш маркеров *пользователя* . `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="did-you-use-the-resourcedefault-scope"></a>Вы использовали область ресурсов/. по умолчанию?
 
@@ -209,19 +233,19 @@ Content: {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 > [!div class="nextstepaction"]
 > [Управляющая программа — вызов веб-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-call-api?tabs=dotnet)
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 > [!div class="nextstepaction"]
 > [Управляющая программа — вызов веб-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-call-api?tabs=python)
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 > [!div class="nextstepaction"]
 > [Управляющая программа — вызов веб-API](https://docs.microsoft.com/azure/active-directory/develop/scenario-daemon-call-api?tabs=java)

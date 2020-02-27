@@ -2,13 +2,13 @@
 title: Выходные данные в шаблонах
 description: Описывает, как определить выходные значения в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 09/05/2019
-ms.openlocfilehash: 7244e1ac0eff973d550a2bae8a70fa5055ca2248
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/25/2020
+ms.openlocfilehash: ec96b45cdc5ccf488d46c2d8da03caf16d002dfa
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483925"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622838"
 ---
 # <a name="outputs-in-azure-resource-manager-template"></a>Выходные данные в шаблоне Azure Resource Manager
 
@@ -43,6 +43,24 @@ ms.locfileid: "75483925"
 
 Простой пример условного вывода см. в разделе [шаблон условного вывода](https://github.com/bmoore-msft/AzureRM-Samples/blob/master/conditional-output/azuredeploy.json).
 
+## <a name="dynamic-number-of-outputs"></a>Динамическое число выходов
+
+В некоторых случаях неизвестно число экземпляров значения, которое необходимо вернуть при создании шаблона. Можно вернуть переменное число значений с помощью элемента **Copy** .
+
+```json
+"outputs": {
+  "storageEndpoints": {
+    "type": "array",
+    "copy": {
+      "count": "[parameters('storageCount')]",
+      "input": "[reference(concat(copyIndex(), variables('baseName'))).primaryEndpoints.blob]"
+    }
+  }
+}
+```
+
+Дополнительные сведения см. [в разделе выходные данные итерации в шаблонах Azure Resource Manager](copy-outputs.md).
+
 ## <a name="linked-templates"></a>Связанные шаблоны
 
 Чтобы получить выходное значение из связанного шаблона, используйте функцию [Reference](template-functions-resource.md#reference) в родительском шаблоне. В родительском шаблоне используется следующий синтаксис:
@@ -69,7 +87,7 @@ ms.locfileid: "75483925"
 
 Чтобы получить выходные значения из журнала развертывания, можно использовать скрипт.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 (Get-AzResourceGroupDeployment `
@@ -77,7 +95,7 @@ ms.locfileid: "75483925"
   -Name <deployment-name>).Outputs.resourceID.value
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group deployment show \

@@ -1,16 +1,16 @@
 ---
 title: Непрерывное обновление кода приложения функции с помощью Azure DevOps
 description: Узнайте, как настроить конвейер Azure DevOps, нацеленный на функции Azure.
-author: ahmedelnably
+author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/18/2019
-ms.author: aelnably
-ms.openlocfilehash: e6ea7edb16aa28428754cbe920e1d350aded0cff
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.author: cshoe
+ms.openlocfilehash: 1d627329a6d5f4c283a4480c1b0b1077a8e856cf
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834022"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77649948"
 ---
 # <a name="continuous-delivery-by-using-azure-devops"></a>Непрерывная поставка с помощью Azure DevOps
 
@@ -25,11 +25,11 @@ ms.locfileid: "75834022"
 
 Чтобы создать конвейер на основе YAML, сначала выполните сборку приложения, а затем разверните приложение.
 
-### <a name="build-your-app"></a>Создайте свое приложение
+### <a name="build-your-app"></a>Построение приложений
 
 Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для развертывания приложения-функции в Azure.
 
-# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
+# <a name="c"></a>[C\#](#tab/csharp)
 
 Чтобы создать файл YAML для создания приложения .NET, можно использовать следующий пример:
 
@@ -60,7 +60,7 @@ steps:
     artifactName: 'drop'
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Чтобы создать файл YAML для создания приложения JavaScript, можно использовать следующий пример:
 
@@ -88,7 +88,7 @@ steps:
     artifactName: 'drop'
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Чтобы создать файл YAML для создания приложения для конкретной версии Python, можно использовать один из следующих примеров. Python поддерживается только для приложений-функций, работающих в Linux.
 
@@ -150,7 +150,7 @@ steps:
     artifactName: 'drop'
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы создать файл YAML для упаковки приложения PowerShell, можно использовать следующий пример. PowerShell поддерживается только для функций Windows Azure.
 
@@ -215,7 +215,7 @@ steps:
 
 Шаблоны в Azure DevOps — это стандартные группы задач, которые создают или развертывают приложение.
 
-### <a name="build-your-app"></a>Создайте свое приложение
+### <a name="build-your-app"></a>Построение приложений
 
 Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для обновления приложения-функции в Azure.
 
@@ -265,7 +265,7 @@ steps:
 
     - Вы должны быть администратором проекта в Azure DevOps.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Ознакомьтесь с [обзором Azure DevOps](/azure/devops/pipelines/).

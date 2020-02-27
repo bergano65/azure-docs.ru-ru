@@ -3,8 +3,8 @@ title: Обеспечение высокого уровня доступност
 description: Руководство по обеспечению высокого уровня доступности для SAP NetWeaver на виртуальных машинах Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: goraco
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -14,14 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/05/2017
-ms.author: rclaus
+ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3a3e4c76463aaea0735d20d4fcc283aee460b48f
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 65037ec0cc8b10b176622a7047beb7d912c7f701
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77597530"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77617551"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -188,7 +188,7 @@ ms.locfileid: "77597530"
 
 Следующие примечания по SAP актуальны для развертывания SAP в Azure.
 
-| Номер примечания | Заголовок |
+| Номер примечания | Title |
 | --- | --- |
 | [1928533] |Приложения SAP в Azure: поддерживаемые продукты и размеры |
 | [2015553] |SAP в Microsoft Azure: требования |
@@ -588,7 +588,7 @@ _**Рис. 11.** Настройка параметров Azure Resource Manager
 Чтобы задать необходимые IP-адреса DNS, выполните следующие действия.
 
 1. На портале Azure в колонке **DNS-серверы** для параметра **DNS-серверы** виртуальной сети задайте значение **Пользовательская служба DNS**.
-2. Выберите параметры в зависимости от типа сети. Дополнительные сведения см. в следующих источниках.
+2. Выберите параметры в зависимости от типа сети. Для получения дополнительных сведений см. следующие ресурсы:
    * Добавьте IP-адреса локальных DNS-серверов.  
    Локальные DNS-серверы могут быть расширены до виртуальных машин в Azure. В этом случае можно добавить IP-адреса этих виртуальных машин Azure, на которых запущена служба DNS.
    * Для развертываний виртуальных машин, изолированных в Azure: разверните дополнительную виртуальную машину в том же экземпляре виртуальной сети, который служит DNS-сервером. Добавьте IP-адреса этих виртуальных машин Azure, настроенных для запуска службы DNS.

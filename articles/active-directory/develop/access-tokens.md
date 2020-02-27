@@ -12,12 +12,12 @@ ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 7d596292a823b4d912204f5cfbe8623ab7429fa3
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 06a3ef7677d52ebb0d835dfed2f47fc66870f0ec
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77161398"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620887"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Маркеры доступа платформы удостоверений Майкрософт
 
@@ -178,7 +178,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEps
 
 Маркер JWT содержит три сегмента, разделенных символом `.` . Первый сегмент называется **заголовком**, второй — **телом**, а третий — **подписью**. Сегмент подписи можно использовать для проверки подлинности маркера, чтобы приложение доверяло ему.
 
-Маркеры, выдаваемые Azure AD, подписываются при помощи стандартных отраслевых алгоритмов асимметричного шифрования, таких как RSA 256. Заголовок JWT содержит сведения о ключе и методе шифрования, используемых для подписания маркера.
+Маркеры, выданные Azure AD, подписываются с помощью стандартных алгоритмов асимметричного шифрования, таких как RS256. Заголовок JWT содержит сведения о ключе и методе шифрования, используемых для подписания маркера.
 
 ```json
 {

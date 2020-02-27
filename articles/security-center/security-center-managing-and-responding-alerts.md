@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/27/2019
 ms.author: memildin
-ms.openlocfilehash: 203e3718cedca693dc029a4ba20a86ca50ab3e32
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 5c199d074a6655ad14a0c66925e4302f70424970
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77603855"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77615987"
 ---
 # <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Управление оповещениями безопасности в центре безопасности Azure и реагирование на них
 
@@ -65,19 +65,27 @@ ms.locfileid: "77603855"
     > [!NOTE]
     >В некоторых случаях исходный IP-адрес недоступен, некоторые журналы событий безопасности Windows не включают IP-адрес.
 
-1. Действия по исправлению, предлагаемые центром безопасности, зависят от предупреждения системы безопасности. Следуйте указаниям по каждому оповещению. В некоторых случаях, чтобы уменьшить оповещение об обнаружении угроз, для реализации рекомендуемого исправления может потребоваться использовать другие элементы управления или службы Azure. 
+1. Действия по исправлению, предлагаемые центром безопасности, зависят от предупреждения системы безопасности. Следуйте указаниям по каждому оповещению. 
+
+    В некоторых случаях, чтобы уменьшить оповещение об обнаружении угроз, для реализации рекомендуемого исправления может потребоваться использовать другие элементы управления или службы Azure. 
 
     В следующих разделах описываются различные предупреждения в соответствии с типами ресурсов.
     
-    * [Предупреждения о виртуальных машинах и серверах IaaS](security-center-alerts-iaas.md)
-    * [Встроенные предупреждения вычислений](security-center-alerts-compute.md)
-    * [Оповещения служб данных](security-center-alerts-data-services.md)
-    
+    * [Оповещения для компьютеров с Windows IaaS](threat-protection.md#windows-machines)
+    * [Оповещения для компьютеров IaaS Linux](threat-protection.md#linux-machines)
+    * [Оповещения для службы приложений Azure](threat-protection.md#app-services)
+    * [Оповещения для контейнеров Azure](threat-protection.md#azure-containers)
+    * [Оповещения для базы данных SQL и хранилища данных SQL](threat-protection.md#data-sql)
+    * [Оповещения для службы хранилища Azure](threat-protection.md#azure-storage)
+    * [Оповещения для Cosmos DB](threat-protection.md#cosmos-db)
+
     В следующих разделах объясняется, как центр безопасности использует различные данные телеметрии, собираемые при интеграции с инфраструктурой Azure, чтобы применить дополнительные уровни защиты для ресурсов, развернутых в Azure:
     
-    * [Предупреждения уровня службы](security-center-alerts-service-layer.md)
-    * [Обнаружение угроз для Azure WAF и Azure от атак DDoS Protection](security-center-alerts-integration.md)
-    
+    * [Оповещения для уровня управления Azure (Azure Resource Manager) (Предварительная версия)](threat-protection.md#management-layer)
+    * [Оповещения для Azure Key Vault (Предварительная версия)](threat-protection.md#azure-keyvault)
+    * [Оповещения для сетевого уровня Azure](threat-protection.md#network-layer)
+    * [Оповещения из других служб](threat-protection.md#alerts-other)    
+
 ## <a name="see-also"></a>См. также раздел
 
 В этом документе вы ознакомились с подробными сведениями о настройке политик безопасности в Центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:

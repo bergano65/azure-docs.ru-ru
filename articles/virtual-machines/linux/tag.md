@@ -14,15 +14,15 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/28/2017
 ms.author: memccror
-ms.openlocfilehash: cb8ec68ac0be4cf4480f5d75f987707cf7393003
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 3dd46f0c1c1e36e0373311ce6dcbf5d2f155dacc
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75973204"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616273"
 ---
 # <a name="how-to-tag-a-linux-virtual-machine-in-azure"></a>Пометка виртуальной машины Linux в Azure
-В этой статье описываются разные способы назначения тегов виртуальной машине Linux в Azure с использованием модели развертывания Resource Manager. Теги — это определяемые пользователем пары "ключ-значение", которые можно помещать непосредственно в ресурс или группу ресурсов. В настоящий момент Azure поддерживает до 15 тегов на ресурс или группу ресурсов. Теги можно добавлять к ресурсу во время его создания или к уже существующему ресурсу. Обратите внимание, что теги поддерживаются только для тех ресурсов, которые созданы с помощью модели развертывания Resource Manager.
+В этой статье описываются разные способы назначения тегов виртуальной машине Linux в Azure с использованием модели развертывания Resource Manager. Теги — это определяемые пользователем пары "ключ-значение", которые можно помещать непосредственно в ресурс или группу ресурсов. В настоящее время Azure поддерживает до 50 тегов на ресурс и группу ресурсов. Теги можно добавлять к ресурсу во время его создания или к уже существующему ресурсу. Обратите внимание, что теги поддерживаются только для тех ресурсов, которые созданы с помощью модели развертывания Resource Manager.
 
 [!INCLUDE [virtual-machines-common-tag](../../../includes/virtual-machines-common-tag.md)]
 
@@ -45,7 +45,7 @@ az vm update \
     --set tags.myNewTagName1=myNewTagValue1 tags.myNewTagName2=myNewTagValue2
 ```
 
-Чтобы удалить теги, используйте в команде `azure vm update` параметр **--remove**.
+Чтобы удалить теги, используйте в команде **параметр**--remove`azure vm update`.
 
 ```azurecli
 az vm update --resource-group MyResourceGroup --name MyTestVM --remove tags.myNewTagName1

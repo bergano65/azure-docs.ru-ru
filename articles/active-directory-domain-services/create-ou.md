@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 4db6ad83c44e0c811df0a3b91a473861e4e1ab87
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 7abbdf03e85f425f65a45e6640b82529c2b9c84f
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367142"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77614070"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-ad-domain-services-managed-domain"></a>Создание подразделения (OU) в управляемом домене доменных служб Azure AD
 
@@ -66,11 +66,11 @@ ms.locfileid: "77367142"
 1. Войдите на виртуальную машину управления. Инструкции по подключению с помощью портал Azure см. в разделе [Подключение к виртуальной машине Windows Server][connect-windows-server-vm].
 1. На начальном экране выберите **Администрирование**. Отобразится список доступных средств управления, которые были установлены в руководстве по [созданию виртуальной машины управления][tutorial-create-management-vm].
 1. Чтобы создать подразделения и управлять ими, выберите **центр администрирования Active Directory** в списке средств администрирования.
-1. В левой области выберите управляемый домен Azure AD DS, например *aadds.contoso.com*. Отобразится список имеющихся подразделений и ресурсов:
+1. В левой области выберите управляемый домен Azure AD DS, например *aaddscontoso.com*. Отобразится список имеющихся подразделений и ресурсов:
 
     ![Выберите управляемый домен Azure AD DS в центр администрирования Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-overview.png)
 
-1. Область **задачи** отображается в правой части центр администрирования Active Directory. В домене, например *aadds.contoso.com*, выберите **Создать > подразделение**.
+1. Область **задачи** отображается в правой части центр администрирования Active Directory. В домене, например *aaddscontoso.com*, выберите **Создать > подразделение**.
 
     ![Выберите этот параметр, чтобы создать новое подразделение в центр администрирования Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-new-ou.png)
 

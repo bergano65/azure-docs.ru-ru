@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/10/2020
+ms.date: 02/26/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2a0a786d3e2135467c7279c76bae273bff0ba2d0
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: b24e8cc5f6bb6213bf021362c5654afd4d5266fb
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77149513"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620612"
 ---
 # <a name="page-layout-versions"></a>Версии макета страницы
 
@@ -33,7 +33,7 @@ ms.locfileid: "77149513"
 
 - Все страницы
   - Исправления специальных возможностей
-  - Теперь можно добавить атрибут `data-preload="true"` в теги HTML для управления порядком загрузки CSS и JavaScript.
+  - Теперь можно добавить атрибут `data-preload="true"` [в теги HTML](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) для управления порядком загрузки CSS и JavaScript.
     - Загружать связанные CSS-файлы одновременно с шаблоном HTML, чтобы не мерцать между загрузкой файлов.
     - Управление порядком, в котором Теги `script` извлекаться и выполняться до загрузки страницы.
   - Поле электронной почты теперь `type=email`, а мобильные клавиатуры будут предоставлять правильные варианты

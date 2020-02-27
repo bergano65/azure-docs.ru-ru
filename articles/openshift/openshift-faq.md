@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 5901be713f686f0c7213449a775c86b9e346fe12
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: f468cb294d79c44f92ef95437c0d88639a78b9a1
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275406"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77619500"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -60,6 +60,18 @@ ms.locfileid: "76275406"
 ## <a name="can-i-restrict-a-cluster-to-only-certain-azure-ad-users"></a>Можно ли ограничить кластер только определенными пользователями Azure AD?
 
 Да. Вы можете ограничить, какие пользователи Azure AD могут входить в кластер, настроив приложение Azure AD. Дополнительные сведения см. в разделе [как ограничить приложение набором пользователей.](https://docs.microsoft.com/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
+
+## <a name="can-i-restrict-users-from-creating-projects"></a>Можно ли запретить пользователям создавать проекты?
+
+Да. Войдите в кластер в качестве администратора Azure Red Hat OpenShift и выполните следующую команду:
+
+```
+oc adm policy \
+    remove-cluster-role-from-group self-provisioner \
+    system:authenticated:oauth
+```
+
+Дополнительные сведения см. в документации OpenShift по [отключению самостоятельной подготовки](https://docs.openshift.com/container-platform/3.11/admin_guide/managing_projects.html#disabling-self-provisioning).
 
 ## <a name="can-a-cluster-have-compute-nodes-across-multiple-azure-regions"></a>Может ли кластер вычислять узлы в нескольких регионах Azure?
 

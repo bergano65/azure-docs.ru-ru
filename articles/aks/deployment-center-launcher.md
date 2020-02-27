@@ -2,24 +2,22 @@
 title: Центр развертывания для Azure Kubernetes
 description: Центр развертывания в Azure DevOps упрощает настройку надежного конвейера Azure DevOps для вашего приложения
 ms.author: puagarw
-ms.prod: devops
-ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 07/12/2019
 author: pulkitaggarwl
 monikerRange: vsts
-ms.openlocfilehash: 5384180720d391c6b4ae830f9316a70e80003063
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: 84e5533a17dc70fb5c835089f3a3cec1a86e35bf
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71972978"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77596085"
 ---
 # <a name="deployment-center-for-azure-kubernetes"></a>Центр развертывания для Azure Kubernetes
 
 Центр развертывания в Azure DevOps упрощает настройку надежного конвейера Azure DevOps для вашего приложения. По умолчанию центр развертывания настраивает конвейер Azure DevOps для развертывания обновлений приложения в кластере Kubernetes. Вы можете расширить настроенный по умолчанию конвейер Azure DevOps, а также добавить более широкие возможности: получение подтверждения перед развертыванием, настройку дополнительных ресурсов Azure, запуск сценариев, обновление приложения или даже запуск дополнительных проверочных тестов.
 
-Изучив данный учебник, вы научитесь:
+Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
 > * Настраивать конвейер Azure DevOps для развертывания обновлений приложения в кластере Kubernetes.
@@ -140,6 +138,6 @@ ms.locfileid: "71972978"
 
 Вы можете удалить связанные ресурсы, которые вы создали, когда они больше не нужны. Для этого воспользуйтесь функционалом удаления на панели мониторинга DevOps Projects.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете изменить эти конвейеры сборки и выпуска в соответствии с потребностями вашей команды. Вы также можете использовать эту модель CI/CD в качестве шаблона для других конвейеров.

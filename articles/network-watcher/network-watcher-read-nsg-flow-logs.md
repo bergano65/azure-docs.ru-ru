@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: damendo
-ms.openlocfilehash: ee44dda7a7ca2f7e1ad386498798191fe792cef0
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 47d927f9f17580767526ec6683e819256fc5e994
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840848"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77619915"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов потоков NSG
 
@@ -186,6 +186,9 @@ A","1497646742,10.0.0.4,168.62.32.14,44942,443,T,O,A","1497646742,10.0.0.4,52.24
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+
 Для дополнительных сведений о способах просмотра журналов потоков NSG см. статьи [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana](network-watcher-nsg-grafana.md), и [Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md). Функция Azure с открытым исходным кодом для использования больших двоичных объектов, которые можно использовать непосредственно и передать различным потребителям log Analytics, находится здесь: [соединитель журналов потоков NSG для наблюдателя за сетями Azure](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).
+
+[Аналитика трафика Azure](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) можно использовать для получения ценной информации о потоках трафика. Аналитика трафика использует [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal) , чтобы сделать запрос трафика необработанным.
 
 Дополнительные сведения о больших двоичных объектах хранилища см. в статье [Привязки хранилища BLOB-объектов для Функций Azure](../azure-functions/functions-bindings-storage-blob.md).

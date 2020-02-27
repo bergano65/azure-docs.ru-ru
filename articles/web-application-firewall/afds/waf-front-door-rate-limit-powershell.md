@@ -5,22 +5,22 @@ author: vhorne
 ms.service: web-application-firewall
 ms.topic: article
 services: web-application-firewall
-ms.date: 08/21/2019
+ms.date: 02/26/2020
 ms.author: victorh
-ms.openlocfilehash: 831d0876c67aa36248a54f3935e5ce7884c736ef
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: b034159c3d12927f6425b3dc3c5b5609af9b0b76
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186626"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77649370"
 ---
 # <a name="configure-a-web-application-firewall-rate-limit-rule-using-azure-powershell"></a>Настройка правила ограничения скорости брандмауэра веб-приложения с помощью Azure PowerShell
-Правило предельного числа подвижности брандмауэра веб-приложения Azure (WAF) для передней дверцы Azure определяет количество запросов, разрешенных с одного IP-адреса клиента в течение одной минутной длительности.
-В этой статье показано, как настроить правило ограничения скорости WAF, которое управляет количеством запросов, разрешенных от одного клиента к веб-приложению, которое содержит */промо* в URL-адресе с помощью Azure PowerShell.
+Правило предельного числа запросов брандмауэра веб-приложения Azure (WAF) для передней дверцы Azure управляет количеством разрешенных клиентов в течение одной минуты.
+В этой статье показано, как настроить правило ограничения скорости WAF, которое управляет количеством запросов, разрешенных клиентами, в веб-приложение, содержащее */промо* в URL-адресе с помощью Azure PowerShell.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к настройке политики ограничения скорости, настройте среду PowerShell и создайте профиль передней дверцы.
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
@@ -32,7 +32,7 @@ ms.locfileid: "74186626"
 Connect-AzAccount
 
 ```
-Перед установкой модуля Front Door убедитесь, что у вас установлена текущая версия PowerShellGet. Выполните следующую команду и снова откройте PowerShell.
+Перед установкой модуля Front дверь убедитесь, что установлена текущая версия PowerShellGet. Выполните следующую команду и повторно откройте PowerShell.
 
 ```
 Install-Module PowerShellGet -Force -AllowClobber
@@ -102,7 +102,7 @@ Install-Module -Name Az.FrontDoor
 > [!NOTE]
 > Свойство *вебаппликатионфиреваллполицилинк* необходимо установить только один раз, чтобы связать политику безопасности с внешним интерфейсом передней дверцы. Последующие обновления политики автоматически применяются к интерфейсной части.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md). 
 

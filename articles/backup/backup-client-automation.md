@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: ff723eb2ebe48a7019fecec9106c1618a636b94c
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 85006a318864aed537b70a97fb38f89746d2878c
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77583147"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622811"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -403,34 +403,6 @@ State           : New
 PolicyState     : Valid
 ```
 
-## <a name="back-up-windows-server-system-state-in-mabs-agent"></a>Резервное копирование состояния системы Windows Server в агенте MABS
-
-В этом разделе описывается команда PowerShell для настройки состояния системы в агенте MABS.
-
-### <a name="schedule"></a>Расписание
-
-```powershell
-$sched = New-OBSchedule -DaysOfWeek Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -TimesOfDay 2:00
-```
-
-### <a name="retention"></a>Сохранение
-
-```powershell
-$rtn = New-OBRetentionPolicy -RetentionDays 32 -RetentionWeeklyPolicy -RetentionWeeks 13 -WeekDaysOfWeek Sunday -WeekTimesOfDay 2:00  -RetentionMonthlyPolicy -RetentionMonths 13 -MonthDaysOfMonth 1 -MonthTimesOfDay 2:00
-```
-
-### <a name="configuring-schedule-and-retention"></a>Настройка расписания и срока хранения
-
-```powershell
-New-OBPolicy | Add-OBSystemState |  Set-OBRetentionPolicy -RetentionPolicy $rtn | Set-OBSchedule -Schedule $sched | Set-OBSystemStatePolicy
- ```
-
-### <a name="verifying-the-policy"></a>Проверка политики
-
-```powershell
-Get-OBSystemStatePolicy
- ```
-
 ### <a name="applying-the-policy"></a>Применение политики
 
 Объект политики готов и имеет связанные расписание резервного копирования, политику хранения, а также список включенных и исключенных файлов. На данном этапе эту политику можно зафиксировать в службе архивации Azure для использования. Перед применением вновь созданной политики убедитесь, что с сервером не связаны существующие политики резервного копирования с помощью командлета [Remove-OBPolicy](https://docs.microsoft.com/powershell/module/msonlinebackup/remove-obpolicy?view=winserver2012-ps) . При удалении политики будет запрошено соответствующее подтверждение. Чтобы пропустить подтверждение, используйте флаг `-Confirm:$false` с командлетом.
@@ -565,6 +537,34 @@ Job completed.
 The backup operation completed successfully.
 ```
 
+## <a name="back-up-windows-server-system-state-in-mabs-agent"></a>Резервное копирование состояния системы Windows Server в агенте MABS
+
+В этом разделе описывается команда PowerShell для настройки состояния системы в агенте MABS.
+
+### <a name="schedule"></a>Расписание
+
+```powershell
+$sched = New-OBSchedule -DaysOfWeek Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -TimesOfDay 2:00
+```
+
+### <a name="retention"></a>Сохранение
+
+```powershell
+$rtn = New-OBRetentionPolicy -RetentionDays 32 -RetentionWeeklyPolicy -RetentionWeeks 13 -WeekDaysOfWeek Sunday -WeekTimesOfDay 2:00  -RetentionMonthlyPolicy -RetentionMonths 13 -MonthDaysOfMonth 1 -MonthTimesOfDay 2:00
+```
+
+### <a name="configuring-schedule-and-retention"></a>Настройка расписания и срока хранения
+
+```powershell
+New-OBPolicy | Add-OBSystemState |  Set-OBRetentionPolicy -RetentionPolicy $rtn | Set-OBSchedule -Schedule $sched | Set-OBSystemStatePolicy
+ ```
+
+### <a name="verifying-the-policy"></a>Проверка политики
+
+```powershell
+Get-OBSystemStatePolicy
+ ```
+
 ## <a name="restore-data-from-azure-backup"></a>Восстановление данных из службы архивации Azure
 
 В этом разделе представлены шаги по настройке автоматического восстановления данных из службы архивации Azure. Выполнение настройки предполагает указанные ниже действия.
@@ -631,7 +631,7 @@ ItemLastModifiedTime :
 
 ### <a name="specifying-an-item-to-restore"></a>Указание восстанавливаемого элемента
 
-Чтобы восстановить конкретный файл, укажите имя файла относительно корневого тома. Например, чтобы получить К:\тест\кат.Жоб, выполните следующую команду. 
+Чтобы восстановить конкретный файл, укажите имя файла относительно корневого тома. Например, чтобы получить К:\тест\кат.Жоб, выполните следующую команду.
 
 ```powershell
 $Item = New-OBRecoverableItem $Rps[0] "Test\cat.jpg" $FALSE

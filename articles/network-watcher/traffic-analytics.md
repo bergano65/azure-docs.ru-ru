@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 06/15/2018
 ms.author: damendo
 ms.reviewer: vinigam
-ms.openlocfilehash: e53bd3deae5ccd7339c7a6d491dc4ff0da44a277
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 47d9508c891d2b4fe74b42114783b02c58e8c91f
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77426231"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77620007"
 ---
 # <a name="traffic-analytics"></a>Аналитика трафика
 
@@ -201,7 +201,7 @@ New-AzStorageAccount `
 
 ## <a name="view-traffic-analytics"></a>Просмотр решения "Аналитика трафика"
 
-В левой части портала выберите **Все службы**, а затем введите *Монитор* в поле **Фильтр**. Когда в результатах поиска появится **Монитор**, щелкните его. Чтобы приступить к изучению решения "Аналитика трафика" и его возможностей, выберите **Наблюдатель за сетями**, а затем — **Аналитика трафика**.
+Чтобы просмотреть Аналитика трафика, выполните поиск **наблюдателя за сетями** на панели поиска портала. В службе "наблюдатель за сетями", чтобы исследовать аналитику трафика и ее возможности, выберите **аналитика трафика** в меню слева. 
 
 ![Доступ к панели мониторинга решения "Аналитика трафика"](./media/traffic-analytics/accessing-the-traffic-analytics-dashboard.png)
 

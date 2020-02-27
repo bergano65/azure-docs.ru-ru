@@ -1,21 +1,21 @@
 ---
 title: Анализ первопричин с помощью оповещений в Azure | Документация Майкрософт
 description: В этом руководстве вы узнаете, как проводить анализ первопричин с помощью оповещений, используя Аналитику временных рядов Azure.
-author: aditidugar
-ms.author: adugar
+author: Philmea
+ms.author: philmea
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/20/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 70d29359d4a4bcf9f5badbbf0c553d7bed88a02b
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: c3cb940583677d813873c07fbfa679fdcc1dff59
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284575"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77565474"
 ---
-# <a name="tutorial-conduct-a-root-cause-analysis-on-an-alert"></a>Руководство. Анализ первопричин с помощью оповещений
+# <a name="tutorial-conduct-a-root-cause-analysis-on-an-alert"></a>Руководство по Анализ первопричин с помощью оповещений
 
 Из этого руководства вы узнаете, как использовать акселератор решения удаленного мониторинга для выявления первопричины. Вы увидите, что оповещение активируется на информационной панели решения для удаленного мониторинга, а затем используйте обозреватель Аналитики временных рядов Azure для выявления первопричины.
 
@@ -30,7 +30,7 @@ ms.locfileid: "52284575"
 > * проведете анализ первопричин;
 > * создадите новое правило с учетом результатов изучения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 
@@ -96,7 +96,7 @@ ms.locfileid: "52284575"
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как с помощью обозревателя Аналитики временных рядов с акселератором решения для удаленного мониторинга диагностировать первопричину предупреждения. Чтобы узнать, как выявлять и устранять проблемы с подключенными устройствами с помощью акселератора решений, перейдите к следующему руководству.
 

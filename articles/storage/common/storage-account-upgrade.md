@@ -6,25 +6,25 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 02/25/2019
 ms.author: tamram
-ms.openlocfilehash: eb3523ca55e67d7a26ae608da8963dbf6124f2f7
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 42cef26143eaeb49c4aa80dc5e1b05eb7be943cc
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75975825"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616831"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновление до учетной записи хранения общего назначения версии 2
 
 Учетные записи хранения общего назначения версии 2 поддерживают последние возможности службы хранилища Azure и содержат все функции учетных записей общего назначения версии 1 и учетных записей хранилища BLOB-объектов. В большинстве сценариев хранения рекомендуется использовать учетные записи общего назначения версии 2. Учетные записи общего назначения версии 2 отличаются наименьшей ориентировочной платой за каждый гигабайт для службы хранилища Azure, а также конкурентоспособными в отрасли ценами на транзакции. Учетные записи общего назначения версии 2 поддерживают уровни доступа к учетной записи по умолчанию: горячий, холодный и уровень большого двоичного объекта между горячим, замечательным или архивом.
 
-Процесс обновления до учетной записи хранения общего назначения версии 2 с версии 1 или учетных записей хранилища BLOB-объектов является достаточно простым. Обновление можно выполнить через портал Azure, PowerShell или Azure CLI.
+Обновление до учетной записи хранения общего назначения версии 2 с учетными записями общего назначения v1 или хранилища BLOB-объектов — это просто. Обновление можно выполнить через портал Azure, PowerShell или Azure CLI. Непростости или риск потери данных при обновлении до учетной записи хранения общего назначения версии 2 не возникает. Обновление учетной записи происходит с помощью простой Azure Resource Manager операции, которая изменяет тип учетной записи.
 
 > [!IMPORTANT]
 > Обновление общего назначения версии v1 или учетной записи хранилища BLOB-объектов до общего назначения v2 является постоянным и не может быть отменено.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Войдите в свою учетную запись хранения.
@@ -35,7 +35,7 @@ ms.locfileid: "75975825"
 
     ![Тип учетной записи обновления](../blobs/media/storage-blob-account-upgrade/upgrade-to-gpv2-account.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -46,7 +46,7 @@ ms.locfileid: "75975825"
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource-group> -AccountName <storage-account> -UpgradeToStorageV2 -AccessTier <Hot/Cool>
 ```
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -165,6 +165,6 @@ az storage account update -g <resource-group> -n <storage-account> --set kind=St
 > [!NOTE]
 > Более подробный пример расчета затрат на использование "горячего" или "холодного" уровня доступа к хранилищу см. в ответе на вопрос *Что такое "горячий" и "холодный" уровень доступа и как определить, какой из них следует использовать?* на странице [Цены на хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [создать учетную запись хранения;](storage-account-create.md)

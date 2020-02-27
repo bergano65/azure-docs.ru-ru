@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: ca73c7e610b8bd818355f30b9d08bceffeddfc73
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: a68392d003e4e2a81801a903302badd99c1e9e87
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688887"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77523993"
 ---
 # <a name="build-a-nodejs-and-mongodb-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure в Linux
 
@@ -23,7 +23,7 @@ ms.locfileid: "74688887"
 
 ![Приложение MEAN.js, которое запущено в службе приложений Azure](./media/tutorial-nodejs-mongodb-app/meanjs-in-azure.png)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных с помощью API Azure Cosmos DB для MongoDB
@@ -37,7 +37,7 @@ ms.locfileid: "74688887"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 1. [установите Git](https://git-scm.com/);
 2. [установите Node.js 6.0 или более поздней версии и NPM](https://nodejs.org/);
@@ -462,7 +462,7 @@ git push azure master
 
 <a name="next"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

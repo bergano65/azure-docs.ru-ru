@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 5c12787cd6e0df19fd842dd44da49aa5ea97aa05
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0df05eff5dc84ef24e1ed5afcaf705d99f447ef
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60898888"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622577"
 ---
 # <a name="ddl-operations-in-azure-cosmos-db-cassandra-api-from-spark"></a>Операции DDL в API Cassandra для Azure Cosmos DB из Spark
 
@@ -85,7 +85,7 @@ DESCRIBE keyspaces;
 **Рекомендации**  
 
 - Пропускную способность можно назначить на уровне таблицы с помощью инструкции create table.  
-- Один ключ секции может хранить 10 ГБ данных.  
+- Один ключ секции может хранить 20 ГБ данных.  
 - Одна запись может хранить до 2 МБ данных.  
 - Один диапазон ключей секций может хранить несколько ключей секции.
 
@@ -120,7 +120,7 @@ val cdbConnector = CassandraConnector(sc)
 cdbConnector.withSessionDo(session => session.execute("ALTER TABLE books_ks.books WITH cosmosdb_provisioned_throughput=8000, WITH default_time_to_live=0;"))
 ```
 
-### <a name="drop-table"></a>инструкция удаления таблицы;
+### <a name="drop-table"></a>Удаление таблицы
 
 ```scala
 val cdbConnector = CassandraConnector(sc)
@@ -136,7 +136,7 @@ USE books_ks;
 DESCRIBE tables;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После создания пространства ключей и таблицы перейдите к следующим статьям об операциях CRUD и других аспектах:
  
