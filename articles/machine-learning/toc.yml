@@ -83,8 +83,10 @@
       href: concept-workspace.md
     - name: Среды
       href: concept-environments.md
-    - name: Данные
+    - name: Доступ к данным
       href: concept-data.md
+    - name: Прием данных
+      href: concept-data-ingestion.md
     - name: Обучение модели
       displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
       href: concept-train-machine-learning-model.md
