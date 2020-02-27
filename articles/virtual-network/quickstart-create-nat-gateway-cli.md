@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 816dc9c4460792b56a7dbf0c5d77f92afd257e73
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: df1e363f31aa8c88be54454c9dc060f4ed6b7ca1
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77429155"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77588898"
 ---
 # <a name="quickstart-create-a-nat-gateway-using-azure-cli"></a>Краткое руководство. Создание шлюза NAT c помощью Azure CLI
 
@@ -33,8 +33,6 @@ ms.locfileid: "77429155"
 Инструкции из этого учебника можно выполнить, используя Azure Cloud Shell или запустив соответствующие команды локально.  Если вы никогда не использовали Azure Cloud Shell, [войдите сейчас](https://shell.azure.com), чтобы пройти начальную настройку.
 Если вы решили выполнить эти команды локально, необходимо установить CLI.  Для выполнения задач из этого учебника требуется Azure CLI 2.0.71 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
-> [!IMPORTANT]
-> После [включения предварительной версии](./nat-overview.md#enable-preview) NAT виртуальной сети в подписке перейдите по адресу https://aka.ms/natportal, чтобы войти на портал.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
