@@ -669,12 +669,18 @@
                   href: ../common/storage-solution-periodic-data-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Параллелизм
           href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Доступ с использованием нескольких протоколов
-          href: ../blobs/data-lake-storage-multi-protocol-access.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Совместимость
+          items:
+            - name: Доступ с использованием нескольких протоколов
+              href: data-lake-storage-multi-protocol-access.md
+            - name: Поддерживаемые функции хранилища BLOB-объектов
+              href: data-lake-storage-supported-blob-storage-features.md
+            - name: Поддерживаемые службы Azure
+              href: data-lake-storage-supported-azure-services.md
+            - name: Поддерживаемые платформы с открытым исходным кодом
+              href: data-lake-storage-supported-open-source-platforms.md
         - name: Обработка больших данных
           href: ../blobs/data-lake-storage-data-scenarios.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Интеграция со службами Azure
-          href: ../blobs/data-lake-storage-integrate-with-azure-services.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Драйвер Azure Blob File System для Hadoop
           href: ../blobs/data-lake-storage-abfs-driver.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Формат URI для Azure Blob File System

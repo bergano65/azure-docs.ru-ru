@@ -69,7 +69,7 @@
       href: operating-system-functionality.md
     - name: Рекомендации по развертыванию
       href: deploy-best-practices.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Рекомендации
           href: security-recommendations.md
@@ -203,10 +203,14 @@
           href: app-service-web-restore-snapshots.md
         - name: Клонирование приложения
           href: app-service-web-app-cloning.md
-        - name: Перемещение ресурсов
-          href: '../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service%2ftoc.json#app-service-limitations'
         - name: Восстановление удаленной Службы приложений
           href: app-service-undelete.md
+    - name: Перемещение приложения
+      items:
+        - name: Переключение между регионами
+          href: manage-move-across-regions.md
+        - name: Перемещение подписок
+          href: '../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service%2ftoc.json#app-service-limitations'
     - name: Выполнение фоновых задач
       items:
         - name: Создание веб-заданий

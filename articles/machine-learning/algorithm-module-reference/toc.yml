@@ -46,6 +46,8 @@
       href: select-columns-transform.md
     - name: Выбор столбцов в наборе данных
       href: select-columns-in-dataset.md
+    - name: Разделение данных
+      href: split-data.md
 - name: Выбор признаков
   items:
     - name: Выбор признаков с помощью фильтра
@@ -142,5 +144,11 @@
       href: score-svd-recommender.md
     - name: Обучение рекомендателя SVD
       href: train-svd-recommender.md
+- name: Обнаружение аномалий
+  items:
+    - name: Обнаружение аномалий на основе анализа первичных компонентов
+      href: pca-based-anomaly-detection.md
+    - name: Обучение модели обнаружения аномалий
+      href: train-anomaly-detection-model.md
 - name: Ошибки модуля и устранение неполадок
   href: designer-error-codes.md

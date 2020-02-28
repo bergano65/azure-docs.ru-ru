@@ -1,23 +1,23 @@
 - name: Документация по Когнитивному поиску Azure
   href: index.yml
 - name: Обзор
-  expanded: true
   items:
     - name: Что собой представляет Когнитивный поиск Azure?
       href: search-what-is-azure-search.md
     - name: Новые возможности
       href: whats-new.md
 - name: Краткие руководства
+  expanded: true
   items:
-    - name: Создание службы
-      href: search-create-service-portal.md
     - name: Портал
       items:
+        - name: Создание службы
+          href: search-create-service-portal.md
         - name: Создание индекса
           href: search-get-started-portal.md
         - name: Создание приложения
           href: search-create-app-portal.md
-        - name: Создание набора навыков когнитивного поиска
+        - name: Создание набора навыков
           href: cognitive-search-quickstart-blob.md
         - name: Создание хранилища знаний
           href: knowledge-store-create-portal.md
@@ -99,61 +99,7 @@
       href: cognitive-search-incremental-indexing-conceptual.md
 - name: Практические руководства
   items:
-    - name: Планирование
-      items:
-        - name: Выбор уровня
-          href: search-sku-tier.md
-        - name: Ограничения службы
-          href: search-limits-quotas-capacity.md
-        - name: Настройка емкости
-          href: search-capacity-planning.md
-        - name: Масштабирование для производительности
-          href: search-performance-optimization.md
-        - name: Перемещение служб между регионами
-          href: search-howto-move-across-regions.md
-        - name: Мультитенантная архитектура
-          href: search-modeling-multitenant-saas-applications.md
-    - name: Безопасность
-      items:
-        - name: Общие сведения о безопасности
-          href: search-security-overview.md
-        - name: Создание частной конечной точки
-          href: service-create-private-endpoint.md
-        - name: Управление ключами службы
-          href: search-security-api-keys.md
-        - name: Доступ администратора на основе ролей
-          href: search-security-rbac.md
-        - name: Фильтры системы безопасности
-          href: search-security-trimming-for-azure-search.md
-        - name: Фильтр по удостоверениям AAD
-          href: search-security-trimming-for-azure-search-with-aad.md
-        - name: Управление ключами шифрования
-          href: search-security-manage-encryption-keys.md
-    - name: Разработка
-      items:
-        - name: Версии API
-          href: search-api-versions.md
-        - name: Список предварительных версий функций
-          href: search-api-preview.md
-        - name: Разработка в .NET
-          href: search-howto-dotnet-sdk.md
-        - name: Обновление пакета SDK
-          items:
-            - name: "Пакет SDK для .NET версии\_10.0"
-              href: search-dotnet-sdk-migration-version-10.md
-            - name: Пакет SDK для .NET версии 9.0
-              href: search-dotnet-sdk-migration-version-9.md
-            - name: Пакет SDK для .NET версии 5.0
-              href: search-dotnet-sdk-migration-version-5.md
-            - name: Пакет SDK для .NET версии 3.0
-              href: search-dotnet-sdk-migration.md
-            - name: Пакет SDK для .NET версии 1.1
-              href: search-dotnet-sdk-migration-version-1.md
-            - name: Пакет SDK управления для .NET
-              href: search-dotnet-mgmt-sdk-migration.md
-        - name: Обновление REST API
-          href: search-api-migration.md
-    - name: Создание индекса
+    - name: Создание индексов и конструкций
       items:
         - name: Создание простого индекса
           href: search-what-is-an-index.md
@@ -185,7 +131,7 @@
           href: search-howto-complex-data-types.md
         - name: Моделирование реляционных данных
           href: index-sql-relational-data.md
-    - name: Индексирование (импорт)
+    - name: Прием данных
       items:
         - name: Общие сведения об импорте данных
           href: search-what-is-data-import.md
@@ -197,16 +143,16 @@
           href: search-howto-large-index.md
         - name: Обработка одновременных обновлений
           href: search-howto-concurrency.md
-    - name: Использование индексатора
+    - name: Прием данных Azure
       items:
         - name: Настройка индексаторов
           href: search-indexer-overview.md
-        - name: Сопоставление полей
-          href: search-indexer-field-mappings.md
         - name: Монитор индексаторов
           href: search-howto-monitor-indexers.md
         - name: Расписание индексаторов
           href: search-howto-schedule-indexers.md
+        - name: Сопоставление полей
+          href: search-indexer-field-mappings.md
         - name: Источники данных
           items:
             - name: Большие двоичные объекты Azure
@@ -223,19 +169,19 @@
                   href: search-howto-index-csv-blobs.md
                 - name: Индексация больших двоичных объектов JSON
                   href: search-howto-index-json-blobs.md
+            - name: Таблицы Azure
+              href: search-howto-indexing-azure-tables.md
             - name: Azure Cosmos DB
               href: search-howto-index-cosmosdb.md
             - name: Azure Data Lake Storage 2-го поколения
               href: search-howto-index-azure-data-lake-storage.md
-            - name: База данных SQL Azure
+            - name: База данных SQL
               href: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
-            - name: Хранилище таблиц Azure
-              href: search-howto-indexing-azure-tables.md
             - name: Управляемые экземпляры SQL
               href: search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md
             - name: виртуальные машины SQL Server.
               href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
-    - name: Обогащение данных с помощью средств ИИ
+    - name: Прием данных с помощью ИИ
       items:
         - name: Вложение ресурса Cognitive Services
           href: cognitive-search-attach-cognitive-services.md
@@ -275,7 +221,7 @@
               href: knowledge-store-connect-power-bi.md
             - name: Примеры проекции
               href: knowledge-store-projections-examples.md
-    - name: Запрос документов
+    - name: Запрос
       items:
         - name: Типы запросов и составление запросов
           href: search-query-overview.md
@@ -295,7 +241,7 @@
               href: query-lucene-syntax.md
             - name: moreLikeThis (предварительная версия)
               href: search-more-like-this.md
-    - name: Применение фильтров
+    - name: Filter
       items:
         - name: Общие сведения о фильтрах
           href: search-filters.md
@@ -309,24 +255,80 @@
           href: search-query-understand-collection-filters.md
         - name: Пример многоуровневых аспектов
           href: search-example-adventureworks-multilevel-faceting.md
-    - name: Обработка результатов
+    - name: Результаты
       items:
         - name: Функции страниц
           href: search-pagination-page-layout.md
         - name: Настройка релевантности (профили повышения)
           href: index-add-scoring-profiles.md
-    - name: Управление службой
+    - name: План
+      items:
+        - name: Выбор уровня
+          href: search-sku-tier.md
+        - name: Ограничения службы
+          href: search-limits-quotas-capacity.md
+        - name: Настройка емкости
+          href: search-capacity-planning.md
+        - name: Масштабирование для производительности
+          href: search-performance-optimization.md
+        - name: Мультитенантная архитектура
+          href: search-modeling-multitenant-saas-applications.md
+    - name: Разработка
+      items:
+        - name: Версии API
+          href: search-api-versions.md
+        - name: Список предварительных версий функций
+          href: search-api-preview.md
+        - name: Разработка в .NET
+          href: search-howto-dotnet-sdk.md
+        - name: Обновление пакета SDK
+          items:
+            - name: "Пакет SDK для .NET версии\_10.0"
+              href: search-dotnet-sdk-migration-version-10.md
+            - name: Пакет SDK для .NET версии 9.0
+              href: search-dotnet-sdk-migration-version-9.md
+            - name: Пакет SDK для .NET версии 5.0
+              href: search-dotnet-sdk-migration-version-5.md
+            - name: Пакет SDK для .NET версии 3.0
+              href: search-dotnet-sdk-migration.md
+            - name: Пакет SDK для .NET версии 1.1
+              href: search-dotnet-sdk-migration-version-1.md
+            - name: Пакет SDK управления для .NET
+              href: search-dotnet-mgmt-sdk-migration.md
+        - name: Обновление REST API
+          href: search-api-migration.md
+    - name: Безопасность
+      items:
+        - name: Общие сведения о безопасности
+          href: search-security-overview.md
+        - name: Создание частной конечной точки
+          href: service-create-private-endpoint.md
+        - name: Управление ключами службы
+          href: search-security-api-keys.md
+        - name: Доступ администратора на основе ролей
+          href: search-security-rbac.md
+        - name: Фильтры системы безопасности
+          href: search-security-trimming-for-azure-search.md
+        - name: Фильтр по удостоверениям AAD
+          href: search-security-trimming-for-azure-search-with-aad.md
+        - name: Управление ключами шифрования
+          href: search-security-manage-encryption-keys.md
+    - name: Управление
       items:
         - name: Портал
           href: search-manage.md
         - name: PowerShell
           href: search-manage-powershell.md
-    - name: Мониторинг и ведение журналов
+        - name: Перемещение служб между регионами
+          href: search-howto-move-across-regions.md
+    - name: Монитор
       items:
         - name: Основные сведения
           href: search-monitor-usage.md
         - name: Ведение журнала диагностики
           href: search-monitor-logs.md
+        - name: Визуализация журналов диагностики
+          href: search-monitor-logs-powerbi.md
         - name: Мониторинг действий запросов
           href: search-monitor-queries.md
         - name: Поиск в аналитике трафика

@@ -272,6 +272,24 @@
               href: spot-template.md
             - name: Коды ошибок
               href: ../error-codes-spot.md?toc=/azure/virtual-machines/linux/toc.json
+    - name: Переход с классической модели развертывания на модель Azure Resource Manager
+      items:
+        - name: "Прекращение поддержки с 1\_марта 2023\_г."
+          href: ../classic-vm-deprecation.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+        - name: Общие сведения о переносе
+          href: migration-classic-resource-manager-overview.md
+        - name: Подробный обзор миграции
+          href: migration-classic-resource-manager-deep-dive.md
+        - name: Планирование миграции
+          href: migration-classic-resource-manager-plan.md
+        - name: Миграция с помощью интерфейса командной строки
+          href: migration-classic-resource-manager-cli.md
+        - name: Распространенные ошибки миграции
+          href: migration-classic-resource-manager-errors.md
+        - name: 'Средства миграции, созданные сообществом'
+          href: ../windows/migration-classic-resource-manager-community-tools.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: migration-classic-resource-manager-faq.md
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
@@ -713,21 +731,6 @@
               href: upload-vhd.md
             - name: Использование Azure Site Recovery
               href: ../../site-recovery/site-recovery-migrate-to-azure.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-        - name: Переход с классической модели развертывания на модель Azure Resource Manager
-          href: migration-classic-resource-manager-overview.md
-          items:
-            - name: Подробный обзор миграции
-              href: migration-classic-resource-manager-deep-dive.md
-            - name: Планирование миграции
-              href: migration-classic-resource-manager-plan.md
-            - name: Миграция с помощью интерфейса командной строки
-              href: migration-classic-resource-manager-cli.md
-            - name: Распространенные ошибки миграции
-              href: migration-classic-resource-manager-errors.md
-            - name: 'Средства миграции, созданные сообществом'
-              href: ../windows/migration-classic-resource-manager-community-tools.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: ВОПРОСЫ И ОТВЕТЫ
-              href: migration-classic-resource-manager-faq.md
 - name: Справочник
   items:
     - name: Azure CLI

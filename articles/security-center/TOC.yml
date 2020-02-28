@@ -49,7 +49,7 @@
           href: azure-container-registry-integration.md
         - name: Интеграция со Службой Azure Kubernetes
           href: azure-kubernetes-service-integration.md
-    - name: Инциденты и оповещения об обнаружении угроз
+    - name: Защита от угроз и оповещения системы безопасности
       items:
         - name: Общие сведения об оповещениях системы безопасности
           href: security-center-alerts-overview.md
@@ -59,16 +59,8 @@
           href: security-center-managing-and-responding-alerts.md
         - name: Управление инцидентами безопасности
           href: security-center-incident.md
-        - name: Обнаружение угроз для виртуальных машин и серверов
-          href: security-center-alerts-iaas.md
-        - name: Обнаружение угроз для облачных приложений и контейнеров
-          href: security-center-alerts-compute.md
-        - name: Обнаружение угроз для служб обработки данных
-          href: security-center-alerts-data-services.md
-        - name: Обнаружение угроз для уровней служб Azure
-          href: security-center-alerts-service-layer.md
-        - name: Оповещения об обнаружении угроз от Azure WAF и Защиты от атак DDoS Azure
-          href: security-center-alerts-integration.md
+        - name: Защита от угроз с помощью Центра безопасности Azure
+          href: threat-protection.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md
         - name: Карта оповещений системы безопасности и аналитика угроз

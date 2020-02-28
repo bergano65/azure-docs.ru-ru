@@ -6,22 +6,18 @@
       href: private-link-overview.md
 - name: Краткие руководства
   items:
-    - name: Создание частной конечной точки
-      items:
-        - name: Портал Azure
-          href: create-private-endpoint-portal.md
-        - name: Azure CLI
-          href: create-private-endpoint-cli.md
-        - name: Azure PowerShell
-          href: create-private-endpoint-powershell.md
-    - name: Создание службы "Приватный канал"
-      items:
-        - name: Портал Azure
-          href: create-private-link-service-portal.md
-        - name: Azure PowerShell
-          href: create-private-link-service-powershell.md
-        - name: Azure CLI
-          href: create-private-link-service-cli.md
+    - name: Создание частной конечной точки с помощью портала
+      href: create-private-endpoint-portal.md
+    - name: Создание частной конечной точки с помощью PowerShell
+      href: create-private-endpoint-powershell.md
+    - name: Создание частной конечной точки с помощью Azure CLI
+      href: create-private-endpoint-cli.md
+    - name: Создание службы "Приватный канал" с помощью портала
+      href: create-private-link-service-portal.md
+    - name: Создание службы "Приватный канал" с помощью PowerShell
+      href: create-private-link-service-powershell.md
+    - name: Создание службы "Приватный канал" с помощью Azure CLI
+      href: create-private-link-service-cli.md
 - name: Основные понятия
   items:
     - name: Частная конечная точка

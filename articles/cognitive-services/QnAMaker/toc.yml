@@ -88,6 +88,8 @@
         - name: Жизненный цикл разработки
           href: Concepts/development-lifecycle-knowledge-base.md
           displayName: 'version control, test, index, publish, monitor usage, create'
+        - name: Улучшение с помощью функции "Предложения для активного обучения"
+          href: Concepts/active-learning-suggestions.md
     - name: Обращение к базе знаний
       items:
         - name: Получение ответов

@@ -116,6 +116,8 @@
           items:
             - name: Журналы диагностики и аудита (предварительная версия)
               href: container-registry-diagnostics-audit-logs.md
+            - name: Проверка соответствия требованиям с помощью службы "Политика Azure" (предварительная версия)
+              href: container-registry-azure-policy.md
         - name: Диагностика
           expanded: false
           items:
