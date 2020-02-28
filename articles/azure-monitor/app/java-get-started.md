@@ -1,18 +1,16 @@
 ---
 title: Краткое руководство. анализ веб-приложений Java с помощью Azure Application Insights
 description: 'Сведения о мониторинге производительности веб-приложений Java с помощью Application Insights. '
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: abc16f8e1fdc6b81634b926eeb287e5d03efdc40
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 484d4e8df8a8fdceed62a65858126a16d028121e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76963688"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670089"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
@@ -20,7 +18,7 @@ ms.locfileid: "76963688"
 
 Application Insights — это расширяемая служба аналитики для веб-разработчиков, которая помогает понять производительность и использование приложения в реальном времени. Надстройка Application Insights поддерживает приложения Java, работающие под управлением Linux, Unix или Windows.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 * Работающее приложение Java.
@@ -38,7 +36,7 @@ Application Insights — это расширяемая служба аналит
 
 *Выберите тип проекта.*
 
-# <a name="maventabmaven"></a>[Maven](#tab/maven)
+# <a name="maven"></a>[Maven](#tab/maven)
 
 Если проект уже настроен на использование Maven для сборки, объедините приведенный ниже код в файл *POM. XML* .
 
@@ -56,7 +54,7 @@ Application Insights — это расширяемая служба аналит
     </dependencies>
 ```
 
-# <a name="gradletabgradle"></a>[Gradle](#tab/gradle)
+# <a name="gradle"></a>[Gradle](#tab/gradle)
 
 Если проект уже настроен на использование Gradle для сборки, объедините приведенный ниже код в файл *Build. Gradle* .
 
@@ -70,7 +68,7 @@ Application Insights — это расширяемая служба аналит
     }
 ```
 
-# <a name="other-typestabother"></a>[Другие типы](#tab/other)
+# <a name="other-types"></a>[Другие типы](#tab/other)
 
 Скачайте [последнюю версию](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и скопируйте необходимые файлы в проект, заменив все предыдущие версии.
 
@@ -297,15 +295,15 @@ Application Insights — это расширяемая служба аналит
 * [Следите за пользовательскими событиями и метриками][api] , чтобы узнать, какие пользователи выполняются с приложением.
 * [Поиск событий и журналов][diagnostic] для диагностики неполадок.
 
-## <a name="availability-web-tests"></a>Веб-тесты на доступность
+## <a name="availability-web-tests"></a>Доступность веб-тестов
 Application Insights может тестировать ваш веб-сайт через равные промежутки времени для проверки, работает ли он и правильно ли отвечает на запросы.
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+## <a name="questions-problems"></a>Вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.

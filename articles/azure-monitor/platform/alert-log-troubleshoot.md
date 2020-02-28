@@ -2,18 +2,16 @@
 title: Устранение неполадок с оповещениями журнала в Azure Monitor | Документация Майкрософт
 description: Распространенные проблемы, ошибки и способы их устранения для правил генерации оповещений журнала в Azure.
 author: yanivlavi
-services: azure-monitor
-ms.service: azure-monitor
-ms.topic: conceptual
-ms.date: 10/29/2018
 ms.author: yalavi
+ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: aa2f3481b63c98ec23e1db8213939278684a4cd6
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 10/29/2018
+ms.openlocfilehash: acb9784b745fa90fc9cd264162930020e6d64751
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977640"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668508"
 ---
 # <a name="troubleshoot-log-alerts-in-azure-monitor"></a>Устранение неполадок с оповещениями журнала в Azure Monitor  
 
@@ -189,7 +187,7 @@ Log Analytics и Application Insights подчиняются задержкам 
 
 Вы можете узнать точное время, когда Azure Monitor отключил правило оповещения журнала, выполнив поиск события в [журнале действий Azure](../../azure-resource-manager/management/view-activity-logs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь со сведениями об [оповещениях журналов в Azure](../platform/alerts-unified-log.md).
 - Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md).

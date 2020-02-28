@@ -1,18 +1,17 @@
 ---
 title: Время приема данных журнала в Azure Monitor | Документация Майкрософт
 description: Описание различных факторов, которые влияют на задержку при сборе данных журнала в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/18/2019
-ms.openlocfilehash: bd6590ebbd33dc5c9b65fc193679f4bf99760c3a
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 99d5594dd3ebe3750cb0a09ea803065e2aeb5ba2
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894153"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77666643"
 ---
 # <a name="log-data-ingestion-time-in-azure-monitor"></a>Время приема данных журнала в Azure Monitor
 Azure Monitor — это высокомасштабируемая служба, которая обслуживает тысячи клиентов, ежемесячно отправляющих стремительными темпами терабайты данных. Часто возникают вопросы о времени, в течение которого собранные данные журнала становятся доступными. В этой статье объясняются факторы, влияющие на эту задержку.
@@ -76,7 +75,7 @@ Azure Monitor — это высокомасштабируемая служба,
 ## <a name="checking-ingestion-time"></a>Проверка времени приема
 В различных условиях время приема может меняться для разных ресурсов. Запросы журналов можно использовать для идентификации конкретного поведения среды. В следующей таблице показано, как можно определить разное время для записи, когда она создается и отправляется в Azure Monitor.
 
-| Шаг | Свойство или функция | Комментарии |
+| Шаг | Свойство или функция | Comments |
 |:---|:---|:---|
 | Запись, созданная в источнике данных | [TimeGenerated](log-standard-properties.md#timegenerated-and-timestamp) <br>Если источник данных не задает это значение, он будет установлен в то же время, что и _TimeReceived. |
 | Запись, полученная конечной точкой приема Azure Monitor | [_TimeReceived](log-standard-properties.md#_timereceived) | |
@@ -142,6 +141,6 @@ Heartbeat
 | top 20 by NoHeartbeatPeriod desc 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь со страницей [Соглашение об уровне обслуживания для Log Analytics](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_1/).
 

@@ -1,18 +1,17 @@
 ---
 title: Подготовка к переносу классических оповещений Azure Monitor с помощью обновления приложений логики и модулей Runbook
-author: yanivlavi
 description: Узнайте, как изменить веб-перехватчики, приложения логики и модули Runbook для подготовки к добровольной миграции.
-ms.service: azure-monitor
+author: yanivlavi
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 58ba95ff60ddccf909578a673110c870caf57376
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 9219e105acb98424939030af76b526d475585619
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705570"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665598"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Подготовка приложений логики и модулей Runbook для миграции классических правил генерации оповещений
 
@@ -32,7 +31,7 @@ API-интерфейсы, которые создают классические
 |         |Классические оповещения  |Новые оповещения метрик |
 |---------|---------|---------|
 |REST API     | [Microsoft. Insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [Microsoft. Insights/метрикалертс](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
-|Интерфейс командной строки Azure     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
+|Azure CLI     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
 |PowerShell      | [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Шаблон Azure Resource Manager | [Для классических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых оповещений метрик](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
 
@@ -51,7 +50,7 @@ API-интерфейсы, которые создают классические
 | Имя правила генерации оповещений | **context.name** | **data.context.name** |
 | Описание правила генерации оповещений | **context. Description** | **Data. Context. Description** |
 | Условие для правила генерации оповещений | **context. Condition** | **Data. Context. Condition** |
-| Имя метрики | **context. Condition. metricName** | **Data. Context. Condition. allOf [0]. metricName** |
+| Имя показателя | **context. Condition. metricName** | **Data. Context. Condition. allOf [0]. metricName** |
 | Статистическая обработка времени (вычисление метрики в окне оценки)| **context. Condition. timeAggregation** | **context. Condition. timeAggregation** |
 | Период оценки | **context. Condition. windowSize** | **Data. Context. Condition. windowSize** |
 | Оператор (как агрегированное значение метрики сравнивается с пороговым значением) | **context. Condition. оператор** | **Data. Context. Condition. оператор** |
@@ -163,7 +162,7 @@ else {
 
 Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

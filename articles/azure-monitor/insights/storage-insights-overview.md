@@ -1,18 +1,17 @@
 ---
 title: Мониторинг служб хранилища Azure с помощью Azure Monitor для хранилища (Предварительная версия) | Документация Майкрософт
 description: В этой статье описывается Azure Monitor для функции хранения, которая предоставляет администраторам хранилища быстрое понимание проблем с производительностью и использованием учетных записей хранения Azure.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/15/2019
-ms.openlocfilehash: 790d6ad9fb26253697ea36b402799d3eb488ca47
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f23be7e764ad180a23c76abb7f9bb2218fd61e4c
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75401134"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77662525"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage-preview"></a>Мониторинг службы хранилища с помощью Azure Monitor для хранилища (Предварительная версия)
 
@@ -227,7 +226,7 @@ Azure Monitor для хранилища (Предварительная верс
 
 7. Выберите команду **Сохранить как** на панели команд, чтобы сохранить копию книги с вашими настройками, а затем нажмите кнопку **Готово к редактированию** , чтобы вернуться в режим чтения.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Этот раздел поможет вам в диагностике и устранении неполадок некоторых распространенных проблем, которые могут возникнуть при использовании Azure Monitor для хранения (Предварительная версия). Чтобы найти информацию о конкретной проблеме, просмотрите список ниже.
 
@@ -315,7 +314,7 @@ Azure Monitor для хранилища (Предварительная верс
 ![выберите Изменить в нижней части шага книги, чтобы открыть параметры](./media/storage-insights-overview/fqa-edit.png)
 ![в области Параметры выберите шестеренку внизу, чтобы иметь возможность изменить имя шага](./media/storage-insights-overview/fqa-change-name.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Настройте [оповещения метрик](../platform/alerts-metric.md) и [уведомления о работоспособности службы](../../service-health/alerts-activity-log-service-notifications.md) , чтобы настроить автоматическое оповещение для облегчения обнаружения проблем.
 

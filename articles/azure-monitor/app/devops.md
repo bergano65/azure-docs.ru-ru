@@ -1,18 +1,14 @@
 ---
 title: Наблюдение за производительностью веб-приложений в Azure Application Insights
 description: Как Application Insights встраивается в цикл разработки и операций (DevOps)
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 12/21/2018
-ms.openlocfilehash: 1396bc86971941fdf8c6559df71a4c47f58a899c
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 24095aade80022d1e1ebb38357971512bfc873c0
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928825"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669698"
 ---
 # <a name="deep-diagnostics-for-web-apps-and-services-with-application-insights"></a>Углубленная диагностика для веб-приложений и служб с помощью Application Insights
 ## <a name="why-do-i-need-application-insights"></a>Зачем мне Application Insights?
@@ -51,7 +47,7 @@ ms.locfileid: "74928825"
 * Что является основной причиной? Сбой произошел в моем компоненте или в зависимости? Это проблема связи?
 * Сколько пользователей было затронуто? Если необходимо решить несколько проблем, какая из них наиболее критична?
 
-## <a name="what-is-application-insights"></a>Что такое Application Insights?
+## <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 ![Базовый рабочий процесс Application Insights](./media/devops/020.png)
 
 1. Application Insights снабжает ваше приложение инструментами и отправляет данные телеметрии во время выполнения приложения. Либо встройте пакет SDK Application Insights в приложение, либо применяйте его инструменты во время выполнения. Первый метод является более гибким, так как вы можете добавлять собственную телеметрию в стандартные модули.
@@ -158,7 +154,7 @@ Visual Studio и Eclipse оснащены инструментами для на
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Начать работу с Application Insights легко. Ниже перечислены основные возможности.
 
 * [Серверы IIS](../../azure-monitor/app/monitor-performance-live-website-now.md), а также [служба приложений Azure](../../azure-monitor/app/app-insights-overview.md).

@@ -1,20 +1,18 @@
 ---
 title: Телеметрия Application Insights в Visual Studio CodeLens | Документация Майкрософт
 description: Быстро получайте доступ к телеметрии запросов и исключений Application Insights с помощью CodeLens в Visual Studio.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 03/17/2017
 ms.reviewer: mbullwin
 ms.custom: vs-azure
-ms.openlocfilehash: 4232431be221fca076a6bff9305093354f08c44d
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: dc334932bfd57bc81a58314ee68f02aeed520f41
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899335"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670956"
 ---
 # <a name="application-insights-telemetry-in-visual-studio-codelens"></a>Телеметрия Application Insights в Visual Studio CodeLens
 Методы в коде веб-приложения можно обозначить с помощью данных телеметрии об исключениях во время выполнения и времени ответа на запрос. Если установить в приложении [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md), данные телеметрии будут отображаться в Visual Studio [CodeLens](https://msdn.microsoft.com/library/dn269218.aspx) в виде примечаний в верхней части данных о функции. Там обычно приведены такие полезные сведения, как число расположений со ссылками на функцию или имя пользователя, который последним вносил в нее изменения.
@@ -35,7 +33,7 @@ ms.locfileid: "72899335"
 > 
 
 ## <a name="exceptions-in-codelens"></a>Исключения в CodeLens
-![Подлежит определению](./media/visual-studio-codelens/codelens-exceptions.png)
+![Подлежит уточнению](./media/visual-studio-codelens/codelens-exceptions.png)
 
 Индикатор исключений CodeLens показывает количество исключений, возникших за последние 24 часа, для 15 наиболее часто возникающих в приложении исключений за период обработки запросов, выполненных с помощью метода.
 
@@ -57,7 +55,7 @@ ms.locfileid: "72899335"
 > 
 
 ## <a name="requests-in-codelens"></a>Запросы в CodeLens
-![Подлежит определению](./media/visual-studio-codelens/codelens-requests.png)
+![Подлежит уточнению](./media/visual-studio-codelens/codelens-requests.png)
 
 Индикатор запросов CodeLens показывает количество HTTP-запросов, выполненных с помощью метода за последние 24 часа, а также процент невыполненных запросов.
 
@@ -69,7 +67,7 @@ ms.locfileid: "72899335"
 * Выберите **Тренд** , чтобы просмотреть тренды запросов, невыполненных запросов или среднего времени ответа за последние 24 часа.
 * Выберите имя ресурса Application Insights в верхнем левом углу подробного представления CodeLens, чтобы изменить ресурс, который является источником данных CodeLens.
 
-## <a name="next"></a>Дальнейшие действия
+## <a name="next"></a>Следующие шаги
 |  |  |
 | --- | --- |
 | **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-codelens/34.png) |

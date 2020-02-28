@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 8c4169ccfb35b74b92ea4996cbc779bac35d6ccb
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: dc784fa2dd5317932294af6e9c9d36dcce7d32f1
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715862"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672078"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor
 
@@ -208,123 +208,120 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 
 Превышенное использование вызывается одной (или двумя) причинами:
 - Больше узлов, чем ожидалось, отправка данных в Log Analytics рабочую область
-- Больше данных, чем ожидалось, отправляется в Log Analytics рабочую область
+- Больше данных, чем ожидалось, отправляется в Log Analytics рабочую область (возможно, из-за начала использования нового решения или изменения конфигурации существующего решения)
 
 ## <a name="understanding-nodes-sending-data"></a>Общие сведения об узлах, отправляющих данные
 
-Чтобы понять количество компьютеров, передающих пакеты пульса каждый день в прошлом месяце, используйте
+Чтобы понять количество узлов, передающих пакеты пульса от агента каждый день в прошлом месяце, используйте
 
 ```kusto
-Heartbeat | where TimeGenerated > startofday(ago(31d))
-| summarize dcount(Computer) by bin(TimeGenerated, 1d)    
+Heartbeat 
+| where TimeGenerated > startofday(ago(31d))
+| summarize nodes = dcount(Computer) by bin(TimeGenerated, 1d)    
 | render timechart
 ```
-
-Чтобы получить список компьютеров, которые будут оплачиваться как узлы, если Рабочая область находится в ценовой категории "устаревшие на узел", найдите узлы, отправляющие **типы данных с оплатой** (некоторые типы данных свободны). Для этого используйте [свойство](log-standard-properties.md#_isbillable) `_IsBillable` и используйте крайнее левое поле полного доменного имени. В результате будет возвращен список компьютеров с данными о счетах:
+Количество узлов, отправляющих данные, можно определить с помощью: 
 
 ```kusto
 union withsource = tt * 
-| where _IsBillable == true 
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| where computerName != ""
+| summarize nodes = dcount(computerName)
+```
+
+Чтобы получить список узлов, отправляющих любые данные (и объем данных, отправляемых каждым из них), можно использовать следующий запрос:
+
+```kusto
+union withsource = tt * 
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
 | where computerName != ""
 | summarize TotalVolumeBytes=sum(_BilledSize) by computerName
 ```
 
-Число наблюдаемых оплачиваемых узлов можно оценить следующим образом: 
-
-```kusto
-union withsource = tt * 
-| where _IsBillable == true 
-| extend computerName = tolower(tostring(split(Computer, '.')[0]))
-| where computerName != ""
-| summarize billableNodes=dcount(computerName)
-```
-
 > [!NOTE]
 > Используйте эти запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение. Этот запрос заменяет старый способ запроса информации на компьютере с типом данных использования.  
 
-Более точное вычисление того, что будет оплачиваться, — получение количества компьютеров в час, отправляющих типы данных с оплатой. (Для рабочих областей в ценовой категории "устаревший на узел" Log Analytics вычисляет количество узлов, которые должны оплачиваться на почасовой основе.) 
-
-```kusto
-union withsource = tt * 
-| where _IsBillable == true 
-| extend computerName = tolower(tostring(split(Computer, '.')[0]))
-| where computerName != ""
-| summarize billableNodes=dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc
-```
-
 ## <a name="understanding-ingested-data-volume"></a>Основные сведения о принимаемом томе данных
 
-На странице **Использование и ожидаемые затраты** есть диаграмма *Data ingestion per solution* (Прием данных по решениям), которая позволяет отобразить объем отправленных данных в целом и для каждого решения отдельно. Это позволяет выявить некоторые тенденции, например оценить изменения общего объема используемых данных (или по определенному решению). Для создания этой диаграммы применяется такой запрос:
+На странице **Использование и ожидаемые затраты** есть диаграмма *Data ingestion per solution* (Прием данных по решениям), которая позволяет отобразить объем отправленных данных в целом и для каждого решения отдельно. Это позволяет выявить некоторые тенденции, например оценить изменения общего объема используемых данных (или по определенному решению). 
+
+### <a name="data-volume-by-solution"></a>объем данных для каждого решения;
+
+Для просмотра объема оплачиваемых данных по решению используется запрос
 
 ```kusto
-Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
-| summarize TotalVolumeGB = sum(Quantity) / 1000. by bin(TimeGenerated, 1d), Solution| render barchart
+Usage 
+| where TimeGenerated > startofday(ago(31d))
+| where IsBillable == true
+| summarize BillableDataGB = sum(Quantity) / 1000. by bin(TimeGenerated, 1d), Solution | render barchart
 ```
 
-Обратите внимание, что предложение "where IsBillable = true" отсеивает выбранные типы данных из определенных решений, для которых не взимается плата за прием данных. 
+Обратите внимание, что предложение `where IsBillable = true` отфильтровывает типы данных из определенных решений, для которых не взимается плата приема. 
 
-Вы можете изучить данные еще подробнее, чтобы найти тенденции для определенных типов данных, например для данных из журналов IIS:
+### <a name="data-volume-by-type"></a>Объем данных по типу
+
+Дополнительные сведения можно просмотреть, чтобы увидеть тенденции данных для типа данных:
 
 ```kusto
 Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
-| where DataType == "W3CIISLog"
-| summarize TotalVolumeGB = sum(Quantity) / 1000. by bin(TimeGenerated, 1d), Solution| render barchart
+| where TimeGenerated > startofday(ago(31d))
+| where IsBillable == true
+| summarize BillableDataGB = sum(Quantity) / 1000. by bin(TimeGenerated, 1d), DataType | render barchart
+```
+
+Чтобы просмотреть таблицу по решению и типу за прошлый месяц,
+
+```kusto
+Usage 
+| where TimeGenerated > startofday(ago(31d))
+| where IsBillable == true
+| summarize BillableDataGB = sum(Quantity) by Solution, DataType
+| sort by Solution asc, DataType asc
 ```
 
 ### <a name="data-volume-by-computer"></a>Объем данных по компьютерам
 
-Чтобы просмотреть **Размер** оплачиваемых событий, принимаемых на компьютер, используйте [свойство](log-standard-properties.md#_billedsize)`_BilledSize`, которое предоставляет размер в байтах:
+`Usage` тип данных не содержит сведений на уровне завершения. Чтобы просмотреть **Размер** принимаемых данных на компьютер, используйте [свойство](log-standard-properties.md#_billedsize)`_BilledSize`, которое предоставляет размер в байтах:
 
 ```kusto
 union withsource = tt * 
 | where _IsBillable == true 
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
-| summarize Bytes=sum(_BilledSize) by  computerName | sort by Bytes nulls last
+| summarize BillableDataBytes = sum(_BilledSize) by  computerName | sort by Bytes nulls last
 ```
 
 [Свойство](log-standard-properties.md#_isbillable) `_IsBillable` указывает, будут ли полученные данные взиматься за плату.
 
-Чтобы просмотреть число **оплачиваемых** событий, принимаемых на компьютер, используйте 
+Чтобы просмотреть **число** оплачиваемых событий, принимаемых на компьютер, используйте 
 
 ```kusto
 union withsource = tt * 
 | where _IsBillable == true 
 | extend computerName = tolower(tostring(split(Computer, '.')[0]))
-| summarize eventCount=count() by computerName  | sort by eventCount nulls last
-```
-
-Чтобы счетчики оплачиваемых типов данных отправляли данные на конкретный компьютер, выполните такой запрос:
-
-```kusto
-union withsource = tt *
-| where Computer == "computer name"
-| where _IsBillable == true 
-| summarize count() by tt | sort by count_ nulls last
+| summarize eventCount = count() by computerName  | sort by eventCount nulls last
 ```
 
 ### <a name="data-volume-by-azure-resource-resource-group-or-subscription"></a>Объем данных по ресурсам, группам ресурсов или подпискам Azure
 
-Для данных из узлов, размещенных в Azure, можно получить **Размер** оплачиваемых событий, принимаемых __на компьютер__, используя [свойство](log-standard-properties.md#_resourceid)_ResourceId, которое предоставляет полный путь к ресурсу:
+Для данных из узлов, размещенных в Azure, можно получить **Размер** принимаемых данных __на компьютер__, используя [свойство](log-standard-properties.md#_resourceid)_ResourceId, которое предоставляет полный путь к ресурсу.
 
 ```kusto
 union withsource = tt * 
 | where _IsBillable == true 
-| summarize Bytes=sum(_BilledSize) by _ResourceId | sort by Bytes nulls last
+| summarize BillableDataBytes = sum(_BilledSize) by _ResourceId | sort by Bytes nulls last
 ```
 
-Для данных из узлов, размещенных в Azure, можно получить **Размер** оплачиваемых событий, принимаемых __для каждой подписки Azure__. Проанализируйте свойство `_ResourceId` следующим образом:
+Для данных из узлов, размещенных в Azure, можно получить **Размер** принимаемых данных для __каждой подписки Azure__, проанализируйте свойство `_ResourceId` следующим образом:
 
 ```kusto
 union withsource = tt * 
 | where _IsBillable == true 
 | parse tolower(_ResourceId) with "/subscriptions/" subscriptionId "/resourcegroups/" 
     resourceGroup "/providers/" provider "/" resourceType "/" resourceName   
-| summarize Bytes=sum(_BilledSize) by subscriptionId | sort by Bytes nulls last
+| summarize BillableDataBytes = sum(_BilledSize) by subscriptionId | sort by Bytes nulls last
 ```
 
 При изменении `subscriptionId` на `resourceGroup` в группе ресурсов Azure будет показан оплачиваемый объем принимаемых данных. 
-
 
 > [!NOTE]
 > Некоторые поля с типом данных Usage (Потребление) уже устарели и данные в них не заполняются, хотя они пока сохраняются в схеме. Например, сюда относятся поля **Computer** и ряд данных о приеме данных (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** и **AverageProcessingTimeMs**).
@@ -361,6 +358,18 @@ union withsource = tt *
 | Системный журнал                     | Измените [конфигурацию системного журнала](data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
 | AzureDiagnostics           | Измените коллекцию журнала ресурсов, чтобы: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
 | Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
+
+### <a name="getting-nodes-as-billed-in-the-per-node-pricing-tier"></a>Получение узлов с выставленным счетом в ценовой категории "на узел"
+
+Чтобы получить список компьютеров, которые будут оплачиваться как узлы, если Рабочая область находится в ценовой категории "устаревшие на узел", найдите узлы, отправляющие **типы данных с оплатой** (некоторые типы данных свободны). Для этого используйте [свойство](log-standard-properties.md#_isbillable) `_IsBillable` и используйте крайнее левое поле полного доменного имени. При этом возвращается число компьютеров с оплачиваемыми данными за час (что является детализацией, на которой узлы подсчитываются и выставляются счета):
+
+```kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| where computerName != ""
+| summarize billableNodes=dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc
+```
 
 ### <a name="getting-security-and-automation-node-counts"></a>Получение количества узлов по обеспечению безопасности и автоматизации
 
@@ -495,7 +504,7 @@ Operation | where OperationCategory == 'Data Collection Status'
 Существует несколько дополнительных ограничений Log Analytics, некоторые из которых зависят от ценовой категории Log Analytics. Эти данные описаны [здесь](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#log-analytics-workspaces).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об использовании языка поиска см. [в статье Поиск по журналам в Azure Monitor журналах](../log-query/log-query-overview.md) . Вы можете использовать поисковые запросы, чтобы выполнить дополнительный анализ данных об использовании.
 - Выполните действия, описанные в разделе о [создании оповещений журналов](alerts-metric.md), чтобы получать уведомления при выполнении условий поиска.

@@ -1,19 +1,17 @@
 ---
 title: Настройка оповещений о доступности с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка веб-тестов в Application Insights. Получение оповещений, когда веб-сайт становится недоступным или медленно реагирует на запросы.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/19/2019
 ms.reviewer: sdash
-ms.openlocfilehash: a1637ac82c33c2a541bcec9f2848a248c29d56ca
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: e0c1a93ef663762bec199abc5aa7eabbc821168d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872678"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77654959"
 ---
 # <a name="availability-alerts"></a>Оповещения о доступности
 
@@ -26,7 +24,7 @@ ms.locfileid: "74872678"
 ![Интерфейс создания](./media/availability-alerts/create-test.png)
 
 > [!NOTE]
->  В [новых унифицированных оповещениях](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) настройки серьезности и уведомлений для правила генерации оповещений с помощью [группы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) **должны** настраиваться в интерфейсе оповещений. Без следующих действий вы будете получать уведомления только на портале.
+>  С помощью [новых Объединенных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts)в интерфейсе оповещений **должны быть** настроены параметры серьезности и уведомления правила оповещений с [группами действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) . Без следующих действий вы будете получать уведомления только на портале.
 
 1. Сохранив тест доступности, щелкните многоточие на вкладке "Сведения" для созданного теста. Выберите "Изменить оповещение".
 
@@ -66,11 +64,11 @@ ms.locfileid: "74872678"
 
 Чтобы автоматизировать этот процесс с помощью шаблонов Azure Resource Manager, см. документацию [Создание оповещения метрики с помощью шаблона диспетчер ресурсов](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert) .
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Выделенная [статья по устранению неполадок](troubleshoot-availability.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Многошаговые веб-тесты](availability-multistep.md)
 * [Веб-тесты проверки связи URL](monitor-web-app-availability.md)

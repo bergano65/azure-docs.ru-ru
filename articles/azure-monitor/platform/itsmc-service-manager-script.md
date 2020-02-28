@@ -1,18 +1,17 @@
 ---
 title: Автоматизированный скрипт для создания веб-приложения Service Manager для подключения к Azure с помощью соединителя управления ИТ-услугами | Документация Майкрософт
 description: Создание веб-приложения Service Manager с помощью автоматизированного скрипта для подключения к Azure с помощью соединителя управления ИТ-услугами, а также централизованный мониторинг и управление рабочими элементами ITSM.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: a97ea4d505d17d1d5fb2f2035fb23f3fce94aebe
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: f224e58905e2989caf16259e383726595c0206d5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990952"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672197"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
 
@@ -33,7 +32,7 @@ ms.locfileid: "76990952"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
  Windows Management Framework версии 5.0 или выше.
 По умолчанию в Windows 10 используется версия 5.1. Скачать нужную версию можно [отсюда](https://www.microsoft.com/download/details.aspx?id=50395):

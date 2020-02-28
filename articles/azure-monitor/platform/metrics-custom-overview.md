@@ -3,17 +3,16 @@ title: Пользовательские метрики в Azure Monitor
 description: Сведения о пользовательских метриках в Azure Monitor и их моделировании.
 author: ancav
 services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 744958fc44a8d10bbc8ca5d44af8c473548ae5ca
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 3e3f45c1802d501e2320930c35073ec89ff38124
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73669161"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77662354"
 ---
 # <a name="custom-metrics-in-azure-monitor"></a>Пользовательские метрики в Azure Monitor
 
@@ -38,7 +37,7 @@ ms.locfileid: "73669161"
 > [!NOTE]  
 > Когда для создания настраиваемых метрик вы запрашиваете маркер Azure AD, убедитесь, что он запрашивает аудиторию или ресурс, которые совпадают с https://monitoring.azure.com/. Убедитесь, что адрес содержит завершающую косую черту (/).
 
-### <a name="subject"></a>Субъект
+### <a name="subject"></a>Тема
 Это свойство содержит ИД ресурса Azure, для которого предоставляется пользовательская метрика. Эти сведения будут закодированы в URL-адресе совершаемого вызова API. Каждый API может отправлять значения метрик для одного ресурса Azure.
 
 > [!NOTE]  
@@ -54,7 +53,7 @@ ms.locfileid: "73669161"
 >
 >
 
-### <a name="timestamp"></a>Timestamp
+### <a name="timestamp"></a>Отметка времени
 Каждая точка данных, отправляемая в Azure Monitor, должна быть отмечена временной меткой. Эта метка времени содержит дату и время измерения или получения метрики. Azure Monitor принимает данные метрик с метками времени до 20 минут назад и до 5 минут вперед. Метка времени должна быть в формате ISO 8601.
 
 ### <a name="namespace"></a>Пространство имен
@@ -173,7 +172,7 @@ ms.locfileid: "73669161"
 | **США и Канада** | |
 |центрально-западная часть США | HTTPS:\//westcentralus.monitoring.azure.com/ |
 |западная часть США 2       | HTTPS:\//westus2.monitoring.azure.com/ |
-|Центрально-северная часть США | HTTPS:\//northcentralus.monitoring.azure.com
+|Центрально-северная часть США | HTTPS:\//northcentralus.monitoring.azure.com
 |Центрально-южная часть США| HTTPS:\//southcentralus.monitoring.azure.com/ |
 |Центральная часть США      | HTTPS:\//centralus.monitoring.azure.com |
 |Центральная Канада | HTTPS:\//канадацентрал.Мониторинг.Азуре.КОМК
@@ -184,7 +183,7 @@ ms.locfileid: "73669161"
 |южная часть Соединенного Королевства | HTTPS:\//uksouth.monitoring.azure.com
 |Центральная Франция | HTTPS:\//francecentral.monitoring.azure.com |
 | **Африка** | |
-|Северная часть ЮАР | HTTPS:\//southafricanorth.monitoring.azure.com
+|Северная часть ЮАР; | HTTPS:\//southafricanorth.monitoring.azure.com
 | **Азия** | |
 |Центральная Индия | HTTPS:\//centralindia.monitoring.azure.com
 |Восточная Австралия | HTTPS:\//australiaeast.monitoring.azure.com
@@ -197,20 +196,20 @@ ms.locfileid: "73669161"
 ## <a name="quotas-and-limits"></a>Квоты и ограничения
 Azure Monitor налагает указанные ниже ограничения на использование пользовательских метрик.
 
-|Категория|Ограничение|
+|Категория|Предельное количество|
 |---|---|
-|Активные временные серии, подписки, регион|50 000|
+|Активные временные серии, подписки, регион|50 000|
 |Ключи измерений на метрику|10|
 |Длина строки для имен и пространств имен метрик, а также ключей и имен измерений|256 символов|
 
 Активная временная серия — это уникальное сочетание метрики, ключа и значения измерения, содержащее значения метрик, опубликованные за последние 12 часов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Используйте пользовательские метрики из различных служб: 
  - [Виртуальные машины](collect-custom-metrics-guestos-resource-manager-vm.md)
  - [Масштабируемый набор виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md)
  - [Виртуальные машины Azure (классические)](collect-custom-metrics-guestos-vm-classic.md)
  - [Виртуальная машина Linux с агентом Telegraf](collect-custom-metrics-linux-telegraf.md)
- - [ИНТЕРФЕЙС REST API](../../azure-monitor/platform/metrics-store-custom-rest-api.md)
+ - [REST API](../../azure-monitor/platform/metrics-store-custom-rest-api.md)
  - [Классические облачные службы](collect-custom-metrics-guestos-vm-cloud-service-classic.md)
  

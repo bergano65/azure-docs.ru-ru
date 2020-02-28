@@ -1,18 +1,16 @@
 ---
 title: Справочник по API агента Azure Application Insights
 description: Справочник по API агента Application Insights. Enable-Аппликатионинсигхтсмониторинг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: dccd7e617174bef4a85cb6293cbcc459542310f9
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 8bbdc96a49fffc91f80d24a9eb0926766f86ee16
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899706"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671313"
 ---
 # <a name="application-insights-agent-api-enable-applicationinsightsmonitoring"></a>API агента Application Insights: enable-Аппликатионинсигхтсмониторинг
 
@@ -49,10 +47,10 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-x
 ### <a name="example-with-an-instrumentation-key-map"></a>Пример с картой ключа инструментирования
 В данном примере:
 - `MachineFilter` соответствует текущему компьютеру с помощью подстановочного знака `'.*'`.
-- `AppFilter='WebAppExclude'` предоставляет ключ инструментирования `null`. Указанное приложение не будет инструментировано.
-- `AppFilter='WebAppOne'` назначает заданному приложению уникальный ключ инструментирования.
-- `AppFilter='WebAppTwo'` назначает заданному приложению уникальный ключ инструментирования.
-- Наконец, `AppFilter` также использует шаблон `'.*'`, чтобы сопоставить все веб-приложения, которые не соответствуют предыдущим правилам, и назначить ключ инструментирования по умолчанию.
+- `AppFilter='WebAppExclude'` предоставляет `null` ключ инструментирования. Указанное приложение не будет инструментировано.
+- `AppFilter='WebAppOne'` Присваивает указанному приложению уникальный ключ инструментирования.
+- `AppFilter='WebAppTwo'` Присваивает указанному приложению уникальный ключ инструментирования.
+- Наконец, `AppFilter` также использует подстановочный знак `'.*'`, чтобы сопоставить все веб-приложения, не соответствующие предыдущим правилам, и назначить ключ инструментирования по умолчанию.
 - Для удобочитаемости добавляются пробелы.
 
 ```powershell
@@ -72,12 +70,12 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 
 ### <a name="-instrumentationkeymap"></a>-Инструментатионкэймап
 **Обязательный параметр.** Этот параметр используется для предоставления нескольких ключей инструментирования и сопоставления ключей инструментирования, используемых каждым приложением.
-Можно создать один скрипт установки для нескольких компьютеров, установив значение `MachineFilter`.
+Можно создать один скрипт установки для нескольких компьютеров, установив `MachineFilter`.
 
 > [!IMPORTANT]
 > Приложения будут соответствовать правилам в том порядке, в котором предоставляются правила. Поэтому необходимо сначала указать наиболее конкретные правила, а также наиболее общие правила.
 
-#### <a name="schema"></a>SCHEMA (Схема)
+#### <a name="schema"></a>Схема
 `@(@{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'}})`
 
 - **Мачинефилтер** — это обязательное C# регулярное выражение имени компьютера или виртуальной машины.
@@ -91,12 +89,12 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 
 
 ### <a name="-enableinstrumentationengine"></a>-Енаблеинструментатионенгине
-**Необязательный параметр.** Используйте этот параметр, чтобы модуль инструментирования собирал события и сообщения о том, что происходит во время выполнения управляемого процесса. Эти события и сообщения включают в себя коды результатов зависимостей, глаголы HTTP и текст команды SQL.
+**Необязательно.** Используйте этот параметр, чтобы модуль инструментирования собирал события и сообщения о том, что происходит во время выполнения управляемого процесса. Эти события и сообщения включают в себя коды результатов зависимостей, глаголы HTTP и текст команды SQL.
 
 Модуль инструментирования добавляет издержки и по умолчанию отключен.
 
 ### <a name="-acceptlicense"></a>-AcceptLicense
-**Необязательный параметр.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
+**Необязательно.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
 
 ### <a name="-ignoresharedconfig"></a>-Игнорешаредконфиг
 При наличии кластера веб-серверов можно использовать [общую конфигурацию](https://docs.microsoft.com/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
@@ -110,7 +108,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 ### <a name="-whatif"></a>-WhatIf 
 **Общий параметр.** Используйте этот переключатель для проверки и проверки входных параметров без фактического включения мониторинга.
 
-## <a name="output"></a>Выходные данные
+## <a name="output"></a>Вывод
 
 
 #### <a name="example-output-from-a-successful-enablement"></a>Пример выходных данных успешного включения
@@ -146,7 +144,7 @@ Updating app pool permissions...
 Successfully enabled Application Insights Status Monitor
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
  - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.

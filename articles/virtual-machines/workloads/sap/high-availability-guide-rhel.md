@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 02/21/2020
+ms.date: 02/26/2020
 ms.author: radeltch
-ms.openlocfilehash: 8f2de656473d52c7a40bef83237bf2aed563e111
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 94dc0b5da348989c60922fdd8c95e3e22d2b4a83
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566171"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77661249"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP NetWeaver в виртуальных машинах Azure с Red Hat Enterprise Linux
 
@@ -85,9 +85,6 @@ ms.locfileid: "77566171"
 ![Общие сведения о высоком уровне доступности SAP NetWeaver](./media/high-availability-guide-rhel/ha-rhel.png)
 
 SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и база данных SAP HANA используют виртуальное имя узла и виртуальные IP-адреса. Балансировщику нагрузки в Azure нужен виртуальный IP-адрес. Мы рекомендуем использовать [стандартный балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal). Ниже приведен список конфигурации балансировщика нагрузки (A)SCS и ERS.
-
-> [!IMPORTANT]
-> Кластеризация SAP ASCS/ERS с несколькими ИД безопасности с помощью Red Hat Linux в качестве гостевой операционной системы на виртуальных машинах Azure **не поддерживается**. Кластеризация с несколькими ИД безопасности описывает установку нескольких экземпляров SAP ASCS/ERS с разными идентификаторами безопасности в одном кластере Pacemaker.
 
 ### <a name="ascs"></a>(A)SCS
 
@@ -1053,6 +1050,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 ## <a name="next-steps"></a>Следующие шаги
 
+* [Рекомендации по использованию SAP NW на виртуальных машинах Azure в RHEL для приложений SAP с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-multi-sid)
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]

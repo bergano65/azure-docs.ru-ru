@@ -1,18 +1,16 @@
 ---
 title: Справочник по API агента Azure Application Insights
 description: Справочник по API агента Application Insights. Start-Trace. Собирайте журналы ETW из монитор состояния и Application Insights SDK.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: c97315b3a215f10e5b8f9533bf09fa5ac30ee16f
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: b9680101f1a22dd6d9c1617c8afc13a10ad1c594
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899652"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671228"
 ---
 # <a name="application-insights-agent-api-start-applicationinsightsmonitoringtrace"></a>API агента Application Insights: Start-Аппликатионинсигхтсмониторингтраце
 
@@ -40,15 +38,15 @@ ms.locfileid: "72899652"
 Чтобы получить эти события, сделайте следующее:
 1. В консоли CMD с правами администратора выполните `iisreset /stop`, чтобы отключить службы IIS и все веб-приложения.
 2. Выполните этот командлет
-3. В консоли CMD с правами администратора выполните `iisreset /start`, чтобы запустить службы IIS.
+3. В консоли CMD с правами администратора выполните `iisreset /start` для запуска служб IIS.
 4. Попробуйте перейти к приложению.
 5. После завершения загрузки приложения можно вручную его отключить (`Ctrl + C`) или подождать истечения времени ожидания.
 
 ### <a name="what-events-to-collect"></a>События для собраний
 
 При сборе событий можно использовать три варианта:
-1. Используйте параметр `-CollectSdkEvents` для получения событий, порожденных из пакета SDK для Application Insights.
-2. Используйте параметр `-CollectRedfieldEvents`, чтобы получить события, выдаваемые монитор состояния и средой выполнения Redfield. Эти журналы полезны при диагностике служб IIS и запуска приложений.
+1. Используйте `-CollectSdkEvents` коммутатора для получения событий, выдаваемых из пакета SDK для Application Insights.
+2. Используйте `-CollectRedfieldEvents` коммутатора для получения событий, созданных монитор состояния и средой выполнения Redfield. Эти журналы полезны при диагностике служб IIS и запуска приложений.
 3. Используйте оба параметра для накопления обоих типов событий.
 4. По умолчанию, если параметр не указан, будут собираться оба типа событий.
 
@@ -56,24 +54,24 @@ ms.locfileid: "72899652"
 ## <a name="parameters"></a>Параметры
 
 ### <a name="-maxdurationinminutes"></a>-Максдуратионинминутес
-**Необязательный параметр.** Используйте этот параметр, чтобы задать время, в течение которого этот скрипт должен получать события. Значение по умолчанию — 5 минут.
+**Необязательно.** Используйте этот параметр, чтобы задать время, в течение которого этот скрипт должен получать события. Значение по умолчанию — 5 минут.
 
 ### <a name="-logdirectory"></a>-LogDirectory
-**Необязательный параметр.** Используйте этот параметр, чтобы задать выходной каталог ETL-файла. По умолчанию этот файл будет создан в каталоге модулей PowerShell. Полный путь будет отображаться во время выполнения скрипта.
+**Необязательно.** Используйте этот параметр, чтобы задать выходной каталог ETL-файла. По умолчанию этот файл будет создан в каталоге модулей PowerShell. Полный путь будет отображаться во время выполнения скрипта.
 
 
 ### <a name="-collectsdkevents"></a>-Коллектсдкевентс
-**Необязательный параметр.** Используйте этот параметр для получения Application Insights событий пакета SDK.
+**Необязательно.** Используйте этот параметр для получения Application Insights событий пакета SDK.
 
 ### <a name="-collectredfieldevents"></a>-Коллектредфиелдевентс
-**Необязательный параметр.** Используйте этот параметр для получения событий из монитор состояния и среды выполнения Redfield.
+**Необязательно.** Используйте этот параметр для получения событий из монитор состояния и среды выполнения Redfield.
 
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
 
 
 
-## <a name="output"></a>Выходные данные
+## <a name="output"></a>Вывод
 
 
 ### <a name="example-of-application-startup-logs"></a>Пример журналов запуска приложений
@@ -106,11 +104,11 @@ Timeout Reached. Stopping...
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные способы устранения неполадок:
 
-- Дополнительные шаги по устранению неполадок приведены здесь: https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-troubleshoot
+- Дополнительные действия по устранению неполадок приведены здесь: https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-troubleshoot
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.
 - Если вам нужна дополнительная помощь, вы можете связаться с нами на сайте [GitHub](https://github.com/Microsoft/ApplicationInsights-Home/issues).
 

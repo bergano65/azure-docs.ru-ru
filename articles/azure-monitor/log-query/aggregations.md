@@ -1,18 +1,17 @@
 ---
 title: Агрегирование в запросах к журналам Azure Monitor | Документация Майкрософт
 description: Здесь описаны функции агрегирования в запросах к журналам Azure Monitor, предоставляющие эффективные способы анализа данных.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: 86b84e76b4716c1fddda23a6d52c65c0700c5663
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: d164c53e7e2be55f3cede389901a256ba388808d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900417"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670310"
 ---
 # <a name="aggregations-in-azure-monitor-log-queries"></a>Агрегирование в запросах к журналам Azure Monitor
 
@@ -23,7 +22,7 @@ ms.locfileid: "72900417"
 
 В этой статье описаны функции агрегирования в запросах к журналам Azure Monitor, предоставляющие эффективные способы анализа данных. Все эти функции работают с помощью оператора `summarize`, который выдает таблицу с агрегированными результатами из входной таблицы.
 
-## <a name="counts"></a>Подсчеты
+## <a name="counts"></a>Счетчики
 
 ### <a name="count"></a>count
 Выполните подсчет количества строк в результирующем наборе после применения фильтров. Следующий пример возвращает общее количество строк в таблице _Perf_ за последние 30 минут. Результат возвращается в столбец под именем *count_* , если присвоено конкретное имя:
@@ -83,7 +82,7 @@ Heartbeat
 
 |RemoteIPCountry  | distinct_computers  |
 ------------------|---------------------|
-|США    | 19                  |
+|Соединенные Штаты    | 19                  |
 |Канада           | 3                   |
 |Ирландия          | 0                   |
 |Соединенное Королевство   | 0                   |
@@ -148,5 +147,5 @@ Perf
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Соединения](joins.md)
+- [Joins](joins.md)
 - [Создание графиков](charts.md)

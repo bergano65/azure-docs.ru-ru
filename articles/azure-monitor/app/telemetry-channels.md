@@ -1,19 +1,15 @@
 ---
 title: Каналы телеметрии в Azure Application Insights | Документация Майкрософт
 description: Как настроить каналы телеметрии в Azure Application Insights SDK для .NET и .NET Core.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/14/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: cef35ae5cb2b66385332a3b1f9ebe177ea26a3e4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9c292246f947e4d3a364f79b31fe7a1deebd33d9
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406364"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671126"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Каналы телеметрии в Application Insights
 
@@ -128,7 +124,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 
 1. `MaxTransmissionBufferCapacity`: максимальный объем памяти в байтах, используемый каналом для передачи данных в буфер памяти. При достижении этой емкости новые элементы хранятся непосредственно на локальном диске. Значение по умолчанию — 5 МБ. Если задать более высокое значение, это приводит к меньшему использованию дискового пространства, но помните, что элементы в памяти будут потеряны при сбое приложения.
 
-1. `MaxTransmissionSenderCapacity`: максимальное число экземпляров `Transmission`, которые будут отправлены в Application Insights в одно и то же время. Значение по умолчанию — 10. Для этого параметра можно задать большее значение, что рекомендуется при создании огромного объема данных телеметрии. Большое количество томов обычно происходит во время нагрузочного тестирования или при отключении выборки.
+1. `MaxTransmissionSenderCapacity`: максимальное число экземпляров `Transmission`, которые будут отправлены в Application Insights в одно и то же время. Значение по умолчанию — 10. Для этого параметра можно задать большее значение, что рекомендуется при создании огромного объема данных телеметрии. Большое количество томов обычно происходит во время нагрузочного тестирования или при отключении выборки.
 
 1. `StorageFolder`: папка, используемая каналом для хранения элементов на диске по мере необходимости. В Windows используется либо% LOCALAPPDATA%, либо% TEMP%, если никакой другой путь не указан явным образом. В средах, отличных от Windows, необходимо указать допустимое расположение или данные телеметрии, которые не будут храниться на локальном диске.
 
@@ -168,7 +164,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый пакет SDK для Application Insights, каналы являются открытым кодом. Прочтите и отучите код или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Выборка](../../azure-monitor/app/sampling.md)
 * [Устранение неполадок пакета SDK](../../azure-monitor/app/asp-net-troubleshoot-no-data.md)

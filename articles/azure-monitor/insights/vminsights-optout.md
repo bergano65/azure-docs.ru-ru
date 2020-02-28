@@ -1,18 +1,17 @@
 ---
 title: Отключение мониторинга в Azure Monitor для виртуальных машин (Предварительная версия) | Документация Майкрософт
 description: В этой статье описывается, как прерывать наблюдение за виртуальными машинами в Azure Monitor для виртуальных машин.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/05/2018
-ms.openlocfilehash: b2d58b501429a47c3011fc727f756edeeb7775e6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fb4347e610920380792a17bb620e6d97a7d72505
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75399311"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669511"
 ---
 # <a name="disable-monitoring-of-your-vms-in-azure-monitor-for-vms-preview"></a>Отключение мониторинга виртуальных машин в Azure Monitor для виртуальных машин (Предварительная версия)
 

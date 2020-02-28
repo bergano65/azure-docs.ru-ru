@@ -1,18 +1,17 @@
 ---
 title: Включение Azure Monitor для виртуальных машин (Предварительная версия) для оценки | Документация Майкрософт
 description: Узнайте, как оценить Azure Monitor для виртуальных машин на одной виртуальной машине Azure или в масштабируемом наборе виртуальных машин.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/14/2019
-ms.openlocfilehash: c77fabf0220ecfcb889ce7cb71fa075fde27226f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3b79eaeed420426fe79b2b6caf19ba1d1be61939
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75400591"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77664617"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-for-evaluation"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) для оценки
 
@@ -76,7 +75,7 @@ ms.locfileid: "75400591"
 
 Теперь, когда вы включили мониторинг для виртуальной машины или масштабируемого набора виртуальных машин, данные мониторинга доступны для анализа в Azure Monitor для виртуальных машин. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы просмотреть зависимости обнаруженных приложений, см. статью [использование Azure Monitor для виртуальных машин Map](vminsights-maps.md). 
 * Чтобы определить узкие места, общее использование и производительность виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md).

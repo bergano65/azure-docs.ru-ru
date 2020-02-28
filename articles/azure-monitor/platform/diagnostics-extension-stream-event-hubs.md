@@ -1,18 +1,17 @@
 ---
 title: Отправка данных из расширения системы диагностики Microsoft Azure в концентраторы событий Azure
 description: Настройте расширение системы диагностики в Azure Monitor для отправки данных в концентратор событий Azure, чтобы их можно было перенаправить в расположения за пределами Azure.
-ms.service: azure-monitor
 ms.subservice: diagnostic-extension
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/18/2020
-ms.openlocfilehash: 573a56c537e48687e310acff8639c50d0d0c6e3d
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 5e5034e99d37d3681192c2ad066f28acd1c4aeeb
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77467969"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672537"
 ---
 # <a name="send-data-from-windows-azure-diagnostics-extension-to-azure-event-hubs"></a>Отправка данных из расширения системы диагностики Microsoft Azure в концентраторы событий Azure
 Расширение системы диагностики Azure — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок виртуальных машин Azure и других ресурсов вычислений. В этой статье описывается, как отправлять данные из расширения системы диагностики Microsoft Azure (WAD) в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/) , чтобы вы могли пересылать их в расположения за пределами Azure.

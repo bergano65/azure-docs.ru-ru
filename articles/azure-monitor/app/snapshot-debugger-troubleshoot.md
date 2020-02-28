@@ -1,19 +1,16 @@
 ---
 title: Устранение неполадок Application Insights Azure Snapshot Debugger
 description: В этой статье представлены действия по устранению неполадок и сведения, помогающие разработчикам, которые могут столкнуться с проблемами при включении или использовании Application Insights Snapshot Debugger.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: brahmnes
-ms.author: mbullwin
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 4544f42e7c024b21c4ae050d9b11e0f9e2786d57
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 485f35ed249ab7f6bbb987d8c79afe20287cd25a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432330"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671415"
 ---
 # <a id="troubleshooting"></a>Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
 Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Создание моментальных снимков может быть вызвано множеством разных причин. Проверку работоспособности моментальных снимков можно выполнить для определения некоторых возможных распространенных причин.
@@ -49,7 +46,7 @@ ms.locfileid: "75432330"
 
 1. Откройте службу приложений на портале Azure.
 2. Щелкните **Дополнительные инструменты** или выполните поиск по запросу **Kudu**.
-3. Щелкните **Переход**.
+3. Нажмите кнопку **Переход**.
 4. В раскрывающемся списке **Debug console** (Консоль отладки) выберите **CMD** (Команда).
 5. Щелкните **LogFiles**.
 

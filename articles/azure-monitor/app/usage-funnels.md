@@ -1,19 +1,17 @@
 ---
 title: Воронки Azure Application Insights
 description: Узнайте, как использовать воронки, чтобы узнать как клиенты взаимодействуют с вашим приложением.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 07/17/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: d6a6e34f9688747891ac91401941a96b6e85d76a
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 89440a6385bab5b917a866b686e8d2ba828c92e5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899471"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671058"
 ---
 # <a name="discover-how-customers-are-using-your-application-with-application-insights-funnels"></a>Узнайте, как клиенты используют ваше приложение, с помощью воронок Application Insights.
 
@@ -44,11 +42,11 @@ ms.locfileid: "72899471"
 4. На графике истории преобразования показаны результаты преобразования за последние 90 дней. 
 5. Вы можете получить больше сведений о пользователях, перейдя в инструмент "Пользователи". На каждом шаге можно использовать фильтры. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
   * [Общие сведения об использовании](usage-overview.md)
   * [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)
   * [Сохранение](usage-retention.md)
-  * [Книги](../../azure-monitor/app/usage-workbooks.md)
+  * [книги](../../azure-monitor/app/usage-workbooks.md)
   * [Добавление контекста пользователей](usage-send-user-context.md)
   * [Экспорт в Power BI](../../azure-monitor/app/export-power-bi.md )
 

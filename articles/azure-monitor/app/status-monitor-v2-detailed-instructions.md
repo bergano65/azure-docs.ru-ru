@@ -1,18 +1,16 @@
 ---
 title: Подробные инструкции по агенту Application Insights Azure | Документация Майкрософт
 description: Подробные инструкции по началу работы с агентом Application Insights. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 3b053b7876494a3b2e6f392850c0323b56b1c3ec
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: cd5ca5039b537859d5b31c901ed1f93877ecb629
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230270"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671211"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Агент Application Insights (прежнее название — монитор состояния v2): подробные инструкции
 
@@ -85,7 +83,7 @@ SerializationVersion           1.1.0.1
     - Описание. Этот поставщик необходим для взаимодействия с репозиториями на основе NuGet, например коллекция PowerShell.
     - Ссылка: [Install-PackageProvider](https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
     - Команда: `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201`.
-    - Необязательные параметры:
+    - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-Force`. Обход запроса подтверждения.
     
@@ -120,7 +118,7 @@ SerializationVersion           1.1.0.1
     - Описание: Этот модуль содержит средства, используемые для получения других модулей из коллекция PowerShell. Версия 1.0.0.1 поставляется с Windows 10 и Windows Server. Требуется версия 1.6.0 или более поздняя. Чтобы определить, какая версия установлена, выполните команду `Get-Command -Module PowerShellGet`.
     - Ссылка: [Установка PowerShellGet](/powershell/scripting/gallery/installing-psget).
     - Команда: `Install-Module -Name PowerShellGet`.
-    - Необязательные параметры:
+    - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-Force`. Обходит предупреждение "уже установлено" и устанавливает последнюю версию.
 
@@ -144,7 +142,7 @@ SerializationVersion           1.1.0.1
 3. Установите модуль AZ. Аппликатионмонитор.
     - Ссылка: [Install-Module](https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-6).
     - Команда: `Install-Module -Name Az.ApplicationMonitor`.
-    - Необязательные параметры:
+    - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-AllowPrerelease`. Позволяет устанавливать пакеты Alpha и бета-версии.
         - `-AcceptLicense`. Обход приглашения "принять лицензию"
@@ -156,7 +154,7 @@ SerializationVersion           1.1.0.1
 
 ### <a name="manually-download-the-latest-nupkg-file"></a>Скачайте последнюю версию файла nupkg вручную
 
-1. Перейдите на сайт https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
+1. Перейдите к https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 2. Выберите последнюю версию файла в таблице **журнала версий** .
 3. В разделе **Параметры установки**выберите **Загрузка вручную**.
 
@@ -225,7 +223,7 @@ SerializationVersion           1.1.0.1
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
  Просмотр телеметрии:
 

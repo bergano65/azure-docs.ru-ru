@@ -1,18 +1,14 @@
 ---
 title: Просмотр журналов трассировки .NET в Application Insights
 description: Поиск журналов, созданных трассировкой, NLog или Log4Net.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/08/2019
-ms.openlocfilehash: 33dc415e06b7f49f75697abb05248750444fea7c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 273d5a2f4e1155541e159332312bdaa68aa175d7
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432642"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665992"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Изучение журналов трассировки .NET и .NET Core и Python в Application Insights
 
@@ -45,7 +41,7 @@ ms.locfileid: "75432642"
 > [!NOTE]
 > Нет Application Insights меню или сборщика журналов? Попробуйте выполнить [Устранение неполадок](#troubleshooting).
 
-## <a name="manual-installation"></a>Ручная установка
+## <a name="manual-installation"></a>Установка вручную
 Используйте этот метод, если ваш тип проекта не поддерживается программой установки Application Insights (например, если у вас проект настольного приложения Windows).
 
 1. Если вы планируете использовать log4Net или NLog, установите его в свой проект.
@@ -135,14 +131,14 @@ ms.locfileid: "75432642"
 ## <a name="use-the-trace-api-directly"></a>Использование API трассировки напрямую
 API трассировки в Application Insights можно вызывать напрямую. Адаптеры ведения журналов используют этот API.
 
-Пример.
+Например:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow response - database01");
 
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.
 
-Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример.
+Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Например:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow database response",
@@ -184,7 +180,7 @@ logger.warning('Hello, World!')
 >Если приложение отправляет большой объем данных и вы используете Application Insights пакет SDK для ASP.NET версии 2.0.0-beta3 или более поздней, функция *адаптивной выборки* может выполнять работу и отправлять только часть вашей телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
 >
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 ### <a name="how-do-i-do-this-for-java"></a>Как это сделать в Java?
 Используйте [адаптеры журналов Java](../../azure-monitor/app/java-trace-logs.md).
 

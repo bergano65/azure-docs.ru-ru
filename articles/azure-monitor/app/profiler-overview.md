@@ -1,19 +1,17 @@
 ---
 title: Профилирование рабочих приложений в Azure с помощью Application Insights Profiler
 description: Определите критический путь в коде веб-сервера с помощью профилировщика небольшого размера.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 64e7cc0afa4051836d38c885dff0bc0a0e0b08c6
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: ce952bd248640d03fcff43284707614577df8469
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74922090"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671653"
 ---
 # <a name="profile-production-applications-in-azure-with-application-insights"></a>Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler
 ## <a name="enable-application-insights-profiler-for-your-application"></a>Включение Application Insights Profiler для приложений
@@ -23,7 +21,7 @@ Azure Application Insights Profiler предоставляет трассиро�
 Профилировщик работает с приложениями .NET, развернутыми в следующих службах Azure. Конкретные инструкции по включению Profiler для службы каждого типа вы найдете по приведенным ниже ссылкам.
 
 * [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure2}
 * [Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 * [**Предварительный просмотр** ASP.NET Core веб-приложений Azure для Linux](profiler-aspnetcore-linux.md?toc=/azure/azure-monitor/toc.json) 
@@ -121,10 +119,10 @@ Azure Application Insights Profiler предоставляет трассиро�
 
 Раз в час профилировщик запускается случайным образом на две минуты на каждой виртуальной машине, где размещено приложение, для сбора трассировок которого настроен профилировщик. При запуске Profiler увеличивает нагрузку на ресурсы ЦП сервера на 5–15 процентов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Включение Application Insights Profiler для приложения Azure. См. также:
 * [Службы приложений](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure2}
 * [Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 

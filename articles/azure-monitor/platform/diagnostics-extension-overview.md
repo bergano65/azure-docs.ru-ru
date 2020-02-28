@@ -1,18 +1,17 @@
 ---
 title: Общие сведения о расширении система диагностики Azure
 description: Диагностику Azure можно использовать для отладки, оценки производительности, мониторинга, а также анализа трафика в облачных службах, на виртуальных машинах и в Service Fabric.
-ms.service: azure-monitor
 ms.subservice: diagnostic-extension
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: d9db4b4c8e6d82f29d227b9f8afe528e000c651e
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 6cb514312db525ffd2ccf9f7b70968daaa94f322
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77468003"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672384"
 ---
 # <a name="azure-diagnostics-extension-overview"></a>Общие сведения о расширении система диагностики Azure
 Расширение система диагностики Azure — это [агент в Azure Monitor](agents-overview.md) , собирающий данные мониторинга из операционной системы на виртуальной машине для ресурсов вычислений Azure, включая виртуальные машины. В этой статье представлен обзор расширения система диагностики Azure, включая конкретные функциональные возможности, которые он поддерживает, и параметры установки и настройки. 
@@ -86,7 +85,7 @@ LAD записывает данные в таблицы в службе хран
 
 
 ## <a name="installation-and-configuration"></a>Установка и настройка
-Диагностическое расширение реализовано как [расширение виртуальной машины](/virtual-machines/extensions/overview) в Azure, поэтому оно поддерживает те же параметры установки с помощью шаблонов диспетчер ресурсов, POWERSHELL и CLI. Общие сведения об установке и обслуживании расширений виртуальных машин см. в статье [расширения и компоненты виртуальных](/virtual-machines/extensions/features-windows) машин для Windows и [компонентов для Linux](/virtual-machines/extensions/features-linux) .
+Диагностическое расширение реализовано как [расширение виртуальной машины](../../virtual-machines/extensions/overview.md) в Azure, поэтому оно поддерживает те же параметры установки с помощью шаблонов диспетчер ресурсов, POWERSHELL и CLI. Общие сведения об установке и обслуживании расширений виртуальных машин см. в статье [расширения и компоненты виртуальных](../../virtual-machines/extensions/features-windows.md) машин для Windows и [компонентов для Linux](../../virtual-machines/extensions/features-linux.md) .
 
 Вы также можете установить и настроить диагностическое расширение Windows и Linux в портал Azure в разделе **параметры диагностики** раздела **мониторинг** в меню виртуальной машины.
 

@@ -2,18 +2,17 @@
 title: Обзор агентов мониторинга Azure | Документация Майкрософт
 description: В этой статье представлен подробный обзор доступных агентов Azure, которые поддерживают мониторинг виртуальных машин, размещенных в Azure или гибридной среде.
 services: azure-monitor
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: e3385234433a292ce146c9aed25ecfeb1095d79a
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: a7e6a3a299df8112fe4fbcf457516894c1766b8c
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77616119"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668525"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -33,8 +32,8 @@ ms.locfileid: "77616119"
 | | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|
 | Поддерживаемые среды | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | 
-| Требования к агентам  | None | None | Требуется агент Log Analytics |
-| Собираемые данные | журналы событий;<br>События ETW<br>Производительность<br>Журналы на основе файлов<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br><IIS logs> производительности<br>Журналы на основе файлов<br>Полезные сведения и решения<br>Другие службы | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
+| Требования к агентам  | Нет | Нет | Требуется агент Log Analytics |
+| Собираемые данные | Журналы событий<br>События ETW<br>Производительность<br>Журналы на основе файлов<br>Журналы служб IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | Журналы событий<br><IIS logs> производительности<br>Журналы на основе файлов<br>Полезные сведения и решения<br>Другие службы | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
 | Отправленные данные | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor |
 
 
@@ -43,7 +42,7 @@ ms.locfileid: "77616119"
 | | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
 | Поддерживаемые среды | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде |
-| Требования к агентам  | None | None | None | Требуется агент Log Analytics |
+| Требования к агентам  | Нет | Нет | Нет | Требуется агент Log Analytics |
 | Собираемые данные | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| Сведения о процессе и зависимости<br>Метрики сетевого подключения |
 | Отправленные данные | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor |
 
@@ -114,7 +113,7 @@ ms.locfileid: "77616119"
 Расширение Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) и [Linux](../../virtual-machines/extensions/oms-linux.md) установите агент log Analytics на виртуальных машинах Azure. Расширение зависимостей Azure Monitor для [Windows](../../virtual-machines/extensions/agent-dependency-windows.md) и [Linux](../../virtual-machines/extensions/agent-dependency-linux.md) устанавливает агент зависимостей на виртуальных машинах Azure. Это те же агенты, описанные выше, но позволяющие управлять ими с помощью [расширений виртуальной машины](../../virtual-machines/extensions/overview.md). При возможности для установки агентов и управления ими следует использовать расширения.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 

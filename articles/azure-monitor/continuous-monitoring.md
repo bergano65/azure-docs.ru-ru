@@ -1,18 +1,17 @@
 ---
 title: Непрерывный мониторинг с помощью Azure Monitor | Документация Майкрософт
 description: Описывает конкретные шаги для использования Azure Monitor, чтобы включить непрерывный мониторинг во всех ваших рабочих процессах.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/12/2018
-ms.openlocfilehash: 7dc8001d74ea026625d7496fb84053b4e9109dce
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b9ca8a703ed8a84148abd23e90114402d8806bd6
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406156"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77667199"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -84,7 +83,7 @@ ms.locfileid: "75406156"
 - Используйте [анализ влияния](../azure-monitor/app/usage-impact.md), чтобы расставить приоритеты, на каких сферах сосредоточиться для достижения важных ключевых показателей эффективности.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о различных компонентах см. в статье [Общие сведения о службе Azure Monitor](overview.md).
 - [Добавьте постоянный мониторинг](../azure-monitor/app/continuous-monitoring.md) к конвейеру выпуска.

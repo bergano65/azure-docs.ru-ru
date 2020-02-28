@@ -1,18 +1,14 @@
 ---
 title: Экспорт из Azure Application Insights с помощью Stream Analytics | Документация Майкрософт
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 01/08/2019
-ms.openlocfilehash: 3be1a643cbe942c0b740ae8ebcc2c7f2dda24854
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: b93bc49d005e3e54f1e5db84e6ff1adc49e25a65
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677949"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77664020"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -184,7 +180,7 @@ ms.locfileid: "72677949"
 
 * Этот запрос включает в себя значения свойств измерения вне зависимости от того, соответствует ли конкретному измерению фиксированный индекс в массиве.
 
-## <a name="run-the-job"></a>Выполнение задания
+## <a name="run-the-job"></a>Запуск задания
 Дату запуска задания можно выбрать в прошлом. 
 
 ![Выбор задания и элемента "Запрос". Вставка следующего примера.](./media/export-stream-analytics/SA008.png)
@@ -205,7 +201,7 @@ ms.locfileid: "72677949"
 
 ![Выбор набора данных и полей в Power BI.](./media/export-stream-analytics/210.png)
 
-## <a name="no-data"></a>Нет данных?
+## <a name="no-data"></a>Данные отсутствуют?
 * Проверьте правильность [формата даты](#set-path-prefix-pattern) — ГГГГ-ММ-ДД (с дефисами).
 
 ## <a name="video"></a>Видео
@@ -215,7 +211,7 @@ ms.locfileid: "72677949"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)

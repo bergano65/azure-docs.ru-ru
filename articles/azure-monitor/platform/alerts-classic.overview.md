@@ -1,18 +1,15 @@
 ---
 title: Обзор классических оповещений в Microsoft Azure и Azure Monitor
 description: Классические оповещения устарели. Оповещения позволяют отслеживать метрики ресурсов Azure, события или журналы и получать уведомления при выполнении заданных условий.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
 ms.date: 05/19/2018
-ms.openlocfilehash: 2d150006fb4638d3efb15111013d17e43c8b125e
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.subservice: alerts
+ms.openlocfilehash: 098efd3075c6b099bdfc925cb4f09163f83532a5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747019"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668272"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Что такое классические оповещения в Microsoft Azure?
 
@@ -85,7 +82,7 @@ ms.locfileid: "75747019"
 - Приложение логики Azure
 - сторонней службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Изучите правила создания оповещений и ознакомьтесь с их настройкой с помощью следующих средств:
 
 * Узнайте больше о [метриках](data-platform.md).

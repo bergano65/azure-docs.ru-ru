@@ -1,19 +1,15 @@
 ---
 title: Модель данных для телеметрии метрик в Azure Application Insights
 description: Модель данных Application Insights для телеметрии метрик
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
-ms.openlocfilehash: f697d7543a8551993640ef8c6d6c98fee35c0d68
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 3e4a1fc3de58b8e65ab9c7a288bdf3eb37e7bae0
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74922225"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671976"
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Телеметрия метрик: модель данных Application Insights
 
@@ -37,15 +33,15 @@ ms.locfileid: "74922225"
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Request Execution Time`   | Ведется работа... | [requestExecutionTime](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestExecutionTime) | Среднее время выполнения запросов
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Requests In Application Queue` | Ведется работа... | [requestsInQueue](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestsInQueue) | Количество запросов в очереди, ожидающих обработки
 
-## <a name="name"></a>Name
+## <a name="name"></a>Имя
 
 Имя метрики, которое нужно отобразить на портале Application Insights и в пользовательском интерфейсе. 
 
-## <a name="value"></a>Value
+## <a name="value"></a>Значение
 
 Отдельное значение для измерения. Сумма отдельных измерений для агрегата.
 
-## <a name="count"></a>Количество
+## <a name="count"></a>Число
 
 Вес вычисленной метрики. Не следует задавать для измерения.
 
@@ -53,7 +49,7 @@ ms.locfileid: "74922225"
 
 Минимальное значение вычисленной метрики. Не следует задавать для измерения.
 
-## <a name="max"></a>Максимальное количество
+## <a name="max"></a>Max
 
 Максимальное значение вычисленной метрики. Не следует задавать для измерения.
 
@@ -67,7 +63,7 @@ ms.locfileid: "74922225"
 
 [!INCLUDE [application-insights-data-model-properties](../../../includes/application-insights-data-model-properties.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Вы можете узнать, как использовать [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric).
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.

@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: cfd92546def21972e37781bd8a4b0bfefda9111f
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 76c8ca24882f465bf2a973dc59736745178fc61f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77444219"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669528"
 ---
 # <a name="create-an-iot-hub-data-connection-for-azure-data-explorer-by-using-python-preview"></a>Создание подключения к данным центра Интернета вещей для Azure обозреватель данных с помощью Python (Предварительная версия)
 
@@ -24,13 +24,13 @@ ms.locfileid: "77444219"
 
 В этой статье вы создадите подключение к данным центра Интернета вещей для Azure обозреватель данных с помощью Python. Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных предлагает прием или загрузку данных из концентраторов событий, центров Интернета вещей и больших двоичных объектов, записанных в контейнеры больших двоичных объектов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
 * [Python версии 3.4+](https://www.python.org/downloads/).
 
-* [Кластер и база данных](/create-cluster-database-python.md).
+* [Кластер и база данных](create-cluster-database-python.md).
 
 * [Сопоставление таблиц и столбцов](net-standard-ingest-data.md#create-a-table-on-your-test-cluster).
 
@@ -102,6 +102,6 @@ poller = kusto_management_client.data_connections.create_or_update(resource_grou
 | iot_hub_resource_id | *Идентификатор ресурса* | Идентификатор ресурса центра Интернета вещей, который содержит данные для приема.|
 | shared_access_policy_name | *иосубфорреад* | Имя политики общего доступа, определяющей разрешения для подключения устройств и служб к центру Интернета вещей. |
 | consumer_group | *$Default* | Группа потребителей концентратора событий.|
-| location | *Центральная часть США* | Расположение ресурса подключения к данным.|
+| расположение | *Центральная часть США* | Расположение ресурса подключения к данным.|
 
 [!INCLUDE [data-explorer-data-connection-clean-resources-python](../../includes/data-explorer-data-connection-clean-resources-python.md)]

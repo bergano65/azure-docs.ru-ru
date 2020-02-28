@@ -1,18 +1,17 @@
 ---
 title: Azure Monitor конфигурация ключа, управляемого клиентом
 description: Сведения и действия по настройке ключа, управляемого клиентом (CMK), для шифрования данных в рабочих областях Log Analytics с помощью ключа Azure Key Vault.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 02/24/2020
-ms.openlocfilehash: 2ea77be0a7aabefaf8f6ed9a5bd841ea1fdda263
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 6a999df6daf2fde5133143fe9b22a65d628ecfb2
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77620312"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663953"
 ---
 # <a name="azure-monitor-customer-managed-key-configuration"></a>Azure Monitor конфигурация ключа, управляемого клиентом 
 
@@ -95,7 +94,7 @@ Azure Monitor использует управляемое системой уд�
 > [!IMPORTANT]
 > Любой запрос API должен содержать маркер авторизации носителя в заголовке запроса.
 
-Пример:
+Например:
 
 ```rst
 GET
@@ -461,7 +460,7 @@ Azure Monitor хранилище всегда будет учитывать из
 
   **Ответ**
 
-  200 ОК
+  200, ОК
 
 
 ## <a name="appendix"></a>Приложение

@@ -1,18 +1,14 @@
 ---
 title: Отделение телеметрии в Azure Application Insights
 description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/15/2017
-ms.openlocfilehash: c58a54dd4916b5687d46cbf4b816bd656113f9ff
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3580d162f4b3955a04ffcd0f13933221bfef3b65
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406409"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671466"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -50,7 +46,7 @@ ms.locfileid: "75406409"
 
 В этом примере ключи инструментирования (ikey) для различных ресурсов приводятся в различных версиях файла веб-конфигурации. При смене файла веб-конфигурации, что можно сделать в рамках сценария выпуска, сменится и целевой ресурс.
 
-### <a name="web-pages"></a>Веб-страницы
+### <a name="web-pages"></a>веб-страницы
 IKey также используется на веб-страницах вашего приложения в [сценарии, полученном из колонки быстрый](../../azure-monitor/app/javascript.md)запуск. Вместо того чтобы вставлять его в код сценария напрямую, генерируйте его из состояния сервера. Например, в приложении ASP.NET:
 
 *JavaScript в Razor*
@@ -151,7 +147,7 @@ IKey также используется на веб-страницах ваше
 Если используется Azure DevOps, можно настроить [добавление маркера заметки](../../azure-monitor/app/annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
 ![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](media/separate-resources/release-annotation.png)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Monitor multi-component applications with Application Insights (preview)](../../azure-monitor/app/app-map.md) (Мониторинг приложений с несколькими компонентами с помощью Application Insights (предварительная версия))
 * [Добавление свойств: ITelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#add-properties)

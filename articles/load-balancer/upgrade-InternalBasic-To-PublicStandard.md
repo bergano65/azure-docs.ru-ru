@@ -7,21 +7,22 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: f5ff4ca94f9e9c6bd03cde6b948331e42cc6225a
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: 346fc3d5a4e7b165caafd9847b9797abae0c9113
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77618208"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77659991"
 ---
 # <a name="upgrade-azure-internal-load-balancer---outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus). Так как стандартный внутренний Load Balancer не предоставляет исходящего подключения, мы предоставляем решение для создания стандартного общедоступного Load Balancer.
 
-Обновление состоит из трех этапов.
+Обновление состоит из четырех этапов.
 
 1. Перенос конфигурации в стандартные общедоступные Load Balancer
 2. Добавление виртуальных машин в серверные пулы стандартных общедоступных Load Balancer
-3. Настройка правил NSG для подсетей и виртуальных машин, которые следует отменять в Интернете
+3. Создание правила исходящего трафика на Load Balancer для исходящего подключения
+4. Настройка правил NSG для подсетей и виртуальных машин, которые следует отменять в Интернете
 
 В этой статье рассматривается миграция конфигурации. Добавление виртуальных машин в серверные пулы может зависеть от конкретной среды. Однако некоторые общие рекомендации [предоставляются](#add-vms-to-backend-pools-of-standard-load-balancer)на высоком уровне.
 
@@ -65,7 +66,7 @@ ms.locfileid: "77618208"
 
 Если у вас установлены некоторые модули Azure AZ и их невозможно удалить (или не хотите удалять их), можно вручную скачать скрипт, используя вкладку **Загрузка вручную** в ссылке Загрузить скрипт. Скрипт загружается как необработанный файл nupkg. Сведения об установке скрипта из этого файла nupkg см. в разделе [Загрузка пакета вручную](/powershell/scripting/gallery/how-to/working-with-packages/manual-download).
 
-Выполните следующее, чтобы запустить этот сценарий.
+Чтобы запустить скрипт, выполните следующие действия.
 
 1. Используйте `Connect-AzAccount` для подключения к Azure.
 
@@ -83,7 +84,7 @@ ms.locfileid: "77618208"
     **Пример**
 
    ```azurepowershell
-   ./AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newlocation "centralus" -newLbName "LBForUpgrade"
+   AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newlocation "centralus" -newLbName "LBForUpgrade"
    ```
 
 ### <a name="add-vms-to-backend-pools-of-standard-load-balancer"></a>Добавление виртуальных машин в серверные пулы Load Balancer (цен. категория "Стандартный")
@@ -103,12 +104,18 @@ ms.locfileid: "77618208"
    
     1. Выберите внутренний пул, соответствующий внутреннему пулу базового Load Balancer, выберите следующее значение: 
       - **Виртуальная машина**: раскрывающийся список и выберите виртуальные машины из соответствующего серверного пула базовых Load Balancer.
-    1. Щелкните **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
 * **Создание новых виртуальных машин для добавления в серверные пулы вновь созданного стандартного Общедоступного Load Balancer**.
     * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal#create-virtual-machines).
+
+### <a name="create-an-outbound-rule-for-outbound-connection"></a>Создание правила исходящего трафика для исходящего подключения
+
+Следуйте [инструкциям](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-portal#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
+* Определение исходящего NAT с нуля.
+* Масштабирование и Настройка поведения существующего исходящего NAT.
 
 ### <a name="create-nsg-rules-for-vms-which-to-refrain-communication-from-or-to-the-internet"></a>Создание правил NSG для виртуальных машин, которые отменяют связь между или Интернетом
 Если вы хотите отдержать Интернет к виртуальным машинам, вы можете создать [правило NSG](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group) для сетевого интерфейса виртуальных машин.
@@ -127,6 +134,6 @@ ms.locfileid: "77618208"
   
 Вы можете отправить электронное письмо по адресу slbupgradesupport@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Обзор Azure Load Balancer уровня "Стандартный" (предварительная версия)](load-balancer-overview.md)

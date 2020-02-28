@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: caa80443a189874bfd699dba412fb749c8711556
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 03e8baa5f0286652ee500a06382c0a45e6f0ec52
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77493401"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655673"
 ---
 # <a name="mv2-series"></a>Серия Mv2
 
@@ -33,7 +33,7 @@ ms.locfileid: "77493401"
 | Standard_M416ms_v2<sup>1, 2</sup> | 416 | 11400 | 8192 | 64 | 250000/1600 (14080) | 80000/2000 | 8 / 32 000 |
 | Standard_M416s_v2<sup>1, 2</sup> | 416 | 5700 | 8192 | 64 | 250000/1600 (14080) | 80000/2000 | 8 / 32 000 |
 
-<sup>1</sup> виртуальные машины серии Mv2 имеют только поколение 2. Если вы используете Linux, см. инструкции по поиску и выбору образа в статье [Поддержка виртуальных машин поколения 2 в Azure](/linux/generation-2.md) .
+<sup>1</sup> виртуальные машины серии Mv2 имеют только поколение 2. Если вы используете Linux, см. инструкции по поиску и выбору образа в статье [Поддержка виртуальных машин поколения 2 в Azure](./linux/generation-2.md) .
 
 <sup>2</sup> для размеров M416ms_v2 и M416s_v2 Обратите внимание, что изначально поддерживается только следующее изображение: "GEN2: SUSE Linux Enterprise Server (SLES) 12 SP4 для приложений SAP".
 
@@ -48,6 +48,6 @@ ms.locfileid: "77493401"
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

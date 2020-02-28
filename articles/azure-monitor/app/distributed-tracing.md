@@ -1,19 +1,17 @@
 ---
 title: Распределенная трассировка в Azure Application Insights | Документация Майкрософт
 description: Предоставление сведений о поддержке корпорацией Майкрософт распределенной трассировки через локальный сервер пересылки и партнерство в проекте OpenCensus
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: nikmd23
 ms.author: nimolnar
 ms.date: 09/17/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5c07fac0590b833aa19909849271c59d65d42ad6
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 49e61a7677007c52d1a584c4b49ccaadc3a02df3
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242455"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669596"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
 
@@ -40,7 +38,7 @@ Azure Monitor также предлагает представление [схе
 * [Java](https://docs.microsoft.com/azure/application-insights/app-insights-java-get-started)
 * [Node.js](https://docs.microsoft.com/azure/application-insights/app-insights-nodejs-quick-start)
 * [JavaScript](https://docs.microsoft.com/azure/application-insights/app-insights-javascript)
-* [Python (Предварительная версия)](opencensus-python.md)
+* [Python (предварительная версия)](opencensus-python.md)
 
 При установке и настройке надлежащего пакета SDK Application Insights для популярных фреймворков, библиотек и технологий информация о трассировке автоматически собирается с помощью сборщиков зависимостей SDK. Полный список поддерживаемых технологий доступен в [документации по автоматическому сбору зависимостей](https://docs.microsoft.com/azure/application-insights/auto-collect-dependencies).
 
@@ -50,11 +48,11 @@ Azure Monitor также предлагает представление [схе
 
 Помимо пакетов SDK, Application Insights поддерживает распределенную трассировку с помощью [OpenCensus](https://opencensus.io/). OpenCensus является единым для служб распределением библиотек с открытым исходным кодом, независимым от поставщика, для обеспечения сбора метрик и распределенной трассировки. Он также позволяет сообществу открытого исходного кода включить распределенную трассировку с использованием популярных технологий, таких как Redis, Memcached или MongoDB. [Корпорация Майкрософт в OpenCensus сотрудничает с несколькими другими партнерами по мониторингу и облакам](https://open.microsoft.com/2018/06/13/microsoft-joins-the-opencensus-project/).
 
-[Python (Предварительная версия)](opencensus-python.md) 
+[Python (предварительная версия)](opencensus-python.md) 
 
 На веб-сайте OpenCensus поддерживается справочная документация по API для [Python](https://opencensus.io/api/python/trace/usage.html) и [Go](https://godoc.org/go.opencensus.io), а также несколько различных руководств по использованию OpenCensus. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Руководство по использованию OpenCensus для Python](https://opencensus.io/api/python/trace/usage.html)
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)

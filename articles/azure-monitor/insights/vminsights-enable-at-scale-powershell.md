@@ -1,18 +1,17 @@
 ---
 title: Включение Azure Monitor для виртуальных машин (классическая модель) с помощью PowerShell или шаблонов
 description: В этой статье описывается, как включить Azure Monitor для виртуальных машин для одной или нескольких виртуальных машин Azure или масштабируемых наборов виртуальных машин с помощью шаблонов Azure PowerShell или Azure Resource Manager.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2019
-ms.openlocfilehash: 4fc5afe3bbb4b2ccf2329432347b23fe9a69c5ea
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 236d5a28b167e16c9614119a59fd8a99e012e9dd
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977677"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77656557"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) с помощью шаблонов Azure PowerShell или диспетчер ресурсов
 
@@ -338,7 +337,7 @@ Not running - start VM to configure: (0)
 Failed: (0)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда наблюдение включено для виртуальных машин, эти сведения доступны для анализа с Azure Monitor для виртуальных машин.
 

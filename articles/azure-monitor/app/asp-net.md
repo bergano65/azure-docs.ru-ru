@@ -1,18 +1,14 @@
 ---
 title: Настройка аналитики веб-приложения для ASP.NET с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка средств аналитики производительности, доступности и поведения пользователей для веб-сайта ASP.NET, размещенного локально или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/08/2019
-ms.openlocfilehash: a72bb5dd02776fe8410bb515e4e17a292d12048f
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 0843d6c04bf6fc9bab07207072990fb3fb8f1844
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677671"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665924"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -20,7 +16,7 @@ ms.locfileid: "72677671"
 
 Настройка выполняется несколькими щелчками в Visual Studio. Вы можете избежать расходов, ограничив объем телеметрии. Эта функция позволяет экспериментировать и выполнять отладку, а также отслеживать работу сайта, не имеющего большого количества пользователей. Если вы хотите отслеживать рабочий сайт, вы можете легко увеличить лимит позже.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы добавить Application Insights для веб-сайта ASP.NET, сделайте следующее:
 
 - Установите [Visual Studio 2019 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
@@ -34,7 +30,7 @@ ms.locfileid: "72677671"
 > [!IMPORTANT]
 > Снимки экрана в этом примере основаны на Visual Studio 2017 версии 15.9.9 и более поздних версиях. Опыт добавления Application Insights зависит от разных версий Visual Studio, а также от типа шаблона ASP.NET. Более старые версии могут иметь другой текст, например "Configure Application Insights".
 
-Щелкните правой кнопкой мыши имя веб-приложения в обозреватель решений и выберите **добавить**  > **телеметрия Application Insights**
+Щелкните правой кнопкой мыши имя веб-приложения в обозреватель решений и выберите **добавить** > **телеметрия Application Insights**
 
 ![Снимок экрана с окном обозревателя решений, где выделен параметр "Настроить Application Insights"](./media/asp-net/add-telemetry-new.png)
 
@@ -54,7 +50,7 @@ ms.locfileid: "72677671"
 
 ![Снимок экрана с окном страницы "Зарегистрировать приложение в Application Insights"](./media/asp-net/00005-register-ed.png)
 
- Выберите **проект**  > **Управление пакетами NuGet**  > **источнике пакета: NuGet.org** > Убедитесь, что у вас есть последний стабильный выпуск пакета SDK для Application Insights.
+ Выберите **проект** > **Управление пакетами NuGet** > **источнике пакета: NuGet.org** > Убедитесь, что у вас есть последний стабильный выпуск пакета SDK для Application Insights.
 
  Данные телеметрии будут отправляться на [портал Azure](https://portal.azure.com) как во время отладки, так и после публикации приложения.
 > [!NOTE]
@@ -124,12 +120,12 @@ ms.locfileid: "72677671"
 
 * Пошаговые видеоинструкции о [настройке Application Insights с помощью приложения .NET](https://www.youtube.com/watch?v=blnGAVgMAfA).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Существуют и другие статьи, к которым можно обратиться, если вас интересуют такие темы, как:
 
 * [инструментирование веб-приложения во время выполнения;](../../azure-monitor/app/monitor-performance-live-website-now.md)
-* [Oблачныe службы Azure](../../azure-monitor/app/cloudservices.md)
+* [Oблачныe службы Azure2}
 
 ### <a name="more-telemetry"></a>Дополнительные данные телеметрии
 
@@ -143,12 +139,12 @@ ms.locfileid: "72677671"
 * **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Содержит сведения об отладке с помощью телеметрии, о поиске по журналу диагностики и детализации кода.
 * **[Аналитика](../../azure-monitor/log-query/get-started-portal.md)**  — эффективный язык запросов.
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>Предупреждения
 
 * [Тесты доступности.](../../azure-monitor/app/monitor-web-app-availability.md) Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
 * [Интеллектуальная диагностика.](../../azure-monitor/app/proactive-diagnostics.md) Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
 * [Оповещения метрики](../../azure-monitor/app/alerts.md). Настройте оповещения, чтобы предупредить вас, если метрика превышает пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
 
-### <a name="automation"></a>Служба автоматизации
+### <a name="automation"></a>Автоматизация
 
 * [Создание ресурсов Application Insights с помощью PowerShell](../../azure-monitor/app/powershell.md)

@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/30/2019
+ms.date: 02/26/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: bfbb466b7679e841c9c0154dbe28de14574d4282
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 4133c081823f1cc319480c1bc847b672df0374d4
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75553466"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77660620"
 ---
 # <a name="run-azure-cli-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Выполнение команд Azure CLI с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
 
@@ -59,7 +59,7 @@ Azure CLI поддерживает параметр `--auth-mode` для опе�
         --name <storage-account> \
         --resource-group sample-resource-group-cli \
         --location eastus \
-        --sku Standard_LRS \
+        --sku Standard_ZRS \
         --encryption-services blob
     ```
 
@@ -71,15 +71,15 @@ Azure CLI поддерживает параметр `--auth-mode` для опе�
 1. Чтобы создать контейнер с использованием учетных данных Azure AD, вызовите команду [AZ Storage Container Create](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create) с параметром `--auth-mode`, для которого задано значение `login`.
 
     ```azurecli
-    az storage container create \ 
-        --account-name <storage-account> \ 
+    az storage container create \
+        --account-name <storage-account> \
         --name sample-container \
         --auth-mode login
     ```
 
 С параметром `--auth-mode` связана переменная среды `AZURE_STORAGE_AUTH_MODE`. Можно указать соответствующее значение в переменной среды, чтобы не включать его при каждом вызове операции с данными службы хранилища Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Использование Azure CLI для назначения роли RBAC доступа к данным BLOB-объектов и очередей](storage-auth-aad-rbac-cli.md)
 - [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](storage-auth-aad-msi.md)

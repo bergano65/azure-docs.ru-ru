@@ -1,18 +1,14 @@
 ---
 title: Экспорт в SQL из Azure Application Insights | Документация Майкрософт
 description: Осуществляйте непрерывный экспорт данных Application Insights в SQL с использованием Stream Analytics.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 09/11/2017
-ms.openlocfilehash: 41efcbc7b70395302858638a9f44f3cbba27bf9a
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 3ef0420cdab64f11b699fd4031ed2b0134f18609
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678264"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663697"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
 В этой статье показано, как переместить данные телеметрии из [azure Application Insights][start] в базу данных SQL Azure с помощью [непрерывного экспорта][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
@@ -26,7 +22,7 @@ ms.locfileid: "72678264"
 В этом примере мы используем данные просмотров страницы, но этот же шаблон можно легко использовать и для других типов данных, таких как пользовательские события и исключения. 
 
 ## <a name="add-application-insights-to-your-application"></a>Добавление Application Insights в приложение
-Чтобы приступить к работе, сделайте следующее:
+Чтобы начать работу:
 
 1. [Настройте Application Insights для веб-страниц](../../azure-monitor/app/javascript.md). 
    

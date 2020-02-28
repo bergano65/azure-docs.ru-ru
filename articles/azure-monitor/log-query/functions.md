@@ -1,18 +1,17 @@
 ---
 title: Функции в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье объясняется, как использовать функции для вызова запроса из другого запроса журнала в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/15/2018
-ms.openlocfilehash: 8d8473b88327d3d17346a0351d0a9fc510152cd8
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 7d94e53abbe8f4d2953729aa2363c3906ce94f74
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72894176"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670225"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
 
@@ -24,8 +23,8 @@ ms.locfileid: "72894176"
 
 | Параметр | Описание |
 |:---|:---|
-| Name           | Отображаемое имя для запроса в **обозревателе запросов**. |
-| Сохранить как        | Функция |
+| Имя           | Отображаемое имя для запроса в **обозревателе запросов**. |
+| Сохранить как        | Компонент |
 | Псевдоним функции | Короткое имя функции в других запросах. Не может содержать пробелы и должно быть уникальным. |
 | Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
 
@@ -54,7 +53,7 @@ Update
 security_updates_last_day | where Title contains "SQL"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с дополнительными уроками о написании запросов журнала Azure Monitor.
 
 - [Работа со строками](string-operations.md)
@@ -62,5 +61,5 @@ security_updates_last_day | where Title contains "SQL"
 - [Статистические функции в запросах Log Analytics](aggregations.md)
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
-- [Соединения](joins.md)
+- [Joins](joins.md)
 - [Создание графиков](charts.md)

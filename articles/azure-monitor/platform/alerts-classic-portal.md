@@ -2,16 +2,15 @@
 title: Создание, просмотр и управление классическими оповещениями метрик с помощью Azure Monitor
 description: Узнайте, как использовать портал Azure, CLI или PowerShell для создания, просмотра и управления классическими правилами генерации оповещений метрики.
 author: yanivlavi
-ms.service: azure-monitor
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.author: yalavi
-ms.openlocfilehash: fd15d6bb9442d91c672fdd444313880001880e07
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: b770b9bd34c8267889db536ec81332de32cb8776
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705604"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668321"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -129,7 +128,7 @@ az monitor alert delete --name <alert name> --resource-group <group name>
 
 8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новую команду [Add-азметрикалертруле](/powershell/module/az.monitor/add-azmetricalertrule) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-enable-template.md).
 - [Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure](../../azure-monitor/platform/alerts-webhooks.md).

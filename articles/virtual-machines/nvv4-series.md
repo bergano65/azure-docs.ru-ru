@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 3b1deceb8d5c6e2a22254b2719449e5adb069def
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 2afec4dc89c8d8892356888ec3404d36ba929d23
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77565403"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669647"
 ---
 # <a name="nvv4-series-preview"></a>Серии NVv4 (Предварительная версия)
 
@@ -40,11 +40,11 @@ ms.locfileid: "77565403"
 
 Чтобы воспользоваться преимуществами возможностей GPU виртуальных машин Azure серии N под управлением Windows, необходимо установить драйверы NVIDIA или AMD GPU.
 
-[Расширение драйвера GPU NVIDIA](/extensions/hpccompute-gpu-windows.md) устанавливает соответствующие драйверы NVIDIA CUDA или Grid на виртуальной машине серии Windows N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](/extensions/hpccompute-gpu-windows.md). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](/extensions/overview.md).
+[Расширение драйвера GPU NVIDIA](./extensions/hpccompute-gpu-windows.md) устанавливает соответствующие драйверы NVIDIA CUDA или Grid на виртуальной машине серии Windows N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](./extensions/hpccompute-gpu-windows.md). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](/.extensions/overview.md).
 
-Если вы решили установить драйверы NVIDIA GPU вручную, см. раздел [Установка драйвера GPU серии N для Windows](/windows/n-series-driver-setup.md) для поддерживаемых операционных систем, драйверов, установки и проверки.
+Если вы решили установить драйверы NVIDIA GPU вручную, см. раздел [Установка драйвера GPU серии N для Windows](./windows/n-series-driver-setup.md) для поддерживаемых операционных систем, драйверов, установки и проверки.
 
-Чтобы вручную установить драйверы AMD GPU, см. раздел [Установка драйвера GPU AMD серии N для Windows](/windows/n-series-amd-driver-setup.md) для поддерживаемых операционных систем, драйверов, установки и шагов проверки.
+Чтобы вручную установить драйверы AMD GPU, см. раздел [Установка драйвера GPU AMD серии N для Windows](./windows/n-series-amd-driver-setup.md) для поддерживаемых операционных систем, драйверов, установки и шагов проверки.
 
 ## <a name="other-sizes"></a>Остальные размеры
 

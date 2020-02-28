@@ -1,19 +1,18 @@
 ---
 title: Создание решения по управлению в Azure | Документация Майкрософт
 description: Решения по управлению включают в себя упакованные сценарии управления в Azure, которые клиенты могут добавить в свою рабочую область Log Analytics.  В этой статье описано, как создавать решения для управления, которые можно использовать в своей среде или предоставлять другим пользователям.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5465c177cf174ebf8d6b7d4f43c5387bce3adb70
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: f1605597c7716ba6a896c7ecdae968f07d66027b
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969702"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663221"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -28,7 +27,7 @@ ms.locfileid: "75969702"
 Основная стратегия заключается в том, что решение по управлению запускается при создании отдельных компонентов в среде Azure.  Если все компоненты работают правильно, вы можете упаковать их в [файл решения по управлению]( solutions-solution-file.md). 
 
 
-## <a name="design-your-solution"></a>Создайте свое решение
+## <a name="design-your-solution"></a>Разработка решения
 Самый распространенный шаблон для решения по управлению показан на следующей схеме.  Разные компоненты этого шаблона описываются ниже.
 
 ![Обзор решения для управления](media/solutions-creating/solution-overview.png)
@@ -46,7 +45,7 @@ ms.locfileid: "75969702"
 
 Определите любые запросы, которые, по вашему мнению, пригодятся пользователю, даже если эти запросы не используются представлениями или оповещениями.  Запросы будут доступны пользователю как сохраненные условия поиска на портале. Их также можно включить в [часть визуализации списка запросов](../../azure-monitor/platform/view-designer-parts.md#list-of-queries-part) в вашем представлении.
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>Предупреждения
 Для [оповещений в Log Analytics](../../azure-monitor/platform/alerts-overview.md) ошибки определяются с помощью [поиска по журналам](#log-searches) в данных репозитория.  В итоге либо пользователь получает уведомление об ошибке, либо эти ошибки обрабатываются автоматически. Вы должны определить разные условия оповещений для приложения и включить соответствующие правила оповещений в файл решения.
 
 Если проблема устранима с помощью автоматизированного процесса, создайте модуль runbook в службе автоматизации Azure. Ошибка будет исправлена автоматически.  Большинством служб Azure можно управлять с помощью [командлетов](/powershell/azure/overview), используемых модулем runbook.
@@ -74,7 +73,7 @@ ms.locfileid: "75969702"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [создать файл решения]( solutions-solution-file.md) для решения по управлению.
 * Узнайте больше о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 * Найдите в коллекции [шаблонов быстрого запуска Azure](https://azure.microsoft.com/documentation/templates) примеры разных шаблонов Resource Manager.

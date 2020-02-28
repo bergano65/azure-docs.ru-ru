@@ -1,18 +1,17 @@
 ---
 title: Схема расширения диагностики Windows
 description: Справочник по схеме конфигурации для расширения диагностики Windows (WAD) в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: diagnostic-extension
 ms.topic: reference
 author: bwren
 ms.author: bwren
 ms.date: 01/20/2020
-ms.openlocfilehash: 5b4d68ab5be2566310ddcc2eaf591d9908d35ad1
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 3adf4b59c0605859ada75577c083094541815984
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77472587"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672367"
 ---
 # <a name="windows-diagnostics-extension-schema"></a>Схема расширения диагностики Windows
 Расширение система диагностики Azure — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок ресурсов вычислений Azure. В этой статье подробно описывается схема, используемая для настройки расширения системы диагностики на виртуальных машинах Windows и других ресурсов вычислений.

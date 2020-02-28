@@ -3,17 +3,16 @@ title: Устранение неполадок Azure Monitor диаграмм м
 description: Устранение проблем с созданием, настройкой или интерпретацией диаграмм метрик
 author: vgorbenko
 services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 072e62d89e8febc4837c10874398daea3b8114ed
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: e1ad4e53596b8228bdef5beb18aa250a9512c49f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75974874"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77659668"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Устранение неполадок диаграмм метрик
 
@@ -29,7 +28,7 @@ ms.locfileid: "75974874"
 
 1. Убедитесь, что вы выбрали правильную группу ресурсов.
     > [!WARNING]
-    > Для лучшей производительности при первом открытии обозревателя метрик раскрывающийся список **группы ресурсов** не имеет предварительно выбранных групп ресурсов. Выберите хотя бы одну группу, чтобы увидеть ресурсы.
+    > Для наилучшей производительности при первом открытии обозревателя метрик раскрывающийся список **Группа ресурсов** не содержит предварительно выбранных групп ресурсов. Выберите хотя бы одну группу, чтобы увидеть ресурсы.
 
 ## <a name="chart-shows-no-data"></a>На диаграмме не отображаются данные
 
@@ -113,7 +112,7 @@ ms.locfileid: "75974874"
 
 1. С помощью [обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) убедитесь, что метрики передаются в учетную запись хранения. Если метрики не собираются, выполните инструкции из [руководства по устранению неполадок для расширения диагностики Azure](diagnostics-extension-troubleshooting.md#metric-data-doesnt-appear-in-the-azure-portal).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения о начале работы с обозревателем метрик](metrics-getting-started.md)
 * [Дополнительные сведения о дополнительных возможностях обозревателя метрик](metrics-charts.md)

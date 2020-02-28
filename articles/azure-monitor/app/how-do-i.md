@@ -1,20 +1,16 @@
 ---
 title: Выполнение заданий в Azure Application Insights | Документация Майкрософт
 description: Вопросы и ответы об Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 04/04/2017
-ms.openlocfilehash: 61bd5898c494018a2bacbd894d4dc2aac97f53b4
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 5b65087c361911f0714723c315e0b7f7e9bb74e6
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73928423"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663863"
 ---
-# <a name="how-do-i--in-application-insights"></a>Разделы справки по Application Insights
+# <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
 ### <a name="email-if-my-site-goes-down"></a>Уведомлять меня по электронной почте, если сайт выходит из строя
 Настройте [веб-тест доступности](../../azure-monitor/app/monitor-web-app-availability.md).
@@ -39,7 +35,7 @@ ms.locfileid: "73928423"
 
     telemetry.TrackMetric("Alarm", 10);
 
-или:
+или
 
     var measurements = new Dictionary<string,double>();
     measurements ["Alarm"] = 10;
@@ -79,7 +75,7 @@ ms.locfileid: "73928423"
 
 * Несколько ролей в приложении: используйте один ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](../../azure-monitor/app/app-map.md).
 * Отдельные стадии разработки, тестирования и выпуска версий. Используйте различные ресурсы Application Insights. Выберите ключи инструментирования из файла Web. config. Дополнительные [сведения](../../azure-monitor/app/separate-resources.md)
-* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](../../azure-monitor/app/separate-resources.md)
+* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Дополнительные сведения](../../azure-monitor/app/separate-resources.md)
 
 ## <a name="monitor-backend-servers-and-desktop-apps"></a>Мониторинг внутренних серверов и классических приложений
 [Используйте модуль пакета SDK для Windows Server](../../azure-monitor/app/windows-desktop.md).
@@ -91,7 +87,7 @@ ms.locfileid: "73928423"
 #### <a name="dashboard-with-data-from-other-sources-and-application-insights"></a>Панель мониторинга с данными из других источников и Application Insights
 * [Экспорт телеметрии в Power BI](../../azure-monitor/app/export-power-bi.md ).
 
-Или
+либо
 
 * Используйте SharePoint как панель мониторинга для отображения данных веб-компонентов SharePoint. [Используйте непрерывный экспорт и Stream Analytics для экспорта в SQL](../../azure-monitor/app/code-sample-export-sql-stream-analytics.md).  Используйте PowerView для просмотра базы данных и создания веб-компонента SharePoint для PowerView.
 
@@ -100,7 +96,7 @@ ms.locfileid: "73928423"
 ### <a name="filter-out-anonymous-or-authenticated-users"></a>Отфильтровывание анонимных или прошедших проверку подлинности пользователей
 Если пользователи входят в систему, можно задать [идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users). (Это не происходит автоматически.)
 
-Затем можно:
+Можно выполнить следующее.
 
 * Поиск по указанным идентификаторам пользователей
 

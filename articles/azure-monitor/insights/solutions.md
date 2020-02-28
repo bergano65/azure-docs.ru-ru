@@ -1,18 +1,17 @@
 ---
 title: Решения мониторинга в Azure Monitor | Документация Майкрософт
 description: Решения мониторинга в Azure Monitor — это коллекция правил логики, визуализации и получения данных, которые предоставляют метрики, связанные с определенной проблемной областью.  Эта статья содержит сведения об установке и использовании решений мониторинга.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/13/2019
-ms.openlocfilehash: 7ea7051b24deeddea25b1db771b73a226f650067
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a04ca3768ade6058c59393591c252bc4347a3663
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75401152"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663000"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 Решения мониторинга используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке.
@@ -101,7 +100,7 @@ ms.locfileid: "75401152"
 Чтобы удалить установленное решение, найдите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 

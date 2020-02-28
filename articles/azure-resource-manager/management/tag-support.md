@@ -2,13 +2,13 @@
 title: Поддержка тегов для ресурсов
 description: В этой статье описываются типы ресурсов Azure, поддерживающие теги, а также приводятся сведения о всех службах Azure.
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: 09dd71ef8c3ac4803a988dffbdca47116c967a0e
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.date: 02/26/2020
+ms.openlocfilehash: 6100c667c7df0b3e1740777565d260af9fa818a3
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207933"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77657579"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](tag-resources.md). Столбец с подписью **поддерживает теги** . указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчете о затратах** указывает, передает ли этот тип ресурса тег в отчет о затратах. Вы можете просматривать затраты по тегам в [анализе затрат на управление затратами](../../cost-management-billing/costs/quick-acm-cost-analysis.md#understanding-grouping-and-filtering-options) , а также в [счетах на счета и данные о ежедневном использовании в Azure](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md).
@@ -116,8 +116,8 @@ ms.locfileid: "77207933"
 > - [Microsoft. migrate](#microsoftmigrate)
 > - [Microsoft. Микседреалити](#microsoftmixedreality)
 > - [Microsoft. NetApp](#microsoftnetapp)
-> - [Microsoft. Notebooks](#microsoftnotebooks)
 > - [Microsoft. Network](#microsoftnetwork)
+> - [Microsoft. Notebooks](#microsoftnotebooks)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
 > - [Microsoft. Обжектсторе](#microsoftobjectstore)
 > - [Microsoft. Оффазуре](#microsoftoffazure)
@@ -136,7 +136,6 @@ ms.locfileid: "77207933"
 > - [Microsoft. Ресаурцехеалс](#microsoftresourcehealth)
 > - [Microsoft.Resources](#microsoftresources)
 > - [Microsoft. SaaS](#microsoftsaas)
-> - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
 > - [Microsoft. Секуритиграф](#microsoftsecuritygraph)
@@ -292,6 +291,9 @@ ms.locfileid: "77207933"
 > | automationAccounts | Да | Да |
 > | automationAccounts и конфигурации | Да | Да |
 > | automationAccounts и задания | Нет | Нет |
+> | automationAccounts/Приватиндпоинтконнектионпроксиес | Нет | Нет |
+> | automationAccounts/Приватиндпоинтконнектионс | Нет | Нет |
+> | automationAccounts/Привателинкресаурцес | Нет | Нет |
 > | automationAccounts и модули Runbook | Да | Да |
 > | automationAccounts/Софтвареупдатеконфигуратионс | Нет | Нет |
 > | automationAccounts/веб-перехватчики | Нет | Нет |
@@ -711,6 +713,7 @@ ms.locfileid: "77207933"
 > | реестры и Импортимаже | Нет | Нет |
 > | реестры и Приватиндпоинтконнектионпроксиес | Нет | Нет |
 > | реестры/Приватиндпоинтконнектионпроксиес/проверка | Нет | Нет |
+> | реестры и Приватиндпоинтконнектионс | Нет | Нет |
 > | реестры и Привателинкресаурцес | Нет | Нет |
 > | реестры и Куеуебуилд | Нет | Нет |
 > | реестры и Реженератекредентиал | Нет | Нет |
@@ -1052,6 +1055,7 @@ ms.locfileid: "77207933"
 > | Партнернамеспацес/eventChannels | Нет | Нет |
 > | партнеррегистратионс | Да | Да |
 > | партнертопикс | Да | Да |
+> | Партнертопикс/eventSubscriptions | Нет | Нет |
 > | системтопикс | Да | Да |
 > | Системтопикс/eventSubscriptions | Нет | Нет |
 > | topics | Да | Да |
@@ -1288,6 +1292,7 @@ ms.locfileid: "77207933"
 > | ------------- | ----------- | ----------- |
 > | getEntities | Нет | Нет |
 > | managementGroups | Нет | Нет |
+> | Манажементграупс/параметры | Нет | Нет |
 > | ресурсы | Нет | Нет |
 > | startTenantBackfill | Нет | Нет |
 > | tenantBackfillStatus | Нет | Нет |
@@ -1395,15 +1400,7 @@ ms.locfileid: "77207933"
 > | нетаппаккаунтс | Да | Нет |
 > | Нетаппаккаунтс/КапаЦитипулс | Да | Нет |
 > | Нетаппаккаунтс/КапаЦитипулс/тома | Да | Нет |
-> | Нетаппаккаунтс/КапаЦитипулс/Volumes/Маунттаржетс | Да | Нет |
-> | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | Да | Нет |
-
-## <a name="microsoftnotebooks"></a>Microsoft. Notebooks
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
-> | ------------- | ----------- | ----------- |
-> | нотебукпроксиес | Нет | Нет |
+> | Нетаппаккаунтс/КапаЦитипулс/тома/моментальные снимки | Нет | Нет |
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
@@ -1495,6 +1492,13 @@ ms.locfileid: "77207933"
 > Для службы "Передняя дверца Azure" можно применять теги при создании ресурса, но обновление или добавление тегов в настоящее время не поддерживается.
 
 
+## <a name="microsoftnotebooks"></a>Microsoft. Notebooks
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
+> | ------------- | ----------- | ----------- |
+> | нотебукпроксиес | Нет | Нет |
+
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 
 > [!div class="mx-tableFixed"]
@@ -1556,6 +1560,7 @@ ms.locfileid: "77207933"
 > | легаципирингс | Нет | Нет |
 > | пираснс | Нет | Нет |
 > | пиринги | Да | Да |
+> | пирингсервицекаунтриес | Нет | Нет |
 > | пирингсервицепровидерс | Нет | Нет |
 > | пирингсервицес | Да | Да |
 
@@ -1681,13 +1686,6 @@ ms.locfileid: "77207933"
 > | приложения | Да | Да |
 > | saasresources | Нет | Нет |
 
-## <a name="microsoftscheduler"></a>Microsoft.Scheduler
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
-> | ------------- | ----------- | ----------- |
-> | jobcollections | Да | Да |
-
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
 > [!div class="mx-tableFixed"]
@@ -1707,7 +1705,7 @@ ms.locfileid: "77207933"
 > | allowedConnections | Нет | Нет |
 > | applicationWhitelistings | Нет | Нет |
 > | ассессментметадата | Нет | Нет |
-> | оценки | Нет | Нет |
+> | Оценки | Нет | Нет |
 > | аутодисмиссалертсрулес | Нет | Нет |
 > | инструментах автоматизации Composer | Да | Да |
 > | AutoProvisioningSettings | Нет | Нет |
@@ -2026,6 +2024,7 @@ ms.locfileid: "77207933"
 > | Тип ресурса | Поддержка тегов | Тег в отчете о затратах |
 > | ------------- | ----------- | ----------- |
 > | devices | Да | Да |
+> | регистередсубскриптионс | Нет | Нет |
 > | разработчиков | Нет | Нет |
 > | поставщики и номера SKU | Нет | Нет |
 > | поставщики и внфс | Нет | Нет |

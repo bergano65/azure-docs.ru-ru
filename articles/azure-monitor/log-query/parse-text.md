@@ -1,18 +1,17 @@
 ---
 title: Анализ текстовых данных в журналах Azure Monitor | Документация Майкрософт
 description: Описывает различные варианты анализа данных журнала в записях Azure Monitor во время сбора данных и их извлечения в запросе, сравнивая относительные преимущества каждого.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/04/2018
-ms.openlocfilehash: 82ad197a1f64040dfb91aa73d7a6dfd4210f99a1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d7a37d51c411488231205fd036f9a287f5206ce5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365280"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672452"
 ---
 # <a name="parse-text-data-in-azure-monitor-logs"></a>Анализ текстовых данных в журналах Azure Monitor
 Некоторые данные журнала, собранные Azure Monitor, будут содержать несколько фрагментов информации в одном свойстве. Анализ этих данных в нескольких свойствах облегчает использование в запросах. Типичным примером является [особый журнал](../../log-analytics/log-analytics-data-sources-custom-logs.md), который собирает всю запись журнала с несколькими значениями в одно свойство. Создавая отдельные свойства для разных значений, вы можете выполнять поиск и вычисления в каждом из них.
@@ -188,5 +187,5 @@ MyCustomCSVLog
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о [запросах журнала](log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.

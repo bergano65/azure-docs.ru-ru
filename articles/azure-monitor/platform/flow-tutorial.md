@@ -1,18 +1,17 @@
 ---
 title: Автоматизация процессов журнала Azure Monitor с помощью Microsoft Flow
 description: Узнайте, как можно использовать Microsoft Flow для быстрой автоматизации повторяющихся процессов с помощью соединителя Azure Log Analytics.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/29/2017
-ms.openlocfilehash: a6097d38d3335be356ca75f5a9d0eadeed414b03
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 92f0d2916b0f28760f7d028ee3e6dc0be37c32d2
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77166950"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672316"
 ---
 # <a name="automate-azure-monitor-log-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов журнала Azure Monitor с помощью соединителя для Microsoft Flow
 [Microsoft Flow](https://ms.flow.microsoft.com) позволяет создавать автоматизированные рабочие процессы, используя сотни действий для различных служб. Выходные данные одного действия могут использоваться в качестве входных данных другого действия, что позволяет интегрировать различные службы.  Соединитель Azure Log Analytics для Microsoft Flow позволяет создавать рабочие процессы, которые включают данные, полученные запросами журнала из рабочих областей Log Analytics в Azure Monitor.
@@ -73,7 +72,7 @@ ms.locfileid: "77166950"
 3. По завершении потока проверьте почту получателя, которую вы указали.  Вы должны получить сообщение с текстом, подобным этому:<br><br>![Пример электронного сообщения](media/flow-tutorial/flow08.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о запросах журнала в Azure Monitor см. в [этой статье](../log-query/log-query-overview.md).
 - Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).

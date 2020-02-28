@@ -1,18 +1,14 @@
 ---
 title: Мониторинг приложений Docker в Azure Application Insights | Документация Майкрософт
 description: Счетчики производительности, события и исключения Docker могут отображаться в Application Insights вместе с данными телеметрии из контейнерных приложений.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/14/2019
-ms.openlocfilehash: 66a2481d25c863bbdbf4d72c4683a309918776db
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 5ff3d6a2b31425a3fb6857c8c6aed45f7ef18d64
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677925"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669613"
 ---
 # <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
 
@@ -85,7 +81,7 @@ ms.locfileid: "72677925"
 ### <a name="docker-context-added-to-app-telemetry"></a>Добавление контекста Docker в телеметрию приложения
 Запрос данных телеметрии, отправленный из приложения, инструментированного с помощью пакета SDK AI, с дополнительной контекстной информацией Docker:
 
-## <a name="q--a"></a>Контроль качества
+## <a name="q--a"></a>Вопросы и ответы
 *Какие возможности Application Insights отсутствуют в Docker?*
 
 * Подробные показатели счетчиков производительности по контейнерам и образам.
@@ -100,7 +96,7 @@ ms.locfileid: "72677925"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Application Insights для Java](../../azure-monitor/app/java-get-started.md)
 * [Application Insights для Node.js](../../azure-monitor/app/nodejs.md)

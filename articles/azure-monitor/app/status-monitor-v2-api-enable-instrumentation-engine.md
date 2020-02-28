@@ -1,18 +1,16 @@
 ---
 title: Справочник по API агента Azure Application Insights
 description: Справочник по API агента Application Insights. Enable-Инструментатионенгине. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 796c2cc669e238499223d233cf4ddcf740af7c95
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: b3f298ac31cc584cd16553186359c87f69f27aad
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899720"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671364"
 ---
 # <a name="application-insights-agent-api-enable-instrumentationengine"></a>API агента Application Insights: enable-Инструментатионенгине
 
@@ -46,12 +44,12 @@ PS C:\> Enable-InstrumentationEngine
 ## <a name="parameters"></a>Параметры
 
 ### <a name="-acceptlicense"></a>-AcceptLicense
-**Необязательный параметр.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
+**Необязательно.** Используйте этот параметр, чтобы принять условия лицензии и конфиденциальности в установках без монитора.
 
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Используйте этот параметр для вывода подробных журналов.
 
-## <a name="output"></a>Выходные данные
+## <a name="output"></a>Вывод
 
 
 #### <a name="example-output-from-successfully-enabling-the-instrumentation-engine"></a>Пример выходных данных для успешного включения модуля инструментирования
@@ -61,7 +59,7 @@ Configuring IIS Environment for instrumentation engine...
 Configuring registry for instrumentation engine...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
  - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.

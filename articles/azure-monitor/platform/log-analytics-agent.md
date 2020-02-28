@@ -1,21 +1,20 @@
 ---
 title: Обзор агента Log Analytics
 description: В этой статье содержатся сведения о том, как собирать данные и наблюдать за компьютерами, размещенными в Azure, локальной или другой облачной среде, с помощью Log Analytics.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: bf2939c28afb682d4053a27920b9cf57795d2e86
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 365c228edd97ffcd02b86508deff4272365447f6
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77467238"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672146"
 ---
 # <a name="log-analytics-agent-overview"></a>Обзор агента Log Analytics
-Агент Azure Log Analytics был разработан для комплексного управления виртуальными машинами в любых облачных и локальных компьютерах, а также для тех, которые отслеживаются [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/). Агенты Windows и Linux отправляют собранные данные из разных источников в рабочую область Log Analytics в Azure Monitor, а также любые уникальные журналы или метрики, как определено в решении для мониторинга. Агент Log Analytics также поддерживает аналитические сведения и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](), [Центр безопасности Azure]()и служба [автоматизации Azure]().
+Агент Azure Log Analytics был разработан для комплексного управления виртуальными машинами в любых облачных и локальных компьютерах, а также для тех, которые отслеживаются [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/). Агенты Windows и Linux отправляют собранные данные из разных источников в рабочую область Log Analytics в Azure Monitor, а также любые уникальные журналы или метрики, как определено в решении для мониторинга. Агент Log Analytics также поддерживает аналитические сведения и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](/azure/security-center/)и служба [автоматизации Azure](../../automation/automation-intro.md).
 
 В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
 

@@ -1,18 +1,17 @@
 ---
 title: Поддерживаемые подключения с использованием соединителя управления ИТ-службами в Azure Log Analytics | Документы Майкрософт
 description: В этой статье описывается, как подключить продукты и службы ITSM с помощью соединителя управления ИТ-службами (ITSM) в Azure Monitor, чтобы централизованно отслеживать рабочие элементы ITSM и управлять ими.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: a4b8e1ca245d90018647577f338ed0833cbaf324
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: c6cad29b6cc392746a2e56323302521302835b2f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990289"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665873"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](../../azure-monitor/platform/itsmc-overview.md).
@@ -32,7 +31,7 @@ ms.locfileid: "76990289"
 
 В разделах ниже приведены сведения о подключении продукта System Center Service Manager к ITSMC в Azure.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Выполните указанные ниже предварительные требования.
 
@@ -160,7 +159,7 @@ ms.locfileid: "76990289"
 
 3. Войдите с помощью учетных данных Azure и выберите подписку, в которой было создано гибридное подключение.
 
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 Гибридное подключение успешно установлено.
 
@@ -177,7 +176,7 @@ ms.locfileid: "76990289"
 
 В разделах ниже приведены сведения о подключении экземпляра ServiceNow к ITSMC в Azure.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 Выполните указанные ниже предварительные требования.
 - ITSMC установлен. Дополнительные сведения см. в разделе [Добавление соединителя управления ИТ-службами](../../azure-monitor/platform/itsmc-overview.md#adding-the-it-service-management-connector-solution).
 - Поддерживаемые версии ServiceNow: Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
@@ -195,7 +194,7 @@ ms.locfileid: "76990289"
     - [Настройка OAuth для версии Geneva](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/security/task/t_SettingUpOAuth.html)
 
 
-- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Подробнее](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
+- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Дополнительные сведения](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 )
 - Создать роль пользователя для интеграции в установленном приложении для пользователя. Дополнительные сведения о создании роли пользователя для интеграции см. [здесь](#create-integration-user-role-in-servicenow-app).
 
 ### <a name="connection-procedure"></a>**Процедура подключения**
@@ -283,7 +282,7 @@ ms.locfileid: "76990289"
 В разделах ниже приведены сведения о подключении экземпляра Provance к ITSMC в Azure.
 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Выполните указанные ниже предварительные требования.
 
@@ -336,7 +335,7 @@ ms.locfileid: "76990289"
 
 В разделах ниже приведены сведения о подключении экземпляра Cherwell к ITSMC в Azure.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Выполните указанные ниже предварительные требования.
 
@@ -395,5 +394,5 @@ ms.locfileid: "76990289"
     ![Идентификатор пользователя Cherwell](media/itsmc-connections/itsmc-cherwell-client-id.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
  - [Создание рабочих элементов ITSM из оповещений Azure](../../azure-monitor/platform/itsmc-overview.md#create-itsm-work-items-from-azure-alerts)

@@ -1,18 +1,14 @@
 ---
 title: Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 description: Не отображаются данные в Azure Application Insights? Попробуйте здесь.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/23/2018
-ms.openlocfilehash: a1e299f195a148ebd1bdbda91e5a56e297f34d31
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 2627fde55f4177798d04aab02db169f3117d32dd
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74889181"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665907"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок без Application Insights данных для .NET и .NET Core
 
@@ -59,7 +55,7 @@ ms.locfileid: "74889181"
 * В вашей учетной записи Azure возникли неполадки.
 * У вас есть только [доступ на чтение в подписке или группе, в которой вы пытаетесь создать новый ресурс](../../azure-monitor/app/resources-roles-access-control.md).
 
-Исправление:
+Устранение ошибки:
 
 * Убедитесь, что вы указали правильные учетные данные для входа в учетную запись Azure.
 * В браузере убедитесь, что у вас есть доступ к [порталу Azure](https://portal.azure.com). Откройте параметры и проверьте, нет ли каких-либо ограничений.
@@ -84,7 +80,7 @@ ms.locfileid: "74889181"
 * Аналитические средства для разработчиков отключены в Visual Studio.
 * У вас установлена более старая версия Visual Studio, чем версия 2013 с обновлением 3.
 
-Исправление:
+Устранение ошибки:
 
 * Обновите Visual Studio до версии 2013 с обновлением 3 или более поздней.
 * Выберите элементы **Сервис**, **Расширения и обновления** и убедитесь, что пакет **Аналитические средства для разработчиков** установлен и включен. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
@@ -112,7 +108,7 @@ ms.locfileid: "74889181"
 
 Ключ инструментирования в файле ApplicationInsights.config контролирует, куда отправляются данные телеметрии. Строка в файле проекта контролирует, какой ресурс открывается при использовании команды в Visual Studio.
 
-Исправление:
+Устранение ошибки:
 
 * В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт Application Insights, а затем — "Настроить Application Insights". В открывшемся диалоговом окне можно отправить данные телеметрии в существующий ресурс или создать новый. Или сделайте так:
 * Откройте ресурс напрямую. Войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
@@ -248,7 +244,7 @@ PerfView.exe collect -MaxCollectSec:300 -NoGui /onlyProviders=*Microsoft-Applica
 - **Ногуи**. Установите этот параметр, чтобы получать журналы без графического пользовательского интерфейса.
 
 
-Дополнительные сведения
+Для получения дополнительных сведений
 - [Запись трассировок производительности с помощью PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
 - [Источники событий Application Insights](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/ETW)
 

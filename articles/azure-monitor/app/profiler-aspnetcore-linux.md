@@ -1,19 +1,17 @@
 ---
 title: Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler | Документация Майкрософт
 description: Общие сведения и пошаговое руководство по использованию Application Insights Profiler.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 02/23/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: a300aa066bdef40c4768ac5e278537aec1a8b3b7
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 9c98cd5d3d4d76f9455e4c036aa32a4ead20cfff
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820555"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671721"
 ---
 # <a name="profile-aspnet-core-azure-linux-web-apps-with-application-insights-profiler"></a>Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler
 
@@ -25,7 +23,7 @@ ms.locfileid: "72820555"
 
 ![Трассировки профилировщика](./media/profiler-aspnetcore-linux/profiler-traces.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Приведенные ниже инструкции применяются ко всем средам разработки для Windows, Linux и Mac:
 
 * Установите [пакет SDK для .NET Core 2.1.2 или более поздней версии](https://dotnet.microsoft.com/download/archives).
@@ -127,7 +125,7 @@ ms.locfileid: "72820555"
     git push azure master
     ```
 
-Вы должны увидеть результат, аналогичный приведенному ниже.
+Выходные данные должны соответствовать следующему примеру.
 
     ```
     Counting objects: 9, done.
@@ -176,7 +174,7 @@ ms.locfileid: "72820555"
 Версия Linux профилировщика App Insights пока еще не поддерживает профилирование по требованию с помощью кнопки профиль сейчас.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если вы используете пользовательские контейнеры, размещенные в Службе приложений Azure, чтобы включить Application Insights Profiler, следуйте инструкциям из статьи [Enable Service Profiler for containerized ASP.NET Core application](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/tree/master/examples/EnableServiceProfilerForContainerApp) (Включение профилировщика службы для контейнерного приложения ASP.NET Core).
 
 О каких-либо проблемах или предложениях сообщайте в репозиторий Github: [ApplicationInsights-Profiler-AspNetCore: Issues](https://github.com/Microsoft/ApplicationInsights-Profiler-AspNetCore/issues) (ApplicationInsights-Profiler-AspNetCore: вопросы)

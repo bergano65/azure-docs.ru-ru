@@ -1,18 +1,17 @@
 ---
 title: Узнайте, как работает добровольное средство миграции для Azure Monitor оповещений
 description: Узнайте, как работает средство миграции оповещений и устраните проблемы.
-author: yalavi
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: yalavi
+author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 493fa4ac51bf593b7856b236c5d861ec029769d3
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: 8cc77d13567910797cd519ac193b848f3ea434da
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75680687"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665278"
 ---
 # <a name="understand-how-the-migration-tool-works"></a>Принципы работы средства миграции
 
@@ -93,7 +92,7 @@ ms.locfileid: "75680687"
 - Наблюдаемая задержка чтения
 - Наблюдаемая задержка записи
 - Доступность службы
-- Объем хранилища
+- Емкость хранилища
 - Регулируемые запросы
 - Общее количество запросов
 
@@ -135,7 +134,7 @@ ms.locfileid: "75680687"
 
 Для служб учетных записей хранения, таких как BLOB-объекты, таблицы, файлы и очереди, следующие метрики сопоставляются с эквивалентными метриками, как показано ниже.
 
-| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Комментарии|
+| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Comments|
 |--------------------------|---------------------------------|---------|
 | AnonymousAuthorizationError| Метрика транзакций с измерениями «ResponseType» = «AuthorizationError» и «Authentication» = «Anonymous»| |
 | AnonymousClientOtherError | Метрика транзакций с измерениями «ResponseType» = «Клиентосереррор» и «Authentication» = «Anonymous» | |
@@ -147,7 +146,7 @@ ms.locfileid: "75680687"
 | AuthorizationError | Метрика транзакций с измерениями "ResponseType" = "AuthorizationError" | |
 | AverageE2ELatency | SuccessE2ELatency | |
 | AverageServerLatency | SuccessServerLatency | |
-| Ориентированное на объем | BlobCapacity | Используйте `aggregationType` "Average" вместо "Last". Метрика применяется только к службам BLOB-объектов |
+| Capacity | BlobCapacity | Используйте `aggregationType` "Average" вместо "Last". Метрика применяется только к службам BLOB-объектов |
 | ClientOtherError | Метрика транзакций с измерениями "ResponseType" = "Клиентосереррор"  | |
 | ClientTimeoutError | Метрика транзакций с измерениями "ResponseType" = "ClientTimeOutError" | |
 | ContainerCount | ContainerCount | Используйте `aggregationType` "Average" вместо "Last". Метрика применяется только к службам BLOB-объектов |
@@ -162,17 +161,17 @@ ms.locfileid: "75680687"
 | SASSuccess | Метрика транзакций с измерениями "ResponseType" = "Success" и "Authentication" = "SAS" | |
 | ServerOtherError | Метрика транзакций с измерениями "ResponseType" = "Серверосереррор" | |
 | ServerTimeOutError | Метрика транзакций с измерениями "ResponseType" = "ServerTimeOutError"  | |
-| Успешно | Метрика транзакций с измерениями "ResponseType" = "Success" | |
+| Выполнено | Метрика транзакций с измерениями "ResponseType" = "Success" | |
 | TotalBillableRequests| Транзакции | |
 | TotalEgress | Исходящие | |
-| TotalIngress | Входящие | |
+| TotalIngress | Входящий трафик | |
 | TotalRequests | Транзакции | |
 
 ### <a name="microsoftinsightscomponents"></a>Microsoft. Insights/компоненты
 
 Для Application Insights эквивалентными метриками могут быть, как показано ниже:
 
-| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Комментарии|
+| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Comments|
 |--------------------------|---------------------------------|---------|
 | доступность. Аваилабилитиметрик. значение | availabilityResults/Аваилабилитиперцентаже|   |
 | доступность. Дуратионметрик. значение | availabilityResults/duration| Умножьте исходное пороговое значение на 1000 в качестве единиц для классической метрики в секундах, а для новой — в миллисекундах.  |
@@ -202,7 +201,7 @@ ms.locfileid: "75680687"
 
 Для Cosmos DB эквивалентными метриками могут быть, как показано ниже:
 
-| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Комментарии|
+| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Comments|
 |--------------------------|---------------------------------|---------|
 | AvailableStorage     |AvailableStorage|   |
 | Размер данных | DataUsage| |
@@ -227,7 +226,7 @@ ms.locfileid: "75680687"
 > [!NOTE]
 > Классические оповещения отправляли локализованные сообщения электронной почты на основе локали классического администратора при использовании для уведомления ролей классического администратора. Новые сообщения электронной почты с оповещениями отправляются через группы действий и доступны только на английском языке.
 
-## <a name="rollout-phases"></a>Этапы выпуска
+## <a name="rollout-phases"></a>Этапы развертывания
 
 Средство миграции выполняется поэтапно для клиентов, использующих классические правила генерации оповещений. Владельцы подписки получат сообщение электронной почты, когда подписка будет готова к миграции с помощью средства.
 
@@ -271,7 +270,7 @@ ms.locfileid: "75680687"
 - Исключение подписок или групп ресурсов на время процесса миграции из назначения политики. Дополнительные [сведения об управлении областью исключения политик](../../governance/policy/tutorials/create-and-manage.md#exempt-a-non-compliant-or-denied-resource-using-exclusion).
 - Удаление или изменение влияния на "Audit" или "Append" (например, может решить проблемы, связанные с отсутствующими тегами). Дополнительные [сведения об управлении последствиями политик](../../governance/policy/concepts/definition-structure.md#policy-rule).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Подготовка к миграции](alerts-prepare-migration.md)

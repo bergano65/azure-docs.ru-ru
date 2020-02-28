@@ -1,18 +1,16 @@
 ---
 title: Обзор агента Application Insights Azure | Документация Майкрософт
 description: Общие сведения об агенте Application Insights. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: 61c3721745550b43aea730d0bcd2230b0435ff53
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 4a240bc62816a46bc37108777a8b081b74047738
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899599"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671177"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
 
@@ -33,7 +31,7 @@ Application Insights агент расположен здесь: https://www.pow
 ![Коллекция PowerShell](https://img.shields.io/powershellgallery/v/Az.ApplicationMonitor.svg?color=Blue&label=Current%20Version&logo=PowerShell&style=for-the-badge)
 
 
-## <a name="instructions"></a>Указания
+## <a name="instructions"></a>Instructions
 - Ознакомьтесь с [инструкциями по началу работы](status-monitor-v2-get-started.md) , чтобы получить краткие примеры кода.
 - [Подробные инструкции](status-monitor-v2-detailed-instructions.md) по началу работы см. здесь.
 
@@ -47,7 +45,7 @@ Application Insights агент расположен здесь: https://www.pow
 - [Set-Аппликатионинсигхтсмониторингконфиг](status-monitor-v2-api-set-config.md)
 - [Start-Аппликатионинсигхтсмониторингтраце](status-monitor-v2-api-start-trace.md)
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 - [Устранение неполадок](status-monitor-v2-troubleshoot.md)
 - [Известные проблемы](status-monitor-v2-troubleshoot.md#known-issues)
 
@@ -74,7 +72,7 @@ Application Insights агент расположен здесь: https://www.pow
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотр телеметрии:
 

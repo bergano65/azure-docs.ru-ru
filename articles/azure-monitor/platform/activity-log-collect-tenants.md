@@ -1,18 +1,17 @@
 ---
 title: Получение журналов действий Azure в Log Analytics рабочей области между клиентами Azure | Документация Майкрософт
 description: Используйте концентраторы событий и Logic Apps, чтобы получить данные из журнала действий Azure и отправить их в Log Analytics рабочую область в Azure Monitor в другом клиенте.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/06/2019
-ms.openlocfilehash: e3b368f8a59d201f70bfad05125ed59b4b8551c5
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 52bf8b955ef4dc9cfae7fd74fbad0df744609196
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530006"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669273"
 ---
 # <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants-legacy"></a>Получение журналов действий Azure в Azure Monitor между клиентами Azure Active Directory (устаревшие)
 
@@ -125,7 +124,7 @@ ms.locfileid: "75530006"
 
     ![Создание приложения логики](media/collect-activity-logs-subscriptions/create-logic-app.png)
 
-   |Параметр | Description  |
+   |Параметр | Описание  |
    |:---|:---|
    | Имя           | Уникальное имя для приложения логики. |
    | Subscription   | Выберите подписку Azure, в которой будет размещаться приложение логики. |
@@ -134,7 +133,7 @@ ms.locfileid: "75530006"
    | Log Analytics  | Выберите, если требуется регистрировать состояние каждого запуска приложения логики в Log Analytics рабочей области.  |
 
     
-3. Нажмите кнопку **Создать**. При отображении уведомления **Развертывание прошло успешно** щелкните **Перейти к ресурсу**, чтобы открыть приложение логики.
+3. Выберите **Создать**. При отображении уведомления **Развертывание прошло успешно** щелкните **Перейти к ресурсу**, чтобы открыть приложение логики.
 
 4. В разделе **Шаблоны** выберите **Пустое приложение логики**. 
 
@@ -148,7 +147,7 @@ ms.locfileid: "75530006"
 
    ![изображение триггера концентратора событий в Logic Apps](media/collect-activity-logs-subscriptions/logic-apps-event-hub-add-trigger.png)
 
-2. Когда появится запрос учетных данных, подключитесь к пространству имен Центров событий. Введите имя для своего подключения, а затем скопированную строку подключения.  Нажмите кнопку **Создать**.
+2. Когда появится запрос учетных данных, подключитесь к пространству имен Центров событий. Введите имя для своего подключения, а затем скопированную строку подключения.  Выберите **Создать**.
 
    ![изображение добавления триггера концентратора событий в приложениях логики](media/collect-activity-logs-subscriptions/logic-apps-event-hub-add-connection.png)
 
@@ -300,7 +299,7 @@ ms.locfileid: "75530006"
 
     ![Настройка действия отправки данных](media/collect-activity-logs-subscriptions/logic-apps-send-data-to-log-analytics-configuration.png)
 
-   |Параметр        | Значение           | Description  |
+   |Параметр        | Значение           | Описание  |
    |---------------|---------------------------|--------------|
    |Текст запроса JSON  | **Выходные данные** действия **Compose** | Извлекает записи из текста сообщения действия Compose. |
    | Имя пользовательского журнала | AzureActivity | Имя настраиваемой таблицы журнала, создаваемой в Log Analytics рабочей области для хранения импортированных данных. |
@@ -336,7 +335,7 @@ ms.locfileid: "75530006"
 
 ![Тестирование приложения логики](media/collect-activity-logs-subscriptions/log-analytics-results.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы создали приложение логики для считывания журналов действий Azure из концентратора событий и отправки их в рабочую область Log Analytics для анализа. Дополнительные сведения о визуализации данных в рабочей области, включая создание панелей мониторинга, см. в руководстве по визуализации данных.
 

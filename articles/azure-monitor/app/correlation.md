@@ -1,19 +1,17 @@
 ---
 title: Корреляция данных телеметрии Azure Application Insights | Документация Майкрософт
 description: Корреляция данных телеметрии Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.openlocfilehash: bc73dfb1c4dc77abe0bd135ecf572fa05ddf6322
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 06897fffda490cdfcbb2a9cf6f55c7945e8afda0
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951332"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672061"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -47,7 +45,7 @@ Application Insights определяет [модель данных](../../azur
 
 Обратите внимание, что в результатах все элементы телеметрии используют корневой `operation_Id`. При вызове Ajax с страницы новый уникальный идентификатор (`qJSXU`) назначается телеметрии зависимости, а идентификатор pageView используется как `operation_ParentId`. Запрос сервера затем использует идентификатор Ajax как `operation_ParentId`.
 
-| itemType   | name                      | ИД           | operation_ParentId | operation_Id |
+| itemType   | name                      | ИДЕНТИФИКАТОР           | operation_ParentId | operation_Id |
 |------------|---------------------------|--------------|--------------------|--------------|
 | pageView   | Stock page                |              | STYz               | STYz         |
 | dependency | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
@@ -358,12 +356,12 @@ ASP.NET Core 2,0 поддерживает извлечение заголовк�
 
   Начальная загрузочная загрузка автоматически назначает `cloudRoleName` значению, введенному для свойства `spring.application.name`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Напишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md).
 - Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в разделе [Track Custom Operations](custom-operations-tracking.md).
 - Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud-role-name) для других пакетов SDK.
 - Подключите все компоненты своей микрослужбы с помощью Application Insights. Ознакомьтесь со сведениями о [поддерживаемых платформах](../../azure-monitor/app/platforms.md).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлена модель данных для Application Insights.
-- Узнайте, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
+- Вы можете узнать, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
 - Просмотрите [справочник по конфигурации в Application Insights](configuration-with-applicationinsights-config.md).

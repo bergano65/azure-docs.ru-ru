@@ -3,17 +3,16 @@ title: Роли, разрешения и безопасность в Azure Monit
 description: Узнайте, как использовать встроенные роли и разрешения Azure Monitor для ограничения доступа к ресурсам мониторинга.
 author: johnkemnetz
 services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: d223c3483becdc8ba44bc14ec16150cf1b001943
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 81309f0b5781e6302887a5b079ed359e70659834
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894541"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77658988"
 ---
 # <a name="roles-permissions-and-security-in-azure-monitor"></a>Роли, разрешения и безопасность в Azure Monitor
 
@@ -187,7 +186,7 @@ New-AzRoleDefinition -Role $role
 
 Дополнительные сведения см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](../../storage/common/storage-network-security.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Прочитайте о RBAC и разрешениях в Resource Manager](../../role-based-access-control/overview.md)
 * [Прочитайте общие сведения о мониторинге в Azure](../../azure-monitor/overview.md)
 

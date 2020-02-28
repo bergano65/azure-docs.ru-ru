@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: f231a5339b9c696b2a427b0713118d4b46e30277
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: a7f30a5a70f71ff958d9b222d2a9e21d03d85e06
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841001"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670769"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 
@@ -33,11 +33,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 ```
 Вы можете анализировать журналы потоков и получать полезные сведения о трафике с помощью [аналитики трафика](traffic-analytics.md).
 
-Для журналов потока применяются те же политики хранения, что и для других журналов. Политику хранения журнала можно настроить от 1 до 365 дней. Если не задать эту политику, время хранения журналов не ограничено.
-
-> [!NOTE] 
-> Чтобы использовать функции политики хранения с ведением журнала потоков группы безопасности сети, необходим большой объем операций в хранилище и соответствующие затраты. Если функция политики хранения вам не нужна, мы рекомендуем задать ей значение 0.
-
+Для журналов потока применяются те же политики хранения, что и для других журналов. Политику хранения журнала можно настроить от 1 до 365 дней. Если политика хранения не задана, то журналы сохраняются неограниченно долго.
 
 ## <a name="log-file"></a>Файл журнала
 
@@ -287,7 +283,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
         ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы узнать, как включить журналы потока, см. статью [Руководство по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure](network-watcher-nsg-flow-logging-portal.md).
 - Сведения о том, как читать журналы потоков, см. в статье [Чтение журналов потоков NSG](network-watcher-read-nsg-flow-logs.md).

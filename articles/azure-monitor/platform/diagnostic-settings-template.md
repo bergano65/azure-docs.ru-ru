@@ -3,17 +3,16 @@ title: Создание параметра диагностики в Azure с п
 description: Создайте параметры диагностики с помощью шаблона диспетчер ресурсов, чтобы пересылать журналы платформы Azure в журналы Azure Monitor, службу хранилища Azure или концентраторы событий Azure.
 author: bwren
 services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 2a171ae89e8314684eddf29f78b9b09bc52f9c9b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: a2569ca3f998030680bd7dbd872d71ccd372a25d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977560"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672435"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
 [Параметры диагностики](diagnostic-settings.md) в Azure Monitor укажите, куда следует отправить [журналы платформы](platform-logs-overview.md) , собираемые ресурсами Azure и платформой Azure, от которых они зависят. В этой статье приводятся подробные сведения и примеры использования [шаблона Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для создания и настройки параметров диагностики для получения журналов платформы в разные места назначения.
@@ -237,6 +236,6 @@ ms.locfileid: "75977560"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о [журналах платформы в Azure](platform-logs-overview.md).
 * Сведения о [параметрах диагностики](diagnostic-settings.md).

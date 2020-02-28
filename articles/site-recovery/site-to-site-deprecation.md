@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 02/25/2020
 ms.author: rajanaki
-ms.openlocfilehash: 68d975a1b8bb8d47011bb292d3cf897956b31712
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 208177d10e9002fafe2495710da229541a11a43e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623604"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77661676"
 ---
 # <a name="deprecation-of-disaster-recovery-between-customer-managed-sites-with-vmm-using-azure-site-recovery"></a>Нерекомендуемое аварийное восстановление между управляемыми клиентом сайтами (с VMM) с помощью Azure Site Recovery
 
@@ -36,10 +36,8 @@ ms.locfileid: "77623604"
 
 Ниже приведены альтернативные варианты, которые клиент может выбрать, чтобы не влиять на стратегию аварийного восстановления после того, как сценарий будет признан устаревшим. 
 
-- Вариант 1 (рекомендуется). Выберите, чтобы [начать использовать Azure в качестве цели аварийного восстановления для виртуальных машин на узлах Hyper-V](hyper-v-azure-tutorial.md).
+- Вариант 1 (рекомендуется). Выберите, чтобы [начать использовать Azure в качестве цели аварийного восстановления](hyper-v-vmm-azure-tutorial.md).
 
-    > [!IMPORTANT]
-    > Обратите внимание, что локальная среда по-прежнему может иметь СКВМММ, но вы настроите ASR со ссылками только на узлы Hyper-V.
 
 - Вариант 2. Выберите продолжение репликации "сеть — сеть" с помощью базового [решения реплики Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica), но вы не сможете управлять КОНФИГУРАЦИЯми аварийного восстановления с помощью Azure Site Recovery в портал Azure. 
 
@@ -50,15 +48,11 @@ ms.locfileid: "77623604"
 
 1. [Отключите защиту всех виртуальных машин, связанных с VMMs](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-hyper-v-virtual-machine-replicating-to-secondary-vmm-server-using-the-system-center-vmm-to-vmm-scenario). Используйте параметр **отключить репликацию и удалить** или выполнить указанные сценарии, чтобы убедиться, что параметры репликации в локальной среде очищаются. 
 
-2. [Отмена регистрации всех серверов VMM](site-recovery-manage-registration-and-protection.md#unregister-a-vmm-server)
+2. [Отмените регистрацию всех серверов VMM](site-recovery-manage-registration-and-protection.md#unregister-a-vmm-server) в конфигурации репликации "сеть — сеть".
 
 3. [Подготовьте ресурсы Azure](tutorial-prepare-azure-for-hyperv.md) , чтобы включить репликацию виртуальных машин.
 4. [Подготовка локальных серверов Hyper-V](hyper-v-prepare-on-premises-tutorial.md)
-
-> [!IMPORTANT]
-> Обратите внимание, что выполнять действия, описанные в разделе Подготовка VMM, не требуется.
-
-5. [Настройка репликации для виртуальных машин](hyper-v-azure-tutorial.md)
+5. [Настройка репликации для виртуальных машин в облаке VMM](hyper-v-vmm-azure-tutorial.md)
 6. Не обязательно, но рекомендуется: [выполните детализацию аварийного восстановления](tutorial-dr-drill-azure.md) .
 
 Если вы выбрали вариант 2 с помощью реплики Hyper-V, выполните следующие действия.

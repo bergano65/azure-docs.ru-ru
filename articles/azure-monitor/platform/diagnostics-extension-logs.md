@@ -1,18 +1,17 @@
 ---
 title: Использование хранилища BLOB-объектов для IIS и хранилища таблиц для событий в Azure Monitor | Документация Майкрософт
 description: Azure Monitor можете читать журналы служб Azure, которые записывают диагностику в хранилище таблиц или журналы IIS, записанные в хранилище BLOB-объектов.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 7edf778dc2429cc1054d1550a513d7461f8e7928
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 44368ab90abd189c6a8a0792494828c87142eb20
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77472561"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672401"
 ---
 # <a name="collect-data-from-azure-diagnostics-extension-to-azure-monitor-logs"></a>Собирайте данные из расширения системы диагностики Azure в журналы Azure Monitor
 Расширение системы диагностики Azure — это [агент в Azure Monitor](agents-overview.md) , собирающий данные мониторинга из операционной системы на виртуальной машине для ресурсов вычислений Azure, включая виртуальные машины. В этой статье описывается сбор данных, собираемых расширением диагностики из службы хранилища Azure, в журналы Azure Monitor.

@@ -1,18 +1,17 @@
 ---
 title: Перемещение рабочей области Log Analytics в Azure Monitor | Документация Майкрософт
 description: Узнайте, как переместить рабочую область Log Analytics в другую подписку или группу ресурсов.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2019
-ms.openlocfilehash: 4baa65ca5dda6b266cd6c739225ebd01d011268c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 9213ddf034e725f6e31c9280d47bd13e4703b3f4
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980082"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77659498"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
@@ -34,8 +33,8 @@ ms.locfileid: "75980082"
 
 Решения, которые необходимо удалить перед удалением связи с учетной записью службы автоматизации:
 
-- Управление обновлениями
-- Отслеживание изменений
+- управление обновлениями
+- Отслеживание изменений;
 - Запуск и остановка виртуальных машин в нерабочее время
 
 
@@ -106,5 +105,5 @@ Move-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000
 > После операции перемещения удаленные решения и ссылки на учетную запись службы автоматизации необходимо перенастроить, чтобы восстановить предыдущее состояние рабочей области.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](../../azure-resource-manager/management/move-support-resources.md).

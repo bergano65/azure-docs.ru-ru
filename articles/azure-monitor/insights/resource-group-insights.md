@@ -1,19 +1,18 @@
 ---
 title: Аналитические сведения о группе ресурсов в Azure Monitor | Документация Майкрософт
 description: Сведения о работоспособности и производительности распределенных приложений и служб на уровне группы ресурсов с использованием Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: fba94a5e723bfbc2719b3b4cf5cd130eda382276
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 6d97e40bf2bf2298fb53609621db8ff2c6f1038f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553990"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663544"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)
 
@@ -106,7 +105,7 @@ ms.locfileid: "72553990"
 
  ![Снимок экрана, отображающий представление производительности на основе метрик Azure](./media/resource-group-insights/0012-performance-metrics.png)
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="enabling-access-to-alerts"></a>Предоставление доступа к оповещениям
 
@@ -116,7 +115,7 @@ Azure Monitor для групп ресурсов зависит от систе�
 * Откройте Azure Monitor для любой группы ресурсов в подписке
 * или перейдите к подписке, нажав кнопку **Поставщики ресурсов**, выбрав **Регистрация для Управления оповещениями**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-usage-workbooks)
 - [Работоспособность ресурсов Azure](https://docs.microsoft.com/azure/service-health/resource-health-overview)

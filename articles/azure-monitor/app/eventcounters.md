@@ -1,18 +1,14 @@
 ---
 title: Счетчики событий в Application Insights | Документация Майкрософт
 description: Мониторинг системы и пользовательского Евенткаунтерс .NET и .NET Core в Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 09/20/2019
-ms.openlocfilehash: 5a47f5c2f9c9d4e22e8205853d85214997a2bea7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2094c012e86131073fc66be4f2ac2fb2e81ef4c1
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406924"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663595"
 ---
 # <a name="eventcounters-introduction"></a>Введение в Евенткаунтерс
 
@@ -127,7 +123,7 @@ customMetrics
 
 Как и другие данные телеметрии, **customMetrics** также содержит столбец `cloud_RoleInstance`, указывающий идентификатор экземпляра сервера узла, на котором работает приложение. Приведенный выше запрос показывает значение счетчика для каждого экземпляра и может использоваться для сравнения производительности различных экземпляров сервера.
 
-## <a name="alerts"></a>Оповещения
+## <a name="alerts"></a>Предупреждения
 Как и другие метрики, вы можете [настроить оповещение](../../azure-monitor/app/alerts.md) о том, что счетчик событий выходит за пределы указанного предела. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы

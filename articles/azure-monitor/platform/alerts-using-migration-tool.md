@@ -2,17 +2,16 @@
 title: Перенос классических оповещений в Azure Monitor с помощью добровольного средства миграции
 description: Узнайте, как использовать добровольное средство миграции для переноса классических правил генерации оповещений.
 author: yanivlavi
-ms.service: azure-monitor
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: c4ebb2e9572f1dcc9ade548a55fc44d7441e5a79
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 537d84639523a74cbd9403d4ad25c34a798b7061
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705587"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665108"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Использование произвольного средства миграции для переноса классических правил генерации оповещений
 
@@ -97,7 +96,7 @@ ms.locfileid: "76705587"
 
 Дополнительные сведения о проблемах, которые могут возникнуть во время миграции, см. в разделе [руководство по устранению неполадок](alerts-understand-migration.md#common-problems-and-remedies) . Если для завершения миграции потребуется какое-либо действие, вы получите уведомление по адресам электронной почты, указанным при настройке средства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Подготовка к миграции](alerts-prepare-migration.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

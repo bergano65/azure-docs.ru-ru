@@ -1,19 +1,15 @@
 ---
 title: Локальный сервер пересылки Azure Application Insights Опенценсус (Предварительная версия)
 description: Пересылка распределенных трассировок и диапазонов OpenCensus из таких языков, как Python и Go, в Azure Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 09/18/2018
 ms.reviewer: nimolnar
-ms.openlocfilehash: 25c6c82fa1179a9173f42c3a5a4e95a371dd49c6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: bcf7ba495897eb1c9b40c78f00825e863390b5d1
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406610"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669970"
 ---
 # <a name="local-forwarder-preview"></a>Локальный сервер пересылки (Предварительная версия)
 
@@ -25,7 +21,7 @@ ms.locfileid: "75406610"
 
 ### <a name="windows"></a>Windows
 
-#### <a name="windows-service"></a>Служба Windows
+#### <a name="windows-service"></a>Службы Windows
 
 Самый простой способ запустить локальный сервер пересылки в Windows — установить его в качестве службы Windows. Выпуск поставляется с исполняемым файлом службы Windows (*WindowsServiceHost/Microsoft.LocalForwarder.WindowsServiceHost.exe*), который можно легко зарегистрировать в операционной системе.
 
@@ -177,6 +173,6 @@ host.Stop();
 
 Если файл конфигурации не указан (что является настройкой по умолчанию), локальный сервер пересылки будет использовать конфигурацию по умолчанию, которую можно найти [здесь](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/blob/master/src/Common/NLog.config).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Open Census](https://opencensus.io/)
