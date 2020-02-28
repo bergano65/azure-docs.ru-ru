@@ -1,18 +1,16 @@
 ---
 title: Отслеживание зависимостей в Azure Application Insights с помощью Опенценсус Python | Документация Майкрософт
 description: Отслеживайте вызовы зависимостей для приложений Python через Опенценсус Python.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
-ms.openlocfilehash: 6217798f8175e7ecc1c1ec4068d7765444e4d2a2
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: e400669fd96518adead74a81fc332767c5f9b23b
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368295"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669936"
 ---
 # <a name="track-dependencies-with-opencensus-python"></a>Мониторинг зависимостей с помощью Опенценсус Python
 
@@ -166,7 +164,7 @@ from opencensus.trace import config_integration
 config_integration.trace_integrations(['sqlalchemy'])
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)

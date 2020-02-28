@@ -1,18 +1,16 @@
 ---
 title: Используйте Application Insights для мониторинга службы Azure Kubernetes (AKS) или других размещенных в Kubernetes приложений (Azure Monitor | Документация Майкрософт
 description: Azure Monitor использует технологию сетчатой службы, Istio, в кластере Kubernetes для обеспечения мониторинга приложений для любого размещенного в Kubernetes приложения. Это позволяет выполнять сбор данных телеметрии Application Insights, относящихся к входящим и исходящим запросам из модулей Pod, выполняющихся в кластере.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: tokaplan
 ms.author: alkaplan
 ms.date: 04/25/2019
-ms.openlocfilehash: a7821db85d4218cbccb6c10f12ecbc624f2702fe
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 15c75d4add9615df6c42aa6121557659e54354d0
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432525"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77666792"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications"></a>Мониторинг приложений с нулевым инструментированием для приложений, размещенных в Kubernetes
 
@@ -26,7 +24,7 @@ Azure Monitor теперь использует службу "сеть за пр
 > [!NOTE]
 > Это один из многих способов выполнения мониторинга приложений на Kubernetes. Вы также можете инструментировать любое приложение, размещенное в Kubernetes, с помощью [пакета SDK для Application Insights](../../azure-monitor/azure-monitor-app-hub.yml) , не требуя наличия сетки службы. Для мониторинга Kubernetes без инструментирования приложения с помощью пакета SDK можно использовать приведенный ниже метод.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Кластер Kubernetes](https://docs.microsoft.com/azure/aks/concepts-clusters-workloads).
 - Доступ консоли к кластеру для запуска *kubectl*.
@@ -98,7 +96,7 @@ kubectl label namespace <my-app-namespace> istio-injection=enabled
 - Создайте пример запроса к приложению, чтобы убедиться, что мониторинг работает правильно.
 - В течение 3-5 минут следует начать просмотр данных телеметрии в портал Azure. Обязательно ознакомьтесь с разделом *схема приложений* на Application Insights ресурсе на портале.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Ниже приведена последовательность устранения неполадок, которая используется, когда данные телеметрии не отображаются в портал Azure, как ожидалось.
 
@@ -129,7 +127,7 @@ kubectl label namespace <my-app-namespace> istio-injection=enabled
    ```
    Найдите ошибки, особенно относящиеся к связи с адаптером *аппликатионинсигхтсадаптер* .
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>Вопросы и ответы
 
 Последние сведения о ходе выполнения этого проекта см. в [Application Insights адаптере GitHub для проекта Istio микшера](https://github.com/Microsoft/Application-Insights-Istio-Adapter/blob/master/SETUP.md#faq).
 
@@ -142,6 +140,6 @@ kubectl delete -f <filename.yaml>
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о совместной работе Azure Monitor и контейнеров см. в статье [обзор Azure Monitor для контейнеров](../../azure-monitor/insights/container-insights-overview.md) .

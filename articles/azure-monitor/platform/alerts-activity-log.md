@@ -1,22 +1,20 @@
 ---
 title: Создание, просмотр и Управление оповещениями журнала действий в Azure Monitor
 description: Создавайте оповещения журнала действий с помощью портал Azure, шаблона Azure Resource Manager и Azure PowerShell.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
+ms.subservice: alerts
 ms.date: 06/25/2019
-ms.openlocfilehash: 4835f1034149a015963569a0b1fc5f9195e3cfca
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 9791ebaadeb1ee724692a9e1a0d61aff5cbae6a3
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969525"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668491"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Создание, просмотр и Управление оповещениями журнала действий с помощью Azure Monitor  
 
 ## <a name="overview"></a>Обзор
+
 Оповещения журнала действий создаются в тех случаях, когда происходит новое событие, записываемое в журнал действий, которое соответствует определенным условиям для оповещения.
 
 Эти оповещения предназначены для ресурсов Azure и могут быть созданы с помощью шаблона Azure Resource Manager. Их также можно создать, обновить или удалить на портале Azure. Как правило, оповещения журнала действий создаются для получения уведомлений при возникновении конкретных изменений в ресурсах в подписке Azure. Оповещения часто ограничены определенными группами ресурсов или ресурсами. Например, вы можете получать уведомления при удалении любой виртуальной машины из образца группы ресурсов **группе ресурсов myproductionresourcegroup** . Или вы можете получать уведомления о назначении новых ролей пользователю в вашей подписке.
@@ -30,7 +28,6 @@ ms.locfileid: "75969525"
 - Критерий должен быть категорией "уровень", "состояние", "вызывающий объект", "Группа ресурсов", "идентификатор ресурса" или "тип ресурса", для которого настроено предупреждение.
 - В JSON конфигурации предупреждения отсутствует условие "anyOf" или вложенные условия. По сути, только одно условие "allOf" допускается без дополнительных условий "allOf" или "anyOf".
 - Если категория имеет значение "Администратор", необходимо указать по крайней мере одно из указанных выше условий в предупреждении. Вы не можете создать оповещение, которое активируется каждый раз при создании события в журналах действий.
-
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -69,7 +66,7 @@ ms.locfileid: "75969525"
 
      **Снимок экрана: (Add criteria) (Добавить критерии)**
 
-     ![Добавление условий](media/alerts-activity-log/add-criteria.png)
+     ![Добавить условие](media/alerts-activity-log/add-criteria.png)
 
      - **Время**записи в журнал: события, доступные для выбранной операции, могут отображаться за последние 6, 12 или 24 часа или за последнюю неделю.
 
@@ -92,7 +89,7 @@ ms.locfileid: "75969525"
 5. В разделе **Группа действий** в раскрывающемся меню укажите группу действий, которую нужно назначить новому правилу генерации оповещений. Или [Создайте новую группу действий](../../azure-monitor/platform/action-groups.md) и назначьте ее новому правилу. Чтобы создать новую группу, выберите **+ Новая группа**.
 
 6. Чтобы включить правила после их создания, выберите **Да** для параметра **включить правило при создании** .
-7. Выберите **Создать правило генерации оповещений**.
+7. Выберите **создать правило генерации оповещений**.
 
     Будет создано новое правило генерации оповещений для журнала действий, а в правом верхнем углу окна появится сообщение с подтверждением.
 
@@ -228,7 +225,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActi
 - [Disable-азактивитилогалерт](https://docs.microsoft.com/powershell/module/az.monitor/Disable-AzActivityLogAlert): отключает существующее оповещение журнала действий и задает его Теги.
 - [Remove-азактивитилогалерт](https://docs.microsoft.com/powershell/module/az.monitor/Remove-AzActivityLogAlert): удаляет оповещение журнала действий.
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Команды Azure CLI, представленные в наборе [az monitor activity-log alert](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert), доступны для управления правилами генерации оповещений для журнала действий.
 
@@ -242,7 +239,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActi
 ). Чтобы просмотреть все ресурсы правил генерации оповещений журнала действий в группе ресурсов, используйте команду [AZ Monitor активности — журнал оповещений](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list).
 Ресурсы правила генерации оповещений журнала действий можно удалить с помощью команды Azure CLI [AZ Monitor активности — журнал оповещений Delete](https://docs.microsoft.com/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-delete).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о [схеме веб-перехватчика для журналов действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).
 - Ознакомьтесь с [обзором журналов действий](../../azure-monitor/platform/activity-log-alerts.md).

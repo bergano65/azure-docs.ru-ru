@@ -1,18 +1,14 @@
 ---
 title: Счетчики производительности в Application Insights | Документация Майкрософт
 description: Мониторинг системных и пользовательских счетчиков производительности .NET в Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 12/13/2018
-ms.openlocfilehash: d313fed6a61ac98e596e6f8caca8f0e46a8c9600
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 94d2520c17867f6d70caffd002a76365a425986f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689076"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669885"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
@@ -45,7 +41,7 @@ ms.locfileid: "74689076"
     `Get-Counter -ListSet *`
 
     (См. [`Get-Counter`](https://technet.microsoft.com/library/hh849685.aspx).)
-2. Откройте файл ApplicationInsights.config.
+2. Откройте ApplicationInsights.config.
 
    * Если вы добавили Application Insights в приложение во время разработки, отредактируйте файл ApplicationInsights.config в проекте и повторно разверните его на серверах.
 3. Измените директиву сборщика данных производительности:
@@ -150,10 +146,10 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 * Для приложений, предназначенных для .NET Framework, все версии пакетов SDK поддерживают счетчики производительности.
 * Версии пакета SDK 2.8.0 и более поздней поддерживают счетчик ЦП/памяти в Linux. В Linux не поддерживается никакой другой счетчик. Рекомендуемый способ получения системных счетчиков в Linux (и других средах, отличных от Windows) — с помощью [евенткаунтерс](eventcounters.md)
 
-## <a name="alerts"></a>Оповещения
+## <a name="alerts"></a>Предупреждения
 Как и для других метрик, вы можете [установить оповещение](../../azure-monitor/app/alerts.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
-## <a name="next"></a>Дальнейшие действия
+## <a name="next"></a>Следующие шаги
 
 * [Отслеживание зависимостей](../../azure-monitor/app/asp-net-dependencies.md)
 * [Отслеживание исключений](../../azure-monitor/app/asp-net-exceptions.md)

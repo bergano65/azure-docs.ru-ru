@@ -1,19 +1,17 @@
 ---
 title: Анализ пользователей, сеансов и событий в Azure Application Insights
 description: Демографический анализ пользователей веб-приложения.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 01/24/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: dbda6debe2412f1756bc707cf3b587c77f466fdc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 56059304026b060e2215ce73e0e94e3200573a14
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432317"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670990"
 ---
 # <a name="users-sessions-and-events-analysis-in-application-insights"></a>Анализ пользователей, сеансов и событий в Application Insights
 
@@ -21,7 +19,7 @@ ms.locfileid: "75432317"
 
 ![Снимок экрана, где отображаются пользователи Application Insights](./media/usage-segmentation/0001-users.png)
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 Если вы еще не видите данных в колонках "Пользователи", "Сеансы" или "События" на портале Application Insights, [узнайте, как приступить к работе с инструментами для данных об использовании](usage-overview.md).
 
@@ -57,7 +55,7 @@ ms.locfileid: "75432317"
 
 В разделе **Meet your users** (Знакомство с пользователями) отображаются пять примеров пользователей, отвечающих вашему текущему запросу. Учитывая и изучая поведение отдельных экземпляров помимо агрегатов, можно узнать, как люди на самом деле используют приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.

@@ -1,23 +1,22 @@
 ---
 title: Журналы IIS в Azure Monitor | Документация Майкрософт
 description: Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor.  В этой статье описано, как настроить сбор журналов IIS и сведения о записях, созданных ими в службе Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
-ms.openlocfilehash: a865f43585ccbb31569e2ca0987aae62a89a9281
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 1b3ae6295a639c3d59643b106b920cb606572e0a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932485"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670582"
 ---
 # <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-platform.md).
 
-![Журналы IIS](media/data-sources-iis-logs/overview.png)
+![Журналы служб IIS](media/data-sources-iis-logs/overview.png)
 
 ## <a name="configuring-iis-logs"></a>Настройка журналов IIS
 Служба Azure Monitor собирает записи из файлов журналов, созданных службами IIS, поэтому вам необходимо [настроить IIS для ведения журнала](https://technet.microsoft.com/library/hh831775.aspx).
@@ -27,7 +26,7 @@ ms.locfileid: "72932485"
 Журналы IIS настраиваются в Azure Monitor в меню [Дополнительные параметры](agent-data-sources.md#configuring-data-sources).  Никакие настройки, кроме выбора параметра **Сбор файлов журналов IIS в формате W3C**, не требуются.
 
 
-## <a name="data-collection"></a>Сбор данных
+## <a name="data-collection"></a>сбор данных
 Azure Monitor собирает записи журнала IIS из каждого агента при каждом изменении отметок времени журнала. Журнал считывается каждые **5 минут**. Если по какой-либо причине IIS не обновляет метку времени до момента, когда создается новый файл, записи будут собираться после создания нового файла. Частота создания нового файла определяется параметром **расписания развертывания файла журнала** для сайта IIS, который по умолчанию имеет значение один раз в день. Если параметр имеет значение **ежечасно**, Azure Monitor собирает журнал каждый час. Если параметр имеет значение **ежедневно**, Azure Monitor собирает журнал каждые 24 часа.
 
 
@@ -55,7 +54,7 @@ Azure Monitor собирает записи журнала IIS из каждог
 | SourceSystem |OpsMgr |
 | sPort |Порт на сервере, к которому подключен клиент. |
 | sSiteName |Имя сайта IIS. |
-| TimeGenerated |Дата и время регистрации записи. |
+| Время создания |Дата и время регистрации записи. |
 | TimeTaken |Время обработки запроса в миллисекундах. |
 
 ## <a name="log-queries-with-iis-logs"></a>Запросы для получения записей журналов IIS
@@ -69,6 +68,6 @@ Azure Monitor собирает записи журнала IIS из каждог
 | W3CIISLog &#124; , где кшост = = "www\.contoso.com &#124; " сводки Count () by ксуристем |Число записей журнала IIS по URL-адресу узла www\.contoso.com. |
 | W3CIISLog &#124; summarize sum(csBytes) by Computer &#124; take 500000 |Общее количество байтов, полученных каждым компьютером IIS. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Настройте в службе Azure Monitor сбор других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.

@@ -1,20 +1,18 @@
 ---
 title: Отладка в Visual Studio с помощью Application Insights Azure
 description: Анализ производительности веб-приложения и диагностика во время отладки и в рабочей среде.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 07/07/2017
 ms.reviewer: mbullwin
 ms.custom: vs-azure
-ms.openlocfilehash: c4b32d775f64d3adba4ca07fa5154e395717d599
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 8905222214d58eeba24ecf50da768ffa1d65c39d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930657"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670888"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Отладка приложений с помощью Azure Application Insights в Visual Studio
 В Visual Studio 2015 и более поздних версиях можно анализировать производительность веб-приложения ASP.NET и диагностировать проблемы во время отладки и в рабочей среде с помощью телеметрии из [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md).
@@ -71,14 +69,14 @@ ms.locfileid: "74930657"
 
 [Телеметрия Application Insights в Visual Studio CodeLens](../../azure-monitor/app/visual-studio-codelens.md)
 
-## <a name="trends"></a>Тенденции
+## <a name="trends"></a>Тренды
 Тренды — это средство для визуализации того, как изменяется поведение приложения со временем. 
 
 Нажмите кнопку **Обзор трендов телеметрии** на панели инструментов Application Insights или в окне поиска Application Insights. Выберите один из пяти стандартных запросов, чтобы приступить к работе. Анализировать разные наборы данных можно на основе типов данных телеметрии, диапазонов времени и других свойств. 
 
 Чтобы найти аномалии в данных, выберите один из вариантов аномалий в раскрывающемся списке "Тип представления". Параметры фильтрации в нижней части окна позволяют легко находить конкретные подмножества данных телеметрии.
 
-![Тенденции](./media/visual-studio/51.png)
+![Тренды](./media/visual-studio/51.png)
 
 [Дополнительные сведения о тенденциях](../../azure-monitor/app/visual-studio-trends.md)
 
@@ -95,7 +93,7 @@ ms.locfileid: "74930657"
   * Чтобы отключить отправку данных телеметрии на портал, закомментируйте строку `<instrumentationkey>...` из ApplicationInsights. config. Когда вы будете готовы отправить данные телеметрии на портал, раскомментируйте его.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 |  |  |
 | --- | --- |
 | **[Добавление данных](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio/64.png) |

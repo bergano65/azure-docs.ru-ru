@@ -1,29 +1,26 @@
 ---
 title: Как интегрировать общую схему предупреждений с Logic Apps
 description: Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.
-ms.service: azure-monitor
-ms.subservice: alerts
 ms.topic: conceptual
-author: ananthradhakrishnan
-ms.author: robb
+ms.subservice: alerts
 ms.date: 05/27/2019
-ms.openlocfilehash: 50a6067d271ad824f17df1ece36c3dd919c7b55b
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 9042ed8ddbb698192e638fa7538f74561574c262
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72555653"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668236"
 ---
 # <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Как интегрировать общую схему предупреждений с Logic Apps
 
 В этой статье показано, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 [Общая схема предупреждений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизованную и расширяемую схему JSON для всех различных типов оповещений. Общая схема предупреждений наиболее полезна при программном использовании — через веб-перехватчики, модули Runbook и приложения логики. В этой статье мы продемонстрируем, как можно создать одно приложение логики для обработки всех ваших оповещений. Те же принципы могут применяться и к другим программным методам. Приложение логики, описываемое в этой статье, создает четко определенные переменные для [полей "важный"](alerts-common-schema-definitions.md#essentials), а также описывает способ обработки логики определенного [типа оповещений](alerts-common-schema-definitions.md#alert-context) .
 
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 В этой статье предполагается, что читатель знаком с 
 * Настройка правил оповещений ([Метрика](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric), [Журнал](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log), [Журнал действий](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log))
@@ -112,7 +109,7 @@ ms.locfileid: "72555653"
         }
     ```
 
-1. Выберите **+** **Новый шаг**, а затем щелкните **Добавить действие**.
+1. Выберите **+** **новый шаг** , а затем щелкните **Добавить действие**.
 
     ![Добавление действия](media/action-groups-logic-app/add-action.png "Добавление действия")
 
@@ -138,7 +135,7 @@ ms.locfileid: "72555653"
     
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные [сведения о группах действий](../../azure-monitor/platform/action-groups.md).
 * Дополнительные [сведения о схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).

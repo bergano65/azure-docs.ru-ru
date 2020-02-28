@@ -1,18 +1,17 @@
 ---
 title: Подключение компьютеров Windows к Azure Monitor | Документация Майкрософт
 description: В этой статье описывается подключение компьютеров Windows, размещенных в других облаках или локальных, к Azure Monitor с помощью агента Log Analytics для Windows.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
-ms.openlocfilehash: 8918c18c9356c583b9ea23138f0d0a0fb4dcd845
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 21efb16cf519d4bcad520af1c7d8818f36a77218
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689997"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668644"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
@@ -200,7 +199,7 @@ ms.locfileid: "75689997"
 
 В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу.   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [управлением и обслуживанием агента log Analytics для Windows и Linux](agent-manage.md) , чтобы узнать о том, как перенастроить, обновить или удалить агент с виртуальной машины.
 

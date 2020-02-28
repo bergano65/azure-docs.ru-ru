@@ -1,18 +1,16 @@
 ---
 title: Устранение неполадок и известные проблемы агента Application Insights Azure | Документация Майкрософт
 description: Известные проблемы Application Insights агента и примеры устранения неполадок. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 30172bf65be52ba1ddd2b9127c3e2b5a284d48dc
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 217629ba5c386557455cc2d2b8bd47f85fa8f84e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899590"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671160"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Устранение неполадок агента Application Insights (прежнее название — монитор состояния v2)
 
@@ -27,7 +25,7 @@ ms.locfileid: "72899590"
 Если какая-либо из этих библиотек DLL находится в каталоге bin, мониторинг может завершиться ошибкой:
 
 - Microsoft. ApplicationInsights. dll
-- Microsoft. AspNet. Телеметрикоррелатион. dll
+- Microsoft.AspNet.TelemetryCorrelation.dll
 - System. Diagnostics. DiagnosticSource. dll
 
 Некоторые из этих библиотек DLL включены в шаблоны приложений Visual Studio по умолчанию, даже если приложение не использует их.
@@ -83,7 +81,7 @@ ms.locfileid: "72899590"
 
     
     
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
     
 ### <a name="troubleshooting-powershell"></a>Устранение неполадок PowerShell
 
@@ -126,23 +124,23 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 Можно проверить процессы на инструментированном компьютере, чтобы определить, загружены ли все библиотеки DLL.
 Если наблюдение работает, необходимо загрузить не менее 12 библиотек DLL.
 
-Для проверки библиотек DLL используйте команду `Get-ApplicationInsightsMonitoringStatus -InspectProcess`.
+Используйте команду `Get-ApplicationInsightsMonitoringStatus -InspectProcess` для проверки библиотек DLL.
 
 Подробное описание использования этого командлета см. в [справочнике по API](status-monitor-v2-api-get-status.md) .
 
 
 ### <a name="collect-etw-logs-by-using-perfview"></a>Получение журналов ETW с помощью PerfView
 
-#### <a name="setup"></a>Настройка
+#### <a name="setup"></a>Установка
 
 1. Скачайте PerfView. exe и PerfView64. exe с сайта [GitHub](https://github.com/Microsoft/perfview/releases).
 2. Запустите PerfView64. exe.
-3. Разверните узел **Дополнительные параметры**.
+3. Разверните **Дополнительные параметры**.
 4. Снимите эти флажки:
-    - **Архиваци**
-    - **AutoMerge**
+    - **Zip**
+    - **Объединить**
     - **Коллекция символов .NET**
-5. Задайте следующие **дополнительные поставщики**: `61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,925fa42b-9ef6-5fa7-10b8-56449d7a2040,f7d60e07-e910-5aca-bdd2-9de45b46c560,7c739bb9-7861-412e-ba50-bf30d95eae36,61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,252e28f4-43f9-5771-197a-e8c7e750a984`.
+5. Задайте следующие **дополнительные поставщики**: `61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,925fa42b-9ef6-5fa7-10b8-56449d7a2040,f7d60e07-e910-5aca-bdd2-9de45b46c560,7c739bb9-7861-412e-ba50-bf30d95eae36,61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,252e28f4-43f9-5771-197a-e8c7e750a984`
 
 
 #### <a name="collecting-logs"></a>Сбор журналов
@@ -155,7 +153,7 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь со [справочником по API](status-monitor-v2-overview.md#powershell-api-reference) , чтобы узнать о параметрах, которые могли быть пропущены.
 - Если вы перейдете по вопросу, не указанному здесь, вы можете связаться с нами на [GitHub](https://github.com/Microsoft/ApplicationInsights-Home/issues).

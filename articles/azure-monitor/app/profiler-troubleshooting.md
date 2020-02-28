@@ -1,19 +1,17 @@
 ---
 title: Устранение неполадок в Azure Application Insights Profiler
 description: В этой статье содержатся инструкции по устранению неполадок и сведения, помогающие разработчикам в решении проблем с включением или использованием Application Insights Profiler.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 2bac317d6a3a5c6895a3cea4dae22694b603cabf
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: f284d4dfbe550c357f81c01fa0a66aa9878b6c1e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024030"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671568"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Устранение неполадок по включению и просмотру Application Insights Profiler
 
@@ -92,7 +90,7 @@ Profiler записывает сообщения трассировки и по�
 
 Если не удается выяснить, почему профилировщик не работает, можно скачать журнал и отправить его в нашу группу за помощью serviceprofilerhelp@microsoft.com. 
     
-### <a name="manual-installation"></a>Ручная установка
+### <a name="manual-installation"></a>Установка вручную
 
 При настройке профилировщика в параметры веб-приложения вносятся обновления. Обновления можно применить вручную, если этого требует ваша среда. Например, если приложение выполняется в среде веб-приложений для PowerApps. Чтобы применить обновления вручную, выполните следующие действия.
 
@@ -149,7 +147,7 @@ Profiler запускается в качестве непрерывного в�
     ```
     c:\logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\1.11.3.12\DiagnosticsPlugin.log  
     ```
-    или
+    или диспетчер конфигурации служб
     ```
     c:\WindowsAzure\logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\1.11.3.12\DiagnosticsPlugin.log
     ```

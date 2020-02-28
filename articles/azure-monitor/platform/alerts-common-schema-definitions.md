@@ -1,18 +1,16 @@
 ---
 title: Общие определения схемы предупреждений для Azure Monitor
 description: Основные сведения об общих определениях схемы предупреждений для Azure Monitor
-ms.service: azure-monitor
-ms.subservice: alerts
-ms.topic: conceptual
 author: ofirmanor
-ms.author: robb
+ms.topic: conceptual
+ms.subservice: alerts
 ms.date: 03/14/2019
-ms.openlocfilehash: efa6a8807b3db14649a2b4ad38c575cf98aba113
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: b0b398be919364b5a146e86ca1a1790674bb7d01
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425176"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668219"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
@@ -73,7 +71,7 @@ ms.locfileid: "77425176"
 
 ## <a name="essentials"></a>Основные компоненты
 
-| Поле | Description|
+| Поле | Описание|
 |:---|:---|
 | alertId | Идентификатор GUID, однозначно определяющий экземпляр предупреждения. |
 | alertRule | Имя правила генерации оповещений, создавшего экземпляр предупреждения. |
@@ -481,7 +479,7 @@ ms.locfileid: "77425176"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).
 - Узнайте [, как создать приложение логики, которое использует общую схему оповещений для обработки всех ваших оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations). 

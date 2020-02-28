@@ -1,18 +1,14 @@
 ---
 title: Мониторинг служб Node.js с помощью Azure Application Insights | Документация Майкрософт
 description: Используйте Application Insights для мониторинга производительности и диагностики проблем в службах Node.js.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/14/2019
-ms.openlocfilehash: 81f63380c041ae743a2b38e6ba89558b83e7497a
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 320ec62e642155002e42c59d4656f51673249eb1
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820720"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670021"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -24,11 +20,11 @@ ms.locfileid: "72820720"
 
 Вы можете инструментировать вручную и отслеживать дополнительные аспекты приложения и системы с помощью API TelemetryClient. С дополнительными сведениями о API TelemetryClient можно ознакомиться далее в этой статье.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 Выполните указанные ниже задачи, чтобы настроить мониторинг для приложения или службы.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что у вас есть подписка Azure, или [получите новую][azure-free-offer]. Если у вашей организации уже есть подписка Azure, администратор может выполнить [эти инструкции][add-aad-user] , чтобы добавить вас в нее.
 
@@ -39,7 +35,7 @@ ms.locfileid: "72820720"
 ### <a name="resource"></a> Настройка ресурса Application Insights
 
 
-1. Войдите на [портале Azure][portal].
+1. Войдите на [портал Azure][portal].
 2. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**. Ресурс содержит конечную точку для приема данных телеметрии, хранилище для этих данных, сохраненные отчеты и панели мониторинга, настройки правил и оповещений и т. д.
 
 3. На странице создания ресурса в поле **Тип приложения** выберите **Приложение Node.js**. Тип приложения определяет созданные панели мониторинга и отчеты по умолчанию. (Любой ресурс Application Insights способен собирать данные независимо от используемого языка и платформы.)
@@ -88,7 +84,7 @@ ms.locfileid: "72820720"
 
 ![Раздел изучения](./media/nodejs/007-investigate-pane.png)
 
-#### <a name="no-data"></a>Нет данных?
+#### <a name="no-data"></a>Данные отсутствуют?
 
 Так как пакет SDK упаковывает данные для передачи, возможна некоторая задержка отображения элементов на портале. Если данные в ресурсе не отображаются, попробуйте сделать следующее:
 
@@ -195,7 +191,7 @@ server.on("listening", () => {
 });
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/overview-dashboard.md)
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)

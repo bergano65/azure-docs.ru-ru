@@ -1,19 +1,15 @@
 ---
 title: Схема сопоставления приложений в Azure Application Insights | Документация Майкрософт
 description: Мониторинг топологий сложных приложений с помощью схемы приложения
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: cc7d58f0557e620c273043af8ffb2e8ec4d8ec87
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: dce2fdbe7e0c390309be38d2ebab4c73dbb4ed2e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77485154"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77666281"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -77,7 +73,7 @@ ms.locfileid: "77485154"
 
 ![Снимок экрана с аналитическими возможностями. Линейный график, суммирующий среднюю продолжительность ответа запроса за последние 12 часов.](media/app-map/log-analytics.png)
 
-### <a name="alerts"></a>видны узлы
+### <a name="alerts"></a>Предупреждения
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -236,11 +232,11 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общие
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
@@ -274,7 +270,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](correlation.md).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.

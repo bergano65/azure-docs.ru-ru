@@ -1,25 +1,21 @@
 ---
 title: Ресурсы, роли и контроль доступа в Azure Application Insights | Документация Майкрософт
 description: Владельцы, участники и читатели Insights вашей организации.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 02/14/2019
-ms.openlocfilehash: 28eb7e490890b46a4025a6cf62e13b364bd7b6dd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 617134c523148e713f7d34b46e0fbf6ae862591f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432344"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671534"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
 Вы можете контролировать, кто имеет доступ на чтение и обновление данных в [Application Insights][start]Azure, используя [Управление доступом на основе ролей в Microsoft Azure](../../role-based-access-control/role-assignments-portal.md).
 
 > [!IMPORTANT]
-> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Узнайте больше](#access).
+> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Дополнительные сведения](#access)
 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -76,7 +72,7 @@ ms.locfileid: "75432344"
 
 Во всех случаях, где это применимо, мы ссылаемся на соответствующую официальную справочную документацию.
 
-| Роль | В группе ресурсов |
+| Role | В группе ресурсов |
 | --- | --- |
 | [Владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) |Может менять любые параметры, в том числе права доступа пользователей. |
 | [Участник](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) |Может изменять любое содержимое, в том числе любые ресурсы. |
@@ -100,7 +96,7 @@ ms.locfileid: "75432344"
 
 * Ресурсы
 * Веб-тесты
-* Оповещения
+* Предупреждения
 * Непрерывный экспорт
 
 #### <a name="select-the-user"></a>Выбор пользователя

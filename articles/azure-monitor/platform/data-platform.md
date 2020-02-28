@@ -5,18 +5,17 @@ documentationcenter: ''
 author: bwren
 manager: carmonm
 editor: tysonn
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 74ede523c9747de4746fe1854bd1e352eba2f7e3
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: a1b5859341237c1b177ee8deaf636a67f4824948
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77148901"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77666553"
 ---
 # <a name="azure-monitor-data-platform"></a>Платформа данных Azure Monitor
 
@@ -67,7 +66,7 @@ ms.locfileid: "77148901"
 
 В следующей таблице сравниваются метрики и журналы в Azure Monitor.
 
-| attribute  | Метрики | Журналы |
+| Атрибут  | Метрики | Журналы |
 |:---|:---|:---|
 | Преимущества | Упрощенные и совместимые с практически в реальном времени сценарии, такие как оповещения. Идеально подходит для быстрого обнаружения проблем. | Анализ с помощью расширенного языка запросов. Идеально подходит для углубленного анализа и выявления основной причины. |
 | Данные | Только числовые значения | Текстовые или числовые данные |
@@ -87,7 +86,7 @@ ms.locfileid: "77148901"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [метриках](data-platform-metrics.md)см. в статье Azure Monitor.
 - Дополнительные сведения о [журналах](data-platform-logs.md)см. в статье Azure Monitor.

@@ -1,18 +1,14 @@
 ---
 title: Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 description: Мониторинг приложений .NET Core/. NET Framework, отличных от HTTP, с Azure Monitor Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 12/16/2019
-ms.openlocfilehash: bea30ade6d9f6eb77d18c671b824b138ba94fddb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2d4b3a38b059d603c96fc9267b44707ed32c8c1d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406188"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669341"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 
@@ -24,7 +20,7 @@ Application Insights выпускает новый пакет SDK, именуе�
 
 Пакет [SDK Application Insights для службы рабочей роли](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) лучше всего подходит для приложений, отличных от HTTP, независимо от того, где или как они выполняются. Если приложение работает и имеет сетевое подключение к Azure, можно собирать данные телеметрии. Мониторинг Application Insights поддерживается везде, где поддерживается .NET Core. Этот пакет можно использовать в новой добавленной [службе рабочей роли .NET Core 3,0](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [фоновых задачах в ASP.NET Core 2.1/2.2](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2), консольных приложениях (.NET Core/.NET Framework) и т. д.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
 
@@ -355,7 +351,7 @@ Application Insights выпускает новый пакет SDK, именуе�
 
 Часто используемые параметры в `ApplicationInsightsServiceOptions`
 
-|Параметр | Description | По умолчанию
+|Параметр | Описание | По умолчанию
 |---------------|-------|-------
 |енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
 |енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
@@ -543,7 +539,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 [Чтение кода и дополнительные наработки](https://github.com/Microsoft/ApplicationInsights-aspnetcore#recent-updates).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для получения подробного представления о производительности и использовании приложения.
 * [Следите за автоматической](../../azure-monitor/app/auto-collect-dependencies.md)отслеживанием дополнительных зависимостей.
