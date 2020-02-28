@@ -1,19 +1,15 @@
 ---
 title: 'Application Insights: языки, платформы и интеграции | Документация Майкрософт'
 description: Языки, платформы и интеграции, доступные для Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/18/2019
 ms.reviewer: olegan
-ms.openlocfilehash: 01cebc3a86808d549f1a7dc3adfd2883bc289076
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: d87b1d0aa74263f249db2030f2366b93b8c2b421
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061445"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669834"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -21,7 +17,7 @@ ms.locfileid: "73061445"
 * [Java](../../azure-monitor/app/java-get-started.md)
 * [JavaScript](../../azure-monitor/app/javascript.md)
 * [Node.JS](../../azure-monitor/app/nodejs.md)
-* [Python (Предварительная версия)](../../azure-monitor/app/opencensus-python.md)
+* [Python (предварительная версия)](../../azure-monitor/app/opencensus-python.md)
 
 ## <a name="supported-platforms-and-frameworks"></a>Поддерживаемые платформы и среды
 
@@ -38,7 +34,7 @@ ms.locfileid: "73061445"
 * [iOS](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
 * [Java EE](../../azure-monitor/app/java-get-started.md)
 * [Node.JS](https://www.npmjs.com/package/applicationinsights)
-* [Python (Предварительная версия)](../../azure-monitor/app/opencensus-python.md)
+* [Python (предварительная версия)](../../azure-monitor/app/opencensus-python.md)
 * [Универсальное приложение для Windows](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
 * [Классические приложения, службы и рабочие роли Windows](../../azure-monitor/app/windows-desktop.md)
 
@@ -51,7 +47,7 @@ ms.locfileid: "73061445"
 
 ## <a name="export-and-data-analysis"></a>Экспорт и анализ данных
 * [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
-* [Анализ потока](../../azure-monitor/app/export-power-bi.md)
+* [Stream Analytics](../../azure-monitor/app/export-power-bi.md)
 
 ## <a name="unsupported-sdks"></a>Неподдерживаемые пакеты SDK
 Мы осведомлены о существовании нескольких других пакетов SDK, поддерживаемых сообществом. Однако Azure Monitor обеспечивает поддержку только при использовании поддерживаемых пакетов SDK, перечисленных на этой странице. Мы постоянно оцениваем возможности, чтобы расширить нашу поддержку для других языков, поэтому на странице [объявления GitHub](https://github.com/microsoft/ApplicationInsights-Announcements/issues) вы получите последние новости пакета SDK. 

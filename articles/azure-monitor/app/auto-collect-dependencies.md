@@ -1,19 +1,17 @@
 ---
 title: Автоматический сбор зависимостей в Azure Application Insights | Документация Майкрософт
 description: Автоматический сбор и визуализация зависимостей Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: reference
 author: nikmd23
 ms.author: nimolnar
 ms.date: 04/29/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: e774690fae2314b8db6e14f19a67c7ae1ce3a203
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: eaafe19f5112b433d50a34aa551aa84d196726a5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064280"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665822"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -24,7 +22,7 @@ ms.locfileid: "77064280"
 | Платформы приложений| Версии |
 | ------------------------|----------|
 | Веб-формы ASP.NET | 4.5+ |
-| ASP.NET MVC 3 | 4+ |
+| ASP.NET MVC | 4+ |
 | ASP.NET WebAPI | 4.5+ |
 | ASP.NET Core | 1.1+ |
 | <b>Библиотеки обмена данными</b> |
@@ -82,9 +80,9 @@ ms.locfileid: "77064280"
 
 | Библиотеки обмена данными | Версии |
 | ------------------------|----------|
-| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | All |
+| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | Все |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).

@@ -2,13 +2,13 @@
 title: Удаление ресурсов в полном режиме
 description: Здесь показано, как происходит удаление ресурсов в полном режиме в шаблонах Azure Resource Manager по типу ресурса.
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: 80d2ee356e3bc15a178862c453bf7f1ab8d66c77
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.date: 02/26/2020
+ms.openlocfilehash: 5f797974212636460306c6a17869d6b8380545ab
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207814"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77664412"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Удаление ресурсов Azure для развертываний в полном режиме
 
@@ -141,7 +141,6 @@ ms.locfileid: "77207814"
 > - [Microsoft. Ресаурцехеалс](#microsoftresourcehealth)
 > - [Microsoft.Resources](#microsoftresources)
 > - [Microsoft. SaaS](#microsoftsaas)
-> - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
 > - [Microsoft. Секуритиграф](#microsoftsecuritygraph)
@@ -297,6 +296,9 @@ ms.locfileid: "77207814"
 > | automationAccounts | Да |
 > | automationAccounts и конфигурации | Да |
 > | automationAccounts и задания | Нет |
+> | automationAccounts/Приватиндпоинтконнектионпроксиес | Нет |
+> | automationAccounts/Приватиндпоинтконнектионс | Нет |
+> | automationAccounts/Привателинкресаурцес | Нет |
 > | automationAccounts и модули Runbook | Да |
 > | automationAccounts/Софтвареупдатеконфигуратионс | Нет |
 > | automationAccounts/веб-перехватчики | Нет |
@@ -716,6 +718,7 @@ ms.locfileid: "77207814"
 > | реестры и Импортимаже | Нет |
 > | реестры и Приватиндпоинтконнектионпроксиес | Нет |
 > | реестры/Приватиндпоинтконнектионпроксиес/проверка | Нет |
+> | реестры и Приватиндпоинтконнектионс | Нет |
 > | реестры и Привателинкресаурцес | Нет |
 > | реестры и Куеуебуилд | Нет |
 > | реестры и Реженератекредентиал | Нет |
@@ -1057,6 +1060,7 @@ ms.locfileid: "77207814"
 > | Партнернамеспацес/eventChannels | Нет |
 > | партнеррегистратионс | Да |
 > | партнертопикс | Да |
+> | Партнертопикс/eventSubscriptions | Нет |
 > | системтопикс | Да |
 > | Системтопикс/eventSubscriptions | Нет |
 > | topics | Да |
@@ -1293,6 +1297,7 @@ ms.locfileid: "77207814"
 > | ------------- | ----------- |
 > | getEntities | Нет |
 > | managementGroups | Нет |
+> | Манажементграупс/параметры | Нет |
 > | ресурсы | Нет |
 > | startTenantBackfill | Нет |
 > | tenantBackfillStatus | Нет |
@@ -1554,6 +1559,7 @@ ms.locfileid: "77207814"
 > | легаципирингс | Нет |
 > | пираснс | Нет |
 > | пиринги | Да |
+> | пирингсервицекаунтриес | Нет |
 > | пирингсервицепровидерс | Нет |
 > | пирингсервицес | Да |
 
@@ -1679,13 +1685,6 @@ ms.locfileid: "77207814"
 > | приложения | Да |
 > | saasresources | Нет |
 
-## <a name="microsoftscheduler"></a>Microsoft.Scheduler
-
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Удаление ресурсов в полном режиме |
-> | ------------- | ----------- |
-> | jobcollections | Да |
-
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
 > [!div class="mx-tableFixed"]
@@ -1705,7 +1704,7 @@ ms.locfileid: "77207814"
 > | allowedConnections | Нет |
 > | applicationWhitelistings | Нет |
 > | ассессментметадата | Нет |
-> | оценки | Нет |
+> | Оценки | Нет |
 > | аутодисмиссалертсрулес | Нет |
 > | инструментах автоматизации Composer | Да |
 > | AutoProvisioningSettings | Нет |
@@ -2015,6 +2014,7 @@ ms.locfileid: "77207814"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | devices | Да |
+> | регистередсубскриптионс | Нет |
 > | разработчиков | Нет |
 > | поставщики и номера SKU | Нет |
 > | поставщики и внфс | Нет |

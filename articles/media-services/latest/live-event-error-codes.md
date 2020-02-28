@@ -11,23 +11,47 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/21/2020
+ms.date: 02/25/2020
 ms.author: juliako
-ms.openlocfilehash: bfbef771d33ad4d63ec8eaef83331e497d476071
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: f9067562f67190b8bc04392f33078d4d3262f986
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77599474"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77654585"
 ---
 # <a name="media-services-live-event-error-codes"></a>Коды ошибок динамических событий служб мультимедиа
 
-В таблице ниже перечислены коды [динамических событий](live-events-outputs-concept.md) .
+В таблицах этого раздела перечислены коды [динамических событий](live-events-outputs-concept.md) .
 
-|Ошибка|Описание|
-|---|---| 
-|MPE_INGEST_FRAMERATE_EXCEEDED|Эта ошибка возникает, когда входящий кодировщик отправляет потоки, превышающие 30fps для кодирования динамических событий и каналов.|
-|MPE_INGEST_VIDEO_RESOLUTION_NOT_SUPPORTED|Эта ошибка возникает, когда входящий кодировщик отправляет потоки, превышающие следующие разрешения: 1920x1088 для кодирования динамических событий и каналов и 4096 x 2160 для сквозных активных событий и каналов.|
+## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected;
+
+При оформлении подписки на события [сетки событий](https://docs.microsoft.com/azure/event-grid/) для события в реальном времени может появиться одна из следующих ошибок события [лививентконнектионрежектед](media-services-event-schemas.md#liveeventconnectionrejected) .
+
+| Код результата | Описание |
+| ----------- | ----------- |
+| MPE_RTMP_APPID_AUTH_FAILURE | Неправильный URL-адрес приема. |
+| MPE_INGEST_ENCODER_CONNECTION_DENIED | IP-адрес кодировщика отсутствует в настроенном списке разрешенных IP-адресов. |
+| MPE_INGEST_RTMP_SETDATAFRAME_NOT_RECEIVED | Кодировщику RTMP не удалось отправить команду Сетдатафраме. |
+| MPE_INGEST_CODEC_NOT_SUPPORTED | Указанный кодек не поддерживается. |
+| MPE_INGEST_DESCRIPTION_INFO_NOT_RECEIVED |Сведения о описании носителя не были получены до доставки фактических данных мультимедиа.|
+| MPE_INGEST_MEDIA_QUALITIES_EXCEEDED |Число качеств для типа звука или видео превысило максимально допустимое значение.|
+| MPE_INGEST_BITRATE_AGGREGATED_EXCEEDED |Общая скорость входящей скорости в интерактивной службе событий или канала превысила максимально допустимый предел.|
+| MPE_RTMP_FLV_TAG_TIMESTAMP_INVALID | Метка времени из кодировщика RTMP для FLVTag видео или аудио недействительна. |
+| MPE_INGEST_FRAMERATE_EXCEEDED | Входящий кодировщик, принимающий потоки с фрамератес, превысил максимально допустимый 30fps для кодирования динамических событий и каналов.|
+| MPE_INGEST_VIDEO_RESOLUTION_NOT_SUPPORTED | Поток входящих потоков, принимающих входящие кодировщики, превысил следующие допустимые разрешения: 1920x1088 для кодирования динамических событий и каналов и 4096 x 2160 для сквозных динамических событий и каналов.|
+
+## <a name="liveeventencoderdisconnected"></a>LiveEventEncoderDisconnected.
+
+Может появиться одна из следующих ошибок события [лививентенкодердисконнектед](media-services-event-schemas.md#liveeventencoderdisconnected) .
+
+|Код результата|Описание|
+|---|---|
+|MPE_RTMP_SESSION_IDLE_TIMEOUT|Превышено время ожидания сеанса RTMP после простоя в течение допустимого ограничения времени.|
+|MPE_RTMP_FLV_TAG_TIMESTAMP_INVALID|Метка времени из кодировщика RTMP для FLVTag видео или аудио недействительна.|
+|MPE_CAPACITY_LIMIT_REACHED|Кодировщик отправляет данные слишком быстро.|
+|Неизвестные коды ошибок|Эти коды ошибок могут варьироваться от ошибки памяти до дублирования записей в карте хэшей.|
+
 
 ## <a name="see-also"></a>См. также:
 

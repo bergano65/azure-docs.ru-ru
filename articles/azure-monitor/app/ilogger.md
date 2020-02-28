@@ -1,19 +1,15 @@
 ---
 title: Изучение журналов трассировки .NET с помощью ILogger Azure Application Insights
 description: Примеры использования поставщика Azure Application Insights ILogger с ASP.NET Core и консольными приложениями.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: b538196467ba1d69e679a111ca313f922738b048
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: e2b306670c43722279327301b15630f96da50ea5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716027"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77659940"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
 
@@ -108,7 +104,7 @@ public class ValuesController : ControllerBase
 ### <a name="capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps"></a>Запись журналов ILogger из Startup.cs и Program.cs в приложениях ASP.NET Core
 
 > [!NOTE]
-> В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в статье https://github.com/aspnet/Announcements/issues/353.
+> В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в разделе https://github.com/aspnet/Announcements/issues/353.
 
 Новый Аппликатионинсигхтслогжерпровидер может записывать журналы с самого начала в конвейере запуска приложения. Хотя Аппликатионинсигхтслогжерпровидер автоматически включается в Application Insights (начиная с версии 2.7.1), ключ инструментирования не настраивается до последующего в конвейере. Таким образом, будут записываться только журналы из классов. другие **контроллера**. Чтобы записать каждый журнал, начиная с **Program.CS** и **Startup.CS** , необходимо явно включить ключ инструментирования для аппликатионинсигхтслогжерпровидер. Кроме того, *телеметриконфигуратион* не полностью настраивается при регистрации из **Program.CS** или **Startup.CS** . Поэтому эти журналы будут иметь минимальную конфигурацию, которая использует InMemoryChannel, без выборки и не имеет стандартных инициализаторов телеметрии или процессоров.
 
@@ -396,7 +392,7 @@ class Program
  }
 ```
 
-### <a name="i-updated-to-microsoftapplicationinsightsaspnet-sdkhttpswwwnugetorgpackagesmicrosoftapplicationinsightsaspnetcore-version-271-and-logs-from-ilogger-are-captured-automatically-how-do-i-turn-off-this-feature-completely"></a>Я обновил [пакет SDK для Microsoft. ApplicationInsights. AspNet](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) версии 2.7.1, а журналы из ILogger фиксируются автоматически. Разделы справки полностью отключить эту функцию?
+### <a name="i-updated-to-microsoftapplicationinsightsaspnet-sdk-version-271-and-logs-from-ilogger-are-captured-automatically-how-do-i-turn-off-this-feature-completely"></a>Я обновил [пакет SDK для Microsoft. ApplicationInsights. AspNet](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) версии 2.7.1, а журналы из ILogger фиксируются автоматически. Разделы справки полностью отключить эту функцию?
 
 Сведения о том, как отфильтровать журналы в целом, см. в разделе [Управление уровнем ведения журнала](../../azure-monitor/app/ilogger.md#control-logging-level) . Чтобы отключить Аппликатионинсигхтслогжерпровидер, используйте `LogLevel.None`:
 
@@ -500,7 +496,7 @@ public class MyController : ApiController
    }
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. также:
 

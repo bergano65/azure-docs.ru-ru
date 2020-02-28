@@ -1,18 +1,17 @@
 ---
 title: Управление рабочими областями Log Analytics в Azure Monitor | Документация Майкрософт
 description: Вы можете управлять доступом к данным, хранящимся в Log Analytics рабочей области, в Azure Monitor с помощью ресурсов, рабочей области или разрешений уровня таблицы. В этой статье подробно описано, как выполнить.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/22/2019
-ms.openlocfilehash: 3a75efc8c73c96bfff0ba94ca3e9753ea536fd53
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 6d99a7fbe60156c84e184fedaa5582162f5a0d2d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76289124"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672112"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным и рабочим областям журнала в Azure Monitor
 
@@ -104,7 +103,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 Разрешения Azure также требуются для следующих действий:
 
-|Действия |Требуются разрешения Azure |Примечания |
+|Действие |Требуются разрешения Azure |Примечания |
 |-------|-------------------------|------|
 | Добавление и удаление решений для мониторинга | `Microsoft.Resources/deployments/*` <br> `Microsoft.OperationalInsights/*` <br> `Microsoft.OperationsManagement/*` <br> `Microsoft.Automation/*` <br> `Microsoft.Resources/deployments/*/write` | Эти разрешения нужно предоставить на уровне группы ресурсов или подписки. |
 | Изменение ценовой категории | `Microsoft.OperationalInsights/workspaces/*/write` | |
@@ -132,12 +131,12 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 Роль читателя Log Analytics включает следующие действия Azure:
 
-| Тип    | Разрешение | Description |
+| Тип    | Разрешение | Описание |
 | ------- | ---------- | ----------- |
-| Действия | `*/read`   | Возможность просматривать все ресурсы Azure и их конфигурацию. Включает просмотр следующих данных: <br> состояние расширения виртуальной машины; <br> конфигурация диагностики Azure на ресурсах; <br> Все свойства и параметры всех ресурсов. <br> Для рабочих областей это позволяет иметь полные неограниченные разрешения на чтение параметров рабочей области и выполнение запросов к данным. Ознакомьтесь с более детализированными параметрами выше. |
-| Действия | `Microsoft.OperationalInsights/workspaces/analytics/query/action` | Не рекомендуется, назначать их пользователям не требуется. |
-| Действия | `Microsoft.OperationalInsights/workspaces/search/action` | Не рекомендуется, назначать их пользователям не требуется. |
-| Действия | `Microsoft.Support/*` | Возможность создавать обращения в службу поддержки. |
+| Действие | `*/read`   | Возможность просматривать все ресурсы Azure и их конфигурацию. Включает просмотр следующих данных: <br> состояние расширения виртуальной машины; <br> конфигурация диагностики Azure на ресурсах; <br> Все свойства и параметры всех ресурсов. <br> Для рабочих областей это позволяет иметь полные неограниченные разрешения на чтение параметров рабочей области и выполнение запросов к данным. Ознакомьтесь с более детализированными параметрами выше. |
+| Действие | `Microsoft.OperationalInsights/workspaces/analytics/query/action` | Не рекомендуется, назначать их пользователям не требуется. |
+| Действие | `Microsoft.OperationalInsights/workspaces/search/action` | Не рекомендуется, назначать их пользователям не требуется. |
+| Действие | `Microsoft.Support/*` | Возможность создавать обращения в службу поддержки. |
 |Запрет действия | `Microsoft.OperationalInsights/workspaces/sharedKeys/read` | Запрет на чтение ключа рабочей области, необходимого для использования API сбора данных и для установки агентов. Это предотвращает добавление новых ресурсов в рабочую область |
 
 Членам роли *Участник Log Analytics* доступны следующие действия:
@@ -160,7 +159,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 Роль участника Log Analytics включает следующие действия Azure:
 
-| Разрешение | Description |
+| Разрешение | Описание |
 | ---------- | ----------- |
 | `*/read`     | Возможность просматривать все ресурсы и конфигурацию ресурсов. Включает просмотр следующих данных: <br> состояние расширения виртуальной машины; <br> конфигурация диагностики Azure на ресурсах; <br> Все свойства и параметры всех ресурсов. <br> Для рабочих областей это позволяет всем неограниченным разрешениям читать параметр рабочей области и выполнять запросы к данным. Ознакомьтесь с более детализированными параметрами выше. |
 | `Microsoft.Automation/automationAccounts/*` | Возможность создания и настройки учетных записей службы автоматизации Azure, в том числе добавление и изменение модулей Runbook. |
@@ -187,9 +186,9 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 Когда пользователи запрашивают журналы из рабочей области с помощью доступа к контексту ресурсов, у них будут следующие разрешения на ресурс:
 
-| Разрешение | Description |
+| Разрешение | Описание |
 | ---------- | ----------- |
-| `Microsoft.Insights/logs/<tableName>/read`<br><br>Примеры.<br>`Microsoft.Insights/logs/*/read`<br>`Microsoft.Insights/logs/Heartbeat/read` | Возможность просмотра всех данных журнала для ресурса.  |
+| `Microsoft.Insights/logs/<tableName>/read`<br><br>Примеры:<br>`Microsoft.Insights/logs/*/read`<br>`Microsoft.Insights/logs/Heartbeat/read` | Возможность просмотра всех данных журнала для ресурса.  |
 | `Microsoft.Insights/diagnosticSettings/write` | Возможность настроить параметр диагностики, чтобы разрешить настройку журналов для этого ресурса. |
 
 `/read` разрешение обычно предоставляется из роли, которая включает _\*/Реад или_ _разрешения\*_ , такие как встроенные роли [читателя](../../role-based-access-control/built-in-roles.md#reader) и [участника](../../role-based-access-control/built-in-roles.md#contributor) . Пользовательские роли, включающие определенные действия или выделенные встроенные роли, могут не включать это разрешение.
@@ -291,7 +290,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 * Владельцы рабочих областей рассматриваются как другие пользователи для управления доступом на основе таблиц.
 * Рекомендуется назначать роли группам безопасности, а не отдельным пользователям, чтобы сократить количество назначений. Это также позволит использовать существующие средства управления группами для настройки и проверки доступа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о сборе данных с компьютеров в центре обработки данных или в другой облачной среде см в статье об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md).
 

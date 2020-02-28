@@ -3,12 +3,12 @@ title: Блокировка образов
 description: Задайте атрибуты для образа или репозитория контейнера, чтобы их нельзя было удалить или перезазаписать в реестре контейнеров Azure.
 ms.topic: article
 ms.date: 09/30/2019
-ms.openlocfilehash: 93a99f65d5bb21d696ce24365e7c819d2c34a8b0
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: da84767523bb6d948b71b1c1ad2ddaffb628354a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75972935"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77659702"
 ---
 # <a name="lock-a-container-image-in-an-azure-container-registry"></a>Блокировка образа контейнера в реестре контейнеров Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "75972935"
 
 ```azurecli
 az acr repository show \
-    --name myregistry --repository myrepo
+    --name myregistry --repository myrepo \
     --output jsonc
 ```
 
@@ -145,7 +145,7 @@ az acr repository update \
     --delete-enabled true --write-enabled true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали об использовании команды AZ запись в [репозитории Update][az-acr-repository-update] для предотвращения удаления или обновления версий изображений в репозитории. Дополнительные сведения о настройке дополнительных атрибутов см. в справочнике по командам [AZ контроля доступа на обновление репозитория][az-acr-repository-update] .
 

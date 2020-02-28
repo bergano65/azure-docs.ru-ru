@@ -1,18 +1,14 @@
 ---
 title: Экспорт в Power BI из Azure Application Insights | Документация Майкрософт
 description: Аналитические запросы можно просматривать в Power BI.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 08/10/2018
-ms.openlocfilehash: 3ec20f82bc12b60e5b88a02bb92a4a0ada4dcae7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0e17ca6e07ec76f0a7a1cb04f7aa13619fb9970c
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73668013"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77664003"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](../../azure-monitor/app/app-insights-overview.md).
@@ -81,7 +77,7 @@ ms.locfileid: "73668013"
 
    ![Снимок экрана Power BI Desktop, на котором выделен измененный заголовок](./media/export-power-bi/changetitle.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Могут возникнуть ошибки, относящиеся к учетным данным или размеру набора данных. Ниже приведены сведения о том, что нужно делать в случае возникновения таких ошибок.
 
@@ -123,7 +119,7 @@ ms.locfileid: "73668013"
 
 ### <a name="get-the-adapter"></a>Получение адаптера
 1. Войдите в [Power BI](https://app.powerbi.com/).
-2. Откройте **Получить данные** ![Снимок экрана значка "Получить данные" в левом нижнем углу](./media/export-power-bi/001.png), **Службы**.
+2. Откройте снимок экрана **получения данных** ![значок GetData в нижнем левом углу](./media/export-power-bi/001.png), **службы**.
 
     ![Снимки экрана получения данных из источника данных Application Insights](./media/export-power-bi/002.png)
 
@@ -148,7 +144,7 @@ ms.locfileid: "73668013"
 
 После первоначального импорта панель мониторинга и отчеты продолжают обновляться ежедневно. При этом можно управлять расписанием обновления для набора данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Дополнительные сведения о Power BI](https://www.powerbi.com/learning/)
 * [Руководство по аналитике](../../azure-monitor/log-query/get-started-portal.md)
 

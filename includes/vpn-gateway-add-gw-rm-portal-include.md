@@ -1,23 +1,23 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 10/04/2019
+ms.date: 02/26/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 12c28969ed00a1370b90e06e9d57cd666c50ea29
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f1d4c50766fea5f4c562dc6a9661945713a41f53
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73523686"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77654824"
 ---
 1. В меню [портал Azure](https://portal.azure.com) выберите **создать ресурс**. 
 
-   ![Создание ресурса в портал Azure](./media/vpn-gateway-add-gw-rm-portal-include/azure-portal-create-resource.png)
+   ![Создание ресурса на портале Azure](./media/vpn-gateway-add-gw-rm-portal-include/azure-portal-create-resource.png)
 2. В поле **Поиск в Marketplace** введите "шлюз виртуальной сети". Найдите **шлюз виртуальной сети** в списке результатов и щелкните соответствующую запись. На странице **шлюз виртуальной сети** нажмите кнопку **создать**. Откроется страница **Создание шлюза виртуальной сети**.
 
    ![Создание полей страницы шлюза виртуальной сети](./media/vpn-gateway-add-gw-rm-portal-include/p2sgw.png "Создание полей страницы шлюза виртуальной сети")
@@ -34,7 +34,7 @@ ms.locfileid: "73523686"
 
    - **Имя**. Назовите свой шлюз. Имя шлюза не совпадает с именем подсети шлюза. Это имя объекта шлюза, который создается.
    - **Регион**: Выберите регион, в котором вы хотите создать этот ресурс. Регион для шлюза должен быть таким же, как и виртуальная сеть.
-   - **Тип шлюза**. Выберите **VPN**. VPN-шлюзы используют тип шлюза виртуальной сети **VPN**. 
+   - **Тип шлюза**. Выберите **VPN**. VPN-шлюзы используют тип шлюза виртуальной сети **VPN**.
    - **Тип VPN**. Выберите тип VPN, который указан для конфигурации. Для большинства конфигураций требуется тип VPN на основе маршрута.
    - **SKU**. Выберите номер SKU шлюза из раскрывающегося списка. Номера SKU, перечисленные в раскрывающемся списке, зависят от выбранного типа VPN. Дополнительные сведения о номерах SKU шлюзов см. в разделе [SKU шлюзов](../articles/vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md#gwsku).
 

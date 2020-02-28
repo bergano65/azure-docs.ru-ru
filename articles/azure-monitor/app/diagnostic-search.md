@@ -1,18 +1,14 @@
 ---
 title: Поиск в Azure Application Insights | Документация Майкрософт
 description: Поиск и фильтрация необработанных данных телеметрии, отправляемых веб-приложением.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/30/2019
-ms.openlocfilehash: 77cd0a8d0c1a93e7dc1db931e987a172d31978ef
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 8039a55784f63030f330d6c1e2061e99b8b63bbf
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678081"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669681"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 
@@ -60,12 +56,12 @@ ms.locfileid: "72678081"
 
 Ниже приведены типы событий.
 
-* **Трассировка**  -  [журналы диагностики](../../azure-monitor/app/asp-net-trace-logs.md), в том числе TrackTrace, log4Net, NLog и вызовы System.Diagnostic.Trace.
+* **Трассировка**  - [журналы диагностики](../../azure-monitor/app/asp-net-trace-logs.md), в том числе TrackTrace, log4Net, NLog и вызовы System.Diagnostic.Trace.
 * **Запрос** — HTTP-запросы, полученные серверным приложением, включая страницы, скрипты, изображения, файлы стилей и данные. Эти события используются для создания обзорных диаграмм запросов и ответов.
-* **Просмотр страницы**  -  [элемент телеметрии, отправляемый веб-клиентом](../../azure-monitor/app/javascript.md) и используемый для создания отчетов о просмотрах страниц.
+* **Просмотр страницы**  - [элемент телеметрии, отправляемый веб-клиентом](../../azure-monitor/app/javascript.md) и используемый для создания отчетов о просмотрах страниц.
 * **Пользовательское событие** — при вставке в код вызовов TrackEvent() для [отслеживания использования](../../azure-monitor/app/api-custom-events-metrics.md) эти вызовы можно найти здесь.
 * **Исключение** — неперехваченные [исключения на сервере](../../azure-monitor/app/asp-net-exceptions.md) и те, которые зарегистрированы с помощью метода TrackException().
-* **Зависимость**  -  [вызовы из серверного приложения](../../azure-monitor/app/asp-net-dependencies.md) к другим службам, таким как интерфейсы REST API или базы данных, а также вызовы AJAX из [клиентского кода](../../azure-monitor/app/javascript.md).
+* **Зависимость**  - [вызовы из серверного приложения](../../azure-monitor/app/asp-net-dependencies.md) к другим службам, таким как интерфейсы REST API или базы данных, а также вызовы AJAX из [клиентского кода](../../azure-monitor/app/javascript.md).
 * **Доступность** — результаты [тестов доступности](../../azure-monitor/app/monitor-web-app-availability.md).
 
 ## <a name="filter-on-property-values"></a>Фильтрация на основе значений свойств
@@ -96,17 +92,17 @@ ms.locfileid: "72678081"
 
 Выполните поиск по полным словам, а не по подстрокам. Специальные символы заключайте в кавычки.
 
-| Строка | *Не* найдено | Найдено |
+| String | *Не* найдено | Найдено |
 | --- | --- | --- |
 | HomeController.About |`home`<br/>`controller`<br/>`out` | `homecontroller`<br/>`about`<br/>`"homecontroller.about"`|
-|США|`Uni`<br/>`ted`|`united`<br/>`states`<br/>`united AND states`<br/>`"united states"`
+|Соединенные Штаты|`Uni`<br/>`ted`|`united`<br/>`states`<br/>`united AND states`<br/>`"united states"`
 
 Вот доступные поисковые выражения:
 
-| Пример запроса | Результат |
+| Пример запроса | Действие |
 | --- | --- |
 | `apple` |Поиск всех событий в диапазоне времени, поля которых включают слово "apple". |
-| `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Короткая форма. |
+| `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Краткая форма. |
 | `apple OR banana` |Поиск событий, содержащих любое из этих слов. Используйте «OR» заглавными буквами, а не «or». |
 | `apple NOT banana` |Поиск событий, содержащих только одно из этих слов, но не содержащих другое. |
 
@@ -147,7 +143,7 @@ ms.locfileid: "72678081"
 
 Мы не заносим в журнал данные POST автоматически, но вы можете использовать [вызовы TrackTrace или вызовы журнала](../../azure-monitor/app/asp-net-trace-logs.md). Поместите данные POST в параметр сообщения. Сообщения нельзя отфильтровать тем же способом, как это делается для свойств, но предельный размер больше.
 
-## <a name="add"></a>Дальнейшие действия
+## <a name="add"></a>Следующие шаги
 
 * [Создание сложных запросов в Analytics](../../azure-monitor/log-query/get-started-portal.md)
 * [Журналы, исключения и пользовательские средства диагностики для ASP.NET в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md)

@@ -1,18 +1,17 @@
 ---
 title: Общие сведения о запросах журналов в Azure Monitor | Документация Майкрософт
 description: Ответы на часто задаваемые вопросы о запросах к журналу и о том, как приступить к их использованию.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/19/2019
-ms.openlocfilehash: 08af0ff3121d6721c9f5c1457655c345f50f91e0
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 54a6f875bc33d24d412d2424c634d1019b4af399
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900272"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670123"
 ---
 # <a name="overview-of-log-queries-in-azure-monitor"></a>Общие сведения о запросах журналов в Azure Monitor
 Запросы журналов позволяют полностью использовать значения данных, собираемых в [журналах Azure Monitor](../platform/data-platform-logs.md). Мощный язык запросов позволяет объединять данные из нескольких таблиц, объединять большие наборы данных и выполнять сложные операции с минимальным кодом. Практически любой вопрос можно ответить и выполнить анализ до тех пор, пока собираются вспомогательные данные, и вы понимаете, как создать правильный запрос.
@@ -85,7 +84,7 @@ Log Analytics является основным инструментом в по
 - На странице **обзор** Application Insights приложения выберите **аналитика** .
 - Выберите **журналы** в меню ресурса Azure.
 
-![Анализ журналов](media/log-query-overview/log-analytics.png)
+![Log Analytics](media/log-query-overview/log-analytics.png)
 
 Пошаговое руководство по Log Analytics, в котором представлено несколько функций, см. [в статье Приступая к работе с log Analytics в Azure Monitor](get-started-portal.md) .
 
@@ -100,6 +99,6 @@ Log Analytics является основным инструментом в по
 - **API журналов Azure Monitor.**  [API журналов Azure Monitor](https://dev.loganalytics.io) позволяет любому клиенту REST API извлекать данные журнала из рабочей области.  Запрос API включает запрос, который выполняется в Azure Monitor, чтобы определить извлекаемые данные.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Пошаговое [руководство по использованию log Analytics в портал Azure](get-started-portal.md).
 - Пошаговое [руководство по написанию запросов](get-started-queries.md).

@@ -1,18 +1,17 @@
 ---
 title: Просмотр данных приложений Azure Application Insights | Документация Майкрософт
 description: Решение "Соединитель Application Insights" можно использовать для диагностики проблем с производительностью и для того, чтобы узнать, какие действия пользователи выполняют в вашем приложении, которое отслеживается с помощью Application Insights.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: d0cfca44878130e870c633040afcfbdd55ba8b7b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c143d8aa24d3479f4619ea2c220d4a0c593f9cb1
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75396537"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77665163"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -43,25 +42,25 @@ ms.locfileid: "75396537"
 
 В отличие от большинства других решений Log Analytics, данные для соединителя Application Insights не собираются агентами. Все данные, используемые решением, поступают непосредственно из Azure.
 
-| Подключенный источник | Поддерживается | Description |
+| Подключенный источник | Поддерживается | Описание |
 | --- | --- | --- |
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет | Решение не собирает сведения из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения из агентов Linux. |
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
 | [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет | Решение не собирает сведения из службы хранилища Azure. |
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для доступа к сведениям о соединителе Application Insights необходима подписка Azure.
 - Необходимо иметь хотя бы один настроенный ресурс Application Insights.
 - Необходимо быть владельцем или участником ресурса Application Insights.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AppInsights?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md).
 2. Перейдите на [портал Azure](https://portal.azure.com). Выберите **Все службы**, чтобы открыть Application Insights. Затем выполните поиск по запросу "Application Insights". 
 3. В разделе **Подписки** выберите подписку с ресурсами Application Insights, а затем в разделе **Имя** выберите одно или несколько приложений.
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 Приблизительно через 30 минут данные станут доступными, а на плитке Application Insights появятся данные, как показано на следующем изображении:
 
@@ -175,11 +174,11 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="generic-fields"></a>Универсальные поля
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | Тип | ApplicationInsights |
 | ClientIP |   |
-| TimeGenerated | Время создания записи |
+| Время создания | Время создания записи |
 | ApplicationId | Ключ инструментирования приложения Application Insights |
 | ApplicationName | Имя приложения Application Insights |
 | RoleInstance | Идентификатор узла сервера |
@@ -201,7 +200,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="availability-specific-fields"></a>Поля со сведениями о доступности
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | TelemetryType | Доступность |
 | AvailabilityTestName | Имя веб-теста |
@@ -228,7 +227,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 | Тип | ApplicationInsights |
 | --- | --- |
-| TelemetryType | Исключение |
+| TelemetryType | Exception |
 | ExceptionType | Тип исключения |
 | ExceptionMethod | Метод, который создает исключение |
 | ExceptionAssembly | В сборке указана платформа и версия, а также маркер безопасности открытого ключа |
@@ -243,17 +242,17 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="request-specific-fields"></a>Поля со сведениями о запросах
 
-| Свойство | Description |
+| Свойство | Описание |
 | --- | --- |
 | Тип | ApplicationInsights |
 | TelemetryType | Запрос |
 | ResponseCode | HTTP-отклик, отправленный клиенту. |
-| RequestSuccess | Указывает успешное или неудачное выполнение. Значение true или false. |
+| RequestSuccess | Указывает успешное или неудачное выполнение. True или false. |
 | RequestID | Идентификатор, позволяющий уникально идентифицировать запрос |
 | RequestName | GET или POST + базовый URL-адрес |
 | RequestDuration | Время длительности запроса (в секундах) |
 | URL-адрес | URL-адрес запроса, не включая узел |
-| Хост | Узел веб-сервера |
+| Host | Узел веб-сервера |
 | URLBase | Полный URL-адрес запроса |
 | ApplicationProtocol | Тип протокола, используемого приложением |
 | RequestCount | 100/(частота выборки). Например, 4 = &gt; 25 %. |
@@ -317,6 +316,6 @@ $ConnectionsJson = $Connections | ConvertTo-Json
 ApplicationInsights | summarize by ApplicationName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

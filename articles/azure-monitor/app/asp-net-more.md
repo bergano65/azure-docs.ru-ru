@@ -1,23 +1,19 @@
 ---
 title: Максимальная польза от Azure Application Insights | Документация Майкрософт
 description: Начав работу с Application Insights, ознакомьтесь с этим списком доступных функций.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 02/03/2017
-ms.openlocfilehash: 8c51745c43ced8ad3031a6a01096261ef72b33fc
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 3c4a9a736f34d4f7dbfeb004d0837f1f2efa55dc
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678357"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77666030"
 ---
 # <a name="more-telemetry-from-application-insights"></a>Дополнительные данные телеметрии из Application Insights
 После [добавления Application Insights в код ASP.NET](../../azure-monitor/app/asp-net.md)можно сделать еще кое-что, чтобы получать дополнительные данные телеметрии. 
 
-| Действия | Что вы получаете|
+| Действие | Что вы получаете|
 |---|---|
 |(Серверы IIS) [Установите монитор состояния](https://go.microsoft.com/fwlink/?LinkId=506648) на каждом компьютере-сервере.<br/>(Веб-приложения Azure) На панели управления Azure веб-приложения откройте колонку Application Insights.| [**Счетчики производительности**](../../azure-monitor/app/performance-counters.md).<br/>[**Исключения**](asp-net-exceptions.md) — подробные трассировки стека.<br/>[**Зависимости**](../../azure-monitor/app/asp-net-dependencies.md).|
 |[Добавьте фрагмент JavaScript в свои веб-страницы](../../azure-monitor/app/javascript.md)|[Производительность страниц](../../azure-monitor/app/usage-overview.md), исключения браузера, производительность вызовов AJAX. Пользовательская телеметрия на стороне клиента.|

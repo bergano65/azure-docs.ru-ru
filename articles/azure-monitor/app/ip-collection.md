@@ -1,18 +1,14 @@
 ---
 title: Коллекция IP-адресов Application Insights Azure | Документация Майкрософт
 description: Основные сведения об обработке IP-адресов и географического расположения с помощью Azure Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 09/11/2019
-ms.openlocfilehash: 5a647dda21855f754754f76682e5c00443eaac55
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 969061ec89ddd0f13caa675bc324207c6c5d8843
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432603"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77656523"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Обработка геолокации и IP-адресов
 
@@ -73,7 +69,7 @@ IP-адреса отправляются в Application Insights в состав
 
 3. Выберите **изменить шаблон**. (Если шаблон содержит дополнительные свойства или ресурсы, которые не отображаются в этом примере шаблона, продолжайте соблюдать осторожность, чтобы все ресурсы приняли развертывание шаблона как добавочное изменение или обновление.)
 
-    ![Изменение шаблона](media/ip-collection/edit-template.png)
+    ![Изменить шаблон](media/ip-collection/edit-template.png)
 
 4. Внесите следующие изменения в JSON для ресурса и нажмите кнопку **сохранить**:
 
@@ -84,7 +80,7 @@ IP-адреса отправляются в Application Insights в состав
 
 5. Установите флажок **я принимаю** > **покупки**. 
 
-    ![Изменение шаблона](media/ip-collection/purchase.png)
+    ![Изменить шаблон](media/ip-collection/purchase.png)
 
     В этом случае не будет приобретено ничего нового, мы просто обновляем конфигурацию существующего ресурса Application Insights.
 
@@ -101,7 +97,7 @@ IP-адреса отправляются в Application Insights в состав
     
     В результате будет возвращен список свойств. Одно из свойств должно считывать `DisableIpMasking: true`. Если запустить PowerShell до развертывания нового свойства с Azure Resource Manager, это свойство не будет существовать.
 
-### <a name="rest-api"></a>Rest API
+### <a name="rest-api"></a>API Rest
 
 Полезная нагрузка [API-интерфейса](https://docs.microsoft.com/rest/api/azure/) для внесения одних и тех же изменений выглядит следующим образом:
 

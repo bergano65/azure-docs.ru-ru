@@ -1,18 +1,14 @@
 ---
 title: Автоматизация процессов Application Insights Azure с помощью Logic Apps
 description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/11/2019
-ms.openlocfilehash: 95a3577d352b6bc4b56d36b5b79658571a6be1ff
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9a7f411ca5ec47e3f25d8120d0388fb030b00c72
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407518"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655011"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -98,11 +94,11 @@ ms.locfileid: "75407518"
 
    а. Введите адрес электронной почты получателя.
 
-   b. Введите тему сообщения.
+   б. Введите тему сообщения.
 
-   c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
+   в. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
     
-   d. Щелкните раскрывающийся список **Добавить новый параметр** и выберите вложения, а — HTML.
+   . Щелкните раскрывающийся список **Добавить новый параметр** и выберите вложения, а — HTML.
 
       ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/10emailbody.png)
 
@@ -112,9 +108,9 @@ ms.locfileid: "75407518"
 
     а. Выберите **Имя вложения**.
 
-    b. Выберите **Содержимое вложения**.
+    б. Выберите **Содержимое вложения**.
     
-    c. В поле **Является HTML** выберите значение **Да**.
+    в. В поле **Является HTML** выберите значение **Да**.
 
       ![Экран настройки электронного сообщения Office 365](./media/automate-with-logic-apps/12emailattachment.png)
 
@@ -129,7 +125,7 @@ ms.locfileid: "75407518"
 
 ![Сообщение электронной почты приложения логики](./media/automate-with-logic-apps/flow9.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 - Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps).

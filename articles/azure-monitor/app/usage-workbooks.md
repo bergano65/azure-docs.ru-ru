@@ -1,19 +1,17 @@
 ---
 title: Создание интерактивных отчетов с книгами Azure Monitor | Документы Майкрософт
 description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 8e14b065132e648f9c800655cfe69e5a2ec80c41
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 15543f7f761c707e8eff8e0cc0a0e4532475ddf8
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432258"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77671007"
 ---
 # <a name="create-interactive-reports-with-azure-monitor-workbooks"></a>Создание интерактивных отчетов с книгами Azure Monitor
 
@@ -252,7 +250,7 @@ customEvents
 
 Вы создали отличный шаблон книги и хотите поделиться им с сообществом? Дополнительные сведения см. в нашем [репозитории на GitHub](https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/README.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Пользователи, сеансы, события](../../azure-monitor/app/usage-segmentation.md)

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/03/2020
+ms.date: 02/27/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8f91db91eff3320691a5979d9453bf515ccd59a2
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: e3ce7ff633f41ccfe6faa3cc1dba1020e74459aa
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982302"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77656098"
 ---
 # <a name="stringcollection-claims-transformations"></a>Преобразования утверждений StringCollection
 
@@ -26,13 +26,13 @@ ms.locfileid: "76982302"
 
 ## <a name="additemtostringcollection"></a>AddItemToStringCollection
 
-Добавляет строковое утверждение в новое утверждение stringCollection.
+Добавляет утверждение строки в новое уникальное значение утверждения stringCollection. 
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | item | string | Тип ClaimType, добавляемый к исходящему утверждению. |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
-| outputClaim | коллекция | stringCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. |
+| outputClaim | коллекция | stringCollection | Значение параметра, созданное после вызова этого преобразования утверждений, со значением, указанным во входном утверждении. |
 
 Используйте это преобразование утверждений, чтобы добавить строку в новый или существующий элемент stringCollection. Оно обычно используется в техническом профиле **AAD-UserWriteUsingAlternativeSecurityId**. Перед созданием новой учетной записи социальной сети преобразование утверждений **CreateOtherMailsFromEmail** считывает ClaimType и добавляет значение в элемент ClaimType **otherMails**.
 
@@ -60,13 +60,13 @@ ms.locfileid: "76982302"
 
 ## <a name="addparametertostringcollection"></a>AddParameterToStringCollection
 
-Добавляет строковый параметр в новое утверждение stringCollection.
+Добавляет строковый параметр в новое уникальное значение утверждения stringCollection.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
 | InputParameter | item | string | Значение, добавляемое к исходящему утверждению. |
-| outputClaim | коллекция | stringCollection | Параметр ClaimTypes, который будет создан после вызова этого ClaimsTransformation. |
+| outputClaim | коллекция | stringCollection | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением, указанным во входном параметре. |
 
 Используйте это преобразование утверждений, чтобы добавить строковое значение в новый или существующий элемент stringCollection. В следующем примере постоянный адрес электронной почты (admin@contoso.com) добавляется в утверждение **otherMails**.
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/21/2020
+ms.date: 02/26/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5df7eedcd92d338d3f741f7092ff6ef73f3442d
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: d3df906936cc4e47ee1f43adb0fcbaa0e8c04b0f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77585889"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77656319"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -55,7 +55,7 @@ ms.locfileid: "77585889"
 
 Организации, развернутые Microsoft Intune, могут использовать информацию, возвращенную с устройств, для обнаружения устройств, соответствующих определенным требованиям соответствия. Эта информация о соответствии политики пересылается из Intune в Azure AD, где условный доступ может принимать решения на предоставление или блокирование доступа к ресурсам. Дополнительные сведения о политиках соответствия требованиям см. в статье [Установка правил на устройствах для разрешения доступа к ресурсам в Организации с помощью Intune](https://docs.microsoft.com/intune/protect/device-compliance-get-started).
 
-Устройство может быть помечено как соответствующее Intune (для любой ОС устройства) или сторонней системой MDM для устройств Windows 10. Сторонние системы управления мобильными устройствами для ОС, отличных от Windows 10, не поддерживаются.
+Устройство может быть помечено как соответствующее Intune (для любой ОС устройства) или сторонней системой MDM для устройств Windows 10. Jamf Pro является единственной поддерживаемой сторонней системой MDM. Дополнительные сведения об интеграции можно найти в статье [Интеграция Jamf Pro с Intune для обеспечения соответствия](/intune/protect/conditional-access-integrate-jamf).
 
 Устройства должны быть зарегистрированы в Azure AD, чтобы их можно было пометить как соответствующие. Дополнительные сведения о регистрации устройств можно найти в статье [что такое удостоверение устройства](../devices/overview.md).
 

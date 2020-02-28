@@ -1,18 +1,15 @@
 ---
 title: Общие сведения о схеме веб-перехватчика, используемой в оповещениях журнала действий
 description: Дополнительные сведения о схеме JSON, отправляемой по URL-адресу веб-перехватчика при активации оповещения журнала действий.
-ms.service: azure-monitor
-ms.subservice: alerts
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
 ms.date: 03/31/2017
-ms.openlocfilehash: eb43db7a67063622f6a6125178267573cd209471
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.subservice: alerts
+ms.openlocfilehash: c076b8dcea350f9ddd66977e89ce99b81f377b17
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75748801"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669052"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
 В определении группы действий можно настроить конечные точки веб-перехватчика для получения уведомлений об оповещениях журнала действий. С помощью веб-перехватчика можно направлять эти уведомления в другие системы для последующей обработки или выполнения настраиваемых действий. В этой статье показано, как выглядят полезные данные HTTP POST для webhook.
@@ -31,7 +28,7 @@ ms.locfileid: "75748801"
 ## <a name="payload-schema"></a>Схема полезных данных
 Полезные данные JSON, содержащихся в операции POST, могут быть различны в зависимости от поля data.context.activityLog.eventSource.
 
-### <a name="common"></a>Распространенные
+### <a name="common"></a>Общие
 
 ```json
 {
@@ -60,7 +57,7 @@ ms.locfileid: "75748801"
 }
 ```
 
-### <a name="administrative"></a>Administrative
+### <a name="administrative"></a>Административный
 
 ```json
 {
@@ -257,23 +254,23 @@ ms.locfileid: "75748801"
 }
 ```
 
-| Имя элемента | Description |
+| Имя элемента | Описание |
 | --- | --- |
-| status |Используется для оповещений на основе метрик. Всегда имеет значение activated для оповещений журнала действий. |
-| контекст |Контекст события. |
+| состояние |Используется для оповещений на основе метрик. Всегда имеет значение activated для оповещений журнала действий. |
+| context |Контекст события. |
 | resourceProviderName |Поставщик ресурсов для затронутого ресурса. |
 | conditionType |Всегда имеет значение Event. |
 | name |Имя правила генерации оповещений. |
-| идентификатор |Идентификатор ресурса для оповещения. |
+| id |Идентификатор ресурса для оповещения. |
 | description |Описание оповещения, которое задается при его создании. |
 | subscriptionId |Идентификатор подписки Azure. |
-| TIMESTAMP |Время создания события службой Azure, которая обработала запрос. |
+| timestamp |Время создания события службой Azure, которая обработала запрос. |
 | resourceId |Идентификатор ресурса для затронутого ресурса. |
 | имя_группы_ресурсов |Имя группы ресурсов для затронутого ресурса. |
-| properties |Набор пар `<Key, Value>` (например, `Dictionary<String, String>`), содержащий сведения о событии. |
+| подключения |Набор пар `<Key, Value>` (например, `Dictionary<String, String>`), содержащий сведения о событии. |
 | event |Элемент, содержащий метаданные о событии. |
 | авторизация |Свойства управления доступом на основе ролей для события. Обычно к ним относятся action, role и scope. |
-| категория |Категория события. Поддерживаются следующие значения: Administrative, Alert, Security, ServiceHealth, Recommendation. |
+| category |Категория события. Поддерживаются следующие значения: Administrative, Alert, Security, ServiceHealth, Recommendation. |
 | caller |Адрес электронной почты пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. Может иметь значение NULL для определенных системных вызовов. |
 | correlationId |Обычно GUID в строковом формате. События с correlationId относятся к одному крупному действию и обычно совместно используют correlationId. |
 | eventDescription |Статическое описание события в текстовом виде. |
@@ -283,13 +280,13 @@ ms.locfileid: "75748801"
 | level |Одно из таких значений: Critical, Error, Warning, Informational. |
 | operationId |Обычно события, относящиеся к одной операции, совместно используют один GUID. |
 | operationName |Имя операции. |
-| properties |Свойства события. |
-| status |Строка. Состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
+| подключения |Свойства события. |
+| состояние |Строка. Состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
 | subStatus |Обычно содержит код состояния HTTP для соответствующего вызова REST. Может также включать другие строки, описывающие подсостояние. Обычные значения подсостояния: OK (код состояния HTTP: 200), Created (код состояния HTTP: 201), Accepted (код состояния HTTP: 202), No Content (код состояния HTTP: 204), Bad Request (код состояния HTTP: 400), Not Found (код состояния HTTP: 404), Conflict (код состояния HTTP: 409), Internal Server Error (код состояния HTTP: 500), Service Unavailable (код состояния HTTP: 503), Gateway Timeout (код состояния HTTP: 504). |
 
 Сведения о схеме для остальных оповещений журнала действий см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
 * [Using Azure Automation to take action on Azure Alerts](https://go.microsoft.com/fwlink/?LinkId=627081) (Использование службы автоматизации Azure для выполнения действий по уведомлениям Azure).
 * [Logic app that sends a text message when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app) (Приложение логики, которое отправляет текстовое сообщение при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.

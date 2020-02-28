@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 4a0593ccd6bdf37520e73ba8ed421ec4b10ea52c
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 89772bea818a0ebb57135990b3a04fcb559e2716
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623303"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77664938"
 ---
 # <a name="streaming-ingestion-preview"></a>Прием потоковой передачи (Предварительная версия)
 
@@ -76,7 +76,7 @@ ms.locfileid: "77623303"
 * Ограничение на размер данных для запроса приема — 4 МБ.
 * Обновления схемы, такие как создание и изменение таблиц и сопоставлений приема, могут занять до 5 минут для службы приема потоковой передачи.
 * Включение приема потоковой передачи в кластере, даже если данные не принимаются через потоковую передачу, использует часть локального диска SSD компьютеров кластера для данных приема потоковой передачи и сокращает объем хранилища, доступного для оперативного кэша.
-* Невозможно задать [теги экстентов](/azure/kusto/management/extents-overview.md#extent-tagging) для данных приема потоковой передачи.
+* Невозможно задать [теги экстентов](/azure/kusto/management/extents-overview#extent-tagging) для данных приема потоковой передачи.
 
 Прием потоковой передачи не поддерживает следующие функции:
 * [Курсоры базы данных](/azure/kusto/management/databasecursor).

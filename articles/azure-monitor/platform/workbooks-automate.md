@@ -4,18 +4,17 @@ description: Упрощение сложных отчетов с помощью 
 services: azure-monitor
 author: mrbullwinkle
 manager: carmonm
-ms.service: azure-monitor
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: e3d29beab7b1d82f73c706897af9650b68be11f5
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 2c2d70d1c945e700a3fa42609f8aa0e1607ba77c
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872916"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77658410"
 ---
 # <a name="programmatically-manage-workbooks"></a>Программное управление книгами
 
@@ -111,7 +110,7 @@ ms.locfileid: "74872916"
 | `serializedData` | Содержит содержимое или полезные данные, используемые в книге. Использование шаблона диспетчер ресурсов из пользовательского интерфейса книг для получения значения |
 
 ### <a name="workbook-types"></a>Типы книг
-Типы книг укажите тип коллекции книг, в которой будет отображаться новый экземпляр книги. Доступные параметры:
+Типы книг укажите тип коллекции книг, в которой будет отображаться новый экземпляр книги. Доступны следующие варианты.
 
 | Тип | Расположение коллекции |
 | :------------- |:-------------|
@@ -122,7 +121,7 @@ ms.locfileid: "74872916"
 ### <a name="limitations"></a>Ограничения
 По техническим причинам этот механизм нельзя использовать для создания экземпляров книг в коллекции _книг_ Application Insights. Мы работаем над устранением этого ограничения. В то же время для развертывания Application Insights связанных книг рекомендуется использовать коллекцию руководств по устранению неполадок (Воркбуктипе: `tsg`).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как используются книги для создания новых [Azure Monitor для работы с хранилищем](../insights/storage-insights-overview.md).
 

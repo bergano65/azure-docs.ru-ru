@@ -1,18 +1,15 @@
 ---
 title: Отслеживание служб и приложений Azure с помощью Grafana
 description: Маршрутизация данных Azure Monitor и Application Insights для просмотра в Grafana.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
 ms.date: 11/06/2017
-ms.openlocfilehash: f5464710d5c7908eeec5dd917bfeff4756ff4e80
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 142e3e19c13710963d239a75bc237b63713c29cc
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552101"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672214"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -94,7 +91,7 @@ ms.locfileid: "72552101"
 4. Выберите источник данных Azure Monitor, который вы настроили.
    * Сбор метрик Azure Monitor. Выберите **Azure Monitor** в раскрывающемся списке службы. Отобразится список селекторов, где можно выбрать ресурсы и метрики для мониторинга на этой диаграмме. Для сбора метрик с виртуальных машин используйте пространство имен **Microsoft.Compute/VirtualMachines**. Когда вы выберете виртуальные машины и метрики, на панели мониторинга можно будет просматривать их данные.
      ![Настройка графика Grafana для Azure Monitor](./media/grafana-plugin/grafana-graph-config-for-azure-monitor-dark.png)
-   * Сбор данных журнала Azure Monitor. Выберите **log Analytics Azure** в раскрывающемся списке "служба". Выберите рабочую область, в которой вы хотите выполнять запросы и настраивать текст запроса. Вы можете скопировать здесь любой существующий запрос к журналу или создать новый. При вводе запроса будет отображаться IntelliSense с предлагаемыми вариантами автозаполнения. Выберите тип визуализации, **Time series** **Table** (Таблица временных рядов), а затем выполните запрос.
+   * Сбор данных журнала Azure Monitor. Выберите **log Analytics Azure** в раскрывающемся списке "служба". Выберите рабочую область, в которой вы хотите выполнять запросы и настраивать текст запроса. Вы можете скопировать здесь любой существующий запрос к журналу или создать новый. При вводе запроса будет отображаться IntelliSense с предлагаемыми вариантами автозаполнения. Выберите тип визуализации, таблица **временных рядов**и выполните запрос.
     
      > [!NOTE]
      >
@@ -160,6 +157,6 @@ Usage
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **Grafana**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Обзор метрик в Microsoft Azure](data-platform.md)
 

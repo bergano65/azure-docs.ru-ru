@@ -1,18 +1,17 @@
 ---
 title: Подключение компьютеров Linux к Azure Monitor | Документация Майкрософт
 description: В этой статье описывается подключение компьютеров Linux, размещенных в других облаках или в локальной среде, к Azure Monitor с помощью агента Log Analytics для Linux.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 01/21/2020
-ms.openlocfilehash: 15334f0c58f602a2728e3daa6645b957dfcd7129
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 40c279a4beee9fbebe2de7f272fe51d9039f071c
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76290331"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668712"
 ---
 # <a name="connect-linux-computers-to-azure-monitor"></a>Подключение компьютеров Linux к Azure Monitor
 
@@ -94,7 +93,7 @@ docker-cimprov | 1.0.0 | Поставщик Docker для OMI. Устанавл�
     sudo sh ./omsagent-*.universal.x64.sh --upgrade -p https://<proxy address>:<proxy port> -w <workspace id> -s <shared key>
     ```
 
-    Если требуется проверка подлинности, необходимо указать имя пользователя и пароль. Пример. 
+    Если требуется проверка подлинности, необходимо указать имя пользователя и пароль. Например: 
     
     ```
     sudo sh ./omsagent-*.universal.x64.sh --upgrade -p https://<proxy user>:<proxy password>@<proxy address>:<proxy port> -w <workspace id> -s <shared key>
@@ -161,7 +160,7 @@ sudo sh ./omsagent-*.universal.x64.sh --extract
 
 Обновление с предыдущей версии, начиная с версии 1.0.0-47, поддерживается в каждом выпуске. Выполните установку с параметром `--upgrade`, чтобы обновить все компоненты агента до последней версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [управлением и обслуживанием агента log Analytics для Windows и Linux](agent-manage.md) , чтобы узнать о том, как перенастроить, обновить или удалить агент с виртуальной машины.
 

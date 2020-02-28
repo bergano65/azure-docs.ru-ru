@@ -2,17 +2,17 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/19/2020
+ms.date: 02/26/2020
 ms.author: dacoulte
-ms.openlocfilehash: 786075b4641675f7b36df427fff69f33c9cfc2c5
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 27b453c4e20c2ae3ccb6ddda5a00e42ba4e522f6
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77495141"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77780230"
 ---
 |Имя |Описание |Действие |Версия |Источник |
-|---|---|---|---|
+|---|---|---|---|---|
 |[\[Предварительная версия\]. На виртуальных машинах должна быть включена Оценка уязвимостей](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Отслеживает уязвимости, обнаруживаемые решением "Оценка уязвимостей" Центра безопасности Azure на Виртуальных машинах. |AuditIfNotExists, Disabled |1.0.0 (предварительная версия) |[GitHub](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json)
 |[\[Предварительная версия\]. В службах Kubernetes нужно определить разрешенные диапазоны IP-адресов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0e246bcf-5f6f-4f87-bc6f-775d4712c7ea) |Ограничьте доступ к API управления службами Kubernetes, предоставив доступ через API только к IP-адресам в определенных диапазонах. Рекомендуется ограничить доступ к разрешенным диапазонам IP-адресов, чтобы обеспечить доступ к кластеру только для приложений из разрешенных сетей. |Audit, Disabled |1.0.0 (предварительная версия) |[GitHub](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableIpRanges_KubernetesService_Audit.json)
 |[\[Предварительная версия\]. На виртуальной машине должна быть отключена IP-переадресация](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbd352bd5-2853-4985-bf0d-73806b4a5744) |Включение IP-переадресации на сетевом адаптере виртуальной машины позволяет компьютеру принимать трафик, адресованный другим получателям. IP-переадресация редко требуется (например, при использовании виртуальной машины в качестве сетевого виртуального модуля), поэтому она должна быть проверена командой безопасности сети. |AuditIfNotExists, Disabled |1.0.0 (предварительная версия) |[GitHub](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_IPForwardingOnVirtualMachines_Audit.json)

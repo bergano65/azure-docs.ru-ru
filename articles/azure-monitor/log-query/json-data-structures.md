@@ -1,18 +1,17 @@
 ---
 title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье содержится руководство по использованию Azure Monitor Log Analytics в портал Azure для запроса и анализа данных журнала в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: 940c82e9ef7016639a3ab334040c408f83996e2b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8be4f318149590ff08b73fda719e99a17220ec2e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365314"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670157"
 ---
 # <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
@@ -124,7 +123,7 @@ print hosts_object
 
 ![Создание схемы](media/json-data-structures/buildschema.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала в Azure Monitor.
 
 - [Работа со строками](string-operations.md)

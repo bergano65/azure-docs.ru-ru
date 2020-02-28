@@ -1,20 +1,19 @@
 ---
-title: Общие сведения о Azure Monitor книгах
+title: Общие сведения о книгах Azure Monitor
 description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
 author: mrbullwinkle
 manager: carmonm
 services: azure-monitor
-ms.service: azure-monitor
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: cf11ce3a77fb47b7d8586ef56141a72cd0a10c2e
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 29e675f3ae35df9211f58d45ad8450566d67a588
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872865"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77658240"
 ---
 # <a name="azure-monitor-workbooks"></a>Azure Monitor книги
 
@@ -40,10 +39,10 @@ ms.locfileid: "74872865"
 
 Книги предоставляют широкий набор возможностей для визуализации данных. Подробные примеры каждого типа визуализации см. в приведенных ниже ссылках на примеры.
 
-* [текст](workbooks-visualizations.md#text)
+* [Текст](workbooks-visualizations.md#text)
 * [Создание графиков](workbooks-visualizations.md#charts)
 * [Сетки](workbooks-visualizations.md#grids)
-* [Плитки](workbooks-visualizations.md#tiles)
+* [Плитка](workbooks-visualizations.md#tiles)
 * [Дерева](workbooks-visualizations.md#trees)
 * [Графы](workbooks-visualizations.md#graphs)
 
@@ -125,7 +124,7 @@ ms.locfileid: "74872865"
 
 Создав собственные шаблоны книг, вы можете поделиться им с более широким сообществом. Чтобы узнать больше, а также просмотреть другие шаблоны, которые не входят в представление коллекции по умолчанию Azure Monitor, посетите наш [репозиторий GitHub](https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/README.md). Чтобы просмотреть существующие книги, посетите [библиотеку книг](https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks) на сайте GitHub.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

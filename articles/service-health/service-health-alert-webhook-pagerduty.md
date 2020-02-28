@@ -1,14 +1,14 @@
 ---
 title: Отправка оповещений о работоспособности службы Azure с помощью PagerDuty
 description: Передача в экземпляр PagerDuty персонализированных уведомлений о событиях работоспособности служб.
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 746113622b746949a0fae3fd0d7f1f9c7d170707
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: bb449a5279f3cea55e6aec2f72edfd11fb26227a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551658"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77654075"
 ---
 # <a name="send-azure-service-health-alerts-with-pagerduty-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в PagerDuty с помощью веб-перехватчиков
 
@@ -27,7 +27,7 @@ ms.locfileid: "75551658"
 
     а. **Integration Type** (Тип интеграции): Microsoft Azure.
 
-    b. **Integration Name** (Имя интеграции): \<имя\>.
+    б. **Integration Name** (Имя интеграции): \<имя\>.
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -45,9 +45,9 @@ ms.locfileid: "75551658"
 
     а. **Тип действия:** *веб-перехватчик*
 
-    b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    б. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
-    c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
+    в. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
 1. Завершив создание оповещения, нажмите кнопку **Сохранить**.
 
@@ -62,9 +62,9 @@ ms.locfileid: "75551658"
 
     а. **Тип действия:** *веб-перехватчик*
 
-    b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    б. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
-    c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
+    в. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
 1. Завершив изменение группы действий, нажмите кнопку **Сохранить**.
 
@@ -84,7 +84,7 @@ ms.locfileid: "75551658"
 
 1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).

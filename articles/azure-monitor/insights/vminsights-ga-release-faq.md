@@ -1,18 +1,17 @@
 ---
 title: Часто задаваемые вопросы Azure Monitor для виртуальных машин (общедоступные) | Документация Майкрософт
 description: Azure Monitor для виртуальных машин — это решение в Azure, которое отслеживает работоспособность и производительность ОС виртуальных машин Azure, автоматически обнаруживает компоненты приложений и их зависимости от других ресурсов, а также строит схему каналов связи между ними. В этой статье содержатся ответы на часто задаваемые вопросы о общедоступном выпуске.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/31/2020
-ms.openlocfilehash: 883f24e529f9479f0c6ee6597c1324a0089ece7b
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 0af5e4b92b52b4ecfc4e0e302b5d2a7701297908
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77620382"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77656200"
 ---
 # <a name="azure-monitor-for-vms-generally-available-ga-frequently-asked-questions"></a>Часто задаваемые вопросы о Azure Monitor для виртуальных машин общедоступной версии
 
@@ -121,6 +120,6 @@ Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName <resource-grou
 
 Если вы являетесь клиентом, который использует функцию работоспособности и хотите использовать его для нового развертывания, свяжитесь с нами по адресу vminsights@microsoft.com, чтобы запросить инструкции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о требованиях и методах, помогающих отслеживать виртуальные машины, см. в статье [Подключение Azure Monitor для виртуальных машин (предварительная версия)](vminsights-enable-overview.md).

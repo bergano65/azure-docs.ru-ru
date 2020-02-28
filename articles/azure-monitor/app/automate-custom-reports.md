@@ -1,19 +1,15 @@
 ---
 title: Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 description: Автоматизация настраиваемых ежедневных, еженедельных или ежемесячных отчетов с использованием данных Azure Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/20/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 2b23374972a071421b59bedf0eb5b9358b37d7a9
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: d91595a863901fcc420611ac644c7856e74320dd
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677629"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655129"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -91,7 +87,7 @@ availabilityResults
 5. Выберите **_Шаблон дайджеста планирования Application Insights_** .
 
      > [!NOTE]
-     > По умолчанию приложения функций создаются с помощью среды выполнения версии 2. x. Необходимо [выбрать среду выполнения функций Azure версии](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) **1. x** , чтобы использовать шаблон планового дайджеста Application Insights.  снимок экрана ![runtime ](./../../../includes/media/functions-view-update-version-portal/function-app-view-version.png)
+     > По умолчанию приложения функций создаются с помощью среды выполнения версии 2. x. Необходимо [выбрать среду выполнения функций Azure версии](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) **1. x** , чтобы использовать шаблон планового дайджеста Application Insights.  снимок экрана времени выполнения ![](./../../../includes/media/functions-view-update-version-portal/function-app-view-version.png)
 
 
 
@@ -105,7 +101,7 @@ availabilityResults
 
     ![Снимок экрана "Параметры приложения-функции Azure"](./media/automate-custom-reports/function-app-07.png)
 
-8. Создайте три параметра приложения с соответствующими значениями ``AI_APP_ID``, ``AI_APP_KEY`` и ``SendGridAPI``. Щелкните **Сохранить**.
+8. Создайте три параметра приложения с соответствующими значениями ``AI_APP_ID``, ``AI_APP_KEY`` и ``SendGridAPI``. Нажмите кнопку **Сохранить**.
 
      ![Снимок экрана "Интерфейс функции интеграции"](./media/automate-custom-reports/function-app-08.png)
     
@@ -158,7 +154,7 @@ availabilityResults
 
    ![Снимок экрана "Копирование ключа API"](./media/automate-custom-reports/function-app-17.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 * Дополнительные сведения о [программных запросах к данным Application Insights](https://dev.applicationinsights.io/).

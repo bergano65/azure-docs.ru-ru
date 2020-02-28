@@ -1,18 +1,17 @@
 ---
 title: Фильтры в представлениях Azure Monitor | Документация Майкрософт
 description: Фильтр в представлении Azure Monitor позволяет пользователям фильтровать данные в представлении по значению определенного свойства, не изменяя само представление.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/22/2018
-ms.openlocfilehash: 03950c7c87f659c5d1c032b5d3c1f74d136697c7
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: b4840ed30eb1f6dc8d6e6cef47da17807f9644d5
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72931987"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77658580"
 ---
 # <a name="filters-in-azure-monitor-views"></a>Фильтры в представлениях Azure Monitor
 **Фильтр** в [представлении Azure Monitor](view-designer.md) позволяет пользователям фильтровать данные в представлении по значению определенного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
@@ -34,7 +33,7 @@ ms.locfileid: "72931987"
 
 Создайте фильтр на вкладке **Фильтры** при [редактировании представления](view-designer.md).  Фильтр является глобальным для представления и применяется ко всем его частям.  
 
-![Параметры фильтра](media/view-designer-filters/filters-settings.png)
+![Фильтрация параметров](media/view-designer-filters/filters-settings.png)
 
 В следующей таблице описаны параметры фильтра.
 
@@ -51,8 +50,8 @@ ms.locfileid: "72931987"
 | Имя поля | Запрос значений | Тег |
 |:--|:--|:--|
 | Компьютер   | Heartbeat &#124; distinct Computer &#124; sort by Computer asc | Компьютеры |
-| EventLevelName | Event &#124; distinct EventLevelName | Серьезность |
-| SeverityLevel | Syslog &#124; distinct SeverityLevel | Серьезность |
+| EventLevelName | Event &#124; distinct EventLevelName | Severity |
+| Уровень серьезности | Syslog &#124; distinct SeverityLevel | Severity |
 | SvcChangeType | ConfigurationChange &#124; distinct svcChangeType | ChangeType |
 
 
@@ -72,5 +71,5 @@ ms.locfileid: "72931987"
 
     Event | where ${Computers} | where ${Severity} | summarize count() by EventLevelName
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше об [элементах визуализации](view-designer-parts.md), которые можно добавить в представление.

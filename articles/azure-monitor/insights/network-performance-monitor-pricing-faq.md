@@ -1,18 +1,17 @@
 ---
 title: Часто задаваемые вопросы о ценообразовании для Монитора производительности сети Azure | Документация Майкрософт
 description: Часто задаваемые вопросы. Монитор производительности сети Azure
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: agummadi
 ms.author: agummadi
 ms.date: 04/02/2018
-ms.openlocfilehash: 3d69637c2851764363209ed8dfbe8c24c636ffba
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: c5a80c7ff6d08ce601a6c2bbb0db0ef866d3b425
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72898793"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77654398"
 ---
 # <a name="pricing-changes-for-azure-network-performance-monitor"></a>Изменения в ценообразовании для Монитора производительности сети Azure
 
@@ -110,7 +109,7 @@ ms.locfileid: "72898793"
 
 Ознакомьтесь с разделом о [мониторинге подключения](https://azure.microsoft.com/pricing/details/network-watcher/), чтобы узнать о стоимости использования мониторинга конечной точки в месяц. Для Log Analytics плата за данные доступна на [странице цен](https://azure.microsoft.com/pricing/details/log-analytics/) в разделе о приеме данных.
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/). В разделе с часто задаваемыми вопросами содержатся сведения об уровнях "Бесплатный", "На узел" и другие сведения о ценообразовании.
 

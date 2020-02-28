@@ -7,20 +7,21 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 83cac961eb3cd700451f16c684c64185b35e9bd3
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: a4c8b029b199915cce9a417430e67675a03d327f
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77616749"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77659957"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Обновление общедоступных Load Balancer Azure
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus).
 
-Обновление выполняется в два этапа.
+Обновление состоит из трех этапов.
 
 1. Перенос конфигурации
 2. Добавление виртуальных машин в серверные пулы Load Balancer (цен. категория "Стандартный")
+3. Создание правила исходящего трафика в подсистеме балансировки нагрузки для исходящего подключения
 
 В этой статье рассматривается миграция конфигурации. Добавление виртуальных машин в серверные пулы может зависеть от конкретной среды. Однако некоторые общие рекомендации [предоставляются](#add-vms-to-backend-pools-of-standard-load-balancer)на высоком уровне.
 
@@ -82,7 +83,7 @@ ms.locfileid: "77616749"
     **Пример**
 
    ```azurepowershell
-   ./AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newlocation "centralus" -newLbName "LBForUpgrade"
+   AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newlocation "centralus" -newLbName "LBForUpgrade"
    ```
 
 ### <a name="add-vms-to-backend-pools-of-standard-load-balancer"></a>Добавление виртуальных машин в серверные пулы Load Balancer (цен. категория "Стандартный")
@@ -108,6 +109,12 @@ ms.locfileid: "77616749"
 
 * **Создание новых виртуальных машин для добавления в серверные пулы вновь созданного стандартного Общедоступного Load Balancer**.
     * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal#create-virtual-machines).
+
+### <a name="create-an-outbound-rule-for-outbound-connection"></a>Создание правила исходящего трафика для исходящего подключения
+
+Следуйте [инструкциям](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-portal#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
+* Определение исходящего NAT с нуля.
+* Масштабирование и Настройка поведения существующего исходящего NAT.
 
 ## <a name="common-questions"></a>Часто задаваемые вопросы
 

@@ -1,18 +1,14 @@
 ---
 title: Автоматизация процессов Azure Application Insights с помощью Microsoft Flow
 description: Узнайте, как можно использовать Microsoft Flow для быстрой автоматизации повторяющихся процессов с помощью соединителя Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 08/29/2019
-ms.openlocfilehash: 7d9c966051c2756d7936fa079a0aac68e694425d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7566ae87f92707180b09d50eb6e5eeccedae85b9
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407545"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655097"
 ---
 # <a name="automate-azure-application-insights-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов Azure Application Insights с помощью соединителя для Microsoft Flow
 
@@ -99,9 +95,9 @@ ms.locfileid: "75407545"
 
    а. Введите адрес электронной почты получателя.
 
-   b. Введите тему сообщения.
+   б. Введите тему сообщения.
 
-   c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
+   в. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
 
    д) Выберите пункт " **отобразить дополнительные параметры** ".
 
@@ -109,15 +105,15 @@ ms.locfileid: "75407545"
 
     а. Выберите **Имя вложения**.
 
-    b. Выберите **Содержимое вложения**.
+    б. Выберите **Содержимое вложения**.
     
-    c. В поле **Является HTML** выберите значение **Да**.
+    в. В поле **Является HTML** выберите значение **Да**.
 
     ![Конфигурация Office 365 Outlook](./media/automate-with-flow/7-email.png)
 
 ### <a name="step-7-save-and-test-your-flow"></a>Шаг 7. Сохранение и тестирование потока
 
-Выберите команду **Сохранить**.
+Нажмите кнопку **Сохранить**.
 
 Вы можете подождать, пока триггер не запустит это действие, или щелкнуть значок теста ![колба](./media/automate-with-flow/testicon.png) **тест** в верхней части.
 
@@ -130,7 +126,7 @@ ms.locfileid: "75407545"
 
 ![Пример электронного сообщения](./media/automate-with-flow/flow9.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 - Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).

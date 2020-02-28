@@ -12,16 +12,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: NA
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/04/2019
+ms.date: 02/25/2020
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/04/2019
-ms.openlocfilehash: 3c84277603420567485b5199cdd2fa63ee3a2654
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1f3c16e6fe1855cf7882d83e620c70d15ce3cb92
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75378387"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77657589"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика удаленных уведомлений в центрах уведомлений Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "75378387"
 
 В следующем разделе рассматриваются сценарии, в которых уведомления могут быть удалены, от общего к редким.
 
-## <a name="notification-hubs-misconfiguration"></a>Неправильная настройка Центров уведомлений ##
+## <a name="notification-hubs-misconfiguration"></a>Неправильная настройка Центров уведомлений
 
 Чтобы отправлять уведомления в соответствующую службу push-уведомлений, центры уведомлений должны пройти проверку подлинности в контексте вашего приложения. Необходимо создать учетную запись разработчика с помощью службы уведомлений целевой платформы (Microsoft, Apple, Google и т. д.). Затем необходимо зарегистрировать приложение в операционной системе, где вы получаете маркер или ключ, используемые для работы с целевым PNS.
 
@@ -54,19 +54,20 @@ ms.locfileid: "75378387"
 ### <a name="notification-hub-name-location"></a>Расположение имени центра уведомлений
 
 Убедитесь, что имя Центра уведомлений (без опечаток) одинаковое во всех следующих расположениях:
-   * Где выполняется регистрация из клиента
-   * Куда отправляются уведомления из серверной части
-   * Где вы настроили учетные данные службы push-уведомлений
+
+* Где выполняется регистрация из клиента
+* Куда отправляются уведомления из серверной части
+* Где вы настроили учетные данные службы push-уведомлений
 
 Убедитесь, что в клиенте и серверной части приложения используются правильные строки конфигурации подписанного URL. Как правило, необходимо использовать **DefaultListenSharedAccessSignature** на клиенте и **DefaultFullSharedAccessSignature** в серверной части приложения. Это предоставляет разрешения на отправку уведомлений в концентраторы уведомлений.
 
-### <a name="apn-configuration"></a>Конфигурация точки доступа ###
+### <a name="apn-configuration"></a>Конфигурация точки доступа
 
 Необходимо поддерживать два разных концентратора: один для рабочей среды, а другой — для тестирования. Сертификат, используемый в изолированной среде, необходимо передать в отдельный центр, отличный от сертификата или концентратора, который будет использоваться в производстве. Не отправляйте разные типы сертификатов в один и тот же центр. Это приведет к сбоям уведомления.
 
 Если вы случайно отправите разные типы сертификатов в один и тот же центр, следует удалить концентратор и начать с нового концентратора. Если по какой-либо причине невозможно удалить центр, необходимо по крайней мере удалить все существующие регистрации из концентратора.
 
-### <a name="fcm-configuration"></a>Конфигурация FCM ###
+### <a name="fcm-configuration"></a>Конфигурация FCM
 
 1. Убедитесь, что *ключ сервера* , полученный от Firebase, совпадает с ключом сервера, зарегистрированным в портал Azure.
 
@@ -76,9 +77,9 @@ ms.locfileid: "75378387"
 
    ![Идентификатор проекта Firebase][1]
 
-## <a name="application-issues"></a>Проблемы с приложением ##
+## <a name="application-issues"></a>Проблемы с приложением
 
-### <a name="tags-and-tag-expressions"></a>Теги и выражения тегов ###
+### <a name="tags-and-tag-expressions"></a>Теги и выражения тегов
 
 Если вы используете теги или выражения тегов для сегментирования аудитории, возможно, при отправке уведомления целевой объект не будет найден. Эта ошибка основана на указанных тегах или выражениях тегов в вызове Send.
 
@@ -86,11 +87,11 @@ ms.locfileid: "75378387"
 
 Например, предположим, что все регистрации в концентраторах уведомлений используют тег «политики». Если отправить уведомление с тегом "Спорт", уведомление не будет отправлено на устройство. В сложном случае могут использоваться выражения тегов, в которых вы зарегистрировались с помощью тега A *или* тега b, но вы нацелены на тег a & & тега b. В разделе Советы по самостоятельной диагностике далее в этой статье показано, как просматривать регистрации и их Теги.
 
-### <a name="template-issues"></a>Проблемы с шаблонами ###
+### <a name="template-issues"></a>Проблемы с шаблонами
 
 Если используются шаблоны, убедитесь, что вы следуете рекомендациям, приведенным в статье [Шаблоны].
 
-### <a name="invalid-registrations"></a>Недопустимые регистрации ###
+### <a name="invalid-registrations"></a>Недопустимые регистрации
 
 Если центр уведомлений настроен правильно и теги или выражения тегов были использованы правильно, будут найдены допустимые целевые объекты. которым необходимо отправить уведомления. Затем Центры уведомлений параллельно запускают несколько пакетов обработки. Каждый пакет отправляет сообщения набору регистраций.
 
@@ -121,13 +122,13 @@ ms.locfileid: "75378387"
 
 Ниже приведены пути для диагностики основной причины отброшенных уведомлений в центрах уведомлений.
 
-### <a name="verify-credentials"></a>Проверка учетных данных ###
+### <a name="verify-credentials"></a>Проверка учетных данных
 
-#### <a name="push-notification-service-developer-portal"></a>Портал разработчика службы push-уведомлений ####
+#### <a name="push-notification-service-developer-portal"></a>Портал разработчика службы push-уведомлений
 
 Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. [в статье учебник. Отправка уведомлений в универсальная платформа Windows приложения с помощью центров уведомлений Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
-#### <a name="azure-portal"></a>Портал Azure ####
+#### <a name="azure-portal"></a>Портал Azure
 
 Чтобы проверить и сопоставить учетные данные с данными, полученными на портале разработчика службы push-уведомлений, перейдите на вкладку **политики доступа** в портал Azure.
 
@@ -135,46 +136,48 @@ ms.locfileid: "75378387"
 
 ### <a name="verify-registrations"></a>Проверка регистраций
 
-#### <a name="visual-studio"></a>Visual Studio ####
+#### <a name="visual-studio"></a>Visual Studio
 
 В Visual Studio можно подключиться к Azure с помощью обозреватель сервера для просмотра нескольких служб Azure, включая концентраторы уведомлений, и управления ими. Этот ярлык в первую очередь полезен для среды разработки и тестирования.
 
 ![Обозреватель серверов в Visual Studio.][9]
 
+![обозреватель серверов](media/notification-hubs-push-notification-fixer/vsserverexplorer2.png)
+
 Вы можете просматривать все регистрации в центре и управлять ими. Регистрация может быть отнесена к категории по платформе, встроенной регистрации или шаблону, тегу, идентификатору службы push-уведомлений, ИДЕНТИФИКАТОРу регистрации и дате окончания срока действия. На этой странице можно также изменить регистрацию. Это особенно полезно для редактирования тегов.
 
 Щелкните правой кнопкой мыши Центр уведомлений в **Обозреватель сервера**и выберите пункт **Диагностика**. 
 
-![Обозреватель сервера Visual Studio: меню "Диагностика"](./media/notification-hubs-diagnosing/diagnose-menu.png)
+![Обозреватель сервера Visual Studio: меню "Диагностика"](./media/notification-hubs-push-notification-fixer/diagnose-menu.png)
 
 Вы увидите следующую страницу:
 
-![Visual Studio: страница "Диагностика"](./media/notification-hubs-diagnosing/diagnose-page.png)
+![Visual Studio: страница "Диагностика"](./media/notification-hubs-push-notification-fixer/diagnose-page.png)
 
 Перейдите на страницу **регистрации устройств** .
 
-![Visual Studio: регистрация устройств](./media/notification-hubs-diagnosing/VSRegistrations.png)
+![Visual Studio: регистрация устройств](./media/notification-hubs-push-notification-fixer/VSRegistrations.png)
 
 Вы можете использовать страницу **Тестовая Отправка** для отправки тестового сообщения уведомления:
 
-![Visual Studio: Тестовая Отправка](./media/notification-hubs-diagnosing/test-send-vs.png)
+![Visual Studio: Тестовая Отправка](./media/notification-hubs-push-notification-fixer/test-send-vs.png)
 
 > [!NOTE]
 > Используйте Visual Studio для изменения регистраций только во время разработки или тестирования, а также с ограниченным количеством регистраций. Если вам необходимо выполнить многофункциональное изменение регистраций, рассмотрите возможность использования функций регистрации экспорта и импорта, описанных в статье [как выполнять операции экспорта и изменения регистраций](https://msdn.microsoft.com/library/dn790624.aspx).
 
-#### <a name="service-bus-explorer"></a>Обозреватель служебной шины ####
+#### <a name="service-bus-explorer"></a>Обозреватель шины обслуживания
 
 Многие клиенты используют [Обозреватель служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer) для просмотра концентраторов уведомлений и управления ими. который представляет собой проект с открытым кодом. 
 
 ### <a name="verify-message-notifications"></a>Проверка уведомлений о сообщениях
 
-#### <a name="azure-portal"></a>Портал Azure ####
+#### <a name="azure-portal"></a>Портал Azure
 
 Чтобы отправить тестовые уведомления клиентам, не запуская серверную часть службы, в разделе **Поддержка и устранение неполадок** выберите **Тестовая отправка**.
 
 ![Функциональные возможности тестовой отправки в Azure][7]
 
-#### <a name="visual-studio"></a>Visual Studio ####
+#### <a name="visual-studio"></a>Visual Studio
 
 Тестовые уведомления также можно отправлять с помощью Visual Studio.
 
@@ -188,7 +191,7 @@ ms.locfileid: "75378387"
 
 ### <a name="debug-failed-notifications-and-review-notification-outcome"></a>Уведомления о сбоях отладки и просмотр результатов уведомлений
 
-#### <a name="enabletestsend-property"></a>EnableTestSend, свойство ####
+#### <a name="enabletestsend-property"></a>EnableTestSend, свойство
 
 При отправке уведомления через центры уведомлений изначально уведомление помещается в очередь. Центры уведомлений определяют правильные цели, а затем отправляют уведомление в службу push-уведомлений. Если вы используете REST API или любое из клиентских пакетов SDK, возврат вызова Send означает только то, что сообщение помещается в очередь концентраторов уведомлений. Он не позволяет понять, что произошло, когда концентраторы уведомлений в конечном итоге отправили уведомление в службу push-уведомлений.
 
@@ -196,13 +199,13 @@ ms.locfileid: "75378387"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [Сведения о свойстве EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство можно использовать для просмотра подробных сведений об отладке, а также через API. Сейчас его можно использовать в пакете SDK для .NET. В конечном итоге он будет добавлен во все клиентские пакеты SDK.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Пример.
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например:
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
 ```
 
-#### <a name="net-sdk-example"></a>Пример пакета SDK для .NET ####
+#### <a name="net-sdk-example"></a>Пример пакета SDK для .NET
 
 Ниже приведен пример отправки собственного всплывающего уведомления при использовании пакета SDK для .NET:
 
@@ -229,7 +232,7 @@ Console.WriteLine(result.State);
     }
 ```
 
-#### <a name="sample-output"></a>Пример выходных данных ####
+#### <a name="sample-output"></a>Образец полученных результатов
 
 ```text
 DetailedStateAvailable
@@ -243,9 +246,9 @@ The Token obtained from the Token Provider is wrong
 > [!NOTE]
 > Использование свойства `EnableTestSend` строго регулируется. Используйте этот параметр только в среде разработки и тестирования и с ограниченным набором регистраций. Отладочные уведомления отправляются только на 10 устройств. Также существует ограничение на обработку отправок при отладке, 10 в минуту.
 
-### <a name="review-telemetry"></a>Просмотр телеметрии ###
+### <a name="review-telemetry"></a>Просмотр телеметрии
 
-#### <a name="azure-portal"></a>Портал Azure ####
+#### <a name="azure-portal"></a>Портал Azure
 
 На портале вы можете получить краткий обзор всех операций, выполняемых в Центре уведомлений.
 
@@ -261,7 +264,7 @@ The Token obtained from the Token Provider is wrong
 
 4. Если параметры проверки подлинности для Центра уведомлений неверные, будет получена ошибка **выполнения проверки подлинности PNS**. Это хороший показатель для проверки учетных данных службы push-уведомлений.
 
-#### <a name="programmatic-access"></a>Программный доступ ####
+#### <a name="programmatic-access"></a>Программный доступ
 
 Дополнительные сведения об программном доступе см. в разделе [программный доступ](https://docs.microsoft.com/previous-versions/azure/azure-services/dn458823(v=azure.100)).
 
@@ -271,16 +274,16 @@ The Token obtained from the Token Provider is wrong
 > Чтобы использовать функции, связанные с телеметрии, сначала убедитесь, что в портал Azure используется уровень служб "Стандартный".  
 
 <!-- IMAGES -->
-[0]: ./media/notification-hubs-diagnosing/Architecture.png
-[1]: ./media/notification-hubs-diagnosing/FCMConfigure.png
-[3]: ./media/notification-hubs-diagnosing/FCMServerKey.png
+[0]: ./media/notification-hubs-push-notification-fixer/Architecture.png
+[1]: ./media/notification-hubs-push-notification-fixer/FCMConfigure.png
+[3]: ./media/notification-hubs-push-notification-fixer/FCMServerKey.png
 [4]: ../../includes/media/notification-hubs-portal-create-new-hub/notification-hubs-connection-strings-portal.png
-[5]: ./media/notification-hubs-diagnosing/PortalDashboard.png
-[6]: ./media/notification-hubs-diagnosing/PortalAnalytics.png
+[5]: ./media/notification-hubs-push-notification-fixer/PortalDashboard.png
+[6]: ./media/notification-hubs-push-notification-fixer/PortalAnalytics.png
 [7]: ./media/notification-hubs-ios-get-started/notification-hubs-test-send.png
-[8]: ./media/notification-hubs-diagnosing/VSRegistrations.png
-[9]: ./media/notification-hubs-diagnosing/VSServerExplorer.png
-[10]: ./media/notification-hubs-diagnosing/VSTestNotification.png
+[8]: ./media/notification-hubs-push-notification-fixer/VSRegistrations.png
+[9]: ./media/notification-hubs-push-notification-fixer/vsserverexplorer.png
+[10]: ./media/notification-hubs-push-notification-fixer/VSTestNotification.png
 
 <!-- LINKS -->
 [Концентраторы уведомлений Azure]: notification-hubs-push-notification-overview.md

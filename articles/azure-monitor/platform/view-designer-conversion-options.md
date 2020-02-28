@@ -3,16 +3,15 @@ title: Параметры преобразования конструктора 
 description: ''
 author: austonli
 ms.author: aul
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: f04ebc1a4a53825709479ca3f1dc7ce1245fc67f
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 7bfa831332451718c0c9c05023b90104d2b8b02b
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77171557"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77658716"
 ---
 # <a name="azure-monitor-view-designer-to-workbooks-conversion-options"></a>Параметры преобразования конструктора Azure Monitor представлений в книги
 [Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они выводятся и заменяются книгами, которые предоставляют дополнительные функциональные возможности. В этой статье сравниваются фундаментальные понятия между двумя вариантами и преобразования представлений в книги.
@@ -31,7 +30,7 @@ ms.locfileid: "77171557"
 ## <a name="tile-conversion"></a>Преобразование плиток
 Конструктор представлений использует функцию плитки с обзором для представления и суммирования общего состояния. Они представлены в виде семи плиток, от чисел до диаграмм. В книгах пользователи могут создавать аналогичные визуализации и закреплять их в исходном стиле плиток обзора. 
 
-![Коллекции](media/view-designer-conversion-options/overview.png)
+![Коллекция](media/view-designer-conversion-options/overview.png)
 
 
 ## <a name="view-dashboard-conversion"></a>Просмотр преобразования панели мониторинга
@@ -44,5 +43,5 @@ ms.locfileid: "77171557"
 ![Convert](media/view-designer-conversion-options/convert-donut.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Доступ к книгам & разрешения](view-designer-conversion-access.md)

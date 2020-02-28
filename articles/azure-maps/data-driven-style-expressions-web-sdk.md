@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: e3e8476d09541518d964bfaff4dabad47755eeb9
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: c3f5fb2a387db6e672290fcf03d46c476b6211b6
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77189650"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77657109"
 ---
 # <a name="data-driven-style-expressions-web-sdk"></a>Выражения стиля на основе данных (веб-пакет SDK)
 
@@ -91,6 +91,8 @@ Azure Maps веб-пакет SDK поддерживает много типов 
 | `['has', string, object]` | Логическое | Определяет, имеют ли свойства объекта указанное свойство. |
 | `['id']` | value | Возвращает идентификатор компонента, если он имеется. |
 | `['length', string | array]` | number | Возвращает длину строки или массива. |
+| `['in', boolean | string | number, array]` | Логическое | Определяет, существует ли элемент в массиве |
+| `['in', substring, string]` | Логическое | Определяет, существует ли подстрока в строке |
 
 **Примеры**
 

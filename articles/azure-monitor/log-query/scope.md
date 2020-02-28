@@ -1,18 +1,17 @@
 ---
 title: Область запроса журнала в Azure Monitor Log Analytics | Документация Майкрософт
 description: Описывает область и диапазон времени для запроса журнала в Azure Monitor Log Analytics.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2019
-ms.openlocfilehash: dec81bfde160cd9913db07bb99629b8fbcc37364
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 897eff62fcbab5996b6b9493bd825ae412aa4c3e
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365212"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77660315"
 ---
 # <a name="log-query-scope-and-time-range-in-azure-monitor-log-analytics"></a>Область запросов журнала и временной диапазон в Azure Monitor Log Analytics
 При выполнении запроса к [журналу](log-query-overview.md) в [log Analytics в портал Azure](get-started-portal.md)набор данных, оцениваемый запросом, зависит от выбранной области и выбранного диапазона времени. В этой статье описывается область и диапазон времени, а также способы их настройки в зависимости от требований. В нем также описывается поведение различных типов областей.
@@ -23,7 +22,7 @@ ms.locfileid: "75365212"
 
 Область всегда отображается в левом верхнем углу окна Log Analytics. Значок указывает, является ли область Log Analytics рабочей или Application Insights приложением. Ни один из значков не указывает на другой ресурс Azure.
 
-![Область действия](media/scope/scope.png)
+![Область видимости](media/scope/scope.png)
 
 Область определяется методом, который используется для запуска Log Analytics. в некоторых случаях эту область можно изменить, щелкнув ее. В следующей таблице перечислены различные типы используемой области и различные сведения для каждого из них.
 
@@ -68,8 +67,8 @@ Log Analytics помогает защититься от чрезмерных и
 
 | Расположение | Свойство |
 |:---|:---|
-| Рабочая область Log Analytics          | TimeGenerated |
-| Приложение Application Insights | TIMESTAMP     |
+| Рабочая область Log Analytics          | Время создания |
+| Приложение Application Insights | timestamp     |
 
 Задайте диапазон времени, выбрав его из средства выбора времени в верхней части окна Log Analytics.  Можно выбрать предопределенный период или выбрать **Пользовательский** , чтобы указать определенный диапазон времени.
 
@@ -89,7 +88,7 @@ Log Analytics помогает защититься от чрезмерных и
 
 ![Запрос с помощью приложения](media/scope/query-app.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Пошаговое [руководство по использованию log Analytics в портал Azure](get-started-portal.md).
 - Пошаговое [руководство по написанию запросов](get-started-queries.md).

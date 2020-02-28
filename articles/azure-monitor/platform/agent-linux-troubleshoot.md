@@ -1,18 +1,17 @@
 ---
 title: Устранение неполадок агента Azure Log Analytics для Linux | Документация Майкрософт
 description: Опишите признаки, причины и способы решения наиболее распространенных проблем с агентом Log Analytics для Linux в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: b7036b305b4b1041fced3be68024be29d49a4990
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 24aa3462aef4f719e93d17389ff342084f6c7864
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086865"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77668763"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -160,7 +159,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 2. Просмотрите раздел [Обновление параметров прокси-сервера](agent-manage.md#update-proxy-settings), чтобы убедиться в правильности настройки агента для обмена данными через прокси-сервер.    
 * Убедитесь, что следующие Azure Monitor конечных точек список разрешений:
 
-    |Ресурс агента| порты; | Направление |
+    |Ресурс агента| Порты | Направление |
     |------|---------|----------|  
     |*.ods.opinsights.azure.com | Порт 443| Исходящий и входящий |  
     |*.oms.opinsights.azure.com | Порт 443| Исходящий и входящий |  

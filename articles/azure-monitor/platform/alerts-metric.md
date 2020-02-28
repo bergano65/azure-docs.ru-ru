@@ -2,17 +2,16 @@
 title: Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor
 description: Узнайте, как использовать портал Azure или CLI для создания, просмотра и управления правилами оповещений метрик.
 author: harelbr
-ms.service: azure-monitor
+ms.author: harelbr
 ms.topic: conceptual
 ms.date: 02/16/2020
-ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: ef712c38303de27214ce75c9ca2b8022a5410efc
-ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
+ms.openlocfilehash: 5452f67a9da9a71a72c9387bc3e62d6735929984
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77372760"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77664717"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -54,7 +53,7 @@ ms.locfileid: "77372760"
 
 10. При необходимости уточните условие, изменив **гранулярность статистической обработки** и **частоту вычисления**. 
 
-11. Нажмите кнопку **Done**(Готово).
+11. Нажмите кнопку **Готово**.
 
 12. При необходимости добавьте еще один критерий, если вы хотите отслеживать сложное правило генерации оповещений. Сейчас пользователи могут применять правила оповещения с одиночным условием динамического порогового значения.
 
@@ -135,7 +134,7 @@ ms.locfileid: "77372760"
     az monitor metrics alert delete -g {ResourceGroup} -n {AlertRuleName}
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-enable-template.md).
 - [Сведения о работе оповещений метрики в Azure Monitor](alerts-metric-overview.md).

@@ -1,18 +1,14 @@
 ---
 title: Непрерывный мониторинг конвейера выпуска DevOps с помощью Azure Pipelines и Azure Application Insights | Документация Майкрософт
 description: Содержит инструкции для быстрой настройки непрерывного мониторинга с помощью Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/16/2019
-ms.openlocfilehash: c891cc7564a60dfd665d84d569e266332d255fa9
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: e565101218b975ef2bd29b8a32a4aa1bf4300b6d
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677517"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655401"
 ---
 # <a name="add-continuous-monitoring-to-your-release-pipeline"></a>Добавление постоянного мониторинга к конвейеру выпуска
 
@@ -24,7 +20,7 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 1. В [Azure DevOps](https://dev.azure.com)выберите организацию и проект.
    
-1. В меню слева страницы проекта выберите **конвейеры**  > **выпуски**. 
+1. В меню слева страницы проекта выберите **конвейеры** > **выпуски**. 
    
 1. Раскройте стрелку рядом с полем **создать** и выберите **Новый конвейер выпуска**. Если у вас еще нет конвейера, на появившейся странице выберите **создать конвейер** .
    
@@ -38,7 +34,7 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 1. В области конфигурации **этап 1** заполните следующие поля: 
 
-    | Параметр        | Value |
+    | Параметр        | Значение |
    | ------------- |:-----|
    | **Название этапа**      | Укажите имя этапа или оставьте его на **этапе 1**. |
    | **Подписка Azure.** | Раскрывающийся список и выберите связанную подписку Azure, которую хотите использовать.|
@@ -101,6 +97,6 @@ Azure Pipelines интегрируется с Application Insights Azure, что
    
    ![Просмотр журналов выпусков](media/continuous-monitoring/006.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Azure Pipelines см. в [документации по Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines).

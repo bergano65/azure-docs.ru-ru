@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/28/2020
-ms.openlocfilehash: 8c9e13a61f5fcb3b7eb170b2b1110195d725c3ce
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: ea960a92aee1c9447bb12d27cffdc42de9fd907a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77493167"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77672129"
 ---
 # <a name="use-apache-pig-with-apache-hadoop-on-hdinsight"></a>Использование Apache Pig с Apache Hadoop в HDInsight
 
@@ -92,9 +92,9 @@ HDInsight может запускать задания Pig Latin с помощь
 Теперь, когда вы узнали, как использовать Pig в HDInsight, воспользуйтесь следующими ссылками, чтобы изучить другие способы работы с Azure HDInsight.
 
 * [Отправка данных в HDInsight](hdinsight-upload-data.md)
-* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](/hadoop/hdinsight-use-hive.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](./hadoop/hdinsight-use-hive.md)
 * [Использование Apache Sqoop с HDInsight](hdinsight-use-sqoop.md)
-* [Использование заданий MapReduce с HDInsight](/hadoop/hdinsight-use-mapreduce.md)
+* [Использование заданий MapReduce с HDInsight](./hadoop/hdinsight-use-mapreduce.md)
 
 [apachepig-home]: https://pig.apache.org/
 [putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html

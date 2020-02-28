@@ -1,18 +1,17 @@
 ---
 title: Инвентаризация решений мониторинга в Azure | Документация Майкрософт
 description: Решения мониторинга в Azure Monitor — это коллекция правил логики, визуализации и получения данных, которые предоставляют метрики, связанные с определенной проблемной областью.  В этой статье представлен список решений по мониторингу, доступных в корпорации Майкрософт, а также сведения о методах и частоте сбора данных.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/26/2018
-ms.openlocfilehash: 9b0140b843d7da1b892463bff7d6014a3f9584ad
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7b88d957bce45bf518fc77584f1691de8010459a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75402025"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77663136"
 ---
 # <a name="inventory-and-data-collection-details-for-monitoring-solutions-in-azure"></a>Сведения об инвентаризации и сборе данных для решений мониторинга в Azure
 [Решения для мониторинга](solutions.md) используют службы в Azure для предоставления дополнительных сведений об операциях конкретного приложения или службы. Как правило, решения мониторинга собирают данные журналов, а также предоставляют запросы и представления для анализа собранных данных. В Azure Monitor вы можете добавить решения мониторинга для всех используемых приложений и служб. Обычно они предоставляются бесплатно, но сбор данных может повлечь определенную плату за использование ресурсов.
@@ -41,17 +40,17 @@ ms.locfileid: "75402025"
 | [Аналитический журнал действий](../platform/activity-log-collect.md) | Azure | | | | | | при уведомлении |
 | [Оценка AD](ad-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
 | [Состояние репликации AD](ad-replication-status.md) |Windows |&#8226; |&#8226; | | |&#8226; |5 дней |
-| [Работоспособность агентов](solution-agenthealth.md) | Windows и Linux | &#8226; | &#8226; | | | &#8226; | 1 мин |
+| [Работоспособность агентов](solution-agenthealth.md) | Windows и Linux | &#8226; | &#8226; | | | &#8226; | 1 минута |
 | [Управление оповещениями](../platform/alert-management-solution.md) (Nagios) |Linux |&#8226; | | | | |При получении |
-| [Управление оповещениями](../platform/alert-management-solution.md) (Zabbix) |Linux |&#8226; | | | | |1 мин |
+| [Управление оповещениями](../platform/alert-management-solution.md) (Zabbix) |Linux |&#8226; | | | | |1 минута |
 | [Управление оповещениями](../platform/alert-management-solution.md) (Operations Manager) |Windows | |&#8226; | |&#8226; |&#8226; |3 минуты |
-| [Azure Site Recovery](../../site-recovery/site-recovery-overview.md) | Azure | | | | | | Н/Д |
+| [Azure Site Recovery](../../site-recovery/site-recovery-overview.md) | Azure | | | | | | Недоступно |
 | [Соединитель Application Insights (не рекомендуется)](../platform/app-insights-connector.md) | Azure | | | |  |  | при уведомлении |
-| [Гибридная рабочая роль службы автоматизации](../../automation/automation-hybrid-runbook-worker.md) | Windows | &#8226; | &#8226; |  |  |  | Н/Д |
+| [Гибридная рабочая роль службы автоматизации](../../automation/automation-hybrid-runbook-worker.md) | Windows | &#8226; | &#8226; |  |  |  | Недоступно |
 | [Анализ шлюзов приложений Azure](azure-networking-analytics.md) | Azure |  |  |  |  |  | при уведомлении |
 | **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | [Аналитика групп безопасности сетей Azure (не рекомендуется)](azure-networking-analytics.md) | Azure |  |  |  |  |  | при уведомлении |
-| [Службы анализа SQL Azure (предварительная версия)](azure-sql.md) | Windows | | | | | | 1 мин |
+| [Службы анализа SQL Azure (предварительная версия)](azure-sql.md) | Windows | | | | | | 1 минута |
 | [Azure Backup](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) | Azure |  |  |  |  |  | при уведомлении |
 | [Емкость и производительность (предварительная версия)](capacity-performance.md) |Windows |&#8226; |&#8226; | | |&#8226; |При получении |
 | [Отслеживание изменений](../../automation/change-tracking.md) |Windows |&#8226; |&#8226; | | |&#8226; |[различать](../../automation/change-tracking.md#change-tracking-data-collection-details) |
@@ -70,11 +69,11 @@ ms.locfileid: "75402025"
 | [Управление обновлениями](../../automation/automation-update-management.md) | Windows |&#8226; |&#8226; | | |&#8226; |не меньше 2 раз в день и через 15 минут после установки обновления |
 | [Готовность к обновлению](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started) | Windows | &#8226; |  |  |  |  | 2 дня |
 | [Мониторинг VMware (не рекомендуется)](vmware.md) | Linux | &#8226; |  |  |  |  | 3 минуты |
-| [Wire Data 2.0 (предварительная версия)](wire-data.md) |Windows (2012 R2/8.1 или более поздней версии) |&#8226; |&#8226; | | | | 1 мин |
+| [Wire Data 2.0 (предварительная версия)](wire-data.md) |Windows (2012 R2/8.1 или более поздней версии) |&#8226; |&#8226; | | | | 1 минута |
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [устанавливать и использовать решения для мониторинга](solutions.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.

@@ -1,18 +1,17 @@
 ---
 title: Визуализация данных из Azure Monitor | Документы Майкрософт
 description: Приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/24/2018
-ms.openlocfilehash: c350cb1f8e7343f6d8e7a416aa0bba71388eaa86
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 7bace6ff6eb7dd1c02e4907e338fc0be9d66471c
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597835"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77657815"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -24,7 +23,7 @@ ms.locfileid: "72597835"
 ## <a name="azure-dashboards"></a>Панели мониторинга Azure
 [Панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md) являются основной технологией представления данных в Azure. Они особенно полезны тем, что централизованно отображают сведения об инфраструктуре и службах Azure, позволяя быстро выявлять серьезные проблемы.
 
-![панель мониторинга](media/visualizations/dashboard.png)
+![Панель мониторинга](media/visualizations/dashboard.png)
 
 ### <a name="advantages"></a>Преимущества
 - Глубокая интеграция в Azure. Визуализации можно закреплять на панелях мониторинга из нескольких страниц Azure, включая обозреватель метрик, Log Analytics и Application Insights.
@@ -48,7 +47,7 @@ ms.locfileid: "72597835"
 ## <a name="azure-monitor-views"></a>Представления Azure Monitor
 [Представления в Azure Monitor](platform/view-designer.md) позволяют создавать пользовательские визуализации на основе данных журналов. Они используются в [решениях для мониторинга](insights/solutions.md) для представления собираемых данных.
 
-![Показать](media/visualizations/view.png)
+![Вид](media/visualizations/view.png)
 
 ### <a name="advantages"></a>Преимущества
 - Широкие возможности визуализации данных журналов.
@@ -66,7 +65,7 @@ ms.locfileid: "72597835"
 - Размер ответа запроса ограничен 8 МБ, а время выполнения запроса — 110 секундами.
 
 
-## <a name="workbooks"></a>Книги
+## <a name="workbooks"></a>Workbooks
 [Книги](../azure-monitor/app/usage-workbooks.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
 
 ![Книга](media/visualizations/workbook.png)
@@ -131,7 +130,7 @@ ms.locfileid: "72597835"
 - Значительные инженерные работы.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [данных, собранных Azure Monitor](platform/data-platform.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
 - Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).

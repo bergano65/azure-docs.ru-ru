@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: brendm
-ms.openlocfilehash: fc1f81c616dc6ee664bb5be924f2a1586646d16d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 90ff59bb76bceaacc7b0528ed0461b76832dc7fd
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76279158"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77662133"
 ---
 # <a name="analyze-logs-and-metrics-with-diagnostics-settings"></a>Анализ журналов и метрик с помощью параметров диагностики
 
@@ -25,7 +25,7 @@ ms.locfileid: "76279158"
 
 ## <a name="logs"></a>Журналы
 
-|Журнал | Description |
+|Журнал | Описание |
 |----|----|
 | **аппликатионконсоле** | Журнал консоли для всех приложений клиента. | 
 | **системлогс** | В настоящее время в этой категории регистрируются только журналы [сервера конфигурации "Весна Cloud Configuration](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) ". |
@@ -46,7 +46,7 @@ ms.locfileid: "76279158"
     * **Отправить на Log Analytics**
 
 1. Выберите категорию журнала и категорию метрик, которые требуется отслеживать, а затем укажите время хранения (в днях). Время хранения применяется только к учетной записи хранения.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 > [!NOTE]
 > Между созданием журналов и метрик и их появлением в учетной записи хранения, концентраторе событий или Log Analytics может существовать промежуток в течение 15 минут.
@@ -114,7 +114,7 @@ ms.locfileid: "76279158"
 1. Чтобы просмотреть журналы приложений, выполните поиск контейнера с именем **Insights-Logs-аппликатионконсоле**.
 1. Чтобы просмотреть метрики приложения, выполните поиск контейнера с именем **Insights-метрики-pt1m**.
 
-Дополнительные сведения об отправке диагностических сведений в учетную запись хранения см. [в статье хранение и Просмотр диагностических данных в службе хранилища Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-to-storage).
+Дополнительные сведения об отправке диагностических сведений в учетную запись хранения см. [в статье хранение и Просмотр диагностических данных в службе хранилища Azure](../storage/common/storage-introduction.md).
 
 ### <a name="use-your-event-hub"></a>Использование концентратора событий
 
