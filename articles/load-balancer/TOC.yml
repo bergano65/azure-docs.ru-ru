@@ -150,7 +150,7 @@
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn
-      href: /learn/browse/?products=azure-virtual-machines
+      href: /learn/browse/?products=azure-load-balancer
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Отзыв об Azure Load Balancer
