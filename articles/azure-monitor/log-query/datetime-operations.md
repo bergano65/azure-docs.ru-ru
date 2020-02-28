@@ -1,18 +1,17 @@
 ---
 title: Работа со значениями даты и времени в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье описывается работа с данными даты и времени в запросах журнала Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: d659be5b817317e7cec5726718f154825674349e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ea7c98a1b5b4059c5fea0cf1e8ea2ff5ef08d9d1
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365348"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655384"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
@@ -32,12 +31,12 @@ ms.locfileid: "75365348"
 |сокращение   | единица времени    |
 |:---|:---|
 |d           | day          |
-|ч           | ч.         |
-|мин           | minute       |
-|с           | second       |
+|h           | hour         |
+|m           | minute       |
+|s           | second       |
 |ms          | миллисекунда  |
 |микросекунда | микросекунда  |
-|галочка        | наносекунда   |
+|такт        | наносекунда   |
 
 Значения даты и времени можно создать путем преобразования строки с помощью оператора `todatetime`. Например, чтобы просмотреть пульс виртуальной машины, отправленный в определенный период времени, можно использовать оператор `between`, с помощью которого удобнее указывать диапазон времени.
 
@@ -85,7 +84,7 @@ Event
 | extend timeAgo = now() - TimeGenerated 
 ```
 
-Столбец `timeAgo` содержит такие значения: "00:09:31.5118992", то есть они форматируются как чч: мм: СС. fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
+В столбце `timeAgo` содержатся следующие значения: "00:09:31.5118992", т. е. дата и время в формате hh:mm:ss.fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
 
 ```Kusto
 Event
@@ -147,7 +146,7 @@ Event
 
 ## <a name="related-functions"></a>Связанные функции
 
-| Категория | Компонент |
+| Категория | Функция |
 |:---|:---|
 | Преобразование типов данных | [ToDateTime](/azure/kusto/query/todatetimefunction)  [тотимеспан](/azure/kusto/query/totimespanfunction)  |
 | Округление значения до размера ячейки | [bin](/azure/kusto/query/binfunction) |

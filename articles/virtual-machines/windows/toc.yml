@@ -370,7 +370,7 @@
       items:
         - name: "Прекращение поддержки с 1\_марта 2023\_г."
           href: ../classic-vm-deprecation.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-        - name: Обзор
+        - name: Общие сведения о переносе
           href: migration-classic-resource-manager-overview.md
         - name: Подробный обзор миграции
           href: migration-classic-resource-manager-deep-dive.md
