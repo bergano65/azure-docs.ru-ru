@@ -123,6 +123,8 @@
           href: large-number-tasks.md
         - name: Проверка на наличие ошибок заданий и задач
           href: batch-job-task-error-checking.md
+        - name: Обнаружение и обработка ошибок пакетной службы
+          href: batch-retry-after-errors.md
     - name: Создание файлов ресурсов
       href: resource-files.md
     - name: Сохранение пакетных заданий и выходных данных задач

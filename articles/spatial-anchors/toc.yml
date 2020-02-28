@@ -8,9 +8,10 @@
   expanded: true
   items:
     - name: Создание приложения Unity
-      href: unity-overview.yml
       expanded: true
       items:
+        - name: Общие сведения о Unity
+          href: unity-overview.md
         - name: HoloLens
           href: quickstarts/get-started-unity-hololens.md
         - name: Android

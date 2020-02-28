@@ -515,6 +515,8 @@
           href: data-flow-unpivot.md
         - name: Окно
           href: data-flow-window.md
+        - name: Преобразование в плоскую структуру
+          href: data-flow-flatten.md
     - name: Параметризация
       items:
         - name: Параметризация связанных служб
@@ -525,7 +527,7 @@
           href: control-flow-system-variables.md
         - name: Параметризация потоков данных для сопоставления
           href: parameters-data-flow.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Вопросы безопасности при перемещении данных
           href: data-movement-security-considerations.md
