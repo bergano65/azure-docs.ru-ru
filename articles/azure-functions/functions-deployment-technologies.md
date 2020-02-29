@@ -6,12 +6,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: gwallace
-ms.openlocfilehash: bfb7d3ad6f918d91061fa226ae2dbfcd7f27852d
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 43352117d149abbe41ba7bf49a1ffb68e46d2707
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210163"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190759"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
 
@@ -104,7 +104,7 @@ URL-адрес внешнего пакета можно использовать
 
 Используйте ZIP deploy, чтобы отправить zip-файл, содержащий приложение-функцию, в Azure. При необходимости можно настроить приложение для запуска [из пакета](run-functions-from-deployment-package.md)или указать, что выполняется [удаленная сборка](#remote-build) .
 
->__Как его использовать:__ Развертывание с помощью любимого клиентского средства: [Visual Studio Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure), [Azure functions Core Tools](functions-run-local.md)или [Azure CLI](functions-create-first-azure-function-azure-cli.md#deploy-the-function-app-project-to-azure). По умолчанию эти средства используют ZIP-развертывание и [запускаются из пакета](run-functions-from-deployment-package.md). Основные средства и расширение Visual Studio Code позволяют включить [удаленную сборку](#remote-build) при развертывании в Linux. Чтобы вручную развернуть ZIP-файл в приложении-функции, следуйте инструкциям в разделе [развертывание из файла с расширением ZIP или URL-адреса](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
+>__Как его использовать:__ Выполните развертывание с помощью любимого клиентского средства: [Visual Studio Code](functions-develop-vs-code.md#publish-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure)или из командной строки с помощью [Azure functions Core Tools](functions-run-local.md#project-file-deployment). По умолчанию эти средства используют ZIP-развертывание и [запускаются из пакета](run-functions-from-deployment-package.md). Основные средства и расширение Visual Studio Code позволяют включить [удаленную сборку](#remote-build) при развертывании в Linux. Чтобы вручную развернуть ZIP-файл в приложении-функции, следуйте инструкциям в разделе [развертывание из файла с расширением ZIP или URL-адреса](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
 >При развертывании с помощью ZIP-развертывания можно настроить приложение для [запуска из пакета](run-functions-from-deployment-package.md). Чтобы запустить из пакета, задайте для параметра приложения `WEBSITE_RUN_FROM_PACKAGE` значение `1`. Рекомендуется использовать ZIP-развертывание. Это позволяет ускорить загрузку приложений, и это значение по умолчанию для VS Code, Visual Studio и Azure CLI. 
 
@@ -196,7 +196,7 @@ URL-адрес внешнего пакета можно использовать
 
 При развертывании приложения-функции в Azure можно выполнить развертывание в отдельном слоте развертывания, а не непосредственно в рабочей среде. Дополнительные сведения о слотах развертывания см. в документации по [слотам развертывания функций Azure](../app-service/deploy-staging-slots.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими статьями, чтобы узнать больше о развертывании приложений функций. 
 

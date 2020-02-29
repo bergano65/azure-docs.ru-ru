@@ -3,12 +3,12 @@ title: Планирование развертывания кластера Azur
 description: Узнайте, как планировать и подготавливать рабочую Service Fabric развертывание кластера в Azure.
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 32d48f9ffa056d252bdf762304340f245d80fd26
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 1762a6975448301957579b3437a8af5c89b3accd
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76834456"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78193482"
 ---
 # <a name="plan-and-prepare-for-a-cluster-deployment"></a>Планирование и подготовка к развертыванию кластера
 
@@ -20,7 +20,7 @@ ms.locfileid: "76834456"
 ## <a name="select-the-os-for-the-cluster"></a>Выберите ОС для кластера
 Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server или Linux.  Перед развертыванием кластера необходимо выбрать ОС Windows или Linux.  Каждый узел (виртуальная машина) в кластере выполняет одну и ту же ОС. Вы не можете смешивать виртуальные машины Windows и Linux в одном кластере.
 
-## <a name="capacity-planning"></a>Планирование загрузки
+## <a name="capacity-planning"></a>Планирование ресурсов
 Для любой рабочей развернутой службы важным шагом является планирование загрузки. Вот несколько моментов, которые необходимо учесть:
 
 * Начальное число типов узлов для кластера 
@@ -77,7 +77,6 @@ Service Fabric позволяет создавать кластеры Service Fa
         "virtualMachineProfile": {
             "storageProfile": {
                 "osDisk": {
-                        "vhdContainers": ["[concat(reference(concat('Microsoft.Storage/storageAccounts/', parameters('vmStorageAccountName')), variables('storageApiVersion')).primaryEndpoints.blob, parameters('vmStorageAccountContainerName'))]"],
                         "caching": "ReadOnly",
                         "createOption": "FromImage",
                         "diffDiskSettings": {
@@ -103,7 +102,7 @@ Service Fabric позволяет создавать кластеры Service Fa
 
 Обратный прокси-сервер обращается к службам в кластере, которые предоставляют конечные точки HTTP (включая HTTPS). Обратный прокси-сервер значительно упрощает вызов других служб, предоставляя конкретный формат URI.  Обратный прокси-сервер также обрабатывает шаги разрешения, подключения и повтора, необходимые для взаимодействия одной службы с другой.
 
-## <a name="prepare-for-disaster-recovery"></a>Подготовка для аварийного восстановления
+## <a name="prepare-for-disaster-recovery"></a>Подготовка к аварийному восстановлению
 Для обеспечения высокого уровня доступности крайне важно гарантировать продолжение работы всех типов служб при любых сбоях. Это особенно важно в ситуациях незапланированных сбоев, которые находятся вне вашего контроля. [Подготовка к аварийному восстановлению](service-fabric-disaster-recovery.md) описывает некоторые распространенные режимы сбоев, которые могут быть аварийными, если они не моделируются и не управляются надлежащим образом. В нем также обсуждаются меры по устранению рисков и действия, выполняемые в случае возникновения аварии.
 
 ## <a name="production-readiness-checklist"></a>Контрольный список готовности рабочей среды

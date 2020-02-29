@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 771ae508aaa46167413c2e701d8193790198cb68
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 2522b31788df294c37db4326985edd6c85774561
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77565916"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191849"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -169,7 +169,7 @@ pip install --upgrade azureml-dataprep
 
 ### <a name="failure-when-installing-packages"></a>Сбой при установке пакетов
 
-Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример.
+Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример
 
 ```python
 psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
@@ -191,6 +191,14 @@ psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
 
 ```
 displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.get_portal_url(), local_run.id))
+```
+
+### <a name="import-error-cannot-import-name-timedelta-from-pandas_libstslibs"></a>Ошибка импорта: не удается импортировать имя "Тимеделта" из "Pandas. _libs. тслибс"
+
+Если вы видите эту ошибку при использовании автоматического машинного обучения, выполните в записной книжке две следующие строки:
+```
+%sh rm -rf /databricks/python/lib/python3.7/site-packages/pandas-0.23.4.dist-info /databricks/python/lib/python3.7/site-packages/pandas
+%sh /databricks/python/bin/pip install pandas==0.23.4
 ```
 
 ### <a name="import-error-no-module-named-pandascoreindexes"></a>Ошибка импорта: нет модуля с именем "Pandas. Core. indexes"

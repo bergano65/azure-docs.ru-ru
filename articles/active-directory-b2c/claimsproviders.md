@@ -2,20 +2,20 @@
 title: ClaimsProviders в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения об указании элемента ClaimsProviders настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 01/29/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0bda94344a22f39daf104e7b95e33723187c4aa1
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: dfb34085181e0b759d1d77485ff21b5bc59e0de3
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983016"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189775"
 ---
 # <a name="claimsproviders"></a>ClaimsProviders
 

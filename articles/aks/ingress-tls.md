@@ -4,12 +4,12 @@ description: Узнайте, как установить и настроить �
 services: container-service
 ms.topic: article
 ms.date: 01/29/2020
-ms.openlocfilehash: 6b465aeb08f14e48249be9587e5fdee1f4b08ba4
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 6f497ee3edd5ee831c091a5a50629df81673acea
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77595541"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191322"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -70,8 +70,8 @@ helm install nginx stable/nginx-ingress \
 $ kubectl get service -l app=nginx-ingress --namespace ingress-basic
 
 NAME                                             TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
-billowing-kitten-nginx-ingress-controller        LoadBalancer   10.0.182.160   MY_EXTERNAL_IP  80:30920/TCP,443:30426/TCP   20m
-billowing-kitten-nginx-ingress-default-backend   ClusterIP      10.0.255.77    <none>          80/TCP                       20m
+nginx-ingress-controller                         LoadBalancer   10.0.182.160   MY_EXTERNAL_IP  80:30920/TCP,443:30426/TCP   20m
+nginx-ingress-default-backend                    ClusterIP      10.0.255.77    <none>          80/TCP                       20m
 ```
 
 Правила доступа еще не созданы. Если вы перейдете на общедоступный IP-адрес, для контроллера входящего трафика NGINX по умолчанию отобразится страница 404.
@@ -116,10 +116,10 @@ az network dns record-set a add-record \
 
 ```console
 # Install the CustomResourceDefinition resources separately
-kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml --namespace ingress-basic
+kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.13/deploy/manifests/00-crds.yaml
 
 # Label the ingress-basic namespace to disable resource validation
-kubectl label namespace ingress-basic certmanager.k8s.io/disable-validation=true
+kubectl label namespace ingress-basic cert-manager.io/disable-validation=true
 
 # Add the Jetstack Helm repository
 helm repo add jetstack https://charts.jetstack.io
@@ -128,7 +128,11 @@ helm repo add jetstack https://charts.jetstack.io
 helm repo update
 
 # Install the cert-manager Helm chart
-helm install cert-manager --namespace ingress-basic --version v0.12.0 jetstack/cert-manager --set ingressShim.defaultIssuerName=letsencrypt --set ingressShim.defaultIssuerKind=ClusterIssuer
+helm install \
+  cert-manager \
+  --namespace ingress-basic \
+  --version v0.13.0 \
+  jetstack/cert-manager
 ```
 
 Дополнительные сведения о конфигурации диспетчера сертификатов см. в разделе [проект диспетчера сертификатов][cert-manager].
@@ -302,14 +306,14 @@ $ helm list --namespace ingress-basic
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 aks-helloworld          ingress-basic   1               2020-01-15 10:24:32.054871 -0600 CST    deployed        aks-helloworld-0.1.0               
 aks-helloworld-two      ingress-basic   1               2020-01-15 10:24:37.671667 -0600 CST    deployed        aks-helloworld-0.1.0               
-cert-manager            ingress-basic   1               2020-01-15 10:23:36.515514 -0600 CST    deployed        cert-manager-v0.12.0    v0.12.0    
+cert-manager            ingress-basic   1               2020-01-15 10:23:36.515514 -0600 CST    deployed        cert-manager-v0.13.0    v0.13.0    
 nginx                   ingress-basic   1               2020-01-15 10:09:45.982693 -0600 CST    deployed        nginx-ingress-1.29.1    0.27.0  
 ```
 
 Удалить выпуски командой `helm delete`. В следующем примере удаляются развертывание контроллера входящего трафика NGINX и два примера приложений hello world для AKS.
 
 ```
-$ helm delete aks-helloworld aks-helloworld-two cert-manager nginx --namespace ingress-basic
+$ helm uninstall aks-helloworld aks-helloworld-two cert-manager nginx --namespace ingress-basic
 
 release "aks-helloworld" uninstalled
 release "aks-helloworld-two" uninstalled

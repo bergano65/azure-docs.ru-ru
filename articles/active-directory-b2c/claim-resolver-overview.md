@@ -3,20 +3,20 @@ title: Арбитры утверждений в пользовательских
 titleSuffix: Azure AD B2C
 description: Узнайте, как использовать арбитры утверждений в пользовательской политике в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 03/02/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 97e51331657c62094996f79483148f2f441e6a44
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.openlocfilehash: 02277d2da2e431ac1cefdd9b018af4c25f7d5a9a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78161607"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189843"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -46,16 +46,16 @@ ms.locfileid: "78161607"
 
 ### <a name="culture"></a>Язык и региональные параметры
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
-| {Culture:RegionName} | Двухбуквенный код ISO для региона. | US |
+| {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
 | {Culture:RFC5646} | Код языка RFC5646. | ru-RU |
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -64,62 +64,62 @@ ms.locfileid: "78161607"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
-| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
+| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
 | {OIDC:DomainHint} |Параметр `domain_hint` строки запроса. | facebook.com |
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
-| {OIDC:MaxAge} | `max_age`. | Н/Д |
+| {OIDC:MaxAge} | `max_age`. | Недоступно |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | login |
-| {OIDC:Resource} |Параметр `resource` строки запроса. | Н/Д |
+| {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
 | {OIDC:scope} |Параметр `scope` строки запроса. | OpenId |
 | {OIDC: RedirectUri} |Параметр `redirect_uri` строки запроса. | https://jwt.ms |
 
 ### <a name="context"></a>Контекст
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
-| {Context:DeploymentMode} |Режим развертывания политики.  | Рабочие |
+| {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
-| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  true |
+| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  Да |
 
 ### <a name="non-protocol-parameters"></a>Не протокольные параметры
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
-| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1234 |
-| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
+| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1 234 |
+| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------------------- | --------|
-| {oauth2:access_token} | Маркер доступа. | Н/Д |
+| {oauth2:access_token} | Маркер доступа. | Недоступно |
 
 
 ### <a name="saml"></a>SAML
 
-| Утверждение | Описание | Пример |
+| Утверждение | Description | Пример |
 | ----- | ----------- | --------|
 | {SAML: Ауснконтекстклассреференцес} | Значение элемента `AuthnContextClassRef` из запроса SAML. | urn: Oasis: Names: TC: SAML: 2.0: AC: Classes: Пассвордпротектедтранспорт |
 | {SAML: Намеидполициформат} | Атрибут `Format` из элемента `NameIDPolicy` запроса SAML. | urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress |
 | {SAML: Issuer} |  Значение элемента `Issuer` SAML для запроса SAML.| https://contoso.com |
-| {SAML: Алловкреате} | Значение атрибута `AllowCreate`, из элемента `NameIDPolicy` запроса SAML. | Истина |
-| {SAML: Форцеаусн} | Значение атрибута `ForceAuthN`, из элемента `AuthnRequest` запроса SAML. | Истина |
+| {SAML: Алловкреате} | Значение атрибута `AllowCreate`, из элемента `NameIDPolicy` запроса SAML. | True |
+| {SAML: Форцеаусн} | Значение атрибута `ForceAuthN`, из элемента `AuthnRequest` запроса SAML. | True |
 | {SAML: ProviderName} | Значение атрибута `ProviderName`, из элемента `AuthnRequest` запроса SAML.| Contoso.com |
 
-## <a name="using-claim-resolvers"></a>Использование арбитров утверждений 
+## <a name="using-claim-resolvers"></a>Использование арбитров утверждений
 
-Вы можете использовать арбитры утверждений со следующими элементами: 
+Вы можете использовать арбитры утверждений со следующими элементами:
 
 | Элемент | Элемент | Настройки |
 | ----- | ----------------------- | --------|
@@ -135,7 +135,7 @@ ms.locfileid: "78161607"
 |[контентдефинитионпараметерс](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
 |Технический профиль [релингпарти](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
 
-Параметры: 
+Параметры
 1. Для метаданных `IncludeClaimResolvingInClaimsHandling` должно быть задано значение `true`.
 1. `AlwaysUseDefaultValue` атрибута входящих или исходящих утверждений должен быть установлен в значение `true`.
 
@@ -195,7 +195,7 @@ Azure AD B2C позволяет передавать параметры стро
 
 ### <a name="content-definition"></a>Определение содержимого
 
-В `LoadUri`[контентдефинитион](contentdefinitions.md) можно отправить арбитры утверждений для извлечения содержимого из разных мест в зависимости от используемых параметров. 
+В `LoadUri`[контентдефинитион](contentdefinitions.md) можно отправить арбитры утверждений для извлечения содержимого из разных мест в зависимости от используемых параметров.
 
 ```XML
 <ContentDefinition Id="api.signuporsignin">
@@ -224,7 +224,7 @@ Azure AD B2C позволяет передавать параметры стро
 
 ### <a name="relying-party-policy"></a>Политика проверяющей стороны
 
-В техническом профиле политики [проверяющей](relyingparty.md) стороны может ПОТРЕБОВАТЬСЯ отправить идентификатор клиента или идентификатор корреляции в приложение проверяющей стороны в JWT. 
+В техническом профиле политики [проверяющей](relyingparty.md) стороны может ПОТРЕБОВАТЬСЯ отправить идентификатор клиента или идентификатор корреляции в приложение проверяющей стороны в JWT.
 
 ```XML
 <RelyingParty>

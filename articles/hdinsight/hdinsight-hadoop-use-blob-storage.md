@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 11/01/2019
-ms.openlocfilehash: 55cddf5317938dea353517cde7260a1aa531d1df
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.date: 02/28/2020
+ms.openlocfilehash: f496f6c06d36f817b0a933bdc68d5c53f308e3f2
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77061264"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192631"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Использование службы хранилища Azure с кластерами Azure HDInsight
 
@@ -38,7 +38,7 @@ ms.locfileid: "77061264"
 > [!NOTE]  
 > Архивный уровень доступа — это уровень вне сети, который имеет задержку при получении нескольких часов и не рекомендуется для использования с HDInsight. Дополнительные сведения см. в разделе [Архивный уровень доступа](../storage/blobs/storage-blob-storage-tiers.md#archive-access-tier).
 
-## <a name="access-files-from-the-cluster"></a>Доступ к файлам из кластера
+## <a name="access-files-from-within-cluster"></a>Доступ к файлам из кластера
 
 Существует несколько способов доступа к файлам в Data Lake Storage из кластера HDInsight. Эта схема URI предоставляет как незашифрованный доступ с префиксом *wasb:* , так и доступ с использованием SSL-шифрования с *wasbs*. Мы рекомендуем использовать *wasbs* всегда, когда это возможно, даже при обращении к данным, которые хранятся в том же регионе Azure.
 
@@ -122,6 +122,17 @@ LOCATION 'wasbs:///example/data/';
 LOCATION '/example/data/';
 ```
 
+## <a name="access-files-from-outside-cluster"></a>Доступ к файлам из внешнего кластера
+
+Корпорация Майкрософт предоставляет следующие средства для работы с хранилищем Azure:
+
+| Инструмент | Linux | OS X | Windows |
+| --- |:---:|:---:|:---:|
+| [Портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
+| [Azure CLI](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
+| [Azure PowerShell](../storage/blobs/storage-quickstart-blobs-powershell.md) | | |✔ |
+| [AzCopy](../storage/common/storage-use-azcopy-v10.md) |✔ | |✔ |
+
 ## <a name="identify-storage-path-from-ambari"></a>Указание пути к хранилищу из Ambari
 
 * Чтобы указать полный путь к настроенному хранилищу по умолчанию, перейдите по адресу:
@@ -132,6 +143,8 @@ LOCATION '/example/data/';
 
     **HDFS** > **конфигурации** и введите `blob.core.windows.net` в поле ввода фильтра.
 
+Чтобы получить путь с помощью REST API Ambari, см. раздел [Получение хранилища по умолчанию](./hdinsight-hadoop-manage-ambari-rest-api.md#get-the-default-storage).
+
 ## <a name="blob-containers"></a>Контейнеры больших двоичных объектов
 
 Чтобы использовать большие двоичные объекты, сначала создайте [учетную запись хранения Azure](../storage/common/storage-create-storage-account.md). В рамках этого процесса укажите регион Azure, в котором создается учетная запись хранения. Кластер и учетная запись хранения должны размещаться в одном регионе. База данных SQL Server хранилища метаданных Hive и база данных SQL Server хранилища метаданных Apache Oozie также должны располагаться в одном регионе.
@@ -141,17 +154,6 @@ LOCATION '/example/data/';
 Стандартный контейнер больших двоичных объектов хранит сведения о кластере, включая журналы заданий. Не используйте стандартный контейнер BLOB-объектов с несколькими кластерами HDInsight. Это может привести к искажению истории заданий. Рекомендуется использовать другой контейнер для каждого кластера и размещать общие данные в связанной учетной записи хранения, указанной в развертывании всех соответствующих кластеров, а не в учетной записи хранения по умолчанию. Дополнительные сведения о настройке связанных учетных записей хранения см. в разделе [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md). Тем не менее, вы можете повторно использовать контейнер хранения по умолчанию после удаления исходного кластера HDInsight. Для кластеров HBase можно фактически размещать схему и данные таблицы HBase, создавая новый кластер HBase с помощью контейнера больших двоичных объектов по умолчанию, используемого кластером HBase, который был удален.
 
 [!INCLUDE [secure-transfer-enabled-storage-account](../../includes/hdinsight-secure-transfer.md)]
-
-## <a name="interacting-with-azure-storage"></a>Взаимодействие со службой хранилища Azure
-
-Корпорация Майкрософт предоставляет следующие средства для работы с хранилищем Azure:
-
-| Инструмент | Linux | OS X | Windows |
-| --- |:---:|:---:|:---:|
-| [Портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
-| [Azure CLI](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
-| [Azure PowerShell](../storage/blobs/storage-quickstart-blobs-powershell.md) | | |✔ |
-| [AzCopy](../storage/common/storage-use-azcopy-v10.md) |✔ | |✔ |
 
 ## <a name="use-additional-storage-accounts"></a>Использование дополнительных учетных записей хранения
 

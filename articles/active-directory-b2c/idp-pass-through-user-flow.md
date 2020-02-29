@@ -3,20 +3,20 @@ title: Передача маркера доступа через поток по
 titleSuffix: Azure AD B2C
 description: Узнайте, как передать маркер доступа для поставщиков удостоверений OAuth 2,0 в качестве утверждения в потоке пользователя в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/17/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 25a8181d404091064c26407c98fe31465cd4f4b3
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 312d093548b6e3cf3654f45d7610e8fc474a87b8
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76838961"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78187792"
 ---
 # <a name="pass-an-access-token-through-a-user-flow-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью потока пользователя в приложение в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "76838961"
 
 В настоящее время Azure AD B2C поддерживает только передачу маркера доступа поставщиков удостоверений [OAuth 2.0](authorization-code-flow.md), в том числе [Facebook](identity-provider-facebook.md) и [Google](identity-provider-google.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Приложение должно использовать [поток пользователя версии 2](user-flow-versions.md).
 * Ваш поток пользователя настроен с поставщиком удостоверений OAuth 2.0.

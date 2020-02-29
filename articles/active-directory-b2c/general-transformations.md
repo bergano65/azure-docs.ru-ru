@@ -3,20 +3,20 @@ title: Общие примеры преобразования утвержден
 titleSuffix: Azure AD B2C
 description: Общие примеры преобразования утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 02/03/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 98d9730168764f0ba683a246f9ac224c13d3bf31
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: afdf2f531ede30d868123d89cac94fcfae070384
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982812"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188551"
 ---
 # <a name="general-claims-transformations"></a>Преобразования общих утверждений
 
@@ -36,13 +36,13 @@ ms.locfileid: "76982812"
 Используйте это преобразование утверждений для копирования значения из строки или числового утверждения в другое утверждение. В следующем примере значение утверждения Екстерналемаил копируется в утверждение по электронной почте.
 
 ```XML
-<ClaimsTransformation Id="CopyEmailAddress" TransformationMethod="CopyClaim"> 
+<ClaimsTransformation Id="CopyEmailAddress" TransformationMethod="CopyClaim">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="externalEmail" TransformationClaimType="inputClaim"/>
   </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="email" TransformationClaimType="outputClaim"/>
-  </OutputClaims>         
+  </OutputClaims>
 </ClaimsTransformation>
 ```
 
@@ -51,7 +51,7 @@ ms.locfileid: "76982812"
 - Входящие утверждения:
     - **inputClaim**: bob@contoso.com.
 - Исходящие утверждения:
-    - **outputClaim**: bob@contoso.com. 
+    - **outputClaim**: bob@contoso.com.
 
 ## <a name="doesclaimexist"></a>DoesClaimExist
 
@@ -88,10 +88,10 @@ ms.locfileid: "76982812"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | plaintext | string | Входящее утверждение для шифрования |
-| InputClaim | salt | string | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
-| InputParameter | randomizerSecret | string | Указывает на существующий **ключ политики**Azure AD B2C. Чтобы создать новый ключ политики, в Azure AD B2C клиенте в разделе **Управление**выберите инфраструктура процедур **идентификации**. Выберите **ключи политики** , чтобы просмотреть ключи, доступные в вашем клиенте. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Укажите имя (префикс *B2C_1A_* может быть добавлен автоматически.). В текстовом поле **секрет** введите любой секрет, который вы хотите использовать, например 1234567890. Для параметра **Использование ключа** выберите **Подпись**. Щелкните **Создать**. |
-| outputClaim | hash | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений. Утверждение, настроенное в inputClaim `plaintext`. |
+| InputClaim | plaintext | строка | Входящее утверждение для шифрования |
+| InputClaim | salt | строка | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
+| InputParameter | randomizerSecret | строка | Указывает на существующий **ключ политики**Azure AD B2C. Чтобы создать новый ключ политики, в Azure AD B2C клиенте в разделе **Управление**выберите инфраструктура процедур **идентификации**. Выберите **ключи политики** , чтобы просмотреть ключи, доступные в вашем клиенте. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Укажите имя (префикс *B2C_1A_* может быть добавлен автоматически.). В текстовом поле **секрет** введите любой секрет, который вы хотите использовать, например 1234567890. Для параметра **Использование ключа** выберите **Подпись**. Нажмите кнопку **Создать**. |
+| outputClaim | hash | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. Утверждение, настроенное в inputClaim `plaintext`. |
 
 ```XML
 <ClaimsTransformation Id="HashPasswordWithEmail" TransformationMethod="Hash">

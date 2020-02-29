@@ -2,20 +2,20 @@
 title: Настройка прямого входа в систему с помощью Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как настроить предварительное заполнение имени для входа или перенаправление непосредственно в поставщик удостоверений в социальных сетях.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 06/18/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8c0f3d8f3f49001e1326688ccc794e19d1148e5d
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 9a02ad3ea43ae9d91489417bc314e3c23d54a958
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67846887"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188772"
 ---
 # <a name="set-up-direct-sign-in-using-azure-active-directory-b2c"></a>Настройка прямого входа в систему с помощью Azure Active Directory B2C
 
@@ -25,7 +25,7 @@ ms.locfileid: "67846887"
 
 Во время входа пользователя в систему приложение проверяющей стороны может предложить определенное имя пользователя или домена. При этом приложение может указать параметр запроса `login_hint` с именем пользователя в запросе на авторизацию. Azure AD B2C автоматически заполняет имя для входа в систему — пользователю нужно ввести только пароль.
 
-![Страница входа с параметром запроса login_hint, выделенным в URL-адресе](./media/direct-signin/login-hint.png)
+![Страница входа с login_hint параметром запроса, выделенным в URL-адресе](./media/direct-signin/login-hint.png)
 
 Пользователь может изменить значение, отображаемое в текстовом поле, для входа в систему.
 
@@ -49,7 +49,7 @@ ms.locfileid: "67846887"
 
 Если вы настроили для приложения возможность входа с использованием учетных записей социальных сетей, таких как Facebook, LinkedIn или Google, вы можете указать параметр `domain_hint`. Этот параметр запроса сообщает Azure AD B2C о поставщике удостоверений социальных сетей, который должен использоваться для входа в систему. Например, если приложение указывает `domain_hint=facebook.com`, вход в систему выполняется непосредственно на странице входа в Facebook.
 
-![Страница входа с параметром запроса domain_hint, выделенным в URL-адресе](./media/direct-signin/domain-hint.png)
+![Страница входа с domain_hint параметром запроса, выделенным в URL-адресе](./media/direct-signin/domain-hint.png)
 
 Если вы используете пользовательскую политику, вы можете настроить доменное имя с помощью XML-элемента `<Domain>domain name</Domain>` любого `<ClaimsProvider>`.
 

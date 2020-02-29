@@ -3,20 +3,20 @@ title: Настройка входа с использованием учетн�
 titleSuffix: Azure AD B2C
 description: Настройте вход с помощью учетной записи LinkedIn в Azure Active Directory B2C с помощью настраиваемых политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/25/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f4ad74104d34e7e2c3f4d6aafc05b36574f8e287
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 80bd1b65d04ea49fc742033e1850d95a85021c9f
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847437"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188177"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
@@ -24,7 +24,7 @@ ms.locfileid: "76847437"
 
 В этой статье показано, как включить вход для пользователей из учетной записи LinkedIn с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Учетная запись LinkedIn. Если у вас еще нет [учетной записи, создайте](https://www.linkedin.com/start/join)ее.
@@ -77,7 +77,7 @@ ms.locfileid: "76847437"
 
 Определите учетную запись LinkedIn в качестве поставщика утверждений, добавив ее в элемент **клаимспровидерс** в файле расширения политики.
 
-1. Откройте файл *SocialAndLocalAccounts/ **TrustFrameworkExtensions. XML*** в редакторе. Этот файл находится в [начальном пакете пользовательской политики][starter-pack] , скачанном в рамках одного из необходимых компонентов.
+1. Откройте файл *SocialAndLocalAccounts/* * TrustFrameworkExtensions. XML** * в редакторе. Этот файл находится в [начальном пакете пользовательской политики][starter-pack] , скачанном в рамках одного из необходимых компонентов.
 1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
 1. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
@@ -178,7 +178,7 @@ ms.locfileid: "76847437"
 
 1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
+3. Нажмите кнопку **Отправка**.
 
 ## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
 
@@ -246,7 +246,7 @@ ms.locfileid: "76847437"
 <Item Key="scope">r_emailaddress r_basicprofile</Item>
 ```
 
-на:
+Кому:
 
 ```XML
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v2/me</Item>
@@ -272,7 +272,7 @@ ms.locfileid: "76847437"
 <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
 ```
 
-на:
+Кому:
 
 ```XML
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName.localized" />

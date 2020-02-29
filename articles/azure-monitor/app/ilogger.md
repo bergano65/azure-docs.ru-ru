@@ -4,12 +4,12 @@ description: Примеры использования поставщика Azur
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: e2b306670c43722279327301b15630f96da50ea5
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 2c97c79229c6f136c154169253f2299b7756a105
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77659940"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192478"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>Аппликатионинсигхтслогжерпровидер для журналов ILogger для .NET Core
 
@@ -104,7 +104,7 @@ public class ValuesController : ControllerBase
 ### <a name="capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps"></a>Запись журналов ILogger из Startup.cs и Program.cs в приложениях ASP.NET Core
 
 > [!NOTE]
-> В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в разделе https://github.com/aspnet/Announcements/issues/353.
+> В ASP.NET Core 3,0 и более поздних версий больше нельзя внедрять `ILogger` в Startup.cs и Program.cs. Дополнительные сведения см. в статье https://github.com/aspnet/Announcements/issues/353.
 
 Новый Аппликатионинсигхтслогжерпровидер может записывать журналы с самого начала в конвейере запуска приложения. Хотя Аппликатионинсигхтслогжерпровидер автоматически включается в Application Insights (начиная с версии 2.7.1), ключ инструментирования не настраивается до последующего в конвейере. Таким образом, будут записываться только журналы из классов. другие **контроллера**. Чтобы записать каждый журнал, начиная с **Program.CS** и **Startup.CS** , необходимо явно включить ключ инструментирования для аппликатионинсигхтслогжерпровидер. Кроме того, *телеметриконфигуратион* не полностью настраивается при регистрации из **Program.CS** или **Startup.CS** . Поэтому эти журналы будут иметь минимальную конфигурацию, которая использует InMemoryChannel, без выборки и не имеет стандартных инициализаторов телеметрии или процессоров.
 
@@ -426,7 +426,7 @@ Application Insights записывает и отправляет журналы
 ```csharp
 public class MyController : ApiController
 {
-   // This telemtryclient can be used to track additional telemetry using TrackXXX() api.
+   // This telemetryclient can be used to track additional telemetry using TrackXXX() api.
    private readonly TelemetryClient _telemetryClient;
    private readonly ILogger _logger;
 
@@ -496,7 +496,7 @@ public class MyController : ApiController
    }
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. также:
 

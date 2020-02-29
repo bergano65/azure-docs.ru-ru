@@ -3,20 +3,20 @@ title: Настройка входа с помощью учетной запис
 titleSuffix: Azure AD B2C
 description: Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 10/05/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4a0767938f8a470c63ec7fe3d7789212b1baf871
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 2de891ee109677f92ff603759701f7732f5951ba
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846631"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188517"
 ---
 # <a name="set-up-sign-in-with-an-amazon-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon
 
@@ -24,7 +24,7 @@ ms.locfileid: "76846631"
 
 В этой статье показано, как включить вход для пользователей из учетной записи Amazon с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Создайте учетную запись Amazon на сайте [https://www.amazon.com/](https://www.amazon.com/), если у вас ее еще нет.
