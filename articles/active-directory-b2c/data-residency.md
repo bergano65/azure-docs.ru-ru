@@ -3,20 +3,20 @@ title: Доступность региона и местонахождение �
 titleSuffix: Azure AD B2C
 description: Доступность региона, местонахождение данных и сведения о клиентах Azure Active Directory B2C предварительной версии.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/26/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 532136be69356b634959a762f4eeb1c1c4af5a82
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 3df0f581d0d2a1e5ca02202b4eeaede5a1dd5362
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849179"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188857"
 ---
 # <a name="azure-active-directory-b2c-region-availability--data-residency"></a>Azure Active Directory B2C: доступность в регионах и местонахождение данных
 
@@ -34,7 +34,7 @@ Azure AD B2C является **общедоступным по всему ми�
 
 Это отличается от модели, за которой следуют большинство других служб Azure, которые обычно имеют *местонахождение данных*о *доступности* . Примеры этого можно увидеть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/) и в [калькуляторе цен Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 
-## <a name="data-residency"></a>Хранение данных
+## <a name="data-residency"></a>Местонахождение данных
 
 Azure AD B2C сохраняет данные пользователя в США, Европе или в Азиатско-Тихоокеанский регион регионе.
 

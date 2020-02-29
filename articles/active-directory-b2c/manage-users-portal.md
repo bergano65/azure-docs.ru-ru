@@ -2,20 +2,20 @@
 title: Создание & удаление учетных записей пользователей Azure AD B2C потребителя в портал Azure
 description: Узнайте, как использовать портал Azure для создания и удаления пользователей-получателей в каталоге Azure AD B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/09/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9d96db5cf062da1b2e8badd80a9a00620b724fd4
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: c8fad8b5bd2dccba36c0c6888712fa806f3cbfc8
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840423"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78187225"
 ---
 # <a name="use-the-azure-portal-to-create-and-delete-consumer-users-in-azure-ad-b2c"></a>Используйте портал Azure для создания и удаления пользователей-получателей в Azure AD B2C
 
@@ -30,8 +30,8 @@ ms.locfileid: "76840423"
 Как описано в разделе [Обзор учетных записей пользователей в Azure AD B2C](user-overview.md), существует три типа учетных записей пользователей, которые могут быть созданы в каталоге Azure AD B2C.
 
 * Work
-* Гостевой режим
-* Потребитель
+* Гость
+* Группы клиентов
 
 Эта статья посвящена работе с **учетными записями потребителей** в портал Azure. Сведения о создании и удалении рабочих и гостевых учетных записей см. в разделе [Добавление или удаление пользователей с помощью Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "76840423"
 1. Используемых Вы можете **заблокировать вход** , если хотите отложить возможность входа пользователя в систему. Вы можете включить вход позже, изменив **профиль** пользователя в портал Azure.
 1. Выберите **Автоматическое создание пароля** или **дайте мне возможность создать пароль**.
 1. Укажите **имя** и **фамилию**пользователя.
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 
 Если вы не выбрали параметр **блокировать вход**, пользователь может войти в систему, используя указанный метод входа (адрес электронной почты или имя пользователя).
 

@@ -2,20 +2,20 @@
 title: Управление пользовательскими политиками с помощью PowerShell
 titleSuffix: Azure AD B2C
 description: Используйте командлет PowerShell Azure Active Directory (Azure AD) для программного управления пользовательскими политиками Azure AD B2C. Создание, чтение, обновление и удаление настраиваемых политик с помощью PowerShell.
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/14/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e29bb245ed0fc79a6f72688dc6e4d044f2828c45
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: ebf0cfffa410d8dfe2f0e0b42a0fee0c16106fde
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463132"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78187412"
 ---
 # <a name="manage-azure-ad-b2c-custom-policies-with-azure-powershell"></a>Управление Azure AD B2C пользовательскими политиками с помощью Azure PowerShell
 
@@ -27,7 +27,7 @@ Azure PowerShell предоставляет несколько командле�
 * Отправка новой политики в клиент Azure AD B2C
 * Удаление настраиваемой политики из клиента
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Azure AD B2C клиент](tutorial-create-tenant.md)и учетные данные для пользователя в каталоге с ролью [администратора политики B2C инфраструктура процедур идентификации](../active-directory/users-groups-roles/directory-assign-admin-roles.md#b2c-ief-policy-administrator)
 * [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
@@ -193,7 +193,7 @@ Message: Validation failed: 1 validation error(s) found in policy "B2C_1A_SIGNUP
 
 Сведения об устранении неполадок настраиваемых политик см. в разделе [Устранение неполадок Azure AD B2C пользовательских политик и инфраструктуры процедур идентификации](active-directory-b2c-guide-troubleshooting-custom.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об использовании PowerShell для развертывания настраиваемых политик в рамках конвейера непрерывной интеграции и непрерывной поставки (CI/CD) см. в статье [развертывание настраиваемых политик в конвейере Azure DevOps](deploy-custom-policies-devops.md).
 

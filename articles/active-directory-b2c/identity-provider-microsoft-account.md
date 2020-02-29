@@ -3,20 +3,20 @@ title: Настройка регистрации и входа с помощью
 titleSuffix: Azure AD B2C
 description: Обеспечение регистрации и входа для клиентов с учетными записями Майкрософт в приложениях с помощью Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f023fea4340fed6fa50defb3797c776a51bad5f4
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 25784eb161a860398b0741d1d20375cabd1c4eca
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849556"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188024"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
@@ -49,4 +49,4 @@ ms.locfileid: "76849556"
 1. Введите **Имя**. Например, *MSA*.
 1. В поле **идентификатор клиента**введите идентификатор приложения (клиента) приложения Azure AD, созданного ранее.
 1. В качестве **секрета клиента**введите записанный секрет клиента.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.

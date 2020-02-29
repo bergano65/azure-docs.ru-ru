@@ -1,6 +1,6 @@
 ---
 title: Определенные пользователем точки восстановления
-description: Как создать точку восстановления хранилище данных SQL Azure.
+description: Создание точки восстановления для пула SQL.
 services: sql-data-warehouse
 author: anumjs
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 07/03/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: bf092b5b6c6eb88b565a940de56d614426e34d8e
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 72e2535730dc6c814708ef3ff563136235930475
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759607"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198286"
 ---
 # <a name="user-defined-restore-points"></a>Определенные пользователем точки восстановления
 
-Из этой статьи вы узнаете, как создать новую определяемую пользователем точку восстановления для хранилища данных SQL Azure с помощью PowerShell и портал Azure.
+Из этой статьи вы узнаете, как создать новую определяемую пользователем точку восстановления для пула SQL в Azure синапсе Analytics с помощью PowerShell и портал Azure.
 
 ## <a name="create-user-defined-restore-points-through-powershell"></a>Создание определяемых пользователем точек восстановления с помощью PowerShell
 
@@ -62,9 +62,9 @@ Get-AzSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName
 
 1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
 
-2. Перейдите к хранилищу данных SQL, для которого необходимо создать точку восстановления.
+2. Перейдите в пул SQL, для которого необходимо создать точку восстановления.
 
-3. На панели слева выберите **Обзор** и щелкните **+ создать точку восстановления**. Если кнопка Создать точку восстановления не включена, убедитесь, что хранилище данных не приостановлено.
+3. На панели слева выберите **Обзор** и щелкните **+ создать точку восстановления**. Если кнопка Создать точку восстановления не включена, убедитесь, что пул SQL не приостановлен.
 
     ![Новая точка восстановления](./media/sql-data-warehouse-restore-points/creating-restore-point-01.png)
 
@@ -74,7 +74,7 @@ Get-AzSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Восстановление существующего хранилища данных](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление удаленного хранилища данных](sql-data-warehouse-restore-deleted-dw.md)
-- [Восстановление из хранилища геоархивных данных](sql-data-warehouse-restore-from-geo-backup.md)
+- [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
+- [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)
 

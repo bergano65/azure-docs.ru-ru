@@ -1,6 +1,6 @@
 ---
 title: Элементы языка T-SQL
-description: Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
+description: Ссылки на документацию по инструкциям T-SQL, поддерживаемым в SQL Analytics.
 services: sql-data-warehouse
 author: XiaoyuMSFT
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: query
 ms.date: 06/13/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 02f463e12547ba64a05e04988d9c192bba4f6a27
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: azure-synapse
+ms.openlocfilehash: edd77d711654a7f2793eb3c08b93e85fc0a89e8f
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692526"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198428"
 ---
-# <a name="t-sql-language-elements-supported-in-azure-sql-data-warehouse"></a>Элементы языка T-SQL, поддерживаемые в хранилище данных SQL Azure
-Ссылки на документацию по элементам языка T-SQL, поддерживаемым в хранилище данных SQL Azure.
+# <a name="t-sql-language-elements-supported-in-sql-analytics"></a>Элементы языка T-SQL, поддерживаемые в SQL Analytics
+Ссылки на документацию по элементам языка T-SQL, поддерживаемым в SQL Analytics.
 
 ## <a name="core-elements"></a>Основные элементы
 * [соглашения о синтаксисе](/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql)
@@ -28,9 +28,9 @@ ms.locfileid: "73692526"
 * [параметры сортировки](https://msdn.microsoft.com/library/ff848763.aspx)
 * [комментарии](https://msdn.microsoft.com/library/ms181627.aspx)
 * [константы](https://msdn.microsoft.com/library/ms179899.aspx)
-* [Типы данных](https://msdn.microsoft.com/library/ms187752.aspx)
+* [типы данных](https://msdn.microsoft.com/library/ms187752.aspx)
 * [EXECUTE](https://msdn.microsoft.com/library/ms188332.aspx)
-* [выражений](https://msdn.microsoft.com/library/ms190286.aspx)
+* [выражения](https://msdn.microsoft.com/library/ms190286.aspx)
 * [KILL](https://msdn.microsoft.com/library/ms173730.aspx)
 * [Временное решение свойства IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx)
 * [PRINT](https://msdn.microsoft.com/library/ms176047.aspx)
@@ -48,16 +48,16 @@ ms.locfileid: "73692526"
 * [WHILE](https://msdn.microsoft.com/library/ms178642.aspx)
 
 ## <a name="operators"></a>Операторы
-* [+ (добавление)](https://msdn.microsoft.com/library/ms178565.aspx)
+* [+ (сложение)](https://msdn.microsoft.com/library/ms178565.aspx)
 * [+ (объединение строк)](https://msdn.microsoft.com/library/ms177561.aspx)
-* [- (Отрицательное число)](https://msdn.microsoft.com/library/ms189480.aspx)
-* [- (Вычитание)](https://msdn.microsoft.com/library/ms189518.aspx)
-* [* (Умножение)](https://msdn.microsoft.com/library/ms176019.aspx)
-* [/ (Деление)](https://msdn.microsoft.com/library/ms175009.aspx)
+* [- (отрицательное значение)](https://msdn.microsoft.com/library/ms189480.aspx)
+* [- (вычитание)](https://msdn.microsoft.com/library/ms189518.aspx)
+* [* (умножение)](https://msdn.microsoft.com/library/ms176019.aspx)
+* [/ (деление)](https://msdn.microsoft.com/library/ms175009.aspx)
 * [Остаток от деления](https://msdn.microsoft.com/library/ms190279.aspx)
 
 ## <a name="wildcard-characters-to-match"></a>Подстановочные знаки для сопоставления
-* [= (Равно)](https://msdn.microsoft.com/library/ms175118.aspx)
+* [= (равно)](https://msdn.microsoft.com/library/ms175118.aspx)
 * [> (больше)](https://msdn.microsoft.com/library/ms178590.aspx)
 * [< (меньше)](https://msdn.microsoft.com/library/ms179873.aspx)
 * [>= (больше или равно)](https://msdn.microsoft.com/library/ms181567.aspx)
@@ -73,16 +73,16 @@ ms.locfileid: "73692526"
 * [NOT](https://msdn.microsoft.com/library/ms189455.aspx)
 * [OR](https://msdn.microsoft.com/library/ms188361.aspx)
 
-### <a name="bitwise-operators"></a>Битовые операторы
-* [& (битовый AND)](https://msdn.microsoft.com/library/ms174965.aspx)
-* [| (битовый OR)](https://msdn.microsoft.com/library/ms186714.aspx)
+### <a name="bitwise-operators"></a>Побитовые операторы
+* [& (побитовое И)](https://msdn.microsoft.com/library/ms174965.aspx)
+* [| (побитовое ИЛИ)](https://msdn.microsoft.com/library/ms186714.aspx)
 * [^ (битовый исключающий OR)](https://msdn.microsoft.com/library/ms190277.aspx)
-* [~ (битовый NOT)](https://msdn.microsoft.com/library/ms173468.aspx)
-* [^= (битовый исключающий OR EQUALS)](https://msdn.microsoft.com/library/cc627413.aspx)
-* [|= (битовый OR EQUALS)](https://msdn.microsoft.com/library/cc627409.aspx)
-* [&= (битовый AND EQUALS)](https://msdn.microsoft.com/library/cc627427.aspx)
+* [~ (побитовое НЕ)](https://msdn.microsoft.com/library/ms173468.aspx)
+* [^= (побитовое исключающее ИЛИ РАВНО)](https://msdn.microsoft.com/library/cc627413.aspx)
+* [|= (побитовое ИЛИ РАВНО)](https://msdn.microsoft.com/library/cc627409.aspx)
+* [&= (побитовое И РАВНО)](https://msdn.microsoft.com/library/cc627427.aspx)
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 * [@@DATEFIRST](https://msdn.microsoft.com/library/ms187766.aspx)
 * [@@ERROR](https://msdn.microsoft.com/library/ms188790.aspx)
 * [@@LANGUAGE](https://msdn.microsoft.com/library/ms177557.aspx)
@@ -226,11 +226,11 @@ ms.locfileid: "73692526"
 * [YEAR](https://msdn.microsoft.com/library/ms186313.aspx)
 * [XACT_STATE](https://msdn.microsoft.com/library/ms189797.aspx)
 
-## <a name="transactions"></a>Транзакции
+## <a name="transactions"></a>Transactions
 * [транзакции;](https://msdn.microsoft.com/library/mt204031.aspx)
 
 ## <a name="diagnostic-sessions"></a>Сеансы диагностики
-* [СОЗДАНИЕ СЕАНСА ДИАГНОСТИКИ](https://msdn.microsoft.com/library/mt204029.aspx)
+* [Создание сеанса диагностики](https://msdn.microsoft.com/library/mt204029.aspx)
 
 ## <a name="procedures"></a>Процедуры
 * [sp_addrolemember](https://msdn.microsoft.com/library/ms187750.aspx)
@@ -255,7 +255,7 @@ ms.locfileid: "73692526"
 * [sp_tables](https://msdn.microsoft.com/library/ms186250.aspx)
 * [sp_unprepare](https://msdn.microsoft.com/library/ff848735.aspx)
 
-## <a name="set-statements"></a>Инструкции SET
+## <a name="set-statements"></a>SET, инструкции
 * [SET ANSI_DEFAULTS](https://msdn.microsoft.com/library/ms188340.aspx)
 * [SET ANSI_NULL_DFLT_OFF](https://msdn.microsoft.com/library/ms187356.aspx)
 * [SET ANSI_NULL_DFLT_ON](https://msdn.microsoft.com/library/ms187375.aspx)
@@ -278,5 +278,5 @@ ms.locfileid: "73692526"
 * [SET XACT_ABORT](https://msdn.microsoft.com/library/ms188792.aspx)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные справочные сведения см. в разделах [Инструкции T-SQL, поддерживаемые в хранилище данных SQL Azure](sql-data-warehouse-reference-tsql-statements.md) и [System views supported in Azure SQL Data Warehouse](sql-data-warehouse-reference-tsql-system-views.md) (Системные представления в хранилище данных SQL Azure).
+Дополнительные справочные сведения см. [в статьях инструкции T-SQL в SQL Analytics](sql-data-warehouse-reference-tsql-statements.md)и [системные представления в SQL Analytics](sql-data-warehouse-reference-tsql-system-views.md).
 

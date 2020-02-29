@@ -1,6 +1,6 @@
 ---
-title: Восстановление хранилища данных после удаления
-description: Руководство по восстановлению удаленного хранилища данных SQL Azure.
+title: Восстановление удаленного пула SQL
+description: Руководство по восстановлению удаленного пула SQL.
 services: sql-data-warehouse
 author: anumjs
 manager: craigg
@@ -11,26 +11,26 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e508eff3b322b49a6dc50d818c8bcccc3e924ff2
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 34851203432b7e2daf44e840e45275de76bc3b3a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759680"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196667"
 ---
-# <a name="restore-a-deleted-azure-sql-data-warehouse"></a>Восстановление удаленного хранилища данных SQL Azure
+# <a name="restore-a-deleted-sql-pool-using-azure-synapse-analytics"></a>Восстановление удаленного пула SQL с помощью Azure синапсе Analytics
 
-В этой статье вы узнаете, как восстановить удаленное хранилище данных SQL с помощью портал Azure и PowerShell:
+Из этой статьи вы узнаете, как восстановить SQL с помощью портал Azure или PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждое хранилище данных SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию.  Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
+**Проверьте ресурсы DTU.** Каждый пул SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию.  Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
 ## <a name="restore-a-deleted-data-warehouse-through-powershell"></a>Восстановление удаленного хранилища данных с помощью PowerShell
 
-Чтобы восстановить удаленное хранилище данных SQL, используйте командлет [RESTORE-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) . Если соответствующий логический сервер также был удален, вы не сможете восстановить это хранилище данных.
+Чтобы восстановить удаленный пул SQL, используйте командлет [RESTORE-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) . Если соответствующий логический сервер также был удален, вы не сможете восстановить это хранилище данных.
 
 1. Перед началом убедитесь, что [установлен Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 2. Откройте PowerShell.
@@ -86,5 +86,5 @@ $RestoredDatabase.status
     ![Указание нового имени базы данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-21.png)
 
 ## <a name="next-steps"></a>Следующие шаги
-- [Восстановление существующего хранилища данных](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление из хранилища геоархивных данных](sql-data-warehouse-restore-from-geo-backup.md)
+- [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)

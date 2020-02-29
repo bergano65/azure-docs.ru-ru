@@ -1,6 +1,6 @@
 ---
-title: Мониторинг рабочей нагрузки с помощью динамических административных представлений
-description: Узнайте о том, как организовать отслеживание рабочей нагрузки с помощью динамических административных представлений.
+title: Мониторинг рабочей нагрузки пула SQL с помощью динамических административных представлений
+description: Узнайте, как отслеживать рабочую нагрузку пула SQL Azure синапсе Analytics и выполнение запросов с помощью динамических административных представлений.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
@@ -10,25 +10,29 @@ ms.subservice: manage
 ms.date: 08/23/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 14c4bb843a93fe6d235354f24475b9974142db79
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.custom: synapse-analytics
+ms.openlocfilehash: f00ab883f9e2b1365c4e7486d61b55157cecb2a7
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721155"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197272"
 ---
-# <a name="monitor-your-workload-using-dmvs"></a>Мониторинг рабочей нагрузки с помощью динамических административных представлений
-В этой статье объясняется, как отслеживать рабочую нагрузку с помощью динамических административных представлений (DMV). Включено — исследование выполнения запросов в хранилище данных SQL Azure.
+# <a name="monitor-your-azure-synapse-analytics-sql-pool-workload-using-dmvs"></a>Мониторинг рабочей нагрузки пула SQL Azure синапсе Analytics с помощью динамических административных представлений
+
+В этой статье описывается, как использовать динамические административные представления (DMV) для наблюдения за рабочей нагрузкой, включая анализ выполнения запросов в пуле SQL.
 
 ## <a name="permissions"></a>Разрешения
-Для запроса динамических административных представлений в этой статье, необходимо разрешение VIEW DATABASE STATE или CONTROL. Более предпочтительно разрешение VIEW DATABASE STATE, так как оно гораздо строже.
+
+Чтобы запросить динамические административные представления в этой статье, необходимо либо **Просмотреть состояние базы данных** , либо разрешение **Control** . Как правило, предоставление **состояния базы данных View** является предпочтительным разрешением, так как оно является гораздо более узким.
 
 ```sql
 GRANT VIEW DATABASE STATE TO myuser;
 ```
 
 ## <a name="monitor-connections"></a>Мониторинг подключений
-Все операции входа в хранилище данных SQL регистрируются в [sys.dm_pdw_exec_sessions](https://msdn.microsoft.com/library/mt203883.aspx).  Это динамическое административное представление содержит записи о последних 10 000 операций входа.  Идентификатор session_id является первичным ключом и назначается последовательно для каждого нового входа.
+
+Все имена входа в хранилище данных записываются в [sys. dm_pdw_exec_sessions](https://msdn.microsoft.com/library/mt203883.aspx).  Это динамическое административное представление содержит записи о последних 10 000 операций входа.  Идентификатор session_id является первичным ключом и назначается последовательно для каждого нового входа.
 
 ```sql
 -- Other Active Connections
@@ -36,16 +40,16 @@ SELECT * FROM sys.dm_pdw_exec_sessions where status <> 'Closed' and session_id <
 ```
 
 ## <a name="monitor-query-execution"></a>Наблюдение за выполнением запросов
-Все запросы к хранилищу данных SQL регистрируются в [sys.dm_pdw_exec_requests](https://msdn.microsoft.com/library/mt203887.aspx).  Это динамическое административное представление содержит записи о последних 10 000 запросах.  Идентификатор request_id уникально идентифицирует каждый запрос и является первичным ключом для этого динамического административного представления.  Идентификатор request_id назначается последовательно для каждого нового запроса с добавлением префикса QID, означающего идентификатор запроса.  При запросе конкретного session_id из этого динамического административного представления будут показаны все запросы для данной операции входа.
+
+Все запросы, выполняемые в пуле SQL, регистрируются в [sys. dm_pdw_exec_requests](https://msdn.microsoft.com/library/mt203887.aspx).  Это динамическое административное представление содержит записи о последних 10 000 запросах.  Идентификатор request_id уникально идентифицирует каждый запрос и является первичным ключом для этого динамического административного представления.  Идентификатор request_id назначается последовательно для каждого нового запроса с добавлением префикса QID, означающего идентификатор запроса.  При запросе конкретного session_id из этого динамического административного представления будут показаны все запросы для данной операции входа.
 
 > [!NOTE]
-> Хранимые процедуры используют несколько идентификаторов request_id.  Идентификатора запросов назначаются последовательно. 
-> 
-> 
+> Хранимые процедуры используют несколько идентификаторов request_id.  Идентификатора запросов назначаются последовательно.
 
 Ниже приведено несколько действий для проверки планов выполнения запросов и длительности конкретных запросов.
 
 ### <a name="step-1-identify-the-query-you-wish-to-investigate"></a>Шаг 1. Определение запроса, который нужно исследовать
+
 ```sql
 -- Monitor active queries
 SELECT * 
@@ -63,9 +67,9 @@ ORDER BY total_elapsed_time DESC;
 
 **Запишите идентификатор запроса**, который вы хотите исследовать. Он указан в приведенных выше результатах запроса.
 
-Запросы в **приостановленном** состоянии могут быть поставлены в очередь из-за большого количества активных выполняющихся запросов. Эти запросы также отображаются в запросе Waiting [sys. dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) с типом усерконкурренциресаурцетипе. Сведения об ограничениях параллелизма см. в разделе [ограничения памяти и параллелизма для хранилища данных SQL Azure](memory-concurrency-limits.md) или [классов ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы](#monitor-waiting-queries) далее в этой статье.
+Запросы в **приостановленном** состоянии могут быть поставлены в очередь из-за большого количества активных выполняющихся запросов. Эти запросы также отображаются в запросе Waiting [sys. dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) с типом усерконкурренциресаурцетипе. Сведения об ограничениях параллелизма см. в разделе [ограничения памяти и параллелизма](memory-concurrency-limits.md) или [классы ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы](#monitor-waiting-queries) далее в этой статье.
 
-Чтобы упростить поиск запроса в таблице [sys. dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) , используйте [Label](https://msdn.microsoft.com/library/ms190322.aspx) , чтобы назначить комментарий для запроса, который можно найти в представлении sys. dm_pdw_exec_requests.
+Чтобы упростить поиск запроса в таблице [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) , используйте [Label](https://msdn.microsoft.com/library/ms190322.aspx) , чтобы назначить комментарий для запроса, который можно найти в представлении sys. dm_pdw_exec_requests.
 
 ```sql
 -- Query with Label
@@ -82,6 +86,7 @@ WHERE   [label] = 'My Query';
 ```
 
 ### <a name="step-2-investigate-the-query-plan"></a>Шаг 2. Изучение плана запроса
+
 С помощью идентификатора запроса получите план DSQL запроса из [sys.dm_pdw_request_steps](https://msdn.microsoft.com/library/mt203913.aspx).
 
 ```sql
@@ -100,7 +105,8 @@ ORDER BY step_index;
 * Перейдите к шагу 3а для **операций SQL**: OnOperation, RemoteOperation, ReturnOperation.
 * Перейдите к шагу 3б для **операций перемещения данных**: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
 
-### <a name="step-3a-investigate-sql-on-the-distributed-databases"></a>Шаг 3а. Изучение SQL распределенных баз данных
+### <a name="step-3-investigate-sql-on-the-distributed-databases"></a>Шаг 3. изучение SQL в распределенных базах данных
+
 Используйте идентификатор запроса и индекс этапа, чтобы извлечь сведения из представления [sys.dm_pdw_sql_requests](https://msdn.microsoft.com/library/mt203889.aspx), которое содержит информацию о выполнении этапа запроса на каждой из распределенных баз данных.
 
 ```sql
@@ -114,17 +120,17 @@ WHERE request_id = 'QID####' AND step_index = 2;
 Когда выполняется этап запроса, можно использовать [DBCC PDW_SHOWEXECUTIONPLAN](https://msdn.microsoft.com/library/mt204017.aspx), чтобы получить из кэша планов SQL Server предполагаемый план SQL Server для этапа, выполняемого с определенным распределением.
 
 ```sql
--- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node.
+-- Find the SQL Server execution plan for a query running on a specific SQL pool or control node.
 -- Replace distribution_id and spid with values from previous query.
 
 DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 ```
 
-### <a name="step-3b-investigate-data-movement-on-the-distributed-databases"></a>Шаг 3б. Изучение перемещения данных в распределенных базах данных
+### <a name="step-4-investigate-data-movement-on-the-distributed-databases"></a>Шаг 4. изучение перемещения данных в распределенных базах данных
 Используйте идентификатор запроса и индекс этапа, чтобы получить из [sys.dm_pdw_dms_workers](https://msdn.microsoft.com/library/mt203878.aspx) сведения об этапе перемещения данных, выполняющемся для каждого распределения.
 
 ```sql
--- Find the information about all the workers completing a Data Movement Step.
+-- Find information about all the workers completing a Data Movement Step.
 -- Replace request_id and step_index with values from Step 1 and 3.
 
 SELECT * FROM sys.dm_pdw_dms_workers
@@ -137,7 +143,7 @@ WHERE request_id = 'QID####' AND step_index = 2;
 Если запрос выполняется, можно использовать [инструкцию DBCC PDW_SHOWEXECUTIONPLAN](https://msdn.microsoft.com/library/mt204017.aspx) , чтобы получить SQL Server предполагаемый план из кэша планов SQL Server для текущего этапа SQL в определенном распределении.
 
 ```sql
--- Find the SQL Server estimated plan for a query running on a specific SQL Data Warehouse Compute or Control node.
+-- Find the SQL Server estimated plan for a query running on a specific SQL pool Compute or control node.
 -- Replace distribution_id and spid with values from previous query.
 
 DBCC PDW_SHOWEXECUTIONPLAN(55, 238);
@@ -171,10 +177,12 @@ ORDER BY waits.object_name, waits.object_type, waits.state;
 Если запрос активно ожидает ресурсы из другого запроса, то его состоянием будет **AcquireResources**.  Если запрос содержит все необходимые ресурсы, то его состоянием будет **Granted**.
 
 ## <a name="monitor-tempdb"></a>Мониторинг tempdb
-База данных tempdb используется для хранения промежуточных результатов во время выполнения запроса. Высокий уровень использования базы данных tempdb может привести к снижению производительности запросов. Каждый узел в хранилище данных SQL Azure имеет примерно 1 ТБ необработанного пространства для tempdb. Ниже приведены советы по мониторингу использования tempdb и снижению использования базы данных tempdb в запросах. 
+
+База данных tempdb используется для хранения промежуточных результатов во время выполнения запроса. Высокий уровень использования базы данных tempdb может привести к снижению производительности запросов. Каждый узел в пуле SQL имеет примерно 1 ТБ необработанного пространства для базы данных tempdb. Ниже приведены советы по мониторингу использования tempdb и снижению использования базы данных tempdb в запросах. 
 
 ### <a name="monitoring-tempdb-with-views"></a>Мониторинг tempdb с помощью представлений
-Чтобы отслеживать использование tempdb, сначала установите представление [Microsoft. vw_sql_requests](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/solutions/monitoring/scripts/views/microsoft.vw_sql_requests.sql) из [набора средств Microsoft для хранилища данных SQL](https://github.com/Microsoft/sql-data-warehouse-samples/tree/master/solutions/monitoring). Затем можно выполнить следующий запрос, чтобы просмотреть использование tempdb на каждом узле для всех выполненных запросов:
+
+Чтобы отслеживать использование tempdb, сначала установите представление [Microsoft. vw_sql_requests](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/solutions/monitoring/scripts/views/microsoft.vw_sql_requests.sql) из [набора Microsoft Toolkit для пула SQL](https://github.com/Microsoft/sql-data-warehouse-samples/tree/master/solutions/monitoring). Затем можно выполнить следующий запрос, чтобы просмотреть использование tempdb на каждом узле для всех выполненных запросов:
 
 ```sql
 -- Monitor tempdb
@@ -206,11 +214,11 @@ WHERE DB_NAME(ssu.database_id) = 'tempdb'
 ORDER BY sr.request_id;
 ```
 
-Если у вас есть запрос, который потребляет большой объем памяти или получил сообщение об ошибке, связанное с выделением базы данных tempdb, это могло произойти из-за очень большого CREATE TABLE в том случае, если инструкция [SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) или [INSERT SELECT](https://docs.microsoft.com/sql/t-sql/statements/insert-transact-sql) выполняется с ошибкой в окончательной операции перемещения данных. Обычно это может быть определено как операция Шуффлемове в плане распределенного запроса непосредственно перед завершающим ВЫДЕЛЕНИЕм INSERT.  Используйте [sys. dm_pdw_request_steps](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql) для наблюдения за операциями шуффлемове. 
+Если у вас есть запрос, который потребляет большой объем памяти или получил сообщение об ошибке, связанное с выделением базы данных tempdb, это могло произойти из-за очень большого CREATE TABLE в том случае, если инструкция [SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) или [INSERT SELECT](/sql/t-sql/statements/insert-transact-sql) выполняется с ошибкой в окончательной операции перемещения данных. Обычно это может быть определено как операция Шуффлемове в плане распределенного запроса непосредственно перед завершающим ВЫДЕЛЕНИЕм INSERT.  Используйте [sys. dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql) для наблюдения за операциями шуффлемове. 
 
 Наиболее распространенный способ устранения проблемы состоит в том, чтобы разбить инструкцию CTAS или INSERT SELECT на несколько инструкций Load, чтобы объем данных не превышал ограничение в 1 ТБ на узел. Можно также масштабировать кластер до большего размера, который будет распределять размер базы данных tempdb между большим количеством узлов, уменьшая базу данных tempdb на каждом отдельном узле.
 
-В дополнение к инструкциям CTAS и INSERT SELECT, большие сложные запросы, работающие с недостаточным объемом памяти, могут сбрасываться в базу данных tempdb, что приводит к сбою запросов.  Рассмотрите возможность запуска с большим [классом ресурсов](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management) , чтобы избежать переноса данных в tempdb.
+В дополнение к инструкциям CTAS и INSERT SELECT, большие сложные запросы, работающие с недостаточным объемом памяти, могут сбрасываться в базу данных tempdb, что приводит к сбою запросов.  Рассмотрите возможность запуска с большим [классом ресурсов](resource-classes-for-workload-management.md) , чтобы избежать переноса данных в tempdb.
 
 ## <a name="monitor-memory"></a>Мониторинг памяти
 
@@ -239,7 +247,8 @@ pc1.counter_name = 'Total Server Memory (KB)'
 AND pc2.counter_name = 'Target Server Memory (KB)'
 ```
 ## <a name="monitor-transaction-log-size"></a>Мониторинг размера журнала транзакций
-Следующий запрос возвращает размер журнала транзакций для каждого распределения. Если один из файлов журнала достигает размера 160 ГБ, следует рассмотреть вертикальное масштабирование экземпляра или ограничение размера транзакции. 
+Следующий запрос возвращает размер журнала транзакций для каждого распределения. Если один из файлов журнала достигает размера 160 ГБ, следует рассмотреть вертикальное масштабирование экземпляра или ограничение размера транзакции.
+
 ```sql
 -- Transaction log size
 SELECT
@@ -251,7 +260,9 @@ WHERE
 instance_name like 'Distribution_%' 
 AND counter_name = 'Log File(s) Used Size (KB)'
 ```
+
 ## <a name="monitor-transaction-log-rollback"></a>Мониторинг отката журнала транзакций
+
 Если запросы завершаются сбоем или требуют слишком много времени на выполнение, вы можете отследить, происходит ли откат транзакций.
 ```sql
 -- Monitor rollback
@@ -265,6 +276,7 @@ GROUP BY t.pdw_node_id, nod.[type]
 ```
 
 ## <a name="monitor-polybase-load"></a>Мониторинг загрузки Polybase
+
 Следующий запрос позволяет приблизительно оценить ход выполнения загрузки. В запросе отображаются только те файлы, которые обрабатываются в данный момент. 
 
 ```sql
@@ -290,4 +302,5 @@ ORDER BY
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о динамических административных представлениях см. в разделе [System views](./sql-data-warehouse-reference-tsql-system-views.md).
+
+Дополнительные сведения о динамических административных представлениях см. в разделе [System views](sql-data-warehouse-reference-tsql-system-views.md).

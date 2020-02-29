@@ -7,19 +7,19 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload-management
-ms.date: 01/14/2020
+ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.custom: seo-lt-2019
-ms.openlocfilehash: fd9bd846beba718cb305907d4d0c5a613d2ef816
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.custom: azure-synapse
+ms.openlocfilehash: 69a200d4fda940f072960da9224f84a22db51647
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029945"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78193804"
 ---
 # <a name="azure-synapse-analytics--workload-management-portal-monitoring-preview"></a>Azure синапсе Analytics — мониторинг портал управления рабочей нагрузки (Предварительная версия)
-В этой статье объясняется, как отслеживать использование ресурсов и действий запросов в [группе рабочей нагрузки](sql-data-warehouse-workload-isolation.md#workload-groups) . Дополнительные сведения о настройке обозреватель метрик Azure см. в статье [Приступая к работе с azure обозреватель метрик](../azure-monitor/platform/metrics-getting-started.md) .  Дополнительные сведения о мониторинге потребления системных ресурсов см. в разделе [использование ресурсов](sql-data-warehouse-concept-resource-utilization-query-activity.md#resource-utilization) в документации по мониторингу хранилища данных SQL Azure.
+В этой статье объясняется, как отслеживать использование ресурсов и действий запросов в [группе рабочей нагрузки](sql-data-warehouse-workload-isolation.md#workload-groups) . Дополнительные сведения о настройке обозреватель метрик Azure см. в статье [Приступая к работе с azure обозреватель метрик](../azure-monitor/platform/metrics-getting-started.md) .  Дополнительные сведения о мониторинге потребления системных ресурсов см. в разделе [использование ресурсов](sql-data-warehouse-concept-resource-utilization-query-activity.md#resource-utilization) в документации по мониторингу Azure синапсе Analytics.
 Существует две различные категории метрик группы рабочей нагрузки, предоставляемые для мониторинга управления рабочей нагрузкой: выделение ресурсов и действия запросов.  Эти метрики можно разделить и отфильтровать по группе рабочей нагрузки.  Метрики можно разбивать и фильтровать на основе, если они определены системой (группы рабочей нагрузки класса ресурсов) или определяемые пользователем (созданные пользователем с помощью синтаксиса [CREATE Рабочей группы](https://docs.microsoft.com/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest) ).
 
 ## <a name="workload-management-metric-definitions"></a>Определения метрик управления рабочей нагрузкой

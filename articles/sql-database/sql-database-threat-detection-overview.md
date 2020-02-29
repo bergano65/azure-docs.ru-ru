@@ -10,22 +10,23 @@ ms.topic: conceptual
 author: monhaber
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
-ms.date: 03/31/2019
-ms.openlocfilehash: d09cc202c3f7e18358ec693d1cfe4bd2648811ba
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 02/05/2020
+tags: azure-synapse
+ms.openlocfilehash: 473c58fa5097c4f4e318543c59ad1cf3a3899594
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820704"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78194093"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database"></a>Расширенная защита от угроз для Базы данных SQL Azure
 
-Расширенная защита от угроз для [базы данных SQL Azure](sql-database-technical-overview.md) и [хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования.
+Расширенная защита от угроз для [базы данных SQL Azure](sql-database-technical-overview.md) и [Azure синапсе Analytics](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования.
 
 Расширенная защита от угроз является частью предложения [расширенной системы безопасности данных](sql-database-advanced-data-security.md) (ADS), которое является единым пакетом для расширенных возможностей обеспечения безопасности SQL. Расширенную защиту от угроз можно получить и управлять с помощью центрального портала SQL AD.
 
 > [!NOTE]
-> Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+> Эта статья относится к Azure SQL Server и к базе данных SQL и Azure синапсе, созданным на сервере Azure SQL. Для простоты база данных SQL используется при обращении к базе данных SQL и Azure синапсе.
 
 ## <a name="what-is-advanced-threat-protection"></a>Что такое расширенная защита от угроз
 
@@ -68,7 +69,7 @@ ms.locfileid: "73820704"
 
 Расширенная защита от угроз интегрирует свои оповещения с [центром безопасности Azure](https://azure.microsoft.com/services/security-center/). Интерактивные плитки расширенной защиты от угроз SQL в колонках базы данных и ADS SQL в портал Azure отслеживании состояния активных угроз.
 
-Щелкните **оповещение Advanced Threat protection** , чтобы открыть страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных или хранилище данных.
+Щелкните **оповещение Advanced Threat protection** , чтобы открыть страницу оповещений центра безопасности Azure и получить обзор активных угроз SQL, обнаруженных в базе данных.
 
    ![Оповещение о повышенной защите от угроз](./media/sql-database-threat-detection/threat_detection_alert.png)
 

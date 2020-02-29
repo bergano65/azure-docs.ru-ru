@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 12/27/2019
+ms.date: 02/27/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: fa73cb690fafb67f75abafab1b0dd27ffa0b8e32
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: d3353451057037e5f3fd94347a007a9d3b2c0e15
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210505"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78193090"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "77210505"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -591,13 +591,13 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 В следующей таблице описаны различные состояния службы.
 
-| Состояние WebService | Описание | Конечное состояние?
+| Состояние WebService | Description | Конечное состояние?
 | ----- | ----- | ----- |
-| Переход | Служба находится в процессе развертывания. | Нет |
-| Неработоспособен | Служба была развернута, но сейчас недоступна.  | Нет |
-| Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
+| Переход | Служба находится в процессе развертывания. | нет |
+| Unhealthy; | Служба была развернута, но сейчас недоступна.  | нет |
+| Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | нет |
 | Ошибка | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
-| Исправна | Служба работоспособна, и доступна конечная точка. | Да |
+| Healthy | Служба работоспособна, и доступна конечная точка. | Да |
 
 ### <a id="notebookvm"></a>Веб-служба вычислительных экземпляров (разработка и тестирование)
 
@@ -897,6 +897,8 @@ service_name = 'onnx-mnist-service'
 service = Model.deploy(ws, service_name, [model])
 ```
 
+Если вы используете Pytorch, то [Экспорт моделей из Pytorch в ONNX](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) содержит подробные сведения о преобразовании и ограничениях. 
+
 ### <a name="scikit-learn-models"></a>Scikit — изучение моделей
 
 Не поддерживается развертывание модели кода для всех встроенных типов моделей scikit-учиться.
@@ -956,7 +958,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например: 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример: 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -1069,7 +1071,7 @@ docker kill mycontainer
 
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

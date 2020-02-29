@@ -9,14 +9,14 @@ ms.workload: big-compute
 ms.topic: article
 ms.date: 02/13/2020
 ms.author: lahugh
-ms.openlocfilehash: 14cbacf43e83dc768e9a85620df131533b746671
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 0134e7d92ddca9bd3b45abaf642f33de9d209b33
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463106"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192308"
 ---
-# <a name="securely-access-key-vault-with-batch"></a>Безопасный доступ к Key Vault с помощью пакетной службы
+# <a name="securely-access-key-vault-with-batch"></a>Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
 
 В этой статье вы узнаете, как настроить узлы пакетной службы для безопасного доступа к учетным данным, хранящимся в Azure Key Vault. Нет никакой точки в размещении учетных данных администратора в Key Vault, а затем жестко закодировать учетные данные для доступа к Key Vault из сценария. Решение заключается в использовании сертификата, который предоставляет узлам пакетной службы доступ к Key Vault. С помощью нескольких шагов мы можем реализовать безопасное хранение ключей для пакетной службы.
 
@@ -40,7 +40,7 @@ cd C:\Program Files (x86)\Windows Kits\10\bin\x64
 Затем с помощью средства `makecert` создайте самозаверяющие файлы сертификатов с именем `batchcertificate.cer` и `batchcertificate.pvk`. Общее имя (CN), используемое для этого приложения, не имеет значения, но полезно сделать это с указанием того, для чего предназначен сертификат.
 
 ```console
-makecert -sv batchcertificate.pvk -n "cn=batch.cert.mydomain.org batchcertificate.cer -b 09/23/2019 -e 09/23/2019 -r -pe -a sha256 -len 2048
+makecert -sv batchcertificate.pvk -n "cn=batch.cert.mydomain.org" batchcertificate.cer -b 09/23/2019 -e 09/23/2019 -r -pe -a sha256 -len 2048
 ```
 
 Для пакета требуется файл `.pfx`. Используйте средство [Pvk2pfx](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx) для преобразования файлов `.cer` и `.pvk`, созданных `makecert`, в один файл `.pfx`.

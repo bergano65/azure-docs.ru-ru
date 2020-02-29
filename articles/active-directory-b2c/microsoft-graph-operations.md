@@ -3,20 +3,20 @@ title: Поддерживаемые операции Microsoft Graph
 titleSuffix: Azure AD B2C
 description: Индекс операций Microsoft Graph, поддерживаемых для управления Azure AD B2C ресурсами, включая пользователей, потоки пользователей, поставщики удостоверений, пользовательские политики, ключи политики и многое другое.
 services: B2C
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 02/20/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5eeae1ab6866435311eeec944b4a51ecf2793dee
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 27fe1a41365d96a4179f8c659b63dc22c7b9fc93
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77522974"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184254"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph операции, доступные для Azure AD B2C
 
@@ -44,7 +44,7 @@ ms.locfileid: "77522974"
 - [Обновление поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-update)
 - [Удаление поставщика удостоверений](https://docs.microsoft.com/graph/api/identityprovider-delete)
 
-## <a name="user-flow"></a>Поток пользователей
+## <a name="user-flow"></a>Поток пользователя
 
 Настройте предварительно созданные политики для регистрации, входа, объединения и входа в систему, сброса пароля и обновления профиля.
 
@@ -53,7 +53,7 @@ ms.locfileid: "77522974"
 - [Получение потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-get)
 - [Удаление потока пользователя](https://docs.microsoft.com/graph/api/identityuserflow-delete)
 
-## <a name="custom-policies"></a>Настраиваемые политики
+## <a name="custom-policies"></a>Пользовательские политики
 
 Следующие операции позволяют управлять политиками инфраструктуры доверия Azure AD B2C, называемыми [пользовательскими политиками](custom-policy-overview.md).
 

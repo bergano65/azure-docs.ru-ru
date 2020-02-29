@@ -1,43 +1,43 @@
 ---
 title: Руководство по загрузке данных из Azure Data Lake Storage
-description: Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure.
+description: Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage для SQL Analytics.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 12/06/2019
+ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: fdbf0eb849549071b4cbbb961c9e9f71fce1faf8
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.custom: azure-synapse
+ms.openlocfilehash: 9a567a8f62f8f12de725f6d9420576680a3005fe
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74923641"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78194586"
 ---
-# <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage в хранилище данных SQL
-В этом руководство описано, как использовать внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure. Несмотря на то, что вы можете выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, мы рекомендуем импортировать данные в хранилище данных SQL для лучшей производительности. 
+# <a name="load-data-from-azure-data-lake-storage-for-sql-analytics"></a>Загрузка данных из Azure Data Lake Storage для SQL Analytics
+В этом руководство описано, как использовать внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage. Несмотря на то, что можно выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, рекомендуется импортировать данные для лучшей производительности. 
 
 > [!NOTE]  
-> Альтернативой загрузке является [инструкция копирования](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) , которая сейчас находится в общедоступной предварительной версии. Чтобы оставить отзыв о инструкции COPY, отправьте сообщение электронной почты по следующему списку рассылки: sqldwcopypreview@service.microsoft.com.
+> Альтернативой загрузке является [инструкция копирования](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) , которая сейчас находится в общедоступной предварительной версии.  Инструкция COPY обеспечивает наибольшую гибкость. Чтобы оставить отзыв о инструкции COPY, отправьте сообщение электронной почты по следующему списку рассылки: sqldwcopypreview@service.microsoft.com.
 >
 > [!div class="checklist"]
 
 > * Создание объектов базы данных, необходимых для загрузки из Data Lake Storage.
 > * Подключитесь к каталогу Data Lake Storage.
-> * Загрузка данных в хранилище данных SQL Azure.
+> * Загрузка данных в хранилище данных.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Хранилище данных SQL Azure Ознакомьтесь со статьей [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md).
+* Пул SQL. См. раздел [Создание пула SQL и запрос данных](create-data-warehouse-portal.md).
 * Учетная запись Data Lake Storage. См. статью [Приступая к работе с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md). Для этой учетной записи хранения необходимо настроить или указать один из следующих учетных данных для загрузки: ключ учетной записи хранения, пользователь приложения Azure Directory или пользователь AAD с соответствующей ролью RBAC для учетной записи хранения. 
 
 ##  <a name="create-a-credential"></a>Создание учетных данных
@@ -194,7 +194,7 @@ OPTION (LABEL = 'CTAS : Load [dbo].[DimProduct]');
 
 
 ## <a name="optimize-columnstore-compression"></a>Оптимизация сжатия columnstore
-По умолчанию в хранилище данных SQL таблицы хранятся в виде кластеризованных индексов columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может происходить по ряду причин. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
+По умолчанию таблицы определяются как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может происходить по ряду причин. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
 
 Чтобы оптимизировать производительность запросов и сжатие columnstore после загрузки, перестройте таблицу, чтобы настроить принудительное сжатие всех строк таблиц индексом columnstore.
 
@@ -212,19 +212,20 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 Следующий пример кода — хорошая отправная точка для создания статистики. Он создает одностолбцовую статистику для каждого столбца в таблице измерения и для каждого соответствующего столбца в таблицах фактов. Одно- или многостолбцовую статистику в другие столбцы таблицы фактов можно добавить позже.
 
 ## <a name="achievement-unlocked"></a>Победа!
-Данные успешно загружены в хранилище данных SQL Azure. Отличная работа!
+Вы успешно загрузили данные в хранилище данных. Отличная работа!
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Data Lake Storage 1-го поколения, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
+>
 > * Созданы объекты базы данных, необходимые для загрузки из Data Lake Storage.
 > * Подключено к каталогу Data Lake Storage.
-> * Загрузка данных в хранилище данных SQL Azure.
+> * Загруженные данные в хранилище данных.
 >
 
-Загрузка данных является первым шагом к разработке решения для хранения данных на основе хранилища данных SQL. Ознакомьтесь с нашими ресурсами разработки.
+Загрузка данных — это первый этап разработки решения хранилища данных с помощью Azure синапсе Analytics. Ознакомьтесь с нашими ресурсами разработки.
 
 > [!div class="nextstepaction"]
-> [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md)
+> [Узнайте, как разрабатывать таблицы для хранения данных](sql-data-warehouse-tables-overview.md)

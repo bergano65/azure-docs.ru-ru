@@ -3,20 +3,20 @@ title: Интеграция обмена REST APIми утверждениями
 titleSuffix: Azure AD B2C
 description: Интегрируйте REST API обмена утверждениями в Azure AD B2C пути взаимодействия пользователя с проверкой вводимых пользователем данных.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 780d575bd7f035673510d5b1e62cff4dfd6ede16
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 5976b6ef747b27a5a04c755d47ae4383fc4b2447
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848763"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78187361"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -24,7 +24,7 @@ ms.locfileid: "76848763"
 
 С помощью инфраструктуры процедур идентификации, лежащей в основе Azure Active Directory B2C (Azure AD B2C), можно выполнять интеграцию с RESTful API в пути взаимодействия пользователя. В этом пошаговом руководстве вы узнаете, как Azure AD B2C взаимодействует со службами RESTful (веб-API) .NET Framework.
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 
 Azure AD B2C позволяет добавлять собственную бизнес-логику в пути взаимодействия пользователя с помощью вызова службы RESTful. Инфраструктура процедур идентификации отправляет данные в службу RESTful в коллекции *входящих утверждений* и получает данные из RESTful в коллекции *исходящих утверждений*. Благодаря интеграции со службой RESTful вы можете:
 
@@ -48,7 +48,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 В этом пошаговом руководстве вы разработаете веб-API .NET Framework, который проверяет входные данные пользователя и предоставляет его номер лояльности. Например, ваше приложение может предоставить доступ к *платиновым преимуществам* на основе номера лояльности.
 
-Обзор:
+Общие сведения.
 
 * Разработка службы RESTFUL (.NET Framework веб-API)
 * Использование службы RESTFUL в пути взаимодействия пользователя
@@ -57,7 +57,7 @@ Azure AD B2C позволяет добавлять собственную биз
 * Отправить обратное число по программе лояльности
 * Добавление номера программы лояльности в JSON Web Token (JWT)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](custom-policy-get-started.md).
 

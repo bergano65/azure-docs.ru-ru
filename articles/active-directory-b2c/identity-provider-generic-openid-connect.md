@@ -3,20 +3,20 @@ title: Настройка регистрации и входа с помощью
 titleSuffix: Azure AD B2C
 description: Настройте регистрацию и вход с помощью любого поставщика удостоверений OpenID Connect Connect (IdP) в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a7896e0385978c4221edc233c931bad720c60f8a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: c72abf79f0a420309ebe229673be9439fd99b74c
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847606"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188262"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-openid-connect-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с помощью OpenID Connect через Azure Active Directory B2C
 
@@ -40,7 +40,7 @@ ms.locfileid: "76847606"
 > [!NOTE]
 > Секрет клиента не обязателен. Однако необходимо ввести секрет клиента, если вы хотите использовать [поток кода авторизации](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth), который использует секрет для обмена кодом маркера.
 
-## <a name="scope"></a>Область действия
+## <a name="scope"></a>Область
 
 Области определяют сведения и разрешения, которые требуется собрать от пользовательского поставщика удостоверений. Запросы OpenID Connect должны содержать значение области `openid`, чтобы получить маркер идентификатора от поставщика удостоверений. Без маркера идентификатора пользователи не смогут войти в Azure AD B2C с помощью пользовательского поставщика удостоверений. Можно присоединить другие области (разделяемые пробелом). Сведения о том, какие другие области могут быть доступны, см. в документации пользовательского поставщика удостоверений.
 

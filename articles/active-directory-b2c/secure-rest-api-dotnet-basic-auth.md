@@ -3,20 +3,20 @@ title: Защита службы RESTFUL с помощью обычной про
 titleSuffix: Azure AD B2C
 description: Сведения о защите пользовательского обмена утверждениями REST API в системе Azure AD B2C с помощью обычной аутентификации HTTP.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/25/2017
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 986ad1845fa2699bb3462dceb3865300a035cb71
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 505d92e33606dac327778cae179df44efbfdf853
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848542"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183862"
 ---
 # <a name="secure-your-restful-services-by-using-http-basic-authentication"></a>Защита служб RESTful с использованием обычной проверки подлинности HTTP
 
@@ -28,7 +28,7 @@ ms.locfileid: "76848542"
 
 Дополнительные сведения см. в статье [Basic authentication in ASP.NET web API](https://docs.microsoft.com/aspnet/web-api/overview/security/basic-authentication) (Обычная проверка подлинности в веб-API ASP.NET).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните действия из статьи: [Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](rest-api-claims-exchange-dotnet.md).
 
@@ -249,7 +249,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 7. Для параметра **Использование ключа** выберите **Подпись**.
 
-8. Нажмите кнопку **создания**.
+8. Нажмите кнопку **Создать**.
 
 9. Убедитесь, что вы создали ключ `B2C_1A_B2cRestClientId`.
 
@@ -270,7 +270,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 7. Для параметра **Использование ключа** выберите **Подпись**.
 
-8. Нажмите кнопку **создания**.
+8. Нажмите кнопку **Создать**.
 
 9. Убедитесь, что вы создали ключ `B2C_1A_B2cRestClientSecret`.
 

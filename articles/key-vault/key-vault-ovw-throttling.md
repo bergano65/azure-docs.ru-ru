@@ -5,15 +5,16 @@ services: key-vault
 author: msmbaldwin
 manager: rkarlin
 ms.service: key-vault
+ms.subservice: general
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 28e79dffb206e8a62410bf3b4e0e239879b51224
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 6c4923e86f8678458d6301503043413fb8a5629b
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806683"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197374"
 ---
 # <a name="azure-key-vault-throttling-guidance"></a>Руководство по регулированию хранилища ключей Azure
 
@@ -38,9 +39,9 @@ Key Vault изначально была разработана для хране
 1. Если приложение состоит из нескольких узлов, которым необходимо считать одни и те же секреты, рассмотрите возможность использования шаблона out, где одна сущность считывает секрет из Key Vault и вентиляторы выходят на все узлы.   Кэширование извлеченных секретов только в памяти.
 Если вы обнаружите, что описанные выше действия не соответствуют вашим потребностям, заполните приведенную ниже таблицу и свяжитесь с нами, чтобы определить дополнительную емкость, которую можно добавить (пример приведен ниже для наглядности).
 
-| Имя хранилища | Регион хранилища | Тип объекта (секрет, ключ или сертификат) | Операции * | Key Type (Тип ключа) | Длина ключа или кривая | Ключ HSM?| Требуется устойчивый RPS для состояния | Требуется пиковое число RPS |
+| Имя хранилища | Регион хранилища | Тип объекта (секрет, ключ или сертификат) | Операции * | Тип ключа | Длина ключа или кривая | Ключ HSM?| Требуется устойчивый RPS для состояния | Требуется пиковое число RPS |
 |--|--|--|--|--|--|--|--|--|
-| https://mykeyvault.vault.azure.net/ | | Ключ | вход; | EC | P-256 | Нет | 200 | 1000 |
+| https://mykeyvault.vault.azure.net/ | | Клавиши | вход; | EC | P-256 | нет | 200 | 1000 |
 
 \* полный список возможных значений см. в разделе [операции Azure Key Vault](/rest/api/keyvault/key-operations).
 
@@ -95,7 +96,7 @@ SecretClientOptions options = new SecretClientOptions()
 
 На этом этапе вы не должны получать коды ответа HTTP 429.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также раздел
 
 Более подробные сведения о регулировании для Microsoft Cloud см. в разделе [Шаблон регулирования](https://docs.microsoft.com/azure/architecture/patterns/throttling).
 

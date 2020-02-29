@@ -6,15 +6,16 @@ author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: general
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 75317f73ad724b4ce8ad7a894890b2269bd8c5d0
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 36a4871339401629300eedd77b6441aed10aabf3
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837502"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78199841"
 ---
 # <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Предоставление Key Vault проверки подлинности с помощью управляемого удостоверения
 
@@ -25,14 +26,14 @@ ms.locfileid: "73837502"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Для работы с этим руководством необходимы следующие ресурсы. 
 
 - Хранилище ключей. Вы можете использовать существующее хранилище ключей или создать новое, выполнив действия, описанные в одном из этих кратких руководств:
-   - [Создание хранилища ключей с Azure CLI](quick-create-cli.md)
-   - [Создание хранилища ключей с Azure PowerShell](quick-create-powershell.md)
-   - [Создайте хранилище ключей с портал Azure](quick-create-portal.md).
+   - [Создание хранилища ключей с помощью интерфейса командной строки Azure](quick-create-cli.md)
+   - [Создание хранилища ключей с помощью Azure PowerShell](quick-create-powershell.md)
+   - [Создание хранилища ключей с помощью портала Azure](quick-create-portal.md)
 - Существующее приложение службы приложений, к которому предоставляется доступ к хранилищу ключей. Его можно быстро создать, выполнив действия, описанные в [документации по службе приложений](../app-service/overview.md).
 - [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
 
@@ -49,11 +50,11 @@ ms.locfileid: "73837502"
 
 1. Выберите **Управляемое удостоверение**. 
 
-1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Щелкните **Сохранить**. 
+1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Выберите команду **Сохранить**. 
 
     ![](./media/managed-identity-system-assigned.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Для этого краткого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
@@ -101,7 +102,7 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
 
     ![](./media/managed-identity-access-policy.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы предоставить приложению доступ к хранилищу ключей, используйте команду Azure CLI [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) , указав параметр **ObjectID** с указанным выше **principalId** .
 
@@ -114,6 +115,6 @@ az keyvault set-policy --name myKeyVault --object-id <PrincipalId> --secret-perm
 - [Azure Key Vault безопасность: Управление удостоверениями и доступом](overview-security.md#identity-and-access-management)
 - [Предоставление Key Vault проверки подлинности с помощью политики управления доступом](key-vault-group-permissions-for-apps.md)
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
-- [Обеспечьте безопасность хранилища ключей](key-vault-secure-your-key-vault.md).
-- [Azure Key Vaultное руководством разработчика](key-vault-developers-guide.md)
+- [Обеспечение безопасности хранилища ключей](key-vault-secure-your-key-vault.md).
+- [Руководство разработчика Azure Key Vault](key-vault-developers-guide.md)
 - [Рекомендации по Azure Key Vault](key-vault-best-practices.md)

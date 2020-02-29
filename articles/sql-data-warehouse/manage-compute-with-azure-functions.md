@@ -1,6 +1,6 @@
 ---
 title: Руководство. Управление средами вычислений с помощью функций Azure
-description: Инструкции по использованию службы "Функции Azure" для управления вычислениями в хранилище данных.
+description: Как использовать функции Azure для управления вычислением пула SQL в Azure синапсе Analytics.
 services: sql-data-warehouse
 author: julieMSFT
 manager: craigg
@@ -10,27 +10,27 @@ ms.subservice: consume
 ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: bc350ed092c063dcc7eca479f064114be9eb28f5
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: a08c2c3c0167f0d82fe901e19b02db22b0ad56c5
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73693019"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78193242"
 ---
-# <a name="use-azure-functions-to-manage-compute-resources-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных Azure SQL с помощью службы "Функции Azure"
+# <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Использование функций Azure для управления ресурсами вычислений в пуле SQL Azure синапсе Analytics
 
-В этом руководстве используется служба "Функции Azure" для управления вычислительными ресурсами хранилища данных в хранилище данных Azure SQL.
+В этом руководстве используются функции Azure для управления ресурсами вычислений для пула SQL в Azure синапсе Analytics.
 
-Чтобы использовать приложение-функцию Azure с хранилищем данных SQL, необходимо создать [учетную запись субъекта-службы](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) с правами участника в той же подписке, в которой создан экземпляр хранилища данных. 
+Чтобы использовать Azure приложение-функция с пулом SQL, необходимо создать [учетную запись субъекта-службы](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) с доступом участника в той же подписке, что и экземпляр пула SQL. 
 
 ## <a name="deploy-timer-based-scaling-with-an-azure-resource-manager-template"></a>Развертывание масштабирования по таймеру с помощью шаблона Azure Resource Manager
 
 Чтобы развернуть шаблон, понадобится следующая информация:
 
-- имя группы ресурсов, в которой находится экземпляр хранилища данных SQL;
-- имя логического сервера, на котором расположен экземпляр хранилища данных SQL;
-- имя экземпляра хранилища данных SQL;
+- Имя группы ресурсов, в которой находится экземпляр пула SQL
+- Имя логического сервера, в котором находится экземпляр пула SQL
+- Имя экземпляра пула SQL
 - идентификатор клиента (идентификатор каталога) Azure Active Directory;
 - Идентификатор подписки 
 - идентификатор приложения субъекта-службы;
@@ -119,17 +119,17 @@ ms.locfileid: "73693019"
 5. Установите для переменной операции требуемое поведение следующим образом:
 
    ```javascript
-   // Resume the data warehouse instance
+   // Resume the SQL pool instance
    var operation = {
        "operationType": "ResumeDw"
    }
 
-   // Pause the data warehouse instance
+   // Pause the SQL pool instance
    var operation = {
        "operationType": "PauseDw"
    }
 
-   // Scale the data warehouse instance to DW600
+   // Scale the SQL pool instance to DW600
    var operation = {
        "operationType": "ScaleDw",
        "ServiceLevelObjective": "DW600"
@@ -141,30 +141,30 @@ ms.locfileid: "73693019"
 
 В этом разделе кратко показано, что необходимо для более комплексного планирования возможностей паузы, возобновления и масштабирования.
 
-### <a name="example-1"></a>Пример 1
+### <a name="example-1"></a>Пример 1:
 
 Ежедневное увеличение масштаба до значения DW600 в 8:00 и уменьшение масштаба до DW200 в 20:00.
 
-| Функция  | Расписание     | Операция                                |
+| Компонент  | Расписание     | Операция                                |
 | :-------- | :----------- | :--------------------------------------- |
 | Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",  "ServiceLevelObjective": "DW600"}` |
 | Функция 2 | 0 0 20 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
 
-### <a name="example-2"></a>Пример 2 
+### <a name="example-2"></a>Пример 2. 
 
 Ежедневное увеличение масштаба в 8:00 до DW1000, однократное уменьшение до DW600 в 16:00 и уменьшение масштаба в 22:00 до DW200.
 
-| Функция  | Расписание     | Операция                                |
+| Компонент  | Расписание     | Операция                                |
 | :-------- | :----------- | :--------------------------------------- |
 | Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",  "ServiceLevelObjective": "DW1000"}` |
 | Функция 2 | 0 0 16 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600"}` |
 | Функция 3 | 0 0 22 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
 
-### <a name="example-3"></a>Пример 3 
+### <a name="example-3"></a>Пример 3. 
 
 Увеличение масштаба до DW1000 в 8:00 и уменьшение масштаба до DW600 один раз в 16:00 в рабочие дни. Приостановка работы в пятницу в 23:00 и возобновление работы в понедельник в 7:00.
 
-| Функция  | Расписание       | Операция                                |
+| Компонент  | Расписание       | Операция                                |
 | :-------- | :------------- | :--------------------------------------- |
 | Функция 1 | 0 0 8 * * 1-5  | `var operation = {"operationType": "ScaleDw",    "ServiceLevelObjective": "DW1000"}` |
 | Функция 2 | 0 0 16 * * 1-5 | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW600"}` |
@@ -177,7 +177,7 @@ ms.locfileid: "73693019"
 
 Дополнительные сведения о функциях Azure триггера с таймером см. [здесь](../azure-functions/functions-create-scheduled-function.md).
 
-Просмотрите [репозиторий с примерами](https://github.com/Microsoft/sql-data-warehouse-samples) для хранилища данных SQL.
+Извлеките [репозиторий образцов](https://github.com/Microsoft/sql-data-warehouse-samples)пула SQL.
 
 
 
