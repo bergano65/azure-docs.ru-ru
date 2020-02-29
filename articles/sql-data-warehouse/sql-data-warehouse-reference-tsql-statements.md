@@ -1,6 +1,6 @@
 ---
-title: Инструкции T-SQL
-description: Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
+title: Инструкции Т-SQL
+description: Ссылки на документацию по инструкциям T-SQL, поддерживаемым в SQL Analytics.
 services: sql-data-warehouse
 author: XiaoyuMSFT
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: query
 ms.date: 05/01/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 861675941693697a20da189edebe33d91918782c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: azure-synapse
+ms.openlocfilehash: d37e1b727829505940b77c7a82293f90050a87c0
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685522"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198360"
 ---
-# <a name="t-sql-statements-supported-in-azure-sql-data-warehouse"></a>Инструкции T-SQL, поддерживаемые в хранилище данных SQL Azure
-Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
+# <a name="t-sql-statements-supported-in-sql-analytics"></a>Инструкции T-SQL, поддерживаемые в SQL Analytics
+Ссылки на документацию по инструкциям T-SQL, поддерживаемым в SQL Analytics.
 
 ## <a name="data-definition-language-ddl-statements"></a>Инструкции языка описания данных DDL
 * [ALTER DATABASE](https://msdn.microsoft.com/library/mt204042.aspx)
@@ -27,9 +27,9 @@ ms.locfileid: "73685522"
 * [Изменение материализованных представлений](/sql/t-sql/statements/alter-materialized-view-transact-sql?view=azure-sqldw-latest) (Предварительная версия) 
 * [ALTER PROCEDURE](https://msdn.microsoft.com/library/ms189762.aspx)
 * [ALTER SCHEMA](https://msdn.microsoft.com/library/ms173423.aspx)
-* [Инструкция ALTER TABLE](https://msdn.microsoft.com/library/ms190273.aspx)
+* [ALTER TABLE](https://msdn.microsoft.com/library/ms190273.aspx)
 * [CREATE COLUMNSTORE INDEX](https://msdn.microsoft.com/library/gg492153.aspx)
-* [CREATE DATABASE (Azure SQL Data Warehouse)](https://msdn.microsoft.com/library/mt204021.aspx)
+* [CREATE DATABASE](https://msdn.microsoft.com/library/mt204021.aspx)
 * [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
 * [CREATE EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
 * [CREATE EXTERNAL FILE FORMAT](https://msdn.microsoft.com/library/dn935026.aspx)
@@ -41,7 +41,7 @@ ms.locfileid: "73685522"
 * [CREATE SCHEMA](https://msdn.microsoft.com/library/ms189462.aspx)
 * [CREATE STATISTICS](https://msdn.microsoft.com/library/ms188038.aspx)
 * [CREATE TABLE](https://msdn.microsoft.com/library/mt203953.aspx)
-* [Инструкция CREATE TABLE AS SELECT](https://msdn.microsoft.com/library/mt204041.aspx)
+* [CREATE TABLE AS SELECT](https://msdn.microsoft.com/library/mt204041.aspx)
 * [CREATE VIEW](https://msdn.microsoft.com/library/ms187956.aspx)
 * [СОЗДАНИЕ КЛАССИФИКАТОРА РАБОЧЕЙ НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql)
 * [DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/mt146367.aspx)
@@ -56,8 +56,8 @@ ms.locfileid: "73685522"
 * [УДАЛИТЬ КЛАССИФИКАТОР РАБОЧЕЙ НАГРУЗКИ](/sql/t-sql/statements/drop-workload-classifier-transact-sql)
 * [RENAME](https://msdn.microsoft.com/library/mt631611.aspx)
 * [ЗАДАТЬ RESULT_SET_CACHING](/sql/t-sql/statements/set-result-set-caching-transact-sql) 
-* [Инструкция TRUNCATE TABLE](https://msdn.microsoft.com/library/ms177570.aspx)
-* [Инструкция UPDATE STATISTICS](https://msdn.microsoft.com/library/ms187348.aspx)
+* [TRUNCATE TABLE](https://msdn.microsoft.com/library/ms177570.aspx)
+* [UPDATE STATISTICS](https://msdn.microsoft.com/library/ms187348.aspx)
 
 ## <a name="data-manipulation-language-dml-statements"></a>Инструкции языка обработки данных DML
 * [DELETE](https://msdn.microsoft.com/library/ms189835.aspx)
@@ -78,15 +78,15 @@ ms.locfileid: "73685522"
 
 ## <a name="query-statements"></a>Инструкции запросов
 * [SELECT](https://msdn.microsoft.com/library/ms189499.aspx)
-* [WITH common_table_expression](https://msdn.microsoft.com/library/ms175972.aspx)
-* [EXCEPT and INTERSECT](https://msdn.microsoft.com/library/ms188055.aspx)
+* [WITH <обобщенное_табличное_выражение>](https://msdn.microsoft.com/library/ms175972.aspx)
+* [EXCEPT и INTERSECT](https://msdn.microsoft.com/library/ms188055.aspx)
 * [EXPLAIN](https://msdn.microsoft.com/library/mt631615.aspx)
 * [FROM](https://msdn.microsoft.com/library/ms177634.aspx)
 * [Использование PIVOT и UNPIVOT](https://msdn.microsoft.com/library/ms177410.aspx)
 * [GROUP BY](https://msdn.microsoft.com/library/ms177673.aspx)
 * [HAVING](https://msdn.microsoft.com/library/ms180199.aspx)
 * [ORDER BY](https://msdn.microsoft.com/library/ms188385.aspx)
-* [Предложение OPTION](https://msdn.microsoft.com/library/ms190322.aspx)
+* [OPTION](https://msdn.microsoft.com/library/ms190322.aspx)
 * [UNION](https://msdn.microsoft.com/library/ms180026.aspx)
 * [WHERE](https://msdn.microsoft.com/library/ms188047.aspx)
 * [TOP](https://msdn.microsoft.com/library/ms189463.aspx)
@@ -120,4 +120,4 @@ ms.locfileid: "73685522"
 * [OPEN MASTER KEY](https://msdn.microsoft.com/library/ms174433.aspx)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные справочные сведения см. в разделах [Элементы языка T-SQL, поддерживаемые в хранилище данных SQL Azure](sql-data-warehouse-reference-tsql-language-elements.md) и [System views supported in Azure SQL Data Warehouse](sql-data-warehouse-reference-tsql-system-views.md) (Системные представления, поддерживаемые в хранилище данных SQL Azure).
+Дополнительные справочные сведения см. [в статьях элементы языка T-SQL в SQL Analytics](sql-data-warehouse-reference-tsql-language-elements.md)и [системные представления в SQL Analytics](sql-data-warehouse-reference-tsql-system-views.md).

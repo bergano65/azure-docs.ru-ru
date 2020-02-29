@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 05/20/2018
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 22e235b16f834198f5edc2f9365d2b13e1e9c49f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 2685b9b519eaac453726f4923c46f1604cbd4681
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74031734"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197833"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>Подключение виртуальной сети к каналу ExpressRoute
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-linkvnet-arm.md)
-> * [Интерфейс командной строки Azure](howto-linkvnet-cli.md)
+> * [Azure CLI](howto-linkvnet-cli.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
 >
@@ -33,7 +33,7 @@ ms.locfileid: "74031734"
 * Если включить надстройку канала ExpressRoute Premium, вы сможете подключить к каналу ExpressRoute больше виртуальных сетей, включая сети из других геополитических регионов. Дополнительную информацию о надстройке Premium см. в разделе [Вопросы и ответы](expressroute-faqs.md).
 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Прежде чем приступить к настройке, изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 
@@ -179,10 +179,7 @@ Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connecti
 ## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
 Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если канал expressroute включен в [expressroute Direct](expressroute-erdirect-about.md) , а шлюз виртуальной сети — Ultra Performance или ErGw3AZ. Фастпас улучшает производительность пути к данным, например количество пакетов в секунду и число подключений в секунду между локальной сетью и виртуальной сетью. 
 
-> [!NOTE] 
-> Если у вас уже есть подключение к виртуальной сети, но оно не включено Фастпас, необходимо удалить подключение к виртуальной сети и создать новое. 
-> 
->  
+**Настройка Фастпас для нового подключения**
 
 ```azurepowershell-interactive 
 $circuit = Get-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG" 
@@ -190,5 +187,13 @@ $gw = Get-AzVirtualNetworkGateway -Name "MyGateway" -ResourceGroupName "MyRG"
 $connection = New-AzVirtualNetworkGatewayConnection -Name "MyConnection" -ResourceGroupName "MyRG" -ExpressRouteGatewayBypass -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute -Location "MyLocation" 
 ``` 
 
-## <a name="next-steps"></a>Дополнительная информация
+**Обновление существующего подключения для включения Фастпас**
+
+```azurepowershell-interactive 
+$connection = Get-AzVirtualNetworkGatewayConnection -Name "MyConnection" -ResourceGroupName "MyRG" 
+$connection.ExpressRouteGatewayBypass = $True
+Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection
+``` 
+
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

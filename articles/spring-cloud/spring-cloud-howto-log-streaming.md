@@ -1,25 +1,28 @@
 ---
-title: Потоковая передача журналов облачного приложения Azure весны в режиме реального времени
+title: Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
 description: Как мгновенно просматривать журналы приложений с помощью потоковой передачи журналов
 author: MikeDodaro
 ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/14/2019
-ms.openlocfilehash: 27978d367ded7a31d73949cd675ae9e6f8cb887c
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: fc208a3542528fb4554a365a02e13c2da3055cf2
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264005"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192206"
 ---
-# <a name="stream-azure-spring-cloud-app-logs-in-real-time"></a>Потоковая передача журналов облачного приложения Azure весны в режиме реального времени
+# <a name="stream-azure-spring-cloud-app-logs-in-real-time"></a>Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
 Azure Веснного облака позволяет выполнять потоковую передачу журналов в Azure CLI для получения журналов консоли приложений в режиме реального времени для устранения неполадок. Вы также можете [анализировать журналы и метрики с помощью параметров диагностики](./diagnostic-services.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Установите [расширение Azure CLI](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli#install-the-azure-cli-extension) для пружинного облака, минимальной версии 0.2.0.
 * Экземпляр **Azure веснного облака** с выполняющимся приложением, например [пружинное приложение Cloud](./spring-cloud-quickstart-launch-app-cli.md).
+
+> [!NOTE]
+>  Расширение интерфейса командной строки ASC обновляется с версии 0.2.0 до 0.2.1. Это изменение влияет на синтаксис команды для потоковой передачи журнала: `az spring-cloud app log tail`, которая заменяется на: `az spring-cloud app logs`. Команда: `az spring-cloud app log tail` будет считаться устаревшей в следующем выпуске. Если вы используете версию 0.2.0, можно выполнить обновление до 0.2.1. Сначала удалите старую версию с помощью команды: `az extension remove -n spring-cloud`.  Затем установите 0.2.1 с помощью команды: `az extension add -n spring-cloud`.
 
 ## <a name="use-cli-to-tail-logs"></a>Использование интерфейса командной строки для заключительного фрагмента журналов
 
@@ -33,7 +36,7 @@ az configure --defaults spring-cloud=<service instance name>
 ### <a name="tail-log-for-app-with-single-instance"></a>Заключительный фрагмент журнала для приложения с одним экземпляром
 Если приложение с именем auth-Service имеет только один экземпляр, журнал экземпляра приложения можно просмотреть с помощью следующей команды:
 ```
-az spring-cloud app log tail -n auth-service
+az spring-cloud app logs -n auth-service
 ```
 Будут возвращены журналы:
 ```
@@ -66,7 +69,7 @@ auth-service-default-12-75cc4577fc-n25mh  Running   UP
 Затем можно выполнить потоковую передачу журналов экземпляра приложения с параметром `-i/--instance`:
 
 ```
-az spring-cloud app log tail -n auth-service -i auth-service-default-12-75cc4577fc-pw7hb
+az spring-cloud app logs -n auth-service -i auth-service-default-12-75cc4577fc-pw7hb
 ```
 
 Кроме того, можно получить сведения об экземплярах приложения из портал Azure.  Выбрав **приложения** в левой области навигации в облачной службе Azure "Весна", выберите **экземпляры приложения**.
@@ -75,11 +78,11 @@ az spring-cloud app log tail -n auth-service -i auth-service-default-12-75cc4577
 По умолчанию `az spring-cloud ap log tail` выводит только существующие журналы, переданные в консоль приложения, а затем завершает работу. Если вы хотите создать потоковую передачу новых журналов, добавьте-f (--следовать):  
 
 ```
-az spring-cloud app log tail -n auth-service -f
+az spring-cloud app logs -n auth-service -f
 ``` 
 Чтобы проверить все поддерживаемые параметры ведения журнала, выполните следующие действия.
 ``` 
-az spring-cloud app log tail -h 
+az spring-cloud app logs -h 
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

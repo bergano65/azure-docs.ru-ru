@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: 91578b5c840f589f3e49737b71e63f4d5e82a126
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: a55ef4f814c0d13a6efbeeb8cd9a5565d2869432
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77919657"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183301"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -32,14 +32,14 @@ ms.locfileid: "77919657"
 ## <a name="a-idissuesknown-issues"></a><a id="issues"/>известные проблемы
 ### <a name="a-idgeneral_issuesmedia-services-general-issues"></a><a id="general_issues"/>Общие проблемы служб мультимедиа
 
-| Проблема | Описание |
+| Проблема | Description |
 | --- | --- |
 | В API-интерфейсе REST отсутствует ряд стандартных заголовков HTTP. |При разработке приложений служб мультимедиа с использованием API-интерфейса REST замечено, что ряд стандартных полей заголовков HTTP (включая CLIENT-REQUEST-ID, REQUEST-ID и RETURN-CLIENT-REQUEST-ID) не поддерживается. Эти заголовки будут добавлены в следующем обновлении. |
 | URL-кодирование содержимого не допускается. |Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, `http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters`). По этой причине кодирование с помощью знака процента не допускается. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла. |
 | Метод ListBlobs, входящий в состав пакета SDK хранилища Azure версии 3.x, приводит к сбою. |Службы мультимедиа создают URL-адреса SAS на основе версии [2012-02-12](https://docs.microsoft.com/rest/api/storageservices/Version-2012-02-12) . Если вы хотите использовать пакет SDK хранилища для создания списка больших двоичных объектов в контейнере больших двоичных объектов, используйте метод [CloudBlobContainer.ListBlobs](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobs), входящий в пакет SDK хранилища версии 2.x. |
 | Механизм регулирования служб мультимедиа ограничивает использование ресурсов для приложений, создающих избыточный запрос к службе. Службой может быть возвращен код состояния HTTP 503 (служба недоступна). |Дополнительные сведения см. в описании кода состояния HTTP 503 в статье [Коды ошибок кодирования](media-services-encoding-error-codes.md). |
 | При запросе сущностей за один раз возвращается не больше 1000 сущностей, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. |Используйте Skip и Take (.NET) или top (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. |
-| Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. |Дополнительные сведения см. [в этом разделе](media-services-deliver-content-overview.md#known-issues). |
+| Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. |Дополнительные сведения см. в [этом разделе](media-services-deliver-content-overview.md#known-issues). |
 | Объекты в пакете SDK .NET для служб мультимедиа не могут быть сериализованы и поэтому не работают с кэшем Azure для Redis. |При попытке сериализации объекта SDK AssetCollection с целью его добавления в кэш Azure для Redis возникает исключение. |
 |REST API отвечает сообщением об ошибке: "при попытке получить фильтр на уровне ресурса или учетной записи" доступ к фильтру невозможен в этой версии API-интерфейса.|Фильтр был создан или изменен с использованием более новой версии API, чем используется для попыток получения фильтра. Это может произойти, если в коде или средствах, используемых клиентом, используются две версии API.  Лучшим решением здесь является обновление кода или средств для использования более новых или двух версий API.|
 
@@ -179,7 +179,7 @@ ms.locfileid: "77919657"
 Дополнительную информацию см. в [этом блоге](https://blogs.msdn.microsoft.com/randomnumber/2016/07/08/encoder-changes-within-azure-media-services-now-create-ismc-file/).
 
 ### <a name="known-issues"></a>Известные проблемы
-Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. Дополнительные сведения см. [в этом разделе](media-services-deliver-content-overview.md#known-issues).
+Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. Дополнительные сведения см. в [этом разделе](media-services-deliver-content-overview.md#known-issues).
 
 ## <a id="apr_changes16"></a>Выпуск: апрель 2016 г.
 ### <a name="media-analytics"></a>Аналитика мультимедиа
@@ -232,7 +232,7 @@ ms.locfileid: "77919657"
 
 ## <a id="september_changes_15"></a>Выпуск: сентябрь 2015 г.
 Теперь службы мультимедиа позволяют защищать видео по запросу и потоковые трансляции с помощью технологии Widevine Modular DRM. Вы можете использовать следующих партнеров служб доставки для доставки лицензий Widevine:
-* [Axinom](https://www.axinom.com/press/ibc-axinom-drm-6/) 
+* [Axinom](https://www.axinom.com) 
 * [EZDRM](https://ezdrm.com/); 
 * [castLabs](https://castlabs.com/company/partners/azure/) 
 
@@ -476,7 +476,7 @@ REST API служб мультимедиа обновлены до версии 
 * Возможность связать несколько учетных записей хранилища с учетной записью служб мультимедиа. 
     * StorageAccount
     * Asset.StorageAccountName и Asset.StorageAccount
-* Возможность обновлять Job.Priority. 
+* Возможность обновления Job.Priority. 
 * Сущности и свойства, связанные с уведомлением: 
     * JobNotificationSubscription
     * NotificationEndPoint

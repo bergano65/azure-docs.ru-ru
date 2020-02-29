@@ -3,20 +3,20 @@ title: Настройка сложности пароля с помощью на
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить требования к сложности паролей с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d0caa029bd33da499db23f218b2392344c4585ec
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 2de1130e28b5071913e4cf3632c3fe4407597a98
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849075"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189146"
 ---
 # <a name="configure-password-complexity-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "76849075"
 
 В Azure Active Directory B2C (Azure AD B2C) можно настроить требования к сложности для паролей, предоставляемых пользователем при создании учетной записи. По умолчанию Azure AD B2C использует **надежные** пароли. В этой статье рассказывается о настройке сложности пароля в [настраиваемых политиках](custom-policy-overview.md). Вы также можете настроить сложность пароля в [пользовательских потоках](user-flow-password-complexity.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 

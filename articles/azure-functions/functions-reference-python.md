@@ -3,12 +3,12 @@ title: Справочник разработчика Python. Функции Azur
 description: Сведения о разработке функций на языке Python
 ms.topic: article
 ms.date: 12/13/2019
-ms.openlocfilehash: cfac28c4a759cee66c932c7b8cfea053c9c4f505
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 8ee13b59812e6a212fbafcf4ea6bfc171e735dc3
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921794"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190710"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -22,25 +22,9 @@ ms.locfileid: "75921794"
 
 Данные из триггеров и привязок привязываются к функции через атрибуты метода с помощью свойства `name`, определенного в файле *Function. JSON* . Например, приведенная ниже _функция Function. JSON_ описывает простую функцию, АКТИВИРУЕМУЮ HTTP-запросом с именем `req`:
 
-```json
-{
-  "bindings": [
-    {
-      "name": "req",
-      "direction": "in",
-      "type": "httpTrigger",
-      "authLevel": "anonymous"
-    },
-    {
-      "name": "$return",
-      "direction": "out",
-      "type": "http"
-    }
-  ]
-}
-```
+:::code language="son" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-Python/function.json":::
 
-Файл `__init__.py` содержит следующий код функции:
+На основе этого определения файл `__init__.py`, содержащий код функции, может выглядеть, как в следующем примере:
 
 ```python
 def main(req):
@@ -220,7 +204,7 @@ def main(req: func.HttpRequest,
     return message
 ```
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 
 Доступ к средству ведения журнала среды выполнения Функций Azure предоставляется через корневой обработчик [`logging`](https://docs.python.org/3/library/logging.html#module-logging) в приложении-функции. Это средство ведения журнала привязано к Application Insights и позволяет отмечать предупреждения и ошибки, возникшие во время выполнения функции.
 
@@ -322,7 +306,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 Чтобы получить контекст вызова функции во время выполнения, включите в сигнатуру аргумент [`context`](/python/api/azure-functions/azure.functions.context?view=azure-python) . 
 
-Пример.
+Пример:
 
 ```python
 import azure.functions
@@ -582,7 +566,7 @@ class TestFunction(unittest.TestCase):
             'msg body: test',
         )
 ```
-## <a name="temporary-files"></a>"Временные файлы"
+## <a name="temporary-files"></a>Временные файлы
 
 Метод `tempfile.gettempdir()` возвращает временную папку, которая `/tmp`в Linux. Приложение может использовать этот каталог для хранения временных файлов, создаваемых и используемых вашими функциями во время выполнения. 
 
@@ -612,7 +596,7 @@ from os import listdir
 
 ### <a name="cross-origin-resource-sharing"></a>Предоставление общего доступа к ресурсам независимо от источника
 
-Функции Azure поддерживают общий доступ к ресурсам между источниками (CORS). CORS настраивается [на портале](functions-how-to-use-azure-function-app-settings.md#cors) и с помощью [Azure CLI](/cli/azure/functionapp/cors). Список разрешенных источников CORS применяется на уровне приложения функции. При включении CORS ответы включают заголовок `Access-Control-Allow-Origin`. Дополнительные сведения см. в разделе [Общий доступ к ресурсам независимо от источника](functions-how-to-use-azure-function-app-settings.md#cors).
+Функции Azure поддерживают общий доступ к ресурсам между источниками (CORS). CORS настраивается [на портале](functions-how-to-use-azure-function-app-settings.md#cors) и с помощью [Azure CLI](/cli/azure/functionapp/cors). Список разрешенных источников CORS применяется на уровне приложения функции. При включении CORS ответы включают заголовок `Access-Control-Allow-Origin`. Дополнительные сведения см. в разделе [совместное использование ресурсов между источниками](functions-how-to-use-azure-function-app-settings.md#cors).
 
 Список разрешенных источников [сейчас не поддерживается](https://github.com/Azure/azure-functions-python-worker/issues/444) для приложений функций Python. Из-за этого ограничения необходимо явно задать заголовок `Access-Control-Allow-Origin` в функциях HTTP, как показано в следующем примере:
 

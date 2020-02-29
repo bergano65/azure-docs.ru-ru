@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 09/25/2019
-ms.openlocfilehash: 2e48b47967e29a421a96bb09dd17b2cdcdbaff3c
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: ece8ee77f57dc3252c70c3f8b49dcee72967dc9e
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77580544"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198071"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "77580544"
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими продуктами, такими как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) [, а также](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -106,11 +106,28 @@ experiment_run.wait_for_completion(show_output=True)
 Если вы хотите сделать файлы данных доступными в целевом объекте вычислений для обучения, используйте [филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) для подключения или загрузки файлов, на которые они ссылаются.
 
 ### <a name="mount-vs-download"></a>Подключение и загрузка
-При подключении набора данных необходимо прикрепить файлы, на которые ссылается набор данных, к каталогу (точке подключения) и сделать его доступным в целевом объекте вычислений. Поддерживается подключение для вычислений на основе Linux, в том числе Машинное обучение Azure вычислений, виртуальных машин и HDInsight. Если размер данных превышает размер расчетного диска или вы загружаете часть набора данных в скрипт, рекомендуется использовать монтирование. Поскольку загрузка набора данных, превышающего размер диска, завершится ошибкой, а при подключении будет загружена только часть данных, используемая сценарием во время обработки. 
-
-При скачивании набора данных все файлы, на которые ссылается набор данных, будут скачаны в целевой объект вычислений. Загрузка поддерживается для всех типов вычислений. Если сценарий обрабатывает все файлы, на которые ссылается набор данных, и ваш вычислительный диск может поместиться в полный набор данных, рекомендуется загружаться, чтобы избежать издержек, связанных с потоковой передачей данных из служб хранилища.
 
 Подключение или скачивание файлов любого формата поддерживается для наборов данных, созданных из хранилища BLOB-объектов Azure, файлов Azure Azure Data Lake Storage 1-го поколения, Azure Data Lake Storage 2-го поколения, базы данных SQL Azure и базы данных Azure для PostgreSQL. 
+
+При подключении набора данных необходимо прикрепить файлы, на которые ссылается набор данных, к каталогу (точке подключения) и сделать его доступным в целевом объекте вычислений. Поддерживается подключение для вычислений на основе Linux, в том числе Машинное обучение Azure вычислений, виртуальных машин и HDInsight. При скачивании набора данных все файлы, на которые ссылается набор данных, будут скачаны в целевой объект вычислений. Загрузка поддерживается для всех типов вычислений. 
+
+Если сценарий обрабатывает все файлы, на которые ссылается набор данных, а вычислительный диск может соответствовать полному набору данных, то скачивание рекомендуется, чтобы избежать издержек, связанных с потоковой передачей данных из служб хранилища. Если размер данных превышает размер диска вычислений, загрузка невозможна. В этом сценарии рекомендуется монтирование, так как только файлы данных, используемые скриптом, загружаются во время обработки.
+
+Следующий код подключает `dataset` к каталогу Temp в `mounted_path`
+
+```python
+import tempfile
+mounted_path = tempfile.mkdtemp()
+
+# mount dataset onto the mounted_path of a Linux-based compute
+mount_context = dataset.mount(mounted_path)
+
+mount_context.start()
+
+import os
+print(os.listdir(mounted_path))
+print (mounted_path)
+```
 
 ### <a name="create-a-filedataset"></a>Создание FileDataset
 
@@ -194,7 +211,7 @@ y_test = load_data(y_test, True).reshape(-1)
 
 В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс
 

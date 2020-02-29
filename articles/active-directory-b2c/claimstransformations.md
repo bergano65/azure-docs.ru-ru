@@ -2,20 +2,20 @@
 title: Элемент ClaimsTransformations в Azure Active Directory B2C | Документация Майкрософт
 description: Определение элемента ClaimsTransformations для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 66c94f08638895c85836fda37c3ae61f3857ee51
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e71d521dce40f6a8ec81286fcc95dc97bf10078c
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76836706"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189742"
 ---
 # <a name="claimstransformations"></a>ClaimsTransformations
 
@@ -35,7 +35,7 @@ ms.locfileid: "76836706"
 
 Элемент **ClaimsTransformation** содержит следующие атрибуты:
 
-| attribute |Обязательно для заполнения | Description |
+| attribute |Обязательно | Description |
 | --------- |-------- | ----------- |
 | Идентификатор |Да | Идентификатор, который уникально определяет преобразование утверждения. На идентификатор ссылаются другие XML-элементы в политике. |
 | TransformationMethod | Да | Метод преобразования, используемый в преобразовании утверждений. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -51,7 +51,7 @@ ms.locfileid: "76836706"
   </InputClaims>
   <InputParameters>
     ...
-  </InputParameters>                
+  </InputParameters>
   <OutputClaims>
     ...
   </OutputClaims>
@@ -62,7 +62,7 @@ ms.locfileid: "76836706"
 | Элемент | Вхождения | Description |
 | ------- | -------- | ----------- |
 | InputClaims | 0:1 | Список элементов **InputClaim**, определяющих типы утверждений, которые считаются входными данными для преобразования утверждений. Каждый из этих элементов содержит ссылку на тип ClaimType, уже определенный в разделе ClaimsSchema политики. |
-| InputParameters | 0:1 | Список элементов **InputParameter**, которые предоставляются в качестве входных данных для преобразования утверждений.  
+| InputParameters | 0:1 | Список элементов **InputParameter**, которые предоставляются в качестве входных данных для преобразования утверждений.
 | OutputClaims | 0:1 | Список элементов **OutputClaim**, указывающих типы утверждений, которые создаются после вызова ClaimsTransformation. Каждый из этих элементов содержит ссылку на тип ClaimType, который уже определен в разделе ClaimsSchema. |
 
 ### <a name="inputclaims"></a>InputClaims
@@ -77,7 +77,7 @@ ms.locfileid: "76836706"
 
 Элемент **InputClaim** содержит следующие атрибуты:
 
-| attribute |Обязательно для заполнения | Description |
+| attribute |Обязательно | Description |
 | --------- | ----------- | ----------- |
 | ClaimTypeReferenceId |Да | Ссылка на тип ClaimType, уже определенный в разделе ClaimsSchema политики. |
 | TransformationClaimType |Да | Идентификатор для ссылки на тип утверждения преобразования. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -92,7 +92,7 @@ ms.locfileid: "76836706"
 
 #### <a name="inputparameter"></a>InputParameter
 
-| attribute | Обязательно для заполнения |Description |
+| attribute | Обязательно |Description |
 | --------- | ----------- |----------- |
 | Идентификатор | Да | Идентификатор, который является ссылкой на параметр метода преобразования утверждений. Каждый метод преобразования утверждения имеет собственные значения. Полный список доступных значений см. в таблице по преобразованию утверждений. |
 | DataType | Да | Тип данных параметра, такой как String, Boolean, Int или DateTime, в соответствии с перечислением DataType в схеме XML настраиваемой политики. Этот тип используется для правильного выполнения арифметических операций. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
@@ -106,15 +106,15 @@ ms.locfileid: "76836706"
 | ------- | ----------- | ----------- |
 | outputClaim | 0:n | Ожидаемый тип исходящего утверждения. |
 
-#### <a name="outputclaim"></a>outputClaim 
+#### <a name="outputclaim"></a>outputClaim
 
 Элемент **OutputClaim** содержит следующие атрибуты:
 
-| attribute |Обязательно для заполнения | Description |
+| attribute |Обязательно | Description |
 | --------- | ----------- |----------- |
 | ClaimTypeReferenceId | Да | Ссылка на тип ClaimType, уже определенный в разделе ClaimsSchema политики.
 | TransformationClaimType | Да | Идентификатор для ссылки на тип утверждения преобразования. Каждое преобразование утверждения имеет собственные значения. Полный список доступных значений см. в разделе [Справочник по преобразованиям утверждений](#claims-transformations-reference). |
- 
+
 Если входящие и исходящие утверждения одного типа (строка или логическое значение), входящее утверждение можно использовать как исходящее. В этом случае преобразование утверждений изменяет входное утверждение с использованием выходного значения.
 
 ## <a name="example"></a>Пример

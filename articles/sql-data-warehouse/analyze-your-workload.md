@@ -1,30 +1,30 @@
 ---
 title: Анализ рабочей нагрузки
-description: Методы анализа приоритетов запросов для рабочей нагрузки в хранилище данных SQL Azure.
+description: Методы анализа приоритетов запросов для рабочей нагрузки в Azure синапсе Analytics.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload-management
-ms.date: 03/13/2019
+ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 14e53c1ebe63fac0f7c8e29f66ee5aa0cb3b9526
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: azure-synapse
+ms.openlocfilehash: 9b1432c41e56c6e0bc3fd80f9c2dbb36374d9e2a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73693115"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78200001"
 ---
-# <a name="analyze-your-workload-in-azure-sql-data-warehouse"></a>Анализ рабочей нагрузки в хранилище данных SQL Azure
+# <a name="analyze-your-workload-in-azure-synapse-analytics"></a>Анализ рабочей нагрузки в Azure синапсе Analytics
 
-Методы анализа рабочей нагрузки в хранилище данных SQL Azure.
+Методы анализа рабочей нагрузки аналитики SQL в Azure синапсе Analytics.
 
 ## <a name="resource-classes"></a>Классы ресурсов
 
-Хранилище данных SQL предоставляет классы ресурсов для назначения системных ресурсов запросам.  Дополнительные сведения о классах ресурсов см. в разделе [классы ресурсов & Управление рабочей нагрузкой](resource-classes-for-workload-management.md).  Запросы будут ожидать, если класс ресурсов, назначенный запросу, требует больше ресурсов, чем доступно в данный момент.
+SQL Analytics предоставляет классы ресурсов для назначения системных ресурсов запросам.  Дополнительные сведения о классах ресурсов см. в разделе [классы ресурсов & Управление рабочей нагрузкой](resource-classes-for-workload-management.md).  Запросы будут ожидать, если класс ресурсов, назначенный запросу, требует больше ресурсов, чем доступно в данный момент.
 
 ## <a name="queued-query-detection-and-other-dmvs"></a>Представление, используемое для определения запросов, поставленных в очередь, и другие динамические административные представления
 
@@ -63,7 +63,7 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc')
 ;
 ```
 
-В хранилище данных SQL предусмотрены следующие типы ожиданий.
+SQL Analytics имеет следующие типы ожидания:
 
 * **LocalQueriesConcurrencyResourceType**относится к запросам, которые не входят в платформу слотов выдачи. В качестве примеров таких запросов можно привести запросы и системные функции динамических административных представлений, такие как `SELECT @@VERSION` .
 * **UserConcurrencyResourceType**относится к запросам, которые входят в платформу слотов выдачи. В качестве примеров использования этого типа ресурсов можно привести запросы к таблицам пользователя.
@@ -153,4 +153,4 @@ FROM    sys.dm_pdw_wait_stats w
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управлении пользователями и безопасностью базы данных см. в статье [Защита базы данных в хранилище данных SQL](sql-data-warehouse-overview-manage-security.md). Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).
+Дополнительные сведения об управлении пользователями и безопасностью баз данных см. [в статье Защита базы данных в SQL Analytics](sql-data-warehouse-overview-manage-security.md). Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).

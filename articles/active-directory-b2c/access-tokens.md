@@ -2,20 +2,20 @@
 title: Запрос маркера доступа — Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как запросить маркер доступа из Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d808bca17012d46d1c32658ec0069ca2e2e6a3ac
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 8358d3378ea892ebeef653bcb51243c9f1aa0b8d
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76962039"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184423"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Запрос маркера доступа в Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "76962039"
 > [!NOTE]
 > **Цепочки веб-API ("от имени") не поддерживаются в Azure AD B2C.** Многие архитектуры включают веб-API, который должен вызывать другой нисходящий веб-API, защищенный Azure AD B2C. Этот сценарий распространен в клиентах, имеющих серверную веб-API, который, в свою очередь, вызывает другую службу. Этот сценарий веб-API с цепочками может поддерживаться с помощью предоставления учетных данных носителя маркера JWT OAuth 2.0 или потока On-Behalf-Of. Однако в Azure AD B2C поток On-Behalf-Of еще не реализован.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 - [Добавьте приложение веб-API в клиент Azure Active Directory B2C](add-web-application.md), если вы еще этого не сделали.

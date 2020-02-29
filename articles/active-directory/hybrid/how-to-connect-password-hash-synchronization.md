@@ -9,18 +9,18 @@ ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/02/2019
+ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 405b2fb9d9b8ef3bce17a9370ac87592a3437026
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: a3f7d7c9af807120457b119e0be047c7a342b961
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77585957"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190540"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -136,10 +136,10 @@ Azure AD поддерживает отдельную политику срока
 `Set-ADSyncAADCompanyFeature  -ForcePasswordChangeOnLogOn $true`
 
 > [!NOTE]
-> Принудительное изменение пароля пользователем при следующем входе в систему требует смены пароля.  AD Connect не установит флаг принудительного изменения пароля самостоятельно. это дополнение к обнаруженным изменениям паролей, происходящим во время синхронизации хэша паролей.
+> Принудительное изменение пароля пользователем при следующем входе в систему требует смены пароля.  Azure AD Connect не будет принимать флаг принудительной смены пароля самостоятельно; это дополнение к обнаруженным изменениям паролей, происходящим во время синхронизации хэша паролей.
 
 > [!CAUTION]
-> Если вы не включите самостоятельный сброс пароля (SSPR) в Azure AD, то при сбросе пароля в Azure AD и последующей попытке войти в Active Directory с новым паролем, так как новый пароль недействителен в Active Directory . Эту функцию следует использовать, только если в клиенте включена функция обратной записи SSPR и пароля.
+> Эту функцию следует использовать, только если в клиенте включена функция обратной записи SSPR и пароля.  Таким образом, если пользователь изменит свой пароль через SSPR, он будет синхронизирован с Active Directory.
 
 > [!NOTE]
 > Эта функция доступна в общедоступной предварительной версии прямо сейчас.
@@ -235,7 +235,7 @@ Azure AD поддерживает отдельную политику срока
 ## <a name="troubleshoot-password-hash-synchronization"></a>Устранение неполадок при синхронизации хэшированных паролей
 Если вы столкнетесь с проблемами при синхронизации хэшированных паролей, воспользуйтесь рекомендациями из статьи [Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](tshoot-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 * [Получить поэтапный план развертывания для перехода с ADFS на синхронизацию хэша паролей](https://aka.ms/authenticationDeploymentPlan)

@@ -1,5 +1,5 @@
 ---
-title: Apache Oozie workflows & Enterprise Security - Azure HDInsight
+title: Рабочие процессы Apache Oozie & Корпоративная безопасность — Azure HDInsight
 description: Защита рабочих процессов Apache Oozie с помощью Корпоративного пакета безопасности для Azure HDInsight Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 author: omidm1
 ms.author: omidm
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/09/2019
-ms.openlocfilehash: ecc4d5053ef6d9194f09b8a5aa6ba1528f9d94fa
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 9ef54707f7fac3dd1328e29f6d05f62c1dee2561
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920717"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78194909"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
 
@@ -26,12 +26,12 @@ Apache Oozie — это система рабочих процессов и ко
 
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
-## <a name="prerequisite"></a>Необходимое условие
+## <a name="prerequisite"></a>Предварительные требования
 
 Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
 > [!NOTE]  
-> For detailed instructions on how to use Oozie on non-ESP clusters, see [Use Apache Oozie workflows in Linux-based Azure HDInsight](../hdinsight-use-oozie-linux-mac.md).
+> Подробные инструкции по использованию Oozie в кластерах, отличных от ESP, см. [в статье Использование рабочих процессов Apache Oozie в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="connect-to-an-esp-cluster"></a>Подключение к кластеру ESP
 
@@ -348,4 +348,4 @@ ID                      Status  Ext ID          ExtStatus   ErrCode
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
-- [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
+- [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#authentication-domain-joined-hdinsight).

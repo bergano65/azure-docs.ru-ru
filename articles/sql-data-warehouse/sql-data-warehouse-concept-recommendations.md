@@ -1,32 +1,30 @@
 ---
-title: Рекомендации по хранилищу данных SQL
-description: Узнайте, что такое рекомендации в Хранилище данных SQL и как они создаются.
+title: Рекомендации по SQL Analytics
+description: Сведения о рекомендациях и способах создания SQL Analytics
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg-msft
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 11/05/2018
+ms.date: 02/05/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 1a93339b99c6591ee9ed615c032d0eac58a372fe
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.custom: azure-synapse
+ms.openlocfilehash: 5471236c09737eeef2d4cb7542c245d3087e726c
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827507"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195963"
 ---
-# <a name="sql-data-warehouse-recommendations"></a>Рекомендации в Хранилище данных SQL
+# <a name="sql-analytics-recommendations"></a>Рекомендации по SQL Analytics
 
-В этой статье описываются рекомендации, которые отображаются в Хранилище данных SQL с использованием Помощника по Azure.  
+В этой статье описываются рекомендации SQL Analytics, предоставляемые помощником по Azure.  
 
-Хранилище данных SQL предоставляет рекомендации, которые помогают непрерывно оптимизировать хранилище данных для повышения производительности. Рекомендации по хранилищу данных тесно интегрированы с [Помощником по Azure](https://docs.microsoft.com/azure/advisor/advisor-performance-recommendations), что позволяет получать рекомендации непосредственно на [портале Azure](https://aka.ms/Azureadvisor). Хранилище данных SQL каждый день анализирует текущее состояние хранилища данных, собирает данные телеметрии и выводит рекомендации по активной рабочей нагрузке. Ниже описаны поддерживаемые сценарии рекомендаций по хранилищу данных, а также инструкции по применению рекомендуемых действий.
+SQL Analytics предоставляет рекомендации для обеспечения согласованности рабочей нагрузки хранилища данных в целях повышения производительности. Рекомендации тесно интегрированы с [помощником по Azure](https://docs.microsoft.com/azure/advisor/advisor-performance-recommendations) для предоставления рекомендаций непосредственно в [портал Azure](https://aka.ms/Azureadvisor). SQL Analytics собирает сведения о телеметрии и поверхностях для активной рабочей нагрузки в течение ежедневного ритма. Поддерживаемые сценарии рекомендации приведены ниже, а также способы применения рекомендуемых действий.
 
-Если вы хотите оставить отзыв о Помощнике по Хранилищу данных SQL или у вас возникли проблемы, свяжитесь с нами по адресу [sqldwadvisor@service.microsoft.com](mailto:sqldwadvisor@service.microsoft.com).   
-
-Щелкните [здесь](https://aka.ms/Azureadvisor), чтобы проверить рекомендации уже сегодня. Сейчас эта функция применяется только к хранилищам данных 2-го поколения. 
+Вы можете [проверить свои рекомендации](https://aka.ms/Azureadvisor) сегодня! Сейчас эта функция применяется только к хранилищам данных 2-го поколения. 
 
 ## <a name="data-skew"></a>Неравномерное распределение данных
 
@@ -34,20 +32,20 @@ ms.locfileid: "73827507"
 
 - [Обнаружение и устранение неравномерного распределения](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-distribute#how-to-tell-if-your-distribution-column-is-a-good-choice) 
 
-## <a name="no-or-outdated-statistics"></a>Отсутствующие или устаревшие статистические данные
+## <a name="no-or-outdated-statistics"></a>Статистика отсутствует или устарела
 
-Неоптимальная статистика может существенно ухудшать производительность запросов из-за того, что оптимизатор запросов Хранилища данных SQL создает неоптимальные планы запросов. В следующем документе приводятся рекомендации по созданию и обновлению статистики:
+Наличие неоптимальной статистики может существенно повлиять на производительность запросов, так как может привести к тому, что оптимизатор запросов SQL создаст неоптимальные планы запросов. В следующем документе приводятся рекомендации по созданию и обновлению статистики:
 
 - [Создание и обновление статистики для таблицы](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics)
 
 Чтобы просмотреть список таблиц, которых касаются эти рекомендации, выполните [скрипт T-SQL](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/samples/sqlops/MonitoringScripts/ImpactedTables). Для создания этих рекомендаций Помощник непрерывно выполняет один и тот же скрипт T-SQL.
 
-## <a name="replicate-tables"></a>Таблицы репликации
+## <a name="replicate-tables"></a>Репликация таблиц
 
 Для рекомендаций реплицированной таблицы Помощник определяет варианты таблиц на основе следующих физических характеристик.
 
 - Размер реплицированной таблицы
-- Количество столбцов
+- Number of columns
 - Тип распределения таблиц
 - Количество разделов
 

@@ -7,13 +7,13 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 7c94ad096cf7d0d01bf2076f6748b49cf4ae1bb4
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.date: 02/28/2020
+ms.openlocfilehash: aa573e84fa9fff83bd6a894f516ce5f67b3afa79
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72794226"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78194348"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Синонимы в Azure Когнитивный поиск
 
@@ -45,7 +45,7 @@ Synonyms представляет собой поисковые системы, 
 
 #### <a name="add-or-update-a-synonym-map-under-your-service-using-post-or-put"></a>Добавить или обновить кату синонимов в службе можно с помощью запроса POST или PUT.
 
-Для передачи карты синонимов в службу используется запрос POST или PUT. Правила должны быть разделены символами новой строки (\n). Можно определить до 5000 правил на карту синонимов в службе уровня "Бесплатный" и до 10 000 правил для всех прочих номеров SKU. Каждое правило может содержать до 20 расширений.
+Для передачи карты синонимов в службу используется запрос POST или PUT. Правила должны быть разделены символами новой строки (\n). Вы можете определить до 5 000 правил на карту синонимов в бесплатной службе и в правилах 20 000 для каждой схемы в других SKU. Каждое правило может содержать до 20 расширений.
 
 Должны использоваться карты синонимов в формате Apache Solr, который описан ниже. Если у вас есть словарь синонимов в другом формате и вы хотите использовать его напрямую, сообщите нам об этом с помощью [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 

@@ -2,20 +2,20 @@
 title: Протоколы аутентификации в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как создавать приложения непосредственно с использованием протоколов, поддерживаемых Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7d5ff0fa22f3ded559a5c6cd726e7ae5e12dd92c
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: ed393f721d4461ebadea41f8dad707d4881865cd
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848789"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183911"
 ---
 # <a name="azure-ad-b2c-authentication-protocols"></a>Azure AD B2C: протоколы проверки подлинности
 Azure Active Directory B2C (Azure AD B2C) предоставляет приложениям "идентификацию как услугу" благодаря поддержке двух стандартных отраслевых протоколов: OpenID Connect и OAuth 2.0. Хотя эта служба соответствует стандартам, любые две реализации этих протоколов могут иметь небольшие различия.
@@ -57,7 +57,7 @@ https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/oauth2/v2.0/token
 
 Политики и потоки пользователей не являются стандартными компонентами OAuth 2.0 и OpenID Connect. Поэтому нужно уделить некоторое время их изучению. Дополнительные сведения см. в [справочнике по потокам пользователей Azure AD B2C](user-flow-overview.md).
 
-## <a name="tokens"></a>Маркеры
+## <a name="tokens"></a>Токены
 В реализации OAuth 0.2 и OpenID Connect в Azure AD B2C широко используются токены носителя, включая токены носителя в виде веб-токенов JSON (JWT). Токен носителя — это упрощенный маркер безопасности, предоставляющий его носителю доступ к защищенному ресурсу.
 
 В этом смысле носителем является любая сторона, которая может предъявить маркер. Перед получением токена носителя сторона должна пройти проверку подлинности в Azure AD. Однако если не выполняются действия, необходимые для защиты маркера во время его передачи и хранения, то его может перехватить и использовать несанкционированная сторона.

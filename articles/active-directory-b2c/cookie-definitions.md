@@ -3,20 +3,20 @@ title: Определения файлов cookie
 titleSuffix: Azure AD B2C
 description: Содержит определения для файлов cookie, используемых в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/23/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c6e48a663e4d1702851e11bc5124e56c52309d08
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: b984b75b3a12606aa0d82c7e7b399d5dce59df33
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76908876"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189520"
 ---
 # <a name="cookies-definitions-for-azure-ad-b2c"></a>Определения файлов cookie для Azure AD B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "76908876"
 
 Чтобы назначить файлы cookie для межсайтового доступа, разработчики должны использовать новый параметр "файл cookie" `SameSite=None`. При наличии атрибута `SameSite=None` необходимо использовать дополнительный атрибут `Secure`, чтобы межсайтовые файлы cookie могли быть доступны только через HTTPS-соединения. Проверка и тестирование всех приложений, в том числе приложений, использующих Azure AD B2C.
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения см. в разделе:
 
 * [Обработку изменений файла cookie SameSite в браузере Chrome](../active-directory/develop/howto-handle-samesite-cookie-changes-chrome-browser.md)
 * [Воздействие на веб-сайты клиентов и службы Майкрософт и продукты в Chrome версии 80 или более поздней](https://support.microsoft.com/help/4522904/potential-disruption-to-customer-websites-in-latest-chrome)
@@ -39,7 +39,7 @@ ms.locfileid: "76908876"
 
 В следующей таблице перечислены файлы cookie, используемые в Azure AD B2C.
 
-| Имя | Домен | Окончание срока действия | Цель |
+| Имя | Домен | Окончание срока действия | Назначение |
 | ----------- | ------ | -------------------------- | --------- |
 | `x-ms-cpim-admin` | main.b2cadmin.ext.azure.com | Конец [сеанса браузера](session-behavior.md) | Хранит данные о членстве пользователей в клиентах. Клиенты, членом которых является пользователь и уровень членства (администратор или пользователь). |
 | `x-ms-cpim-slice` | b2clogin.com, login.microsoftonline.com, домен с фирменной символикой | Конец [сеанса браузера](session-behavior.md) | Используется для маршрутизации запросов к соответствующему рабочему экземпляру. |

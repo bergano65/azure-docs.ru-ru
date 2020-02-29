@@ -3,20 +3,20 @@ title: Мониторинг поведения пользователей с п�
 titleSuffix: Azure AD B2C
 description: Узнайте, как включить журналы событий в Application Insights Azure AD B2C пути взаимодействия пользователей с помощью настраиваемых политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 02/11/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 002221bc69659a3be6fee950319909c9fc63ea9c
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: f36b04113a753607b9242681cb62270e37bf7067
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77136330"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190201"
 ---
 # <a name="track-user-behavior-in-azure-active-directory-b2c-using-application-insights"></a>Отслеживание поведения пользователей в Azure Active Directory B2C с использованием Application Insights
 

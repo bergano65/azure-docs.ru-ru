@@ -3,20 +3,20 @@ title: Руководство. Настройка пользовательско
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить пользовательский интерфейс для приложений в Azure Active Directory B2C с помощью портал Azure.
 services: B2C
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1b0ad7049375cb20d2daa0e6f920b680d03530a5
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: b2b2bc8dd4e60348553228b8b418df252a8c426a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840134"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78186256"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Руководство. Настройка интерфейса взаимодействия с пользователем в Azure Active Directory B2C
 
@@ -29,9 +29,9 @@ ms.locfileid: "76840134"
 > * Обновление потока пользователя для использования файлов.
 > * Тестирование настраиваемого пользовательского интерфейса.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 
@@ -39,7 +39,7 @@ ms.locfileid: "76840134"
 
 Можно создать учетную запись хранения Azure и контейнер, а затем поместить в этот контейнер основные HTML- и CSS-файлы.
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранилища
+### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Хотя можно хранить файлы разными способами, в этом руководстве они будут размещены в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md).
 

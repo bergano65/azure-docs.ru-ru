@@ -5,45 +5,31 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 29b8a32989b5a1d60792fb5678f7ba8a9f12daba
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 31ced19e164d50030386064a81edf3322b12855d
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443811"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191135"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
-В структуре модулей Runbook, которые работают в службе автоматизации Azure, отсутствует разница между ними и теми модулями, которые работают в гибридной рабочей роли Runbook. Модули Runbook, которые используются с каждым из этих элементов, скорее всего, значительно отличаются друг от друга. Эта разница связана с тем, что модули Runbook, предназначенные для гибридной рабочей роли Runbook, обычно управляют ресурсами на самом локальном компьютере или ресурсами в локальной среде, где она развернута. Модули Runbook в службе автоматизации Azure обычно управляют ресурсами в облаке Azure.
+Модули Runbook, предназначенные для гибридной рабочей роли Runbook, обычно управляют ресурсами на локальном компьютере или с ресурсами в локальной среде, в которой развернута рабочая роль. Модули Runbook в службе автоматизации Azure обычно управляют ресурсами в облаке Azure. Несмотря на то, что они используются по-разному, модули Runbook, работающие в службе автоматизации Azure и модули Runbook, которые выполняются в гибридной рабочей роли Runbook, идентичны в структуре.
 
-Когда вы создаете модули runbook для запуска на гибридной рабочей роли Runbook, настройте и протестируйте их выполнение на компьютере, где размещена эта гибридная рабочая роль. Этот компьютер имеет все модули PowerShell и доступ к сети, необходимые для доступа к локальным ресурсам и управления ими. Протестировав модуль runbook на компьютере с гибридной рабочей ролью, вы можете передать его в среду службы автоматизации Azure, где он будет доступен для запуска в гибридной рабочей роли. Важно понимать задания, выполняемые в локальной системной учетной записи для Windows или специальной учетной записи пользователя `nxautomation` в Linux. В Linux это означает, что необходимо убедиться, что учетная запись `nxautomation` имеет доступ к расположению, где хранятся модули. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) укажите **ALLUSERS** в параметре `-Scope`, чтобы убедиться, что у учетной записи `nxautomation` есть доступ.
+При создании модуля Runbook для запуска в гибридной рабочей роли Runbook необходимо изменить и протестировать модуль Runbook на компьютере, на котором размещена рабочая роль. На главном компьютере есть все модули PowerShell и сетевой доступ, необходимые для управления локальными ресурсами и доступа к ним. После тестирования модуля Runbook на компьютере гибридной рабочей роли Runbook его можно передать в среду службы автоматизации Azure, где ее можно будет запустить в рабочей роли. 
 
-Дополнительные сведения о PowerShell в Linux см. в статье [Известные проблемы для PowerShell на платформах, отличных от Windows](https://docs.microsoft.com/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms).
+>[!NOTE]
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
-## <a name="starting-a-runbook-on-hybrid-runbook-worker"></a>Запуск runbook в гибридной рабочей роли Runbook
+## <a name="runbook-permissions-for-a-hybrid-runbook-worker"></a>Разрешения Runbook для гибридной рабочей роли Runbook
 
-[Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md) описываются различные методы запуска модуля Runbook. Гибридный компонент Runbook Worker добавляет параметр **RunOn** , при помощи которого можно указать имя группы гибридных компонентов Runbook Worker. Если группа указана, модуль Runbook извлекается и запускается одной из рабочих ролей в этой группе. Если этот параметр не указан, то он будет запущен в службе автоматизации Azure в обычном режиме.
-
-При запуске модуля Runbook на портале Azure отображается запрос **Выполнить в**, где вы можете выбрать в качестве значения варианты **Azure** или **Гибридная рабочая роль**. При выборе значения **Гибридный компонент Worker**можно выбрать группу из раскрывающегося списка.
-
-Используйте параметр **RunOn**. Вы можете использовать следующую команду, чтобы с помощью Windows PowerShell запустить модуль runbook с названием Test-Runbook в группе гибридных рабочих ролей Runbook с именем MyHybridGroup.
-
-```azurepowershell-interactive
-Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
-```
-
-> [!NOTE]
-> Параметр **RunOn** был добавлен в командлет **Start-AzureAutomationRunbook** в Microsoft Azure PowerShell версии 0.9.1. Если у вас установлена более ранняя версия, следует [загрузить последнюю версию](https://azure.microsoft.com/downloads/) . Эту версию достаточно установить только на той рабочей станции, на которой вы будете запускать модуль runbook с помощью PowerShell. Вам не нужно устанавливать его на компьютер с компонентом Worker, если вы не собираетесь запускать модули Runbooks с этого компьютера.
-
-## <a name="runbook-permissions"></a>Разрешения для модулей Runbook
-
-Так как модули Runbook, запущенные в гибридной рабочей роли Runbook, будут обращаться к ресурсам за пределами Azure, они не смогут использовать стандартный метод аутентификации в Azure. Модуль Runbook может предоставить собственную аутентификацию для локальных ресурсов или настроить ее с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager). Или вы можете указать учетную запись запуска от имени, чтобы предоставить контекст пользователя для всех модулей Runbook.
+Так как они обращаются к ресурсам, не относящимся к Azure, модули Runbook, работающие в гибридной рабочей роли Runbook, не могут использовать механизм проверки подлинности, обычно используемый модулями Runbook для проверки подлинности ресурсов Azure Модуль Runbook либо предоставляет собственную проверку подлинности для локальных ресурсов, либо настраивает проверку подлинности с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager). Можно также указать учетную запись запуска от имени, чтобы предоставить контекст пользователя для всех модулей Runbook.
 
 ### <a name="runbook-authentication"></a>Проверка подлинности модуля Runbook
 
-По умолчанию модули Runbook работают в контексте учетной записи локальной системы для Windows и специальной учетной записи пользователя `nxautomation` для Linux на локальном компьютере, поэтому они должны предоставить свою собственную проверку подлинности при доступе к ресурсам.
+По умолчанию модули Runbook выполняются на локальном компьютере. Для Windows они выполняются в контексте локальной системной учетной записи. Для Linux они выполняются в контексте специальной учетной записи пользователя **нксаутоматион**. В любом сценарии модули Runbook должны предоставлять собственную проверку подлинности для ресурсов, к которым они обращаются.
 
-В модуле Runbook можно использовать ресурсы [учетных данных](automation-credentials.md) и [сертификата](automation-certificates.md) с командлетами, которые позволяют указывать такие данные для аутентификации доступа к разным ресурсам. В следующем примере показана часть модуля Runbook, предназначенная для перезапуска компьютера. Он извлекает учетные данные из набора учетных данных, а также имя компьютера из набора переменных, после чего использует эти значения в сочетании с командлетом Restart-Computer.
+Вы можете использовать [учетные](automation-credentials.md) данные и ресурсы [сертификатов](automation-certificates.md) в модуле Runbook с командлетами, которые позволяют указать учетные данные, чтобы модуль Runbook мог проходить проверку подлинности в разных ресурсах. В следующем примере показана часть модуля Runbook, предназначенная для перезапуска компьютера. Он извлекает учетные данные из ресурса учетных данных и имя компьютера из переменного ресурса, а затем использует эти значения с командлетом **Restart-Computer** .
 
 ```powershell
 $Cred = Get-AutomationPSCredential -Name "MyCredential"
@@ -52,11 +38,11 @@ $Computer = Get-AutomationVariable -Name "ComputerName"
 Restart-Computer -ComputerName $Computer -Credential $Cred
 ```
 
-Вы можете также использовать [InlineScript](automation-powershell-workflow.md#inlinescript), что позволяет запускать блоки кода на другом компьютере с учетными данными, указанными в [общем параметре PSCredential](/powershell/module/psworkflow/about/about_workflowcommonparameters).
+Можно также использовать действие [InlineScript](automation-powershell-workflow.md#inlinescript) . InlineScript позволяет запускать блоки кода на другом компьютере с учетными данными, указанными в [общем параметре PSCredential](/powershell/module/psworkflow/about/about_workflowcommonparameters).
 
-### <a name="runas-account"></a>Учетная запись запуска от имени
+### <a name="run-as-account"></a>учетная запись запуска от имени
 
-По умолчанию гибридная рабочая роль Runbook использует локальную систему для Windows и специальную учетную запись пользователя `nxautomation` для Linux для выполнения модулей Runbook. Кроме варианта, когда модули Runbook выполняют собственную проверку подлинности на локальных ресурсах, вы можете указать для группы гибридных рабочих ролей учетную запись **Запуск от имени** . Укажите [ресурс учетных данных](automation-credentials.md) , который имеет доступ к локальным ресурсам, включая хранилища сертификатов, и все модули Runbook выполняются под этими учетными данными при запуске в гибридной рабочей роли Runbook в группе.
+Вместо того чтобы модуль Runbook предоставил собственную проверку подлинности для локальных ресурсов, можно указать учетную запись запуска от имени для группы гибридных рабочих ролей Runbook. Для этого необходимо определить [ресурс учетных данных](automation-credentials.md) , который имеет доступ к локальным ресурсам. Эти ресурсы включают хранилища сертификатов, и все модули Runbook выполняются под этими учетными данными в гибридной рабочей роли Runbook в группе.
 
 Имя пользователя для учетных данных должно быть представлено в одном из следующих форматов:
 
@@ -64,48 +50,47 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 * username@domain
 * имя пользователя (для локальных учетных записей на локальном компьютере).
 
-Указать учетную запись запуска от имени для гибридной рабочей роли можно так.
+Используйте следующую процедуру, чтобы указать учетную запись запуска от имени для группы гибридных рабочих ролей Runbook.
 
 1. Создайте [ресурс учетных данных](automation-credentials.md) с доступом к локальным ресурсам.
 2. На портале Azure откройте учетную запись службы автоматизации.
 3. Щелкните плитку **Группы гибридных рабочих ролей** и выберите группу.
-4. Щелкните **Все параметры**, а затем — **Настройки группы гибридных рабочих ролей**.
-5. Измените для параметра **Запуск от имени** значение **По умолчанию** на **Пользовательский**.
+4. Выберите **все параметры**, а затем — **Параметры группы гибридных рабочих ролей**.
+5. Измените значение параметра **Запуск от имени** с **Default** на **Custom**.
 6. Выберите учетные данные и нажмите кнопку **Сохранить**.
 
 ### <a name="managed-identities-for-azure-resources"></a>Управляемые удостоверения для ресурсов Azure
 
-Гибридные рабочие роли Runbook, запущенные на виртуальных машинах Azure, используют управляемые удостоверения для аутентификации ресурсов Azure. Есть множество преимуществ использования управляемых удостоверений вместо учетных записей запуска от имени:
+Гибридные рабочие роли Runbook на виртуальных машинах Azure могут использовать управляемые удостоверения для ресурсов Azure для проверки подлинности в ресурсах Azure. Использование управляемых удостоверений для ресурсов Azure вместо учетных записей запуска от имени предоставляет преимущества, поскольку вам не нужно:
 
-* не нужно экспортировать сертификат запуска от имени, а затем импортировать его в гибридную рабочую роль Runbook;
-* не нужно обновлять сертификат учетной записи запуска от имени;
-* не нужно обрабатывать объект подключения запуска от имени в коде Runbook.
+* Экспортируйте сертификат запуска от имени, а затем импортируйте его в гибридную рабочую роль Runbook
+* Продлите сертификат, используемый учетной записью запуска от имени
+* Обработку объекта подключения запуска от имени в коде модуля Runbook
 
-Чтобы использовать управляемое удостоверение для ресурсов Azure в гибридной рабочей роли Runbook, выполните следующие действия.
+Выполните следующие действия, чтобы использовать управляемое удостоверение для ресурсов Azure в гибридной рабочей роли Runbook.
 
-1. Создание виртуальной машины Azure
-2. [Настройте управляемые удостоверения для ресурсов Azure на вашей виртуальной машине](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
-3. [Предоставьте виртуальной машине доступ к группе ресурсов в Диспетчер ресурсов](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager) руководстве — Windows-VM-Access-ARM. md # Get-an-Access-Token-using-,-VMS-System-назначил-Managed-Identity-and-Reuse-it-to-Call-.
-4. [Установите гибридную рабочую роль Runbook Windows](automation-windows-hrw-install.md) на виртуальную машину.
-
-По завершении предыдущих этапов можно использовать `Connect-AzureRmAccount -Identity` в модуле Runbook для аутентификации ресурсов Azure. Эта конфигурация снижает потребность использовать учетную запись запуска от имени и управлять ее сертификатом.
+1. Создайте виртуальную машину Azure.
+2. Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине. См. раздел [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портал Azure](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
+3. Предоставьте виртуальной машине доступ к группе ресурсов в диспетчер ресурсов. Чтобы [получить доступ к Диспетчер ресурсов, обратитесь к статье Использование управляемого удостоверения, назначенного системой виртуальной машины Windows](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
+4. Установите гибридную рабочую роль Runbook на виртуальной машине. См. раздел [развертывание гибридной рабочей роли Runbook Windows](automation-windows-hrw-install.md).
+5. Обновите модуль Runbook, чтобы использовать командлет [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0) с параметром *Identity* для проверки подлинности в ресурсах Azure. Такая конфигурация сокращает потребность в использовании учетной записи запуска от имени и управление соответствующей учетной записью.
 
 ```powershell
-# Connect to Azure using the Managed identities for Azure resources identity configured on the Azure VM that is hosting the hybrid runbook worker
-Connect-AzureRmAccount -Identity
+    # Connect to Azure using the managed identities for Azure resources identity configured on the Azure VM that is hosting the hybrid runbook worker
+    Connect-AzAccount -Identity
 
-# Get all VM names from the subscription
-Get-AzureRmVm | Select Name
+    # Get all VM names from the subscription
+    Get-AzVM | Select Name
 ```
 
 > [!NOTE]
-> `Connect-AzureRMAccount -Identity` работает для гибридной рабочей роли Runbook, используя назначенное системой удостоверение и пользовательское удостоверение. Если необходимо использовать несколько пользовательских удостоверений в роли RUNBOOK, необходимо указать параметр `-AccountId`, чтобы выбрать конкретное назначенное пользователем удостоверение.
+> `Connect-AzAccount -Identity` работает для гибридной рабочей роли Runbook, используя назначенное системой удостоверение и одно назначенное пользователем удостоверение. Если для гибридной рабочей роли Runbook используется несколько пользовательских удостоверений, модуль Runbook должен указать параметр *accountID* для **Connect-азаккаунт** , чтобы выбрать конкретное назначенное пользователем удостоверение.
 
 ### <a name="runas-script"></a>Учетная запись запуска от имени службы автоматизации
 
-В ходе автоматизированного процесса сборки для развертывания ресурсов в Azure вам может потребоваться доступ к локальным системам для выполнения задачи или набора действий, входящих в последовательность развертывания. Чтобы использовать аутентификацию в Azure с использованием учетной записи запуска от имени, необходимо установить сертификат учетной записи запуска от имени.
+В рамках автоматизированного процесса сборки для развертывания ресурсов в Azure может потребоваться доступ к локальным системам для поддержки задачи или набора действий в последовательности развертывания. Чтобы обеспечить проверку подлинности в Azure с помощью учетной записи запуска от имени, необходимо установить сертификат учетной записи запуска от имени.
 
-Модуль runbook PowerShell с именем **Export-RunAsCertificateToHybridWorker** экспортирует сертификат запуска от имени из учетной записи службы автоматизации Azure, а затем скачивает его и импортирует в хранилище сертификатов локального компьютера, относящегося к гибридной рабочей роли, подключенной к этой учетной записи. После этого модуль проверяет, может ли рабочая роль успешно выполнить аутентификацию в Azure с использованием этой учетной записи запуска от имени.
+Следующий модуль Runbook PowerShell, именуемый **Export-RunAsCertificateToHybridWorker**, экспортирует сертификат запуска от имени из учетной записи службы автоматизации Azure. Модуль Runbook скачивает и импортирует сертификат в хранилище сертификатов локального компьютера в гибридной рабочей роли Runbook, подключенной к той же учетной записи. После завершения этого шага модуль Runbook проверяет, может ли рабочий процесс пройти проверку подлинности в Azure с помощью учетной записи запуска от имени.
 
 ```azurepowershell-interactive
 <#PSScriptInfo
@@ -129,9 +114,7 @@ Get-AzureRmVm | Select Name
 Exports the Run As certificate from an Azure Automation account to a hybrid worker in that account.
 
 .DESCRIPTION
-This runbook exports the Run As certificate from an Azure Automation account to a hybrid worker in that account.
-Run this runbook in the hybrid worker where you want the certificate installed.
-This allows the use of the AzureRunAsConnection to authenticate to Azure and manage Azure resources from runbooks running in the hybrid worker.
+This runbook exports the Run As certificate from an Azure Automation account to a hybrid worker in that account. Run this runbook on the hybrid worker where you want the certificate installed. This allows the use of the AzureRunAsConnection to authenticate to Azure and manage Azure resources from runbooks running on the hybrid worker.
 
 .EXAMPLE
 .\Export-RunAsCertificateToHybridWorker
@@ -161,42 +144,66 @@ Write-Output ("Importing certificate into $env:computername local machine root s
 $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
 Import-PfxCertificate -FilePath $CertPath -CertStoreLocation Cert:\LocalMachine\My -Password $SecurePassword -Exportable | Write-Verbose
 
-# Test that authentication to Azure Resource Manager is working
+# Test to see if authentication to Azure Resource Manager is working
 $RunAsConnection = Get-AutomationConnection -Name "AzureRunAsConnection"
 
-Connect-AzureRmAccount `
+Connect-AzAccount `
     -ServicePrincipal `
-    -TenantId $RunAsConnection.TenantId `
+    -Tenant $RunAsConnection.TenantId `
     -ApplicationId $RunAsConnection.ApplicationId `
     -CertificateThumbprint $RunAsConnection.CertificateThumbprint | Write-Verbose
 
-Set-AzureRmContext -SubscriptionId $RunAsConnection.SubscriptionID | Write-Verbose
+Set-AzContext -Subscription $RunAsConnection.SubscriptionID | Write-Verbose
 
-# List automation accounts to confirm Azure Resource Manager calls are working
-Get-AzureRmAutomationAccount | Select-Object AutomationAccountName
+# List automation accounts to confirm that Azure Resource Manager calls are working
+Get-AzAutomationAccount | Select-Object AutomationAccountName
 ```
 
-> [!IMPORTANT]
-> **Add-AzureRmAccount** теперь является псевдонимом для **Connect-AzureRMAccount**. Если при поиске в библиотеке элементов вы не видите элемент **Connect-AzureRMAccount**, можно использовать **Add-AzureRmAccount** или обновить модули в своей учетной записи службы автоматизации.
+>[!NOTE]
+>Для модулей Runbook PowerShell **Add-азаккаунт** и **Add-AzureRMAccount** являются псевдонимами для **Connect-азаккаунт**. Если при поиске элементов библиотеки вы не видите пункт **Connect-азаккаунт**, можно использовать **Add-азаккаунт**или обновить модули в учетной записи службы автоматизации.
 
-Сохраните модуль runbook *Export-RunAsCertificateToHybridWorker* на компьютер с расширением `.ps1`. Импортируйте модуль runbook в учетную запись автоматизации и замените значение переменной `$Password` своим паролем. Опубликуйте и запустите модуль Runbook. Нацельтесь на группу гибридных рабочих ролей, в которой для запуска и аутентификации модулей runbook будет применяться учетная запись запуска от имени. Поток заданий сообщает о попытке импортировать сертификат в хранилище локального компьютера и предоставляет несколько строк. Это поведение зависит от количества учетных записей службы автоматизации, определенных в вашей подписке, и успешного прохождения проверки подлинности.
+Чтобы завершить подготовку учетной записи запуска от имени, сделайте следующее:
 
-## <a name="job-behavior"></a>Поведение заданий
+1. Сохраните модуль Runbook **Export-RunAsCertificateToHybridWorker** на компьютере с расширением **PS1** .
+2. Импортируйте его в учетную запись службы автоматизации.
+3. Измените модуль Runbook, изменив значение переменной *$Password* на свой собственный пароль. 
+4. Опубликуйте модуль Runbook.
+5. Запустите модуль Runbook, нацеливание на группу гибридных рабочих ролей Runbook, которая выполняет и выполняет проверку подлинности модулей Runbook с помощью учетной записи запуска от имени. 
+6. Изучите поток задания, чтобы убедиться, что он сообщает о попытке импортировать сертификат в хранилище локального компьютера, а затем использует несколько строк. Это поведение зависит от количества учетных записей службы автоматизации, определяемых в подписке, и степени успеха проверки подлинности.
 
-Задания обрабатываются в гибридных рабочих ролях Runbook немного иначе, чем при запуске в песочницах Azure. Одно из основных отличий заключается в том, что в гибридных рабочих ролях Runbook нет ограничений на продолжительность заданий. Модули runbook, выполняющиеся в песочницах Azure, ограничены тремя часами по причине [справедливого распределения](automation-runbook-execution.md#fair-share). Убедитесь, что длительный модуль runbook устойчивый к возможному перезапуску. Например, если компьютер, на котором размещена гибридная рабочая роль, будет перезагружен. При перезагрузке компьютера, выполняющего гибридную рабочую роль, все выполняемые задания runbook запускаются заново, с самого начала или с последней контрольной точки, если это runbook рабочих процессов PowerShell. Если задание runbook перезапускается более трех раз, его выполнение приостанавливается.
+## <a name="job-behavior-on-hybrid-runbook-workers"></a>Поведение задания в гибридных рабочих ролях Runbook
 
-## <a name="run-only-signed-runbooks"></a>Запуск только подписанных модулей Runbook
+Служба автоматизации Azure обрабатывает задания в гибридных рабочих ролях Runbook несколько иначе из заданий, выполняемых в изолированных средах Azure. Одно из ключевых различий заключается в том, что для рабочих процессов Runbook не существует ограничения на длительность задания. Модули Runbook, выполняемые в изолированных средах Azure, ограничены тремя часами из-за [справедливого предоставления общего доступа](automation-runbook-execution.md#fair-share).
 
-Гибридные рабочие роли Runbook можно настроить для запуска только подписанных модулей Runbook с определенной конфигурацией. В следующем разделе описывается, как настроить гибридные рабочие роли Runbook для запуска подписанных заданий гибридных рабочих ролей Runbook [Windows](#windows-hybrid-runbook-worker) и [Linux](#linux-hybrid-runbook-worker).
+Для долго выполняющегося модуля Runbook необходимо обеспечить устойчивость к возможному перезапуску, например, если компьютер, на котором размещается Рабочая роль, перезагружается. Если Гибридный компьютер узла Runbook Worker перезапускается, любое запущенное задание Runbook перезапускается с самого начала или из последней контрольной точки для модулей Runbook рабочего процесса PowerShell. После перезапуска задания Runbook более трех раз оно приостанавливается.
+
+Помните, что задания гибридных рабочих ролей Runbook выполняются под локальной системной учетной записью Windows или учетной записью **нксаутоматион** в Linux. Для Linux необходимо убедиться, что учетная запись **нксаутоматион** имеет доступ к расположению, где хранятся модули Runbook. При использовании командлета [Install-Module](/powershell/module/powershellget/install-module) обязательно укажите **ALLUSERS** для параметра *области* , чтобы обеспечить доступ к учетной записи **нксаутоматион** . Дополнительные сведения о PowerShell в Linux см. в статье [Известные проблемы для PowerShell на платформах, отличных от Windows](https://docs.microsoft.com/powershell/scripting/whats-new/known-issues-ps6?view=powershell-6#known-issues-for-powershell-on-non-windows-platforms).
+
+## <a name="starting-a-runbook-on-a-hybrid-runbook-worker"></a>Запуск Runbook в гибридной рабочей роли Runbook
+
+[Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md) описывает различные методы запуска модуля Runbook. При запуске модуля Runbook в гибридной рабочей роли Runbook используется параметр **выполнить в** , который позволяет указать имя группы гибридных рабочих ролей Runbook. Если указана группа, то один из сотрудников этой группы получает и выполняет модуль Runbook. Если в модуле Runbook не указан этот параметр, служба автоматизации Azure запускает модуль Runbook обычным образом.
+
+При запуске модуля Runbook в портал Azure вы увидите параметр **выполнить в** , для которого можно выбрать **Azure** или **гибридную рабочую роль**. Если выбран вариант **Гибридная Рабочая роль**, можно выбрать группу гибридных рабочих ролей Runbook из раскрывающегося списка.
+
+Используйте параметр *RunOn* с командлетом **Start-AzureAutomationRunbook** . В следующем примере Windows PowerShell используется для запуска модуля Runbook с именем **Test-Runbook** в группе гибридной рабочей роли Runbook с именем михибридграуп.
+
+```azurepowershell-interactive
+Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
+```
 
 > [!NOTE]
-> Настроенные гибридные рабочие роли Runbook запускаются, только когда модули Runbook подписаны, а модули Runbook, которые **не** были подписаны, не будут выполнены в рабочей роли.
+> Параметр *RunOn* был добавлен в командлет **Start-AzureAutomationRunbook** в версии 0.9.1 Microsoft Azure PowerShell. Если у вас установлена более ранняя версия, следует [загрузить последнюю версию](https://azure.microsoft.com/downloads/) . Установите эту версию только на рабочей станции, где запускается модуль Runbook из PowerShell. Не нужно устанавливать его на компьютере гибридной рабочей роли Runbook, если вы не планируете запускать модули Runbook с этого компьютера.
 
-### <a name="windows-hybrid-runbook-worker"></a>Гибридная рабочая роль Runbook для Windows
+## <a name="working-with-signed-runbooks-on-a-windows-hybrid-runbook-worker"></a>Работа с подписанными модулями Runbook в гибридной рабочей роли Runbook Windows
 
-#### <a name="create-signing-certificate"></a>Создание сертификата для подписи
+Вы можете настроить гибридную рабочую роль Runbook Windows для запуска только подписанных модулей Runbook.
 
-В следующем примере создается самозаверяющийся сертификат, который можно использовать для подписывания модулей runbook. Образец создает сертификат и экспортирует его. Позже сертификат импортируется в гибридную рабочую роль Runbook. Отпечаток также возвращается; он будет использоваться позже для указания сертификата.
+> [!IMPORTANT]
+> После настройки гибридной рабочей роли Runbook для запуска только подписанных модулей Runbook рабочие модули Runbook, которые не были подписаны, не будут выполняться в рабочей роли.
+
+### <a name="create-signing-certificate"></a>Создание сертификата для подписи
+
+В следующем примере создается самозаверяющийся сертификат, который можно использовать для подписывания модулей runbook. Этот код создает сертификат и экспортирует его, чтобы Гибридная Рабочая роль Runbook могла импортировать его позже. Отпечаток также возвращается для последующего использования в ссылке на сертификат.
 
 ```powershell
 # Create a self-signed certificate that can be used for code signing
@@ -220,9 +227,9 @@ Import-Certificate -FilePath .\hybridworkersigningcertificate.cer -CertStoreLoca
 $SigningCert.Thumbprint
 ```
 
-#### <a name="configure-the-hybrid-runbook-workers"></a>Настройка гибридной рабочей роли Runbook
+### <a name="import-certificate-and-configure-workers-for-signature-validation"></a>Импорт сертификата и Настройка рабочих ролей для проверки подписи
 
-Скопируйте сертификат, созданный для гибридной рабочей роли Runbook, в группу. Выполните следующий сценарий, чтобы импортировать сертификат и настроить гибридную рабочую роль, для использования проверки подписи в модулях Runbook.
+Скопируйте созданный вами сертификат в каждую гибридную рабочую роль Runbook в группе. Выполните следующий скрипт, чтобы импортировать сертификат и настроить его на использование проверки подписи в модулях Runbook.
 
 ```powershell
 # Install the certificate into a location that will be used for validation.
@@ -236,78 +243,77 @@ Import-Certificate -FilePath .\hybridworkersigningcertificate.cer -CertStoreLoca
 Set-HybridRunbookWorkerSignatureValidation -Enable $true -TrustedCertStoreLocation "Cert:\LocalMachine\AutomationHybridStore"
 ```
 
-#### <a name="sign-your-runbooks-using-the-certificate"></a>Вход в модули Runbook с помощью сертификата
+### <a name="sign-your-runbooks-using-the-certificate"></a>Подписывание модулей Runbook с помощью сертификата
 
-С помощью гибридных рабочих ролей Runbook, которые настроены для использования только подписанных модулей runbook, необходимо подписать модули runbook, которые будут использоваться в гибридной рабочей роли Runbook. Используйте следующий образец PowerShell для подписи модулей Runbook.
+Если гибридные рабочие роли Runbook настроены для использования только подписанных модулей Runbook, необходимо подписывать модули Runbook, которые будут использоваться в гибридной рабочей роли Runbook. Чтобы подписать эти модули Runbook, используйте следующий пример кода PowerShell.
 
 ```powershell
 $SigningCert = ( Get-ChildItem -Path cert:\LocalMachine\My\<CertificateThumbprint>)
 Set-AuthenticodeSignature .\TestRunbook.ps1 -Certificate $SigningCert
 ```
 
-После подписывания runbook его нужно импортировать в учетную запись службы автоматизации Azure и опубликовать с блоком подписей. Чтобы узнать, как импортировать модули runbook, ознакомьтесь с разделом [Creating or importing a runbook in Azure Automation](manage-runbooks.md#import-a-runbook) (Создание или импорт модуля Runbook в службу автоматизации Azure).
+Если модуль Runbook был подписан, его необходимо импортировать в учетную запись службы автоматизации и опубликовать с помощью блока Signature. Чтобы узнать, как импортировать модули runbook, ознакомьтесь с разделом [Creating or importing a runbook in Azure Automation](manage-runbooks.md#import-a-runbook) (Создание или импорт модуля Runbook в службу автоматизации Azure).
 
-### <a name="linux-hybrid-runbook-worker"></a>Гибридная рабочая роль Runbook для Linux
+## <a name="working-with-signed-runbooks-on-a-linux-hybrid-runbook-worker"></a>Работа с подписанными модулями Runbook в гибридной рабочей роли Runbook Linux
 
-Чтобы подписать модули Runbook в гибридной рабочей роли Runbook для Linux, на компьютере этой роли необходимо наличие исполняемого файла [GPG](https://gnupg.org/index.html).
+Чтобы иметь возможность работать с подписанными модулями Runbook, в гибридной рабочей роли Runbook Linux должен быть исполняемый файл [GPG](https://gnupg.org/index.html) на локальном компьютере.
 
-#### <a name="create-a-gpg-keyring-and-keypair"></a>Создание набора и пары ключей GPG
+> [!IMPORTANT]
+> После настройки гибридной рабочей роли Runbook для запуска только подписанных модулей Runbook рабочие модули Runbook, которые не были подписаны, не будут выполняться в рабочей роли.
 
-Чтобы создать набор и пару ключей, необходимо использовать учетную запись гибридной рабочей роли Runbook `nxautomation`.
+### <a name="create-a-gpg-keyring-and-keypair"></a>Создание набора и пары ключей GPG
 
-Используйте `sudo` для входа в качестве учетной записи `nxautomation`.
+Чтобы создать набор ключей и пару ключей GPG, используйте учетную запись гибридной рабочей роли Runbook Worker **нксаутоматион** .
 
-```bash
-sudo su – nxautomation
-```
+1. Используйте приложение sudo для входа в качестве учетной записи **нксаутоматион** .
 
-Используя учетную запись `nxautomation`, создайте пару ключей GPG.
+    ```bash
+    sudo su – nxautomation
+    ```
 
-```bash
-sudo gpg --generate-key
-```
+2. После использования **нксаутоматион**Создайте пару ключей GPG. GPG поможет выполнить шаги. Необходимо указать имя, адрес электронной почты, срок действия и парольную фразу. Затем подождите, пока на компьютере будет достаточно энтропии, чтобы создать ключ.
 
-С помощью GPG вы сможете выполнить шаги по созданию пары ключей. Вам необходимо указать имя, адрес электронной почты, время окончания срока действия и парольную фразу, а затем дождаться объема энтропии, достаточного для создания ключа на компьютере.
+    ```bash
+    sudo gpg --generate-key
+    ```
 
-Так как каталог GPG был сформирован с использованием программы Sudo, вам необходимо изменить его владельца на `nxautomation`.
+3. Так как каталог GPG был создан с помощью sudo, необходимо изменить его владельца на **нксаутоматион** с помощью следующей команды.
 
-Чтобы изменить владельца, выполните следующую команду.
+    ```bash
+    sudo chown -R nxautomation ~/.gnupg
+    ```
 
-```bash
-sudo chown -R nxautomation ~/.gnupg
-```
+### <a name="make-the-keyring-available-to-the-hybrid-runbook-worker"></a>Обеспечение доступности набора ключей для гибридной рабочей роли Runbook
 
-#### <a name="make-the-keyring-available-the-hybrid-runbook-worker"></a>Предоставление доступа к набору ключей для гибридной рабочей роли Runbook
-
-Создав набор ключей, вы должны сделать его доступным для гибридной рабочей роли Runbook. Измените файл параметров `/var/opt/microsoft/omsagent/state/automationworker/diy/worker.conf` таким образом, чтобы в разделе `[worker-optional]` был следующий пример.
+После создания набора ключей сделайте его доступным для гибридной рабочей роли Runbook. Измените файл параметров `/var/opt/microsoft/omsagent/state/automationworker/diy/worker.conf` чтобы включить следующий пример кода в раздел File **[Worker — необязательно]** .
 
 ```bash
 gpg_public_keyring_path = /var/opt/microsoft/omsagent/run/.gnupg/pubring.kbx
 ```
 
-#### <a name="verify-signature-validation-is-on"></a>Включение проверки подписи
+### <a name="verify-that-signature-validation-is-on"></a>Убедитесь, что проверка подписи включена
 
-Если на компьютере отключена проверка подписи, вам необходимо включить ее. Чтобы включить проверку подписи, выполните следующую команду. Замените `<LogAnalyticsworkspaceId>` идентификатором рабочей области.
+Если проверка подписи была отключена на компьютере, необходимо включить ее, выполнив следующую команду sudo. Замените `<LogAnalyticsworkspaceId>` ИДЕНТИФИКАТОРом рабочей области.
 
 ```bash
 sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --true <LogAnalyticsworkspaceId>
 ```
 
-#### <a name="sign-a-runbook"></a>Подпись модуля runbook
+### <a name="sign-a-runbook"></a>Подпись модуля runbook
 
-Настроив проверку подписи для подписи модуля runbook, можно использовать следующую команду:
+После настройки проверки подписи используйте следующую команду GPG, чтобы подписать модуль Runbook.
 
 ```bash
 gpg –-clear-sign <runbook name>
 ```
 
-Подписанный модуль runbook будет иметь имя `<runbook name>.asc`.
+Подписанный Runbook называется `<runbook name>.asc`.
 
-Теперь подписанный модуль runbook можно отправить в службу автоматизации Azure и выполнять как обычный модуль runbook.
+Теперь вы можете передать подписанный модуль Runbook в службу автоматизации Azure и выполнить его как обычный модуль Runbook.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о разных методах запуска модуля см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
-* Описание разных методов работы с модулями Runbook PowerShell в службе автоматизации Azure с использованием текстового редактора см. в статье [Изменение модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
-* Если модули Runbook выполняются с ошибками, см. раздел [Устранение неполадок с выполнением модулей Runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
+* Дополнительные сведения о методах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
+* Чтобы понять, как использовать текстовый редактор для работы с модулями Runbook PowerShell в службе автоматизации Azure, см. статью [изменение модуля Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
+* Если модули Runbook не завершаются успешно, ознакомьтесь с руководством по устранению неполадок при [сбоях выполнения Runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
 * Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/powershell/scripting/overview).

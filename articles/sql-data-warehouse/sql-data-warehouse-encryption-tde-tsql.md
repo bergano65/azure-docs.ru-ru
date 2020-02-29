@@ -1,6 +1,6 @@
 ---
 title: Прозрачное шифрование данных (T-SQL)
-description: Прозрачное шифрование данных (TDE) в хранилище данных SQL (T-SQL)
+description: Прозрачное шифрование данных (TDE) в Azure синапсе Analytics (T-SQL)
 services: sql-data-warehouse
 author: julieMSFT
 manager: craigg
@@ -11,17 +11,17 @@ ms.date: 04/30/2019
 ms.author: jrasnick
 ms.reviewer: rortloff
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4e7f4f31cd8b899e3fcf79568ea62830313936b9
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: bd6f40b8389284c1932a2f16a70060cd56e412fb
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822602"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195811"
 ---
 # <a name="get-started-with-transparent-data-encryption-tde"></a>Начало работы с прозрачным шифрованием данных (TDE)
 > [!div class="op_single_selector"]
-> * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Проверка подлинности](sql-data-warehouse-authentication.md)
+> * [Общие сведения о безопасности для служб R SQL Server](sql-data-warehouse-overview-manage-security.md)
+> * [Аутентификация](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 > 
@@ -31,7 +31,7 @@ ms.locfileid: "73822602"
 Чтобы включить прозрачное шифрование данных, необходимо иметь права администратора или участника роли dbmanager.
 
 ## <a name="enabling-encryption"></a>Включение шифрования
-Чтобы включить прозрачное шифрование данных для хранилища данных SQL, сделайте следующее.
+Чтобы включить TDE, выполните следующие действия.
 
 1. Подключитесь к *главной* базе данных на сервере, где находится база данных, указав логин администратора или члена роли **dbmanager** в главной базе данных.
 2. Выполните следующий оператор для шифрования базы данных:
@@ -41,7 +41,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 ```
 
 ## <a name="disabling-encryption"></a>Отключение шифрования
-Чтобы отключить прозрачное шифрование данных для хранилища данных SQL, сделайте следующее.
+Чтобы отключить TDE, выполните следующие действия.
 
 1. Подключитесь к *главной* базе данных, указав логин администратора или члена роли **dbmanager** в главной базе данных.
 2. Выполните следующий оператор для шифрования базы данных:
@@ -51,12 +51,12 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION OFF;
 ```
 
 > [!NOTE]
-> Прежде чем вносить изменения в параметры прозрачного шифрования данных, работу приостановленного хранилища данных SQL нужно возобновить.
+> Приостановленный пул SQL необходимо возобновить перед внесением изменений в параметры TDE.
 > 
 > 
 
 ## <a name="verifying-encryption"></a>Проверка шифрования
-Чтобы проверить состояние шифрования для хранилища данных SQL, выполните указанные ниже действия.
+Чтобы проверить состояние шифрования, выполните следующие действия:
 
 1. Подключитесь к *главной* базе данных или к базе данных экземпляра, указав логин администратора или члена роли **dbmanager** в главной базе данных.
 2. Выполните следующий оператор для шифрования базы данных:

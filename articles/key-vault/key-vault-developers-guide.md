@@ -5,15 +5,16 @@ services: key-vault
 author: msmbaldwin
 manager: rkarlin
 ms.service: key-vault
+ms.subservice: general
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7991fcec42a81a74ead1a00784e2cec59997da57
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 331e3d5855e4ea1fc18a3b638741f6297a7a27d8
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981536"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184678"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -128,7 +129,7 @@ Azure Key Vault позволяет обеспечить безопасное х�
 - [Key Vault storage account keys overview](key-vault-ovw-storage-keys.md) (Общие сведения об учетной записи хранения Key Vault). Описание интеграции Key Vault с ключами учетных записей службы хранилища Azure.
 - [Системы безопасности и географические ограничения Azure Key Vault](key-vault-ovw-security-worlds.md). Описание взаимосвязей между регионами и областями безопасности.
 
-## <a name="social"></a>Социальное взаимодействие
+## <a name="social"></a>Социальные сети
 
 - [Блог хранилища ключей](https://aka.ms/kvblog)
 - [Форум хранилища ключей](https://aka.ms/kvforum)

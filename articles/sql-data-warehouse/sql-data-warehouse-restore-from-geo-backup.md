@@ -1,6 +1,6 @@
 ---
 title: Восстановление хранилища данных из географической резервной копии
-description: Руководство по географической восстановлению хранилища данных SQL Azure.
+description: Руководство по географическиму восстановлению пула SQL.
 services: sql-data-warehouse
 author: anumjs
 manager: craigg
@@ -11,22 +11,22 @@ ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 69ba3ed981a27dfff41ea9ea52e1da769a9366c4
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 624c6665e70802907be8a41015b78d36cca7df1c
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759641"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198398"
 ---
-# <a name="geo-restore-azure-sql-data-warehouse"></a>Географическое восстановление хранилища данных SQL Azure
+# <a name="geo-restore-for-sql-pool"></a>Геовосстановление для пула SQL
 
-Из этой статьи вы узнаете, как восстановить хранилище данных из географической резервной копии с помощью портал Azure и PowerShell.
+Из этой статьи вы узнаете, как восстановить пул SQL из географической резервной копии с помощью портал Azure и PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждое хранилище данных SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
+**Проверьте ресурсы DTU.** Каждый пул SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
 
@@ -74,20 +74,27 @@ $GeoRestoredDatabase.status
 
 ## <a name="restore-from-an-azure-geographical-region-through-azure-portal"></a>Восстановление из географического региона Azure с помощью портал Azure
 
-Выполните действия, описанные ниже, чтобы восстановить хранилище данных SQL Azure из географической резервной копии.
+Выполните действия, описанные ниже, чтобы восстановить пул SQL из географической резервной копии.
 
 1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
-1. Щелкните **+ создать ресурс** и найдите хранилище данных SQL и нажмите кнопку **создать**.
+1. Щелкните **+ Create a resource** (+ Создать ресурс). 
 
-    ![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
-1. Заполните сведения, запрошенные на вкладке " **основы** ", и нажмите кнопку " **Далее": дополнительные параметры**.
+![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
 
-    ![Основы](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
-1. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **проверить и создать**.
+3. Щелкните **базы данных** , а затем * * Azure синапсе Analytics (ранее SQL DW) * *.
+
+![Новый DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new-02.png)
+
+4. Заполните сведения, запрошенные на вкладке " **основы** ", и нажмите кнопку " **Далее": дополнительные параметры**.
+
+![Основы](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
+
+5. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **проверить и создать**.
  
-   ![backup](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
-2. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
+![резервная копия](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
 
-## <a name="next-steps"></a>Следующие шаги
-- [Восстановление существующего хранилища данных](sql-data-warehouse-restore-active-paused-dw.md)
-- [Восстановление удаленного хранилища данных](sql-data-warehouse-restore-deleted-dw.md)
+6. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
+
+## <a name="next-steps"></a>Next Steps
+- [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)

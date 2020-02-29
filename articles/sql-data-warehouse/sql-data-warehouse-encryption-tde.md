@@ -1,6 +1,6 @@
 ---
 title: Прозрачное шифрование данных (портал)
-description: Прозрачное шифрование данных в хранилище данных SQL на портале
+description: Прозрачное шифрование данных (TDE) в Azure синапсе Analytics
 services: sql-data-warehouse
 author: julieMSFT
 manager: craigg
@@ -11,17 +11,17 @@ ms.date: 04/30/2019
 ms.author: jrasnick
 ms.reviewer: rortloff
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4435c5f246d6dd20fd0b2c560634f6980d6aa2ff
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: c121f9c16895a749922525d1ba85ee2c2e60cfb0
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685782"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195862"
 ---
-# <a name="get-started-with-transparent-data-encryption-tde-in-sql-data-warehouse"></a>Начало работы с прозрачным шифрованием данных (TDE) в хранилище данных SQL
+# <a name="get-started-with-transparent-data-encryption-tde"></a>Начало работы с прозрачным шифрованием данных (TDE)
 > [!div class="op_single_selector"]
-> * [Обзор безопасности](sql-data-warehouse-overview-manage-security.md)
-> * [Authentication](sql-data-warehouse-authentication.md)
+> * [Общие сведения о безопасности для служб R SQL Server](sql-data-warehouse-overview-manage-security.md)
+> * [Аутентификация](sql-data-warehouse-authentication.md)
 > * [Шифрование (портал)](sql-data-warehouse-encryption-tde.md)
 > * [Шифрование (T-SQL)](sql-data-warehouse-encryption-tde-tsql.md)
 > 
@@ -31,7 +31,7 @@ ms.locfileid: "73685782"
 Чтобы включить прозрачное шифрование данных, необходимо иметь права администратора или участника роли dbmanager.
 
 ## <a name="enabling-encryption"></a>Включение шифрования
-Чтобы включить прозрачное шифрование данных для хранилища данных SQL, выполните указанные ниже действия.
+Чтобы включить TDE, выполните следующие действия:
 
 1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .
@@ -41,7 +41,7 @@ ms.locfileid: "73685782"
    ![][3].  
 
 ## <a name="disabling-encryption"></a>Отключение шифрования
-Чтобы отключить прозрачное шифрование данных для хранилища данных SQL, выполните указанные ниже действия.
+Чтобы отключить TDE, выполните следующие действия:
 
 1. Откройте базу данных на [портале Azure](https://portal.azure.com)
 2. В колонке базы данных нажмите кнопку **Параметры** .

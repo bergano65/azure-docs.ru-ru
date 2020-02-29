@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
 ms.date: 06/19/2019
-ms.openlocfilehash: 8c4c346dd004e435846aff5592a20cd747c45df7
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: b88557468c386bc07c2432e154a82fd1f4fcb438
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552633"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78194311"
 ---
 # <a name="tutorial-add-an-azure-sql-database-single-database-to-a-failover-group"></a>Учебник. Добавление отдельной базы данных SQL Azure в группу отработки отказа
 
@@ -27,22 +27,22 @@ ms.locfileid: "75552633"
 > - Создайте [группу отработки отказа](sql-database-auto-failover-group.md) для отдельной базы данных между двумя логическими серверами SQL.
 > - Тестовая отработка отказа.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 В рамках этого руководства вам потребуются: 
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
 - [Azure PowerShell](/powershell/azureps-cmdlets-docs)
 
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
@@ -57,10 +57,10 @@ ms.locfileid: "75552633"
 ## <a name="2---create-the-failover-group"></a>2\. Создание группы отработки отказа 
 На этом шаге вы создадите [группу отработки отказа](sql-database-auto-failover-group.md) между существующим сервером Azure SQL Server и новым сервером Azure SQL Server в другом регионе. Затем добавьте пример базы данных в группу отработки отказа. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Создайте группу отработки отказа и добавьте в нее отдельную базу данных с помощью портал Azure. 
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
+1. На **портале Azure** в меню слева выберите [Azure SQL](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
 1. Выберите одну базу данных, созданную в разделе 1, например `mySampleDatabase`. 
 1. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
 
@@ -88,7 +88,7 @@ ms.locfileid: "75552633"
     ![Добавление базы данных SQL в группу отработки отказа](media/sql-database-single-database-failover-group-tutorial/add-sqldb-to-failover-group.png)
         
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Создайте группу отработки отказа и добавьте в нее отдельную базу данных с помощью PowerShell. 
 
    > [!NOTE]
@@ -166,7 +166,7 @@ ms.locfileid: "75552633"
 | [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase) | Возвращает одну или несколько баз данных SQL. |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup) | Добавляет одну или несколько баз данных SQL Azure в группу отработки отказа. |
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Создайте группу отработки отказа и добавьте в нее отдельную базу данных с помощью команды AZ CLI. 
 
    > [!NOTE]
@@ -174,45 +174,16 @@ ms.locfileid: "75552633"
 
    ```azurecli-interactive
    #!/bin/bash
-   # Set variables
-   # subscriptionID=<SubscriptionID>
-   # resourceGroupName=myResourceGroup-$RANDOM
-   # location=SouthCentralUS
-   # adminLogin=azureuser
-   # password="PWD27!"+`openssl rand -base64 18`
-   # serverName=mysqlserver-$RANDOM
-   # databaseName=mySampleDatabase
-   drLocation=NorthEurope
-   drServerName=mysqlsecondary-$RANDOM
-   failoverGroupName=failovergrouptutorial-$RANDOM
+   # set variables
+   $failoverLocation = "West US"
+   $failoverServer = "failoverServer-$randomIdentifier"
+   $failoverGroup = "failoverGroup-$randomIdentifier"
 
-   # Create a secondary server in the failover region
    echo "Creating a secondary logical server in the DR region..."
-   az sql server create \
-      --name $drServerName \
-      --resource-group $resourceGroupName \
-      --location $drLocation  \
-      --admin-user $adminLogin\
-      --admin-password $password
-
-   # Configure a firewall rule for the server
-   echo "Configuring firewall..."
-   az sql server firewall-rule create \
-      --resource-group $resourceGroupName \
-      --server $drServerName \
-      -n AllowYourIp \
-      --start-ip-address $startip \
-      --end-ip-address $endip
+   az sql server create --name $failoverServer --resource-group $resourceGroup --location $failoverLocation --admin-user $login --admin-password $password
    
-   # Create a failover group between the servers and add the database
    echo "Creating a failover group between the two servers..."
-   az sql failover-group create \
-      --name $failoverGroupName  \
-      --partner-server $drServerName \
-      --resource-group $resourceGroupName \
-      --server $serverName \
-      --add-db $databaseName
-      --failover-policy Automatic
+   az sql failover-group create --name $failoverGroup --partner-server $failoverServer --resource-group $resourceGroup --server $server --add-db $database --failover-policy Automatic
    ```
 
 В этой части руководства используются следующие командлеты AZ CLI:
@@ -228,10 +199,10 @@ ms.locfileid: "75552633"
 ## <a name="3---test-failover"></a>3\. тестовая отработка отказа 
 На этом шаге группа отработки отказа будет передаваться на сервер-получатель, а затем восстановлена с помощью портал Azure. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Тестовая отработка отказа с помощью портал Azure. 
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
+1. На **портале Azure** в меню слева выберите [Azure SQL](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
 1. Выберите одну базу данных, созданную в разделе 2, например `mySampleDatbase`. 
 1. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
 
@@ -250,7 +221,7 @@ ms.locfileid: "75552633"
 1. Проверьте, какой сервер является основным и какой сервер является вторичным. Если отработка отказа завершилась успешно, два сервера должны иметь переключенные роли. 
 1. Снова установите флажок **отработка отказа** , чтобы вернуть серверы к исходным ролям. 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Тестовая отработка отказа с помощью PowerShell. 
 
 
@@ -313,55 +284,31 @@ ms.locfileid: "75552633"
 
 
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Тестовая отработка отказа с помощью AZ CLI. 
 
 Проверьте, какой сервер является вторичным:
 
    
    ```azurecli-interactive
-   # Set variables
-   # resourceGroupName=myResourceGroup-$RANDOM
-   # serverName=mysqlserver-$RANDOM
-   
-   # Verify which server is secondary
    echo "Verifying which server is in the secondary role..."
-   az sql failover-group list \
-      --server $serverName \
-      --resource-group $resourceGroupName
+   az sql failover-group list --server $server --resource-group $resourceGroup
    ```
 
 Отработка отказа на сервер-получатель: 
 
    ```azurecli-interactive
-   # Set variables
-   # resourceGroupName=myResourceGroup-$RANDOM
-   # drServerName=mysqlsecondary-$RANDOM
-   # failoverGroupName=failovergrouptutorial-$RANDOM
-
-   
    echo "Failing over group to the secondary server..."
-   az sql failover-group set-primary \
-      --name $failoverGroupName \
-      --resource-group $resourceGroupName \
-      --server $drServerName
-   echo "Successfully failed failover group over to" $drServerName
+   az sql failover-group set-primary --name $failoverGroup --resource-group $resourceGroup --server $failoverServer
+   echo "Successfully failed failover group over to" $failoverServer
    ```
 
 Восстановите группу отработки отказа на основной сервер:
 
    ```azurecli-interactive
-   # Set variables
-   # resourceGroupName=myResourceGroup-$RANDOM
-   # serverName=mysqlserver-$RANDOM
-   # failoverGroupName=failovergrouptutorial-$RANDOM
-   
    echo "Failing over group back to the primary server..."
-   az sql failover-group set-primary \
-      --name $failoverGroupName \
-      --resource-group $resourceGroupName \
-      --server $serverName
-   echo "Successfully failed failover group back to" $serverName
+   az sql failover-group set-primary --name $failoverGroup --resource-group $resourceGroup --server $server
+   echo "Successfully failed failover group back to" $server
    ```
 
 В этой части руководства используются следующие командлеты AZ CLI:
@@ -376,17 +323,16 @@ ms.locfileid: "75552633"
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 Очистите ресурсы, удалив группу ресурсов. 
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Удалите группу ресурсов с помощью портал Azure. 
 
-1. Перейдите к группе ресурсов в [портал Azure](https://portal.azure.com).
+1. На [портале Azure](https://portal.azure.com) перейдите к используемой группе ресурсов.
 1. Выберите **Удалить группу ресурсов** , чтобы удалить все ресурсы в группе, а также саму группу ресурсов. 
 1. Введите имя группы ресурсов, `myResourceGroup`, в текстовом поле и нажмите кнопку **Удалить** , чтобы удалить группу ресурсов.  
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Удалите группу ресурсов с помощью PowerShell. 
-
 
    ```powershell-interactive
    # Set variables
@@ -404,20 +350,15 @@ ms.locfileid: "75552633"
 |---|---|
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Удалите группу ресурсов с помощью команды AZ CLI. 
 
 
    ```azurecli-interactive
-   # Set variables
-   # resourceGroupName=myResourceGroup-$RANDOM
-   
-   # Clean up resources by removing the resource group
    echo "Cleaning up resources by removing the resource group..."
-   az group delete \
-     --name $resourceGroupName
-   echo "Successfully removed resource group" $resourceGroupName
+   az group delete --name $resourceGroup
+   echo "Successfully removed resource group" $resourceGroup
    ```
 
 В этой части руководства используются следующие командлеты AZ CLI:
@@ -435,7 +376,7 @@ ms.locfileid: "75552633"
 
 ## <a name="full-scripts"></a>Полные скрипты
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!code-powershell-interactive[main](../../powershell_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-ps.ps1 "Add single database to a failover group")]
 
@@ -454,7 +395,7 @@ ms.locfileid: "75552633"
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup)| Выполняет отработку отказа для группы отработки отказа Базы данных SQL Azure. |
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [!code-azurecli-interactive[main](../../cli_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-cli.sh "Add single database to a failover group")]
 
@@ -472,7 +413,7 @@ ms.locfileid: "75552633"
 | [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. | 
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 Для портал Azure нет доступных скриптов. 
  
 ---

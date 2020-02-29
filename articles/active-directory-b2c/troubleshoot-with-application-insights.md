@@ -3,20 +3,20 @@ title: Устранение неполадок пользовательских 
 titleSuffix: Azure AD B2C
 description: Настройка Application Insights для трассировки выполнения пользовательских политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3aeef1614f22563e0fd348c5bc6ae7ff1e7b0b03
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 403dbe6106cb7a1d277ba672112d2bc45dbc2987
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848152"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78186273"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
@@ -61,7 +61,7 @@ ms.locfileid: "76848152"
     * `ClientEnabled="true"` отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. Настроив `ClientEnabled= "true"`, вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и сбоях AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по умолчанию имеет значение `false`.
     * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
 
-    Пример.
+    Пример:
 
     ```XML
     <TrustFrameworkPolicy

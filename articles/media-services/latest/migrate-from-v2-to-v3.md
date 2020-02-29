@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 10/02/2019
+ms.date: 02/28/2020
 ms.author: juliako
-ms.openlocfilehash: dc3b122ab7f4a243f3a4ecd6f220caa00beb044e
-ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
+ms.openlocfilehash: 2a670c7bce113de8854b33e407c7de2236edd794
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77505773"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197867"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -77,7 +77,26 @@ ms.locfileid: "77505773"
 * Выходные данные потоковой трансляции запускаются при создании и останавливаются при удалении. Программы работали иначе в API версии 2, они должны были запускаться после создания.
 * Чтобы получить сведения о задании, необходимо знать имя преобразования, под которым было создано задание. 
 * В версии 2 [входные](../previous/media-services-input-metadata-schema.md) и [выходные](../previous/media-services-output-metadata-schema.md) XML-файлы метаданных создаются в результате задания кодирования. В версии 3 формат метаданных изменился с XML на JSON. 
+* В службах мультимедиа версии 2 можно указать вектор инициализации (IV). В службах мультимедиа v3 не может быть указан FairPlay IV. Хотя он не влияет на клиентов, использующих службы мультимедиа как для упаковки, так и для доставки лицензий, это может быть проблемой при использовании сторонней системы DRM для доставки лицензий FairPlay (гибридный режим). В этом случае важно помнить, что FairPlay IV является производным от идентификатора ключа CBCS и может быть получен с помощью следующей формулы:
 
+    ```
+    string cbcsIV =  Convert.ToBase64String(HexStringToByteArray(cbcsGuid.ToString().Replace("-", string.Empty)));
+    ```
+
+    на
+
+    ``` 
+    public static byte[] HexStringToByteArray(string hex)
+    {
+        return Enumerable.Range(0, hex.Length)
+            .Where(x => x % 2 == 0)
+            .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+            .ToArray();
+    }
+    ```
+
+    Дополнительные сведения см. в статье [код функций C# Azure для служб мультимедиа v3 в гибридном режиме для операций в режиме реального времени и VOD](https://github.com/Azure-Samples/media-services-v3-dotnet-core-functions-integration/tree/master/LiveAndVodDRMOperationsV3).
+ 
 > [!NOTE]
 > Ознакомьтесь с соглашениями об именовании, которые применяются к [ресурсам служб мультимедиа v3](media-services-apis-overview.md#naming-conventions). Также проверьте [имена больших двоичных объектов](assets-concept.md#naming).
 

@@ -2,20 +2,20 @@
 title: Поддержка Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как регистрировать запросы на поддержку для Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/06/2016
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e426837f7f06d6726bf3edc18e6c93a943dea884
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 5195241003b1ce4ea505002e2cc3c10410e6cde1
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848269"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183726"
 ---
 # <a name="azure-active-directory-b2c-file-support-requests"></a>Azure Active Directory B2C: регистрация запросов в службу поддержки
 Вы можете получить запросы на поддержку для Azure Active Directory B2C (Azure AD B2C) на портал Azure, выполнив следующие действия:

@@ -1,6 +1,6 @@
 ---
 title: Системные представления
-description: Ссылки на документацию по инструкциям системным представлениям, поддерживаемым в хранилище данных SQL Azure.
+description: Ссылки на документацию по системным представлениям, поддерживаемым в SQL Analytics.
 services: sql-data-warehouse
 author: XiaoyuMSFT
 manager: craigg
@@ -10,18 +10,18 @@ ms.subservice: query
 ms.date: 01/06/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 36f0738dc478d7a1144527acb29118a7a99ef5ac
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.custom: azure-synapse
+ms.openlocfilehash: 694bb1d970f7f5c36b074e64ee41c3d34b55c482
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690763"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198309"
 ---
-# <a name="system-views-supported-in-azure-sql-data-warehouse"></a>Системные представления, поддерживаемые в хранилище данных SQL Azure
-Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
+# <a name="system-views-supported-in-sql-analytics"></a>Системные представления, поддерживаемые в SQL Analytics
+Ссылки на документацию по инструкциям T-SQL, поддерживаемым в SQL Analytics.
 
-## <a name="sql-data-warehouse-catalog-views"></a>Представления каталога хранилища данных SQL
+## <a name="sql-analytics-catalog-views"></a>Представления каталога SQL Analytics
 * [sys.pdw_column_distribution_properties](https://msdn.microsoft.com/library/mt204022.aspx)
 * [sys.pdw_distributions](https://msdn.microsoft.com/library/mt203892.aspx)
 * [sys.pdw_index_mappings](https://msdn.microsoft.com/library/mt203912.aspx)
@@ -65,8 +65,8 @@ ms.locfileid: "75690763"
 * [sys.dm_pdw_waits](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql)
 * [sys. dm_workload_management_workload_groups_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-workload-management-workload-group-stats-transact-sql) (Предварительная версия)
 
-## <a name="sql-server-dmvs-applicable-to-sql-data-warehouse"></a>Динамические административные представления SQL Server, применимые к хранилищу данных SQL
-Приведенные ниже динамические административные представления можно применять к хранилищу данных SQL, но их необходимо выполнять, подключившись к базе данных **master** .
+## <a name="sql-server-dmvs-applicable-to-sql-analytics"></a>SQL Server динамические административные представления, применимые к аналитике SQL
+Следующие динамические административные представления применимы к SQL Analytics, но должны выполняться путем подключения к базе данных **master** .
 
 * [sys.database_service_objectives](https://msdn.microsoft.com/library/mt712619.aspx)
 * [sys.dm_operation_status](https://msdn.microsoft.com/library/dn270022.aspx)
@@ -145,17 +145,17 @@ ms.locfileid: "75690763"
 * [sys.types](https://msdn.microsoft.com/library/ms188021.aspx)
 * [sys.views](https://msdn.microsoft.com/library/ms190334.aspx)
 
-## <a name="sql-server-dmvs-available-in-sql-data-warehouse"></a>Динамические административные представления SQL Server, доступные в хранилище данных SQL
-Хранилище данных SQL включает многие динамические административные представления (DMV) SQL Server. При обращении к таким представлениям в хранилище данных SQL сообщается состояние базы данных SQL, в которой выполняются распределения.
+## <a name="sql-server-dmvs-available-in-sql-analytics"></a>SQL Server динамические административные представления, доступные в SQL Analytics
+SQL Analytics предоставляет многие SQL Server динамические административные представления (DMV). Эти представления при запросе в SQL Analytics сообщают о состоянии баз данных SQL, выполняющихся в дистрибутивах.
 
-В хранилище данных SQL и в параллельных хранилищах данных (PDW) платформы Analytics используются одни и те же системные представления. Каждое динамическое административное представление содержит столбец с именем pdw_node_id, который является идентификатором для вычислительных узлов. 
+SQL Analytics и Parallel Data Warehouse (PDW) используют одни и те же системные представления. Каждое динамическое административное представление содержит столбец с именем pdw_node_id, который является идентификатором для вычислительных узлов. 
 
 > [!NOTE]
 > Чтобы использовать эти представления, вставьте в имя текст pdw_nodes_, как показано в приведенной ниже таблице.
 > 
 > 
 
-| Имя DMV в хранилище данных SQL | Статья о Transact-SQL для SQL Server|
+| Имя динамического административного представления в SQL Analytics | Статья о Transact-SQL для SQL Server|
 |:--- |:--- |
 | sys.dm_pdw_nodes_db_column_store_row_group_physical_stats | [sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql)| 
 | sys.dm_pdw_nodes_db_column_store_row_group_operational_stats | [sys.dm_db_column_store_row_group_operational_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-operational-stats-transact-sql)| 
@@ -217,8 +217,8 @@ ms.locfileid: "75690763"
 | sys.dm_pdw_nodes_tran_session_transactions |[sys.dm_tran_session_transactions](https://msdn.microsoft.com/library/ms188739.aspx) |
 | sys.dm_pdw_nodes_tran_top_version_generators |[sys.dm_tran_top_version_generators](https://msdn.microsoft.com/library/ms188778.aspx) |
 
-## <a name="sql-server-2016-polybase-dmvs-available-in-sql-data-warehouse"></a>Список динамических административных представлений SQL Server 2016 PolyBase, доступных в хранилище данных SQL
-Приведенные ниже динамические административные представления можно применять к хранилищу данных SQL, но их необходимо выполнять, подключившись к базе данных **master** .
+## <a name="sql-server-2016-polybase-dmvs-available-in-sql-analytics"></a>SQL Server 2016ных административных представлений Polybase, доступных в SQL Analytics
+Следующие динамические административные представления применимы к SQL Analytics, но должны выполняться путем подключения к базе данных **master** .
 
 * [sys.dm_exec_compute_node_errors](https://msdn.microsoft.com/library/mt146380.aspx)
 * [sys.dm_exec_compute_node_status](https://msdn.microsoft.com/library/mt146382.aspx)
@@ -243,4 +243,4 @@ ms.locfileid: "75690763"
 * [VIEWS](https://msdn.microsoft.com/library/ms181381.aspx)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-См. дополнительные сведения см. об [инструкциях T-SQL, поддерживаемых в хранилище данных SQL Azure](sql-data-warehouse-reference-tsql-statements.md) и [элементах языка T-SQL в хранилище данных SQL Azure](sql-data-warehouse-reference-tsql-language-elements.md).
+Дополнительные справочные сведения см. [в статьях инструкции t-SQL в аналитике SQL](sql-data-warehouse-reference-tsql-statements.md)и [элементы языка t-SQL в SQL Analytics](sql-data-warehouse-reference-tsql-language-elements.md).

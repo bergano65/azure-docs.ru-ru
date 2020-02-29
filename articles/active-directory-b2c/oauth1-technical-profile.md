@@ -3,20 +3,20 @@ title: Определение технического профиля OAuth1 в 
 titleSuffix: Azure AD B2C
 description: Определите технический профиль OAuth 1,0 в пользовательской политике в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a4f26f180e34ee9c7a0222b0d7f6be95c78de1b4
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7f734844859d44e66bddbc2ddd999659e52f9668
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840389"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184083"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля OAuth1 в настраиваемой политике Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ Azure Active Directory B2C (Azure AD B2C) обеспечивает поддер�
 
 ## <a name="protocol"></a>Протокол
 
-Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OAuth1`. Например, `OAuth1` — это протокол для технического профиля **Twitter-OAUTH1**.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OAuth1`. Например, **— это протокол для технического профиля**Twitter-OAUTH1`OAuth1`.
 
 ```XML
 <TechnicalProfile Id="Twitter-OAUTH1">
@@ -68,21 +68,21 @@ Azure Active Directory B2C (Azure AD B2C) обеспечивает поддер�
 
 ## <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно для заполнения | Description |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | client_id | Да | Идентификатор приложения поставщика удостоверений. |
-| ProviderName | Нет | Имя поставщика удостоверений. |
+| ProviderName | нет | Имя поставщика удостоверений. |
 | request_token_endpoint | Да | URL-адрес конечной точки маркера запроса согласно RFC 5849. |
 | authorization_endpoint | Да | URL-адрес конечной точки авторизации согласно RFC 5849. |
 | access_token_endpoint | Да | URL-адрес конечной точки маркера согласно RFC 5849. |
-| ClaimsEndpoint | Нет | URL-адрес конечной точки информации о пользователе. |
-| ClaimsResponseFormat | Нет | Формат ответа утверждений.|
+| ClaimsEndpoint | нет | URL-адрес конечной точки информации о пользователе. |
+| ClaimsResponseFormat | нет | Формат ответа утверждений.|
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент **CryptographicKeys** содержит следующий атрибут:
 
-| attribute | Обязательно для заполнения | Description |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | client_secret | Да | Секрет клиента приложения поставщика удостоверений.   |
 
@@ -92,7 +92,7 @@ Azure Active Directory B2C (Azure AD B2C) обеспечивает поддер�
 
 Если вы используете домен **b2clogin.com** вместо **login.microsoftonline.com**, удостоверьтесь, что єто действительно требуется.
 
-Примеры.
+Примеры:
 
 - [Azure Active Directory B2C. Добавление Twitter в качестве поставщика удостоверений OAuth1 с помощью пользовательских политик](identity-provider-twitter-custom.md)
 

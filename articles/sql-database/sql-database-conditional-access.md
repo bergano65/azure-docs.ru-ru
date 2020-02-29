@@ -1,6 +1,6 @@
 ---
 title: Условный доступ
-description: Узнайте, как настроить условный доступ для базы данных SQL Azure и хранилища данных.
+description: Узнайте, как настроить условный доступ для базы данных SQL Azure и Azure синапсе.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -10,25 +10,26 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 03/29/2019
-ms.openlocfilehash: 9b8c0dbe03e47d32d8194408663973f07a07b1b9
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 02/06/2020
+tag: azure-synpase
+ms.openlocfilehash: f2431ee7c62079a3691a5ea99e562460df8f9309
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827163"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197578"
 ---
-# <a name="conditional-access-mfa-with-azure-sql-database-and-data-warehouse"></a>Условный доступ (MFA) и база данных SQL Azure и хранилище данных  
+# <a name="conditional-access-mfa-with-azure-sql-database-and-azure-synapse-analytics"></a>Условный доступ (MFA) с базой данных SQL Azure и Azure синапсе Analytics
 
-[База данных SQL](sql-database-technical-overview.md)Azure, [управляемый экземпляр](sql-database-managed-instance.md)и [хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают условный доступ Майкрософт. 
+[База данных SQL](sql-database-technical-overview.md)azure, [управляемый экземпляр](sql-database-managed-instance.md)и [Azure синапсе](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) поддерживают условный доступ Майкрософт. 
 
 > [!NOTE]
-> Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+> Эта статья относится к Azure SQL Server и к базе данных SQL и Azure синапсе, созданным на сервере Azure SQL. Для простоты база данных SQL используется при обращении к базе данных SQL и Azure синапсе.
 
 Ниже показано, как настроить базу данных SQL для принудительного применения политики условного доступа.  
 
-## <a name="prerequisites"></a>Предварительные требования  
-- Вы должны настроить базу данных SQL или хранилище данных SQL для поддержки аутентификации Azure Active Directory. Дополнительные сведения см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).  
+## <a name="prerequisites"></a>предварительные требования  
+- Необходимо настроить базу данных SQL или пул SQL в Azure синапсе для поддержки проверки подлинности Azure Active Directory. Дополнительные сведения см. в статье [Настройка проверки подлинности Azure Active Directory с помощью базы данных SQL или Azure синапсе и управление ею](sql-database-aad-authentication-configure.md).  
 - При включении многофакторной идентификации необходимо выполнить подключение с помощью поддерживаемого средства, например последней версии SSMS. Дополнительные сведения см. в разделе [Настройка многофакторной проверки подлинности в Базе данных SQL Azure для SQL Server Management Studio](sql-database-ssms-mfa-authentication-configure.md).  
 
 ## <a name="configure-ca-for-azure-sql-dbdw"></a>Настройка центра сертификации для базы данных или хранилища данных SQL Azure  
@@ -43,15 +44,15 @@ ms.locfileid: "73827163"
    ![выбор базы данных SQL](./media/sql-database-conditional-access/select-sql-database.png)  
    Если вы не можете найти **базу данных SQL Azure** , указанную на следующем третьем снимке экрана, выполните следующие действия.   
    - Войдите на свой экземпляр базы данных или хранилища данных SQL Azure с помощью SSMS, используя учетную запись администратора AAD.  
-   - Выполните `CREATE USER [user@yourtenant.com] FROM EXTERNAL PROVIDER`.  
-   - Войдите в AAD и проверьте наличие базы данных SQL Azure и хранилища данных в приложениях в AAD.  
+   - Выполните процедуру `CREATE USER [user@yourtenant.com] FROM EXTERNAL PROVIDER`.  
+   - Войдите в AAD и убедитесь, что база данных SQL Azure и Azure синапсе указаны в приложениях в AAD.  
 
 5. Выберите **Элементы управления доступом**, выберите **Предоставить**, а затем просмотрите политику, которую вы хотите применить. Для этого примера мы выберем **Требовать многофакторную проверку подлинности**.  
    ![выбор предоставления доступа](./media/sql-database-conditional-access/grant-access.png)  
 
 ## <a name="summary"></a>Сводка  
 Выбранное приложение (база данных SQL Azure), позволяющее подключаться к базе данных или хранилищу данных SQL Azure, с помощью Azure AD Premium, теперь принудительно применяет выбранную политику условного доступа **Требовать многофакторную проверку подлинности.**  
-Если у вас есть вопросы о базе данных SQL Azure и хранилище данных в отношении многофакторной проверки подлинности, используйте MFAforSQLDB@microsoft.com.  
+Вопросы о базе данных SQL Azure и Azure синапсе в отношении многофакторной идентификации см. MFAforSQLDB@microsoft.com.  
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 

@@ -3,20 +3,20 @@ title: Миграция веб-API на основе OWIN в b2clogin.com
 titleSuffix: Azure AD B2C
 description: Узнайте, как включить поддержку маркеров, выдаваемых несколькими поставщиками маркеров, в веб-API .NET при переносе приложений в b2clogin.com.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/31/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e6a92d12e7f2f24289aafa7e4a9acc9edccbd34c
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 5daf88e746ea803f345c79bd31d656f2615b6754
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840406"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184100"
 ---
 # <a name="migrate-an-owin-based-web-api-to-b2clogincom"></a>Перенос веб-API на основе OWIN в b2clogin.com
 
@@ -29,7 +29,7 @@ ms.locfileid: "76840406"
 > [!NOTE]
 > Эта статья предназначена для Azure AD B2C клиентов с развернутыми интерфейсами API и приложениями, которые ссылаются на `login.microsoftonline.com` и которые хотят перейти на рекомендуемую конечную точку `b2clogin.com`. Если вы настраиваете новое приложение, используйте [b2clogin.com](b2clogin.md) в качестве направленного.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед продолжением действий, описанных в этой статье, необходимо выполнить следующие Azure AD B2C ресурсы.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/26/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: f327fc9076bfd82b5321b3811444bed94d965701
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 422b814f1d9738ca4f03d08dfecc6761b764f997
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77925752"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196031"
 ---
 # <a name="open-source-platforms-that-support-azure-data-lake-storage-gen2"></a>Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения
 
@@ -34,7 +34,7 @@ ms.locfileid: "77925752"
 | [Azure Databricks](https://azure.microsoft.com/services/databricks/) | 5.1+ | [Версии Databricks Runtime](https://docs.databricks.com/release-notes/runtime/databricks-runtime-ver.html) |
 |[Hortonworks](https://hortonworks.com/)| 3.1.x++ | [Настройка доступа к данным в облаке](https://docs.hortonworks.com/HDPDocuments/Cloudbreak/Cloudbreak-2.9.0/cloud-data-access/content/cb_configuring-access-to-adls2.html) |
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 - [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 - [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)

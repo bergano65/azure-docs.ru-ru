@@ -3,20 +3,20 @@ title: Добавление ADFS в качестве поставщика удо
 titleSuffix: Azure AD B2C
 description: Настройка ADFS 2016 с помощью протокола SAML и пользовательских политик в Azure Active Directory B2C
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/27/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f331a537c80628a386525e29743807a70a163f0d
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: bfe39d9528927f995d14772e07e02b2a0528e5e0
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77914327"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188534"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление ADFS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "77914327"
 
 В этой статье показано, как включить вход для учетной записи пользователя ADFS с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C). Вход в систему включается путем добавления [технического профиля SAML](saml-technical-profile.md) в пользовательскую политику.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Убедитесь, что у вас есть доступ к PFX-файлу сертификата с закрытым ключом. Можно создать собственный подписанный сертификат и передать его в Azure AD B2C. Azure AD B2C использует этот сертификат для подписи запроса SAML, отправляемого поставщику удостоверений SAML.
@@ -121,7 +121,7 @@ ms.locfileid: "77914327"
 
 1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Нажмите кнопку **Отправка**.
+3. Щелкните **Отправить**.
 
 > [!NOTE]
 > Расширение Visual Studio Code B2C использует "СоЦиалидпусерид". Для ADFS также требуется политика социальных сетей.
@@ -186,7 +186,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
 4. На странице **выбора источника данных** выберите параметр **импорта данных о проверяющей стороне, опубликованных в Интернете или локальной сети**, укажите URL-адрес метаданных Azure AD B2C и нажмите кнопку **Далее**.
 5. На странице **Указание отображаемого имени** введите **отображаемое имя**. В поле **Примечания** введите описание для этого отношения доверия с проверяющей стороной и нажмите кнопку **Далее**.
 6. На странице **Выбрать политику управления доступом** выберите политику и нажмите кнопку **Далее**.
-7. На странице **Готовность для добавления отношения доверия** проверьте параметры, а затем нажмите кнопку **Далее**, чтобы сохранить сведения об отношениях доверия с проверяющей стороной.
+7. На странице **Ready to Add Trust** (Готовность для добавления отношения доверия) проверьте параметры и нажмите кнопку **Далее**, чтобы сохранить сведения об отношении доверия с проверяющей стороной.
 8. На странице **Готово** щелкните **Закрыть**. При этом автоматически откроется диалоговое окно **Edit Claim Rules** (Изменение правил утверждений).
 9. Выберите **Добавить правило**.
 10. В разделе **Claim rule template** (Шаблон правила утверждения) выберите **Send LDAP attributes as claims** (Отправка атрибутов LDAP как утверждений).
@@ -197,7 +197,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
     | User-Principal-Name | userPrincipalName |
     | Surname | family_name |
     | Given-Name | given_name |
-    | адрес электронной почты | Электронная почта |
+    | E-Mail-Address | email |
     | Display-Name | name |
 
     Обратите внимание, что эти имена не отображаются в раскрывающемся списке Тип исходящего утверждения. Их необходимо ввести вручную в. (Раскрывающийся список фактически доступен для редактирования).

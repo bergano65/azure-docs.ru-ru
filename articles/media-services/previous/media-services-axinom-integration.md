@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: Mingfeiy;rajputam;Juliako
-ms.openlocfilehash: 275fa173c5005c4d1609a858c8edb39b5c307c5e
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 2ec3276b9b02c29b80d46e5fd31298c909857182
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974620"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197170"
 ---
 # <a name="using-axinom-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование Axinom для доставки лицензий Widevine в службы мультимедиа Azure 
 > [!div class="op_single_selector"]
@@ -29,10 +29,10 @@ ms.locfileid: "74974620"
 > 
 > 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 В службы мультимедиа Azure (AMS) добавлена динамическая защита Google Widevine (подробные сведения см. в [блоге Мингфей Ян (Mingfei Yan)](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)). Кроме того, в Проигрыватель мультимедиа Azure (AMP) добавлена поддержка Widevine (подробные сведения см. в [документации по AMP](https://amp.azure.net/libs/amp/latest/docs/)). Это большое достижение в потоковой передаче содержимого DASH, защищенного с помощью CENC с несколькими собственными технологиями DRM (PlayReady и Widevine) в современных браузерах, оснащенных MSE и EME.
 
-Начиная с версии 3.5.2 пакета SDK служб мультимедиа для .NET, службы мультимедиа позволяют настраивать шаблоны лицензии Widevine и получать лицензии Widevine. Для доставки лицензий Widevine можно использовать следующих партнеров AMS: [Axinom](https://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](https://ezdrm.com/), [castLabs](https://castlabs.com/company/partners/azure/).
+Начиная с версии 3.5.2 пакета SDK служб мультимедиа для .NET, службы мультимедиа позволяют настраивать шаблоны лицензии Widevine и получать лицензии Widevine. Для доставки лицензий Widevine можно использовать следующих партнеров AMS: [Axinom](https://www.axinom.com), [EZDRM](https://ezdrm.com/), [castLabs](https://castlabs.com/company/partners/azure/).
 
 В этой статье описывается интеграция и тестирование сервера лицензирования Widevine под управлением Axinom. В частности, рассматриваются следующие операции:  
 
@@ -44,7 +44,7 @@ ms.locfileid: "74974620"
 
 ![DASH и CENC](./media/media-services-axinom-integration/media-services-axinom1.png)
 
-## <a name="content-protection"></a>Защита контента
+## <a name="content-protection"></a>Защита содержимого
 Сведения о настройке динамической защиты и политики доставки ключей см. в блоге Мингфей Ян (Mingfei Yan) [Как настроить упаковку Widevine с помощью служб мультимедиа Azure](https://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services).
 
 Вы можете настроить динамическую защиту CENC c помощью нескольких технологий DRM для потоковой передачи DASH при наличии двух следующих типов защиты.
@@ -176,7 +176,7 @@ ms.locfileid: "74974620"
         return key_id;
     }
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 В систему защиты содержимого служб мультимедиа Azure и Проигрыватель мультимедиа Azure недавно добавлена поддержка Widevine. Благодаря этому мы смогли реализовать потоковую передачу DASH и нескольких собственных технологий DRM (PlayReady + Widevine) со службой лицензий PlayReady в AMS и сервером лицензирования Widevine от Axinom для следующих современных браузеров:
 
@@ -197,12 +197,12 @@ ms.locfileid: "74974620"
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ### <a name="acknowledgments"></a>Благодарности

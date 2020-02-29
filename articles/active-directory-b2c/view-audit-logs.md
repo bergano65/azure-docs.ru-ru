@@ -3,21 +3,21 @@ title: Доступ и проверка журналов аудита
 titleSuffix: Azure AD B2C
 description: Как программно получить доступ к журналам аудита Azure AD B2C и в портал Azure.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 02/20/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 62a969519ebefaab919505d9c8faae830f55f4c6
-ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
+ms.openlocfilehash: 83086fa2cb96eba423b9111134a0406d7256821f
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77505622"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78185783"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -32,12 +32,12 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 Категория **B2C** в журналах аудита содержит следующие типы действий:
 
-|тип действия; |Описание  |
+|тип действия; |Description  |
 |---------|---------|
 |Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, администратор, обращающийся к списку политик B2C).         |
-|Directory |Действия, связанные с атрибутами каталога, полученными при входе администратора с помощью портал Azure. |
+|Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора с помощью портал Azure. |
 |Приложение | Операции создания, чтения, обновления и удаления (CRUD) в приложениях B2C. |
-|Ключ |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
+|Клавиши |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
 |Ресурс |Операции CRUD с ресурсами B2C. Например, политики и поставщики удостоверений.
 |Аутентификация |Проверка учетных данных пользователя и выдачи маркера.|
 
@@ -51,7 +51,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 Панель сведения об активности содержит следующие важные сведения.
 
-|Section|Поле|Описание|
+|Section|Поле|Description|
 |-------|-----|-----------|
 | Действие | Имя | Какое действие выполнялось. Например, *выдайте приложению id_token*, которое завершает фактический вход пользователя. |
 | "Кем инициировано (субъект)". | ObjectId | **Идентификатор объекта** приложения B2C, в котором выполняется вход пользователя. Этот идентификатор недоступен в портал Azure, но доступен через API Microsoft Graph. |
@@ -221,6 +221,6 @@ if ($oauth.access_token -ne $null) {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Можно автоматизировать другие задачи администрирования, например [управлять Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](manage-user-accounts-graph-api.md).

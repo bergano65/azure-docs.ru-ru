@@ -2,20 +2,20 @@
 title: Руководство. Создание потоков пользователя — Azure Active Directory B2C
 description: Узнайте, как создавать потоки пользователей в портал Azure, чтобы включить регистрацию, вход и редактирование профилей пользователей для приложений в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 06/07/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 21a3597a8c3675a060359b5e4feb9561e02f0149
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 51adbb74635f66ca86347b536dc2607566dcb725
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840151"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183573"
 ---
 # <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Учебник. Создание потоков пользователей в Azure Active Directory B2C
 
@@ -30,9 +30,9 @@ ms.locfileid: "76840151"
 
 В этом руководстве показано, как создать несколько рекомендуемых потоков пользователей с помощью портала Azure. Сведения о том, как настроить поток учетных данных для пароля владельца ресурса (РОПК) в приложении, см. [в разделе Настройка потока учетных данных для пароля владельца ресурса в Azure AD B2C](configure-ropc.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [Зарегистрируйте приложения](tutorial-register-applications.md), являющиеся частью потоков пользователей, которые вы хотите создать.
 

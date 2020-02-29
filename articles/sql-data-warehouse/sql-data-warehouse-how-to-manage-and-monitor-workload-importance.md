@@ -1,30 +1,30 @@
 ---
 title: Администрирование и мониторинг уровня важности рабочей нагрузки
-description: Узнайте, как управлять и отслеживать важность уровня запросов в хранилище данных SQL Azure.
+description: Узнайте, как управлять и отслеживать важность уровня запросов в Azure синапсе Analytics.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.subservice: workload-management
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 02/04/2020
 ms.author: rortloff
-ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: ee9acb873c5118733de142045457028c3f4d5f61
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.reviewer: jrasnick
+ms.custom: azure-synapse
+ms.openlocfilehash: 6274bff9f9c57bfb06e58e1c4bfce6b6e265ac62
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692713"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195623"
 ---
-# <a name="manage-and-monitor-workload-importance-in-azure-sql-data-warehouse"></a>Управление и мониторинг важности рабочей нагрузки в хранилище данных SQL Azure
+# <a name="manage-and-monitor-workload-importance-in-azure-synapse-analytics"></a>Управление и мониторинг важности рабочей нагрузки в Azure синапсе Analytics
 
-Управление и отслеживание важности уровня запросов в хранилище данных SQL Azure с помощью DMV и представлений каталога.
+Управление и мониторинг важности уровня запросов SQL Analytics в Azure синапсе с помощью динамических административных представлений и представления каталога.
 
 ## <a name="monitor-importance"></a>Мониторинг важности
 
-Следите за важностью с помощью столбца New важности в динамическом административном представлении [sys. DM _pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=azure-sqldw-latest) .
+Следите за важностью с помощью столбца New важности в динамическом административном представлении [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=azure-sqldw-latest) .
 В приведенном ниже запросе наблюдения показано время и время начала отправки запросов. Просмотрите время отправки и время начала, а также важность, чтобы увидеть, как важно планирование.
 
 ```sql
@@ -39,7 +39,7 @@ ORDER BY r.start_time
 
 ## <a name="manage-importance-with-catalog-views"></a>Управление важностью с помощью представлений каталога
 
-Представление каталога sys. workload_management_workload_classifiers содержит сведения о классификаторах в экземпляре хранилища данных SQL Azure. Чтобы исключить определенные системой классификаторы, которые сопоставляются с классами ресурсов, выполните следующий код:
+Представление каталога sys. workload_management_workload_classifiers содержит сведения о классификаторах. Чтобы исключить определенные системой классификаторы, которые сопоставляются с классами ресурсов, выполните следующий код:
 
 ```sql
 SELECT *

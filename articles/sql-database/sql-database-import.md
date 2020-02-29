@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 06/20/2019
-ms.openlocfilehash: 8d147248245ca06c145c68ee8ca9cfd02015aa9c
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 05698596f966f879da1affc58af0122d08d519ff
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929185"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191880"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Краткое руководство. импорт BACPAC-файла в базу данных в базе данных SQL Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "74929185"
 > Уровень совместимости импортированной базы данных основан на уровне совместимости базы данных-источника.
 
 > [!IMPORTANT]
-> После импорта базы данных вы можете работать с ней при текущем уровне совместимости (уровень 100 для базы данных AdventureWorks2008R2) или при более высоком уровне. Дополнительные сведения о последствиях и параметрах работы базы данных с определенным уровнем совместимости см. в разделе [ALTER DATABASE (Transact-SQL) Compatibility Level](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) (Уровень совместимости ALTER DATABASE (Transact-SQL)). Кроме того, в разделе [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) вы можете получить сведения о дополнительных настройках уровня базы данных, связанных с уровнем совместимости.
+> После импорта базы данных вы можете работать с ней при текущем уровне совместимости (уровень 100 для базы данных AdventureWorks2008R2) или при более высоком уровне. Дополнительные сведения о последствиях и параметрах работы базы данных с определенным уровнем совместимости см. в разделе [ALTER DATABASE (Transact-SQL) Compatibility Level](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) (Уровень совместимости ALTER DATABASE (Transact-SQL)). Кроме того, в статье [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) вы можете получить сведения о дополнительных настройках уровня базы данных, связанных с уровнем совместимости.
 
 ## <a name="using-azure-portal"></a>Использование портала Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "74929185"
 
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Its-just-SQL-Restoring-a-database-to-Azure-SQL-DB-from-backup/player?WT.mc_id=dataexposed-c9-niner]
 
-[Портал Azure](https://portal.azure.com) поддерживает создание *только* отдельной базы данных в Базе данных SQL Azure и *только* из файла BACPAC, который хранится в хранилище BLOB-объектов Azure.
+[Портал Azure](https://portal.azure.com) поддерживает создание *только* одной базы данных в базе данных SQL Azure и *только* из BACPAC-файла, хранящегося в хранилище BLOB-объектов Azure.
 
 Миграция базы данных в [управляемый экземпляр](sql-database-managed-instance.md) из BACPAC-файла с помощью Azure PowerShell в настоящее время не поддерживается. Вместо этого используйте SQL Server Management Studio или SQLPackage.
 
@@ -51,7 +51,7 @@ ms.locfileid: "74929185"
 
    ![База данных import2](./media/sql-database-import/sql-server-import-database-settings.png)
 
-1. Последовательно выберите **ОК**.
+1. Нажмите кнопку **ОК**.
 
 1. Чтобы отслеживать ход выполнения импорта, откройте страницу сервера базы данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
 
@@ -88,7 +88,7 @@ sqlpackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 > [!NOTE]
 > Компьютеры, обрабатывающие запросы на импорт и экспорт, отправленные с помощью портала или PowerShell, должны хранить BACPAC-файл, а также временные файлы, созданные платформой приложения уровня данных (DacFX). Требуемое дисковое пространство значительно различается в баз данных с одинаковым размером и может занять до 3 раз из размера базы данных. Компьютеры, на которых работает запрос на импорт или экспорт, имеют только 450GB место на локальном диске. В результате некоторые запросы могут завершиться ошибкой "на диске недостаточно места". В этом случае решение заключается в запуске SqlPackage. exe на компьютере с достаточным местом на локальном диске. При импорте или экспорте баз данных, размер которых превышает 150 ГБ, используйте SqlPackage, чтобы избежать этой проблемы.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager (RM) по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
@@ -123,18 +123,18 @@ while ($importStatus.Status -eq "InProgress") {
 $importStatus
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте команду [AZ-SQL-DB-Import](/cli/azure/sql/db#az-sql-db-import) , чтобы отправить запрос на импорт базы данных в службу базы данных SQL Azure. Операция импорта может занять некоторое время в зависимости от размера базы данных.
 
-```azure-cli
+```azurecli
 # get the storage account key
-az storage account keys list --resource-group "<resourceGroupName>" --account-name "<storageAccountName>"
+az storage account keys list --resource-group "<resourceGroup>" --account-name "<storageAccount>"
 
-az sql db import --resource-group "<resourceGroupName>" --server "<serverName>" --name "<databaseName>" `
+az sql db import --resource-group "<resourceGroup>" --server "<server>" --name "<database>" `
     --storage-key-type "StorageAccessKey" --storage-key "<storageAccountKey>" `
     --storage-uri "https://myStorageAccount.blob.core.windows.net/importsample/sample.bacpac" `
-    -u "<userId>" -p $(ConvertTo-SecureString -String "<password>" -AsPlainText -Force)
+    -u "<userId>" -p "<password>"
 ```
 
 * * *

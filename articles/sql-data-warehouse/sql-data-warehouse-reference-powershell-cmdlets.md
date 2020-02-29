@@ -1,6 +1,6 @@
 ---
-title: Командлеты PowerShell
-description: Ознакомьтесь с основными командлетами PowerShell для хранилища данных SQL Azure, а также узнайте, как приостанавливать и возобновлять работу базы данных.
+title: Интерфейсы API-интерфейсов & для PowerShell
+description: Найдите самые популярные командлеты PowerShell для пула SQL Azure синапсе Analytics, включая приостановку и возобновление работы базы данных.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -11,19 +11,21 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c5f85f102d72ac2e4a0315109748d48573f49407
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: c0c8b1e9b7526bd45d037f053715613b53ec163f
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721189"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198462"
 ---
-# <a name="powershell-cmdlets-and-rest-apis-for-sql-data-warehouse"></a>Использование командлетов PowerShell и интерфейсов REST API при работе с хранилищем данных SQL
-Многими задачами по администрированию хранилища данных SQL можно управлять с помощью командлетов Azure PowerShell или интерфейсов API REST.  Ниже представлены некоторые примеры использования команд PowerShell для автоматизации обычных задач в хранилище данных SQL.  Хорошие примеры использования REST приведены в разделе [Управление вычислительными ресурсами в хранилище данных SQL Azure (REST)](sql-data-warehouse-manage-compute-rest-api.md).
+# <a name="powershell--rest-apis-for-azure-synapse-analytics-sql-pool"></a>PowerShell & интерфейсы API-интерфейсов для службы Azure синапсе Analytics для пула SQL
+
+Многие задачи администрирования пула SQL Azure синапсе Analytics можно управлять с помощью Azure PowerShell командлетов или интерфейсов API.  Ниже приведены некоторые примеры использования команд PowerShell для автоматизации распространенных задач в пуле SQL.  Хорошие примеры использования REST приведены в разделе [Управление вычислительными ресурсами в хранилище данных SQL Azure (REST)](sql-data-warehouse-manage-compute-rest-api.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="get-started-with-azure-powershell-cmdlets"></a>Приступая к работе с командлетами Azure PowerShell
+
 1. Откройте Windows PowerShell.
 2. В командной строке PowerShell выполните приведенные далее команды, чтобы войти в Azure Resource Manager Azure и выбрать свою подписку.
    
@@ -33,12 +35,13 @@ ms.locfileid: "76721189"
     Select-AzSubscription -SubscriptionName "MySubscription"
     ```
 
-## <a name="pause-sql-data-warehouse-example"></a>Пример приостановки хранилища данных SQL
+## <a name="pause-data-warehouse-example"></a>Пример приостановки хранилища данных
 Приостанавливает базу данных с именем Database02, размещенную на сервере с именем Server01.  Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
 
 ```Powershell
 Suspend-AzSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" –DatabaseName "Database02"
 ```
+
 Вариант, в этом примере полученный объект переводится в [Suspend-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/suspend-azsqldatabase).  В результате база данных приостанавливается. Последняя команда отображает результаты.
 
 ```Powershell
@@ -47,7 +50,8 @@ $resultDatabase = $database | Suspend-AzSqlDatabase
 $resultDatabase
 ```
 
-## <a name="start-sql-data-warehouse-example"></a>Пример запуска хранилища данных SQL
+## <a name="start-data-warehouse-example"></a>Пример запуска хранилища данных
+
 Возобновляет работу базы данных с именем Database02, размещенную на сервере с именем Server01. Сервер находится в группе ресурсов с именем ResourceGroup1.
 
 ```Powershell
@@ -67,7 +71,7 @@ $resultDatabase = $database | Resume-AzSqlDatabase
 > 
 
 ## <a name="other-supported-powershell-cmdlets"></a>Другие поддерживаемые командлеты PowerShell
-Перечисленные ниже командлеты PowerShell поддерживаются хранилищем данных SQL Azure.
+Эти командлеты PowerShell поддерживаются в хранилище данных аналитики Azure синапсе.
 
 * [Get-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabase)
 * [Get-AzSqlDeletedDatabaseBackup](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeleteddatabasebackup)
@@ -83,7 +87,7 @@ $resultDatabase = $database | Resume-AzSqlDatabase
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры PowerShell см. в указанных далее документах.
 
-* [Создание хранилища данных SQL с помощью Powershell](create-data-warehouse-powershell.md)
+* [Создание хранилища данных с помощью PowerShell](create-data-warehouse-powershell.md)
 * [Восстановление базы данных](sql-data-warehouse-restore-database-powershell.md)
 
-Сведения о других задачах, которые можно автоматизировать с помощью PowerShell, см. в статье [командлеты базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql). Не все командлеты базы данных SQL Azure поддерживаются для хранилища данных SQL Azure.  Список задач, которые можно автоматизировать с помощью службы "другие", см. в статье [операции с базой данных SQL Azure](https://msdn.microsoft.com/library/azure/dn505719.aspx).
+Сведения о других задачах, которые можно автоматизировать с помощью PowerShell, см. в статье [командлеты базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql). Не все командлеты базы данных SQL Azure поддерживаются для хранилища данных аналитики Azure синапсе.  Список задач, которые можно автоматизировать с помощью службы "другие", см. в статье [операции с базой данных SQL Azure](/rest/api/sql/).

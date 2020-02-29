@@ -3,20 +3,20 @@ title: Учебник. Добавление поставщиков удосто�
 titleSuffix: Azure AD B2C
 description: Узнайте, как добавить поставщики удостоверений своим приложениям в Azure Active Directory B2C с помощью портала Azure.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 07/08/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2bc02433be9ee7955b0e10ac659ee40e315e5a5e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 1f49061210ca8e3c106b0569f77a67d1f10757a1
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840168"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183522"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Учебник. Добавление поставщиков удостоверений в приложения в Azure Active Directory B2C
 
@@ -31,9 +31,9 @@ ms.locfileid: "76840168"
 
 Обычно в приложениях используется только один поставщик удостоверений, но у вас есть возможность добавить еще. В этом руководстве показано, как добавить поставщик удостоверений Azure AD и Facebook в приложение. Добавление обоих этих поставщиков удостоверений в приложение является необязательным. Вы также можете добавить других поставщиков удостоверений, таких как [Amazon](identity-provider-amazon.md), [GitHub](identity-provider-github.md), [Google](identity-provider-google.md), [LinkedIn](identity-provider-linkedin.md), [Microsoft](identity-provider-microsoft-account.md)или [Twitter](identity-provider-twitter.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 

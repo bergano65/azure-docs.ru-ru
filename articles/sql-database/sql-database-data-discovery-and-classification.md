@@ -5,21 +5,22 @@ services: sql-database
 ms.service: sql-database
 ms.subservice: security
 ms.custom: ''
-titleSuffix: Azure SQL Database and SQL Data Warehouse
+titleSuffix: Azure SQL Database and Azure Synapse
 ms.devlang: ''
 ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 08/22/2019
-ms.openlocfilehash: dda65c94671044f3c5a569a3f9753951de9eee3a
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 02/05/2020
+tags: azure-synapse
+ms.openlocfilehash: e22205e81178ac0caff4b71462ece776238900f6
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76717679"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191951"
 ---
-# <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
+# <a name="azure-sql-database-and-azure-synapse-analytics-data-discovery--classification"></a>Классификация & базы данных SQL Azure и аналитики Azure синапсе Analytics
 
 Классификация & обнаружения данных предоставляет расширенные возможности, встроенные в базу данных SQL Azure для **обнаружения**, **классификации**и **маркировки** & **создания отчетов о** конфиденциальных данных в базах данных.
 
@@ -32,7 +33,7 @@ ms.locfileid: "76717679"
 Классификация & обнаружения данных является частью предложения [расширенной системы безопасности данных](sql-database-advanced-data-security.md) (ADS), которое является единым пакетом для расширенных возможностей обеспечения безопасности SQL. Доступ к этой службе можно получить на центральном портале SQL ADS. Там же можете управлять ею.
 
 > [!NOTE]
-> Этот документ относится к базе данных SQL Azure и хранилищу данных SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Сведения о SQL Server (в локальной среде) см. в разделе [Обнаружение и классификация данных SQL](https://go.microsoft.com/fwlink/?linkid=866999).
+> Этот документ относится к базе данных SQL Azure и Azure синапсе. Для простоты база данных SQL используется при обращении к базе данных SQL и Azure синапсе. Сведения о SQL Server (в локальной среде) см. в разделе [Обнаружение и классификация данных SQL](https://go.microsoft.com/fwlink/?linkid=866999).
 
 ## <a id="subheading-1"></a>Что такое обнаружение и классификация данных?
 
@@ -138,7 +139,7 @@ ms.locfileid: "76717679"
 
 ## <a id="subheading-5"></a>Управление классификациями
 
-# <a name="t-sqltabazure-t-sql"></a>[T-SQL](#tab/azure-t-sql)
+# <a name="t-sql"></a>[T-SQL](#tab/azure-t-sql)
 Используйте T-SQL, чтобы добавить или удалить классификацию столбца или извлечь все классификации для целой базы данных.
 
 > [!NOTE]
@@ -148,7 +149,7 @@ ms.locfileid: "76717679"
 - Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
 - Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
 
-# <a name="rest-apistabazure-rest-api"></a>[Интерфейсы API-интерфейсов RESTful](#tab/azure-rest-api)
+# <a name="rest-apis"></a>[Интерфейсы API-интерфейсов RESTful](#tab/azure-rest-api)
 Для программного управления классификациями и рекомендациями можно использовать интерфейсы API. Опубликованные интерфейсы REST API поддерживают следующие операции:
 
 - [CREATE или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate) — создает или обновляет метку чувствительности данного столбца.
@@ -159,7 +160,7 @@ ms.locfileid: "76717679"
 - [List Current By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listcurrentbydatabase). Получение списка текущих меток конфиденциальности для конкретной базы данных.
 - [List, рекомендованный базой данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) — получение рекомендуемых меток чувствительности для заданной базы данных.
 
-# <a name="powershell-cmdlettabazure-powelshell"></a>[Командлет PowerShell](#tab/azure-powelshell)
+# <a name="powershell-cmdlet"></a>[Командлет PowerShell](#tab/azure-powelshell)
 PowerShell можно использовать для управления классификациями и рекомендациями для базы данных SQL Azure и Управляемый экземпляр.
 
 ### <a name="powershell-cmdlet-for-azure-sql-database"></a>Командлет PowerShell для базы данных SQL Azure

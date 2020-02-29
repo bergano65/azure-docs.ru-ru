@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 author: maxluk
 ms.author: maxluk
-ms.date: 11/08/2019
-ms.openlocfilehash: 9b6c21c31f3f4ec45307c245c373b9e1c1480cda
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 02/27/2020
+ms.openlocfilehash: b6b7e47acdbc5bd059e17e512731bd09c8580798
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75537127"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195385"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "75537127"
 > [!TIP]
 > Сведения в этом документе предназначены главным образом для специалистов по обработке и анализу данных и разработчиков, желающих отслеживать процесс обучения модели. Если вы являетесь администратором, который заинтересован в наблюдении за использованием ресурсов и событиями из машинного обучения Azure, таких как квоты, завершенные обучающие запуски или завершенные развертывания моделей, см. раздел [мониторинг машинное обучение Azure](monitor-azure-machine-learning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Чтобы запустить TensorBoard и просмотреть журналы запуска экспериментов, в экспериментах необходимо включить ранее ведение журнала для контроля метрик и производительности.  
 
@@ -181,6 +181,10 @@ tb.start()
 # After your job completes, be sure to stop() the streaming otherwise it will continue to run. 
 tb.stop()
 ```
+
+>[!Note]
+ Хотя в этом примере используется TensorFlow, TensorBoard можно легко использовать с PyTorch или моделями цепочки. TensorFlow должен быть доступен на компьютере с TensorBoard, но не требуется на компьютере, выполняющем вычисления PyTorch или Chain. 
+
 
 <a name="export"></a>
 

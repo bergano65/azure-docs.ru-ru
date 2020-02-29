@@ -3,20 +3,20 @@ title: Учебник. Регистрация приложения
 titleSuffix: Azure AD B2C
 description: Сведения о регистрации веб-приложения в Azure Active Directory B2C с помощью портала Azure.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 10/16/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: dbb689182a45367061ae129304a98a8ee9962051
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: a688f5e75f7513d0ea4308b751f87f75a2c9510a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840117"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183097"
 ---
 # <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Руководство. Регистрация приложения в Azure Active Directory B2C
 
@@ -28,9 +28,9 @@ ms.locfileid: "76840117"
 > * Регистрация веб-приложения
 > * Создание секрета клиента
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Если вы еще не создали собственный [клиент Azure AD B2C](tutorial-create-tenant.md), создайте его сейчас. Вы можете использовать имеющийся клиент Azure Active Directory B2C.
 
@@ -38,7 +38,7 @@ ms.locfileid: "76840117"
 
 Чтобы зарегистрировать приложение в клиенте Azure AD B2C, можно использовать текущий интерфейс **приложений** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
+#### <a name="applications"></a>[Приложения](#tab/applications/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
@@ -57,7 +57,7 @@ ms.locfileid: "76840117"
 
 1. Выберите **создать** , чтобы завершить регистрацию приложения.
 
-#### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
@@ -90,13 +90,13 @@ ms.locfileid: "76840117"
 
 Если приложение обменивается кодом авторизации для маркера доступа, необходимо создать секрет приложения.
 
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
+#### <a name="applications"></a>[Приложения](#tab/applications/)
 
 1. На странице **Azure AD B2C-Applications** (приложения) выберите созданное приложение, например, веб- *APP1*.
 1. Выберите **ключи** и нажмите кнопку **создать ключ**.
 1. Чтобы представить ключ, нажмите **Сохранить**. Запишите значение параметра **Ключ приложения**. Это значение используется в качестве секрета приложения в коде приложения.
 
-#### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 
 1. На странице **Azure AD B2C-регистрация приложений (Предварительная версия)** выберите созданное приложение, например "веб- *APP1*".
 1. В разделе **Управление** выберите **Сертификаты и секреты**.

@@ -2,20 +2,20 @@
 title: Устранение неполадок пользовательских политик в Azure Active Directory B2C
 description: Узнайте о способах решения проблем при работе с пользовательскими политиками в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/13/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b9a0e370643d7f2a19e6ca1629b6b522bfa396b9
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 2f65e98cec04991fe9edef1b81bcb3ecc3d93d76
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848139"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78186372"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Устранение неполадок в пользовательских политиках Azure AD B2C и инфраструктуре процедур идентификации
 
@@ -64,7 +64,7 @@ ms.locfileid: "76848139"
 
 * Чтобы отследить обмен сообщениями между клиентским браузером и Azure AD B2C, используйте [Fiddler](https://www.telerik.com/fiddler). Это позволит узнать, где в шагах оркестрации случился сбой пути взаимодействия пользователя.
 
-* Используйте [Application Insights](troubleshoot-with-application-insights.md) в **режиме разработки**, чтобы отслеживать поведение в рамках пути взаимодействия пользователя в инфраструктуре процедур идентификации. В **режиме разработки**можно наблюдать за обменом утверждениями между инфраструктурой процедур идентификации и различными поставщиками утверждений, определенными техническими профилями, такими как поставщики удостоверений, службы на основе API, Azure AD B2C каталог пользователя и другие службы, такие как многофакторная идентификация Azure.
+* Используйте **Application Insights** в [режиме разработки](troubleshoot-with-application-insights.md), чтобы отслеживать поведение в рамках пути взаимодействия пользователя в инфраструктуре процедур идентификации. В **режиме разработки**можно наблюдать за обменом утверждениями между инфраструктурой процедур идентификации и различными поставщиками утверждений, определенными техническими профилями, такими как поставщики удостоверений, службы на основе API, Azure AD B2C каталог пользователя и другие службы, такие как многофакторная идентификация Azure.
 
 ## <a name="recommended-practices"></a>Рекомендации
 

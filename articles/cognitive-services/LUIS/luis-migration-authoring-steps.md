@@ -9,20 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 12/30/2019
+ms.date: 02/28/2020
 ms.author: diberry
-ms.openlocfilehash: 9c92a3ad2fc6a372b58aa651228a7bbccdf8ba0a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: f5197ae79670e4543c58224a33838706edae6218
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552034"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78194650"
 ---
 # <a name="steps-to-migrate-to-the-azure-authoring-resource"></a>Шаги для перехода на ресурс разработки Azure
 
 На портале Language Understanding (LUIS) перенесите все приложения, которыми вы владеете, для использования ресурса по разработке Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * **При необходимости**создайте резервную копию приложений из списка приложений Luis Portal, экспортировав каждое приложение или используя [API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40)экспорта.
 * **При необходимости**сохраните список коллаборатор'с для каждого приложения. Все участники совместной работы могут отправлять сообщение электронной почты в рамках процесса миграции.
@@ -32,7 +32,10 @@ ms.locfileid: "75552034"
 
 ## <a name="access-the-migration-process"></a>Доступ к процессу миграции
 
-Еженедельно будет предложено перенести приложения. Вы можете отменить это окно без миграции. Если вы хотите выполнить миграцию до следующего запланированного периода, можно начать процесс миграции со значка **замка** на верхней панели инструментов на портале Luis.
+Еженедельно будет предложено перенести приложения. Вы можете отменить это окно без миграции. Если вы хотите выполнить миграцию до следующего запланированного периода, можно начать процесс миграции со значка **Azure** на верхней панели инструментов портала Luis.
+
+> [!div class="mx-imgBorder"]
+> значок миграции ![](./media/migrate-authoring-key/migration-button.png)
 
 ## <a name="app-owner-begins-the-migration-process"></a>Владелец приложения начинает процесс миграции
 

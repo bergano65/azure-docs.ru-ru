@@ -1,16 +1,16 @@
 ---
-title: Подключение компьютера для разработки к кластеру AKS
+title: Подключение компьютера для разработки к кластеру AKS (предварительная версия)
 services: azure-dev-spaces
 ms.date: 11/04/2019
 ms.topic: conceptual
 description: Узнайте, как подключить компьютер разработки к кластеру AKS с помощью Azure Dev Spaces
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры
-ms.openlocfilehash: cba68702155475832930c791c3a7be014375ba04
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 13e6f16e66941be0ae463e8280827dc0b8183450
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770685"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196099"
 ---
 # <a name="connect-your-development-machine-to-an-aks-cluster-preview"></a>Подключение компьютера для разработки к кластеру AKS (предварительная версия)
 
@@ -27,7 +27,7 @@ Azure Dev Spaces перенаправляет трафик между подкл
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В этом руководством для демонстрации подключения компьютера разработчика к кластеру AKS [Azure dev Spaces используется пример приложения для общего доступа к велосипеду](https://github.com/Azure/dev-spaces/tree/master/samples/BikeSharingApp) . Чтобы запустить пример приложения, следуйте инструкциям в [файле readme примера приложения для общего доступа к велосипеду Azure dev Spaces](https://github.com/Azure/dev-spaces/blob/master/samples/BikeSharingApp/README.md) . Кроме того, если вы используете собственное приложение в кластере AKS, вы по-прежнему можете выполнить приведенные ниже действия и использовать имена собственных служб и модулей Pod.
 
@@ -35,7 +35,7 @@ Azure Dev Spaces перенаправляет трафик между подкл
 
 * В настоящее время UDP не поддерживается.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI][azure-cli].

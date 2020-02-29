@@ -6,22 +6,23 @@ author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: general
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: mbaldwin
 Customer intent: As a key vault administrator, I want to learn the options available to secure my vaults
-ms.openlocfilehash: 74dac926ea67b9f6a31993a72dc6331aa48155b7
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 3cc5cb68f430ac8e5070b9c8c4a1aa0c28639311
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981572"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197782"
 ---
 # <a name="azure-key-vault-security"></a>Безопасность Azure Key Vault
 
 Необходимо защитить ключи и секреты шифрования, такие как сертификаты, строки подключения и пароли в облаке, чтобы использовать Azure Key Vault. Так как вы храните конфиденциальные и критически важные данные, необходимо выполнить действия по повышению безопасности хранилищ и хранящихся в них данных. В этой статье рассматриваются некоторые понятия, которые следует учитывать при проектировании безопасности Azure Key Vault.
 
-## <a name="identity-and-access-management"></a>Управление идентификационной информацией и доступом
+## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 
 При создании хранилища ключей в подписке Azure оно автоматически связывается с арендатором Azure AD этой подписки. Любой пользователь, пытающийся управлять содержимым из хранилища или извлекать его из него, должен пройти проверку подлинности с помощью Azure AD.
 
@@ -76,7 +77,7 @@ ms.locfileid: "75981572"
 
 Дополнительные сведения о Azure Key Vault сетевой адрес проверьте [конечные точки службы виртуальной сети для Azure Key Vault](key-vault-overview-vnet-service-endpoints.md)
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 Ведение журнала Key Vault сохраняет сведения о действиях, выполняемых в хранилище. Журналы Key Vault:
 
@@ -94,7 +95,7 @@ ms.locfileid: "75981572"
 
 Рекомендации по безопасному управлению учетными записями хранения см. в разделе [руководств по безопасности службы хранилища Azure](../storage/blobs/security-recommendations.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - [Конечные точки службы виртуальной сети для Azure Key Vault](key-vault-overview-vnet-service-endpoints.md)
 - [RBAC: встроенные роли](../role-based-access-control/built-in-roles.md)

@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 02/26/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 71df31562971af8bcdb38be76894c1d0abeccc3f
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: cb68f1bc851a8573ddec01d1eee803135a11b067
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77925583"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195366"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения
 
 Службы Azure можно использовать для приема данных, выполнения анализа и создания визуальных представлений. Эта статья содержит список поддерживаемых служб Azure, раскрывает их уровень поддержки и содержит ссылки на статьи, которые помогут вам использовать эти службы с Azure Data Lake Storage 2-го поколения.
 
-## <a name="supportedazureservices"></a>Поддерживаемые службы Azure
+## <a name="supported-azure-services"></a>Поддерживаемые службы Azure
 
 В этой таблице перечислены службы Azure, которые можно использовать с Azure Data Lake Storage 2-го поколения. Элементы, отображаемые в этих таблицах, со временем будут меняться, так как поддержка будет расширена.
 
@@ -40,11 +40,11 @@ ms.locfileid: "77925583"
 |Power BI| Общедоступная версия|[Анализ данных в Data Lake Storage 2-го поколения с помощью Power BI](https://docs.microsoft.com/power-query/connectors/datalakestorage)|
 |Хранилище данных SQL|Общедоступная версия|[Использование с хранилищем данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#azure-sql-data-warehouse-polybase)|
 |Службы SQL Server Integration Services (SSIS)|Общедоступная версия|[Диспетчер подключений службы хранилища Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-2017)|
-|Когнитивный поиск Azure| Предварительный просмотр|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|
+|Когнитивный поиск Azure| Preview (Предварительный просмотр)|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|
 |Сеть доставки содержимого Azure|Еще не поддерживается|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](https://docs.microsoft.com/azure/cdn/cdn-overview)|
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 - [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 - [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)

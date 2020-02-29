@@ -3,20 +3,20 @@ title: Регистрация и вход с помощью настраивае
 titleSuffix: Azure AD B2C
 description: Отправка одноразовых паролей (OTP) в текстовых сообщениях на телефоны пользователей приложения с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/25/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 50e7d66fef67e2728c95790947393de8d58398c2
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: eadac0e973b361b1fdee63dcc9cfa848a0b2bacb
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77647531"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183964"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c-preview"></a>Настройка регистрации и входа в систему с помощью настраиваемых политик в Azure AD B2C (Предварительная версия)
 

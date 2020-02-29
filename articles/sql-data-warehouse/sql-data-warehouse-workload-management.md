@@ -1,22 +1,22 @@
 ---
-title: Управление рабочими нагрузками
-description: Руководство по реализации управления рабочей нагрузкой в хранилище данных SQL Azure.
+title: Управление рабочей нагрузкой
+description: Руководство по реализации управления рабочей нагрузкой в Azure синапсе Analytics.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload-management
-ms.date: 01/13/2020
+ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 287ad5467f9f3aac7eb8c9d7c19ea15c380c6879
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.custom: azure-synapse
+ms.openlocfilehash: 14ea742a40afff8105560f1003655004687c7c9e
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935417"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78197663"
 ---
 # <a name="what-is-workload-management"></a>Что такое управление рабочей нагрузкой?
 
@@ -36,11 +36,11 @@ ms.locfileid: "76935417"
 
 
 ## <a name="workload-management-concepts"></a>Основные понятия управления рабочей нагрузкой
-В прошлом вы управляли производительностью запросов в хранилище данных SQL с помощью [классов ресурсов](resource-classes-for-workload-management.md).  Классы ресурсов, которым разрешено назначение памяти запросу на основе членства в роли.  Основная проблема с классами ресурсов заключается в том, что после настройки Управление рабочей нагрузкой или возможность управлять ей не было.  
+В прошлом для аналитики SQL в Azure синапсе вы управляли производительностью запросов с помощью [классов ресурсов](resource-classes-for-workload-management.md).  Классы ресурсов, которым разрешено назначение памяти запросу на основе членства в роли.  Основная проблема с классами ресурсов заключается в том, что после настройки Управление рабочей нагрузкой или возможность управлять ей не было.  
 
 Например, предоставление нерегламентированного членства в роли пользователя smallrc позволяло этому пользователю использовать 100% памяти в системе.  С помощью классов ресурсов невозможно зарезервировать и обеспечить доступность ресурсов для критически важных рабочих нагрузок.
 
-Управление рабочей нагрузкой в хранилище данных SQL состоит из трех высокоуровневых концепций: [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md), [важность рабочей](sql-data-warehouse-workload-importance.md) нагрузки и [изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md).  Эти возможности обеспечивают больший контроль над тем, как Рабочая нагрузка использует системные ресурсы.
+Управление рабочей нагрузкой SQL Analytics в Azure синапсе состоит из трех высокоуровневых концепций: [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md), [важность рабочей](sql-data-warehouse-workload-importance.md) нагрузки и [изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md).  Эти возможности обеспечивают больший контроль над тем, как Рабочая нагрузка использует системные ресурсы.
 
 Классификация рабочей нагрузки — это концепция назначения запроса группе рабочей нагрузки и настройки уровней важности.  Исторически это назначение было выполнено через членство в роли с помощью [sp_addrolemember](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management#change-a-users-resource-class).  Теперь это можно сделать с помощью командлета [CREATE классификаторе рабочей нагрузки](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Функция классификации предоставляет более широкий набор параметров, таких как метка, сеанс и время для классификации запросов.
 

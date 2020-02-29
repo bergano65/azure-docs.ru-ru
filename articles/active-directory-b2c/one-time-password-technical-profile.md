@@ -3,20 +3,20 @@ title: Включить проверку одноразового пароля (
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить сценарий одноразового пароля (OTP) с помощью Azure AD B2C пользовательских политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 02/10/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9becb91cfffd4553b2b8aa1a2d616963eae92ab0
-ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
+ms.openlocfilehash: 701fb64dd85526bc79cab48bf36d4583da71ca76
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114050"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184032"
 ---
 # <a name="define-a-one-time-password-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Определение технического профиля с одноразовым паролем в Azure AD B2C настраиваемой политике
 
