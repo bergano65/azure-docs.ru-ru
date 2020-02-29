@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/26/2020
-ms.openlocfilehash: aa71f7d2f3b277ca34e1e5fea76ada6adf93e573
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 2216e1bf058eef486dbfefba24d52bdc6bdb232f
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77655075"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78164684"
 ---
 # <a name="azure-data-factory-mapping-data-flow-lookup-transformation"></a>Преобразование "Поиск потока данных" фабрики данных Azure
 
@@ -45,6 +45,9 @@ ms.locfileid: "77655075"
 * Совпадение с несколькими строками: оставьте поле пустым, чтобы вернуть одно совпадение строк
 * Совпадение: выберите первый, последний или любое совпадение.
 * Условия сортировки. Если выбрать первый или последний, ADF требует, чтобы данные были упорядочены, чтобы существовала логика, которая находится за первой и последней
+
+> [!NOTE]
+> Используйте только первый или последний параметр в селекторе одной строки, если необходимо контролировать, какое значение вернуть из уточняющего запроса. Использование "Any" или поиск по нескольким строкам выполняется быстрее.
 
 ### <a name="option-2"></a>Вариант 2
 

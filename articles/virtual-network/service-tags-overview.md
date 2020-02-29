@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2019
 ms.author: jispar
 ms.reviewer: kumud
-ms.openlocfilehash: 47488403a10a6b955e15b0048d455cc17016f009
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 7f5f75385374b6949ee3ef5e5ef298b8d54cc36e
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77526252"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78163256"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -58,7 +58,7 @@ ms.locfileid: "77526252"
 | **азурекосмосдб** | Azure Cosmos DB. | Исходящие | Да | Да |
 | **AzureDatabricks** | Azure Databricks. | Оба варианта | Нет | Нет |
 | **азуредатаексплорерманажемент** | Управление обозреватель данных Azure. | Входящий трафик | Нет | Нет |
-| **AzureDataLake** | Azure Data Lake. | Исходящие | Нет | Да |
+| **AzureDataLake** | Azure Data Lake Storage 1-го поколения. | Исходящие | Нет | Да |
 | **азуривентгрид** | Сетка событий Azure. <br/><br/>*Примечание.* Этот тег охватывает конечные точки службы "Сетка событий Azure" в юго-центральной части США, Восточная часть США, Восточная часть США 2, Западная часть США 2 и Центральная часть США. | Оба варианта | Нет | Нет |
 | **азурефронтдур** | Передняя дверца Azure. | Оба варианта | Нет | Нет |
 | **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory** и **азурефронтдур. интерфейс** . Также список разрешений следующие IP-адреса (зависимость скоро будет удалена): 13.107.6.181 & 13.107.9.181. | Исходящие | Нет | Нет |

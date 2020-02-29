@@ -2,17 +2,17 @@
 title: Оптимизированные для памяти Dv2 и виртуальные машины серии DSv2 — виртуальные машины Azure
 description: Спецификации для виртуальных машин серии Dv2 и DSv2.
 services: virtual-machines
-author: jonbeck7
+author: joelpelley
 ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 1ba13733fdf5cf8aa83cbf71a23d013bf4ae90d4
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 66e415070e60676df5602078aff50c7b68920f1e
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77493791"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77914047"
 ---
 # <a name="memory-optimized-dv2-and-dsv2-series"></a>Оптимизированные для памяти Dv2 и серии Dsv2
 
@@ -73,6 +73,6 @@ ACU: 210–250<sup>1</sup>
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 10/28/2019
-ms.openlocfilehash: dd7579c97e2166e2822ee5674bbcd5a8ad64d2c7
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.date: 02/27/2020
+ms.openlocfilehash: 397e455c8b6a1097e2a32473036e1acd2bbdf2eb
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201498"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921153"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>Обзор и настройка единиц потоковой передачи
 
@@ -32,7 +32,7 @@ ms.locfileid: "77201498"
     ![Настройка задания Stream Analytics на портале Azure][img.stream.analytics.preview.portal.settings.scale]
     
 4. Используйте ползунок, чтобы задать количество единиц потоковой передачи для задания. Обратите внимание, что существуют определенные ограничения параметров единиц потоковой передачи. 
-5. Вы можете изменить число назначенных для задания служб, даже если оно выполняется. Это невозможно, если в задании используются [несекционированные выходные данные](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#query-using-non-partitioned-output) или имеется [многошаговый запрос с разными значениями секций](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#multi-step-query-with-different-partition-by-values). В задании также должно быть не менее 6 служб SUs для изменения этого параметра при выполнении задания. При выполнении задания может быть ограничен выбор из набора значений SU. 
+5. Вы можете изменить число назначенных для задания служб, даже если оно выполняется. Это невозможно, если в задании используются [несекционированные выходные данные](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#query-using-non-partitioned-output) или имеется [многошаговый запрос с разными значениями секций](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#multi-step-query-with-different-partition-by-values). При выполнении задания может быть ограничен выбор из набора значений SU. 
 
 ## <a name="monitor-job-performance"></a>Мониторинг производительности задания
 На портале Azure можно отслеживать пропускную способность задания:

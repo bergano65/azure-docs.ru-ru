@@ -1,27 +1,41 @@
 ---
 title: Известные проблемы с Azure Data Lake Storage 2-го поколения | Документация Майкрософт
-description: Сведения об ограничениях и известных проблемах с Azure Data Lake Storage 2-го поколения
+description: Сведения об ограничениях и известных проблемах Azure Data Lake Storage 2-го поколения.
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/03/2019
+ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 951d707c898ad0efa1f21480c12f0c733f5218ee
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 7d637c2fb3f4a4d5f8deac9cd99c0a44af6568e6
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834944"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919617"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
-В этой статье перечислены функции и средства, которые пока не поддерживаются, или только частично поддерживаются для учетных записей хранения с иерархическим пространством имен (Azure Data Lake Storage 2-го поколения).
+В этой статье описываются ограничения и известные проблемы Azure Data Lake Storage 2-го поколения.
 
-<a id="blob-apis-disabled" />
+## <a name="supported-blob-storage-features"></a>Поддерживаемые функции хранилища BLOB-объектов
 
-## <a name="issues-and-limitations-with-using-blob-apis"></a>Проблемы и ограничения при использовании API больших двоичных объектов
+Теперь все большее число функций хранилища BLOB-объектов работает с учетными записями, имеющими иерархическое пространство имен. Полный список см. в разделе [функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md).
+
+## <a name="supported-azure-service-integrations"></a>Поддерживаемые интеграции служб Azure
+
+ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Список поддерживаемых служб Azure см. в статье [службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md).
+
+Ознакомьтесь [со службами Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md).
+
+## <a name="supported-open-source-platforms"></a>Поддерживаемые платформы с открытым исходным кодом
+
+Несколько платформ с открытым исходным кодом, которые поддерживают Data Lake Storage 2-го поколения. Полный список см. в разделе [платформы с открытым исходным кодом, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md).
+
+См. раздел [платформы с открытым исходным кодом, поддерживающий Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md).
+
+## <a name="blob-storage-apis"></a>API хранилища BLOB-объектов
 
 API больших двоичных объектов и интерфейсы API Data Lake Storage 2-го поколения могут обрабатывать одни и те же данные.
 
@@ -48,38 +62,57 @@ API-интерфейсы RESTFUL для больших двоичных объе
 
 <a id="api-scope-data-lake-client-library" />
 
-## <a name="filesystem-support-in-sdks"></a>Поддержка файловой системы в пакетах SDK
+## <a name="file-system-support-in-sdks"></a>Поддержка файловой системы в пакетах SDK
 
-- Поддержка [.NET](data-lake-storage-directory-file-acl-dotnet.md), [Java](data-lake-storage-directory-file-acl-java.md) и [Python](data-lake-storage-directory-file-acl-python.md) доступна в общедоступной предварительной версии. Другие пакеты SDK в настоящее время не поддерживаются.
+- [.NET](data-lake-storage-directory-file-acl-dotnet.md), [Java](data-lake-storage-directory-file-acl-java.md) и [Python](data-lake-storage-directory-file-acl-python.md), [JavaScript](data-lake-storage-directory-file-acl-javascript.md) и поддержка доступны в общедоступной предварительной версии. Другие пакеты SDK в настоящее время не поддерживаются.
 - Операции получения и установки ACL в настоящее время не являются рекурсивными.
 
-## <a name="filesystem-support-in-powershell-and-azure-cli"></a>Поддержка файловой системы в PowerShell и Azure CLI
+## <a name="file-system-support-in-powershell-and-azure-cli"></a>Поддержка файловой системы в PowerShell и Azure CLI
 
 - Поддержка [PowerShell](data-lake-storage-directory-file-acl-powershell.md) и [Azure CLI](data-lake-storage-directory-file-acl-cli.md) доступна в общедоступной предварительной версии.
 - Операции получения и установки ACL в настоящее время не являются рекурсивными.
 
-## <a name="support-for-other-blob-storage-features"></a>Поддержка других функций хранилища BLOB-объектов
+## <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 
-В следующей таблице перечислены все другие функции и средства, которые еще не поддерживаются или поддерживаются только частично с учетными записями хранения с иерархическим пространством имен (Azure Data Lake Storage 2-го поколения).
+* Удаление моментальных снимков BLOB-объектов пока не поддерживается.  
 
-| Компонент или средство    | Дополнительные сведения    |
-|--------|-----------|
-| **Переключение учетной записи** |Еще не поддерживается|
-| **AzCopy** | Поддержка конкретных версий <br><br>Используйте только последнюю версию AzCopy ([AzCopy V10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Более ранние версии AzCopy, например AzCopy v 8.1, не поддерживаются.|
-| **Политики управления жизненным циклом хранилища BLOB-объектов Azure** | Поддерживаются политики управления жизненным циклом (Предварительная версия).  Зарегистрируйтесь для получения предварительной версии политик управления жизненным циклом и архивный уровень доступа [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2EUNXd_ZNJCq_eDwZGaF5VURjFLTDRGS0Q4VVZCRFY5MUVaTVJDTkROMi4u).   <br><br>Поддерживаются все уровни доступа. Уровень доступа к архиву сейчас находится на этапе предварительной версии. Удаление моментальных снимков BLOB-объектов пока не поддерживается.  В настоящее время существуют ошибки, затрагивающие политики управления жизненным циклом и уровень доступа архива.  |
-| **Сеть доставки содержимого Azure (CDN)** | Еще не поддерживается|
-| **Поиск Azure** |Поддерживается (Предварительная версия)|
-| **Обозреватель службы хранилища Azure** | Поддержка конкретных версий. <br><br>Используйте только версии `1.6.0` или выше. <br> В настоящее время существует ошибка хранилища, влияющая на `1.11.0` версии, которая может привести к ошибкам проверки подлинности в определенных сценариях. Исправлено исправление ошибки хранилища, но в качестве обходного решения рекомендуется использовать версию `1.10.x`, которая доступна для [бесплатной загрузки](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-relnotes). на `1.10.x` не влияет ошибка хранилища.|
-| **Списки ACL контейнера больших двоичных объектов** |Еще не поддерживается|
-| **Blobfuse** |Еще не поддерживается|
-| **Личные домены** |Еще не поддерживается|
-| **Обозреватель службы хранилища в портал Azure** | Ограниченная поддержка. Списки управления доступом пока не поддерживаются. |
-| **Журнал ведения диагностики** |Журналы диагностики поддерживаются (Предварительная версия). <br><br>Обозреватель службы хранилища Azure 1.10. x не может использоваться для просмотра журналов диагностики. Чтобы просмотреть журналы, используйте AzCopy или пакеты SDK.
-| **Неизменяемое хранилище** |Еще не поддерживается <br><br>Неизменяемое хранилище дает возможность хранить данные в [черве (запись один раз, чтение из множества)](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) .|
-| **Уровни уровня объектов** |Поддерживаются уровни "крутой" и "Архив". Уровень архива находится на этапе предварительной версии. Все остальные уровни доступа пока не поддерживаются. <br><br> В настоящее время некоторые ошибки влияют на уровень доступа к архиву.  Зарегистрируйтесь для получения предварительной версии уровня доступа к архиву [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2EUNXd_ZNJCq_eDwZGaF5VURjFLTDRGS0Q4VVZCRFY5MUVaTVJDTkROMi4u).|
-| **Статические веб-сайты** |Еще не поддерживается <br><br>В частности, возможность обслуживания файлов для [статических веб-сайтов](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website).|
-| **Сторонние приложения** | Ограниченная поддержка <br><br>Сторонние приложения, использующие API-интерфейсы RESTFUL для работы, будут продолжать работать, если вы используете их с Data Lake Storage 2-го поколения. <br>Приложения, которые вызывают API больших двоичных объектов, скорее всего, будут работать.|
-|**обратимое удаление** |Еще не поддерживается|
-| **Функции управления версиями** |Еще не поддерживается <br><br>К ним относятся [обратимое удаление](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete)и другие функции управления версиями, такие как [моментальные снимки](https://docs.microsoft.com/rest/api/storageservices/creating-a-snapshot-of-a-blob).|
+* В настоящее время существуют ошибки, затрагивающие политики управления жизненным циклом и уровень доступа архива. 
+
+## <a name="diagnostic-logs"></a>Журналы диагностики
+
+Обозреватель службы хранилища Azure 1.10. x не может использоваться для просмотра журналов диагностики. Чтобы просмотреть журналы, используйте AzCopy или пакеты SDK.
+
+## <a name="blobfuse"></a>Blobfuse
+
+Blobfuse не поддерживается.
+
+
+
+<a id="known-issues-tools" />
+
+## <a name="azcopy"></a>AzCopy
+
+Используйте только последнюю версию AzCopy ([AzCopy V10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Более ранние версии AzCopy, например AzCopy v 8.1, не поддерживаются.
+
+<a id="storage-explorer" />
+
+## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
+
+Используйте только версии `1.6.0` или выше. В настоящее время существует ошибка хранилища, влияющая на `1.11.0`версии  , которая может привести к ошибкам проверки подлинности в определенных сценариях. Исправлено исправление ошибки хранилища, но в качестве обходного решения рекомендуется использовать версию `1.10.x` , которая доступна для [бесплатной загрузки](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-relnotes). на `1.10.x` не влияет ошибка хранилища.
+
+<a id="explorer-in-portal" />
+
+## <a name="storage-explorer-in-the-azure-portal"></a>Обозреватель службы хранилища на портале Azure
+
+Списки управления доступом пока не поддерживаются.
+
+<a id="third-party-apps" />
+
+## <a name="thirdpartyapplications"></a>Сторонние приложения
+
+Сторонние приложения, использующие API-интерфейсы RESTFUL для работы, продолжают работать, если использовать их с Data Lake Storage 2-го поколения приложениями, которые вызывают API больших двоичных объектов, скорее всего, будут работать.
+
+
+
 
 

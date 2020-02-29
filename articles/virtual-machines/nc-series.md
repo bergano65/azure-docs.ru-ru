@@ -2,17 +2,17 @@
 title: Виртуальные машины Azure серии NC
 description: Спецификации виртуальных машин серии NC.
 services: virtual-machines
-author: jonbeck7
+author: vikancha
 ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: ddd529510ed2eb2080956c26a0ce20c50c2242eb
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: eab7dfe79aa5cdf234c8bc9472387214f7df3563
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661109"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78164531"
 ---
 # <a name="nc-series"></a>Серия NC
 
@@ -21,6 +21,10 @@ ms.locfileid: "77661109"
 Хранилище класса Premium: не поддерживается
 
 Кэширование хранилища класса Premium: не поддерживается
+
+Динамическая миграция: не поддерживается
+
+Обновления с сохранением памяти: не поддерживается
 
 | Размер | vCPU | Память, ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальное число сетевых адаптеров |
 |---|---|---|---|---|---|---|---|

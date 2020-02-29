@@ -3,12 +3,12 @@ title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
 description: Найдите ответы на некоторые распространенные вопросы о службе Azure Kubernetes (AKS).
 ms.topic: conceptual
 ms.date: 10/02/2019
-ms.openlocfilehash: 8586ff1ae22bf188af3705434ed90e064ff33c0f
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 1531308a8d0bd5a09952d8ad8ccd03c92f2f99eb
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77595677"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77914608"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -117,7 +117,7 @@ AKS поддерживает следующие [контроллеры допу
 
 В AKS можно задать значение `maxPods` при создании кластера с помощью шаблонов Azure CLI и Azure Resource Manager. Однако для Кубенет и Azure CNI требуется *минимальное значение* (проверка во время создания):
 
-| Сеть | Минимальные | Максимальная |
+| Сеть | Минимум | Максимальное значение |
 | -- | :--: | :--: |
 | Azure CNI | 30 | 250 |
 | кубенет | 30 | 110 |
@@ -184,7 +184,6 @@ AKS не является управляемой службой, и управл
 
 <!-- LINKS - internal -->
 
-[aks-regions]: ./quotas-skus-regions.md#region-availability
 [aks-upgrade]: ./upgrade-cluster.md
 [aks-cluster-autoscale]: ./autoscaler.md
 [aks-advanced-networking]: ./configure-azure-cni.md
@@ -203,7 +202,7 @@ AKS не является управляемой службой, и управл
 [availability-zones]: ./availability-zones.md
 
 <!-- LINKS - external -->
-
+[aks-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
 [auto-scaler]: https://github.com/kubernetes/autoscaler
 [cordon-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/
 [hexadite]: https://github.com/Hexadite/acs-keyvault-agent

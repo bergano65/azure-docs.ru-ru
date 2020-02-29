@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
 ms.author: memildin
-ms.openlocfilehash: 482154a37334b056719a18355f87b467d4fe95c7
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 2aeb2ab4cfb4ed5e8652638aaced320cc7119d3e
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77604252"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919487"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Управление между клиентами в центре безопасности
 
@@ -50,9 +50,9 @@ ms.locfileid: "77604252"
 - Устранение **рекомендаций**. Отслеживайте и исправьте [рекомендации](security-center-recommendations.md) для многих ресурсов из разных клиентов за один раз. Затем можно сразу же разобраться в уязвимостях, представляющих наивысший риск для всех клиентов.
 - **Управление оповещениями**: обнаружение [оповещений](security-center-alerts-overview.md) в разных клиентах. Выполните действия с ресурсами, которые не соответствуют требованиям с действиями по [исправлению](security-center-managing-and-responding-alerts.md).
 
-- **Управление расширенными функциями защиты облака и многое другое**: управление различными службами обнаружения и защиты угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), [адаптивное управление приложениями](security-center-adaptive-application.md)и многое другое.
+- **Управление расширенными функциями защиты облака и многое другое**: управление различными службами защиты от угроз, такими как [JIT-доступ к виртуальной машине](security-center-just-in-time.md), [Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md), [адаптивное управление приложениями](security-center-adaptive-application.md)и многое другое.
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье объясняется, как работает управление между клиентами в центре безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Усиление безопасности с помощью центра безопасности Azure](security-center-monitoring.md) — Узнайте, как отслеживать работоспособность ресурсов Azure.

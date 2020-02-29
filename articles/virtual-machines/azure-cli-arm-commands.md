@@ -8,18 +8,18 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: cynthn
-ms.openlocfilehash: 899f453ef67fd094578e946c1cdd9ca4d427bf79
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: ad213cc02f707609a837ea66b79e51c6f2a617f8
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77122453"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919776"
 ---
 # <a name="azure-classic-cli-commands"></a>Классические команды интерфейса командной строки Azure 
 
-> [!IMPORTANT]
-> В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания.
-> Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/).
+[!INCLUDE [classic-vm-deprecation](../../includes/classic-vm-deprecation.md)]
+
+В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/).
 
 Эта статья содержит синтаксис и параметры для классических команд интерфейса командной строки Azure, которые обычно используются для создания ресурсов Azure и управления ими. Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. 
 
@@ -306,7 +306,7 @@ ms.locfileid: "77122453"
 
     insights logs list [options]
 
-## <a name="locations"></a>Расположения 
+## <a name="locations"></a>Местоположения 
 **Выводит доступные расположения**
 
     location list [options]

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 07/24/2019
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2930badf90afc7d3822ff1a3bf1a65ec68438a4d
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 545bcd1fa521b945d822b7eb69945cf381bf480a
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77598363"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918671"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -32,7 +32,7 @@ ms.locfileid: "77598363"
 
 [kb4025334]:https://support.microsoft.com/help/4025334/windows-10-update-kb4025334
 
-[dv2-series]:https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dv2-series
+[dv2-series]:../../dv2-dsv2-series.md
 [ds-series]:https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general
 
 [sap-installation-guides]:http://service.sap.com/instguides
@@ -212,7 +212,7 @@ ms.locfileid: "77598363"
 
 Отказоустойчивый кластер представляет собой группу из 1 + n независимых серверов (узлов), работающих совместно для повышения доступности приложений и служб. В случае отказа узла отказоустойчивый кластер Windows Server вычисляет допустимое количество сбоев, при котором сохранится работоспособность кластера для предоставления приложений и служб. Возможность отказоустойчивой кластеризации можно добавить, используя разные режимы кворума.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем перейти к задачам, приведенным в этой статье, ознакомьтесь с этой статьей.
 
 * [Архитектура высокого уровня доступности виртуальных машин Azure и сценарии для SAP NetWeaver][sap-high-availability-architecture-scenarios]
@@ -348,7 +348,7 @@ _**Рис. 5.** Экземпляр SAP ASCS/SCS и масштабируемый 
 
 В таком случае в качестве общего диска кластера вы можете использовать стороннее решение SIOS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подготовка инфраструктуры Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляра SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
 * [Установка SAP NetWeaver HA в отказоустойчивом кластере Windows и в общей папке для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]

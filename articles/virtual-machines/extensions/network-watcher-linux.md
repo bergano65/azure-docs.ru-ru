@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
-ms.openlocfilehash: c04b27ab4a8ea53e09ca3a133d6aef6457fe1526
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 69d2bfe4576a9350e905fc10f3d7617619e6284a
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073034"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77915492"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Linux
 
@@ -29,13 +29,13 @@ ms.locfileid: "74073034"
 
 В этой статье подробно описаны поддерживаемые платформы и параметры развертывания для расширения виртуальной машины для агента службы "Наблюдатель за сетями" для Linux. Установка агента не прерывает работу и не требует перезагрузки виртуальной машины. Расширение можно развернуть на развертываемой виртуальной машине. Если виртуальная машина развернута службой Azure, необходимо проверить документацию службы на наличие разрешения на установку расширения для виртуальной машины.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="operating-system"></a>операционная система
+### <a name="operating-system"></a>Операционная система
 
 Расширение виртуальной машины для агента службы "Наблюдатель за сетями" можно настроить для следующих дистрибутивов Linux.
 
-| Дистрибутив | Версия |
+| Распределение | Версия |
 |---|---|
 | Ubuntu | 12+ |
 | Debian | 7 и 8 |
@@ -75,11 +75,11 @@ ms.locfileid: "74073034"
 
 ### <a name="property-values"></a>Значения свойств
 
-| имя | Значение и пример |
+| Имя | Значение и пример |
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.Azure.NetworkWatcher |
-| type | NetworkWatcherAgentLinux |
+| тип | NetworkWatcherAgentLinux |
 | typeHandlerVersion | 1.4 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
@@ -87,6 +87,8 @@ ms.locfileid: "74073034"
 Вы можете развернуть расширения виртуальной машины Azure с помощью шаблона Azure Resource Manager. Чтобы развернуть расширение агента службы "Наблюдатель за сетями", используйте в шаблоне предыдущую схему JSON.
 
 ## <a name="azure-classic-cli-deployment"></a>Развертывание классического Azure CLI
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
 Следующий пример развертывает расширение виртуальной машины для агента службы "Наблюдатель за сетями" на существующей виртуальной машине, развернутой с помощью классической модели.
 
@@ -105,21 +107,9 @@ az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name Net
 
 ## <a name="troubleshooting-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshooting"></a>Устранение неполадок
+### <a name="troubleshooting"></a>Диагностика
 
 Сведения о состоянии развертываний расширения можно получить на портале Azure или при помощи Azure CLI.
-
-В следующем примере показано состояние развертывания расширений для виртуальной машины, развернутой с помощью классической модели и классического Azure CLI.
-
-```azurecli
-azure config mode asm
-azure vm extension get myVM1
-```
-Выходные данные выполнения расширения регистрируются в файле, расположенном в следующем каталоге:
-
-```
-/var/log/azure/Microsoft.Azure.NetworkWatcher.NetworkWatcherAgentLinux/
-```
 
 В следующем примере показано состояние развертывания расширения NetworkWatcherAgentLinux для виртуальной машины, развернутой с помощью Resource Manager и Azure CLI.
 

@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: memildin
-ms.openlocfilehash: d208629ee29bb9102f16fcb1d541677bd4a4d5fa
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 330cbc3f28f5e549d5a21417c3d7ccc1e5444769
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77431570"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919538"
 ---
 # <a name="monitoring-the-security-of-your-containers"></a>Мониторинг безопасности контейнеров
 
@@ -29,7 +29,7 @@ ms.locfileid: "77431570"
 
 - **Усиление защиты кластеров службы Kubernetes Azure** — центр безопасности предоставляет рекомендации при обнаружении уязвимостей в конфигурации кластеров службы Kubernetes Azure. Подробные сведения о конкретных рекомендациях см. в разделе [Рекомендации службы Kubernetes](recommendations-reference.md#recs-containers).
 
-- **Защита среды выполнения** . Если вы находитесь в ценовой категории "Стандартный" центра безопасности, вы получите возможность обнаружения угроз в режиме реального времени для контейнерных сред. Центр безопасности создает оповещения для подозрительных действий на уровне узла и кластера AKS. Дополнительные сведения о соответствующих оповещениях системы безопасности см. в разделах [Alerts for Azure Kubernetes Service Clusters](alerts-reference.md#alerts-akscluster) и [Alerts for Containers-site Level](alerts-reference.md#alerts-containerhost) статьи справочника по оповещениям.
+- **Защита среды выполнения** . Если вы находитесь в ценовой категории "Стандартный" центра безопасности, вы получите защиту от угроз в режиме реального времени для контейнерных сред. Центр безопасности создает оповещения для подозрительных действий на уровне узла и кластера AKS. Дополнительные сведения о соответствующих оповещениях системы безопасности см. в разделах [Alerts for Azure Kubernetes Service Clusters](alerts-reference.md#alerts-akscluster) и [Alerts for Containers-site Level](alerts-reference.md#alerts-containerhost) статьи справочника по оповещениям.
 
 ## <a name="scanning-your-arm-based-container-registries-for-vulnerabilities"></a>Поиск уязвимостей в реестровх контейнеров на базе ARM 
 
@@ -135,7 +135,7 @@ ms.locfileid: "77431570"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как использовать функции безопасности контейнеров в центре безопасности. 
 

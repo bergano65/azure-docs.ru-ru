@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/25/2020
-ms.openlocfilehash: 435d2469be8eb572caa02e381d84ae4e9ac32f4b
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 415a093fd8a8fbe27e1d240b061548e18f2ca6b6
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77674848"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78164735"
 ---
 # <a name="azure-data-factory-flatten-transformation"></a>Преобразование "сведение" в фабрике данных Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "77674848"
 
 ## <a name="unroll-root"></a>Развернуть корень
 
-По умолчанию ADF выполняет сведение структуры в выбранном выше массиве. Можно также выбрать другую часть иерархии, чтобы отменить развертывание.
+По умолчанию ADF выполняет сведение структуры в выбранном выше массиве. Можно также выбрать другую часть иерархии, чтобы отменить развертывание. Параметр "unrollный корень" является необязательным.
 
 ## <a name="input-columns"></a>Входные столбцы
 

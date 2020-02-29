@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/17/2020
+ms.date: 03/02/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 4434c877f69391f5dc5926c6aed07049ba46b7b7
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 97e51331657c62094996f79483148f2f441e6a44
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425652"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78161607"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -46,16 +46,16 @@ ms.locfileid: "77425652"
 
 ### <a name="culture"></a>Язык и региональные параметры
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
-| {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
+| {Culture:RegionName} | Двухбуквенный код ISO для региона. | US |
 | {Culture:RFC5646} | Код языка RFC5646. | ru-RU |
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -64,56 +64,57 @@ ms.locfileid: "77425652"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
-| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Недоступно |
+| {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
 | {OIDC:DomainHint} |Параметр `domain_hint` строки запроса. | facebook.com |
 | {OIDC:LoginHint} |  Параметр `login_hint` строки запроса. | someone@contoso.com |
-| {OIDC:MaxAge} | `max_age`. | Недоступно |
+| {OIDC:MaxAge} | `max_age`. | Н/Д |
 | {OIDC:Nonce} |Параметр `Nonce` строки запроса. | defaultNonce |
 | {OIDC:Prompt} | Параметр `prompt` строки запроса. | login |
-| {OIDC:Resource} |Параметр `resource` строки запроса. | Недоступно |
+| {OIDC:Resource} |Параметр `resource` строки запроса. | Н/Д |
 | {OIDC:scope} |Параметр `scope` строки запроса. | OpenId |
+| {OIDC: RedirectUri} |Параметр `redirect_uri` строки запроса. | https://jwt.ms |
 
 ### <a name="context"></a>Контекст
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
-| {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
+| {Context:DeploymentMode} |Режим развертывания политики.  | Рабочие |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
-
+| {Context: функции "оставаться} | Указывает, установлен ли флажок [оставаться в](custom-policy-keep-me-signed-in.md) системе. |  true |
 
 ### <a name="non-protocol-parameters"></a>Не протокольные параметры
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
-| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1 234 |
-| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Недоступно |
+| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1234 |
+| {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
-| {oauth2:access_token} | Маркер доступа. | Недоступно |
+| {oauth2:access_token} | Маркер доступа. | Н/Д |
 
 
 ### <a name="saml"></a>SAML
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {SAML: Ауснконтекстклассреференцес} | Значение элемента `AuthnContextClassRef` из запроса SAML. | urn: Oasis: Names: TC: SAML: 2.0: AC: Classes: Пассвордпротектедтранспорт |
 | {SAML: Намеидполициформат} | Атрибут `Format` из элемента `NameIDPolicy` запроса SAML. | urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress |
 | {SAML: Issuer} |  Значение элемента `Issuer` SAML для запроса SAML.| https://contoso.com |
-| {SAML: Алловкреате} | Значение атрибута `AllowCreate`, из элемента `NameIDPolicy` запроса SAML. | True |
-| {SAML: Форцеаусн} | Значение атрибута `ForceAuthN`, из элемента `AuthnRequest` запроса SAML. | True |
+| {SAML: Алловкреате} | Значение атрибута `AllowCreate`, из элемента `NameIDPolicy` запроса SAML. | Истина |
+| {SAML: Форцеаусн} | Значение атрибута `ForceAuthN`, из элемента `AuthnRequest` запроса SAML. | Истина |
 | {SAML: ProviderName} | Значение атрибута `ProviderName`, из элемента `AuthnRequest` запроса SAML.| Contoso.com |
 
 ## <a name="using-claim-resolvers"></a>Использование арбитров утверждений 
@@ -134,7 +135,7 @@ ms.locfileid: "77425652"
 |[контентдефинитионпараметерс](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
 |Технический профиль [релингпарти](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
 
-Параметры 
+Параметры: 
 1. Для метаданных `IncludeClaimResolvingInClaimsHandling` должно быть задано значение `true`.
 1. `AlwaysUseDefaultValue` атрибута входящих или исходящих утверждений должен быть установлен в значение `true`.
 

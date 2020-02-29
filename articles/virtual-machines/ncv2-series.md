@@ -2,17 +2,17 @@
 title: Виртуальные машины Azure серии NCv2
 description: Спецификации виртуальных машин серии NCv2.
 services: virtual-machines
-author: jonbeck7
+author: vikancha
 ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 4ea199cdc75732ff3af730fa79530399e4372ebd
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: f4a382e422fd56e754d8014bfb4f0f0af1a3ec77
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661045"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78163987"
 ---
 # <a name="ncv2-series"></a>Серия NCv2
 
@@ -23,6 +23,10 @@ ms.locfileid: "77661045"
 Хранилище класса Premium: поддерживается
 
 Кэширование хранилища класса Premium: поддерживается
+
+Динамическая миграция: не поддерживается
+
+Обновления с сохранением памяти: не поддерживается
 
 > [!IMPORTANT]
 > Для этой серии виртуальных машин квота виртуальных ЦП (Core) в вашей подписке изначально равна 0 в каждом регионе. [Запросите увеличение квоты виртуальных ЦП](../azure-supportability/resource-manager-core-quotas-request.md) для этой серии в [доступном регионе](https://azure.microsoft.com/regions/services/).

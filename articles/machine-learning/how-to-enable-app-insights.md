@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: peterlu
 author: peterclu
 ms.date: 11/12/2019
-ms.openlocfilehash: 6498717f5d542be228483b9c323dbd8f3ca2ff00
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 621188b3901bdea1a7ae50ac49c0e6f625a3e79a
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251929"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77915781"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и получение данных из конечных точек веб-службы ML
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -43,39 +43,6 @@ ms.locfileid: "77251929"
 
 Метаданные и ответ на службу, соответствующие метаданным веб-службы и прогнозам модели, записываются в трассировки Application Insights Azure в `"model_data_collection"`сообщения. Вы можете запросить Azure Application Insights напрямую для доступа к этим данным или настроить [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) в учетную запись хранения для более длительного хранения или дальнейшей обработки. Данные модели можно использовать в Машинное обучение Azure для настройки меток, переобучения, пояснения, анализа данных или других способов использования. 
 
-## <a name="use-the-azure-portal-to-configure"></a>Использование портал Azure для настройки
-
-Вы можете включить и отключить Application Insights Azure в портал Azure. 
-
-1. В [портал Azure](https://portal.azure.com)откройте рабочую область.
-
-1. На вкладке **развертывания** выберите службу, в которой вы хотите включить Azure Application Insights
-
-   [![Список служб на вкладке "Развертывания"](./media/how-to-enable-app-insights/Deployments.PNG)](././media/how-to-enable-app-insights/Deployments.PNG#lightbox)
-
-3. Выберите **изменить** .
-
-   [![Кнопка "Изменить"](././media/how-to-enable-app-insights/Edit.PNG)](./././media/how-to-enable-app-insights/Edit.PNG#lightbox)
-
-4. В окне **Дополнительные параметры**установите флажок **включить диагностику AppInsights** .
-
-   [![Установленный флажок для включения диагностики](./media/how-to-enable-app-insights/AdvancedSettings.png)](././media/how-to-enable-app-insights/AdvancedSettings.png#lightbox)
-
-1. Щелкните **Обновить** в нижней части экрана, чтобы применить изменения
-
-### <a name="disable"></a>Отключить
-
-1. В [портал Azure](https://portal.azure.com)откройте рабочую область.
-1. Выберите **развертывания**, выберите службу, а затем щелкните **изменить** .
-
-   [![Нажмите кнопку "Изменить"](././media/how-to-enable-app-insights/Edit.PNG)](./././media/how-to-enable-app-insights/Edit.PNG#lightbox).
-
-1. В окне **Дополнительные параметры**снимите флажок **включить диагностику AppInsights** .
-
-   [![Снятый флажок включения диагностики](./media/how-to-enable-app-insights/uncheck.png)](././media/how-to-enable-app-insights/uncheck.png#lightbox)
-
-1. Щелкните **Обновить** в нижней части экрана, чтобы применить изменения
- 
 ## <a name="use-python-sdk-to-configure"></a>Использование пакета SDK для Python для настройки 
 
 ### <a name="update-a-deployed-service"></a>Обновление развернутой службы

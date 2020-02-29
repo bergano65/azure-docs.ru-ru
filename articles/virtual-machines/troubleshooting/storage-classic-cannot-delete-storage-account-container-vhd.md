@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 01/11/2019
 ms.author: annayak
-ms.openlocfilehash: 35f8a766c6d260e23ff854284d5b8ee047e64b42
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 95c85309058911d6767eb44efd7b37ddac7a9119
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64926229"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77915043"
 ---
 # <a name="troubleshoot-classic-storage-resource-deletion-errors"></a>Устранение ошибок при удалении классических ресурсов хранилища
 В этой статье содержатся рекомендации по устранению неполадок при возникновении одной из приведенных ниже ошибок во время попытки удаления классической учетной записи хранения Azure, контейнера или VHD-файла страничного BLOB-объекта. 
@@ -30,6 +30,10 @@ ms.locfileid: "64926229"
 
 
 ## <a name="steps-while-deleting-a-classic-virtual-machine"></a>Действия для удаления классической виртуальной машины 
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
+
 1. Удалите классическую виртуальную машину.
 2. Если установлен флажок "Диски", **аренда диска** (как показано на рисунке выше), связанная с VHD-файлом страничного BLOB-объекта, будет недействительной. Сам VHD-файл страничного BLOB-объекта по-прежнему будет существовать в учетной записи хранения.
 ![Снимок экрана портала с открытой панелью ошибки удаления ("Delete") классической виртуальной машины](./media/storage-classic-cannot-delete-storage-account-container-vhd/steps_while_deleting_classic_vm.jpg) 
@@ -61,7 +65,7 @@ ms.locfileid: "64926229"
 
 > <span style="color:cyan">**Remove-AzureStorageAccount -StorageAccountName myclassicaccount**</span>
 > 
-> <span style="color:red">Remove-AzureStorageAccount : BadRequest: В учетной записи хранения myclassicaccount есть несколько активных образов или дисков, например  
+> <span style="color:red">Remove-AzureStorageAccount: BadRequest: в учетной записи хранения миклассикаккаунт есть некоторые активные образы и (или) диски, например  
 > myclassicaccount. Убедитесь, что эти образы или диски удалены, перед тем как удалять эту учетную запись хранения.</span>
 
 ## <a name="unable-to-delete-storage-container"></a>Не удается удалить контейнер хранилища
@@ -79,7 +83,7 @@ ms.locfileid: "64926229"
 
 > <span style="color:cyan">**Remove-AzureStorageContainer -Context $context -Name vhds**</span>
 > 
-> <span style="color:red">Remove-AzureStorageContainer : The remote server returned an error: (412) There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the container and no lease ID was specified in the request. (Сейчас контейнер находится в аренде, и в запросе не указан идентификатор аренды).</span>
+> <span style="color:red">Remove-AzureStorageContainer: удаленный сервер вернул ошибку: (412) в настоящее время имеется аренда в контейнере, а в запросе не указан идентификатор аренды. Код состояния HTTP: 412-сообщение об ошибке HTTP: в настоящий момент в контейнере есть аренда, а в запросе не указан идентификатор аренды.</span>
 
 ## <a name="unable-to-delete-a-vhd"></a>Не удается удалить виртуальный жесткий диск 
 
@@ -101,7 +105,7 @@ ms.locfileid: "64926229"
 
 > <span style="color:cyan">**Remove-AzureStorageBlob -Context $context -Container vhds -Blob "classicvm-os-8698.vhd"** </span>
 > 
-> <span style="color:red">Remove-AzureStorageBlob : The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).</span>
+> <span style="color:red">Remove-AzureStorageBlob: удаленный сервер вернул ошибку: (412) в настоящее время имеется аренда в большом двоичном объекте, а в запросе не указан идентификатор аренды. Код состояния HTTP: 412-сообщение об ошибке HTTP: в настоящее время существует Аренда большого двоичного объекта, а в запросе не указан идентификатор аренды.</span>
 
 
 ## <a name="resolution-steps"></a>Способы устранения
@@ -110,7 +114,7 @@ ms.locfileid: "64926229"
 На портале Azure сделайте следующее:
 1.  Перейдите на [портал Azure](https://portal.azure.com).
 2.  Перейдите в раздел "Диски (классические)". 
-3.  Перейдите на вкладку "Диски". ![Снимок экрана портала с открытой панелью списка BLOB-объектов в контейнере](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_disks_tab.jpg)
+3.  Перейдите на вкладку диски. ![снимок экрана портала, откройте панель "список" BLOB-объекта контейнера](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_disks_tab.jpg)
  
 4.  Выберите диск данных, а затем нажмите кнопку "Удалить диск".
  ![Снимок экрана портала с открытой панелью списка BLOB-объектов в контейнере](./media/storage-classic-cannot-delete-storage-account-container-vhd/resolution_click_delete_disk.jpg)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 8b651d6e5ca9262d38f5bfb9e10c404e2614809e
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 0fe04941821de2ac6e4e873e8d073c3e9b9d9508
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77055674"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919385"
 ---
 # <a name="attach-a-managed-data-disk-to-a-windows-vm-by-using-the-azure-portal"></a>Подключение управляемого диска данных к виртуальной машине Windows с помощью портала Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "77055674"
 9. Вы получите предупреждение о том, что при форматировании дисков будут стерты все данные. Нажмите кнопку **ОК**.
 10. После завершения форматирования щелкните **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Вы также можете [подключить диск данных с помощью PowerShell](attach-disk-ps.md).
-- Если вашему приложению нужно использовать диск *D:* для хранения данных, вы можете [изменить букву временного диска Windows](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
+- Если вашему приложению нужно использовать диск *D:* для хранения данных, вы можете [изменить букву временного диска Windows](change-drive-letter.md).
