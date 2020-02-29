@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/27/2020
+ms.date: 02/27/2020
 ms.author: mimart
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2249be583f10aaf7ddda039fbd6d71729b06c36
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: cd376474da2116837278cd4886465c53a99e5455
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77565491"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190625"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архивировать для новых возможностей Azure Active Directory?
 
@@ -31,6 +31,219 @@ ms.locfileid: "77565491"
 - Исправления ошибок
 - Нерекомендуемые функции.
 - Планы по изменениям.
+
+---
+
+## <a name="august-2019"></a>Август 2019 г.
+
+### <a name="enhanced-search-filtering-and-sorting-for-groups-is-available-in-the-azure-ad-portal-public-preview"></a>Расширенный поиск, фильтрация и сортировка для групп доступны на портале Azure AD (общедоступная Предварительная версия).
+
+**Тип:** Новая функция  
+**Категория службы:** Управление группами  
+**Возможности продукта:** Совместная работа
+
+Мы рады сообщить о доступности общедоступной предварительной версии для расширенной работы с группами на портале Azure AD. Эти улучшения помогают лучше управлять группами и списками членов, предоставляя:
+
+- Расширенные возможности поиска, например поиск подстрок в списках групп.
+- Расширенные параметры фильтрации и сортировки для списков членов и владельцев.
+- Новые возможности поиска для списков членов и владельцев.
+- Более точные счетчики групп для больших групп.
+
+Дополнительные сведения см. [в разделе Управление группами в портал Azure](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-members-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context).
+
+---
+
+### <a name="new-custom-roles-are-available-for-app-registration-management-public-preview"></a>Для управления регистрацией приложений доступны новые пользовательские роли (общедоступная Предварительная версия)
+
+**Тип:** Новая функция  
+**Категория службы:** RBAC  
+**Возможности продукта:** Управление доступом
+
+Пользовательские роли (доступные в подписке Azure AD P1 или P2) теперь могут помочь в обеспечении точного доступа, позволяя создавать определения ролей с конкретными разрешениями, а затем назначать эти роли конкретным ресурсам. Сейчас вы создаете пользовательские роли с помощью разрешений для управления регистрацией приложений, а затем назначаете роль конкретному приложению. Дополнительные сведения о пользовательских ролях см. [в разделе роли настраиваемого администратора в Azure Active Directory (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-custom-overview).
+
+Если вам нужны дополнительные разрешения или ресурсы, которые сейчас не отображаются, вы можете отправить отзыв на наш [сайт обратной связи Azure](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032) , и мы добавим ваш запрос на карту обновления в дороге.
+
+---
+
+### <a name="new-provisioning-logs-can-help-you-monitor-and-troubleshoot-your-app-provisioning-deployment-public-preview"></a>Новые журналы подготовки могут помочь в мониторинге и устранении неполадок развертывания подготовки приложений (общедоступная Предварительная версия)
+
+**Тип:** Новая функция  
+**Категория службы:** подготовка приложений  
+**Возможности продукта:** управление жизненным циклом удостоверений
+
+Доступны новые журналы подготовки, помогающие отслеживать и устранять неполадки при развертывании пользователей и групп. Эти новые файлы журналов содержат следующие сведения:
+
+- Какие группы были успешно созданы в [ServiceNow](https://docs.microsoft.com/azure/active-directory/saas-apps/servicenow-provisioning-tutorial)
+- Какие роли были импортированы из [Amazon Web Services (AWS)](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial#configure-and-test-azure-ad-single-sign-on-for-amazon-web-services-aws)
+- Какие сотрудники не были импортированы из [Workday](https://docs.microsoft.com/azure/active-directory/saas-apps/workday-inbound-tutorial)
+
+Дополнительные сведения см. [в разделе Подготовка отчетов на портале Azure Active Directory (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs).
+
+---
+
+### <a name="new-security-reports-for-all-azure-ad-administrators-general-availability"></a>Новые отчеты о безопасности для всех администраторов Azure AD (общая доступность)
+
+**Тип:** Новая функция  
+**Категория службы:** Защита идентификации  
+**Возможности продукта:** безопасность и защита идентификации
+
+По умолчанию все администраторы Azure AD вскоре получат доступ к современным отчетам о безопасности в Azure AD. До конца сентября вы сможете использовать баннер в верхней части современных отчетов о безопасности, чтобы вернуться к старым отчетам.
+
+Современные отчеты о безопасности предоставляют дополнительные возможности из старых версий, включая:
+
+- Расширенная фильтрация и сортировка
+- Групповые действия, такие как отклонение пользователя
+- Подтверждение скомпрометированных или защищенных сущностей
+- Состояние риска, охватывающее: Под угрозой, отклонено, исправлено и подтверждено скомпрометировано
+- Новые обнаружения, связанные с рисками (доступны для Azure AD Premium Подписчики)
+
+Дополнительные сведения см. в разделе [рискованные пользователи](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-investigate-risk#risky-users), [рискованные входы](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-investigate-risk#risky-sign-ins)и [обнаружения рисков](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-investigate-risk#risk-detections).
+
+---
+
+### <a name="user-assigned-managed-identity-is-available-for-virtual-machines-and-virtual-machine-scale-sets-general-availability"></a>Назначаемое пользователем управляемое удостоверение доступно для виртуальных машин и масштабируемых наборов виртуальных машин (общая доступность)
+
+**Тип:** Новая функция  
+**Категория службы:** Управляемые удостоверения для ресурсов Azure  
+**Возможности продукта:** Опыт разработчика
+
+Назначенные пользователем управляемые удостоверения теперь общедоступны для виртуальных машин и масштабируемых наборов виртуальных машин. В рамках этого Azure может создать удостоверение в клиенте Azure AD, который является доверенным для используемой подписки, и может быть назначен одному или нескольким экземплярам службы Azure. Дополнительные сведения о назначенных пользователем управляемых удостоверениях см. в статье [что такое управляемые удостоверения для ресурсов Azure?](https://aka.ms/azuremanagedidentity).
+
+---
+
+### <a name="users-can-reset-their-passwords-using-a-mobile-app-or-hardware-token-general-availability"></a>Пользователи могут сбрасывать пароли с помощью мобильного приложения или маркера оборудования (общая доступность).
+
+**Тип:** Измененная функция  
+**Категория службы:** Самостоятельный сброс пароля  
+**Возможности продукта:** Аутентификация пользователей
+
+Пользователи, которые зарегистрировали мобильное приложение в Организации, теперь могут сбросить свой пароль, утверждая уведомление из Microsoft Authenticator приложения или введя код из своего мобильного приложения или маркера оборудования.
+
+Дополнительные сведения см. в разделе [принцип работы. Самостоятельный сброс пароля](https://aka.ms/authappsspr). Дополнительные сведения о пользовательском интерфейсе см. в статье [о сбросе собственного рабочего или учебного пароля](https://docs.microsoft.com/azure/active-directory/user-help/user-help-password-reset-overview).
+
+---
+
+### <a name="adalnet-ignores-the-msalnet-shared-cache-for-on-behalf-of-scenarios"></a>ADAL.NET игнорирует общий кэш MSAL.NET для сценариев от имени.
+
+**Тип:** исправление  
+**Категория службы:** аутентификация (вход)  
+**Возможности продукта:** Аутентификация пользователей
+
+Начиная с библиотеки проверки подлинности Azure AD (ADAL.NET) версии 5.0.0-Preview, разработчики приложений должны [сериализовать один кэш на учетную запись для веб-приложений и веб-API](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Token-cache-serialization#custom-token-cache-serialization-in-web-applications--web-api). В противном случае в некоторых сценариях, использующих [поток «от имени](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-api-call-api-app-configuration#on-behalf-of-flow)» и в некоторых случаях использования `UserAssertion`, может возникнуть повышение привилегий. Чтобы избежать этой уязвимости, ADAL.NET теперь игнорирует общий кэш библиотеки проверки подлинности Майкрософт для DotNet (MSAL.NET) для сценариев от имени.
+
+Дополнительные сведения об этой неполадке см. в разделе [Azure Active Directory уязвимость повышения привилегий в библиотеке проверки подлинности](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1258).
+
+---
+
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2019"></a>Новые Федеративные приложения, доступные в коллекции Azure AD App — 2019 августа
+
+**Тип:** Новая функция  
+**Категория службы:** корпоративные приложения  
+**Возможности продукта:** интеграция сторонних продуктов
+
+В августе 2019 мы добавили 26 новых приложений с поддержкой Федерации в коллекцию приложений:
+
+[Гражданская платформа](https://docs.microsoft.com/azure/active-directory/saas-apps/civic-platform-tutorial), [Amazon Business](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-business-tutorial), проновос Operations [Manager](https://docs.microsoft.com/azure/active-directory/saas-apps/pronovos-ops-manager-tutorial), [когнидокс](https://docs.microsoft.com/azure/active-directory/saas-apps/cognidox-tutorial), [виарепорт инатив Portal (Европа)](https://docs.microsoft.com/azure/active-directory/saas-apps/viareports-inativ-portal-europe-tutorial), [Azure Databricks](https://azure.microsoft.com/services/databricks), переработайте, [Academy посещение](https://docs.microsoft.com/azure/active-directory/saas-apps/academy-attendance-tutorial), [Матрица приоритетов](https://sync.appfluence.com/pmwebng/) [,](https://docs.microsoft.com/azure/active-directory/saas-apps/robin-tutorial) [каусто MySpace](https://cousto.platformers.be/account/login), [уплоадкаре](https://uploadcare.com/accounts/signup/), [КАРБОНИТЕ резервное копирование](https://docs.microsoft.com/azure/active-directory/saas-apps/carbonite-endpoint-backup-tutorial), [кпксинк по цинком](https://docs.microsoft.com/azure/active-directory/saas-apps/cpqsync-by-cincom-tutorial), [чаржеби](https://docs.microsoft.com/azure/active-directory/saas-apps/chargebee-tutorial), [Доставка. медиа™ Portal](https://portal.deliver.media), [оказался образование](https://docs.microsoft.com/azure/active-directory/saas-apps/frontline-education-tutorial), [F5](https://www.f5.com/products/security/access-policy-manager), [stashcat AD Подключение](https://www.stashcat.com), [мигание](https://docs.microsoft.com/azure/active-directory/saas-apps/blink-tutorial), [воколи](https://docs.microsoft.com/azure/active-directory/saas-apps/vocoli-tutorial), [проновос Analytics](https://docs.microsoft.com/azure/active-directory/saas-apps/pronovos-analytics-tutorial), [сигстр](https://docs.microsoft.com/azure/active-directory/saas-apps/sigstr-tutorial), [дарвинбокс](https://docs.microsoft.com/azure/active-directory/saas-apps/darwinbox-tutorial), [Просмотр по цветам](https://docs.microsoft.com/azure/active-directory/saas-apps/watch-by-colors-tutorial) [, подпрограмма,](https://docs.microsoft.com/azure/active-directory/saas-apps/harness-tutorial) [еаб Навигация по стратегическим](https://docs.microsoft.com/azure/active-directory/saas-apps/eab-navigate-strategic-care-tutorial) решениям
+
+Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](https://aka.ms/appstutorial). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](https://aka.ms/azureadapprequest).
+
+---
+
+### <a name="new-versions-of-the-azuread-powershell-and-azureadpreview-powershell-modules-are-available"></a>Доступны новые версии модулей PowerShell AzureAD и AzureADPreview PowerShell.
+
+**Тип:** Измененная функция  
+**Категория службы:** Другие  
+**Возможности продукта:** Каталог
+
+Доступны новые обновления модулей PowerShell для AzureAD и AzureAD Preview:
+
+- В параметр `Get-AzureADDirectoryRole` в модуле AzureAD был добавлен новый параметр `-Filter`. Этот параметр позволяет фильтровать роли каталога, возвращаемые командлетом.
+- В модуль AzureADPreview были добавлены новые командлеты, которые помогут определить и назначить пользовательские роли в Azure AD, в том числе:
+
+    - `Get-AzureADMSRoleAssignment`
+    - `Get-AzureADMSRoleDefinition`
+    - `New-AzureADMSRoleAssignment`
+    - `New-AzureADMSRoleDefinition`
+    - `Remove-AzureADMSRoleAssignment`
+    - `Remove-AzureADMSRoleDefinition`
+    - `Set-AzureADMSRoleDefinition`
+
+---
+
+### <a name="improvements-to-the-ui-of-the-dynamic-group-rule-builder-in-the-azure-portal"></a>Усовершенствования в пользовательском интерфейсе построителя динамических групп правил в портал Azure
+
+**Тип:** Измененная функция  
+**Категория службы:** Управление группами  
+**Возможности продукта:** Совместная работа
+
+Мы внесли некоторые улучшения пользовательского интерфейса в построитель динамических групп правил, доступный в портал Azure, чтобы упростить настройку нового правила или изменить существующие правила. Это улучшение проектирования позволяет создавать правила с использованием до пяти выражений, а не только одного. Мы также обновили список свойств устройства, чтобы удалить нерекомендуемые свойства устройства.
+
+Дополнительные сведения см. в разделе [Управление правилами динамического членства](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership).
+
+---
+
+### <a name="new-microsoft-graph-app-permission-available-for-use-with-access-reviews"></a>Новое разрешение Microsoft Graph приложения, доступное для использования с проверками доступа
+
+**Тип:** Измененная функция  
+**Категория службы:** Проверки доступа  
+**Возможности продукта:** Identity Governance
+
+Мы предоставили новое разрешение Microsoft Graph приложения, `AccessReview.ReadWrite.Membership`, которое позволяет приложениям автоматически создавать и получать проверки доступа для членства в группах и назначений приложений. Это разрешение можно использовать в запланированных заданиях или в рамках автоматизации, не требуя контекста пользователя, выполнившего вход.
+
+Дополнительные сведения см. в [примере, посвященном созданию проверок доступа Azure AD с помощью Microsoft Graph разрешений приложения в блоге PowerShell](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-how-to-create-Azure-AD-access-reviews-using-Microsoft/m-p/807241).
+
+---
+
+### <a name="azure-ad-activity-logs-are-now-available-for-government-cloud-instances-in-azure-monitor"></a>Журналы действий Azure AD теперь доступны для облачных экземпляров государственных организаций в Azure Monitor
+
+**Тип:** Измененная функция  
+**Категория службы:** Отчеты  
+**Возможности продукта:** мониторинг и создание отчетов
+
+Мы рады сообщить, что теперь журналы действий Azure AD доступны для облачных экземпляров государственных организаций в Azure Monitor. Теперь вы можете отправить журналы Azure AD в учетную запись хранения или в концентратор событий, чтобы интегрировать их со средствами SIEM, такими как [Sumologic](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-sumologic), [Splunk](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-splunk)и [ArcSight](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-arcsight). 
+
+Дополнительные сведения о настройке Azure Monitor см. в статье [журналы действий Azure AD в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor#cost-considerations).
+
+---
+
+### <a name="update-your-users-to-the-new-enhanced-security-info-experience"></a>Обновите свои пользователи до новой, расширенной информации о безопасности
+
+**Тип:** Измененная функция  
+**Категория службы:**  аутентификация (вход)   
+**Возможности продукта:** Аутентификация пользователей
+
+25 сентября 2019 г. Мы будем отключать старые, нерасширенные сведения о безопасности для регистрации и управления сведениями о безопасности пользователей и включать только новую, [расширенную версию](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Cool-enhancements-to-the-Azure-AD-combined-MFA-and-password/ba-p/354271). Это означает, что пользователи больше не смогут использовать старый интерфейс.
+
+Дополнительные сведения о расширенной работе со сведениями о безопасности см. в [документации администратора](https://aka.ms/securityinfodocs) и в нашей [документации пользователя](https://aka.ms/securityinfoguide).
+
+#### <a name="to-turn-on-this-new-experience-you-must"></a>Чтобы включить этот новый интерфейс, необходимо выполнить следующие действия.
+
+1. Войдите в портал Azure в качестве глобального администратора или администратора пользователей.
+
+2. Перейдите в раздел **Azure Active Directory > Параметры пользователя > Управление параметрами для функций предварительной версии панели доступа**.
+
+3. В разделе **пользователи могут использовать функции предварительной версии для регистрации и управления сведениями о безопасности — Расширенная** , выберите пункт **выбрано**, а затем выберите группу пользователей или выберите **все** , чтобы включить эту функцию для всех пользователей в клиенте.
+
+4. В разделе * * пользователи могут использовать функции предварительной версии для регистрации и управления областью безопасности * * info * * * *, выберите **нет**.
+
+5. Сохраните параметры.
+
+    После сохранения параметров вы больше не сможете получить доступ к старому интерфейсу сведений о безопасности.
+
+>[!Important]
+>Если вы не выполните эти действия до 25 сентября 2019, ваш клиент Azure Active Directory будет автоматически включен для повышения удобства работы. Если у вас есть вопросы, свяжитесь с нами по адресу registrationpreview@microsoft.com.
+
+---
+
+### <a name="authentication-requests-using-post-logins-will-be-more-strictly-validated"></a>Запросы проверки подлинности, использующие POST Logins, будут более строго проверены
+
+**Тип:** Измененная функция  
+**Категория службы:** аутентификация (вход)  
+**Возможности продукта:** Стандарты
+
+Начиная с 2 сентября 2019, запросы проверки подлинности, использующие метод POST, будут более строго проверяться по стандартам HTTP. В частности, пробелы и двойные кавычки (") больше не будут удаляться из значений формы запроса. Эти изменения не приводят к нарушению работы существующих клиентов и позволяют гарантировать, что запросы, отправляемые в Azure AD, будут надежно обрабатываться каждый раз.
+
+Дополнительные сведения см. в статье [уведомления о критических изменениях в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/reference-breaking-changes#post-form-semantics-will-be-enforced-more-strictly---spaces-and-quotes-will-be-ignored).
 
 ---
 
@@ -2400,13 +2613,13 @@ Azure AD отправляет уведомление о сертификатах
 
 ---
  
-### <a name="app-proxy-cmdlets-in-powershell-ga-module"></a>Командлеты для прокси приложения в общедоступной версии модуля PowerShell
+### <a name="app-proxy-cmdlets-in-powershell-ga-module"></a>Командлеты прокси приложения в модуле PowerShell GA
 
 **Тип:** Новая функция  
 **Категория службы:** Прокси приложения  
 **Возможности продукта:** Управление доступом
  
-Теперь в общедоступной версии модуля PowerShell поддерживаются командлеты для прокси приложения. Для этого требуется своевременно обновлять модули PowerShell. Если используемая версия модуля не будет обновляться более одного года, то некоторые командлеты могут перестать работать. 
+Поддержка командлетов прокси приложения теперь находится в модуле PowerShell GA! Это требует обновления модулей PowerShell. Если вы стали более чем за год, некоторые командлеты могут перестать работать. 
 
 Дополнительные сведения см. в разделе [AzureAD](https://docs.microsoft.com/powershell/module/Azuread/?view=azureadps-2.0).
  
