@@ -1,6 +1,6 @@
 ---
-title: Видеоролики
-description: Ссылки на различные списки воспроизведения видео для хранилища данных SQL Azure.
+title: Видео
+description: Ссылки на различные списки воспроизведения видео для Azure синапсе Analytics.
 services: sql-data-warehouse
 author: anumjs
 manager: craigg
@@ -11,18 +11,18 @@ ms.date: 02/15/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5d01ff2eb74844997eb1640123e4af59abe2340b
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: bc6d0aed017dea46a781ca2b1d8d238e9d761e1b
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692442"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192172"
 ---
-# <a name="azure-sql-data-warehouse---videos"></a>Хранилище данных SQL Azure — видеоролики
+# <a name="azure-synapse-analytics---sql-pool-videos"></a>Видео о пуле SQL Azure синапсе Analytics
 
-Ознакомьтесь с последними видеоматериалами по хранилищу данных SQL Azure, чтобы узнать о новых возможностях и улучшениях производительности. 
+Просмотрите последние видеоролики пула SQL Azure синапсе, чтобы узнать о новых возможностях и улучшениях производительности. 
 
-Чтобы приступить к работе, выберите обзорное видео ниже, чтобы узнать о новых обновлениях в хранилище данных SQL Azure. Кроме того, Узнайте, как использовать современные шаблоны хранилища данных для решения реальных сценариев, таких как Cybercrime.
+Чтобы приступить к работе, выберите обзорное видео ниже, чтобы узнать о новых обновлениях для пула SQL Azure синапсе. Кроме того, Узнайте, как использовать современные шаблоны хранилища данных для решения реальных сценариев, таких как Cybercrime.
 </br>
 
 <a href="https://www.youtube.com/watch?v=7MDCWgxPnVY&list=PLXtHYVsvn_b_v4EKljH6dGo9qJ7JjItWL&index=2">
