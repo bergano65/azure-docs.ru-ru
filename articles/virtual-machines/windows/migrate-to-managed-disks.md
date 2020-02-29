@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 7b907cf5bf64aa1a8a458a8d2b42c30dffd0dfd1
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: e8f2753ac9062803a2d6252eca1829cb0b168f02
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74029793"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921357"
 ---
 # <a name="migrate-azure-vms-to-managed-disks-in-azure"></a>Миграция виртуальных машин Azure на Управляемые диски Azure
 
@@ -30,7 +30,9 @@ ms.locfileid: "74029793"
 |Преобразование всех виртуальных машин в виртуальной сети из классической модели в диспетчер ресурсов на управляемых дисках     |[Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](migration-classic-resource-manager-ps.md), затем [Convert a VM from unmanaged disks to managed disks](convert-unmanaged-to-managed-disks.md) (Преобразование виртуальной машины с неуправляемыми дисками для использования управляемых дисков)         |
 |Обновление виртуальных машин с использованием стандартных неуправляемых дисков на виртуальных машинах с управляемыми дисками уровня "Премиум"     | Сначала [преобразуйте виртуальную машину Windows с неуправляемыми дисками на управляемые диски](convert-unmanaged-to-managed-disks.md). Затем [Обновите тип хранилища управляемого диска](convert-disk-storage.md).         |
 
-## <a name="next-steps"></a>Дополнительная информация
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше об [Управляемых дисках](managed-disks-overview.md).
 - Ознакомьтесь с [ценами на Управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/).

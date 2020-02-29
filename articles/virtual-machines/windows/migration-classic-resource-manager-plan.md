@@ -14,14 +14,18 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 2d7eca56556c8a1097b625b8f4b0e2de2facbc60
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 62cc33b9cfe1a0dc96f0a6a771b753ff48bfb9f4
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77061613"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919555"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
+
+> [!IMPORTANT]
+> Сегодня около 90% виртуальных машин IaaS используют [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). По состоянию на 28 февраля 2020, классические виртуальные машины являются устаревшими и будут полностью сняты с 1 марта 2023. [Узнайте больше]( https://aka.ms/classicvmretirement) об этой нерекомендуемости и [о том, как она влияет на вас](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation#how-does-this-affect-me).
+
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
 
 Перенос ресурсов состоит из четырех основных этапов.<br>
@@ -118,8 +122,8 @@ ms.locfileid: "77061613"
     > Это нужно сделать в том же регионе, в который будет перемещена текущая среда.
     >
 
-  - Сетевые интерфейсы
-  - Балансировщики нагрузки
+  - Интерфейсы сети
+  - Подсистемы балансировки нагрузки
   - Общедоступные IP-адреса.
   - Статические общедоступные IP-адреса.
   - Ядра
@@ -210,7 +214,7 @@ ms.locfileid: "77061613"
 Не забывайте об основной цели миграции из классической модели в модель Azure Resource Manager.  Каковы были первоначальные коммерческие соображения? Достигли ли вы этих целей?
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

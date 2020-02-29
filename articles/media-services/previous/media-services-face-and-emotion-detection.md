@@ -15,14 +15,17 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: b6cbca454d1463ffe6e73d7021ea563e7121b7be
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 2d746167f993438e5fce467365844df2078c08a6
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084626"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919317"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
+
+> [!NOTE]
+> **Azure Media Face Detectorный** обработчик мультимедиа будет снят с учета. Дату выбытия см. в разделе [устаревшие компоненты](legacy-components.md) .
 
 ## <a name="overview"></a>Обзор
 
@@ -78,7 +81,7 @@ API обнаружения и отслеживания лиц обеспечив
 ```
 
 #### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | ОПИСАНИЕ |
+| Имя атрибута | Описание |
 | --- | --- |
 | Режим |Fast: быстрая скорость обработки, но с меньшей точностью (по умолчанию).|
 
@@ -153,7 +156,7 @@ API обнаружения и отслеживания лиц обеспечив
 
 
 #### <a name="attribute-descriptions"></a>Описания атрибутов
-| Имя атрибута | ОПИСАНИЕ |
+| Имя атрибута | Описание |
 | --- | --- |
 | Режим |Faces: только обнаружение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого обнаружения лиц.<br/>AggregateEmotion. Возвращаются средние значения эмоций для всех лиц в кадре. |
 | AggregateEmotionWindowMs |Используется, если выбран режим AggregateEmotion. Указывает длину видео для получения каждого совокупного результата в миллисекундах. |
@@ -164,8 +167,8 @@ API обнаружения и отслеживания лиц обеспечив
 
 || Значения по умолчанию | Максимальные | Минимальные |
 |--- | --- | --- | --- |
-| AggregateEmotionWindowMs |0,5 |2 |0,25|
-| AggregateEmotionIntervalMs |0,5 |1 |0,25|
+| AggregateEmotionWindowMs |0.5 |2 |0,25|
+| AggregateEmotionIntervalMs |0.5 |1 |0,25|
 
 ### <a name="json-output"></a>Выходные данные JSON
 Выходные данные JSON для совокупных эмоций (сокращенные).

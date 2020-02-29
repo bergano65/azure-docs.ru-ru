@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 1f609c33ea474508eb107c0df9993c2ba3483660
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 36d6b0cac0321c989fecbc5751d71c744cd83292
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77087024"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920949"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Учебник. обучение и развертывание модели с помощью интерфейса командной строки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "77087024"
 > * Развертывание модели в качестве веб-службы.
 > * Оценка данных с помощью веб-службы
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -68,7 +68,7 @@ git clone https://github.com/microsoft/MLOps.git
 Репозиторий содержит следующие файлы, которые используются для развертывания обученной модели в качестве веб-службы.
 
 * `aciDeploymentConfig.yml`: файл __конфигурации развертывания__ . Этот файл определяет среду размещения, необходимую для модели.
-* `inferenceConfig.yml`: файл configuration__ вывода. Этот файл определяет программную среду, используемую службой для оценки данных с помощью модели.
+* `inferenceConfig.yml`: файл __конфигурации вывода__ . Этот файл определяет программную среду, используемую службой для оценки данных с помощью модели.
 * `score.py`: скрипт Python, который принимает входящие данные, оценивает его с помощью модели, а затем возвращает ответ.
 * `scoring-env.yml`: зависимости conda, необходимые для запуска модели и `score.py` скрипта.
 * `testdata.json`: файл данных, который можно использовать для тестирования развернутой веб-службы.
@@ -128,7 +128,7 @@ az group create --name <resource-group-name> --location <location>
 
 Дополнительные сведения о работе с группами ресурсов см. в разделе [AZ Group](https://docs.microsoft.com//cli/azure/group?view=azure-cli-latest).
 
-## <a name="create-a-workspace"></a>Создание рабочей области
+## <a name="create-a-workspace"></a>Создать рабочую область
 
 Чтобы создать рабочую область, используйте следующую команду. Замените `<workspace-name>` именем, которое вы хотите использовать для этой рабочей области. Замените `<resource-group-name>` именем группы ресурсов:
 
@@ -469,7 +469,7 @@ az ml computetarget delete -n cpu
 az group delete -g <resource-group-name> -y
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом Машинное обучение Azure руководстве вы использовали CLI машинного обучения для следующих задач:
 

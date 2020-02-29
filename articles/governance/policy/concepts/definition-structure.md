@@ -3,12 +3,12 @@ title: Сведения о структуре определения полит�
 description: Описывает, как определения политик используются для установки соглашений о ресурсах Azure в Организации.
 ms.date: 02/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: ade659637f1be6cc58cebae760c5e1b753f3830f
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 1100248b43dbdf668dc1164651f3d9f941f3f016
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670786"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920218"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -159,19 +159,19 @@ ms.locfileid: "77670786"
 
 ### <a name="strongtype"></a>strongType
 
-В свойстве `metadata` можно использовать вложенное свойство **strongType**, чтобы предоставить список для выбора параметров на портале Azure. К допустимым значениям для **strongType** относится следующее:
+В свойстве `metadata` можно использовать вложенное свойство **strongType**, чтобы предоставить список для выбора параметров на портале Azure. **стронгтипе** может быть поддерживаемым _типом ресурса_ или допустимым значением. Чтобы определить, является ли _тип ресурса_ допустимым для **Стронгтипе**, используйте [Get-азресаурцепровидер](/powershell/module/az.resources/get-azresourceprovider).
+
+Некоторые _типы ресурсов_ , не возвращаемые **Get-азресаурцепровидер** , поддерживаются. Это:
+
+- `Microsoft.RecoveryServices/vaults/backupPolicies`
+
+Для **стронгтипе** допустимы следующие значения типа, не относящегося к _ресурсу_ :
 
 - `location`
 - `resourceTypes`
 - `storageSkus`
 - `vmSKUs`
 - `existingResourceGroups`
-- `omsWorkspace`
-- `Microsoft.EventHub/Namespaces/EventHubs`
-- `Microsoft.EventHub/Namespaces/EventHubs/AuthorizationRules`
-- `Microsoft.EventHub/Namespaces/AuthorizationRules`
-- `Microsoft.RecoveryServices/vaults`
-- `Microsoft.RecoveryServices/vaults/backupPolicies`
 
 ## <a name="definition-location"></a>Расположение определения
 

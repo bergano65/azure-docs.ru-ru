@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: a53a27a92b393c38d1f49efbd50d91fa1a2e9657
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 712626345e10ab0e4290ac91b0f121ff6960303e
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77597700"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920575"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -41,6 +41,9 @@ ms.locfileid: "77597700"
 - Образы не имеют прав, поэтому необходимо использовать диспетчер подписки для регистрации и подписки на виртуальные машины, чтобы получать обновления с Red Hat напрямую.
 
 - Сейчас невозможно динамически переключаться между моделями выставления счетов BYOS и PAYG для образов Linux. Для переключения модели выставления счетов требуется повторное развертывание виртуальной машины из соответствующего образа
+
+>[!NOTE]
+> Образы BYOS поколения 2 RHEL в настоящее время недоступны в рамках предложения Marketplace. Если вам требуется образ Gen 2 RHEL BYOS, перейдите на панель мониторинга доступа Кауд в консоли управления подписками Red Hat. Дополнительные сведения можно найти в [документации по Red Hat](https://access.redhat.com/articles/4847681).
 
 ## <a name="requirements-and-conditions-to-access-the-red-hat-gold-images"></a>Требования и условия для доступа к образам Red Hat Gold
 

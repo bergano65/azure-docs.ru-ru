@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 1bf023dc886481354306a763a0f9c56286c57e05
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: e94ffb3d34082745c3d7ca86cfda2b93c0ed08da
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749868"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919419"
 ---
 # <a name="understand-a-system-reboot-for-azure-vm"></a>Описание перезапуска системы для виртуальной машины Azure
 
@@ -30,10 +30,7 @@ ms.locfileid: "75749868"
 
 Чтобы обеспечить такой уровень избыточности приложения, мы рекомендуем включить две или несколько виртуальных машин в группу доступности. Эта конфигурация обеспечит доступность не менее одной виртуальной машины и достижение показателя 99,95 % в соответствии с [соглашением об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_5/) при событиях запланированного и незапланированного обслуживания.
 
-Дополнительные сведения о группах доступности см. в следующих статьях.
-
-- [Управление доступностью виртуальных машин Windows в Azure](../windows/manage-availability.md)
-- [Как настроить группу доступности для виртуальных машин Windows в классической модели развертывания](../windows/classic/configure-availability.md)
+Дополнительные сведения о группах доступности см. [в статье Управление доступностью виртуальных машин](../windows/manage-availability.md) .
 
 ## <a name="resource-health-information"></a>Сведения о работоспособности ресурсов
 

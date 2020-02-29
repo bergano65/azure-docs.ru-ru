@@ -3,12 +3,12 @@ title: Устранение ошибок резервного копирован
 description: Описание способов устранения распространенных ошибок, которые могут возникнуть при использовании Azure Backup для резервного копирования SAP HANA баз данных.
 ms.topic: troubleshooting
 ms.date: 11/7/2019
-ms.openlocfilehash: 04f9bafba0ca490b33a0daf3c3725e57d81bcc7e
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: 8872cfe87df9b8d0553d777f72fe7102d08dea4d
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75664604"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916869"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Устранение неполадок резервного копирования баз данных SAP HANA в Azure
 
@@ -16,9 +16,16 @@ ms.locfileid: "75664604"
 
 ## <a name="prerequisites-and-permissions"></a>Необходимые условия и разрешения
 
-Дополнительные сведения см. в разделах [Предварительные требования](tutorial-backup-sap-hana-db.md#prerequisites) и [Настройка разрешений](tutorial-backup-sap-hana-db.md#setting-up-permissions) перед настройкой резервных копий.
+Прежде чем настраивать резервное копирование, ознакомьтесь с [предварительными требованиями](tutorial-backup-sap-hana-db.md#prerequisites) и [действиями, которые выполняет сценарий предварительной регистрации](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does) .
 
 ## <a name="common-user-errors"></a>Распространенные ошибки пользователей
+
+### <a name="usererrorhanainternalrolenotpresent"></a>UserErrorHANAInternalRoleNotPresent
+
+| **Сообщение об ошибке**      | <span style="font-weight:normal">Служба архивации Azure не имеет необходимых привилегий роли для выполнения резервного копирования</span>    |
+| ---------------------- | ------------------------------------------------------------ |
+| **Возможные причины**    | Возможно, роль была перезаписана.                          |
+| **Рекомендуемое действие** | Чтобы устранить эту проблему, запустите сценарий из области **Обнаружение базы данных** или скачайте его [здесь](https://aka.ms/scriptforpermsonhana). Кроме того, можно добавить роль "SAP_INTERNAL_HANA_SUPPORT" к пользователю резервного копирования рабочей нагрузки (АЗУРЕВЛБАККУФАНАУСЕР). |
 
 ### <a name="usererrorinopeninghanaodbcconnection"></a>усерерроринопенингханаодбкконнектион
 
@@ -117,6 +124,6 @@ ms.locfileid: "75664604"
 - Повторно запустите [сценарий предварительной регистрации](https://aka.ms/scriptforpermsonhana). Как правило, мы обнаружили, что процесс обновления удаляет необходимые роли. Выполнение скрипта предварительной регистрации поможет проверить все необходимые роли.
 - Снова [возобновите защиту](sap-hana-db-manage.md#resume-protection-for-an-sap-hana-database) базы данных
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [часто задаваемыми вопросами](https://docs.microsoft.com/azure/backup/sap-hana-faq-backup-azure-vm) о резервном копировании SAP HANA баз данных на виртуальных машинах Azure]

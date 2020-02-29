@@ -12,18 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
-ms.openlocfilehash: be0f61b1458fa8bd63d85669c7956a789892996a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 8046e4f42db50db15c840a13b95ae1f3620a8c7f
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981328"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918263"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол
 
 В этой статье описаны ошибки, которые могут возникнуть при подключении к виртуальной машине в Microsoft Azure.
-> [!NOTE]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
+
 
 ## <a name="symptoms"></a>Симптомы
 
@@ -197,7 +196,7 @@ ms.locfileid: "75981328"
 #### <a name="reset-the-permission-for-machinekeys-folder"></a>Сброс разрешения для папки MachineKeys
 
 1. Откройте сеанс командной строки с повышенными привилегиями (**запуск от имени администратора**).
-2. Выполните следующий сценарий. В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
+2. Запустите указанный ниже сценарий. В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
 
         Md F:\temp
 

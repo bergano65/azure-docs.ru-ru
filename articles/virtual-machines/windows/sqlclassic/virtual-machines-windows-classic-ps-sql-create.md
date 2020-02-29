@@ -15,18 +15,20 @@ ms.date: 08/07/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 24d8a0b88da44c53cb176244cd5fe7377514abda
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 5bfdcfab37091a5f581ce147c0a6af5ccd8147a0
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978116"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77914795"
 ---
 # <a name="provision-a-sql-server-virtual-machine-using-azure-powershell-classic"></a>Подготовка виртуальной машины SQL Server к работе с помощью Azure PowerShell (классическая модель)
 
+[!INCLUDE [classic-vm-deprecation](../../../../includes/classic-vm-deprecation.md)]
+
 В данной статье описаны шаги по созданию виртуальной машины SQL Server в Azure с помощью командлетов PowerShell.
 
-> [!IMPORTANT] 
+> [!NOTE] 
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 Версию этой статьи для модели Resource Manager см. в статье [Подготовка виртуальной машины SQL Server к работе с помощью Azure PowerShell (в Resource Manager)](../sql/virtual-machines-windows-ps-sql-create.md).
@@ -105,7 +107,7 @@ ms.locfileid: "75978116"
    echo "   $image"
    ```
 
-## <a name="create-the-virtual-machine"></a>Создание виртуальной машины
+## <a name="create-the-virtual-machine"></a>создание виртуальной машины;
 
 Наконец создайте виртуальную машину с помощью PowerShell:
 
@@ -197,7 +199,7 @@ New-AzureVM –ServiceName $svcname -VMs $vm1
 
 Войдя в виртуальную машину с помощью удаленного рабочего стола, настройте SQL Server в соответствии с указаниями в подразделе [Действия по настройке подключения к SQL Server на виртуальной машине Azure](virtual-machines-windows-classic-sql-connect.md#steps-for-configuring-sql-server-connectivity-in-an-azure-vm).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные инструкции по подготовке виртуальных машин с помощью PowerShell можно найти в [документации по виртуальным машинам](../classic/create-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 

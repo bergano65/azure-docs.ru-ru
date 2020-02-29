@@ -2,17 +2,17 @@
 title: Виртуальные машины Azure серии NVv4
 description: Спецификации виртуальных машин серии NVv4.
 services: virtual-machines
-author: jonbeck7
+author: vikancha
 ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 2afec4dc89c8d8892356888ec3404d36ba929d23
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: ccafe6f317ff50684922fd4409beb42214c18858
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77669647"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78161863"
 ---
 # <a name="nvv4-series-preview"></a>Серии NVv4 (Предварительная версия)
 
@@ -24,6 +24,10 @@ ms.locfileid: "77669647"
 Хранилище класса Premium: поддерживается
 
 Кэширование хранилища класса Premium: поддерживается
+
+Динамическая миграция: не поддерживается
+
+Обновления с сохранением памяти: не поддерживается
 
 | Размер | vCPU | Память, ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальное число сетевых адаптеров |
 | --- | --- | --- | --- | --- | --- | --- | --- |

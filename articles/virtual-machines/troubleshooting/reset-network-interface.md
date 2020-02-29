@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
-ms.openlocfilehash: a809cabd2ace1b18af6c93dc54348137e9ba5750
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: a8bd12d98b76d5848753987c4f7bcb76d4e2266d
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749908"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921578"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows 
 
@@ -72,6 +72,8 @@ ms.locfileid: "75749908"
 
 ### <a name="for-classic-vms"></a>Классические виртуальные машины
 
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 Чтобы сбросить сетевой интерфейс, сделайте следующее:
 
 #### <a name="use-azure-portal"></a>Использование портала Azure
@@ -82,7 +84,7 @@ ms.locfileid: "75749908"
 4.  Выберите **IP-адреса**.
 5.  Если для **назначения частного IP-адреса** не установлено значение **Статический**, установите **его**.
 6.  Изменение **IP-адреса** на другой, который доступен в подсети.
-7.  Щелкните **Сохранить**.
+7.  Нажмите кнопку **Сохранить**.
 8.  Виртуальная машина будет перезапущена, чтобы инициализировать новый NIC в системе.
 9.  Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола. В случае успешного подключения вы можете отменить изменение частного IP-адреса на исходный.  
 

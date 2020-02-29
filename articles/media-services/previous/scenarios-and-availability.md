@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 4766f22cd84b2aab00f6dcc4064dbeea8018f694
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 7b5569738721038beadc78d94c81393803b6d36a
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77564983"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920592"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Сценарии и доступность функций служб мультимедиа в центрах обработки данных
 
@@ -202,6 +202,9 @@ AMS предлагает два кодировщика по требованию
 ### <a name="analytics-media-processors"></a>Обработчики мультимедиа аналитики
 
 Службы медиа-аналитики включают в себя набор речевых и визуальных компонентов, которые помогают организациям и компаниям выполнять анализ видеофайлов. Дополнительные сведения см. в статье [Общие сведения об аналитике служб мультимедиа Azure](media-services-analytics-overview.md).
+
+> [!NOTE]
+> Некоторые обработчики носителей аналитики будут сняты с учета. Даты выбытия см. в разделе [устаревшие компоненты](legacy-components.md) .
 
 #### <a name="availability"></a>Доступность
 

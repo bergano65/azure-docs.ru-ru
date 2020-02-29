@@ -14,14 +14,17 @@ ms.tgt_pltfrm: vm-multiple
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: akjosh
-ms.openlocfilehash: a9f99d418d572c14a7cdd7975483cf39f0707cba
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: cffd2eab3a616b4d16d847d0f2e1a26655f40459
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072989"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919929"
 ---
 # <a name="how-to-install-and-configure-trend-micro-deep-security-as-a-service-on-a-windows-vm"></a>Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 [!INCLUDE [virtual-machines-extensions-deprecation-statement](../../../includes/virtual-machines-extensions-deprecation-statement.md)]
 В этой статье показывается, как можно установить и настроить Trend Micro Deep Security как услуги на новой или существующей виртуальной машине (ВМ) под управлением Windows Server. Deep Security как услуга включает защиту от вредоносных программ, брандмауэр, систему предотвращения вторжений и мониторинг целостности.
 
@@ -74,7 +77,7 @@ ms.locfileid: "74072989"
 
     Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity –Version $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 После установки агента потребуется несколько минут для его запуска. Затем необходимо активировать Deep Security на виртуальной машине, чтобы можно было осуществлять управление с помощью Deep Security Manager. Дополнительные указания см. в следующих статьях:
 
 * статья Trend об этом решении, [Мгновенное включение облачной защиты для Microsoft Azure](https://go.microsoft.com/fwlink/?LinkId=404101)

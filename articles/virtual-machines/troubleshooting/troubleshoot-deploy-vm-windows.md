@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 2baa82bda1f92fe81bb0db69b84e6865b2709e42
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: cdbaeb5a97beba342bc471e75d1b07be0d0141ae
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058036"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921417"
 ---
 # <a name="troubleshoot-deploying-windows-virtual-machine-issues-in-azure"></a>Устранение неполадок при развертывании виртуальных машин Windows в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "71058036"
 [!INCLUDE [virtual-machines-windows-troubleshoot-deploy-vm-top](../../../includes/virtual-machines-windows-troubleshoot-deploy-vm-top.md)]
 
 ## <a name="the-cluster-cannot-support-the-requested-vm-size"></a>Кластер не поддерживает запрошенный размер виртуальной машины
-\<properties supportTopicIds="123456789" resourceTags="windows" productPesIds="1234, 5678" />
+\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
 - Повторите запрос с указанием меньшего размера виртуальной машины.
 - Если нельзя изменить размер запрошенной виртуальной машины,
     - остановите все виртуальные машины в группе доступности. Выберите **Группы ресурсов** > имя вашей группы ресурсов > **Ресурсы** > имя вашей группы доступности > **Виртуальные машины** > имя вашей виртуальной машины > **Остановить**.
@@ -40,7 +40,7 @@ ms.locfileid: "71058036"
 
 
 ## <a name="the-cluster-does-not-have-free-resources"></a>В кластере нет свободных ресурсов
-\<properties supportTopicIds="123456789" resourceTags="windows" productPesIds="1234, 5678" />
+\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
 - Повторите запрос позже.
 - Если новая виртуальная машина должна быть частью другой группы доступности:
     - создайте виртуальную машину в другой группе доступности (в том же регионе);
@@ -62,7 +62,7 @@ ms.locfileid: "71058036"
 
 •   можно передать настраиваемую виртуальную машину и развернуть ее с помощью шаблона Resource Manager или Azure PowerShell.
 
-Для получения дополнительных сведений см. следующие ресурсы:
+Дополнительные сведения см. в следующих источниках.
 
  - [Общие сведения о преимуществах гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 
@@ -106,6 +106,8 @@ ms.locfileid: "71058036"
 Когда виртуальная машина запущена, она развертывается на физический сервер. Физические серверы в регионах Azure группируются в кластеры общего физического оборудования. Изменение размера виртуальной машины, для которого требуется переместить виртуальную машину в другой кластер оборудования, отличается в зависимости от того, какая модель развертывания использовалась для развертывания данной виртуальной машины.
 
 - На виртуальных машинах, развернутых с помощью классической модели, необходимо удалить развертывание облачной службы и развернуть ее повторно, выбрав для виртуальных машин размер из другого семейства размеров.
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
 - На виртуальных машинах, развернутых с помощью модели Resource Manager, необходимо остановить все виртуальные машины в группе доступности, прежде чем изменять размер любой виртуальной машины в этой группе доступности.
 

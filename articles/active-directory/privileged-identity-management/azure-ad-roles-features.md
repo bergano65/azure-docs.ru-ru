@@ -16,12 +16,12 @@ ms.date: 12/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f7bc881cee362103fc611cbf8a094e07ad50699
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: f5d63577cbdbdf18cb17618bdb5c9e3b5de0e44a
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77499045"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78162272"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Возможности управления для ролей Azure AD в управление привилегированными пользователями
 
@@ -62,9 +62,9 @@ ms.locfileid: "77499045"
 
 ## <a name="powershell-change"></a>Изменение PowerShell
 
-Для клиентов, использующих модуль управление привилегированными пользователями PowerShell для ролей Azure AD, PowerShell перестанет работать с этим обновлением. Вместо предыдущих командлетов необходимо использовать командлеты управление привилегированными пользователями в модуле PowerShell предварительной версии Azure AD. Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Командлеты создаются на основе API Graph.
+Для клиентов, использующих модуль управление привилегированными пользователями PowerShell для ролей Azure AD, PowerShell перестанет работать с этим обновлением. Вместо предыдущих командлетов необходимо использовать командлеты управление привилегированными пользователями в модуле PowerShell предварительной версии Azure AD. Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Теперь вы можете [ознакомиться с документацией и примерами операций PIM в этом модуле PowerShell](powershell-for-azure-ad-roles.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

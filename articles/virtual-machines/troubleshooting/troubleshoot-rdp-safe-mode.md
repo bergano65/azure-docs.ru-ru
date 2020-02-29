@@ -12,19 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 14cd43f7bd7965b755eca14e5914c64e2ec8e044
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 7bc2c0f472a03c3f069a889c360bea9017a780f2
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981295"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918212"
 ---
 #  <a name="cannot-rdp-to-a-vm-because-the-vm-boots-into-safe-mode"></a>Сбой подключения к виртуальной машине по протоколу RDP по причине загрузки виртуальной машины в безопасном режиме
 
 В этой статье описывается, как устранить сбой подключения к Виртуальным машинам Windows Azure из-за загрузки виртуальной машины в безопасном режиме.
 
-> [!NOTE]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
 ## <a name="symptoms"></a>Симптомы
 

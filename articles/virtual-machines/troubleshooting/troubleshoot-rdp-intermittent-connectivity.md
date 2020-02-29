@@ -12,19 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/24/2018
 ms.author: genli
-ms.openlocfilehash: 636973110e11770e33c635e312c86b25110705da
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: c22a401a6b25f7bb2c27a10e52214fa42ac6089b
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981352"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918229"
 ---
 # <a name="remote-desktop-disconnects-frequently-in-azure-vm"></a>Частый разрыв подключения к удаленному рабочему столу на виртуальной машине Azure
 
 В этой статье объясняется, как устранять проблемы с частым разрывом подключений по протоколу удаленного рабочего стола на виртуальной машине Azure.
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания на основе диспетчера ресурсов. Для новых развертываний рекомендуется использовать эту модель развертывания вместо классической.
 
 ## <a name="symptom"></a>Симптом
 
@@ -165,7 +163,7 @@ ms.locfileid: "75981352"
         REG ADD "HKLM\BROKENSYSTEM\ControlSet002\control\Terminal Server\Winstations\RDP-Tcp" /v 'MaxInstanceCount' /t REG_DWORD /d ffffffff /f
 18. Перезапустите виртуальную машину и снова попробуйте подключиться по протоколу удаленного рабочего стола.
 
-## <a name="need-help"></a>Нужна помощь? 
+## <a name="need-help"></a>Требуется помощь? 
 Обратитесь в службу поддержки. Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
 
 

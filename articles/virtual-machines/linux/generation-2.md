@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: dce01cb8ed6043193878551207eeca3d573f9d4d
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 8b1acb4676d97ff16410543828493428059ad0fb
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77672486"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919895"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин поколения 2 в Azure
 
@@ -33,18 +33,18 @@ ms.locfileid: "77672486"
 Виртуальные машины поколения 1 поддерживаются всеми размерами виртуальных машин в Azure (за исключением виртуальных машин серии Mv2). Теперь Azure предлагает поддержку поколения 2 для следующей выбранной серии виртуальных машин:
 
 * [Серия B](https://docs.microsoft.com/azure/virtual-machines/linux/b-series-burstable)
-* [Серия DC](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general#dc-series)
-* Серии [Dsv2](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general#dsv2-series) и [Dsv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general#dsv3-series-1)
-* [Серия Esv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory#esv3-series)
-* [Серия серия fsv2](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-compute#fsv2-series-1)
+* [Серия DC](../dcv2-series.md)
+* Серии [DSv2](../dv2-dsv2-series.md) и [Dsv3](../dv3-dsv3-series.md)
+* [Серия Esv3](../ev3-esv3-series.md)
+* [Серия серия fsv2](../fsv2-series.md)
 * [Серия GS](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-previous-gen#gs-series)
-* [Серия ХБ](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc#hb-series)
-* [Серия HC](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc#hc-series)
-* Серии [Ls](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-previous-gen#ls-series) и [Lsv2](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-storage#lsv2-series)
-* [Серия Mv2](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory#mv2-series)
-* Серии [NCv2](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#ncv2-series) и [NCv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#ncv3-series)
-* [Серия ND](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nd-series)
-* [Серия NVv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nvv3-series--1)
+* [Серия ХБ](../hb-series.md)
+* [Серия HC](../hc-series.md)
+* Серии [Ls](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-previous-gen#ls-series) и [Lsv2](../lsv2-series.md)
+* [Серия Mv2](../mv2-series.md)
+* Серии [NCv2](../ncv2-series.md) и [NCv3](../ncv3-series.md)
+* [Серия ND](../nd-series.md)
+* [Серия NVv3](../nvv3-series.md)
 
 > [!NOTE]
 > Использование образов виртуальных машин поколения 2 для виртуальных машин серии Mv2 общедоступно, так как серия Mv2 работает исключительно с образами виртуальных машин поколения 2. Образы виртуальных машин поколения 1 не поддерживаются на виртуальных машинах серии Mv2. 

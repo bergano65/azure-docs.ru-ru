@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: dapine
-ms.openlocfilehash: 4a2887ef8b264628128872730422fd38d6b0ac0f
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: e30587ed4d09ba792516ebc7b16529a6ee5ac57c
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425006"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918960"
 ---
 # <a name="what-is-custom-speech"></a>Что такое Пользовательское распознавание речи?
 
@@ -43,7 +43,7 @@ ms.locfileid: "77425006"
 
 ## <a name="set-up-your-azure-account"></a>Настройка учетной записи Azure
 
-Подписка на службу распознавания речи необходима, прежде чем можно будет использовать [портал пользовательское распознавание речи](https://speech.microsoft.com/customspeech) для создания настраиваемой модели. Чтобы создать стандартную подписку на службу распознавания речи, выполните следующие [инструкции.](get-started.md#try-the-speech-service-using-a-new-azure-account)
+Подписка на службу распознавания речи необходима, прежде чем можно будет использовать [портал пользовательское распознавание речи](https://speech.microsoft.com/customspeech) для создания настраиваемой модели. Чтобы создать стандартную подписку на службу распознавания речи, выполните следующие [инструкции.](get-started.md#new-resource)
 
 > [!NOTE]
 > Не забудьте создать стандартные подписки (S0). подписки бесплатных пробных версий (F0) не поддерживаются.

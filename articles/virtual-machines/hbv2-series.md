@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: amverma
-ms.openlocfilehash: ad5fb1098f88a253252dad43c9da51b5d9f11237
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: eea649610ca53ccbb98b5ca361555280dcd3dafe
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492829"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78164803"
 ---
 # <a name="hbv2-series"></a>Серия HBv2
 
@@ -20,9 +20,13 @@ ms.locfileid: "77492829"
 
 Хранилище класса Premium: поддерживается
 
+Динамическая миграция: не поддерживается
+
+Обновления с сохранением памяти: не поддерживается
+
 | Размер | vCPU | Процессор | Память (ГБ) | Пропускная способность памяти ГБ/с | Базовая частота ЦП (ГГц) | Частота ядер (ГГц, пик) | Частота с одним ядром (ГГц, пик) | Производительность RDMA (ГБ/с) | Поддержка MPI | Хранилище Temp (ГБ) | Максимальное число дисков данных | Максимальное число сетевых адаптеров Ethernet |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_HB120rs_v2 | 120 | AMD ЕПИК 7V12 | 480 | 350 | 2.45 | 3.1 | 3.3 | 200 | All | 480 + 960 | 8 | 1 |
+| Standard_HB120rs_v2 | 120 | AMD ЕПИК 7V12 | 480 | 350 | 2,45 | 3.1 | 3.3 | 200 | Все | 480 + 960 | 8 | 1 |
 
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
@@ -36,6 +40,6 @@ ms.locfileid: "77492829"
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

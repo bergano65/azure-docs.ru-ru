@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: 7986a48b69b1d2c4df494dbd0a448d1bbe3091b4
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 214b5eea6f8de2d59869f7279aa17bcd786d8742
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661793"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77913843"
 ---
 # <a name="billing-questions"></a>Вопросы по выставлению счетов
 
@@ -27,7 +27,7 @@ ms.locfileid: "77661793"
 
 - **Уровень "бесплатный** " позволяет видеть состояние безопасности ресурсов Azure, базовую политику безопасности, рекомендации по безопасности и интеграцию с продуктами и службами безопасности от партнеров.
 
-- **Уровень "Стандартный** " добавляет расширенные возможности обнаружения угроз, включая аналитику угроз, анализ поведения, обнаружение аномалий, инциденты безопасности и отчеты об отклонениях угроз. Вы можете запустить бесплатную пробную версию уровня "Стандартный". Чтобы повысить уровень, выберите [ценовую категорию](https://docs.microsoft.com/azure/security-center/security-center-pricing) в политике безопасности. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
+- **Уровень "Стандартный** " добавляет возможности защиты от угроз, в том числе оповещения системы безопасности, аналитика угроз, анализ поведения, обнаружение аномалий и отчеты о соотношении угроз. Вы можете запустить бесплатную пробную версию уровня "Стандартный". Чтобы повысить уровень, выберите [ценовую категорию](https://docs.microsoft.com/azure/security-center/security-center-pricing) в политике безопасности. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/).
 
 ## <a name="how-can-i-track-who-in-my-organization-performed-pricing-tier-changes-in-azure-security-center"></a>Как можно узнать, кто из моих организаций изменил ценовую категорию в центре безопасности Azure
 Подписки Azure могут иметь несколько администраторов с разрешениями на изменение ценовой категории. Чтобы узнать, какой пользователь выполнил изменение ценовой категории, используйте журнал действий Azure. Дополнительные сведения см. [здесь](https://techcommunity.microsoft.com/t5/Security-Identity/Tracking-Changes-in-the-Pricing-Tier-for-Azure-Security-Center/td-p/390832).

@@ -11,13 +11,13 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 02/06/2020
-ms.openlocfilehash: 5f9e15b83c36c6c19fbe93c5f1df365f6f763c81
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.date: 02/28/2020
+ms.openlocfilehash: 701e279e349bdc3b92d5b5c2dc50e23199f9d766
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77187684"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160817"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
 
@@ -165,7 +165,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- В настоящее время поддерживаются только задачи потока данных с диспетчерами соединений ODBC, OLEDB или неструктурированных файлов, а также с источниками данных ODBC, OLEDB и неструктурированных файлов. 
+- В настоящее время поддерживаются только задачи потока данных с диспетчерами соединений с открытым базой данных (ODBC), OLEDB или неструктурированными файлами, а также с источниками данных ODBC, OLEDB или неструктурированных файлов. 
 - В настоящее время поддерживаются только связанные службы хранилища BLOB-объектов Azure, настроенные с помощью *ключа учетной записи*, *URI подписанного URL-кода*или проверки подлинности *субъекта службы* .
 
 ## <a name="next-steps"></a>Следующие шаги

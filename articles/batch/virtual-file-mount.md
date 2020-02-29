@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/13/2019
 ms.author: labrenne
-ms.openlocfilehash: a22117505dff35f9b92e3dd3c91dc8540557b218
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: bdf0b3bfc955d8a2e2ce1b363c8699ca719b957c
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023044"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919011"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Подключение виртуальной файловой системы в пуле пакетной службы
 
@@ -89,9 +89,6 @@ new PoolAddParameter
 
 В дополнение к руководству по устранению неполадок, проблемы GitHub в репозитории blobfuse — это полезный способ проверки текущих проблем и решений blobfuse. Дополнительные сведения см. в разделе [проблемы blobfuse](https://github.com/Azure/azure-storage-fuse/issues).
 
-> [!NOTE]
-> В настоящее время Blobfuse не поддерживается в Debian. Дополнительные сведения см. в разделе [Поддерживаемые номера SKU](#supported-skus) .
-
 ```csharp
 new PoolAddParameter
 {
@@ -114,7 +111,7 @@ new PoolAddParameter
 }
 ```
 
-### <a name="network-file-system"></a>Сетевая файловая система
+### <a name="network-file-system"></a>NFS
 
 Сетевые файловые системы (NFS) также могут быть подключены к узлам пула, что позволяет узлам пакетной службы Azure легко получать доступ к традиционным файловым системам. Это может быть один сервер NFS, развернутый в облаке, или локальный сервер NFS, доступ к которому осуществляется через виртуальную сеть. Кроме того, воспользуйтесь преимуществами распределенного в памяти кэша [Авере вфкст](../avere-vfxt/avere-vfxt-overview.md) , который обеспечивает бесперебойное подключение к локальному хранилищу, считывание данных по запросу в свой кэш и обеспечивает высокую производительность и масштабируемость облачных кластерных узлов.
 
@@ -170,11 +167,12 @@ new PoolAddParameter
 
 ## <a name="supported-skus"></a>Поддерживаемые номера SKU
 
-| Издатель | Предложение | SKU | Файловый ресурс Azure | Blobfuse | Подключение NFS | Подключение CIFS |
+| Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | Файловый ресурс Azure | Blobfuse | Подключение NFS | Подключение CIFS |
 |---|---|---|---|---|---|---|
-| пакетная_служба | rendering-centos73 | rendering | :heavy_check_mark: <br>Примечание. совместимо с CentOS 7,7</br>| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| пакет (1) | rendering-centos73 | отрисовка | :heavy_check_mark: <br>Примечание. совместимо с CentOS 7,7</br>| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Canonical | UbuntuServer | 16,04-LTS, 18,04-LTS | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Credativ | Debian | 8, 9 | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| Credativ | Debian | 8| :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| Credativ | Debian | 9 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | microsoft-ads | linux-data-science-vm | linuxdsvm | :heavy_check_mark: <br>Примечание. совместимо с CentOS 7,4. </br> | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | microsoft-azure-batch | centos-container | 7.6 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | microsoft-azure-batch | centos-container-rdma | 7.4 | :heavy_check_mark: <br>Примечание. поддерживает A_8 или 9 хранилище</br> | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -182,10 +180,10 @@ new PoolAddParameter
 | microsoft-dsvm | linux-data-science-vm-ubuntu | линуксдсвмубунту | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | OpenLogic | CentOS | 7.6 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | OpenLogic | CentOS-HPC | 7,4, 7,3, 7,1 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Oracle | Oracle-Linux | 7.6 | :x: | :x: | :x: | :x: |
+| Oracle; | Oracle-Linux | 7.6 | :x: | :x: | :x: | :x: |
 | Windows | WindowsServer | 2012, 2016, 2019 | :heavy_check_mark: | :x: | :x: | :x: |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о подключении общего файлового ресурса Azure с [Windows](../storage/files/storage-how-to-use-files-windows.md) или [Linux](../storage/files/storage-how-to-use-files-linux.md).
 - Узнайте, как использовать и подключать виртуальные файловые системы [blobfuse](https://github.com/Azure/azure-storage-fuse) .

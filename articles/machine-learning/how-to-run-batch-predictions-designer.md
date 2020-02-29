@@ -8,17 +8,17 @@ ms.subservice: core
 ms.topic: how-to
 ms.author: peterlu
 author: peterclu
-ms.date: 01/13/2020
+ms.date: 02/24/2020
 ms.custom: Ignite2019
-ms.openlocfilehash: 95a3c1b892cacd802f359fdc03de74fa60a1e118
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: fdda35d3a617a30169748f4f6b42c8726e7e3512
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138109"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920694"
 ---
-# <a name="run-batch-predictions-using-azure-machine-learning-designer"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+# <a name="run-batch-predictions-using-azure-machine-learning-designer-preview"></a>Выполнение пакетных прогнозов с помощью конструктора Машинного обучения Azure (предварительная версия)
+[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как использовать конструктор для создания конвейера пакетной прогнозирования. Пакетная прогнозирование позволяет постоянно оценивать большие наборы данных по запросу с помощью веб-службы, которую можно активировать из любой библиотеки HTTP.
 
@@ -31,7 +31,7 @@ ms.locfileid: "77138109"
 
 Дополнительные сведения о настройке служб оценки пакетной службы с помощью пакета SDK [см. в](how-to-run-batch-predictions.md)соответствующем разделе.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом способе предполагается, что у вас уже есть обучающий конвейер. Чтобы ознакомиться с руководством по конструктору, выполните часть руководства по работе с [конструктором](tutorial-designer-automobile-price-train-score.md). 
 
@@ -142,6 +142,6 @@ ms.locfileid: "77138109"
 
 ![Задать конвейер по умолчанию](./media/how-to-run-batch-predictions-designer/set-new-default-pipeline.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы обучить и развернуть регрессионную модель, следуйте указаниям в [учебнике](tutorial-designer-automobile-price-train-score.md) по конструктору.

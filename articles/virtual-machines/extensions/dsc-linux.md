@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 102433b88ffb140cae46433be1c0edef90857e6d
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 2f04b5ecb2019a77bbb38e97c3869cc0a9447955
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969934"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921527"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
@@ -38,13 +38,13 @@ ms.locfileid: "75969934"
 
  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
 Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Дистрибуция | Версия |
+| Распределение | Версия |
 |---|---|
 | Debian | Все версии |
 | Ubuntu| 18,04 |
@@ -289,7 +289,10 @@ $publicConfig = '{
 ### <a name="use-azure-cliazure-cli"></a>Использование [Azure CLI] [Azure-CLI]
 Перед развертыванием расширения Дскфорлинукс настройте `public.json` и `protected.json` в соответствии с различными сценариями в разделе 3.
 
-#### <a name="classic"></a>Классический
+#### <a name="classic"></a>Classic
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 Классический режим развертывания также называется режимом управления службами Azure. Его можно включить с помощью команды:
 ```
 $ azure config mode asm
@@ -306,7 +309,7 @@ $ azure vm extension set <vm-name> DSCForLinux Microsoft.OSTCExtensions <version
 $ azure vm extension list
 ```
 
-#### <a name="resource-manager"></a>Диспетчер ресурсов
+#### <a name="resource-manager"></a>Resource Manager
 Чтобы переключиться в режим Azure Resource Manager, выполните команду:
 ```
 $ azure config mode arm
@@ -324,7 +327,7 @@ DSCForLinux Microsoft.OSTCExtensions <version> \
 
 ### <a name="use-azure-powershellazure-powershell"></a>Использование [Azure PowerShell] [Azure-PowerShell]
 
-#### <a name="classic"></a>Классический
+#### <a name="classic"></a>Classic
 
 Вы можете войти в учетную запись Azure в режиме управления службами Azure, выполнив команду:
 
@@ -363,7 +366,7 @@ Set-AzureVMExtension -ExtensionName $extensionName -VM $vm -Publisher $publisher
   -PublicConfiguration $publicConfig | Update-AzureVM
 ```
 
-#### <a name="resource-manager"></a>Диспетчер ресурсов
+#### <a name="resource-manager"></a>Resource Manager
 
 Вы можете войти в учетную запись Azure в Azure Resource Managerном режиме, выполнив команду:
 
@@ -430,5 +433,5 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

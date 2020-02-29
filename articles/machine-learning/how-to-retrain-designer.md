@@ -1,23 +1,23 @@
 ---
-title: Повторное обучение моделей с помощью конструктора Машинное обучение Azure
+title: Повторное обучение моделей с помощью конструктора Машинное обучение Azure (Предварительная версия)
 titleSuffix: Azure Machine Learning
-description: Узнайте, как переучить модели с опубликованными конвейерами в конструкторе Машинное обучение Azure.
+description: Узнайте, как переучить модели с опубликованными конвейерами в Машинное обучение Azure Designer (Предварительная версия).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
-ms.author: peterlu
-author: peterclu
-ms.date: 12/15/2019
-ms.openlocfilehash: d1382da739fd8ca56d4cc53c2c302331bdfbf1c3
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.author: keli19
+author: likebupt
+ms.date: 02/24/2020
+ms.openlocfilehash: b69cd4c8459ffae363f02247b1f20488afe1cd9b
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311875"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921608"
 ---
-# <a name="retrain-models-with-azure-machine-learning-designer"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure
-[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+# <a name="retrain-models-with-azure-machine-learning-designer-preview"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure (Предварительная версия)
+[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
 
 В этом пошаговом окне вы узнаете, как использовать конструктор Машинное обучение Azure для переобучения модели машинного обучения. Узнайте, как использовать опубликованные конвейеры для автоматизации рабочих процессов машинного обучения для повторного обучения.
 
@@ -29,7 +29,7 @@ ms.locfileid: "76311875"
 > * Опубликуйте обучающий конвейер.
 > * Повторное обучение модели.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLFree).
 
@@ -69,11 +69,11 @@ ms.locfileid: "76311875"
 
 1. Выберите модуль **Train Model** (Обучение модели).
 
-1. В области Параметры выберите **выходные данные**.
+1. В области Параметры выберите **выходные данные и журналы**.
 
-1. Выберите **Trained_model** , чтобы скачать модель.
+1. Щелкните значок **просмотра вывода** и следуйте инструкциям во всплывающем окне, чтобы выбрать обученную модель.
 
-![Снимок экрана, показывающий, как загрузить обученную модель](./media/how-to-retrain-designer/download-model.png)
+![Снимок экрана, показывающий, как загрузить обученную модель](./media/how-to-retrain-designer/trained-model-view-output.png)
 
 ## <a name="create-a-pipeline-parameter"></a>Создание параметра конвейера
 
@@ -129,6 +129,6 @@ ms.locfileid: "76311875"
 
 Существует несколько способов получить доступ к конечной точке RESTFUL программным способом в зависимости от среды разработки. Примеры кода, демонстрирующие, как отправлять запуски конвейера с параметрами, можно найти на вкладке **Использование** конвейера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы обучить и развернуть регрессионную модель, следуйте указаниям в [учебнике](tutorial-designer-automobile-price-train-score.md) по конструктору.

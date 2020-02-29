@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 89772bea818a0ebb57135990b3a04fcb559e2716
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: b99827ff9fd01c7179a25fafd05bfc8e4ef8ae63
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77664938"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921102"
 ---
 # <a name="streaming-ingestion-preview"></a>Прием потоковой передачи (Предварительная версия)
 
@@ -80,7 +80,7 @@ ms.locfileid: "77664938"
 
 Прием потоковой передачи не поддерживает следующие функции:
 * [Курсоры базы данных](/azure/kusto/management/databasecursor).
-* [Сопоставление данных](/azure/kusto/management/mappings). Поддерживается только [предварительно созданное](/azure/kusto/management/tables#create-ingestion-mapping) сопоставление данных. 
+* [Сопоставление данных](/azure/kusto/management/mappings). Поддерживается только [предварительно созданное](/azure/kusto/management/create-ingestion-mapping-command) сопоставление данных. 
 
 ## <a name="next-steps"></a>Следующие шаги
 

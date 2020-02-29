@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 02/27/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 03ff564848298d31c8bf92169d9e5f66d024d711
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 1d17f9af5700df5458cc4373dfc5cd8fb7774f91
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949190"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77912411"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-ad-b2c"></a>Настройка последовательности проверки учетных данных пароля владельца ресурса в Azure AD B2C
 
@@ -24,16 +24,7 @@ ms.locfileid: "74949190"
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) поддерживаются следующие параметры.
-
-- **Собственный клиент**. Взаимодействие с пользователем во время аутентификации происходит, когда код выполняется на устройстве на стороне пользователя. Устройство может быть мобильным приложением, которое работает в собственной операционной системе, например Android и iOS.
-- **Поток общедоступного клиента**. При вызове API отправляются только учетные данные, полученные приложением. Учетные данные приложения не отправляются.
-- **Добавление новых утверждений**. Содержимое токена идентификатора можно изменить для добавления новых утверждений.
-
-Следующие операции не поддерживаются:
-
-- **Сервер-сервер**. Системе защиты идентификации требуются надежные IP-адреса, полученные от вызывающего объекта (собственного клиента) в рамках взаимодействия. При вызове API на стороне сервера используется только IP-адрес сервера. При превышении динамического порога неудачных проверок подлинности система защиты идентификации может рассматривать повторяющийся IP-адрес как адрес злоумышленника.
-- **Поток конфиденциального клиента**. Проверка идентификатора клиента приложения выполняется, но секрет приложения не проверяется.
+[!INCLUDE [active-directory-b2c-ropc-notes](../../includes/active-directory-b2c-ropc-notes.md)]
 
 ##  <a name="create-a-resource-owner-user-flow"></a>Создание потока пользователя владельца ресурса
 
@@ -65,12 +56,12 @@ ms.locfileid: "74949190"
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Value |
+| Ключ | Значение |
 | --- | ----- |
-| Имя пользователя | leadiocl@outlook.com |
+| username | leadiocl@outlook.com |
 | пароль | Passxword1 |
 | grant_type | пароль |
-| scope | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
+| Область | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | response_type | token id_token |
 
@@ -105,12 +96,12 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Value |
+| Ключ | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
-| resource | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
+| ресурс | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | refresh_token | eyJraWQiOiJacW9pQlp2TW5pYVc2MUY0TnlfR3... |
 
 *Client_id* и *resource* — это значения, записанные выше в качестве идентификатора приложения. *Refresh_token* — упомянутый ранее токен, полученный в вызове проверки подлинности.

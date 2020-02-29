@@ -1,15 +1,15 @@
 ---
 title: Настройка приложений Node. js
-description: Узнайте, как настроить предварительно созданный контейнер Node. js для приложения. В этой статье приведены наиболее распространенные задачи настройки.
+description: Узнайте, как настроить предварительно созданный контейнер Node. js для приложения. В этой статье показаны наиболее распространенные задачи настройки.
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 03/28/2019
-ms.openlocfilehash: 6cf60472307a378d2fd4258a9777152344a11ded
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 45d7d141bc2ab85ab33be455fc3da5570b0e7f51
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670274"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920031"
 ---
 # <a name="configure-a-linux-nodejs-app-for-azure-app-service"></a>Настройка приложения Node. js Linux для службы приложений Azure
 
@@ -44,6 +44,32 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 > [!NOTE]
 > Необходимо задать версию Node. js в `package.json`проекта. Модуль развертывания выполняется в отдельном контейнере, который содержит все поддерживаемые версии Node. js.
 
+## <a name="customize-build-automation"></a>Настройка автоматизации сборки
+
+Если приложение развертывается с использованием Git или zip-пакетов с включенной автоматизацией сборки, то Автоматизация сборки службы приложений проходит через следующую последовательность:
+
+1. Запустить пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
+1. Запустите `npm install` без флагов, включая сценарии NPM `preinstall` и `postinstall`, а также устанавливает `devDependencies`.
+1. Запустите `npm run build`, если в *Package. JSON*указан скрипт сборки.
+1. Запустите `npm run build:azure`, если сборка: Скрипт Azure указан в *Package. JSON*.
+1. Запустить пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
+
+> [!NOTE]
+> Как описано в [документах NPM](https://docs.npmjs.com/misc/scripts), скрипты с именами `prebuild` и `postbuild` выполняются до и после `build`соответственно, если они заданы. `preinstall` и `postinstall` выполняются до и после `install`соответственно.
+
+`PRE_BUILD_COMMAND` и `POST_BUILD_COMMAND` — это переменные среды, которые по умолчанию являются пустыми. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
+
+В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
+
+```azurecli-interactive
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PRE_BUILD_COMMAND="echo foo, scripts/prebuild.sh"
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
+```
+
+Дополнительные переменные среды для настройки автоматизации сборки см. в разделе [Орикс Configuration](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
+
+Дополнительные сведения о том, как служба приложений работает и создает приложения Node. js в Linux, см. в [документации по Орикс: как обнаруживаются и строятся приложения Node. js](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/nodejs.md).
+
 ## <a name="configure-nodejs-server"></a>Настройка сервера Node. js
 
 Контейнеры Node. js поставляются с [PM2](https://pm2.keymetrics.io/), диспетчером рабочих процессов. Вы можете настроить приложение для запуска с PM2 или с помощью NPM или с помощью пользовательской команды.
@@ -62,7 +88,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ### <a name="run-npm-start"></a>Запустить NPM запуск
 
-Чтобы запустить приложение с помощью `npm start`, достаточно убедиться в том, что `start` сценарий находится в файле *Package. JSON* . Пример.
+Чтобы запустить приложение с помощью `npm start`, достаточно убедиться в том, что `start` сценарий находится в файле *Package. JSON* . Например:
 
 ```json
 {
@@ -110,7 +136,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 Вы можете выполнить отладку приложения Node. js удаленно в [Visual Studio Code](https://code.visualstudio.com/) , если он настроен для [работы с PM2](#run-with-pm2), за исключением случаев, когда вы запустите его с помощью *. config. js, *. yml или *. YAML*.
 
-В большинстве случаев для приложения не требуется дополнительная настройка. Если приложение запускается с файлом *Process. JSON* (по умолчанию или настраиваемым), он должен иметь свойство `script` в корне JSON. Пример.
+В большинстве случаев для приложения не требуется дополнительная настройка. Если приложение запускается с файлом *Process. JSON* (по умолчанию или настраиваемым), он должен иметь свойство `script` в корне JSON. Например:
 
 ```json
 {
@@ -138,7 +164,7 @@ process.env.NODE_ENV
 
 По умолчанию KUDU выполняется `npm install --production` при распознавании приложения Node. js. Если приложению требуются какие-либо популярные средства автоматизации, такие как grunt, Bower или gulp, необходимо предоставить [Пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) для его запуска.
 
-Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *Package. JSON.* Пример.
+Чтобы разрешить репозиторию запускать эти средства, необходимо добавить их в зависимости в *Package. JSON.* Например:
 
 ```json
 "dependencies": {
@@ -217,7 +243,7 @@ fi
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
 
-Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/)можно использовать [Доверенные прокси-серверы](https://expressjs.com/guide/behind-proxies.html). Пример.
+Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/)можно использовать [Доверенные прокси-серверы](https://expressjs.com/guide/behind-proxies.html). Например:
 
 ```javascript
 app.set('trust proxy', 1)
@@ -235,18 +261,18 @@ if (req.secure) {
 
 [!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Когда работа приложения Node. js ведет себя иначе в службе приложений или с ошибками, попробуйте выполнить следующие действия.
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node. js в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Пример.
+- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node. js в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Например:
     - В зависимости от *пакета Package. JSON*различные пакеты могут быть установлены для рабочего режима (`dependencies` и `devDependencies`).
     - Некоторые веб-платформы могут развертывать статические файлы в рабочем режиме по-разному.
     - При работе в рабочем режиме некоторые веб-платформы могут использовать пользовательские сценарии запуска.
 - Запустите приложение в службе приложений в режиме разработки. Например, в [среднем. js](https://meanjs.org/)можно настроить приложение в режиме разработки в среде выполнения, [задав параметр приложения `NODE_ENV`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Учебник. приложение Node. js с MongoDB](tutorial-nodejs-mongodb-app.md)

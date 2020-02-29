@@ -12,19 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 92c4a40de7e35d0580fe407e36305a50ad68094c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 4b314fbdb9cbc0c0b797cbee8e92ee4702bbea81
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981785"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919470"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
 В этой статье описывается устранение неполадок подключения к виртуальной машине Azure, когда службы удаленных рабочих столов (TermService) не запускаются или их запуск завершается ошибкой.
 
-> [!NOTE]  
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания Resource Manager. Для новых развертываний рекомендуется использовать эту модель развертывания вместо классической.
 
 ## <a name="symptoms"></a>Симптомы
 
@@ -221,6 +219,6 @@ ms.locfileid: "75981785"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обращение в службу поддержки
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

@@ -3,12 +3,12 @@ title: 'Распространенные вопросы: обнаружение,
 description: Получите ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure".
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 179be4f5b39806c717e94789c9fe52842d2a07d8
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 6db521791e5ebb846585d4e0e823ba20d178d54a
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589238"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918552"
 ---
 # <a name="common-questions-about-discovery-assessment-and-dependency-analysis"></a>Распространенные вопросы об обнаружении, оценке и анализе зависимостей
 
@@ -100,7 +100,7 @@ ms.locfileid: "77589238"
 
 ## <a name="can-i-automate--mmadependency-agent-installation"></a>Можно ли автоматизировать установку агента MMA/зависимостей?
 
-Используйте этот [скрипт для установки агента зависимостей](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples). Выполните эти [инструкции, чтобы установить MMA](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent) с помощью командной строки или службы автоматизации. Для MMA используйте [этот скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
+Используйте этот [скрипт для установки агента зависимостей](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples). Выполните эти [инструкции, чтобы установить MMA](../azure-monitor/platform/log-analytics-agent.md#installation-and-configuration) с помощью командной строки или службы автоматизации. Для MMA используйте [этот скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
 
 Кроме сценариев, для развертывания агентов можно также использовать средства развертывания, такие как Microsoft Endpoint Configuration Manager и [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration) .
 
@@ -119,5 +119,5 @@ ms.locfileid: "77589238"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".

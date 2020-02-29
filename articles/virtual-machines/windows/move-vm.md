@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 07/03/2019
 ms.author: cynthn
-ms.openlocfilehash: f5b4bf14be264d16109ddc10cd3b667e728642c6
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ed29c92d20a6b0d749ec44a22f42ec446ec58650
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980706"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919572"
 ---
 # <a name="move-a-windows-vm-to-another-azure-subscription-or-resource-group"></a>Перемещение виртуальной машины Windows в другую подписку или группу ресурсов Azure
 В этой статье описано перемещение виртуальной машины Windows между группами ресурсов или подписками. Перемещение между подписками может понадобиться, если вы создали виртуальную машину в личной подписке и вам нужно переместить ее в корпоративную подписку, чтобы продолжить работу. Не нужно запускать виртуальную машину, чтобы переместить ее, и она должна продолжать выполняться во время перемещения.
@@ -35,13 +35,13 @@ ms.locfileid: "75980706"
 Чтобы переместить виртуальную машину в другую группу ресурсов, необходимо убедиться, что также перемещаются все зависимые ресурсы. Чтобы получить список с идентификатором каждого из этих ресурсов, используйте командлет [Get-AzResource](https://docs.microsoft.com/powershell/module/az.resources/get-azresource).
 
 ```azurepowershell-interactive
- Get-AzResource -ResourceGroupName <sourceResourceGroupName> | Format-list -wrap -Property ResourceId
+ Get-AzResource -ResourceGroupName myResourceGroup | Format-table -wrap -Property ResourceId
 ```
 
-Вы можете использовать выходные данные предыдущей команды как список идентификаторов ресурсов с разделителями-запятыми в командлете [Move-AzResource](https://docs.microsoft.com/powershell/module/az.resources/move-azresource), чтобы переместить каждый ресурс в нужное расположение.
+Вы можете использовать выходные данные предыдущей команды, чтобы создать разделенный запятыми список идентификаторов ресурсов для [Move-азресаурце](https://docs.microsoft.com/powershell/module/az.resources/move-azresource) , чтобы переместить каждый ресурс в место назначения.
 
 ```azurepowershell-interactive
-Move-AzResource -DestinationResourceGroupName "<myDestinationResourceGroup>" `
+Move-AzResource -DestinationResourceGroupName "myDestinationResourceGroup" `
     -ResourceId <myResourceId,myResourceId,myResourceId>
 ```
 
@@ -56,5 +56,5 @@ Move-AzResource -DestinationSubscriptionId "<myDestinationSubscriptionID>" `
 
 При появлении запроса на подтверждение перемещения указанных ресурсов введите **Да** для подтверждения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md).    

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/21/2018
+ms.date: 02/27/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0a745f83dcceef25634032cbe6fdb971f4f533ce
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 0b03846a274abee5def57008fe3db4130b4350d0
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847424"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916308"
 ---
 # <a name="set-up-sign-in-with-a-salesforce-saml-provider-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "76847424"
 
 В этой статье показано, как включить вход для пользователей из Организации SalesForce с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C). Вход в систему включается путем добавления [технического профиля SAML](saml-technical-profile.md) в пользовательскую политику.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Если это еще не сделано, зарегистрируйтесь для получения [бесплатной учетной записи Developer Edition](https://developer.salesforce.com/signup). В этой статье предполагается использование [Salesforce Lightning Experience](https://developer.salesforce.com/page/Lightning_Experience_FAQ).
@@ -36,7 +36,7 @@ ms.locfileid: "76847424"
 2. В меню слева в разделе **Параметры** разверните узел **Удостоверение** и выберите **Поставщик удостоверений**.
 3. Выберите **Enable Identity Provider** (Включить поставщик удостоверений).
 4. В разделе **Select the certificate** (Выберите сертификат) выберите сертификат, который необходимо использовать в Salesforce при взаимодействии с Azure AD B2C. Вы можете использовать сертификат по умолчанию.
-5. Выберите команду **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 ### <a name="create-a-connected-app-in-salesforce"></a>Создание подключенного приложения в Salesforce
 
@@ -103,11 +103,11 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 
 Если необходимо разрешить пользователям входить в систему с помощью учетной записи Salesforce, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
-Чтобы определить учетную запись Salesforce в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики.
+Чтобы определить учетную запись Salesforce в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики. Дополнительные сведения см. [в разделе Определение технического профиля SAML](saml-technical-profile.md).
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
-2. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
-3. Добавьте новый элемент **ClaimsProvider** следующим образом.
+1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
+1. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
     ```XML
     <ClaimsProvider>
@@ -142,14 +142,32 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
             <OutputClaimsTransformation ReferenceId="CreateAlternativeSecurityId"/>
             <OutputClaimsTransformation ReferenceId="CreateSubjectClaimFromAlternativeSecurityId"/>
           </OutputClaimsTransformations>
-          <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop"/>
+          <UseTechnicalProfileForSessionManagement ReferenceId="SM-Saml-idp"/>
         </TechnicalProfile>
       </TechnicalProfiles>
     </ClaimsProvider>
     ```
 
-4. Измените значение **PartnerEntity** на скопированный ранее URL-адрес метаданных Salesforce.
-5. Измените значение обоих экземпляров **StorageReferenceId** на имя ключа сертификата для подписи. Например, B2C_1A_SAMLSigningCert.
+1. Измените значение **PartnerEntity** на скопированный ранее URL-адрес метаданных Salesforce.
+1. Измените значение обоих экземпляров **StorageReferenceId** на имя ключа сертификата для подписи. Например, B2C_1A_SAMLSigningCert.
+1. Откройте раздел `<ClaimsProviders>` и добавьте следующий фрагмент XML-кода. Если политика уже содержит `SM-Saml-idp` технический профиль, перейдите к следующему шагу. Дополнительные сведения см. [в разделе Управление сеансами единого входа](custom-policy-reference-sso.md).
+
+    ```XML
+    <ClaimsProvider>
+      <DisplayName>Session Management</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="SM-Saml-idp">
+          <DisplayName>Session Management Provider</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          <Metadata>
+            <Item Key="IncludeSessionIndex">false</Item>
+            <Item Key="RegisterServiceProviders">false</Item>
+          </Metadata>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+    ```
+1. Сохраните файл.
 
 ### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
 
@@ -157,7 +175,7 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 
 1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
+3. Нажмите кнопку **Отправка**.
 
 ## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
 

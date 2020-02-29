@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: 089fcc89f330e47a09187b5338176bf23fd801bb
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 39e2deead1affd750d9a5e68985b02ebfe8e0efd
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77603748"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921306"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -126,4 +126,4 @@ ms.locfileid: "77603748"
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).
 - Узнайте, как [спланировать работу в Центре безопасности Azure, и получите рекомендации по переходу к его использованию](security-center-planning-and-operations-guide.md).
 - Сведения о [функциях, доступных для различных облачных сред](security-center-services.md).
-- Дополнительные сведения об [обнаружении угроз для виртуальных машин & серверах в центре безопасности Azure](security-center-alerts-iaas.md).
+- Дополнительные сведения о [защите от угроз для компьютеров под управлением Windows и Linux в центре безопасности Azure](threat-protection.md#windows-machines).

@@ -12,19 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/31/2018
 ms.author: genli
-ms.openlocfilehash: ba3138076da89610bef878583e424153594c5dcc
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 86938c582745cb0759eda9cd0693f407471a0529
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981373"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921493"
 ---
 # <a name="windows-shows-checking-file-system-when-booting-an-azure-vm"></a>Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure
 
 В этой статье описывается ошибка "Проверка файловой системы", которая может возникнуть при загрузке виртуальной машины Windows (VM) в Microsoft Azure.
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
 ## <a name="symptom"></a>Симптом 
 

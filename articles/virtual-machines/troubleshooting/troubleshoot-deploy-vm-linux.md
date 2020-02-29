@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 230319471dbf62bf64ee980d84c360807687ce17
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 5a8a58a3935b7cd5efb8565f7e3278ccaae4f4de
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058228"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921442"
 ---
 # <a name="troubleshoot-deploying-linux-virtual-machine-issues-in-azure"></a>Устранение неполадок при развертывании виртуальных машин Linux в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "71058228"
 [!INCLUDE [virtual-machines-linux-troubleshoot-deploy-vm-top](../../../includes/virtual-machines-linux-troubleshoot-deploy-vm-top.md)]
 
 ## <a name="the-cluster-cannot-support-the-requested-vm-size"></a>Кластер не поддерживает запрошенный размер виртуальной машины
-\<properties supportTopicIds="123456789" resourceTags="windows" productPesIds="1234, 5678" />
+\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
 - Повторите запрос с указанием меньшего размера виртуальной машины.
 - Если нельзя изменить размер запрошенной виртуальной машины,
     - остановите все виртуальные машины в группе доступности. Выберите **Группы ресурсов** > имя вашей группы ресурсов > **Ресурсы** > имя вашей группы доступности > **Виртуальные машины** > имя вашей виртуальной машины > **Остановить**.
@@ -40,7 +40,7 @@ ms.locfileid: "71058228"
 
 
 ## <a name="the-cluster-does-not-have-free-resources"></a>В кластере нет свободных ресурсов
-\<properties supportTopicIds="123456789" resourceTags="windows" productPesIds="1234, 5678" />
+\<Properties supportTopicIds = "123456789" Ресаурцетагс = "Windows" productPesIds = "1234, 5678"/>
 - Повторите запрос позже.
 - Если новая виртуальная машина должна быть частью другой группы доступности:
     - создайте виртуальную машину в другой группе доступности (в том же регионе);
@@ -86,6 +86,7 @@ ms.locfileid: "71058228"
 
 Да. Существующую классическую виртуальную машину можно добавить в новую или существующую группу доступности. Дополнительные сведения см. в разделе [Добавление существующей виртуальной машины к группе доступности](/previous-versions/azure/virtual-machines/windows/classic/configure-availability-classic#addmachine).
 
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
 ## <a name="next-steps"></a>Следующие шаги
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/).

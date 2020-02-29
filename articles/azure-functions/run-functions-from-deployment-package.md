@@ -3,12 +3,12 @@ title: Запуск функций Azure из пакета
 description: Настройте запуск функций в среде выполнения Функций Azure путем подключения файла пакета развертывания, содержащего файлы проекта приложения-функции.
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: f5d3465e0899f7e5eab213bdb6234313128b7ec8
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: a3e11a7c4f3fd91df2fd9dd7a44f3922c4922585
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230355"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921119"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
@@ -35,7 +35,7 @@ ms.locfileid: "74230355"
 
 Чтобы настроить запуск приложения-функции из пакета, нужно просто добавить `WEBSITE_RUN_FROM_PACKAGE` в параметрах приложения-функции. Параметр `WEBSITE_RUN_FROM_PACKAGE` может иметь одно из следующих значений:
 
-| Значение  | ОПИСАНИЕ  |
+| Значение  | Описание  |
 |---------|---------|
 | **`1`**  | Рекомендуется для приложений функций, работающих в Windows. Запуск из файла пакета в папке `d:\home\data\SitePackages` приложения-функции. Если развертывание не выполняется [с помощью ZIP-развертывания](#integration-with-zip-deployment), для этого параметра требуется, чтобы папка также соимела файл с именем `packagename.txt`. Этот файл содержит только имя файла пакета в папке без каких-либо пробелов. |
 |**`<URL>`**  | Расположение определенного файла пакета, который вы хотите запустить. При использовании хранилища BLOB-объектов следует использовать закрытый контейнер с [подписанным URL-адресом (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer), чтобы настроить доступ к пакету в среде выполнения функций. Можно использовать [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для передачи файлов пакета в учетную запись хранения больших двоичных объектов. При указании URL-адреса необходимо также [синхронизировать триггеры](functions-deployment-technologies.md#trigger-syncing) после публикации обновленного пакета. |
@@ -58,16 +58,43 @@ ms.locfileid: "74230355"
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+### <a name="use-key-vault-references"></a>Использование Key Vault ссылок
+
+Для повышения безопасности можно использовать ссылки Key Vault в сочетании с внешним URL-адресом. Это обеспечивает шифрование неактивных URL-адресов и позволяет использовать Key Vault для управления секретами и их смены. Рекомендуется использовать хранилище BLOB-объектов Azure, чтобы можно было легко поворачивать соответствующий ключ SAS. Хранилище BLOB-объектов Azure шифруется при хранении, что обеспечивает безопасность данных приложения, если оно не развернуто в службе приложений.
+
+1. Создайте хранилище ключей Azure.
+
+    ```azurecli
+    az keyvault create --name "Contoso-Vault" --resource-group <group-name> --location eastus
+    ```
+
+1. Добавьте внешний URL-адрес в качестве секрета в Key Vault.
+
+    ```azurecli
+    az keyvault secret set --vault-name "Contoso-Vault" --name "external-url" --value "<insert-your-URL>"
+    ```
+
+1. Создайте параметр приложения `WEBSITE_RUN_FROM_PACKAGE` и задайте в качестве значения Key Vault ссылку на внешний URL-адрес.
+
+    ```azurecli
+    az webapp config appsettings set --settings WEBSITE_RUN_FROM_PACKAGE="@Microsoft.KeyVault(SecretUri=https://Contoso-Vault.vault.azure.net/secrets/external-url/<secret-version>"
+    ```
+
+Дополнительные сведения см. в следующих статьях.
+
+- [Key Vault ссылки для службы приложений](../app-service/app-service-key-vault-references.md)
+- [Шифрование неактивных данных в службе хранилища Azure](../storage/common/storage-service-encryption.md)
+
+## <a name="troubleshooting"></a>Диагностика
 
 - Запуск из пакета делает `wwwroot` только для чтения, поэтому при записи файлов в этот каталог возникнет ошибка.
 - Форматы tar и gzip не поддерживаются.
 - Эта функция не сопоставлена с локальным кэшем.
 - Для повышения производительности холодного запуска используйте параметр local ZIP (`WEBSITE_RUN_FROM_PACKAGE`= 1).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)
+> [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
 
 [Zip deployment for Azure Functions]: deployment-zip-push.md

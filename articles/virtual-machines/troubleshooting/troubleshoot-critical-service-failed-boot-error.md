@@ -12,18 +12,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/08/2018
 ms.author: genli
-ms.openlocfilehash: 590505d954d52ebec9f8a5c344d6e750f11ef677
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 54ba87b681a055bb46b81ca81d2bcdd103491f27
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981367"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921459"
 ---
 # <a name="windows-shows-critical-service-failed-on-blue-screen-when-booting-an-azure-vm"></a>Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure
 В этой статье описывается ошибка "Сбой критически важной службы", которая может возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Здесь приведены действия по устранению неполадок. 
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
 ## <a name="symptom"></a>Симптом 
 
@@ -118,7 +116,7 @@ ms.locfileid: "75981367"
 
     CrashDumpEnabled = 2.
 7.  Выберите **BROKENSYSTEM**. Выберите в меню **Файл** > **Выгрузить куст**.
-8.  Измените установку BCD для загрузки в режиме отладки. Выполните следующие команды в командной строке с повышенными привилегиями.
+8.  Измените установку BCD для загрузки в режиме отладки. В командной строке с повышенными привилегиями выполните следующие команды:
 
     ```cmd
     REM Setup some debugging flags on the boot manager

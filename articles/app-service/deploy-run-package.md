@@ -3,12 +3,12 @@ title: Запуск приложения из ZIP-пакета
 description: Развертывание ZIP-пакета приложения с атомарностью. Повысьте предсказуемость и надежность работы приложения во время процесса развертывания ZIP.
 ms.topic: article
 ms.date: 01/14/2020
-ms.openlocfilehash: 5cc909d79b3f5ea2b4c6a3da12bc7250addbe00c
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 316ada7700a5cf45ee90f515336039702bab48c0
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945842"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920728"
 ---
 # <a name="run-your-app-in-azure-app-service-directly-from-a-zip-package"></a>Запуск приложения в службе приложений Azure непосредственно из ZIP-пакета
 
@@ -41,7 +41,7 @@ az webapp config appsettings set --resource-group <group-name> --name <app-name>
 
 ## <a name="run-the-package"></a>Запуск пакета
 
-Проще всего запустить пакет в службе приложений с помощью команды Azure CLI [AZ webapp Deployment Source config-ZIP](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-zip) . Пример.
+Проще всего запустить пакет в службе приложений с помощью команды Azure CLI [AZ webapp Deployment Source config-ZIP](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-zip) . Например:
 
 ```azurecli-interactive
 az webapp deployment source config-zip --resource-group <group-name> --name <app-name> --src <filename>.zip
@@ -63,7 +63,34 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 При публикации обновленного пакета с тем же именем в хранилище BLOB-объектов необходимо перезапустить приложение, чтобы обновленный пакет загружался в службу приложений.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+### <a name="use-key-vault-references"></a>Использование Key Vault ссылок
+
+Для повышения безопасности можно использовать ссылки Key Vault в сочетании с внешним URL-адресом. Это обеспечивает шифрование неактивных URL-адресов и позволяет использовать Key Vault для управления секретами и их смены. Рекомендуется использовать хранилище BLOB-объектов Azure, чтобы можно было легко поворачивать соответствующий ключ SAS. Хранилище BLOB-объектов Azure шифруется при хранении, что обеспечивает безопасность данных приложения, если оно не развернуто в службе приложений.
+
+1. Создайте хранилище ключей Azure.
+
+    ```azurecli
+    az keyvault create --name "Contoso-Vault" --resource-group <group-name> --location eastus
+    ```
+
+1. Добавьте внешний URL-адрес в качестве секрета в Key Vault.
+
+    ```azurecli
+    az keyvault secret set --vault-name "Contoso-Vault" --name "external-url" --value "<insert-your-URL>"
+    ```
+
+1. Создайте параметр приложения `WEBSITE_RUN_FROM_PACKAGE` и задайте в качестве значения Key Vault ссылку на внешний URL-адрес.
+
+    ```azurecli
+    az webapp config appsettings set --settings WEBSITE_RUN_FROM_PACKAGE="@Microsoft.KeyVault(SecretUri=https://Contoso-Vault.vault.azure.net/secrets/external-url/<secret-version>"
+    ```
+
+Дополнительные сведения см. в следующих статьях.
+
+- [Key Vault ссылки для службы приложений](app-service-key-vault-references.md)
+- [Шифрование неактивных данных в службе хранилища Azure](../storage/common/storage-service-encryption.md)
+
+## <a name="troubleshooting"></a>Диагностика
 
 - Выполнение непосредственно из пакета делает `wwwroot` только для чтения. При попытке записи файлов в этот каталог приложение получит сообщение об ошибке.
 - Форматы TAR и GZIP не поддерживаются.

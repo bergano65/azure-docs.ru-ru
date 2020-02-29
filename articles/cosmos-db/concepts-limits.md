@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 5681efc202df511745532e4a314e88b319e9880a
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 99f255d9991b51897ee31671835dabb5f3e359fd
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623410"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916512"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты служб Azure Cosmos DB
 
@@ -168,6 +168,9 @@ Cosmos DB поддерживает протокол проводной сети 
 | --- | --- |
 | Максимальный размер памяти для запроса MongoDB | 40 МБ |
 | Максимальное время выполнения для операций MongoDB| 30 с |
+| Время ожидания простаивающих подключений для закрытия соединения на стороне сервера * | 30 минут |
+
+\* рекомендуется, чтобы клиентские приложения установили время ожидания простоя подключения в параметрах драйвера равным 2-3 минут, так как [время ожидания по умолчанию для подсистемы балансировки нагрузки Azure составляет 4 минуты](../load-balancer/load-balancer-tcp-idle-timeout.md#tcp-idle-timeout).  Это гарантирует, что неактивные подключения не будут закрыты промежуточной подсистемой балансировки нагрузки между клиентским компьютером и Azure Cosmos DB.
 
 ## <a name="try-cosmos-db-free-limits"></a>Попробуйте Cosmos DB ограничения свободного места
 

@@ -4,12 +4,12 @@ description: Узнайте, как настроить предваритель�
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/13/2019
-ms.openlocfilehash: cab99b9d20ce8a3190eb9aa59650dab32fca324d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 30cd6ad1b5516eb3bc7e858ae364a88ace1b93b3
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75768424"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77917636"
 ---
 # <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core Linux для службы приложений Azure
 
@@ -38,6 +38,28 @@ az webapp list-runtimes --linux | grep DOTNETCORE
 ```azurecli-interactive
 az webapp config set --name <app-name> --resource-group <resource-group-name> --linux-fx-version "DOTNETCORE|2.1"
 ```
+
+## <a name="customize-build-automation"></a>Настройка автоматизации сборки
+
+Если приложение развертывается с использованием Git или zip-пакетов с включенной автоматизацией сборки, то Автоматизация сборки службы приложений проходит через следующую последовательность:
+
+1. Запустить пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
+1. Запустите `dotnet restore`, чтобы восстановить зависимости NuGet.
+1. Запустите `dotnet publish`, чтобы создать двоичный файл для рабочей среды.
+1. Запустить пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
+
+`PRE_BUILD_COMMAND` и `POST_BUILD_COMMAND` — это переменные среды, которые по умолчанию являются пустыми. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
+
+В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
+
+```azurecli-interactive
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PRE_BUILD_COMMAND="echo foo, scripts/prebuild.sh"
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
+```
+
+Дополнительные переменные среды для настройки автоматизации сборки см. в разделе [Орикс Configuration](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
+
+Дополнительные сведения о том, как служба приложений работает и создает ASP.NET Core приложений в Linux, см. в [документации по Орикс: как обнаруживаются и строятся приложения .NET Core](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/dotnetcore.md).
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
@@ -82,7 +104,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика приложения должна определить, зашифрованы ли запросы пользователя, настройте по промежуточного слоя перенаправляемых заголовков в *Startup.CS*:
 
-- Настройте ПО промежуточного слоя с помощью [ForwardedHeadersOptions](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions), чтобы заголовки `X-Forwarded-For` и `X-Forwarded-Proto` перенаправлялись в `Startup.ConfigureServices`.
+- Настройте по промежуточного слоя с [форвардедхеадерсоптионс](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) , чтобы переслать заголовки `X-Forwarded-For` и `X-Forwarded-Proto` в `Startup.ConfigureServices`.
 - Добавьте в известные сети диапазоны частных IP-адресов, чтобы по промежуточного слоя можно было доверять подсистеме балансировки нагрузки службы приложений.
 - Вызовите метод [усефорвардедхеадерс](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) в `Startup.Configure` перед вызовом других по промежуточного слоя.
 
@@ -113,7 +135,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-Дополнительные сведения см. в разделе [Настройка ASP.NET Core для работы с прокси-серверами и подсистемами балансировки нагрузки](https://docs.microsoft.com/aspnet/core/host-and-deploy/proxy-load-balancer).
+Дополнительные сведения см. [в статье настройка ASP.NET Core для работы с прокси-серверами и подсистемами балансировки нагрузки](https://docs.microsoft.com/aspnet/core/host-and-deploy/proxy-load-balancer).
 
 ## <a name="deploy-multi-project-solutions"></a>Развертывание решений с несколькими проектами
 
@@ -146,7 +168,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 [!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Учебник. ASP.NET Core приложение с базой данных SQL](tutorial-dotnetcore-sqldb-app.md)

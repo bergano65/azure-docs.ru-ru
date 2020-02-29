@@ -8,15 +8,15 @@ ms.subservice: core
 ms.topic: reference
 author: peterclu
 ms.author: peterlu
-ms.date: 12/17/2019
-ms.openlocfilehash: d3feb62c0c7fa24dd998add08d17ebd1d4e9ee6c
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.date: 02/22/2020
+ms.openlocfilehash: ece4b7a85ff5738900b8f999cc2f14ba35ecab0d
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162588"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920099"
 ---
-# <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Ссылка на модуль & алгоритма для конструктора Машинное обучение Azure
+# <a name="algorithm--module-reference-for-azure-machine-learning-designer-preview"></a>Справочник по модулям & алгоритма для Машинное обучение Azure Designer (Предварительная версия)
 
 Это справочное содержимое содержит технические сведения о каждом из алгоритмов и модулей машинного обучения, доступных в Машинное обучение Azure Designer (Предварительная версия).
 
@@ -32,7 +32,7 @@ ms.locfileid: "77162588"
 ## <a name="data-preparation-modules"></a>Модули подготовки данных
 
 
-| Функциональность | Description | Модуль |
+| Функциональность | Описание | Модуль |
 | --- |--- | --- |
 | Входные и выходные данные | Перемещение данных из облачных источников в конвейер. Запишите результаты или промежуточные данные в службу хранилища Azure, базу данных SQL или Hive, во время выполнения конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Импорт данных](import-data.md) |
 | Преобразование данных. | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, уменьшение размерности и преобразование данных в различные форматы файлов.| [Добавить столбцы](add-columns.md) <br/> [Добавить строки](add-rows.md) <br/> [Применить математическую операцию](apply-math-operation.md) <br/> [Применить преобразование SQL](apply-sql-transformation.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/> [Отсеченные значения](clip-values.md) <br/> [Преобразовать в CSV-файл](convert-to-csv.md) <br/> [Преобразовать в набор данных](convert-to-dataset.md) <br/> [Преобразовать в значения индикатора](convert-to-indicator-values.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md)  <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [смоте](smote.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Split Data](split-data.md) (Разделение данных); |
@@ -41,7 +41,7 @@ ms.locfileid: "77162588"
 
 ## <a name="machine-learning-algorithms"></a>Алгоритмы машинного обучения
 
-| Функциональность | Description | Модуль |
+| Функциональность | Описание | Модуль |
 | --- |--- | --- |
 | Регрессия | Прогнозирование значения. | [Регрессия повышенного дерева принятия решений](boosted-decision-tree-regression.md) <br/> [Регрессия леса принятия решений](decision-forest-regression.md) <br/> [Линейная регрессия](linear-regression.md)  <br/> [Регрессия нейронной сети](neural-network-regression.md)  <br/> |
 | Кластеризация | Группирование данных.| [Кластеризация K-средних](k-means-clustering.md)
@@ -49,7 +49,7 @@ ms.locfileid: "77162588"
 
 ## <a name="modules-for-building-and-evaluating-models"></a>Модули для создания и оценки моделей
 
-| Функциональность | Description | Модуль |
+| Функциональность | Описание | Модуль |
 | --- |--- | --- |
 | Обучение модели | Выполнение данных с помощью алгоритма. |  [Обучение модели кластеризации](train-clustering-model.md) <br/> [Train Model](train-model.md) (Обучение модели);  <br/> [Настройка параметров модели](tune-model-hyperparameters.md) |
 | Оценка и вычисление модели | Измерьте точность обученной модели. | [Применить преобразование](apply-transformation.md) <br/> [Назначение данных кластерам](assign-data-to-clusters.md) <br/> [Перекрестная проверка модели](cross-validate-model.md) <br/> [Вычисление модели](evaluate-model.md) <br/> [Модель оценки](score-model.md) |
@@ -57,11 +57,12 @@ ms.locfileid: "77162588"
 | Язык R | Напишите код и внедрите его в модуль, чтобы интегрировать R с вашим конвейером. | [Выполнить сценарий R](execute-r-script.md) |
 | Анализ текста | Предоставляют специализированные вычислительные средства для работы с структурированным и неструктурированным текстом. | [Извлечь из текста N функций для грамматики.](extract-n-gram-features-from-text.md) <br/> [Хэширование компонентов](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) |
 | Рекомендация | Модели рекомендаций сборки. | [Ознакомление с рекомендацией](evaluate-recommender.md) <br/> [SVD рекомендации по оценке](score-svd-recommender.md) <br/> [Совет по обучению SVD](train-SVD-recommender.md) |
+| Обнаружение аномалий | Создание моделей обнаружения аномалий. | [Обнаружение аномалий на основе PCA](pca-based-anomaly-detection.md) <br/> [Обучение модели обнаружения аномалий](train-anomaly-detection-model.md) |
 
 ## <a name="error-messages"></a>Сообщения об ошибках
 
 Сведения о [сообщениях об ошибках и кодах исключений](designer-error-codes.md) , которые могут возникнуть при использовании модулей в конструкторе машинное обучение Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Учебник. Создание модели в конструкторе для прогнозирования автоцен](../tutorial-designer-automobile-price-train-score.md)

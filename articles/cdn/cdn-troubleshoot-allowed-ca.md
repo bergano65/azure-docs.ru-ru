@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 10/18/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 5462502514a3e327913122fe99fd699856891216
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 7b71611d43bc2d4de4c3e609462906c44fba0443
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083105"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919980"
 ---
 # <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-cdn"></a>Разрешенные центры сертификации для включения настраиваемого HTTPS в Azure CDN
 
-Для личного домена сети доставки содержимого Azure (CDN) в конечной точке **Azure CDN уровня "Стандартный" от Майкрософт**, когда вы [включите функцию HTTPS, используя свой собственный сертификат](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#ssl-certificates), нужно создать SSL-сертификат с помощью разрешенного центра сертификации (ЦС). В противном случае при использовании недопустимого ЦС или самозаверяющего сертификата ваш запрос будет отклонен.
+При [включении функции HTTPS с помощью собственного сертификата](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#ssl-certificates) для пользовательского домена сети доставки содержимого Azure (CDN) необходимо соблюдать требования к сертификатам. **Azure CDN стандарт из профиля Майкрософт** требует сертификат от одного из утвержденных центров сертификации (CA) в следующем списке. Если используется сертификат из неутвержденного ЦС или самозаверяющий сертификат, запрос отклоняется. **Azure CDN Standard от Verizon** и **Azure CDN Premium из профилей Verizon** принимают любой действительный сертификат от любого допустимого ЦС.
 
 > [!NOTE]
-> Возможность использования собственного сертификата для включения пользовательского HTTPS доступна только с профилем **Azure CDN уровня "Стандартный" от Майкрософт**. 
+> Возможность использования собственного сертификата для включения функции HTTPS пользовательского домена *недоступна* для **Azure CDN Standard из профилей Akamai** . 
 >
 
 [!INCLUDE [cdn-front-door-allowed-ca](../../includes/cdn-front-door-allowed-ca.md)]

@@ -2,17 +2,17 @@
 title: Виртуальные машины Azure серии Av2
 description: Спецификации виртуальных машин серии Av2.
 services: virtual-machines
-author: jonbeck7
+author: migerdes
 ms.service: virtual-machines
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: lahugh
-ms.openlocfilehash: 1e14c633ed11bb628a68756e72e78073603643a1
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: fe27a1cc78d1f37d535f364c03803a5196090a3a
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77493856"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78163953"
 ---
 # <a name="av2-series"></a>Серия Av2
 
@@ -23,6 +23,10 @@ ACU: 100
 Хранилище класса Premium: не поддерживается
 
 Кэширование хранилища класса Premium: не поддерживается
+
+Динамическая миграция: поддерживается
+
+Обновления с сохранением памяти: поддерживается
 
 | Размер | vCPU | Память, ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность хранилища: операций ввода-вывода/чтения Мбит/с | Максимальное число дисков данных/пропускная способность: операций ввода-вывода | Максимальное число сетевых карт/ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|
@@ -45,6 +49,6 @@ ACU: 100
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

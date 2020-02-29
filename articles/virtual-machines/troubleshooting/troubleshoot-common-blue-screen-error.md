@@ -12,18 +12,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: genli
-ms.openlocfilehash: d9732f232c5a7ec1e551f42fe0e8187e382aec6e
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: beb1562738699bbcede58d8214e69342abbb7c93
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981867"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921476"
 ---
 # <a name="windows-shows-blue-screen-error-when-booting-an-azure-vm"></a>Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows
 В этой статье описываются ошибки "синий экран", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки. 
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
 ## <a name="symptom"></a>Симптом 
 
