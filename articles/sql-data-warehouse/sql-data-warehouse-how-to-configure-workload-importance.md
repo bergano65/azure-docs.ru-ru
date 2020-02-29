@@ -1,26 +1,26 @@
 ---
 title: Настройка уровня важности рабочей нагрузки
-description: Узнайте, как установить важность уровня запроса.
+description: Узнайте, как задать важность уровня запроса в Azure синапсе Analytics.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.subservice: workload-management
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 02/04/2020
 ms.author: rortloff
-ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 59ba4b936f6098b0d0b3f5e571f107af088206e0
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.reviewer: jrasnick
+ms.custom: azure-synapse
+ms.openlocfilehash: 8b2a4333717938edf9f3039e29e8df88cece7cc1
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692690"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196804"
 ---
-# <a name="configure-workload-importance-in-azure-sql-data-warehouse"></a>Настройка важности рабочей нагрузки в хранилище данных SQL Azure
+# <a name="configure-workload-importance-in-azure-synapse-analytics"></a>Настройка важности рабочей нагрузки в Azure синапсе Analytics
 
-Настройка важности в хранилище данных SQL позволяет повлиять на планирование запросов. Запросы с более высоким уровнем важности будут выполняться перед запросами с более низкой важностью. Чтобы назначить важность запросам, необходимо создать классификатор рабочей нагрузки.
+Настройка важности в SQL Analytics для Azure синапсе позволяет повлиять на планирование запросов. Запросы с более высоким уровнем важности будут выполняться перед запросами с более низкой важностью. Чтобы назначить важность запросам, необходимо создать классификатор рабочей нагрузки.
 
 ## <a name="create-a-workload-classifier-with-importance"></a>Создание классификатора рабочей нагрузки с важностью
 
@@ -35,8 +35,8 @@ Select name from sys.sysusers
 ```sql
 CREATE WORKLOAD CLASSIFIER ExecReportsClassifier  
     WITH (WORKLOAD_GROUP = 'xlargerc'
-                   ,MEMBERNAME        = 'name'  
-                   ,IMPORTANCE        =  above_normal);  
+         ,MEMBERNAME     = 'name'  
+         ,IMPORTANCE     =  above_normal);  
 
 ```
 
@@ -45,11 +45,11 @@ CREATE WORKLOAD CLASSIFIER ExecReportsClassifier 
 ```sql
 CREATE WORKLOAD CLASSIFIER AdhocClassifier  
     WITH (WORKLOAD_GROUP = 'xlargerc'
-                   ,MEMBERNAME        = 'name'  
-                   ,IMPORTANCE        =  below_normal);  
+         ,MEMBERNAME     = 'name'  
+         ,IMPORTANCE     =  below_normal);  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 - Дополнительные сведения об управлении рабочими нагрузками см. в разделе [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md) .
 - Дополнительные сведения о важности см. в статье [важность рабочей нагрузки](sql-data-warehouse-workload-importance.md) .
 

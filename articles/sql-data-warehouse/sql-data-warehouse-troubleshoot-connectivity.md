@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок подключения
-description: Устранение неполадок подключения в хранилище данных SQL Azure.
+title: Устранение неполадок с подключением
+description: Устранение неполадок подключения в SQL Analytics.
 services: sql-data-warehouse
 author: anumjs
 manager: craigg
@@ -10,55 +10,55 @@ ms.subservice: supportability
 ms.date: 03/27/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: d1139032176b3b44c58471b87cabd10ffeaa3d20
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.custom: azure-synapse
+ms.openlocfilehash: 003366a6d88e018090475b6fb22d9042a97af823
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692421"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192257"
 ---
 # <a name="troubleshooting-connectivity-issues"></a>Устранение неполадок с подключением
 
-В этой статье перечислены распространенные методы устранения неполадок, связанных с подключением к хранилищу данных SQL.
+В этой статье перечислены распространенные методы устранения неполадок, связанных с подключением к базе данных аналитики SQL.
 - [Проверка доступности службы](./sql-data-warehouse-troubleshoot-connectivity.md#check-service-availability)
-- [Проверка на паузу или операцию масштабирования](./sql-data-warehouse-troubleshoot-connectivity.md#check-for-paused-or-scaling-operation)
-- [Проверьте параметры брандмауэра.](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-firewall-settings)
+- [Проверка на наличие приостановленных или масштабируемых операций](./sql-data-warehouse-troubleshoot-connectivity.md#check-for-paused-or-scaling-operation)
+- [Проверка параметров брандмауэра](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-firewall-settings)
 - [Проверка параметров конечной точки виртуальной сети или службы](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-vnetservice-endpoint-settings)
-- [Проверка наличия последних версий драйверов](./sql-data-warehouse-troubleshoot-connectivity.md#check-for-the-latest-drivers)
+- [Проверка наличия новых драйверов](./sql-data-warehouse-troubleshoot-connectivity.md#check-for-the-latest-drivers)
 - [Проверка строки подключения](./sql-data-warehouse-troubleshoot-connectivity.md#check-your-connection-string)
-- [Проблемы с периодическим подключением](./sql-data-warehouse-troubleshoot-connectivity.md#intermittent-connection-issues)
+- [Нерегулярные ошибки подключения](./sql-data-warehouse-troubleshoot-connectivity.md#intermittent-connection-issues)
 - [Распространенные сообщения об ошибках](./sql-data-warehouse-troubleshoot-connectivity.md#common-error-messages)
 
 ## <a name="check-service-availability"></a>Проверка доступности службы
 
-Проверьте, доступна ли служба. В портал Azure перейдите к хранилищу данных SQL, к которому вы пытаетесь подключиться. На левой панели ОГЛАВЛЕНИя щелкните **Диагностика и решение проблем**.
+Проверьте, доступна ли служба. В портал Azure перейдите к базе данных SQL Analytics, которую вы пытаетесь подключить. На левой панели ОГЛАВЛЕНИя щелкните **Диагностика и решение проблем**.
 
 ![Выбор работоспособности ресурсов](./media/sql-data-warehouse-troubleshoot-connectivity/diagnostics-link.png)
 
-Состояние хранилища данных SQL будет показано здесь. Если служба не отображается как **доступная**, проверьте дальнейшие действия.
+Состояние аналитики SQL будет показано здесь. Если служба не отображается как **доступная**, проверьте дальнейшие действия.
 
 ![Служба доступна](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health.png)
 
-Если работоспособность ресурса показывает, что хранилище данных приостановлено или масштабируется, следуйте указаниям по возобновлению хранилища данных.
+Если работоспособность ресурса показывает, что экземпляр SQL Analytics приостановлен или масштабирован, следуйте указаниям по возобновлению работы экземпляра.
 
 ![служба приостановлена](./media/sql-data-warehouse-troubleshoot-connectivity/resource-health-pausing.png) дополнительные сведения об Работоспособность ресурсов можно найти здесь.
 
 ## <a name="check-for-paused-or-scaling-operation"></a>Проверка на паузу или операцию масштабирования
 
-Проверьте наличие приостановленного или масштабируемого хранилища данных SQL на портале.
+Проверьте наличие приостановленного или масштабируемого экземпляра SQL Analytics на портале.
 
 ![Служба приостановлена](./media/sql-data-warehouse-troubleshoot-connectivity/overview-paused.png)
 
-Если вы видите, что служба приостановлена или масштабируется, убедитесь, что она не находится в расписании обслуживания. На портале с *общими сведениями о*хранилище данных SQL вы увидите выбранное расписание обслуживания.
+Если вы видите, что служба приостановлена или масштабируется, убедитесь, что она не находится в расписании обслуживания. На портале с *обзором*SQL Analytics вы увидите выбранное расписание обслуживания.
 
 ![Обзор расписания обслуживания](./media/sql-data-warehouse-troubleshoot-connectivity/overview-maintance-schedule.png)
 
-В противном случае обратитесь к ИТ-администратору, чтобы убедиться, что это обслуживание не запланировано. Чтобы возобновить работу хранилища данных SQL, выполните действия, описанные [здесь](https://docs.microsoft.com/azure/sql-data-warehouse/pause-and-resume-compute-portal#resume-compute).
+В противном случае обратитесь к ИТ-администратору, чтобы убедиться, что это обслуживание не запланировано. Чтобы возобновить работу экземпляра SQL Analytics, выполните действия, описанные [здесь](https://docs.microsoft.com/azure/sql-data-warehouse/pause-and-resume-compute-portal#resume-compute).
 
 ## <a name="check-your-firewall-settings"></a>Проверьте параметры брандмауэра.
 
-Хранилище данных SQL обменивается данными через порт 1433.   Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен брандмауэром вашей сети. В этом случае вы не сможете подключиться к серверу базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433. Дополнительные сведения о конфигурациях брандмауэра можно найти [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules).
+База данных SQL Analytics взаимодействует через порт 1433.   Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен брандмауэром вашей сети. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433. Дополнительные сведения о конфигурациях брандмауэра можно найти [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules).
 
 ## <a name="check-your-vnetservice-endpoint-settings"></a>Проверка параметров конечной точки виртуальной сети или службы
 
@@ -68,7 +68,7 @@ ms.locfileid: "73692421"
 
 ### <a name="software"></a>Программное обеспечение
 
-Убедитесь, что вы используете новейшие средства для подключения к хранилищу данных SQL:
+Убедитесь, что вы используете новейшие средства для подключения к базе данных аналитики SQL:
 
 * SSMS
 * Azure Data Studio
@@ -85,7 +85,7 @@ ms.locfileid: "73692421"
 
 ## <a name="check-your-connection-string"></a>Проверка строки подключения
 
-Убедитесь, что строки подключения заданы правильно.  Ниже приведены некоторые примеры.  Дополнительные сведения о [строках подключения](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-connection-strings)можно найти здесь.
+Убедитесь, что строки подключения заданы правильно.  Ниже приведены некоторые примеры.  Дополнительные сведения о строках подключений можно найти [здесь](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-connection-strings).
 
 Строка подключения по протоколу ADO.NET
 
@@ -113,7 +113,7 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 ## <a name="intermittent-connection-issues"></a>Проблемы с периодическим подключением
 
-Проверьте, испытывает ли высокая нагрузка на сервер с большим количеством запросов в очереди. Вам может потребоваться увеличить масштаб хранилища данных для получения дополнительных ресурсов.
+Проверьте, не находится ли сервер под большой нагрузкой из-за высокого числа запросов в очереди. Возможно, вам потребуется увеличить масштаб экземпляра SQL Analytics для получения дополнительных ресурсов.
 
 ## <a name="common-error-messages"></a>Распространенные сообщения об ошибках
 

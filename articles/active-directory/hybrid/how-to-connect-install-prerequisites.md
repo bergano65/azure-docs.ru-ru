@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/08/2019
+ms.date: 02/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f250d4593c8dac8007590245e1b774b95d8fa786
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: bc76f8edc8520ca50cd4c9527b037d99d24ce63c
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75767948"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190506"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -81,15 +81,15 @@ ms.locfileid: "75767948"
 * Azure AD Connect требуется база данных SQL Server для хранения учетных данных. По умолчанию устанавливается SQL Server 2012 Express LocalDB (облегченная версия SQL Server Express). Размер экземпляра SQL Server Express может достигать 10 ГБ, позволяя управлять примерно 100 000 объектов. Если вам нужно управлять более значительным числом объектов каталога, в мастере установки укажите другую установку SQL Server. Тип установки SQL Server может повлиять на [производительность Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-performance-factors#sql-database-factors).
 * Если используется другая установка SQL Server, то применяются следующие требования.
   * Azure AD Connect поддерживает все версии Microsoft SQL Server от 2012 (с последним пакетом обновления) до SQL Server 2019. База данных SQL Microsoft Azure в качестве базы данных **не поддерживается**.
-  * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс \_CS_, **не поддерживаются**.
+  * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс **CS_,** не поддерживаются\_.
   * На один экземпляр SQL может приходиться только один модуль синхронизации. Совместное использование экземпляра SQL модулями FIM/MIM Sync, DirSync и Azure AD Sync **не поддерживается**.
 
 ### <a name="accounts"></a>Учетные записи
 * Учетная запись глобального администратора Azure AD для клиента Azure AD, с которым необходима интеграция. Это должна быть **учебная или рабочая учетная запись**. **Учетную запись Майкрософт** использовать нельзя.
-* Учетная запись администратора предприятия для локальной службы Active Directory при использовании экспресс-параметров или обновлении с DirSync.
-* [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами или учетная запись администратора предприятия для локальной службы Active Directory.
+* Если вы используете [быстрые параметры](reference-connect-accounts-permissions.md#express-settings-installation) или обновляете DirSync, у вас должна быть учетная запись администратора предприятия для локального Active Directory.
+* Если вы используете путь установки пользовательских параметров, то у вас есть дополнительные параметры. см. раздел [учетные записи в Active Directory](reference-connect-accounts-permissions.md#custom-installation-settings)
 
-### <a name="connectivity"></a>Подключение
+### <a name="connectivity"></a>Соединение
 * Для серверов Azure AD Connect требуется разрешение DNS как для интрасети, так и для Интернета. DNS-сервер должен иметь возможность разрешения имен как для локальной службы Active Directory, так и для конечных точек Azure AD.
 * Если в вашей интрасети есть брандмауэры и вам необходимо открыть порты между серверами Azure AD Connect и контроллерами доменов, то дополнительные сведения см. в статье [Порты и протоколы, необходимые для гибридной идентификации](reference-connect-ports.md).
 * Если прокси-сервер или брандмауэр ограничивает доступные URL-адреса, то на нем необходимо открыть URL-адреса, указанные в разделе [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
@@ -129,7 +129,7 @@ ms.locfileid: "75767948"
 Дополнительную информацию об [элементе defaultProxy](https://msdn.microsoft.com/library/kd3cf2ex.aspx) вы можете найти на сайте MSDN.  
 В случае проблем с подключением изучите статью [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
 
-### <a name="other"></a>Прочее
+### <a name="other"></a>Другие
 * Необязательно: тестовая учетная запись пользователя для проверки синхронизации.
 
 ## <a name="component-prerequisites"></a>Предварительные требования к компонентам

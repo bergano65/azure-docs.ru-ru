@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 0b15b35f6fc83097e94f7d69815a163a0e98a228
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 559c9ee237f95f9d175aaefb487131466700e899
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77523277"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190795"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -463,7 +463,7 @@ Azure Functions Core Tools поддерживает два типа развер
 
 Папка проекта может содержать файлы и каталоги, относящиеся к языку, которые не должны публиковаться. Исключенные элементы перечислены в файле фунЦигноре в корневой папке проекта.     
 
-### <a name="project-file-deployment"></a>Развертывание (файлы проекта)
+### <a name="project-file-deployment"></a>Развертывание файлов проекта
 
 Чтобы опубликовать локальный код в приложении-функции в Azure, используйте команду `publish`.
 
@@ -500,7 +500,7 @@ func azure functionapp publish <FunctionAppName>
 | **`--no-build`** | Не создавайте функции библиотеки классов .NET. |
 | **`--dotnet-cli-params`** | При публикации скомпилированных функций C# (CSPROJ) набор инструментов Core Tools вызывает dotnet build --output bin/publish. Все параметры, передаваемые в этот метод, будут добавлены в командную строку. |
 
-### <a name="deployment-custom-container"></a>Развертывание (настраиваемый контейнер)
+### <a name="deploy-custom-container"></a>Развертывание настраиваемого контейнера
 
 Функции Azure позволяют развертывать проект функции в [пользовательском контейнере DOCKER](functions-deployment-technologies.md#docker-container). Дополнительные сведения см. в статье [Создание функции в Linux из пользовательского образа (предварительная версия)](functions-create-function-linux-custom-image.md). В пользовательских контейнерах должен быть файл Docker. Чтобы создать приложение с Dockerfile, используйте параметр--Dockerfile на `func init`.
 

@@ -2,20 +2,20 @@
 title: Пользовательские политики Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о пользовательских политиках Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b1f3bbcba562d126d503920cb7b6787e2ca0025c
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: f72aedb010301f9c7b12778432c4f10feb10f7a3
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847047"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189248"
 ---
 # <a name="custom-policies-in-azure-active-directory-b2c"></a>Пользовательские политики в Azure Active Directory B2C
 

@@ -3,20 +3,20 @@ title: Настройка регистрации и входа с помощью
 titleSuffix: Azure AD B2C
 description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями Google, используя Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 53fd210b04ba65e52db7efb13e9a2ad7d9cc8f61
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 48955caddb64069f897078f5e47066d9f11d119b
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847450"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78188146"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -45,4 +45,4 @@ ms.locfileid: "76847450"
 1. Введите **Имя**. Например, *Google*.
 1. В поле **идентификатор клиента**введите идентификатор клиента приложения Google, созданного ранее.
 1. В качестве **секрета клиента**введите записанный секрет клиента.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.

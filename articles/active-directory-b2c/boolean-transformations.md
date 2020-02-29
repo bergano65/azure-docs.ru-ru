@@ -3,20 +3,20 @@ title: Примеры преобразования логических утве
 titleSuffix: Azure AD B2C
 description: Примеры преобразования логических утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 02/03/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 130fca4d5894316e7684270ff9d6361e9d9f9dd3
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 65f5b9bc09bb74ccbc63a457ba8e5681de8eefab
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77620840"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189947"
 ---
 # <a name="boolean-claims-transformations"></a>Преобразования логических утверждений
 
@@ -116,7 +116,7 @@ ms.locfileid: "77620840"
 
 ## <a name="comparebooleanclaimtovalue"></a>компаребулеанклаимтовалуе
 
-Проверяет, что логическое значение утверждений равно `true` или `false`и возвращает результат сжатия. 
+Проверяет, что логическое значение утверждений равно `true` или `false`и возвращает результат сжатия.
 
 | Элемент | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
@@ -148,7 +148,7 @@ ms.locfileid: "77620840"
 - Входные параметры:
     - **valueToCompareTo**: true.
 - Исходящие утверждения:
-    - **компарересулт**: false 
+    - **компарересулт**: false
 
 
 

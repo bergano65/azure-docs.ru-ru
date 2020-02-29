@@ -15,29 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/04/2016
 ms.author: kumud
-ms.openlocfilehash: bd734f171f4e10c4227fbab77485a788f02848b3
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: b1019b15463a03282c5d1bd8f0a878433d7f488e
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196639"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78199569"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-portal"></a>Настройка частных IP-адресов для виртуальной машины с помощью портала Azure
 
-> [!div class="op_single_selector"]
-> * [портал Azure](virtual-networks-static-private-ip-arm-pportal.md)
-> * [PowerShell](virtual-networks-static-private-ip-arm-ps.md)
-> * [Интерфейс командной строки Azure](virtual-networks-static-private-ip-arm-cli.md)
-> * [Портал Azure (классическая модель)](virtual-networks-static-private-ip-classic-pportal.md)
-> * [PowerShell (классическая модель)](virtual-networks-static-private-ip-classic-ps.md)
-> * [Интерфейс командной строки Azure (классическая модель)](virtual-networks-static-private-ip-classic-cli.md)
-
-
 [!INCLUDE [virtual-networks-static-private-ip-intro-include](../../includes/virtual-networks-static-private-ip-intro-include.md)]
-
-[!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
-
-В этой статье описывается модель развертывания с использованием менеджера ресурсов. Кроме того, вы можете [управлять статическим частным IP-адресом в классической модели развертывания](virtual-networks-static-private-ip-classic-pportal.md).
 
 [!INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
@@ -75,7 +62,7 @@ ms.locfileid: "74196639"
 
 Не рекомендуем статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе за исключением ситуаций, когда это необходимо, например при [назначении нескольких IP-адресов виртуальной машине Windows](virtual-network-multiple-ip-addresses-portal.md). Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному [сетевому интерфейсу](virtual-network-network-interface-addresses.md#change-ip-address-settings) Azure. Иначе соединение с виртуальной машиной может быть потеряно. Ознакомьтесь с дополнительными сведениями о параметрах [частных IP-адресов](virtual-network-network-interface-addresses.md#private). Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
-## <a name="how-to-retrieve-static-private-ip-address-information-for-a-vm"></a>Получение сведений о статическом частном IP-адресе виртуальной машины
+## <a name="how-to-retrieve-static-private-ip-address-information-for-a-vm"></a>Как получить информацию о статическом частном IP-адресе виртуальной машины
 Чтобы просмотреть информацию о статическом частном IP-адресе виртуальной машины, созданной с помощью описанные выше действий, выполните следующее.
 
 1. На портале Azure щелкните **Просмотреть все** > **Виртуальные машины** > **DNS01** > **Все параметры** > **Сетевые интерфейсы**, а затем щелкните единственный сетевой интерфейс в списке.
@@ -85,7 +72,7 @@ ms.locfileid: "74196639"
    
     ![Элемент «Развертывание виртуальной машины»](./media/virtual-networks-static-ip-arm-pportal/figure08.png)
 
-## <a name="how-to-add-a-static-private-ip-address-to-an-existing-vm"></a>Добавление статического частного IP-адреса для существующей виртуальной машины
+## <a name="how-to-add-a-static-private-ip-address-to-an-existing-vm"></a>Как добавить статический частный IP-адрес для существующей виртуальной машины
 Чтобы добавить статический частный IP-адрес для виртуальной машины, созданной с помощью действий, описанных выше, выполните следующее.
 
 1. В области **IP-адреса**, показанной выше, в разделе **Назначение** щелкните **Статический**.
@@ -100,7 +87,7 @@ ms.locfileid: "74196639"
 
 Не рекомендуем статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе за исключением ситуаций, когда это необходимо, например при [назначении нескольких IP-адресов виртуальной машине Windows](virtual-network-multiple-ip-addresses-portal.md). Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному [сетевому интерфейсу](virtual-network-network-interface-addresses.md#change-ip-address-settings) Azure. Иначе соединение с виртуальной машиной может быть потеряно. Ознакомьтесь с дополнительными сведениями о параметрах [частных IP-адресов](virtual-network-network-interface-addresses.md#private). Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
-## <a name="how-to-remove-a-static-private-ip-address-from-a-vm"></a>Как удалить статический частный IP-адрес виртуальной машины
+## <a name="how-to-remove-a-static-private-ip-address-from-a-vm"></a>Удаление статического частного IP-адреса виртуальной машины
 Чтобы удалить статический частный IP-адрес виртуальной машины, созданной ранее, выполните следующее.
 
 В области **IP-адреса**, показанной выше, в разделе **Назначение** щелкните **Динамический** и нажмите кнопку **Сохранить**.
@@ -109,7 +96,7 @@ ms.locfileid: "74196639"
 
 Не рекомендуем статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе за исключением ситуаций, когда это необходимо, например при [назначении нескольких IP-адресов виртуальной машине Windows](virtual-network-multiple-ip-addresses-portal.md). Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному [сетевому интерфейсу](virtual-network-network-interface-addresses.md#change-ip-address-settings) Azure. Иначе соединение с виртуальной машиной может быть потеряно. Ознакомьтесь с дополнительными сведениями о параметрах [частных IP-адресов](virtual-network-network-interface-addresses.md#private). Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с дополнительными сведениями об управлении [параметрами IP-адресов](virtual-network-network-interface-addresses.md).
 

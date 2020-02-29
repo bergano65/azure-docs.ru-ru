@@ -3,20 +3,20 @@ title: REST API обмен утверждениями в качестве про
 titleSuffix: Azure AD B2C
 description: Пошаговое руководство по созданию Azure AD B2C пути взаимодействия пользователя, взаимодействующего со службами RESTFUL.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 209cddcc8648f7d396f048057bb4367e2ae9f66c
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7100498d99068941bcd7ca48b6cbcaa271fbb095
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846618"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189078"
 ---
 # <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-on-user-input"></a>Пошаговое руководство. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -37,7 +37,7 @@ ms.locfileid: "76846618"
 
 Мы можем проверить, не входит ли имя, указанное пользователем в политике изменения профиля, в список исключений.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Клиент Azure AD B2C, необходимый для регистрации или входа с использованием локальной учетной записи, как описано в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](custom-policy-get-started.md).
 - Конечная точка REST API, с которой устанавливается взаимодействие. Для этого руководства мы настроили демонстрационный сайт [WingTipGames](https://wingtipgamesb2c.azurewebsites.net/), используя службу REST API.

@@ -3,20 +3,20 @@ title: Настройка потока учетных данных для пар
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить поток учетных данных для пароля владельца ресурса (РОПК) с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/27/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: df6f8ce22e8215a0727db7f69e0f6e5c3f5fc9e0
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 55b4750d2c601a4d3c66bcd8235a9718d6daaf9d
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77917396"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78187015"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -26,7 +26,7 @@ ms.locfileid: "77917396"
 
 [!INCLUDE [active-directory-b2c-ropc-notes](../../includes/active-directory-b2c-ropc-notes.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -219,7 +219,7 @@ ms.locfileid: "77917396"
 
 7. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 8. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-9. Нажмите кнопку **Отправка**.
+9. Щелкните **Отправить**.
 
 ## <a name="create-a-relying-party-file"></a>Создание файла проверяющей стороны
 
@@ -240,7 +240,7 @@ ms.locfileid: "77917396"
 
 5. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
 6. Включите **Перезапись политики, если она существует**, а затем найдите и выберите файл *ROPC_Auth. XML* .
-7. Нажмите кнопку **Отправка**.
+7. Щелкните **Отправить**.
 
 ## <a name="test-the-policy"></a>Проверка политики
 
@@ -251,12 +251,12 @@ ms.locfileid: "77917396"
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Клавиши | Значение |
 | --- | ----- |
 | username | `user-account` |
-| пароль | `password1` |
-| grant_type | пароль |
-| Область | openid `application-id` offline_access |
+| password | `password1` |
+| grant_type | password |
+| область | openid `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
 
@@ -296,7 +296,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Клавиши | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
@@ -329,7 +329,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Azure AD B2C соответствует стандартам OAuth 2.0 для учетных данных пароля владельца ресурса общедоступного клиента и должен быть совместим с большинством клиентских пакетов SDK. См. последние [рекомендации по реализации собственного пакета SDK для приложений OAuth 2.0 и OpenID Connect](https://appauth.io/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. полный пример такого сценария в [начальном пакете настраиваемой политики Azure Active Directory B2C](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/source/aadb2c-ief-ropc).
 - Дополнительные сведения о маркерах, которые используются Azure Active Directory B2C, см. в [справочнике по маркерам](tokens-overview.md).
