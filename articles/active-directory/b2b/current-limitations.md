@@ -11,11 +11,11 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1717897261404a2ab8df723c280c9be6a2dacea4
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: b45277c89193c51f70836bcef8a21636fc9c7973
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 02/28/2020
 ms.locfileid: "77196139"
 ---
 # <a name="limitations-of-azure-ad-b2b-collaboration"></a>Ограничения службы совместной работы Azure Active Directory B2B
@@ -32,22 +32,6 @@ ms.locfileid: "77196139"
 
 ## <a name="national-clouds"></a>Местные облака
 [Национальные облака](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud) — это физически изолированные экземпляры Azure. Совместная работа B2B не поддерживается в пределах национальных облаков. Например, если клиент Azure находится в общедоступном глобальном облаке, вы не сможете пригласить пользователя, чья учетная запись находится в национальном облаке. Для совместной работы с пользователем попросите его указать другой адрес электронной почты или создать для них учетную запись пользователя в каталоге.
-
-## <a name="azure-us-government-clouds"></a>Облака Azure для государственных организаций США
-В облаке Azure для государственных организаций США служба совместной работы B2B поддерживается только между клиентами, которые находятся в облаке Azure для государственных организаций США и поддерживают службу совместной работы B2B. Если вы приглашаете пользователя в клиенте, который не входит в облако Azure для государственных организаций США или что еще не поддерживает службу совместной работы B2B, приглашение не будет выполнено или пользователь не сможет активировать приглашение. Дополнительные сведения о других ограничениях см. в разделе [варианты Azure Active Directory Premium P1 и P2](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2).
-
-### <a name="how-can-i-tell-if-b2b-collaboration-is-available-in-my-azure-us-government-tenant"></a>Как узнать, доступна ли служба совместной работы B2B в моем клиенте Azure для государственных организаций США?
-Чтобы узнать, поддерживает ли облачный клиент Azure для государственных организаций совместной работы B2B, выполните следующие действия.
-
-1. В браузере перейдите по следующему URL-адресу, подставив имя клиента для *&lt;tenantname&gt;* :
-
-   `https://login.microsoftonline.com/<tenantname>/v2.0/.well-known/openid-configuration`
-
-2. Поиск `"tenant_region_scope"` в ответе JSON:
-
-   - Если отображается `"tenant_region_scope":"USGOV”`, то поддерживается B2B.
-   - Если `"tenant_region_scope":"USG"` появляется, B2B не поддерживается.
- 
 
 ## <a name="next-steps"></a>Следующие шаги
 

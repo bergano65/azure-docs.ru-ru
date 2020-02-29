@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: a17ff15e71251e781cd30c33a5616af85e4f4eb9
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 1aff2815144f776b351e92d8945b267d1451f9f6
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260089"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77915713"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в функциях Azure .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "76260089"
 
 - Поддержка внедрения зависимостей начинается с функций Azure 2. x.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем можно будет использовать внедрение зависимостей, необходимо установить следующие пакеты NuGet:
 
@@ -114,7 +114,7 @@ namespace MyNamespace
 }
 ```
 
-## <a name="service-lifetimes"></a>Время существования служб
+## <a name="service-lifetimes"></a>Время существования службы
 
 Приложения функций Azure предоставляют те же времена жизни службы, что и [внедрение зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Для приложения-функции различные времена жизни службы ведут себя следующим образом:
 
@@ -130,16 +130,16 @@ namespace MyNamespace
 
 > [!WARNING]
 > - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб при регистрации служб, конфликтующих со службами, предоставляемыми средой.
-> - Не зарегистрируйте собственный `TelemetryConfiguration` или `TelemetryClient`, если используются встроенные функции Application Insights.
+> - Не зарегистрируйте собственный `TelemetryConfiguration` или `TelemetryClient`, если используются встроенные функции Application Insights. Если необходимо настроить собственный экземпляр `TelemetryClient`, создайте его с помощью внедренного `TelemetryConfiguration`, как показано в подокне [мониторинг функций Azure](./functions-monitoring.md#version-2x-and-later-2).
 
 ## <a name="function-app-provided-services"></a>Службы, предоставляемые приложением функции
 
 Узел функции регистрирует множество служб. Следующие службы являются надежными для использования в качестве зависимости в приложении:
 
-|Тип службы|Срок действия|Description|
+|Тип службы|Срок действия|Описание|
 |--|--|--|
-|`Microsoft.Extensions.Configuration.IConfiguration`|Одноэлементный|Конфигурация среды выполнения|
-|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Одноэлементный|Отвечает за предоставление идентификатора экземпляра узла|
+|`Microsoft.Extensions.Configuration.IConfiguration`|Единый|Конфигурация среды выполнения|
+|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Единый|Отвечает за предоставление идентификатора экземпляра узла|
 
 Если существуют другие службы, от которых требуется зависимость, [Создайте вопрос и предложите их на GitHub](https://github.com/azure/azure-functions-host).
 
@@ -206,9 +206,9 @@ public class HttpTrigger
 > [!WARNING]
 > Старайтесь не пытаться считывать значения из таких файлов, как *Local. Settings. JSON* или *appSettings. { Environment}. JSON* в плане потребления. Значения, считанные из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Для получения дополнительных сведений см. следующие ресурсы:
+Дополнительные сведения см. в следующих источниках.
 
 - [Мониторинг приложения функции](functions-monitoring.md)
 - [Рекомендации по функциям](functions-best-practices.md)

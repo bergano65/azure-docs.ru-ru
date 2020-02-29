@@ -13,28 +13,26 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 4/22/2018
 ms.author: xujing
-ms.openlocfilehash: d6e3d4d059e464795c712af1226d8202d00bfd74
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 470e38c21a250273216f93eb38a5334a4bb581e7
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461158"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77911799"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Преимущество гибридного использования Azure для Windows Server
 Благодаря преимуществам гибридного использования Azure для Windows Server, клиенты, участвующие в программе Software Assurance, могут использовать локальные лицензии Windows Server для запуска виртуальных машин Windows в Azure с меньшими затратами. С помощью Преимущества гибридного использования Azure также можно развертывать новые виртуальные машины с ОС Windows. В этой статье описывается, как выполнить развертывание новых виртуальных машин с помощью преимуществ гибридного использования Azure для Windows Server, а также как обновить существующие запущенные виртуальные машины. Дополнительные сведения о лицензировании преимуществ гибридного использования Azure для Windows Server и экономии денежных средств см. [на этой странице](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
 
-> [!Important]
-> В каждой лицензии, рассчитанной на использование 2 процессоров, или каждом наборе лицензий, рассчитанном на предоставление 16 ядер, может предусматриваться либо два экземпляра по 8 ядер, либо один экземпляр на 16 ядер. Программу преимуществ гибридного использования с лицензией на выпуск Standard можно использовать только один раз: локально или в среде Azure. Лицензию на выпуск Datacenter Edition можно использовать и локально, и в среде Azure.
->
+В каждой лицензии, рассчитанной на использование 2 процессоров, или каждом наборе лицензий, рассчитанном на предоставление 16 ядер, может предусматриваться либо два экземпляра по 8 ядер, либо один экземпляр на 16 ядер. Преимущество гибридного использования Azure для лицензий на выпуск Standard можно использовать только один раз: либо локально, либо в среде Azure. Преимущества для выпуска Datacenter можно использовать и локально, и в среде Azure.
 
-> [!Important]
-> Преимущество гибридного использования Azure для Windows Server теперь можно использовать с любыми виртуальными машинами, работающими под управлением Windows Server, во всех регионах, включая виртуальные машины с дополнительным программным обеспечением, таким как SQL Server или стороннее ПО из магазина. 
->
+Преимущество гибридного использования Azure для Windows Server теперь можно использовать с любыми виртуальными машинами, работающими под управлением Windows Server, во всех регионах, включая виртуальные машины с дополнительным программным обеспечением, таким как SQL Server или стороннее ПО из магазина. 
 
-> [!NOTE]
-> Для классических виртуальных машин поддерживается только развертывание новой виртуальной машины из локальных пользовательских образов. Чтобы воспользоваться преимуществами возможностей, предоставляемых в этой статье, сначала необходимо перенести классическую виртуальную машину в модель Resource Manager.
->
 
+## <a name="classic-vms"></a>классические виртуальные машины;
+
+Для классических виртуальных машин поддерживается только развертывание новой виртуальной машины из локальных пользовательских образов. Чтобы воспользоваться преимуществами возможностей, предоставляемых в этой статье, сначала необходимо перенести классическую виртуальную машину в модель Resource Manager.
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
  
 
 ## <a name="ways-to-use-azure-hybrid-benefit-for-windows-server"></a>Способы использования преимуществ гибридного использования Azure для Windows Server
@@ -64,7 +62,7 @@ New-AzVm `
     -LicenseType "Windows_Server"
 ```
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 ```azurecli
 az vm create \
     --resource-group myResourceGroup \
@@ -110,7 +108,7 @@ az vm create \
     Update-AzVM -ResourceGroupName rg-name -VM $vm
     ```
     
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 - Преобразование существующих виртуальных машин Windows Server в виртуальные машины с поддержкой Преимущества гибридного использования Azure для Windows Server
 
     ```azurecli
@@ -129,7 +127,7 @@ az vm create \
 Get-AzVM -ResourceGroup "myResourceGroup" -Name "myVM"
 ```
 
-Выходные данные:
+Выходные данные.
 ```powershell
 Type                     : Microsoft.Compute/virtualMachines
 Location                 : westus
@@ -143,7 +141,7 @@ Location                 : westus
 LicenseType              :
 ```
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 ```azurecli
 az vm get-instance-view -g MyResourceGroup -n MyVM --query "[?licenseType=='Windows_Server']" -o table
 ```
@@ -164,7 +162,7 @@ $vms = Get-AzVM
 $vms | ?{$_.LicenseType -like "Windows_Server"} | select ResourceGroupName, Name, LicenseType
 ```
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 ```azurecli
 az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
@@ -195,7 +193,7 @@ az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
 Сведения о дополнительных возможностях изменения масштабируемого набора см. в статье [Изменение масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Прочитайте больше о том, [как экономить при использовании программы "Преимущество гибридного использования Azure"](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
 - Ознакомьтесь с [часто задаваемыми вопросами о Преимуществе гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/faq/).
 - См. дополнительные сведения о [программе "Преимущество гибридного использования Azure" для Windows Server](https://docs.microsoft.com/windows-server/get-started/azure-hybrid-benefit).

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: dapine
-ms.openlocfilehash: aed9c0a72af063c84c0744757772e11c689ac14c
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 4785356963e7df1d7b175ac21ceebc921f851ffb
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561040"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77913656"
 ---
 # <a name="improve-synthesis-with-audio-content-creation"></a>Улучшение синтеза с помощью создания звукового содержимого
 
@@ -43,7 +43,7 @@ ms.locfileid: "77561040"
 
 Выполните следующие действия, чтобы создать речевой ресурс и подключить его с помощью Speech Studio.
 
-1. Выполните эти инструкции, чтобы [зарегистрировать учетную запись Azure](get-started.md#try-the-speech-service-using-a-new-azure-account) и [создать речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure). Убедитесь, что для ценовой категории задано значение **S0**. Если вы используете один из нейронных голосов, убедитесь, что вы создаете ресурс в [поддерживаемом регионе](regions.md#standard-and-neural-voices).
+1. Выполните эти инструкции, чтобы [зарегистрировать учетную запись Azure](get-started.md#new-resource) и [создать речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure). Убедитесь, что для ценовой категории задано значение **S0**. Если вы используете один из нейронных голосов, убедитесь, что вы создаете ресурс в [поддерживаемом регионе](regions.md#standard-and-neural-voices).
 2. Войдите в службу [создания звукового содержимого](https://aka.ms/audiocontentcreation).
 3. Выберите существующий проект или нажмите кнопку **создать**.
 4. Вы можете изменить подписку в любое время с помощью параметра **Параметры** , расположенного в верхней панели навигации.

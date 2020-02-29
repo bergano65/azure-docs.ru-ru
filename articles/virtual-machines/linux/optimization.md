@@ -1,5 +1,5 @@
 ---
-title: Оптимизация ВМ Linux в Azure
+title: Оптимизация виртуальной машины Linux в Azure
 description: В этой статье приводятся советы по оптимизации, которые помогут вам настроить виртуальную машину Linux так, чтобы обеспечить ее оптимальную производительность в Azure.
 keywords: виртуальная машина linux,linux виртуальная машина,виртуальная машина ubuntu
 services: virtual-machines-linux
@@ -16,18 +16,18 @@ ms.topic: article
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: a042e768ef6693d2ced6d679947a6fe321d259bf
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: a80446317a289f27cdbbff3b2939cfe0db45748f
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934725"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77918059"
 ---
-# <a name="optimize-your-linux-vm-on-azure"></a>Оптимизация ВМ Linux в Azure
+# <a name="optimize-your-linux-vm-on-azure"></a>Оптимизация виртуальной машины Linux в Azure
 Вы можете легко создать виртуальную машину (VM) Linux с помощью портала или командной строки. В этом руководстве показано, как при помощи настроек оптимизировать производительность VM на платформе Microsoft Azure. В этой статье описывается виртуальная машина Ubuntu Server, но вы можете также создавать виртуальные машины Linux, используя [собственные образы в качестве шаблонов](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
 
-## <a name="prerequisites"></a>Технические условия
-В этой статье предполагается, что у вас уже есть действующая подписка Azure ([бесплатная пробная подписка](https://azure.microsoft.com/pricing/free-trial/)), в которой подготовлена виртуальная машина. Прежде чем [создавать виртуальную машину](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure, выполнив команду [az login](/cli/azure/reference-index).
+## <a name="prerequisites"></a>Предварительные требования
+В этой статье предполагается, что у вас уже есть действующая подписка Azure ([бесплатная пробная подписка](https://azure.microsoft.com/pricing/free-trial/)), в которой подготовлена виртуальная машина. Прежде чем [создавать виртуальную машину](/cli/azure/install-az-cli2), установите последнюю версию [Azure CLI](/cli/azure/reference-index) и войдите в учетную запись Azure, выполнив команду [az login](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="azure-os-disk"></a>Диск ОС в Azure
 У созданной в Azure виртуальной машины Linux будет два диска: **/dev/sda** (диск операционной системы) и **/dev/sdb** (временный диск).  Не используйте основной диск ОС ( **/dev/sda**) для чего-либо, кроме операционной системы, так как он оптимизирован для быстрой загрузки виртуальной машины и не обеспечивает высокую производительность при рабочих нагрузках. К виртуальной машине можно подключить один или несколько дисков, чтобы создать постоянное оптимизированное хранилище данных. 
@@ -93,7 +93,7 @@ noop [deadline] cfq
 ```
 
 ### <a name="change-the-current-device-devsda-of-io-scheduling-algorithm"></a>Изменение текущего устройства (/dev/sda) алгоритма планирования операций ввода-вывода
-Используйте следующие команды:  
+Выполните следующие команды.  
 
 ```bash
 azureuser@myVM:~$ sudo su -
@@ -135,5 +135,4 @@ echo 'echo noop >/sys/block/sda/queue/scheduler' >> /etc/rc.local
 Полезные ссылки на дополнительные ресурсы:
 
 * [Руководство пользователя агента Linux для Azure](../extensions/agent-linux.md)
-* [Оптимизация производительности MySQL в виртуальных машинах Azure Linux](classic/optimize-mysql.md)
 * [Настройка программного RAID-массива в Linux](configure-raid.md)

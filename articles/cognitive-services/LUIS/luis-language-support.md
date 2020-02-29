@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: diberry
-ms.openlocfilehash: f6b95f76af4c83459ac81ff1703d8588f649326c
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 4b6d954d06f09bef5240bddc4860ddbc83513d69
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74970548"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916597"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -30,16 +30,16 @@ ms.locfileid: "74970548"
 
 Служба LUIS распознает фрагменты речи на следующих языках:
 
-| Язык |Язык  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
+| Язык |Локаль  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
 | Арабский (Предварительная версия — современные стандартные арабские) |`ar-AR`|-|-|-|-|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
 | Нидерландский |`nl-NL` |✔|  -   |-|✔|
-| французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
-| французский (Канада) |`fr-CA` |-|   -   |-|✔|
+| Французский (Франция) |`fr-FR` |✔| ✔ |✔ |✔|
+| Французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | Немецкий |`de-DE` |✔| ✔ |✔ |✔|
-| Хинди | `hi-IN`|-|-|-|-|
+| Hindi | `hi-IN`|-|-|-|-|
 | Итальянский |`it-IT` |✔| ✔ |✔|✔|
 | *[Японский](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |✔|   -   |-|Только ключевая фраза|
@@ -61,7 +61,7 @@ ms.locfileid: "74970548"
 [!INCLUDE [Text Analytics support notes](includes/text-analytics-support-notes.md)]
 
 ### <a name="speech-api-supported-languages"></a>Поддерживаемые языки API речи
-Сведения о языках режима диктовки службы речи см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/Speech/api-reference-rest/supportedlanguages##interactive-and-dictation-mode) для службы "Речь".
+Сведения о языках режима диктовки службы речи см. в разделе [Поддерживаемые языки](../speech-service/speech-to-text.md) для службы "Речь".
 
 ### <a name="bing-spell-check-supported-languages"></a>Поддерживаемые языки проверки орфографии Bing
 Список поддерживаемых языков и состояний см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages) проверки орфографии Bing.
@@ -86,7 +86,7 @@ ms.locfileid: "74970548"
 |Французский (fr-FR)|✔||||
 |Французский (fr-CA)|✔||||
 |Немецкий|||✔|✔|
-| Хинди |✔|-|-|-|-|
+| Hindi |✔|-|-|-|-|
 |Итальянский|✔||||
 |Японский||||✔|
 |Корейский||✔||✔|
@@ -98,7 +98,7 @@ ms.locfileid: "74970548"
 
 Следующие языки и региональные параметры имеют пользовательские версии маркеров:
 
-|Язык и региональные параметры|Версия|Цель|
+|Язык и региональные параметры|Версия|Назначение|
 |--|--|--|
 |Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь вводит `Ich fahre einen krankenwagen` как utterance, он включается `Ich fahre einen kranken wagen`. Разрешение маркировки `kranken` и `wagen` независимо от разных сущностей.|
 |Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance, он остается единственным маркером. Таким образом `krankenwagen` помечается как единая сущность. |

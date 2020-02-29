@@ -7,20 +7,20 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 006e1fb3fcef1ebcd0e09dffb79149e75eec622a
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: f099546ced64bd911916164879cd533329761c66
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76713171"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77914676"
 ---
-# <a name="client-libraries-for-connecting-to-azure-analysis-services"></a>Клиентские библиотеки для подключения к службам Azure Analysis Services
+# <a name="client-libraries-for-connecting-to-analysis-services"></a>Клиентские библиотеки для подключения к Analysis Services
 
 Клиентские библиотеки требуются клиентским приложениям и средствам для подключения к серверам служб Analysis Services. Клиентские приложения Майкрософт, такие как Power BI Desktop, Excel, SQL Server Management Studio (SSMS) и Analysis Services Projects для Visual Studio, устанавливают все три клиентские библиотеки и обновляют их вместе с обычными обновлениями приложений. В некоторых случаях может потребоваться установить более новые версии клиентских библиотек. Для пользовательских клиентских приложений также должны быть установлены клиентские библиотеки.
 
 ## <a name="download-the-latest-client-libraries-windows-installer"></a>Скачивание последних версий клиентских библиотек (установщик Windows)  
 
-|Скачивание  |Версия продукта  | 
+|Загрузить  |Версия продукта  | 
 |---------|---------|
 |[MSOLAP (amd64)](https://go.microsoft.com/fwlink/?linkid=829576)    |    15.1.21.27    |
 |[MSOLAP (x86)](https://go.microsoft.com/fwlink/?linkid=829575)     |     15.1.21.27       |
@@ -58,7 +58,7 @@ ms.locfileid: "76713171"
 
 ### <a name="amo"></a>AMO  
 
- AMO — это управляемая клиентская библиотека, которая используется для администрирования сервера и определения данных. Она устанавливается и используется средствами и клиентскими приложениями. Например, SQL Server Management Studio (SSMS) использует AMO для подключения к службам Analysis Services. Подключение с помощью объектов AMO предельно просто. Достаточно лишь указать `"data source=\<servername>"`. Когда подключение будет установлено, этот API можно использовать для работы с коллекциями баз данных и основными объектами. Как Visual Studio, так и SSMS используют объекты AMO для подключения к экземпляру Analysis Services.  
+ Объекты AMO — это управляемая клиентская библиотека, используемая для администрирования сервера и определения данных. Она устанавливается и используется средствами и клиентскими приложениями. Например, SQL Server Management Studio (SSMS) использует AMO для подключения к службам Analysis Services. Подключение с помощью объектов AMO предельно просто. Достаточно лишь указать `"data source=\<servername>"`. Когда подключение будет установлено, этот API можно использовать для работы с коллекциями баз данных и основными объектами. Как Visual Studio, так и SSMS используют объекты AMO для подключения к экземпляру Analysis Services.  
 
   
 ### <a name="adomd"></a>ADOMD
@@ -90,6 +90,6 @@ ms.locfileid: "76713171"
 2. Щелкните правой кнопкой мыши **Microsoft.AnalysisServices.AdomdClient** > **Свойства** > **Сведения**.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Подключение с помощью Excel](analysis-services-connect-excel.md)    
 [Подключение с помощью Power BI](analysis-services-connect-pbi.md)

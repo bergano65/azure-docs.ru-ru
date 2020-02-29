@@ -14,17 +14,20 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: sajagtap
-ms.openlocfilehash: a8560df6120dd773e13dbfc7427d9a16e6f6c83b
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 83fe7867a3128ac82597c028452863a1ad681ace
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895997"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77914336"
 ---
 # <a name="use-azure-media-content-moderator-to-detect-possible-adult-and-racy-content"></a>Использование Azure Media Content Moderator для обнаружения материалов, потенциально предназначенных для взрослых и носящих непристойный характер 
 
-## <a name="overview"></a>Краткое описание
-Обработчик мультимедиа **Azure Media Content Moderator** позволяет использовать автоматические средства модерации видео. Например, вашим специалистам-модераторам может потребоваться обнаружить содержимое для взрослых и непристойные материалы в видео и просмотреть помеченное содержимое.
+> [!NOTE]
+> Обработчик мультимедиа **Azure media Content Moderator** будет снят с учета. Дату выбытия см. в разделе [устаревшие компоненты](legacy-components.md) .
+
+## <a name="overview"></a>Обзор
+Обработчик мультимедиа **Azure Media Content Moderator** позволяет использовать автоматические средства модерации видео. Например, вы хотите, чтобы ваша команда модераторов определила в видеороликах материалы, потенциально предназначенные для взрослых и носящие непристойный характер, а затем проверила помеченное содержимое.
 
 Сейчас обработчик мультимедиа **Azure Media Content Moderator** доступен в предварительной версии.
 
@@ -46,9 +49,9 @@ ms.locfileid: "74895997"
 
 | Элемент | Описание |
 | --- | --- |
-| версия |Версия Content Moderator. |
+| version |Версия Content Moderator. |
 | timescale |Количество тактов в секунду видео. |
-| offset |Смещение времени для меток времени. В API поиска видео версии 1.0 это значение всегда равно 0. В будущем оно может измениться. |
+| смещение |Смещение времени для меток времени. В API поиска видео версии 1.0 это значение всегда равно 0. В будущем оно может измениться. |
 | framerate |Количество кадров в секунду видео. |
 | width |Ширина выходного видеокадра в пикселях.|
 | height |Высота выходного видеокадра в пикселях.|
@@ -59,7 +62,7 @@ ms.locfileid: "74895997"
 
 |Элемент|Описание|
 |---|---|
-| start |Время начала первого события в тактах. |
+| начало |Время начала первого события в тактах. |
 | длительность |Продолжительность фрагмента в тактах. |
 | interval |Интервал каждой записи события внутри фрагмента в тактах. |
 | [events](#events-json-elements) |Каждое событие представляет собой клип, который состоит из опорных кадров, обнаруженных и отслеженных в пределах заданного периода времени. Оно представляет собой массив событий. Внешний массив представляет один интервал времени. Внутренний массив состоит из нуля или более событий, которые выполнялись в этот момент времени.|
@@ -71,8 +74,8 @@ ms.locfileid: "74895997"
 | reviewRecommended | `true` или `false` в зависимости от того, превышают ли значения **adultScore** и **racyScore** внутренние пороговые значения. |
 | adultScore | Оценка достоверности для материалов, потенциально предназначенных для взрослых. Рассчитывается по шкале от 0,00 до 0,99. |
 | racyScore | Оценка достоверности для материалов, потенциально носящих непристойный характер. Рассчитывается по шкале от 0,00 до 0,99. |
-| index | Индекс кадра по шкале от первого до последнего кадра. |
-| Timestamp | Расположение кадра в тактах. |
+| индекс | Индекс кадра по шкале от первого до последнего кадра. |
+| timestamp | Расположение кадра в тактах. |
 | shotIndex | Индекс родительского снимка. |
 
 
@@ -220,7 +223,7 @@ The following example of a Content Moderator JSON output was truncated.
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки
@@ -228,7 +231,7 @@ The following example of a Content Moderator JSON output was truncated.
 
 [Демонстрационные материалы для медиааналитики Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о [решении для модерации и проверки видео](../../cognitive-services/Content-Moderator/video-moderation-human-review.md) с помощью Content Moderator.
 

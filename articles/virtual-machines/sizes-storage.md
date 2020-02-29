@@ -3,7 +3,7 @@ title: Размеры виртуальных машин Azure — хранили
 description: Список различных размеров, оптимизированных для хранилища, доступных для виртуальных машин в Azure. Выводит сведения о количестве виртуальных ЦП, дисков данных и сетевых карт, а также пропускную способность хранилища и пропускную способность сети для размеров в этой серии.
 services: virtual-machines
 documentationcenter: ''
-author: jonbeck7
+author: sasha-melamed
 manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
@@ -14,12 +14,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: jonbeck
-ms.openlocfilehash: 17cceb04d3d6e559cd6f2b49674f6d408a0650a4
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 5a611dc288fc18a14f6000689f9f9b49d4b3feb8
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77492998"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77913342"
 ---
 # <a name="storage-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в хранилище
 
@@ -36,7 +36,7 @@ ms.locfileid: "77492998"
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

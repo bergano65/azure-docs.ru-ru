@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 02/27/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ee32b13820cb50fc1649672b78b34e7e293d65b5
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: b905591266b90e5bba83e7c74b27e7f6b3cab610
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849088"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77912551"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
@@ -35,65 +35,124 @@ ms.locfileid: "76849088"
 * ExternalLoginSSOSessionProvider
 * SamlSSOSessionProvider
 
-Классы управления единым входом указываются с помощью элемента `<UseTechnicalProfileForSessionManagement ReferenceId=“{ID}" />` технического профиля.
+Классы управления единым входом указываются с помощью элемента `<UseTechnicalProfileForSessionManagement ReferenceId="{ID}" />` технического профиля.
 
-## <a name="noopssosessionprovider"></a>NoopSSOSessionProvider
+## <a name="input-claims"></a>Входящие утверждения
 
-Как можно понять из названия, этот поставщик не выполняет никаких действий. Его можно использовать для подавления реакции службы единого входа на события для конкретного технического профиля.
+Элемент `InputClaims` пуст или отсутствует. 
 
-## <a name="defaultssosessionprovider"></a>DefaultSSOSessionProvider
+## <a name="persisted-claims"></a>Материализованные утверждения
 
-Этот поставщик можно использовать для хранения утверждений в сеансе. Как правило, этот поставщик указывается в техническом профиле, используемом для управления локальными учетными записями. При использовании DefaultSSOSessionProvider для хранения утверждений в рамках сеанса необходимо убедиться в следующем. Все утверждения, которые будут возвращены в приложение или использоваться в соответствии с предварительными условиями в последующих шагах, должны храниться в сеансе или считываться из из профиля пользователя в каталоге. Это убережет вас от сбоя аутентификации из-за отсутствующих утверждений.
+Утверждения, которые должны быть возвращены в приложение или использоваться предусловиями в последующих шагах, должны храниться в сеансе или дополняться считыванием из профиля пользователя в каталоге. Использование материализованных утверждений гарантирует, что пути проверки подлинности не будут завершаться сбоем в случае отсутствия утверждений. Чтобы добавить утверждения в сеанс, используйте элемент `<PersistedClaims>` технического профиля. При использовании этого поставщика для повторного заполнения данных сеанса сохраненные утверждения добавляются в контейнер утверждений. 
+
+## <a name="output-claims"></a>Исходящие утверждения
+
+`<OutputClaims>` используется для получения утверждений из сеанса.
+
+## <a name="session-providers"></a>Поставщики сеансов
+
+### <a name="noopssosessionprovider"></a>NoopSSOSessionProvider
+
+Как можно понять из названия, этот поставщик не выполняет никаких действий. Его можно использовать для подавления реакции службы единого входа на события для конкретного технического профиля. Следующий `SM-Noop` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).  
+
+```XML
+<TechnicalProfile Id="SM-Noop">
+  <DisplayName>Noop Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.NoopSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+</TechnicalProfile>
+```
+
+### <a name="defaultssosessionprovider"></a>DefaultSSOSessionProvider
+
+Этот поставщик можно использовать для хранения утверждений в сеансе. Как правило, этот поставщик указывается в техническом профиле, используемом для управления локальными учетными записями. Следующий `SM-AAD` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack). 
 
 ```XML
 <TechnicalProfile Id="SM-AAD">
-    <DisplayName>Session Mananagement Provider</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <PersistedClaims>
-        <PersistedClaim ClaimTypeReferenceId="objectId" />
-        <PersistedClaim ClaimTypeReferenceId="newUser" />
-        <PersistedClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" />
-    </PersistedClaims>
-    <OutputClaims>
-        <OutputClaim ClaimTypeReferenceId="objectIdFromSession" DefaultValue="true" />
-    </OutputClaims>
+  <DisplayName>Session Mananagement Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <PersistedClaims>
+    <PersistedClaim ClaimTypeReferenceId="objectId" />
+    <PersistedClaim ClaimTypeReferenceId="signInName" />
+    <PersistedClaim ClaimTypeReferenceId="authenticationSource" />
+    <PersistedClaim ClaimTypeReferenceId="identityProvider" />
+    <PersistedClaim ClaimTypeReferenceId="newUser" />
+    <PersistedClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" />
+  </PersistedClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="objectIdFromSession" DefaultValue="true"/>
+  </OutputClaims>
 </TechnicalProfile>
 ```
 
-Чтобы добавить утверждения в сеанс, используйте элемент `<PersistedClaims>` технического профиля. При использовании этого поставщика для повторного заполнения данных сеанса сохраненные утверждения добавляются в контейнер утверждений. `<OutputClaims>` используется для получения утверждений из сеанса.
+Следующий `SM-MFA` технический профиль включен в `SocialAndLocalAccountsWithMfa`[начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack) . Этот технический профиль управляет сеансом многофакторной проверки подлинности. 
 
-## <a name="externalloginssosessionprovider"></a>ExternalLoginSSOSessionProvider
+```XML
+<TechnicalProfile Id="SM-MFA">
+  <DisplayName>Session Mananagement Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <PersistedClaims>
+    <PersistedClaim ClaimTypeReferenceId="Verified.strongAuthenticationPhoneNumber" />
+  </PersistedClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="isActiveMFASession" DefaultValue="true"/>
+  </OutputClaims>
+</TechnicalProfile>
+```
 
-Этот поставщик используется для подавления экрана "Выбор поставщика удостоверений". Обычно он указывается в техническом профиле, настроенном для внешнего поставщика удостоверений, например Facebook.
+### <a name="externalloginssosessionprovider"></a>ExternalLoginSSOSessionProvider
+
+Этот поставщик используется для подавления экрана "Выбор поставщика удостоверений". Обычно он указывается в техническом профиле, настроенном для внешнего поставщика удостоверений, например Facebook. Следующий `SM-SocialLogin` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
 
 ```XML
 <TechnicalProfile Id="SM-SocialLogin">
-    <DisplayName>Session Mananagement Provider</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.ExternalLoginSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <DisplayName>Session Mananagement Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.ExternalLoginSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="AlwaysFetchClaimsFromProvider">true</Item>
+  </Metadata>
+  <PersistedClaims>
+    <PersistedClaim ClaimTypeReferenceId="AlternativeSecurityId" />
+  </PersistedClaims>
 </TechnicalProfile>
 ```
 
-## <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
+#### <a name="metadata"></a>Метаданные
+        
+| Атрибут | Обязательно | Описание|
+| --- | --- | --- |
+| алвайсфетчклаимсфромпровидер | Нет | В настоящее время не используется, может игнорироваться. |
 
-Этот поставщик используется для управления сеансами SAML в Azure AD B2C между приложениями, а также сеансами внешних поставщиков удостоверений SAML.
+### <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
+
+Этот поставщик используется для управления Azure AD B2C сеансов SAML между приложением проверяющей стороны или федеративным поставщиком удостоверений SAML. При использовании поставщика единого входа для хранения сеанса поставщика удостоверений SAML для `IncludeSessionIndex` и `RegisterServiceProviders` необходимо задать значение `false`. В [техническом профиле SAML](saml-technical-profile.md)используется следующий `SM-Saml-idp` технический профиль.
 
 ```XML
-<TechnicalProfile Id="SM-Reflector-SAML">
-    <DisplayName>Session Management Provider</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Metadata>
-        <Item Key="IncludeSessionIndex">false</Item>
-        <Item Key="RegisterServiceProviders">false</Item>
-    </Metadata>
+<TechnicalProfile Id="SM-Saml-idp">
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="IncludeSessionIndex">false</Item>
+    <Item Key="RegisterServiceProviders">false</Item>
+  </Metadata>
 </TechnicalProfile>
 ```
 
-Технический профиль содержит два элемента метаданных.
+При использовании поставщика для хранения сеанса SAML B2C `IncludeSessionIndex` и `RegisterServiceProviders` должны иметь значение `true`. Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
+ 
+[Технический профиль SAML Issuer](connect-with-saml-service-providers.md) использует следующий `SM-Saml-idp` технический профиль
 
-| Элемент | Значение по умолчанию | Возможные значения | Description
-| --- | --- | --- | --- |
-| IncludeSessionIndex | true | true/false | Указывает поставщику, что следует сохранить индекс сеанса. |
-| RegisterServiceProviders | true | true/false | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. |
+```XML
+<TechnicalProfile Id="SM-Saml-sp">
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+</TechnicalProfile>
+```
+#### <a name="metadata"></a>Метаданные
+        
+| Атрибут | Обязательно | Описание|
+| --- | --- | --- |
+| IncludeSessionIndex | Нет | Указывает поставщику, что следует сохранить индекс сеанса. Возможные значения: `true` (по умолчанию) или `false`.|
+| RegisterServiceProviders | Нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
 
-При использовании поставщика для хранения сеанса поставщика удостоверений SAML указанные выше элементы должны иметь значение false. При использовании поставщика для хранения сеанса SAML B2C указанные выше элементы должны иметь значение true или должны быть опущены, так как значением по умолчанию является true. Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
+
 

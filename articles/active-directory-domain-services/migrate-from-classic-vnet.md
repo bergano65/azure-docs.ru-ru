@@ -9,18 +9,23 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/22/2020
 ms.author: iainfou
-ms.openlocfilehash: 114a460b3db67af278f813de2e7a18d571cf3c28
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: e7caacf23cb489da6f9f85748ae839bc4babff8e
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77613436"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77917311"
 ---
 # <a name="migrate-azure-ad-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>Перенесите доменные службы Azure AD из классической модели виртуальной сети в диспетчер ресурсов
 
 Azure Active Directory доменных служб (AD DS) поддерживает одноразовое перемещение для клиентов, в настоящее время использующих классическую модель виртуальной сети для модели диспетчер ресурсов виртуальной сети. Управляемые домены Azure AD DS, использующие модель развертывания диспетчер ресурсов, предоставляют дополнительные функции, такие как детально детализированная политика паролей, журналы аудита и защита от блокировки учетных записей.
 
 В этой статье описываются преимущества и рекомендации по миграции, а также необходимые действия для успешного переноса существующего экземпляра AD DS Azure.
+
+> [!NOTE]
+> В 2017 доменные службы Azure AD стали доступны для размещения в Azure Resource Manager сети. С тех пор мы смогли создать более безопасную службу с помощью современных возможностей Azure Resource Manager. Поскольку Azure Resource Manager развертывания полностью заменяют классические развертывания, развертывание классической виртуальной сети Azure AD DS будет прекращено 1 марта 2023 г.
+>
+> Дополнительные сведения см. в [официальном](https://azure.microsoft.com/updates/we-are-retiring-azure-ad-domain-services-classic-vnet-support-on-march-1-2023/) объявлении об устаревании.
 
 ## <a name="overview-of-the-migration-process"></a>Обзор процесса миграции
 

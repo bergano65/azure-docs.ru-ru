@@ -11,18 +11,18 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: iainfou
-ms.openlocfilehash: a25337cad39674bc6016f67bdc46a804518d0b03
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 3abd9835c1cf750b926f49442f3e34e96dc9c865
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509025"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77917362"
 ---
 # <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 
 На этой странице приведены ответы на часто задаваемые вопросы об Azure Active Directory доменных службах.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 * [Можно ли создать несколько управляемых доменов для одного каталога Azure AD?](#can-i-create-multiple-managed-domains-for-a-single-azure-ad-directory)
 * [Можно ли включить доменные службы Azure AD в классической виртуальной сети?](#can-i-enable-azure-ad-domain-services-in-a-classic-virtual-network)
@@ -41,13 +41,15 @@ ms.locfileid: "76509025"
 Нет. Для одного каталога Azure AD можно создать только один управляемый домен, поддерживаемый доменными службами Azure AD.
 
 ### <a name="can-i-enable-azure-ad-domain-services-in-a-classic-virtual-network"></a>Можно ли включить доменные службы Azure AD в классической виртуальной сети?
-Классические виртуальные сети не поддерживаются для новых развертываний. Существующие управляемые домены, развернутые в классических виртуальных сетях, продолжают поддерживаться. Вы также можете [перенести доменные службы Azure AD из классической модели виртуальной сети в Диспетчер ресурсов (Предварительная версия)](migrate-from-classic-vnet.md).
+Классические виртуальные сети не поддерживаются для новых развертываний. Существующие управляемые домены, развернутые в классических виртуальных сетях, продолжают поддерживаться до тех пор, пока они не будут сняты с 1 марта 2023 г. Для существующих развертываний можно [перенести доменные службы Azure AD из классической модели виртуальной сети в Диспетчер ресурсов](migrate-from-classic-vnet.md).
+
+Дополнительные сведения см. в [официальном](https://azure.microsoft.com/updates/we-are-retiring-azure-ad-domain-services-classic-vnet-support-on-march-1-2023/)объявлении об устаревании.
 
 ### <a name="can-i-enable-azure-ad-domain-services-in-an-azure-resource-manager-virtual-network"></a>Можно ли включить доменные службы Azure AD в виртуальной сети Azure Resource Manager?
 Да. Доменные службы Azure AD можно включить в виртуальной сети Azure Resource Manager. Классические виртуальные сети Azure больше не доступны при создании управляемого домена.
 
 ### <a name="can-i-migrate-my-existing-managed-domain-from-a-classic-virtual-network-to-a-resource-manager-virtual-network"></a>Можно ли перенести существующий управляемый домен из классической виртуальной сети в диспетчер ресурсовную виртуальную сеть?
-Да, эта функция доступна в предварительной версии. Дополнительные сведения см. [в статье миграция доменных служб Azure AD из классической модели виртуальной сети в Диспетчер ресурсов (Предварительная версия)](migrate-from-classic-vnet.md).
+Да. Дополнительные сведения см. [в статье перенос доменных служб Azure AD из классической модели виртуальной сети в Диспетчер ресурсов](migrate-from-classic-vnet.md).
 
 ### <a name="can-i-enable-azure-ad-domain-services-in-an-azure-csp-cloud-solution-provider-subscription"></a>Можно ли включить доменные службы Azure AD в подписку Azure CSP (поставщик облачных решений)?
 Да. Дополнительные сведения см. [в статье Включение доменных служб Azure AD в подписках Azure CSP](csp.md).
@@ -139,11 +141,11 @@ ms.locfileid: "76509025"
 ### <a name="what-azure-regions-is-the-service-available-in"></a>В каких регионах Azure доступна служба?
 Перейдите на страницу [служб Azure по регионам](https://azure.microsoft.com/regions/#services/), чтобы просмотреть список регионов Azure, в которых доступны доменные службы Azure AD.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о доменных службах Azure AD см. в статье [что такое Azure Active Directory доменных служб?](overview.md).
 

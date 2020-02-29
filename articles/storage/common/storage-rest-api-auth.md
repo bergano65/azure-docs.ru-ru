@@ -10,18 +10,18 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: b49b3187f9178012131d793a7762ae470b0ea540
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: f5c6125b850062450516e7fc0b19c2e0d5d6f577
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965723"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916070"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
 В этой статье показано, как вызывать интерфейсы API службы хранилища Azure, в том числе как сформировать заголовок авторизации. Она написана с точки зрения разработчика, который ничего не знает о других частях и не имеет представления о том, как выполнить вызов RESTFUL. После того как вы узнаете, как вызвать операцию RESTFUL, можно использовать эти знания для использования любых других операций службы хранилища Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Пример приложения перечисляет контейнеры больших двоичных объектов для учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее.
 
@@ -175,7 +175,7 @@ httpRequestMessage.Headers.Authorization = AzureStorageAuthenticationHelper.GetA
 }
 ```
 
-Если во время вызова SendAsync вы запускаете средство прослушивания сети, например [Fiddler](https://www.telerik.com/fiddler), вы можете увидеть сведения о запросе и ответе. Давай посмотрим. Имя учетной записи хранения — *contosorest*.
+Если во время вызова SendAsync вы запускаете средство прослушивания сети, например [Fiddler](https://www.telerik.com/fiddler), вы можете увидеть сведения о запросе и ответе. Давайте посмотрим. Имя учетной записи хранения — *contosorest*.
 
 **Запрос:**
 
@@ -410,7 +410,7 @@ internal static AuthenticationHeaderValue GetAuthorizationHeader(
 
     // This is the actual header that will be added to the list of request headers.
     AuthenticationHeaderValue authHV = new AuthenticationHeaderValue("SharedKey",
-        storageAccountName + ":" + Convert.ToBase64String(SHA256.ComputeHash(SignatureBytes)));
+        storageAccountName + ":" + signature);
     return authHV;
 }
 ```
@@ -567,7 +567,7 @@ Content-Length: 1135
 
 В этой статье вы узнали, как выполнить запрос к хранилищу BLOB-объектов REST API. С помощью запроса можно получить список контейнеров или список больших двоичных объектов в контейнере. Вы узнали, как создать подпись авторизации для вызова REST API и как использовать ее в запросе RESTFUL. Наконец, вы узнали, как проверить ответ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Blob Service REST API](/rest/api/storageservices/blob-service-rest-api) (API-интерфейс REST службы BLOB-объектов)
 - [File Service REST API](/rest/api/storageservices/file-service-rest-api) (API-интерфейс REST файловой службы)

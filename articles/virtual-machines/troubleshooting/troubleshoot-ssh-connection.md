@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: f0a79fb0f90a633095343c162ccdc80ebc48f1d4
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 1194b2d90e5a12b1ecf3664a48055ca763f31a4f
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747668"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919453"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
 В этой статье вы узнаете, как найти и исправить проблемы, возникающие из-за ошибок Secure Shell (SSH), сбоев SSH-соединения или отказа SSH при попытке подключения к виртуальной машине Linux. Для устранения неполадок и решения проблем с подключением можно воспользоваться порталом Azure, Azure CLI или расширением для доступа к виртуальной машине для Linux.
@@ -46,7 +46,7 @@ ms.locfileid: "75747668"
 Вы можете сбросить учетные данные или конфигурацию SSH одним из следующих методов:
 
 * [Портал Azure](#use-the-azure-portal) отлично подходит, когда нужно быстро сбросить конфигурацию или ключ SSH, а у вас не установлены инструменты Azure.
-* [Последовательная консоль виртуальной машины Azure](https://aka.ms/serialconsolelinux) . последовательная консоль виртуальной машины будет работать независимо от конфигурации SSH и предоставит вам интерактивную консоль для виртуальной машины. На самом деле, «не может SSH» — именно то, что последовательное консоль разрабатывалась для решения этой проблемы. Дополнительные сведения приведены ниже.
+* [Последовательная консоль виртуальной машины Azure](https://aka.ms/serialconsolelinux) . последовательная консоль виртуальной машины будет работать независимо от конфигурации SSH и предоставит вам интерактивную консоль для виртуальной машины. На самом деле, «не может SSH» — именно то, что последовательное консоль разрабатывалась для решения этой проблемы. Дополнительные сведения см. ниже.
 * [Azure CLI](#use-the-azure-cli). Если вы уже открыли командную строку, быстро сбросьте конфигурацию SSH или учетные данные. Если вы работаете на классической виртуальной машине, можно использовать [классический интерфейс командной строки Azure](#use-the-azure-classic-cli).
 * [Расширение Azure VMAccessForLinux.](#use-the-vmaccess-extension) Создайте и повторно используйте файлы определения JSON для сброса учетных данных пользователя или конфигурации SSH.
 
@@ -63,7 +63,7 @@ ms.locfileid: "75747668"
 Чтобы сбросить конфигурацию SSH, выберите `Reset configuration only` в разделе **Режим**, как показано на предыдущем снимке экрана, а затем — **Обновление**. Сделав это, попытайтесь снова войти в виртуальною машину.
 
 ### <a name="a-idreset-credentials-reset-ssh-credentials-for-a-user"></a><a id="reset-credentials" />Сброс учетных данных SSH пользователя
-Чтобы сбросить учетные данные имеющегося пользователя, в разделе **Режим** выберите `Reset SSH public key` или `Reset password`, как на приведенном выше снимке экрана. Укажите имя пользователя и ключ SSH или новый пароль, а затем щелкните **Обновление**.
+Чтобы сбросить учетные данные имеющегося пользователя, в разделе `Reset SSH public key`Режим`Reset password` выберите **или**, как на приведенном выше снимке экрана. Укажите имя пользователя и ключ SSH или новый пароль, а затем щелкните **Обновление**.
 
 Кроме того, в этом меню можно создать пользователя с привилегиями sudo на виртуальной машине. Введите новое имя пользователя и соответствующий пароль или ключ SSH, а затем щелкните **Обновление**.
 
@@ -208,7 +208,7 @@ azure vm reset-access --resource-group myResourceGroup --name myVM \
 
 ![Перезапуск виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/restart-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы перезапустить виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -216,6 +216,9 @@ az vm restart --resource-group myResourceGroup --name myVM
 ```
 
 ### <a name="azure-classic-cli"></a>Классический Azure CLI
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 В следующем примере перезапускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -235,7 +238,7 @@ azure vm restart --resource-group myResourceGroup --name myVM
 
 ![Повторное развертывание виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/redeploy-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы повторно развернуть виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -243,6 +246,7 @@ az vm redeploy --resource-group myResourceGroup --name myVM
 ```
 
 ### <a name="azure-classic-cli"></a>Классический Azure CLI
+
 В следующем примере повторно развертывается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -250,6 +254,9 @@ azure vm redeploy --resource-group myResourceGroup --name myVM
 ```
 
 ## <a name="vms-created-by-using-the-classic-deployment-model"></a>Виртуальные машины, созданные с использованием классической модели развертывания
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 Для устранения наиболее распространенных сбоев SSH-подключения для виртуальных машин, созданных с помощью классической модели развертывания, попробуйте выполнить указанные ниже действия. После выполнения каждого шага попробуйте подключиться к виртуальной машине еще раз.
 
 * Выполните сброс удаленного доступа на [портале Azure](https://portal.azure.com). На портале Azure выберите свою виртуальную машину и щелкните **Reset Remote...** (Удаленный сброс...).
