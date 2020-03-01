@@ -6,17 +6,17 @@ metadata:
   description: Распознаватель документов Azure — это служба когнитивных вычислений, использующая технологию машинного обучения для идентификации и извлечения пар "ключ — значение" и данных таблиц из документов-форм. Затем эта служба выводит структурированные данные, которые включают в себя связи в исходном файле. Неконтролируемое обучение помогает модели распознавать структуру текста и данные полей без необходимости вручную помечать данные или писать много кода. Вы также можете использовать контролируемое обучение с использованием помечаемых вручную данных. Модели, обученные с использованием помеченных данных, отличаются высокой производительностью. Также они позволяют обрабатывать более сложные документы.
   services: cognitive-services
   ms.service: cognitive-services
-  ms.subservice: form-recognizer
+  ms.subservice: forms-recognizer
   ms.topic: landing-page
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 09/05/2019
-  ms.openlocfilehash: 1fe0aee8967a0072a7ae01abc5791e7a3fd0834d
-  ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+  ms.openlocfilehash: de869fd9beb66a4122c1204648d17cff480e4b7f
+  ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/13/2020
-  ms.locfileid: "75921490"
+  ms.lasthandoff: 03/01/2020
+  ms.locfileid: "78206492"
 landingContent:
 - title: Сведения о Распознавателе документов
   linkLists:
