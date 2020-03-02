@@ -504,6 +504,8 @@
           href: ./kafka/apache-kafka-quickstart-resource-manager-template.md
     - name: Учебники
       items:
+        - name: "Создание кластера Apache Kafka\_— Azure CLI"
+          href: ./kafka/tutorial-cli-rest-proxy.md
         - name: Использование API объекта-производителя и объекта-получателя Apache Kafka
           href: ./kafka/apache-kafka-producer-consumer-api.md
         - name: Разработка приложения с помощью API потоков Apache Kafka
@@ -548,8 +550,6 @@
               href: ./kafka/apache-kafka-mirroring.md
             - name: Анализ журналов Apache Kafka
               href: ./kafka/apache-kafka-log-analytics-operations-management.md
-            - name: Создание собственных ключей
-              href: ./kafka/apache-kafka-byok.md
             - name: Шифрование и аутентификация SSL
               href: ./kafka/apache-kafka-ssl-encryption-authentication.md
         - name: Диагностика

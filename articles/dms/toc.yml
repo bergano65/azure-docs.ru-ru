@@ -77,6 +77,8 @@
           href: known-issues-azure-postgresql-online.md
         - name: Известные проблемы с миграцией из Oracle в Базу данных Azure для PostgreSQL (на отдельный сервер) по сети
           href: known-issues-oracle-azure-postgresql-online.md
+        - name: 'Известные проблемы: миграция из MongoDB в API для MongoDB Azure Cosmos DB'
+          href: tutorial-mongodb-cosmos-db.md
         - name: Известные проблемы с использованием гибридного режима
           href: known-issues-dms-hybrid-mode.md
     - name: Видео

@@ -10,15 +10,15 @@ metadata:
   ms.topic: hub-page
   author: rolyon
   ms.author: rolyon
-  ms.date: 02/24/2020
+  ms.date: 02/27/2020
   featureFlags:
   - clicktale
-  ms.openlocfilehash: 9615b3df4c48ef073413ce0ecdec93264a0b9711
-  ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+  ms.openlocfilehash: 89c9b59a1f258e57adc98a917160d2ed2d6f4e33
+  ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/26/2020
-  ms.locfileid: "77622626"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "78163919"
 highlightedContent:
   items:
   - title: Руководство по началу работы для разработчиков Azure
@@ -135,7 +135,6 @@ productDirectory:
     azureCategories:
     - featured
     - ai-machine-learning
-    - containers
     url: cognitive-services/index.yml
   - title: API Компьютерного зрения
     summary: Извлечение важнейшей информации из изображений
@@ -778,7 +777,6 @@ productDirectory:
     imageSrc: https://static.docs.com/ui/media/product/azure/active-directory-b2c.svg
     azureCategories:
     - identity
-    - security
     url: active-directory-b2c/index.yml
   - title: Доменные службы Azure Active Directory
     summary: Присоединение виртуальных машин Azure к домену без контроллеров домена
@@ -849,7 +847,7 @@ productDirectory:
     - mobile
     - web
     url: azure-maps/index.yml
-  - title: Предварительная версия Azure Sphere
+  - title: Azure Sphere
     summary: Безопасное подключение устройств под управлением микроконтроллеров из кремниевых ИС в облако
     imageSrc: https://static.docs.com/ui/media/product/azure/sphere.svg
     azureCategories:
@@ -938,6 +936,12 @@ productDirectory:
     azureCategories:
     - management-and-governance
     url: azure-resource-manager/index.yml
+  - title: Шаблоны Azure Resource Manager
+    summary: Предоставление инфраструктуры как кода для всех ресурсов Azure с помощью Resource Manager
+    imageSrc: https://static.docs.com/ui/media/product/azure/resource-groups.svg
+    azureCategories:
+    - management-and-governance
+    url: azure-resource-manager/templates/index.yml
   - title: Работоспособность служб Azure
     summary: Персонализированные инструкции и поддержка при неполадках в работе служб Azure
     imageSrc: https://static.docs.com/ui/media/product/azure/service-health.svg
@@ -964,7 +968,7 @@ productDirectory:
     - management-and-governance
     - migration
     url: cost-management-billing/index.yml
-  - title: Портал Azure
+  - title: Портал Microsoft Azure
     summary: Создание, контроль и мониторинг всех продуктов Azure с помощью одной унифицированной консоли
     imageSrc: https://static.docs.com/ui/media/product/azure/azure.svg
     azureCategories:
@@ -1103,7 +1107,7 @@ productDirectory:
     azureCategories:
     - networking
     url: internet-analyzer/index.yml
-  - title: Приватный канал (предварительная версия)
+  - title: Приватный канал Azure
     summary: Частный доступ к службам, размещенным на платформе Azure, с сохранением данных в сети Майкрософт
     imageSrc: https://static.docs.com/ui/media/product/azure/private-link.svg
     azureCategories:
@@ -1263,6 +1267,9 @@ tools:
   - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     url: https://docs.microsoft.com/cli/azure/
+  - title: Шаблоны ARM
+    imageSrc: https://static.docs.com/ui/media/product/azure/resource-groups.svg
+    url: azure-resource-manager/templates/index.yml
   - title: Jenkins
     imageSrc: https://docs.microsoft.com/media/logos/logo_jenkins.svg
     url: jenkins/index.yml
@@ -1272,9 +1279,6 @@ tools:
   - title: Ansible
     imageSrc: ./media/index/ansible.svg
     url: ansible/index.yml
-  - title: Chef
-    imageSrc: ./chef/media/Chef_Regular.svg
-    url: chef/index.yml
 additionalContent:
   sections:
   - title: Национальные облака

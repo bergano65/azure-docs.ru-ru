@@ -103,7 +103,7 @@
   items:
     - name: Планирование и настройка
       items:
-        - name: Виртуальные сети
+        - name: Планирование виртуальных сетей
           href: virtual-network-vnet-plan-design-arm.md
         - name: Разрешение имен для виртуальных машин и облачных служб
           href: virtual-networks-name-resolution-for-vms-and-role-instances.md
@@ -209,41 +209,64 @@
               href: virtual-network-public-ip-address.md
             - name: Управление префиксами общедоступных IP-адресов
               href: manage-public-ip-address-prefix.md
-            - name: Создание и удаление IP-адресов в сетевых картах
+            - name: Добавление и IP-адресов в сетевые карты и их удаление оттуда
               href: virtual-network-network-interface-addresses.md
     - name: Безопасность
       items:
-        - name: Управление защитой от атак DDoS
-          href: manage-ddos-protection.md
-        - name: Управление группами безопасности сети
-          href: manage-network-security-group.md
-        - name: Подключение партнеров к стандарту Защиты от атак DDoS
-          href: ddos-protection-partner-onboarding.md
-        - name: Фильтрация сетевого трафика с помощью групп безопасности сети
+        - name: Ограничение доступа с помощью групп безопасности сети
           items:
+            - name: Портал Azure
+              href: tutorial-restrict-network-access-to-resources.md
+            - name: Azure PowerShell
+              href: tutorial-restrict-network-access-to-resources-powershell.md
+            - name: Azure CLI
+              href: tutorial-restrict-network-access-to-resources-cli.md
+            - name: Управление группами безопасности сети
+              href: manage-network-security-group.md
+        - name: Фильтрация сетевого трафика
+          items:
+            - name: Портал Azure
+              href: tutorial-filter-network-traffic.md
             - name: Azure PowerShell
               href: tutorial-filter-network-traffic-powershell.md
             - name: Azure CLI
               href: tutorial-filter-network-traffic-cli.md
-        - name: Маршрутизация трафика с помощью NVA
+        - name: Сетевая изоляция
           items:
+            - name: Использование частных конечных точек
+              items:
+                - name: Портал Azure
+                  href: ../private-link/create-private-endpoint-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+                - name: Azure PowerShell
+                  href: ../private-link/create-private-endpoint-powershell.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+                - name: Azure CLI
+                  href: ../private-link/create-private-endpoint-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: Использование конечных точек службы
+              items:
+                - name: Портал Azure
+                  href: tutorial-restrict-network-access-to-resources.md
+                - name: Azure PowerShell
+                  href: tutorial-restrict-network-access-to-resources-powershell.md
+                - name: Azure CLI
+                  href: tutorial-restrict-network-access-to-resources-cli.md
+            - name: Создание политик конечных точек
+              href: virtual-network-service-endpoint-policies-portal.md
+        - name: Маршрутизация сетевого трафика
+          items:
+            - name: Портал Azure
+              href: tutorial-create-route-table-portal.md
             - name: Azure PowerShell
               href: tutorial-create-route-table-powershell.md
             - name: Azure CLI
               href: tutorial-create-route-table-cli.md
             - name: Ansible
               href: /azure/ansible/ansible-create-configure-route-table
-              maintainContext: true
-        - name: Управление таблицами маршрутов
-          href: manage-route-table.md
-        - name: Использование конечных точек служб
-          items:
-            - name: Azure PowerShell
-              href: tutorial-restrict-network-access-to-resources-powershell.md
-            - name: Azure CLI
-              href: tutorial-restrict-network-access-to-resources-cli.md
-        - name: Создание политик для конечных точек служб с помощью портала
-          href: virtual-network-service-endpoint-policies-portal.md
+            - name: Управление таблицами маршрутов
+              href: manage-route-table.md
+        - name: Управление защитой от атак DDoS
+          href: manage-ddos-protection.md
+        - name: Подключение партнеров к стандарту Защиты от атак DDoS
+          href: ddos-protection-partner-onboarding.md
         - name: Сценарии обеспечения безопасности
           items:
             - name: Защита сетей с использованием виртуальных устройств
@@ -272,6 +295,12 @@
               href: virtual-networks-static-private-ip-arm-ps.md
             - name: Azure CLI
               href: virtual-networks-static-private-ip-arm-cli.md
+        - name: Создание виртуальной машины с использованием статического частного IP-адреса (классическая модель)
+          items:
+            - name: Портал Azure
+              href: virtual-networks-static-private-ip-classic-pportal.md
+            - name: Azure PowerShell
+              href: virtual-networks-static-private-ip-classic-ps.md
         - name: Создание виртуальной машины (несколько IP-адресов)
           items:
             - name: Портал Azure

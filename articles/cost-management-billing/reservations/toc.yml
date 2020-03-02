@@ -12,6 +12,8 @@
           href: prepay-sql-data-warehouse-charges.md
         - name: Приобретение резервирования виртуальной машины
           href: ../../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
+        - name: Приобретение резервирования Выделенного узла
+          href: ../../virtual-machines/prepay-dedicated-hosts-reserved-instances.md
         - name: Хранилище дисков Azure
           href: ../../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/billing/TOC.json
         - name: Приобретение резервирования службы хранилища Azure
@@ -42,10 +44,12 @@
           href: view-reservations.md
     - name: Основные понятия
       items:
-        - name: Скидки на зарезервированный экземпляр виртуальной машины
-          href: ../manage/understand-vm-reservation-charges.md
         - name: Создание рекомендаций по резервированию
           href: reserved-instance-purchase-recommendations.md
+        - name: Скидки на зарезервированный экземпляр виртуальной машины
+          href: ../manage/understand-vm-reservation-charges.md
+        - name: Зарезервированные скидки Выделенного узла
+          href: billing-understand-dedicated-hosts-reservation-charges.md
         - name: Скидки на зарезервированную емкость службы хранилища Azure
           href: understand-storage-charges.md
         - name: Скидки на резервирование Хранилища дисков Azure

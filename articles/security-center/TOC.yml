@@ -6,8 +6,16 @@
       href: security-center-intro.md
     - name: Поддерживаемые платформы
       href: security-center-os-coverage.md
-    - name: Поддерживаемые функции
-      href: security-center-services.md
+    - name: Функции Центра безопасности
+      items:
+        - name: Покрытие компонентов для виртуальных машин
+          href: security-center-services.md
+        - name: Покрытие компонентов для ресурсов Azure PaaS
+          href: features-paas.md
+    - name: Рекомендации по обеспечению безопасности
+      href: recommendations-reference.md
+    - name: Оповещения системы безопасности и цепочка нарушения безопасности намерений
+      href: alerts-reference.md
 - name: Краткие руководства
   expanded: true
   items:

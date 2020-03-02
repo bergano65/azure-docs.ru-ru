@@ -1,6 +1,7 @@
 - name: Документация по Распознавателю документов
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Что такое Распознаватель документов?
       href: overview.md
@@ -45,6 +46,8 @@
   items:
     - name: Создание набора данных для обучения
       href: build-training-data-set.md
+    - name: Развертывание примера средства создания меток
+      href: deploy-label-tool.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров

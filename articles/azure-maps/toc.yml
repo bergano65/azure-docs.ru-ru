@@ -181,6 +181,8 @@
           href: display-feature-information-android.md
         - name: Добавление слоя фрагментов
           href: how-to-add-tile-layer-android-map.md
+        - name: Отображение данных о трафике
+          href: how-to-show-traffic-android.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
 - name: Справочник

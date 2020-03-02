@@ -47,6 +47,8 @@
       items:
         - name: Обновление компонента
           href: azure-ad-roles-features.md
+        - name: "Использование PowerShell с ролями Azure\_AD"
+          href: powershell-for-azure-ad-roles.md
         - name: Назначение ролей
           href: pim-how-to-add-role-to-user.md
         - name: Утверждение запросов

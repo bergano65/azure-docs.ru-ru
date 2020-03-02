@@ -35,7 +35,7 @@
       href: search-get-started-python.md
 - name: Учебники
   items:
-    - name: 'Создание первого приложения на C#'
+    - name: 'Создание приложения C#'
       items:
         - name: "1.\_Страница базового поиска"
           href: tutorial-csharp-create-first-app.md
@@ -47,13 +47,15 @@
           href: tutorial-csharp-facets.md
         - name: "5.\_Добавление упорядочивания результатов"
           href: tutorial-csharp-orders.md
-    - name: Индексирование в Базе данных SQL Azure
-      href: search-indexer-tutorial.md
-    - name: Индексация больших двоичных объектов JSON в Azure
-      href: search-semi-structured-data.md
-    - name: Индексирование нескольких источников данных Azure
-      href: tutorial-multiple-data-sources.md
-    - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
+    - name: Индексация данных Azure
+      items:
+        - name: Индексирование в Базе данных SQL Azure
+          href: search-indexer-tutorial.md
+        - name: Индексация больших двоичных объектов JSON в Azure
+          href: search-semi-structured-data.md
+        - name: Индексирование нескольких источников данных Azure
+          href: tutorial-multiple-data-sources.md
+    - name: Использование AI для создания содержимого
       items:
         - name: 'C#'
           href: cognitive-search-tutorial-blob-dotnet.md

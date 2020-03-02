@@ -11,53 +11,17 @@
     - name: С использованием портала QnA Maker
       items:
         - name: 1. Создание базы знаний
-          href: quickstarts/create-publish-knowledge-base.md
+          href: Quickstarts/create-publish-knowledge-base.md
         - name: 2. Добавление вопросов с использованием метаданных
-          href: quickstarts/add-question-metadata-portal.md
+          href: Quickstarts/add-question-metadata-portal.md
         - name: 3. Получение ответа с помощью Postman или cURL
           href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: Тестирование с помощью пакетного файла
       href: Quickstarts/batch-testing.md
-    - name: С помощью REST API
-      items:
-        - name: Создание базы знаний
-          items:
-            - name: 'C#'
-              href: Quickstarts/create-new-kb-csharp.md
-            - name: Go
-              href: Quickstarts/create-new-kb-go.md
-            - name: Java
-              href: Quickstarts/create-new-kb-java.md
-            - name: Node.js
-              href: Quickstarts/publish-kb-nodejs.md
-            - name: Python
-              href: Quickstarts/create-new-kb-python.md
-        - name: Публикация базы знаний
-          items:
-            - name: 'C#'
-              href: Quickstarts/publish-kb-csharp.md
-            - name: Go
-              href: Quickstarts/publish-kb-go.md
-            - name: Java
-              href: Quickstarts/publish-kb-java.md
-            - name: Node.js
-              href: 'Quickstarts/publish-kb-nodejs.md#publish-a-knowledge-base'
-            - name: Python
-              href: Quickstarts/publish-kb-python.md
-        - name: Получение ответов
-          items:
-            - name: 'C#'
-              href: Quickstarts/get-answer-from-knowledge-base-csharp.md
-            - name: Go
-              href: Quickstarts/get-answer-from-knowledge-base-go.md
-            - name: Java
-              href: Quickstarts/get-answer-from-knowledge-base-java.md
-            - name: Node.js
-              href: Quickstarts/get-answer-from-knowledge-base-nodejs.md
-            - name: Python
-              href: Quickstarts/get-answer-from-knowledge-base-python.md
+    - name: Использование REST
+      href: Quickstarts/quickstart-rest-curl.md
     - name: Использование пакета SDK
-      href: ./Quickstarts/quickstart-sdk.md
+      href: Quickstarts/quickstart-sdk.md
 - name: Учебники
   items:
     - name: Создание базы знаний и ответ на вопрос

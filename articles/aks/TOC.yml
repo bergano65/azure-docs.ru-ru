@@ -375,6 +375,8 @@
           href: kube-advisor-tool.md
         - name: Доступ к узлам SSH
           href: ssh.md
+        - name: Средства оценки производительности Linux
+          href: troubleshoot-linux.md
 - name: Справочник
   items:
     - name: Azure CLI

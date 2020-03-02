@@ -19,6 +19,8 @@
           href: container-registry-get-started-powershell.md
         - name: "Отправка событий в Сетку событий\_— CLI"
           href: container-registry-event-grid-quickstart.md
+        - name: "Создание и отправка образов Java\_— CLI"
+          href: container-registry-java-quickstart.md
     - name: Учебники
       expanded: false
       items:

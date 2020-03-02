@@ -10,12 +10,12 @@ ms.devlang: devops
 ms.topic: landing-page
 ms.date: 06/19/2017
 ms.author: gwallace
-ms.openlocfilehash: 4f4849139f0e5c5a8672b9364f7acc03cff6c948
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 429494b829d1307b4f89dbf746d24135a4322a97
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77605570"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78164463"
 ---
 <div class="content">
    <h1>Docker в Azure</h1>   
@@ -31,9 +31,8 @@ Docker — это популярная платформа управления �
 <h2>Пошаговые инструкции</h2>
 <p>Дополнительные сведения об использовании Docker в приложении и в качестве части конвейера CI/CD:</p>
 <ol>
-  <li><a href="/azure/app-service/containers/tutorial-python-postgresql-app">Создание решений Python и PostgreSQL с помощью Docker</a></li>
-  <li><a href="/azure/container-service/container-service-docker-swarm-mode-setup-ci-cd-acs-engine">CI/CD с помощью Docker Swarm и Azure DevOps Services</a></li>
-  <li><a href="/azure/jenkins/tutorial-jenkins-github-docker-cicd">Интеграция Docker, Jenkins и виртуальных машин Linux</a></li>
+  <li><a href="/azure/app-service/containers/tutorial-python-postgresql-app">Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure</a></li>
+  <li><a href="/azure/jenkins/tutorial-jenkins-github-docker-cicd">Создание инфраструктуры развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker</a></li>
 </ol>
 <h2>Ресурсы</h2>
 <p>См. следующие ссылки на дополнительные справочные материалы и средства для работы с Docker в Azure.</p>
