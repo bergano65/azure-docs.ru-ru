@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: helohr
-ms.openlocfilehash: a29081f77587a96dc48930eab359610a42fc0be5
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 9c738c5b7f233ffa34296eed67eb0f5497f737fc
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73605817"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206679"
 ---
 # <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
 
@@ -25,11 +25,11 @@ ms.locfileid: "73605817"
 
 Хотя любой браузер, поддерживающий HTML5, должен работать, корпорация Майкрософт официально поддерживает следующие операционные системы и браузеры.
 
-| "Обзор"           | Поддерживаемая ОС                     | Примечания               |
+| Браузер.           | Поддерживаемая операционная система                     | Примечания               |
 |-------------------|----------------------------------|---------------------|
 | Microsoft Edge    | Windows                          |                     |
 | Internet Explorer | Windows                          |                     |
-| Apple Safari;      | macOS                            |                     |
+| Apple Safari      | macOS                            |                     |
 | Mozilla Firefox   | Windows, macOS, Linux            | Версия 55 или более поздняя |
 | Google Chrome     | Windows, macOS, Linux, ОС Chrome |                     |
 
@@ -41,3 +41,7 @@ ms.locfileid: "73605817"
 >Если вы уже вошли с учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуальных рабочих столов Windows, необходимо выйти из системы или использовать частное окно браузера.
 
 После входа в систему вы увидите список ресурсов. Чтобы запустить ресурсы, выберите их, как обычное приложение, на вкладке **все ресурсы** .
+
+## <a name="next-steps"></a>Следующие шаги
+
+Дополнительные сведения об использовании веб-клиента см. в статье [Приступая к работе с веб-клиентом](https://go.microsoft.com/fwlink/?linkid=2120256).

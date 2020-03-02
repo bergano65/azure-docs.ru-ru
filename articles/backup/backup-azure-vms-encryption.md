@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление зашифрованных виртуальных машин Azure с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: 3719f26211677a1b726d3c3dc1d217fb58db1fb2
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: a3976cc83f749b1abe00cef3f5bf867ffbc30ab6
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77583180"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206696"
 ---
 # <a name="back-up-and-restore-encrypted-azure-vm"></a>Резервное копирование и восстановление зашифрованной виртуальной машины Azure
 
@@ -30,7 +30,7 @@ Azure Backup можете выполнять резервное копирова
 **Неуправляемых** | Да | Да
 **Управляемых**  | Да | Да
 
-- Дополнительные сведения о [ADE](../security/azure-security-disk-encryption-overview.md), [Key Vault](../key-vault/key-vault-overview.md)и [ключи обмена ключами](https://docs.microsoft.com/azure/virtual-machine-scale-sets/disk-encryption-key-vault#set-up-a-key-encryption-key-kek/).
+- Дополнительные сведения о [ADE](../security/azure-security-disk-encryption-overview.md), [Key Vault](../key-vault/key-vault-overview.md)и [ключи обмена ключами](https://docs.microsoft.com/azure/virtual-machine-scale-sets/disk-encryption-key-vault#set-up-a-key-encryption-key-kek).
 - Ознакомьтесь с [вопросами и](../security/azure-security-disk-encryption-faq.md) ответами по шифрованию дисков виртуальной машины Azure.
 
 ### <a name="limitations"></a>Ограничения

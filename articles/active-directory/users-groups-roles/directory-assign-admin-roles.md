@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: reference
-ms.date: 11/12/2019
+ms.date: 02/28/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b813c1caa02ce3ffd3ab0579849dff47252e7d63
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: d024382f816e98fb5cb83331dd417f0c41362bc4
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77559170"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78207053"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "77559170"
 
 Пользователи, которым назначена роль глобального администратора, могут читать и изменять все административные параметры в вашей организации Azure AD. По умолчанию пользователю, который подписывается на подписку Azure, назначается роль глобального администратора для Организации Azure AD. Только глобальные администраторы и администраторы привилегированных ролей могут делегировать роли администратора. Чтобы снизить риск для вашего бизнеса, рекомендуется назначить эту роль минимально возможным людям в Организации.
 
-Рекомендуется назначить эту роль менее чем 5 людям в вашей организации. При наличии более пяти пользователей, назначенных роли глобального администратора в Организации, ниже приведены некоторые способы снижения ее использования.
+Рекомендуется назначить эту роль меньшему числу пользователей в Организации. При наличии более пяти администраторов, назначенных роли глобального администратора в Организации, ниже приведены некоторые способы снижения ее использования.
 
 ### <a name="find-the-role-you-need"></a>Поиск нужной роли
 
@@ -238,7 +238,7 @@ ms.locfileid: "77559170"
 >- [Портал Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) . Глобальный считыватель не может прочитать режим подготовки для корпоративного приложения.
 >- [Центр администрирования M365](https://admin.microsoft.com/Adminportal/Home#/homepage) — глобальный модуль чтения не может читать запросы на хранилище клиентов. **На левой** панели центра администрирования M365 не находится вкладка " **запросы к защищенному хранилищем для клиентов** ".
 >- [M365 Security Center](https://security.microsoft.com/homepage) -Global Reader не может читать метки чувствительности и хранения. На левой панели центра безопасности M365 не найдены **метки конфиденциальности**, **метки хранения**и **аналитика меток** .
->- [Office Центр безопасности и соответствия требованиям](https://sip.protection.office.com/homepage) — глобальный считыватель не может читать журналы аудита SCC или выполнять поиск содержимого.
+>- [Office Центр безопасности и соответствия требованиям](https://sip.protection.office.com/homepage) — глобальный считыватель не может читать журналы аудита SCC, выполнять поиск содержимого или просматривать результаты безопасности.
 >- [Центр администрирования групп](https://admin.teams.microsoft.com) — глобальный модуль чтения не может читать **жизненный цикл групп**, **аналитические отчеты &** , **Управление устройствами с IP-телефонами** и **Каталог приложений**.
 >- [Privileged Access Management (PAM)](https://docs.microsoft.com/office365/securitycompliance/privileged-access-management-overview) не поддерживает роль глобального читателя.
 >- [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/what-is-information-protection) -Global Reader поддерживается только [для централизованной отчетности](https://docs.microsoft.com/azure/information-protection/reports-aip) , и если ваша организация Azure AD не находится на [единой платформе меток](https://docs.microsoft.com/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
@@ -1012,7 +1012,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. AAD. B2C/Идентитипровидерс/Аллтаскс | Прочтите и настройте поставщики удостоверений в Azure Active Directory B2C. |
 
 ### <a name="global-reader-permissions"></a>Глобальные разрешения на чтение
-Может читать все, что может быть глобальным администратором, но не изменять ничего. 
+Может читать все, что может быть глобальным администратором, но не изменять ничего.
 
 > [!NOTE]
 > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании [роли](#global-reader) выше.

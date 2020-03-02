@@ -4,12 +4,12 @@ description: Узнайте, как можно использовать Azure Ba
 ms.reviewer: saurse
 ms.topic: conceptual
 ms.date: 05/17/2018
-ms.openlocfilehash: 60295d1c534dbd1181533190df260ed4507ec11f
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 1359616e074f36a1324a418d5b2c889076ced52d
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78197133"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206764"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Рабочий процесс автономного резервного копирования в Azure Backup
 
@@ -42,7 +42,7 @@ ms.locfileid: "78197133"
 
 [!INCLUDE [backup-upgrade-mars-agent.md](../../includes/backup-upgrade-mars-agent.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
   > [!NOTE]
   > Следующие предварительные требования и рабочий процесс применяются только к автономному резервному копированию файлов и папок с помощью [последнего агента служб восстановления Azure](https://aka.ms/azurebackup_agent). Сведения о выполнении автономного резервного копирования для рабочих нагрузок с помощью System Center DPM или Azure Backup Server см. в разделе [Рабочий процесс автономного резервного копирования для DPM и Azure Backup Server](backup-azure-backup-server-import-export-.md).
@@ -116,7 +116,7 @@ ms.locfileid: "78197133"
 
 Служебная программа *AzureOfflineBackupDiskPrep* выполняет подготовку дисков SATA, которые отправляются в ближайший центр обработки данных Azure. Эта служебная программа доступна в каталоге установки агента Azure Backup по следующему пути:
 
-    *\Microsoft Azure Recovery Services Agent\Utils\\*
+```*\Microsoft Azure Recovery Services Agent\Utils\\*```
 
 1. Перейдите в каталог и скопируйте каталог *AzureOfflineBackupDiskPrep* на другой компьютер, на котором подключены диски SATA. На компьютере с подключенными дисками SATA убедитесь, что:
 
@@ -133,7 +133,7 @@ ms.locfileid: "78197133"
 
     ```.\AzureOfflineBackupDiskPrep.exe s:<Staging Location Path>```
 
-    | Параметр | Description |
+    | Параметр | Описание |
     | --- | --- |
     | s:&lt;*путь_к_промежуточному_расположению*&gt; |Этот обязательный ввод используется для указания пути к промежуточному расположению, введенному в рабочем процессе в разделе "Запуск автономной архивации". |
     | p:&lt;*путь_к_файлу_параметров_публикации*&gt; |Этот необязательный ввод используется для указания пути к файлу параметров публикации Azure, введенному в рабочем процессе в разделе "Запуск автономной архивации". |
@@ -144,7 +144,7 @@ ms.locfileid: "78197133"
 
 1. Введите букву подключенного диска (без двоеточия), который нужно подготовить для передачи в Azure.
 1. При появлении запроса подтвердите форматирование диска.
-1. Вам будет предложено войти в подписку Azure. Введите свои учетные данные.
+1. Вам будет предложено войти в подписку Azure. Введите учетные данные.
 
     ![Вход в подписку Azure](./media/backup-azure-backup-import-export/signindiskprep.png) <br/>
 
@@ -216,6 +216,6 @@ ms.locfileid: "78197133"
 
 После завершения начальной архивации можно безопасно удалить данные, импортированные в контейнер хранилища Azure, и данные резервных копий в промежуточном расположении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Вопросы о рабочем процессе службы импорта и экспорта Azure см. в статье [Использование службы импорт и экспорт Microsoft Azure для перемещения данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).

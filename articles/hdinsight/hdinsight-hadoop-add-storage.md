@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 6ad583fdb880e36e6ac9c2dfda56bb68378ea598
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 87eb04b7323186175195babf6a602fa12d25176f
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314013"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206713"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -21,13 +21,13 @@ ms.locfileid: "76314013"
 > [!IMPORTANT]  
 > Сведения в этом документе посвящены добавлению дополнительных учетных записей хранения в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Имя и ключ учетной записи хранения. См. [раздел Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md).
 * При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 При обработке скрипт выполняет следующие действия.
 
@@ -44,14 +44,14 @@ ms.locfileid: "76314013"
 > [!WARNING]  
 > Использование учетной записи хранения, расположение которой отличается от расположения кластера HDInsight, не поддерживается.
 
-## <a name="add-storage-account"></a>Добавление учетной записи хранения
+## <a name="add-storage-account"></a>Добавление учетной записи хранилища
 
-Используйте [действие скрипта](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster) , чтобы применить изменения со следующими соображениями.
+Используйте [действие скрипта](hdinsight-hadoop-customize-cluster-linux.md#script-action-to-a-running-cluster) , чтобы применить изменения со следующими соображениями.
 
 |Свойство | Значение |
 |---|---|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`|
-|Типы узлов|Head|
+|Типы узлов|Заголовок|
 |Параметры|`-p` `ACCOUNTKEY` `ACCOUNTNAME` (необязательно)|
 
 * `ACCOUNTNAME` — это имя учетной записи хранения, добавляемой в кластер HDInsight.
@@ -64,7 +64,7 @@ ms.locfileid: "76314013"
 
 Чтобы проверить дополнительное хранилище, используйте один из методов, показанных ниже.
 
-### <a name="powershell"></a>Powershell
+### <a name="powershell"></a>PowerShell
 
 Скрипт вернет имена учетных записей хранения, связанные с данным кластером. Замените `CLUSTERNAME` фактическим именем кластера, а затем запустите скрипт.
 
@@ -141,6 +141,6 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 
 Если учетная запись хранения и кластер HDInsight расположены в разных регионах, в ваш счет за использование Azure будет включена дополнительная плата за исходящий трафик. Когда данные покидают центр обработки данных, исходящий трафик тарифицируется. Эта плата взимается, даже если трафик предназначается для другого центра обработки данных Azure в другом регионе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали, как добавлять дополнительные учетные записи хранения в существующий кластер HDInsight. Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).

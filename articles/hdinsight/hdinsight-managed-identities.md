@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/20/2019
-ms.openlocfilehash: c2b590e623062d5d5ae39261b3b5fa5a37a39122
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: daae9c16797ad9c1b85635f5aec7d0cf884e003f
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77919226"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206016"
 ---
 # <a name="managed-identities-in-azure-hdinsight"></a>Управляемые удостоверения в Azure HDInsight
 
@@ -44,11 +44,11 @@ ms.locfileid: "77919226"
 
 * [Azure Data Lake Storage 2-го поколения](hdinsight-hadoop-use-data-lake-storage-gen2.md#create-a-user-assigned-managed-identity)
 * [Пакет безопасности корпоративного уровня](domain-joined/apache-domain-joined-configure-using-azure-adds.md#create-and-authorize-a-managed-identity)
-* [Создание собственных ключей Kafka (BYOK)](kafka/apache-kafka-byok.md#get-started-with-byok)
+* [Шифрование диска с управляемым клиентом ключом](disk-encryption.md)
 
 ## <a name="faq"></a>Вопросы и ответы
 ### <a name="what-happens-if-i-delete-the-managed-identity-after-the-cluster-creation"></a>Что произойдет, если удалить управляемое удостоверение после создания кластера?
-При необходимости управляемого удостоверения кластеру будут выработаны проблемы. В настоящее время невозможно обновить или изменить управление удостоверение требуется после создания кластера. Поэтому мы рекомендуем убедиться, что управляемое удостоверение не удалено во время выполнения кластера. Кроме того, можно повторно создать кластер и назначить новое управляемое удостоверение.
+При необходимости управляемого удостоверения кластеру будут выработаны проблемы. В настоящее время невозможно обновить или изменить управление удостоверениями после создания кластера. Поэтому мы рекомендуем убедиться, что управляемое удостоверение не удалено во время выполнения кластера. Кроме того, можно повторно создать кластер и назначить новое управляемое удостоверение.
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -3,12 +3,12 @@ title: Сведения о SAP HANA резервного копирования 
 description: В этой статье вы узнаете, как выполнять резервное копирование SAP HANA баз данных, работающих на виртуальных машинах Azure.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 188cef6bc9771f779e3e9c7f7f5fe246e929b68a
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 53fd87f0de48d56d696abcf5484908060225cb3d
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77918518"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78207019"
 ---
 # <a name="about-sap-hana-database-backup-in-azure-vms"></a>Сведения о SAP HANA резервного копирования базы данных на виртуальных машинах Azure
 
@@ -33,7 +33,7 @@ Azure Backup [backint) создание сертифицировано](https://
 
 * Процесс резервного копирования начинается с [создания хранилища служб восстановления](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#create-a-recovery-service-vault) в Azure. Это хранилище будет использоваться для хранения резервных копий и точек восстановления, созданных с течением времени.
 * Виртуальная машина Azure с SAP HANA Server зарегистрирована в хранилище, и будут [обнаружены](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#discover-the-databases)базы данных для резервного копирования. Чтобы служба Azure Backup обнаружила базы данных, необходимо запустить [сценарий](https://aka.ms/scriptforpermsonhana) на сервере Hana в качестве привилегированного пользователя.
-* Этот скрипт создает пользователя **азуревлбаккуфанаусер** DB и соответствующий ключ с тем же именем в **hdbuserstore**. Сведения о том, что делает сценарий, см. в [разделе Настройка разрешений](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#setting-up-permissions) .
+* Этот скрипт создает пользователя **азуревлбаккуфанаусер** DB и соответствующий ключ с тем же именем в **hdbuserstore**. Сведения о том, что делает сценарий, см. в разделе [что такое сценарий предварительной регистрации](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does) .
 * Azure Backup служба теперь устанавливает **подключаемый модуль Azure Backup для Hana** на зарегистрированном SAP HANA сервере.
 * Пользователь **азуревлбаккуфанаусер** DB, созданный сценарием предрегистрации, используется **подключаемым модулем Azure Backup для Hana** для выполнения всех операций резервного копирования и восстановления. При попытке настроить резервное копирование для SAP HANA баз данных без выполнения этого скрипта может появиться следующая ошибка: **усереррорханаскриптнотрун**.
 * Чтобы [настроить резервное копирование](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#configure-backup) для обнаруженных баз данных, выберите необходимую политику архивации и включите резервное копирование.

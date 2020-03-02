@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: ambapat
-ms.openlocfilehash: 9b8f1065660ea8331853f8804e709134fe682ba7
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 0e3246f9da202b54cc0d1285795c25cfafb678d8
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566120"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78207036"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-preview"></a>Импорт ключей, защищенных модулем HSM, в Key Vault (предварительная версия)
 
@@ -90,6 +90,9 @@ KEK должен быть следующим:
 - создано в том же хранилище ключей, в котором планируется импортировать целевой ключ
 - Создан с разрешенными операциями ключей, для которых задано значение `import`
 
+> [!NOTE]
+> KEK должен иметь "import" в качестве единственной допустимой операции ключа. "import" является взаимоисключающим с другими операциями с ключами.
+
 Используйте команду [AZ keyvault Key Create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) , чтобы создать KEK с ключевыми операциями, для которых задано значение `import`. Запишите идентификатор ключа (`kid`), возвращаемый из следующей команды. (Вы будете использовать значение `kid` на [шаге 3](#step-3-generate-and-prepare-your-key-for-transfer).)
 
 ```azurecli
@@ -115,7 +118,7 @@ az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --fil
 > [!NOTE] 
 > Импорт RSA 1 024-разрядных ключей не поддерживается. В настоящее время импорт ключа эллиптической кривой (EC) не поддерживается.
 > 
-> **Известная ошибка**. Импорт целевого ключа RSA 4000 из компании SafeNet Luna HSM завершается сбоем. После устранения проблемы эта статья будет обновлена.
+> **Известная ошибка**. Импорт целевого ключа RSA 4000 из компании SafeNet Luna HSM поддерживается только с микропрограммным обеспечением 7.4.0 или более поздней версии.
 
 ### <a name="step-4-transfer-your-key-to-azure-key-vault"></a>Шаг 4. Перенос ключа в Azure Key Vault
 

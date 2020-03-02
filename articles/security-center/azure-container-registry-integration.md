@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/19/2019
 ms.author: memildin
-ms.openlocfilehash: 7601a5f8abefd88de0f9a3682341c5366eec3fb0
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 069ce6ca1e76a9bd954031708702c973387abbaa
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77431067"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78205999"
 ---
-# <a name="azure-container-registry-integration-with-security-center-preview"></a>Интеграция реестра контейнеров Azure с центром безопасности (Предварительная версия)
+# <a name="azure-container-registry-integration-with-security-center"></a>Интеграция реестра контейнеров Azure с центром безопасности
 
 Реестр контейнеров Azure (запись контроля доступа) — это управляемая частная служба реестра DOCKER, которая хранит образы контейнеров для развертываний Azure и управляет ими в центральном реестре. Он основан на реестре DOCKER с открытым кодом 2,0.
 
@@ -41,7 +41,7 @@ ms.locfileid: "77431067"
 
 ![Общий обзор центра безопасности Azure и реестра контейнеров Azure (записи контроля доступа)](./media/azure-container-registry-integration/aks-acr-integration-detailed.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о функциях безопасности контейнеров центра безопасности см. в следующих статьях:
 

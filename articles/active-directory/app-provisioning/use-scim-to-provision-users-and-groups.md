@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dbe5871a78634d2866ec1a3d1455492762ff2aa
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 11e4768c5cf6df784c8f32aff2f884adfa6b68ab
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77619244"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78204860"
 ---
 # <a name="build-a-scim-endpoint-and-configure-user-provisioning-with-azure-active-directory-azure-ad"></a>Создание конечной точки SCIM и Настройка подготовки пользователей с помощью Azure Active Directory (Azure AD)
 
@@ -60,10 +60,10 @@ SCIM — это стандартизированное определение д
 |loginName|userName|userPrincipalName|
 |firstName|name.givenName|givenName|
 |lastName|Name. lastName|lastName|
-|воркмаил|Сообщения электронной почты [Type EQ "Рабочая"]. Value|Mail|
+|воркмаил|Сообщения электронной почты [Type EQ "Рабочая"]. Value|Почта|
 |manager|manager|manager|
 |tag|urn: IETF: params: scim: схемы: расширение: 2.0: Кустомекстенсион: TAG|extensionAttribute1|
-|status|active|Иссофтделетед (вычисленное значение не хранится на пользователе)|
+|состояние|активно|Иссофтделетед (вычисленное значение не хранится на пользователе)|
 
 Схема, определенная выше, будет представлена с помощью полезных данных JSON ниже. Обратите внимание, что в дополнение к атрибутам, необходимым для приложения, представление JSON содержит обязательные атрибуты "ID", "externalId" и "META".
 
@@ -99,14 +99,14 @@ SCIM — это стандартизированное определение д
 
 | Пользователь Azure Active Directory | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" |
 | --- | --- |
-| IsSoftDeleted |active |
+| IsSoftDeleted |активно |
 |department|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|
 | displayName |displayName |
 |employeeId|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Емплойинумбер|
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |externalId |
 | manager |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер |
 | mobile |phoneNumbers[type eq "mobile"].value |
@@ -124,16 +124,16 @@ SCIM — это стандартизированное определение д
 | Группа Azure Active Directory | urn: IETF: params: scim: схемы: Core: 2.0: Group |
 | --- | --- |
 | displayName |displayName |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |displayName |
-| members |members |
+| члены |члены |
 | objectId |externalId |
 | proxyAddresses |emails[type eq "other"].Value |
 
 В SCIM RFC определено несколько конечных точек. Можно приступить к работе с конечной точкой/User, а затем развернуть отсюда. Конечная точка/Счемас полезна при использовании настраиваемых атрибутов или при частом изменении схемы. Он позволяет клиенту автоматически получать самую последнюю схему. Конечная точка/Булк особенно полезна при поддержке групп. В следующей таблице описаны различные конечные точки, определенные в стандарте SCIM. Конечная точка/Счемас полезна при использовании настраиваемых атрибутов или при частом изменении схемы. Он позволяет клиенту автоматически получать самую последнюю версию схемы. Конечная точка/Булк особенно полезна при поддержке групп. В следующей таблице описаны различные конечные точки, определенные в стандарте SCIM. 
  
 ### <a name="table-4-determine-the-endpoints-that-you-would-like-to-develop"></a>Таблица 4. Определение конечных точек, которые вы хотите разрабатывать
-|ENDPOINT|DESCRIPTION|
+|ENDPOINT|ОПИСАНИЕ|
 |--|--|
 |WMIC|Выполнение операций CRUD над объектом пользователя.|
 |/Group|Выполнение операций CRUD над объектом группы.|
@@ -560,7 +560,7 @@ SCIM — это стандартизированное определение д
 * Обновление запроса исправления группы должно привести к возникновению в ответе *HTTP 204 без содержимого* . Не рекомендуется возвращать текст со списком всех членов.
 * Не требуется поддерживать возврат всех членов группы.
 
-#### <a name="create-group"></a>Создание группы
+#### <a name="create-group"></a>Создать группу
 
 ##### <a name="request-7"></a>Получения
 
@@ -752,7 +752,8 @@ SCIM — это стандартизированное определение д
 
 ## <a name="step-3-build-a-scim-endpoint"></a>Шаг 3. Создание конечной точки SCIM
 
-Создав веб-службу SCIM, которая взаимодействует с Azure Active Directory, можно включить автоматическую подготовку пользователей для практически любого приложения или хранилища удостоверений.
+Теперь, когда вы десиднед схему и поняли реализацию Azure AD SCIM, вы можете приступить к разработке конечной точки SCIM. Вместо того, чтобы начинать с нуля и самостоятельно создавать реализацию, вы можете полагаться на ряд библиотек SCIM с открытым исходным кодом, опубликованных SCIM коммуинти.  
+Исходный [код](https://aka.ms/SCIMReferenceCode) .NET Core, опубликованный группой подготовки Azure AD, — это один из таких ресурсов, который позволяет начать разработку. Создав конечную точку SCIM, вы захотите протестировать ее. Вы можете использовать коллекцию поступающих [тестов](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) , предоставленную как часть кода ссылки, или выполнить с помощью примеров запросов и ответов, приведенных [выше](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#user-operations).  
 
 Это работает следующим образом:
 
@@ -813,582 +814,13 @@ SCIM — это стандартизированное определение д
 
     > [!NOTE]
     > **Проверка подключения** запрашивает конечную точку SCIM для пользователя, который не существует, используя случайный идентификатор GUID в качестве свойства сопоставления, выбранного в конфигурации Azure AD. Ожидаемый правильный ответ — HTTP 200 OK с пустым сообщением ListResponse SCIM.
-
 1. Если попытка подключения к приложению завершилась удачно, нажмите кнопку **сохранить** , чтобы сохранить учетные данные администратора.
 1. В разделе **Сопоставления** доступны на выбор два набора сопоставлений атрибутов: для объектов-пользователей и для объектов групп. Выберите каждый из них, чтобы просмотреть атрибуты, которые синхронизируются из Azure Active Directory с вашим приложением. Атрибуты, выбранные как свойства **Matching**, используются для сопоставления пользователей и групп в вашем приложении для операций обновления. Чтобы зафиксировать изменения, щелкните **Сохранить**.
 1. Поле **Область** в разделе **Параметры** определяет, какие пользователи или группы синхронизируются. Установите флажок **"синхронизировать только назначенные пользователи и группы** (рекомендуется) только для синхронизации пользователей и групп, назначенных на вкладке" **Пользователи и группы** ".
 1. После завершения настройки задайте для параметра **состояние подготовки** значение **вкл**.
 1. Нажмите кнопку **сохранить** , чтобы запустить службу подготовки Azure AD.
-1. Если выполняется синхронизация только назначенных пользователей и групп (рекомендуется), обязательно перейдите на вкладку **Пользователи и группы** и назначьте пользователей или группы, которые требуется синхронизировать.
-
-После запуска начального цикла можно выбрать **журналы аудита** на панели слева, чтобы отслеживать ход выполнения, в котором отображаются все действия, выполняемые службой подготовки в приложении. Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](check-status-user-account-provisioning.md).
-
+1. Если выполняется синхронизация только назначенных пользователей и групп (рекомендуется), обязательно перейдите на вкладку **Пользователи и группы** и назначьте пользователей или группы, которые требуется синхронизировать. После запуска начального цикла можно выбрать **журналы аудита** на панели слева, чтобы отслеживать ход выполнения, в котором отображаются все действия, выполняемые службой подготовки в приложении. Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](check-status-user-account-provisioning.md).
 Наконец, последний этап проверки примера. Откройте файл TargetFile.csv в папке \AzureAD-BYOA-Provisioning-Samples\ProvisioningAgent\bin\Debug на компьютере Windows. Когда процесс подготовки будет запущен, в этом файле отобразятся сведения обо всех пользователях и группах, которые были назначены и подготовлены.
-
-### <a name="development-libraries"></a>Библиотеки для разработчика
-
-Чтобы разработать свою веб-службу, которая соответствует спецификации SCIM, ознакомьтесь с этими библиотеками Майкрософт, которые помогут ускорить процесс разработки.
-
-* Библиотеки Common Language Infrastructure (CLI) для использования с языками, основанными на этой инфраструктуре, например C#. Одна из этих библиотек, Microsoft. SystemForCrossDomainIdentityManagement. Service, объявляет интерфейс Microsoft. SystemForCrossDomainIdentityManagement. IProvider, как показано на следующем рисунке. Разработчик, использующий эти библиотеки, может реализовать класс с этим интерфейсом и обращаться к нему как к поставщику службы. Библиотеки позволяют разработчику развернуть веб-службу, которая соответствует спецификации SCIM. Веб-служба может размещаться либо в службы IIS, либо в любой исполняемой сборке CLI. Запрос преобразовывается в вызовы методов поставщика, которые программирует разработчик для управления хранилищем удостоверений.
-  
-   ![Подразделение: запрос, преобразованный в вызовы методов поставщика](media/use-scim-to-provision-users-and-groups/scim-figure-3.png)
-  
-* [Обработчики ExpressRoute](https://expressjs.com/guide/routing.html) используются для анализа объектов запроса Node.js, которые представляют собой вызовы (как определено в спецификации SCIM), направленные к веб-службе Node.js.
-
-### <a name="building-a-custom-scim-endpoint"></a>Создание пользовательской конечной точки SCIM
-
-Разработчики, использующие библиотеки CLI, могут размещать свои службы в любой исполняемой сборке CLI или в службы IIS. Ниже приведен пример кода для размещения службы в исполняемой сборке по адресу http://localhost:9000: 
-
-```csharp
- private static void Main(string[] arguments)
- {
- // Microsoft.SystemForCrossDomainIdentityManagement.IMonitor, 
- // Microsoft.SystemForCrossDomainIdentityManagement.IProvider and 
- // Microsoft.SystemForCrossDomainIdentityManagement.Service are all defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Service.dll.  
-
- Microsoft.SystemForCrossDomainIdentityManagement.IMonitor monitor = 
-   new DevelopersMonitor();
- Microsoft.SystemForCrossDomainIdentityManagement.IProvider provider = 
-   new DevelopersProvider(arguments[1]);
- Microsoft.SystemForCrossDomainIdentityManagement.Service webService = null;
- try
- {
-     webService = new WebService(monitor, provider);
-     webService.Start("http://localhost:9000");
-
-     Console.ReadKey(true);
- }
- finally
- {
-     if (webService != null)
-     {
-         webService.Dispose();
-         webService = null;
-     }
- }
- }
-
- public class WebService : Microsoft.SystemForCrossDomainIdentityManagement.Service
- {
- private Microsoft.SystemForCrossDomainIdentityManagement.IMonitor monitor;
- private Microsoft.SystemForCrossDomainIdentityManagement.IProvider provider;
-
- public WebService(
-   Microsoft.SystemForCrossDomainIdentityManagement.IMonitor monitoringBehavior, 
-   Microsoft.SystemForCrossDomainIdentityManagement.IProvider providerBehavior)
- {
-     this.monitor = monitoringBehavior;
-     this.provider = providerBehavior;
- }
-
- public override IMonitor MonitoringBehavior
- {
-     get
-     {
-         return this.monitor;
-     }
-
-     set
-     {
-         this.monitor = value;
-     }
- }
-
- public override IProvider ProviderBehavior
- {
-     get
-     {
-         return this.provider;
-     }
-
-     set
-     {
-         this.provider = value;
-     }
- }
- }
-```
-
-Эта служба должна иметь HTTP-адрес и сертификат проверки подлинности сервера одного из следующих корневых центров сертификации: 
-
-* CNNIC;
-* Comodo;
-* CyberTrust;
-* DigiCert;
-* GeoTrust;
-* GlobalSign;
-* Go Daddy;
-* VeriSign;
-* WoSign.
-
-Сертификат проверки подлинности сервера можно привязать к порту на узле Windows с помощью служебной программы сетевой оболочки.
-
-```
-netsh http add sslcert ipport=0.0.0.0:443 certhash=0000000000003ed9cd0c315bbb6dc1c08da5e6 appid={00112233-4455-6677-8899-AABBCCDDEEFF}
-```
-
-Здесь в качестве значения аргумента certhash предоставляется отпечаток сертификата, а в качестве значения аргумента appid — произвольный глобальный уникальный идентификатор.  
-
-Чтобы разместить службу в службы IIS, разработчик должен создать сборку библиотеки кода CLI с классом Startup в пространстве имен по умолчанию для сборки.  Ниже приведен пример такого класса. 
-
-```csharp
- public class Startup
- {
- // Microsoft.SystemForCrossDomainIdentityManagement.IWebApplicationStarter, 
- // Microsoft.SystemForCrossDomainIdentityManagement.IMonitor and  
- // Microsoft.SystemForCrossDomainIdentityManagement.Service are all defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Service.dll.  
-
- Microsoft.SystemForCrossDomainIdentityManagement.IWebApplicationStarter starter;
-
- public Startup()
- {
-     Microsoft.SystemForCrossDomainIdentityManagement.IMonitor monitor = 
-       new DevelopersMonitor();
-     Microsoft.SystemForCrossDomainIdentityManagement.IProvider provider = 
-       new DevelopersProvider();
-     this.starter = 
-       new Microsoft.SystemForCrossDomainIdentityManagement.WebApplicationStarter(
-         provider, 
-         monitor);
- }
-
- public void Configuration(
-   Owin.IAppBuilder builder) // Defined in Owin.dll.  
- {
-     this.starter.ConfigureApplication(builder);
- }
- }
-```
-
-### <a name="handling-endpoint-authentication"></a>Обработка аутентификации на конечной точке
-
-Запросы от Azure Active Directory содержат токен носителя OAuth 2.0.   Любая служба, получающая запрос, должна проверять подлинность издателя как Azure Active Directory ожидаемого клиента Azure Active Directory для доступа к службе API Microsoft Graph.  В маркере поставщик идентифицируется по утверждению ISS, например "ISS": "https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/".  В этом примере базовый адрес значения утверждения, https://sts.windows.net, определяет Azure Active Directory в качестве издателя, а сегмент относительных адресов, (cbb1a5ac-f33b-45fa-9bf5-f37db0fed422), является уникальным идентификатором Azure Active Directory клиента, для которого был выдан маркер. Аудитория для маркера будет ИДЕНТИФИКАТОРом шаблона приложения для приложения в коллекции. Идентификатор шаблона приложения для всех пользовательских приложений — 8adf8e6e-67b2-4cf2-A259-e3dc5476c621. Идентификатор шаблона приложения для каждого приложения в коллекции изменяется. Обратитесь в ProvisioningFeedback@microsoft.com для получения вопросов по ИДЕНТИФИКАТОРу шаблона приложения для приложения из коллекции. Каждое приложение, зарегистрированное в одном клиенте, может получить одно и то же `iss` заявки с запросами SCIM.
-
-   > [!NOTE]
-   > ***Не*** рекомендуется оставлять это поле пустым и использовать маркер, СОЗДАННЫЙ Azure AD. Этот параметр в основном доступен для целей тестирования.
-
-Разработчики, использующие библиотеки CLI, предоставляемые корпорацией Майкрософт для создания службы SCIM, могут проверять подлинность запросов от Azure Active Directory с помощью пакета Microsoft. Owin. Security. ActiveDirectory. для этого выполните следующие действия. 
-
-Во-первых, в поставщике реализуйте свойство Microsoft. SystemForCrossDomainIdentityManagement. IProvider. StartupBehavior, чтобы оно возвращало метод, вызываемый при запуске службы: 
-
-```csharp
-  public override Action<Owin.IAppBuilder, System.Web.Http.HttpConfiguration.HttpConfiguration> StartupBehavior
-  {
-    get
-    {
-      return this.OnServiceStartup;
-    }
-  }
-
-  private void OnServiceStartup(
-    Owin.IAppBuilder applicationBuilder,  // Defined in Owin.dll.  
-    System.Web.Http.HttpConfiguration configuration)  // Defined in System.Web.Http.dll.  
-  {
-  }
-```
-
-Затем добавьте следующий код в этот метод, чтобы любой запрос к любой из конечных точек службы прошел проверку подлинности в соответствии с маркером, выданным Azure Active Directory для указанного клиента, для доступа к службе API Microsoft Graph. 
-
-```csharp
-  private void OnServiceStartup(
-    Owin.IAppBuilder applicationBuilder IAppBuilder applicationBuilder, 
-    System.Web.Http.HttpConfiguration HttpConfiguration configuration)
-  {
-    // IFilter is defined in System.Web.Http.dll.  
-    System.Web.Http.Filters.IFilter authorizationFilter = 
-      new System.Web.Http.AuthorizeAttribute(); // Defined in System.Web.Http.dll.configuration.Filters.Add(authorizationFilter);
-
-    // SystemIdentityModel.Tokens.TokenValidationParameters is defined in    
-    // System.IdentityModel.Token.Jwt.dll.
-    SystemIdentityModel.Tokens.TokenValidationParameters tokenValidationParameters =     
-      new TokenValidationParameters()
-      {
-        ValidAudience = "8adf8e6e-67b2-4cf2-a259-e3dc5476c621"
-      };
-
-    // WindowsAzureActiveDirectoryBearerAuthenticationOptions is defined in 
-    // Microsoft.Owin.Security.ActiveDirectory.dll
-    Microsoft.Owin.Security.ActiveDirectory.
-    WindowsAzureActiveDirectoryBearerAuthenticationOptions authenticationOptions =
-      new WindowsAzureActiveDirectoryBearerAuthenticationOptions()    {
-      TokenValidationParameters = tokenValidationParameters,
-      Tenant = "03F9FCBC-EA7B-46C2-8466-F81917F3C15E" // Substitute the appropriate tenant’s 
-                                                    // identifier for this one.  
-    };
-
-    applicationBuilder.UseWindowsAzureActiveDirectoryBearerAuthentication(authenticationOptions);
-  }
-```
-
-### <a name="handling-provisioning-and-deprovisioning-of-users"></a>Обработка подготовки и отмены подготовки пользователей
-
-***Пример 1. Запрос к службе для соответствующего пользователя***
-
-Azure Active Directory запрашивает службу пользователя, у которого значение атрибута externalId совпадает со значением атрибута mailNickname пользователя Azure AD. Запрос выражается в виде HTTP-запроса (например, в данном примере), где jyoung является примером выражения mailNickname пользователя в Azure Active Directory.
-
->[!NOTE]
-> Это только пример. Не все пользователи будут иметь атрибут mailNickname, а значение, которое пользователь может не быть уникальным в каталоге. Кроме того, атрибут, используемый для сопоставления (в данном случае это externalId), можно настроить в [сопоставлениях атрибутов Azure AD](customize-application-attributes.md).
-
-```
-GET https://.../scim/Users?filter=externalId eq jyoung HTTP/1.1
- Authorization: Bearer ...
-```
-
-Если служба была создана с помощью библиотек CLI, предоставляемых корпорацией Майкрософт для реализации SCIM Services, запрос преобразуется в вызов метода запроса поставщика службы.  Подпись этого метода будет выглядеть так: 
-
-```csharp
- // System.Threading.Tasks.Tasks is defined in mscorlib.dll.  
- // Microsoft.SystemForCrossDomainIdentityManagement.Resource is defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Schemas.  
- // Microsoft.SystemForCrossDomainIdentityManagement.IQueryParameters is defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Protocol.  
-
- System.Threading.Tasks.Task<Microsoft.SystemForCrossDomainIdentityManagement.Resource[]> Query(
-   Microsoft.SystemForCrossDomainIdentityManagement.IQueryParameters parameters, 
-   string correlationIdentifier);
-```
-
-Ниже приводится определение интерфейса Microsoft.SystemForCrossDomainIdentityManagement.IQueryParameters. 
-
-```csharp
- public interface IQueryParameters: 
-   Microsoft.SystemForCrossDomainIdentityManagement.IRetrievalParameters
- {
-     System.Collections.Generic.IReadOnlyCollection <Microsoft.SystemForCrossDomainIdentityManagement.IFilter> AlternateFilters 
-     { get; }
- }
-
- public interface Microsoft.SystemForCrossDomainIdentityManagement.IRetrievalParameters
- {
-   system.Collections.Generic.IReadOnlyCollection<string> ExcludedAttributePaths 
-   { get; }
-   System.Collections.Generic.IReadOnlyCollection<string> RequestedAttributePaths 
-   { get; }
-   string SchemaIdentifier 
-   { get; }
- }
-```
-
-```
-    GET https://.../scim/Users?filter=externalId eq jyoung HTTP/1.1
-    Authorization: Bearer ...
-```
-
-Если служба создана с использованием библиотек Common Language Infrastructure корпорации Майкрософт для реализации служб SCIM, то такой запрос будет преобразован в вызов метода Query поставщика службы.  Подпись этого метода будет выглядеть так: 
-
-```csharp
-  // System.Threading.Tasks.Tasks is defined in mscorlib.dll.  
-  // Microsoft.SystemForCrossDomainIdentityManagement.Resource is defined in 
-  // Microsoft.SystemForCrossDomainIdentityManagement.Schemas.  
-  // Microsoft.SystemForCrossDomainIdentityManagement.IQueryParameters is defined in 
-  // Microsoft.SystemForCrossDomainIdentityManagement.Protocol.  
-
-  System.Threading.Tasks.Task<Microsoft.SystemForCrossDomainIdentityManagement.Resource[]>  Query(
-    Microsoft.SystemForCrossDomainIdentityManagement.IQueryParameters parameters, 
-    string correlationIdentifier);
-```
-
-Ниже приводится определение интерфейса Microsoft.SystemForCrossDomainIdentityManagement.IQueryParameters. 
-
-```csharp
-  public interface IQueryParameters: 
-    Microsoft.SystemForCrossDomainIdentityManagement.IRetrievalParameters
-  {
-      System.Collections.Generic.IReadOnlyCollection  <Microsoft.SystemForCrossDomainIdentityManagement.IFilter> AlternateFilters 
-      { get; }
-  }
-
-  public interface Microsoft.SystemForCrossDomainIdentityManagement.IRetrievalParameters
-  {
-    system.Collections.Generic.IReadOnlyCollection<string> ExcludedAttributePaths 
-    { get; }
-    System.Collections.Generic.IReadOnlyCollection<string> RequestedAttributePaths 
-    { get; }
-    string SchemaIdentifier 
-    { get; }
-  }
-
-  public interface Microsoft.SystemForCrossDomainIdentityManagement.IFilter
-  {
-      Microsoft.SystemForCrossDomainIdentityManagement.IFilter AdditionalFilter 
-        { get; set; }
-      string AttributePath 
-        { get; } 
-      Microsoft.SystemForCrossDomainIdentityManagement.ComparisonOperator FilterOperator 
-        { get; }
-      string ComparisonValue 
-        { get; }
-  }
-
-  public enum Microsoft.SystemForCrossDomainIdentityManagement.ComparisonOperator
-  {
-      Equals
-  }
-```
-
-В вышеприведенном примере запроса пользователя с определенным значением атрибута externalId в метод Query передаются следующие значения аргументов. 
-* parameters.AlternateFilters.Count: 1
-* parameters.AlternateFilters.ElementAt(0).AttributePath: "externalId"
-* parameters.AlternateFilters.ElementAt(0).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(0).ComparisonValue: "jyoung"
-* correlationIdentifier: System.Net.Http.HttpRequestMessage.GetOwinEnvironment["owin.RequestId"] 
-
-***Пример 2. Подготавливает пользователя***
-
-Если ответ на запрос к веб-службе для пользователя со значением атрибута externalId, совпадающим со значением атрибута mailNickname пользователя, не возвращает никаких пользователей, то Azure Active Directory запрашивает у службы предоставление пользователю соответствующей в Azure Active Directory.  Ниже приведен пример такого запроса. 
-
-```
- POST https://.../scim/Users HTTP/1.1
- Authorization: Bearer ...
- Content-type: application/scim+json
- {
-   "schemas":
-   [
-     "urn:ietf:params:scim:schemas:core:2.0:User",
-     "urn:ietf:params:scim:schemas:extension:enterprise:2.0User"],
-   "externalId":"jyoung",
-   "userName":"jyoung",
-   "active":true,
-   "addresses":null,
-   "displayName":"Joy Young",
-   "emails": [
-     {
-       "type":"work",
-       "value":"jyoung@Contoso.com",
-       "primary":true}],
-   "meta": {
-     "resourceType":"User"},
-    "name":{
-     "familyName":"Young",
-     "givenName":"Joy"},
-   "phoneNumbers":null,
-   "preferredLanguage":null,
-   "title":null,
-   "department":null,
-   "manager":null}
-```
-
-Библиотеки CLI, предоставляемые корпорацией Майкрософт для реализации SCIM Services, преобразуют этот запрос в вызов метода Create поставщика службы.  Подпись метода Create будет выглядеть так:
-
-```csharp
- // System.Threading.Tasks.Tasks is defined in mscorlib.dll.  
- // Microsoft.SystemForCrossDomainIdentityManagement.Resource is defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Schemas.  
-
- System.Threading.Tasks.Task<Microsoft.SystemForCrossDomainIdentityManagement.Resource> Create(
-   Microsoft.SystemForCrossDomainIdentityManagement.Resource resource, 
-   string correlationIdentifier);
-```
-
-В запросе на подготовку пользователя в аргументе resource передается экземпляр класса Microsoft.SystemForCrossDomainIdentityManagement. Core2EnterpriseUser, определенного в библиотеке Microsoft.SystemForCrossDomainIdentityManagement.Schemas.  Если запрос на подготовку пользователя завершается успешно, реализованный в службе метод должен вернуть экземпляр класса Microsoft.SystemForCrossDomainIdentityManagement. Core2EnterpriseUser, в котором свойство Identifier имеет значение уникального идентификатора подготовленного пользователя.  
-
-***Пример 3. Запрос текущего состояния пользователя*** 
-
-Для обновления пользователя, уже существующего в хранилище удостоверений с интерфейсом SCIM, Azure Active Directory запросит у службы текущее состояние этого пользователя, отправив запрос следующего вида. 
-
-```
- GET ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
- Authorization: Bearer ...
-```
-
-В службе, созданной с помощью библиотек CLI, предоставляемых корпорацией Майкрософт для реализации SCIM Services, запрос преобразуется в вызов метода получения поставщика службы.  Подпись метода Retrieve будет выглядеть так:
-
-```csharp
- // System.Threading.Tasks.Tasks is defined in mscorlib.dll.  
- // Microsoft.SystemForCrossDomainIdentityManagement.Resource and 
- // Microsoft.SystemForCrossDomainIdentityManagement.IResourceRetrievalParameters 
- // are defined in Microsoft.SystemForCrossDomainIdentityManagement.Schemas.  
- System.Threading.Tasks.Task<Microsoft.SystemForCrossDomainIdentityManagement.Resource> 
-    Retrieve(
-      Microsoft.SystemForCrossDomainIdentityManagement.IResourceRetrievalParameters 
-        parameters, 
-        string correlationIdentifier);
-
- public interface 
-   Microsoft.SystemForCrossDomainIdentityManagement.IResourceRetrievalParameters:   
-     IRetrievalParameters
-     {
-       Microsoft.SystemForCrossDomainIdentityManagement.IResourceIdentifier 
-         ResourceIdentifier 
-           { get; }
- }
- public interface Microsoft.SystemForCrossDomainIdentityManagement.IResourceIdentifier
- {
-     string Identifier 
-       { get; set; }
-     string Microsoft.SystemForCrossDomainIdentityManagement.SchemaIdentifier 
-       { get; set; }
- }
-```
-
-В приведенном выше примере запроса на получение текущего состояния пользователя в качестве значения аргумента parameters будет передан объект со следующими значениями свойств. 
-  
-* Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
-* SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
-
-***Пример 4. Запросите значение ссылочного атрибута для обновления*** 
-
-Если необходимо обновить атрибут ссылки, Azure Active Directory запрашивает службу, чтобы определить, соответствует ли текущее значение атрибута Reference в хранилище удостоверений, которое находится перед службой, в Azure Active Каталоги. Для пользователей таким способом запрашивается только значение атрибута manager. Ниже приведен пример запроса на проверку значения атрибута manager для определенного пользователя. 
-
-Если служба была создана с помощью библиотек CLI, предоставляемых корпорацией Майкрософт для реализации SCIM Services, запрос преобразуется в вызов метода запроса поставщика службы. В нем передается аргумент parameters, значением которого будет объект со следующими свойствами. 
-  
-* parameters.AlternateFilters.Count: 2
-* parameters.AlternateFilters.ElementAt(x).AttributePath: "ID"
-* parameters.AlternateFilters.ElementAt(x).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(x).ComparisonValue: "54D382A4-2050-4C03-94D1-E769F1D15682"
-* parameters.AlternateFilters.ElementAt(y).AttributePath: "manager"
-* parameters.AlternateFilters.ElementAt(y).ComparisonOperator: ComparisonOperator.Equals
-* parameters.AlternateFilter.ElementAt(y).ComparisonValue: "2819c223-7f76-453a-919d-413861904646"
-* parameters.RequestedAttributePaths.ElementAt(0): "ID"
-* parameters.SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
-
-Здесь значение индекса x может быть равно 0, а значение индекса y может быть равно 1, либо значение x может быть равно 1, а значение y может быть равно 0, в зависимости от порядка выражений в параметре фильтра запроса.   
-
-***Пример 5. Запрос из Azure AD в службу SCIM для обновления пользователя*** 
-
-Ниже приведен пример запроса от Azure Active Directory к службе SCIM для обновления пользователя. 
-
-```
-  PATCH ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
-  Authorization: Bearer ...
-  Content-type: application/scim+json
-  {
-    "schemas": 
-    [
-      "urn:ietf:params:scim:api:messages:2.0:PatchOp"],
-    "Operations":
-    [
-      {
-        "op":"Add",
-        "path":"manager",
-        "value":
-          [
-            {
-              "$ref":"http://.../scim/Users/2819c223-7f76-453a-919d-413861904646",
-              "value":"2819c223-7f76-453a-919d-413861904646"}]}]}
-```
-
-Библиотеки Microsoft CLI для реализации службы SCIM преобразуют такой запрос в вызов метода Update поставщика услуги. Подпись метода Update выглядит следующим образом. 
-
-```csharp
-  // System.Threading.Tasks.Tasks and 
-  // System.Collections.Generic.IReadOnlyCollection<T>
-  // are defined in mscorlib.dll.  
-  // Microsoft.SystemForCrossDomainIdentityManagement.IPatch, 
-  // Microsoft.SystemForCrossDomainIdentityManagement.PatchRequestBase, 
-  // Microsoft.SystemForCrossDomainIdentityManagement.IResourceIdentifier, 
-  // Microsoft.SystemForCrossDomainIdentityManagement.PatchOperation, 
-  // Microsoft.SystemForCrossDomainIdentityManagement.OperationName, 
-  // Microsoft.SystemForCrossDomainIdentityManagement.IPath and 
-  // Microsoft.SystemForCrossDomainIdentityManagement.OperationValue 
-  // are all defined in Microsoft.SystemForCrossDomainIdentityManagement.Protocol. 
-
-  System.Threading.Tasks.Task Update(
-    Microsoft.SystemForCrossDomainIdentityManagement.IPatch patch, 
-    string correlationIdentifier);
-
-  public interface Microsoft.SystemForCrossDomainIdentityManagement.IPatch
-  {
-  Microsoft.SystemForCrossDomainIdentityManagement.PatchRequestBase 
-    PatchRequest 
-      { get; set; }
-  Microsoft.SystemForCrossDomainIdentityManagement.IResourceIdentifier 
-    ResourceIdentifier 
-      { get; set; }        
-  }
-
-  public class PatchRequest2: 
-    Microsoft.SystemForCrossDomainIdentityManagement.PatchRequestBase
-  {
-  public System.Collections.Generic.IReadOnlyCollection
-    <Microsoft.SystemForCrossDomainIdentityManagement.PatchOperation> 
-      Operations
-      { get;}
-
-  public void AddOperation(
-    Microsoft.SystemForCrossDomainIdentityManagement.PatchOperation operation);
-  }
-
-  public class PatchOperation
-  {
-  public Microsoft.SystemForCrossDomainIdentityManagement.OperationName 
-    Name
-    { get; set; }
-
-  public Microsoft.SystemForCrossDomainIdentityManagement.IPath 
-    Path
-    { get; set; }
-
-  public System.Collections.Generic.IReadOnlyCollection
-    <Microsoft.SystemForCrossDomainIdentityManagement.OperationValue> Value
-    { get; }
-
-  public void AddValue(
-    Microsoft.SystemForCrossDomainIdentityManagement.OperationValue value);
-  }
-
-  public enum OperationName
-  {
-    Add,
-    Remove,
-    Replace
-  }
-
-  public interface IPath
-  {
-    string AttributePath { get; }
-    System.Collections.Generic.IReadOnlyCollection<IFilter> SubAttributes { get; }
-    Microsoft.SystemForCrossDomainIdentityManagement.IPath ValuePath { get; }
-  }
-
-  public class OperationValue
-  {
-    public string Reference
-    { get; set; }
-
-    public string Value
-    { get; set; }
-  }
-```
-
-В примере запроса на обновление пользователя в качестве значения аргумента patch передается объект со следующими значениями свойств. 
-  
-* ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
-* ResourceIdentifier.SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
-* (PatchRequest as PatchRequest2).Operations.Count: 1
-* (PatchRequest as PatchRequest2).Operations.ElementAt(0).OperationName: OperationName.Add
-* (PatchRequest as PatchRequest2).Operations.ElementAt(0).Path.AttributePath: "manager"
-* (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.Count: 1
-* (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference: http://.../scim/Users/2819c223-7f76-453a-919d-413861904646
-* (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value: 2819c223-7f76-453a-919d-413861904646
-
-***Пример 6. Отменить наполнение пользователя***
-
-Чтобы отменить наполнение пользователя от хранилища удостоверений, посылаемого службой SCIM, Azure AD отправляет запрос, например:
-
-```
-  DELETE ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
-  Authorization: Bearer ...
-```
-
-Если служба создана с использованием библиотек Common Language Infrastructure корпорации Майкрософт для реализации служб SCIM, то такой запрос будет преобразован в вызов метода Delete поставщика службы.   Подпись метода Delete будет выглядеть так: 
-
-```csharp
-  // System.Threading.Tasks.Tasks is defined in mscorlib.dll.  
-  // Microsoft.SystemForCrossDomainIdentityManagement.IResourceIdentifier, 
-  // is defined in Microsoft.SystemForCrossDomainIdentityManagement.Protocol. 
-  System.Threading.Tasks.Task Delete(
-    Microsoft.SystemForCrossDomainIdentityManagement.IResourceIdentifier  
-      resourceIdentifier, 
-    string correlationIdentifier);
-```
-
-Объект, указанный в качестве значения аргумента resourceIdentifier, содержит эти значения свойств в примере запроса для отмены наполнения пользователя: 
-
-* ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
-* ResourceIdentifier.SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
 
 ## <a name="step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client"></a>Шаг 4. Интеграция конечной точки SCIM с клиентом Azure AD SCIM
 
@@ -1468,9 +900,11 @@ Azure AD можно настроить на автоматическую под�
 |Метод авторизации|Плюсы|Минусы|Поддержка|
 |--|--|--|--|
 |Имя пользователя и пароль (не рекомендуется или не поддерживаются в Azure AD)|Простота реализации|Небезопасное — [ваш PA $ $Word не имеет значения](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/your-pa-word-doesn-t-matter/ba-p/731984)|Поддерживается для каждого случая для приложений коллекции. Не поддерживается для приложений, не относящихся к коллекции.|
-|Токен носителя с длительным временем существования (поддерживается в Azure AD сейчас)|Для долгосрочных маркеров не требуется наличие пользователя. Администраторы могут легко использовать их при настройке подготовки.|Долгосрочные токены могут быть трудно использовать совместно с администратором без использования небезопасных методов, таких как электронная почта. |Поддерживается для приложений из коллекции и не из коллекции. |
-|Предоставление кода авторизации OAuth (поддерживается в Azure AD сейчас)|Маркеры доступа намного короче, чем пароли, и имеют механизм автоматического обновления, который не имеет долгосрочных токенов носителя.  Реальный пользователь должен присутствовать во время начальной авторизации, добавляя уровень ответственности. |Требуется наличие пользователя. Если пользователь покидает организацию, маркер является недопустимым, и авторизация должна быть выполнена снова.|Поддерживается для приложений из коллекции. Выполняется поддержка приложений, не относящихся к коллекции.|
-|Предоставление учетных данных клиента OAuth (не поддерживается в нашей стратегии)|Маркеры доступа намного короче, чем пароли, и имеют механизм автоматического обновления, который не имеет долгосрочных токенов носителя. Как предоставление кода авторизации, так и предоставление учетных данных клиента создают одинаковый тип маркера доступа, поэтому перемещение между этими методами прозрачно для API.  Подготовка может быть полностью автоматизирована, а новые токены могут запрашиваться без вмешательства пользователя. ||Не поддерживается для приложений из коллекции и не из коллекции. Поддержка находится в невыполненной работе.|
+|Токен носителя с длительным временем существования|Для долгосрочных маркеров не требуется наличие пользователя. Администраторы могут легко использовать их при настройке подготовки.|Долгосрочные токены могут быть трудно использовать совместно с администратором без использования небезопасных методов, таких как электронная почта. |Поддерживается для приложений из коллекции и не из коллекции. |
+|Предоставление кода авторизации OAuth|Маркеры доступа намного короче, чем пароли, и имеют механизм автоматического обновления, который не имеет долгосрочных токенов носителя.  Реальный пользователь должен присутствовать во время начальной авторизации, добавляя уровень ответственности. |Требуется наличие пользователя. Если пользователь покидает организацию, маркер является недопустимым, и авторизация должна быть выполнена снова.|Поддерживается для приложений из коллекции. Выполняется поддержка приложений, не относящихся к коллекции.|
+|Предоставление учетных данных клиента OAuth|Маркеры доступа намного короче, чем пароли, и имеют механизм автоматического обновления, который не имеет долгосрочных токенов носителя. Как предоставление кода авторизации, так и предоставление учетных данных клиента создают одинаковый тип маркера доступа, поэтому перемещение между этими методами прозрачно для API.  Подготовка может быть полностью автоматизирована, а новые токены могут запрашиваться без вмешательства пользователя. ||Не поддерживается для приложений из коллекции и не из коллекции. Поддержка находится в невыполненной работе.|
+
+[!NOTE] Не рекомендуется оставлять поле маркера пустым в пользовательском интерфейсе настраиваемого приложения конфигурации подготовки Azure AD. Создаваемый маркер в основном доступен для целей тестирования.
 
 **Поток предоставления кода авторизации OAuth:** Служба подготовки поддерживает [предоставление кода авторизации](https://tools.ietf.org/html/rfc6749#page-24). После отправки запроса на публикацию приложения в коллекции наша команда будет работать с вами, чтобы получить следующие сведения:
 *  URL-адрес авторизации. Клиент получает URL-адрес для получения авторизации от владельца ресурса через перенаправление агента пользователя. Пользователь перенаправляется на этот URL-адрес для авторизации доступа. 

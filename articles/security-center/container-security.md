@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2020
 ms.author: memildin
-ms.openlocfilehash: cd9907d041562d23bc487de319a17d36b68db6f3
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 45ce8a808efc5b882c90f99875fdde661e292774
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77916123"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78205982"
 ---
 # <a name="container-security-in-security-center"></a>Безопасность контейнеров в центре безопасности
 
@@ -33,7 +33,7 @@ ms.locfileid: "77916123"
 
 Инструкции по использованию этих функций см. в статье [мониторинг безопасности контейнеров](monitor-container-security.md).
 
-## <a name="vulnerability-management---scanning-container-images-preview"></a>Управление уязвимостью — сканирование образов контейнеров (Предварительная версия)
+## <a name="vulnerability-management---scanning-container-images"></a>Управление уязвимостью — сканирование образов контейнеров
 Чтобы отслеживать реестр контейнеров Azure на базе ARM, убедитесь, что вы используете уровень "Стандартный" центра безопасности (см. раздел [цены](/azure/security-center/security-center-pricing)). Затем включите необязательный пакет реестров контейнеров. При отправке нового образа центр безопасности сканирует образ с помощью сканера, который является ведущим в отрасли для проверки уязвимостей поставщика, Qualys.
 
 При обнаружении проблем — по Qualys или центру безопасности — вы получите уведомления на панели мониторинга центра безопасности. Для каждой уязвимости центр безопасности предоставляет практические рекомендации, а также классификацию серьезности и рекомендации по исправлению проблемы. Сведения о рекомендациях центра безопасности для контейнеров см. в [справочном списке рекомендаций](recommendations-reference.md#recs-containers).

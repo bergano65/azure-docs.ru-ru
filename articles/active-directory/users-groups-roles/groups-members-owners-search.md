@@ -9,19 +9,19 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 09/10/2019
+ms.date: 02/28/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d11f5a9f2de8683365d663e85c275c3729ebf8a
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: a815446b79b3e5ec0a75e5d179953956643b16c9
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70901507"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206118"
 ---
-# <a name="search-groups--and-members-preview-in-azure-active-directory"></a>Поиск групп и участников (Предварительная версия) в Azure Active Directory
+# <a name="search-groups-and-members-preview-in-azure-active-directory"></a>Поиск групп и участников (Предварительная версия) в Azure Active Directory
 
 В этой статье содержатся сведения о поиске членов и владельцев группы, а также об использовании фильтров поиска в рамках предварительной версии улучшения групп на портале Azure Active Directory (Azure AD). Существует множество улучшений в работе групп, которые помогут вам быстро и легко управлять группами, включая членов и владельцев. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -45,7 +45,7 @@ ms.locfileid: "70901507"
 
 ## <a name="group-search-and-sorting"></a>Поиск и сортировка групп
 
-Поиск в списке групп был усовершенствован, так что при вводе строки поиска Поиск автоматически выполняет `startswith` Поиск и подстроку в списке имен групп. Поиск подстроки выполняется только для целых слов и не содержит специальных символов.
+Поиск в списке групп был улучшен, чтобы при вводе строки поиска Поиск автоматически выполнял `startswith` и поиск по подстрокам в списке имен групп. Поиск подстроки выполняется только для целых слов и не содержит специальных символов. При поиске подстроки учитывается регистр.
 
 ![Новый поиск по подстрокам на странице "все группы"](./media/groups-members-owners-search/groups-search-preview.png)
 

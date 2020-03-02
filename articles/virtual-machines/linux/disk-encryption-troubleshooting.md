@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: c1e96a3acf2a576e0656afb3abea9dd787bf989a
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: dd21b6520dc68a6f7faa5500054b2865556e3dfb
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750066"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78205914"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -96,21 +96,7 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 
 ## <a name="troubleshooting-azure-disk-encryption-behind-a-firewall"></a>Устранение неполадок шифрования диска Azure в связи с брандмауэром
 
-Если подключение ограничивается брандмауэром, требованиями прокси-сервера или параметрами группы безопасности сети (NGS), способности расширения выполнять необходимые задачи могут быть нарушены. В результате может появиться такое сообщение о состоянии: "Сведения о состоянии расширения недоступны на виртуальной машине". В предполагаемых сценариях может произойти сбой шифрования. В следующих разделах можно ознакомиться с некоторыми распространенными проблемами с брандмауэром.
-
-### <a name="network-security-groups"></a>Группы безопасности сети
-Любые применяемые параметры группы безопасности сети должны позволять конечной точке соответствовать предусмотренным [предварительным требованиям](disk-encryption-overview.md#networking-requirements) к конфигурации сети для шифрования диска.
-
-### <a name="azure-key-vault-behind-a-firewall"></a>Azure Key Vault за брандмауэром
-
-При включении шифрования [учетных данных Azure AD](disk-encryption-linux-aad.md#) целевая виртуальная машина должна обеспечить подключение к конечным точкам Azure Active Directory и конечным точкам хранилища ключей. Текущие конечные точки проверки подлинности Azure Active Directory поддерживаются в разделах 56 и 59 статьи [URL-адреса и диапазоны IP-адресов Office 365](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges). Инструкции Key Vault приведены в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../../key-vault/key-vault-access-behind-firewall.md).
-
-### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
-Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.  Конфигурации прокси-сервера, которые изменяют локальный трафик HTTP к этому адресу (например, Добавление заголовка X-Forwardd-for), не поддерживаются.
-
-### <a name="linux-package-management-behind-a-firewall"></a>Управление пакетами Linux из-за брандмауэра
-
-Во время шифрования диска Azure для Linux используется система управления пакетами целевого дистрибутива, устанавливающая необходимые компоненты перед включением шифрования. Если параметры брандмауэра не позволяют виртуальной машине скачивать и устанавливать эти компоненты, в дальнейшем могут произойти ошибки. Шаги для настройки этого пакета управления системой меняются в зависимости от распространителя. В Red Hat, когда требуется прокси-сервер, необходимо убедиться в правильности настроек диспетчера подписок и yum. Дополнительные сведения см. в статье [How to troubleshoot subscription-manager and yum problems](https://access.redhat.com/solutions/189533) (Устранение неполадок диспетчера подписки и yum).  
+См. раздел [Шифрование дисков в изолированной сети](disk-encryption-isolated-network.md) .
 
 ## <a name="troubleshooting-encryption-status"></a>Устранение неполадок с состоянием шифрования 
 
@@ -120,7 +106,7 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 
 Чтобы отключить шифрование дисков Azure с помощью интерфейса командной строки, используйте команду [AZ VM Encryption Disable](/cli/azure/vm/encryption). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали о некоторых распространенных проблемах в шифровании дисков Azure и их устранении. Дополнительные сведения об этой службе и ее возможностях см. в статьях:
 

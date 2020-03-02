@@ -9,16 +9,16 @@ author: gvashishtha
 ms.author: gopalv
 ms.topic: reference
 ms.date: 10/10/2019
-ms.openlocfilehash: d022b1124146a1e506401e6cee257805e3a38fd3
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: b83effa95b17d712d4019f8ab5bf13c4f02a7d2b
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77526557"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78206526"
 ---
 # <a name="known-issues-and-troubleshooting-the-azure-data-science-virtual-machine"></a>Известные проблемы и устранение неполадок виртуальной машины Azure для обработки и анализа данных
 
-Эта статья поможет вам найти и исправить ошибки или сбои, возникшие при использовании виртуальной машины Azure для обработки и анализа данных.
+Эта статья поможет вам найти и исправить ошибки или сбои, которые могут возникнуть при использовании виртуальной машины Azure для обработки и анализа данных.
 
 ## <a name="python-package-installation-issues"></a>Проблемы при установке пакета Python
 
@@ -26,17 +26,22 @@ ms.locfileid: "77526557"
 
 При установке пакетов используйте вместо `pip install` `sudo pip install`.
 
-## <a name="disk-encryption-issues"></a>Проблемы шифрования диска
+## <a name="disk-encryption-issues"></a>Проблемы с шифрованием дисков
 
 ### <a name="disk-encryption-fails-on-the-ubuntu-dsvm"></a>Сбой шифрования диска в Ubuntu DSVM
 
-Шифрование дисков Azure (ADE) в настоящее время не поддерживается в Ubuntu DSVM. В качестве обходного решения рассмотрите возможность настройки [шифрования службы хранилища Azure с помощью управляемых клиентом ключей](../../storage/common/storage-encryption-keys-portal.md).
+Шифрование дисков Azure (ADE) сейчас не поддерживается в Ubuntu DSVM. В качестве обходного решения рекомендуется настроить [Шифрование на стороне сервера для управляемых дисков Azure](../../virtual-machines/windows/disk-encryption.md).
 
 ## <a name="tool-appears-disabled"></a>Средство отображается как отключено
 
 ### <a name="hyper-v-does-not-work-on-the-windows-dsvm"></a>Hyper-V не работает в DSVM Windows
 
-Это ожидаемое поведение, так как для производительности загрузки мы отключили некоторые службы. Чтобы снова включить, откройте панель поиска в DSVM Windows, введите "службы", а затем задайте для всех служб Hyper-V значение "вручную" и установите для параметра "Управление виртуальными машинами Hyper-V" значение "автоматически".
+Изначально Hyper-V не работает в Windows — ожидаемое поведение. Для производительности загрузки мы отключили некоторые службы. Чтобы включить Hyper-V, сделайте следующее:
+
+1. Открытие панели поиска в DSVM Windows
+1. Введите "службы",
+1. Задать для всех служб Hyper-V значение "вручную"
+1. Задайте для "Управление виртуальными машинами Hyper-V" значение "автоматически".
 
 Окончательный экран должен выглядеть следующим образом:
 
