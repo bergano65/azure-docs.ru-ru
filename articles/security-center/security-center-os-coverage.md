@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: 39e2deead1affd750d9a5e68985b02ebfe8e0efd
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: e13149ba802f0f8b9a565e0aabd86ae05167f18b
+ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77921306"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78208828"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -36,7 +36,6 @@ ms.locfileid: "77921306"
 > [!NOTE]
 > Чтобы получить полный набор функций безопасности, необходимо установить [агент log Analytics](../azure-monitor/platform/agents-overview.md#log-analytics-agent), который используется центром безопасности Azure, установлен и [правильно настроен для отправки данных в центр безопасности Azure](security-center-enable-data-collection.md#manual-agent).
 
-
 В следующих разделах перечислены поддерживаемые серверные операционные системы, на которых можно запустить [агент log Analytics](../azure-monitor/platform/agents-overview.md#log-analytics-agent), используемый центром безопасности Azure.
 
 ### Операционные системы Windows Server<a name="os-windows"></a>
@@ -45,7 +44,7 @@ ms.locfileid: "77921306"
 |:---|:-:|:-:|
 |Windows Server 2019|✔|X|
 |Windows Server 2016|✔|✔|
-|Windows Server 2012 R2|✔|✔|
+|Windows Server 2012 R2|✔|✔|
 |Windows Server 2008 R2|✔|✔|
 
 Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md#vm-server-features).
@@ -86,41 +85,9 @@ ms.locfileid: "77921306"
 
 Также поддерживаются виртуальные машины, работающие в облачной службе. Мониторинг выполняется только для облачных служб и рабочих ролей, запущенных в слотах рабочей среды. Дополнительные сведения см. в статье [Общие сведения об облачных службах Azure](../cloud-services/cloud-services-choose-me.md).
 
-## Службы PaaS<a name="paas-services"></a>
-
-Центр безопасности Azure поддерживает следующие ресурсы Azure PaaS:
-
-* SQL
-* PostGreSQL
-* MySQL
-* Cosmos DB
-* Учетная запись хранения
-* Служба приложений
-* Компонент
-* Облачная служба
-* Виртуальная сеть
-* Подсеть
-* Сетевая карта
-* Группа безопасности сети (NSG)
-* Учетная запись Пакетной службы
-* Учетная запись Service Fabric
-* Учетная запись службы автоматизации
-* Подсистема балансировки нагрузки
-* Поиск
-* Пространство имен служебной шины
-* Stream Analytics
-* Пространство имен концентратора событий
-* приложениях логики.
-* Redis
-* Data Lake Analytics
-* Data Lake Storage
-* Хранилище ключей
-
-Дополнительные сведения о поддерживаемых функциях для приведенного выше списка ресурсов PaaS см. в разделе [службы PaaS поддерживаемые функции](security-center-services.md#paas-services).
-
 Также поддерживается защита виртуальных машин, размещенных в Azure Stack. Дополнительные сведения об интеграции центра безопасности с Azure Stack см. в статье подключение [Azure Stack виртуальных машин к центру безопасности](https://docs.microsoft.com/azure/security-center/quick-onboard-azure-stack).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [Центр безопасности собирает данные и агент log Analytics](security-center-enable-data-collection.md).
 - Узнайте [, как центр безопасности управляет и защищает данные](security-center-data-security.md).

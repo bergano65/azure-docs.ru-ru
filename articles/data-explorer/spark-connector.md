@@ -7,59 +7,60 @@ ms.reviewer: michazag
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 1/14/2020
-ms.openlocfilehash: 868e9e068244af91e218d906bee115b58906152f
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: b358287664ac6d6a3b641e1ab63073810ceb4c40
+ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76027931"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78208621"
 ---
-# <a name="azure-data-explorer-connector-for-apache-spark-preview"></a>Соединитель Azure обозреватель данных для Apache Spark (Предварительная версия)
+# <a name="azure-data-explorer-connector-for-apache-spark"></a>Соединитель Azure обозреватель данных для Apache Spark
 
 [Apache Spark](https://spark.apache.org/) — это единый модуль аналитики для обработки больших данных. Azure обозреватель данных — это быстрая, полностью управляемая служба аналитики данных для анализа больших объемов данных в режиме реального времени. 
 
-Соединитель Azure обозреватель данных для Spark реализует источник данных и приемник данных для перемещения данных между кластерами Azure обозреватель данных и Spark для использования обеих возможностей. При использовании Azure Data Explorer и Apache Spark вы можете выполнять сборку быстрых и масштабируемых приложений, ориентированных на управляемые данными сценарии, такие как машинное обучение, сценарий извлечения, преобразования и загрузки (ETL) и Log Analytics. Запись в обозреватель данных Azure может выполняться в пакетном и потоковой режимах.
-Чтение из Azure обозреватель данных поддерживает очистку столбцов и предикаты включение, что сокращает объем передаваемых данных путем фильтрации данных в обозреватель данных Azure.
+Соединитель Azure обозреватель данных для Spark — это [проект с открытым исходным кодом](https://github.com/Azure/azure-kusto-spark) , который может работать в любом кластере Spark. Он реализует источник данных и приемник данных для перемещения данных между кластерами Azure обозреватель данных и Spark. С помощью Azure обозреватель данных и Apache Spark можно создавать быстрые и масштабируемые приложения, предназначенные для сценариев, управляемых данными. Например, машинное обучение (ML), извлечение-преобразование-Загрузка (ETL) и Log Analytics. С помощью соединителя обозреватель данных Azure преобразуется в допустимое хранилище данных для стандартных операций источника и приемника Spark, таких как запись, чтение и Вритестреам.
 
-Соединитель Azure обозреватель данных Spark — это [проект с открытым исходным кодом](https://github.com/Azure/azure-kusto-spark) , который может работать в любом кластере Spark. Соединитель Azure обозреватель данных Spark делает Azure обозреватель данных допустимым хранилищем данных для стандартных операций источника и приемника Spark, таких как Write, Read и Вритестреам. 
+Запись в обозреватель данных Azure можно выполнять в пакетном или потоковой режиме. Чтение из Azure обозреватель данных поддерживает очистку столбцов и предикаты включение, которые отфильтровывают данные в обозреватель данных Azure, уменьшая объем передаваемых данных.
+
+В этом разделе описывается установка и Настройка соединителя Azure обозреватель данных Spark и перемещение данных между кластерами Azure обозреватель данных и Apache Spark.
 
 > [!NOTE]
 > Хотя некоторые из приведенных ниже примеров относятся к кластеру [Azure Databricks](https://docs.azuredatabricks.net/) Spark, соединитель Azure обозреватель данных Spark не принимает прямые зависимости от кирпичей данных или других дистрибутивов Spark.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * [Создайте кластер и базу данных Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal). 
 * Создание кластера Spark
-* Установите библиотеку соединителей Azure обозреватель данных и библиотеки, перечисленные в списке [зависимости](https://github.com/Azure/azure-kusto-spark#dependencies) , включая следующие библиотеки [SDK Kusto для Java](/azure/kusto/api/java/kusto-java-client-library) :
-    * [Клиент данных Kusto](https://mvnrepository.com/artifact/com.microsoft.azure.kusto/kusto-data)
-    * [Принимающий клиент Kusto](https://mvnrepository.com/artifact/com.microsoft.azure.kusto/kusto-ingest)
-* Предварительно созданные библиотеки для [Spark 2,4, Scala 2,11](https://github.com/Azure/azure-kusto-spark/releases) и [репозиториев Maven](https://mvnrepository.com/artifact/com.microsoft.azure.kusto/spark-kusto-connector)
+* Установка библиотеки соединителей Azure обозреватель данных:
+    * Предварительно созданные библиотеки для [Spark 2,4, Scala 2,11](https://github.com/Azure/azure-kusto-spark/releases) 
+    * [Репозиторий Maven](https://mvnrepository.com/artifact/com.microsoft.azure.kusto/spark-kusto-connector)
+* Установлен [Maven 3. x](https://maven.apache.org/download.cgi)
+
+> [!TIP]
+> версии 2.3. x также поддерживаются, но может потребоваться внести некоторые изменения в зависимости POM. XML.
 
 ## <a name="how-to-build-the-spark-connector"></a>Как создать соединитель Spark
-
-Соединитель Spark можно построить из [источников](https://github.com/Azure/azure-kusto-spark) , как описано ниже.
 
 > [!NOTE]
 > Это необязательный шаг. Если вы используете предварительно созданные библиотеки, перейдите в раздел [Установка кластера Spark](#spark-cluster-setup).
 
 ### <a name="build-prerequisites"></a>Необходимые компоненты для сборки
 
-* Установлен пакет SDK для Java 1,8
-* Установлен [Maven 3. x](https://maven.apache.org/download.cgi)
-* Apache Spark версии 2.4.0 или выше
+1. Установите библиотеки, перечисленные в списке [зависимости](https://github.com/Azure/azure-kusto-spark#dependencies) , включая следующие библиотеки [SDK Kusto для Java](/azure/kusto/api/java/kusto-java-client-library) :
+    * [Клиент данных Kusto](https://mvnrepository.com/artifact/com.microsoft.azure.kusto/kusto-data)
+    * [Принимающий клиент Kusto](https://mvnrepository.com/artifact/com.microsoft.azure.kusto/kusto-ingest)
 
-> [!TIP]
-> версии 2.3. x также поддерживаются, но может потребоваться внести некоторые изменения в зависимости POM. XML.
+1. Сведения о создании соединителя Spark см. в [этом источнике](https://github.com/Azure/azure-kusto-spark) .
 
-Для приложений Scala/Java, использующих определения проектов Maven, свяжите приложение со следующим артефактом (последняя версия может отличаться):
-
-```Maven
-   <dependency>
-     <groupId>com.microsoft.azure</groupId>
-     <artifactId>spark-kusto-connector</artifactId>
-     <version>1.0.0-Beta-02</version>
-   </dependency>
-```
+1. Для приложений Scala/Java, использующих определения проектов Maven, свяжите приложение со следующим артефактом (последняя версия может отличаться):
+    
+    ```Maven
+       <dependency>
+         <groupId>com.microsoft.azure</groupId>
+         <artifactId>spark-kusto-connector</artifactId>
+         <version>1.1.0</version>
+       </dependency>
+    ```
 
 ### <a name="build-commands"></a>Команды сборки
 
@@ -82,25 +83,33 @@ mvn clean install
 > [!NOTE]
 > При выполнении следующих действий рекомендуется использовать последнюю версию соединителя Azure обозреватель данных Spark.
 
-1. Настройте следующие параметры кластера Spark на основе кластера Azure Databricks, используя Spark 2.4.4 и Scala 2,11: 
+1. Настройте следующие параметры кластера Spark на основе кластера Azure Databricks, используя Spark 2.4.4 и Scala 2,11:
 
     ![Параметры кластера "кирпичные данные"](media/spark-connector/databricks-cluster.png)
     
 1. Установите последнюю версию библиотеки Spark-kusto-Connector из Maven:
-
-    ![Импорт библиотеки обозреватель данных Azure](media/spark-connector/db-create-library.png)
+    
+    ![библиотеках импорта](media/spark-connector/db-libraries-view.png) ![выберите Spark-Kusto-Connector](media/spark-connector/db-dependencies.png)
 
 1. Убедитесь, что установлены все необходимые библиотеки:
 
     ![Проверка установленных библиотек](media/spark-connector/db-libraries-view.png)
 
-## <a name="authentication"></a>Проверка подлинности
+1. Для установки с помощью JAR-файла убедитесь, что установлены дополнительные зависимости:
 
-Соединитель Azure обозреватель данных Spark позволяет проходить проверку подлинности в Azure Active Directory (Azure AD) с помощью [приложения Azure AD](#azure-ad-application-authentication), [маркера доступа Azure AD](https://github.com/Azure/azure-kusto-spark/blob/dev/docs/Authentication.md#direct-authentication-with-access-token), [проверки подлинности устройства](https://github.com/Azure/azure-kusto-spark/blob/dev/docs/Authentication.md#device-authentication) (для нерабочих сценариев) или [Azure Key Vault](https://github.com/Azure/azure-kusto-spark/blob/dev/docs/Authentication.md#key-vault). Пользователь должен установить пакет Azure-keyvault и предоставить учетные данные приложения для доступа к ресурсу Key Vault.
+    ![Добавление зависимостей](media/spark-connector/db-not-maven.png)
+
+## <a name="authentication"></a>Аутентификация
+
+Соединитель Azure обозреватель данных Spark позволяет выполнять аутентификацию с помощью Azure Active Directory (Azure AD) одним из следующих способов.
+* [Приложение Azure AD](#azure-ad-application-authentication) ;
+* [Маркер доступа Azure AD](https://github.com/Azure/azure-kusto-spark/blob/dev/docs/Authentication.md#direct-authentication-with-access-token) ;
+* [Проверка подлинности устройства](https://github.com/Azure/azure-kusto-spark/blob/dev/docs/Authentication.md#device-authentication) (для нерабочих сценариев)
+* [Azure Key Vault](https://github.com/Azure/azure-kusto-spark/blob/dev/docs/Authentication.md#key-vault) для доступа к ресурсу Key Vault, установите пакет Azure-keyvault и укажите учетные данные приложения.
 
 ### <a name="azure-ad-application-authentication"></a>Проверка подлинности приложения Azure AD
 
-Наиболее простой и распространенный метод проверки подлинности. Этот метод рекомендуется для использования соединителя Azure обозреватель данных Spark.
+Проверка подлинности приложения Azure AD является самым простым и наиболее распространенным методом проверки подлинности и рекомендуется для соединителя Azure обозреватель данных Spark.
 
 |Свойства  |Description  |
 |---------|---------|
@@ -110,10 +119,10 @@ mvn clean install
 
 ### <a name="azure-data-explorer-privileges"></a>Права обозреватель данных Azure
 
-Следующие права должны быть предоставлены в кластере Azure обозреватель данных.
+Предоставьте следующие права в кластере Azure обозреватель данных.
 
-* Для чтения (источник данных) приложение Azure AD должно иметь права доступа *средства просмотра* в целевой базе данных или права *администратора* в целевой таблице.
-* Для записи (приемника данных) приложение Azure AD должно иметь привилегии *приема* в целевой базе данных. Для создания новых таблиц у нее также должны быть привилегии *пользователя* в целевой базе данных. Если целевая таблица уже существует, можно настроить права *администратора* в целевой таблице.
+* Для чтения (источник данных) удостоверение Azure AD должно иметь права доступа *средства просмотра* в целевой базе данных или права *администратора* в целевой таблице.
+* Для записи (приемника данных) удостоверение Azure AD должно иметь привилегии *приема* в целевой базе данных. Для создания новых таблиц у нее также должны быть привилегии *пользователя* в целевой базе данных. Если целевая таблица уже существует, необходимо настроить права *администратора* в целевой таблице.
  
 Дополнительные сведения о ролях участников Azure обозреватель данных см. в разделе [авторизация на основе ролей](/azure/kusto/management/access-control/role-based-authorization). Сведения об управлении ролями безопасности см. в разделе [Управление ролями безопасности](/azure/kusto/management/security-roles).
 
@@ -170,10 +179,9 @@ mvn clean install
     import java.util.concurrent.TimeUnit
     import org.apache.spark.sql.streaming.Trigger
 
-    // Set up a checkpoint and disable codeGen. Set up a checkpoint and disable codeGen as a workaround for an known issue 
+    // Set up a checkpoint and disable codeGen. 
     spark.conf.set("spark.sql.streaming.checkpointLocation", "/FileStore/temp/checkpoint")
-    spark.conf.set("spark.sql.codegen.wholeStage","false") // Use in case a NullPointerException is thrown inside codegen iterator
-    
+        
     // Write to a Kusto table from a streaming source
     val kustoQ = df
           .writeStream
@@ -186,7 +194,7 @@ mvn clean install
 
 ## <a name="spark-source-reading-from-azure-data-explorer"></a>Источник Spark: чтение из обозреватель данных Azure
 
-1. При чтении небольших объемов данных определите запрос данных:
+1. При чтении [небольших объемов данных](/azure/kusto/concepts/querylimits)Определите запрос данных:
 
     ```scala
     import com.microsoft.kusto.spark.datasource.KustoSourceOptions
@@ -215,7 +223,8 @@ mvn clean install
     display(df2)
     ```
 
-1. При чтении больших объемов данных необходимо указать временное хранилище BLOB-объектов. Укажите ключ SAS контейнера хранилища, имя учетной записи хранения, ключ учетной записи и имя контейнера. Этот шаг требуется только для текущего предварительного выпуска соединителя Spark.
+1. Необязательно. Если **вы** предоставляете временное хранилище BLOB-объектов (а не Azure обозреватель данных), большие двоичные объекты создаются под обязанностью вызывающего. Сюда входит подготовка хранилища, вращение ключей доступа и удаление временных артефактов. 
+    Модуль Кустоблобсторажеутилс содержит вспомогательные функции для удаления больших двоичных объектов на основе координат учетной записи и контейнера и учетных данных учетной записи либо полного URL-адреса SAS с разрешениями на запись, чтение и перечисление. Если соответствующий RDD больше не нужен, каждая транзакция хранит временные артефакты больших двоичных объектов в отдельном каталоге. Этот каталог записывается как часть журналов сведений о транзакциях чтения и записи, о которых сообщается на узле драйвера Spark.
 
     ```scala
     // Use either container/account-key/account name, or container SaS
@@ -225,28 +234,41 @@ mvn clean install
     // val storageSas = dbutils.secrets.get(scope = "KustoDemos", key = "blobStorageSasUrl")
     ```
 
-    В приведенном выше примере нет доступа к Key Vault с помощью интерфейса соединителя. Кроме того, мы используем более простой метод использования секретов блоков данных.
+    В приведенном выше примере доступ к Key Vault не осуществляется с помощью интерфейса соединителя. используется более простой метод использования секретов блоков данных.
 
-1. Чтение из обозреватель данных Azure:
+1. Чтение из обозреватель данных Azure.
 
-    ```scala
-     val conf3 = Map(
-          KustoSourceOptions.KUSTO_AAD_CLIENT_ID -> appId,
-          KustoSourceOptions.KUSTO_AAD_CLIENT_PASSWORD -> appKey
-          KustoSourceOptions.KUSTO_BLOB_STORAGE_SAS_URL -> storageSas)
-    val df2 = spark.read.kusto(cluster, database, "ReallyBigTable", conf3)
+    * Если **вы** предоставляете временное хранилище BLOB-объектов, выполните чтение из обозреватель данных Azure следующим образом:
+
+        ```scala
+         val conf3 = Map(
+              KustoSourceOptions.KUSTO_AAD_CLIENT_ID -> appId,
+              KustoSourceOptions.KUSTO_AAD_CLIENT_PASSWORD -> appKey
+              KustoSourceOptions.KUSTO_BLOB_STORAGE_SAS_URL -> storageSas)
+        val df2 = spark.read.kusto(cluster, database, "ReallyBigTable", conf3)
+        
+        val dfFiltered = df2
+          .where(df2.col("ColA").startsWith("row-2"))
+          .filter("ColB > 12")
+          .filter("ColB <= 21")
+          .select("ColA")
+        
+        display(dfFiltered)
+        ```
+
+    * Если **azure обозреватель данных** предоставляет временное хранилище BLOB-объектов, выполните чтение из обозреватель данных Azure следующим образом:
     
-    val dfFiltered = df2
-      .where(df2.col("ColA").startsWith("row-2"))
-      .filter("ColB > 12")
-      .filter("ColB <= 21")
-      .select("ColA")
-    
-    display(dfFiltered)
-    ```
+        ```scala
+        val dfFiltered = df2
+          .where(df2.col("ColA").startsWith("row-2"))
+          .filter("ColB > 12")
+          .filter("ColB <= 21")
+          .select("ColA")
+        
+        display(dfFiltered)
+        ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соединителе Azure обозреватель данных Spark](https://github.com/Azure/azure-kusto-spark/tree/master/docs)
-* [Пример кода](https://github.com/Azure/azure-kusto-spark/tree/master/samples/src/main)
-
+* [Пример кода для Java и Python](https://github.com/Azure/azure-kusto-spark/tree/master/samples/src/main)

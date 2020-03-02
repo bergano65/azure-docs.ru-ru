@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/29/2019
 ms.author: memildin
-ms.openlocfilehash: 899f4cba31afed812fa1643b925a38812308042e
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: dcf7df501665ea3885d00b9f7668a95cbbf02428
+ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552939"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78208548"
 ---
 # <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка и рекомендации по защите конечных точек в центре безопасности Azure
 
-Центр безопасности Azure предоставляет средства оценки работоспособности [поддерживаемых](security-center-services.md#supported-endpoint-protection-solutions-) версий решений для защиты конечных точек. В этой статье описываются сценарии, ведущие к центру безопасности для создания следующих двух рекомендаций.
+Центр безопасности Azure предоставляет средства оценки работоспособности [поддерживаемых](security-center-services.md#endpoint-supported) версий решений для защиты конечных точек. В этой статье описываются сценарии, ведущие к центру безопасности для создания следующих двух рекомендаций.
 
 * **Установка решений для защиты конечных точек на виртуальной машине**
 * **Устранение проблем работоспособности Endpoint Protection на ваших компьютерах**
@@ -92,13 +92,13 @@ ms.locfileid: "75552939"
 
 * **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 
-* **HKLM:\Software\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate\ASRunningStatus = 1**
+* **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
 
-или
+либо
 
-* **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\CurrentVersion\PRODUCTNAME = "Symantec Endpoint Protection"**
+* **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 
-* **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate\ASRunningStatus = 1**
+* **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
 
 Центр безопасности рекомендует **«разрешать проблемы работоспособности Endpoint Protection на ваших компьютерах»** , если не выполнены какие либо из следующих проверок:
 
@@ -123,7 +123,7 @@ ms.locfileid: "75552939"
 
 Центр безопасности рекомендует **«установить решения Endpoint Protection на виртуальной машине»** , если не выполнены какие либо из следующих проверок:
 
-* **HKLM:\SOFTWARE\McAfee\Endpoint\AV\ProductVersion** exists
+* **HKLM: \ софтваре\мкафи\ендпоинт\ав\продуктверсион** существует
 
 * **HKLM: \ Софтваре\мкафи\авсолутион\мкшиелдглобал\глобал\енаблеоас = 1**
 
@@ -175,7 +175,7 @@ ms.locfileid: "75552939"
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Журналы расширений антивредоносного по Майкрософт доступны по адресу: **%системдриве%\виндовсазуре\логс\плугинс\микрософт.Азуре.секурити.иаасантималваре (или PaaSAntimalware) \1.5.5.x (версия #) \CommandExecution.log**
 

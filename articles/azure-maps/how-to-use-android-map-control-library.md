@@ -9,18 +9,18 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 57ad9992bec3f070366134d8dfbcdafa8f2e16d4
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 1858b221418e6cc59c6441e0653299710b5c7e72
+ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209857"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78208650"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакет SDK для Android
 
 Azure Maps пакет SDK для Android — это библиотека векторных карт для Android. В этой статье описывается процесс установки Azure Maps пакет SDK для Android и загрузки карт.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure";
 
@@ -103,7 +103,7 @@ Android Studio позволяет настроить виртуальное ус
     </FrameLayout>
     ```
 
-4. В файле **MainActivity. Java** необходимо выполнить следующие действия:
+4. В файле **MainActivity.java** нужно сделать следующее:
     
     * добавить операции импорта для пакета SDK в Azure Maps;
     * настроить сведения о проверке подлинности Azure Maps;
@@ -127,7 +127,9 @@ Android Studio позволяет настроить виртуальное ус
     ```java
     package com.example.myapplication;
 
-    import android.support.v7.app.AppCompatActivity;
+    //For older versions use: import android.support.v7.app.AppCompatActivity;
+    import androidx.appcompat.app.AppCompatActivity;
+
     import android.os.Bundle;
     import com.microsoft.azure.maps.mapcontrol.AzureMaps;
     import com.microsoft.azure.maps.mapcontrol.MapControl;
@@ -268,7 +270,7 @@ mapControl.onReady(map -> {
 
 Полный список поддерживаемых языков и региональных представлений приведен [здесь](supported-languages.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как добавить данные наложения на карту.
 
