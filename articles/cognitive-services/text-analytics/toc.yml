@@ -42,6 +42,8 @@
     - name: 'Использование Flask для перевода текста, анализа тональности и синтезирования речи'
       maintainContext: true
       href: 'https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis'
+    - name: Извлечение сведений в Excel с помощью Power Automate
+      href: tutorials/extract-excel-information.md
 - name: Практические руководства
   items:
     - name: Вызов API "Анализ текста"

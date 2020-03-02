@@ -29,6 +29,8 @@
       href: tutorial-r-doazureparallel.md
     - name: Распознавание текста c помощью пакетной службы и службы "Функции"
       href: tutorial-batch-functions.md
+    - name: Скрипты Python с использованием Фабрики данных
+      href: tutorial-run-python-batch-azure-data-factory.md
 - name: Примеры
   items:
     - name: Примеры кода

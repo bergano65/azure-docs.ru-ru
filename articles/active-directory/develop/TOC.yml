@@ -405,6 +405,8 @@
           href: v2-admin-consent.md
         - name: Предоставление согласия для приложений
           href: application-consent-experience.md
+    - name: Условный доступ
+      href: v2-conditional-access-dev-guide.md
     - name: Национальные облака
       items:
         - name: Обзор

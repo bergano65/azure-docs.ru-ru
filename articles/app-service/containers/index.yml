@@ -1,112 +1,156 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Службе приложений на платформе Linux
+### YamlMime:Landing
+title: Документация по Службе приложений в Linux
+summary: Служба приложений Azure позволяет создавать и размещать веб-приложения, серверные части мобильных решений и API RESTful на любых языках без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git. Узнайте, как использовать Службу приложений Azure, изучив краткие инструкции, примеры и руководства.
 metadata:
-  title: Контейнеры Linux. Руководства и справочники
-  meta.description: Learn how to build Linux websites and web applications in App Service. Run your code in a default Docker container or run a custom container.
+  title: Документация по Службе приложений в Linux
+  description: Узнайте, как создавать веб-сайты и веб-приложения Linux в Службе приложений. Выполните код в контейнере Docker по умолчанию или запустите пользовательский контейнер.
   ms.topic: landing-page
-  ms.date: 09/05/2017
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/app-service/media/index/logo_net.svg'
-            text: .NET Core
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-dotnetcore'
-          - image:
-              src: 'https://docs.microsoft.com/azure/app-service/media/index/logo_nodejs.svg'
-            text: Node.js
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-nodejs'
-          - image:
-              src: 'https://docs.microsoft.com/azure/app-service/media/index/logo_php.svg'
-            text: PHP
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-php'
-          - image:
-              src: 'https://docs.microsoft.com/azure/app-service/media/index/logo_java.svg'
-            text: Java
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-java'
-          - image:
-              src: 'https://docs.microsoft.com/azure/app-service/media/index/logo_python.svg'
-            text: Python
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-python'
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_ruby.svg'
-            text: Ruby
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-ruby'
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_docker.svg'
-            text: Docker
-            href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-custom-docker-image'
-      - type: paragraph
-        text: 'Сведения о непрерывном развертывании:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ../media/index/zip.svg
-            text: ZIP/WAR
-            href: ../deploy-zip.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-          - image:
-              src: ../media/index/ftp.svg
-            text: FTP
-            href: ../deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-          - image:
-              src: ../media/index/git-icon.svg
-            text: Локальный репозиторий Git
-            href: ../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/logo_vs-team-services.svg'
-            text: Azure DevOps
-            href: 'https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?toc=/vsts/deploy-azure/toc.json&bc=/vsts/deploy-azure/breadcrumb/toc.json'
-          - image:
-              src: ../media/index/github-octicons.svg
-            text: GitHub
-            href: ../deploy-continuous-deployment.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-          - image:
-              src: ../media/index/bitbucket.svg
-            text: Bitbucket
-            href: ../deploy-continuous-deployment.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-          - image:
-              src: ../media/index/dropbox.svg
-            text: Синхронизация DropBox
-            href: ../deploy-content-sync.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-          - image:
-              src: ../media/index/onedrive.svg
-            text: Синхронизация OneDrive
-            href: ../deploy-content-sync.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Сведения о развертывании, администрировании и мониторинге защищенных веб-приложений в Службе приложений на платформе Linux'
-      - type: list
-        style: ordered
-        items:
-          - html: 'Создание приложения с помощью <a href="/azure/app-service/containers/tutorial-dotnetcore-sqldb-app">.NET Core с Базой данных SQL Azure</a>, <a href="/azure/app-service/containers/tutorial-java-enterprise-postgresql-app">Java Enterpise с PostgreSQL</a> или <a href="/azure/app-service/containers/tutorial-nodejs-mongodb-app">Node.js с MongoDB</a>'
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена с приложением</a>
-          - html: <a href="/azure/app-service/configure-ssl-bindings">Защита пользовательского доменного имени с помощью привязки SSL в Службе приложений Azure</a>
-          - html: <a href="/azure/cdn/cdn-add-to-web-app">Добавление CDN в приложение</a>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Найдите скрипты для выполнения типовых задач.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a>
-          - html: <a href="/cli/azure/appservice">Azure CLI</a>
-  - title: Справочник
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Azure CLI</a></p>
-          - title: Языки
-            html: <p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/">Java</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/appservice">Справочник по REST API</a></p>
+  ms.service: app-service
+  ms.date: 02/26/2020
+  ms.openlocfilehash: dfaea2e99aa67d13fc737294219e557fb624a5ec
+  ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 02/29/2020
+  ms.locfileid: "78191254"
+landingContent:
+- title: Сведения о Службе приложений в Linux
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Служба приложений в Linux?
+      url: app-service-linux-intro.md
+    - text: Служба приложений в Windows
+      url: /azure/app-service/
+    - text: Среда службы приложений
+      url: ../environment/intro.md
+    - text: Сравнение вариантов размещения
+      url: /azure/architecture/guide/technology-choices/compute-decision-tree
+  - linkListType: whats-new
+    links:
+    - text: Обновления службы
+      url: https://azure.microsoft.com/updates/?product=app-service
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Первое приложение ASP.NET Core для Linux
+      url: quickstart-dotnetcore.md
+    - text: Первое приложение Node.js для Linux
+      url: quickstart-nodejs.md
+    - text: Первое приложение PHP для Linux
+      url: quickstart-php.md
+    - text: Первое приложение Java для Linux
+      url: quickstart-java.md
+    - text: Первое приложение Python (Flask) для Linux
+      url: quickstart-python.md
+    - text: Первое приложение Ruby для Linux
+      url: quickstart-ruby.md
+- title: Стандартные задачи
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Сопоставление личного домена с приложением
+      url: ../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Защита личного домена с помощью привязки SSL
+      url: ../configure-ssl-bindings.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Запуск приложения в промежуточных средах
+      url: ../deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Включение журналов диагностики
+      url: ../troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Подключение к контейнеру с помощью SSH
+      url: app-service-linux-ssh-support.md
+    - text: Перенос активного домена в Службу приложений
+      url: ../manage-custom-dns-migrate-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+- title: Передача кода или содержимого
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Передача содержимого с использованием FTP
+      url: ../deploy-ftp.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Передача содержимого в виде ZIP-пакетов
+      url: ../deploy-zip.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Отправка Git с локального компьютера
+      url: ../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Синхронизация содержимого с OneDrive или Dropbox
+      url: ../deploy-content-sync.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: CI/CD с использованием GitHub, BitBucket и т. д.
+      url: ../deploy-continuous-deployment.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+- title: Приложение CRUD с базой данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Приложение ASP.NET Core с Базой данных SQL
+      url: tutorial-dotnetcore-sqldb-app.md
+    - text: Приложение PHP (Laravel) с MySQL в Azure
+      url: tutorial-php-mysql-app.md
+    - text: Приложение Node.js (MEAN.js) с MongoDB
+      url: tutorial-nodejs-mongodb-app.md
+    - text: Приложение Java (Spring Boot) с Cosmos DB
+      url: tutorial-java-spring-cosmosdb.md
+    - text: Приложение Python (Django) с PostgreSQL
+      url: tutorial-python-postgresql-app.md
+    - text: Приложение Ruby (Rails) с PostgreSQL
+      url: tutorial-ruby-postgres-app.md
+- title: Запуск пользовательских контейнеров
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Запуск пользовательского контейнера Linux
+      url: quickstart-docker.md
+    - text: Запуск приложения с несколькими контейнерами (Docker Compose)
+      url: quickstart-multi-container.md
+  - linkListType: tutorial
+    links:
+    - text: Запуск контейнера из Реестра контейнеров Azure
+      url: tutorial-custom-docker-image.md
+  - linkListType: how-to-guide
+    links:
+    - text: CI/CD в настраиваемом контейнере
+      url: app-service-linux-ci-cd.md
+    - text: Подключение контейнера к файлам службы хранилища
+      url: how-to-serve-content-from-azure-storage.md
+- title: Управление и интеграция
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Управление планами службы приложений
+      url: ../overview-hosting-plans.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - linkListType: tutorial
+    links:
+    - text: Добавление CDN в приложение
+      url: ../../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Аутентификация пользователей
+      url: tutorial-auth-aad.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Балансировка нагрузки с помощью Диспетчера трафика
+      url: ../web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Резервное копирование приложения в большие двоичные объекты хранилища
+      url: ../manage-backup.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+- title: Дополнительные ресурсы
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Библиотека видео по Службе приложений
+      url: https://azure.microsoft.com/resources/videos/index/?services=app-service
+    - text: Видеоуроки Pluralsight
+      url: https://www.pluralsight.com/search?q=azure%20app%20service
+  - linkListType: sample
+    links:
+    - text: Примеры для Azure CLI
+      url: ../samples-cli.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    - text: Примеры для Azure PowerShell
+      url: ../samples-powershell.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+  - linkListType: reference
+    links:
+    - text: Azure CLI
+      url: /cli/azure/appservice
+    - text: Azure PowerShell
+      url: /powershell/module/az.websites/#app_service
+    - text: REST API
+      url: /rest/api/appservice/
+    - text: Resource Manager
+      url: /azure/templates/microsoft.web/allversions

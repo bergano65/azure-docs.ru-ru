@@ -43,6 +43,8 @@
       href: active-directory-data-storage-australia-newzealand.md
     - name: "Новые возможности Microsoft\_365 для государственных организаций"
       href: whats-new-microsoft-365-government.md
+    - name: "Сравнение Azure\_AD и ADDS"
+      href: active-directory-compare-azure-ad-to-ad.md
     - name: Справочник по операциям Azure AD
       items:
         - name: Введение
