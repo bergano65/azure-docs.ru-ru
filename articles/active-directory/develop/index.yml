@@ -166,7 +166,7 @@ landingContent:
       url: https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp
   - linkListType: download
     links:
-    - text: 'Примеры: консоль ASP.NET, ASP.NET (веб), Java, Python'
+    - text: 'Примеры: консоль ASP.NET, веб-приложение ASP.NET, Java, Python'
       url: sample-v2-code.md#daemon-applications
 - title: Создание мобильного приложения, которое вызывает веб-API
   linkLists:

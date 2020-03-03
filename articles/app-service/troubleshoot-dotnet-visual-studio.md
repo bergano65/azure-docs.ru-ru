@@ -1,23 +1,23 @@
 ---
-title: Поиск и исправление неисправностей с помощью Visual Studio
+title: Устранение неполадок с помощью Visual Studio
 description: Узнайте, как устранять неполадки в работе приложения Cлужбы приложений с помощью удаленной отладки, трассировки и средств ведения журналов, которые встроены в Visual Studio 2013.
 ms.assetid: def8e481-7803-4371-aa55-64025d116c97
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: seodec18
-ms.openlocfilehash: 5c0a236dc6ebf02c859d9db3f25f0e9016ac35ab
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 3305cfb81980984574961b2a84a056f5d1879ead
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688386"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78227897"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 В этом руководстве показано, как использовать инструменты Visual Studio, которые позволяют отлаживать работу приложения в [Cлужбе приложений](https://go.microsoft.com/fwlink/?LinkId=529714) путем запуска приложения удаленно в [режиме отладки](https://docs.microsoft.com/visualstudio/debugger/) или путем просмотра журналов приложения и журналов веб-сервера.
 
-Вы узнаете следующее:
+Вы узнаете:
 
 * Какие функции управления приложением доступны в среде Visual Studio.
 * Как использовать удаленное представление Visual Studio для быстрого изменения удаленного приложения.
@@ -61,7 +61,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
     В этом руководстве используются раскрывающиеся списки ведения журналов и трассировки. Для удаленной отладки вы будете использовать другой метод.
 
-    Сведения о полях параметры приложения и строки подключения в этом окне см. в разделе [служба приложений Azure: как работают строки приложения и строки подключения](https://azure.microsoft.com/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/).
+    Сведения о полях параметров приложения и строк подключения в этом окне см. в записи блога [Windows Azure Web Sites: How Application Strings and Connection Strings Work](https://azure.microsoft.com/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) (Веб-сайты Microsoft Azure: как работают строки приложения и строки подключения).
 
     Если необходимо выполнить задачу по управлению приложением, которую невозможно выполнить в этом окне, щелкните **Открыть на портале управления**, чтобы открыть портал Azure в браузере.
 
@@ -135,7 +135,7 @@ Visual Studio обеспечивает доступ к сокращенному 
 
     ![Публикация в режиме отладки](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-publishdebug.png)
 
-1. Щелкните **Опубликовать**. Когда завершится развертывание и откроется URL-адрес Azure вашего приложения, закройте браузер.
+1. Нажмите кнопку **Опубликовать**. Когда завершится развертывание и откроется URL-адрес Azure вашего приложения, закройте браузер.
 
 1. В **обозревателе сервера** щелкните правой кнопкой мыши приложение и выберите **Подключить отладчик**.
 
@@ -567,7 +567,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 3. В Visual Studio на вкладке **Конфигурация** окна **Веб-приложение Azure** щелкните **Открыть на портале управления**.
 
-4. На [портале Azure](https://portal.azure.com) на странице **Параметры** приложения щелкните **Учетные данные развертывания**, а затем введите новое имя пользователя и пароль.
+4. На странице **Параметры** [портал Azure](https://portal.azure.com) приложения щелкните **учетные данные развертывания**, а затем введите новое имя пользователя и пароль.
 
     ![Новое имя пользователя и пароль FTP](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)
 
@@ -620,7 +620,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 Справочные данные об определенном вопросе, связанном с устранением неполадок, можно получить, начав беседу на одном из следующих форумов:
 
 * [Форум Azure на веб-сайте ASP.NET](https://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET).
-* [Форум Azure на портале MSDN](https://social.msdn.microsoft.com/Forums/windowsazure/).
+* [Форум Azure в Microsoft Q & а](https://docs.microsoft.com/answers/topics/azure-webapps.html).
 * [StackOverflow.com](https://www.stackoverflow.com).
 
 ### <a name="debugging-in-visual-studio"></a>Отладка в Visual Studio
@@ -645,7 +645,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
   Старый, но по-прежнему хороший ресурс для введения в тему.
 * [Прослушиватели трассировки](/dotnet/framework/debug-trace-profile/trace-listeners)<br/>
   Сведения о прослушивателях трассировки, но без упоминания [WebPageTraceListener](/dotnet/api/system.web.webpagetracelistener).
-* [Пошаговое руководство: интеграция трассировки ASP.NET с трассировкой System.Diagnostics](/previous-versions/b0ectfxd(v=vs.140))<br/>
+* [Пошаговое руководство. интеграция трассировки ASP.NET с трассировкой System.Diagnostics](/previous-versions/b0ectfxd(v=vs.140))<br/>
   Это также старая статья, которая, однако, содержит некоторые дополнительные сведения, которые не освещаются во вводной статье.
 * [Трассировка в представлениях ASP.NET MVC Razor](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
   Помимо трассировки в представлениях Razor, в этом посте также описывается, как создать фильтр ошибок, чтобы регистрировать все необработанные исключения в приложении MVC. Сведения о записи в журнал всех необработанных исключений в приложении Web Forms представлены в примере Global.asax в разделе [Полный пример для обработчиков ошибок](/previous-versions/bb397417(v=vs.140)) на сайте MSDN. Если в MVC или Web Forms понадобится зарегистрировать определенные исключения, но позволить платформе их обрабатывать, можно перехватить и повторно создать элементы, как показано на следующем примере:
