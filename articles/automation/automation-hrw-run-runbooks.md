@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 31ced19e164d50030386064a81edf3322b12855d
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: c67fff32770446cac3adef8af50c9e5733077bc7
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78191135"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78226289"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -46,7 +46,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 
 Имя пользователя для учетных данных должно быть представлено в одном из следующих форматов:
 
-* домен\имя пользователя;
+* домен или имя пользователя
 * username@domain
 * имя пользователя (для локальных учетных записей на локальном компьютере).
 
@@ -166,7 +166,7 @@ Get-AzAutomationAccount | Select-Object AutomationAccountName
 
 1. Сохраните модуль Runbook **Export-RunAsCertificateToHybridWorker** на компьютере с расширением **PS1** .
 2. Импортируйте его в учетную запись службы автоматизации.
-3. Измените модуль Runbook, изменив значение переменной *$Password* на свой собственный пароль. 
+3. Измените модуль Runbook, изменив значение переменной *пароля* o собственным паролем. 
 4. Опубликуйте модуль Runbook.
 5. Запустите модуль Runbook, нацеливание на группу гибридных рабочих ролей Runbook, которая выполняет и выполняет проверку подлинности модулей Runbook с помощью учетной записи запуска от имени. 
 6. Изучите поток задания, чтобы убедиться, что он сообщает о попытке импортировать сертификат в хранилище локального компьютера, а затем использует несколько строк. Это поведение зависит от количества учетных записей службы автоматизации, определяемых в подписке, и степени успеха проверки подлинности.
@@ -311,7 +311,7 @@ gpg –-clear-sign <runbook name>
 
 Теперь вы можете передать подписанный модуль Runbook в службу автоматизации Azure и выполнить его как обычный модуль Runbook.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о методах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Чтобы понять, как использовать текстовый редактор для работы с модулями Runbook PowerShell в службе автоматизации Azure, см. статью [изменение модуля Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).

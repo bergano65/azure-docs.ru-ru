@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4531e5d483508ca99722182f97c6a7aa0e0b68f3
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: ec53c4b2f80fb095f58bee9c15ac5daafb8d59ef
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78191118"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78226245"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -42,7 +42,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 -Name NewRunbook -ResourceGroupName MyResourceGroup -Type PowerShell
 ```
 
-## <a name="import-a-runbook"></a>Импорт модуля Runbook
+## <a name="import-a-runbook"></a>Импорт Runbook
 
 Вы можете создать новый модуль Runbook в службе автоматизации Azure, импортировав сценарий PowerShell или рабочий процесс PowerShell (**PS1**), экспортированный графический Runbook ( **. graphrunbook**) или сценарий Python 2 ( **. копировать**).  При этом необходимо указать [тип модуля Runbook](automation-runbook-types.md), который создается во время импорта, с учетом следующих рекомендаций.
 
@@ -92,7 +92,7 @@ Import-AzAutomationRunbook -Name $runbookName -Path $scriptPath `
 
 ## <a name="test-a-runbook"></a>Тестирование runbook
 
-При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, но [выходные данные](automation-runbook-output-and-messages.md#output-stream) и потоки [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода теста. Сообщения в [подробный поток](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода только в том случае, если для [переменной $VerbosePreference](automation-runbook-output-and-messages.md#preference-variables) задано значение **Continue**.
+При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, но [выходные данные](automation-runbook-output-and-messages.md#output-stream) и потоки [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода теста. Сообщения в [подробный поток](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода только в том случае, если переменная *VerbosePreference* ] (Automation-Runbook-Output-and-messages. md # предпочтения-переменные) установлена в значение **Continue**.
 
 Несмотря на то что выполняется черновая версия, модуль Runbook работает в обычном режиме и выполняет все действия с использованием ресурсов среды. В связи с этим тестировать модули Runbook можно только в непроизводственных ресурсах.
 
@@ -113,7 +113,7 @@ Import-AzAutomationRunbook -Name $runbookName -Path $scriptPath `
 ### <a name="publish-a-runbook-in-the-azure-portal"></a>Публикация модуля Runbook в портал Azure
 
 1. Откройте модуль Runbook на портале Azure.
-2. Нажмите кнопку **Изменить**.
+2. Щелкните **Правка**.
 3. Щелкните **опубликовать** , а затем **Да** в ответ на проверочное сообщение.
 
 ### <a name="publish-a-runbook-using-powershell"></a>Публикация модуля Runbook с помощью PowerShell
@@ -129,7 +129,7 @@ Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 -Name $runbookName -ResourceGroupName $RGName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать, как можно воспользоваться преимуществами модуля Runbook и коллекции модулей PowerShell, см. статью [Runbook и коллекции модулей для службы автоматизации Azure](automation-runbook-gallery.md).
 * Дополнительные сведения об изменении модулей Runbook PowerShell и рабочих процессов PowerShell с помощью текстового редактора см. в статье [Изменение текстовых модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).

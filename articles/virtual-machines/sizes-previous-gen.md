@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/20/2020
 ms.author: jonbeck
-ms.openlocfilehash: 700847c041a5b9111414d6b43ff734d83b1ca49f
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: e0abae8ada603e4e6b98ab0dfe9d794186e00000
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77913469"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78226778"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
 
@@ -166,6 +166,9 @@ ACU: 225
 | Standard_A11 | 16 | 112 | 382 | 64 | 64x500 | 4 |
 
 <sup>1</sup> Для приложений MPI в сети FDR InfiniBand включена выделенная внутренняя сеть RDMA, которая обеспечивает сверхнизкие задержки и высокую пропускную способность.  
+
+> [!NOTE]
+> Виртуальные машины A8 – A11 планируется выпустить в 3/2021. Дополнительные сведения см. в разделе [руководством по миграции HPC](https://azure.microsoft.com/resources/hpc-migration-guide/).
 
 <br>
 

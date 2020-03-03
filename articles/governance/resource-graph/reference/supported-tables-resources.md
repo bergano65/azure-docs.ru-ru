@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов диспетчер ресурсов
 description: Укажите список типов ресурсов диспетчер ресурсов, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 02/25/2020
+ms.date: 03/02/2020
 ms.topic: reference
-ms.openlocfilehash: dc08c4a33ec9e0c20b865ffa4d7c6ff9d5248e90
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 3d6ba89cbf5c35c2a06a214029971341c4184b41
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77602559"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78227346"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Graph ресурсов Azure и Справочник по типам ресурсов
 
@@ -210,6 +210,7 @@ ms.locfileid: "77602559"
 - Microsoft. Insights/метрикалертс
 - Microsoft. Insights/нотификатионграупс
 - Microsoft. Insights/нотификатионрулес
+- Microsoft. Insights/привателинкскопес
 - Microsoft. Insights/счедуледкуерирулес
 - Microsoft. Insights/WebTest
 - Microsoft. Insights/книги

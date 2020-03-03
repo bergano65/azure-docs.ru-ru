@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.author: dapine
-ms.openlocfilehash: c4a27db8bec6dbbd2f1b2be8acfdd034d45d37d5
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 499770b664757ec0f3a0bd3b26e0de36007741b6
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561926"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78228070"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -347,6 +347,103 @@ speechConfig!.setPropertyTo(
     </voice>
 </speak>
 ```
+
+## <a name="use-custom-lexicon-to-improve-pronunciation"></a>Использование пользовательского лексикона для улучшения произношения
+
+Иногда TTS не может правильно произношень слова, например названия компании или внешнего имени. Разработчики могут определить чтение этих сущностей в SSML с помощью тегов `phoneme` и `sub` или определить чтение нескольких сущностей, обратившись к пользовательскому файлу лексикона с помощью тега `lexicon`.
+
+**Синтаксис**
+
+```XML
+<lexicon uri="string"/>
+```
+
+**Атрибуты**
+
+| Атрибут | Описание | Обязательный или необязательный |
+|-----------|-------------|---------------------|
+| `uri` | Адрес внешнего документа областей. | Обязательное. |
+
+**Использование**
+
+Шаг 1. Определение пользовательского лексикона 
+
+Можно определить чтение сущностей по списку пользовательских элементов лексикона, сохраненных в формате XML или областей.
+
+**Пример**
+
+```xml
+<?xml version="1.0" encoding="UTF-16"?>
+<lexicon version="1.0" 
+      xmlns="http://www.w3.org/2005/01/pronunciation-lexicon"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="http://www.w3.org/2005/01/pronunciation-lexicon 
+        http://www.w3.org/TR/2007/CR-pronunciation-lexicon-20071212/pls.xsd"
+      alphabet="ipa" xml:lang="en-US">
+  <lexeme>
+    <grapheme>BTW</grapheme> 
+    <alias>By the way</alias> 
+  </lexeme>
+  <lexeme>
+    <grapheme> Benigni </grapheme> 
+    <phoneme> bɛˈniːnji</phoneme>
+  </lexeme>
+</lexicon>
+```
+
+Каждый элемент `lexeme` является элементом лексикона. `grapheme` содержит текст, описывающий орсограф `lexeme`. Форма "Цветовая подзапись" может быть предоставлена как `alias`. В элементе `phoneme` можно указать телефонную строку.
+
+Элемент `lexicon` содержит по крайней мере один элемент `lexeme`. Каждый элемент `lexeme` содержит по крайней мере один элемент `grapheme` и один или несколько элементов `grapheme`, `alais`и `phoneme`. Элемент `grapheme` содержит текст, описывающий <a href="https://www.w3.org/TR/pronunciation-lexicon/#term-Orthography" target="_blank">орсографи <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>. Элементы `alias` используются для указания произношения акронима или сокращенного выражения. Элемент `phoneme` предоставляет текст, описывающий, как произносится `lexeme`.
+
+Дополнительные сведения о пользовательском файле лексикона см. в статье о [словаре произношения (областей) версии 1,0](https://www.w3.org/TR/pronunciation-lexicon/) на веб-сайте W3C.
+
+Шаг 2. Отправка пользовательского файла словаря, созданного на шаге 1 в сети. Вы можете сохранить его в любом месте. Мы рекомендуем сохранить его в Microsoft Azure, например в [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
+
+Шаг 3. ссылка на пользовательский файл словаря в SSML
+
+```xml
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" 
+          xmlns:mstts="http://www.w3.org/2001/mstts" 
+          xml:lang="en-US">
+<lexicon uri="http://www.example.com/customlexicon.xml"/>
+BTW, we will be there probably 8:00 tomorrow morning.
+Could you help leave a message to Robert Benigni for me?
+</speak>
+```
+"БТВ" будет считаться "следующим образом". "Бенигни" будет прочитан с помощью предоставленного IPA "бɛ ˈ Ni ː НЖИ".  
+
+**Ограничения**
+- Размер файла: максимальный размер файла словаря, 100 КБ, если он превышает этот размер, запрос синтеза завершится ошибкой.
+- Обновление кэша словаря: Пользовательский словарь будет кэшироваться с URI в качестве ключа в службе TTS при первой загрузке. Словарь с одинаковым URI не будет перезагружен в течение 15 минут, поэтому для вступления в силу пользовательского лексикона необходимо подождать не более 15 минут.
+
+**Телефонный набор SAPI**
+
+В приведенном выше примере мы используем набор телефонного по фонетической ассоциации (IPA). Мы рекомендуем разработчикам использовать IPA, поскольку IPA является международным стандартом. 
+
+Учитывая, что IPA нелегко запомнить, корпорация Майкрософт определяет набор SAPI для семи языков (`en-US`, `fr-FR`, `de-DE`, `es-ES`, `ja-JP`, `zh-CN`и `zh-TW`). Дополнительные сведения о алфавите см. в [справочнике по фонетическому алфавиту](https://msdn.microsoft.com/library/hh362879(v=office.14).aspx).
+
+Телефонный набор SAPI можно использовать с пользовательскими лексиконами, как показано ниже. Задайте значение алфавита с помощью **SAPI**.
+
+```xml
+<?xml version="1.0" encoding="UTF-16"?>
+<lexicon version="1.0" 
+      xmlns="http://www.w3.org/2005/01/pronunciation-lexicon"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="http://www.w3.org/2005/01/pronunciation-lexicon 
+        http://www.w3.org/TR/2007/CR-pronunciation-lexicon-20071212/pls.xsd"
+      alphabet="sapi" xml:lang="en-US">
+  <lexeme>
+    <grapheme>BTW</grapheme> 
+    <alias> By the way </alias> 
+  </lexeme>
+  <lexeme>
+    <grapheme> Benigni </grapheme>
+    <phoneme> b eh 1 - n iy - n y iy </phoneme>
+  </lexeme>
+</lexicon>
+```
+
+Дополнительные сведения об этом алфавите см. в [справочнике по алфавиту SAPI](sapi-phoneset-usage.md).
 
 ## <a name="adjust-prosody"></a>Настройка Prosody
 

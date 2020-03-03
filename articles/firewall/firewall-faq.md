@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 02/26/2020
+ms.date: 03/02/2020
 ms.author: victorh
-ms.openlocfilehash: 4792c0bce7d9119f5198490d62f49f000e1567d3
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: dc5a05c672df1b4f9db764b58db93279c4be7570
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77621968"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78227434"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -125,7 +125,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="does-azure-firewall-outbound-snat-between-private-networks"></a>Использует ли брандмауэр Azure исходящий SNAT для частных сетей?
 
-Брандмауэр Azure не поддерживает SNAT, если IP-адрес назначения является диапазоном частных IP-адресов для каждого [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). Если в вашей организации используется диапазон общедоступных IP-адресов для частных сетей, брандмауэр Azure Снатс трафик на один из частных IP-адресов брандмауэра в Азурефиреваллсубнет. Вы можете настроить для брандмауэра Azure диапазон общедоступных IP-адресов, **отличный** от SNAT. Дополнительные сведения см. в разделе [диапазоны частных IP-адресов SNAT в брандмауэре Azure](snat-private-range.md).
+Брандмауэр Azure не поддерживает SNAT, если IP-адрес назначения является диапазоном частных IP-адресов для каждого [IANA RFC 1918](https://tools.ietf.org/html/rfc1918). Если в вашей организации используется диапазон общедоступных IP-адресов для частных сетей, брандмауэр Azure Снатс трафик на один из частных IP-адресов брандмауэра в Азурефиреваллсубнет. В настройках Брандмауэра Azure можно указать, что **не нужно** использовать SNAT для диапазона общедоступный IP-адресов. Дополнительные сведения см. в статье об [использовании SNAT для диапазонов частных IP-адресов в Брандмауэре Azure](snat-private-range.md).
 
 ## <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>Поддерживается ли принудительное туннелирование или привязка к сетевому виртуальному устройству?
 
@@ -177,3 +177,25 @@ Set-AzFirewall -AzureFirewall $azfw
 ## <a name="does-azure-firewall-allow-access-to-active-directory-by-default"></a>Разрешает ли брандмауэр Azure доступ к Active Directory по умолчанию?
 
 Нет. Брандмауэр Azure блокирует Active Directory доступ по умолчанию. Чтобы разрешить доступ, настройте тег службы AzureActiveDirectory. Дополнительные сведения см. в статье [теги службы брандмауэра Azure](service-tags.md).
+
+## <a name="can-i-exclude-a-fqdn-or-an-ip-address-from-azure-firewall-threat-intelligence-based-filtering"></a>Можно ли исключить полное доменное имя или IP-адрес из фильтрации на основе логики операций с угрозами в брандмауэре Azure?
+
+Да, для этого можно использовать Azure PowerShell:
+
+```azurepowershell
+# Add a Threat Intelligence Whitelist to an Existing Azure Firewall
+
+## Create the Whitelist with both FQDN and IPAddresses
+
+$fw = Get-AzFirewall -Name "Name_of_Firewall" -ResourceGroupName "Name_of_ResourceGroup"
+$fw.ThreatIntelWhitelist = New-AzFirewallThreatIntelWhitelist `
+   -FQDN @(“fqdn1”, “fqdn2”, …) -IpAddress @(“ip1”, “ip2”, …)
+
+## Or Update FQDNs and IpAddresses separately
+
+$fw = Get-AzFirewall -Name "Name_of_Firewall" -ResourceGroupName "Name_of_ResourceGroup"
+$fw.ThreatIntelWhitelist.FQDNs = @(“fqdn1”, “fqdn2”, …)
+$fw.ThreatIntelWhitelist.IpAddress = @(“ip1”, “ip2”, …)
+
+Set-AzFirewall -AzureFirewall $fw
+```

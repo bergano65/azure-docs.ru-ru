@@ -6,17 +6,17 @@ ms.assetid: e34d405e-c5d4-46ad-9b26-2a1eda86ce80
 ms.topic: article
 ms.date: 03/04/2016
 ms.custom: seodec18
-ms.openlocfilehash: 87c95d8bbf199f232eca5475f4d8f0c64427a198
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: 1945730acaddb0c1c7ee1b28eeb926635efad643
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75680891"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78227892"
 ---
 # <a name="azure-app-service-local-cache-overview"></a>Общие сведения о локальном кэше службы приложений Azure
 
 > [!NOTE]
-> Локальный кэш не поддерживается в приложениях-функциях и контейнерных приложениях службы приложений, например в [службе приложений в Linux](containers/app-service-linux-intro.md).
+> Локальный кэш не поддерживается в приложениях-функциях или контейнерных приложениях службы приложений, например в [контейнерах Windows](app-service-web-get-started-windows-container.md) или в [службе приложений на платформе Linux](containers/app-service-linux-intro.md).
 
 
 Содержимое Службы приложений Azure хранится в Службе хранилища Azure; оно доступно в долгосрочном режиме в общей папке содержимого. Эта схема рассчитана на работу с различными приложениями и имеет следующие атрибуты:  

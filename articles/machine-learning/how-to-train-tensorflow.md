@@ -1,5 +1,5 @@
 ---
-title: Обучение нейронной сети с помощью TensorFlow
+title: Обучение и развертывание модели TensorFlow
 titleSuffix: Azure Machine Learning
 description: Узнайте, как запускать скрипты обучения TensorFlow в масштабе с помощью Машинное обучение Azure.
 services: machine-learning
@@ -10,12 +10,12 @@ ms.author: maxluk
 author: maxluk
 ms.date: 08/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: a1c3e1948d53a168ce9a3e99cd932fa04e2fafc4
-ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
+ms.openlocfilehash: 2bbd81f3858aa78b9e0e2d610c0fdb0a67816c8e
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114375"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78228308"
 ---
 # <a name="build-a-tensorflow-deep-learning-model-at-scale-with-azure-machine-learning"></a>Создание модели глубокого обучения TensorFlow в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "77114375"
 
 Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
 
@@ -305,11 +305,11 @@ cluster_spec = tf.train.ClusterSpec(cluster)
 
 ```
 
-## <a name="deployment"></a>Развертывание
+## <a name="deploy-a-tensorflow-model"></a>Развертывание модели TensorFlow
 
 Только что зарегистрированная модель может быть развернута точно так же, как и любая другая Зарегистрированная модель в Машинное обучение Azure, независимо от того, какой механизм оценки использовался для обучения. Руководство по развертыванию содержит раздел, посвященный регистрации моделей, но можно сразу перейти к [созданию целевого объекта вычислений](how-to-deploy-and-where.md#choose-a-compute-target) для развертывания, так как у вас уже есть Зарегистрированная модель.
 
-### <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
+## <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
 
 Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (Предварительная версия) для Tensorflow. Зарегистрировав модель, как показано выше, с параметрами `model_framework`, `model_framework_version`и `resource_configuration`, можно просто использовать статическую функцию `deploy()` для развертывания модели.
 
@@ -319,7 +319,7 @@ service = Model.deploy(ws, "tensorflow-web-service", [model])
 
 Полное [Описание процесса](how-to-deploy-and-where.md) развертывания в машинное обучение Azure более подробно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы обучили и зарегистрировали модель TensorFlow и узнали о вариантах развертывания. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 

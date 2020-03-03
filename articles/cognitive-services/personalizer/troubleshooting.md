@@ -1,15 +1,15 @@
 ---
 title: Устранение неполадок — Персонализация
 description: Эта статья содержит ответы на часто задаваемые вопросы об устранении неполадок персонализации.
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 02/26/2020
 ms.author: diberry
-ms.openlocfilehash: 432b33243bdb38cf359d4fea1a336500eb244464
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 39db920b663ace12f2fc6ca35f9082a791da1541
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77650526"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78228036"
 ---
 # <a name="personalizer-troubleshooting"></a>Устранение неполадок персонализации
 
@@ -99,7 +99,7 @@ ms.locfileid: "77650526"
 </details>
 
 
-## <a name="learning-policy"></a>Политика обучения
+## <a name="learning-policy"></a>Политики обучения
 
 <details>
 <summary><b>Разделы справки импортировать политику обучения?</b></summary>

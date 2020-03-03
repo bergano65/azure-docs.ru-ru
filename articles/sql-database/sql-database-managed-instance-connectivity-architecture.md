@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 04/16/2019
-ms.openlocfilehash: 1b5a48a686a238d724680e806daaed431107ec72
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: ec1430e7dd79378473cce9dbb77bedecd14600c8
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894824"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78228283"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключения для управляемого экземпляра в базе данных SQL Azure
 
@@ -103,20 +103,20 @@ ms.locfileid: "75894824"
 
 ### <a name="mandatory-inbound-security-rules-with-service-aided-subnet-configuration"></a>Обязательные правила безопасности для входящего трафика с конфигурацией подсети с разавтоматизированной службой 
 
-| Имя       |Port                        |Протокол|Источник           |Место назначения|Действия|
+| Имя       |Порт                        |Протокол|Источник           |Назначение|Действие|
 |------------|----------------------------|--------|-----------------|-----------|------|
-|управление  |9000, 9003, 1438, 1440, 1452|TCP     |SqlManagement    |MI SUBNET  |Allow |
-|            |9000, 9003                  |TCP     |корпнетсав       |MI SUBNET  |Allow |
-|            |9000, 9003                  |TCP     |65.55.188.0/24, 167.220.0.0/16, 131.107.0.0/16, 94.245.87.0/24|MI SUBNET  |Allow |
-|mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Allow |
-|health_probe|Любой                         |Любой     |AzureLoadBalancer|MI SUBNET  |Allow |
+|Intune  |9000, 9003, 1438, 1440, 1452|TCP     |SqlManagement    |MI SUBNET  |Разрешение |
+|            |9000, 9003                  |TCP     |корпнетсав       |MI SUBNET  |Разрешение |
+|            |9000, 9003                  |TCP     |65.55.188.0/24, 167.220.0.0/16, 131.107.0.0/16, 94.245.87.0/24|MI SUBNET  |Разрешение |
+|mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
+|health_probe|Любой                         |Любой     |AzureLoadBalancer|MI SUBNET  |Разрешение |
 
 ### <a name="mandatory-outbound-security-rules-with-service-aided-subnet-configuration"></a>Обязательные правила безопасности для исходящего трафика с конфигурацией подсети с разавтоматизированной службой 
 
-| Имя       |Port          |Протокол|Источник           |Место назначения|Действия|
+| Имя       |Порт          |Протокол|Источник           |Назначение|Действие|
 |------------|--------------|--------|-----------------|-----------|------|
-|управление  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Allow |
-|mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Allow |
+|Intune  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Разрешение |
+|mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
 
 ### <a name="user-defined-routes-with-service-aided-subnet-configuration"></a>Определяемые пользователем маршруты с конфигурацией подсети с разавтоматизированной службой 
 
@@ -277,7 +277,7 @@ ms.locfileid: "75894824"
 |Mi-216-220-208-20-NextHop-Internet|216.220.208.0/20|Интернет|
 ||||
 
-подсеть \* MI относится к диапазону IP-адресов для подсети в формате 10. x. x. x/y. Эти сведения можно найти в портал Azure в свойствах подсети.
+подсеть \* MI относится к диапазону IP-адресов для подсети в формате x. x. x. x/y. Эти сведения можно найти в портал Azure в свойствах подсети.
 
 Кроме того, можно добавить записи в таблицу маршрутов для маршрутизации трафика с локальными частными IP-адресами в качестве назначения через шлюз виртуальной сети или устройство виртуальной сети (NVA).
 
@@ -298,23 +298,23 @@ ms.locfileid: "75894824"
 
 ### <a name="mandatory-inbound-security-rules"></a>Обязательные правила безопасности для входящего трафика
 
-| Имя       |Port                        |Протокол|Источник           |Место назначения|Действия|
+| Имя       |Порт                        |Протокол|Источник           |Назначение|Действие|
 |------------|----------------------------|--------|-----------------|-----------|------|
-|управление  |9000, 9003, 1438, 1440, 1452|TCP     |Любой              |MI SUBNET  |Allow |
-|mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Allow |
-|health_probe|Любой                         |Любой     |AzureLoadBalancer|MI SUBNET  |Allow |
+|Intune  |9000, 9003, 1438, 1440, 1452|TCP     |Любой              |MI SUBNET  |Разрешение |
+|mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
+|health_probe|Любой                         |Любой     |AzureLoadBalancer|MI SUBNET  |Разрешение |
 
 ### <a name="mandatory-outbound-security-rules"></a>Обязательные правила безопасности для исходящего трафика
 
-| Имя       |Port          |Протокол|Источник           |Место назначения|Действия|
+| Имя       |Порт          |Протокол|Источник           |Назначение|Действие|
 |------------|--------------|--------|-----------------|-----------|------|
-|управление  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Allow |
-|mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Allow |
+|Intune  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Разрешение |
+|mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
 
 > [!IMPORTANT]
 > Убедитесь, что существует только одно правило входящего трафика для портов 9000, 9003, 1438, 1440, 1452 и одно правило исходящего трафика для портов 443, 12000. Управляемый экземпляр подготовка с помощью Azure Resource Manager развертываний завершится ошибкой, если правила для входящих и исходящих подключений настраиваются отдельно для каждого порта. Если эти порты находятся в разных правилах, развертывание завершится с кодом ошибки `VnetSubnetConflictWithIntendedPolicy`
 
-подсеть \* MI относится к диапазону IP-адресов для подсети в формате 10. x. x. x/y. Эти сведения можно найти в портал Azure в свойствах подсети.
+подсеть \* MI относится к диапазону IP-адресов для подсети в формате x. x. x. x/y. Эти сведения можно найти в портал Azure в свойствах подсети.
 
 > [!IMPORTANT]
 > Хотя необходимые правила безопасности для входящего трафика разрешают трафик из _любого_ источника на портах 9000, 9003, 1438, 1440 и 1452, эти порты защищаются встроенным брандмауэром. Дополнительные сведения см. [в разделе Определение адреса конечной точки управления](sql-database-managed-instance-find-management-endpoint-ip-address.md).
@@ -427,7 +427,7 @@ ms.locfileid: "75894824"
 |Mi-216-220-208-20-NextHop-Internet|216.220.208.0/20|Интернет|
 ||||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения см. в разделе [Advanced Data Security базы данных SQL](sql-database-managed-instance.md).
 - Узнайте, как [настроить новую виртуальную сеть Azure](sql-database-managed-instance-create-vnet-subnet.md) или [существующую виртуальную сеть Azure](sql-database-managed-instance-configure-vnet-subnet.md) , в которой можно развернуть управляемые экземпляры.

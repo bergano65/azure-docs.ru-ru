@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/27/2020
+ms.date: 03/02/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a64af5d2b19b05ec9a5eda97c43e278cdfb8b4ff
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: bdea51c6cb53222f31a07906785a94073a0293a1
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78189112"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78226797"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
@@ -118,26 +118,25 @@ ms.locfileid: "78189112"
 
 #### <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно | Description|
+| Атрибут | Обязательно | Описание|
 | --- | --- | --- |
-| алвайсфетчклаимсфромпровидер | нет | В настоящее время не используется, может игнорироваться. |
+| алвайсфетчклаимсфромпровидер | Нет | В настоящее время не используется, может игнорироваться. |
 
 ### <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
 
-Этот поставщик используется для управления Azure AD B2C сеансов SAML между приложением проверяющей стороны или федеративным поставщиком удостоверений SAML. При использовании поставщика единого входа для хранения сеанса поставщика удостоверений SAML для `IncludeSessionIndex` и `RegisterServiceProviders` необходимо задать значение `false`. В [техническом профиле SAML](saml-technical-profile.md)используется следующий `SM-Saml-idp` технический профиль.
+Этот поставщик используется для управления Azure AD B2C сеансов SAML между приложением проверяющей стороны или федеративным поставщиком удостоверений SAML. При использовании поставщика единого входа для хранения сеанса поставщика удостоверений SAML `RegisterServiceProviders` необходимо задать значение `false`. В [техническом профиле SAML](saml-technical-profile.md)используется следующий `SM-Saml-idp` технический профиль.
 
 ```XML
 <TechnicalProfile Id="SM-Saml-idp">
   <DisplayName>Session Management Provider</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   <Metadata>
-    <Item Key="IncludeSessionIndex">false</Item>
     <Item Key="RegisterServiceProviders">false</Item>
   </Metadata>
 </TechnicalProfile>
 ```
 
-При использовании поставщика для хранения сеанса SAML B2C `IncludeSessionIndex` и `RegisterServiceProviders` должны иметь значение `true`. Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
+При использовании поставщика для хранения сеанса SAML B2C `RegisterServiceProviders` должен иметь значение `true`. Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
 
 [Технический профиль SAML Issuer](connect-with-saml-service-providers.md) использует следующий `SM-Saml-idp` технический профиль
 
@@ -149,10 +148,10 @@ ms.locfileid: "78189112"
 ```
 #### <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно | Description|
+| Атрибут | Обязательно | Описание|
 | --- | --- | --- |
-| IncludeSessionIndex | нет | Указывает поставщику, что следует сохранить индекс сеанса. Возможные значения: `true` (по умолчанию) или `false`.|
-| RegisterServiceProviders | нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
+| IncludeSessionIndex | Нет | В настоящее время не используется, может игнорироваться.|
+| RegisterServiceProviders | Нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
 
 
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: 00e8cdbbd765d6baf83f64848030d08d6e712ca1
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 600ca893e6d6b81fe24626a99cc1f6de80efb3e8
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661351"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78228147"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -214,10 +214,12 @@ npm i --save @microsoft/applicationinsights-web-basic
 ## <a name="upgrading-from-the-old-version-of-application-insights"></a>Обновление старой версии Application Insights
 
 Критические изменения в версии пакета SDK v2:
-- Чтобы обеспечить лучшую сигнатуры API, некоторые вызовы API, такие как trackPageView, были обновлены. Работа в IE8 или более ранних версиях браузера не поддерживается.
+- Чтобы обеспечить лучшую сигнатуру API, некоторые вызовы API, такие как trackPageView и trackException, были обновлены. Запуск в Internet Explorer 8 и более ранних версиях браузера не поддерживается.
 - В связи с обновлением схемы данных в конверте телеметрии изменились имя и структура поля.
-- Перемещен `context.operation` в `context.telemetryTrace`. Некоторые поля были также изменены (`operation.id` --> `telemetryTrace.traceID`)
-  - Если вы хотите вручную обновить текущий идентификатор pageview (например, в приложениях SPA), это можно сделать с помощью `appInsights.properties.context.telemetryTrace.traceID = Util.newId()`
+- Перемещен `context.operation` в `context.telemetryTrace`. Некоторые поля были также изменены (`operation.id` --> `telemetryTrace.traceID`).
+  - Чтобы вручную обновить текущий идентификатор pageview (например, в приложениях SPA), используйте `appInsights.properties.context.telemetryTrace.traceID = Util.generateW3CId()`.
+    > [!NOTE]
+    > Чтобы идентификатор трассировки был уникальным, где ранее использовался `Util.newId()`, теперь используйте `Util.generateW3CId()`. Как и в конечном итоге, это идентификатор операции.
 
 Если вы используете текущий пакет SDK Application Insights (1.0.20) и хотите узнать, работает ли новый пакет SDK в среде выполнения, обновите URL-адрес в зависимости от текущего сценария загрузки пакета SDK.
 
