@@ -1,16 +1,16 @@
 ---
-title: Диагностика
+title: Устранение неполадок
 services: azure-dev-spaces
 ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранить распространенные проблемы, возникающие при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 061f812e7567d96bba092ebc9625756c14c46940
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
-ms.translationtype: HT
+ms.openlocfilehash: 2b5a6f14899ec41b1740563f4e8174f65aa679c7
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77662473"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198003"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок Azure Dev Spaces
 
@@ -18,7 +18,7 @@ ms.locfileid: "77662473"
 
 Если при использовании Azure Dev Spaces возникла проблема, создайте [проблему в репозитории Azure dev Spaces GitHub](https://github.com/Azure/dev-spaces/issues).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 Чтобы более эффективно устранять неполадки, можно создать более подробные журналы для проверки.
 
@@ -52,13 +52,13 @@ az aks use-dev-spaces -g <resource group name> -n <cluster name>
 
 ### <a name="controller-create-failing-because-of-controller-name-length"></a>Сбой создания контроллера из-за длины имени контроллера
 
-Длина имени контроллера Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ при включении пространств разработки в кластере AKS или создании контроллера, появится сообщение об ошибке. Например:
+Длина имени контроллера Azure Dev Spaces не может превышать 31 символ. Если имя контроллера превышает 31 символ при включении пространств разработки в кластере AKS или создании контроллера, появится сообщение об ошибке. Пример:
 
 ```console
 Failed to create a Dev Spaces controller for cluster 'a-controller-name-that-is-way-too-long-aks-east-us': Azure Dev Spaces Controller name 'a-controller-name-that-is-way-too-long-aks-east-us' is invalid. Constraint(s) violated: Azure Dev Spaces Controller names can only be at most 31 characters long*
 ```
 
-Чтобы устранить эту проблему, создайте контроллер с альтернативным именем. Например:
+Чтобы устранить эту проблему, создайте контроллер с альтернативным именем. Пример:
 
 ```cmd
 azds controller create --name my-controller --target-name MyAKS --resource-group MyResourceGroup
@@ -159,7 +159,7 @@ Container image build failed
 
 Настройте службу Azure Dev Spaces так, чтобы она указывала на конкретный файл _Dockerfile_ в вашем проекте. Если Azure Dev Spaces не использует файл _Dockerfile_, который вы хотели использовать для сборки своих контейнеров, то можно явно указать Azure Dev Spaces, какой файл Dockerfile нужно использовать. 
 
-Чтобы устранить эту проблему, откройте файл _аздс. YAML_ , который Azure dev Spaces создан в проекте. *Конфигурации обновления: Разработка: сборка: dockerfile* , указывающая на dockerfile, который вы хотите использовать. Например:
+Чтобы устранить эту проблему, откройте файл _аздс. YAML_ , который Azure dev Spaces создан в проекте. *Конфигурации обновления: Разработка: сборка: dockerfile* , указывающая на dockerfile, который вы хотите использовать. Пример:
 
 ```yaml
 ...
@@ -206,13 +206,13 @@ install:
 
 Эта ошибка может возникать, когда не удается запустить код службы. Чаще всего причина в пользовательском коде. Чтобы получить дополнительные диагностические сведения, включите более подробное ведение журнала при запуске службы.
 
-В командной строке используйте `--verbose`, чтобы включить более подробное ведение журнала. Можно также указать формат выходных данных с помощью `--output`. Например:
+В командной строке используйте `--verbose`, чтобы включить более подробное ведение журнала. Можно также указать формат выходных данных с помощью `--output`. Пример:
 
 ```cmd
 azds up --verbose --output json
 ```
 
-В Visual Studio:
+В Visual Studio сделайте следующее:
 
 1. Откройте меню **Сервис > Параметры** и в разделе **Проекты и решения** выберите **Сборка и запуск**.
 2. Измените значение параметра **Степень подробности сообщений при сборке проекта MSBuild** на **Подробно** или **Диагностика**.
@@ -335,7 +335,7 @@ Service cannot be started.
 
 ### <a name="authorization-error-microsoftdevspacesregisteraction"></a>Ошибка авторизации "Microsoft. Девспацес/Register/Action"
 
-Вам потребуется доступ *владельца* или *участника* в подписке Azure, чтобы управлять Azure Dev Spaces. Если вы пытаетесь управлять пространствами разработки и у вас нет доступа *владельца* или *участника* к связанной подписке Azure, может появиться сообщение об ошибке авторизации. Например:
+Вам потребуется доступ *владельца* или *участника* в подписке Azure, чтобы управлять Azure Dev Spaces. Если вы пытаетесь управлять пространствами разработки и у вас нет доступа *владельца* или *участника* к связанной подписке Azure, может появиться сообщение об ошибке авторизации. Пример:
 
 ```console
 The client '<User email/Id>' with object id '<Guid>' does not have authorization to perform action 'Microsoft.DevSpaces/register/action' over scope '/subscriptions/<Subscription Id>'.
@@ -422,9 +422,8 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 Чтобы устранить эту проблему:
 
 1. Если процесс сборки или развертывания еще не завершен, вы можете подождать 2–3 секунды и повторить попытку доступа к службе. 
-1. Проверьте конфигурацию порта. Указанные номера портов должны **совпадать** во всех следующих ресурсах:
-    * **Dockerfile:** задается инструкцией `EXPOSE`.
-    * **[Диаграмма Helm](https://docs.helm.sh):** задается значениями `externalPort` и `internalPort` для службы (часто находится в файле `values.yml`).
+1. Проверьте конфигурацию порта в следующих ресурсах:
+    * **[Диаграмма Helm](https://docs.helm.sh):** Задается `service.port` и `deployment.containerPort` в поле Values. YAML с помощью команды `azds prep`.
     * Все порты, открытые в коде приложения, например в Node.js: `var server = app.listen(80, function () {...}`
 
 ### <a name="the-type-or-namespace-name-mylibrary-couldnt-be-found"></a>Не удалось найти тип или имя пространства имен "MyLibrary"
@@ -469,7 +468,7 @@ kubectl -n my-namespace delete pod --all
 
 Чтобы включить Azure Dev Spaces в кластере AKS, для которого исходящий трафик от узлов кластера ограничен, необходимо разрешить следующие полные доменные имена:
 
-| Полное доменное имя.                                    | Порт      | Применение      |
+| Полное доменное имя.                                    | Порт      | Использование      |
 |-----------------------------------------|-----------|----------|
 | cloudflare.docker.com | HTTPS:443 | Извлечение образов Linux Alpine и других Azure Dev Spaces |
 | gcr.io | HTTP: 443 | Извлечение Helm/с образами|
@@ -489,7 +488,7 @@ kubectl -n my-namespace delete pod --all
 
 После [поворота сертификатов в кластере AKS](../aks/certificate-rotation.md)некоторые операции, такие как `azds space list` и `azds up`, завершатся сбоем. Кроме того, после смены сертификатов в кластере необходимо обновить сертификаты на контроллере Azure Dev Spaces.
 
-Чтобы устранить эту проблему, убедитесь, что в *kubeconfig* есть обновленные сертификаты, используя `az aks get-credentials` затем выполните команду `azds controller refresh-credentials`. Например:
+Чтобы устранить эту проблему, убедитесь, что в *kubeconfig* есть обновленные сертификаты, используя `az aks get-credentials` затем выполните команду `azds controller refresh-credentials`. Пример:
 
 ```azurecli
 az aks get-credentials -g <resource group name> -n <cluster name>
