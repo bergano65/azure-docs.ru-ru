@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 1/14/2020
 ms.author: cbasoglu
-ms.openlocfilehash: 00617fc09f471eaf3dc13a5aa691c4aab2e1e2ec
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: b41967033b00144ca5bd52ce23cf8aabcea6749e
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77424921"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78228080"
 ---
 # <a name="speech-services-with-sovereign-clouds"></a>Службы речи с облаками независимых
 
@@ -56,7 +56,7 @@ ms.locfileid: "77424921"
 - TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://chinaeast2.TTS.Speech.Azure.CN", "\<\>ключ");*
 - Токены проверки подлинности: HTTPS[]()://chinaeast2.API.Cognitive.Azure.CN/STS/v1.0/issueToken
 - Портал Azure: https://portal.azure.cn
-- Пользовательское распознавание речи портал: https://chinaeast2.cris.azure.cn/Home/CustomSpeech
+- Пользовательское распознавание речи портал: https://speech.azure.cn/CustomSpeech
 - Доступные номера SKU: S0
 - Поддерживаемые функции
   - Преобразование речи в текст
