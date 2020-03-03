@@ -7,15 +7,17 @@ ms.service: cost-management-billing
 ms.topic: reference
 ms.date: 02/14/2020
 ms.author: banders
-ms.openlocfilehash: a5a158ce67d2d0c7dd947f7b35a96d12429c8ec9
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 9f9552c134fa7653e4100cae3c731e4c670d44e3
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200682"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560547"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Обзор API- интерфейсов отчетов для корпоративных клиентов
 Интерфейсы API отчетов позволяют корпоративным клиентам Azure извлекать данные о потреблении и выставлении счетов программным способом и передавать их в предпочитаемые средства анализа данных. Клиенты, которые принадлежат к типу Enterprise, подписали [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) с Azure и тем самым приняли согласованные денежные обязательства, и получили доступ к пользовательским тарифам на ресурсы Azure.
+
+Все параметры даты и времени, используемые API, должны быть представлены в виде значений времени в формате UTC. Значения, возвращаемые API, отображаются в формате UTC.
 
 ## <a name="enabling-data-access-to-the-api"></a>Включение доступа данных к API
 * **Создание или получение ключа API.** Войдите на корпоративный портал и последовательно выберите "Отчеты" > "Скачать сведения об использовании" > API Access Key (Ключ доступа к API), чтобы создать или получить ключ API.

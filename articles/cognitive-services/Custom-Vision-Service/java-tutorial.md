@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 02/25/2020
 ms.author: areddish
-ms.openlocfilehash: 2b3c6fc404e9a5fefc15aa7b7162ff5573c3be5a
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: a0cfa49dfe247a71e5c2d546e2bb7e9d9b2efc18
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76166140"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77616346"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-sdk-for-java"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для Java
 
@@ -25,14 +25,14 @@ ms.locfileid: "76166140"
 
 - Любая среда разработки Java.
 - [JDK 7 или 8](https://aka.ms/azure-jdks) установлены.
-- Установленный Maven.
+- Установленный [Maven](https://maven.apache.org/).
 - [!INCLUDE [create-resources](includes/create-resources.md)]
 
 ## <a name="get-the-custom-vision-sdk-and-sample-code"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров кода
 
 Чтобы написать приложение Java, которое использует Пользовательскую службу визуального распознавания, вам потребуются пакеты Пользовательской службы визуального распознавания Maven. Эти пакеты включены в скачиваемый пример проекта, но будут доступны по отдельности здесь.
 
-Можно установить пакет SDK для Пользовательской службы визуального распознавания из центрального репозитория Maven.
+Пакет SDK для Пользовательской службы визуального распознавания можно найти в репозитории maven central:
 
 - [Пакет SDK для обучения](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-training)
 - [Пакет SDK для прогнозирования](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customvision-prediction)
@@ -43,7 +43,10 @@ ms.locfileid: "76166140"
 
 [!INCLUDE [get-keys](includes/get-keys.md)]
 
-Эта программа настроена для хранения данных ключа в качестве переменных сред. Задайте эти переменные, перейдя в папку **Vision/CustomVision** в PowerShell. Затем введите указанные ниже команды:
+Эта программа настроена для создания ссылки на данные ключа в качестве переменных среды. Перейдите в папку **Vision/CustomVision** и введите следующие команды PowerShell, чтобы задать переменные среды. 
+
+> [!NOTE]
+> Если вы используете операционную систему, отличную от Windows, см. инструкции по [настройке переменных среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows#configure-an-environment-variable-for-authentication).
 
 ```powershell
 $env:AZURE_CUSTOMVISION_TRAINING_API_KEY ="<your training api key>"
@@ -88,9 +91,9 @@ $env:AZURE_CUSTOMVISION_PREDICTION_API_KEY ="<your prediction api key>"
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Чтобы скомпилировать и запустить решение с помощью Maven, выполните следующую команду в каталоге проекта в PowerShell:
+Чтобы скомпилировать и запустить решение с помощью Maven, перейдите в каталог проекта (**Vision/CustomVision**) в командной строке и выполните следующую команду.
 
-```powershell
+```bash
 mvn compile exec:java
 ```
 

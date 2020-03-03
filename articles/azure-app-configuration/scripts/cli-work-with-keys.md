@@ -1,36 +1,34 @@
 ---
 title: Пример скрипта Azure CLI. Использование пар "ключ — значение" в хранилище конфигураций приложения Azure
 titleSuffix: Azure App Configuration
-description: Сведения об использовании пар "ключ-значение" в хранилище конфигураций приложения Azure
+description: Используйте скрипт Azure CLI для создания, просмотра, обновления и удаления значений ключей из хранилища Конфигурации приложений Azure.
 services: azure-app-configuration
-documentationcenter: ''
 author: lisaguthrie
-manager: maiye
-editor: ''
 ms.service: azure-app-configuration
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: azure-app-configuration
-ms.date: 11/08/2019
+ms.date: 02/19/2020
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: 931c2f738556404e2d58381f7152acb0613a057b
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 1a4edabe666a554ccd01d110f0f71226221dfc67
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77468190"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77523660"
 ---
 # <a name="work-with-key-values-in-an-azure-app-configuration-store"></a>Использование пар "ключ-значение" в хранилище конфигураций приложения Azure
 
-Этот пример скрипта создает пару "ключ-значение" в хранилище конфигураций приложения Azure, выводит список всех существующих пар "ключ-значение", обновляет значение для нового ключа и, наконец, удаляет это значение.
+В этом примере скрипта показано, как:
+* создать новую пару "ключ-значение";
+* перечислить все существующие пары "ключ-значение";
+* обновить значение только что созданного ключа;
+* удалить новую пару "ключ-значение".
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+В этой статье требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -81,13 +79,13 @@ az appconfig kv list --name $appConfigName
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-В этом скрипте используются приведенные ниже команды для работы с парами "ключ —значение" в хранилище Конфигурации приложений. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+В этой таблице перечислены команды, используемые в нашем примере скрипта. 
 
 | Get-Help | Примечания |
 |---|---|
-| [az appconfig kv set](/cli/azure/appconfig/kv#az-appconfig-kv-set) | Создает или обновляет пары "ключ-значение". |
-| [az appconfig kv list](/cli/azure/appconfig/kv#az-appconfig-kv-list) | Выводит список пар "ключ —значение" в хранилище Конфигурации приложений. |
-| [az appconfig kv delete](/cli/azure/appconfig/kv#az-appconfig-kv-delete) | Удаляет пару "ключ-значение". |
+| [az appconfig kv set](/cli/azure/appconfig/kv#az-appconfig-kv-set) | Создание или обновление пары "ключ-значение". |
+| [az appconfig kv list](/cli/azure/appconfig/kv#az-appconfig-kv-list) | Выводит список пар "ключ-значение" в хранилище Конфигурации приложений. |
+| [az appconfig kv delete](/cli/azure/appconfig/kv#az-appconfig-kv-delete) | Удаление пары "ключ-значение". |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

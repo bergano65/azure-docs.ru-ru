@@ -1,5 +1,5 @@
 ---
-title: Руководство. Настройка расширения Машинного обучения Azure для Visual Studio Code
+title: Руководство по настройке расширения Visual Studio Code
 titleSuffix: Azure Machine Learning
 description: Сведения о настройке расширения Машинного обучения Azure для Visual Studio Code
 services: machine-learning
@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 01/16/2019
-ms.openlocfilehash: 4000fcc80d507d3b1e871d7f3288fc3b77693c76
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.date: 02/24/2020
+ms.openlocfilehash: 583071ee22e4fb9cffc741520b1583790002a5bf
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76157465"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604859"
 ---
 # <a name="set-up-azure-machine-learning-visual-studio-code-extension"></a>Настройка расширения Машинного обучения Azure для Visual Studio Code
 
@@ -30,7 +30,8 @@ ms.locfileid: "76157465"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас ее нет, зарегистрируйтесь для использования [бесплатной или платной версии службы "Машинное обучение Azure"](https://aka.ms/AMLFree)
-- Установите простой кроссплатформенный редактор кода [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview). 
+- Visual Studio Code. Если у вас нет Visual Studio Code, [установите его](https://code.visualstudio.com/docs/setup/setup-overview).
+- [Python 3](https://www.python.org/downloads/);
 
 ## <a name="install-the-extension"></a>Установка расширения
 
@@ -38,6 +39,9 @@ ms.locfileid: "76157465"
 1. Выберите значок **Расширения** на **панели действий**, чтобы открыть представление "Расширения".
 1. В представлении "Расширения" выполните поиск по фразе Azure Machine Learning (Машинное обучение Azure).
 1. Выберите пункт **Установить**.
+
+    > [!div class="mx-imgBorder"]
+    > ![Установка расширения Машинного обучения Azure для VS Code](./media/tutorial-setup-vscode-extension/install-aml-vscode-extension.PNG)
 
 > [!NOTE]
 > Либо вы можете установить расширение Машинного обучения Azure из Visual Studio Marketplace, [скачав установщик напрямую](https://aka.ms/vscodetoolsforai). 
@@ -49,9 +53,9 @@ ms.locfileid: "76157465"
 Чтобы подготавливать ресурсы и выполнять рабочие нагрузки в Azure, необходимо выполнить вход с учетной записью Azure. Чтобы упростить управление учетными записями, Машинное обучение Azure автоматически устанавливает расширение учетной записи Azure. Сведения о расширении учетной записи Azure см. [здесь](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 1. Откройте палитру команд. Для этого на панели меню выберите **Вид > Палитра команд**. 
-1. Введите команду "Azure: Sign In" в текстовое поле, чтобы начать процесс входа.
+1. Введите команду "Azure: Sign In" в палитре команд, чтобы начать процесс входа.
 
-## <a name="run-a-script-in-azure"></a>Запуск скрипта в Azure
+## <a name="run-a-machine-learning-model-training-script-in-azure"></a>Запуск скрипта обучения модели машинного обучения в Azure
 
 Теперь, когда вы вошли в Azure со своей учетной записью, выполните описанные в этом разделе действия, чтобы применить расширение для обучения модели машинного обучения.
 
@@ -79,16 +83,16 @@ ms.locfileid: "76157465"
 
     ```json
     {
-        "workspace": "WS12191742",
-        "resourceGroup": "WS12191742-rg2",
+        "workspace": "WS01311608",
+        "resourceGroup": "WS01311608-rg1",
         "location": "South Central US",
-        "experiment": "WS12191742-exp2",
+        "experiment": "WS01311608-exp1",
         "compute": {
-            "name": "WS12191742-com2",
+            "name": "WS01311608-com1",
             "vmSize": "Standard_D1_v2, Cores: 1; RAM: 3.5GB;"
         },
         "runConfiguration": {
-            "filename": "WS12191742-com2-rc1",
+            "filename": "WS01311608-com1-rc1",
             "condaDependencies": [
                 "python=3.6.2",
                 "tensorflow=1.15.0"
@@ -100,8 +104,38 @@ ms.locfileid: "76157465"
     }
     ```
 
-1. Щелкните **Отправка эксперимента**, чтобы запустить эксперимент в Azure. Это действие передает `train.py` и файл конфигурации в рабочую область Машинного обучения Azure. Затем задание обучения запускается на вычислительном ресурсе в Azure.
-1. Через несколько минут создается локальный каталог с именем `output`, который содержит обученную модель TensorFlow.
+1. Если конфигурация вас устраивает, отправьте эксперимент. Для этого откройте палитру команд и введите следующую команду:
+
+    ```text
+    Azure ML: Submit Experiment
+    ```
+
+    Это действие передает `train.py` и файл конфигурации в рабочую область Машинного обучения Azure. Затем задание обучения запускается на вычислительном ресурсе в Azure.
+
+### <a name="track-the-progress-of-the-training-script"></a>Отслеживание хода выполнения скрипта обучения
+
+Выполнение скрипта может занять несколько минут. Чтобы отслеживать ход его выполнения, выполните приведенные ниже действия.
+
+1. Щелкните значок **Azure** на панели действий.
+1. Разверните узел подписки.
+1. Разверните текущий узел эксперимента. Он находится внутри узла `{workspace}/Experiments/{experiment}`, где значения для рабочей области и эксперимента совпадают со свойствами, определенными в файле конфигурации.
+1. В список включены все запуски для эксперимента, а также их состояние. Чтобы получить самое последнее состояние, щелкните значок обновления в верхней части представления "Машинное обучение Azure".
+
+    > [!div class="mx-imgBorder"]
+    > ![Отслеживание хода выполнения эксперимента](./media/tutorial-setup-vscode-extension/track-experiment-progress.PNG)
+
+### <a name="download-the-trained-model"></a>Скачивание обученной модели
+
+После завершения эксперимента выходными данными является обученная модель. Чтобы скачать выходные данные на локальный компьютер, выполните приведенные ниже шаги.
+
+1. Щелкните правой кнопкой мыши последний запуск и выберите **Download Outputs** (Скачать выходные данные модели).
+
+    > [!div class="mx-imgBorder"]
+    > ![Скачивание обученной модели](./media/tutorial-setup-vscode-extension/download-trained-model.PNG)
+
+1. Выберите расположение для сохранения выходных данных.
+1. Папка с именем запуска скачивается локально. Перейдите на эту страницу.
+1. Файлы моделей расположены в каталоге `outputs/outputs/model`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

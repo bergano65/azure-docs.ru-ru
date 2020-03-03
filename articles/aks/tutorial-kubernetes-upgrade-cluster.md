@@ -2,18 +2,15 @@
 title: Руководство по Kubernetes в Azure. Обновление кластера
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющийся кластер AKS до последней доступной версии Kubernetes.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: tutorial
-ms.date: 12/19/2018
-ms.author: mlearned
+ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 9fe02c9b563259abb51a1a768c7facdf1bf601f7
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 4d9ef061904fb1a0fff25506eedb82158971bed5
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69898841"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77622031"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство по Обновление Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -26,7 +23,7 @@ ms.locfileid: "69898841"
 > * Обновление узлов Kubernetes.
 > * Проверка успешного обновления.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение было упаковано в образ контейнера. Этот образ был передан в Реестр контейнеров Azure, и вы создали кластер AKS. Затем приложение было развернуто в кластере AKS. Если вы не выполнили эти действия, вы можете начать с раздела руководства 1 [Создание образов контейнеров][aks-tutorial-prepare-app].
 
@@ -40,12 +37,12 @@ ms.locfileid: "69898841"
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере текущей является версия *1.13.10*, а доступные версии представлены в колонке *Обновления*.
+В следующем примере текущей является версия *1.14.8*, а доступные версии представлены в колонке *Обновления*.
 
 ```
 Name     ResourceGroup    MasterVersion    NodePoolVersion    Upgrades
 -------  ---------------  ---------------  -----------------  --------------
-default  myResourceGroup  1.13.10          1.13.10            1.14.5, 1.14.6
+default  myResourceGroup  1.14.8           1.14.8             1.15.5, 1.15.7
 ```
 
 ## <a name="upgrade-a-cluster"></a>Обновление кластера
@@ -61,13 +58,13 @@ default  myResourceGroup  1.13.10          1.13.10            1.14.5, 1.14.6
 Для обновления кластера AKS используйте команду [az aks upgrade][]. В следующем примере кластер обновляется до версии Kubernetes *1.14.6*.
 
 > [!NOTE]
-> Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.12.x* до *1.13.x*, но нельзя обновить версию *1.12.x* сразу до *1.14.x*. Чтобы обновить версию *1.12.x* до *1.14.x*, сначала обновите версию *1.12.x* до *1.13.x*, а затем выполните обновление с версии *1.13.x* до *1.14.x*.
+> Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.14.x* до *1.15.x*, но нельзя обновить версию *1.14.x* сразу до *1.16.x*. Чтобы обновить версию *1.14.x* до *1.16.x*, сначала обновите версию *1.14.x* до *1.15.x*, а затем выполните обновление с версии *1.15.x* до *1.16.x*.
 
 ```azurecli
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.14.6
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.15.5
 ```
 
-Ниже приведен краткий пример выходных данных, где для *kubernetesVersion* указан номер *1.14.6*.
+В следующем примере выходных данных показано, что для *kubernetesVersion* указан номер *1.15.5*.
 
 ```json
 {
@@ -85,7 +82,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
   "enableRbac": false,
   "fqdn": "myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io",
   "id": "/subscriptions/<Subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster",
-  "kubernetesVersion": "1.14.6",
+  "kubernetesVersion": "1.15.5",
   "location": "eastus",
   "name": "myAKSCluster",
   "type": "Microsoft.ContainerService/ManagedClusters"
@@ -100,12 +97,12 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере выходных данных показано, что кластер AKS выполняется с помощью *KubernetesVersion 1.14.6*.
+В следующем примере выходных данных показано, что на кластере AKS выполняется *KubernetesVersion 1.15.5*.
 
 ```
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ----------------------------------------------------------------
-myAKSCluster  eastus      myResourceGroup  1.14.6               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.15.5               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
@@ -119,9 +116,9 @@ az group delete --name myResourceGroup --yes --no-wait
 > [!NOTE]
 > Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе с [дополнительными замечаниями][sp-delete].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы обновили Kubernetes в кластере AKS. Вы научились выполнять следующие задачи:
+В этом руководстве вы обновили Kubernetes в кластере AKS. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Определение текущей и доступной версии Kubernetes.

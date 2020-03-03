@@ -8,12 +8,12 @@ ms.service: azure
 ms.topic: overview
 ms.workload: infrastructure
 ms.date: 08/24/2018
-ms.openlocfilehash: e6ef4cc825d40615fa8a6aee7dff8d4542407974
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 4f9da6cbfe8d1e6b92c39148b275de193730c8f1
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75970858"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623579"
 ---
 # <a name="get-started-for-azure-it-operators"></a>Начало работы для ИТ-операторов Azure
 
@@ -112,7 +112,7 @@ Azure предлагает множество служб на своей пла�
 
 - Azure HDInsight для обработки больших объемов данных
 
-- Планировщик Azure
+- Azure Logic Apps для рабочих процессов интеграции и оркестрации
 
 - Службы мультимедиа Azure
 

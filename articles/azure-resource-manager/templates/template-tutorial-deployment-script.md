@@ -13,14 +13,14 @@ ms.devlang: na
 ms.date: 01/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5454d2f80d1febccb0c57ecf2e80d930bb5cb761
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 21725e64bb359b2f11086baceb186605f010b796
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988810"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561465"
 ---
-# <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство. Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
+# <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
 
 Здесь описывается, как использовать скрипты развертывания в шаблонах Azure Resource Manager. Скрипты развертывания позволяют выполнять настраиваемые действия, которые не могут быть выполнены с помощью шаблонов Resource Manager. Например, создание самозаверяющего сертификата.  Работая с этим учебником, вы создадите шаблон для развертывания хранилища ключей Azure, а затем используете ресурс `Microsoft.Resources/deploymentScripts` в том же шаблоне для создания сертификата и добавите сертификат в хранилище ключей. Дополнительные сведения об использовании скриптов развертывания в шаблонах Azure Resource Manager см. в [этой статье](./deployment-script-template.md).
 
@@ -266,13 +266,13 @@ ms.locfileid: "76988810"
     * **timeout**. Укажите максимально допустимое время выполнения скрипта в [формате ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). Значение по умолчанию — **P1D**.
     * **arguments**. Укажите значения параметров. Значения разделяются пробелами.
     * **scriptContent**. Укажите содержимое скрипта. Чтобы запустить внешний скрипт, используйте вместо этого свойство **primaryScriptURI**. Дополнительные сведения об использовании внешнего скрипта см. [здесь](./deployment-script-template.md#use-external-scripts).
-        Объявление **$DeploymentScriptOutputs** требуется только при тестировании скрипта на локальном компьютере. Объявление переменной позволяет выполнять скрипт на локальном компьютере и в ресурсе deploymentScript без внесения изменений. Значение, присваиваемое $DeploymentScriptOutputs, доступно в виде выходных данных в развертываниях. Дополнительные сведения о работе с выходными данными из скриптов развертывания см. в [этом разделе](./deployment-script-template.md#work-with-outputs-from-deployment-scripts).
+        Объявление **$DeploymentScriptOutputs** требуется только при тестировании скрипта на локальном компьютере. Объявление переменной позволяет выполнять скрипт на локальном компьютере и в ресурсе deploymentScript без внесения изменений. Значение, присваиваемое $DeploymentScriptOutputs, доступно в виде выходных данных в развертываниях. Дополнительную информацию см. в разделах о работе с выходными данными скриптов развертывания [PowerShell](./deployment-script-template.md#work-with-outputs-from-powershell-script) или [CLI](./deployment-script-template.md#work-with-outputs-from-cli-script).
     * **cleanupPreference**. Укажите, в каком случае необходимо удалять ресурсы скрипта развертывания.  Значение по умолчанию — **Always**. Это означает, что ресурсы скрипта развертывания удаляются вне зависимости от конечного состояния (выполнено, сбой, отмена). В этом учебнике используется значение **OnSuccess**, чтобы вы могли просмотреть результаты выполнения скрипта.
     * **retentionInterval**. Укажите интервал, в течение которого служба будет хранить ресурсы скрипта после достижения конечного состояния. По истечении этого времени ресурсы будут удалены. Длительность основывается на шаблоне ISO 8601. В этом учебнике используется P1D, что означает один день.  Это свойство используется, если для параметра **cleanupPreference** установлено значение **OnExpiration**. Это свойство сейчас не включено.
 
     Скрипт развертывания принимает три параметра: имя хранилища ключей, имя сертификата и имя субъекта.  Он создает сертификат, а затем добавляет его в хранилище ключей.
 
-    Параметр **$DeploymentScriptOutputs** используется для хранения выходных значений.  Дополнительные сведения о работе с выходными данными из скриптов развертывания см. в [этом разделе](./deployment-script-template.md#work-with-outputs-from-deployment-scripts).
+    Параметр **$DeploymentScriptOutputs** используется для хранения выходных значений.  Дополнительные сведения см. в разделах о работе с выходными данными скриптов развертывания [PowerShell](./deployment-script-template.md#work-with-outputs-from-powershell-script) или [CLI](./deployment-script-template.md#work-with-outputs-from-cli-script).
 
     Готовый шаблон можно найти [здесь](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-keyvault.json).
 

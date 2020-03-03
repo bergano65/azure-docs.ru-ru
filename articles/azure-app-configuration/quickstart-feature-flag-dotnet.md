@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 10/21/2019
 ms.author: lcozzens
-ms.openlocfilehash: bdb00bfbadec68fa110f747858d264a2c34f8bd1
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 5ea9749c07aadc7037e753160e9b053992bebae2
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76120875"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77619318"
 ---
 # <a name="quickstart-add-feature-flags-to-a-net-framework-app"></a>Краткое руководство. Добавление флагов функций в приложение .NET Framework
 
@@ -31,11 +31,18 @@ ms.locfileid: "76120875"
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs)
-- [.NET Framework 4.7.2](https://dotnet.microsoft.com/download)
+- [.NET Framework 4.8](https://dotnet.microsoft.com/download)
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
+
+6. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить флаг функции `Beta`.
+
+    > [!div class="mx-imgBorder"]
+    > ![Включение флага функции с именем Beta](media/add-beta-feature-flag.png)
+
+    Не определяйте `label` сейчас.
 
 ## <a name="create-a-net-console-app"></a>Создайте консольное приложение .NET
 
@@ -43,7 +50,7 @@ ms.locfileid: "76120875"
 
 1. В разделе **Создание проекта** с помощью фильтра найдите тип проекта **Консоль** и щелкните **Консольное приложение (.NET Framework)** . Щелкните **Далее**.
 
-1. В окне **Настроить новый проект** введите имя проекта. В разделе **Платформа** выберите **.NET Framework 4.7.1** или более поздней версии. Нажмите кнопку **Создать**.
+1. В окне **Настроить новый проект** введите имя проекта. В разделе **Платформа** выберите **.NET Framework 4.8** или более позднюю версию. Нажмите кнопку **Создать**.
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
@@ -67,13 +74,8 @@ ms.locfileid: "76120875"
 1. Обновите метод `Main` для подключения к Конфигурации приложения, указав параметр `UseFeatureFlags`, чтобы получить флаги функции. Затем отобразите сообщение, если флаг функции `Beta` включен.
 
     ```csharp
-        public static void Main(string[] args)
-        {
-            AsyncMain().Wait();
-        }
-
-        private static async Task AsyncMain()
-        {
+        public static async Task Main(string[] args)
+        {         
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .AddAzureAppConfiguration(options =>
                 {

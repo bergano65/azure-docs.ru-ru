@@ -7,14 +7,14 @@ ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
 keywords: служба автоматизации Azure, DSC, PowerShell, настройка требуемого состояния, управление обновлениями, отслеживание изменений, инвентаризация, модули runbook, Python, графический, гибридный
-ms.date: 02/12/2020
+ms.date: 02/24/2020
 ms.topic: overview
-ms.openlocfilehash: 33681d5c9e296d7c292dabbd64560e3d95c45af2
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 57b44db9c1bb9a607ad8478b7208df40441020c2
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190321"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586246"
 ---
 # <a name="what-is-azure-arc-for-servers-preview"></a>Что такое Azure Arc для серверов (предварительная версия)
 
@@ -49,8 +49,12 @@ Azure Arc для серверов (предварительная версия)
 
 Агент Azure Connected Machine официально поддерживают следующие версии операционных систем Windows и Linux: 
 
-- Windows Server 2012 R2 и более поздних версий;
+- Windows Server 2012 R2 или более поздние версии (в том числе Windows Server Core)
 - Ubuntu 16.04 и 18.04.
+- CentOS Linux 7
+- SUSE Linux Enterprise Server (SLES) 15
+- Red Hat Enterprise Linux (RHEL) 7
+- Amazon Linux 7
 
 >[!NOTE]
 >Этот предварительный выпуск агента подключенного компьютера для Windows поддерживает только англоязычную версию Windows Server.
@@ -65,6 +69,15 @@ Azure Arc для серверов (предварительная версия)
 ### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
 
 Прежде чем настраивать компьютеры с поддержкой Azure Arc для серверов (предварительная версия), необходимо просмотреть [ограничения подписки](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) Azure Resource Manager и [ограничения группы ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits), чтобы спланировать число подключенных компьютеров.
+
+## <a name="tls-12-protocol"></a>Протокол TLS 1.2
+
+Чтобы обеспечить безопасность данных, передаваемых в Azure, настоятельно рекомендуем настроить для компьютера использование протокола TLS версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**. 
+
+|Платформа или язык | Поддержка | Дополнительные сведения |
+| --- | --- | --- |
+|Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org). | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
+| Windows Server 2012 R2 и более поздних версий; | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings).|
 
 ### <a name="networking-configuration"></a>Конфигурация сети
 
@@ -130,6 +143,12 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 >[!NOTE]
 >В предварительной версии выпущен только один пакет, который подходит для Ubuntu 16.04 или 18.04.
 
+Агент Azure Connected Machine для Windows и Linux можно обновить до последней версии вручную или автоматически в зависимости от требований. Для Windows обновление агента может быть выполнено автоматически с помощью Центра обновления Windows, а для Ubuntu — с помощью программы командной строки [apt](https://help.ubuntu.com/lts/serverguide/apt.html).
+
+### <a name="agent-status"></a>Состояние агента
+
+Агент Connected Machine отправляет службе регулярное сообщение пульса каждые 5 минут. Если сообщение не получено в течение 15 минут, устройство считается отключенным, а на портале состояние автоматически изменится на **Отключено**. После получения последующего сообщения пульса от агента Connected Machine его состояние автоматически изменится на **Подключено**.
+
 ## <a name="install-and-configure-agent"></a>Установка и настройка агента
 
 Подключение компьютеров в гибридной среде напрямую к Azure может осуществляться разными способами в зависимости от требований. В следующей таблице описан каждый метод. Эти данные помогут вам определить, какой из методов самый подходящий для вашей организации.
@@ -138,7 +157,6 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
 |--------|-------------|
 | Интерактивно | Вручную установите агент на одном или нескольких компьютерах, выполнив действия, описанные в статье [Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале](onboard-portal.md).<br> На портале Azure можно создать сценарий и выполнить его на компьютере, чтобы автоматизировать шаги установки и настройки агента.|
 | В большом масштабе | Установите и настройте агент для нескольких машин, выполнив указания в статье [Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов в PowerShell](onboard-service-principal.md).<br> Этот метод создает субъект-службу для подключения компьютеров в неинтерактивном режиме.|
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,12 +4,12 @@ ms.service: api-management
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: vlvinogr
-ms.openlocfilehash: dff01f8bc4a4cf58d1ed503b69a29dadc367fecb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b9e601c72395b4910850714460321a83a3113e69
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66249110"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77649553"
 ---
 ## <a name="how-apim-proxy-server-responds-with-ssl-certificates-in-the-tls-handshake"></a>Как прокси-сервер APIM отвечает с использованием SSL-сертификатов в подтверждении TLS
 
@@ -20,7 +20,7 @@ ms.locfileid: "66249110"
 Если пользователь применяет клиент, который не отправляет заголовок [SNI](https://tools.ietf.org/html/rfc6066#section-3), APIM создает ответы на основе следующей логики:
 
 * Если в службе есть только один личный домен, который настроен для использования прокси-сервера, сертификат по умолчанию является сертификатом, выданным прокси-серверу личного домена.
-* Если в службе настроено несколько личных доменов для прокси-сервера (поддерживается только на уровне **Премиум**), клиент может указать сертификат по умолчанию. Чтобы установить сертификат по умолчанию, для свойства [defaultSslBinding](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/apimanagementservice/createorupdate#hostnameconfiguration) нужно задать значение true ("defaultSslBinding":"true"). Если клиент не задал свойство, сертификатом по умолчанию является сертификат, выданный домену прокси-сервера по умолчанию по адресу *.azure-api.net.
+* Если в службе настроено несколько личных доменов для прокси-сервера (поддерживается на уровне **Разработка** и **Премиум**), клиент может указать сертификат, который будет использоваться по умолчанию. Чтобы установить сертификат по умолчанию, для свойства [defaultSslBinding](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/apimanagementservice/createorupdate#hostnameconfiguration) нужно задать значение true ("defaultSslBinding":"true"). Если клиент не задал свойство, сертификатом по умолчанию является сертификат, выданный домену прокси-сервера по умолчанию по адресу *.azure-api.net.
 
 ## <a name="support-for-putpost-request-with-large-payload"></a>Поддержка запросов PUT/POST с большим объемом полезных данных
 

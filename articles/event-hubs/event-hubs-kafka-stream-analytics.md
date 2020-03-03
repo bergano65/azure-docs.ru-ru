@@ -1,6 +1,6 @@
 ---
 title: Центры событий Azure. Обработка событий Apache Kafka
-description: Руководство. В этой статье показано, как обрабатывать события Kafka, которые принимаются через Центры событий, с помощью Azure Stream Analytics
+description: Руководство по В этой статье показано, как обрабатывать события Kafka, которые принимаются через Центры событий, с помощью Azure Stream Analytics
 services: event-hubs
 documentationcenter: ''
 author: spelluru
@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.custom: seodec18
-ms.date: 12/20/2019
+ms.date: 02/20/2020
 ms.author: spelluru
-ms.openlocfilehash: b0b48fea308b385fd8c66bf87d708b1c51f7f495
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: d7b060a2b35ca41bf87b69be706284174d7b1012
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977353"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77587164"
 ---
-# <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство. Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
+# <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство по Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий с поддержкой Kafka и обработка с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
 
 1. создание пространства имен Центров событий с поддержкой Kafka;
@@ -30,46 +30,22 @@ ms.locfileid: "75977353"
 Вам не обязательно изменять протокол клиентов или запускать собственные кластеры при использовании конечной точки Kafka, предоставленной концентратором событий. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html) и более поздние версии. 
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже указаны требования для работы с этим кратким руководством.
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 * [Комплект разработчика Java (JDK) 1.7+](https://aka.ms/azure-jdks).
 * [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив Maven.
-* [Git](https://www.git-scm.com/)
+* [Git](https://www.git-scm.com/);
 * **Учетная запись хранения Azure**. Если ее у вас нет, то, прежде чем продолжить, [создайте учетную запись хранения Azure](../storage/common/storage-account-create.md). В этом пошаговом руководстве задание Stream Analytics состоит в сохранении выходных данных в хранилище BLOB-объектов Azure. 
 
 
 ## <a name="create-a-kafka-enabled-event-hubs-namespace"></a>Создание пространства имен Центров событий с поддержкой Kafka
+Если вы создаете пространство имен в Центрах событий уровня **Стандартный**, конечная точка Kafka для пространства имен включается автоматически. Вы можете выполнять потоковую передачу событий из приложений, использующих протокол Kafka, в Центры событий уровня "Стандартный". Выполните пошаговые инструкции в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](event-hubs-create.md), чтобы создать пространство имен концентраторов событий уровня **Стандартный**. 
 
-1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **Создать ресурс** в левой верхней части экрана.
-2. Найдите **Центры событий** и выберите параметры, показанные ниже.
-    
-    ![Поиск Центров событий на портале](./media/event-hubs-kafka-stream-analytics/select-event-hubs.png) 
-3. На странице **Центры событий** выберите **Создать**.
-4. На странице **Создание пространства имен** выполните следующие действия. 
-    1. Присвойте пространству имен уникальное **имя**. 
-    2. Выберите **ценовую категорию**. 
-    3. Выберите **Включить Kafka**. Это действие является **важным** шагом. 
-    4. Выберите **подписку**, в которой необходимо создать пространство имен концентратора событий. 
-    5. Создайте новую **группу ресурсов** или выберите имеющуюся. 
-    6. Выберите **расположение**. 
-    7. Нажмите кнопку **Создать**.
-    
-        ![Создание пространства имен](./media/event-hubs-kafka-stream-analytics/create-event-hub-namespace-page.png) 
-4. В **сообщении с уведомлением** выберите **имя группы ресурсов**. 
-
-    ![Создание пространства имен](./media/event-hubs-kafka-stream-analytics/creation-station-message.png)
-1. Выберите **Пространство имен концентратора событий** в группе ресурсов. 
-2. После создания пространства имен, выберите **Политики общего доступа** в разделе **Параметры**.
-
-    ![Выбор политик общего доступа](./media/event-hubs-kafka-stream-analytics/shared-access-policies.png)
-5. Вы можете выбрать значение по умолчанию **RootManageSharedAccessKey** или добавить новую политику. Щелкните имя политики и скопируйте **строку подключения**. Строка подключения используется для настройки клиента Kafka. 
-    
-    ![Выбор политики](./media/event-hubs-kafka-stream-analytics/connection-string.png)  
-
-Теперь можно выполнять потоковую передачу событий из приложений, использующих протокол Kafka, в Центры событий.
+> [!NOTE]
+> Центры событий Azure для Kafka доступны только на уровнях **Стандартный** и **Выделенный**. Уровень **Базовый** не поддерживает Kafka в Центрах событий.
 
 ## <a name="send-messages-with-kafka-in-event-hubs"></a>Отправка сообщений с использованием Kafka в Центрах событий
 

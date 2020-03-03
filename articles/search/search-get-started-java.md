@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: java
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 11/04/2019
-ms.openlocfilehash: 5e53167a083b5e89bd88a45452929dd40f0868f2
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.date: 02/25/2020
+ms.openlocfilehash: 0b07e934625b09e7f6249dc00865465147f6f0ba
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406730"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77624020"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
 > [!div class="op_single_selector"]
@@ -26,13 +26,13 @@ ms.locfileid: "74406730"
 > * [Python](search-get-started-python.md)
 > * [Postman](search-get-started-postman.md)
 
-В статье приводятся пошаговые инструкции по созданию консольного приложения Java, которое создает, загружает и запрашивает индекс Когнитивного поиска Azure с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/?view=azure-java-stable) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
+Создайте консольное приложение Java, которое создает, загружает и опрашивает индекс поиска с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/?view=azure-java-stable) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Эта статья содержит пошаговые инструкции по созданию приложения. Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для сборки и проверки этого примера мы использовали следующее программное обеспечение и службы:
+Для сборки и тестирования в рамках этого краткого руководства мы использовали следующее программное обеспечение и службы:
 
 + [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
@@ -825,7 +825,7 @@ ms.locfileid: "74406730"
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве для Java вы отработали ряд задач по созданию индекса, загрузке документов в него и выполнению запросов. Если вы хорошо разобрались с основными концепциями, мы рекомендуем перейти к следующей статье, которая содержат список операций с индексатором в REST.
 

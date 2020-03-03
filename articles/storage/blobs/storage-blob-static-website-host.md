@@ -1,5 +1,5 @@
 ---
-title: Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов (служба хранилища Azure)
+title: Руководство по Размещение статического веб-сайта в хранилище BLOB-объектов (служба хранилища Azure)
 description: Узнайте, как настроить учетную запись хранения для размещения статического веб-сайта и развернуть его в службе хранилища Azure.
 author: normesta
 ms.service: storage
@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.date: 1/22/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 97679ec48ee9120005118b6cacaf37e45657db08
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 69acb9152d1dc30d986276939e29e8c183095b18
+ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906634"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77539609"
 ---
 <!---Customer intent: I want to host files for a static website in Blob storage and access the website from an Azure endpoint.--->
 
-# <a name="tutorial-host-a-static-website-on-blob-storage"></a>Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов
+# <a name="tutorial-host-a-static-website-on-blob-storage"></a>Руководство по Размещение статического веб-сайта в хранилище BLOB-объектов
 
 Из этого руководства вы узнаете, как создать и развернуть статический веб-сайт в службе хранилища Azure. В конечном итоге у вас будет статический веб-сайт, к которому пользователи будут иметь публичный доступ. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "76906634"
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
 > [!NOTE] 
-> Создайте учетную запись хранения общего назначения версии 2. Статические веб-сайты недоступны в учетной записи хранения другого типа.
+> Обязательно создайте учетную запись хранения общего назначения версии 2 (цен. категория "Стандартный"). Статические веб-сайты недоступны в учетной записи хранения другого типа.
 
 В этом руководстве используется бесплатное средство для программистов [Visual Studio Code](https://code.visualstudio.com/download), с помощью которого создается статический веб-сайт и развертывается в учетную запись службы хранилища Azure.
 

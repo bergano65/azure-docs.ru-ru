@@ -9,36 +9,26 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: a2787a0d5f372562f32c4d8adca3ed195d1befd5
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 534956a53615cfafeffa611127bc8c3cc4493753
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77461974"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604917"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-java"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Java
 
 [!INCLUDE [iot-dps-selector-quick-enroll-device-x509](../../includes/iot-dps-selector-quick-enroll-device-x509.md)]
 
-В этом кратком руководстве показано, как использовать Java для программной регистрации группы имитированных устройств X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure. Устройства регистрируются в экземпляре службы подготовки, создавая [группу регистрации](concepts-service.md#enrollment-group) или [индивидуальную регистрацию](concepts-service.md#individual-enrollment). В этом кратком руководстве показано, как создать оба типа регистраций. Регистрации создаются с помощью [пакета SDK службы для Java](https://azure.github.io/azure-iot-sdk-java/service/) с помощью примера приложения Java. 
-
-В этом руководстве предполагается, что Центр Интернета вещей и экземпляр Службы подготовки устройств уже созданы. Если эти ресурсы еще не созданы, прежде чем продолжить, выполните действия, описанные в руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
-
-В этой статье процесс регистрации описан на примере компьютера под управлением Windows. Но пакет SDK для службы Java также успешно работает на Linux.
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+В этом кратком руководстве вы используете Java для программной регистрации группы имитированных устройств X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей. Устройства регистрируются в экземпляре службы подготовки, создавая группу регистрации или индивидуальную регистрацию. В этом кратком руководстве показано, как создавать оба типа регистраций с помощью пакета SDK для Java и примера приложения Java.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Установите [пакет SDK для Java SE 8](https://aka.ms/azure-jdks).
-* Установите [Maven 3](https://maven.apache.org/download.cgi). Текущую версию Maven можно узнать, выполнив следующие действия.
-
-    ```cmd/sh
-    mvn --version
-    ```
-
-* Установите [Git](https://git-scm.com/download/).
-
+- Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- [Пакет SDK для Java SE 8](https://aka.ms/azure-jdks). В этом кратком руководстве мы устанавливаем [пакет SDK для Java](https://azure.github.io/azure-iot-sdk-java/service/), приведенный ниже. Он поддерживает операционные системы Linux и Windows. В рамках этого краткого руководства используется Windows.
+- [Maven версии 3](https://maven.apache.org/download.cgi).
+- [Git](https://git-scm.com/download/).
 
 <a id="javasample"></a>
 
@@ -51,7 +41,7 @@ ms.locfileid: "77461974"
 
 Ниже приведены инструкции по добавлению в пример кода сведений о подготовке устройства X.509. 
 
-1. Откройте командную строку. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя пакет SDK для службы Java:
+1. Откройте командную строку. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя [пакет SDK для службы Java](https://azure.github.io/azure-iot-sdk-java/service/):
     
     ```cmd\sh
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
@@ -140,6 +130,13 @@ ms.locfileid: "77461974"
 <a id="runjavasample"></a>
 
 ## <a name="build-and-run-sample-group-enrollment"></a>Сборка и запуск примера для регистрации группы
+
+Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
+
+- [Группы регистрации](concepts-service.md#enrollment-group). Используются для регистрации нескольких связанных устройств.
+- [Индивидуальные регистрации](concepts-service.md#individual-enrollment). Предназначены для регистрации одного устройства.
+
+В этой процедуре используется группа регистрации. В следующем разделе используется индивидуальная регистрация.
 
 1. Откройте окно командной строки и перейдите к папке **_azure-iot-sdk-java/provisioning/provisioning-samples/service-enrollment-group-sample_** .
 

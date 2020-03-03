@@ -1,22 +1,23 @@
 ---
 title: Краткое руководство. Создание схемы с помощью REST API
 description: В рамках этого краткого руководства вы создадите, определите и развернете артефакты с помощью REST API.
-ms.date: 11/21/2019
+ms.date: 02/26/2020
 ms.topic: quickstart
-ms.openlocfilehash: 13a6cce25b17fdfbfa5f62dbf16cd2cfbbdc4fe2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3e7e7c67822eec939c7d7752f8771d3b486abc3c
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436595"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650237"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-rest-api"></a>Краткое руководство. Определение и назначение схемы Azure с помощью REST API
 
 Зная, как создавать и присваивать схемы, вы сможете определять распространенные шаблоны для разработки многоразовых и быстро развертываемых конфигураций, основанных на шаблонах Resource Manager, политике, правилах безопасности и других элементах. В этом руководстве вы научитесь использовать службу Azure Blueprint для выполнения некоторых общих задач, связанных с созданием, публикацией и назначением схемы в вашей организации, таких как:
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Зарегистрируйте поставщик ресурсов `Microsoft.Blueprint`. См. инструкции в статье [Поставщики и типы ресурсов Azure](../../azure-resource-manager/management/resource-providers-and-types.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

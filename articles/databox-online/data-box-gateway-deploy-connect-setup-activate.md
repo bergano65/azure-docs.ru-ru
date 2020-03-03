@@ -1,5 +1,5 @@
 ---
-title: Подключение, настройка и активация Шлюза Azure Data Box на портале Azure | Документация Майкрософт
+title: Подключение, настройка и активация Шлюза Azure Data Box на портале Azure
 description: В третьем руководстве по развертыванию шлюза Data Box вам предлагается подключить, настроить и активировать ваше виртуальное устройство.
 services: databox
 author: alkohli
@@ -8,14 +8,14 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/18/2019
 ms.author: alkohli
-ms.openlocfilehash: 898cb63f8868ce2abaee8784214322edf9a56997
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 33333f8df1e4809a330815e34074d1bca556cd14
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60000323"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561839"
 ---
-# <a name="tutorial-connect-set-up-activate-azure-data-box-gateway"></a>Руководство. Подключение, настройка и активация Шлюза Azure Data Box
+# <a name="tutorial-connect-set-up-activate-azure-data-box-gateway"></a>Руководство по Подключение, настройка и активация Шлюза Azure Data Box
 
 ## <a name="introduction"></a>Введение
 
@@ -23,7 +23,7 @@ ms.locfileid: "60000323"
 
 Процесс установки и активации может занять около 10 минут. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Подключение к виртуальному устройству.
@@ -132,9 +132,9 @@ ms.locfileid: "60000323"
 
 Настройка устройства завершена. Теперь в него можно добавить общие папки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Подключение к виртуальному устройству.

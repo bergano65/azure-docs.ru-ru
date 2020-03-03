@@ -1,26 +1,20 @@
 ---
 title: Пример скрипта Azure CLI. Импорт в хранилище службы "Конфигурация приложений"
 titleSuffix: Azure App Configuration
-description: Информация и примеры скриптов для импорта данных в хранилище конфигураций приложения Azure
+description: Использование скрипта Azure CLI. Импорт конфигурации в Конфигурацию приложений Azure
 services: azure-app-configuration
-documentationcenter: ''
 author: lisaguthrie
-manager: balans
-editor: ''
 ms.service: azure-app-configuration
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: azure-app-configuration
-ms.date: 02/24/2019
+ms.date: 02/19/2020
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: b0704c6262451cef615355e871ce7f26005b3132
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 71d6aafa82f647b9c6164ee9a06b43ed7e9a66af
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77467680"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77523630"
 ---
 # <a name="import-to-an-azure-app-configuration-store"></a>Импорт в хранилище конфигураций приложения Azure
 

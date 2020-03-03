@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/30/2018
 ms.author: masoucou
-ms.openlocfilehash: 74d34705a6541b396fa2c2bf5028254f5f2e8d21
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f951daf08590feb6fa1aaad831f8a735db141984
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466307"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77586773"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения со списком дел с помощью Xamarin и API SQL для Azure Cosmos DB | Документация Майкрософт
 
@@ -36,7 +36,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2019, можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET**.
+Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2019, скачайте **бесплатный**[выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET**.
 
 Если вы используете Mac, скачайте **бесплатный** выпуск [Visual Studio для Mac](https://www.visualstudio.com/vs/mac/).
 
@@ -128,7 +128,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 * Для выполнения запроса к контейнеру на получение документов используется метод `DocumentClient.CreateDocumentQuery<T>`, как показано в функции `CosmosDBService.GetToDoItems`:
 
-   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=GetToDoItems)] 
+   :::code language="csharp" source="~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs" id="GetToDoItems"::: 
 
     `CreateDocumentQuery<T>` принимает URI, указывающий на контейнер, созданный в предыдущем разделе. Можно также указать операторы LINQ, такие как предложение `Where`. В этом случае возвращаются только незавершенные элементы списка дел.
 
@@ -141,13 +141,13 @@ Azure Cosmos DB — это глобально распределенная мн
 
 * Функция `ComsmosDBService.InsertToDoItem` демонстрирует, как вставить новый документ:
 
-   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=InsertToDoItem)] 
+   :::code language="csharp" source="~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs" id="InsertToDoItem"::: 
 
     Наряду с элементом для вставки также указывается URI контейнера.
 
 * Функция `CosmosDBService.UpdateToDoItem` демонстрирует, как заменить существующий документ новым:
 
-   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=UpdateToDoItem)] 
+   :::code language="csharp" source="~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs" id="UpdateToDoItem"::: 
 
     В этом случае нужно указать новый URI для идентификации заменяемого документа. Чтобы получить URI, передайте функции `UriFactory.CreateDocumentUri` имя базы данных и контейнера, а также идентификатор документа.
 
@@ -155,11 +155,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
 * Функция `CosmosDBService.DeleteToDoItem` демонстрирует, как удалить элемент:
 
-   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=DeleteToDoItem)] 
+   :::code language="csharp" source="~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs" id="DeleteToDoItem"::: 
 
     Снова обратите внимание на то, что для документа создается уникальный URI, который передается в функцию `DocumentClient.DeleteDocumentAsync`.
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено.
 
@@ -200,7 +200,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве было показано, как создать учетную запись Azure Cosmos и контейнер с помощью обозревателя данных, а также выполнить сборку и развертывание приложения Xamarin. Теперь вы можете импортировать дополнительные данные в учетную запись Azure Cosmos.
 

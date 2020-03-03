@@ -6,14 +6,14 @@ ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
 ms.topic: tutorial
-ms.date: 02/04/2020
+ms.date: 02/24/2020
 ms.author: banders
-ms.openlocfilehash: 1affe81228b491ea45f610d741d454fa38f2029a
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 017f617bff14eb0c031c40240ca6c1ac62c9c941
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77199115"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77598227"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Общие сведения о счете по соглашению Azure Enterprise
 
@@ -55,7 +55,7 @@ ms.locfileid: "77199115"
     - Visual Studio Professional — ежегодно
 - **Платежи в Microsoft Azure Marketplace**: Покупки и использование Azure Marketplace не покрываются кредитом вашей организации. Таким образом, вам будет выставлен счет на оплату в Marketplace независимо от остатка на вашем кредитном счету. В Enterprise Portal корпоративный администратор может включать и отключать покупки в Marketplace.
 
-В счете отображаются все данные об использовании Azure, а также любые платежи с Marketplace. Если у вас есть остаток на кредитном счете, он применяется к использованию Azure.
+В счете будут отображаться расходы за использование Azure с учетом затрат, связанных с ними, а затем будет взиматься плата в Marketplace. Если у вас есть кредитный баланс, он применяется к использованию Azure, и ваш счет будет отображать использование Azure и Marketplace без каких-либо затрат.
 
 Сравните общую сумму, показанную на корпоративном портале в **Отчеты** > **Сведения об использовании**, с вашим счетом Azure. Суммы в **Сведениях об использовании** не включают налоги.
 

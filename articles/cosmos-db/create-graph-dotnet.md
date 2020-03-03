@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 05/21/2019
+ms.date: 02/21/2020
 ms.author: lbosq
-ms.openlocfilehash: d74a7d2171f926a7a97562339d4cab36b354bfbe
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f700b06e6ade0d72178777b67cb734f3120b36dc
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441974"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77565610"
 ---
 # <a name="quickstart-build-a-net-framework-or-core-application-using-the-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB
 
@@ -30,7 +30,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В этом кратком руководстве описано, как создать учетную запись [API Gremlin](graph-introduction.md) для Azure Cosmos DB, базу данных и граф (контейнер) с помощью портала Azure. Затем вы можете создать и запустить консольное приложение c помощью драйвера [Gremlin.Net](https://tinkerpop.apache.org/docs/3.2.7/reference/#gremlin-DotNet) с открытым кодом.  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** среду [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
@@ -83,74 +83,21 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Приведенные ниже фрагменты кода взяты из файла Program.cs.
 
-* Задайте параметры подключения на основе учетной записи, созданной ранее (строка 19). 
+* Задайте параметры подключения на основе учетной записи, созданной ранее: 
 
-    ```csharp
-    private static string hostname = "your-endpoint.gremlin.cosmosdb.azure.com";
-    private static int port = 443;
-    private static string authKey = "your-authentication-key";
-    private static string database = "your-database";
-    private static string collection = "your-graph-container";
-    ```
+   :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="configureConnectivity":::
 
-* Команды Gremlin, которые необходимо выполнить, перечислены в словаре (строка 26).
+* Команды Gremlin, которые необходимо выполнить, перечислены в словаре:
 
-    ```csharp
-    private static Dictionary<string, string> gremlinQueries = new Dictionary<string, string>
-    {
-        { "Cleanup",        "g.V().drop()" },
-        { "AddVertex 1",    "g.addV('person').property('id', 'thomas').property('firstName', 'Thomas').property('age', 44).property('pk', 'pk')" },
-        { "AddVertex 2",    "g.addV('person').property('id', 'mary').property('firstName', 'Mary').property('lastName', 'Andersen').property('age', 39).property('pk', 'pk')" },
-        { "AddVertex 3",    "g.addV('person').property('id', 'ben').property('firstName', 'Ben').property('lastName', 'Miller').property('pk', 'pk')" },
-        { "AddVertex 4",    "g.addV('person').property('id', 'robin').property('firstName', 'Robin').property('lastName', 'Wakefield').property('pk', 'pk')" },
-        { "AddEdge 1",      "g.V('thomas').addE('knows').to(g.V('mary'))" },
-        { "AddEdge 2",      "g.V('thomas').addE('knows').to(g.V('ben'))" },
-        { "AddEdge 3",      "g.V('ben').addE('knows').to(g.V('robin'))" },
-        { "UpdateVertex",   "g.V('thomas').property('age', 44)" },
-        { "CountVertices",  "g.V().count()" },
-        { "Filter Range",   "g.V().hasLabel('person').has('age', gt(40))" },
-        { "Project",        "g.V().hasLabel('person').values('firstName')" },
-        { "Sort",           "g.V().hasLabel('person').order().by('firstName', decr)" },
-        { "Traverse",       "g.V('thomas').out('knows').hasLabel('person')" },
-        { "Traverse 2x",    "g.V('thomas').out('knows').hasLabel('person').out('knows').hasLabel('person')" },
-        { "Loop",           "g.V('thomas').repeat(out()).until(has('id', 'robin')).path()" },
-        { "DropEdge",       "g.V('thomas').outE('knows').where(inV().has('id', 'mary')).drop()" },
-        { "CountEdges",     "g.E().count()" },
-        { "DropVertex",     "g.V('thomas').drop()" },
-    };
-    ```
+   :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="defineQueries":::
 
+* Создайте объекты подключения `GremlinServer` и `GremlinClient`, используя параметры, приведенные выше:
 
-* Создайте объект подключения `GremlinServer`, используя параметры, приведенные выше (строка 52).
+   :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="defineClientandServerObjects":::
 
-    ```csharp
-    var gremlinServer = new GremlinServer(hostname, port, enableSsl: true, 
-                                                    username: "/dbs/" + database + "/colls/" + collection, 
-                                                    password: authKey);
-    ```
+* Выполните каждый запрос Gremlin, используя объект `GremlinClient` с асинхронной задачей. Вы можете считать запросы Gremlin из словаря, определенного на предыдущем шаге, и выполнять их. Позже вы можете получить результат и выполнить чтение значений, отформатированных как словарь, с помощью класса `JsonSerializer` из пакета Newtonsoft.json:
 
-* Создайте объект `GremlinClient` (строка 56).
-
-    ```csharp
-    var gremlinClient = new GremlinClient(gremlinServer, new GraphSON2Reader(), new GraphSON2Writer(), GremlinClient.GraphSON2MimeType);
-    ```
-
-* Выполните каждый запрос Gremlin, используя объект `GremlinClient` с асинхронной задачей (строка 63). Это необходимо для чтения запросов Gremlin из словаря, указанного выше (строка 26).
-
-    ```csharp
-    var results = await gremlinClient.SubmitAsync<dynamic>(query.Value);
-    ```
-
-* Извлеките результат и выполните чтение значений, отформатированных как словарь, с помощью класса `JsonSerializer` из Newtonsoft.Json.
-
-    ```csharp
-    foreach (var result in results)
-    {
-        // The vertex results are formed as dictionaries with a nested dictionary for their properties
-        string output = JsonConvert.SerializeObject(result);
-        Console.WriteLine(String.Format("\tResult:\n\t{0}", output));
-    }
-    ```
+   :::code language="csharp" source="~/azure-cosmosdb-graph-dotnet/GremlinNetSample/Program.cs" id="executeQueries":::
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
@@ -164,29 +111,22 @@ Azure Cosmos DB — это глобально распределенная мн
 
     ![Копирование конечной точки](./media/create-graph-dotnet/endpoint.png)
 
-   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`.
+   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
 
-2. В файл Program.cs вставьте это значение вместо `your-endpoint` в переменной `hostname` в строке 19. 
+1. Затем перейдите на вкладку **Ключи** и скопируйте значение **Первичный ключ** c портала Azure. 
 
-    `"private static string hostname = "<your cosmos db account name>.gremlin.cosmosdb.azure.com";`
+1. После того как вы скопировали URI и первичный ключ своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно командной строки и выполните следующую команду. Обязательно замените значения <Your_Azure_Cosmos_account_URI> и <Your_Azure_Cosmos_account_PRIMARY_KEY>.
 
-    Значение конечной точки должно выглядеть так:
+   ```console
+   setx EndpointUrl "https://<your cosmos db account name>.gremlin.cosmosdb.azure.com"
+   setx PrimaryKey "<Your_Azure_Cosmos_account_PRIMARY_KEY>"
+   ```
 
-    `"private static string hostname = "testgraphacct.gremlin.cosmosdb.azure.com";`
+1. Откройте файл *Program.cs* и обновите переменные database и container, используя базу данных и контейнер (которые также являются именами графов), созданные выше.
 
-3. Затем на вкладке **Ключи** скопируйте значение **первичного ключа** с портала и вставьте его в переменную `authkey`, заменив заполнитель `"your-authentication-key"` в строке 21. 
+    `private static string database = "your-database-name";` `private static string container = "your-container-or-graph-name";`
 
-    `private static string authKey = "your-authentication-key";`
-
-4. Вставьте имя базы данных, созданной выше, в переменную `database` в строке 22. 
-
-    `private static string database = "your-database";`
-
-5. Аналогичным образом вставьте имя контейнера, созданного выше, (которое также является именем графа) в переменную `collection` в строке 23. 
-
-    `private static string collection = "your-collection-or-graph";`
-
-6. Сохраните файл Program.cs. 
+1. Сохраните файл Program.cs. 
 
 Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
 

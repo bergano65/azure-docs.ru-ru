@@ -5,14 +5,14 @@ author: mumian
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5379bf3c0a5127e5114ac819bd3e0e2ad12e8d69
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 82b6e3c1a3c17c624dec67093379e8a493b7264f
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045256"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561533"
 ---
-# <a name="tutorial-deploy-virtual-machine-extensions-with-azure-resource-manager-templates"></a>Руководство. Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager
+# <a name="tutorial-deploy-virtual-machine-extensions-with-azure-resource-manager-templates"></a>Руководство по Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager
 
 Узнайте, как использовать [расширения виртуальных машин Azure](../../virtual-machines/extensions/features-windows.md), чтобы выполнять задачи настройки и автоматизации после развертывания виртуальных машин Azure. Существует множество разных расширений виртуальных машин, которые можно использовать с виртуальными машинами Azure. При работе с этим руководством вы развернете расширение настраиваемого скрипта из шаблона Azure Resource Manager для выполнения скрипта PowerShell на виртуальной машине Windows.  Скрипт устанавливает веб-сервер на виртуальной машине.
 
@@ -27,7 +27,7 @@ ms.locfileid: "76045256"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 

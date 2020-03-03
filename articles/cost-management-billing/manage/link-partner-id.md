@@ -7,12 +7,12 @@ ms.author: banders
 ms.date: 02/13/2020
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.openlocfilehash: 4e4b039b6ad6fad8a414fc9703309fa76853ef09
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 761f4345c591864b8158d7216d737ac287692252
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77199676"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77651395"
 ---
 # <a name="link-a-partner-id-to-your-azure-accounts"></a>Привязка идентификатора партнера к учетной записи Azure
 
@@ -29,6 +29,8 @@ ms.locfileid: "77199676"
 - **Учетная запись каталога**. Клиент может создать учетную запись пользователя для вас в своем каталоге и назначить любую роль RBAC.
 
 - **Субъект-служба**. Клиент может добавить в каталог приложение или скрипт из вашей организации и назначить любую роль RBAC. Идентификатор приложения или сценария называют субъектом-службой.
+
+- **Azure Lighthouse**. Клиент может делегировать подписку (или группу ресурсов), чтобы пользователи могли работать с ней из вашего клиента. Дополнительные сведения см. в статье [Azure delegated resource management](https://docs.microsoft.com/azure/lighthouse/concepts/azure-delegated-resource-management) (Делегированное управление ресурсами Azure).
 
 ## <a name="link-to-a-partner-id"></a>Привязка идентификатора партнера
 
@@ -154,3 +156,7 @@ C:\ az managementpartner delete --partner-id 12345
 **Работает ли идентификатор партнера с Azure Stack?**
 
 Да, можно связать идентификатор партнера для Azure Stack.
+
+**Как связать идентификатор партнера, если моя компания использует [Azure Lighthouse](https://docs.microsoft.com/azure/lighthouse/overview) для получения доступа к ресурсам клиента?**
+
+При подключении клиентов к управлению делегированными ресурсами Azure с помощью [публикации предложения управляемых служб в Azure Marketplace](https://docs.microsoft.com/azure/lighthouse/how-to/publish-managed-services-offers) ваш идентификатор MPN будет автоматически связан. Если вы [подключаете клиентов, развертывая шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/lighthouse/how-to/onboard-customer), необходимо будет связать идентификатор Microsoft Partner Network (MPN) по крайней мере с одной учетной записью пользователя, имеющей доступ к каждой из ваших встроенных подписок. Обратите внимание, что это необходимо сделать в клиенте поставщика службы. Для простоты рекомендуется создать в клиенте учетную запись субъекта-службы, связанную с идентификатором MPN, и предоставить ей доступ для чтения для всех клиентов, которых вы подключаете.

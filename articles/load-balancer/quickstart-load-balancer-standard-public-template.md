@@ -12,21 +12,21 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/27/2020
+ms.date: 02/26/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 69503968ece5e68b6e4777d72713565158009949
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e5b9b989ed8111e2bf36194ae2c8a333db7e66b4
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843860"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650811"
 ---
 # <a name="quickstart-create-a-load-balancer-to-load-balance-vms-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание Load Balancer с помощью шаблона Azure Resource Manager для распределения нагрузки между виртуальными машинами
 
 Балансировка нагрузки обеспечивает более высокий уровень доступности и масштабирования за счет распределения входящих запросов между несколькими виртуальными машинами. В этом кратком руководстве показано, как развернуть шаблон Azure Resource Manager, с помощью которого создается Load Balancer (цен. категория "Стандартный") для распределения нагрузки между виртуальными машинами. При использовании шаблона Resource Manager выполняется меньшее количество действий по сравнению с другими методами развертывания.
 
-[Шаблон Resource Manager](../azure-resource-manager/templates/overview.md) является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта. Шаблон использует декларативный синтаксис, который позволяет указать объект, который вы собираетесь развернуть. При этом, для развертывания объекта, не нужно писать последовательность команд. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/loadbalancers).
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -34,22 +34,25 @@ ms.locfileid: "76843860"
 
 Load Balancer и общедоступные IP-адреса SKU должны совпадать. Вместе с Load Balancer (цен. категория "Стандартный") необходимо также создать стандартный общедоступный IP-адрес, настроенный в качестве интерфейсного для Load Balancer (цен. категория "Стандартный"). Для создания Load Balancer (цен. категория "Базовый"), используйте [этот шаблон](https://azure.microsoft.com/resources/templates/201-2-vms-loadbalancer-natrules/). Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать номера SKU цен. категории "Стандартный".
 
-В этом кратком руководстве используется [шаблон быстрого запуска](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json).
+### <a name="review-the-template"></a>Изучение шаблона
 
-[!code-json[<Azure Resource Manager template create standard load balancer>](~/quickstart-templates/101-load-balancer-standard-create/azuredeploy.json)]
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json).
+
+:::code language="json" source="~/quickstart-templates/101-load-balancer-standard-create/azuredeploy.json" range="1-150" highlight="58-122":::
 
 В шаблоне определено несколько ресурсов Azure:
 
-- **Microsoft.Network/loadBalancers**
-- **Microsoft.Network/publicIPAddresses**: для подсистемы балансировки нагрузки;
-- **Microsoft.Network/networkSecurityGroups**
-- **Microsoft.Network/virtualNetworks**
-- **Microsoft.Compute/virutalMachines** (3 из них);
-- **Microsoft.Network/publicIPAddresses** (3 из них): для каждой из трех виртуальных машин;
-- **Microsoft.Network/networkInterfaces** (3 из них);
-- **Microsoft.Compute/virtualMachine/extensions** (3 из них): используется для настройки служб IIS и веб-страниц.
+- [**Microsoft.Network/loadBalancers**](/azure/templates/microsoft.network/loadbalancers);
+- [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses) (для подсистемы балансировки нагрузки и каждой из трех виртуальных машин);
+- [**Microsoft.Network/networkSecurityGroups;** ](/azure/templates/microsoft.network/networksecuritygroups)
+- [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks);
+- [**Microsoft.Compute/virutalMachines**](/azure/templates/microsoft.compute/virtualmachines) (три из них)
+- [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces) (три из них);
+- [**Microsoft.Compute/virtualMachine/extensions**](/azure/templates/microsoft.compute/virtualmachines/extensions) (три из них; используется для настройки IIS и веб-страниц).
 
 Чтобы найти дополнительные связанные шаблоны Azure Load Balancer, перейдите на страницу [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
+
+### <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите **Попробовать** в следующем блоке кода, чтобы открыть Azure Cloud Shell, и следуйте отображающимся инструкциям, чтобы войти в Azure.
 

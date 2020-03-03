@@ -9,24 +9,29 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: 6266ef3479e74103d0989b8eb0286626da5eb28f
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 60ce27ddc533b6c4066cea771f7a24570ff3c04c
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976798"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77604892"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-python-provisioning-service-sdk"></a>Краткое руководство. Регистрация устройств TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" пакета SDK для службы подготовки Python
 
 [!INCLUDE [iot-dps-selector-quick-enroll-device-tpm](../../includes/iot-dps-selector-quick-enroll-device-tpm.md)]
 
-В этой статье показано, как программными средствами создать отдельную регистрацию устройства TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью [пакета SDK для службы подготовки Python версии 1](https://github.com/Azure/azure-iot-sdk-python/tree/v1-deprecated/provisioning_service_client) и примера приложения Python. В этой статье процесс регистрации описан на примере компьютера под управлением Windows. Но пакет SDK для службы Python также успешно работает на Linux.
+В этом кратком руководстве вы создадите индивидуальную регистрацию устройства TPM в службе "Подготовка устройств к добавлению в Центр Интернета вещей" программным способом с помощью пакета SDK для Службы подготовки Python и примера приложения Python.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Выполнение инструкций из краткого руководства по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- [Python версии 2.x или 3.x](https://www.python.org/downloads/). В рамках этого краткого руководства устанавливается [пакет SDK для Службы подготовки Python](https://github.com/Azure/azure-iot-sdk-python/tree/v1-deprecated/provisioning_service_client), указанный ниже.
+- [Pip](https://pip.pypa.io/en/stable/installing/), если он не включен в дистрибутив Python.
+- Ключ подтверждения. Выполните действия, описанные в статье [Краткое руководство. Подготовка имитированного устройства TPM с помощью пакета SDK Интернета вещей Azure для C](quick-create-simulated-device.md) или используйте ключ подтверждения, предоставляемый вместе с пакетом SDK, как описано ниже.
 
 > [!IMPORTANT]
 > Эта статья предназначена исключительно для пакета SDK Python версии 1, который был объявлен нерекомендуемым. Клиенты устройств и служб для Службы подготовки устройств к добавлению в Центр Интернета вещей пока недоступны в версии 2. Сейчас ведутся работы по реализации всего функционала в версии 2.
-
-Прежде чем продолжить, [настройте службу подготовки устройств Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
-
 
 <a id="prepareenvironment"></a>
 
@@ -34,7 +39,7 @@ ms.locfileid: "74976798"
 
 1. Скачайте и установите [Python 2.x или 3.x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. 
 
-1. Выберите один из следующих вариантов:
+1. Для [пакета SDK для Службы подготовки Python](https://github.com/Azure/azure-iot-sdk-python/tree/v1-deprecated/provisioning_service_client) выберите один из следующих вариантов.
 
     - Создайте и скомпилируйте **пакет SDK для Azure IoT Python**. Следуйте [этим инструкциям](https://github.com/Azure/azure-iot-sdk-python/blob/v1-deprecated/doc/python-devbox-setup.md) по созданию пакетов Python. Если вы работаете с ОС Windows, также установите [распространяемый пакет Visual C++](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads), чтобы разрешить использовать собственные библиотеки DLL из Python.
 
@@ -115,7 +120,7 @@ ms.locfileid: "74976798"
 1. Перейдите к службе подготовки устройств на портале Azure, откройте раздел **Управление регистрациями** и выберите вкладку **Индивидуальные регистрации**. Выберите флажок рядом с *идентификатором регистрации* для записи регистрации, которую вы создали в процессе работы с этим кратким руководством, и нажмите кнопку **Удалить** в верхней части панели.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 При работе с этим кратким руководством вы программным способом создали запись отдельной регистрации для устройства TPM, а также (необязательно) создали на компьютере имитированное устройство TPM и подготовили его для Центра Интернета вещей с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей Azure. Дополнительные сведения о подготовке устройств см. в руководстве по настройке службы подготовки устройств на портале Azure.
 
 > [!div class="nextstepaction"]

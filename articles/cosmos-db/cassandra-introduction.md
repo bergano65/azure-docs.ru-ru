@@ -2,18 +2,18 @@
 title: Знакомство с API Cassandra для Azure Cosmos DB
 description: Узнайте, как использовать Azure Cosmos DB, чтобы перемещать существующие приложения или создавать новые, используя средства CQL и драйверы Cassandra.
 author: kanshiG
+ms.author: govindk
+ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 05/21/2019
-ms.author: govindk
-ms.reviewer: sngun
-ms.openlocfilehash: 9cd3703881de1600a4b151d855fff832d041ca54
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 075b55b5a798924b55ef9d901e4d2e9ecfc9dc1e
+ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76717928"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77597581"
 ---
 # <a name="introduction-to-the-azure-cosmos-db-cassandra-api"></a>Знакомство с API Cassandra для Azure Cosmos DB
 

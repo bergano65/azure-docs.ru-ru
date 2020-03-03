@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 01/05/2020
-ms.openlocfilehash: a933caf0b0033cdcd1f27d4f795ba6466f34072a
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: bc7e77cc498958b2f8f0c5b2d5ab2d59db97a235
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210364"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560836"
 ---
 # <a name="quickstart-create-an-azure-cosmos-account-database-container-and-items-from-the-azure-portal"></a>Краткое руководство. Создание учетной записи, базы данных, контейнера и элементов Azure Cosmos на портале Azure
 
@@ -100,6 +100,12 @@ Azure Cosmos DB — это глобально распределенная мн
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
+
+Если вы хотите удалить только базу данных и использовать учетную запись Azure Cosmos в будущем, базу данных можно удалить, выполнив следующие действия.
+
+* Перейдите к своей учетной записи Azure Cosmos.
+* Откройте **Data Explorer**, щелкните правой кнопкой мыши базу данных, которую необходимо удалить, и выберите **Удалить базу данных**.
+* Введите идентификатор или имя базы данных, чтобы подтвердить операцию удаления. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

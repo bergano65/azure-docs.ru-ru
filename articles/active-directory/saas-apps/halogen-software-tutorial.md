@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 02/15/2020
+ms.date: 02/20/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ef7d5ec33786c3c4c38525cd5ab15bee53b3493
-ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
+ms.openlocfilehash: 76c13a649e1c1888a11e02b83d969255615cdc67
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373244"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561377"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-saba-talentspace"></a>Руководство по интеграции единого входа Azure Active Directory с Saba TalentSpace
 
@@ -44,7 +44,7 @@ ms.locfileid: "77373244"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Saba TalentSpace поддерживает единый вход, инициированный **поставщиком услуг**.
-* После настройки Saba TalentSpace можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* После настройки Saba TalentSpace можно применять элемент управления сеансами, который защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-saba-talentspace-from-the-gallery"></a>Добавление Saba TalentSpace из коллекции
 
@@ -86,8 +86,10 @@ ms.locfileid: "77373244"
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://global.hgncloud.com/[companyname]/saml/metadata`.
 
+    c. В текстовое поле **URL-адреса ответа или URL-адрес службы обработчика утверждений** введите URL-адрес в следующем формате: `https://global.hgncloud.com/[companyname]/saml/SSO`.
+
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Saba TalentSpace](https://support.halogensoftware.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Saba TalentSpace](https://support.saba.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

@@ -9,14 +9,14 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: deca7477c79fd2952bb57c0194202c382cd5279d
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: c2a751367a96c995a24457d0357aa6a2bfe987e5
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77132216"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77612572"
 ---
-# <a name="tutorial-enable-password-synchronization-in-azure-active-directory-domain-services-for-hybrid-environments"></a>Руководство. Включению синхронизации паролей в Доменных службах Azure Active Directory для гибридных сред
+# <a name="tutorial-enable-password-synchronization-in-azure-active-directory-domain-services-for-hybrid-environments"></a>Руководство по Включению синхронизации паролей в Доменных службах Azure Active Directory для гибридных сред
 
 В гибридных средах клиента Azure Active Directory (Azure AD) можно настроить для синхронизации с локальной средой Доменных служб Active Directory (AD DS) с помощью Azure AD Connect. По умолчанию Azure AD Connect не синхронизирует устаревшие хэши паролей NT LAN Manager (NTLM) и Kerberos, необходимые для Доменных служб Azure Active Directory (Azure AD DS).
 
@@ -68,7 +68,7 @@ Azure AD Connect можно настроить для синхронизаци�
 
     На снимке экрана в этом примере используются следующие соединители:
 
-    * соединитель Azure AD называется *contoso.onmicrosoft.com - AAD*;
+    * соединитель Azure AD называется *aaddscontoso.onmicrosoft.com - AAD*;
     * локальный соединитель AD DS называется *onprem.contoso.com*;
 
 1. Скопируйте и вставьте следующий скрипт PowerShell на компьютер с установленным Azure AD Connect. Скрипт запускает полную синхронизацию паролей, включающую устаревшие хэши паролей. Обновите переменные `$azureadConnector` и `$adConnector`, указав имена соединителей из предыдущего шага.

@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 12/05/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 6615f166ced4a93115f9cbaae1c6ce5b57cf57bc
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: a7b2627b5837a124ebbcd76783bb49679cbe6313
+ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892997"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77650288"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
 
@@ -26,11 +26,11 @@ API Bing для поиска в Интернете — это служба RESTf
 
 Хотите увидеть, как работает эта служба? Попробуйте [демоверсию API Bing для поиска в Интернете](https://azure.microsoft.com/services/cognitive-services/bing-web-search-api/).
 
-## <a name="features"></a>Функции  
+## <a name="features"></a>Компоненты  
 
 Поиск в Интернете Bing предоставляет не только доступ к мгновенным ответам. Он предоставляет дополнительные функции и возможности, которые позволяют настраивать результаты поиска для пользователей.
 
-| Функция | ОПИСАНИЕ |
+| Компонент | Описание |
 |---------|-------------|
 | [Предложение условий поиска в режиме реального времени](../bing-autosuggest/get-suggested-search-terms.md) | Улучшите работу приложения, используя API автозаполнения Bing, отображающий предлагаемые условия поиска по мере их ввода. |
 | [Фильтрация и ограничение результатов по типу содержимого](filter-answers.md) | Настраивайте и уточняйте результаты поиска с помощью фильтров и параметров запроса для веб-страниц, изображений, видео, безопасного поиска и прочего. |
@@ -40,15 +40,15 @@ API Bing для поиска в Интернете — это служба RESTf
 
 ## <a name="workflow"></a>Рабочий процесс
 
-API Bing для поиска в Интернете легко вызывается с любого языка программирования, который может обрабатывать HTTP-запросы и анализировать ответы JSON. Служба доступна с использованием [REST API](quickstarts/python.md) или [пакетов SDK для Поиска в Интернете Bing](web-sdk-python-quickstart.md).
+API Bing для поиска в Интернете легко вызывается с любого языка программирования, который может обрабатывать HTTP-запросы и анализировать ответы JSON. Служба доступна с использованием [REST API](quickstarts/python.md) или [клиентских библиотек Поиска в Интернете Bing](./quickstarts/client-libraries.md).
 
 1. [Создайте ресурс Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) для API-интерфейсов "Поиск Bing". Если у вас нет подписки Azure, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).  
 2. Отправьте [запрос в API Bing для поиска в Интернете](quickstarts/python.md).
 3. Проанализируйте ответ JSON.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Осуществите свой первый вызов API Bing для поиска в Интернете, следуя нашему [краткому руководству для Python](quickstarts/python.md).  
+* Осуществите свой первый вызов API Bing для поиска в Интернете, следуя нашему [краткому руководству для Python](./quickstarts/client-libraries.md?pivots=programming-language-python).  
 * [Создайте одностраничное веб-приложение](tutorial-bing-web-search-single-page-app.md).
 * Просмотрите [справочную документацию по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference).  
 * Узнайте о [требованиях к использованию и отображению](UseAndDisplayRequirements.md) для API Bing для поиска в Интернете.  

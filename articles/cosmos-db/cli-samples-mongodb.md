@@ -7,16 +7,19 @@ ms.subservice: cosmosdb-mongo
 ms.topic: sample
 ms.date: 9/25/2019
 ms.author: mjbrown
-ms.openlocfilehash: 8a8b36f61b967af2109e8c897d632b192d208017
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: f7807a4c2024e16f563adbcb46a5c60e5c542dda
+ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274971"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77524569"
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db-mongodb-api"></a>Примеры Azure CLI для API MongoDB в Azure Cosmos DB
 
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для API MongoDB в Azure Cosmos DB. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](/cli/azure/cosmosdb). Все примеры сценариев Azure Cosmos DB CLI можно найти в [этом репозитории на сайте GitHub](https://github.com/Azure-Samples/azure-cli-samples/tree/master/cosmosdb).
+
+> [!NOTE]
+> Сейчас можно создать только версию 3,2 (то есть ту, в которой для учетных записей используется конечная точка в формате `*.documents.azure.com`) приложения Azure Cosmos DB для учетных записей MongoDB с помощью PowerShell, интерфейса командной строки и шаблонов диспетчера ресурсов. Чтобы создать версию учетной записи 3.6, используйте портал Azure.
 
 | |  |
 |---|---|

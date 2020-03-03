@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 57bf9c9752cf2203ffcac08c213373fd71a79148
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 71b3027d86400d6921895f86e257ddff2961f91f
+ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276880"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77615158"
 ---
 # <a name="tutorial-sharing-azure-spatial-anchors-across-sessions-and-devices-with-an-azure-cosmos-db-back-end"></a>Руководство по Совместное использование Пространственных привязок Azure между сеансами и устройствами с помощью серверной части службы Azure Cosmos DB
 
@@ -43,9 +43,15 @@ ms.locfileid: "74276880"
 
 SharingService можно опубликовать еще раз и запустить пример приложения.
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+### <a name="unity-20193"></a>Unity 2019.3
+
+Из-за критических изменений сейчас Unity 2019.3 не поддерживается. Используйте Unity 2019.1 или 2019.2.
+
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы обеспечили совместное использование идентификаторов привязок между устройствами с помощью Azure Cosmos DB. Чтобы узнать больше об использовании Пространственных привязок Azure в новом приложении Unity HoloLens, перейдите к следующему учебнику.
 

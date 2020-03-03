@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Извлечение печатного и рукописного текста — REST, Python
+title: Краткое руководство.  Извлечение печатного и рукописного текста через REST, Python с помощью Компьютерного зрения версии 2.0 и 2.1
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать API Компьютерного зрения для извлечения печатного и рукописного текста из изображений с помощью Python.
 services: cognitive-services
@@ -11,32 +11,50 @@ ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: bf9e843123f332a120d6665e6be8ff635ef0b8e2
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 2f0b8cac2cc26b2fab7255a7e7587985a5425485
+ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74973770"
+ms.lasthandoff: 02/23/2020
+ms.locfileid: "77566205"
 ---
-# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и Python
+# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-20-and-21-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения версии 2.0 и 2.1 и Python
 
 Из этого краткого руководства вы узнаете, как извлечь печатный и рукописный текст из изображения с помощью REST API Компьютерного зрения. С помощью методов [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) вы можете обнаружить текст на изображении и извлечь распознанные символы в поток машиночитаемых символов. API определит, какую модель распознавания следует использовать для каждой строки текста, так как он поддерживает изображения с печатным и рукописным текстом.
 
+В сравнении с Компьютерным зрением версий 2.0 и 2.1 общедоступная предварительная версия Компьютерного зрения 3.0 предоставляет следующие преимущества:
+
+* еще большую точность;
+* измененный формат вывода;
+* оценка достоверности для машинных слов;
+* поддержка испанского и английского языков с дополнительным языковым параметром.
+
+#### <a name="version-2"></a>[Версия 2](#tab/version-2)
+
 > [!IMPORTANT]
-> В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет API [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+> Метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, который представляет API [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+
+#### <a name="version-3-public-preview"></a>[Версия 3 (общедоступная предварительная версия)](#tab/version-3)
+
+> [!IMPORTANT]
+> Метод [Batch Read](https://westus2.dev.cognitive.microsoft.com/docs/services/5d98695995feb7853f67d6a6/operations/5d986960601faab4bf452005) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, который представляет API [Read Operation Result](https://westus2.dev.cognitive.microsoft.com/docs/services/5d98695995feb7853f67d6a6/operations/5d9869604be85dee480c8750), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+
+---
 
 Процедуры из этого руководства можно выполнять пошагово из записной книжки Jupyter с помощью [MyBinder](https://mybinder.org). Чтобы запустить модуль привязки, нажмите следующую кнопку:
 
 [![Кнопка запуска Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=VisionAPI.ipynb)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/try/cognitive-services/), прежде чем начинать работу.
-
 ## <a name="prerequisites"></a>Предварительные требования
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
 - Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
 - У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
+
+#### <a name="version-2"></a>[Версия 2](#tab/version-2)
 
 Чтобы создать и запустить пример, сделайте следующее.
 
@@ -116,9 +134,111 @@ for polygon in polygons:
     plt.text(vertices[0][0], vertices[0][1], text, fontsize=20, va="top")
 ```
 
+#### <a name="version-3-public-preview"></a>[Версия 3 (общедоступная предварительная версия)](#tab/version-3)
+
+Чтобы создать и запустить пример, сделайте следующее.
+
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости замените значение `image_url` URL-адресом другого изображения, из которого вы хотите извлечь текст.
+1. Сохраните код как файл с расширением `.py`. Например, `get-text.py`.
+1. Откройте окно командной строки.
+1. В командной строке выполните пример кода с помощью команды `python`. Например, `python get-text.py`.
+
+```python
+import json
+import os
+import sys
+import requests
+import time
+# If you are using a Jupyter notebook, uncomment the following line.
+# %matplotlib inline
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+from PIL import Image
+from io import BytesIO
+
+missing_env = False
+# Add your Computer Vision subscription key and endpoint to your environment variables.
+if 'COMPUTER_VISION_ENDPOINT' in os.environ:
+    endpoint = os.environ['COMPUTER_VISION_ENDPOINT']
+else:
+    print("From Azure Cogntivie Service, retrieve your endpoint and subscription key.")
+    print("\nSet the COMPUTER_VISION_ENDPOINT environment variable, such as \"https://westus2.api.cognitive.microsoft.com\".\n")
+    missing_env = True
+
+if 'COMPUTER_VISION_SUBSCRIPTION_KEY' in os.environ:
+    subscription_key = os.environ['COMPUTER_VISION_SUBSCRIPTION_KEY']
+else:
+    print("From Azure Cogntivie Service, retrieve your endpoint and subscription key.")
+    print("\nSet the COMPUTER_VISION_SUBSCRIPTION_KEY environment variable, such as \"1234567890abcdef1234567890abcdef\".\n")
+    missing_env = True
+
+if missing_env:
+    print("**Restart your shell or IDE for changes to take effect.**")
+    sys.exit()
+
+text_recognition_url = endpoint + "/vision/v3.0-preview/read/analyze"
+
+# Set image_url to the URL of an image that you want to recognize.
+image_url = "https://upload.wikimedia.org/wikipedia/commons/d/dd/Cursive_Writing_on_Notebook_paper.jpg"
+
+# Set the langauge that you want to recognize. The value can be "en" for English, and "es" for Spanish
+language = "en"
+
+headers = {'Ocp-Apim-Subscription-Key': subscription_key}
+data = {'url': image_url}
+response = requests.post(
+    text_recognition_url, headers=headers, json=data, params={'language': language})
+response.raise_for_status()
+
+# Extracting text requires two API calls: One call to submit the
+# image for processing, the other to retrieve the text found in the image.
+
+# Holds the URI used to retrieve the recognized text.
+operation_url = response.headers["Operation-Location"]
+
+# The recognized text isn't immediately available, so poll to wait for completion.
+analysis = {}
+poll = True
+while (poll):
+    response_final = requests.get(
+        response.headers["Operation-Location"], headers=headers)
+    analysis = response_final.json()
+    
+    print(json.dumps(analysis, indent=4))
+
+    time.sleep(1)
+    if ("analyzeResult" in analysis):
+        poll = False
+    if ("status" in analysis and analysis['status'] == 'failed'):
+        poll = False
+
+polygons = []
+if ("analyzeResult" in analysis):
+    # Extract the recognized text, with bounding boxes.
+    polygons = [(line["boundingBox"], line["text"])
+                for line in analysis["analyzeResult"]["readResults"][0]["lines"]]
+
+# Display the image and overlay it with the extracted text.
+image = Image.open(BytesIO(requests.get(image_url).content))
+ax = plt.imshow(image)
+for polygon in polygons:
+    vertices = [(polygon[0][i], polygon[0][i+1])
+                for i in range(0, len(polygon[0]), 2)]
+    text = polygon[1]
+    patch = Polygon(vertices, closed=True, fill=False, linewidth=2, color='y')
+    ax.axes.add_patch(patch)
+    plt.text(vertices[0][0], vertices[0][1], text, fontsize=20, va="top")
+plt.show()
+```
+
+---
+
 ## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне командной строки отобразится успешный ответ, аналогичный следующему.
+
+#### <a name="version-2"></a>[Версия 2](#tab/version-2)
 
 ```json
 {
@@ -396,7 +516,320 @@ for polygon in polygons:
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+#### <a name="version-3-public-preview"></a>[Версия 3 (общедоступная предварительная версия)](#tab/version-3)
+
+```json
+{
+    "status": "succeeded",
+    "createdDateTime": "2020-02-11T17:54:10Z",
+    "lastUpdatedDateTime": "2020-02-11T17:54:10Z",
+    "analyzeResult": {
+        "version": "3.0.0",
+        "readResults": [
+            {
+                "page": 1,
+                "language": "en",
+                "angle": 0.5268,
+                "width": 1875,
+                "height": 361,
+                "unit": "pixel",
+                "lines": [
+                    {
+                        "language": "en",
+                        "boundingBox": [
+                            8,
+                            9,
+                            1814,
+                            23,
+                            1812,
+                            138,
+                            7,
+                            121
+                        ],
+                        "text": "The quick brown fox jumps over the lazy",
+                        "words": [
+                            {
+                                "boundingBox": [
+                                    31,
+                                    10,
+                                    184,
+                                    14,
+                                    177,
+                                    116,
+                                    24,
+                                    112
+                                ],
+                                "text": "The",
+                                "confidence": 0.905
+                            },
+                            {
+                                "boundingBox": [
+                                    204,
+                                    14,
+                                    430,
+                                    18,
+                                    422,
+                                    123,
+                                    197,
+                                    117
+                                ],
+                                "text": "quick",
+                                "confidence": 0.762
+                            },
+                            {
+                                "boundingBox": [
+                                    450,
+                                    18,
+                                    736,
+                                    22,
+                                    727,
+                                    130,
+                                    442,
+                                    124
+                                ],
+                                "text": "brown",
+                                "confidence": 0.57
+                            },
+                            {
+                                "boundingBox": [
+                                    756,
+                                    23,
+                                    895,
+                                    24,
+                                    886,
+                                    133,
+                                    747,
+                                    130
+                                ],
+                                "text": "fox",
+                                "confidence": 0.847
+                            },
+                            {
+                                "boundingBox": [
+                                    915,
+                                    24,
+                                    1168,
+                                    25,
+                                    1158,
+                                    136,
+                                    906,
+                                    133
+                                ],
+                                "text": "jumps",
+                                "confidence": 0.762
+                            },
+                            {
+                                "boundingBox": [
+                                    1188,
+                                    25,
+                                    1400,
+                                    26,
+                                    1390,
+                                    138,
+                                    1178,
+                                    136
+                                ],
+                                "text": "over",
+                                "confidence": 0.764
+                            },
+                            {
+                                "boundingBox": [
+                                    1420,
+                                    26,
+                                    1566,
+                                    25,
+                                    1556,
+                                    138,
+                                    1410,
+                                    138
+                                ],
+                                "text": "the",
+                                "confidence": 0.888
+                            },
+                            {
+                                "boundingBox": [
+                                    1586,
+                                    25,
+                                    1812,
+                                    24,
+                                    1801,
+                                    138,
+                                    1576,
+                                    138
+                                ],
+                                "text": "lazy",
+                                "confidence": 0.57
+                            }
+                        ]
+                    },
+                    {
+                        "language": "en",
+                        "boundingBox": [
+                            15,
+                            125,
+                            186,
+                            135,
+                            183,
+                            226,
+                            8,
+                            218
+                        ],
+                        "text": "dog.",
+                        "words": [
+                            {
+                                "boundingBox": [
+                                    15,
+                                    125,
+                                    187,
+                                    133,
+                                    182,
+                                    227,
+                                    10,
+                                    218
+                                ],
+                                "text": "dog.",
+                                "confidence": 0.424
+                            }
+                        ]
+                    },
+                    {
+                        "language": "en",
+                        "boundingBox": [
+                            9,
+                            219,
+                            1858,
+                            232,
+                            1856,
+                            338,
+                            7,
+                            317
+                        ],
+                        "text": "Pack my box with five dozen liquor jugs.",
+                        "words": [
+                            {
+                                "boundingBox": [
+                                    11,
+                                    234,
+                                    191,
+                                    228,
+                                    189,
+                                    316,
+                                    8,
+                                    319
+                                ],
+                                "text": "Pack",
+                                "confidence": 0.694
+                            },
+                            {
+                                "boundingBox": [
+                                    208,
+                                    227,
+                                    341,
+                                    224,
+                                    339,
+                                    314,
+                                    205,
+                                    316
+                                ],
+                                "text": "my",
+                                "confidence": 0.57
+                            },
+                            {
+                                "boundingBox": [
+                                    380,
+                                    223,
+                                    530,
+                                    220,
+                                    528,
+                                    313,
+                                    378,
+                                    314
+                                ],
+                                "text": "box",
+                                "confidence": 0.252
+                            },
+                            {
+                                "boundingBox": [
+                                    553,
+                                    220,
+                                    781,
+                                    220,
+                                    778,
+                                    314,
+                                    550,
+                                    313
+                                ],
+                                "text": "with",
+                                "confidence": 0.958
+                            },
+                            {
+                                "boundingBox": [
+                                    814,
+                                    220,
+                                    986,
+                                    222,
+                                    984,
+                                    316,
+                                    812,
+                                    314
+                                ],
+                                "text": "five",
+                                "confidence": 0.617
+                            },
+                            {
+                                "boundingBox": [
+                                    1003,
+                                    222,
+                                    1231,
+                                    228,
+                                    1229,
+                                    320,
+                                    1001,
+                                    316
+                                ],
+                                "text": "dozen",
+                                "confidence": 0.694
+                            },
+                            {
+                                "boundingBox": [
+                                    1303,
+                                    230,
+                                    1608,
+                                    244,
+                                    1607,
+                                    330,
+                                    1302,
+                                    321
+                                ],
+                                "text": "liquor",
+                                "confidence": 0.427
+                            },
+                            {
+                                "boundingBox": [
+                                    1647,
+                                    247,
+                                    1855,
+                                    260,
+                                    1855,
+                                    338,
+                                    1646,
+                                    331
+                                ],
+                                "text": "jugs.",
+                                "confidence": 0.57
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с приложением Python, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
 

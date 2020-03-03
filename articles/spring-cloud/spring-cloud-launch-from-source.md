@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/30/2019
 ms.author: brendm
-ms.openlocfilehash: 8edadbf946a28239ae4d28d56b3dccd77b451a71
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: b506fdcdec1ae3e98c1a4afe9c5124e284ed4d99
+ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277159"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77589017"
 ---
 # <a name="quickstart-launch-your-spring-cloud-application-from-source-code"></a>Краткое руководство. Запуск приложения Spring Cloud из исходного кода
 
@@ -62,10 +62,16 @@ az account list -o table
 az account set --subscription
 ```
 
-Откройте окно Azure CLI и выполните приведенные ниже команды, чтобы подготавливать экземпляр Azure Spring Cloud к работе. Обратите внимание, что на этом этапе Azure Spring Cloud требуется назначить общедоступный домен.
+Создайте группу ресурсов, которая будет содержать службу Azure Spring Cloud. Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/management/overview.md).
 
 ```azurecli
-    az spring-cloud create -n <resource name> -g <resource group name> --is-public true
+az group create --location eastus --name <resource group name>
+```
+
+Выполните следующие команды, чтобы подготовить экземпляр Azure Spring Cloud к работе. Подготовьте имя службы Azure Spring Cloud. Его длина должна быть от 4 до 32 знаков. Имя может содержать только строчные буквы, цифры и дефисы. Первым символом в имени службы должна быть буква, а последним — буква или цифра.
+
+```azurecli
+az spring-cloud create -n <resource name> -g <resource group name>
 ```
 
 Развертывание экземпляра службы займет около пяти минут.

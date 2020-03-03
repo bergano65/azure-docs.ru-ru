@@ -4,12 +4,12 @@ description: Узнайте, как с помощью Ansible создать и 
 keywords: ansible, azure, devops, bash, playbook, mysql, database
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: d8c8fd361f37a9cb961012807fe40b905c10c047
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: f068b3022c94466a20b524240dc293392b1f42ff
+ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74156528"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77603125"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>Руководство по настройке баз данных в Базе данных Azure для MySQL с помощью Ansible
 
@@ -332,7 +332,7 @@ ansible-playbook mysql_query.yml
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Ansible в Azure](/azure/ansible/)

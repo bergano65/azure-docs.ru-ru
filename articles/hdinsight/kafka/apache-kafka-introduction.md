@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 06/13/2019
-ms.openlocfilehash: 7cf83af52d5bedee5b4d57ee1b4dda2fb34d1b3f
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 543a18ad48384e3502231f85516a092468db2387
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960092"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77560105"
 ---
 # <a name="what-is-apache-kafka-in-azure-hdinsight"></a>Общие сведения об Apache Kafka в Azure HDInsight
 
@@ -89,11 +89,13 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 * **Преобразование.** С помощью потоковой обработки можно объединять и дополнять данные из нескольких входных разделов в один или несколько выходных разделов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на статьи об использовании Apache Kafka в HDInsight.
 
-* [Краткое руководство Создание Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
+* [Краткое руководство. Создание Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
+
+* [Использование Kafka c прокси-сервером REST](rest-proxy.md)
 
 * [Руководство. Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
 

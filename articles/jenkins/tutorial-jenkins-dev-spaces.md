@@ -3,12 +3,12 @@ title: Использование подключаемого модуля Azure 
 description: Из этой статьи вы узнаете, как использовать подключаемый модуль Azure Dev Spaces в конвейере непрерывной интеграции.
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 9dba0307db8ebbf07422fd770ea336b2abc031bd
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 10dfbdb7d89d6f3870ec3b9dbd87d4d315360815
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74209672"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77619979"
 ---
 # <a name="tutorial-using-the-azure-dev-spaces-plug-in-for-jenkins-with-azure-kubernetes-service"></a>Руководство по Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes 
 
@@ -21,7 +21,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
 > [!div class="checklist"]
 > * Создание кластера AKS с поддержкой Azure Dev Spaces
 > * Развертывание в AKS приложения с несколькими службами
-> * Подготовка сервера Jenkins
+> * подготовка сервера Jenkins;
 > * Применение подключаемого модуля Azure Dev Spaces в конвейере Jenkins позволяет просмотреть изменения в коде, прежде чем включать их в проект.
 
 В этом руководстве предполагается, что у вас есть по меньшей мере средний уровень понимания служб Azure, AKS, ACR, Azure Dev Spaces, [конвейеров](https://jenkins.io/doc/book/pipeline/) и подключаемых модулей Jenkins, а также репозитория GitHub. Будут полезными и базовые знания вспомогательных средств, таких как Helm и kubectl.
@@ -36,7 +36,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 * [Установленное средство Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.0.43 или выше.
 
-* Главный сервер Jenkins. Если у вас еще нет главного экземпляра Jenkins, разверните [Jenkins](https://aka.ms/jenkins-on-azure) в Azure, выполнив действия из  [этого краткого руководства](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template). 
+* Главный узел Jenkins. Если у вас еще нет главного узла Jenkins, разверните [Jenkins](https://aka.ms/jenkins-on-azure) в Azure, выполнив инструкции из  [этого краткого руководства](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template). 
 
 * На сервере Jenkins нужно установить Helm и kubectl, а также предоставить учетной записи Jenkins доступ к ним, как описано далее в этом руководстве.
 
@@ -165,20 +165,20 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 В этом разделе показано, как подготовить сервер Jenkins для выполнения примера конвейера непрерывной интеграции.
 
-* Установка подключаемых модулей.
+* Установка подключаемых модулей
 * Установка Helm и Kubernetes CLI
 * Добавление учетных данных
 
-### <a name="install-plug-ins"></a>Установка подключаемых модулей.
+### <a name="install-plug-ins"></a>Установка подключаемых модулей
 
-1. Выполните вход на сервер Jenkins. Выберите действие **Manage Jenkins (Управление Jenkins) > Manage Plugins (Управление подключаемыми модулями)** .
+1. Выполните вход на сервер Jenkins. Выберите действие **Manage Jenkins (Управление Jenkins) > Manage Plugins (Управление подключаемыми модулями)** .
 2. На вкладке **Available** (Доступные) выберите такие подключаемые модули:
     * [Azure Dev Spaces](https://plugins.jenkins.io/azure-dev-spaces);
-    * [Задачи Реестра контейнеров Azure](https://plugins.jenkins.io/azure-container-registry-tasks);
+    * [Задачи Реестра контейнеров Azure](https://plugins.jenkins.io/azure-container-registry-tasks)
     * [Environment Injector](https://plugins.jenkins.io/envinject);
-    * [Интеграция с GitHub](https://plugins.jenkins.io/github-pullrequest).
+    * [интеграция с GitHub](https://plugins.jenkins.io/github-pullrequest);
 
-    Если эти подключаемые модули отсутствуют в списке, перейдите на вкладку **Installed** (Установленные) и проверьте, установлены ли они.
+    Если этих подключаемых модулей нет в списке, перейдите на вкладку **Installed** (Установленные) и проверьте, установлены ли они.
 
 3. Чтобы установить подключаемые модули, выберите **Download now and install after restart** (Скачать сейчас и установить после перезагрузки).
 
@@ -333,7 +333,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
     }
 ```
 
-1. Внесите изменения в `mywebapi/src/main/java/com/ms/sample/mywebapi/Application.java` и затем создайте запрос на вытягивание. Например:
+1. Внесите изменения в `mywebapi/src/main/java/com/ms/sample/mywebapi/Application.java` и затем создайте запрос на вытягивание. Пример:
 
     ```java
     public String index() {
@@ -407,18 +407,7 @@ stage('smoketest') {
 az group delete -y --no-wait -n MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали, как с помощью подключаемых модулей Azure Dev Spaces для Jenkins и Реестра контейнеров Azure создавать код и развертывать приложение в пространстве разработки.
-
-Ниже перечислены ресурсы, которые дадут вам дополнительные сведения об Azure Dev Spaces, задачах ACR и CI/CD в Jenkins.
-
-Azure Dev Spaces:
-* [Принципы работы и настройки Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)
-
-Задачи ACR:
-* [Автоматизация установки исправлений ОС и платформы с помощью решения задач ACR](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-overview)
-* [Automatic build on code commit](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-overview) (Автоматизация создания образов контейнеров и обслуживание с помощью задачи ACR)
-
-CI/CD с использованием Jenkins в Azure:
-* [Jenkins continuous deployment](https://docs.microsoft.com/azure/aks/jenkins-continuous-deployment) (Руководство по развертыванию из GitHub в Службе Azure Kubernetes (AKS) с использованием непрерывной интеграции и непрерывного развертывания Jenkins)
+> [!div class="nextstepaction"]
+> [CI/CD с использованием Jenkins в Azure](jenkins-continuous-deployment.md)

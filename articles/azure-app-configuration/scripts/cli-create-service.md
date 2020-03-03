@@ -1,23 +1,23 @@
 ---
 title: Пример скрипта Azure CLI. Создание хранилища конфигураций для приложения в Azure
 titleSuffix: Azure App Configuration
-description: Пример скрипта Azure CLI. Создание хранилища конфигураций для приложения Azure
+description: Использование скрипта Azure CLI для создания хранилища Конфигурации приложений Azure
 services: azure-app-configuration
 author: lisaguthrie
 ms.service: azure-app-configuration
 ms.topic: sample
 ms.date: 01/24/2020
 ms.author: lcozzens
-ms.openlocfilehash: 11f3aec10aed0dc8bc0c9831d563dca2b0c1a6fb
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 667cf9545d87bd9277c59d066933710339b6c079
+ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77468377"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77623085"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Создание хранилища конфигураций для приложения Azure
 
-В этом примере скрипта создается экземпляр конфигурации приложения Azure в новой группе ресурсов со случайным именем.
+В этом примере скрипта создается экземпляр Конфигурации приложения Azure в новой группе ресурсов.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -44,7 +44,9 @@ appConfigHostname=$(az appconfig create \
   --location eastus \
   --resource-group $myResourceGroupName \
   --query hostName \
-  -o tsv)
+  --sku free \
+  -o tsv
+  )
 
 # Get the AppConfig connection string 
 appConfigConnectionString=$(az appconfig credential list \

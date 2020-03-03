@@ -5,14 +5,14 @@ author: mumian
 ms.date: 12/03/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a77f32620d4e3a694806cdf6c247928fa3c7ede4
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: e8f95f4987d0ce421defaed63ed9a587233d2bf4
+ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045294"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77561601"
 ---
-# <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
+# <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство по Создание связанных шаблонов Azure Resource Manager
 
 Узнайте, как создать связанные шаблоны Azure Resource Manager. Используя связанные шаблоны, можно одним шаблоном вызвать другой. Это отлично подходит для создания модулей шаблонов. В этом руководстве используется тот же шаблон, что и в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./template-tutorial-create-templates-with-dependent-resources.md), который создает виртуальную машину, виртуальную сеть и другие зависимые ресурсы, включая учетную запись хранения. Для создания ресурса учетной записи хранения можно использовать связанный шаблон.
 
@@ -35,7 +35,7 @@ ms.locfileid: "76045294"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
