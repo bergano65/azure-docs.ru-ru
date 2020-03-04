@@ -8,12 +8,12 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: a35239354d23f75361d5577d6b7efc8254943147
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: e9e2fe92939088420f973c5ca112b5f59d07f212
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906592"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252685"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "76906592"
 
 Пользователи могут просматривать содержимое сайта в браузере с помощью общедоступного URL-адреса веб – сайта. URL-адрес можно найти с помощью портал Azure, Azure CLI или PowerShell. Используйте эту таблицу в качестве справочника.
 
-|Средство| Руководство |
+|Инструмент| Руководство |
 |----|----|
 |**Портал Azure** | [Поиск URL-адреса веб-сайта с помощью портал Azure](storage-blob-static-website-how-to.md#portal-find-url) |
 |**Azure CLI** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
@@ -92,7 +92,13 @@ URL-адрес сайта содержит региональный код. На
 > [!TIP]
 > Рассмотрите возможность размещения домена в Azure. Дополнительные сведения см. [в разделе Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md).
 
-## <a name="pricing"></a>Стоимость
+## <a name="adding-http-headers"></a>Добавление HTTP-заголовков
+
+Не существует способа настройки заголовков в составе статического компонента веб-сайта. Однако Azure CDN можно использовать для добавления заголовков и добавления (или перезаписи) значений заголовков. Azure CDN см. [в справочнике по стандартным обработчикам правил](https://docs.microsoft.com/azure/cdn/cdn-standard-rules-engine-reference).
+
+Если вы хотите использовать заголовки для управления кэшированием, см. раздел [управление Azure CDN кэширования с помощью правил кэширования](https://docs.microsoft.com/azure/cdn/cdn-caching-rules).
+
+## <a name="pricing"></a>Цены
 
 Можно включить бесплатное размещение статических веб-сайтов. Вы оплачиваете только хранилище BLOB-объектов, которое использует ваш сайт, и затраты на эксплуатацию. Дополнительные сведения о ценах на хранилище BLOB-объектов Azure см. на [странице цен](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -105,7 +111,7 @@ URL-адрес сайта содержит региональный код. На
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Размещение статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md)
-* [Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)
+* [Map a custom domain to an Azure Blob Storage endpoint](storage-custom-domain-name.md) (Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure)
 * [Функции Azure](/azure/azure-functions/functions-overview)
 * [Служба приложений Azure](/azure/app-service/overview)
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)

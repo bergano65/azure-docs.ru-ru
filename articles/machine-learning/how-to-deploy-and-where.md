@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 02/27/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: d3353451057037e5f3fd94347a007a9d3b2c0e15
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 388f1cf0231d0a7eae7b059656186b067f537d2e
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78193090"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250969"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -159,12 +159,6 @@ ms.locfileid: "78193090"
 
 <a name="target"></a>
 
-## <a name="choose-a-compute-target"></a>Выбор целевого объекта вычислений
-
-Для размещения развертывания веб-службы можно использовать следующие целевые объекты вычислений или ресурсы вычислений:
-
-[!INCLUDE [aml-compute-target-deploy](../../includes/aml-compute-target-deploy.md)]
-
 ## <a name="single-versus-multi-model-endpoints"></a>Однокомпонентные и Многомодельные конечные точки
 Служба машинного обучения Azure поддерживает развертывание одной или нескольких моделей за одну конечную точку.
 
@@ -172,9 +166,9 @@ ms.locfileid: "78193090"
 
 Пример E2E, в котором показано, как использовать несколько моделей за одну контейнерную конечную точку, см. в [этом примере](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-multi-model) .
 
-## <a name="prepare-deployment-artifacts"></a>Подготовка артефактов развертывания
+## <a name="prepare-to-deploy"></a>Подготовка к развертыванию
 
-Для развертывания модели необходимо следующее:
+Для развертывания модели в качестве службы необходимы следующие компоненты:
 
 * **Скрипт записи & зависимости исходного кода**. Этот скрипт принимает запросы, оценивает запросы с помощью модели и возвращает результаты.
 
@@ -187,11 +181,9 @@ ms.locfileid: "78193090"
     >
     >   Альтернативой, который может работать в вашем сценарии, является [Прогнозирование пакетной обработки](how-to-use-parallel-run-step.md), предоставляющее доступ к хранилищам данных во время оценки.
 
-* **Среда вывода**. Базовый образ с зависимостями установленных пакетов, необходимых для запуска модели.
+* **Конфигурация вывода**. Конфигурация вывода определяет конфигурацию среды, сценарий записи и другие компоненты, необходимые для запуска модели в качестве службы.
 
-* **Конфигурация развертывания** для целевого объекта вычислений, в котором развернута модель. Эта конфигурация описывает такие вещи, как память и требования к ЦП, необходимые для запуска модели.
-
-Эти элементы инкапсулированы в *конфигурацию вывода* и *конфигурацию развертывания*. Конфигурация вывода ссылается на скрипт записи и другие зависимости. Эти конфигурации определяются программно при использовании пакета SDK для выполнения развертывания. Они определяются в файлах JSON при использовании интерфейса командной строки.
+После получения необходимых компонентов можно профилировать службу, которая будет создана в результате развертывания модели, чтобы понять требования к ЦП и памяти.
 
 ### <a id="script"></a>1. определение скрипта записи и зависимостей
 
@@ -267,33 +259,7 @@ model_path = Model.get_model_path('sklearn_mnist')
 * `pyspark`
 * Стандартный объект Python
 
-Чтобы использовать формирование схемы, включите пакет `inference-schema` в файл среды Conda. Дополнительные сведения об этом пакете см. в разделе [https://github.com/Azure/InferenceSchema](https://github.com/Azure/InferenceSchema).
-
-##### <a name="example-dependencies-file"></a>Пример файла зависимостей
-
-Следующий YAML является примером файла зависимостей Conda для вывода. Обратите внимание, что необходимо указать значения azureml-Default с версии > = 1.0.45 в качестве зависимости PIP, так как она содержит функции, необходимые для размещения модели в качестве веб-службы.
-
-```YAML
-name: project_environment
-dependencies:
-  - python=3.6.2
-  - scikit-learn=0.20.0
-  - pip:
-      # You must list azureml-defaults as a pip dependency
-    - azureml-defaults>=1.0.45
-    - inference-schema[numpy-support]
-```
-
-> [!IMPORTANT]
-> Если зависимость доступна с помощью Conda и PIP (из PyPi), корпорация Майкрософт рекомендует использовать версию Conda, так как Conda пакеты обычно поставляются с предварительно созданными двоичными файлами, которые делают установку более надежной.
->
-> Дополнительные сведения см. в разделе [Основные сведения о Conda и PIP](https://www.anaconda.com/understanding-conda-and-pip/).
->
-> Чтобы проверить, доступна ли зависимость через Conda, используйте команду `conda search <package-name>` или используйте индексы пакетов в [https://anaconda.org/anaconda/repo](https://anaconda.org/anaconda/repo) и [https://anaconda.org/conda-forge/repo](https://anaconda.org/conda-forge/repo).
-
-Если вы хотите использовать автоматическое создание схем, сценарий записи должен импортировать `inference-schema` пакеты.
-
-Определите форматы образца входных и выходных данных в переменных `input_sample` и `output_sample`, которые представляют форматы запросов и ответов для веб-службы. Используйте эти примеры в декораторах входных и выходных функций в функции `run()`. В следующем примере scikit-учиться используется создание схемы.
+Чтобы использовать формирование схемы, включите пакет `inference-schema` в файл зависимостей. Дополнительные сведения об этом пакете см. в разделе [https://github.com/Azure/InferenceSchema](https://github.com/Azure/InferenceSchema). Определите форматы образца входных и выходных данных в переменных `input_sample` и `output_sample`, которые представляют форматы запросов и ответов для веб-службы. Используйте эти примеры в декораторах входных и выходных функций в функции `run()`. В следующем примере scikit-учиться используется создание схемы.
 
 ##### <a name="example-entry-script"></a>Пример скрипта записи
 
@@ -485,24 +451,52 @@ def run(request):
 > pip install azureml-contrib-services
 > ```
 
-### <a name="2-define-your-inference-environment"></a>2. Определение среды вывода
+### <a name="2-define-your-inference-configuration"></a>2. Определение конфигурации вывода
 
-Конфигурация вывода описывает, как настроить модель для выполнения прогнозов. Эта конфигурация не является частью сценария записи. Он ссылается на скрипт записи и используется для размещения всех ресурсов, необходимых для развертывания. Он используется позже при развертывании модели.
+Конфигурация вывода описывает, как настроить веб-службу, содержащую модель. Он не является частью сценария записи. Он ссылается на скрипт записи и используется для размещения всех ресурсов, необходимых для развертывания. Он используется позже при развертывании модели.
 
-Конфигурация вывода использует среды Машинное обучение Azure для определения зависимостей программного обеспечения, необходимых для развертывания. Среды позволяют создавать, администрировать и повторно использовать зависимости программного обеспечения, необходимые для обучения и развертывания. В следующем примере демонстрируется загрузка среды из рабочей области и ее использование с конфигурацией вывода:
+Конфигурация вывода использует среды Машинное обучение Azure для определения зависимостей программного обеспечения, необходимых для развертывания. Среды позволяют создавать, администрировать и повторно использовать зависимости программного обеспечения, необходимые для обучения и развертывания. Среду можно создать из пользовательских файлов зависимостей или с помощью одной из проверенных Машинное обучение Azure сред. Следующий YAML является примером файла зависимостей Conda для вывода. Обратите внимание, что необходимо указать значения azureml-Default с версии > = 1.0.45 в качестве зависимости PIP, так как она содержит функции, необходимые для размещения модели в качестве веб-службы. Если вы хотите использовать автоматическое создание схем, сценарий записи также должен импортировать `inference-schema` пакеты.
+
+```YAML
+name: project_environment
+dependencies:
+  - python=3.6.2
+  - scikit-learn=0.20.0
+  - pip:
+      # You must list azureml-defaults as a pip dependency
+    - azureml-defaults>=1.0.45
+    - inference-schema[numpy-support]
+```
+
+> [!IMPORTANT]
+> Если зависимость доступна с помощью Conda и PIP (из PyPi), корпорация Майкрософт рекомендует использовать версию Conda, так как Conda пакеты обычно поставляются с предварительно созданными двоичными файлами, которые делают установку более надежной.
+>
+> Дополнительные сведения см. в разделе [Основные сведения о Conda и PIP](https://www.anaconda.com/understanding-conda-and-pip/).
+>
+> Чтобы проверить, доступна ли зависимость через Conda, используйте команду `conda search <package-name>` или используйте индексы пакетов в [https://anaconda.org/anaconda/repo](https://anaconda.org/anaconda/repo) и [https://anaconda.org/conda-forge/repo](https://anaconda.org/conda-forge/repo).
+
+Файл зависимостей можно использовать для создания объекта среды и сохранения его в рабочей области для будущего использования:
+
+```python
+from azureml.core.environment import Environment
+
+
+myenv = Environment.from_conda_specification(name = 'myenv',
+                                             file_path = 'path-to-conda-specification-file'
+myenv.register(workspace=ws)
+```
+
+В следующем примере демонстрируется загрузка среды из рабочей области и ее использование с конфигурацией вывода:
 
 ```python
 from azureml.core.environment import Environment
 from azureml.core.model import InferenceConfig
 
-myenv = Environment.get(workspace=ws, name="myenv", version="1")
-inference_config = InferenceConfig(entry_script="x/y/score.py",
+
+myenv = Environment.get(workspace=ws, name='myenv', version='1')
+inference_config = InferenceConfig(entry_script='path-to-score.py',
                                    environment=myenv)
 ```
-
-Дополнительные сведения о средах см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
-
-Можно также указать зависимости напрямую, не используя среду. В следующем примере показано, как создать конфигурацию вывода, которая загружает зависимости программного обеспечения из файла Conda:
 
 Дополнительные сведения о средах см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
 
@@ -510,7 +504,7 @@ inference_config = InferenceConfig(entry_script="x/y/score.py",
 
 Сведения об использовании пользовательского образа DOCKER с конфигурацией вывода см. в статье [развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md).
 
-### <a name="cli-example-of-inferenceconfig"></a>Пример Инференцеконфиг в CLI
+#### <a name="cli-example-of-inferenceconfig"></a>Пример Инференцеконфиг в CLI
 
 [!INCLUDE [inference config](../../includes/machine-learning-service-inference-config.md)]
 
@@ -528,7 +522,93 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 Сведения об использовании пользовательского образа DOCKER с конфигурацией вывода см. в статье [развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md).
 
-### <a name="3-define-your-deployment-configuration"></a>3. Определение конфигурации развертывания
+### <a id="profilemodel"></a>3. Профилирование модели для определения использования ресурсов
+
+После регистрации модели и подготовки других компонентов, необходимых для ее развертывания, можно определить ресурсы ЦП и памяти, которые потребуется развернутой службе. Профилирование проверяет службу, которая выполняет модель, и возвращает такие сведения, как загрузка ЦП, использование памяти и задержка ответа. Он также предоставляет рекомендации для ЦП и памяти на основе использования ресурсов.
+
+Для профилирования модели потребуется:
+* Зарегистрированная модель.
+* Конфигурация вывода, основанная на скрипте записи и определении среды вывода.
+* Табличный набор данных с одним столбцом, в котором каждая строка содержит строку, представляющую образец данных запроса.
+
+> [!IMPORTANT]
+> На этом этапе поддерживается только Профилирование служб, в которых данные запроса должны быть строками, например: сериализованный JSON, текст, сериализованное изображение строки и т. д. Содержимое каждой строки набора данных (строка) помещается в текст HTTP-запроса и отправляется службе, которая инкапсулирует модель для оценки.
+
+Ниже приведен пример того, как можно создать входной набор данных для профилирования службы, которая предполагает, что входящие данные запроса должны содержать сериализованный код JSON. В этом случае мы создали набор данных на основе 100 экземпляров одного и того же содержимого данных запроса. В реальных сценариях мы рекомендуем использовать большие наборы данных, содержащие различные входные данные, особенно если использование ресурсов модели зависит от входных данных.
+
+```python
+import json
+from azureml.core import Datastore
+from azureml.core.dataset import Dataset
+from azureml.data import dataset_type_definitions
+
+input_json = {'data': [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                       [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]}
+# create a string that can be utf-8 encoded and
+# put in the body of the request
+serialized_input_json = json.dumps(input_json)
+dataset_content = []
+for i in range(100):
+    dataset_content.append(serialized_input_json)
+dataset_content = '\n'.join(dataset_content)
+file_name = 'sample_request_data.txt'
+f = open(file_name, 'w')
+f.write(dataset_content)
+f.close()
+
+# upload the txt file created above to the Datastore and create a dataset from it
+data_store = Datastore.get_default(ws)
+data_store.upload_files(['./' + file_name], target_path='sample_request_data')
+datastore_path = [(data_store, 'sample_request_data' +'/' + file_name)]
+sample_request_data = Dataset.Tabular.from_delimited_files(
+    datastore_path, separator='\n',
+    infer_column_types=True,
+    header=dataset_type_definitions.PromoteHeadersBehavior.NO_HEADERS)
+sample_request_data = sample_request_data.register(workspace=ws,
+                                                   name='sample_request_data',
+                                                   create_new_version=True)
+```
+
+После того как набор данных, содержащий образец данных запроса, готов, создайте конфигурацию определения. Конфигурация вывода основана на score.py и определении среды. В следующем примере показано, как создать конфигурацию вывода и выполнить профилирование.
+
+```python
+from azureml.core.model import InferenceConfig, Model
+from azureml.core.dataset import Dataset
+
+
+model = Model(ws, id=model_id)
+inference_config = InferenceConfig(entry_script='path-to-score.py',
+                                   environment=myenv)
+input_dataset = Dataset.get_by_name(workspace=ws, name='sample_request_data')
+profile = Model.profile(ws,
+            'unique_name',
+            [model],
+            inference_config,
+            input_dataset=input_dataset)
+
+profile.wait_for_completion(True)
+
+# see the result
+details = profile.get_details()
+```
+
+Следующая команда показывает, как выполнить профилирование модели с помощью интерфейса командной строки:
+
+```azurecli-interactive
+az ml model profile -g <resource-group-name> -w <workspace-name> --inference-config-file <path-to-inf-config.json> -m <model-id> --idi <input-dataset-id> -n <unique-name>
+```
+
+## <a name="deploy-to-target"></a>Развертывание в целевом объекте
+
+Развертывание использует конфигурацию развертывания конфигурации определения для развертывания моделей. Процесс развертывания аналогичен, независимо от целевого объекта вычислений. Развертывание в AKS немного отличается, так как необходимо предоставить ссылку на кластер AKS.
+
+### <a name="choose-a-compute-target"></a>Выбор целевого объекта вычислений
+
+Для размещения развертывания веб-службы можно использовать следующие целевые объекты вычислений или ресурсы вычислений:
+
+[!INCLUDE [aml-compute-target-deploy](../../includes/aml-compute-target-deploy.md)]
+
+### <a name="define-your-deployment-configuration"></a>Определение конфигурации развертывания
 
 Перед развертыванием модели необходимо определить конфигурацию развертывания. *Конфигурация развертывания зависит от целевого объекта вычислений, в котором будет размещена веб-служба.* Например, при локальном развертывании модели необходимо указать порт, на котором служба принимает запросы. Конфигурация развертывания не является частью скрипта записи. Он используется для определения характеристик целевого объекта вычислений, в котором будет размещаться скрипт модели и входа.
 
@@ -547,10 +627,6 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 ```python
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
-
-## <a name="deploy-to-target"></a>Развертывание в целевом объекте
-
-Развертывание использует конфигурацию развертывания конфигурации определения для развертывания моделей. Процесс развертывания аналогичен, независимо от целевого объекта вычислений. Развертывание в AKS немного отличается, так как необходимо предоставить ссылку на кластер AKS.
 
 ### <a name="securing-deployments-with-ssl"></a>Защита развертываний с помощью SSL
 
@@ -1076,7 +1152,7 @@ docker kill mycontainer
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
-* [Использование Машинное обучение Azureной модели, развернутой в качестве веб-службы](how-to-consume-web-service.md)
+* [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей машинного обучения в Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
 

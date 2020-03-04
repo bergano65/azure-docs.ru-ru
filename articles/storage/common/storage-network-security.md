@@ -9,12 +9,12 @@ ms.date: 01/21/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 2c3b329aa767fbe9795c90ca236008210576fe12
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 7d3b580a939d207bbcc410e13555cdaa28067f87
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514737"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250980"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -372,28 +372,30 @@ ms.locfileid: "76514737"
 
 | Служба                  | Имя поставщика ресурсов     | Разрешенные операции                 |
 |:------------------------ |:-------------------------- |:---------------------------------- |
-| Служба Azure Backup             | Microsoft.RecoveryServices | Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Подробнее](/azure/backup/backup-introduction-to-azure-backup). |
-| Устройство Azure Data Box           | Microsoft.DataBox          | Позволяет импортировать данные в Azure с помощью Data Box. [Подробнее](/azure/databox/data-box-overview). |
-| Azure DevTest Labs       | Microsoft.DevTestLab       | Создание пользовательских образов и установка артефактов. [Подробнее](/azure/devtest-lab/devtest-lab-overview). |
+| Azure Backup             | Microsoft.RecoveryServices | Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Дополнительные сведения](/azure/backup/backup-introduction-to-azure-backup) |
+| Azure Data Box           | Microsoft.DataBox          | Позволяет импортировать данные в Azure с помощью Data Box. [Дополнительные сведения](/azure/databox/data-box-overview) |
+| Azure DevTest Labs       | Microsoft.DevTestLab       | Создание пользовательских образов и установка артефактов. [Дополнительные сведения](/azure/devtest-lab/devtest-lab-overview) |
 | Сетка событий Azure         | Microsoft.EventGrid        | Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers). |
 | Центры событий Azure         | Microsoft.EventHub         | Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview) |
-| Синхронизация файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
-| Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Подробнее](/azure/hdinsight/hdinsight-hadoop-use-blob-storage). |
-| Экспорт импорта Azure      | Microsoft.ImportExport     | Позволяет импортировать данные в Azure и экспортировать данные из Azure с помощью службы импорта и экспорта. [Подробнее](/azure/storage/common/storage-import-export-service).  |
-| Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись хранения, включая журналы диагностики ресурсов, Azure Active Directory журналы входа и аудита, а также Microsoft Intune журналы. [Подробнее](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security). |
-| Сети Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Подробнее](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). |
-| Восстановление сайтов Azure      | Microsoft.SiteRecovery     | Включите репликацию для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Подробнее](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
+| Служба синхронизации файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
+| Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Дополнительные сведения](/azure/hdinsight/hdinsight-hadoop-use-blob-storage) |
+| Экспорт импорта Azure      | Microsoft.ImportExport     | Позволяет импортировать данные в Azure и экспортировать данные из Azure с помощью службы импорта и экспорта. [Дополнительные сведения](/azure/storage/common/storage-import-export-service)  |
+| Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись хранения, включая журналы диагностики ресурсов, Azure Active Directory журналы входа и аудита, а также Microsoft Intune журналы. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security) |
+| Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Дополнительные сведения](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview) |
+| Azure Site Recovery      | Microsoft.SiteRecovery     | Включите репликацию для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Дополнительные сведения](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication) |
 
 Параметр **Allow Trusted Microsoft Services...** также позволяет определенному экземпляру следующих служб получить доступ к учетной записи хранения, если [роль RBAC явно назначается](storage-auth-aad.md#assign-rbac-roles-for-access-rights) [управляемому удостоверению, назначенному системой](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В этом случае область доступа для экземпляра соответствует роли RBAC, назначенной управляемому удостоверению.
 
-| Служба                        | Имя поставщика ресурсов          | Цель            |
-| :----------------------------- | :------------------------------------- | :---------- |
+| Служба                        | Имя поставщика ресурсов                 | Назначение            |
+| :----------------------------- | :------------------------------------- | :----------------- |
+| Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивный поиск доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи записи контроля доступа могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду выполнения ADF. |
-| Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Подробнее](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
-| Машинное обучение Azure | Microsoft.MachineLearningServices      | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Подробнее](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). |
-| Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных экземпляров базы данных SQL с помощью Polybase. [Подробнее](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview). |
-| Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Подробнее](/azure/stream-analytics/blob-output-managed-identity). |
+| Azure Data Share               | Microsoft. файл или учетные записи           | Разрешает доступ к учетным записям хранения через общую папку данных. |
+| Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Дополнительные сведения](/azure/logic-apps/create-managed-service-identity#authenticate-access-with-managed-identity.md) |
+| Служба "Машинное обучение Azure" | Microsoft.MachineLearningServices      | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Дополнительные сведения](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace) | 
+| Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных экземпляров базы данных SQL с помощью Polybase. [Дополнительные сведения](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) |
+| Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Дополнительные сведения](/azure/stream-analytics/blob-output-managed-identity) |
 | Azure Synapse Analytics        | Microsoft. синапсе/рабочие области          | Обеспечивает доступ к данным в службе хранилища Azure из синапсе Analytics. |
 
 

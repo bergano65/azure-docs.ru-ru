@@ -3,12 +3,12 @@ title: Хранилища и хранение данных в Azure Application 
 description: Заявление о политике хранении и конфиденциальности
 ms.topic: conceptual
 ms.date: 09/29/2019
-ms.openlocfilehash: 0b266eb0674f6de7dfb20311bba95bc7f4697f61
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 30878eecf795c85713b9f09b8325b326416022b8
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77669664"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78254870"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор, хранение и хранение данных в Application Insights
 
@@ -171,6 +171,12 @@ services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {
 
 Префикс папки `appInsights-node` можно перевести в ручной режим, изменив значение времени выполнения статической переменной `Sender.TEMPDIR_PREFIX` в [Sender.ts](https://github.com/Microsoft/ApplicationInsights-node.js/blob/7a1ecb91da5ea0febf5ceab13d6a4bf01a63933d/Library/Sender.ts#L384).
 
+### <a name="javascript-browser"></a>JavaScript (браузер)
+
+[Хранилище сеансов HTML5](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) используется для сохранения данных. Используются два отдельных буфера: `AI_buffer` и `AI_sent_buffer`. Данные телеметрии, которые хранятся в пакете и ожидают отправки, хранятся в `AI_buffer`. Данные телеметрии, которые были только что отправлены, помещаются в `AI_sent_buffer` до тех пор, пока сервер приема не ответит, что он успешно получен. Когда данные телеметрии успешно получены, они удаляются из всех буферов. В случае временных сбоев (например, если пользователь теряет подключение к сети), данные телеметрии остаются в `AI_buffer` до тех пор, пока она не будет успешно получена или сервер приема не ответит, что данные телеметрии недопустимы (например, неправильная схема или слишком старая).
+
+Буферы телеметрии можно отключить, задав для [`enableSessionStorageBuffer`](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/legacy/JavaScript/JavaScriptSDK.Interfaces/IConfig.ts#L31) значение `false`. Когда хранилище сеанса отключено, в качестве постоянного хранилища используется локальный массив. Поскольку пакет SDK для JavaScript выполняется на клиентском устройстве, он имеет доступ к этому расположению в средствах разработчика браузера.
+
 ### <a name="opencensus-python"></a>Опенценсус Python
 
 По умолчанию пакет SDK для Опенценсус Python использует папку текущего пользователя `%username%/.opencensus/.azure/`. Разрешение на доступ к этой папке дано только текущему пользователю и администраторам. (См. статью [Реализация](https://github.com/census-instrumentation/opencensus-python/blob/master/contrib/opencensus-ext-azure/opencensus/ext/azure/common/storage.py) здесь.) Папка с сохраненными данными будет называться после файла Python, который создал данные телеметрии.
@@ -207,7 +213,7 @@ AzureLogHandler(
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings). |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Н/Д
+|Windows Vista | Не поддерживается. | Недоступно
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -241,15 +247,15 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 | Ваше действие | Собираемые классы данных (см. следующую таблицу) |
 | --- | --- |
-| [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Запросы<br/>**Исключения**<br/>Сеанс<br/>пользователи |
+| [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>users |
 | [Установка монитор состояния на IIS][redfield] |Зависимости<br/>ServerContext<br/>Выводимые<br/>Счетчики производительности |
-| [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>пользователи |
+| [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>users |
 | [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Страница<br/>ClientPerf<br/>Ajax |
 | [Определение свойств по умолчанию][apiproperties] |**Свойства** всех стандартных и настраиваемых событий |
 | [Вызов TrackMetric][api] |числовых значений;<br/>**Свойства** |
 | [Направление вызова *][api] |Имя события<br/>**Свойства** |
 | [Вызов TrackException][api] |**Исключения**<br/>Дамп стека<br/>**Свойства** |
-| Пакету SDK не может собрать данные. Например: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
+| Пакету SDK не может собрать данные. Пример: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
 
 Сведения о пакетах [SDK для других платформ][platforms]см. в их документах.
 
@@ -268,7 +274,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 | PageViews |URL-адрес и имя страницы или имя экрана |
 | Производительность клиента |URL-адрес или имя страницы, время загрузки браузера |
 | Ajax |Вызовы HTTP от веб-страницы на сервер |
-| Запросы |URL-адрес, длительность, код ответа |
+| Requests |URL-адрес, длительность, код ответа |
 | Зависимости |Тип (SQL, HTTP,...), строка подключения или URI, синхронизация/асинхронная, длительность, успешно, инструкция SQL (с монитор состояния) |
 | **Исключения** |Тип, **сообщение**, стеки вызовов, исходный файл, номер строки, `thread id` |
 | Сбои |`Process id`, `parent process id`, `crash thread id`; исправление приложения, `id`, сборка;  тип исключения, адрес, причина; скрытые символы и регистры, двоичные начальные и конечные адреса, имя двоичного файла и путь, тип ЦП |

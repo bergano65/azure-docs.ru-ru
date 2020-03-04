@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: barclayn
-ms.openlocfilehash: 6a775da59680004dadf0cec872057adfd5a16f49
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 0a4daf61d6b791a01f5bfb18e6cfca8118b2f421
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749858"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255941"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Рекомендации по безопасности для рабочих нагрузок IaaS в Azure
 В этой статье описываются рекомендации по обеспечению безопасности для виртуальных машин и операционных систем.
@@ -67,8 +67,8 @@ ms.locfileid: "75749858"
 
 Группа доступности — это логическая группа, которую можно использовать в Azure, чтобы гарантировать изоляцию ресурсов виртуальной машины во время развертывания в центре обработки данных Azure. Azure гарантирует, что виртуальные машины, размещенные в группе доступности, выполняются на нескольких физических серверах, в вычислительных стойках, в пределах единиц хранения и сетевых коммутаторов. В случае сбоя оборудования или программного обеспечения в Azure затрагивается только подмножество виртуальных машин, а приложение остается доступным для клиентов. Группы доступности — это важный элемент при создании надежных облачных решений.
 
-## <a name="protect-against-malware"></a>Защита от вредоносного программного обеспечения
-В целях обнаружения и удаления вирусов, шпионских и других вредоносных программ необходимо установить средства защиты от вредоносных программ. Можно установить [антивредоносное ПО Майкрософт](antimalware.md) или решение для защиты конечных точек от партнеров Майкрософт ([Trend Micro](https://help.deepsecurity.trendmicro.com/Welcome.html), [Symantec](https://www.symantec.com/products), [McAfee](https://www.mcafee.com/us/products.aspx), [Защитник Windows](https://www.microsoft.com/windows/comprehensive-security) и [System Center Endpoint Protection](/configmgr/protect/deploy-use/endpoint-protection)).
+## <a name="protect-against-malware"></a>Защита от вредоносных программ
+В целях обнаружения и удаления вирусов, шпионских и других вредоносных программ необходимо установить средства защиты от вредоносных программ. Вы можете установить [антивредоносное по Майкрософт](antimalware.md) или решение для защиты конечных точек партнера Майкрософт ([Trend Micro](https://help.deepsecurity.trendmicro.com/Welcome.html), [Broadcom](https://www.broadcom.com/products), [McAfee](https://www.mcafee.com/us/products.aspx), [Защитник Windows](https://www.microsoft.com/windows/comprehensive-security)и [System Center Endpoint Protection](/configmgr/protect/deploy-use/endpoint-protection)).
 
 Антивредоносное ПО Майкрософт обладает такими возможностями, как обеспечение защиты в реальном времени, плановое сканирование, исправление вредоносных действий, обновление подписей, обновление модуля защиты, отправка образцов и сбор событий исключения. Для сред, размещенных отдельно от рабочей среды, вы можете использовать расширение антивредоносных программ, чтобы защитить виртуальные машины и облачные службы.
 

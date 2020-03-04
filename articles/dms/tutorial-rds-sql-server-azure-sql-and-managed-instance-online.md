@@ -3,8 +3,8 @@ title: Руководство. Миграция RDS SQL Server в базу да�
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить оперативную миграцию из RDS SQL Server в отдельную базу данных SQL Azure или управляемый экземпляр с помощью Azure Database Migration Service.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: 52a6ee282e12f0ece5f16c1fa67c38f07f9d86e7
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: db561761acbd5ff991f88cfd18cec8d4625336f2
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751288"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255520"
 ---
 # <a name="tutorial-migrate-rds-sql-server-to-azure-sql-database-or-an-azure-sql-database-managed-instance-online-using-dms"></a>Руководство. Миграция SQL Server RDS в базу данных SQL Azure или управляемый экземпляр базы данных SQL Azure в сети с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из экземпляра SQL Server RDS в [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) или [Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-index) с минимальным временем простоя в работе приложений. В этом учебнике выполняется перенос базы данных **Adventureworks2012**, восстановленной в экземпляре SQL Server RDS версии SQL Server 2012 (или более поздней), в Базу данных SQL Azure или Управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service.
@@ -42,7 +42,7 @@ Azure Database Migration Service можно использовать для пе
 
 В этой статье описывается перенос данных из SQL Server RDS в Базу данных SQL Azure или Управляемый экземпляр Базы данных SQL Azure по сети.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Для работы с этим руководством вам потребуется следующее:
 
 * Создайте [базу данных SQL Server RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.SQLServer.html).

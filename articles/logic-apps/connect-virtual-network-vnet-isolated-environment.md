@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: 63174e1d4950b9f18fd3693511c507ed2dd018b3
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.date: 02/28/2020
+ms.openlocfilehash: 8c9732aec73f6387c9d32bb2333a3e7f834c2165
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77500367"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249893"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -35,7 +35,7 @@ ms.locfileid: "77500367"
 > [!IMPORTANT]
 > Приложения логики, встроенные триггеры, встроенные действия и соединители, работающие в интегрированной среде сценариев, используют тарифный план, отличный от плана ценообразования на основе потребления. Чтобы узнать, как цены и данные о выставлении счетов для Исес, см. [Logic Apps модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Цены см. на странице [цен на Logic Apps](../logic-apps/logic-apps-pricing.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -128,7 +128,7 @@ ms.locfileid: "77500367"
 
    ![Предоставление сведений о среде](./media/connect-virtual-network-vnet-isolated-environment/integration-service-environment-details.png)
 
-   | Свойство | Обязательно | Значение | Описание |
+   | Свойство | Обязательно | Значение | Description |
    |----------|----------|-------|-------------|
    | **подписка** | Да | <*Azure-subscription-name*> | Подписка Azure, используемая для среды. |
    | **группа ресурсов** | Да | <*имя_группы_ресурсов_Azure*> | Новая или существующая группа ресурсов Azure, в которой вы хотите создать среду. |
@@ -151,7 +151,7 @@ ms.locfileid: "77500367"
 
    * Использует [Формат CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) и адресное пространство класса B.
 
-   * Использует по крайней мере `/27` в адресном пространстве, так как для каждой подсети требуется *не менее 32 адресов.* Например:
+   * Использует по крайней мере `/27` в адресном пространстве, так как для каждой подсети требуется *не менее 32 адресов.* Пример:
 
      * `10.0.0.0/28` имеет только 16 адресов и слишком мал, так как 2<sup>(32-28)</sup> — 2<sup>4</sup> или 16.
 
@@ -284,7 +284,7 @@ ms.locfileid: "77500367"
 
 После удаления интегрированной среды сценариев может потребоваться подождать до 9 часов, прежде чем вы попытаетесь удалить виртуальную сеть или подсети Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление артефактов в среды службы интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
 * [Проверка работоспособности сети для сред службы интеграции](../logic-apps/ise-manage-integration-service-environment.md#check-network-health)

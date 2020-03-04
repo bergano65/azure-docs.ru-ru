@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 07/27/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a5e4f9853a68b7b4d8b97cc76032cfa88708c097
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: ef7161e653ec582708f242b67c643d960d75e27f
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842688"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255464"
 ---
 # <a name="sap-hana-availability-within-one-azure-region"></a>Доступность SAP HANA в пределах одного региона Azure
 В этой статье представлены несколько сценариев доступности в пределах одного региона Azure. В Azure есть множество регионов, распределенных по всему миру. Список доступных регионов см. на странице с [регионами Azure](https://azure.microsoft.com/regions/). При развертывании SAP HANA на виртуальных машинах в пределах одного региона Azure корпорация Майкрософт предлагает развернуть одну виртуальную машину с экземпляром HANA. Для повышения уровня доступности можно развернуть две виртуальные машины с двумя экземплярами HANA в [группе доступности Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets), использующей репликацию системы HANA в целях обеспечения доступности. 
@@ -108,7 +108,7 @@ ms.locfileid: "76842688"
 
 ### <a name="sap-hana-system-replication-with-automatic-failover"></a>Репликация системы SAP HANA с автоматическим переходом на другой ресурс
 
-В распространенной стандартной конфигурации доступности в пределах одного региона Azure у двух виртуальных машинах Azure под управлением SLES Linux есть определенный отказоустойчивый кластер. Кластер Linux SLES основан на платформе [Pacemaker](http://www.linux-ha.org/wiki/Pacemaker) в сочетании с устройством [STONITH](http://www.linux-ha.org/wiki/STONITH). 
+В распространенной стандартной конфигурации доступности в пределах одного региона Azure у двух виртуальных машинах Azure под управлением SLES Linux есть определенный отказоустойчивый кластер. Кластер Linux SLES основан на платформе [Pacemaker](/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker) в сочетании с устройством [STONITH](/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#create-azure-fence-agent-stonith-device). 
 
 С точки зрения SAP HANA используется режим синхронизированной репликации и настроен автоматический переход на другой ресурс. На второй виртуальной машине экземпляр SAP HANA действует как узел горячей замены. Этот узел получает синхронный поток записей с изменениями из основного экземпляра SAP HANA. По мере того как транзакции фиксируются приложением на основном узле HANA, основной узел HANA не будет подтверждать фиксацию в приложении, пока дополнительный узел SAP HANA не подтвердит получение записи о фиксации. В SAP HANA есть два различных режима синхронной репликации. Сведения об этих режимах см. в статье [Replication Modes for SAP HANA System Replication](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c039a1a5b8824ecfa754b55e0caffc01.html) (Режимы репликации для репликации систем SAP HANA).
 

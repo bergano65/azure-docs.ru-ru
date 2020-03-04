@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 80382359bb1125b7e2eba3eed86409494c1e0726
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 4811f24fb942689bddcc9d9d1bcb8c33d147c1af
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196201"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256016"
 ---
 # <a name="azure-synapse-analytics-release-notes"></a>Заметки о выпуске Azure синапсе Analytics
 
@@ -162,7 +162,7 @@ ms.locfileid: "78196201"
 
 ## <a name="more-information"></a>Дополнительные сведения
 - [Блог — Azure синапсе Analytics](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)
-- [Блоги группы консультирования клиентов](https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/)
+- [Блоги группы консультирования клиентов](https://docs.microsoft.com/archive/blogs/sqlcat/)
 - [Истории успеха клиентов](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
 - [Форум Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw)
 - [Twitter](https://twitter.com/hashtag/SQLDW)

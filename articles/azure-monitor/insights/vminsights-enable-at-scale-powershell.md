@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2019
-ms.openlocfilehash: 236d5a28b167e16c9614119a59fd8a99e012e9dd
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: e28a5dce4dda677ef4e5eb0ed08c42ec1f03c308
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77656557"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251441"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) с помощью шаблонов Azure PowerShell или диспетчер ресурсов
 
@@ -99,7 +99,7 @@ ms.locfileid: "77656557"
 
         Для завершения изменения конфигурации может потребоваться несколько минут. По завершении появится сообщение, похожее на следующее и содержащее результат:
 
-        ```powershell
+        ```output
         provisioningState       : Succeeded
         ```
 
@@ -113,7 +113,7 @@ ms.locfileid: "77656557"
 
         Для завершения изменения конфигурации может потребоваться несколько минут. По завершении отобразится сообщение, похожее на следующее и содержащее результат:
 
-        ```azurecli
+        ```output
         provisioningState       : Succeeded
         ```
 
@@ -154,7 +154,7 @@ New-AzResourceGroupDeployment -Name OnboardCluster -ResourceGroupName <ResourceG
 ```
 Для завершения изменения конфигурации может потребоваться несколько минут. По завершении появится сообщение, похожее на следующее и содержащее результат:
 
-```powershell
+```output
 provisioningState       : Succeeded
 ```
 
@@ -170,7 +170,7 @@ az group deployment create --resource-group <ResourceGroupName> --template-file 
 
 Результат выглядит следующим образом:
 
-```azurecli
+```output
 provisioningState       : Succeeded
 ```
 
@@ -337,7 +337,7 @@ Not running - start VM to configure: (0)
 Failed: (0)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда наблюдение включено для виртуальных машин, эти сведения доступны для анализа с Azure Monitor для виртуальных машин.
 

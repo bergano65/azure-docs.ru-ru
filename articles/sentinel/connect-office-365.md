@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/12/2020
 ms.author: yelevin
-ms.openlocfilehash: b00f9c9e7de9568a29d2b7a7f4ef84c022ef5679
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 43eba727b1dc724aae6eea3ec77de1363c5db73f
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77588167"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252511"
 ---
 # <a name="connect-data-from-office-365-logs"></a>Подключение данных из журналов Office 365
 
@@ -30,12 +30,12 @@ ms.locfileid: "77588167"
 > [!IMPORTANT]
 > Если у вас есть лицензия E3, перед тем как получить доступ к данным через API-интерфейс действия управления Office 365, необходимо включить единое ведение журнала аудита для организации Office 365. Это можно сделать, включив журнал аудита Office 365. Инструкции см. [в разделе Включение или отключение поиска по журналам аудита Office 365](https://docs.microsoft.com/office365/securitycompliance/turn-audit-log-search-on-or-off). Дополнительные сведения см. в [справочнике по API действий управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-activity-api-reference).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Вы должны быть глобальным администратором или администратором безопасности вашего клиента.
-- Если у вашего клиента нет лицензии Office 365 E3 или Office 365, необходимо включить единый аудит в клиенте с помощью одного из следующих процессов:
+- Для клиента должен быть включен единый аудит. Для клиентов с лицензиями Office 365 E3 или водопо умолчанию включен единый аудит. <br>Если у клиента нет одной из этих лицензий, необходимо включить единый аудит в клиенте с помощью одного из следующих методов:
     - [С помощью командлета Set-админаудитлогконфиг](https://docs.microsoft.com/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps) и включите параметр "унифиедаудитлогинжестионенаблед").
-    - [Или с помощью пользовательского интерфейса центр безопасности и соответствия требованиям](https://docs.microsoft.com/office365/securitycompliance/search-the-audit-log-in-security-and-compliance#before-you-begin).
+    - [С помощью пользовательского интерфейса центр безопасности и соответствия требованиям](https://docs.microsoft.com/office365/securitycompliance/search-the-audit-log-in-security-and-compliance#before-you-begin).
 
 ## <a name="connect-to-office-365"></a>Подключение к Office 365
 
@@ -47,7 +47,7 @@ ms.locfileid: "77588167"
 3. Чтобы использовать соответствующую схему в Log Analytics журналов Office 365, выполните поиск по запросу **оффицеактивити**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Office 365 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

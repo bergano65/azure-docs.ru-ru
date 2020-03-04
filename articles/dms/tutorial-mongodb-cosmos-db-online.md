@@ -3,8 +3,8 @@ title: Руководство. Миграция MongoDB в Интернет в �
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из локальной MongoDB в Azure Cosmos DB API для MongoDB Online с помощью Azure Database Migration Service.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 09/25/2019
-ms.openlocfilehash: 896ae35e1039548ea56967ff73d6a1781aa3c8a6
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 66375d83dca4edef17919e3b493d5e45be37cc40
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751379"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255616"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство. Миграция MongoDB в API Azure Cosmos DB для MongoDB Online с помощью DMS
 
@@ -44,7 +44,7 @@ ms.locfileid: "75751379"
 
 В этой статье описан перенос баз данных по сети из MongoDB в API Azure Cosmos DB для MongoDB. Чтобы узнать, как выполнить миграцию в автономном режиме, см. [руководство по миграции MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS](tutorial-mongodb-cosmos-db.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -235,7 +235,7 @@ ms.locfileid: "75751379"
 
     ![Повторное воспроизведение состояния действия](media/tutorial-mongodb-to-cosmosdb-online/dms-verify-data.png)
 
-## <a name="complete-the-migration"></a>Выполнение переноса
+## <a name="complete-the-migration"></a>Выполнение миграции
 
 * Когда все документы с исходного сервера станут доступны на целевом сервере COSMOS DB, выберите **Готово** в контекстном меню действия миграции, чтобы завершить ее.
 

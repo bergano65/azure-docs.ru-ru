@@ -3,7 +3,7 @@ title: Устранение проблем, вызванных приложен�
 description: Устранение проблем, вызванных приложениями, которые не поддерживают TLS 1,2
 services: cloud-services
 documentationcenter: ''
-author: MicahMcKittrick-MSFT
+author: mimckitt
 manager: vashan
 editor: ''
 tags: top-support-issue
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: ''
 ms.date: 01/17/2020
 ms.author: tagore
-ms.openlocfilehash: 85fb87e23fa11781587572e836d1439dd813170e
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: 161c24b4e751eea9477e9d338722629daa97e193
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425040"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250441"
 ---
 # <a name="troubleshooting-applications-that-dont-support-tls-12"></a>Устранение неполадок в приложениях, которые не поддерживают TLS 1,2
 В этой статье описывается, как включить старые протоколы TLS (TLS 1,0 и 1,1), а также применить устаревшие комплекты шифров для поддержки дополнительных протоколов в веб-ролях и рабочей роли облачной службы Windows Server 2019. 

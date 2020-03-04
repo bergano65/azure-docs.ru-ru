@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 05ba1d97d4eba92f492289375f85425f8920510b
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 0f13f297facedceb50920c0f6afca63fe1df0b48
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749747"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78248055"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [Журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
+Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md)можно отслеживать и отсылать журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в [журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
 
 ![Процесс ведения журнала диагностики в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -43,9 +43,9 @@ ms.locfileid: "75749747"
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
 |Ошибки и предупреждения     |   Ошибка      |
-|Обнаружение     |   Discover End      |
+|Поиск     |   Discover End      |
 |Уведомление     |    Уведомление     |
-|Session     |  Session Initialize       |
+|Сеанс     |  Session Initialize       |
 |Блокировки    |  Deadlock       |
 |Обработка запросов     |   VertiPaq SE Query Begin      |
 |Обработка запросов     |   VertiPaq SE Query End      |
@@ -215,7 +215,7 @@ window
 
 В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-Аздиагностиксеттинг включите ведение журнала диагностики, отправив выходные данные в новую учетную запись хранения.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).

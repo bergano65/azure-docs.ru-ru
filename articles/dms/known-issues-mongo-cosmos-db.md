@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/27/2020
-ms.openlocfilehash: 6cdca78d09c9ca128119a58cb4feaf66bad111bd
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.openlocfilehash: 194da036260a78b27748dfc7f755212ab4f30b1e
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78165040"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256029"
 ---
 # <a name="known-issuesmigration-limitations-with-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Известные проблемы/ограничения миграции при миграции с MongoDB на API Azure Cosmos DB для MongoDB
 
@@ -41,11 +41,13 @@ ms.locfileid: "78165040"
 
 ## <a name="using-an-unsupported-version-of-the-database"></a>Использование неподдерживаемой версии базы данных
 
+* **Симптом**. сбой миграции.
+
 | Причина         | Решение |
 | ------------- | ------------- |
 | Попытка перехода на Azure Cosmos DB из неподдерживаемой версии MongoDB. | По мере выпуска новых версий MongoDB они тестируются для обеспечения совместимости с Azure Database Migration Service, а служба периодически обновляется для принятия последних версий. Если необходимо выполнить миграцию немедленно, в качестве обходного пути можно экспортировать базы данных или коллекции в службу хранилища Azure, а затем указать источник в результирующем дампе. Создайте SAS в контейнере больших двоичных объектов в Обозреватель службы хранилища, а затем используйте URL-адрес со сведениями о SAS контейнера в качестве подробной строки подключения к источнику.<br><br> |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с руководством [Миграция MongoDB в API Azure Cosmos DB для MongoDB Online с помощью DMS](tutorial-mongodb-cosmos-db-online.md).
 * Ознакомьтесь с руководством [Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS](tutorial-mongodb-cosmos-db.md).

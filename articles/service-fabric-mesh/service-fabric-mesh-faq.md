@@ -4,12 +4,12 @@ description: Изучите ответы на распространенные �
 ms.author: pepogors
 ms.date: 4/23/2019
 ms.topic: troubleshooting
-ms.openlocfilehash: 3fe6289ad7616dec97706c2f1779a74c508a0f76
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2a5c2ea63d162eb6fb78ab702e0519f8ac25dcc7
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461993"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252491"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -44,10 +44,13 @@ ms.locfileid: "75461993"
 
 Если приложение было отключено, вы можете проверить, было ли это сделано системой, с помощью команды `az mesh app show` в Azure CLI. Выполните команду, чтобы увидеть, вернется ли результат `"status": "Failed", "statusDetails": "Stopped resource due to max lifetime policies for an application during preview. Delete the resource to continue."`. 
 
-Пример. 
+Пример: 
 
-```cli
-~$ az mesh app show --resource-group myResourceGroup --name helloWorldApp
+```azurecli
+az mesh app show --resource-group myResourceGroup --name helloWorldApp
+```
+
+```output
 {
   "debugParams": null,
   "description": "Service Fabric Mesh HelloWorld Application!",
@@ -104,7 +107,7 @@ ms.locfileid: "75461993"
 
 - Используйте обновление Windows Fall Creators (версии 1709) или выше как базовый образ контейнера.
 - Если имя службы не работает, попробуйте использовать полное имя: ServiceName. ApplicationName.
-- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример.
+- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример:
 
 ```Dockerfile
 EXPOSE 80
@@ -120,7 +123,7 @@ EXPOSE 80
 
 Другие известные проблемы DNS, связанные с запуском кластера Service Fabric Development в Windows 10, см. в разделе [Отладка контейнеров Windows](/azure/service-fabric/service-fabric-how-to-debug-windows-containers) и [известных проблем с DNS](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice#known-issues).
 
-### <a name="networking"></a>Работа в сети
+### <a name="networking"></a>Сеть
 
 Преобразование сетевых адресов (NAT) сети ServiceFabric может исчезнуть при запуске приложения на локальном компьютере. Чтобы определить, случилось ли это, выполните в командной строке команду
 

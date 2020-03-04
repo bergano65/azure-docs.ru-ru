@@ -3,12 +3,12 @@ title: Удаление хранилища Службы восстановлен
 description: Из этой статьи вы узнаете, как удалить зависимости, а затем удалить хранилище служб восстановления Microsoft Azure Backup (MARS).
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 172c632ae27c789f96e2e5cc1bdef492ef09f667
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 9ac9d0fd6411b512b319d02c94e86fa792243e0a
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77586467"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251420"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
@@ -286,7 +286,7 @@ ms.locfileid: "77586467"
 
 - Отключение защиты и удаление данных резервного копирования
 
-    ```CLI
+    ```azurecli
     az backup protection disable --container-name
                              --item-name
                              [--delete-backup-data {false, true}]
@@ -301,7 +301,7 @@ ms.locfileid: "77586467"
 
 - Удаление существующего хранилища служб восстановления:
 
-    ```CLI
+    ```azurecli
     az backup vault delete [--force]
                        [--ids]
                        [--name]

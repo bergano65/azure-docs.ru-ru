@@ -5,14 +5,14 @@ author: sajayantony
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: sajaya
-ms.openlocfilehash: 74863823f3e8ef32565e01981d3a742d696a8165
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: 699ee2c2c3b1a90231f24663619cc590aae9889d
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708314"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252064"
 ---
-# <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
+# <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
 В этой статье рассматриваются часто задаваемые вопросы и известные проблемы реестра контейнеров Azure.
 
@@ -114,13 +114,13 @@ az role assignment create --role "Reader" --assignee user@contoso.com --scope /s
 
 Если вы используете bash:
 
-```bash
+```azurecli
 az acr repository show-manifests -n myRegistry --repository myRepository --query "[?tags[0]==null].digest" -o tsv  | xargs -I% az acr repository delete -n myRegistry -t myRepository@%
 ```
 
 Для PowerShell:
 
-```powershell
+```azurecli
 az acr repository show-manifests -n myRegistry --repository myRepository --query "[?tags[0]==null].digest" -o tsv | %{ az acr repository delete -n myRegistry -t myRepository@$_ }
 ```
 
@@ -151,13 +151,13 @@ docker push myregistry.azurecr.io/1gb:latest
 
 Вы увидите, что использование хранилища увеличилось в портал Azure, или вы можете запросить использование с помощью интерфейса командной строки.
 
-```bash
+```azurecli
 az acr show-usage -n myregistry
 ```
 
 Удалите образ с помощью Azure CLI или портала и проверьте обновленное использование через несколько минут.
 
-```bash
+```azurecli
 az acr repository delete -n myregistry --image 1gb
 ```
 
@@ -186,9 +186,9 @@ az acr login -n MyRegistry
 Включите TLS 1,2 с помощью любого последнего клиента DOCKER (версия 18.03.0 и выше). 
 
 > [!IMPORTANT]
-> Начиная с 13 января 2020 г. Реестр контейнеров Azure требует, чтобы все безопасные подключения серверов и приложений использовали TLS 1,2. Поддержка TLS 1,0 и 1,1 будет прекращена.
+> С 13 января 2020 года Реестр контейнеров Azure будет требовать использовать протокол TLS версии 1.2 для всех безопасных подключений серверов и приложений. Поддержка протоколов TLS версии 1.0 и 1.1 будет прекращена.
 
-### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли Реестр контейнеров Azure функцию доверия к содержимому?
+### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли реестр контейнеров Azure отношение доверия с содержимым?
 
 Да, вы можете использовать надежные образы в реестре контейнеров Azure, так как [DOCKER Нотари](https://docs.docker.com/notary/getting_started/) интегрирован и может быть включен. Дополнительные сведения см. [в статье о доверии содержимого в реестре контейнеров Azure](container-registry-content-trust.md).
 
@@ -216,12 +216,12 @@ az acr login -n MyRegistry
   Затем можно назначить пользователю роль `AcrPull` или `AcrPush` (в следующем примере используется `AcrPull`):
 
   ```azurecli
-    az role assignment create --scope resource_id --role AcrPull --assignee user@example.com
-    ```
+  az role assignment create --scope resource_id --role AcrPull --assignee user@example.com
+  ```
 
   Или назначьте роль субъекту-службе, определяемому ИДЕНТИФИКАТОРом приложения:
 
-  ```
+  ```azurecli
   az role assignment create --scope resource_id --role AcrPull --assignee 00000000-0000-0000-0000-000000000000
   ```
 
@@ -239,9 +239,9 @@ az acr login -n MyRegistry
   az acr repository list -n myRegistry
   ```
 
- Чтобы извлечь изображение, сделайте следующее:
-    
-  ```azurecli
+* Чтобы извлечь изображение, сделайте следующее:
+
+  ```console
   docker pull myregistry.azurecr.io/hello-world
   ```
 
@@ -275,9 +275,10 @@ az acr login -n MyRegistry
  - Если `docker pull` постоянно завершается сбоем, возможно, возникла проблема с управляющей программой DOCKER. Как правило, проблему можно устранить путем перезапуска управляющей программы DOCKER. 
  - Если эта проблема продолжает возникать после перезапуска управляющей программы DOCKER, проблема может быть связана с неполадками с сетевым подключением к компьютеру. Чтобы проверить работоспособность общей сети на компьютере, выполните следующую команду, чтобы проверить подключение к конечной точке. Минимальная версия `az acr`, содержащая эту команду проверки подключения, — 2.2.9. Обновите Azure CLI, если используется более старая версия.
  
-   ```azurecli
-    az acr check-health -n myRegistry
-    ```
+  ```azurecli
+  az acr check-health -n myRegistry
+  ```
+
  - Всегда следует использовать механизм повтора во всех операциях клиента DOCKER.
 
 ### <a name="docker-pull-is-slow"></a>Слишком большое извлечение DOCKER
@@ -308,7 +309,7 @@ unauthorized: authentication required
 ```
 
 Чтобы устранить эту ошибку, сделайте следующее:
-1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Пример.
+1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Пример:
 
   ```
   OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'
@@ -360,10 +361,10 @@ sudo service docker restart
 
 ### <a name="new-user-permissions-may-not-be-effective-immediately-after-updating"></a>Новые разрешения пользователя могут не действовать сразу после обновления
 
-При предоставлении новых разрешений (новых ролей) субъекту-службе изменение может не вступить в силу немедленно. Существуют две возможные причины этой ошибки.
+При предоставлении новых разрешений (новых ролей) субъекту-службе изменение может не вступить в силу немедленно. Существует две возможные причины.
 
 * Задержка назначения роли Azure Active Directory. Обычно это происходит быстро, но может занять несколько минут из-за задержки распространения.
-* Задержка разрешений на сервере маркеров записи контроля доступа. Этот процесс может занять больше 10 минут. Чтобы устранить эту проблемы, можно `docker logout` и снова выполнить проверку подлинности с тем же пользователем через 1 минуту:
+* Задержка разрешений на сервере маркеров записи контроля доступа. Это может занять до 10 минут. Чтобы устранить эту проблемы, можно `docker logout` и снова выполнить проверку подлинности с тем же пользователем через 1 минуту:
 
   ```bash
   docker logout myregistry.azurecr.io
@@ -424,7 +425,7 @@ curl $redirect_url
 * Отсутствие подключения к сети
 * Брандмауэр
 * Блокирование рекламы
-* Создается предупреждающее оповещение.
+* Ошибки DNS
 
 Обратитесь к администратору сети или проверьте конфигурацию сети и подключение. Попробуйте запустить `az acr check-health -n yourRegistry` с помощью Azure CLI, чтобы проверить, может ли ваша среда подключаться к реестру контейнеров. Кроме того, в браузере можно попытаться использовать режиме инкогнито или частный сеанс, чтобы избежать устаревших кэшей браузера или файлов cookie.
 
@@ -437,7 +438,7 @@ curl $redirect_url
 
 ### <a name="how-do-i-collect-http-traces-on-windows"></a>Разделы справки собирайте трассировки HTTP в Windows?
 
-#### <a name="prerequisites"></a>Технические условия
+#### <a name="prerequisites"></a>предварительные требования
 
 - Включение расшифровки HTTPS в Fiddler: <https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
 - Включение DOCKER для использования прокси-сервера через пользовательский интерфейс docker: <https://docs.docker.com/docker-for-windows/#proxies>
@@ -457,7 +458,7 @@ curl $redirect_url
 
 Настройте прокси-сервер DOCKER для вывода предыдущей команды и порта 8888 (например, 10.0.75.1:8888).
 
-## <a name="tasks"></a>Задачи
+## <a name="tasks"></a>Задания
 
 - [Разделы справки выполнения пакетной отмены?](#how-do-i-batch-cancel-runs)
 - [Разделы справки включить папку Git в команду AZ контроля доступа?](#how-do-i-include-the-git-folder-in-az-acr-build-command)
@@ -493,8 +494,8 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 |---|---|---|---|
 | GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Да | Да |
 | Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Да | Да |
-| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | Нет |
-| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | Нет |
+| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | нет |
+| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | нет |
 
 ## <a name="run-error-message-troubleshooting"></a>Выполнение устранения неполадок с сообщением об ошибке
 

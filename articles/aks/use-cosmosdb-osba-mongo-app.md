@@ -8,20 +8,20 @@ ms.date: 01/25/2019
 ms.author: zarhoads
 ms.custom: mvc
 keywords: Cosmos DB, открытый компонент Service Broker, открытый компонент Service Broker для Azure
-ms.openlocfilehash: 3d0ab0b27d77e45d779227d30c5a8e4f824ba62a
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: ddaa3b9aa198bc142e1bcbcab6b7b1e028eff2aa
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277703"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247915"
 ---
 # <a name="integrate-existing-mongodb-application-with-azure-cosmos-db-api-for-mongodb-and-open-service-broker-for-azure-osba"></a>Интеграция имеющихся приложений с MongoDB с помощью API для MongoDB в Azure Cosmos DB и открытого компонента Service Broker для Azure (OSBA)
 
-Azure Cosmos DB — это многомодельная, глобально распределенная служба баз данных. Она также обеспечивает совместимость проводного протокола с несколькими API-интерфейсами NoSQL, в том числе для MongoDB. API-интерфейс Cosmos DB для MongoDB позволяет использовать Cosmos DB с имеющимся приложением MongoDB без необходимости изменения драйверов в целях реализации базы данных приложения. Кроме того, можно предоставить службу Cosmos DB с помощью открытого компонента Service Broker для Azure.
+Azure Cosmos DB — это многомодельная глобально распределенная служба баз данных. Она также обеспечивает совместимость проводного протокола с несколькими API-интерфейсами NoSQL, в том числе для MongoDB. API-интерфейс Cosmos DB для MongoDB позволяет использовать Cosmos DB с имеющимся приложением MongoDB без необходимости изменения драйверов в целях реализации базы данных приложения. Кроме того, можно предоставить службу Cosmos DB с помощью открытого компонента Service Broker для Azure.
 
 В этой статье вам потребуется имеющееся приложение Java, которое использует базу данных MongoDB. Вы обновите его для использования базы данных Cosmos DB с помощью открытого компонента Service Broker для Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем продолжить, необходимо выполнить следующее:
     
@@ -191,7 +191,7 @@ java -jar -Dspring.profiles.active=mongodb build/libs/spring-music-1.0.jar
 
 Чтобы включить Azure Dev Spaces в кластере AKS:
 
-```cmd
+```azurecli
 az aks enable-addons --addons http_application_routing -g MyResourceGroup -n MyAKS
 az aks use-dev-spaces -g MyResourceGroup -n MyAKS
 ```
@@ -206,7 +206,7 @@ azds prep --public
 
 Создайте файл в корневом каталоге проекта с именем *Dockerfile* со следующим содержимым:
 
-```Dockerfile
+```dockerfile
 FROM openjdk:8-jdk-alpine
 EXPOSE 8080
 WORKDIR /app

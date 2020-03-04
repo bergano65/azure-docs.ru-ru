@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 70c53ea9a8fc64615a9a493efc42405631a3f06d
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 68d5976a5a79dbde88b7f80b02b39793ffc86de9
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025169"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78254864"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -49,7 +49,12 @@ ms.locfileid: "77025169"
 3. Выберите одну или несколько метрик. Чтобы выбрать метрики для дополнительных ресурсов, используйте раскрывающиеся списки **Подписки**, **Группы ресурсов**, **Тип ресурсов** и **Ресурсы**.
     * Для метрик на основе количества (например, "число выделенных ядер" или "число узлов с низким приоритетом") используйте статистическое вычисление "среднее". Для метрик на основе событий (например, "события изменения размера пула") используйте агрегат "Count".
 
-    ![Метрики пакетной службы](media/batch-diagnostics/metrics-portal.png)
+> [!WARNING]
+> Не используйте агрегат "Sum", который суммирует значения всех точек данных, полученных за период диаграммы
+> 
+> 
+
+    ![Batch metrics](media/batch-diagnostics/metrics-portal.png)
 
 Метрики можно получить программным способом с помощью API-интерфейсов Azure Monitor. Изучите пример [получения данных метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/).
 
@@ -71,7 +76,7 @@ ms.locfileid: "77025169"
 2. В разделе **Мониторинг** щелкните **Правила оповещений** > **Добавить оповещение метрики**.
 3. Выберите метрику и условие оповещения (например, если метрика превышает определенное значение за некоторый период), а также одно или несколько уведомлений.
 
-Также с помощью [API-интерфейса REST](https://docs.microsoft.com/rest/api/monitor/) вы можете настроить оповещения практически в реальном времени. Дополнительные сведения см. в статье [Обзор оповещений в Microsoft Azure](../azure-monitor/platform/alerts-overview.md).
+Также с помощью [API-интерфейса REST](https://docs.microsoft.com/rest/api/monitor/) вы можете настроить оповещения практически в реальном времени. Дополнительные сведения см. в разделе Общие сведения о [предупреждениях](../azure-monitor/platform/alerts-overview.md). Чтобы включить сведения о задании, задаче или пуле в оповещениях, см. сведения в запросах поиска в разделе [реагирование на события с помощью оповещений Azure Monitor](../azure-monitor/learn/tutorial-response.md) .
 
 ## <a name="batch-diagnostics"></a>Диагностика пакетной службы
 
@@ -123,7 +128,7 @@ BATCHACCOUNTS/{Batch account name}/y={four-digit numeric year}/
 m={two-digit numeric month}/d={two-digit numeric day}/
 h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
-Пример:
+Пример
 
 ```
 insights-metrics-pt1m/resourceId=/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/

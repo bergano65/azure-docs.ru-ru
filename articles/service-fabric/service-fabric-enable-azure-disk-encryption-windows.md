@@ -3,12 +3,12 @@ title: Включение шифрования дисков для класте�
 description: В этой статье описывается, как включить шифрование дисков для узлов кластера Azure Service Fabric с помощью Azure Key Vault в Azure Resource Manager.
 ms.topic: article
 ms.date: 03/22/2019
-ms.openlocfilehash: 24405c3c34bfd7b88932101c42a8d0fc96c90fa1
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: b08cdb63aa6f334c5a6f7c230b1624d232206c3b
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614457"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251817"
 ---
 # <a name="enable-disk-encryption-for-azure-service-fabric-cluster-nodes-in-windows"></a>Включение шифрования дисков для узлов кластера Azure Service Fabric в Windows 
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "75614457"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 **Самостоятельная регистрация** 
 
@@ -71,7 +71,7 @@ ms.locfileid: "75614457"
 
 Используйте следующие команды для создания кластера и включения шифрования дисков с использованием шаблона Azure Resource Manager и самозаверяющего сертификата.
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure 
+### <a name="sign-in-to-azure"></a>Вход в Azure 
 Выполните вход с помощью следующих команд:
 ```powershell
 Login-AzAccount
@@ -200,7 +200,7 @@ Disable-AzVmssDiskEncryption -ResourceGroupName $rgName -VMScaleSetName $VmssNam
 
 ```
 
-```CLI
+```azurecli
 
 az vmss encryption disable -g <resourceGroupName> -n <VMSS name>
 

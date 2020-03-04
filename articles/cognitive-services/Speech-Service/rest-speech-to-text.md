@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/09/2019
+ms.date: 03/03/2020
 ms.author: erhopf
-ms.openlocfilehash: 26fe995f45a97a5863bfc20fd1564df89124ed88
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 873898ce321100edbaa800d2436d0413c06ce175
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168315"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255669"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API преобразования речи в текст;
 
@@ -54,6 +54,7 @@ https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversa
 | `language` | Определяет распознаваемую устную речь. См. сведения о [поддерживаемых языках](language-support.md#speech-to-text). | Обязательно |
 | `format` | Указывает формат результатов. Допустимые значения: `simple` и `detailed`. К простым результатам относятся `RecognitionStatus`, `DisplayText`, `Offset` и `Duration`. К подробным ответам относятся сложные результаты со значениями достоверности и четыре различных представления. Значение по умолчанию равно `simple`. | Необязательно |
 | `profanity` | Указывает, как обрабатывать ненормативную лексику в результатах распознавания. Допустимые значения: `masked`, которые заменяют ненормативную лексику звездочками, `removed`, удаляя всю ненормативную лексику из результата или `raw`, которая включает ненормативную лексику в результате. Значение по умолчанию равно `masked`. | Необязательно |
+| `cid` | При использовании [портала пользовательское распознавание речи](how-to-custom-speech.md) для создания пользовательских моделей можно использовать пользовательские модели с помощью **идентификатора конечной точки** , найденного на странице **развертывания** . Используйте **идентификатор конечной точки** в качестве аргумента для параметра строки запроса `cid`. | Необязательно |
 
 ## <a name="request-headers"></a>Заголовки запросов
 
@@ -72,10 +73,10 @@ https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversa
 
 Аудио отправляется в тексте HTTP-запроса `POST`. Аудиопоток должен иметь один из форматов, приведенных в следующей таблице:
 
-| Формат | Кодек | Bitrate | Частота выборки |
-|--------|-------|---------|-------------|
-| WAV | PCM | 16-разрядный | 16 кГц, моно |
-| OGG | OPUS | 16-разрядный | 16 кГц, моно |
+| Формат | Кодек | Bitrate | Частота выборки  |
+|--------|-------|---------|--------------|
+| WAV    | PCM   | 16-разрядный  | 16 кГц, моно |
+| OGG    | OPUS  | 16-разрядный  | 16 кГц, моно |
 
 >[!NOTE]
 >Приведенные выше форматы поддерживаются с помощью REST API и WebSocket в службе речи. В настоящее время [пакет SDK для распознавания речи](speech-sdk.md) поддерживает формат WAV с кодеком PCM и [другими форматами](how-to-use-codec-compressed-audio-input-streams.md).
@@ -100,50 +101,43 @@ Expect: 100-continue
 
 | HTTP status code (Код состояния HTTP) | Description | Возможная причина |
 |------------------|-------------|-----------------|
-| 100 | Continue | Первоначальный запрос принят. Перейдите к отправке данных, которые остались. (Используется в случае блочной передачи.) |
-| 200 | OK | Запрос выполнен успешно; текст ответа представляет собой объект JSON. |
-| 400 | Недопустимый запрос | Не указан языковой код, неподдерживаемый язык, недопустимый звуковой файл и т. д. |
-| 401 | Не авторизовано | Ключ подписки или маркер авторизации является недопустимым в указанном регионе, или недопустимая конечная точка. |
-| 403 | Запрещено | Отсутствует ключ подписки или маркер авторизации. |
+| `100` | Continue | Первоначальный запрос принят. Перейдите к отправке данных, которые остались. (Используется с фрагментированным перемещением) |
+| `200` | OK | Запрос выполнен успешно; текст ответа представляет собой объект JSON. |
+| `400` | Недопустимый запрос | Не указан языковой код, неподдерживаемый язык, недопустимый звуковой файл и т. д. |
+| `401` | Не авторизовано | Ключ подписки или маркер авторизации является недопустимым в указанном регионе, или недопустимая конечная точка. |
+| `403` | Запрещено | Отсутствует ключ подписки или маркер авторизации. |
 
 ## <a name="chunked-transfer"></a>Блочная передача
 
 Поблочное перемещение (`Transfer-Encoding: chunked`) помогает сократить задержку при распознавании. Он позволяет службе распознавания речи начать обработку звукового файла во время его передачи. REST API не поддерживает частичные или промежуточные результаты.
 
-Этот пример кода показывает, как отправлять фрагментированное аудио. Только первый фрагмент данных должен содержать заголовок звукового файла. `request` — это объект HTTPWebRequest, подключенный к соответствующей конечной точке REST. `audioFile` — путь к звуковому файлу на диске.
+Этот пример кода показывает, как отправлять фрагментированное аудио. Только первый фрагмент данных должен содержать заголовок звукового файла. `request` — это `HttpWebRequest` объект, подключенный к соответствующей конечной точке RESTFUL. `audioFile` — путь к звуковому файлу на диске.
 
 ```csharp
+var request = (HttpWebRequest)HttpWebRequest.Create(requestUri);
+request.SendChunked = true;
+request.Accept = @"application/json;text/xml";
+request.Method = "POST";
+request.ProtocolVersion = HttpVersion.Version11;
+request.Host = host;
+request.ContentType = @"audio/wav; codecs=audio/pcm; samplerate=16000";
+request.Headers["Ocp-Apim-Subscription-Key"] = "YOUR_SUBSCRIPTION_KEY";
+request.AllowWriteStreamBuffering = false;
 
-    HttpWebRequest request = null;
-    request = (HttpWebRequest)HttpWebRequest.Create(requestUri);
-    request.SendChunked = true;
-    request.Accept = @"application/json;text/xml";
-    request.Method = "POST";
-    request.ProtocolVersion = HttpVersion.Version11;
-    request.Host = host;
-    request.ContentType = @"audio/wav; codecs=audio/pcm; samplerate=16000";
-    request.Headers["Ocp-Apim-Subscription-Key"] = args[1];
-    request.AllowWriteStreamBuffering = false;
-
-using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
+using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 {
-    /*
-    * Open a request stream and write 1024 byte chunks in the stream one at a time.
-    */
+    // Open a request stream and write 1024 byte chunks in the stream one at a time.
     byte[] buffer = null;
     int bytesRead = 0;
-    using (Stream requestStream = request.GetRequestStream())
+    using (var requestStream = request.GetRequestStream())
     {
-        /*
-        * Read 1024 raw bytes from the input audio file.
-        */
+        // Read 1024 raw bytes from the input audio file.
         buffer = new Byte[checked((uint)Math.Min(1024, (int)fs.Length))];
         while ((bytesRead = fs.Read(buffer, 0, buffer.Length)) != 0)
         {
             requestStream.Write(buffer, 0, bytesRead);
         }
 
-        // Flush
         requestStream.Flush();
     }
 }

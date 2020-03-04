@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 02/10/2020
-ms.openlocfilehash: 6b6d63d956f46587d89edf1b080f1bb9bd3ca67e
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 003924c42a1a7e428a3a11f21a4cfe782c12e859
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77649096"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255798"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинное обучение Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "77649096"
 
 * Совместное использование данных и совместная работа с другими пользователями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для создания наборов данных и работы с ними требуется:
 
@@ -57,7 +57,7 @@ ms.locfileid: "77649096"
 
 ## <a name="create-datasets"></a>Создание наборов данных
 
-Создавая набор данных, вы создаете ссылку на расположение источника данных вместе с копией его метаданных. Поскольку данные остаются в существующем расположении, дополнительные затраты на хранение не взимается. Можно создать как `TabularDataset`, так `FileDataset` наборы данных, используя пакет SDK Python или целевую страницу рабочей области (Предварительная версия).
+Создавая набор данных, вы создаете ссылку на расположение источника данных вместе с копией его метаданных. Поскольку данные остаются в существующем расположении, дополнительные затраты на хранение не взимается. Вы можете создавать `TabularDataset` и `FileDataset` наборы данных с помощью пакета SDK для Python или https://ml.azure.com.
 
 Чтобы данные были доступны по Машинное обучение Azure, необходимо создать наборы данных по путям в [хранилищах данных Azure](how-to-access-data.md) или общедоступных веб-URL.
 
@@ -73,8 +73,6 @@ ms.locfileid: "77649096"
 
 
 #### <a name="create-a-tabulardataset"></a>Создание Табулардатасет
-
-Табулардатасетс можно создать с помощью пакета SDK или Машинное обучение Azure Studio. 
 
 Используйте метод [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none-) класса `TabularDatasetFactory` для чтения файлов в формате CSV или TSV, а также для создания незарегистрированного табулардатасет. Если выполняется чтение из нескольких файлов, результаты будут объединены в одно табличное представление. 
 
@@ -96,10 +94,10 @@ datastore_paths = [(datastore, 'ather/2018/11.csv'),
 weather_ds = Dataset.Tabular.from_delimited_files(path=datastore_paths)
 ```
 
-По умолчанию при создании Табулардатасет типы данных столбца выводятся автоматически. Если выводимые типы не соответствуют ожиданиям, можно указать типы столбцов с помощью следующего кода. Если хранилище находится за виртуальной сетью или брандмауэром, включите параметры `validate=False` и `infer_column_types=False` в методе `from_delimited_files()`. Это пропускает начальную проверку и обеспечивает возможность создания набора данных из этих защищенных файлов. Кроме того, вы можете [узнать больше о поддерживаемых типах данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.datatype?view=azure-ml-py).
+По умолчанию при создании Табулардатасет типы данных столбца выводятся автоматически. Если выводимые типы не соответствуют ожиданиям, можно указать типы столбцов с помощью следующего кода. Параметр `infer_column_type` применим только для наборов данных, созданных из файлов с разделителями. Кроме того, вы можете [узнать больше о поддерживаемых типах данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.datatype?view=azure-ml-py).
 
-> [!NOTE] 
->Параметр `infer_column_type` применим только для наборов данных, созданных из файлов с разделителями. 
+> [!IMPORTANT] 
+> Если хранилище находится за виртуальной сетью или брандмауэром, поддерживается только создание набора данных с помощью пакета SDK. Чтобы создать набор данных, убедитесь, что в метод `from_delimited_files()` включены параметры `validate=False` и `infer_column_types=False`. Это пропускает начальную проверку и обеспечивает возможность создания набора данных из этих защищенных файлов. 
 
 ```Python
 from azureml.data.dataset_factory import DataType
@@ -112,11 +110,37 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path, set_column_type
 titanic_ds.take(3).to_pandas_dataframe()
 ```
 
-| |пассенжерид|Оставшихся|пкласс|Имя|Пол|Время существования|сибсп|парч|Ticket|FARE|кабин|Предпринимались
+| |пассенжерид|Оставшихся|пкласс|Имя|Пол|Возраст|сибсп|парч|Ticket|FARE|кабин|Предпринимались
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
-0|1|Ложь|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||С
-1|2|Истина|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|Истина|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||С
+0|1|False|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
+1|2|True|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
+2|3|True|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+
+
+Чтобы создать набор данных из таблицы данных Pandas в памяти, запишите данные в локальный файл, например в CSV-файл, и создайте набор данных из этого файла. Этот рабочий процесс демонстрируется в следующем коде.
+
+```python
+local_path = 'data/prepared.csv'
+dataframe.to_csv(local_path)
+upload the local file to a datastore on the cloud
+# azureml-core of version 1.0.72 or higher is required
+# azureml-dataprep[pandas] of version 1.1.34 or higher is required
+from azureml.core import Workspace, Dataset
+
+subscription_id = 'xxxxxxxxxxxxxxxxxxxxx'
+resource_group = 'xxxxxx'
+workspace_name = 'xxxxxxxxxxxxxxxx'
+
+workspace = Workspace(subscription_id, resource_group, workspace_name)
+
+# get the datastore to upload prepared data
+datastore = workspace.get_default_datastore()
+
+# upload the local file from src_dir to the target_path in datastore
+datastore.upload(src_dir='data', target_path='data')
+create a dataset referencing the cloud location
+dataset = Dataset.Tabular.from_delimited_files(datastore.path('data/prepared.csv'))
+```
 
 Для чтения из базы данных SQL Azure используйте метод [`from_sql_query()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-sql-query-query--validate-true--set-column-types-none-) класса `TabularDatasetFactory`.
 
@@ -228,7 +252,7 @@ diabetes_tabular = Diabetes.get_tabular_dataset()
 
 ![Выбор набора данных](./media/how-to-create-register-datasets/open-datasets-2.png)
 
-Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных "общедоступные праздники" вы фильтруете период времени в один год и код страны только в США. Выберите **Создать**.
+Выберите имя, под которым будет зарегистрирован набор данных, и при необходимости отфильтруйте данные с помощью доступных фильтров. В этом случае для набора данных "общедоступные праздники" вы фильтруете период времени в один год и код страны только в США. Нажмите кнопку **Создать**.
 
 ![Установка параметров набора данных и создание набора данных](./media/how-to-create-register-datasets/open-datasets-3.png)
 
@@ -271,7 +295,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как обучаться с помощью наборов данных](how-to-train-with-datasets.md).
 * Используйте автоматическое машинное обучение для [обучения с табулардатасетс](https://aka.ms/automl-dataset).

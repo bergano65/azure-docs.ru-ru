@@ -9,12 +9,12 @@ ms.date: 09/25/2019
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 85b59c6549a62f7d9945f5739d1d0fde8c0fa3b8
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 44d8a9e71b0415dc5dc7f5d31441bdc1e2aeb372
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77158916"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252646"
 ---
 # <a name="using-private-endpoints-for-azure-storage-preview"></a>Использование частных конечных точек для службы хранилища Azure (Предварительная версия)
 
@@ -107,7 +107,7 @@ ms.locfileid: "77158916"
 | Служба больших двоичных объектов           | `privatelink.blob.core.windows.net`  |
 | Data Lake Storage 2-го поколения | `privatelink.dfs.core.windows.net`   |
 | Служба файлов           | `privatelink.file.core.windows.net`  |
-| служба очередей          | `privatelink.queue.core.windows.net` |
+| Служба очередей          | `privatelink.queue.core.windows.net` |
 | Служба таблиц          | `privatelink.table.core.windows.net` |
 | Статические веб-сайты        | `privatelink.web.core.windows.net`   |
 
@@ -136,4 +136,4 @@ ms.locfileid: "77158916"
 
 ### <a name="network-security-group-rules-for-subnets-with-private-endpoints"></a>Правила группы безопасности сети для подсетей с частными конечными точками
 
-Сейчас невозможно настроить правила [группы безопасности сети](../../virtual-network/security-overview.md) (NSG) для подсетей с частными конечными точками. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
+Сейчас нельзя настроить правила [группы безопасности сети](../../virtual-network/security-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются к частной конечной точке. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.

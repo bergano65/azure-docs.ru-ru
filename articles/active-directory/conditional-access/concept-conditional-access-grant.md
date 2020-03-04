@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3df906936cc4e47ee1f43adb0fcbaa0e8c04b0f
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 10d3f18fb11dc54f560d867e2b5ff87251e2c836
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77656319"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249104"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -67,35 +67,7 @@ ms.locfileid: "77656319"
 
 Организации могут потребовать, чтобы попытка доступа к выбранным облачным приложениям выполнялась из утвержденного клиентского приложения. Эти утвержденные клиентские приложения поддерживают [политики защиты приложений Intune](/intune/app-protection-policy) независимо от любого решения по управлению мобильными устройствами (MDM).
 
-Этот параметр применяется к следующим клиентским приложениям.
-
-- Microsoft Azure Information Protection.
-- Книги Майкрософт
-- Microsoft Кортана
-- Microsoft Dynamics 365
-- Microsoft Edge
-- Microsoft Excel
-- Microsoft Flow
-- Microsoft Intune Managed Browser
-- Microsoft Invoicing.
-- Microsoft Kaizala
-- Microsoft Launcher;
-- Microsoft OneDrive
-- Microsoft OneNote
-- Microsoft Outlook
-- Планировщик (Майкрософт);
-- Microsoft PowerApps
-- Microsoft Power BI
-- Microsoft PowerPoint
-- Microsoft SharePoint
-- Microsoft Skype для бизнеса;
-- Microsoft StaffHub
-- Microsoft Stream;
-- Microsoft Teams
-- Microsoft To-Do
-- Microsoft Visio;
-- Microsoft Word
-- Microsoft Yammer
+Поддерживаемые приложения можно найти в статье [Microsoft Intune защищенные приложения](/intune/apps/apps-supported-intune-apps).
 
 **Замечания**
 
@@ -108,12 +80,7 @@ ms.locfileid: "77656319"
 
 В политике условного доступа можно настроить для клиентского приложения [политику защиты приложений Intune](/intune/app-protection-policy) , чтобы доступ к выбранным облачным приложениям был доступен. 
 
-Этот параметр применяется к следующим клиентским приложениям.
-
-- Microsoft Кортана
-- Microsoft OneDrive
-- Microsoft Outlook
-- Планировщик (Майкрософт);
+Поддерживаемые приложения можно найти в статье [Microsoft Intune защищенные приложения](/intune/apps/apps-supported-intune-apps).
 
 **Замечания**
 
@@ -125,7 +92,7 @@ ms.locfileid: "77656319"
 
 Если ваша организация создала условия использования, в разделе предоставление элементов управления могут отображаться дополнительные параметры. Эти параметры позволяют администраторам требовать подтверждения условий использования в качестве условия доступа к ресурсам, защищенным политикой. Дополнительные сведения об условиях использования можно найти в статье [Azure Active Directory условия использования](terms-of-use.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ: элементы управления сеансом](concept-conditional-access-session.md)
 

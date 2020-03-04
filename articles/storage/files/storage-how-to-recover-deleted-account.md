@@ -1,6 +1,6 @@
 ---
-title: Использование файлового ресурса Azure с хранилищем Azure | Документация Майкрософт
-description: Узнайте, как использовать общую папку Azure в Windows и Windows Server.
+title: Как восстановить удаленную учетную запись хранения
+description: Узнайте, как восстановить удаленную учетную запись хранения.
 author: todmccoy
 manager: dcscontentpm
 ms.service: storage
@@ -10,12 +10,12 @@ ms.author: rogarana
 ms.subservice: files
 services: storage
 tags: ''
-ms.openlocfilehash: e1e581134b4e3821659c43bb7f55003239594bd9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 05465d4a03335ac607ba8981116c66fd6dac9416
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233796"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252633"
 ---
 # <a name="how-to-recover-a-deleted-storage-account"></a>Как восстановить удаленную учетную запись хранения
 
@@ -25,8 +25,8 @@ ms.locfileid: "74233796"
 
 | |LRS|ZRS|GRS|RA-GRS|
 |---|---|---|---|---|
-|Azure Resource Manager учетной записи хранения|Yes|Yes|Yes|Yes|
-|Классическая учетная запись хранения|Yes|Yes|Yes|Yes|
+|Azure Resource Manager учетной записи хранения|Да|Да|Да|Да|
+|Классическая учетная запись хранения|Да|Да|Да|Да|
 
 Соберите следующие сведения и отправьте запрос в службу поддержки с помощью служба поддержки Майкрософт:
 

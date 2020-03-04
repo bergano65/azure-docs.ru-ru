@@ -5,14 +5,14 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 02/10/2020
+ms.date: 02/28/2020
 ms.author: alzam
-ms.openlocfilehash: 4b9678f72dd69db24b105d4b1d708928e29a09ba
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: fc48b0ae9cf4162b4b9abba14c6e909ca091fd23
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77134521"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251617"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD
 
@@ -28,7 +28,7 @@ ms.locfileid: "77134521"
 
 ### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
 
-Используйте эту [ссылку](https://go.microsoft.com/fwlink/?linkid=2117554) , чтобы скачать VPN-клиент Azure.
+Используйте эту [ссылку](https://go.microsoft.com/fwlink/?linkid=2117554), чтобы скачать VPN-клиент Azure.
 
 ### <a name="cert"></a>Создание профиля клиента на основе сертификата
 
@@ -168,9 +168,26 @@ ms.locfileid: "77134521"
 </azvpnprofile>
 ```
 
+### <a name="how-do-i-add-custom-dns-servers-to-the-vpn-client"></a>Разделы справки добавить пользовательские DNS-серверы в VPN-клиент?
+
+Вы можете изменить скачанный XML-файл профиля и добавить **\<dnsservers >\<dnsserver > \</днссервер >\</днссерверс >** Tags.
+
+```
+<azvpnprofile>
+<clientconfig>
+
+    <dnsservers>
+        <dnsserver>x.x.x.x</dnsserver>
+        <dnsserver>y.y.y.y</dnsserver>
+    </dnsservers>
+    
+</clientconfig>
+</azvpnprofile>
+```
+
 ### <a name="how-do-i-add-custom-routes-to-the-vpn-client"></a>Разделы справки добавить настраиваемые маршруты к VPN-клиенту?
 
-Вы можете изменить скачанный XML-файл профиля и добавить **\<маршрут >\<инклудераутес >\<назначение >\<mask > \</рауте >\</инклудераутес >\</дестинатион >\</маск >** Теги
+Вы можете изменить скачанный XML-файл профиля и добавить **\<инклудераутес >\<route >\<назначение >\<mask > \</дестинатион >\</маск >\</рауте >\</инклудераутес >** тегов
 
 ```
 <azvpnprofile>
@@ -181,6 +198,24 @@ ms.locfileid: "77134521"
             <destination>x.x.x.x</destination><mask>24</mask>
         </route>
     </includeroutes>
+    
+</clientconfig>
+</azvpnprofile>
+```
+
+### <a name="how-do-i-block-exclude-routes-from-the-vpn-client"></a>Разделы справки блокировать (исключить) маршруты от VPN-клиента?
+
+Вы можете изменить скачанный XML-файл профиля и добавить **\<ексклудераутес >\<route >\<назначение >\<mask > \</дестинатион >\</маск >\</рауте >\</ексклудераутес >** тегов
+
+```
+<azvpnprofile>
+<clientconfig>
+
+    <excluderoutes>
+        <route>
+            <destination>x.x.x.x</destination><mask>24</mask>
+        </route>
+    </excluderoutes>
     
 </clientconfig>
 </azvpnprofile>

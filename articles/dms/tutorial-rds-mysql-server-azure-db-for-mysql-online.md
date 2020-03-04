@@ -3,8 +3,8 @@ title: Руководство. Перенос RDS MySQL Online в базу да�
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить интерактивную миграцию из RDS MySQL в Базу данных Azure для MySQL с помощью Azure Database Migration Service.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: c34de48d0184057f42d1b779abee56e1fa9ac169
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 27002d1fc861d49e083fc294bcfbc7f51f7c1a12
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751308"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255167"
 ---
 # <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос RDS MySQL в базу данных Azure для MySQL Online с помощью DMS
 
@@ -42,7 +42,7 @@ ms.locfileid: "75751308"
 
 В этой статье описывается выполнение интерактивного переноса из экземпляра RDS MySQL в Базу данных Azure для MySQL.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 

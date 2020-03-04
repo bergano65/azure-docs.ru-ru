@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/24/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4c816ade5ae6b416ba716433f385b75e1b32eb92
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.openlocfilehash: 16b6a0cf3e43b172667f55b1ac95e8a278769f9d
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78226506"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78246399"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Первый Runbook рабочего процесса PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "78226506"
 >[!NOTE]
 >Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -150,7 +150,7 @@ ms.locfileid: "78226506"
 1. Щелкните **Тестовая область**, чтобы проверить модуль runbook.
 1. Щелкните **Пуск** , чтобы начать тестирование. По завершении вы увидите результат, аналогичный приведенному ниже, который отображает основные сведения из вашей учетной записи. Это действие подтверждает допустимость учетных данных.
 
-   ![Проверка подлинности](media/automation-first-runbook-textual/runbook-auth-output.png)
+   ![Authenticate](media/automation-first-runbook-textual/runbook-auth-output.png)
 
 ## <a name="step-6---add-code-to-start-a-virtual-machine"></a>Шаг 6. Добавление кода запуска виртуальной машины
 
@@ -210,7 +210,7 @@ ms.locfileid: "78226506"
 
 8. После завершения работы модуля Runbook убедитесь, что виртуальная машина запущена.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
 * Чтобы приступить к работе с графическими модулями Runbook, см. раздел [Мой первый графический модуль Runbook](automation-first-runbook-graphical.md).

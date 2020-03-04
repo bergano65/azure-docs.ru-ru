@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7c4a0e64e1f08bb3e80eaf67937da10906bfce0
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: bae957eba627be7fa3b968585a03d28aa5b0af56
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77591614"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255002"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного Azure Active Directory Join
 
@@ -30,7 +30,7 @@ ms.locfileid: "77591614"
 
 Если у вас есть локальная среда Active Directory (AD) и вы хотите присоединить к Azure AD компьютеры, присоединенные к домену AD, это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
 
@@ -63,9 +63,9 @@ ms.locfileid: "77591614"
 
 ### <a name="windows-down-level-devices"></a>Устройства Windows нижнего уровня
 
-- Windows 8.1
+- Windows 8.1
 - Поддержка Windows 7 закончилась 14 января 2020 г. Дополнительные сведения см. в разделе [Поддержка Windows 7 завершена](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020).
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2. Сведения о поддержке в Windows Server 2008 и 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
@@ -79,6 +79,8 @@ ms.locfileid: "77591614"
 - Гибридное присоединение к Azure AD не поддерживается для Windows Server, на котором работает роль контроллера домена (DC).
 
 - Гибридное присоединение к Azure AD не поддерживается на устройствах Windows нижнего уровня при использовании роуминга учетных данных или перемещаемого или обязательного профиля пользователя.
+
+- ОС Server Core не поддерживает ни один тип регистрации устройства.
 
 ### <a name="os-imaging-considerations"></a>Вопросы работы с образами ОС
 - Если вы используете средство подготовки системы (Sysprep) и если вы используете предварительно установленный образ **Windows 10 1809** , убедитесь, что образ не относится к устройству, которое уже зарегистрировано в Azure AD как гибридное присоединение к Azure AD.
@@ -152,14 +154,14 @@ ms.locfileid: "77591614"
 
 В приведенной ниже таблице приведены сведения о поддержке имен участников-пользователей локальной службы AD для гибридного присоединения к Azure Active Directory в Windows 10.
 
-| Тип имени участника-пользователя локальной службы AD | Тип домена | Версия Windows 10 | Описание |
+| Тип имени участника-пользователя локальной службы AD | Тип домена | Версия Windows 10 | Description |
 | ----- | ----- | ----- | ----- |
 | Маршрутизируемый | Федеративные | Начиная с выпуска 1703 | Общедоступная версия |
 | Немаршрутизируемый | Федеративные | Начиная с выпуска 1803 | Общедоступная версия |
 | Маршрутизируемый | Управляемые | Начиная с выпуска 1803 | Общедоступная версия Azure AD SSPR в Windows на экране блокировки не поддерживается |
 | Немаршрутизируемый | Управляемые | Не поддерживается | |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Настройка гибридного Azure Active Directory Join для Федеративной среды](hybrid-azuread-join-federated-domains.md)

@@ -3,8 +3,8 @@ title: Руководство. Миграция PostgreSQL в базу данн�
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из локальной сети PostgreSQL в базу данных Azure для PostgreSQL с помощью Azure Database Migration Service через портал Azure.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/17/2020
-ms.openlocfilehash: 7c496d4c1bdc29064e4ec1d3d0150cf5186ca701
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 67eced7f647d50733dc8d273bdd9cd8a31b7b6dc
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77472782"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255501"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-portal"></a>Руководство. Миграция PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS через портал Azure
 
@@ -39,7 +39,7 @@ Azure Database Migration Service можно использовать для пе
 > [!IMPORTANT]
 > Чтобы процесс миграции был выполнен без проблем, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -104,7 +104,7 @@ Azure Database Migration Service можно использовать для пе
     psql -h hostname -U db_username -d db_name < your_schema.sql
     ```
 
-    Например:
+    Пример:
 
     ```
     psql -h mypgserver-20170401.postgres.database.azure.com  -U postgres -d dvdrental citus < dvdrentalSchema.sql
@@ -222,7 +222,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Экран добавления сведений об источнике](media/tutorial-postgresql-to-azure-postgresql-online-portal/dms-add-source-details.png)
 
-2. Нажмите кнопку **Сохранить**.
+2. Щелкните **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
@@ -277,7 +277,7 @@ Azure Database Migration Service можно использовать для пе
 
 3. Когда состояние переноса базы данных изменится на **завершено**, Подключите свои приложения к новому целевому экземпляру базы данных Azure для PostgreSQL.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об известных проблемах, ограничениях при выполнении сетевой миграции в Базу данных Azure для PostgreSQL см. в [этой](known-issues-azure-postgresql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

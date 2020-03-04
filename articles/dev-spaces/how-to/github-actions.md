@@ -6,12 +6,12 @@ ms.topic: conceptual
 description: Проверка и проверка изменений в запросе на вытягивание непосредственно в службе Kubernetes Azure с помощью действий GitHub и Azure Dev Spaces
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.openlocfilehash: e2b6f47483d2c7b6c4970dac531bada1cecd279e
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 49715e38f36d4421b7327640ec8392a83b3c2996
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196558"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252377"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 
@@ -39,7 +39,7 @@ Azure Dev Spaces предоставляет рабочий процесс с п�
 
 Создайте реестр контейнеров Azure (запись контроля доступа):
 
-```cmd
+```azurecli
 az acr create --resource-group MyResourceGroup --name <acrName> --sku Basic
 ```
 
@@ -52,7 +52,7 @@ az acr create --resource-group MyResourceGroup --name <acrName> --sku Basic
 
 Для создания субъекта-службы используйте команду [AZ AD SP Create-для – RBAC][az-ad-sp-create-for-rbac] . Пример:
 
-```cmd
+```azurecli
 az ad sp create-for-rbac --sdk-auth --skip-assignment
 ```
 
@@ -60,19 +60,19 @@ az ad sp create-for-rbac --sdk-auth --skip-assignment
 
 Чтобы отобразить *идентификатор* кластера AKS, используйте команду [AZ AKS Показать][az-aks-show] .
 
-```cmd
+```azurecli
 az aks show -g MyResourceGroup -n MyAKS  --query id
 ```
 
 Для отображения *идентификатора* записи контроля доступа используйте команду [AZ запись контроля][az-acr-show] доступа.
 
-```cmd
+```azurecli
 az acr show --name <acrName> --query id
 ```
 
 Используйте команду [AZ Role назначение][az-role-assignment-create] , чтобы предоставить *участнику* доступ к кластеру AKS и *акрпуш* доступ к записи контроля доступа.
 
-```cmd
+```azurecli
 az role assignment create --assignee <ClientId> --scope <AKSId> --role Contributor
 az role assignment create --assignee <ClientId>  --scope <ACRId> --role AcrPush
 ```
@@ -158,7 +158,7 @@ git push origin bike-images
 
 ## <a name="clean-up-your-azure-resources"></a>Очистка ресурсов Azure
 
-```cmd
+```azurecli
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 

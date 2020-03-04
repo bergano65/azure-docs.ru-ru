@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 09/26/2019
+ms.date: 03/02/2020
 ms.author: alkohli
-ms.openlocfilehash: 9e1a7f7cd2643aae61e60d77ad74f4a08266a977
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: b646ee9b727d5adf4ec1c8b5c769b3d8f5c0fc1c
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863603"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252032"
 ---
 # <a name="azure-data-box-edge-technical-specifications"></a>Технические спецификации Azure Data Box Edge
 
@@ -35,7 +35,7 @@ ms.locfileid: "75863603"
 
 | Спецификация           | Значение                  |
 |-------------------------|----------------------------|
-| ППВМ   | Intel Арриа 10 <br> Доступные модели глубокой нейронной сети (DNN) те же, что и в [облачных экземплярах FPGA](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-fpga-web-service#whats-supported-on-azure).| 
+| FPGA   | Intel Арриа 10 <br> Доступные модели глубокой нейронной сети (DNN) те же, что и в [облачных экземплярах FPGA](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-fpga-web-service#whats-supported-on-azure).| 
 
 
 ## <a name="power-supply-unit-specifications"></a>Спецификации блока питания
@@ -52,6 +52,14 @@ ms.locfileid: "75863603"
 <!--## Power consumption statistics
 
 The following table lists the typical power consumption data (actual values may vary from the published) for the Data Box Edge device.-->
+
+## <a name="network-interface-specifications"></a>Спецификации сетевых интерфейсов
+
+У вас Data Box Edge устройство имеет 6 сетевых интерфейсов PORT1-PORT6.
+
+| Спецификация           | Description                 |
+|-------------------------|----------------------------|
+|  Сетевые интерфейсы    | 2 интерфейса 1 GbE. Один интерфейс используется для управления и первоначальной настройки, не поддерживает настройку пользователями. Другой интерфейс настраивается пользователем и может использоваться для передачи данных. По умолчанию для него используется DHCP. <br>2 интерфейса 25 GbE. Эти интерфейсы также можно использовать в качестве интерфейсов 10 GbE. Пользователь может настроить эти интерфейсы передачи данных как для режима DHCP (используется по умолчанию), так и для использования статического адреса. <br> 2 интерфейса 25 GbE. Пользователь может настроить эти интерфейсы передачи данных как для режима DHCP (используется по умолчанию), так и для использования статического адреса.                  |
 
 ## <a name="storage-specifications"></a>Спецификации хранилища
 

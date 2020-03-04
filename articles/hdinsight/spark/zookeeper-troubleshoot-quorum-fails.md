@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/20/2019
-ms.openlocfilehash: a0874826529b5c9ca5d6d4107fe820cd522d81d0
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 4e46efaf17ae9bad5df6f1f61f401d3e6de58a85
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894037"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250242"
 ---
 # <a name="apache-zookeeper-server-fails-to-form-a-quorum-in-azure-hdinsight"></a>Apache ZooKeeper серверу не удается сформировать кворум в Azure HDInsight
 
@@ -20,24 +20,31 @@ ms.locfileid: "75894037"
 
 ## <a name="issue"></a>Проблема
 
-Apache ZooKeeper Server является неработоспособным, симптомы могут включать в себя: диспетчеры ресурсов и узлы имен находятся в режиме ожидания, простые операции HDFS не работают, `zkFailoverController` остановлена и не могут быть запущены, Yarn/Spark/Livy задания завершаются сбоем из-за ошибок Zookeeper. Может появиться сообщение об ошибке следующего вида:
+Apache ZooKeeper Server является неработоспособным, симптомы могут включать в себя: диспетчеры ресурсов и узлы имен находятся в режиме ожидания, простые операции HDFS не работают, `zkFailoverController` остановлена и не могут быть запущены, Yarn/Spark/Livy задания завершаются сбоем из-за ошибок Zookeeper. Управляющие программы LLAP также могут не запускаться в защищенных кластерах Spark и Interactive. Может появиться сообщение об ошибке следующего вида:
 
 ```
 19/06/19 08:27:08 ERROR ZooKeeperStateStore: Fatal Zookeeper error. Shutting down Livy server.
 19/06/19 08:27:08 INFO LivyServer: Shutting down Livy server.
 ```
 
+В журнале сервера Zookeeper на любом узле Zookeeper в/Вар/лог/зукипер/зукипер-зукипер-сервер-\*. out может также появиться следующая ошибка:
+
+```
+2020-02-12 00:31:52,513 - ERROR [CommitProcessor:1:NIOServerCnxn@178] - Unexpected Exception:
+java.nio.channels.CancelledKeyException
+```
+
 ## <a name="cause"></a>Причина
 
 Если объем файлов моментальных снимков слишком большой или файлы моментальных снимков повреждены, ZooKeeper Server не сможет сформировать кворум, что приводит к неработоспособности связанных служб ZooKeeper. Сервер ZooKeeper не удаляет старые файлы моментальных снимков из своего каталога данных. это периодическая задача, выполняемая пользователями для поддержания работоспособности ZooKeeper. Дополнительные сведения см. в разделе [ZooKeeper сильные стороны и ограничения](https://zookeeper.apache.org/doc/r3.3.5/zookeeperAdmin.html#sc_strengthsAndLimitations).
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
-Проверьте каталог данных ZooKeeper `/hadoop/zookeeper/version-2` и `/hadoop/hdinsight-zookeepe/version-2`, чтобы выяснить, достаточно ли размера файла моментальных снимков. При наличии крупных моментальных снимков выполните следующие действия.
+Проверьте каталог данных ZooKeeper `/hadoop/zookeeper/version-2` и `/hadoop/hdinsight-zookeeper/version-2`, чтобы выяснить, достаточно ли размера файла моментальных снимков. При наличии крупных моментальных снимков выполните следующие действия.
 
-1. Резервное копирование моментальных снимков в `/hadoop/zookeeper/version-2` и `/hadoop/hdinsight-zookeepe/version-2`.
+1. Резервное копирование моментальных снимков в `/hadoop/zookeeper/version-2` и `/hadoop/hdinsight-zookeeper/version-2`.
 
-1. Очистка моментальных снимков в `/hadoop/zookeeper/version-2` и `/hadoop/hdinsight-zookeepe/version-2`.
+1. Очистка моментальных снимков в `/hadoop/zookeeper/version-2` и `/hadoop/hdinsight-zookeeper/version-2`.
 
 1. Перезапустите все серверы ZooKeeper из пользовательского интерфейса Apache Ambari.
 

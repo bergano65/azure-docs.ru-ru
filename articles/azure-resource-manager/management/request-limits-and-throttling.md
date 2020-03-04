@@ -4,12 +4,12 @@ description: В данной статье описывается использ�
 ms.topic: conceptual
 ms.date: 10/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 129ca3ba32d48345bde931c6bd2084c3da79be39
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 43ccf4f2e8098f6577f18943c4ab4132884b66f2
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659378"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251340"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 
@@ -25,12 +25,12 @@ ms.locfileid: "75659378"
 
 Ограничения по умолчанию для регулирования в час показаны в следующей таблице.
 
-| Область действия | Operations | Ограничение |
+| Область | Операции | Ограничение |
 | ----- | ---------- | ------- |
-| Subscription | операции чтения | 12000 |
+| Subscription | reads | 12000 |
 | Subscription | deletes | 15 000 |
 | Subscription | writes | 1200 |
-| Клиент | операции чтения | 12000 |
+| Клиент | reads | 12000 |
 | Клиент | writes | 1200 |
 
 Эти ограничения касаются субъекта безопасности (пользователь или приложение), выполняющего запросы, а также идентификатора подписки или идентификатора клиента. Если запросы поступают от нескольких субъектов безопасности, ваше ограничение для подписки или клиента превышает 12 000 и 1200 в час.
@@ -162,7 +162,7 @@ az group list --verbose --debug
 
 Будет возвращено множество значений, включая следующие:
 
-```azurecli
+```output
 msrest.http_logger : Response status: 200
 msrest.http_logger : Response headers:
 msrest.http_logger :     'Cache-Control': 'no-cache'
@@ -182,7 +182,7 @@ az group create -n myresourcegroup --location westus --verbose --debug
 
 Будет возвращено множество значений, включая следующие:
 
-```azurecli
+```output
 msrest.http_logger : Response status: 201
 msrest.http_logger : Response headers:
 msrest.http_logger :     'Cache-Control': 'no-cache'

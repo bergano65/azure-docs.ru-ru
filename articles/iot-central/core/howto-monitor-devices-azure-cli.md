@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: 3f18537b4b038844c9aa824593e354c23c792370
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 6af6f01449f2f43e6799ef6d7821b9d71b24e603
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026787"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252351"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli"></a>Мониторинг подключения устройств с помощью Azure CLI
 
@@ -23,7 +23,7 @@ ms.locfileid: "77026787"
 
 [Дополнительные сведения см. в справочнике по расширениям Azure CLI.](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/central)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 + Azure CLI установлен и имеет версию 2.0.7 или более позднюю. Проверьте версию Azure CLI, выполнив `az --version`. Узнайте, как устанавливать и обновлять [документы Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
 + Рабочая или учебная учетная запись в Azure, добавленная в качестве пользователя в IoT Centralое приложение.
@@ -33,23 +33,26 @@ ms.locfileid: "77026787"
 Чтобы установить средство, в командной строке выполните следующую команду:
 
 ```cmd/sh
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 ```
 
-Проверьте версию расширения, выполнив 
+Проверьте версию расширения, выполнив команду:
+
 ```cmd/sh
 az --version
 ```
-Вы увидите расширение Azure-CLI-IOT-ext 0.8.1 или более поздней версии. Если это не так, запустите
+
+Вы должны увидеть расширение Azure-IOT 0.8.1 или более поздней версии. Если это не так, выполните:
+
 ```cmd/sh
-az extension update --name azure-cli-iot-ext
+az extension update --name azure-iot
 ```
 
 ## <a name="using-the-extension"></a>Использование расширения
 
 В следующих разделах описаны общие команды и параметры, которые можно использовать при запуске `az iot central`. Чтобы просмотреть полный набор команд и параметров, передайте `--help` `az iot central` или любой из ее подкоманд.
 
-### <a name="login"></a>Вход
+### <a name="login"></a>Имя входа
 
 Начните с входа в Azure CLI. 
 

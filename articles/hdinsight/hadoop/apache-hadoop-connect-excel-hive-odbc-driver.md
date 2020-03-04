@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.date: 12/11/2019
-ms.openlocfilehash: 883192e1d041014c23445b7a2fa0ece45eb76f10
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/02/2020
+ms.openlocfilehash: f356009197c0446efa2ea2d7f0e90040229df47b
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435814"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251065"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "75435814"
 
 Также можно подключить данные, связанные с кластером HDInsight и другими источниками данных, включая другие кластеры Hadoop (не HDInsight), из Excel с помощью надстройки Microsoft Power Query для Excel. Сведения об установке и использовании Power Query см. в статье [Подключение Excel к HDInsight с помощью Power Query](../hdinsight-connect-excel-power-query.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -52,7 +52,7 @@ ms.locfileid: "75435814"
    | --- | --- |
    |  Имя базы данных-источника |Присвойте имя источнику данных |
    |  Узлы |Введите `HDInsightClusterName.azurehdinsight.net`. Например, `myHDICluster.azurehdinsight.net`. Примечание. `HDInsightClusterName-int.azurehdinsight.net` поддерживается до тех пор, пока клиентская виртуальная машина соединена с той же виртуальной сетью. |
-   |  Port |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
+   |  Порт |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте **значение по умолчанию**. |
    |  Механизм |Выберите **Windows Azure HDInsight Service**. |
    |  Имя пользователя |Введите имя пользователя HTTP кластера HDInsight. Имя пользователя по умолчанию — **admin**. |

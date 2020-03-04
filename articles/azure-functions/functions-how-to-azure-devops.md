@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: cshoe
-ms.openlocfilehash: 1d627329a6d5f4c283a4480c1b0b1077a8e856cf
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 5e2fc8fb06248e2cdad9067c56647da6d9626b50
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77649948"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255751"
 ---
 # <a name="continuous-delivery-by-using-azure-devops"></a>Непрерывная поставка с помощью Azure DevOps
 
@@ -25,7 +25,7 @@ ms.locfileid: "77649948"
 
 Чтобы создать конвейер на основе YAML, сначала выполните сборку приложения, а затем разверните приложение.
 
-### <a name="build-your-app"></a>Построение приложений
+### <a name="build-your-app"></a>Создание приложения
 
 Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для развертывания приложения-функции в Azure.
 
@@ -46,7 +46,7 @@ steps:
     arguments: '--configuration Release --output publish_output'
     projects: '*.csproj'
     publishWebProjects: false
-    modifyOutputPath: true
+    modifyOutputPath: false
     zipAfterPublish: false
 - task: ArchiveFiles@2
   displayName: "Archive files"
@@ -215,7 +215,7 @@ steps:
 
 Шаблоны в Azure DevOps — это стандартные группы задач, которые создают или развертывают приложение.
 
-### <a name="build-your-app"></a>Построение приложений
+### <a name="build-your-app"></a>Создание приложения
 
 Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для обновления приложения-функции в Azure.
 
@@ -265,7 +265,7 @@ steps:
 
     - Вы должны быть администратором проекта в Azure DevOps.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Ознакомьтесь с [обзором Azure DevOps](/azure/devops/pipelines/).

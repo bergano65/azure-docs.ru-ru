@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5044f8b85e59911633a4ffab509efc000948144a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bb8b23513738a6696d65bf7f06a741be2ada7a93
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65832580"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250249"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Создание и тестирование нового имитированного устройства
 
@@ -30,7 +30,7 @@ ms.locfileid: "65832580"
 
 *Свойства*
 
-| ИМЯ                     | Значения                      |
+| Имя                     | Значения                      |
 | ------------------------ | --------------------------- |
 | Color                    | Белый, красный, синий            |
 | Яркость               | 0–100                    |
@@ -40,9 +40,9 @@ ms.locfileid: "65832580"
 
 В таблице ниже приведены данные, которые система освещения потоком передает в облако.
 
-| Name   | Значения      |
+| Имя   | Значения      |
 | ------ | ----------- |
-| Status | on, off |
+| Состояние | on, off |
 | температура; | Градусы по Фаренгейту |
 | в сети | true, false |
 
@@ -53,7 +53,7 @@ ms.locfileid: "65832580"
 
 В таблице ниже приведены действия, поддерживаемые новым устройством.
 
-| Name        |
+| Имя        |
 | ----------- |
 | Включение   |
 | Выключение  |
@@ -62,9 +62,9 @@ ms.locfileid: "65832580"
 
 В таблице ниже представлены начальные показатели устройства.
 
-| Name                     | Значения |
+| Имя                     | Значения |
 | ------------------------ | -------|
-| Начальный цвет            | Белый  |
+| Начальный цвет            | White  |
 | Начальная яркость       | 75     |
 | Начальное ожидаемое время работы   | 10 000 |
 | Начальное состояние передачи данных телеметрии | on   |
@@ -76,7 +76,7 @@ ms.locfileid: "65832580"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы следовать этому пошаговому руководству, вам необходимы следующие компоненты.
 
@@ -107,11 +107,11 @@ ms.locfileid: "65832580"
 
 Откройте папку **remote-monitoring-services-dotnet-master\storage-adapter** в Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте **storage-adapter/WebService/appsettings.ini** файла и назначьте строку подключения Cosmos DB, чтобы **documentDBConnectionString** переменной.
+Откройте файл **стораже-адаптер/WebService/appSettings. ini** и назначьте строку подключения Cosmos DB переменной **документдбконнектионстринг** .
 
 Чтобы запустить микрослужбу локально, нажмите **Отладка > Начать отладку**.
 
-Окно **Терминал** в Visual Studio Code отображает выходные данные из работающей микрослужбы, включая URL-адрес проверки работоспособности веб-службы: [http://127.0.0.1:9022/v1/status](http://127.0.0.1:9022/v1/status). При переходе на этот адрес, состояние должно быть «ОК: Проверки активности и хорошо».
+Окно **Терминал** в Visual Studio Code отображает выходные данные из работающей микрослужбы, включая URL-адрес проверки работоспособности веб-службы: [http://127.0.0.1:9022/v1/status](http://127.0.0.1:9022/v1/status). При переходе на этот адрес, состояние должно быть "OK: живой и отлично".
 
 Оставьте микрослужбу адаптера хранилища запущенной в данном экземпляре Visual Studio Code, пока вы выполняете следующие действия.
 
@@ -123,7 +123,7 @@ ms.locfileid: "65832580"
 
 1. Скопируйте следующие файлы в новую папку, из загруженной копии микрослужбы моделирования устройств.
 
-    | source | Место назначения |
+    | Источник | Назначение |
     | ------ | ----------- |
     | Services\data\devicemodels\chiller-01.json | C:\temp\devicemodels\chiller-01.json |
     | Services\data\devicemodels\scripts\chiller-01-state.js | C:\temp\devicemodels\scripts\chiller-01-state.js |
@@ -424,7 +424,7 @@ ms.locfileid: "65832580"
 
 Откройте папку **​​device-simulation-dotnet-master**, загруженную с GitHub, в новом экземпляре Visual Studio Code. Чтобы исправить любые нерешенные зависимости, щелкните любую кнопку **Восстановить**.
 
-Откройте **WebService/appsettings.ini** файла и назначьте строку подключения Cosmos DB, чтобы **documentdb_connstring** переменную и измените настройки следующим образом:
+Откройте файл **WebService/appSettings. ini** и назначьте строку подключения Cosmos DB **documentdb_connstring** переменной, а также измените параметры следующим образом:
 
 ```ini
 device_models_folder = C:\temp\devicemodels\
@@ -446,7 +446,7 @@ device_models_scripts_folder = C:\temp\devicemodels\scripts\
 
 ```azurecli-interactive
 # Install the IoT extension if it's not already installed
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 
 # Monitor telemetry sent to your hub
 az iot hub monitor-events --hub-name device-simulation-test

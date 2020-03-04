@@ -11,12 +11,12 @@ author: likebupt
 ms.reviewer: nibaccam
 ms.date: 02/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1db3679053edbbc2874c456b1c8db4a4f8e0dabd
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.openlocfilehash: 5527d58f140074279d6b9feac13803f29eb0bda5
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78164884"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255773"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "78164884"
 
 Хранилища данных можно создавать из [этих решений службы хранилища Azure](#matrix). Для неподдерживаемых решений для хранения данных и для сохранения затрат на исходящие данные во время экспериментов машинного обучения рекомендуется [переместить данные](#move) в поддерживаемые решения службы хранилища Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Что вам понадобится:
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
@@ -35,7 +35,7 @@ ms.locfileid: "78164884"
 
 - Рабочая область машинного обучения Azure.
   
-  [Создайте машинное обучение Azure рабочую область](how-to-manage-workspace.md) или используйте существующую с помощью пакета SDK для Python:
+  [Создайте машинное обучение Azure рабочую область](how-to-manage-workspace.md) или используйте существующую, используя пакет SDK для Python. Импортируйте класс `Workspace` и `Datastore` и загрузите сведения о подписке из файла `config.json` с помощью `from_config()`а функции. По умолчанию в текущем каталоге выполняется поиск JSON-файла, но можно также указать параметр path, указывающий на файл с помощью `from_config(path="your/file/path")`.
 
    ```Python
    import azureml.core
@@ -58,7 +58,7 @@ ms.locfileid: "78164884"
 База данных SQL Azure&nbsp;&nbsp;| Проверка подлинности SQL <br>Субъект-служба| ✓ | ✓ | ✓ |✓
 Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ | ✓ |✓
 &nbsp;базы данных Azure&nbsp;для&nbsp;MySQL | Проверка подлинности SQL|  | ✓ | ✓ |✓
-Кирпичи&nbsp;файловая&nbsp;система| Нет проверки подлинности | | ✓ * * | ✓ * * |✓ * * 
+Кирпичи&nbsp;файловая&nbsp;система| без аутентификации; | | ✓ * * | ✓ * * |✓ * * 
 
 *MySQL поддерживается только для конвейера [дататрансферстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?view=azure-ml-py). <br> \** Модуль обработки блоков обработки информации поддерживается только для [датабрикксстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.databricks_step.databricksstep?view=azure-ml-py) конвейера
 
@@ -224,7 +224,7 @@ ws.set_default_datastore('your datastore name')
 
 Методы [`upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py#upload-src-dir--target-path-none--overwrite-false--show-progress-true-) и [`download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py#download-target-path--prefix-none--overwrite-false--show-progress-true-) , описанные в следующих примерах, относятся к классам [азуреблобдатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py) и [азурефиледатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azurefiledatastore?view=azure-ml-py) , а также работают одинаково.
 
-### <a name="upload"></a>Отправка
+### <a name="upload"></a>Передать
 
 Отправьте либо каталог, либо отдельные файлы в хранилище данных с помощью пакета SDK для Python:
 
@@ -239,7 +239,7 @@ datastore.upload(src_dir='your source directory',
 
 Можно также передать список отдельных файлов в хранилище данных с помощью метода `upload_files()`.
 
-### <a name="download"></a>Загрузить
+### <a name="download"></a>Скачивание
 
 Скачайте данные из хранилища данных в локальную файловую систему:
 
@@ -272,7 +272,7 @@ run_config.source_directory_data_store = "workspaceblobstore"
 
 Машинное обучение Azure предоставляет несколько способов использования моделей для оценки. Некоторые из этих методов не предоставляют доступ к хранилищам данных. Используйте следующую таблицу, чтобы понять, какие методы позволяют получать доступ к хранилищам данных во время оценки.
 
-| Метод | Доступ к хранилищу данных | Описание |
+| Метод | Доступ к хранилищу данных | Description |
 | ----- | :-----: | ----- |
 | [Прогнозирование пакетной службы](how-to-use-parallel-run-step.md) | ✔ | Асинхронное создание прогнозов на больших объемах данных. |
 | [Веб-служба](how-to-deploy-and-where.md) | &nbsp; | Развертывание моделей в качестве веб-службы. |
@@ -288,7 +288,7 @@ run_config.source_directory_data_store = "workspaceblobstore"
 
 Фабрика данных Azure обеспечивает эффективную и устойчивую пересылку данных с более чем 80 предварительно подготовленных соединителей без дополнительных затрат. К этим соединителям относятся службы данных Azure, локальные источники данных, Amazon S3 и Redshift и Google BigQuery.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание набора данных машинного обучения Azure](how-to-create-register-datasets.md)
 * [Обучение модели](how-to-train-ml-models.md)

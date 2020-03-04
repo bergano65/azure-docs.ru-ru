@@ -4,14 +4,14 @@ description: Узнайте, как включить проверку подли
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/23/2020
+ms.date: 03/03/2020
 ms.author: rogarana
-ms.openlocfilehash: 419f0506751ddc328539eafa52507b0dd0739c79
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 223906343c2391d03d8526026d3daad3174791ed
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77921561"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256060"
 ---
 # <a name="enable-active-directory-authentication-over-smb-for-azure-file-shares"></a>Включение проверки подлинности Active Directory в SMB для файловых ресурсов Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "77921561"
 
 Удостоверения AD, используемые для доступа к файловым ресурсам Azure, должны быть синхронизированы с Azure AD, чтобы обеспечить предоставление разрешений на доступ к файлам уровня общего доступа через стандартную модель [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) . [Списки DACL в стиле Windows](https://docs.microsoft.com/previous-versions/technet-magazine/cc161041(v=msdn.10)?redirectedfrom=MSDN) для файлов и каталогов, перенесенных из существующих файловых серверов, будут сохранены и применены. Эта функция обеспечивает тесную интеграцию с корпоративной инфраструктурой доменных служб Active Directory. При замене локальных файловых серверов на файловые ресурсы Azure существующие пользователи могут получить доступ к общим файловым ресурсам Azure с их текущих клиентов с помощью единого входа, не внося изменения в используемые учетные данные.  
  
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Перед включением проверки подлинности AD для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 
@@ -62,13 +62,13 @@ ms.locfileid: "77921561"
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Проверка подлинности Active Directory для файлов Azure (Предварительная версия) доступна в [большинстве общедоступных регионов](https://azure.microsoft.com/global-infrastructure/regions/) , за исключением:
+Проверка подлинности Active Directory для файлов Azure (Предварительная версия) доступна в [большинстве общедоступных регионов](https://azure.microsoft.com/global-infrastructure/regions/).
 
-- Запад США
+Проверка подлинности Active Directory для службы файлов Azure недоступна в:
+- западная часть США
 - западная часть США 2
-- Восток США
+- Восточная часть США
 - восточная часть США 2
-- Центрально-южная часть США
 - Западная Европа
 - Северная Европа
 
@@ -142,7 +142,7 @@ join-AzStorageAccountForAuth -ResourceGroupName "<resource-group-name-here>" -Na
 
 Во первых, он проверяет вашу среду. В частности, он проверяет, установлен ли [Active Directory PowerShell](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps) и выполняется ли оболочка с правами администратора. Затем он проверяет, установлен ли [модуль AZ. Storage 1.11.1-Preview](https://www.powershellgallery.com/packages/Az.Storage/1.11.1-preview) , и устанавливает его, если это не так. Если эти проверки пройдены, он проверит ваше рекламное объявление на наличие [учетной записи компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (по умолчанию) или [учетной записи входа службы](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) , которая уже создана с именем субъекта-службы или UPN, как CIFS/My-Storage-Account-Name-here. File. Core. Windows. NET. Если учетная запись не существует, она будет создана, как описано в разделе b ниже.
 
-#### <a name="b-creating-an-identity-representing-the-storage-account-in-your-ad-manually"></a>б. Создание удостоверения, представляющего учетную запись хранения в AD вручную
+#### <a name="b-creating-an-identity-representing-the-storage-account-in-your-ad-manually"></a>b. Создание удостоверения, представляющего учетную запись хранения в AD вручную
 
 Чтобы создать эту учетную запись вручную, создайте ключ Kerberos для учетной записи хранения с помощью `New-AzStorageAccountKey -KeyName kerb1`. Затем используйте этот ключ Kerberos в качестве пароля для вашей учетной записи. Этот ключ используется только во время настройки и не может использоваться для операций управления или плоскости данных в учетной записи хранения.
 
@@ -152,7 +152,7 @@ join-AzStorageAccountForAuth -ResourceGroupName "<resource-group-name-here>" -Na
 
 Сохраним идентификатор безопасности только что созданной учетной записи, он понадобится для следующего шага.
 
-##### <a name="c-enable-the-feature-on-your-storage-account"></a>в. Включение функции в учетной записи хранения
+##### <a name="c-enable-the-feature-on-your-storage-account"></a>c. Включение функции в учетной записи хранения
 
 Затем скрипт включит функцию в вашей учетной записи хранения. Чтобы выполнить эту установку вручную, укажите сведения о конфигурации для свойств домена в следующей команде, а затем запустите ее. Идентификатор безопасности учетной записи хранения, необходимый для следующей команды, — это идентификатор безопасности удостоверения, созданного в AD (см. раздел б выше).
 
@@ -195,7 +195,7 @@ $storageAccount.AzureFilesIdentityBasedAuth.ActiveDirectoryProperties
 Update-AzStorageAccountADObjectPassword -RotateToKerbKey kerb2 -ResourceGroupName "your-resource-group-name-here" -StorageAccountName "your-storage-account-name-here"
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе файлов Azure и использовании AD через SMB см. в следующих ресурсах:
 

@@ -3,12 +3,12 @@ title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: c8449ef27ca73cd6e0c2908ce4cbebea2c513dbc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: db09a31154b680097b6b46e8f9e2cce2ad09d108
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450090"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255020"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -123,7 +123,7 @@ Exchange |Сумма размеров всех баз данных Exchange на
 
 ### <a name="is-there-a-limit-on-the-amount-of-data-backed-up-using-a-recovery-services-vault"></a>Существует ли ограничение на объем данных резервного копирования в хранилище Служб восстановления?
 
-Не существует ограничений на объем данных резервного копирования в хранилище Служб восстановления.
+Не существует ограничения на общий объем данных, которые можно архивировать с помощью хранилища служб восстановления. Отдельные источники данных (кроме виртуальных машин Azure) могут иметь размер не более 54 400 ГБ. Дополнительные сведения об ограничениях см. в [разделе ограничения хранилища в матрице поддержки](https://docs.microsoft.com/azure/backup/backup-support-matrix#vault-support).
 
 ### <a name="why-is-the-size-of-the-data-transferred-to-the-recovery-services-vault-smaller-than-the-data-selected-for-backup"></a>Почему размер данных, переданных в хранилище Служб восстановления, меньше размера данных, выбранных для резервного копирования?
 

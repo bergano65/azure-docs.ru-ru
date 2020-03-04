@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 3173fe010106963b9079bf151c92957735253e84
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: ddf011724f72a8a5eaf4e6398c28b28fffa5bfac
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898779"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247004"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
@@ -52,7 +52,7 @@ az webapp create-remote-connection --subscription <subscription-id> --resource-g
 
 В выходных данных команды содержатся сведения, необходимые для того, чтобы открыть сеанс SSH.
 
-```
+```output
 Port 21382 is open
 SSH is available { username: root, password: Docker! }
 Start your favorite client and connect to port 21382
@@ -60,20 +60,20 @@ Start your favorite client and connect to port 21382
 
 Откройте сеанс SSH с контейнером с помощью необходимого клиента, используя локальный порт. В следующем примере используется команда по умолчанию [ssh](https://ss64.com/bash/ssh.html).
 
-```azurecli-interactive
+```bash
 ssh root@127.0.0.1 -p <port>
 ```
 
 Если отобразится запрос, введите `yes`, чтобы продолжить установку подключения. Затем появится запрос на ввод пароля. Используйте показанный ранее `Docker!`.
 
-```
+```output
 Warning: Permanently added '[127.0.0.1]:21382' (ECDSA) to the list of known hosts.
 root@127.0.0.1's password:
 ```
 
 После выполнения проверки подлинности появится приветственный экран сеанса.
 
-```
+```output
   _____
   /  _  \ __________ _________   ____
  /  /_\  \___   /  |  \_  __ \_/ __ \
@@ -89,7 +89,7 @@ A P P   S E R V I C E   O N   L I N U X
 
 Попробуйте выполнить команду [top](https://ss64.com/bash/top.html). В списке процессов должен содержаться процесс приложения. В приведенном ниже примере выходных данных — это процесс с `PID 263`.
 
-```
+```output
 Mem: 1578756K used, 127032K free, 8744K shrd, 201592K buff, 341348K cached
 CPU:   3% usr   3% sys   0% nic  92% idle   0% io   0% irq   0% sirq
 Load average: 0.07 0.04 0.08 4/765 45738

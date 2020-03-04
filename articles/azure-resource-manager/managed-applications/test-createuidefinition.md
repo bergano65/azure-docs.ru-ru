@@ -5,18 +5,18 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: fe6fbb2c27dcc18cca114e6d10cd382d376a27e2
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: e2d075a58872f9337c7d1faa642a48047e2f9ddf
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75651310"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250180"
 ---
 # <a name="test-your-portal-interface-for-azure-managed-applications"></a>Тестирование интерфейса портала для управляемых приложений Azure
 
 После [создания файла createUiDefinition. JSON](create-uidefinition-overview.md) для управляемого приложения необходимо протестировать взаимодействие с пользователем. Чтобы упростить тестирование, используйте изолированную среду, которая загружает файл на портал. Вам не нужно развертывать управляемое приложение. Песочница представляет пользовательский интерфейс в текущем полноэкранном портале. Также можно использовать скрипт для тестирования интерфейса. В этой статье описаны оба подхода. Песочница является рекомендуемым способом предварительного просмотра интерфейса.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Файл **createUiDefinition.json**. Если у вас нет этого файла, скопируйте [Пример файла](https://github.com/Azure/azure-quickstart-templates/blob/master/100-marketplace-sample/createUiDefinition.json).
 
@@ -36,7 +36,7 @@ ms.locfileid: "75651310"
 
    ![Отобразить форму](./media/test-createuidefinition/show-ui-form.png)
 
-### <a name="troubleshooting"></a>Устранение неисправностей
+### <a name="troubleshooting"></a>Устранение неполадок
 
 Если форма не отображается после выбора **предварительной версии**, может возникнуть синтаксическая ошибка. Найдите красный индикатор на правой полосе прокрутки и перейдите к нему.
 
@@ -68,7 +68,7 @@ ms.locfileid: "75651310"
 
 Для интерфейса командной строки Azure:
 
-```azurecli
+```bash
 ./sideload-createuidef.sh \
   -l southcentralus \
   -a .\100-Marketplace-Sample
@@ -84,7 +84,7 @@ ms.locfileid: "75651310"
 
 Для интерфейса командной строки Azure:
 
-```azurecli
+```bash
 ./sideload-createuidef.sh
 ```
 

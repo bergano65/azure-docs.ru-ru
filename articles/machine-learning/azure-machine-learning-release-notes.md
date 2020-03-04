@@ -10,18 +10,56 @@ ms.author: jmartens
 author: j-martens
 ms.date: 01/21/2020
 ms.custom: seodec18
-ms.openlocfilehash: 11b8ade765a2b1c1ee25421073983b96c34e5d15
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 6f244fc057638bc94a94c150d9333435c0197a74
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77462179"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249749"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
 В этой статье вы узнаете о выпусках Машинное обучение Azure.  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) машинное обучение Azure.
 
 Ознакомьтесь со [списком известных проблем](resource-known-issues.md), чтобы получить сведения об известных ошибках и способах их устранения.
+
+## <a name="2020-03-02"></a>2020-03-02
+
+### <a name="azure-machine-learning-sdk-for-python-v112rc0"></a>Пакет SDK Машинное обучение Azure для Python v 1.1.2 RC0
+
++ **Исправления ошибок и улучшения**
+  + **azureml-аутомл-Core**
+    + Включено вывод пакетного режима (несколько строк) для моделей аутомл ONNX
+    + Улучшено обнаружение частоты наборов данных, отсутствие данных или содержащие нестандартные точки данных.
+    + Добавлена возможность удалять точки данных, не применяя к главным фрекурнци.
+  + **azureml-аутомл-Runtime**
+    + Исправлена ошибка, возникающая при возникновении ошибки, если в тестовом наборе возникло неопределенное значение.
+    + Удаление y_query требования во время оценки службы прогнозирования
+  + **azureml-от участников сообщества-Талха**
+    + Добавляет функциональные возможности в класс Мирвебсервице для получения маркера доступа
+  + **azureml-Core**
+    + Развернутые службы AzureML теперь по умолчанию будут `INFO` ведения журнала. Это можно контролировать, задавая переменную среды `AZUREML_LOG_LEVEL` в развернутой службе.
+    + Исправьте итерации на `Dataset.get_all`, чтобы вернуть все наборы данных, зарегистрированные в рабочей области.
+    + Улучшение сообщения об ошибке при передаче недопустимого типа в `path` аргумента API-интерфейсов создания набора данных.
+    + Пакет SDK для Python использует службу обнаружения для использования конечной точки API вместо "конвейеров".
+    + Переключение на новые маршруты во всех вызовах SDK
+    + Изменяет маршрутизацию вызовов Моделманажементсервице на новую унифицированную структуру.
+      + Сделан общий доступ к методу обновления рабочей области.
+      + Добавлен параметр image_build_compute в методе обновления рабочей области, чтобы разрешить пользователю обновлять сборку вычислений для сборки образа.
+    +  В старый рабочий процесс профилирования добавлены сообщения об устаревании. Фиксированные ограничения ЦП и памяти при профилировании
+  + **azureml-интерпретировать**
+    + Обновление azureml-интерпретировать как интерпретируемое сообщество 0,6. *
+  + **azureml-млфлов**
+    + Добавление поддержки облаков независимых в azureml. млфлов
+  + **azureml-конвейер — шаги**
+    + Переместил `AutoMLStep` в `azureml-pipeline-steps package`. Нерекомендуемый `AutoMLStep` в `azureml-train-automl-runtime`.
+  + **azureml-Training-аутомл-Client**
+    + Исправлена проблема, при которой некоторые пакеты могут быть установлены в неправильные версии при удаленных запусках.
+  + **azureml-Training-аутомл-Runtime**
+    + Исправлена проблема с определением частоты при удаленном запуске.
+    + Переместил `AutoMLStep` в `azureml-pipeline-steps package`. Нерекомендуемый `AutoMLStep` в `azureml-train-automl-runtime`.
+  + **azureml-Training-Core**
+    + Переместил `AutoMLStep` в `azureml-pipeline-steps package`. Нерекомендуемый `AutoMLStep` в `azureml-train-automl-runtime`.
 
 ## <a name="2020-02-18"></a>2020-02-18
 
@@ -297,11 +335,11 @@ ms.locfileid: "77462179"
 
 Доступ к следующим веб-средствам разработки из студии:
 
-| Веб-инструмент | Описание | Выпуск |
+| Веб-инструмент | Description | Выпуск |
 |-|-|-|
 | Виртуальная машина записной книжки (Предварительная версия) | Полностью управляемая облачная Рабочая станция | Базовый & Enterprise |
-| [Автоматизированное машинное обучение](tutorial-first-experiment-automated-ml.md) (Предварительная версия) | Без взаимодействия с кодом для автоматизации разработки моделей машинного обучения | Корпоративная |
-| [Конструктор](concept-designer.md) (Предварительная версия) | Средство моделирования машинного обучения, ранее известное как конструктор | Корпоративная |
+| [Автоматизированное машинное обучение](tutorial-first-experiment-automated-ml.md) (Предварительная версия) | Без взаимодействия с кодом для автоматизации разработки моделей машинного обучения | Enterprise |
+| [Конструктор](concept-designer.md) (Предварительная версия) | Средство моделирования машинного обучения, ранее известное как конструктор | Enterprise |
 
 
 ### <a name="azure-machine-learning-designer-enhancements"></a>Усовершенствования конструктора Машинное обучение Azure
@@ -485,13 +523,13 @@ ms.locfileid: "77462179"
   + **azureml-Training-Core**
     + Добавлена поддержка TensorFlow 2,0 в Оценщике TensorFlow.
   + **azureml-Training-аутомл**
-    + Создание объекта [эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример.
+    + Создание объекта [эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        Функция [Archive ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример.
+        Функция [Archive ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -500,7 +538,7 @@ ms.locfileid: "77462179"
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример.
+        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
@@ -1752,6 +1790,6 @@ ms.locfileid: "77462179"
 Новый обновленный выпуск Машинное обучение Azure: Дополнительные сведения об этом выпуске: https://azure.microsoft.com/blog/what-s-new-in-azure-machine-learning-service/
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](overview-what-is-azure-ml.md).

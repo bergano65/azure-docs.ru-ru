@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 08/01/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 42ff98c8dc77ee421791c3e9f22b57a4518ae80b
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: c00ab8a5e0d307d89ae483db55bdb0b1258ae6a4
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77500172"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78246409"
 ---
 # <a name="editing-textual-runbooks-in-azure-automation"></a>Изменение текстовых модулей Runbook в службе автоматизации Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "77500172"
 2. В разделе **Автоматизация процессов** выберите **Модули Runbook**, чтобы открыть список модулей.
 3. Выберите Runbook для редактирования и нажмите кнопку **изменить**.
 4. Внесите изменения в модуль runbook.
-5. По завершении редактирования нажмите **Сохранить**.
+5. Закончив изменения, нажмите кнопку **Сохранить** .
 6. Нажмите кнопку **опубликовать** , если хотите опубликовать последнюю черновую версию модуля Runbook.
 
 ### <a name="insert-a-cmdlet-into-a-runbook"></a>Вставка командлета в модуль Runbook
@@ -84,7 +84,7 @@ Export-AzAutomationRunbook -Name $runbookName -AutomationAccountName $automation
 
 ### <a name="change-the-contents-of-a-runbook-using-windows-powershell"></a>Изменение содержимого модуля Runbook с помощью Windows PowerShell
 
-Приведенные ниже примеры команд демонстрируют замену существующего содержимого модуля Runbook содержимым файла сценария. Эта же процедура используется для примера в статье [об импорте модуля runbook из файла сценария с помощью Windows PowerShell](manage-runbooks.md#import-a-runbook).
+Команды в приведенном ниже примере показывают, как заменить существующее содержимое модуля Runbook на содержимое файла сценария. Эта же процедура используется для примера в статье [об импорте модуля runbook из файла сценария с помощью Windows PowerShell](manage-runbooks.md#import-a-runbook).
 
 ```powershell-interactive
 $resourceGroupName = "MyResourceGroup"

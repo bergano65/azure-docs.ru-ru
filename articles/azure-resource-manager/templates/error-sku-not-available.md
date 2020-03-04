@@ -3,12 +3,12 @@ title: Ошибки недоступности SKU
 description: В этой статье описывается, как устранить ошибку недоступности номера SKU при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 02/18/2020
-ms.openlocfilehash: be341a5ed5321fe71b0e3b34ba5f6cc823958c8b
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 5d055540b4c0d8f2900d2ede6735662801be5974
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77462298"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250649"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
@@ -70,7 +70,7 @@ az vm list-skus --location southcentralus --size Standard_F --output table
 
 Результаты выполнения команды выглядят так:
 
-```azurecli
+```output
 ResourceType     Locations       Name              Zones    Capabilities    Restrictions
 ---------------  --------------  ----------------  -------  --------------  --------------
 virtualMachines  southcentralus  Standard_F1                ...             None
@@ -86,7 +86,7 @@ virtualMachines  southcentralus  Standard_F4                ...             None
 
 Например, начните процесс создания виртуальной машины. Чтобы просмотреть другой доступный размер, выберите **Изменить размер**.
 
-![Создать VM](./media/error-sku-not-available/create-vm.png)
+![Создание виртуальной машины](./media/error-sku-not-available/create-vm.png)
 
 Можно фильтровать и прокручивать доступные размеры.
 

@@ -3,7 +3,7 @@ title: Выполнение пользовательских скриптов н
 description: Автоматизируйте задачи настройки виртуальных машин Linux с помощью расширения настраиваемых скриптов версии 2.
 services: virtual-machines-linux
 documentationcenter: ''
-author: MicahMcKittrick-MSFT
+author: mimckitt
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
-ms.openlocfilehash: 22346501444694675d92d9a37497f9304c76e13d
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 2190bfd1a260d7b866fedc1f7c699faef2431a93
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156562"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78246152"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -49,7 +49,7 @@ ms.locfileid: "76156562"
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра или группы безопасности сети.
 
-### <a name="tips-and-tricks"></a>Советы и хитрости
+### <a name="tips-and-tricks"></a>Советы и рекомендации
 * Высокий процент сбоев этого расширения связан с синтаксическими ошибками в скрипте. Чтобы упростить поиск точки сбоя, протестируйте запуски скрипта без ошибок и включите в скрипт дополнительные возможности ведения журнала.
 * Пишите идемпотентные скрипты, чтобы их случайные повторные запуски не приводили к изменениям системы.
 * Выполняемые скрипты не должны запрашивать ввод данных пользователем.
@@ -113,16 +113,16 @@ ms.locfileid: "76156562"
 | Имя | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | версия_API | 2019-03-01 | Дата |
-| publisher | Microsoft.Compute.Extensions | string |
-| type | CustomScript | string |
-| typeHandlerVersion | 2.1 | int |
+| publisher | Microsoft.Compute.Extensions | строка |
+| type | CustomScript | строка |
+| typeHandlerVersion | 2.1 | INT |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массиве |
-| commandToExecute (пример) | MyPythonScript.py Python \<> My-Param1 | string |
-| скрипт | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
+| commandToExecute (пример) | MyPythonScript.py Python \<> My-Param1 | строка |
+| скрипт | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
 | skipDos2Unix (например) | false | Логическое |
 | метка времени (например) | 123456789 | 32-разрядное целое число |
-| storageAccountName (пример) | examplestorageacct | string |
-| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
+| storageAccountName (пример) | examplestorageacct | строка |
+| storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 | managedIdentity (например,) | {} или {"clientId": "31b403aa-c364-4240-A7FF-d85fb6cd7232"} или {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b"} | объект JSON |
 
 ### <a name="property-value-details"></a>Сведения о значениях свойств
@@ -216,7 +216,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 
 Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте для поля "managedidentity" пустой объект JSON. 
 
-> Пример:
+> Пример
 >
 > ```json
 > {
@@ -228,7 +228,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 
 Чтобы использовать назначенное пользователем удостоверение на целевой виртуальной машине или VMSS, настройте в поле "managedidentity" идентификатор клиента или идентификатор объекта управляемого удостоверения.
 
-> Примеры.
+> Примеры:
 >
 > ```json
 > {
@@ -283,7 +283,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 >[!NOTE]
 >В именах свойств учитывается регистр. Чтобы избежать проблем с развертыванием, используйте имена, как показано ниже.
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 При использовании Azure CLI для выполнения расширения пользовательских сценариев создайте один или несколько файлов конфигурации. Как минимум, требуется commandToExecute.
 
 ```azurecli
@@ -305,7 +305,7 @@ az vm extension set \
   --protected-settings '{"fileUris": ["https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"],"commandToExecute": "./config-music.sh"}'
 ```
 
-### <a name="azure-cli-examples"></a>Примеры с использованием интерфейса командной строки Azure
+### <a name="azure-cli-examples"></a>Примеры использования интерфейса командной строки Azure
 
 #### <a name="public-configuration-with-script-file"></a>Открытая конфигурация с файлом сценария
 
@@ -376,7 +376,7 @@ az vm extension set \
   --protected-settings ./protected-config.json
 ```
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 Расширение пользовательских сценариев при выполнении создает или загружает сценарий в каталог, как показано в примере ниже. Выходные данные команды также сохраняются в этот каталог в файлах `stdout` и `stderr`.
 
 ```bash

@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 09/30/2019
 ms.author: juliako
-ms.openlocfilehash: c1b72f2a84f8cafa1767639cae64fb420b0a997c
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: e3937241724aab63f770ad56cbf96d2e1b45f00e
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546050"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251354"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Динамические события и динамические выходные данные в службах мультимедиа
 
@@ -28,13 +28,13 @@ ms.locfileid: "76546050"
 > [!TIP]
 > Для клиентов, выполняющих миграцию из API-интерфейсов служб мультимедиа версии 2, активная сущность **события** заменяет **канал** в v2 и **выходные данные в реальном времени** заменяет **программу**.
 
-## <a name="live-events"></a>События в прямом эфире
+## <a name="live-events"></a>Динамические события
 
 [События потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents) отвечают за прием и обработку видеопотоков. При создании интерактивного события создается первичная и вторичная входная конечная точка, которую можно использовать для отправки сигнала в реальном времени с удаленного кодировщика. Удаленный динамический кодировщик отправляет канал вклада в эту входную конечную точку с помощью протокола ввода [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) (фрагментированного MP4). Для протокола приема RTMP содержимое может быть отправлено в виде очистки (`rtmp://`) или безопасно зашифровано в сети (`rtmps://`). Для протокола приема Smooth Streaming поддерживаются следующие схемы URL-адресов: `http://` или `https://`.  
 
 ## <a name="live-event-types"></a>Типы событий потоковой трансляции
 
-[Событие в реальном времени](https://docs.microsoft.com/rest/api/media/liveevents) может быть одним из двух типов: сквозная или динамическая кодировка. Типы задаются во время создания с помощью [лививентенкодингтипе](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventencodingtype):
+Для [события Live](https://docs.microsoft.com/rest/api/media/liveevents) можно задать *транзитный* (локальный динамический кодировщик отправляет поток с несколькими скоростями) или *кодирование в реальном времени* (локальный динамический кодировщик отправляет односкоростной поток). Типы задаются во время создания с помощью [лививентенкодингтипе](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventencodingtype):
 
 * **Лививентенкодингтипе. None**: локальный динамический кодировщик отправляет поток с несколькими скоростями. Принимающий поток проходит через событие Live без дальнейшей обработки. Также называется сквозным режимом.
 * **Лививентенкодингтипе. Standard**. локальный динамический кодировщик отправляет односкоростной поток в Live Event, а службы мультимедиа — несколько потоков с несколькими скоростями. Если веб-канал публикации имеет 720p или более высокое разрешение, Предустановка **Default720p** кодирует набор из 6 пар "разрешение/скорость".
@@ -122,7 +122,7 @@ ms.locfileid: "76546050"
     |Язык|Включить URL-адрес именного|Задание маркера доступа.|
     |---|---|---|
     |REST|[Properties. Ванитюрл](https://docs.microsoft.com/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventinput)|
-    |Интерфейс командной строки|[--именного — URL-адрес](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
+    |CLI|[--именного — URL-адрес](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
     |.NET|[Лививент. Ванитюрл](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent.vanityurl?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
     
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема

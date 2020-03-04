@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 36d6b0cac0321c989fecbc5751d71c744cd83292
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 761011cba71c3907994616904cc854003abda7ee
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77920949"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78245135"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Учебник. обучение и развертывание модели с помощью интерфейса командной строки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "77920949"
 > * Развертывание модели в качестве веб-службы.
 > * Оценка данных с помощью веб-службы
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -128,7 +128,7 @@ az group create --name <resource-group-name> --location <location>
 
 Дополнительные сведения о работе с группами ресурсов см. в разделе [AZ Group](https://docs.microsoft.com//cli/azure/group?view=azure-cli-latest).
 
-## <a name="create-a-workspace"></a>Создать рабочую область
+## <a name="create-a-workspace"></a>Создание рабочей области
 
 Чтобы создать рабочую область, используйте следующую команду. Замените `<workspace-name>` именем, которое вы хотите использовать для этой рабочей области. Замените `<resource-group-name>` именем группы ресурсов:
 
@@ -381,7 +381,7 @@ az ml model deploy -n myservice -m "mymodel:1" --ic inferenceConfig.yml --dc aci
 
 Файл `inferenceConfig.yml` содержит сведения об использовании модели для вывода. Например, он ссылается на скрипт записи (`score.py`) и зависимости программного обеспечения. 
 
-Дополнительные сведения о структуре этого файла см. в статье [Схема конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema). Дополнительные сведения о скриптах ввода см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md#prepare-deployment-artifacts).
+Дополнительные сведения о структуре этого файла см. в статье [Схема конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema). Дополнительные сведения о скриптах ввода см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md#prepare-to-deploy).
 
 `aciDeploymentConfig.yml` описывает среду развертывания, используемую для размещения службы. Конфигурация развертывания зависит от типа вычислений, используемого для развертывания. В этом случае используется экземпляр контейнера Azure. Дополнительные сведения см. в статье [Схема конфигурации развертывания](reference-azure-machine-learning-cli.md#deployment-configuration-schema).
 
@@ -469,7 +469,7 @@ az ml computetarget delete -n cpu
 az group delete -g <resource-group-name> -y
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом Машинное обучение Azure руководстве вы использовали CLI машинного обучения для следующих задач:
 
