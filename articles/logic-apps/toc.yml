@@ -109,7 +109,7 @@
           href: connect-virtual-network-vnet-isolated-environment.md
         - name: Настройка доступа для нескольких сред служб интеграции
           href: connect-virtual-network-vnet-set-up-single-ip-address.md
-        - name: Добавление артефактов в среды службы интеграции
+        - name: Добавление ресурсов в среды службы интеграции
           href: add-artifacts-integration-service-environment-ise.md
         - name: Настройка управляемых клиентом ключей шифрования для сред службы интеграции
           href: customer-managed-keys-integration-service-environment.md
@@ -221,8 +221,6 @@
           href: ../connectors/connectors-create-api-ftp.md
         - name: GitHub
           href: ../connectors/connectors-create-api-github.md
-        - name: Google Диск
-          href: ../connectors/connectors-create-api-googledrive.md
         - name: HTTP
           href: ../connectors/connectors-native-http.md
         - name: HTTP + Swagger

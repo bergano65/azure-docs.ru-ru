@@ -27,12 +27,8 @@
               href: call-endpoint-python.md
         - name: SDK
           items:
-            - name: 'Использование C#'
-              href: sdk-csharp-quick-start.md
-            - name: Использование Python
-              href: sdk-python-quickstart.md
-            - name: Использование Java
-              href: sdk-java-quickstart.md
+            - name: Клиентские библиотеки Пользовательского поиска Bing
+              href: ./quickstarts/client-libraries.md
 - name: Учебники
   items:
     - name: Создание веб-страницы пользовательского поиска
@@ -63,7 +59,7 @@
     - name: Переход по страницам результатов поиска.
       href: ../Bing-Web-Search/paging-search-results.md
       maintainContext: true
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по API Пользовательского автозаполнения Bing
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference'

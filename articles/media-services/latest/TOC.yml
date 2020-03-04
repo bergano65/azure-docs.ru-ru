@@ -103,12 +103,14 @@
           href: live-event-cloud-dvr.md
         - name: Транскрибирование в реальном времени
           href: live-transcription.md
-        - name: Сравнение возможностей
+        - name: Сравнение типов событий трансляции
           href: live-event-types-comparison.md
         - name: Состояния и выставление счетов
           href: live-event-states-billing.md
         - name: Задержка
           href: live-event-latency.md
+        - name: Как стать партнером по локальным кодировщикам
+          href: become-on-premises-encoder-partner.md
         - name: 'Коды ошибок, связанных с трансляцией'
           href: live-event-error-codes.md
     - name: Упаковка и доставка

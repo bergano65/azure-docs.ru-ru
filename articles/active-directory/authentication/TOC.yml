@@ -13,6 +13,8 @@
       href: tutorial-enable-azure-mfa.md
     - name: Включение компонента обратной записи паролей в локальной среде
       href: tutorial-enable-sspr-writeback.md
+    - name: Настройка пользовательских списков заблокированных паролей
+      href: tutorial-configure-custom-password-protection.md
     - name: Интеграция службы защиты идентификации Azure AD
       href: tutorial-risk-based-sspr-mfa.md
 - name: Основные понятия
@@ -108,8 +110,6 @@
           href: howto-registration-mfa-sspr-combined-troubleshoot.md
     - name: Защита паролей Azure AD
       items:
-        - name: Настройка списка запрещенных паролей
-          href: howto-password-ban-bad-configure.md
         - name: Интеграция с локальной средой
           items:
             - name: Развертывание защиты паролем Azure AD
