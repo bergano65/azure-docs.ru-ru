@@ -112,8 +112,6 @@
       href: sap-hana-backup-guide.md
     - name: Резервное копирование SAP HANA на уровне файлов
       href: sap-hana-backup-file-level.md
-    - name: Резервные копии моментальных снимков хранилища SAP HANA
-      href: sap-hana-backup-storage-snapshots.md
 - name: Использование SAP NetWeaver и Business One на виртуальных машинах Azure
   items:
     - name: Контрольный список для планирования и развертывания рабочей нагрузки SAP

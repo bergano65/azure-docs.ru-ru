@@ -4,7 +4,7 @@
   items:
     - name: Что такое Каталог данных?
       href: overview.md
-- name: Краткое руководство
+- name: Краткие руководства
   items:
     - name: Создание Каталога данных Azure
       href: data-catalog-get-started.md
@@ -22,9 +22,9 @@
       href: data-catalog-adopting-data-catalog.md
     - name: Предварительные требования
       href: data-catalog-prerequisites.md
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: data-catalog-frequently-asked-questions.md
-- name: Практическое руководство
+- name: Инструкции
   items:
     - name: Регистрация источников данных
       href: data-catalog-how-to-register.md
@@ -50,9 +50,9 @@
       href: data-catalog-how-to-secure-catalog.md
     - name: Просмотр связанных ресурсов данных
       href: data-catalog-how-to-view-related-data-assets.md
-    - name: Устранение неполадок
+    - name: Диагностика
       href: troubleshoot-policy-configuration.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Примеры кода
       href: data-catalog-samples.md
@@ -60,7 +60,7 @@
       href: /rest/api/datacatalog/
     - name: Справочник по синтаксису поиска
       href: /rest/api/datacatalog/data-catalog-search-syntax-reference
-    - name: 'Понятия, используемые разработчиками'
+    - name: Основные понятия разработчиков
       href: data-catalog-developer-concepts.md
 - name: Ресурсы
   items:

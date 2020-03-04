@@ -136,7 +136,7 @@
           href: provision-throughput-autopilot.md
         - name: Часто задаваемые вопросы о модели "Автопилот"
           href: autopilot-faq.md
-    - name: Справочник по SQL-запросам
+    - name: SQL-запрос
       items:
         - name: Начало работы
           displayName: 'sql query, query basics'
@@ -437,6 +437,9 @@
             - name: Индексирование геопространственных данных
               displayName: 'geospatial, spatial, index'
               href: sql-query-geospatial-index.md
+        - name: Дата и время
+          displayName: 'datetime, date, time'
+          href: working-with-dates.md
         - name: Параметризованный запрос
           displayName: 'parameterized query, parameterized, parameter, parameters'
           href: sql-query-parameterized-queries.md
@@ -464,10 +467,6 @@
             - name: Политики индексирования
               displayName: 'consistent, none'
               href: index-policy.md
-        - name: Типы данных
-          items:
-            - name: Дата и время
-              href: working-with-dates.md
         - name: Срок жизни
           displayName: 'delete, delete data, ttl'
           href: time-to-live.md

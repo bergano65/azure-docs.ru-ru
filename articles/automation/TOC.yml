@@ -84,7 +84,7 @@
             - name: Запуск модуля runbook с помощью веб-перехватчика
               href: automation-webhooks.md
             - name: Настройка входных параметров runbook
-              href: automation-runbook-input-parameters.md
+              href: runbook-input-parameters.md
             - name: Дочерние модули runbook
               href: automation-child-runbooks.md
             - name: Передача объекта JSON в модуль runbook службы автоматизации Azure

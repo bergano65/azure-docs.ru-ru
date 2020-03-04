@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 02/03/2020
+ms.date: 03/02/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 922e8a71a22db975685cb82bbd51a125c619ccf2
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 17d391a7e6b8ef0558fb73afe363cd96deb60a7d
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989504"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78262299"
 ---
 ### <a name="regions"></a>Какие регионы доступны?
 
@@ -30,6 +30,9 @@ ms.locfileid: "76989504"
 ### <a name="rdpssh"></a>Нужен ли клиент RDP или SSH?
 
 Для подключения по протоколу RDP или SSH к виртуальной машине Azure на портале Azure клиент RDP или SSH не нужен. Используйте [портал Azure](https://portal.azure.com), чтобы подключиться к своей виртуальной машине по протоколу RDP или SSH непосредственно в браузере.
+
+### <a name="rdscal"></a>Требуется ли для службы "Бастион Azure" клиентская лицензия RDS для администрирования на размещенных в Azure виртуальных машинах?
+Нет, для предоставления службе "Бастион Azure" доступа к виртуальным машинам Windows Server [клиентская лицензия RDS](https://www.microsoft.com/en-us/p/windows-server-remote-desktop-services-cal/dg7gmgf0dvsv?activetab=pivot:overviewtab) не нужна при использовании исключительно для администрирования.
 
 ### <a name="agent"></a>Нужно ли запускать агент на виртуальной машине Azure?
 

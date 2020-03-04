@@ -5,6 +5,7 @@
     - name: Что такое Azure Front Door Service?
       href: front-door-overview.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание профиля Front Door
       href: quickstart-create-front-door.md
@@ -38,7 +39,7 @@
       href: front-door-http-headers-protocol.md
     - name: Балансировка нагрузки с помощью набора служб Azure для предоставления приложения
       href: front-door-lb-with-azure-app-delivery-suite.md
-    - name: Мониторинг
+    - name: Наблюдение
       href: front-door-diagnostics.md
     - name: Архитектура решений для маршрутизации
       href: front-door-routing-architecture.md
@@ -48,7 +49,7 @@
       href: front-door-url-rewrite.md
     - name: Перенаправление URL-адреса
       href: front-door-url-redirect.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Перенаправление трафика
       items:
@@ -58,17 +59,17 @@
       items:
         - name: Подключение корневого или вершинного домена
           href: front-door-how-to-onboard-apex-domain.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Устранение проблем с маршрутизацией
           href: front-door-troubleshoot-routing.md
         - name: Разрешенные центры сертификации
           href: front-door-troubleshoot-allowed-ca.md
-- name: Часто задаваемые вопросы
+- name: ВОПРОСЫ И ОТВЕТЫ
   items:
     - name: Часто задаваемые вопросы о службе Front Door
       href: front-door-faq.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/ext/front-door/

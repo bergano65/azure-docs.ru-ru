@@ -45,6 +45,12 @@
               href: nat-overview.md
             - name: Ресурс
               href: nat-gateway-resource.md
+            - name: Оповещения и метрики
+              href: nat-metrics.md
+            - name: Диагностика
+              href: troubleshoot-nat.md
+        - name: Маршрутизация
+          href: virtual-networks-udr-overview.md
         - name: Взаимодействие компонентов при подключении к серверной части
           items:
             - name: Вводная часть и сведения о настройке теста
@@ -75,20 +81,20 @@
           href: ipv6-public-ip-address-prefix.md
     - name: Безопасность
       items:
-        - name: Защита от атак DDoS
-          href: ddos-protection-overview.md
-        - name: Сетевые политики Kubernetes
-          href: kubernetes-network-policies.md
-        - name: Маршрутизация
-          href: virtual-networks-udr-overview.md
-        - name: Группы безопасности
+        - name: Группы безопасности сети
           href: security-overview.md
+        - name: Группы безопасности приложений
+          href: application-security-groups.md
         - name: Теги служб
           href: service-tags-overview.md
         - name: Конечные точки служб
           href: virtual-network-service-endpoints-overview.md
         - name: Политики конечной точки службы
           href: virtual-network-service-endpoint-policies-overview.md
+        - name: Сетевые политики Kubernetes
+          href: kubernetes-network-policies.md
+        - name: Защита от атак DDoS
+          href: ddos-protection-overview.md
         - name: TAP виртуальной сети
           href: virtual-network-tap-overview.md
     - name: Подсети
@@ -131,6 +137,18 @@
               href: tutorial-create-validate-nat-gateway-powershell.md
             - name: "Создание и проверка шлюза NAT\_— CLI"
               href: tutorial-create-validate-nat-gateway-cli.md
+        - name: Маршрутизация сетевого трафика
+          items:
+            - name: Портал Azure
+              href: tutorial-create-route-table-portal.md
+            - name: Azure PowerShell
+              href: tutorial-create-route-table-powershell.md
+            - name: Azure CLI
+              href: tutorial-create-route-table-cli.md
+            - name: Ansible
+              href: /azure/ansible/ansible-create-configure-route-table
+            - name: Управление таблицами маршрутов
+              href: manage-route-table.md
         - name: Управление сетевыми картами
           href: virtual-network-network-interface.md
         - name: Управление виртуальной сетью
@@ -257,18 +275,6 @@
                   href: virtual-network-service-endpoint-policies-powershell.md
                 - name: Azure CLI
                   href: virtual-network-service-endpoint-policies-cli.md
-        - name: Маршрутизация сетевого трафика
-          items:
-            - name: Портал Azure
-              href: tutorial-create-route-table-portal.md
-            - name: Azure PowerShell
-              href: tutorial-create-route-table-powershell.md
-            - name: Azure CLI
-              href: tutorial-create-route-table-cli.md
-            - name: Ansible
-              href: /azure/ansible/ansible-create-configure-route-table
-            - name: Управление таблицами маршрутов
-              href: manage-route-table.md
         - name: Управление защитой от атак DDoS
           href: manage-ddos-protection.md
         - name: Подключение партнеров к стандарту Защиты от атак DDoS
