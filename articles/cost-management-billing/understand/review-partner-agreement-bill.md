@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: dd0d53fb89df5372d3974b85cdb659f6cfbbedd8
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 61d47c2f308555265ccabad4d7456026ee9a639c
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77199098"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78299318"
 ---
 # <a name="tutorial-review-your-microsoft-partner-agreement-invoice"></a>Руководство по Просмотр счета в рамках Соглашения с партнером Майкрософт
 
@@ -38,7 +38,7 @@ ms.locfileid: "77199098"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-- Войдите на портал Azure по адресу https://portal.azure.com.
+- Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 

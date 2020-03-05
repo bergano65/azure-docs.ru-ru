@@ -6,15 +6,16 @@ author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 10445aba9c52c5367a8ea03729462d14e2d51085
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: d5086377b0bb7f3ca2ece643f82a4e45156f1955
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707182"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184882"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
@@ -53,7 +54,7 @@ ms.locfileid: "74707182"
 
 Чтобы предоставить приложению, группе Azure AD или пользователю доступ к хранилищу ключей, необходимо сначала получить соответствующий идентификатор ObjectId.
 
-#### <a name="applications"></a>ПРИЛОЖЕНИЯ
+#### <a name="applications"></a>Приложения
 
 ObjectId для приложений соответствует связанному с ними субъекту-службе. Дополнительные сведения о субъектах-службах см. в статье [Объекты субъектов-служб и приложений в Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md). 
 
@@ -222,7 +223,7 @@ Add-AzADGroupMember -TargetGroupObjectId <groupId> -MemberObjectId <objectId>
 
 Приложению также требуется по крайней мере одна роль Системы управления идентификацией и доступом (IAM), назначенная хранилищу ключей. В противном случае оно не сможет войти в систему и завершится ошибкой о недостаточных правах доступа к подписке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Azure Key Vault security: Identity and access management](overview-security.md#identity-and-access-management) (Azure Key Vault security: управление удостоверениями и доступом)
 - [Проверка подлинности в Key Vault с помощью управляемого удостоверения службы приложений](managed-identity.md)

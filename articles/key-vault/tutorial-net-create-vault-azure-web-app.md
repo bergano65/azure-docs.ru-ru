@@ -5,16 +5,17 @@ services: key-vault
 author: msmbaldwin
 manager: rajvijan
 ms.service: key-vault
+ms.subservice: general
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 84256d79ec543d038b4d3d3f3dc6901bbd003871
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: e636ab843a9801097bf770ca12c9d1e512750c91
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003359"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198122"
 ---
 # <a name="tutorial-use-azure-key-vault-with-an-azure-web-app-in-net"></a>Руководство по Использование Azure Key Vault в веб-приложении Azure (.NET)
 
@@ -33,7 +34,7 @@ ms.locfileid: "71003359"
 > * назначение разрешения для веб-приложения;
 > * запуск веб-приложения в Azure.
 
-Перед началом работы ознакомьтесь с [основными понятиями службы Key Vault](basic-concepts.md). 
+Перед началом работы ознакомьтесь c [основными понятиями службы Key Vault](basic-concepts.md). 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -42,7 +43,7 @@ ms.locfileid: "71003359"
 * Для Windows: [пакет SDK для .NET Core 2.1 или более поздней версии](https://www.microsoft.com/net/download/windows).
 * Для Mac: [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/)
 * Для Windows, Mac и Linux:
-  * [Git](https://git-scm.com/downloads)
+  * [Git](https://git-scm.com/downloads);
   * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
   * [.NET Core](https://www.microsoft.com/net/download/dotnet-core/2.1)
 
@@ -83,7 +84,7 @@ az login
 
 Чтобы создать хранилище ключей в группе ресурсов, укажите следующие сведения:
 
-* Имя хранилища ключей: строка длиной от 3 до 24 символов, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
+* Имя хранилища ключей. Строка длиной от 3 до 24 символов, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
 * Имя группы ресурсов
 * Расположение. **Западная часть США**
 
@@ -237,7 +238,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 
 1. В Visual Studio выберите проект **key-vault-dotnet-core-quickstart**.
 2. Выберите **Опубликовать** > **Начало**.
-3. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
 После запуска приложения вы должны увидеть, что оно может получать значение секрета.
 
@@ -246,7 +247,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Вы можете удалить виртуальную машину и хранилище ключей, если они больше не нужны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 >[!div class="nextstepaction"]
 >[Руководство разработчика хранилища ключей Azure](key-vault-developers-guide.md)

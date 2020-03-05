@@ -1,18 +1,17 @@
 ---
 title: Начало работы со службой Log Analytics в Azure Monitor | Документация Майкрософт
 description: В этой статье описано, как использовать портал аналитики для написания запросов в Log Analytics.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 07/19/2019
-ms.openlocfilehash: 1117ebbb8d2c3b133156c6b63a0ab13185f9f4a5
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 1cf1695db50e6aee2a5dae24ed5231fdda7c12de
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933055"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670242"
 ---
 # <a name="get-started-with-log-analytics-in-azure-monitor"></a>Начало работы со службой Log Analytics в Azure Monitor
 
@@ -76,7 +75,7 @@ search in (Event) "error"
 ## <a name="understand-the-schema"></a>Изучение схемы
 Схема представляет собой коллекцию таблиц, визуально сгруппированных в логической категории. Некоторые из категорий относятся к решениям мониторинга. Категория _LogManagement_ содержит общие данные, такие как события Windows и Syslog, данные о производительности и пакеты пульса агента.
 
-![Схема](media/get-started-portal/schema.png)
+![схема](media/get-started-portal/schema.png)
 
 В каждой таблице данные упорядочены в столбцы с разными типами данных, которые указаны с помощью значков рядом с именем столбца. Например, таблица _Event_, показанная на снимке экрана, содержит такие столбцы, как _Computer_ с текстовым типом данных, _EventCategory_ с числовым типом данных и _TimeGenerated_ с типом даты и времени.
 
@@ -106,7 +105,7 @@ Event
 
 Щелкните значок "Фильтр" рядом с заголовком столбца, а во всплывающем окне выберите значения, которые _начинаются со_ слова _error_:
 
-![Фильтр](media/get-started-portal/filter.png)
+![Filter](media/get-started-portal/filter.png)
 
 
 ## <a name="sort-and-group-results"></a>Сортировка и группирование результатов
@@ -196,6 +195,6 @@ Event
 - Power BI: экспортируйте результаты в Power BI. Дополнительные сведения см. в статье [Импорт данных Log Analytics Azure в Power BI](../../azure-monitor/platform/powerbi.md).
 - Общий доступ к ссылке: на сам запрос можно создать общую ссылку, которую затем можно отправить для выполнения другими пользователями, у которых есть доступ к той же рабочей области.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о написании запросов журнала в Azure Monitor см. в [этой статье](get-started-queries.md).

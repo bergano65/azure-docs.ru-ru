@@ -23,8 +23,8 @@
       href: quick-create-net.md
     - name: ".NET (SDK версии\_3)"
       href: quick-create-net-v3.md
-    - name: Шаблон Resource Manager
-      displayName: ARM
+    - name: Шаблон ARM
+      displayName: Resource Manager
       href: quick-create-template.md
 - name: Учебники
   items:

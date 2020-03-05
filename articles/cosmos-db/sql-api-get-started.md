@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: kirankk
-ms.openlocfilehash: ba8b097dc852ba97d4223ba09f78d1f2cdb568e0
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 2681b2199f321f695bc621ed5580319a5e907b34
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587453"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78274026"
 ---
 # <a name="tutorial-build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Руководство по Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
@@ -146,7 +146,7 @@ ms.locfileid: "77587453"
 
 1. Добавьте указанный далее код, чтобы запустить асинхронную задачу **GetStartedDemoAsync** из метода **Main**. Метод **Main** будет перехватывать исключения и записывать их в консоль.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="Main":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=Main)]
 
 1. Нажмите клавишу F5, чтобы запустить приложение.
 
@@ -160,7 +160,7 @@ ms.locfileid: "77587453"
 
 1. Скопируйте и вставьте метод `CreateDatabaseAsync` ниже метода `GetStartedDemoAsync`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="CreateDatabaseAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=CreateDatabaseAsync&highlight=7)]
 
     Функция `CreateDatabaseAsync` позволяет создать базу данных с идентификатором `FamilyDatabase` (если она не была создана ранее), где идентификатор извлекается из поля `databaseId`.
 
@@ -281,7 +281,7 @@ ms.locfileid: "77587453"
 
 1. Скопируйте и вставьте метод `CreateContainerAsync` ниже метода `CreateDatabaseAsync`. Функция `CreateContainerAsync` позволяет создать контейнер (если он не был создан ранее) с идентификатором `FamilyContainer`. Для идентификатора используется значение из поля `containerId` с разделением по свойству `LastName`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="CreateContainerAsync&highlight":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=CreateContainerAsync&highlight=9)]
 
 1. Скопируйте и вставьте приведенный ниже код, где вы создали экземпляр CosmosClient, для вызова добавленного метода **CreateContainer**.
 
@@ -313,12 +313,12 @@ ms.locfileid: "77587453"
 
 1. Скопируйте и вставьте в `Family.cs` элементы `Family`, `Parent`, `Child`, `Pet` и класс `Address`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Family.cs":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Family.cs)]
 
 
 1. Вернитесь к файлу *Program.cs* и добавьте метод `AddItemsToContainerAsync` после метода `CreateContainerAsync`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="AddItemsToContainerAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=AddItemsToContainerAsync)]
 
 
     Этот код позволяет проверить, есть ли элемент с таким же идентификатором. Мы вставим два элемента: по одному для семей *Андерсен* и *Вейкфилд*.
@@ -348,7 +348,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 1. Скопируйте метод `QueryItemsAsync` и вставьте его после метода `AddItemsToContainerAsync`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="QueryItemsAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=QueryItemsAsync&highlight=10-11,17-18)]
 
 1. Добавьте вызов в ``QueryItemsAsync`` в метод ``GetStartedDemoAsync``.
 
@@ -376,7 +376,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 1. Скопируйте метод `ReplaceFamilyItemAsync` и вставьте его после метода `QueryItemsAsync`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="ReplaceFamilyItemAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=ReplaceFamilyItemAsync&highlight=15)]
 
 1. Добавьте вызов в `ReplaceFamilyItemAsync` в метод `GetStartedDemoAsync`.
 
@@ -405,7 +405,7 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 1. Скопируйте метод `DeleteFamilyItemAsync` и вставьте его после метода `ReplaceFamilyItemAsync`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="DeleteFamilyItemAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=DeleteFamilyItemAsync&highlight=10)]
 
 1. Добавьте вызов в `DeleteFamilyItemAsync` в метод `GetStartedDemoAsync`.
 
@@ -435,11 +435,11 @@ Azure Cosmos DB поддерживает полнофункциональные 
 
 1. Скопируйте метод `DeleteDatabaseAndCleanupAsync` и вставьте его после метода `DeleteFamilyItemAsync`.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="DeleteDatabaseAndCleanupAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=DeleteDatabaseAndCleanupAsync)]
 
 1. Добавьте вызов в ``DeleteDatabaseAndCleanupAsync`` в метод ``GetStartedDemoAsync``.
 
-    :::code language="csharp" source="~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs" id="GetStartedDemoAsync":::
+    [!code-csharp[](~/cosmos-dotnet-getting-started/CosmosGettingStartedTutorial/Program.cs?name=GetStartedDemoAsync&highlight=14)]
 
 1. Нажмите клавишу F5, чтобы запустить приложение.
 

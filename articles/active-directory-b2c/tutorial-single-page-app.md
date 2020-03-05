@@ -1,24 +1,24 @@
 ---
-title: Руководство. включению проверки подлинности в одностраничном приложении
+title: Руководство по включению проверки подлинности в одностраничном приложении
 titleSuffix: Azure AD B2C
 description: Из этого учебника вы узнаете, как с помощью Azure Active Directory B2C обеспечить вход пользователя в систему для одностраничного приложения на базе JavaScript (SPA).
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
-ms.author: marsma
+ms.author: mimart
 ms.date: 10/14/2019
 ms.custom: mvc, seo-javascript-september2019
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: f66d8e229535346525f117d8ebbfb37b893fe022
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 435800d9c6bfd9131d50681a9808f9836104fac0
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849814"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78183352"
 ---
-# <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c-azure-ad-b2c"></a>Руководство. Включение в одностраничном приложении проверки подлинности с помощью Azure Active Directory B2C (Azure AD B2C)
+# <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c-azure-ad-b2c"></a>Руководство по Включение в одностраничном приложении проверки подлинности с помощью Azure Active Directory B2C (Azure AD B2C)
 
 В этом руководстве показано, как использовать Azure Active Directory (Azure Active Directory) B2C для входа и регистрации пользователей в одностраничном приложении (SPA). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 
@@ -51,7 +51,7 @@ ms.locfileid: "76849814"
 
 Для обновления приложения можно использовать текущий интерфейс **Приложения** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
+#### <a name="applications"></a>[Приложения](#tab/applications/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
@@ -61,7 +61,7 @@ ms.locfileid: "76849814"
 1. Щелкните **Сохранить**.
 1. На странице свойств запишите **идентификатор приложения**. Идентификатор приложения будет использован на более позднем этапе, когда вы обновите код в одностраничном веб-приложении.
 
-#### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий клиент Azure AD B2C.

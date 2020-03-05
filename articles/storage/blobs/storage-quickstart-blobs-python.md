@@ -7,18 +7,18 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 03f298b49e6a1eba84e8adf5ca6039df0bfe1abd
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 1eff8bbd7ce601a0145bb3c6c05bc09ee0024daf
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906419"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196762"
 ---
 # <a name="quickstart-manage-blobs-with-python-v12-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12
 
 Из этого краткого руководства вы узнаете, как управлять большими двоичными объектами с использованием Python. Большие двоичные объекты — это объекты, которые могут содержать большие объемы текстовых или двоичных данных, включая изображения, документы, потоковое мультимедиа и архивные данные. Вы научитесь отправлять и скачивать большие двоичные объекты, получать список таких объектов, а также создавать и удалять контейнеры.
 
-[Справочная документация по API](/python/api/azure-storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob) | [Пакет (Python Package Index)](https://pypi.org/project/azure-storage-blob/) | [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
+[Справочная документация по API](/python/api/azure-storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob) | [Пакет (Python Package Index)](https://pypi.org/project/azure-storage-blob/) | [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-python?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

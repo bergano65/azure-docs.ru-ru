@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 2a1a9b1973ded5db7182fb1898fc7222904c39c3
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 09002a8c0999dc137ca3386ca7392a566d323e8a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863967"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196065"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET
 
@@ -29,11 +29,11 @@ ms.locfileid: "75863967"
 * скачивание большого двоичного объекта на локальный компьютер;
 * Удаление контейнера
 
-[Справочная документация по API](/dotnet/api/azure.storage.blobs) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs) | [пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs) | [примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
+[Справочная документация по API](/dotnet/api/azure.storage.blobs) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs) | [пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs) | [примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-dotnet?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#blob-samples)
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
@@ -85,7 +85,6 @@ dotnet add package Azure.Storage.Blobs
 Вот этот код:
 
 ```csharp
-using Azure.Storage;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using System;
@@ -181,7 +180,7 @@ BlobContainerClient containerClient = await blobServiceClient.CreateBlobContaine
 
 1. Создает текстовый файл в локальном каталоге *data*.
 1. Возвращает ссылку на объект [BlobClient](/dotnet/api/azure.storage.blobs.blobclient), вызывая метод [GetBlobClient](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobclient) для контейнера из раздела [Создание контейнера](#create-a-container).
-1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [UploadAsync](/dotnet/api/azure.storage.blobs.blobclient.uploadasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [UploadAsync](/dotnet/api/azure.storage.blobs.blobclient.uploadasync#Azure_Storage_Blobs_BlobClient_UploadAsync_System_IO_Stream_System_Boolean_System_Threading_CancellationToken_). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
 
 Добавьте следующий код в конец метода `Main`.
 
@@ -201,7 +200,7 @@ Console.WriteLine("Uploading to Blob storage as blob:\n\t {0}\n", blobClient.Uri
 
 // Open the file and upload its data
 using FileStream uploadFileStream = File.OpenRead(localFilePath);
-await blobClient.UploadAsync(uploadFileStream);
+await blobClient.UploadAsync(uploadFileStream, true);
 uploadFileStream.Close();
 ```
 

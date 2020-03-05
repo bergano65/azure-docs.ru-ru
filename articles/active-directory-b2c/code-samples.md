@@ -2,20 +2,20 @@
 title: Примеры кода Azure Active Directory B2C | Документация Майкрософт
 description: Примеры кода для мобильных, классических и одностраничных веб-приложений, а также веб-приложений Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
-ms.author: marsma
+ms.author: mimart
 ms.date: 01/29/2020
 ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: d0a5790e84364bf34072977d5d3976fd880996bb
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: fc37e594984aa4c13fc9e770129a0423ba512737
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77620589"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78189690"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
 
@@ -29,7 +29,7 @@ ms.locfileid: "77620589"
 | [android-native-msal](https://github.com/Azure-Samples/active-directory-b2c-android-native-msal) | Простое приложение Android для аутентификации пользователей с помощью Azure Active Directory B2C и MSAL и получения доступа к веб-API с помощью полученных маркеров. |
 | [ios-native-appauth](https://github.com/Azure-Samples/active-directory-b2c-ios-native-appauth) | Создаваемое с помощью сторонних библиотек приложение iOS на Objective-C для аутентификации пользователей Microsoft Identity в службе удостоверений Microsoft Azure AD B2C. |
 | [android-native-appauth](https://github.com/Azure-Samples/active-directory-b2c-android-native-appauth) | Создаваемое с помощью сторонних библиотек приложение Android для аутентификации пользователей Microsoft Identity в службе удостоверений Microsoft Azure AD B2C и вызова веб-API с помощью маркеров доступа OAuth 2.0. |
-| [dotnet-desktop](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop) | Классическое приложение .NET (WPF) для входа пользователей с помощью Azure AD B2C, получения маркера доступа с помощью MSAL.NET и вызова API. | 
+| [dotnet-desktop](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop) | Классическое приложение .NET (WPF) для входа пользователей с помощью Azure AD B2C, получения маркера доступа с помощью MSAL.NET и вызова API. |
 | [xamarin-native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Простое приложение Xamarin Forms для аутентификации пользователей с помощью Azure Active Directory B2C и MSAL и получения доступа к веб-API с помощью полученных маркеров. |
 
 ## <a name="web-apps-and-apis"></a>Веб-приложения и API
@@ -46,5 +46,5 @@ ms.locfileid: "77620589"
 
 | Образец | Описание |
 |--------| ----------- |
-| [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Одностраничное приложение (SPA) для вызова веб-API. Аутентификация осуществляется с помощью Azure AD B2C и MSAL.js. | 
+| [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Одностраничное приложение (SPA) для вызова веб-API. Аутентификация осуществляется с помощью Azure AD B2C и MSAL.js. |
 | [javascript-hellojs-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-hellojs-singlepageapp) | Одностраничное приложение, реализуемое с использованием серверного веб-API ASP.NET для регистрации и входа пользователей с помощью Azure AD B2C и вызова веб-API с помощью маркера доступа OAuth 2.0. |

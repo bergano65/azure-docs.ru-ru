@@ -83,7 +83,7 @@
           href: pim-resource-roles-configure-role-settings.md
         - name: Настройка оповещений
           href: pim-resource-roles-configure-alerts.md
-        - name: Просмотр журналов действий и аудита
+        - name: Просмотр журнала аудита
           href: azure-pim-resource-rbac.md
         - name: Применение пользовательских ролей
           href: pim-resource-roles-custom-role-policy.md

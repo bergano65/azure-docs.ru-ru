@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 26a427baddc99fa702b638c36b5378750364c849
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 988bd6dbb157276a9ee37c8ca3051a808f8b6499
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587028"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77661079"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-cli-and-test-the-nat-service"></a>Руководство по созданию шлюза NAT с помощью Azure CLI и проверке NAT
 
@@ -62,7 +62,7 @@ ms.locfileid: "77587028"
 
 ### <a name="create-a-public-ip-prefix"></a>Создание префикса общедоступного IP-адреса
 
-Со шлюзом NAT можно использовать один или несколько ресурсов общедоступных IP-адресов, префиксов общедоступных IP-адресов или оба варианта. Для демонстрации в этот сценарий будет добавлен ресурс префикса общедоступного IP-адреса.   Выполните команду [az network public-ip prefix create](https://docs.microsoft.com/cli/azure/network/public-ip-prefix) для создания ресурса префикса общедоступного IP-адреса с именем **myPublicIPprefixsource** в группе **myResourceGroupNAT**.
+Со шлюзом NAT можно использовать один или несколько ресурсов общедоступных IP-адресов, префиксов общедоступных IP-адресов или оба варианта. Для демонстрации в этот сценарий будет добавлен ресурс префикса общедоступного IP-адреса.   Выполните команду [az network public-ip prefix create](/cli/azure/network/public-ip/prefix?view=azure-cli-latest#az-network-public-ip-prefix-create) для создания ресурса префикса общедоступного IP-адреса с именем **myPublicIPprefixsource** в группе **myResourceGroupNAT**.
 
 ```azurecli-interactive
   az network public-ip prefix create \

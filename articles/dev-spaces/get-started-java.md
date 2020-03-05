@@ -8,12 +8,12 @@ ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Java в службе Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 2c086c952528d5521ace44d56eaf11c14ac1cabb
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: d4e335826090d4ca4819c7466c7231cceb0d5bce
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77602841"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252445"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-java-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и Java в Azure Dev Spaces
 
@@ -32,7 +32,7 @@ ms.locfileid: "77602841"
 ### <a name="sign-in-to-azure-cli"></a>Вход в Azure CLI
 Войдите в Azure. В окне терминала введите следующую команду:
 
-```cmd
+```azurecli
 az login
 ```
 
@@ -42,14 +42,14 @@ az login
 #### <a name="if-you-have-multiple-azure-subscriptions"></a>Если у вас несколько подписок Azure...
 Можно просматривать свои подписки, выполнив следующую команду: 
 
-```cmd
+```azurecli
 az account list --output table
 ```
 
 Найдите подписку со значением *True* для параметра *IsDefault*.
 Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
 
-```cmd
+```azurecli
 az account set --subscription <subscription ID>
 ```
 
@@ -57,13 +57,13 @@ az account set --subscription <subscription ID>
 
 В командной строке создайте группу ресурсов в [регионе, который поддерживает Azure Dev Spaces][supported-regions].
 
-```cmd
+```azurecli
 az group create --name MyResourceGroup --location <region>
 ```
 
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
-```cmd
+```azurecli
 az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-keys
 ```
 
@@ -73,7 +73,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-key
 
 В окне командной строки Azure CLI введите приведенную ниже команду, используя группу ресурсов, в которую входит кластер AKS, и имя кластера AKS. Эта команда настраивает в кластере поддержку Azure Dev Spaces.
 
-   ```cmd
+   ```azurecli
    az aks use-dev-spaces -g MyResourceGroup -n MyAKS
    ```
 

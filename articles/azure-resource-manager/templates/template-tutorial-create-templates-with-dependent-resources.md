@@ -5,14 +5,14 @@ author: mumian
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: f73a35b9c04b8b520be4f0adeb8ddb4142499075
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: f60f248ec3fbbe5adfb61bf361546d1d5e238f54
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834365"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250199"
 ---
-# <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами
+# <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство по Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
 Узнайте, как создать шаблон Azure Resource Manager для развертывания нескольких ресурсов и настроить порядок развертывания. После создания шаблона можно развернуть шаблон с помощью Cloud Shell с портала Azure.
 
@@ -29,14 +29,14 @@ ms.locfileid: "75834365"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
 * Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
-    ```azurecli-interactive
+    ```console
     openssl rand -base64 32
     ```
     Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.

@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве показано, как использовать Azure Dev Spaces и командную строку для разработки приложения в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 2d3a498d72264d3084e45202b7daa99806d45ce3
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 974f0039bb16dc685bb056e279df63933e358edd
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77602614"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78245250"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Разработка приложения в Kubernetes с помощью Azure Dev Spaces
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -28,7 +28,7 @@ ms.locfileid: "77602614"
 
 Вам нужно создать кластер AKS в [поддерживаемом регионе][supported-regions]. Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
 
-```cmd
+```azurecli
 az group create --name MyResourceGroup --location eastus
 az aks create -g MyResourceGroup -n MyAKS --location eastus --generate-ssh-keys
 ```
@@ -40,9 +40,11 @@ az aks create -g MyResourceGroup -n MyAKS --location eastus --generate-ssh-keys
 > [!NOTE]
 > Команда `use-dev-spaces` также установит интерфейс командной строки Azure Dev Spaces, если он еще не установлен. Интерфейс командной строки Azure Dev Spaces невозможно установить в Azure Cloud Shell.
 
-```cmd
-$ az aks use-dev-spaces -g MyResourceGroup -n MyAKS
+```azurecli
+az aks use-dev-spaces -g MyResourceGroup -n MyAKS
+```
 
+```output
 'An Azure Dev Spaces Controller' will be created that targets resource 'MyAKS' in resource group 'MyResourceGroup'. Continue? (y/N): y
 
 Creating and selecting Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup' that targets resource 'MyAKS' in resource group 'MyResourceGroup'...2m 24s
@@ -145,7 +147,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ## <a name="clean-up-your-azure-resources"></a>Очистка ресурсов Azure
 
-```cmd
+```azurecli
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 

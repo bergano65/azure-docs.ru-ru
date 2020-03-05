@@ -3,12 +3,12 @@ title: Руководство. Создание контроллера вход�
 description: В этом руководстве показано, как создать кластер Kubernetes с помощью Службы Azure Kubernetes со Шлюзом приложений в качестве контроллера входящего трафика
 ms.topic: tutorial
 ms.date: 11/13/2019
-ms.openlocfilehash: b16b0a40d14ecde87b2637976299d05d37d706f3
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: 14b8f6ba74a06c126da239671cbb2053df19af7d
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77472270"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251759"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Руководство по Создание контроллера входящего трафика Шлюза приложений в Службе Azure Kubernetes
 
@@ -765,7 +765,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 
 Замените заполнитель соответствующим значением. Будут удалены все ресурсы в указанной группе ресурсов.
 
-```bash
+```azurecli
 az group delete -n <resource-group>
 ```
 

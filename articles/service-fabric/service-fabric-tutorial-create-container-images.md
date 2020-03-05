@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: fa7f7a57e16b6ba70535d3f07ebd69abf0784171
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fe06da759a1ad42ef5cef888f98c440cdfb9569c
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465440"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252791"
 ---
-# <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство. Создание образов контейнеров в кластере Service Fabric на платформе Linux
+# <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство по Создание образов контейнеров в кластере Service Fabric на платформе Linux
 
 Это руководство представляет собой первую часть цикла руководств, посвященного использованию контейнеров в кластере Service Fabric на платформе Linux. В этом руководстве выполняется подготовка многоконтейнерного приложения к использованию в Service Fabric. В последующих руководствах созданные образы используются как часть приложения Service Fabric. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -31,7 +31,7 @@ ms.locfileid: "75465440"
 > * [создание и развертывание приложения Service Fabric с использованием контейнеров](service-fabric-tutorial-package-containers.md);
 > * [отработка отказа и масштабирование в Service Fabric](service-fabric-tutorial-containers-failover.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Настроенная среда разработки Linux для Service Fabric. Следуйте [этим](service-fabric-get-started-linux.md) инструкциям по настройке среды Linux.
 * Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
@@ -80,13 +80,13 @@ tiangolo/uwsgi-nginx-flask   python3.6           590e17342131        5 days ago 
 
 Сначала выполните команду **az login**, чтобы войти в учетную запись Azure.
 
-```bash
+```azurecli
 az login
 ```
 
 Затем введите команду **az account**, чтобы выбрать подписку для создания реестра контейнеров Azure. Вместо <subscription_id> нужно указать идентификатор подписки Azure.
 
-```bash
+```azurecli
 az account set --subscription <subscription_id>
 ```
 
@@ -94,13 +94,13 @@ az account set --subscription <subscription_id>
 
 Создайте группу ресурсов с помощью команды **az group create**. В этом примере создается группа ресурсов *myResourceGroup* в регионе *westus*.
 
-```bash
+```azurecli
 az group create --name <myResourceGroup> --location westus
 ```
 
 Создайте реестр контейнеров Azure с помощью команды**az acr create**. Замените \<acrName > именем реестра контейнеров, который нужно создать в подписке. Это имя может включать только буквы и цифры и должно быть уникальным.
 
-```bash
+```azurecli
 az acr create --resource-group <myResourceGroup> --name <acrName> --sku Basic --admin-enabled true
 ```
 
@@ -110,7 +110,7 @@ az acr create --resource-group <myResourceGroup> --name <acrName> --sku Basic --
 
 Войдите в свой экземпляр реестра контейнеров Azure, прежде чем отправлять в него образы. Используйте команду **az acr login**, чтобы выполнить операцию. Укажите уникальное имя реестра контейнеров, заданное при его создании.
 
-```bash
+```azurecli
 az acr login --name <acrName>
 ```
 
@@ -136,13 +136,13 @@ tiangolo/uwsgi-nginx-flask   python3.6           590e17342131        5 days ago 
 
 Чтобы получить имя loginServer, выполните следующую команду.
 
-```bash
+```azurecli
 az acr show --name <acrName> --query loginServer --output table
 ```
 
 Эта команда выводит таблицу с приведенными ниже результатами. Этот результат будет использоваться для добавления тега к образу **azure-vote-front**, прежде чем он будет отправлен в реестр контейнеров на следующем шаге.
 
-```bash
+```output
 Result
 ------------------
 <acrName>.azurecr.io
@@ -158,7 +158,7 @@ docker tag azure-vote-front <acrName>.azurecr.io/azure-vote-front:v1
 
 Выходные данные:
 
-```bash
+```output
 REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
 azure-vote-front                       latest              052c549a75bf        23 minutes ago      708MB
 <acrName>.azurecr.io/azure-vote-front   v1                  052c549a75bf       23 minutes ago      708MB
@@ -182,13 +182,13 @@ docker push <acrName>.azurecr.io/azure-vote-front:v1
 
 Чтобы получить список образов, отправленных в реестр контейнеров Azure, выполните команду [az acr repository list](/cli/azure/acr/repository). Укажите в команде имя нужного экземпляра ACR.
 
-```bash
+```azurecli
 az acr repository list --name <acrName> --output table
 ```
 
 Выходные данные:
 
-```bash
+```output
 Result
 ----------------
 azure-vote-front

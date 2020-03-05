@@ -4,12 +4,12 @@ description: Узнайте, как управлять динамическим�
 keywords: ansible, azure, разработка и операции, bash, cloudshell, динамические списки
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: d2ebf202cfc9f94b28fc7a512e1fea452401aec6
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: cd225dcf8a0c307d49e985817b71c491559edb14
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77193605"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247856"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Руководство по настройке динамических списков ресурсов Azure с помощью Ansible
 
@@ -91,25 +91,25 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. Получите скрипт `azure_rm.py`, используя команду `wget` GNU:
 
-    ```azurecli-interactive
+    ```python
     wget https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/azure_rm.py
     ```
 
 1. Измените разрешения на доступ к скрипту `azure_rm.py`, используя команду `chmod`: В следующей команде используется параметр `+x`, чтобы разрешить выполнение указанного файла (`azure_rm.py`):
 
-    ```azurecli-interactive
+    ```python
     chmod +x azure_rm.py
     ```
 
 1. Подключитесь к своей группе ресурсов, используя [команду Ansible](https://docs.ansible.com/ansible/2.4/ansible.html): 
 
-    ```azurecli-interactive
+    ```python
     ansible -i azure_rm.py ansible-inventory-test-rg -m ping 
     ```
 
 1. Когда подключение будет установлено, отобразятся результаты, аналогичные приведенным ниже выходным данным:
 
-    ```Output
+    ```output
     ansible-inventory-test-vm1 | SUCCESS => {
         "changed": false,
         "failed": false,
@@ -147,7 +147,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. При выполнении предыдущей команды может произойти приведенная ниже ошибка.
 
-    ```Output
+    ```output
     Failed to connect to the host via ssh: Host key verification failed.
     ```
     
@@ -159,7 +159,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. После запуска сборника схем отобразятся результаты, как показано ниже.
   
-    ```Output
+    ```output
     ansible-inventory-test-vm1_0324 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
     ansible-inventory-test-vm2_8971 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
     ```
@@ -170,7 +170,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 - После установки тег нужно "включить". Один из способов включения тега — экспортировать его в переменную среды `AZURE_TAGS` с помощью команды `export`.
 
-    ```azurecli-interactive
+    ```console
     export AZURE_TAGS=nginx
     ```
     
@@ -182,7 +182,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
     
     Теперь отображается только одна виртуальная машина (тег которой совпадает со значением, экспортированным в переменную среды `AZURE_TAGS`).
 
-    ```Output
+    ```output
        ansible-inventory-test-vm1 | SUCCESS => {
         "changed": false,
         "failed": false,
@@ -194,7 +194,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 - Выполните команду `ansible-inventory -i myazure_rm.yml --graph`, чтобы получить следующие выходные данные:
 
-    ```Output
+    ```output
         @all:
           |--@tag_Ansible_nginx:
           |  |--ansible-inventory-test-vm1_9e2f
@@ -215,7 +215,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. Создайте файл `nginx.yml`.
 
-   ```azurecli-interactive
+   ```console
    code nginx.yml
    ```
 
@@ -255,7 +255,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 
-    ```Output
+    ```output
     PLAY [Install and start Nginx on an Azure virtual machine] 
 
     TASK [Gathering Facts] 
@@ -285,13 +285,13 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. Подключившись к виртуальной машине `ansible-inventory-test-vm1`, выполните команду [nginx -v](https://nginx.org/en/docs/switches.html), чтобы узнать, установлен ли веб-сервер Nginx.
 
-    ```azurecli-interactive
+    ```console
     nginx -v
     ```
 
 1. После выполнения команды `nginx -v` отобразится версия Nginx (во второй строке). Это обозначает, что Nginx установлен.
 
-    ```Output
+    ```output
     tom@ansible-inventory-test-vm1:~$ nginx -v
 
     nginx version: nginx/1.10.3 (Ubuntu)
@@ -303,7 +303,7 @@ Ansible предоставляет сценарий Python [azure_rm.py](https:/
 
 1. При выполнении предыдущих шагов для виртуальной машины `ansible-inventory-test-vm2` отобразится информационное сообщение о том, где можно получить Nginx (это означает, что этот компонент еще не установлен).
 
-    ```Output
+    ```output
     tom@ansible-inventory-test-vm2:~$ nginx -v
     The program 'nginx' can be found in the following packages:
     * nginx-core

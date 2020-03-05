@@ -5,14 +5,14 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 500e07296040305f1e469fde78988f2551440e58
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 27ac4b67aa19aa59abe80ccf9409acf7b587a22b
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471199"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250097"
 ---
-# <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
+# <a name="tutorial-import-sql-bacpac-files-with-azure-resource-manager-templates"></a>Руководство по Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager
 
 Здесь приведены сведения о том, как использовать расширение Базы данных SQL Azure для импорта BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager. Артефакты развертывания — это любые файлы, которые помимо файлов основного шаблона необходимы для выполнения развертывания. BACPAC-файл является артефактом. 
 
@@ -29,14 +29,14 @@ ms.locfileid: "75471199"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
 * Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора Azure SQL Server. Ниже приведен пример создания пароля.
 
-    ```azurecli-interactive
+    ```console
     openssl rand -base64 32
     ```
 

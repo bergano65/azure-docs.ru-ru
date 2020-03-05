@@ -1,6 +1,6 @@
 ---
-title: Руководство. Перенос данных о событиях в Хранилище данных SQL (Центры событий Azure)
-description: Руководство. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
+title: Руководство по Перенос данных о событиях в Хранилище данных SQL (Центры событий Azure)
+description: Руководство по В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: ''
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.date: 01/15/2020
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: a83d65e497688fa97fbb2bdb5a4a72c6d29d81ae
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 43668fe1f465a5db74e63b8b1c1ae6cb328d2092
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905696"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77914132"
 ---
-# <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство. Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
+# <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство по Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
 Функция [Сбор](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в хранилище данных SQL или Cosmos DB. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой [Сетка событий](https://docs.microsoft.com/azure/event-grid/overview).
 
@@ -76,9 +76,9 @@ ms.locfileid: "76905696"
 ```azurecli-interactive
 az group create -l westus -n rgDataMigrationSample
 
-az group deployment create \
-  --resource-group rgDataMigrationSample \
-  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json \
+az group deployment create `
+  --resource-group rgDataMigrationSample `
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json `
   --parameters eventHubNamespaceName=<event-hub-namespace> eventHubName=hubdatamigration sqlServerName=<sql-server-name> sqlServerUserName=<user-name> sqlServerPassword=<password> sqlServerDatabaseName=<database-name> storageName=<unique-storage-name> functionAppName=<app-name>
 ```
 

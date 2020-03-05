@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 554590a065214c17de0acdea3207876f113b3caf
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: cc1d6e04b19d36f0ca8c7ed4b2bb3d62f5e8e15a
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614032"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252745"
 ---
-# <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Руководство. Упаковка и развертывание контейнеров в виде приложений Service Fabric с помощью Yeoman
+# <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Руководство по Упаковка и развертывание контейнеров в виде приложений Service Fabric с помощью Yeoman
 
 Это руководство представляет собой вторую часть цикла. В нем описывается, как с помощью инструмента создания шаблонов (Yeoman) создать определение приложения Service Fabric. Это приложение затем можно использовать для развертывания контейнеров в Service Fabric. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -25,7 +25,7 @@ ms.locfileid: "75614032"
 > * развертывание и запуск приложения;
 > * очистка приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Образы контейнеров, переданные в реестр контейнеров Azure при изучении [первой части](service-fabric-tutorial-create-container-images.md) этого цикла руководств.
 * [Настроенная](service-fabric-tutorial-create-container-images.md) среда разработки Linux.
@@ -114,7 +114,7 @@ ApplicationManifest.xml azurevotefrontPkg azurevotebackPkg
 
 Выполните вход в свой экземпляр Реестра контейнеров Azure. Используйте команду **az acr login**, чтобы выполнить операцию. Укажите уникальное имя реестра контейнеров, заданное при его создании.
 
-```bash
+```azurecli
 az acr login --name <acrName>
 ```
 
@@ -122,7 +122,7 @@ az acr login --name <acrName>
 
 Затем выполните следующую команду, чтобы получить пароль реестра контейнеров. Этот пароль используется Service Fabric, чтобы проходить аутентификацию в реестре контейнеров Azure для извлечения образов контейнеров.
 
-```bash
+```azurecli
 az acr credential show -n <acrName> --query passwords[0].value
 ```
 
@@ -199,7 +199,7 @@ az acr credential show -n <acrName> --query passwords[0].value
 
 Внешняя служба считывает переменную среды, чтобы узнать DNS-имя экземпляра Redis. Эта переменная среды уже определена в файле Dockerfile, использованном для создания образа Docker. Поэтому на текущем этапе никакие действия не требуются.
 
-```Dockerfile
+```dockerfile
 ENV REDIS redisbackend.testapp
 ```
 

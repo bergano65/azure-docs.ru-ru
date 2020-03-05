@@ -3,29 +3,28 @@ title: Учебник. Создание диаграммы метрик в Azure
 description: Сведения о том, как создать диаграмму метрик с помощью обозревателя метрик Azure.
 author: bwren
 services: azure-monitor
-ms.service: azure-monitor
 ms.subservice: metrics
 ms.topic: tutorial
 ms.date: 12/16/2019
 ms.author: bwren
-ms.openlocfilehash: 7d9360840912614b6ae89d958d90de962b36506d
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: be4f026ba20ce1582f5626ec7483740831c25c1a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689954"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77661470"
 ---
-# <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Руководство. Создание диаграммы метрик в Azure Monitor
+# <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Руководство по Создание диаграммы метрик в Azure Monitor
 Обозреватель метрик является компонентом Azure Monitor и доступен на портале Microsoft Azure. Он позволяет создавать диаграммы, визуально сопоставлять тенденции и изучать пики и спады в значениях метрик. Используйте обозреватель метрик для анализа работоспособности и использования ресурсов Azure или для построения диаграмм по пользовательским метрикам. 
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Выбор метрики, для которой нужно построить диаграмму.
 > * Выполнение агрегатов по значениям метрик.
 > * Изменение диапазона времени и степени детализации для диаграммы.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется отслеживаемый ресурс Azure. Вы можете использовать любой ресурс в подписке Azure, который поддерживает метрики. Чтобы определить, поддерживает ли ресурс метрики, перейдите в меню этого ресурса на портале Azure и убедитесь, что в разделе **Мониторинг** этого меню присутствует элемент **Метрики**.
 

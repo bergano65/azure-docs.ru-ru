@@ -5,14 +5,14 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 42f11ecb8e7c7ae47b5a5ab5ff4f946833945aa1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7069ff363cf274ba855efc9b598d8d01e64e18d1
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471189"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250111"
 ---
-# <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство. Защита артефактов в развертываниях шаблонов Azure Resource Manager
+# <a name="tutorial-secure-artifacts-in-azure-resource-manager-template-deployments"></a>Руководство по Защита артефактов в развертываниях шаблонов Azure Resource Manager
 
 Узнайте, как защитить артефакты, которые используются в шаблонах Azure Resource Manager, с помощью подписанных URL-адресов (SAS) учетной записи хранения Azure. Артефакты развертывания — это все файлы, помимо файла основного шаблона, которые необходимы для выполнения развертывания. Например, в [руководстве по импорту BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./template-tutorial-deploy-sql-extensions-bacpac.md) основной шаблон создает экземпляр Базы данных SQL Azure. Он также вызывает BACPAC-файл для создания таблиц и добавления данных. BACPAC-файл является артефактом и хранится в учетной записи хранения Azure. Для доступа к артефакту использовался ключ учетной записи хранения. 
 
@@ -31,7 +31,7 @@ ms.locfileid: "75471189"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
@@ -39,7 +39,7 @@ ms.locfileid: "75471189"
 * Просмотрите статью [Руководство. Импорт BACPAC-файлов SQL с помощью шаблонов Azure Resource Manager](./template-tutorial-deploy-sql-extensions-bacpac.md). В этом руководстве используется шаблон, созданный здесь ранее. Ссылка для скачивания завершенного шаблона предоставляется в этой статье.
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора SQL Server. Ниже приведен пример создания пароля.
 
-    ```azurecli-interactive
+    ```console
     openssl rand -base64 32
     ```
 

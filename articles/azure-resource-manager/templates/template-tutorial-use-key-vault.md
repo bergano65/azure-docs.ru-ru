@@ -6,14 +6,14 @@ ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 527002bee1bec4097cf62155efebae06880bad97
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: bae67b0177823ab4558085db67423edea062fa3c
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75470869"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250068"
 ---
-# <a name="tutorial-integrate-azure-key-vault-in-your-resource-manager-template-deployment"></a>Руководство. интеграции Azure Key Vault в развертывание шаблона Resource Manager
+# <a name="tutorial-integrate-azure-key-vault-in-your-resource-manager-template-deployment"></a>Руководство по интеграции Azure Key Vault в развертывание шаблона Resource Manager
 
 Узнайте, как получить секреты из Azure Key Vault и передавать эти секреты в качестве параметров во время развертывания Azure Resource Manager. Значение параметра никогда не предоставляется, так как указывается только его идентификатор в хранилище ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./key-vault-parameter.md).
 
@@ -35,14 +35,14 @@ ms.locfileid: "75470869"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
 * Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * С целью повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
-    ```azurecli-interactive
+    ```console
     openssl rand -base64 32
     ```
     Убедитесь, что созданный пароль соответствует требованиям к паролю виртуальной машины. У каждой службы Azure есть определенные требования к паролю. Требования к паролю виртуальной машины см. в разделе [Какие требования к паролю при создании виртуальной машины?](../../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).

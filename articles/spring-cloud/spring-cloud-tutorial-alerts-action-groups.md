@@ -1,19 +1,19 @@
 ---
-title: Руководство. мониторингу ресурсов Azure Spring Cloud с помощью оповещений и групп действий | Документация Майкрософт
+title: Руководство по мониторингу ресурсов Azure Spring Cloud с помощью оповещений и групп действий | Документация Майкрософт
 description: Узнайте, как использовать оповещения Spring Cloud.
 author: MikeDodaro
 ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 12/29/2019
-ms.openlocfilehash: 49fea7d568e356169f8bbf0dfd1f4ce5c80a7223
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: cf7e075244a83190b83e629ef300a4903b114a6d
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690266"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77920082"
 ---
-# <a name="tutorial-monitor-spring-cloud-resources-using-alerts-and-action-groups"></a>Руководство. Мониторинг ресурсов Spring Cloud с помощью оповещений и групп действий
+# <a name="tutorial-monitor-spring-cloud-resources-using-alerts-and-action-groups"></a>Руководство по Мониторинг ресурсов Spring Cloud с помощью оповещений и групп действий
 
 Оповещения Azure Spring Cloud поддерживают мониторинг ресурсов на основе таких условий, как доступный объем хранилища, частота запросов или использование данных. При оповещении отправляется уведомление, если частота или условия соответствуют определенным спецификациям.
 
@@ -21,7 +21,7 @@ ms.locfileid: "75690266"
 1. Настройте группу действий с действиями, которые будут выполняться при срабатывании оповещения, например, электронной почты, SMS, Runbook или веб-перехватчика. Группы действий можно повторно использовать в различных оповещениях.
 2. Настройте правила оповещений. Правила связывают шаблоны метрик с группами действий на основе целевого ресурса, метрики, условия, агрегации времени и т. д.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Помимо требований Azure Spring, этот учебник зависит от следующих ресурсов.
 
 * Развернутый экземпляр Azure Spring Cloud  Чтобы приступить к работе, ознакомьтесь с [этим руководством](spring-cloud-quickstart-launch-app-cli.md).
@@ -86,7 +86,7 @@ ms.locfileid: "75690266"
 
 1. Нажмите кнопку **Done**(Готово).
 
-Подробные сведения о доступных для мониторинга условиях см. в разделе [User portal metrics options](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-concept-metrics#user-portal-metrics-options) (Варианты метрик на пользовательском портале).
+Подробные сведения о доступных для мониторинга условиях см. в разделе [User portal metrics options](spring-cloud-concept-metrics.md#user-metrics-options) (Варианты метрик на пользовательском портале).
 
  В области **Действия** щелкните **Выберите группу действий**. Из области **Действия** выберите ранее определенную **группу действий**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "75690266"
    ![Снимок экрана: "Новое правило генерации оповещений" на портале](media/alerts-action-groups/alerts-5.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [User portal metrics options](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-concept-metrics#user-portal-metrics-options) (Варианты метрик на пользовательском портале)
+* [User portal metrics options](spring-cloud-concept-metrics.md#user-metrics-options) (Варианты метрик на пользовательском портале)
 * [Create and manage action groups in the Azure portal](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups) (Создание групп действий и управление ими на портале Azure)
 * [SMS Alert Behavior in Action Groups](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-sms-behavior) (Поведение SMS-оповещений в группе действий)
 * [Руководство. Использование распределенной трассировки с помощью Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-distributed-tracing)

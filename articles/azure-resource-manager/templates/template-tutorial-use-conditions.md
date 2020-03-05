@@ -5,14 +5,14 @@ author: mumian
 ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 895d82eb79e4674ca95b9052d2384a257b296bf5
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 189d54454a1259d08400e3762b3fbf1c633474bd
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980658"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250053"
 ---
-# <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство. Использование условия в шаблонах Azure Resource Manager
+# <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство по Использование условия в шаблонах Azure Resource Manager
 
 Узнайте, как развернуть ресурсы Azure на основе условий.
 
@@ -37,14 +37,14 @@ ms.locfileid: "75980658"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
 * Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
-    ```azurecli-interactive
+    ```console
     openssl rand -base64 32
     ```
 

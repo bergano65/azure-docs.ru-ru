@@ -3,12 +3,12 @@ title: Краткое руководство. Создание, обучение
 description: Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этой статье описано, как создать базу знаний QnA Maker на основе простой веб-страницы с часто задаваемыми вопросами, чтобы ответить на вопросы QnA Maker.
 ms.topic: quickstart
 ms.date: 02/08/2020
-ms.openlocfilehash: a4c4d9b2e8f4b816510fb35a75b3c9b8b2afa5e2
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: fd4e6a4c4288caaf714f4bfc15282b6c4b1e1111
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77108728"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78299097"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -42,7 +42,7 @@ ms.locfileid: "77108728"
 
     |Параметр|Значение|
     |--|--|
-    |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx).|Флажок установлен|
+    |**Enable multi-turn extraction from URLs, .pdf or .docx files** (Включить многоэтапное извлечение из URL-адресов, файлов .pdf или .docx)|Флажок установлен|
     |**Текст ответа по умолчанию**| `Quickstart - default answer not found.`|
     |**Добавление URL-адреса**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
     |**Chit-chat** (Беседа)|Выберите значение **Professional** (Профессиональная)|
@@ -154,6 +154,5 @@ ms.locfileid: "77108728"
 
 * [Формат markdown в ответах](../reference-markdown-format.md)
 * [Источники данных](../concepts/knowledge-base.md) QnA Maker.
-* [Параметры конфигурации ресурса бота](../tutorials/create-qna-bot.md).
 
 

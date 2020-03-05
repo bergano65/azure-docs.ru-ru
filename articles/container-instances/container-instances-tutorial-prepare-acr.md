@@ -4,14 +4,14 @@ description: Руководство по службе "Экземпляры ко
 ms.topic: tutorial
 ms.date: 12/18/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 131ea39b382735423a1edff72774313c4096ea2b
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 1a5b9555572264b6a00b4ce73eaa0719d94fd99b
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552430"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252156"
 ---
-# <a name="tutorial-create-an-azure-container-registry-and-push-a-container-image"></a>Руководство. Создание реестра контейнеров Azure и отправка образа контейнера
+# <a name="tutorial-create-an-azure-container-registry-and-push-a-container-image"></a>Руководство по Создание реестра контейнеров Azure и отправка образа контейнера
 
 Это вторая часть руководства, состоящего из трех частей. [Первая часть](container-instances-tutorial-prepare-app.md) руководства по созданию образа контейнера Docker для веб-приложения Node.js. В этом руководстве мы поместим образ в реестр контейнеров Azure. Если вы еще не создали образ контейнера, вернитесь к первой части этой серии — [руководству по созданию образа контейнера](container-instances-tutorial-prepare-app.md).
 
@@ -46,8 +46,7 @@ az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
 
 Ниже приведен пример выходных данных для нового реестра контейнеров Azure с именем *mycontainerregistry082* (показаны в сокращенном виде).
 
-```console
-$ az acr create --resource-group myResourceGroup --name mycontainerregistry082 --sku Basic
+```output
 ...
 {
   "creationDate": "2018-03-16T21:54:47.297875+00:00",
@@ -78,10 +77,15 @@ $ az acr create --resource-group myResourceGroup --name mycontainerregistry082 -
 az acr login --name <acrName>
 ```
 
+Пример:
+
+```azurecli
+az acr login --name mycontainerregistry082
+```
+
 По завершении команда возвращает `Login Succeeded`.
 
-```console
-$ az acr login --name mycontainerregistry082
+```output
 Login Succeeded
 ```
 
@@ -97,8 +101,11 @@ az acr show --name <acrName> --query loginServer --output table
 
 Например, если имя реестра — *mycontainerregistry082*:
 
-```console
-$ az acr show --name mycontainerregistry082 --query loginServer --output table
+```azurecli
+az acr show --name mycontainerregistry082 --query loginServer --output table
+```
+
+```output
 Result
 ------------------------
 mycontainerregistry082.azurecr.io
@@ -165,8 +172,11 @@ az acr repository list --name <acrName> --output table
 
 Пример:
 
-```console
-$ az acr repository list --name mycontainerregistry082 --output table
+```azurecli
+az acr repository list --name mycontainerregistry082 --output table
+```
+
+```output
 Result
 ----------------
 aci-tutorial-app
@@ -181,7 +191,7 @@ az acr repository show-tags --name <acrName> --repository aci-tutorial-app --out
 Выходные данные должны иметь следующий вид.
 
 ```console
-$ az acr repository show-tags --name mycontainerregistry082 --repository aci-tutorial-app --output table
+az acr repository show-tags --name mycontainerregistry082 --repository aci-tutorial-app --output table
 Result
 --------
 v1

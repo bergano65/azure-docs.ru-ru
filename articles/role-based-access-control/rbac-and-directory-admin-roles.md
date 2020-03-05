@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 10/01/2019
+ms.date: 02/27/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 08c14135ba17df4de446de5625352c8cffdc60a1
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: e8d82011fe4fdd40bb07c77411ad0e948ddad049
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138075"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916529"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -75,7 +75,7 @@ RBAC Azure — это система авторизации на основе [
 | Роль RBAC Azure | Разрешения | Примечания |
 | --- | --- | --- |
 | [Владелец](built-in-roles.md#owner) | <ul><li>Полный доступ ко всем ресурсам</li><li>Делегирование прав доступа другим пользователям</li></ul> | Администратору служб и соадминистраторам назначается роль владельца в области действия подписки<br>Применяется ко всем типам ресурсов. |
-| [Участник](built-in-roles.md#contributor) | <ul><li>Создание ресурсов Azure любых типов и управление ими</li><li>Не может предоставлять права доступа другим пользователям</li></ul> | Применяется ко всем типам ресурсов. |
+| [Участник](built-in-roles.md#contributor) | <ul><li>Создание ресурсов Azure любых типов и управление ими</li><li>Создание клиента в Azure Active Directory</li><li>Не может предоставлять права доступа другим пользователям</li></ul> | Применяется ко всем типам ресурсов. |
 | [Читатель](built-in-roles.md#reader) | <ul><li>Просмотр ресурсов Azure</li></ul> | Применяется ко всем типам ресурсов. |
 | [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) | <ul><li>Управление доступом пользователей к ресурсам Azure</li></ul> |  |
 

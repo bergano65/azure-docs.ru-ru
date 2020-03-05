@@ -1,14 +1,17 @@
 ---
 title: Подключение функции Java к службе хранилища Azure
 description: Узнайте, как подключить функцию Java, активируемую HTTP, к службе хранилища Azure с помощью выходной привязки хранилища очередей.
+author: KarlErickson
+ms.author: karler
 ms.date: 10/14/2019
 ms.topic: quickstart
-ms.openlocfilehash: 72e3aad15ea8ef922d89a67891e223b65473b909
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+zone_pivot_groups: java-build-tools-set
+ms.openlocfilehash: 8ae69bfa7ed00e310205332e05c071158c5fc9a3
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198553"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78272807"
 ---
 # <a name="connect-your-java-function-to-azure-storage"></a>Подключение функции Java к службе хранилища Azure
 
@@ -112,10 +115,19 @@ final HttpResponseMessage ret = new Function().run(req, msg, context);
 
 Как и прежде, чтобы построить проект и запустить среду выполнения функций локально, используйте следующую команду.
 
+::: zone pivot="java-build-tools-maven"  
 ```bash
 mvn clean package 
 mvn azure-functions:run
 ```
+::: zone-end
+
+::: zone pivot="java-build-tools-gradle"  
+```bash
+gradle jar --info
+gradle azureFunctionsRun
+```
+::: zone-end
 
 > [!NOTE]  
 > Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#add-to-your-functions-app).
@@ -138,9 +150,17 @@ curl -w "\n" http://localhost:7071/api/HttpTrigger-Java --data AzureFunctions
 
 Чтобы обновить опубликованное приложение, выполните следующую команду еще раз:  
 
-```azurecli
+::: zone pivot="java-build-tools-maven"  
+```bash
 mvn azure-functions:deploy
 ```
+::: zone-end
+
+::: zone pivot="java-build-tools-gradle"  
+```bash
+gradle azureFunctionsDeploy
+```
+::: zone-end
 
 Чтобы проверить развернутую функцию, можно снова использовать cURL. Как и ранее, передайте значение `AzureFunctions` в тексте запроса POST к URL-адресу, как показано в следующем примере:
 

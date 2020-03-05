@@ -6,15 +6,15 @@
       href: load-balancer-overview.md
 - name: Краткое руководство
   items:
-    - name: Портал
+    - name: "Создание подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-public-portal.md
-    - name: Azure CLI
+    - name: "Создание подсистемы балансировки нагрузки\_— Azure\_CLI"
       href: quickstart-load-balancer-standard-public-cli.md
-    - name: Azure PowerShell
+    - name: "Создание подсистемы балансировки нагрузки\_— PowerShell"
       href: quickstart-create-standard-load-balancer-powershell.md
-    - name: Шаблон Azure Resource Manager
+    - name: "Создание подсистемы балансировки нагрузки\_— шаблон"
       href: quickstart-load-balancer-standard-public-template.md
-      displayName: ARM
+  expanded: true
 - name: Учебники
   items:
     - name: Балансировка интернет-трафика на виртуальных машинах

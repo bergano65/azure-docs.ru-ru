@@ -1,33 +1,32 @@
 ---
 title: Краткое руководство для ASP.NET Core — Azure Monitor Application Insights
 description: В этой статье предоставляются инструкции для быстрой настройки мониторинга веб-приложения ASP.NET Core с помощью Azure Monitor Application Insights.
-ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: quickstart
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 06/26/2019
 ms.custom: mvc
-ms.openlocfilehash: e05926d7a76f47cc3c95088fa2d8f1a6e385bbbc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fa1651e88226080cca970cc756f2c0522b39f1be
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75399016"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77670633"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
-С помощью Azure Application Insights можно легко отслеживать доступность, производительность и использование своего веб-приложения. Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них. 
+С помощью Azure Application Insights можно легко отслеживать доступность, производительность и использование своего веб-приложения. Вы также можете быстро идентифицировать и диагностировать в нем ошибки, не дожидаясь, пока пользователь сообщит о них. 
 
 Это краткое руководство поможет добавить пакет SDK для Application Insights в имеющееся веб-приложение ASP.NET Core. Дополнительные сведения о настройке Application Insights без извлечения в Visual Studio см. в [этой статье](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
 - Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
   - ASP.NET и веб-разработка.
-  - разработка Azure;
+  - Разработка Azure.
 - [Установите пакет SDK для .NET Core 2.0.](https://www.microsoft.com/net/core)
 - Потребуется подписка Azure и веб-приложение .NET Core.
 
@@ -50,11 +49,11 @@ ms.locfileid: "75399016"
 
     Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
 
-   | Настройки        |  Значение           | Description  |
+   | Настройки        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Название**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **имя**;      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights. Создайте новую группу ресурсов или выберите существующую. |
-   | **Местоположение** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
+   | **Расположение** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 2. Нажмите кнопку **Создать**.
 
@@ -70,7 +69,7 @@ ms.locfileid: "75399016"
 
 3. Выберите учетную запись и подписку, выберите **существующий ресурс**, который вы создали на портале Azure, и нажмите кнопку **Зарегистрировать**.
 
-4. Выберите **Project (Проект)**  > **Manage NuGet Packages (Управление пакетами NuGet)**  > **Package source: nuget.org (Источник пакета: nuget.org)**  > **Update the Application Insights SDK packages to the latest stable release** (Обновить пакеты SDK Application Insights до последней стабильной версии).
+4. Выберите **Проект** > **Управление пакетами NuGet** > **Источник пакета: nuget.org** > **Обновить** и обновите пакеты SDK для Application Insights до последней стабильной версии.
 
 5. Чтобы запустить приложение, выберите **Отладка** > **Start without Debugging** (Запуск без отладки) (Ctrl + F5).
 

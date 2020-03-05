@@ -1,24 +1,24 @@
 ---
-title: Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения
+title: Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения
 titleSuffix: Azure AD B2C
 description: В этом учебнике вы узнаете, как с помощью Active Directory B2C обеспечить защиту веб-API .NET Core и выполнить вызов API из одностраничного приложения Node.js.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
-ms.author: marsma
+ms.author: mimart
 ms.date: 07/24/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 80b2165b0ec652358a3eb8ac9d55b64f525e4690
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: f6f9ff7bb0d504ecc163f6ce1f87477b1ea9c2d1
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849844"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78186154"
 ---
-# <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
+# <a name="tutorial-grant-access-to-an-aspnet-core-web-api-from-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C
 
 В этом руководстве показано, как вызывать защищенный с помощью Azure Active Directory (Azure AD) B2C ресурс веб-API ASP.NET Core из одностраничного приложения.
 

@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 02/20/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: a61bc852d3042d0bd8828bf89dce6ab6b760d092
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 3a18218635b5fc576bd9255eb73c136756ac3caa
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77459690"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78272957"
 ---
 # <a name="what-is-azure-analysis-services"></a>Службы Azure Analysis Services
 
@@ -214,7 +214,7 @@ Azure Analysis Services — это полностью управляемая п�
 
 ### <a name="object-model-and-scripting"></a>Объектная модель и написание скриптов
 
-Табличные модели помогают выполнять быструю разработку и использовать широкие возможности настройки. В табличных моделях для описания объектов моделей можно использовать [TOM](https://docs.microsoft.com/bi-reference/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo). TOM предоставляется в JSON с помощью [языка TMSL](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) и языка описания данных AMO в пространстве имен [Microsoft.AnalysisServices.Tabular](/dotnet/api/microsoft.analysisservices.tabular). 
+Табличные модели помогают выполнять быструю разработку и использовать широкие возможности настройки. В табличных моделях для описания объектов моделей можно использовать [TOM](https://docs.microsoft.com/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo). TOM предоставляется в JSON с помощью [языка TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) и языка описания данных AMO в пространстве имен [Microsoft.AnalysisServices.Tabular](/dotnet/api/microsoft.analysisservices.tabular). 
 
 ## <a name="supports-the-latest-client-tools"></a>Поддержка новых клиентских средств
 

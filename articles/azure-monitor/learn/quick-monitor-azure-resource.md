@@ -1,18 +1,17 @@
 ---
 title: Мониторинг ресурса Azure с помощью Azure Monitor
 description: Узнайте, как выполнять сбор и анализ данных для ресурсов Azure в Azure Monitor.
-ms.service: azure-monitor
 ms. subservice: logs
 ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 12/15/2019
-ms.openlocfilehash: 3081c0f8fa8450643a992c8e82840a44db263f76
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: c4b80e62d3800392b847a411dfc66c3278e72bba
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863984"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77661870"
 ---
 # <a name="quickstart-monitor-an-azure-resource-with-azure-monitor"></a>Краткое руководство. Мониторинг ресурса Azure с помощью Azure Monitor
 [Azure Monitor](../overview.md) начнет сбор данных из ресурсов Azure с момента их создания. В этом кратком руководстве приводится краткое пошаговое руководство с описанием данных, которые автоматически собираются для каждого ресурса, и процедуры просмотра данных для определенного ресурса на портале Azure. Вы можете позднее настроить сбор дополнительных данных и (или) через меню Azure Monitor применить те же средства для просмотра данных для всех ресурсов в подписке.

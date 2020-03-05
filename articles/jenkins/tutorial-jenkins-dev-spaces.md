@@ -3,12 +3,12 @@ title: Использование подключаемого модуля Azure 
 description: Из этой статьи вы узнаете, как использовать подключаемый модуль Azure Dev Spaces в конвейере непрерывной интеграции.
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 10dfbdb7d89d6f3870ec3b9dbd87d4d315360815
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 7b23893eb331f55ff41992a2ca660e79f44a609a
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77619979"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250903"
 ---
 # <a name="tutorial-using-the-azure-dev-spaces-plug-in-for-jenkins-with-azure-kubernetes-service"></a>Руководство по Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes 
 
@@ -53,26 +53,26 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 1. Создайте группу ресурсов.
 
-    ```bash
+    ```azurecli
     az group create --name MyResourceGroup --location westus2
     ```
 
 2. Создайте кластер AKS. Создайте кластер AKS в [регионе, который поддерживает Dev Spaces](../dev-spaces/about.md#supported-regions-and-configurations).
 
-    ```bash
+    ```azurecli
     az aks create --resource-group MyResourceGroup --name MyAKS --location westus2 --kubernetes-version 1.11.9 --enable-addons http_application_routing --generate-ssh-keys --node-count 1 --node-vm-size Standard_D1_v2
     ```
 
 3. Настройка AKS для использования Dev Spaces.
 
-    ```bash
+    ```azurecli
     az aks use-dev-spaces --resource-group MyResourceGroup --name MyAKS
     ```
     На этом шаге выполняется установка расширения CLI `azds`.
 
 4. Создайте реестр контейнеров.
 
-    ```bash
+    ```azurecli
     az acr create -n MyACR -g MyResourceGroup --sku Basic --admin-enabled true
     ```
 
@@ -225,7 +225,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 3. Чтобы отобразить учетные данные ACR, выполните следующую команду:
 
-    ```bash
+    ```azurecli
     az acr credential show -n <yourRegistryName>
     ```
 
@@ -251,7 +251,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 5. Настройте учетные данные AKS. Добавьте в Jenkins тип учетных данных *Kubernetes configuration (kubeconfig)* (Конфигурация Kubernetes (kubeconfig), выбрав вариант Enter directly (Ввести самостоятельно). Чтобы получить учетные данные для доступа к кластеру AKS, выполните следующую команду:
 
-    ```cmd
+    ```azurecli
     az aks get-credentials -g MyResourceGroup -n <yourAKSName> -f -
     ```
 
@@ -403,7 +403,7 @@ stage('smoketest') {
 
 Завершив работу с примером приложения, очистите ресурсы Azure путем удаления группы ресурсов:
 
-```bash
+```azurecli
 az group delete -y --no-wait -n MyResourceGroup
 ```
 

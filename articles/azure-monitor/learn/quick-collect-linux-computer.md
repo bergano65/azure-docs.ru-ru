@@ -7,19 +7,18 @@ author: bwren
 manager: carmonm
 editor: ''
 ms.assetid: ''
-ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 12/24/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: f494702166fc3c018aba9b1356a6806384ae4673
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 0cf171da5f473a0d78fc5f37139c94b0e519bcfb
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530023"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77660178"
 ---
 # <a name="quickstart-collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Краткое руководство. Сбор данных с компьютера Linux в гибридной среде с помощью Azure Monitor
 
@@ -27,7 +26,7 @@ ms.locfileid: "75530023"
 
 Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](../../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) и [конфигурации сетевых брандмауэров](../../azure-monitor/platform/log-analytics-agent.md#network-firewall-requirements).
  
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 

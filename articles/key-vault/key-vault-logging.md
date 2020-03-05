@@ -6,15 +6,16 @@ author: msmbaldwin
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 997651887c3c378e4791553d5ff05f585ad169ea
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 8915970cd4c70228fad3b49921f4c81d6d90aa72
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000668"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195361"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -39,7 +40,7 @@ ms.locfileid: "71000668"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником требуется:
+Для работы с этим учебником необходимо наличие следующих компонентов.
 
 * Существующее хранилище ключей, которое вы используете.  
 * Azure PowerShell, начиная с версии 1.0.0. Чтобы установить решение Azure PowerShell и связать его с подпиской Azure, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview). Если средство Azure PowerShell у вас установлено, но вы не знаете его версию, введите `$PSVersionTable.PSVersion` в консоли Azure PowerShell.  
@@ -168,7 +169,7 @@ resourceId=/SUBSCRIPTIONS/361DA5D4-A47A-4C79-AFDD-XXXXXXXXXXXX/RESOURCEGROUPS/CO
 
 Поскольку одну учетную запись можно использовать для сбора журналов нескольких ресурсов, для просмотра и скачивания нужных BLOB-объектов желательно указывать полный идентификатор ресурса в имени BLOB-объекта. Но сначала мы рассмотрим загрузку всех BLOB-объектов.
 
-Создайте папку для загрузки BLOB-объектов. Например:
+Создайте папку для загрузки BLOB-объектов. Пример:
 
 ```powershell 
 New-Item -Path 'C:\Users\username\ContosoKeyVaultLogs' -ItemType Directory -Force
@@ -188,7 +189,7 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 
 При выполнении второй команды разделитель **/** в именах больших двоичных объектов используется для создания полной структуры папки в конечной папке. Эта структура будет использоваться для скачивания и хранения больших двоичных объектов в виде файлов.
 
-Для выборочной загрузки BLOB-объектов используйте подстановочные знаки. Например:
+Для выборочной загрузки BLOB-объектов используйте подстановочные знаки. Пример:
 
 * Если у вас есть несколько хранилищ ключей, но вы хотите загрузить журналы только для одного хранилища с именем CONTOSOKEYVAULT3.
 
@@ -248,7 +249,7 @@ Get-AzKeyVault -VaultName 'contosokeyvault'`
 
 В следующей таблице перечислены имена и описания полей.
 
-| Имя поля | ОПИСАНИЕ |
+| Имя поля | Описание |
 | --- | --- |
 | **time** |Дата и время (в формате UTC). |
 | **resourceId** |Идентификатор ресурса Azure Resource Manager. Для журналов хранилища ключей это всегда идентификатор ресурса хранилища ключей. |
@@ -264,7 +265,7 @@ Get-AzKeyVault -VaultName 'contosokeyvault'`
 | **identity** |Удостоверение из маркера, предоставляемое в запросе к REST API. Обычно это "пользователь", "субъект-служба" или комбинация "пользователь + идентификатор приложения", как например при запросе из командлета Azure PowerShell. |
 | **properties** |Эта информация зависит от типа операции (**operationName**). В большинстве случаев это поле содержит сведения о клиенте (передаваемая клиентом строка useragent), точный URI запроса REST API и код состояния HTTP. Кроме того, когда результат запроса содержит объект (например, **KeyCreate** или **VaultGet**), это поле содержит еще и URI ключа (в параметре id), URI хранилища или URI секрета. |
 
-Значения поля **operationName** отображаются в формате *ObjectVerb*. Например:
+Значения поля **operationName** отображаются в формате *ObjectVerb*. Пример:
 
 * Все операции с хранилищем ключей отображаются в формате `Vault<action>`, например `VaultGet` или `VaultCreate`.
 * Все операции с ключами отображаются в формате `Key<action>`, например `KeySign` или `KeyList`.
@@ -308,7 +309,7 @@ Get-AzKeyVault -VaultName 'contosokeyvault'`
 
 Дополнительные сведения, включая инструкции по настройке, см. в статье [Решение Azure Key Vault в журналах Azure Monitor](../azure-monitor/insights/azure-key-vault.md). В этой статье также содержатся инструкции на случай переноса из старого решения Key Vault, которое предлагалось в предварительной версии журналов Azure Monitor, где сначала требовалось направить журналы в учетную запись хранения Azure и настроить чтение из этой учетной записи в журналах Azure Monitor.
 
-## <a id="next"></a>Дальнейшие действия
+## <a id="next"></a>Следующие шаги
 
 Руководство по использованию Azure Key Vault в веб-приложении .NET см. в [этой статье](tutorial-net-create-vault-azure-web-app.md).
 

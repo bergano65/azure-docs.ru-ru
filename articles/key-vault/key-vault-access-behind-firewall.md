@@ -6,15 +6,16 @@ author: amitbapat
 manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: 57c5e3f2741f81bce2eff2d5ef2b0f2d029096e3
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 36dada57e587da6e023a83c8ebb6555abe44b9ba
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976387"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78184852"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 
@@ -38,8 +39,8 @@ ms.locfileid: "68976387"
 
 | Тип субъекта | Конечная точка и порт |
 | --- | --- |
-| Пользователь, использующий учетную запись Майкрософт<br> (например, user@hotmail.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443<br><br> и <br>login.live.com:443 |
-| Пользователь или субъект-служба, использующие рабочую или учебную учетную запись с помощью Azure AD (например, user@contoso.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443 |
+| Пользователь, использующий учетную запись Майкрософт<br> (например, user@hotmail.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для US Gov :**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443<br><br> и <br>login.live.com:443 |
+| Пользователь или субъект-служба, использующие рабочую или учебную учетную запись с помощью Azure AD (например, user@contoso.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для US Gov :**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443 |
 | Пользователь или субъект-служба, использующие рабочую или учебную учетную запись, а также службы федерации Active Directory (AD FS) или другую федеративную конечную точку (например, user@contoso.com) |Все конечные точки для рабочей или учебной учетной записи, а также службы федерации Active Directory или другие федеративные конечные точки |
 
 Есть и другие возможные сложные сценарии. Дополнительные сведения см. в статьях [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md), [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-how-to-integrate.md) и [Руководство разработчика по Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx).  
@@ -50,8 +51,8 @@ ms.locfileid: "68976387"
 
 | Тип операции | Конечная точка и порт |
 | --- | --- |
-| Операции уровня управления хранилищем ключей<br> с использованием Azure Resource Manager |**Глобально:**<br> management.azure.com:443<br><br> **Azure для Китая:**<br> management.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> management.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> management.microsoftazure.de:443 |
-| API Graph Azure Active Directory |**Глобально:**<br> graph.windows.net:443<br><br> **Azure для Китая:**<br> graph.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> graph.windows.net:443<br><br> **Azure для Германии:**<br> graph.cloudapi.de:443 |
+| Операции уровня управления хранилищем ключей<br> с использованием Azure Resource Manager |**Глобально:**<br> management.azure.com:443<br><br> **Azure для Китая:**<br> management.chinacloudapi.cn:443<br><br> **Azure для US Gov :**<br> management.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> management.microsoftazure.de:443 |
+| API Graph Azure Active Directory |**Глобально:**<br> graph.windows.net:443<br><br> **Azure для Китая:**<br> graph.chinacloudapi.cn:443<br><br> **Azure для US Gov :**<br> graph.windows.net:443<br><br> **Azure для Германии:**<br> graph.cloudapi.de:443 |
 
 ## <a name="key-vault-operations"></a>Операции с хранилищем ключей
 
@@ -59,12 +60,12 @@ ms.locfileid: "68976387"
 
 | Тип операции | Конечная точка и порт |
 | --- | --- |
-| Операции, в том числе криптографические операции для ключей; создание, чтение, обновление и удаление ключей и секретов; задание или получение тегов и других атрибутов для объектов хранилища ключей (ключи и секреты) |**Глобально:**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure для Китая:**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure для правительства США:**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |
+| Операции, в том числе криптографические операции для ключей; создание, чтение, обновление и удаление ключей и секретов; задание или получение тегов и других атрибутов для объектов хранилища ключей (ключи и секреты) |**Глобально:**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure для Китая:**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure для US Gov :**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |
 
 ## <a name="ip-address-ranges"></a>Диапазоны IP-адресов
 
 В службе хранилища ключей используются другие ресурсы Azure, такие как инфраструктура PaaS. Поэтому невозможно предоставить определенный диапазон IP-адресов, которые будут иметь конечные точки службы хранилища ключей в любой определенный момент времени. Если брандмауэр поддерживает только диапазоны IP-адресов, ознакомьтесь с документом [Microsoft Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure). Служба аутентификации и идентификации (Azure Active Directory) является глобальным решением, для которого без уведомления может выполняться отработка отказа в другие регионы или перемещаться трафик. В таком случае в брандмауэр нужно добавить все диапазоны IP-адресов, перечисленные в разделе для [службы аутентификации и идентификации](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2#bkmk_identity_ip).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли вопросы о хранилище ключей, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault).

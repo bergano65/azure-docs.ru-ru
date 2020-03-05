@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 10/31/2019
 ms.author: sngun
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: f29eeba98e0cc89c65dda814e03d63d2f3493c35
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 489f241453436190213b99cb4e7be0688a8b6237
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77586025"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78274108"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-sql-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API SQL для Azure Cosmos DB
 
@@ -85,27 +85,27 @@ git clone https://github.com/Azure-Samples/azure-cosmos-java-getting-started.git
 
 * Инициализация `CosmosClient`. `CosmosClient` является логическим представлением службы баз данных Azure Cosmos на стороне клиента. Этот клиент позволяет настраивать и выполнять запросы к службе.
     
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java" id="CreateSyncClient":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=CreateSyncClient)]
 
 * Создание `CosmosDatabase`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java" id="CreateDatabaseIfNotExists":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=CreateDatabaseIfNotExists)]
 
 * Создание `CosmosContainer`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java" id="CreateContainerIfNotExists":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=CreateContainerIfNotExists)]
 
 * Создание элемента с помощью метода `createItem`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java" id="CreateItem":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=CreateItem)]
    
 * Считывание точек выполняется с помощью метода `readItem`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java" id="ReadItem":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=ReadItem)]
 
 * SQL-запросы через JSON выполняются с помощью метода `queryItems`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java" id="QueryItems":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=QueryItems)]
 
 ### <a name="managing-database-resources-using-the-asynchronous-async-api"></a>Управление ресурсами базы данных с помощью асинхронного API (async)
 
@@ -113,27 +113,27 @@ git clone https://github.com/Azure-Samples/azure-cosmos-java-getting-started.git
 
 * Инициализация `CosmosAsyncClient`. `CosmosAsyncClient` является логическим представлением службы баз данных Azure Cosmos на стороне клиента. Этот клиент позволяет настраивать и выполнять асинхронные запросы к службе.
     
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java" id="CreateAsyncClient":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java?name=CreateAsyncClient)]
 
 * Создание `CosmosAsyncDatabase`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java" id="CreateDatabaseIfNotExists":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=CreateDatabaseIfNotExists)]
 
 * Создание `CosmosAsyncContainer`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java" id="CreateContainerIfNotExists":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/sync/SyncMain.java?name=CreateContainerIfNotExists)]
 
 * Как и в случае с синхронным API, элементы создаются с помощью метода `createItem`. В этом примере показано, как эффективно выдавать многочисленные асинхронные запросы `createItem`, подписавшись на реактивный поток, который выдает запросы и печатает уведомления. Поскольку этот простой пример выполняется до завершения и прерывания, экземпляры `CountDownLatch` используются, чтобы гарантировать, что программа не будет прервана во время создания элемента. **Правильная методика асинхронного программирования заключается не в блокировке асинхронных вызовов, а в реалистичных запросах на использование, которые генерируются из цикла main(), который выполняется бессрочно, устраняя необходимость кратковременной блокировки асинхронных вызовов.**
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java" id="CreateItem":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java?name=CreateItem)]
    
 * Как и в случае с синхронным API, операции чтения точки выполняются с помощью метода `readItem`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java" id="ReadItem":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java?name=ReadItem)]
 
 * Как и в случае с синхронным API, запросы SQL через JSON выполняются с помощью метода `queryItems`.
 
-    :::code language="java" source="~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java" id="QueryItems":::
+    [!code-java[](~/azure-cosmosdb-java-v4-getting-started/src/main/java/com/azure/cosmos/sample/async/AsyncMain.java?name=QueryItems)]
 
 ## <a name="run-the-app"></a>Запустите приложение
 

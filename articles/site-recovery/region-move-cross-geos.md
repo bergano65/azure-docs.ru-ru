@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: a48edda31f19ef4ce1ba23664eef1f51ba9cf8d1
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: acaf16e7469b3ea4e5e391db91e37dc76be3b261
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75970497"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78298536"
 ---
 # <a name="move-azure-vms-between-azure-government-and-public-regions"></a>Перенос виртуальных машин Azure между общедоступными регионами и регионами Azure для государственных организаций 
 
@@ -20,7 +20,7 @@ ms.locfileid: "75970497"
 
 Службу [Azure Site Recovery](site-recovery-overview.md) можно использовать не только для управления и координации аварийного восстановления локальных компьютеров и виртуальных машин Azure в целях обеспечения непрерывности бизнеса и аварийного восстановления (BCDR), но и для управления миграцией виртуальных машин Azure в дополнительный регион.       
 
-В этом руководстве показано, как перемещать виртуальные машины Azure между регионами Azure для государственных организаций и общедоступными регионами с помощью Azure Site Recovery. Приведенные указания можно также применять для перемещения виртуальных машин между парами регионов, которые находятся в разных географических кластерах. В этом руководстве описано следующее.
+В этом руководстве показано, как перемещать виртуальные машины Azure между регионами Azure для государственных организаций и общедоступными регионами с помощью Azure Site Recovery. Приведенные указания можно также применять для перемещения виртуальных машин между парами регионов, которые находятся в разных географических кластерах. В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * проверка предварительных требований;
@@ -100,20 +100,20 @@ ms.locfileid: "75970497"
     - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer)
     - [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
     
-    Сведения о других сетевых компонентах см. в [документации по сетям](https://docs.microsoft.com/azure/#pivot=products&panel=network). 
+    Сведения о других сетевых компонентах см. в [документации](https://docs.microsoft.com/azure/?pivot=products&panel=network) по сетям.
 
 4. Вручную [создайте непроизводственную сеть](https://docs.microsoft.com/azure/virtual-network/quick-create-portal) в целевом регионе, если вы хотите проверить конфигурацию перед выполнением окончательного перехода в целевой регион. При этом помехи в рабочей среде будут минимальными (рекомендуется выполнить этот шаг).
 
 ## <a name="copy-data-to-the-target-region"></a>Копирование данных в целевой регион
 Ниже приведены шаги по копированию данных в целевой регион с помощью Azure Site Recovery.
 
-### <a name="create-the-vault-in-any-region-except-the-source-region"></a>Создайте хранилище в любом регионе, за исключением исходного.
+### <a name="create-the-vault-in-any-region-except-the-source-region"></a>Создайте хранилище в любом регионе кроме исходного.
 
 1. Войдите на [портал Azure](https://portal.azure.com) > **Службы восстановления**.
 2. Щелкните **Создать ресурс** > **Средства управления** > **Backup and Site Recovery**.
 3. В поле **Имя** укажите понятное имя **ContosoVMVault**. Выберите соответствующую подписку, если их у вас несколько.
 4. Создайте группу ресурсов **ContosoRG**.
-5. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе "Географическая доступность" на странице [цен на службу Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
+5. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе о доступности по регионам на странице [Цены на Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
 6. В хранилище Служб восстановления щелкните **Обзор** > **ConsotoVMVault** >  **+Реплицировать**.
 7. Выберите **В Azure** > **Без виртуализации или иное**.
 

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: e850984bd03f4b1e630db5beceed36e122340ead
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: 1ec8944ea0b4cf44c05efe92d350ae0db66d338b
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77500442"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247812"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
@@ -48,7 +48,9 @@ git clone https://github.com/Azure-Samples/html-docs-hello-world.git
 
 ```bash
 cd html-docs-hello-world
+```
 
+```azurecli
 az webapp up --location westeurope --name <app_name> --html
 ```
 
@@ -100,7 +102,7 @@ az webapp up --location westeurope --name <app_name> --html
 
 Теперь повторно разверните приложение с помощью той же команды `az webapp up`.
 
-```bash
+```azurecli
 az webapp up --location westeurope --name <app_name> --html
 ```
 
@@ -128,7 +130,7 @@ az webapp up --location westeurope --name <app_name> --html
 
 На предыдущем шаге вы создали ресурсы Azure в группе ресурсов. Если эти ресурсы вам не понадобятся в будущем, вы можете удалить группу ресурсов, выполнив приведенную ниже команду в Cloud Shell. Помните, что имя группы ресурсов автоматически создано на этапе [создания веб-приложения](#create-a-web-app).
 
-```bash
+```azurecli
 az group delete --name appsvc_rg_Windows_westeurope
 ```
 

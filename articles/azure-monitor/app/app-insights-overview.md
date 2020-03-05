@@ -1,19 +1,15 @@
 ---
 title: Что такое Azure Application Insights? | Документы Майкрософт
 description: Управление производительностью и отслеживание использования работающего веб-приложения.  Обнаружение, рассмотрение и диагностика проблем. Сведения о том, как пользователи используют ваше приложение.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: overview
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 06/03/2019
 ms.custom: mvc
-ms.openlocfilehash: 16ebde7d98fbbf95f6c83275ab986ed91c89d736
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: cfd5925c61d1edf1fe9477d3239ec77a4c3de326
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190208"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77666298"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Azure Application Insights, компонент [Azure Monitor](../overview.md), — это расширяемая служба управления производительностью приложений (APM) для разработчиков и специалистов по DevOps. Используйте ее для мониторинга ваших работающих приложений. Эта служба автоматически отслеживает аномалии производительности и предоставляет мощные аналитические инструменты, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и Java EE, с локальным, гибридным или общедоступным облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.

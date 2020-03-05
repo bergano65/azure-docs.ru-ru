@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
-ms.openlocfilehash: 03a07e70c967f92fe5dcc7c951aeea299b050405
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 85fad873b6c176d2278ea48709d2892ab515a025
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71326994"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303313"
 ---
 # <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Databricks Delta
 
@@ -21,7 +21,7 @@ ms.locfileid: "71326994"
 
 Вы создадите небольшое решение, которое позволяет пользователю заполнить таблицу Databricks Delta, загружая файл разделенных запятыми значений (CSV) с описанием заказа на продажу. Чтобы создать это решение, вы объедините подписку на Сетку событий, функцию Azure и [задание](https://docs.azuredatabricks.net/user-guide/jobs.html) в Azure Databricks.
 
-Изучив данный учебник, вы научитесь:
+Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
 > * создавать событие в подписке на Сетку событий, которое вызывает функцию Azure;
@@ -38,11 +38,11 @@ ms.locfileid: "71326994"
 
   Ознакомьтесь со статьей о [создании учетной записи Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 
-* Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+* Создание субъекта-службы. В разделе [Руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
-  :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
 
   > [!IMPORTANT]
   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
@@ -127,7 +127,7 @@ ms.locfileid: "71326994"
 
     ![Создание записной книжки в Databricks](./media/data-lake-storage-events/new-databricks-notebook.png "Создание записной книжки в Databricks")
 
-    Нажмите кнопку **Создать**.
+    Нажмите кнопку **создания**.
 
 ### <a name="create-and-populate-a-databricks-delta-table"></a>Создание и заполнение таблицы Databricks Delta
 
@@ -243,7 +243,7 @@ ms.locfileid: "71326994"
 
 3. Присвойте заданию имя и выберите книгу `upsert-order-data`.
 
-   ![Создание задания](./media/data-lake-storage-events/create-spark-job.png "создать задание;")
+   ![Создание задания](./media/data-lake-storage-events/create-spark-job.png "Создание задания")
 
 ## <a name="create-an-azure-function"></a>Создание функции Azure
 
@@ -410,7 +410,7 @@ ms.locfileid: "71326994"
 
 Удалите группу ресурсов и все связанные с ней ресурсы, когда надобность в них отпадет. Для этого выберите группу ресурсов для учетной записи хранения и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Reacting to Blob storage events (preview)](storage-blob-event-overview.md) (Реагирование на события хранилища BLOB-объектов)

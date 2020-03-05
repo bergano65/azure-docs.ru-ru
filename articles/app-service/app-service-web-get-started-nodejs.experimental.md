@@ -7,12 +7,12 @@ ms.date: 08/23/2019
 ms.custom: seodec18
 experimental: false
 experiment_id: a231f2b4-2625-4d
-ms.openlocfilehash: c02caf7c70dfe88bd3312742fce08137bc360a2e
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 585eb1f11a285722e34c6dd084f4c6cb26a06249
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671408"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247618"
 ---
 # <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "74671408"
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения Node.js в службе приложений Azure на платформе Linux](./containers/quickstart-nodejs.md).
 >
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развертывать приложения Node.js в Службе приложений Azure. Веб-приложение создается в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli). Пример кода Node.js развертывается в веб-приложение с помощью команды [az webapp deployment source config-zip](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-zip).  
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развертывать приложения Node.js в Службе приложений Azure. Веб-приложение создается в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli). Пример кода Node.js развертывается в веб-приложение с помощью команды [az webapp deployment source config-zip](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-zip).  
 
 ![Пример приложения, выполняющегося в Azure](media/app-service-web-get-started-nodejs-poc/hello-world-in-browser.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "74671408"
 
 В Cloud Shell создайте каталог quickstart и перейдите в него.
 
-```azurecli-interactive
+```console
 mkdir quickstart
 
 cd $HOME/quickstart
@@ -42,13 +42,13 @@ cd $HOME/quickstart
 
 Затем выполните следующую команду, чтобы клонировать репозиторий с примером приложения в локальный каталог quickstart.
 
-```azurecli-interactive
+```console
 git clone https://github.com/Azure-Samples/nodejs-docs-hello-world
 ```
 
 При выполнении эта команда выводит приблизительно следующие сведения:
 
-```bash
+```output
 Cloning into 'nodejs-docs-hello-world'...
 remote: Counting objects: 40, done.
 remote: Total 40 (delta 0), reused 0 (delta 0), pack-reused 40
@@ -102,7 +102,7 @@ az webapp config appsettings set --resource-group myResourceGroup --name <app_na
 
 Перейдите к только что созданному веб-приложению. Замените `<app_name>` уникальным именем приложения.
 
-```
+```http
 http://<app_name>.azurewebsites.net
 ```
 
@@ -112,7 +112,7 @@ http://<app_name>.azurewebsites.net
 
 В Cloud Shell перейдите в корневой каталог приложения и создайте ZIP-файл для примера проекта.
 
-```azurecli-interactive
+```console
 cd nodejs-docs-hello-world  
 
 zip -r myUpdatedAppFiles.zip *.*
@@ -130,7 +130,7 @@ az webapp deployment source config-zip --resource-group myResourceGroup --name <
 
 Перейдите в развертываемое приложение с помощью веб-браузера.
 
-```
+```http
 http://<app_name>.azurewebsites.net
 ```
 
@@ -186,7 +186,7 @@ az webapp deployment source config-zip --resource-group myResourceGroup --name <
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Node.js с MongoDB](app-service-web-tutorial-nodejs-mongodb-app.md)

@@ -119,8 +119,6 @@
       items:
         - name: Миграция в службу "Синхронизация файлов Azure"
           href: storage-sync-offline-data-transfer.md
-        - name: Миграция в Синхронизацию файлов Azure из StorSimple
-          href: storage-sync-files-storsimple-migration.md
         - name: "Руководством по миграции StorSimple\_8100 и\_8600"
           href: storage-files-migration-storsimple-8000.md
         - name: "Руководством по миграции StorSimple\_1200"

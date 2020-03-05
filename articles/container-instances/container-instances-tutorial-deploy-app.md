@@ -4,14 +4,14 @@ description: Руководство по службе "Экземпляры ко
 ms.topic: tutorial
 ms.date: 03/21/2018
 ms.custom: seodec18, mvc
-ms.openlocfilehash: d3cbf16feea299e320cf7e24092d00e93cb7cf5b
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 757b41bd69d69deb901e3b5b9a633dce3b9e133a
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533351"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249960"
 ---
-# <a name="tutorial-deploy-a-container-application-to-azure-container-instances"></a>Руководство. Развертывание приложения-контейнера в службе "Экземпляры контейнеров Azure"
+# <a name="tutorial-deploy-a-container-application-to-azure-container-instances"></a>Руководство по Развертывание приложения-контейнера в службе "Экземпляры контейнеров Azure"
 
 Это последняя из трех частей руководства. С помощью предыдущих частей мы [создали образ контейнера](container-instances-tutorial-prepare-app.md), который затем [передали в реестр контейнеров Azure](container-instances-tutorial-prepare-acr.md). Эта часть завершает серию руководств. Мы развернем контейнер в службе "Экземпляры контейнеров Azure".
 
@@ -22,7 +22,7 @@ ms.locfileid: "74533351"
 > * просмотрите выполняющееся приложение в браузере;
 > * отобразите журналы контейнера.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [container-instances-tutorial-prerequisites](../../includes/container-instances-tutorial-prerequisites.md)]
 
@@ -66,13 +66,12 @@ az container show --resource-group myResourceGroup --name aci-tutorial-app --que
 
 После успешного развертывания отобразите полное доменное имя контейнера (FQDN) с помощью команды [az container show][az-container-show]:
 
-```bash
+```azurecli
 az container show --resource-group myResourceGroup --name aci-tutorial-app --query ipAddress.fqdn
 ```
 
-Например:
-```console
-$ az container show --resource-group myResourceGroup --name aci-tutorial-app --query ipAddress.fqdn
+Пример:
+```output
 "aci-demo.eastus.azurecontainer.io"
 ```
 
@@ -88,8 +87,7 @@ az container logs --resource-group myResourceGroup --name aci-tutorial-app
 
 Выходные данные примера:
 
-```bash
-$ az container logs --resource-group myResourceGroup --name aci-tutorial-app
+```output
 listening on port 80
 ::ffff:10.240.0.4 - - [21/Jul/2017:06:00:02 +0000] "GET / HTTP/1.1" 200 1663 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
 ::ffff:10.240.0.4 - - [21/Jul/2017:06:00:02 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://aci-demo.eastus.azurecontainer.io/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
@@ -103,7 +101,7 @@ listening on port 80
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого руководства мы завершили процесс развертывания контейнера в службе "Экземпляры контейнеров Azure". Были выполнены следующие действия:
 

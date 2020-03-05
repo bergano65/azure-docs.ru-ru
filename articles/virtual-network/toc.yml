@@ -356,6 +356,34 @@
           href: move-across-regions-publicip-portal.md
         - name: "Общедоступные IP-адреса\_— PowerShell"
           href: move-across-regions-publicip-powershell.md
+    - name: Диагностика
+      items:
+        - name: Устранение неполадок с пирингом виртуальной сети
+          href: virtual-network-troubleshoot-peering-issues.md
+        - name: Настройка и проверка VPN-подключений и подключений между виртуальными сетями
+          href: virtual-network-configure-vnet-connections.md
+        - name: Группы безопасности сети
+          href: diagnose-network-traffic-filter-problem.md
+        - name: Маршруты
+          href: diagnose-network-routing-problem.md
+        - name: Тестирование пропускной способности
+          href: virtual-network-bandwidth-testing.md
+        - name: Проверка задержки сети виртуальной машины
+          href: virtual-network-test-latency.md
+        - name: Не удается удалить виртуальные сети
+          href: virtual-network-troubleshoot-cannot-delete-vnet.md
+        - name: Проблемы с подключением между виртуальными машинами
+          href: virtual-network-troubleshoot-connectivity-problem-between-vms.md
+        - name: Настройка записи типа PTR для проверки заголовка SMTP
+          href: create-ptr-for-smtp-service.md
+        - name: Контрольный список по устранению неполадок с виртуальными модулями
+          href: virtual-network-troubleshoot-nva.md
+        - name: Устранение неполадок исходящих подключений по протоколу SMTP
+          href: troubleshoot-outbound-smtp-connectivity.md
+        - name: Сведения об IP-адресе 168.63.129.16
+          href: what-is-ip-address-168-63-129-16.md
+        - name: Устранение неполадок с подключением виртуальной машины Azure
+          href: troubleshoot-vm-connectivity.md
     - name: Классическое развертывание
       href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/create-virtual-network-classic'
 - name: Справочник

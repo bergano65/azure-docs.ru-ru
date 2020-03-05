@@ -3,16 +3,16 @@ title: Соглашения и изменения для Azure EA
 description: В этой статье объясняется, как соглашения и изменения Azure EA влияют на использование портала Azure EA.
 author: bandersmsft
 ms.author: banders
-ms.date: 02/12/2020
+ms.date: 03/04/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: boalcsva
-ms.openlocfilehash: c38f28120b7c84077d8d5012c4be4698680e5fdb
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 5198bd240f0c4e23910504fd039d64a73ddb41c9
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200818"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78301426"
 ---
 # <a name="azure-ea-agreements-and-amendments"></a>Соглашения и изменения для Azure EA
 
@@ -25,10 +25,6 @@ ms.locfileid: "77200818"
 ## <a name="enrollment-provisioning-status"></a>Состояние подготовки регистрации
 
 Дата начала нового денежного обязательства определяется датой его обработки региональным операционным центром. Так как заказы на денежные обязательства через портал Azure EA Portal обрабатываются в часовом поясе UTC, может возникнуть задержка, если этот заказ обработан в другом регионе. Дата начала покрытия в заказе на покупку на странице https://www.explore.ms обозначает начало денежного обязательства. Дата начала покрытия — это дата появления денежного обязательства на портале Azure EA.
-
-## <a name="special-pricing-and-azure-commitment-discount-amendments"></a>Специальные цены и изменения скидок за обязательство по использованию Azure
-
-Если вам требуются специальные цены и изменения к скидке за обязательство по использованию Azure (ACD), их необходимо обсудить со службой поддержки клиентов. Рабочая группа Azure может применить ACD после того, как изменение будет обработано с помощью Business Desk и запрошено рабочей группой Azure. Скидка ACD применяется только к текущему месяцу. За любые предыдущие месяцы компенсация осуществляется по кредиту задним числом. 
 
 ## <a name="support-offer-not-provisioned"></a>Предложение поддержки не подготовлено
 

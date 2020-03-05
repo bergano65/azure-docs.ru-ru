@@ -5,12 +5,12 @@ author: mumian
 ms.date: 12/03/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e8f95f4987d0ce421defaed63ed9a587233d2bf4
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: dab69c32f7277cd5d746e001b36118e673401bca
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561601"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78250137"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство по Создание связанных шаблонов Azure Resource Manager
 
@@ -42,7 +42,7 @@ ms.locfileid: "77561601"
 * Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
-    ```azurecli-interactive
+    ```console
     openssl rand -base64 32
     ```
 

@@ -1,7 +1,6 @@
 ---
 title: Мониторинг мобильных приложений с помощью Azure Monitor Application Insights
 description: В этой статье даны инструкции по быстрой настройке мониторинга мобильного приложения с помощью Azure Monitor Application Insights и Центра приложений
-ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: quickstart
 author: mrbullwinkle
@@ -9,18 +8,18 @@ ms.author: mbullwin
 ms.date: 06/26/2019
 ms.reviewer: daviste
 ms.custom: mvc
-ms.openlocfilehash: 07e162dc74a514c9e7e6c82c38b51460a2f797fa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a59a6841a1db3cecfe52c54135b42f5b6a095ce3
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75398890"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77660297"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 
 Это краткое руководство поможет подключить экземпляр App Center вашего приложения к Application Insights. Используя Application Insights, можно выполнять запросы, сегментирование, фильтрацию и анализ данных телеметрии с помощью средств, которые более эффективны, чем средства, доступные в службе [аналитики](https://docs.microsoft.com/mobile-center/analytics/) App Center.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -76,11 +75,11 @@ Analytics.trackEvent("Video clicked")
 
     Появится окно настроек. Используйте таблицу ниже для заполнения полей ввода.
 
-    | Настройки        |  Значение           | Description  |
+    | Настройки        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Название**      | Глобальное уникальное значение, например "myApp-iOS" | Имя, идентифицирующее отслеживаемое приложение |
+   | **имя**;      | Глобальное уникальное значение, например "myApp-iOS" | Имя, идентифицирующее отслеживаемое приложение |
      | **Группа ресурсов**     | Новая группа ресурсов или имеющаяся в меню | Группа ресурсов, в которой требуется создать ресурс Application Insights |
-   | **Местоположение** | Расположение в меню | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
+   | **Расположение** | Расположение в меню | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 3. Нажмите кнопку **Создать**.
 

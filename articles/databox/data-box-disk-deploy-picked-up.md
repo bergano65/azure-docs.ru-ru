@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/19/2019
+ms.date: 03/03/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: eb9231a84295240c20e34bfad56f406317c107da
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 1003b862d7fbe19545cf705570866479132c1f03
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845481"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273174"
 ---
 ::: zone target="chromeless"
 
@@ -24,7 +24,7 @@ ms.locfileid: "76845481"
 
 ::: zone target="docs"
 
-# <a name="tutorial-return-azure-data-box-disk"></a>Руководство. Возврат Диска Azure Data Box 
+# <a name="tutorial-return-azure-data-box-disk"></a>Руководство по Возврат Диска Azure Data Box 
 
 В этом руководстве описано, как запланировать возврат Диска Azure Data Box. Инструкции по возврату будут отличаться в зависимости от региона. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "76845481"
 
 Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство. Инструкции для США, Канады, Европейского союза (ЕС), Австралии и стран Азии отличаются.
 
-### <a name="in-us-or-canadatabin-us-or-canada"></a>[США и Канада](#tab/in-us-or-canada)
+### <a name="in-us-or-canada"></a>[США и Канада](#tab/in-us-or-canada)
 
 Если вы возвращаете устройство в США или Канаде, выполните следующие действия:
 
@@ -67,7 +67,7 @@ ms.locfileid: "76845481"
     - Если номер для отслеживания не указан, UPS потребует дополнительную плату во время приема посылки.
     - Вместо планирования отправки с курьером вы также можете оставить Диск Data Box в ближайшем отделении этой курьерской службы.
 
-### <a name="in-europetabin-europe"></a>[Европа](#tab/in-europe)
+### <a name="in-europe"></a>[Европа](#tab/in-europe)
 
 Если вы возвращаете устройство в Европе, выполните следующие действия:
 
@@ -80,7 +80,7 @@ ms.locfileid: "76845481"
 4. Перейдите на веб-сайт DHL Экспресс страны/региона и выберите **Book a Courier Collection > eReturn Shipment** (Забронировать приезд курьера > Отправка eReturn).    
 3. Укажите номер накладной и нажмите **Расписание отправки**, чтобы оформить отправку.
 
-### <a name="in-australiatabin-australia"></a>[В Австралии](#tab/in-australia)
+### <a name="in-australia"></a>[В Австралии](#tab/in-australia)
 
 В центрах обработки данных Azure в Австралии предусмотрена процедура предварительного уведомления о посылке. Об отправке посылки необходимо заранее предупреждать. При возврате в Австралии выполните следующие действия:
 
@@ -88,7 +88,7 @@ ms.locfileid: "76845481"
 3. Прикрепите этикетку на коробку. 
 4. Закажите через Интернет возврат по ссылке https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference. 
 
-### <a name="in-japantabin-japan"></a>[В Японии](#tab/in-japan)
+### <a name="in-japan"></a>[В Японии](#tab/in-japan)
 
 1. Укажите название и адрес своей компании в качестве сведений об отправителе в квитанции.
 2. Отправьте электронное письмо в компанию Quantium Solutions с помощью указанного ниже шаблона электронного письма.
@@ -115,7 +115,7 @@ ms.locfileid: "76845481"
 - Электронная почта: Customerservice.JP@quantiumsolutions.com 
 - Телефон: 03-5755-0150 
 
-### <a name="in-koreatabin-korea"></a>[Корея](#tab/in-korea)
+### <a name="in-korea"></a>[Корея](#tab/in-korea)
 
 1. Приложите к посылке квитанцию для возврата при доставке наложенным платежом.
 2. Чтобы организовать отправку при наличии квитанции, сделайте следующее:
@@ -130,7 +130,7 @@ ms.locfileid: "76845481"
     4. Вы получите устное подтверждение, если запрос выполнен по телефону.
 
 
-### <a name="in-singaporetabin-singapore"></a>[Сингапур](#tab/in-singapore)
+### <a name="in-singapore"></a>[Сингапур](#tab/in-singapore)
 
 1. Распечатайте этикетку отгрузки и прикрепите ее на коробку. Если этикетка повреждена или утеряна, сделайте следующее:
     - Выберите пункт **Обзор > Скачать этикетку отгрузки** и получите этикетку для возврата.
@@ -157,7 +157,7 @@ ms.locfileid: "76845481"
 
 3. Передайте курьеру.
 
-### <a name="in-self-managedtabin-selfmanaged"></a>[Cамостоятельное управление](#tab/in-selfmanaged)
+### <a name="in-self-managed"></a>[Cамостоятельное управление](#tab/in-selfmanaged)
 
 Если вы используете Диск Data Box в Японии, Сингапуре, Корее и Западной Европе и выбрали параметр самостоятельного управления отгрузкой во время создания заказа, следуйте этим инструкциям. 
 
@@ -175,8 +175,6 @@ ms.locfileid: "76845481"
 3. Сотрудники Azure Data Box Operations помогут вам расположить доставленное оборудование в центре обработки данных Azure.
 
 ::: zone target="docs"
-
----
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

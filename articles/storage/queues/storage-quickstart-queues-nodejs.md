@@ -7,12 +7,12 @@ ms.date: 12/13/2019
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.openlocfilehash: 9f666376020d36bd57b2cc9e78a0704a8ec47b4e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 59a5308d2c0a1fa2e1f38f2fe3da3a2cc29448be
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75358753"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78199790"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для JavaScript
 
@@ -28,9 +28,9 @@ ms.locfileid: "75358753"
 * Удаление сообщений из очереди
 * Удаление очереди
 
-[Справочная документация по API](https://docs.microsoft.com/javascript/api/@azure/storage-queue/) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue) | [Пакет (Node Package Manager)](https://www.npmjs.com/package/@azure/storage-queue) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue/samples)
+[Справочная документация по API](https://docs.microsoft.com/javascript/api/@azure/storage-queue/) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-queue) | [Пакет (Node Package Manager)](https://www.npmjs.com/package/@azure/storage-queue) | [Примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-javascript?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).

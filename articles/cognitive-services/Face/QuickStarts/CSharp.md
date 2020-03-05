@@ -10,18 +10,18 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: e4174ba19d518b4b1dfef9921fe39b0c76f6d1e3
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 8d1349c096b6a6c9bffef38a8b8b3c7ea6bbd432
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169279"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78301817"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-c"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и C#
 
 В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и C#.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,7 +30,7 @@ ms.locfileid: "76169279"
 
 ## <a name="create-the-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **FaceDetection**. 
+1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **FaceDetection**.
 1. При наличии других проектов в решении выберите этот в качестве единого запускаемого проекта.
 
 ## <a name="add-face-detection-code"></a>Добавление кода определения лиц
@@ -44,6 +44,7 @@ ms.locfileid: "76169279"
 ```csharp
 using System;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -63,7 +64,7 @@ namespace DetectFace
 
         // Replace <Subscription Key> with your valid subscription key.
         const string subscriptionKey = "<Subscription Key>";
-        
+
         // replace <myresourcename> with the string found in your endpoint URL
         const string uriBase =
             "https://<myresourcename>.cognitive.microsoft.com/face/v1.0/detect";
@@ -76,6 +77,10 @@ namespace DetectFace
 ```csharp
         static void Main(string[] args)
         {
+
+            // Explicitly set TLS 1.2.
+            ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol |
+                SecurityProtocolType.Tls12;
 
             // Get the path and filename to process from the user.
             Console.WriteLine("Detect faces:");

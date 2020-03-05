@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3eb76535a8047840a577f5b044001d85c20b13f0
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 84b36c1357bedfc120cec72af84fdd79f52a2f57
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77188396"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78245390"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -45,7 +45,7 @@ ms.locfileid: "77188396"
 
     > [!IMPORTANT]
     >
-    > При переносе подписки в учетную запись пользователя в другом клиенте Azure AD все назначения [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) для управления ресурсами в старой подписке будут безвозвратно удалены. Доступ к управлению ресурсами в подписке будет только у того пользователя в новой учетной записи, который подтвердит запрос на передачу. Дополнительные сведения см. в статье[FAQs and known issues with managed identities for Azure resources](../../cognitive-services/acoustics/known-issues.md) (Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе). Есть и другой вариант: вы можете снять флажок "Клиент Azure AD подписки", чтобы передать права владения на выставление счетов без перемещения подписки в клиент новой учетной записи. В этом случае сохранятся все существующие разрешения RBAC на управление ресурсами Azure.
+    > При переносе подписки в учетную запись пользователя в другом клиенте Azure AD все назначения [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) для управления ресурсами в старой подписке будут безвозвратно удалены. Доступ к управлению ресурсами в подписке будет только у того пользователя в новой учетной записи, который подтвердит запрос на передачу. Дополнительные сведения см. в статье[FAQs and known issues with managed identities for Azure resources](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories) (Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе). Есть и другой вариант: вы можете снять флажок "Клиент Azure AD подписки", чтобы передать права владения на выставление счетов без перемещения подписки в клиент новой учетной записи. В этом случае сохранятся все существующие разрешения RBAC на управление ресурсами Azure.
 
     ![Страница отправки запроса на передачу прав](./media/billing-subscription-transfer/billing-send-transfer-request.PNG)
 

@@ -7,12 +7,12 @@ ms.custom:
 - seo-python-october2019
 - seodec18
 - mvc
-ms.openlocfilehash: ab079c7ad5d741d5a569e042ae8939cbeeff203b
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: e5cad7d9141963e5062423545f7e5b94f0575152
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533584"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252188"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-the-azure-cli"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "74533584"
 
 ![Просмотр приложения, развернутого в службе "Экземпляры контейнеров Azure", в браузере][aci-app-browser]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -58,8 +58,7 @@ az container show --resource-group myResourceGroup --name mycontainer --query "{
 
 При выполнении команды отображается полное доменное имя (FQDN) и состояние подготовки контейнера.
 
-```console
-$ az container show --resource-group myResourceGroup --name mycontainer --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" --out table
+```output
 FQDN                               ProvisioningState
 ---------------------------------  -------------------
 aci-demo.eastus.azurecontainer.io  Succeeded
@@ -83,8 +82,7 @@ az container logs --resource-group myResourceGroup --name mycontainer
 
 В выходных данных будут содержаться журналы для контейнера, а также должны отобразиться запросы HTTP GET, созданные при просмотре приложения в браузере.
 
-```console
-$ az container logs --resource-group myResourceGroup --name mycontainer
+```output
 listening on port 80
 ::ffff:10.240.255.55 - - [21/Mar/2019:17:43:53 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
 ::ffff:10.240.255.55 - - [21/Mar/2019:17:44:36 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
@@ -101,10 +99,9 @@ listening on port 80
 az container attach --resource-group myResourceGroup --name mycontainer
 ```
 
-После присоединения несколько раз обновите страницу в браузере, чтобы создать некоторые дополнительные выходные данные. Когда все будет готово, отсоедините консоль с помощью `Control+C`. Вы должны увидеть результат, аналогичный приведенному ниже:
+После присоединения несколько раз обновите страницу в браузере, чтобы создать некоторые дополнительные выходные данные. Когда все будет готово, отсоедините консоль с помощью `Control+C`. Выходные данные должны иметь следующий вид.
 
-```console
-$ az container attach --resource-group myResourceGroup --name mycontainer
+```output
 Container 'mycontainer' is in state 'Running'...
 (count: 1) (last timestamp: 2019-03-21 17:27:20+00:00) pulling image "mcr.microsoft.com/azuredocs/aci-helloworld"
 (count: 1) (last timestamp: 2019-03-21 17:27:24+00:00) Successfully pulled image "mcr.microsoft.com/azuredocs/aci-helloworld"
@@ -143,7 +140,7 @@ az container list --resource-group myResourceGroup --output table
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали экземпляр контейнера Azure с помощью общедоступного образа Microsoft. Если вы хотите создать образ контейнера и развернуть его через частный реестр контейнеров Azure, перейдите к руководству по использованию службы "Экземпляры контейнеров Azure".
 

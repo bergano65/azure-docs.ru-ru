@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/22/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 4a45f516f751609b413948278e2f2cfca47c9da2
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: c0967c411aa10d046caee13441b046bf0f462442
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76703309"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78274328"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-python-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения Python с помощью удостоверения приложения
 
@@ -76,37 +76,42 @@ ms.locfileid: "76703309"
 
 #### <a name="step-2-download-your-python-project"></a>Шаг 2. Скачайте ваш проект Python
 
-[Скачивание проекта управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
+> [!div renderon="docs"]
+> [Скачивание проекта управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
 
-#### <a name="step-3-configure-your-python-project"></a>Шаг 3. Настройте ваш проект Python
+> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
 
-1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
-1. Перейдите к вложенной папке **1-Call-MsGraph-WithSecret"** .
-1. Измените файл **parameters.json**, заменив значения полей `authority`, `client_id` и `secret` следующим фрагментом кода:
+> [!div class="sxs-lookup" renderon="portal"]
+> > [!NOTE]
+> > Enter_the_Supported_Account_Info_Here
 
-    ```json
-    "authority": "https://login.microsoftonline.com/Enter_the_Tenant_Id_Here",
-    "client_id": "Enter_the_Application_Id_Here",
-    "secret": "Enter_the_Client_Secret_Here"
-    ```
-    > > [!div renderon="portal" id="certandsecretspage" class="sxs-lookup"]
-    > > [Создание секрета клиента]()
+
+> [!div renderon="docs"]
+> #### <a name="step-3-configure-your-python-project"></a>Шаг 3. Настройте ваш проект Python
+> 
+> 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
+> 1. Перейдите к вложенной папке **1-Call-MsGraph-WithSecret"** .
+> 1. Измените файл **parameters.json**, заменив значения полей `authority`, `client_id` и `secret` следующим фрагментом кода:
+>
+>    ```json
+>    "authority": "https://login.microsoftonline.com/Enter_the_Tenant_Id_Here",
+>    "client_id": "Enter_the_Application_Id_Here",
+>    "secret": "Enter_the_Client_Secret_Here"
+>    ```
+>    Где:
+>    - `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
+>    - `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
+>    - `Enter_the_Client_Secret_Here` — замените это значение на секрет клиента, созданный на шаге 1.
+>
+> > [!TIP]
+> > Чтобы найти значения параметров **Идентификатор приложения (клиента)** и **Идентификатор каталога (клиента)** , на портале Azure перейдите на страницу приложения **Обзор**. Чтобы создать ключ, перейдите на страницу **Сертификаты и секреты**.
     
-    > [!div class="sxs-lookup" renderon="portal"]
-    > > [!NOTE]
-    > > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
-    
-    > [!div renderon="docs"]
-    >> Где:
-    >> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
-    >> * `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
-    >> * `Enter_the_Client_Secret_Here` — замените это значение на секрет клиента, созданный на шаге 1.
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-3-admin-consent"></a>Шаг 3. Согласие администратора
 
-    > [!div renderon="docs"]
-    > > [!TIP]
-    > > Чтобы найти значения параметров **Идентификатор приложения (клиента)** и **Идентификатор каталога (клиента)** , на портале Azure перейдите на страницу приложения **Обзор**. Чтобы создать ключ, перейдите на страницу **Сертификаты и секреты**.
-    
-#### <a name="step-4-admin-consent"></a>Шаг 4. Согласие администратора
+> [!div renderon="docs"]
+> #### <a name="step-4-admin-consent"></a>Шаг 4. Согласие администратора
 
 Если попытаться запустить приложение на этом этапе, вы получите ошибку *HTTP 403 — Forbidden* (запрещено): `Insufficient privileges to complete the operation`. Эта ошибка возникает, так как *разрешение только для приложения* предоставляется с согласия администратора. Следовательно, глобальный администратор каталога должен предоставить такое согласие приложению. Выберите один из следующих вариантов с учетом своей роли:
 
@@ -133,7 +138,11 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 >> * `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
 >> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
 
-#### <a name="step-5-run-the-application"></a>Шаг 5. Выполнение приложения
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-4-run-the-application"></a>Шаг 4. Выполнение приложения
+
+> [!div renderon="docs"]
+> #### <a name="step-5-run-the-application"></a>Шаг 5. Выполнение приложения
 
 Зависимости этого образца необходимо установить один раз
 

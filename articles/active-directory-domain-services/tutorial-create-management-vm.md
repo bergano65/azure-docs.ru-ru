@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/30/2019
 ms.author: iainfou
-ms.openlocfilehash: 0c997fffc1adc60f774e651ed458d253b35a3bdd
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: f422d1dd6c76d78448ae4fb1012a5dae8d6108b3
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77612218"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78299080"
 ---
 # <a name="tutorial-create-a-management-vm-to-configure-and-administer-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure Active Directory
 
@@ -59,7 +59,6 @@ Azure AD DS предоставляет управляемый домен, кот
 
 Участникам группы *Администраторы контроллера домена AAD* предоставляются права в управляемом домене Azure AD DS, которые позволяют выполнять следующие задачи:
 
-* присоединение компьютеров к управляемому домену;
 * настройка встроенного объекта групповой политики для контейнеров *Компьютеры AADDC* и *Пользователи AADDC* в управляемом домене;
 * администрирование DNS в управляемом домене;
 * создание и администрирование пользовательских подразделений (OU) в управляемом домене;

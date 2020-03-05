@@ -3,8 +3,8 @@ title: Краткое руководство. Создание экземпля�
 titleSuffix: Azure Database Migration Service
 description: Использование портала Azure для создания экземпляра службы Azure Database Migration Service в гибридном режиме.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 01/21/2019
-ms.openlocfilehash: 81039aa4aa37f9587db887beadcdb6d263ec6a74
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 8dba12fc2c3777c2c45315f1805fa7ec8f1d8b83
+ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274809"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78255040"
 ---
 # <a name="quickstart-create-a-hybrid-mode-instance-with-azure-portal--azure-database-migration-service"></a>Краткое руководство. Создание экземпляра в гибридном режиме с помощью портала Azure и Azure Database Migration Service
 

@@ -4,12 +4,12 @@ description: Сведения о развертывании в службе Azur
 keywords: jenkins, azure, devops, kubernetes, k8s, aks, blue green deployment, continuous delivery, cd
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: ae9c496cd820bf1263cac50fb676990ed65ed0ba
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 9d6551f910bd99322f844b44130ebb03732df83c
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158555"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251477"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
@@ -84,19 +84,19 @@ ms.locfileid: "74158555"
 
 1. Войдите в учетную запись Azure. После ввода следующей команды вы получите инструкции, в которых объясняется, как завершить вход. 
     
-    ```bash
+    ```azurecli
     az login
     ```
 
 1. При выполнении команды `az login` на предыдущем шаге появляется список всех ваших подписок Azure (вместе с идентификаторами подписки). На этом шаге вы по умолчанию задаете подписку Azure. Замените местозаполнитель &lt;your-subscription-id> на нужный идентификатор подписки Azure. 
 
-    ```bash
+    ```azurecli
     az account set -s <your-subscription-id>
     ```
 
 1. Создайте группу ресурсов. Замените местозаполнитель &lt;your-resource-group-name> именем вашей новой группы ресурсов, а &lt;your-location> — расположением. Команда `az account list-locations` отображает все расположениях Azure. Во время предварительной версии AKS доступны не все расположения. Если ввести расположение, которое является недопустимым в настоящее время, в сообщении об ошибке отобразятся доступные расположения.
 
-    ```bash
+    ```azurecli
     az group create -n <your-resource-group-name> -l <your-location>
     ```
 
@@ -129,7 +129,7 @@ ms.locfileid: "74158555"
 #### <a name="set-up-a-kubernetes-cluster-manually"></a>Настройка кластера Kubernetes вручную 
 1. Загрузите конфигурацию Kubernetes в папку профиля.
 
-    ```bash
+    ```azurecli
     az aks get-credentials -g <your-resource-group-name> -n <your-kubernetes-cluster-name> --admin
     ```
 
@@ -157,13 +157,13 @@ ms.locfileid: "74158555"
     
     Обновите DNS-имя для соответствующих IP-адресов с помощью следующей команды:
 
-    ```bash
+    ```azurecli
     az network public-ip update --dns-name aks-todoapp --ids /subscriptions/<your-subscription-id>/resourceGroups/MC_<resourcegroup>_<aks>_<location>/providers/Microsoft.Network/publicIPAddresses/kubernetes-<ip-address>
     ```
 
     Повторите вызов для `todoapp-test-blue` и `todoapp-test-green`:
 
-    ```bash
+    ```azurecli
     az network public-ip update --dns-name todoapp-blue --ids /subscriptions/<your-subscription-id>/resourceGroups/MC_<resourcegroup>_<aks>_<location>/providers/Microsoft.Network/publicIPAddresses/kubernetes-<ip-address>
 
     az network public-ip update --dns-name todoapp-green --ids /subscriptions/<your-subscription-id>/resourceGroups/MC_<resourcegroup>_<aks>_<location>/providers/Microsoft.Network/publicIPAddresses/kubernetes-<ip-address>
@@ -175,19 +175,19 @@ ms.locfileid: "74158555"
 
 1. Чтобы создать экземпляр Реестра контейнеров, выполните команду `az acr create`. В следующем разделе можно использовать `login server` как URL-адрес реестра Docker.
 
-    ```bash
+    ```azurecli
     az acr create -n <your-registry-name> -g <your-resource-group-name>
     ```
 
 1. Выполните команду `az acr credential`, чтобы отобразить учетные данные вашего Реестра контейнеров. Запомните имя пользователя и пароль реестра Docker, так как они вам понадобятся в следующем разделе.
 
-    ```bash
+    ```azurecli
     az acr credential show -n <your-registry-name>
     ```
 
 ## <a name="prepare-the-jenkins-server"></a>Подготовка сервера Jenkins
 
-В этом разделе вы узнаете, как подготовить сервер Jenkins для выполнения сборки, удобной для тестирования. Тем не менее следует использовать [агент виртуальной машины Azure](https://plugins.jenkins.io/azure-vm-agents) или [агент контейнеров Azure](https://plugins.jenkins.io/azure-container-agents) для выполнения развертывания агента и запуска сборки. Дополнительные сведения см. в статье [Влияние безопасности построения на образец](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) о Jenkins.
+В этом разделе вы узнаете, как подготовить сервер Jenkins для выполнения сборки, удобной для тестирования. Тем не менее следует использовать [агент виртуальной машины Azure](https://plugins.jenkins.io/azure-vm-agents) или [агент контейнеров Azure](https://plugins.jenkins.io/azure-container-agents) для выполнения развертывания агента и запуска сборки. Дополнительные сведения см. в статье о [вопросах безопасности при сборке в главном узле](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) в документации по Jenkins.
 
 1. Разверните [Jenkins Master в Azure](https://aka.ms/jenkins-on-azure).
 
@@ -224,7 +224,7 @@ ms.locfileid: "74158555"
 
 1. В репозитории перейдите к `/deploy/aks/` и откройте `Jenkinsfile`.
 
-2. Обновите файл следующим образом:
+2. Измените файл следующим образом:
 
     ```groovy
     def servicePrincipalId = '<your-service-principal>'
@@ -253,9 +253,9 @@ ms.locfileid: "74158555"
 
 1. Введите следующий путь к сценарию: `deploy/aks/Jenkinsfile`.
 
-## <a name="run-the-job"></a>Выполнение задания
+## <a name="run-the-job"></a>Запуск задания
 
-1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Этот процесс описывается далее. [выполнению проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
+1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Это делается так. [выполнению проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
 
 1. Выполните задания Jenkins При выполнении задания в первый раз Jenkins развертывает приложение списка задач в синей среде, которая является неактивной по умолчанию. 
 
@@ -268,7 +268,7 @@ ms.locfileid: "74158555"
 
 Если сборка выполняется более одного раза, она циклически проходит через сине-зеленое развертывание. Другими словами, если текущая среда синяя, задание развертывает и проверяет зеленую среду. Затем, если при тестировании не обнаружено ошибок, задание обновляет общедоступную конечную точку приложения для направления трафика в зеленую среду.
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 Дополнительные сведения о развертывании без простоя см. в [шаблоне быстрого запуска](https://github.com/Azure/azure-quickstart-templates/tree/master/301-jenkins-aks-zero-downtime-deployment). 
 
@@ -276,7 +276,7 @@ ms.locfileid: "74158555"
 
 Если вам больше не нужны ресурсы, созданные для этого руководства, вы можете удалить их.
 
-```bash
+```azurecli
 az group delete -y --no-wait -n <your-resource-group-name>
 ```
 
@@ -284,7 +284,7 @@ az group delete -y --no-wait -n <your-resource-group-name>
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как развертывать AKS с использованием Jenkins и сине-зеленого шаблона развертывания. Дополнительные сведения о поставщике Jenkins в Azure, см. в разделе Jenkins на сайте Azure.
 

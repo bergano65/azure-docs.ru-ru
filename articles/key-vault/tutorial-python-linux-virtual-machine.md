@@ -5,16 +5,17 @@ services: key-vault
 author: msmbaldwin
 manager: rajvijan
 ms.service: key-vault
+ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 15650de776b481d1635b58f2b8ecf2bf2921d12f
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 3c80a206af74eb370470c38a7af9c7f1fe840406
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242419"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198156"
 ---
 # <a name="tutorial-use-a-linux-vm-and-a-python-app-to-store-secrets-in-azure-key-vault"></a>Руководство по Использование виртуальной машины Linux и приложения Python для хранения секретов в Azure Key Vault
 
@@ -35,7 +36,7 @@ Azure Key Vault помогает защитить секреты (наприме
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Git](https://git-scm.com/downloads).
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 * [Azure CLI версии 2.0.4 (и более поздней)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) или Azure Cloud Shell.
 
 [!INCLUDE [Azure Cloud Shell](../../includes/cloud-shell-try-it.md)]
@@ -197,7 +198,7 @@ print(kvSecret.json()["value"])
    1. Получает токен от локальной конечной точки MSI на виртуальной машине. Затем конечная точка получает токен из Azure Active Directory.
    1. Передает токен в хранилище ключей и получает ваш секрет.
 
-Выполните следующую команду: Отобразится значение секрета.
+Выполните следующую команду. Отобразится значение секрета.
 
 ```console
 python Sample.py
@@ -217,7 +218,7 @@ az keyvault delete --name
                    [--subscription]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)

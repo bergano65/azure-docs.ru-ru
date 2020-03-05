@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: sample
 ms.date: 09/23/2019
-ms.openlocfilehash: 7ce2160fa94653a1155daaef166b7fdbb9386e7e
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: cbbb38c645e56b2e7b8c70b437b1e5158b09a50b
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266474"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78207104"
 ---
 # <a name="azure-hdinsight-azure-cli-samples"></a>Azure HDInsight: Примеры для Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "71266474"
 
 * Azure CLI. Шаги этого процесса описаны в статье [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-* Необязательно: Bash. В примерах, приведенных в этой статье, используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  С небольшими изменениями эти примеры будут работать и в командной строке Windows.
+* Необязательное действие: Bash. В примерах, приведенных в этой статье, используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  С небольшими изменениями эти примеры будут работать и в командной строке Windows.
 
 ## <a name="az-login"></a>az login
 
@@ -90,7 +90,7 @@ az hdinsight create \
     --cluster-users-group-dns $groupDNS
 ```
 
-### <a name="create-a-kafka-cluster-with-disk-encryptionkafkaapache-kafka-byokmd"></a>Создание кластера Kafka с [шифрованием дисков](kafka/apache-kafka-byok.md)
+### <a name="create-a-kafka-cluster-with-disk-encryption"></a>Создание кластера Kafka с [шифрованием дисков](./disk-encryption.md)
 
 ```azurecli
 export clusterName=CLUSTERNAME

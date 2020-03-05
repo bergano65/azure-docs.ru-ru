@@ -208,6 +208,9 @@
         - name: Создание наборов данных с метками
           displayName: 'data, labels, torchvision'
           href: how-to-use-labeled-dataset.md
+        - name: Прием данных с помощью Фабрики данных Azure
+          displayName: 'data, ingestion, adf'
+          href: how-to-data-ingest-adf.md
         - name: DevOps для приема данных
           displayName: 'data, ingestion, devops'
           href: how-to-cicd-data-ingestion.md

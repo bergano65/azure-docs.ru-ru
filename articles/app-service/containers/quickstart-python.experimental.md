@@ -10,12 +10,12 @@ ms.author: msangapu
 ms.custom: seo-python-october2019
 experimental: false
 experiment_id: 01a9132f-eaab-4c
-ms.openlocfilehash: 9a45353d3223844d828ffc4a8ac248a0ff68f781
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 68dc36ce96737fe8395280c3a833e359084d2fee
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76030052"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78246860"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
@@ -23,11 +23,11 @@ ms.locfileid: "76030052"
 
 Если вы предпочитаете развертывать приложения с помощью интегрированной среды разработки, см. статью [Развертывание приложений Python в службе приложений из Visual Studio Code](/azure/python/tutorial-deploy-app-service-on-linux-01).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - <a href="https://www.python.org/downloads/" target="_blank">Python 3.7</a> (также поддерживается Python 3.6)
-- <a href="https://git-scm.com/downloads" target="_blank">Git</a>
+- <a href="https://git-scm.com/downloads" target="_blank">Git</a>;
 - <a href="https://docs.microsoft.com/cli/azure/install-azure-cli" target="_blank">Azure CLI</a>
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
@@ -52,7 +52,7 @@ Azure CLI предоставляет множество удобных кома�
 
 Чтобы выполнить команды Azure в интерфейсе командной строки Azure, необходимо сначала выполнить вход с помощью команды `az login`. Эта команда открывает окно браузера для ввода учетных данных.
 
-```terminal
+```azurecli
 az login
 ```
 
@@ -63,7 +63,7 @@ az login
 В папке *python-docs-hello-world*, содержащей пример кода, выполните следующую команду `az webapp up`. Замените `<app-name>` глобальным уникальным именем приложения (*допустимые символы: `a-z`, `0-9` и `-`* ). Также замените `<location-name>` на регион Azure, например **centralus**, **eastasia**, **westeurope**, **koreasouth**, **brazilsouth**, **centralindia** и т. д. (Список допустимых регионов для учетной записи Azure можно получить, выполнив команду [`az account locations-list`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations).)
 
 
-```terminal
+```azurecli
 az webapp up --sku F1 -n <app-name> -l <location-name>
 ```
 
@@ -110,7 +110,7 @@ All done.
 
 В окне терминала выполните приведенные ниже команды (в зависимости от операционной системы), чтобы установить необходимые зависимости и запустить встроенный сервер разработки. 
 
-# <a name="bashtabbash"></a>[Bash](#tab/bash)
+# <a name="bash"></a>[Bash](#tab/bash)
 
 ```bash
 python3 -m venv venv
@@ -120,7 +120,7 @@ FLASK_APP=application.py
 flask run
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 py -3 -m venv env
@@ -130,7 +130,7 @@ Set-Item Env:FLASK_APP ".\application.py"
 flask run
 ```
 
-# <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+# <a name="cmd"></a>[Cmd](#tab/cmd)
 
 ```cmd
 py -3 -m venv env
@@ -161,7 +161,7 @@ return "Hello Azure!"
 
 Повторно разверните приложение с помощью следующей команды `az webapp up`, используя ту же команду, которая использовалась для развертывания приложения в первый раз, заменив `<app-name>` и `<location-name>` именами, которые использовались ранее. 
 
-```terminal
+```azurecli
 az webapp up --sku F1 -n <app-name> -l <location-name>
 ```
 
@@ -178,13 +178,13 @@ az webapp up --sku F1 -n <app-name> -l <location-name>
 
 Сначала включите ведение журнала контейнера, выполнив следующую команду в терминале, заменив `<app-name>` именем приложения, а `<resource-group-name>` — именем группы ресурсов, показанной в выходных данных используемой команды `az webapp up` (например, "appsvc_rg_Linux_centralus"):
 
-```terminal
+```azurecli
 az webapp log config --name <app-name> --resource-group <resource-group-name> --docker-container-logging filesystem
 ```
 
 После включения ведения журнала контейнера, выполните следующую команду, чтобы просмотреть поток данных журнала.
 
-```terminal
+```azurecli
 az webapp log tail --name <app-name> --resource-group <resource-group-name>
 ```
 
@@ -221,7 +221,7 @@ az webapp log tail --name <app-name> --resource-group <resource-group-name>
 
 Если вы не планируете использовать эти ресурсы в будущем, удалите группу ресурсов, выполнив следующую команду, заменив `<resource-group-name>` на имя группы ресурсов, показанное в выходных данных команды `az webapp up`, например "appsvc_rg_Linux_centralus". Выполнение этой команды может занять около минуты.
 
-```terminal
+```azurecli
 az group delete -n <resource-group-name>
 ```
 

@@ -1,18 +1,17 @@
 ---
 title: Общие сведения о службе Azure Monitor | Microsoft Docs
 description: Обзор функциональных возможностей и служб Майкрософт, которые являются частью стратегии мониторинга ваших служб и приложений в Azure.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
-ms.openlocfilehash: f5d98ecdac3acacda2b592f88e7db45dc181e8da
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: cec437929e2f7ccd94cf4cf94ec81f87dac2678a
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76934475"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77669171"
 ---
 # <a name="azure-monitor-overview"></a>Общие сведения о службе Azure Monitor
 

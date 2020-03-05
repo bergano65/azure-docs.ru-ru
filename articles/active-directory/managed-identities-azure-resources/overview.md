@@ -15,12 +15,12 @@ ms.custom: mvc
 ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f89a21eb0cebf30dac2bb55ae1b642a2ff756ead
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.openlocfilehash: a721d1e486010e22927512985611cccdd99f4505
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77468680"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78248323"
 ---
 # <a name="what-are-managed-identities-for-azure-resources"></a>Что такое управляемые удостоверения для ресурсов Azure?
 
@@ -140,6 +140,7 @@ ms.locfileid: "77468680"
 * [Служба Azure Kubernetes (AKS)](/azure/aks/use-managed-identity)
 * [Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)
 * [служебной шине Azure](../../service-bus-messaging/service-bus-managed-service-identity.md)
+* [Фабрика данных Azure](../../data-factory/data-factory-service-identity.md).
 
 
 ## Службы Azure, в которых поддерживается данная функция.<a name="which-azure-services-support-managed-identity"></a>

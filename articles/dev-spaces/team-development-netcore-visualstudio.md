@@ -9,12 +9,12 @@ ms.date: 12/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для командной разработки в приложении .NET Core в службе Azure Kubernetes
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: f88a0b146a53a5b14ab17ae0d959e9b8a5567302
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b4520ce35807fb022fa39ae9b00347a27e192380
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438182"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78245052"
 ---
 # <a name="team-development-using-net-core-and-visual-studio-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio
 
@@ -64,7 +64,7 @@ _Без_ использования сред Dev Spaces у Василия был
 1. Выберите вкладку **Отладка** слева, чтобы отобразить параметры Azure Dev Spaces.
 1. Выберите **Изменить**, чтобы создать пространство, которое будет использоваться в службе при нажатии клавиш F5 или Ctrl+F5.
 1. В раскрывающемся списке пространства выберите **\<Create New Space…\>** (Создать пространство…).
-1. Убедитесь, что родительскому пространству присвоено значение **\<none\>** , и введите имя **dev** для пространства. Нажмите кнопку «ОК».
+1. Убедитесь, что родительскому пространству присвоено значение **\<none\>** , и введите имя **dev** для пространства. Щелкните ОК.
 1. Нажмите сочетание клавиш Ctrl+F5, чтобы запустить _mywebapi_ без подключенного отладчика.
 1. Переключитесь в окно Visual Studio с проектом _webfrontend_ и нажмите сочетание клавиш CTRL+F5, чтобы запустить и его.
 
@@ -146,6 +146,9 @@ _Без_ использования сред Dev Spaces у Василия был
 С помощью приведенного ниже примера кода можно вывести список контроллеров Azure Dev Spaces в активной подписке, а затем удалить контроллер Azure Dev Spaces, связанный с кластером AKS myaks в группе ресурсов myaks-rg.
 
 ```cmd
-    azds controller list
-    az aks remove-dev-spaces --name myaks --resource-group myaks-rg
+azds controller list
+```
+
+```azurecli
+az aks remove-dev-spaces --name myaks --resource-group myaks-rg
 ```
