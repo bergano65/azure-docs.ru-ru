@@ -10,19 +10,19 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 02/26/2020
-ms.openlocfilehash: 3370fc72b45720e2aae5731623843a1bc498911c
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
-ms.translationtype: MT
+ms.openlocfilehash: 35c133a4d9d95dc6e942d5b8c3e8d21debb9493b
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652078"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78268547"
 ---
 # <a name="data-ingestion-in-azure-machine-learning"></a>Прием данных в Машинное обучение Azure
 
 В этой статье вы узнаете о преимуществах и недостатках следующих параметров приема данных, доступных в Машинное обучение Azure. 
 
 1. Конвейеры [фабрики данных Azure](#use-azure-data-factory)
-2. [Пакет SDK для Машинное обучение Azure Python](#use-the-python-sdk)
+2. [Пакет SDK Python для Машинного обучения Azure](#use-the-python-sdk)
 
 Прием данных — это процесс, в ходе которого неструктурированные данные извлекаются из одного или нескольких источников, а затем подготавливаются для обучения моделей машинного обучения. Это также требует много времени, особенно если это сделано вручную, и при наличии больших объемов данных из нескольких источников. Автоматизация этих усилий освобождает ресурсы и гарантирует, что в моделях используются самые последние и применимые данные.
 
@@ -55,7 +55,7 @@ ms.locfileid: "77652078"
 
 ## <a name="use-the-python-sdk"></a>Использование пакета SDK для Python 
 
-С помощью [пакета SDK для Python](https://docs.microsoft.com/python/api/overview/azureml-sdk/?view=azure-ml-py)можно включить задачи приема данных в машинное обучение Azure шаге [конвейера](how-to-create-your-first-pipeline.md) .
+С помощью [пакета SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml)можно включить задачи приема данных в машинное обучение Azure шаге [конвейера](how-to-create-your-first-pipeline.md) .
 
 В следующей таблице приведены сведения о преимуществах и Con для использования пакета SDK и конвейера машинного обучения для задач приема данных.
 

@@ -1,5 +1,6 @@
 ---
-title: Выпуски Microsoft Threat Modeling Tool в Azure | Документация Майкрософт
+title: Заметки о выпуске Microsoft Threat Modeling Tool
+titleSuffix: Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 services: security
 documentationcenter: na
@@ -15,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2019
 ms.author: jegeib
-ms.openlocfilehash: 6a5216f17645dc86a9e7a1872c7e66947c8bd36b
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: a1a3687edaed012f255af915886917c3ac188896
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77624069"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78269626"
 ---
 # <a name="threat-modeling-tool-releases"></a>Выпуски Threat Modeling Tool
 
@@ -45,6 +46,6 @@ Microsoft Threat Modeling Tool выпущено в виде бесплатног
 - [Threat Modeling Tool, выпуск общедоступной версии 7.1.51023.1](threat-modeling-tool-releases-71510231.md) от 01.11.2018 г.
 - [Threat Modeling Tool, выпуск общедоступной версии 7.1.50911.2](threat-modeling-tool-releases-71509112.md) от 12.09.2018 г.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

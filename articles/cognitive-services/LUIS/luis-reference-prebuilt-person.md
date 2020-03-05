@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 9777c62d97c70d4f6a0d0a4d912dea3fa8decd23
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 768c719211e8a8f2133d3798343d076e795a3da0
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499553"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273433"
 ---
 # <a name="personname-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность PersonName для приложения LUIS
 Предварительно созданная сущность PersonName определяет имена людей. Так как эта сущность уже обучена, добавлять в намерения приложения примеры высказываний, содержащие сущности PersonName, не нужно. Сущность personName поддерживается для английского и китайского [языков и региональных параметров](luis-reference-prebuilt-entities.md).
@@ -28,7 +28,7 @@ ms.locfileid: "73499553"
 `Is Jill Jones in Cairo?`
 
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
@@ -40,7 +40,7 @@ ms.locfileid: "73499553"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
@@ -65,7 +65,7 @@ ms.locfileid: "73499553"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.PersonName**.
 
@@ -79,10 +79,10 @@ ms.locfileid: "73499553"
 }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-См. дополнительные сведения о сущностях [email](luis-reference-prebuilt-email.md), [number](luis-reference-prebuilt-number.md) и [ordinal](luis-reference-prebuilt-ordinal.md). 
+См. дополнительные сведения о сущностях [email](luis-reference-prebuilt-email.md), [number](luis-reference-prebuilt-number.md) и [ordinal](luis-reference-prebuilt-ordinal.md).

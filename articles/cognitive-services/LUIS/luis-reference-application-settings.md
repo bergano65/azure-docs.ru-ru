@@ -8,33 +8,33 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 11/12/2019
 ms.author: diberry
-ms.openlocfilehash: bae4f09b539e26ca8c0d4ce97999776dc0911601
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: d1ead09f6248a6ad14646371aa70b42b57cf8e3f
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961788"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78270804"
 ---
-# <a name="application-settings"></a>Параметры приложения
+# <a name="application-settings"></a>Параметры приложений
 
 Эти параметры приложения хранятся в [экспортированном](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложении и [обновляются](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с помощью интерфейсов API. При изменении параметров версии приложения состояние обучения приложения сбрасывается на "не обучено".
 
-|Настройка|Значение по умолчанию|Примечания|
+|Параметр|Значение по умолчанию|Примечания|
 |--|--|--|
-|нормализепунктуатион|True,|Удаляет знаки препинания.|
-|NormalizeDiacritics|True,|Удаляет диакритические знаки.|
+|нормализепунктуатион|Истина|Удаляет знаки препинания.|
+|NormalizeDiacritics|Истина|Удаляет диакритические знаки.|
 
-## <a name="diacritics-normalization"></a>Нормализация диакритических знаков 
+## <a name="diacritics-normalization"></a>Нормализация диакритических знаков
 
 Включите нормализацию utterance для диакритических знаков в файле приложения LUIS JSON в параметре `settings`.
 
 ```JSON
 "settings": [
     {"name": "NormalizeDiacritics", "value": "true"}
-] 
+]
 ```
 
 В следующем фразы продолжительностью показано, как нормализация диакритических знаков влияет на фразы продолжительностью:
@@ -61,7 +61,7 @@ ms.locfileid: "73961788"
 |`ó`|`o`|
 |`ô`|`o`|
 |`õ`|`o`|
-|`ú`|`u`| 
+|`ú`|`u`|
 |||
 
 #### <a name="dutch-nl-nl-diacritics"></a>Голландский `nl-nl` диакритические знаки
@@ -77,7 +77,7 @@ ms.locfileid: "73961788"
 |`í`|`i`|
 |`ó`|`o`|
 |`ö`|`o`|
-|`ú`|`u`| 
+|`ú`|`u`|
 |`ü`|`u`|
 |||
 
@@ -91,24 +91,24 @@ ms.locfileid: "73961788"
 |`à`|`a`|
 |`è`|`e`|
 |`ù`|`u`|
-|`â`|`a`| 
-|`ê`|`e`| 
-|`î`|`i`| 
-|`ô`|`o`| 
-|`û`|`u`| 
-|`ç`|`c`| 
-|`ë`|`e`| 
-|`ï`|`i`| 
-|`ü`|`u`| 
-|`ÿ`|`y`| 
+|`â`|`a`|
+|`ê`|`e`|
+|`î`|`i`|
+|`ô`|`o`|
+|`û`|`u`|
+|`ç`|`c`|
+|`ë`|`e`|
+|`ï`|`i`|
+|`ü`|`u`|
+|`ÿ`|`y`|
 
 #### <a name="german-de-de-diacritics"></a>`de-de` знаков на немецком языке
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |--|--|
 |`ä`|`a`|
-|`ö`|`o`| 
-|`ü`|`u`| 
+|`ö`|`o`|
+|`ü`|`u`|
 
 #### <a name="italian-it-it-diacritics"></a>Итальянские `it-it` диакритические знаки
 
@@ -117,11 +117,11 @@ ms.locfileid: "73961788"
 |`à`|`a`|
 |`è`|`e`|
 |`é`|`e`|
-|`ì`|`i`| 
-|`í`|`i`| 
-|`î`|`i`| 
-|`ò`|`o`| 
-|`ó`|`o`| 
+|`ì`|`i`|
+|`í`|`i`|
+|`î`|`i`|
+|`ò`|`o`|
+|`ó`|`o`|
 |`ù`|`u`|
 |`ú`|`u`|
 
@@ -133,8 +133,8 @@ ms.locfileid: "73961788"
 |-|-|
 |`á`|`a`|
 |`é`|`e`|
-|`í`|`i`| 
-|`ó`|`o`| 
+|`í`|`i`|
+|`ó`|`o`|
 |`ú`|`u`|
 |`ü`|`u`|
 |`ñ`|`u`|
@@ -147,7 +147,7 @@ ms.locfileid: "73961788"
 ```JSON
 "settings": [
     {"name": "NormalizePunctuation", "value": "true"}
-] 
+]
 ```
 
 В следующем фразы продолжительностью показано, как пунктуация влияет на фразы продолжительностью:
@@ -163,8 +163,8 @@ ms.locfileid: "73961788"
 
 |Пунктуация|
 |--|
-|`-`| 
-|`.`| 
+|`-`|
+|`.`|
 |`'`|
 |`"`|
 |`\`|

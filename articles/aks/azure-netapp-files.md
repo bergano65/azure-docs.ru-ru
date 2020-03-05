@@ -6,12 +6,12 @@ author: zr-msft
 ms.topic: article
 ms.date: 09/26/2019
 ms.author: zarhoads
-ms.openlocfilehash: 42985e57d63c01553532928b2ba04ed5ee3dd8fb
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 1c4996df66d475c63110e3d2797f55598fd85b8d
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77596646"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273752"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "77596646"
 
 Зарегистрируйте поставщик ресурсов *Microsoft. NetApp* :
 
-```azure-cli
+```azurecli
 az provider register --namespace Microsoft.NetApp --wait
 ```
 
@@ -52,14 +52,16 @@ az provider register --namespace Microsoft.NetApp --wait
 При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов с помощью команды [AZ AKS показывать][az-aks-show] и добавьте параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
-$ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
+az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
+```
 
+```output
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
 Создайте учетную запись Azure NetApp Files в группе ресурсов **узла** и в том же регионе, что и кластер AKS, выполнив команду [AZ нетаппфилес Account Create][az-netappfiles-account-create]. В следующем примере создается учетная запись с именем *myaccount1* в *MC_myResourceGroup_myAKSCluster_eastus* группе ресурсов и *eastus* регионе.
 
-```azure-cli
+```azurecli
 az netappfiles account create \
     --resource-group MC_myResourceGroup_myAKSCluster_eastus \
     --location eastus \
@@ -68,7 +70,7 @@ az netappfiles account create \
 
 Создайте пул ресурсов с помощью команды [AZ нетаппфилес Pool Create][az-netappfiles-pool-create]. В следующем примере создается новый пул ресурсов с именем *mypool1* с размером 4 ТБ и уровнем обслуживания *Premium* :
 
-```azure-cli
+```azurecli
 az netappfiles pool create \
     --resource-group MC_myResourceGroup_myAKSCluster_eastus \
     --location eastus \
@@ -80,7 +82,7 @@ az netappfiles pool create \
 
 Создайте подсеть для [делегирования Azure NetApp Files][anf-delegate-subnet] с помощью команды [AZ Network vnet подсети Create][az-network-vnet-subnet-create]. *Эта подсеть должна находиться в той же виртуальной сети, что и кластер AKS.*
 
-```azure-cli
+```azurecli
 RESOURCE_GROUP=MC_myResourceGroup_myAKSCluster_eastus
 VNET_NAME=$(az network vnet list --resource-group $RESOURCE_GROUP --query [].name -o tsv)
 VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP --name $VNET_NAME --query "id" -o tsv)
@@ -95,7 +97,7 @@ az network vnet subnet create \
 
 Создайте том с помощью команды [AZ нетаппфилес Volume Create][az-netappfiles-volume-create].
 
-```azure-cli
+```azurecli
 RESOURCE_GROUP=MC_myResourceGroup_myAKSCluster_eastus
 LOCATION=eastus
 ANF_ACCOUNT_NAME=myaccount1
@@ -125,9 +127,12 @@ az netappfiles volume create \
 ## <a name="create-the-persistentvolume"></a>Создание Персистентволуме
 
 Выведите список сведений о томе с помощью команды [AZ нетаппфилес Volume демонстрация][az-netappfiles-volume-show] .
-```azure-cli
-$ az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $ANF_ACCOUNT_NAME --pool-name $POOL_NAME --volume-name "myvol1"
 
+```azurecli
+az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $ANF_ACCOUNT_NAME --pool-name $POOL_NAME --volume-name "myvol1"
+```
+
+```output
 {
   ...
   "creationToken": "myfilepath2",
@@ -245,7 +250,9 @@ kubectl describe pod nginx-nfs
 
 ```console
 $ kubectl exec -it nginx-nfs -- bash
+```
 
+```output
 root@nginx-nfs:/# df -h
 Filesystem             Size  Used Avail Use% Mounted on
 ...

@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.reviewer: sngun
-ms.openlocfilehash: f8ae85ffc16bd953f04f1c3d7790231939c1f2cf
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: e71b2807595aebeb1f0c8682fde119f4e267e55d
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77588913"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273310"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB 
 
@@ -41,13 +41,14 @@ ms.locfileid: "77588913"
 
 Точка входа всегда является отслеживаемым контейнером из экземпляра `Container`, который вызывается `GetChangeFeedProcessorBuilder`:
 
-:::code language="csharp" source="~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs" id="DefineProcessor":::
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs?name=DefineProcessor)]
 
 Где первый параметр представляет собой уникальное имя, описывающее цель этого процессора, а второе имя — это реализация делегата, которая будет выполнять обработку изменений. 
 
 Пример делегата:
 
-:::code language="csharp" source="~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs" id="Delegate":::
+
+[!code-csharp[Main](~/samples-cosmosdb-dotnet-change-feed-processor/src/Program.cs?name=Delegate)]
 
 Наконец, определите имя для этого экземпляра процессора с помощью `WithInstanceName` и контейнер для поддержания состояния аренды с `WithLeaseContainer`.
 
@@ -90,7 +91,7 @@ ms.locfileid: "77588913"
 * [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 

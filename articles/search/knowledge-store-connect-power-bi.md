@@ -6,14 +6,14 @@ author: HeidiSteen
 ms.author: heidist
 manager: nitinme
 ms.service: cognitive-search
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 11/26/2019
-ms.openlocfilehash: dec792dfd3a2640fa08ebccd9077c081ba9737bb
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
-ms.translationtype: HT
+ms.openlocfilehash: 4fd71a7f322cb2672eb485f17e4de2619a7c2d2c
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563298"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78270027"
 ---
 # <a name="connect-a-knowledge-store-with-power-bi"></a>Подключение хранилища знаний с помощью Power BI
 
@@ -114,7 +114,7 @@ In the enrichment step of the wizard, attach a billable [Cognitive Services](htt
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о том, как исследовать это хранилище знаний с помощью Обозревателя службы хранилища, см. в следующей статье.
 

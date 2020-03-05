@@ -8,18 +8,18 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/04/2019
 ms.author: diberry
-ms.openlocfilehash: 12831ede2b9d9251f2e02fa396ee7d2fb2d61240
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 49f145ce3e9022826abad5d274dd611bb2cc6530
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499499"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78270346"
 ---
 # <a name="url-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность url для приложения LUIS
-Сущность URL-адреса извлекает URL-адреса с доменными именами или IP-адресами. Поскольку эта сущность уже обучена, добавлять в приложения примеры фраз, содержащие URL-адреса, не нужно. Сущность URL-адреса поддерживается только для такого языка и региональных параметров: `en-us`. 
+Сущность URL-адреса извлекает URL-адреса с доменными именами или IP-адресами. Поскольку эта сущность уже обучена, добавлять в приложения примеры фраз, содержащие URL-адреса, не нужно. Сущность URL-адреса поддерживается только для такого языка и региональных параметров: `en-us`.
 
 ## <a name="types-of-urls"></a>Типы URL-адресов
 Управление сущностью url выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-URL.yaml)
@@ -30,7 +30,7 @@ ms.locfileid: "73499499"
 
 `https://www.luis.ai is a great cognitive services example of artificial intelligence`
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
@@ -41,7 +41,7 @@ ms.locfileid: "73499499"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
@@ -67,7 +67,7 @@ ms.locfileid: "73499499"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение https://www.luis.ai — хороший пример использования искусственного интеллекта.
 
@@ -82,10 +82,10 @@ ms.locfileid: "73499499"
 ]
 ```
 
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
 Дополнительные сведения о сущностях [порядковый номер](luis-reference-prebuilt-ordinal.md), [номер](luis-reference-prebuilt-number.md) и [температура](luis-reference-prebuilt-temperature.md).

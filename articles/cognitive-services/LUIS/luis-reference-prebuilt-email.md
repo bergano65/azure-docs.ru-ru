@@ -8,18 +8,18 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 6f262752a50b58eae8ffbea81b8e7fc4d8c65b98
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f7aa2a341a82d30f7022af49e626a3cd358854b7
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464986"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273486"
 ---
 # <a name="email-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность email для приложения LUIS
-При извлечении сущности email из фразы извлекается полный адрес электронной почты. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие адреса электронной почты, не нужно. Сущность email поддерживается только в `en-us` язычных и региональных параметрах. 
+При извлечении сущности email из фразы извлекается полный адрес электронной почты. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие адреса электронной почты, не нужно. Сущность email поддерживается только в `en-us` язычных и региональных параметрах.
 
 ## <a name="resolution-for-prebuilt-email"></a>Разрешение для предварительно созданной сущности email
 
@@ -27,7 +27,7 @@ ms.locfileid: "73464986"
 
 `please send the information to patti@contoso.com`
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
@@ -38,7 +38,7 @@ ms.locfileid: "73464986"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
@@ -64,7 +64,7 @@ ms.locfileid: "73464986"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.email**.
 
@@ -81,10 +81,10 @@ ms.locfileid: "73464986"
     }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-Дополнительные сведения о сущностях [number](luis-reference-prebuilt-number.md), [ordinal](luis-reference-prebuilt-ordinal.md) и [percentage](luis-reference-prebuilt-percentage.md). 
+Дополнительные сведения о сущностях [number](luis-reference-prebuilt-number.md), [ordinal](luis-reference-prebuilt-ordinal.md) и [percentage](luis-reference-prebuilt-percentage.md).

@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 12/18/2019
+ms.date: 03/03/2020
 ms.author: helohr
-ms.openlocfilehash: 5eff53119362cd03c9a6497e3133984627e513c1
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 9e42ff0ec5b44dca743d2ec1470c2eef655b9436
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368852"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273108"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -128,10 +128,9 @@ ms.locfileid: "77368852"
 Чтобы убедиться, что регистрация приложения имеет разрешения API:
 
 1. Откройте браузер и подключитесь к [портал Azure](https://portal.azure.com/) с помощью учетной записи администратора.
-2. Перейдите в **Регистрация приложений** и найдите регистрацию Azure AD App.
-
-      ![Страница разрешений API.](media/api-permissions-page.png)
-
+2. Перейдите в **Azure Active Directory**.
+3. Перейдите в **Регистрация приложений** и выберите **все приложения**.
+4. Найдите регистрацию приложения Azure AD с тем же именем приложения, которое вы указали на шаге 5 в статье [создание Azure Active Directory регистрации приложения](deploy-diagnostics.md#create-an-azure-active-directory-app-registration).
 
 ### <a name="review-your-log-analytics-workspace"></a>Проверка рабочей области Log Analytics
 

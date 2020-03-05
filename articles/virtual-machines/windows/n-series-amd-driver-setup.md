@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/4/2019
 ms.author: vikancha
-ms.openlocfilehash: 6dc8c54b9d138ab62e086cca59cd5b4801fa6130
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.openlocfilehash: 164f07f6545c1c225814958bba5722536b11a9b4
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78228340"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78269441"
 ---
 # <a name="install-amd-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU AMD на виртуальных машинах серии N под управлением Windows
 
@@ -43,6 +43,8 @@ ms.locfileid: "78228340"
 3. Запустите виртуальную машину, а затем удалите предварительную версию драйвера, выполнив команду "amdcleanuputility-x64. exe", расположенную в папке ". ..\Амдклеанунинсталлутилити". Точный путь будет зависеть от того, где находятся файлы установки предыдущего драйвера.  
 
 4. Скачайте и установите последнюю версию драйвера.
+
+5. Перезагрузите виртуальную машину.
 
 ## <a name="verify-driver-installation"></a>Проверка установки драйверов
 

@@ -5,15 +5,15 @@ author: msmbaldwin
 manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 02/22/2020
+ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 4094ace5772b99c646a31d6a4722bbb080fbfff7
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 779b7d071b1161c53bdba08738539c4c682882d2
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589887"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273542"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Базовый план безопасности Azure для пакетной службы
 
@@ -59,7 +59,7 @@ https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
 https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -271,7 +271,7 @@ https://docs.microsoft.com/azure/batch/batch-diagnostics#batch-diagnostics
 
 https://docs.microsoft.com/azure/batch/batch-api-basics#error-handling
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -323,7 +323,7 @@ https://docs.microsoft.com/azure/batch/batch-diagnostics
 
 **Рекомендации**. Используйте Защитник Windows на отдельных узлах пакетной службы в случае с операционными системами Windows или предоставьте собственное решение для защиты от вредоносных программ, если используется Linux.
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -466,7 +466,7 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-use
 
 https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -511,7 +511,7 @@ https://docs.microsoft.com/azure/batch/batch-aad-auth
 
 https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -524,7 +524,7 @@ https://docs.microsoft.com/azure/active-directory/governance/access-reviews-over
 
 https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -551,7 +551,7 @@ https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 **Ответственность**: клиент
 
-### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: предоставьте корпорации Майкрософт доступ к соответствующим пользовательским данным во время сценариев поддержки
+### <a name="313-divprovide-microsoft-with-access-to-relevant-customer-data-during-support-scenariosbrdiv"></a>3,13: <div>Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов во время сценариев поддержки<br></div>
 
 **Руководство**: недоступно; Защищенное хранилище еще не поддерживаются для пакетной службы Azure. Список поддерживаемых защищенное хранилище служб: https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
 
@@ -614,9 +614,9 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Сейчас недоступно
 
-**Ответственность**: клиент
+**Ответственность**: Общая
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: шифрование всех конфиденциальных данных во время передачи
 
@@ -654,7 +654,7 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Сейчас недоступно
 
 **Ответственность**: Общая
 
@@ -690,7 +690,7 @@ https://docs.microsoft.com/azure/role-based-access-control/role-assignments-port
 
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Сейчас недоступно
 
 **Ответственность**: Общая
 
@@ -704,7 +704,7 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -728,7 +728,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -751,7 +751,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 
 **Руководство**. Корпорация Майкрософт сохраняет и обновляет базовые образы узлов пула пакетной службы Azure. Убедитесь, что операционная система узлов пула пакетной службы Azure остается исправленной в течение времени существования кластера, что может потребовать включения автоматического обновления, мониторинга узлов или выполнения периодических перезагрузок.
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: Общая
 
@@ -788,7 +788,7 @@ https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account
 **Руководство**. Использование графа ресурсов Azure для запроса или обнаружения всех ресурсов (например, вычислений, хранилища, сети и т. д.) в ваших подписках. Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
 
-Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
+Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать ресурсы Azure Resource Manager (ARM), которые переносятся вперед.
 
 
 Как создавать запросы с помощью Azure Graph:
@@ -863,9 +863,12 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
+
 Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках. Убедитесь, что все ресурсы Azure, представленные в окружении, утверждены.
 
+
 Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+
 
 Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
@@ -901,16 +904,15 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках клиентов, с помощью следующих встроенных определений политик:
 
+
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-Как настроить политику Azure и управлять ей:
 
-https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Как отказаться от определенного типа ресурса с помощью политики Azure:
 
-https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
+Как отказаться от определенного типа ресурса с помощью политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -924,14 +926,12 @@ https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-
 
 **Ответственность**: клиент
 
-### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager-via-scripts"></a>6,11: ограничьте возможность пользователей взаимодействовать с Azure Resource Manager с помощью скриптов
+### <a name="611-divlimit-users-ability-to-interact-with-azure-resource-manager-via-scriptsdiv"></a>6,11: <div>Ограничение возможности пользователей взаимодействовать с Azure Resource Manager с помощью сценариев</div>
 
 **Руководство**. Использование условного доступа Azure для ограничения возможности пользователей взаимодействовать с Azure Resource Manager путем настройки "блокировать доступ" для приложения "Управление Microsoft Azure".
 
 
-Как настроить условный доступ для блокировки доступа к Azure Resource Manager:
-
-https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+Настройка условного доступа для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -949,9 +949,7 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: физическое или логическое разделение приложений с высоким риском
 
-**Руководство**: недоступно,
-
-Тест производительности предназначен для веб-приложений, работающих в службе приложений Azure или экземплярах IaaS.
+**Руководство**. неприменимо. тест производительности предназначен для веб-приложений, работающих в службе приложений Azure или экземплярах IaaS.
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -966,10 +964,14 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 **Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. Batch для создания настраиваемых политик для аудита или принудительного применения конфигурации учетных записей и пулов пакетной службы Azure.
 
 
-Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Просмотр доступных псевдонимов политик Azure:
+
+https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
 
-Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Как настроить политику Azure и управлять ей:
+
+https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -991,7 +993,9 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 - Microsoft.Storage;
 - Microsoft.Network.
 
+
 Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+
 
 Общие сведения о влиянии политики Azure: https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
@@ -1009,11 +1013,17 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: безопасное хранение конфигурации ресурсов Azure
 
-**Руководство**. при использовании настраиваемых определений политик Azure для учетных записей пакетной службы Azure, пулов или связанных ресурсов используйте Azure DevOps/репозиториев для безопасного хранения кода и управления им.
+**Руководство**. при использовании пользовательских определений политик Azure для учетных записей пакетной службы Azure, пулов или связанных ресурсов используйте Azure Repos для безопасного хранения кода и управления им.
 
-Как сохранить код в Azure DevOps: https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
 
-Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
+Как сохранить код в Azure DevOps:
+
+https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
+
+
+Документация по Azure Repos:
+
+https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -1024,9 +1034,14 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 **Руководство**. при использовании пользовательских образов для пулов пакетной службы Azure используйте управление доступом на основе РОЛЕЙ (RBAC), чтобы обеспечить доступ к образам только полномочным пользователям.
 
 
-Общие сведения о RBAC в Azure: https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles
+Общие сведения о RBAC в Azure:
 
-Настройка RBAC в Azure: https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal
+https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles
+
+
+Как настроить RBAC в Azure:
+
+https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -1058,8 +1073,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. Batch для создания настраиваемых политик для аудита или принудительного применения конфигурации экземпляра пакетной службы Azure. Вы также можете использовать любые встроенные политики, созданные специально для пакетной службы Azure, или ресурсы, используемые пакетной службой Azure, например:
 
-- Подсети должны быть связаны с группой безопасности сети.
-- Учетные записи хранения должны использовать конечную точку службы виртуальной сети
+- Подсети должны быть связаны с группой безопасности сети. учетные записи хранения должны использовать конечную точку службы виртуальной сети.
 - Необходимо включить журналы диагностики в учетных записях пакетной службы
 
 Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
@@ -1098,7 +1112,7 @@ https://docs.microsoft.com/azure/key-vault/quick-create-portal
 
 https://docs.microsoft.com/azure/key-vault/managed-identity
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -1187,7 +1201,7 @@ https://docs.microsoft.com/azure/storage/common/storage-redundancy
 
 https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -1205,7 +1219,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvau
 
 https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: неприменимо
 
 **Ответственность**: клиент
 
@@ -1218,7 +1232,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -1324,3 +1338,7 @@ https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Ответственность**: Общая
 
+## <a name="next-steps"></a>Следующие шаги
+
+- Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
+- Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

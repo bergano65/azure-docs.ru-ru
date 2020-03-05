@@ -8,25 +8,25 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 5b49dcc7e999757e119c399bdf01bed7cb312e02
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 56d264fa976967ae4772f50b4aa6f58b30355d6f
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73465048"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78270784"
 ---
 # <a name="currency-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность currency для приложения LUIS
-Предварительно построенная сущность Currency обнаруживает валюту во многих деноминатионс и странах и регионах независимо от языка и региональных параметров приложения LUIS. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие валюты, не нужно. Сущность валюты поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
+Предварительно построенная сущность Currency обнаруживает валюту во многих деноминатионс и странах и регионах независимо от языка и региональных параметров приложения LUIS. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие валюты, не нужно. Сущность валюты поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md).
 
 ## <a name="types-of-currency"></a>Типы валюты
 Управление валютой выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L26)
 
 ## <a name="resolution-for-currency-entity"></a>Разрешение для сущности валюты
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
@@ -40,7 +40,7 @@ ms.locfileid: "73465048"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
@@ -66,7 +66,7 @@ ms.locfileid: "73465048"
 }
 ```
 
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.currency**.
 
@@ -84,10 +84,10 @@ ms.locfileid: "73465048"
     }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-Дополнительные сведения о сущностях [datetimeV2](luis-reference-prebuilt-datetimev2.md), [измерение](luis-reference-prebuilt-dimension.md) и [электронная почта](luis-reference-prebuilt-email.md). 
+Дополнительные сведения о сущностях [datetimeV2](luis-reference-prebuilt-datetimev2.md), [измерение](luis-reference-prebuilt-dimension.md) и [электронная почта](luis-reference-prebuilt-email.md).

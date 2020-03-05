@@ -4,12 +4,12 @@ description: Узнайте, как использовать Azure CLI для с
 services: container-service
 ms.topic: article
 ms.date: 04/16/2019
-ms.openlocfilehash: fef22b1b2d81f76e95a15c0e3a746440b95df8ca
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: d17ae12beecf9d83ef6d688af799787c5ccf322b
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77596612"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273768"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
@@ -27,9 +27,11 @@ ms.locfileid: "77596612"
 
 Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
+Перейдите в [https://shell.azure.com](https://shell.azure.com) , чтобы открыть Cloud Shell в браузере.
+
 Для обеспечения согласованности и для выполнения команд в этой статье создайте переменную для нужного имени кластера AKS. В следующем примере используется имя *myakscluster*:
 
-```azurecli-interactive
+```console
 aksname="myakscluster"
 ```
 
@@ -209,8 +211,10 @@ kubectl get pods --all-namespaces
 Вы получаете запрос на вход для аутентификации с помощью учетных данных Azure AD с помощью веб-браузера. После успешной проверки подлинности команда `kubectl` отображает модули Pod в кластере AKS, как показано в следующем примере выходных данных:
 
 ```console
-$ kubectl get pods --all-namespaces
+kubectl get pods --all-namespaces
+```
 
+```output
 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code BYMK7UXVD to authenticate.
 
 NAMESPACE     NAME                                    READY   STATUS    RESTARTS   AGE
@@ -229,7 +233,7 @@ kube-system   tunnelfront-6ff887cffb-xkfmq            1/1     Running   0       
 
 Если вы видите сообщение об ошибке авторизации после успешного входа с помощью веб-браузера, как показано в следующем примере выходных данных, проверьте следующие возможные проблемы.
 
-```console
+```output
 error: You must be logged in to the server (Unauthorized)
 ```
 

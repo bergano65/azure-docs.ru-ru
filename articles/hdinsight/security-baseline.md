@@ -5,15 +5,15 @@ author: msmbaldwin
 manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 02/22/2020
+ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 7d6b4f8a7965a7cbcab2616650b40ed93087072b
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
-ms.translationtype: MT
+ms.openlocfilehash: 1ace4ce5b9b0fd59a69e908c1f31d1ad4853889b
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589978"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78271858"
 ---
 # <a name="azure-security-baseline-for-hdinsight"></a>Базовый план безопасности Azure для HDInsight
 
@@ -65,7 +65,7 @@ https://docs.microsoft.com/azure/security-center/security-center-network-recomme
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: защита критически важных веб-приложений
 
-**Руководство**: недоступно; тест производительности предназначен для служб приложений Azure или ресурсов, в которых размещены веб-приложения.
+**Руководство**: неприменимо; тест производительности предназначен для служб приложений Azure или ресурсов, в которых размещены веб-приложения.
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -125,7 +125,7 @@ IP-адреса управления HDInsight: https://docs.microsoft.com/azure
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1,7. Управление трафиком к веб-приложениям
 
-**Руководство**: недоступно; тест производительности предназначен для служб приложений Azure или ресурсов, в которых размещены веб-приложения.
+**Руководство**: неприменимо; тест производительности предназначен для служб приложений Azure или ресурсов, в которых размещены веб-приложения.
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -331,7 +331,7 @@ https://docs.microsoft.com/azure/security-center/security-center-managing-and-re
 
 https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -491,7 +491,7 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-use
 
 https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -713,7 +713,7 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
-**Ответственность**: клиент
+**Ответственность**: Общая
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: шифрование конфиденциальной информации при хранении
 
@@ -779,7 +779,7 @@ https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnos
 
 Как установить агент Rapid7 вручную:
 
-https://insightvm.help.rapid7.com/v1.0/docs/agent-installation-on-linux
+https://insightvm.help.rapid7.com/docs/azure-security-center
 
 
 Как установить агент Qualys вручную:
@@ -926,11 +926,12 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
-Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках.  Убедитесь, что все ресурсы Azure, представленные в окружении, утверждены.
+Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках. Убедитесь, что все ресурсы Azure, представленные в окружении, утверждены.
 
 Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -972,7 +973,9 @@ https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 - Недопустимые типы ресурсов
 - Допустимые типы ресурсов
 
+
 Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+
 
 Как отказаться от определенного типа ресурса с помощью политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
@@ -993,9 +996,7 @@ https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 **Руководство**. Использование условного доступа Azure для ограничения возможности пользователей взаимодействовать с Azure Resource Manager путем настройки "блокировать доступ" для приложения "Управление Microsoft Azure".
 
 
-Как настроить условный доступ для блокировки доступа к Azure Resource Manager:
-
-https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+Настройка условного доступа для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -1003,7 +1004,7 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 ### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6,12: ограничьте возможность пользователей выполнять сценарии в ресурсах вычислений
 
-**Руководство**: недоступно; Это неприменимо к Azure HDInsight, так как пользователям (не администраторам) кластера не требуется доступ к отдельным узлам для выполнения заданий. Администратор кластера имеет корневой доступ ко всем узлам кластера.
+**Руководство**: неприменимо; Это неприменимо к Azure HDInsight, так как пользователям (не администраторам) кластера не требуется доступ к отдельным узлам для выполнения заданий. Администратор кластера имеет корневой доступ ко всем узлам кластера.
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -1011,7 +1012,7 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: физическое или логическое разделение приложений с высоким риском
 
-**Руководство**: недоступно; тест производительности предназначен для служб приложений Azure или ресурсов, в которых размещены веб-приложения.
+**Руководство**: неприменимо; тест производительности предназначен для служб приложений Azure или ресурсов, в которых размещены веб-приложения.
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -1095,7 +1096,7 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7,6: безопасное хранение пользовательских образов операционной системы
 
-**Руководство**: недоступно; пользовательские образы неприменимы к Azure HDInsight.
+**Руководство**: неприменимо; пользовательские образы неприменимы к Azure HDInsight.
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -1343,7 +1344,7 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **Руководство**. Центр безопасности назначает серьезность предупреждениям, чтобы помочь вам определить порядок, в котором вы задаете каждое оповещение, чтобы при компрометации ресурса вы могли сразу перейти к нему. Серьезность основывается на том, насколько надежным является центр безопасности в поиске или аналитике, используемой для выдаче оповещения, а также об уровне достоверности, который был вредоносной задачей, вызвавшей оповещение.
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -1421,3 +1422,7 @@ https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
 **Ответственность**: Общая
 
+## <a name="next-steps"></a>Следующие шаги
+
+- Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
+- Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

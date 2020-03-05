@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 02/28/2020
-ms.openlocfilehash: 701e279e349bdc3b92d5b5c2dc50e23199f9d766
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.openlocfilehash: e2d1a1c6e924e879e05af80e2e36a38e8a5cde66
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160817"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273963"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
 
@@ -167,6 +167,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 - В настоящее время поддерживаются только задачи потока данных с диспетчерами соединений с открытым базой данных (ODBC), OLEDB или неструктурированными файлами, а также с источниками данных ODBC, OLEDB или неструктурированных файлов. 
 - В настоящее время поддерживаются только связанные службы хранилища BLOB-объектов Azure, настроенные с помощью *ключа учетной записи*, *URI подписанного URL-кода*или проверки подлинности *субъекта службы* .
+- *Параметермаппинг* в источнике OLEDB еще не поддерживается. В качестве обходного решения используйте *команду SQL из переменной* в качестве *AccessMode* и используйте *выражение* для вставки переменных или параметров в команду SQL. Чтобы проиллюстрировать это, можно найти пример пакета *(параметермаппингсампле. dtsx)* в папке *селфхостедирпрокси/ограничения* нашего общедоступного контейнера предварительной версии, введя следующий URI SAS на [Обозреватель службы хранилища Azure](https://storageexplorer.com/): *https://ssisazurefileshare.blob.core.windows.net/publicpreview?sp=rl&st=2018-04-08T14%3A10%3A00Z&se=2020-04-10T14%3A10%3A00Z&sv=2017-04-17&sig=mFxBSnaYoIlMmWfxu9iMlgKIvydn85moOnOch6%2F%2BheE%3D&sr=c* .
 
 ## <a name="next-steps"></a>Следующие шаги
 

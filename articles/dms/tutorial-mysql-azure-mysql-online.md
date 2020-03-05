@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: e0a2c9f4dd229353ef3d4dc06f7bb965d15814d9
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.openlocfilehash: 50787a5bbfdc9baddfa4307247e8b505be6e3003
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78255554"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273240"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
 
@@ -38,7 +38,7 @@ Azure Database Migration Service можно использовать для пе
 > [!IMPORTANT]
 > Чтобы процесс миграции был выполнен без проблем, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -93,7 +93,7 @@ Azure Database Migration Service можно использовать для пе
 mysqldump -h [servername] -u [username] -p[password] --databases [db name] --no-data > [schema file path]
 ```
 
-Пример:
+Например:
 
 ```
 mysqldump -h 10.10.123.123 -u root -p --databases employees --no-data > d:\employees.sql
@@ -105,7 +105,7 @@ mysqldump -h 10.10.123.123 -u root -p --databases employees --no-data > d:\emplo
 mysql.exe -h [servername] -u [username] -p[password] [database]< [schema file path]
  ```
 
-Пример:
+Например:
 
 ```
 mysql.exe -h shausample.mysql.database.azure.com -u dms@shausample -p employees < d:\employees.sql
@@ -224,6 +224,8 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
     Если в целевой базе данных содержится база данных с тем же именем, что у исходной базы данных, Azure Database Migration Service по умолчанию выберет целевую базу данных.
 
     ![Сопоставление с целевыми базами данных](media/tutorial-mysql-to-azure-mysql-online/dms-map-target-details.png)
+   > [!NOTE] 
+   > Хотя на этом шаге можно выбрать несколько баз данных, каждый экземпляр Azure Database Migration Service поддерживает до четырех баз данных для параллельной миграции. Кроме того, существует ограничение в двух экземплярах Azure Database Migration Service на регион в подписке. Например, если у вас есть 40 баз данных для миграции, можно одновременно выполнить миграцию только восьми из них и только в том случае, если вы создали два экземпляра Azure Database Migration Service.
 
 3. Нажмите кнопку **Сохранить** в окне **Migration summary** (Сводка по миграции) и в поле **Имя действия** введите имя действия миграции, а затем проверьте соответствие сведениям о целевом и исходном сервере, которые вы указали ранее.
 
@@ -261,7 +263,7 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 3. Выберите **Подтвердить**, а затем — **Применить**.
 4. Когда состояние миграции базы данных изменится на **Завершено**, подключите свои приложения к новой целевой базе данных SQL Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения об известных проблемах, ограничениях при выполнении интерактивной миграции в Базу данных Azure для MySQL и их решении см. в [этой](known-issues-azure-mysql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

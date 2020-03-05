@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/05/2019
 keywords: АТО, openshift, акуасек, Twistlock, Red Hat
-ms.openlocfilehash: 5d28a19126c9b7ae4ef7afe2a6b69bd4a13e0c83
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.openlocfilehash: e1c1dd9f27a207f78dd22e271f6b070c7f92f622
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78228239"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78271375"
 ---
 # <a name="run-privileged-containers-in-an-azure-red-hat-openshift-cluster"></a>Запуск привилегированных контейнеров в кластере Azure Red Hat OpenShift
 
@@ -137,6 +137,8 @@ oc new-project twistlock
 
 Во время `oc create -f twistlock_console.yaml` на шаге 2 при создании пространства имен возникнет ошибка.
 Можно спокойно проигнорировать его, пространство имен было создано ранее с помощью команды `oc new-project`.
+
+Используйте `azure-disk` для типа хранилища.
 
 ### <a name="create-an-external-route-to-console"></a>Создание внешнего маршрута к консоли
 

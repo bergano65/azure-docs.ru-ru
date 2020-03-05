@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
 ms.date: 02/24/2020
-ms.openlocfilehash: f27042679280581dc3a03113d75c5fb787bbf711
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: c221ab793fb71169b62d81341d93fb95a018cc91
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77616008"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273930"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
@@ -146,7 +146,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 ### <a name="monitor-the-progress-of-the-copying-operation"></a>Отслеживание хода операции копирования
 
-Отслеживайте процесс копирования, запрашивая представления [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys. dm_database_copies](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database.md)и [sys. dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database.md) . Во время копирования в столбце **state_desc** представления sys.databases для новой базы данных отображается значение **COPYING**.
+Отслеживайте процесс копирования, запрашивая представления [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql), [sys. dm_database_copies](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database)и [sys. dm_operation_status](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database) . Во время копирования в столбце **state_desc** представления sys.databases для новой базы данных отображается значение **COPYING**.
 
 * Если копирование завершается неудачей, в столбце **state_desc** представления sys.databases для новой базы данных отображается значение **SUSPECT**. Выполните инструкцию DROP для новой базы данных и повторите попытку позднее.
 * Если копирование завершается успешно, в столбце **state_desc** представления sys.databases для новой базы данных отображается значение **ONLINE**. Это означает, что копирование завершено и новая база данных является обычной базой данных, которую можно изменять независимо от исходной.
@@ -169,7 +169,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 При копировании базы данных в базе данных SQL Azure могут возникнуть следующие ошибки. Дополнительные сведения см. в статье [Копирование базы данных SQL Azure](sql-database-copy.md).
 
-| Код ошибки | Severity | Description |
+| Код ошибки | Severity | Описание |
 | ---:| ---:|:--- |
 | 40635 |16 |Клиент с IP-адресом %.&#x2a;ls временно отключен. |
 | 40637 |16 |Возможность создания копии базы данных в настоящее время отключена. |
@@ -185,7 +185,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 | 40570 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 | 40571 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об именах для входа см. в статьях [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md) и [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md).
 - Сведения об экспорте базы данных см. в статье [Экспорт базы данных SQL Azure или SQL Server в BACPAC-файл](sql-database-export.md).

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 737f373fb71494492f633d3297463cbef797f3d6
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 2d279a2a368e606e036b24172eb94b667b3255db
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78189554"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78267947"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "78189554"
 
 В этой статье вы добавите новую запись, предоставленную пользователем (заявка), в путь взаимодействия пользователя для регистрации в Azure Active Directory B2C (Azure AD B2C).  Вы настраиваете запись в виде раскрывающегося списка и определяете, является ли она обязательной.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](custom-policy-get-started.md). Проверьте процесс регистрации или входа пользователя для регистрации новой локальной учетной записи, прежде чем продолжить.
 
@@ -264,7 +264,7 @@ ms.locfileid: "78189554"
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
-4. Выберите **Identity Experience Framework (предварительная версия)** .
+4. Выберите **Инфраструктура процедур идентификации**.
 5. Выберите **Отправка пользовательской политики** и отправьте два файла политики, которые вы изменили ранее.
 2. Выберите отправленную вами политику регистрации или входа и нажмите кнопку **Выполнить**.
 3. Вы сможете зарегистрироваться, используя адрес электронной почты.
@@ -305,6 +305,6 @@ ms.locfileid: "78189554"
 <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [использовать настраиваемые атрибуты в пользовательской политике изменения профиля](custom-policy-custom-attributes.md).

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: ddb08f774bbb8aa3bc4b10bcd0dd213c8583465e
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 274ee0fe98281e733994f2d5df38886409cbc913
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78249793"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273655"
 ---
 # <a name="runbook-input-parameters"></a>Входные параметры Runbook
 
@@ -31,10 +31,10 @@ ms.locfileid: "78249793"
 
 | **Свойство** | **Описание** |
 |:--- |:--- |
-| Тип |Обязательный элемент. Предполагаемый тип данных значения параметра. Допускаются любые типы .NET. |
-| Имя |Обязательный элемент. Имя параметра. Это имя должно быть уникальным в пределах модуля Runbook, должно начинаться с буквы и может содержать только буквы, цифры или символы подчеркивания. |
-| Обязательный |Необязательный параметр. Логическое значение, указывающее, требуется ли для параметра значение. Если задано значение **true**, при запуске модуля Runbook необходимо указать значение. Если присвоить этому параметру значение **false**, оно является необязательным. Если не указать значение для **обязательного** свойства, то по умолчанию PowerShell считает входной параметр необязательным. |
-| Значение по умолчанию |Необязательный параметр. Значение, которое используется для параметра, если при запуске модуля Runbook не передается входное значение. Модуль Runbook может установить значение по умолчанию для любого параметра. |
+| Тип |Обязательное. Предполагаемый тип данных значения параметра. Допускаются любые типы .NET. |
+| Имя |Обязательное. Имя параметра. Это имя должно быть уникальным в пределах модуля Runbook, должно начинаться с буквы и может содержать только буквы, цифры или символы подчеркивания. |
+| Обязательный |Необязательно. Логическое значение, указывающее, требуется ли для параметра значение. Если задано значение **true**, при запуске модуля Runbook необходимо указать значение. Если присвоить этому параметру значение **false**, оно является необязательным. Если не указать значение для **обязательного** свойства, то по умолчанию PowerShell считает входной параметр необязательным. |
+| Значение по умолчанию |Необязательно. Значение, которое используется для параметра, если при запуске модуля Runbook не передается входное значение. Модуль Runbook может установить значение по умолчанию для любого параметра. |
 
 Windows PowerShell поддерживает больше атрибутов входных параметров, чем перечисленные выше, такие как проверка, псевдонимы и наборы параметров. Однако служба автоматизации Azure в настоящее время поддерживает только перечисленные свойства входного параметра.
 
@@ -148,19 +148,19 @@ Param
 * **Azure Resource Manager командлетов:** Модуль Runbook службы автоматизации, созданный в группе ресурсов, можно запустить с помощью команды [Start-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.5.0
 ).
 
-```powershell
-  $params = @{"VMName"="WSVMClassic";"resourceGroupeName"="WSVMClassicSG"}
+   ```powershell
+     $params = @{"VMName"="WSVMClassic";"resourceGroupeName"="WSVMClassicSG"}
   
-  Start-AzAutomationRunbook -AutomationAccountName "TestAutomation" -Name "Get-AzureVMGraphical" –ResourceGroupName $resourceGroupName -Parameters $params
-```
+     Start-AzAutomationRunbook -AutomationAccountName "TestAutomation" -Name "Get-AzureVMGraphical" –ResourceGroupName $resourceGroupName -Parameters $params
+   ```
 
 * **Командлеты для классической модели развертывания Azure.** Модуль runbook службы автоматизации, созданный в группе ресурсов по умолчанию, можно запустить с помощью командлета [Start-AzureAutomationRunbook](/powershell/module/servicemanagement/azure/start-azureautomationrunbook).
   
-```powershell
-  $params = @{"VMName"="WSVMClassic"; "ServiceName"="WSVMClassicSG"}
+   ```powershell
+     $params = @{"VMName"="WSVMClassic"; "ServiceName"="WSVMClassicSG"}
   
-  Start-AzureAutomationRunbook -AutomationAccountName "TestAutomation" -Name "Get-AzureVMGraphical" -Parameters $params
-```
+     Start-AzureAutomationRunbook -AutomationAccountName "TestAutomation" -Name "Get-AzureVMGraphical" -Parameters $params
+   ```
 
 > [!NOTE]
 > При запуске модуля Runbook с помощью командлетов PowerShell параметр по умолчанию *микрософтаппликатионманажементстартедби*создается со значением **PowerShell**. Этот параметр можно просмотреть в области сведений о задании.  
@@ -169,7 +169,7 @@ Param
 
 * **Azure Resource Manager метод:** Модуль Runbook можно запустить с помощью пакета SDK языка программирования. Ниже приведен фрагмент кода C# для запуска модуля Runbook в вашей учетной записи службы автоматизации. Весь код можно просмотреть в нашем [репозитории GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ResourceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs).  
 
-  ```csharp
+   ```csharp
    public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
       {
         var response = AutomationClient.Jobs.Create(resourceGroupName, automationAccount, new JobCreateParameters
@@ -185,11 +185,11 @@ Param
          });
       return response.Job;
       }
-  ```
+   ```
 
 * **Метод для классической модели развертывания Azure.** Запустить модуль runbook можно с помощью пакета SDK для используемого языка программирования. Ниже приведен фрагмент кода C# для запуска модуля Runbook в вашей учетной записи службы автоматизации. Весь код можно просмотреть в нашем [репозитории GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs).
 
-  ```csharp
+   ```csharp
   public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
     {
       var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
@@ -205,20 +205,20 @@ Param
        });
       return response.Job;
     }
-  ```
+   ```
 
-  Чтобы запустить этот метод, создайте словарь для хранения параметров Runbook *VMName* и *resourceGroupName* и их значений. Запустите модуль Runbook. Ниже приведен фрагмент кода C# для вызова метода, определенного выше.
+   Чтобы запустить этот метод, создайте словарь для хранения параметров Runbook *VMName* и *resourceGroupName* и их значений. Запустите модуль Runbook. Ниже приведен фрагмент кода C# для вызова метода, определенного выше.
 
-  ```csharp
-  IDictionary<string, string> RunbookParameters = new Dictionary<string, string>();
+   ```csharp
+   IDictionary<string, string> RunbookParameters = new Dictionary<string, string>();
   
-  // Add parameters to the dictionary.
+   // Add parameters to the dictionary.
   RunbookParameters.Add("VMName", "WSVMClassic");
-  RunbookParameters.Add("resourceGroupName", "WSSC1");
+   RunbookParameters.Add("resourceGroupName", "WSSC1");
   
-  //Call the StartRunbook method with parameters
-  StartRunbook("Get-AzureVMGraphical", RunbookParameters);
-  ```
+   //Call the StartRunbook method with parameters
+   StartRunbook("Get-AzureVMGraphical", RunbookParameters);
+   ```
 
 #### <a name="start-a-runbook-using-the-rest-api-and-assign-parameters"></a>Запуск модуля Runbook с помощью REST API и назначение параметров
 
@@ -238,7 +238,7 @@ Param
 
 Если вы хотите запустить Runbook **Get-азуревмтекстуал** , созданный ранее с параметрами *VMName* и *RESOURCEGROUPNAME* , используйте следующий формат JSON для текста запроса.
 
-   ```json
+```json
     {
       "properties":{
         "runbook":{
@@ -248,7 +248,7 @@ Param
          "resourceGroupName":"ContosoSales"}
         }
     }
-   ```
+```
 
 Если задание успешно создано, возвращается код состояния HTTP 201. Дополнительные сведения о заголовках ответов и тексте ответа см. в разделе [Создание задания Runbook с помощью REST API](/rest/api/automation/job/create).
 
@@ -260,13 +260,13 @@ Param
 
 ### <a name="link-a-schedule-to-a-runbook-and-assign-parameters"></a>Связывание Runbook с расписанием и назначение параметров
 
-Вы можете [связать расписание](automation-schedules.md) с модулем Runbook, чтобы он запускался в определенное время. При создании расписания вы назначаете входные параметры, значения которых модуль runbook использует во время запуска по расписанию. Расписание нельзя сохранить, если не указаны значения для всех обязательных параметров.
+Вы можете [связать расписание](automation-schedules.md) с модулем Runbook, чтобы он запускался в определенное время. При создании расписания вы назначаете входные параметры, значения которых модуль runbook использует во время запуска по расписанию. Вы не можете сохранить расписание, пока не будут предоставлены все обязательные значения параметров.
 
 ![Создание расписания и назначение параметров](media/automation-runbook-input-parameters/automation-07-scheduleandassignparameters.png)
 
 ### <a name="create-a-webhook-for-a-runbook-and-assign-parameters"></a>Создание объекта Webhook для модуля Runbook и назначение параметров
 
-Для модуля Runbook можно создать объект [Webhook](automation-webhooks.md) и настроить входные параметры. Webhook нельзя сохранить, если не указаны значения для всех обязательных параметров.
+Для модуля Runbook можно создать объект [Webhook](automation-webhooks.md) и настроить входные параметры. Вы не можете сохранить веб-перехватчик, пока не будут предоставлены все обязательные значения параметров.
 
 ![Создание Webhook и назначение параметров](media/automation-runbook-input-parameters/automation-08-createwebhookandassignparameters.png)
 
@@ -330,7 +330,7 @@ Start-AzVM -Name $json.VMName -ResourceGroupName $json.ResourceGroup
     >[!NOTE]
     >Для модулей Runbook PowerShell **Add-азаккаунт** и **Add-AzureRMAccount** являются псевдонимами для **Connect-азаккаунт**. Обратите внимание, что эти псевдонимы недоступны для графических модулей Runbook. Графический модуль Runbook может использовать только сам **Connect-азаккаунт** .
 
-2. Получите содержимое сохраненного JSON-файла и преобразуйте его в строку. `JsonPath` — это путь, по которому был сохранен файл JSON.
+1. Получите содержимое сохраненного JSON-файла и преобразуйте его в строку. `JsonPath` — это путь, по которому был сохранен файл JSON.
 
    ```powershell
    $json =  (Get-content -path 'JsonPath\test.json' -Raw) | Out-string
@@ -354,13 +354,13 @@ Start-AzVM -Name $json.VMName -ResourceGroupName $json.ResourceGroup
    ```
 
    Обратите внимание, что вы устанавливаете для *параметров* значение объекта PowerShell, который содержит значения из JSON файла.
-1. Запуск модуля runbook
+1. Запустите модуль Runbook.
 
    ```powershell
    $job = Start-AzAutomationRunbook @RBParams
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о различных способах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Сведения об изменении текстового модуля Runbook см. в статье [Изменение текстовых модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).

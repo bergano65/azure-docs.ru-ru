@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 327f53fb39e58f7b70040eb41b6cd80aca18e510
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: ca6ef244a887e75a0d8b9bb663d5325a33cd1e89
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77522039"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78269352"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "77522039"
 | [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md) | X | X |
 | Совместимые [ключи безопасности FIDO2](concept-authentication-passwordless.md#fido2-security-keys) | X | X |
 | Для WebAuthN требуется Windows 10 версии 1809 или более поздней. | X | X |
-| Для [устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join.md) , требуется Windows 10 версии 1809 или более поздней. | X |   |
+| Для [устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join.md) , требуется Windows 10 версии 1903 или более поздней. | X |   |
 | Для [гибридных устройств, присоединенных к Azure AD](../devices/concept-azure-ad-join-hybrid.md) , требуется Windows 10 Insider Build 18945 или более поздней версии |   | X |
 | Полностью исправленные контроллеры домена Windows Server 2016/2019. |   | X |
 | [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect) версии 1.4.32.0 или более поздней |   | X |
@@ -54,6 +54,7 @@ ms.locfileid: "77522039"
 - Войдите на сервер с помощью ключа безопасности.
 - Если вы не использовали ключ безопасности для входа на устройство в режиме "в сети", вы не сможете использовать его для входа или разблокировки в автономном режиме.
 - Вход или разблокировка устройства Windows 10 с ключом безопасности, содержащим несколько учетных записей Azure AD. В этом сценарии используется последняя учетная запись, добавленная в ключ безопасности. Процесс WebAuthN позволяет пользователям выбрать учетную запись, которую необходимо использовать.
+- Разблокируйте устройство под управлением Windows 10 версии 1809. Для оптимальной работы используйте Windows 10 версии 1903 или более поздней.
 
 ## <a name="prepare-devices-for-preview"></a>Подготовка устройств для предварительной версии
 

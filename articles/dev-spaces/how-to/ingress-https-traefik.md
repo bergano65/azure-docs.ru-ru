@@ -5,12 +5,12 @@ ms.date: 12/10/2019
 ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных траефик и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 9e0c726d97fc87a25d559ecc3478d3f85df4eeb8
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 6cac50ea9caeea42b0a7522dbeb5039a8461dd2c
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623160"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273151"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
 
@@ -23,7 +23,7 @@ ms.locfileid: "77623160"
 * [Кластер Azure Kubernetes Service (AKS) с включенным Azure dev Spaces][qs-cli].
 * [kubectl][kubectl] установлен.
 * [Установленная версия Helm 3][helm-installed].
-* [Личный домен][custom-domain] с [зоной DNS][dns-zone] в той же группе ресурсов, что и кластер AKS.
+* [Личный домен][custom-domain] с [зоной DNS][dns-zone]. В этой статье предполагается, что личный домен и зона DNS находятся в той же группе ресурсов, что и кластер AKS, но можно использовать личный домен и зону DNS в другой группе ресурсов.
 
 ## <a name="configure-a-custom-traefik-ingress-controller"></a>Настройка пользовательского контроллера входящего трафика траефик
 

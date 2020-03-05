@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 26d7c2d8919573c4c971edd7cb0e01b06fef3012
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 51c01869e6152d8e9357644457df11f4fcf5ec5f
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901495"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273701"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -25,9 +25,9 @@ ms.locfileid: "76901495"
 *  **Процесс**. Пользователи могут подключаться к базе данных и выполнять операции обработки, а также анализировать данные шаблона базы данных.
 *  **Чтение**. Пользователи могут использовать клиентское приложение, чтобы подключиться к шаблону базы данных и анализировать его данные.
 
-При создании проекта табличной модели вы создаете роли и добавляете пользователей или группы в эти роли с помощью диспетчера ролей в Visual Studio с Analysis Services проектами. При развертывании на сервере вы используете SQL Server Management Studio (SSMS), [Analysis Services командлеты PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference)или [язык сценариев табличных моделей](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) для добавления и удаления ролей и членов пользователей.
+При создании проекта табличной модели вы создаете роли и добавляете пользователей или группы в эти роли с помощью диспетчера ролей в Visual Studio с Analysis Services проектами. При развертывании на сервере вы используете SQL Server Management Studio (SSMS), [Analysis Services командлеты PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference)или [язык сценариев табличных моделей](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) для добавления и удаления ролей и членов пользователей.
 
-Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной почты используйте `obj:groupid@tenantid`.
+Для **групп безопасности** необходимо [включить поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) , если для свойства `MailEnabled` задано значение `True`. При указании группы по адресу электронной почты используйте `obj:groupid@tenantid`.
 
 
 ## <a name="to-add-or-manage-roles-and-users-in-visual-studio"></a>Добавление ролей и пользователей в Visual Studio и управление ими  
@@ -42,7 +42,7 @@ ms.locfileid: "76901495"
   
 4.  Выберите одно из следующих разрешений:  
   
-    |Разрешение|Description|  
+    |Разрешение|Описание|  
     |----------------|-----------------|  
     |**None**|Члены не могут читать или изменять схему модели и не могут запрашивать данные.|  
     |**Чтение**|Участники могут запрашивать данные (на основе фильтров строк), но не могут изменять схему шаблона.|  
@@ -71,7 +71,7 @@ ms.locfileid: "76901495"
 
 3. Выберите разрешение.
 
-   |Разрешение|Description|  
+   |Разрешение|Описание|  
    |----------------|-----------------|  
    |**Полный доступ (администратор)**|Участники могут изменять схему шаблона, обрабатывать и запрашивать все данные.| 
    |**Обработка базы данных**|Члены могут выполнять операции «Обработать» и «Обработать все». Не могут изменять схему модели и просматривать данные.|  
@@ -85,7 +85,7 @@ ms.locfileid: "76901495"
 
 ## <a name="to-add-roles-and-users-by-using-a-tmsl-script"></a>Добавление ролей и пользователей с помощью сценария TMSL
 
-Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](https://docs.microsoft.com/bi-reference/tmsl/createorreplace-command-tmsl) и объект [Роли](https://docs.microsoft.com/bi-reference/tmsl/roles-object-tmsl).
+Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](https://docs.microsoft.com/analysis-services/tmsl/createorreplace-command-tmsl) и объект [Роли](https://docs.microsoft.com/analysis-services/tmsl/roles-object-tmsl).
 
 **Пример скрипта TMSL**
 
@@ -121,7 +121,7 @@ ms.locfileid: "76901495"
 
 Модуль [SqlServer](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Следующие командлеты используются для управления ролями базы данных и пользователями.
   
-|Командлет|Description|
+|Командлет|Описание|
 |------------|-----------------| 
 |[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
 |[Remove-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
@@ -133,11 +133,11 @@ ms.locfileid: "76901495"
   
 Они могут быть определены только для ролей с разрешениями "Чтение" и "Чтение и обработка". По умолчанию если фильтр строк не определен для конкретной таблицы, участники могут запросить все строки в таблице при условии, что не применена перекрестная фильтрация из другой таблицы.
   
- Фильтрам строк требуется формула DAX, которая должна возвращать значение TRUE или FALSE, чтобы определить строки, которые могут запросить участники этой определенной роли. Строки, не включенные в формулу DAX, запросить нельзя. Например, в таблице "Заказчики" с выражением фильтров строк *=Customers [Country] = “USA”* участники роли "Продажи" могут видеть только заказчиков из США.  
+ Фильтрам строк требуется формула DAX, которая должна возвращать значение TRUE или FALSE, чтобы определить строки, которые могут запросить участники этой определенной роли. Строки, не включенные в формулу DAX, запрашивать нельзя. Например, в таблице "Заказчики" с выражением фильтров строк *=Customers [Country] = “USA”* участники роли "Продажи" могут видеть только заказчиков из США.  
   
 Фильтры строк применяются к указанным строкам и связанным с ними строкам. Когда таблица содержит несколько связей, фильтры применяют защиту к связи, которая является активной. Фильтры строк пересекаются с другими фильтрами строк, определенными для связанных таблиц, например:  
   
-|Таблицы|Выражение DAX|  
+|Table|Выражение DAX|  
 |-----------|--------------------|  
 |Регион|=Region[Country]="USA"|  
 |Категория продукта|=ProductCategory[Name]="Bicycles"|  
@@ -147,9 +147,9 @@ ms.locfileid: "76901495"
   
  Вы можете использовать фильтр *=FALSE()* , чтобы запретить доступ ко всем строкам для всей таблицы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   [Управление администраторами сервера](analysis-services-server-admins.md)   
   [Управление службами Azure Analysis Services с помощью PowerShell](analysis-services-powershell.md)  
-  [Справочник по языку TMSL](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference)
+  [Справочник по языку TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference)
 

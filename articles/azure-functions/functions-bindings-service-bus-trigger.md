@@ -6,12 +6,12 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.openlocfilehash: 3aba570bd7f80eab205fe52a731a1be933067012
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 1ead7fcd9d474369e3a62e372a971d88d26f4e9c
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77493206"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273563"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Триггер служебной шины Azure для функций Azure
 
@@ -288,7 +288,7 @@ def main(msg: func.ServiceBusMessage):
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `ServiceBusTrigger`.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** | Недоступно | Для этого свойства нужно задать значение "serviceBusTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Недоступно | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
@@ -356,7 +356,7 @@ def main(msg: func.ServiceBusMessage):
 
 Триггер служебной шины предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства являются членами класса [BrokeredMessage](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) .
 
-|Свойство|Тип|Description|
+|Свойство|Тип|Описание|
 |--------|----|-----------|
 |`DeliveryCount`|`Int32`|Число доставок.|
 |`DeadLetterSource`|`string`|Источник недоставленных сообщений.|
@@ -370,11 +370,8 @@ def main(msg: func.ServiceBusMessage):
 |`Label`|`string`|Метка для конкретного приложения.|
 |`CorrelationId`|`string`|Идентификатор корреляции.|
 
-> [!NOTE]
-> В настоящее время триггер служебной шины, работающий с очередями с поддержкой сеансов и подписками, находится на этапе предварительной версии. Отследите за этим [элементом](https://github.com/Azure/azure-webjobs-sdk/issues/529#issuecomment-491113458) о дальнейших обновлениях. 
-
 См. [примеры кода](#example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Отправка сообщений служебной шины Azure из функций Azure (Выходная привязка)](./functions-bindings-service-bus-output.md)

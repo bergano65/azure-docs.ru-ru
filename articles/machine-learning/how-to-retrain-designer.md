@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.author: keli19
 author: likebupt
 ms.date: 02/24/2020
-ms.openlocfilehash: b69cd4c8459ffae363f02247b1f20488afe1cd9b
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 8e7874ec2a0ea160d29f8755ca8680c4dfbeec1d
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77921608"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78268502"
 ---
 # <a name="retrain-models-with-azure-machine-learning-designer-preview"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -119,7 +119,7 @@ ms.locfileid: "77921608"
 
 1. Выберите конвейер, который нужно запустить.
 
-1. Выберите **Запуск**.
+1. Нажмите кнопку **Отправить**.
 
 1. В диалоговом окне установки можно указать новое значение пути входных данных, которое указывает на новый набор данных.
 
@@ -127,7 +127,9 @@ ms.locfileid: "77921608"
 
 ### <a name="submit-runs-with-code"></a>Отправка запусков с помощью кода
 
-Существует несколько способов получить доступ к конечной точке RESTFUL программным способом в зависимости от среды разработки. Примеры кода, демонстрирующие, как отправлять запуски конвейера с параметрами, можно найти на вкладке **Использование** конвейера.
+Конечную точку RESTFUL опубликованного конвейера можно найти на панели Обзор. Вызывая конечную точку, можно переучить опубликованный конвейер.
+
+Чтобы выполнить вызов функции RESTFUL, потребуется заголовок аутентификации носителя OAuth 2,0. Дополнительные сведения о настройке аутентификации в рабочей области и выполнении параметризованного вызова REST см. в следующем [разделе руководства](tutorial-pipeline-batch-scoring-classification.md#publish-and-run-from-a-rest-endpoint).
 
 ## <a name="next-steps"></a>Следующие шаги
 

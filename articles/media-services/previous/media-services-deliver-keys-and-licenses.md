@@ -14,22 +14,23 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 61a5213ea1b801b3ceeb3d9a698a20d479509811
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: b1f8b158c511919a72e72629d72b0e5ff73ff7db
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974535"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78268115"
 ---
 # <a name="use-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Доставка лицензий DRM или ключей AES с помощью Служб мультимедиа 
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/);   > Новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
->
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Службы мультимедиа Azure позволяют принимать и кодировать содержимое, добавлять функции защиты, а также выполнять его потоковую передачу. Дополнительные сведения см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md). Некоторые клиенты с помощью Служб мультимедиа только доставляют лицензии и (или) ключи, а также выполняют кодирование, шифрование и потоковую передачу содержимого на локальных серверах. В этой статье описано, как с помощью Служб мультимедиа доставлять лицензии PlayReady и (или) Widevine, а также как выполнять другие задачи на локальных серверах. 
 
-## <a name="overview"></a>Краткое описание
+Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+## <a name="overview"></a>Обзор
 Службы мультимедиа обеспечивают доставку лицензий PlayReady, лицензий управления цифровыми правами (DRM) Widevine, а также ключей AES-128. Они также предоставляют API-интерфейсы для настройки прав и ограничений, которые должны применяться в среде выполнения DRM, когда пользователь воспроизводит защищенное DRM содержимое. Когда пользователь запрашивает защищенное содержимое, приложение проигрывателя, в свою очередь, запрашивает лицензию из службы лицензий Служб мультимедиа. Если лицензию авторизовано, служба лицензий Служб мультимедиа выдает ее проигрывателю. Лицензии PlayReady и Widevine содержат ключ расшифровки, который может использоваться клиентским проигрывателем для расшифровки и потоковой передачи содержимого.
 
 Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают лицензии или ключи. Политику авторизации ключа содержимого настраиваете вы. Такая политика может иметь одно или несколько ограничений, например открытая авторизация или авторизация с помощью токена. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают токены в формате простого веб-маркера (SWT) и формате JSON Web Token (JWT).
@@ -38,7 +39,7 @@ ms.locfileid: "74974535"
 
 ![Защита с помощью PlayReady](./media/media-services-deliver-keys-and-licenses/media-services-diagram1.png)
 
-## <a name="download-sample"></a>Скачивание образца
+## <a name="download-sample"></a>Загрузить образец
 Описанный здесь пример кода можно просмотреть в статье [Use Azure Media Services to deliver PlayReady and/or Widevine licenses with .NET](https://github.com/Azure/media-services-dotnet-deliver-drm-licenses) (Предоставления лицензий PlayReady и (или) Widevine с помощью .NET в Службах мультимедиа Microsoft Azure).
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
@@ -346,14 +347,14 @@ namespace DeliverDRMLicenses
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также:
 * [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md)

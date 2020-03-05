@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 08/30/2019
+ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a9559f85e31a38c50034d6aacc8f65e4d68aec2
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: f25f13c60a60e1a397e4c63443ee786a9acdf6d1
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014438"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273801"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -76,13 +76,13 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
-    a. В текстовом поле **Имя** введите `Reporting API application`.
+    а. В текстовом поле **Имя** введите `Reporting API application`.
 
-    Б. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
+    б. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
 
-    c. В **текстовом поле** **URL-адрес перенаправления** выберите тип `https://localhost`.
+    в. В **текстовом поле** **URL-адрес перенаправления** выберите тип `https://localhost`.
 
-    d. Выберите **Зарегистрировать**. 
+    . Выберите **Зарегистрировать**. 
 
 
 ## <a name="grant-permissions"></a>Предоставление разрешений 
@@ -91,7 +91,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 | API | Разрешение |
 | --- | --- |
-| Microsoft Azure Active Directory | Прочитать данные каталога |
+| Active Directory в Windows Azure | Чтение данных каталога |
 | Microsoft Graph | Прочитать все данные журнала аудита |
 
 
@@ -122,12 +122,12 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/15.png)
 
-## <a name="gather-configuration-settings"></a>соберите параметры конфигурации. 
+## <a name="gather-configuration-settings"></a>Сбор параметров конфигурации 
 
 В этом разделе показано, как получить из каталога следующие параметры:
 
 - Доменное имя
-- идентификатор клиента
+- Идентификатор клиента
 - Секрет клиента
 
 Эти значения необходимы при настройке вызовов API отчетов. 
@@ -179,29 +179,26 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 5. На странице **Добавление секрета клиента** добавьте:
 
-    a. В текстовом поле **Описание** введите `Reporting API`.
+    а. В текстовом поле **Описание** введите `Reporting API`.
 
-    Б. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
+    б. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
-    c. Выберите команду **Сохранить**.
+    в. Нажмите кнопку **Сохранить**.
 
-    d. Скопируйте значение ключа.
+    . Скопируйте значение ключа.
 
 ## <a name="troubleshoot-errors-in-the-reporting-api"></a>Устранение ошибок в API отчетов
 
-В этом разделе перечислены распространенные сообщения об ошибках, с которыми вы можете столкнуться при доступе к отчетам о действиях с помощью API MS Graph, а также меры по их устранению.
+В этом разделе перечислены распространенные сообщения об ошибках, с которыми можно столкнуться при доступе к отчетам о действиях с помощью Microsoft Graph API и действиях по их устранению.
 
-### <a name="500-http-internal-server-error-while-accessing-microsoft-graph-v2-endpoint"></a>500 HTTP internal server error while accessing Microsoft Graph V2 endpoint (Внутренняя ошибка сервера 500 HTTP при обращении к конечной точке Microsoft Graph версии 2)
 
-Конечная точка Microsoft Graph версии 2 сейчас не поддерживается, для доступа к журналам действий используйте конечную точку Microsoft Graph версии 1.
-
-### <a name="error-failed-to-get-user-roles-from-ad-graph"></a>Error: Failed to get user roles from AD Graph (Ошибка: не удалось получить роли пользователей из AD Graph)
+### <a name="error-failed-to-get-user-roles-from-microsoft-graph"></a>Ошибка: не удалось получить роли пользователя из Microsoft Graph
 
  Войдите в свою учетную запись, используя кнопки входа в пользовательском интерфейсе проводника Graph, чтобы избежать ошибки при попытке входа с помощью Graph Explorer. 
 
-![Песочница Graph](./media/troubleshoot-graph-api/graph-explorer.png)
+![Обозреватель Graph](./media/troubleshoot-graph-api/graph-explorer.png)
 
-### <a name="error-failed-to-do-premium-license-check-from-ad-graph"></a>Error: Failed to do premium license check from AD Graph (Ошибка: не удалось проверить лицензию уровня "Премиум" от AD Graph) 
+### <a name="error-failed-to-do-premium-license-check-from-microsoft-graph"></a>Ошибка: не удалось проверить лицензию Premium с Microsoft Graph 
 
 Если при попытке обращения ко входам с помощью песочницы Graph появляется это сообщение об ошибке, выберите **Изменить разрешения** под своей учетной записью на левой панели навигации, а затем выберите **Tasks.ReadWrite** и **Directory.Read.All**. 
 
@@ -218,12 +215,12 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 ### <a name="error-application-missing-aad-read-directory-data-permission"></a>Error: Application missing AAD 'Read directory data' permission (Ошибка: у приложения нет разрешения "Чтение данных каталога" AAD) 
 
-### <a name="error-application-missing-msgraph-api-read-all-audit-log-data-permission"></a>Error: Application missing MSGraph API 'Read all audit log data' permission (Ошибка: у приложения нет разрешения "Чтение всех данных журнала аудита" API MS Graph)
+### <a name="error-application-missing-microsoft-api-read-all-audit-log-data-permission"></a>Ошибка: в приложении отсутствует разрешение "чтение всех данных журнала аудита" Microsoft API
 
 Выполните действия, описанные в разделе [необходимые условия для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md) , чтобы убедиться, что приложение работает с нужным набором разрешений. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
-* [Ссылка на API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
+* [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
 * [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)

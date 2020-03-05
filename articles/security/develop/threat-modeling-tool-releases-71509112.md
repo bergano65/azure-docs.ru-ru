@@ -1,5 +1,6 @@
 ---
-title: Microsoft Threat Modeling Tool выпуск 9/12/2018 — Azure
+title: Microsoft Threat Modeling Tool выпуск 9/12/2018
+titleSuffix: Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 author: jegeib
 ms.author: jegeib
@@ -7,12 +8,12 @@ ms.service: security
 ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/15/2019
-ms.openlocfilehash: ad489d6de222380e85a962c7b50c63a5c2122c72
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: a921310f14f0d48922165a46d750366e170ee374
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548808"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78269916"
 ---
 # <a name="threat-modeling-tool-ga-release-71509112---9122018"></a>Threat Modeling Tool, общедоступный выпуск 7.1.50911.2 от 12.09.2018
 
@@ -78,7 +79,7 @@ ms.locfileid: "75548808"
 
 ![Обновления набора элементов Azure в клиенте 2016](./media/threat-modeling-tool-releases-71509112/tmt_azure_stencils-300x212.png)
 
-## <a name="system-requirements"></a>Системные требования
+## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
   - Microsoft Windows 10
@@ -91,6 +92,6 @@ ms.locfileid: "75548808"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

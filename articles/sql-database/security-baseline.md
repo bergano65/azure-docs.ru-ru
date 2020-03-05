@@ -5,15 +5,15 @@ author: msmbaldwin
 manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 02/22/2020
+ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: e1323467db875968f45557c6a7c0afdfee5e4221
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
-ms.translationtype: MT
+ms.openlocfilehash: dd9b82cbb2984386059988496c550123a8e67a3f
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589939"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273092"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database"></a>Базовый план безопасности Azure для базы данных SQL Azure
 
@@ -122,12 +122,9 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: развертывание систем обнаружения вторжений на основе сети и предотвращения вторжений (ИДЕНТИФИКАТОРы и IP-адреса)
 
-**Руководство**. включена расширенная защита от угроз (ATP) для базы данных SQL Azure.  Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Кроме того, с помощью центра безопасности Azure вы можете интегрировать оповещения в службу Advanced Threat protection.
+**Руководство**. Включение расширенной защиты от угроз (ATP) для базы данных SQL Azure.  Пользователи получают оповещения о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных закономерностей в доступе к базам данных и шаблонам запросов. Кроме того, с помощью центра безопасности Azure вы можете интегрировать оповещения в службу Advanced Threat protection.
 
-
-Общие сведения и использование расширенной защиты от угроз для базы данных SQL Azure:
-
-https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
+Общие сведения и использование расширенной защиты от угроз для базы данных SQL Azure: https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
 
 **Мониторинг центра безопасности Azure**: Да
 
@@ -165,10 +162,13 @@ https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: поддержание стандартных конфигураций безопасности для сетевых устройств
 
 **Руководство**. Определение и реализация конфигураций безопасности сети для экземпляров сервера базы данных SQL Azure с помощью политики Azure. Вы можете использовать пространство имен Microsoft. SQL для определения пользовательских политик или использовать любое из встроенных определений политик, предназначенных для защиты сети сервера базы данных SQL Azure. Пример применимой встроенной политики безопасности сети для сервера базы данных SQL Azure: "SQL Server должен использовать конечную точку службы виртуальной сети".
+ 
 
 Используйте схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны управления ресурсами Azure, управление доступом на основе ролей (RBAC) и политики, в одном определении схемы. Простое применение схемы к новым подпискам и средам, а также тонкая настройка управления и управления с помощью управления версиями.
 
+
 Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+
 
 Создание Azure Blueprint: https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal
 
@@ -457,13 +457,27 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 **Рекомендации**. Используйте Azure Active Directory отчеты о безопасности для создания журналов и оповещений при возникновении подозрительных или ненадежных действий в среде.
 
+
+
 Используйте расширенную защиту от угроз для базы данных SQL Azure, чтобы обнаружить аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования.
 
-Определение пользователей Azure AD, помеченных для рискованных действий: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk
 
-Как отслеживать действия по удостоверениям и доступу пользователей в центре безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-Ознакомьтесь с дополнительными возможностями защиты от угроз и потенциальными оповещениями: https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview#advanced-threat-protection-alerts
+Определение пользователей Azure AD, помеченных для рискованных действий:
+
+https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk
+
+
+
+Как отслеживать действия пользователей и доступа в центре безопасности Azure:
+
+https://docs.microsoft.com/azure/security-center/security-center-identity-access
+
+
+
+Ознакомьтесь с дополнительными возможностями защиты от угроз и потенциальными оповещениями:
+
+https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview#advanced-threat-protection-alerts
 
 
 **Мониторинг центра безопасности Azure**: Да
@@ -473,6 +487,7 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3,8: управление ресурсами Azure из только утвержденных расположений
 
 **Руководство**. Используйте условный доступ с именованными расположениями, чтобы разрешить доступ к порталу и управлению ресурсами Azure только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
+
 
 Как настроить именованные расположения в Azure: https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations
 
@@ -714,7 +729,7 @@ https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-
 https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -774,7 +789,7 @@ https://docs.microsoft.com/azure/security-center/security-center-vulnerability-a
 
 https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#implementing-vulnerability-assessment
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: неприменимо
 
 **Ответственность**: клиент
 
@@ -796,11 +811,15 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 
 **Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов (включая экземпляры SQL Server Azure) в ваших подписках.  Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
+
 Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
+
 
 Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
+
 Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
+
 
 Общие сведения об Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/overview
 
@@ -812,7 +831,11 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 
 **Руководство**. применение тегов к ресурсам Azure с помощью метаданных для логической организации их в таксономию.
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+
+
+Создание и использование тегов:
+
+https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -822,11 +845,23 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 
 **Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга ресурсов. Регулярно выверка инвентаризации и своевременное удаление неавторизованных ресурсов из подписки.
 
-Как создать дополнительные подписки Azure: https://docs.microsoft.com/azure/billing/billing-create-subscription
 
-Создание Группы управления: https://docs.microsoft.com/azure/governance/management-groups/create
 
-Создание и использование тегов: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+Как создать дополнительные подписки Azure:
+
+https://docs.microsoft.com/azure/billing/billing-create-subscription
+
+
+
+Создание Группы управления:
+
+https://docs.microsoft.com/azure/governance/management-groups/create
+
+
+
+Создание и использование тегов:
+
+https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -894,6 +929,7 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 
 Как отказаться от определенного типа ресурса с помощью политики Azure: https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
 
+
 **Мониторинг центра безопасности Azure**: неприменимо
 
 **Ответственность**: клиент
@@ -911,9 +947,7 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 **Руководство**. Использование условного доступа Azure для ограничения возможности пользователей взаимодействовать с Azure Resource Manager путем настройки "блокировать доступ" для приложения "Управление Microsoft Azure".
 
 
-Как настроить условный доступ для блокировки доступа к Azure Resource Manager:
-
-https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+Настройка условного доступа для блокировки доступа к Azure Resource Manager: https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
 
 **Мониторинг центра безопасности Azure**: Сейчас недоступно
 
@@ -1152,7 +1186,7 @@ https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resou
 
 https://docs.microsoft.com/azure/sql-database/sql-database-business-continuity
 
-**Мониторинг центра безопасности Azure**: неприменимо
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: Общая
 
@@ -1204,7 +1238,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-recovery-using-backup
 
 https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
-**Мониторинг центра безопасности Azure**: Сейчас недоступно
+**Мониторинг центра безопасности Azure**: Да
 
 **Ответственность**: клиент
 
@@ -1292,7 +1326,7 @@ https://docs.microsoft.com/azure/sentinel/connect-azure-security-center
 
 https://docs.microsoft.com/azure/security-center/workflow-automation
 
-**Мониторинг центра безопасности Azure**: Да
+**Мониторинг центра безопасности Azure**: Сейчас недоступно
 
 **Ответственность**: клиент
 
@@ -1314,3 +1348,7 @@ https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
 **Ответственность**: Общая
 
+## <a name="next-steps"></a>Следующие шаги
+
+- Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
+- Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

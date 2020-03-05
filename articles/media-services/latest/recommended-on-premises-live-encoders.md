@@ -9,14 +9,14 @@ ms.author: johndeu
 ms.date: 02/10/2020
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: 43d2a56757948f6005420d2b44f9bea963613d17
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 60f9209129c75e329b283045d19b4b5140b40ec2
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78252176"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78268197"
 ---
-# <a name="recommended-live-streaming-encoders"></a>Мы рекомендуем использовать кодировщики потоковой трансляции
+# <a name="recommended-on-premises-live-streaming-encoders"></a>Рекомендуемые локальные кодировщики динамической потоковой передачи
 
 В Службах мультимедиа Azure [трансляция](https://docs.microsoft.com/rest/api/media/liveevents) (канал) представляет собой конвейер для обработки содержимого потоковой трансляции. Трансляция получает входные потоки одним из двух способов.
 
@@ -97,10 +97,10 @@ ms.locfileid: "78252176"
 - Изменение конфигурации кодировщика после начала отправки негативно сказывается на событии и может привести к его нестабильной работе. 
 - Выделите достаточно времени для настройки события. Для крупномасштабных событий мы рекомендуем начать настройку за час до события.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также:
 
 [Станьте локальным партнером по кодировщику](become-on-premises-encoder-partner.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Потоковая трансляция в Службах мультимедиа Azure версии 3](live-streaming-overview.md)

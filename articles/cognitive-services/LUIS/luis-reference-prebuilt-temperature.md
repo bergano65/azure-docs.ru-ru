@@ -8,18 +8,18 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: f2ea08694419caaaf54e4fed45c7c1589be2473d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7e2b48c6353f56ab2269a8718146cb765797adba
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499522"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78270366"
 ---
 # <a name="temperature-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность temperature для приложения LUIS
-Сущность temperature извлекает различные типы температурных данных. Так как эта сущность уже обучена, добавлять в приложение примеры фраз, содержащие сущности temperature, не нужно. Сущность temperature поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
+Сущность temperature извлекает различные типы температурных данных. Так как эта сущность уже обучена, добавлять в приложение примеры фраз, содержащие сущности temperature, не нужно. Сущность temperature поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md).
 
 ## <a name="types-of-temperature"></a>Типы сущностей temperature
 Управление сущностью temperature выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L819)
@@ -31,7 +31,7 @@ ms.locfileid: "73499522"
 `set the temperature to 30 degrees`
 
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
@@ -45,7 +45,7 @@ ms.locfileid: "73499522"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
 ```json
@@ -73,7 +73,7 @@ ms.locfileid: "73499522"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.temperature**.
 
@@ -91,10 +91,10 @@ ms.locfileid: "73499522"
     }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-Дополнительные сведения о сущностях [percentage](luis-reference-prebuilt-percentage.md), [number](luis-reference-prebuilt-number.md) и [age](luis-reference-prebuilt-age.md). 
+Дополнительные сведения о сущностях [percentage](luis-reference-prebuilt-percentage.md), [number](luis-reference-prebuilt-number.md) и [age](luis-reference-prebuilt-age.md).
