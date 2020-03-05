@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/04/2019
 ms.author: diberry
-ms.openlocfilehash: 7a269f93820a6029370490448f02038f5aa3eb3e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b2b2b0781abce59628660b669f43110bf91b15e6
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464902"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273489"
 ---
 # <a name="geographyv2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность GeographyV2 для приложения LUIS
 Предварительно созданная сущность GeographyV2 определяет расположения. Так как эта сущность уже обучена, добавлять примеры высказываний, содержащие сущность GeographyV2, в намерения приложения не нужно. Сущность GeographyV2 поддерживает английский [язык и региональные параметры](luis-reference-prebuilt-entities.md).
@@ -24,7 +24,7 @@ ms.locfileid: "73464902"
 ## <a name="subtypes"></a>Подтипы
 Географические расположения имеют подтипы.
 
-|Subtype|Назначение|
+|Подтип|Назначение|
 |--|--|
 |`poi`|достопримечательность|
 |`city`|название города|
@@ -39,7 +39,7 @@ ms.locfileid: "73464902"
 
 `Carol is visiting the sphinx in gizah egypt in africa before heading to texas.`
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
 
@@ -72,7 +72,7 @@ ms.locfileid: "73464902"
 
 В предыдущем JSON `poi` является сокращением **интересующей точки**.
 
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
 
 Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
 
@@ -161,7 +161,7 @@ ms.locfileid: "73464902"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение для сущности **builtin.geographyV2**.
 
@@ -205,10 +205,10 @@ ms.locfileid: "73464902"
     }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-См. дополнительные сведения о сущностях [email](luis-reference-prebuilt-email.md), [number](luis-reference-prebuilt-number.md) и [ordinal](luis-reference-prebuilt-ordinal.md). 
+См. дополнительные сведения о сущностях [email](luis-reference-prebuilt-email.md), [number](luis-reference-prebuilt-number.md) и [ordinal](luis-reference-prebuilt-ordinal.md).

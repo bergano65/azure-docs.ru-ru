@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ddd4f45e88c0bcc63fb62cc816fae4dbad255841
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 602f5a794f90e52ac80ea71ea2ed3656a7e0e5e7
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77157590"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78269459"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "77157590"
 
 Дополнительные сведения о хранилище таблиц см. в статье [Обзор табличного хранилища](../tables/table-storage-overview.md).
 
-## <a name="disk-storage"></a>Хранилище дисков
+## <a name="disk-storage"></a>Дисковый накопитель
 
 Управляемый диск Azure — это виртуальный жесткий диск (VHD). Его можно представить как физический диск на локальном сервере, но который является виртуализированным. Управляемые диски Azure хранятся в виде страничных BLOB-объектов, которые являются произвольным объектом хранения ввода-вывода в Azure. Эти диски называются управляемыми, так как это абстракция на основе страничных BLOB-объектов, а также контейнеров больших двоичных объектов и учетных записей хранения Azure. В случае с управляемыми дисками вам нужно только подготовить диск к работе, а Azure позаботится об остальном.
 
@@ -141,7 +141,7 @@ ms.locfileid: "77157590"
 - [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/)
 - [Клиентская библиотека службы хранилища Azure для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
 - [Клиентская библиотека службы хранилища Azure для Java/Android](https://docs.microsoft.com/java/api/overview/azure/storage)
-- [Клиентская библиотека службы хранилища Azure для Node. js](https://docs.microsoft.com/javascript/api/overview/azure/storage)
+- [Клиентская библиотека службы хранилища Azure для Node. js](https://docs.microsoft.com/javascript/api/overview/azure/storage-overview)
 - [Клиентская библиотека службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python)
 - [Клиентская библиотека службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php)
 - [Клиентская библиотека службы хранилища Azure для Ruby](https://github.com/Azure/azure-storage-ruby)
@@ -167,6 +167,6 @@ ms.locfileid: "77157590"
 - [Клиентские инструменты службы хранилища Azure](../storage-explorers.md)
 - [Средства для разработчиков Azure](https://azure.microsoft.com/tools/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы начать работу со службой хранилища Azure, см. дополнительные сведения о [создании учетной записи хранения](storage-account-create.md).
