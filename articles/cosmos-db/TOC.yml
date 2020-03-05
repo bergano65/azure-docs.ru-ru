@@ -540,7 +540,10 @@
         - name: Брандмауэр IP-адресов
           href: firewall-support.md
         - name: Доступ из виртуальных сетей
+          displayName: service endpoint
           href: vnet-service-endpoint.md
+        - name: Теги служб
+          href: ../virtual-network/service-tags-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Управление доступом на основе ролей
           displayName: rbac
           href: role-based-access-control.md
@@ -983,6 +986,7 @@
         - name: Настройка брандмауэра IP-адресов
           href: how-to-configure-firewall.md
         - name: Настройка доступа из виртуальных сетей
+          displayName: service endpoints
           href: how-to-configure-vnet-service-endpoint.md
         - name: Настройка доступа из частных конечных точек
           href: how-to-configure-private-endpoints.md
