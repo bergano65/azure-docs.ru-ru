@@ -5,11 +5,11 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc
 ms.openlocfilehash: 8a66cee7e844f0049f2d2ca2f6841943aa267f3e
-ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114184"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393073"
 ---
 # <a name="restore-a-disk-and-create-a-recovered-vm-in-azure"></a>Восстановление диска и создание восстановленной виртуальной машины в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "77114184"
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.18 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этого руководства требуется виртуальная машина Linux, защищенная с помощью службы архивации Azure. Для имитации случайного удаления виртуальной машины и процесса восстановления виртуальная машина создается на основе диска в точке восстановления. Если вам требуется виртуальная машина Linux, защищенная с помощью службы архивации Azure, см. раздел [Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки](quick-backup-vm-cli.md).
 

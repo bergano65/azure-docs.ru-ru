@@ -8,11 +8,11 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 06/29/2018
 ms.openlocfilehash: 2327632fc2a71855874bb8fe45e97af430fa696a
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791839"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78358823"
 ---
 # <a name="overview---what-is-azure-logic-apps"></a>Обзор: Azure Logic Apps
 
@@ -138,7 +138,7 @@ Logic Apps — это одна из многих служб, размещенн�
 
 Если у вас есть подписка, ознакомьтесь с этим [кратким руководством по созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), которое отслеживает новое содержимое на веб-сайте через RSS-канал, а затем и отправляет сообщения электронной почты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проверка трафика при помощи приложения логики, которое выполняется по расписанию](../logic-apps/tutorial-build-schedule-recurring-logic-app-workflow.md)
 * [Обзор бессерверных компонентов Azure с Функциями и Logic Apps](../logic-apps/logic-apps-serverless-overview.md)

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: masnider
 ms.openlocfilehash: 17827342b67d37d9fbeb56654824e004367823ef
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610018"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78378933"
 ---
 # <a name="scaling-in-service-fabric"></a>Масштабирование в Service Fabric
 Azure Service Fabric упрощает создание масштабируемых приложений, обеспечивая управление службами, секциями и репликами на узлах кластера. Выполнение множества рабочих нагрузок на одном и том же оборудовании обеспечивает не только максимальное использование ресурсов, но и гибкость в выборе способа масштабирования рабочих нагрузок. В этом видео Channel 9 объясняется, как создавать масштабируемые приложения для микрослужб:
@@ -37,7 +37,7 @@ updateDescription.InstanceCount = 50;
 await fabricClient.ServiceManager.UpdateServiceAsync(new Uri("fabric:/app/service"), updateDescription);
 ```
 
-В PowerShell:
+PowerShell:
 
 ```posh
 Update-ServiceFabricService -Stateless -ServiceName $serviceName -InstanceCount 50
@@ -54,7 +54,7 @@ serviceDescription.InstanceCount = -1;
 await fc.ServiceManager.CreateServiceAsync(serviceDescription);
 ```
 
-В PowerShell:
+PowerShell:
 
 ```posh
 New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName -Stateless -PartitionSchemeSingleton -InstanceCount "-1"

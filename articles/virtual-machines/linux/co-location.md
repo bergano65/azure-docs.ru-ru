@@ -11,17 +11,17 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: zivr
 ms.openlocfilehash: c90e70900c019340cacc169325155ac74cf7807c
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73171466"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78380623"
 ---
 # <a name="co-locate-resources-for-improved-latency"></a>Совместное размещение ресурсов для повышения задержки
 
 При развертывании приложения в Azure распределение экземпляров по регионам или зонам доступности создает задержку в сети, что может повлиять на общую производительность приложения. 
 
-## <a name="proximity-placement-groups"></a>Группы размещения с учетом расположения
+## <a name="proximity-placement-groups"></a>Группы размещения близкого взаимодействия
 
 [!INCLUDE [virtual-machines-common-ppg-overview](../../../includes/virtual-machines-common-ppg-overview.md)]
 

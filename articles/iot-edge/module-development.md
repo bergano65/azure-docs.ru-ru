@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 96bd6b461a5374b5f5bc578c5f58dbcd09cd7087
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548634"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78358689"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -51,7 +51,7 @@ ms.locfileid: "76548634"
 
 Сообщения с устройства в облако, обрабатываемые концентратором Edge, имеют следующие свойства системы:
 
-| Свойство | Description |
+| Свойство | Описание |
 | -------- | ----------- |
 | $connectionDeviceId | Идентификатор устройства клиента, отправившего сообщение. |
 | $connectionModuleId | Идентификатор модуля, отправившего сообщение. |
@@ -77,11 +77,11 @@ IoT Edge поддерживает несколько операционных с
 
 | Язык разработки | Инструменты разработки |
 | -------------------- | ----------------- |
-| C | Код Visual Studio<br>Visual Studio 2017 или 2019 |
-| C# | Код Visual Studio<br>Visual Studio 2017 или 2019 |
-| Java | Код Visual Studio |
-| Node.js | Код Visual Studio |
-| Python | Код Visual Studio |
+| C | Visual Studio Code<br>Visual Studio 2017 или 2019 |
+| C# | Visual Studio Code<br>Visual Studio 2017 или 2019 |
+| Java | Visual Studio Code |
+| Node.js | Visual Studio Code |
+| Python | Visual Studio Code |
 
 >[!NOTE]
 >Поддержка разработки и отладки для устройств ARM64 Linux доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Подробные сведения см. в статье [Develop and debug ARM64 IoT Edge modules in Visual Studio Code (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) (Разработка и отладка модулей IoT Edge для устройств ARM64 в Visual Studio Code (предварительная версия)).
@@ -95,7 +95,7 @@ IoT Edge поддерживает несколько операционных с
 | C | Visual Studio 2017 или 2019 |
 | C# | Visual Studio Code (без возможностей отладки)<br>Visual Studio 2017 или 2019 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Подготовка среды разработки и тестирования для IoT Edge](development-environment.md)
 

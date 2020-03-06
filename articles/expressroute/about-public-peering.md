@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: cherylmc
 ms.openlocfilehash: bae44f67a485546ba29148a114d88df198f7c3e6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483093"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361694"
 ---
 # <a name="create-and-manage-expressroute-public-peering"></a>Создание общедоступного пиринга ExpressRoute и управление им
 
@@ -28,7 +28,7 @@ ms.locfileid: "75483093"
 >Общедоступный пиринг является устаревшим. Невозможно создать общедоступный пиринг для новых каналов ExpressRoute. Если вы используете новый канал ExpressRoute, используйте [пиринг Майкрософт](expressroute-circuit-peerings.md#microsoftpeering) для служб Azure.
 >
 
-## <a name="connectivity"></a>Подключение
+## <a name="connectivity"></a>Соединение
 
 Подключение всегда инициируется из глобальной сети к службам Microsoft Azure. Службы Microsoft Azure не будут иметь возможность инициировать подключения к вашей сети через этот домен маршрутизации. Если канал ExpressRoute включен для общедоступного пиринга Azure, вы можете получить доступ к [диапазонам общедоступных IP-адресов, используемым в Azure](../virtual-network/virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) по каналу.
 
@@ -48,7 +48,7 @@ ms.locfileid: "75483093"
 * Большинство служб Azure поддерживается. Проверьте непосредственно в службе, которую вы хотите использовать для проверки поддержки.
 
 **Не поддерживается:**
-  * Сеть кэширующих серверов (CDN)
+  * CDN
   * Azure Front Door
   * Сервер многофакторной идентификации (устаревший)
   * Диспетчер трафика

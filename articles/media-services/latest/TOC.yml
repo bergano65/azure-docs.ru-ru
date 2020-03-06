@@ -72,7 +72,7 @@
       items:
         - name: Обзор
           href: encoding-concept.md
-          displayName: 'encoding, presets, jobs, adaptive, bitrate'
+          displayName: 'encoding, presets, jobs, adaptive, bitrate, billing'
         - name: Форматы кодировщика ценовой категории "Стандартный"
           displayName: 'containers, codecs'
           href: media-encoder-standard-formats.md

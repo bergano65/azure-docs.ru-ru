@@ -4,11 +4,11 @@ description: Узнайте, как получать, форматировать
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.openlocfilehash: 2c6aca0c468630cee79222bc77bdc20dc9d95b19
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74304001"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388622"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
@@ -60,7 +60,7 @@ Search-AzGraph -Query "Resources | project name | order by name asc" -Skip 10
 
 ## <a name="paging-results"></a>Разбиение результатов по страницам
 
-Если необходимо разбить результирующий набор на небольшие наборы записей для обработки или так как результирующий набор превысит максимально допустимое значение _1000_ возвращаемых записей, используйте разбиение по страницам. [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) **QueryResponse** предоставляет значения, указывающие, что набор результатов разбит на **resultTruncated** и **$skipToken**.
+Если необходимо разбить результирующий набор на небольшие наборы записей для обработки или так как результирующий набор превысит максимально допустимое значение _1000_ возвращаемых записей, используйте разбиение по страницам. [REST API](/rest/api/azureresourcegraph/resourcegraph(2018-09-01-preview)/resources/resources) **куериреспонсе** предоставляет значения, указывающие на то, что набор результатов был разбит: **ресулттрункатед** и **$skipToken**.
 **resultTruncated** является логическим значением, которое оповещает потребителя, если существуют дополнительные записи, которые не возвращаются в ответе. Это условие также можно определить, когда свойство **count** меньше, чем свойство **totalRecords**. **totalRecords** определяет, сколько записей соответствует запросу.
 
 Когда свойство **resultTruncated** равно **true**, свойство **$skipToken** задается в ответе. Это значение используется с теми же значениями запроса и подписки для получения следующего набора записей, который соответствует запросу.
@@ -164,7 +164,7 @@ request = QueryRequest(query="Resources | limit 1", subscriptions=subs_list, opt
 response = client.resources(request)
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

@@ -8,11 +8,11 @@ ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
 ms.openlocfilehash: c754f33ab5f4346413b6603ca2cd404acac5443f
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77662406"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366950"
 ---
 # <a name="advanced-features-of-azure-metrics-explorer"></a>Дополнительные возможности обозреватель метрик Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "77662406"
 
 Ознакомьтесь с этой [статьей](alerts-metric.md), чтобы узнать больше о настройке оповещений на основе метрик.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 *Данные не отображаются на диаграмме.*
 
@@ -145,7 +145,7 @@ ms.locfileid: "77662406"
 
 * Если сегментировать диаграмму по свойству, которое не определено в метрике, то на диаграмме ничего не отобразится. Попробуйте очистить сегментацию (разбиение) или выберите другое свойство.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
   Дополнительные сведения о рекомендациях по созданию готовых к работе панелей мониторинга с метриками см. в статье [Create custom KPI dashboards using Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-tutorial-dashboards) (Создание пользовательских панелей мониторинга KPI с помощью Azure Application Insights).
 

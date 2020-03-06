@@ -16,11 +16,11 @@ ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 55c9075f28a9ff7e28fcb01352494cd6cff73f14
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121907"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78344242"
 ---
 # <a name="manage-the-availability-of-linux-virtual-machines"></a>Управление доступностью виртуальных машин Linux
 
@@ -28,6 +28,6 @@ ms.locfileid: "77121907"
 
 [!INCLUDE [virtual-machines-common-manage-availability](../../../includes/virtual-machines-common-manage-availability.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](../virtual-machines-linux-load-balance.md).
 

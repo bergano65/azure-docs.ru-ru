@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: 32603f4ab33e020245861e5dc66d2ade545fa627
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77148315"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78344508"
 ---
 # <a name="what-is-the-cloud-service-model-and-how-do-i-package-it"></a>Что такое модель облачных служб и как создать ее пакет?
 Облачная служба создается из трех компонентов: определения службы *(CSDEF-файл)* , конфигурации службы *(CSCFG-файл)* и пакета службы *(CSPKG-файл)* . Файлы **ServiceDefinition.csdef** и **ServiceConfig.cscfg** являются XML-файлами, которые описывают структуру облачной службы и ее конфигурацию. В совокупности это называется моделью. **ServicePackage.cspkg** — это ZIP-файл, который создается на основе файла **ServiceDefinition.csdef** и который, помимо прочего, содержит все необходимые зависимости в двоичном формате. Azure создает облачную службу из двух файлов: **ServicePackage.cspkg** и **ServiceConfig.cscfg**.

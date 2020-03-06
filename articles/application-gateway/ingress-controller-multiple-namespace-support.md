@@ -8,22 +8,22 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 83650e7cf46ec1dede5f25e32114d6469bab24be
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795561"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373474"
 ---
 # <a name="enable-multiple-namespace-support-in-an-aks-cluster-with-application-gateway-ingress-controller"></a>Включение поддержки нескольких пространств имен в кластере AKS с помощью контроллера входящего трафика шлюза приложений
 
-## <a name="motivation"></a>Справоч
+## <a name="motivation"></a>Причины для использования
 [Пространства имен](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) Kubernetes позволяют секционировать кластер Kubernetes и распределять его между подгруппами более крупной команды. Затем эти подкоманды могут развертывать инфраструктуру и управлять ею с помощью более мелких средств управления ресурсами, безопасностью, конфигурацией и т. д. Kubernetes позволяет определять один или несколько входящих ресурсов отдельно в каждом пространстве имен.
 
 Начиная с версии 0,7 [шлюз приложений Azure Kubernetes ингрессконтроллер](https://github.com/Azure/application-gateway-kubernetes-ingress/blob/master/README.md) (агик) может принимать события из нескольких пространств имен и наблюдать за ними. Если администратор AKS решил использовать [шлюз приложений](https://azure.microsoft.com/services/application-gateway/) в качестве входящего, все пространства имен будут использовать один и тот же экземпляр шлюза приложений. При отдельной установке контроллера входящего трафика будут отслеживаться доступные пространства имен, а также будет настроен шлюз приложений, с которым он связан.
 
 Версия 0,7 АГИК будет продолжать монопольно наблюдать за `default` пространством имен, если только это не будет явно изменено на одно или несколько пространств имен в конфигурации Helm (см. раздел ниже).
 
-## <a name="enable-multiple-namespace-support"></a>Включить поддержку нескольких пространств имен
+## <a name="enable-multiple-namespace-support"></a>Включение поддержки нескольких пространств имен
 Чтобы включить поддержку нескольких пространств имен:
 1. Измените файл [Helm-config. YAML](#sample-helm-config-file) одним из следующих способов.
    - Удалите `watchNamespace` ключ целиком из [Helm-config. YAML](#sample-helm-config-file) -агик будет наблюдать за всеми пространствами имен
@@ -83,8 +83,8 @@ spec:
 
 Несмотря на то, что два входящих ресурса требуют трафика для `www.contoso.com` направляться в соответствующие пространства имен Kubernetes, только одна серверная часть может обслуживать трафик. АГИК будет создавать конфигурацию для одного из ресурсов на основе первых поступающих. Если одновременно создаются два передает ресурсов, приоритет будет иметь один из них, описанный ранее в алфавите. Из приведенного выше примера можно будет только создавать параметры для `production` входящий. Шлюз приложений будет настроен со следующими ресурсами:
 
-  - Прослушиватель: `fl-www.contoso.com-80`
-  - Правило маршрутизации: `rr-www.contoso.com-80`
+  - Прослушиватель: `fl- www.contoso.com-80`
+  - Правило маршрутизации: `rr- www.contoso.com-80`
   - Внутренний пул: `pool-production-contoso-web-service-80-bp-80`
   - Параметры HTTP: `bp-production-contoso-web-service-80-80-websocket-ingress`
   - Проба работоспособности: `pb-production-contoso-web-service-80-websocket-ingress`

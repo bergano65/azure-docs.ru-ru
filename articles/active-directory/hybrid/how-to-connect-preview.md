@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: предварительные версии компонентов | Документация Майкрософт'
+title: 'Azure AD Connect: предварительные версии компонентов | Документация Майкрософт'
 description: В этой статье более подробно описаны функции Azure AD Connect, находящиеся на этапе предварительной версии.
 services: active-directory
 documentationcenter: ''
@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7def733a80aea1be77825bb9069217f5f43e003
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60347810"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376070"
 ---
 # <a name="more-details-about-features-in-preview"></a>Дополнительная информация о функциях в предварительной версии
 В этой статье описывается, как использовать функции, которые сейчас доступны в предварительной версии.

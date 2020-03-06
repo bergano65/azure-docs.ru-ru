@@ -6,11 +6,11 @@ ms.subservice: shared-capabilities
 ms.date: 05/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: a1761eebe51c5ccb4d30b93ad4122dfc185d216e
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028257"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373144"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "76028257"
 
 ## <a name="create-run-as-account-using-powershell"></a>Создание учетной записи запуска от имени с помощью PowerShell
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В следующем списке приведены требования для создания учетной записи запуска от имени в PowerShell:
 
@@ -442,7 +442,7 @@ $roleDefinition | Set-AzureRMRoleDefinition
 * учетная запись запуска от имени (удалена из роли участника),
 * субъект-служба или приложение-служба в Azure AD,
 
-В случае такой неправильной настройки (или в других примерах) учетная запись службы автоматизации обнаружит эти изменения и отобразит в области свойств **учетных записей запуска от имени** состояние *Не выполнено*.
+В случае такой неправильной настройки (или в других примерах) учетная запись службы автоматизации обнаружит эти изменения и отобразит в области свойств *учетных записей запуска от имени* состояние **Не выполнено**.
 
 ![Сообщение о том, что настройка учетной записи запуска от имени не завершена](media/manage-runas-account/automation-account-runas-incomplete-config.png)
 

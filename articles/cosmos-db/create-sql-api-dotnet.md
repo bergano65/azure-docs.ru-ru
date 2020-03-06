@@ -9,13 +9,13 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 07/12/2019
 ms.openlocfilehash: 0981ed30c6bcd9d4246ce1eb047aa66168e3884a
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707914"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364533"
 ---
-# <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Краткое руководство. Создание консольного приложения .NET для управления ресурсами API SQL для Azure Cosmos DB
+# <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Краткое руководство. Создание консольного приложения .NET для управления ресурсами Azure Cosmos DB API SQL
 
 > [!div class="op_single_selector"]
 > * [.NET версии 3](create-sql-api-dotnet.md)
@@ -123,7 +123,7 @@ dotnet add package Microsoft.Azure.Cosmos
 
 Чтобы использовать пример приложения, нужно выполнить проверку подлинности доступа к вашей учетной записи хранения Azure Cosmos. Для проверки подлинности необходимо передать учетную запись Azure Cosmos в приложение. Чтобы просмотреть учетные данные учетной записи Azure Cosmos, сделайте следующее:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Перейдите к своей учетной записи Azure Cosmos.
 
@@ -161,7 +161,7 @@ export PrimaryKey = "<Your_Azure_Cosmos_account_PRIMARY_KEY>"
 * Учетная запись Azure Cosmos 
 * Базы данных 
 * Контейнеры 
-* Items
+* Элементы
 
 Дополнительные сведения об иерархии различных объектов см. в статье [Work with databases, containers, and items in Azure Cosmos DB](databases-containers-items.md) (Работа с базами данных, контейнерами и элементами в Azure Cosmos DB). Вы будете использовать следующие классы .NET для взаимодействия с этими ресурсами:
 
@@ -304,7 +304,7 @@ public class Program
 
 ### <a name="create-a-database"></a>Создание базы данных 
 
-Определите метод `CreateDatabaseAsync` в классе `program.cs`. Этот метод создает `FamilyDatabase`, если она не существует.
+Определите метод `CreateDatabaseAsync` в классе `program.cs`. Этот метод создает `FamilyDatabase`, если он еще не существует.
 
 ```csharp
 private async Task CreateDatabaseAsync()
@@ -482,7 +482,7 @@ End of demo, press any key to exit.
 az group delete -g "myResourceGroup"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos, базу данных и контейнер с помощью приложения .NET Core. Теперь вы можете импортировать дополнительные данные в свою учетную запись Azure Cosmos, следуя инструкциям в следующей статье. 
 

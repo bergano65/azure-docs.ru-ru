@@ -9,15 +9,15 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/24/2018
 ms.openlocfilehash: ee8dec821e8cbb4657323c167a463b94b7935ab1
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623417"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78397328"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Взаимодействие с API Cassandra для Azure Cosmos DB осуществляется посредством клиентских [драйверов](https://cassandra.apache.org/doc/latest/getting_started/drivers.html?highlight=driver) Cassandra с открытым исходным кодом, совместимым с [сетевым протоколом](https://github.com/apache/cassandra/blob/trunk/doc/native_protocol_v4.spec) Cassandra Query Language (CQL) v4. 
+Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Взаимодействие с API Cassandra для Azure Cosmos DB осуществляется посредством клиентских [драйверов](https://github.com/apache/cassandra/blob/trunk/doc/native_protocol_v4.spec) Cassandra с открытым исходным кодом, совместимым с [сетевым протоколом](https://cassandra.apache.org/doc/latest/getting_started/drivers.html?highlight=driver) Cassandra Query Language (CQL) v4. 
 
 С помощью API Cassandra для Azure Cosmos DB вы можете воспользоваться преимуществами API-интерфейсов Apache Cassandra, а также корпоративными возможностями, доступными в Azure Cosmos DB. В их число входят [глобальное распределение](distribute-data-globally.md), [секционирование автоматического масштабирования](partition-data.md), гарантии доступности и задержки, шифрование при хранении, создание резервных копий и многое другое.
 
@@ -96,7 +96,7 @@ API Cassandra для Azure Cosmos DB поддерживает следующие
 
 ## <a name="cassandra-api-limits"></a>Ограничения API Cassandra
 
-API Cassandra для Azure Cosmos DB не имеет ограничений на размер данных, хранящихся в таблице. В таблицах могут храниться сотни терабайт или петабайт данных с соблюдением ограничений для ключей секций. Каждый эквивалент сущности или строки не имеет никаких ограничений на число столбцов. Однако общий размер сущности не должен превышать 2 МБ. Объем данных на ключ секции не может превышать 20 ГБ, как и во всех других API.
+API Cassandra для Azure Cosmos DB не имеет ограничений на размер данных, хранящихся в таблице. В таблицах могут храниться сотни терабайт или петабайт данных с соблюдением ограничений для ключей секций. Каждый эквивалент сущности или строки не имеет никаких ограничений на число столбцов. Однако общий размер сущности не должен превышать 2 МБ. Данные на ключ секции не могут превышать 20 ГБ, как и во всех других API.
 
 ## <a name="tools"></a>Инструменты 
 

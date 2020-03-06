@@ -8,11 +8,11 @@ ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
 ms.openlocfilehash: d2dfaab3d01ea29b0f9ecba1e9d748415bed2edc
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861291"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391740"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "75861291"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом:
 
@@ -118,7 +118,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
    VMwareDRToAzurePs VMwareDRToAzurePs Microsoft.RecoveryServices vaults
    ```
 
-В качестве альтернативы командлету Set-ASRVaultContext можно также использовать командлет Import-Азрековерисервицесасрваултсеттингсфиле для задания контекста хранилища. Укажите путь, по которому файл ключа регистрации хранилища будет располагаться в качестве параметра-Path командлета Import-Азрековерисервицесасрваултсеттингсфиле. Пример.
+В качестве альтернативы командлету Set-ASRVaultContext можно также использовать командлет Import-Азрековерисервицесасрваултсеттингсфиле для задания контекста хранилища. Укажите путь, по которому файл ключа регистрации хранилища будет располагаться в качестве параметра-Path командлета Import-Азрековерисервицесасрваултсеттингсфиле. Пример:
 
    ```azurepowershell
    Get-AzRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
@@ -353,9 +353,9 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 
 |Виртуальная машина  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
-|CentOSVM1       |ConfigurationServer   |Н/Д| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
+|CentOSVM1       |ConfigurationServer   |Недоступно| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
-|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
 
 
 ```azurepowershell

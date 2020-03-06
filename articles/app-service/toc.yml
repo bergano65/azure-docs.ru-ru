@@ -87,6 +87,8 @@
           href: networking-features.md
         - name: Использование Шлюза приложений с конечными точками служб
           href: networking/app-gateway-with-service-endpoints.md
+        - name: Частные конечные точки
+          href: networking/private-endpoint.md
     - name: Входящие и исходящие IP-адреса
       href: overview-inbound-outbound-ips.md
     - name: Интеграция с виртуальной сетью

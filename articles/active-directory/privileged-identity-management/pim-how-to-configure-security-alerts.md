@@ -15,11 +15,11 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 530eebea19d9e53f85a0079d6fba91c615ee6dd1
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77498933"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78375485"
 ---
 # <a name="configure-security-alerts-for-azure-ad-roles-in-privileged-identity-management"></a>Настройка оповещений системы безопасности для ролей Azure AD в управление привилегированными пользователями
 

@@ -6,11 +6,11 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
 ms.openlocfilehash: 4a240bc62816a46bc37108777a8b081b74047738
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77671177"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78381573"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
 
@@ -45,12 +45,12 @@ Application Insights агент расположен здесь: https://www.pow
 - [Set-Аппликатионинсигхтсмониторингконфиг](status-monitor-v2-api-set-config.md)
 - [Start-Аппликатионинсигхтсмониторингтраце](status-monitor-v2-api-start-trace.md)
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 - [Устранение неполадок](status-monitor-v2-troubleshoot.md)
 - [Известные проблемы](status-monitor-v2-troubleshoot.md#known-issues)
 
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 - Поддерживает ли агент Application Insights установку прокси-серверов?
 
@@ -72,7 +72,7 @@ Application Insights агент расположен здесь: https://www.pow
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотр телеметрии:
 
