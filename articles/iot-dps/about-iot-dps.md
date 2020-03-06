@@ -9,11 +9,11 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotgra
 ms.openlocfilehash: e564660b502a950021ba4e4754ff5c210dfd477f
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77082863"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78378876"
 ---
 # <a name="provisioning-devices-with-azure-iot-hub-device-provisioning-service"></a>Подготовка устройств с помощью службы подготовки устройств к добавлению в Центр Интернета вещей
 Microsoft Azure предоставляет широкий набор интегрированных общедоступных облачных служб для всех потребностей решений Интернета вещей. Служба подготовки устройств (DPS) Центра Интернета вещей является вспомогательной службой для Центра Интернета вещей, что позволяет быстро и полностью в автоматическом режиме подготовить необходимый Центр Интернета вещей без вмешательства пользователя. DPS позволяет безопасно и в масштабируемый способ предоставлять доступ к миллионам устройств.

@@ -10,11 +10,11 @@ ms.topic: quickstart
 ms.service: event-grid
 ms.custom: seodec18
 ms.openlocfilehash: 398e63ec9a8b9e1b16d8ffcee538351fc6572de9
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720792"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78387046"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-the-azure-portal-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью портала Azure и службы "Сетка событий"
 
@@ -49,7 +49,7 @@ ms.locfileid: "73720792"
     5. В поле **Схема событий** оставьте значение по умолчанию **Схема сетки событий**. 
 
        ![Страница "Создать раздел"](./media/custom-event-quickstart-portal/create-custom-topic.png)
-    6. Нажмите кнопку **Создать**. 
+    6. Нажмите кнопку **создания**. 
 5. После создания пользовательского раздела появится уведомление об успехе. Выберите **Перейти к группе ресурсов**. 
 
    ![Уведомление об успехе](./media/custom-event-quickstart-portal/success-notification.png)
@@ -100,7 +100,7 @@ ms.locfileid: "73720792"
 В первом примере используется Azure CLI. Он возвращает URL-адрес, ключ пользовательского раздела и пример данных события. Используйте имя пользовательского раздела для `<topic name>`. Будет создан пример данных событий. Элемент `data` JSON отображает полезные данные события. Любое значение JSON с правильным форматом может быть в этом поле. Кроме того, можно использовать поле темы для дополнительной маршрутизации и фильтрации. CURL — это служебная программа, которая отправляет HTTP-запросы.
 
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 1. На портале Azure выберите **Cloud Shell**. Выберите **Bash** в левом верхнем углу окна Cloud Shell. 
 
     ![Cloud Shell — Bash](./media/custom-event-quickstart-portal/cloud-shell-bash.png)
@@ -203,7 +203,7 @@ ms.locfileid: "73720792"
 
     Другая группа ресурсов, показанная на рисунке, создана и используется в окне Cloud Shell. Удалите ее, если вы не планируете использовать окно Cloud Shell в дальнейшем. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать пользовательские раздели и подписки на события, ознакомьтесь с дополнительными сведениями о сетке событий, которые могут помочь вам:
 

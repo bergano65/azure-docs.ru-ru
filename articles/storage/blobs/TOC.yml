@@ -162,6 +162,8 @@
               href: storage-blobs-latency.md
             - name: Зарезервированная емкость в службе хранилища Azure
               href: storage-blob-reserved-capacity.md
+            - name: Планирование затрат и управление ими
+              href: ../common/storage-plan-manage-costs.md
         - name: Параллелизм
           href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Поиск и анализ данных BLOB-объектов
@@ -419,12 +421,6 @@
                   href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-storage
             - name: Xamarin
               href: storage-xamarin-blob-storage.md
-        - name: Управление большими двоичными объектами
-          items:
-            - name: Azure CLI
-              href: ../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Классический Azure CLI
-              href: ../common/storage-azure-cli-nodejs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Перемещение между регионами
           href: ../common/storage-account-move.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Диагностика
@@ -636,8 +632,24 @@
           href: ../common/storage-samples-javascript.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Основные понятия
       items:
-        - name: Учетные записи хранения
+        - name: Обработка больших данных
+          href: ../blobs/data-lake-storage-data-scenarios.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Драйвер Azure Blob File System для Hadoop
+          href: ../blobs/data-lake-storage-abfs-driver.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Формат URI для Azure Blob File System
+          href: ../blobs/data-lake-storage-introduction-abfs-uri.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Иерархические пространства имен
+          href: ../blobs/data-lake-storage-namespace.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Получение сведений об учетных записях хранения
           href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Рекомендации
+          href: data-lake-storage-best-practices.md
+        - name: Избыточность данных
+          href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Решения для передачи данных
+          href: ../common/storage-choose-data-transfer-solution.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Параллелизм
+          href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Безопасность
           items:
             - name: Авторизация операций с данными
@@ -652,23 +664,6 @@
               href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Использование частных конечных точек Azure
               href: ../common/storage-private-endpoints.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Избыточность данных
-          href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Перенос данных
-          items:
-            - name: Сравнение решений для передачи данных
-              href: ../common/storage-choose-data-transfer-solution.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-              items:
-                - name: 'Большой набор данных, низкая пропускная способность сети'
-                  href: ../common/storage-solution-large-dataset-low-network.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Большой набор данных, средняя или высокая пропускная способность сети'
-                  href: ../common/storage-solution-large-dataset-moderate-high-network.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 'Небольшой набор данных, низкая или средняя пропускная способность сети'
-                  href: ../common/storage-solution-small-dataset-low-moderate-network.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Периодическая передача данных
-                  href: ../common/storage-solution-periodic-data-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Параллелизм
-          href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Совместимость
           items:
             - name: Доступ с использованием нескольких протоколов
@@ -679,14 +674,6 @@
               href: data-lake-storage-supported-azure-services.md
             - name: Поддерживаемые платформы с открытым исходным кодом
               href: data-lake-storage-supported-open-source-platforms.md
-        - name: Обработка больших данных
-          href: ../blobs/data-lake-storage-data-scenarios.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Драйвер Azure Blob File System для Hadoop
-          href: ../blobs/data-lake-storage-abfs-driver.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Формат URI для Azure Blob File System
-          href: ../blobs/data-lake-storage-introduction-abfs-uri.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Иерархические пространства имен
-          href: ../blobs/data-lake-storage-namespace.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Мониторинг и устранение неполадок
           items:
             - name: 'Мониторинг, диагностирование и устранение неполадок'
@@ -697,13 +684,19 @@
               href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Журналы решения "Аналитика Службы хранилища"
               href: ../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Рекомендации
-          href: data-lake-storage-best-practices.md
     - name: Практическое руководство
       items:
-        - name: Создание учетной записи хранения для озера данных
-          href: ../common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Защита данных
+        - name: Создание
+          items:
+            - name: "Создание учетной записи хранения общего назначения версии\_2"
+              href: ../common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Миграция
+          items:
+            - name: Обновление Data Lake Storage 1-го поколения
+              href: ../blobs/data-lake-storage-upgrade.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Перенос локального хранилища HDFS
+              href: ../blobs/data-lake-storage-migrate-on-premises-HDFS-cluster.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Безопасность
           items:
             - name: Авторизация доступа к данным
               items:
@@ -767,19 +760,7 @@
                   href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Включение протокола TLS
                   href: ../common/storage-security-tls.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Аварийное восстановление
-          items:
-            - name: Проверка свойства "Время последней синхронизации"
-              href: ../common/last-sync-time-get.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Инициирование отработки отказа учетной записи
-              href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Использование эмулятора хранения
-          items:
-            - name: 'Использование Azurite, эмулятора с открытым кодом'
-              href: ../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Использование эмулятора хранения Azure
-              href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: 'Управление каталогами, файлами и списками ACL'
+        - name: Управление
           items:
             - name: .NET
               href: data-lake-storage-directory-file-acl-dotnet.md
@@ -795,19 +776,9 @@
               href: data-lake-storage-directory-file-acl-cli.md
             - name: Обозреватель службы хранилища
               href: data-lake-storage-explorer.md
-        - name: Оптимизация производительности
-          items:
-            - name: Обзор
-              href: ../blobs/data-lake-storage-performance-tuning-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Оптимизация Spark в HDInsight
-              href: ../blobs/data-lake-storage-performance-tuning-spark.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Оптимизация Hive в HDInsight
-              href: ../blobs/data-lake-storage-performance-tuning-hive.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Оптимизация MapReduce в HDInsight
-              href: ../blobs/data-lake-storage-performance-tuning-mapreduce.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Оптимизация Storm в HDInsight
-              href: ../blobs/data-lake-storage-performance-tuning-storm.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Передача данных
+            - name: Интерфейс командной строки файловой системы Hadoop
+              href: ../blobs/data-lake-storage-use-hdfs-data-lake-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Перенос
           items:
             - name: AzCopy
               items:
@@ -821,14 +792,28 @@
               href: ../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Перенос данных с помощью библиотеки перемещения данных
               href: ../common/storage-use-data-movement-library.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Перенос данных
+        - name: Оптимизация
           items:
-            - name: Обновление Data Lake Storage 1-го поколения
-              href: ../blobs/data-lake-storage-upgrade.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Перенос локального хранилища HDFS
-              href: ../blobs/data-lake-storage-migrate-on-premises-HDFS-cluster.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Использование с интерфейсом командной строки для файловой системы Hadoop
-          href: ../blobs/data-lake-storage-use-hdfs-data-lake-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Оптимизация производительности
+              href: ../blobs/data-lake-storage-performance-tuning-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Оптимизация Spark в HDInsight
+              href: ../blobs/data-lake-storage-performance-tuning-spark.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Оптимизация Hive в HDInsight
+              href: ../blobs/data-lake-storage-performance-tuning-hive.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Оптимизация MapReduce в HDInsight
+              href: ../blobs/data-lake-storage-performance-tuning-mapreduce.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Оптимизация Storm в HDInsight
+              href: ../blobs/data-lake-storage-performance-tuning-storm.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Recover
+          items:
+            - name: Проверка свойства "Время последней синхронизации"
+              href: ../common/last-sync-time-get.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Эмуляция
+          items:
+            - name: 'Использование Azurite, эмулятора с открытым кодом'
+              href: ../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Использование эмулятора хранения Azure
+              href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Справочник
       items:
         - name: .NET

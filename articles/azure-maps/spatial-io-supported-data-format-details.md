@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: cbeb1ccaed6ec2c62aaa731e88fcefbe84d1df02
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: fff801731c3c3a94b4039a8c65ad8ccaab7cc725
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370886"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402747"
 ---
 # <a name="supported-data-format-details"></a>Сведения о поддерживаемых форматах данных
 
@@ -391,39 +391,39 @@ ms.locfileid: "78370886"
 
 При сканировании строки заголовка все сведения о типе, находящееся в имени столбца, будут извлечены и использованы для приведения ячеек в этом столбце. Ниже приведен пример имени столбца, имеющего значение типа: "ColumnName (typeName)". Поддерживаются следующие имена типов без учета регистра:
 
-**Показатели**
+#### <a name="numbers"></a>Числа
 
-    - EDM. Int64
-    - INT
-    - long
-    - EDM. Double
-    - FLOAT
-    - double
-    - number
+- EDM. Int64
+- INT
+- long
+- EDM. Double
+- FLOAT
+- double
+- number
 
-**Логические значения**
+#### <a name="booleans"></a>Boolean
 
-    - EDM. Boolean
-    - bool
-    - Логическое
+- EDM. Boolean
+- bool
+- Логическое
 
-**Дату**
+#### <a name="dates"></a>даты.
 
-    - EDM. DateTime
-    - Дата
-    - DATETIME
+- EDM. DateTime
+- Дата
+- DATETIME
 
-**География**
+#### <a name="geography"></a>Geography
 
-    - модель EDM. geography
-    - geography
+- модель EDM. geography
+- geography
 
-**Строка**
+#### <a name="strings"></a>строк
 
-    - EDM. String
-    - varchar
-    - text
-    - Case "строка
+- EDM. String
+- varchar
+- text
+- Case "строка
 
 Если сведения о типе не могут быть извлечены из заголовка, а при чтении включен параметр динамической типизации, каждая ячейка будет анализироваться отдельно, чтобы определить, какой тип данных лучше всего использовать для приведения.
 

@@ -8,19 +8,19 @@
       href: what-is-ml-studio.md
     - name: Сравнить наши продукты Машинного обучения
       href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context
-- name: Учебники
+- name: Краткие руководства
   items:
     - name: Создание первого эксперимента
       displayName: quickstart
       href: create-experiment.md
-    - name: Создание прогнозного решения
-      items:
-        - name: "1.\_Создание эксперимента"
-          href: tutorial-part1-credit-risk.md
-        - name: "2.\_Обучение и анализ"
-          href: tutorial-part2-credit-risk-train.md
-        - name: "3.\_Развертывание веб-службы"
-          href: tutorial-part3-credit-risk-deploy.md
+- name: Учебники
+  items:
+    - name: '1: Создание прогнозного эксперимента'
+      href: tutorial-part1-credit-risk.md
+    - name: '2: Обучение и оценка решения'
+      href: tutorial-part2-credit-risk-train.md
+    - name: '3: Развертывание веб-службы'
+      href: tutorial-part3-credit-risk-deploy.md
 - name: Примеры
   items:
     - name: Доступные наборы данных
@@ -44,7 +44,7 @@
     - name: Управление моделями
       displayName: 'deploy, consume, web service'
       href: deploy-consume-web-service-guide.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Управление рабочей областью
       items:
@@ -52,7 +52,7 @@
           href: create-workspace.md
         - name: Управление
           href: manage-workspace.md
-        - name: Устранение неполадок
+        - name: Диагностика
           href: troubleshooting-creating-ml-workspace.md
         - name: Развертывание с помощью ARM
           href: deploy-with-resource-manager-template.md
@@ -147,7 +147,7 @@
           href: dedicated-capacity-for-bes-jobs.md
     - name: Варианты использования
       items:
-        - name: Отток клиентов
+        - name: Уход клиентов
           href: azure-ml-customer-churn-scenario.md
         - name: Анализ мнений
           href: text-analytics-module-tutorial.md
@@ -161,7 +161,7 @@
         - name: Данные в Коллекции решений
           displayName: export
           href: ai-gallery-control-personal-data-dsr.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по алгоритмам и модулям
       href: /azure/machine-learning/studio-module-reference/machine-learning-studio-algorithm-and-module-help

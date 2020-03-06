@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: diberry
 ms.openlocfilehash: efef3faf3cc4ff04235254f0ff6538d92a831196
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619938"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361152"
 ---
 # <a name="enterprise-strategies-for-a-luis-app"></a>Корпоративные стратегии для разработки приложения LUIS
 Ознакомьтесь с этими стратегиями разработки корпоративных приложений.
@@ -64,19 +64,19 @@ LUIS имеет месячную квоту, а также квоту за се�
 
 Bot в чате получает utterance, а затем отправляет родительскому приложению LUIS для прогнозирования. Наиболее прогнозируемая цель из родительского приложения определяет, какое дочернее приложение LUIS вызывается далее. Программа-робот чата отправляет utterance в дочернее приложение для более конкретного прогноза.
 
-Сведения о том, как эта иерархия вызовов выполняется из руководства по диспетчеру Bot Builder v4 [-Application-](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&branch=master&tabs=cs).  
+Сведения о том, как эта иерархия вызовов выполняется из [руководства по диспетчеру Bot Builder v4-Application-](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&branch=master&tabs=cs).  
 
 ### <a name="intent-limits-in-dispatch-model"></a>Ограничения намерений в модели отправки
 Приложение по отправке имеет максимум 500 источников отправки, эквивалентных 500 намерениям. 
 
-## <a name="more-information"></a>Дополнительная информация
+## <a name="more-information"></a>Дополнительные сведения
 
 * [Пакет SDK для Bot Framework](https://github.com/Microsoft/botframework)
 * [Учебник по модели диспетчеризации](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&branch=master&tabs=cs)
 * [Диспетчер CLI](https://github.com/Microsoft/botbuilder-tools)
 * Образец модели диспетчеризации — [.NET](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch), [node. js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [выполнить пакетное тестирование](luis-how-to-batch-test.md)
 

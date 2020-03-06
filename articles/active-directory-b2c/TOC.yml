@@ -48,6 +48,8 @@
   href: code-samples.md
 - name: Основные понятия
   items:
+    - name: "Рекомендации по Azure\_AD\_B2C"
+      href: best-practices.md
     - name: Типы приложений
       href: application-types.md
     - name: Протоколы проверки подлинности

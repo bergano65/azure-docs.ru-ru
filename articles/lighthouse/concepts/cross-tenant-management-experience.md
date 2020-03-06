@@ -1,14 +1,14 @@
 ---
 title: Интерфейсы управления для различных клиентов
 description: Делегированное управление ресурсами Azure предоставляет интерфейсы управления для различных клиентов.
-ms.date: 02/14/2020
+ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: cb484ea936bbb64b3ca3d7fcf648de0d0ef73c66
-ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
-ms.translationtype: HT
+ms.openlocfilehash: 42368bcbc9f15f9ff5ef957b4c88f15bf070f25b
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78328686"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402088"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -37,7 +37,14 @@ ms.locfileid: "78328686"
 
 Вы можете выполнять задачи управления делегированными ресурсами непосредственно на портале или с помощью интерфейсов API и средств управления (таких как Azure CLI и Azure PowerShell). Все существующие API можно использовать для работы с делегированными ресурсами, если их функциональные возможности поддерживаются для распределенного управления арендаторами и у пользователя есть соответствующие разрешения.
 
-Мы также предоставляем интерфейсы API для выполнения задач делегированного управления ресурсами Azure. Дополнительные сведения см. в разделе **Справочные материалы**.
+Командлет Azure PowerShell [Get-азсубскриптион](https://docs.microsoft.com/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-3.5.0) показывает значение **tenantID** для каждой подписки, что позволяет определить, принадлежит ли возвращенная Подписка к клиенту поставщика услуг или к клиенту управляемого клиента.
+
+Аналогичным образом Azure CLI команды, например [AZ Account List](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-list) , отображают атрибуты **хометенантид** и **манажедбитенантс** .
+
+> [!TIP]
+> Если вы не видите эти значения при использовании Azure CLI, попробуйте очистить кэш, выполнив `az account clear`, а затем `az login --identity`.
+
+Мы также предоставляем интерфейсы API, относящиеся к выполнению делегированных задач управления ресурсами Azure. Дополнительные сведения см. в разделе **Справочные материалы**.
 
 ## <a name="enhanced-services-and-scenarios"></a>Расширенные службы и сценарии
 

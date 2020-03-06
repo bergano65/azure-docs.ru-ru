@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: rohogue
 ms.openlocfilehash: a183989cc666f00da4be077c719c40d2524fd6e0
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547512"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372118"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
 
@@ -53,8 +53,8 @@ ms.locfileid: "76547512"
 |----------|-----------|
 |Виртуальные машины|3 или более E32s_v3 (по одному на узел кластера) |
 |Хранилище SSD (цен. категория "Премиум")|200 ГБ пространства ОС плюс от 1 до 4 ТБ объема кэша на узел |
-|Учетная запись хранения (необязательно) |v2|
-|Хранилище серверной части данных (необязательно) |Один новый контейнер больших двоичных объектов в LRS |
+|Учетная запись хранения (необязательно) |Версия 2|
+|Серверное хранилище данных (необязательно) |Один новый контейнер больших двоичных объектов в LRS |
 <!-- this table also appears in the overview - update it there if updating here -->
 
 ## <a name="accept-software-terms"></a>Принятие условий программного обеспечения
@@ -104,6 +104,6 @@ ms.locfileid: "76547512"
 
    ![Снимок экрана портала Azure с заметками для шагов создания конечной точки службы](media/avere-vfxt-service-endpoint.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После выполнения этих предварительных требований можно создать кластер. Инструкции см. в статье [Развертывание кластера vFXT](avere-vfxt-deploy.md).

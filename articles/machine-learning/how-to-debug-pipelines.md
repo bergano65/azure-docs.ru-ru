@@ -10,11 +10,11 @@ author: likebupt
 ms.author: keli19
 ms.date: 12/12/2019
 ms.openlocfilehash: c81d4db5798c15327e06471f1cb0da4841bd61b2
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78268512"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78396251"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -158,7 +158,7 @@ logger.error("I am an OpenCensus error statement with custom dimensions", {'step
 
 В некоторых случаях может потребоваться интерактивно отлаживать код Python, используемый в конвейере машинного обучения. С помощью Visual Studio Code (VS Code) и Инструменты Python для Visual Studio (PTVSD) можно присоединяться к коду, как он выполняется в среде обучения.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 * __Рабочая область машинное обучение Azure__ , настроенная для использования __виртуальной сети Azure__.
 * __Конвейер машинное обучение Azure__ , использующий скрипты Python в рамках этапов конвейера. Например, Писонскриптстеп.
@@ -387,7 +387,7 @@ ip_address: 10.3.0.5
     > [!NOTE]
     > Если в журнале отображается запись, содержащая `Debugger attached = False`, время ожидания истекает, и скрипт продолжает работу без отладчика. Снова отправьте конвейер и Подключите отладчик после `Timeout for debug connection` сообщения и до истечения времени ожидания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Обратитесь к Справочнику по пакету SDK, чтобы получить справку по пакету [azureml-конвейеры-Core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и пакету [azureml-конвейеры-этапов](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
 

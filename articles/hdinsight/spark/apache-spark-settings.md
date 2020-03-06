@@ -9,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.openlocfilehash: 48f19e5da8c7703cc597518246c2f62ebce3ae17
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003175"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78397088"
 ---
 # <a name="configure-apache-spark-settings"></a>Настройка параметров Apache Spark
 
@@ -144,10 +144,10 @@ YARN управляет максимальным объемом памяти, и
 
 Существует ряд основных параметров конфигурации, которые необходимо отслеживать и настраивать, чтобы задания Spark выполнялись прогнозируемым и эффективным образом. Эти параметры помогают определить лучшую конфигурацию кластера Spark для конкретных рабочих нагрузок.  Вам также необходимо следить за выполнением длительных или ресурсоемких выполнений заданий Spark.  Наиболее распространенной проблемой является нехватка памяти. Причинами этой проблемы можно назвать неправильные конфигурации (в частности, неправильные размеры исполнителей), длительные операции и задачи, которые приводят к декартовым операциям.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Компоненты и версии Apache Hadoop, доступные в HDInsight](../hdinsight-component-versioning.md)
 * [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md)
-* [Сведения о конфигурации Spark](https://spark.apache.org/docs/latest/configuration.html)
+* [Конфигурация Apache Spark](https://spark.apache.org/docs/latest/configuration.html)
 * [Выполнение Apache Spark в Apache Hadoop YARN](https://spark.apache.org/docs/latest/running-on-yarn.html)

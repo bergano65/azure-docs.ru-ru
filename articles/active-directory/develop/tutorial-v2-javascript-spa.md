@@ -16,11 +16,11 @@ ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
 ms.openlocfilehash: 5657a2d2c348b371f81aed74c92e52b5199cdc61
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77159886"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78377408"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -45,7 +45,7 @@ ms.locfileid: "77159886"
 
 В этом руководстве используется следующая библиотека:
 
-|Библиотека|Описание|
+|Библиотека|Description|
 |---|---|
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|Библиотека аутентификации Майкрософт для JavaScript (предварительная версия)|
 
@@ -65,7 +65,7 @@ ms.locfileid: "77159886"
 >
 > Перейдите к [настройке](#register-your-application), чтобы настроить пример кода перед выполнением.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Для работы с этим учебником требуется локальный веб-сервер, например [Node.js](https://nodejs.org/en/download/) или [.NET Core](https://www.microsoft.com/net/core), либо интеграция IIS Express с [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 
@@ -75,7 +75,7 @@ ms.locfileid: "77159886"
 
 ## <a name="create-your-project"></a>Создание проекта
 
-> ### <a name="option-1-nodejs-or-other-web-servers"></a>Вариант 1. Node.js или другие веб-серверы
+> ### <a name="option-1-nodejs-or-other-web-servers"></a>Вариант 1. Node. js или другие веб-серверы
 > Установите [Node.js](https://nodejs.org/en/download/) и создайте папку для размещения приложения.
 >
 > ### <a name="option-2-visual-studio"></a>Вариант 2. Visual Studio
@@ -398,7 +398,7 @@ function callMSGraph(theUrl, accessToken, callback) {
     npm install
     node server.js
     ```
-1. В браузере введите **http://\<span>\</span>localhost:30662** или **http://\<span>\</span>localhost:{port}** , где *port* соответствует порту, с которого веб-сервер ожидает передачи данных. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
+1. В браузере введите **http://\<span>\<localhost:30662** или **http://\<span>\</span>localhost:{port}** , где *port* соответствует порту, с которого веб-сервер ожидает передачи данных. Появится содержимое файла *index.html* с кнопкой **Sign In** (Войти).
 
 ### <a name="test-with-visual-studio"></a>Тестирование кода в Visual Studio
 

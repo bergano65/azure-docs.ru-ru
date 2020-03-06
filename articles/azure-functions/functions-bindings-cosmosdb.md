@@ -7,11 +7,11 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: seodec18
 ms.openlocfilehash: e30b256d9fa43402c3b2c444aa1a0e0dc16cfdcf
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76120581"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371100"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -43,7 +43,7 @@ ms.locfileid: "76120581"
 
 ## <a name="trigger---example"></a>Пример триггера
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), вызываемая при вставке или обновлении в указанной базе данных и коллекции.
 
@@ -76,7 +76,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
 
@@ -112,7 +112,7 @@ namespace CosmosDBSamplesV1
     }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
 
@@ -145,7 +145,7 @@ namespace CosmosDBSamplesV1
 
 ## <a name="trigger---attributes"></a>Атрибуты триггера
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [CosmosDBTrigger](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/Trigger/CosmosDBTriggerAttribute.cs).
 
@@ -164,11 +164,11 @@ namespace CosmosDBSamplesV1
 
 Полный пример см. в разделе [Пример C# в триггере](#trigger).
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 Атрибуты не поддерживаются C# сценарием.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются в JavaScript.
 
@@ -178,11 +178,11 @@ namespace CosmosDBSamplesV1
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Н/Д | Нужно задать значение `cosmosDBTrigger`. |
-|**direction** | Н/Д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
-|**name** | Н/Д | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
+|**type** | Недоступно | Нужно задать значение `cosmosDBTrigger`. |
+|**direction** | Недоступно | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
+|**name** | Недоступно | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
 |**connectionStringSetting**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**databaseName**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
 |**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
@@ -211,11 +211,11 @@ namespace CosmosDBSamplesV1
 
 Триггер не указывает, был ли документ обновлен или вставлен. Вместо этого он представляет сам документ. Если операции обновления и вставки необходимо обрабатывать по-разному, это можно сделать, внедрив поля меток времени для операций обновления и вставки.
 
-## <a name="input"></a>Входные данные
+## <a name="input"></a>Ввод
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Этот раздел содержит следующие примеры.
 
@@ -523,7 +523,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 Этот раздел содержит следующие примеры.
 
@@ -881,7 +881,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Этот раздел содержит следующие примеры.
 
@@ -1093,17 +1093,17 @@ module.exports = function (context, req, toDoItem) {
 
 ## <a name="input---attributes"></a>Входные атрибуты
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [DocumentDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.DocumentDB/DocumentDBAttribute.cs).
 
 Конструктор атрибута принимает имя базы данных и имя коллекции. Дополнительные сведения о параметрах и других свойствах, которые можно настроить, см. в следующем разделе о [настройке](#input---configuration).
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 Атрибуты не поддерживаются C# сценарием.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются в JavaScript.
 
@@ -1113,11 +1113,11 @@ module.exports = function (context, req, toDoItem) {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | Н/Д | Нужно задать значение `documentdb`.        |
-|**direction**     | Н/Д | Нужно задать значение `in`.         |
-|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Недоступно | Нужно задать значение `documentdb`.        |
+|**direction**     | Недоступно | Нужно задать значение `in`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
 |**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
@@ -1129,25 +1129,25 @@ module.exports = function (context, req, toDoItem) {
 
 ## <a name="input---usage"></a>Использование входной привязки
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 После успешного выхода из функции все изменения, внесенные во входной документ с помощью именованных входных параметров, сохраняются автоматически.
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 После успешного выхода из функции все изменения, внесенные во входной документ с помощью именованных входных параметров, сохраняются автоматически.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Обновления не выполняются автоматически после выхода из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. См. [Пример входных данных](#input).
 
 ---
 
-## <a name="output"></a>Выходные данные
+## <a name="output"></a>Вывод
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Этот раздел содержит следующие примеры.
 
@@ -1233,7 +1233,7 @@ namespace CosmosDBSamplesV1
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 Этот раздел содержит следующие примеры.
 
@@ -1361,7 +1361,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана выходная привязка Azure Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует входную привязку очереди для очереди, которую получает JSON в следующем формате:
 
@@ -1420,7 +1420,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="output---attributes"></a>Выходные атрибуты
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [DocumentDB](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.DocumentDB/DocumentDBAttribute.cs).
 
@@ -1438,11 +1438,11 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 Полный пример см. в разделе [Output](#output).
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[C#Индекса](#tab/csharp-script)
 
 Атрибуты не поддерживаются C# сценарием.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются в JavaScript.
 
@@ -1452,11 +1452,11 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
-|свойство function.json | Свойство атрибута |Description|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type**     | Н/Д | Нужно задать значение `documentdb`.        |
-|**direction**     | Н/Д | Нужно задать значение `out`.         |
-|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Недоступно | Нужно задать значение `documentdb`.        |
+|**direction**     | Недоступно | Нужно задать значение `out`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/documentdb/).  |
@@ -1475,11 +1475,11 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочные материалы |
+| Привязка | Ссылки |
 |---|---|
-| Cosmos DB; | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
+| Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

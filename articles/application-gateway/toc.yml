@@ -39,6 +39,8 @@
   items:
     - name: Основы
       items:
+        - name: Функции Шлюза приложений
+          href: features.md
         - name: Принцип работы Шлюза приложений
           href: how-application-gateway-works.md
         - name: Компоненты Шлюза приложений

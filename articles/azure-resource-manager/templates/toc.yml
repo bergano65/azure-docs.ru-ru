@@ -1,8 +1,8 @@
-- name: Документация по шаблонам Azure Resource Manager
+- name: Документация по шаблонам ARM
   href: index.yml
 - name: Обзор
   items:
-    - name: Что собой представляют шаблоны Azure Resource Manager?
+    - name: Что такое шаблоны ARM?
       href: overview.md
 - name: Краткие руководства
   items:

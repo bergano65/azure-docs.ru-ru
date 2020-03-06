@@ -8,11 +8,11 @@ ms.date: 10/23/2019
 ms.author: normesta
 ms.subservice: common
 ms.openlocfilehash: c4e2681121a15e0b84a11c7cf35119c3f1b69f11
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443726"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391194"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -91,7 +91,7 @@ AzCopy — это служебная программа командной ст�
 
 - Контейнер (файловая система)
 - Учетная запись хранения
-- Группа ресурсов
+- группа ресурсов.
 - Subscription
 
 Сведения о проверке и назначении ролей см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).

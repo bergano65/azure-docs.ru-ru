@@ -10,11 +10,11 @@ ms.date: 02/12/2020
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 2765a1acca21081a696bb165b75a96e1a668aa40
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200424"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395822"
 ---
 # <a name="use-azure-billing-apis-to-programmatically-get-insight-into-your-azure-usage"></a>Использование API выставления счетов Azure для программного получения ценных сведений об использовании Azure
 Используйте API выставления счетов Azure для извлечения данных об использовании и ресурсах в предпочитаемые средства анализа данных. API использования ресурсов и RateCard в Azure позволяют точно прогнозировать расходы и управлять ими. Интерфейсы API реализованы в виде поставщика ресурсов и относятся к семейству API, предоставляемых Azure Resource Manager.  
@@ -56,7 +56,7 @@ ms.locfileid: "77200424"
   * Вы также можете определить, предоставляет ли другое предложение Azure более выгодный тариф на ресурс Azure.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Вы можете ознакомиться с примерами кода в GitHub:
   * [Пример кода API счетов](https://go.microsoft.com/fwlink/?linkid=845124)
 

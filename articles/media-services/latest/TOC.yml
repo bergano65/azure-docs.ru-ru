@@ -121,6 +121,7 @@
         - name: Динамические манифесты
           href: filters-dynamic-manifest-overview.md
         - name: Фильтры
+          displayName: "manifest, dynamic manifest, filter, hls, dash, m3u8, mpd,\tcontent delivery"
           href: filters-concept.md
         - name: Конечные точки потоковой передачи
           displayName: 'origin, packager, cdn'
@@ -307,6 +308,8 @@
       items:
         - name: "Публикация ресурса\_— CLI"
           href: cli-publish-asset.md
+        - name: Создание указателя потоковой передачи и формирование URL-адресов
+          href: create-streaming-locator-build-url.md
         - name: Скачивание результатов
           href: download-results-howto.md
         - name: Описательный звуковой сигнал
