@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 4ffcd82931b4df92aa2885eb043deae90a70526f
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 737b25fd4c83c459f033bd7b07f6362909e38056
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695353"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78299889"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "76695353"
 - Вы можете проверить подлинность более широкого набора удостоверений Майкрософт (удостоверений Azure AD и учетных записей Майкрософт, а также социальных и локальных учетных записей с помощью Azure AD B2C), так как в нем используется конечная точка платформы Microsoft Identity.
 - Пользователи получат лучшие возможности единого входа.
 - приложение может включить добавочное согласие, и поддержка условного доступа упрощается
-- преимущества инноваций.
+- Преимущества инноваций.
 
 **Теперь MSAL.NET является рекомендуемой библиотекой проверки подлинности для использования с платформой Microsoft Identity**. Новые функции не будут реализованы в ADAL.NET. Усилия посвящены улучшению MSAL.
 
@@ -165,7 +165,7 @@ MSAL.NET предоставляет кэш маркеров в закрытом 
 
 ### <a name="scopes-to-request-access-to-specific-oauth2-permissions-of-a-v10-application"></a>Области для запроса доступа к конкретным разрешениям OAuth2 в приложении версии 1.0
 
-Если вы хотите получать маркеры для конкретной области приложения версии 1.0 (например, для AAD Graph, то есть https://graph.windows.net) , вам необходимо создать `scopes` путем объединения идентификатора требуемого ресурса с нужным разрешением OAuth2 для этого ресурса.
+Если вы хотите получить токены для приложения, принимающего токены версии 1.0 (например, Microsoft Graph API, который https://graph.microsoft.com), необходимо создать `scopes` путем сцепления требуемого идентификатора ресурса с нужным разрешением OAuth2 для этого ресурса.
 
 Например, для доступа к имени пользователя в веб-API версии 1.0 с URI приложения `ResourceId` следует указать следующее:
 
@@ -173,16 +173,16 @@ MSAL.NET предоставляет кэш маркеров в закрытом 
 var scopes = new [] {  ResourceId+"/user_impersonation"};
 ```
 
-Если вам нужны права чтения и записи для MSAL.NET Azure Active Directory через API AAD Graph (https://graph.windows.net/) , следует создать список областей, как в следующем фрагменте кода:
+Если вы хотите выполнять чтение и запись с помощью MSAL.NET Azure Active Directory с помощью Microsoft Graph API (https://graph.microsoft.com/), создайте список областей, как в следующем фрагменте кода:
 
 ```csharp
-ResourceId = "https://graph.windows.net/";
+ResourceId = "https://graph.microsoft.com/";
 var scopes = new [] { ResourceId + "Directory.Read", ResourceID + "Directory.Write"}
 ```
 
 #### <a name="warning-should-you-have-one-or-two-slashes-in-the-scope-corresponding-to-a-v10-web-api"></a>Предупреждение. должна ли быть одна или две косые черты в области, соответствующей веб-API версии 1.0
 
-Если вам нужны права записи в область, соответствующую API Azure Resource Manager (https://management.core.windows.net/) , вам следует запросить следующую область (обратите внимание на две косые черты). 
+Если вам нужны права записи в область, соответствующую API Azure Resource Manager (https://management.core.windows.net/), вам следует запросить следующую область (обратите внимание на две косые черты). 
 
 ```csharp
 var scopes = new[] {"https://management.core.windows.net//user_impersonation"};
@@ -196,7 +196,7 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 Azure AD использует следующую логику:
 - Для конечной точки ADAL (версия 1.0) с маркером доступа версии 1.0 (единственный поддерживаемый вариант) aud=resource.
 - Для конечной точки MSAL (версии 2.0), которая запрашивает маркер доступа для ресурса, принимающего маркеры версии 2.0, aud=resource.AppId.
-- Для конечной точки MSAL (версии 2.0), которая запрашивает маркер доступа для ресурса, принимающего маркеры версии 1.0 (как в примере выше), AAD выполняет синтаксический анализ параметра audience из запрошенной области, используя все символы до последней косой черты в качестве идентификатора ресурса. Поэтому если https:\//database.windows.net ожидает для audience значение "https://database.windows.net/ ", следует запросить область https:\/ /database.windows.net//.default. См. также проблема No[747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Конечная косая черта URL-адреса ресурса пропущена, что привело к сбою проверки подлинности SQL #747
+- Для конечной точки MSAL (версии 2.0), которая запрашивает маркер доступа для ресурса, принимающего маркеры версии 1.0 (как в примере выше), AAD выполняет синтаксический анализ параметра audience из запрошенной области, используя все символы до последней косой черты в качестве идентификатора ресурса. Поэтому если https:\//database.windows.net ожидает для audience значение "https://database.windows.net/", следует запросить область https:\//database.windows.net//.default. См. также проблема No[747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Конечная косая черта URL-адреса ресурса пропущена, что привело к сбою проверки подлинности SQL #747
 
 
 ### <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>Области для запроса доступа ко всем разрешениям в приложении версии 1.0

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: aa430152415b1662a73a388a03ba6d4721c730f0
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: e020555b0c706b5577bd20ac9bd537604d43ba3f
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349754"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303721"
 ---
 # <a name="length-azure-cosmos-db"></a>Длина (Azure Cosmos DB)
  Возвращает число символов указанного строкового выражения.  
@@ -28,7 +28,7 @@ LENGTH(<str_expr>)
 *str_expr*  
    Строковое выражение для вычисления.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
@@ -46,7 +46,11 @@ SELECT LENGTH("abc") AS len
 [{"len": 3}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

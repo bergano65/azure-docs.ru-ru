@@ -3,12 +3,12 @@ title: Соответствие требованиям с помощью пол�
 description: Назначение встроенных политик в политике Azure для аудита соответствия реестров контейнеров Azure
 ms.topic: article
 ms.date: 02/26/2020
-ms.openlocfilehash: 331fcfaf72b1ad2022aa3edeefefa597e5bcfe17
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 012cd013de1c60fddcfb28e4bca96d761ada41ab
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77925674"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330742"
 ---
 # <a name="audit-compliance-of-azure-container-registries-using-azure-policy"></a>Аудит соответствия реестров контейнеров Azure с помощью политики Azure
 
@@ -68,14 +68,14 @@ Name                                                                            
 [Preview]: Container Registries should be encrypted with a Customer-Managed Key (CMK)  /subscriptions/<subscriptionID>/providers/Microsoft.Authorization/policyAssignments/cce1ed4f38a147ad994ab60a
 ```
 
-Затем выполните команду [AZ Policy State List](/cli/azure/policy/state#az-policy-assignment-list) , чтобы вернуть состояние соответствия в формате JSON для всех ресурсов с указанным идентификатором политики:
+Затем выполните команду [AZ Policy State List](/cli/azure/policy/state#az-policy-state-list) , чтобы вернуть состояние соответствия в формате JSON для всех ресурсов с указанным идентификатором политики:
 
 ```azurecli
 az policy state list \
   --resource <policyID>
 ```
 
-Или выполните команду [AZ Policy State List](/cli/azure/policy/state#az-policy-assignment-list) , чтобы вернуть состояние соответствия в формате JSON для определенного ресурса реестра, например *myregistry*:
+Или выполните команду [AZ Policy State List](/cli/azure/policy/state#az-policy-state-list) , чтобы вернуть состояние соответствия в формате JSON для определенного ресурса реестра, например *myregistry*:
 
 ```azurecli
 az policy state list \
@@ -85,7 +85,7 @@ az policy state list \
  --resource-group myresourcegroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [определениях](../governance/policy/concepts/definition-structure.md) и [влиянии](../governance/policy/concepts/effects.md) политики Azure
 

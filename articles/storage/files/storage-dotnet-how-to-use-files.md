@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 361ee5179b20d9488bb477a4e3c9fc0f0e6f266e
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 4d8be13a75e276d5be6ec71141a13f95601869f0
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190664"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78301443"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -480,7 +480,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе файлов Azure см. в следующих ресурсах:
 
@@ -492,10 +492,9 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 ### <a name="tooling-support-for-file-storage"></a>Средства для работы с хранилищем файлов
 
 * [Get started with AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) (Начало работы с AzCopy)
-* [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
 * [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
-### <a name="reference"></a>Ссылки
+### <a name="reference"></a>Справочник
 
 * [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
 * [File Service REST API](/rest/api/storageservices/File-Service-REST-API) (API-интерфейс REST файловой службы)

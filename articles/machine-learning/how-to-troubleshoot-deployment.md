@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: clauren42
 ms.author: clauren
 ms.reviewer: jmartens
-ms.date: 10/25/2019
+ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1645d2848c6d4b852a81042c4db8a0f6e90fd8fd
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: fab46f7d7ae74ad643ce3f122b27b0dc767f5a78
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945803"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399686"
 ---
 # <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "75945803"
 
 Дополнительные сведения об этом процессе см. во введении в [Управление моделями](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 * [Пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
@@ -46,7 +46,7 @@ ms.locfileid: "75945803"
 
     Чтобы проверить установку DOCKER, используйте команду `docker run hello-world` из терминала или из командной строки. Сведения об установке DOCKER или устранении ошибок DOCKER см. в [документации по DOCKER](https://docs.docker.com/).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы.
 
@@ -204,7 +204,7 @@ print(Model.get_model_path(model_name='my-best-model'))
 
 ## <a name="function-fails-runinput_data"></a>Ошибка выполнения функции: run(input_data)
 
-Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Пример.
+Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Пример:
 
 ```python
 def run(input_data):
@@ -220,6 +220,10 @@ def run(input_data):
 ```
 
 **Примечание**. Возврат сообщений об ошибках из вызова `run(input_data)` следует выполнять только в целях отладки. По соображениям безопасности не следует возвращать сообщения об ошибках в рабочей среде.
+
+## <a name="http-status-code-502"></a>Код состояния HTTP 502
+
+Код состояния 502 указывает на то, что Служба вызвала исключение или произошел сбой в методе `run()` файла score.py. Используйте сведения в этой статье для отладки файла.
 
 ## <a name="http-status-code-503"></a>Код состояния HTTP 503
 
@@ -262,7 +266,13 @@ def run(input_data):
 
 Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas`и `autoscale_min_replicas` для см. в справочнике по модулю [аксвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) .
 
-## <a name="advanced-debugging"></a>Усовершенствованная отладка
+## <a name="http-status-code-504"></a>Код состояния HTTP 504
+
+Код состояния 504 указывает, что время ожидания запроса истекло. Время ожидания по умолчанию — 1 минута.
+
+Вы можете увеличить время ожидания или ускорить работу службы, изменив score.py, чтобы удалить ненужные вызовы. Если эти действия не устраняют проблему, используйте сведения в этой статье для отладки файла score.py. Код может находиться в состоянии зависания или в бесконечном цикле.
+
+## <a name="advanced-debugging"></a>Расширенная отладка
 
 В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если сценарий записи завершается ошибкой и причина не может быть определена дополнительным ведением журнала. С помощью Visual Studio Code и Инструменты Python для Visual Studio (PTVSD) можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
 

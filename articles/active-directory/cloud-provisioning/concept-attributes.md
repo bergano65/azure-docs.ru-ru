@@ -15,12 +15,12 @@ ms.date: 02/18/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d6d621646aaa5c8c44a20cf327cd10fa31990b0
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 4ac09fb3faf55be6c07a1e0a88b6e2032c9ab8ce
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484542"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78299335"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Общие сведения о схеме Azure AD
 Объект в Azure Active Directory (Azure AD), как и любой каталог, представляет собой программную конструкцию высокого уровня данных, представляющую такие вещи, как пользователи, группы и контакты. При создании нового пользователя или контакта в Azure AD создается новый экземпляр этого объекта. Эти экземпляры можно отличить в зависимости от их свойств.
@@ -75,7 +75,7 @@ ms.locfileid: "77484542"
 1.  Перейдите в [проводник Graph](https://developer.microsoft.com/graph/graph-explorer).
 1.  Войдите с помощью учетной записи глобального администратора.
 1.  В левой части экрана выберите **изменить разрешения** и убедитесь, что параметр **Directory. ReadWrite. ALL** *имеет значение.*
-1.  Выполните запрос https://graph.microsoft.com/beta/serviceprincipals/?$filter = StartsWith (DisplayName, ' Active '). Этот запрос возвращает отфильтрованный список субъектов-служб.
+1.  Выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/?$filter=startswith(Displayname,'Active')`. Этот запрос возвращает отфильтрованный список субъектов-служб.
 1.  Найдите `"appDisplayName": "Active Directory to Azure Active Directory Provisioning"` и запишите значение для `"id"`.
     ```
     "value": [

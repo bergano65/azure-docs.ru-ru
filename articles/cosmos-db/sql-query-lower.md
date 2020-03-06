@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 35efbb8d4d97ab52abb20487d15a80985946c499
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: 80dba57d4fe05630eb5ae4f8fc96bd0aa214c6d4
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732609"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302276"
 ---
 # <a name="lower-azure-cosmos-db"></a>НИЖЕ (Azure Cosmos DB)
  Возвращает строковое выражение после преобразования символов верхнего регистра в нижний.  
@@ -48,6 +48,10 @@ SELECT LOWER("Abc") AS lower
 [{"lower": "abc"}]  
   
 ```  
+
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,18 +11,18 @@ ms.topic: article
 ms.date: 01/28/2020
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: b441eb1e6531030a998fe628ae833b29a5d9fe5a
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 942932c229ace82a0bf66da7a5421f936b028088
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76902060"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302565"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
 Чтобы перенести базу знаний, необходимо экспортировать одну базы знаний, а затем импортировать ее в другую базу знаний.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Настройте новую [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
@@ -47,12 +47,8 @@ ms.locfileid: "76902060"
    > [Импорт базы знаний ![](../media/qnamaker-how-to-migrate-kb/Import.png)](../media/qnamaker-how-to-migrate-kb/Import.png#lightbox)
 
 1. **Проверьте** новую базу знаний с помощью панели "Тестирование". Узнайте, как [проверить базу знаний](../How-To/test-knowledge-base.md).
-1. **Опубликуйте** базу знаний. Узнайте, как [опубликовать базу знаний](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base).
-1. Конечную точку можно использовать в коде приложения или бота. Сведения о [создании бота QnA](../Tutorials/create-qna-bot.md).
 
-    ![Значения QnA Maker](../media/qnamaker-how-to-migrate-kb/qnamaker-settings-kbid-key.png)
-
-    На этом этапе все содержимое базы знаний, вопросы, ответы и метаданные, а также имена исходных файлов и URL-адреса будут импортированы в новую базу знаний.
+1. **Опубликуйте** базу знаний и создайте робот чата. Узнайте, как [опубликовать базу знаний](../Quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base).
 
 ## <a name="chat-logs-and-alterations"></a>Журналы чатов и варианты
 Преобразования (синонимы) без учета регистра не импортируются автоматически. Используйте [API v4](https://go.microsoft.com/fwlink/?linkid=2092179) для перемещения изменений в новой базе знаний.

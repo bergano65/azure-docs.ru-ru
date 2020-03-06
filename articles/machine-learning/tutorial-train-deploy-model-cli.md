@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 761011cba71c3907994616904cc854003abda7ee
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 70fa17e3e6f91bf393865cc979a8e47e4bf8687b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78245135"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393332"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Учебник. обучение и развертывание модели с помощью интерфейса командной строки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "78245135"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * Для использования команд интерфейса командной строки в этом документе из **локальной среды**требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -375,7 +375,7 @@ az ml model deploy -n myservice -m "mymodel:1" --ic inferenceConfig.yml --dc aci
 ```
 
 > [!NOTE]
-> Может появиться предупреждение об ошибке "не удалось проверить существование Локалвебсервице". Вы можете спокойно проигнорировать это, так как вы не развертываете локальную веб-службу.
+> Вы можете получить предупреждение об ошибке "не удалось проверить существование Локалвебсервице" или "не удалось создать клиент DOCKER". Вы можете спокойно проигнорировать это, так как вы не развертываете локальную веб-службу.
 
 Эта команда развертывает новую службу с именем `myservice`, используя версию 1 модели, которая была зарегистрирована ранее.
 

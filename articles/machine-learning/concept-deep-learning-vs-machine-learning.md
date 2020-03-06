@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
-ms.date: 11/04/2019
-ms.openlocfilehash: 1217028dc6c206633f13fe44951732809cd72d22
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 03/05/2020
+ms.openlocfilehash: a930dc3974536047096912505b9a786cf53c41b8
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75762804"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78328597"
 ---
 # <a name="deep-learning-vs-machine-learning"></a>Сравнение глубокого обучения и машинного обучения
 
@@ -82,7 +82,7 @@ ms.locfileid: "75762804"
 
 С помощью соответствующего преобразования данных нейронная сеть может понимать текст, звук и визуальные сигналы. Машинный перевод можно использовать для распознавания фрагментов звука в больших звуковых файлах и транскрипция слово или изображение в виде текста.
 
-### <a name="text-analytics"></a>Анализ текста
+### <a name="text-analytics"></a>Текстовая аналитика
 
 Текстовая аналитика, основанная на методах глубокого обучения, включает анализ больших объемов текстовых данных (например, медицинских документов или расходов на расходы), распознавание закономерностей и создание упорядоченной и краткой информации.
 

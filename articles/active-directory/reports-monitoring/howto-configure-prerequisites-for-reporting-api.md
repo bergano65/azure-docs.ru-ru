@@ -17,16 +17,16 @@ ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f25f13c60a60e1a397e4c63443ee786a9acdf6d1
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.openlocfilehash: 12abfc0d345c937ae886f9bfacfb8ce30227cc45
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78273801"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399305"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
-[API-интерфейсы отчетов Azure Active Directory (Azure AD)](https://msdn.microsoft.com/library/azure/ad/graph/howto/azure-ad-reports-and-events-preview) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти API можно вызывать из языков программирования и средств.
+[API-интерфейсы отчетов Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-reporting-api) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти API можно вызывать из языков программирования и средств.
 
 API отчетов использует [OAuth](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad) для авторизации доступа к веб-API.
 
@@ -191,7 +191,6 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 В этом разделе перечислены распространенные сообщения об ошибках, с которыми можно столкнуться при доступе к отчетам о действиях с помощью Microsoft Graph API и действиях по их устранению.
 
-
 ### <a name="error-failed-to-get-user-roles-from-microsoft-graph"></a>Ошибка: не удалось получить роли пользователя из Microsoft Graph
 
  Войдите в свою учетную запись, используя кнопки входа в пользовательском интерфейсе проводника Graph, чтобы избежать ошибки при попытке входа с помощью Graph Explorer. 
@@ -204,7 +203,6 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 ![Пользовательский интерфейс для изменения разрешений](./media/troubleshoot-graph-api/modify-permissions.png)
 
-
 ### <a name="error-tenant-is-not-b2c-or-tenant-doesnt-have-premium-license"></a>Ошибка: клиент не B2C, или у клиента нет лицензии Premium
 
 Для доступа к отчетам о входе требуется лицензия Azure Active Directory Premium 1 (P1). Если вы видите это сообщение об ошибке при обращении ко входам, убедитесь, что клиент лицензируется по лицензии Azure AD P1.
@@ -215,7 +213,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 ### <a name="error-application-missing-aad-read-directory-data-permission"></a>Error: Application missing AAD 'Read directory data' permission (Ошибка: у приложения нет разрешения "Чтение данных каталога" AAD) 
 
-### <a name="error-application-missing-microsoft-api-read-all-audit-log-data-permission"></a>Ошибка: в приложении отсутствует разрешение "чтение всех данных журнала аудита" Microsoft API
+### <a name="error-application-missing-microsoft-graph-api-read-all-audit-log-data-permission"></a>Ошибка: в приложении отсутствует разрешение на чтение всех данных журнала аудита Microsoft Graph API
 
 Выполните действия, описанные в разделе [необходимые условия для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md) , чтобы убедиться, что приложение работает с нужным набором разрешений. 
 

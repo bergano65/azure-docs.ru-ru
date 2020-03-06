@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 08/05/2019
 ms.author: juliako
-ms.openlocfilehash: dc844392d64178cb9000db15af39f923521efc19
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 1f40f16ddbe5231dd754ad97b54e414c6ce9b9e7
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838386"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78328835"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "73838386"
 
 В этой статье объясняется, как создать учетную запись Индексатора видео, связанную с подпиской Azure и учетной записью Служб мультимедиа Azure. В этой статье описаны действия по подключению к Azure с помощью автоматического потока (вариант по умолчанию). Также вы узнаете, как подключиться к Azure вручную (вариант для продвинутых пользователей).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure.
 
@@ -124,8 +124,8 @@ ms.locfileid: "73838386"
 4. Чтобы Индексатор видео мог выполнить аутентификацию в API Служб мультимедиа, необходимо создать приложение AD. С помощью приведенных далее шагов вы сможете пройти процесс аутентификации Azure AD, который описан в статье [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](../previous/media-services-portal-get-started-with-aad.md).
 
     1. В новой учетной записи Служб мультимедиа выберите **Доступ через API**.
-    2. Щелкните [Service principal authentication method](../previous/media-services-portal-get-started-with-aad.md#service-principal-authentication) (Метод аутентификации на основе субъекта-службы).
-    3. Получите идентификатор клиента и секрет клиента, как описано в разделе [Получение идентификатора клиента и секрета клиента](../previous/media-services-portal-get-started-with-aad.md#get-the-client-id-and-client-secret).
+    2. Щелкните [Service principal authentication method](../previous/media-services-portal-get-started-with-aad.md) (Метод аутентификации на основе субъекта-службы).
+    3. Получение идентификатора клиента и секрета клиента
 
         Выберите **Параметры**->**Ключи**, затем добавьте **описание** и щелкните **Сохранить**, чтобы заполнить значение ключа.
 
@@ -140,7 +140,7 @@ ms.locfileid: "73838386"
 
 Укажите в этом диалоговом окне следующие сведения.
 
-|Настройка|Description (Описание)|
+|Параметр|Description|
 |---|---|
 |Регион учетной записи Индексатора видео|Имя региона учетной записи Индексатора видео. Для повышения производительности и снижения затрат настоятельно рекомендуется указать имя региона, в котором находятся ресурс Служб мультимедиа Azure и учетная запись службы хранилища. |
 |Клиент Azure Active Directory (AAD)|Имя клиента Azure AD, например "contoso.onmicrosoft.com". Информацию о клиенте можно получить на портале Azure. Наведите указатель мыши на имя пользователя, выполнившего вход, в верхнем правом углу. Найдите имя справа от **домена**.|

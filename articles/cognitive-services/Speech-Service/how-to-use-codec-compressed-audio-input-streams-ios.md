@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: 2089f4191ddd57fa8dc19862bd195756c166f2d4
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 5d65ac83fc8a41008971108c5b370c1d0416113b
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74805864"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331525"
 ---
 # <a name="how-to-use-codec-compressed-audio-input-with-the-speech-sdk-on-ios"></a>Как использовать сжатый аудиокодек для речевого ввода с помощью пакета SDK для распознавания речи в iOS
 
 Сжатый аудио-API-интерфейс пакета речевого **ввода** предоставляет способ потоковой передачи сжатого звука в службу распознавания речи с помощью потока опроса или Push-уведомления.
 
 > [!IMPORTANT]
-> Для потоковой передачи звука в iOS требуется пакет SDK для речи версии 1.7.0 или выше. Она также поддерживается для [ C++, C#и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9)](how-to-use-codec-compressed-audio-input-streams.md) и [Java в Android.](how-to-use-codec-compressed-audio-input-streams-android.md)
+> Для потоковой передачи звука в iOS требуется пакет SDK для речи версии 1.7.0 или выше. Она также поддерживается для [ C++, C#и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9, RHEL 8, CentOS 8)](how-to-use-codec-compressed-audio-input-streams.md) и [Java в Android.](how-to-use-codec-compressed-audio-input-streams-android.md)
 
 Сведения о WAV/PCM см. в документации по магистрали. За пределами WAV/PCM поддерживаются следующие сжатые форматы входных данных кодеков:
 
@@ -32,7 +32,7 @@ ms.locfileid: "74805864"
 - АЛАВ в контейнере WAV
 - МУЛАВ в контейнере WAV
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Обработка сжатого аудио-сигнала реализуется с помощью [гстреамер](https://gstreamer.freedesktop.org). В целях лицензирования эти функции не могут поставляться вместе с пакетом SDK, но библиотека оболочек, содержащая эти функции, должна быть создана разработчиками приложений и поставляется с приложениями с помощью пакета SDK.
 

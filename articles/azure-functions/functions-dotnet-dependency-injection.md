@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: 1aff2815144f776b351e92d8945b267d1451f9f6
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: df2acedd7f472b96d55d9ecc294d47e7173c5f90
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77915713"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78329022"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в функциях Azure .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "77915713"
 
 - Поддержка внедрения зависимостей начинается с функций Azure 2. x.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем можно будет использовать внедрение зависимостей, необходимо установить следующие пакеты NuGet:
 
@@ -132,11 +132,57 @@ namespace MyNamespace
 > - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб при регистрации служб, конфликтующих со службами, предоставляемыми средой.
 > - Не зарегистрируйте собственный `TelemetryConfiguration` или `TelemetryClient`, если используются встроенные функции Application Insights. Если необходимо настроить собственный экземпляр `TelemetryClient`, создайте его с помощью внедренного `TelemetryConfiguration`, как показано в подокне [мониторинг функций Azure](./functions-monitoring.md#version-2x-and-later-2).
 
+### <a name="iloggert-and-iloggerfactory"></a>ILogger<T> и Илогжерфактори
+
+Узел будет внедрять `ILogger<T>` и `ILoggerFactory` службы в конструкторы.  Однако по умолчанию эти новые фильтры ведения журнала будут отфильтрованы из журналов функций.  Необходимо внести изменения в файл `host.json`, чтобы выбрать дополнительные фильтры и категории.  В следующем примере показано добавление `ILogger<HttpTrigger>` с журналами, которые будут предоставляться узлом.
+
+```csharp
+namespace MyNamespace
+{
+    public class HttpTrigger
+    {
+        private readonly ILogger<HttpTrigger> _log;
+
+        public HttpTrigger(ILogger<HttpTrigger> log)
+        {
+            _log = log;
+        }
+
+        [FunctionName("HttpTrigger")]
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req)
+        {
+            _log.LogInformation("C# HTTP trigger function processed a request.");
+
+            // ...
+    }
+}
+```
+
+И файл `host.json`, который добавляет фильтр журнала.
+
+```json
+{
+    "version": "2.0",
+    "logging": {
+        "applicationInsights": {
+            "samplingExcludedTypes": "Request",
+            "samplingSettings": {
+                "isEnabled": true
+            }
+        },
+        "logLevel": {
+            "MyNamespace.HttpTrigger": "Information"
+        }
+    }
+}
+```
+
 ## <a name="function-app-provided-services"></a>Службы, предоставляемые приложением функции
 
 Узел функции регистрирует множество служб. Следующие службы являются надежными для использования в качестве зависимости в приложении:
 
-|Тип службы|Срок действия|Описание|
+|Тип службы|Срок действия|Description|
 |--|--|--|
 |`Microsoft.Extensions.Configuration.IConfiguration`|Единый|Конфигурация среды выполнения|
 |`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Единый|Отвечает за предоставление идентификатора экземпляра узла|
@@ -206,9 +252,9 @@ public class HttpTrigger
 > [!WARNING]
 > Старайтесь не пытаться считывать значения из таких файлов, как *Local. Settings. JSON* или *appSettings. { Environment}. JSON* в плане потребления. Значения, считанные из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих источниках.
+Для получения дополнительных сведений см. следующие ресурсы:
 
 - [Мониторинг приложения функции](functions-monitoring.md)
 - [Рекомендации по функциям](functions-best-practices.md)

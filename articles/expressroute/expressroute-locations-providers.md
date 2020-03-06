@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 2bca7034780c4bfbbadd97558bf4b4891c7d6ec5
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 3fb18b6afb2fc32ba8cc07c46a9a4f5a026d07e2
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251097"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402292"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -106,7 +106,7 @@ ms.locfileid: "78251097"
 | **Лондон** | [Equinix LD5](https://www.equinix.com/locations/europe-colocation/united-kingdom-colocation/london-data-centers/ld5/) | 1 | южная часть Соединенного Королевства | 10G, 100G | В & T NetBond, Британская телекоммуникации, Colt, Equinix, Еунетворкс, в облаке, Интернет-решения — Cloud Connect, Interxion, JISC, уровень 3, взаимодействие, Orange, MTN, NTT связь, оранжевый, ПККВ глобально ограниченный, Tata связь, дом — KDDI, Telenor, Телиа перевозчик, Verizon, Vodafone, Zayo |
 | **Лондон 2** | [Два Севера для дома](https://www.telehouse.net/data-centres/emea/uk-data-centres/london-data-centres/north-two) | 1 | южная часть Соединенного Королевства | 10G, 100G | CenturyLink Cloud Connect, Colt, IX-доступ, Equinix, Orange, дом — KDDI |
 | **Лос-Анджелес** | [Коресите LA1](https://www.coresite.com/data-centers/locations/los-angeles/one-wilshire) | 1 | Недоступно | Недоступно | Коресите, Equinix, Orange, Неутрона Networks, NTT, Telco, Zayo |
-| **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Недоступно | DE-ЦИКС, ЖЕАНТ, Interxion, сеть Жагуар |
+| **Марсель** |[Interxion MRS1](https://www.interxion.com/Locations/marseille/) | 1 | Южная Франция | Недоступно | DE-ЦИКС, ЖЕАНТ, Interxion, сеть Жагуар, Уреду Cloud Connect |
 | **Мельбурн** | [Некстдк M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Юго-Восточная часть Австралии | 10G, 100G | Аарнет, Деволи, Equinix, Orange, НЕКСТДК, ОПТУС, Телстра Corporation, ТПГ телекоммуникации |
 | **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | Недоступно | 10 | C3ntro, Equinix, Orange, Неутрона сетей |
 | **Милан** | [иридеос](https://irideos.it/en/data-centers/) | 1 | Недоступно | 10 | |

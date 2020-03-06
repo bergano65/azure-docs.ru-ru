@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.subservice: pim
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 04/09/2019
+ms.date: 03/05/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0ba7846b60ca6649b4342d5096e92dfd8c96601
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 733743f4680f3197a1754d87b4672641b2321907
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756311"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399337"
 ---
 # <a name="start-using-privileged-identity-management"></a>Начало работы с управлением привилегированными пользователями
 
@@ -27,11 +27,11 @@ ms.locfileid: "72756311"
 
 В этой статье описывается, как включить и начать работу с управление привилегированными пользователями.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать управление привилегированными пользователями, необходимо иметь одну из следующих лицензий:
 
-- Azure AD Premium P2
+- Azure AD Premium P2
 - Enterprise Mobility + Security (EMS) E5.
 
 Дополнительные сведения см. [в статье требования к лицензиям для использования Управление привилегированными пользователями](subscription-requirements.md).
@@ -62,7 +62,7 @@ ms.locfileid: "72756311"
 
     ![Выберите окно учетной записи для подтверждения личности](./media/pim-getting-started/pick-account.png)
 
-1. Если для проверки требуются дополнительные сведения, вы получите пошаговые инструкции по их добавлению. Дополнительные сведения см. в статье [Получение справки по двухфакторной проверке подлинности](https://go.microsoft.com/fwlink/p/?LinkId=708614).
+1. Если для проверки требуются дополнительные сведения, вы получите пошаговые инструкции по их добавлению. Дополнительные сведения см. в статье [Получение справки по двухфакторной проверке подлинности](../user-help/multi-factor-authentication-end-user-troubleshoot.md).
 
     ![Дополнительные сведения о окне требуется, если вашей организации требуются дополнительные сведения](./media/pim-getting-started/more-information-required.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "72756311"
 
 Чтобы упростить открытие управление привилегированными пользователями, необходимо добавить управление привилегированными пользователями плитку на панель мониторинга портал Azure.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Выберите **Все службы** и найдите службу **Azure AD Privileged Identity Management**.
 
@@ -131,7 +131,7 @@ ms.locfileid: "72756311"
 
     ![Плитка быстрого запуска управление привилегированными пользователями на панели мониторинга](./media/pim-getting-started/pim-quickstart-dashboard-tile.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначение ролей Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Обнаружение ресурсов Azure для управления в управление привилегированными пользователями](pim-resource-roles-discover-resources.md)

@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: nishankgu
 ms.author: nigup
-ms.date: 11/04/2019
-ms.openlocfilehash: 443fcad17e5832a014dc463f0dd8a44d90667b75
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.date: 03/05/2020
+ms.openlocfilehash: 17a4652604c0faa804d24530869aac0848c972b3
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646461"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399159"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Управление квотами для ресурсов Azure и их запрашивание
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "75646461"
 
 Ниже представлена разбивка квот по различным типам ресурсов в подписке Azure.
 
-> [!Important]
+> [!IMPORTANT]
 > Границы могут измениться. Последнюю версию всегда можно найти в [документе](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits/) по квотам на уровне службы для всех ресурсов Azure.
 
 ### <a name="virtual-machines"></a>Виртуальные машины
@@ -91,7 +91,7 @@ ms.locfileid: "75646461"
 
 Более подробный и актуальный список квот см. в [статье о квотах на уровне среды Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#container-instances-limits).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Память
 Существует ограничение на количество учетных записей хранения в регионе, а также в рамках данной подписки. Ограничение по умолчанию — 250 и включает учетные записи хранения уровня "Стандартный" и "Премиум". Если вам требуется более 250 учетных записей хранения в определенном регионе, выполните запрос через [службу поддержки Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Команда разработчиков службы хранилища Azure рассмотрит вашу аргументацию и может утвердить до 250 учетных записей хранения для заданного региона.
 
 

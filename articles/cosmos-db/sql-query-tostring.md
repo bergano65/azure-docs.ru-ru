@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 53630a0ecd76459f23a978e98040a86152d7c0d8
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 293449b1616e7124245d91c647177b958006009e
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349130"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78304265"
 ---
 # <a name="tostring-azure-cosmos-db"></a>ToString (Azure Cosmos DB)
  Возвращает строковое представление скалярного выражения. 
@@ -28,13 +28,13 @@ ToString(<expr>)
 *expr*  
    Любое скалярное выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как `ToString` ведет себя по разным типам.   
+  В следующем примере показано, как `ToString` ведет себя между различными типами.   
   
 ```sql
 SELECT 
@@ -95,7 +95,11 @@ JOIN n IN food.nutrients
 {"nutrientID":"309","nutritionVal":"null"}]
 ``` 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

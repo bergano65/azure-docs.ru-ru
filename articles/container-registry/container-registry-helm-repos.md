@@ -3,12 +3,12 @@ title: Хранение Helm диаграмм
 description: Узнайте, как хранить диаграммы Helm для приложений Kubernetes с помощью репозиториев в реестре контейнеров Azure.
 ms.topic: article
 ms.date: 01/28/2020
-ms.openlocfilehash: 26588bb4dc3cf50656103b50d5d0559908a1ccb7
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 7969efe37558fffb26b983131c56ae11f3ef9368
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77524637"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78398967"
 ---
 # <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Отправка и извлечение Helm диаграмм в реестр контейнеров Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "77524637"
 
 ## <a name="use-the-helm-3-client"></a>Использование клиента Helm 3
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 - **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портал Azure](container-registry-get-started-portal.md) или [Azure CLI](container-registry-get-started-azure-cli.md).
 - **Helm Client Version 3.0.0 или более поздней** версии. Запустите `helm version`, чтобы найти текущую версию. Дополнительные сведения об установке и обновлении Helm см. в разделе Installing [Helm][helm-install].
@@ -118,7 +118,7 @@ helm chart push mycontainerregistry.azurecr.io/helm/wordpress:latest
 
 После успешной принудительной отправки выходные данные выглядят примерно так:
 
-```console
+```output
 The push refers to repository [mycontainerregistry.azurecr.io/helm/wordpress]
 ref:     mycontainerregistry.azurecr.io/helm/wordpress:latest
 digest:  5899db028dcf96aeaabdadfa5899db025899db025899db025899db025899db02
@@ -141,7 +141,7 @@ az acr repository show \
 
 Она выводит выходные данные следующего вида:
 
-```console
+```output
 {
   "changeableAttributes": {
     "deleteEnabled": true,
@@ -158,7 +158,7 @@ az acr repository show \
 }
 ```
 
-Чтобы просмотреть сведения о диаграмме, хранящейся в репозитории, выполните команду AZ запись в [репозитории: Показать-манифесты][az-acr-repository-show-manifests] . Пример:
+Чтобы просмотреть сведения о диаграмме, хранящейся в репозитории, выполните команду AZ запись в [репозитории: Показать-манифесты][az-acr-repository-show-manifests] . Например:
 
 ```azurecli
 az acr repository show-manifests \
@@ -168,7 +168,7 @@ az acr repository show-manifests \
 
 Выходные данные, сокращенные в этом примере, показывают `configMediaType` `application/vnd.cncf.helm.config.v1+json`:
 
-```console
+```output
 [
   {
     [...]
@@ -216,7 +216,7 @@ helm inspect chart wordpress
 
 Если номер версии не указан, используется *последняя* версия. Helm возвращает подробные сведения о диаграмме, как показано в следующем сжатом выводе:
 
-```
+```output
 apiVersion: v1
 appVersion: 5.3.2
 dependencies:
@@ -248,7 +248,7 @@ version: 8.1.0
 
 ### <a name="install-helm-chart"></a>Установить Helm диаграмму
 
-Запустите `helm install`, чтобы установить диаграмму Helm, которая была извлечена в локальный кэш и экспортирована. Укажите имя выпуска или передайте параметр `--generate-name`. Пример:
+Запустите `helm install`, чтобы установить диаграмму Helm, которая была извлечена в локальный кэш и экспортирована. Укажите имя выпуска или передайте параметр `--generate-name`. Например:
 
 ```console
 helm install wordpress --generate-name
@@ -256,7 +256,7 @@ helm install wordpress --generate-name
 
 По мере продолжения установки следуйте инструкциям в выходных данных команды, чтобы просмотреть URL-адреса и учетные данные Ворпресс. Можно также выполнить команду `kubectl get pods`, чтобы просмотреть ресурсы Kubernetes, развернутые с помощью диаграммы Helm:
 
-```console
+```output
 NAME                                    READY   STATUS    RESTARTS   AGE
 wordpress-1598530621-67c77b6d86-7ldv4   1/1     Running   0          2m48s
 wordpress-1598530621-mariadb-0          1/1     Running   0          2m48s
@@ -273,7 +273,7 @@ az acr repository delete --name mycontainerregistry --image helm/wordpress:lates
 
 ## <a name="use-the-helm-2-client"></a>Использование клиента Helm 2
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 - **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портал Azure](container-registry-get-started-portal.md) или [Azure CLI](container-registry-get-started-azure-cli.md).
 - **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)** . Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости создайте [кластер службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения об установке и обновлении Helm см. в разделе Installing [Helm][helm-install-v2].
@@ -311,7 +311,7 @@ helm fetch stable/wordpress
 
 Введите `ls`, чтобы получить список загруженной диаграммы, и обратите внимание на версию WordPress, которая включена в имя файла. Команда `helm fetch stable/wordpress` не предоставила определенную версию, поэтому выбрана *последняя* версия. В следующем примере выходных данных WordPress диаграмма имеет версию *8.1.0*:
 
-```
+```output
 wordpress-8.1.0.tgz
 ```
 
@@ -323,7 +323,7 @@ az acr helm push --name mycontainerregistry wordpress-8.1.0.tgz
 
 Через несколько секунд Azure CLI сообщает о сохранении диаграммы, как показано в следующем примере выходных данных:
 
-```
+```output
 {
   "saved": true
 }
@@ -345,7 +345,7 @@ helm search mycontainerregistry
 
 Диаграмма Wordpress, принудительно отправленная на предыдущем шаге, выведена в списке, как показано в следующем примере выходных данных:
 
-```
+```output
 NAME                CHART VERSION   APP VERSION DESCRIPTION
 helmdocs/wordpress  8.1.0           5.3.2       Web publishing platform for building blogs and websites.
 ```
@@ -366,7 +366,7 @@ helm inspect mycontainerregistry/wordpress
 
 Если номер версии не указан, используется *последняя* версия. Helm возвращает подробные сведения о диаграмме, как показано в следующем сокращенном примере выходных данных:
 
-```
+```output
 apiVersion: v1
 appVersion: 5.3.2
 description: Web publishing platform for building blogs and websites.
@@ -416,7 +416,7 @@ helm install mycontainerregistry/wordpress
 
 По мере продолжения установки следуйте инструкциям в выходных данных команды, чтобы просмотреть URL-адреса и учетные данные Ворпресс. Можно также выполнить команду `kubectl get pods`, чтобы просмотреть ресурсы Kubernetes, развернутые с помощью диаграммы Helm:
 
-```
+```output
 NAME                                    READY   STATUS    RESTARTS   AGE
 wordpress-1598530621-67c77b6d86-7ldv4   1/1     Running   0          2m48s
 wordpress-1598530621-mariadb-0          1/1     Running   0          2m48s
@@ -439,7 +439,7 @@ az acr helm delete --name mycontainerregistry wordpress --version 8.1.0
 az acr helm repo add --name mycontainerregistry
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В рамках этой статьи применялась имеющаяся диаграмма Helm из общедоступного репозитория *stable*. Дополнительные сведения о создании и развертывании Helm диаграмм см. в разделе [Разработка диаграмм Helm][develop-helm-charts].
 

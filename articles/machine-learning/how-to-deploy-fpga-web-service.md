@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: larryfr
 ms.author: jordane
 author: jpe316
-ms.date: 10/25/2019
+ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: fd77c77abc8fe60eb18febde6fcc5bdffe6d7871
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: b036dd9c440e01bf32b35ee01c1d39d4ce6e129b
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75538102"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402712"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -65,7 +65,7 @@ FPGA доступны в следующих регионах Azure:
   - Восточная часть США
   - Юго-Восточная Азия
   - Западная Европа
-  - Западная часть США 2
+  - западная часть США 2
 
 > [!IMPORTANT]
 > Чтобы оптимизировать задержку и пропускную способность, клиент, отправляющий данные в модель FPGA, должен находиться в одном из регионов выше (то, в котором была развернута модель).
@@ -88,7 +88,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 Вы можете развернуть модель как веб-службу на FPGA с помощью Машинное обучение Azure Модели с аппаратным ускорением. Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных.
 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure.  Если у вас ее нет, создайте бесплатную учетную запись перед началом работы. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -289,7 +289,7 @@ print("\nSuccessfully converted: ", converted_model.name, converted_model.url, c
       converted_model.id, converted_model.created_time, '\n')
 ```
 
-### <a name="create-docker-image"></a>Создание образа Docker
+### <a name="create-docker-image"></a>Создание образа DOCKER
 
 Преобразованная модель и все зависимости добавляются в образ DOCKER.  После этого образ DOCKER можно развернуть и создать экземпляр.  Поддерживаемые целевые объекты развертывания включают AKS в облаке или пограничном устройстве, например [Azure Data Box Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview).  Вы также можете добавить теги и описания для зарегистрированного образа DOCKER.
 
@@ -325,7 +325,7 @@ for i in Image.list(workspace=ws):
 ```python
 from azureml.core.compute import AksCompute, ComputeTarget
 
-# Specify the Standard_PB6s Azure VM and location. Values for location may be "eastus", "southeastasia", "westeurope", or "westus2”. If no value is specified, the default is "eastus".
+# Specify the Standard_PB6s Azure VM and location. Values for location may be "eastus", "southeastasia", "westeurope", or "westus2". If no value is specified, the default is "eastus".
 prov_config = AksCompute.provisioning_configuration(vm_size = "Standard_PB6s",
                                                     agent_count = 1,
                                                     location = "eastus")

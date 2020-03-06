@@ -7,12 +7,12 @@ ms.service: vs-appcenter
 ms.topic: article
 ms.date: 10/22/2019
 ms.author: emalani
-ms.openlocfilehash: bc7d8d4aaec6ebe27a0f8d2ecc11ca408266f7ef
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 261c12e63f8f348e1673dbc46c89c614caf3283b
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453247"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78296360"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>Добавление проверки подлинности и управление удостоверениями пользователей в мобильных приложениях
 
@@ -20,8 +20,8 @@ ms.locfileid: "75453247"
 
 Используйте следующие службы, чтобы включить проверку подлинности пользователей в мобильных приложениях.
 
-## <a name="visual-studio-app-center"></a>Центр приложений Visual Studio.
-[Проверка подлинности центра приложений](/appcenter/auth/) — это облачная служба управления удостоверениями, которую разработчики могут использовать для проверки подлинности пользователей и управления удостоверениями пользователей. Проверка подлинности в центре приложений также интегрируется с другими частями центра приложений Visual Studio. Разработчики могут использовать удостоверение пользователя для [просмотра данных пользователей](/appcenter/data/index) в других службах и даже [отправлять push-уведомления пользователям, а не отдельным устройствам](/appcenter/push/push-to-user#app-center-auth-set-identity). 
+## <a name="visual-studio-app-center"></a>Центр приложений Visual Studio
+[Проверка подлинности центра приложений](/appcenter/auth/) — это облачная служба управления удостоверениями, которую разработчики могут использовать для проверки подлинности пользователей и управления удостоверениями пользователей. Проверка подлинности в центре приложений также интегрируется с другими частями центра приложений Visual Studio. Разработчики могут использовать удостоверение пользователя для [просмотра данных пользователей](/appcenter/data/index) в других службах и даже [отправлять push-уведомления пользователям, а не отдельным устройствам](/appcenter/push/push-to-user#setting-user-identity). 
 
 **Основные возможности**
 - На платформе Azure Active Directory B2C (Azure AD B2C). 

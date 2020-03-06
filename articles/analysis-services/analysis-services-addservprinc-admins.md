@@ -8,19 +8,16 @@ ms.date: 10/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: fasttrack-edit
-ms.openlocfilehash: b75740e9bff714ad68c93bea7e387e60da2f1c59
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: 1370f65405963ebf825e986e6801607a0d96156e
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77212496"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78298094"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
  Чтобы автоматизировать задачи PowerShell, выполняемые без участия пользователя, субъекту-службе должны быть предоставлены разрешения **администратора сервера** на управляемом сервере Analysis Services. В этой статье описывается, как добавить субъект-службу к роли администратора сервера на сервере Azure AS. Это можно сделать с помощью SQL Server Management Studio или шаблона диспетчер ресурсов.
- 
-> [!NOTE]
-> Для операций сервера, использующих командлеты Azure PowerShell, субъект-служба также должен принадлежать к роли **владельца** для ресурса в [контроле доступа на основе ролей (RBAC) Azure](../role-based-access-control/overview.md). 
 
 ## <a name="before-you-begin"></a>Перед началом
 Прежде чем приступить к этой задаче, нужно зарегистрировать субъект-службу в Azure Active Directory.
@@ -42,7 +39,7 @@ ms.locfileid: "77212496"
     
     ![Поиск учетной записи субъекта-службы](./media/analysis-services-addservprinc-admins/aas-add-sp-ssms-add.png)
 
-## <a name="using-a-resource-manager-template"></a>Использование шаблона диспетчер ресурсов
+## <a name="using-a-resource-manager-template"></a>Использование шаблона Resource Manager
 
 Также можно настроить администраторов сервера, развернув сервер Analysis Services с помощью шаблона Azure Resource Manager. Удостоверение, выполняющее развертывание, должно принадлежать роли **участника** для ресурса в [контроле доступа на основе ролей (RBAC) Azure](../role-based-access-control/overview.md).
 
@@ -96,6 +93,24 @@ ms.locfileid: "77212496"
     ]
 }
 ```
+
+## <a name="using-managed-identities"></a>Использование управляемых удостоверений
+
+Управляемое удостоверение можно также добавить в список администраторов Analysis Services. Например, у вас может быть [приложение логики с управляемым удостоверением, назначенное системой](../logic-apps/create-managed-service-identity.md), и вы хотите предоставить ему возможность администрирования сервера Analysis Services.
+
+В большинстве частей портал Azure и API управляемые удостоверения определяются с помощью идентификатора объекта субъекта-службы. Однако Analysis Services требует, чтобы они были идентифицированы с помощью идентификатора клиента. Чтобы получить идентификатор клиента для субъекта-службы, можно использовать Azure CLI:
+
+```bash
+az ad sp show --id <ManagedIdentityServicePrincipalObjectId> --query appId -o tsv
+```
+
+Кроме того, можно использовать PowerShell:
+
+```powershell
+(Get-AzureADServicePrincipal -ObjectId <ManagedIdentityServicePrincipalObjectId>).AppId
+```
+
+Затем этот идентификатор клиента можно использовать в сочетании с ИДЕНТИФИКАТОРом клиента, чтобы добавить управляемое удостоверение в список администраторов Analysis Services, как описано выше.
 
 ## <a name="related-information"></a>Дополнительные сведения
 

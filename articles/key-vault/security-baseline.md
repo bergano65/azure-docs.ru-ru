@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 03b2312b554743d83eff268876be1f20be595290
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
-ms.translationtype: HT
+ms.openlocfilehash: 7c15786e9a5d2fe65c20a26606087cee994ab54b
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78267523"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302854"
 ---
 # <a name="azure-security-baseline-for-key-vault"></a>Базовый план безопасности Azure для Key Vault
 
@@ -131,7 +131,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 Примеры политики Azure:
 
-https://docs.microsoft.com/azure/governance/policy/samples/#networ
+https://docs.microsoft.com/azure/governance/policy/samples
 
 Краткое руководство. Определение и назначение схемы на портале.
 
@@ -1241,7 +1241,7 @@ https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Ответственность**: Общая
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

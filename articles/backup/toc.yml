@@ -160,6 +160,8 @@
       items:
         - name: на портале Azure;
           items:
+            - name: Обзор
+              href: azure-file-share-backup-overview.md
             - name: Резервное копирование
               href: backup-afs.md
             - name: Восстановить

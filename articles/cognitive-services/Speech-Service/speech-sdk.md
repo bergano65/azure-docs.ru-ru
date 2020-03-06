@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: dapine
-ms.openlocfilehash: 04546883e6742086fa05fc450920b1026702bd08
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.openlocfilehash: 984d2dfe07faa22756b4be167aa86a69806b1a84
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77212522"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331099"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
@@ -31,7 +31,7 @@ ms.locfileid: "77212522"
 
 ## <a name="get-the-sdk"></a>Получение пакета SDK
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 > [!WARNING]
 > Пакет SDK для распознавания речи поддерживает Windows 10 или более поздние версии. Более ранние версии Windows **не поддерживаются**.
@@ -42,12 +42,12 @@ ms.locfileid: "77212522"
 
 * Java: можно ссылаться и использовать последнюю версию пакета Speech SDK Maven, который поддерживает только 64-разрядные версии Windows. В проект Maven добавьте `https://csspeechstorage.blob.core.windows.net/maven/` в качестве дополнительного репозитория и ссылку на `com.microsoft.cognitiveservices.speech:client-sdk:1.8.0` в качестве зависимости.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 > [!NOTE]
-> Сейчас поддерживаются только Ubuntu 16,04, Ubuntu 18,04 и Debian 9 на следующих целевых архитектурах:
-> - x86, x64 и ARM64 для C++ разработки
-> - x64 и ARM64 для Java
+> Сейчас поддерживаются только Ubuntu 16,04, Ubuntu 18,04, Debian 9, Red Hat Enterprise Linux (RHEL) 8 и CentOS 8 в следующих целевых архитектурах:
+> - x86 (Debian/Ubuntu), x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для C++ разработки
+> - x64, ARM32 (Debian/Ubuntu) и ARM64 (Debian/Ubuntu) для Java
 > - x64 для .NET Core и Python
 
 Убедитесь, что установлены необходимые библиотеки, выполнив следующие команды оболочки:
@@ -66,6 +66,16 @@ sudo apt-get update
 sudo apt-get install libssl1.0.2 libasound2
 ```
 
+В RHEL/CentOS 8:
+
+```sh
+sudo yum update
+sudo yum install alsa-lib openssl
+```
+
+> [!NOTE]
+> В RHEL/CentOS 8 следуйте инструкциям по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
+
 * C#: можно ссылаться и использовать последнюю версию пакета средств разработки NuGet для распознавания речи. Чтобы ссылаться на пакет SDK, добавьте следующую ссылку на пакет в проект:
 
   ```xml
@@ -76,9 +86,9 @@ sudo apt-get install libssl1.0.2 libasound2
 
 * C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
 
-  |путь|Описание|
+  |путь|Description|
   |-|-|
-  |`license.md`|лицензия|
+  |`license.md`|Лицензия|
   |`ThirdPartyNotices.md`|Уведомления сторонних производителей|
   |`include`|Файлы заголовков для C и C++|
   |`lib/x64`|Собственная библиотека x64 для связывания с приложением|
@@ -86,7 +96,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
   Чтобы создать приложение, скопируйте или переместите необходимые двоичные файлы (и библиотеки) в среду разработки. Включите их как обязательные в процесс сборки.
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android. Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:1.7.0`.
 
@@ -110,7 +120,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
 [!INCLUDE [Get the samples](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)

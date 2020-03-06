@@ -11,12 +11,12 @@ ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51e5c58d29f01cadcc3ea2e8ec48ae67e58c4180
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 382c588ca005f95f4ae38e7506c0e3e8d842bd2c
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76909046"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78298655"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Предварительные требования для подготовки облачных Azure AD Connect
 В этой статье приводятся рекомендации по выбору и использованию Azure Active Directory (Azure AD) для подключения облака в качестве решения для идентификации.
@@ -26,7 +26,7 @@ ms.locfileid: "76909046"
 ## <a name="cloud-provisioning-agent-requirements"></a>Требования к агенту подготовки облака
 Для использования Azure AD Connect подготовки облака необходимо следующее:
     
-- Учетная запись глобального администратора для вашего клиента Azure AD.
+- Учетная запись глобального администратора для клиента Azure AD, который не является гостевым пользователем.
 - Локальный сервер для агента подготовки с Windows 2012 R2 или более поздней версии.
 - Локальные конфигурации брандмауэра.
 
@@ -39,6 +39,10 @@ ms.locfileid: "76909046"
 
 1. Создайте облачную учетную запись глобального администратора в клиенте Azure AD. Таким образом вы можете управлять конфигурацией клиента, если локальные службы завершаются сбоем или становятся недоступными. Узнайте [, как добавить облачную учетную запись глобального администратора](../active-directory-users-create-azure-portal.md). Завершение этого шага важно для того, чтобы не блокировать клиент.
 1. Добавьте одно [имя личного домена](../active-directory-domains-add-azure-portal.md) (или несколько) в клиент Azure AD. Пользователи могут выполнить вход с помощью одного из этих доменных имен.
+
+### <a name="in-your-directory-in-active-directory"></a>В каталоге в Active Directory
+
+Запустите [средство идфикс](https://docs.microsoft.com/office365/enterprise/prepare-directory-attributes-for-synch-with-idfix) , чтобы подготовить атрибуты каталога для синхронизации.
 
 ### <a name="in-your-on-premises-environment"></a>В локальной среде
 

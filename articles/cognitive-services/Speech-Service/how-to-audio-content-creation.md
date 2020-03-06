@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: dapine
-ms.openlocfilehash: 4785356963e7df1d7b175ac21ceebc921f851ffb
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: ab0d2b8d95b4cb5996dd93fa0bb24085c9de26d5
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77913656"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331542"
 ---
 # <a name="improve-synthesis-with-audio-content-creation"></a>Улучшение синтеза с помощью создания звукового содержимого
 
@@ -43,7 +43,7 @@ ms.locfileid: "77913656"
 
 Выполните следующие действия, чтобы создать речевой ресурс и подключить его с помощью Speech Studio.
 
-1. Выполните эти инструкции, чтобы [зарегистрировать учетную запись Azure](get-started.md#new-resource) и [создать речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure). Убедитесь, что для ценовой категории задано значение **S0**. Если вы используете один из нейронных голосов, убедитесь, что вы создаете ресурс в [поддерживаемом регионе](regions.md#standard-and-neural-voices).
+1. Выполните эти инструкции, чтобы [зарегистрировать учетную запись Azure](get-started.md#new-resource) и [создать речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-the-resource). Убедитесь, что для ценовой категории задано значение **S0**. Если вы используете один из нейронных голосов, убедитесь, что вы создаете ресурс в [поддерживаемом регионе](regions.md#standard-and-neural-voices).
 2. Войдите в службу [создания звукового содержимого](https://aka.ms/audiocontentcreation).
 3. Выберите существующий проект или нажмите кнопку **создать**.
 4. Вы можете изменить подписку в любое время с помощью параметра **Параметры** , расположенного в верхней панели навигации.
@@ -95,7 +95,7 @@ Welcome to use Audio Content Creation to customize audio output for your product
 2. Выберите формат выходных данных для настроенного звука. Список поддерживаемых форматов и частот выборки см. ниже.
 3. Состояние задачи можно просмотреть на вкладке **задача экспорта** . Если задача завершается неудачно, см. страницу подробных сведений для полного отчета.
 4. После завершения задачи ваш звук будет доступен для загрузки на вкладке **Библиотека аудио** .
-5. Нажмите кнопку **Загрузить**. Теперь вы готовы использовать настраиваемый звуковой элемент в своих приложениях или продуктах.
+5. Щелкните элемент **Загрузить**. Теперь вы готовы использовать настраиваемый звуковой элемент в своих приложениях или продуктах.
 
 ### <a name="supported-audio-formats"></a>Поддерживаемые аудиоформаты
 
@@ -104,11 +104,11 @@ Welcome to use Audio Content Creation to customize audio output for your product
 | WAV | Metallica-16khz-16-разрядный-Mono-PCM | Metallica-24khz-16-разрядный-Mono-PCM |
 | MP3 | Audio-16khz-128kbitrate-Mono-MP3 | Audio-24khz-160kbitrate-Mono-MP3 |
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 * [Длинный аудио API](https://aka.ms/long-audio-api)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Speech Studio](https://speech.microsoft.com)

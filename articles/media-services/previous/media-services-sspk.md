@@ -14,22 +14,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: 3e7742e7035f3c4f4827a2edae1ad5a705aa221f
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 67507dc571b3fab93e61e70c1e8282ee5c0a4630
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693413"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78301392"
 ---
 # <a name="licensing-microsoft-smooth-streaming-client-porting-kit"></a>Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 Пакет для переноса клиента бесперебойной потоковой передачи Microsoft Smooth Streaming (далее для краткости называется **SSPK**) представляет собой реализацию клиента Smooth Streaming. Он оптимизирован так, чтобы помочь производителям встроенных устройств, операторам кабельной и мобильной связи, поставщикам служб содержимого, производителям мобильных устройств, независимым поставщикам программного обеспечения и поставщикам решений создавать продукты и услуги, которые поддерживают потоковую передачу адаптивного содержимого в формате Smooth Streaming. Клиент SSPK не зависит от оборудования и платформы. Лицензиат может легко перенести его на любое устройство и любую платформу. 
 
 Ниже вы видите схему архитектуры высокого уровня. Поле IIS Smooth Streaming Porting Kit здесь обозначает клиента Smooth Streaming, который предоставляет корпорация Майкрософт. Этот клиент содержит всю основную логику для воспроизведения контента Smooth Streaming. Затем партнеры переносят содержимое на конкретное устройство или платформу, создавая соответствующие интерфейсы. 
 
 ![SSPK](./media/media-services-sspk/sspk-arch.png)
 
-## <a name="description"></a>Описание
+## <a name="description"></a>Description
 Условия лицензирования SSPK повышают коммерческую ценность этого предложения. Лицензия SSPK предоставляет предприятиям отрасли следующие возможности.
 
 * Исходный код пакета для портирования Smooth Streaming на языке C++, в котором: 
@@ -105,7 +105,6 @@ ms.locfileid: "72693413"
 * SoftAtHome
 * Sony Corporation
 * Tatung Technology Inc.
-* TCL Technology Electronics (Huizhou) Co., Ltd.
 * Top Victory Investments, Ltd.
 * Vestel Elektronik Sanayi ve Ticaret A.S.
 * VisualOn, Inc.
@@ -152,7 +151,6 @@ ms.locfileid: "72693413"
 * SmarDTV S.A.
 * SoftAtHome
 * Sony Corporation
-* TCL Overseas Marketing (Macao Commercial Offshore) Limited
 * Technicolor Delivery Technologies, SAS
 * Tongfang Global Ltd.
 * Top Victory Investments, Ltd.
@@ -165,6 +163,6 @@ ms.locfileid: "72693413"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

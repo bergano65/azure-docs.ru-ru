@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: f09c27458a630386664f3f6579cfeee0721d8be9
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: c3e61d1efe20910d84ef4ff583d74982b3ea9f3d
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349212"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78296387"
 ---
 # <a name="stringtoobject-azure-cosmos-db"></a>Стрингтубжект (Azure Cosmos DB)
  Возвращает выражение, преобразованное в объект. Если выражение не может быть преобразовано, возвращает значение undefine.  
@@ -28,7 +28,7 @@ StringToObject(<str_expr>)
 *str_expr*  
    Строковое выражение, анализируемое как выражение объекта JSON. Обратите внимание, что вложенные строковые значения должны быть написаны с помощью двойных кавычек. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/)  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает выражение объекта или значение undefine.  
   
@@ -104,7 +104,11 @@ SELECT
 [{}]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

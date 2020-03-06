@@ -1,5 +1,5 @@
 ---
-title: Просмотр отчета об аудите для ролей Azure AD в PIM — Azure AD | Документация Майкрософт
+title: Просмотр отчета журнала аудита для ролей Azure AD в Azure AD PIM | Документация Майкрософт
 description: Узнайте, как просмотреть журнал аудита для ролей Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 02/07/2020
+ms.date: 01/07/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4a2eccc02d13bf5a2dfc8bf3ceb7887e4962489
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.openlocfilehash: 4b8aef68e0f61e6ca995fc2bb362d59aba73ead2
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77498503"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78329526"
 ---
-# <a name="view-audit-history-for-azure-ad-roles-in-pim"></a>Просмотр журнала аудита для ролей Azure AD в PIM
+# <a name="view-audit-history-for-azure-ad-roles-in-privileged-identity-management"></a>Просмотр журнала аудита для ролей Azure AD в управление привилегированными пользователями
 
 Вы можете использовать журнал аудита управление привилегированными пользователями (PIM) для просмотра всех назначений и активаций ролей за последние 30 дней для всех привилегированных ролей. Если вы хотите просмотреть полный журнал аудита действий в Организации Azure Active Directory (Azure AD), включая действия администратора, пользователя и синхронизации, можно использовать [отчеты о безопасности и действиях Azure Active Directory](../reports-monitoring/overview-reports.md).
 
@@ -32,7 +32,7 @@ ms.locfileid: "77498503"
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который имеет роль [администратора привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) .
 1. Откройте страницу **Azure AD Privileged Identity Management**. Если у вас есть баннер в верхней части страницы обзора, следуйте инструкциям на вкладке **Новая версия** этой статьи. В противном случае следуйте инструкциям на вкладке **Предыдущая версия** .
 
-    [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
+    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/directory-roles-audit-history.png "Выберите вкладку для своей версии")](media/pim-how-to-use-audit-log/directory-roles-audit-history.png)
 
 # <a name="new-version"></a>[Новая версия](#tab/new)
 
@@ -50,7 +50,7 @@ ms.locfileid: "77498503"
 
 1. Отфильтруйте журнал по предопределенной дате или настраиваемому диапазону.
 
-    ![Список аудита ресурсов с фильтрами](media/pim-how-to-use-audit-log/resource-audit.png)
+    ![Список аудита ресурсов с фильтрами](media/azure-pim-resource-rbac/rbac-resource-audit.png)
 
 ## <a name="view-my-audit"></a>Просмотр раздела "Мой аудит"
 
@@ -66,7 +66,7 @@ ms.locfileid: "77498503"
 
 1. Отфильтруйте журнал по предопределенной дате или настраиваемому диапазону.
 
-    ![Список аудита для текущего пользователя](media/pim-how-to-use-audit-log/audit-time-span.png)
+    ![Список аудита для текущего пользователя](media/azure-pim-resource-rbac/my-audit-time.png)
 
 # <a name="previous-version"></a>[Предыдущая версия](#tab/previous)
 
@@ -84,7 +84,7 @@ ms.locfileid: "77498503"
 
     В зависимости от журнала аудита отображается гистограмма с общим числом активаций, максимальным числом активаций в день и средним числом активаций в день.
 
-    ![Журнал аудита ролей каталога](media/pim-how-to-use-audit-log/directory-roles-audit-history.png)
+    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/directory-roles-audit-history.png "Просмотр журнала аудита ролей каталога")](media/pim-how-to-use-audit-log/directory-roles-audit-history.png)
 
     В нижней части страницы отображается таблица со сведениями о каждом действии в доступном журнале аудита. Столбцы имеют следующие значения:
 
@@ -113,6 +113,28 @@ ms.locfileid: "77498503"
     ![Обновить панель параметров диаграммы](media/pim-how-to-use-audit-log/update-chart-parameters.png)
 
 1. Нажмите кнопку **Готово** , чтобы просмотреть отфильтрованный журнал аудита.
+
+## <a name="get-reason-approver-and-ticket-number-for-approval-events"></a>Получение причины, утверждающего и номера билета для событий утверждения
+
+1. Войдите в [портал Azure](https://aad.portal.azure.com) с разрешениями роли администратора привилегированных ролей и откройте Azure AD.
+1. Выберите **журналы аудита**.
+1. Используйте фильтр **службы** , чтобы отобразить только события аудита для службы привилегированного управления удостоверениями. На странице **журналы аудита** можно выполнить следующие действия.
+
+    - См. причину события аудита в столбце **Причина состояния** .
+    - См. утверждающего в столбце " **инициировано (субъект)** " для события "Добавление участника в запрос, утвержденное в роли".
+
+    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/filter-audit-logs.png "Фильтрация журнала аудита для службы PIM")](media/pim-how-to-use-audit-log/filter-audit-logs.png)
+
+1. Выберите событие журнала аудита, чтобы просмотреть номер билета на вкладке **действие** области **сведений** .
+  
+    [![Новая версия ролей Azure AD](media/pim-how-to-use-audit-log/audit-event-ticket-number.png "Проверка номера билета для события аудита")](media/pim-how-to-use-audit-log/audit-event-ticket-number.png)
+
+1. Вы можете просмотреть инициатор запроса (пользователя, который активирует роль) на вкладке **целевые объекты** области **сведений** для события аудита. Существует два типа целевых объектов для ролей Azure AD:
+
+    - Роль (**тип** = роль)
+    - Инициатор запроса (**тип** = пользователь)
+
+Как правило, событие журнала аудита, находящегося непосредственно над событием утверждения, является событием для запроса "Добавление участника в роль завершено", где инициатором, **инициированным (субъектом)** , является запрашивающий. В большинстве случаев вам не нужно искать запрашивающий запрос в запросе на утверждение с точки зрения аудита.
 
 ---
 

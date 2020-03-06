@@ -1,18 +1,18 @@
 ---
-title: IS_BOOL на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System IS_BOOL в Azure Cosmos DB.
+title: IS_BOOL языка запросов Azure Cosmos DB
+description: Сведения о IS_BOOL системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: cb928558483a703a554d3eb6eb049af544f72eb1
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: b7f1cfb09121309e246b314d57a5e4e475bd0983
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349892"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303874"
 ---
 # <a name="is_bool-azure-cosmos-db"></a>IS_BOOL (Azure Cosmos DB)
  Возвращает логическое значение, указывающее, является ли указанное выражение логическим значением.  
@@ -28,13 +28,13 @@ IS_BOOL(<expr>)
 *expr*  
    Любое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает логическое выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере выполняется проверка объектов логического типа, числа, строки, null, объекта, массива и неопределенных типов с помощью функции `IS_BOOL`.  
+  В следующем примере выполняется проверка объектов Boolean, число, строка, null, объект, массив и неопределенные типы с помощью функции `IS_BOOL`.  
   
 ```sql
 SELECT   
@@ -53,7 +53,11 @@ SELECT
 [{"isBool1":true,"isBool2":false,"isBool3":false,"isBool4":false,"isBool5":false,"isBool6":false,"isBool7":false}]
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции проверки типов Azure Cosmos DB](sql-query-type-checking-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

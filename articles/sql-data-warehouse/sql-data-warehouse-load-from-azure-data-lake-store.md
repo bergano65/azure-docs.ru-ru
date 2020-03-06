@@ -7,16 +7,16 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 02/04/2020
+ms.date: 03/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 9a567a8f62f8f12de725f6d9420576680a3005fe
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: b0b9cffe0b69545a6d0219941b48ac9eb0f399b3
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78194586"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78300593"
 ---
 # <a name="load-data-from-azure-data-lake-storage-for-sql-analytics"></a>Загрузка данных из Azure Data Lake Storage для SQL Analytics
 В этом руководство описано, как использовать внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage. Несмотря на то, что можно выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, рекомендуется импортировать данные для лучшей производительности. 
@@ -46,6 +46,8 @@ ms.locfileid: "78194586"
 Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных для шифрования секрета учетных данных. Затем создайте учетные данные для базы данных, чтобы сохранить секрет. При проверке подлинности с помощью субъектов-служб (пользователь приложения Azure Directory) учетные данные субъекта базы данных хранят учетные данные участника-службы, настроенные в AAD. Для хранения ключа учетной записи хранения для Gen2 можно также использовать учетные данные уровня базы данных.
 
 Чтобы подключиться к Data Lake Storage с помощью субъектов-служб, необходимо **сначала** создать приложение Azure Active Directory, создать ключ доступа и предоставить приложению доступ к учетной записи Data Lake Storage. Инструкции см. [в разделе аутентификация в Azure Data Lake Storage с помощью Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
+
+Войдите в пул SQL с помощью пользователя, имеющего разрешения на уровне элемента управления, и выполните следующие инструкции SQL для базы данных:
 
 ```sql
 -- A: Create a Database Master Key.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: jhakulin
-ms.openlocfilehash: ff8772f7c3c3213c010b0bdbd0d0aa8897404bac
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 350c2bf3c4d0fc0a16f1b393e7c8d8a372679797
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119981"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331150"
 ---
 # <a name="configure-openssl-for-linux"></a>Настройка OpenSSL для Linux
 
@@ -42,13 +42,13 @@ OPENSSLDIR: "/usr/lib/ssl"
 - ОПЕНССЛДИР — `/opt/ssl`. Существует `certs` подкаталог с множеством `.crt` или `.pem` файлов.
 Перед запуском программы, использующей пакет SDK для распознавания речи, в качестве значения переменной среды `SSL_CERT_DIR` указывать на `/opt/ssl/certs`. Пример:
 ```bash
-SSL_CERT_DIR=/opt/ssl/certs ./helloworld
+export SSL_CERT_DIR=/opt/ssl/certs
 ```
 
-- ОПЕНССЛДИР — `/etc/pki/tls`. Существует файл пакета сертификатов, например `ca-bundle.pem` или `ca-bundle.crt`.
-Перед запуском программы, использующей пакет SDK для распознавания речи, в качестве значения переменной среды `SSL_CERT_FILE` указывать на `/etc/pki/tls/ca-bundle.pem`. Пример:
+- ОПЕНССЛДИР — это `/etc/pki/tls` (например, в системах на базе RHEL и CentOS). Существует `certs` подкаталог с файлом пакета сертификатов, например `ca-bundle.crt`.
+Перед запуском программы, использующей пакет SDK для распознавания речи, задайте для переменной среды `SSL_CERT_FILE`, чтобы она указывала на этот файл. Пример:
 ```bash
-SSL_CERT_FILE=/etc/pki/tls/ca-bundle.pem ./helloworld
+export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

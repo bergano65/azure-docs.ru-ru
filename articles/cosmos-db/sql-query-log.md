@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: ae7812670da836efa326b9224547e4d1b64374c2
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 9213ef03f383dec7109652246411fac154b4a7f9
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873290"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302514"
 ---
 # <a name="log-azure-cosmos-db"></a>Журнал (Azure Cosmos DB)
  Возвращает натуральный логарифм от указанного числового выражения.  
@@ -31,15 +31,15 @@ LOG (<numeric_expr> [, <base>])
 *base*  
    Дополнительный числовой аргумент, который задает основание логарифма.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
   По умолчанию функция LOG() возвращает натуральный логарифм. Основание логарифма можно изменить с помощью дополнительного параметра основания.  
   
-  Натуральный логарифм — это логарифм с основанием **e**, где **e** — это иррациональная константа приблизительно равная 2,718281828.  
+  Натуральный логарифм — это логарифм по основанию **e**, где **e** — это иррациональная константа, которая приблизительно равна 2,718281828.  
   
   Натуральный логарифм экспоненты числа — это само число. Например, LOG( EXP( n ) ) = n. И экспонента натурального логарифма числа также является самым числом. Например, EXP( LOG( n ) ) = n.  
   
@@ -68,6 +68,10 @@ SELECT EXP(LOG(10)) AS expLog
 ```json
 [{expLog: 10.000000000000002}]  
 ```  
+
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: afa9437a00c6f30688c7942feea94f7db7ed490a
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: d3cd330001bcf53e7bd4fb9e6955c76a9ef20511
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77919351"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331082"
 ---
 # <a name="quickstart-asynchronous-synthesis-for-long-form-audio-in-python-preview"></a>Краткое руководство. асинхронное синтез для звука в длинном формате в Python (Предварительная версия)
 
@@ -24,13 +24,13 @@ ms.locfileid: "77919351"
 > [!NOTE]
 > Асинхронное синтез для длинных аудиофайлов можно использовать только с [пользовательскими нейронными голосовыми](../../how-to-custom-voice.md#custom-neural-voices)данными.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
 * Python 2.7. x или 3. x.
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download)или ваш любимый текстовый редактор.
-* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](../../get-started.md#new-resource) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
+* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](../../get-started.md#new-resource) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#new-resource) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -85,7 +85,7 @@ if args.voices:
 * Замените `<your_key>` на ваш ключ подписки службы "Речь". Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
 * Замените `<region>` регионом, в котором был создан ваш речевой ресурс (например, `eastus` или `westus`). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
 
-Выполните команду:
+Выполните следующую команду:
 
 ```console
 python voice_synthesis_client.py --voices -key <your_key> -region <Region>
@@ -253,7 +253,7 @@ if args.delete:
 * Замените `<your_key>` на ваш ключ подписки службы "Речь". Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
 * Замените `<region>` регионом, в котором был создан ваш речевой ресурс (например, `eastus` или `westus`). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
 
-Выполните команду:
+Выполните следующую команду:
 
 ```console
 python voice_synthesis_client.py --syntheses -key <your_key> -region <Region>
@@ -277,7 +277,7 @@ ID : xxx , Name : xxx : Succeeded
 > [!NOTE]
 > Запросы с состоянием "работает" или "ожидание" не могут быть удалены или удалены.
 
-Выполните команду:
+Выполните следующую команду:
 
 ```console
 python voice_synthesis_client.py --delete -key <your_key> -region <Region> -synthesisId <synthesis_id>
@@ -294,7 +294,7 @@ delete successful
 
 Завершенный `voice_synthesis_client.py` можно скачать на сайте [GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Python/voiceclient.py).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения об API длинного звука](../../long-audio-api.md)

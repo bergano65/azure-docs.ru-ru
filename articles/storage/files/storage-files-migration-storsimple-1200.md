@@ -7,16 +7,25 @@ ms.topic: conceptual
 ms.date: 03/02/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 184101db34edbf5391b37c43770e8393316fe2fc
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 4a32251b60066d6a85595e4d1b6c002f8587c01d
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78252664"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330946"
 ---
 # <a name="storsimple-1200-migration-to-azure-file-sync"></a>Миграция StorSimple 1200 в Синхронизация файлов Azure
 
 Серия StorSimple 1200 — это виртуальное устройство, которое выполняется в локальном центре обработки данных. Данные из этого устройства можно перенести в среду Синхронизация файлов Azure. Эта статья содержит необходимые фундаментальные знания и миграции для успешной миграции на Синхронизация файлов Azure.
+
+## <a name="storsimple"></a>StorSimple
+
+StorSimple — это прекращенный продукт Майкрософт. Продленная поддержка для этого продукта и его облачной службы истекает через Декабрь 31 2022. Важно немедленно начать планирование миграции из StorSimple.
+
+Синхронизация файлов Azure является стратегически долгосрочной службой Azure по умолчанию, в которую можно перенести устройства StorSimple.
+
+> [!IMPORTANT]
+> Корпорация Майкрософт стремится помочь клиентам в их миграции. Электронная почта AzureFilesMigration@microsoft. com для настраиваемого плана миграции, а также помощь во время миграции.
 
 ## <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
 

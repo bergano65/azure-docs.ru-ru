@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/22/2020
 ms.author: iainfou
-ms.openlocfilehash: 09654132b6e10f9905f79d1eb50f9bce220a7ab7
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: bc5371ccbd3ba66117d5c613090b70ce7f07d51e
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77613776"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78298847"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Присоединение Ubuntu Linux виртуальной машины к управляемому домену доменных служб Azure AD
 
@@ -24,7 +24,7 @@ ms.locfileid: "77613776"
 
 В этой статье показано, как присоединить Ubuntu Linuxную виртуальную машину к управляемому домену AD DS Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником требуются следующие ресурсы и разрешения:
 
@@ -34,7 +34,7 @@ ms.locfileid: "77613776"
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, по инструкциям из первого учебника [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
-* Учетная запись пользователя, входящая в группу *администраторов Azure AD DC* в клиенте Azure AD.
+* Учетная запись пользователя, входящая в управляемый домен AD DS Azure.
 
 ## <a name="create-and-connect-to-an-ubuntu-linux-vm"></a>Создание Ubuntu Linux виртуальной машины и подключение к ней
 
@@ -133,15 +133,15 @@ sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp n
     * Убедитесь, что виртуальная машина развернута в том же или в одноранговой виртуальной сети, в которой доступен управляемый домен Azure AD DS.
     * Убедитесь, что параметры DNS-сервера для виртуальной сети были обновлены, чтобы они указывали на контроллеры домена управляемого домена AD DS Azure.
 
-1. Теперь инициализируйте Kerberos с помощью команды `kinit`. Укажите пользователя, который принадлежит к группе *администраторов контроллера домена AAD* . При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md).
+1. Теперь инициализируйте Kerberos с помощью команды `kinit`. Укажите пользователя, который входит в управляемый домен AD DS Azure. При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md).
 
-    Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере учетная запись с именем `contosoadmin@aaddscontoso.com` используется для инициализации Kerberos. Введите собственную учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* :
+    Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере учетная запись с именем `contosoadmin@aaddscontoso.com` используется для инициализации Kerberos. Введите собственную учетную запись пользователя, которая является частью управляемого домена AD DS Azure:
 
     ```console
     kinit contosoadmin@AADDSCONTOSO.COM
     ```
 
-1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с помощью команды `realm join`. Используйте ту же учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* , указанной в предыдущей команде `kinit`, например `contosoadmin@AADDSCONTOSO.COM`.
+1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с помощью команды `realm join`. Используйте ту же учетную запись пользователя, которая входит в управляемый домен AD DS Azure, указанный в предыдущей команде `kinit`, например `contosoadmin@AADDSCONTOSO.COM`:
 
     ```console
     sudo realm join --verbose AADDSCONTOSO.COM -U 'contosoadmin@AADDSCONTOSO.COM' --install=/
@@ -276,7 +276,7 @@ Successfully enrolled machine in realm
     sudo apt-get update
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если при подключении виртуальной машины к управляемому домену AD DS Azure или при входе с помощью учетной записи домена возникли проблемы, см. раздел [Устранение неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 

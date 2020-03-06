@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: 53de4608616cb8f3b85bb88f1dbc5a4a79f4c02b
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 41efe4592c65ae3cdd85ce1b212554e50691905a
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77188849"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330725"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Создание иммерсивного ресурса чтения и Настройка проверки подлинности Azure Active Directory
 
@@ -47,6 +47,11 @@ ms.locfileid: "77188849"
         [Parameter(Mandatory=$true)] [String] $AADAppClientSecret
     )
     {
+        $unused = ''
+        if (-not [System.Uri]::TryCreate($AADAppIdentifierUri, [System.UriKind]::Absolute, [ref] $unused)) {
+            throw "Error: AADAppIdentifierUri must be a valid URI"
+        }
+
         Write-Host "Setting the active subscription to '$SubscriptionName'"
         $subscriptionExists = Get-AzSubscription -SubscriptionName $SubscriptionName
         if (-not $subscriptionExists) {
@@ -152,9 +157,9 @@ ms.locfileid: "77188849"
       -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>'
     ```
 
-    | Параметр | Comments |
+    | Параметр | Комментарии |
     | --- | --- |
-    | SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
+    | Параметр SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
     | ResourceName |  Должен быть буквенно-цифровым и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов.|
     | ресаурцесубдомаин |Для иммерсивного ресурса чтения требуется пользовательский поддомен. Поддомен используется пакетом SDK при вызове иммерсивное службу чтения для запуска средства чтения. Поддомен должен быть глобально уникальным. Поддомен должен состоять из букв и цифр и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов. Этот параметр является необязательным, если ресурс уже существует. |
     | ресаурцеску |Параметры: `S0`. Дополнительные сведения о каждом доступном номере SKU см. на [странице цен на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) . Этот параметр является необязательным, если ресурс уже существует. |
@@ -176,7 +181,7 @@ ms.locfileid: "77188849"
     }
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с [кратким руководством для разработчиков Node.js](./quickstart-nodejs.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Node.js
 * Ознакомьтесь с [руководством для разработчиков Python](./tutorial-python.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Python.

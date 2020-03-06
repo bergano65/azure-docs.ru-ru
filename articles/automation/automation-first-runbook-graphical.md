@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: b891c8a7bbb33e3a3f18adbbc723d4bc9aa99a3a
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 6a967f328a4fbe17f2c451d35f413bd7fdcbc24a
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78246465"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331474"
 ---
 # <a name="my-first-graphical-runbook"></a>Первый графический Runbook
 
@@ -22,7 +22,7 @@ ms.locfileid: "78246465"
 > * [Python](automation-first-runbook-textual-python2.md)
 > 
 
-В данном учебнике описана процедура создания [графического модуля Runbook](automation-runbook-types.md#graphical-runbooks) в службе автоматизации Azure. Начните с простого модуля Runbook, который тестирует и публикует, и изучите, как отвести состояние задания Runbook. Затем измените модуль Runbook, чтобы он фактически управлял ресурсами Azure, в этом случае запускает виртуальную машину Azure. Выполните инструкции из руководства, чтобы сделать модуль Runbook более надежным, добавив параметры Runbook и условные ссылки.
+В данном учебнике описана процедура создания [графического модуля Runbook](automation-runbook-types.md#graphical-runbooks) в службе автоматизации Azure. Начните с простого модуля Runbook, который можно протестировать и опубликовать, а также узнать, как отвести состояние задания Runbook. Затем измените модуль Runbook, чтобы он фактически управлял ресурсами Azure, в этом случае запускает виртуальную машину Azure. Выполните инструкции из руководства, чтобы сделать модуль Runbook более надежным, добавив параметры Runbook и условные ссылки.
 
 >[!NOTE]
 >Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
@@ -37,7 +37,7 @@ ms.locfileid: "78246465"
 
 ## <a name="step-1---create-runbook"></a>Шаг 1. Создание нового модуля Runbook
 
-Начните с создания простого модуля Runbook, который выводит текст "Hello World".
+Для начала вы создадите простой модуль runbook, при помощи которого на экран выводится текст **Hello World**.
 
 1. На портале Azure выберите свою учетную запись службы автоматизации. 
 
@@ -78,7 +78,7 @@ ms.locfileid: "78246465"
 
    Состояние задания начинается в **очереди**, что означает, что задание ожидает, пока Рабочая роль Runbook в облаке станет доступной. Состояние меняется на **Запуск** , когда Рабочая роль заявляет задание. Наконец, при запуске модуля Runbook происходит состояние **выполняется** .
 
-1. После завершения задания Runbook на странице теста отображаются выходные данные. В этом случае вы увидите текст **Hello World**.<br> ![Привет, мир!](media/automation-first-runbook-graphical/runbook-test-results.png)
+1. После завершения задания Runbook на панели "тест" отображаются выходные данные. В этом случае вы увидите текст **Hello World**.<br> ![Привет, мир!](media/automation-first-runbook-graphical/runbook-test-results.png)
 1. Закройте область тестирования, чтобы вернуться на холст.
 
 ## <a name="step-4---publish-and-start-the-runbook"></a>Шаг 4. Публикация и запуск модуля Runbook

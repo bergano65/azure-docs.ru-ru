@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 859f8a9c2bf644461c8945255de9f925b4e943f4
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 93695b407762766b0bdd40c9d99a0bf4965f59a8
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251847"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78328785"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическая обучение модели прогнозирования временных рядов
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -113,7 +113,7 @@ test_labels = test_data.pop(label).values
 
 Объект [`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py) определяет параметры и данные, необходимые для автоматизированной задачи машинного обучения. Как и в случае с задачей регрессии, вы определяете стандартные параметры обучения, такие как тип задачи, число итераций, обучающие данные и число перекрестных проверок. Для задач прогнозирования необходимо задать дополнительные параметры, которые влияют на эксперимент. В следующей таблице описывается каждый параметр и его использование.
 
-| Параметр | Description | Обязательно |
+| Имя&nbsp;параметра | Description | Обязательно |
 |-------|-------|-------|
 |`time_column_name`|Используется для указания столбца DateTime во входных данных, используемых для создания временных рядов и получения его частоты.|✓|
 |`grain_column_names`|Имена, определяющие отдельные группы рядов во входных данных. Если детализация не определена, предполагается, что набор данных является одним временным набором.||

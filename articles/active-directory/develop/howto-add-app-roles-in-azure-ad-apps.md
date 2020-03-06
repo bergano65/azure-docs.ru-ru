@@ -14,12 +14,12 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 5400ede4f3afd9f94d7380c6dfd55d8aa45d08ca
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 3a911db36fd03ebcb5e0fc53d4d7f36d68648249
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76834252"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399080"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -44,10 +44,10 @@ ms.locfileid: "76834252"
 1. Измените манифест приложения. Для этого найдите параметр `appRoles` и добавьте все имеющиеся роли приложения.
 
      > [!NOTE]
-     > Каждое определение роли приложения в этом манифесте должно иметь другой допустимый идентификатор GUID в контексте манифеста для свойства `id`.    
-     > 
+     > Каждое определение роли приложения в этом манифесте должно иметь другой допустимый идентификатор GUID в контексте манифеста для свойства `id`.
+     >
      > Свойство `value` каждого определения роли приложения должно точно соответствовать строкам, используемым в коде приложения. Свойство `value` не может содержать пробелы. Если это так, при сохранении манифеста появится сообщение об ошибке.
-     
+
 1. Сохраните манифест.
 
 ### <a name="examples"></a>Примеры
@@ -108,7 +108,7 @@ ms.locfileid: "76834252"
      Если приложение не отображается, используйте различные фильтры в верхней части списка **Все приложения**, чтобы сократить список, или прокрутите его вниз и найдите приложение.
 
 1. Выберите приложение, в котором для ролей необходимо назначить пользователей или группы безопасности.
-1. Щелкните панель **Пользователи и группы** в меню навигации приложения слева.
+1. В меню навигации слева в приложении выберите панель **Пользователи и группы** .
 1. Вверху списка **Пользователи и группы** нажмите кнопку **Добавить пользователя**, чтобы открыть панель **Добавление назначения**.
 1. В области **Добавление назначения** щелкните **Пользователи и группы**.
 
@@ -122,7 +122,7 @@ ms.locfileid: "76834252"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-- [Authorization in a web app using Azure AD application roles &amp; role claims (Sample)](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) (Авторизация в веб-приложении с помощью ролей приложения и утверждений ролей в Azure AD (пример))
+- [Добавление авторизации с помощью ролей приложения & утверждения ролей в веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-1-Roles)
 - [August 9: Using application roles and security groups in your apps (Video)](https://www.youtube.com/watch?v=V8VUPixLSiM) (9 августа. Использование ролей приложения и групп безопасности в приложениях (видео))
 - [Azure Active Directory, now with Group Claims and Application Roles](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-Active-Directory-now-with-Group-Claims-and-Application/ba-p/243862) (Azure Active Directory с утверждениями групп и ролями приложения)
 - [Манифест приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest)

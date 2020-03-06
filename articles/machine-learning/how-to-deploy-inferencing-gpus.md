@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
-ms.date: 10/25/2019
-ms.openlocfilehash: 39fc57a6da20549447f782399e9571f7a0ffeea7
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.date: 03/05/2020
+ms.openlocfilehash: b0fd537d1930e7c9d5f7a33f56ec5d00b1556562
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122531"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78398332"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "76122531"
 > [!NOTE]
 > Сведения в этой статье основаны на сведениях в статье [развертывание в службе Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md) . Когда эта статья обычно охватывает развертывание в AKS, в этой статье рассматривается развертывание GPU.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -101,7 +101,7 @@ except ComputeTargetException:
 Сценарий записи получает данные, отправленные в веб-службу, передает их в модель и возвращает результаты оценки. Следующий скрипт загружает модель Tensorflow при запуске, а затем использует модель для оценки данных.
 
 > [!TIP]
-> Скрипт относится только к модели. Например, сценарий должен быть уверен, что платформа будет использоваться с моделью, форматами данных и т. д.
+> Сценарий записи зависит от модели. Например, сценарий должен быть уверен, что платформа будет использоваться с моделью, форматами данных и т. д.
 
 ```python
 import json
@@ -287,7 +287,7 @@ aks_service.delete()
 aks_target.delete()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели на FPGA](how-to-deploy-fpga-web-service.md)
 * [Развертывание модели с помощью ONNX](concept-onnx.md#deploy-onnx-models-in-azure)

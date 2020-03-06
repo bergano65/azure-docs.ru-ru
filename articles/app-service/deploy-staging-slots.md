@@ -3,14 +3,14 @@ title: Настройка промежуточных сред
 description: Узнайте, как развертывать приложения в нерабочее гнездо и выполнять автозамену в рабочей среде. Повышение надежности и исключение времени простоя приложений из развертываний.
 ms.assetid: e224fc4f-800d-469a-8d6a-72bcde612450
 ms.topic: article
-ms.date: 09/19/2019
+ms.date: 03/04/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 63070b2c1e6adbb0149446b218e6e58023b2d409
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: 21e025088e59c7f65f848b332ecb393b05918261
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75666467"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78300877"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -23,7 +23,7 @@ ms.locfileid: "75666467"
 * Развертывание приложения в промежуточном слоте и последующее переключение в рабочий слот гарантирует, что все экземпляры слота будут подготовлены до переключения в рабочую среду. Это позволит вам избежать простоя при развертывании приложения. Перенаправление трафика не вызывает затруднений, а запросы не теряются из-за операций переключения. Вы можете автоматизировать весь рабочий процесс, настроив [Автоматическое переключение](#Auto-Swap) , если проверка перед переключением не требуется.
 * После переключения в слоте, где ранее находилась промежуточная версия приложения, будет размещено приложение, которое до этого было рабочим. Если изменения в рабочем слоте не соответствуют вашим ожиданиям, вы можете мгновенно переключиться назад к последней рабочей версии сайта.
 
-Каждый уровень плана службы приложений поддерживает разное количество слотов развертывания. Дополнительная плата за использование слотов развертывания не взимается. Сведения о количестве слотов, поддерживаемых уровнем приложения, см. в разделе [ограничения службы приложений](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#app-service-limits). 
+Каждый уровень плана службы приложений поддерживает разное количество слотов развертывания. Дополнительная плата за использование слотов развертывания не взимается. Сведения о количестве слотов, поддерживаемых уровнем приложения, см. в разделе [ограничения службы приложений](../azure-resource-manager/management/azure-subscription-service-limits.md#app-service-limits). 
 
 Чтобы масштабировать приложение на другой уровень, убедитесь, что целевой уровень поддерживает количество слотов, которое уже использует ваше приложение. Например, если приложение содержит более пяти слотов, нельзя масштабировать его до уровня " **стандартный** ", так как уровень " **стандартный** " поддерживает только пять слотов развертывания. 
 
@@ -303,7 +303,7 @@ New-AzWebAppSlot -ResourceGroupName [resource group name] -Name [app name] -Slot
 ---
 ### <a name="initiate-a-swap-with-a-preview-multi-phase-swap-and-apply-destination-slot-configuration-to-the-source-slot"></a>Запуск переключения с предварительным просмотром (Многофазное переключение) и применение конфигурации конечного слота к исходному слоту
 ```powershell
-$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}
+$ParametersObject = @{targetSlot  = "[slot name – e.g. "production"]"}
 Invoke-AzResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01
 ```
 
@@ -316,7 +316,7 @@ Invoke-AzResourceAction -ResourceGroupName [resource group name] -ResourceType M
 ---
 ### <a name="swap-deployment-slots"></a>Переключение слотов развертывания
 ```powershell
-$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}
+$ParametersObject = @{targetSlot  = "[slot name – e.g. "production"]"}
 Invoke-AzResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01
 ```
 

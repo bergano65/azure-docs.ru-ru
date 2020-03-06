@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 9bcb0fd26710b5f44ca9e3e3715c40cb32b3c40d
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 535707191557142054e493d0216b713312f53953
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77913946"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368657"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
 
@@ -27,23 +27,23 @@ ms.locfileid: "77913946"
 
 2. Загрузите в веб-пакет SDK Azure Maps. Можно выбрать один из двух параметров.
 
-   1. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
+    * Используйте глобально размещенную версию CDN Azure Maps веб-пакета SDK, добавив ссылки на JavaScript и таблицу стилей в элементе `<head>` HTML-файла:
 
-      ```HTML
-       <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
-       <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-      ```
+        ```HTML
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+        ```
 
-   1. Загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета [Azure-Maps-Control](https://www.npmjs.com/package/azure-maps-control) NPM и разместите его в своем приложении. Этот пакет также включает определения TypeScript.
+    * Загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета [Azure-Maps-Control](https://www.npmjs.com/package/azure-maps-control) NPM и разместите его в своем приложении. Этот пакет также включает определения TypeScript.
 
-      > **NPM. Установка Azure-Maps-Control**
+        > **NPM. Установка Azure-Maps-Control**
 
-   Затем добавьте ссылки на стили и источник сценария Azure Maps в элемент `<head>` файла.
+       Затем добавьте ссылки на стили и источник сценария Azure Maps в элемент `<head>` файла.
 
-      ```HTML
-       <link rel="stylesheet" href="node_modules/azure-maps-control/dist/atlas.min.css" type="text/css"> 
-       <script src="node_modules/azure-maps-control/dist/atlas.min.js"></script>
-      ```
+        ```HTML
+        <link rel="stylesheet" href="node_modules/azure-maps-control/dist/atlas.min.css" type="text/css"> 
+        <script src="node_modules/azure-maps-control/dist/atlas.min.js"></script>
+        ```
 
     > [!Note]
     > Определения typescript можно импортировать в приложение, добавив следующий код:
@@ -235,7 +235,7 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
 При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адресов на `atlas.azure.us`. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создавать и взаимодействовать с картой:
 

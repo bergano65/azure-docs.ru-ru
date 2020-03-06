@@ -10,18 +10,18 @@ author: peterclu
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
-ms.openlocfilehash: eac7674ae4a88621a803c70bd55a88e65b2cb7e9
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: caf2437b4a4853bc29f094d082a4ea15d2f7a3c9
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838693"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388482"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](/azure/machine-learning/studio/retrain-machine-learning-model). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
      
@@ -52,19 +52,6 @@ ms.locfileid: "73838693"
 ## <a name="update-the-added-endpoints-trained-model"></a>Обновление обученной модели добавленной конечной точки
 
 ### <a name="retrieve-patch-url"></a>Извлечение URL-адреса PATCH
-
-### <a name="option-1-programmatically"></a>Вариант 1. программный
-
-Чтобы получить правильный URL-адрес PATCH программным образом, выполните перечисленные ниже действия.
-
-1. Выполните пример кода [AddEndpoint](https://github.com/raymondlaghaeian/AML_EndpointMgmt/blob/master/Program.cs) .
-1. В выходных данных AddEndpoint найдите значение *HelpLocation* и скопируйте URL-адрес.
-
-   ![HelpLocation в выходных данных примера addEndpoint.](./media/retrain-classic/addEndpoint-output.png)
-1. Вставьте URL-адрес в браузер, чтобы перейти на страницу, содержащую ссылки на справочные статьи о веб-службе.
-1. Щелкните ссылку **Обновить ресурс**, чтобы открыть страницу справки с информацией об исправлении.
-
-### <a name="option-2-use-the-azure-machine-learning-web-services-portal"></a>Вариант 2. Использование портала веб-служб Машинное обучение Azure
 
 Выполните следующие действия, чтобы получить правильный URL-адрес PATCH с помощью веб-портала.
 
@@ -101,8 +88,8 @@ ms.locfileid: "73838693"
                     Location = new AzureBlobDataReference()
                     {
                         BaseLocation = "https://esintussouthsus.blob.core.windows.net/",
-                        RelativeLocation = "your endpoint relative location", //from the output, for example: “experimentoutput/8946abfd-79d6-4438-89a9-3e5d109183/8946abfd-79d6-4438-89a9-3e5d109183.ilearner”
-                        SasBlobToken = "your endpoint SAS blob token" //from the output, for example: “?sv=2013-08-15&sr=c&sig=37lTTfngRwxCcf94%3D&st=2015-01-30T22%3A53%3A06Z&se=2015-01-31T22%3A58%3A06Z&sp=rl”
+                        RelativeLocation = "your endpoint relative location", //from the output, for example: "experimentoutput/8946abfd-79d6-4438-89a9-3e5d109183/8946abfd-79d6-4438-89a9-3e5d109183.ilearner"
+                        SasBlobToken = "your endpoint SAS blob token" //from the output, for example: "?sv=2013-08-15&sr=c&sig=37lTTfngRwxCcf94%3D&st=2015-01-30T22%3A53%3A06Z&se=2015-01-31T22%3A58%3A06Z&sp=rl"
                     }
                 }
             }

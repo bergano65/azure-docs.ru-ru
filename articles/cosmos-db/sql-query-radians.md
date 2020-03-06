@@ -7,15 +7,15 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: cef572eaf879110fd52657ac358f1261f594692d
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 7831ef4bbd65bce7329b1ecf0f602b110a16834b
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349627"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302242"
 ---
 # <a name="radians-azure-cosmos-db"></a>РАДИАНы (Azure Cosmos DB)
- Возвращает значение угла в радианах для числового значения, указанного в градусах.  
+ Для введенного числового выражения в градусах возвращает значение в радианах.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -28,7 +28,7 @@ RADIANS (<numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
@@ -52,7 +52,11 @@ SELECT RADIANS(-45.01) AS r1, RADIANS(-181.01) AS r2, RADIANS(0) AS r3, RADIANS(
    }]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

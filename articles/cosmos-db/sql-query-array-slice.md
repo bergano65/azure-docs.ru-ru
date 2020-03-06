@@ -4,15 +4,15 @@ description: Узнайте, как системная функция среза
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 3c65886eabfa87f729e18fb854aca6662d1d6fac
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: a98cb17d22f41776ff788d12ced6aa988ad0b10e
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871794"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303330"
 ---
 # <a name="array_slice-azure-cosmos-db"></a>ARRAY_SLICE (Azure Cosmos DB)
  Возвращает часть выражения массива.
@@ -33,7 +33,7 @@ ARRAY_SLICE (<arr_expr>, <num_expr> [, <num_expr>])
 
 *num_expr* Необязательное числовое выражение, устанавливающее максимальное число элементов в результирующем массиве.    
 
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает выражение массива.  
   
@@ -66,6 +66,10 @@ SELECT
            "s7": [] 
 }]  
 ```  
+
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

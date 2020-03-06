@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: erhopf
-ms.openlocfilehash: 854e7beb2afd8ae838455f77ff448f13d8b3fbea
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 43d08b466076672587e7f6545193e326283c0031
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77188974"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330793"
 ---
 # <a name="about-the-speech-devices-sdk"></a>Сведения о пакете SDK для устройств в службе "Речь"
 
@@ -47,11 +47,11 @@ ms.locfileid: "77188974"
 ### <a name="linux"></a>Linux
 
 Для Linux пример приложения предоставляется в виде кросс-платформенного приложения Java. Скачайте последнюю версию [пакета SDK для речевых устройств JRE](https://aka.ms/sdsdk-download-JRE).
-Приложение создается с использованием пакета SDK для службы "Речь" и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии ОС Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9). Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+Приложение строится с помощью пакета SDK для распознавания речи, а Eclipse Java IDE (v4) на 64-разрядной платформе Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9, RHEL 8, CentOS 8). Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 Предоставляются дополнительные двоичные файлы для поддержки предстоящих устройств, [Рубо v2 DDK](https://aka.ms/sdsdk-download-roobov2)и [урбеттер DDK](https://aka.ms/sdsdk-download-urbetter).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Выберите свое речевое устройство](get-speech-devices-sdk.md)

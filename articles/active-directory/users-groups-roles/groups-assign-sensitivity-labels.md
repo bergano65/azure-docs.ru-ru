@@ -14,16 +14,16 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51b242a76e1daec7d401d797e8c9887821117246
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 667fb39aabfec14cff01221b82a45ba8ad1d68d4
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77656948"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78329738"
 ---
 # <a name="assign-sensitivity-labels-to-office-365-groups-in-azure-active-directory-preview"></a>Назначение меток чувствительности группам Office 365 в Azure Active Directory (Предварительная версия)
 
-Azure Active Directory (Azure AD) поддерживает применение меток чувствительности, опубликованных [центром соответствия Microsoft 365](https://sip.protection.office.com/homepage) , в группах Office 365. Метки чувствительности применяются к группам в разных службах, например Outlook, Microsoft Teams и SharePoint. Эта функция сейчас доступна в виде общедоступной предварительной версии. Дополнительные сведения о поддержке приложений Office 365 см. в разделе [Поддержка меток конфиденциальности в office 365](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#support-for-the-new-sensitivity-labels).
+Azure Active Directory (Azure AD) поддерживает применение меток чувствительности, опубликованных [центром соответствия Microsoft 365](https://sip.protection.office.com/homepage) , в группах Office 365. Метки чувствительности применяются к группам в разных службах, например Outlook, Microsoft Teams и SharePoint. Эта функция сейчас доступна в виде общедоступной предварительной версии. Дополнительные сведения о поддержке приложений Office 365 см. в разделе [Поддержка меток конфиденциальности в office 365](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels).
 
 > [!IMPORTANT]
 > Чтобы настроить эту функцию, в Организации Azure AD должна быть по крайней мере одна активная лицензия Azure Active Directory Premium P1.
@@ -135,7 +135,7 @@ Azure Active Directory (Azure AD) поддерживает применение 
 1. Выберите **Группы**.
 1. На странице **все группы** выберите группу, для которой нужно добавить метку.
 1. На странице выбранной группы выберите **Свойства** и выберите в списке новую метку чувствительности.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="group-setting-changes-to-published-labels-are-not-updated-on-the-groups"></a>Изменения параметров группы для опубликованных меток не обновлены в группах
 
@@ -143,7 +143,7 @@ Azure Active Directory (Azure AD) поддерживает применение 
 
 Если необходимо внести изменения, используйте [Скрипт Azure AD PowerShell](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) , чтобы вручную применить обновления к затронутым группам. Этот метод гарантирует, что все существующие группы применяют новый параметр.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Используйте метки чувствительности к Microsoft Teams, группам Office 365 и сайтам SharePoint](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)
 - [Обновление групп после изменения политики меток вручную с помощью скрипта Azure AD PowerShell](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)

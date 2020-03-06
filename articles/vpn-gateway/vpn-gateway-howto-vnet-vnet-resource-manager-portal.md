@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 02/26/2020
+ms.date: 03/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 18ef9d89a2366e6d4db3c3154bae0bd83e0386f1
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: dbdc13b8c861c620bfdbaaf53c0901a51bb9ce08
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77654787"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399207"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-by-using-the-azure-portal"></a>Настройка подключения VPN-шлюза "виртуальная сеть — виртуальная сеть" с использованием портала Azure
 
@@ -75,16 +75,16 @@ ms.locfileid: "77654787"
 
 - **Параметры виртуальной сети**
     - **Имя**: VNet1
-    - **Адресное пространство**: 10.11.0.0/16
+    - **Пространство адресов**: 10.1.0.0/16.
     - **Подписка**. Выберите подписку, которую хотите использовать.
     - **Группа ресурсов**: TestRG1
     - **Расположение**: восточная часть США.
     - **Подсеть**
         - **Имя**: интерфейсный
-        - **Диапазон адресов**: 10.11.0.0/24.
+        - **Диапазон адресов**: 10.1.0.0/24
     - **Подсеть шлюза**:
         - **Имя**: *GatewaySubnet* заполняется автозаполнением
-        - **Диапазон адресов**: 10.11.255.0/27
+        - **Диапазон адресов**: 10.1.255.0/27
 
 - **Параметры шлюза виртуальной сети**
     - **Имя**: VNet1GW
@@ -126,11 +126,6 @@ ms.locfileid: "77654787"
 
 ### <a name="to-create-a-virtual-network"></a>Создание виртуальной сети
 [!INCLUDE [vpn-gateway-basic-vnet-rm-portal](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
-
-## <a name="add-additional-address-space-and-create-subnets"></a>Добавление дополнительного адресного пространства и создание подсетей
-После создания виртуальной сети в нее можно добавить дополнительное адресное пространство и подсети.
-
-[!INCLUDE [vpn-gateway-additional-address-space](../../includes/vpn-gateway-additional-address-space-include.md)]
 
 ## <a name="create-a-virtual-network-gateway"></a>Создание шлюза виртуальной сети
 На этом шаге вы создадите шлюз для своей виртуальной сети. Создание шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU шлюза. Если вы создаете эту конфигурацию в качестве упражнения, можно использовать [пример параметров](#example-settings).

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/30/2020
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 4f75adba27c8173f918fa1afbd44f307d50eb995
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9507428e63b337b3d8419a833d03d081d494c522
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76902027"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330810"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -52,7 +52,7 @@ ms.locfileid: "76902027"
 
 ## <a name="linux"></a>Linux
 
-В настоящее время пакет SDK для распознавания речи поддерживает дистрибутивы Ubuntu 16,04, Ubuntu 18,04 и Debian 9.
+В настоящее время пакет SDK для распознавания речи поддерживает дистрибутивы Ubuntu 16,04, Ubuntu 18,04, Debian 9, RHEL 8, CentOS 8.
 Для собственных приложений необходимо доставить библиотеку пакета SDK для службы "Речь", `libMicrosoft.CognitiveServices.Speech.core.so`.
 Убедитесь, что выбрана правильная версия (x86, x64), соответствующая приложению. В зависимости от версии Linux может потребоваться включить следующие зависимости:
 
@@ -73,6 +73,16 @@ sudo apt-get install libssl1.0.0 libasound2
 sudo apt-get update
 sudo apt-get install libssl1.0.2 libasound2
 ```
+
+В RHEL/CentOS 8:
+
+```sh
+sudo yum update
+sudo yum install alsa-lib openssl
+```
+
+> [!NOTE]
+> В RHEL/CentOS 8 следуйте инструкциям по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

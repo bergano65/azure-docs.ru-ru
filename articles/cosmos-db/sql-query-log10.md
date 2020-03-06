@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 5950a2a40a78716a76e49fcdaeb3129948b6a0e1
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 6f47200f6978d91f46c010640bb9c2bb26e9b7d5
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871063"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302497"
 ---
 # <a name="log10-azure-cosmos-db"></a>LOG10 (Azure Cosmos DB)
  Возвращает десятичный логарифм от указанного числового выражения.  
@@ -28,13 +28,13 @@ LOG10 (<numeric_expr>)
 *numeric_expression*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
-  Функции LOG10 и POWER обратно связаны друг с другом. Например, 10 ^ LOG10(n) = n.  
+  Функции LOG10 и POWER находятся в обратной зависимости друг от друга. Например, 10 ^ LOG10(n) = n.  
   
 ## <a name="examples"></a>Примеры
   
@@ -49,6 +49,10 @@ SELECT LOG10(100) AS log10
 ```json
 [{log10: 2}]  
 ```  
+
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

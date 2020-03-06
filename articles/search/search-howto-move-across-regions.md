@@ -8,81 +8,97 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: how-to
 ms.custom: subject-moving-resources
-ms.date: 02/18/2020
-ms.openlocfilehash: 392c86d8ea24e59d388926d4df581305ea2b531d
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.date: 03/05/2020
+ms.openlocfilehash: df712f48c5aff722a4f1a850788378fb78ea7335
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77599305"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78379584"
 ---
 # <a name="move-your-azure-cognitive-search-service-to-another-azure-region"></a>Перемещение службы Когнитивный поиск Azure в другой регион Azure
 
-Чтобы переместить учетную запись службы для работы с приложением Azure из одного региона в другой, создайте шаблон экспорта, который будет перемещать ваши подписки. После перемещения подписки необходимо переместить данные и повторно создать службу.
+В настоящее время перемещение службы поиска в другой регион не поддерживается, в отсутствие автоматизации или инструментария, помогающих в завершении задачи.
 
-В этой статье вы узнаете, как выполнять следующие задачи.
+На портале команда **Экспорт шаблона** создает базовое определение службы (имя, расположение, уровень, реплику и число секций), но не распознает содержимое службы и не выполняет перенос ключей, ролей или журналов.
+
+При перемещении поиска из одного региона в другой рекомендуется использовать следующий подход:
+
+1. Проведите инвентаризацию существующей службы, чтобы получить полный список объектов службы. Если вы включили ведение журнала, создайте и заархивируйте отчеты, которые могут потребоваться для сравнения в будущем.
+
+1. Создание службы в новом регионе и повторная публикация из исходного кода всех существующих индексов, индексаторов, источников данных, навыков и сопоставлений синонимов. Имена служб должны быть уникальными, поэтому нельзя повторно использовать существующее имя.
+
+1. Включите ведение журнала и, если вы используете их, повторно создайте роли безопасности.
+
+1. Обновите клиентские приложения и наборы тестов, чтобы использовать новое имя службы и ключи API, а также протестируйте все приложения.
+
+1. Удалите старую службу после того, как новая служба будет полностью работоспособна.
+
+<!-- To move your Azure Cognitive Service account from one region to another, you will create an export template to move your subscription(s). After moving your subscription, you will need to move your data and recreate your service.
+
+In this article, you'll learn how to:
 
 > [!div class="checklist"]
-> * Экспорт шаблона.
-> * Изменение шаблона: Добавление целевых регионов, поиска и имен учетных записей хранения.
-> * Разверните шаблон, чтобы создать новый поиск и учетные записи хранения.
-> * Проверка состояния службы в новом регионе
-> * Очистка ресурсов в исходном регионе.
+> * Export a template.
+> * Modify the template: adding the target region, search and storage account names.
+> * Deploy the template to create the new search and storage accounts.
+> * Verify your service status in the new region
+> * Clean up resources in the source region.
 
-## <a name="prerequisites"></a>Предварительные требования
+## Prerequisites
 
-- Убедитесь, что службы и функции, используемые вашей учетной записью, поддерживаются в целевом регионе.
+- Ensure that the services and features that your account uses are supported in the target region.
 
-- Для функций предварительной версии убедитесь, что ваша подписка список разрешений для целевого региона. Дополнительные сведения о функциях предварительной версии см. в [статье хранилища знаний](https://docs.microsoft.com/azure/search/knowledge-store-concept-intro), [добавочное](https://docs.microsoft.com/azure/search/cognitive-search-incremental-indexing-conceptual)дополнение и [Частная конечная точка](https://docs.microsoft.com/azure/search/service-create-private-endpoint).
+- For preview features, ensure that your subscription is whitelisted for the target region. For more information about preview features, see [knowledge stores](https://docs.microsoft.com/azure/search/knowledge-store-concept-intro), [incremental enrichment](https://docs.microsoft.com/azure/search/cognitive-search-incremental-indexing-conceptual), and [private endpoint](https://docs.microsoft.com/azure/search/service-create-private-endpoint).
 
-## <a name="assessment-and-planning"></a>Оценка и планирование
+## Assessment and planning
 
-При перемещении службы поиска в новый регион необходимо [переместить данные в новую службу хранилища](https://docs.microsoft.com/azure/storage/common/storage-account-move?tabs=azure-portal#configure-the-new-storage-account) , а затем перестроить индексы, навыков и хранилища знаний. Следует записывать текущие параметры и копировать JSON файлы, чтобы упростить и ускорить перестроение службы.
+When you move your search service to the new region, you will need to [move your data to the new storage service](https://docs.microsoft.com/azure/storage/common/storage-account-move?tabs=azure-portal#configure-the-new-storage-account) and then rebuild your indexes, skillsets and knowledge stores. You should record current settings and copy json files to make the rebuilding of your service easier and faster.
 
-## <a name="moving-your-search-services-resources"></a>Перемещение ресурсов службы поиска
+## Moving your search service's resources
 
-Для начала будет экспортирован и затем изменен шаблон диспетчер ресурсов.
+To start you will export and then modify a Resource Manager template.
 
-### <a name="export-a-template"></a>Экспорт шаблона
+### Export a template
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
-2. Перейдите на страницу группы ресурсов.
+2. Go to your Resource Group page.
 
 > [!div class="mx-imgBorder"]
-> Пример страницы ![группы ресурсов](./media/search-move-resource/export-template-sample.png)
+> ![Resource Group page example](./media/search-move-resource/export-template-sample.png)
 
-3. Щелкните **Все ресурсы**.
+3. Select **All resources**.
 
-3. В меню навигации слева выберите **Экспорт шаблона**.
+3. In the left hand navigation menu select **Export template**.
 
-4. На странице **Экспорт шаблона** нажмите кнопку **загрузить** .
+4. Choose **Download** in the **Export template** page.
 
-5. Выберите ZIP-файл, скачанный с портала, и распакуйте его в выбранную папку.
+5. Locate the .zip file that you downloaded from the portal, and unzip that file to a folder of your choice.
 
-ZIP-файл содержит JSON-файлы, составляющие шаблон и скрипты для развертывания шаблона.
+The zip file contains the .json files that comprise the template and scripts to deploy the template.
 
-### <a name="modify-the-template"></a>Изменение шаблона
+### Modify the template
 
-Шаблон будет изменен путем изменения имен и регионов для поиска и учетной записи хранения. Имена должны соответствовать правилам для каждого соглашения об именовании служб и регионов. 
+You will modify the template by changing the search and storage account names and regions. The names must follow the rules for each service and region naming conventions. 
 
-Чтобы получить коды расположения регионов, см. раздел [расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/).  Код для региона — это имя региона без пробелов, **Центральная американская** = **centralus**.
+To obtain region location codes, see [Azure Locations](https://azure.microsoft.com/global-infrastructure/locations/).  The code for a region is the region name with no spaces, **Central US** = **centralus**.
 
-1. На портале Azure выберите **Создать ресурс**.
+1. In the Azure portal, select **Create a resource**.
 
-2. В строке **Поиск в Marketplace** введите **развертывание шаблона** и нажмите клавишу **ВВОД**.
+2. In **Search the Marketplace**, type **template deployment**, and then press **ENTER**.
 
-3. Выберите **Развертывание шаблона**.
+3. Select **Template deployment**.
 
-4. Выберите **Создать**.
+4. Select **Create**.
 
-5. Выберите **Создать собственный шаблон в редакторе**.
+5. Select **Build your own template in the editor**.
 
-6. Выберите **загрузить файл**и следуйте инструкциям по загрузке файла **template. JSON** , скачанного и распакованного в предыдущем разделе.
+6. Select **Load file**, and then follow the instructions to load the **template.json** file that you downloaded and unzipped in the previous section.
 
-7. В файле **template. JSON** назовите целевой поиск и учетные записи хранения, задав значения по умолчанию для имен учетных записей хранения и поиска. 
+7. In the **template.json** file, name the target search and storage accounts by setting the default value of the search and storage account names. 
 
-8. Измените свойство **Location** в файле **template. JSON** на целевой регион для служб поиска и хранения. В этом примере целевому региону присваивается значение `centralus`.
+8. Edit the **location** property in the **template.json** file to the target region for both your search and storage services. This example sets the target region to `centralus`.
 
 ```json
 },
@@ -113,35 +129,34 @@ ZIP-файл содержит JSON-файлы, составляющие шабл
             },
 ```
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+### Deploy the template
 
-1. Сохраните файл **template. JSON** .
+1. Save the **template.json** file.
 
-2. Введите или выберите значения свойств:
+2. Enter or select the property values:
 
-- **Подписка**— выберите подписку Azure.
+- **Subscription**: Select an Azure subscription.
 
-- **Группа ресурсов**: щелкните **Создать** и укажите имя группы ресурсов.
+- **Resource group**: Select **Create new** and give the resource group a name.
 
-- **Расположение**. Выберите расположение Azure.
+- **Location**: Select an Azure location.
 
-3. Установите флажок **я принимаю указанные выше условия** и нажмите кнопку **выбрать покупку** .
+3. Click the **I agree to the terms and conditions stated above** checkbox, and then click the **Select Purchase** button.
 
-## <a name="verifying-your-services-status-in-new-region"></a>Проверка состояния служб в новом регионе
+## Verifying your services' status in new region
 
-Чтобы проверить перемещение, откройте новую группу ресурсов, и ваши службы будут перечислены в новом регионе.
+To verify the move, open the new resource group and your services will be listed with the new region.
 
-Чтобы переместить данные из исходного региона в целевой, ознакомьтесь с рекомендациями по [перемещению данных в новую учетную запись хранения](https://docs.microsoft.com/azure/storage/common/storage-account-move?tabs=azure-portal#move-data-to-the-new-storage-account)в этой статье.
+To move your data from your source region to the target region, please see this article's guidelines for [moving your data to the new storage account](https://docs.microsoft.com/azure/storage/common/storage-account-move?tabs=azure-portal#move-data-to-the-new-storage-account).
 
-## <a name="clean-up-resources-in-your-original-region"></a>Очистка ресурсов в исходном регионе
+## Clean up resources in your original region
 
-Чтобы сохранить изменения и завершить перемещение учетной записи службы, удалите учетную запись исходной службы.
+To commit the changes and complete the move of your service account, delete the source service account.
 
-## <a name="next-steps"></a>Следующие шаги
+## Next steps
 
-[Создание индекса](https://docs.microsoft.com/azure/search/search-get-started-portal)
+[Create an index](https://docs.microsoft.com/azure/search/search-get-started-portal)
 
-[Создание набора навыков](https://docs.microsoft.com/azure/search/cognitive-search-quickstart-blob)
+[Create a skillset](https://docs.microsoft.com/azure/search/cognitive-search-quickstart-blob)
 
-[Создание хранилища знаний](https://docs.microsoft.com/azure/search/knowledge-store-create-portal)
-
+[Create a knowledge store](https://docs.microsoft.com/azure/search/knowledge-store-create-portal) -->

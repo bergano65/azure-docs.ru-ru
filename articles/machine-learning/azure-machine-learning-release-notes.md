@@ -8,14 +8,13 @@ ms.subservice: core
 ms.topic: reference
 ms.author: jmartens
 author: j-martens
-ms.date: 01/21/2020
-ms.custom: seodec18
-ms.openlocfilehash: 6f244fc057638bc94a94c150d9333435c0197a74
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.date: 03/10/2020
+ms.openlocfilehash: 9407ad09a9b30e11cbf1e3f3debb357df46e316d
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78249749"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399457"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -335,11 +334,11 @@ ms.locfileid: "78249749"
 
 Доступ к следующим веб-средствам разработки из студии:
 
-| Веб-инструмент | Description | Выпуск |
+| Веб-инструмент | Описание | Выпуск |
 |-|-|-|
 | Виртуальная машина записной книжки (Предварительная версия) | Полностью управляемая облачная Рабочая станция | Базовый & Enterprise |
-| [Автоматизированное машинное обучение](tutorial-first-experiment-automated-ml.md) (Предварительная версия) | Без взаимодействия с кодом для автоматизации разработки моделей машинного обучения | Enterprise |
-| [Конструктор](concept-designer.md) (Предварительная версия) | Средство моделирования машинного обучения, ранее известное как конструктор | Enterprise |
+| [Автоматизированное машинное обучение](tutorial-first-experiment-automated-ml.md) (Предварительная версия) | Без взаимодействия с кодом для автоматизации разработки моделей машинного обучения | Корпоративная |
+| [Конструктор](concept-designer.md) (Предварительная версия) | Средство моделирования машинного обучения, ранее известное как конструктор | Корпоративная |
 
 
 ### <a name="azure-machine-learning-designer-enhancements"></a>Усовершенствования конструктора Машинное обучение Azure
@@ -523,13 +522,13 @@ ms.locfileid: "78249749"
   + **azureml-Training-Core**
     + Добавлена поддержка TensorFlow 2,0 в Оценщике TensorFlow.
   + **azureml-Training-аутомл**
-    + Создание объекта [эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример
+    + Создание объекта [эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример.
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        Функция [Archive ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример
+        Функция [Archive ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример.
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -538,7 +537,7 @@ ms.locfileid: "78249749"
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример
+        Список статических методов [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример.
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
@@ -1790,6 +1789,6 @@ ms.locfileid: "78249749"
 Новый обновленный выпуск Машинное обучение Azure: Дополнительные сведения об этом выпуске: https://azure.microsoft.com/blog/what-s-new-in-azure-machine-learning-service/
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](overview-what-is-azure-ml.md).

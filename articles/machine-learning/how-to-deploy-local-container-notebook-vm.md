@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
-ms.date: 10/25/2019
-ms.openlocfilehash: 28d176289a0b6cfe659f390feb441158c57f6533
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.date: 03/05/2020
+ms.openlocfilehash: afbd9950c31bc1c40b01ec0aaf3d2bfffb8a6b94
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169937"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78398205"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
@@ -29,7 +29,7 @@ ms.locfileid: "77169937"
 > [!TIP]
 > Развертывание модели из Jupyter Notebook на вычислительном экземпляре в веб-службу на той же виртуальной машине является _локальным развертыванием_. В этом случае "локальный" компьютер является вычислительным экземпляром. Дополнительные сведения о развертываниях см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область Машинное обучение Azure с выполняющимся вычислительным экземпляром. Дополнительные сведения см. в статье [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
@@ -51,7 +51,7 @@ ms.locfileid: "77169937"
     * Виртуальная машина записной книжки: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score`. 
     * Вычислительный экземпляр: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score`. 
 
-    Например, 
+    Пример: 
     * Виртуальная машина записной книжки: `https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
     * Вычислительный экземпляр: `https://vm-name-6789.northcentralus.instances.azureml.net/score`
 
@@ -92,7 +92,7 @@ resp = requests.post(service_url, test_sample, headers=headers)
 print("prediction:", resp.text)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 7495c6b114e232a9aad0075e173abebcb3c92cd0
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
-ms.translationtype: HT
+ms.openlocfilehash: 4ce56b64502904308f45c74a5471447d93419452
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78273596"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303058"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Средства переменных в службе автоматизации Azure
 
@@ -33,9 +33,6 @@ ms.locfileid: "78273596"
 При создании переменной можно указать ее шифрование и хранение с помощью службы автоматизации Azure в качестве безопасного ресурса. К другим защищенным активам относятся учетные данные, сертификаты и подключения. Служба автоматизации Azure шифрует эти ресурсы и сохраняет их с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Ключ хранится в управляемом системой Key Vault. Перед сохранением защищенного ресурса служба автоматизации Azure загружает ключ из Key Vault и использует его для шифрования ресурса. 
 
 Служба автоматизации Azure хранит каждую зашифрованную переменную безопасно. Его значение невозможно получить с помощью командлета [Get-азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) , который поставляется в составе модуля Azure PowerShell. Единственным способом получения зашифрованного значения является использование действия **Get-AutomationVariable** в модуле Runbook или конфигурации DSC.
-
->[!NOTE]
->Если требуется удалить шифрование для переменной, необходимо удалить переменную и создать ее повторно как незашифрованную.
 
 >[!NOTE]
 >Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке AZ Module в гибридной рабочей роли Runbook см. в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
@@ -60,7 +57,7 @@ ms.locfileid: "78273596"
 
 Для модуля AZ командлеты, приведенные в следующей таблице, используются для создания ресурсов переменных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются в составе [модуля AZ. Automation](/powershell/azure/overview), который доступен для использования в модулях Runbook службы автоматизации и конфигурациях DSC.
 
-| Командлет | Описание |
+| Командлет | Description |
 |:---|:---|
 |[Get-Азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable?view=azps-3.5.0) | Получает значение существующей переменной.|
 |[New-Азаутоматионвариабле](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationvariable?view=azps-3.5.0) | Создает новую переменную и устанавливает ее значение.|
@@ -71,7 +68,7 @@ ms.locfileid: "78273596"
 
 Действия, приведенные в следующей таблице, используются для доступа к переменным в модулях Runbook и конфигурациях DSC. Разница между **Get-азаутоматионвариабле** и **Get-AutomationVariable** описана для зашифрованных переменных в начале этой статьи.
 
-| Действие | Описание |
+| Действие | Description |
 |:---|:---|
 |**Get-AutomationVariable**|Получает значение существующей переменной.|
 |**Set-AutomationVariable**|Получает значение существующей переменной.|
@@ -81,7 +78,7 @@ ms.locfileid: "78273596"
 
 Функции, приведенные в следующей таблице, используются для доступа к переменным и их извлечения в модуле Runbook Python2.
 
-|Функции Python2|Описание|
+|Функции Python2|Description|
 |:---|:---|
 |automationassets.get_automation_variable|Получает значение существующей переменной. |
 |automationassets.set_automation_variable|Получает значение существующей переменной. |
@@ -96,6 +93,9 @@ ms.locfileid: "78273596"
 1. В учетной записи службы автоматизации щелкните плитку **Ресурсы**, а затем в колонке **Ресурсы** выберите **Переменные**.
 2. На плитке **Переменные** выберите **Добавить переменную**.
 3. Заполните параметры в колонке **Новая переменная** и нажмите кнопку **создать** , чтобы сохранить новую переменную.
+
+>[!NOTE]
+>Если требуется удалить шифрование для переменной, необходимо удалить переменную и создать ее повторно как незашифрованную.
 
 ### <a name="create-a-new-variable-with-windows-powershell"></a>Создание новой переменной с помощью Windows PowerShell
 
@@ -186,7 +186,7 @@ except AutomationAssetNotFound:
 
 ![Задание простой переменной](../media/variables/runbook-set-simple-variable.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключении действий в графической разработке см. [в разделе ссылки в графической разработке](../automation-graphical-authoring-intro.md#links-and-workflow).
 - Чтобы приступить к работе с графическими модулями Runbook, см. раздел [Мой первый графический модуль Runbook](../automation-first-runbook-graphical.md).

@@ -1,18 +1,18 @@
 ---
-title: IS_DEFINED на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System IS_DEFINED в Azure Cosmos DB.
+title: IS_DEFINED языка запросов Azure Cosmos DB
+description: Сведения о IS_DEFINED системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 2c3193262a41b3c6772d4fe29c78a132bc51bbd8
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: a5fcaf52d8e9e6b942a95f0b0c43f3f654c5d5d2
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349872"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303857"
 ---
 # <a name="is_defined-azure-cosmos-db"></a>IS_DEFINED (Azure Cosmos DB)
  Возвращает логическое значение, указывающее, назначено ли свойству значение.  
@@ -28,7 +28,7 @@ IS_DEFINED(<expr>)
 *expr*  
    Любое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает логическое выражение.  
   
@@ -46,7 +46,11 @@ SELECT IS_DEFINED({ "a" : 5 }.a) AS isDefined1, IS_DEFINED({ "a" : 5 }.b) AS isD
 [{"isDefined1":true,"isDefined2":false}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции проверки типов Azure Cosmos DB](sql-query-type-checking-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

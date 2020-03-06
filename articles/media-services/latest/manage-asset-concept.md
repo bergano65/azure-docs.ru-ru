@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/29/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 1e912e8147f83571d073d5456019d043ff983ceb
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: b1ec4ee3d7a51c2a21a5bbd8888ea4662cf78bf5
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77925622"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78304163"
 ---
 # <a name="manage-assets"></a>Управление активами
 
@@ -94,7 +94,7 @@ curl -X PUT \
  Asset asset = await client.Assets.CreateOrUpdateAsync(resourceGroupName, accountName, assetName, new Asset());
 ```
 
-### <a name="also-see"></a>См. также:
+### <a name="see-also"></a>См. также раздел
 
 * [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md)
 * [Создание входных данных задания на основе URL-адреса HTTPS](job-input-from-http-how-to.md)
@@ -135,7 +135,7 @@ curl -X PUT \
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с полными примерами кода, демонстрирующими передачу, кодирование, анализ, потоковую передачу и по запросу: 
 

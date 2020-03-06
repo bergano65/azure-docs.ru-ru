@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 0273a0a729d39de27b9e417c23624992d1d55b42
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: b7ca4677507f73467dddac09050f250ae34342a9
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064410"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78329475"
 ---
 # <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени
 
@@ -94,7 +94,7 @@ ms.locfileid: "77064410"
     >[!NOTE]
     >Вы должны работать с концентратором событий, а не пространством имен концентратора.
 
-3.  Добавьте политику с именем `sa-policy-manage-demo`, а для параметра **Утверждение** выберите **Управление**.
+3.  Добавьте политику с именем `asa-policy-manage-demo`, а для параметра **Утверждение** выберите **Управление**.
 
     <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-shared-access-policy-manage-new-portal.png" alt="Create shared access policy for Stream Analytics" width="300px"/>
  

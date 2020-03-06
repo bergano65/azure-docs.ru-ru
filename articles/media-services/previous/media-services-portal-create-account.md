@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 234c8be8c696ca7381b8860680d072e84820d424
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1904ed9707859f0d00bca3b6e3aef90d1346cea5
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75431981"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331508"
 ---
 # <a name="create-a-media-services-account-using-the-azure-portal"></a>Создание учетной записи Служб мультимедиа с помощью портала Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "75431981"
 > [!NOTE]
 > Дополнительные сведения о доступности функций служб мультимедиа Azure в различных регионах см. в [этой статье](scenarios-and-availability.md#availability).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
 
@@ -46,13 +46,9 @@ ms.locfileid: "75431981"
 В этом разделе показано, как создать учетную запись AMS.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Выберите последовательно **+ Создать** > **Интернет + мобильные устройства** > **Службы мультимедиа**.
-   
-    ![Создание служб мультимедиа](./media/media-services-create-account/media-services-new1.png)
+2. Щелкните **+ создать ресурс** > **мультимедиа** > **служб мультимедиа**.
 3. В окне **создания учетной записи служб мультимедиа** введите необходимые значения.
-   
-    ![Создание служб мультимедиа](./media/media-services-create-account/media-services-new3.png)
-   
+
    1. Укажите **имя учетной записи**AMS. Имя учетной записи служб мультимедиа может состоять из цифр или букв в нижнем регистре без пробелов и должно иметь длину от 3 до 24 символов.
    2. В поле "Подписка" выберите одну из доступных подписок Azure.
    3. Выберите новую или существующую **группу ресурсов**.  Группа ресурсов — это коллекция ресурсов с одинаковым жизненным циклом, разрешениями и политиками. Дополнительные сведения см. [здесь](../../azure-resource-manager/management/overview.md#resource-groups).
@@ -72,7 +68,6 @@ ms.locfileid: "75431981"
 
 Для управления учетной записью AMS (например, для программного подключения к API AMS, отправки видео, кодирования ресурсов, настройки системы защиты содержимого, мониторинга хода выполнения задания) выберите **Параметры** в левой части портала. В разделе **Параметры** перейдите к одной из доступных колонок (например, **Доступ через API**, **Ресурсы**, **Задания**, **Защита содержимого**).
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно отправить файлы в учетную запись AMS. Дополнительные сведения см. в статье [Отправка файлов в учетную запись служб мультимедиа с помощью портала Azure](media-services-portal-upload-files.md).
@@ -82,6 +77,6 @@ ms.locfileid: "75431981"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

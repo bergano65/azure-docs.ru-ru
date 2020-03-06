@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 1d203fd0c6777eee96311f45f4d5dfb8728ff431
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 48935dc74d6d22bcafa31afebbdfcb829e122815
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210607"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399232"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование на стороне сервера для управляемых дисков Azure
 
@@ -72,6 +72,7 @@ ms.locfileid: "77210607"
 - Все ресурсы, связанные с ключами, управляемыми клиентом (хранилища ключей Azure, наборы шифрования дисков, виртуальные машины, диски и моментальные снимки), должны находиться в одной подписке и регионе.
 - Диски, моментальные снимки и образы, зашифрованные с помощью управляемых клиентом ключей, не могут переместиться в другую подписку.
 - Если вы используете портал Azure для создания набора шифрования диска, использовать моментальные снимки сейчас нельзя.
+- Управляемые диски, зашифрованные с помощью ключей, управляемых клиентом, также не шифруются с помощью шифрования дисков Azure.
 
 ### <a name="cli"></a>CLI
 #### <a name="setting-up-your-azure-key-vault-and-diskencryptionset"></a>Настройка Azure Key Vault и Дискенкриптионсет

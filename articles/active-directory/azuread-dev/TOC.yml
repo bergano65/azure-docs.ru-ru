@@ -155,8 +155,8 @@
           href: active-directory-acs-migration.md
         - name: Повторная активация отключенных пространств имен службы контроля доступа
           href: howto-reactivate-disabled-acs-namespaces.md
-    - name: Использование API Graph Azure AD
-      href: ../develop/active-directory-graph-api-quickstart.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Использование API Microsoft Graph
+      href: ../develop/microsoft-graph-intro.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
     - name: AD FS для разработчиков
       href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers'
 - name: Ссылки
@@ -164,8 +164,8 @@
     - name: Библиотеки проверки подлинности
       displayName: ADAL
       href: active-directory-authentication-libraries.md
-    - name: "API Graph Azure\_AD"
-      href: ../develop/active-directory-graph-api.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: API Microsoft Graph
+      href: ../develop/microsoft-graph-intro.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
     - name: Манифест приложения
       href: ../develop/reference-app-manifest.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
     - name: Коды ошибок проверки подлинности и авторизации

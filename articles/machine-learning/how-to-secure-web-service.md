@@ -1,7 +1,7 @@
 ---
-title: Защита веб-служб с помощью SSL
+title: Защита веб-служб с помощью TLS
 titleSuffix: Azure Machine Learning
-description: Узнайте, как включить протокол HTTPS для защиты веб-службы, развернутой с помощью Машинное обучение Azure.
+description: Узнайте, как включить протокол HTTPS для защиты веб-службы, развернутой с помощью Машинное обучение Azure. Машинное обучение Azure использует TLS версии 1,2 для защиты моделей, развернутых как веб-службы.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 08/12/2019
+ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 34c6071a127d0fc0c967991582f629c6ae713783
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 1f4b699476902fa24fa285754f13b1c61ddca8f0
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905212"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78355533"
 ---
-# <a name="use-ssl-to-secure-a-web-service-through-azure-machine-learning"></a>Использование SSL для защиты веб-службы с помощью Машинное обучение Azure
+# <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>Использование TLS для защиты веб-службы с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этой статье показано, как защитить веб-службу, развернутую с помощью Машинное обучение Azure.
@@ -258,6 +258,6 @@ aks_target.update(update_config)
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-На вебинаре будут рассматриваться следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 + [Использование модели Машинного обучения, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 + [Безопасный запуск экспериментов и вывод в виртуальной сети Azure](how-to-enable-virtual-network.md)

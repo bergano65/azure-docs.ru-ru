@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/13/2020
-ms.openlocfilehash: 607020f1d540e83a4d049b96b9ab9a4ebcd385f0
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: abc3cc8c526e37e18f1e67b109a9a8e15ff8c989
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76157259"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302718"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
 
@@ -22,7 +22,7 @@ ms.locfileid: "76157259"
 > [!NOTE]  
 > Если вы уже знакомы с использованием серверов Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь с документом [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
@@ -171,7 +171,7 @@ ms.locfileid: "76157259"
 
 1. После изменения состояния задания на `SUCCEEDED` результаты задания можно получить из хранилища BLOB-объектов Azure. Параметр `statusdir`, передаваемый в запросе, содержит расположение выходного файла. В данном случае это `/example/curl`. Этот адрес задает каталог `/example/curl` для сохранения выходных данных задания, который размещен в хранилище по умолчанию для кластера.
 
-Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения о работе с большими двоичными объектами с помощью интерфейса командной строки Azure CLI см. в документе [Использование Azure CLI со службой хранилища Microsoft Azure](../../storage/common/storage-azure-cli.md#create-and-manage-blobs).
+Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI для работы с хранилищем BLOB-объектов Azure см. в разделе [Краткое руководство. Создание, скачивание и перечисление больших двоичных объектов с помощью Azure CLI](../../storage/blobs/storage-quickstart-blobs-cli.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

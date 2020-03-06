@@ -10,18 +10,18 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: dapine
-ms.openlocfilehash: 5c8b3ed329c03bd08b2a0b3e26ada7a4e36ceb49
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 1968bc03bfddb9d6f6c8fe743a2a1a99722c074d
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716878"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399179"
 ---
 # <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера обнаружения языка Анализ текста в службе Kubernetes Azure
 
 Узнайте, как развертывать контейнер распознавания языка. В статье описано, как создавать локальные контейнеры Docker, отправлять их в закрытый реестр контейнеров и запускать в кластере Kubernetes, а также тестировать в веб-браузере.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell.
 
@@ -34,7 +34,7 @@ ms.locfileid: "76716878"
   * Ресурс **Анализ текста** с ценовой категорией F0 или "Стандартный".
   * Ресурс **Cognitive Services** с ценовой категорией S0.
 
-## <a name="running-the-sample"></a>Выполнение примера
+## <a name="running-the-sample"></a>Запуск образца
 
 Эта процедура загружает и выполняет пример контейнера Cognitive Services для распознавания языка. Пример содержит два контейнера: один для клиентского приложения и второй для контейнера Cognitive Services. Мы будем отправлять оба этих образа в реестр контейнеров Azure. Разместив их в собственном реестре, создайте Службу Azure Kubernetes для доступа к образам и выполнения контейнеров. Когда контейнеры будут запущены, используйте интерфейс командной строки **kubectl** для контроля производительности контейнеров. Создайте HTTP-запрос к клиентскому приложению и проверьте результаты его выполнения.
 
@@ -80,8 +80,11 @@ ms.locfileid: "76716878"
 
     Сохраните результаты, чтобы получить значение свойства **loginServer**. Оно будет частью адреса для размещенного контейнера, который вы позднее будете использовать в файле `language.yml`.
 
-    ```console
-    > az acr create --resource-group cogserv-container-rg --name pattyregistry --sku Basic
+    ```azurecli-interactive
+    az acr create --resource-group cogserv-container-rg --name pattyregistry --sku Basic
+    ```
+
+    ```output
     {
         "adminUserEnabled": false,
         "creationDate": "2019-01-02T23:49:53.783549+00:00",
@@ -136,8 +139,7 @@ ms.locfileid: "76716878"
 
     Когда этот процесс завершится, результаты должны выглядеть примерно так:
 
-    ```console
-    > docker push pattyregistry.azurecr.io/language-frontend:v1
+    ```output
     The push refers to repository [pattyregistry.azurecr.io/language-frontend]
     82ff52ee6c73: Pushed
     07599c047227: Pushed
@@ -180,8 +182,7 @@ ms.locfileid: "76716878"
 
     Сохраните из результата значение `appId`, которое вы присвоите параметру `<appId>` (уполномоченный объект) на шаге 3. Сохраните значение `password`, которое вы присвоите параметру `<client-secret>` (секрет клиента) в следующем разделе.
 
-    ```console
-    > az ad sp create-for-rbac --skip-assignment
+    ```output
     {
       "appId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "displayName": "azure-cli-2018-12-31-18-39-32",
@@ -199,8 +200,7 @@ ms.locfileid: "76716878"
 
     Сохраните результат, чтобы присвоить его параметру `<acrId>` (область действия) на следующем шаге. Он выглядит следующим образом:
 
-    ```console
-    > az acr show --resource-group cogserv-container-rg --name pattyregistry --query "id" --o table
+    ```output
     /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/cogserv-container-rg/providers/Microsoft.ContainerRegistry/registries/pattyregistry
     ```
 
@@ -222,8 +222,7 @@ ms.locfileid: "76716878"
 
     Этот шаг может занять несколько минут. Результат:
 
-    ```console
-    > az aks create --resource-group cogserv-container-rg --name patty-kube --node-count 2  --service-principal <appId>  --client-secret <client-secret>  --generate-ssh-keys
+    ```output
     {
       "aadProfile": null,
       "addonProfiles": null,
@@ -300,8 +299,7 @@ ms.locfileid: "76716878"
 
     Ответ выглядит следующим образом:
 
-    ```console
-    > kubectl get nodes
+    ```output
     NAME                       STATUS    ROLES     AGE       VERSION
     aks-nodepool1-13756812-0   Ready     agent     6m        v1.9.11
     aks-nodepool1-13756812-1   Ready     agent     6m        v1.9.11
@@ -337,8 +335,7 @@ ms.locfileid: "76716878"
 
     Ответ:
 
-    ```console
-    > kubectl apply -f language.yml
+    ```output
     service "language-frontend" created
     deployment.apps "language-frontend" created
     service "language" created
@@ -353,8 +350,7 @@ ms.locfileid: "76716878"
 kubectl get all
 ```
 
-```console
-> kubectl get all
+```output
 NAME                                     READY     STATUS    RESTARTS   AGE
 pod/language-586849d8dc-7zvz5            1/1       Running   0          13h
 pod/language-frontend-68b9969969-bz9bg   1/1       Running   1          13h
@@ -405,7 +401,7 @@ az group delete --name cogserv-container-rg
 
 * [kubectl для пользователей Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

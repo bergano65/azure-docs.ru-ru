@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 2d1f90da50950ac6ff4f87ffe96ebad9f3d811cc
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 18acbd94fa3d717fc20b9e1020b9bf7c6db7744d
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349277"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302922"
 ---
 # <a name="stringtoarray-azure-cosmos-db"></a>Стрингтоаррай (Azure Cosmos DB)
  Возвращает выражение, преобразованное в массив. Если выражение не может быть преобразовано, возвращает значение undefine.  
@@ -28,16 +28,16 @@ StringToArray(<str_expr>)
 *str_expr*  
    Строковое выражение, анализируемое как выражение массива JSON. 
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает выражение массива или значение undefine. 
   
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   Вложенные строковые значения должны быть записаны с двойными кавычками, чтобы быть допустимыми JSON. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как `StringToArray` ведет себя по разным типам. 
+  В следующем примере показано, как `StringToArray` ведет себя между различными типами. 
   
  Ниже приведены примеры с допустимыми входными данными.
 
@@ -59,7 +59,7 @@ SELECT
 Ниже приведен пример недопустимых входных данных. 
    
  Одинарные кавычки в массиве не являются допустимыми JSON.
-Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые массивы. Строки в строке массива должны либо быть экранированы "[\\" \\ "]", либо окружающая кавычка должна быть единственной "[" "]".
+Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые массивы. Строки в строке массива должны либо быть экранированы "[\\"\\"]", либо окружающая кавычка должна быть единственной "[" "]".
 
 ```sql
 SELECT
@@ -91,7 +91,11 @@ SELECT
 [{}]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

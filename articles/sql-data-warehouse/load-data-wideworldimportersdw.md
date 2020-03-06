@@ -11,12 +11,12 @@ ms.date: 07/17/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, synapse-analytics
-ms.openlocfilehash: 8e58c315ddc171ba19e0bce1cea4f694691f946e
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: d8242731466df9b80a6a6c3f0e340d6deb76e7d4
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78193666"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78304044"
 ---
 # <a name="tutorial-load-data-to--azure-synapse-analytics-sql-pool"></a>Учебник. Загрузка данных в пул SQL Azure синапсе Analytics
 

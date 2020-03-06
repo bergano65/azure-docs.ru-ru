@@ -4,12 +4,12 @@ description: Рекомендации для оператора кластера
 services: container-service
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: a58a42f65472a9c4b495e0cb964eefa40bf82041
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: b1336d10b091be4f3eb2a711401cafd3f58221fe
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77649625"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399475"
 ---
 # <a name="best-practices-for-storage-and-backups-in-azure-kubernetes-service-aks"></a>Рекомендации по хранению и резервному копированию в Службе Azure Kubernetes (AKS)
 
@@ -75,7 +75,7 @@ ms.locfileid: "77649625"
 
 ![Утверждения постоянного тома в кластере AKS](media/concepts-storage/persistent-volume-claims.png)
 
-Утверждение постоянного тома позволяет динамически создавать хранилища, когда они потребуются. Базовые диски Azure создаются только при получении запроса от групп pod. В определении групп pod вы определяете запрашиваемый объем тома и путь для его подключения
+Утверждение постоянного тома позволяет динамически создавать хранилища, когда они потребуются. Базовые диски Azure создаются только при получении запроса от групп pod. В определении Pod вы запрашиваете том, который будет создан и подключен к назначенному пути подключения.
 
 Основные сведения о динамическом создании и использовании томов см. в разделе [утверждения постоянных томов][aks-concepts-storage-pvcs].
 

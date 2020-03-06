@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/10/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 89fa06dda418f328b3bc07aada49aa347e35220a
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 1e18223736964b0327a4c8f6ddb73ddb4f58889a
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73182274"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78305048"
 ---
 ## <a name="rootcert"></a>Создание самозаверяющего корневого сертификата
 
@@ -28,6 +28,7 @@ ms.locfileid: "73182274"
    -HashAlgorithm sha256 -KeyLength 2048 `
    -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsageProperty Sign -KeyUsage CertSign
    ```
+ 3. Если вы хотите создать сертификат клиента сразу после создания этого корневого сертификата, Оставьте консоль PowerShell открытой.
 
 ## <a name="clientcert"></a>Создание сертификата клиента
 
@@ -37,7 +38,7 @@ ms.locfileid: "73182274"
 
 В примерах используется командлет New-SelfSignedCertificate для создания сертификата клиента, срок действия которого истекает через год. Дополнительные сведения о параметре, например о задании другого значения срока действия сертификата клиента, см. в разделе [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate).
 
-### <a name="example-1"></a>Пример 1
+### <a name="example-1---powershell-console-session-still-open"></a>Пример 1. сеанс консоли PowerShell по-прежнему открыт
 
 Если вы не закрыли консоль PowerShell после создания самозаверяющего корневого сертификата, воспользуйтесь этим примером. Этот пример является продолжением предыдущего раздела и в нем используется переменная $cert. Если вы закрыли консоль PowerShell после создания самозаверяющего корневого сертификата или создаете дополнительные сертификаты клиента в новом сеансе консоли PowerShell, выполните инструкции, описанные в [примере 2](#ex2).
 
@@ -51,7 +52,7 @@ New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature 
 -Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
 ```
 
-### <a name="ex2"></a>Пример 2
+### <a name="ex2"></a>Пример 2. новый сеанс консоли PowerShell
 
 Если вы создаете дополнительные сертификаты клиента или не используете тот же сеанс PowerShell, в котором был создан самозаверяющий корневой сертификат, выполните следующее.
 

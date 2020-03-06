@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о резервном ко
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о защите общих папок Azure с помощью службы Azure Backup.
 ms.date: 07/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 053fe38b07fff5d289c72024ef185fbf5d647f70
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: c69d4642aefbd599d3783dcdfa059a0cd9d129d9
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294003"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302548"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "76294003"
 - НВВ (Западная Норвегия)
 - СЗН (Северная Швейцария)
 
-Отправьте электронное сообщение по адресу [AskAzureBackupTeam@microsoft.com](email:askazurebackupteam@microsoft.com), если вам нужно использовать функцию в географическом регионе, не указанном выше.
+Отправьте электронное сообщение по адресу [AskAzureBackupTeam@microsoft.com](mailto:askazurebackupteam@microsoft.com), если вам нужно использовать функцию в географическом регионе, не указанном выше.
 
 ### <a name="how-many-azure-file-shares-can-i-protect-in-a-vault"></a>Сколько файловых ресурсов Azure можно защитить в хранилище?
 
@@ -93,7 +93,7 @@ ms.locfileid: "76294003"
 
 Нет. Все файловые ресурсы в учетной записи хранения могут быть защищены только одним хранилищем.
 
-## <a name="backup"></a>Архивация
+## <a name="backup"></a>Резервное копирование
 
 ### <a name="how-many-scheduled-backups-can-i-configure-per-file-share"></a>Сколько запланированных задач резервного копирования можно настроить для файлового ресурса?
 
@@ -103,7 +103,7 @@ ms.locfileid: "76294003"
 
 В любое время вы можете хранить до 200 моментальных снимков для файлового ресурса. При этом учитываются моментальные снимки, сделанные службой Azure Backup в соответствии с политикой. Если операции резервного копирования завершаются сбоем после достижения этого ограничения, удалите точки восстановления по запросу для успешной архивации.
 
-## <a name="restore"></a>Восстановление
+## <a name="restore"></a>Восстановить
 
 ### <a name="can-i-recover-from-a-deleted-azure-file-share"></a>Можно ли выполнить восстановление из удаленного файлового ресурса Azure?
 

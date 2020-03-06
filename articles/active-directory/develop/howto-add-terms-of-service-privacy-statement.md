@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: f28c33f20556825d84edda34752ac64714327526
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 8fc85781f139b45e9e37f6e0f7cc36974041352d
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697342"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78300015"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
@@ -53,7 +53,7 @@ ms.locfileid: "76697342"
 
 * [с помощью портала Azure](#azure-portal);
 * [с помощью JSON объекта приложения](#app-object-json);
-* [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
+* [Использование API Microsoft Graph](#msgraph-rest-api)
 
 ### <a name="azure-portal"></a>Использование портал Azure
 Выполните следующие действия в портал Azure.
@@ -77,12 +77,12 @@ ms.locfileid: "76697342"
     }
 ```
 
-### <a name="msgraph-beta-rest-api"></a>Использование бета-версии REST API MSGraph
+### <a name="msgraph-rest-api"></a>Использование API Microsoft Graph
 
-Чтобы программно обновить все приложения, можно воспользоваться бета-версией REST API MSGraph и добавить в них ссылки на условия обслуживания и заявление о конфиденциальности.
+Для программного обновления всех приложений можно использовать API Microsoft Graph, чтобы обновить все приложения, включив ссылки на условия предоставления услуг и документов заявления о конфиденциальности.
 
 ```
-PATCH https://graph.microsoft.com/beta/applications/{application id}
+PATCH https://graph.microsoft.com/v1.0/applications/{application id}
 { 
     "appId": "{your application id}", 
     "info": { 
@@ -97,4 +97,4 @@ PATCH https://graph.microsoft.com/beta/applications/{application id}
 
 > [!NOTE]
 > * Соблюдайте осторожность, чтобы не перезаписать значения, присвоенные какому-либо из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`.
-> * Бета-версия REST API MSGraph будет работать только в случае входа с учетной записью Azure AD. Личные учетные записи Майкрософт не поддерживаются.
+> * Microsoft Graph API работает только при входе с помощью учетной записи Azure AD. Личные учетные записи Майкрософт не поддерживаются.

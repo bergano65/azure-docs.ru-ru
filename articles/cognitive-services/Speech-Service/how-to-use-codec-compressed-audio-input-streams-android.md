@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: amishu
-ms.openlocfilehash: 01135229167dde3784137ab1b06dfc931766a2e0
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 1539ca9aa18892f617f278e67c8b6141f5f6d880
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74805847"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331133"
 ---
 # <a name="how-to-use-codec-compressed-audio-input-with-the-speech-sdk-on-android"></a>Как использовать сжатый аудиокодек с пакетом SDK для Android
 
 Сжатый аудио-API-интерфейс пакета речевого **ввода** предоставляет способ потоковой передачи сжатого звука в службу распознавания речи с помощью Пуллстреам или пушстреам.
 
 > [!IMPORTANT]
-> В настоящее время поддерживается потоковая передача сжатых аудио-данных [ C++в, C#и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9)](how-to-use-codec-compressed-audio-input-streams.md). Она также поддерживается для Java в Android и [цели-C на платформе iOS](how-to-use-codec-compressed-audio-input-streams-ios.md) .
+> В настоящее время поддерживается потоковая передача сжатых аудио-данных для [ C++, C#и Java в Linux (Ubuntu 16,04, Ubuntu 18,04, Debian 9, RHEL 8, CentOS 8)](how-to-use-codec-compressed-audio-input-streams.md). Она также поддерживается для Java в Android и [цели-C на платформе iOS](how-to-use-codec-compressed-audio-input-streams-ios.md) .
 > Требуется пакет SDK для распознавания речи версии 1.7.0 или выше.
 
 Сведения о WAV/PCM см. в документации по магистрали. За пределами WAV/PCM поддерживаются следующие сжатые форматы входных данных кодеков:
@@ -37,7 +37,7 @@ ms.locfileid: "74805847"
 
 Сжатый аудиокодек реализован с помощью [гстреамер](https://gstreamer.freedesktop.org). В целях лицензирования двоичные файлы Гстреамер не компилируются вместе с пакетом SDK. Вам потребуется использовать предварительно созданные двоичные файлы для Android. Сведения о загрузке предварительно созданных библиотек см. в разделе [Установка для разработки Android](https://gstreamer.freedesktop.org/documentation/installing/for-android-development.html?gi-language=c).
 
-Значение `libgstreamer_android.so` обязательно. Убедитесь, что подключаемые модули Гстреамер связаны в `libgstreamer_android.so`.
+требуется `libgstreamer_android.so`. Убедитесь, что подключаемые модули Гстреамер связаны в `libgstreamer_android.so`.
 
 ```make
 GSTREAMER_PLUGINS := coreelements app audioconvert mpg123 audioresample audioparsers ogg opusparse opus wavparse alaw mulaw flac

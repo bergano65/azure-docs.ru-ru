@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/26/2019
+ms.date: 03/04/2020
 ms.author: juliako
-ms.openlocfilehash: 1cc0132cc17217c858060e107dfcfc090a3ef8a7
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 3a9568e1a0307cd1713c511ef42c065424306548
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75611004"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302888"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -56,7 +56,7 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
     });
 ```
 
-### <a name="encrypted"></a>Зашифрованный 
+### <a name="encrypted"></a>зашифрованные; 
 
 Если необходимо зашифровать содержимое с помощью шифрования CENC, задайте для политики значение "Predefined_MultiDrmCencStreaming". Шифрование Widevine будет применяться к потоку ШТРИХа, а PlayReady — к Smooth. Ключ будет доставлен клиенту воспроизведения на основе настроенных лицензий DRM.
 
@@ -93,17 +93,18 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 |Язык|API|
 |---|---|
 |REST|[листстреаминглокаторс](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators)|
-|Интерфейс командной строки|[AZ AMS Asset List-Streaming-Locator](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
+|CLI|[AZ AMS Asset List-Streaming-Locator](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
 |.NET|[листстреаминглокаторс](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocators?view=azure-dotnet#Microsoft_Azure_Management_Media_AssetsOperationsExtensions_ListStreamingLocators_Microsoft_Azure_Management_Media_IAssetsOperations_System_String_System_String_System_String_)|
 |Java|[ассетстреаминглокатор](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
 |Node.js|[listStreamingLocators](https://docs.microsoft.com/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
 
-## <a name="also-see"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 * [Ресурсы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
 * [Политики ключа содержимого](content-key-policy-concept.md)
+* [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
+[Создание указателя потоковой передачи и URL-адресов сборки](create-streaming-locator-build-url.md)

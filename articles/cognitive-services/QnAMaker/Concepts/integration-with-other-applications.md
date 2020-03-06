@@ -3,12 +3,12 @@ title: Интеграция с другими приложениями — QnA M
 description: QnA Maker интегрируется в клиентские приложения, такие как чат программы-роботы, а также другие службы обработки естественных языков, такие как Language Understanding (LUIS).
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: f75ee92f2ecd14f5c3e017aeee2340cff0c92561
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 38b275aa2b8cf5768a2bc95634a7ff4892893eda
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843394"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78300525"
 ---
 # <a name="design-knowledge-base-for-client-applications"></a>Разработка базы знаний для клиентских приложений
 
@@ -20,7 +20,7 @@ QnA Maker интегрируется с такими клиентскими пр
 
 ## <a name="create-a-bot-without-writing-any-code"></a>Создание программы-робота без написания кода
 
-После публикации базы знаний создайте робот на странице **Публикация** , нажав кнопку **создать Bot** . Используйте [учебник по Bot](../tutorials/create-qna-bot.md) , чтобы узнать, что происходит после нажатия кнопки.
+После публикации базы знаний создайте робот на странице **Публикация** , нажав кнопку **создать Bot** . Используйте [учебник по Bot](../Quickstarts/create-publish-knowledge-base.md) , чтобы узнать, что происходит после нажатия кнопки.
 
 ## <a name="providing-multi-turn-conversations"></a>Предоставление множественных бесед
 

@@ -4,15 +4,15 @@ description: Узнайте, как системная функция Concat м�
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 10370e16c95f4fc747dd3a66a56794da38562972
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 8f2b37181e5d743809bb1f60be4056cb4442a8d2
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871828"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78295884"
 ---
 # <a name="array_concat-azure-cosmos-db"></a>ARRAY_CONCAT (Azure Cosmos DB)
  Возвращает массив, который является результатом объединения значений двух или более массивов.  
@@ -28,7 +28,7 @@ ARRAY_CONCAT (<arr_expr1>, <arr_expr2> [, <arr_exprN>])
 *arr_expr*  
    Выражение массива для сцепления с другими значениями. Для функции `ARRAY_CONCAT` требуется по крайней мере два аргумента *arr_expr* .  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает выражение массива.  
   
@@ -46,6 +46,9 @@ SELECT ARRAY_CONCAT(["apples", "strawberries"], ["bananas"]) AS arrayConcat
 [{"arrayConcat": ["apples", "strawberries", "bananas"]}]  
 ```  
   
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

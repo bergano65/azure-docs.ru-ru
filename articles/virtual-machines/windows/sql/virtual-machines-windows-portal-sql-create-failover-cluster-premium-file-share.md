@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 10/09/2019
 ms.author: mathoma
-ms.openlocfilehash: b2d49eeadf068cbaacaa5e147f38025c55f33ff4
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 9595ee87801fa4ce187a50197fc58d6c448eac24
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77651367"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78303228"
 ---
 # <a name="configure-a-sql-server-failover-cluster-instance-with-premium-file-share-on-azure-virtual-machines"></a>Настройка SQL Server экземпляра отказоустойчивого кластера с общей папкой Premium на виртуальных машинах Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "77651367"
 
 Многие рабочие нагрузки имеют пакетные операции ввода-вывода, поэтому рекомендуется проверять длительные периоды использования и учитывать максимум операций ввода-вывода в секунду и среднее число операций ввода-вывода в секунду. Файловые ресурсы уровня "Премиум" обеспечивают операции ввода-вывода в зависимости от размера общей папки. Общие файловые ресурсы уровня "Премиум" также обеспечивают дополнительный уровень нагрузки, который позволяет ускорить выполнение операций ввода-вывода, чтобы увеличить базовую сумму до одного часа.
 
-Дополнительные сведения о производительности файлового ресурса уровня "Премиум" см. в разделе [уровни производительности](https://docs.microsoft.com/azure/storage/files/storage-files-planning#file-share-performance-tiers)файлового ресурса.
+Дополнительные сведения о производительности файлового ресурса уровня "Премиум" см. в разделе [уровни производительности](https://docs.microsoft.com/azure/storage/files/storage-files-planning#storage-tiers)файлового ресурса.
 
 ### <a name="licensing-and-pricing"></a>Лицензирование и цены
 

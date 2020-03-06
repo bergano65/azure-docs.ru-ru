@@ -4,12 +4,12 @@ description: Проверенный список наиболее часто з�
 ms.topic: troubleshooting
 ms.date: 02/21/2020
 ms.author: diberry
-ms.openlocfilehash: 37aae8e67ccc84a6e22be8ce8a304fc4884ead52
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
-ms.translationtype: HT
+ms.openlocfilehash: 4596c16a5d7c9053bf0e27af476c66fe8fa9ed35
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78273399"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78296105"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для QnA Maker
 
@@ -224,7 +224,7 @@ ms.locfileid: "78273399"
 <details>
 <summary><b>Как создать новый робот с QnA Maker?</b></summary>
 
-**Ответ**. Следуйте инструкциям в [этой](./Tutorials/create-qna-bot.md) документации, чтобы создать программу Bot с помощью службы Azure Bot.
+**Ответ**. Следуйте инструкциям в [этой](./Quickstarts/create-publish-knowledge-base.md) документации, чтобы создать программу Bot с помощью службы Azure Bot.
 
 </details>
 
@@ -255,7 +255,7 @@ ms.locfileid: "78273399"
 
 **Ответ**. выполните следующие действия, чтобы внедрить QnA Makerную службу в качестве элемента управления веб-разговора на веб-сайте:
 
-1. Создайте бота вопросов и ответов, следуя [этим](./Tutorials/create-qna-bot.md) инструкциям.
+1. Создайте бота вопросов и ответов, следуя [этим](./Quickstarts/create-publish-knowledge-base.md) инструкциям.
 2. Включите веб-чат, выполнив шаги из [этой статьи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-webchat).
 
 </details>

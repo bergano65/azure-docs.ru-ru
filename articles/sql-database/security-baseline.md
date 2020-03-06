@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: dd9b82cbb2984386059988496c550123a8e67a3f
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
-ms.translationtype: HT
+ms.openlocfilehash: ca8d0daf5b6d9bbad0d8fa24b4b150c5e6cd6b73
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78273092"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78300916"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database"></a>Базовый план безопасности Azure для базы данных SQL Azure
 
@@ -251,7 +251,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging
 
 Потоковая передача диагностики в Аналитика SQL Azure:
 
-https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging#stream-into-azure-sql-analytics
+https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging#stream-diagnostic-telemetry-into-sql-analytics
 
 **Мониторинг центра безопасности Azure**: Да
 
@@ -1348,7 +1348,7 @@ https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
 **Ответственность**: Общая
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со статьей о [производительности системы безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/overview)
 - Дополнительные сведения о [базовых показателях безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview)

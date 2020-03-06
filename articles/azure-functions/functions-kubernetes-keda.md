@@ -5,12 +5,12 @@ author: jeffhollan
 ms.topic: conceptual
 ms.date: 11/18/2019
 ms.author: jehollan
-ms.openlocfilehash: 83c57b27c1cd1d524805a92381a1ba9eb2e1fbd6
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 2c06fdba8f60243acf4e0fabd23df8b832c210db
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549042"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78301681"
 ---
 # <a name="azure-functions-on-kubernetes-with-keda"></a>Функции Azure в Kubernetes с Кеда
 
@@ -83,7 +83,7 @@ kubectl delete secret <name-of-function-deployment>
 
 Вы можете использовать функции Azure, которые предоставляют триггеры HTTP, но Кеда не управляют ими напрямую.  Вы можете использовать триггер Prometheus Кеда для [масштабирования функций HTTP Azure от 1 до *n* экземпляров](https://dev.to/anirudhgarg_99/scale-up-and-down-a-http-triggered-function-app-in-kubernetes-using-keda-4m42).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Для получения дополнительных сведений см. следующие ресурсы:
 
 * [Создание функции с помощью пользовательского образа](functions-create-function-linux-custom-image.md)

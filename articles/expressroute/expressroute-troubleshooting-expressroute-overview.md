@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.author: rambala
 ms.custom: seodec18
-ms.openlocfilehash: 69c32370b1f7f7cabb642ab140d69dcec57fb4aa
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 58ae39e8dfdf918ae14ca9bb8dac28405828999e
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551987"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330963"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Проверка подключения ExpressRoute
 Изучив сведения в этой статье, вы узнаете, как проверить и устранить неполадки с подключением ExpressRoute. ExpressRoute расширяет локальную сеть в облако Майкрософт по частному подключению, которое обычно упрощается поставщиком услуг подключения. Подключение ExpressRoute обычно включает три отдельные зоны сети, как показано ниже.
@@ -275,7 +275,7 @@ ms.locfileid: "75551987"
 ## <a name="confirm-the-traffic-flow"></a>Подтверждение потока трафика
 Для получения сводной статистики трафика (переданных и полученных байтов) по первичному и вторичному пути для контекста пиринга используйте следующую команду:
 
-    Get-AzureDedicatedCircuitStats -ServiceKey 97f85950-01dd-4d30-a73c-bf683b3a6e5c -AccessType Private
+    Get-AzExpressRouteCircuitStats -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -PeeringType 'AzurePrivatePeering'
 
 Пример результата выполнения команды:
 
@@ -288,7 +288,7 @@ ms.locfileid: "75551987"
     Get-AzExpressRouteCircuitRouteTable : The BGP Peering AzurePublicPeering with Service Key ********************* is not found.
     StatusCode: 400
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Дополнительные сведения доступны в следующих источниках:
 
 - [Служба технической поддержки Майкрософт][Support]

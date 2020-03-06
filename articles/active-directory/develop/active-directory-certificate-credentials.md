@@ -14,12 +14,12 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7b42676fa387914bc4825e2850b3d2f032827a79
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 26030c12d98d796ceb1f66f198aede6e40eebd94
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76962124"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399011"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы Microsoft Identity
 
@@ -40,7 +40,7 @@ ms.locfileid: "76962124"
 
 ### <a name="claims-payload"></a>Утверждения (полезные данные)
 
-| Параметр |  Remarks |
+| Параметр |  Примечания |
 | --- | --- |
 | `aud` | Аудитория: должно быть значение **https://login.microsoftonline.com/*tenant_Id*/oauth2/token** |
 | `exp` | Срок действия: дата, когда истекает срок действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера.|
@@ -49,13 +49,13 @@ ms.locfileid: "76962124"
 | `nbf` | Не ранее: дата, до которой маркер не может использоваться. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до времени выдачи маркера. |
 | `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента), как и `iss` |
 
-### <a name="signature"></a>Сигнатура
+### <a name="signature"></a>Подпись
 
 Подпись формируется через применение сертификата, как описано в [документе RFC7519 о спецификации JSON Web Token](https://tools.ietf.org/html/rfc7519).
 
 ## <a name="example-of-a-decoded-jwt-assertion"></a>Пример декодированного утверждения JWT
 
-```
+```JSON
 {
   "alg": "RS256",
   "typ": "JWT",
@@ -67,12 +67,11 @@ ms.locfileid: "76962124"
   "exp": 1484593341,
   "iss": "97e0a5b7-d745-40b6-94fe-5f77d35c6e05",
   "jti": "22b3bb26-e046-42df-9c96-65dbd72c1c81",
-  "nbf": 1484592741,  
+  "nbf": 1484592741,
   "sub": "97e0a5b7-d745-40b6-94fe-5f77d35c6e05"
 }
 .
 "Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
-
 ```
 
 ## <a name="example-of-an-encoded-jwt-assertion"></a>Пример закодированного утверждения JWT
@@ -94,10 +93,10 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Выберите **Сертификаты и секреты**. 
+1. Выберите **Сертификаты и секреты**.
 2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
 3. Нажмите кнопку **Добавить**.
-  После отправки сертификата отображаются отпечаток, Дата начала и срок действия. 
+  После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
 
@@ -112,7 +111,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 1. Выберите **Манифест** , чтобы открыть манифест приложения.
 2. Замените свойство *keyCredentials* данными нового сертификата, используя приведенную ниже схему.
 
-   ```
+   ```JSON
    "keyCredentials": [
        {
            "customKeyIdentifier": "$base64Thumbprint",
@@ -123,13 +122,13 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
        }
    ]
    ```
-3. Сохраните изменения в манифесте приложения, а затем отправьте манифест на платформу удостоверений Майкрософт. 
+3. Сохраните изменения в манифесте приложения, а затем отправьте манифест на платформу удостоверений Майкрософт.
 
    Свойство `keyCredentials` является многозначным, поэтому для расширенного управления ключами можно передать несколько сертификатов.
-   
-## <a name="code-sample"></a>Пример кода
+
+## <a name="code-sample"></a>Образец кода
 
 > [!NOTE]
-> Необходимо вычислить заголовок X5T, преобразовав его в базовую строку 64, используя хэш сертификата. Код для выполнения этой C# задачи: `System.Convert.ToBase64String(cert.GetCertHash());`
+> Необходимо вычислить заголовок X5T, преобразовав его в базовую строку 64, используя хэш сертификата. Код для выполнения этой C# статьи `System.Convert.ToBase64String(cert.GetCertHash());`.
 
-Пример кода для проверки подлинности [на платформе Microsoft Identity в приложениях управляющей программы с сертификатами](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential) показывает, как приложение использует собственные учетные данные для аутентификации. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential#create-a-self-signed-certificate) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential/blob/master/AppCreationScripts/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.
+Пример кода [консольное приложение управляющей программы .NET Core с использованием платформы идентификации Майкрософт](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показывает, как приложение использует собственные учетные данные для проверки подлинности. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts-withCert/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.

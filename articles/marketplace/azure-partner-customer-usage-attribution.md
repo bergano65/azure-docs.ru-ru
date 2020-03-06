@@ -8,12 +8,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 9/23/2019
 ms.author: pabutler
-ms.openlocfilehash: c84f5538d2f553a713b52aa795a10acddac9aff8
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: c745a37805862b77e7893788d9d089c8447ae465
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819888"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78302871"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -87,7 +87,7 @@ ms.locfileid: "73819888"
 
 ## <a name="use-the-resource-manager-apis"></a>Использование интерфейсов API Resource Manager
 
-В некоторых случаях будет удобно напрямую вызывать интерфейсы REST API Resource Manager для развертывания служб Azure. [Azure поддерживает несколько пакетов SDK](https://docs.microsoft.com/azure/#pivot=sdkstools), позволяющих реализовать такие вызовы. Можно использовать один из пакетов SDK или вызывать REST API напрямую для развертывания ресурсов.
+В некоторых случаях будет удобно напрямую вызывать интерфейсы REST API Resource Manager для развертывания служб Azure. [Azure поддерживает несколько пакетов SDK](https://docs.microsoft.com/azure/?pivot=sdkstools), позволяющих реализовать такие вызовы. Можно использовать один из пакетов SDK или вызывать REST API напрямую для развертывания ресурсов.
 
 Если вы используете шаблон Azure Resource Manager, присвойте решению тег, выполнив приведенные выше инструкции. Если вместо применения шаблона Azure Resource Manager вы выполняете прямые вызовы к API, у вас сохраняется возможность присвоить развертыванию тег для связывания с информацией об использовании ресурсов Azure.
 
@@ -231,7 +231,7 @@ foreach ($deployment in $deployments){
 }
 ```
 
-## <a name="report"></a>Отчет
+## <a name="report"></a>Report
 
 Отчет о соотношении использования клиентов можно найти в информационной панели анализ центра партнеров. ([https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Чтобы просмотреть отчет, необходимо использовать учетные данные центра партнеров для входа. При возникновении проблем с отчетом или входом создайте запрос в службу поддержки, следуя инструкциям в разделе Получение поддержки.
 
@@ -296,7 +296,7 @@ foreach ($deployment in $deployments){
     * Завершите или ознакомьтесь с контактной информацией.
     * Сведения об консультации можно предварительно заполнить или выбрать в раскрывающихся списках.
     * Введите название и описание проблемы (укажите как можно больше сведений).
-1. Нажмите кнопку Отправить.
+1. Щелкните "Submit" (Отправить).
 
 Просмотрите пошаговые инструкции с снимками экрана на [https://aka.ms/TechConsultInstructions](https://aka.ms/TechConsultInstructions).
 
@@ -304,7 +304,7 @@ foreach ($deployment in $deployments){
 
 Вы получите контакт с техническим консультантом корпорации Майкрософт, чтобы настроить вызов в области действия ваших потребностей.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Зачем добавлять GUID в шаблон?**
 
