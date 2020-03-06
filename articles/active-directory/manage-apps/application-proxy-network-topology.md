@@ -17,11 +17,11 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 075b2c92168afe0c366608266c38b14394b73cff
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74275488"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78375757"
 ---
 # <a name="network-topology-considerations-when-using-azure-active-directory-application-proxy"></a>Аспекты топологии сети при использовании прокси приложения Azure Active Directory
 
@@ -172,7 +172,7 @@ ms.locfileid: "74275488"
 
 ![На схеме показаны пользователи, прокси-сервер и соединитель в США, приложение в ЕС](./media/application-proxy-network-topology/application-proxy-pattern5c.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Включение прокси приложения](application-proxy-add-on-premises-application.md)
 - [Включение единого входа](application-proxy-configure-single-sign-on-with-kcd.md)

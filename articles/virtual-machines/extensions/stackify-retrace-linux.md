@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 04/12/2018
 ms.author: akjosh
 ms.openlocfilehash: 5914947bd994ee405f253e34c3dd919dd6561898
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073639"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78383266"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Расширение агента Stackify Retrace для Linux
 
@@ -37,13 +37,13 @@ Retrace — это единственный инструмент, который
 
 Это расширение предоставляет путь установки агента Retrace для Linux. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="operating-system"></a>операционная система 
+### <a name="operating-system"></a>Операционная система 
 
 Агент Retrace можно выполнять с использованием следующих дистрибутивов Linux.
 
-| Дистрибутив | Версия |
+| Распределение | Версия |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS, 16.10 и 17.04 |
 | Debian | 7.9 и выше, 8.2 и выше, 9 |
@@ -191,11 +191,11 @@ az vm extension set --publisher 'Stackify.LinuxAgent.Extension' --version 1.0 --
 | 40 | Ошибка при установке | Требуется ключ активации. |
 | 51 | Ошибка при установке | Дистрибутив ОС не поддерживается. |
 | 60 | Ошибка при установке | Требуется указать среду. |
-| 70 | Ошибка при установке | Unknown |
+| 70 | Ошибка при установке | Неизвестно |
 | 80 | Ошибка при включении | Не удалось установить службу. |
 | 90 | Ошибка при включении | Не удалось запустить службу. |
 | 100 | Ошибка при отключении | Не удалось остановить службу. |
 | 110 | Ошибка при отключении | Не удалось удалить службу. |
-| 120 | Ошибка при удалении | Не удалось остановить службу. |
+| 120 | Uninstall Error | Не удалось остановить службу. |
 
 Если вам нужна дополнительная помощь, обращайтесь в службу поддержки Stackify: https://support.stackify.com.

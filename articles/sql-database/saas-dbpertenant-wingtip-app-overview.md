@@ -12,11 +12,11 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
 ms.openlocfilehash: 46cdcd5f768278dbc729f48e450c68a63be604be
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822164"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78359117"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Общие сведения о мультитенантном приложении SaaS на основе Базы данных SQL, в котором используется отдельная база данных для каждого клиента
 
@@ -39,7 +39,7 @@ ms.locfileid: "73822164"
 Развернув приложение, изучите перечисленные ниже руководства, которые основываются на базовом развертывании. В этих руководствах рассматриваются распространенные шаблоны SaaS, использующие встроенные функции Базы данных SQL, хранилища данных SQL и других служб Azure. Руководства содержат скрипты PowerShell с подробными описаниями. Эти описания позволят быстрее разобраться в шаблонах управления SaaS и применить их в приложениях.
 
 
-| Учебник | Description (Описание) |
+| Учебник | Description |
 |:--|:--|
 | [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md) | Скачайте и выполните скрипты PowerShell для подготовки частей приложения. |
 |[Развертывание и изучение мультитенантного приложения SaaS, использующего базу данных SQL Azure](saas-dbpertenant-get-started-deploy.md)|  Разверните в подписке Azure мультитенантное приложение SaaS и изучите его возможности. |

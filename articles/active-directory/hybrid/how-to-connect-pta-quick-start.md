@@ -2,7 +2,7 @@
 title: Краткое руководство по аутентификации Azure AD | Документация Майкрософт
 description: В этой статье описывается, как приступить к работе со сквозной проверкой подлинности Azure Active Directory (Azure AD).
 services: active-directory
-keywords: Сквозная аутентификация Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
+keywords: сквозная проверка подлинности azure ad connect, установка active directory, необходимые компоненты для azure ad, единый вход
 documentationcenter: ''
 author: billmath
 manager: daveba
@@ -16,12 +16,12 @@ ms.date: 04/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fe38b434c4e54b375b22d76c573d3bbe88b0e16
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: be6a6e9231b13c47d1421543464c720f6283b5f9
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74889946"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376186"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Краткое руководство по сквозной проверке подлинности Azure Active Directory
 
@@ -68,7 +68,7 @@ ms.locfileid: "74889946"
      Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
    - Если брандмауэр или прокси-сервер поддерживают внесение DNS в список разрешений, то добавьте подключения к **\*msappproxy.net** и **\*servicebus.windows.net** в список разрешений. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
    - Агентам аутентификации требуется доступ к адресам **login.windows.net** и **login.microsoftonline.com** для первоначальной регистрации. Откройте эти URL-адреса в брандмауэре.
-   - Для проверки сертификата Разблокируйте следующие URL-адреса: **mscrl.Microsoft.com:80**, **CRL.Microsoft.com:80**, **OCSP.msocsp.com:80**и **www\.Microsoft.com:80**. Так как эти URL-адреса используются для проверки сертификатов в других продуктах Майкрософт, они уже могут быть разблокированы.
+   - Для проверки сертификатов разблокируйте следующие URL-адреса: **mscrl.microsoft.com:80**, **crl.microsoft.com:80**, **ocsp.msocsp.com:80** и **www\.microsoft.com:80**. Так как эти URL-адреса используются для проверки сертификатов в других продуктах Майкрософт, они уже могут быть разблокированы.
 
 ## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
@@ -131,7 +131,7 @@ ms.locfileid: "74889946"
 ![Центр администрирования Azure Active Directory — область "Скачивание агента"](./media/how-to-connect-pta-quick-start/pta10.png)
 
 >[!NOTE]
->Можно также напрямую скачать [программное обеспечение агента аутентификации](https://aka.ms/getauthagent). Прочитайте и примите [условия использования](https://aka.ms/authagenteula) агента аутентификации, _прежде_ чем установить его.
+>Можно также напрямую скачать [программное обеспечение агента аутентификации](https://aka.ms/getauthagent). _Перед_ установкой проверьте и примите [условия обслуживания](https://aka.ms/authagenteula) агента аутентификации.
 
 Развернуть изолированный агент аутентификации можно двумя способами.
 
@@ -148,7 +148,7 @@ ms.locfileid: "74889946"
         $cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $SecurePassword
 3. Перейдите в каталог **C:\Program Files\Microsoft Azure AD Connect Authentication Agent** и запустите следующий сценарий с использованием созданного объекта `$cred`.
 
-        RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
+        RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "PassthroughAuthPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
 
 >[!IMPORTANT]
 >Если на виртуальной машине установлен агент проверки подлинности, вы не сможете клонировать виртуальную машину для настройки другого агента проверки подлинности. Этот метод не **поддерживается**.
@@ -158,7 +158,7 @@ ms.locfileid: "74889946"
 Смарт-блокировка помогает блокировать неправильные субъекты, которые пытаются угадать пароли пользователей или использовать методы подбора для получения. Настроив параметры Smart-блокировки в Azure AD и (или) соответствующие параметры блокировки в локальной Active Directory, атаки можно отфильтровывать, прежде чем они будут доступны Active Directory. Ознакомьтесь с [этой статьей](../authentication/howto-password-smart-lockout.md) , чтобы узнать больше о настройке параметров Smart-блокировки в клиенте для защиты учетных записей пользователей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Переход с AD FS на сквозную аутентификацию](https://aka.ms/adfstoptadp). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.
+- [Migrate from AD FS to Pass-through Authentication](https://aka.ms/adfstoptadp) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте о том, какие сценарии поддерживаются для сквозной аутентификации, а какие нет.
 - [Подробное техническое руководство](how-to-connect-pta-how-it-works.md). Поймите, как работает функция сквозной аутентификации.
