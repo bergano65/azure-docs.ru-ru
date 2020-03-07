@@ -10,11 +10,11 @@ ms.workload: infrastructure-services
 ms.date: 12/18/2017
 ms.author: rohink
 ms.openlocfilehash: 19189af6424960b8e20be686af745b10f2d8578b
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76938851"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392607"
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Обзор зон и записей DNS
 
@@ -129,7 +129,7 @@ Azure DNS поддерживает использование тегов Azure R
 
 | Заголовок | Поведение |
 | --- | --- |
-| Нет |PUT всегда завершается успешно (без проверки Etag) |
+| None |PUT всегда завершается успешно (без проверки Etag) |
 | > If-Match \<ETag |PUT завершается успешно, только если ресурс существует и Etag соответствует |
 | If-match * |PUT завершается успешно, только если ресурс существует |
 | If-none-match* |PUT завершается успешно, только если ресурс не существует |

@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 11/26/2019
 ms.reviewer: sergkanz
 ms.openlocfilehash: 31c1fb366e7b109ea1fa4977d8e2f908e766e0f2
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77671823"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78362221"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -475,7 +475,7 @@ public async Task RunAllTasks()
 
 Каждая операция Application Insights (запрос или зависимость) включает `Activity` — при вызове `StartOperation` он создает действие под. `StartOperation` является рекомендуемым способом отслеживать телеметрии запроса или зависимости вручную и гарантировать, что все согласовано.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите основы [корреляции данных телеметрии](correlation.md) в Application Insights.
 - Узнайте, как коррелированные данные заключаются в [диагностике транзакций](../../azure-monitor/app/transaction-diagnostics.md) и [схеме приложений](../../azure-monitor/app/app-map.md).

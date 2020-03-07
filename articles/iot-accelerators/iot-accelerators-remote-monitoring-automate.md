@@ -10,13 +10,13 @@ ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: 676f1133a516174478a456a97bc467e7770fe6e7
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888874"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392154"
 ---
-# <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Руководство по Определение проблем с устройствами, подключенными к решению для мониторинга
+# <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Учебник. Выявление проблем с устройствами, подключенными к решению для мониторинга
 
 В этом руководстве показано, как настроить акселератор решения для удаленного мониторинга с целью выявления проблем на подключенных устройствах Интернета вещей. Для определения проблем с устройствами необходимо добавить правила, которые создают оповещения на панели мониторинга решения.
 
@@ -54,13 +54,13 @@ ms.locfileid: "73888874"
 | Параметр          | Значение                                 |
 | ---------------- | ------------------------------------- |
 | Имя правила        | Предупреждение устройства Chiller                       |
-| ОПИСАНИЕ      | Давление устройства Chiller превышает 150 фунтов на квадратный дюйм |
+| Description      | Давление устройства Chiller превышает 150 фунтов на квадратный дюйм |
 | Группа устройств     | Группа устройств **Chillers**             |
 | Вычисление      | Мгновенное                               |
 | Поле условия 1| pressure                              |
 | Оператор условия 1 | Больше                      |
 | Значение условия 1    | 150                               |
-| Уровень серьезности  | Предупреждение                               |
+| Степень серьезности  | Предупреждение                               |
 
 [![Создание правила предупреждения](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_v2-expanded.png#lightbox)
 
@@ -77,14 +77,14 @@ ms.locfileid: "73888874"
 | Параметр          | Значение                                 |
 | ---------------- | ------------------------------------- |
 | Имя правила        | Критический уровень влажности и температуры устройства Chiller    |
-| ОПИСАНИЕ      | Критический уровень влажности и температуры |
+| Description      | Критический уровень влажности и температуры |
 | Группа устройств     | Группа устройств **Chillers**             |
-| Вычисление      | Средняя                               |
+| Вычисление      | Среднее                               |
 | Период времени      | 5                                     |
 | Поле условия 1| Влажность                              |
 | Оператор условия 1 | Больше                      |
 | Значение условия 1    | 80                                |
-| Уровень серьезности  | критические ошибки.                              |
+| Степень серьезности  | Critical                              |
 
 [![Создание правила с несколькими условиями, часть 1](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_v2-expanded.png#lightbox)
 
@@ -132,7 +132,7 @@ ms.locfileid: "73888874"
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве было показано, как создавать правила, активирующие оповещения в решении, и управлять ими с помощью страницы **Правила** в акселераторе решения для удаленного мониторинга. Чтобы узнать, как настраивать подключенные устройства и управлять ими с помощью акселератора решений, перейдите к следующему руководству.
 

@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
 ms.openlocfilehash: a385d3ed7ef46389f96de72c98ffc29cebf60ec4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978847"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78356397"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -26,9 +26,9 @@ ms.locfileid: "75978847"
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]
 
-Дополнительные сведения о классической модели развертывания см. в статье [Azure Resource Manager vs. classic deployment: Understand deployment models and the state of your resources](../azure-resource-manager/management/deployment-models.md) (Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов).
+Дополнительные сведения о классической модели развертывания см. в статье [Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/management/deployment-models.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
 
     Get-Module Az | format-table version
@@ -70,7 +70,7 @@ ms.locfileid: "75978847"
 
     Connect-AzAccount -EnvironmentName AzureUSGovernment
 
-или
+или диспетчер конфигурации служб
 
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureUSGovernment)
 
@@ -86,7 +86,7 @@ ms.locfileid: "75978847"
 
     Connect-AzAccount -EnvironmentName AzureChinaCloud
 
-или
+или диспетчер конфигурации служб
 
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureChinaCloud)
 
@@ -103,38 +103,38 @@ ms.locfileid: "75978847"
     Connect-AzAccount -EnvironmentName AzureGermanCloud
 
 
-или
+или диспетчер конфигурации служб
 
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureGermanCloud)
 
 Чтобы создать кэш в Microsoft Azure для Германии, используйте одно из следующих расположений.
 
 * Центральная Германия
-* Северо-Восточная Германия
+* Северо-восточная Германия
 
 Дополнительные сведения о Microsoft Azure для Германии см. [здесь](https://azure.microsoft.com/overview/clouds/germany/).
 
 ### <a name="properties-used-for-azure-cache-for-redis-powershell"></a>Свойства, используемые в командлетах PowerShell кэша Azure для Redis
 Приведенная ниже таблица содержит свойства и описания параметров, часто используемых при создании экземпляров кэша Azure для Redis с помощью Azure PowerShell и управлении такими экземплярами.
 
-| Параметр | Description | По умолчанию |
+| Параметр | Описание | По умолчанию |
 | --- | --- | --- |
 | Имя |Имя кэша | |
 | Расположение |Расположение кэша | |
 | ResourceGroupName |Имя группы ресурсов, в которой необходимо создать кэш | |
 | Размер |Размер кэша. Допустимые значения: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 МБ, 1 ГБ, 2,5 ГБ, 6 ГБ, 13 ГБ, 26 ГБ, 53 ГБ |1 ГБ |
 | ShardCount |Число сегментов, которые будут созданы при создании кэша уровня Premium с включенной кластеризацией. Допустимые значения: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
-| SKU |Определяет SKU кэша. Допустимые значения: Basic, Standard, Premium |Стандартный |
+| номер SKU |Определяет SKU кэша. Допустимые значения: "Базовый", "Стандартный" и "Премиум" |Standard |
 | RedisConfiguration |Задает параметры конфигурации кластера Redis. Подробные сведения о каждом параметре представлены в таблице [Свойства RedisConfiguration](#redisconfiguration-properties) . | |
-| EnableNonSslPort |Определяет, включен ли порт без SSL. |Нет |
+| EnableNonSslPort |Определяет, включен ли порт без SSL. |False |
 | MaxMemoryPolicy |Этот параметр устарел, вместо него используется параметр RedisConfiguration. | |
 | StaticIP |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. | |
 | Подсеть |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. | |
 | Виртуальная сеть |При размещении кэша в виртуальной сети определяет идентификатор ресурса виртуальной сети, в которой будет развернут кэш. | |
-| KeyType |Определяет, какой ключ доступа будет создаваться повторно при обновлении ключей доступа. Допустимые значения: Primary, Secondary | |
+| KeyType |Определяет, какой ключ доступа будет создаваться повторно при обновлении ключей доступа. Допустимые значения: первичный или вторичный | |
 
 ### <a name="redisconfiguration-properties"></a>Свойства RedisConfiguration
-| Свойство | Description | Ценовые категории |
+| Свойство | Описание | Ценовые категории |
 | --- | --- | --- |
 | rdb-backup-enabled |Указывает на то, включен ли параметр [Сохраняемость данных Redis](cache-how-to-premium-persistence.md) . |Только "Премиум" |
 | rdb-storage-connection-string |Строка подключения к учетной записи хранения для параметра [Сохраняемость данных Redis](cache-how-to-premium-persistence.md) |Только "Премиум" |
@@ -147,7 +147,7 @@ ms.locfileid: "75978847"
 | set-max-intset-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | zset-max-ziplist-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | zset-max-ziplist-value |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| базы_данных |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
+| базы данных |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
 
 ## <a name="to-create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
 Новые экземпляры кэша Azure для Redis создаются с помощью командлета [New-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/new-azrediscache).
@@ -775,9 +775,9 @@ ms.locfileid: "75978847"
 Дополнительные сведения об использовании Windows PowerShell с Azure см. в следующих ресурсах:
 
 * [Документация по командлету кэша Azure для Redis на MSDN](https://docs.microsoft.com/powershell/module/az.rediscache)
-* [Командлеты диспетчера ресурсов Azure](https://go.microsoft.com/fwlink/?LinkID=394765): узнайте, как использовать командлеты в модуле диспетчера ресурсов Azure.
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md): узнайте, как создавать группы ресурсов и управлять ими на портале Azure.
-* [Блог Azure](https://azure.microsoft.com/blog/): узнайте о новых возможностях в Azure.
-* [Блог Windows PowerShell](https://blogs.msdn.com/powershell): узнайте о новых возможностях в Windows PowerShell.
-* [Блог "Hey, Scripting Блог](https://blogs.technet.com/b/heyscriptingguy/): реальные советы и рекомендации от сообщества Windows PowerShell.
+* [Overview of Azure PowerShell](https://go.microsoft.com/fwlink/?LinkID=394765) (Общие сведения об Azure PowerShell) — сведения об использовании командлетов в модуле Azure Resource Manager.
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md) — сведения о создании групп ресурсов и управлении ими на портале Azure.
+* [Блог Azure](https://azure.microsoft.com/blog/) — сведения о новых возможностях в Azure.
+* [Блог Windows PowerShell](https://blogs.msdn.com/powershell) — сведения о новых возможностях в Windows PowerShell.
+* [Блог "Hey, Scripting Guy!"](https://blogs.technet.com/b/heyscriptingguy/) — реальные советы и рекомендации от сообщества Windows PowerShell.
 

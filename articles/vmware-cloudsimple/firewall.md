@@ -9,11 +9,11 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 986f4b0da7254ebac3725a704f32af785c72fbcc
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77565032"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78386844"
 ---
 # <a name="set-up-firewall-tables-and-rules-for-private-clouds"></a>Настройка таблиц и правил брандмауэра для частных облаков
 
@@ -76,4 +76,4 @@ ms.locfileid: "77565032"
 2. Откройте вкладку **подключенные виртуальные ЛС/подсеть** .
 3. Щелкните **присоединить к виртуальной ЛС или подсети**.
 4. Выберите частное облако и виртуальную ЛС. Отобразятся связанные имя подсети и блок CIDR.
-5. Щелкните элемент **Отправить**.
+5. Щелкните **Отправить**.

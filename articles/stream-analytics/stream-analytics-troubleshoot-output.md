@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: d40157523a074547885a14a3d92379f8e8b6f351
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980261"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364579"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 
@@ -94,7 +94,7 @@ ms.locfileid: "75980261"
 При использовании исходного уровня совместимости (1,0) Azure Stream Analytics используется для изменения имен столбцов на нижний регистр. Это поведение было исправлено на более поздних уровнях совместимости. Чтобы сохранить вариант, мы советуем клиентам перейти на уровень совместимости 1,1 и более поздней версии. Дополнительные сведения об [уровне совместимости для Azure Stream Analyticsных заданий](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level)см. здесь.
 
 
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получить справку
 
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

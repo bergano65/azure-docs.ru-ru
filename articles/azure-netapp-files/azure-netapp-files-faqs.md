@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/05/2020
+ms.date: 03/04/2020
 ms.author: b-juche
-ms.openlocfilehash: aaa7e5e65ced2a9899bef5a811ee74be42a8548f
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
-ms.translationtype: MT
+ms.openlocfilehash: ebf275f927801f3c2fbb171a24eb357b1e2f30f8
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048816"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78383482"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -148,6 +148,10 @@ Azure NetApp Files поддерживает версии домен Active Direc
 ### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Почему доступное пространство на моем клиенте SMB не показывает подготовленный размер?
 
 Размер тома, сообщаемый SMB-клиентом, — это максимальный размер, который может увеличить Azure NetApp Files том. Размер тома Azure NetApp Files, как показано на SMB-клиенте, не отражен в размере квоты или размера тома. Вы можете получить Azure NetApp Files размер или квоту тома с помощью портал Azure или API.
+
+### <a name="does-azure-netapp-files-support-ldap-signing"></a>Поддерживает ли Azure NetApp Files подписывание LDAP? 
+
+Да, Azure NetApp Files поддерживает подписывание LDAP по умолчанию. Эта функция обеспечивает безопасный поиск LDAP между службой Azure NetApp Files и указанными пользователем [контроллерами домена служб домен Active Directory Services](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). Дополнительные сведения см. в разделе [ADV190023 | Руководство Майкрософт по включению привязки каналов LDAP и подписывания LDAP](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).
 
 ## <a name="capacity-management-faqs"></a>Вопросы и ответы по управлению емкостью
 
