@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: juliako
 ms.openlocfilehash: 39a1dd5c3d26eeb6545a96aa35f9457bd9859c21
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61247249"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394756"
 ---
 # <a name="customizing-media-encoder-standard-presets"></a>Настройка предустановок Media Encoder Standard  
 
@@ -30,7 +30,7 @@ ms.locfileid: "61247249"
 В этой статье показано, как настроить предустановку. Для примера взята предустановка [H264 Multiple Bitrate 720p](media-services-mes-preset-H264-Multiple-Bitrate-720p.md), в которой уменьшается количество уровней. В статье [Настройка предустановок MES для расширенного кодирования](media-services-advanced-encoding-with-mes.md) показаны пользовательские предустановки, которые могут использоваться для выполнения расширенных задач кодирования.
 
 > [!NOTE]
-> Пользовательские предустановки, описанные в этой статье не может использоваться в [Media Services V3](https://docs.microsoft.com/azure/media-services/latest/) преобразования или команд интерфейса командной строки. См. в разделе [руководство по миграции из версии 2 до 3](../latest/migrate-from-v2-to-v3.md) для получения дополнительных сведений.
+> Пользовательские предустановки, описанные в этой статье, нельзя использовать в преобразованиях [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/) или командах CLI. Дополнительные сведения см. в [руководстве по миграции с версии 2 на v3](../latest/migrate-from-v2-to-v3.md) .
 
 ## <a id="customizing_presets"></a> Настройка предустановки MES
 
@@ -264,9 +264,9 @@ namespace CustomizeMESPresests
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
-- [Как кодировать с помощью пользовательского преобразования с помощью интерфейса командной строки](../latest/custom-preset-cli-howto.md)
+- [Как кодировать с пользовательским преобразованием с помощью интерфейса командной строки](../latest/custom-preset-cli-howto.md)
 - [Кодирование с помощью Служб мультимедиа версии 3](../latest/encoding-concept.md)
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа

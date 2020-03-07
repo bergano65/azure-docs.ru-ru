@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c5191f05752c177aa29d121abe9d1aa29fde265a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75430968"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78375904"
 ---
 # <a name="how-to-investigate-risk"></a>Как исследовать риски
 
@@ -68,7 +68,7 @@ ms.locfileid: "75430968"
 - Сведения о MFA
 - Сведения об устройстве
 - Сведения о приложении
-- сведения о расположении;
+- Сведения о расположении
 
 Затем администраторы могут предпринять действия с этими событиями. Администраторы могут выбрать:
 

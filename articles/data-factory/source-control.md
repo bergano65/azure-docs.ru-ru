@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/09/2019
 ms.openlocfilehash: 1cc5932eca520b0bbc0c592b54d36ea8b5942b08
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031635"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78386617"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в фабрике данных Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "77031635"
 
 В области Конфигурация отображаются следующие Azure Repos параметры репозитория кода.
 
-| Параметр | Описание | Значение |
+| Параметр | Description | Значение |
 |:--- |:--- |:--- |
 | **Тип репозитория** | Тип репозитория кода Azure Repos.<br/> | Azure DevOps Git или GitHub |
 | **Azure Active Directory** | Имя вашего клиента Azure AD. | `<your tenant name>` |
@@ -187,7 +187,7 @@ ms.locfileid: "77031635"
 
 ### <a name="configure-publishing-settings"></a>Настройка параметров публикации
 
-Чтобы настроить ветвь публикации (ветвь, в которой сохраняются шаблоны Resource Manager), добавьте файл `publish_config.json` в корневую папку в ветви совместной работы. Фабрика данных считывает этот файл, ищет поле `publishBranch` и создает новую ветвь (если она отсутствует) с указанным значением. Затем она сохраняет все шаблоны Resource Manager в указанном расположении. Например:
+Чтобы настроить ветвь публикации (ветвь, в которой сохраняются шаблоны Resource Manager), добавьте файл `publish_config.json` в корневую папку в ветви совместной работы. Фабрика данных считывает этот файл, ищет поле `publishBranch` и создает новую ветвь (если она отсутствует) с указанным значением. Затем она сохраняет все шаблоны Resource Manager в указанном расположении. Пример:
 
 ```json
 {
@@ -262,7 +262,7 @@ ms.locfileid: "77031635"
 
 ![Отзывы](media/author-visually/provide-feedback.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о мониторинге и управлении конвейерами см. в статье [Отслеживание фабрики данных Azure с помощью программных средств](monitor-programmatically.md).
 * Сведения о реализации непрерывной интеграции и развертывания см. [в статье непрерывная интеграция и доставка (CI/CD) в фабрике данных Azure](continuous-integration-deployment.md).

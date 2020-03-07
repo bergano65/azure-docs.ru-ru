@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.openlocfilehash: bec2a40d8cf5fb178418ec6bb59a52a0bfe3eb8c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453050"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78363443"
 ---
 # <a name="scale-a-hyperscale-citus-server-group"></a>Масштабирование группы серверов с горизонтальным масштабированием (Цитус)
 
@@ -36,7 +36,7 @@ ms.locfileid: "75453050"
 SELECT rebalance_table_shards('distributed_table_name');
 ```
 
-Функция `rebalance_table_shards` перераспределяет все таблицы в группе [совместного размещения](concepts-hyperscale-colocation.md) таблицы с именем в аргументе. Поэтому нет необходимости вызывать функцию для каждой распределенной таблицы, просто вызвать ее в репрезентативной таблице из каждой группы совместного размещения.
+Функция `rebalance_table_shards` перераспределяет все таблицы в группе совместного [размещения](concepts-hyperscale-colocation.md) таблицы с именем в аргументе. Поэтому нет необходимости вызывать функцию для каждой распределенной таблицы, просто вызвать ее в репрезентативной таблице из каждой группы совместного размещения.
 
 ## <a name="increase-vcores"></a>Увеличить виртуальных ядер
 

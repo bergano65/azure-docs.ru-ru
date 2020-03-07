@@ -10,11 +10,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 3abbf2c8e0734d17aabadd2ae5f61cc03889964b
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754326"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78379604"
 ---
 # <a name="service-administration-for-azure-cognitive-search-in-the-azure-portal"></a>Администрирование служб для Azure Когнитивный поиск в портал Azure
 > [!div class="op_single_selector"]
@@ -83,7 +83,7 @@ Azure Когнитивный поиск — это полностью управ
 
 <a id="scale"></a>
 
-## <a name="scale-up-or-down"></a>Вертикальное масштабирование
+## <a name="scale-up-or-down"></a>Масштабирование вверх или вниз
 Каждая поисковая служба стартует минимум с одной реплики и одного раздела. Если у вас [категория, предоставляющая выделенные ресурсы](search-limits-quotas-capacity.md), щелкните плитку **Масштаб** на панели мониторинга службы, чтобы настроить использование ресурсов.
 
 При добавлении емкости или мощности с помощью какого-либо ресурса служба начинает использовать его автоматически. Никаких дополнительных действий с вашей стороны не требуется, но будет небольшая задержка, прежде чем произойдет задействование нового ресурса. Подготовка дополнительных ресурсов может занять 15 и более минут.

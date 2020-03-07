@@ -14,11 +14,11 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b8f44e9a1e43da2b9ce6c817898c1722fba715c4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978961"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391064"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -38,7 +38,7 @@ ms.locfileid: "75978961"
 > Перемещение кластера Azure Kubernetes Service (AKS) в другую подписку или перемещение владения кластером в новый клиент приводит к потере функциональности кластера из-за потери назначений ролей и прав субъекта-службы. Дополнительные сведения о AKS см. в статье [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/).
 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем можно будет связать или добавить подписку, выполните следующие действия.
 
@@ -91,7 +91,7 @@ ms.locfileid: "75978961"
 
 - Если вы зарегистрировали Azure Stack с помощью этой подписки, необходимо выполнить повторную регистрацию. Дополнительные сведения см. в статье [регистрация Azure Stack в Azure](/azure-stack/operator/azure-stack-registration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 

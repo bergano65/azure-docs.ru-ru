@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 393563427e936e07315cd44b78cb793d4292b352
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176566"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374421"
 ---
 # <a name="product-templates-in-azure-api-management"></a>Шаблоны продуктов в службе управления API Azure
 
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц продуктов на портале разработчика.  
   
@@ -79,9 +79,9 @@ ms.locfileid: "73176566"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Тип|Description|  
 |--------------|----------|-----------------|  
-|Постраничный просмотр|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
+|Разбиение по страницам|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции продуктов.|  
 |Фильтрация|Сущность [фильтрации](api-management-template-data-model-reference.md#Filtering).|Сведения о фильтрации для страницы со списком продуктов.|  
 |Продукты|Коллекция сущностей [Продукт](api-management-template-data-model-reference.md#Product).|Все продукты, которые доступны для текущего пользователя.|  
   
@@ -204,14 +204,14 @@ ms.locfileid: "73176566"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Тип|Description|  
 |--------------|----------|-----------------|  
 |Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
 |IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  
-|SubscriptionState|number|Состояние подписки. Возможны следующие состояния.<br /><br /> —-    `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-    `4 - rejected`: администратор отклонил запрос на подписку.<br />— `5 - cancelled`: подписка была отменена разработчиком или администратором.|  
-|Ограничения|array|Это свойство является устаревшим и не должно использоваться.|  
+|SubscriptionState|number|Состояние подписки. Возможны следующие состояния.<br /><br /> —-   `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-   `4 - rejected`: администратор отклонил запрос на подписку.<br />— -   `5 - cancelled`: подписка была отменена разработчиком или администратором.|  
+|Ограничения|массиве|Это свойство является устаревшим и не должно использоваться.|  
 |DelegatedSubscriptionEnabled|Логическое|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
-|DelegatedSubscriptionUrl|string|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
+|DelegatedSubscriptionUrl|строка|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
 |IsAgreed|Логическое|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
 |Подписки|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
 |Apis|коллекция сущностей [API](api-management-template-data-model-reference.md#API)|API-интерфейсы, существующие для этого продукта.|  

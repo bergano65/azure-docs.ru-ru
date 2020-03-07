@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
 ms.openlocfilehash: 9ddac229fc38a91a8b97b24dc2807080b2295758
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77468785"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372565"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Log Analytics для Linux
 
@@ -32,7 +32,7 @@ ms.locfileid: "77468785"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -107,7 +107,7 @@ ms.locfileid: "77468785"
 | ---- | ---- |
 | версия_API | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| тип | OmsAgentForLinux |
+| type | OmsAgentForLinux |
 | typeHandlerVersion | 1.7 |
 | workspaceID (пример) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |
@@ -185,7 +185,7 @@ az vm extension set \
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
 
