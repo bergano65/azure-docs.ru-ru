@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ccfbb31c29b9e240a4865c8d7d98d7b6af00d1fd
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963942"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78377569"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по условному доступу в Azure Active Directory
 

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 1/16/2020
 ms.author: jejarry
 ms.openlocfilehash: 46c5e1ed0a1d0db100c3415c40f59d46f62b21f9
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587623"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388397"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -18,7 +18,7 @@ ms.locfileid: "77587623"
 
 [!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начать установку, убедитесь, что в вашей среде установлены Python и pip. Дополнительные сведения см. в [кратком руководстве по началу работы с pip](https://pip.pypa.io/en/latest/quickstart/) и официальной [документации по установке Python](https://wiki.python.org/moin/BeginnersGuide/Download).
 
@@ -36,7 +36,7 @@ ms.locfileid: "77587623"
 | 6.0.0         | 6.3                       |
 | 5.0.0         | 6.2                       |
 | 4.0.0         | 6.1                       |
-| 3.0.0         | 6.0                       |
+| 3.0.0         | 6,0                       |
 | 1.1.0         | 5.6, 5.7                  |
 
 При необходимости можно указать целевую версию интерфейса командной строки для установки, добавив к команде `pip install` суффикс `==<version>`. Например, для версии 1.1.0 синтаксис будет выглядеть следующим образом:
@@ -154,7 +154,7 @@ sfctl <object> <action>
 
 В этом примере `<object>` — целевой объект для `<action>`.
 
-## <a name="select-a-cluster"></a>Выберите кластер
+## <a name="select-a-cluster"></a>Выбор кластера
 
 Перед выполнением любых операций выберите кластер, к которому нужно подключиться. Например, чтобы выбрать кластер `testcluster.com` и подключиться к нему, выполните следующую команду:
 
@@ -250,7 +250,7 @@ openssl  pkcs12 -export -out Certificates.pfx -inkey Certificates.pem -in Certif
 sfctl application -h
 ```
 
-Вот другой пример:
+Вот еще один пример:
 
 ```shell
 sfctl application create -h
@@ -265,7 +265,7 @@ pip uninstall sfctl
 pip install sfctl
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Manage an Azure Service Fabric application by using Azure Service Fabric CLI](service-fabric-application-lifecycle-sfctl.md) (Управление приложением Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric)
 * [Prepare your development environment on Linux](service-fabric-get-started-linux.md) (Подготовка среды разработки в Linux)

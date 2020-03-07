@@ -14,11 +14,11 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 0262d22ae00456ce06cb8efbf995f1a093b20043
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77085003"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78377370"
 ---
 # <a name="application-configuration-options"></a>Параметры конфигурации приложения
 
@@ -142,7 +142,7 @@ URI перенаправления можно переопределить с п
 
 Другие параметры конфигурации включают ведение журнала и устранение неполадок. Дополнительные сведения об их использовании см. в статье [ведение журнала](msal-logging.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [создании экземпляров клиентских приложений с помощью MSAL.NET](msal-net-initializing-client-applications.md).
 Дополнительные сведения о [создании экземпляров клиентских приложений с помощью MSAL. js](msal-js-initializing-client-applications.md).

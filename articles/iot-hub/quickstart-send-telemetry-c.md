@@ -11,13 +11,13 @@ ms.custom: mvc
 ms.date: 04/10/2019
 ms.author: wesmc
 ms.openlocfilehash: 9870d61ff2e7b9d0259dd853b88411a5f175388e
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78255295"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78382008"
 ---
-# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)
+# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии с устройства в центр Интернета вещей и их чтение с помощью серверного приложения (C)
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
@@ -31,7 +31,7 @@ ms.locfileid: "78255295"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Установите [Visual Studio 2019](https://www.visualstudio.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
 * Установите последнюю версию [Git](https://git-scm.com/download/).
@@ -51,11 +51,11 @@ ms.locfileid: "78255295"
 
 * **Linux**: доступны пакеты apt-get для Ubuntu 16.04 и 18.04 на основе следующих архитектур ЦП: amd64, arm64, armhf и i386. Дополнительные сведения см. в разделе [Using apt-get to create a C device client project on Ubuntu](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/ubuntu_apt-get_sample_setup.md) (Создание проекта клиента для устройств на C в Ubuntu с помощью apt-get).
 
-* **mbed**: для разработчиков, создающих приложения для устройств на платформе mbed, мы опубликовали библиотеку и примеры, которые помогут всего за несколько минут приступить к работе с Центром Интернета вещей Azure. Дополнительные сведения см. в разделе [Use the mbed library](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#mbed) (Использование библиотеки mbed).
+* **mbed**. для разработчиков, создающих приложения для устройств на платформе mbed, мы опубликовали библиотеку и примеры, которые помогут вам начать работу за считаные минуты с помощью центра Интернета вещей Azure. Дополнительные сведения см. в разделе [Use the mbed library](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/readme.md#mbed) (Использование библиотеки mbed).
 
-* **Arduino**: если вы разрабатываете приложения на платформе Arduino, то вы можете использовать библиотеку Azure IoT, доступную в диспетчере библиотек интегрированной среды разработки Arduino. Дополнительные сведения см. в разделе [The Azure IoT Hub library for Arduino](https://github.com/azure/azure-iot-arduino) (Библиотека Центра Интернета вещей Azure для Arduino).
+* **Arduino**. Если вы разрабатываете на Arduino, вы можете использовать библиотеку Azure IOT, доступную в ДИСПЕТЧЕРЕ библиотек IDE Arduino. Дополнительные сведения см. в разделе [The Azure IoT Hub library for Arduino](https://github.com/azure/azure-iot-arduino) (Библиотека Центра Интернета вещей Azure для Arduino).
 
-* **iOS**: пакет SDK для устройств Центра Интернета вещей доступен в CocoaPods для разработки для устройств Mac и iOS. Дополнительные сведения можно найти в разделе [iOS Samples for Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) (Примеры iOS для Центра Интернета вещей Microsoft Azure).
+* **iOS**: пакет SDK для устройств центра Интернета вещей доступен в CocoaPods для разработки для устройств Mac и iOS. Дополнительные сведения можно найти в разделе [iOS Samples for Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) (Примеры iOS для Центра Интернета вещей Microsoft Azure).
 
 Тем не менее с помощью этого краткого руководства вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве.
 
@@ -65,7 +65,7 @@ ms.locfileid: "78255295"
 
 2. Найдите имя тега для [последнего выпуска](https://github.com/Azure/azure-iot-sdk-c/releases/latest) пакета SDK.
 
-3. Откройте командную строку или оболочку Git Bash. Выполните приведенные ниже команды, чтобы клонировать репозиторий GitHub с последним выпуском [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c). Используйте найденный тег в качестве значения для параметра `-b`:
+3. Откройте командную строку или оболочку Git Bash. Выполните приведенные ниже команды, чтобы клонировать репозиторий GitHub с последним выпуском [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c). Используйте найденный тег в качестве значения для параметра `-b`:
 
     ```cmd/sh
     git clone -b <release-tag> https://github.com/Azure/azure-iot-sdk-c.git
@@ -116,9 +116,9 @@ ms.locfileid: "78255295"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName.** Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyCDevice**. Это имя регистрируемого устройства. Рекомендуется использовать **MyCDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **Микдевице**: это имя регистрируемого устройства. Рекомендуется использовать **MyCDevice**, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyCDevice
@@ -126,7 +126,7 @@ ms.locfileid: "78255295"
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName.** Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyCDevice --output table
@@ -185,7 +185,7 @@ ms.locfileid: "78255295"
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName.** Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name {YourIoTHubName} --output table

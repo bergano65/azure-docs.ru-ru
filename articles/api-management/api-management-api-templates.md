@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: eee95a2b6acde3ad3b7d94cf5cdd0f74f9f09fd9
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176870"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374355"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
 
 С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц API на портале разработчика.  
   
@@ -89,7 +89,7 @@ ms.locfileid: "73176870"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Тип|Description|  
 |--------------|----------|-----------------|  
 |`apis`|Коллекция сущностей [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|API, доступные для текущего пользователя.|  
   
@@ -344,14 +344,14 @@ ms.locfileid: "73176870"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Тип|Description|  
 |--------------|----------|-----------------|  
-|`apiId`|string|Идентификатор текущего API.|  
-|`apiName`|string|Имя API.|  
-|`apiDescription`|string|Описание API.|  
+|`apiId`|строка|Идентификатор текущего API.|  
+|`apiName`|строка|Имя API.|  
+|`apiDescription`|строка|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
 |`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
-|`sampleUrl`|string|URL-адрес текущей операции.|  
+|`sampleUrl`|строка|URL-адрес текущей операции.|  
 |`operationMenu`|[Меню операций](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
