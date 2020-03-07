@@ -12,11 +12,11 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: 5167c897109f9e4f050ac6f7416ecabbbb28a4a9
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196607"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389551"
 ---
 # <a name="indexing-tables-in-sql-analytics"></a>Индексирование таблиц в SQL Analytics
 
@@ -285,6 +285,6 @@ ALTER TABLE [dbo].[FactInternetSales_20000101_20010101] SWITCH PARTITION 2 TO  [
 
 Дополнительные сведения о повторном создании секций с помощью CTAS см. [в разделе Использование секций в SQL Analytics](sql-data-warehouse-tables-partition.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).

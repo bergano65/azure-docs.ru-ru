@@ -5,11 +5,11 @@ ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.openlocfilehash: e2e32ac6981635e3b9885119fdf397783ac32cc9
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156392"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78363763"
 ---
 # <a name="use-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure
 

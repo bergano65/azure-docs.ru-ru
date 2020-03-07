@@ -6,11 +6,11 @@ ms.date: 03/04/2019
 ms.topic: quickstart
 ms.author: jgao
 ms.openlocfilehash: 9a829b0c84c397f297539cdb04b3ad027a18c834
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75455628"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78383595"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
 
@@ -22,7 +22,7 @@ ms.locfileid: "75455628"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
@@ -94,11 +94,11 @@ ms.locfileid: "75455628"
 
 2. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (CLI).  После переключения желательно перезагрузить оболочку.
 
-    # <a name="clitabcli"></a>[CLI](#tab/CLI)
+    # <a name="cli"></a>[CLI](#tab/CLI)
 
     ![Cloud Shell CLI на портале Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-choose-cli.png)
 
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ![Cloud Shell PowerShell на портале Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-choose-powershell.png)
 
@@ -106,11 +106,11 @@ ms.locfileid: "75455628"
 
 3. Выберите **Отправка и скачивание файлов**, а затем **Отправить**.
 
-    # <a name="clitabcli"></a>[CLI](#tab/CLI)
+    # <a name="cli"></a>[CLI](#tab/CLI)
 
     ![Файл отправки Cloud Shell портале Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-upload-file.png)
 
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ![Файл отправки Cloud Shell портале Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-upload-file-powershell.png)
 
@@ -120,18 +120,18 @@ ms.locfileid: "75455628"
 
     При необходимости можно использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-    # <a name="clitabcli"></a>[CLI](#tab/CLI)
+    # <a name="cli"></a>[CLI](#tab/CLI)
 
     ![Файл списка оболочки Cloud портала Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-list-file.png)
 
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ![Файл списка оболочки Cloud портала Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-list-file-powershell.png)
 
     ---
 4. Выполните следующие команды в Cloud Shell. Выберите вкладку, чтобы отобразить код PowerShell или код CLI.
 
-    # <a name="clitabcli"></a>[CLI](#tab/CLI)
+    # <a name="cli"></a>[CLI](#tab/CLI)
     ```azurecli
     echo "Enter the Resource Group name:" &&
     read resourceGroupName &&
@@ -141,7 +141,7 @@ ms.locfileid: "75455628"
     az group deployment create --resource-group $resourceGroupName --template-file "$HOME/azuredeploy.json"
     ```
 
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ```azurepowershell
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -157,11 +157,11 @@ ms.locfileid: "75455628"
 
     На следующем снимке экрана показан пример развертывания.
 
-    # <a name="clitabcli"></a>[CLI](#tab/CLI)
+    # <a name="cli"></a>[CLI](#tab/CLI)
 
     ![Шаблон развертывания оболочки Cloud портала Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-deploy-template.png)
 
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ![Шаблон развертывания оболочки Cloud портала Azure](./media/quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-deploy-template-powershell.png)
 
@@ -171,7 +171,7 @@ ms.locfileid: "75455628"
 
 5. Чтобы перечислить созданные учетные записи хранения, выполните следующую команду PowerShell или CLI:
 
-    # <a name="clitabcli"></a>[CLI](#tab/CLI)
+    # <a name="cli"></a>[CLI](#tab/CLI)
     ```azurecli
     echo "Enter the Resource Group name:" &&
     read resourceGroupName &&
@@ -180,7 +180,7 @@ ms.locfileid: "75455628"
     az storage account show --resource-group $resourceGroupName --name $storageAccountName
     ```
 
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ```azurepowershell
     $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"

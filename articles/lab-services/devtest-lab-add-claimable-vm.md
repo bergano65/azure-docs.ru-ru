@@ -15,17 +15,17 @@ ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
 ms.openlocfilehash: 13d642597fdf5d0eae6c6fd4f0cab16181f033c2
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383952"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390964"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Создание запрашиваемой виртуальной машины и управление ею в лаборатории Azure DevTest Labs
-Добавление запрашиваемой виртуальной машины в лабораторию аналогично [добавлению стандартной виртуальной машины](devtest-lab-add-vm.md). Оно выполняется *на базе* [пользовательского образа](devtest-lab-create-template.md), [формулы](devtest-lab-manage-formulas.md) или [образа Marketplace](devtest-lab-configure-marketplace-images.md). В этой статье описывается добавление запрашиваемой виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure, а также действия пользователя для резервирования или освобождения виртуальной машины.
+Добавление запрашиваемой виртуальной машины в лабораторию аналогично [добавлению стандартной виртуальной машины](devtest-lab-add-vm.md). Оно выполняется *на базе*[пользовательского образа](devtest-lab-create-template.md), [формулы](devtest-lab-manage-formulas.md) или [образа Marketplace](devtest-lab-configure-marketplace-images.md). В этой статье описывается добавление запрашиваемой виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure, а также действия пользователя для резервирования или освобождения виртуальной машины.
 
 ## <a name="steps-to-add-a-claimable-vm-to-a-lab-in-azure-devtest-labs"></a>Процедура добавления запрашиваемой виртуальной машины в лабораторию в Azure DevTest Labs
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите **DevTest Labs** в разделе **DEVOPS**. Выберите * (звездочку) рядом с полем **DevTest Labs** в разделе **DEVOPS**. После этого пункт **DevTest Labs** будет добавлен в левое меню навигации, чтобы вы в следующий раз могли легко открыть его. Теперь вы можете выбрать **DevTest Labs** в левом меню навигации.
 
     ![Окно "Все службы". Выбор DevTest Labs](./media/devtest-lab-create-lab/all-services-select.png)
@@ -97,6 +97,6 @@ ms.locfileid: "74383952"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины вы можете подключиться к ней, выбрав **Подключиться** на соответствующей панели управления.
 * Изучите [коллекцию шаблонов быстрого запуска для Azure Resource Manager в DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: jaredro
 ms.openlocfilehash: 9f2b106df531dfdf26c2c83b765e3f7270a63df5
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770991"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361737"
 ---
-# <a name="expressroute-faq"></a>Часто задаваемые вопросы об ExpressRoute
+# <a name="expressroute-faq"></a>Вопросы и ответы по ExpressRoute
 
 ## <a name="what-is-expressroute"></a>Что такое ExpressRoute?
 
@@ -86,7 +86,7 @@ ExpressRoute поддерживает [три домена маршрутиза�
 
 **Не поддерживается:**
 
-* Сеть кэширующих серверов (CDN)
+* CDN
 * Azure Front Door
 * Сервер многофакторной идентификации (устаревший)
 * Диспетчер трафика

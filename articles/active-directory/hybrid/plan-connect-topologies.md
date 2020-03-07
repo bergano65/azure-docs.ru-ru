@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: поддерживаемые топологии | Документация Майкрософт'
+title: 'Azure AD Connect: поддерживаемые топологии | Документация Майкрософт'
 description: В этой статье подробно описываются поддерживаемые и неподдерживаемые топологии Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9618e02f54fbb2a3b92771761c5fcf700d126b5c
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275211"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376053"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии для Azure AD Connect
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -29,7 +29,7 @@ ms.locfileid: "70275211"
 
 Ниже приведены условные обозначения для изображений в статье.
 
-| Описание | Знак |
+| Description | Символ |
 | --- | --- |
 | Локальный лес Active Directory |![Локальный лес Active Directory](./media/plan-connect-topologies/LegendAD1.png) |
 | Локальная служба Active Directory с фильтрацией импорта |![Active Directory с фильтрацией импорта](./media/plan-connect-topologies/LegendAD2.png) |
@@ -42,7 +42,7 @@ ms.locfileid: "70275211"
 
 
 > [!IMPORTANT]
-> Мы поддерживаем изменение или использование служб синхронизации Azure AD Connect только в контексте официально задокументированных конфигураций или действий. Любые иные конфигурации или действия могут привести к несогласованному или неподдерживаемому состоянию служб синхронизации Azure AD Connect. Для таких развертываний Майкрософт не предоставляет техническую поддержку.
+> Мы поддерживаем изменение или использование служб синхронизации Azure AD Connect только в контексте официально задокументированных конфигураций или действий. Любая из этих конфигураций или действий может привести к несогласованному или неподдерживаемому состоянию Azure AD Connect синхронизации. В результате корпорация Майкрософт не может предоставить техническую поддержку для таких развертываний.
 
 
 ## <a name="single-forest-single-azure-ad-tenant"></a>Один лес, один клиент Azure AD
@@ -192,9 +192,9 @@ Azure AD Connect поддерживает установку второго се
 
 Для синхронизации пользователей (с помощью GALSync) между двумя организациями Exchange можно локально использовать FIM 2010 или MIM 2016. Пользователи из одной организации будут отображаться в другой организации как внешние пользователи или контакты. Затем эти локальные экземпляры Active Directory можно синхронизировать с их собственными клиентами Azure AD.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Больше об установке Azure AD Connect для этих сценариев можно узнать в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md).
 
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).

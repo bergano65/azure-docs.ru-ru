@@ -13,11 +13,11 @@ ms.workload: infrastructure
 ms.date: 08/23/2019
 ms.author: genli
 ms.openlocfilehash: 80fd91106530c0150a85d508b24041b2263da925
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73749668"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78382678"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "73749668"
 - Введите пароль для разблокировки этого диска [ ]. Нажмите клавишу Insert для просмотра пароля при вводе.
 - Введите ключ восстановления. Загрузите ключ восстановления с USB-устройства.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта проблема может возникнуть если виртуальная машина не сможет найти файл ключа восстановления BitLocker (BEK) для дешифрования зашифрованного диска.
 
@@ -283,7 +283,7 @@ ms.locfileid: "73749668"
 
 **Примеры параметров**
 
-| Параметры  | Пример значения  |Комментарии   |
+| Параметры  | Пример значения  |Comments   |
 |---|---|---|
 |  $keyVaultName | myKeyVault2112852926  | Имя хранилища ключей, в котором хранится ключ |
 |$kekName   |MyKey   | Имя ключа, используемого для шифрования виртуальной машины|
