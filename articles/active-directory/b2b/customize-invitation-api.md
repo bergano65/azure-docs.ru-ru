@@ -12,11 +12,11 @@ manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3a090ee3f9588ff6bff01e12db469bf04407a7fc
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74272861"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78377664"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>API службы совместной работы Azure Active Directory B2B и настройка
 
@@ -91,7 +91,7 @@ API можно запустить в следующих режимах авто�
 New-AzureADMSInvitation
 ```
 
-Можно использовать приведенные ниже параметры.
+Можно использовать следующие параметры.
 
 * -InvitedUserDisplayName
 * -InvitedUserEmailAddress
@@ -115,11 +115,11 @@ Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Proper
 > [!NOTE]
 > Убедитесь, что у вас установлена последняя версия модуля AzureAD PowerShell или AzureADPreview PowerShell. 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 Ознакомьтесь со справочником по API приглашения по адресу [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Элементы сообщения с приглашением в службу совместной работы B2B](invitation-email-elements.md)

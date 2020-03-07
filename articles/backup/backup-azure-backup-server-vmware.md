@@ -4,11 +4,11 @@ description: Из этой статьи вы узнаете, как исполь
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.openlocfilehash: df85cba42118a2e814a4a1c8338f3927e4d75f36
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152873"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392041"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -22,7 +22,7 @@ ms.locfileid: "76152873"
 - добавить сервер vCenter или ESXi в Azure Backup Server;
 - настроить группу защиты, которая содержит необходимые для резервного копирования виртуальные машины VMware, указать параметры резервного копирования и планировать его выполнение.
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 - Убедитесь, что вы используете версию vCenter/ESXi, которая поддерживается для резервного копирования. См. таблицу поддержки [здесь](https://docs.microsoft.com/azure/backup/backup-mabs-protection-matrix).
 - Убедитесь, что Azure Backup Server настроено. Если это еще не сделано, перед началом изучите [это](backup-azure-microsoft-azure-backup.md). Azure Backup Server следует запускать с последними обновлениями.
@@ -31,7 +31,7 @@ ms.locfileid: "76152873"
 
 По умолчанию Azure Backup Server взаимодействует с серверами VMware по протоколу HTTPS. Чтобы настроить соединение HTTPS, скачайте сертификат Центра сертификации (ЦС) VMware и импортируйте его в Azure Backup Server.
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 
 - Если вы не хотите использовать протокол HTTPS, можно [отключить проверку сертификата HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. В первый раз подключение не будет защищено и отобразится следующее.
@@ -137,7 +137,7 @@ Windows Registry Editor Version 5.00
 | Операции с файлами в хранилище данных с низким уровнем                          | Глобальные. Управление настраиваемыми атрибутами                           | Datastore.AllocateSpace                     |
 | Кластер хранилища данных. Настройка кластера дататсторе             | Глобальный. Задание настраиваемого атрибута                               | VirtualMachine.Config.ChangeTracking        |
 | Методы Global. Disable                                       | Ведущие. local Operations. Создать виртуальную машину              | VirtualMachine.State.RemoveSnapshot         |
-| Методы Global. Enable                                        | Сеть. Назначить сеть                                   | VirtualMachine.State.CreateSnapshot         |
+| Методы Global. Enable                                        | Сети. Назначить сеть                                   | VirtualMachine.State.CreateSnapshot         |
 | Глобальные лицензии                                              | Ресурсов. Назначение виртуальной машины пулу ресурсов         | VirtualMachine.Provisioning.DiskRandomRead  |
 | Событие Global. log                                             | Виртуальная машина. Конфигурация. Добавление нового диска                | VirtualMachine.Interact.PowerOff            |
 | Глобальные. Управление настраиваемыми атрибутами                              | Виртуальная машина. Configuration. Advanced                    | VirtualMachine.Inventory.Create             |
@@ -290,7 +290,7 @@ Windows Registry Editor Version 5.00
        - Краткосрочные резервные копии являются полными резервными копиями, а не добавочным.
        - Чтобы изменить дату или время, когда произошло краткосрочное резервное копирование, нажмите кнопку **Изменить**.
 
-         ![Выберите краткосрочные цели](./media/backup-azure-backup-server-vmware/short-term-goals.png)
+         ![Задание краткосрочных целей](./media/backup-azure-backup-server-vmware/short-term-goals.png)
 
 1. В окне **Проверить выделение дискового пространства** проверьте дисковое пространство для резервных копий виртуальных машин. Для виртуальных машин.
 
@@ -336,16 +336,16 @@ Windows Registry Editor Version 5.00
 
     ![Сводка параметров и элементов группы защиты](./media/backup-azure-backup-server-vmware/protection-group-summary.png)
 
-## <a name="vmware-vsphere-67"></a>VMware vSphere 6.7
+## <a name="vmware-vsphere-67"></a>VMWare vSphere 6,7
 
 Чтобы создать резервную копию vSphere 6,7, выполните следующие действия.
 
-- Включите протокол TLS 1.2 на сервере DPM.
+- Включение TLS 1,2 на сервере DPM
 
 >[!NOTE]
 >В VMWare 6,7 в качестве протокола связи включен протокол TLS.
 
-- Задайте разделы реестра следующим образом:
+- Задайте следующие разделы реестра:
 
 ```text
 Windows Registry Editor Version 5.00
@@ -367,6 +367,6 @@ Windows Registry Editor Version 5.00
 "SchUseStrongCrypto"=dword:00000001
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для решения проблем с устранением неполадок при настройке резервного копирования см. статью [Устранение неполадок Azure Backup Server](./backup-azure-mabs-troubleshoot.md).

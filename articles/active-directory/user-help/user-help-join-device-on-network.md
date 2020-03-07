@@ -13,11 +13,11 @@ ms.date: 08/03/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.openlocfilehash: 0ff8b85a15d94ded2d702e0df247f9ebc4d3f923
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062274"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78377548"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.
@@ -85,7 +85,7 @@ ms.locfileid: "77062274"
 
 5. В окне **Ввод пароля** введите пароль и щелкните **Вход**.
 
-    ![Ввод пароля](./media/user-help-join-device-on-network/join-device-setup-password.png)
+    ![Введите пароль](./media/user-help-join-device-on-network/join-device-setup-password.png)
 
 6. На мобильном устройстве подтвердите устройство, чтобы оно могло получить доступ к вашей учетной записи. 
 
@@ -110,7 +110,7 @@ ms.locfileid: "77062274"
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-join-device-on-network/join-device-setup-verify.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Когда вы присоедините свое устройство к сети вашей организации, вы сможете получать доступ ко всем своим ресурсам, используя сведения рабочей или учебной учетной записи.
 
 - Если ваша организация хочет, чтобы вы зарегистрировали личное устройство, например, ваш телефон, перейдите к статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).

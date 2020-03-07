@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: diberry
 ms.openlocfilehash: 7412677773b60a1894a6ece7251e797bfddee091
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280812"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78396950"
 ---
 # <a name="understand-what-good-utterances-are-for-your-luis-app"></a>Выясните, какие фразы лучше подходят для вашего приложения LUIS
 
@@ -53,12 +53,12 @@ ms.locfileid: "74280812"
 
 Давайте рассмотрим такие примеры высказываний:
 
-|Примеры фраз|
+|Примеры высказываний|
 |--|
-|how do I get a computer?|
-|Where do I get a computer?|
-|I want to get a computer, how do I go about it?|
-|When can I have a computer?| 
+|Как мне получить компьютер?|
+|Где мне получить компьютер?|
+|Я хочу получить компьютер, что мне нужно сделать?|
+|Когда я могу получить компьютер?| 
 
 Основной термин здесь «Computer» не изменяется. Но пользователь может применять другие слова: настольный компьютер, ноутбук, рабочая станция или просто машина. LUIS может осуществлять интеллектуальный вывод синонимов из контекста, но при создании фразы продолжительностью для обучения всегда лучше изменить их.
 
@@ -144,12 +144,12 @@ LUIS создает эффективные модели, если высказы
 
 |Фраза|
 |--|
-|What kind of county fairs are happening in the Seattle area this summer?|
-|Is the current rating for the Seattle review fair?|
+|Какие ярмарки проходят неподалеку от Сиэтла этим летом?|
+|Справедлива ли эта оценка за обзор Сиэтла?|
 
 Если требуется, чтобы сущность события находила все данные события, пометьте слово `fair` в первом высказывании, а не во втором.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 Сведения о том, как обучить приложение LUIS пониманию высказываний пользователя, см. в статье [Добавление примеров высказываний и меток с сущностями](luis-how-to-add-example-utterances.md).
 

@@ -10,11 +10,11 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 7288e5d8c01122bea7650274cdaf358c7fc24cd0
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78197323"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392393"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -36,7 +36,7 @@ ms.locfileid: "78197323"
 | Операция | Описание | Разрешение пользователя |
 |:--|:--|:--|
 |Список|Выводит список удаленных хранилищ ключей.|Microsoft.KeyVault/deletedVaults/read|
-|Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
+|Восстановить|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
 |Purge|Окончательно удаляет удаленное хранилище ключей и все его содержимое.|Microsoft.KeyVault/locations/deletedVaults/purge/action|
 
 Дополнительные сведения о разрешениях и управлении доступом см. в разделе [Защита хранилища ключей](key-vault-secure-your-key-vault.md).
