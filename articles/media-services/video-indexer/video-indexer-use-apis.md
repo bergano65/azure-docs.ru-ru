@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 02/03/2020
 ms.author: juliako
 ms.openlocfilehash: 8b6d160f71bfe8b2e5c447296d511b54ce6542c8
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989779"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78382911"
 ---
 # <a name="tutorial-use-the-video-indexer-api"></a>Руководство. Использование API Индексатора видео
 
@@ -207,7 +207,7 @@ Debug.WriteLine(playerWidgetLink);
 
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Общие сведения об Индексаторе видео](video-indexer-overview.md)
 - [Регионы](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

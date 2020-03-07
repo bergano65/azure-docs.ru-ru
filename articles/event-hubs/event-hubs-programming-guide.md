@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 01/15/2020
 ms.author: shvija
 ms.openlocfilehash: afd466e0266cf2d95f95eb8536943f5856c26a58
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899906"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78365416"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>Руководством по программированию .NET для концентраторов событий Azure (устаревший пакет Microsoft. Azure. EventHubs)
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
@@ -29,7 +29,7 @@ ms.locfileid: "76899906"
 
 При использовании управляемых API .NET основными конструктивными элементами для публикации данных в Центрах событий являются классы [EventHubClient][] и [EventData][]. [EventHubClient][] обеспечивает канал связи AMQP, по которому события отправляются в концентратор событий. Класс [EventData][] представляет собой событие и используется для публикации сообщений в концентраторе событий. Этот класс включает тело, некоторые метаданные (свойства) и сведения о заголовке (Системпропертиес) о событии. По мере перемещения объекта [EventData][] через концентратор событий к объекту добавляются другие свойства.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 Классы .NET, поддерживающие Центры событий, входят в пакет NuGet [Microsoft.Azure.EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Центр событий можно установить с помощью обозревателя решений Visual Studio или [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) в Visual Studio. Для этого выполните следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :
 
 ```shell
@@ -62,7 +62,7 @@ eventHubClient = EventHubClient.CreateFromConnectionString(connectionStringBuild
 
 ## <a name="event-serialization"></a>Сериализация событий
 
-Класс [EventData][] имеет [два перегруженных конструктора](/dotnet/api/microsoft.azure.eventhubs.eventdata.-ctor), которые принимают различные параметры, байты или массив байтов, которые представляют полезные данные событий. При использовании JSON совместно с [EventData][]можно применить метод **Encoding.UTF8.GetBytes()** для получения массива байтов для строки в кодировке JSON. Пример.
+Класс [EventData][] имеет [два перегруженных конструктора](/dotnet/api/microsoft.azure.eventhubs.eventdata.-ctor), которые принимают различные параметры, байты или массив байтов, которые представляют полезные данные событий. При использовании JSON совместно с [EventData][]можно применить метод **Encoding.UTF8.GetBytes()** для получения массива байтов для строки в кодировке JSON. Например:
 
 ```csharp
 for (var i = 0; i < numMessagesToSend; i++)
@@ -98,7 +98,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 
 Пакетная отправка событий позволяет повысить пропускную способность. Вы можете использовать API [CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch) для создания пакета, в который можно позже добавить объекты данных для вызова [SendAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync).
 
-Размер одного пакета не должен превышать 1 МБ для события. Кроме того, каждое сообщение в пакете использует один и тот же идентификатор издателя. Отправитель должен убедиться, что размер пакета не превышает максимальный размер события. Если же размер больше, генерируется ошибка **Send** клиента. Можно использовать вспомогательный метод [EventHubClient.CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), чтобы убедиться, что пакет не превысит 1 МБ. Вы получаете пустой пакет [EventDataBatch](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch) из API [CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), а затем с помощью [TryAdd](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch.tryadd) добавляете события для создания пакета. 
+Размер одного пакета не должен превышать 1 МБ для события. Кроме того, каждое сообщение в пакете использует один и тот же идентификатор издателя. Отправитель должен убедиться, что размер пакета не превышает максимальный размер события. Если размер превышен, возникает ошибка **отправки**. Можно использовать вспомогательный метод [EventHubClient.CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), чтобы убедиться, что пакет не превысит 1 МБ. Вы получаете пустой пакет [EventDataBatch](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch) из API [CreateBatch](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createbatch), а затем с помощью [TryAdd](/dotnet/api/microsoft.azure.eventhubs.eventdatabatch.tryadd) добавляете события для создания пакета. 
 
 ## <a name="send-asynchronously-and-send-at-scale"></a>Асинхронная отправка и отправка в нужном масштабе
 
@@ -114,7 +114,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 * [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync)
 * [ProcessErrorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processerrorasync);
 
-Чтобы начать обработку событий, следует создать [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Пример.
+Чтобы начать обработку событий, следует создать [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Например:
 
 > [!NOTE]
 > EventProcessorHost и связанные с ним классы предоставляются в пакете **Microsoft. Azure. EventHubs. Processor** . Добавьте пакет в проект Visual Studio, следуя инструкциям в [этой статье](event-hubs-dotnet-framework-getstarted-send.md#add-the-event-hubs-nuget-package) или выполнив следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :`Install-Package Microsoft.Azure.EventHubs.Processor`.
@@ -151,7 +151,7 @@ await eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>();
 
 Дополнительные сведения об отзыве издателя и отправке в Центры событий в качестве издателя см. в примере, приведенном в статье [Event Hubs Large Scale Secure Publishing](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) (Крупномасштабная безопасная публикация Центров событий).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 

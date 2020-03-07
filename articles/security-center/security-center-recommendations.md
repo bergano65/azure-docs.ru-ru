@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 07/29/2019
 ms.author: memildin
 ms.openlocfilehash: 408b0f020be72b8e6b10dd6c97298afda1b91360
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77603590"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394639"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Рекомендации по безопасности в Центре безопасности Azure 
 В этом разделе объясняется, как просмотреть и изучить рекомендации в центре безопасности Azure, которые помогут защитить ресурсы Azure.
@@ -69,7 +69,7 @@ ms.locfileid: "77603590"
 >[!NOTE] 
 > См. раздел [модели развертывания классических и диспетчер ресурсов](../azure-classic-rm.md) для ресурсов Azure.
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе описываются рекомендации по безопасности в Центре безопасности. Чтобы узнать, как исправлять рекомендации:
 

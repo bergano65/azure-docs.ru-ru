@@ -9,11 +9,11 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: 98db10f0fc7a417f39d4bb00e77af6bdea034a03
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198281"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78368606"
 ---
 # <a name="extended-geojson-geometries"></a>Расширенные геометрические объекты геоjson
 
@@ -26,7 +26,7 @@ Azure Maps предоставляет список мощных интерфей
 * MultiLineString
 * MultiPoint
 * MultiPolygon
-* отчетов
+* Точка
 * Многоугольник
 
 Некоторые Azure Maps API принимают геометрические объекты, которые не являются частью [спецификации геоjson][1]. Например, [Поиск внутри геометрического](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry) API принимает круги и многоугольники.
@@ -39,7 +39,7 @@ Azure Maps предоставляет список мощных интерфей
 
 `Circle`ная геометрия, представленная с помощью объекта `GeoJSON Feature`, __должна__ содержать следующие координаты и свойства:
 
-- Center
+- Центр.
 
     Центр окружности представлен с помощью объекта `GeoJSON Point`.
 
@@ -98,7 +98,7 @@ Azure Maps предоставляет список мощных интерфей
 }
 
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о данных геоjson см. в Azure Maps:
 
