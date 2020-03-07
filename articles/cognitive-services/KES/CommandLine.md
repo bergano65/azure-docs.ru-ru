@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/24/2016
 ms.author: paulhsu
 ms.openlocfilehash: 018552982a8ece3bbbaea2d60e2a6e64f681f822
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60815140"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385641"
 ---
 # <a name="command-line-interface"></a>Интерфейс командной строки
 
@@ -30,7 +30,7 @@ ms.locfileid: "60815140"
 
 <a name="build_index-command"></a>
 
-## <a name="buildindex-command"></a>Команда build_index
+## <a name="build_index-command"></a>Команда build_index
 
 Команда **build_index** выполняет сборку двоичного файла индекса на основе файла определения схемы и файла данных индексируемых объектов.  Полученный файл индекса можно использовать для вычисления структурированных выражений запросов или создания интерпретаций для запросов на естественном языке в сочетании со скомпилированным файлом грамматики.
 
@@ -55,7 +55,7 @@ ms.locfileid: "60815140"
 
 <a name="build_grammar-command"></a>
 
-## <a name="buildgrammar-command"></a>Команда build_grammar
+## <a name="build_grammar-command"></a>Команда build_grammar
 
 Команда **build_grammar** компилирует грамматику, указанную в XML-файле, преобразуя ее в двоичную грамматику.  Полученный файл грамматики можно использовать с файлом индекса для формирования интерпретаций запросов на естественном языке.
 
@@ -70,7 +70,7 @@ ms.locfileid: "60815140"
 
 <a name="host_service-command"/>
 
-## <a name="hostservice-command"></a>Команда host_service
+## <a name="host_service-command"></a>Команда host_service
 
 Команда **host_service** размещает экземпляр службы KES на локальном компьютере.
 
@@ -80,15 +80,15 @@ ms.locfileid: "60815140"
 |-----------------|----------------------------|
 | `<grammarFile>` | Путь к входной двоичной грамматике         |
 | `<indexFile>`   | Путь к входному двоичному индексу           |
-| `--port <port>` | Номер локального порта.  Значение по умолчанию: 8000 |
+| `--port <port>` | Номер локального порта.  По умолчанию: 8000. |
 
-Можно указать локальные пути к файлам или URL-адреса больших двоичных объектов Azure.  Веб-служба будет размещена по адресу http://localhost:&lt ;порт&gt; /.  В разделе о [веб-API](WebAPI.md) представлен список поддерживаемых операций.
+Можно указать локальные пути к файлам или URL-адреса больших двоичных объектов Azure.  Веб-служба будет размещена по адресу http://localhost:&lt;порт&gt;/.  В разделе о [веб-API](WebAPI.md) представлен список поддерживаемых операций.
 
 За пределами среды Azure для локально размещенных служб действуют следующие ограничения при индексировании: размер файла до 1 МБ, до 10 запросов в секунду и до 1000 вызовов.  Чтобы устранить эти ограничения, выполните команду **host_service** на виртуальной машине Azure или выполните развертывание в облачной службе Azure с помощью команды **deploy_service**.
 
 <a name="deploy_service-command"/>
 
-## <a name="deployservice-command"></a>Команда deploy_service
+## <a name="deploy_service-command"></a>Команда deploy_service
 
 Команда **deploy_service** выполняет развертывание экземпляра службы KES в облачной службе Azure.
 
@@ -108,7 +108,7 @@ ms.locfileid: "60815140"
 
 <a name="describe_index-command"/>
 
-## <a name="describeindex-command"></a>Команда describe_index
+## <a name="describe_index-command"></a>Команда describe_index
 
 Команда **describe_index** выводит сведения о файле индекса, включая описание и схему.
 
@@ -122,7 +122,7 @@ ms.locfileid: "60815140"
 
 <a name="describe_grammar-command"/>
 
-## <a name="describegrammar-command"></a>Команда describe_grammar
+## <a name="describe_grammar-command"></a>Команда describe_grammar
 
 Команда **describe_grammar** выводит исходную спецификацию грамматики, использованную для создания двоичной грамматики.
 

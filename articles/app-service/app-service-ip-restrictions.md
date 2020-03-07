@@ -8,11 +8,11 @@ ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 42f25c1b66261ac644f015290bed2c7473acbdaa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422240"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374111"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Ограничения доступа для службы приложений Azure #
 
@@ -129,7 +129,7 @@ management.azure.com/subscriptions/**ИД_подписки**/resourceGroups/**г
 
 Ограничения доступа доступны для приложений функций с теми же функциями, что и планы службы приложений. При включении ограничений доступа будет отключен редактор кода портала для всех недопустимых IP-адресов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Ограничения доступа для приложений функций Azure](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
 
 [Интеграция шлюза приложений с конечными точками службы](networking/app-gateway-with-service-endpoints.md)

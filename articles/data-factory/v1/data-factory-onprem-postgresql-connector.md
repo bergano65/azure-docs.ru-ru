@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 37c83e77cadae002ff701a08c4b36a86f7cab9a0
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929068"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78387352"
 ---
 # <a name="move-data-from-postgresql-using-azure-data-factory"></a>Перемещение данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -28,11 +28,11 @@ ms.locfileid: "74929068"
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе PostgreSQL в службе "Фабрика данных Azure" версии 2](../connector-postgresql.md).
 
 
-В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной базы данных PostgreSQL. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
+В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной базы данных PostgreSQL. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
 Вы можете скопировать данные из локального хранилища данных PostgreSQL в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает перемещение данных из базы данных PostgreSQL в другие хранилища данных, но не наоборот.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Служба фабрики данных поддерживает подключение к локальным источникам PostgreSQL с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке.
 
@@ -52,8 +52,8 @@ ms.locfileid: "74929068"
   - Visual Studio
   - Azure PowerShell
   - Шаблон Azure Resource Manager
-  - .NET API
-  - REST API
+  - API для .NET
+  - REST API
 
     Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
@@ -70,23 +70,23 @@ ms.locfileid: "74929068"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе PostgreSQL.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
-| Тип |Для свойства type необходимо задать значение **OnPremisesPostgreSql** |ДА |
-| server |Имя сервера, PostgreSQL. |ДА |
-| база данных |Имя базы данных PostgreSQL. |ДА |
-| schema |Имя схемы в базе данных. Имя схемы чувствительно к регистру. |Нет |
-| authenticationType |Тип проверки подлинности, используемый для подключения к базе данных PostgreSQL. Возможными значениями являются: анонимная, обычная и Windows. |ДА |
-| Имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
+| тип |Для свойства type необходимо задать значение **OnPremisesPostgreSql** |Да |
+| сервер |Имя сервера, PostgreSQL. |Да |
+| база данных |Имя базы данных PostgreSQL. |Да |
+| схема |Имя схемы в базе данных. Имя схемы чувствительно к регистру. |Нет |
+| authenticationType |Тип проверки подлинности, используемый для подключения к базе данных PostgreSQL. Возможными значениями являются: анонимная, обычная и Windows. |Да |
+| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
 | пароль |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
-| gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных PostgreSQL. |ДА |
+| gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных PostgreSQL. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных](data-factory-create-datasets.md). Разделы структуры, доступности и политики JSON набора данных одинаковы для всех типов наборов данных.
 
 Раздел typeProperties во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел typeProperties набора данных с типом **RelationalTable** (который включает набор данных PostgreSQL) содержит приведенные ниже свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | tableName |Имя таблицы в экземпляре базы данных PostgreSQL, на которое ссылается связанная служба. Свойство tableName чувствительно к регистру. |Нет (если для свойства **RelationalSource** задано значение **query**). |
 
@@ -97,14 +97,14 @@ ms.locfileid: "74929068"
 
 Если источник относится к типу **RelationalSource** (который содержит PostgreSQL), то в разделе typeProperties доступны следующие свойства:
 
-| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, `"query": "select * from \"MySchema\".\"MyTable\""`. |Нет (если для свойства **tableName** задано значение **dataset**). |
+| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например: `"query": "select * from \"MySchema\".\"MyTable\""`. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
 > [!NOTE]
 > В именах схем и таблиц учитывается регистр. Заключите имя в `""` (двойные кавычки) в запросе.
 
-**Пример.**
+**Пример**.
 
  `"query": "select * from \"MySchema\".\"MyTable\""`
 
@@ -304,46 +304,46 @@ ms.locfileid: "74929068"
 
 | Тип базы данных PostgreSQL | Псевдонимы PostgresSQL | Тип .NET Framework |
 | --- | --- | --- |
-| abstime | |DateTime |
+| abstime | |Datetime |
 | bigint |int8 |Int64 |
 | bigserial |serial8 |Int64 |
 | bit [(n)] | |Byte[], String |
 | bit varying [ (n) ] |varbit |Byte[], String |
-| Логическое |bool |Логический |
+| Логическое |bool |Логическое |
 | box | |Byte[], String |
 | bytea | |Byte[], String |
-| character [(n)] |char [(n)] |Строка |
-| character varying [(n)] |varchar [(n)] |Строка |
-| cid | |Строка |
-| cidr | |Строка |
+| character [(n)] |char [(n)] |String |
+| character varying [(n)] |varchar [(n)] |String |
+| cid | |String |
+| cidr | |String |
 | circle | |Byte[], String |
-| date | |DateTime |
-| daterange | |Строка |
-| double precision |float8 |DOUBLE |
+| Дата | |Datetime |
+| daterange | |String |
+| double precision |float8 |С двойной точностью |
 | inet | |Byte[], String |
-| intarry | |Строка |
-| int4range | |Строка |
-| int8range | |Строка |
-| целое число |int, int4 |Int32 |
+| intarry | |String |
+| int4range | |String |
+| int8range | |String |
+| integer |int, int4 |Int32 |
 | interval [fields] [(p)] | |Timespan |
-| json | |Строка |
+| json | |String |
 | jsonb | |Byte[] |
-| line | |Byte[], String |
+| график | |Byte[], String |
 | lseg | |Byte[], String |
 | macaddr | |Byte[], String |
 | money | |Decimal |
 | numeric [(p, s)] |decimal [(p, s)] |Decimal |
-| numrange | |Строка |
+| numrange | |String |
 | oid | |Int32 |
 | path | |Byte[], String |
 | pg_lsn | |Int64 |
-| point | |Byte[], String |
-| polygon | |Byte[], String |
-| real |float4 |Отдельная |
+| регистрации | |Byte[], String |
+| многоугольник | |Byte[], String |
+| real |float4 |Один |
 | smallint |int2 |Int16 |
 | smallserial |serial2 |Int16 |
 | serial |serial4 |Int32 |
-| текст | |Строка |
+| текст | |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).
