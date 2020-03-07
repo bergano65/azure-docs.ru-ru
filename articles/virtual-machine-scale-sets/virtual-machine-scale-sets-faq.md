@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: manayar
 ms.openlocfilehash: 222f26febb7b14c627307295a8cdd68a17694d03
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275899"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394660"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -61,10 +61,10 @@ ms.locfileid: "76275899"
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Работают ли масштабируемые наборы с зонами доступности Azure?
 
-Да. Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
+Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
-## <a name="autoscale"></a>Автоматическое масштабирование
+## <a name="autoscale"></a>Автомасштабирование
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Существуют ли рекомендации по автомасштабированию Azure?
 
@@ -221,9 +221,9 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно для заполнения | Тип | Description
+Имя элемента конфигурации Linux | Обязательно | Тип | Description
 --- | --- | --- | ---
-ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
+ssh | нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
 path | Да | String | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Да | String | Указывает открытый ключ SSH в кодировке Base64.
 
@@ -331,7 +331,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Дополнительные сведения см. в [центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/Compliance/PCI).
 
-### <a name="does-managed-identities-for-azure-resourceshttpsdocsmicrosoftcomazureactive-directorymsi-overview-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
+### <a name="does-managed-identities-for-azure-resources-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
 
 Да. Некоторые примеры шаблонов MSI можно просмотреть в разделе Шаблоны быстрого запуска Azure для [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi) и [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
 
@@ -462,11 +462,11 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
     Update-AzVmss -ResourceGroupName $vmssResourceGroup -Name $vmssName -VirtualMachineScaleSet $vmss
     ```
 
-## <a name="networking"></a>Работа в сети
+## <a name="networking"></a>Сеть
 
 ### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-applies-to-all-the-vm-nics-in-the-set"></a>Можно ли назначить группу безопасности сети масштабируемому набору, чтобы она применялась ко всем сетевым картам виртуальных машин в наборе?
 
-Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример:
+Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример
 
 ```json
 "networkProfile": {
@@ -539,7 +539,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-the-dns-servers-used-by-a-scale-set"></a>Как настроить DNS-серверы, используемые масштабируемым набором?
 
-Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример:
+Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример
 ```json
     "dnsSettings":{
         "dnsServers":["10.0.0.6", "10.0.0.5"]
@@ -548,7 +548,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-a-scale-set-to-assign-a-public-ip-address-to-each-vm"></a>Как настроить масштабируемый набор, чтобы назначать общедоступный IP-адрес каждой виртуальной машине?
 
-Чтобы создать масштабируемый набор виртуальных машин, назначающий общедоступный IP-адрес каждой виртуальной машине, убедитесь, что версия API ресурса Microsoft.Compute/virtualMachineScaleSets — 2017-03-30, и добавьте пакет JSON _publicipaddressconfiguration_ в раздел ipConfigurations конфигурации масштабируемого набора. Пример:
+Чтобы создать масштабируемый набор виртуальных машин, назначающий общедоступный IP-адрес каждой виртуальной машине, убедитесь, что версия API ресурса Microsoft.Compute/virtualMachineScaleSets — 2017-03-30, и добавьте пакет JSON _publicipaddressconfiguration_ в раздел ipConfigurations конфигурации масштабируемого набора. Пример
 
 ```json
     "publicipaddressconfiguration": {
@@ -563,7 +563,7 @@ IP-адреса выбираются из указанной подсети.
 
 Да. Вы можете добавить идентификаторы ресурсов для нескольких серверных пулов адресов шлюза приложений в список _аппликатионгатевайбаккендаддресспулс_ в разделе _ipConfigurations_ сетевого профиля масштабируемого набора.
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 ### <a name="in-what-case-would-i-create-a-virtual-machine-scale-set-with-fewer-than-two-vms"></a>В каких случаях следует создавать масштабируемый набор с одной виртуальной машиной или без них?
 
@@ -649,7 +649,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="how-do-i-turn-on-boot-diagnostics"></a>Как включить диагностику загрузки?
 

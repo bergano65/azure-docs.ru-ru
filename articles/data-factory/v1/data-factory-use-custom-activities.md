@@ -13,11 +13,11 @@ ms.author: abnarain
 manager: anandsub
 robots: noindex
 ms.openlocfilehash: 54cb06f1c77ab68818d8531b57d6eb936deda8d7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438831"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385353"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -42,14 +42,14 @@ ms.locfileid: "75438831"
 > - Невозможно использовать шлюз управления данными из пользовательского действия для доступа к локальным источникам данных. В настоящее время [шлюз управления данными](data-factory-data-management-gateway.md) поддерживает действие копирования и действие хранимой процедуры только в фабрике данных.
 
 ## <a name="walkthrough-create-a-custom-activity"></a>Пошаговое руководство по созданию настраиваемого действия
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 * Visual Studio 2012/2013/2015/2017
 * Скачайте и установите пакет [Azure .NET SDK](https://azure.microsoft.com/downloads/)
 
 ### <a name="azure-batch-prerequisites"></a>Предварительные требования для пакетной службы Azure
 В этом руководстве вы запустите свои настраиваемые действия .NET с помощью пакетной службы Azure как вычислительные ресурсы. **Пакетная служба Azure** — это служба платформы, которая позволяет эффективно работать с приложениями для крупномасштабных параллельных и высокопроизводительных вычислений (HPC) в облаке. Пакетная служба Azure планирует запуск ресурсоемких вычислительных задач в управляемой **коллекции виртуальных машин** и автоматически масштабирует вычислительные ресурсы, учитывая требования заданий. Подробные сведения о пакетной службе Azure см. в статье [основы пакетной службы Azure][batch-technical-overview] .
 
-Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Для этого нужно сделать следующее:
+Для этого руководства создайте учетную запись пакетной службы Azure с пулом виртуальных машин. Ниже приводятся шаги:
 
 1. Создание **учетной записи пакетной службы Azure** на [портале Azure](https://portal.azure.com). Инструкции см. [в статье Создание учетной записи пакетной службы Azure и управление][batch-create-account] ей.
 2. Запишите ключ и имя учетной записи пакетной службы Azure, а также URI и имя пула. Они понадобятся при создании связанной службы пакетной службы Azure.
@@ -440,7 +440,7 @@ test custom activity Microsoft test custom activity Microsoft
 2. На панели команд щелкните **Создание хранилища данных** и выберите **Служба хранилища Azure**. В редакторе отобразится сценарий JSON для создания связанной службы хранилища Azure.
 
     !["Новое хранилище данных" — "Служба хранилища Azure"](media/data-factory-use-custom-activities/new-data-store-menu.png)
-3. Замените `<accountname>` именем своей учетной записи хранения Azure, а `<accountkey>` — ключом доступа к ней. Сведения о том, как получить ключ доступа к хранилищу, см. в статье [Управление ключами доступа к учетной записи хранения](../../storage/common/storage-account-keys-manage.md).
+3. Замените `<accountname>` именем своей учетной записи хранения Azure, а `<accountkey>` — ключом доступа к ней. Сведения о том, как получить ключ доступа к хранилищу, см. в статье [Управление ключами доступа к хранилищу](../../storage/common/storage-account-keys-manage.md).
 
     ![Связанная служба хранилища Azure](media/data-factory-use-custom-activities/azure-storage-linked-service.png)
 4. Чтобы развернуть эту службу, нажмите кнопку **Развернуть** на панели команд.
@@ -1021,7 +1021,7 @@ namespace DataFactoryAPITestApp
 Пример [локальной среды фабрики данных Azure](https://github.com/gbrueckl/Azure.DataFactory.LocalEnvironment) на портале GitHub включает в себя инструмент, который позволяет выполнять отладку настраиваемых действий .NET в Visual Studio.
 
 ## <a name="sample-custom-activities-on-github"></a>Примеры настраиваемых действий на портале GitHub
-| Пример | Результат настраиваемого действия |
+| Образец | Результат настраиваемого действия |
 | --- | --- |
 | [Загрузчик данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |Загрузка данных из конечной точки HTTP в хранилище BLOB-объектов с помощью настраиваемого действия C# в фабрике данных Azure. |
 | [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |Вызов модели Студии машинного обучения Azure и выполнение анализа мнений, оценки, прогнозирования и т. д. |

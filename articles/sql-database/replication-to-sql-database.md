@@ -12,11 +12,11 @@ ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 01/25/2019
 ms.openlocfilehash: f718bc17b987926f4324635f096d5983acdb63fc
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74997281"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78359877"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в пуле службы "База данных SQL Azure"
 
@@ -24,11 +24,11 @@ ms.locfileid: "74997281"
 
 ## <a name="supported-configurations"></a>**Поддерживаемые конфигурации**
   
-- SQL Server может быть экземпляром SQL Server, работающим локально или на виртуальной машине Azure в облаке. Дополнительные сведения см. на странице [Что собой представляет SQL Server на виртуальных машинах Azure (Windows)](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-infrastructure-services/).  
+- SQL Server может быть экземпляром SQL Server, работающим локально или на виртуальной машине Azure в облаке. Дополнительные сведения см. в статье [Обзор SQL Server на виртуальных машинах Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-sql-server-infrastructure-services/).  
 - База данных SQL Azure должна быть подписана на сообщения, отправляемые издателем SQL Server.  
 - Базу данных распространителя и агенты репликации нельзя разместить в базе данных SQL Azure.  
 - Поддерживается репликация моментальных снимков и односторонняя репликация транзакций. Одноранговая репликация транзакций и репликация слиянием не поддерживаются.
-- Репликация доступна в общедоступной предварительной версии в Управляемом экземпляре Базы данных SQL Azure. В Управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика. Дополнительные сведения см. в статье [Replication to SQL Database single and pooled databases](replication-with-sql-database-managed-instance.md) (Репликация в одну базу данных и базы данных в составе пула службы "База данных SQL").
+- Репликация поддерживается в общедоступной предварительной версии Управляемого экземпляра Базы данных SQL. В Управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика. Дополнительные сведения см. в статье [Replication to SQL Database single and pooled databases](replication-with-sql-database-managed-instance.md) (Репликация в одну базу данных и базы данных в составе пула службы "База данных SQL").
 
 ## <a name="versions"></a>Версии  
 
@@ -54,7 +54,7 @@ ms.locfileid: "74997281"
 - Одна публикация на сервере SQL Server может поддерживать подписчиков и Базы данных SQL Azure, и SQL Server (локально и SQL Server на виртуальной машине Azure).  
 - Управление репликацией, ее мониторинг и устранение неполадок должны выполняться на локальном SQL Server.  
 - В Базе данных SQL Azure поддерживаются только принудительные подписки.  
-- В **sp_addsubscription** для Базы данных SQL поддерживается только `@subscriber_type = 0`.  
+- В `@subscriber_type = 0`sp_addsubscription**для Базы данных SQL поддерживается только**.  
 - База данных SQL Azure не поддерживает двунаправленную, немедленную, обновляемую или одноранговую репликацию.
 
 ## <a name="replication-architecture"></a>Архитектура репликации  
@@ -88,7 +88,7 @@ ms.locfileid: "74997281"
 - копирование полнотекстовых индексов;  
 - копирование XSD XML;  
 - копирование XML-индексов;  
-- копирование разрешений;  
+- копирование разрешений.  
 - копирование пространственных индексов;  
 - копирование фильтруемых индексов;  
 - копирование атрибута сжатия данных;  
@@ -97,7 +97,7 @@ ms.locfileid: "74997281"
 - копирование hierarchyid в типы данных MAX;  
 - копирование пространственных типов в типы данных MAX;  
 - копирование расширенных свойств;  
-- копирование разрешений;  
+- копирование разрешений.  
 
 ### <a name="limitations-to-be-determined"></a>Ограничения, которые должны быть подтверждены
 
@@ -106,15 +106,15 @@ ms.locfileid: "74997281"
 
 ## <a name="examples"></a>Примеры
 
-Создайте публикацию и принудительную подписку. Дополнительные сведения см. здесь:
+Создайте публикацию и принудительную подписку. Дополнительные сведения см. в разделе:
   
-- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
+- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'** ) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
 
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md)
-- [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
+- [Create a Publication](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
 - [Типы репликации](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)
 - [Мониторинг (репликация)](https://docs.microsoft.com/sql/relational-databases/replication/monitor/monitoring-replication)

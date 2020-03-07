@@ -9,24 +9,24 @@ ms.date: 09/17/2019
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: 4c7a24ad692086398059d1afd48c8927e9d18582
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74022190"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384225"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью портала
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-linkvnet-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-linkvnet-arm.md)
-> * [Интерфейс командной строки Azure](howto-linkvnet-cli.md)
+> * [Azure CLI](howto-linkvnet-cli.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-a-connection-between-your-vpn-gateway-and-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-linkvnet-classic.md)
 > 
 
 Эта статья поможет вам создать подключение для связи виртуальной сети с каналом Azure ExpressRoute, используя портал Azure. Виртуальные сети, подключаемые к каналу Azure ExpressRoute, могут быть в той же или другой подписке.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Прежде чем приступить к настройке, изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 
@@ -135,5 +135,5 @@ ms.locfileid: "74022190"
 
 Можно удалить подключение и разорвать связь виртуальной сети с каналом ExpressRoute, выбрав значок **Удалить** на странице соответствующего подключения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

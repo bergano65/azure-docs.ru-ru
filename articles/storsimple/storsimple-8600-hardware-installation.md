@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 8d118e71b29b54b034788c37916091ad8f8b996f
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277116"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78365889"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8600-device"></a>Распаковка, установка в стойку и подключение устройства StorSimple 8600
 
@@ -164,7 +164,7 @@ Microsoft Azure StorSimple 8600 представляет собой устрой
 ## <a name="cable-your-storsimple-8600-device"></a>Подключение кабельного хозяйства к устройству StorSimple 8600
 В следующих процедурах описывается процесс подключения кабелей питания, сети и последовательных подключений к устройству StorSimple 8600.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 Перед началом подключения кабельного хозяйства к устройству необходимо иметь:
 
 * полностью распакованные основной корпус и корпус EBOD;
@@ -211,13 +211,13 @@ Microsoft Azure StorSimple 8600 представляет собой устрой
 
 | Метка | Description |
 | --- | --- |
-| A |Локальная сеть с доступом к Интернету |
+| Объект |Локальная сеть с доступом к Интернету |
 | B |Контроллер 0 |
 | C |PCM 0 |
 | D |Контроллер 1 |
 | E |PCM 1 |
 | F |Контроллер EBOD 0 |
-| G |Контроллер EBOD 1 |
+| G. |Контроллер EBOD 1 |
 | H, I |Узлы (например, файловые серверы) |
 | 0-5 |Сетевые интерфейсы |
 | 6 |Основной корпус |

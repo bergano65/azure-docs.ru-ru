@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 7188cb5774699fc6e31fc3b8c78068bb33c6f552
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929010"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361481"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74929010"
 > [!NOTE]
 > Приведенные ниже примеры предназначены для SQL Azure, но подходят для любого хранилища данных, поддерживающего прямоугольные наборы данных. Для хранилища данных может потребоваться настроить параметр **type** источника и свойство **query** (например, query вместо sqlReaderQuery).   
 
-Обычно при чтении из реляционных хранилищ нужно считывать только данные, соответствующие этому срезу. Сделать это можно с помощью системных переменных WindowStart и WindowEnd, доступных в фабрике данных Azure. Сведения о переменных и функциях в фабрике данных Azure см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md). Пример: 
+Обычно при чтении из реляционных хранилищ нужно считывать только данные, соответствующие этому срезу. Сделать это можно с помощью системных переменных WindowStart и WindowEnd, доступных в фабрике данных Azure. Сведения о переменных и функциях в фабрике данных Azure см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md). Пример 
 
 ```json
 "source": {
@@ -150,6 +150,6 @@ ID    Product        Quantity    ModifiedDate
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
-- [база данных SQL Azure;](data-factory-azure-sql-connector.md)
+- [База данных SQL Azure](data-factory-azure-sql-connector.md)
 - [Хранилище данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md)
 - [SQL Server](data-factory-sqlserver-connector.md)

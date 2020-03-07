@@ -7,11 +7,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 89af30788fe5129cddc6a3607b8c722549b610d1
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264056"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78365566"
 ---
 # <a name="create-azure-cosmos-containers-and-databases-in-autopilot-mode-preview"></a>Создание контейнеров и баз данных Azure Cosmos в режиме автопилотного режима (Предварительная версия)
 
@@ -90,7 +90,7 @@ Azure Cosmos DB позволяет подготавливать пропускн
 |---------|---------|
 |4000 единиц запросов в секунду  |   50 ГБ    |
 |20 000 единиц запросов в секунду  |  200 ГБ  |
-|100 000 единиц запросов в секунду    |  1 ТБ   |
+|100 000 единиц запросов в секунду    |  1 TБ   |
 |500 000 единиц запросов в секунду    |  5 ТБ  |
 
 ## <a name="next-steps"></a>Дальнейшие действия

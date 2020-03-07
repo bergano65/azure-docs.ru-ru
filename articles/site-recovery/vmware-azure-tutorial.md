@@ -9,11 +9,11 @@ ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: 37fdd42adf66ebcb11b357ece6ea63384630d9f4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75458933"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78363194"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-vmware-vms"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware
 
@@ -22,7 +22,7 @@ ms.locfileid: "75458933"
 Это третье руководство в серии, в котором показано, как настроить аварийное восстановление для локальных виртуальных машин VMware в Azure. В предыдущем руководстве мы [подготовили локальную среду VMware](vmware-azure-tutorial-prepare-on-premises.md) для аварийного восстановления в Azure.
 
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Настройте параметры репликации в источнике и на локальном сервере конфигурации Site Recovery.
@@ -41,7 +41,7 @@ ms.locfileid: "75458933"
 3. В этом руководстве описано, как выполнить репликацию одной виртуальной машины. Если вы развертываете несколько виртуальных машин VMware, воспользуйтесь [Планировщиком развертывания](https://aka.ms/asr-deployment-planner). См. [дополнительные сведения](site-recovery-deployment-planner.md) об этом средстве.
 4. В этом руководстве используется несколько методов, которые вы, возможно, захотите реализовать иначе:
     - В этом руководстве для создания сервера конфигурации виртуальной машины VMware используется шаблон OVA. Если по какой-либо причине это невозможно, выполните [эти инструкции](physical-manage-configuration-server.md) для настройки сервера конфигурации вручную.
-    - В этом руководстве предусмотрено, что Site Recovery автоматически скачает и установит MySQL на сервере конфигурации. При желании вы можете установить его вручную. [Узнайте больше](vmware-azure-deploy-configuration-server.md#configure-settings).
+    - В этом руководстве предусмотрено, что Site Recovery автоматически скачает и установит MySQL на сервере конфигурации. При желании вы можете установить его вручную. [Подробнее](vmware-azure-deploy-configuration-server.md#configure-settings).
 
 
 
