@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2020
 ms.author: shvija
-ms.openlocfilehash: 9b69feef7c6587f7356648e6a6828277ba500aea
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: c166f4cace6a8cc25b36a84f4614033801e69a51
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77460081"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925473"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 Концентраторы событий Azure позволяют автоматически записывать данные потоковой передачи в концентраторы событий в [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или Azure Data Lake Storage из любой учетной записи [поколения 1 или Gen 2](https://azure.microsoft.com/services/data-lake-store/) с дополнительной гибкостью при указании интервала времени или размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-scalability.md#throughput-units) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.
@@ -94,10 +94,11 @@ https://github.com/yorek/apache-drill-azure-blob
 
 ### <a name="use-apache-spark"></a>Использование Apache Spark
 
-[Apache Spark][Apache Spark] — это «единый модуль аналитики для обработки крупномасштабных данных». Он поддерживает разные языки, включая SQL, и может легко связываться с хранилищем BLOB-объектов Azure. Существует два варианта для запуска Apache Spark в Azure, и оба обеспечивают легкий доступ к хранилищу BLOB-объектов Azure.
+[Apache Spark][Apache Spark] — это «единый модуль аналитики для обработки крупномасштабных данных». Он поддерживает разные языки, включая SQL, и может легко связываться с хранилищем BLOB-объектов Azure. Существует несколько вариантов выполнения Apache Spark в Azure, и каждый обеспечивает простой доступ к хранилищу BLOB-объектов Azure:
 
 - [HDInsight: файлы адресов в службе хранилища Azure][HDInsight: Address files in Azure storage]
 - [Azure Databricks: хранилище BLOB-объектов Azure][Azure Databricks: Azure Blob Storage]
+- [Служба Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/spark-job) 
 
 ### <a name="use-avro-tools"></a>Использование средств Avro
 
@@ -142,7 +143,7 @@ Apache Avro содержит полный начало работы руково
 
 Можно создать подписку на Сетку событий Azure с пространством имен Центров событий в качестве источника. Сведения о том, как создать подписку на Сетку событий с помощью концентратора событий в качестве источника и приложения Функций Azure в качестве приемника, см. в руководстве [Обработка и перемещение записанных данных из концентраторов событий в хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"](store-captured-data-data-warehouse.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Функция "Сбор" в Центрах событий — это самый быстрый способ передать данные в Azure. С помощью знакомых средств и платформ (Azure Data Lake, фабрики данных Azure и Azure HDInsight) можно выполнять необходимую пакетную обработку и другие операции анализа в любом масштабе.
 
 Сведения о том, как включить эту функцию с помощью шаблона портал Azure и Azure Resource Manager:

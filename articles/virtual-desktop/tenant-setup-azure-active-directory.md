@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: helohr
-ms.openlocfilehash: f38f0cec336061c97daa02798e94d98844d76ea2
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 600b0f598c54b5db154fd488aebf26a6fcdc0b1d
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78383456"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925519"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop"></a>Учебник. Создание клиента в виртуальном рабочем столе Windows
 
@@ -72,7 +72,7 @@ ms.locfileid: "78383456"
 
 Чтобы назначить роль приложения для TenantCreator:
 
-1. Перейдите на  [портал Azure](https://portal.azure.com) , чтобы управлять ролью приложения TenantCreator. Найдите и выберите **Корпоративные приложения**. Если вы работаете с несколькими клиентами Azure Active Directory, рекомендуется открыть частный сеанс браузера, а затем скопировать и вставить URL-адреса в адресную строку.
+1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы управлять ролью приложения тенанткреатор. Найдите и выберите **Корпоративные приложения**. Если вы работаете с несколькими клиентами Azure Active Directory, рекомендуется открыть частный сеанс браузера, а затем скопировать и вставить URL-адреса в адресную строку.
 
    ![Снимок экрана: поиск элемента "Корпоративные приложения" на портале Azure](media/azure-portal-enterprise-applications.png)
 2. В разделе **Корпоративные приложения** найдите **Windows Virtual Desktop** (Виртуальный рабочий стол Windows). Отобразятся два приложения, для которых вы предоставили согласие на предыдущем этапе. Из этих двух приложений выберите **Windows Virtual Desktop** (Виртуальный рабочий стол Windows).

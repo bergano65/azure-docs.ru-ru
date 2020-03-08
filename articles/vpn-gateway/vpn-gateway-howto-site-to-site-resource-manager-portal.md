@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 03/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 2e6aeda0e84b11221af110bda738d6d93f258978
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 857b50a04466f43a25cf80d7930cfb4639dc9d65
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894992"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391152"
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Создание подключения типа "сеть — сеть" на портале Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "75894992"
 
 ![Схема подключения типа "сеть — сеть" через VPN-шлюз](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/site-to-site-diagram.png)
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -51,7 +51,7 @@ ms.locfileid: "75894992"
 * **Подсеть:** FrontEnd: 10.1.0.0/24, BackEnd: 10.1.1.0/24 (необязательно для этой задачи).
 * **Диапазон адресов подсети шлюза:** 10.1.255.0/27
 * **Имя шлюза виртуальной сети:** VNet1GW
-* **Имя общедоступного IP-адреса:** VNet1GWIP
+* **Имя общедоступного IP-адреса:** VNet1GWpip
 * **Тип VPN:** на основе маршрутов
 * **Тип подключения:** Сеть — сеть (IPsec)
 * **Тип шлюза:** VPN
@@ -61,7 +61,7 @@ ms.locfileid: "75894992"
 
 ## <a name="CreatVNet"></a>1. Создание виртуальной сети
 
-[!INCLUDE [Create a virtual network](../../includes/vpn-gateway-create-virtual-network-portal-include.md)]
+[!INCLUDE [Create a virtual network](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
 
 ## <a name="VNetGateway"></a>2. Создание VPN-шлюза
 
@@ -77,7 +77,7 @@ ms.locfileid: "75894992"
 * **Сведения об экземпляре > тип шлюза:** ЧЕРЕЗ
 * **Сведения об экземпляре > тип VPN:** На основе маршрутов
 * **Диапазон адресов подсети шлюза виртуальной сети >:** 10.1.255.0/27
-* **Общедоступный IP-адрес > имя общедоступного IP-адреса:** VNet1GWIP
+* **Общедоступный IP-адрес > имя общедоступного IP-адреса:** VNet1GWpip
 
 [!INCLUDE [Create a vpn gateway](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
