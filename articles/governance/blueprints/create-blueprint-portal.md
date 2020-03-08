@@ -4,19 +4,19 @@ description: В рамках этого краткого руководства 
 ms.date: 11/21/2019
 ms.topic: quickstart
 ms.openlocfilehash: fa9eb8285086e35f8b23798c41a09529d0f49582
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436619"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78356815"
 ---
 # <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Краткое руководство. Определение и назначение схемы на портале
 
 Когда вы узнаете, как создавать и назначать схемы, вы сможете определить типичные шаблоны для разработки многоразовых и быстро развертываемых конфигураций на основе шаблонов Resource Manager, политик, правил безопасности и т. п. Из этого руководства вы узнаете, как с помощью службы Azure Blueprints выполнять некоторые общие задачи, связанных с созданием, публикацией и назначением схемы в вашей организации. Сюда входят следующие задачи:
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
 
 ## <a name="create-a-blueprint"></a>Создание схемы
 

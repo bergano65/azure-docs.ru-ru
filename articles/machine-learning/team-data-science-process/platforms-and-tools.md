@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: e3297319c67ad2b7c94371356cde49113c7ef737
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76718894"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391286"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Платформы и средства для проектов обработки и анализа данных
 
@@ -147,7 +147,7 @@ Hive позволяет включать пользовательские фун
 1. Вставьте ключ SSH, скопированный в текстовое поле, и сохраните его.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Также предоставляются полные пошаговые руководства, которые демонстрируют все этапы процесса для **конкретных сценариев** . Эти этапы с иллюстрациями и краткими описаниями перечислены в [примерах пошаговых руководств](walkthroughs.md). В них показано, как объединить облачные и локальные средства и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 
 

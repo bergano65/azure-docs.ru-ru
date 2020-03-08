@@ -13,11 +13,11 @@ ms.workload: tbd
 ms.date: 1/24/2020
 ms.author: raiye
 ms.openlocfilehash: c4bdb6fec5c20940e0afe4ab2e94702a2b21a60c
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76765313"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78344526"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK
 В данном разделе предоставляются новейшие сведения о последних выпусках гостевых ОС Azure для облачных служб. Эта информация поможет вам спланировать обновление до того, как гостевая ОС будет отключена. Если роли настроены на *автоматическое* обновление гостевой ОС, как описано в разделе [Параметры обновления гостевой ОС Azure][Azure Guest OS Update Settings], ознакомление с этой страницей необязательно.

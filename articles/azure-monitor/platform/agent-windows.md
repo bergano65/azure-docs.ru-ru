@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
 ms.openlocfilehash: 21efb16cf519d4bcad520af1c7d8818f36a77218
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77668644"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372836"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
@@ -199,7 +199,7 @@ ms.locfileid: "77668644"
 
 В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу.   
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [управлением и обслуживанием агента log Analytics для Windows и Linux](agent-manage.md) , чтобы узнать о том, как перенастроить, обновить или удалить агент с виртуальной машины.
 

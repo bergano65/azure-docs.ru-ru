@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 1bfb9362aa0e893a8bf1a758e5a0069e85ab227b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438758"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385684"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-portal"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "75438758"
 
 Узнайте, как использовать портал Azure для создания учетной записи Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения см. в разделе Общие сведения о [Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством необходимо иметь следующее:
 
@@ -44,7 +44,7 @@ ms.locfileid: "75438758"
    * **Подписка**. Выберите подписку, в которой нужно создать учетную запись ADLS 1-го поколения.
    * **Группа ресурсов**: выберите существующую группу ресурсов Azure или создайте новую группу. Выберите существующую группу ресурсов или щелкните **Создать**, чтобы создать новую. Группа ресурсов представляет собой контейнер, содержащий связанные ресурсы для приложения. Дополнительные сведения см. в разделе [Группы ресурсов](../azure-resource-manager/management/overview.md#resource-groups).
    * **Расположение**: выберите расположение, в котором нужно создать учетную запись ADLS 1-го поколения.
-   * **Параметры шифрования**. Доступны три параметра:
+   * **Параметры шифрования**. Предусмотрено три варианта:
 
      * **Не включать шифрование**.
      * Для управления ключами шифрования с помощью ADLS 1-го поколения выберите пункт **Использовать ключи, управляемые Data Lake Storage 1-го поколения**.
@@ -123,7 +123,7 @@ ms.locfileid: "75438758"
 
 ![Удалить учетную запись Data Lake Storage 1-го поколения](./media/data-lake-store-get-started-portal/ADL.Delete.Account.png "Удаление учетной записи озера данных")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

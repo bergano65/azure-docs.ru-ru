@@ -10,11 +10,11 @@ ms.topic: overview
 ms.date: 09/17/2019
 ms.author: alkohli
 ms.openlocfilehash: a3e27cf427de3a33f71d6f4a0af9b1590abeb573
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067004"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78380320"
 ---
 # <a name="what-is-azure-data-box"></a>Что такое Azure Data Box?
 
@@ -56,7 +56,7 @@ Data Box идеально подходит для передачи данных,
 
 В этом выпуске Data Box представлены следующие особенности.
 
-| Спецификации                                          | ОПИСАНИЕ              |
+| Спецификации                                          | Описание              |
 |---------------------------------------------------------|--------------------------|
 | Вес                                                  | до 22,7 кг (50 фунтов)                |
 | Измерения                                              | Ширина устройства 309,0 мм, высота 430,4 мм, длина 502,0 мм |            
@@ -116,7 +116,7 @@ Data Box передает данные на основе региона, в ко
 - **Целевые учетные записи хранения.** Учетные записи хранения данных доступны во всех регионах присутствия службы.  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [системными требованиями Data Box](data-box-system-requirements.md).
 - Изучите [ограничения Data Box](data-box-limits.md).

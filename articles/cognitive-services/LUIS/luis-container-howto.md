@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 11/08/2019
 ms.author: dapine
 ms.openlocfilehash: 308a474970db54022e5351fdf349d9572fbafb0d
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75888572"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390160"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -28,11 +28,11 @@ ms.locfileid: "75888572"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы запустить контейнер LUIS, обратите внимание на следующие предварительные требования.
 
-|Обязательно для заполнения|Цель|
+|Обязательно|Назначение|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -55,7 +55,7 @@ ms.locfileid: "75888572"
 
 Этот контейнер поддерживает минимальные и рекомендуемые значения для параметров:
 
-|Контейнер| Минимальные | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
+|Контейнер| Минимум | Рекомендуемая | ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |LUIS|1 ядро, 2 ГБ памяти|1 ядро, 4 ГБ памяти|20, 40|
 
@@ -108,8 +108,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Версиями|GET, POST|Только контейнер|`{APP_ID}_v{APP_VERSION}.gz`|
-|Промежуточное хранение|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
-|Производство|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
+|Промежуточный|GET, POST|Azure и контейнер|`{APP_ID}_STAGING.gz`|
+|Рабочие|GET, POST|Azure и контейнер|`{APP_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовывайте, не изменяйте, перезаписывают или распаковывает файлы пакетов LUIS.
@@ -118,7 +118,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Сведения|
+|Требования к упаковке|Подробности|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (`westus`)<br>Западная Европа (`westeurope`)<br>Восточная Австралия (`australiaeast`)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей][unsupported-dependencies]. |
@@ -166,10 +166,10 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Заполнитель | Значение |
+| Заместитель | Значение |
 |-------------|-------|
 | **{APP_ID}** | Идентификатор опубликованного приложения LUIS. |
-| **{SLOT_NAME}** | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>`PRODUCTION`<br/>`STAGING` |
+| **{SLOT_NAME}** | Среда опубликованного приложения LUIS. Укажите одно из следующих значений:<br/>`PRODUCTION`<br/>`STAGING` |
 | **{AUTHORING_KEY}** | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS. |
 | **{AZURE_REGION}** | Соответствующий регион Azure:<br/><br/>`westus` — западная часть США<br/>`westeurope` — Западная Европа<br/>`australiaeast` — Восточная Австралия |
 
@@ -185,7 +185,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Заполнитель | Значение |
+| Заместитель | Значение |
 |-------------|-------|
 | **{APP_ID}** | Идентификатор приложения обученного приложения LUIS. |
 | **{APP_VERSION}** | Версия приложения обученного LUIS приложения. |
@@ -243,32 +243,32 @@ ApiKey={API_KEY}
 
 Используйте узел `http://localhost:5000` для API контейнера.
 
-# <a name="v3-prediction-endpointtabv3"></a>[Конечная точка прогнозирования V3](#tab/v3)
+# <a name="v3-prediction-endpoint"></a>[Конечная точка прогнозирования V3](#tab/v3)
 
 |Тип пакета|HTTP-команда|Маршрут|Параметры запроса|
 |--|--|--|--|
-|Опубликовано|GET, POST|`/luis/v3.0/apps/{appId}/slots/{slotName}/predict?`|`query={query}`<br>[`&verbose`]<br>[`&log`]<br>[`&show-all-intents`]|
+|Published|GET, POST|`/luis/v3.0/apps/{appId}/slots/{slotName}/predict?`|`query={query}`<br>[`&verbose`]<br>[`&log`]<br>[`&show-all-intents`]|
 |Версиями|GET, POST|`/luis/v3.0/apps/{appId}/versions/{versionId}/predict?`|`query={query}`<br>[`&verbose`]<br>[`&log`]<br>[`&show-all-intents`]|
 
 Параметры запроса определяют содержимое ответа на запрос и способ его получения:
 
-|Параметр запроса|Тип|Цель|
+|Параметр запроса|Тип|Назначение|
 |--|--|--|
 |`query`|string|Фраза пользователя.|
 |`verbose`|Логическое|Логическое значение, указывающее, следует ли возвращать все метаданные для прогнозируемых моделей. Значение по умолчанию — false.|
 |`log`|Логическое|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — false.|
 |`show-all-intents`|Логическое|Логическое значение, указывающее, следует ли возвращать только цели или цель наибольшей оценки. Значение по умолчанию — false.|
 
-# <a name="v2-prediction-endpointtabv2"></a>[Конечная точка прогнозирования V2](#tab/v2)
+# <a name="v2-prediction-endpoint"></a>[Конечная точка прогнозирования V2](#tab/v2)
 
 |Тип пакета|HTTP-команда|Маршрут|Параметры запроса|
 |--|--|--|--|
-|Опубликовано|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [POST](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|`/luis/v2.0/apps/{appId}?`|`q={q}`<br>`&staging`<br>[`&timezoneOffset`]<br>[`&verbose`]<br>[`&log`]<br>|
+|Published|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [POST](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|`/luis/v2.0/apps/{appId}?`|`q={q}`<br>`&staging`<br>[`&timezoneOffset`]<br>[`&verbose`]<br>[`&log`]<br>|
 |Версиями|GET, POST|`/luis/v2.0/apps/{appId}/versions/{versionId}?`|`q={q}`<br>[`&timezoneOffset`]<br>[`&verbose`]<br>[`&log`]|
 
 Параметры запроса определяют содержимое ответа на запрос и способ его получения:
 
-|Параметр запроса|Тип|Цель|
+|Параметр запроса|Тип|Назначение|
 |--|--|--|
 |`q`|string|Фраза пользователя.|
 |`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
@@ -282,7 +282,7 @@ ApiKey={API_KEY}
 
 Ниже приведен пример команды CURL для выполнения запросов к контейнеру для опубликованного приложения:
 
-# <a name="v3-prediction-endpointtabv3"></a>[Конечная точка прогнозирования V3](#tab/v3)
+# <a name="v3-prediction-endpoint"></a>[Конечная точка прогнозирования V3](#tab/v3)
 
 Чтобы запросить модель в слоте, используйте следующий API:
 
@@ -308,7 +308,7 @@ curl -G \
 "http://localhost:5000/luis/v3.0/apps/{APP_ID}/versions/{APP_VERSION}/predict"
 ```
 
-# <a name="v2-prediction-endpointtabv2"></a>[Конечная точка прогнозирования V2](#tab/v2)
+# <a name="v2-prediction-endpoint"></a>[Конечная точка прогнозирования V2](#tab/v2)
 
 Чтобы запросить модель в слоте, используйте следующий API:
 
@@ -355,7 +355,7 @@ curl -X GET \
 
 Чтобы завершить работу контейнера, в среде командной строки, где выполняется контейнер, нажмите клавиши **CTRL+C**.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Если контейнер запускается с выходным [подключением](luis-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -385,7 +385,7 @@ curl -X GET \
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](luis-container-configuration.md).
 * См. раздел [ограничения контейнера Luis](luis-container-limitations.md) для известных ограничений возможностей.

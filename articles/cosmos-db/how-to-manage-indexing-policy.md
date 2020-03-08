@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: thweiss
 ms.openlocfilehash: 171542c89b900eb8bf282156c79303a1deb5a5f7
-ms.sourcegitcommit: 934776a860e4944f1a0e5e24763bfe3855bc6b60
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506239"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364523"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -737,7 +737,7 @@ indexingPolicy['compositeIndexes'] = [
 response = database_client.replace_container(container_client, container['partitionKey'], indexingPolicy)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 

@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.openlocfilehash: f0c7b966b9fa7580809d2df0f4d05a7146ca0fd1
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895258"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395138"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight
 
@@ -26,11 +26,11 @@ ms.locfileid: "75895258"
 
 В этом примере емкость двух имеющихся очередей (**default** и **thriftsvr**) изменяется с 50 % на 25 %, что позволяет обеспечить для новой очереди (spark) емкость 50 %.
 
-| Очереди | Ориентированное на объем | Максимальная емкость |
+| Очередь | Capacity | Максимальная емкость |
 | --- | --- | --- |
-| значение по умолчанию | 25 % | 50 % |
-| thrftsvr | 25 % | 50 % |
-| spark; | 50 % | 50 % |
+| default | 25 % | 50% |
+| thrftsvr | 25 % | 50% |
+| spark; | 50% | 50% |
 
 1. Выберите значок **просмотров Ambari**, а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN**.
 
@@ -134,7 +134,7 @@ ms.locfileid: "75895258"
 - [Подключение к HDInsight (Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix)
 - [APACHE HADOOP YARN — CONCEPTS AND APPLICATIONS](https://hadoop.apache.org/docs/r2.7.4/hadoop-yarn/hadoop-yarn-site/WritingYarnApplications.html#Concepts_and_Flow) (Apache Hadoop YARN: приложения и основные понятия)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

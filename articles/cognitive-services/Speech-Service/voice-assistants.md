@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
 ms.openlocfilehash: d687d1d353c1734c5d98121f658003afde2eb182
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812911"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394827"
 ---
 # <a name="about-voice-assistants"></a>О помощниках
 
@@ -56,20 +56,20 @@ ms.locfileid: "74812911"
 
 Мы предлагаем краткие руководства, предназначенные для выполнения кода менее чем через 10 минут. В этой таблице содержится список кратких руководств по голосовым помощникам, упорядоченных по языку.
 
-| Краткое руководство | платформа | Справочные материалы по API |
+| Краткое руководство | Платформа | Справочник по API |
 |------------|----------|---------------|
 | C#, UWP | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| Java: | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
-| Java: | Android | [Обзор](https://aka.ms/csspeech/javaref) |
+| Java | Windows, macOS, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
+| Java | Android | [Обзор](https://aka.ms/csspeech/javaref) |
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 Пример кода для создания речевого помощника доступен на сайте GitHub. Эти примеры охватывают клиентское приложение для подключения к помощнику на нескольких популярных языках программирования.
 
 * [Примеры голосового помощника (SDK)](https://aka.ms/csspeech/samples)
 * [Учебник. Включение помощника в речь с помощью голосового пакета SDKC#](tutorial-voice-enable-your-bot-speech-sdk.md)
 
-## <a name="tutorial"></a>Руководство
+## <a name="tutorial"></a>Учебник
 
 Руководство по [включению помощника по голосовым сообщениям с помощью пакета SDK для распознавания речи и прямого перевода строки в речь](tutorial-voice-enable-your-bot-speech-sdk.md).
 
@@ -80,12 +80,12 @@ ms.locfileid: "74812911"
 > [!NOTE]
 > Параметры настройки зависят от языка и языкового стандарта (см. раздел [Поддерживаемые языки](supported-languages.md)).
 
-## <a name="reference-docs"></a>Справочные документы
+## <a name="reference-docs"></a>Справочная документация
 
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для распознавания речи](speech-sdk.md)

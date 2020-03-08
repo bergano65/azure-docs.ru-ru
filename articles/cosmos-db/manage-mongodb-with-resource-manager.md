@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
 ms.openlocfilehash: eb3b0537b01c60e79959494c65306c4a56c331a3
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587079"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388033"
 ---
 # <a name="manage-azure-cosmos-db-mongodb-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами Azure Cosmos DB MongoDB API с помощью шаблонов Azure Resource Manager
 
@@ -55,7 +55,7 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Если вы решили использовать локально установленную версию Azure CLI вместо использования Cloud Shell, см. статью [Azure CLI](/cli/azure/) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже приведены некоторые дополнительные ресурсы.
 

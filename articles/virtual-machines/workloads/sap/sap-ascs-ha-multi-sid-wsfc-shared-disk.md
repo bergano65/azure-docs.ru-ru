@@ -17,11 +17,11 @@ ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 446091263596a1fd5503f38c6a60316f9b0b6843
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77598516"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395275"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -226,7 +226,7 @@ ms.locfileid: "77598516"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
 
@@ -434,7 +434,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

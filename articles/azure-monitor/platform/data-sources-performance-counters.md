@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
 ms.openlocfilehash: d1a972a1d89066b961f2dcc28fba830e3a04ebc1
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670548"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394403"
 ---
 # <a name="windows-and-linux-performance-data-sources-in-azure-monitor"></a>Источники данных о производительности Windows и Linux в Azure Monitor
 Счетчики производительности в Windows и Linux позволяют получить представление о производительности компонентов оборудования, операционных систем и приложений.  Azure Monitor может собирать счетчики производительности с высокой частотой для анализа данных практически в режиме реального времени, а также данные о производительности для более долгосрочного анализа и формирования отчетов.

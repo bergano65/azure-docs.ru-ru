@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: c3b6123c63bf530463379a175745ef86baf2c5a3
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176479"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374433"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -48,7 +48,7 @@ ms.locfileid: "73176479"
   
 Поддерживаются следующие варианты локализации.
 
-| Язык    | Язык               |
+| Локаль    | Язык               |
 |-----------|------------------------|
 | en      | English              |
 | сложных      | Čeština              |
@@ -58,15 +58,15 @@ ms.locfileid: "73176479"
 | HU      | Magyar               |
 | им      | Italiano             |
 | ja-JP   | 日本語                |
-| Ko      | 한국어                |
+| ko      | 한국어                |
 | NL      | Nederlands           |
 | Папка      | Polski               |
-| "PT-BR"   | "Portuguкs (Brasil)"   |
-| "PT-PT"   | "Portuguкs (Португалия)" |
+| "pt-br"   | "Portuguкs (Brasil)"   |
+| "pt-pt"   | "Portuguкs (Португалия)" |
 | ru      | Русский              |
 | календар      | Svenska              |
-| ТС      | Tьrkзe               |
-| "zh-Ханс" | "中文 (简体)"           |
+| ТС      | "Türkçe"               |
+| "zh-Ханс" | "中文(简体)"           |
 | "zh-Hant" | "中文 (繁體)"           |
 
  Строковые ресурсы, доступные для использования в шаблонах портала разработчика, см. в таблицах ниже. Используйте имя таблицы в качестве префикса для строковых ресурсов в этой таблице.  
@@ -113,13 +113,13 @@ ms.locfileid: "73176479"
   
 ###  <a name="ApisStrings"></a> ApisStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
-|PageTitleApis|API-интерфейсы|  
+|PageTitleApis|Программные интерфейсы|  
   
 ###  <a name="AppDetailsStrings"></a> AppDetailsStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |WebApplicationsDetailsTitle|Предварительная версия приложения|  
 |WebApplicationsRequirementsHeader|Требования|  
@@ -128,29 +128,29 @@ ms.locfileid: "73176479"
   
 ###  <a name="ApplicationListStrings"></a> ApplicationListStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |WebDevelopersAppDeleteConfirmation|Вы действительно хотите удалить приложение?|  
 |WebDevelopersAppNotPublished|Не опубликовано|  
 |WebDevelopersAppNotSubmitted|Не отправлено|  
 |WebDevelopersAppTableCategoryHeader|Категория|  
-|WebDevelopersAppTableNameHeader|Name|  
-|WebDevelopersAppTableStateHeader|Состояние|  
+|WebDevelopersAppTableNameHeader|Имя|  
+|WebDevelopersAppTableStateHeader|Штат|  
 |WebDevelopersEditLink|Изменить|  
 |WebDevelopersRegisterAppLink|Регистрация приложения|  
 |WebDevelopersRemoveLink|Удалить|  
-|WebDevelopersSubmitLink|Отправить|  
+|WebDevelopersSubmitLink|Submit|  
 |WebDevelopersYourApplicationsHeader|Ваши приложения|  
   
 ###  <a name="AppStrings"></a> AppStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
-|WebApplicationsHeader|приложениям|  
+|WebApplicationsHeader|Приложения|  
   
 ###  <a name="CommonResources"></a> CommonResources  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |NoItemsToDisplay|Результаты отсутствуют.|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
@@ -161,16 +161,16 @@ ms.locfileid: "73176479"
   
 ###  <a name="CommonStrings"></a> CommonStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |ButtonLabelCancel|Отмена|  
-|ButtonLabelSave|Сохранить|  
+|ButtonLabelSave|Сохранять|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
 |NoItemsToDisplay|Нет элементов для отображения|  
-|PagerButtonLabelFirst|Первая|  
+|PagerButtonLabelFirst|Первый|  
 |PagerButtonLabelLast|Последний|  
-|PagerButtonLabelNext|Следующая|  
-|PagerButtonLabelPrevious|Назад|  
+|PagerButtonLabelNext|Дальше|  
+|PagerButtonLabelPrevious|Предыдущий|  
 |PagerLabelPageNOfM|Страница {0} из {1}|  
 |PasswordTooShort|Пароль слишком короткий|  
 |EmailAsPassword|Не используйте адрес электронной почты в качестве пароля|  
@@ -185,7 +185,7 @@ ms.locfileid: "73176479"
   
 ###  <a name="Documentation"></a> Documentation  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |WebDocumentationInvalidHeaderErrorMessage|Недопустимый заголовок {0}|  
 |WebDocumentationInvalidRequestErrorMessage|Недопустимый URL-адрес запроса|  
@@ -249,16 +249,16 @@ ms.locfileid: "73176479"
 |OAuth2ClientId_ImplicitGrant_AuthorizationRequest|Обязательный параметр. Идентификатор клиента.|  
 |OAuth2Code_AuthorizationCodeGrant_AuthorizationResponse|Обязательный параметр. Код авторизации, созданный сервером авторизации.|  
 |OAuth2Code_AuthorizationCodeGrant_TokenRequest|Обязательный параметр. Код авторизации, полученный из сервера авторизации.|  
-|OAuth2ErrorDescription_AuthorizationCodeGrant_AuthorizationErrorResponse|Необязательный параметр. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_AuthorizationCodeGrant_TokenErrorResponse|Необязательный параметр. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_ClientCredentialsGrant_TokenErrorResponse|Необязательный параметр. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_ImplicitGrant_AuthorizationErrorResponse|Необязательный параметр. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|Необязательный параметр. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorUri_AuthorizationCodeGrant_AuthorizationErrorResponse|Необязательный параметр. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_AuthorizationCodeGrant_TokenErrorResponse|Необязательный параметр. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_ClientCredentialsGrant_TokenErrorResponse|Необязательный параметр. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_ImplicitGrant_AuthorizationErrorResponse|Необязательный параметр. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|Необязательный параметр. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorDescription_AuthorizationCodeGrant_AuthorizationErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_AuthorizationCodeGrant_TokenErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_ClientCredentialsGrant_TokenErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_ImplicitGrant_AuthorizationErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorUri_AuthorizationCodeGrant_AuthorizationErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_AuthorizationCodeGrant_TokenErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_ClientCredentialsGrant_TokenErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_ImplicitGrant_AuthorizationErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
 |OAuth2Error_AuthorizationCodeGrant_AuthorizationErrorResponse|Обязательный параметр. Один код ошибки ASCII из следующих параметров: invalid_request, unauthorized_client, access_denied, unsupported_response_type, invalid_scope, server_error, temporarily_unavailable.|  
 |OAuth2Error_AuthorizationCodeGrant_TokenErrorResponse|Обязательный параметр. Один код ошибки ASCII из следующих параметров: invalid_request, invalid_client, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope.|  
 |OAuth2Error_ClientCredentialsGrant_TokenErrorResponse|Обязательный параметр. Один код ошибки ASCII из следующих параметров: invalid_request, invalid_client, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope.|  
@@ -272,21 +272,21 @@ ms.locfileid: "73176479"
 |OAuth2GrantType_ClientCredentialsGrant_TokenRequest|Обязательный параметр. Для него необходимо задать значение client_credentials.|  
 |OAuth2GrantType_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Обязательный параметр. Для него необходимо задать значение password.|  
 |OAuth2Password_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Обязательный параметр. Пароль владельца ресурса.|  
-|OAuth2RedirectUri_AuthorizationCodeGrant_AuthorizationRequest|Необязательный параметр. URI перенаправления конечной точки должен быть абсолютным URI.|  
+|OAuth2RedirectUri_AuthorizationCodeGrant_AuthorizationRequest|OPTIONAL. URI перенаправления конечной точки должен быть абсолютным URI.|  
 |OAuth2RedirectUri_AuthorizationCodeGrant_TokenRequest|Обязательный параметр, если параметр redirect_uri включен в запрос на авторизацию, и их значения должны быть одинаковыми.|  
-|OAuth2RedirectUri_ImplicitGrant_AuthorizationRequest|Необязательный параметр. URI перенаправления конечной точки должен быть абсолютным URI.|  
-|OAuth2RefreshToken_AuthorizationCodeGrant_TokenResponse|Необязательный параметр. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
-|OAuth2RefreshToken_ClientCredentialsGrant_TokenResponse|Необязательный параметр. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
-|OAuth2RefreshToken_ResourceOwnerPasswordCredentialsGrant_TokenResponse|Необязательный параметр. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
+|OAuth2RedirectUri_ImplicitGrant_AuthorizationRequest|OPTIONAL. URI перенаправления конечной точки должен быть абсолютным URI.|  
+|OAuth2RefreshToken_AuthorizationCodeGrant_TokenResponse|OPTIONAL. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
+|OAuth2RefreshToken_ClientCredentialsGrant_TokenResponse|OPTIONAL. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
+|OAuth2RefreshToken_ResourceOwnerPasswordCredentialsGrant_TokenResponse|OPTIONAL. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
 |OAuth2ResponseType_AuthorizationCodeGrant_AuthorizationRequest|Обязательный параметр. Для него необходимо задать значение code.|  
 |OAuth2ResponseType_ImplicitGrant_AuthorizationRequest|Обязательный параметр. Для него необходимо задать значение token.|  
-|OAuth2Scope_AuthorizationCodeGrant_AuthorizationRequest|Необязательный параметр. Область запроса доступа.|  
+|OAuth2Scope_AuthorizationCodeGrant_AuthorizationRequest|OPTIONAL. Область запроса доступа.|  
 |OAuth2Scope_AuthorizationCodeGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
-|OAuth2Scope_ClientCredentialsGrant_TokenRequest|Необязательный параметр. Область запроса доступа.|  
+|OAuth2Scope_ClientCredentialsGrant_TokenRequest|OPTIONAL. Область запроса доступа.|  
 |OAuth2Scope_ClientCredentialsGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
-|OAuth2Scope_ImplicitGrant_AuthorizationRequest|Необязательный параметр. Область запроса доступа.|  
+|OAuth2Scope_ImplicitGrant_AuthorizationRequest|OPTIONAL. Область запроса доступа.|  
 |OAuth2Scope_ImplicitGrant_AuthorizationResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
-|OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Необязательный параметр. Область запроса доступа.|  
+|OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenRequest|OPTIONAL. Область запроса доступа.|  
 |OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
 |OAuth2State_AuthorizationCodeGrant_AuthorizationErrorResponse|Обязательный параметр, если параметр state присутствовал в запросе на авторизацию клиента.  Точное значение предоставляет клиент.|  
 |OAuth2State_AuthorizationCodeGrant_AuthorizationRequest|Рекомендуемый параметр. Непрозрачное значение, используемое клиентом для поддержания состояния между запросом и обратным вызовом.  Сервер авторизации включает это значение при перенаправлении агента пользователя в клиент.  Параметр следует использовать для предотвращения подделки межсайтовых запросов.|  
@@ -302,7 +302,7 @@ ms.locfileid: "73176479"
 |OAuth2UnsupportedTokenType|Тип маркера {0} не поддерживается.|  
 |OAuth2InvalidState|Недопустимый ответ из сервера авторизации|  
 |OAuth2GrantType_AuthorizationCode|Код авторизации|  
-|OAuth2GrantType_Implicit|Неявный|  
+|OAuth2GrantType_Implicit|Неявно|  
 |OAuth2GrantType_ClientCredentials|Учетные данные клиента|  
 |OAuth2GrantType_ResourceOwnerPassword|Пароль владельца ресурса|  
 |WebDocumentation302Code|302 — объект найден|  
@@ -321,7 +321,7 @@ ms.locfileid: "73176479"
 |BadRequestParameterExpected|"Ожидается параметр {0}".|  
 |TooltipTextDoubleClickToSelectAll|Дважды щелкните, чтобы выделить все.|  
 |TooltipTextHideRevealSecret|Показать или скрыть|  
-|ButtonLinkOpenConsole|Попробуйте!|  
+|ButtonLinkOpenConsole|Попробовать|  
 |SectionHeadingRequestBody|Тело запроса|  
 |SectionHeadingRequestParameters|Параметры запроса|  
 |SectionHeadingRequestUrl|Request URL (URL-адрес запроса)|  
@@ -333,7 +333,7 @@ ms.locfileid: "73176479"
   
 ###  <a name="ErrorPageStrings"></a> ErrorPageStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |LinkLabelBack|Назад|  
 |LinkLabelHomePage|домашняя страница|  
@@ -351,7 +351,7 @@ ms.locfileid: "73176479"
   
 ###  <a name="IssuesStrings"></a> IssuesStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |WebIssuesIndexTitle|Проблемы|  
 |WebIssuesNoActiveSubscriptions|У вас нет активных подписок. Чтобы сообщить о проблеме, необходимо подписаться на продукт.|  
@@ -362,7 +362,7 @@ ms.locfileid: "73176479"
   
 ###  <a name="NotFoundStrings"></a> NotFoundStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |LinkLabelHomePage|домашняя страница|  
 |LinkLabelSendUsEmail|Отправьте нам сообщение электронной почты.|  
@@ -377,18 +377,18 @@ ms.locfileid: "73176479"
   
 ###  <a name="ProductDetailsStrings"></a> ProductDetailsStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
-|WebProductsAgreement|Подписавшись на продукт `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`, я принимаю {0}.|  
+|WebProductsAgreement|Подписавшись на продукт {0}, я принимаю `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`.|  
 |WebProductsLegalTermsLink|Условия использования|  
 |WebProductsSubscribeButton|Подписаться|  
-|WebProductsUsageLimitsHeader|Ограничения на использование|  
+|WebProductsUsageLimitsHeader|Ограничения использования|  
 |WebProductsYouAreNotSubscribed|Вы подписаны на продукт.|  
 |WebProductsYouRequestedSubscription|Вы запросили подписку на этот продукт.|  
 |ErrorYouNeedToAgreeWithLegalTerms|Прежде чем продолжить, необходимо принять условия использования.|  
-|ButtonLabelAddSubscription|Добавить подписку|  
+|ButtonLabelAddSubscription|Добавление подписки|  
 |LinkLabelChangeSubscriptionName|Изменить|  
-|ButtonLabelConfirm|Подтвердить|  
+|ButtonLabelConfirm|Подтверждение|  
 |TextblockMultipleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}|  
 |TextblockSingleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}|  
 |TextblockSingleApisCount|Этот продукт содержит такое количество API: {0}.|  
@@ -399,13 +399,13 @@ ms.locfileid: "73176479"
   
 ###  <a name="ProductsStrings"></a> ProductsStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |PageTitleProducts|Продукты|  
   
 ###  <a name="ProviderInfoStrings"></a> ProviderInfoStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |TextboxExternalIdentitiesDisabled|В данный момент вход отключен администратором.|  
 |TextboxExternalIdentitiesSigninInvitation|Вход можно выполнить с помощью|  
@@ -413,7 +413,7 @@ ms.locfileid: "73176479"
   
 ###  <a name="SigninResources"></a> SigninResources  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |PrincipalNotFound|Субъект не найден или недопустимая подпись.|  
 |ErrorSsoAuthenticationFailed|Сбой проверки подлинности SSO.|  
@@ -432,7 +432,7 @@ ms.locfileid: "73176479"
 |WebAuthenticationEmailHasBeenRevertedNotice|Ваш адрес электронной почты уже существует. Запрос отменен.|  
 |ValidationErrorEmailAlreadyExists|Адрес электронной почты уже существует.|  
 |ValidationErrorEmailInvalid|Недопустимый адрес электронной почты.|  
-|TextboxLabelEmail|Эл. почта|  
+|TextboxLabelEmail|Email|  
 |ValidationErrorEmailRequired|Требуется указать адрес электронной почты.|  
 |WebAuthenticationErrorNoticeHeader|Ошибка|  
 |WebAuthenticationFieldLengthErrorMessage|Максимальная длина {0} — {1}.|  
@@ -456,7 +456,7 @@ ms.locfileid: "73176479"
 |WebAuthenticationPasswordChangedNotice|Ваш пароль успешно обновлен.|  
 |WebAuthenticationPasswordChangedNoticeTitle|Пароль обновлен.|  
 |WebAuthenticationPasswordCompareErrorMessage|Пароли не совпадают.|  
-|WebAuthenticationPasswordConfirmLabel|Подтверждение пароля.|  
+|WebAuthenticationPasswordConfirmLabel|Подтверждение пароля|  
 |ValidationErrorPasswordInvalidDetailed|Пароль слишком ненадежный.|  
 |WebAuthenticationPasswordLabel|Пароль|  
 |ValidationErrorPasswordRequired|Требуется указать пароль.|  
@@ -477,7 +477,7 @@ ms.locfileid: "73176479"
 |ButtonLabelChangePassword|Изменить пароль|  
 |ButtonLabelChangeAccountInfo|Изменение сведений об учетной записи|  
 |ButtonLabelCloseAccount|Закрыть учетную запись|  
-|WebAuthenticationInvalidCaptchaErrorMessage|Введенный текст не соответствует тексту на изображении. Попробуйте позже.|  
+|WebAuthenticationInvalidCaptchaErrorMessage|Введенный текст не соответствует тексту на изображении. Повторите попытку.|  
 |ValidationErrorCredentialsInvalid|Недопустимый адрес электронной почты или пароль. Исправьте ошибки и повторите попытку.|  
 |WebAuthenticationRequestIsNotValid|Недопустимый запрос.|  
 |WebAuthenticationUserIsNotConfirm|Прежде чем войти, подтвердите регистрацию.|  
@@ -509,7 +509,7 @@ ms.locfileid: "73176479"
   
 ###  <a name="SigninStrings"></a> SigninStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |WebAuthenticationForgotPassword|Забыли пароль?|  
 |WebAuthenticationIfAdministrator|Если вы являетесь администратором, войдите `<a href="{0}"\>here</a\>`.|  
@@ -521,17 +521,17 @@ ms.locfileid: "73176479"
   
 ###  <a name="SignupStrings"></a> SignupStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
-|PageTitleSignup|Зарегистрироваться|  
-|WebAuthenticationAlreadyAMember|Уже являетесь участником программы?|  
+|PageTitleSignup|Регистрация|  
+|WebAuthenticationAlreadyAMember|Уже являетесь участником?|  
 |WebAuthenticationCreateNewAccount|Создайте учетную запись для управления API.|  
 |WebAuthenticationSigninNow|Войдите сейчас.|  
-|ButtonLabelSignup|Зарегистрироваться|  
+|ButtonLabelSignup|Регистрация|  
   
 ###  <a name="SubscriptionListStrings"></a> SubscriptionListStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |SubscriptionCancelConfirmation|Вы действительно хотите отменить эту подписку?|  
 |SubscriptionRenewConfirmation|Вы действительно хотите обновить эту подписку?|  
@@ -543,18 +543,18 @@ ms.locfileid: "73176479"
 |ButtonLabelRenewSubscription|Возобновление|  
 |WebDevelopersSubscriptionRequested|Дата запроса: {0}.|  
 |WebDevelopersSubscriptionRequestedState|Запрошено|  
-|WebDevelopersSubscriptionTableNameHeader|Name|  
-|WebDevelopersSubscriptionTableStateHeader|Состояние|  
+|WebDevelopersSubscriptionTableNameHeader|Имя|  
+|WebDevelopersSubscriptionTableStateHeader|Штат|  
 |WebDevelopersUsageStatisticsLink|Аналитические отчеты|  
 |WebDevelopersYourSubscriptions|Ваши подписки|  
 |SubscriptionPropertyLabelRequestedDate|Дата запроса|  
 |SubscriptionPropertyLabelStartedDate|Дата запуска|  
 |PageTitleRenameSubscription|Переименовать подписку|  
-|SubscriptionPropertyLabelName|Имя подписки|  
+|SubscriptionPropertyLabelName|имя подписки;|  
   
 ###  <a name="SubscriptionStrings"></a> SubscriptionStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |SectionHeadingCloseAccount|Хотите закрыть учетную запись?|  
 |PageTitleDeveloperProfile|Профиль|  
@@ -565,19 +565,19 @@ ms.locfileid: "73176479"
   
 ###  <a name="UpdateProfileStrings"></a> UpdateProfileStrings  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |ButtonLabelUpdateProfile|Обновить профиль|  
 |PageTitleUpdateProfile|Обновить сведения об учетной записи|  
   
 ###  <a name="UserProfile"></a> UserProfile  
   
-|Name|Текст|  
+|Имя|текст|  
 |----------|----------|  
 |ButtonLabelChangeAccountInfo|Изменение сведений об учетной записи|  
 |ButtonLabelChangePassword|Изменить пароль|  
 |ButtonLabelCloseAccount|Закрыть учетную запись|  
-|TextboxLabelEmail|Эл. почта|  
+|TextboxLabelEmail|Email|  
 |TextboxLabelEmailFirstName|Имя|  
 |TextboxLabelEmailLastName|Фамилия|  
 |TextboxLabelNotificationsSenderEmail|Электронная почта отправителя уведомлений|  
@@ -587,10 +587,10 @@ ms.locfileid: "73176479"
 |SubscriptionStateExpired|Срок действия истек|  
 |SubscriptionStateRejected|Отклонено|  
 |SubscriptionStateRequested|Запрошено|  
-|SubscriptionStateSuspended|Приостановлено|  
+|SubscriptionStateSuspended|Приостановлена|  
 |DefaultSubscriptionNameTemplate|{0} (значение по умолчанию).|  
 |SubscriptionNameTemplate|Доступ для разработчика #{0}.|  
-|TextboxLabelSubscriptionName|Имя подписки|  
+|TextboxLabelSubscriptionName|имя подписки;|  
 |ValidationMessageSubscriptionNameRequired|Имя подписки не может быть пустым.|  
 |ApiManagementUserLimitReached|В этой службе достигнуто максимальное число разрешенных пользователей. Выполните обновление до более высокой ценовой категории.|  
   

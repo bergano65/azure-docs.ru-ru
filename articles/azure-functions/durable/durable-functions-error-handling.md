@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 447b3dcf5040835f5a853beff68bde794ece51f5
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77047247"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371920"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
@@ -21,7 +21,7 @@ ms.locfileid: "77047247"
 
 Например, рассмотрим следующую функцию оркестратора, которая перемещает средства с одного счета на другой:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TransferFunds")]
@@ -62,7 +62,7 @@ public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext
 > [!NOTE]
 > Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -106,7 +106,7 @@ module.exports = df.orchestrator(function*(context) {
 
 При вызове функций действий или функций суборкестрации можно указать автоматическую политику повтора. В следующем примере предпринимается попытка вызова функции до трех раз с ожиданием в течение 5 секунд между попытками:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TimerOrchestratorWithRetry")]
@@ -125,7 +125,7 @@ public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext
 > [!NOTE]
 > Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -158,7 +158,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Может потребоваться отменить вызов функции в функции Orchestrator, если выполнение займет слишком много времени. Правильный способ сделать это в настоящее время — создать [устойчивый таймер](durable-functions-timers.md), используя `context.CreateTimer` (.NET) или `context.df.createTimer` (JavaScript) в сочетании с `Task.WhenAny` (.NET) или `context.df.Task.any` (JavaScript), как показано в следующем примере:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TimerOrchestrator")]
@@ -191,7 +191,7 @@ public static async Task<bool> Run([OrchestrationTrigger] IDurableOrchestrationC
 > [!NOTE]
 > Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -224,7 +224,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Если функция оркестратора завершается сбоем с необработанным исключением, сведения об этом исключении регистрируются в журнале, и экземпляр завершает работу с состоянием `Failed`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения об оркестрации нескончаемые](durable-functions-eternal-orchestrations.md)

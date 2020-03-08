@@ -4,11 +4,11 @@ description: Узнайте, как удалять и развертывать �
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.openlocfilehash: e3fdd194f2949f1246e991968e02b3278f33f7db
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614508"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78379998"
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Развертывание и удаление приложений с помощью PowerShell
 
@@ -312,7 +312,7 @@ DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 Unregister-ServiceFabricApplicationType MyApplicationType 1.0.0
 ```
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="copy-servicefabricapplicationpackage-asks-for-an-imagestoreconnectionstring"></a>Команда Copy-ServiceFabricApplicationPackage запрашивает строку ImageStoreConnectionString
 
@@ -390,7 +390,7 @@ Status                 : Available
 DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создание пакета приложения](service-fabric-package-apps.md)
 

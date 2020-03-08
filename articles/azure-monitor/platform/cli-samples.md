@@ -5,16 +5,16 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.openlocfilehash: 69687cee8b8a907b82f2c848242ac64d54dedb87
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77663510"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360885"
 ---
 # <a name="azure-monitor-cli-quick-start-samples"></a>Примеры для быстрого начала работы с командной строкой в Azure Monitor
 В этой статье приведены примеры команд интерфейса командной строки для работы с функциями Azure Monitor. Azure Monitor позволяет выполнять автомасштабирование облачных служб, виртуальных машин и веб-приложений, отправлять оповещения и осуществлять вызов URL-адресов на основе значений настроенных данных телеметрии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Если вы еще не установили Azure CLI, выполните инструкции по [установке Azure CLI](/cli/azure/install-azure-cli). Для запуска CLI в качестве интерактивного интерфейса в браузере вы также можете использовать [Azure Cloud Shell](/azure/cloud-shell). Сведения обо всех доступных командах см. в [справке по интерфейсу командной строки Azure Monitor](https://docs.microsoft.com/cli/azure/monitor?view=azure-cli-latest). 
 

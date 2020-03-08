@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: diberry
 ms.openlocfilehash: 309a2592dbac2918aeb532fbe91e33d296f4e5a5
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280891"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393710"
 ---
 # <a name="intents-in-your-luis-app"></a>Целей в приложении LUIS
 
@@ -24,7 +24,7 @@ ms.locfileid: "74280891"
 
 Определите набор намерений, которые соответствуют действиям пользователей в вашем приложении. Например, в приложении для путешествий можно определить следующие намерения:
 
-Намерения приложения для путешествий   |   Примеры фраз   | 
+Намерения приложения для путешествий   |   Примеры высказываний   | 
 ------|------|
  BookFlight     |   "Book me a flight to Rio next week" ("Забронировать авиаперелет в Рио на следующей неделе") <br/> "Fly me to Rio on the 24th" ("Найти авиаперелет в Рио 24-го числа") <br/> "I need a plane ticket next Sunday to Rio de Janeiro" ("Мне нужен билет на самолет в Рио-де-Жанейро на следующее воскресенье")    |
  Greeting     |   "Hi" ("Привет") <br/>"Hello" ("Привет") <br/>"Good morning" ("Доброе утро")  |
@@ -41,7 +41,7 @@ ms.locfileid: "74280891"
 
 Если вы хотите получить баллы для всех целей для utterance, можно указать флаг в строке запроса API-интерфейса прогнозирования. 
 
-|Версия API прогнозирования|Параметр|
+|Версия API прогнозирования|Флаг|
 |--|--|
 |V2|`verbose=true`|
 |V3|`show-all-intents=true`|
@@ -53,9 +53,9 @@ ms.locfileid: "74280891"
 
 Создайте намерение, когда пользователь _намеренно_ запустит действие в клиентском приложении, например вызов функции чекквеасер (). Затем создайте сущности для представления параметров, необходимых для выполнения действия. 
 
-|Намерение   | Сущность | Пример фразы   | 
+|Блокировка с намерением   | Сущность | Пример фразы   | 
 |------------------|------------------------------|------------------------------|
-| CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | What's the weather like in (Какая сейчас погода в) `Seattle` `tomorrow`? |
+| CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | Что такое Погода, как в `Seattle` `tomorrow`? |
 | CheckWeather | { "type": "date_range", "entity": "this weekend" } | Show me the forecast for (Покажите мне прогноз на) `this weekend` | 
 ||||
 
@@ -100,7 +100,7 @@ ms.locfileid: "74280891"
 ### <a name="request-help-for-apps-with-significant-number-of-intents"></a>Если намерений слишком много, обратитесь в службу поддержки
 Если уменьшение числа намерений или разделение намерений на несколько приложений не помогает добиться цели, обратитесь в службу поддержки. Если ваша подписка Azure включает службы поддержки, обратитесь в службу [технической поддержки Azure](https://azure.microsoft.com/support/options/). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь с дополнительными сведениями о [сущностях](luis-concept-entity-types.md), важных словах, относящихся к намерениям
 * Узнайте, как [добавить намерения в приложение LUIS и управлять ими](luis-how-to-add-intents.md).

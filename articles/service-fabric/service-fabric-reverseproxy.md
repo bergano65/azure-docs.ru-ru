@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 11/03/2017
 ms.author: bharatn
 ms.openlocfilehash: 4fa4c6e46dd786b833087f892d995e85b5d2ea47
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75464294"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78899364"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
 Обратный прокси-сервер, встроенный в Azure Service Fabric, помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и взаимодействовать с этими службами.
@@ -139,7 +139,7 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 ## <a name="special-handling-for-services-running-in-containers"></a>Специальные действия для служб, запущенных в контейнерах
 
-Чтобы создать [URL-адрес обратного прокси-сервера](#uri-format-for-addressing-services-by-using-the-reverse-proxy) для запущенных в контейнерах служб, можно использовать переменную среды `Fabric_NodeIPOrFQDN`, как в следующем коде:
+Чтобы создать `Fabric_NodeIPOrFQDN`URL-адрес обратного прокси-сервера[ для запущенных в контейнерах служб, можно использовать переменную среды ](#uri-format-for-addressing-services-by-using-the-reverse-proxy), как в следующем коде:
 
 ```csharp
     var fqdn = Environment.GetEnvironmentVariable("Fabric_NodeIPOrFQDN");
