@@ -1,21 +1,21 @@
 ---
 title: 'Сетка событий Azure: безопасность и проверка подлинности'
-description: В статье описываются служба "Сетка событий Azure" и ее основные понятия.
+description: В этой статье описываются различные способы проверки подлинности доступа к ресурсам сетки событий (веб-перехватчик, подписки, пользовательские разделы).
 services: event-grid
 author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/22/2019
+ms.date: 03/06/2020
 ms.author: babanisa
-ms.openlocfilehash: e8913c1f198c89bdcd779d2faf2706f9d4079c5c
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 0b7c5b42ac6291c6687337ba8d6a9d35830b9bda
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846296"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924960"
 ---
-# <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
+# <a name="authenticating-access-to-event-grid-resources"></a>Проверка подлинности доступа к ресурсам сетки событий
 
 В сетке событий Azure предусмотрено три типа проверки подлинности:
 
@@ -43,7 +43,7 @@ ms.locfileid: "76846296"
 
    Указанный URL-адрес действителен в течение 5 минут. В течение этого времени состояние подготовки подписки на событие находится в `AwaitingManualAction`. Если вы не завершите ручную проверку в течение 5 минут, состояние подготовки будет равно `Failed`. Прежде чем выполнить проверку вручную, потребуется создать подписку на событие еще раз.
 
-    Этот механизм проверки подлинности также требует, чтобы конечная точка веб-перехватчика возвращала код состояния HTTP 200, чтобы он знал, что запись для события проверки была принята, прежде чем ее можно будет перевести в режим ручной проверки. Иными словами, если конечная точка возвращает 200, но не возвращает ответ проверки программным способом, режим переходит в режим ручной проверки. Если в течение 5 минут имеется URL-адрес проверки, подтверждение проверки считается успешным.
+    Этот механизм проверки подлинности также требует, чтобы конечная точка веб-перехватчика возвращала код состояния HTTP 200, чтобы он знал, что запись для события проверки была принята, прежде чем ее можно будет перевести в режим ручной проверки. Иными словами, если конечная точка возвращает 200, но не возвращает ответ проверки программным способом, режим переходит в режим ручной проверки. Если имеется URL-адрес проверки в течение 5 минут, подтверждение проверки считается успешным.
 
 > [!NOTE]
 > Использование самозаверяющих сертификатов для проверки не поддерживается. Вместо этого используйте подписанный сертификат из центра сертификации (ЦС).
@@ -85,7 +85,7 @@ ms.locfileid: "76846296"
 }
 ```
 
-Должен возвратиться код состояния ответа HTTP 200 OK. HTTP 202 Accepted не распознается как действительный ответ проверки подписки Сетки событий. HTTP-запрос должен завершиться в течение 30 секунд. Если операция не завершается в течение 30 секунд, операция будет отменена, и ее выполнение может быть повторено через 5 секунд. Если все попытки завершаются неудачей, она будет считаться ошибкой подтверждения проверки.
+Должен возвратиться код состояния ответа HTTP 200 OK. HTTP 202 Accepted не распознается как действительный ответ проверки подписки Сетки событий. HTTP-запрос должен завершиться в течение 30 секунд. Если операция не завершается в течение 30 секунд, операция будет отменена и ее выполнение может быть повторено через 5 секунд. Если все попытки завершатся ошибкой, она будет считаться ошибкой подтверждения проверки.
 
 Можно также вручную проверить подписку, отправив запрос GET по URL-адресу проверки. Подписка на событие остается в состоянии ожидания, пока проверка не будет завершена. URL-адрес проверки использует порт 553. Если правила брандмауэра блокируют порт 553, то для успешного ручного подтверждения может потребоваться обновление правил.
 
@@ -109,7 +109,7 @@ ms.locfileid: "76846296"
 #### <a name="query-parameters"></a>Параметры запроса
 Защитить конечную точку веб-перехватчика можно путем добавления параметров запроса для URL-адреса веб-перехватчика при создании подписки на события. Задайте один из этих параметров запроса в качестве секрета, например [маркер доступа](https://en.wikipedia.org/wiki/Access_token). С его помощью веб-перехватчик сможет распознавать событие, поступающее из Сетки событий с допустимыми разрешениями. Сетка событий будет включать эти параметры в каждую доставку событий для веб-перехватчика.
 
-При изменении подписки на событие, если в [интерфейсе командной строки](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) Azure не используется параметр [--include-full-endpoint-url](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-show), параметры запроса не отображаются и не возвращаются.
+При изменении подписки на событие, если в [интерфейсе командной строки](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-show) Azure не используется параметр [--include-full-endpoint-url](https://docs.microsoft.com/cli/azure?view=azure-cli-latest), параметры запроса не отображаются и не возвращаются.
 
 Наконец, необходимо отметить, что служба "Сетка событий Azure" поддерживает только конечные точки веб-перехватчиков HTTPS.
 
@@ -186,172 +186,9 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 }
 ```
 
-## <a name="management-access-control"></a>Контроль доступа к управлению
+### <a name="encryption-at-rest"></a>Шифрование при хранении
 
-Сетка событий Azure позволяет контролировать уровень доступа, предоставленного разным пользователям для выполнения различных операций управления, таких как создание списка подписок на события, создание новых подписок и генерирование ключей. В службе "Сетка событий" используется управление доступом на основе ролей Azure (RBAC).
-
-### <a name="operation-types"></a>Типы операций
-
-Сетка событий поддерживает следующие действия:
-
-* Microsoft.EventGrid/*/read
-* Microsoft.EventGrid/*/write
-* Microsoft.EventGrid/*/delete
-* Microsoft.EventGrid/eventSubscriptions/getFullUrl/action
-* Microsoft.EventGrid/topics/listKeys/action
-* Microsoft.EventGrid/topics/regenerateKey/action
-
-Последние три операции возвращают потенциально секретную информацию, которая отфильтровывается из обычных операций чтения. Доступ к этим операциям рекомендуется ограничить. 
-
-### <a name="built-in-roles"></a>Встроенные роли
-
-"Сетка событий" предоставляет две встроенные роли для управления подписками на события. Эти роли необходимы для реализации [доменов событий](event-domains.md), потому что они предоставляют пользователям разрешения, необходимые для подписки на темы в домене событий. Эти роли предназначены для подписки на события и не предоставляют доступа к действиям, например для создания тем.
-
-Вы можете [назначить эти роли для пользователя или группы](../role-based-access-control/quickstart-assign-role-user-portal.md).
-
-**Участник EventGrid подписки**: управление операциями подписки в сетке событий
-
-```json
-[
-  {
-    "Description": "Lets you manage EventGrid event subscription operations.",
-    "IsBuiltIn": true,
-    "Id": "428e0ff05e574d9ca2212c70d0e0a443",
-    "Name": "EventGrid EventSubscription Contributor",
-    "IsServiceRole": false,
-    "Permissions": [
-      {
-        "Actions": [
-          "Microsoft.Authorization/*/read",
-          "Microsoft.EventGrid/eventSubscriptions/*",
-          "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
-          "Microsoft.Insights/alertRules/*",
-          "Microsoft.Resources/deployments/*",
-          "Microsoft.Resources/subscriptions/resourceGroups/read",
-          "Microsoft.Support/*"
-        ],
-        "NotActions": [],
-        "DataActions": [],
-        "NotDataActions": [],
-        "Condition": null
-      }
-    ],
-    "Scopes": [
-      "/"
-    ]
-  }
-]
-```
-
-**Читатель EventGrid подписки**: чтение подписок на сетку событий
-
-```json
-[
-  {
-    "Description": "Lets you read EventGrid event subscriptions.",
-    "IsBuiltIn": true,
-    "Id": "2414bbcf64974faf8c65045460748405",
-    "Name": "EventGrid EventSubscription Reader",
-    "IsServiceRole": false,
-    "Permissions": [
-      {
-        "Actions": [
-          "Microsoft.Authorization/*/read",
-          "Microsoft.EventGrid/eventSubscriptions/read",
-          "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/eventSubscriptions/read",
-          "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
-          "Microsoft.Resources/subscriptions/resourceGroups/read"
-        ],
-        "NotActions": [],
-        "DataActions": [],
-        "NotDataActions": []
-       }
-    ],
-    "Scopes": [
-      "/"
-    ]
-  }
-]
-```
-
-### <a name="custom-roles"></a>Пользовательские роли
-
-Если вам нужно указать разрешения, которые отличаются от встроенных ролей, можно создать пользовательские роли.
-
-Далее приведены примеры определений ролей Сетки событий, позволяющих пользователям выполнять различные действия. Эти пользовательские роли отличаются от встроенных, потому что они предоставляют более широкий доступ, чем просто подписка на события.
-
-**EventGridReadOnlyRole.json**: разрешено только для операций чтения.
-
-```json
-{
-  "Name": "Event grid read only role",
-  "Id": "7C0B6B59-A278-4B62-BA19-411B70753856",
-  "IsCustom": true,
-  "Description": "Event grid read only role",
-  "Actions": [
-    "Microsoft.EventGrid/*/read"
-  ],
-  "NotActions": [
-  ],
-  "AssignableScopes": [
-    "/subscriptions/<Subscription Id>"
-  ]
-}
-```
-
-**EventGridNoDeleteListKeysRole.json**: разрешен ограниченный набор действий по публикации и запрещены действия удаления.
-
-```json
-{
-  "Name": "Event grid No Delete Listkeys role",
-  "Id": "B9170838-5F9D-4103-A1DE-60496F7C9174",
-  "IsCustom": true,
-  "Description": "Event grid No Delete Listkeys role",
-  "Actions": [
-    "Microsoft.EventGrid/*/write",
-    "Microsoft.EventGrid/eventSubscriptions/getFullUrl/action"
-    "Microsoft.EventGrid/topics/listkeys/action",
-    "Microsoft.EventGrid/topics/regenerateKey/action"
-  ],
-  "NotActions": [
-    "Microsoft.EventGrid/*/delete"
-  ],
-  "AssignableScopes": [
-    "/subscriptions/<Subscription id>"
-  ]
-}
-```
-
-**EventGridContributorRole.json**: разрешено выполнять все действия сетки событий.
-
-```json
-{
-  "Name": "Event grid contributor role",
-  "Id": "4BA6FB33-2955-491B-A74F-53C9126C9514",
-  "IsCustom": true,
-  "Description": "Event grid contributor role",
-  "Actions": [
-    "Microsoft.EventGrid/*/write",
-    "Microsoft.EventGrid/*/delete",
-    "Microsoft.EventGrid/topics/listkeys/action",
-    "Microsoft.EventGrid/topics/regenerateKey/action",
-    "Microsoft.EventGrid/eventSubscriptions/getFullUrl/action"
-  ],
-  "NotActions": [],
-  "AssignableScopes": [
-    "/subscriptions/<Subscription id>"
-  ]
-}
-```
-
-Пользовательские роли можно создавать с помощью [PowerShell](../role-based-access-control/custom-roles-powershell.md), [Azure CLI](../role-based-access-control/custom-roles-cli.md) и [REST](../role-based-access-control/custom-roles-rest.md).
-
-## <a name="encryption-at-rest"></a>Шифрование при хранении
-
-Все события или данные, записываемые на диск службой "Сетка событий", шифруются с помощью ключа, управляемого корпорацией Майкрософт, что гарантирует их шифрование при хранении. Кроме того, максимальный период времени, в течение которого события или данные сохранены, составляет 24 часа в соответствии с [политикой повтора сетки событий](delivery-and-retry.md). Сетка событий будет автоматически удалять все события или данные через 24 часа или срок жизни события в зависимости от того, какое значение меньше.
+Все события или данные, записываемые на диск службой "Сетка событий", шифруются с помощью ключа, управляемого корпорацией Майкрософт, что гарантирует их шифрование. Кроме того, максимальный период времени, в течение которого события или данные были сохранены, составляет 24 часа в соответствии с [политикой повтора сетки событий](delivery-and-retry.md). Сетка событий будет автоматически удалять все события или данные через 24 часа или срок жизни события в зависимости от того, какое значение меньше.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

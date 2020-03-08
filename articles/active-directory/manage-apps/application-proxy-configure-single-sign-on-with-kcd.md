@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: H1Hack27Feb2017, it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab378fe1e06de49df0fe6481a1aa475d426648dc
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 5948fba67d3f071d77192f9ad89bc696fdc0c3cc
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69032568"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78668957"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -43,7 +43,7 @@ ms.locfileid: "69032568"
 7. Соединитель отправляет исходный запрос на сервер приложений, используя токен Kerberos, полученный от AD.
 8. Приложение отправляет соединителю ответ, который затем возвращается службе прокси приложения и пользователю.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Прежде чем организовать единый вход для приложений IWA, проверьте готовность следующих параметров и настроек в своей среде.
 
 * Настройте свои приложения, например веб-приложения SharePoint, на использование встроенной проверки подлинности Windows. Дополнительные сведения см. в статье [Включение поддержки протокола проверки подлинности Kerberos](https://technet.microsoft.com/library/dd759186.aspx) или (для SharePoint) в статье [Планирование проверки подлинности Kerberos в SharePoint 2013](https://technet.microsoft.com/library/ee806870.aspx).
@@ -59,24 +59,34 @@ ms.locfileid: "69032568"
 2. Выберите сервер, на котором работает соединитель.
 3. Щелкните его правой кнопкой мыши и выберите **Свойства** > **Делегирование**.
 4. Выберите **Доверять компьютеру делегирование указанных служб**. 
-5. Выберите **использовать любой протокол проверки**подлинности.
+5. Выберите **использовать любой протокол проверки подлинности**.
 6. В разделе **Службы, с которыми эта учетная запись может использовать делегированные учетные данные** добавьте значение для идентификации имени субъекта-службы сервера приложений. После этого соединитель прокси приложения будет олицетворять пользователей в AD при работе с приложениями, указанными в списке.
 
    ![Окно свойств соединителя SVR (снимок экрана)](./media/application-proxy-configure-single-sign-on-with-kcd/Properties.jpg)
 
 #### <a name="connector-and-application-server-in-different-domains"></a>Соединитель и сервер приложения находятся в разных доменах
 1. Список предварительных требований для работы с ограниченным делегированием Kerberos в разных доменах см. в статье [Ограниченное делегирование Kerberos в разных доменах](https://technet.microsoft.com/library/hh831477.aspx).
-2. Используйте свойство `principalsallowedtodelegateto` на сервере соединителя, чтобы разрешить прокси приложения делегировать полномочия серверу соединителя. Сервер приложений указан в свойстве `sharepointserviceaccount`, а делегирующий сервер — в свойстве `connectormachineaccount`. Следующий пример содержит код для Windows 2012 R2:
+2. Используйте свойство `principalsallowedtodelegateto` учетной записи службы (компьютер или выделенная учетная запись пользователя домена) веб-приложения, чтобы включить делегирование проверки подлинности Kerberos от прокси приложения (соединителя). Сервер приложений выполняется в контексте `webserviceaccount` и делегированный сервер `connectorcomputeraccount`. Выполните приведенные ниже команды на контроллере домена (под управлением Windows Server 2012 R2 или более поздней версии) в домене `webserviceaccount`. Для обеих учетных записей используйте неструктурированные имена (не UPN).
 
-```powershell
-$connector= Get-ADComputer -Identity connectormachineaccount -server dc.connectordomain.com
+   Если `webserviceaccount` является учетной записью компьютера, используйте следующие команды:
 
-Set-ADComputer -Identity sharepointserviceaccount -PrincipalsAllowedToDelegateToAccount $connector
+   ```powershell
+   $connector= Get-ADComputer -Identity connectorcomputeraccount -server dc.connectordomain.com
 
-Get-ADComputer sharepointserviceaccount -Properties PrincipalsAllowedToDelegateToAccount
-```
+   Set-ADComputer -Identity webserviceaccount -PrincipalsAllowedToDelegateToAccount $connector
 
-`sharepointserviceaccount` может быть учетной записью компьютера SPS или учетной записью службы, под которой выполняется пул приложений SPS.
+   Get-ADComputer webserviceaccount -Properties PrincipalsAllowedToDelegateToAccount
+   ```
+
+   Если `webserviceaccount` является учетной записью пользователя, используйте следующие команды:
+
+   ```powershell
+   $connector= Get-ADComputer -Identity connectorcomputeraccount -server dc.connectordomain.com
+
+   Set-ADUser -Identity webserviceaccount -PrincipalsAllowedToDelegateToAccount $connector
+
+   Get-ADUser webserviceaccount -Properties PrincipalsAllowedToDelegateToAccount
+   ```
 
 ## <a name="configure-single-sign-on"></a>Настройка единого входа 
 1. Опубликуйте приложение в соответствии с инструкциями, описанными в статье [Публикация приложений с помощью прокси приложения](application-proxy-add-on-premises-application.md). Обязательно выберите значение **Azure Active Directory** для параметра **Метод предварительной проверки подлинности**.
@@ -142,11 +152,10 @@ Get-ADComputer sharepointserviceaccount -Properties PrincipalsAllowedToDelegateT
 Когда в процессе единого входа возникает ошибка, она заносится в журнал событий на компьютере соединителя, как описано в разделе [Устранение неполадок](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
 Но в некоторых случаях запрос успешно отправляется внутреннему приложению, пока оно обрабатывает другие HTTP-ответы. Устранение подобных неполадок следует начинать с проверки события с номером 24029 в журнале событий сеанса прокси приложения на компьютере соединителя. Удостоверение пользователя, которое использовалось для делегирования, отображается в поле "Пользователь" в сведениях о событии. Чтобы включить журнал сеанса, выберите пункт **Отобразить аналитический и отладочный журналы** в меню "Вид" средства просмотра событий.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка приложения прокси приложения для использования ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
 * [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
 
 
 Последние новости и обновления см. в [блоге, посвященном прокси приложения](https://blogs.technet.com/b/applicationproxyblog/).
-

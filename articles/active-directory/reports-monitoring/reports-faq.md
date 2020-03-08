@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы по отчетам Azure Active Directory | Документация Майкрософт
-description: Часто задаваемые вопросы по отчетам Azure Active Directory.
+description: Часто задаваемые вопросы об Azure Active Directory отчетах.
 services: active-directory
 documentationcenter: ''
 author: cawrites
@@ -16,18 +16,18 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbaf7d4e5a0dee82edf9b6b6bd65b91309e1344d
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 273fdb80475defb0576bcd29d1944c5f6c595cfc
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74007691"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78668593"
 ---
 # <a name="frequently-asked-questions-around-azure-active-directory-reports"></a>Часто задаваемые вопросы по отчетам Azure Active Directory
 
 Эта статья содержит ответы на часто задаваемые вопросы об отчетах Azure Active Directory (Azure AD). Дополнительные сведения см. в статье [Отчеты Azure Active Directory](overview-reports.md). 
 
-## <a name="getting-started"></a>Приступая к работе 
+## <a name="getting-started"></a>Начало работы 
 
 **Вопрос. в настоящее время я использую `https://graph.windows.net/<tenant-name>/reports/` интерфейсы API конечных точек, чтобы получать отчеты об аудите Azure AD и интегрированных отчетах по использованию приложений в системы отчетов программным способом. Что следует переключиться на?**
 
@@ -37,7 +37,7 @@ ms.locfileid: "74007691"
 
 **Вопрос. в настоящее время я использую `https://graph.windows.net/<tenant-name>/reports/` интерфейсы API конечных точек, чтобы получать отчеты о безопасности Azure AD (определенные типы обнаружения, такие как утечки учетных данных или входа с анонимных IP-адресов) в системы отчетности программным способом. Что следует переключиться на?**
 
-Ответ **.**  [API обнаружения рисков для защиты идентификации](../identity-protection/graph-get-started.md) можно использовать для доступа к обнаружению систем безопасности с помощью Microsoft Graph. Этот новый формат обеспечивает большую гибкость в выполнении запросов к данным, расширенную фильтрацию, выбор полей и многое другое, а также стандартизацию обнаружения рисков в одном типе для упрощения интеграции в решения Siem и другие средства сбора данных. Так как формат данных изменился, вы не можете использовать старые запросы для новых источников. Но зато [новый API-интерфейс использует Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent), стандартное решение корпорации Майкрософт для API-интерфейсов, таких как Office 365 или Azure AD. Поэтому все действия по преобразованию усовершенствуют вашу систему Microsoft Graph или помогут начать переход на новую стандартную платформу.
+Ответ **.**  [API обнаружения рисков для защиты идентификации](../identity-protection/graph-get-started.md) можно использовать для доступа к обнаружению систем безопасности с помощью Microsoft Graph. Этот новый формат обеспечивает большую гибкость в выполнении запросов к данным, расширенную фильтрацию, выбор полей и многое другое, а также стандартизацию обнаружения рисков в одном типе для упрощения интеграции в решения Siem и другие средства сбора данных. Так как формат данных изменился, вы не можете использовать старые запросы для новых источников. Но зато [новый API-интерфейс использует Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent), стандартное решение корпорации Майкрософт для API-интерфейсов, таких как Office 365 или Azure AD. Поэтому необходимые работы могут либо продлить текущий Microsoft Graph инвестиций, либо помочь вам начать переход на новую стандартную платформу.
 
 ---
 
@@ -73,7 +73,7 @@ ms.locfileid: "74007691"
 
 **Ответ.** В следующей таблице указан период хранения данных для журналов действий. Дополнительные сведения см. в статье о [политиках хранения данных для отчетов Azure AD](reference-reports-data-retention.md).
 
-| Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Report                 | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--                    | :--           | :--                 | :--                 |
 | Журналы аудита             | 7 дней        | 30 дней             | 30 дней             |
 | Вход в систему               | Недоступно           | 30 дней             | 30 дней             |
@@ -131,7 +131,7 @@ ms.locfileid: "74007691"
 
 ---
 
-## <a name="conditional-access"></a>условный доступ;
+## <a name="conditional-access"></a>Условный доступ
 
 **Вопрос. Какие новые возможности доступны для этой функции?**
 

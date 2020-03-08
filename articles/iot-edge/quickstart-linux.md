@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4a076f9e6ae67b9a4dc27fcd058945716dfebe75
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
-ms.translationtype: HT
+ms.openlocfilehash: e2dd17a324c8920f44e972987508352a69383bb9
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264616"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78893354"
 ---
-# <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
+# <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. развертывание первого модуля IoT Edge на виртуальном устройстве Linux
 
 Проверьте работу Azure IoT Edge, как описано в этом кратком руководстве, развернув контейнерный код на виртуальном устройстве IoT Edge. IoT Edge позволяет удаленно управлять кодом на устройствах, чтобы вы могли передавать больше рабочих нагрузок на пограничные устройства. При работе с этим кратким руководством мы рекомендуем использовать виртуальную машину Azure для устройства IoT Edge. Так вы сможете быстро создать виртуальную машину для тестирования со всеми установленными компонентами, а затем удалить ее по завершении работы.
 
@@ -40,10 +40,12 @@ ms.locfileid: "76264616"
 Добавьте расширение Интернета вещей Azure в экземпляр Cloud Shell.
 
    ```azurecli-interactive
-   az extension add --name azure-cli-iot-ext
+   az extension add --name azure-iot
    ```
+   
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Облачные ресурсы.
 

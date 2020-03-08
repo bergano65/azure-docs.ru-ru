@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cebb59d30dd717e54321ab138f6580947a545961
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: f5345a96e333e0f75264880ee18a95c9ab8dd63c
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77185849"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78672314"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -25,7 +25,7 @@ ms.locfileid: "77185849"
 ### <a name="q-i-registered-the-device-recently-why-cant-i-see-the-device-under-my-user-info-in-the-azure-portal-or-why-is-the-device-owner-marked-as-na-for-hybrid-azure-active-directory-azure-ad-joined-devices"></a>Вопрос. я зарегистрировал устройство недавно. Почему оно отсутствует в моих сведениях о пользователе на портале Azure? Или почему владелец устройства помечен как N/A для гибридных Azure Active Directory (Azure AD), присоединенных к устройствам?
 
 Ответ **.** Устройства Windows 10, присоединенные к гибридной среде Azure AD, не отображаются на **устройствах пользователей**.
-Откройте представление **Все устройства** на портале Azure. Вы также можете использовать командлет PowerShell [Get-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/get-msoldevice?view=azureadps-1.0).
+Откройте представление **Все устройства** на портале Azure. Вы также можете использовать командлет PowerShell [Get-MsolDevice](/powershell/module/msonline/get-msoldevice?view=azureadps-1.0).
 
 В списке **устройств пользователей** перечислены только следующие устройства:
 
@@ -62,14 +62,14 @@ ms.locfileid: "77185849"
 - Пользователь отключает устройство на портале "Мои приложения". 
 - Администратор (или пользователь) удаляет или отключает устройство в портал Azure или с помощью PowerShell.
 - Только гибридное присоединение к Azure AD. Администратор удаляет область "подразделение устройств из области синхронизации", что приводит к удалению устройств из Azure AD.
-- Обновление Azure AD Connect до версии 1.4. XX. x. [Основные сведения об Azure AD Connect 1.4. XX. x и о некотором выявление устройства](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-device-disappearance).
+- Обновление Azure AD Connect до версии 1.4. XX. x. [Основные сведения об Azure AD Connect 1.4. XX. x и о некотором выявление устройства](/azure/active-directory/hybrid/reference-connect-device-disappearance).
 
 
 Ниже приведены сведения о том, как эти действия можно исправить.
 
 ---
 
-### <a name="q-i-disabled-or-deleted-my-device-in-the-azure-portal-or-by-using-windows-powershell-but-the-local-state-on-the-device-says-its-still-registered-what-should-i-do"></a>Вопрос. я отключил или удалил устройство в портал Azure или с помощью Windows PowerShell. Но локальное состояние на устройстве говорит о том, что оно все еще зарегистрировано. Что нужно сделать?
+### <a name="q-i-disabled-or-deleted-my-device-in-the-azure-portal-or-by-using-windows-powershell-but-the-local-state-on-the-device-says-its-still-registered-what-should-i-do"></a>Вопрос. я отключил или удалил устройство в портал Azure или с помощью Windows PowerShell. Но локальное состояние на устройстве говорит о том, что оно все еще зарегистрировано. Что делать?
 
 Ответ **.** Эта операция выполняется по проекту. В этом случае устройство не имеет доступа к ресурсам в облаке. Администраторы могут выполнять это действие для устаревших, потерянных или украденных устройств, чтобы предотвратить несанкционированный доступ. Если это действие было выполнено непреднамеренно, необходимо повторно включить или повторно зарегистрировать устройство, как описано ниже.
 
@@ -128,7 +128,7 @@ ms.locfileid: "77185849"
 Ответ **.** Отзыв будет применен с момента, когда устройство Azure AD помечено как отключенное, что займет до часа.
 
 >[!NOTE] 
->Для зарегистрированного устройства рекомендуется очистить его, чтобы пользователи не смогли получить доступ к его ресурсам. Дополнительные сведения см. в статье [Что такое регистрация устройств?](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune). 
+>Для зарегистрированного устройства рекомендуется очистить его, чтобы пользователи не смогли получить доступ к его ресурсам. Дополнительные сведения см. в статье [Что такое регистрация устройств?](/intune/deploy-use/enroll-devices-in-microsoft-intune). 
 
 ---
 
@@ -180,13 +180,13 @@ ms.locfileid: "77185849"
 
 ### <a name="q-my-users-cant-search-printers-from-azure-ad-joined-devices-how-can-i-enable-printing-from-those-devices"></a>Вопрос. мои пользователи не могут искать принтеры на устройствах, присоединенных к Azure AD. Как можно включить печать с этих устройств?
 
-Ответ **.** Чтобы развернуть принтеры для устройств, присоединенных к Azure AD, см. статью [развертывание гибридного облака Windows Server с предварительной проверкой подлинности](https://docs.microsoft.com/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy). Для развертывания гибридной облачной печати требуется локальный сервер Windows Server. Сейчас облачная служба печати недоступна. 
+Ответ **.** Чтобы развернуть принтеры для устройств, присоединенных к Azure AD, см. статью [развертывание гибридного облака Windows Server с предварительной проверкой подлинности](/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy). Для развертывания гибридной облачной печати требуется локальный сервер Windows Server. Сейчас облачная служба печати недоступна. 
 
 ---
 
 ### <a name="q-how-do-i-connect-to-a-remote-azure-ad-joined-device"></a>Вопрос. Разделы справки подключиться к удаленному устройству, присоединенному к Azure AD?
 
-Ответ **.** См. раздел [Подключение к удаленному подключенному Azure Active Directory ПК](https://docs.microsoft.com/windows/client-management/connect-to-remote-aadj-pc).
+Ответ **.** См. раздел [Подключение к удаленному подключенному Azure Active Directory ПК](/windows/client-management/connect-to-remote-aadj-pc).
 
 ---
 
@@ -220,7 +220,7 @@ ms.locfileid: "77185849"
 
 ### <a name="q-why-do-i-see-the-oops-an-error-occurred-dialog-when-i-try-to-azure-ad-join-my-pc"></a>Вопрос. Почему я вижу *... произошла ошибка.* При попытке присоединить компьютер к Azure AD?
 
-Ответ **.** Эта ошибка возникает при настройке регистрации Azure Active Directory в Intune. Убедитесь в том, что пользователю, который пытается выполнить операцию присоединения к Azure AD, назначена соответствующая лицензия Intune. Дополнительные сведения см. в статье [Настройка регистрации для устройств Windows](https://docs.microsoft.com/intune/windows-enroll).  
+Ответ **.** Эта ошибка возникает при настройке регистрации Azure Active Directory в Intune. Убедитесь в том, что пользователю, который пытается выполнить операцию присоединения к Azure AD, назначена соответствующая лицензия Intune. Дополнительные сведения см. в статье [Настройка регистрации для устройств Windows](/intune/windows-enroll).  
 
 ---
 
@@ -307,7 +307,7 @@ ms.locfileid: "77185849"
 
 Ответ **.** Выполните следующие действия.
 
-1.  [Создайте политику соответствия](https://docs.microsoft.com/intune/compliance-policy-create-mac-os).
+1.  [Создайте политику соответствия](/intune/compliance-policy-create-mac-os).
 1.  [Определение политики условного доступа для устройств macOS](../active-directory-conditional-access-azure-portal.md) 
 
 **Примечания:**
@@ -316,7 +316,7 @@ ms.locfileid: "77185849"
 - Во время первой попытки доступа пользователям предлагается зарегистрировать устройство с помощью корпоративного портала.
 
 ---
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее о [зарегистрированных устройствах в Azure AD](concept-azure-ad-register.md)
 - Подробнее о [присоединенных к Azure AD устройствах](concept-azure-ad-join.md)

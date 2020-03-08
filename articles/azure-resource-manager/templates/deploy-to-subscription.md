@@ -2,17 +2,23 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 03/02/2020
-ms.openlocfilehash: 2e747b7faa6e9766a577b472cc3e283d6223109e
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.date: 03/06/2020
+ms.openlocfilehash: 1ec761a8136d631c60a7a2021f5462dbf3d7f790
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78228122"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924973"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы на уровне подписки. Развертывания на уровне подписки используются для выполнения действий, имеющих смысл на этом уровне, таких как создание групп ресурсов или назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md).
+Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы в:
+
+* уровень подписки (рассматривается в этой статье)
+* [уровень группы управления](deploy-to-management-group.md)
+* [уровень клиента](deploy-to-tenant.md)
+
+Развертывания на уровне подписки используются для выполнения действий, имеющих смысл на этом уровне, таких как создание групп ресурсов или назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md).
 
 Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
 
@@ -21,7 +27,7 @@ ms.locfileid: "78228122"
 На уровне подписки можно развернуть следующие типы ресурсов:
 
 * [увеличен](/azure/templates/microsoft.consumption/budgets)
-* [размещения](/azure/templates/microsoft.resources/deployments)
+* [развертывания](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах ресурсов.
 * [пираснс](/azure/templates/microsoft.peering/peerasns)
 * [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
@@ -88,12 +94,12 @@ New-AzSubscriptionDeployment `
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Функция [resourceId()](template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Не следует указывать значение параметра группы ресурсов.
+* Используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
 
   Например, чтобы получить идентификатор ресурса для определения политики, используйте:
   
   ```json
-  resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
+  subscriptionResourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
   ```
   
   Возвращенный идентификатор ресурса имеет следующий формат:
@@ -101,8 +107,6 @@ New-AzSubscriptionDeployment `
   ```json
   /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
   ```
-
-  Или используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурса уровня подписки.
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
 

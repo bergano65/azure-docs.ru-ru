@@ -3,18 +3,18 @@ title: Резервное копирование файлов и папок — 
 description: Здесь рассматриваются распространенные вопросы о резервном копировании файлов и папок с помощью Azure Backup.
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: 7b80932d49038bb42fa93f71b3ac0194c2869489
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.openlocfilehash: adcbf5c3b404de46634423f8f59c4798d44bebe0
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425074"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673076"
 ---
 # <a name="common-questions-about-backing-up-files-and-folders"></a>Распространенные вопросы о резервном копировании файлов и папок
 
 В этой статье содержатся ответы на часто задаваемые вопросы, SPFE резервное копирование файлов и папок с помощью агента Службы восстановления Microsoft Azure (MARS) в службе [Azure Backup](backup-overview.md) .
 
-## <a name="configure-backups"></a>Настройка резервных копий
+## <a name="configure-backups"></a>Настройка резервного копирования.
 
 ### <a name="where-can-i-download-the-latest-version-of-the-mars-agent"></a>Где можно загрузить последнюю версию агента MARS?
 
@@ -149,9 +149,9 @@ ms.locfileid: "77425074"
 
 ### <a name="is-there-a-way-to-adjust-the-amount-of-bandwidth-used-for-backup"></a>Существует ли способ настройки объема пропускной способности, используемой для резервного копирования?
 
-Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Дополнительные сведения](backup-configure-vault.md#enable-network-throttling)
+Да, можно использовать параметр **изменить свойства** в АГЕНТе Mars, чтобы настроить пропускную способность и время. [Дополнительные сведения](backup-windows-with-mars-agent.md#enable-network-throttling)
 
-## <a name="restore"></a>Восстановление
+## <a name="restore"></a>Восстановить
 
 ### <a name="manage"></a>Управление
 
@@ -193,6 +193,6 @@ ms.locfileid: "77425074"
 * Для функции восстановления восстановления тома агент MARS предоставляет возможность пропустить восстановление разрешений ACL для восстанавливаемого файла или папки.
 * Для параметра восстановления отдельных файлов и папок агент MARS будет восстанавливаться с разрешениями ACL (отсутствует возможность пропустить восстановление списка ACL).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте](tutorial-backup-windows-server-to-azure.md) , как создать резервную копию компьютера Windows.
