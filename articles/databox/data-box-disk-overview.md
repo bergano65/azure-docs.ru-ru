@@ -1,6 +1,6 @@
 ---
 title: Обзор диска Microsoft Azure Data Box | Документация Майкрософт
-description: В этой статье содержатся общие сведения о диске Azure Data Box, облачном решении, которое позволяет передавать большие объемы данных в Azure
+description: Описание диска Azure Data Box — облачного приложения, которое позволяет передавать большие объемы данных в хранилище Azure
 services: databox
 author: alkohli
 ms.service: databox
@@ -10,11 +10,11 @@ ms.date: 06/18/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand what Data Box Disk is and how it works so I can use it to import on-premises data into Azure.
 ms.openlocfilehash: 067d818b7d23fc0b83cb1d4255bfbb8659149412
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204763"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78380434"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
@@ -74,7 +74,7 @@ ms.locfileid: "67204763"
 ## <a name="features-and-specifications"></a>Функции и спецификации
 
 
-| Спецификации                                          | ОПИСАНИЕ              |
+| Спецификации                                          | Описание              |
 |---------------------------------------------------------|--------------------------|
 | Вес                                                  | Вес коробки — < 0,9 кг . До 5 дисков в коробке                |
 | Измерения                                              | Диск — 2,5-дюймовый SSD |            
@@ -96,7 +96,7 @@ ms.locfileid: "67204763"
 
 Сведения о ценах см. на [странице с ценами](https://azure.microsoft.com/pricing/details/databox/disk/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Знакомство с [требованиями диска Data Box](data-box-disk-system-requirements.md).
 - Объяснение [ограничений диска Data Box](data-box-disk-limits.md).

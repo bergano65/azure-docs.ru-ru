@@ -11,11 +11,11 @@ ms.reviewer: carlrab
 ms.date: 09/03/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: 05ea21f7b3221425e5b052797d79e629fdfe3ba5
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818038"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360429"
 ---
 # <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство по Защита отдельной базы данных или базы данных в пуле
 
@@ -46,7 +46,7 @@ ms.locfileid: "73818038"
 
 Для работы с руководством требуется наличие следующих компонентов:
 
-- [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)
+- [Среда SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)
 - Сервер SQL Azure и база данных.
   - Создайте их с помощью [портала Azure](sql-database-single-database-get-started.md), [CLI](sql-database-cli-samples.md) или [PowerShell](sql-database-powershell-samples.md).
 
@@ -157,7 +157,7 @@ ms.locfileid: "73818038"
 
 - **Аутентификация Azure AD**: используются удостоверения, управляемые Azure AD.
 
-### <a name="sql-authentication"></a>Аутентификация SQL
+### <a name="sql-authentication"></a>Проверка подлинности SQL
 
 Чтобы добавить пользователя с аутентификацией SQL:
 
@@ -331,14 +331,14 @@ ms.locfileid: "73818038"
 
 1. Если требуется, для параметра **Шифрование данных** задайте значение **Включено**. Щелкните **Сохранить**.
 
-    ![Прозрачное шифрование данных](./media/sql-database-security-tutorial/encryption-settings.png)
+    ![прозрачное шифрование данных.](./media/sql-database-security-tutorial/encryption-settings.png)
 
 > [!NOTE]
 > Чтобы просмотреть состояние шифрования, подключитесь к базе данных, используя [SSMS](./sql-database-connect-query-ssms.md), и запросите столбец `encryption_state` представления [sys.dm_database_encryption_keys](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-encryption-keys-transact-sql). Состояние `3` указывает, что база данных зашифрована.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как повысить безопасность базы данных с помощью нескольких простых шагов. Вы научились выполнять следующие задачи:
+Из этого руководства вы узнали, как повысить безопасность базы данных с помощью нескольких простых шагов. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > - Создавать правила брандмауэра уровня сервера и уровня базы данных.
