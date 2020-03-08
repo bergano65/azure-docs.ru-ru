@@ -15,11 +15,11 @@ ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: deb337d989a3658e909cefa7a9ab028e37792562
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77918382"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389044"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "77918382"
 
 Варианты подключения:
 
-| Параметр | Описание |
+| Параметр | Description |
 |---|---|
 | **Открытый** | Подключение к SQL Server через Интернет |
 | **Частное** | Подключение к SQL Server в пределах одной виртуальной сети |
@@ -135,7 +135,7 @@ Server=mysqlvm;Integrated Security=true
 
 В следующей таблице перечислены требования для подключения к серверу SQL Server, запущенному на виртуальной машине Azure.
 
-| Требование | Описание |
+| Требование | Description |
 |---|---|
 | [Включите режим аутентификации SQL Server](/sql/database-engine/configure-windows/change-server-authentication-mode#use-ssms) | Для удаленного подключения к виртуальной машине требуется аутентификация SQL Server, если только не настроена служба Active Directory в виртуальной сети. |
 | [Создайте имя входа SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | При использовании аутентификации SQL требуется имя входа SQL с именем пользователя и паролем, у которого также имеются разрешения для целевой базы данных. |
@@ -146,7 +146,7 @@ Server=mysqlvm;Integrated Security=true
 > [!TIP]
 > Действия, описанные в таблице выше, уже выполнены при настройке подключения на портале. Эти действия следует использовать только для проверки конфигурации или настройки подключения к SQL Server вручную.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Инструкции по подготовке и действия по подключению приведены в статье [Подготовка виртуальной машины SQL Server на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
 

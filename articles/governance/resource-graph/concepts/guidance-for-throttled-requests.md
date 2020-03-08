@@ -4,11 +4,11 @@ description: Узнайте, как группировать, разбивать
 ms.date: 12/02/2019
 ms.topic: conceptual
 ms.openlocfilehash: fbd4bec715b187bcc643fe32b8452b0e062e7713
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436080"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388620"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Руководство по регулируемым запросам в графе ресурсов Azure
 
@@ -185,7 +185,7 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 }
 ```
 
-## <a name="pagination"></a>Разбивка на страницы
+## <a name="pagination"></a>Разбиение на страницы
 
 Так как граф ресурсов Azure возвращает не более 1000 записей в одном ответе на запрос, может потребоваться выполнить [разбиение](./work-with-data.md#paging-results) запросов на страницы, чтобы получить полный набор данных, который вы ищете. Однако некоторые клиенты графа ресурсов Azure выполняют разбиение на страницы иначе, чем другие.
 

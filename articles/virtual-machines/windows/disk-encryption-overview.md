@@ -8,11 +8,11 @@ ms.author: mbaldwin
 ms.date: 10/05/2019
 ms.custom: seodec18
 ms.openlocfilehash: 05db717f5d3adc2429431503f588f2cc7f79aef6
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72435737"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78383249"
 ---
 # <a name="azure-disk-encryption-for-windows-vms"></a>Шифрование дисков Azure для виртуальных машин Windows 
 
@@ -74,14 +74,14 @@ ms.locfileid: "72435737"
 
 | Терминология | Определение |
 | --- | --- |
-| хранилищем ключей Azure | Key Vault представляет собой службу управления криптографическими ключами. Она основана на аппаратных модулях безопасности, соответствующих Федеральному стандарту обработки информации (FIPS). Эти стандарты позволяют надежно хранить криптографические ключи и конфиденциальные данные. Дополнительные сведения см. в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) документации, а также [о создании и настройке хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md). |
-| Интерфейс командной строки Azure | [Azure CLI](/cli/azure/install-azure-cli) оптимизирован для администрирования ресурсов Azure и управления ими из командной строки.|
+| Azure Key Vault | Key Vault представляет собой службу управления криптографическими ключами. Она основана на аппаратных модулях безопасности, соответствующих Федеральному стандарту обработки информации (FIPS). Эти стандарты позволяют надежно хранить криптографические ключи и конфиденциальные данные. Дополнительные сведения см. в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) документации, а также [о создании и настройке хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md). |
+| Azure CLI | [Azure CLI](/cli/azure/install-azure-cli) оптимизирован для администрирования ресурсов Azure и управления ими из командной строки.|
 | BitLocker |[BitLocker](https://technet.microsoft.com/library/hh831713.aspx) — это известная промышленным стандартам технология шифрования томов Windows, которая используется для включения шифрования дисков на виртуальных машинах Windows. |
 | Ключ шифрования ключа (KEK) | Асимметричный ключ (RSA 2048), который можно использовать для защиты или перетекания секрета. Вы можете использовать защищенный HSM ключ или ключ с программной защитой. Дополнительные сведения см. в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) документации, а также [о создании и настройке хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md). |
 | Командлеты PowerShell | Дополнительные сведения см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview). |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство. Создание и шифрование виртуальной машины Windows с помощью Azure CLI](disk-encryption-cli-quickstart.md)
 - [Краткое руководство. Создание и шифрование виртуальной машины Windows с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md)

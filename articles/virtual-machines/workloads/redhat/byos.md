@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
 ms.openlocfilehash: 712626345e10ab0e4290ac91b0f121ff6960303e
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77920575"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78396836"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -209,7 +209,7 @@ ms.locfileid: "77920575"
 
 - Если вы используете автоматизацию для инициализации виртуальных машин из образов RHEL BYOS, необходимо указать параметры плана, аналогичные показанным выше. Например, если вы используете terraform, сведения о плане можно указать в [блоке плана](https://www.terraform.io/docs/providers/azurerm/r/virtual_machine.html#plan).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Пошаговые руководства и сведения о программе для доступа к облаку доступны в [документации по облачному доступу к Red Hat.](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index)
 - Узнайте больше о [инфраструктуре обновления Azure Red Hat](./redhat-rhui.md).
 - Чтобы узнать больше о всех образах Red Hat в Azure, перейдите на [страницу документации](./redhat-images.md).

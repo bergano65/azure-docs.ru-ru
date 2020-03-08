@@ -14,11 +14,11 @@ ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f04bd7788a9cc9657e14aedfb153182d6e53eb95
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562247"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374709"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Просмотр пользовательских назначений ролей в Azure Active Directory
 
@@ -117,7 +117,7 @@ HTTP/1.1 200 OK
 
     ![Просмотр назначений ролей регистрации приложений из свойств регистрации приложения](./media/roles-view-assignments/appreg-assignments-2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

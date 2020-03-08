@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 5cbb819ef1300f16a40dbdd0da52a35bdf578e59
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: f1be146a5173c86a8b19bca5c7b3b8c72d72b9c5
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77598193"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78362427"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -179,12 +179,12 @@ ms.locfileid: "77598193"
 * <a id="ad-support-rest-apis"></a>
 **Существуют ли API REST, которые поддерживают получение, настройку или копирование списков управления доступом NTFS для каталогов или файлов?**
 
-    Да, мы поддерживаем интерфейсы API RESTFUL, которые получают, устанавливают или копируют списки ACL NTFS для каталогов или файлов при использовании [2019-02-02](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#version-2019-02-02) (или более поздней версии) REST API.
+    Да, мы поддерживаем интерфейсы API RESTFUL, которые получают, устанавливают или копируют списки ACL NTFS для каталогов или файлов при использовании [2019-07-07](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#version-2019-07-07) (или более поздней версии) REST API.
 
 * <a id="ad-vm-subscription"></a>
 **Можно ли получить доступ к службе файлов Azure под учетными данными Azure AD с виртуальной машины с другой подпиской?**
 
-    Если подписка, в которой развернута общая папка, связана с тем же клиентом Azure AD, что и развертывание доменных служб Azure AD, к домену которого подключена виртуальная машина, вы сможете получить службу "Файлы Azure" под теми же учетными данными Azure AD. Это ограничение накладывается не на подписку, а на связанный клиент Azure AD.    
+    Если подписка, в которой развернута общая папка, связана с тем же клиентом Azure AD, что и развертывание доменных служб Azure AD, к домену которого подключена виртуальная машина, вы сможете получить службу "Файлы Azure" под теми же учетными данными Azure AD. Это ограничение накладывается не на подписку, а на связанный клиент Azure AD.
     
 * <a id="ad-support-subscription"></a>
 **можно ли включить Azure "файлы Azure" AD DS или проверку подлинности AD в клиенте Azure AD, который отличается от основного клиента, с которым связан файловый ресурс?**

@@ -20,11 +20,11 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: b966e9cfa3ef40666dbbd62135f8f964e5eb2023
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113198"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390322"
 ---
 # <a name="odata-filter-syntax-in-azure-cognitive-search"></a>Синтаксис $filter OData в Azure Когнитивный поиск
 
@@ -126,7 +126,7 @@ variable ::= identifier | field_path
 
     $filter=ParkingIncluded and Rooms/all(room: not room/SmokingAllowed)
 
- \- или -  
+ \- OR -  
 
     $filter=ParkingIncluded eq true and Rooms/all(room: room/SmokingAllowed eq false)
 
@@ -194,7 +194,7 @@ variable ::= identifier | field_path
 
     $filter=search.ismatch('"hotel airport"~5', 'Description', 'full', 'any') and not Rooms/any(room: room/SmokingAllowed)
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)

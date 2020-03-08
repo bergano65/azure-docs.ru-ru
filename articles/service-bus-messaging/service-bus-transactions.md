@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.openlocfilehash: 22744ecbced40b3195f4d047227b1e2a37228102
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774505"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390987"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Обзор обработки транзакций в служебной шине
 
@@ -51,7 +51,7 @@ ms.locfileid: "76774505"
 
 ### <a name="see-it-in-code"></a>Пример кода
 
-Для настройки таких передач вы создаете отправитель сообщений, сориентированный на очередь назначения через очередь передачи. Также есть получатель, который извлекает сообщения из той же очереди. Пример.
+Для настройки таких передач вы создаете отправитель сообщений, сориентированный на очередь назначения через очередь передачи. Также есть получатель, который извлекает сообщения из той же очереди. Пример:
 
 ```csharp
 var connection = new ServiceBusConnection(connectionString);
