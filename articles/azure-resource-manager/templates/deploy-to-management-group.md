@@ -2,23 +2,29 @@
 title: Развертывание ресурсов в группе управления
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 03/02/2020
-ms.openlocfilehash: 3b2eeaf2c63a50cda1a32fee94c1e5b99822075d
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.date: 03/06/2020
+ms.openlocfilehash: ae561468531b0c3fa584a02793c58ee64ca3610f
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78228108"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894891"
 ---
 # <a name="create-resources-at-the-management-group-level"></a>Создание ресурсов на уровне группы управления
 
-Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы на уровне группы управления. Развертывания на уровне группы управления используются для выполнения действий, имеющих смысл на этом уровне, таких как назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md) или применение [политик](../../governance/policy/overview.md).
+Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы в:
+
+* [уровень подписки](deploy-to-subscription.md)
+* уровень группы управления (рассматривается в этой статье)
+* [уровень клиента](deploy-to-tenant.md)
+
+Развертывания на уровне группы управления используются для выполнения действий, имеющих смысл на этом уровне, таких как назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md) или применение [политик](../../governance/policy/overview.md).
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
 На уровне группы управления можно развернуть следующие типы ресурсов:
 
-* [размещения](/azure/templates/microsoft.resources/deployments)
+* [развертывания](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в подписках или группах ресурсов.
 * [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
 * [полицисетдефинитионс](/azure/templates/microsoft.authorization/policysetdefinitions)

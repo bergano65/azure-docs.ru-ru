@@ -6,18 +6,18 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: d6e5eb8875e6b7d930a002708079dab0e357297f
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 7b9ce8be4ffc306417dd836e28127641f6100321
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250926"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78899195"
 ---
 # <a name="add-resources-to-your-integration-service-environment-ise-in-azure-logic-apps"></a>Добавление ресурсов в среду службы интеграции (ISE) в Azure Logic Apps
 
 После создания [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)добавьте ресурсы, такие как приложения логики, учетные записи интеграции и соединители, чтобы они могли получать доступ к ресурсам в виртуальной сети Azure. Например, управляемые соединители ISE, которые становятся доступными после создания ИНТЕГРИРОВАНной среды разработки, не отображаются автоматически в конструкторе приложений логики. Прежде чем использовать эти соединители ISE, необходимо вручную [Добавить и развернуть эти соединители в интегрированной среде сценариев](#add-ise-connectors-environment) , чтобы они отображались в конструкторе приложений логики.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -39,7 +39,7 @@ ms.locfileid: "78250926"
 
    ![Выбор среды службы интеграции](./media/add-artifacts-integration-service-environment-ise/create-logic-app-integration-service-environment.png)
 
-   | Свойство | Обязательно | Description |
+   | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
    | **Название** | Да | Имя создаваемого приложения логики |
    | **подписка** | Да | Имя подписки Azure, которую нужно использовать. |
@@ -51,7 +51,7 @@ ms.locfileid: "78250926"
 
 1. Продолжайте [создавать приложения логики обычным образом](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-   Сведения о том, как работают триггеры и действия и как они помечаются при использовании интегрированной среды сценариев по сравнению с глобальной службой Logic Apps, см. [в разделе «изолированные и глобальные» в обзоре интегрированной среды сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#difference).
+   Сведения о том, как работают триггеры и действия и как они помечаются при использовании интегрированной среды сценариев по сравнению с многоклиентской Logic Appsной службой, см. [в разделе "изолированные и многопользовательские" в обзоре интегрированной среды сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#difference).
 
 1. Сведения об управлении приложениями логики и подключениями API в интегрированной среде сценариев см. в статье [Управление средой службы интеграции](../logic-apps/ise-manage-integration-service-environment.md).
 
@@ -71,7 +71,7 @@ ms.locfileid: "78250926"
 
    ![Выбор среды службы интеграции](./media/add-artifacts-integration-service-environment-ise/create-integration-account-integration-service-environment.png)
 
-   | Свойство | Обязательно | Description |
+   | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
    | **Название** | Да | Имя создаваемой учетной записи интеграции |
    | **подписка** | Да | Имя подписки Azure, которую вы хотите использовать. |
@@ -98,7 +98,7 @@ ms.locfileid: "78250926"
 
    ![Просмотр управляемых соединителей](./media/add-artifacts-integration-service-environment-ise/ise-view-managed-connectors.png)
 
-1. В области **Добавить новый управляемый соединитель** откройте список **Найти соединитель** . Выберите соединитель ISE, который вы хотите использовать, но еще не развернут в интегрированной среде сценариев. Нажмите кнопку **Создать**.
+1. В области **Добавить новый управляемый соединитель** откройте список **Найти соединитель** . Выберите соединитель ISE, который вы хотите использовать, но еще не развернут в интегрированной среде сценариев. Выберите **Создать**.
 
    ![Выберите соединитель ISE, который требуется развернуть в интегрированной среде сценариев](./media/add-artifacts-integration-service-environment-ise/add-managed-connector.png)
 
@@ -128,6 +128,6 @@ ms.locfileid: "78250926"
 
 1. Сведения об управлении пользовательскими соединителями в интегрированной среде сценариев см. в статье [Управление средой службы интеграции](../logic-apps/ise-manage-integration-service-environment.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md)

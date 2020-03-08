@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87a9c9b808e737f8e72da803085bfebd8263319a
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 4ad76835b0c72b691e1ef8810f2c58dedb8f597d
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77194353"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78672390"
 ---
 # <a name="settings-and-data-roaming-faq"></a>Часто задаваемые вопросы о перемещении параметров и данных
 
@@ -35,7 +35,7 @@ ms.locfileid: "77194353"
 * *Другие параметры Windows*, такие как параметры мыши.
 
 > [!NOTE]
-> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](https://docs.microsoft.com/deployedge/microsoft-edge-enterprise-sync).
+> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](/deployedge/microsoft-edge-enterprise-sync).
 
 **Данные приложения** — универсальные приложения для Windows могут записывать данные параметров в папку Roaming. Все данные, записанные в эту папку, будут автоматически синхронизироваться. Такую возможность можно предусмотреть для приложения еще на этапе его проектирования. Дополнительные сведения о разработке универсального приложения для Windows, использующего роуминг, см. в блоге по [API хранилища AppData](https://msdn.microsoft.com/library/windows/apps/mt299098.aspx) и к [блогу о роуминге для разработчиков Windows 8 AppData](https://blogs.msdn.com/b/windowsappdev/archive/2012/07/17/roaming-your-app-data.aspx).
 

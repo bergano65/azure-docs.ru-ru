@@ -1,6 +1,6 @@
 ---
-title: Монитор защиты паролем и ведение журнала — Azure Active Directory
-description: Общие сведения о мониторинге и ведении журнала защиты паролем Azure AD
+title: Мониторинг защиты паролей в локальной среде Azure AD
+description: Узнайте, как отслеживать и просматривать журналы для защиты паролей Azure AD в локальной среде служб домен Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,14 +11,14 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c74ea99d3a0e39729bb4d89f012d7b790bf0568b
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: fbb533d5565009fb22d686e4082c9b4bfaae6dc1
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74847717"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78671658"
 ---
-# <a name="azure-ad-password-protection-monitoring-and-logging"></a>Мониторинг и ведение журнала защиты паролем Azure AD
+# <a name="monitor-and-review-logs-for-on-premises-azure-ad-password-protection-environments"></a>Мониторинг и просмотр журналов для локальных сред защиты паролей Azure AD
 
 После развертывания защиты паролем Azure AD мониторинг и отчетность являются важными задачами. В этой статье мы подробно рассмотрим несколько способов мониторинга, включая те, в которых каждая служба регистрирует сведения и создает отчеты об использовании защиты паролем Azure AD.
 
@@ -65,7 +65,7 @@ ms.locfileid: "74847717"
 
 |   |Изменение пароля |Настройка пароля|
 | --- | :---: | :---: |
-|Pass; |10014 |10015|
+|Пройден |10014 |10015|
 |Ошибка (из-за политики паролей клиента)| 10016, 30002| 10017, 30003|
 |Ошибка (из-за политики паролей Майкрософт)| 10016, 30004| 10017, 30005|
 |Ошибка (из-за совокупности политики паролей клиента и политики паролей Майкрософт)| 10016, 30026| 10017, 30027|
@@ -382,7 +382,7 @@ Current version: 1.2.116.0
 
 Это событие будет выдаваться, даже если прокси-агент настроен с включенным автообновлением.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Предварительный просмотр: мониторинг, отчетность и устранение неполадок защиты паролем Azure AD](howto-password-ban-bad-on-premises-troubleshoot.md)
 

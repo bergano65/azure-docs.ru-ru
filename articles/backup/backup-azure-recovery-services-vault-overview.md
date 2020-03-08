@@ -3,12 +3,12 @@ title: Обзор хранилищ Служб восстановления
 description: Обзор и сравнение хранилищ служб восстановления и резервных хранилищ Azure.
 ms.topic: conceptual
 ms.date: 08/10/2018
-ms.openlocfilehash: 327f17aca29f2787c86269e8dd707f5152285154
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 94a3e5a0865bcc8c0a9ecb866ca013f20a558e1a
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78397050"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673241"
 ---
 # <a name="recovery-services-vaults-overview"></a>Обзор хранилищ служб восстановления
 
@@ -77,4 +77,4 @@ ms.locfileid: "78397050"
 Ознакомьтесь со следующими статьями:</br>
 [Подготовка среды к архивации виртуальных машин, развернутых с помощью Resource Manager](backup-azure-arm-vms-prepare.md)</br>
 [Подготовка к резервному копированию рабочих нагрузок с использованием сервера службы архивации Azure](backup-azure-microsoft-azure-backup.md)</br>
-[Архивация сервера Windows Server или клиента Windows в Azure с использованием модели развертывания с помощью Resource Manager](backup-configure-vault.md)
+[Архивация сервера Windows Server или клиента Windows в Azure с использованием модели развертывания с помощью Resource Manager](backup-windows-with-mars-agent.md)

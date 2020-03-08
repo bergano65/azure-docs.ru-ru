@@ -186,9 +186,14 @@
               href: live-event-error-codes.md
             - name: Коды ошибок задания
               href: job-error-codes.md
-    - name: Руководства по обеспечению высокой доступности
-      displayName: 'failover, bcdr'
-      href: media-services-high-availability-guidance.md
+    - name: Высокий уровень доступности
+      items:
+        - name: Кодирование
+          displayName: 'failover, bcdr'
+          href: media-services-high-availability-encoding.md
+        - name: Потоковая передача
+          displayName: 'failover, bcdr'
+          href: media-services-high-availability-streaming.md
     - name: Руководство по миграции из версии 2 в версию 3
       href: migrate-from-v2-to-v3.md
       displayName: naming

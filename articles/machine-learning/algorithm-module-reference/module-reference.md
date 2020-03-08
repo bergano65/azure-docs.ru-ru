@@ -9,12 +9,12 @@ ms.topic: reference
 author: peterclu
 ms.author: peterlu
 ms.date: 02/22/2020
-ms.openlocfilehash: ece4b7a85ff5738900b8f999cc2f14ba35ecab0d
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 334cf69db70e8a1e0c2994c492f15ff44505af0d
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77920099"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673371"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer-preview"></a>Справочник по модулям & алгоритма для Машинное обучение Azure Designer (Предварительная версия)
 
@@ -57,7 +57,7 @@ ms.locfileid: "77920099"
 | Язык R | Напишите код и внедрите его в модуль, чтобы интегрировать R с вашим конвейером. | [Выполнить сценарий R](execute-r-script.md) |
 | Анализ текста | Предоставляют специализированные вычислительные средства для работы с структурированным и неструктурированным текстом. | [Извлечь из текста N функций для грамматики.](extract-n-gram-features-from-text.md) <br/> [Хэширование компонентов](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) |
 | Рекомендация | Модели рекомендаций сборки. | [Ознакомление с рекомендацией](evaluate-recommender.md) <br/> [SVD рекомендации по оценке](score-svd-recommender.md) <br/> [Совет по обучению SVD](train-SVD-recommender.md) |
-| Обнаружение аномалий | Создание моделей обнаружения аномалий. | [Обнаружение аномалий на основе PCA](pca-based-anomaly-detection.md) <br/> [Обучение модели обнаружения аномалий](train-anomaly-detection-model.md) |
+
 
 ## <a name="error-messages"></a>Сообщения об ошибках
 

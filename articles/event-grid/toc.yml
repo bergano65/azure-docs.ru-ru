@@ -96,8 +96,12 @@
   items:
     - name: Основные понятия службы "Сетка событий"
       href: concepts.md
-    - name: Безопасность и проверка подлинности
-      href: security-authentication.md
+    - name: Безопасность
+      items:
+        - name: Аутентификация
+          href: security-authentication.md
+        - name: Авторизация
+          href: security-authorization.md
     - name: Доставка и повторные попытки доставки
       href: delivery-and-retry.md
     - name: Фильтрация событий

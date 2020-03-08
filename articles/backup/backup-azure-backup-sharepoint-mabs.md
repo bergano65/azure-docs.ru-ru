@@ -3,12 +3,12 @@ title: Резервное копирование фермы SharePoint в Azure 
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: ba9d79270da839cf99574322d68ccdba27fe2d93
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 441a896f2faa67a1380007ebb9474d7c311a4842
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77584257"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673143"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 
@@ -63,12 +63,12 @@ Azure Backup Server работает под учетной записью LocalS
 
 1. На интерфейсном веб-сервере откройте командную строку и перейдите в папку [путь установки MABS]\bin\.
 2. Введите ConfigureSharePoint -EnableSharePointProtection.
-3. Введите учетные данные администратора фермы. Эта учетная запись должна быть членом локальной группы администраторов на сервере WFE. Если администратор фермы не является локальным администратором, предоставьте на интерфейсном веб-сервере следующие разрешения:
+3. Введите учетные данные администратора фермы. Эта учетная запись должна быть членом локальной группы администраторов на сервере WFE. Если администратор фермы не является локальным администратором, предоставьте следующие разрешения на сервере WFE:
    * Предоставьте группе WSS_Admin_WPG полный доступ к папке DPM (%Program Files%\Microsoft Azure Backup\DPM).
    * Предоставьте группе WSS_Admin_WPG право чтения реестра DPM (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager).
 
 > [!NOTE]
-> После каждого изменения в учетных данных администратора фермы SharePoint файл ConfigureSharePoint.exe необходимо перезапускать.
+> При изменении учетных данных администратора фермы SharePoint потребуется повторно запустить ConfigureSharePoint. exe.
 >
 >
 
@@ -127,7 +127,7 @@ Azure Backup Server работает под учетной записью LocalS
     ![Online_backup_schedule](./media/backup-azure-backup-sharepoint/specify-online-backup-schedule.png)
 
     > [!NOTE]
-    > MABS поддерживает не более двух резервных копий в Azure за день на основе последней доступной точки резервного копирования диска. Служба архивации Azure также может контролировать объем пропускной способности глобальной сети, который может использоваться для архивации в пиковые и непиковые часы, с помощью [регулирования сети службы архивации Azure](https://azure.microsoft.com/documentation/articles/backup-configure-vault/#enable-network-throttling).
+    > MABS поддерживает не более двух резервных копий в Azure за день на основе последней доступной точки резервного копирования диска. Azure Backup также может управлять объемом пропускной способности глобальной сети, которую можно использовать для резервного копирования в пиковые и непиковые часы с помощью [Azure Backup регулирования сети](backup-windows-with-mars-agent.md#enable-network-throttling).
     >
     >
 11. В зависимости от выбранного расписания архивации на странице **Укажите политику хранения в сети** выберите политику хранения для ежедневных, еженедельных, ежемесячных и ежегодных точек архивации.

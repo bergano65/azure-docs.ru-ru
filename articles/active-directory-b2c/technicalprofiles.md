@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/17/2020
+ms.date: 03/05/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d4dbe5a62e69f4c30d55fa1318ca79c06640a10f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 5196615b6b935e4d37565298be03ad315163d132
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378780"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78668577"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -101,7 +101,7 @@ ms.locfileid: "78378780"
 | SubjectNamingInfo | 0:1 | Управляет созданием имени субъекта, для маркеров, в которых имя субъекта указывается отдельно от утверждений. Например, OAuth или SAML.  |
 | инклудеинссо | 0:1 |  Следует ли использовать этот технический профиль в качестве поведения единого входа (SSO) для сеанса или вместо этого требовать явное взаимодействие. Этот элемент допустим только в профилях SelfAsserted, используемых в техническом профиле проверки. Возможные значения: `true` (по умолчанию) или `false`. |
 | IncludeClaimsFromTechnicalProfile | 0:1 | Идентификатор технического профиля, все входные и выходные утверждения из которого нужно добавить в текущий технический профиль. Технический профиль, указанный в этой ссылке, должен быть определен в том же файле политики. |
-| IncludeTechnicalProfile |0:1 | Идентификатор технического профиля, все данные из которого нужно добавить в текущий технический профиль. Технический профиль, указанный в этой ссылке, должен существовать в том же файле политики. |
+| IncludeTechnicalProfile |0:1 | Идентификатор технического профиля, все данные из которого нужно добавить в текущий технический профиль. |
 | UseTechnicalProfileForSessionManagement | 0:1 | Другой технический профиль, который нужно использовать для управления сеансами. |
 |EnabledForUserJourneys| 0:1 |Указывает, выполняется ли технический профиль в пути взаимодействия пользователя.  |
 
@@ -286,7 +286,7 @@ ms.locfileid: "78378780"
 
 | Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
-| ReferenceId | Да | Идентификатор технического профиля, который уже определен в файле политики или файле родительской политики. |
+| ReferenceId | Да | Идентификатор технического профиля, уже определенного в файле политики или в родительском файле политики. |
 
 ## <a name="usetechnicalprofileforsessionmanagement"></a>UseTechnicalProfileForSessionManagement
 

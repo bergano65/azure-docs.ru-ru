@@ -1,25 +1,26 @@
 ---
-title: Исходящая проверка подлинности планировщика Azure
+title: Исходящая аутентификация
 description: Сведения о настройке или удалении исходящей проверки подлинности для планировщика Azure
 services: scheduler
 ms.service: scheduler
 author: derek1ee
 ms.author: deli
-ms.reviewer: klam
-ms.assetid: 6707f82b-7e32-401b-a960-02aae7bb59cc
+ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/15/2016
-ms.openlocfilehash: 2ea09330fb8d3d97da5fbc197dba9668f1a4f685
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: bcd14e618323aec1c7ce47fcebb25099fa96be81
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300851"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898516"
 ---
 # <a name="outbound-authentication-for-azure-scheduler"></a>Исходящая проверка подлинности планировщика Azure
 
 > [!IMPORTANT]
-> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее.
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+>
+> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
 
 Задания планировщика Azure могут вызывать службы, требующие проверки подлинности. В число таких служб входят другие службы Azure, Salesforce.com, Facebook и защищенные пользовательские веб-сайты. Вызванная служба определяет, может ли задание планировщика получить доступ к запрашиваемым ресурсам. 
 
@@ -44,7 +45,7 @@ ms.locfileid: "71300851"
 
 При добавлении проверки подлинности с использованием модели `ClientCertificate` укажите в тексте запроса следующие дополнительные элементы.  
 
-| Элемент | Обязательное значение | Описание |
+| Элемент | Обязательно | Описание |
 |---------|----------|-------------|
 | **authentication** (родительский элемент) | Объект проверки подлинности для использования SSL-сертификата клиента |
 | **type** | Да | Тип проверки подлинности. Для клиентских SSL-сертификатов это значение равно `ClientCertificate`. |
@@ -158,13 +159,13 @@ Date: Wed, 16 Mar 2016 19:04:23 GMT
 }
 ```
 
-## <a name="basic"></a>Стандартная
+## <a name="basic"></a>Базовый
 
 ### <a name="request-body---basic"></a>Текст запроса для обычной проверки подлинности
 
 При добавлении проверки подлинности с использованием модели `Basic` укажите в тексте запроса следующие дополнительные элементы.
 
-| Элемент | Обязательное значение | Описание |
+| Элемент | Обязательно | Описание |
 |---------|----------|-------------|
 | **authentication** (родительский элемент) | Объект проверки подлинности для использования обычной проверки подлинности | 
 | **type** | Да | Тип проверки подлинности. Для обычной проверки подлинности это значение равно `Basic`. | 
@@ -282,7 +283,7 @@ Date: Wed, 16 Mar 2016 19:05:06 GMT
 
 При добавлении проверки подлинности с использованием модели `ActiveDirectoryOAuth` укажите в тексте запроса следующие дополнительные элементы.
 
-| Элемент | Обязательное значение | Описание |
+| Элемент | Обязательно | Описание |
 |---------|----------|-------------|
 | **authentication** (родительский элемент) | Да | Объект проверки подлинности для использования проверки подлинности ActiveDirectoryOAuth. |
 | **type** | Да | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. |
@@ -403,10 +404,9 @@ Date: Wed, 16 Mar 2016 19:10:02 GMT
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Следующие шаги
 
-* [Что такое планировщик Azure?](scheduler-intro.md)
 * [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
 * [Ограничения, значения по умолчанию и коды ошибок планировщика Azure](scheduler-limits-defaults-errors.md)
-* [REST API планировщика Azure](https://msdn.microsoft.com/library/mt629143)
+* [Справочник по API REST планировщика Azure](/rest/api/scheduler)
 * [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)

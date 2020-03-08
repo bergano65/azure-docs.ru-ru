@@ -7,15 +7,15 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: quickstart
+ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: diberry
-ms.openlocfilehash: f7d6e98205afad2ed2c4aea30e635254f79acaa1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: 5499e8362e1107a18b997a6a485e11343c328d0d
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448089"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898375"
 ---
 # <a name="label-machine-learned-entity-in-an-example-utterance"></a>Добавление метки к сущности, по которой выполнено машинное обучение, в примере речевого фрагмента
 
@@ -86,7 +86,7 @@ ms.locfileid: "75448089"
 1. На странице сведений о намерениях выберите **палитру сущностей** на контекстной панели инструментов.
 1. После открытия палитры сущностей выберите сущность из списка.
 1. Перейдите в **инспектор сущностей** и либо выберите существующую роль, либо создайте новую роль.
-1. В примере текста речевого фрагмента пометьте текст с помощью роли сущности. 
+1. В примере текста речевого фрагмента пометьте текст с помощью роли сущности.
 
 ## <a name="unlabel-entities"></a>Отмена меток сущностей
 

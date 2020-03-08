@@ -5,14 +5,14 @@ author: luisbosquez
 ms.author: lbosq
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 09/09/2019
-ms.openlocfilehash: 6bce69889910296f5ff28090e62cfe27c0640d95
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
-ms.translationtype: HT
+ms.openlocfilehash: 7aa1e0aa6bbbee9d40eb0d48318a8e2908a75f9d
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755037"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78897864"
 ---
 # <a name="regional-endpoints-for-azure-cosmos-db-graph-account"></a>Региональные конечные точки для графовой учетной записи Azure Cosmos DB
 Графовая база данных Azure Cosmos DB [глобально распределена](distribute-data-globally.md), поэтому приложения могут использовать несколько конечных точек для чтения. В приложениях, которым необходим доступ на запись в нескольких расположениях, нужно включить возможность использования [нескольких источников](how-to-multi-master.md).
@@ -108,7 +108,7 @@ foreach (string location in readLocations)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление учетными записями базы данных](how-to-manage-database-account.md) в Azure Cosmos DB
 * [Высокий уровень доступности](high-availability.md) при использовании Azure Cosmos DB
 * [Global data distribution with Azure Cosmos DB - under the hood](global-dist-under-the-hood.md) (Глобальное распределение в Azure Cosmos DB — взгляд изнутри)

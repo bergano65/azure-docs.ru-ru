@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 03/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: dbdc13b8c861c620bfdbaaf53c0901a51bb9ce08
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.openlocfilehash: 3d91203253c08acdaa159fc70f7a34fa7fca20c8
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/06/2020
-ms.locfileid: "78399207"
+ms.locfileid: "78674153"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-by-using-the-azure-portal"></a>Настройка подключения VPN-шлюза "виртуальная сеть — виртуальная сеть" с использованием портала Azure
 
@@ -127,7 +127,7 @@ ms.locfileid: "78399207"
 ### <a name="to-create-a-virtual-network"></a>Создание виртуальной сети
 [!INCLUDE [vpn-gateway-basic-vnet-rm-portal](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
 
-## <a name="create-a-virtual-network-gateway"></a>Создание шлюза виртуальной сети
+## <a name="create-the-vnet1-gateway"></a>Создание шлюза VNet1
 На этом шаге вы создадите шлюз для своей виртуальной сети. Создание шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU шлюза. Если вы создаете эту конфигурацию в качестве упражнения, можно использовать [пример параметров](#example-settings).
 
 [!INCLUDE [About gateway subnets](../../includes/vpn-gateway-about-gwsubnet-portal-include.md)]
@@ -138,7 +138,7 @@ ms.locfileid: "78399207"
 [!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 ## <a name="create-and-configure-vnet4"></a>Создание и настройка VNet4
-После настройки VNet1 создайте VNet4, повторив предыдущие шаги и заменив значения значениями VNet4. Не нужно ждать, пока шлюз виртуальной сети для VNet1 не завершит создание, прежде чем настраивать VNet4. При использовании собственных значений убедитесь, что адресные пространства не перекрываются с другими виртуальными сетями, к которым нужно подключиться.
+После настройки VNet1 создайте VNet4 и шлюз VNet4, повторив предыдущие шаги и заменив значения VNet4 значениями. Не нужно ждать, пока шлюз виртуальной сети для VNet1 не завершит создание, прежде чем настраивать VNet4. При использовании собственных значений убедитесь, что адресные пространства не перекрываются с другими виртуальными сетями, к которым нужно подключиться.
 
 ## <a name="configure-the-vnet1-gateway-connection"></a>Настройка подключения к шлюзу VNet1
 После завершения работы шлюзов виртуальной сети для VNet1 и VNet4 можно создать подключения к шлюзу виртуальной сети. В этом разделе мы создадим подключение между VNet1 и VNet4. Эти действия выполняются только для виртуальных сетей в одной подписке. Если виртуальные сети связаны с разными подписками, для подключения необходимо использовать [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md). Но если виртуальные сети находятся в разных группах ресурсов в одной подписке, их можно подключить с помощью портала.
@@ -148,7 +148,7 @@ ms.locfileid: "78399207"
    ![Страница "подключения"](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/connections.png "Страница "подключения"")
 2. Выберите **+ Добавить** , чтобы открыть страницу **Добавление подключения** .
 
-   ![Добавить соединение](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/vnet1-to-vnet4.png "Добавление подключения")
+   ![Добавить соединение](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/vnet1-vnet4-connection.png "Добавление подключения")
 3. На странице **Добавление подключения** укажите значения для подключения:
 
    - **Имя**: введите имя для подключения. Например, *VNet1toVNet4*.

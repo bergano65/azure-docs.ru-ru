@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87224c9e3e697b86aab51d1e922af8ab2130ac40
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 2d2ebcc885b4018f4d9c3ff1b525ffc19b1abdda
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77186231"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78671927"
 ---
 # <a name="building-a-conditional-access-policy"></a>Создание политики условного доступа
 
@@ -131,6 +131,6 @@ ms.locfileid: "77186231"
 
 [Планирование развертывания многофакторной идентификации Azure на основе облачных служб](../authentication/howto-mfa-getstarted.md)
 
-[Управление соответствием устройств с помощью Intune](https://docs.microsoft.com/intune/device-compliance-get-started)
+[Управление соответствием устройств с помощью Intune](/intune/device-compliance-get-started)
 
-[Microsoft Cloud App Security и условный доступ](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+[Microsoft Cloud App Security и условный доступ](/cloud-app-security/proxy-intro-aad)

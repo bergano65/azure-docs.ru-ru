@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 8f148bfe08d5f7933857eb46cf0d13d4582da108
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: ec716924d3cebf8e78b0505b95837b91c568813a
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950279"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898149"
 ---
 # <a name="supported-data-sources-in-azure-data-catalog"></a>Источники данных, поддерживаемые в каталоге данных Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "68950279"
       <td></td>
     </tr>
     <tr>
-      <td>Хранилище больших двоичных объектов Azure</td>
+      <td>Хранилище BLOB-объектов Azure</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -124,7 +124,7 @@ ms.locfileid: "68950279"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop</td>
-      <td></td>
+      <td>Oracle 10 и более поздние версии.</td>
     </tr>
     <tr>
       <td>Представление базы данных Oracle</td>
@@ -132,7 +132,7 @@ ms.locfileid: "68950279"
       <td>✓</td>
       <td>✓</td>
       <td>Excel, Power BI Desktop</td>
-      <td></td>
+      <td>Oracle 10 и более поздние версии.</td>
     </tr>
     <tr>
       <td>Другие (универсальный ресурс)</td>
@@ -191,11 +191,11 @@ ms.locfileid: "68950279"
       <td>SQL Server 2008 и более поздних версий.</td>
     </tr>
     <tr>
-      <td>Отчет для служб SQL Server Reporting Services</td>
+      <td>Отчет SQL Server Reporting Services</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>"Обзор"</td>
+      <td>Браузер.</td>
       <td>Только серверы в основном режиме. Режим SharePoint не поддерживается. Только SQL Server 2008 и более поздних версий</td>
     </tr>
     <tr>
@@ -455,7 +455,7 @@ ms.locfileid: "68950279"
        <td><b>Структура DSL<b></td>
     </tr>
     <tr>
-      <td>Azure Data Lake Store</td>
+      <td>Хранилище озера данных Azure</td>
       <td>Контейнер</td>
       <td>Data Lake</td>
       <td>

@@ -14,12 +14,12 @@ ms.workload: multiple
 ms.date: 10/24/2019
 ms.author: labrenne
 ms.custom: H1Hack27Feb2017,fasttrack-edit
-ms.openlocfilehash: 46be210ead3816356b63293b910e1c0e7ffc087b
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 9f4831fd60038a2265990c0774106a5ea2f98a5a
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200101"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78672095"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание автоматической формулы для масштабирования вычисляемых узлов в пуле пакетной службы
 
@@ -134,7 +134,7 @@ $NodeDeallocationOption = taskcompletion;
 | $SucceededTasks |Количество успешно выполненных задач. |
 | $FailedTasks |Количество задач, которые не удалось выполнить. |
 | $CurrentDedicatedNodes |Текущее количество выделенных вычислительных узлов. |
-| $CurrentLowPriorityNodes |Текущее количество вычислительных узлов с низким приоритетом, включая все узлы, которые были замещены. |
+| $CurrentLowPriorityNodes |Текущее количество вычислений узлов с низким приоритетом, включая все узлы, которые были вытеснены. |
 | $PreemptedNodeCount | Количество узлов в пуле, которые находятся в замещенном состоянии. |
 
 > [!TIP]

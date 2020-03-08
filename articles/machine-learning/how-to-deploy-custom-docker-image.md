@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 8c55fec08f05352d4587a8821c10600b7d7fad07
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 24ca37f5610589ae675a47a1dd966871b3004800
+ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396166"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78851275"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -155,6 +155,9 @@ ms.locfileid: "78396166"
     az acr build --image myimage:v1 --registry <registry_name> --file Dockerfile .
     ```
 
+    > [!TIP]
+    > В этом примере к изображению применяется тег `:v1`. Если тег не указан, применяется тег `:latest`.
+
     В процессе сборки данные передаются в потоковую передачу в командную строку. Если сборка выполнена успешно, появится сообщение следующего вида:
 
     ```text
@@ -170,6 +173,10 @@ ms.locfileid: "78396166"
 Чтобы использовать пользовательский образ, вам потребуются следующие сведения:
 
 * __Имя образа__. Например, `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` — это путь к базовому образу DOCKER, предоставляемому корпорацией Майкрософт.
+
+    > [!IMPORTANT]
+    > Для пользовательских образов, которые вы создали, обязательно включите все теги, которые использовались вместе с изображением. Например, если образ был создан с помощью определенного тега, например `:v1`. Если при создании изображения не использовался конкретный тег, был применен тег `:latest`.
+
 * Если образ находится в __частном репозитории__, вам потребуются следующие сведения:
 
     * __Адрес__реестра. Например, `myregistry.azureecr.io`.

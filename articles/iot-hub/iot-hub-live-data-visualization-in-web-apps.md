@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 05/31/2019
 ms.author: robinsh
-ms.openlocfilehash: 6c7981d15acf2b2b71dfb4234f85b738efe62ce0
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 138e077f7b47fa9f38a4710db95eb7208cef78e3
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76767948"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78675318"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Визуализация данных датчика в реальном времени из центра Интернета вещей Azure в веб-приложении
 
@@ -35,7 +35,7 @@ ms.locfileid: "76767948"
 * Открытие веб-страницы для просмотра данных о температуре и влажности в реальном времени из центра Интернета вещей
 * Используемых Использование Azure CLI для размещения веб-приложения в службе приложений Azure
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
 * Заполните учебник [Raspberry Pi Online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из учебников по устройствам. Например, [Raspberry Pi с Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). Они охватывают следующие требования.
 
@@ -52,7 +52,7 @@ ms.locfileid: "76767948"
 Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
 ```azurecli-interactive
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 ```
 
 ## <a name="add-a-consumer-group-to-your-iot-hub"></a>Добавление группы потребителей в Центр Интернета вещей
@@ -229,7 +229,7 @@ set EventHubConsumerGroup=YourConsumerGroupName
 
 11. Откройте браузер и перейдите по адресу `https://<your web app name>.azurewebsites.net`. Веб-страница, похожая на ту, которая была показана при локальном запуске веб-приложения. При условии, что устройство работает и отправляет данные, вы увидите график с 50 последними считываниями температуры и влажности, отправленными устройством.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 При возникновении каких либо проблем с этим примером выполните действия, описанные в следующих разделах. Если у вас по-прежнему возникают проблемы, отправьте нам отзыв в конце этого раздела.
 
@@ -255,7 +255,7 @@ set EventHubConsumerGroup=YourConsumerGroupName
 
 * Если появится сообщение об ошибке "не удается найти пакет", то вы могли выполнить шаги в неопределенном порядке. При развертывании сайта (с `git push`) служба приложений запускается `npm install`, которая выполняется на основе текущей версии узла, которая была настроена. Если это позднее изменилось в конфигурации, необходимо внести небессмысленные изменения в код и отправить его снова.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы успешно использовали веб-приложение для визуализации данных датчика, полученных в реальном времени, из Центра Интернета вещей.
 

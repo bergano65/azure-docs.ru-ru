@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: a0b0a4e89242103811f20071b7235c825c9d8bd2
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: d9e42e809443a2dd6cdeb989f692b96d63269f79
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74967530"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673583"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -26,8 +26,6 @@ ms.locfileid: "74967530"
 
 > [!NOTE]
 > Для зашифрованного содержимого Widevine требуется воспроизведение HTTPS.
-
-[Начните бесплатное пробное использование](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="use-azure-media-player-demo-page"></a>Использование демонстрационной страницы Проигрывателя мультимедиа Azure
 
@@ -53,9 +51,9 @@ ms.locfileid: "74967530"
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Документация по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs)
 - [Примеры Проигрывателя мультимедиа Azure](https://aka.ms/ampsamples)

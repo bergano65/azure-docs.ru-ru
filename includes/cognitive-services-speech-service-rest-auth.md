@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: 020055c1629a66ec1aa82beb050501803b2a0f18
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: dc5e251fee00ee22edb2261c1abd8404714834ba
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168309"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78668509"
 ---
 ## <a name="authentication"></a>Аутентификация
 
@@ -17,12 +17,12 @@ ms.locfileid: "77168309"
 
 | Поддерживаемые заголовки авторизации | Преобразование речи в текст | Преобразование текста в речь |
 |------------------------|----------------|----------------|
-| Ocp-Apim-Subscription-Key | Да | нет |
+| Ocp-Apim-Subscription-Key | Да | Нет |
 | Authorization: Bearer | Да | Да |
 
-При использовании заголовка `Ocp-Apim-Subscription-Key` необходимо предоставить только ключ подписки. Пример:
+При использовании заголовка `Ocp-Apim-Subscription-Key` необходимо предоставить только ключ подписки. Например:
 
-```
+```http
 'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'
 ```
 
@@ -34,7 +34,7 @@ ms.locfileid: "77168309"
 
 Конечная точка `issueToken` имеет следующий формат:
 
-```
+```http
 https://<REGION_IDENTIFIER>.api.cognitive.microsoft.com/sts/v1.0/issueToken
 ```
 
@@ -62,7 +62,7 @@ Content-Length: 0
 
 Это простой сценарий PowerShell для получения маркера доступа. Замените `YOUR_SUBSCRIPTION_KEY` своим ключом подписки на службу распознавания речи. Обязательно используйте правильную конечную точку для региона, который соответствует вашей подписке. В этом примере используется конечная точка для западной части США.
 
-```Powershell
+```powershell
 $FetchTokenHeader = @{
   'Content-type'='application/x-www-form-urlencoded';
   'Content-Length'= '0';
@@ -81,7 +81,7 @@ $OAuthToken
 
 cURL — это программа командной строки, доступная в Linux (и в подсистеме Windows для Linux). Эта команда cURL показывает, как получить маркер доступа. Замените `YOUR_SUBSCRIPTION_KEY` своим ключом подписки на службу распознавания речи. Обязательно используйте правильную конечную точку для региона, который соответствует вашей подписке. В этом примере используется конечная точка для западной части США.
 
-```cli
+```console
 curl -v -X POST
  "https://westus.api.cognitive.microsoft.com/sts/v1.0/issueToken" \
  -H "Content-type: application/x-www-form-urlencoded" \
@@ -93,7 +93,7 @@ curl -v -X POST
 
 Этот класс C# показывает, как получить маркер доступа. Передайте ключ подписки на службу распознавания речи при создании экземпляра класса. Если регион вашей подписки — не западная часть США, измените значение `FetchTokenUri` в соответствии с регионом своей подписки.
 
-```cs
+```csharp
 public class Authentication
 {
     public static readonly string FetchTokenUri =

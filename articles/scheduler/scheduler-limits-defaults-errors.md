@@ -5,21 +5,22 @@ services: scheduler
 ms.service: scheduler
 author: derek1ee
 ms.author: deli
-ms.reviewer: klam
-ms.assetid: 88f4a3e9-6dbd-4943-8543-f0649d423061
+ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/18/2016
-ms.openlocfilehash: 293cd956f8270a4863fcc657f58c970096cec1e3
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 610232dab776648bb3dcc7c301ec292e9acad9fc
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300926"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898530"
 ---
 # <a name="limits-quotas-and-throttle-thresholds-in-azure-scheduler"></a>Границы, квоты и пороговые значения регулирования в планировщике Azure
 
 > [!IMPORTANT]
-> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее.
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+>
+> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
 
 ## <a name="limits-quotas-and-thresholds"></a>Границы, квоты и пороговые значения
 
@@ -27,14 +28,16 @@ ms.locfileid: "71300926"
 
 ## <a name="x-ms-request-id-header"></a>Заголовок x-ms-request-id
 
-Каждый запрос к службе планировщика возвращает заголовок ответа с именем **x-ms-request-id**. Этот заголовок содержит непрозрачное значение, которое однозначно определяет запрос. Таким образом, если запрос постоянно завершается ошибкой и вы убедились, что запрос в правильном формате, вы можете сообщить об ошибке в Майкрософт, указав значение заголовка ответа **x-ms-request-id** и включив следующие данные: 
+Каждый запрос, выполняемый для службы планировщика, возвращает заголовок ответа с именем **x-MS-Request-ID**. Этот заголовок содержит непрозрачное значение, уникально идентифицирующее запрос. Таким образом, если запрос постоянно завершается ошибкой и вы убедились, что запрос в правильном формате, вы можете сообщить об ошибке в Майкрософт, указав значение заголовка ответа **x-ms-request-id** и включив следующие данные: 
 
 * значение **x-ms-request-id**;
 * приблизительное время, когда был выполнен запрос; 
 * идентификаторы подписки Azure, коллекции задания и задания; 
 * тип операции, которую пытался выполнить запрос.
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Следующие шаги
 
-* [Что такое планировщик Azure?](scheduler-intro.md)
 * [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
+* [Планы и выставление счетов для планировщика Azure](scheduler-plans-billing.md)
+* [Справочник по API REST планировщика Azure](/rest/api/scheduler)
+* [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)

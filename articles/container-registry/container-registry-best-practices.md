@@ -3,12 +3,12 @@ title: Рекомендации по использованию реестра
 description: Узнайте, как эффективно использовать реестр контейнеров Azure, следуя приведенным ниже рекомендациям.
 ms.topic: article
 ms.date: 09/27/2018
-ms.openlocfilehash: 7efea468a6c5c042f709d8a5bb493516458ce52b
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 233d84b8bfa6f3d8c800e76032ef74a643db11ca
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78362366"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78668365"
 ---
 # <a name="best-practices-for-azure-container-registry"></a>Рекомендации по использованию реестра контейнеров Azure
 
@@ -35,12 +35,10 @@ ms.locfileid: "78362366"
 
 Например, рассмотрим следующие теги образа контейнера. Образы, используемые в масштабах Организации, такие как `aspnetcore`, помещаются в корневое пространство имен, а образы контейнеров, принадлежащие продуктам и маркетинговым группам, используют собственные пространства имен.
 
-```
-contoso.azurecr.io/aspnetcore:2.0
-contoso.azurecr.io/products/widget/web:1
-contoso.azurecr.io/products/bettermousetrap/refundapi:12.3
-contoso.azurecr.io/marketing/2017-fall/concertpromotions/campaign:218.42
-```
+- *contoso.azurecr.io/aspnetcore:2.0*
+- *contoso.azurecr.io/products/widget/web:1*
+- *contoso.azurecr.io/products/bettermousetrap/refundapi:12.3*
+- *contoso.azurecr.io/marketing/2017-fall/concertpromotions/campaign:218.42*
 
 ## <a name="dedicated-resource-group"></a>Выделенная группа ресурсов
 
@@ -65,8 +63,11 @@ contoso.azurecr.io/marketing/2017-fall/concertpromotions/campaign:218.42
 
 Чтобы отобразить текущий размер реестра, воспользуйтесь командой Azure CLI [AZ запись контроля доступа "использование][az-acr-show-usage] ".
 
-```console
-$ az acr show-usage --resource-group myResourceGroup --name myregistry --output table
+```azurecli
+az acr show-usage --resource-group myResourceGroup --name myregistry --output table
+```
+
+```output
 NAME      LIMIT         CURRENT VALUE    UNIT
 --------  ------------  ---------------  ------
 Size      536870912000  185444288        Bytes

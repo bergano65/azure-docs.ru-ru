@@ -4,12 +4,12 @@ description: В этом кратком руководстве описано, �
 ms.topic: article
 ms.date: 08/23/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1ff9572cf8614e3eb5d015a602ca3f878875a0a4
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: dbeba56820a520e3435eeb0c5c8dbc5aae981241
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74455342"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78403237"
 ---
 # <a name="quickstart-send-events-from-private-container-registry-to-event-grid"></a>Краткое руководство. Отправка событий из закрытого реестра контейнеров в сетку событий
 
@@ -19,7 +19,7 @@ ms.locfileid: "74455342"
 
 ![Веб-браузер, где отображается пример веб-приложения с тремя полученными событиями][sample-app-01]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account] , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -110,7 +110,7 @@ az eventgrid event-subscription create \
 
 После создания подписки вы увидите выходные данные, аналогичные следующим:
 
-```JSON
+```json
 {
   "destination": {
     "endpointBaseUrl": "https://eventgridviewer.azurewebsites.net/api/updates",
@@ -149,8 +149,7 @@ az acr build --registry $ACR_NAME --image myimage:v1 -f Dockerfile https://githu
 
 Вы должны увидеть выходные данные, похожие на следующие, когда задачи ACR будут создавать, а затем передавать ваш образ. Следующий пример выходных данных усечен для краткости.
 
-```console
-$ az acr build -r $ACR_NAME --image myimage:v1 -f Dockerfile https://github.com/Azure-Samples/acr-build-helloworld-node.git
+```output
 Sending build context to ACR...
 Queued a build with build ID: aa2
 Waiting for build agent...
@@ -172,8 +171,7 @@ az acr repository show-tags --name $ACR_NAME --repository myimage
 
 Тег v1 созданного вами образа должен появиться в выходных данных аналогично следующему:
 
-```console
-$ az acr repository show-tags --name $ACR_NAME --repository myimage
+```output
 [
   "v1"
 ]
@@ -189,10 +187,9 @@ az acr repository delete --name $ACR_NAME --image myimage:v1
 
 Вы должны увидеть выходные данные, похожие на следующие, в которых запрашивается подтверждение для удаления манифеста и связанных с ним образов:
 
-```console
-$ az acr repository delete --name $ACR_NAME --image myimage:v1
+```output
 This operation will delete the manifest 'sha256:f15fa9d0a69081ba93eee308b0e475a54fac9c682196721e294b2bc20ab23a1b' and all the following images: 'myimage:v1'.
-Are you sure you want to continue? (y/n): y
+Are you sure you want to continue? (y/n): 
 ```
 
 ## <a name="view-registry-events"></a>Просмотр событий реестра
@@ -221,7 +218,7 @@ az group delete --name $RESOURCE_GROUP_NAME
 
 [Схема событий службы "Сетка событий Azure" для Реестра контейнеров](../event-grid/event-schema-container-registry.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 В этом кратком руководстве вы развернули реестр контейнеров, создали образ с помощью задач ACR, удалили его и использовали события реестра из Сетки событий с помощью примера приложения. Теперь перейдите к руководству по задачам ACR, чтобы узнать больше о создании образов контейнеров в облаке, включая автоматическую сборку при обновлении базового образа:
 

@@ -6,9 +6,9 @@
       href: scheduler-intro.md
 - name: Начало работы
   items:
-    - name: "Создание заданий и управление ими\_— портал"
-      href: scheduler-get-started-portal.md
-    - name: Миграция из Планировщика в Logic Apps
+    - name: "Создание расписаний и управление ими\_— Azure PowerShell"
+      href: scheduler-powershell-reference.md
+    - name: Миграция из планировщика в Logic Apps
       href: migrate-from-scheduler-to-logic-apps.md
 - name: Основные понятия
   items:
@@ -34,7 +34,7 @@
       items:
         - name: Аутентификация исходящих вызовов
           href: scheduler-outbound-authentication.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/azurerm.scheduler
@@ -44,13 +44,13 @@
       href: /azure/templates/microsoft.scheduler/allversions
 - name: Ресурсы
   items:
-    - name: Стратегия развития Планировщика Azure
+    - name: Стратегия развития планировщика Azure
       href: 'https://azure.microsoft.com/updates/?product=scheduler'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/updates/'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/home?forum=azurescheduler'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-scheduler'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/scheduler/'
@@ -58,5 +58,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=scheduler'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=scheduler'

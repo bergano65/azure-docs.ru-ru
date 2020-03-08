@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: robinsh
-ms.openlocfilehash: 82f6da54aec7aee94c19fd75a06d2850ca0db8b6
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: a06583e9aab4b082517d47c1022f7bec5184b9bc
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883136"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673386"
 ---
 # <a name="develop-for-android-things-platform-using-azure-iot-sdks"></a>Разработка на платформе Android Things с помощью пакетов SDK для Интернета вещей Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "68883136"
 
 В этом руководстве описано, как создать приложение на стороне устройства на платформе Android Things при помощи пакета SDK Java для Центра Интернета вещей Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Оборудование, поддерживаемое платформой Android Things, под управлением операционной системы Android Things.  Чтобы выполнить инструкции по установке операционной системы Android Things, см. документацию по Android Things [здесь](https://developer.android.com/things/get-started/kits#flash-at).  Убедитесь, что устройство под управлением Android Things подключено к Интернету и подключены все необходимые дополнительные устройства, например, клавиатура, дисплей и мышь.  В этом руководстве используется Raspberry Pi 3.
 
@@ -40,16 +40,16 @@ ms.locfileid: "68883136"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства.
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
 
-   **MyAndroidThingsDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте MyAndroidThingsDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **Мяндроидсингсдевице** : это имя, заданное для зарегистрированного устройства. Используйте MyAndroidThingsDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
-    az extension add --name azure-cli-iot-ext
+    az extension add --name azure-iot
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyAndroidThingsDevice
     ```
 
-2. Выполните следующие команды в Azure Cloud Shell, чтобы получить *строку подключения устройства* для только что зарегистрированного устройства. Замените `YourIoTHubName` под именем, выбранным для центра Интернета вещей.
+2. Выполните следующие команды в Azure Cloud Shell, чтобы получить *строку подключения устройства* для только что зарегистрированного устройства. Замените `YourIoTHubName` ниже именем, выбранным для центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyAndroidThingsDevice --output table

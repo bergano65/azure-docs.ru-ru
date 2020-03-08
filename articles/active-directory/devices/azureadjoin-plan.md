@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67c42de09c75b7dd6737b80071f1f6eba094b132
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: a6bbecf0e365ba7a8424da775245181fa64c21f6
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76512425"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78672700"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Инструкции. Планирование реализации присоединения к Azure AD
 
@@ -24,7 +24,7 @@ ms.locfileid: "76512425"
 
 В этой статье содержатся сведения, необходимые для планирования реализации присоединения к Azure AD.
  
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Предполагается, что вы ознакомлены с [общими сведениями об управлении устройствами в Azure Active Directory](../device-management-introduction.md).
 
@@ -59,7 +59,7 @@ ms.locfileid: "76512425"
 
 ### <a name="managed-environment"></a>Управляемая среда
 
-Управляемую среду можно развернуть при помощи [синхронизации хэша паролей](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-password-hash-synchronization) или [сквозной аутентификации](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-quick-start) с удобным единым входом.
+Управляемую среду можно развернуть при помощи [синхронизации хэша паролей](/azure/active-directory/hybrid/how-to-connect-password-hash-synchronization) или [сквозной аутентификации](/azure/active-directory/hybrid/how-to-connect-pta-quick-start) с удобным единым входом.
 
 В этих сценариях не требуется настраивать сервер федерации для проверки подлинности.
 
@@ -78,7 +78,7 @@ ms.locfileid: "76512425"
 Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. 
 
 >[!NOTE]
-> Сейчас присоединение к Azure AD не работает с [AD FS 2019, настроенных с внешними поставщиками проверки подлинности в качестве основного метода проверки](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/additional-authentication-methods-ad-fs#enable-external-authentication-methods-as-primary)подлинности. Присоединение к Azure AD по умолчанию используется для проверки пароля в качестве основного метода, что приводит к сбоям проверки подлинности в этом сценарии.
+> Сейчас присоединение к Azure AD не работает с [AD FS 2019, настроенных с внешними поставщиками проверки подлинности в качестве основного метода проверки](/windows-server/identity/ad-fs/operations/additional-authentication-methods-ad-fs#enable-external-authentication-methods-as-primary)подлинности. Присоединение к Azure AD по умолчанию используется для проверки пароля в качестве основного метода, что приводит к сбоям проверки подлинности в этом сценарии.
 
 
 ### <a name="smartcards-and-certificate-based-authentication"></a>Смарт-карты и проверка подлинности на основе сертификатов
@@ -91,7 +91,7 @@ ms.locfileid: "76512425"
 
 Если вы создаете пользователей в:
 
-- **локальной службе Active Directory**, необходимо синхронизировать их в Azure AD при помощи [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-whatis); 
+- **локальной службе Active Directory**, необходимо синхронизировать их в Azure AD при помощи [Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-sync-whatis); 
 - **Azure AD**, дополнительная настройка не требуется.
 
 Локальные имена участников-пользователей, которые отличаются от имен участников-пользователей Azure AD, не поддерживаются на устройствах, присоединенных к Azure AD. Если пользователи применяют локальное имя участника-пользователя, то следует запланировать переход на использование основного имени участника-пользователя в Azure AD.
@@ -127,9 +127,9 @@ ms.locfileid: "76512425"
 - Необходимы ли неподдерживаемые политики для присоединенных к Azure AD устройств или пользователей?
 - Применимы ли неподдерживаемые политики в облачном развертывании?
 
-Если решение MDM недоступно в коллекции приложений Azure AD, вы можете добавить его с помощью процесса, описанного в статье [Azure Active Directory integration with MDM](https://docs.microsoft.com/windows/client-management/mdm/azure-active-directory-integration-with-mdm) (Интеграция Azure Active Directory с MDM). 
+Если решение MDM недоступно в коллекции приложений Azure AD, вы можете добавить его с помощью процесса, описанного в статье [Azure Active Directory integration with MDM](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) (Интеграция Azure Active Directory с MDM). 
 
-При совместном управлении можно использовать SCCM для управления определенными аспектами устройств, в то время как политики доставляются через платформу MDM. Microsoft Intune предоставляет возможность совместного управления с SCCM. Дополнительные сведения о совместном управлении для устройств Windows 10 см. в статье [что такое совместное управление?](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview). Если вы используете продукт MDM, отличный от Intune, обратитесь к поставщику MDM, чтобы узнать о применимых сценариях совместного управления.
+При совместном управлении можно использовать SCCM для управления определенными аспектами устройств, в то время как политики доставляются через платформу MDM. Microsoft Intune предоставляет возможность совместного управления с SCCM. Дополнительные сведения о совместном управлении для устройств Windows 10 см. в статье [что такое совместное управление?](/configmgr/core/clients/manage/co-management-overview). Если вы используете продукт MDM, отличный от Intune, обратитесь к поставщику MDM, чтобы узнать о применимых сценариях совместного управления.
 
 **Рекомендация.** Рассмотрите возможность управления только с помощью MDM для устройств, подключенных к Azure AD.
 
@@ -141,7 +141,7 @@ ms.locfileid: "76512425"
 
 ### <a name="cloud-based-applications"></a>Облачные приложения
 
-Если приложение добавлено в коллекцию приложений Azure AD, пользователи получают возможность единого входа с устройств, присоединенных к Azure AD. Дополнительная настройка не требуется. Пользователям доступен единый вход через браузеры Microsoft Edge и Chrome. Для Chrome необходимо развернуть [расширение Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). 
+Если приложение добавлено в коллекцию приложений Azure AD, пользователи получают возможность единого входа с устройств, присоединенных к Azure AD. Никаких дополнительных настроек не требуется. Пользователям доступен единый вход через браузеры Microsoft Edge и Chrome. Для Chrome необходимо развернуть [расширение Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). 
 
 Все приложения Win32, которые:
 
@@ -155,7 +155,7 @@ ms.locfileid: "76512425"
 - обеспечить работу встроенной проверки подлинности Windows; 
 - предоставить пользователям возможность единого входа без запроса. 
 
-Если вы используете AD FS, см. статью [Проверка единого входа в службы федерации Active Directory и управление им](https://docs.microsoft.com/previous-versions/azure/azure-services/jj151809(v%3dazure.100)). 
+Если вы используете AD FS, см. статью [Проверка единого входа в службы федерации Active Directory и управление им](/previous-versions/azure/azure-services/jj151809(v%3dazure.100)). 
 
 **Рекомендация.** Рассмотрите возможность размещения в облаке (например, Azure) и интеграции с Azure AD для большего удобства.
 
@@ -163,7 +163,7 @@ ms.locfileid: "76512425"
 
 Пользователи получают возможность единого входа с присоединенных к Azure AD устройств, у которых есть доступ к контроллеру домена. 
 
-**Рекомендация.** Разверните [прокси-сервер Azure AD App](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy), чтобы обеспечить безопасный доступ для этих приложений.
+**Рекомендация.** Разверните [прокси-сервер Azure AD App](/azure/active-directory/manage-apps/application-proxy), чтобы обеспечить безопасный доступ для этих приложений.
 
 ### <a name="on-premises-network-shares"></a>Локальные сетевые папки
 
@@ -171,7 +171,7 @@ ms.locfileid: "76512425"
 
 ### <a name="printers"></a>Принтеры
 
-Для принтеров необходимо развернуть [гибридную облачную службу печати](https://docs.microsoft.com/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy), чтобы обнаруживать принтеры на присоединенных к Azure AD устройствах. 
+Для принтеров необходимо развернуть [гибридную облачную службу печати](/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy), чтобы обнаруживать принтеры на присоединенных к Azure AD устройствах. 
 
 Принтеры невозможно автоматически обнаруживать в облачной среде, но пользователи также могут добавлять их напрямую с помощью UNC-пути. 
 
@@ -183,15 +183,15 @@ ms.locfileid: "76512425"
 
 ### <a name="remote-desktop-services"></a>Службы удаленных рабочих столов
 
-Для подключения к удаленным рабочим столам на устройствах, подключенных к Azure AD, хост-компьютер должен быть присоединен либо к Azure AD, либо к гибридной службе Azure AD. Удаленные рабочие столы устройств, которые не присоединены к этой службе или на которых не установлена ОС Windows, не поддерживаются. Дополнительные сведения см. в статье [Подключение к удаленному компьютеру, присоединенному к Azure Active Directory](https://docs.microsoft.com/windows/client-management/connect-to-remote-aadj-pc)
+Для подключения к удаленным рабочим столам на устройствах, подключенных к Azure AD, хост-компьютер должен быть присоединен либо к Azure AD, либо к гибридной службе Azure AD. Удаленные рабочие столы устройств, которые не присоединены к этой службе или на которых не установлена ОС Windows, не поддерживаются. Дополнительные сведения см. в статье [Подключение к удаленному компьютеру, присоединенному к Azure Active Directory](/windows/client-management/connect-to-remote-aadj-pc)
 
 ## <a name="understand-your-provisioning-options"></a>Изучение вариантов подготовки
 
 Вы можете подготовить к работе присоединение к Azure AD, используя описанные ниже подходы.
 
-- **Самообслуживание в OOBE или параметрах.** В режиме самообслуживания пользователи выполняют присоединение к Azure AD через интерфейс запуска при первом включении компьютера с Windows (OOBE) или через параметры Windows. Дополнительные сведения см. в статье [Присоединение рабочего устройства к сети организации](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network). 
-- **Windows Autopilot** позволяет заранее настраивать устройства, чтобы выполнять присоединение к Azure AD через OOBE было проще. Дополнительные сведения см. в статье [Общие сведения о Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). 
-- **Массовая регистрация** позволяет администратору выполнить присоединение к Azure AD, настраивая устройства с помощью средства массовой подготовки. Дополнительные сведения см. в статье [Массовая регистрация для устройств Windows](https://docs.microsoft.com/intune/windows-bulk-enroll).
+- **Самообслуживание в OOBE или параметрах.** В режиме самообслуживания пользователи выполняют присоединение к Azure AD через интерфейс запуска при первом включении компьютера с Windows (OOBE) или через параметры Windows. Дополнительные сведения см. в статье [Присоединение рабочего устройства к сети организации](/azure/active-directory/user-help/user-help-join-device-on-network). 
+- **Windows Autopilot** позволяет заранее настраивать устройства, чтобы выполнять присоединение к Azure AD через OOBE было проще. Дополнительные сведения см. в статье [Общие сведения о Windows Autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot). 
+- **Массовая регистрация** позволяет администратору выполнить присоединение к Azure AD, настраивая устройства с помощью средства массовой подготовки. Дополнительные сведения см. в статье [Массовая регистрация для устройств Windows](/intune/windows-bulk-enroll).
  
 Ниже приведено сравнение этих трех подходов. 
  
@@ -292,11 +292,11 @@ MAM не применяется для присоединения к Azure AD.
 
 Эту реализацию можно использовать для использования [управляемых устройств для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство по присоединению нового устройства с Windows 10 с помощью Azure AD во время первого запуска](azuread-joined-devices-frx.md)
-> [Присоединение рабочего устройства к сети организации](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network)
+> [Присоединение рабочего устройства к сети организации](/azure/active-directory/user-help/user-help-join-device-on-network)
 
 <!--Image references-->
 [1]: ./media/azureadjoin-plan/12.png

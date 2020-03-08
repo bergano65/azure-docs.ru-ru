@@ -4,14 +4,14 @@ description: Дополнительные сведения о предложен
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 03/06/2020
 ms.author: tisande
-ms.openlocfilehash: 31653b598f0f3a79bf7f9c09231b1d111f167a16
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 483a0533eafc81ef8698d260a753062ae074f6d4
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982235"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898776"
 ---
 # <a name="where-clause-in-azure-cosmos-db"></a>Предложение WHERE в Azure Cosmos DB
 
@@ -35,10 +35,11 @@ WHERE <filter_condition>
   
    Выражение, представляющее вычисляемое значение. Дополнительные сведения см. в разделе [скалярные выражения](sql-query-scalar-expressions.md) .  
   
-
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Примечания
   
-  Чтобы вернуть документ, выражение, указанное в качестве условия фильтра, должно иметь значение true. Только логическое значение true соответствует условию. Все остальные значения, например undefined, Null, false, число, массив, объект, не подходят. 
+  Чтобы вернуть документ, выражение, указанное в качестве условия фильтра, должно иметь значение true. Только логическое значение `true` будет соответствовать условию, любое другое значение: undefine, null, false, Number, Array или Object не будет соответствовать условию.
+
+  Если включить ключ секции в предложение `WHERE` как часть фильтра равенства, запрос будет автоматически фильтровать только соответствующие секции.
 
 ## <a name="examples"></a>Примеры
 
@@ -71,7 +72,7 @@ WHERE <filter_condition>
 |**Тип оператора**  | **Значения** |
 |---------|---------|
 |Арифметические | +,-,*,/,% |
-|Побитовые    | \|, &, ^, <<, >>, >>> (сдвиг вправо с заполнением нулями) |
+|Побитовые операторы    | \|, &, ^, <<, >>, >>> (сдвиг вправо с заполнением нулями) |
 |Логические    | AND, OR, NOT      |
 |Сравнение | =, !=, &lt;, &gt;, &lt;=, &gt;=, <> |
 |String     |  \|\| (объединение) |
@@ -106,7 +107,7 @@ WHERE <filter_condition>
 
 В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` Возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true`. Любое другое значение, например `false`, `null`, `Undefined`, `<number>`, `<string>`, `<object>`или `<array>`, исключает элемент из результата.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Начало работы](sql-query-getting-started.md)
 - [Ключевое слово IN](sql-query-keywords.md#in)

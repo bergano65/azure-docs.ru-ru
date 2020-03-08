@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Документация по тексту в речь
+title: Документация по преобразованию текста в речь
 summary: Преобразование текста в речь из службы распознавания речи позволяет вашим приложениям, средствам или устройствам преобразовывать текст в человеческий синтезатор.
 metadata:
   title: Документация по тексту в речь. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
@@ -12,12 +12,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 02/11/2020
   ms.author: dapine
-  ms.openlocfilehash: 64d8c636aa4b0f8b75ba3a6f92d7792c91a9271d
-  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.openlocfilehash: 11fbb549409afd78f77e194fe45fa0d7626f75a7
+  ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/22/2020
-  ms.locfileid: "77562903"
+  ms.lasthandoff: 03/06/2020
+  ms.locfileid: "78674454"
 landingContent:
 - title: Начало работы
   linkLists:
@@ -31,7 +31,7 @@ landingContent:
       url: quickstarts/text-to-speech.md
     - text: Синтезирование речи в звуковой файл
       url: quickstarts/text-to-speech-audio-file.md
-    - text: Синтезирование речи с помощью звуковых функций длинной формы
+    - text: Синтез речи с использованием длинных аудиоматериалов
       url: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
 - title: Пошаговые руководства
   linkLists:
@@ -79,6 +79,8 @@ landingContent:
       url: language-support.md#text-to-speech
     - text: Цены
       url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services
+    - text: SSML фонетические наборы
+      url: speech-ssml-phonetic-sets.md
     - text: Правила поведения
       url: https://aka.ms/custom-neural-code-of-conduct
     - text: Предоставление сведений специалистам по озвучиванию

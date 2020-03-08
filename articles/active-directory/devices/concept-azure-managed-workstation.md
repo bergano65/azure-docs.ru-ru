@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: frasim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c26197a14e78b1cf1a1e078ba0145eca207206bf
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 05a3a8cf14a591dd3037175e4eed5b5bd8d3096c
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561968"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78672661"
 ---
 # <a name="understand-secure-azure-managed-workstations"></a>Общие сведения о защищенных рабочих станциях под управлением Azure
 
@@ -81,18 +81,18 @@ ms.locfileid: "74561968"
 
 Важно для защищенной рабочей станции — это решение цепочки поставок, в котором вы используете доверенную рабочую станцию под названием "корень доверия". Технология, которая должна рассматриваться в выборе корня оборудования доверия, должна включать следующие технологии, включенные в современные портативные компьютеры: 
 
-* [Доверенный платформенный модуль (TPM) (TPM) 2,0](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-tpm)
-* [шифрование диска BitLocker](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-bitlocker)
-* [Безопасная Загрузка UEFI](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-secure-boot)
-* [Драйверы и встроенное по, распределенные по Центр обновления Windows](https://docs.microsoft.com/windows-hardware/drivers/dashboard/understanding-windows-update-automatic-and-optional-rules-for-driver-distribution)
-* [Виртуализация и обязательная политика HVCI включены](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-vbs)
-* [Драйверы и приложения обязательная политика HVCI — готово](https://docs.microsoft.com/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)
-* [Windows Hello](https://docs.microsoft.com/windows-hardware/design/device-experiences/windows-hello-biometric-requirements)
-* [Защита ввода-вывода DMA](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
-* [System Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-system-guard/system-guard-how-hardware-based-root-of-trust-helps-protect-windows)
-* [Современный ждущий режим](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)
+* [Доверенный платформенный модуль (TPM) (TPM) 2,0](/windows-hardware/design/device-experiences/oem-tpm)
+* [шифрование диска BitLocker](/windows-hardware/design/device-experiences/oem-bitlocker)
+* [Безопасная Загрузка UEFI](/windows-hardware/design/device-experiences/oem-secure-boot)
+* [Драйверы и встроенное по, распределенные по Центр обновления Windows](/windows-hardware/drivers/dashboard/understanding-windows-update-automatic-and-optional-rules-for-driver-distribution)
+* [Виртуализация и обязательная политика HVCI включены](/windows-hardware/design/device-experiences/oem-vbs)
+* [Драйверы и приложения обязательная политика HVCI — готово](/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)
+* [Windows Hello](/windows-hardware/design/device-experiences/windows-hello-biometric-requirements)
+* [Защита ввода-вывода DMA](/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+* [System Guard](/windows/security/threat-protection/windows-defender-system-guard/system-guard-how-hardware-based-root-of-trust-helps-protect-windows)
+* [Современный ждущий режим](/windows-hardware/design/device-experiences/modern-standby)
 
-Для этого решения корень доверия будет развернут с помощью технологии [Microsoft автопилота](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot) и оборудования, удовлетворяющего современным техническим требованиям. Для защиты рабочей станции автопилот позволяет использовать оптимизированные для ПВТ устройства Windows 10. Эти устройства имеют известное хорошее состояние от производителя. Вместо того, чтобы повторное создание образа потенциально небезопасное устройство, программа автопилота может преобразовать устройство Windows в состояние "готов к бизнесу". Он применяет параметры и политики, устанавливает приложения и даже изменяет выпуск Windows 10. Например, функция автопилота может изменить установку Windows устройства с Windows 10 Pro на Windows 10 Корпоративная, чтобы она могла использовать дополнительные функции.
+Для этого решения корень доверия будет развернут с помощью технологии [Microsoft автопилота](/windows/deployment/windows-autopilot/windows-autopilot) и оборудования, удовлетворяющего современным техническим требованиям. Для защиты рабочей станции автопилот позволяет использовать оптимизированные для ПВТ устройства Windows 10. Эти устройства имеют известное хорошее состояние от производителя. Вместо того, чтобы повторное создание образа потенциально небезопасное устройство, программа автопилота может преобразовать устройство Windows в состояние "готов к бизнесу". Он применяет параметры и политики, устанавливает приложения и даже изменяет выпуск Windows 10. Например, функция автопилота может изменить установку Windows устройства с Windows 10 Pro на Windows 10 Корпоративная, чтобы она могла использовать дополнительные функции.
 
 ![Защита уровней рабочей станции](./media/concept-azure-managed-workstation/supplychain.png)
 
@@ -105,7 +105,7 @@ ms.locfileid: "74561968"
 
 * **Повышенная безопасность** — это защищенное решение на уровне начального уровня для домашних пользователей, пользователей малого бизнеса и общих разработчиков.
 
-   Расширенная рабочая станция — это способ повышения безопасности профиля низкого уровня безопасности на основе политик. Он обеспечивает безопасную работу с данными клиентов, а также использует средства повышения производительности, такие как электронная почта и просмотр веб-страниц. Вы можете использовать политики аудита и Intune для мониторинга расширенной рабочей станции на предмет поведения пользователя и профиля. Вы развертываете расширенный профиль рабочей станции с помощью скрипта Windows 10 (1809) и получаете преимущества расширенной защиты от вредоносных программ с помощью [расширенной защиты от угроз (ATP)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection).
+   Расширенная рабочая станция — это способ повышения безопасности профиля низкого уровня безопасности на основе политик. Он обеспечивает безопасную работу с данными клиентов, а также использует средства повышения производительности, такие как электронная почта и просмотр веб-страниц. Вы можете использовать политики аудита и Intune для мониторинга расширенной рабочей станции на предмет поведения пользователя и профиля. Вы развертываете расширенный профиль рабочей станции с помощью скрипта Windows 10 (1809) и получаете преимущества расширенной защиты от вредоносных программ с помощью [расширенной защиты от угроз (ATP)](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection).
 
 * **Высокий уровень безопасности** . наиболее эффективным способом снижения уязвимости рабочей станции является удаление возможности самостоятельного администрирования рабочей станции. Удаление локальных административных прав — это шаг, который повышает безопасность, но может повлиять на производительность при неправильной реализации. Профиль повышенной безопасности строится на расширенном профиле безопасности с одним существенным изменением: Удаление локального администратора. Этот профиль предназначен для пользователей с высоким уровнем профиля: руководители, зарплаты и пользователи с конфиденциальными данными, утверждающие службы и процессы.
 
@@ -121,9 +121,9 @@ ms.locfileid: "74561968"
 
 * **Изолированный** — этот пользовательский автономный сценарий представляет крайний конец спектра. Для этого случая не предоставляются сценарии установки. Может потребоваться управление критической для бизнеса функцией, которая требует неподдерживаемой или неисправленной устаревшей операционной системы. Например, высокое значение производственной линии или система поддержки жизни. Поскольку безопасность очень важна и облачные службы недоступны, вы можете управлять этими компьютерами и обновлять их вручную или с помощью изолированной Active Directory архитектуры леса, например расширенной среды администрирования безопасности (ЕСАЕ). В этих случаях рекомендуется удалить все доступ, за исключением основных проверок работоспособности Intune и ATP.
 
-   * [Требования к сетевым подключениям Intune](https://docs.microsoft.com/intune/network-bandwidth-use)
-   * [Требования к сетевым подключениям ATP](https://docs.microsoft.com/azure-advanced-threat-protection/configure-proxy)
+   * [Требования к сетевым подключениям Intune](/intune/network-bandwidth-use)
+   * [Требования к сетевым подключениям ATP](/azure-advanced-threat-protection/configure-proxy)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Развертывание защищенной рабочей станции под управлением Azure](howto-azure-managed-workstation.md).

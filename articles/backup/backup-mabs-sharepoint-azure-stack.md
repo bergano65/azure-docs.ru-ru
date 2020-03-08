@@ -3,12 +3,12 @@ title: Резервное копирование фермы SharePoint на Azur
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server на Azure Stack. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: c503ac7a76872e71d1920765656610dd462d4db3
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: d080605022cadf121fa6be99c9758fe9c0d878ef
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77583220"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673039"
 ---
 # <a name="back-up-a-sharepoint-farm-on-azure-stack"></a>Резервное копирование фермы SharePoint на Azure Stack
 
@@ -64,7 +64,7 @@ Azure Backup Server работает под учетной записью LocalS
    * Предоставьте группе WSS_Admin_WPG право чтения реестра DPM (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager).
 
 > [!NOTE]
-> После каждого изменения в учетных данных администратора фермы SharePoint файл ConfigureSharePoint.exe необходимо перезапускать.
+> При изменении учетных данных администратора фермы SharePoint потребуется повторно запустить ConfigureSharePoint. exe.
 >
 >
 
@@ -123,7 +123,7 @@ Azure Backup Server работает под учетной записью LocalS
     ![Online_backup_schedule](./media/backup-azure-backup-sharepoint/specify-online-backup-schedule.png)
 
     > [!NOTE]
-    > MABS поддерживает не более двух резервных копий в Azure за день на основе последней доступной точки резервного копирования диска. Служба архивации Azure также может контролировать объем пропускной способности глобальной сети, который может использоваться для архивации в пиковые и непиковые часы, с помощью [регулирования сети службы архивации Azure](https://azure.microsoft.com/documentation/articles/backup-configure-vault/#enable-network-throttling).
+    > MABS поддерживает не более двух резервных копий в Azure за день на основе последней доступной точки резервного копирования диска. Служба архивации Azure также может контролировать объем пропускной способности глобальной сети, который может использоваться для архивации в пиковые и непиковые часы, с помощью [регулирования сети службы архивации Azure](backup-windows-with-mars-agent.md#enable-network-throttling).
     >
     >
 11. В зависимости от выбранного расписания архивации на странице **Укажите политику хранения в сети** выберите политику хранения для ежедневных, еженедельных, ежемесячных и ежегодных точек архивации.

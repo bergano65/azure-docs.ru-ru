@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 7d637c2fb3f4a4d5f8deac9cd99c0a44af6568e6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 7fd76be8d17dc1c632e555a56d038d4f5c1e1486
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78359746"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78668597"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -102,7 +102,7 @@ Blobfuse не поддерживается.
 
 <a id="explorer-in-portal" />
 
-## <a name="storage-explorer-in-the-azure-portal"></a>Обозреватель службы хранилища на портале Azure
+## <a name="storage-explorer-in-the-azure-portal"></a>Обозреватель службы хранилища в портал Azure
 
 Списки управления доступом пока не поддерживаются.
 
@@ -111,6 +111,14 @@ Blobfuse не поддерживается.
 ## <a name="thirdpartyapplications"></a>Сторонние приложения
 
 Сторонние приложения, использующие API-интерфейсы RESTFUL для работы, продолжают работать, если использовать их с Data Lake Storage 2-го поколения приложениями, которые вызывают API больших двоичных объектов, скорее всего, будут работать.
+
+## <a name="access-control-lists-acl-and-anonymous-read-access"></a>Списки управления доступом (ACL) и анонимный доступ на чтение
+
+Если контейнеру предоставлен [анонимный доступ на чтение](storage-manage-access-to-resources.md) , ACL не влияют на этот контейнер или файлы в этом контейнере.
+
+## <a name="windows-azure-storage-blob-wasb-driver"></a>Драйвер Windows Azure Storage Blob (WASB)
+
+В настоящее время существует несколько проблем, связанных с использованием драйвера WASB вместе с учетными записями с иерархическим пространством имен. Мы рекомендуем использовать драйвер [файловой системы BLOB-объектов Azure (абфс)](data-lake-storage-abfs-driver.md) в рабочих нагрузках. 
 
 
 

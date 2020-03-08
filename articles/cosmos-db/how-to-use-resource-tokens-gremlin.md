@@ -5,14 +5,14 @@ author: luisbosquez
 ms.author: lbosq
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: 443b6ea2583c7c8a1c633cf1825e83cc02bd168c
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
-ms.translationtype: HT
+ms.openlocfilehash: 42f3c7f3351bddab429489dccf28587549d76e18
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756069"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78897847"
 ---
 # <a name="use-azure-cosmos-db-resource-tokens-with-the-gremlin-sdk"></a>Использование маркеров ресурса Azure Cosmos DB с пакетом SDK Gremlin
 
@@ -26,7 +26,7 @@ ms.locfileid: "72756069"
 
 - **Учетная запись Azure Cosmos DB** — объект верхнего уровня, с которым связана служба доменных имен (DNS), (например `contoso.gremlin.cosmos.azure.com`).
   - **База данных Azure Cosmos DB**
-    - **User**
+    - **Пользователь**
       - **Разрешение**
         - **Маркер** — свойство объекта "Разрешения", определяющий, какие действия разрешены или запрещены.
 
@@ -101,6 +101,6 @@ builder.authProperties(authenticationProperties);
 
 Распространенная ошибка, с которой сталкиваются приложения при использовании маркеров ресурсов: "Недостаточно разрешений в заголовке авторизации для соответствующего запроса. Повторите попытку используя другой заголовок авторизации." Эта ошибка возвращается, когда обход Gremlin пытается записать край или вершину, но маркер ресурса предоставляет только разрешения на *Чтение*. Проверьте обход на содержание какого-либо из следующих шагов: *.addV ()* , *.addE ()* , *.drop ()* или *.property()* .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление доступом на основе ролей](role-based-access-control.md) в Azure Cosmos DB
 * [Сведения о защите доступа к данным](secure-access-to-data.md) в Azure Cosmos DB

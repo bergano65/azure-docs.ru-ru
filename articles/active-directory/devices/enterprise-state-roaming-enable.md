@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6887edacafb4fd4a68cfbe7d97e788c71dc68522
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 8c44d6266f5ea8cdd4f75d0449cb49852e71c905
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77194455"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78672395"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 
@@ -25,13 +25,13 @@ Enterprise State Roaming доступна для любой организаци
 Если включить службу Enterprise State Roaming, ваша организация автоматически получит бесплатную ограниченную лицензию на службу защиты Azure Rights Management, которая включена в Azure Information Protection. В бесплатной подписке можно выполнять только шифрование и расшифровку параметров предприятия и данных приложений, которые синхронизируются в Enterprise State Roaming. Чтобы использовать все возможности службы Azure Rights Management, у вас должна быть [платная подписка](https://azure.microsoft.com/pricing/details/information-protection/).
 
 > [!NOTE]
-> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](https://docs.microsoft.com/deployedge/microsoft-edge-enterprise-sync).
+> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](/deployedge/microsoft-edge-enterprise-sync).
 
 ## <a name="to-enable-enterprise-state-roaming"></a>Включение Enterprise State Roaming
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
 1. Выберите **Azure Active Directory** &gt; **устройства** &gt; **Enterprise State Roaming**.
-1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](https://docs.microsoft.com/azure/active-directory/device-management-azure-portal).
+1. Включите параметр **Пользователи могут выполнять синхронизацию параметров и данных разных устройств**. Дополнительные сведения см. в статье [о настройке параметров устройств](/azure/active-directory/device-management-azure-portal).
   
    ![Изображение с настройкой параметра "Пользователи могут выполнять синхронизацию параметров и данных разных устройств"](./media/enterprise-state-roaming-enable/device-settings.png)
   

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: chrisgre
-ms.openlocfilehash: 9a7e2d9874f049000dadcb3e46cccb2202b53698
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 381f550f6d64dee3c7649a040c1e24b7c9d42f2c
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75429289"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78669430"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-cli"></a>Автоматическое управление устройствами IoT и модулем с помощью Azure CLI
 
@@ -36,8 +36,12 @@ ms.locfileid: "75429289"
 ## <a name="cli-prerequisites"></a>Технические условия CLI
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure. 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
-* [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
+
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
+
+* [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-cli).
+
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="implement-twins"></a>Реализация двойников
 
@@ -102,7 +106,7 @@ ms.locfileid: "75429289"
 }
 ```
 
-Запросы метрик для модулей также похожи на запросы для устройств, но вы можете выбрать `moduleId` из `devices.modules`. Пример. 
+Запросы метрик для модулей также похожи на запросы для устройств, но вы можете выбрать `moduleId` из `devices.modules`. Например: 
 
 ```json
 {
@@ -112,7 +116,7 @@ ms.locfileid: "75429289"
 }
 ```
 
-## <a name="create-a-configuration"></a>Создание конфигурации
+## <a name="create-a-configuration"></a>Создать конфигурацию
 
 Создавая конфигурацию, состоящую из целевого содержимого и метрик, вы настраиваете целевые устройства. 
 
@@ -202,9 +206,9 @@ az iot hub configuration update --config-id [configuration id] \
 
     * targetCondition — например `targetCondition=tags.location.state='Oregon'`
 
-    * метки; 
+    * подписи 
 
-    * priority
+    * приоритет
 
 ## <a name="delete-a-configuration"></a>Удаление конфигурации
 
@@ -220,7 +224,7 @@ az iot hub configuration delete --config-id [configuration id] \
 
 * --**hub-name** — имя центра IoT, в котором существует конфигурация. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как настраивать и отслеживать устройства Интернета вещей в масштабе. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 

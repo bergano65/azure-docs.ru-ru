@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: sajaya
-ms.openlocfilehash: 699ee2c2c3b1a90231f24663619cc590aae9889d
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: c0d51c9c31e4e6859eaedce371efeafaa5fd4f46
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78252064"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78403217"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
@@ -241,7 +241,7 @@ az acr login -n MyRegistry
 
 * Чтобы извлечь изображение, сделайте следующее:
 
-  ```console
+  ```bash
   docker pull myregistry.azurecr.io/hello-world
   ```
 
@@ -297,28 +297,25 @@ grep OPTIONS /etc/sysconfig/docker
 
 Например, Fedora 28 Server имеет следующие параметры управляющей программы docker:
 
-```
-OPTIONS='--selinux-enabled --log-driver=journald --live-restore'
-```
+`OPTIONS='--selinux-enabled --log-driver=journald --live-restore'`
 
 При отсутствии `--signature-verification=false` `docker pull` завершается ошибкой, как показано ниже.
 
-```bash
+```output
 Trying to pull repository myregistry.azurecr.io/myimage ...
 unauthorized: authentication required
 ```
 
 Чтобы устранить эту ошибку, сделайте следующее:
-1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Пример:
-
-  ```
-  OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'
-  ```
+1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Например:
+   
+   `OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'`
+   
 2. Перезапустите службу управляющей программы DOCKER, выполнив следующую команду:
-
-  ```bash
-  sudo systemctl restart docker.service
-  ```
+   
+   ```bash
+   sudo systemctl restart docker.service
+   ```
 
 Сведения о `--signature-verification` можно найти, выполнив `man dockerd`.
 
@@ -438,7 +435,7 @@ curl $redirect_url
 
 ### <a name="how-do-i-collect-http-traces-on-windows"></a>Разделы справки собирайте трассировки HTTP в Windows?
 
-#### <a name="prerequisites"></a>предварительные требования
+#### <a name="prerequisites"></a>Предварительные требования
 
 - Включение расшифровки HTTPS в Fiddler: <https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
 - Включение DOCKER для использования прокси-сервера через пользовательский интерфейс docker: <https://docs.docker.com/docker-for-windows/#proxies>
@@ -458,7 +455,7 @@ curl $redirect_url
 
 Настройте прокси-сервер DOCKER для вывода предыдущей команды и порта 8888 (например, 10.0.75.1:8888).
 
-## <a name="tasks"></a>Задания
+## <a name="tasks"></a>Задачи
 
 - [Разделы справки выполнения пакетной отмены?](#how-do-i-batch-cancel-runs)
 - [Разделы справки включить папку Git в команду AZ контроля доступа?](#how-do-i-include-the-git-folder-in-az-acr-build-command)
@@ -478,9 +475,7 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 При передаче локальной исходной папки в команду `az acr build` по умолчанию папка `.git` исключается из переданного пакета. Можно создать файл `.dockerignore` со следующим параметром. Она сообщает команде восстановить все файлы в разделе `.git` в отправленном пакете. 
 
-```sh
-!.git/**
-```
+`!.git/**`
 
 Этот параметр также применяется к команде `az acr run`.
 
@@ -494,12 +489,12 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 |---|---|---|---|
 | GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Да | Да |
 | Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Да | Да |
-| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | нет |
-| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | нет |
+| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | Нет |
+| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | Нет |
 
 ## <a name="run-error-message-troubleshooting"></a>Выполнение устранения неполадок с сообщением об ошибке
 
-| Сообщение об ошибке | Руководство по устранению неполадок |
+| Сообщение об ошибке | Troubleshooting guide (Руководство по устранению неполадок) |
 |---|---|
 |Доступ к виртуальной машине не был настроен, поэтому подписки не найдены|Это может произойти, если вы используете `az login --identity` в задаче записи контроля доступа. Это временная ошибка, которая возникает, когда не распространяется назначение роли для управляемого удостоверения. Подождите несколько секунд, прежде чем повторять попытку.|
 
@@ -508,6 +503,6 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 - [ЦирклеЦи](https://github.com/Azure/acr/blob/master/docs/integration/CircleCI.md)
 - [Действия GitHub](https://github.com/Azure/acr/blob/master/docs/integration/github-actions/github-actions.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения](container-registry-intro.md) о реестре контейнеров Azure.

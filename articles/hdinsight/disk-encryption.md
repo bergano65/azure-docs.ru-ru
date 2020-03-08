@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: c22ee0ef0393c0dae64674d18bae5a2e92969b4c
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: fd5308574e84ab6d2e30b9352254683b2d1d6fdd
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78206076"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78403562"
 ---
 # <a name="customer-managed-key-disk-encryption"></a>Шифрование управляемых клиентом ключей
 
@@ -34,7 +34,7 @@ Azure HDInsight поддерживает шифрование ключей, уп
 
 |Тип кластера |Диск ОС (управляемый диск) |Диск данных (управляемый диск) |Диск временных данных (локальный SSD) |
 |---|---|---|---|
-|Kafka, HBase с ускоренной записью|Шифрование SSE|Шифрование SSE + Необязательное шифрование CMK|Необязательное шифрование CMK|
+|Kafka, HBase с ускоренной записью|[Шифрование SSE](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#encryption)|Шифрование SSE + Необязательное шифрование CMK|Необязательное шифрование CMK|
 |Все остальные кластеры (Spark, Interactive, Hadoop, HBase без ускоренной записи)|Шифрование SSE|Н/Д|Необязательное шифрование CMK|
 
 ## <a name="get-started-with-customer-managed-keys"></a>Начало работы с ключами, управляемыми клиентом
