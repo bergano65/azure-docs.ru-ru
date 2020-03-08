@@ -17,11 +17,11 @@ ms.author: cynthn
 ms.custom: mvc
 ms.subservice: disks
 ms.openlocfilehash: dc987fa1a3476b81b198726350d56333b53c795f
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75780306"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385007"
 ---
 # <a name="tutorial---manage-azure-disks-with-the-azure-cli"></a>Руководство по управлению дисками Azure с помощью Azure CLI.
 
@@ -256,7 +256,7 @@ az vm disk attach \
    --name $datadisk
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы ознакомились с дисками виртуальных машин, а именно с:
 

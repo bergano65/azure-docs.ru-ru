@@ -4,11 +4,11 @@ description: Сведения о создании шаблона Resource Manage
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.openlocfilehash: a00f2bc505acd89d9fb9488565b6235bf7d146ba
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75463247"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78396648"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Создание шаблона Resource Manager для кластера Service Fabric
 
@@ -247,7 +247,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName "myresourcegroup" -TemplateFil
 
 ![Сопоставление зависимостей Resource Manager][cluster-security-arm-dependency-map]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда кластер обладает шаблоном, можно [развернуть его в Azure](service-fabric-cluster-creation-via-arm.md).  Перед развертыванием рабочего кластера необходимо ознакомиться со статьей [Контрольный список готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
 Дополнительные сведения о синтаксисе и свойствах JSON для ресурсов, развертываемых в этой статье:
