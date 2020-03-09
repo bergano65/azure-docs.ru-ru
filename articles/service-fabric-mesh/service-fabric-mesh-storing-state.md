@@ -6,11 +6,11 @@ ms.author: dekapur
 ms.date: 11/27/2018
 ms.topic: conceptual
 ms.openlocfilehash: 0b0bd611fa86d155bb5bf2e07808e7365e28871c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352344"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78397246"
 ---
 # <a name="state-management-with-service-fabric"></a>Управление состояниями с помощью Service Fabric
 
@@ -32,7 +32,7 @@ Service Fabric поддерживает множество разных спос
 
 Том службы "Файлы Azure" — это драйвер тома Docker, используемый для подключения общего ресурса службы "Файлы Azure" к контейнеру. Хранилище службы "Файлы Azure" использует сетевое хранилище, поэтому операции чтения и записи выполняются по сети. По сравнению с надежным томом Service Fabric хранилище службы "Файлы Azure" является менее производительным, но более экономичным и надежным вариантом хранения данных. Пример см. в статье [Развертывание приложение с использованием тома службы "Файлы Azure"](service-fabric-mesh-howto-deploy-app-azurefiles-volume.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о модели приложения см. в разделе [Сохранение состояния с помощью подключения тома службы файлов Azure в приложении службы "Сетка Service Fabric"](service-fabric-mesh-service-fabric-resources.md).
 

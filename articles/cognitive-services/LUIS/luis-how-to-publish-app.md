@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: diberry
 ms.openlocfilehash: 676c6d15c4f439543a3ed74627001725632fecfa
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74554838"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361173"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Публикация активного обученного приложения в промежуточной или рабочей конечной точке
 
@@ -38,7 +38,7 @@ ms.locfileid: "74554838"
 
 При отображении всплывающего окна выберите правильный слот: 
 
-* Промежуточное хранение
+* Промежуточная
 * Производство 
 
 При использовании обоих слотов публикации это позволяет использовать две различные версии приложения на опубликованных конечных точках или одну и ту же версию на двух разных конечных точках. 

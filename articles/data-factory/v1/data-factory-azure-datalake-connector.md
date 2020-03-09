@@ -13,11 +13,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: b6a60536bae6fbedf01eda7aa340e90ced58e004
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930101"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78387505"
 ---
 # <a name="copy-data-to-and-from-data-lake-storage-gen1-by-using-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и обратно с помощью фабрики данных
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -29,7 +29,7 @@ ms.locfileid: "74930101"
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из Azure Data Lake Storage Gen1 (ранее Azure Data Lake Store) и в него. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
-## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
+## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 Данные можно скопировать **из Azure Data Lake Store** в следующие хранилища данных:
 
 [!INCLUDE [data-factory-supported-sinks](../../../includes/data-factory-supported-sinks.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "74930101"
 
 Мы рекомендуем использовать проверку подлинности субъекта-службы, особенно для копирования данных по расписанию. При проверке подлинности учетных данных пользователя может истечь срок действия маркера. Сведения о настройке см. в разделе [Свойства связанной службы](#linked-service-properties).
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 Можно создать конвейер с действием копирования, которое перемещает данные из Azure Data Lake Store или обратно с помощью различных инструментов и интерфейсов API.
 
 Проще всего создать конвейер для копирования данных с помощью **мастера копирования**. В статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md) приведены указания по созданию конвейера с помощью мастера копирования данных.
@@ -69,10 +69,10 @@ ms.locfileid: "74930101"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 Связанная служба привязывает хранилище данных к фабрике данных. Для связи Data Lake Store с фабрикой данных следует создать связанную службу типа **AzureDataLakeStore**. В приведенной ниже таблице описываются элементы JSON, которые относятся к связанным службам Data Lake Store. Вы можете выбирать между проверкой подлинности субъекта-службы и учетных данных пользователя.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно |
 |:--- |:--- |:--- |
-| **type** | Для свойства type следует задать значение **AzureDataLakeStore** | ДА |
-| **dataLakeStoreUri** | Сведения об учетной записи Azure Data Lake Store. Эти данные принимают один из следующих форматов: `https://[accountname].azuredatalakestore.net/webhdfs/v1` или `adl://[accountname].azuredatalakestore.net/`. | ДА |
+| **type** | Для свойства type следует задать значение **AzureDataLakeStore** | Да |
+| **dataLakeStoreUri** | Сведения об учетной записи Azure Data Lake Store. Эти данные принимают один из следующих форматов: `https://[accountname].azuredatalakestore.net/webhdfs/v1` или `adl://[accountname].azuredatalakestore.net/`. | Да |
 | **subscriptionId** | Идентификатор подписки Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
 | **resourceGroupName** | Имя группы ресурсов Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
 
@@ -85,16 +85,16 @@ ms.locfileid: "74930101"
 > [!IMPORTANT]
 > Убедитесь, что в Azure Data Lake Store субъекту-службе предоставлено правильное разрешение.
 >- **Чтобы использовать Data Lake Store в качестве источника**, предоставьте разрешение на доступ к данным по крайней мере для **чтения и выполнения**, чтобы просматривать и копировать содержимое папки, или разрешение на **чтение**, чтобы скопировать один файл. Управление доступом на уровне учетной записи не требуется.
->- **Чтобы использовать Data Lake Store в качестве приемника**, предоставьте разрешение на доступ к данным по крайней мере для **записи и выполнения**, чтобы создавать дочерние элементы в папке. Если для расширения возможностей копирования используется Azure IR (источник и приемник находятся в облаке), чтобы фабрика данных смогла определить регион Data Lake Store, назначьте в Системе управления идентификацией и доступом (IAM) роль по крайней мере **читателя**. Чтобы не назначать эту роль IAM, определите [executionLocation](data-factory-data-movement-activities.md#global) с расположением Data Lake Store в действии копирования.
+>- **Чтобы использовать Data Lake Store в качестве приемника**, предоставьте разрешение на доступ к данным по крайней мере для **записи и выполнения**, чтобы создавать дочерние элементы в папке. Если для расширения возможностей копирования используется среда IR Azure (источник и приемник находятся в облаке), чтобы фабрика данных смогла определить регион Data Lake Store, назначьте в Системе управления идентификацией и доступом (IAM) роль по крайней мере **читателя**. Чтобы не назначать эту роль IAM, определите [executionLocation](data-factory-data-movement-activities.md#global) с расположением Data Lake Store в действии копирования.
 >- Если для **разработки конвейеров используется мастер копирования данных**, назначьте как минимум роль **читателя** в системе управления идентификацией и доступом (IAM). Кроме того, предоставьте разрешение по крайней мере на **чтение и выполнение** в корневом каталоге Data Lake Store (/) и его дочерних элементах. Иначе может появиться сообщение "Указаны недопустимые учетные данные".
 
 Используйте проверку подлинности на основе субъекта-службы, указав следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно |
 |:--- |:--- |:--- |
-| **servicePrincipalId** | Укажите идентификатора клиента приложения. | ДА |
-| **servicePrincipalKey** | Укажите ключ приложения. | ДА |
-| **tenant** | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | ДА |
+| **servicePrincipalId** | Укажите идентификатора клиента приложения. | Да |
+| **servicePrincipalKey** | Укажите ключ приложения. | Да |
+| **tenant** | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
 
 **Пример. Проверка подлинности на основе субъекта-службы**
 ```json
@@ -117,15 +117,15 @@ ms.locfileid: "74930101"
 ### <a name="user-credential-authentication"></a>Использование проверки подлинности на основе учетных данных пользователя
 Также для копирования данных в Data Lake Store и обратно можно использовать проверку подлинности на основе учетных данных пользователя, указав приведенные ниже свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно |
 |:--- |:--- |:--- |
-| **authorization** | Нажмите кнопку **Авторизовать** в редакторе фабрики данных и введите учетные данные. URL-адрес авторизации будет создан автоматически и присвоен этому свойству. | ДА |
-| **sessionId** | Идентификатор сеанса OAuth из сеанса авторизации OAuth. Каждый идентификатор сеанса является уникальным и используется только один раз. Этот параметр создается автоматически при использовании редактора фабрики данных. | ДА |
+| **авторизации** | Нажмите кнопку **Авторизовать** в редакторе фабрики данных и введите учетные данные. URL-адрес авторизации будет создан автоматически и присвоен этому свойству. | Да |
+| **sessionId** | Идентификатор сеанса OAuth из сеанса авторизации OAuth. Каждый идентификатор сеанса является уникальным и используется только один раз. Этот параметр создается автоматически при использовании редактора фабрики данных. | Да |
 
 > [!IMPORTANT]
 > Убедитесь, что в Azure Data Lake Store пользователю предоставлено правильное разрешение.
 >- **Чтобы использовать Data Lake Store в качестве источника**, предоставьте разрешение на доступ к данным по крайней мере для **чтения и выполнения**, чтобы просматривать и копировать содержимое папки, или разрешение на **чтение**, чтобы скопировать один файл. Управление доступом на уровне учетной записи не требуется.
->- **Чтобы использовать Data Lake Store в качестве приемника**, предоставьте разрешение на доступ к данным по крайней мере для **записи и выполнения**, чтобы создавать дочерние элементы в папке. Если для расширения возможностей копирования используется Azure IR (источник и приемник находятся в облаке), чтобы фабрика данных смогла определить регион Data Lake Store, назначьте в Системе управления идентификацией и доступом (IAM) роль по крайней мере **читателя**. Чтобы не назначать эту роль IAM, определите [executionLocation](data-factory-data-movement-activities.md#global) с расположением Data Lake Store в действии копирования.
+>- **Чтобы использовать Data Lake Store в качестве приемника**, предоставьте разрешение на доступ к данным по крайней мере для **записи и выполнения**, чтобы создавать дочерние элементы в папке. Если для расширения возможностей копирования используется среда IR Azure (источник и приемник находятся в облаке), чтобы фабрика данных смогла определить регион Data Lake Store, назначьте в Системе управления идентификацией и доступом (IAM) роль по крайней мере **читателя**. Чтобы не назначать эту роль IAM, определите [executionLocation](data-factory-data-movement-activities.md#global) с расположением Data Lake Store в действии копирования.
 >- Если для **разработки конвейеров используется мастер копирования данных**, назначьте как минимум роль **читателя** в системе управления идентификацией и доступом (IAM). Кроме того, предоставьте разрешение по крайней мере на **чтение и выполнение** в корневом каталоге Data Lake Store (/) и его дочерних элементах. Иначе может появиться сообщение "Указаны недопустимые учетные данные".
 
 **Пример. Использование проверки подлинности на основе учетных данных пользователя**
@@ -186,7 +186,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
     }
 }
 ```
-Подробные сведения о классах фабрики данных, используемых в коде, см. в статьях, посвященных классам [AzureDataLakeStoreLinkedService](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice.aspx), [AzureDataLakeAnalyticsLinkedService](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice.aspx) и [AuthorizationSessionGetResponse](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse.aspx). Добавьте ссылку на версию `2.9.10826.1824` `Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll` для класса `WindowsFormsWebAuthenticationDialog`, используемого в коде.
+Подробные сведения о классах фабрики данных, используемых в коде, см. в статьях, посвященных классам [AzureDataLakeStoreLinkedService](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice.aspx), [AzureDataLakeAnalyticsLinkedService](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice.aspx) и [AuthorizationSessionGetResponse](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse.aspx). Добавьте ссылку на версию `2.9.10826.1824``Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll` для класса `WindowsFormsWebAuthenticationDialog`, используемого в коде.
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
@@ -201,7 +201,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 1. В связанной службе Azure Data Lake Store значения `resourceGroupName` и (или) `subscriptionId` указаны неправильно.
 2. Пользователю или субъекту-службе не предоставлены необходимые разрешения.
 
-**Способы устранения:**
+**Решение.**
 
 1. Убедитесь, что для параметров `subscriptionId` и `resourceGroupName`, указанных в связанной службе `typeProperties`, заданы та группа ресурсов и подписка, к которым принадлежит ваша учетная запись Data Lake.
 
@@ -212,7 +212,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
     3. Щелкните **Добавить назначение ролей**.
     4. Чтобы предоставить доступ, задайте **роли** значение **Читатель** и выберите пользователя или субъект-службу, используемые для копирования.
 
-3. Если вы не хотите предоставлять роль **читателя** пользователю или субъекту-службе, альтернативным вариантом является [явное указание расположения выполнения](data-factory-data-movement-activities.md#global) в действии копирования с расположением Data Lake Store. Пример:
+3. Если вы не хотите предоставлять роль **читателя** пользователю или субъекту-службе, альтернативным вариантом является [явное указание расположения выполнения](data-factory-data-movement-activities.md#global) в действии копирования с расположением Data Lake Store. Пример
 
     ```json
     {
@@ -236,13 +236,13 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 
 Раздел **typeProperties** набора данных типа **AzureDataLakeStore** содержит следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно |
 |:--- |:--- |:--- |
-| **folderPath** |Путь к контейнеру и папке в Data Lake Store. |ДА |
-| **fileName** |Имя файла в Azure Data Lake Store. Свойство **fileName** является необязательным и в нем учитывается регистр символов. <br/><br/>Если указать значение **fileName**, то действие (включая копирование) работает с определенным файлом.<br/><br/>Если значение **fileName** не указано, то копируются все файлы в **folderPath** для входного набора данных.<br/><br/>Если параметр **filename** не указан для выходного набора данных и **preserveHierarchy** не указан в приемнике действия, имя созданного файла имеет формат `Data._Guid_.txt`. Например: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |Нет |
-| **partitionedBy** |Свойство **partitionedBy** является необязательным. Его можно использовать, чтобы указать динамический путь к папке и имя файла для данных временного ряда. Например, путь к папке (**folderPath**) каждый час может быть другим. Дополнительные сведения и примеры см. в разделе "Свойство partitionedBy". |Нет |
-| **format** | Поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) статьи [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), можно пропустить раздел `format` в определениях входного и выходного наборов данных. |Нет |
-| **compression** | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Дополнительные сведения см. в статье [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
+| **folderPath** |Путь к контейнеру и папке в Data Lake Store. |Да |
+| **fileName** |Имя файла в Azure Data Lake Store. Свойство **fileName** является необязательным и в нем учитывается регистр символов. <br/><br/>Если указать значение **fileName**, то действие (включая копирование) работает с определенным файлом.<br/><br/>Если значение **fileName** не указано, то копируются все файлы в **folderPath** для входного набора данных.<br/><br/>Если параметр **filename** не указан для выходного набора данных и **preserveHierarchy** не указан в приемнике действия, имя созданного файла имеет формат `Data._Guid_.txt`. Например: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |нет |
+| **partitionedBy** |Свойство **partitionedBy** является необязательным. Его можно использовать, чтобы указать динамический путь к папке и имя файла для данных временного ряда. Например, путь к папке (**folderPath**) каждый час может быть другим. Дополнительные сведения и примеры см. в разделе "Свойство partitionedBy". |нет |
+| **format** | Поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) статьи [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), можно пропустить раздел `format` в определениях входного и выходного наборов данных. |нет |
+| **compression** | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Дополнительные сведения см. в статье [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |нет |
 
 ### <a name="the-partitionedby-property"></a>Свойство partitionedBy
 Для данных временных рядов путь к папке (**folderPath**) и имя файла (**fileName**) можно указывать динамически. Это делается с помощью свойства **partitionedBy**, функций фабрики данных и системных переменных. Подробные сведения см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md).
@@ -280,24 +280,24 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 
 **AzureDataLakeStoreSource** поддерживает следующее свойство в разделе **typeProperties**:
 
-| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
+| Свойство | Description | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| **recursive** |Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. |True (значение по умолчанию), False |Нет |
+| **рекурсивные** |Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. |True (значение по умолчанию), False |нет |
 
 **AzureDataLakeStoreSink** поддерживает следующие свойства в разделе **typeProperties**:
 
-| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
+| Свойство | Description | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| **copyBehavior** |Определяет поведение копирования. |<b>PreserveHierarchy:</b> сохраняет иерархию файлов в целевой папке. Относительный путь исходного файла в исходной папке идентичен относительному пути целевого файла в целевой папке.<br/><br/><b>FlattenHierarchy</b>: все файлы из исходной папки создаются на первом уровне в целевой папке. Целевые файлы создаются с автоматически сформированными именами.<br/><br/><b>MergeFiles</b>: объединяет все файлы из исходной папки в один файл. Если указано имя Blob-объекта или имя файла, то оно присваивается объединенному файлу. В противном случае имя файла создается автоматически. |Нет |
+| **copyBehavior** |Определяет поведение копирования. |<b>PreserveHierarchy:</b> сохраняет иерархию файлов в целевой папке. Относительный путь исходного файла в исходной папке идентичен относительному пути целевого файла в целевой папке.<br/><br/><b>FlattenHierarchy</b>: все файлы из исходной папки создаются на первом уровне в целевой папке. Целевые файлы создаются с автоматически сформированными именами.<br/><br/><b>MergeFiles</b>: объединяет все файлы из исходной папки в один файл. Если указано имя Blob-объекта или имя файла, то оно присваивается объединенному файлу. В противном случае имя файла создается автоматически. |нет |
 
 ### <a name="recursive-and-copybehavior-examples"></a>Примеры recursive и copyBehavior
 В данном разделе описываются результаты выполнения операции копирования при использовании различных сочетаний значений recursive и copyBehavior.
 
 | recursive | copyBehavior | Результаты выполнения операции |
 | --- | --- | --- |
-| true |preserveHierarchy |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается с такой же структурой, как и исходная папка.<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
-| true |flattenHierarchy |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл5" |
-| true |mergeFiles |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое файлов "Файл1", "Файл2", "Файл3", "Файл4" и "Файл5" объединяется в один файл с автоматически созданным именем. |
+| Да |preserveHierarchy |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается с такой же структурой, как и исходная папка.<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
+| Да |flattenHierarchy |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл5" |
+| Да |mergeFiles |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое файлов "Файл1", "Файл2", "Файл3", "Файл4" и "Файл5" объединяется в один файл с автоматически созданным именем. |
 | false |preserveHierarchy |Если у исходной папки "Папка1" такая структура: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/><br/><br/>Папка "Вложенная_папка1" с файлами "Файл3", "Файл4" и "Файл5" не будет включена в эту папку. |
 | false |flattenHierarchy |Если у исходной папки "Папка1" такая структура:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;Автоматически созданное имя для "Файл2"<br/><br/><br/>Папка "Вложенная_папка1" с файлами "Файл3", "Файл4" и "Файл5" не будет включена в эту папку. |
 | false |mergeFiles |Если у исходной папки "Папка1" такая структура:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5<br/><br/>Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое файлов "Файл1" и "Файл2" объединяется в один файл с автоматически созданным именем. Автоматически созданное имя для "Файл1"<br/><br/>Папка "Вложенная_папка1" с файлами "Файл3", "Файл4" и "Файл5" не будет включена в эту папку. |
@@ -539,7 +539,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 ```
 **Входной набор данных Azure Data Lake**
 
-В этом примере значение `true` для параметра `"external"` указывает фабрике данных, что эта таблица является внешней по отношению к фабрике данных, а не созданной в результате какого-либо действия в фабрике данных.
+В этом примере значение `"external"` для параметра `true` указывает фабрике данных, что эта таблица является внешней по отношению к фабрике данных, а не созданной в результате какого-либо действия в фабрике данных.
 
 ```json
 {
@@ -682,7 +682,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 }
 ```
 
-В определении действия копирования также можно сопоставить столбцы из набора данных, используемого в качестве источника, со столбцами из приемника. Дополнительные сведения см. в статье, посвященной [сопоставлению столбцов наборов данных в фабрике данных Azure](data-factory-map-columns.md).
+В определении действия копирования также можно сопоставить столбцы из набора данных, используемого в качестве источника, со столбцами из приемника. Дополнительные сведения см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).
 
 ## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о факторах, влияющих на производительность действия копирования, и способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).

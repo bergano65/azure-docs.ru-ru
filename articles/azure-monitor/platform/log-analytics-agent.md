@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: 365c228edd97ffcd02b86508deff4272365447f6
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
-ms.translationtype: MT
+ms.openlocfilehash: 99083cd08db98a6d6ac56d4cf55aaf9d0e64e2b4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77672146"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78362327"
 ---
 # <a name="log-analytics-agent-overview"></a>Обзор агента Log Analytics
 Агент Azure Log Analytics был разработан для комплексного управления виртуальными машинами в любых облачных и локальных компьютерах, а также для тех, которые отслеживаются [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/). Агенты Windows и Linux отправляют собранные данные из разных источников в рабочую область Log Analytics в Azure Monitor, а также любые уникальные журналы или метрики, как определено в решении для мониторинга. Агент Log Analytics также поддерживает аналитические сведения и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](/azure/security-center/)и служба [автоматизации Azure](../../automation/automation-intro.md).
@@ -101,7 +101,7 @@ ms.locfileid: "77672146"
 Начиная с версий, выпущенных после августа 2018 года, мы вносим следующие изменения в свою модель поддержки:  
 
 * Поддерживаются только версии серверов, а не клиентов.  
-* Новые версии [рекомендуемых дистрибутивов Azure Linux](../../virtual-machines/linux/endorsed-distros.md) всегда поддерживаются.  
+* Сосредоточьтесь на любой из подтвержденных [дистрибутивов в Azure Linux](../../virtual-machines/linux/endorsed-distros.md). Обратите внимание, что между новой дистрибутив/версией, поддерживаемой Azure Linux, и поддержкой агента Log Analytics Linux может возникнуть задержка.
 * Все вспомогательные версии поддерживаются для каждого основного номера версии в списке.
 * Версии, для которых прошла дата окончания поддержки производителем, не поддерживаются.  
 * Новые версии AMI не поддерживаются.  
