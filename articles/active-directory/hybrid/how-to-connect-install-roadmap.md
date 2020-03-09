@@ -1,5 +1,5 @@
 ---
-title: План установки Azure AD Connect и Azure AD Connect Health. | Документация Майкрософт
+title: План установки Azure AD Connect и Azure AD Connect Health. | Документы Майкрософт
 description: Этот документ содержит общие сведения о параметрах установки и путях, доступных для установки Connect Health и Azure AD Connect.
 services: active-directory
 author: billmath
@@ -14,11 +14,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cddf2ab36b2372ce93ae8a2a6230ccb02ae30117
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721026"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78375954"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
 
@@ -45,7 +45,7 @@ ms.locfileid: "73721026"
 |Загрузка Azure AD Connect | [Загрузка Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
 |Установка с помощью стандартных параметров | [Экспресс-установка Azure AD Connect](./how-to-connect-install-express.md)|
 |Установка с помощью настроенных параметров | [Выборочная установка Azure AD Connect](./how-to-connect-install-custom.md)|
-|Обновление из DirSync | [Обновление из средства синхронизации Azure AD (DirSync)](./how-to-dirsync-upgrade-get-started.md)|
+|Обновление из DirSync | [Azure AD Connect: обновление DirSync](./how-to-dirsync-upgrade-get-started.md)|
 |После установки | [Проверка установки и назначение лицензий](how-to-connect-post-installation.md)|
 
 ### <a name="learn-more-about-install-azure-ad-connect"></a>Дополнительные сведения об установке Azure AD Connect
@@ -53,7 +53,7 @@ ms.locfileid: "73721026"
 
 |Раздел |Ссылка|  
 | --- | --- |
-|Поддерживаемые топологии | [Топологии Azure AD Connect.](plan-connect-topologies.md)|
+|Поддерживаемые топологии | [Топологии Azure AD Connect](plan-connect-topologies.md)|
 |Принципы проектирования | [Принципы проектирования Azure AD Connect](plan-connect-design-concepts.md)|
 |Учетные записи, используемые для установки | [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)|
 |Операционное планирование | [Службы синхронизации Azure AD Connect: рабочие задачи и рекомендации](how-to-connect-sync-operations.md)|
@@ -80,7 +80,7 @@ Azure AD Connect поставляется с несколькими функци
 |Настройка фильтрации | [Синхронизация Azure AD Connect: настройка фильтрации](how-to-connect-sync-configure-filtering.md)|
 |Синхронизация хэша паролей | [Синхронизации хэша паролей](how-to-connect-password-hash-synchronization.md)|
 |Сквозная проверка подлинности | [Сквозная проверка подлинности](how-to-connect-pta.md)
-|Обратная запись паролей | [Приступая к работе с компонентами управления паролями](../authentication/quickstart-sspr.md)|
+|Компонент обратной записи паролей | [Приступая к работе с компонентами управления паролями](../authentication/quickstart-sspr.md)|
 |Обратная запись устройств | [Включение обратной записи устройств в службе Azure AD Connect](how-to-connect-device-writeback.md)|
 |Предотвращение случайного удаления | [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md)|
 |Автоматическое обновление | [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md)|
@@ -169,7 +169,7 @@ Azure AD Connect поставляется с несколькими функци
    - **Доступ к данным** из каталога Azure AD только в целях устранения неполадок. Если этот параметр включен, корпорация Майкрософт может получить доступ к тем же данным, которые отображаются у пользователя. Эти сведения могут быть полезны для устранения неполадок и предоставления необходимой помощи. По умолчанию этот параметр отключен
 * Раздел **Управление доступом на основе ролей (IAM)** предназначен для управления доступом к данным Connect Health с помощью ролей. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
 - [Стандартные параметры](how-to-connect-install-express.md)

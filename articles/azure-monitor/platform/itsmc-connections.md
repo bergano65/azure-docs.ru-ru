@@ -7,11 +7,11 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.openlocfilehash: c6cad29b6cc392746a2e56323302521302835b2f
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77665873"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394947"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](../../azure-monitor/platform/itsmc-overview.md).
@@ -31,7 +31,7 @@ ms.locfileid: "77665873"
 
 В разделах ниже приведены сведения о подключении продукта System Center Service Manager к ITSMC в Azure.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Выполните указанные ниже предварительные требования.
 
@@ -97,7 +97,7 @@ ms.locfileid: "77665873"
 
 - сведения о подписке Azure;
 - Имя группы ресурсов
-- Расположение
+- Location
 - сведения о сервере Service Manager (имя сервера, домен, имя пользователя и пароль);
 - префикс имени сайта для веб-приложения;
 - пространство имен ServiceBus.
@@ -159,7 +159,7 @@ ms.locfileid: "77665873"
 
 3. Войдите с помощью учетных данных Azure и выберите подписку, в которой было создано гибридное подключение.
 
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 Гибридное подключение успешно установлено.
 
@@ -176,7 +176,7 @@ ms.locfileid: "77665873"
 
 В разделах ниже приведены сведения о подключении экземпляра ServiceNow к ITSMC в Azure.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 Выполните указанные ниже предварительные требования.
 - ITSMC установлен. Дополнительные сведения см. в разделе [Добавление соединителя управления ИТ-службами](../../azure-monitor/platform/itsmc-overview.md#adding-the-it-service-management-connector-solution).
 - Поддерживаемые версии ServiceNow: Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки, Geneva.
@@ -282,7 +282,7 @@ ms.locfileid: "77665873"
 В разделах ниже приведены сведения о подключении экземпляра Provance к ITSMC в Azure.
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Выполните указанные ниже предварительные требования.
 
@@ -335,7 +335,7 @@ ms.locfileid: "77665873"
 
 В разделах ниже приведены сведения о подключении экземпляра Cherwell к ITSMC в Azure.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Выполните указанные ниже предварительные требования.
 
@@ -394,5 +394,5 @@ ms.locfileid: "77665873"
     ![Идентификатор пользователя Cherwell](media/itsmc-connections/itsmc-cherwell-client-id.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
  - [Создание рабочих элементов ITSM из оповещений Azure](../../azure-monitor/platform/itsmc-overview.md#create-itsm-work-items-from-azure-alerts)

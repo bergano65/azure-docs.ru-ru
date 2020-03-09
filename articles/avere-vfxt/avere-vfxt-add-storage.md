@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: dfffef90201ba4bbb5a912df6101e8338012df44
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76153995"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372200"
 ---
 # <a name="configure-storage"></a>Настройка хранилища
 
@@ -128,7 +128,7 @@ ms.locfileid: "76153995"
    | Поле | Значение |
    | --- | --- |
    | Credential name (Имя учетных данных) | любое описательное имя |
-   | Тип службы | (выберите ключ доступа к хранилищу Azure) |
+   | Service type (Тип службы) | (выберите ключ доступа к хранилищу Azure) |
    | Клиент | имя учетной записи хранения; |
    | Subscription | Идентификатор подписки |
    | Storage Access Key (Ключ доступа к хранилищу) | Ключ учетной записи хранения Azure (скопирован на предыдущем шаге) |

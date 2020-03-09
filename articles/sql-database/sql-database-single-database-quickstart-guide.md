@@ -58,4 +58,4 @@ ms.locfileid: "73820952"
 - Дополнительные руководства см. в статье [Использование отдельной базы данных в Базе данных SQL Azure](sql-database-howto-single-database.md).
 - Ознакомьтесь с примерами скриптов, написанными в [PowerShell](sql-database-powershell-samples.md) и [Azure CLI](sql-database-cli-samples.md).
 - Узнайте больше об [API управления](sql-database-single-databases-manage.md), который можно использовать для настройки баз данных.
-- [Identify the right Azure SQL Database/Managed Instance SKU for your on-premises database](/sql/dma/dma-sku-recommend-sql-db/) (Определение нужного SKU Базы данных SQL Azure и Управляемого экземпляра для локальной базы данных).
+- [Определение нужного SKU Базы данных SQL Azure или Управляемого экземпляра для локальной базы данных](/sql/dma/dma-sku-recommend-sql-db/).

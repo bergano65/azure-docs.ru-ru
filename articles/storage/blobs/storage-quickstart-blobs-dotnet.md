@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 09002a8c0999dc137ca3386ca7392a566d323e8a
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: b8ddeda2c435a52efd14f06acb3c1a8bb94bc45e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196065"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78381851"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET
 
@@ -114,7 +114,7 @@ namespace BlobQuickstartV12
 
 На следующей схеме показана связь между этими ресурсами.
 
-![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blob-introduction/blob1.png)
+![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blobs-introduction/blob1.png)
 
 Используйте следующие классы .NET для взаимодействия с этими ресурсами:
 

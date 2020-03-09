@@ -10,11 +10,11 @@ ms.date: 02/26/2020
 ms.author: victorh
 Customer intent: As an administrator, I want to evaluate Azure Firewall so I can determine if I want to use it.
 ms.openlocfilehash: 5f1672b53fa9bd8c8126fefd092e1be78a844ab9
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77621846"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78382564"
 ---
 # <a name="what-is-azure-firewall"></a>Что такое Брандмауэр Azure?
 
@@ -79,7 +79,7 @@ ms.locfileid: "77621846"
 
 ## <a name="inbound-dnat-support"></a>Поддержка DNAT для входящего трафика
 
-Входящий Интернет-трафик, поступающий на общедоступный IP-адрес брандмауэра, преобразуется (этот процесс называется преобразованием сетевых адресов назначения — DNAT) и фильтруется по частным IP-адресам в виртуальных сетях.
+Входящий сетевой трафик в Интернет-адрес брандмауэра преобразуется (преобразование сетевых адресов назначения) и фильтруется по частным IP-адресам в виртуальных сетях.
 
 ## <a name="multiple-public-ip-addresses"></a>Несколько общедоступных IP-адресов
 
@@ -103,7 +103,7 @@ ms.locfileid: "77621846"
 
 В брандмауэре Azure существуют следующие известные проблемы.
 
-|Проблема  |Описание  |Меры по снижению риска  |
+|Проблема  |Description  |Меры по снижению риска  |
 |---------|---------|---------|
 Правила сетевой фильтрации для протоколов, которые отличаются от TCP или UDP (например, ICMP), не работают для трафика, связанного с Интернетом|Правила сетевой фильтрации для протоколов, которые отличаются от TCP или UDP, не работают со SNAT для общедоступных IP-адресов. Протоколы, которые отличаются от TCP или UDP, поддерживаются между периферийными зонами подсетей и виртуальной сетью.|Брандмауэр Azure использует Load Balancer (цен. категория "Стандартный"), [который сейчас не поддерживает SNAT для IP-протоколов](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview). Изучаются варианты поддержки этого сценария в будущем выпуске.|
 |В PowerShell и CLI отсутствует поддержка протокола ICMP|Azure PowerShell и CLI не поддерживают ICMP как допустимый протокол в правилах сети.|Протокол ICMP по-прежнему можно использовать с помощью портала и REST API. Мы добавим поддержку ICMP в PowerShell и CLI в ближайшее время.|
@@ -121,6 +121,6 @@ ms.locfileid: "77621846"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](tutorial-firewall-deploy-portal.md)
+- [Руководство по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](tutorial-firewall-deploy-portal.md)
 - [Deploy Azure Firewall using a template](deploy-template.md) (Развертывание службы "Брандмауэр Azure" с помощью шаблона)
 - [Create an Azure Firewall test environment](scripts/sample-create-firewall-test.md) (Создание тестовой среды службы "Брандмауэр Azure")
