@@ -9,11 +9,11 @@ ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 58997b20c01f33037a5e5e149caa59e1630373ff
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978477"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360939"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -26,8 +26,8 @@ ms.locfileid: "75978477"
 
 |Платформа |Версия |
 |---------|---------|
-|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
-|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
+|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
+|Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
 
@@ -60,7 +60,7 @@ ms.locfileid: "75978477"
 |Задание  |Служба хранилища |Поддерживается  |Не поддерживается  |
 |---------|---------|---------|---------|
 |Импорт     |  Хранилище BLOB-объектов Azure <br><br> Хранилище файлов Azure       | Поддерживаются блочные и страничные BLOB-объекты <br><br> Поддерживаются файлы          |
-|Экспортировать     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
+|Экспорт     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
 
 
 ## <a name="supported-hardware"></a>Поддерживаемое оборудование

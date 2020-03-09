@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
 ms.openlocfilehash: ab874bbdcd47a4bfa9abfba721afa46d0f23a338
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60638037"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78366771"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-change-your-storsimple-passwords"></a>Изменение паролей StorSimple с помощью службы диспетчера устройств StorSimple
 
@@ -27,7 +27,7 @@ ms.locfileid: "60638037"
 В разделе **Параметры устройства** на портале Azure указаны все параметры, которые можно настроить на устройстве StorSimple, контролируемом службой диспетчера устройств StorSimple. В этом руководстве показано, как использовать элемент **Безопасность** в разделе **Параметры устройства**, чтобы изменить в StorSimple пароль администратора устройства или пароль Snapshot Manager.
 
 ## <a name="change-the-device-administrator-password"></a>Изменение пароля администратора устройства
-При использовании интерфейса Windows PowerShell для доступа к устройству StorSimple вам потребуется ввести пароль администратора устройства. После регистрации первого устройства StorSimple в службе пароль по умолчанию для этого интерфейса — *Password1*. Для обеспечения безопасности ваших данных необходимо изменить этот пароль в конце регистрации. Закончить регистрацию, не изменив пароль, невозможно. Дополнительные сведения см. в разделе [Шаг 3. Настройка и регистрация устройства средствами Windows PowerShell для StorSimple](storsimple-8000-deployment-walkthrough-u2.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
+При использовании интерфейса Windows PowerShell для доступа к устройству StorSimple вам потребуется ввести пароль администратора устройства. После регистрации первого устройства StorSimple в службе пароль по умолчанию для этого интерфейса — *Password1*. Для обеспечения безопасности ваших данных необходимо изменить этот пароль в конце регистрации. Закончить регистрацию, не изменив пароль, невозможно. Дополнительные сведения см. в разделе [Шаг 3. Настройка и регистрация устройства средствами Windows PowerShell для StorSimple](storsimple-8000-deployment-walkthrough-u2.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
 
 Пароль, который устанавливается через интерфейс Windows PowerShell во время регистрации, можно изменить позднее на портале Azure. Чтобы изменить пароль администратора устройства, выполните следующие действия.
 

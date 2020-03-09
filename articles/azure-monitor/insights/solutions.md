@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 08/13/2019
 ms.openlocfilehash: a04ca3768ade6058c59393591c252bc4347a3663
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77663000"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360905"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 Решения мониторинга используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке.
@@ -100,7 +100,7 @@ ms.locfileid: "77663000"
 Чтобы удалить установленное решение, найдите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 

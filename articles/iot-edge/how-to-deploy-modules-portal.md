@@ -10,11 +10,11 @@ ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 5c44561895bc1905328ec0eb357bee1c68a8eb55
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76510538"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78379367"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "76510538"
 
 В этой статье описано, как с помощью портала Azure создать манифест развертывания и отправить это развертывание на устройство IoT Edge. Сведения о создании развертывания, предназначенного для нескольких устройств на основе их общих тегов, см. [в статье Развертывание и мониторинг модулей IOT EDGE в масштабе](how-to-deploy-monitor.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device.md#register-in-the-azure-portal) с установленной средой выполнения IoT Edge.
