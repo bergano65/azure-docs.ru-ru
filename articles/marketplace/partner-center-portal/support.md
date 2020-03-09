@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/07/2020
-ms.openlocfilehash: 032d4793576e2fb9b8de9e36666548e5bffb9460
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: a85d9ebb03ea0c9ebe078ad49ce6bbf40a5b004d
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78898262"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927540"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Поддержка программы коммерческого рынка в центре партнеров
 
@@ -27,9 +27,9 @@ ms.locfileid: "78898262"
 
 1. Войдите в [программу коммерческого рынка в центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) с рабочей учетной записью. (Если вы еще не сделали этого, вам нужно будет [создать учетную запись центра партнеров](./create-account.md).)
 
-1. В верхнем меню в правой части страницы выберите значок **поддержки** . 
+2. В верхнем меню в правой части страницы выберите значок **поддержки** . 
  
-1. Панель **Справка и поддержка** появится в правой части страницы. 
+3. Панель **Справка и поддержка** появится в правой части страницы. 
  
    ![Раскрывающееся меню поддержки](./media/commercial-marketplace-support-pane.png)
 
@@ -37,11 +37,11 @@ ms.locfileid: "78898262"
 
    ![Справка и поддержка с домашней страницы](./media/homepage-help-support.png)
 
-1. Выберите **[документацию](../index.md)** , чтобы ознакомиться с полными ответами на вопросы и ресурсы. 
+4. Выберите **[документацию](../index.yml)** , чтобы ознакомиться с полными ответами на вопросы и ресурсы. 
 
-1. Выберите **[сообщество партнеров Marketplace](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)** , чтобы ответить на ваши вопросы, используя знания других издателей Майкрософт. 
+5. Выберите **[сообщество партнеров Marketplace](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)** , чтобы ответить на ваши вопросы, используя знания других издателей Майкрософт. 
 
-1. Щелкните **[Дополнительная справка](https://aka.ms/marketplacepublishersupport)** , чтобы открыть **новый запрос в службу поддержки** .  
+6. Щелкните **[Дополнительная справка](https://aka.ms/marketplacepublishersupport)** , чтобы открыть **новый запрос в службу поддержки** .  
 
 ## <a name="how-to-open-a-support-ticket"></a>Как открыть запрос в службу поддержки
 

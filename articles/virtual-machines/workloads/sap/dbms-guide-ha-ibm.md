@@ -12,14 +12,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 02/25/2020
+ms.date: 03/06/2020
 ms.author: juergent
-ms.openlocfilehash: a4b3378909d40fe2b770f70f83054a97f2646bd3
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 614ac8b651224a3b6ec605a6bffd520449a1d793
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77602362"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78926747"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -349,7 +349,12 @@ Execute command as db2&lt;sid&gt; db2pd -hadr -db &lt;SID&gt;
 
 > [!IMPORTANT]
 > Последние случаи тестирования, в которых неткат перестает отвечать на запросы из-за невыполненной работы и ограничения на обработку только одного соединения. Ресурс неткат прекращает прослушивание запросов балансировщика нагрузки Azure, и плавающий IP-адрес становится недоступным.  
-> Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
+> Для существующих кластеров Pacemaker рекомендуется в прошлом заменять неткат на Сокат. Сейчас мы рекомендуем использовать агент ресурсов Azure балансировки нагрузки, который входит в состав агентов Resource-Agent, со следующими требованиями к версии пакета:
+> - Для SLES 12 SP4/SP5 версия должна быть как минимум Resource-Agents-4.3.018. a7fb5035-3.30.1.  
+> - Для SLES 15/15 с пакетом обновления 1 (SP1) версия должна быть как минимум Resource-Agents-4.3.0184.6 ee15eb2-4.13.1.  
+>
+> Обратите внимание, что изменение потребует краткого времени простоя.  
+> Для существующих кластеров Pacemaker, если конфигурация уже была изменена для использования Сокат, как описано в статье [усиление безопасности при обнаружении балансировщика нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128), нет необходимости немедленно переключаться на агент ресурсов Azure фунтов.
 
 **[1]** конфигурация Pacemaker для IBM DB2 HADR:
 <pre><code># Put Pacemaker into maintenance mode
@@ -374,9 +379,7 @@ sudo crm configure primitive rsc_ip_db2ptr_<b>PTR</b> IPaddr2 \
         params ip="<b>10.100.0.10</b>"
 
 # Configure probe port for Azure load Balancer
-sudo crm configure primitive rsc_nc_db2ptr_<b>PTR</b> anything \
-        params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:<b>62500</b>,backlog=10,fork,reuseaddr /dev/null" \
-        op monitor timeout="20s" interval="10" depth="0"
+sudo crm configure primitive rsc_nc_db2ptr_<b>PTR</b> azure-lb port=<b>62500</b>
 
 sudo crm configure group g_ip_db2ptr_<b>PTR</b> rsc_ip_db2ptr_<b>PTR</b> rsc_nc_db2ptr_<b>PTR</b>
 
@@ -409,7 +412,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 #  <a name="stonith-sbd----stonithexternalsbd-started-azibmdb02"></a>stonith-SBD (stonith: External/SBD): запущено azibmdb02
 #  <a name="resource-group-g_ip_db2ptr_ptr"></a>Группа ресурсов: g_ip_db2ptr_PTR
 #      <a name="rsc_ip_db2ptr_ptr--ocfheartbeatipaddr2-------started-azibmdb02"></a>rsc_ip_db2ptr_PTR (ОКФ:: пульс: IPaddr2): запущено azibmdb02
-#      <a name="rsc_nc_db2ptr_ptr--ocfheartbeatanything------started-azibmdb02"></a>rsc_nc_db2ptr_PTR (ОКФ:: пульс: все): запущено azibmdb02
+#      <a name="rsc_nc_db2ptr_ptr--ocfheartbeatazure-lb------started-azibmdb02"></a>rsc_nc_db2ptr_PTR (ОКФ:: пульс: Azure-фунтов): запущено azibmdb02
 #  <a name="masterslave-set-msl_db2_db2ptr_ptr-rsc_db2_db2ptr_ptr"></a>Главный/подчиненный набор: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
 #      <a name="masters--azibmdb02-"></a>Образцы: [azibmdb02]
 #      <a name="slaves--azibmdb01-"></a>Подчиненные: [azibmdb01]
@@ -545,7 +548,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Stopped
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Stopped
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Stopped
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      rsc_Db2_db2ptr_PTR      (ocf::heartbeat:db2):   Promoting azibmdb01
      Slaves: [ azibmdb02 ]
@@ -582,7 +585,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb02
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb02
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb02
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb02 ]
      Slaves: [ azibmdb01 ]
@@ -641,7 +644,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb02
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb02
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb02
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb02 ]
      Stopped: [ azibmdb01 ]
@@ -673,7 +676,7 @@ Full list of resources:
  stonith-sbd    (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Stopped
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Stopped
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Stopped
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Slaves: [ azibmdb02 ]
      Stopped: [ azibmdb01 ]
@@ -696,7 +699,7 @@ Full list of resources:
  stonith-sbd    (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb01
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb01
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb01
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb01 ]
      Slaves: [ azibmdb02 ]
@@ -725,7 +728,7 @@ Full list of resources:
  stonith-sbd    (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb01
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb01
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb01
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      rsc_Db2_db2ptr_PTR      (ocf::heartbeat:db2):   FAILED azibmdb02
      Masters: [ azibmdb01 ]
@@ -746,7 +749,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb01
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb01
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb01
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb01 ]
      Slaves: [ azibmdb02 ]
@@ -769,7 +772,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb01
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb01
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb01
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb01 ]
      Slaves: [ azibmdb02 ]</code></pre>
@@ -789,7 +792,7 @@ Full list of resources:
  stonith-sbd    (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Stopped
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Stopped
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Stopped
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      rsc_Db2_db2ptr_PTR      (ocf::heartbeat:db2):   FAILED azibmdb01
      Slaves: [ azibmdb02 ]
@@ -809,7 +812,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb01
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb02
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb02
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb02
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb02 ]
      Stopped: [ azibmdb01 ]
@@ -837,7 +840,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb01
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb01
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb01
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb01 ]
      Slaves: [ azibmdb02 ]</code></pre>
@@ -862,7 +865,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb01
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb01
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb01
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb01 ]
      Slaves: [ azibmdb02 ]</code></pre>
@@ -879,7 +882,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb02
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb02
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb02
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb02 ]
      Stopped: [ azibmdb01 ] </code></pre>
@@ -897,7 +900,7 @@ Full list of resources:
 stonith-sbd     (stonith:external/sbd): Started azibmdb02
  Resource Group: g_ip_db2ptr_PTR
      rsc_ip_db2ptr_PTR  (ocf::heartbeat:IPaddr2):       Started azibmdb02
-     rsc_nc_db2ptr_PTR  (ocf::heartbeat:anything):      Started azibmdb02
+     rsc_nc_db2ptr_PTR  (ocf::heartbeat:azure-lb):      Started azibmdb02
  Master/Slave Set: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
      Masters: [ azibmdb02 ]
      Slaves: [ azibmdb01 ]</code></pre>
@@ -905,6 +908,4 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb02
 ## <a name="next-steps"></a>Следующие шаги
 - [Архитектура с высоким уровнем доступности и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
 - [Настройка Pacemaker на SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)
-
-     
 

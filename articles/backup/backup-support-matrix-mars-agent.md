@@ -3,12 +3,12 @@ title: Матрица поддержки для агента MARS
 description: В этой статье приводится сводка Azure Backup поддержки при резервном копировании компьютеров, на которых выполняется агент Службы восстановления Microsoft Azure (MARS).
 ms.date: 08/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 515ca065914dc535c1ba21fdb5ac574e3987ca32
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.openlocfilehash: 6085bc647c06b5907282460a2d8706b8549e1bc2
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78668522"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78932680"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Матрица поддержки для резервного копирования с помощью агента Служб восстановления Microsoft Azure (MARS)
 
@@ -158,7 +158,7 @@ Windows 7| 1 700 ГБ
 
 **Тип** | **Поддержка**
 --- | ---
-зашифрованные;| Поддерживается.
+Зашифрованные<sup>*</sup>| Поддерживается.
 Compressed | Поддерживается.
 разреженные; | Поддерживается.
 Сжатые и разреженные |Поддерживается.
@@ -169,6 +169,8 @@ Compressed | Поддерживается.
 разреженный поток.| Не поддерживается. Пропущено.
 OneDrive (синхронизированные файлы — это разреженные потоки)| Не поддерживается.
 Папки с включенным репликация DFS | Не поддерживается.
+
+\* убедитесь, что агент MARS имеет доступ к необходимым сертификатам для доступа к зашифрованным файлам. Недоступные файлы будут пропущены.
 
 ## <a name="supported-drives-or-volumes-for-backup"></a>Поддерживаемые диски или тома для резервного копирования
 

@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: vaidyas
 ms.reviewer: larryfr
-ms.date: 11/22/2019
-ms.openlocfilehash: 29c91cf14413a11804de82eeaf08d628b125d76a
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.date: 03/06/2020
+ms.openlocfilehash: d03a3d482d147d3bc69354ee09dfe0b187610a09
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77471947"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927436"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -148,10 +148,10 @@ print(blob.location)
 
     ```azurecli-interactive
     az group create --name myresourcegroup --location "West Europe"
-    az appservice plan create --name myplanname --resource-group myresourcegroup --sku EP1 --is-linux
+    az appservice plan create --name myplanname --resource-group myresourcegroup --sku B1 --is-linux
     ```
 
-    В этом примере используется ценовая категория _Linux Premium_ (`--sku EP1`).
+    В этом примере используется ценовая категория _Linux Basic_ (`--sku B1`).
 
     > [!IMPORTANT]
     > Образы, созданные Машинное обучение Azure используют Linux, поэтому необходимо использовать параметр `--is-linux`.
@@ -159,13 +159,13 @@ print(blob.location)
 1. Создайте учетную запись хранения, которая будет использоваться для хранения веб-заданий, и получите ее строку подключения. Замените `<webjobStorage>` именем, которое вы хотите использовать.
 
     ```azurecli-interactive
-    az storage account create --name triggerStorage --location westeurope --resource-group myresourcegroup --sku Standard_LRS
+    az storage account create --name <webjobStorage> --location westeurope --resource-group myresourcegroup --sku Standard_LRS
     ```
     ```azurecli-interactive
     az storage account show-connection-string --resource-group myresourcegroup --name <webJobStorage> --query connectionString --output tsv
     ```
 
-1. Чтобы создать приложение функции, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее. Замените `<webjobStorage>` замените на имя учетной записи хранения из предыдущего шага:
+1. Чтобы создать приложение функции, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее. Замените `<webjobStorage>` именем учетной записи хранения из предыдущего шага:
 
     ```azurecli-interactive
     az functionapp create --resource-group myresourcegroup --plan myplanname --name <app-name> --deployment-container-image-name <acrinstance>.azurecr.io/package:<imagename> --storage-account <webjobStorage>
@@ -179,7 +179,7 @@ print(blob.location)
     ```azurecli-interactive
     az storage account create --name <triggerStorage> --location westeurope --resource-group myresourcegroup --sku Standard_LRS
     ```
-    ```azurecli-interactive
+    ```azurecli-interactiv
     az storage account show-connection-string --resource-group myresourcegroup --name <triggerStorage> --query connectionString --output tsv
     ```
     Запишите эту строку подключения, чтобы предоставить приложению функции. Он будет использоваться позже при запросе `<triggerConnectionString>`
@@ -205,7 +205,7 @@ print(blob.location)
     ```
     Сохраните возвращенное значение, оно будет использоваться в качестве `imagetag` на следующем шаге.
 
-1. Чтобы предоставить приложению функции учетные данные, необходимые для доступа к реестру контейнеров, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagetag>` значениями из вызова AZ CLI на предыдущем шаге. Замените `<username>` и `<password>` полученными ранее сведениями об имени для входа записи контроля доступа:
+1. Чтобы предоставить приложению функции учетные данные, необходимые для доступа к реестру контейнеров, используйте следующую команду. Замените `<app-name>` именем приложения функции. Замените `<acrinstance>` и `<imagetag>` значениями из вызова AZ CLI на предыдущем шаге. Замените `<username>` и `<password>` полученными ранее сведениями об имени для входа записи контроля доступа:
 
     ```azurecli-interactive
     az functionapp config container set --name <app-name> --resource-group myresourcegroup --docker-custom-image-name <acrinstance>.azurecr.io/package:<imagetag> --docker-registry-server-url https://<acrinstance>.azurecr.io --docker-registry-server-user <username> --docker-registry-server-password <password>
@@ -246,6 +246,52 @@ print(blob.location)
 
 > [!IMPORTANT]
 > Загрузка образа может занять несколько минут. Ход выполнения можно отслеживать с помощью портала Azure.
+
+## <a name="test-the-deployment"></a>тестирование развертывания
+
+После загрузки образа и доступности приложения выполните следующие действия, чтобы запустить приложение.
+
+1. Создайте текстовый файл, содержащий данные, которые требуются для файла score.py. Следующий пример будет работать с score.py, который предполагает массив из 10 чисел:
+
+    ```json
+    {"data": [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]}
+    ```
+
+    > [!IMPORTANT]
+    > Формат данных зависит от того, что предполагает score.py и модель.
+
+2. Используйте следующую команду, чтобы передать этот файл в контейнер ввода в созданном ранее BLOB-объекте хранилища триггеров. Замените `<file>` именем файла, содержащего данные. Замените `<triggerConnectionString>` строкой подключения, возвращенной ранее. В этом примере `input` — это имя созданного ранее контейнера входных данных. Если вы использовали другое имя, замените это значение:
+
+    ```azurecli-interactive
+    az storage blob upload --container-name input --file <file> --name <file> --connection-string <triggerConnectionString>
+    ```
+
+    Выходные данные этой команды похожи на следующий код JSON:
+
+    ```json
+    {
+    "etag": "\"0x8D7C21528E08844\"",
+    "lastModified": "2020-03-06T21:27:23+00:00"
+    }
+    ```
+
+3. Чтобы просмотреть выходные данные, созданные функцией, используйте следующую команду, чтобы получить список выходных файлов. Замените `<triggerConnectionString>` строкой подключения, возвращенной ранее. В этом примере `output` — имя созданного ранее выходного контейнера. Если вы использовали другое имя, замените это значение::
+
+    ```azurecli-interactive
+    az storage blob list --container-name output --connection-string <triggerConnectionString> --query '[].name' --output tsv
+    ```
+
+    Выходные данные этой команды похожи на `sample_input_out.json`.
+
+4. Чтобы скачать файл и проверить его содержимое, используйте следующую команду. Замените `<file>` именем файла, возвращенным предыдущей командой. Замените `<triggerConnectionString>` строкой подключения, возвращенной ранее: 
+
+    ```azurecli-interactive
+    az storage blob download --container-name output --file <file> --name <file> --connection-string <triggerConnectionString>
+    ```
+
+    После выполнения команды откройте файл. Он содержит данные, возвращенные моделью.
+
+Дополнительные сведения об использовании триггеров больших двоичных объектов см. в статье [Создание функции, активируемой с помощью хранилища BLOB-объектов Azure](/azure/azure-functions/functions-create-storage-blob-triggered-function) .
 
 ## <a name="next-steps"></a>Следующие шаги
 

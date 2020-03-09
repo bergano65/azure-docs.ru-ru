@@ -1,14 +1,14 @@
 ---
 title: Основные сведения о языке запросов
 description: Описывает таблицы графа ресурсов и доступные типы данных, операторы и функции Kusto, которые можно использовать с графом ресурсов Azure.
-ms.date: 12/05/2019
+ms.date: 03/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: a3503ce8d83b5bd47872db4b1de0eadb88be432c
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 2f4be4d86a340867e1ad3015ff288f98fc54cecf
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74851219"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927496"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -28,8 +28,12 @@ ms.locfileid: "74851219"
 |---|---|
 |Ресурсы |Таблица по умолчанию, если в запросе не определено значение None. Большинство диспетчер ресурсов типов и свойств ресурсов. |
 |ресаурцеконтаинерс |Включает подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
+|адвисорресаурцес |Содержит ресурсы, _связанные_ с `Microsoft.Advisor`. |
 |алертсманажементресаурцес |Содержит ресурсы, _связанные_ с `Microsoft.AlertsManagement`. |
+|маинтенанцересаурцес |Содержит ресурсы, _связанные_ с `Microsoft.Maintenance`. |
 |секуритиресаурцес |Содержит ресурсы, _связанные_ с `Microsoft.Security`. |
+
+Полный список, включая типы ресурсов, см. в разделе [reference: Supported Tables and Resource Types](../reference/supported-tables-resources.md).
 
 > [!NOTE]
 > _Resources_ является таблицей по умолчанию. При запросе к таблице _Resources_ не требуется указывать имя таблицы, если не используются `join` и `union`. Однако рекомендуется всегда включать в запрос начальную таблицу.
@@ -65,7 +69,7 @@ Resources
 
 Ниже приведен список табличных операторов ККЛ, поддерживаемых графиком ресурсов с конкретными примерами.
 
-|ккл |Пример запроса к диаграмме ресурсов |Заметки |
+|ккл |Пример запроса к диаграмме ресурсов |Примечания |
 |---|---|---|
 |[count](/azure/kusto/query/countoperator) |[Подсчет ключевых хранилищ](../samples/starter.md#count-keyvaults) | |
 |[distinct](/azure/kusto/query/distinctoperator) |[Отображение уникальных значений для конкретного псевдонима](../samples/starter.md#distinct-alias-values) | |
@@ -116,8 +120,8 @@ Resources
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
-- Дополнительные сведения об [исследовании ресурсов](explore-resources.md).
+- Узнайте больше о том, как [изучать ресурсы](explore-resources.md).

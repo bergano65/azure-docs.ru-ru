@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/16/2018
+ms.date: 03/06/2020
 ms.author: radeltch
-ms.openlocfilehash: 06c92797f2cab96a9e0c423b0f0f754e57b99b14
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: fb73bf6af46ce8303e1be80d1bfc7303f95cda06
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77598448"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927346"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -328,6 +328,16 @@ o- / ...........................................................................
    <pre><code>sudo zypper in socat
    </code></pre>
 
+1. **[A]** установите компонент Azure фунтов, необходимый для ресурсов кластера.
+
+   <pre><code>sudo zypper in resource-agents
+   </code></pre>
+
+   > [!NOTE]
+   > Проверьте версию агентов Resource-пакета и убедитесь, что выполняются минимальные требования к версии.  
+   > - Для SLES 12 SP4/SP5 версия должна быть как минимум Resource-Agents-4.3.018. a7fb5035-3.30.1.  
+   > - Для SLES 15/15 с пакетом обновления 1 (SP1) версия должна быть как минимум Resource-Agents-4.3.0184.6 ee15eb2-4.13.1.  
+
 1. **[A]** настройте операционную систему.
 
    В некоторых случаях Pacemaker создает много процессов и тем самым исчерпывает число допустимых процессов. В таком случае пульс между узлами кластера может завершиться с ошибкой и привести к отработке отказа ресурсов. Рекомендуется увеличить максимальное число разрешенных процессов, установив следующий параметр.
@@ -571,7 +581,7 @@ o- / ...........................................................................
 1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Щелкните Сохранить
+1. Нажмите кнопку Сохранить.
 
 Повторите предыдущие шаги для второго узла кластера.
 
@@ -607,9 +617,9 @@ sudo crm configure primitive <b>stonith-sbd</b> stonith:external/sbd \
 
 Azure предлагает [запланированные события](https://docs.microsoft.com/azure/virtual-machines/linux/scheduled-events). Запланированные события предоставляются через службу метаданных и позволяют приложению подготовиться к таким событиям, как завершение работы виртуальной машины, повторное развертывание ВМ и т. д. Агент ресурсов **[Azure — отслеживание событий](https://github.com/ClusterLabs/resource-agents/pull/1161)** для запланированных событий Azure. Если обнаружены события, агент попытается закрыть все ресурсы на затронутой виртуальной машине и переместить их на другой узел в кластере. Чтобы обеспечить возможность настройки дополнительных ресурсов Pacemaker, необходимо настроить. 
 
-1. **[A]** установите агент **Azure Events** . 
+1. **[A]** убедитесь, что пакет для агента **Azure Events** уже установлен и обновлен. 
 
-<pre><code>sudo zypper install resource-agents
+<pre><code>sudo zypper info resource-agents
 </code></pre>
 
 2. **[1]** настройте ресурсы в Pacemaker. 
@@ -633,7 +643,7 @@ sudo crm configure property maintenance-mode=false
      Предупреждение: ЦИБ-начальной загрузки — параметры: неизвестный атрибут "hostName_ <strong>HostName</strong>"  
    > Эти предупреждения можно игнорировать.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

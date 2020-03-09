@@ -12,11 +12,11 @@ ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
 ms.openlocfilehash: d59a66b25b55572865f297436331971434d831c3
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78199892"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384315"
 ---
 # <a name="best-practices-for-loading-data-for-data-warehousing"></a>Рекомендации по загрузке данных для хранения данных
 
@@ -125,7 +125,7 @@ create statistics [YearMeasured] on [Customer_Speed] ([YearMeasured]);
 
 Для каждой учетной записи хранения с измененным ключом выполните [ALTER DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/alter-database-scoped-credential-transact-sql).
 
-Пример
+Пример.
 
 Исходный ключ создан
 
@@ -141,7 +141,7 @@ ALTER DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', SE
 
 Вносить изменения в базовые внешние источники данных больше не нужно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о PolyBase и проектировании процесса извлечения, загрузки и преобразования (ELT) см. в статье о [проектировании ELT для хранилища данных SQL](design-elt-data-loading.md).
 - Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](load-data-from-azure-blob-storage-using-polybase.md).

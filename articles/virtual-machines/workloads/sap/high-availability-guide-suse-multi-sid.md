@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 02/26/2020
+ms.date: 03/06/2020
 ms.author: radeltch
-ms.openlocfilehash: ff78d44813001e9efdf6d7679616c397c31a1f5b
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.openlocfilehash: 3e9634b9121cb0ecbcfb01f6ad58984d90ec28e5
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78164769"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927250"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications-multi-sid-guide"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для многоид безопасности приложений SAP
 
@@ -246,8 +246,12 @@ SAP NetWeaver требует наличия общего хранилища дл
 
    > [!IMPORTANT]
    > Последние случаи тестирования, в которых неткат перестает отвечать на запросы из-за невыполненной работы и ограничения на обработку только одного соединения. Ресурс неткат прекращает прослушивание запросов балансировщика нагрузки Azure, и плавающий IP-адрес становится недоступным.  
-   > 
-   > Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
+   > Для существующих кластеров Pacemaker рекомендуется в прошлом заменять неткат на Сокат. Сейчас мы рекомендуем использовать агент ресурсов Azure балансировки нагрузки, который входит в состав агентов Resource-Agent, со следующими требованиями к версии пакета:
+   > - Для SLES 12 SP4/SP5 версия должна быть как минимум Resource-Agents-4.3.018. a7fb5035-3.30.1.  
+   > - Для SLES 15/15 с пакетом обновления 1 (SP1) версия должна быть как минимум Resource-Agents-4.3.0184.6 ee15eb2-4.13.1.  
+   >
+   > Обратите внимание, что изменение потребует краткого времени простоя.  
+   > Для существующих кластеров Pacemaker, если конфигурация уже была изменена для использования Сокат, как описано в статье [усиление безопасности при обнаружении балансировщика нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128), нет необходимости немедленно переключаться на агент ресурсов Azure фунтов.
 
     ```
       sudo crm configure primitive fs_NW2_ASCS Filesystem device='nw2-nfs:/NW2/ASCS' directory='/usr/sap/NW2/ASCS10' fstype='nfs4' \
@@ -259,9 +263,7 @@ SAP NetWeaver требует наличия общего хранилища дл
         params ip=10.3.1.16 cidr_netmask=24 \
         op monitor interval=10 timeout=20
    
-      sudo crm configure primitive nc_NW2_ASCS anything \
-        params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:62010,backlog=10,fork,reuseaddr /dev/null" \
-        op monitor timeout=20s interval=10 depth=0
+      sudo crm configure primitive nc_NW2_ASCS azure-lb port=62010
    
       sudo crm configure group g-NW2_ASCS fs_NW2_ASCS nc_NW2_ASCS vip_NW2_ASCS \
          meta resource-stickiness=3000
@@ -275,9 +277,7 @@ SAP NetWeaver требует наличия общего хранилища дл
        params ip=10.3.1.13 cidr_netmask=24 \
        op monitor interval=10 timeout=20
    
-      sudo crm configure primitive nc_NW3_ASCS anything \
-        params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:62020,backlog=10,fork,reuseaddr /dev/null" \
-        op monitor timeout=20s interval=10 depth=0
+      sudo crm configure primitive nc_NW3_ASCS azure-lb port=62020
    
       sudo crm configure group g-NW3_ASCS fs_NW3_ASCS nc_NW3_ASCS vip_NW3_ASCS \
         meta resource-stickiness=3000
@@ -309,12 +309,7 @@ SAP NetWeaver требует наличия общего хранилища дл
       params ip=10.3.1.17 cidr_netmask=24 \
       op monitor interval=10 timeout=20
    
-    sudo crm configure primitive nc_NW2_ERS anything \
-     params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:62112,backlog=10,fork,reuseaddr /dev/null" \
-     op monitor timeout=20s interval=10 depth=0
-   
-    # WARNING: Resources nc_NW2_ASCS,nc_NW2_ERS violate uniqueness for parameter "binfile": "/usr/bin/socat"
-    # Do you still want to commit (y/n)? y
+    sudo crm configure primitive nc_NW2_ERS azure-lb port=62112
    
     sudo crm configure group g-NW2_ERS fs_NW2_ERS nc_NW2_ERS vip_NW2_ERS
 
@@ -327,12 +322,7 @@ SAP NetWeaver требует наличия общего хранилища дл
       params ip=10.3.1.19 cidr_netmask=24 \
       op monitor interval=10 timeout=20
    
-    sudo crm configure primitive nc_NW3_ERS anything \
-     params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:62122,backlog=10,fork,reuseaddr /dev/null" \
-     op monitor timeout=20s interval=10 depth=0
-   
-    # WARNING: Resources nc_NW3_ASCS,nc_NW3_ERS violate uniqueness for parameter "binfile": "/usr/bin/socat"
-    # Do you still want to commit (y/n)? y
+    sudo crm configure primitive nc_NW3_ERS azure-lb port=62122
    
     sudo crm configure group g-NW3_ERS fs_NW3_ERS nc_NW3_ERS vip_NW3_ERS
    ```
@@ -532,32 +522,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     #stonith-sbd     (stonith:external/sbd): Started slesmsscl1
     # Resource Group: g-NW1_ASCS
     #     fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-    #     nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+    #     nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
     #     vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
     #     rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
     # Resource Group: g-NW1_ERS
     #     fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-    #     nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+    #     nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
     #     vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
     #     rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
     # Resource Group: g-NW2_ASCS
     #     fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-    #     nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+    #     nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
     #     vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
     #     rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
     # Resource Group: g-NW2_ERS
     #     fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-    #     nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+    #     nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
     #     vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
     #     rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
     # Resource Group: g-NW3_ASCS
     #     fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-    #     nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+    #     nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
     #     vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
     #     rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
     # Resource Group: g-NW3_ERS
     #     fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-    #     nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+    #     nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
     #     vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
     #     rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
     ```
@@ -658,32 +648,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
    ```
@@ -708,32 +698,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
    ```
@@ -747,32 +737,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
    ```
@@ -797,32 +787,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
    ```
@@ -836,32 +826,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
    ```
@@ -882,32 +872,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl1
     
@@ -942,32 +932,32 @@ SAP NetWeaver требует наличия общего хранилища дл
     stonith-sbd     (stonith:external/sbd): Started slesmsscl1
      Resource Group: g-NW1_ASCS
          fs_NW1_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW1_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW1_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW1_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW1_ASCS00 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW1_ERS
          fs_NW1_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW1_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW1_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW1_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW2_ASCS
          fs_NW2_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW2_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW2_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW2_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW2_ASCS10 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW2_ERS
          fs_NW2_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW2_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW2_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW2_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW2_ERS12  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
      Resource Group: g-NW3_ASCS
          fs_NW3_ASCS        (ocf::heartbeat:Filesystem):    Started slesmsscl1
-         nc_NW3_ASCS        (ocf::heartbeat:anything):      Started slesmsscl1
+         nc_NW3_ASCS        (ocf::heartbeat:azure-lb):      Started slesmsscl1
          vip_NW3_ASCS       (ocf::heartbeat:IPaddr2):       Started slesmsscl1
          rsc_sap_NW3_ASCS20 (ocf::heartbeat:SAPInstance):   Started slesmsscl1
      Resource Group: g-NW3_ERS
          fs_NW3_ERS (ocf::heartbeat:Filesystem):    Started slesmsscl2
-         nc_NW3_ERS (ocf::heartbeat:anything):      Started slesmsscl2
+         nc_NW3_ERS (ocf::heartbeat:azure-lb):      Started slesmsscl2
          vip_NW3_ERS        (ocf::heartbeat:IPaddr2):       Started slesmsscl2
          rsc_sap_NW3_ERS22  (ocf::heartbeat:SAPInstance):   Started slesmsscl2
    ```
@@ -977,5 +967,4 @@ SAP NetWeaver требует наличия общего хранилища дл
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
-* Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).
 * Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha] .

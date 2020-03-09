@@ -4,11 +4,11 @@ description: В этой статье описано, как включить р
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.openlocfilehash: 0cfea6579791c4fd23c1b7acdfe722d57b5ec2fd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75449919"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78363756"
 ---
 # <a name="enable-backup-when-you-create-an-azure-vm"></a>Включение резервного копирования при создании виртуальной машины Azure
 
@@ -16,11 +16,11 @@ ms.locfileid: "75449919"
 
 В этой статье подробно описано, как включить резервное копирование при создании виртуальной машины (ВМ) в портал Azure.  
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 - [Проверьте](backup-support-matrix-iaas.md#supported-backup-actions) , какие операционные системы поддерживаются, если вы включаете резервное копирование при создании виртуальной машины.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Если вы еще не вошли в свою учетную запись, войдите в [портал Azure](https://portal.azure.com).
 
@@ -80,7 +80,7 @@ ms.locfileid: "75449919"
 
 В предыдущих шагах объясняется, как использовать портал Azure для создания виртуальной машины и ее защиты в хранилище служб восстановления. Чтобы быстро развернуть одну или несколько виртуальных машин и защитить их в хранилище служб восстановления, см. шаблон [развертывание виртуальной машины Windows и включение резервного копирования](https://azure.microsoft.com/resources/templates/101-recovery-services-create-vm-and-configure-backup/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы защитили виртуальную машину, вы узнаете, как управлять ими и восстанавливать их.
 

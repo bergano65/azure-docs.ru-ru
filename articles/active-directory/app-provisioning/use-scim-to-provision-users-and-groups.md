@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/01/2020
+ms.date: 03/07/2020
 ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2fda5d1bdd00a601df363bd930e5f2f6d610c7f
-ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
+ms.openlocfilehash: 42fc10c1e7e88e36e4d2174671702e043fb96538
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78208718"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78926846"
 ---
 # <a name="build-a-scim-endpoint-and-configure-user-provisioning-with-azure-active-directory-azure-ad"></a>Создание конечной точки SCIM и Настройка подготовки пользователей с помощью Azure Active Directory (Azure AD)
 
@@ -33,7 +33,7 @@ SCIM — это стандартизированное определение д
 
 Схема объектов стандартного пользователя и интерфейсы API для управления, определенные в SCIM 2,0 (RFC [7642](https://tools.ietf.org/html/rfc7642), [7643](https://tools.ietf.org/html/rfc7643), [7644](https://tools.ietf.org/html/rfc7644)), позволяют более легко интегрировать поставщики удостоверений и приложения. Разработчики приложений, которые создают конечную точку SCIM, могут интегрироваться с любым клиентом, совместимым с SCIM, без необходимости выполнять пользовательскую работу.
 
-Для автоматизации подготовки приложения необходимо создать и интегрировать конечную точку SCIM с требованиями Azure AD SCIM. Выполните следующие действия, чтобы начать подготовку пользователей и групп в приложении. 
+Для автоматизации подготовки приложения требуется создание и интеграция конечной точки SCIM с клиентом Azure AD SCIM. Выполните следующие действия, чтобы начать подготовку пользователей и групп в приложении. 
     
   * **[Шаг 1. Проектирование схемы пользователя и группы.](#step-1-design-your-user-and-group-schema)** Определите объекты и атрибуты, необходимые для приложения, и определите, как они сопоставляются с схемой пользователя и группы, поддерживаемой реализацией Azure AD SCIM.
 
@@ -60,10 +60,10 @@ SCIM — это стандартизированное определение д
 |loginName|userName|userPrincipalName|
 |firstName|name.givenName|givenName|
 |lastName|Name. lastName|lastName|
-|воркмаил|Сообщения электронной почты [Type EQ "Рабочая"]. Value|Mail|
+|воркмаил|Сообщения электронной почты [Type EQ "Рабочая"]. Value|Почта|
 |manager|manager|manager|
 |tag|urn: IETF: params: scim: схемы: расширение: 2.0: Кустомекстенсион: TAG|extensionAttribute1|
-|status|active|Иссофтделетед (вычисленное значение не хранится на пользователе)|
+|состояние|активно|Иссофтделетед (вычисленное значение не хранится на пользователе)|
 
 Схема, определенная выше, будет представлена с помощью полезных данных JSON ниже. Обратите внимание, что в дополнение к атрибутам, необходимым для приложения, представление JSON содержит обязательные атрибуты "ID", "externalId" и "META".
 
@@ -99,14 +99,14 @@ SCIM — это стандартизированное определение д
 
 | Пользователь Azure Active Directory | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" |
 | --- | --- |
-| IsSoftDeleted |active |
+| IsSoftDeleted |активно |
 |department|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|
 | displayName |displayName |
 |employeeId|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Емплойинумбер|
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |externalId |
 | manager |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер |
 | mobile |phoneNumbers[type eq "mobile"].value |
@@ -124,16 +124,16 @@ SCIM — это стандартизированное определение д
 | Группа Azure Active Directory | urn: IETF: params: scim: схемы: Core: 2.0: Group |
 | --- | --- |
 | displayName |displayName |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |displayName |
-| members |members |
+| члены |члены |
 | objectId |externalId |
 | proxyAddresses |emails[type eq "other"].Value |
 
 В SCIM RFC определено несколько конечных точек. Можно приступить к работе с конечной точкой/User, а затем развернуть отсюда. Конечная точка/Счемас полезна при использовании настраиваемых атрибутов или при частом изменении схемы. Он позволяет клиенту автоматически получать самую последнюю схему. Конечная точка/Булк особенно полезна при поддержке групп. В следующей таблице описаны различные конечные точки, определенные в стандарте SCIM. Конечная точка/Счемас полезна при использовании настраиваемых атрибутов или при частом изменении схемы. Он позволяет клиенту автоматически получать самую последнюю версию схемы. Конечная точка/Булк особенно полезна при поддержке групп. В следующей таблице описаны различные конечные точки, определенные в стандарте SCIM. 
  
 ### <a name="table-4-determine-the-endpoints-that-you-would-like-to-develop"></a>Таблица 4. Определение конечных точек, которые вы хотите разрабатывать
-|ENDPOINT|DESCRIPTION|
+|ENDPOINT|ОПИСАНИЕ|
 |--|--|
 |WMIC|Выполнение операций CRUD над объектом пользователя.|
 |/Group|Выполнение операций CRUD над объектом группы.|
@@ -560,7 +560,7 @@ SCIM — это стандартизированное определение д
 * Обновление запроса исправления группы должно привести к возникновению в ответе *HTTP 204 без содержимого* . Не рекомендуется возвращать текст со списком всех членов.
 * Не требуется поддерживать возврат всех членов группы.
 
-#### <a name="create-group"></a>Создание группы
+#### <a name="create-group"></a>Создать группу
 
 ##### <a name="request-7"></a>Получения
 
@@ -752,7 +752,7 @@ SCIM — это стандартизированное определение д
 
 ## <a name="step-3-build-a-scim-endpoint"></a>Шаг 3. Создание конечной точки SCIM
 
-Теперь, когда вы десиднед схему и поняли реализацию Azure AD SCIM, вы можете приступить к разработке конечной точки SCIM. Вместо того, чтобы начинать с нуля и самостоятельно создавать реализацию, вы можете полагаться на ряд библиотек SCIM с открытым исходным кодом, опубликованных SCIM коммуинти.  
+Теперь, когда вы разработали схему и поняли реализацию Azure AD SCIM, вы можете приступить к разработке конечной точки SCIM. Вместо того, чтобы начинать с нуля и самостоятельно создавать реализацию, вы можете полагаться на ряд библиотек SCIM с открытым исходным кодом, опубликованных SCIM коммуинти.  
 Исходный [код](https://aka.ms/SCIMReferenceCode) .NET Core, опубликованный группой подготовки Azure AD, — это один из таких ресурсов, который позволяет начать разработку. Создав конечную точку SCIM, вы захотите протестировать ее. Вы можете использовать коллекцию поступающих [тестов](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) , предоставленную как часть кода ссылки, или выполнить с помощью примеров запросов и ответов, приведенных [выше](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#user-operations).  
 
 Примечание. справочный код предназначен для того, чтобы помочь вам приступить к созданию конечной точки SCIM и предоставить "как есть". Вклады из сообщества помогут вам собрать и поддерживать код. 

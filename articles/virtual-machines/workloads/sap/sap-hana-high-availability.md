@@ -10,14 +10,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/06/2019
+ms.date: 03/06/2020
 ms.author: radeltch
-ms.openlocfilehash: 65ba7c0d8115e7125f1318e7fdca979cfab02474
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: 69dcf91957263cea36f8ff6db6a7af14588998ee
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77565848"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927226"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
@@ -514,7 +514,12 @@ sudo crm configure clone cln_SAPHanaTopology_<b>HN1</b>_HDB<b>03</b> rsc_SAPHana
 
 > [!IMPORTANT]
 > Последние случаи тестирования, в которых неткат перестает отвечать на запросы из-за невыполненной работы и ограничения на обработку только одного соединения. Ресурс неткат прекращает прослушивание запросов балансировщика нагрузки Azure, и плавающий IP-адрес становится недоступным.  
-> Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
+> Для существующих кластеров Pacemaker рекомендуется в прошлом заменять неткат на Сокат. Сейчас мы рекомендуем использовать агент ресурсов Azure балансировки нагрузки, который входит в состав агентов Resource-Agent, со следующими требованиями к версии пакета:
+> - Для SLES 12 SP4/SP5 версия должна быть как минимум Resource-Agents-4.3.018. a7fb5035-3.30.1.  
+> - Для SLES 15/15 с пакетом обновления 1 (SP1) версия должна быть как минимум Resource-Agents-4.3.0184.6 ee15eb2-4.13.1.  
+>
+> Обратите внимание, что изменение потребует краткого времени простоя.  
+> Для существующих кластеров Pacemaker, если конфигурация уже была изменена для использования Сокат, как описано в статье [усиление безопасности при обнаружении балансировщика нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128), нет необходимости немедленно переключаться на агент ресурсов Azure фунтов.
 
 <pre><code># Replace the bold string with your instance number, HANA system ID, and the front-end IP address of the Azure load balancer. 
 
@@ -538,9 +543,7 @@ sudo crm configure primitive rsc_ip_<b>HN1</b>_HDB<b>03</b> ocf:heartbeat:IPaddr
   op monitor interval="10s" timeout="20s" \
   params ip="<b>10.0.0.13</b>"
 
-sudo crm configure primitive rsc_nc_<b>HN1</b>_HDB<b>03</b> anything \
-  params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:625<b>03</b>,backlog=10,fork,reuseaddr /dev/null" \
-  op monitor timeout=20s interval=10 depth=0
+sudo crm configure primitive rsc_nc_<b>HN1</b>_HDB<b>03</b> azure-lb port=625<b>03</b>
 
 sudo crm configure group g_ip_<b>HN1</b>_HDB<b>03</b> rsc_ip_<b>HN1</b>_HDB<b>03</b> rsc_nc_<b>HN1</b>_HDB<b>03</b>
 
@@ -575,7 +578,7 @@ sudo crm configure rsc_defaults migration-threshold=5000
 #     Slaves: [ hn1-db-1 ]
 # Resource Group: g_ip_HN1_HDB03
 #     rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-#     rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+#     rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
 </code></pre>
 
 ## <a name="test-the-cluster-setup"></a>Проверка настройки кластера
@@ -619,7 +622,7 @@ stonith-sbd     (stonith:external/sbd): Started hn1-db-1
      Stopped: [ hn1-db-0 ]
  Resource Group: g_ip_HN1_HDB03
      rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-     rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+     rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
 
 Failed Actions:
 * rsc_SAPHana_HN1_HDB03_start_0 on hn1-db-0 'not running' (7): call=84, status=complete, exitreason='none',
@@ -661,7 +664,7 @@ stonith-sbd     (stonith:external/sbd): Started hn1-db-1
      Slaves: [ hn1-db-0 ]
  Resource Group: g_ip_HN1_HDB03
      rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-     rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+     rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
 </code></pre>
 
 ### <a name="test-the-azure-fencing-agent-not-sbd"></a>Проверка агента ограждения Azure (не SBD)
@@ -749,7 +752,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-0:
@@ -776,7 +779,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
 1. Тест 2. Остановка основной базы данных на узле 2
@@ -790,7 +793,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
    Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
@@ -817,7 +820,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 3. Сбой основной базы данных на узле 1
@@ -831,7 +834,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-0:
@@ -858,7 +861,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
 1. Тест 4. Сбой основной базы данных на узле 2
@@ -872,7 +875,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
    Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
@@ -899,7 +902,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 5. Сбой первичного узла сайта (узел 1)
@@ -913,7 +916,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните от имени привилегированного пользователя следующую команду на узле hn1-db-0:
@@ -950,7 +953,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
 1. Тест 6. Сбой вторичного узла сайта (узел 2)
@@ -964,7 +967,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
    Выполните от имени привилегированного пользователя следующую команду на узле hn1-db-1:
@@ -1001,7 +1004,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 7. Остановка базы данных-получателя на узле 2
@@ -1015,7 +1018,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
@@ -1038,7 +1041,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 8. Сбой базы данных-получателя на узле 2
@@ -1052,7 +1055,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
@@ -1075,7 +1078,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 9. Сбой вторичного узла сайта (узел 2), на котором выполняется база данных-получатель HANA
@@ -1089,7 +1092,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните от имени привилегированного пользователя следующую команду на узле hn1-db-1:
@@ -1122,7 +1125,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 ## <a name="next-steps"></a>Следующие шаги
@@ -1130,4 +1133,4 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
-* Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).
+
