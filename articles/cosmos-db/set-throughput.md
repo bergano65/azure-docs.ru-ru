@@ -7,11 +7,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.openlocfilehash: 31ad7a9d1108adc9071812454419252a813cb93e
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78194875"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364536"
 ---
 # <a name="provision-throughput-on-containers-and-databases"></a>Обеспечение необходимой пропускной способности для контейнеров и баз данных
 
@@ -111,7 +111,7 @@ ms.locfileid: "78194875"
 |Максимальная пропускная способность на логический раздел контейнера|10 000 ЕЗ|10 000 ЕЗ|
 |Максимальная пропускная способность (данные + индекс) на логический раздел контейнера|20 ГБ|20 ГБ|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Подробнее о [логических секциях](partition-data.md).
 * Подробнее о [подготовке пропускной способности для контейнера Azure Cosmos](how-to-provision-container-throughput.md).
