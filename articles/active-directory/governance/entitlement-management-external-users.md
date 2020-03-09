@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bf7e4837aaf65b0df28ea4a07fb485948309bc7c
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77185578"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376764"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>Управление доступом для внешних пользователей в управлении назначениями Azure AD
 
@@ -125,7 +125,7 @@ ms.locfileid: "77185578"
 
 1. В меню слева в разделе " **Управление** назначением" щелкните " **Параметры**".
 
-1. Щелкните **Правка**.
+1. Нажмите кнопку **Изменить**.
 
     ![Параметры для управления жизненным циклом внешних пользователей](./media/entitlement-management-external-users/settings-external-users.png)
 
@@ -143,9 +143,9 @@ ms.locfileid: "77185578"
 
 1. Если вы хотите удалить учетную запись гостевого пользователя в этом каталоге, можно задать число дней до его удаления. Если вы хотите удалить учетную запись гостя, как только она потеряет свое последнее назначение пакетам доступа, задайте **число дней перед удалением внешнего пользователя из этого каталога** в значение **0**.
 
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Добавление подключенной Организации](entitlement-management-organization.md)
 - [Для пользователей, не наличныхся в вашем каталоге](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)

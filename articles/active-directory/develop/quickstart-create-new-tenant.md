@@ -13,12 +13,12 @@ ms.date: 02/05/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 74747e1bc5247e2a95a180b7361eafe8ca795bc2
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
-ms.translationtype: HT
+ms.openlocfilehash: ffd47d886a9d74c637f4f7ff634b3fd4c4a77574
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77160712"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390748"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -57,7 +57,7 @@ ms.locfileid: "77160712"
 
 ### <a name="create-a-new-azure-ad-tenant"></a>Создание нового клиента Azure AD
 
-Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) или используйте [процедуру создания каталога](../fundamentals/active-directory-access-create-new-tenant.md). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
+Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](../fundamentals/active-directory-access-create-new-tenant.md) или используйте [процедуру создания каталога](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
 
 - **Название организации**
 - **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
@@ -74,4 +74,4 @@ ms.locfileid: "77160712"
 
 * Изучите краткое руководство по кодированию и начните выполнять проверку подлинности пользователей. 
 * Чтобы просмотреть более подробные примеры кода, ознакомьтесь с разделом документации **Руководства**.
-* Хотите развернуть приложение в облаке? Ознакомьтесь с [развертыванием контейнеров в Azure](https://docs.microsoft.com/azure/index#pivot=products&panel=containers). 
+* Хотите развернуть приложение в облако? Ознакомьтесь с [развертыванием контейнеров в Azure](https://docs.microsoft.com/azure/index?pivot=products&panel=containers).

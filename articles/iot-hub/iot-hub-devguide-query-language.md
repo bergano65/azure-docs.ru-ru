@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: robinsh
 ms.openlocfilehash: b224de96f6b6baedc3b57e0245a4c4e8748576b4
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76767738"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78344122"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений
 
@@ -447,7 +447,7 @@ GROUP BY <group_by_element>
 
 Поддерживаются следующие операторы:
 
-| Семья | Операторы |
+| Семейство | Операторы |
 | --- | --- |
 | Арифметические |+, -, *, /, % |
 | Логические |AND, OR, NOT |
