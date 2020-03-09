@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 12/04/2019
 ms.author: dapine
 ms.openlocfilehash: 5d30693eb13104504d1cf27ffdbfb8d098d4ef9e
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367752"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390805"
 ---
 # <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров речевых служб (Предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "77367752"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед использованием речевых контейнеров выполните следующие предварительные требования.
 
@@ -73,27 +73,27 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера речи.
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
-| Контейнер | Минимум | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
-| Контейнер | Минимум | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
-| Контейнер | Минимум | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Преобразование текста в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
-| Контейнер | Минимум | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Пользовательский текст в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
@@ -110,27 +110,27 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 Образы контейнеров для речи доступны в следующем реестре контейнеров.
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
-| Контейнер | Репозиторий |
+| Контейнер | Хранилище |
 |-----------|------------|
 | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest` |
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
-| Контейнер | Репозиторий |
+| Контейнер | Хранилище |
 |-----------|------------|
 | Пользовательское распознавание речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text:latest` |
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
-| Контейнер | Репозиторий |
+| Контейнер | Хранилище |
 |-----------|------------|
 | Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech:latest` |
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
-| Контейнер | Репозиторий |
+| Контейнер | Хранилище |
 |-----------|------------|
 | Пользовательский текст в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech:latest` |
 
@@ -140,7 +140,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 ### <a name="docker-pull-for-the-speech-containers"></a>Извлечение DOCKER для контейнеров распознавания речи
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 #### <a name="docker-pull-for-the-speech-to-text-container"></a>Опрашивающий запрос DOCKER для контейнера преобразования речи в текст
 
@@ -169,7 +169,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 
 Сведения о всех поддерживаемых языковых стандартах контейнера **для преобразования речи** в текст см. в статье [теги изображений](../containers/container-image-tags.md#speech-to-text).
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 #### <a name="docker-pull-for-the-custom-speech-to-text-container"></a>Опрашивающий запрос DOCKER для контейнера Пользовательское распознавание речи в текст
 
@@ -182,7 +182,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-spee
 > [!NOTE]
 > `locale` и `voice` для пользовательских речевых контейнеров определяются настраиваемой моделью, принимаемой контейнером.
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 #### <a name="docker-pull-for-the-text-to-speech-container"></a>Извлечение DOCKER для контейнера текста в речь
 
@@ -214,7 +214,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 > [!IMPORTANT]
 > При создании стандартного HTTP-запроса POST *для преобразования текста в речь* для сообщения [SSML (язык разметки речи)](speech-synthesis-markup.md) требуется элемент `voice` с атрибутом `name`. Значение представляет собой соответствующий языковой стандарт контейнера и голоса, также называемый ["коротким именем"](language-support.md#standard-voices). Например, тег `latest` будет иметь имя голоса `en-US-JessaRUS`.
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 #### <a name="docker-pull-for-the-custom-text-to-speech-container"></a>Опрашивающий запрос DOCKER для пользовательского контейнера преобразования текста в речь
 
@@ -240,7 +240,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-text
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Сведения о том, как получить значения `{Endpoint_URI}` и `{API_Key}`, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) . Также доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`.
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 Чтобы запустить контейнер преобразования *речи в текст* , выполните следующую команду `docker run`.
 
@@ -259,7 +259,7 @@ ApiKey={API_KEY}
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 Пользовательское распознавание речи контейнер полагается на пользовательскую модель речевого *ввода* . Пользовательская модель должна быть [обучена](how-to-custom-speech-train-model.md) с помощью [пользовательского портала речевого](https://speech.microsoft.com/customspeech)ввода.
 
@@ -282,7 +282,7 @@ ApiKey={API_KEY}
 
 В следующей таблице представлены различные параметры `docker run` и их соответствующие описания.
 
-| Параметр | Описание |
+| Параметр | Description |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице **обучения** пользовательского речевого портала. |
@@ -311,7 +311,7 @@ ApiKey={API_KEY}
 * Если ранее была загружена пользовательская модель, `ModelId` игнорируется.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 Чтобы запустить контейнер преобразования *текста в речь* , выполните следующую команду `docker run`.
 
@@ -330,7 +330,7 @@ ApiKey={API_KEY}
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 Пользовательский контейнер преобразования *текста в речь* использует пользовательскую голосовую модель. Пользовательская модель должна быть [обучена](how-to-custom-voice-create-voice.md) с помощью [пользовательского Voice](https://aka.ms/custom-voice-portal). Для запуска контейнера требуется идентификатор настраиваемой **модели** голоса. Его можно найти на странице **обучение** на настраиваемом голосовом портале. На портале настраиваемого голоса перейдите на страницу **обучения** и выберите модель.
 <br>
@@ -344,7 +344,7 @@ ApiKey={API_KEY}
 
 В следующей таблице представлены различные параметры `docker run` и их соответствующие описания.
 
-| Параметр | Описание |
+| Параметр | Description |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице " **обучение** " настраиваемого голоса Portal. |
@@ -405,7 +405,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 При запуске или запуске контейнера могут возникнуть проблемы. Используйте [Подключение](speech-container-configuration.md#mount-settings) к выходным данным и включите ведение журнала. Это позволит контейнеру создавать файлы журналов, которые полезны при устранении неполадок.
 
@@ -440,7 +440,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 >  Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте настройки [контейнеров](speech-container-configuration.md) на наличие параметров конфигурации.
 * Узнайте, как [использовать контейнеры службы речи с Kubernetes и Helm](speech-container-howto-on-premises.md)

@@ -8,18 +8,18 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: f2c4e762ebf10a5ca2120c13a52750a7781d60b9
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77598431"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78362411"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
 
 Перед выполнением шагов, описанных в этом руководстве, настоятельно рекомендуем ознакомиться со статьями [Планирование развертывания службы файлов Azure](storage-files-planning.md) и [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * Файловый ресурс Azure в том же регионе, который требуется развернуть Синхронизация файлов Azure. Дополнительные сведения см. в следующих статьях:
     - [Доступность по регионам](storage-sync-files-planning.md#azure-file-sync-region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
     - [Создание общей папки в хранилище файлов Azure](storage-how-to-create-file-share.md). Здесь содержатся пошаговые инструкции по созданию общего файлового ресурса.
@@ -57,7 +57,7 @@ ms.locfileid: "77598431"
 > [!Note]  
 > Этот шаг можно пропустить при развертывании Синхронизация файлов Azure в Windows Server Core.
 
-1. Откройте диспетчер сервера.
+1. Откройте Диспетчер сервера.
 2. Щелкните **Локальный сервер**:  
     ![Элемент "Локальный сервер" в левой части пользовательского интерфейса диспетчера сервера](media/storage-sync-files-deployment-guide/prepare-server-disable-IEESC-1.PNG)
 3. Перейдите по ссылке **Конфигурация усиленной безопасности Internet Explorer** на вложенной панели **Свойства**.  
@@ -458,7 +458,7 @@ Enable-StorageSyncSelfServiceRestore [-DriveLetter] <string> [[-Force]]
 
 Дополнительные сведения см. в статье [Azure File Sync interop with Distributed File System (DFS)](storage-sync-files-planning.md#distributed-file-system-dfs) (Взаимодействие службы "Синхронизация файлов Azure" с распределенной файловой системой (DFS)).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Добавление и удаление конечных точек сервера службы синхронизации файлов Azure](storage-sync-files-server-endpoint.md)
 - [Регистрация и отмена регистрации сервера в службе синхронизации файлов Azure (предварительная версия)](storage-sync-files-server-registration.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)
