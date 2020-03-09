@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: dcdc338bdcdb2c04f6b8894ccb358bc773b95c07
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551766"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78365089"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -204,7 +204,7 @@ access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-v
 ```bash
 cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/Microsoft.DocumentDB/databaseAccounts/<YOUR ACCOUNT>/listKeys?api-version=2016-03-31' -X POST -d "" -H "Authorization: Bearer $access_token" | python -c "import sys, json; print(json.load(sys.stdin)['primaryMasterKey'])")
 ```
-## <a name="windows-security-baselines"></a>Базовые параметры безопасности Windows
+## <a name="windows-security-baselines"></a>Базовые показатели безопасности Windows
 [Мы рекомендуем реализовать стандартную промышленную конфигурацию, которая широко известна и хорошо тестируется, например базовые планы безопасности Майкрософт, а не самостоятельное создание базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines). параметр для подготовки этих данных в масштабируемых наборах виртуальных машин заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure для настройки виртуальных машин в режиме «в сети», чтобы они выполняли рабочее программное обеспечение.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
@@ -265,7 +265,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создайте кластер на виртуальных машинах или компьютерах под управлением Windows Server: [Service Fabric создания кластера для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).
