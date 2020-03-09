@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: iainfou
 ms.openlocfilehash: 7e0e904b182a57a51b5d76f0acebc13bce5902b2
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77612932"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78378527"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация объектов и учетных данных в управляемом домене доменных служб Azure AD
 
@@ -65,7 +65,7 @@ ms.locfileid: "77612932"
 | facsimileTelephoneNumber |facsimileTelephoneNumber |
 | givenName |givenName |
 | jobTitle |title |
-| почта |почта |
+| mail |mail |
 | mailNickname |msDS-AzureADMailNickname |
 | mailNickname |SAMAccountName (иногда может быть автоматически создан) |
 | mobile |mobile |
@@ -78,7 +78,7 @@ ms.locfileid: "77612932"
 | state |st |
 | streetAddress |streetAddress |
 | surname |sn |
-| telephoneNumber |telephoneNumber |
+| TelephoneNumber |TelephoneNumber |
 | userPrincipalName |userPrincipalName |
 
 ### <a name="attribute-mapping-for-groups"></a>Сопоставление атрибутов для групп
@@ -89,7 +89,7 @@ ms.locfileid: "77612932"
 |:--- |:--- |
 | displayName |displayName |
 | displayName |SAMAccountName (иногда может быть автоматически создан) |
-| почта |почта |
+| mail |mail |
 | mailNickname |msDS-AzureADMailNickname |
 | objectid |msDS-AzureADObjectId |
 | onPremiseSecurityIdentifier |sidHistory |
@@ -138,7 +138,7 @@ Azure AD имеет гораздо более простое и неструкт
 
 Для гибридных учетных записей пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, необходимо [настроить Azure AD Connect для синхронизации хэшей паролей в форматах, совместимых с NTLM и Kerberos](tutorial-configure-password-hash-sync.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об особенностях синхронизации паролей см. в статье [как работает синхронизация хэшей паролей с Azure AD Connect](../active-directory/hybrid/how-to-connect-password-hash-synchronization.md?context=/azure/active-directory-domain-services/context/azure-ad-ds-context).
 
