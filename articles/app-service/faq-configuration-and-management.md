@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: afa3b0f3ed345ccc7f4c627ec485351838ab2bee
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 300294f37c809b01fe8fba7e627d6bc5bdc9903a
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77649284"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942934"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "77649284"
 2. В разделе **Параметры приложения** добавьте параметр:
     * Ключ = WEBSITE_TIME_ZONE
     * Значение = *требуемый часовой пояс*
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с именем: America/Адак.
 
@@ -105,7 +105,7 @@ ms.locfileid: "77649284"
 
 ## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Как удалить заголовок ответа HTTP?
 
-Чтобы удалить заголовки из HTTP-ответа, обновите файл сайта web.config. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
+Чтобы удалить заголовки из HTTP-ответа, обновите файл Web. config сайта. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
 
 ## <a name="is-app-service-compliant-with-pci-standard-30-and-31"></a>Соответствует ли служба приложений стандарту PCI версий 3.0 и 3.1?
 
@@ -183,7 +183,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 ### <a name="f12-console-output"></a>Вывод F12 на консоль
 
 1. Выберите вкладку **Консоль**.
-2. Выберите все вкладки с элементами больше нуля (**Ошибка**, **Предупреждение** или **Информация**). Если вкладка не выбрана, при перемещении указателя мыши за пределы значка вкладки он станет черным или серым.
+2. Выберите все вкладки с элементами больше нуля (**Ошибка**, **Предупреждение** или **Информация**). Если вкладка не выбрана, значок табуляции отображается серым или черным цветом при перемещении курсора из него.
 3. Щелкните правой кнопкой мыши в области сообщений на панели и выберите **Копировать все**.
 4. Вставьте скопированный текст в файл и сохраните файл.
 
@@ -212,7 +212,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 Иногда при создании среды службы приложений происходят сбои. В таких случаях в журналах действий отображается следующее сообщение об ошибке:
 ```
 ResourceID: /subscriptions/{SubscriptionID}/resourceGroups/Default-Networking/providers/Microsoft.Web/hostingEnvironments/{ASEname}
-Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provision operation did not complete within the allowed timeout period.”}}
+Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provision operation did not complete within the allowed timeout period."}}
 ```
 
 Чтобы устранить эту проблему, убедитесь в отсутствии какого-либо из условий ниже.
@@ -248,7 +248,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 ## <a name="how-do-i-configure-a-custom-domain-name-for-an-app-service-web-app-that-uses-traffic-manager"></a>Как настроить имя пользовательского домена для веб-приложения службы приложений, использующего диспетчер трафика?
 
-Чтобы узнать, как использовать имя пользовательского домена для веб-приложения службы приложений с диспетчером трафика Azure для балансировки нагрузки, см. статью [Настройка личного доменного имени для веб-приложения в службе приложений Azure, использующей диспетчер трафика](web-sites-traffic-manager-custom-domain-name.md).
+Чтобы узнать, как использовать имя пользовательского домена для веб-приложения службы приложений с диспетчером трафика Azure для балансировки нагрузки, см. статью [Настройка личного доменного имени для веб-приложения в службе приложений Azure, использующей диспетчер трафика](configure-domain-traffic-manager.md).
 
 ## <a name="my-app-service-certificate-is-flagged-for-fraud-how-do-i-resolve-this"></a>Мой сертификат службы приложений помечен как мошеннический. Как решить эту проблему?
 
@@ -256,7 +256,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 При проверке домена после покупки сертификата службы приложений может появиться следующее сообщение:
 
-"Сертификат помечен как возможно мошеннический. Запрос находится на рассмотрении. Если сертификат не станет доступным для использования в течение 24 часов, обратитесь в службу поддержки Azure"
+"Сертификат помечен как возможно мошеннический. Запрос находится на рассмотрении. Если сертификат не станет доступным для использования в течение 24 часов, обратитесь в службу поддержки Azure"
 
 Как указано в сообщении, проверка на мошенничество может занять до 24 часов. Сообщение будет отображаться в течение этого периода.
 
@@ -282,7 +282,7 @@ Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Gr
 
 ## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Как перенаправить домен по умолчанию *.azurewebsites.net в пользовательский домен моего веб-приложения Azure?
 
-При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавляете к сайту имя пользовательского узла и не хотите предоставлять пользователям доступ к домену по умолчанию *.azurewebsites.net, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
+При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавите на сайт пользовательское имя узла и не хотите, чтобы пользователи могли получить доступ к домену *. azurewebsites.net по умолчанию, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Как определить, какая версия платформы .NET установлена в службе приложений?
 

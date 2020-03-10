@@ -9,12 +9,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 1/15/2020
-  ms.openlocfilehash: de21e0efb6725433fe16b15665fafd9226c74f61
-  ms.sourcegitcommit: 5192c04feaa3d1bd564efe957f200b7b1a93a381
+  ms.openlocfilehash: cab367254df3f83903eeee110f0a435b97ea8eba
+  ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/02/2020
-  ms.locfileid: "78208789"
+  ms.lasthandoff: 03/05/2020
+  ms.locfileid: "78368623"
 landingContent:
 - title: Использование службы "Карты Azure"
   linkLists:
@@ -74,6 +74,22 @@ landingContent:
       url: tutorial-route-location.md
     - text: Создание указателя магазинов
       url: tutorial-create-store-locator.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование модуля пространственного ввода-вывода
+      url: how-to-use-spatial-io-module.md
+    - text: Добавление простого уровня данных
+      url: spatial-io-add-simple-data-layer.md
+    - text: Чтение и запись пространственных данных
+      url: spatial-io-read-write-spatial-data.md
+    - text: Добавление слоя карты OGC
+      url: spatial-io-add-ogc-map-layer.md
+    - text: Подключение службе WFS
+      url: spatial-io-connect-wfs-service.md
+    - text: Использование основных операций
+      url: spatial-io-core-operations.md
+    - text: Сведения о поддерживаемых форматах данных
+      url: spatial-io-supported-data-format-details.md
   - linkListType: reference
     links:
     - text: Элемент управления картой
@@ -82,6 +98,8 @@ landingContent:
       url: https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/?view=azure-maps-typescript-latest
     - text: Модуль службы
       url: https://docs.microsoft.com/javascript/api/azure-maps-rest/?view=azure-maps-typescript-latest
+    - text: Модуль пространственного ввода-вывода
+      url: https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/?view=azure-maps-typescript-latest
 - title: Разработка с использованием пакета SDK для Android
   linkLists:
   - linkListType: how-to-guide

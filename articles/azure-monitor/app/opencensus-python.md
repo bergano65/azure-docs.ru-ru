@@ -6,18 +6,18 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: eb1bde6bb58e3e5299311636f8222e2fc181ec5d
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: 61fdc2a4694405d4f56600b2d2b71e9e37232a7a
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78673304"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943247"
 ---
-# <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
+# <a name="set-up-azure-monitor-for-your-python-application"></a>Настройка Azure Monitor для приложения Python
 
 Azure Monitor поддерживает распределенную трассировку, сбор метрик и ведение журнала приложений Python с помощью интеграции с [опенценсус](https://opencensus.io). В этой статье описывается процесс настройки Опенценсус для Python и отправки данных мониторинга в Azure Monitor.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Установка Python. В этой статье используется [Python 3.7.0](https://www.python.org/downloads/), хотя более ранние версии, скорее всего, будут работать с незначительными изменениями.
@@ -36,13 +36,13 @@ Azure Monitor поддерживает распределенную трасси
 
 1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
 
-   | Параметр        | Значение           | Описание  |
+   | Параметр        | Значение           | Description  |
    | ------------- |:-------------|:-----|
    | **Название**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Местоположение** | Восток США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Местоположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **Создать**.
 
 ## <a name="instrument-with-opencensus-python-sdk-for-azure-monitor"></a>Инструмент с пакетом SDK для Опенценсус Python для Azure Monitor
 
@@ -429,14 +429,14 @@ python -m pip install opencensus-ext-azure
 * [Интеграции Опенценсус](https://github.com/census-instrumentation/opencensus-python#extensions)
 * [Azure Monitor примеров приложений](https://github.com/Azure-Samples/azure-monitor-opencensus-python)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отслеживание входящих запросов](./../../azure-monitor/app/opencensus-python-dependency.md)
 * [Отслеживание исходящих запросов](./../../azure-monitor/app/opencensus-python-request.md)
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>видны узлы
 
 * [Тесты доступности.](../../azure-monitor/app/monitor-web-app-availability.md) Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
 * [Интеллектуальная диагностика.](../../azure-monitor/app/proactive-diagnostics.md) Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.

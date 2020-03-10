@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: maxluk
 author: maxluk
-ms.date: 08/02/2019
+ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: d61e33568297e6f72aca0ab736f8a14f1758ffa1
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.openlocfilehash: bdd2cc400c3df75742689258caea8cb87ee8ccc6
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78255133"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942275"
 ---
 # <a name="build-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Создание scikit. изучение моделей в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "78255133"
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
     - Скачайте набор данных и пример файла скрипта 
         - [набор данных IRI](https://archive.ics.uci.edu/ml/datasets/iris)
-        - [`train_iris.py`](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn)
+        - [train_iris. Корректировка](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn)
     - Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/scikit-learn/training/train-hyperparameter-tune-deploy-with-sklearn/train-hyperparameter-tune-deploy-with-sklearn.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутую секцию, охватывающую настройку интеллектуальной настройки, и получение лучшей модели по основным метрикам.
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
@@ -180,7 +180,7 @@ import joblib
 joblib.dump(svm_model_linear, 'model.joblib')
 ```
 
-Зарегистрируйте модель в рабочей области с помощью следующего кода. Если указать параметры `model_framework`, `model_framework_version`и `resource_configuration`, то развертывание модели без кода станет недоступным. Это позволяет напрямую развернуть модель в качестве веб-службы из зарегистрированной модели, а объект `ResourceConfiguration` определяет ресурс вычислений для веб-службы.
+Зарегистрируйте модель в рабочей области с помощью следующего кода. Если указать параметры `model_framework`, `model_framework_version`и `resource_configuration`, то развертывание модели без кода станет недоступным. Это позволяет напрямую развернуть модель в качестве веб-службы из зарегистрированной модели, а объект [`ResourceConfiguration`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration?view=azure-ml-py) определяет ресурс вычислений для веб-службы.
 
 ```Python
 from azureml.core import Model
@@ -199,7 +199,7 @@ model = run.register_model(model_name='sklearn-iris',
 
 ### <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
 
-Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (Предварительная версия) для scikit — обучение. Развертывание модели без кода поддерживается для всех встроенных типов моделей scikit-учиться. Зарегистрировав модель, как показано выше, с параметрами `model_framework`, `model_framework_version`и `resource_configuration`, можно просто использовать статическую функцию `deploy()` для развертывания модели.
+Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (Предварительная версия) для scikit — обучение. Развертывание модели без кода поддерживается для всех встроенных типов моделей scikit-учиться. Зарегистрировав модель, как показано выше, с параметрами `model_framework`, `model_framework_version`и `resource_configuration`, можно просто использовать статическую функцию [`deploy()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) для развертывания модели.
 
 ```python
 web_service = Model.deploy(ws, "scikit-learn-service", [model])

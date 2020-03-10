@@ -9,12 +9,12 @@ ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.date: 01/16/2020
-ms.openlocfilehash: d41b0499df1a62440e8c1991e29f7963224a50d6
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 8cd49f9714746578ec701e22f9e6b0ccce772c6b
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138156"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942296"
 ---
 # <a name="import-your-data-into-azure-machine-learning-designer-preview"></a>Импорт данных в конструктор Машинное обучение Azure (Предварительная версия)
 
@@ -56,6 +56,8 @@ ms.locfileid: "77138156"
 
 Подробные сведения об использовании модуля импорт данных см. на [странице Справочник по импорту данных](algorithm-module-reference/import-data.md).
 
+[!NOTE]
+> Если данные имеют много столбцов, в модуле импорт данных может возникнуть ошибка "проверка не удалась из-за ограничения размера". Это обусловлено тем, что столбцы исключают длину параметра модуля максмиум после кодирования. В этом случае мы рекомендуем [зарегистрировать набор данных в пользовательском интерфейсе набора](how-to-create-register-datasets.md#use-the-ui)данных, чтобы избежать этой ошибки.  
 
 ## <a name="supported-sources"></a>Поддерживаемые источники
 

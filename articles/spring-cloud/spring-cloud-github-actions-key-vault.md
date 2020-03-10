@@ -6,12 +6,12 @@ ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/20/2019
-ms.openlocfilehash: efe8c1a2726054c54934926f652e338797d4efa1
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 78cd5945e394219be0551bbe97afef07f18b61f7
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76776551"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945467"
 ---
 # <a name="authenticate-azure-spring-cloud-with-key-vault-in-github-actions"></a>Проверка подлинности Azure Веснного облака с Key Vault в действиях GitHub
 Хранилище ключей — это безопасное место для хранения ключей. Корпоративным пользователям необходимо хранить учетные данные для сред CI/CD в области, в которой они контролируются. Ключ для получения учетных данных в хранилище ключей должен быть ограничен областью действия ресурса.  Он имеет доступ только к области хранилища ключей, а не ко всей области Azure. Он похож на ключ, который может открыть только надежное поле, а не главный ключ, который может открыть все двери в здании. Это способ получить ключ с помощью другого ключа, который полезен в рабочем процессе CICD. 
@@ -32,7 +32,6 @@ az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTIO
     "tenantId": "<GUID>",
     "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
     "resourceManagerEndpointUrl": "https://management.azure.com/",
-    "activeDirectoryGraphResourceId": "https://graph.windows.net/",
     "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
     "galleryEndpointUrl": "https://gallery.azure.com/",
     "managementEndpointUrl": "https://management.core.windows.net/"
@@ -49,7 +48,7 @@ az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTIO
 
 Скопируйте имя учетных данных, например `azure-cli-2020-01-19-04-39-02`. Откройте меню **политики доступа** , щелкните ссылку **+ Добавить политику доступа** .  Выберите `Secret Management` для **шаблона**, а затем выберите **субъект**. Вставьте имя учетных данных в **основное**/**выберите** поле ввода:
 
- ![Выберите](./media/github-actions/key-vault2.png)
+ ![Выберите пункт](./media/github-actions/key-vault2.png)
 
  Нажмите кнопку **Добавить** в диалоговом окне **Добавление политики доступа** , а затем нажмите кнопку **сохранить**.
 
@@ -69,7 +68,6 @@ az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTIO
     "tenantId": "<GUID>",
     "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
     "resourceManagerEndpointUrl": "https://management.azure.com/",
-    "activeDirectoryGraphResourceId": "https://graph.windows.net/",
     "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
     "galleryEndpointUrl": "https://gallery.azure.com/",
     "managementEndpointUrl": "https://management.core.windows.net/"

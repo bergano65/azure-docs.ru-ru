@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: f218c64d3ffe4955877516551a29376372144598
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: fbdb447905ae43fe92693dfe45c1add710f76355
+ms.sourcegitcommit: e6bce4b30486cb19a6b415e8b8442dd688ad4f92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77526728"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78933588"
 ---
 # <a name="transfer-data-with-azcopy-and-blob-storage"></a>Перенос данных с помощью AzCopy и хранилища BLOB-объектов
 
@@ -73,7 +73,8 @@ AzCopy — это служебная программа командной ст�
 Можно также передать файл, используя подстановочный знак (*) в любом месте пути к файлу или имени файла. Например: `'C:\myDirectory\*.txt'`или `C:\my*\*.txt`.
 
 > [!NOTE]
-> AzCopy по умолчанию передает данные в блочные BLOB-объекты. Для отправки файлов в качестве добавочных больших двоичных объектов, или страничные BLOB-объекты используют флаг `--blob-type=[BlockBlob|PageBlob|AppendBlob]`.
+> AzCopy по умолчанию передает данные в виде блочных BLOB-объектов. Чтобы передать файлы как добавочные большие двоичные объекты или страничные BLOB-объекты, используйте флаг `--blob-type=[BlockBlob|PageBlob|AppendBlob]`.
+> AzCopy по умолчанию отправляет данные для наследования уровня доступа учетной записи. Чтобы передать файлы на конкретный [уровень доступа](../blobs/storage-blob-storage-tiers.md), используйте флаг `--block-blob-tier=[Hot|Cool|Archive]`.
 
 ### <a name="upload-a-directory"></a>Отправка каталога
 
@@ -346,7 +347,7 @@ AzCopy использует [API](https://docs.microsoft.com/rest/api/storageser
 | **Синтаксис** | `azcopy sync 'https://<source-storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' 'https://<destination-storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>' --recursive` |
 | **Пример** | `azcopy sync 'https://mysourceaccount.blob.core.windows.net/<container-name>/myDirectory' 'https://mydestinationaccount.blob.core.windows.net/mycontainer/myDirectory' --recursive` |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры приведены в любой из следующих статей:
 

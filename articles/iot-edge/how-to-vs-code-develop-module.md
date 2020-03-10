@@ -8,12 +8,12 @@ ms.author: xshi
 ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 42431c0db55219c3cb49968986c1a0c7f071b219
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 10c8008d73390174c44ec503f708c1e2c0011e09
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509281"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944303"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge
 
@@ -28,7 +28,7 @@ ms.locfileid: "76509281"
 >[!NOTE]
 >Поддержка разработки и отладки для устройств Linux ARM64 доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Подробные сведения см. в статье [Develop and debug ARM64 IoT Edge modules in Visual Studio Code (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) (Разработка и отладка модулей IoT Edge для устройств ARM64 в Visual Studio Code (предварительная версия)).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для разработки вы должны использовать компьютер или виртуальную машину под управлением Windows, macOS или Linux. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install).
 
@@ -37,7 +37,7 @@ ms.locfileid: "76509281"
 - [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 - [расширение Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker).
 - расширения Visual Studio, в зависимости от выбранного для разработки языка:
-  - C#, включая функции Azure: [ C# расширение](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+  - C#, включая функции Azure: [ C# расширение](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
   - Python: [расширение Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
   - Java: [Пакет расширений Java для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
   - C: [c/C++ расширение](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
@@ -198,7 +198,7 @@ Visual Studio Code принимает предоставленные сведе�
    > [!NOTE]
    > Если вы используете Windows, убедитесь, что используется оболочка интегрированного терминала Visual Studio Code **Git Bash** или **WSL Bash**. Команду `curl` нельзя запустить в PowerShell или командной строке.
    > [!TIP]
-   > Вместо `curl` для отправки сообщений можно использовать [PostMan](https://www.getpostman.com/) или другие средства API.
+   > Вместо [ для отправки сообщений можно использовать ](https://www.getpostman.com/)PostMan`curl` или другие средства API.
 
 1. В представлении отладки Visual Studio Code можно просмотреть переменные на панели слева.
 

@@ -8,12 +8,12 @@ ms.date: 03/02/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 1b0047cda3664759f4f1b6499c8a54ee22f98ab3
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.openlocfilehash: 359f78cabbe0372e6892695c092ae49b62df7bfa
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78227461"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944179"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -217,16 +217,19 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ### <a name="resolution"></a>Решение
 
-При необходимости используйте [динамические группы](../automation-update-management-groups.md) для развертываний обновлений. Дополнительно
+При необходимости используйте [динамические группы](../automation-update-management-groups.md) для развертываний обновлений. Дополнительно:
 
-* Убедитесь, что компьютер по-прежнему существует и доступен. Если он не существует, измените развертывание и удалите компьютер.
+* Убедитесь, что компьютер по-прежнему существует и доступен. 
+* Если компьютер не существует, измените развертывание и удалите компьютер.
 * Список портов и адресов, необходимых для Управление обновлениями, см. в разделе [планирование сети](../automation-update-management.md#ports) , а затем убедитесь, что компьютер соответствует этим требованиям.
-* Выполните следующий запрос в Log Analytics, чтобы найти компьютеры в среде, чьи `SourceComputerId` изменились. Найдите компьютеры с одинаковым значением `Computer`, но другим значением `SourceComputerId`. 
+* Проверьте подключение к гибридной рабочей роли Runbook с помощью гибридного средства устранения неполадок агента рабочей роли Runbook. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md).
+* Выполните следующий запрос в Log Analytics, чтобы найти компьютеры в среде, для которых `SourceComputerId` изменился. Найдите компьютеры с одинаковым значением `Computer`, но другим значением `SourceComputerId`.
 
    ```loganalytics
    Heartbeat | where TimeGenerated > ago(30d) | distinct SourceComputerId, Computer, ComputerIP
    ```
-   После обнаружения затронутых компьютеров измените развертывания обновлений, предназначенные для этих компьютеров, а затем удалите и добавьте их повторно, чтобы `SourceComputerId` отражали правильное значение.
+
+* После обнаружения затронутых компьютеров измените развертывания обновлений, предназначенные для этих компьютеров, а затем удалите и добавьте их повторно, чтобы `SourceComputerId` отражали правильное значение.
 
 ## <a name="updates-nodeployment"></a>Сценарий: обновления устанавливаются без развертывания
 
@@ -250,7 +253,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 ### <a name="issue"></a>Проблема
 
-Выводится следующее сообщение об ошибке:
+Отображается следующее сообщение об ошибке:
 
 ```error
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
@@ -341,7 +344,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Попробуйте выполнить обновления локально на компьютере. Если это не удается, это обычно означает ошибку конфигурации агента обновления.
 
-Эта проблема часто возникает из-за проблем с конфигурацией сети и брандмауэром. Попытайтесь выполнить следующее.
+Эта проблема часто возникает из-за проблем с конфигурацией сети и брандмауэром. Попробуйте сделать следующее.
 
 * Для Linux проверьте соответствующую документацию, чтобы убедиться, что вы можете связаться с конечной точкой сети репозитория пакетов.
 * Для Windows проверьте конфигурацию агента, указанную в списке [обновления, не скачиваются из конечной точки интрасети (WSUS/SCCM)](/windows/deployment/update/windows-update-troubleshooting#updates-arent-downloading-from-the-intranet-endpoint-wsussccm).
@@ -350,7 +353,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Если отображается значение HRESULT, дважды щелкните исключение, отображаемое красным цветом, чтобы просмотреть сообщение об исключении целиком. Ознакомьтесь со следующей таблицей, чтобы получить возможные решения или Рекомендуемые действия.
 
-|Exception  |Разрешение или действие  |
+|Исключение  |Разрешение или действие  |
 |---------|---------|
 |`Exception from HRESULT: 0x……C`     | Найдите соответствующий код ошибки в [списке кодов ошибок Центра обновления Windows](https://support.microsoft.com/help/938205/windows-update-error-code-list) , чтобы найти дополнительные сведения о причине исключения.        |
 |`0x8024402C`</br>`0x8024401C`</br>`0x8024402F`      | Они указывают на проблемы с сетевым подключением. Убедитесь, что компьютер имеет сетевое подключение к Управление обновлениями. Список требуемых портов и адресов см. в разделе [планирование сети](../automation-update-management.md#ports) .        |
@@ -377,7 +380,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="cause"></a>Причина
 
-Возможные причины.
+Возможные причины:
 
 * Диспетчер пакетов неработоспособен.
 * Агент обновления (WUA для Windows, дистрибутив для диспетчера пакетов для Linux) неправильно настроен.
@@ -426,7 +429,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 * Статья базы знаний № 2267602 касается [обновления определений Защитника Windows](https://www.microsoft.com/wdsi/definitions). Он обновляется ежедневно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не нашли проблему или не можете решить проблему, воспользуйтесь одним из следующих каналов для получения дополнительной поддержки:
 

@@ -491,6 +491,8 @@
           href: data-flow-exists.md
         - name: Filter
           href: data-flow-filter.md
+        - name: Преобразование в плоскую структуру
+          href: data-flow-flatten.md
         - name: Join
           href: data-flow-join.md
         - name: Поиск
@@ -515,8 +517,6 @@
           href: data-flow-unpivot.md
         - name: Окно
           href: data-flow-window.md
-        - name: Преобразование в плоскую структуру
-          href: data-flow-flatten.md
     - name: Параметризация
       items:
         - name: Параметризация связанных служб

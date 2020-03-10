@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 02/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3fb18b6afb2fc32ba8cc07c46a9a4f5a026d07e2
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.openlocfilehash: d6dba6f68238327c1c5c51c75cc5a65ceec2838f
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402292"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942381"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -43,7 +43,7 @@ ms.locfileid: "78402292"
 | --- | --- | --- |
 | **Государственные организации Австралии** | Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 |
 | **Европа** | Центральная часть Франции, Юго-Восточная Франция, Северная Германия, Центрально-Западная Германия, Северная Европа, Норвегия восток, Западная Норвежская, Северная Швейцария, Западная Швейцария, западная часть Соединенного Королевства, южная часть Соединенного Королевства, Западная Европа |Амстердам, Amsterdam2, Копенгаген, Дублин, Франкфурт, Geneva, Лондон, London2, Марселе, Милан, Мюнхене, Ньюпорт (), Oslo, Париж, Ставанжер, Стокгольм, Цюрих, Мюнхене |
-| **Северная Америка** | Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Далласе, Денвер, Лас-, Лос-Анджелес, Майами, Нью-Йорк, Сан Сан Антонио, Сиэтл, впадина, Silicon Valley2, Вашингтон (округ Колумбия), штат Вашингтон, округ DC2, Монреаль, Квебек, Москва, Торонто |
+| **Северная Америка** | Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Далласе, Денвер, Лас-Йорк, Лос-Анджелес, Майами, Нью-Йорке, Сан Сан Антонио, Сиэтл, впадина, Silicon Valley2, Вашингтон (округ Колумбия), Вашингтон, округ DC2, Монреаль, Квебек City, Торонто, Vancouver |
 | **Азия** | Восточная Азия, Юго-Восточная Азия | Бангкок, Гонконг, Гонконг, Kong2, Джакарта, Куала — Лумпур, Сингапур, Сингапур 2, Тайбэй |
 | **Индия** | Западная Индия, Центральная Индия, Южная Индия |Ченнаи, Ченнаи 2, Мумбаи, Мумбаи 2 |
 | **Япония** | Западная Япония, Восточная Япония |Осака, Токио, Tokyo2 |
@@ -137,6 +137,7 @@ ms.locfileid: "78402292"
 | **Токио** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Восточная Япония | 10G, 100G | Aryaka Networks, AT & T NetBond, ББИКС, Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Equinix, Интернет-инициативы Япония Inc. — IIJ, Orange, NTT Communications, NTT Восток, оранжевый, Softbank ", Verizon |
 | **Tokyo2** | [В Токио](https://www.attokyo.com/) | 2 | Восточная Япония | 10G, 100G | |
 | **Торонто** | [Кологикс TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Центральная Канада | 10G, 100G | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Reach Megaport, Telus, Verizon, Zayo |
+| **Vancouver** | [Кологикс VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | Недоступно | 10G, 100G | |
 | **Вашингтон, округ Колумбия** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Кологикс, Colt, Comcast, Коресите, Equinix, Internet2, в облаке, IX REACH, уровень 3, взаимодействие, Orange, Неутрона сети, NTT Communications, оранжевый, Паккетфабрик, SES , Спринт, Tata Communications, Телиа перевозчик, Verizon, Zayo |
 | **Вашингтон, округ Колумбия 2** | [Коресите Рестоне](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | CenturyLink Cloud Connect, Коресите, ИНТЕЛСАТ, ВИАСАТ, Zayo | 
 | **Цюрих** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Северная Швейцария | 10G, 100G | Взаимооблако, Interxion, Orange, компания Swisscom |

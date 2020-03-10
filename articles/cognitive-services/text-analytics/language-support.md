@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: aahi
 ms.openlocfilehash: c5a413a4fe8d9ac9b7aac59ca78cedc6d5a7a313
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78899443"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942657"
 ---
 # <a name="language-and-region-support-for-the-text-analytics-api"></a>Поддержка языков и регионов в API анализа текста
 
@@ -77,7 +77,7 @@ API анализа текста может обнаружить широкий �
 
 \** также доступны в [Анализ тональности v3](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis#sentiment-analysis-versions-and-features) и/или [именованной сущности распознавание](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features) открытых предварительных версий v3.
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 [Страница документации по службам Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/)   
 [Страница продукта Cognitive Services](https://azure.microsoft.com/services/cognitive-services/)

@@ -33,7 +33,7 @@
       items:
         - name: .NET Core с базой данных SQL
           href: app-service-web-tutorial-dotnetcore-sqldb.md
-        - name: .NET с базой данных SQL
+        - name: .NET Framework и База данных SQL
           href: app-service-web-tutorial-dotnet-sqldatabase.md
         - name: PHP с MySQL
           href: app-service-web-tutorial-php-mysql.md
@@ -87,8 +87,6 @@
           href: networking-features.md
         - name: Использование Шлюза приложений с конечными точками служб
           href: networking/app-gateway-with-service-endpoints.md
-        - name: Частные конечные точки
-          href: networking/private-endpoint.md
     - name: Входящие и исходящие IP-адреса
       href: overview-inbound-outbound-ips.md
     - name: Интеграция с виртуальной сетью

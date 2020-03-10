@@ -1,24 +1,28 @@
 ---
-title: Документация по планировщику Azure. Руководства и справочник по API | Документация Майкрософт
-description: Узнайте, как использовать планировщик для планирования и вызова заданий, таких как повторяющиеся действия в приложениях и плановое обслуживание. Учебники, справочники по API и другие документы.
+title: Документация по Планировщику Azure
+description: Создавайте, планируйте и запускайте автоматические задания в облаке, такие как повторяющиеся действия приложения и плановое обслуживание.
 services: scheduler
-author: carmonmills
-manager: carmonm
-layout: LandingPage
 ms.service: scheduler
+author: derek1ee
+ms.author: estfan
+layout: LandingPage
 ms.topic: landing-page
-ms.date: 01/23/2017
-ms.author: carmonm
-ms.openlocfilehash: ddf335d0c2b165ae98feab0b42e60527f87de59c
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.date: 02/23/2020
+ms.openlocfilehash: 026d4590160d8292fed5e1a678715ac65fdbd859
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68610332"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898607"
 ---
 # <a name="scheduler-documentation"></a>Документация по планировщику
 
-Узнайте, как использовать планировщик для планирования и автоматического вызова повторяющихся заданий в облаке. В руководствах, справочниках по API и другой документации показано, как планировать и отслеживать задания, такие как повторяющиеся действия приложений и плановое обслуживание.
+> [!IMPORTANT]
+> Поддержка планировщика Azure [прекращается](../logic-apps/logic-apps-overview.md). Вместо него будет использоваться [Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с настроенными в планировщике задачами, [перейдите на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+>
+> Планировщик больше не доступен на портале Azure, но [REST API](/rest/api/scheduler) и [командлеты PowerShell Планировщика Azure](scheduler-powershell-reference.md) можно использовать и дальше для управления заданиями и коллекциями заданий.
+
+Узнайте о создании, планировании, выполнении, администрировании и обновлении автоматических повторяющихся заданий в облаке. В руководствах, справочниках по API и другой документации показано, как планировать и отслеживать задания, такие как повторяющиеся действия приложений и плановое обслуживание.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -33,6 +37,24 @@ ms.locfileid: "68610332"
                     </div>
                     <div class="cardText">
                         <h3>Сведения о планировщике</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/azure/scheduler/migrate-from-scheduler-to-logic-apps">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="media/index/get-started.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Миграция из планировщика Azure в Azure Logic Apps</h3>
                     </div>
                 </div>
             </div>
@@ -57,29 +79,11 @@ ms.locfileid: "68610332"
         </div>
         </a>
     </li>
-    <li>
-        <a href="/azure/scheduler/scheduler-get-started-portal">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="media/index/get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Начало работы с планировщиком Azure</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
 </ul>
 
 ---
 
-<h2>Справочные материалы</h2>
+<h2>Справочник</h2>
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">

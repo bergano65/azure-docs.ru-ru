@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/31/2019
+ms.date: 03/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 74d9aa8228e841b17313fb3c15efe459ccd7339a
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: bce71355eef19ec3cc85525033274f57b1a3e0b9
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77613586"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78946411"
 ---
 # <a name="administer-group-policy-in-an-azure-ad-domain-services-managed-domain"></a>Администрирование групповая политика в управляемом домене доменных служб Azure AD
 
@@ -42,7 +42,11 @@ ms.locfileid: "77613586"
 * Учетная запись пользователя, входящая в группу *администраторов Azure AD DC* в клиенте Azure AD.
 
 > [!NOTE]
-> Так как [доступ к контроллерам домена в Azure AD DS отсутствует](faqs.md#can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop), вы не можете создать и использовать центральное хранилище для административных шаблонов групповой политики в управляемом домене. [SYSVOL не входит в локальную синхронизацию Azure AD Connect](synchronization.md#what-isnt-synchronized-to-azure-ad-ds), поэтому вы также не можете создать локальное центральное хранилище и синхронизировать его с Azure AD DS через Azure AD.
+> Вы можете использовать групповая политика административные шаблоны, скопировав новые шаблоны на рабочую станцию управления. Скопируйте файлы *ADMX* в `%SYSTEMROOT%\PolicyDefinitions` и скопируйте файлы с файлами *ADML* , зависящие от языкового стандарта, в `%SYSTEMROOT%\PolicyDefinitions\[Language-CountryRegion]`, где `Language-CountryRegion` соответствует языку и региону файлов *ADML* .
+>
+> Например, скопируйте США версию файла *ADML* на английском языке в папку `\en-us`.
+>
+> Кроме того, можно централизованно хранить административный шаблон групповая политика на контроллерах домена, входящих в управляемый домен AD DS Azure. Дополнительные сведения см. в статье [Создание центрального хранилища для групповая политика административные шаблоны в Windows и управление им](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
 
 ## <a name="install-group-policy-management-tools"></a>Установка средств управления групповая политика
 
@@ -114,7 +118,7 @@ ms.locfileid: "77613586"
 
     По завершении выберите **файл > сохранить** , чтобы сохранить политику. По умолчанию компьютеры обновляют групповая политика каждые 90 минут и применяют внесенные изменения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных параметрах групповая политика, которые можно настроить с помощью консоль управления групповыми политиками, см. в разделе [Работа с элементами предпочтений групповая политика][group-policy-console].
 

@@ -34,24 +34,36 @@
       href: connect-virtual-network-gateway-vwan.md
     - name: Настройка глобального пиринга виртуальных сетей
       href: global-peering-vnet.md
-    - name: Настройка шифрования ExpressRoute
-      href: vpn-over-expressroute.md
     - name: Обновление номера SKU Виртуальной глобальной сети
       href: upgrade-virtual-wan.md
     - name: Настройка пользовательской политики IPsec
       href: virtual-wan-custom-ipsec-portal.md
-    - name: "Настройка сертификатов для пользовательского VPN-подключения (точка\_— сеть)"
-      href: certificates-point-to-site.md
-    - name: "Настройка клиента Azure\_AD для VPN пользователя"
-      href: openvpn-azure-ad-tenant.md
-    - name: Включение многофакторной идентификации для VPN пользователя
-      href: openvpn-azure-ad-mfa.md
-    - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
-      href: virtual-wan-point-to-site-azure-ad.md
-    - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
-      href: openvpn-azure-ad-tenant-multi-app.md
-    - name: Скачивание глобальных профилей VPN и профилей VPN на основе концентраторов
-      href: global-hub-profile.md
+    - name: ExpressRoute
+      items:
+        - name: Создание подключения ExpressRoute
+          href: virtual-wan-expressroute-portal.md
+        - name: Настройка шифрования ExpressRoute
+          href: vpn-over-expressroute.md
+    - name: "Подключение типа сайт\_— сайт"
+      items:
+        - name: Создание подключения "сеть — сеть"
+          href: virtual-wan-site-to-site-portal.md
+    - name: "Пользовательские VPN-подключения (точка\_— сеть)"
+      items:
+        - name: "Создание пользовательских VPN-подключений (точка\_— сеть)"
+          href: virtual-wan-point-to-site-portal.md
+        - name: Настройка сертификатов для пользовательских VPN-подключений
+          href: certificates-point-to-site.md
+        - name: "Настройка клиента Azure\_AD для VPN пользователя"
+          href: openvpn-azure-ad-tenant.md
+        - name: Включение многофакторной идентификации для VPN пользователя
+          href: openvpn-azure-ad-mfa.md
+        - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
+          href: virtual-wan-point-to-site-azure-ad.md
+        - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
+          href: openvpn-azure-ad-tenant-multi-app.md
+        - name: Скачивание глобальных профилей пользовательских VPN-подключений и профилей на основе концентраторов
+          href: global-hub-profile.md
     - name: Настройка маршрутизации
       items:
         - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль

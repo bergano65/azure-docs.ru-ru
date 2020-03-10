@@ -3,12 +3,12 @@ title: Ресурсы для разработчиков — Language Understandi
 description: Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
 ms.topic: reference
 ms.date: 02/11/2020
-ms.openlocfilehash: fda4301a0851e6a36cbb6493dcf48293b2c5db37
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: f9d531f800ba0729a1f679c0bf3b11c8958c78ed
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152692"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391949"
 ---
 # <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Language Understanding (LUIS)
 
@@ -109,7 +109,7 @@ Language Understanding предоставляет возможность упр�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об общих [кодах ошибок HTTP](luis-reference-response-codes.md)
-* [Справочная документация](https://docs.microsoft.com/azure/index#pivot=sdkstools) по всем API и пакетам SDK
+* [Справочная документация](https://docs.microsoft.com/azure/index) по всем API и пакетам SDK
 * [Платформа Bot](https://github.com/Microsoft/botbuilder-dotnet) и [служба Azure Bot](https://dev.botframework.com/)
 * [LUDown](https://github.com/microsoft/botbuilder-tools/blob/master/packages/Ludown)
 * [Восприятные контейнеры](../cognitive-services-container-support.md)

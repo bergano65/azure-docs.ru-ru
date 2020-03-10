@@ -1,25 +1,19 @@
 ---
 title: Поиск и удаление неподключенных сетевых интерфейсов Azure
 description: Как найти и удалить не подключенные к виртуальным машинам сетевые адаптеры Azure с помощью Azure CLI.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: networking
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 04/10/2018
 ms.author: cynthn
-ms.openlocfilehash: 3d7a0e3405dd87d17c9d7aac2e989ab82531d9b0
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 8142b95ee666e205a8328eafd5930f1f386e49af
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036131"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945139"
 ---
 # <a name="how-to-find-and-delete-unattached-network-interface-cards-nics-for-azure-vms"></a>Как найти и удалить неподключенные сетевые карты (NIC) на виртуальных машинах Azure
 Когда вы удаляете виртуальную машину в Azure, ее сетевые карты не удаляются по умолчанию. При создании и удалении нескольких виртуальных машин неиспользуемые сетевые карты продолжают занимать выделенные им внутренние IP-адреса. Когда вы будете создавать другие сетевые карты виртуальной машины, они, возможно, не смогут получить IP-адрес в адресном пространстве подсети. В этой статье показано, как найти и удалить неподключенные сетевые карты.
@@ -50,6 +44,6 @@ do
 done
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о создании виртуальных сетей и управлении ими в Azure см. в статье [Управление виртуальными сетями Azure и виртуальными машинами Linux с помощью Azure CLI](tutorial-virtual-network.md).

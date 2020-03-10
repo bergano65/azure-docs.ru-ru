@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: b330b6176ba9cadc85fad81876caf2583021d503
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 0ad780c04954c09ddfd432b3c7de3dc65f0841bf
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988640"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942998"
 ---
 # <a name="introduction-to-knowledge-stores-in-azure-cognitive-search"></a>Общие сведения о хранилищах знаний в Когнитивном поиске Azure
 
@@ -131,7 +131,7 @@ ms.locfileid: "76988640"
 
 <a name="kstore-rest-api"></a>
 
-## <a name="api-reference"></a>Справочные материалы по API
+## <a name="api-reference"></a>Справочник по API
 
 REST API версия `2019-05-06-Preview` предоставляет хранилище знаний через дополнительные определения в навыков. Дополнительные сведения о вызове API см. в [статье Создание хранилища знаний с помощью инструкции POST](knowledge-store-create-rest.md) .
 
@@ -147,3 +147,13 @@ REST API версия `2019-05-06-Preview` предоставляет храни
 
 > [!div class="nextstepaction"]
 > [Создание хранилища знаний с помощью POST и RESTFUL](knowledge-store-create-rest.md)
+
+Дополнительные сведения о проекциях, возможностях и способах [их определения в наборе навыков](knowledge-store-projection-overview.md)
+
+> [!div class="nextstepaction"]
+> [Проекции в хранилище знаний](knowledge-store-projection-overview.md)
+
+Учебник, посвященный дополнительным концепциям, таким как срезы, встроенная формирование и связи, начинается с [определения проекций в хранилище знаний](knowledge-store-projections-examples.md) .
+
+> [!div class="nextstepaction"]
+> [Определение проекций в хранилище знаний](knowledge-store-projections-examples.md)

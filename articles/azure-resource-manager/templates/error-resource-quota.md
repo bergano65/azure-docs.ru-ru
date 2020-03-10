@@ -3,12 +3,12 @@ title: Ошибки квоты
 description: Описывает, как устранять ошибки квот ресурсов при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 03/09/2018
-ms.openlocfilehash: 9b5cce3258a29b6ac6a3db50f880e3242c4d5e8c
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 410b086b39d63d03491d390364f4aec6300fc7c1
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250155"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945487"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
 
@@ -76,7 +76,7 @@ Get-AzVMUsage -Location "South Central US"
 
 Возвращаемые данные:
 
-```powershell
+```output
 Name                             Current Value Limit  Unit
 ----                             ------------- -----  ----
 Availability Sets                            0  2000 Count

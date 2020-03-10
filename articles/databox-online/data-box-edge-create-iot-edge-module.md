@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: alkohli
-ms.openlocfilehash: f57a0431bbdafee2d38038d0039b47a34e5454c7
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: 3aa1190fb713c2fbdedcb1ce84a65d4263693827
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71315834"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942555"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Разработка модуля C# IOT Edge для перемещения файлов на Data Box Edge
 
@@ -21,7 +21,7 @@ ms.locfileid: "71315834"
 
 Модули Azure IoT Edge можно использовать вместе с Data Box Edge, чтобы преобразовывать данные при передаче в Azure. Используемый в этой статье модуль реализует логику копирования файла из общего локального ресурса в общий облачный ресурс на устройстве Data Box Edge.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание реестра контейнеров для хранения модулей (в виде образов Docker) и управление ими.
@@ -40,7 +40,7 @@ ms.locfileid: "71315834"
 
 Как только файл попадает в общий облачный ресурс, он автоматически загружается в учетную запись хранения Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы убедитесь, что у вас есть следующие ресурсы:
 
@@ -53,7 +53,7 @@ ms.locfileid: "71315834"
 - Ресурсы для разработки:
 
     - [Visual Studio Code](https://code.visualstudio.com/).
-    - [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
+    - [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
     - [Расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge).
     - [Пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download).
     - [Docker CE](https://store.docker.com/editions/community/docker-ce-desktop-windows). Вам может потребоваться учетная запись для скачивания и установки программного обеспечения.
@@ -73,7 +73,7 @@ ms.locfileid: "71315834"
    5. **Включите** параметр **Пользователь-администратор**.
    6. Для номера SKU выберите вариант **Базовый**.
 
-      ![Создать реестр контейнеров](./media/data-box-edge-create-iot-edge-module/create-container-registry-1.png)
+      ![Создание реестра контейнеров](./media/data-box-edge-create-iot-edge-module/create-container-registry-1.png)
  
 4. Нажмите кнопку **Создать**.
 5. После создания реестра контейнеров просмотрите его и выберите **Ключи доступа**.
@@ -92,8 +92,8 @@ ms.locfileid: "71315834"
 Создайте шаблон решения C#, который можно настроить с помощью собственного кода.
 
 1. В Visual Studio Code выберите **Представление > Палитра команд**, чтобы открыть палитру команд VS Code.
-2. В палитре команд введите и выполните команду **Azure: Sign in** (Azure: войти). Следуйте инструкциям, чтобы войти в свою учетную запись Azure. Если вход был выполнен, то этот шаг можно пропустить.
-3. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge Solution** (Azure IoT Edge: создать решение IoT Edge). В палитре команд укажите следующие сведения для создания решения:
+2. В палитре команд введите и выполните команду **Azure: Sign in** (Azure: Вход) и следуйте инструкциям, чтобы войти в свою учетную запись Azure. Если вход был выполнен, то этот шаг можно пропустить.
+3. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge solution**. В палитре команд укажите следующие сведения для создания решения:
 
     1. Выберите папку, где требуется создать решение.
     2. Введите имя своего решения или примите имя по умолчанию **EdgeSolution**.
@@ -270,10 +270,10 @@ ms.locfileid: "71315834"
 
     Возможно, вы увидите следующее предупреждение, которое можно игнорировать:
 
-    *Program.cs(77,44): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread. (Program.cs(77,44): предупреждение CS1998. В асинхронном методе отсутствуют операторы await; будет выполнен синхронный запуск. Воспользуйтесь оператором await для ожидания неблокирующих вызовов API или оператором await Task.Run(...) для выполнения связанных с ЦП заданий в фоновом потоке.)*
+    *Program. cs (77, 44): Warning CS1998: этот асинхронный метод не имеет операторов await и будет выполняться синхронно. Рассмотрите возможность использования оператора await для ожидания неблокирующих вызовов API или await Task. Run (...) для выполнения работы, связанной с ЦП, в фоновом потоке.*
 
 4. Полный адрес образа контейнера с тегом можно увидеть в окне интегрированного терминала VS Code. Адрес образа создается на основе информации, сохраненной в файле module.json в формате `<repository>:<version>-<platform>`. Для этой статьи адрес должен выглядеть так: `mycontreg2.azurecr.io/filecopymodule:0.0.1-amd64`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы развернуть и запустить этот модуль на Data Box Edge, см. действия в разделе [Добавление модуля](data-box-edge-deploy-configure-compute.md#add-a-module).

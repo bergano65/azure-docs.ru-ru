@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 description: Узнайте, как Visual Studio Code и Azure Dev Spaces помочь в отладке и быстром переборе Kubernetes приложений.
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры
-ms.openlocfilehash: f7fbcdd36e9c0db74a71a50cb7cde44484e6c555
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b6ab1330399ab2eb7afc9be61a7767a22ca82320
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438381"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942487"
 ---
 # <a name="how-visual-studio-code-works-with-azure-dev-spaces"></a>Как Visual Studio Code работает с Azure Dev Spaces
 
@@ -54,7 +54,7 @@ Visual Studio Code и расширение Azure Dev Spaces, работающе�
 
 [azds-extension]: https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds
 [azds-yaml]: how-dev-spaces-works.md#prepare-your-code
-[csharp-extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp
+[csharp-extension]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
 [java-extension]: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debugger-azds
 [maven]: https://maven.apache.org
 [quickstart-java]: quickstart-java.md

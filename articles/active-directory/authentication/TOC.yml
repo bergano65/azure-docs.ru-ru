@@ -110,20 +110,18 @@
           href: howto-registration-mfa-sspr-combined-troubleshoot.md
     - name: Защита паролей Azure AD
       items:
-        - name: Интеграция с локальной средой
-          items:
-            - name: Развертывание защиты паролем Azure AD
-              href: howto-password-ban-bad-on-premises-deploy.md
-            - name: Настройка защиты паролем Azure AD
-              href: howto-password-ban-bad-on-premises-operations.md
-            - name: Мониторинг защиты паролем Azure AD
-              href: howto-password-ban-bad-on-premises-monitor.md
-            - name: "Устранение неполадок с функцией защиты паролем Azure\_AD"
-              href: howto-password-ban-bad-on-premises-troubleshoot.md
-            - name: Часто задаваемые вопросы
-              href: howto-password-ban-bad-on-premises-faq.md
-            - name: Журнал версий локального агента
-              href: howto-password-ban-bad-on-premises-agent-versions.md
+        - name: Планирование и развертывание в локальной среде
+          href: howto-password-ban-bad-on-premises-deploy.md
+        - name: Включение и настройка в локальной среде
+          href: howto-password-ban-bad-on-premises-operations.md
+        - name: Мониторинг локальных развертываний
+          href: howto-password-ban-bad-on-premises-monitor.md
+        - name: Устранение неполадок с локальными развертываниями
+          href: howto-password-ban-bad-on-premises-troubleshoot.md
+        - name: Вопросы и ответы по локальной среде
+          href: howto-password-ban-bad-on-premises-faq.md
+        - name: Журнал версий локального агента
+          href: howto-password-ban-bad-on-premises-agent-versions.md
     - name: Смарт-блокировка Azure AD
       href: howto-password-smart-lockout.md
     - name: Вход без пароля

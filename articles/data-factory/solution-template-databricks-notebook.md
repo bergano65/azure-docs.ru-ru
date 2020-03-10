@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/10/2018
-ms.openlocfilehash: 322f5306949b266958ded908e981ed530e8245c8
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.date: 03/03/2020
+ms.openlocfilehash: e771bc152ab50f907a8f2ad384e887c00d3f627a
+ms.sourcegitcommit: e6bce4b30486cb19a6b415e8b8442dd688ad4f92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78227747"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78933943"
 ---
 # <a name="transformation-with-azure-databricks"></a>Преобразование с Azure Databricks
 
@@ -30,9 +30,9 @@ ms.locfileid: "78227747"
 
 Чтобы не усложнять этот шаблон, он не создает запланированный триггер. При необходимости вы можете его добавить.
 
-![1](media/solution-template-Databricks-notebook/Databricks-tutorial-image01.png)
+![1](media/solution-template-Databricks-notebook/pipeline-example.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 1. Создайте **учетную запись хранения больших двоичных объектов** и контейнер с именем `sinkdata` для использования в качестве **приемника**. Сохраните **имя учетной записи хранения**, **имя контейнера** и **ключ доступа**, так как они понадобятся позже в шаблоне.
 
@@ -41,13 +41,13 @@ ms.locfileid: "78227747"
 3. **Импортируйте записную книжку для преобразования**. 
     1. В Azure Databricks сослаться на снимки экрана для импорта записной книжки **преобразования** в рабочую область "кирпичи". Он не должен находиться в том же расположении, что и приведенный ниже, но следует запомнить путь, выбранный для дальнейшего использования.
    
-       ![2](media/solution-template-Databricks-notebook/Databricks-tutorial-image02.png)    
+       ![2](media/solution-template-Databricks-notebook/import-notebook.png)    
     
     1. Выберите "Импорт из: **URL-адрес**" и введите в текстовом поле следующий URL-адрес:
     
        * `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`
         
-       ![3](media/solution-template-Databricks-notebook/Databricks-tutorial-image03.png)    
+       ![3](media/solution-template-Databricks-notebook/import-from-url.png)    
 
 4. Теперь изменим в записную книжку **Преобразование** сведения о подключении к хранилищу. Перейдите к **команде 5** (как показано в приведенном ниже фрагменте кода) в импортированной записной книжке, а затем замените `<storage name>`и `<access key>` сведениями о подключении к хранилищу. Убедитесь, что это та же учетная запись, которую вы создали ранее. Она должна содержать контейнер `sinkdata`.
 
@@ -75,9 +75,9 @@ ms.locfileid: "78227747"
 
 5.  Создайте **маркер доступа Databricks**, чтобы Фабрика данных могла получать доступ к Databricks. **Сохраните маркер доступа** для последующего использования при создании связанной службы "кирпичные данные", которая выглядит примерно так: "dapi32db32cbb4w6eee18b7d87e45exxxxxx".
 
-    ![4](media/solution-template-Databricks-notebook/Databricks-tutorial-image04.png)
+    ![4](media/solution-template-Databricks-notebook/user-setting.png)
 
-    ![5](media/solution-template-Databricks-notebook/Databricks-tutorial-image05.png)
+    ![5](media/solution-template-Databricks-notebook/generate-new-token.png)
 
 ## <a name="how-to-use-this-template"></a>Как использовать этот шаблон
 
@@ -90,19 +90,19 @@ ms.locfileid: "78227747"
         Вы можете использовать для этого примера общедоступное хранилище BLOB-объектов, содержащее исходные файлы. Ниже приведена ссылка на снимок экрана для настройки. Используйте ниже **URL-адрес SAS** для подключения к исходному хранилищу (доступ только для чтения): 
         * `https://storagewithdata.blob.core.windows.net/data?sv=2018-03-28&si=read%20and%20list&sr=c&sig=PuyyS6%2FKdB2JxcZN0kPlmHSBlD8uIKyzhBWmWzznkBw%3D`
 
-        ![6](media/solution-template-Databricks-notebook/Databricks-tutorial-image06.png)
+        ![6](media/solution-template-Databricks-notebook/source-blob-connection.png)
 
     1.  **Подключение к целевому BLOB-объекту** — для копирования данных в. 
         
         В связанной службе приемника выберите хранилище, созданное в **предварительном компоненте** 1.
 
-        ![7](media/solution-template-Databricks-notebook/Databricks-tutorial-image07.png)
+        ![7](media/solution-template-Databricks-notebook/destination-blob-connection.png)
 
     1.  **Azure Databricks** — для подключения к кластеру "кирпичы".
 
         Создайте связанную службу "кирпичы" с помощью ключа доступа, созданного в **предварительном компоненте** 2. c. Если у вас есть *интерактивный кластер*, его можно выбрать. (В этом примере используется параметр *New job cluster* (Новый кластер заданий).)
 
-        ![8](media/solution-template-Databricks-notebook/Databricks-tutorial-image08.png)
+        ![8](media/solution-template-Databricks-notebook/databricks-connection.png)
 
 1. Выберите **использовать этот шаблон**, и вы увидите конвейер, созданный, как показано ниже:
     
@@ -114,20 +114,20 @@ ms.locfileid: "78227747"
 
 1.  Для выполнения проверки доступности источника создается **флаг доступности** действия проверки. *Саурцеаваилабилитидатасет* , созданный на предыдущем шаге, выбран в качестве набора данных.
 
-    ![12](media/solution-template-Databricks-notebook/Databricks-tutorial-image12.png)
+    ![12](media/solution-template-Databricks-notebook/validation-settings.png)
 
 1.  Для копирования набора данных из источника в приемник создается файл действия копирования **в BLOB-объект** . Настройки источника и приемника в действии копирования см. на снимках экрана ниже.
 
-    ![13](media/solution-template-Databricks-notebook/Databricks-tutorial-image13.png)
+    ![13](media/solution-template-Databricks-notebook/copy-source-settings.png)
 
-    ![14](media/solution-template-Databricks-notebook/Databricks-tutorial-image14.png)
+    ![14](media/solution-template-Databricks-notebook/copy-sink-settings.png)
 
 1.  Будет создано **Преобразование** действия записной книжки и выбрана связанная служба, созданная на предыдущем шаге.
-    ![16](media/solution-template-Databricks-notebook/Databricks-tutorial-image16.png)
+    ![16](media/solution-template-Databricks-notebook/notebook-activity.png)
 
      1. Выберите вкладку **Параметры** . Для *пути к записной книжке*шаблон определяет путь по умолчанию. Может потребоваться просмотреть и выбрать правильный путь к записной книжке, отправленный в **предварительном компоненте** 2. 
 
-         ![17](media/solution-template-Databricks-notebook/databricks-tutorial-image17.png)
+         ![17](media/solution-template-Databricks-notebook/notebook-settings.png)
     
      1. Ознакомьтесь с *базовыми параметрами* , созданными, как показано на снимке экрана. Они передаются в записную книжку "кирпичы" из фабрики данных. 
 
@@ -135,16 +135,16 @@ ms.locfileid: "78227747"
 
 1.  **Параметры конвейера** определяются следующим образом.
 
-    ![15](media/solution-template-Databricks-notebook/Databricks-tutorial-image15.png)
+    ![15](media/solution-template-Databricks-notebook/pipeline-parameters.png)
 
 1. Настройка наборов данных.
     1.  **Саурцеаваилабилитидатасет** создается для проверки доступности исходных данных.
 
-        ![9](media/solution-template-Databricks-notebook/Databricks-tutorial-image09.png)
+        ![9](media/solution-template-Databricks-notebook/source-availability-dataset.png)
 
     1.  **Саурцефилесдатасет** — для копирования исходных данных.
 
-        ![10](media/solution-template-Databricks-notebook/Databricks-tutorial-image10.png)
+        ![10](media/solution-template-Databricks-notebook/source-file-dataset.png)
 
     1.  **Дестинатионфилесдатасет** — для копирования в приемник или место назначения.
 
@@ -152,17 +152,17 @@ ms.locfileid: "78227747"
 
         2.  Путь к файлу — *синкдата/staged_sink*.
 
-            ![11](media/solution-template-Databricks-notebook/Databricks-tutorial-image11.png)
+            ![11](media/solution-template-Databricks-notebook/destination-dataset.png)
 
 
 1.  Выберите **Отладка** , чтобы запустить конвейер. Чтобы просмотреть более подробные журналы Spark, можно перейти по ссылке для журналов Databricks.
 
-    ![18](media/solution-template-Databricks-notebook/Databricks-tutorial-image18.png)
+    ![18](media/solution-template-Databricks-notebook/pipeline-run-output.png)
 
     Вы также можете проверить файл данных с помощью обозревателя хранилища. (Для корреляции с запусками конвейера Фабрики данных этот пример добавляет идентификатор запуска конвейера из фабрики данных в выходную папку. Таким образом, вы сможете отслеживать файлы, созданные во время каждого запуска.)
 
-    ![19](media/solution-template-Databricks-notebook/Databricks-tutorial-image19.png)
+    ![19](media/solution-template-Databricks-notebook/verify-data-files.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)

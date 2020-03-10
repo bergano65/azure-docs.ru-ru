@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: 67846293257661a4f7a907d76402d2e98c339225
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 17bff459a0399d39c6bfdd772ad16d0b5b2f6771
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251640"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945738"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -48,7 +48,7 @@ ms.locfileid: "77251640"
 Для разработки .NET Core/C# необходимо установить следующие компоненты:
 
 * [.NET Core](https://www.microsoft.com/net/learn/get-started) (версия 2.0.0 или более новая)
-* [Расширение VS Code C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). Необходимо для отладки служб C#. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
+* [Расширение VS Code C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Необходимо для отладки служб C#. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
 
 ## <a name="setup"></a>Настройка
 

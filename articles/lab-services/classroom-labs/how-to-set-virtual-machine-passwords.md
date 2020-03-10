@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/20/2020
 ms.author: spelluru
-ms.openlocfilehash: 0af2b5f7d756060d463d2b4f3ef71bdd135710ee
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 0ff464936025a20cb6925adc7ef6eb44c2fe1f0e
+ms.sourcegitcommit: e6bce4b30486cb19a6b415e8b8442dd688ad4f92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77591529"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78933823"
 ---
 # <a name="set-up-and-manage-virtual-machine-pool"></a>Настройка и администрирование пула виртуальных машин 
 В этой статье показано, как выполнить следующие задачи.
@@ -103,7 +103,14 @@ ms.locfileid: "77591529"
 > [!NOTE]
 > Когда профессор запускает виртуальную машину и подключается к ней, квота учащегося не затрагивается. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="export-list-of-virtual-machines-to-a-csv-file"></a>Экспорт списка виртуальных машин в CSV-файл
+
+1. Перейдите на вкладку **пул виртуальных машин** .
+2. На панели инструментов нажмите кнопку **...** (многоточие), а затем выберите **экспорт CSV**. 
+
+    ![Экспорт списка виртуальных машин](../media/how-to-export-users-virtual-machines-csv/virtual-machines-export-csv.png)
+
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о других вариантах использования учащихся, которые можно настроить (в качестве владельца лаборатории), см. в следующей статье: [Настройка использования учащихся](how-to-configure-student-usage.md).
 
 Дополнительные сведения о том, как студенты могут сбрасывать пароли для виртуальных машин, см. [в статье Установка и сброс пароля для виртуальной машины в учебных лабораториях (учащихся)](how-to-set-virtual-machine-passwords-student.md).

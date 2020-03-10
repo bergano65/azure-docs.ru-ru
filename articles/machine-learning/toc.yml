@@ -75,10 +75,10 @@
       href: samples-notebooks.md
     - name: Открытые наборы данных Azure
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
+    - name: Наборы данных конструктора
+      href: sample-designer-datasets.md
     - name: Полные примеры MLOps
       href: 'https://github.com/microsoft/MLOps'
-    - name: Примеры наборов данных конструктора
-      href: designer-sample-datasets.md
 - name: Основные понятия
   items:
     - name: Рабочая область

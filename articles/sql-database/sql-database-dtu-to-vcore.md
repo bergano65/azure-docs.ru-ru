@@ -1,5 +1,5 @@
 ---
-title: Миграция с DTU на виртуальное ядро
+title: Переход с DTU на виртуальное ядро
 description: Выполните миграцию из модели DTU в модель Виртуальное ядро. Переход на виртуальное ядро аналогичен обновлению или переходу на более раннюю версию уровня "Стандартный" и "Премиум".
 services: sql-database
 ms.service: sql-database
@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
-ms.date: 10/08/2019
-ms.openlocfilehash: f34439b7750ca1858e71d4a36121eb65001fff50
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 03/09/2020
+ms.openlocfilehash: 693065046f92e0e9eade14c43e9942772440937d
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73811272"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945405"
 ---
 # <a name="migrate-from-the-dtu-based-model-to-the-vcore-based-model"></a>Миграция из модели на основе DTU в модель на основе виртуальное ядро
 
@@ -45,7 +45,7 @@ ms.locfileid: "73811272"
 |Общего назначения|Критически важный для бизнеса|Обновление|Сначала необходимо перенести базу данных-получатель|
 ||||
 
-\* каждые 100 DTU на уровне Standard требуется по крайней мере 1 Виртуальное ядро, а для каждых 125 DTU на уровне Premium требуется по крайней мере 1 Виртуальное ядро.
+\* как правило, для каждых 100 DTU на уровне Standard требуется по крайней мере 1 Виртуальное ядро, а для каждых 125 DTU на уровне Premium требуется по крайней мере 1 Виртуальное ядро. Дополнительные сведения см. в разделе [Модель покупки на основе числа виртуальных ядер](https://docs.microsoft.com/azure/sql-database/sql-database-purchase-models#vcore-based-purchasing-model).
 
 ## <a name="migrate-failover-groups"></a>Перенос групп отработки отказа
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: c590a27f61c1a555ae30828332e4140a6116f95f
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: 2413601db629fda62976b75e349b0340749dc6fa
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77443862"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944087"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -180,6 +180,10 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 При использовании обычной модели ценообразования службы приложений Azure с вас снимается плата за количество часов работы вашего приложения.
 
 ## <a name="other-questions"></a>Другие вопросы
+
+**Что означает "Запрошенная функция недоступна в группе ресурсов"?**
+
+Это сообщение может появиться при создании веб-приложения с помощью Azure Resource Manager (ARM). В зависимости от текущего ограничения для одной и той же группы ресурсов нельзя смешивать приложения Windows и Linux в одном регионе.
 
 **Какие символы поддерживаются в именах параметров приложения?**
 

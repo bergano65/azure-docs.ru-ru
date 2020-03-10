@@ -2,23 +2,17 @@
 title: Развертывание ресурсов в группе управления
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 03/06/2020
-ms.openlocfilehash: ae561468531b0c3fa584a02793c58ee64ca3610f
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.date: 03/09/2020
+ms.openlocfilehash: dc46762755718c798b4a7eed6f2dc6b8afce9b98
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894891"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942755"
 ---
 # <a name="create-resources-at-the-management-group-level"></a>Создание ресурсов на уровне группы управления
 
-Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы в:
-
-* [уровень подписки](deploy-to-subscription.md)
-* уровень группы управления (рассматривается в этой статье)
-* [уровень клиента](deploy-to-tenant.md)
-
-Развертывания на уровне группы управления используются для выполнения действий, имеющих смысл на этом уровне, таких как назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md) или применение [политик](../../governance/policy/overview.md).
+По мере разработки вашей организации может потребоваться определить и назначить [политики](../../governance/policy/overview.md) или [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) для группы управления. С помощью шаблонов уровня группы управления можно декларативно применять политики и назначать роли на уровне группы управления.
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
@@ -31,7 +25,7 @@ ms.locfileid: "78894891"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>Схема
+### <a name="schema"></a>схема
 
 Схема, используемая для развертываний группы управления, отличается от схемы развертываний группы ресурсов.
 
@@ -41,10 +35,10 @@ ms.locfileid: "78894891"
 https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#
 ```
 
-Для файлов параметров используйте:
+Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentParameters.json#
+https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
 ```
 
 ## <a name="deployment-commands"></a>Команды развертывания
@@ -165,9 +159,8 @@ New-AzManagementGroupDeployment `
 
 * [Создайте группу ресурсов, политику и назначение политики](https://github.com/Azure/azure-docs-json-samples/blob/master/management-level-deployment/azuredeploy.json).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
-* Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](template-syntax.md).
-* Список доступных в шаблоне функций см. в статье о [функциях шаблонов](template-functions.md).
+* Можно также развернуть шаблоны на уровне [подписки](deploy-to-subscription.md) и на [уровне клиента](deploy-to-tenant.md).

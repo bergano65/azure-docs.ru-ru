@@ -89,7 +89,7 @@
       href: relational-nosql.md
     - name: Глобальное распределение
       items:
-        - name: Обзор
+        - name: Общие сведения о глобальном распределении
           displayName: 'replication, replicate, geo distribution'
           href: distribute-data-globally.md
         - name: Уровни согласованности
@@ -118,7 +118,7 @@
           href: globally-distributed-transactional-analytical-storage.md
     - name: Секционирование
       items:
-        - name: Обзор
+        - name: Общие сведения о секционировании
           href: partitioning-overview.md
         - name: Секционирование и горизонтальное масштабирование
           href: partition-data.md
@@ -461,7 +461,7 @@
           href: modeling-data.md
         - name: Индексация
           items:
-            - name: Обзор
+            - name: Общие сведения об индексировании
               displayName: 'range, spatial'
               href: index-overview.md
             - name: Политики индексирования
@@ -476,7 +476,7 @@
           href: database-transactions-optimistic-concurrency.md
     - name: Канал изменений
       items:
-        - name: Обзор
+        - name: Общие сведения о канале изменений
           href: change-feed.md
         - name: Чтение канала изменений
           href: read-change-feed.md
@@ -530,7 +530,7 @@
           href: cosmos-db-reserved-capacity.md
     - name: Безопасность
       items:
-        - name: Обзор
+        - name: Общие сведения о безопасности
           href: database-security.md
         - name: Шифрование данных
           href: database-encryption-at-rest.md
@@ -564,12 +564,12 @@
   items:
     - name: API Cassandra
       items:
-        - name: Введение
-          href: cassandra-introduction.md
-        - name: Поддержка коммуникационного протокола
-          href: cassandra-support.md
-        - name: Эластичное масштабирование
-          href: manage-scale-cassandra.md
+        - name: Обзор
+          items:
+            - name: Сведения об API Cassandra для Cosmos DB
+              href: cassandra-introduction.md
+            - name: Поддержка коммуникационного протокола
+              href: cassandra-support.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -591,6 +591,10 @@
             - name: 4. Перенос данных
               displayName: import
               href: cassandra-import-data.md
+        - name: Основные понятия
+          items:
+            - name: Эластичное масштабирование
+              href: manage-scale-cassandra.md
         - name: Практические руководства
           items:
             - name: Канал изменений
@@ -628,12 +632,14 @@
               href: cli-samples-cassandra.md
     - name: API MongoDB
       items:
-        - name: Введение
-          href: mongodb-introduction.md
-        - name: Поддержка протокола коммутации (3.2)
-          href: mongodb-feature-support.md
-        - name: Поддержка протокола коммутации (3.6)
-          href: mongodb-feature-support-36.md
+        - name: Обзор
+          items:
+            - name: Сведения об API MongoDB для Cosmos DB
+              href: mongodb-introduction.md
+            - name: Поддержка протокола коммутации (3.2)
+              href: mongodb-feature-support.md
+            - name: Поддержка протокола коммутации (3.6)
+              href: mongodb-feature-support-36.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -719,10 +725,12 @@
     - name: API Gremlin
       displayName: 'graph, graph database'
       items:
-        - name: Введение
-          href: graph-introduction.md
-        - name: Поддержка коммуникационного протокола
-          href: gremlin-support.md
+        - name: Обзор
+          items:
+            - name: Сведения об API Germlin для Cosmos DB
+              href: graph-introduction.md
+            - name: Поддержка коммуникационного протокола
+              href: gremlin-support.md
         - name: Краткие руководства
           items:
             - name: Консоль Gremlin
@@ -778,8 +786,10 @@
               href: cli-samples-gremlin.md
     - name: API таблиц
       items:
-        - name: Введение
-          href: table-introduction.md
+        - name: Обзор
+          items:
+            - name: Сведения об API таблиц для Cosmos DB
+              href: table-introduction.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -849,10 +859,14 @@
               href: /rest/api/storageservices/table-service-rest-api
     - name: API etcd
       items:
-        - name: Введение
-          href: etcd-api-introduction.md
-        - name: "Использование Azure Kubernetes с Azure Cosmos\_DB"
-          href: bootstrap-kubernetes-cluster.md
+        - name: Обзор
+          items:
+            - name: Сведения об API etcd для Cosmos DB
+              href: etcd-api-introduction.md
+        - name: Практические руководства
+          items:
+            - name: "Использование Azure Kubernetes с Azure Cosmos\_DB"
+              href: bootstrap-kubernetes-cluster.md
 - name: Практические руководства
   items:
     - name: Работа с учетной записью Azure Cosmos

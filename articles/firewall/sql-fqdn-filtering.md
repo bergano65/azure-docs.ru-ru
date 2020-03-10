@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 07/19/2019
 ms.author: victorh
-ms.openlocfilehash: 239998f29ac9a578174c5dba547bb24ba0755505
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a42d6bcdcec2a5de7432f11216a4d8dd0c1deef9
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68318189"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942572"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил приложения брандмауэра Azure с помощью полных доменных имен SQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "68318189"
 
 С помощью полных доменных имен SQL можно фильтровать трафик:
 
-- Из виртуальных сетей в базу данных SQL Azure или хранилище данных SQL Azure. Пример: Разрешить доступ только к *SQL-Server1.Database.Windows.NET*.
+- Из виртуальных сетей в базу данных SQL Azure или хранилище данных SQL Azure. Например: разрешить доступ только к *SQL-Server1.Database.Windows.NET*.
 - Из локальной среды в управляемые экземпляры SQL Azure или SQL IaaS, работающие в виртуальных сетей.
 - От периферийных серверов до управляемых экземпляров SQL Azure или SQL IaaS, работающих в виртуальных сетей.
 
@@ -37,10 +37,10 @@ ms.locfileid: "68318189"
 ## <a name="configure-using-azure-cli"></a>Настройка с помощью Azure CLI
 
 1. Разверните [брандмауэр Azure с помощью Azure CLI](deploy-cli.md).
-2. Если вы фильтруете трафик в базу данных SQL Azure, хранилище данных SQL или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения о том, как переключить режим подключения SQL, см. в статье [Архитектура подключения SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#change-azure-sql-database-connection-policy). 
+2. Если вы фильтруете трафик в базу данных SQL Azure, хранилище данных SQL или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения о том, как переключить режим подключения SQL, см. в статье [Параметры подключения к SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settingse#change-azure-sql-database-connection-policy).
 
    > [!NOTE]
-   > Режим *прокси* SQL может привести к увеличению задержки по сравнению с перенаправлением. Если вы хотите продолжить использовать режим перенаправления, который используется по умолчанию для клиентов, подключающихся в Azure, можно отфильтровать доступ с помощью [тега службы](service-tags.md) SQL в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
+   > Режим *прокси* SQL может привести к увеличению задержки по сравнению с *перенаправлением*. Если вы хотите продолжить использовать режим перенаправления, который используется по умолчанию для клиентов, подключающихся в Azure, можно отфильтровать доступ с помощью [тега службы](service-tags.md) SQL в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
 
 3. Настройте правило приложения с полным доменным именем SQL, чтобы разрешить доступ к SQL Server:
 
@@ -59,15 +59,15 @@ ms.locfileid: "68318189"
 
 ## <a name="configure-using-the-azure-portal"></a>Настройка с помощью портал Azure
 1. Разверните [брандмауэр Azure с помощью Azure CLI](deploy-cli.md).
-2. Если вы фильтруете трафик в базу данных SQL Azure, хранилище данных SQL или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения о том, как переключить режим подключения SQL, см. в статье [Архитектура подключения SQL Azure](../sql-database/sql-database-connectivity-architecture.md#change-azure-sql-database-connection-policy). 
+2. Если вы фильтруете трафик в базу данных SQL Azure, хранилище данных SQL или SQL Управляемый экземпляр, убедитесь, что для режима подключения SQL задано значение **прокси**. Сведения о том, как переключить режим подключения SQL, см. в статье [Параметры подключения к SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-settingse#change-azure-sql-database-connection-policy).  
 
    > [!NOTE]
-   > Режим *прокси* SQL может привести к увеличению задержки по сравнению с перенаправлением. Если вы хотите продолжить использовать режим перенаправления, который используется по умолчанию для клиентов, подключающихся в Azure, можно отфильтровать доступ с помощью [тега службы](service-tags.md) SQL в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
+   > Режим *прокси* SQL может привести к увеличению задержки по сравнению с *перенаправлением*. Если вы хотите продолжить использовать режим перенаправления, который используется по умолчанию для клиентов, подключающихся в Azure, можно отфильтровать доступ с помощью [тега службы](service-tags.md) SQL в [правилах сети](tutorial-firewall-deploy-portal.md#configure-a-network-rule)брандмауэра.
 3. Добавьте правило приложения с соответствующим протоколом, портом и полным доменным именем SQL, а затем нажмите кнопку **сохранить**.
    ![правило приложения с полным доменным именем SQL](media/sql-fqdn-filtering/application-rule-sql.png)
 4. Получите доступ к SQL из виртуальной машины в виртуальной сети, которая фильтрует трафик через брандмауэр. 
 5. Убедитесь, что в [журналах брандмауэра Azure](log-analytics-samples.md) разрешено отображение трафика.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о прокси-сервере SQL и режимах перенаправления см. в статье [Архитектура подключения к базе данных SQL Azure](../sql-database/sql-database-connectivity-architecture.md).

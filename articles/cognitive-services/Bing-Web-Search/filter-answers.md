@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: scottwhi
 ms.openlocfilehash: 6fa022f181e2061c6a7f3e08d1f2f501ddd9cac3
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111413"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78381811"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Фильтрация результатов, возвращаемых в ответе на запрос поиска  
 
@@ -53,7 +53,7 @@ ms.locfileid: "74111413"
 
 Можно отфильтровать типы ответов, включаемых Bing в ответ (например, изображения, видео и новости), с помощью параметра запроса [респонсефилтер](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter) , который представляет собой список ответов с разделителями-запятыми. Ответ будет добавлен в ответ, если Bing найдет соответствующее для него содержимое. 
 
-Чтобы исключить конкретные ответы из ответа, например изображения, добавьте в начало `-` символа в тип ответа. Например,
+Чтобы исключить конкретные ответы из ответа, например изображения, добавьте в начало `-` символа в тип ответа. Пример:
 
 ```
 &responseFilter=-images,-videos

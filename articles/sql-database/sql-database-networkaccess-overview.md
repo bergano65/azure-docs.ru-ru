@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
-ms.date: 08/05/2019
-ms.openlocfilehash: 16ba90aab52c00f77af590f854217cd989df53b3
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.date: 03/09/2020
+ms.openlocfilehash: 822fab5c00501d415c3c184587141e869523e417
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251912"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945380"
 ---
 # <a name="azure-sql-database-and-data-warehouse-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и хранилища данных
 
@@ -27,19 +27,28 @@ ms.locfileid: "77251912"
 > [!IMPORTANT]
 > Эта статья *не* относится к **Управляемому экземпляру Базы данных SQL Azure**. Дополнительные сведения о конфигурации сети см. в разделе [Подключение к управляемый экземпляр](sql-database-managed-instance-connect-app.md) .
 
-При создании нового SQL Server Azure [из портал Azure](sql-database-single-database-get-started.md)результат представляет собой общедоступную конечную точку в формате *yourservername.Database.Windows.NET*. По проекту доступ к общедоступной конечной точке запрещен. Затем можно использовать следующие элементы управления доступом к сети, чтобы выборочно разрешить доступ к базе данных SQl через общедоступную конечную точку.
+При создании нового SQL Server Azure из [портал Azure](sql-database-single-database-get-started.md)результат представляет собой общедоступную конечную точку в формате *yourservername.Database.Windows.NET*.
+
+Чтобы выборочно разрешить доступ к базе данных SQl через общедоступную конечную точку, можно использовать следующие элементы управления доступом к сети:
 - Разрешить службы Azure. Если задано значение ON, другие ресурсы в границах Azure, например виртуальная машина Azure, могут получить доступ к базе данных SQL.
 
-- Правила брандмауэра IP-адресов: — Используйте эту функцию, чтобы явно разрешить подключения с определенного IP-адреса, например с локальных компьютеров.
+- Правила брандмауэра IP-адресов. Используйте эту функцию, чтобы явно разрешить подключения с определенного IP-адреса, например с локальных компьютеров.
 
+Вы также можете разрешить закрытый доступ к базе данных SQL из [виртуальных сетей](../virtual-network/virtual-networks-overview.md) с помощью:
 - Правила брандмауэра виртуальной сети: Используйте эту функцию, чтобы разрешить трафик из определенной виртуальной сети в границах Azure.
 
+- Частная ссылка: Используйте эту функцию, чтобы создать частную конечную точку для Azure SQL Server в определенной виртуальной сети.
+
+
+
+Более подробное описание этих элементов управления доступом и их действия см. в приведенном ниже видео.
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Data-Exposed--SQL-Database-Connectivity-Explained/player?WT.mc_id=dataexposed-c9-niner]
+
 
 ## <a name="allow-azure-services"></a>Разрешить службы Azure 
 При создании нового SQL Server Azure [из портал Azure](sql-database-single-database-get-started.md)этот параметр остается неустановленным.
 
- ![Снимок экрана создания нового сервера][1]
+
 
 Этот параметр можно также изменить через панель брандмауэра после создания SQL Server Azure, как показано ниже.
   
@@ -129,7 +138,10 @@ start          end
 > [!NOTE]
 > Пока еще невозможно разместить базу данных SQL в подсети. Если сервер Базы данных SQL Azure был узлом в подсети виртуальной сети, то все узлы в этой виртуальной сети могли взаимодействовать с базой данных SQL. В этом случае виртуальные машины могли взаимодействовать с базой данных SQL без необходимости в каких-либо правилах виртуальной сети или правилах фильтрации IP-адресов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="private-link"></a>Приватный канал 
+Частная ссылка позволяет подключаться к Azure SQL Server через **закрытую конечную точку**. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../virtual-network/virtual-networks-overview.md) и подсети.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Краткое руководство по созданию правила брандмауэра IP на уровне сервера см. в статье [Создание базы данных SQL Azure](sql-database-single-database-get-started.md).
 
@@ -146,3 +158,4 @@ start          end
 <!--Image references-->
 [1]: ./media/sql-database-get-started-portal/new-server2.png
 [2]: ./media/sql-database-get-started-portal/manage-server-firewall.png
+

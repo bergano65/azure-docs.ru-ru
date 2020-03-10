@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: b9ac15e6909498c38f618a24be6b010dc2774b07
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 431372b930269c3dfa6bdc6e8b2fe4d291a8162e
+ms.sourcegitcommit: e6bce4b30486cb19a6b415e8b8442dd688ad4f92
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905508"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78933792"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -41,7 +41,7 @@ ms.locfileid: "76905508"
 - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
-## <a name="advanced"></a>Расширенная
+## <a name="advanced"></a>Дополнительно
 
 AzCopy автоматически определяет тип содержимого файлов при отправке с локального диска на основе расширения или содержимого файла (если не указано расширение).
 
@@ -81,7 +81,7 @@ azcopy copy [source] [destination] [flags]
   
 - azcopy CP "/Пас/то/Дир" "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]/[путь/Каталог]? [SAS] "--recursive = true
 
-или
+или диспетчер конфигурации служб
 
 - azcopy CP "/Пас/то/Дир" "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]/[путь/Каталог]? [SAS] "--recursive = true--размещение-MD5
 
@@ -147,31 +147,31 @@ azcopy copy [source] [destination] [flags]
 
 Копирование одного объекта в хранилище BLOB-объектов из Amazon Web Services (AWS) S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
   
-- azcopy CP "https://s3.amazonaws.com/ [сегмент]/[объект]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/к/большой двоичный объект]? [SAS] "
+- azcopy CP "https://s3.amazonaws.com/[сегмент]/[объект]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/к/большой двоичный объект]? [SAS] "
 
 Скопируйте весь каталог в хранилище BLOB-объектов из AWS S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/ [контейнер]/[Папка]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/папка]? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/[контейнер]/[Папка]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/папка]? [SAS] "--recursive = true
 
 Дополнительные сведения о заполнителье [Folder] см. в https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html.
 
 Скопируйте все контейнеры в хранилище BLOB-объектов из Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/ " "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 Скопируйте все контейнеры в хранилище BLOB-объектов из области Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3- [регион]. амазонавс. com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3-[регион]. амазонавс. com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 Скопируйте подмножество контейнеров, используя символ-шаблон (*) в имени контейнера. Как и в предыдущих примерах, вам потребуется ключ доступа и маркер SAS. Убедитесь, что задана переменная среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/ [имя контейнера]/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/[имя контейнера]/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 ## <a name="options"></a>Параметры
 
 **--BLOB-тип** строка определяет тип большого двоичного объекта в месте назначения. Используется для отправки больших двоичных объектов и при копировании между учетными записями (по умолчанию "Обнаружение"). Допустимые значения: "Detect", "BlockBlob", "PageBlob" и "Аппендблоб". При копировании между учетными записями значение "обнаружить" заставляет AzCopy использовать тип исходного большого двоичного объекта для определения типа целевого большого двоичного объекта. При отправке файла параметр "обнаружить" определяет, является ли файл VHD или VHDX-файлом, основанным на расширении файла. Если файл является Ether VHD или VHDX-файлом, AzCopy обрабатывает файл как страничный BLOB-объект. (по умолчанию "Обнаружение")
 
-**--Block-BLOB-** передача блочного большого двоичного объекта в хранилище Azure с помощью этого уровня BLOB-объектов. (по умолчанию "нет")
+**--Block-BLOB-** передача строк позволяет блокировать большие двоичные объекты непосредственно на выбранный вами [уровень доступа](../blobs/storage-blob-storage-tiers.md) . (по умолчанию "None"). Допустимые значения: "None", "Hot", "Cool" и "Archive". Если не передается ни один уровень, большой двоичный объект будет наследовать уровень учетной записи хранения.
 
 **--Block-Size-МБ** float используйте этот размер блока (указанный в MIB) при отправке в службу хранилища Azure и скачивании из службы хранилища Azure. Значение по умолчанию вычисляется автоматически на основе размера файла. Десятичные дроби разрешены (например: 0,25).
 
@@ -241,6 +241,6 @@ azcopy copy [source] [destination] [flags]
 
 **--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [azcopy](storage-ref-azcopy.md)

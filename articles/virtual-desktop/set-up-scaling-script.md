@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: helohr
-ms.openlocfilehash: 353501912836e0f6706f20deed1c1d9d416f1ce6
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: f88d8681bbb1cfc9482e84c467bbd514aed41764
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894517"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945255"
 ---
 # <a name="scale-session-hosts-using-azure-automation"></a>Масштабирование узлов сеансов с помощью службы автоматизации Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "78894517"
 >[!NOTE]
 >Средство масштабирования управляет режимом балансировки нагрузки для пула узлов, который он масштабирует. Она устанавливает балансировку нагрузки в ширину и в часы пиковой загрузки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем приступить к настройке средства масштабирования, убедитесь, что у вас есть следующие компоненты:
 
@@ -83,7 +83,9 @@ ms.locfileid: "78894517"
 3. Выполните следующий командлет, чтобы скачать скрипт для создания учетной записи службы автоматизации Azure:
 
      ```powershell
-     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Azure/RDS-Templates/master/wvd-templates/wvd-scaling-script/createazureautomationaccount.ps1" -OutFile "your local machine path\ createazureautomationaccount.ps1"
+     Set-Location -Path "c:\temp"
+     $uri = "https://raw.githubusercontent.com/Azure/RDS-Templates/master/wvd-templates/wvd-scaling-script/createazureautomationaccount.ps1"
+     Invoke-WebRequest -Uri $uri -OutFile ".\createazureautomationaccount.ps1"
      ```
 
 4. Выполните следующий командлет, чтобы выполнить скрипт и создать учетную запись службы автоматизации Azure:

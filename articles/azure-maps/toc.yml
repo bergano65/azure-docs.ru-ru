@@ -165,6 +165,22 @@
               href: map-get-information-from-coordinate.md
             - name: Отображение направлений от точки А до точки Б
               href: map-route.md
+        - name: Модуль пространственного ввода-вывода
+          items:
+            - name: Использование модуля пространственного ввода-вывода
+              href: how-to-use-spatial-io-module.md
+            - name: Добавление простого уровня данных
+              href: spatial-io-add-simple-data-layer.md
+            - name: Чтение и запись пространственных данных
+              href: spatial-io-read-write-spatial-data.md
+            - name: Добавление слоя карты OGC
+              href: spatial-io-add-ogc-map-layer.md
+            - name: Подключение службе WFS
+              href: spatial-io-connect-wfs-service.md
+            - name: Использование основных операций
+              href: spatial-io-core-operations.md
+            - name: Сведения о поддерживаемых форматах данных
+              href: spatial-io-supported-data-format-details.md
         - name: 'Браузеры, поддерживаемые в веб-пакетах SDK'
           href: supported-browsers.md
     - name: Разработка с помощью пакета SDK для Android

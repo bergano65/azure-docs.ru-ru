@@ -57,6 +57,8 @@
       href: test-your-model.md
     - name: Усовершенствование классификатора
       href: getting-started-improving-your-classifier.md
+    - name: Выбор домена
+      href: select-domain.md
     - name: Использование API прогнозирования
       href: use-prediction-api.md
     - name: Использование функции Smart Labeler

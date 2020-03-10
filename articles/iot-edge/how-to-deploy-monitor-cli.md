@@ -9,12 +9,12 @@ ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: fffe1ebda0103b3ed2cd8f76642ecb2967d23069
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 9152b38a0155b610f39f7de239bcc377ad96be5d
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76510300"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78893243"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
 
@@ -28,7 +28,7 @@ ms.locfileid: "76510300"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device.md#prerequisites-for-the-azure-cli) с установленной средой выполнения IoT Edge.
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
 * [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
@@ -148,7 +148,7 @@ ms.locfileid: "76510300"
 }
 ```
 
-В предыдущем примере показана многоуровневая развернутая Настройка `properties.desired` для модуля. Если это многоуровневое развертывание нацелено на устройство, в котором уже был применен тот же модуль, все существующие требуемые свойства будут перезаписаны. Для обновления вместо перезаписи, требуемых свойств можно определить новый подраздел. Пример.
+В предыдущем примере показана многоуровневая развернутая Настройка `properties.desired` для модуля. Если это многоуровневое развертывание нацелено на устройство, в котором уже был применен тот же модуль, все существующие требуемые свойства будут перезаписаны. Для обновления вместо перезаписи, требуемых свойств можно определить новый подраздел. Пример:
 
 ```json
 "SimulatedTEmperatureSensor": {

@@ -6,17 +6,17 @@ ms.author: cynthn
 ms.date: 05/02/2019
 ms.topic: article
 ms.service: virtual-machines-linux
-manager: gwallace
-ms.openlocfilehash: 1bac04bbb67c7472de92c6da322121bafc20a560
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.subservice: imaging
+ms.openlocfilehash: 15a3b39b1466ffec87971b8f054ca916567d89d7
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68695435"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944958"
 ---
-# <a name="preview-create-a-linux-vm-with-azure-image-builder"></a>Предварительный просмотр: Создание виртуальной машины Linux с помощью Azure Image Builder
+# <a name="preview-create-a-linux-vm-with-azure-image-builder"></a>Предварительная версия: создание виртуальной машины Linux с помощью Azure Image Builder
 
-В этой статье показано, как создать настраиваемый образ Linux с помощью построителя образов Azure и Azure CLI. В примере, приведенном в этой статье, для настройки изображения используются три различных [настраиваемых способа](image-builder-json.md#properties-customize).
+В этой статье показано, как создать настраиваемый образ Linux с помощью построителя образов Azure и Azure CLI. В примере, приведенном в этой статье, для настройки изображения используются три различных [настраиваемых](image-builder-json.md#properties-customize) способа.
 
 - Shell (Скриптури) — загружает и запускает [сценарий оболочки](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/customizeScript.sh).
 - Shell (inline) — выполняет определенные команды. В этом примере встроенные команды включают создание каталога и обновление операционной системы.
@@ -75,7 +75,7 @@ imageName=myBuilderImage
 runOutputName=aibLinux
 ```
 
-Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
+Создайте переменную для идентификатора подписки. Его можно получить с помощью `az account show | grep id`.
 
 ```azurecli-interactive
 subscriptionID=<Your subscription ID>
@@ -91,7 +91,7 @@ az group create -n $imageResourceGroup -l $location
 ## <a name="set-permissions-on-the-resource-group"></a>Задание разрешений для группы ресурсов
 Предоставьте разрешение "участник" построителя образов для создания образа в группе ресурсов. Без соответствующих разрешений сборка образа завершится ошибкой. 
 
-`--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
+Значение `--assignee` — это идентификатор регистрации приложения для службы "Построитель образов". 
 
 ```azurecli-interactive
 az role assignment create \
@@ -114,7 +114,7 @@ sed -i -e "s/<imageName>/$imageName/g" helloImageTemplateLinux.json
 sed -i -e "s/<runOutputName>/$runOutputName/g" helloImageTemplateLinux.json
 ```
 
-При необходимости можно изменить этот пример. JSON. Например, можно увеличить значение `buildTimeoutInMinutes` , чтобы обеспечить более длительное выполнение сборок. Файл можно изменить в Cloud Shell с помощью текстового редактора, например `vi`.
+При необходимости можно изменить этот пример. JSON. Например, можно увеличить значение `buildTimeoutInMinutes`, чтобы обеспечить более длительное выполнение сборок. Файл можно изменить в Cloud Shell с помощью текстового редактора, например `vi`.
 
 ```azurecli-interactive
 vi helloImageTemplateLinux.json
@@ -203,7 +203,7 @@ ssh azureuser@<pubIp>
 *******************************************************
 ```
 
-Введите `exit` , когда завершите подключение SSH.
+Введите `exit`, чтобы закрыть SSH-подключение.
 
 ## <a name="check-the-source"></a>Проверка источника
 
@@ -213,7 +213,7 @@ ssh azureuser@<pubIp>
 cat helloImageTemplateLinux.json
 ```
 
-Более подробные сведения об этом JSON файле см. в статье [Справочник](image-builder-json.md) по шаблонам в конструкторе образов
+Более подробные сведения об этом JSON файле см. в статье [Справочник по шаблонам в конструкторе образов](image-builder-json.md)
 
 ## <a name="clean-up"></a>Очистка
 
@@ -235,6 +235,6 @@ az group delete -n $imageResourceGroup
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](image-builder-json.md).

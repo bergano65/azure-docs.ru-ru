@@ -145,10 +145,6 @@
             - name: Выходные данные
               displayName: 'iteration,copy'
               href: copy-outputs.md
-        - name: Ресурсы на уровне подписки
-          href: deploy-to-subscription.md
-        - name: Ресурсы уровня группы управления
-          href: deploy-to-management-group.md
     - name: Использование средств разработки
       items:
         - name: VS Code
@@ -182,7 +178,15 @@
           href: rollback-on-error.md
         - name: Обеспечение защиты шаблона с помощью маркера SAS
           href: secure-template-with-sas-token.md
-        - name: Развертывание нескольких подписок или групп ресурсов
+    - name: Развертывание в области
+      items:
+        - name: Подписка
+          href: deploy-to-subscription.md
+        - name: группа управления;
+          href: deploy-to-management-group.md
+        - name: Клиент
+          href: deploy-to-tenant.md
+        - name: Несколько подписок или групп ресурсов
           href: cross-resource-group-deployment.md
     - name: Предоставление параметров
       items:

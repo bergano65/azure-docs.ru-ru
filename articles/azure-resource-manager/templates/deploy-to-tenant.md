@@ -2,23 +2,17 @@
 title: Развертывание ресурсов в клиенте
 description: Описывает развертывание ресурсов в области клиента в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 03/06/2020
-ms.openlocfilehash: d63697f3c140b5ad374607f1ecb00dad20e697de
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
-ms.translationtype: MT
+ms.date: 03/09/2020
+ms.openlocfilehash: aa72116c3e6e98293b28b2d4413fd1dafb1372d9
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78899143"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942741"
 ---
 # <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
 
-Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы в:
-
-* [уровень подписки](deploy-to-subscription.md)
-* [уровень группы управления](deploy-to-management-group.md)
-* уровень клиента (рассматривается в этой статье)
-
-Развертывание на уровне клиента используется для выполнения действий, имеющих смысл на этом уровне, таких как назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md) или применение [политик](../../governance/policy/overview.md).
+По мере разработки вашей организации может потребоваться определить и назначить [политики](../../governance/policy/overview.md) или [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в клиенте Azure AD. С помощью шаблонов уровня клиента можно декларативно применять политики и назначать роли на глобальном уровне.
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
@@ -31,7 +25,7 @@ ms.locfileid: "78899143"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>Схема
+### <a name="schema"></a>схема
 
 Схема, используемая для развертываний клиентов, отличается от схемы развертываний группы ресурсов.
 
@@ -41,10 +35,10 @@ ms.locfileid: "78899143"
 https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#
 ```
 
-Для файлов параметров используйте:
+Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentParameters.json#
+https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
 ```
 
 ## <a name="required-access"></a>Требуемый доступ
@@ -178,8 +172,7 @@ New-AzTenantDeployment `
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
-* Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](template-syntax.md).
-* Список доступных в шаблоне функций см. в статье о [функциях шаблонов](template-functions.md).
+* Можно также развертывать шаблоны на уровне [подписки](deploy-to-subscription.md) или [группы управления](deploy-to-management-group.md).

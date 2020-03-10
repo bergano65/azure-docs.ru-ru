@@ -1,20 +1,20 @@
 ---
 title: Настройка визуализации зависимостей в службе "миграция Azure"
-description: Описание настройки визуализации зависимостей в службе "Миграция серверов Azure".
+description: В этой статье описывается, как настроить визуализацию зависимостей в службе "Миграция серверов Azure".
 ms.topic: article
 ms.date: 2/24/2020
-ms.openlocfilehash: 054e2301160a885909630c2968863e5f9e25af69
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 2b75a38a376558946841d08ab7a9dbf730232e51
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77916291"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942078"
 ---
 # <a name="set-up-dependency-visualization"></a>Настройка визуализации зависимостей
 
 В этой статье описывается, как настроить визуализацию зависимостей в службе "миграция Azure": Оценка сервера. [Визуализация зависимостей](concepts-dependency-visualization.md#what-is-dependency-visualization) помогает определить и понять зависимости между компьютерами, которые необходимо оценить и перенести в Azure.
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
 - [Ознакомьтесь](concepts-dependency-visualization.md) с требованиями и затратами, связанными с визуализацией зависимостей.
 - Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
@@ -73,7 +73,7 @@ ms.locfileid: "77916291"
 2. На странице **приветствия** нажмите кнопку **Далее**. На странице **Условия лицензии** нажмите кнопку **Принимаю**, чтобы принять условия лицензии.
 3. В поле **Конечная папка** оставьте или измените папку установки по умолчанию. Нажмите кнопку **Далее**.
 4. В разделе **Параметры установки агента** последовательно выберите **Azure Log Analytics** > **Далее**.
-5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Нажмите кнопку **Далее**.
+5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Щелкните **Далее**.
 
 Агент можно установить из командной строки или с помощью автоматизированного метода, такого как Configuration Manager или [Intigua](https://go.microsoft.com/fwlink/?linkid=2104196).
 - Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](../azure-monitor/platform/log-analytics-agent.md#installation-and-configuration).
@@ -85,7 +85,7 @@ ms.locfileid: "77916291"
 Чтобы установить MMA на компьютере Linux, выполните следующие действия.
 
 1. Перенесите соответствующий пакет (x86 или x64) на компьютер Linux с помощью scp или sftp.
-2. Установите пакет с помощью аргумента --install.
+2. Установите пакет, используя аргумент --install.
 
     ```sudo sh ./omsagent-<version>.universal.x64.sh --install -w <workspace id> -s <workspace key>```
 
@@ -199,7 +199,7 @@ VMConnection
 | summarize sum(BytesSent), sum(BytesReceived) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание оценки](how-to-create-assessment.md) для группы.
 

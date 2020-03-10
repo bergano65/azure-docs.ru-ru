@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
-ms.date: 02/01/2020
-ms.openlocfilehash: 20c93d214195f8fe389f4982e1d8b10998c7057d
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.date: 03/09/2020
+ms.openlocfilehash: 97ce402045cfd2c990b457c5d4d06888cda632d5
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78192393"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945605"
 ---
 # <a name="choose-between-the-vcore-and-the-dtu-purchasing-models"></a>Выбор между Виртуальное ядро и моделями приобретения DTU
 
@@ -85,6 +85,11 @@ ms.locfileid: "78192393"
 
 - Каждые 100 DTU на уровне Standard требуется по крайней мере 1 Виртуальное ядро на уровне служб общего назначения.
 - Каждые 125 DTU на уровне Premium требуется по крайней мере 1 Виртуальное ядро на уровне служб критически важный для бизнеса.
+
+> [!NOTE]
+> Требования к размерам DTU для Виртуальное ядро приблизительны и предоставляются для помощи в начальной оценке целевой цели службы базы данных. Оптимальная конфигурация целевой базы данных зависит от рабочей нагрузки. 
+> 
+> Достижение оптимального соотношения цены и производительности может потребовать использования гибкости модели Виртуальное ядро для настройки количества виртуальных ядер, [создания оборудования](sql-database-service-tiers-vcore.md#hardware-generations), уровней [обслуживания](sql-database-service-tiers-vcore.md#service-tiers) и [вычислений](sql-database-service-tiers-vcore.md#compute-tiers) , а также настройки других параметров конфигурации базы данных, таких как [Максимальная степень параллелизма](https://docs.microsoft.com/sql/relational-databases/query-processing-architecture-guide#parallel-query-processing).
 
 ## <a name="dtu-based-purchasing-model"></a>Модель приобретения на основе единиц DTU
 

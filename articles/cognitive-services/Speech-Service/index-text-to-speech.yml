@@ -12,12 +12,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 02/11/2020
   ms.author: dapine
-  ms.openlocfilehash: 11fbb549409afd78f77e194fe45fa0d7626f75a7
-  ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+  ms.openlocfilehash: 9070577c07cb826d10b911689f456d64709450b7
+  ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/06/2020
-  ms.locfileid: "78674454"
+  ms.lasthandoff: 03/09/2020
+  ms.locfileid: "78943371"
 landingContent:
 - title: Начало работы
   linkLists:
@@ -59,10 +59,6 @@ landingContent:
       url: how-to-custom-voice-create-voice.md
     - text: Запись образцов голосов
       url: record-custom-voice-samples.md
-    - text: Рекомендации по именованию настраиваемых ключевых слов
-      url: speech-devices-sdk-kws-guidelines.md
-    - text: Выявление пользовательских ключевых слов
-      url: speech-devices-sdk-create-kws.md
     - text: Фильтрация Пользовательского голоса
       url: concepts-gating-overview.md
     - text: Развертывание технологии для синтеза
@@ -71,11 +67,11 @@ landingContent:
       url: concepts-disclosure-guidelines.md
     - text: Конструктивные шаблоны для раскрытия информации
       url: concepts-disclosure-patterns.md
-- title: Ссылки
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
-    - text: Языковая поддержка
+    - text: Поддержка языков
       url: language-support.md#text-to-speech
     - text: Цены
       url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services

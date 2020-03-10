@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: a3583a5efd120733ce7f6b71a7594b5636593f99
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795999"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373485"
 ---
 # <a name="annotations-for-application-gateway-ingress-controller"></a>Заметки для контроллера входящего трафика шлюза приложений 
 
@@ -24,7 +24,7 @@ ms.locfileid: "73795999"
 
 Для входящего в АГИК ресурса он **должен быть помечен** с помощью `kubernetes.io/ingress.class: azure/application-gateway`. Только после этого АГИК будет работать с рассматриваемым ресурсом.
 
-| Ключ заметки | Тип значения | По умолчанию | Допустимые значения
+| Ключ заметки | Тип значения | Значение по умолчанию | Допустимые значения
 | -- | -- | -- | -- |
 | [appgw.ingress.kubernetes.io/backend-path-prefix](#backend-path-prefix) | `string` | `nil` | |
 | [appgw.ingress.kubernetes.io/ssl-redirect](#ssl-redirect) | `bool` | `false` | |

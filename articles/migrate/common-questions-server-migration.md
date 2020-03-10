@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о переносе сер
 description: Получите ответы на часто задаваемые вопросы об использовании миграции сервера миграция Azure для миграции компьютеров.
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 273ef746e685afcf9f3654963dd9c6bd5b855b24
-ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
+ms.openlocfilehash: 4d3638e930b4e12a29df4ab189ffb24ab248582b
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2020
-ms.locfileid: "78927532"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78939208"
 ---
 # <a name="azure-migrate-server-migration-common-questions"></a>Миграция сервера миграция Azure: распространенные вопросы
 
@@ -74,7 +74,20 @@ ms.locfileid: "78927532"
 ## <a name="how-many-vms-can-i-replicate-at-one-time-by-using-agentless-migration"></a>Сколько виртуальных машин можно реплицировать одновременно с помощью миграции без агента?
 
 Сейчас можно одновременно перенести 100 виртуальных машин на экземпляр vCenter Server. Выполните миграцию в пакетах по 10 виртуальным машинам.
+
+## <a name="when-do-i-migrate-machines-as-physical-servers"></a>Когда выполняется перенос компьютеров в качестве физических серверов?
+
+Перенос компьютеров в качестве физических серверов полезен в ряде сценариев:
+
+- При переносе локальных физических серверов.
+- Если выполняется миграция виртуальных машин, виртуализованных такими платформами, как Xen, KVM.
+- Чтобы выполнить миграцию виртуальных машин Hyper-V или VMware, по каким-либо причинам вы не можете использовать стандартный процесс миграции для [Hyper-v](tutorial-migrate-hyper-v.md)или миграции [VMware](server-migrate-overview.md) . Например, если вы не используете VMware vCenter и используете только узлы ESXi.
+- Миграция виртуальных машин, которые в настоящее время выполняются в частных облаках, в Azure
+- Если вы хотите перенести виртуальные машины, работающие в общедоступных облаках, например Amazon Web Services (AWS) или Google Cloud Platform (обеспечить), в Azure.
+
+## <a name="do-i-need-vmware-vcenter-to-migrate-vmware-vms"></a>Требуется ли VMware vCenter для переноса виртуальных машин VMware?
+Чтобы [перенести виртуальные машины VMware](server-migrate-overview.md) с помощью миграции с агента VMware или без агента, ESXi узлы, на которых расположены виртуальные машины, должны управляться с помощью vCenter Server. Если у вас нет vCenter Server, можно выполнить перенос виртуальных машин VMware, переполнив их как физические серверы. [Дополнительные сведения](migrate-support-matrix-physical-migration.md)
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".

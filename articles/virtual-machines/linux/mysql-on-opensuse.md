@@ -2,24 +2,20 @@
 title: Установка MySQL на виртуальной машине OpenSUSE в Azure
 description: Узнайте, как установить MySQL на виртуальную машину OpenSUSE Linux в Azure.
 services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 1594e10e-c314-455a-9efb-a89441de364b
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 07/11/2018
 ms.author: cynthn
-ms.openlocfilehash: d5f2ef2d82cbcced6202ad2c09f23dd734d373b3
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 0d3f0a61da3654c31c99cfac43c86b081876f700
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035583"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944577"
 ---
 # <a name="install-mysql-on-a-virtual-machine-running-opensuse-linux-in-azure"></a>Установка MySQL на виртуальной машине под управлением OpenSUSE Linux в Azure
 
@@ -159,7 +155,7 @@ quit
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о MySQL см. в [этой документации](https://dev.mysql.com/doc).
 
 

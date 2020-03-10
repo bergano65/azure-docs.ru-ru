@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ca8d0daf5b6d9bbad0d8fa24b4b150c5e6cd6b73
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: ca3df9e68e1d7e82675a6765f0320d42599a63da
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78300916"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943640"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database"></a>Базовый план безопасности Azure для базы данных SQL Azure
 
@@ -812,10 +812,10 @@ https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment#imple
 **Руководство**. Использование графа ресурсов Azure для запроса и обнаружения всех ресурсов (включая экземпляры SQL Server Azure) в ваших подписках.  Убедитесь, что у вас есть соответствующие разрешения (на чтение) в клиенте и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
 
-Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
+Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов Azure, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
 
 
-Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Создание запросов с помощью графа ресурсов Azure: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 
 Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
@@ -886,7 +886,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Создание запросов с помощью Azure Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+Создание запросов с помощью графа ресурсов Azure: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 **Мониторинг центра безопасности Azure**: неприменимо
 

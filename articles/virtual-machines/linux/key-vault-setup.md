@@ -1,26 +1,19 @@
 ---
 title: Настройка Azure Key Vault для виртуальных машин Linux
 description: Как с помощью интерфейса командной строки Azure настроить Key Vault для использования с виртуальной машиной Azure Resource Manager.
-services: virtual-machines-linux
-documentationcenter: ''
 author: singhkays
 manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: bccdd5ab-5ccf-4760-9039-92c6eafb15bd
 ms.service: virtual-machines-linux
-ms.devlang: azurecli
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 02/24/2017
 ms.author: kasing
-ms.openlocfilehash: 25ef1d43af9d37cebde4a28479010776cc148b6d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: c9659c38e349bd62f22ed0d0839d97651b1b3b66
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035949"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944818"
 ---
 # <a name="how-to-set-up-key-vault-for-virtual-machines-with-the-azure-cli"></a>Настройка Key Vault для виртуальных машин с помощью интерфейса командной строки Azure
 
@@ -59,5 +52,5 @@ az keyvault update -n myKeyVault -g myResourceGroup --set properties.enabledForD
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о других параметрах, которые можно настроить при создании Key Vault с помощью шаблонов, см. в разделе [Create a Key Vault](https://azure.microsoft.com/documentation/templates/101-key-vault-create/) (Создание Key Vault).

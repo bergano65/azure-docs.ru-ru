@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1b52d9b7eb60483da91f87435ace1994d91b1039
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 7018100c830f22c3ed5e924b5096911b1f8135cb
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77665847"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942343"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -154,7 +154,7 @@ automl_config = AutoMLConfig(task = "classification")
         task='classification',
         primary_metric='AUC_weighted',
         experiment_timeout_minutes=30,
-        blacklist_models='XGBoostClassifier',
+        blacklist_models=['XGBoostClassifier'],
         training_data=train_data,
         label_column_name=label,
         n_cross_validations=2)
@@ -165,7 +165,7 @@ automl_config = AutoMLConfig(task = "classification")
     automl_regressor = AutoMLConfig(
         task='regression',
         experiment_timeout_minutes=60,
-        whitelist_models='kNN regressor'
+        whitelist_models=['kNN regressor'],
         primary_metric='r2_score',
         training_data=train_data,
         label_column_name=label,
@@ -181,7 +181,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 |Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-|точность| spearman_correlation; | spearman_correlation;
+|accuracy| spearman_correlation; | spearman_correlation;
 |AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
 |average_precision_score_weighted | r2_score; | r2_score;
 |norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
@@ -195,7 +195,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 При настройке экспериментов можно включить дополнительные параметры `featurization`. В следующей таблице показаны допустимые параметры для Добавление признаков в [классе`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
 
-|Конфигурация Добавление признаков | Описание |
+|Конфигурация Добавление признаков | Description |
 | ------------- | ------------- |
 |`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг добавление признаков. [Узнайте, как настроить добавление признаков](how-to-configure-auto-train.md#customize-feature-engineering).|
 |`"featurization": 'off'`| Указывает, что шаг добавление признаков не должен выполняться автоматически.|
@@ -381,7 +381,7 @@ best_run, fitted_model = automl_run.get_output()
   >[!Note]
   >Используйте "тимесериестрансформер" для задачи = "прогнозирование"; в противном случае используйте "Преобразователь" для задачи "регрессия" или "Классификация".
 
-  Выходные данные.
+  Выходные данные:
   ```
   [{'RawFeatureName': 'A',
     'TypeDetected': 'Numeric',
@@ -407,7 +407,7 @@ best_run, fitted_model = automl_run.get_output()
 
    Где:
 
-   |Вывод|Определение|
+   |Выходные данные|Определение|
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|
@@ -521,7 +521,7 @@ class_prob = fitted_model.predict_proba(X_test)
 
 Общие сведения о том, как пояснения к модели и важность признаков можно включить в других областях пакета SDK за пределами автоматизированного машинного обучения, см. в статье о [концепции](how-to-machine-learning-interpretability.md) , посвященной возможностям интерпретации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 

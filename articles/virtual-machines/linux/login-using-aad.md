@@ -1,25 +1,18 @@
 ---
 title: Вход на виртуальную машину Linux с учетными данными Azure Active Directory
 description: Узнайте, как создать и настроить виртуальную машину Linux для входа с помощью Azure Active Directory проверки подлинности.
-services: virtual-machines-linux
-documentationcenter: ''
 author: iainfoulds
-manager: gwallace
-editor: ''
-ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: azurecli
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
-ms.openlocfilehash: 9980ad7af4a9e5db1d93ffb389ef7b04209b8c43
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: eb303ecb5657e9312445093841cfa6c501efda18
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544622"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944797"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -48,7 +41,7 @@ ms.locfileid: "76544622"
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие дистрибутивы Linux:
 
-| Дистрибуция | Версия |
+| Distribution | Версия |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
 | Debian | Debian 9 |
@@ -113,7 +106,7 @@ az vm extension set \
     --vm-name myVM
 ```
 
-После успешной установки расширения на виртуальной машине отображается *ProvisioningState* *успешно* .
+После успешной установки расширения на виртуальной машине отображается *ProvisioningState* *успешно* . Для установки расширения виртуальной машине требуется работающий агент виртуальной машины. Дополнительные сведения см. в статье [Общие сведения о агенте ВМ](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows).
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 

@@ -2,19 +2,19 @@
 title: Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure
 description: Как найти и удалить неподключенные управляемые и неуправляемые диски Azure (виртуальные жесткие диски и страничные BLOB-объекты) с помощью Azure CLI.
 author: roygara
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
 ms.date: 03/30/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: e475fcc5812177366b8c27ae2cca6b45d6c00709
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6cf48c53e7b5c1cc8537abeda164460de66abddb
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036151"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945143"
 ---
-# <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks"></a>Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure
+# <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks-using-the-azure-cli"></a>Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure с помощью Azure CLI
 Когда вы удаляете виртуальную машину в Azure, подключенные к ней диски не удаляются по умолчанию. Это предотвращает потерю данных из-за случайного удаления виртуальной машины. Тем не менее вы продолжаете платить за неподключенные диски. В этой статье показано, как найти и удалить все неподключенные диски и сократить затраты. 
 
 
@@ -103,7 +103,7 @@ do
 done 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Удаление учетной записи хранения](../../storage/common/storage-create-storage-account.md)
 

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ce7f6320ffa4d3e8c258c9d05542f12079ee355d
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 5b8654500fd697685b38e4f51ba1069e0cf6ccfc
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509008"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942906"
 ---
 # <a name="transfer-data-with-the-data-movement-library"></a>Перенос данных с помощью библиотеки перемещения данных
 
@@ -32,9 +32,9 @@ ms.locfileid: "76509008"
 - Копирование файла по URL-адресу в хранилище BLOB-объектов.
 - Копирование из хранилища BLOB-объектов в хранилище BLOB-объектов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-- [Код Visual Studio](https://code.visualstudio.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [учетная запись хранения Azure](storage-account-create.md)
 
 ## <a name="setup"></a>Настройка
@@ -42,7 +42,7 @@ ms.locfileid: "76509008"
 1. Ознакомьтесь с [руководством по установке .NET Core](https://www.microsoft.com/net/core), чтобы установить .NET Core. При выборе среды щелкните параметр командной строки.
 2. В командной строке создайте каталог для проекта. Перейдите в этот каталог и введите `dotnet new console -o <sample-project-name>` для создания проекта консольного приложения C#.
 3. Откройте этот каталог в Visual Studio Code. Этот шаг можно быстро выполнить, введя в командной строке `code .` в Windows.
-4. Установите [расширение C# ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) из Marketplace для Visual Studio Code. Перезапустите Visual Studio Code.
+4. Установите [расширение C# ](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) из Marketplace для Visual Studio Code. Перезапустите Visual Studio Code.
 5. На этом этапе должны отобразиться два запроса. Первый — для добавления необходимых ресурсов для сборки. Щелкните "Да". Второй запрос — для восстановления неразрешенных зависимостей. Щелкните "Восстановить".
 6. Измените `launch.json` в `.vscode`, чтобы использовать внешний терминал в качестве консоли. Этот параметр следует читать как `"console": "externalTerminal"`.
 7. Visual Studio Code позволяет отлаживать приложения .NET Core. Нажмите клавишу `F5`, чтобы запустить приложение и проверить настройки. Вы должны увидеть текст "Hello World!" в консоли.

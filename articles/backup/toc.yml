@@ -142,10 +142,16 @@
       items:
         - name: Обзор
           href: backup-azure-about-mars.md
+        - name: Установка и обновление
+          items:
+            - name: Установка агента MARS
+              href: install-mars-agent.md
+            - name: Обновление агента MARS
+              href: upgrade-mars-agent.md
         - name: Резервное копирование
           items:
             - name: Резервное копирование файлов и папок Windows Server
-              href: backup-configure-vault.md
+              href: backup-windows-with-mars-agent.md
             - name: Резервное копирование состояния системы Windows Server
               href: backup-azure-system-state.md
         - name: Восстановить
