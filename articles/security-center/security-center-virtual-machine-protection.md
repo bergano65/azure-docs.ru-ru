@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 02/11/2020
 ms.author: memildin
 ms.openlocfilehash: bcf92838483fbb6b54802cc0d44cc44ea086d705
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77430702"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78380818"
 ---
 # <a name="protect-your-machines-and-applications"></a>Защитите свои компьютеры и приложения
 Когда центр безопасности Azure выявляет потенциальные уязвимости системы безопасности, он создает рекомендации по настройке необходимых элементов управления для защиты ресурсов.
@@ -198,7 +198,7 @@ ms.locfileid: "77430702"
 ![Вкладка контейнера](./media/security-center-container-recommendations/container-cis-benchmark.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
 * [Полный список ссылок на рекомендации по безопасности центра безопасности Azure](recommendations-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: Защита от угроз в центре безопасности Azure
+title: Защита от угроз с помощью Центра безопасности Azure
 description: В этом разделе описываются ресурсы, защищенные функциями защиты от угроз в центре безопасности Azure.
 services: security-center
 documentationcenter: na
@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 08/25/2019
 ms.author: memildin
 ms.openlocfilehash: 8bd66b602201dbbb47a1fdba879c52a8ac441762
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77921646"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373044"
 ---
-# <a name="threat-protection-in-azure-security-center"></a>Защита от угроз в центре безопасности Azure
+# <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
 На этой странице кратко описаны источники предупреждений системы безопасности, отображаемых центром безопасности Azure для пользователей в ценовой категории "Стандартный".
 

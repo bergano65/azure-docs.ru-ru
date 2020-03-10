@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 08/02/2017
+ms.date: 03/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f365a8325fc027d8770287208f91d164166fcbc
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 611937a709152823ddc1b88b1a0befe4161217cd
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024336"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376078"
 ---
 # <a name="hybrid-identity-required-ports-and-protocols"></a>Порты и протоколы, необходимые для гибридной идентификации
 Следующий документ представляет собой технический справочник по портам и протоколам, которые необходимы для реализации решения для гибридной идентификации. Используйте приведенный ниже рисунок и соответствующую таблицу.
@@ -31,7 +31,7 @@ ms.locfileid: "77024336"
 ## <a name="table-1---azure-ad-connect-and-on-premises-ad"></a>Таблица 1. Azure AD Connect и локальная служба AD
 В этой таблице описываются порты и протоколы, необходимые для взаимодействия между сервером Azure AD Connect и локальной службой AD.
 
-| Протокол | порты; | Description |
+| Протокол | Порты | Описание |
 | --- | --- | --- |
 | DNS |53 (TCP или UDP) |Поиски DNS в лесу назначения. |
 | Kerberos |88 (TCP или UDP) |Проверка подлинности Kerberos для леса AD. |
@@ -46,17 +46,17 @@ ms.locfileid: "77024336"
 ## <a name="table-2---azure-ad-connect-and-azure-ad"></a>Таблица 2. Azure AD Connect и Azure AD
 В этой таблице описываются порты и протоколы, которые необходимы для взаимодействия между сервером Azure AD Connect и Azure AD.
 
-| Протокол | порты; | Description |
+| Протокол | Порты | Описание |
 | --- | --- | --- |
 | HTTP |80 (TCP) |Используется для загрузки CRL (списки отзыва сертификатов) для проверки сертификатов SSL. |
 | HTTPS |443 (TCP) |Используется для синхронизации с Azure AD. |
 
-Список URL-адресов и IP-адресов, которые необходимо открыть в брандмауэре, см. в статье [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
+Список адресов URL и IP-адресов, которые необходимо открыть в брандмауэре, см. в разделе [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) и [устранение неполадок Azure AD Connect подключения](tshoot-connect-connectivity.md#troubleshoot-connectivity-issues-in-the-installation-wizard).
 
 ## <a name="table-3---azure-ad-connect-and-ad-fs-federation-serverswap"></a>Таблица 3. Azure AD Connect и серверы федерации AD FS и WAP
 В этой таблице описываются порты и протоколы, необходимые для взаимодействия между сервером Azure AD Connect и серверами федерации AD FS и WAP.  
 
-| Протокол | порты; | Description |
+| Протокол | Порты | Описание |
 | --- | --- | --- |
 | HTTP |80 (TCP) |Используется для загрузки CRL (списки отзыва сертификатов) для проверки сертификатов SSL. |
 | HTTPS |443 (TCP) |Используется для синхронизации с Azure AD. |
@@ -65,14 +65,14 @@ ms.locfileid: "77024336"
 ## <a name="table-4---wap-and-federation-servers"></a>Таблица 4. Серверы WAP и серверы федерации
 В этой таблице описываются порты и протоколы, необходимые для взаимодействия между серверами федерации и серверами WAP.
 
-| Протокол | порты; | Description |
+| Протокол | Порты | Описание |
 | --- | --- | --- |
 | HTTPS |443 (TCP) |Используется для проверки подлинности. |
 
 ## <a name="table-5---wap-and-users"></a>Таблица 5. WAP и пользователи
 В этой таблице описываются порты и протоколы, необходимые для взаимодействия между пользователями и серверами WAP.
 
-| Протокол | порты; | Description |
+| Протокол | Порты | Описание |
 | --- | --- | --- |
 | HTTPS |443 (TCP) |Используется для проверки подлинности устройств. |
 | TCP |49443 (TCP) |Используется для проверки подлинности с помощью сертификата. |
@@ -81,7 +81,7 @@ ms.locfileid: "77024336"
 В следующих таблицах описываются порты и протоколы, которые необходимы для взаимодействия между Azure AD Connect и Azure AD.
 
 ### <a name="table-6a---pass-through-authentication-with-sso"></a>Таблица 6a. Сквозная аутентификация с помощью SSO
-|Протокол|Номер порта|Description
+|Протокол|Номер порта|Описание
 | --- | --- | ---
 |HTTP|80|Разрешение исходящего трафика HTTP для проверки безопасности, например SSL. Оно также требуется для правильной работы автоматического обновления соединителя.
 |HTTPS|443| Исходящий трафик HTTPS необходимо включить для выполнения таких операций, как включение и отключение функций, регистрация соединителей, скачивание обновлений соединителя и обработка всех запросов пользователя на вход.
@@ -90,7 +90,7 @@ ms.locfileid: "77024336"
 
 ### <a name="table-6b---password-hash-sync-with-sso"></a>Таблица 6b. Синхронизация хэша паролей с помощью SSO
 
-|Протокол|Номер порта|Description
+|Протокол|Номер порта|Описание
 | --- | --- | ---
 |HTTPS|443| Включение регистрации SSO (требуется только для процесса регистрации SSO).
 
@@ -102,10 +102,10 @@ ms.locfileid: "77024336"
 ### <a name="table-7a---ports-and-protocols-for-azure-ad-connect-health-agent-for-ad-fssync-and-azure-ad"></a>Таблица 7а. Порты и протоколы для агента Azure AD Connect Health для AD FS и синхронизации и Azure AD
 В этой таблице описываются следующие исходящие порты и протоколы, необходимые для взаимодействия между агентами Azure AD Connect Health и Azure AD.  
 
-| Протокол | порты; | Description |
+| Протокол | Порты | Описание |
 | --- | --- | --- |
-| HTTPS |443 (TCP) |Исход. |
-| Azure Service Bus |5671 (TCP) |Исход. |
+| HTTPS |443 (TCP) |Исходящие |
+| Служебная шина Azure |5671 (TCP) |Исходящие |
 
 Порт 5671 служебной шины Azure больше не требуется для последней версии агента. Последняя версия агента Azure AD Connect Health только требуемый порт 443.
 

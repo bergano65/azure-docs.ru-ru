@@ -15,11 +15,11 @@ ms.workload: infrastructure
 ms.date: 01/04/2018
 ms.author: gsilva
 ms.openlocfilehash: 16837782af2f08e27363091dc21587a100194cd8
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083702"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78363529"
 ---
 # <a name="create-a-windows-virtual-machine-with-accelerated-networking-using-azure-powershell"></a>Создание виртуальной машины Windows с ускоренной сетью с помощью Azure PowerShell
 
@@ -53,7 +53,7 @@ ms.locfileid: "74083702"
 
 Дополнительные сведения см. в статье [Размеры виртуальных машин Windows в Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-### <a name="regions"></a>регионы
+### <a name="regions"></a>Регионы
 Доступна во всех общедоступных регионах Azure и облаке Azure для государственных организаций.
 
 ### <a name="enabling-accelerated-networking-on-a-running-vm"></a>Включение ускоренной сети для работающей виртуальной машины
@@ -70,7 +70,7 @@ ms.locfileid: "74083702"
 После создания виртуальной машины можно проверить, включена ли Ускоренная сеть, следуя инструкциям в разделе подтверждение включения ускорения сети.
 
 ## <a name="powershell-creation"></a>Создание PowerShell
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -163,7 +163,7 @@ $nic = New-AzNetworkInterface `
     -EnableAcceleratedNetworking
 ```
 
-## <a name="create-the-virtual-machine"></a>Создание виртуальной машины
+## <a name="create-the-virtual-machine"></a>создание виртуальной машины;
 
 Задайте переменной `$cred` учетные данные виртуальной машины, используя командлет [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential):
 

@@ -14,16 +14,16 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
 ms.openlocfilehash: 6614e70d130abe46067c657bda3ccdd7000caddc
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845276"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374278"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
-В этой статье рассматривается синтаксис выражений политики в C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
+В этой статье рассматривается синтаксис выражений политики в C# 7. Каждому выражению предоставлен доступ к неявно заданной переменной [context](api-management-policy-expressions.md#ContextVariables) и допустимому [подмножеству](api-management-policy-expressions.md#CLRTypes) типов платформы .NET Framework.
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения см. в разделе:
 
 - Способы передачи сведений о контексте во внутреннюю службу. Используйте политики [настройки параметра строки запроса](api-management-transformation-policies.md#SetQueryStringParameter) и [настройки HTTP-заголовка](api-management-transformation-policies.md#SetHTTPheader), чтобы передать эти сведения.
 - Использование политики [проверки JWT](api-management-access-restriction-policies.md#ValidateJWT) для предварительной авторизации доступа к операциям на основе утверждений маркеров.
@@ -89,11 +89,11 @@ ms.locfileid: "76845276"
 |Newtonsoft.Json.Linq.JTokenType|Все|
 |Newtonsoft.Json.Linq.JValue|Все|
 |System.Array|Все|
-|System. BitConverter|Все|
+|System.BitConverter|Все|
 |System.Boolean|Все|
 |System.Byte|Все|
 |System.Char|Все|
-|System. Collections. Generic. Dictionary < TKey, TValue >|Все|
+|System.Collections.Generic.Dictionary<TKey, TValue>|Все|
 |System. Collections. Generic. hashing\<T >|Все|
 |System. Collections. Generic. ICollection\<T >|Все|
 |System. Collections. Generic. IDictionary < TKey, TValue >|Все|
@@ -113,7 +113,7 @@ ms.locfileid: "76845276"
 |System.DateTimeOffset|Все|
 |System.Decimal|Все|
 |System.Double|Все|
-|System. Exception|Все|
+|System.Exception|Все|
 |System.Guid|Все|
 |System.Int16|Все|
 |System.Int32|Все|
@@ -124,7 +124,7 @@ ms.locfileid: "76845276"
 |System.Math|Все|
 |System.MidpointRounding|Все|
 |System.Net.WebUtility|Все|
-|System. Nullable|Все|
+|System.Nullable|Все|
 |System.Random|Все|
 |System.SByte|Все|
 |System. Security. Cryptography. AsymmetricAlgorithm|Все|
@@ -163,8 +163,8 @@ ms.locfileid: "76845276"
 |System. Security. Cryptography. X509Certificates. X509NameType|Все|
 |System.Single|Все|
 |System.String|Все|
-|System. StringComparer|Все|
-|System. StringComparison|Все|
+|System.StringComparer|Все|
+|System.StringComparison|Все|
 |System.StringSplitOptions|Все|
 |System.Text.Encoding|Все|
 |System.Text.RegularExpressions.Capture|Index, Length, Value|
@@ -174,9 +174,9 @@ ms.locfileid: "76845276"
 |System.Text.RegularExpressions.Match|Empty, Groups, Result|
 |System.Text.RegularExpressions.Regex|(Конструктор), Match, Match, Matches, Replace, Unescape, разбиение|
 |System.Text.RegularExpressions.RegexOptions|Все|
-|System. Text. StringBuilder|Все|
+|System.Text.StringBuilder|Все|
 |System.TimeSpan|Все|
-|System. TimeZone|Все|
+|System.TimeZone|Все|
 |System. TimeZoneInfo. массива AdjustmentRule|Все|
 |System. TimeZoneInfo. Транситионтиме|Все|
 |System.TimeZoneInfo|Все|
@@ -185,7 +185,7 @@ ms.locfileid: "76845276"
 |System.UInt32|Все|
 |System.UInt64|Все|
 |System.Uri|Все|
-|System. Урипартиал|Все|
+|System.UriPartial|Все|
 |System.Xml.Linq.Extensions|Все|
 |System.Xml.Linq.XAttribute|Все|
 |System.Xml.Linq.XCData|Все|
@@ -210,7 +210,7 @@ ms.locfileid: "76845276"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|контекст|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Deployment](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
+|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Deployment](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>локального. API|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>локального. Развертывания|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>локального. LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
@@ -246,7 +246,7 @@ ms.locfileid: "76845276"
 |bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает `true`, если проверка прошла успешнее; `false`, если проверка завершается неудачно.|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

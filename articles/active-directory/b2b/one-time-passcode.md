@@ -13,11 +13,11 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d6d897bb983eb06baa4f1573f1f875eea8bb8afc
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74272323"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376673"
 ---
 # <a name="email-one-time-passcode-authentication-preview"></a>Проверка подлинности с отправкой одноразового секретного кода по почте (предварительная версия)
 
@@ -73,7 +73,7 @@ ms.locfileid: "74272323"
 1.  Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора Azure AD.
 2.  В области навигации выберите **Azure Active Directory**.
 3.  В меню **Управление** выберите **Организационные связи**.
-4.  Выберите элемент **Параметры**.
+4.  Нажмите **Параметры**.
 5.  В разделе **Включить одноразовый секретный код электронной почты для гостей (предварительная версия)** выберите **Да**.
  
 ### <a name="to-opt-in-using-powershell"></a>Подтверждение согласия с помощью PowerShell
@@ -140,7 +140,7 @@ $currentpolicy -ne $null
 1.  Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора Azure AD.
 2.  В области навигации выберите **Azure Active Directory**.
 3.  В меню **Управление** выберите **Организационные связи**.
-4.  Выберите элемент **Параметры**.
+4.  Нажмите **Параметры**.
 5.  В разделе **Включить одноразовый секретный код электронной почты для гостей (предварительная версия)** выберите **Нет**.
 
 ### <a name="to-turn-off-the-preview-using-powershell"></a>Отключение предварительной версии с помощью PowerShell

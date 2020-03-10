@@ -9,11 +9,11 @@ ms.workload: infrastructure-services
 ms.date: 05/14/2019
 ms.author: cynthn
 ms.openlocfilehash: 9d6e4e15c552cc4467dd17221a1ba901fd8e4f58
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275199"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78363353"
 ---
 # <a name="co-location"></a>Совместное размещение
 
@@ -23,7 +23,7 @@ ms.locfileid: "76275199"
 
 [!INCLUDE [virtual-machines-common-ppg-overview](../../includes/virtual-machines-common-ppg-overview.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте [группу размещения](proximity-placement-groups.md) с учетом расположения для масштабируемого набора.
 

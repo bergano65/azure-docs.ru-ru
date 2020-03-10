@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 2ff987448e3900c2a533789b2f38fd3ced71ce72
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68516667"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78365590"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
 
@@ -73,7 +73,7 @@ ms.locfileid: "68516667"
 1. Щелкните **Все ресурсы**. Найдите службу диспетчера устройств StorSimple. Выберите службу, которую требуется удалить.
    
     ![Выбор службы, которую необходимо удалить](./media/storsimple-virtual-array-manage-service/deleteservice2.png)
-2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Нажмите кнопку **Delete**(Удалить).
+2. Перейдите к панели мониторинга службы, чтобы убедиться в отсутствии устройств, подключенных к службе. Если в этой службе не зарегистрированы устройства, вы также увидите заглавное сообщение, указывающее, что они отсутствуют. Щелкните **Удалить**.
    
     ![Удаление службы](./media/storsimple-virtual-array-manage-service/deleteservice3.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "68516667"
     ![Подтверждение удаления службы](./media/storsimple-virtual-array-manage-service/deleteservice4.png)
 4. Удаление службы может занять несколько минут. Как только служба будет удалена, вы получите соответствующее уведомление.
    
-    ![Успешное удаление службы](./media/storsimple-virtual-array-manage-service/deleteservice6.png)
+    ![Успешное{1}{2}удаление службы](./media/storsimple-virtual-array-manage-service/deleteservice6.png)
 
 Список служб будет обновлен.
 
@@ -94,7 +94,7 @@ ms.locfileid: "68516667"
 Выполните следующие действия, чтобы получить ключ регистрации.
 
 #### <a name="to-get-the-service-registration-key"></a>Получение ключа регистрации службы
-1. В колонке **Диспетчер устройств StorSimple** выберите **Управление &gt;** **Ключи**.
+1. В колонке **StorSimple Device Manager** выберите **Управление &gt;** **ключи**.
    
    ![Колонка "Ключи"](./media/storsimple-virtual-array-manage-service/getregkey2.png)
 2. В колонке **Ключи** вы увидите ключ регистрации службы. Скопируйте ключ регистрации, используя значок копирования. 
@@ -107,7 +107,7 @@ ms.locfileid: "68516667"
 Выполните следующие действия, чтобы повторно создать ключ регистрации службы.
 
 #### <a name="to-regenerate-the-service-registration-key"></a>Повторное создание ключа регистрации службы
-1. В колонке **Диспетчер устройств StorSimple** выберите **Управление &gt;** **Ключи**.
+1. В колонке **StorSimple Device Manager** выберите **Управление &gt;** **ключи**.
    
    ![Колонка "Ключи"](./media/storsimple-virtual-array-manage-service/getregkey2.png)
 2. В колонке **Ключи** нажмите кнопку **Повторно создать**.

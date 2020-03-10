@@ -13,11 +13,11 @@ ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: a6bcfa7fc58d47e64bff0838ff698bc59eda4e70
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022285"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374726"
 ---
 # <a name="update-your-profile-and-account-information-on-the-my-apps-portal"></a>Обновление данных профиля и учетной записи на портале "Мои приложения"
 
@@ -33,7 +33,7 @@ ms.locfileid: "77022285"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-portal.md)]
 
 > [!Important]
-> Это содержимое предназначено для пользователей **моих приложений** . Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](https://docs.microsoft.com/azure/active-directory/manage-apps).
+> Эти материалы предназначены для пользователей портала **Мои приложения**. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](https://docs.microsoft.com/azure/active-directory/manage-apps).
 
 ## <a name="view-your-organization-related-profile-information"></a>Просмотр сведений о профиле, связанных с Организацией
 
@@ -71,7 +71,7 @@ ms.locfileid: "77022285"
 
 - Выйдите из повсеместного выхода.
 
-## <a name="change-your-password"></a>Изменение пароля
+## <a name="change-your-password"></a>Смена пароля
 
 Если вы хотите изменить пароль для рабочей или учебной учетной записи, можно выбрать **изменить пароль** в области **Управление учетной записью** на странице **профиль** .
 
@@ -83,7 +83,7 @@ ms.locfileid: "77022285"
 
     ![Страница изменения пароля](media/my-apps-portal/my-apps-portal-change-password-page.png)
 
-3. Нажмите кнопку **Submit** (Отправить).
+3. Нажмите кнопку **Отправить**.
 
     Пароль изменен. Вам потребуется войти в все приложения, которые ранее вошли в рабочую или учебную учетную запись.
 
@@ -138,7 +138,7 @@ ms.locfileid: "77022285"
 
 2. В окне подтверждения при выходе **везде** выберите **Да** , чтобы подтвердить выход из всех сеансов и устройств. Если вы передумали, выберите **нет** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После завершения обновления на странице **профиля** можно выполнить следующие действия.
 

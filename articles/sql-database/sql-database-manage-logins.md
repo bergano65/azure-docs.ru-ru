@@ -14,11 +14,11 @@ ms.reviewer: carlrab
 ms.date: 02/06/2020
 tags: azure-synapse
 ms.openlocfilehash: 79a31e5b8e3433af7879fcde8597173f25bf96b7
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196966"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360038"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-azure-synapse-analytics"></a>Управление доступом к базе данных SQL и Azure синапсе Analytics и предоставление им доступа к базе данных
 
@@ -220,7 +220,7 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 - Если владелец роли базы данных пытается добавить или удалить другого пользователя базы данных в роль или из роли базы данных, может произойти следующая ошибка: **В этой базе данных не существует пользователь или роль "Имя".** Эта ошибка возникает, поскольку данный пользователь не является видимым для владельца. Чтобы устранить эту проблему, предоставьте владельцу роли разрешение `VIEW DEFINITION` по отношению к данному пользователю. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра Базы данных SQL Azure](sql-database-firewall-configure.md).
 - Обзор всех функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).

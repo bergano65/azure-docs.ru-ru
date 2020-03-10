@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 02/19/2020
 ms.author: danlep
 ms.openlocfilehash: f429a165fe26cc9fc7aa973231f5a77163feef4a
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77525309"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78365035"
 ---
 # <a name="resource-availability-for-azure-container-instances-in-azure-regions"></a>Доступность ресурсов службы "Экземпляры контейнеров Azure" в регионах Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "77525309"
 | -------- | -- | :---: | :-----------: | :---: |
 | Южная Бразилия, Центральная Канада, Центральная Индия, Центральная часть США, Восточная Азия, Восточная часть США, восток США 2, Северная Европа, Юго-Центральная часть США, Юго-Восточная Азия, Южная Индия, южная часть Соединенного Королевства, Западная Европа, Западная часть США, Западная часть США 2 | Linux | 4 | 16 | 50 |
 | Восточная Австралия, Восточная Япония | Linux | 2 | 8 | 50 |
-| Центрально-северная часть США | Linux | 2 | 3,5 | 50 |
+| Центрально-северная часть США | Linux | 2 | 3,5 | 50 |
 | Южная Бразилия, Восточная Япония, Западная Европа | Windows | 4 | 16 | 20 |
 | Восточная часть США, западная часть США | Windows | 4 | 14 | 20 |
 | Восточная Австралия, Центральная Канада, Центральная Индия, Центральная часть США, Восточная Азия, восток США 2, Северная Центральная часть США, Северная Европа, Юго-Центральный регион США, Юго-Восточная Азия, ЮАР, Южная Индия, южная часть Соединенного Королевства, Западная часть США 2 | Windows | 2 | 3,5 | 20 |
@@ -61,7 +61,7 @@ ms.locfileid: "77525309"
 [!INCLUDE [container-instances-gpu-regions](../../includes/container-instances-gpu-regions.md)]
 [!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите увидеть дополнительные регионы или увеличить доступность ресурсов, сообщите об этом команде, перейдя по адресу [​​aka.ms/aci/feedback](https://aka.ms/aci/feedback).
 

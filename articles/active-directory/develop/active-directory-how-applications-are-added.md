@@ -14,12 +14,12 @@ ms.date: 11/26/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
-ms.openlocfilehash: daf26f346ab10906eb5c37c6d7d2bb24736417cb
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: d47ed3a4cd4fbdcb69b956d3c8418f70a71cf44f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698822"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78375644"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -77,7 +77,7 @@ ms.locfileid: "76698822"
 * Когда администратор добавляет приложение из коллекции приложений (при этом также создается объект базового приложения).
 * Добавление приложения для использования [Azure AD Application Proxy](/azure/active-directory/manage-apps/application-proxy).
 * Подключение приложения для единого входа в систему с помощью SAML или единого входа по паролю (SSO)
-* Программным путем через API Graph Azure AD или PowerShell
+* Программно с помощью Microsoft Graph API или PowerShell
 
 ## <a name="how-are-application-objects-and-service-principals-related-to-each-other"></a>Каким образом объекты приложений и субъекты-службы связаны друг с другом?
 
@@ -100,13 +100,13 @@ ms.locfileid: "76698822"
 
 ### <a name="notes-and-exceptions"></a>Примечания и исключения
 
-* Не все субъекты-службы указывают на объект приложения. Когда была первоначально создана система Azure AD, количество служб, предоставляемых приложений, было небольшим, и субъекта-службы было достаточно для установления удостоверения приложения. По своей форме первоначальный субъект-служба был похож на учетную запись службы Windows Server Active Directory. Поэтому субъекты-службы можно по-прежнему создавать, используя различные способы, например с помощью Azure AD PowerShell без предварительного создания объекта приложения. Перед созданием субъекта-службы интерфейсу API Graph Azure AD требуется объект приложения.
+* Не все субъекты-службы указывают на объект приложения. Когда была первоначально создана система Azure AD, количество служб, предоставляемых приложений, было небольшим, и субъекта-службы было достаточно для установления удостоверения приложения. По своей форме первоначальный субъект-служба был похож на учетную запись службы Windows Server Active Directory. Поэтому субъекты-службы можно по-прежнему создавать, используя различные способы, например с помощью Azure AD PowerShell без предварительного создания объекта приложения. Перед созданием субъекта-службы для Microsoft Graph API требуется объект приложения.
 * В настоящее время не все приведенные выше сведения предоставляются программно. Ниже перечислены только сведения, доступные в пользовательском интерфейсе:
   * утверждает правила преобразования.
   * Сопоставление атрибутов (подготовка пользователей)
-* Более подробные сведения об объектах субъекта-службы и приложений см. в справочной документации по Azure AD Graph REST API.
-  * [Приложение](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity)
-  * [Субъект-служба](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity)
+* Более подробные сведения о субъекте-службе и объектах приложения см. в справочной документации по Microsoft Graph API:
+  * [Приложение](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)
+  * [Субъект-служба](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta)
 
 ## <a name="why-do-applications-integrate-with-azure-ad"></a>Зачем интегрировать приложения с Azure AD?
 

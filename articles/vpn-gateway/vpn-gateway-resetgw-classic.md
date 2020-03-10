@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 01/09/2020
 ms.author: cherylmc
 ms.openlocfilehash: e3a5807a0ccfa39cc80acacedaa5fb4d3afaaed3
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75862770"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78379243"
 ---
 # <a name="reset-a-vpn-gateway"></a>Сброс VPN-шлюза
 
@@ -63,7 +63,7 @@ $gw = Get-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1
 Reset-AzVirtualNetworkGateway -VirtualNetworkGateway $gw
 ```
 
-Результат:
+Результат
 
 Вывод результата подразумевает успешное выполнение сброса шлюза. Тем не менее никакие данные в возвращаемом результате не указывают явно на то, что сброс выполнен успешно. Если вам требуется проверить журнал, чтобы узнать точное время сброса шлюза, эти сведения можно просмотреть на [портале Azure](https://portal.azure.com). На портале перейдите в раздел **ИмяШлюза -> Работоспособность ресурсов**.
 
@@ -77,7 +77,7 @@ Reset-AzVirtualNetworkGateway -VirtualNetworkGateway $gw
 Reset-AzureVNetGateway –VnetName 'Group TestRG1 TestVNet1'
 ```
 
-Результат:
+Результат
 
 ```powershell
 Error          :
@@ -96,6 +96,6 @@ StatusCode     : OK
 az network vnet-gateway reset -n VNet5GW -g TestRG5
 ```
 
-Результат:
+Результат
 
 Вывод результата подразумевает успешное выполнение сброса шлюза. Тем не менее никакие данные в возвращаемом результате не указывают явно на то, что сброс выполнен успешно. Если вам требуется проверить журнал, чтобы узнать точное время сброса шлюза, эти сведения можно просмотреть на [портале Azure](https://portal.azure.com). На портале перейдите в раздел **ИмяШлюза -> Работоспособность ресурсов**.

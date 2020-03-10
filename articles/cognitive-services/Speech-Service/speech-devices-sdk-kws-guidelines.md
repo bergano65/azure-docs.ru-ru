@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 12/11/2019
 ms.author: dapine
 ms.openlocfilehash: 3c3943f7269fa2d0ed25acf2215549635b5f16ac
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456391"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360718"
 ---
 # <a name="guidelines-for-creating-an-effective-keyword"></a>Рекомендации по созданию эффективного ключевого слова
 
@@ -44,6 +44,6 @@ ms.locfileid: "75456391"
 > [!NOTE]
 > Если вы выбрали слово с товарным знаком в качестве ключевого слова, убедитесь, что вы владеете этим товарным знаком или имеете разрешение на использование слова у владельца товарного знака. Корпорация Майкрософт не несет ответственности за любые юридические проблемы, которые могут возникнуть при выборе ключевого слова.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [создать настраиваемое ключевое слово с помощью Speech Studio](speech-devices-sdk-create-kws.md).

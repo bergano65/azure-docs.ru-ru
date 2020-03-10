@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
 ms.openlocfilehash: 5236fd89ed99ca14bb7fc24e40ef79e12e5177d9
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77919521"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373089"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Сбор данных в центре безопасности Azure
 Центр безопасности собирает данные из виртуальных машин Azure, масштабируемых наборов виртуальных машин, контейнеров IaaS и не Azure (включая локальные компьютеры) для отслеживания уязвимостей и угроз безопасности. Сбор данных выполняется с помощью агента Log Analytics, который считывает различные конфигурации, связанные с безопасностью, и журналы событий с компьютера и копирует данные в рабочую область для анализа. К примерам таких данных относятся тип и версия операционной системы, журналы операционной системы (журналы событий Windows), выполняющиеся процессы, имя компьютера, IP-адреса и имя вошедшего пользователя. Агент Log Analytics также копирует файлы аварийного дампа в рабочую область.

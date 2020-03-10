@@ -13,13 +13,13 @@ ms.author: ajburnle
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: de205beaf9800c2061cc41343b4153bd0e2b5dc7
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024608"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376880"
 ---
-# <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
+# <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание нового клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
 
 В этом кратком руководстве вы узнаете, как получить доступ к порталу Azure и Azure Active Directory. Кроме того, вы узнаете, как создать базовый клиент для своей организации.
@@ -45,13 +45,13 @@ ms.locfileid: "77024608"
 
 1.  На странице **Создание каталога** введите следующие сведения.
     
-    - В поле **Название организации** введите _Contoso_.
+    - В поле _Название организации_ введите **Contoso**.
 
-    - В поле **Первоначальное доменное имя** введите _Contoso_.
+    - В поле _Первоначальное доменное имя_ введите **Contoso**.
 
     - Оставьте значение _США_ в поле **Страна или регион**.
 
-1. Нажмите кнопку **создания**.
+1. Выберите **Создать**.
 
 Будет создан клиент с доменом contoso.onmicrosoft.com.
 
@@ -65,7 +65,7 @@ ms.locfileid: "77024608"
 
     ![Странице "Обзор" с выделенной кнопки "Удалить каталог"](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Изменение и добавление доменных имен описывается в статье [Добавление имени личного домена в Azure Active Directory](add-custom-domain.md).
 
 - Добавление пользователей описывается в статье [Краткое руководство по добавлению новых пользователей в Azure Active Directory](add-users-azure-active-directory.md).

@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: addc7db2aa2f0f9ba16438d2a31d6c7cc6bfa49e
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174494"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376592"
 ---
 # <a name="view-requests-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр запросов для пакета Access в управлении назначениями Azure AD
 
@@ -41,7 +41,7 @@ ms.locfileid: "73174494"
 
     ![Список запросов для пакета Access](./media/entitlement-management-access-package-requests/requests-list.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Изменение параметров запроса и утверждения для пакета Access](entitlement-management-access-package-request-policy.md)
 - [Просмотр, Добавление и удаление назначений для пакета Access](entitlement-management-access-package-assignments.md)

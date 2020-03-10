@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/2/2020
 ms.custom: seodec18
 ms.openlocfilehash: e58e36b3caa5a5ecd137cb9cb61dad7ddb95ff3a
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986994"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364581"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
 Azure Stream Analytics могут ориентироваться [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) для выходных данных JSON, что позволяет архивировать данные и запросы с низкой задержкой для неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации.
@@ -105,15 +105,15 @@ Azure Cosmos DB автоматически масштабирует секции
 
 ![Поля сведений для потока вывода Azure Cosmos DB](media/stream-analytics-documentdb-output/stream-analytics-documentdb-output-1.png)
 
-|Поле           | Description|
+|Поле           | Описание|
 |-------------   | -------------|
 |Псевдоним выходных данных    | Псевдоним для ссылки на эти выходные данные в запросе Stream Analytics.|
-|Подписка    | Подписка Azure.|
+|Subscription    | Подписка Azure.|
 |Идентификатор учетной записи      | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB.|
 |Ключ учетной записи     | Общедоступный ключ доступа к учетной записи Azure Cosmos DB.|
-|База данных        | Имя базы данных Azure Cosmos DB.|
+|Database        | Имя базы данных Azure Cosmos DB.|
 |Имя контейнера | Имя контейнера, например `MyContainer`. Должен существовать один контейнер с именем `MyContainer`.  |
-|Идентификатор документа     | Необязательный параметр. Имя столбца в выходных событиях используется как уникальный ключ, на котором должны основываться операции вставки или обновления. Если оставить его пустым, будут вставлены все события без параметров обновления.|
+|Идентификатор документа     | Необязательно. Имя столбца в выходных событиях используется как уникальный ключ, на котором должны основываться операции вставки или обновления. Если оставить его пустым, будут вставлены все события без параметров обновления.|
 
 После настройки выходных данных Azure Cosmos DB их можно использовать в запросе в качестве целевого объекта [инструкции into](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics). При использовании вывода Azure Cosmos DB таким образом, [ключ секции необходимо задать явным образом](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#partitions-in-sources-and-sinks). 
 
