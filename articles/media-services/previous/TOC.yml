@@ -393,6 +393,7 @@
           href: media-services-deliver-asset-download.md
         - name: Сценарий потоковой передачи отработки отказа
           href: media-services-implement-failover.md
+          displayName: 'HA, high availability'
     - name: Использование
       items:
         - name: Воспроизведение мультимедиа с помощью существующих проигрывателей
