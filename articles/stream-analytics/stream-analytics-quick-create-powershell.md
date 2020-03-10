@@ -7,12 +7,12 @@ ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
-ms.openlocfilehash: 8fb4d50a4ba56efd9087a829c7d54c3010fc671e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: 5fd38a781a58da530ad805bbeee352858eb33b41
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75431513"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78893338"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-using-azure-powershell"></a>Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "75431513"
 
 * Для работы с этим кратким руководством требуется модуль Azure PowerShell. Запустите `Get-Module -ListAvailable Az`, чтобы найти версию, установленную на вашем локальном компьютере. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 
-* Некоторые действия Центра Интернета вещей не поддерживаются в Azure PowerShell и должны быть выполнены с помощью Azure CLI версии 2.0.24 или более поздней и расширения Интернета вещей для Azure CLI. [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и используйте `az extension add --name azure-cli-iot-ext` для установки расширения Интернета вещей.
+* Некоторые действия центра Интернета вещей не поддерживаются Azure PowerShell и должны быть завершены с помощью Azure CLI версии 2.0.70 или более поздней и расширения IoT для Azure CLI. [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и используйте `az extension add --name azure-iot` для установки расширения Интернета вещей.
 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
@@ -303,7 +303,7 @@ New-AzStreamAnalyticsTransformation `
 
 2. Замените значения заполнителя в 15-й строке строкой подключения устройства Центра Интернета вещей, которую вы сохранили при работе с предыдущим разделом.
 
-3. Нажмите кнопку **Запустить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
+3. Нажмите кнопку **Выполнить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
 
     ![Онлайн-симулятор Raspberry Pi для Интернета вещей Azure.](./media/stream-analytics-quick-create-powershell/ras-pi-connection-string.png)
 
@@ -329,7 +329,7 @@ Remove-AzResourceGroup `
   -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом кратком руководстве вы развернули простое задание Stream Analytics, используя PowerShell. Вы также можете развертывать задания Stream Analytics, используя [портал Azure](stream-analytics-quick-create-portal.md) и [Visual Studio](stream-analytics-quick-create-vs.md).
 

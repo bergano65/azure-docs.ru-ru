@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 1e75acc03209fdd7e613801c9152f24aaecfa6de
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965455"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384913"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Развертывание службы диспетчера устройств StorSimple для устройств StorSimple серии 8000
 
@@ -57,7 +57,7 @@ ms.locfileid: "68965455"
 
 Для каждой службы диспетчера устройств StorSimple существуют следующие атрибуты:
 
-* **Имя** — имя, назначенное вашей службе диспетчера устройств StorSimple при ее создании. **Имя службы невозможно изменить после ее создания. Это также верно для других сущностей, таких как устройства, тома, контейнеры томов и политики резервного копирования, которые не могут быть переименованы на портале Azure.**
+* **Имя** — имя, назначенное вашей службе диспетчера устройств StorSimple при ее создании. **Имя службы нельзя изменить после создания службы. Это также справедливо для других сущностей, таких как устройства, тома, контейнеры томов и политики резервного копирования, которые не могут быть переименованы в портал Azure.**
 * **Состояние** — состояние службы. Оно может иметь значение **Работает**, **Идет создание** или **В сети**.
 * **Местоположение** — географическое местоположение, в котором будет развернуто устройство StorSimple.
 * **Подписка** — подписка выставления счетов, связанная с вашей службой.
@@ -77,11 +77,11 @@ ms.locfileid: "68965455"
 
     ![Поиск службы, которую необходимо удалить](./media/storsimple-8000-manage-service/deletessdevman1.png)
 
-2. Откроется колонка службы диспетчера устройств StorSimple. Нажмите кнопку **Delete**(Удалить).
+2. Откроется колонка службы диспетчера устройств StorSimple. Щелкните **Удалить**.
 
     ![Удаление службы](./media/storsimple-8000-manage-service/deletessdevman2.png)
 
-3. Щелкните **Да** в уведомлении о подтверждении. Удаление службы может занять несколько минут.
+3. Нажмите кнопку **Да** в уведомлении подтверждения. Удаление службы может занять несколько минут.
 
     ![Подтверждение удаления](./media/storsimple-8000-manage-service/deletessdevman3.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "68965455"
 
 Сохраните ключ регистрации в безопасном расположении. Этот ключ, а также ключ шифрования данных службы потребуется для регистрации дополнительных устройств в службе. После получения ключа регистрации службы вам потребуется настроить устройство в интерфейсе Windows PowerShell для StorSimple.
 
-Дополнительные сведения о том, как использовать этот ключ регистрации, см. в разделе [Шаг 3. Настройка и регистрация устройства средствами Windows PowerShell для StorSimple](storsimple-8000-deployment-walkthrough-u2.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
+Дополнительные сведения о том, как использовать этот ключ регистрации см. в разделе [Шаг 3. Настройка и регистрация устройства в Windows PowerShell для StorSimple](storsimple-8000-deployment-walkthrough-u2.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
 
 ## <a name="regenerate-the-service-registration-key"></a>повторное создание ключа регистрации службы.
 Если вам необходимо сменить ключ или при изменении списка администраторов службы потребуется повторно создать ключ регистрации службы. При повторном создании ключа новый ключ используется только для регистрации последующих устройств. Этот процесс не затронет уже зарегистрированные устройства.
@@ -103,7 +103,7 @@ ms.locfileid: "68965455"
 Выполните следующие действия, чтобы повторно создать ключ регистрации службы.
 
 ### <a name="to-regenerate-the-service-registration-key"></a>Повторное создание ключа регистрации службы
-1. В колонке **Диспетчер устройств StorSimple** выберите **Управление &gt;** **Ключи**.
+1. В колонке **StorSimple Device Manager** выберите **Управление &gt;** **ключи**.
     
     ![Колонка "Ключи"](./media/storsimple-8000-manage-service/regenregkey2.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "68965455"
 2. С помощью Windows PowerShell для StorSimple инициируйте изменение ключа шифрования данных службы.
 3. Если у вас более одного устройства StorSimple, обновите ключ шифрования данных службы на других устройствах.
 
-### <a name="step-1-use-windows-powershell-script-to-authorize-a-device-to-change-the-service-data-encryption-key"></a>Шаг 1.: Использование скрипта Windows PowerShell для авторизации изменения ключа шифрования данных службы на устройстве
+### <a name="step-1-use-windows-powershell-script-to-authorize-a-device-to-change-the-service-data-encryption-key"></a>Шаг 1. Использование скрипта Windows PowerShell для авторизации изменения ключа шифрования данных службы на устройстве
 Как правило, администратор устройства отправляет администратору службы запрос на авторизацию устройство, чтобы изменить ключи шифрования данных службы. Администратор службы авторизует устройство для изменения ключа.
 
 Этот шаг выполняется с помощью скрипта на основе Azure Resource Manager. Администратор служб может выбрать устройство для авторизации. Устройство авторизуется для начала изменения ключа шифрования данных службы. 
@@ -145,7 +145,7 @@ ms.locfileid: "68965455"
 * Невозможно авторизовать устройство во время смены ключа шифрования данных службы.
 * Можно авторизовать устройство, если некоторые из зарегистрированных в службе устройств изменили шифрование, а другие — нет. 
 
-### <a name="step-2-use-windows-powershell-for-storsimple-to-initiate-the-service-data-encryption-key-change"></a>Шаг 2.: Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы
+### <a name="step-2-use-windows-powershell-for-storsimple-to-initiate-the-service-data-encryption-key-change"></a>Шаге 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы
 Этот шаг выполняется в интерфейсе Windows PowerShell для StorSimple на авторизованном устройстве StorSimple.
 
 > [!NOTE]
@@ -156,7 +156,7 @@ ms.locfileid: "68965455"
 
 #### <a name="to-initiate-the-service-data-encryption-key-change"></a>Запуск изменения ключа шифрования данных службы
 1. Выберите вариант 1, чтобы войти на устройство с правами на полный доступ.
-2. В командной строке выполните следующую команду:
+2. В командной строке введите:
    
      `Invoke-HcsmServiceDataEncryptionKeyChange`
 3. После успешного завершения работы командлета вы получите новый ключ шифрования данных службы. Скопируйте и сохраните этот ключ для использования на шаге 3. Этот ключ будет использоваться для обновления всех остальных устройств, зарегистрированных в службе StorSimple Manager.
@@ -170,7 +170,7 @@ ms.locfileid: "68965455"
    
    Если в службе зарегистрировано одно устройство, процесс замены завершен, а следующий шаг можно пропустить. Если в службе зарегистрировано несколько устройств, перейдите к шагу 3.
 
-### <a name="step-3-update-the-service-data-encryption-key-on-other-storsimple-devices"></a>Шаг 3. Обновление ключа шифрования данных службы на других устройствах StorSimple
+### <a name="step-3-update-the-service-data-encryption-key-on-other-storsimple-devices"></a>Шаг 3. Обновление ключа шифрования данных службы на других устройствах StorSimple
 Эти действия необходимо выполнить в интерфейсе Windows PowerShell устройства StorSimple при наличии нескольких устройств, зарегистрированных в службе StorSimple Manager. Ключ, полученный на шаге 2, следует использовать для обновления остальных устройств StorSimple, зарегистрированных в службе StorSimple Manager.
 
 Выполните следующие действия для обновления шифрования данных службы на устройстве.
@@ -178,7 +178,7 @@ ms.locfileid: "68965455"
 #### <a name="to-update-the-service-data-encryption-key-on-physical-devices"></a>Обновление ключа шифрования данных службы на физических устройствах
 1. Используйте Windows PowerShell для StorSimple, чтобы подключиться к консоли. Выберите вариант 1, чтобы войти на устройство с правами на полный доступ.
 2. В командной строке введите следующий текст: `Invoke-HcsmServiceDataEncryptionKeyChange – ServiceDataEncryptionKey`.
-3. Укажите ключ шифрования данных службы, полученный на [Шаге 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы](#to-initiate-the-service-data-encryption-key-change).
+3. Укажите ключ шифрования данных службы, полученный на [Шаге 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы](#to-initiate-the-service-data-encryption-key-change).
 
 #### <a name="to-update-the-service-data-encryption-key-on-all-the-80108020-cloud-appliances"></a>Обновление ключа шифрования данных службы на всех облачных устройствах 8010/8020
 1. Скачайте и установите сценарий PowerShell [Update-CloudApplianceServiceEncryptionKey.ps1](https://github.com/anoobbacker/storsimpledevicemgmttools/blob/master/Update-CloudApplianceServiceEncryptionKey.ps1). 

@@ -8,11 +8,11 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/15/2019
 ms.openlocfilehash: 31cdef281b1cb26d01a4690c815e3d3621e2c053
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894311"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395135"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
 
@@ -56,7 +56,7 @@ java.lang.OutOfMemoryError
 
 Наиболее вероятной причиной этого исключения является нехватка памяти кучи, выделенной для виртуальных машин Java. Эти виртуальных машин Java запускаются как исполнители или драйверы в составе приложения Apache Spark.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 1. Определите максимальный объем данных, которые будет обрабатывать приложение Spark. Оценка размера в зависимости от максимального размера входных данных — промежуточных данных, полученных путем преобразования входных данных и выходных данных, созданных для преобразования промежуточных данных. Если начальная оценка недостаточна, увеличьте размер и выполните итерацию до подчасти ошибок памяти.
 
@@ -114,7 +114,7 @@ hadoop fs -du -s -h wasb:///hdp/spark2-events/application_1503957839788_0264_1/
 **2.1 G**  wasb:///hdp/spark2-events/application_1503957839788_0264_1
 ```
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Вы можете увеличить объем памяти сервера журнала Spark, отредактировав свойство `SPARK_DAEMON_MEMORY` в конфигурации Spark и перезапуская все службы.
 
@@ -200,7 +200,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
 
 При отправке большого количества заданий через Livy в рамках высокой доступности для Livy Server сохраняет эти состояния сеанса в ZK (в кластерах HDInsight) и восстанавливает эти сеансы при перезапуске службы Livy. При перезапуске после непредвиденного завершения Livy создает по одному потоку на сеанс, и это накапливает определенное количество запросов, которые будут восстановлены, что привело к созданию слишком большого количества потоков.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Удалите все записи с помощью действий, описанных ниже.
 
@@ -243,7 +243,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

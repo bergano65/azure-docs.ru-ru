@@ -6,26 +6,26 @@ ms.topic: conceptual
 ms.date: 8/24/2018
 ms.author: dekapur
 ms.openlocfilehash: 37162287e130b05dc41453c579b3a628ac878fca
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462917"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388417"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
 
 ## <a name="eventsource-events"></a>События EventSource
-Имя EventSource для класса StatefulServiceBase надежных служб с отслеживанием состояния — Microsoft-ServiceFabric-Services. При [отладке службы в Visual Studio](service-fabric-debugging-your-application.md). события из этого источника отображаются в окне [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) (События диагностики).
+Имя EventSource для класса StatefulServiceBase надежных служб с отслеживанием состояния — Microsoft-ServiceFabric-Services. При [отладке службы в Visual Studio](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio). события из этого источника отображаются в окне [Diagnostics Events](service-fabric-debugging-your-application.md) (События диагностики).
 
 Для сбора и просмотра событий EventSource вы можете использовать такие средства и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [система диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) и [библиотека Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
-## <a name="events"></a>Мероприятия
-| Имя события | Идентификатор события | Уровень | Описание события |
+## <a name="events"></a>События
+| Имя события | Идентификатор события | Level | Описание события |
 | --- | --- | --- | --- |
-| StatefulRunAsyncInvocation |1 |Informational |Генерируется, когда запускается задача RunAsync службы. |
-| StatefulRunAsyncCancellation |2 |Informational |Генерируется, когда отменяется задача RunAsync службы. |
-| StatefulRunAsyncCompletion |3 |Informational |Генерируется, когда завершается задача RunAsync службы. |
+| StatefulRunAsyncInvocation |1 |Информационное |Генерируется, когда запускается задача RunAsync службы. |
+| StatefulRunAsyncCancellation |2 |Информационное |Генерируется, когда отменяется задача RunAsync службы. |
+| StatefulRunAsyncCompletion |3 |Информационное |Генерируется, когда завершается задача RunAsync службы. |
 | StatefulRunAsyncSlowCancellation |4 |Предупреждение |Генерируется, когда отмена задачи RunAsync службы выполняется слишком долго. |
 | StatefulRunAsyncFailure |5 |Ошибка |Генерируется, когда задача RunAsync службы вызывает исключение. |
 
@@ -41,7 +41,7 @@ ms.locfileid: "75462917"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения служб Reliable Services определяет указанные ниже категории счетчиков производительности.
 
-| Категория | Description |
+| Категория | Описание |
 | --- | --- |
 | Репликатор транзакций Service Fabric |Счетчики для репликатора транзакций Azure Service Fabric |
 | Service Fabric TStore |Счетчики для Azure Service Fabric TStore |
@@ -95,7 +95,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric Transactional Replicator`.
 
- Имя счетчика | Description |
+ Имя счетчика | Описание |
 | --- | --- |
 | Операций начала транзакций/с | Число новых транзакций записи, создаваемых в секунду.|
 | Операций транзакций/с | Число операций добавления, обновления и удаления, выполненных для надежных коллекций, в секунду.|
@@ -108,12 +108,12 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric TStore`.
 
- Имя счетчика | Description |
+ Имя счетчика | Описание |
 | --- | --- |
 | Число элементов | Число элементов в хранилище.|
 | Размер диска | Общий размер в байтах, занимаемый на диске файлами контрольных точек хранилища.|
 | Запись в файл контрольной точки, байт/с | Число байтов, записываемых в секунду в последний файл контрольной точки.|
 | Передача на диск при копировании (байт/с) | Число байтов, считываемых (с первичной реплики) или записываемых (на вторичную реплику) в секунду при копировании хранилища.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

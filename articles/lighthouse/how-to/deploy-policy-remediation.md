@@ -4,11 +4,11 @@ description: Узнайте, как подключить клиента к си�
 ms.date: 10/11/2019
 ms.topic: conceptual
 ms.openlocfilehash: c06ed4ea597808aee18d4a848bcfea7152b9cf8e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456857"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394043"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Развертывание политики, которую можно исправить в рамках делегированной подписки
 
@@ -64,7 +64,7 @@ ms.locfileid: "75456857"
 > [!TIP]
 > Доступен [аналогичный пример](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/policy-add-or-replace-tag), демонстрирующий, как развернуть политику, которая добавляет или удаляет тег (используя эффект изменения) в делегированной подписке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о службе [Политика Azure](../../governance/policy/index.yml).
 - Сведения об [управляемых удостоверениях для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Подключение кабелей к Azure FXT Edge Filer
+title: Учебник. Подключение кабелей к Azure ФКСТ ребра фильтр
 description: Сведения о подключении сетевых портов и присоединении питания для оборудования Azure FXT Edge Filer
 author: ekpgh
 ms.author: rohogue
@@ -7,13 +7,13 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.openlocfilehash: 1e3c60fd955bd899955c46b7670acd3f088d0f86
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75550950"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395431"
 ---
-# <a name="tutorial-make-network-connections-and-supply-power-to-the-azure-fxt-edge-filer-node"></a>Руководство. Установка сетевых подключений и источника питания для узлов Azure FXT Edge Filer
+# <a name="tutorial-make-network-connections-and-supply-power-to-the-azure-fxt-edge-filer-node"></a>Руководство. Создание сетевых подключений и предоставление питания для узла фильтр Azure ФКСТ ребра
 
 В этом руководстве показано, как присоединять сетевые подключения для аппаратного узла Azure FXT Edge Filer.
 
@@ -25,7 +25,7 @@ ms.locfileid: "75550950"
 > * способ маршрутизации кабелей с помощью держателя кабеля (CMA);
 > * как подключить питание к устройству racked и включить его.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед работой с этим руководством, на стандартной стойке должен быть установлен Azure FXT Edge Filer. На узле файлового хранилища нужно установить CMA. 
 
@@ -161,7 +161,7 @@ ms.locfileid: "75550950"
 
 Кнопка питания может использоваться для выключения системы во время тестирования и перед добавлением ее в кластер. Тем не менее после того, как узел Azure FXT Edge Filer используется как часть кластера, программное обеспечение панели управления кластера следует использовать, чтобы завершать работу оборудования. Дополнительные сведения см. в разделе [Безопасное завершение работы оборудования Azure FXT Edge Filer](fxt-power-off.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После завершения прокладки кабелей оборудования, включите питание на всех узлах и запустите их, задав корневые пароли. 
 > [!div class="nextstepaction"]

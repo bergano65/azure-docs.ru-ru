@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/26/2020
 ms.openlocfilehash: a88682cd2217850e336afc2f9ef5af84c0d8cb82
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78192649"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389511"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -29,7 +29,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 
 Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
-|Служебная программа | Description|
+|Служебная программа | Описание|
 |---|---|
 |[PowerShell AZ](https://docs.microsoft.com/powershell/azure)|[Set-аздинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
 |[AzureRM PowerShell](https://docs.microsoft.com/powershell/azure/azurerm) |[Set-азурермхдинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
@@ -126,7 +126,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 yarn application -kill <application_id>
 ```
 
-Пример:
+Например:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -247,7 +247,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

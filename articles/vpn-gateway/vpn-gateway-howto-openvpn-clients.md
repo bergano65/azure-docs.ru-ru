@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/12/2019
 ms.author: cherylmc
 ms.openlocfilehash: a45a3412a1ceb8e8a9bd9fd1a34dfdbd10ba1c75
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162435"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393556"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway"></a>Настройка клиентов Опенвпн для VPN-шлюза Azure
 
@@ -105,7 +105,7 @@ ms.locfileid: "77162435"
 
 13. Запустите приложение Опенвпн и задвиньте переключатель на странице **профиля** вправо, чтобы подключиться.
 
-    ![Подключение](./media/vpn-gateway-howto-openvpn-clients/ios8.png)
+    ![Подключить](./media/vpn-gateway-howto-openvpn-clients/ios8.png)
 
 
 ## <a name="linux"></a>Клиенты Linux
@@ -165,7 +165,7 @@ ms.locfileid: "77162435"
     ![Импорт из файла](./media/vpn-gateway-howto-openvpn-clients/importfromfile.png)
 17. Вы можете подключиться, выбрав для VPN **Вкл.** на странице **Параметры сети** или под значком сети на панели задач.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите, чтобы VPN-клиенты могли получать доступ к ресурсам в другой виртуальной сети, следуйте инструкциям в статье " [Виртуальная](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) сеть-vnet", чтобы настроить подключение между виртуальными сетями. Обязательно включите протокол BGP на шлюзах и соединениях, иначе трафик не будет считываться.
 

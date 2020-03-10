@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: diberry
 ms.openlocfilehash: 375d4b4e7c3fcafbdfde1ff447bedc3e16aff2f2
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76710537"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393764"
 ---
 # <a name="concepts-for-enabling-active-learning-by-reviewing-endpoint-utterances"></a>Основные сведения о включении активного обучения путем проверки фраз конечной точки
 Активное обучение является одной из трех стратегий повышения точности прогнозов, при этом самой простой в реализации. Чтобы применить активное обучение, вам нужно проверить фразы конечной точки и убедиться в правильности намерений и сущности. Служба LUIS выбирает фразы конечной точки, в правильности которых она не уверена.
@@ -43,6 +43,6 @@ ms.locfileid: "76710537"
 
 Чтобы включить активное обучение, необходимо вести журнал запросов пользователей. Это достигается путем вызова [запроса к конечной точке](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) с параметром строки запроса `log=true` и значением.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о [проверке](luis-how-to-review-endpoint-utterances.md) фрагментов речи конечной точки

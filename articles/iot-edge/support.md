@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 3f1f4efc13e2d11e7111264564a227a484d611d5
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760102"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395675"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -56,7 +56,7 @@ Azure IoT Edge работает в большинстве операционны
 ![ОС узла соответствует](./media/support/edge-on-device.png)
 гостевой ОС </center>
 
-### <a name="tier-1"></a>Уровень 1
+### <a name="tier-1"></a>Уровень 1
 
 Системы, перечисленные в следующей таблице, поддерживаются корпорацией Майкрософт как общедоступной, так и в общедоступной предварительной версии и тестируются с каждым новым выпуском. 
 
@@ -72,7 +72,7 @@ Azure IoT Edge работает в большинстве операционны
 
 Перечисленные выше операционные системы Windows являются требованиями для устройств, которые работают с контейнерами Windows в Windows, что является единственной поддерживаемой конфигурацией для рабочей среды. Пакеты установки Azure IoT Edge для Windows позволяют использовать контейнеры Linux в Windows. Однако эта конфигурация предназначена только для разработки и тестирования. Дополнительные сведения см. в статье [использование IOT EDGE в Windows для запуска контейнеров Linux](how-to-install-iot-edge-windows-with-linux.md).
 
-### <a name="tier-2"></a>Уровень 2
+### <a name="tier-2"></a>Уровень 2
 
 Системы, перечисленные в следующей таблице, считаются совместимыми с Azure IoT Edge, но не проверяются и не обслуживаются корпорацией Майкрософт.
 

@@ -15,11 +15,11 @@ ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 01e683e31905281d25fdcf976bc58397c052a6c3
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201634"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388757"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -35,14 +35,14 @@ ms.locfileid: "77201634"
 
 - **Упрощенное управление лицензиями**. Регистрация в поставщике ресурсов ВИРТУАЛЬНОЙ машины SQL упрощает управление лицензиями SQL Server и позволяет быстро выявление SQL Server виртуальных машин с преимущество гибридного использования Azure, включенными с помощью [портал Azure](virtual-machines-windows-sql-manage-portal.md), AZ CLI или PowerShell: 
 
-   # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
    ```azurecli-interactive
    $vms = az sql vm list | ConvertFrom-Json
    $vms | Where-Object {$_.sqlServerLicenseType -eq "AHUB"}
    ```
 
-   # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+   # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
    ```powershell-interactive
    Get-AzSqlVM | Where-Object {$_.LicenseType -eq 'AHUB'}
@@ -106,14 +106,14 @@ ms.locfileid: "77201634"
 
 Зарегистрируйте поставщик ресурсов виртуальной машины SQL в подписке Azure, выполнив команду AZ CLI или PowerShell. 
 
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+# <a name="az-cli"></a>[Azure CLI](#tab/bash)
 
 ```azurecli-interactive
 # Register the SQL VM resource provider to your subscription 
 az provider register --namespace Microsoft.SqlVirtualMachine 
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell-interactive
 # Register the SQL VM resource provider to your subscription
@@ -132,7 +132,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 Экземпляры отказоустойчивого кластера и развертывания с несколькими экземплярами можно зарегистрировать только в поставщике ресурсов виртуальной машины SQL в упрощенном режиме. 
 
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+# <a name="az-cli"></a>[Azure CLI](#tab/bash)
 
 Регистрация SQL Server виртуальной машины в упрощенном режиме с помощью AZ CLI: 
 
@@ -142,7 +142,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
   ```
 
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Регистрация SQL Server виртуальной машины в упрощенном режиме с помощью PowerShell:  
 
@@ -183,7 +183,7 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008 
 Чтобы зарегистрировать экземпляр SQL Server 2008 или 2008 R2 в экземпляре Windows Server 2008, используйте следующий код AZ CLI или PowerShell: 
 
 
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+# <a name="az-cli"></a>[Azure CLI](#tab/bash)
 
 Зарегистрируйте виртуальную машину SQL Server 2008 в режиме "без агента" с помощью AZ CLI: 
 
@@ -202,7 +202,7 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008 
    --image-sku Enterprise --image-offer SQL2008R2-WS2008R2
  ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Регистрация виртуальной машины SQL Server 2008 в режиме "без агента" с помощью PowerShell: 
 
@@ -258,7 +258,7 @@ SQL Server виртуальные машины, на которых устано
 
 ### <a name="command-line"></a>Командная строка
 
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+# <a name="az-cli"></a>[Azure CLI](#tab/bash)
 
 Выполните следующий фрагмент кода AZ CLI:
 
@@ -267,7 +267,7 @@ SQL Server виртуальные машины, на которых устано
   az sql vm update --name <vm_name> --resource-group <resource_group_name> --sql-mgmt-type full  
   ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Выполните следующий фрагмент кода PowerShell:
 
@@ -297,14 +297,14 @@ SQL Server виртуальные машины, на которых устано
 
 Проверьте текущее состояние регистрации виртуальной машины SQL Server с помощью команды AZ CLI или PowerShell. `ProvisioningState` отобразит `Succeeded`, если регистрация прошла успешно. 
 
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+# <a name="az-cli"></a>[Azure CLI](#tab/bash)
 
 
   ```azurecli-interactive
   az sql vm show -n <vm_name> -g <resource_group>
  ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
   ```powershell-interactive
   Get-AzSqlVM -Name <vm_name> -ResourceGroupName <resource_group>
@@ -345,7 +345,7 @@ SQL Server виртуальные машины, на которых устано
 
 ### <a name="command-line"></a>Командная строка
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Чтобы отменить регистрацию SQL Server виртуальной машины от поставщика ресурсов с помощью Azure CLI, используйте команду [AZ SQL VM Delete](/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-delete) . Это приведет к удалению *ресурса* виртуальной машины SQL Server, но не удалит виртуальную машину. 
 
 
@@ -356,7 +356,7 @@ az sql vm delete
   --yes 
 ```
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Чтобы отменить регистрацию SQL Server виртуальной машины в поставщике ресурсов с помощью Azure CLI, используйте команду [New-азсклвм](/powershell/module/az.sqlvirtualmachine/new-azsqlvm). Это приведет к удалению *ресурса* виртуальной машины SQL Server, но не удалит виртуальную машину. 
 
 ```powershell-interactive

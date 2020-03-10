@@ -1,14 +1,14 @@
 ---
 title: Расширение политики Azure для Visual Studio Code
 description: Узнайте, как использовать расширение политики Azure для Visual Studio Code поиска псевдонимов диспетчер ресурсов.
-ms.date: 11/04/2019
+ms.date: 03/07/2020
 ms.topic: how-to
-ms.openlocfilehash: 48ef098cf970b5128185c40c92f8bb02ad8d9698
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 0e9123f2975bda0d61e9d6e9bf894ecd359e6c5a
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873120"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78932797"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Использование расширения политики Azure для Visual Studio Code
 
@@ -21,9 +21,9 @@ ms.locfileid: "74873120"
 > [!NOTE]
 > Изменения, внесенные локально в политики, просмотренные в расширении политики Azure для Visual Studio Code, не синхронизируются с Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения действий в этом руководстве необходимы такие компоненты:
+Для выполнения действий, описанных в этой статье, необходимо следующее:
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - [Visual Studio Code](https://code.visualstudio.com).
@@ -82,7 +82,7 @@ ms.locfileid: "74873120"
 
    - Палитра команд: 
 
-     В строке меню перейдите в **представление** > **Палитра команд**и введите **"политика Azure": выберите подписки**.
+     В строке меню выберите **вид** > **Палитра команд**и введите **Azure: SELECT Subscriptions**.
 
    - Нижний колонтитул окна
 
@@ -153,7 +153,7 @@ ms.locfileid: "74873120"
 
 В строке меню выберите **вид** > **Палитра команд**, а затем введите **Azure: выйти**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).

@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: de56ba1281d0f20c8be838fa1bc9ebc24905b26c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73666923"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384766"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
 > [!div class="op_single_selector"]
@@ -79,7 +79,7 @@ ms.locfileid: "73666923"
 
 Дополнительные сведения об окнах действий см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md).
 
-### <a name="diagram-view"></a>Представление схемы
+### <a name="diagram-view"></a>Представление "Схема"
 Представление схемы позволяет отслеживать состояние фабрики данных и всех ее ресурсов, а также управлять ими. При выборе сущности фабрики данных (набора данных или конвейера) в представлении схемы вы заметите следующее:
 
 * сущность фабрики данных выбрана в представлении в виде дерева;
@@ -159,10 +159,10 @@ ms.locfileid: "73666923"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Description (Описание)</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
-    <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
+    <td rowspan="8">Ожидание</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
 </tr>
 <tr>
 <td>DatasetDependencies</td><td>Восходящие зависимости не готовы.</td>
@@ -177,7 +177,7 @@ ms.locfileid: "73666923"
 <td>ActivityResume</td><td>Действие приостановлено, и до его возобновления выполнение окон действий недоступно.</td>
 </tr>
 <tr>
-<td>Retry</td><td>Действие выполняется повторно.</td>
+<td>Повторить попытку</td><td>Действие выполняется повторно.</td>
 </tr>
 <tr>
 <td>Проверка</td><td>Проверка еще не начата.</td>
@@ -193,10 +193,10 @@ ms.locfileid: "73666923"
 <td>Выполняется обработка окна действия.</td>
 </tr>
 <tr>
-<td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Ошибка</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
-<td>Canceled</td><td>Окно действий отменено пользователем.</td>
+<td>Отменено</td><td>Окно действий отменено пользователем.</td>
 </tr>
 <tr>
 <td>Проверка</td><td>Сбой проверки.</td>
@@ -204,13 +204,13 @@ ms.locfileid: "73666923"
 <tr>
 <td>-</td><td>Не удалось создать или проверить окно действий.</td>
 </tr>
-<td>Ready</td><td>-</td><td>Окно действия готово к использованию.</td>
+<td>Готово</td><td>-</td><td>Окно действия готово к использованию.</td>
 </tr>
 <tr>
-<td>Skipped</td><td>-</td><td>Окно действий не обработано.</td>
+<td>Пропущено</td><td>-</td><td>Окно действий не обработано.</td>
 </tr>
 <tr>
-<td>None</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>
+<td>Нет</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>
 </tr>
 </table>
 
@@ -270,7 +270,7 @@ ms.locfileid: "73666923"
 
 ![Меню столбца списка "Activity Windows" (Окна действий)](./media/data-factory-monitor-manage-app/ActivityWindowsListColumnMenu.png)
 
-Можно сделать следующее:
+Можно сделать следующее.
 
 * отсортировать по возрастанию;
 * отсортировать по убыванию;

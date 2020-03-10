@@ -9,11 +9,11 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
 ms.openlocfilehash: f2f6be1022a7100a23f49534f2c18fc951d56284
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368719"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389090"
 ---
 # <a name="azure-blob-storage-hot-cool-and-archive-access-tiers"></a>Хранилище BLOB-объектов Azure: горячий, стильный и архивный уровни доступа
 
@@ -140,7 +140,7 @@ ms.locfileid: "77368719"
 
 ### <a name="change-the-default-account-access-tier-of-a-gpv2-or-blob-storage-account"></a>Изменение уровня доступа по умолчанию для учетной записи GPv2 или учетной записи хранилища BLOB-объектов
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. В портал Azure найдите и выберите **все ресурсы**.
@@ -155,7 +155,7 @@ ms.locfileid: "77368719"
 
 ![Изменение уровня учетной записи хранения](media/storage-tiers/account-tier.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Для изменения уровня учетной записи можно использовать следующий сценарий PowerShell. Переменная `$rgName` должна быть инициализирована с именем группы ресурсов. Переменная `$accountName` должна быть инициализирована с помощью имени учетной записи хранения. 
 ```powershell
 #Initialize the following with your resource group and storage account names
@@ -168,7 +168,7 @@ Set-AzStorageAccount -ResourceGroupName $rgName -Name $accountName -AccessTier H
 ---
 
 ### <a name="change-the-tier-of-a-blob-in-a-gpv2-or-blob-storage-account"></a>Изменение уровня большого двоичного объекта в GPv2 или учетной записи хранилища BLOB-объектов
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. В портал Azure найдите и выберите **все ресурсы**.
@@ -185,7 +185,7 @@ Set-AzStorageAccount -ResourceGroupName $rgName -Name $accountName -AccessTier H
 
 ![Изменение уровня учетной записи хранения](media/storage-tiers/blob-access-tier.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Для изменения уровня BLOB-объектов можно использовать следующий сценарий PowerShell. Переменная `$rgName` должна быть инициализирована с именем группы ресурсов. Переменная `$accountName` должна быть инициализирована с помощью имени учетной записи хранения. Переменная `$containerName` должна быть инициализирована с помощью имени контейнера. Переменная `$blobName` должна быть инициализирована с помощью имени большого двоичного объекта. 
 ```powershell
 #Initialize the following with your resource group, storage account, container, and blob names

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: a9de9435c0e2fb2b67733a995ff412978ea02d89
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 711e961bd5eb1607e2e6f11b0b5762423d78c0e7
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250298"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898763"
 ---
 # <a name="keywords-in-azure-cosmos-db"></a>Ключевые слова в Azure Cosmos DB
 В этой статье описываются ключевые слова, которые могут использоваться в запросах Azure Cosmos DB SQL.
@@ -108,7 +108,7 @@ FROM f
 SELECT COUNT(1) FROM (SELECT DISTINCT f.lastName FROM f)
 ```
 
-## <a name="in"></a>ОКНЕ
+## <a name="in"></a>IN
 
 Используйте ключевое слово IN, чтобы проверить, соответствует ли указанное значение любому значению в списке. Например, следующий запрос возвращает все элементы семейства, в которых `id` `WakefieldFamily` или `AndersenFamily`.
 
@@ -126,7 +126,9 @@ SELECT COUNT(1) FROM (SELECT DISTINCT f.lastName FROM f)
     WHERE Families.address.state IN ("NY", "WA", "CA", "PA", "OH", "OR", "MI", "WI", "MN", "FL")
 ```
 
-API SQL обеспечивает поддержку [итерации по массивам JSON](sql-query-object-array.md#Iteration)с новой конструкцией, добавленной с помощью ключевого слова in из источника from. 
+API SQL обеспечивает поддержку [итерации по массивам JSON](sql-query-object-array.md#Iteration)с новой конструкцией, добавленной с помощью ключевого слова in из источника from.
+
+Если включить ключ секции в фильтр `IN`, запрос будет автоматически фильтровать только соответствующие секции.
 
 ## <a name="top"></a>В начало
 
@@ -161,7 +163,7 @@ TOP можно использовать с постоянным значение
     }]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Начало работы](sql-query-getting-started.md)
 - [Joins](sql-query-join.md)

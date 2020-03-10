@@ -15,16 +15,16 @@ manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 11/14/2019
 ms.openlocfilehash: 6027c2d94535ca2ef5c41e7027fe070c6ccb21a0
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926496"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388567"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия выполнения пакета SSIS в Фабрике данных Azure
 В этой статье описывается, как выполнить пакет SQL Server Integration Services (SSIS) в конвейере фабрики данных Azure с помощью действия "выполнение пакета служб SSIS". 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -135,7 +135,7 @@ ms.locfileid: "74926496"
 
 1. Чтобы запустить конвейер, выберите **триггер** на панели инструментов и щелкните **Активировать сейчас**. 
 
-   ![Trigger Now (Запустить сейчас)](./media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-trigger.png)
+   ![Trigger Now (Активировать сейчас)](./media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-trigger.png)
 
 2. На странице **Запуск конвейера** нажмите кнопку **Готово**. 
 
@@ -513,6 +513,6 @@ while ($True) {
    select * from catalog.executions
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. в следующей записи блога:
 - [Модернизировать и расширьте рабочие процессы ETL/ELT с помощью действий SSIS в конвейерах фабрики данных Azure](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)

@@ -10,20 +10,20 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/22/2019
+ms.date: 03/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 8629d07830622770c3b30dacdd1fabc8417d7f52
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: af7c995c11322a538dd9e27a905f1ddbc723e8ab
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454421"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78893174"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
 Портал разработчика — это автоматически создаваемый, полностью настраиваемый веб-сайт с документацией по API. Именно здесь пользователи API могут обнаружить ваши API, узнать, как их использовать и запросить доступ.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Доступ к управляемой версии портала разработчика
@@ -36,9 +36,9 @@ ms.locfileid: "74454421"
 
 ![Портал разработчика управления API — режим администратора](media/api-management-howto-developer-portal-customize/cover.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-- Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
+- Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
 - Импортируйте и опубликуйте экземпляр службы управления API Azure. Дополнительные сведения см. в разделе [Импорт и публикация](import-and-publish.md) .
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
@@ -91,9 +91,9 @@ ms.locfileid: "74454421"
 Прежде чем сделать портал доступным для посетителей, следует персонализировать автоматически созданное содержимое. К рекомендуемым изменениям относятся макеты, стили и содержимое домашней страницы.
 
 > [!NOTE]
-> Из-за соображений интеграции следующие страницы нельзя удалить или переместить под другим URL-адресом: `/404`, `/500`, `/captcha`, `/change-password`, `/config.json`, `/confirm/invitation`, `/confirm-v2/identities/basic/signup`, `/confirm-v2/password`, `/internal-status-0123456789abcdef`, `/publish`, `/signin`, `/signin-sso`, `/signup`.
+> Из-за особенностей интеграции следующие страницы невозможно удалить или переместить под другим URL-адресом: `/404`, `/500`, `/captcha`, `/change-password`, `/config.json`, `/confirm/invitation`, `/confirm-v2/identities/basic/signup`, `/confirm-v2/password`, `/internal-status-0123456789abcdef`, `/publish`, `/signin`, `/signin-sso`, `/signup`.
 
-### <a name="home-page"></a>главная страница
+### <a name="home-page"></a>Домашняя страница
 
 **Домашняя** страница по умолчанию заполнена фиктивным содержимым. Можно либо удалить все разделы с содержимым, либо удержать структуру и скорректировать элементы по одному. Замените созданный текст и изображения собственными и убедитесь, что ссылки указывают на нужные расположения.
 
@@ -101,7 +101,7 @@ ms.locfileid: "74454421"
 
 Замените автоматически созданный логотип на панели навигации своим собственным изображением.
 
-### <a name="styling"></a>Оформлен
+### <a name="styling"></a>Задание стиля
 
 Хотя изменять стили не требуется, можно рассмотреть возможность настройки определенных элементов. Например, измените основной цвет в соответствии с цветом вашей торговой марки.
 
@@ -126,7 +126,11 @@ ms.locfileid: "74454421"
 
 После публикации портала к нему можно получить доступ с того же URL-адреса, что и панель администрирования, например `https://contoso-api.developer.azure-api.net`. Просматривайте его в отдельном сеансе браузера (режим просмотра режиме инкогнито/Private) в качестве внешнего посетителя.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="apply-the-cors-policy-on-apis"></a>Применение политики CORS для API
+
+Необходимо включить CORS (общий доступ к ресурсам между источниками) в API, чтобы посетители портала протестируют API через встроенную интерактивную консоль. Дополнительные сведения см. в [этой статье документации](api-management-howto-developer-portal.md#cors) .
+
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о портале разработчика:
 

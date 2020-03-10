@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: diberry
 ms.openlocfilehash: b151043babd6c67a17f704bb671a415fcc3ba7b2
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280898"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393902"
 ---
 # <a name="machine-learned-features"></a>Функции, полученные от компьютера 
 
@@ -26,7 +26,7 @@ ms.locfileid: "74280898"
 
 ## <a name="features-_descriptors_-in-language-understanding"></a>Функции (_дескрипторы_) в Language Understanding
 
-Функции, также известные как дескрипторы, описывают подсказки, помогающие Language Understanding определить пример фразы продолжительностью. Доступны следующие функции: 
+Функции, также известные как дескрипторы, описывают подсказки, помогающие Language Understanding определить пример фразы продолжительностью. Функции: 
 
 * Список фраз в качестве функции для целей или сущностей
 * Сущности как функции для целей или сущностей
@@ -61,7 +61,7 @@ ms.locfileid: "74280898"
 
 * отраслевая терминология;
 * сленг;
-* сокращения;
+* сокращения
 * специальный для компании язык;
 * язык, происходящий из другого языка, но часто используемый в вашем приложении;
 * ключевые слова и фразы в примере фразы;
@@ -87,8 +87,8 @@ ms.locfileid: "74280898"
 Например, если обнаруживается сущность почтового адреса (A), то поиск адреса улицы (A) добавляет вес к прогнозу для сущности адреса доставки (B). 
 
 ## <a name="best-practices"></a>Рекомендации
-Ознакомьтесь с [рекомендациями для LUIS](luis-concept-best-practices.md).
+Ознакомьтесь с [рекомендациями](luis-concept-best-practices.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о добавлении свойств в приложение LUIS см. в разделе [Добавление свойств](luis-how-to-add-features.md).

@@ -9,11 +9,11 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.openlocfilehash: 69d7bc81f5adc4797be86f946fdb656b4b6cc682
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760912"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391464"
 ---
 # <a name="create-an-azure-application-offer"></a>Создание предложения приложения Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "76760912"
 
 Все новые предложения приложений Azure должны содержать [идентификатор GUID соответствия использования клиентами Azure Partner](https://docs.microsoft.com/azure/marketplace/azure-partner-customer-usage-attribution).
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 
 Ознакомьтесь с документацией по приложениям Azure, включающей руководства, примеры и другие материалы.
 
@@ -62,12 +62,12 @@ ms.locfileid: "76760912"
     * [Публикация определения приложения](https://docs.microsoft.com/azure/managed-applications/publish-managed-app-definition-quickstart)
     * [Развертывание приложения из каталога служб](https://docs.microsoft.com/azure/managed-applications/deploy-service-catalog-quickstart)
 
-* Руководства.
+* Учебники:
 
     * [Создание файлов определений](https://docs.microsoft.com/azure/managed-applications/publish-service-catalog-app)
     * [Публикация приложения из Marketplace](https://docs.microsoft.com/azure/managed-applications/publish-marketplace-app)
 
-* Примеры:
+* Образцы:
 
     * [Azure CLI](https://docs.microsoft.com/azure/managed-applications/cli-samples)
     * [Azure PowerShell](https://docs.microsoft.com/azure/managed-applications/powershell-samples)
@@ -181,7 +181,7 @@ ms.locfileid: "76760912"
 
 Введите более длинное описание предложения (до 256 символов). Описание можно использовать в результатах поиска Marketplace.
 
-### <a name="description"></a>Description
+### <a name="description"></a>Описание
 
 Введите более длинное описание предложения (до 3 000 символов). Это описание будет отображаться для клиентов в обзоре списка Marketplace. Включите предложение ценности, ключевые преимущества, категории и (или) отраслевые связи, возможности приобретения в приложении и все необходимые раскрытия. 
 
@@ -242,7 +242,7 @@ ms.locfileid: "76760912"
 
 - [Рекомендации по использованию списков предложений Marketplace](https://docs.microsoft.com/azure/marketplace/gtm-offer-listing-best-practices)
 
-## <a name="preview"></a>Предварительная версия
+## <a name="preview"></a>Предварительный просмотр
 
 На вкладке **Предварительный просмотр** можно определить ограниченную **аудиторию предварительного просмотра** для проверки вашего предложения перед публикацией предложения в широкой аудитории Marketplace.
 
@@ -317,7 +317,7 @@ ms.locfileid: "76760912"
 
 Укажите краткую сводку по плану программного обеспечения.  Может содержать до 100 символов.
 
-### <a name="description"></a>Description
+### <a name="description"></a>Описание
 
 Это описание представляет собой возможность объяснить, что делает этот план программного обеспечения уникальным, и любые отличия от других планов по в рамках вашего предложения. Может содержать до 2 000 символов.
 
@@ -352,7 +352,7 @@ ms.locfileid: "76760912"
 
 Если вы уже установили цены на план в США долларах (USD) и добавите еще одно расположение рынка, Цена нового рынка будет рассчитываться в соответствии с текущими курсами обмена. Перед публикацией всегда изучите цену для каждого рынка. Цены можно просмотреть, воспользовавшись ссылкой "экспорт цен (XLSX)" после сохранения изменений.
 
-### <a name="pricing"></a>Стоимость
+### <a name="pricing"></a>Цены
 
 Укажите цену за месяц для этого плана.  Эта цена предоставляется в дополнение к любой инфраструктуре Azure или по затратам на программное обеспечение с оплатой по мере использования, которые были предоставлены ресурсами, развернутыми этим решением.
 
@@ -447,7 +447,7 @@ ms.locfileid: "76760912"
 >[!Note]
 >Хотя вы можете добавить до 100 авторизаций на облако, обычно проще создать Active Directory группу пользователей и указать ее идентификатор в поле "идентификатор участника".  Это позволит добавить дополнительных пользователей в группу управления после развертывания плана и уменьшить потребность в обновлении плана, чтобы добавить дополнительные разрешения.
 
-### <a name="policy-settings"></a>Параметры политики
+### <a name="policy-settings"></a>Настройки политики
 
 Примените [политики Azure](https://docs.microsoft.com/azure/governance/policy/overview) к управляемому приложению, чтобы указать требования соответствия для развернутого решения.  Дополнительные сведения об определении политик и формате значений параметров см. в описании [примеров политик Azure](https://docs.microsoft.com/azure/governance/policy/samples/index).  Можно настроить не более пяти политик и только один экземпляр каждой политики.  Для некоторых политик требуются дополнительные параметры.  Для политик аудита допускается только номер SKU "Стандартный".  Имя политики ограничено 50 символами.
 
@@ -519,6 +519,6 @@ ms.locfileid: "76760912"
 
 Если ошибки возникли на одном или нескольких этапах публикации, их необходимо исправить и выполнить повторную публикацию приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Update an existing offer in the Commercial Marketplace](./update-existing-offer.md) (Обновление имеющегося предложения на коммерческой платформе Marketplace)

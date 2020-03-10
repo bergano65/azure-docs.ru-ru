@@ -8,15 +8,15 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 5a42b1e0dc82b3340bbebe176c71cb1754d00664
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72245231"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391498"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)
 
-**В новом выпуске шифрования дисков Azure устранена необходимость предоставлять параметр приложения Azure AD для включения шифрования дисков виртуальной машины. В новом выпуске больше не требуется вводить учетные данные Azure AD на этапе включения шифрования. При использовании нового выпуска все новые виртуальные машины должны быть зашифрованы без параметров приложения Azure AD. Инструкции по включению шифрования дисков виртуальной машины с помощью нового выпуска см. в статье [Шифрование дисков Azure](disk-encryption-overview.md). Виртуальные машины, которые уже были зашифрованы с помощью параметров приложения Azure AD, по-прежнему поддерживаются. Их следует и дальше обслуживать с использованием синтаксиса AAD.**
+**Новый выпуск шифрования дисков Azure исключает необходимость предоставления параметра приложения Azure AD для включения шифрования дисков виртуальной машины. В новом выпуске больше не требуется предоставлять учетные данные Azure AD на этапе включения шифрования. Все новые виртуальные машины должны быть зашифрованы без параметров приложения Azure AD с помощью нового выпуска. Инструкции по включению шифрования дисков виртуальной машины с помощью нового выпуска см. в статье [Шифрование дисков Azure](disk-encryption-overview.md). Виртуальные машины, которые уже были зашифрованы с помощью параметров приложения Azure AD, по-прежнему поддерживаются и должны продолжать поддерживаться с использованием синтаксиса AAD.**
 
 Шифрование дисков Azure использует Azure Key Vault для управления ключами и секретами шифрования дисков, а так и управления ими.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../../key-vault/key-vault-secure-your-key-vault.md). 
 
@@ -85,7 +85,7 @@ ms.locfileid: "72245231"
 
 Можно создать хранилище ключей с помощью [шаблона Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
-1. В шаблоне быстрого запуска Azure щелкните **Deploy to Azure** (Развернуть в Azure).
+1. На странице шаблона быстрого запуска Azure нажмите кнопку **Deploy to Azure** (Развернуть в Azure).
 2. Выберите подписку, группу ресурсов, расположение группы ресурсов, имя хранилища ключей, идентификатор объекта, юридические условия и соглашение, а затем щелкните **Приобрести**. 
 
 
@@ -134,7 +134,7 @@ ms.locfileid: "72245231"
 Для записи секретов шифрования в указанное хранилище ключей, шифрованию дисков Azure требуется идентификатор клиента и секрет клиента приложения Azure Active Directory, которое имеет соответствующие разрешения. 
 
 > [!NOTE]
-> Для шифрования дисков Azure требуется настроить в клиентском приложении AAD следующие политики доступа: разрешения _WrapKey_ и _Set_.
+> Для шифрования дисков Azure требуется настроить в клиентском приложении Azure AD следующие политики доступа: разрешения _WrapKey_ и _Set_.
 
 ### <a name="set-the-key-vault-access-policy-for-the-azure-ad-app-with-azure-powershell"></a>Задайте политику доступа к хранилищу ключей для приложения Azure AD с помощью Azure PowerShell
 Приложению Azure AD нужны права на доступ к ключам и секретам, которые размещены в хранилище. Используйте командлет [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) , чтобы предоставить приложению разрешения, используя идентификатор клиента (который был создан при регистрации приложения) в качестве значения параметра _–_ nКод. Чтобы узнать больше, ознакомьтесь с записью блога [Azure Key Vault - Step by Ste](https://blogs.technet.com/b/kv/archive/2015/06/02/azure-key-vault-step-by-step.aspx) (Пошаговая инструкция для Azure Key Vault). 
@@ -176,13 +176,13 @@ ms.locfileid: "72245231"
 ### <a name="set-key-vault-advanced-access-policies-with-azure-powershell"></a>Настройка расширенных политик доступа к хранилищу ключей с помощью Azure PowerShell
  Используйте командлет PowerShell для хранилища ключей [Set-азкэйваултакцессполици](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) , чтобы включить шифрование дисков для хранилища ключей.
 
-  - **Включение хранилища ключей для шифрования дисков:** для шифрования дисков Azure требуется использовать параметр EnabledForDiskEncryption.
+  - **Включение хранилища ключей для шифрования диска:** для шифрования дисков Azure требуется использовать параметр EnabledForDiskEncryption.
       
      ```azurepowershell-interactive 
      Set-AzKeyVaultAccessPolicy -VaultName 'MySecureVault' -ResourceGroupName 'MyKeyVaultResourceGroup' -EnabledForDiskEncryption
      ```
 
-  - **Включение хранилища ключей для развертывания (если необходимо):** позволяет поставщику ресурсов Microsoft.Compute извлекать секреты из этого хранилища ключей в случае использования ссылки на него при создании ресурса, например виртуальной машины.
+  - **Включение хранилища ключей для развертывания (если необходимо):** позволяет поставщику ресурсов Microsoft.Compute извлекать секреты из этого хранилища ключей в случае использования ссылки на него при создании ресурса, например, виртуальной машины.
 
      ```azurepowershell-interactive
       Set-AzKeyVaultAccessPolicy -VaultName 'MySecureVault' -ResourceGroupName 'MyKeyVaultResourceGroup' -EnabledForDeployment
@@ -197,7 +197,7 @@ ms.locfileid: "72245231"
 ### <a name="set-key-vault-advanced-access-policies-using-the-azure-cli"></a>Настройка политик расширенного доступа к хранилищу ключей с помощью Azure CLI
 Включите шифрование дисков для хранилища ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update). 
 
- - **Включение хранилища ключей для шифрования дисков:** параметр Enabled-for-disk-encryption является обязательным. 
+ - **Включение хранилища ключей для шифрования диска:** требуется использовать параметр enabled-for-disk-encryption. 
 
      ```azurecli-interactive
      az keyvault update --name "MySecureVault" --resource-group "MyKeyVaultResourceGroup" --enabled-for-disk-encryption "true"

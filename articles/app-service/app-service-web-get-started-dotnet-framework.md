@@ -1,16 +1,16 @@
 ---
-title: Краткое руководство. Создание приложения ASP.NET на C#
+title: Краткое руководство. Создание C# приложения ASP.NET
 description: Узнайте, как запускать веб-приложения в Службе приложений Azure, развертывая шаблон веб-приложения ASP.NET на C# по умолчанию в Visual Studio.
 ms.assetid: 04a1becf-7756-4d4e-92d8-d9471c263d23
 ms.topic: quickstart
 ms.date: 10/21/2019
 ms.custom: seodec18
 ms.openlocfilehash: f2e31723dc2761007994f652d9d6c28ab3f7d47d
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671389"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388199"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Создание веб-приложения ASP.NET Framework в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "74671389"
 
 4. Вы можете развернуть любой тип веб-приложения ASP.NET в Azure. В рамках этого краткого руководства выберите шаблон **MVC**.
 
-5. Обязательно выберите **Без проверки подлинности** в параметрах аутентификации. Нажмите кнопку **Создать**.
+5. Обязательно выберите **Без проверки подлинности** в параметрах аутентификации. Выберите **Создать**.
 
    ![Создание веб-приложения ASP.NET](./media/app-service-web-get-started-dotnet-framework/select-mvc-template-vs2019.png)
 
@@ -80,10 +80,10 @@ ms.locfileid: "74671389"
 
 1. В разделе **Настройка плана размещения** введите значения из следующей таблицы и щелкните **ОК**.
 
-   | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+   | Параметр | Рекомендуемое значение | Описание |
    |-|-|-|
    |План обслуживания приложения| myAppServicePlan | Имя плана службы приложений. |
-   | Location | Западная Европа | Центр обработки данных, где размещается веб-приложение. |
+   | Расположение | Западная Европа | Центр обработки данных, где размещается веб-приложение. |
    | Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) определяет возможности размещения. |
 
    ![Создание плана службы приложений](./media/app-service-web-get-started-dotnet-framework/app-service-plan-framework-vs2019.png)
@@ -137,7 +137,7 @@ ms.locfileid: "74671389"
 
    В меню слева доступно несколько страниц для настройки приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создание приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)

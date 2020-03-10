@@ -4,11 +4,11 @@ description: Описание функций, доступных для испо
 ms.date: 12/09/2019
 ms.topic: reference
 ms.openlocfilehash: 0aab2fe0511ccc11842d0e132a83d6e3f7fac27f
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74970896"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78386250"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Функции для использования с чертежами Azure
 
@@ -16,14 +16,14 @@ ms.locfileid: "74970896"
 
 Поддерживаются следующие функции:
 
-- [artifacts](#artifacts)
+- [артефакты](#artifacts)
 - [concat](#concat)
 - [parameters](#parameters)
 - [resourceGroup](#resourcegroup)
 - [resourceGroups](#resourcegroups)
 - [subscription](#subscription)
 
-## <a name="artifacts"></a>artifacts
+## <a name="artifacts"></a>артефакты
 
 `artifacts(artifactName)`
 
@@ -34,9 +34,9 @@ ms.locfileid: "74970896"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| artifactName |ДА |string |Имя артефакта схемы. |
+| artifactName |Да |string |Имя артефакта схемы. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -106,14 +106,14 @@ ms.locfileid: "74970896"
 
 Ниже приведены некоторые примеры получения данных из образца _митемплатеартифакт_ .
 
-| Expression | Тип | Value |
+| Выражение | Тип | Значение |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив, | \["first", "second"\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Строка | "first" |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | Строка | "my string value" |
-|`[artifacts("myTemplateArtifact").outputs.myObject]` | Объекты | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Строка | "my value" |
-|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | Да |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Array | \[«First», «Second»\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | "first" |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | String | "my string value" |
+|`[artifacts("myTemplateArtifact").outputs.myObject]` | Объект | { "myproperty": "my value", "anotherProperty": true } |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | "my value" |
+|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | Истина |
 
 ## <a name="concat"></a>concat
 
@@ -123,9 +123,9 @@ ms.locfileid: "74970896"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| строка1 |ДА |string |Первое значение для сцепки. |
+| строка1 |Да |string |Первое значение для сцепки. |
 | дополнительные аргументы |Нет |string |Дополнительные значения в последовательном порядке для объединения |
 
 ### <a name="return-value"></a>Возвращаемое значение
@@ -148,9 +148,9 @@ ms.locfileid: "74970896"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |ДА |string |Имя параметра, который требуется вернуть. |
+| parameterName |Да |string |Имя возвращаемого параметра. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -269,9 +269,9 @@ ms.locfileid: "74970896"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| плацехолдернаме |ДА |string |Имя заполнителя артефакта группы ресурсов, который необходимо вернуть. |
+| плацехолдернаме |Да |string |Имя заполнителя артефакта группы ресурсов, который необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -323,7 +323,7 @@ ms.locfileid: "74970896"
 }
 ```
 
-## <a name="subscription"></a>subscription
+## <a name="subscription"></a>подписка
 
 `subscription()`
 
@@ -365,7 +365,7 @@ ms.locfileid: "74970896"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).

@@ -4,11 +4,11 @@ description: Узнайте, как использовать функции бе
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.openlocfilehash: 3435b9455af3362cdce2dceb20e183a8b05a15dd
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77660841"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395542"
 ---
 # <a name="security-features-to-help-protect-cloud-workloads-that-use-azure-backup"></a>Функции безопасности, помогающие защитить облачные рабочие нагрузки, использующие Azure Backup
 

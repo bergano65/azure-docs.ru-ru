@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
 ms.openlocfilehash: e641340ac04415ee4a20cda2bc09bbdbef9802a6
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75931400"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389502"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -46,7 +46,7 @@ ms.locfileid: "75931400"
 
 Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в статье [Настройка кластеров hdinsight с помощью действия сценария (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
@@ -126,7 +126,7 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 
 ![Hadoop настраивает шаблон Azure Resource Manager начальной загрузки кластера](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Создание кластеров Apache Hadoop в hdinsight](hdinsight-hadoop-provision-linux-clusters.md) содержит инструкции по созданию кластера HDInsight с помощью других настраиваемых параметров.
 * [Разработка скриптов действия сценария для HDInsight](hdinsight-hadoop-script-actions-linux.md)

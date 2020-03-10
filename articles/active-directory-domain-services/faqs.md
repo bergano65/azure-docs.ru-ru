@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/21/2020
+ms.date: 03/09/2020
 ms.author: iainfou
-ms.openlocfilehash: cea1664a0418dbe6269c22cffc70e0979dea41f0
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.openlocfilehash: a57826c79babded6e616548879a5ec0c223307d0
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78892839"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78946432"
 ---
 # <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 
@@ -36,6 +36,7 @@ ms.locfileid: "78892839"
 * [Можно ли добавить контроллеры домена в управляемый домен доменных служб Azure AD?](#can-i-add-domain-controllers-to-an-azure-ad-domain-services-managed-domain)
 * [Можно ли приглашать гостевых пользователей в моем каталоге использовать доменные службы Azure AD?](#can-guest-users-invited-to-my-directory-use-azure-ad-domain-services)
 * [Можно ли переместить существующий управляемый домен доменных служб Azure AD в другую подписку, группу ресурсов, регион или виртуальную сеть?](#can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network)
+* [Имеются ли в доменных службах Azure AD варианты высокой доступности?](#does-azure-ad-domain-services-include-high-availability-options)
 
 ### <a name="can-i-create-multiple-managed-domains-for-a-single-azure-ad-directory"></a>Можно ли создать несколько управляемых доменов для одного каталога Azure AD?
 Нет. Для одного каталога Azure AD можно создать только один управляемый домен, поддерживаемый доменными службами Azure AD.
@@ -74,6 +75,10 @@ ms.locfileid: "78892839"
 
 ### <a name="can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network"></a>Можно ли переместить существующий управляемый домен доменных служб Azure AD в другую подписку, группу ресурсов, регион или виртуальную сеть?
 Нет. После создания управляемого домена доменных служб Azure AD вы не сможете переместить экземпляр в другую группу ресурсов, виртуальную сеть, подписку и т. д. Выберите наиболее подходящую подписку, группу ресурсов, регион и виртуальную сеть при развертывании экземпляра AD DS Azure.
+
+### <a name="does-azure-ad-domain-services-include-high-availability-options"></a>Имеются ли в доменных службах Azure AD варианты высокой доступности?
+
+Да. Каждый управляемый домен доменных служб Azure AD содержит два контроллера домена. Вы не управляете этими контроллерами домена и не подключаются к ним, они входят в управляемую службу. При развертывании доменных служб Azure AD в регионе, который поддерживает Зоны доступности, контроллеры домена распределяются между зонами. В регионах, которые не поддерживают Зоны доступности, контроллеры домена распределяются по наборам доступности. В этом распространении нет параметров конфигурации или управления ими. Дополнительные сведения см. [в статье параметры доступности для виртуальных машин в Azure](../virtual-machines/windows/availability.md).
 
 ## <a name="administration-and-operations"></a>Администрирование и операции
 
@@ -141,11 +146,11 @@ ms.locfileid: "78892839"
 ### <a name="what-azure-regions-is-the-service-available-in"></a>В каких регионах Azure доступна служба?
 Перейдите на страницу [служб Azure по регионам](https://azure.microsoft.com/regions/#services/), чтобы просмотреть список регионов Azure, в которых доступны доменные службы Azure AD.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о доменных службах Azure AD см. в статье [что такое Azure Active Directory доменных служб?](overview.md).
 

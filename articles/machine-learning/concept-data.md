@@ -11,11 +11,11 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 12/09/2019
 ms.openlocfilehash: 4149e90e07bbcd03a0df41060b42b8902b89e774
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75541885"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78396192"
 ---
 # <a name="data-access-in-azure-machine-learning"></a>Доступ к данным в Машинное обучение Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "75541885"
 Поддерживаемые службы хранилища Azure, которые можно зарегистрировать как хранилища данных:
 + Контейнер больших двоичных объектов Azure
 + Общая папка Azure
-+ Azure Data Lake
++ Azure Data Lake;
 + Azure Data Lake Gen2
 + База данных SQL Azure
 + База данных Azure для PostgreSQL
@@ -114,7 +114,7 @@ ms.locfileid: "75541885"
 В контексте машинного обучения смещение данных — это изменение входных данных модели, которое приводит к снижению производительности модели. Это одна из основных причин, с которой точность снижается с течением времени, поэтому отслеживание смещения данных помогает выявить проблемы с производительностью модели.
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://aka.ms/dataset-tutorial).

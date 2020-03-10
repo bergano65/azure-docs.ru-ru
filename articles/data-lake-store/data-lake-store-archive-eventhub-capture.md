@@ -12,17 +12,17 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: bb67c1769510710b368bef4dc0b501f939b3427e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60879583"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78397211"
 ---
 # <a name="use-azure-data-lake-storage-gen1-to-capture-data-from-event-hubs"></a>Сбор данных из Центров событий с помощью Azure Data Lake Storage 1-го поколения
 
 В этой статье приведены сведения о сборе данных, полученных Центрами событий Azure, с помощью Azure Data Lake Storage 1-го поколения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -37,50 +37,50 @@ ms.locfileid: "60879583"
 
 1. Откройте учетную запись Data Lake Storage 1-го поколения, в которую необходимо собрать данные из Центров событий, и щелкните **Обозреватель данных**.
 
-    ![Обозреватель данных Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-open-data-explorer.png "Data Lake Storage Gen1 data explorer")
+    ![Data Lake Storage 1-го поколения обозреватель данных](./media/data-lake-store-archive-eventhub-capture/data-lake-store-open-data-explorer.png "Data Lake Storage 1-го поколения обозреватель данных")
 
 1.  Выберите **Создать папку** и введите имя папки, в которую необходимо сохранять данные.
 
-    ![Создание папки в Azure Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-create-new-folder.png "Create a new folder in Data Lake Storage Gen1")
+    ![Создание новой папки в Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-create-new-folder.png "Создание новой папки в Data Lake Storage 1-го поколения")
 
 1. Назначьте разрешения в корневой папке Data Lake Storage 1-го поколения. 
 
-    a. Щелкните **Обозреватель данных**, выберите корневую папку учетной записи Data Lake Storage 1-го поколения, а затем — **Доступ**.
+    а. Щелкните **Обозреватель данных**, выберите корневую папку учетной записи Data Lake Storage 1-го поколения, а затем — **Доступ**.
 
-    ![Назначение разрешений в корневой папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-root.png "Assign permissions for the Data Lake Storage Gen1 root")
+    ![Назначение разрешений для корневого Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-root.png "Назначение разрешений для корневого Data Lake Storage 1-го поколения")
 
-    2\. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
+    б. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
 
-    ![Назначение разрешений в корневой папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Assign permissions for the Data Lake Storage Gen1 root")
+    ![Назначение разрешений для корневого Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Назначение разрешений для корневого Data Lake Storage 1-го поколения")
     
     Нажмите кнопку **Выбрать**.
 
-    c. В разделе **Назначение разрешений** выберите **Выбор разрешений**. Задайте для параметра **Разрешения** значение **Выполнить**. Задайте для параметра **Добавить к** значение **К этой папке и всем вложенным элементам**. Задайте для параметра **Add as** (Добавить как) значение **Запись разрешений доступа и запись разрешений по умолчанию**.
+    в. В разделе **Назначение разрешений** выберите **Выбор разрешений**. Задайте для параметра **Разрешения** значение **Выполнить**. Задайте для параметра **Добавить к** значение **К этой папке и всем вложенным элементам**. Задайте для параметра **Add as** (Добавить как) значение **Запись разрешений доступа и запись разрешений по умолчанию**.
 
     > [!IMPORTANT]
     > Это простой способ обеспечения доступа к целевой папке при создании новой иерархии папок для записи данных, поступающих в Центры событий Azure.  Однако добавление разрешений для всех дочерних элементов папки верхнего уровня с многочисленными дочерними файлами и папками может занять много времени.  Если корневая папка содержит большое число файлов и папок, возможно, быстрее будет добавить разрешения на **выполнение** для `Microsoft.EventHubs` по отдельности в каждую папку в пути к конечной целевой папке. 
 
-    ![Назначение разрешений в корневой папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp1.png "Assign permissions for the Data Lake Storage Gen1 root")
+    ![Назначение разрешений для корневого Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp1.png "Назначение разрешений для корневого Data Lake Storage 1-го поколения")
 
-    Последовательно выберите **ОК**.
+    Нажмите кнопку **ОК**.
 
 1. Назначьте разрешения папке в учетной записи Data Lake Storage 1-го поколения, в которой необходимо сохранить данные.
 
-    a. Щелкните **Обозреватель данных**, выберите папку в учетной записи Data Lake Storage 1-го поколения, а затем — **Доступ**.
+    а. Щелкните **Обозреватель данных**, выберите папку в учетной записи Data Lake Storage 1-го поколения, а затем — **Доступ**.
 
-    ![Назначение разрешений в папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-folder.png "Assign permissions for the Data Lake Storage Gen1 folder")
+    ![Назначение разрешений для папки Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-folder.png "Назначение разрешений для папки Data Lake Storage 1-го поколения")
 
-    2\. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
+    б. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
 
-    ![Назначение разрешений в папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Assign permissions for the Data Lake Storage Gen1 folder")
+    ![Назначение разрешений для папки Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Назначение разрешений для папки Data Lake Storage 1-го поколения")
     
     Нажмите кнопку **Выбрать**.
 
-    c. В разделе **Назначение разрешений** выберите **Выбор разрешений**. Для параметра **Разрешения** установите флажки **Чтение, Запись** и **Выполнить**. Задайте для параметра **Добавить к** значение **К этой папке и всем вложенным элементам**. Наконец, задайте для параметра **Add as** (Добавить как) значение **Запись разрешений доступа и запись разрешений по умолчанию**.
+    в. В разделе **Назначение разрешений** выберите **Выбор разрешений**. Для параметра **Разрешения** установите флажки **Чтение, Запись** и **Выполнить**. Задайте для параметра **Добавить к** значение **К этой папке и всем вложенным элементам**. Наконец, задайте для параметра **Add as** (Добавить как) значение **Запись разрешений доступа и запись разрешений по умолчанию**.
 
-    ![Назначение разрешений в папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp-folder.png "Assign permissions for the Data Lake Storage Gen1 folder")
+    ![Назначение разрешений для папки Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp-folder.png "Назначение разрешений для папки Data Lake Storage 1-го поколения")
     
-    Последовательно выберите **ОК**. 
+    Нажмите кнопку **ОК**. 
 
 ## <a name="configure-event-hubs-to-capture-data-to-data-lake-storage-gen1"></a>Настройка Центров событий для сбора данных в Data Lake Storage 1-го поколения
 
@@ -88,29 +88,29 @@ ms.locfileid: "60879583"
 
 1. В области **Обзор** пространства имен Центров событий выберите **+Концентратор событий**.
 
-    ![Создание концентратора событий](./media/data-lake-store-archive-eventhub-capture/data-lake-store-create-event-hub.png "Create Event Hub")
+    ![Создание концентратора событий](./media/data-lake-store-archive-eventhub-capture/data-lake-store-create-event-hub.png "Создание узла уведомлений")
 
 1. Чтобы настроить Центры событий для сбора данных в Data Lake Storage 1-го поколения, укажите приведенные ниже значения.
 
-    ![Создание концентратора событий](./media/data-lake-store-archive-eventhub-capture/data-lake-store-configure-eventhub.png "Create Event Hub")
+    ![Создание концентратора событий](./media/data-lake-store-archive-eventhub-capture/data-lake-store-configure-eventhub.png "Создание узла уведомлений")
 
-    a. Укажите имя концентратора событий.
+    а. Укажите имя концентратора событий.
     
-    2\. В этом руководстве задайте для параметров **Количество разделов** и **Хранение сообщений** значения по умолчанию.
+    б. В этом руководстве задайте для параметров **Количество разделов** и **Хранение сообщений** значения по умолчанию.
     
-    c. Установите для параметра **Запись** значение **Включено**. Задайте **окно времени** (частота выполнения записи) и **окно размера** (размер данных для записи). 
+    в. Установите для параметра **Запись** значение **Включено**. Задайте **окно времени** (частота выполнения записи) и **окно размера** (размер данных для записи). 
     
-    d. Для параметра **Capture Provider** (Поставщик сбора) задайте значение **Azure Data Lake Store** и выберите учетную запись Data Lake Storage 1-го поколения, созданную ранее. В качестве значения параметра **Data Lake Path** (Путь к Data Lake) введите имя папки, созданной в учетной записи Data Lake Storage 1-го поколения. Необходимо только указать относительный путь к папке.
+    . Для параметра **Capture Provider** (Поставщик сбора) задайте значение **Azure Data Lake Store** и выберите учетную запись Data Lake Storage 1-го поколения, созданную ранее. В качестве значения параметра **Data Lake Path** (Путь к Data Lake) введите имя папки, созданной в учетной записи Data Lake Storage 1-го поколения. Необходимо только указать относительный путь к папке.
 
-    д. Оставьте стандартное значение параметра **Воспользуйтесь поиском, чтобы отфильтровать репликации**. Этот параметр определяет структуру папки, созданной в папке записи.
+    д) Оставьте стандартное значение параметра **Воспользуйтесь поиском, чтобы отфильтровать репликации**. Этот параметр определяет структуру папки, созданной в папке записи.
 
-    Е. Нажмите кнопку **Создать**.
+    е) Нажмите кнопку **Создать**.
 
 ## <a name="test-the-setup"></a>Тестирование настройки
 
 Теперь вы можете протестировать решение, отправив данные в концентратор событий Azure. Инструкции см. в статье [Отправка событий в Центры событий Azure с помощью платформы .NET Framework](../event-hubs/event-hubs-dotnet-framework-getstarted-send.md). Отправляемые данные отобразятся в Data Lake Storage 1-го поколения с использованием указанной структуры папок. Например, на снимке экрана ниже приведена структура папок, в которой отобразятся данные в учетной записи Data Lake Storage 1-го поколения.
 
-![Пример данных концентратора событий в Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-eventhub-data-sample.png "Sample EventHub data in Data Lake Storage Gen1")
+![Пример данных EventHub в Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-eventhub-data-sample.png "Пример данных EventHub в Data Lake Storage 1-го поколения")
 
 > [!NOTE]
 > Даже если в Центры событий не поступают сообщения, они записывают пустые файлы лишь с заголовками в учетную запись Data Lake Storage 1-го поколения. Файлы записываются с интервалом времени, указанным при создании концентраторов событий.
@@ -122,6 +122,6 @@ ms.locfileid: "60879583"
 Когда данные появятся в Data Lake Storage 1-го поколения, вы можете выполнить задания аналитики, чтобы обработать их. Сведения об использовании Azure Data Lake Analytics для выполнения этих действий см. в [примере USQL Avro](https://github.com/Azure/usql/tree/master/Examples/AvroExamples).
   
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-azure-storage-blob.md)

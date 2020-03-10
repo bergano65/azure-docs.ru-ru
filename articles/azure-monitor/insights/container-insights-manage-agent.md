@@ -4,11 +4,11 @@ description: В этой статье описывается управлени�
 ms.topic: conceptual
 ms.date: 01/24/2020
 ms.openlocfilehash: 1a1f8d690979a846dbf5041999180221752acc0b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843962"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385479"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 
@@ -104,6 +104,6 @@ oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging
   value: "True"  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если при попытке обновления агента у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).

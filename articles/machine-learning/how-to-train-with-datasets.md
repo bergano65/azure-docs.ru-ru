@@ -10,18 +10,18 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 09/25/2019
-ms.openlocfilehash: ece8ee77f57dc3252c70c3f8b49dcee72967dc9e
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.date: 03/09/2020
+ms.openlocfilehash: 401383f2d483836bf725051810d78167869f7b22
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78198071"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942344"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье вы узнаете о двух способах использования [наборов данных машинное обучение Azure](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py) в ходе удаленного обучения экспериментов, не беспокоясь о строках подключения и путях к данным.
+В этой статье вы узнаете о двух способах использования [наборов данных машинное обучение Azure](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset%28class%29?view=azure-ml-py) в удаленном обучении эксперимента, не беспокоясь о строках подключения и путях к данным.
 
 - Вариант 1. при наличии структурированных данных создайте Табулардатасет и используйте их непосредственно в обучающем скрипте.
 
@@ -29,11 +29,11 @@ ms.locfileid: "78198071"
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими продуктами, такими как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) [, а также](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
 
@@ -70,7 +70,7 @@ from azureml.core import Dataset, Run
 
 run = Run.get_context()
 # get the input dataset by name
-dataset = run.input_datasets['titanic_ds']
+dataset = run.input_datasets['titanic']
 # load the TabularDataset to pandas DataFrame
 df = dataset.to_pandas_dataframe()
 ```
@@ -211,7 +211,7 @@ y_test = load_data(y_test, True).reshape(-1)
 
 В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс
 

@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5a49c69b0f96add61501d9e2c5fc00ba564eba2a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422546"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78376461"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
@@ -121,7 +121,7 @@ ms.locfileid: "75422546"
 
 1. Щелкните **журнал запросов** , чтобы подтвердить отмену запроса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Утверждение или отклонение запросов на доступ](entitlement-management-request-approve.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

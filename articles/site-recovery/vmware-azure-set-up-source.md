@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: ff01aed92669acb193ff149ea9298550134f42a3
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73622210"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391748"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "73622210"
 1. В колонке **Хранилища служб восстановления** выберите имя хранилища. В этом сценарии мы используем имя **ContosoVMVault**.
 2. В разделе **Приступая к работе** выберите Site Recovery. Затем выберите **Подготовка инфраструктуры**.
 3. Выберите **Protection goal** (Цель защиты)  > **Where are your machines located** (Где находятся компьютеры?), а затем — **On-premises** (Локально).
-4. В разделе **Куда следует реплицировать компьютеры?** выберите **В Azure**.
+4. В разделе **Куда следует реплицировать компьютеры?** выберите **To Azure** (В Azure).
 5. В разделе **Are your machines virtualized** (Ваши компьютеры виртуализированы?) выберите **Yes, with VMware vSphere Hypervisor** (Да, с помощью гипервизора VMware vSphere). Нажмите кнопку **ОК**.
 
 ## <a name="set-up-the-configuration-server"></a>Настройка сервера конфигурации
@@ -59,7 +59,7 @@ ms.locfileid: "73622210"
 - C:\Program Files\Microsoft Azure Site Recovery Configuration Manager. 
 - C:\Program Files\Microsoft Azure Site Recovery Error Collection Tool. 
   - C:\thirdparty.
-  - C:\Temp.
+  - C:\Temp
   - C:\strawberry.
   - C:\ProgramData\MySQL.
   - C:\Program Files (x86)\MySQL.
@@ -84,5 +84,5 @@ ms.locfileid: "73622210"
 7. Azure Site Recovery каталог установки сервера обработки с балансировкой нагрузки, например: C:\Program Files (x86) \Microsoft Azure Site Recovery
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Настройка целевой среды](./vmware-azure-set-up-target.md) 

@@ -6,11 +6,11 @@ ms.topic: conceptual
 description: Описание требований к сети для запуска Azure Dev Spaces в Azure Kubernetes Services
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, CNI, кубенет, SDN, сеть
 ms.openlocfilehash: 9e32e3b65451dceefaeeaf7faed7c8337797e0b8
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76044990"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389682"
 ---
 # <a name="configure-networking-for-azure-dev-spaces-in-different-network-topologies"></a>Настройка сети для Azure Dev Spaces в различных сетевых топологиях
 
@@ -28,7 +28,7 @@ Azure Dev Spaces имеет определенные требования для
 
 Azure Dev Spaces требуется входящий и исходящий трафик для следующих полных доменных имен:
 
-| Полное доменное имя.                       | Port       | Использование      |
+| Полное доменное имя.                       | Порт       | Применение      |
 |----------------------------|------------|----------|
 | cloudflare.docker.com      | HTTPS: 443 | Извлечение образов DOCKER для Azure Dev Spaces |
 | gcr.io                     | HTTPS: 443 | Извлечение Helm изображений для Azure Dev Spaces |
@@ -69,7 +69,7 @@ Azure Dev Spaces обеспечивает маршрутизацию между 
 
 Azure Dev Spaces использует средства на стороне клиента, такие как расширение CLI Azure Dev Spaces, расширение Visual Studio Code и расширение Visual Studio, чтобы взаимодействовать с кластером AKS для отладки. Чтобы использовать средства Azure Dev Spaces на стороне клиента, разрешите трафик с компьютеров разработки в домен *аздс-\*. azds.IO* . Точное полное доменное имя см. в разделе *датапланефкдн* in `USERPROFILE\.azds\settings.json`. При использовании [IP-диапазонов разрешенного сервера API][auth-range-section]необходимо также разрешить IP-адрес любых компьютеров разработки, подключающихся к кластеру AKS для отладки, для подключения к серверу API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 3fef5db90c3ae63a8fa48835646e09f9dfe6f023
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113824"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391231"
 ---
 # <a name="tips-for-ai-enrichment-in-azure-cognitive-search"></a>Советы по расширению искусственного интеллекта в Azure Когнитивный поиск
 
@@ -103,7 +103,7 @@ https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage
 При [параллельном индексировании](search-howto-large-index.md) можно разместить данные в нескольких контейнерах или виртуальных папках в одном и том же контейнере. Затем можно создать несколько пар источника данных и индексатора. Все индексаторы могут использовать один и тот же набор навыков и выполнять запись в один и тот же целевой индекс поиска. Поэтому приложению поиска не нужно знать об этом секционировании.
 Дополнительные сведения см. в руководстве по [индексированию больших наборов данных](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 + [Краткое руководство. создание конвейера обогащения искусственного интеллекта на портале](cognitive-search-quickstart-blob.md)
 + [Учебник. изучение API-интерфейсов для обогащения искусственного интеллекта](cognitive-search-tutorial-blob.md)
 + [Specifying data source credentials](search-howto-indexing-azure-blob-storage.md#how-to-specify-credentials) (Указание учетных данных источника данных)

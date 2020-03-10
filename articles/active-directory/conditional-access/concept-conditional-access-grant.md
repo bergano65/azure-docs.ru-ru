@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/26/2020
+ms.date: 03/04/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10d3f18fb11dc54f560d867e2b5ff87251e2c836
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
-ms.translationtype: MT
+ms.openlocfilehash: 09a720be10b09e11adc8acdc8ab26a06870311b0
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78249104"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78892981"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -35,7 +35,7 @@ ms.locfileid: "78249104"
 При предоставлении доступа администраторы могут выбрать принудительное применение одного или нескольких элементов управления. К этим элементам управления относятся следующие параметры. 
 
 - [Требовать многофакторную проверку подлинности (многофакторная идентификация Azure)](../authentication/concept-mfa-howitworks.md)
-- [Требовать, чтобы устройство было помечено как соответствующее (Microsoft Intune)](https://docs.microsoft.com/intune/protect/device-compliance-get-started)
+- [Требовать, чтобы устройство было помечено как соответствующее (Microsoft Intune)](/intune/protect/device-compliance-get-started)
 - [Требовать гибридное устройство, присоединенное к Azure AD](../devices/concept-azure-ad-join-hybrid.md)
 - [Требовать утвержденное клиентское приложение](app-based-conditional-access.md)
 - [Требовать политику защиты приложений](app-protection-based-conditional-access.md)
@@ -53,7 +53,7 @@ ms.locfileid: "78249104"
 
 ### <a name="require-device-to-be-marked-as-compliant"></a>Требовать, чтобы устройство было отмечено как соответствующее
 
-Организации, развернутые Microsoft Intune, могут использовать информацию, возвращенную с устройств, для обнаружения устройств, соответствующих определенным требованиям соответствия. Эта информация о соответствии политики пересылается из Intune в Azure AD, где условный доступ может принимать решения на предоставление или блокирование доступа к ресурсам. Дополнительные сведения о политиках соответствия требованиям см. в статье [Установка правил на устройствах для разрешения доступа к ресурсам в Организации с помощью Intune](https://docs.microsoft.com/intune/protect/device-compliance-get-started).
+Организации, развернутые Microsoft Intune, могут использовать информацию, возвращенную с устройств, для обнаружения устройств, соответствующих определенным требованиям соответствия. Эта информация о соответствии политики пересылается из Intune в Azure AD, где условный доступ может принимать решения на предоставление или блокирование доступа к ресурсам. Дополнительные сведения о политиках соответствия требованиям см. в статье [Установка правил на устройствах для разрешения доступа к ресурсам в Организации с помощью Intune](/intune/protect/device-compliance-get-started).
 
 Устройство может быть помечено как соответствующее Intune (для любой ОС устройства) или сторонней системой MDM для устройств Windows 10. Jamf Pro является единственной поддерживаемой сторонней системой MDM. Дополнительные сведения об интеграции можно найти в статье [Интеграция Jamf Pro с Intune для обеспечения соответствия](/intune/protect/conditional-access-integrate-jamf).
 
@@ -67,7 +67,35 @@ ms.locfileid: "78249104"
 
 Организации могут потребовать, чтобы попытка доступа к выбранным облачным приложениям выполнялась из утвержденного клиентского приложения. Эти утвержденные клиентские приложения поддерживают [политики защиты приложений Intune](/intune/app-protection-policy) независимо от любого решения по управлению мобильными устройствами (MDM).
 
-Поддерживаемые приложения можно найти в статье [Microsoft Intune защищенные приложения](/intune/apps/apps-supported-intune-apps).
+Этот параметр применяется к следующим клиентским приложениям.
+
+- Microsoft Azure Information Protection.
+- Книги Майкрософт
+- Microsoft Кортана
+- Microsoft Dynamics 365
+- Microsoft Edge
+- Microsoft Excel
+- Microsoft Flow
+- Microsoft Intune Managed Browser
+- Microsoft Invoicing.
+- Microsoft Kaizala
+- Microsoft Launcher;
+- Microsoft OneDrive
+- Microsoft OneNote
+- Microsoft Outlook
+- Планировщик (Майкрософт);
+- Microsoft PowerApps
+- Microsoft Power BI
+- Microsoft PowerPoint
+- Microsoft SharePoint
+- Microsoft Skype для бизнеса;
+- Microsoft StaffHub
+- Microsoft Stream;
+- Microsoft Teams
+- Microsoft To-Do
+- Microsoft Visio;
+- Microsoft Word
+- Microsoft Yammer
 
 **Замечания**
 
@@ -76,11 +104,18 @@ ms.locfileid: "78249104"
    - Поддерживает только условия платформы устройства iOS и Android.
 - Условный доступ не может рассматривать Microsoft ребро в режиме InPrivate в утвержденном клиентском приложении.
 
+Примеры конфигурации см. в статье [как требовать утвержденные клиентские приложения для облачного доступа к приложениям с помощью условного доступа](app-based-conditional-access.md) .
+
 ### <a name="require-app-protection-policy"></a>Требование политики защиты приложений
 
 В политике условного доступа можно настроить для клиентского приложения [политику защиты приложений Intune](/intune/app-protection-policy) , чтобы доступ к выбранным облачным приложениям был доступен. 
 
-Поддерживаемые приложения можно найти в статье [Microsoft Intune защищенные приложения](/intune/apps/apps-supported-intune-apps).
+Этот параметр применяется к следующим клиентским приложениям.
+
+- Microsoft Кортана
+- Microsoft OneDrive
+- Microsoft Outlook
+- Планировщик (Майкрософт);
 
 **Замечания**
 
@@ -88,11 +123,13 @@ ms.locfileid: "78249104"
 - Требования к **политике защиты приложений** :
     - Поддерживает только условия платформы устройства iOS и Android.
 
+Примеры конфигурации см. в статье [как требовать политику защиты приложений и утвержденное клиентское приложение для доступа к облачным приложениям с помощью условного доступа](app-protection-based-conditional-access.md) .
+
 ### <a name="terms-of-use"></a>Условия использования
 
 Если ваша организация создала условия использования, в разделе предоставление элементов управления могут отображаться дополнительные параметры. Эти параметры позволяют администраторам требовать подтверждения условий использования в качестве условия доступа к ресурсам, защищенным политикой. Дополнительные сведения об условиях использования можно найти в статье [Azure Active Directory условия использования](terms-of-use.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Условный доступ: элементы управления сеансом](concept-conditional-access-session.md)
 

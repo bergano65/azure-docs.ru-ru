@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
 ms.openlocfilehash: 1d244d7b62fcfefeec6f628f473274ae982bf4d8
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120226"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394285"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -115,10 +115,10 @@ Cloud Shell поддерживает последние версии следу�
 - Microsoft Internet Explorer
 - Google Chrome
 - Mozilla Firefox
-- Apple Safari;
+- Apple Safari
   - Использование Safari в режиме защищенного просмотра не поддерживается.
 
-### <a name="copy-and-paste"></a>Копирование и вставка
+### <a name="copy-and-paste"></a>путем копирования и вставки;
 
 [!INCLUDE [copy-paste](../../includes/cloud-shell-copy-paste.md)]
 
@@ -188,7 +188,7 @@ PowerShell.
   ((Invoke-WebRequest -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}).Content | ConvertFrom-Json).properties | Format-List
 ```
 
-### <a name="delete"></a>DELETE
+### <a name="delete"></a>Удаление
 Чтобы **удалить** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды. При следующем запуске Cloud Shell вам будет предложено еще раз выставить файловый ресурс. 
 
 >[!Note]

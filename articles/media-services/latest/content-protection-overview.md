@@ -16,11 +16,11 @@ ms.date: 10/29/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 18e80383bfcbebc6a442663c141100faa56fd061
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76313813"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393493"
 ---
 # <a name="protect-your-content-with-media-services-dynamic-encryption"></a>Защита содержимого с помощью динамического шифрования служб мультимедиа
 
@@ -159,7 +159,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 
 Общие браузеры поддерживают следующие клиенты DRM:
 
-|Браузер|Шифрование|
+|Браузер.|Шифрование|
 |---|---|
 |Chrome|Widevine|
 |Microsoft ребро, Internet Explorer 11|PlayReady|
@@ -236,7 +236,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 * `StreamingPolicyWidevineConfiguration.CustomLicenseAcquisitionUrlTemplate`: то же, что и предыдущий шаблон, только для Widevine. 
 * `StreamingPolicyFairPlayConfiguration.CustomLicenseAcquisitionUrlTemplate`: то же, что и предыдущий шаблон, только для FairPlay.  
 
-Пример.
+Например:
 
 ```csharp
 streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://mykeyserver.hostname.com/envelopekey/{AlternativeMediaId}/{ContentKeyId}";
@@ -259,11 +259,11 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)
 * [Защита с помощью DRM](protect-with-drm.md)
 * [Разработка системы защиты содержимого с несколькими DRM с помощью контроля доступа](design-multi-drm-system-with-access-control.md)
 * [Шифрование на стороне хранилища](storage-account-concept.md#storage-side-encryption)
 * [Часто задаваемые вопросы](frequently-asked-questions.md)
-* [Обработчик веб-токенов JSON](https://docs.microsoft.com/dotnet/framework/security/json-web-token-handler)
+* [Обработчик JSON Web Token](https://docs.microsoft.com/dotnet/framework/security/json-web-token-handler)

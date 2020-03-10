@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 01/27/2020
 ms.author: diberry
 ms.openlocfilehash: 95b7c7446a47fafd26d00b0da4d880786340fcd0
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775120"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78393769"
 ---
 # <a name="how-to-improve-the-luis-app-by-reviewing-endpoint-utterances"></a>Как улучшить приложение LUIS, просмотрев конечную точку фразы продолжительностью
 
@@ -42,7 +42,7 @@ ms.locfileid: "76775120"
     > [!div class="mx-imgBorder"]
     > ![использовать портал LUIS для сохранения журналов, необходимых для активного обучения.](./media/luis-tutorial-review-endpoint-utterances/luis-portal-manage-azure-resource-save-logs.png)
 
-     Это действие изменяет URL-адрес примера, добавляя параметр `log=true` QueryString. Скопируйте и используйте URL-адрес измененного примера запроса при выполнении прогнозирующих запросов к конечной точке среды выполнения.
+     Это действие изменяет URL-адрес примера, добавляя параметр `log=true` querystring. Скопируйте и используйте URL-адрес измененного примера запроса при выполнении прогнозирующих запросов к конечной точке среды выполнения.
 
 ## <a name="correct-intent-predictions-to-align-utterances"></a>Исправьте прогнозы намерения, чтобы выстроить фразы продолжительностью
 
@@ -66,6 +66,6 @@ ms.locfileid: "76775120"
 
 Чтобы отключить активное обучение, не заносить в журнал пользовательские запросы. Для этого нужно задать для [запроса к конечной точке](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) параметр `log=false` QueryString и значение, либо не использовать значение строки запроса, поскольку значение по умолчанию — false.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы убедиться в повышении производительности после установки меток для предлагаемых фрагментов речи, можно перейти к консоли тестирования, выбрав **Тестирование** на верхней панели. Инструкции по тестированию приложения с помощью консоли тестирования см. в разделе [Обучение и тестирование приложения](luis-interactive-test.md).

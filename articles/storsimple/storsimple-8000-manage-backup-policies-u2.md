@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 07/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 607379f8645226a031646376df9ca18f4d3164bf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60818822"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394612"
 ---
 # <a name="use-the-storsimple-device-manager-service-in-azure-portal-to-manage-backup-policies"></a>Использование службы диспетчера устройств StorSimple на портале Azure для управления политиками резервного копирования
 
@@ -77,7 +77,7 @@ ms.locfileid: "60818822"
 [!INCLUDE [storsimple-8000-add-modify-backup-schedule](../../includes/storsimple-8000-add-modify-backup-schedule-u2.md)]
 
 
-## <a name="add-or-remove-a-volume"></a>Добавление или удаление тома
+## <a name="add-or-remove-a-volume"></a>добавление или удаление тома;
 
 Вы можете добавить или удалить том, назначенный политике резервного копирования на устройстве StorSimple. Чтобы добавить или удалить том, выполните следующие действия на портале Azure.
 
@@ -96,7 +96,7 @@ ms.locfileid: "60818822"
 
 [!INCLUDE [storsimple-8000-create-manual-backup](../../includes/storsimple-8000-create-manual-backup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

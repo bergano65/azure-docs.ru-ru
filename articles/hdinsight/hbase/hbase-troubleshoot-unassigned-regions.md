@@ -8,11 +8,11 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/16/2019
 ms.openlocfilehash: 85aeafb2c4461b50d399e40d9abff2ac04b677c0
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75887144"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395128"
 ---
 # <a name="issues-with-region-servers-in-azure-hdinsight"></a>Проблемы с серверами регионов в Azure HDInsight
 
@@ -34,7 +34,7 @@ multiple regions being unassigned or holes in the chain of regions
 
 Отверстия могут быть результатом автономных регионов.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Исправьте назначения. Выполните следующие действия, чтобы вернуть неназначенные регионы в нормальное состояние.
 
@@ -66,7 +66,7 @@ multiple regions being unassigned or holes in the chain of regions
 
 1. Проверьте файл `wals.out`. Если слишком много разделенных каталогов (начиная с *-разделение), возможно, сервер регионов не работает из-за этих каталогов.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 1. Отключите HBase на портале Ambari.
 
@@ -80,7 +80,7 @@ multiple regions being unassigned or holes in the chain of regions
 
 1. Перезапустите службу HBase.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
