@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 57a66f73a2c0c37426c23c7274853148fd976ac8
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 49860504da8dd2a1b994a23a24df95f59c959c90
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76699076"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78375806"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "76699076"
 
 Существуют определенные наборы утверждений, которые определяют, как и когда они используются в токенах.
 
-| Набор утверждений | Description |
+| Набор утверждений | Описание |
 |---|---|
 | Набор основных утверждений | Имеется в каждом токене, независимо от политики. Эти утверждения также считаются ограниченными, изменить их не удастся. |
 | Набор базовых утверждений | Включает в себя утверждения, которые по умолчанию добавляются в токены (в дополнение к основному набору утверждений). Вы можете опустить или изменить базовые утверждения с помощью политик сопоставления утверждений. |
@@ -97,7 +97,7 @@ ms.locfileid: "76699076"
 | domain_dns_name |
 | domain_netbios_name |
 | e_exp |
-| email |
+| Электронная почта |
 | endpoint |
 | enfpolids |
 | exp |
@@ -105,7 +105,7 @@ ms.locfileid: "76699076"
 | grant_type |
 | graph |
 | group_sids |
-| группы |
+| Имя_команды |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -142,7 +142,7 @@ ms.locfileid: "76699076"
 | onprem_sam_account_name |
 | onprem_sid |
 | openid2_id |
-| password |
+| пароль |
 | platf |
 | polids |
 | pop_jwk |
@@ -158,11 +158,11 @@ ms.locfileid: "76699076"
 | request_nonce |
 | ресурс |
 | роль |
-| roles |
-| область |
+| роли |
+| Область |
 | scp |
-| sid |
-| подпись |
+| SID |
+| сигнатура |
 | signin_state |
 | src1 |
 | src2 |
@@ -284,20 +284,20 @@ ms.locfileid: "76699076"
 
 #### <a name="table-3-valid-id-values-per-source"></a>Таблица 3. Допустимый идентификатор значения для источника
 
-| Источник | ID | Description |
+| Источник | ИДЕНТИФИКАТОР | Описание |
 |-----|-----|-----|
-| Пользователь | surname | Фамилия |
-| Пользователь | givenname | Заданное имя |
+| Пользователь | surname | Имя семейства |
+| Пользователь | givenname | Имя |
 | Пользователь | displayname | Отображаемое имя |
 | Пользователь | objectid | ObjectID |
-| Пользователь | mail | Электронная почта |
+| Пользователь | почта | Электронная почта |
 | Пользователь | userprincipalname | Имя участника-пользователя |
 | Пользователь | department|отдел;|
 | Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
 | Пользователь | netbiosname| NetBIOS-имя |
 | Пользователь | dnsdomainname | Доменное DNS-имя |
 | Пользователь | onpremisesecurityidentifier | Локальный идентификатор безопасности |
-| Пользователь | companyname| Название организации |
+| Пользователь | companyname| Имя организации |
 | Пользователь | streetaddress | Почтовый адрес |
 | Пользователь | postalcode | Почтовый индекс |
 | Пользователь | preferredlanguange | Предпочитаемый язык |
@@ -322,13 +322,13 @@ ms.locfileid: "76699076"
 | Пользователь | country | Страна |
 | Пользователь | city | Город |
 | Пользователь | state | Состояние |
-| Пользователь | jobtitle | Наименование должности |
+| Пользователь | jobtitle | Должность |
 | Пользователь | employeeid | Код сотрудника |
 | Пользователь | facsimiletelephonenumber | Номер телефона, факса |
 | application, resource, audience | displayname | Отображаемое имя |
 | application, resource, audience | objected | ObjectID |
 | application, resource, audience | tags | Тег субъекта-службы |
-| Компания | tenantcountry | Страна клиента |
+| Company | tenantcountry | Страна клиента |
 
 **TransformationID:** элемент TransformationID должен быть указан только в том случае, если для элемента "Источник" задано значение "transformation".
 
@@ -358,10 +358,10 @@ ms.locfileid: "76699076"
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Таблица 4. Методы преобразования и ожидаемые входные и выходные данные
 
-|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Description|
+|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Описание|
 |-----|-----|-----|-----|
 |Join|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
-|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
+|ExtractMailPrefix|почта|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
@@ -384,9 +384,9 @@ ms.locfileid: "76699076"
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Таблица 5. Атрибуты, разрешенные в качестве источника данных для идентификатора имени SAML NameID
 
-|Источник|ID|Description|
+|Источник|ИДЕНТИФИКАТОР|Описание|
 |-----|-----|-----|
-| Пользователь | mail|Электронная почта|
+| Пользователь | почта|Электронная почта|
 | Пользователь | userprincipalname|Имя участника-пользователя|
 | Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
 | Пользователь | employeeid|Код сотрудника|
@@ -415,7 +415,7 @@ ms.locfileid: "76699076"
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
 
-Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет Azure PowerShell `new-azureadapplicationkeycredential`, чтобы создать учетные данные симметричного ключа для объекта приложения. Чтобы получить дополнительные сведения об этом командлете Azure PowerShell, щелкните [здесь](https://docs.microsoft.com/powershell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
+Чтобы политика сопоставления утверждений вступила в силу, объекту субъекта-службы необходимо назначить пользовательский ключ подписывания. Это гарантирует подтверждение того, что токены были изменены создателем политики сопоставления утверждений и защищают приложения от политик сопоставления утверждений, созданных злоумышленниками. Чтобы добавить пользовательский ключ подписывания, можно использовать командлет Azure PowerShell `new-azureadapplicationkeycredential` для создания учетных данных симметричного ключа для объекта приложения. Дополнительные сведения об этом Azure PowerShellном командлете см. в разделе [New-азуреадаппликатионкэйкредентиал](https://docs.microsoft.com/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0).
 
 Приложения с включенным сопоставлением утверждений должны проверять ключи подписывания маркеров, добавляя `appid={client_id}` к их [запросам метаданных Connect OpenID Connect](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document). Ниже приведен формат документа метаданных OpenID Connect Connect, который следует использовать: 
 
@@ -435,7 +435,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 В Azure AD существует множество сценариев, когда можно настроить утверждения, добавляемые в токены для определенных субъектов-служб. В этом разделе рассматриваются наиболее распространенные сценарии, которые помогут вам понять, как использовать политики сопоставления утверждений.
 
-#### <a name="prerequisites"></a>Технические условия
+#### <a name="prerequisites"></a>Предварительные требования
 
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не работали с Azure AD, прежде чем продолжить работу с этими примерами, советуем ознакомиться со статьей [Краткое руководство: настройка среды разработки](quickstart-create-new-tenant.md).
 
@@ -469,7 +469,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы.
-   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить Microsoft Graph](/graph/traverse-the-graph). В [обозревателе Graph](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
+   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). В [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
      
       ``` powershell
@@ -493,7 +493,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
-   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить Microsoft Graph](/graph/traverse-the-graph). В [обозревателе Graph](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
+   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). В [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду:  
      
       ``` powershell
@@ -517,13 +517,13 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Get-AzureADPolicy
       ```
 1. Назначьте политику для субъекта-службы. Вам потребуется также получить идентификатор объекта субъекта-службы. 
-   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить Microsoft Graph](/graph/traverse-the-graph). В [обозревателе Graph](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
+   1. Чтобы просмотреть всех субъектов-служб Организации, можно [запросить API Microsoft Graph](/graph/traverse-the-graph). В [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)Войдите в свою учетную запись Azure AD.
    2. Получив идентификатор объекта субъекта-службы, выполните следующую команду: 
      
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портал Azure, см [. раздел как настроить утверждения, выданные в токене SAML для корпоративных приложений](active-directory-saml-claims-customization.md) .

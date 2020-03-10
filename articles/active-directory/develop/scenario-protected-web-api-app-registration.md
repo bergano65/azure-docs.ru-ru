@@ -17,11 +17,11 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 2d9e5d051f101288b8528b47fa88b4783a040950
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775166"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78377326"
 ---
 # <a name="protected-web-api-app-registration"></a>Защищенный веб-API: регистрация приложения
 
@@ -151,9 +151,9 @@ ms.locfileid: "76775166"
    >
    > Но, как описано в предыдущем разделе, веб-API всегда может проверить, имеет ли приложение правильную роль, которая является полномочным администратором клиента. API выполняет эту проверку, проверяя наличие у маркера доступа утверждения ролей и правильность значения для этого утверждения. В предыдущем примере JSON значение равно `access_as_application`.
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Конфигурация кода приложения](scenario-protected-web-api-app-configuration.md)

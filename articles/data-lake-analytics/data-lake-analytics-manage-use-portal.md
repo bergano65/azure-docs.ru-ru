@@ -10,11 +10,11 @@ ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 8a6b7cb3fd45e17b84519efcaa826b569083e156
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839474"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361313"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "73839474"
 
 ## <a name="manage-data-lake-analytics-accounts"></a>Управление учетными записями Data Lake Analytics
 
-### <a name="create-an-account"></a>Создание учетной записи
+### <a name="create-an-account"></a>Создать учетную запись
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Последовательно выберите **Создать ресурс** > **Data + Analytics** (Данные и аналитика) > **Data Lake Analytics**.
@@ -37,16 +37,16 @@ ms.locfileid: "73839474"
    3. **Группа ресурсов**: группа ресурсов Azure, в которой создается учетная запись. 
    4. **Расположение**: центр обработки данных Azure для учетной записи Data Lake Analytics. 
    5. **Data Lake Store**: хранилище по умолчанию для учетной записи Data Lake Analytics. Учетная запись Azure Data Lake Store и учетная запись Data Lake Analytics должны находиться в одном расположении.
-4. Щелкните **Создать**. 
+4. Нажмите кнопку **Создать**. 
 
 ### <a name="delete-a-data-lake-analytics-account"></a>Удаление учетной записи Data Lake Analytics
 
 Перед удалением учетной записи Data Lake Analytics необходимо удалить учетную запись Data Lake Store по умолчанию.
 
 1. На портале Azure выберите свою учетную запись Data Lake Analytics.
-2. Нажмите кнопку **Delete**(Удалить).
+2. Щелкните **Удалить**.
 3. Введите имя учетной записи.
-4. Нажмите кнопку **Delete**(Удалить).
+4. Щелкните **Удалить**.
 
 <!-- ################################ -->
 <!-- ################################ -->
@@ -55,7 +55,7 @@ ms.locfileid: "73839474"
 
 Data Lake Analytics в настоящее время поддерживает следующие источники данных:
 
-* Хранилище озера данных
+* Data Lake Storage
 * Хранилище Azure
 
 Вы можете использовать обозреватель данных для просмотра источников данных и выполнения основных операций управления файлами. 
@@ -161,7 +161,7 @@ Data Lake Analytics позволяет дополнительно блокиро
 2. Выберите **Подробные сведения о заданиях**. По умолчанию на вкладке "Все задания" можно просмотреть список выполняющихся и завершенных заданий, а также заданий, поставленных в очередь.
 3. Перейдите на вкладку **повторяющиеся задания** . Будет показан список повторяющихся заданий вместе со сводной статистикой для каждого повторяющегося задания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Управление Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)

@@ -10,11 +10,11 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.openlocfilehash: 4d9a54c220861b19d67b07998e609ee72897446a
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892488"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78360922"
 ---
 # <a name="manage-anonymous-read-access-to-containers-and-blobs"></a>Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам
 
@@ -24,7 +24,7 @@ ms.locfileid: "74892488"
 
 ## <a name="grant-anonymous-users-permissions-to-containers-and-blobs"></a>Предоставление анонимным пользователям разрешений для контейнеров и больших двоичных объектов
 
-По умолчанию контейнер и любые большие двоичные объекты внутри него могут быть доступны только пользователю, которому были предоставлены соответствующие разрешения. Чтобы предоставить анонимным пользователям доступ на их чтение, следует разрешить открытый доступ к контейнеру. При предоставлении общего доступа к контейнеру анонимные пользователи могут считывать большие двоичные объекты в общедоступном контейнере без авторизации запроса.
+По умолчанию контейнер и любые большие двоичные объекты внутри него могут быть доступны только пользователю, которому были предоставлены соответствующие разрешения. Чтобы предоставить анонимным пользователям доступ на чтение для контейнера и его больших двоичных объектов, можно задать общий уровень доступа контейнера. При предоставлении общего доступа к контейнеру анонимные пользователи могут считывать большие двоичные объекты в общедоступном контейнере без авторизации запроса.
 
 Можно настроить контейнер со следующими разрешениями:
 
@@ -54,9 +54,9 @@ ms.locfileid: "74892488"
 Чтобы задать разрешения для контейнера с помощью клиентской библиотеки службы хранилища Azure для .NET, сначала извлеките существующие разрешения контейнера, вызвав один из следующих методов:
 
 - [GetPermissions](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissions)
-- [GetPermissionsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissionsasync)
+- [жетпермиссионсасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissionsasync)
 
-Затем задайте свойство **publicAccess** объекта [BlobContainerPermissions](/dotnet/api/microsoft.azure.storage.blob.blobcontainerpermissions) , возвращаемого **методом GetNext** .
+Затем задайте свойство **publicAccess** объекта [блобконтаинерпермиссионс](/dotnet/api/microsoft.azure.storage.blob.blobcontainerpermissions) , возвращаемого **методом GetNext** .
 
 Наконец, вызовите один из следующих методов, чтобы обновить разрешения контейнера:
 
@@ -135,7 +135,7 @@ public static void DownloadBlobAnonymously()
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Авторизация доступа к службе хранилища Azure](../common/storage-auth.md)
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)

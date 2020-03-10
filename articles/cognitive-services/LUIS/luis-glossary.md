@@ -11,11 +11,11 @@ ms.topic: reference
 ms.date: 10/25/2019
 ms.author: diberry
 ms.openlocfilehash: 4f78b4c50f4cd65f3dc32c48cea81b705dc44de1
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325948"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78361194"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
 В глоссарии Интеллектуальной службы распознавания речи (LUIS) объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
@@ -36,7 +36,7 @@ ms.locfileid: "74325948"
 
 Пакетное тестирование — это возможность проверить модель текущего приложения LUIS с помощью единообразного и известного тестового набора пользователей фразы продолжительностью. Пакетный тест определяется в [отформатированном файле JSON](luis-concept-batch-test.md#batch-file-format).
 
-См. также:
+См. также
 * [Основные понятия](luis-concept-batch-test.md)
 * [Практические руководства](luis-how-to-batch-test.md)
 * [Руководство](luis-tutorial-batch-testing.md)

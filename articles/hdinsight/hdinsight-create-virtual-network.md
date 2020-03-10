@@ -9,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.openlocfilehash: 6fd23e3d41dda15b1ec439c1e8b02073722b8871
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71073638"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78359982"
 ---
 # <a name="create-virtual-networks-for-azure-hdinsight-clusters"></a>Создание виртуальных сетей для кластеров Azure HDInsight
 
@@ -162,7 +162,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
 Ниже приведен порядок действий по созданию виртуальной сети, которая ограничивает входящий трафик, но разрешает трафик с IP-адресов, требуемых для HDInsight.
 
-1. Используйте следующую команду, чтобы создать новую группу безопасности сети с именем `hdisecure`. Замените `RESOURCEGROUP` группой ресурсов, которая содержит виртуальную сеть Azure. Замените `LOCATION` на расположение (регион), в котором была создана группа.
+1. Используйте следующую команду, чтобы создать новую группу безопасности сети с именем `hdisecure`. Замените `RESOURCEGROUP` группой ресурсов, которая содержит виртуальную сеть Azure. Замените `LOCATION` расположением (регионом), в котором была создана группа.
 
     ```azurecli
     az network nsg create -g RESOURCEGROUP -n hdisecure -l LOCATION
@@ -170,7 +170,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
     После создания группы вы получите сведения о новой группе.
 
-2. Используйте следующую команду для добавления правил в новую группу безопасности сети. Эти правила разрешают входящий трафик через порт 443 от службы работоспособности и управления Azure HDInsight. Замените `RESOURCEGROUP` именем группы ресурсов, которая содержит виртуальную сеть Azure.
+2. Используйте следующую команду для добавления правил в новую группу безопасности сети. Эти правила разрешают входящий трафик через порт 443 от службы работоспособности и управления Azure HDInsight. Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть Azure.
 
     > [!IMPORTANT]  
     > Измените IP-адреса для `hdirule1` и `hdirule2` в этом примере в соответствии с используемым регионом Azure. Эти сведения можно найти в списке [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md).
@@ -194,7 +194,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
         "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
 
-4. Используйте следующую команду, чтобы применить группу безопасности сети к подсети. Замените значения `RESOURCEGROUP` и значениями, возвращенными из предыдущего шага. `GUID` Замените `VNETNAME` и`SUBNETNAME` именем виртуальной сети и именем подсети, которую вы хотите создать.
+4. Используйте следующую команду, чтобы применить группу безопасности сети к подсети. Замените значения `GUID` и `RESOURCEGROUP` значениями, возвращенными из предыдущего шага. Замените `VNETNAME` и `SUBNETNAME` именем виртуальной сети и именем подсети, которые вы хотите создать.
 
     ```azurecli
     az network vnet subnet update -g RESOURCEGROUP --vnet-name VNETNAME --name SUBNETNAME --set networkSecurityGroup.id="/subscriptions/GUID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
@@ -211,7 +211,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protocol "*" --source-port-range "*" --destination-port-range "22" --source-address-prefix "*" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 306 --direction "Inbound"
 ```
 
-## <a id="example-dns"></a> Пример. Настройка DNS
+## <a id="example-dns"></a> Пример: конфигурация DNS
 
 ### <a name="name-resolution-between-a-virtual-network-and-a-connected-on-premises-network"></a>Разрешение DNS-имен между виртуальной сетью и подключенной локальной сетью
 

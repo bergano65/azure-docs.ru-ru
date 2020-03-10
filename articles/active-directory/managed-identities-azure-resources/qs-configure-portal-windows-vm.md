@@ -16,11 +16,11 @@ ms.date: 11/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 75971dbd35a6b29306bc87988423ab662a343705
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74183869"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372485"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "74183869"
 
 Из этой статьи вы узнаете, как включать и отключать управляемые удостоверения, назначаемые пользователем и назначаемые системой, для виртуальной машины Azure с помощью портала Azure. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемыми удостоверениями для ресурсов Azure, изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -55,7 +55,7 @@ ms.locfileid: "74183869"
 
 ### <a name="enable-system-assigned-managed-identity-on-an-existing-vm"></a>Включение управляемого удостоверения, назначаемого системой, для имеющейся виртуальной машины
 
-Чтобы включить назначаемое системой управляемое удостоверение на виртуальной машине, которое было подготовлено до ее создания, вашей учетной записи должна быть назначена роль [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
+Чтобы включить назначаемое системой управляемое удостоверение на виртуальной машине, которая была подготовлена без него, вашей учетной записи должна быть назначена роль [Участника виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи, связанной с подпиской Azure, которая содержит виртуальную машину.
 
@@ -114,7 +114,7 @@ ms.locfileid: "74183869"
 
    ![Удаление управляемого удостоверения, назначаемого пользователем, из виртуальной машины](./media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 - С помощью портала Azure предоставьте управляемому удостоверению виртуальной машины Azure [доступ к другому ресурсу Azure](howto-assign-access-portal.md).
 
