@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.author: juliako
 ms.openlocfilehash: d5d5b8a7328ee82e94d494795617832cb0258667
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74901516"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392952"
 ---
 # <a name="overview-of-azure-on-demand-media-encoders"></a>Обзор кодировщиков мультимедиа Azure по запросу 
 
@@ -45,7 +45,7 @@ ms.locfileid: "74901516"
 
 ## <a name="media-encoder-standard"></a>Стандартный кодировщик служб мультимедиа
 
-### <a name="how-to-use"></a>Использование
+### <a name="how-to-use"></a>Практическое руководство
 [Кодирование с помощью стандартного кодировщика мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md)
 
 ### <a name="formats"></a>Форматы
@@ -68,14 +68,14 @@ ms.locfileid: "74901516"
 ### <a name="create-overlays"></a>Создание наложений
 Дополнительные сведения см. в разделе о [создании наложения с помощью стандартного кодировщика мультимедиа](media-services-advanced-encoding-with-mes.md#overlay).
 
-### <a name="see-also"></a>Дополнительные материалы
+### <a name="see-also"></a>См. также:
 [Блог, посвященный службам мультимедиа](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
 
 ## <a name="media-encoder-premium-workflow"></a>Media Encoder Premium Workflow
-### <a name="overview"></a>Краткое описание
+### <a name="overview"></a>Обзор
 [Знакомство со Службой кодирования категории "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services/)
 
-### <a name="how-to-use"></a>Использование
+### <a name="how-to-use"></a>Практическое руководство
 Рабочий процесс Premium кодировщика мультимедиа настраивается с помощью сложных рабочих процессов. Файлы рабочих процессов можно создавать и обновлять с помощью [конструктора рабочих процессов](media-services-workflow-designer.md) .
 
 [Использование Службы кодирования категории "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services/)
@@ -86,7 +86,7 @@ ms.locfileid: "74901516"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-articles"></a>Связанные статьи

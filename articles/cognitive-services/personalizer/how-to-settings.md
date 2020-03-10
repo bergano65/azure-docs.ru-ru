@@ -4,11 +4,11 @@ description: Конфигурация сервиса включает в себ�
 ms.topic: conceptual
 ms.date: 02/19/2020
 ms.openlocfilehash: ac31a9f907defeb44dbd4748a4395d3aec34d30c
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623731"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78381285"
 ---
 # <a name="configure-personalizer-learning-loop"></a>Настройка цикла обучения персонализации
 
@@ -77,6 +77,6 @@ ms.locfileid: "77623731"
 
 Чтобы [очистить](how-to-manage-model.md) все данные, используйте страницу * * модель и параметры обучения * *.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте, как управлять моделью](how-to-manage-model.md)

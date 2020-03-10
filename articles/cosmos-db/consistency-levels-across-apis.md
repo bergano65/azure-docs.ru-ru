@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 819929fb157444ae53df113c0318dd18146156c9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442034"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78397356"
 ---
 # <a name="consistency-levels-and-azure-cosmos-db-apis"></a>Уровни согласованности и API для Azure Cosmos DB
 
@@ -52,7 +52,7 @@ Azure Cosmos DB предоставляет встроенную поддержк
 
 [сопоставление модели согласованности ![MongoDB](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png)](./media/consistency-levels-across-apis/consistency-model-mapping-mongodb.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об уровнях согласованности и совместимости API Azure Cosmos DB и API с открытым исходным кодом. См. следующие статьи:
 

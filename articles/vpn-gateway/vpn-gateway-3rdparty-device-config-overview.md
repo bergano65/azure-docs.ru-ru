@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 06/20/2017
 ms.author: yushwang
 ms.openlocfilehash: b914afaa6725920078da309981bcda5bb765e155
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77148338"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392118"
 ---
 # <a name="overview-of-partner-vpn-device-configurations"></a>Обзор конфигураций партнерских VPN-устройств
 В этой статье содержится обзор процесса настройки локальных VPN-устройств для подключения к VPN-шлюзам Azure. Для демонстрации подключения к различным конфигурациям локальных VPN-устройств с помощью одинаковых параметров используются примеры виртуальной сети Azure и настройки VPN-шлюза.
@@ -148,6 +148,6 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG
     New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $True
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Пошаговые инструкции по настройке VPN-шлюзов в режиме "активный — активный" см. в статье [Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure](vpn-gateway-activeactive-rm-powershell.md).
 

@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
 ms.openlocfilehash: 68be15e1ffd9093ab67fc046edaad991d633ca7e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445366"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385713"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -23,7 +23,7 @@ ms.locfileid: "75445366"
 
 Клиенты по умолчанию используют [стандартный уровень согласованности](consistency-levels.md). Они могут его переопределить в любой момент.
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 
 ```bash
 # create with a default consistency
@@ -236,7 +236,7 @@ item = client.ReadItem(doc_link, options)
 ![График PBS на портале Azure](./media/how-to-manage-consistency/pbs-metric.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. См. следующие статьи:
 

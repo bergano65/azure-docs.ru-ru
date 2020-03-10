@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 08/23/2018
 ms.author: robinsh
 ms.openlocfilehash: e7253747d95917e34725cc7c6c034b1306f65e50
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889518"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78382074"
 ---
 # <a name="create-an-iot-hub-using-the-azure-cli"></a>Создание Центра Интернета вещей с помощью Azure CLI
 
@@ -20,9 +20,9 @@ ms.locfileid: "73889518"
 
 В этой статье показано, как создать Центр Интернета вещей с помощью Azure CLI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -85,7 +85,7 @@ az iot hub delete --name {your iot hub name} -\
 az group delete --name {your resource group name}
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании Центра Интернета вещей см. в следующих статьях:
 

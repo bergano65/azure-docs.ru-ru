@@ -10,11 +10,11 @@ ms.service: automation
 ms.subservice: update-management
 manager: carmonm
 ms.openlocfilehash: e60ba71607b99f0ea97e0725ffdd0740f3e9c579
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769835"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372832"
 ---
 # <a name="understand-and-resolve-linux-hybrid-runbook-worker-health-for-update-management"></a>Изучение и разрешение работоспособности гибридной рабочей роли Runbook в Linux для Управление обновлениями
 
@@ -78,7 +78,7 @@ sudo /opt/microsoft/omsagent/bin/service_control restart
 
 Эта проверка определяет отправление отчетов агентом в несколько рабочих областей. Множественная адресация не поддерживается службой "Управление обновлениями".
 
-### <a name="hybrid-runbook-worker"></a>Гибридная рабочая роль runbook
+### <a name="hybrid-runbook-worker"></a>Гибридная рабочая роль Runbook
 
 Эта проверка проверяет, имеет ли агент Log Analytics для Linux пакет гибридной рабочей роли Runbook. Этот пакет необходим для работы службы "Управление обновлениями".
 
@@ -177,6 +177,6 @@ Passed: TCP test for {ods.systemcenteradvisor.com} (port 443) succeeded
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об устранении дополнительных проблем с гибридными рабочими ролями Runbook см. в разделе [Устранение неполадок гибридных рабочих ролей Runbook](hybrid-runbook-worker.md).

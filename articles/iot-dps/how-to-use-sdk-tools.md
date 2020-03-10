@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: b817b3cfe47ed08cae9e7e0b1c2c24363f2ccfed
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974808"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78391013"
 ---
 # <a name="how-to-use-tools-provided-in-the-sdks-to-simplify-development-for-provisioning"></a>Упрощение разработки для процесса подготовки с использованием инструментов, предоставляемых в пакетах SDK
 Служба подготовки устройств к добавлению в Центр Интернета вещей упрощает процесс подготовки с помощью [автоматической JIT-подготовки](concepts-auto-provisioning.md), выполняемой безопасным и масштабируемым способом.  При этом требуется аттестация безопасности в виде сертификата X.509 или доверенного платформенного модуля (TPM).  Корпорация Майкрософт также сотрудничает с [другими партнерами-поставщиками оборудования безопасности](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/), чтобы повысить уровень безопасности развертывания решения Центра Интернета вещей. Требования к безопасности оборудования могут быть трудными для понимания. Чтобы разработчики могли использовать удобный уровень для написания клиентов, которые обращаются к службе подготовки, предоставляется набор пакетов SDK для службы подготовки устройств к добавлению в Центр Интернета вещей Azure. Пакеты SDK также содержат образцы общих сценариев и набор инструментов для упрощения аттестации безопасности при разработке.
@@ -65,5 +65,5 @@ ms.locfileid: "74974808"
 
 Корневой или промежуточный сертификат можно использовать для создания группы регистраций или индивидуальной регистрации [программным образом](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments-sdks) или с помощью [портала](https://docs.microsoft.com/azure/iot-dps/how-to-manage-enrollments).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

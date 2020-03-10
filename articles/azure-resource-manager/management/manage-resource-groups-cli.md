@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.openlocfilehash: 7face572f545153ea92efbdb345bbaabda5dd126
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75485654"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384993"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-cli"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure CLI
 
@@ -146,7 +146,7 @@ az group export --name $resourceGroupName
 
 [Управление доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../templates/template-syntax.md).

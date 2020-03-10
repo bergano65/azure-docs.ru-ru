@@ -15,11 +15,11 @@ ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
 ms.openlocfilehash: 3b73c329c3db54ba78db15ced8e919af4d4a45d7
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76835170"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388800"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -162,7 +162,7 @@ ms.locfileid: "76835170"
 
    Да, но нужно учесть некоторые факторы. Во-первых, в зависимости от модели лицензии для виртуальной машины может продолжаться выставление счетов, связанных с SQL Server. Во вторых, как было сказано в предыдущем ответе, существуют функции, зависящие от [расширения агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Если удалить экземпляр по умолчанию без удаления расширения IaaS, расширение продолжит поиск экземпляра по умолчанию и может создать ошибки в журнале событий. У этих ошибок два источника: **служба управления учетными данными Microsoft SQL Server** и **агент IaaS Microsoft SQL Server**. Пример одной из ошибок показан ниже.
 
-      При подключении к SQL Server произошла ошибка, связанная с сетью или с определенным экземпляром. Сервер не найден или недоступен.
+      При установке соединения с SQL Server возникла ошибка, связанная с сетью или экземпляром. Сервер не найден или недоступен.
 
    Если вы решите удалить экземпляр по умолчанию, удалите и [расширение агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). 
 

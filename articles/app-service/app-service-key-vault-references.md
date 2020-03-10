@@ -7,11 +7,11 @@ ms.date: 10/09/2019
 ms.author: mahender
 ms.custom: seodec18
 ms.openlocfilehash: 7fdb7c980a278e2dcd4b64a4b70de50721d0b72a
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728758"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373832"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Использование Key Vault ссылок для службы приложений и функций Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "75728758"
 Ссылка на Key Vault имеет вид `@Microsoft.KeyVault({referenceString})`, где `{referenceString}` заменяется одним из следующих значений.
 
 > [!div class="mx-tdBreakAll"]
-> | Строка ссылки                                                            | Description                                                                                                                                                                                 |
+> | Строка ссылки                                                            | Описание                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri=_secretUri_                                                       | Здесь **SecretUri** является полным URI плоскости данных секрета в Key Vault, включая версию, например: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931.  |
 > | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | Здесь **VaultName** — имя ресурса Key Vault. **SecretName** — имя целевого секрета. **SecretVersion** — используемая версия секрета. |

@@ -9,11 +9,11 @@ ms.date: 12/06/2018
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: 87b656f0ef999b3b15a89476f5cba4c4fcfc2b1e
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037397"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78388079"
 ---
 # <a name="configure-a-virtual-network-gateway-for-expressroute-using-the-azure-portal"></a>Настройка шлюза виртуальной сети для ExpressRoute с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -78,5 +78,5 @@ ms.locfileid: "74037397"
 13. Проверьте параметры. В нижней части колонки можно выбрать параметр **Закрепить на панели мониторинга**, если необходимо, чтобы шлюз отображался на панели мониторинга.
 14. Щелкните **Создать** , чтобы создать шлюз. После проверки параметров шлюз будет развернут. Создание шлюза виртуальной сети может длиться до 45 минут.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 После создания шлюза виртуальной сети вы можете связать виртуальную сеть с каналом ExpressRoute. Ознакомьтесь со статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md).

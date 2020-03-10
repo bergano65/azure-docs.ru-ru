@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
 ms.openlocfilehash: 514de1435519282335124bfd67bac82669240b78
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
-ms.translationtype: MT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77616517"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372990"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Оповещения безопасности в Центре безопасности Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "77616517"
 
 Помимо доступности в портал Azure или программными средствами, оповещения системы безопасности и инциденты регистрируются как события в [журнале действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view). Дополнительные сведения о схеме событий см. в разделе [оповещения системы безопасности в журнале действий Azure](https://go.microsoft.com/fwlink/?linkid=2114113).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали о различных типах оповещений, доступных в центре безопасности. Дополнительные сведения см. в разделе:
 

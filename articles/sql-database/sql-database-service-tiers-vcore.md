@@ -10,11 +10,11 @@ ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 11/27/2019
 ms.openlocfilehash: e53fb46b7c13e1feb0cc24663fb0782b4de06f2b
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78198037"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78380040"
 ---
 # <a name="vcore-model-overview"></a>Общие сведения о модели виртуального ядра
 
@@ -216,7 +216,7 @@ az sql mi update -g mygroup -n myinstance --family Gen5
 Утвержденные запросы на поддержку обычно выполняются в течение 5 рабочих дней.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о создании базы данных SQL см. [в разделе Создание базы данных SQL с помощью портал Azure](sql-database-single-database-get-started.md).
 - Сведения о конкретных размерах вычислений и размерах хранилища, доступных для отдельных баз данных, см. в статье [ограничения ресурсов на основе виртуальное ядро базы данных SQL для отдельных баз](sql-database-vcore-resource-limits-single-databases.md)данных.

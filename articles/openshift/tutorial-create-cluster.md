@@ -7,11 +7,11 @@ ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/04/2019
 ms.openlocfilehash: 0e6aecccc19572ee980feb4d816fae1f2b0101b7
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274887"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78381469"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство. Создание кластера Azure Red Hat OpenShift
 
@@ -42,7 +42,7 @@ ms.locfileid: "76274887"
 - Создание группы безопасности
 - создали пользователя Active Directory для входа в кластер.
 
-## <a name="step-1-sign-in-to-azure"></a>Шаг 1. Вход в Azure
+## <a name="step-1-sign-in-to-azure"></a>Шаг 1. вход в Azure
 
 Если интерфейс Azure CLI запущен локально, откройте оболочку Bash и выполните команду `az login`, чтобы войти в Azure.
 
@@ -52,7 +52,7 @@ az login
 
  Если у вас есть доступ к нескольким подпискам, выполните команду `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
 
-## <a name="step-2-create-an-azure-red-hat-openshift-cluster"></a>Шаг 2. Создание кластера Azure Red Hat OpenShift
+## <a name="step-2-create-an-azure-red-hat-openshift-cluster"></a>Шаг 2. Создание кластера Azure Red Hat OpenShift
 
 В окне командной строки Bash задайте следующие переменные:
 
@@ -99,7 +99,7 @@ TENANT=<tenant ID>
 az group create --name $CLUSTER_NAME --location $LOCATION
 ```
 
-### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательное действие: подключение виртуальной сети кластера к существующей виртуальной сети
+### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательно: подключение виртуальной сети кластера к существующей виртуальной сети
 
 Если вам не нужно подключать виртуальную сеть создаваемого кластера к существующей виртуальной сети с помощью пиринга, пропустите этот шаг.
 
@@ -119,7 +119,7 @@ VNET_ID=$(az network vnet show -n {VNET name} -g {VNET resource group} --query i
 
 Например: `VNET_ID=$(az network vnet show -n MyVirtualNetwork -g MyResourceGroup --query id -o tsv`
 
-### <a name="optional-connect-the-cluster-to-azure-monitoring"></a>Необязательное действие: подключение кластера к мониторингу Azure
+### <a name="optional-connect-the-cluster-to-azure-monitoring"></a>Необязательно: подключение кластера к мониторингу Azure
 
 Сначала получите идентификатор **имеющейся** рабочей области Log Analytics. Этот идентификатор имеет такой формат:
 
@@ -135,7 +135,7 @@ _Сведения о создании рабочей области Log Analytic
 WORKSPACE_ID=$(az monitor log-analytics workspace show -g {RESOURCE_GROUP} -n {NAME} --query id -o tsv)
 ```
 
-### <a name="create-the-cluster"></a>Создайте кластер.
+### <a name="create-the-cluster"></a>Создание кластера
 
 Теперь можно создать новый кластер. Далее будет создан кластер в указанном клиенте Azure AD, указан объект приложения Azure AD и секрет для использования в качестве субъекта безопасности, а также группа безопасности, содержащая участников, у которых есть доступ администратора к кластеру.
 
@@ -180,7 +180,7 @@ az openshift show -n $CLUSTER_NAME -g $CLUSTER_NAME
 
 URL-адрес входа для кластера будет `https://`, за которым следует значение `publicHostName`.  Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`.  Этот URI будет использоваться на следующем шаге как часть URI-перенаправления регистрации приложения.
 
-## <a name="step-3-update-your-app-registration-redirect-uri"></a>Шаг 3. Обновление URI-перенаправления регистрации приложения
+## <a name="step-3-update-your-app-registration-redirect-uri"></a>Шаг 3. обновление URI перенаправления регистрации приложения
 
 Теперь, когда у вас есть URL-адрес входа для кластера, установите URI перенаправления регистрации приложения:
 
@@ -188,9 +188,9 @@ URL-адрес входа для кластера будет `https://`, за к
 2. Щелкните объект регистрации своего приложения.
 3. Щелкните **Добавить URI перенаправления**.
 4. Убедитесь, что для параметра **Тип** установлено значение **Веб** и задайте **URI перенаправления**, используя следующий шаблон: `https://<public host name>/oauth2callback/Azure%20AD`. Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io/oauth2callback/Azure%20AD`
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
-## <a name="step-4-sign-in-to-the-openshift-console"></a>Шаг 4. Войдите в консоль OpenShift
+## <a name="step-4-sign-in-to-the-openshift-console"></a>Шаг 4. вход в консоль OpenShift
 
 Теперь вы готовы войти в консоль OpenShift для нового кластера. [Веб-консоль OpenShift](https://docs.openshift.com/aro/architecture/infrastructure_components/web_console.html) позволяет визуализировать, просматривать содержимое проектов OpenShift и управлять им.
 
@@ -209,7 +209,7 @@ URL-адрес входа для кластера будет `https://`, за к
 
  Узнайте больше [об использовании консоли OpenShift](https://docs.openshift.com/aro/getting_started/developers_console.html) для создания и сборки образов, ознакомившись с [документацией по Red Hat OpenShift](https://docs.openshift.com/aro/welcome/index.html).
 
-## <a name="step-5-install-the-openshift-cli"></a>Шаг 5. Установка интерфейса командной строки OpenShift
+## <a name="step-5-install-the-openshift-cli"></a>Шаг 5. Установка интерфейса командной строки OpenShift
 
 [Интерфейс командной строки OpenShift](https://docs.openshift.com/aro/cli_reference/get_started_cli.html) (или *OC Tools*) предоставляет команды для управления приложениями и служебные программы низкого уровня для взаимодействия с разными компонентами кластера OpenShift.
 
@@ -224,7 +224,7 @@ URL-адрес входа для кластера будет `https://`, за к
 
 Если описанные выше шаги не позволили получить значение токена, получите это значение с помощью `https://<your cluster name>.<azure region>.cloudapp.azure.com/oauth/token/request`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

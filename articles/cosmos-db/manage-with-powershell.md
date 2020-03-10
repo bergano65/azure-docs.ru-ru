@@ -8,11 +8,11 @@ ms.date: 10/23/2019
 ms.author: mjbrown
 ms.custom: seodec18
 ms.openlocfilehash: 978f37d08275de704dd01c0251dde42665fca552
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72882111"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78364508"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
@@ -771,11 +771,11 @@ Remove-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/data
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $resourceName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Все примеры для PowerShell](powershell-samples.md)
 * [Управление учетной записью Azure Cosmos](how-to-manage-database-account.md)
-* [Создание контейнера Azure Cosmos](how-to-create-container.md)
+* [создание контейнера Azure Cosmos;](how-to-create-container.md)
 * [Настройка срока жизни в Azure Cosmos DB](how-to-time-to-live.md)
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->

@@ -14,16 +14,16 @@ ms.workload: infrastructure
 ms.date: 09/26/2017
 ms.author: cynthn
 ms.openlocfilehash: 20a595e1386a8d33c919ad4ff151d65e30b31eda
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75358281"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78383178"
 ---
 # <a name="create-and-manage-a-windows-virtual-machine-that-has-multiple-nics"></a>Создание виртуальной машины Windows, использующей несколько сетевых адаптеров, и управление ею
 Виртуальные машины (VM) в Azure могут иметь несколько виртуальных сетевых адаптеров (NIC). Распространенный сценарий состоит в том, чтобы иметь разные подсети для интерфейсных и внутренних подключений. Вы можете связать несколько сетевых адаптеров на виртуальной машине с несколькими подсетями, но эти подсети должны находиться в одной и той же виртуальной сети (vNet). В этой статье подробно описывается, как создать виртуальную машину с несколькими сетевыми адаптерами. Вы также узнаете, как добавить или удалить сетевые адаптеры на существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
@@ -78,7 +78,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
 
 Обычно также создается [группа безопасности сети](../../virtual-network/security-overview.md) для фильтрации трафика для виртуальной машины и [подсистема балансировки нагрузки](../../load-balancer/load-balancer-overview.md) для распределения трафика между несколькими виртуальными машинами.
 
-### <a name="create-the-virtual-machine"></a>Создание виртуальной машины
+### <a name="create-the-virtual-machine"></a>создание виртуальной машины;
 Теперь начните создание конфигурации виртуальной машины. Для каждого размера виртуальной машины существует ограничение на общее количество сетевых карт, которые можно в нее добавить. Дополнительные сведения см. в статье [Размеры виртуальных машин Windows в Azure](sizes.md).
 
 1. Задайте переменной `$cred` учетные данные виртуальной машины, как показано ниже:
@@ -139,7 +139,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     $vm = Get-AzVm -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface) он подключается к виртуальной машине *myVM* в *myResourceGroup*
+3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью *Add-AzVMNetworkInterface* он подключается к виртуальной машине *myVM* в [myResourceGroup](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface)
 
     ```powershell
     # Get info for the back end subnet
@@ -293,7 +293,7 @@ Azure назначает шлюз по умолчанию для первого 
 
     Маршрут указанный в *192.168.1.1* в разделе **Шлюз** — это маршрут по умолчанию для основного сетевого интерфейса. Маршрут *192.168.2.1* в разделе **Шлюз** — это добавленный маршрут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 При создании виртуальной машины с несколькими сетевыми адаптерами ознакомьтесь со статьей [Размеры виртуальных машин Windows в Azure](sizes.md). Обратите внимание на максимальное число сетевых адаптеров, поддерживаемых каждым из размеров виртуальной машины. 
 
 

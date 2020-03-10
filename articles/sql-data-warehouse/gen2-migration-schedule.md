@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 01/21/2020
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: 00180c1791e765240f3f8feac188b9250162408e
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78199909"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78380789"
 ---
 # <a name="upgrade-your-sql-pool-to-gen2"></a>Обновление пула SQL до Gen2
 
@@ -78,7 +78,7 @@ ms.locfileid: "78199909"
 
 **Вопрос. выполняет ли Gen2 стоимость так же, как Gen1?**
 
-- Ответ. Да.
+- Ответ.  Да.
 
 **Вопрос. как обновления будут влиять на мои сценарии автоматизации?**
 
@@ -114,13 +114,13 @@ ms.locfileid: "78199909"
 
 **Вопрос. поддерживает ли Gen2 периоды обслуживания?**
 
-- Ответ. Да.
+- Ответ.  Да.
 
 **Вопрос. можно ли создать новый экземпляр Gen1 после обновления региона?**
 
 - О. Нет. После обновления региона создание новых экземпляров 1-го поколения будет отключено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Действия по обновлению](upgrade-to-latest-generation.md)
 - [Период обслуживания](maintenance-scheduling.md)

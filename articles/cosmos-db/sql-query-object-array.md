@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
 ms.openlocfilehash: 5b2801b0a71f04803955e9d8bc18a97133019996
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74870927"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78386997"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Работа с массивами и объектами в Azure Cosmos DB
 
@@ -26,7 +26,7 @@ ms.locfileid: "74870927"
     FROM Families f
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -54,14 +54,14 @@ FROM f
 
 ## <a id="Iteration"></a>Итерация
 
-API SQL обеспечивает поддержку итерации по массивам JSON с новой конструкцией, добавленной с помощью [ключевого слова in](sql-query-keywords.md#in) из источника from. В приведенном ниже примере выполняется следующее:
+API SQL обеспечивает поддержку итерации по массивам JSON с новой конструкцией, добавленной с помощью [ключевого слова in](sql-query-keywords.md#in) из источника from. Рассмотрим следующий пример:
 
 ```sql
     SELECT *
     FROM Families.children
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -97,7 +97,7 @@ API SQL обеспечивает поддержку итерации по мас
     FROM c IN Families.children
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -130,7 +130,7 @@ API SQL обеспечивает поддержку итерации по мас
     WHERE c.grade = 8
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [{
@@ -145,7 +145,7 @@ API SQL обеспечивает поддержку итерации по мас
     FROM child IN Families.children
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -155,8 +155,8 @@ API SQL обеспечивает поддержку итерации по мас
     ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Начало работы](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
-- [Соединения](sql-query-join.md)
+- [Joins](sql-query-join.md)

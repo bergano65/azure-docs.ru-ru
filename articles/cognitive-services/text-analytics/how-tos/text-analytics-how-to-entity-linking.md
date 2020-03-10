@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 02/10/2020
 ms.author: aahi
 ms.openlocfilehash: 0622aca5579c64c6d840761abb151665af559eea
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367636"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942653"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -47,7 +47,7 @@ API анализа текста предлагает две версии с им
 Дополнительные сведения см. в разделе [Поддержка языков](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) .
 
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
 ### <a name="entity-types"></a>Типы сущностей
 
@@ -74,7 +74,7 @@ NER
 
 [!INCLUDE [v3-model-versioning](../includes/model-versioning.md)]
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 ### <a name="entity-types"></a>Типы сущностей
 
@@ -128,9 +128,9 @@ NER
 Создайте запрос POST. Вы можете [использовать POST](text-analytics-how-to-call-api.md) или **консоль тестирования API** в следующих ссылках, чтобы быстро структурировать и отправить ее. 
 
 > [!NOTE]
-> Ключ и конечную точку для ресурса Анализ текста можно найти на портале Azure. Они находятся на странице ресурса **Быстрый запуск** в разделе **Управление ресурсами**. 
+> Ключ и конечную точку для ресурса Анализа текста можно найти на портале Azure. Они находятся на странице ресурса **Быстрый запуск** в разделе **Управление ресурсами**. 
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
 [Справочник по распознаванию именованных сущностей v3](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral)
 
@@ -144,7 +144,7 @@ NER
 Связывание сущностей
 * `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/linking`
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 [Справочник по распознаванию имен сущностей (NER) v2](https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
@@ -185,7 +185,7 @@ API Анализа текста не учитывает состояние. Ни
 Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими.
 
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3,0-Preview)](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3,0-Preview)](#tab/version-3)
 
 ### <a name="example-v3-responses"></a>Примеры ответов v3
 
@@ -242,7 +242,7 @@ API Анализа текста не учитывает состояние. Ни
 }
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 ### <a name="example-ner-v2-response"></a>Пример ответа NER v2
 ```json

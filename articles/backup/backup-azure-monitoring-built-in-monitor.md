@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 03/05/2019
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
 ms.openlocfilehash: ea5102a95a9bef17f25219e00dec4654bf7f06d6
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172866"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392797"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Мониторинг рабочих нагрузок Azure Backup
 
@@ -102,6 +102,6 @@ Azure Backup предоставляет встроенные возможнос�
 
 ![Деактивация оповещений хранилища RS](media/backup-azure-monitoring-laworkspace/vault-alert-inactivation.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 [Мониторинг рабочих нагрузок резервного копирования Azure с помощью Azure Monitor](backup-azure-monitoring-use-azuremonitor.md)

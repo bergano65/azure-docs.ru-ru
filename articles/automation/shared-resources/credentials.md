@@ -10,11 +10,11 @@ ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 767c1fddbc3d1f46d4341a70c990c2b57ad40e54
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76930417"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78373532"
 ---
 # <a name="credential-assets-in-azure-automation"></a>Ресурсы учетных данных в службе автоматизации Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "76930417"
 
 Для Azure PowerShell AZ командлеты, приведенные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell. Они поставляются как часть [модуля азуреаз. Automation](/powershell/azure/new-azureps-module-az?view=azps-1.1.0), который доступен для использования в модулях Runbook службы автоматизации и конфигурациях DSC.
 
-| Командлеты | Description |
+| Командлеты | Описание |
 |:--- |:--- |
 | [Get-Азаутоматионкредентиал](/powershell/module/az.automation/get-azautomationcredential?view=azps-3.3.0) |Извлекает сведения о ресурсе учетных данных. Это не возвращает объект PSCredential.  |
 | [New-Азаутоматионкредентиал](/powershell/module/az.automation/new-azautomationcredential?view=azps-3.3.0) |Создает новые учетные данные службы автоматизации. |
@@ -40,7 +40,7 @@ ms.locfileid: "76930417"
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Действия | Description |
+| Действия | Описание |
 |:--- |:--- |
 | Get-AutomationPSCredential |Получает учетные данные для использования в модуле Runbook или в конфигурации DSC. Возвращает объект [System.Management.Automation.PSCredential](/dotnet/api/system.management.automation.pscredential) . |
 
@@ -51,7 +51,7 @@ ms.locfileid: "76930417"
 
 Функция, приведенная в следующей таблице, используется для доступа к учетным данным в модуле Runbook Python2.
 
-| Компонент | Description |
+| Компонент | Описание |
 |:---|:---|
 | automationassets.get_automation_credential | Извлекает сведения о ресурсе учетных данных. |
 
@@ -71,7 +71,7 @@ ms.locfileid: "76930417"
 
 ### <a name="to-create-a-new-credential-asset-with-windows-powershell"></a>Создание нового ресурса учетных данных с помощью Windows PowerShell
 
-Команды, приведенные ниже в примере, демонстрируют создание новых учетных данных службы автоматизации. Сначала создается объект PSCredential с именем и паролем, а затем он используется для создания ресурса учетных данных. Кроме того, можно использовать командлет **Get-Credential** , чтобы отобразить запрос имени и пароля.
+Команды, приведенные ниже в примере, демонстрируют создание новых учетных данных службы автоматизации. Сначала создается объект PSCredential с именем и паролем, а затем он используется для создания ресурса учетных данных. Кроме того, можно использовать командлет **Get-Credential**, чтобы получить запрос на ввод имени и пароля.
 
 ```powershell
 $user = "MyDomain\MyUser"
@@ -82,7 +82,7 @@ New-AzureAutomationCredential -AutomationAccountName "MyAutomationAccount" -Name
 
 ## <a name="using-a-powershell-credential"></a>Использование учетных данных PowerShell
 
-Для получения ресурса-контейнера учетных данных из модуля Runbook или конфигурации DSC используется действие **Get-AutomationPSCredential**. Оно возвращает [объект PSCredential](/dotnet/api/system.management.automation.pscredential), который можно использовать в действии или командлете, требующем параметр PSCredential. Можно также получить свойства объекта учетных данных, чтобы использовать их по отдельности. Объект имеет свойства для имени пользователя и надежного пароля. Также можно использовать метод **GetNetworkCredential** для возврата объекта [NetworkCredential](/dotnet/api/system.net.networkcredential), предоставляющего небезопасную версию пароля.
+Для получения ресурса-контейнера учетных данных из модуля Runbook или конфигурации DSC используется действие **Get-AutomationPSCredential**. Этот метод возвращает [объект PSCredential](/dotnet/api/system.management.automation.pscredential), который можно использовать с действием или командлетом, требующим параметр PSCredential. Можно также получить свойства объекта учетных данных, чтобы использовать их по отдельности. Объект имеет свойство для имени пользователя и защищенного пароля, или же вы можете использовать метод **GetNetworkCredential** для возврата объекта [NetworkCredential](/dotnet/api/system.net.networkcredential), предоставляющего незащищенную версию пароля.
 
 > [!NOTE]
 > **Get-азаутоматионкредентиал** не возвращает значение **PSCredential** , которое можно использовать для проверки подлинности. Он предоставляет только сведения об учетных данных. Если необходимо использовать учетные данные в модуле Runbook, то для получения объекта **PSCredential** необходимо использовать **Get-AutomationPSCredential** .
@@ -139,7 +139,7 @@ print cred["username"]
 print cred["password"]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о графической разработке см. в разделе [Связи и рабочий процесс](../automation-graphical-authoring-intro.md#links-and-workflow).
 * Сведения о различных методах аутентификации в службе автоматизации см. в статье [Обеспечение безопасности в службе автоматизации Azure](../automation-security-overview.md).

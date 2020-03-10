@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 1d1368ef8ffb474c6bec1240f567f043961597fb
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838174"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389804"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 
@@ -195,7 +195,7 @@ ms.locfileid: "73838174"
 
 Data Lake Storage 1-го поколения можно использовать для записи данных из топологии Storm. Инструкции по реализации этого сценария см. в статье [Использование Azure Data Lake Storage 1-го поколения с Apache Storm в HDInsight](../hdinsight/storm/apache-storm-write-data-lake-store.md).
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также:
 
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)

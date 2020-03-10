@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 0ef9609cded29c94260d027212abbf0c62f8653c
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: b2469a2b5819b3011f919a2b483933bb030eed70
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75772114"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925563"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -34,7 +34,7 @@ ms.locfileid: "75772114"
 uname -r
 ```
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 <a id="smb-client-reqs"></a>
 
 * <a id="install-cifs-utils"></a>**Убедитесь, что пакет CIFS-utils установлен.**  
@@ -199,7 +199,7 @@ uname -r
 
 Начиная с Linux ядра 4,18, модуль ядра SMB, именуемый `cifs` по старым причинам, предоставляет новый параметр модуля (часто называемый *ParM* различными внешними документацией), именуемый `disable_legacy_dialects`. Несмотря на то, что впервые появились в ядре Linux 4,18, некоторые поставщики отменяли это изменение на более старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля в распространенных дистрибутивах Linux.
 
-| Дистрибуция | Можно отключить SMB 1 |
+| Распределение | Можно отключить SMB 1 |
 |--------------|-------------------|
 | Ubuntu 14.04 — 16.04 | Нет |
 | Ubuntu 18.04 | Да |
@@ -273,12 +273,12 @@ sudo modprobe cifs
 cat /sys/module/cifs/parameters/disable_legacy_dialects
 ```
 
-## <a name="feedback"></a>Обратная связь
+## <a name="feedback"></a>Отзывы
 Пользователи Linux, нам очень интересно ваше мнение!
 
-Файлы Azure для группы пользователей Linux включают форум, на котором можно поделиться своим мнением и опытом адаптации хранилища файлов в Linux. Чтобы вступить в группу пользователей, отправьте электронное письмо в группу [Пользователи файлов Azure в Linux](mailto:azurefileslinuxusers@microsoft.com).
+Файлы Azure для группы пользователей Linux включают форум, на котором можно поделиться своим мнением и опытом адаптации хранилища файлов в Linux. Чтобы вступить в группу пользователей, отправьте электронное письмо в группу [Пользователи файлов Azure в Linux](mailto:azurefiles@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)

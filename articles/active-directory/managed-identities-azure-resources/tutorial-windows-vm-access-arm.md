@@ -16,11 +16,11 @@ ms.date: 11/20/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4431031e5e96c71c6488b57cc570271d763bb764
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
-ms.translationtype: HT
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224273"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78372575"
 ---
 # <a name="use-a-windows-vm-system-assigned-managed-identity-to-access-resource-manager"></a>Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к Resource Manager
 
@@ -29,7 +29,7 @@ ms.locfileid: "74224273"
 В этом кратком руководстве показано, как получить доступ к API Azure Resource Manager с помощью виртуальной машины Windows с включенным управляемым удостоверением, назначаемым системой. Управляемыми удостоверениями для ресурсов Azure автоматически управляет Azure. Они позволяют проходить проверку подлинности в службах, поддерживающих аутентификацию Azure Active Directory, без указания учетных данных в коде. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"] 
-> * Предоставление виртуальной машине доступа к группе ресурсов в Azure Resource Manager 
+> * Предоставление виртуальной машине доступа к группе ресурсов в Azure Resource Manager. 
 > * Получение маркера доступа с помощью удостоверения виртуальной машины и вызов Azure Resource Manager с его помощью.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -90,7 +90,7 @@ ms.locfileid: "74224273"
     {"id":"/subscriptions/98f51385-2edc-4b79-bed9-7718de4cb861/resourceGroups/DevTest","name":"DevTest","location":"westus","properties":{"provisioningState":"Succeeded"}}
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Из этого краткого руководства вы узнали, как использовать назначаемое системой управляемое удостоверение для доступа к API Azure Resource Manager.  Сведения об Azure Resource Manager см. здесь:
 

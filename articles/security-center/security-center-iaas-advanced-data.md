@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 11/11/2019
 ms.author: memildin
 ms.openlocfilehash: a2970ea3f5ad360deaedd7efc82154cd3bc50337
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77617112"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78390024"
 ---
 # <a name="advanced-data-security-for-sql-servers-on-azure-virtual-machines-preview"></a>Расширенная защита данных для серверов SQL Server на виртуальных машинах Azure (Предварительная версия)
 Расширенная защита данных для серверов SQL Server на виртуальных машинах Azure — это единый пакет для расширенных возможностей обеспечения безопасности SQL. Эта предварительная версия функции включает функции для определения и устранения потенциальных уязвимостей базы данных и обнаружения аномальных действий, которые могут указывать на угрозы для базы данных. 
@@ -158,7 +158,7 @@ ms.locfileid: "77617112"
     * Чтобы повысить уровень безопасности, используйте рекомендации центра безопасности для главного компьютера, указанного в каждом оповещении. Это снизит риски, возникающие в будущих атаках. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Связанные материалы см. в следующей статье:
 

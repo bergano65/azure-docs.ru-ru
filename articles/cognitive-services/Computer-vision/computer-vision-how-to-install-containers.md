@@ -12,11 +12,11 @@ ms.date: 11/21/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 383abc674674fc024052b2c04d3c538838b83856
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120211"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78394107"
 ---
 # <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "77120211"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед использованием контейнеров необходимо выполнить следующие предварительные требования:
 
@@ -292,7 +292,7 @@ export interface Word {
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если контейнер запускается с выходным [подключением](./computer-vision-resource-container-config.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -323,7 +323,7 @@ export interface Word {
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](computer-vision-resource-container-config.md).
 * Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](Home.md).

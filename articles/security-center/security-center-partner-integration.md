@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 03/20/2019
 ms.author: memildin
 ms.openlocfilehash: 23a00c766dbb38853c57c91e7f59ec364390c44b
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77603812"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78392499"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -143,12 +143,12 @@ ms.locfileid: "77603812"
 
 | **Описание запроса** | **Запрос** |
 |----|----|
-| Все оповещения.| index=main Microsoft.Security/locations/alerts|
+| Все оповещения| index=main Microsoft.Security/locations/alerts|
 | Суммирование количества операций по имени.| index=main sourcetype="amal:security" \| table operationName \| stats count by operationName|
 | Получение сведений об оповещении: время, имя, состояние, идентификатор и подписка. | index=main Microsoft.Security/locations/alerts \| table \_time, properties.eventName, State, properties.operationId, am_subscriptionId |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как интегрировать партнерские решения в центре безопасности. Дополнительные сведения о центре безопасности см. в следующих статьях:
 

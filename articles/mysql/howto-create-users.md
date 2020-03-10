@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.openlocfilehash: e76e63030cc8e10c857d361cca69e1d35ba8c2c1
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770481"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78385404"
 ---
 # <a name="create-users-in-azure-database-for-mysql-server"></a>Создание пользователей на сервере базы данных Azure для MySQL 
 В этой статье описывается создание пользователей на сервере базы данных Azure для MySQL.
@@ -81,7 +81,7 @@ ms.locfileid: "74770481"
    mysql --host mydemoserver.mysql.database.azure.com --database testdb --user db_user@mydemoserver -p
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [Azure CLI](howto-manage-firewall-using-cli.md).
 
 Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://dev.mysql.com/doc/refman/5.7/en/user-account-management.html), [синтаксисом GRANT](https://dev.mysql.com/doc/refman/5.7/en/grant.html) и [привилегиями](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html) в документации по продукту MySQL.

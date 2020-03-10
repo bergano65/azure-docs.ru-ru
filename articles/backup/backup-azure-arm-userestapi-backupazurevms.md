@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
 ms.openlocfilehash: 4789ef1e0e09df521f8cab539d972e9e669e0a58
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450160"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78395531"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -41,7 +41,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |204 No Content (содержимое отсутствует)     |         |  ОК (без содержимого, которое возвращаются)      |
 |202 — принято     |         |     Принято    |
@@ -104,9 +104,9 @@ URI *GET* имеет все необходимые параметры. Для э
 
 #### <a name="responses-1"></a>Ответы
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
+|200, ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
 
 #### <a name="example-responses-1"></a>Примеры ответов
 
@@ -180,9 +180,9 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Чтобы создать защищенный элемент, используйте компоненты текста запроса.
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|properties     | AzureIaaSVMProtectedItem        |Свойства ресурса ProtectedItem         |
+|подключения     | AzureIaaSVMProtectedItem        |Свойства ресурса ProtectedItem         |
 
 Полный список определений в тексте запроса и другие сведения см. в [документации по созданию защищенного элемента для REST API](https://docs.microsoft.com/rest/api/backup/protecteditems/createorupdate#request-body).
 
@@ -208,9 +208,9 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
+|200, ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
 
 ##### <a name="example-responses"></a>Примеры ответов
@@ -294,9 +294,9 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|properties     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
+|подключения     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
 
 Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](https://docs.microsoft.com/rest/api/backup/backups/trigger#request-body).
 
@@ -319,7 +319,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
@@ -439,7 +439,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 204 (содержимое отсутствует), когда эта операция завершается.
 
-|Имя  |Тип  |Description  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |204 NoContent (содержимое отсутствует)     |         |  NoContent       |
 |202 — принято     |         |     Принято    |
@@ -466,7 +466,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-3). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Восстановление данных из резервной копии виртуальной машины Azure](backup-azure-arm-userestapi-restoreazurevms.md)
 

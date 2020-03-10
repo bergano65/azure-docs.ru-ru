@@ -6,11 +6,11 @@ ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных траефик и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.openlocfilehash: 6cac50ea9caeea42b0a7522dbeb5039a8461dd2c
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78273151"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389673"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных траефик и настройка HTTPS
 

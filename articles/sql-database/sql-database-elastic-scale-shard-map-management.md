@@ -12,11 +12,11 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/25/2019
 ms.openlocfilehash: 8175563d8c1c2ec59b4195b2ede06f6e1dbf8556
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823559"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78387787"
 ---
 # <a name="scale-out-databases-with-the-shard-map-manager"></a>Развертывание баз данных с использованием диспетчера карты сегментов
 
@@ -53,13 +53,13 @@ ms.locfileid: "73823559"
 
 | .NET | Java |
 | --- | --- |
-| целое число |целое число |
-| длинное целое число |длинное целое число |
+| integer |integer |
+| long |long |
 | guid |uuid |
 | byte[]  |byte[] |
-| datetime; | Timestamp |
-| интервал времени | длительность|
-| datetimeoffset; |offsetdatetime |
+| datetime | timestamp |
+| timespan | длительность|
+| datetimeoffset |offsetdatetime |
 
 ### <a name="list-and-range-shard-maps"></a>Списочные и диапазонные карты сегментов
 
@@ -73,7 +73,7 @@ ms.locfileid: "73823559"
 | --- | --- |
 | 1 |БазаДанных_А |
 | 3 |БазаДанных_Б |
-| 4\. |БазаДанных_В |
+| 4 |БазаДанных_В |
 | 6 |БазаДанных_Б |
 | ... |... |
 

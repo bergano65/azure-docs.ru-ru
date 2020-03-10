@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 10/06/2017
 ms.author: amanbha
 ms.openlocfilehash: b05da78091260297d94062c06cba100d01ce7e2e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75349346"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389577"
 ---
 # <a name="actor-lifecycle-automatic-garbage-collection-and-manual-delete"></a>Жизненный цикл субъектов, автоматическая сборка мусора и удаление вручную
 Субъект активируется при первом вызове любого из его методов. Субъект деактивируется, если он не используется в течение заданного периода времени (при этом среда выполнения субъектов собирает мусор). Субъект и его состояние можно также удалить вручную в любое время.
@@ -107,7 +107,7 @@ public class Program
 ## <a name="manually-deleting-actors-and-their-state"></a>Удаление субъектов и данных их состояния вручную
 При удалении деактивированных субъектов удаляется только объект субъекта; из диспетчера состояний субъекта данные не удаляются. При повторной активации субъекта его данные снова становятся доступны в диспетчере состояний. Если субъекты, данные которых хранятся в диспетчере состояний, деактивируются и больше не активируются, может возникнуть необходимость в удалении связанных с ними данных.  Примеры удаления субъектов см. в статье [Удаление субъектов Reliable Actors и данных их состояния](service-fabric-reliable-actors-delete-actors.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Таймеры и напоминания субъекта](service-fabric-reliable-actors-timers-reminders.md)
 * [События субъекта](service-fabric-reliable-actors-events.md)
 * [Повторный вход субъекта](service-fabric-reliable-actors-reentrancy.md)

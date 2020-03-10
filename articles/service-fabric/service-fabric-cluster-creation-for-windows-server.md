@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 2/21/2019
 ms.author: dekapur
 ms.openlocfilehash: 461d6021a201ca1fa5722bb44c427baca2a7728e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76903381"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78389841"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Создание изолированного кластера под управлением Windows Server
 Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server. Традиционные кластеры Service Fabric в Azure доступны в виде управляемой службы, а автономные Service Fabric кластеров являются самостоятельными. Дополнительные сведения об отличиях см. в статье [Сравнение кластеров Azure и автономных Service Fabric](./service-fabric-deploy-anywhere.md).
@@ -47,7 +47,7 @@ Azure Service Fabric позволяет создавать кластеры Serv
 
 <a id="createcluster"></a>
 
-## <a name="create-the-cluster"></a>Создайте кластер.
+## <a name="create-the-cluster"></a>Создание кластера
 Некоторые примеры файлов конфигурации кластера устанавливаются с помощью пакета установки. *ClusterConfig.Unsecure.DevCluster.json* — это самая простая конфигурация кластера: незащищенный кластер из трех узлов, работающий на одном компьютере.  Другие файлы конфигурации описывают кластеры с одним или несколькими компьютерами, защищенными с помощью системы безопасности Windows или сертификатов X.509.  Для работы с этим руководством не нужно изменять параметры конфигурации по умолчанию. Просто просмотрите файл конфигурации и ознакомьтесь с параметрами.  В разделе **Узлы** описываются три узла в кластере: имя, IP-адрес, а также [тип узла, домен сбоя и обновления](service-fabric-cluster-manifest.md#nodes-on-the-cluster).  В разделе **Свойства** определяются [безопасность, уровень надежности, сбор диагностических сведений и типы узлов](service-fabric-cluster-manifest.md#cluster-properties) для кластера.
 
 Кластер, созданный в этой статье, не защищен.  Любой пользователь может анонимно подключиться и выполнять операции управления, поэтому рабочие кластеры нужно обязательно защищать с помощью сертификатов X.509 или средств обеспечения безопасности Windows.  Безопасность настраивается только во время создания кластера. После этого ее невозможно включить. Обновите файл конфигурации, включив в нем [безопасность сертификата](service-fabric-windows-cluster-x509-security.md) или [безопасность Windows](service-fabric-windows-cluster-windows-security.md). См. дополнительные сведения о безопасности кластера Service Fabric в статье о [защите кластеров](service-fabric-cluster-security.md).
@@ -126,7 +126,7 @@ Service Fabric можно развернуть на кластере с одни
 Connect-ServiceFabricCluster -ConnectionEndpoint <*IPAddressofaMachine*>:<Client connection end point port>
 ```
 
-Пример.
+Например:
 ```powershell
 Connect-ServiceFabricCluster -ConnectionEndpoint 192.13.123.2345:19000
 ```
@@ -203,7 +203,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 <a id="previewfeatures" name="previewfeatures_anchor"></a>
 
 ## <a name="preview-features-included-in-this-package"></a>Возможности на этапе предварительной версии в этом пакете
-Нет подходящих вариантов.
+Нет
 
 
 > [!NOTE]
@@ -211,7 +211,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md)
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
 * [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md)

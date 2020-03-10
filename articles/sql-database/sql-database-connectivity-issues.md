@@ -14,11 +14,11 @@ ms.author: ninarn
 ms.reviewer: carlrab, vanto
 ms.date: 01/14/2020
 ms.openlocfilehash: d2b56e259f551f7655936c975a7a864a27a1df79
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76027797"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78379929"
 ---
 # <a name="troubleshooting-transient-connection-errors-to-sql-database"></a>Устранение временных ошибок подключения к базе данных SQL
 
@@ -187,7 +187,7 @@ ms.locfileid: "76027797"
 
 Например, если ваша клиентская программа размещена на компьютере Windows, можно использовать брандмауэр Windows на этом узле, чтобы открыть порт 1433.
 
-1. Откройте панель управления.
+1. Откройте Панель управления.
 2. Выберите **Все элементы панели управления** > **Брандмауэр Windows** > **Дополнительные параметры** > **Правила для исходящих подключений** > **Действия** > **Новое правило**.
 
 Если клиентская программа находится на виртуальной машине Azure, см. статью [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
@@ -215,7 +215,7 @@ ms.locfileid: "76027797"
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
 
-## <a name="diagnostics"></a>Диагностика:
+## <a name="diagnostics"></a>Диагностика
 
 <a id="d-test-whether-utilities-can-connect" name="d-test-whether-utilities-can-connect"></a>
 
@@ -275,7 +275,7 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 Ниже приведены некоторые Transact-SQL-инструкции SELECT, которые запрашивают в журналах сведения об ошибках и прочую информацию.
 
-| Запрос у журнала | Description |
+| Запрос у журнала | Описание |
 |:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](https://msdn.microsoft.com/library/dn270018.aspx) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](https://msdn.microsoft.com/library/dn269986.aspx) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
@@ -442,7 +442,7 @@ public bool IsTransient(Exception ex)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Библиотеки подключений для Базы данных SQL и SQL Server](sql-database-libraries.md)
 - [Пул подключений SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)
