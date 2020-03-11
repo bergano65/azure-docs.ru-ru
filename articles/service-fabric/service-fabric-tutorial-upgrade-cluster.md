@@ -4,14 +4,14 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 280e25834d015d89ab7cbba2a2b2b0f36dcf19fc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2fb08d7aba3e35fb6147b75bbcee35b46873b5f6
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457847"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252731"
 ---
-# <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство. Обновление среды выполнения кластера Service Fabric в Azure
+# <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство по Обновление среды выполнения кластера Service Fabric в Azure
 
 Это руководство является четвертой частью цикла. В нем показано, как обновить среду выполнения Service Fabric в кластере Azure Service Fabric. Эта часть руководства предназначена для кластеров Service Fabric, работающих в Azure, и не относится к изолированным кластерам Service Fabric.
 
@@ -20,7 +20,7 @@ ms.locfileid: "75457847"
 
 Если в кластере уже выполняется последняя версия среды выполнения Service Fabric, выполнять этот шаг не требуется. Однако эту статью можно использовать для установки любой поддерживаемой среды выполнения в кластере Azure Service Fabric.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Чтение версии кластера.
@@ -37,7 +37,7 @@ ms.locfileid: "75457847"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -108,7 +108,7 @@ Connect-ServiceFabricCluster -ConnectionEndpoint $endpoint `
                              -StoreLocation CurrentUser -StoreName My
 ```
 
-```azurecli
+```console
 sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.azure.com:19080 \
 --pem ./aztestcluster201709151446.pem --no-verify
 ```
@@ -150,7 +150,7 @@ MaxPercentUpgradeDomainDeltaUnhealthyNodes : 0
 ApplicationHealthPolicyMap                 : {}
 ```
 
-```azurecli
+```console
 sfctl cluster upgrade-status
 
 {

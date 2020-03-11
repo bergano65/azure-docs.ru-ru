@@ -1,21 +1,21 @@
 ---
 title: Azure Application Insights | Документация Майкрософт
-description: ''
+description: Сопоставьте данные из Application Insights с другими наборами данных, такими как таблицы обогащения или уточняющего запроса, источники данных, отличные от Application Insights, и пользовательские данные.
 ms.topic: conceptual
 author: eternovsky
 ms.author: evternov
 ms.date: 08/08/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 75c5bd5bd6a7ded8679c30446a45809a1ea4406a
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 121e4699bd6a72f6865d3a6ffdef58c1b3806047
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77672010"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082767"
 ---
 # <a name="correlating-application-insights-data-with-custom-data-sources"></a>Корреляция данных Application Insights с пользовательскими источниками данных
 
-Application Insights собирает несколько разных типов данных: исключения, трассировки, просмотр страниц и другие. Хотя этого достаточно для исследования производительности, надежности и потребления приложения, бывают случаи, когда полезно коррелировать данные, хранящиеся в Application Insights, с другими полностью настраиваемыми наборами данных.
+Application Insights собирает несколько разных типов данных: исключения, трассировки, просмотр страниц и другие. Хотя часто это достаточно для изучения производительности, надежности и использования приложения, бывают случаи, когда полезно сопоставлять данные, хранящиеся в Application Insights, с другими полностью настраиваемыми наборами данных.
 
 Ситуации, когда можно использовать настраиваемые данные.
 
@@ -25,17 +25,17 @@ Application Insights собирает несколько разных типов
 
 ## <a name="how-to-correlate-custom-data-with-application-insights-data"></a>Корреляция пользовательских данных с данными Application Insights 
 
-Поскольку Application Insights поддерживается мощной платформой журнала Azure Monitor, для приема данных можно использовать Azure Monitor на полную силу. Используя оператор "join", мы напишем запросы, которые будут коррелировать пользовательские данные с данными, доступными в журналах Azure Monitor. 
+Поскольку Application Insights поддерживается мощной платформой журнала Azure Monitor, для приема данных можно использовать Azure Monitor на полную силу. Затем мы будем писать запросы с помощью оператора Join, который будет сопоставлять эти пользовательские данные с данными, доступными для нас в журналах Azure Monitor. 
 
 ## <a name="ingesting-data"></a>Прием данных
 
 В этом разделе мы рассмотрим, как получить данные в журналах Azure Monitor.
 
-Подготовьте новую рабочую область Log Analytics, если у вас ее еще нет, следуя [этим инструкциям](../learn/quick-collect-azurevm.md), которые включают шаг "создание рабочей области".
+Если у вас ее еще нет, подготавливает новую рабочую область Log Analytics, следуя [этим инструкциям](../learn/quick-collect-azurevm.md) , включая шаг "Создание рабочей области".
 
 Начните отправку данных журнала Azure Monitor. Существует несколько вариантов.
 
-- Для синхронного механизма можно напрямую вызвать [API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api) или использовать соединитель Logic App, для этого просто найдите "Azure Log Analytics" и выберите вариант "Отправить данные".
+- Для синхронного механизма можно либо напрямую вызвать [API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api) , либо использовать наш соединитель приложения логики — просто найдите "Azure log Analytics" и выберите параметр "отправить данные":
 
   ![Снимок экрана "Выбор и действие"](./media/custom-data-correlation/01-logic-app-connector.png)  
 
@@ -45,7 +45,7 @@ Application Insights собирает несколько разных типов
 
 Служба Application Insights основана на платформе журнала Azure Monitor. Поэтому можете использовать [межресурсные соединения](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search), чтобы сопоставить любые данные, которые мы приняли в Azure Monitor, с вашими данными Application Insights.
 
-Например, можно принимать реестр заданий и местоположения в таблице под названием LabLocations_CL в рабочей области Log Analytics под названием myLA. Чтобы просмотреть запросы, отслеживаемые в приложении Application Insights, называемом myAI, и сопоставить имена машин, которые обслуживали запросы в местах расположения этих машин, хранящиеся в ранее упомянутой пользовательской таблице, нужно запустить следующий запрос из Application Insights или контекста Azure Monitor.
+Например, можно принять данные инвентаризации и расположения лаборатории в таблицу с именем "LabLocations_CL" в Log Analytics рабочей области с именем "Мила". Если затем нужно проверить наши запросы, которые отправляются в Application Insights приложении с именем "Мяи", и сопоставить имена компьютеров, обслуживающих запросы к расположениям этих компьютеров, хранящимся в упомянутой выше пользовательской таблице, можно выполнить следующий запрос из контекст Application Insights или Azure Monitor:
 
 ```
 app('myAI').requests
@@ -55,7 +55,7 @@ app('myAI').requests
 ) on $left.cloud_RoleInstance == $right.Computer
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 - Дополнительные сведения см. по ссылке [​​API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api).
 - Дополнительные сведения о [межресурсном соединении](https://docs.microsoft.com/azure/log-analytics/log-analytics-cross-workspace-search).

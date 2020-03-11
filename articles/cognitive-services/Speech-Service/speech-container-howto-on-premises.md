@@ -8,24 +8,24 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 03/09/2020
 ms.author: dapine
-ms.openlocfilehash: 7874a6b274939c233dd1c4e6d146df2a9a409e65
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: cd4ff97902b1ce3d1d5a0ea066608fd33e6bf697
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75833988"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037103"
 ---
 # <a name="use-speech-service-containers-with-kubernetes-and-helm"></a>Использование контейнеров речевых служб с Kubernetes и Helm
 
 Одним из вариантов управления речевыми контейнерами в локальной среде является использование Kubernetes и Helm. Используя Kubernetes и Helm для определения образов контейнеров преобразования речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут в кластере Kubernetes в локальной среде. Наконец, мы продемонстрируем, как тестировать развернутые службы и различные параметры конфигурации. Дополнительные сведения о запуске контейнеров DOCKER без оркестрации Kubernetes см. в [статье Установка и запуск контейнеров речевых служб](speech-container-howto.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед использованием контейнеров речи в локальной среде выполните следующие предварительные требования:
 
-|Обязательно для заполнения|Цель|
+|Обязательно|Назначение|
 |--|--|
 | Учетная запись Azure | Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][free-azure-account], прежде чем начинать работу. |
 | Доступ к реестру контейнеров | Чтобы Kubernetes мог извлечь образы DOCKER в кластер, ему потребуется доступ к реестру контейнеров. |

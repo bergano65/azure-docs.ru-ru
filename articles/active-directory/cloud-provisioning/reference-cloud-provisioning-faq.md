@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 12/02/2019
+ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2067bea25dae05c496c81929ae65d00565bf4f1
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: fbc1baa86bb81c8975587e84427a72ccc044805e
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77020766"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77916580"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -71,6 +71,14 @@ ms.locfileid: "77020766"
 **Вопрос. Я подготавливаю пользователей с помощью подготовки облака. Выполняю удаление конфигурации. Почему в Azure AD по-прежнему отображаются старые синхронизированные объекты?** 
 
 При удалении конфигурации подготовка облака не очищает синхронизированные объекты в Azure AD. Чтобы гарантировать отсутствие старых объектов, измените область конфигурации на пустую группу или подразделения. После выполнения подготовки и очистки объектов отключите и удалите конфигурацию. 
+
+**Вопрос.  Что означает сообщение об отсутствии поддержки Гибридной среды Exchange?**
+
+Функция гибридного развертывания Exchange обеспечивает сосуществование почтовых ящиков Exchange в локальной среде и в службе Office 365. Azure AD Connect синхронизирует определенный набор атрибутов из AAD в локальный каталог.  Агент подготовки облака в настоящее время не синхронизирует эти атрибуты обратно в локальный каталог, и поэтому не поддерживается в качестве замены Azure AD Connect.
+
+**Вопрос.  Можно ли установить агент подготовки облака на Windows Server Core?**
+
+Нет, установка агента на Server Core не поддерживается.
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 

@@ -7,19 +7,22 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/06/2020
 keywords: АТО, openshift, AZ АТО, Red Hat, CLI
-ms.openlocfilehash: 81f8edb42be1f73692062d36440890ef5a1e7c9a
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: 3c336a1fbfb9f991ff824e8deafe84f3d899771d
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78899312"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082835"
 ---
 # <a name="create-access-and-manage-an-azure-red-hat-openshift-43-cluster"></a>Создание кластера Azure Red Hat OpenShift 4,3, доступ к нему и управление им
 
 > [!IMPORTANT]
-> Azure Red Hat OpenShift (АТО) 4,3 предлагается в предварительной версии. Функции предварительной версии являются самостоятельными и предоставляются как есть и доступны и исключаются из соглашения об уровне обслуживания (SLA) и ограниченной гарантии. Поэтому функции не предназначены для использования в рабочей среде.
+> Обратите внимание, что Azure Red Hat OpenShift 4,3 в настоящее время доступен только в закрытой предварительной версии в восточной части США. Закрытая Предварительная версия принимает только приглашение. Перед включением этой функции обязательно Зарегистрируйте подписку: [Регистрация закрытой предварительной версии Azure Red Hat OpenShift](https://aka.ms/aro-preview-register)
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!NOTE]
+> Функции предварительной версии являются самостоятельными и предоставляются как есть и доступны и исключаются из соглашения об уровне обслуживания (SLA) и ограниченной гарантии. Поэтому функции не предназначены для использования в рабочей среде.
+
+## <a name="prerequisites"></a>предварительные требования
 
 Для создания кластера Azure Red Hat OpenShift 4,3 вам потребуется следующее:
 

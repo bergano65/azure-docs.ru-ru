@@ -1,25 +1,18 @@
 ---
 title: Настройка раздела подкачки на виртуальной машине Linux с помощью Cloud-init
 description: Как использовать Cloud-init для настройки раздела подкачки на виртуальной машине Linux во время создания с помощью Azure CLI
-services: virtual-machines-linux
-documentationcenter: ''
 author: rickstercdn
 manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: fad73a7dbed9351d684ef2464cf2fa6fa3489290
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1247652e536042ee249054d86aed3c3f8e7aa7bf
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036758"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969202"
 ---
 # <a name="use-cloud-init-to-configure-a-swap-partition-on-a-linux-vm"></a>Настройка раздела подкачки на виртуальной машине Linux с помощью Cloud-init
 В этой статье показано, как с помощью [Cloud-init](https://cloudinit.readthedocs.io) настроить раздел подкачки в различных дистрибутивах Linux. Раздел подкачки традиционно настроился агентом Linux (WALA) в зависимости от того, какие дистрибутивы необходимы.  В этом документе описывается процесс создания раздела подкачки по запросу во время подготовки с помощью Cloud-init.  Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -29,7 +22,7 @@ ms.locfileid: "74036758"
 
 ## <a name="create-swap-partition-for-red-hat-and-centos-based-images"></a>Создание раздела подкачки для изображений на основе Red Hat и CentOS
 
-Создайте файл в текущей оболочке с именем *cloud_init_swappart. txt* и вставьте следующую конфигурацию. Для этого примера создайте файл в Cloud Shell, не на локальном компьютере. Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_swappart.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
+Создайте файл в текущей оболочке с именем *cloud_init_swappart. txt* и вставьте следующую конфигурацию. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_swappart.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 
 ```yaml
 #cloud-config
@@ -88,8 +81,8 @@ Filename                Type        Size    Used    Priority
 > [!NOTE] 
 > Если у вас есть образ Azure с настроенной секцией подкачки и вы хотите изменить конфигурацию раздела подкачки для новых образов, следует удалить существующую секцию подкачки. Дополнительные сведения см. в документе "Customize Images to provision by cloud-init" (Настройка образов для подготовки с помощью cloud-init).
 
-## <a name="next-steps"></a>Дополнительная информация
-Дополнительные примеры изменения конфигураций с помощью cloud-init см. в следующих статьях.
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)
 - [Запуск диспетчера пакетов для обновления существующих пакетов при первой загрузке](cloudinit-update-vm.md)

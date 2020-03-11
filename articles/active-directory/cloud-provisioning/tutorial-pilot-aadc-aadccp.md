@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 12/05/2019
+ms.date: 03/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0bd53b72c334b35daea0864acf61cc432c272ae
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.openlocfilehash: aba42e6bd9b11e47d793219c0ff06b9177d609f5
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77442128"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78298825"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -31,7 +31,7 @@ ms.locfileid: "77442128"
 3. Убедитесь, что для объектов в области пилотного развертывания заполнен параметр ms-ds-consistencyGUID, чтобы при подготовке облачных служб происходило строгое сопоставление этих объекты. 
 
    > [!NOTE]
-   > Служба синхронизации Azure AD Connect по умолчанию не заполняет *ms-ds-consistencyGUID* для групповых объектов. Выполните действия, описанные в [этой записи блога](https://blogs.technet.microsoft.com/markrenoden/2017/10/13/choosing-a-sourceanchor-for-groups-in-multi-forest-sync-with-aad-connect/), чтобы заполнить *MS-DS-consistencyGUID* для групповых объектов.
+   > Служба синхронизации Azure AD Connect по умолчанию не заполняет *ms-ds-consistencyGUID* для групповых объектов.
 
 4. Это расширенный сценарий. Следите за тем, чтобы в точности выполнять действия, описанные в этом учебнике.
 
@@ -119,7 +119,7 @@ ms.locfileid: "77442128"
 
 ## <a name="install-the-azure-ad-connect-provisioning-agent"></a>Установка агента подготовки Azure AD Connect
 1. Войдите на сервер, который будет использоваться с разрешениями администратора организации.  Если вы используете учебник [по созданию базовой среды AD и Azure](tutorial-basic-ad-azure.md), это будет CP1.
-2. Скачайте агент подготовки облака Azure AD Connect [здесь](https://go.microsoft.com/fwlink/?linkid=2109037).
+2. Скачайте агент подготовки облака Azure AD Connect, выполнив описанную [здесь](how-to-install.md#install-the-agent) процедуру.
 3. Запустите подготовку облака Azure AD Connect (AADConnectProvisioningAgent.Installer).
 3. На экране-заставке **примите** условия лицензионного соглашения и щелкните **Установить**.</br>
 ![Экран приветствия](media/how-to-install/install1.png)</br>
@@ -224,5 +224,5 @@ ms.locfileid: "77442128"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
 

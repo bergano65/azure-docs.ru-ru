@@ -1,6 +1,6 @@
 ---
 title: 'Краткое руководство. Приостановка и возобновление вычислений с помощью PowerShell '
-description: Используйте PowerShell, чтобы приостановить вычисления в хранилище данных SQL Azure для снижения расходов. Возобновите вычисления, когда вы готовы к использованию хранилища данных.
+description: Используйте PowerShell, чтобы приостановить вычисления в пуле SQL Azure Synapse Analytics и снизить расходы. Возобновите вычисления, когда вы готовы к использованию хранилища данных.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -10,25 +10,25 @@ ms.subservice: manage
 ms.date: 03/20/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 148f3f99aac5ce01bd88f1efaecb5821ae94f50a
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: ce183edef9e5895d7b3f702f5466c505956a869a
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539163"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78200572"
 ---
-# <a name="quickstart-pause-and-resume-compute-in-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Приостановка и возобновление вычислений в Хранилище данных SQL Azure с помощью Azure PowerShell
+# <a name="quickstart-pause-and-resume-compute-in-azure-synapse-analytics-sql-pool-with-azure-powershell"></a>Краткое руководство. Приостановка и возобновление вычислений в пуле SQL Azure Synapse Analytics с помощью Azure PowerShell
 
-Используйте Azure PowerShell, чтобы приостановить вычисления в хранилище данных SQL Azure для снижения расходов. [Возобновите работу вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), когда будете готовы к использованию хранилища данных.
+Используйте Azure PowerShell, чтобы приостановить вычисления для пула SQL и сэкономить. [Возобновите работу вычислительных ресурсов](sql-data-warehouse-manage-compute-overview.md), когда будете готовы к использованию хранилища данных.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-В этом кратком руководстве предполагается, что у вас уже есть Хранилище данных SQL, работу которого можно приостановить и возобновить. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) для создания хранилища данных **mySampleDataWarehouse**.
+В этом кратком руководстве предполагается, что у вас уже есть пул SQL, работу которого можно приостановить и возобновить. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) для создания пула SQL **mySampleDataWarehouse**.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -52,55 +52,54 @@ Set-AzContext -SubscriptionName "MySubscription"
 
 ## <a name="look-up-data-warehouse-information"></a>Поиск сведений о хранилище данных
 
-Найдите имя базы данных, имя сервера и группу ресурсов для хранилища данных, работу которого вы собираетесь приостановить и возобновить.
+Найдите имя базы данных, имя сервера и группу ресурсов для пула SQL, работу которого вы собираетесь приостановить и возобновить.
 
-Выполните следующие действия, чтобы найти сведения о расположении хранилища данных.
+Выполните следующие шаги, чтобы найти сведения о расположении пула SQL.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
-2. На портале Azure на странице слева щелкните **Базы данных SQL**.
-3. На странице **Базы данных SQL** выберите **mySampleDataWarehouse**. Откроется хранилище данных.
+1. Войдите на [портал Azure](https://portal.azure.com/).
+1. На портале Azure в области слева щелкните **Azure Synapse Analytics (ранее — Хранилище данных SQL)** .
+1. Выберите **mySampleDataWarehouse** на странице **Azure Synapse Analytics (ранее — Хранилище данных SQL)** . Откроется хранилище данных.
 
     ![Имя сервера и группа ресурсов](media/pause-and-resume-compute-powershell/locate-data-warehouse-information.png)
 
-4. Запишите имя хранилища данных, которое является именем базы данных. Также запишите имя сервера и группу ресурсов.
-6. Если вашим сервером является foo.database.windows.net, то в командлетах PowerShell в качестве -ServerName используйте только первую часть имени сервера. На предыдущем рисунке полное имя сервера — newserver-20171113.database.windows.net. Не указывая суффикс, укажите **newserver-20171113** в качестве имени сервера в командлете PowerShell.
+1. Запишите имя хранилища данных, которое является именем базы данных. Также запишите имя сервера и группу ресурсов.
+1. Используйте только первую часть имени сервера в командлетах PowerShell. На предыдущем изображении полное имя сервера — sqlpoolservername.database.windows.net. Мы используем **sqlpoolservername** в качестве имени сервера в командлете PowerShell.
 
 ## <a name="pause-compute"></a>Приостановка работы вычислительных ресурсов
 
 Для сокращения затрат можно приостанавливать и возобновлять работу вычислительных ресурсов по требованию. Например, если база данных не будет использоваться ночью и по выходным, ее работу можно приостанавливать на это время и возобновлять днем. Когда база данных приостановлена, оплата за вычислительные ресурсы не взимается. Тем не менее плата за хранение по-прежнему будет взиматься.
 
-Чтобы приостановить базу данных, используйте командлет [Suspend-AzSqlDatabase](/powershell/module/az.sql/suspend-azsqldatabase). В следующем примере приостанавливается работа хранилища данных **mySampleDataWarehouse**, размещенного на сервере **newserver-20171113**. Этот сервер находится в группе ресурсов Azure **myResourceGroup**.
+Чтобы приостановить базу данных, используйте командлет [Suspend-AzSqlDatabase](/powershell/module/az.sql/suspend-azsqldatabase). В следующем примере приостанавливается работа хранилища данных **mySampleDataWarehouse**, размещенного на сервере **sqlpoolservername**. Этот сервер находится в группе ресурсов Azure **myResourceGroup**.
 
 
 ```Powershell
 Suspend-AzSqlDatabase –ResourceGroupName "myResourceGroup" `
-–ServerName "newserver-20171113" –DatabaseName "mySampleDataWarehouse"
+–ServerName "nsqlpoolservername" –DatabaseName "mySampleDataWarehouse"
 ```
 
 В следующем примере, являющемся вариантом предыдущего, база данных извлекается в объект $database. Затем объект передается по конвейеру в [Suspend-AzSqlDatabase](/powershell/module/az.sql/suspend-azsqldatabase). Результаты сохраняются в объекте resultDatabase. Последняя команда отображает результаты.
 
 ```Powershell
 $database = Get-AzSqlDatabase –ResourceGroupName "myResourceGroup" `
-–ServerName "newserver-20171113" –DatabaseName "mySampleDataWarehouse"
+–ServerName "sqlpoolservername" –DatabaseName "mySampleDataWarehouse"
 $resultDatabase = $database | Suspend-AzSqlDatabase
 $resultDatabase
 ```
 
-
 ## <a name="resume-compute"></a>Возобновление работы вычислительных ресурсов
 
-Чтобы запустить базу данных, используйте командлет [Resume-AzSqlDatabase](/powershell/module/az.sql/resume-azsqldatabase). В приведенном ниже примере запускается база данных mySampleDataWarehouse, размещенная на сервере newserver-20171113. Этот сервер находится в группе ресурсов Azure myResourceGroup.
+Чтобы запустить базу данных, используйте командлет [Resume-AzSqlDatabase](/powershell/module/az.sql/resume-azsqldatabase). В следующем примере запускается база данных **mySampleDataWarehouse**, размещенная на сервере **sqlpoolservername**. Этот сервер находится в группе ресурсов Azure **myResourceGroup**.
 
 ```Powershell
 Resume-AzSqlDatabase –ResourceGroupName "myResourceGroup" `
-–ServerName "newserver-20171113" -DatabaseName "mySampleDataWarehouse"
+–ServerName "sqlpoolservername" -DatabaseName "mySampleDataWarehouse"
 ```
 
 В следующем примере, являющемся вариантом предыдущего, база данных извлекается в объект $database. Затем объект передается в [Resume-AzSqlDatabase](/powershell/module/az.sql/resume-azsqldatabase), и результаты сохраняются в объекте $resultDatabase. Последняя команда отображает результаты.
 
 ```Powershell
-$database = Get-AzSqlDatabase –ResourceGroupName "ResourceGroup1" `
-–ServerName "Server01" –DatabaseName "Database02"
+$database = Get-AzSqlDatabase –ResourceGroupName "myResourceGroup" `
+–ServerName "sqlpoolservername" –DatabaseName "mySampleDataWarehouse"
 $resultDatabase = $database | Resume-AzSqlDatabase
 $resultDatabase
 ```
@@ -109,8 +108,8 @@ $resultDatabase
 
 Чтобы проверить состояние хранилища данных, используйте командлет [Get-AzSqlDatabaseActivity](https://docs.microsoft.com/powershell/module/az.sql/Get-AzSqlDatabaseActivity#description).
 
-```
-Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database02"
+```Powershell
+Get-AzSqlDatabaseActivity -ResourceGroupName "myResourceGroup" -ServerName "sqlpoolservername" -DatabaseName "mySampleDataWarehouse"
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -118,26 +117,26 @@ Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Serv
 Плата взимается за единицы хранилища данных и данные, хранящиеся в хранилище данных. Плата за вычислительные ресурсы и ресурсы хранилища взимается отдельно.
 
 - Если вы хотите сохранить данные в хранилище, приостановите вычисления.
-- Если вы хотите исключить будущие расходы, то можете удалить хранилище данных.
+- Если вы хотите исключить будущие расходы, то можете удалить пул SQL.
 
 Выполните следующие действия, чтобы очистить ресурсы по необходимости.
 
-1. Войдите на [портал Azure](https://portal.azure.com) и щелкните хранилище данных.
+1. Войдите на [портал Azure](https://portal.azure.com) и щелкните пул SQL.
 
     ![Очистка ресурсов](media/load-data-from-azure-blob-storage-using-polybase/clean-up-resources.png)
 
-2. Чтобы приостановить работу вычислительных ресурсов, нажмите кнопку **Приостановить**. Если работа хранилища данных приостановлена, вы увидите кнопку **Запуск**.  Чтобы возобновить работу вычислительных ресурсов, нажмите кнопку **Запуск**.
+2. Чтобы приостановить работу вычислительных ресурсов, нажмите кнопку **Приостановить**. Если работа пула SQL приостановлена, вы увидите кнопку **Запуск**.  Чтобы возобновить работу вычислительных ресурсов, нажмите кнопку **Запуск**.
 
-3. Чтобы удалить хранилище данных во избежание дальнейших платежей за вычисления или хранение, нажмите кнопку **Удалить**.
+3. Чтобы удалить пул SQL во избежание дальнейших платежей за вычисления или хранение, нажмите кнопку **Удалить**.
 
-4. Чтобы удалить созданный вами сервер SQL Server, щелкните **mynewserver-20171113.database.windows.net**, а затем щелкните **Удалить**.  Будьте внимательны, так как удаление сервера приведет к удалению всех баз данных, назначенных этому серверу.
+4. Чтобы удалить созданный вами сервер SQL Server, щелкните **sqlpoolservername.database.windows.net**, а затем нажмите кнопку **Удалить**.  Будьте внимательны, так как удаление сервера приведет к удалению всех баз данных, назначенных этому серверу.
 
 5. Чтобы удалить группу ресурсов, щелкните **myResourceGroup**, а затем нажмите кнопку **Удалить группу ресурсов**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Вы приостановили и возобновили вычисления для хранилища данных. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
+Вы приостановили и возобновили вычисления для пула SQL. Чтобы узнать больше о пуле SQL, перейдите к учебнику по загрузке данных.
 
 > [!div class="nextstepaction"]
-> [Загрузка данных в Хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+> [Загрузка данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md)

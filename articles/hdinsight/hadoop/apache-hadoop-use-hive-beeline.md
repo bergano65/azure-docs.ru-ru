@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 02/25/2020
-ms.openlocfilehash: 13c51f0db468c1591ca29de17f1744752589a1c8
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.date: 03/09/2020
+ms.openlocfilehash: 77a451cb9f6598bbe7013f4215cfa7cab40186bd
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77663751"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037548"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
 
@@ -54,6 +54,12 @@ beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/default;principal=hive/_HOST@<AAD
 ```
 
 Замените `<username>` на имя учетной записи домена с разрешениями на доступ к кластеру. Замените `<AAD-DOMAIN>` именем Azure Active Directory (AAD), к которому присоединен кластер. Используйте строку в верхнем регистре для значения `<AAD-DOMAIN>`. в противном случае учетные данные не будут найдены. При необходимости проверьте `/etc/krb5.conf` для имен областей.
+
+Чтобы найти URL-адрес JDBC из Ambari, сделайте следующее:
+
+1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net/#/main/services/HIVE/summary`, где `CLUSTERNAME` — имя кластера. Убедитесь, что HiveServer2 работает.
+
+1. Используйте буфер обмена для копирования URL-адреса JDBC HiveServer2.
 
 ---
 
@@ -193,7 +199,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
     Эти инструкции выполняют следующие действия:
 
-    |Выписка |Описание |
+    |. |Description |
     |---|---|
     |DROP TABLE|Если таблица существует, она удаляется.|
     |СОЗДАТЬ ВНЕШНЮЮ ТАБЛИЦУ|Создает **внешнюю** таблицу в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении.|
@@ -256,7 +262,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
     Эти инструкции выполняют следующие действия:
 
-    |Выписка |Описание |
+    |. |Description |
     |---|---|
     |CREATE TABLE, ЕСЛИ НЕ СУЩЕСТВУЕТ|Если таблица еще не существует, она создается. Поскольку ключевое слово **External** не используется, эта инструкция создает внутреннюю таблицу. Внутренние таблицы хранятся в хранилище данных Hive и полностью управляются Hive.|
     |ХРАНИТСЯ В ВИДЕ ORC|Позволяет сохранить данные в формате ORC. Это высокооптимизированный и эффективный формат для хранения данных Hive.|
@@ -353,7 +359,7 @@ beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transp
 
 1. Проверьте подключение. Используйте формат подключения [через общедоступные или частные конечные точки](#over-public-or-private-endpoints)выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные общие сведения о Hive в HDInsight см. в статье [использование Apache Hive с Apache Hadoop в hdinsight](hdinsight-use-hive.md) .
 

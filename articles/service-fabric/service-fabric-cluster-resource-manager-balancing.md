@@ -5,12 +5,12 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 8e170c27923d2bb091c4121e350809b85e4c48a5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f56717c086f005b1155988e2041ff2e717e047f2
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452103"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79081698"
 ---
 # <a name="balancing-your-service-fabric-cluster"></a>Балансировка кластера Service Fabric
 Диспетчер кластерных ресурсов Service Fabric поддерживает динамическое изменение нагрузки, реагируя на добавление и удаление узлов или служб. Он также автоматически исправляет нарушения ограничений и упреждающе перераспределяет нагрузку в кластере. Но как часто выполняются эти действия и что их инициирует?
@@ -205,6 +205,7 @@ ClusterManifest.xml
 * Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Чтобы узнать больше о метриках и их настройке, ознакомьтесь с [этой статьей](service-fabric-cluster-resource-manager-metrics.md).
 * Стоимость перемещения — один из способов сообщить диспетчеру кластерных ресурсов, что некоторые службы перемещать затратнее, чем остальные. Дополнительные сведения о стоимости перемещения см. в [этой статье](service-fabric-cluster-resource-manager-movement-cost.md).
 * В диспетчере кластерных ресурсов имеется несколько регулировок, которые можно настроить, чтобы замедлить отток в кластере. Обычно они не требуется, но при необходимости узнать о регулировках можно [здесь](service-fabric-cluster-resource-manager-advanced-throttling.md)
+* Кластерный диспетчер ресурсов может распознать и управлять подкластером (ситуация, которая иногда возникает при использовании ограничений на размещение и балансировки). Сведения о том, как подсистема кластеризации может повлиять на балансировку и способ ее решения, см. [здесь](service-fabric-cluster-resource-manager-subclustering.md) .
 
 [Image1]:./media/service-fabric-cluster-resource-manager-balancing/cluster-resrouce-manager-balancing-thresholds.png
 [Image2]:./media/service-fabric-cluster-resource-manager-balancing/cluster-resource-manager-balancing-threshold-triggered-results.png

@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 79ba3f17b225357267cbd114659851614279bb7f
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 825d6ff16a1f51fa476541ee10fea5f8a1c2972e
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989371"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78304214"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -248,7 +248,7 @@ ms.locfileid: "76989371"
 
 ## <a name="complete-the-migration"></a>Выполнение миграции
 
-1. После завершения миграции щелкните правой кнопкой мыши виртуальную машину и выберите **Stop migration** (Остановка миграции). Это останавливает репликацию для локального компьютера и очищает информацию о состоянии репликации виртуальной машины.
+1. После завершения миграции щелкните правой кнопкой мыши виртуальную машину и выберите **Stop Replication** (Остановка репликации). Это останавливает репликацию для локального компьютера и очищает информацию о состоянии репликации виртуальной машины.
 2. Установите агент виртуальной машины Azure для [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) или [Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) на перенесенных компьютерах.
 3. Выполните любые действия по настройке после миграции приложения, такие как обновление строк подключения к базе данных и конфигурация веб-сервера.
 4. Выполните приемочное тестирование конечного приложения и миграции на перенесенном приложении, работающем в Azure.

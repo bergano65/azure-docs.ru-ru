@@ -1,5 +1,5 @@
-- name: Документация Docker
-  href: index.md
+- name: Документация по Docker
+  href: index.yml
 - name: Краткое руководство
   expanded: true
   items:

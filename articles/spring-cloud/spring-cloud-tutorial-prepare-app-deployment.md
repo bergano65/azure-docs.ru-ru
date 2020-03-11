@@ -6,16 +6,22 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 02/03/2020
 ms.author: brendm
-ms.openlocfilehash: af3611e4c4d1f5d8ca52b3ceb80d79dcfd7d2061
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 49ebfec131c8b9fa7b8535163c03eb7cb692790d
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190737"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78200028"
 ---
 # <a name="prepare-a-java-spring-application-for-deployment-in-azure-spring-cloud"></a>подготовке приложения Java Spring для развертывания в Azure Spring Cloud
 
 В этом кратком руководстве показано, как подготовить имеющееся приложение Java Spring к развертыванию в Azure Spring Cloud. При правильной настройке Azure Spring Cloud предоставляет надежные службы для мониторинга, масштабирования и обновления приложения Java Spring Cloud.
+
+В других примерах объясняется, как развернуть приложение в Azure Spring Cloud, если настроен файл POM. 
+* [Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart-launch-app-portal.md)
+* [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md)
+
+В этой статье описываются необходимые зависимости и их добавление в файл POM.
 
 ## <a name="java-runtime-version"></a>Версия среды выполнения Java
 
@@ -25,16 +31,18 @@ Azure Spring Cloud поддерживает Java 8 и 11. Среда разме
 
 ## <a name="spring-boot-and-spring-cloud-versions"></a>Версии Spring Boot и Spring Cloud
 
-Azure Spring Cloud поддерживает только приложения Spring Boot. Эта служба поддерживает Spring Boot версий 2.1 и 2.2. Поддерживаемые комбинации Spring Boot и Spring Cloud перечислены в таблице ниже.
+Чтобы подготовить существующее приложение Spring Boot к развертыванию в Azure Spring Cloud, включите в файл POM приложения зависимости Spring Boot и Spring Cloud, как описано в разделах ниже.
+
+Azure Spring Cloud поддерживает только приложения Spring Boot версии 2.1 или 2.2. Поддерживаемые комбинации Spring Boot и Spring Cloud перечислены в таблице ниже.
 
 Версия Spring Boot | Версия Spring Cloud
 ---|---
 2.1 | Greenwich.RELEASE
 2.2 | Hoxton.RELEASE
 
-Убедитесь, что файл pom.xml содержит правильные зависимости Spring Boot и Spring Cloud для вашей версии Spring Boot.
-
 ### <a name="dependencies-for-spring-boot-version-21"></a>Зависимости для Spring Boot версии 2.1
+
+Для Spring Boot версии 2.1 добавьте следующие зависимости в файл POM приложения.
 
 ```xml
     <!-- Spring Boot dependencies -->
@@ -60,6 +68,8 @@ Azure Spring Cloud поддерживает только приложения Sp
 
 ### <a name="dependencies-for-spring-boot-version-22"></a>Зависимости для Spring Boot версии 2.2
 
+Для Spring Boot версии 2.2 добавьте следующие зависимости в файл POM приложения.
+
 ```xml
     <!-- Spring Boot dependencies -->
     <parent>
@@ -84,7 +94,7 @@ Azure Spring Cloud поддерживает только приложения Sp
 
 ## <a name="azure-spring-cloud-client-dependency"></a>Зависимость клиента Azure Spring Cloud
 
-Azure Spring Cloud размещает компоненты Spring Cloud и управляет ими от вашего имени. Сюда относятся реестр облачной службы Spring Cloud и сервер конфигурации Spring Cloud. Включите в зависимости клиентскую библиотеку Azure Spring Cloud, чтобы разрешить обмен данными с экземпляром службы Azure Spring Cloud.
+Azure Spring Cloud размещает компоненты Spring Cloud и управляет ими от вашего имени. К ним относятся реестр облачной службы Spring Cloud и сервер конфигурации Spring Cloud. Включите в зависимости клиентскую библиотеку Azure Spring Cloud, чтобы разрешить обмен данными с экземпляром службы Azure Spring Cloud.
 
 В следующей таблице перечислены нужные версии Azure Spring Cloud для приложения, в котором используются Spring Boot и Spring Cloud.
 
@@ -97,6 +107,8 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
 
 ### <a name="dependency-for-azure-spring-cloud-version-21"></a>Зависимость для Azure Spring Cloud версии 2.1
 
+Для Spring Boot версии 2.1 добавьте следующую зависимость в файл POM приложения.
+
 ```xml
 <dependency>
         <groupId>com.microsoft.azure</groupId>
@@ -106,6 +118,8 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
 ```
 
 ### <a name="dependency-for-azure-spring-cloud-version-22"></a>Зависимость для Azure Spring Cloud версии 2.2
+
+Для Spring Boot версии 2.2 добавьте следующую зависимость в файл POM приложения.
 
 ```xml
 <dependency>
@@ -117,7 +131,33 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
 
 ## <a name="other-required-dependencies"></a>Другие необходимые зависимости
 
-Чтобы включить встроенные функции Azure Spring Cloud, приложение должно включить следующие зависимости. Это включение обеспечит правильную настройку приложения с каждым компонентом.  
+Чтобы включить встроенные функции Azure Spring Cloud, приложение должно включить следующие зависимости. Это включение обеспечит правильную настройку приложения с каждым компонентом.
+
+### <a name="enablediscoveryclient-annotation"></a>Заметка EnableDiscoveryClient
+
+Добавьте следующую заметку в исходный код приложения.
+```java
+@EnableDiscoveryClient
+```
+См. более ранние примеры для приложения PiggyMetrics:
+```java
+package com.piggymetrics.gateway;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableZuulProxy
+
+public class GatewayApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class, args);
+    }
+}
+```
 
 ### <a name="service-registry-dependency"></a>Зависимость реестра служб
 
@@ -175,6 +215,13 @@ Azure Spring Cloud размещает компоненты Spring Cloud и уп�
 ```
 
  Также вам нужно включить экземпляр Azure Application Insights для работы с экземпляром службы Azure Spring Cloud. В [этом руководстве](spring-cloud-tutorial-distributed-tracing.md) вы узнаете, как использовать Application Insights в Azure Spring Cloud.
+
+## <a name="see-also"></a>См. также раздел
+* [Анализ журналов и метрик приложений](https://docs.microsoft.com/azure/spring-cloud/diagnostic-services)
+* [Настройка сервера конфигурации](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-config-server)
+* [Использование распределенной трассировки в Azure Spring Cloud](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-distributed-tracing)
+* [Краткое руководство по Spring](https://spring.io/quickstart)
+* [Документация по Spring Boot](https://spring.io/projects/spring-boot)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

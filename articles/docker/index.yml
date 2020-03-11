@@ -1,0 +1,43 @@
+### YamlMime:Landing
+title: Документация по использованию Docker в Azure
+summary: Docker — это популярная платформа управления контейнерами и работы с образами, которая позволяет быстро работать с контейнерами в Linux и Windows. Узнайте, как использовать Docker в Azure.
+metadata:
+  title: Документация по использованию Docker в Azure
+  description: Docker — это популярная платформа управления контейнерами и работы с образами, которая позволяет быстро работать с контейнерами в Linux и Windows. Узнайте, как использовать Docker в Azure.
+  services: multiple
+  ms.service: multiple
+  ms.topic: landing-page
+  author: georgewallace
+  ms.author: gwallace
+  ms.date: 03/08/2020
+  ms.openlocfilehash: daff334cbbe118d6fdbc42a5497313f9671fd7f1
+  ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/09/2020
+  ms.locfileid: "78944020"
+landingContent:
+- title: Развертывание Docker в Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 'Шаблон быстрого запуска: развертывание Docker в Ubuntu'
+      url: https://azure.microsoft.com/resources/templates/docker-simple-on-ubuntu/
+- title: Начало работы
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure
+      url: ../app-service/containers/tutorial-python-postgresql-app.md
+    - text: Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
+      url: ../jenkins/tutorial-jenkins-github-docker-cicd.md
+- title: Ресурсы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Сайт Docker Azure
+      url: https://docs.docker.com/docker-for-azure/why/
+    - text: Драйвер Docker Azure
+      url: https://docs.docker.com/machine/drivers/azure/
+    - text: Дополнительные сведения о Docker
+      url: https://docker.com

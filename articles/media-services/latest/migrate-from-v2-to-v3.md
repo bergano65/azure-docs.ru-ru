@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 02/28/2020
+ms.date: 03/09/2020
 ms.author: juliako
-ms.openlocfilehash: 2a670c7bce113de8854b33e407c7de2236edd794
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: ffbac18b3172dd0cd3d430bae5060be0a8d1bb21
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78393483"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082373"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -31,7 +31,7 @@ ms.locfileid: "78393483"
 Если у вас есть видеослужба, разработанная на основе [устаревших API Служб мультимедиа версии 2](../previous/media-services-overview.md), ознакомьтесь со следующими рекомендациями и советами перед переносом в API версии 3. В версии 3 API существует множество преимуществ и новых функций, которые улучшают возможности разработки и Служб мультимедиа. Однако, как указано в разделе с [известными проблемами](#known-issues) этой статьи, из-за изменений между версиями API существуют определенные ограничения. Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями. 
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md)v3, просмотра (а не управления) v3 [Assets](assets-concept.md), получения сведений о доступе к API. Дополнительные сведения см. в разделе [часто задаваемые вопросы](frequently-asked-questions.md#can-i-use-the-azure-portal-to-manage-v3-resources). 
 
 ## <a name="benefits-of-media-services-v3"></a>Преимущества Служб мультимедиа версии 3
   
@@ -131,7 +131,13 @@ API версии 3 содержит следующие недочеты функ
 
 ## <a name="known-issues"></a>Известные проблемы
 
-* В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-sdk), CLI или один из поддерживаемых пакетов SDK.
+*  В настоящее время [портал Azure](https://portal.azure.com/) можно использовать для:
+
+    * Управление службами мультимедиа v3, [динамические события](live-events-outputs-concept.md) 
+    * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
+    * [Получение сведений о доступе к API](access-api-portal.md). 
+
+Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 * Подготовьте зарезервированные единицы мультимедиа (MRU) в вашей учетной записи, чтобы управлять параллелизмом и производительностью заданий, особенно тех, что касаются видео- или аудиоанализа. Дополнительные сведения см. в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md). Управлять единицами MRU можно с помощью [CLI 2.0 для Служб мультимедиа версии 3](media-reserved-units-cli-how-to.md), [портала Azure](../previous/media-services-portal-scale-media-processing.md) или [API-интерфейсов версии 2](../previous/media-services-dotnet-encoding-units.md). Подготавливать единицы MRU нужно с учетом того, какая версия API Служб мультимедиа используется: версия 2 или 3.
 * С помощью API версии 2 нельзя управлять сущностями Cлужбы мультимедиа, созданными с помощью API версии 3.  
 * Не все сущности в API v2 автоматически отображаются в API V3.  Ниже приведены примеры сущностей в двух версиях, которые несовместимы:  

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/23/2017
 ms.author: juliens
 ms.custom: mvc
-ms.openlocfilehash: 8319f2f5405271679d0c11d4ac68492cdec8fc14
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e1dccc42301cf73fb215d99636dfee9eef9bc59e
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66148934"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78274160"
 ---
 # <a name="deprecated-use-acr-with-a-dcos-cluster-to-deploy-your-application"></a>Использование ACR в кластере DC/OS для развертывания приложения (не рекомендуется)
 
@@ -46,7 +46,7 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry$RANDOM
 
 После создания реестра Azure CLI выводит данные, подобные следующим. Запишите `name` и `loginServer`, так как они понадобятся на следующих шагах.
 
-```azurecli
+```output
 {
   "adminUserEnabled": false,
   "creationDate": "2017-06-06T03:40:56.511597+00:00",
@@ -93,7 +93,7 @@ FQDN=$(az acs list --resource-group myResourceGroup --query "[0].masterProfile.f
 
 Создайте SSH-подключение к главному узлу (или первому главному узлу) кластера DC/OS. Измените имя пользователя, если при создании кластера использовалось значение не по умолчанию.
 
-```azurecli-interactive
+```console
 ssh azureuser@$FQDN
 ```
 
@@ -107,13 +107,13 @@ docker -H tcp://localhost:2375 login --username=myContainerRegistry23489 --passw
 
 Создайте сжатый файл, который содержит значения проверки подлинности реестра контейнера.
 
-```azurecli-interactive
+```console
 tar czf docker.tar.gz .docker
 ```
 
 Скопируйте этот файл в общее хранилище кластера. Этот шаг делает файл доступным на всех узлах кластера DC/OS.
 
-```azurecli-interactive
+```console
 cp docker.tar.gz /mnt/share/dcosshare
 ```
 
@@ -123,25 +123,25 @@ cp docker.tar.gz /mnt/share/dcosshare
 
 Создайте контейнер из образа Ubuntu.
 
-```azurecli-interactive
+```console
 docker run ubuntu --name base-image
 ```
 
 Теперь добавьте контейнер в новый образ. Имя образа должно включать имя `loginServer` реестра контейнеров в формате `loginServer/imageName`.
 
-```azurecli-interactive
+```console
 docker -H tcp://localhost:2375 commit base-image mycontainerregistry30678.azurecr.io/dcos-demo
 ```
 
 Войдите в реестр контейнеров Azure. Замените имя именем loginServer, --username — именем реестра контейнеров, а --password — одним из предоставленных паролей.
 
-```azurecli-interactive
+```console
 docker login --username=myContainerRegistry23489 --password=//=ls++q/m+w+pQDb/xCi0OhD=2c/hST mycontainerregistry2675.azurecr.io
 ```
 
 Наконец, отправьте образ в реестр ACR. Этот пример отправляет образ с именем dcos-demo.
 
-```azurecli-interactive
+```console
 docker push mycontainerregistry30678.azurecr.io/dcos-demo
 ```
 
@@ -189,11 +189,11 @@ docker push mycontainerregistry30678.azurecr.io/dcos-demo
 
 Разверните приложение с помощью CLI DC/OS.
 
-```azurecli-interactive
+```console
 dcos marathon app add acrDemo.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы настроили кластер DC/OS для использования с реестром контейнеров Azure, в частности выполнили следующие задачи:
 

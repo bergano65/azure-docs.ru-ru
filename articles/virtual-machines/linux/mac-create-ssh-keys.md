@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 9faa47e615217d62eade50a0c181dfda9ec9cd0a
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
-ms.translationtype: HT
+ms.openlocfilehash: af18a32143ebc9db7be923b09de106b79022321f
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78944779"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969045"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция: создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 
@@ -65,7 +65,7 @@ ssh-rsa AAAAB3NzaC1yc2EAABADAQABAAACAQC1/KanayNr+Q7ogR5mKnGpKWRBQU7F3Jjhn7utdf7Z
 
 Если вы копируете содержимое файла открытого ключа и вставляете его на портале Azure или в шаблоне Resource Manager, в этом содержимом не должно быть завершающего пробела. Чтобы скопировать открытый ключ в macOS, можно передать файл открытого ключа в `pbcopy`. Аналогичным образом в Linux можно передать файл открытого ключа в такие программы, как `xclip`.
 
-По умолчанию открытый ключ виртуальной машины Linux в Azure хранится в файле ~/.ssh/id_rsa.pub, если только вы не изменили это расположение во время создания пары ключей. При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины с использованием существующего открытого ключа укажите значение и (необязательно) расположение этого ключа, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--ssh-key-value`. В следующей команде замените *VMname*, *RGname* и *keyFile* собственными значениями.
+По умолчанию открытый ключ виртуальной машины Linux в Azure хранится в файле ~/.ssh/id_rsa.pub, если только вы не изменили это расположение во время создания пары ключей. При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины с использованием существующего открытого ключа укажите значение и (необязательно) расположение этого ключа, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--ssh-key-values`. В следующей команде замените *VMname*, *RGname* и *keyFile* собственными значениями.
 
 ```azurecli
 az vm create --name VMname --resource-group RGname --ssh-key-values mysshkey.pub

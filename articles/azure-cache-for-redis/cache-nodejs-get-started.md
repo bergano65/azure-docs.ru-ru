@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 05/21/2018
 ms.author: yegu
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: e0458fd257942a455daef911a303437fea03b11b
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 07e2d6f174e5af4af9bdcac73dc74f5cf061ed41
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122005"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78300491"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-nodejs"></a>Краткое руководство. Использование кэша Azure для Redis с Node.js
 
@@ -55,7 +55,7 @@ var client = redis.createClient(6380, process.env.REDISCACHEHOSTNAME,
 
 ## <a name="create-a-new-nodejs-app"></a>Создание нового приложения Node.js
 
-Создайте новый файл сценария с именем *redistest.js*.
+Создайте новый файл сценария с именем *redistest.js*. С помощью команды `npm install redis bluebird` установите необходимые пакеты.
 
 Добавьте следующий пример JavaScript в файл. Этот код показывает, как подключиться к экземпляру кэша Redis для Azure, используя имя узла кэша и переменные среды ключа. Код также хранит строковое значение в кэше и извлекает его. Также выполняются команды `PING` и `CLIENT LIST`. Дополнительные примеры использования Redis с клиентом [node_redis](https://github.com/mranney/node_redis) см. в [https://redis.js.org/](https://redis.js.org/).
 
@@ -63,6 +63,7 @@ var client = redis.createClient(6380, process.env.REDISCACHEHOSTNAME,
 var redis = require("redis");
 var bluebird = require("bluebird");
 
+// Convert Redis client API to use promises, to make it usable with async/await syntax
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
@@ -128,9 +129,9 @@ node redistest.js
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как использовать кэш Redis для Azure в приложениях Node.js. Переходите к следующему краткому руководству по использованию кэша Redis для Azure в веб-приложении ASP.NET.
+Из этого краткого руководства вы узнали, как использовать кэш Redis для Azure в приложениях Node.js. Переходите к следующему краткому руководству по использованию кэша Azure для Redis в веб-приложениях ASP.NET.
 
 > [!div class="nextstepaction"]
 > [Создание веб-приложения ASP.NET, в котором используется кэш Azure для Redis](./cache-web-app-howto.md)

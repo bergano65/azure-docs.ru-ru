@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: e5bf99e2ea84f41054ff57d08882bfa8ab4d6be5
-ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
+ms.openlocfilehash: 49959ff12744f28e930959c43a449800c76818f5
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114224"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969801"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -32,7 +32,7 @@ ms.locfileid: "77114224"
 ## <a name="known-issues"></a>Известные проблемы
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-sdk), CLI или один из поддерживаемых пакетов SDK.
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md) [v3, представления v3,](assets-concept.md)получения сведений о доступе к API. Для всех других задач управления (например, преобразований и заданий) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
  

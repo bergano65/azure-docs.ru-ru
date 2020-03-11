@@ -45,10 +45,6 @@
           href: how-to-automatic-language-detection.md
         - name: Использование форматов сжатых входных звуковых данных
           href: how-to-use-codec-compressed-audio-input-streams.md
-        - name: Использование форматов сжатых входных звуковых данных (iOS)
-          href: how-to-use-codec-compressed-audio-input-streams-ios.md
-        - name: Использование форматов сжатых входных звуковых данных (Android)
-          href: how-to-use-codec-compressed-audio-input-streams-android.md
     - name: Настройка
       items:
         - name: Подготовка данных
@@ -63,6 +59,10 @@
           href: how-to-custom-speech-deploy-model.md
         - name: Создание транскрипций с подписями человека
           href: how-to-custom-speech-human-labeled-transcriptions.md
+        - name: Рекомендации по именованию настраиваемых ключевых слов
+          href: speech-devices-sdk-kws-guidelines.md
+        - name: Выявление пользовательских ключевых слов
+          href: speech-devices-sdk-create-kws.md
     - name: Справочник
       items:
         - name: API для работы с пакетом SDK службы "Речь"
@@ -156,10 +156,6 @@
               href: how-to-custom-voice-create-voice.md
             - name: Запись образцов голосов
               href: record-custom-voice-samples.md
-            - name: Рекомендации по именованию настраиваемых ключевых слов
-              href: speech-devices-sdk-kws-guidelines.md
-            - name: Выявление пользовательских ключевых слов
-              href: speech-devices-sdk-create-kws.md
         - name: Создание звукового содержимого
           items:
             - name: Создание звукового содержимого
@@ -413,6 +409,12 @@
           items:
             - name: 'Голосовые помощники: часто задаваемые вопросы'
               href: faq-voice-assistants.md
+    - name: Пользовательское ключевое слово
+      items:
+        - name: Рекомендации по именованию настраиваемых ключевых слов
+          href: speech-devices-sdk-kws-guidelines.md
+        - name: Выявление пользовательских ключевых слов
+          href: speech-devices-sdk-create-kws.md
 - name: Hosting
   expanded: false
   items:
@@ -445,8 +447,6 @@
           href: ship-application.md
     - name: Краткое руководство
       items:
-        - name: Создание проекта
-          href: quickstarts/create-project.md
         - name: Настройка пакета SDK службы "Речь"
           href: quickstarts/setup-platform.md
           displayName: 'install the speech sdk, install the speech sdk java, install the speech sdk C#, install the speech sdk python, install the speech sdk C++, setup speech sdk, install, install C#, install C++, install Python, install Java, install Javascript'

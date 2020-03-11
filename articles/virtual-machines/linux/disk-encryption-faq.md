@@ -2,17 +2,18 @@
 title: Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Linux
 description: В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure шифровании дисков для виртуальных машин IaaS под управлением Linux.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 45febcffed747f75b6c8b78c2e4b93a047f81b0a
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: b285daa465c8d069b359e94c9203c1ffbea24c06
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78205880"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970684"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -137,7 +138,7 @@ Azure Backup предоставляет механизм резервного к
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Шифрование дисков Azure для виртуальных машин IaaS](disk-encryption-overview.md)

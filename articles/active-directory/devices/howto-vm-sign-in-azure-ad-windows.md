@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8fe33f78b96dbfe780c94fbddfc5c8821148279
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: ffb0f7cdb320d009eb1549efabac60d7710b9b0e
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78672591"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79080094"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -152,7 +152,8 @@ az vm extension set \
 
 > [!NOTE]
 > Чтобы разрешить пользователю входить на ВИРТУАЛЬную машину по протоколу RDP, необходимо назначить имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины. Пользователь Azure с ролями владельца или участника, назначенных для виртуальной машины, не имеет автоматически привилегий для входа на виртуальную машину по протоколу RDP. Это позволяет обеспечить разделение между набором пользователей, управляющих виртуальными машинами, и набором пользователей, которые имеют доступ к виртуальным машинам.
-' Для виртуальной машины можно настроить назначение ролей несколькими способами:
+
+Существует несколько способов настройки назначений ролей для виртуальной машины.
 
 - Использование интерфейса портала Azure AD
 - Использование интерфейса Azure Cloud Shell
@@ -194,7 +195,7 @@ az role assignment create \
 - [Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI](/azure/role-based-access-control/role-assignments-cli)
 - [Управление доступом с помощью RBAC и портала Azure](/azure/role-based-access-control/role-assignments-portal)
 - [Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell).
-'
+
 ## <a name="using-conditional-access"></a>Использование условного доступа
 
 Вы можете применить политики условного доступа, такие как многофакторная проверка подлинности или проверка риска входа пользователя, прежде чем разрешить доступ к виртуальным машинам Windows в Azure, включенным при входе в Azure AD. Чтобы применить политику условного доступа, необходимо выбрать приложение "вход в виртуальную машину Azure" из параметра "облачные приложения" или "назначение действий", а затем использовать риск для входа в качестве условия и/или требовать многофакторную проверку подлинности в качестве предоставления контроля доступа. 
@@ -221,7 +222,7 @@ az role assignment create \
 > [!NOTE]
 > Можно сохранить. RDP-файл локально на компьютере для запуска будущих подключений к удаленному рабочему столу виртуальной машины вместо перехода на страницу обзора виртуальных машин в портал Azure и с помощью параметра Connect.
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="troubleshoot-deployment-issues"></a>Устранение неполадок развертывания
 
@@ -362,5 +363,6 @@ az role assignment create \
 
 Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения о Azure Active Directory см. в разделе [что такое Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis)
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis).

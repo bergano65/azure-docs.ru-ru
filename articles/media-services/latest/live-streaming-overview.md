@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 11/12/2019
 ms.author: juliako
-ms.openlocfilehash: b366262ce7849658eb84444d873956c25ab38804
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: af7bfe74d8df177650cea76a9bed7b0d7311f87e
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78244658"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968998"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -33,13 +33,13 @@ ms.locfileid: "78244658"
 В этой статье приводятся общие сведения и рекомендации по потоковой передаче с помощью служб мультимедиа и ссылки на другие важные статьи.
  
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> Вы можете использовать [портал Azure](https://portal.azure.com/) для управления [динамическими событиями](live-events-outputs-concept.md) [v3, представления v3,](assets-concept.md)получения сведений о доступе к API. Для всех других задач управления (например, преобразований и заданий) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
-## <a name="dynamic-packaging"></a>Динамическое упаковывание
+## <a name="dynamic-packaging"></a>Динамическая упаковка
 
 С помощью служб мультимедиа можно использовать [динамическую упаковку](dynamic-packaging-overview.md), позволяющую просматривать и рассылать Интерактивные потоки в [форматах MPEG, HLS и Smooth Streaming](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming) из веб-канала публикации, который отправляется в службу. Ваши зрители могут воспроизводить трансляцию с помощью любых проигрывателей, поддерживающих HLS, DASH и Smooth Streaming. Для доставки потока в любом из этих протоколов можно использовать [Проигрыватель мультимедиа Azure](https://amp.azure.net/libs/amp/latest/docs/index.html) в мобильном или веб-приложении.
 
-## <a name="dynamic-encryption"></a>динамическое шифрование.
+## <a name="dynamic-encryption"></a>Динамическое шифрование
 
 Динамическое Шифрование позволяет динамически шифровать содержимое в реальном времени или по запросу с помощью AES-128 или любой из трех основных систем управления цифровыми правами (DRM): Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам. Дополнительные сведения см. в разделе [динамическое шифрование](content-protection-overview.md).
 
@@ -81,7 +81,7 @@ ms.locfileid: "78244658"
 - [События и выходные данные потоковой трансляции](live-events-outputs-concept.md)
 - [Указатели потоковой передачи](streaming-locators-concept.md)
 
-### <a name="general-steps"></a>основные шаги
+### <a name="general-steps"></a>Общие шаги
 
 1. Убедитесь, что в учетной записи служб мультимедиа выполняется **Конечная точка потоковой передачи** (источник). 
 2. Создание [события прямой трансляции](live-events-outputs-concept.md). <br/>Для создаваемого события можно настроить автоматический запуск. Кроме того, событие можно запустить, когда вы будете готовы начать потоковую передачу.<br/> Если для автозапуска задано значение true, событие прямой трансляции будет запущено сразу после создания. Плата начисляется сразу же после запуска трансляции. Чтобы остановить начисление оплаты, нужно явно вызвать функцию Stop (Остановить) для ресурса события потоковой трансляции. Дополнительные сведения см. в статье [Состояния компонента LiveEvent и выставление счетов за его использование](live-event-states-billing.md).
@@ -125,5 +125,6 @@ ms.locfileid: "78244658"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Быстрый запуск потоковой передачи] (live-events-wirecast-quickstart.md (
 * [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)
 * [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md)

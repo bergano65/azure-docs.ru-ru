@@ -4,14 +4,14 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 05/04/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: a26f1207eccd615804babe230df689d27beae49f
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 6882cb683e0bd8b76bb1207e628e43f24c7b5987
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840788"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252119"
 ---
-# <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
+# <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство по Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 
 Помимо [быстрых задач](container-registry-tutorial-quick-task.md), пакет "Задачи Реестра контейнеров Azure" поддерживает автоматическую сборку образов контейнеров Docker при фиксации исходного кода в репозитории Git. Поддерживаемые контексты Git для Задач ACR включают общедоступные или частные репозитории GitHub или Azure.
 
@@ -42,7 +42,9 @@ ms.locfileid: "74840788"
 
 Сначала заполните эти переменные среды оболочки значениями, подходящими для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните эти переменные среды, вам придется вручную заменять каждое значение в примерах команд.
 
-```azurecli-interactive
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+
+```console
 ACR_NAME=<registry-name>        # The name of your Azure container registry
 GIT_USER=<github-username>      # Your GitHub user account name
 GIT_PAT=<personal-access-token> # The PAT you generated in the previous section
@@ -208,13 +210,13 @@ Run ID: da2 was successful after 27s
 
 Сначала перейдите в каталог, содержащий локальный клон вашего [репозитория][sample-repo]:
 
-```azurecli-interactive
+```console
 cd acr-build-helloworld-node
 ```
 
 Затем выполните следующие команды для создания, фиксации и передачи нового файла в вилку вашего репозитория GitHub:
 
-```azurecli-interactive
+```console
 echo "Hello World!" > hello.txt
 git add hello.txt
 git commit -m "Testing ACR Tasks"
@@ -268,7 +270,7 @@ da2       taskhelloworld  Linux       Succeeded  Manual      2018-09-17T22:50:59
 da1                       Linux       Succeeded  Manual      2018-09-17T22:29:59Z  00:00:57
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как использовать задачу, чтобы автоматически активировать сборки образов контейнера в Azure при фиксации исходного кода в репозитории Git. Перейдите к следующему руководству, чтобы узнать, как создавать задачи, которые активируют сборку при обновлении базового образа контейнера.
 

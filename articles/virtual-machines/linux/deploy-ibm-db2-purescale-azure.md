@@ -1,25 +1,17 @@
 ---
 title: Развертывание IBM DB2 pureScale в Azure
 description: Узнайте, как развернуть пример архитектуры, который недавно использовался для переноса данных предприятия из среды IBM DB2 на z/OS в IBM DB2 pureScale в Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: njray
-manager: edprice
-editor: edprice
-tags: ''
-ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: c4db27b938934aafa350866991ff174cbdbed0ac
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 98e912894a4d93a057a2f6a2153d0690deaed250
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291555"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968897"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -27,7 +19,7 @@ ms.locfileid: "76291555"
 
 Чтобы выполнить шаги, используемые для миграции, воспользуйтесь скриптами установки в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Эти скрипты основаны на архитектуре для обычной рабочей нагрузки OLTP среднего размера.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 Чтобы развернуть эту архитектуру, скачайте и запустите скрипт deploy.sh, доступный в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
 
@@ -81,11 +73,11 @@ ms.locfileid: "76291555"
 
 | Имя экрана               | Поле                                        | Значение                                                                                                 |
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Добро пожаловать!                   |                                              | "New Install" (Новая установка)                                                                                           |
+| Экран приветствия                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
-| Настройка             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
+| Конфигурация             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |
-|                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Отмечено                                                                                               |
+|                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Флажок установлен                                                                                               |
 | "Instance Owner" (Владелец экземпляра)            | "Existing User For Instance, User name" (Существующий пользователь экземпляра, имя пользователя)        | DB2sdin1                                                                                              |
 | "Fenced User" (Изолированный пользователь)               | "Existing User, User name" (Существующий пользователь, имя пользователя)                     | DB2sdfe1                                                                                              |
 | "Cluster File System" (Файловая система кластера)       | "Shared disk partition device path" (Путь к устройству с общим разделом диска)            | /dev/dm-2                                                                                             |

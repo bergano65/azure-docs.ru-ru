@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/24/2020
+ms.date: 03/04/2020
 ms.author: allensu
-ms.openlocfilehash: 9d9033689472fbc462eefd3d31c2b36a19add81a
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 45cb07de9ddc7854e6da8b8739acfaa95dd0ed01
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589476"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78304129"
 ---
 # <a name="designing-virtual-networks-with-nat-gateway-resources-public-preview"></a>Проектирование виртуальных сетей с использованием ресурсов шлюза NAT (общедоступная предварительная версия)
 
@@ -34,7 +34,7 @@ ms.locfileid: "77589476"
 
 
 >[!NOTE] 
->Сейчас NAT виртуальной сети предоставляется в общедоступной предварительной версии. В данный момент оно доступно только в ограниченном наборе [регионов](nat-overview.md#region-availability). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.comsupport/legal/preview-supplemental-terms).
+>Сейчас NAT виртуальной сети предоставляется в общедоступной предварительной версии. В данный момент оно доступно только в ограниченном наборе [регионов](nat-overview.md#region-availability). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms).
 
 ## <a name="how-to-deploy-nat"></a>Развертывание NAT
 
@@ -349,21 +349,25 @@ SNAT сопоставляет несколько частных адресов �
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [NAT виртуальной сети](nat-overview.md).
-- Учебники по проверке шлюза NAT
-  * [Azure CLI](tutorial-create-validate-nat-gateway-cli.md),
-  * [PowerShell](tutorial-create-validate-nat-gateway-cli.md),
-  * [Портал](tutorial-create-validate-nat-gateway-cli.md)
-- Краткие руководства по развертыванию ресурса шлюза NAT
-  * [Azure CLI](./quickstart-create-nat-gateway-cli.md),
-  * [PowerShell](./quickstart-create-nat-gateway-powershell.md),
-  * [Портал](./quickstart-create-nat-gateway-portal.md).
-- Дополнительные сведения о [зонах доступности](../availability-zones/az-overview.md).
-- Узнайте больше о [Load Balancer (цен. категории "Стандартный")](../load-balancer/load-balancer-standard-overview.md).
-- Дополнительные сведения о [зонах доступности и Load Balancer (цен. категории "Стандартный")](../load-balancer/load-balancer-standard-availability-zones.md).
-- Подробная информация об API для ресурсов шлюза NAT.
-  * [REST API](https://docs.microsoft.com/rest/api/virtualnetwork/natgateways),
-  * [Azure CLI](https://docs.microsoft.com/cli/azure/network/nat/gateway?view=azure-cli-latest),
-  * [PowerShell.](https://docs.microsoft.com/powershell/module/az.network/new-aznatgateway)
-- [Расскажите нам, что следует улучшить, в разделе UserVoice](https://aka/natuservoice).
-- [Отправьте отзыв об общедоступной предварительной версии](https://aka.ms/natfeedback)
+* Дополнительные сведения о [NAT виртуальной сети](nat-overview.md).
+* Дополнительные сведения о [метриках и оповещениях для ресурсов шлюза NAT](nat-metrics.md).
+* Дополнительные сведения об [устранении неполадок ресурсов шлюза NAT](troubleshoot-nat.md).
+* [Расскажите нам, что следует улучшить, в разделе UserVoice](https://aka.ms/natuservoice).
+* [Отправьте отзыв об общедоступной предварительной версии](https://aka.ms/natfeedback)
+* Учебники по проверке шлюза NAT
+  - [Azure CLI](tutorial-create-validate-nat-gateway-cli.md),
+  - [PowerShell](tutorial-create-validate-nat-gateway-cli.md),
+  - [Портал](tutorial-create-validate-nat-gateway-cli.md)
+* Краткие руководства по развертыванию ресурса шлюза NAT
+  - [Azure CLI](./quickstart-create-nat-gateway-cli.md),
+  - [PowerShell](./quickstart-create-nat-gateway-powershell.md),
+  - [Портал](./quickstart-create-nat-gateway-portal.md).
+* Дополнительные сведения об API ресурса шлюза NAT
+  - [REST API](https://docs.microsoft.com/rest/api/virtualnetwork/natgateways),
+  - [Azure CLI](https://docs.microsoft.com/cli/azure/network/nat/gateway?view=azure-cli-latest),
+  - [PowerShell.](https://docs.microsoft.com/powershell/module/az.network/new-aznatgateway)
+* Дополнительные сведения о [зонах доступности](../availability-zones/az-overview.md).
+* Дополнительные сведения о [подсистеме балансировки нагрузки ценовой категории "Стандартный"](../load-balancer/load-balancer-standard-overview.md).
+* Дополнительные сведения о [зонах доступности и подсистеме балансировки нагрузки ценовой категории "Стандартный"](../load-balancer/load-balancer-standard-availability-zones.md).
+
+

@@ -1,5 +1,5 @@
 ---
-title: Учебник. Получение доступа к службе хранилища Azure для Linux в Azure AD с помощью управляемого удостоверения
+title: Учебник`:`. Получение доступа к службе хранилища Azure по ключу доступа с помощью управляемого удостоверения (Linux, Azure AD)
 description: Из этого руководства вы узнаете, как получить доступ к службе хранилища Azure с помощью назначаемого системой управляемого удостоверения на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2017
+ms.date: 03/04/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35c31fbf8c7c1aa37134a1808cd3f54a559833c1
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 86f875fa80f8bb8dd33a369a23f49833162cd417
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74183416"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273821"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure с помощью ключа доступа
 
@@ -194,7 +194,7 @@ az storage blob download -c <CONTAINER NAME> -n test.txt -f test-download.txt --
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как использовать назначаемое системой управляемое удостоверение виртуальной машины Linux для получения доступа к службе хранилища Azure с помощью ключа доступа.  Дополнительные сведения о ключах доступа к службе хранилища Azure см. здесь:
 

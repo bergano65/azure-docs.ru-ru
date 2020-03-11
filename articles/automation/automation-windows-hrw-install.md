@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: fc6d3bbe1580c4e6f7064c957a9d420555296231
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 6c99cb15ef6874ef0efecb15eb99443904491209
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372549"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082613"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -69,7 +69,7 @@ ms.locfileid: "78372549"
 
 Скачайте скрипт **New-OnPremiseHybridWorker. ps1** из [коллекция PowerShell](https://www.powershellgallery.com/packages/New-OnPremiseHybridWorker). Загрузка должна выполняться непосредственно с компьютера, на котором запущена роль гибридной рабочей роли Runbook или с другого компьютера в вашей среде. После скачивания скрипта скопируйте его в рабочую роль. Скрипт **New-OnPremiseHybridWorker. ps1** использует параметры, описанные ниже, во время выполнения.
 
-| Параметр | Состояние | Описание |
+| Параметр | Состояние | Description |
 | --------- | ------ | ----------- |
 | *AAResourceGroupName* | Обязательный | имя группы ресурсов, связанной с вашей учетной записью службы автоматизации. |
 | *AutomationAccountName* | Обязательный | имя учетной записи службы автоматизации.
@@ -139,7 +139,13 @@ Heartbeat
 | where TimeGenerated > ago(30m)
 ```
 
-В результатах поиска должны отобразиться записи пульса для компьютера, указывающие, что он подключен и сообщает службе. По умолчанию каждый агент перенаправляет запись пульса в назначенную ему рабочую область. Вы можете убедиться, что агент правильно скачал решение службы автоматизации, если в папке **C:\Program Files\Microsoft Monitoring agent\agent.** находится папка с именем **каталоге** . Чтобы подтвердить версию гибридной рабочей роли Runbook, перейдите к папке **C:\Program Files\Microsoft Monitoring ажент\ажент\азуреаутоматион** и обратите внимание на вложенную папку **Version** .
+В результатах поиска должны отобразиться записи пульса для компьютера, указывающие, что он подключен и сообщает службе. По умолчанию каждый агент перенаправляет запись пульса в назначенную ему рабочую область. 
+
+Выполните следующие действия, чтобы завершить установку и установку агента.
+
+1. Включите решение, чтобы подключить компьютер агента. См. раздел подключение [компьютеров в рабочей области](https://docs.microsoft.com/azure/automation/automation-onboard-solutions-from-automation-account#onboard-machines-in-the-workspace).
+2. Убедитесь, что агент правильно скачал решение службы автоматизации. Она должна иметь папку с именем **каталоге** в папке **C:\Program Files\Microsoft Monitoring agent\agent.** . 
+3. Чтобы подтвердить версию гибридной рабочей роли Runbook, перейдите к папке **C:\Program Files\Microsoft Monitoring ажент\ажент\азуреаутоматион** и обратите внимание на вложенную папку **Version** .
 
 ### <a name="step-4---install-the-runbook-environment-and-connect-to-azure-automation"></a>Шаг 4. Установка среды Runbook и подключение к службе автоматизации Azure
 
@@ -175,7 +181,7 @@ Add-HybridRunbookWorker –GroupName <String> -EndPoint <Url> -Token <String>
 
 Устанавливаемые модули должны находиться в расположении, указанном в переменной среды *PSModulePath*, чтобы гибридная рабочая роль автоматически импортировала их. Дополнительные сведения см. [в разделе Install modules in PSModulePath](https://docs.microsoft.com/powershell/scripting/developer/module/installing-a-powershell-module?view=powershell-7).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в статье [Удаление гибридных рабочих ролей Runbook для службы автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker).

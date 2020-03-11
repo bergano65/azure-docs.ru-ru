@@ -5,25 +5,25 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.date: 10/03/2019
-ms.openlocfilehash: 3fd1405d8421d71f52d9cd215dd055ce1595abd0
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.custom: hdinsightactive,mvc
+ms.date: 03/02/2020
+ms.openlocfilehash: d7330225ecbdc6715847821a47c140a3c2b8d1b9
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327275"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251949"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство по Анализ данных Apache Spark с использованием Power BI в HDInsight
 
 Из этого учебника вы узнаете, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере Apache Spark в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 > * Визуализация данных Spark с помощью Power BI
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "74327275"
 
 * [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
-* Необязательно: [Пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web).
+* Необязательное действие: [Пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web).
 
 ## <a name="verify-the-data"></a>Проверка данных
 
@@ -128,19 +128,19 @@ ms.locfileid: "74327275"
 
 1. Откройте Power BI Desktop.
 
-1. На вкладке **Home** (Главная) щелкните **Publish** (Опубликовать).
+1. На вкладке **Главная**нажмите кнопку **Опубликовать**.
 
     ![Publish from Power BI Desktop](./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png "Публикация из Power BI Desktop") (Публикация из Power BI Desktop)
 
 1. Выберите рабочую область, в которой вы хотите опубликовать набор данных и отчет, а затем нажмите кнопку **Выбор**. На рисунке ниже выбран параметр по умолчанию **Моя рабочая область**.
 
-    ![Выбор рабочей области для публикации набора данных и отчета](./media/apache-spark-use-bi-tools/apache-spark-bi-select-workspace.png "Выбор рабочей области для публикации набора данных и отчета") 
+    ![Выбор рабочей области для публикации набора данных и отчета](./media/apache-spark-use-bi-tools/apache-spark-bi-select-workspace.png "Выбор рабочей области для публикации набора данных и отчета")
 
-1. Когда публикация успешно завершится, нажмите кнопку **Open 'BuildingTemperature.pbix' in Power BI** (Открыть BuildingTemperature.pbix в Power BI).
+1. Когда публикация успешно завершится, щелкните ссылку **Открыть BuildingTemperature.pbix в Power BI**.
 
-    ![Успешная публикация и ввод учетных данных](./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png "Успешная публикация и ввод учетных данных") 
+    ![Успешная публикация и ввод учетных данных](./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png "Успешная публикация и ввод учетных данных")
 
-1. В службе Power BI щелкните ссылку, чтобы **ввести учетные данные**.
+1. В службе Power BI щелкните ссылку, чтобы **ввести учетные данные**.
 
     ![Ввод учетных данных в службе Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-enter-credentials.png "Ввод учетных данных в службе Power BI")
 
@@ -148,27 +148,27 @@ ms.locfileid: "74327275"
 
     ![Изменение учетных данных в службе Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-edit-credentials.png "Изменение учетных данных в службе Power BI")
 
-1. Введите данные учетной записи для входа в HDInsight и щелкните **Sign in** (Вход). Имя учетной записи по умолчанию — *admin*.
+1. Введите данные учетной записи для входа в HDInsight и нажмите кнопку **Вход**. Имя учетной записи по умолчанию — *admin*.
 
     ![Вход в кластер Spark](./media/apache-spark-use-bi-tools/apache-spark-bi-sign-in.png "Вход в кластер Spark")
 
-1. В левой области выберите **Рабочие области** > **Моя рабочая область** > **Отчеты**, а затем щелкните **BuildingTemperature**.
+1. В области слева выберите элементы **Рабочие области** > **Моя рабочая область** > **Отчеты**, а затем щелкните **BuildingTemperature**.
 
     ![Отчет в списке отчетов в области слева](./media/apache-spark-use-bi-tools/apache-spark-bi-service-left-pane.png "Отчет в списке отчетов в области слева")
 
     Вы также увидите **BuildingTemperature** в списке раздела **Наборы данных** в левой области.
 
-    Визуальный элемент, созданный в Power BI Desktop, теперь доступен в службе Power BI. 
+    Визуальный элемент, созданный в Power BI Desktop, теперь доступен в службе Power BI.
 
 1. Наведите курсор на визуализацию и щелкните значок булавки в правом верхнем углу.
 
     ![Создание отчетов в службе Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-service-report.png "Создание отчетов в службе Power BI")
 
-1. Выберите "Новая информационная панель", введите имя `Building temperature`, а затем нажмите кнопку **Pin** (Закрепить).
+1. Выберите параметр "Новая информационная панель", введите имя `Building temperature`, а затем нажмите кнопку **Закрепить**.
 
     ![Закрепление на новой панели мониторинга](./media/apache-spark-use-bi-tools/apache-spark-bi-pin-dashboard.png "Закрепление на новой панели мониторинга")
 
-1. В отчете нажмите кнопку **Перейти к информационной панели**.
+1. В отчете нажмите кнопку **Перейти на информационную панель**.
 
 Ваш визуальный элемент закреплен на информационной панели. Вы можете добавить в отчет другие визуальные элементы, а затем закрепить их на этой же информационной панели. Дополнительные сведения об отчетах и информационных панелях см. в статьях [Отчеты в Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-reports/) и [Общие сведения о панелях мониторинга для разработчиков Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-dashboards/).
 
@@ -178,7 +178,7 @@ ms.locfileid: "74327275"
 
 Инструкции по удалению кластера см. в статье [Delete an HDInsight cluster using your browser, PowerShell, or the Azure CLI](../hdinsight-delete-cluster.md) (Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого учебника вы узнали, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере Apache Spark в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/). Перейдите к следующей статье, чтобы создать приложение машинного обучения.
 

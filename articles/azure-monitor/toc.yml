@@ -213,6 +213,8 @@
               items:
                 - name: Клиентская часть JavaScript
                   href: app/javascript.md
+                - name: Сопоставитель с исходным кодом для JavaScript
+                  href: app/source-map-support.md
             - name: Сводка по API Application Insights
               displayname: 'SDK, API, custom events, custom metrics, trackevent,trackmetric, getmetric, trackrequest, trackexception, tracktrace, trackdependency'
               href: app/api-custom-events-metrics.md
@@ -1005,6 +1007,8 @@
               href: platform/alerts-activity-log.md
             - name: Перенос событий управления в оповещения журнала действий
               href: platform/migrate-management-alerts.md
+            - name: Схема веб-перехватчика
+              href: platform/activity-log-alerts-webhook.md
         - name: Оповещения о работоспособности службы в журнале действий
           items:
             - name: Просмотр уведомлений
@@ -1023,8 +1027,6 @@
               href: platform/alerts-common-schema-definitions.md
             - name: Интеграция общей схемы оповещений с Logic Apps
               href: platform/alerts-common-schema-integrations.md
-            - name: Схема веб-перехватчика
-              href: platform/activity-log-alerts-webhook.md
             - name: Поведение оповещений SMS
               href: platform/alerts-sms-behavior.md
             - name: Ограничение частоты отправки уведомлений

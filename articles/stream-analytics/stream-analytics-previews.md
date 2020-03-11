@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 2/1/2020
-ms.openlocfilehash: aaff56ba1de69485d1c3b93bc7ed95ce1a3cbd88
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.date: 3/9/2020
+ms.openlocfilehash: 3e99263f6bf472c256e1747b8567249bbd62a445
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983555"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969619"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -33,13 +33,6 @@ ms.locfileid: "76983555"
 
 Разработчики, создающие Stream Analytics модули в облаке или на IoT Edge, могут писать C# или повторно использовать пользовательские функции и вызывать их непосредственно в запросе с помощью [определяемых пользователем функций](stream-analytics-edge-csharp-udf-methods.md).
 
-### <a name="managed-identity-authentication-with-power-bi"></a>Аутентификация управляемого удостоверения с помощью Power BI
-
-Azure Stream Analytics обеспечивает полную поддержку управляемой проверки подлинности на основе удостоверений с помощью Power BI для динамического взаимодействия с панелями мониторинга.
-
-### <a name="anomaly-detection"></a>Обнаружение аномалий
-
-Azure Stream Analytics "модели машинного обучения поддерживают определение *пика* и *DIP* в дополнение к двунаправленному, медленному положительному и медленному обнаружению неблагоприятных тенденций. Дополнительные сведения см. [на странице обнаружение аномалий в Azure Stream Analytics](stream-analytics-machine-learning-anomaly-detection.md).
 
 ### <a name="debug-query-steps-in-visual-studio"></a>Отладка шагов запроса в Visual Studio
 

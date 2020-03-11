@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: ambapat
-ms.openlocfilehash: d7f9527aa5aa3353dc9087f4bcc5f3a5fb241637
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 048e5072c592cf2de32e533014c99034572a1c47
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78184559"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082903"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault"></a>Импорт ключей, защищенных HSM, в Key Vault
 
@@ -31,10 +31,19 @@ ms.locfileid: "78184559"
 
 Передача ключей, защищенных АППАРАТным модулем безопасности, в Key Vault поддерживается с помощью двух различных методов в зависимости от используемого HSM. Используйте приведенную ниже таблицу, чтобы определить, какой метод следует использовать для создания HSM, а затем перенесите собственные ключи с защитой HSM для использования с Azure Key Vault. 
 
-|Имя поставщика HSM|Поддерживаемые модели HSM|Поддерживаемый метод обмена ключами HSM|
-|---|---|---|
-|Thales|<ul><li>Семейство компании SafeNet Luna HSM 7 с микропрограммным обеспечением версии 7,3 или более поздней</li></ul>| [Использовать новый метод BYOK (Предварительная версия)](hsm-protected-keys-vendor-agnostic-byok.md)|
-|nCipher|<ul><li>Семейство HSM nShield</li></ul>|[Использовать устаревший метод BYOK](hsm-protected-keys-legacy.md)|
+|Имя поставщика|Тип поставщика|Поддерживаемые модели HSM|Поддерживаемый метод обмена ключами HSM|
+|---|---|---|---|
+|nCipher|Производитель|<ul><li>Семейство HSM nShield</li></ul>|[Использовать устаревший метод BYOK](hsm-protected-keys-legacy.md)|
+|Thales|Производитель|<ul><li>Семейство компании SafeNet Luna HSM 7 с микропрограммным обеспечением версии 7,3 или более поздней</li></ul>| [Использовать новый метод BYOK (Предварительная версия)](hsm-protected-keys-vendor-agnostic-byok.md)|
+|фортаникс|HSM как услуга|<ul><li>Служба управления ключами для самостоятельной защиты (СДКМС)</li></ul>|[Использовать новый метод BYOK (Предварительная версия)](hsm-protected-keys-vendor-agnostic-byok.md)|
+
+
+
+
+
+
+
+
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

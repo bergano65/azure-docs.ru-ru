@@ -1,26 +1,19 @@
 ---
 title: Перемещение файлов на виртуальные машины Linux в Azure и обратно с помощью SCP
 description: Безопасное перемещение файлов на виртуальную машину Linux в Azure и с нее с помощью SCP и пары ключей SSH.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
 ms.workload: infrastructure
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: d78a8e59a55718048df2022cec75c7a2b56f1a6b
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: a0837790b70de42073338bf085ee0f3976b866f6
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036596"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969601"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Перемещение файлов на виртуальную машину Linux и с нее с помощью SCP
 
@@ -72,8 +65,8 @@ scp ~/.azure/config azureuser@myserver.eastus.cloudapp.com:/home/azureuser/confi
 scp -r azureuser@myserver.eastus.cloudapp.com:/home/azureuser/logs/. /tmp/
 ```
 
-Если в командной строке используется флаг `-r`, SCP рекурсивно копирует файлы и каталоги из места в каталоге, указанного в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
+Флаг `-r` указывает, что SCP должен рекурсивно копировать файлы и каталоги с точки каталога, указанной в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление пользователями, SSH и проверка или восстановление дисков в виртуальных машинах Azure с помощью расширения VMAccess](using-vmaccess-extension.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

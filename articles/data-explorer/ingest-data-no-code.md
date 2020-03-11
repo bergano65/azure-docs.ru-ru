@@ -1,5 +1,5 @@
 ---
-title: Руководство. Прием данных мониторинга без создания кода в Azure Data Explorer
+title: Руководство по Прием данных мониторинга в Azure Data Explorer без создания кода
 description: В этом учебнике описано, как принимать данные мониторинга в Azure Data Explorer без необходимости написания кода, а также как создавать к ним запросы.
 author: orspod
 ms.author: orspodek
@@ -7,14 +7,14 @@ ms.reviewer: kerend
 ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 01/29/2020
-ms.openlocfilehash: 24e09f6578431e6b7f2a83be13bae59bf2e707de
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 3a53a660da2257540f23bc6438fc5933e5229c76
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986212"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198054"
 ---
-# <a name="tutorial-ingest-and-query-monitoring-data-in-azure-data-explorer"></a>Руководство. приему данных мониторинга и созданию к ним запросов в Azure Data Explorer 
+# <a name="tutorial-ingest-and-query-monitoring-data-in-azure-data-explorer"></a>Руководство по приему данных мониторинга и созданию к ним запросов в Azure Data Explorer 
 
 Из этого руководства вы узнаете, как принимать данные из журналов диагностики и действий в кластер Azure Data Explorer без необходимости писать код. Этот простой метод приема позволяет вам оперативно начать отправку запросов в Azure Data Explorer для анализа данных.
 
@@ -43,7 +43,7 @@ ms.locfileid: "76986212"
 
 Журналы и метрики диагностики Azure, а также журналы действий создаются службой Azure. Они предоставляют данные о работе службы. 
 
-# <a name="diagnostic-metricstabdiagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
+# <a name="diagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
 #### <a name="example"></a>Пример
 
 Метрики диагностики агрегируются по интервалам времени в 1 минуту. Ниже приведен пример схемы события для метрики Azure Data Explorer (на основе длительности запроса):
@@ -77,7 +77,7 @@ ms.locfileid: "76986212"
 }
 ```
 
-# <a name="diagnostic-logstabdiagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
+# <a name="diagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
 #### <a name="example"></a>Пример
 
 Ниже приведен пример [журнала приема диагностики](using-diagnostic-logs.md#diagnostic-logs-schema) Azure Data Explorer:
@@ -133,7 +133,7 @@ ms.locfileid: "76986212"
     }
 }
 ```
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 #### <a name="example"></a>Пример
 
 Журналы действий Azure являются журналами уровня подписки, предоставляющими информацию об операциях, выполненных в ресурсах в подписке. Ниже приведен пример события журнала действия для проверки доступа:
@@ -210,7 +210,7 @@ ms.locfileid: "76986212"
 
 С помощью пользовательского веб-интерфейса Azure Data Explorer создайте целевые таблицы в базе данных Azure Data Explorer.
 
-# <a name="diagnostic-metricstabdiagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
+# <a name="diagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
 #### <a name="create-tables-for-the-diagnostic-metrics"></a>Создание таблиц для метрик диагностики
 
 1. Создайте в базе данных *TestDatabase* таблицу с именем *DiagnosticMetrics* для хранения записей метрик диагностики. Для этого используйте следующую команду `.create table`.
@@ -235,7 +235,7 @@ ms.locfileid: "76986212"
     .alter-merge table DiagnosticRawRecords policy retention softdelete = 0d
     ```
 
-# <a name="diagnostic-logstabdiagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
+# <a name="diagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
 #### <a name="create-tables-for-the-diagnostic-logs"></a>Создание таблиц для журналов диагностики 
 
 1. Создайте в базе данных *TestDatabase* таблицу с именем *DiagnosticLogs* для хранения записей журнала диагностики. Для этого используйте следующую команду `.create table`.
@@ -258,7 +258,7 @@ ms.locfileid: "76986212"
     .alter-merge table DiagnosticRawRecords policy retention softdelete = 0d
     ```
 
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 #### <a name="create-tables-for-the-activity-logs"></a>Создание таблиц для журналов действий 
 
 1. Создайте таблицу с именем *ActivityLogs* в базе данных *TestDatabase*, которая будет принимать записи журнала действий. Выполните следующий запрос Azure Data Explorer, чтобы создать эту таблицу:
@@ -284,7 +284,7 @@ ms.locfileid: "76986212"
 
  Так как используется формат данных `json`, сопоставление данных обязательно. Сопоставление `json` сопоставляет каждый путь JSON с именем столбца в таблице.
 
-# <a name="diagnostic-metrics--diagnostic-logstabdiagnostic-metricsdiagnostic-logs"></a>[Метрики диагностики / Журналы диагностики](#tab/diagnostic-metrics+diagnostic-logs) 
+# <a name="diagnostic-metrics--diagnostic-logs"></a>[Метрики диагностики / Журналы диагностики](#tab/diagnostic-metrics+diagnostic-logs) 
 #### <a name="map-diagnostic-metrics-and-logs-to-the-table"></a>Сопоставление метрик и журналов диагностики с таблицей
 
 Чтобы сопоставить данные журналов и метрик диагностики с таблицей, выполните следующий запрос:
@@ -293,7 +293,7 @@ ms.locfileid: "76986212"
 .create table DiagnosticRawRecords ingestion json mapping 'DiagnosticRawRecordsMapping' '[{"column":"Records","path":"$.records"}]'
 ```
 
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 #### <a name="map-activity-logs-to-the-table"></a>Сопоставление журналов действий с таблицей
 
 Чтобы сопоставить данные журнала действий с таблицей, выполните следующий запрос:
@@ -305,7 +305,7 @@ ms.locfileid: "76986212"
 
 ### <a name="create-the-update-policy-for-metric-and-log-data"></a>Создание политики обновления для данных журнала и метрик
 
-# <a name="diagnostic-metricstabdiagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
+# <a name="diagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
 #### <a name="create-data-update-policy-for-diagnostics-metrics"></a>Создание политики обновления данных для метрик диагностики
 
 1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей метрик диагностики таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mv-expand`](/azure/kusto/query/mvexpandoperator):
@@ -333,7 +333,7 @@ ms.locfileid: "76986212"
     .alter table DiagnosticMetrics policy update @'[{"Source": "DiagnosticRawRecords", "Query": "DiagnosticMetricsExpand()", "IsEnabled": "True", "IsTransactional": true}]'
     ```
 
-# <a name="diagnostic-logstabdiagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
+# <a name="diagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
 #### <a name="create-data-update-policy-for-diagnostics-logs"></a>Создание политики обновления данных для журналов диагностики
 
 1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журналов диагностики таким образом, чтобы каждое значение в коллекции получало отдельную строку. Журналы приема можно включить в кластере Azure Data Explorer и использовать [схему журналов приема](/azure/data-explorer/using-diagnostic-logs#diagnostic-logs-schema). Вы создадите одну таблицу для успешной и одну для неудачной операции приема, а некоторые поля будут пустыми для успешной операции приема (например, ErrorCode). Используйте оператор [`mv-expand`](/azure/kusto/query/mvexpandoperator):
@@ -366,7 +366,7 @@ ms.locfileid: "76986212"
     .alter table DiagnosticLogs policy update @'[{"Source": "DiagnosticRawRecords", "Query": "DiagnosticLogsExpand()", "IsEnabled": "True", "IsTransactional": true}]'
     ```
 
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 #### <a name="create-data-update-policy-for-activity-logs"></a>Создание политики обновления данных для журналов действий
 
 1. Создайте [функцию](/azure/kusto/management/functions), которая развертывает коллекцию записей журнала действий таким образом, чтобы каждое значение в коллекции получало отдельную строку. Используйте оператор [`mv-expand`](/azure/kusto/query/mvexpandoperator):
@@ -425,7 +425,7 @@ ms.locfileid: "76986212"
 
 Теперь вам следует подключить к концентратору событий журналы и метрики диагностики, а также журналы действий.
 
-# <a name="diagnostic-metrics--diagnostic-logstabdiagnostic-metricsdiagnostic-logs"></a>[Метрики диагностики / Журналы диагностики](#tab/diagnostic-metrics+diagnostic-logs) 
+# <a name="diagnostic-metrics--diagnostic-logs"></a>[Метрики диагностики / Журналы диагностики](#tab/diagnostic-metrics+diagnostic-logs) 
 ### <a name="connect-diagnostic-metrics-and-logs-to-your-event-hub"></a>Подключение журналов и метрик диагностики к концентратору событий
 
 Выберите ресурс, из которого следует экспортировать метрики. Экспорт данных диагностики поддерживают ресурсы нескольких типов, в том числе пространство имен Центров событий, Azure Key Vault, Центр Интернета вещей и кластер Azure Data Explorer. В этом учебнике в качестве ресурса мы используем кластер Azure Data Explorer, мы рассмотрим метрики производительности запросов и журналы результатов приема.
@@ -452,7 +452,7 @@ ms.locfileid: "76986212"
 
 1. Щелкните **Сохранить**.
 
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 ### <a name="connect-activity-logs-to-your-event-hub"></a>Подключение журналов действий к концентратору событий
 
 1. В меню слева на портале Azure выберите **Журнал действий**.
@@ -501,7 +501,7 @@ ms.locfileid: "76986212"
 
     ![Подключение к данным концентратора событий](media/ingest-data-no-code/event-hub-data-connection.png)
 
-# <a name="diagnostic-metrics--diagnostic-logstabdiagnostic-metricsdiagnostic-logs"></a>[Метрики диагностики / Журналы диагностики](#tab/diagnostic-metrics+diagnostic-logs) 
+# <a name="diagnostic-metrics--diagnostic-logs"></a>[Метрики диагностики / Журналы диагностики](#tab/diagnostic-metrics+diagnostic-logs) 
 
 1. Примените следующие параметры в окне **Подключение к данным**.
 
@@ -528,7 +528,7 @@ ms.locfileid: "76986212"
 
 1. Нажмите кнопку **создания**.  
 
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 
 1. Примените следующие параметры в окне **Подключение к данным**.
 
@@ -560,7 +560,7 @@ ms.locfileid: "76986212"
 
 Теперь у вас есть конвейер, передающий данные. Прием данных через кластер занимает по умолчанию около пяти минут, поэтому подождите несколько минут с момента начала передачи данных, прежде чем начинать отправку запросов.
 
-# <a name="diagnostic-metricstabdiagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
+# <a name="diagnostic-metrics"></a>[Метрики диагностики](#tab/diagnostic-metrics)
 ### <a name="query-the-diagnostic-metrics-table"></a>Запрос таблицы метрик диагностики
 
 Приведенный ниже запрос анализирует данные о длительности запросов по записям метрик диагностики в Azure Data Explorer.
@@ -579,7 +579,7 @@ DiagnosticMetrics
 |   | 00:06.156 |
 | | |
 
-# <a name="diagnostic-logstabdiagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
+# <a name="diagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
 ### <a name="query-the-diagnostic-logs-table"></a>Запрос таблицы журналов диагностики
 
 Этот конвейер производит прием с помощью концентратора событий. Вы просмотрите результаты этого приема.
@@ -599,7 +599,7 @@ DiagnosticLogs
 |   | 00:06.156 | TestDatabase | DiagnosticRawRecords | https://rtmkstrldkereneus00.blob.core.windows.net/20190827-readyforaggregation/1133_TestDatabase_DiagnosticRawRecords_6cf02098c0c74410bd8017c2d458b45d.json.zip
 | | |
 
-# <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
+# <a name="activity-logs"></a>[Журналы действий](#tab/activity-logs)
 ### <a name="query-the-activity-logs-table"></a>Запрос таблицы журналов действий
 
 Приведенный ниже запрос анализирует данные в записях журнала действий Azure Data Explorer.

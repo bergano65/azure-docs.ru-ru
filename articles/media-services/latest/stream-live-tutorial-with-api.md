@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/13/2019
 ms.author: juliako
-ms.openlocfilehash: 47d526ea410bc449c91ae4fb10913850c447f1b3
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: cb6095f1579334b9fe35a02a3006de32ff551989
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582645"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78268178"
 ---
 # <a name="tutorial-stream-live-with-media-services"></a>Руководство по Потоковая трансляция в реальном времени с помощью Служб мультимедиа
 
@@ -47,7 +47,7 @@ ms.locfileid: "73582645"
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).<br/>Запомните значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 - Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
 - Веб-камера или другое устройство (например, ноутбук) для трансляции события.
-- Локальный динамический кодировщик, который преобразует сигналы от камеры в потоки и отправляет их службе потоковой трансляции в Службах мультимедиа. Поток должен иметь формат **RTMP** или **Smooth Streaming**.
+- Локальный динамический кодировщик, который преобразует сигналы от камеры в потоки и отправляет их службе потоковой трансляции в Службах мультимедиа, вы найдете в [рекомендациях по выбору динамических кодировщиков для локальной среды](recommended-on-premises-live-encoders.md). Поток должен иметь формат **RTMP** или **Smooth Streaming**.
 
 > [!TIP]
 > Прежде чем продолжить работу, ознакомьтесь со статьей [Live streaming with Azure Media Services v3](live-streaming-overview.md) (Потоковая трансляция в Службах мультимедиа Azure v3). 
@@ -188,7 +188,7 @@ az group delete --name amsResourceGroup
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Потоковая передача файлов](stream-files-tutorial-with-api.md)
  

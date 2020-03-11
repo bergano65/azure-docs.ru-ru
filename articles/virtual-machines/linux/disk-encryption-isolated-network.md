@@ -2,17 +2,18 @@
 title: Шифрование дисков Azure в изолированной сети
 description: В этой статье содержатся советы по устранению неполадок Microsoft Azure шифровании дисков для виртуальных машин Linux.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 02/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: e91f4f1d1a16bec9d2da0365b185319aac8892be
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: aa0dc204a017e2d40eb3952a9ede0755127f8de2
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78207723"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970662"
 ---
 # <a name="azure-disk-encryption-on-an-isolated-network"></a>Шифрование дисков Azure в изолированной сети
 
@@ -35,7 +36,7 @@ ms.locfileid: "78207723"
 
 Если пакеты устанавливаются вручную, их также необходимо обновить вручную по мере выпуска новых версий.
 
-## <a name="network-security-groups"></a>Сетевые группы безопасности
+## <a name="network-security-groups"></a>Группы безопасности сети
 Все примененные параметры группы безопасности сети должны разрешать конечной точке отвечать на описанные предварительные требования к конфигурации сети для шифрования дисков.  См [. раздел шифрование дисков Azure: требования к сети](disk-encryption-overview.md#networking-requirements)
 
 ## <a name="azure-disk-encryption-with-azure-ad-previous-version"></a>Шифрование дисков Azure с помощью Azure AD (Предыдущая версия)
@@ -48,7 +49,7 @@ ms.locfileid: "78207723"
 
 Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляра Azure](instance-metadata-service.md) , которая использует известный IP-адрес без поддержки маршрутизации (`169.254.169.254`), доступ к которому возможен только из виртуальной машины.  Конфигурации прокси-сервера, которые изменяют локальный трафик HTTP к этому адресу (например, Добавление заголовка X-Forwardd-for), не поддерживаются.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные шаги по [устранению неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)
 - [Шифрование неактивных данных в Azure](../../security/fundamentals/encryption-atrest.md)

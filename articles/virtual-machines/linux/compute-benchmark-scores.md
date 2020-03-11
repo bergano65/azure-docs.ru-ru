@@ -1,26 +1,16 @@
 ---
 title: Вычисление показателей производительности для виртуальных машин Linux в Azure
 description: Сравнение результатов теста производительности CoreMark для виртуальных машин Azure под управлением Linux.
-services: virtual-machines-linux
-documentationcenter: ''
-author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: 93e812c1-79dd-40c5-b97b-aa79f5cd7d76
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 04/09/2018
-ms.author: cynthn
 ms.reviewer: davberg
-ms.openlocfilehash: 6662f109f9a8227ec45d44a730abc91ebcd8dd70
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 71413e9a1e0b368bf5d3ae26bbc97d7d78da9422
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77650850"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969742"
 ---
 # <a name="compute-benchmark-scores-for-linux-vms"></a>Вычисление результатов теста производительности для виртуальных машин Linux
 Ниже приведены результаты теста производительности CoreMark линейки высокопроизводительных виртуальных машин Azure под управлением Ubuntu. Вы можете также ознакомиться с результатами теста производительности для [виртуальных машин Windows](../windows/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
@@ -104,7 +94,7 @@ ms.locfileid: "77650850"
 | Standard_D4_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 4 | 1 | 15,7 | 41 147 | 2 706 | 6,58% | 546 |
 | Standard_D8_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 8 | 1 | 31,4 | 80 383 | 1 486 | 1,85% | 133 |
 | Standard_D8_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 8 | 1 | 31,4 | 80 511 | 3 916 | 4,86% | 560 |
-| Standard_D16_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 16 | 1 | 62,9 | 160 932 | 2200 | 1,37 % | 140 |
+| Standard_D16_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 16 | 1 | 62,9 | 160 932 | 2 200 | 1,37 % | 140 |
 | Standard_D16_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 16 | 1 | 62,9 | 158 679 | 4 550 | 2,87 % | 560 |
 | Standard_D32_v3 | Intel(R) Xeon(R) E5-2673 вер. 3 с тактовой частотой 2,40 ГГц | 32 | 2 | 125,9 | 314 208 | 4 250 | 1,35 % | 189 |
 | Standard_D32_v3 | Intel(R) Xeon(R) E5-2673 вер. 4 с тактовой частотой 2,30 ГГц | 32 | 1 | 125,9 | 312 472 | 3 173 | 1,02% | 511 |
@@ -348,7 +338,7 @@ ms.locfileid: "77650850"
 | Standard_M64-32ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 32 | 2 | 1 763,9 | 337 599 | 4 738 | 1,40% | 42 |
 | Standard_M64m | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 2 | 1 763,9 | 677 466 | 14 478 | 2,14% | 42 |
 | Standard_M64ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 2 | 1 763,9 | 675 342 | 16 577 | 2,45 % | 42 |
-| Standard_M64s | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 2 | 1 007,9 | 674 785 | 15 983 | 2.37% | 42 |
+| Standard_M64s | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 2 | 1 007,9 | 674 785 | 15 983 | 2,37% | 42 |
 | Standard_M128 | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 128 | 4 | 2 015,9 | 1 334 218 | 21 126 | 1,58% | 42 |
 | Standard_M128-32ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 32 | 4 | 3 831,1 | 334 873 | 5 005 | 1,49 % | 42 |
 | Standard_M128-64ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 4 | 3 831,1 | 667 808 | 18 145 | 2,72% | 42 |
@@ -360,7 +350,7 @@ ms.locfileid: "77650850"
 | Standard_M32ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 32 | 1 | 861,2 | 343 226 | 4 884 | 1,42% | 84 |
 | Standard_M32ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 32 | 2 | 861,2 | 336 526 | 4 396 | 1,31 % | 7 |
 | Standard_M32ts | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 32 | 1 | 188,9 | 341 112 | 5 491 | 1,61 % | 35 |
-| Standard_M64ls | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 2 | 503,9 | 676 026 | 18 078 | 2.67% | 42 |
+| Standard_M64ls | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 64 | 2 | 503,9 | 676 026 | 18 078 | 2,67% | 42 |
 | Standard_M8ms | Intel(R) Xeon(R) E7-8890 вер. 3 с тактовой частотой 2,50 ГГц | 8 | 1 | 215,2 | 88 066 | 1 391 | 1,58% | 42 |
 
 ## <a name="ncsv3---gpu-enabled"></a>NCSv3 — GPU включен

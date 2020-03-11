@@ -4,12 +4,12 @@ description: Создание бессерверной функции PowerShell
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: ''
-ms.openlocfilehash: 49eb0721972a92f33bda2532367bc78280b6e655
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 51146886e3f52cb6a60d49da0d57aea1e2c55106
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533374"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78196541"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Руководство по применению функции Azure, активируемой HTTP-запросами, для создания группы контейнеров
 
@@ -30,7 +30,7 @@ ms.locfileid: "74533374"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Предварительные требования для установки Visual Studio Code и его использования с Функциями Azure см. в статье [Создание первой функции PowerShell в Azure](../azure-functions/functions-create-first-function-powershell.md#prerequisites).
+Предварительные требования для установки Visual Studio Code и его использования с Функциями Azure см. в статье [Краткое руководство. Создание проекта Функций Azure в Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-powershell#configure-your-environment).
 
 Некоторые инструкции из этого руководства предусматривают использование Azure CLI. Для их выполнения можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
@@ -177,7 +177,7 @@ Started container group mycontainergroup
 az container logs --resource-group myfunctionapp --name mycontainergroup
 ```
 
-Пример выходных данных:
+Образец вывода:
 
 ```console
 Hello from an Azure container instance triggered by an Azure function
@@ -191,9 +191,9 @@ Hello from an Azure container instance triggered by an Azure function
 az group delete --name myfunctionapp
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В результате работы с этим руководством вы создали функцию Azure, которая принимает HTTP-запрос и активирует развертывание группы контейнеров. Вы научились выполнять следующие задачи:
+В результате работы с этим руководством вы создали функцию Azure, которая принимает HTTP-запрос и активирует развертывание группы контейнеров. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Использование Visual Studio Code в сочетании с расширением Функций Azure для создания простой функции PowerShell, активируемой по HTTP-запросу.

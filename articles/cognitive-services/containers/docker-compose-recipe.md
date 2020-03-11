@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 01/23/2020
+ms.date: 03/10/2020
 ms.author: dapine
-ms.openlocfilehash: 54a2aac3db47d60f02a45adae9aaa6077d675a43
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: bfbaa03469ee04ff900a215aadd8c814efcba761
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716896"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037520"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Развертывание нескольких контейнеров с помощью Docker Compose
 
@@ -23,7 +23,7 @@ ms.locfileid: "76716896"
 
 > [DOCKER Compose](https://docs.docker.com/compose/) — это средство для определения и запуска приложений DOCKER с несколькими контейнерами. В процессе составления для настройки служб приложения используется файл YAML. Затем создайте и запустите все службы из конфигурации, выполнив одну команду.
 
-Может оказаться полезным управлять несколькими образами контейнеров на одном хост-компьютере. В этой статье мы будем объединять контейнеры Распознавание текста и распознавателей форм.
+Может оказаться полезным управлять несколькими образами контейнеров на одном хост-компьютере. В этой статье мы будем объединять контейнеры для чтения и распознавания форм.
 
 ## <a name="prerequisites"></a>предварительные требования
 
@@ -70,11 +70,11 @@ services:
       - "5010:5000"
 
   ocr:
-    image: "containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text"
+    image: "containerpreview.azurecr.io/microsoft/cognitive-services-read"
     environment:
       eula: accept
-      apikey: # < Your recognize text API key >
-      billing: # < Your recognize text billing URL >
+      apikey: # < Your computer vision API key >
+      billing: # < Your computer vision billing URL >
     ports:
       - "5021:5000"
 ```
@@ -87,9 +87,9 @@ services:
 Файл Docker Compose обеспечивает управление всеми этапами в жизненном цикле определенной службы: запуск, остановка и перестроение служб; Просмотр состояния службы; и потоковая передача журналов. Откройте интерфейс командной строки из каталога проекта (где находится файл DOCKER-сформируйте. YAML).
 
 > [!NOTE]
-> Чтобы избежать ошибок, убедитесь, что главный компьютер правильно использует диски с подсистемой DOCKER. Например, если Е:\публикпревиев используется в качестве каталога в файле DOCKER-сформируйте. YAML, предоставьте общий доступ к диску E с помощью DOCKER.
+> Чтобы избежать ошибок, убедитесь, что главный компьютер правильно использует диски с подсистемой DOCKER. Например, если *е:\публикпревиев* используется в качестве каталога в файле *DOCKER-сформируйте. YAML* , предоставьте общий доступ к диску **E** с помощью DOCKER.
 
-В интерфейсе командной строки выполните следующую команду, чтобы запустить (или перезапустить) все службы, определенные в файле DOCKER-сформируйте. YAML:
+В интерфейсе командной строки выполните следующую команду, чтобы запустить (или перезапустить) все службы, определенные в файле *DOCKER-сформируйте. YAML* :
 
 ```console
 docker-compose up
@@ -113,8 +113,8 @@ fd93b5f95865: Pull complete
 ef41dcbc5857: Pull complete
 4d05c86a4178: Pull complete
 34e811d37201: Pull complete
-Pulling ocr (containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:)...
-latest: Pulling from microsoft/cognitive-services-recognize-text
+Pulling ocr (containerpreview.azurecr.io/microsoft/cognitive-services-read:)...
+latest: Pulling from microsoft/cognitive-services-read
 f476d66f5408: Already exists
 8882c27f669e: Already exists
 d9af21273955: Already exists
@@ -167,18 +167,12 @@ ocr_1    | Application started. Press Ctrl+C to shut down.
 ```
 IMAGE ID            REPOSITORY                                                                 TAG
 2ce533f88e80        containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer   latest
-4be104c126c5        containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text    latest
+4be104c126c5        containerpreview.azurecr.io/microsoft/cognitive-services-read              latest
 ```
 
-### <a name="test-the-recognize-text-container"></a>Тестирование контейнера Распознавание текста
+### <a name="test-containers"></a>Тестовые контейнеры
 
-Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-Host. YAML, например http://localhost:5021/swagger/index.html. Для проверки конечной точки Распознавание текста можно использовать функцию "попробовать" в API.
-
-![Контейнер Распознавание текста](media/recognize-text-swagger-page.png)
-
-### <a name="test-the-form-recognizer-container"></a>Тестирование контейнера распознавателя форм
-
-Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-Host. YAML, например http://localhost:5010/swagger/index.html. Для проверки конечной точки распознавателя форм можно использовать функцию "попробовать" в API.
+Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла *DOCKER-Host. yaml* , например http://localhost:5021/swagger/index.html. Например, можно использовать функцию **попробовать** в API для проверки конечной точки распознавателя форм. Оба контейнера могут быть доступны и тестируемы.
 
 ![Контейнер распознавателя форм](media/form-recognizer-swagger-page.png)
 

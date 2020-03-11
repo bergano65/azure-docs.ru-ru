@@ -1,26 +1,18 @@
 ---
 title: Настройка LVM на виртуальной машине под управлением Linux
 description: Узнайте, как настроить диспетчер логических томов на виртуальной машине Linux в Azure.
-services: virtual-machines-linux
-documentationcenter: na
 author: mimckitt
-manager: gwallace
-editor: tysonn
-tag: azure-service-management,azure-resource-manager
-ms.assetid: 7f533725-1484-479d-9472-6b3098d0aecc
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: mimckitt
 ms.subservice: disks
-ms.openlocfilehash: 2c245d56b0fa0a09da04b83db11391a9291d3856
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 781ff1e6bda655ebd60d86e19375dcb6da051039
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251731"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969730"
 ---
 # <a name="configure-lvm-on-a-linux-vm-in-azure"></a>Настройка диспетчера логических томов на виртуальной машине Linux в Azure
 В этом документе рассматривается, как настроить диспетчер логических томов (LVM) на виртуальной машине Azure. Диспетчер логических томов можно использовать на диске операционной системы или на дисках с данными в виртуальных машинах VM, однако по умолчанию для большинства облачных образов диспетчер логических томов не настраивается на диске операционной системы. Приведенные ниже действия предназначены для настройки диспетчера логических томов на дисках с данными.

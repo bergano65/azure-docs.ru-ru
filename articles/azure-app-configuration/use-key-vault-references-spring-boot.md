@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 12/16/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 17d86f25de6eecee535d6f812f4ef0b078a4b6db
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: d1fb963753577e9518d93262f9c9c7a1cf984005
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75752500"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77656013"
 ---
-# <a name="tutorial-use-key-vault-references-in-a-java-spring-app"></a>Руководство. Использование ссылок Key Vault в приложении Java Spring
+# <a name="tutorial-use-key-vault-references-in-a-java-spring-app"></a>Руководство по Использование ссылок Key Vault в приложении Java Spring
 
 В этом учебнике вы узнаете, как использовать службу "Конфигурация приложений Azure" с Azure Key Vault. Конфигурация приложений Azure и Key Vault — это дополняющие службы, которые используются параллельно в большинстве развертываний приложений.
 
@@ -35,17 +35,17 @@ ms.locfileid: "75752500"
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. Например, [Visual Studio Code](https://code.visualstudio.com/) — это кроссплатформенный редактор кода, доступный для операционных систем Windows, macOS и Linux.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание ключа службы "Конфигурация приложений Azure", который ссылается на значение, хранящееся в Key Vault;
 > * доступ к значению этого ключа из веб-приложения Java Spring.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Перед работой с этим учебником установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Поддерживаемый [комплект разработчика Java (JDK)](https://docs.microsoft.com/java/azure/jdk) версии 8.
+* [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
 
 ## <a name="create-a-vault"></a>Создание хранилища
 
@@ -56,12 +56,12 @@ ms.locfileid: "75752500"
 1. В списке результатов выберите **Key Vault** слева.
 1. В разделе **Хранилища ключей** выберите **Добавить**.
 1. Справа в разделе **Создать Key Vault** введите приведенные ниже сведения.
-    - Выберите **Подписка**, чтобы выбрать подписку.
-    - В разделе **Группа ресурсов** выберите **Создать** и введите имя группы ресурсов.
-    - В поле **Имя Key Vault** укажите уникальное имя. Для работы с этим учебником введите **Contoso-vault2**.
-    - В раскрывающемся списке **Регион** выберите расположение.
+    * Выберите **Подписка**, чтобы выбрать подписку.
+    * В разделе **Группа ресурсов** выберите **Создать** и введите имя группы ресурсов.
+    * В поле **Имя Key Vault** укажите уникальное имя. Для работы с этим учебником введите **Contoso-vault2**.
+    * В раскрывающемся списке **Регион** выберите расположение.
 1. Для других свойств раздела **создания Key Vault** оставьте значения по умолчанию.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 На этом этапе доступ к этому новому хранилищу может получать только учетная запись Azure.
 
@@ -74,11 +74,11 @@ ms.locfileid: "75752500"
 1. На странице свойств Key Vault выберите **Секреты**.
 1. Выберите **Создать или импортировать**.
 1. В области **Создание секрета** выберите следующие значения:
-    - **Параметры отправки.** Введите **Вручную**.
-    - **Name**: Введите **Message**.
-    - **Value** (Значение): Введите **Hello from Key Vault**.
+    * **Параметры отправки.** Введите **Вручную**.
+    * **Name** (Имя). Введите **Message**.
+    * **Value** (Значение): Введите **Hello from Key Vault**.
 1. Для других свойств раздела **Создание секрета** оставьте значения по умолчанию.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 ## <a name="add-a-key-vault-reference-to-app-configuration"></a>Добавление ссылки на Key Vault в службу "Конфигурация приложений Azure"
 
@@ -87,10 +87,10 @@ ms.locfileid: "75752500"
 1. Выберите **Обозреватель конфигураций**.
 
 1. Выберите **+ Создать** > **Ссылка на хранилище ключей** и укажите следующие значения:
-    - **Ключ**: Выберите **/application/config.keyvaultmessage**
-    - **Метка** — оставьте это значение пустым.
-    - **Подписка**, **Группа ресурсов** и **Хранилище ключей**: введите значения, соответствующие значениям хранилища ключей, созданного в предыдущем разделе.
-    - **Секрет**: выберите секрет с именем **Message**, созданный в предыдущем разделе.
+    * **Ключ**: Выберите **/application/config.keyvaultmessage**
+    * **Метка** — оставьте это значение пустым.
+    * **Подписка**, **Группа ресурсов** и **Хранилище ключей**: введите значения, соответствующие значениям хранилища ключей, созданного в предыдущем разделе.
+    * **Секрет**: выберите секрет с именем **Message**, созданный в предыдущем разделе.
 
 ## <a name="connect-to-key-vault"></a>Подключение к Key Vault
 
@@ -119,8 +119,15 @@ ms.locfileid: "75752500"
 
 1. Выполните следующую команду, чтобы предоставить субъекту-службе доступ к хранилищу ключей:
 
+    ```console
+    az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get
     ```
-    az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
+
+1. Выполните следующую команду, чтобы получить идентификатор объекта, затем добавьте его в Конфигурацию приложений.
+
+    ```console
+    az ad sp show --id <clientId-of-your-service-principal>
+    az role assignment create --role "App Configuration Data Reader" --assignee-object-id <objectId-of-your-service-principal> --resource-group <your-resource-group>
     ```
 
 1. Создайте следующие переменные среды, используя значения для субъекта-службы, которые были показаны на предыдущем шаге.
@@ -130,7 +137,7 @@ ms.locfileid: "75752500"
     * **AZURE_TENANT_ID**: *tenantId*
 
 > [!NOTE]
-> Эти учетные данные Key Vault используются только в вашем приложении. Приложение выполняет проверку подлинности непосредственно в Key Vault с использованием этих учетных данных. Они никогда не передаются в службу настройки приложений.
+> Эти учетные данные Key Vault используются только в вашем приложении.  Приложение выполняет проверку подлинности напрямую с Key Vault, используя эти учетные данные без привлечения службы "Конфигурация приложений".  Key Vault обеспечивает проверку подлинности как для приложения, так и для службы "Конфигурация приложений" без общего доступа или предоставления ключей.
 
 ## <a name="update-your-code-to-use-a-key-vault-reference"></a>Обновление кода для использования ссылки Key Vault
 
@@ -157,17 +164,73 @@ ms.locfileid: "75752500"
     }
     ```
 
+1. Создайте файл с именем *AzureCredentials.java* и добавьте приведенный ниже код.
+
+    ```java
+    package com.example;
+
+    import com.azure.core.credential.TokenCredential;
+    import com.azure.identity.EnvironmentCredentialBuilder;
+    import com.microsoft.azure.spring.cloud.config.AppConfigurationCredentialProvider;
+    import com.microsoft.azure.spring.cloud.config.KeyVaultCredentialProvider;
+
+    public class AzureCredentials implements AppConfigurationCredentialProvider, KeyVaultCredentialProvider{
+
+        @Override
+        public TokenCredential getKeyVaultCredential(String uri) {
+            return getCredential();
+        }
+
+        @Override
+        public TokenCredential getAppConfigCredential(String uri) {
+            return getCredential();
+        }
+
+        private TokenCredential getCredential() {
+            return new EnvironmentCredentialBuilder().build();
+        }
+
+    }
+    ```
+
+1. Создайте файл с именем *AppConfiguration.java*. И добавьте приведенный ниже код.
+
+    ```java
+    package com.example;
+
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.context.annotation.Configuration;
+
+    @Configuration
+    public class AppConfiguration {
+
+        @Bean
+        public AzureCredentials azureCredentials() {
+            return new AzureCredentials();
+        }
+    }
+    ```
+
+1. Создайте файл в каталоге ресурсов META-INF с именем *spring.factories* и добавьте его.
+
+    ```factories
+    org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+    com.example.AppConfiguration
+    ```
+
 1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
 
     ```shell
     mvn clean package
     mvn spring-boot:run
     ```
+
 1. После запуска приложение можно протестировать с помощью средства *curl*, например:
 
       ```shell
       curl -X GET http://localhost:8080/
       ```
+
     Вы увидите сообщение, которое указали в хранилище конфигураций приложений. Вы также увидите сообщение, которое ввели в Key Vault.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

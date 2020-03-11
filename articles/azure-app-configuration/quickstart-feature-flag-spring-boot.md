@@ -6,12 +6,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 01/21/2020
 ms.author: lcozzens
-ms.openlocfilehash: 4438851ef7ea015060926075f46822de877b85b3
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 4a8d7f50ecf385388b63b9d83525a39737e0d157
+ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76766440"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77655758"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -21,9 +21,9 @@ ms.locfileid: "76766440"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-- Поддерживаемый [пакет SDK для комплекта разработчика Java](https://docs.microsoft.com/java/azure/jdk) версии 8.
-- [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Поддерживаемый [пакет SDK для комплекта разработчика Java](https://docs.microsoft.com/java/azure/jdk) версии 8.
+* [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
 
 ## <a name="create-an-app-configuration-instance"></a>Создание экземпляра Конфигурации приложений
 
@@ -42,14 +42,14 @@ ms.locfileid: "76766440"
 
 1. Перейдите по адресу <https://start.spring.io/>.
 
-2. Задайте такие параметры:
+1. Задайте такие параметры:
 
-   - Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.
-   - Выберите **Spring Boot** не ниже версии 2.0.
-   - Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.  Для этой статьи используется `com.example` и `demo`.
-   - Добавление зависимости **Spring Web**.
+   * Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.
+   * Выберите **Spring Boot** не ниже версии 2.0.
+   * Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.  Для этой статьи используется `com.example` и `demo`.
+   * Добавление зависимости **Spring Web**.
 
-3. После указания предыдущих параметров выберите **Создать проект**. При появлении запроса скачайте проект на локальный компьютер.
+1. После указания предыдущих параметров выберите **Создать проект**. При появлении запроса скачайте проект на локальный компьютер.
 
 ## <a name="add-feature-management"></a>Добавление управления функциями
 
@@ -57,20 +57,41 @@ ms.locfileid: "76766440"
 
 1. Откройте файл *pom.xml* в текстовом редакторе и добавьте следующие строки в список `<dependencies>`:
 
+### <a name="spring-cloud-11x"></a>Spring Cloud 1.1.x
+
     ```xml
     <dependency>
         <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-starter-azure-appconfiguration-config</artifactId>
-        <version>1.2.1</version>
+        <artifactId>spring-cloud-azure-appconfiguration-config</artifactId>
+        <version>1.1.2</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>spring-cloud-azure-feature-management-web</artifactId>
-        <version>1.2.1</version>
+        <version>1.1.2</version>
     </dependency>
     <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    ```
+
+### <a name="spring-cloud-12x"></a>Spring Cloud 1.2.x
+
+    ```xml
+    <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>spring-cloud-azure-appconfiguration-config</artifactId>
+        <version>1.2.2</version>
+    </dependency>
+    <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>spring-cloud-azure-feature-management-web</artifactId>
+        <version>1.2.2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
     ```
 
@@ -108,6 +129,7 @@ ms.locfileid: "76766440"
         }
     }
     ```
+
 1. Создайте файл Java с именем *MessageProperties.java* в каталоге пакета приложения.
 
     ```java
@@ -131,7 +153,7 @@ ms.locfileid: "76766440"
     }
     ```
 
-1. Создайте файл Java с именем *HelloController.java* в каталоге пакета приложения. 
+1. Создайте файл Java с именем *HelloController.java* в каталоге пакета приложения.
 
     ```java
     package com.example.demo;
@@ -220,36 +242,36 @@ ms.locfileid: "76766440"
 
     ```
 
-6. Создайте папку с именем "CSS" в `static` и внутри нее — новый CSS файл с именем *main.css*.
+1. Создайте папку с именем "CSS" в `static` и внутри нее — новый CSS файл с именем *main.css*.
 
     ```css
     html {
-    position: relative;
-    min-height: 100%;
+     position: relative;
+     min-height: 100%;
     }
     body {
-    margin-bottom: 60px;
+     margin-bottom: 60px;
     }
     .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    background-color: #f5f5f5;
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 60px;
+     line-height: 60px;
+     background-color: #f5f5f5;
     }
 
     body > .container {
-    padding: 60px 15px 0;
+     padding: 60px 15px 0;
     }
 
     .footer > .container {
-    padding-right: 15px;
-    padding-left: 15px;
+     padding-right: 15px;
+     padding-left: 15px;
     }
 
     code {
-    font-size: 80%;
+     font-size: 80%;
     }
     ```
 
@@ -284,6 +306,6 @@ ms.locfileid: "76766440"
 
 В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения Spring Boot с помощью [библиотек управления функциями](https://go.microsoft.com/fwlink/?linkid=2074664).
 
-- Узнайте больше об [управлении функциями](./concept-feature-management.md).
-- [Управляйте флагами функций](./manage-feature-flags.md).
-- [Использование флагов функций в приложении Spring Boot Core](./use-feature-flags-spring-boot.md).
+* Узнайте больше об [управлении функциями](./concept-feature-management.md).
+* [Управляйте флагами функций](./manage-feature-flags.md).
+* [Использование флагов функций в приложении Spring Boot Core](./use-feature-flags-spring-boot.md).

@@ -2,20 +2,20 @@
 author: ggailey777
 ms.service: azure-functions
 ms.topic: include
-ms.date: 01/16/2020
+ms.date: 02/19/2020
 ms.author: glenga
-ms.openlocfilehash: 916aa2552e5dd004ec767df98ce7c78f7320efd0
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: edf5fc33ec14d41630462cca1a4ace0663473196
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964148"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191072"
 ---
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
-Основные инструменты Функций Azure интегрируются с Visual Studio Code, что дает возможность запускать и отлаживать проект Функций Azure локально.  
+Основные инструменты Функций Azure интегрируются с Visual Studio Code, что дает возможность запускать и отлаживать проект Функций Azure локально. Инструкции по отладке с помощью Visual Studio Code см. в [этой статье](../articles/azure-functions/functions-debug-powershell-local.md). 
 
-1. Чтобы отладить свою функцию, вставьте вызов командлета [`Wait-Debugger`](/powershell/module/microsoft.powershell.utility/wait-debugger?view=powershell-6) в код функции, прежде чем подключить отладчик, затем нажмите клавишу F5, чтобы запустить проект приложения-функции и подключить отладчик. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал).
+1. Нажмите клавишу F5, чтобы запустить проект приложения-функции. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал).
 
 1. На панели **Terminal** (Терминал) скопируйте URL-адрес конечной точки функции, активируемой HTTP-запросом.
 
@@ -38,9 +38,6 @@ ms.locfileid: "76964148"
 
     ![Выполнение функции на панели "Терминал"](./media/functions-run-function-test-local-vs-code-ps/function-execution-terminal.png)
 
-1. Чтобы остановить отладку и работу Core Tools, нажмите клавиши CTRL+C.
+1. Чтобы остановить работу Core Tools, нажмите сочетание клавиш **CTRL+C**.
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
-
-> [!NOTE]
-> Не забудьте удалить все вызовы `Wait-Debugger` перед публикацией своих функций в Azure. 

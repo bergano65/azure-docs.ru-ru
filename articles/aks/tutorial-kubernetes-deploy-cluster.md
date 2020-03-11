@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 1e977d927a301bee4be6cf3856114692542981b4
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: bc31a4197b08cbeb1a99820d7ff490f20147c7bf
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77621215"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78191271"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Руководство по Развертывание кластера службы Azure Kubernetes (AKS)
 
@@ -43,6 +43,8 @@ az aks create \
     --generate-ssh-keys \
     --attach-acr <acrName>
 ```
+
+Вы также можете вручную настроить субъект-службу на извлечение образов из реестра контейнеров. Дополнительные сведения см. в статьях [Аутентификация в реестре контейнеров Azure с помощью субъектов-служб](../container-registry/container-registry-auth-service-principal.md) и [Проверка подлинности в Kubernetes с использованием секрета для извлечения](../container-registry/container-registry-auth-kubernetes.md).
 
 Через несколько минут развертывание завершится, и отобразятся сведения о развертывании AKS в формате JSON.
 

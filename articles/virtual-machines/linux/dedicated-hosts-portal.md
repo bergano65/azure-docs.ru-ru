@@ -1,20 +1,17 @@
 ---
 title: Развертывание выделенных узлов Azure с помощью портал Azure
 description: Развертывание виртуальных машин на выделенных узлах с помощью портал Azure.
-services: virtual-machines-linux
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
-ms.workload: infrastructure
 ms.date: 01/09/2020
 ms.author: cynthn
-ms.openlocfilehash: c8e2ac929b3285b0ba122928485b423e34dc8f4f
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
-ms.translationtype: MT
+ms.openlocfilehash: 5af09cf7ef6c811a239a64c5c6349c3625316177
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75835134"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970756"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-portal"></a>Развертывание виртуальных машин на выделенных узлах с помощью портала
 
@@ -22,7 +19,7 @@ ms.locfileid: "75835134"
 
 [!INCLUDE [virtual-machines-common-dedicated-hosts-portal](../../../includes/virtual-machines-common-dedicated-hosts-portal.md)]
 
-## <a name="create-a-vm"></a>Создание ВМ
+## <a name="create-a-vm"></a>Создание виртуальной машины
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 1. В поле поиска над списком ресурсов Azure Marketplace найдите и выберите **Ubuntu Server 16.04 LTS** от Canonical, затем выберите **Создать**.

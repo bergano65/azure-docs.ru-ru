@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/09/2020
+ms.date: 03/10/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f038868e80b600c805a1f33a54f9d0032e81dab8
-ms.sourcegitcommit: 3616b42a0d6bbc31b965995d861930e53d2cf0d3
+ms.openlocfilehash: c35f85b9ec5d86d1cd61f165b891c576c06a03db
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78933197"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967273"
 ---
 # <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля для издателя маркера SAML в Azure Active Directory B2C настраиваемой политике
 
@@ -54,15 +54,15 @@ Azure Active Directory B2C (Azure AD B2C) выдает несколько тип
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
-| IssuerUri | Нет | Имя издателя, которое отображается в ответе SAML. Значение должно совпадать с именем, настроенным в приложении проверяющей стороны. |
+| IssuerUri | нет | Имя издателя, которое отображается в ответе SAML. Значение должно совпадать с именем, настроенным в приложении проверяющей стороны. |
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент CryptographicKeys содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | MetadataSigning | Да | Сертификат X509 (набор ключей RSA), используемый для подписывания метаданных SAML. Azure AD B2C использует этот ключ для подписывания метаданных. |
 | SamlMessageSigning| Да| Укажите сертификат X509 (набор ключей RSA), который будет использоваться для подписи сообщений SAML. Azure AD B2C использует этот ключ для подписи ответа `<samlp:Response>` отправки проверяющей стороне.|
@@ -70,6 +70,12 @@ Azure Active Directory B2C (Azure AD B2C) выдает несколько тип
 ## <a name="session-management"></a>Управление сеансом
 
 Чтобы настроить сеансы SAML Azure AD B2C между приложением проверяющей стороны, атрибутом элемента `UseTechnicalProfileForSessionManagement` следует ссылка на сеанс единого входа [самлссосессионпровидер](custom-policy-reference-sso.md#samlssosessionprovider) .
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Пример использования технического профиля издателя SAML см. в следующей статье:
+
+- [Регистрация приложения SAML в Azure AD B2C](connect-with-saml-service-providers.md)
 
 
 

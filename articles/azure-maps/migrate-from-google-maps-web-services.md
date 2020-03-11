@@ -1,5 +1,5 @@
 ---
-title: Руководство. Миграция веб-служб из Google Карт | Microsoft Azure Maps
+title: Руководство по Миграция веб-служб из Google Карт | Microsoft Azure Maps
 description: Как перенести веб-службы из Google Карт в Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: fac83a7a5137a50a26721da58395cc2e915f222d
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: fae9b8a2101329383cc90c8f7f0ff225e3a9059c
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086200"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77913824"
 ---
 # <a name="migrate-web-service-from-google-maps"></a>Миграция веб-службы из Google Карт
 
@@ -24,21 +24,24 @@ ms.locfileid: "77086200"
 
 | API-интерфейсы службы Google Карт | API-интерфейсы службы Azure Maps                                                                      |
 |-------------------------|---------------------------------------------------------------------------------------------|
-| Маршруты              | [Route](https://docs.microsoft.com/rest/api/maps/route)                               |
-| Матрица расстояний         | [Матрица маршрута](https://docs.microsoft.com/rest/api/maps/route/postroutematrixpreview) |
-| Геокодирование               | [Поиск](https://docs.microsoft.com/rest/api/maps/search)                             |
-| Поиск мест           | [Поиск](https://docs.microsoft.com/rest/api/maps/search)                             |
-| Автозавершение мест      | [Поиск](https://docs.microsoft.com/rest/api/maps/search)                             |
-| Статическая карта              | [Render](https://docs.microsoft.com/rest/api/maps/render/getmapimage)                 |
-| Часовой пояс               | [Часовой пояс](https://docs.microsoft.com/rest/api/maps/timezone)                        |
+| Маршруты              | [Route](https://docs.microsoft.com/rest/api/maps/route)                                     |
+| Матрица расстояний         | [Матрица маршрута](https://docs.microsoft.com/rest/api/maps/route/postroutematrixpreview)       |
+| Геокодирование               | [Поиск](https://docs.microsoft.com/rest/api/maps/search)                                   |
+| Поиск мест           | [Поиск](https://docs.microsoft.com/rest/api/maps/search)                                   |
+| Автозавершение мест      | [Поиск](https://docs.microsoft.com/rest/api/maps/search)                                   |
+| Привязка к дороге            | См. раздел [Вычисление маршрутов и направлений](#calculate-routes-and-directions).            |
+| Ограничения скорости            | См. раздел [Обратное геокодирование координат](#reverse-geocode-a-coordinate).                  |
+| Статическая карта              | [Render](https://docs.microsoft.com/rest/api/maps/render/getmapimage)                       |
+| Часовой пояс               | [Часовой пояс](https://docs.microsoft.com/rest/api/maps/timezone)                              |
 
 Приведенные ниже API службы в настоящее время недоступны в Azure Maps.
 
 - Elevation
 - Географическое положение
-- Добавление сведений и фотографий. Номера телефонов и URL-адреса веб-сайтов, доступных в API поиска Azure Maps.
+- Информация о местах и их фотографии. Номера телефонов и URL-адреса веб-сайтов, доступных в API поиска Azure Maps.
 - URL-адреса карт
-- Дороги. Данные об ограничении скорости доступны через интерфейсы API маршрутов и обратного геокодирования в Azure Maps.
+- Ближайшие дороги. Эти данные можно получить с помощью веб-пакета SDK, как показано [здесь](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Basic%20snap%20to%20road%20logic
+), но сейчас возможность недоступна в качестве службы.
 - Статическое представление улиц.
 
 Azure Maps имеет несколько дополнительных веб-служб REST, которые могут представлять интерес:
@@ -176,8 +179,8 @@ API [поиска поблизости](https://docs.microsoft.com/rest/api/maps
 
 Служба маршрутизации Azure Maps предоставляет следующие API для вычисления маршрутов:
 
-- [**Вычисление маршрута.** ](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) Позволяет вычислить маршрут и немедленно обработать запрос. Этот API поддерживает запросы GET и POST. Запросы POST следует использовать при указании большого числа точек маршрута или при использовании большого числа параметров маршрута. Это обусловлено тем, что использование POST гарантирует, что запрос на основе URL-адреса не станет слишком длинным и не приведет к сбою.
-- [**Пакетные запросы маршрутов.** ](https://docs.microsoft.com/rest/api/maps/route/postroutedirectionsbatchpreview) Позволяет создать запрос, содержащий до 1000 запросов маршрута, и обработать их за определенный период времени. Все данные будут обрабатываться параллельно на сервере. По завершении обработки можно будет скачать полный набор результатов.
+- [**Вычисление маршрута.** ](https://docs.microsoft.com/rest/api/maps/route/getroutedirections) Позволяет вычислить маршрут и немедленно обработать запрос. Этот API поддерживает запросы GET и POST. Мы рекомендуем применять запросы POST при указании большого количества ориентиров или использовании большого количества вариантов маршрута. Это гарантирует, что запрос URL-адреса не будет слишком длинным и не приведет к проблемам. Направление маршрута POST в Azure Maps имеет параметр, который может предусматривать тысячи [поддерживающих точек](https://docs.microsoft.com/rest/api/maps/route/postroutedirections#supportingpoints) и будет использовать их для повторного создания логического пути маршрута между ними (с привязкой к дороге). 
+- [**Пакетные запросы маршрутов.** ](https://docs.microsoft.com/rest/api/maps/route/postroutedirectionsbatchpreview) Позволяет создать запрос, содержащий до 1000 запросов маршрута, и обработать их за определенный период времени. Все данные будут параллельно обработаны на сервере. После завершения можно скачать полный результирующий набор.
 - [**Службы мобильности.** ](https://docs.microsoft.com/rest/api/maps/mobility) Позволяют вычислить маршруты и направления, используя информацию об общедоступном транспорте.
 
 Таблица содержит параметры API Google Карт и сопоставимые параметры API в Azure Maps.

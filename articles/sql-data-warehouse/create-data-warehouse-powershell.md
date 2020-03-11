@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание хранилища с помощью Azure PowerShell
-description: Узнайте, как быстро создать логический сервер базы данных SQL, правило брандмауэра на уровне сервера и хранилище данных с помощью Azure PowerShell.
+title: Краткое руководство. Создание хранилища данных (PowerShell)
+description: Узнайте, как быстро создать логический сервер хранилища данных Azure Synapse Analytics с правилом брандмауэра на уровне сервера с помощью Azure PowerShell.
 services: sql-data-warehouse
 author: XiaoyuMSFT
 manager: craigg
@@ -10,22 +10,24 @@ ms.subservice: development
 ms.date: 4/11/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 94dcc0dee5dd4fe81eb5ce067d7ace31edeca353
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 9df9b4b1bdb33a856d9e31d65981e8654af049d2
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461521"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78200011"
 ---
-# <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание Хранилища данных SQL Azure и его запрос с помощью Azure PowerShell
+# <a name="quickstart-create--query-a-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание хранилища данных и отправка запросов к нему с помощью Azure PowerShell
 
-С помощью Azure PowerShell можно быстро создать Хранилище данных SQL Azure.
+Создайте хранилище данных Azure Synapse Analytics, выполнив подготовку пула SQL с помощью Azure PowerShell.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!NOTE]
-> Создание хранилища данных SQL может привести к дополнительным расходам.  Дополнительные сведения см. на странице [цен на хранилище данных SQL](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
+> Создание хранилища может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -68,7 +70,7 @@ $password = "ChangeYourAdminPassword1"
 $startip = "0.0.0.0"
 $endip = "0.0.0.0"
 # The database name
-$databasename = "mySampleDataWarehosue"
+$databasename = "mySampleDataWarehouse"
 ```
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
@@ -78,6 +80,7 @@ $databasename = "mySampleDataWarehosue"
 ```powershell
 New-AzResourceGroup -Name $resourcegroupname -Location $location
 ```
+
 ## <a name="create-a-logical-server"></a>Создание логического сервера
 
 Создайте [логический сервер SQL Azure](../sql-database/sql-database-logical-servers.md) с помощью команды [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver). Логический сервер содержит группу баз данных, которыми можно управлять как группой. В примере ниже показано создание сервера со случайным именем в группе ресурсов с именем администратора `ServerAdmin` и паролем `ChangeYourAdminPassword1`. Замените эти предопределенные значения по своему усмотрению.
@@ -100,7 +103,7 @@ New-AzSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 ```
 
 > [!NOTE]
-> База данных SQL и хранилище данных SQL взаимодействуют через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу SQL Azure. Для этого ваш ИТ-отдел должен открыть порт 1433.
+> Конечные точки SQL взаимодействуют через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу SQL Azure. Для этого ваш ИТ-отдел должен открыть порт 1433.
 >
 
 
@@ -121,10 +124,10 @@ New-AzSqlDatabase `
 Ниже перечислены необходимые параметры.
 
 * **RequestedServiceObjectiveName**: количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-concurrency-limits.md).
-* **DatabaseName**: имя создаваемого Хранилища данных SQL.
+* **DatabaseName**: имя создаваемого хранилища данных.
 * **ServerName**: имя сервера, который используется для создания.
 * **ResourceGroupName**: используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
-* **Выпуск**: для создания Хранилища данных SQL необходим выпуск DataWarehouse.
+* **Выпуск**: для создания хранилища данных необходим выпуск DataWarehouse.
 
 Необязательные параметры.
 
@@ -148,6 +151,6 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы создали хранилище данных, создали правило брандмауэра, подключились к этому хранилищу данных и выполнили несколько запросов. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
+Вы создали хранилище данных, создали правило брандмауэра, подключились к этому хранилищу данных и выполнили несколько запросов. Дополнительные сведения см. в учебнике по загрузке данных.
 > [!div class="nextstepaction"]
->[Загрузка данных в Хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+>[Загрузка данных в хранилище данных](load-data-from-azure-blob-storage-using-polybase.md)

@@ -7,24 +7,24 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/27/2019
-ms.openlocfilehash: 6027978b50ca72de5d18ff474b36814e22a94e85
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: cd515bfd1dc57e78a041ed96686e1ba692bf6d3f
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552225"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082869"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Доступ к Grafana в Azure HDInsight
 
 [Grafana](https://grafana.com/) — это популярное средство с открытым кодом для построения графов и панелей мониторинга. Grafana — многофункциональное средство, которое не только позволяет пользователям создавать настраиваемые панели мониторинга с общим доступом, но также предоставляет такие возможности, как шаблонны и скрипты панелей мониторинга, интеграция LDAP, использование нескольких источников данных и многое другое.
 
-В настоящее время в Azure HDInsight Grafana поддерживается с типами кластеров HBase, Kafka и Interactive Requery. Он не поддерживается для кластеров с включенным пакетом безопасности Enterprise.
+Сейчас в Azure HDInsight Grafana поддерживается с типами кластеров Spark, HBase, Kafka и Interactive Requery. Он не поддерживается для кластеров с включенным пакетом безопасности Enterprise.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-an-apache-hadoop-cluster"></a>Создание кластера Apache Hadoop
 
-См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md). В качестве **типа кластера**выберите **Kafka**, **HBase**или **интерактивный запрос**.
+См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md). Для **типа кластера**выберите **Spark**, **Kafka**, **HBase**или **Interactive Query**.
 
 ## <a name="access-the-grafana-dashboard"></a>Доступ к панели мониторинга Grafana
 

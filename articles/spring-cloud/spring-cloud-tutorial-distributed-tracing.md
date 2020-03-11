@@ -6,22 +6,22 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 10/06/2019
 ms.author: brendm
-ms.openlocfilehash: e4d3a7fbdb938071b754a16179bcd021985383cc
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 0815aa084462d1b829d64cd7c5d6fa7cebf534fc
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277491"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273213"
 ---
 # <a name="use-distributed-tracing-with-azure-spring-cloud"></a>Использование распределенной трассировки в Azure Spring Cloud
 
-Инструменты распределенной трассировки в Azure Spring Cloud позволяют легко выполнять отладку и мониторинг сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Эта интеграция предоставляет мощные возможности распределенной трассировки через портал Azure.
+Инструменты распределенной трассировки в Azure Spring Cloud позволяют легко выполнять отладку и мониторинг сложных проблем. Azure Spring Cloud интегрирует [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) с Azure [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Эта интеграция предоставляет мощные возможности распределенной трассировки через портал Azure.
 
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * Включение распределенной трассировки на портале Azure.
-> * Добавление Azure Spring Cloud Sleuth в приложение.
+> * Добавление Spring Cloud Sleuth в приложение.
 > * Просмотр сопоставления зависимостей для приложений для микрослужб.
 > * Поиск данных трассировки с использованием фильтров.
 
@@ -39,7 +39,7 @@ ms.locfileid: "76277491"
 
    После этого изменения отправитель Zipkin сможет отправлять данные в Интернет.
 
-1. Вы можете пропустить этот шаг, если уже выполнили [руководство по подготовке приложения Azure Spring Cloud](spring-cloud-tutorial-prepare-app-deployment.md). В противном случае перейдите в локальную среду разработки и измените файл pom.xml, включив него зависимость Azure Spring Cloud Sleuth.
+1. Вы можете пропустить этот шаг, если уже выполнили [руководство по подготовке приложения Azure Spring Cloud](spring-cloud-tutorial-prepare-app-deployment.md). В противном случае перейдите в локальную среду разработки и измените файл pom.xml, чтобы включить в него зависимость Spring Cloud Sleuth.
 
     ```xml
     <dependencyManagement>

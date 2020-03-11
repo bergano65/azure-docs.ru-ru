@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 01/17/2020
 author: dkkapur
 ms.author: dekapur
-ms.openlocfilehash: 41c7fc7380ca2b58326c4a35a3b5fdab1c64c4a3
-ms.sourcegitcommit: 78f367310e243380b591ff10f2500feca93f5d0a
+ms.openlocfilehash: ad232c5d9df9f6bfae3a79dbd72e2c68143be949
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544323"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79080366"
 ---
 # <a name="encrypt-deployment-data"></a>Шифрование данных развертывания
 
@@ -28,7 +28,7 @@ ms.locfileid: "77544323"
 |----|----|----|
 |    Операции шифрования и расшифровки    |    Azure    |    Azure    |
 |    Хранилище ключей    |    Хранилище ключей (Майкрософт)    |    Azure Key Vault    |
-|    Ответственность за смену ключей    |    Microsoft    |    Клиент    |
+|    Ответственность за смену ключей    |    Microsoft    |    Customer    |
 |    Доступ к ключам    |    Только Майкрософт    |    Майкрософт, клиент    |
 
 Оставшаяся часть документа описывает шаги, необходимые для шифрования данных развертывания ACI с помощью ключа (управляемого клиентом ключа). 
@@ -41,6 +41,10 @@ ms.locfileid: "77544323"
 
 Первым делом необходимо убедиться, что у [клиента Azure](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) есть субъект-служба, назначенный для предоставления разрешений службе "экземпляры контейнеров Azure". 
 
+> [!IMPORTANT]
+> Чтобы выполнить следующую команду и успешно создать субъект-службу, убедитесь, что у вас есть разрешения на создание субъектов-служб в клиенте.
+>
+
 Следующая команда CLI настроит ACI SP в среде Azure:
 
 ```azurecli-interactive
@@ -48,6 +52,10 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
 ```
 
 В выходных данных выполнения этой команды должен отображаться субъект-служба, настроенный с "displayName": "служба экземпляра контейнера Azure".
+
+Если вы не можете успешно создать субъект-службу:
+* Убедитесь, что у вас есть разрешения на это в клиенте.
+* Убедитесь, что субъект-служба уже существует в вашем клиенте для развертывания в ACI. Это можно сделать, запустив `az ad sp show --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` и используя вместо этого субъект-службу.
 
 ### <a name="create-a-key-vault-resource"></a>Создание ресурса хранилища ключей
 

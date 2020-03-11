@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: 600ca893e6d6b81fe24626a99cc1f6de80efb3e8
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 5414a70180a82be8253dace7d800c90c1ae6a9bd
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78368276"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082536"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -51,11 +51,11 @@ appInsights.trackPageView(); // Manually call trackPageView to establish the cur
 
 ```html
 <script type="text/javascript">
-var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("addTelemetryInitializer"),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),t.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
+var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(n){var o={config:n,initialize:!0},t=document,e=window,i="script";setTimeout(function(){var e=t.createElement(i);e.src=n.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",t.getElementsByTagName(i)[0].parentNode.appendChild(e)});try{o.cookie=t.cookie}catch(e){}function a(n){o[n]=function(){var e=arguments;o.queue.push(function(){o[n].apply(o,e)})}}o.queue=[],o.version=2;for(var s=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];s.length;)a("track"+s.pop());var r="Track",c=r+"Page";a("start"+c),a("stop"+c);var u=r+"Event";if(a("start"+u),a("stop"+u),a("addTelemetryInitializer"),a("setAuthenticatedUserContext"),a("clearAuthenticatedUserContext"),a("flush"),o.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===n.disableExceptionTracking||n.extensionConfig&&n.extensionConfig.ApplicationInsightsAnalytics&&!0===n.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){a("_"+(s="onerror"));var p=e[s];e[s]=function(e,n,t,i,a){var r=p&&p(e,n,t,i,a);return!0!==r&&o["_"+s]({message:e,url:n,lineNumber:t,columnNumber:i,error:a}),r},n.autoExceptionInstrumented=!0}return o}(
 {
   instrumentationKey:"INSTRUMENTATION_KEY"
 }
-);window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
+);(window[aiName]=aisdk).queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
 </script>
 ```
 
@@ -95,10 +95,11 @@ appInsights.trackTrace({message: 'This message will use a telemetry initializer'
 appInsights.addTelemetryInitializer(() => false); // Nothing is sent after this is executed
 appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ```
+
 ## <a name="configuration"></a>Конфигурация
 Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными, за исключением `instrumentationKey`.
 
-| Имя | По умолчанию | Описание |
+| Имя | По умолчанию | Description |
 |------|---------|-------------|
 | instrumentationKey | null | **Обязательно**<br>Ключ инструментирования, полученный из портал Azure. |
 | accountId | null | Необязательный идентификатор учетной записи, если приложение группирует пользователей в учетные записи. Без пробелов, запятых, точек с запятой, знаков равенства или вертикальных линий |
@@ -115,26 +116,26 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | самплингперцентаже | 100 | Процент событий, которые будут отправлены. Значение по умолчанию — 100, то есть отправляются все события. Установите этот параметр, если хотите сохранить ограничения на данные для крупномасштабных приложений. |
 | аутотраккпажевиситтиме | false | Если значение равно true, то время просмотра предыдущей инструментированной страницы отсылается и отправляется в виде данных телеметрии, а для текущего pageview запускается новый таймер. Значение по умолчанию — false. |
 | дисаблеажакстраккинг | false | Если значение равно true, вызовы AJAX не собираются. Значение по умолчанию — false. |
-| дисаблефетчтраккинг | true | Если значение — true, запросы на выборку не собираются. По умолчанию задано значение true. |
+| дисаблефетчтраккинг | Да | Если значение — true, запросы на выборку не собираются. Значение по умолчанию — true. |
 | оверридепажевиевдуратион | false | Если значение — true, поведение по умолчанию trackPageView изменяется для записи окончания интервала длительности просмотра страницы при вызове trackPageView. Если для trackPageView не задано значение false и пользовательская длительность не предоставлена, то производительность просмотра страницы вычисляется с помощью API времени навигации. Значение по умолчанию — false. |
 | максажакскаллспервиев | 500 | По умолчанию 500 — определяет, сколько вызовов AJAX будет отслеживаться каждым представлением страницы. Задайте значение-1, чтобы отслеживать все неограниченные вызовы AJAX на странице. |
-| дисабледаталоссаналисис | true | Если значение равно false, внутренние буферы отправителя телеметрии будут проверяться при запуске для элементов, которые еще не были отправлены. |
+| дисабледаталоссаналисис | Да | Если значение равно false, внутренние буферы отправителя телеметрии будут проверяться при запуске для элементов, которые еще не были отправлены. |
 | дисаблекоррелатионхеадерс | false | Если значение равно false, пакет SDK добавит два заголовка ("Request-ID" и "Request-context") во все запросы зависимости, чтобы сопоставить их с соответствующими запросами на стороне сервера. Значение по умолчанию — false. |
 | коррелатионхеадерексклудеддомаинс |  | Отключение заголовков корреляции для конкретных доменов |
 | коррелатионхеадердомаинс |  | Включение заголовков корреляции для конкретных доменов |
 | дисаблефлушонбефореунлоад | false | Значение по умолчанию — false. Если значение равно true, метод Flush не будет вызываться при триггерах событий Онбефореунлоад |
-| енаблесессионсторажебуффер | true | Значение по умолчанию — true. Если значение — true, буфер со всеми неотправленными данными телеметрии хранится в хранилище сеанса. Буфер восстанавливается при загрузке страницы |
+| енаблесессионсторажебуффер | Да | Значение по умолчанию — true. Если значение — true, буфер со всеми неотправленными данными телеметрии хранится в хранилище сеанса. Буфер восстанавливается при загрузке страницы |
 | искукиеуседисаблед | false | Значение по умолчанию — false. Если значение — true, пакет SDK не будет хранить или считывать данные из файлов cookie.|
 | кукиедомаин | null | Пользовательский домен cookie. Это полезно, если требуется предоставить общий доступ к Application Insights файлам cookie между поддоменами. |
 | исретридисаблед | false | Значение по умолчанию — false. Если задано значение false, повторите попытку в 206 (частичное успешное завершение), 408 (timeout), 429 (слишком много запросов), 500 (внутренняя ошибка сервера), 503 (служба недоступна) и 0 (вне сети, только если обнаружено) |
 | иссторажеуседисаблед | false | Если задано значение true, пакет SDK не будет хранить или считывать данные из локального хранилища и в хранилище сеанса. Значение по умолчанию — false. |
-| исбеаконапидисаблед | true | Если значение равно false, пакет SDK будет отсылать все данные телеметрии с помощью [API маяка](https://www.w3.org/TR/beacon) . |
+| исбеаконапидисаблед | Да | Если значение равно false, пакет SDK будет отсылать все данные телеметрии с помощью [API маяка](https://www.w3.org/TR/beacon) . |
 | онунлоаддисаблебеакон | false | Значение по умолчанию — false. Когда вкладка закрывается, пакет SDK будет передавать все оставшиеся данные телеметрии с помощью [API маяка](https://www.w3.org/TR/beacon) . |
 | сдкекстенсион | null | Задает имя расширения пакета SDK. Допускаются только буквы. Имя расширения добавляется в качестве префикса к тегу "AI. internal. Сдкверсион" (например, "ext_javascript: 2.0.0"). Значение по умолчанию — null. |
 | исбровсерлинктраккинженаблед | false | Значение по умолчанию — false. Если значение — true, пакет SDK будет отслеживанием всех запросов на [компоновку браузера](https://docs.microsoft.com/aspnet/core/client-side/using-browserlink) . |
 | appId | null | AppId используется для корреляции между зависимостями AJAX, происходящими на стороне клиента, с запросами на стороне сервера. Если API маяка включен, он не может использоваться автоматически, но может быть задан вручную в конфигурации. Значение по умолчанию равно null |
 | енаблекорскоррелатион | false | Если значение — true, пакет SDK добавит два заголовка ("Request-ID" и "Request-context") во все запросы CORS для корреляции исходящих зависимостей AJAX с соответствующими запросами на стороне сервера. Значение по умолчанию — false. |
-| namePrefix | Не определено | Необязательное значение, которое будет использоваться в качестве постфикса имени для localStorage и имени файла cookie.
+| namePrefix | неопределенный | Необязательное значение, которое будет использоваться в качестве постфикса имени для localStorage и имени файла cookie.
 | енаблеаутораутетраккинг | false | Автоматическая регистрация изменений маршрута в одностраничных приложениях (SPA). Если значение — true, каждое изменение маршрута будет отсылать новый pageview Application Insights. Изменения в хэш-маршрутах (`example.com/foo#bar`) также записываются в виде новых просмотров страниц.
 | енаблерекуессеадертраккинг | false | Если значение равно true, заголовки запроса AJAX & FETCH отписываются, по умолчанию — false.
 | енаблереспонсехеадертраккинг | false | Если значение равно true, то заголовки ответа на запрос AJAX & FETCH отписываются, по умолчанию — false.
@@ -148,14 +149,14 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ## <a name="react-extensions"></a>Модули реагирования
 
-| Расширения |
+| Модули |
 |---------------|
 | [React](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md)|
 | [React Native](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-native/README.md)|
 
 ## <a name="explore-browserclient-side-data"></a>Изучение данных в браузере и на стороне клиента
 
-Для просмотра данных в браузере и на стороне клиента можно перейти к **метрикам** и добавить отдельные метрики, которые вас интересуют: 
+Для просмотра данных в браузере и на стороне клиента можно перейти к **метрикам** и добавить отдельные метрики, которые вас интересуют:
 
 ![](./media/javascript/page-view-load-time.png)
 
@@ -165,7 +166,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ![](./media/javascript/browser.png)
 
-### <a name="performance"></a>Производительность 
+### <a name="performance"></a>Производительность
 
 ![](./media/javascript/performance-operations.png)
 
@@ -173,7 +174,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ![](./media/javascript/performance-dependencies.png)
 
-### <a name="analytics"></a>Analytics 
+### <a name="analytics"></a>Analytics
 
 Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив `where`ную инструкцию `client_Type == "Browser"`, вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
  
@@ -194,7 +195,14 @@ dataset
 
 ### <a name="source-map-support"></a>Поддержка исходной схемы
 
-Стек вызовов минифицированные для телеметрии исключений может быть унминифиед в портал Azure. Все существующие интеграции на панели сведений об исключении будут работать с вновь унминифиед стека вызовов. Перетаскивание исходной схемы унминифинг поддерживает все существующие и будущие пакеты SDK JS (+ Node. JS), поэтому вам не нужно обновлять версию пакета SDK. Чтобы просмотреть стек вызовов унминифиед,
+Стек вызовов минифицированные для телеметрии исключений может быть унминифиед в портал Azure. Все существующие интеграции на панели сведений об исключении будут работать с вновь унминифиед стека вызовов.
+
+#### <a name="link-to-blob-storage-account"></a>Ссылка на учетную запись хранения BLOB-объектов
+
+Вы можете связать ресурс Application Insights с контейнером хранилища BLOB-объектов Azure, чтобы автоматически деминификацию стеки вызовов. Чтобы приступить к работе, см. раздел [Автоматическая поддержка карт исходного кода](./source-map-support.md).
+
+### <a name="drag-and-drop"></a>Перетаскивание
+
 1. Выберите элемент телеметрии исключения в портал Azure, чтобы просмотреть сведения о сквозной транзакции.
 2. Определяет, какие исходные карты соответствуют этому стеку вызовов. Исходная таблица должна соответствовать исходному файлу кадра стека, но с суффиксом `.map`
 3. Перетащите исходные карты в стек вызовов в портал Azure ![](https://i.imgur.com/Efue9nU.gif)
@@ -245,7 +253,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 
 Хотя скрипт скачивается из CDN, все отслеживание вашей страницы помещается в очередь. Когда загруженный скрипт завершает асинхронную инициализацию, отправляются все события, которые были поставлены в очередь. В результате все данные телеметрии не будут потеряны в течение всего жизненного цикла страницы. Этот процесс установки обеспечивает полную систему анализа, невидимую для пользователей.
 
-> Сводка:
+> Сводка.
 > - **25 КБ** со сжатием gzip
 > - **15 мс** общее время инициализации
 > - **Нулевое** отслеживание, пропущенное во время жизненного цикла страницы

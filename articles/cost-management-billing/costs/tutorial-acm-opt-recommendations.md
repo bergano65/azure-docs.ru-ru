@@ -3,17 +3,17 @@ title: Руководство. Сокращение расходов на Azure 
 description: Это руководство поможет вам уменьшить затраты на Azure при условии использования рекомендаций по оптимизации.
 author: bandersmsft
 ms.author: banders
-ms.date: 02/12/2020
+ms.date: 03/02/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 796d843461d5d622988f7992439a7c4426186761
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 6f84b3fb75a3774dc14fd1ea045ab9cf1eeb5451
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77199965"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78245410"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство по Рекомендации по оптимизации затрат
 
@@ -32,7 +32,7 @@ ms.locfileid: "77199965"
 - Подписка
 - Группа ресурсов
 
-Ваши виртуальные машины должны быть активные в течение по меньшей мере 14 дней.
+Если вы используете новую подписку, вы не сможете сразу использовать функции Управления затратами. Полная активация всех функций Управления затратами может потребовать до 48 часов. Кроме того, ваши виртуальные машины должны быть активны не менее 14 дней.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com/).

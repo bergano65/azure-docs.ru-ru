@@ -1,5 +1,6 @@
 ---
-title: 'PowerShell: Создание кластера HDInsight, использующего Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища | Документация Майкрософт'
+title: Создание кластера HDInsight, использующего Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища, c помощью PowerShell | Документы Майкрософт
+description: Узнайте, как использовать Azure PowerShell для настройки кластера HDInsight с Azure Data Lake Storage 1-го поколения в качестве дополнительного хранилища.
 services: data-lake-store,hdinsight
 documentationcenter: ''
 author: twooley
@@ -11,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: f78ad8d58bb1bc760a31b792b44a4a39ed25e1f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4cd61619e0417ab1db8d8413872b2dff1c904fc1
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66161396"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970141"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
 
@@ -49,7 +50,7 @@ ms.locfileid: "66161396"
 * Создание кластера HDInsight с проверкой подлинности в Data Lake Storage 1-го поколения
 * выполнение тестового задания в кластере.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -137,7 +138,7 @@ ms.locfileid: "66161396"
 
 Прежде чем выполнять дальнейшие действия, описанные в этом разделе, убедитесь, что на вашем компьютере установлен [пакет SDK Windows](https://dev.windows.com/en-us/downloads). Вам также необходимо создать каталог, например **C:\mycertdir**, в котором будет создан сертификат.
 
-1. В окне PowerShell перейдите в расположение, где установлен пакет SDK Windows (обычно это `C:\Program Files (x86)\Windows Kits\10\bin\x86`), и с помощью служебной программы [MakeCert][makecert] создайте самозаверяющий сертификат и закрытый ключ. Используйте такие команды:
+1. В окне PowerShell перейдите к расположению, в котором вы установили Windows SDK (как правило, `C:\Program Files (x86)\Windows Kits\10\bin\x86` и используйте служебную программу [MakeCert][makecert] для создания самозаверяющего сертификата и закрытого ключа. Используйте такие команды:
 
         $certificateFileDir = "<my certificate directory>"
         cd $certificateFileDir
@@ -145,7 +146,7 @@ ms.locfileid: "66161396"
         makecert -sv mykey.pvk -n "cn=HDI-ADL-SP" CertFile.cer -r -len 2048
 
     Вам будет предложено ввести пароль для закрытого ключа. После успешного выполнения команды в указанном каталоге сертификатов должны появиться файлы **CertFile.cer** и **mykey.pvk**.
-2. С помощью служебной программы [Pvk2Pfx][pvk2pfx] преобразуйте созданные программой MakeCert PVK- и CER-файлы в PFX-файл. Выполните следующую команду:
+2. Используйте служебную программу [Pvk2Pfx][pvk2pfx] для преобразования файлов. PVK и. cer, созданных средством MakeCert, в PFX-файл. Выполните следующую команду.
 
         pvk2pfx -pvk mykey.pvk -spc CertFile.cer -pfx CertFile.pfx -po <password>
 
@@ -269,9 +270,9 @@ ms.locfileid: "66161396"
 
 С помощью команды `hdfs dfs -put` вы можете передать несколько файлов в Data Lake Storage 1-го поколения, а затем с помощью команды `hdfs dfs -ls` проверить, успешно ли они передались.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
-* [Портал: создание кластера HDInsight для работы с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Создание кластера HDInsight, использующего Data Lake Storage 1-го поколения, с помощью портала](data-lake-store-hdinsight-hadoop-use-portal.md)
 
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx

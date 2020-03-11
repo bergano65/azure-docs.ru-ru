@@ -12,18 +12,21 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 04/16/2019
+ms.date: 02/27/2020
 ms.author: b-juche
-ms.openlocfilehash: c2984e012ae83a8bc17d72ed4eac0c5c469c2694
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 70d3a2a501952a5e20b1ff8e99f48f4d7aefce8d
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522872"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78163970"
 ---
 # <a name="what-is-the-storage-hierarchy-of-azure-netapp-files"></a>Что собой представляет иерархия хранилища Azure NetApp Files
 
 Перед созданием тома в Azure NetApp Files необходимо приобрести и настроить пул для подготовленной емкости.  Чтобы настроить емкость пула, необходимо иметь учетную запись NetApp. Понимание иерархии хранилища помогает настроить и управлять ресурсами Azure NetApp Files.
+
+> [!IMPORTANT] 
+> Azure NetApp Files в настоящее время не поддерживает миграцию ресурсов между подписками.
 
 ## <a name="azure_netapp_files_account"></a>Учетные записи NetApp
 
@@ -56,7 +59,7 @@ ms.locfileid: "65522872"
 
 ![Концептуальная схема иерархии хранения](../media/azure-netapp-files/azure-netapp-files-storage-hierarchy.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
 - [Регистрация в службе Azure NetApp Files](azure-netapp-files-register.md)

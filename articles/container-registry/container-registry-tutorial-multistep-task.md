@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 05/09/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: f5342e51af870b1e5f8651ea2d28894233ed8e62
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 7d84770f1b945ff47cb4e9118d9c342e67118722
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456074"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249906"
 ---
 # <a name="tutorial-run-a-multi-step-container-workflow-in-the-cloud-when-you-commit-source-code"></a>Руководство по Запуск многошагового рабочего процесса в облаке при фиксации исходного кода
 
@@ -69,7 +69,9 @@ steps:
 
 Сначала заполните эти переменные среды оболочки значениями, подходящими для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните эти переменные среды, вам придется вручную заменять каждое значение в примерах команд.
 
-```azurecli-interactive
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+
+```console
 ACR_NAME=<registry-name>        # The name of your Azure container registry
 GIT_USER=<github-username>      # Your GitHub user account name
 GIT_PAT=<personal-access-token> # The PAT you generated in the previous section
@@ -217,13 +219,13 @@ Run ID: cf19 was successful after 18s
 
 Сначала перейдите в каталог, содержащий локальный клон вашего [репозитория][sample-repo]:
 
-```azurecli-interactive
+```console
 cd acr-build-helloworld-node
 ```
 
 Затем выполните следующие команды для создания, фиксации и передачи нового файла в вилку вашего репозитория GitHub:
 
-```azurecli-interactive
+```console
 echo "Hello World!" > hello.txt
 git add hello.txt
 git commit -m "Testing ACR Tasks"
@@ -454,7 +456,7 @@ The push refers to repository [mycontainerregistrydate.azurecr.io/hello-world]
 Run ID: cf1g was successful after 46s
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создавать многошаговые задачи для нескольких контейнеров, которые автоматически запускаются при фиксации исходного кода в репозитории Git. Расширенные возможности многошаговых задач, включая параллельное и зависимое выполнение шагов, описаны в [справочнике по YAML для решения "Задачи ACR"](container-registry-tasks-reference-yaml.md). Перейдите к следующему руководству, чтобы узнать, как создавать задачи, которые активируют сборку при обновлении базового образа контейнера.
 

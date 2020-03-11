@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 04/03/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: a1c19523508f434c114df884824d1595376bac21
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: c02595ebdb2f011dcc94b517771a79a4b2df754d
+ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276931"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78161726"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-android-app-using-azure-spatial-anchors"></a>Руководство по Пошаговые инструкции по созданию нового приложения Android с использованием Пространственных привязок Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "74276931"
 
 Запустите Android Studio. В окне **приветствия Android Studio** щелкните **Start a new Android Studio project** (Создать проект Android Studio). Если у вас уже есть открытый проект, выберите **File (Файл)** ->**New Project (Создать проект)** .
 
-В окне **создания нового проекта** в разделе **Phone and Tablet** (Телефоны и планшеты) выберите **Empty Activity** (Пустое действие) и щелкните **Далее**. Затем для параметра **Minimum API level** (Минимальный уровень API) выберите значение `API 26: Android 8.0 (Oreo)` и убедитесь, что для параметра **Language** (Язык) указано значение `Java`. Вы можете изменить имя и расположение проекта или имя пакета. Сохраните значения остальных параметров неизменными. Нажмите кнопку **Готово** Запустится **установщик компонентов**. Когда он завершит свою работу, щелкните **Готово**. После некоторой подготовки Android Studio откроет интегрированную среду разработки.
+В окне **создания нового проекта** в разделе **Phone and Tablet** (Телефоны и планшеты) выберите **Empty Activity** (Пустое действие) и щелкните **Далее**. Затем для параметра **Minimum API level** (Минимальный уровень API) выберите значение `API 26: Android 8.0 (Oreo)` и убедитесь, что для параметра **Language** (Язык) указано значение `Java`. Вы можете изменить имя и расположение проекта или имя пакета. Сохраните значения остальных параметров неизменными. Нажмите кнопку **Готово**. Запустится **установщик компонентов**. Когда он завершит свою работу, щелкните **Готово**. После некоторой подготовки Android Studio откроет интегрированную среду разработки.
 
 ## <a name="trying-it-out"></a>Проверка работы
 
@@ -123,18 +123,18 @@ dependencies {
 
 ## <a name="attach-a-local-azure-spatial-anchor"></a>Присоединение локальной пространственной привязки Azure
 
-Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код обеспечит использование приложением Пространственных привязок Azure версии 1.3.0. Впрочем, здесь подойдет любая актуальная версия Пространственных привязок Azure.
+Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код обеспечит использование приложением Пространственных привязок Azure версии 2.2.0. Впрочем, здесь подойдет любая актуальная версия Пространственных привязок Azure. См. [заметки о выпуске](https://github.com/Azure/azure-spatial-anchors-samples/releases).
 
 ```
 dependencies {
     ...
-    implementation "com.microsoft.azure.spatialanchors:spatialanchors_jni:[1.3.0]"
-    implementation "com.microsoft.azure.spatialanchors:spatialanchors_java:[1.3.0]"
+    implementation "com.microsoft.azure.spatialanchors:spatialanchors_jni:[2.2.0]"
+    implementation "com.microsoft.azure.spatialanchors:spatialanchors_java:[2.2.0]"
     ...
 }
 ```
 
-Щелкните правой кнопкой мыши элемент `app\java\<PackageName>`->**New** (Создать) ->**Java Class** (Класс Java). Задайте для параметра **Name** (Имя) значение _MyFirstApp_, а для параметра **Superclass** (Суперкласс) — значение _android.app.Application_. Сохраните значения остальных параметров неизменными. Последовательно выберите **ОК**. Будет создан файл с именем `MyFirstApp.java`. Добавьте в него следующую инструкцию import:
+Щелкните правой кнопкой мыши элемент `app\java\<PackageName>`->**New** (Создать) ->**Java Class** (Класс Java). Задайте для параметра **Name** (Имя) значение _MyFirstApp_, а для параметра **Superclass** (Суперкласс) — значение _android.app.Application_. Сохраните значения остальных параметров неизменными. Нажмите кнопку **ОК**. Будет создан файл с именем `MyFirstApp.java`. Добавьте в него следующую инструкцию import:
 
 ```java
 import com.microsoft.CloudServices;

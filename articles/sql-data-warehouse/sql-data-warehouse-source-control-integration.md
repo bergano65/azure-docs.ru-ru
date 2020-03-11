@@ -1,6 +1,6 @@
 ---
 title: Интеграция системы управления версиями
-description: Использование DevOps с базой данных корпоративного класса для Хранилища данных SQL и интеграция платформенной функциональности системы управления версиями с помощью Azure Repos (Git и GitHub).
+description: Использование DevOps с базой данных корпоративного класса для пула SQL и интеграция платформенной функциональности системы управления версиями с помощью Azure Repos (Git и GitHub).
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: integration
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: fc1fdddc7a157828fcc4770c4e8237af9a45fdc3
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 1a4939e8c349f36fe745becb811717983caa95c0
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76720033"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78198233"
 ---
-# <a name="source-control-integration-for-azure-sql-data-warehouse"></a>Интеграция системы управления версиями для Хранилища данных SQL Azure
+# <a name="source-control-integration-for-sql-pool"></a>Интеграция системы управления версиями для пула SQL
 
-Из этого руководства вы узнаете, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с системой управления версиями.  Интеграция системы управления версиями — это первый шаг в создании конвейера непрерывной интеграции и развертывания с помощью Хранилища данных SQL. 
+Из этого руководства вы узнаете, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с системой управления версиями.  Интеграция системы управления версиями — это первый шаг в создании конвейера непрерывной интеграции и развертывания для ресурса пула SQL в Azure Synapse Analytics. 
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -81,4 +81,4 @@ ms.locfileid: "76720033"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Разработка для Хранилища данных SQL Azure](sql-data-warehouse-overview-develop.md)
+- [Разработка для пула SQL](sql-data-warehouse-overview-develop.md)

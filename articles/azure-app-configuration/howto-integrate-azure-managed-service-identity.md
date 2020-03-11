@@ -7,12 +7,12 @@ author: lisaguthrie
 ms.topic: conceptual
 ms.date: 2/25/2020
 ms.author: lcozzens
-ms.openlocfilehash: 957fef32702f35b4b509d829eba6a41914c4fc53
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: ff69262a89d8112419ffe62cd391d003cb21adc1
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78205863"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967587"
 ---
 # <a name="integrate-with-azure-managed-identities"></a>Интеграция с управляемыми удостоверениями Azure
 
@@ -33,7 +33,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 > * настройка приложения на использование управляемого удостоверения при подключении к службе "Конфигурация приложений".
 > * При необходимости настройте приложение для использования управляемого удостоверения при подключении к Key Vault через конфигурацию приложения Key Vault ссылке.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством требуется:
 
@@ -68,7 +68,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 
 1. В поле **Подписка** выберите подписку Azure. Выберите ресурс Службы приложений для своего приложения.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
     ![Добавление управляемого удостоверения](./media/add-managed-identity.png)
 
@@ -240,8 +240,6 @@ git push azure master
 http://<app_name>.azurewebsites.net
 ```
 
-![Приложение, работающее в Службе приложений](../app-service/media/app-service-web-tutorial-dotnetcore-sqldb/azure-app-in-browser.png)
-
 ## <a name="use-managed-identity-in-other-languages"></a>Использование управляемого удостоверения с другими языками
 
 Поставщики службы "Конфигурация приложений" для платформы .NET Framework и Java Spring также имеют встроенную поддержку управляемых удостоверений. При настройке одного из этих поставщиков можно использовать конечную точку URL-адреса вашего хранилища вместо полной строки подключения. 
@@ -270,7 +268,7 @@ http://<app_name>.azurewebsites.net
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы добавили управляемое удостоверение Azure для упрощения доступа к конфигурации приложения и улучшения управления учетными данными для приложения. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]

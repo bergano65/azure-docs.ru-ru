@@ -4,12 +4,12 @@ description: В этом руководстве описано, как наст�
 keywords: Jenkins, Azure, DevOps, виртуальная машина, CI/CD
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 380d547aaee68ad40ae12a4836826d2addae3a18
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: cae28b293a6217996b44c839dc8836ec940c3155
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77606381"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78192614"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
@@ -96,9 +96,9 @@ ms.locfileid: "77606381"
 5. Выберите **Trigger release in TFS/Team Services** (Активация выпуска в TFS и Team Services). Введите URI для организации Azure DevOps Services в формате **https://{имя_организации}.visualstudio.com**.
 6. Введите имя **проекта**.
 7. Выберите имя конвейера выпуска. (Позже вы создадите этот конвейер выпуска в службах Azure DevOps).
-8. Выберите учетные данные для подключения к среде Azure DevOps Services или Team Foundation Server:
+8. Выберите учетные данные для подключения к среде Azure DevOps Services или Azure DevOps Server:
    - Оставьте пустым поле **Имя пользователя**, если вы используете Azure DevOps Services. 
-   - Если вы используете локальную версию Team Foundation Server, введите имя пользователя и пароль.    
+   - Если вы используете локальную версию Azure DevOps Server, введите имя пользователя и пароль.    
    ![Настройка действий после сборки Jenkins](media/tutorial-build-deploy-jenkins/trigger-release-from-jenkins.png)
 5. Сохраните проект Jenkins.
 

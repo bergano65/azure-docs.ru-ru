@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.reviewer: astay; kraigb
 ms.custom: seodec18
-ms.openlocfilehash: 2570e3753dd93173166c6b563e9add69bed3f862
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: d2c5a094c45eeca779a33a39261bd3fc17d53d1a
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75922273"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77913860"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -47,6 +47,28 @@ az webapp list-runtimes --linux | grep PYTHON
 ```azurecli-interactive
 az webapp config set --resource-group <resource-group-name> --name <app-name> --linux-fx-version "PYTHON|3.7"
 ```
+
+## <a name="customize-build-automation"></a>Настройка автоматизации сборки
+
+Если приложение развертывается с использованием Git или ZIP-пакетов с включенной автоматизацией сборки, то автоматизация сборки cлужбы приложений проходит в такой последовательности:
+
+1. Запустите пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
+1. Выполните `pip install -r requirements.txt`.
+1. Если *manage.py* находится в корне репозитория, запустите *manage.py collectstatic*. Однако если `DISABLE_COLLECTSTATIC` имеет значение `true`, этот шаг пропускается.
+1. Запустите пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
+
+`PRE_BUILD_COMMAND`, `POST_BUILD_COMMAND` и `DISABLE_COLLECTSTATIC` являются переменными среды, которые по умолчанию пустые. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`. Чтобы отключить выполнение collectstatic при создании приложений Django, установите `DISABLE_COLLECTSTATIC=true`.
+
+В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
+
+```azurecli-interactive
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PRE_BUILD_COMMAND="echo foo, scripts/prebuild.sh"
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
+```
+
+Дополнительные переменные среды для настройки автоматизации сборки см. в статье [Конфигурация Oryx](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
+
+Дополнительные сведения о том, как cлужба приложений выполняет и создает приложения Python в Linux, см. в документации по [Oryx. Как обнаруживаются и создаются приложения Python](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/python.md).
 
 ## <a name="container-characteristics"></a>Характеристики контейнера
 

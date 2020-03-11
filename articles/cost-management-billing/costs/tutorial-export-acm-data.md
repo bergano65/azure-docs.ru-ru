@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: cost-management-billing
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 40846de9ee8eec3225a05e3c2c68c3ad5af02042
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 04228a5f3f7e0b10e3cd881043af7861bb9fb347
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201022"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251137"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Руководство. Создание задачи для экспорта данных и управление экспортированными данными
 
@@ -39,6 +39,8 @@ ms.locfileid: "77201022"
 Для учетных записей хранения Azure:
 - Чтобы изменить настроенную учетную запись хранения, требуются разрешения на запись, вне зависимости от разрешений на экспорт.
 - Ваша учетная запись хранения Azure должна быть настроена для использования хранилища BLOB-объектов или хранилища файлов.
+
+Если вы используете новую подписку, вы не сможете сразу использовать функции Управления затратами. Полная активация всех функций Управления затратами может потребовать до 48 часов.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com/).

@@ -7,20 +7,21 @@ ms.author: brysmith
 ms.service: machine-learning
 ms.topic: tutorial
 ms.date: 02/10/2020
-ms.openlocfilehash: 7f5e24261fd5d006004a51186e22f6bfe1b8ab32
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 5a7c4ce6d5868efef4cfb4fbe2183ec8337ff5b6
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77589187"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78301851"
 ---
 # <a name="tutorial-convert-ml-experimental-code-to-production-code"></a>Руководство по Преобразование экспериментального кода машинного обучения в рабочий код
 
-Проект машинного обучения требует экспериментирования, в котором гипотезы проверяются на реальных наборах данных с помощью таких гибких инструментов, как Jupyter Notebook. Когда модель будет готова к рабочей среде, ее код следует поместить в репозиторий рабочего кода. В некоторых случаях для размещения в репозитории рабочего кода код модели необходимо преобразовать в сценарии Python. В этом руководстве рассматривается рекомендуемый подход к экспорту кода экспериментов в сценарии Python.  
+Проект машинного обучения требует экспериментирования, в котором гипотезы проверяются на реальных наборах данных с помощью таких гибких инструментов, как Jupyter Notebook. Когда модель будет готова к рабочей среде, ее код следует поместить в репозиторий рабочего кода. В некоторых случаях для размещения в репозитории рабочего кода код модели необходимо преобразовать в сценарии Python. В этом руководстве рассматривается рекомендуемый подход к экспорту кода экспериментов в сценарии Python.
 
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
+>
 > * Очистка ненужного кода.
 > * Рефакторинг кода Jupyter Notebook в функции.
 > * Создание сценариев Python для связанных задач.
@@ -41,7 +42,7 @@ from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import joblib
- 
+
 X, y = load_diabetes(return_X_y=True)
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -64,13 +65,15 @@ joblib.dump(value=reg, filename=model_name)
 ## <a name="refactor-code-into-functions"></a>Рефакторинг кода в функции
 
 Далее необходимо выполнить рефакторинг кода Jupyter в функции. Рефакторинг кода в функции упрощает модульное тестирование и делает код более удобным для обслуживания. В этом разделе вы выполните рефакторинг:
+
 - записной книжки Diabetes Ridge Regression Training (`experimentation/Diabetes Ridge Regression Training.ipynb`);
 - записной книжки Diabetes Ridge Regression Scoring (`experimentation/Diabetes Ridge Regression Scoring.ipynb`).
 
 ### <a name="refactor-diabetes-ridge-regression-training-notebook-into-functions"></a>Рефакторинг записной книжки Diabetes Ridge Regression Training в функции
+
 В `experimentation/Diabetes Ridge Regression Training.ipynb` необходимо выполнить следующие шаги.
 
-1. Создайте функцию `train_model`, которая принимает параметры `data` и `alpha` и возвращает модель. 
+1. Создайте функцию `train_model`, которая принимает параметры `data` и `alpha` и возвращает модель.
 1. Скопируйте код под заголовками "Train Model on Training Set" и "Validate Model on Validation Set" в функцию `train_model`.
 
 Функция `train_model` должна выглядеть примерно как следующий код.
@@ -106,7 +109,7 @@ def main():
 
     model_name = "sklearn_regression_model.pkl"
     alpha = 0.5
-    
+
     X, y = load_diabetes(return_X_y=True)
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -147,7 +150,7 @@ def main():
 
     model_name = "sklearn_regression_model.pkl"
     alpha = 0.5
-    
+
     X, y = load_diabetes(return_X_y=True)
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -163,6 +166,7 @@ main()
 ```
 
 ### <a name="refactor-diabetes-ridge-regression-scoring-notebook-into-functions"></a>Рефакторинг записной книжки Diabetes Ridge Regression Scoring в функции
+
 В `experimentation/Diabetes Ridge Regression Scoring.ipynb` необходимо выполнить следующие шаги.
 
 1. Создайте функцию `init`, которая не принимает параметры и ничего не возвращает.
@@ -212,6 +216,7 @@ request_header = {}
 prediction = run(raw_data, request_header)
 print("Test result: ", prediction)
 ```
+
 Предыдущий код задает переменные `raw_data` и `request_header`, вызывает функцию `run` с параметрами `raw_data` и `request_header`, а затем выводит прогнозы.
 
 После рефакторинга `experimentation/Diabetes Ridge Regression Scoring.ipynb` должен содержать код без Markdown, как показано ниже.
@@ -242,11 +247,14 @@ print("Test result: ", prediction)
 ```
 
 ## <a name="combine-related-functions-in-python-files"></a>Объединение связанных функций в файлах Python
+
 Связанные функции должны быть объединены в файлы Python, чтобы код было удобно многократно использовать. В этом разделе вы создадите файлы Python для следующих записных книжек:
+
 - записной книжки Diabetes Ridge Regression Training (`experimentation/Diabetes Ridge Regression Training.ipynb`);
 - записной книжки Diabetes Ridge Regression Scoring (`experimentation/Diabetes Ridge Regression Scoring.ipynb`).
 
 ### <a name="create-python-file-for-the-diabetes-ridge-regression-training-notebook"></a>Создание файла Python для записной книжки Diabetes Ridge Regression Training
+
 Преобразуйте записную книжку в исполняемый сценарий, выполнив в командной строке приведенный оператор, который использует пакет nbconvert и путь к `experimentation/Diabetes Ridge Regression Training.ipynb`.
 
 ```
@@ -274,7 +282,7 @@ def train_model(data, alpha):
 def main():
     model_name = "sklearn_regression_model.pkl"
     alpha = 0.5
-    
+
     X, y = load_diabetes(return_X_y=True)
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -292,6 +300,7 @@ main()
 Файл `train.py`, находящийся в каталоге `diabetes_regression/training` репозитория MLOpsPython, поддерживает аргументы командной строки `build_id`, `model_name` и `alpha`. Можно добавить поддержку аргументов командной строки в файл `train.py`, чтобы использовать динамические имена моделей и значения `alpha`, но это необязательно для успешного выполнения кода.
 
 ### <a name="create-python-file-for-the-diabetes-ridge-regression-scoring-notebook"></a>Создание файла Python для записной книжки Diabetes Ridge Regression Scoring
+
 Преобразуйте записную книжку в исполняемый сценарий, выполнив в командной строке приведенный оператор, который использует пакет nbconvert и путь к `experimentation/Diabetes Ridge Regression Scoring.ipynb`.
 
 ```
@@ -344,11 +353,13 @@ def init():
 ```
 
 ## <a name="create-unit-tests-for-each-python-file"></a>Создание модульных тестов для каждого файла Python
+
 Теперь необходимо создать модульные тесты для каждого файла Python, что сделает код более надежным и удобным в обслуживании. В этом разделе вы создадите модульный тест для одной из функций в `train.py`.
 
-Файл `train.py` содержит две функции, `train_model` и `main`. Для каждой функции требуется модульный тест, но в этом руководстве мы создадим только один модульный тест для функции `train_model`, используя платформу Pytest.  Pytest — это единственная платформа модульного тестирования Python, но она является одной из наиболее часто используемых. Дополнительные сведения доступны на веб-сайте [Pytest](https://pytest.org).
+Файл `train.py` содержит две функции, `train_model` и `main`. Для каждой функции требуется модульный тест, но в этом руководстве мы создадим только один модульный тест для функции `train_model`, используя платформу Pytest. Pytest — это единственная платформа модульного тестирования Python, но она является одной из наиболее часто используемых. Дополнительные сведения доступны на веб-сайте [Pytest](https://pytest.org).
 
 Модульный тест обычно содержит три основных действия.
+
 - Упорядочение объекта — создание и настройка необходимых объектов.
 - Выполнение действия с объектом.
 - Утверждение ожидаемого результата.
@@ -379,29 +390,40 @@ class TestTrain:
 ```
 
 ## <a name="use-your-own-model-with-mlopspython-code-template"></a>Использование собственной модели с шаблоном кода MLOpsPython
-Если вы выполнили действия, описанные в этом руководстве, то у вас имеется набор сценариев, соответствующих сценариям обучения, оценки и тестирования, доступным в репозитории MLOpsPython.  В соответствии со структурой, описанной выше, выполните следующие действия, чтобы использовать эти файлы в собственном проекте машинного обучения.  
 
-1.  Выполнение указаний из руководства по началу работы.
-2.  Замена кода обучения.
-3.  Замена кода оценки.
-4.  Изменение кода проверки.
+Если вы выполнили действия, описанные в этом руководстве, то у вас имеется набор сценариев, соответствующих сценариям обучения, оценки и тестирования, доступным в репозитории MLOpsPython.  В соответствии со структурой, описанной выше, выполните следующие действия, чтобы использовать эти файлы в собственном проекте машинного обучения.
+
+1. Выполните указания из руководства [по началу работы](https://github.com/microsoft/MLOpsPython/blob/master/docs/getting_started.md) с MLOpsPython.
+2. Чтобы создать начальную точку проекта, следуйте инструкциям [по начальной загрузке](https://github.com/microsoft/MLOpsPython/blob/master/bootstrap/README.md) MLOpsPython.
+3. Замена кода обучения.
+4. Замена кода оценки.
+5. Изменение кода проверки.
 
 ### <a name="follow-the-getting-started-guide"></a>Выполнение указаний из руководства по началу работы
-Выполнение указание из руководства по началу работы необходимо, чтобы обеспечить инфраструктуру и конвейеры для выполнения MLOpsPython.  Мы рекомендуем развернуть код MLOpsPython "как есть" перед добавлением своего кода, чтобы обеспечить правильную работу структуры и конвейера.  Также полезно ознакомиться с структурой кода репозитория.
+Выполнение указаний из руководства [по началу работы](https://github.com/microsoft/MLOpsPython/blob/master/docs/getting_started.md) необходимо, чтобы обеспечить инфраструктуру и конвейеры для выполнения MLOpsPython.
+
+### <a name="follow-the-bootstrap-instructions"></a>Инструкции по начальной загрузке
+
+С руководством по [начальной загрузке из репозитория MLOpsPython](https://github.com/microsoft/MLOpsPython/blob/master/bootstrap/README.md) вы сможете быстро подготовить репозиторий для проекта.
+
+**Примечание.** Так как сценарий начальной загрузки переименует папку diabetes_regression в выбранное вами имя проекта, мы будем называть проект `[project name]` при использовании путей.
 
 ### <a name="replace-training-code"></a>Замена кода обучения
-Замена кода, используемого для обучения модели, и удаление или замена соответствующих модульных тестов необходимы для того, чтобы решение функционировало с вашим кодом.  Особенно важно выполнить следующие действия.
 
-1. Замените `diabetes_regression\training\train.py`. Этот сценарий обучает модель локально или в вычислительной среде Машинного обучения Azure.
-1. Удалите или замените модульные тесты обучения в `tests/unit/code_test.py`.
+Замена кода, используемого для обучения модели, и удаление или замена соответствующих модульных тестов необходимы для того, чтобы решение функционировало с вашим кодом. Особенно важно выполнить следующие действия.
+
+1. Замените `[project name]/training/train.py`. Этот сценарий обучает модель локально или в вычислительной среде Машинного обучения Azure.
+1. Удалите или замените модульные тесты обучения в `[project name]/training/test_train.py`.
 
 ### <a name="replace-score-code"></a>Замена кода оценки
-Чтобы модель поддерживала вывод в реальном времени, необходимо заменить код оценки. Шаблон MLOpsPython использует код оценки, чтобы развернуть модель для оценки в реальном времени для ACI, AKS или веб-приложений.  Если вы хотите оставить оценку, замените `diabetes_regression/scoring/score.py`.
+
+Чтобы модель поддерживала вывод в реальном времени, необходимо заменить код оценки. Шаблон MLOpsPython использует код оценки, чтобы развернуть модель для оценки в реальном времени для ACI, AKS или веб-приложений. Если вы хотите оставить оценку, замените `[project name]/scoring/score.py`.
 
 ### <a name="update-evaluation-code"></a>Изменение кода проверки
-Шаблон MLOpsPython использует сценарий evaluate_model для сравнения эффективности новой обученной модели и текущей рабочей модели на основе среднеквадратической погрешности. Если эффективность новой обученной модели выше, чем текущей рабочей модели, то конвейеры продолжают работу. В противном случае конвейеры останавливаются. Чтобы оставить оценку, замените все экземпляры `mse` в `diabetes_regression/evaluate/evaluate_model.py` требуемой метрикой. 
 
-Чтобы избавиться от оценки, задайте для переменной конвейера DevOps `RUN_EVALUATION` в `.pipelines\diabetes_regression-variables` значение `false`.
+Шаблон MLOpsPython использует сценарий evaluate_model для сравнения эффективности новой обученной модели и текущей рабочей модели на основе среднеквадратической погрешности. Если эффективность новой обученной модели выше, чем текущей рабочей модели, то конвейеры продолжают работу. В противном случае конвейеры отменяются. Чтобы оставить оценку, замените все экземпляры `mse` в `[project name]/evaluate/evaluate_model.py` требуемой метрикой.
+
+Чтобы избавиться от оценки, задайте для переменной конвейера DevOps `RUN_EVALUATION` в `.pipelines/[project name]-variables-template.yml` значение `false`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,12 +4,12 @@ description: Узнайте, как развернуть веб-приложен
 keywords: jenkins, azure, devops, app service
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: de1bf0ea06210c86ff1da21dcac667754f11d7f4
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: fcaf45003e865cc5aac3f6bd4580479a27d38b50
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158512"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251461"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
 
@@ -17,7 +17,7 @@ ms.locfileid: "74158512"
 * Отправка файлов.
 * Docker для веб-приложений в Linux.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 > * Настройка Jenkins для развертывания веб-приложений с помощью отправки файлов.
 > * Настройка Jenkins для развертывания веб-приложений для контейнеров.
@@ -67,7 +67,7 @@ sudo apt-get install -y maven
 Перед настройкой задания в Jenkins требуется план службы приложений Azure и веб-приложение для запуска приложения Java.
 
 
-1. Создайте план службы приложений Azure с ценовой категорией **Бесплатный** с помощью [команды Azure CLI](/cli/azure/appservice/plan#az-appservice-plan-create) `az appservice plan create`. От плана службы приложений зависят физические ресурсы, используемые для размещения приложений. Все приложения, назначенные плану службы приложений, совместно используют эти ресурсы. Эти ресурсы позволяют сэкономить при размещении нескольких приложений.
+1. Создайте план службы приложений Azure с ценовой категорией **Бесплатный** с помощью [команды Azure CLI](/cli/azure/appservice/plan#az-appservice-plan-create) `az appservice plan create`. От плана службы приложений зависят физические ресурсы, используемые для размещения приложений. Все приложения, назначенные плану службы приложений, совместно используют эти ресурсы. Эти ресурсы позволяют сэкономить при размещении нескольких приложений.
 2. Создайте веб-приложение. Воспользуйтесь [порталом Azure](/azure/app-service/configure-common) или выполните следующую команду `az` Azure CLI:
     ```azurecli-interactive 
     az webapp create --name <myAppName> --resource-group <myResourceGroup> --plan <myAppServicePlan>
@@ -118,7 +118,7 @@ sudo apt-get install -y maven
 ### <a name="create-a-jenkins-pipeline"></a>Создание конвейера Jenkins
 
 1. Откройте Jenkins в веб-браузере. Выберите **New Item** (Создать элемент).
-2. Укажите имя задания и выберите **Pipeline** (Конвейер). Нажмите кнопку **ОК**.
+2. Укажите имя задания и выберите **Pipeline** (Конвейер). Щелкните **ОК**.
 3. Откройте вкладку **Pipeline** (Конвейер).
 4. Для значения **Definition** (Определение) выберите значение **Pipeline script from SCM** (Сценарий конвейера из SCM).
 5. Для значения **SCM** выберите **Git**. Введите URL-адрес GitHub для разветвленного репозитория. Например: https://&lt;ваш_разветвленный_репозиторий>.git.
@@ -186,7 +186,7 @@ sudo apt-get install -y maven
 ### <a name="create-a-jenkins-pipeline"></a>Создание конвейера Jenkins    
 
 1. Откройте Jenkins в веб-браузере. Выберите **New Item** (Создать элемент).
-2. Укажите имя задания и выберите **Pipeline** (Конвейер). Нажмите кнопку **ОК**.
+2. Укажите имя задания и выберите **Pipeline** (Конвейер). Щелкните **ОК**.
 3. Откройте вкладку **Pipeline** (Конвейер).
 4. Для значения **Definition** (Определение) выберите значение **Pipeline script from SCM** (Сценарий конвейера из SCM).
 5. Для значения **SCM** выберите **Git**. Введите URL-адрес GitHub для разветвленного репозитория. Например: https://&lt;ваш_разветвленный_репозиторий>.git.
@@ -207,10 +207,13 @@ sudo apt-get install -y maven
 ### <a name="for-azure-app-service-on-linux"></a>Служба приложений Azure под управлением Linux
 
 1. Чтобы проверить веб-приложение, выполните следующую команду в Azure CLI:
-    ```CLI
+    
+    ```azurecli
     az acr repository list -n <myRegistry> -o json
     ```
+    
     Отобразится следующее сообщение:
+    
     ```CLI
     ["calculator"]
     ```
@@ -227,11 +230,11 @@ sudo apt-get install -y maven
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили развертывание в Azure с помощью подключаемого модуля Jenkins службы приложений Azure.
 
-Вы научились выполнять следующие задачи:
+Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Настройка Jenkins для развертывания Службы приложений Azure с помощью отправки файлов 

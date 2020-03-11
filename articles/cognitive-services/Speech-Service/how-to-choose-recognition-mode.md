@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 01/13/2020
+ms.date: 03/10/2020
 ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 51bf005bdad4197120fed96894ac1cdd150738ee
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: d997cb592d9d648998f2b44d9f61f465f05faeb0
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935230"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79079814"
 ---
 # <a name="choose-a-speech-recognition-mode"></a>Выбор режима распознавания речи
 
@@ -33,7 +33,7 @@ ms.locfileid: "75935230"
 Дополнительные сведения об использовании функции `RecognizeOnceAsync` см. в документации по [пакету SDK для распознавания речи .NET](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechrecognizer.recognizeonceasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_SpeechRecognizer_RecognizeOnceAsync).
 
 ```csharp
-var result = await recognizer.RecognizeOnceAsync().ConfigureAwait(false);
+var result = await recognizer.RecognizeOnceAsync();
 ```
 
 ::: zone-end
@@ -72,7 +72,7 @@ result = speech_recognizer.recognize_once()
 
 ## <a name="continuous"></a>Непрерывные
 
-Если требуется долгосрочное распознавание, используйте функцию запуска и соответствующие функции для непрерывного распознавания. Функция start запустится и продолжит обработку всех фразы продолжительностью до тех пор, пока не будет вызвана функция завершения или пока не пройдет слишком много времени в тишине. При использовании непрерывного режима обязательно зарегистрируйтесь на различные события, которые будут срабатывать при возникновении. Например, при распознавании речи срабатывает событие «распознано». Для обработки распознавания необходимо наличие обработчика событий. Ограничение в 10 минут от общего времени распознавания речи для каждого сеанса обеспечивается службой речи.
+Если требуется долгосрочное распознавание, используйте функцию запуска и соответствующие функции для непрерывного распознавания. Функция start запустится и продолжит обработку всех фразы продолжительностью до тех пор, пока не будет вызвана функция завершения или пока не пройдет слишком много времени в тишине. При использовании непрерывного режима обязательно зарегистрируйтесь на различные события, которые будут срабатывать при возникновении. Например, при распознавании речи срабатывает событие «распознано». Для обработки распознавания необходимо наличие обработчика событий.
 
 ::: zone pivot="programming-language-csharp"
 
@@ -88,10 +88,10 @@ recognizer.Recognized += (s, e) =>
 };
 
 // Start continuous speech recognition
-await recognizer.StartContinuousRecognitionAsync().ConfigureAwait(false);
+await recognizer.StartContinuousRecognitionAsync();
 
 // Stop continuous speech recognition
-await recognizer.StopContinuousRecognitionAsync().ConfigureAwait(false);
+await recognizer.StopContinuousRecognitionAsync();
 ```
 
 ::: zone-end

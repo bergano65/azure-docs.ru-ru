@@ -2,17 +2,18 @@
 title: Включение шифрования дисков Azure для виртуальных машин Linux
 description: В этой статье приведены инструкции по включению шифрования дисков Microsoft Azure для виртуальных машин Linux.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 96ac1becfed74141b3b1544646f5d82bd0985045
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 28d37ba6796799ea27bbd5338247a504ea82388f
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396832"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970455"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Шифрование дисков Azure для виртуальных машин Linux 
 
@@ -64,7 +65,7 @@ ms.locfileid: "78396832"
 | RHEL | 7.4 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.3 | ОС и диск данных (см. Примечание ниже) |
 | RHEL | 7.2 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 6.8 | Диск данных (см. Примечание ниже) |
+| RHEL | 6,8 | Диск данных (см. Примечание ниже) |
 | RHEL | 6.7 | Диск данных (см. Примечание ниже) |
 | CentOS | 7,7 | Диск операционной системы и данных |
 | CentOS | 7.6 | Диск операционной системы и данных |
@@ -72,7 +73,7 @@ ms.locfileid: "78396832"
 | CentOS | 7.4 | Диск операционной системы и данных |
 | CentOS | 7.3 | Диск операционной системы и данных |
 | CentOS | 7.2n | Диск операционной системы и данных |
-| CentOS | 6.8 | Диск данных |
+| CentOS | 6,8 | Диск данных |
 | openSUSE | 42.3 | Диск данных |
 | SLES | 12-SP4 | Диск данных |
 | SLES | 12-SP3 | Диск данных |
@@ -122,7 +123,7 @@ ms.locfileid: "78396832"
 | Командлеты PowerShell | Дополнительные сведения см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview). |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство. Создание и шифрование виртуальной машины Linux с помощью Azure CLI](disk-encryption-cli-quickstart.md)
 - [Краткое руководство. Создание и шифрование виртуальной машины Linux с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md)

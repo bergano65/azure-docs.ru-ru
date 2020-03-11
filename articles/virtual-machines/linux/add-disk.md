@@ -1,27 +1,19 @@
 ---
 title: Добавление диска данных в виртуальную машину Linux с помощью Azure CLI
 description: Узнайте, как добавить постоянный диск данных в виртуальную машину Linux с помощью Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
 author: roygara
 manager: twooley
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.date: 06/13/2018
 ms.author: rogarana
-ms.custom: H1Hack27Feb2017
 ms.subservice: disks
-ms.openlocfilehash: 5d7ec2cbbc5cc1bf8bdc87d7f82a965b3bc8c267
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: a80a1fe21ba0b40aebf9e426e3d49f499c2d2a21
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363652"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967983"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Добавление диска к виртуальной машине Linux
 Из этой статьи вы узнаете, как добавить в виртуальную машину постоянный диск, на котором можно хранить данные. Эти данные сохранятся даже после повторной подготовки виртуальной машины (например, в ходе обслуживания или изменения размера).
@@ -236,11 +228,11 @@ UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail 
     sudo fstrim /datadrive
     ```
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 [!INCLUDE [virtual-machines-linux-lunzero](../../../includes/virtual-machines-linux-lunzero.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с рекомендациями по [оптимизации производительности виртуальной машины Linux](optimization.md) , чтобы правильно настроить виртуальную машину Linux.
 * Увеличьте емкость хранилища, добавив дополнительные диски, и [настройте RAID](configure-raid.md) для повышения производительности.

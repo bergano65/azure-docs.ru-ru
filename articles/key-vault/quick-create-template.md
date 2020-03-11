@@ -6,26 +6,27 @@ author: mumian
 manager: dougeby
 tags: azure-resource-manager
 ms.service: key-vault
+ms.subservice: secrets
 ms.topic: quickstart
-ms.custom: mvc
-ms.date: 09/17/2019
+ms.custom: mvc,subject-armqs
+ms.date: 02/27/2020
 ms.author: jgao
-ms.openlocfilehash: 0462039efa02998b41560d6c308653809875ab1c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 015ae2e8e36d4a563138051bce33f5d283bde789
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982132"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78297925"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-resource-manager-template"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью шаблона Resource Manager
 
 [Azure Key Vault](./key-vault-overview.md) — это облачная служба, которая обеспечивает безопасное хранение секретов, таких как ключи, пароли, сертификаты, и другой секретной информации. В этом кратком руководстве рассматривается процесс развертывания шаблона Resource Manager для создания хранилища ключей и секрета.
 
-[Шаблон Resource Manager](../azure-resource-manager/templates/overview.md) является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта. Шаблон использует декларативный синтаксис, который позволяет указать объект, который вы собираетесь развернуть. При этом, для развертывания объекта, не нужно писать последовательность команд. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.keyvault/allversions).
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
@@ -33,7 +34,7 @@ ms.locfileid: "75982132"
 
     1. Выполните следующую команду Azure PowerShell или Azure CLI, выбрав **Попробовать**, а затем вставьте сценарий в панель оболочки. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.
 
-        # <a name="clitabcli"></a>[CLI](#tab/CLI)
+        # <a name="cli"></a>[CLI](#tab/CLI)
         ```azurecli-interactive
         echo "Enter your email address that is used to sign in to Azure:" &&
         read upn &&
@@ -41,7 +42,7 @@ ms.locfileid: "75982132"
         echo "Press [ENTER] to continue ..."
         ```
 
-        # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+        # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
         ```azurepowershell-interactive
         $upn = Read-Host -Prompt "Enter your email address used to sign in to Azure"
         (Get-AzADUser -UserPrincipalName $upn).Id
@@ -54,20 +55,24 @@ ms.locfileid: "75982132"
 
 ## <a name="create-a-vault-and-a-secret"></a>Создание хранилища и секрета
 
+### <a name="review-the-template"></a>Изучение шаблона
+
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-key-vault-create/).
 
-[!code-json[<Azure Resource Manager template create key vault>](~/quickstart-templates/101-key-vault-create/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-key-vault-create/azuredeploy.json" range="1-150" highlight="107-148":::
 
 В шаблоне определено два ресурса Azure:
 
-* **Microsoft.KeyVault/vaults** — создает хранилище ключей Azure.
-* **Microsoft.KeyVault/vaults/secrets** — создает секрет хранилища ключей.
+* [**Microsoft.KeyVault/vaults**](/azure/templates/microsoft.keyvault/vaults) создает хранилище ключей Azure.
+* [**Microsoft.KeyVault/vaults/secrets**](/azure/templates/microsoft.keyvault/vaults/secrets) создает секрет хранилища ключей.
 
 Другие примеры шаблонов хранилища Azure Key Vault можно найти [здесь](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Keyvault).
 
+### <a name="deploy-the-template"></a>Развертывание шаблона
+
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-key-vault-create%2Fazuredeploy.json"><img src="./media/quick-create-template/deploy-to-azure.png" alt="deploy to azure"/></a>
+    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-key-vault-create%2Fazuredeploy.json)
 
 2. Введите или выберите следующие значения.
 
@@ -90,11 +95,11 @@ ms.locfileid: "75982132"
 
 Для развертывания шаблона используется портал Azure. В дополнение к порталу Azure можно также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-powershell.md).
 
-## <a name="validate-the-deployment"></a>Проверка развертывания
+## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
 
 Можно проверить хранилище ключей и секрет с помощью портала Azure или использовать следующий скрипт Azure CLI или Azure PowerShell, чтобы просмотреть созданный секрет.
 
-# <a name="clitabcli"></a>[CLI](#tab/CLI)
+# <a name="cli"></a>[CLI](#tab/CLI)
 
 ```azurecli-interactive
 echo "Enter your key vault name:" &&
@@ -103,7 +108,7 @@ az keyvault secret list --vault-name $keyVaultName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ```azurepowershell-interactive
 $keyVaultName = Read-Host -Prompt "Enter your key vault name"
@@ -115,11 +120,11 @@ Write-Host "Press [ENTER] to continue..."
 
 Результат будет выглядеть примерно так:
 
-# <a name="clitabcli"></a>[CLI](#tab/CLI)
+# <a name="cli"></a>[CLI](#tab/CLI)
 
 ![Шаблон Resource Manager, интеграция Key Vault, вывод подтверждения портала развертывания](./media/quick-create-template/resource-manager-template-portal-deployment-cli-output.png)
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ![Шаблон Resource Manager, интеграция Key Vault, вывод подтверждения портала развертывания](./media/quick-create-template/resource-manager-template-portal-deployment-powershell-output.png)
 
@@ -129,7 +134,7 @@ Write-Host "Press [ENTER] to continue..."
 Другие руководства о Key Vault созданы на основе этого документа. Если вы планируете продолжить работу с последующими краткими руководствами и статьями, эти ресурсы можно не удалять.
 Удалите ненужную группу ресурсов. Key Vault и связанные ресурсы будут также удалены. Чтобы удалить группу ресурсов с помощью Azure CLI или Azure PowerShell, выполните следующие действия.
 
-# <a name="clitabcli"></a>[CLI](#tab/CLI)
+# <a name="cli"></a>[CLI](#tab/CLI)
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -138,7 +143,7 @@ az group delete --name $resourceGroupName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"

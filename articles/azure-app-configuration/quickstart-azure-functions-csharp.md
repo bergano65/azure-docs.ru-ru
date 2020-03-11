@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 1/9/2019
 ms.author: lcozzens
-ms.openlocfilehash: 268e6c5a999244eb643990143d1102d129b7af68
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 71a330523f1d3393a365fec29fb66f5c9773b6cc
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310062"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78207070"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
@@ -42,11 +42,7 @@ ms.locfileid: "76310062"
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
-1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet. Если вы не можете их найти, установите флажок **Включить предварительные выпуски**.
-
-    ```
-    Microsoft.Extensions.Configuration.AzureAppConfiguration 3.0.0-preview-010550001-251 or later
-    ```
+1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`. Если найти не удается, установите флажок **Включить предварительные выпуски**.
 
 2. Откройте *Function1.cs* и добавьте пространства имен поставщика конфигурации .NET Core и конфигурации службы "Конфигурация приложений".
 
@@ -54,6 +50,7 @@ ms.locfileid: "76310062"
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
+
 3. Добавьте свойство `static` с именем `Configuration`, чтобы создать отдельный экземпляр `IConfiguration`. Затем добавьте конструктор `static` для подключения к службе "Конфигурация приложения", вызвав `AddAzureAppConfiguration()`. Конфигурация будет загружена один раз при запуске приложения. Позже один и тот же экземпляр конфигурации будет использоваться для всех вызовов функций.
 
     ```csharp
@@ -66,6 +63,7 @@ ms.locfileid: "76310062"
         Configuration = builder.Build();
     }
     ```
+
 4. Обновите метод `Run`, чтобы считать значения из конфигурации.
 
     ```csharp
@@ -76,7 +74,7 @@ ms.locfileid: "76310062"
 
         string keyName = "TestApp:Settings:Message";
         string message = Configuration[keyName];
-            
+
         return message != null
             ? (ActionResult)new OkObjectResult(message)
             : new BadRequestObjectResult($"Please create a key-value with the key '{keyName}' in App Configuration.");
@@ -90,14 +88,18 @@ ms.locfileid: "76310062"
     ```CLI
         setx ConnectionString "connection-string-of-your-app-configuration-store"
     ```
+
     Если вы используете Windows PowerShell, выполните следующую команду:
 
     ```azurepowershell
         $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
     ```
+
     Если вы используете macOS или Linux, выполните следующую команду:
 
+    ```bash
         export ConnectionString='connection-string-of-your-app-configuration-store'
+    ```
 
 2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 

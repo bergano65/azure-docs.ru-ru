@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: a0ffa6e20b42ed8ac145b50c062f5c0a8998add0
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 58c5b3bdd6d50f2e512cccffe78bd4e70805d729
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77061647"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78204741"
 ---
-# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
 Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales` и `marketingspend`.
 
@@ -203,4 +203,4 @@ ms.locfileid: "77061647"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание собственных ключей для Apache Kafka](../kafka/apache-kafka-byok.md)
+> [Шифрование управляемых клиентом ключей](../disk-encryption.md)

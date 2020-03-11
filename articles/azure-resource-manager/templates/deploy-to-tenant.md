@@ -3,12 +3,12 @@ title: Развертывание ресурсов в клиенте
 description: Описывает развертывание ресурсов в области клиента в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: aa72116c3e6e98293b28b2d4413fd1dafb1372d9
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
-ms.translationtype: HT
+ms.openlocfilehash: 64090f1a0bac4b2b5f18d8dec14be0c3b051ac17
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78942741"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968882"
 ---
 # <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
 
@@ -70,7 +70,7 @@ https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json
 ```azurepowershell-interactive
 New-AzTenantDeployment `
   -Location "West US" `
-  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-level-deployments/new-mg/azuredeploy.json
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-level-deployments/new-mg/azuredeploy.json"
 ```
 
 Для REST API используйте [развертывания — создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope).

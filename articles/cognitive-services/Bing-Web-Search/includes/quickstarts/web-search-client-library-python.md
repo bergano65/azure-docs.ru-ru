@@ -8,16 +8,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/24/2020
 ms.author: aahi
-ms.openlocfilehash: 785840ad0b678337f513a700d37f0ba94671964e
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: ffa493c5bed152eea58d29bbf56215af7ebce5b1
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77651773"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78208186"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Python. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 
-Хотите увидеть код прямо сейчас? Примеры для клиентских библиотек [Поиска Bing для JavaScript](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/tree/master/samples/search) доступны на сайте GitHub.
+Хотите увидеть код прямо сейчас? Примеры для [клиентских библиотек Поиска Bing для Python](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/tree/master/samples/search) доступны на сайте GitHub.
 
 
 ## <a name="prerequisites"></a>Предварительные требования

@@ -5,12 +5,12 @@ author: zr-msft
 ms.topic: overview
 ms.date: 12/05/2017
 ms.author: zarhoads
-ms.openlocfilehash: 8d727256afbe152a4f7022d0fd2454c4677b023c
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 2eddedea7d626a92e21442c81aa49e00491958a1
+ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77595609"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78273015"
 ---
 # <a name="integrate-with-azure-managed-services-using-open-service-broker-for-azure-osba"></a>Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
 
@@ -29,39 +29,43 @@ ms.locfileid: "77595609"
 
 ## <a name="install-service-catalog"></a>Установка каталога услуг
 
-Сначала установите каталог услуг в кластере Kubernetes с помощью чарта Helm. Обновите установку Tiller (сервер Helm) в кластере с помощью этой команды.
+Сначала установите каталог услуг в кластере Kubernetes с помощью чарта Helm.
 
-```azurecli-interactive
+Перейдите по адресу [https://shell.azure.com](https://shell.azure.com), чтобы открыть Cloud Shell в браузере.
+
+Обновите установку Tiller (сервер Helm) в кластере с помощью этой команды.
+
+```console
 helm init --upgrade
 ```
 
 Теперь добавьте диаграмму "Каталог услуг" в репозиторий Helm.
 
-```azurecli-interactive
+```console
 helm repo add svc-cat https://svc-catalog-charts.storage.googleapis.com
 ```
 
 Наконец, установите каталог услуг с диаграммой Helm. Если в кластере включено управление доступом на основе ролей, выполните следующую команду.
 
-```azurecli-interactive
+```console
 helm install svc-cat/catalog --name catalog --namespace catalog --set apiserver.storage.etcd.persistence.enabled=true --set apiserver.healthcheck.enabled=false --set controllerManager.healthcheck.enabled=false --set apiserver.verbosity=2 --set controllerManager.verbosity=2
 ```
 
 Если в кластере не включено управление доступом на основе ролей, выполните следующую команду.
 
-```azurecli-interactive
+```console
 helm install svc-cat/catalog --name catalog --namespace catalog --set rbacEnable=false --set apiserver.storage.etcd.persistence.enabled=true --set apiserver.healthcheck.enabled=false --set controllerManager.healthcheck.enabled=false --set apiserver.verbosity=2 --set controllerManager.verbosity=2
 ```
 
 После запуска чарта Helm убедитесь, что в `servicecatalog` появляются выходные данные следующей команды.
 
-```azurecli-interactive
+```console
 kubectl get apiservice
 ```
 
 Например, вы должны увидеть результат, аналогичный приведенному ниже (показанный в усеченном виде).
 
-```
+```output
 NAME                                 AGE
 v1.                                  10m
 v1.authentication.k8s.io             10m
@@ -76,7 +80,7 @@ v1beta1.storage.k8s.io               10
 
 Начните с добавления открытого компонента Service Broker для репозитория Azure Helm.
 
-```azurecli-interactive
+```console
 helm repo add azure https://kubernetescharts.blob.core.windows.net/azure
 ```
 
@@ -88,7 +92,7 @@ az ad sp create-for-rbac
 
 Должен быть получен результат, аналогичный приведенному ниже. Обратите внимание на значения `appId`, `password` и `tenant`, которые можно использовать в следующем шаге.
 
-```JSON
+```json
 {
   "appId": "7248f250-0000-0000-0000-dbdeb8400d85",
   "displayName": "azure-cli-2017-10-15-02-20-15",
@@ -100,7 +104,7 @@ az ad sp create-for-rbac
 
 Задайте следующие переменные среды с помощью описанных выше значений.
 
-```azurecli-interactive
+```console
 AZURE_CLIENT_ID=<appId>
 AZURE_CLIENT_SECRET=<password>
 AZURE_TENANT_ID=<tenant>
@@ -114,7 +118,7 @@ az account show --query id --output tsv
 
 Снова задайте следующие переменные среды с помощью описанных выше значений.
 
-```azurecli-interactive
+```console
 AZURE_SUBSCRIPTION_ID=[your Azure subscription ID from above]
 ```
 
@@ -132,20 +136,20 @@ helm install azure/open-service-broker-azure --name osba --namespace osba \
 
 Выполните следующие команды для установки двоичных файлов интерфейса командной строки каталога услуг.
 
-```azurecli-interactive
+```console
 curl -sLO https://servicecatalogcli.blob.core.windows.net/cli/latest/$(uname -s)/$(uname -m)/svcat
 chmod +x ./svcat
 ```
 
 Теперь получите список брокеров установленной службы.
 
-```azurecli-interactive
+```console
 ./svcat get brokers
 ```
 
 Выходные данные должны иметь следующий вид.
 
-```
+```output
   NAME                               URL                                STATUS
 +------+--------------------------------------------------------------+--------+
   osba   http://osba-open-service-broker-azure.osba.svc.cluster.local   Ready
@@ -153,13 +157,13 @@ chmod +x ./svcat
 
 Затем получите список доступных классов службы. Отображаемые классы службы являются доступными службами под управлением Azure, которые могут предоставляться через открытый компонент Service Broker для Azure.
 
-```azurecli-interactive
+```console
 ./svcat get classes
 ```
 
 Наконец, получите список всех планов обслуживания. Они являются уровнями служб для служб под управлением Azure. Например, для Базы данных Azure для MySQL доступны планы от `basic50` для уровня "Базовый" с 50 единицами транзакций базы данных (DTU) до `standard800` для уровня "Стандартный" с 800 DTU.
 
-```azurecli-interactive
+```console
 ./svcat get plans
 ```
 
@@ -167,20 +171,20 @@ chmod +x ./svcat
 
 На этом шаге используется Helm для установки обновленного чарта Helm для WordPress. Чарт подготавливает внешний экземпляр Базы данных Azure для MySQL, который можно использовать в WordPress. Это может занять несколько минут.
 
-```azurecli-interactive
+```console
 helm install azure/wordpress --name wordpress --namespace wordpress --set resources.requests.cpu=0 --set replicaCount=1
 ```
 
 Чтобы убедиться, что при установке подготовлены нужные ресурсы, перечислите экземпляры и привязки установленной службы.
 
-```azurecli-interactive
+```console
 ./svcat get instances -n wordpress
 ./svcat get bindings -n wordpress
 ```
 
 Получите список установленных секретов.
 
-```azurecli-interactive
+```console
 kubectl get secrets -n wordpress -o yaml
 ```
 

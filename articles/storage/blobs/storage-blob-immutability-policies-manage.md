@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 68b144a838f0c6e65f3e399f610644315d109fde
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 05a155584f0cb69191883cb82b3db0af435ccc12
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903476"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970104"
 ---
 # <a name="set-and-manage-immutability-policies-for-blob-storage"></a>Настройка политик неизменности для хранилища BLOB-объектов и управление ими
 
@@ -23,7 +23,7 @@ ms.locfileid: "75903476"
 
 ## <a name="set-retention-policies-and-legal-holds"></a>Настройка политик хранения и юридических удержаний
 
-### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Создайте новый контейнер или выберите существующий контейнер для хранения BLOB-объектов, которые должны храниться в неизменяемом состоянии. Контейнер должен быть в учетной записи общего назначения версии 2 или хранилища BLOB-объектов.
 
@@ -59,11 +59,11 @@ ms.locfileid: "75903476"
 
 9. Чтобы очистить юридическое удержание, удалите примененный тег "идентификатор юридического удержания".
 
-### <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Эта возможность доступна в следующих группах команд: `az storage container immutability-policy` и `az storage container legal-hold`. Запустите в них `-h`, чтобы просмотреть команды.
 
-### <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -116,10 +116,10 @@ Remove-AzRmStorageContainerLegalHold -ResourceGroupName $resourceGroup `
     -StorageAccountName $storageAccount -Name $container -Tag <tag3>
 ```
 
-Создание или обновление политик неизменяемости:
+Создание или обновление политик неизменности на основе времени:
 
 ```powershell
-# Create an immutablity policy
+# Create a time-based immutablity policy
 Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $resourceGroup `
     -StorageAccountName $storageAccount -ContainerName $container -ImmutabilityPeriod 10
 ```
@@ -168,17 +168,23 @@ Remove-AzRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy
 
 ## <a name="enabling-allow-protected-append-blobs-writes"></a>Включение разрешения "разрешить защищенные добавочные большие двоичные объекты"
 
-В настоящее время можно получить доступ к параметру `allowProtectedAppendWrites` для политик хранения на основе времени с помощью этой [ссылки на портал](https://aka.ms/immutableappendblobs). 
-
-> [!IMPORTANT] 
->  Параметр Разрешить защищенные добавочные большие двоичные объекты записи в настоящее время доступен и виден только в следующих регионах:
-> - Восточная часть США
-> - Центрально-южная часть США
-> - Западная часть США 2
->
-> Дополнительные сведения см. в разделе [разрешение записи BLOB-объектов с защищенным добавлением](storage-blob-immutable-storage.md#allow-protected-append-blobs-writes).
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 ![Разрешить дополнительные операции записи после добавления](media/storage-blob-immutability-policies-manage/immutable-allow-additional-append-writes.png)
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Эта возможность доступна в следующих группах команд: `az storage container immutability-policy` и `az storage container legal-hold`. Запустите в них `-h`, чтобы просмотреть команды.
+
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```powershell
+# Create an immutablity policy with appends allowed
+Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $resourceGroup `
+    -StorageAccountName $storageAccount -ContainerName $container -ImmutabilityPeriod 10 -AllowProtectedAppendWrite $true
+```
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

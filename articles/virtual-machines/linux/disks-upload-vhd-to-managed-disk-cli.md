@@ -1,20 +1,19 @@
 ---
-title: Отправка виртуального жесткого диска в Azure с помощью Azure CLI
+title: Отправка виртуального жесткого диска с помощью Azure CLI
 description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск в регионах, используя Azure CLI с помощью прямой отправки.
-services: virtual-machines-linux,storage
+services: virtual-machines,storage
 author: roygara
 ms.author: rogarana
 ms.date: 09/20/2019
 ms.topic: article
-ms.service: virtual-machines-linux
-ms.tgt_pltfrm: linux
+ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 51c3933b5ee585c96ad81fe04d379b6771ae81e3
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 2a5bfec08546d6cf00b1e04017b3879db8f016ee
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457596"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970341"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-cli"></a>Отправка виртуального жесткого диска в Azure с помощью Azure CLI
 
@@ -24,7 +23,7 @@ ms.locfileid: "74457596"
 
 В настоящее время прямая отправка поддерживается для дисков уровня "Стандартный", "Стандартный SSD" и "Премиум", управляемых на SSD. Она пока не поддерживается для Ultra SSDs.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установка Azure CLI](/cli/azure/install-azure-cli).
@@ -122,7 +121,7 @@ az disk revoke-access -n $sourceDiskName -g $sourceRG
 az disk revoke-access -n $targetDiskName -g $targetRG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его как [диск данных к существующей виртуальной машине](add-disk.md) или [подключить диск к виртуальной машине в качестве диска ОС](upload-vhd.md#create-the-vm), чтобы создать новую виртуальную машину. 
 

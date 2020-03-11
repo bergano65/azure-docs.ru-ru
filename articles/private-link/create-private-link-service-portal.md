@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 02/03/2020
 ms.author: allensu
-ms.openlocfilehash: e316da12345c0bf1ea3682dadb1a7a65f250747b
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: f21b440ee0e2c53d9824300e85b683629c1575da
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77191106"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78252549"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-the-azure-portal"></a>Краткое руководство. Создание службы "Приватный канал" с помощью портала Azure
 
@@ -29,21 +29,22 @@ ms.locfileid: "77191106"
 
 Сначала создайте виртуальную сеть. Затем создайте внутреннюю подсистему балансировки нагрузки для использования со службой "Приватный канал".
 
-### <a name="create-the-virtual-network"></a>Создание виртуальной сети
+## <a name="virtual-network-and-parameters"></a>Виртуальные сети и параметры
 
 В этом разделе вы создадите виртуальную сеть. Вы также создадите подсеть для размещения подсистемы балансировки нагрузки, которая обращается к службе "Приватный канал".
 
-1. Вверху с левой стороны портала выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
+В этом разделе необходимо заменить в выполняемых действиях указанные параметры приведенными ниже сведениями.
 
-1. На панели **Создать виртуальную сеть** введите или выберите приведенные ниже значения.
+| Параметр                   | Значение                |
+|-----------------------------|----------------------|
+| **\<resource-group-name>**  | myResourceGroupLB |
+| **\<virtual-network-name>** | myVNet          |
+| **\<region-name>**          | восточная часть США 2      |
+| **\<IPv4-address-space>**   | 10.3.0.0\16          |
+| **\<subnet-name>**          | myBackendSubnet        |
+| **\<subnet-address-range>** | 10.3.0.0\24          |
 
-   - **Name** (Имя). Введите **myVNet**.
-   - **Группа ресурсов**: выберите **Создать новую**, введите **myResourceGroupLB** и нажмите кнопку **ОК**.
-   - **Подсеть** > **Имя**. Введите **myBackendSubnet**.
-
-1. Нажмите кнопку **создания**.
-
-   ![Создание виртуальной сети](../load-balancer/media/tutorial-load-balancer-basic-internal-portal/2-load-balancer-virtual-network.png)
+[!INCLUDE [virtual-networks-create-new](../../includes/virtual-networks-create-new.md)]
 
 ### <a name="create-a-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Стандартный"
 

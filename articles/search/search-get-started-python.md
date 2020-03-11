@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
 ms.date: 02/10/2020
-ms.openlocfilehash: 15a3801a7ea99d6d799bcd8adf340b03f36bc196
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 93fb9ec735de1abf89eb217d0f4096fcfc0afe94
+ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121618"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78227110"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter
 
@@ -126,7 +126,7 @@ ms.locfileid: "77121618"
     }
     ```
 
-2. В другой ячейке сформулируйте сам запрос. Этот запрос PUT отправляется в коллекцию индексов службы поиска и создает индекс на основе схемы индекса, которую вы указали в предыдущей ячейке.
+2. В другой ячейке сформулируйте сам запрос. Этот запрос POST отправляется в коллекцию индексов службы поиска и создает индекс на основе схемы индекса, которую вы указали в предыдущей ячейке.
 
    ```python
    url = endpoint + "indexes" + api_version

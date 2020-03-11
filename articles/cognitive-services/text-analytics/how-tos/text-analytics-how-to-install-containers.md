@@ -9,22 +9,25 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 03/10/2020
 ms.author: dapine
-ms.openlocfilehash: 6e05dc2136211bcd15a9f0583358b05ccbf96f5a
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 65033f9b6599d690b1097b4b78aa01148a40fc39
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383163"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037502"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
 Контейнеры позволяют запускать API анализа текста в собственной среде и прекрасно подходят для конкретных требований к безопасности и управлению данными. Контейнеры Анализ текста обеспечивают расширенную обработку естественного языка по необработанному тексту и включают три основные функции: анализ тональностиности, извлечение ключевых фраз и определение языка. Связывание сущностей в настоящее время не поддерживается в контейнере.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+> [!IMPORTANT]
+> Бесплатная учетная запись ограничена 5 000 транзакциями в месяц, а для контейнеров допустимы только <a href="https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics" target="_blank">ценовые <span class="docon docon-navigate-external x-hidden-focus"></span> категории</a> " **бесплатный** " и " **стандартный** ". Дополнительные сведения о тарифах запросов транзакций см. в разделе [ограничения данных](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview#data-limits).
+
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы запустить любой из Анализ текста контейнеров, необходимо иметь главный компьютер и среды контейнеров.
 
@@ -32,9 +35,9 @@ ms.locfileid: "74383163"
 
 Прежде чем использовать контейнеры Анализа текста, необходимо выполнить следующие условия:
 
-|обязательные|Назначение|
+|Обязательно|Назначение|
 |--|--|
-|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). См. [общие сведения о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Ресурс API анализа текста |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure [анализ текста](../../cognitive-services-apis-create-account.md) для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор" и "Ключи" API анализа текста на портале Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора**|
 
@@ -48,15 +51,15 @@ ms.locfileid: "74383163"
 
 В следующей таблице описаны минимальные и рекомендуемые требования к ЦП (минимум 2,6 ГГц или быстрее) и памяти, в ГБ, для выделения для каждого контейнера Анализа текста.
 
-# <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase).
+# <a name="key-phrase-extraction"></a>[Извлечение ключевых фраз](#tab/keyphrase).
 
 [!INCLUDE [key-phrase-extraction-container-requirements](../includes/key-phrase-extraction-container-requirements.md)]
 
-# <a name="language-detectiontablanguage"></a>[Распознавание языка](#tab/language).
+# <a name="language-detection"></a>[Распознавание языка](#tab/language).
 
 [!INCLUDE [language-detection-container-requirements](../includes/language-detection-container-requirements.md)]
 
-# <a name="sentiment-analysistabsentiment"></a>[Анализ тональности](#tab/sentiment).
+# <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment).
 
 [!INCLUDE [sentiment-analysis-container-requirements](../includes/sentiment-analysis-container-requirements.md)]
 
@@ -71,15 +74,15 @@ ms.locfileid: "74383163"
 
 Образы контейнеров для Анализ текста доступны в реестре контейнеров Microsoft.
 
-# <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase).
+# <a name="key-phrase-extraction"></a>[Извлечение ключевых фраз](#tab/keyphrase).
 
 [!INCLUDE [key-phrase-extraction-container-repository](../includes/key-phrase-extraction-container-repository.md)]
 
-# <a name="language-detectiontablanguage"></a>[Распознавание языка](#tab/language).
+# <a name="language-detection"></a>[Распознавание языка](#tab/language).
 
 [!INCLUDE [language-detection-container-repository](../includes/language-detection-container-repository.md)]
 
-# <a name="sentiment-analysistabsentiment"></a>[Анализ тональности](#tab/sentiment).
+# <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment).
 
 [!INCLUDE [sentiment-analysis-container-repository](../includes/sentiment-analysis-container-repository.md)]
 
@@ -89,15 +92,15 @@ ms.locfileid: "74383163"
 
 ### <a name="docker-pull-for-the-text-analytics-containers"></a>Извлечение DOCKER для контейнеров Анализ текста
 
-# <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase).
+# <a name="key-phrase-extraction"></a>[Извлечение ключевых фраз](#tab/keyphrase).
 
 [!INCLUDE [docker-pull-key-phrase-extraction-container](../includes/docker-pull-key-phrase-extraction-container.md)]
 
-# <a name="language-detectiontablanguage"></a>[Распознавание языка](#tab/language).
+# <a name="language-detection"></a>[Распознавание языка](#tab/language).
 
 [!INCLUDE [docker-pull-language-detection-container](../includes/docker-pull-language-detection-container.md)]
 
-# <a name="sentiment-analysistabsentiment"></a>[Анализ тональности](#tab/sentiment).
+# <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment).
 
 [!INCLUDE [docker-pull-sentiment-analysis-container](../includes/docker-pull-sentiment-analysis-container.md)]
 
@@ -116,22 +119,22 @@ ms.locfileid: "74383163"
 
 Доступны [примеры](../text-analytics-resource-container-config.md#example-docker-run-commands) команды `docker run`.
 
-# <a name="key-phrase-extractiontabkeyphrase"></a>[Извлечение ключевых фраз](#tab/keyphrase).
+# <a name="key-phrase-extraction"></a>[Извлечение ключевых фраз](#tab/keyphrase).
 
 [!INCLUDE [docker-run-key-phrase-extraction-container](../includes/docker-run-key-phrase-extraction-container.md)]
 
-# <a name="language-detectiontablanguage"></a>[Распознавание языка](#tab/language).
+# <a name="language-detection"></a>[Распознавание языка](#tab/language).
 
 [!INCLUDE [docker-run-language-detection-container](../includes/docker-run-language-detection-container.md)]
 
-# <a name="sentiment-analysistabsentiment"></a>[Анализ тональности](#tab/sentiment).
+# <a name="sentiment-analysis"></a>[Анализ тональности](#tab/sentiment).
 
 [!INCLUDE [docker-run-sentiment-analysis-container](../includes/docker-run-sentiment-analysis-container.md)]
 
 ***
 
 > [!IMPORTANT]
-> Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 
 [!INCLUDE [Running multiple containers on the same host](../../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -167,23 +170,23 @@ ms.locfileid: "74383163"
 
 [!INCLUDE [Discoverability of more container information](../../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>summary
+## <a name="summary"></a>Сводка
 
-В этой статье вы узнали основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Анализа текста. Краткая сводка.
+В этой статье вы узнали основные понятия и рабочий процесс для скачивания, установки и выполнения контейнеров Анализа текста. В разделе "Сводка" сделайте следующее.
 
 * Анализ текста предоставляет три контейнера Linux для DOCKER, включая различные возможности:
    * *Извлечение ключевых фраз*.
    * *Распознавание языка*.
    * *Анализ тональности*.
 * Образы контейнеров скачиваются из Реестра контейнеров (Майкрософт) в Azure.
-* Образы контейнеров, которые выполняются в Docker.
+* Образы контейнеров выполняются в Docker.
 * Указав узел URI контейнера, пакет SDK или REST API можно использовать для вызова операций в контейнерах Анализа текста.
-* При создании контейнера необходимо указать данные для выставления счетов.
+* При создании экземпляра контейнера нужно указать данные для выставления счетов.
 
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь со статьей о [параметрах конфигурации](../text-analytics-resource-container-config.md).
+* Ознакомьтесь со статьей о [конфигурации контейнеров](../text-analytics-resource-container-config.md).
 * Чтобы решить проблемы, связанные с функциональностью, ознакомьтесь с [часто задаваемыми вопросами](../text-analytics-resource-faq.md).

@@ -9,12 +9,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 02/26/2020
 ms.author: tamram
-ms.openlocfilehash: 57ab56fe3028da9011e86c589209e7505e69e719
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: 58532c6eb6e01a993bce7d6e22a7b5274a465963
+ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77650936"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78298209"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
@@ -28,6 +28,8 @@ Azure CLI — это интерфейс командной строки Azure д
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
+## <a name="install-the-azure-cli-locally"></a>Установка Azure CLI в локальной среде
+
 Если вы решили установить и использовать Azure CLI на локальном компьютере, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.46 или более поздней версии. Выполните команду `az --version`, чтобы определить версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 Если вы используете Azure CLI на локальном компьютере, необходимо войти в систему и пройти проверку подлинности. В этом шаге нет необходимости, если вы используете Azure Cloud Shell. Чтобы войти в Azure CLI, запустите `az login` и пройдите проверку подлинности в окне браузера:
@@ -36,11 +38,13 @@ Azure CLI — это интерфейс командной строки Azure д
 az login
 ```
 
+Дополнительные сведения о проверке подлинности с помощью Azure CLI см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
+
 ## <a name="authorize-access-to-blob-storage"></a>Авторизация доступа к хранилищу BLOB-объектов
 
 Вы можете предоставить доступ к хранилищу BLOB-объектов из Azure CLI либо с использованием учетных данных Azure AD или ключа доступа к учетной записи хранения. Рекомендуется использовать учетные данные Azure AD. В этой статье показано, как авторизовать операции в хранилище BLOB-объектов с помощью Azure AD.
 
-Команды Azure CLI для операций с данными в хранилище BLOB-объектов поддерживают параметр `--auth-mode`, что позволяет указать, как авторизовать определенную операцию. Задайте для параметра `--auth-mode` значение `login`, чтобы выполнять авторизацию с использованием учетных данных Azure AD. Дополнительные сведения см. в статье [Run Azure CLI commands with Azure AD credentials to access blob or queue data](../common/authorize-active-directory-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) (Выполнение команд Azure CLI с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей).
+Команды Azure CLI для операций с данными в хранилище BLOB-объектов поддерживают параметр `--auth-mode`, что позволяет указать, как авторизовать определенную операцию. Задайте для параметра `--auth-mode` значение `login`, чтобы выполнять авторизацию с использованием учетных данных Azure AD. Дополнительные сведения см. в статье [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](../common/authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 Только операции с данными хранилища BLOB-объектов поддерживают параметр `--auth-mode`. Для авторизации операций управления, таких как создание группы ресурсов или учетной записи хранения, автоматически используются учетные данные Azure AD.
 
@@ -149,7 +153,7 @@ azcopy copy 'C:\myDirectory\myTextFile.txt' 'https://mystorageaccount.blob.core.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны какие-либо ресурсы в группе ресурсов, включая учетную запись хранения, созданную в рамках этого краткого руководства, удалите группу ресурсов с помощью команды [az group delete](/cli/azure/group). Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
+Если вы решили удалить ресурсы, созданные для этого краткого руководства, вместе с группой ресурсов, выполните для этого команду [az group delete](/cli/azure/group). Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
 ```azurecli
 az group delete \

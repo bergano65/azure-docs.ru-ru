@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство. Создание классификатора рабочих нагрузок с помощью T-SQL '
+title: Краткое руководство. Создание классификатора рабочих нагрузок с помощью T-SQL
 description: Использование T-SQL для создания классификатора рабочей нагрузки с высокой важностью.
 services: sql-data-warehouse
 author: ronortloff
@@ -7,15 +7,16 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: quickstart
 ms.subservice: workload-management
-ms.date: 05/01/2019
+ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1375605b6dab385b53af9212023767003e686e60
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.custom: azure-synapse
+ms.openlocfilehash: 9f15317141e56614cf6fe04f46ff478a73266775
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646295"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78200504"
 ---
 # <a name="quickstart-create-a-workload-classifier-using-t-sql"></a>Краткое руководство. Создание рабочей нагрузки классификатора с помощью T-SQL
 
@@ -24,7 +25,7 @@ ms.locfileid: "73646295"
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!NOTE]
-> Создание хранилища данных SQL может привести к дополнительным расходам.  Дополнительные сведения см. на странице [цен на хранилище данных SQL](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
+> Создание экземпляра SQL Analytics в Azure Synapse Analytics может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
 >
 >
 
@@ -34,7 +35,7 @@ ms.locfileid: "73646295"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-login-for-theceo"></a>Создание имени для входа TheCEO
 
@@ -105,8 +106,8 @@ DROP USER [TheCEO]
 
 5. Чтобы удалить группу ресурсов, выберите **myResourceGroup**, а затем **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Теперь вы создали классификатор рабочей нагрузки. Выполните несколько запросов как TheCEO, чтобы проверить, как они работают. Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
-- Дополнительные сведения об управлении рабочей нагрузкой Хранилища данных SQL Azure см. в статьях [Azure SQL Data Warehouse workload importance](sql-data-warehouse-workload-importance.md) (Важность рабочих нагрузок Хранилища данных SQL Azure) и [Azure SQL Data Warehouse workload classification](sql-data-warehouse-workload-classification.md) (Классификация рабочих нагрузок Хранилища данных SQL Azure).
+- Дополнительные сведения об управлении рабочей нагрузкой SQL Analytics см. в статьях о [важности рабочих нагрузок](sql-data-warehouse-workload-importance.md) и [классификации рабочих нагрузок](sql-data-warehouse-workload-classification.md).
 - См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).

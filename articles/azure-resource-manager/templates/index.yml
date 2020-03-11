@@ -11,13 +11,13 @@ metadata:
   ms.collection: na
   author: mumian
   ms.author: jgao
-  ms.date: 03/04/2020
-  ms.openlocfilehash: 0ea805d87db78d0a7fadad0a07e01e9387d568a5
-  ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+  ms.date: 03/09/2020
+  ms.openlocfilehash: f05b14039f5b83b4f214d7fa479a3ab809e859c6
+  ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/05/2020
-  ms.locfileid: "78299250"
+  ms.lasthandoff: 03/09/2020
+  ms.locfileid: "78943232"
 landingContent:
 - title: Сведения о шаблонах ARM
   linkLists:
@@ -33,8 +33,6 @@ landingContent:
       url: deployment-modes.md
     - text: Связанные шаблоны
       url: linked-templates.md
-    - text: Развертывания на уровне подписки
-      url: deploy-to-subscription.md
   - linkListType: video
     links:
     - text: Новые возможности
@@ -85,26 +83,26 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: C помощью PowerShell
+    - text: PowerShell
       url: deploy-powershell.md
-    - text: С помощью CLI
+    - text: Azure CLI
       url: deploy-cli.md
-    - text: С помощью портала
+    - text: Портал
       url: deploy-portal.md
-    - text: С помощью REST API
+    - text: REST API
       url: deploy-rest.md
     - text: Развертывание "что если"
       url: template-deploy-what-if.md
-    - text: Просмотр журнала развертывания
-      url: deployment-history.md
-- title: Управление шаблонами
+- title: Развертывание в области
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Экспорт шаблонов
-      url: export-template-portal.md
-    - text: CI/CD
-      url: add-template-to-azure-pipelines.md
+    - text: Подписка
+      url: deploy-to-subscription.md
+    - text: группа управления;
+      url: deploy-to-management-group.md
+    - text: Клиент
+      url: deploy-to-tenant.md
 - title: См. справочные материалы
   linkLists:
   - linkListType: reference
@@ -123,3 +121,13 @@ landingContent:
       url: /java/api/com.microsoft.azure.management.resources
     - text: Python
       url: /python/api/overview/azure/resources?view=azure-python
+- title: Управление шаблонами
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Экспорт шаблонов
+      url: export-template-portal.md
+    - text: CI/CD
+      url: add-template-to-azure-pipelines.md
+    - text: Просмотр журнала развертывания
+      url: deployment-history.md

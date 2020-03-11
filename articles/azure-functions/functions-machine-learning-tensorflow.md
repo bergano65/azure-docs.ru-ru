@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 01/15/2020
 ms.author: antchu
 ms.custom: mvc
-ms.openlocfilehash: e98655dca7d682e5c42f3b0ae7f26c892bd12377
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: c64d87b2430cc1d733a67bbc1e803590a37b1714
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76710723"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78190778"
 ---
-# <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство. Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
+# <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство по Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
 
 В этой статье вы узнаете, как классифицировать изображение на основе его содержимого с помощью модели машинного обучения, используя Python, TensorFlow и Функции Azure. Так как вся работа выполняется локально и никакие ресурсы Azure не создаются в облаке, вы не понесете никакие затраты на прохождение этого учебника.
 
@@ -59,7 +59,7 @@ ms.locfileid: "76710723"
 Перейдите к папке *start* и выполните следующие команды для создания и активации виртуальной среды с именем `.venv`. Обязательно используйте версию Python 3.7, которую поддерживают Функции Azure.
 
 
-# <a name="bashtabbash"></a>[bash](#tab/bash)
+# <a name="bash"></a>[bash](#tab/bash)
 
 ```bash
 cd start
@@ -79,7 +79,7 @@ source .venv/bin/activate
 sudo apt-get install python3-venv
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 cd start
@@ -93,7 +93,7 @@ py -m venv .venv
 .venv\scripts\activate
 ```
 
-# <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+# <a name="cmd"></a>[Cmd](#tab/cmd)
 
 ```cmd
 cd start
@@ -133,7 +133,7 @@ py -m venv .venv
     func new --name classify --template "HTTP trigger"
     ```
 
-    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в статье [Краткое руководство. Создание функции Python, активируемой HTTP, в Azure](functions-create-first-function-python.md#optional-examine-the-file-contents).
+    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python#optional-examine-the-file-contents) краткого руководства по программированию на Python.
 
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
@@ -158,19 +158,19 @@ py -m venv .venv
 
 1. В папке *start* выполните следующую команду, чтобы скопировать файлы модели в папку *classify*. Не забудьте добавить `\*` в эту команду. 
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     cp ../resources/model/* classify
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     copy ..\resources\model\* classify
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     ```cmd
     copy ..\resources\model\* classify
@@ -182,19 +182,19 @@ py -m venv .venv
 
 1. В папке *start* выполните следующую команду, чтобы скопировать файл с вспомогательным кодом в папку *classify*:
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     cp ../resources/predict.py classify
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     copy ..\resources\predict.py classify
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     ```cmd
     copy ..\resources\predict.py classify
@@ -266,19 +266,19 @@ py -m venv .venv
 
 1. Запустите HTTP-сервер с Python.
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
 
     ```bash 
     python -m http.server
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
     ```powershell
     py -m http.server
     ```
 
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
 
     ```cmd
     py -m http.server

@@ -5,18 +5,17 @@ description: Узнайте о возможностях, доступных бе
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: overview
+ms.topic: conceptual
 ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
-ms.date: 11/05/2019
-ms.custom: seodec18
-ms.openlocfilehash: 21c6972b73f15a3f128b4a26222e478a5e2a245a
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
-ms.translationtype: HT
+ms.date: 03/05/2020
+ms.openlocfilehash: 9b49eb6237346a76903202a118331383c5a8f623
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75542160"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78944252"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -48,7 +47,7 @@ ms.locfileid: "75542160"
 
 ## <a name="support-timeline"></a>Сроки поддержки
 
-С 9 января 2019 г. прекращается поддержка Azure Machine Learning Workbench, Экспериментирования в Машинном обучении Azure, учетных записей Управления моделями, а также соответствующего интерфейса командной строки и пакета SDK.
+С 9 января 2019 г. прекратилась поддержка учетных записей Machine Learning Workbench, Экспериментирования в Машинном обучении Azure и Управления моделями, а также соответствующего интерфейса командной строки и пакета SDK.
 
 Все новейшие возможности доступны при использовании нового <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](how-to-manage-workspace.md).
 

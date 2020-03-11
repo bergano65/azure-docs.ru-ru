@@ -1,18 +1,18 @@
 ---
 title: Создание и Настройка хранилища ключей для шифрования дисков Azure
 description: В этой статье описаны действия по созданию и настройке хранилища ключей для использования с шифрованием дисков Azure.
-ms.service: virtual-machines
+ms.service: virtual-machines-linux
 ms.topic: article
 author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 90306c55d976670f432d146d94764c4d90b8667d
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: a818d9fe9707d1789fbe8e77489fc380fd2c92dd
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828501"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970629"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure
 
@@ -63,7 +63,7 @@ Connect-AzAccount
 
 Создайте группу ресурсов с помощью команды [AZ Group create](/cli/azure/group?view=azure-cli-latest#az-group-create) Azure CLI, команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) Azure PowerShell или из [портал Azure](https://portal.azure.com).
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 az group create --name "myResourceGroup" --location eastus
@@ -84,7 +84,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 
 Каждый Key Vault должен иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 При создании хранилища ключей с помощью Azure CLI добавьте флаг "--Enabled-to-Disk-Encryption".
 
@@ -103,7 +103,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 Хранилище ключей также можно создать с помощью [шаблона диспетчер ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
-1. В шаблоне быстрого запуска Azure щелкните **Deploy to Azure** (Развернуть в Azure).
+1. На странице шаблона быстрого запуска Azure нажмите кнопку **Deploy to Azure** (Развернуть в Azure).
 2. Выберите подписку, группу ресурсов, расположение группы ресурсов, Key Vault имя, идентификатор объекта, юридические условия и соглашение, а затем щелкните **приобрести**. 
 
 
@@ -113,7 +113,7 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 Если вы не включили хранилище ключей для шифрования дисков, развертывания или развертывания шаблона во время создания (как показано на предыдущем шаге), необходимо обновить его политики расширенного доступа.  
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Включите шифрование дисков для хранилища ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update). 
 
@@ -155,12 +155,12 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
      Set-AzKeyVaultAccessPolicy -VaultName "<your-unique-keyvault-name>" -ResourceGroupName "MyResourceGroup" -EnabledForTemplateDeployment
      ```
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Выберите хранилище ключей, перейдите к разделу **политики доступа**и **щелкните, чтобы отобразить дополнительные политики доступа**.
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](./media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -183,7 +183,7 @@ URL-адреса KEK хранилища ключей должны иметь в�
   * Допустимый URL-адрес хранилища ключей: *https://contosovault.vault.azure.net/secrets/contososecret/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
   * Недопустимый URL-адрес хранилища ключей: *https://contosovault.vault.azure.net:443/secrets/contososecret/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Используйте команду Azure CLI [AZ keyvault Key Create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) , чтобы создать новый KEK и сохранить его в хранилище ключей.
 
@@ -218,7 +218,7 @@ $KEK = Get-AzKeyVaultKey -VaultName "<your-unique-keyvault-name>" -Name "myKEK"
 Set-AzVMDiskEncryptionExtension -ResourceGroupName MyResourceGroup -VMName "MyVM" -DiskEncryptionKeyVaultUrl $KeyVault.VaultUri -DiskEncryptionKeyVaultId $KeyVault.ResourceId -KeyEncryptionKeyVaultId $KeyVault.ResourceId -KeyEncryptionKeyUrl $KEK.Id -SkipVmBackup -VolumeType All
  ```
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сценарий CLI для предварительных требований к шифрованию дисков Azure](https://github.com/ejarvi/ade-cli-getting-started)
 - [Сценарий PowerShell для предварительных требований к шифрованию дисков Azure](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)

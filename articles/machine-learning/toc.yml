@@ -79,6 +79,8 @@
       href: sample-designer-datasets.md
     - name: Полные примеры MLOps
       href: 'https://github.com/microsoft/MLOps'
+    - name: Примеры конвейеров из конструктора
+      href: samples-designer.md
 - name: Основные понятия
   items:
     - name: Рабочая область
@@ -216,30 +218,6 @@
           href: how-to-cicd-data-ingestion.md
     - name: Обучение моделей
       items:
-        - name: Использование конструктора
-          displayName: sample designer experiments
-          items:
-            - name: Прогнозирование цены
-              displayName: 'regression, studio'
-              href: how-to-designer-sample-regression-automobile-price-basic.md
-            - name: Прогнозирование цены (расширенное)
-              displayName: 'regression, studio'
-              href: how-to-designer-sample-regression-automobile-price-compare-algorithms.md
-            - name: Прогнозирование дохода
-              displayName: 'classification, studio'
-              href: how-to-designer-sample-classification-predict-income.md
-            - name: Прогнозирование кредитного риска (расширенное)
-              displayName: 'classification, studio'
-              href: how-to-designer-sample-classification-credit-risk-cost-sensitive.md
-            - name: Прогнозирование оттока
-              displayName: 'classification, studio'
-              href: how-to-designer-sample-classification-churn.md
-            - name: Прогнозирование задержки рейсов
-              displayName: 'classification, studio'
-              href: how-to-designer-sample-classification-flight-delay.md
-            - name: Классификация текстов
-              displayName: 'classification, studio'
-              href: how-to-designer-sample-text-classification.md
         - name: Использование средств оценки для машинного обучения
           items:
             - name: Создание средств оценки при обучении модели

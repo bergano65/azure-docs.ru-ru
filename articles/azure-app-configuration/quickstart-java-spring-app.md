@@ -10,12 +10,12 @@ ms.service: azure-app-configuration
 ms.topic: quickstart
 ms.date: 12/17/2019
 ms.author: lcozzens
-ms.openlocfilehash: 172fe646b294ca511a22128094c56172c4268018
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 2521adfda731c06c879f5cfeb6283567228bf664
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750276"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77919368"
 ---
 # <a name="quickstart-create-a-java-spring-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы "Конфигурация приложений Azure"
 
@@ -31,7 +31,7 @@ ms.locfileid: "75750276"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+1. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
     | Клавиши | Значение |
     |---|---|
@@ -45,30 +45,42 @@ ms.locfileid: "75750276"
 
 1. Перейдите по адресу <https://start.spring.io/>.
 
-2. Задайте такие параметры:
+1. Задайте такие параметры:
 
-   * Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.
-   * Выберите **Spring Boot** не ниже версии 2.0.
-   * Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.
-   * Добавление зависимости **Spring Web**.
+   - Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.
+   - Выберите **Spring Boot** не ниже версии 2.0.
+   - Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.
+   - Добавление зависимости **Spring Web**.
 
-3. После указания предыдущих параметров выберите **Создать проект**. При появлении запроса скачайте проект на локальный компьютер.
+1. После указания предыдущих параметров выберите **Создать проект**. При появлении запроса скачайте проект на локальный компьютер.
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. После извлечения файлов в локальной системе простое приложение Spring Boot можно редактировать. Найдите файл *pom.xml* в корневой папке приложения.
 
-2. Откройте файл *pom.xml* в текстовом редакторе и добавьте начальное приложение Spring Cloud Azure Config в список `<dependencies>`:
+1. Откройте файл *pom.xml* в текстовом редакторе и добавьте начальное приложение Spring Cloud Azure Config в список `<dependencies>`:
+
+    **Spring Cloud 1.1.x**
 
     ```xml
     <dependency>
         <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-starter-azure-appconfiguration-config</artifactId>
-        <version>1.1.0</version>
+        <artifactId>spring-cloud-azure-appconfiguration-config</artifactId>
+        <version>1.1.2</version>
     </dependency>
     ```
 
-3. Создайте файл Java с именем *MessageProperties.java* в каталоге пакета приложения. Добавьте следующие строки.
+    **Spring Cloud 1.2.x**
+
+    ```xml
+    <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>spring-cloud-azure-appconfiguration-config</artifactId>
+        <version>1.2.2</version>
+    </dependency>
+    ```
+
+1. Создайте файл Java с именем *MessageProperties.java* в каталоге пакета приложения. Добавьте следующие строки.
 
     ```java
     package com.example.demo;
@@ -89,7 +101,7 @@ ms.locfileid: "75750276"
     }
     ```
 
-4. Создайте файл Java с именем *HelloController.java* в каталоге пакета приложения. Добавьте следующие строки.
+1. Создайте файл Java с именем *HelloController.java* в каталоге пакета приложения. Добавьте следующие строки.
 
     ```java
     package com.example.demo;
@@ -112,7 +124,7 @@ ms.locfileid: "75750276"
     }
     ```
 
-5. Откройте основной файл приложения Java и добавьте `@EnableConfigurationProperties`, чтобы включить эту функцию.
+1. Откройте основной файл приложения Java и добавьте `@EnableConfigurationProperties`, чтобы включить эту функцию.
 
     ```java
     import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -126,10 +138,28 @@ ms.locfileid: "75750276"
     }
     ```
 
-6. В каталоге ресурсов создайте файл с именем `bootstrap.properties` и добавьте в него приведенные ниже строки. Замените примеры значений на соответствующие свойства хранилища конфигураций приложений.
+1. В каталоге ресурсов создайте файл с именем `bootstrap.properties` и добавьте в него приведенные ниже строки. Замените примеры значений на соответствующие свойства хранилища конфигураций приложений.
 
     ```CLI
-    spring.cloud.azure.appconfiguration.stores[0].connection-string=[your-connection-string]
+    spring.cloud.azure.appconfiguration.stores[0].name= ${APP_CONFIGURATION_CONNECTION_STRING}
+    ```
+
+1. Задайте переменную среды с именем **APP_CONFIGURATION_CONNECTION_STRING** и присвойте ей значение ключа доступа к хранилищу службы "Конфигурация приложений". В командной строке выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
+
+    ```CLI
+        setx APP_CONFIGURATION_CONNECTION_STRING "connection-string-of-your-app-configuration-store"
+    ```
+
+    Если вы используете Windows PowerShell, выполните следующую команду:
+
+    ```azurepowershell
+        $Env:APP_CONFIGURATION_CONNECTION_STRING = "connection-string-of-your-app-configuration-store"
+    ```
+
+    Если вы используете macOS или Linux, выполните следующую команду:
+
+    ```console
+        export APP_CONFIGURATION_CONNECTION_STRING='connection-string-of-your-app-configuration-store'
     ```
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально

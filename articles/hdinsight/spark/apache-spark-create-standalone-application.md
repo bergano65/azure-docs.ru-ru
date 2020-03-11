@@ -5,19 +5,19 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.date: 06/26/2019
-ms.openlocfilehash: 156892a4785bf1644d29b82e98c3b2ae202c5a49
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: hdinsightactive,mvc
+ms.date: 02/28/2020
+ms.openlocfilehash: aa23b61967b27fefba863255721f4a0709ec02d5
+ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494692"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78204578"
 ---
 # <a name="tutorial-create-a-scala-maven-application-for-apache-spark-in-hdinsight-using-intellij"></a>Руководство по Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ
 
-Из этого руководства вы узнаете, как создать приложение [Apache Spark](https://spark.apache.org/) на языке [Scala](https://www.scala-lang.org/) в [Apache Maven](https://maven.apache.org/) с помощью IntelliJ IDEA. В качестве системы сборки в этой статье используется Apache Maven и изначально применяется существующий архетип Maven для Scala, который обеспечивает IntelliJ IDEA.  Создание приложения Scala в IntelliJ IDEA включает в себя следующие этапы:
+Из этого руководства вы узнаете, как создать приложение [Apache Spark](./apache-spark-overview.md) на языке [Scala](https://www.scala-lang.org/) в [Apache Maven](https://maven.apache.org/) с помощью IntelliJ IDEA. В качестве системы сборки в этой статье используется Apache Maven и изначально применяется существующий архетип Maven для Scala, который обеспечивает IntelliJ IDEA.  Создание приложения Scala в IntelliJ IDEA включает в себя следующие этапы:
 
 * использование Maven в качестве системы сборки;
 * обновление файла объектной модели проектов для разрешения зависимостей модуля Spark;
@@ -25,7 +25,7 @@ ms.locfileid: "73494692"
 * создание JAR-файла, который можно отправить в кластеры HDInsight Spark;
 * запуск приложений с помощью Livy в кластере Spark.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 > * Установка подключаемого модуля Scala для IntelliJ IDEA
 > * Разработка приложения Scala Maven с помощью IntelliJ.
@@ -61,30 +61,30 @@ ms.locfileid: "73494692"
 
 1. Запустите IntelliJ IDEA и выберите **Create New Project** (Создать проект), чтобы открыть окно **New Project** (Новый проект).
 
-2. На левой панели щелкните **Azure Spark/HDInsight**.
+2. На панели слева выберите **Azure Spark/HDInsight**.
 
 3. В главном окне выберите **Spark Project (Scala)** (Проект Spark (Scala)).
 
-4. Из раскрывающегося списка **Build tool** (Инструмент сборки) выберите один из следующих вариантов:
+4. Из раскрывающегося списка **Build tool** (Инструмент сборки) выберите одно из следующих значений:
       * **Maven** для поддержки мастера создания проекта Scala.
       * **SBT** для управления зависимостями и создания проекта Scala.
 
-   ![Диалоговое окно нового проекта в IntelliJ](./media/apache-spark-create-standalone-application/create-hdi-scala-app.png)
+   ![Диалоговое окно нового проекта в IntelliJ](./media/apache-spark-create-standalone-application/intellij-project-apache-spark.png)
 
-5. Щелкните **Далее**.
+5. Выберите **Далее**.
 
 6. В окне **New Project** (Новый проект) укажите следующую информацию:  
 
-  	|  Свойство   | ОПИСАНИЕ   |  
+  	|  Свойство   | Описание   |  
   	| ----- | ----- |  
   	|Имя проекта| Введите имя.|  
   	|Project&nbsp;location (Расположение проекта)| Введите необходимое расположение для сохранения проекта.|
   	|Project SDK (Пакет SDK проекта)| Это поле будет пустым при первом использовании IDEA.  Выберите **New...** (Создать...) и перейдите к JDK.|
-  	|Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется **Spark 2.3.0 (Scala 2.11.8)** .|
+  	|Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Если используется версия кластера Spark более ранняя, чем 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется **Spark 2.3.0 (Scala 2.11.8)** .|
 
     ![Выбор пакета SDK Spark в IntelliJ IDEA](./media/apache-spark-create-standalone-application/hdi-scala-new-project.png)
 
-7. Выберите **Готово**.
+7. Нажмите кнопку **Готово**.
 
 ## <a name="create-a-standalone-scala-project"></a>Создание автономного проекта Scala
 
@@ -98,22 +98,24 @@ ms.locfileid: "73494692"
 
 5. В списке архетипов выберите **org.scala-tools.archetypes:scala-archetype-simple**. Этот архетип создает структуру каталога и скачивает зависимости по умолчанию, необходимые для написания программы Scala.
 
-    ![Создание проекта Maven в IntelliJ IDEA](./media/apache-spark-create-standalone-application/create-maven-project.png)
+    ![Создание проекта Maven в IntelliJ IDEA](./media/apache-spark-create-standalone-application/intellij-project-create-maven.png)
 
-6. Щелкните **Далее**.
+6. Выберите **Далее**.
 
-7. Введите соответствующие значения для параметров **GroupId**, **ArtifactId** и **Version**. В этом руководстве используются представленные ниже значения.
+7. Разверните **Координаты артефакта**. Введите соответствующие значения для параметров **GroupId** и **ArtifactId**. Значения **Name** и **Location** заполнятся автоматически. В этом руководстве используются представленные ниже значения.
 
     - **GroupId:** com.microsoft.spark.example;
     - **ArtifactId:** SparkSimpleApp.
 
-8. Щелкните **Далее**.
+    ![Создание проекта Maven в IntelliJ IDEA](./media/apache-spark-create-standalone-application/intellij-artifact-coordinates.png)
+
+8. Выберите **Далее**.
 
 9. Проверьте параметры и нажмите кнопку **Next** (Далее).
 
 10. Проверьте имя и расположение проекта, а затем выберите **Finish** (Готово).  Импорт этого проекта займет несколько минут.
 
-11. После импорта проекта в области слева выберите **SparkSimpleApp** > **src** > **test** > **scala** > **com** > **microsoft** > **spark** > **example**.  Щелкните **MySpec** правой кнопкой мыши и выберите **Delete...** (Удалить...). Этот файл не нужно использовать для приложения.  Нажмите кнопку **ОК** в диалоговом окне.
+11. После импорта проекта в области слева выберите **SparkSimpleApp** > **src** > **test** > **scala** > **com** > **microsoft** > **spark** > **example**.  Щелкните **MySpec** правой кнопкой мыши и выберите **Delete...** (Удалить...). Этот файл не потребуется для этого приложения.  Нажмите кнопку **ОК** в диалоговом окне.
   
 12. На следующих шагах описывается обновление файла **pom.xml** для определения зависимостей приложения Spark Scala. Чтобы автоматически скачать эти зависимости и разрешить их, необходимо соответствующим образом настроить Maven.
 
@@ -188,7 +190,7 @@ ms.locfileid: "73494692"
 
         ![Добавление JAR-файла со структурой проекта из модуля в IntelliJ IDEA](./media/apache-spark-create-standalone-application/hdinsight-create-jar3.png)
 
-    6. На вкладке **Макет выходных данных** содержится список всех JAR-файлов, которые включены в проект Maven. Здесь можно выбрать и удалить файлы, от которых не зависит работа приложения Scala. Для создаваемого приложения можно удалить все файлы, кроме последнего (**SparkSimpleApp compile output** (Выходные данные компиляции SparkSimpleApp)). Выберите JAR-файлы, которые нужно удалить, и щелкните значок минус **-** .
+    6. На вкладке **Макет выходных данных** содержится список всех JAR-файлов, которые включены в проект Maven. Здесь можно выбрать и удалить файлы, от которых не зависит работа приложения Scala. Из создаваемого приложения можно удалить все файлы, кроме последнего (**SparkSimpleApp compile output** (Выходные данные компиляции SparkSimpleApp)). Выберите JAR-файлы, которые нужно удалить, и щелкните значок минус **-** .
 
         ![Удаление выходных данных со структурой проекта в IntelliJ IDEA](./media/apache-spark-create-standalone-application/hdi-delete-output-jars.png)
 
@@ -210,7 +212,7 @@ ms.locfileid: "73494692"
 
 Если вы не собираетесь использовать это приложение в дальнейшем, удалите созданный кластер, сделав следующее:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. В поле **Поиск** в верхней части страницы введите **HDInsight**.
 
@@ -218,11 +220,11 @@ ms.locfileid: "73494692"
 
 1. В списке кластеров HDInsight, который отобразится, выберите **...** рядом с кластером, созданным при работе с этим учебником.
 
-1. Нажмите кнопку **Удалить**. Выберите **Да**.
+1. Выберите команду **Удалить**. Выберите **Да**.
 
 ![Удаление кластера HDInsight на портале Azure](./media/apache-spark-create-standalone-application/hdinsight-azure-portal-delete-cluster.png "Удаление кластера HDInsight")
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 Из этой статьи вы узнали, как создать приложение Apache Spark на языке Scala. Из следующей статьи вы узнаете, как запустить это приложение на кластере HDInsight Spark, используя Livy.
 

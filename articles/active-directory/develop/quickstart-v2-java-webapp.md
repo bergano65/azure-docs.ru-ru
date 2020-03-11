@@ -11,27 +11,24 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java
-ms.openlocfilehash: 59c2b3b910a9585362643bfcf7cdf9fa2df977bc
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: 3bfcc1ef8c58f71811af604fbc07736a13102e83
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77611985"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249078"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
 В этом кратком руководстве вы узнаете, как интегрировать веб-приложение Java с Платформой удостоверений Майкрософт. Ваше приложение сможет авторизовать пользователя, получить маркер доступа для вызова API Microsoft Graph и выполнить запрос к API Microsoft Graph.
 
-Когда вы завершите работу с этим кратким руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и другие), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory.
-
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-java-webapp/java-quickstart.svg)
+Когда вы завершите работу с этим кратким руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и другие), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory. (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для запуска этого примера потребуется:
 
 - [Пакет средств разработки Java (JDK)](https://openjdk.java.net/) версии 8 или последующей и [Maven](https://maven.apache.org/).
-- Клиент Azure Active Directory (Azure AD). Дополнительные сведения о том, как получить клиент Azure AD, см. в [этой статье](https://azure.microsoft.com/documentation/articles/active-directory-howto-tenant/).
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -73,7 +70,7 @@ ms.locfileid: "77611985"
 >
 > Для работы примера кода в этом кратком руководстве необходимо:
 >
-> 1. Добавить URL-адрес ответа, как `https://localhost:8080/msal4jsamples/secure/aad` и `https://localhost:8080/msal4jsamples/graph/me`.
+> 1. Добавить URL-адрес ответа, как `https://localhost:8080/msal4jsample/secure/aad` и `https://localhost:8080/msal4jsample/graph/me`.
 > 1. Создание Секрета клиента.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
@@ -82,46 +79,65 @@ ms.locfileid: "77611985"
 > > ![Уже настроено](media/quickstart-v2-aspnet-webapp/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
 #### <a name="step-2-download-the-code-sample"></a>Шаг 2. Скачивание примера кода
+> [!div renderon="docs"]
+> [Скачайте пример кода.](https://github.com/Azure-Samples/ms-identity-java-webapp/archive/master.zip)
 
- [Скачайте пример кода.](https://github.com/Azure-Samples/ms-identity-java-webapp/archive/master.zip)
+> [!div class="sxs-lookup" renderon="portal"]
+> Скачайте проект и извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корневой папке (например, **C:\Azure-Samples**).
+> 
+> Для использования протокола HTTPS с localhost нужно указать значения для свойств server.ssl.key. Чтобы создать самозаверяющий сертификат, используйте служебную программу keytool (входит в JRE).
+>
+>  ```
+>   Example:
+>   keytool -genkeypair -alias testCert -keyalg RSA -storetype PKCS12 -keystore keystore.p12 -storepass password
+>
+>   server.ssl.key-store-type=PKCS12  
+>   server.ssl.key-store=classpath:keystore.p12  
+>   server.ssl.key-store-password=password  
+>   server.ssl.key-alias=testCert
+>   ```
+>   Поместите созданный файл хранилища ключей в папку "resources".
+   
+> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [Скачивание примера кода]()
 
-#### <a name="step-3-configure-the-code-sample"></a>Шаг 3. Настройка примера кода
+> [!div renderon="docs"]
+> #### <a name="step-3-configure-the-code-sample"></a>Шаг 3. Настройка примера кода
+> 1. Извлеките ZIP-файл в локальную папку.
+> 1. Если вы используете интегрированную среду разработки, откройте образец в вашей избранной интегрированной среде разработки (необязательно).
+> 1. Откройте файл application.properties, расположенный в папке src/main/resources/, и замените значения полей *aad.clientId*, *aad.authority* и *aad.secretKey* соответствующими значениями **идентификатора приложения**, **идентификатора клиента** и **секрета клиента** следующим образом:
+>
+>    ```file
+>    aad.clientId=Enter_the_Application_Id_here
+>    aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
+>    aad.secretKey=Enter_the_Client_Secret_Here
+>    aad.redirectUriSignin=https://localhost:8080/msal4jsample/secure/aad
+>    aad.redirectUriGraph=https://localhost:8080/msal4jsample/graph/me
+>    aad.msGraphEndpointHost="https://graph.microsoft.com/"
+>    ```
+> Где:
+>
+> - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
+> - `Enter_the_Client_Secret_Here` — это **секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
+> - `Enter_the_Tenant_Info_Here` — это значение **Идентификатор каталога (клиента)** приложения, которое вы зарегистрировали.
+> 1. Для использования протокола HTTPS с localhost нужно указать значения для свойств server.ssl.key. Чтобы создать самозаверяющий сертификат, используйте служебную программу keytool (входит в JRE).
+>
+>  ```
+>   Example:
+>   keytool -genkeypair -alias testCert -keyalg RSA -storetype PKCS12 -keystore keystore.p12 -storepass password
+>
+>   server.ssl.key-store-type=PKCS12  
+>   server.ssl.key-store=classpath:keystore.p12  
+>   server.ssl.key-store-password=password  
+>   server.ssl.key-alias=testCert
+>   ```
+>   Поместите созданный файл хранилища ключей в папку "resources".
 
- 1. Извлеките ZIP-файл в локальную папку.
- 1. Если вы используете интегрированную среду разработки, откройте образец в вашей избранной интегрированной среде разработки (необязательно).
- 1. Откройте файл application.properties, расположенный в папке src/main/resources/, и замените значения полей *aad.clientId*, *aad.authority* и *aad.secretKey* соответствующими значениями **идентификатора приложения**, **идентификатора клиента** и **секрета клиента** следующим образом:
 
-    ```file
-    aad.clientId=Enter_the_Application_Id_here
-    aad.authority=https://login.microsoftonline.com/Enter_the_Tenant_Info_Here/
-    aad.secretKey=Enter_the_Client_Secret_Here
-    aad.redirectUriSignin=https://localhost:8080/msal4jsample/secure/aad
-    aad.redirectUriGraph=https://localhost:8080/msal4jsample/graph/me
-    aad.msGraphEndpointHost="https://graph.microsoft.com/"
-    ```
-
-    > [!div renderon="docs"]
-    > Где:
-    >
-    > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
-    > - `Enter_the_Client_Secret_Here` — это **секрет клиента**, созданного вами в пункте **Сертификаты и Секреты** для зарегистрированного приложения.
-    > - `Enter_the_Tenant_Info_Here` — это значение **Идентификатор каталога (клиента)** приложения, которое вы зарегистрировали.
-
- 1. Для использования протокола HTTPS с localhost нужно указать значения для свойств server.ssl.key. Чтобы создать самозаверяющий сертификат, используйте служебную программу keytool (входит в JRE).
-
-   ```
-   Example:
-   keytool -genkeypair -alias testCert -keyalg RSA -storetype PKCS12 -keystore keystore.p12 -storepass password
-
-   server.ssl.key-store-type=PKCS12  
-   server.ssl.key-store=classpath:keystore.p12  
-   server.ssl.key-store-password=password  
-   server.ssl.key-alias=testCert
-   ```
-
-   Поместите созданный файл хранилища ключей в папку "resources".
-
-#### <a name="step-4-run-the-code-sample"></a>Шаг 4. Запуск примера кода
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-3-run-the-code-sample"></a>Шаг 3. Запуск примера кода
+> [!div renderon="docs"]
+> #### <a name="step-4-run-the-code-sample"></a>Шаг 4. Запуск примера кода
 
 Запустить проект можно следующим образом:
 
@@ -137,10 +153,15 @@ ms.locfileid: "77611985"
     - *Выход*: пользователь выходит из приложения и перенаправляется на домашнюю страницу.
     - *Показать сведения о пользователе*: получение маркера Microsoft Graph и вызов Microsoft Graph с помощью запроса, содержащего этот маркер. Этот запрос возвращает сведения о пользователе, который выполнил вход в систему.
 
+
+   
 > [!IMPORTANT]
 > В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, по соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения о том, как использовать сертификат, см. в статье [Учетные данные сертификата для аутентификации приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials).
 
 ## <a name="more-information"></a>Дополнительные сведения
+
+### <a name="how-the-sample-works"></a>Как работает этот пример
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-java-webapp/java-quickstart.svg)
 
 ### <a name="getting-msal"></a>Получение MSAL
 

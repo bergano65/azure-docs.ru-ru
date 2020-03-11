@@ -4,12 +4,12 @@ description: В этом кратком руководстве вы узнает
 keywords: ansible, azure, devops, bash, cloudshell, сборник тренировочных заданий, bash
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: 0eb89bcacae1629bdb1f6dcda8f9a25efdb6eedf
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 2a938179cf2e07a61749042db32ef9e1c9d843ba
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77193656"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247893"
 ---
 # <a name="quickstart-run-ansible-playbooks-via-bash-in-azure-cloud-shell"></a>Краткое руководство. Запуск сборников схем Ansible с помощью Bash в Azure Cloud Shell
 
@@ -35,7 +35,7 @@ az account list
 
 С помощью своего идентификатора подписки Azure настройте `AZURE_SUBSCRIPTION_ID`, как показано ниже.
 
-```azurecli-interactive
+```console
 export AZURE_SUBSCRIPTION_ID=<your-subscription-id>
 ```
 

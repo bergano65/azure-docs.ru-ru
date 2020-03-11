@@ -2,17 +2,18 @@
 title: Шифрование дисков Azure с предварительными требованиями для приложения Azure AD (предыдущий выпуск)
 description: Эта статья содержит предварительные требования для использования шифрования дисков Microsoft Azure с виртуальными машинами IaaS.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: e1b9df750886af050163a85e2c6a3539bd63c733
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: f38fd7c8e14f58052912f68a277f194fd3866f2e
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457196"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970578"
 ---
 # <a name="azure-disk-encryption-with-azure-ad-previous-release"></a>Шифрование дисков Azure с помощью Azure AD (предыдущий выпуск)
 
@@ -57,7 +58,7 @@ ms.locfileid: "74457196"
 
 Дополнительные сведения см. в статье [Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md).
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md)
 - [Включение шифрования дисков Azure с помощью Azure AD на виртуальных машинах Linux (предыдущий выпуск)](disk-encryption-linux-aad.md)

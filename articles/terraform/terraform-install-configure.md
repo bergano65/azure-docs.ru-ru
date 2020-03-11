@@ -1,37 +1,27 @@
 ---
-title: Установка и настройка terraform для инициализации ресурсов Azure
-description: Узнайте, как установить и настроить Terraform для создания ресурсов Azure
-services: virtual-machines-linux
-documentationcenter: virtual-machines
-author: tomarchermsft
-manager: gwallace
-editor: na
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
-ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
-ms.date: 09/20/2019
-ms.author: tarcher
-ms.openlocfilehash: 74728fb05e900c534580f1c8eaf14dd0e48fc42c
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
-ms.translationtype: MT
+title: Краткое руководство. Установка и настройка Terraform для подготовки ресурсов Azure
+description: Из этого краткого руководства вы узнаете, как установить и настроить Terraform для создания ресурсов Azure.
+keywords: Azure DevOps, Terraform, установка, настройка
+ms.topic: quickstart
+ms.date: 03/09/2020
+ms.openlocfilehash: 82635f59ec8165add2046a230a040b06f89d9898
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77473133"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943501"
 ---
-# <a name="install-and-configure-terraform-to-provision-azure-resources"></a>Установка и настройка terraform для инициализации ресурсов Azure
+# <a name="quickstart-install-and-configure-terraform-to-provision-azure-resources"></a>Краткое руководство. Установка и настройка Terraform для подготовки ресурсов Azure
  
 Terraform предоставляет простой способ определить, просмотреть и развернуть облачную инфраструктуру, используя [простой настраиваемый язык шаблонов](https://www.terraform.io/docs/configuration/syntax.html). В этой статье описываются шаги, необходимые для подготовки ресурсов Azure с помощью Terraform.
 
 Дополнительные сведения об использовании Terraform с Azure см. в [центре документации по Terraform](/azure/terraform).
 > [!NOTE]
-> Чтобы получить поддержку terraform, свяжитесь с terraform напрямую, используя один из своих каналов сообщества:
+> Чтобы получить поддержку по Terraform, свяжитесь с командой разработчиков Terraform напрямую, используя один из каналов сообщества:
 >
->   • [Раздел terraform](https://discuss.hashicorp.com/c/terraform-core) на портале сообщества содержит вопросы, варианты использования и полезные шаблоны.
+>    * [Раздел по Terraform](https://discuss.hashicorp.com/c/terraform-core) на портале сообщества, в котором содержатся вопросы, варианты использования и полезные шаблоны.
 >
->   • Для вопросов, связанных с поставщиками, посетите раздел [поставщиков terraform](https://discuss.hashicorp.com/c/terraform-providers) на портале сообщества.
+>    * Ответы на вопросы о поставщике см. в разделе [Terraform Providers](https://discuss.hashicorp.com/c/terraform-providers) (Поставщики Terraform) на портале сообщества.
 
 
 
@@ -54,7 +44,7 @@ Usage: terraform [--version] [--help] <command> [args]
 
 Создайте [субъект-службу Azure AD](/cli/azure/create-an-azure-service-principal-azure-cli), чтобы предоставить Terraform возможность подготовить ресурсы в Azure. Субъект-служба предоставляет сценарии Terraform для подготовки ресурсов в подписке Azure.
 
-Если у вас несколько подписок Azure, сначала запросите учетную запись с помощью команды [AZ Account List](/cli/azure/account#az-account-list) , чтобы получить список значений идентификатора подписки и идентификатора клиента:
+Если у вас есть несколько подписок Azure, сначала запросите свою учетную запись с помощью команды [az account list](/cli/azure/account#az-account-list), чтобы получить список значений идентификатора подписки и идентификатора клиента:
 
 ```azurecli-interactive
 az account list --query "[].{name:name, subscriptionId:id, tenantId:tenantId}"
@@ -104,6 +94,10 @@ export ARM_ENVIRONMENT=public
 
 ```hcl
 provider "azurerm" {
+  # The "feature" block is required for AzureRM provider 2.x. 
+  # If you are using version 1.x, the "features" block is not allowed.
+  version = "~>2.0"
+  features {}
 }
 resource "azurerm_resource_group" "rg" {
         name = "testResourceGroup"
@@ -153,7 +147,7 @@ azurerm_resource_group.rg: Creating...
 azurerm_resource_group.rg: Creation complete after 1s
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы установили Terraform или использовали Cloud Shell, чтобы настроить учетные данные Azure и начать создание ресурсов в подписке Azure. Чтобы создать полное развертывание Terraform в Azure, перейдите к следующей статье:
 

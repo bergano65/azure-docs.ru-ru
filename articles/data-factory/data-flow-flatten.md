@@ -1,39 +1,141 @@
 ---
-title: Преобразование «Сведение потока данных сопоставления»
-description: Преобразование «обработка потока данных» для сопоставления фабрики данных Azure
+title: Преобразование «сведение» в потоке данных сопоставления
+description: Денормализация иерархических данных с помощью преобразования «Сведение»
 author: kromerm
 ms.author: makromer
+ms.review: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 02/25/2020
-ms.openlocfilehash: 415a093fd8a8fbe27e1d240b061548e18f2ca6b6
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
-ms.translationtype: MT
+ms.date: 03/09/2020
+ms.openlocfilehash: 9b09771f51c8b7e6762dac23cc7390d75f47a387
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78164735"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969111"
 ---
-# <a name="azure-data-factory-flatten-transformation"></a>Преобразование "сведение" в фабрике данных Azure
+# <a name="flatten-transformation-in-mapping-data-flow"></a>Преобразование «сведение» в потоке данных сопоставления
 
-Преобразование «Сведение» можно использовать для сведения значений массива внутри иерархической структуры в новые строки, по сути, денормализацию данных.
+Используйте преобразование «сведение», чтобы принимать значения массива в иерархических структурах, таких как JSON, и разбить их на отдельные строки. Этот процесс называется денормализацией.
 
-![Панель элементов преобразования](media/data-flow/flatten5.png "Панель элементов преобразования")
+## <a name="configuration"></a>Конфигурация
 
-![Преобразование «Сведение 1»](media/data-flow/flatten7.png "Преобразование «Сведение 1»")
+Преобразование «Сведение» содержит следующие параметры конфигурации.
 
-## <a name="unroll-by"></a>Отменить развертывание
+![Параметры плоской обработки](media/data-flow/flatten1.png "Параметры плоской обработки")
 
-Сначала выберите столбец массива, который вы хотите раскрутить, и сведение.
+### <a name="unroll-by"></a>Отменить развертывание
 
-![Параметры преобразования «Сведение»](media/data-flow/flatten1.png "Параметры преобразования «Сведение»")
+Выберите массив для свертывания. Выходные данные будут содержать по одной строке на каждый элемент в каждом массиве. Если невыполненный массив во входной строке имеет значение null или является пустым, то будет выведена одна выходная строка с несведенными значениями NULL.
 
-## <a name="unroll-root"></a>Развернуть корень
+### <a name="unroll-root"></a>Развернуть корень
 
-По умолчанию ADF выполняет сведение структуры в выбранном выше массиве. Можно также выбрать другую часть иерархии, чтобы отменить развертывание. Параметр "unrollный корень" является необязательным.
+По умолчанию преобразование «Сведение» выполняет откат массива к верхней части иерархии, в которой он находится. При необходимости можно выбрать массив в качестве корневого каталога развертывания. Корень unrollа должен быть массивом сложных объектов, которые либо находятся в массиве, либо содержат раскрутку. Если выбран параметр unrollный корень, выходные данные будут содержать по крайней мере одну строку для каждого элемента в корне unrollа. Если входная строка не содержит элементов в корне unrollа, она будет удалена из выходных данных. Выбор корневого корня всегда приведет к выводу меньшего или равного количества строк, чем поведение по умолчанию.
 
-## <a name="input-columns"></a>Входные столбцы
+### <a name="flatten-mapping"></a>Плоское сопоставление
 
-Наконец, выберите проекцию новой структуры, основанную на входящих полях, а также нормализованную невыполненную гистограмму.
+Аналогично преобразованию «выбор» выберите проекцию новой структуры из полей входящие и Денормализованный массив. Если Денормализованный массив сопоставлен, то выходной столбец будет иметь тот же тип данных, что и массив. Если массив для раскрутки представляет собой массив сложных объектов, содержащих подмассивы, то сопоставление элемента этого субарри будет выводить массив.
+
+Чтобы проверить выходные данные сопоставления, воспользуйтесь вкладкой Проверка и предварительный просмотр данных.
+
+## <a name="examples"></a>Примеры
+
+См. следующий объект JSON для приведенных ниже примеров преобразования «Сведение»
+
+``` json
+{
+  "name":"MSFT","location":"Redmond", "satellites": ["Bay Area", "Shanghai"],
+  "goods": {
+    "trade":true, "customers":["government", "distributer", "retail"],
+    "orders":[
+        {"orderId":1,"orderTotal":123.34,"shipped":{"orderItems":[{"itemName":"Laptop","itemQty":20},{"itemName":"Charger","itemQty":2}]}},
+        {"orderId":2,"orderTotal":323.34,"shipped":{"orderItems":[{"itemName":"Mice","itemQty":2},{"itemName":"Keyboard","itemQty":1}]}}
+    ]}}
+{"name":"Company1","location":"Seattle", "satellites": ["New York"],
+  "goods":{"trade":false, "customers":["store1", "store2"],
+  "orders":[
+      {"orderId":4,"orderTotal":123.34,"shipped":{"orderItems":[{"itemName":"Laptop","itemQty":20},{"itemName":"Charger","itemQty":3}]}},
+      {"orderId":5,"orderTotal":343.24,"shipped":{"orderItems":[{"itemName":"Chair","itemQty":4},{"itemName":"Lamp","itemQty":2}]}}
+    ]}}
+{"name": "Company2", "location": "Bellevue",
+  "goods": {"trade": true, "customers":["Bank"], "orders": [{"orderId": 4, "orderTotal": 123.34}]}}
+{"name": "Company3", "location": "Kirkland"}
+```
+
+### <a name="no-unroll-root-with-string-array"></a>Нет несведенного корня с массивом строк
+
+| Отменить развертывание | Развернуть корень | Проекция |
+| --------- | ----------- | ---------- |
+| товары. клиенты | None | name <br> Клиент = товары. Клиент |
+
+#### <a name="output"></a>Выходные данные
+
+```
+{ 'MSFT', 'government'},
+{ 'MSFT', 'distributer'},
+{ 'MSFT', 'retail'},
+{ 'Company1', 'store'},
+{ 'Company1', 'store2'},
+{ 'Company2', 'Bank'},
+{ 'Company3', null}
+```
+
+### <a name="no-unroll-root-with-complex-array"></a>Нет несведенного корня с комплексным массивом
+
+| Отменить развертывание | Развернуть корень | Проекция |
+| --------- | ----------- | ---------- |
+| товары. заказы. отгруженные. orderItems | None | name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
+
+#### <a name="output"></a>Выходные данные
+
+```
+{ 'MSFT', 1, 'Laptop', 20, 'Redmond'},
+{ 'MSFT', 1, 'Charger', 2, 'Redmond'},
+{ 'MSFT', 2, 'Mice', 2, 'Redmond'},
+{ 'MSFT', 2, 'Keyboard', 1, 'Redmond'},
+{ 'Company1', 4, 'Laptop', 20, 'Seattle'},
+{ 'Company1', 4, 'Charger', 3, 'Seattle'},
+{ 'Company1', 5, 'Chair', 4, 'Seattle'},
+{ 'Company1', 5, 'Lamp', 2, 'Seattle'},
+{ 'Company2', 4, null, null, 'Bellevue'},
+{ 'Company3', null, null, null, 'Kirkland'}
+```
+
+### <a name="same-root-as-unroll-array"></a>Тот же корень, что и unrollный массив
+
+| Отменить развертывание | Развернуть корень | Проекция |
+| --------- | ----------- | ---------- |
+| товары. заказы | товары. заказы | name <br> товары. заказы. отгруженные. orderItems. itemName <br> товары. клиенты <br> location |
+
+#### <a name="output"></a>Выходные данные
+
+```
+{ 'MSFT', ['Laptop','Charger'], ['government','distributer','retail'], 'Redmond'},
+{ 'MSFT', ['Mice', 'Keyboard'], ['government','distributer','retail'], 'Redmond'},
+{ 'Company1', ['Laptop','Charger'], ['store', 'store2'], 'Seattle'},
+{ 'Company1', ['Chair', 'Lamp'], ['store', 'store2'], 'Seattle'},
+{ 'Company2', null, ['Bank'], 'Bellevue'}
+```
+
+### <a name="unroll-root-with-complex-array"></a>Развернуть корень с помощью сложного массива
+
+| Отменить развертывание | Развернуть корень | Проекция |
+| --------- | ----------- | ---------- |
+| товары. заказы. отгруженные. orderItem | товары. заказы |name <br> orderId = товары. Orders. orderId <br> itemName = товары. Orders. отгружено. orderItems. itemName <br> Итемкти = товары. Orders. отгружено. orderItems. Итемкти <br> расположение = расположение |
+
+#### <a name="output"></a>Выходные данные
+
+```
+{ 'MSFT', 1, 'Laptop', 20, 'Redmond'},
+{ 'MSFT', 1, 'Charger', 2, 'Redmond'},
+{ 'MSFT', 2, 'Mice', 2, 'Redmond'},
+{ 'MSFT', 2, 'Keyboard', 1, 'Redmond'},
+{ 'Company1', 4, 'Laptop', 20, 'Seattle'},
+{ 'Company1', 4, 'Charger', 3, 'Seattle'},
+{ 'Company1', 5, 'Chair', 4, 'Seattle'},
+{ 'Company1', 5, 'Lamp', 2, 'Seattle'},
+{ 'Company2', 4, null, null, 'Bellevue'}
+```
 
 ## <a name="data-flow-script"></a>Скрипт потока данных
 
@@ -53,28 +155,19 @@ foldDown(unroll(<unroll cols>),
 ### <a name="example"></a>Пример
 
 ```
-source(output(
-        name as string,
-        location as string,
-        satellites as string[],
-        goods as (trade as boolean, customers as string[], orders as (orderId as string, orderTotal as double, shipped as (orderItems as (itemName as string, itemQty as string)[]))[])
-    ),
-    allowSchemaDrift: true,
-    validateSchema: false) ~> source2
-source2 foldDown(unroll(goods.orders.shipped.orderItems),
+source foldDown(unroll(goods.orders.shipped.orderItems, goods.orders),
     mapColumn(
         name,
-        each(goods.orders, match(type == 'integer')),
-        each(goods.orders.shipped.orderItems, match(true())),
-        location
-    )) ~> Flatten1
-Flatten1 sink(allowSchemaDrift: true,
-    validateSchema: false,
-    skipDuplicateMapInputs: true,
-    skipDuplicateMapOutputs: true) ~> sink1
+        orderId = goods.orders.orderId,
+        itemName = goods.orders.shipped.orderItems.itemName,
+        itemQty = goods.orders.shipped.orderItems.itemQty,
+        location = location
+    ),
+    skipDuplicateMapInputs: false,
+    skipDuplicateMapOutputs: false) 
 ```    
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Используйте [Преобразование «Сведение](data-flow-pivot.md) » для сведения строк в столбцы.
 * Используйте [Преобразование отменить сведение](data-flow-unpivot.md) для сведения столбцов в строки.

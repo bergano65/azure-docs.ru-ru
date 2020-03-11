@@ -1,19 +1,19 @@
 ---
 title: Создание коммерческой учетной записи Marketplace в центре партнеров
 description: Узнайте, как создать коммерческую учетную запись Marketplace в центре партнеров.
-author: ChJenk
+author: qianw211
 manager: evansma
-ms.author: v-chjen
+ms.author: evansma
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: guide
-ms.date: 09/26/2019
-ms.openlocfilehash: df857fb938ade329a971578ac206f16f1357d7e5
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.date: 03/10/2020
+ms.openlocfilehash: 59f37585dfea08e9343cf052f680fd6e9531852b
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838758"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968825"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Создание коммерческой учетной записи Marketplace в центре партнеров
 
@@ -22,7 +22,7 @@ ms.locfileid: "73838758"
 >[!IMPORTANT]
 >Если у вас есть учетная запись в [портал Cloud Partner (CPP)](https://cloudpartner.azure.com) , которая была перемещена в центр партнеров, то создавать новую учетную запись не нужно. Дополнительные сведения см. [в разделе издатели, перемещающиеся из cpp](#publishers-moving-from-cpp) .
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Чтобы создать учетную запись в центре партнеров, убедитесь, что у вас есть:
 
@@ -50,7 +50,7 @@ ms.locfileid: "73838758"
 
 ### <a name="register-on-the-partner-center-enrollment-page"></a>Регистрация на странице регистрации в центре партнеров
 
-Просмотрите сведения на странице регистрации в [**центре партнеров Майкрософт**](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) , а затем зарегистрируйтесь для получения учетной записи.
+Просмотрите сведения на странице регистрации в [**центре партнеров Майкрософт**](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , а затем зарегистрируйтесь для получения учетной записи.
 
 ### <a name="sign-in-with-a-work-account"></a>Вход с рабочей учетной записью
 
@@ -177,6 +177,6 @@ ms.locfileid: "73838758"
 
 После завершения процесса вы сможете управлять только что созданным издателем, перейдя в программу **коммерческого рынка** , которая указана в левом меню навигации. Если вы не видите программу **коммерческого рынка** , обновите страницу. Новый издатель появится в списке **издателей** .
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 - [Управление учетной записью коммерческого магазина в центре партнеров](./manage-account.md)

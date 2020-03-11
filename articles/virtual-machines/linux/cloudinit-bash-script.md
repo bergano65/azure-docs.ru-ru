@@ -1,25 +1,17 @@
 ---
 title: Использование Cloud-init для запуска скрипта bash на виртуальной машине Linux в Azure
 description: Как с помощью cloud-init выполнить bash-сценарий на виртуальной машине Linux при ее создании через Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
 author: rickstercdn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 0e18b740b9b656236bd1958dd191bc9b02283d67
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: e2f19ceb6c7f19ba749b46a3553036587be6a71a
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036800"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969216"
 ---
 # <a name="use-cloud-init-to-run-a-bash-script-in-a-linux-vm-in-azure"></a>Выполнение bash-скрипта на виртуальной машине Linux в Azure с помощью cloud-init
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) выполнить существующий bash-скрипт на виртуальной машине или в масштабируемом наборе виртуальных машин при их подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -29,7 +21,7 @@ ms.locfileid: "74036800"
 
 Если для запуска скриптов вы ранее использовали расширение Azure для пользовательских скриптов Linux, значит их можно без проблем перенести на cloud-init. Но не забывайте, что расширения Azure имеют встроенный механизм извещения об ошибках скриптов, поэтому развертывания образов cloud-init НЕ БУДУТ завершаться сбоем при сбоях скриптов.
 
-Чтобы увидеть, как это работает, создайте простой bash-скрипт для тестирования. Как и файл `#cloud-config` для cloud-init, этот скрипт должен размещаться локально там, где вы будете запускать команды AzureCLI для подготовки виртуальной машины.  Для этого примера создайте файл в Cloud Shell, не на локальном компьютере. Вы можете использовать любой редактор. Введите `sensible-editor simple_bash.sh`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
+Чтобы увидеть, как это работает, создайте простой bash-скрипт для тестирования. Как и файл `#cloud-config` для cloud-init, этот скрипт должен размещаться локально там, где вы будете запускать команды AzureCLI для подготовки виртуальной машины.  Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor simple_bash.sh`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 
 ```bash
 #!/bin/sh
@@ -65,8 +57,8 @@ ssh <publicIpAddress>
 Running config-scripts-user using lock Running command ['/var/lib/cloud/instance/scripts/part-001']
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-Дополнительные примеры изменения конфигураций с помощью cloud-init см. в следующих статьях.
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)
 - [Запуск диспетчера пакетов для обновления существующих пакетов при первой загрузке](cloudinit-update-vm.md)

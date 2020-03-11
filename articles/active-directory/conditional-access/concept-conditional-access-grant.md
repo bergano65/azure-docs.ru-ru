@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09a720be10b09e11adc8acdc8ab26a06870311b0
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
-ms.translationtype: HT
+ms.openlocfilehash: 0716c2d4475bb538c06b9a591521fbdcfc0c80e4
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78892981"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967892"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -67,7 +67,7 @@ ms.locfileid: "78892981"
 
 Организации могут потребовать, чтобы попытка доступа к выбранным облачным приложениям выполнялась из утвержденного клиентского приложения. Эти утвержденные клиентские приложения поддерживают [политики защиты приложений Intune](/intune/app-protection-policy) независимо от любого решения по управлению мобильными устройствами (MDM).
 
-Этот параметр применяется к следующим клиентским приложениям.
+Этот параметр применяется к следующим приложениям iOS и Android:
 
 - Microsoft Azure Information Protection.
 - Книги Майкрософт
@@ -80,8 +80,9 @@ ms.locfileid: "78892981"
 - Microsoft Invoicing.
 - Microsoft Kaizala
 - Microsoft Launcher;
+- Microsoft Office
 - Microsoft OneDrive
-- Microsoft OneNote
+- Microsoft OneNote;
 - Microsoft Outlook
 - Планировщик (Майкрософт);
 - Microsoft PowerApps
@@ -129,7 +130,7 @@ ms.locfileid: "78892981"
 
 Если ваша организация создала условия использования, в разделе предоставление элементов управления могут отображаться дополнительные параметры. Эти параметры позволяют администраторам требовать подтверждения условий использования в качестве условия доступа к ресурсам, защищенным политикой. Дополнительные сведения об условиях использования можно найти в статье [Azure Active Directory условия использования](terms-of-use.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ: элементы управления сеансом](concept-conditional-access-session.md)
 

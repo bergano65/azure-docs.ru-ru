@@ -16,12 +16,12 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a49c69b0f96add61501d9e2c5fc00ba564eba2a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 4b1ccde2f1f92237978ab4e68acaa26393bbb9d8
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376461"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968147"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 
@@ -35,7 +35,7 @@ ms.locfileid: "78376461"
 
 **Предварительная роль:** Запрашивающей стороны
 
-1. Найдите сообщение электронной почты или бизнес-менеджер, с которым вы работаете. Адрес электронной почты должен содержать ссылку на пакет доступа, к которому потребуется доступ. Ссылка начинается с `myaccess`, включает указание каталога и заканчивается ИДЕНТИФИКАТОРом пакета доступа.
+1. Найдите сообщение электронной почты или бизнес-менеджер, с которым вы работаете. Адрес электронной почты должен содержать ссылку на пакет доступа, к которому потребуется доступ. Ссылка начинается с `myaccess`, включает указание каталога и заканчивается ИДЕНТИФИКАТОРом пакета доступа.  (Для государственных организаций США вместо этого домена может быть `https://myaccess.microsoft.us`.)
  
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
 
@@ -121,7 +121,7 @@ ms.locfileid: "78376461"
 
 1. Щелкните **журнал запросов** , чтобы подтвердить отмену запроса.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Утверждение или отклонение запросов на доступ](entitlement-management-request-approve.md)
 - [Обработка запросов и уведомления по электронной почте](entitlement-management-process.md)

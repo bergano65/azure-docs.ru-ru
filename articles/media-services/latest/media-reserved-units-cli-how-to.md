@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/26/2019
+ms.date: 03/09/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 13fa733417558ab8be9ff1e5a9f1e484fb40f445
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9f0a7425fc09d391828a748832f662f02c6022cf
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102947"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970787"
 ---
 # <a name="scaling-media-processing"></a>Масштабирование при обработке мультимедиа
 
@@ -46,10 +46,8 @@ ms.locfileid: "70102947"
 
 > [!NOTE]
 > Для заданий анализа аудио и видео, которые активируют Службы мультимедиа версии 3 или Индексатор видео, настоятельно рекомендуется подготовить к работе вашу учетную запись с помощью 10 единиц MRU S3. Если вам требуется более 10 единиц MRU S3, отправьте запрос в службу поддержки с помощью [портала Azure](https://portal.azure.com/).
->
-> В настоящее время нельзя использовать портал Azure для управления другими ресурсами v3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 
@@ -69,11 +67,11 @@ az ams account mru set -n amsaccount -g amsResourceGroup --count 10 --type S3
 
 Вы платите за количество минут, в течение которых зарезервированные единицы мультимедиа подготавливаются в вашей учетной записи. Это происходит независимо от того, выполняются ли в вашей учетной записи какие-либо задания. Подробное описание см. в разделе часто задаваемых вопросов на странице [цен на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).   
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 [Анализ видео](analyze-videos-tutorial-with-api.md) 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Квоты и ограничения](limits-quotas-constraints.md)
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+* [Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)

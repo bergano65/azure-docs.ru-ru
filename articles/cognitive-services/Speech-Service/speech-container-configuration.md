@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/07/2019
+ms.date: 03/09/2020
 ms.author: dapine
-ms.openlocfilehash: 34b4664ec13f7ba1871433e37d86170b2207a17a
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: dd5a531e4a979cba9c2a766c7774762a0427ad02
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816575"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037324"
 ---
 # <a name="configure-speech-service-containers"></a>Настройка контейнеров службы речи
 
@@ -30,7 +30,7 @@ ms.locfileid: "74816575"
 > [!IMPORTANT]
 > Параметры [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](speech-container-howto.md#billing).
 
-## <a name="apikey-configuration-setting"></a>Настройка конфигурации ApiKey
+## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
 
 Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для параметра ApiKey, а значение должно быть допустимым ключом для ресурса _речи_ , указанного для параметра конфигурации [`Billing`](#billing-configuration-setting) .
 
@@ -50,9 +50,9 @@ ms.locfileid: "74816575"
 
 - Портал Azure: обзор **речи** с метками `Endpoint`
 
-| Обязательно для заполнения | Name | Тип данных | Описание |
+| Обязательно | Имя | Тип данных | Description |
 | -------- | ---- | --------- | ----------- |
-| ДА | `Billing` | Строка | URI конечной точки выставления счетов. Дополнительные сведения о получении URI выставления счетов см. в разделе [сбор обязательных параметров](speech-container-howto.md#gathering-required-parameters). Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
+| Да | `Billing` | String | URI конечной точки выставления счетов. Дополнительные сведения о получении URI выставления счетов см. в разделе [сбор обязательных параметров](speech-container-howto.md#gathering-required-parameters). Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](../cognitive-services-custom-subdomains.md) (Пользовательские имена поддоменов для Cognitive Services). |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -78,10 +78,10 @@ ms.locfileid: "74816575"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](speech-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу.
 
-| Необязательно | Name | Тип данных | Описание |
+| Необязательно | Имя | Тип данных | Description |
 | -------- | ---- | --------- | ----------- |
-| Не разрешено | `Input` | Строка | Стандартные контейнеры распознавания речи этого не используют. Пользовательские контейнеры распознавания речи используют [подключения томов](#volume-mount-settings).                                                                                    |
-| Необязательно | `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output` |
+| Не разрешено | `Input` | String | Стандартные контейнеры распознавания речи этого не используют. Пользовательские контейнеры распознавания речи используют [подключения томов](#volume-mount-settings).                                                                                    |
+| Необязательно | `Output` | String | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output` |
 
 ## <a name="volume-mount-settings"></a>Параметры подключения тома
 
@@ -115,7 +115,7 @@ ms.locfileid: "74816575"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Value | Формат или пример |
+| Заполнитель | Значение | Формат или пример |
 | ----------- | ----- | ----------------- |
 | **{API_KEY}** | Ключ конечной точки `Speech` ресурса на странице ключей `Speech` Azure.   | `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`                                                                                  |
 | **{ENDPOINT_URI}** | Значение конечной точки выставления счетов доступно на странице обзора `Speech` Azure. | См. раздел [сбор обязательных параметров](speech-container-howto.md#gathering-required-parameters) для явных примеров. |
@@ -130,7 +130,7 @@ ms.locfileid: "74816575"
 
 Следующие примеры DOCKER предназначены для контейнера речи.
 
-## <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+## <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 ### <a name="basic-example-for-speech-to-text"></a>Базовый пример преобразования речи в текст
 
@@ -153,7 +153,7 @@ ApiKey={API_KEY} \
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+## <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 ### <a name="basic-example-for-custom-speech-to-text"></a>Базовый пример для Пользовательское распознавание речи в текст
 
@@ -180,7 +180,7 @@ ApiKey={API_KEY} \
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="text-to-speechtabtss"></a>[Преобразование текста в речь](#tab/tss)
+## <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tss)
 
 ### <a name="basic-example-for-text-to-speech"></a>Базовый пример преобразования текста в речь
 
@@ -203,7 +203,7 @@ ApiKey={API_KEY} \
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+## <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 ### <a name="basic-example-for-custom-text-to-speech"></a>Базовый пример пользовательского преобразования текста в речь
 

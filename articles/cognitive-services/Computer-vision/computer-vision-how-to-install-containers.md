@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 03/10/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 383abc674674fc024052b2c04d3c538838b83856
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 530a8848eceecb1a15d14ce1fef2aa58a3ef5908
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394107"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082033"
 ---
 # <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "78394107"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед использованием контейнеров необходимо выполнить следующие предварительные требования:
 
@@ -154,71 +154,26 @@ ApiKey={API_KEY}
       "unit": "pixel",
       "lines": [
         {
-          "boundingBox": [
-            56,
-            39,
-            317,
-            50,
-            313,
-            134,
-            53,
-            123
-          ],
+          "boundingBox": [ 56, 39, 317, 50, 313, 134, 53, 123 ],
           "text": "Tabs VS",
           "words": [
             {
-              "boundingBox": [
-                90,
-                43,
-                243,
-                53,
-                243,
-                123,
-                94,
-                125
-              ],
+              "boundingBox": [ 90, 43, 243, 53, 243, 123, 94, 125 ],
               "text": "Tabs",
               "confidence": "Low"
             },
             {
-              "boundingBox": [
-                259,
-                55,
-                313,
-                62,
-                313,
-                122,
-                259,
-                123
-              ],
+              "boundingBox": [ 259, 55, 313, 62, 313, 122, 259, 123 ],
               "text": "VS"
             }
           ]
         },
         {
-          "boundingBox": [
-            221,
-            148,
-            417,
-            146,
-            417,
-            206,
-            227,
-            218
-          ],
+          "boundingBox": [ 221, 148, 417, 146, 417, 206, 227, 218 ],
           "text": "Spaces",
           "words": [
             {
-              "boundingBox": [
-                230,
-                148,
-                416,
-                141,
-                419,
-                211,
-                232,
-                218
-              ],
+              "boundingBox": [ 230, 148, 416, 141, 419, 211, 232, 218 ],
               "text": "Spaces"
             }
           ]
@@ -292,7 +247,7 @@ export interface Word {
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если контейнер запускается с выходным [подключением](./computer-vision-resource-container-config.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -323,7 +278,7 @@ export interface Word {
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](computer-vision-resource-container-config.md).
 * Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](Home.md).

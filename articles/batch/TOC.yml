@@ -51,6 +51,8 @@
       href: batch-api-basics.md
     - name: API-интерфейсы и средства
       href: batch-apis-tools.md
+    - name: Обнаружение и обработка ошибок пакетной службы
+      href: batch-retry-after-errors.md
     - name: Рекомендации
       href: best-practices.md
     - name: Квоты и ограничения
@@ -131,8 +133,6 @@
           href: batch-job-schedule.md
         - name: Проверка на наличие ошибок заданий и задач
           href: batch-job-task-error-checking.md
-        - name: Обнаружение и обработка ошибок пакетной службы
-          href: batch-retry-after-errors.md
     - name: Сохранение пакетных заданий и выходных данных задач
       href: batch-task-output.md
       items:

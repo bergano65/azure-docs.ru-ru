@@ -1,25 +1,26 @@
 ---
 title: Непрерывная интеграция и развертывание
-description: Использование DevOps с базой данных корпоративного класса для Хранилища данных SQL со встроенной поддержкой непрерывной интеграции и развертывания с помощью Azure Pipelines.
+description: Средство корпоративного класса для хранения данных Database DevOps со встроенной поддержкой непрерывной интеграции и развертывания с помощью Azure Pipelines.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: overview
 ms.subservice: integration
-ms.date: 08/28/2019
+ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: a8178e5ff9ff4816ddd422d3c45cfc0e1e0b3d41
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.custom: azure-synapse
+ms.openlocfilehash: cb28afc84c423c5c5321a8f948e82f82031888a0
+ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76712983"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78195946"
 ---
-# <a name="continuous-integration-and-deployment-for-azure-sql-data-warehouse"></a>Непрерывная интеграция и развертывание в Хранилище данных SQL Azure
+# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание для хранилищ данных
 
-В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Этот учебник является вторым шагом в создании конвейера непрерывной интеграции и развертывания в Хранилище данных SQL. 
+В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Этот учебник является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранилищ данных. 
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -61,7 +62,7 @@ ms.locfileid: "76712983"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучите [архитектуру хранилища данных SQL Azure](massively-parallel-processing-mpp-architecture.md).
-- Быстро [создайте Хранилище данных SQL Azure](create-data-warehouse-portal.md).
+- Изучите [архитектуру MPP для SQL Analytics](massively-parallel-processing-mpp-architecture.md)
+- Быстрое создание [пула SQL](create-data-warehouse-portal.md)
 - [Отправка примера данных](sql-data-warehouse-load-sample-databases.md)
 - Просмотрите [видео](/azure/sql-data-warehouse/sql-data-warehouse-videos).

@@ -1,30 +1,19 @@
 ---
-title: Запись образа виртуальной машины Linux в Azure с помощью Azure CLI
+title: Запись образа виртуальной машины Linux с помощью Azure CLI
 description: Запись образа виртуальной машины Azure для использования при массовом развертывании с помощью Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: e608116f-f478-41be-b787-c2ad91b5a802
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: cynthn
-ms.openlocfilehash: ed7d45fb9148bd441a3798c48be8b25e1da2b8c1
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: 77f6244651551763f5460432655d66267775a256
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78675689"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968190"
 ---
 # <a name="how-to-create-an-image-of-a-virtual-machine-or-vhd"></a>Создание образа виртуальной машины или виртуального жесткого диска
-
-<!-- generalize, image - extended version of the tutorial-->
 
 Чтобы создать несколько копий виртуальной машины для использования в Azure, запишите образ виртуальной машины или виртуальный жесткий диск (VHD) операционной системы. Чтобы создать образ для развертывания, необходимо удалить сведения о личной учетной записи. На следующих шагах мы отзовем имеющуюся виртуальную машину, отменим ее выделение и создадим образ. Этот образ затем можно использовать для создания виртуальных машин в любой группе ресурсов в рамках вашей подписки.
 
@@ -141,7 +130,7 @@ az vm show \
    --show-details
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы можете создать несколько виртуальных машин из исходного образа виртуальной машины. Внесите изменения в образ. 
 
 - Создайте виртуальную машину из образа.

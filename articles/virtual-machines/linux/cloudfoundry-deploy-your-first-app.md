@@ -1,26 +1,18 @@
 ---
 title: Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 description: Сведения о развертывании приложения в Cloud Foundry в Azure
-services: virtual-machines-linux
-documentationcenter: ''
 author: seanmck
-manager: gwallace
-editor: ''
-tags: ''
-keywords: ''
-ms.assetid: 8fa04a58-56ad-4e6c-bef4-d02c80d4b60f
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: b1f9ab5289a41aacb5514e954f1ca01f6ad66152
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 45ae8979a2617d4f380e417e3f0910182ebe145e
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036826"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78970072"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 
@@ -39,7 +31,7 @@ ms.locfileid: "74036826"
 
 ## <a name="connect-to-the-cloud-controller"></a>Подключение к Cloud Controller
 
-Cloud Controller — основная точка входа в среду Cloud Foundry для развертывания приложений и управления ими. Основной API Cloud Controller — это REST API. Доступ к нему можно получить с помощью различных средств. В этом случае мы взаимодействуете с ним через интерфейс [командной строки Cloud Foundry][cf-cli]. Вы можете установить интерфейс командной строки в Linux, MacOS или Windows, но если вы предпочитаете не устанавливать его вообще, то он будет доступен предварительно установленным в [Azure Cloud Shell][cloudshell-docs].
+Cloud Controller — основная точка входа в среду Cloud Foundry для развертывания приложений и управления ими. Основной API Cloud Controller — это REST API. Доступ к нему можно получить с помощью различных средств. В этом случае мы взаимодействуете с ним через интерфейс [командной строки Cloud Foundry][cf-cli]. Вы можете установить интерфейс командной строки в Linux, macOS или Windows, но если вы предпочитаете не устанавливать его вообще, то он будет доступен предварительно установленным в [Azure Cloud Shell][cloudshell-docs].
 
 Для входа добавьте `api` перед SYSTEMDOMAINURL, полученным из развертывания Marketplace. Так как развертывание по умолчанию использует самозаверяющий сертификат, следует также добавить параметр `skip-ssl-validation`.
 
@@ -141,7 +133,7 @@ cf scale -i 2 hello-spring-cloud
 Если выполнить команду `cf app` в приложении, мы увидим, что Cloud Foundry создает другой экземпляр приложения. После запуска приложения Cloud Foundry автоматически запускает балансировку нагрузки по трафику к нему.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ознакомьтесь с документацией по Cloud Foundry][cloudfoundry-docs]
 - [Настройка подключаемого модуля Azure DevOps Services для Cloud Foundry][vsts-plugin]

@@ -4,16 +4,16 @@ description: Предоставляет сведения о хранилище A
 author: normesta
 ms.service: storage
 ms.topic: overview
-ms.date: 10/11/2019
+ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 99863f68c20a2f95dfc744e13a977bf3ccbbf639
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 75bd27f0945c66b9757055c0777b43a050ba67d7
+ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580434"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77921000"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
 
@@ -37,11 +37,11 @@ Data Lake Storage 2-го поколения использует службу х
 
 ## <a name="key-features-of-data-lake-storage-gen2"></a>Основные функции Data Lake Storage Gen2
 
--   **Доступ, совместимый с Hadoop**. Хранилище Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Во всех средах Apache Hadoop, в том числе [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/index) *,* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/index) и [Хранилище данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/), доступен новый [драйвер ABFS](data-lake-storage-abfs-driver.md), который позволяет получать доступ к данным в Data Lake Storage 2-го поколения.
+-   **Доступ, совместимый с Hadoop.** Хранилище Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Во всех средах Apache Hadoop, в том числе [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/index) *,* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/index) и [Хранилище данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/), доступен новый [драйвер ABFS](data-lake-storage-abfs-driver.md), который позволяет получать доступ к данным в Data Lake Storage 2-го поколения.
 
--   **Супермножество разрешений POSIX**. Модель безопасности Data Lake 2-го поколения поддерживает разрешения ACL и POSIX, а также некоторую дополнительную детализацию, относящуюся к Data Lake Storage 2-го поколения. Параметры могут быть настроены через Обозреватель службы хранилища или с помощью платформ, таких как Hive и Spark.
+-   **Супермножество разрешений POSIX.** Модель безопасности Data Lake 2-го поколения поддерживает разрешения ACL и POSIX, а также некоторую дополнительную детализацию, относящуюся к Data Lake Storage 2-го поколения. Параметры могут быть настроены через Обозреватель службы хранилища или с помощью платформ, таких как Hive и Spark.
 
--   **Экономичность**. Data Lake Storage 2-го поколения обеспечивает недорогие транзакции и емкость хранилища. За счет таких встроенных функций, как [Жизненный цикл хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md), в ходе жизненного цикла данных тарифные ставки максимально снижаются.
+-   **Экономичность.** Data Lake Storage 2-го поколения обеспечивает недорогие транзакции и емкость хранилища. За счет таких встроенных функций, как [Жизненный цикл хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md), в ходе жизненного цикла данных тарифные ставки максимально снижаются.
 
 -   **Оптимизированный драйвер.** Драйвер ABFS [оптимизирован специально](data-lake-storage-abfs-driver.md) для аналитики больших данных. Соответствующие интерфейсы REST API подключены через конечную точку `dfs.core.windows.net`.
 
@@ -66,30 +66,23 @@ Data Lake Storage 2-го поколения — это дополнительн
 | Большие двоичные объекты — хранилище объектов общего назначения | Контейнер              | Виртуальный каталог (только пакет SDK — не поддерживает атомарное управление) | BLOB-объект           |
 | Azure Data Lake Storage 2-го поколения — Хранилище для аналитики          | Контейнер            | Каталог                                                           | Файл           |
 
+## <a name="supported-blob-storage-features"></a>Поддерживаемые функции хранилища BLOB-объектов
+
+Такие функции хранилища BLOB-объектов, как  [журнал ведения диагностики](../common/storage-analytics-logging.md),  [уровни доступа](storage-blob-storage-tiers.md) и  [политики управления жизненным циклом хранилища BLOB-объектов](storage-lifecycle-management-concepts.md), теперь работают с учетными записями, у которых есть иерархические пространства имен. Таким образом, можно включить иерархические пространства имен в учетных записях хранения BLOB-объектов без потери доступа к этим функциям. 
+
+Список поддерживаемых функций хранилища BLOB-объектов см. в разделе [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md).
+
+## <a name="supported-azure-service-integrations"></a>Интеграции поддерживаемых служб Azure
+
+ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Список поддерживаемых служб Azure см. в статье [Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md).
+
 ## <a name="supported-open-source-platforms"></a>Поддерживаемые платформы с открытым исходным кодом
 
-Несколько платформ с открытым исходным кодом, которые поддерживают Data Lake Storage 2-го поколения. Эти платформы приведены в следующей таблице.
+Несколько платформ с открытым исходным кодом, которые поддерживают Data Lake Storage 2-го поколения. Полный список см. в статье [Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md).
 
-> [!NOTE]
-> Поддерживаются только версии, которые приведены в этой таблице.
+## <a name="see-also"></a>См. также раздел
 
-| платформа |  Поддерживаемые версии | Дополнительные сведения |
-| --- | --- | --- |
-| [HDInsight](https://azure.microsoft.com/services/hdinsight/) | 3.6+ | [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning?toc=%2Fen-us%2Fazure%2Fhdinsight%2Fstorm%2FTOC.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
-| [Hadoop](https://hadoop.apache.org/) | 3.2+ | [Архив выпусков Apache Hadoop](https://hadoop.apache.org/release.html) |
-| [Cloudera](https://www.cloudera.com/) | 6.1+ | [Заметки о выпуске Cloudera Enterprise 6.x](https://www.cloudera.com/documentation/enterprise/6/release-notes/topics/rg_cdh_6_release_notes.html) |
-| [Azure Databricks](https://azure.microsoft.com/services/databricks/) | 5.1+ | [Версии Databricks Runtime](https://docs.databricks.com/release-notes/runtime/databricks-runtime-ver.html) |
-|[Hortonworks](https://hortonworks.com/)| 3.1.x++ | [Настройка доступа к данным в облаке](https://docs.hortonworks.com/HDPDocuments/Cloudbreak/Cloudbreak-2.9.0/cloud-data-access/content/cb_configuring-access-to-adls2.html) |
-
-## <a name="supported-azure-services"></a>Поддерживаемые службы Azure
-
-ADLS 2-го поколения поддерживает несколько служб Azure, которые можно использовать для приема данных, выполнения аналитики и создания визуальных представлений. Список поддерживаемых служб Azure см. в статье [Integrate Azure Data Lake Storage with Azure services](data-lake-storage-integrate-with-azure-services.md) (Интеграция Azure Data Lake Storage со службами Azure).
-
-## <a name="next-steps"></a>Дополнительная информация
-
-В следующих статьях описаны некоторые из основных концепций Data Lake Storage Gen2, а также объясняется, как хранить и анализировать данные, получать к ним доступ и управлять ими:
-
-- [Иерархическое пространство имен хранилища Azure Data Lake Storage Gen2 (предварительная версия)](data-lake-storage-namespace.md)
-- [создать учетную запись хранения;](data-lake-storage-quickstart-create-account.md)
+- [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 - [Multi-protocol access on Azure Data Lake Storage (preview)](data-lake-storage-multi-protocol-access.md) (Доступ с использованием нескольких протоколов на Azure Data Lake Storage (предварительная версия))
-- [Integrate Azure Data Lake Storage with Azure services](data-lake-storage-integrate-with-azure-services.md) (Интеграция Azure Data Lake Storage со службами Azure)
+
+

@@ -4,18 +4,18 @@ description: В этом руководстве описано, как масш�
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 9f3049f5a46918d9e70e27fe862372de2cf577ae
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: f1b813576a94541cdc2ab0a67fea71b6f49696c5
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75639060"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78251800"
 ---
-# <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство. Масштабирование кластера Service Fabric в Azure
+# <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство по Масштабирование кластера Service Fabric в Azure
 
 Это руководство представляет собой третью часть серии. В нем показано, как масштабировать имеющийся кластер. Завершив работу с этим руководством, вы будете знать, как масштабировать кластер и очистить все остающиеся ресурсы.  Дополнительные сведения о масштабировании запущенного в Azure кластера, см. в руководстве по [масштабированию кластеров Service Fabric](service-fabric-cluster-scaling.md).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * добавление и удаление узлов (развертывание и свертывание кластера);
@@ -33,7 +33,7 @@ ms.locfileid: "75639060"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -93,7 +93,7 @@ ms.locfileid: "75639060"
 New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "ChangingInstanceCount"
 ```
 Или такую команду Azure CLI:
-```azure-cli
+```azurecli
 az group deployment create --resource-group sfclustertutorialgroup --template-file c:\temp\template.json --parameters c:\temp\parameters.json
 ```
 
@@ -799,7 +799,7 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
 New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "AddingNodeType"
 ```
 Или такую команду Azure CLI:
-```azure-cli
+```azurecli
 az group deployment create --resource-group sfclustertutorialgroup --template-file c:\temp\template.json --parameters c:\temp\parameters.json
 ```
 
@@ -845,7 +845,7 @@ Foreach($node in $nodes)
 
 [Экспортируйте файл с шаблоном и параметрами](#export-the-template-for-the-resource-group) из группы ресурсов с самым свежим развертыванием.  Откройте файл *parameters.json*.  Если вы развернули кластер с помощью [примера шаблона][template] из этого руководства, в этом кластере существуют три типа узлов.  
 
-Размер виртуальных машин во втором типе узла задается параметром *vmNodeType1Size*.  Измените значение параметра *vmNodeType1Size* со Standard_D2_V2 на [Standard_D3_V2](/azure/virtual-machines/windows/sizes-general#dv2-series), чтобы удвоить ресурсы для каждого экземпляра виртуальной машины.
+Размер виртуальных машин во втором типе узла задается параметром *vmNodeType1Size*.  Измените значение параметра *vmNodeType1Size* со Standard_D2_V2 на [Standard_D3_V2](../virtual-machines/dv2-dsv2-series.md), чтобы удвоить ресурсы для каждого экземпляра виртуальной машины.
 
 Номер SKU виртуальной машины для всех трех типов узла задается параметром *vmImageSku*.  Изменение номера SKU для типа узла также следует выполнять с крайней осторожностью. Мы не рекомендуем делать это для основного типа узла.
 
@@ -856,7 +856,7 @@ Foreach($node in $nodes)
 New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -TemplateFile c:\temp\template.json -TemplateParameterFile c:\temp\parameters.json -Name "ScaleUpNodeType"
 ```
 Или такую команду Azure CLI:
-```azure-cli
+```azurecli
 az group deployment create --resource-group sfclustertutorialgroup --template-file c:\temp\template.json --parameters c:\temp\parameters.json
 ```
 

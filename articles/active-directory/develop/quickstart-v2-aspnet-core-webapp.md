@@ -12,19 +12,15 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c11f7daf68585d63d19fca282ef2f4a306303ac7
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 72c363c34a3e7e01cb32917dd87237e4bbfc9490
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77160735"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78249153"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
-
-В этом кратком руководстве вы узнаете, как веб-приложение ASP.NET Core позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD).
-
-![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-aspnet-core-webapp/aspnetcorewebapp-intro.svg)
-
+В этом кратком руководстве вы на конкретном примере кода изучите, как веб-приложение ASP.NET Core позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD). (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
 > У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
@@ -66,22 +62,32 @@ ms.locfileid: "77160735"
 
 #### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
 
-- [Скачайте решение Visual Studio 2019](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
-
-#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
-
-1. Извлеките ZIP-файл в локальную папку, расположенную в корневой папке (например, **C:\Azure-Samples**).
-1. Если вы используете Visual Studio 2019, откройте решение в Visual Studio (необязательно).
-1. Измените файл **appsettings.json**. Найти `ClientId` и измените значение `ClientId` на **идентификатор зарегистрированного приложения (клиента)** . 
-
-    ```json
-    "ClientId": "Enter_the_Application_Id_here"
-    "TenantId": "Enter_the_Tenant_Info_Here"
-    ```
+> [!div renderon="docs"]
+> [Скачайте решение Visual Studio 2019](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
 
 > [!div class="sxs-lookup" renderon="portal"]
+> Запустите проект с помощью Visual Studio 2019.
+> [!div renderon="portal" id="autoupdate" class="nextstepaction"]
+> [Скачивание примера кода]()
+
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Шаг 3. Приложение настроено и готово к запуску
+> Мы уже настроили для проекта нужные значения свойств приложения, и его можно запускать. 
+> [!div class="sxs-lookup" renderon="portal"]
 > > [!NOTE]
-> > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
+> > Enter_the_Supported_Account_Info_Here
+> [!div renderon="docs"]
+> #### <a name="step-3-run-your-visual-studio-project"></a>Шаг 3. Выполнение проекта Visual Studio
+> 1. Извлеките ZIP-файл в локальную папку, расположенную в корневой папке (например, **C:\Azure-Samples**).
+> 1. Откройте решение в Visual Studio. 
+> 1. Измените файл **appsettings.json**. Найти `ClientId` и измените значение `ClientId` на **идентификатор зарегистрированного приложения (клиента)** . 
+>
+>    ```json
+>    "ClientId": "Enter_the_Application_Id_here"
+>    "TenantId": "Enter_the_Tenant_Info_Here"
+>    ```
+
+
 
 > [!div renderon="docs"]
 > Где:
@@ -97,6 +103,9 @@ ms.locfileid: "77160735"
 ## <a name="more-information"></a>Дополнительные сведения
 
 В этом разделе представлен код, используемый для выполнения входа пользователей. Это может быть полезно для рассмотрения принципов работы кода и основных аргументов. Также вы поймете, нужно ли добавлять функцию входа в существующее приложение ASP.NET Core.
+
+### <a name="how-the-sample-works"></a>Как работает этот пример
+![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-aspnet-core-webapp/aspnetcorewebapp-intro.svg)
 
 ### <a name="startup-class"></a>Класс Startup
 

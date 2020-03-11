@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 0f426e7a87204acd4be6529f7dd11a954f23491a
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: ac38adba4ca0d978dd48a546bed1b1faf4fe40fe
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77159477"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79036956"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 
@@ -24,13 +24,13 @@ ms.locfileid: "77159477"
 > - [Начало работы](vs-active-directory-dotnet-getting-started.md)
 > - [Что произошло?](vs-active-directory-dotnet-what-happened.md)
 
-В этой статье описаны конкретные изменения, которые вносятся в проекты ASP.NET MVC при добавлении [подключенной службы Azure Active Directory через Visual Studio](vs-active-directory-add-connected-service.md).
+В этой статье указаны точные изменения, внесенные в проект ASP.NET MVC при добавлении [подключенной службы Azure Active Directory с помощью Visual Studio](vs-active-directory-add-connected-service.md).
 
 Сведения о работе с подключенной службой см. в статье [Начало работы с Azure Active Directory и подключенными службами Visual Studio (проекты WebApi)](vs-active-directory-dotnet-getting-started.md).
 
 ## <a name="added-references"></a>Добавленные ссылки
 
-Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
+Влияет на файл проекта (*. NET References) и `packages.config` (ссылки NuGet).
 
 | Тип | Справочник |
 | --- | --- |

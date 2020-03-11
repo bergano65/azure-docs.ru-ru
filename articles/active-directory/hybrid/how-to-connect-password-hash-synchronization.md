@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3f7d7c9af807120457b119e0be047c7a342b961
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: f6451507eb5a25f432c73468d0da0db1838c8c9a
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378438"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79081863"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -124,6 +124,7 @@ Azure AD поддерживает отдельную политику срока
 
 > [!NOTE]
 > Эта функция доступна в общедоступной предварительной версии прямо сейчас.
+> Команда PowerShell Set-MsolPasswordPolicy не будет работать в федеративных доменах. 
 
 #### <a name="public-preview-of-synchronizing-temporary-passwords-and-force-password-change-on-next-logon"></a>Общедоступная Предварительная версия синхронизации временных паролей и "принудительное изменение пароля при следующем входе"
 
@@ -235,7 +236,7 @@ Azure AD поддерживает отдельную политику срока
 ## <a name="troubleshoot-password-hash-synchronization"></a>Устранение неполадок при синхронизации хэшированных паролей
 Если вы столкнетесь с проблемами при синхронизации хэшированных паролей, воспользуйтесь рекомендациями из статьи [Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](tshoot-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 * [Получить поэтапный план развертывания для перехода с ADFS на синхронизацию хэша паролей](https://aka.ms/authenticationDeploymentPlan)

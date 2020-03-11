@@ -4,12 +4,12 @@ description: Узнайте, как с помощью Ansible создать и 
 keywords: ansible, azure, devops, bash, playbook, mysql, database
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: f068b3022c94466a20b524240dc293392b1f42ff
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 9cd574417733518b993bb242c2c168aba338e34a
+ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77603125"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78247867"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>Руководство по настройке баз данных в Базе данных Azure для MySQL с помощью Ansible
 
@@ -155,11 +155,15 @@ ansible-playbook mysql_firewall.yml
 
 ## <a name="connect-to-the-server"></a>Подключение к серверу
 
-В этом разделе в используете Azure Cloud Shell для подключения к серверу, который вы создали ранее.
+В этом разделе вы примените Azure Cloud Shell для подключения к серверу, который вы создали ранее.
 
-1. Нажмите кнопку **Попробовать** в приведенном ниже коде.
+1. Откройте адрес shell.azure.com, нажав кнопку ниже.
 
-    ```azurecli-interactive
+   [![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+
+1. Введите приведенный ниже код.
+
+    ```sql
     mysql -h mysqlserveransible.mysql.database.azure.com -u mysqladmin@mysqlserveransible -p
     ```
 
@@ -171,7 +175,7 @@ ansible-playbook mysql_firewall.yml
     
     Если она успешно выполнится, отобразятся результаты, аналогичные приведенным ниже.
     
-    ```
+    ```output
     demo@Azure:~$ mysql -h mysqlserveransible.mysql.database.azure.com -u mysqladmin@mysqlserveransible -p
     Enter password:
     Welcome to the MySQL monitor.  Commands end with ; or \g.

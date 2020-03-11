@@ -12,12 +12,12 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d305f3354e7b1af6d43f31f0dd5fe9f54ef3e66f
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 5d7c7d9f6d59ffd57ddb14f7c060d0a3f6f2a6eb
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242281"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967758"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -113,8 +113,8 @@ ms.locfileid: "73242281"
 | URL-адрес | Как он используется |
 | --- | --- |
 | \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
-| mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Azure использует эти URL-адреса для проверки сертификатов |
-| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*. microsoftonline.com<br>* . microsoftonline-p.com<br>*. msauth.net<br>* . msauthimages.NET<br>*. msecnd.net<br>* . msftauth.NET<br>*. msftauthimages.net<br>* . phonefactor.NET<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net | Соединитель использует эти URL-адреса во время регистрации. |
+| mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Соединитель использует эти URL-адреса для проверки сертификатов. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*. microsoftonline.com<br>* . microsoftonline-p.com<br>*. msauth.net<br>* . msauthimages.NET<br>*. msecnd.net<br>* . msftauth.NET<br>*. msftauthimages.net<br>* . phonefactor.NET<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctdl.windowsupdate.com:80 | Соединитель использует эти URL-адреса во время регистрации. |
 
 Если брандмауэр или прокси-сервер позволяет настраивать списки разрешений DNS, можно разрешить подключения к \*. msappproxy.net и \*. servicebus.windows.net. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
 

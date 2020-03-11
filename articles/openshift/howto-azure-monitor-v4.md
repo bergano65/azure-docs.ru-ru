@@ -6,21 +6,24 @@ ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/06/2020
-ms.openlocfilehash: 1a372ef12ef7b0afb06ed3c540daaee5e38c3374
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: a784fc070400995c56d16a3bc264d589bcb1f64e
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78899169"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082852"
 ---
 # <a name="azure-monitor-integration-for-azure-red-hat-openshift-43"></a>Интеграция Azure Monitor для Azure Red Hat OpenShift 4,3
 
-> [!IMPORTANT]
-> Azure Red Hat OpenShift 4,3 предлагается в предварительной версии. Функции предварительной версии являются самостоятельными и предоставляются как есть и доступны и исключаются из соглашения об уровне обслуживания (SLA) и ограниченной гарантии. Поэтому функции не предназначены для использования в рабочей среде. 
+> [!IMPORTANT] 
+> Обратите внимание, что Azure Red Hat OpenShift 4,3 в настоящее время доступен только в закрытой предварительной версии в восточной части США. Закрытая Предварительная версия принимает только приглашение. Перед включением этой функции обязательно Зарегистрируйте подписку: [Регистрация закрытой предварительной версии Azure Red Hat OpenShift](https://aka.ms/aro-preview-register)
+
+> [!NOTE]
+> Функции предварительной версии являются самостоятельными и предоставляются как есть и доступны и исключаются из соглашения об уровне обслуживания (SLA) и ограниченной гарантии. Поэтому функции не предназначены для использования в рабочей среде.
 
 В этой статье описывается, как включить закрытую предварительную версию Azure Monitor для контейнеров для кластеров OpenShift 4,3, размещенных локально или в любой облачной среде. Эти же инструкции также применяются для включения мониторинга кластеров Azure Red Hat OpenShift (АТО) 4,3.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Helm 3](https://helm.sh/docs/intro/install/)
@@ -51,7 +54,7 @@ curl -LO  https://raw.githubusercontent.com/microsoft/OMS-docker/ci_feature/docs
 bash onboarding_azuremonitor_for_containers.sh <azureSubscriptionId> <azureRegionforLogAnalyticsWorkspace> <clusterName> <kubeconfigContextNameOftheCluster>
 ```
 
-Например:
+Пример:
 
 ```bash
  bash onboarding_azuremonitor_for_containers.sh 27ac26cf-a9f0-4908-b300-9a4e9a0fb205 eastus myocp42 admin 
@@ -89,7 +92,7 @@ helm del azmon-containers-release-1
 
 Свяжитесь с нами с помощью askcoin@microsoft.com для получения отзывов и вопросов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о мониторинге см. в следующих статьях:
 - [Обзор контейнера Insights](../azure-monitor/insights/container-insights-overview.md)
