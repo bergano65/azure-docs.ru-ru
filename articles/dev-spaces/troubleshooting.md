@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Узнайте, как устранить распространенные проблемы, возникающие при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 0cf8eb7b07622a989bc78637b1601ba68b9b5f6f
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: fdb0d8afa55f87ae61213b189e9e24ec63bfcfb8
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251127"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78946006"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок Azure Dev Spaces
 
@@ -292,7 +292,7 @@ Service cannot be started.
 
 Эта ошибка может появиться при запуске отладчика Visual Studio Code. Возможно, у вас нет расширения VS Code для C# установки на компьютере разработки. C# Расширение включает поддержку отладки для .NET Core (CoreCLR).
 
-Чтобы устранить эту проблему, установите [расширение VS Code для C# ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
+Чтобы устранить эту проблему, установите [расширение VS Code для C# ](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 
 ### <a name="error-configured-debug-type-coreclr-is-not-supported"></a>Ошибка "настроенный тип отладки" CoreCLR "не поддерживается"
 
