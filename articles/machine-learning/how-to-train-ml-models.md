@@ -9,14 +9,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: sgilley
-ms.date: 11/08/2019
+ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: 97d8d49b958293e3b51937cafc0874beb4f5ff4a
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 678af1855baf52efa727444236de8a1724a7d0b0
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942241"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79078478"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "75942241"
 
 ### <a name="single-node-training"></a>Одноузловое обучение
 
-Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. У вас уже должен быть создан объект `compute_target`[целевого вычислительного ресурса](how-to-set-up-training-targets.md#amlcompute) и объект `ds`[хранилища данных](how-to-access-data.md).
+Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. Вы уже создали [целевой объект вычислений](how-to-set-up-training-targets.md#amlcompute) `compute_target` и объект [филедатасет](how-to-create-register-datasets.md) `ds`.
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -58,7 +58,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 Этот фрагмент кода определяет следующие параметры конструктора `Estimator`.
 
-Параметр | Description
+Параметр | Описание
 --|--
 `source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленное вычисление.
 `script_params`| Словарь, указывающий аргументы командной строки для передачи в сценарий обучения `entry_script`в виде пар `<command-line argument, value>`. Чтобы задать флаг verbose в `script_params`, используйте `<command-line argument, "">`.
@@ -110,7 +110,7 @@ estimator = Estimator(source_directory='./my-keras-proj',
 
 В приведенном выше коде показаны следующие новые параметры конструктора `Estimator`:
 
-Параметр | Description | По умолчанию
+Параметр | Описание | Значение по умолчанию
 --|--|--
 `custom_docker_image`| Имя используемого образа. Можно предоставлять только те образы, которые доступны в публичных хранилищах Docker (в данном случае в центре Docker). Чтобы выбрать образ из частного репозитория Docker, используйте параметр конструктора `environment_definition`. [Ознакомьтесь с примером ниже](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
 `node_count`| Количество узлов, которые будут использоваться для задания обучения. | `1`

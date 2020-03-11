@@ -44,6 +44,8 @@
       href: functions-openapi-definition.md
     - name: Подключение к виртуальной сети
       href: functions-create-vnet.md
+    - name: Обеспечение частного доступа к сайтам
+      href: functions-create-private-site-access.md
     - name: Изменение размера изображения с помощью службы "Сетка событий"
       href: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Создание бессерверного веб-приложения

@@ -223,6 +223,9 @@
       href: stream-analytics-scale-with-machine-learning-functions.md
 - name: Язык запросов Stream Analytics
   items:
+    - name: Общие сведения о языке запросов Stream Analytics
+      href: /stream-analytics-query/stream-analytics-query-language-reference
+      maintainContext: true
     - name: Встроенные функции
       items:
         - name: Обзор встроенных функций

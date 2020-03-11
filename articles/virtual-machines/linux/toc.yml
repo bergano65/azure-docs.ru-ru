@@ -251,8 +251,8 @@
       items:
         - name: Использование CLI
           href: create-cli-complete.md
-        - name: Использование шаблона
-          displayName: 'Azure Resource Manager, ARM'
+        - name: Использование шаблона ARM
+          displayName: Azure Resource Manager
           href: create-ssh-secured-vm-from-template.md
         - name: Использование REST API
           href: create-vm-rest-api.md
@@ -270,8 +270,9 @@
               href: spot-cli.md
             - name: Портал
               href: ../windows/spot-portal.md?toc=/azure/virtual-machines/linux/toc.json
-            - name: Шаблон
+            - name: Шаблон ARM
               href: spot-template.md
+              displayName: Azure Resource Manager
             - name: Коды ошибок
               href: ../error-codes-spot.md?toc=/azure/virtual-machines/linux/toc.json
     - name: Переход с классической модели развертывания на модель Azure Resource Manager
@@ -462,8 +463,9 @@
               href: image-builder-overview.md
             - name: Использование Azure CLI
               href: image-builder.md
-            - name: Справочник по шаблонам
+            - name: Справочник по шаблонам ARM
               href: image-builder-json.md
+              displayName: 'ARM,Resource Manager'
             - name: Сборка для коллекций образов
               href: image-builder-gallery.md
             - name: Обновление существующего образа
@@ -631,7 +633,7 @@
               href: attach-disk-portal.md
         - name: Отсоединение диска
           href: detach-disk.md
-        - name: Развертывание дисков с помощью шаблона
+        - name: Развертывание дисков с помощью шаблона ARM
           displayName: 'Azure Resource Manager, ARM'
           href: using-managed-disks-template-deployments.md
         - name: Включение общих дисков
@@ -757,9 +759,10 @@
       href: /rest/api/compute
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.compute/allversions
+      displayName: ARM
 - name: Ресурсы
   items:
-    - name: Создание шаблонов
+    - name: Создание шаблонов ARM
       displayName: 'Azure Resource Manager, ARM'
       href: /azure/azure-resource-manager/
     - name: Развитие навыков с помощью Microsoft Learn
