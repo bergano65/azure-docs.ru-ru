@@ -138,7 +138,7 @@
       displayName: best practice
     - name: Рекомендации по работе с хранилищем
       href: storage-considerations.md
-      displayName: 'encryption, keys'
+      displayName: 'encryption, keys, mount, files'
     - name: Прокси функций
       href: functions-proxies.md
     - name: Сетевые параметры

@@ -12,11 +12,11 @@ ms.date: 02/13/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 8e07d3e1815c1b47b9d37c08e8fac5359b71fe7c
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78189038"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78374849"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "78189038"
 
 Выполнив действия, описанные в этой статье, вы создадите настраиваемую политику регистрации и входа в систему с фирменной символикой и внешним видом. Благодаря Azure Active Directory B2C (Azure AD B2C) вы получаете практически полный контроль над содержимым HTML и CSS, которое представляется пользователям. При использовании настраиваемой политики вы настраиваете пользовательский интерфейс в XML-файле, а не с помощью элементов управления на портале Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md). Для регистрации и входа с использованием локальных учетных записей необходимо иметь рабочую настраиваемую политику.
 
@@ -34,7 +34,7 @@ ms.locfileid: "78189038"
 
 Чтобы настроить настройку пользовательского интерфейса, скопируйте **контентдефинитион** и его дочерние элементы из базового файла в файл Extensions.
 
-1. Откройте базовый файл политики. Например, <em>`SocialAndLocalAccounts/` **`TrustFrameworkBase.xml`** </em>. Этот базовый файл является одним из файлов политики, включенных в начальный пакет пользовательской политики, который необходимо получить в предварительных требованиях, чтобы приступить [к работе с пользовательскими политиками](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom).
+1. Откройте базовый файл политики. Например, <em>`SocialAndLocalAccounts/` **`TrustFrameworkBase.xml`** </em> . Этот базовый файл является одним из файлов политики, включенных в начальный пакет пользовательской политики, который необходимо получить в предварительных требованиях, чтобы приступить [к работе с пользовательскими политиками](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom).
 1. Найдите и скопируйте содержимое элемента **ContentDefinitions**.
 1. Откройте файл расширения, Например, *TrustFrameworkExtensions.xml*. Найдите элемент **BuildingBlocks**. Если такой элемент не существует, добавьте его.
 1. Вставьте содержимое скопированного элемента **ContentDefinitions** в качестве дочернего элемента **BuildingBlocks**.
@@ -131,6 +131,6 @@ Azure AD B2C отправляет ISO-код с двумя буквами для
 https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об элементах пользовательского интерфейса, которые можно настроить, см. в [справочном руководстве по настройке пользовательского интерфейса для потоков пользователей](customize-ui-overview.md).
