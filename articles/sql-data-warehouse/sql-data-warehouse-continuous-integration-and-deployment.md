@@ -1,26 +1,26 @@
 ---
 title: Непрерывная интеграция и развертывание
-description: Средство корпоративного класса для хранения данных Database DevOps со встроенной поддержкой непрерывной интеграции и развертывания с помощью Azure Pipelines.
+description: DevOps базы данных корпоративного класса для хранения данных благодаря встроенной поддержке непрерывной интеграции и развертывания с помощью Azure Pipelines.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
-ms.topic: overview
+ms.topic: how-to
 ms.subservice: integration
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: cb28afc84c423c5c5321a8f948e82f82031888a0
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
-ms.translationtype: HT
+ms.openlocfilehash: a72ca29c2386035adaa6ebd58c4177f0f4e8ba11
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78195946"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673591"
 ---
-# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание для хранилищ данных
+# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Непрерывная интеграция и развертывание хранилищ данных
 
-В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Этот учебник является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранилищ данных. 
+В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Это руководство является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранения данных. 
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -62,7 +62,7 @@ ms.locfileid: "78195946"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Изучите [архитектуру MPP для SQL Analytics](massively-parallel-processing-mpp-architecture.md)
+- Изучение [архитектуры MPP в SQL Analytics](massively-parallel-processing-mpp-architecture.md)
 - Быстрое создание [пула SQL](create-data-warehouse-portal.md)
 - [Отправка примера данных](sql-data-warehouse-load-sample-databases.md)
 - Просмотрите [видео](/azure/sql-data-warehouse/sql-data-warehouse-videos).
