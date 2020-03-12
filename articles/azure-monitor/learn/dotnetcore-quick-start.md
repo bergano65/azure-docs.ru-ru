@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 06/26/2019
 ms.custom: mvc
-ms.openlocfilehash: fa1651e88226080cca970cc756f2c0522b39f1be
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: ef46b86186d1f5e26360de891b3a090ab0ece66b
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670633"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894814"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
@@ -24,10 +24,10 @@ ms.locfileid: "77670633"
 
 Для работы с этим кратким руководством сделайте следующее:
 
-- Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
+- Установите [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) с указанными ниже рабочими нагрузками:
   - ASP.NET и веб-разработка.
   - Разработка Azure.
-- [Установите пакет SDK для .NET Core 2.0.](https://www.microsoft.com/net/core)
+- [Установите пакет SDK для .NET Core 2.0.](https://dotnet.microsoft.com/download)
 - Потребуется подписка Azure и веб-приложение .NET Core.
 
 Если у вас нет веб-приложения ASP.NET Core, [создайте его и добавьте Application Insights](../../azure-monitor/app/asp-net-core.md) с помощью нашего пошагового руководства.

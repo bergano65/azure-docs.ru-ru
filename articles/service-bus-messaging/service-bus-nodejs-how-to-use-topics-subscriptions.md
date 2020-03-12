@@ -14,21 +14,20 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 01/16/2020
 ms.author: aschhab
-ms.openlocfilehash: e6ac3c74a0a8346ad8a6820c676224bfcba0e8b4
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: c85b63b4a56e74b0fef9a122ec995b4106496cbe
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264447"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330452"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/sb
-> [!div class="op_multi_selector" title1="Язык программирования" title2="Пакет Node.js"]
-> - [(Node.js | azure-sb)](service-bus-nodejs-how-to-use-topics-subscriptions.md)
-> - [(Node.js | @azure/service-bus)](service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)
-
 Из этого учебника вы узнаете, как создавать приложения Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью пакета [azure-sb](https://www.npmjs.com/package/azure-sb). Эти примеры написаны на JavaScript и используют [модуль Node.js для Azure](https://www.npmjs.com/package/azure) с интегрированным пакетом `azure-sb`.
 
-Пакет [azure-sb](https://www.npmjs.com/package/azure-sb) работает с [интерфейсами REST API служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Вы можете ускорить работу с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus), который использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md). Дополнительные сведения о новом пакете см. в статьях [об использовании разделов и подписок служебной шины с Node. js и пакетом @azure/service-bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-topics-subscriptions-new-package). Далее в этой статье описывается работа с пакетом [azure](https://www.npmjs.com/package/azure).
+> [!IMPORTANT]
+> Пакет [azure-sb](https://www.npmjs.com/package/azure-sb) работает с [интерфейсами REST API служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Вы можете ускорить работу с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus), который использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md). 
+> 
+> Дополнительные сведения о новом пакете см. в статьях [об использовании разделов и подписок служебной шины с Node. js и пакетом @azure/service-bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-topics-subscriptions-new-package). Далее в этой статье описывается работа с пакетом [azure](https://www.npmjs.com/package/azure).
 
 Здесь рассматриваются следующие сценарии:
 

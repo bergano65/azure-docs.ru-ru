@@ -182,9 +182,13 @@
             - name: Настройка пользовательского интерфейса
               href: custom-policy-ui-customization.md
               displayName: 'ux, input, cors, html, css'
+            - name: Настройка языка
+              href: custom-policy-localization.md
             - name: Настраиваемый адрес электронной почты
               href: custom-email.md
               displayName: verification
+            - name: Отключение проверки по электронной почте
+              href: custom-policy-disable-email-verification.md
             - name: Включение JavaScript
               href: javascript-samples.md
             - name: Сложность пароля

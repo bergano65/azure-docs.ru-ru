@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 1/11/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 381f1486f13907aa52558029789e49bc4e5c4961
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 65352b8f8f85f5e7a2e25ae99d5ca3368ad78711
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687616"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126512"
 ---
 # <a name="introduction-to-azure-app-service-on-linux"></a>Вводные сведения о службе приложений Azure на платформе Linux
 
@@ -26,7 +26,7 @@ ms.locfileid: "74687616"
 ## <a name="deployments"></a>Развернутые приложения
 
 * FTP
-* локальный репозиторий Git;
+* Локальный репозиторий Git
 * GitHub
 * Bitbucket
 
@@ -37,7 +37,7 @@ ms.locfileid: "74687616"
 
 ## <a name="console-publishing-and-debugging"></a>Консоль, публикация и отладка
 
-* средами;
+* Среды
 * Развернутые приложения
 * базовая консоль;
 * SSH
@@ -71,7 +71,7 @@ ms.locfileid: "74687616"
 
 ![Просмотр журналов Docker с помощью Kudu][1]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующие статьи помогут вам приступить к работе со службой приложений на платформе Linux с помощью веб-приложений, написанных на разных языках:
 
@@ -91,7 +91,7 @@ ms.locfileid: "74687616"
 * [Настройка промежуточных сред в службе приложений Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 * [Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"](app-service-linux-ci-cd.md)
 
-Если у вас возникли вопросы, опубликуйте их на [нашем форуме](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazurewebsitespreview).
+Если у вас возникли вопросы, опубликуйте их на [нашем форуме](https://docs.microsoft.com/answers/topics/azure-webapps.html).
 
 <!--Image references-->
 [1]: ./media/app-service-linux-intro/kudu-docker-logs.png

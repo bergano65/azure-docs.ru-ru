@@ -1,5 +1,5 @@
 ---
-title: Руководство. визуализации аномалий c помощью пакетного обнаружения и Power BI
+title: Руководство по визуализации аномалий c помощью пакетного обнаружения и Power BI
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать API "Детектор аномалий" и Power BI для визуализации аномалий в данных временных рядов.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: tutorial
-ms.date: 12/19/2019
+ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: 1d1f71ed56138f2c799c7410508c0bc4899e7887
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1b486aaf0ce33e31433c2c3d0f7a1ff2c7089132
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448854"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402661"
 ---
-# <a name="tutorial-visualize-anomalies-using-batch-detection-and-power-bi"></a>Руководство. визуализации аномалий c помощью пакетного обнаружения и Power BI
+# <a name="tutorial-visualize-anomalies-using-batch-detection-and-power-bi"></a>Руководство по визуализации аномалий c помощью пакетного обнаружения и Power BI
 
 В этом учебнике показано, как найти аномалии в наборе данных временных рядов в пакетном режиме. В Power BI Desktop в файле Excel подготовьте данные для API Детектора аномалий и визуализируйте статистические аномалии в нем.
 
@@ -28,14 +28,14 @@ ms.locfileid: "75448854"
 > * Интеграция Power BI Desktop с API Детектора аномалий для пакетного обнаружения аномалий.
 > * Визуализация аномалий, которые находятся в данных, включая ожидаемые и видимые значения, а также границы обнаружения аномалий.
 
-## <a name="prerequisites"></a>предварительные требования
-
+## <a name="prerequisites"></a>Предварительные требования
+* [Подписка Azure](https://azure.microsoft.com/free/)
 * [Microsoft Power BI Desktop](https://powerbi.microsoft.com/get-started/) предоставляется бесплатно.
 * Файл Excel (XLSX) содержит точки данных временных рядов. Пример данных для этого краткого руководства можно найти на сайте [GitHub](https://go.microsoft.com/fwlink/?linkid=2090962).
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
+    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.
 
 [!INCLUDE [cognitive-services-anomaly-detector-data-requirements](../../../../includes/cognitive-services-anomaly-detector-data-requirements.md)]
-
-[!INCLUDE [cognitive-services-anomaly-detector-signup-requirements](../../../../includes/cognitive-services-anomaly-detector-signup-requirements.md)]
 
 ## <a name="load-and-format-the-time-series-data"></a>Загрузка и форматирование данных временных рядов
 
