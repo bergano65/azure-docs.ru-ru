@@ -181,6 +181,8 @@
               href: container-registry-tasks-authentication-key-vault.md
         - name: Сборка образа с помощью пакетов сборок (предварительная версия)
           href: container-registry-tasks-pack-build.md
+        - name: Просмотр журналов задач
+          href: container-registry-tasks-logs.md
 - name: Справочник
   expanded: false
   items:

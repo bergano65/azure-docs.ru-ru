@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 12/05/2019
-ms.openlocfilehash: 24ecf90c2ffc88415afbf84f54af3efa7d5f4a39
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/10/2020
+ms.openlocfilehash: a72753d5553e79a8ed28c3afcc7e54af6c2d230c
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435439"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79117238"
 ---
 # <a name="network-security-group-nsg-service-tags-for-azure-hdinsight"></a>Теги службы группы безопасности сети (NSG) для Azure HDInsight
 
@@ -40,7 +40,7 @@ ms.locfileid: "75435439"
 
 1. В раскрывающемся списке **тег службы источника** выберите **HDInsight**.
 
-    ![портал Azure добавить тег службы](./media/hdinisght-service-tags/azure-portal-add-service-tag.png)
+    ![портал Azure добавить тег службы](./media/hdinsight-service-tags/azure-portal-add-service-tag.png)
 
 Этот тег содержит IP-адреса служб работоспособности и управления для всех регионов, в которых доступна служба HDInsight, и гарантирует, что кластер сможет взаимодействовать с необходимыми службами работоспособности и управления независимо от того, где они созданы.
 
@@ -54,28 +54,29 @@ ms.locfileid: "75435439"
 
 Если вы предпочитаете два варианта тегов службы и кластер находится в одном из регионов, перечисленных в этой таблице, необходимо добавить в группу безопасности сети только один региональный тег службы.
 
-| Страна | Регион | Тег службы |
+| Country | Регион | Тег службы |
 | ---- | ---- | ---- |
 | Австралия | Восточная Австралия | HDInsight. AustraliaEast |
-| &nbsp; | Юго-Восточная Австралия | HDInsight. AustraliaSoutheast |
+| &nbsp; | Юго-Восточная часть Австралии | HDInsight. AustraliaSoutheast |
 | &nbsp; | Центральная Австралия | HDInsight. Аустралиацентрал |
-| Китай | Восточный Китай 2 | HDInsight. ChinaEast2 |
-| &nbsp; | Северный Китай 2 | HDInsight. ChinaNorth2 |
+| Китай | Восточный Китай 2 | HDInsight. ChinaEast2 |
+| &nbsp; | Северный Китай 2 | HDInsight. ChinaNorth2 |
 | США | Центрально-северная часть США | HDInsight. NorthCentralUS |
-| &nbsp; | Западная часть США 2 | HDInsight. WestUS2 |
-| &nbsp; | Центрально-западная часть США | HDInsight. WestCentralUS |
-| Канада | Восточная Канада | HDInsight. Канадаеаст |
+| &nbsp; | западная часть США 2 | HDInsight. WestUS2 |
+| &nbsp; | центрально-западная часть США | HDInsight. WestCentralUS |
+| Canada | Восточная Канада | HDInsight. Канадаеаст |
 | Бразилия | Южная Бразилия | HDInsight. Бразилсаус |
-| Республика Корея | Республика Корея, центральный регион | HDInsight. Кореацентрал |
+| Корея | Республика Корея, центральный регион | HDInsight. Кореацентрал |
 | &nbsp; | Республика Корея, южный регион | HDInsight. Кореасаус |
 | Индия | Центральная Индия | HDInsight. Централиндиа |
 | &nbsp; | Южная Индия | HDInsight. Саусиндиа |
 | Япония | Западная Япония | HDInsight. Жапанвест |
 | Франция | Центральная Франция| HDInsight. Францецентрал |
-| Соединенное Королевство | Южная часть Соединенного Королевства | HDInsight. UKSouth |
+| Соединенное Королевство | южная часть Соединенного Королевства | HDInsight. UKSouth |
 | Azure для государственных организаций | Центральная Восточная   | HDInsight. Усдодцентрал |
 | &nbsp; | USGov (Техас) | HDInsight. Усговтексас |
 | &nbsp; | Восточная Восток | HDInsight. Усдодеаст |
+| &nbsp; | USGov (Аризона) | HDInsight. Усговаризона |
 
 ### <a name="use-multiple-regional-service-tags"></a>Использование нескольких региональных тегов служб
 
@@ -93,14 +94,14 @@ ms.locfileid: "75435439"
 - `HDInsight.WestUS`
 - `HDInsight.EastUS`
 
-| Страна | Регион | Тег службы |
+| Country | Регион | Тег службы |
 | ---- | ---- | ---- |
-| США | Восточная часть США 2 | HDInsight. EastUS2 |
+| США | восточная часть США 2 | HDInsight. EastUS2 |
 | &nbsp; | Центральная часть США | HDInsight. CentralUS |
 | &nbsp; | Норсцентрал США | HDInsight. NorthCentralUS |
 | &nbsp; | Центрально-южная часть США | HDInsight. SouthCentralUS |
 | &nbsp; | Восточная часть США | HDInsight. EastUS |
-| &nbsp; | Западная часть США | HDInsight. WestUS |
+| &nbsp; | западная часть США | HDInsight. WestUS |
 | Япония | Восточная Япония | HDInsight. Жапанеаст |
 | Европа | Северная Европа | HDInsight. Норсеуропе |
 | &nbsp; | Западная Европа| HDInsight. WestEurope |

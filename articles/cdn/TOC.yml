@@ -102,6 +102,8 @@
     - name: Анализ
       href: cdn-log-analysis.md
       items:
+        - name: Необработанные журналы HTTP
+          href: enable-raw-logs.md
         - name: Журналы диагностики Azure
           href: cdn-azure-diagnostic-logs.md
         - name: Средства аналитики для Azure CDN от Verizon

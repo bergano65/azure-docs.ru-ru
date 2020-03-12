@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: helohr
-ms.openlocfilehash: 9e42ff0ec5b44dca743d2ec1470c2eef655b9436
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+manager: lizross
+ms.openlocfilehash: 9392855f98dbee2badbe87bb4a0bf11bf2fc073e
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78273108"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128013"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -25,7 +26,7 @@ ms.locfileid: "78273108"
 - Отправка сообщения активным пользователям на определенном узле сеансов.
 - Подписывать пользователей из узла сеансов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем можно будет развернуть шаблон Azure Resource Manager для средства, необходимо создать регистрацию приложения Azure Active Directory и рабочую область Log Analytics. Для этого вам или администратору требуются следующие разрешения:
 
@@ -256,7 +257,7 @@ ms.locfileid: "78273108"
 
     - Пороговое значение: выше 2000 мс помечено как неработоспособное.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как отслеживать журналы действий при [использовании диагностики с log Analytics](diagnostics-log-analytics.md).
 - Ознакомьтесь с распространенными сценариями ошибок и способами их устранения в статье [Обнаружение и диагностика проблем](diagnostics-role-service.md).

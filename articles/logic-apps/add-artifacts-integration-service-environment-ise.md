@@ -6,18 +6,21 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: 7b9ce8be4ffc306417dd836e28127641f6100321
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: 58d2efd0c61045739930ce36ba317b1aa6a40ce8
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78899195"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127284"
 ---
 # <a name="add-resources-to-your-integration-service-environment-ise-in-azure-logic-apps"></a>Добавление ресурсов в среду службы интеграции (ISE) в Azure Logic Apps
 
 После создания [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)добавьте ресурсы, такие как приложения логики, учетные записи интеграции и соединители, чтобы они могли получать доступ к ресурсам в виртуальной сети Azure. Например, управляемые соединители ISE, которые становятся доступными после создания ИНТЕГРИРОВАНной среды разработки, не отображаются автоматически в конструкторе приложений логики. Прежде чем использовать эти соединители ISE, необходимо вручную [Добавить и развернуть эти соединители в интегрированной среде сценариев](#add-ise-connectors-environment) , чтобы они отображались в конструкторе приложений логики.
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!IMPORTANT]
+> Чтобы приложения логики и учетные записи интеграции работали вместе в интегрированной среде сценариев, оба должны использовать ту *же интегрированную среду сценариев* , что и их расположение.
+
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -39,7 +42,7 @@ ms.locfileid: "78899195"
 
    ![Выбор среды службы интеграции](./media/add-artifacts-integration-service-environment-ise/create-logic-app-integration-service-environment.png)
 
-   | Свойство | Обязательно | Описание |
+   | Свойство | Обязательно | Description |
    |----------|----------|-------------|
    | **Название** | Да | Имя создаваемого приложения логики |
    | **подписка** | Да | Имя подписки Azure, которую нужно использовать. |
@@ -71,7 +74,7 @@ ms.locfileid: "78899195"
 
    ![Выбор среды службы интеграции](./media/add-artifacts-integration-service-environment-ise/create-integration-account-integration-service-environment.png)
 
-   | Свойство | Обязательно | Описание |
+   | Свойство | Обязательно | Description |
    |----------|----------|-------------|
    | **Название** | Да | Имя создаваемой учетной записи интеграции |
    | **подписка** | Да | Имя подписки Azure, которую вы хотите использовать. |
@@ -98,7 +101,7 @@ ms.locfileid: "78899195"
 
    ![Просмотр управляемых соединителей](./media/add-artifacts-integration-service-environment-ise/ise-view-managed-connectors.png)
 
-1. В области **Добавить новый управляемый соединитель** откройте список **Найти соединитель** . Выберите соединитель ISE, который вы хотите использовать, но еще не развернут в интегрированной среде сценариев. Выберите **Создать**.
+1. В области **Добавить новый управляемый соединитель** откройте список **Найти соединитель** . Выберите соединитель ISE, который вы хотите использовать, но еще не развернут в интегрированной среде сценариев. Нажмите кнопку **Создать**.
 
    ![Выберите соединитель ISE, который требуется развернуть в интегрированной среде сценариев](./media/add-artifacts-integration-service-environment-ise/add-managed-connector.png)
 
@@ -128,6 +131,6 @@ ms.locfileid: "78899195"
 
 1. Сведения об управлении пользовательскими соединителями в интегрированной среде сценариев см. в статье [Управление средой службы интеграции](../logic-apps/ise-manage-integration-service-environment.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md)

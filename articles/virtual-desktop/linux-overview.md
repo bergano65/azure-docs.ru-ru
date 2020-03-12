@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: helohr
-ms.openlocfilehash: af5ab05cb772909cd36e2e6bfe1c100a5b83841c
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+manager: lizross
+ms.openlocfilehash: 967fd1fa182b7c8e581fd74cc287c5a6ba0e4038
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77660042"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127822"
 ---
 # <a name="linux-support"></a>Поддержка Linux
 
@@ -56,7 +57,7 @@ ms.locfileid: "77660042"
 1. Создание и развертывание среды виртуальных рабочих столов Windows для тестирования или использования в рабочей среде.
 2. Протестируйте доступные клиенты от сторонних производителей, чтобы ознакомиться с возможностями работы с виртуальными рабочими столами Windows.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с документацией по следующим клиентам:
 

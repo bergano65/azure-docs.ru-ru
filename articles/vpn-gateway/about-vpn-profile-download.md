@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 03/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: 5386cace7191be60534f0d2fbf4a85b592d1ecdd
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 762f62fa0901672c447da42f416e5b003e7419b2
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151623"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127297"
 ---
 # <a name="about-p2s-vpn-client-profiles"></a>О профилях VPN-клиента P2S
 
@@ -33,7 +33,7 @@ $PROFILE.VpnProfileSASUrl
 Извлеките ZIP-файл. Файл содержит следующие папки:
 
 * AzureVPN
-* Универсальный
+* Универсальный шаблон
 * Опенвпн (если вы включили параметры проверки подлинности Опенвпн и Azure AD на шлюзе. См. раздел [Создание клиента](openvpn-azure-ad-tenant.md).)
 
 ## <a name="3-retrieve-information"></a>3. Получение сведений
@@ -60,12 +60,12 @@ $PROFILE.VpnProfileSASUrl
 
 ## <a name="folder-contents"></a>Содержимое папки
 
-* **Папка опенвпн** содержит профиль *ОВПН* , который необходимо изменить, чтобы включить ключ и сертификат. Дополнительные сведения см. в статье [Настройка клиентов опенвпн для VPN-шлюза Azure](vpn-gateway-howto-openvpn-clients.md#windows).
+* **Папка опенвпн** содержит профиль *ОВПН* , который необходимо изменить, чтобы включить ключ и сертификат. Дополнительные сведения см. в статье [Настройка клиентов опенвпн для VPN-шлюза Azure](vpn-gateway-howto-openvpn-clients.md#windows). Если на VPN-шлюзе выбрана проверка подлинности Azure AD, эта папка не будет находиться в файле zip. Вместо этого азуревпнконфиг. XML будет находиться в папке AzureVPN.
 
 * **Общая папка** содержит общедоступный сертификат сервера и файл файл vpnsettings. XML. Файл файл vpnsettings. XML содержит сведения, необходимые для настройки универсального клиента.
 
 * Скачанный ZIP-файл также может содержать папки **WindowsAmd64** и **WindowsX86** . Эти папки содержат установщик для клиентов SSTP и IKEv2 для Windows. Для их установки требуются права администратора на клиенте.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о "точка — сеть" см. в разделе [сведения о точках на](point-to-site-about.md)узел.

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 1f10a577f681d1df4ba99c987df457ea1ca09470
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: 311ce34a4b5cfbb9a54a285094dac34c7dd5a225
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78671603"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126531"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -138,22 +138,15 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 ### <a name="cors"></a>При использовании интерактивной консоли возникает ошибка CORS
 
-Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](api-management-cross-domain-policies.md#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Например:
+Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](api-management-cross-domain-policies.md#CORS) в API-интерфейсы. Можно указать все параметры вручную или использовать `*` подстановочных знаков. Пример:
 
 ```XML
-<cors>
+<cors allow-credentials="true">
     <allowed-origins>
-        <origin>*</origin>
+        <origin>https://contoso.com</origin>
     </allowed-origins>
-    <allowed-methods>
-        <method>GET</method>
-        <method>POST</method>
-        <method>PUT</method>
-        <method>DELETE</method>
-        <method>HEAD</method>
-        <method>OPTIONS</method>
-        <method>PATCH</method>
-        <method>TRACE</method>
+    <allowed-methods preflight-result-max-age="300">
+        <method>*</method>
     </allowed-methods>
     <allowed-headers>
         <header>*</header>
@@ -214,17 +207,17 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
 ### <a name="whats-the-browser-support-for-the-portal"></a>Что такое поддержка браузера для портала?
 
-| Браузер.                     | Поддерживается       |
+| Браузер                     | Поддерживается       |
 |-----------------------------|-----------------|
-| Apple Safari                | Да<sup>1</sup> |
+| Apple Safari;                | Да<sup>1</sup> |
 | Google Chrome               | Да<sup>1</sup> |
 | Microsoft Edge              | Да<sup>1</sup> |
-| Microsoft Internet Explorer | Нет              |
+| Microsoft Internet Explorer | нет              |
 | Mozilla Firefox             | Да<sup>1</sup> |
 
  <small><sup>1</sup> поддерживается в двух последних рабочих версиях.</small>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о новом портале разработчика:
 

@@ -1,17 +1,17 @@
 ---
-title: Сбор сведений о журнале действий Azure с помощью параметров диагностики (Предварительная версия) — Azure Monitor | Документация Майкрософт
+title: Сбор сведений о журнале действий Azure с помощью параметров диагностики — Azure Monitor | Документация Майкрософт
 description: Используйте параметры диагностики для пересылки журналов действий Azure в Azure Monitor журналы, службу хранилища Azure или концентраторы событий Azure.
 author: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: fcf7eef269c9fa8b62217fb64ed792aece1fce4e
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 6d4c724c7cfb4c1779f0fc6592a7e61e060755b9
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670344"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79096892"
 ---
 # <a name="update-to-azure-activity-log-collection-and-export"></a>Обновление коллекции журналов действий Azure и экспорт
 [Журнал действий Azure](platform-logs-overview.md) — это [Журнал платформы](platform-logs-overview.md) , который позволяет получить представление о событиях уровня подписки, произошедших в Azure. Метод отправки записей журнала действий в [концентратор событий или в учетную запись хранения](activity-log-export.md) или в [log Analytics рабочую область](activity-log-collect.md) изменился для использования [параметров диагностики](diagnostic-settings.md). В этой статье описывается различие между методами и способы очистки устаревших параметров в процессе подготовки для изменения параметров диагностики.
@@ -95,7 +95,7 @@ ms.locfileid: "77670344"
 ## <a name="activity-log-monitoring-solution"></a>Решение для мониторинга журнала действий
 Решение для мониторинга Log Analytics Azure включает несколько запросов и представлений журнала для анализа записей журнала действий в рабочей области Log Analytics. Это решение использует данные журнала, собранные в Log Analytics рабочей области, и продолжит работать без изменений, если вы собираете журнал действий с помощью параметров диагностики. Дополнительные сведения об этом решении см. в статье [мониторинг журналов действий решение для мониторинга](activity-log-collect.md#activity-logs-analytics-monitoring-solution) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [См. дополнительные сведения о журнале действий](../../azure-resource-manager/management/view-activity-logs.md)
 * [Дополнительные сведения о параметрах диагностики](diagnostic-settings.md)

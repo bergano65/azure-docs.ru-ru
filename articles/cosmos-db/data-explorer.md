@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: dech
-ms.openlocfilehash: 04cfdd1f96f83898710b6f292116f0afddc8df96
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 57ba647ade45928f03cd7fb2b037642d5e4d52cc
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237238"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79096813"
 ---
 # <a name="work-with-data-using-azure-cosmos-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos 
 
@@ -46,6 +46,8 @@ ms.locfileid: "66237238"
 ## <a name="known-issues"></a>Известные проблемы
 
 В настоящее время функция **Открыть во весь экран**, которая позволяет использовать временный доступ для чтения и записи, еще не поддерживается для учетных записей Azure Cosmos DB Gremlin и API таблиц. Вы по-прежнему можете просматривать свои учетные записи Gremlin и API таблицы, передавая строку подключения обозревателю Azure Cosmos DB. 
+
+В настоящее время просмотр документов, содержащих UUID, не поддерживается в обозреватель данных. Это не влияет на загрузку коллекций, просмотрев только отдельные документы или запросы, содержащие эти документы. Чтобы просматривать эти документы и управлять ими, пользователи должны продолжать использовать средство, которое использовалось для создания этих документов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как начать работу с обозревателем Azure Cosmos DB для управления данными, вы можете:

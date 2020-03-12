@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 02/07/2019
-ms.openlocfilehash: fd881142e0260d313e197d5e40ae25a2621646df
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7356f627c8a85cb89f3900e1af84d5e0a7d4be17
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75372484"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79096207"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "75372484"
  > Отдельные базы данных и базы данных в пуле в Базе данных SQL Azure могут быть только подписчиками. 
 
 
-## <a name="features"></a>Возможности
+## <a name="features"></a>Компоненты
 
 Поддерживаются следующие возможности:
 
@@ -81,9 +81,9 @@ ms.locfileid: "75372484"
 
 ## <a name="3---create-azure-storage-account"></a>3\. Создание учетной записи хранения Azure
 
-[Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочего каталога, а затем создайте общую [папку](../storage/files/storage-how-to-create-file-share.md) в учетной записи хранения. 
+[Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account#create-a-storage-account) для рабочей папки, а затем создайте в этой учетной записи [общую папку](../storage/files/storage-how-to-create-file-share.md). 
 
-Скопируйте путь к общей папке в формате: `\\storage-account-name.file.core.windows.net\file-share-name`
+Скопируйте путь к общей папке в формате `\\storage-account-name.file.core.windows.net\file-share-name`.
 
 Пример: `\\replstorage.file.core.windows.net\replshare`
 
@@ -91,7 +91,7 @@ ms.locfileid: "75372484"
 
 Пример: `DefaultEndpointsProtocol=https;AccountName=replstorage;AccountKey=dYT5hHZVu9aTgIteGfpYE64cfis0mpKTmmc8+EP53GxuRg6TCwe5eTYWrQM4AmQSG5lb3OBskhg==;EndpointSuffix=core.windows.net`
 
-Дополнительные сведения см. в статье [Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md). 
+См. сведения о том, как [управлять ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md). 
 
 ## <a name="4---create-a-publisher-database"></a>4\. Создание базы данных издателя
 
@@ -185,7 +185,7 @@ EXEC sp_adddistpublisher
 ```
 
    > [!NOTE]
-   > Для параметра file_storage следует использовать только символы обратной косой черты (`\`). Использование косой черты (`/`) может вызвать ошибку при подключении к общей папке. 
+   > Для параметра file_storage следует использовать только символы обратной косой черты (`\`). Использование символа прямой косой черты (`/`) может привести к ошибке при подключении к общей папке. 
 
 Этот сценарий настраивает локальный издатель на управляемом экземпляре, добавляет связанный сервер и создает набор заданий для агент SQL Server. 
 
@@ -260,8 +260,8 @@ EXEC sp_addpushsubscription_agent
   @subscriber_security_mode = 0,
   @subscriber_login = N'$(target_username)',
   @subscriber_password = N'$(target_password)',
-  @job_login = N'$(target_username)',
-  @job_password = N'$(target_password)';
+  @job_login = N'$(username)',
+  @job_password = N'$(password)';
 
 -- Initialize the snapshot
 EXEC sp_startpublication_snapshot
@@ -292,15 +292,15 @@ where subsystem in ('Distribution','LogReader','Snapshot') and command not like 
 
 ## <a name="10---test-replication"></a>10. Тестирование репликации
 
-После настройки репликации можно протестировать ее, вставив новые элементы на издателе и просмотрев изменения, распространяемые на подписчик. 
+Настроенную репликацию можно протестировать, добавив новые элементы в издатель и убедившись, что изменения распространяются на подписчик. 
 
-Выполните следующий фрагмент кода T-SQL для просмотра строк на подписчике:
+Выполните следующий фрагмент кода T-SQL, чтобы просмотреть строки в подписчике:
 
 ```sql
 select * from dbo.ReplTest
 ```
 
-Выполните следующий фрагмент кода T-SQL, чтобы вставить дополнительные строки на издателе, а затем снова проверьте строки на подписчике. 
+Выполните следующий фрагмент кода T-SQL, чтобы вставить в издатель дополнительные строки, а затем снова проверьте строки в подписчике. 
 
 ```sql
 INSERT INTO ReplTest (ID, c1) VALUES (15, 'pub')

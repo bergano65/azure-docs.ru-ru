@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 736a543a6f28697dd4f1ddf85317e97a87b86e78
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.openlocfilehash: 7c684d6f1fbd8128ae020b6fd29da928b286aa18
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78227063"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126682"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Включение входа без пароля с помощью приложения Microsoft Authenticator (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "78227063"
 > [!NOTE]
 > Эта возможность наблюдается в Microsoft Authenticator приложении, начиная с марта 2017, поэтому существует вероятность того, что при включении политики для каталога пользователи могут столкнуться с этим потоком немедленно и видеть сообщение об ошибке, если они не были включены политикой. Учитывайте это и не забудьте предупредить пользователей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Многофакторная идентификация Azure с Push-уведомлениями, разрешенными в качестве метода проверки 
 - Последняя версия Microsoft Authenticator на устройствах под управлением iOS версии 8.0 или более поздней версии или Android 6.0 или более поздней версии.
@@ -62,7 +62,7 @@ ms.locfileid: "78227063"
 1. В **Microsoft Authenticator**выберите параметр **включить вход** с помощью телефона в раскрывающемся меню Учетная запись.
 1. Следуйте инструкциям в приложении, чтобы завершить регистрацию для входа на телефон без пароля. 
 
-Организации могут указывать своим пользователям на статью [Вход с помощью телефона, а не пароль](../user-help/microsoft-authenticator-app-phone-signin-faq.md) для дальнейшей помощи в настройке Microsoft Authenticator приложения и активации входа с помощью телефона.
+Организации могут указывать своим пользователям на статью [Вход с помощью телефона, а не пароль](../user-help/microsoft-authenticator-app-phone-signin-faq.md) для дальнейшей помощи в настройке Microsoft Authenticator приложения и активации входа с помощью телефона. Чтобы применить эти параметры, возможно, потребуется выйти из среды и выполнить вход в клиент. 
 
 ## <a name="sign-in-with-passwordless-credential"></a>Вход с использованием учетных данных без пароля
 
@@ -101,7 +101,7 @@ ms.locfileid: "78227063"
 > [!NOTE]
 > Регистрация устройств не аналогична управлению устройствами или MDM. Он связывает только идентификатор устройства и идентификатор пользователя вместе в каталоге Azure AD.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Что такое пароль?](concept-authentication-passwordless.md)
 

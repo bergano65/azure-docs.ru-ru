@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: helohr
-ms.openlocfilehash: 9c738c5b7f233ffa34296eed67eb0f5497f737fc
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+manager: lizross
+ms.openlocfilehash: f508cac23d997b7595fcc7a4606608aa2dc15fc6
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78206679"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128213"
 ---
 # <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
 
@@ -25,11 +26,11 @@ ms.locfileid: "78206679"
 
 Хотя любой браузер, поддерживающий HTML5, должен работать, корпорация Майкрософт официально поддерживает следующие операционные системы и браузеры.
 
-| Браузер.           | Поддерживаемая операционная система                     | Примечания               |
+| Браузер           | Поддерживаемая ОС                     | Примечания               |
 |-------------------|----------------------------------|---------------------|
 | Microsoft Edge    | Windows                          |                     |
 | Internet Explorer | Windows                          |                     |
-| Apple Safari      | macOS                            |                     |
+| Apple Safari;      | macOS                            |                     |
 | Mozilla Firefox   | Windows, macOS, Linux            | Версия 55 или более поздняя |
 | Google Chrome     | Windows, macOS, Linux, ОС Chrome |                     |
 
@@ -42,6 +43,6 @@ ms.locfileid: "78206679"
 
 После входа в систему вы увидите список ресурсов. Чтобы запустить ресурсы, выберите их, как обычное приложение, на вкладке **все ресурсы** .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании веб-клиента см. в статье [Приступая к работе с веб-клиентом](https://go.microsoft.com/fwlink/?linkid=2120256).

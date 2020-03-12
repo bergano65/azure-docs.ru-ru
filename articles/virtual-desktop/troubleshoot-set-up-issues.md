@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 01/08/2020
 ms.author: helohr
-ms.openlocfilehash: 438c391febc28a716c681aa81b3f42c155b720eb
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 17505084095eb8fbe46c20c7aa226131e128b286
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367209"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127415"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
@@ -371,7 +372,7 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 - ИссервицепринЦипал: **true**
 - Aadtenantid и: идентификатор клиента Azure AD созданного субъекта-службы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).

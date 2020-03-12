@@ -3,12 +3,12 @@ title: Очистка тегов и манифестов
 description: Используйте команду "очистить", чтобы удалить несколько тегов и манифестов из реестра контейнеров Azure на основе возраста и фильтра тегов, а также при необходимости запланировать операции очистки.
 ms.topic: article
 ms.date: 08/14/2019
-ms.openlocfilehash: 0ec1f5f6f5c3c572b8558c971b58e46cce36e3fd
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: f9d86b628bdd0ce0db3067b02a47517d8aadcba3
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74923106"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087326"
 ---
 # <a name="automatically-purge-images-from-an-azure-container-registry"></a>Автоматическая очистка образов из реестра контейнеров Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "74923106"
 
 Для дополнительных параметров выполните `acr purge --help`. 
 
-`acr purge` поддерживает другие функции команд задач контроля доступа, включая [переменные запуска](container-registry-tasks-reference-yaml.md#run-variables) и [журналы выполнения задач](container-registry-tasks-overview.md#view-task-logs) , которые передаются в потоке, а также сохраняются для последующего извлечения.
+`acr purge` поддерживает другие функции команд задач контроля доступа, включая [переменные запуска](container-registry-tasks-reference-yaml.md#run-variables) и [журналы выполнения задач](container-registry-tasks-logs.md) , которые передаются в потоке, а также сохраняются для последующего извлечения.
 
 ### <a name="run-in-an-on-demand-task"></a>Запуск в задаче по требованию
 
@@ -124,7 +124,7 @@ az acr run \
 
 Просмотрите выходные данные команды, чтобы просмотреть теги и манифесты, соответствующие параметрам выбора. Поскольку команда выполняется с `--dry-run`, данные не удаляются.
 
-Пример выходных данных:
+Образец вывода:
 
 ```console
 [...]

@@ -1,25 +1,25 @@
 ---
-title: Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics для Power BI выходных данных (Предварительная версия)
+title: Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics для Power BI выходных данных
 description: В этой статье описывается, как использовать управляемые удостоверения для проверки подлинности задания Azure Stream Analytics для Power BI выходных данных.
 author: cedarbaum
 ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 10/31/2019
-ms.openlocfilehash: 264c434849d5d5afb5934873c75d172a3783ac86
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 3/10/2020
+ms.openlocfilehash: 8a7dfd7c690d79d8430f7c33a25b38949dbd06c4
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459675"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79086326"
 ---
-# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi-preview"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в Power BI (Предварительная версия)
+# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Используйте управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI
 
-[Проверка подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для выходных данных Power BI доступна для Azure Stream Analytics в качестве предварительной версии. Это дает Stream Analytics заданиям прямой доступ к рабочей области в учетной записи Power BI. Эта функция позволяет развертывать задания Stream Analytics для полной автоматизации, поскольку больше не требуется пользователю интерактивно входить в систему для Power BI с помощью портал Azure. Кроме того, длительные задания, выполняющие запись в Power BI, теперь лучше поддерживаются, так как вам не потребуется периодически повторно авторизовать задание.
+[Проверка подлинности с помощью управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для выходных данных Power BI предоставляет Stream Analytics заданиям прямой доступ к рабочей области в учетной записи Power BI. Эта функция позволяет развертывать задания Stream Analytics для полной автоматизации, поскольку больше не требуется пользователю интерактивно входить в систему для Power BI с помощью портал Azure. Кроме того, длительные задания, выполняющие запись в Power BI, теперь лучше поддерживаются, так как вам не потребуется периодически повторно авторизовать задание.
 
 В этой статье показано, как включить управляемое удостоверение для Power BI выходных данных Stream Analytics задания с помощью портал Azure и Azure Resource Manager развертывания.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этой функции необходимо следующее:
 

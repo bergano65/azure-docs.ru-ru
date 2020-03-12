@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: c3ea40ed02fd6b585cfdc9c30fe59bd4e247395c
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.openlocfilehash: 6f49529b0599f36ae4a26939bbbe171a45a1a53a
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79081834"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127176"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "79081834"
 * Изучение метрик модели
 * регистрация и развертывание модели.
 
-Если вы предпочитаете работать без кода, вы также можете [создавать автоматические эксперименты машинного обучения в машинное обучение Azure Studio](how-to-create-portal-experiments.md).
+Если вы предпочитаете работать без кода, вы также можете [создавать автоматические эксперименты машинного обучения в машинное обучение Azure Studio](how-to-use-automated-ml-for-ml-models.md).
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 
@@ -174,7 +174,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) для ([классификация](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification), [Прогнозирование](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting)и [регрессия](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression)).
 
-Для автоматического выполнения проверки машинного обучения необходимо, чтобы в `experiment_timeout_minutes` был установлен минимальный тайм-аут, равный 15 минутам, чтобы избежать ошибок времени ожидания эксперимента.
+Служба автоматической проверки ML потребует, чтобы для `experiment_timeout_minutes` было установлено минимальное время ожидания в 15 минут, чтобы избежать сбоев во время действия эксперимента.
 
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика определяет метрику, используемую во время обучения модели для оптимизации. Доступные метрики, которые можно выбрать, определяются выбранным типом задачи, а в следующей таблице показаны допустимые основные метрики для каждого типа задачи.
@@ -191,7 +191,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 ### <a name="data-featurization"></a>Добавление признаков данных
 
-В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) для помощи в *определенных* алгоритмах, которые чувствительны к функциям различных масштабов.  Однако можно также включить дополнительные Добавление признаков, например отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#featurization).
+В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) для помощи в *определенных* алгоритмах, которые чувствительны к функциям различных масштабов.  Однако можно также включить дополнительные Добавление признаков, например отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-use-automated-ml-for-ml-models.md#featurization).
 
 При настройке экспериментов можно включить дополнительные параметры `featurization`. В следующей таблице показаны допустимые параметры для Добавление признаков в [классе`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
 
@@ -199,7 +199,7 @@ automl_config = AutoMLConfig(task = "classification")
 | ------------- | ------------- |
 |`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг добавление признаков. [Узнайте, как настроить добавление признаков](how-to-configure-auto-train.md#customize-feature-engineering).|
 |`"featurization": 'off'`| Указывает, что шаг добавление признаков не должен выполняться автоматически.|
-|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [шаги снятие данных и добавление признаков](how-to-create-portal-experiments.md#advanced-featurization-options) выполняются автоматически.|
+|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [шаги снятие данных и добавление признаков](how-to-use-automated-ml-for-ml-models.md#advanced-featurization-options) выполняются автоматически.|
 
 > [!NOTE]
 > Автоматические шаги Добавление признаков машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовые и т. д.) становятся частью базовой модели. При использовании модели для прогнозов те же действия Добавление признаков, которые применяются во время обучения, автоматически применяются к входным данным.
@@ -411,7 +411,7 @@ best_run, fitted_model = automl_run.get_output()
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|
-   |Рывает|Указывает, была ли функция ввода удалена или использована.|
+   |Выполнен сброс|Указывает, была ли функция ввода удалена или использована.|
    |енгинирингфеатурекаунт|Количество функций, созданных с помощью автоматизированных преобразований «разработка компонентов».|
    |Преобразования|Список преобразований, применяемых к функциям ввода для создания сконструированных функций.|
    

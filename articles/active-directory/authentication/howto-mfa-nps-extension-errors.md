@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8d67d1d318bf823145a57d2e55774695d151996
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f4f086b7c2f24cfe5d3fe74c25f6f5690b090800
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425306"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79086402"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -98,7 +98,7 @@ ms.locfileid: "75425306"
 
 ### <a name="health-check-script"></a>Скрипт проверки работоспособности
 
-[Скрипт проверки работоспособности расширения NPS Azure MFA](https://gallery.technet.microsoft.com/Azure-MFA-NPS-Extension-648de6bb) доступен в коллекции TechNet для выполнения базовой проверки работоспособности при устранении неполадок расширения NPS. Запустите сценарий и выберите вариант 3.
+[Скрипт проверки работоспособности расширения NPS Azure MFA](https://docs.microsoft.com/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) выполняет базовую проверку работоспособности при устранении неполадок расширения NPS. Запустите сценарий и выберите вариант 3.
 
 ### <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
 

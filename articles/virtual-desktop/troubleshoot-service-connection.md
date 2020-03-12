@@ -7,18 +7,19 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 12/13/2019
 ms.author: helohr
-ms.openlocfilehash: 81ba2b3b5834e06922f694d6eb5338465bfb0ab7
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+manager: lizross
+ms.openlocfilehash: 57d5198cb54dc096fb09bb52d76539b1e4bbc1f2
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75975468"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127458"
 ---
 # <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе виртуальных рабочих столов Windows
 
 Используйте эту статью для устранения проблем с подключением клиентов к виртуальным рабочим столам Windows.
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 
 Вы можете придать нам отзыв и обсудить службу виртуальных рабочих столов Windows с группой разработчиков и другими активными членами сообщества, входящими в состав [сообщества виртуальных рабочих столов Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 
@@ -51,11 +52,11 @@ Get-RdsSessionHost -TenantName $TenantName -HostPoolName $HostPool | ft SessionH
 ```powershell
 SessionHostName          LastHeartBeat     AllowNewSession    Status 
 ---------------          -------------     ---------------    ------ 
-WVDHost1.contoso.com     21-Nov-19 5:21:35            True  Available 
-WVDHost2.contoso.com     21-Nov-19 5:21:35            True  Available 
-WVDHost3.contoso.com     21-Nov-19 5:21:35            True  NoHeartBeat 
-WVDHost4.contoso.com     21-Nov-19 5:21:35            True  NoHeartBeat 
-WVDHost5.contoso.com     21-Nov-19 5:21:35            True  NoHeartBeat 
+WVDHost1.contoso.com     21-Nov-19 5:21:35            True     Available 
+WVDHost2.contoso.com     21-Nov-19 5:21:35            True     Available 
+WVDHost3.contoso.com     21-Nov-19 5:21:35            True     NoHeartBeat 
+WVDHost4.contoso.com     21-Nov-19 5:21:35            True     NoHeartBeat 
+WVDHost5.contoso.com     21-Nov-19 5:21:35            True     NoHeartBeat 
 ```
 
 Существует несколько вещей, которые можно выполнить для исправления состояния неподтверждения.

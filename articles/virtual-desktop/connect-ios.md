@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 02/08/2020
 ms.author: helohr
-ms.openlocfilehash: aba2202f0d33609400588e379a4ed3bb9bb798d9
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 3bf9ea6c68e4cbbe721705639e6c6416c0e93c9d
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367531"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128248"
 ---
 # <a name="connect-with-the-ios-client"></a>Подключение с помощью клиента iOS
 
@@ -45,6 +46,6 @@ ms.locfileid: "77367531"
 
 После того как вы подписались на веб-канал, содержимое веб-канала будет регулярно обновляться. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о том, как использовать клиент iOS, ознакомьтесь с документацией по [началу работы с клиентом iOS](/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios/) .

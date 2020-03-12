@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 02/07/2020
 ms.author: helohr
-ms.openlocfilehash: 730d12625b134f411096b4b49641b79efb1a0d26
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 2b9dfb2ee7e74f94bfc3e6d2c679cb7da3d6bc66
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368741"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127400"
 ---
 # <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
 
@@ -47,7 +48,7 @@ ms.locfileid: "77368741"
 | Сообщения о лицензировании или ошибки                                                          | Если проблемы связаны с конкретным приложением или продуктом, обратитесь к группе, ответственной за этот продукт. |
 | Проблемы при использовании средств виртуальных рабочих столов Windows на GitHub (шаблоны Azure Resource Manager, средство диагностики, средство управления) | Сведения о проблемах см. в статье [Azure Resource Manager Templates for службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md) . |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).

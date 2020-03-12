@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 02/18/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 5bb480181c244ee03b6ec9c2a2f5f7783c72f394
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: bdc0af39e3f3a06da6c06ddc384efe44dd678ea3
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251407"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087933"
 ---
 # <a name="media-services-concepts"></a>Основные понятия служб мультимедиа
 
@@ -26,7 +26,9 @@ ms.locfileid: "78251407"
 Прежде чем приступать к разработке, необходимо ознакомиться со следующими основными понятиями.
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> В настоящее время можно использовать [портал Azure](https://portal.azure.com/) to: Управление службами мультимедиа v3, [динамические события](live-events-outputs-concept.md), просмотр [ресурсов](assets-concept.md)(не управление) v3, [Получение сведений о доступе к API](access-api-portal.md). Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="media-services-v3-terminology"></a>Терминология служб мультимедиа v3
 

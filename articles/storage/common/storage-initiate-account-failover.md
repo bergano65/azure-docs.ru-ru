@@ -9,12 +9,12 @@ ms.date: 02/11/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7529cfbd0ab75d0113e5cea666bc04aa1b15d30b
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 76e34736238273f2af3fccae0ac2b5ed0ff491f0
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77157726"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128346"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
 
@@ -29,9 +29,8 @@ ms.locfileid: "77157726"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-Перед выполнением отработки отказа учетной записи на вашей учетной записи хранения убедитесь, что выполнены следующие действия.
+Прежде чем можно будет выполнить отработку отказа учетной записи хранения, убедитесь, что выполнены следующие действия.
 
-- Зарегистрируйтесь для предварительной версии отработки отказа учетной записи. Сведения о регистрации см. в разделе [Сведения о предварительной версии](storage-disaster-recovery-guidance.md#about-the-preview).
 - Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Дополнительные сведения о геоизбыточном хранилище см. в статье [избыточность хранилища Azure](storage-redundancy.md).
 
 ## <a name="important-implications-of-account-failover"></a>Важные последствия отработки отказа учетной записи
@@ -44,7 +43,7 @@ ms.locfileid: "77157726"
 
 После повторного включения GRS для учетной записи хранения Microsoft начинает репликацию данных в вашей учетной записи в новый вторичный регион. Время репликации зависит от объема реплицируемых данных.  
 
-## <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+## <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Чтобы начать отработку отказа учетной записи на портале Azure, выполните следующие действия.
 
@@ -60,7 +59,7 @@ ms.locfileid: "77157726"
 
     ![Снимок экрана, отображающий диалоговое окно подтверждения в случае отработки отказа учетной записи](media/storage-initiate-account-failover/portal-failover-confirm.png)
 
-## <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+## <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Для отработки отказа учетной записи с помощью PowerShell необходимо сначала установить модуль предварительного просмотра 6.0.1. Чтобы установить модуль, выполните следующие действия.
 
@@ -97,7 +96,7 @@ ms.locfileid: "77157726"
 Invoke-AzStorageAccountFailover -ResourceGroupName <resource-group-name> -Name <account-name> 
 ```
 
-## <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для отработки отказа с помощью интерфейса командной строки Azure выполните следующие команды.
 
