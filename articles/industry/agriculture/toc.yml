@@ -9,6 +9,8 @@
       href: generate-soil-moisture-map-in-azure-farmbeats.md
     - name: Прием архивных данных телеметрии
       href: ingest-historical-telemetry-data-in-azure-farmbeats.md
+    - name: Запрашивание принятых данных телеметрии
+      href: query-telemetry-data-from-azure-farmbeats.md
 - name: Основные понятия
   items:
     - name: Шаблоны интеграции

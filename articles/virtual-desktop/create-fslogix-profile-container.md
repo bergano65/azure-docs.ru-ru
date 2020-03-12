@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/25/2019
 ms.author: helohr
-ms.openlocfilehash: 4c5b31c54bf4926caaa1bd793229bdfbb22af2a2
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: b29dbd7a034123b17b34b1c0fd4c8649e30810bd
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368914"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128172"
 ---
 # <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files
 
@@ -32,7 +33,7 @@ ms.locfileid: "77368914"
 >[!NOTE]
 >Если вы ищете сравнительные материалы о различных вариантах хранения контейнера профиля Фслогикс в Azure, см. статью [Параметры хранилища для контейнеров профилей фслогикс](store-fslogix-profile.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед созданием контейнера профиля Фслогикс для пула узлов необходимо выполнить следующие действия.
 
@@ -166,7 +167,7 @@ ms.locfileid: "77368914"
 
 5. Установите флажок, чтобы **я принимаю условия лицензии**.
 
-6. Нажмите кнопку **Установить**.
+6. Выберите пункт **Установить**.
 
 7. Перейдите в раздел **C:\\Program files\\фслогикс\\Apps** , чтобы убедиться, что агент установлен.
 
@@ -189,7 +190,7 @@ ms.locfileid: "77368914"
 
 1. Откройте **интегрированную среду сценариев PowerShell** от имени администратора и войдите на виртуальный рабочий стол Windows.
 
-2. Выполните следующие командлеты:
+2. Выполните следующие командлеты.
 
    ```powershell
    Import-Module Microsoft.RdInfra.RdPowershell
@@ -230,6 +231,6 @@ ms.locfileid: "77368914"
 
    ![Снимок экрана содержимого папки в пути подключения. Внутри — это один VHD-файл с именем "Profile_ssbb".](media/mount-path-folder.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для настройки общего ресурса профиля пользователя можно использовать контейнеры профилей Фслогикс. Сведения о создании общих папок профилей пользователей с помощью новых контейнеров см. в статье [Создание контейнера профилей для пула узлов с использованием общей папки](create-host-pools-user-profile.md).

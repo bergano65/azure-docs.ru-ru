@@ -7,29 +7,29 @@ manager: evansma
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-ms.date: 7/25/2019
+ms.date: 3/11/2020
 ms.author: evansma
-ms.openlocfilehash: 40d466bd4e5959453f8c3042c4b14f6c3ef605bf
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 80911ce7858308302b1736328b6c7954c0e05a86
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933457"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79095527"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace  
 Ниже приведены варианты поддержки Marketplace.  
 
 Кроме того, многие ответы на свои вопросы вы сможете получить, ознакомившись с [каналом Marketplace на форуме сообщества C + AI](https://www.microsoftpartnercommunity.com/t5/Marketplace/bd-p/2222).  
 
-## <a name="onboarding"></a>Перенос в облачную среду
+## <a name="onboarding"></a>Переход
 
-Откройте билет с [поддержкой издателя Microsoft Marketplace](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) , чтобы устранить проблемы с подключением и началом работы, или обратитесь в [службу поддержки партнеров](https://partner.microsoft.com/support) Майкрософт, если у вас возникли вопросы по Microsoft Partner Network.
+Откройте билет с [поддержкой издателя Microsoft Marketplace](https://aka.ms/marketplacepublishersupport) для устранения проблем с подключением и приступим к работе.
 
 ## <a name="partner-center-or-cloud-partner-portal"></a>Центр партнеров или Портал Cloud Partner  
 
 | Канал поддержки | Description | Доступность |  
 |:--- |:--- |:--- |  
-| Чтобы получить помощь, посетите страницу создания инцидента в [поддержке Marketplace](https://go.microsoft.com/fwlink/?linkid=844975)</li> </ul> | Поддержка центра партнеров или Портал Cloud Partner. | Поддержка предоставляется между 6–18 по тихоокеанскому времени. |  
+| Чтобы получить помощь, посетите страницу создания инцидента в [поддержке Marketplace](https://aka.ms/marketplacepublishersupport)</li> </ul> | Поддержка центра партнеров или Портал Cloud Partner. | Поддержка предоставляется 24x5. |  
 
 ## <a name="technical"></a>Технические требования  
 

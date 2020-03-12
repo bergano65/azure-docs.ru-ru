@@ -3,12 +3,12 @@ title: Создание образа с помощью собственного 
 description: Используйте команду AZ Dockerfile Pack Build, чтобы создать образ контейнера из приложения и отправить его в реестр контейнеров Azure без использования.
 ms.topic: article
 ms.date: 10/24/2019
-ms.openlocfilehash: 9cd1ae464213027cba3012c93c0ca3894c804750
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: c42bde6bbab5973094302a2d41f004d7600bdf9e
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456123"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087085"
 ---
 # <a name="build-and-push-an-image-from-an-app-using-a-cloud-native-buildpack"></a>Сборка и отправка образа из приложения с помощью собственного облачного Буилдпакк
 
@@ -30,7 +30,7 @@ Azure CLI команда `az acr pack build` использует средств
 * Одно из [поддерживаемых контекстных расположений](container-registry-tasks-overview.md#context-locations) для задач записи контроля доступа, таких как локальный каталог, репозиторий GitHub или удаленный tarball.
 * Имя изображения построителя Буилдпакк, которое подходит для вашего приложения. Реестр контейнеров Azure кэширует образы построителя, например `cloudfoundry/cnb:0.0.34-cflinuxfs3` для ускорения сборок.  
 
-`az acr pack build` поддерживает другие функции команд задач контроля доступа, включая [переменные запуска](container-registry-tasks-reference-yaml.md#run-variables) и [журналы выполнения задач](container-registry-tasks-overview.md#view-task-logs) , которые передаются в потоке, а также сохраняются для последующего извлечения.
+`az acr pack build` поддерживает другие функции команд задач контроля доступа, включая [переменные запуска](container-registry-tasks-reference-yaml.md#run-variables) и [журналы выполнения задач](container-registry-tasks-logs.md) , которые передаются в потоке, а также сохраняются для последующего извлечения.
 
 ## <a name="example-build-nodejs-image-with-cloud-foundry-builder"></a>Пример. сборка образа Node. js с помощью построителя Cloud Foundry
 
@@ -93,7 +93,7 @@ docker run --rm -p 8080:8080 myregistry.azurecr.io/java-app:runid
 Перейдите к `localhost:8080` в любимом браузере, чтобы просмотреть пример веб-приложения. Нажмите `[Ctrl]+[C]`, чтобы прерывать контейнер.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После сборки и отправки образа контейнера с `az acr pack build`можно развернуть его как любое изображение в выбранном целевом объекте. Варианты развертывания Azure включают в себя запуск в [службе приложений](../app-service/containers/tutorial-custom-docker-image.md) или [Azure Kubernetes Service](../aks/tutorial-kubernetes-deploy-cluster.md), а также другие.
 

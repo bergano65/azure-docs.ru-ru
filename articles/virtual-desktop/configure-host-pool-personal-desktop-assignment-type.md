@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: helohr
-ms.openlocfilehash: 8065be841b18fa0f8706a3bea3739ee2cb013323
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 41b24a94d36b21fe5d5f539e056abb535bda433a
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367589"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128288"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов личного рабочего стола
 
@@ -72,7 +73,7 @@ Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -Use
 Set-RdsSessionHost <tenantname> <hostpoolname> -Name <sessionhostname> -AssignedUser <userupn>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили тип назначения личный рабочий стол, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать его в рамках сеанса пользователя. Эти две следующие инструкции помогут вам подключиться к сеансу с помощью выбранного клиента:
 

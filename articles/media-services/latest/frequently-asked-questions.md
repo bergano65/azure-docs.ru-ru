@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 06/21/2019
+ms.date: 03/09/2020
 ms.author: juliako
-ms.openlocfilehash: c9da29ad288811bbed225fd906f2a7eb1fd9edf7
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: a2619293bf3641cdca370ff528a87ae879460a3b
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977732"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79086779"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
 
@@ -28,6 +28,10 @@ ms.locfileid: "74977732"
 
 См. раздел [Управление доступом на основе ролей (RBAC) для учетных записей служб мультимедиа](rbac-overview.md).
 
+### <a name="how-do-you-stream-to-apple-ios-devices"></a>Как осуществляется потоковая передача на устройства Apple iOS?
+
+Убедитесь в наличии "(Format = m3u8-AAPL)" в конце пути (после части "/manifest"), чтобы сообщить серверу-источнику потоковой передачи о необходимости возврата содержимого HLS для использования в собственных устройствах Apple iOS (Дополнительные сведения см. в разделе [Доставка содержимого](dynamic-packaging-overview.md)).
+
 ### <a name="how-do-i-configure-media-reserved-units"></a>Как настроить зарезервированные единицы мультимедиа?
 
 Для заданий анализа аудио и видео, которые активируют Службы мультимедиа версии 3 или Индексатор видео, настоятельно рекомендуется подготовить к работе вашу учетную запись с помощью 10 единиц MRU S3. Если вам требуется более 10 единиц MRU S3, отправьте запрос в службу поддержки с помощью [портала Azure](https://portal.azure.com/).
@@ -38,13 +42,17 @@ ms.locfileid: "74977732"
 
 [Преобразования](https://docs.microsoft.com/rest/api/media/transforms) можно использовать для настройки общих задач кодирования или анализа видеоматериалов. Каждое **преобразование** описывает набор инструкций (или рабочий процесс задач) для обработки видео- и аудиофайлов. [Задание](https://docs.microsoft.com/rest/api/media/jobs) — это фактический запрос к службам мультимедиа для применения **преобразования** к заданному входному видео или звуковому содержимому. После создания преобразования можно отправлять задания с помощью API Служб мультимедиа или любого из опубликованных пакетов SDK. Дополнительные сведения см. в статье [Преобразования и задания](transforms-jobs-concept.md).
 
+### <a name="i-uploaded-encoded-and-published-a-video-what-would-be-the-reason-the-video-does-not-play-when-i-try-to-stream-it"></a>Видео отправлено, закодировано и опубликовано. Почему видео не воспроизводится?
+
+Одной из наиболее распространенных причин является отсутствие конечной точки потоковой передачи, из которой выполняется попытка воспроизведения в состоянии выполнения.
+
 ### <a name="how-does-pagination-work"></a>Как работает разбиение на страницы?
 
 При использовании разбиения на страницы для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы. Дополнительные сведения и примеры см. в [этой статье о фильтрации, упорядочении и разбиении на страницы](entities-overview.md).
 
 ### <a name="what-features-are-not-yet-available-in-azure-media-services-v3"></a>Какие функции пока недоступны в службах мультимедиа Azure v3?
 
-Дополнительные сведения см. [в разделе зазоры функций в отношении API v2](migrate-from-v2-to-v3.md#feature-gaps-with-respect-to-v2-apis).
+Дополнительные сведения см. [в разделе зазоры функций в отношении API v2](media-services-v2-vs-v3.md#feature-gaps-with-respect-to-v2-apis).
 
 ### <a name="what-is-the-process-of-moving-a-media-services-account-between-subscriptions"></a>В чем заключается процесс перемещения учетной записи служб мультимедиа между подписками?  
 
@@ -58,7 +66,7 @@ ms.locfileid: "74977732"
 
 Можно использовать [локальный динамический кодировщик](recommended-on-premises-live-encoders.md), чтобы переключать исходное видео. Многие приложения дают возможность переключения источников, включая Telestream Wirecast, Switcher Studio (в iOS), OBS Studio (бесплатное приложение) и многие другие.
 
-## <a name="content-protection"></a>Система защиты содержимого
+## <a name="content-protection"></a>Защита содержимого
 
 ### <a name="should-i-use-an-aes-128-clear-key-encryption-or-a-drm-system"></a>Следует ли использовать шифрование AES-128 с открытым ключом или систему DRM?
 
@@ -90,7 +98,7 @@ ms.locfileid: "74977732"
 
 Используйте API служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения см. в разделе:
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)
@@ -120,19 +128,25 @@ ms.locfileid: "74977732"
 * Настройка службы доставки лицензий в Службах мультимедиа больше не требуется. Вам нужно предоставить URL-адреса приобретения лицензии (для PlayReady, Widevine и FairPlay) при настройке ContentKeyPolicies.
 
 > [!NOTE]
-> Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+> Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-v2-vs-v3"></a>Сравнение версий 2 и 3 Служб мультимедиа 
 
 ### <a name="can-i-use-the-azure-portal-to-manage-v3-resources"></a>Могу ли я использовать портал Azure для управления ресурсами версии 3?
 
-В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+В настоящее время [портал Azure](https://portal.azure.com/) можно использовать для:
+
+* Управление службами мультимедиа v3, [динамические события](live-events-outputs-concept.md) 
+* Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
+* [Получение сведений о доступе к API](access-api-portal.md). 
+
+Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ### <a name="is-there-an-assetfile-concept-in-v3"></a>Существует элемент AssetFile в версии 3?
 
 Элементы AssetFiles были удалены из API AMS, чтобы отделить Службы мультимедиа от зависимости пакета SDK службы хранилища. Теперь служба хранилища, а не службы мультимедиа, сохраняет данные, которые относятся к службе хранилища. 
 
-Дополнительные сведения см. в разделе [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md).
+Дополнительные сведения см. в разделе [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](media-services-v2-vs-v3.md).
 
 ### <a name="where-did-client-side-storage-encryption-go"></a>Где происходит шифрование хранилища на стороне клиента?
 

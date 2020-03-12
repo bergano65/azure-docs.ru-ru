@@ -6,16 +6,18 @@ author: yunjchoi
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: yunjchoi
-ms.openlocfilehash: 11b469425a80d588462e0332c973260cc3b56992
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 03bb7b786280dfcbb64190adac51b8d001d59c18
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77596187"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126612"
 ---
-# <a name="azure-kubernetes-service-aks-diagnostics-overview"></a>Обзор диагностики службы Azure Kubernetes (AKS)
+# <a name="azure-kubernetes-service-diagnostics-preview-overview"></a>Обзор диагностики службы Kubernetes Azure (Предварительная версия)
 
 Устранение неполадок кластера Azure Kubernetes Service (AKS) является важной частью обслуживания кластера, особенно если в кластере выполняются критически важные рабочие нагрузки. Диагностика AKS — это интеллектуальная самодиагностическая процедура, которая помогает выявление и устранение проблем в кластере. Диагностика AKS является машинным кодом в облаке, и ее можно использовать без дополнительной настройки или затрат на выставление счетов.
+
+Эта функция теперь доступна в общедоступной предварительной версии.
 
 ## <a name="open-aks-diagnostics"></a>Открыть диагностику AKS
 
@@ -77,7 +79,7 @@ ms.locfileid: "77596187"
 - ошибки 401
 - ошибки 403
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Собирайте журналы, чтобы упростить устранение неполадок кластера с помощью [AKS Periscope](https://aka.ms/aksperiscope).
 

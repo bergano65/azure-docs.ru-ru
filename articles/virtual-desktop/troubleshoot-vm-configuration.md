@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 12/03/2019
 ms.author: helohr
-ms.openlocfilehash: c15662409f9f5badf50765b78bce7dd71e9fb1bc
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: c7d9a5d576ceec301eba7436c1e0af34412ae854
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367164"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127584"
 ---
 # <a name="session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеанса
 
@@ -335,7 +336,7 @@ ms.locfileid: "77367164"
 
 Повторно разверните операционную систему узла с помощью последней версии образа Windows 10 версии 1903 из коллекции Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
 - Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).

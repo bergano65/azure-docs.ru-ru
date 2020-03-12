@@ -7,18 +7,19 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: helohr
-ms.openlocfilehash: f8aebee72105e4f3218e7ae5f867962d0ed8e23d
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: a367e4d98135b5d29c4a0e38363739ca2689dcab
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367362"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127993"
 ---
 # <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop"></a>Развертывание виртуальной машины Windows 7 в службе "Виртуальный рабочий стол Windows"
 
 Процесс развертывания виртуальной машины Windows 7 на виртуальном рабочем столе Windows немного отличается от процесса для виртуальных машин под управлением более поздних версий Windows. В этом руководство вы узнаете, как развернуть Windows 7.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начать, следуйте инструкциям в статье [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) для создания пула узлов. После этого следуйте инструкциям в статье [Создание пулов узлов в Azure Marketplace](create-host-pools-azure-marketplace.md#optional-assign-additional-users-to-the-desktop-application-group) , чтобы назначить одного или нескольких пользователей группе приложений для настольных систем.
 
@@ -51,7 +52,7 @@ ms.locfileid: "77367362"
 16. Откройте установщик виртуальных рабочих столов Windows и следуйте инструкциям.
 17. При необходимости можно заблокировать порт TCP/3389, чтобы удалить прямой протокол удаленного рабочего столаный доступ к виртуальной машине.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь развертывание виртуальных рабочих столов Windows готово к использованию. [Скачайте последнюю версию клиента виртуальных рабочих столов Windows](https://aka.ms/wvd/clients/windows) , чтобы приступить к работе.
 

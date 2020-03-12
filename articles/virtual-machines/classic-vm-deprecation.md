@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 9f3fd59fa040ab46a5fc4ef8272a17cba4c631b8
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 764567bffd2a08ebb5beb17e3063998848b3f110
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77925778"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127330"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
@@ -23,7 +23,7 @@ ms.locfileid: "77925778"
 
 Сегодня около 90% виртуальных машин IaaS используют Azure Resource Manager. Если вы используете ресурсы IaaS с помощью Azure Service Manager (ASM), начните планировать миграцию сейчас и завершите ее 1 марта 2023, чтобы воспользоваться преимуществами [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/).
 
-Классические виртуальные машины будут следовать [современным политикам жизненного цикла](https://support.microsoft.com/help/30881/modern-lifecycle-policy) для устаревания.
+Классические виртуальные машины будут следовать [современным политикам жизненного цикла](https://support.microsoft.com/help/30881/modern-lifecycle-policy) для выхода из эксплуатации.
 
 ## <a name="how-does-this-affect-me"></a>Как это влияет на меня? 
 
@@ -31,7 +31,7 @@ ms.locfileid: "77925778"
 2) С 1 марта 2023 г. клиенты больше не смогут запускать виртуальные машины IaaS с помощью Azure Service Manager. все, что еще выполняется или выделено, будут остановлены и освобождены. 
 2) В 1 марта 2023 подписки, которые не были перенесены в Azure Resource Manager, будут уведомлены о временных шкалах для удаления оставшихся классических виртуальных машин.  
 
-Следующие службы и функции Azure **не** будут затронуты этим прекращением работы: 
+Ниже перечислены службы и функции Azure, на которые это прекращение поддержки **не** будет распространяться. 
 - Облачные службы 
 - Учетные записи хранения, **не** используемые классическими виртуальными машинами 
 - Виртуальные сети (виртуальных сетей) **не** используются классическими виртуальными машинами. 

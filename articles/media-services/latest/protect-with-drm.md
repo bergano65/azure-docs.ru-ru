@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/25/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: bd5c026da27c68e249532b70629ba01afea655fe
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 14ba5f270138db22a76fd697b264046e22577427
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513071"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79086729"
 ---
 # <a name="tutorial-use-drm-dynamic-encryption-and-license-delivery-service"></a>Учебник. Использование динамического шифрования DRM и службы доставки лицензий
 
@@ -46,7 +46,9 @@ ms.locfileid: "76513071"
 > * Создание Стреаминглокатор с указанной политикой потоковой передачи.
 > * Создайте URL-адрес, используемый для воспроизведения файла.
 
-## <a name="prerequisites"></a>Технические условия
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом руководстве:
 
@@ -112,7 +114,7 @@ ms.locfileid: "76513071"
 
 Необходимо задать требования (ограничения) для **политики ключа содержимого** , которые должны быть выполнены для доставки ключей с указанной конфигурацией. Для этого примера будут установлены следующие конфигурации и требования.
 
-* Настройка
+* Конфигурация
 
     Лицензии [PlayReady](playready-license-template-overview.md) и [Widevine](widevine-license-template-overview.md) являются настраиваемыми, что позволяет доставлять их с помощью службы доставки лицензий для служб мультимедиа. Несмотря на то, что этот пример приложения не настраивает лицензию [Fairplay](fairplay-license-overview.md) , он содержит метод, который можно использовать для настройки Fairplay. Можно добавить конфигурацию FairPlay в качестве другого параметра.
 
@@ -186,7 +188,7 @@ az group delete --name amsResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь
+Извлечение
 
 > [!div class="nextstepaction"]
 > [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)

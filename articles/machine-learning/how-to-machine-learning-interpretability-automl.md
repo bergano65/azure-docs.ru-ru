@@ -10,18 +10,20 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: trbye
 ms.date: 10/25/2019
-ms.openlocfilehash: 4ab3bc43cf8ef479cb91d187a4c177db03415b86
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: b2c7825b10feab45df9cb89dbe2b82da1c143866
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77525589"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129752"
 ---
 # <a name="model-interpretability-in-automated-machine-learning"></a>Интерпретируемость модели в автоматизированном машинном обучении
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как включить функции интерпретации для автоматизированного машинного обучения (ML) в Машинное обучение Azure. Автоматизированное средство ML помогает понять важность необработанных и сконструированных функций. Чтобы использовать интерпретируемость модели, установите `model_explainability=True` в объекте `AutoMLConfig`.  
+Из этой статьи вы узнаете, как включить функции интерпретации для автоматизированного машинного обучения (ML) в Машинное обучение Azure. Автоматизированное средство ML помогает понять важность созданной функции. 
+
+Все версии пакета SDK после 1.0.85 устанавливаются `model_explainability=True` по умолчанию. В пакете SDK версии 1.0.85 и более ранних версий пользователям необходимо задать `model_explainability=True` в объекте `AutoMLConfig`, чтобы использовать интерпретируемость модели. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -36,14 +38,14 @@ ms.locfileid: "77525589"
 
 ## <a name="interpretability-during-training-for-the-best-model"></a>Возможности интерпретации во время обучения для наилучшей модели
 
-Извлеките пояснения из `best_run`, которое содержит пояснения для сконструированных функций и необработанных функций.
+Извлеките пояснения из `best_run`, которое содержит объяснения для сконструированных функций.
 
 ### <a name="download-engineered-feature-importance-from-artifact-store"></a>Скачивание характеристик сконструированной функции из хранилища артефактов
 
-Вы можете использовать `ExplanationClient` для скачивания объяснений инженерных функций из хранилища артефактов `best_run`. Чтобы получить пояснения для необработанных функций, установленных `raw=True`.
+Вы можете использовать `ExplanationClient` для скачивания объяснений инженерных функций из хранилища артефактов `best_run`. 
 
 ```python
-from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
+from azureml.explain.model._internal.explanation_client import ExplanationClient
 
 client = ExplanationClient.from_run(best_run)
 engineered_explanations = client.download_model_explanation(raw=False)
@@ -52,26 +54,26 @@ print(engineered_explanations.get_feature_importance_dict())
 
 ## <a name="interpretability-during-training-for-any-model"></a>Возможности интерпретации во время обучения для любой модели 
 
-При вычислении объяснений модели и визуализации их можно не ограничиваться описанием существующей модели для автоматизированной модели ML. Вы также можете получить описание модели с различными тестовыми данными. В этом разделе показано, как вычислить и визуализировать уровень важности функций и необработанное значение функции на основе тестовых данных.
+При вычислении объяснений модели и визуализации их можно не ограничиваться описанием существующей модели для автоматизированной модели ML. Вы также можете получить описание модели с различными тестовыми данными. Действия, описанные в этом разделе, показывают, как вычислять и визуализировать уровень важности функций, основанных на тестовых данных.
 
 ### <a name="retrieve-any-other-automl-model-from-training"></a>Получение любой другой модели Аутомл из обучения
 
 ```python
-automl_run, fitted_model = local_run.get_output(metric='r2_score')
+automl_run, fitted_model = local_run.get_output(metric='accuracy')
 ```
 
 ### <a name="set-up-the-model-explanations"></a>Настройка объяснений модели
 
-Используйте `automl_setup_model_explanations` для получения объяснений инженерных и необработанных функций. `fitted_model` может создавать следующие элементы:
+Используйте `automl_setup_model_explanations` для получения инженерных объяснений. `fitted_model` может создавать следующие элементы:
 
 - Рекомендуемые данные из обученных или тестовых примеров
-- Списки имен компонентов, подготовленных и необработанных
+- Списки имен сконструированных функций
 - Искомые классы в столбце с меткой в сценариях классификации
 
 `automl_explainer_setup_obj` содержит все структуры из списка выше.
 
 ```python
-from azureml.train.automl.runtime.automl_explain_utilities import AutoMLExplainerSetupClass, automl_setup_model_explanations
+from azureml.train.automl.runtime.automl_explain_utilities import automl_setup_model_explanations
 
 automl_explainer_setup_obj = automl_setup_model_explanations(fitted_model, X=X_train, 
                                                              X_test=X_test, y=y_train, 
@@ -86,16 +88,16 @@ automl_explainer_setup_obj = automl_setup_model_explanations(fitted_model, X=X_t
 - Рабочая область
 - Модель LightGBM, которая выступает в качестве суррогата для `fitted_model` автоматизированной модели ML
 
-Мимиквраппер также принимает объект `automl_run`, в который будут отправлены необработанные и инженерные объяснения.
+Мимиквраппер также принимает объект `automl_run`, в который будут отправлены инженерные объяснения.
 
 ```python
 from azureml.explain.model.mimic.models.lightgbm_model import LGBMExplainableModel
 from azureml.explain.model.mimic_wrapper import MimicWrapper
 
 # Initialize the Mimic Explainer
-explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMExplainableModel,
+explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMExplainableModel, 
                          init_dataset=automl_explainer_setup_obj.X_transform, run=automl_run,
-                         features=automl_explainer_setup_obj.engineered_feature_names,
+                         features=automl_explainer_setup_obj.engineered_feature_names, 
                          feature_maps=[automl_explainer_setup_obj.feature_map],
                          classes=automl_explainer_setup_obj.classes)
 ```
@@ -105,27 +107,8 @@ explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMEx
 Вы можете вызвать метод `explain()` в Мимиквраппер с преобразованными примерами тестов, чтобы получить важность признаков для созданных сконструированных функций. Можно также использовать `ExplanationDashboard`, чтобы просмотреть панель мониторинга значения важности функций созданных сконструированных функций, автоматически феатуризерс ML.
 
 ```python
-from azureml.contrib.interpret.visualize import ExplanationDashboard
-engineered_explanations = explainer.explain(['local', 'global'],              
-                                            eval_dataset=automl_explainer_setup_obj.X_test_transform)
-
+engineered_explanations = explainer.explain(['local', 'global'], eval_dataset=automl_explainer_setup_obj.X_test_transform)
 print(engineered_explanations.get_feature_importance_dict())
-ExplanationDashboard(engineered_explanations, automl_explainer_setup_obj.automl_estimator, automl_explainer_setup_obj.X_test_transform)
-```
-
-### <a name="use-mimic-explainer-for-computing-and-visualizing-raw-feature-importance"></a>Использование пояснения к процедуре "имитировать" для вычисления и визуализации необработанных важных компонентов
-
-Вы можете снова вызвать метод `explain()` в Мимиквраппер с преобразованными примерами тестов и задать `get_raw=True`, чтобы получить важность признаков для функций RAW. Можно также использовать `ExplanationDashboard` для просмотра панели мониторинга значений важности функций необработанных компонентов.
-
-```python
-from azureml.contrib.interpret.visualize import ExplanationDashboard
-
-raw_explanations = explainer.explain(['local', 'global'], get_raw=True, 
-                                     raw_feature_names=automl_explainer_setup_obj.raw_feature_names,
-                                     eval_dataset=automl_explainer_setup_obj.X_test_transform)
-
-print(raw_explanations.get_feature_importance_dict())
-ExplanationDashboard(raw_explanations, automl_explainer_setup_obj.automl_pipeline, automl_explainer_setup_obj.X_test_raw)
 ```
 
 ### <a name="interpretability-during-inference"></a>Интерпретируемость во время вывода
@@ -134,7 +117,7 @@ ExplanationDashboard(raw_explanations, automl_explainer_setup_obj.automl_pipelin
 
 ### <a name="register-the-model-and-the-scoring-explainer"></a>Регистрация модели и пояснения к оценкам
 
-Используйте `TreeScoringExplainer`, чтобы создать описание оценки, которое будет вычислять значения важности необработанных и инженерных функций во время определения. Вы инициализируйте пояснение к оценке с помощью `feature_map`, который был вычислен ранее. В пояснении к оценкам используется `feature_map` для возврата необработанного значения функции.
+Используйте `TreeScoringExplainer`, чтобы создать пояснение к оценке, которое будет вычислять значения важности функций во время вывода. Вы инициализируйте пояснение к оценке с помощью `feature_map`, который был вычислен ранее. 
 
 Сохраните описание оценки, а затем зарегистрируйте модель и описание оценки в службе Управление моделями. Выполните следующий код:
 
@@ -208,21 +191,19 @@ service.wait_for_deployment(show_output=True)
 
 ### <a name="inference-with-test-data"></a>Вывод с тестовыми данными
 
-Вывод с некоторыми тестовыми данными для просмотра прогнозируемого значения из автоматизированной модели ML. Для прогнозируемого значения следует просмотреть важность функциональной функции для прогнозируемого значения и необработанной важности функции.
+Вывод с некоторыми тестовыми данными для просмотра прогнозируемого значения из автоматизированной модели ML. Просмотр важности функциональной функции для прогнозируемого значения.
 
 ```python
 if service.state == 'Healthy':
     # Serialize the first row of the test data into json
     X_test_json = X_test[:1].to_json(orient='records')
     print(X_test_json)
-    # Call the service to get the predictions and the engineered and raw explanations
+    # Call the service to get the predictions and the engineered explanations
     output = service.run(X_test_json)
     # Print the predicted value
     print(output['predictions'])
     # Print the engineered feature importances for the predicted value
     print(output['engineered_local_importance_values'])
-    # Print the raw feature importances for the predicted value
-    print(output['raw_local_importance_values'])
 ```
 
 ### <a name="visualize-to-discover-patterns-in-data-and-explanations-at-training-time"></a>Визуализация для обнаружения закономерностей в данных и объяснениях во время обучения

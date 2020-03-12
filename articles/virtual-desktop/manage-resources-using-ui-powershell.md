@@ -7,18 +7,19 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 01/10/2020
 ms.author: helohr
-ms.openlocfilehash: e55641457e1ed27928e6bf380701b646b672cae8
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 0838edb03c4868548f3d09f14d71ec7016e670a4
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368832"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127797"
 ---
 # <a name="deploy-a-management-tool-with-powershell"></a>Развертывание средства управления с помощью PowerShell
 
 В этой статье показано, как развернуть средство управления с помощью PowerShell.
 
-## <a name="important-considerations"></a>Важные замечания
+## <a name="important-considerations"></a>Важные сведения
 
 Каждой подписке клиента Azure Active Directory (Azure AD) требуется отдельное развертывание средства управления. Это средство не поддерживает сценарии Azure AD "бизнес — бизнес" (B2B). 
 
@@ -161,6 +162,6 @@ Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCre
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании Работоспособности служб Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](./set-up-service-alerts.md).

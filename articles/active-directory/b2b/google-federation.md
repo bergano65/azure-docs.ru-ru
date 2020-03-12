@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 11/1/2019
+ms.date: 03/05/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6da9aed857524e9b71aad4dfc99f1d2e54306dc9
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 72c18e48c27942c7bea47931ec79a31af941064e
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74272876"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126661"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
@@ -55,25 +55,24 @@ ms.locfileid: "74272876"
    
    ![Снимок экрана, показывающий новую страницу проекта для Google](media/google-federation/google-new-project.png)
 
-3. Убедитесь, что в меню проектов выбран ваш новый проект. Затем откройте меню в верхнем левом углу и выберите **API и сервисы** > **Учетные данные**.
+3. Убедитесь, что в меню проектов выбран ваш новый проект. Затем в разделе **api & Services**выберите **экран согласия OAuth**.
 
-   ![Снимок экрана с параметром учетных данных Google API](media/google-federation/google-api.png)
- 
-4. Щелкните вкладку с **окном получения согласия OAuth** и введите значение в поле **Имя приложения**. (Оставьте другие параметры без изменений.)
+4. Выберите **внешний**и нажмите кнопку **создать**. 
+5. На **экране согласия OAuth**введите **имя приложения**. (Оставьте другие параметры без изменений.)
 
    ![Снимок экрана с параметром экрана подтверждения Google OAuth](media/google-federation/google-oauth-consent-screen.png)
 
-5. Прокрутите страницу до раздела **Авторизованные домены** и введите microsoftonline.com.
+6. Прокрутите страницу до раздела **Авторизованные домены** и введите microsoftonline.com.
 
    ![Снимок экрана, показывающий раздел "полномочные домены"](media/google-federation/google-oauth-authorized-domains.png)
 
-6. Щелкните **Сохранить**.
+7. Щелкните **Сохранить**.
 
-7. Перейдите на вкладку **учетные данные** . В меню **Создание учетных данных** выберите **идентификатор клиента OAuth**.
+8. Выберите **учетные данные**. В меню **Создать учетные данные** выберите **Идентификатор клиента OAuth**.
 
    ![Снимок экрана, показывающий параметр создания учетных данных Google API](media/google-federation/google-api-credentials.png)
 
-8. В разделе **Тип приложения** выберите **Веб-приложение**, а затем в поле **Разрешенные URI перенаправления** ведите следующие URI:
+9. В разделе **Тип приложения** выберите **Веб-приложение**, а затем в поле **Разрешенные URI перенаправления** ведите следующие URI:
    - `https://login.microsoftonline.com` 
    - `https://login.microsoftonline.com/te/<directory id>/oauth2/authresp` <br>(где `<directory id>` является идентификатором каталога).
    
@@ -82,7 +81,7 @@ ms.locfileid: "74272876"
 
    ![Снимок экрана, показывающий раздел идентификаторов URI для подправки](media/google-federation/google-create-oauth-client-id.png)
 
-9. Нажмите кнопку **Создать**. Скопируйте идентификатор и секрет клиента, которые будут использоваться при добавлении поставщика удостоверений на портале Azure AD.
+10. Нажмите кнопку **Создать**. Скопируйте идентификатор и секрет клиента, которые будут использоваться при добавлении поставщика удостоверений на портале Azure AD.
 
    ![Снимок экрана, показывающий идентификатор клиента OAuth и секрет клиента](media/google-federation/google-auth-client-id-secret.png)
 
@@ -123,7 +122,7 @@ ms.locfileid: "74272876"
 
 ### <a name="to-delete-google-federation-by-using-powershell"></a>Чтобы удалить федерацию с Google с помощью PowerShell: 
 1. Установите последнюю версию модуля Azure AD PowerShell для Graph ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)).
-2. Запустите `Connect-AzureAD`.  
+2. Выполните `Connect-AzureAD`.  
 4. При появлении запроса на вход войдите с помощью управляемой учетной записи глобального администратора.  
 5. Введите следующую команду:
 

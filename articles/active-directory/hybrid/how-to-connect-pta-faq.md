@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/15/2019
+ms.date: 03/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cfa5e2117b2d6fce525e66b25ec44f696d7d450
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: dd923a47c49bfa7a6ab16e822a80c8e7f4f9a3e0
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484423"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79096058"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -44,7 +44,7 @@ ms.locfileid: "77484423"
 Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Поддерживает ли сквозная проверка подлинности в качестве имени пользователя "Alternate ID", а не "userPrincipalName"?
-В ограниченном экстенте сквозная проверка подлинности поддерживает альтернативный идентификатор в качестве имени пользователя при настройке в Azure AD Connect. В качестве предварительного требования Azure AD Connect требуется синхронизировать локальный атрибут `UserPrincipalName` Active Directory с Azure AD. В результате `UserPrincipalName` в локальной среде AD и Azure AD становятся идентичными. Если вы хотите использовать другой атрибут для синхронизации из локальной службы AD в качестве имени участника-пользователя в Azure AD, необходимо использовать либо синхронизацию хэша паролей, либо AD FS. Дополнительные сведения см. в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Ознакомьтесь с заявлением о поддержке в документации по конкретным приложениям.
+Вход с использованием значения, отличного от имени участника-пользователя, такого как альтернативный адрес электронной почты, в настоящее время тестируется в закрытой предварительной версии для сквозной проверки подлинности (PTA) и синхронизации хэша паролей (PHS).
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 
@@ -174,7 +174,7 @@ ms.locfileid: "77484423"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Краткое руководство по сквозной аутентификации Azure Active Directory](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.

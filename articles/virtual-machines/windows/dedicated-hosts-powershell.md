@@ -1,23 +1,18 @@
 ---
 title: Развертывание выделенных узлов Azure с помощью Azure PowerShell
 description: Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell.
-services: virtual-machines-windows
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: 5cd82635f3aec2cca251e122aadf96f70d377c8a
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 30d15970b00a81ab85cdb85d2c0a27ee23ed1b92
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190517"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79130309"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
@@ -28,7 +23,7 @@ ms.locfileid: "77190517"
 ## <a name="limitations"></a>Ограничения
 
 - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-- Поддерживаются следующие серии виртуальных машин: DSv3, ESv3 и серия fsv2. 
+- Размеры и типы оборудования, доступные для выделенных узлов, зависят от региона. Дополнительные сведения см. на [странице цен](https://aka.ms/ADHPricing) на узел.
 
 ## <a name="create-a-host-group"></a>Создание группы узлов
 
@@ -57,7 +52,6 @@ $hostGroup = New-AzHostGroup `
 ## <a name="create-a-host"></a>Создание узла
 
 Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.
-
 
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
 
@@ -199,7 +193,7 @@ Remove-AzResourceGroup -Name $rgName
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)приведен пример шаблона, который использует зоны и домены сбоя для максимальной устойчивости в регионе.
 

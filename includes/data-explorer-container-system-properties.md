@@ -2,41 +2,57 @@
 author: orspod
 ms.service: data-explorer
 ms.topic: include
-ms.date: 01/08/2020
+ms.date: 02/27/2020
 ms.author: orspodek
-ms.openlocfilehash: f9788e4623ce60ad55d79558d1d77a17eb2a9f26
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: a2297301a0b9c0540c73c0f50483cccfc3181a0f
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75779962"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129025"
 ---
 ### <a name="event-system-properties-mapping"></a>Сопоставление свойств системы событий
 
-Если вы выбрали **Свойства системы событий** в разделе **источник данных** в приведенной выше таблице, перейдите к [веб-интерфейсу](https://dataexplorer.azure.com/) , чтобы выполнить соответствующую команду ККЛ для правильного создания сопоставления.
+> [!Note]
+> * Системные свойства поддерживаются для событий с одной записью.
+> * Для сопоставления `csv` свойства добавляются в начало записи. Для сопоставления `json` свойства добавляются в соответствии с именем, которое отображается в раскрывающемся списке.
 
-   **Для сопоставления CSV:**
+Если в разделе **источника данных** таблицы были выбраны **Свойства системы событий** , необходимо включить следующие свойства в схему таблицы и сопоставление.
 
-    ```kusto
-    .create table MyTable ingestion csv mapping "CsvMapping1"
+**Пример схемы таблицы**
+
+Если данные содержат три столбца (`Timespan`, `Metric`и `Value`), а включаемые свойства `x-opt-enqueued-time` и `x-opt-offset`, создайте или измените схему таблицы с помощью следующей команды:
+
+```kusto
+    .create-merge table TestTable (TimeStamp: datetime, Metric: string, Value: int, EventHubEnqueuedTime:datetime, EventHubOffset:string)
+```
+
+**Пример сопоставления CSV**
+
+Выполните следующие команды, чтобы добавить данные в начало записи. Обратите внимание на порядковые значения.
+
+```kusto
+    .create table TestTable ingestion csv mapping "CsvMapping1"
     '['
-    '   { "column" : "messageid", "DataType":"string", "Properties":{"Ordinal":"0"}},'
-    '   { "column" : "userid", "DataType":"string", "Properties":{"Ordinal":"1"}},'
-    '   { "column" : "other", "DataType":"int", "Properties":{"Ordinal":"2"}}'
+    '   { "column" : "Timespan", "Properties":{"Ordinal":"2"}},'
+    '   { "column" : "Metric", "Properties":{"Ordinal":"3"}},'
+    '   { "column" : "Value", "Properties":{"Ordinal":"4"}},'
+    '   { "column" : "EventHubEnqueuedTime", "Properties":{"Ordinal":"0"}},'
+    '   { "column" : "EventHubOffset", "Properties":{"Ordinal":"1"}}'
     ']'
-    ```
+```
  
-   **Для сопоставления JSON:**
+**Пример сопоставления JSON**
 
-    ```kusto
-    .create table MyTable ingestion json mapping "JsonMapping1"
+Данные добавляются с помощью имен системных свойств, которые отображаются в списке **системных свойств событий** в колонке **подключения к данным** . Выполните следующие команды:
+
+```kusto
+    .create table TestTable ingestion json mapping "JsonMapping1"
     '['
-    '    { "column" : "messageid", "datatype" : "string", "Properties":{"Path":"$.message-id"}},'
-    '    { "column" : "userid", "Properties":{"Path":"$.user-id"}},'
-    '    { "column" : "other", "Properties":{"Path":"$.other"}}'
+    '    { "column" : "Timespan", "Properties":{"Path":"$.timestamp"}},'
+    '    { "column" : "Metric", "Properties":{"Path":"$.metric"}},'
+    '    { "column" : "Value", "Properties":{"Path":"$.metric_value"}},'
+    '    { "column" : "EventHubEnqueuedTime", "Properties":{"Path":"$.x-opt-enqueued-time"}},'
+    '    { "column" : "EventHubOffset", "Properties":{"Path":"$.x-opt-offset"}}'
     ']'
-    ```
-
-   > [!TIP]
-   > * В сопоставление необходимо включить все выбранные свойства. 
-   > * Порядок свойств важен в сопоставлении CSV. Системные свойства должны быть перечислены до всех остальных свойств и в том же порядке, в котором они отображаются в раскрывающемся списке **Свойства системы событий** .
+```

@@ -7,14 +7,15 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 11/09/2019
 ms.author: helohr
-ms.openlocfilehash: dd9fd135536fc2cb222b908f3d61c1d1430e65b0
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+manager: lizross
+ms.openlocfilehash: 9d07ba42e83d9eec071ab047e9e1e92bac1f1411
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73905619"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127486"
 ---
-# <a name="troubleshoot-the-windows-virtual-desktop-management-tool"></a>Устранение неполадок средства управления виртуальными рабочими столами Windows
+# <a name="troubleshoot-the-windows-virtual-desktop-management-tool"></a>Устранение неполадок со средством управления Виртуального рабочего стола Windows
 
 В этой статье описываются проблемы, которые могут возникнуть при развертывании средства управления виртуальными рабочими столами Windows, и способы их устранения.
 
@@ -54,7 +55,7 @@ ms.locfileid: "73905619"
 
 Чтобы устранить эту проблему, разверните средство управления в другом регионе. Повторное развертывание средства в другом регионе не должно повлиять на взаимодействие с пользователем.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об отслеживании эскалации см. в статье [Обзор, Отзывы и поддержка](troubleshoot-set-up-overview.md).
 - Узнайте, как сообщать о проблемах с помощью средств виртуальных рабочих столов Windows в [шаблонах ARM для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md).

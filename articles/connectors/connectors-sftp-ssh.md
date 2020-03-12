@@ -8,12 +8,12 @@ ms.reviewer: estfan, klam, logicappspm
 ms.topic: article
 ms.date: 03/7/2020
 tags: connectors
-ms.openlocfilehash: 0f62fb835fdd2353557a4aff47128bb94ba91a31
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.openlocfilehash: d4ab7425c967d3a176c0a576d0be38ece1701b8b
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78851532"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128409"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью SSH и Azure Logic Apps
 
@@ -42,7 +42,7 @@ ms.locfileid: "78851532"
 
   | Действие | Поддержка фрагментации | Поддержка переопределения размера блока |
   |--------|------------------|-----------------------------|
-  | **Копировать файл** | Нет | Неприменимо |
+  | **Копировать файл** | нет | Неприменимо |
   | **Создание файла** | Да | Да |
   | **Создать папку** | Неприменимо | Неприменимо |
   | **Удалить файл** | Неприменимо | Неприменимо |
@@ -53,11 +53,8 @@ ms.locfileid: "78851532"
   | **Получение метаданных файла с помощью пути** | Неприменимо | Неприменимо |
   | **Вывод списка файлов в папке** | Неприменимо | Неприменимо |
   | **Переименовать файл** | Неприменимо | Неприменимо |
-  | **Обновление файла** | Нет | Неприменимо |
+  | **Обновление файла** | нет | Неприменимо |
   ||||
-
-  > [!NOTE]
-  > Для отправки больших файлов необходимы разрешения на чтение и запись для корневой папки на сервере SFTP.
 
 * SFTP-триггеры SSH не поддерживают фрагментацию сообщений. При запросе содержимого файла триггеры выбирают только те файлы, которые имеют размер не менее 15 МБ. Чтобы получить файлы размером более 15 МБ, используйте следующий шаблон:
 
@@ -79,7 +76,7 @@ ms.locfileid: "78851532"
 
 * Выполняет кэширование подключения к серверу SFTP *продолжительностью до 1 часа*, что повышает производительность и уменьшает количество попыток подключения к серверу. Чтобы указать длительность этого поведения кэширования, измените свойство [**ClientAliveInterval**](https://man.openbsd.org/sshd_config#ClientAliveInterval) в конфигурации SSH на SFTP-сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -130,7 +127,7 @@ ms.locfileid: "78851532"
 
    `puttygen <path-to-private-key-file-in-PuTTY-format> -O private-openssh -o <path-to-private-key-file-in-OpenSSH-format>`
 
-   Например:
+   Пример:
 
    `puttygen /tmp/sftp/my-private-key-putty.ppk -O private-openssh -o /tmp/sftp/my-private-key-openssh.pem`
 
@@ -225,6 +222,6 @@ ms.locfileid: "78851532"
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений интегрированной](../logic-apps/logic-apps-limits-and-config.md#message-size-limits) среды сценариев.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

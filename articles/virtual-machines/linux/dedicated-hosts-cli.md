@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 01/09/2020
 ms.author: cynthn
-ms.openlocfilehash: f712d1be76a9bb3dc4856b9f1fa7c7b805296dea
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: ba40e610e31a1215ac90baf63a04b435b636d68a
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78970769"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127693"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-cli"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure CLI
  
@@ -24,7 +24,7 @@ ms.locfileid: "78970769"
 ## <a name="limitations"></a>Ограничения
 
 - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-- В первоначальном выпуске поддерживается Следующая серия виртуальных машин: DSv3, ESv3, серия fsv2, LSv2 и MSv2. 
+- Размеры и типы оборудования, доступные для выделенных узлов, зависят от региона. Дополнительные сведения см. на [странице цен](https://aka.ms/ADHPricing) на узел.
  
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов 
@@ -77,7 +77,7 @@ az vm host group create \
  
 ## <a name="create-a-host"></a>Создание узла 
 
-Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  Поддерживаются следующие значения SKU: DSv3_Type1 и ESv3_Type1.
+Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.  
 
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
 

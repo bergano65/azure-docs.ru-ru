@@ -5,14 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 03/10/2020
 ms.author: helohr
-ms.openlocfilehash: f75e404e37ff45eb7d9f540cf6acba71fa83349f
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+manager: lizross
+ms.openlocfilehash: e10908a3ce0ad372ab7d05fda9a15481d0efc5a8
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201787"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127571"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -159,7 +160,7 @@ HP тонкий Client — это утвержденный и проверенн
 
 Имя входа VSI — это добавленный поставщиком услуг Windows виртуальный рабочий стол и партнер корпорации Майкрософт по тестированию производительности приложений в средах виртуальных рабочих столов Windows. Клиенты, перемещающие свои локальные бизнес-службы на виртуальные рабочие столы Windows, используют вход VSI Enterprise Edition для оценки и поддержки оптимальной производительности, масштабируемости и доступности многосеансовых приложений Windows 10 Enterprise, Windows 10 Корпоративная и Windows 7 включена с критически важными для бизнеса приложениями.
 
-- [Перейдите на веб-сайт партнера](https://www.loginvsi.com).
+- [Перейдите на веб-сайт партнера](https://www.loginvsi.com/use-cases-initiatives/windows-virtual-desktop).
 
 ## <a name="nerdio"></a>Nerdio
 
@@ -254,6 +255,16 @@ Printix — это дополнительный поставщик услуг Wi
 
 - [Перейдите на веб-сайт партнера](https://www.tricerat.com/microsoft-printing).
 
+## <a name="vast-limits"></a>огромные пределы
+
+![Эмблема с обширными ограничениями](./media/partners/vast-limits.png)
+
+большие ограничения, Уберажент компания, обеспечивают видимость при развертывании виртуальных рабочих столов Windows. Он создает программное обеспечение для ИТ-отдела, поскольку оно знает, как ИТ-специалисты считают и какие средства им нужны. Его продукты помогают ИТ-специалистам повысить эффективность работы, предоставляя им именно то, что им нужно для завершения своих задач; больше ничего, не меньше.
+
+Уберажент — это продукт для мониторинга и аналитики, предназначенный для вычислений конечных пользователей, которые не только собираются, но и предоставляют клиентам важную информацию. Уберажент имеет собственные метрики, охватывающие ключевые аспекты взаимодействия с пользователем, производительности приложений и безопасности конечных точек, указывая все, что вам нужно знать о виртуальных машинах Windows Virtual Desktop, не влияя на плотность пользователей вашей системы. Уберажент упрощает устранение неполадок, помогает изменять размеры и предоставляет обширную информацию, важную для информационной безопасности.
+
+- [Перейдите на веб-сайт партнера](https://uberagent.com/docs/uberagent/latest/about-uberagent/system-requirements/#windows-virtual-desktop)
+
 ## <a name="workspot"></a>воркспот
 
 ![Логотип воркспот](./media/partners/workspot.png)
@@ -265,7 +276,7 @@ Printix — это дополнительный поставщик услуг Wi
 - [Ознакомьтесь с кратким](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8P)обзорным решением.
 - [Перейдите на веб-сайт партнера](https://www.workspot.com/wvd).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения о виртуальных рабочих столах Windows](overview.md).
 - [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).

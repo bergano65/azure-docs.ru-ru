@@ -11,12 +11,12 @@ author: jpe316
 ms.author: jordane
 ms.date: 02/21/2020
 ms.custom: seodec18
-ms.openlocfilehash: 82866d452289a29dcdcacc12db8048acb7a351ba
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 6671b9c83ab71b4a92fe36d647e5a4e4d781154e
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250863"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79096197"
 ---
 # <a name="mlops-model-management-deployment-and-monitoring-with-azure-machine-learning"></a>Млопс: Управление моделями, развертывание и мониторинг с помощью Машинное обучение Azure
 
@@ -70,11 +70,6 @@ ms.locfileid: "78250863"
 
 Нельзя удалить зарегистрированную модель, используемую в активном развертывании.
 Дополнительные сведения см. в разделе "Регистрация модели" статьи [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md#registermodel).
-
-### <a name="profile-models"></a>Модели профилей
-
-Машинное обучение Azure поможет вам понять требования к ЦП и памяти службы, которая будет создана при развертывании модели. Профилирование проверяет службу, которая выполняет модель, и возвращает такие сведения, как загрузка ЦП, использование памяти и задержка ответа. Он также предоставляет рекомендации по ЦП и памяти на основе использования ресурсов.
-Дополнительные сведения см. в разделе Профилирование раздела [Развертывание моделей](how-to-deploy-and-where.md#profilemodel).
 
 ### <a name="package-and-debug-models"></a>Модели упаковки и отладки
 

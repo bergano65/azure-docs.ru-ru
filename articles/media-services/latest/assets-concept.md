@@ -10,17 +10,17 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 03/09/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: ce32343faefbcf2484ec0b1b39f752654a2d8514
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: 9b04941a5799955097fbd54ad9bdf50eccb87541
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78303619"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087903"
 ---
-# <a name="assets-in-azure-media-services"></a>Ресурсы в службах мультимедиа Azure
+# <a name="assets-in-azure-media-services-v3"></a>Ресурсы в службах мультимедиа Azure v3
 
 В службах мультимедиа Azure [ресурс-контейнер](https://docs.microsoft.com/rest/api/media/assets) является основным понятием. Здесь вы наводите носитель (например, с помощью отправки или приема в режиме реального времени), выводите носитель (из выходных данных задания) и публикуете носитель из (для потоковой передачи). 
 
@@ -39,37 +39,6 @@ ms.locfileid: "78303619"
 ### <a name="blobs"></a>BLOB-объекты
 
 Имена файлов и больших двоичных объектов в ресурсе должны соответствовать требованиям к [имени большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata) и [требованиям к имени NTFS](https://docs.microsoft.com/windows/win32/fileio/naming-a-file). Причина этих требований заключается в том, что файлы могут быть скопированы из хранилища BLOB-объектов на локальный диск NTFS для обработки.
-
-## <a name="map-v3-asset-properties-to-v2"></a>Свойства ресурса V3 на карте версии 2
-
-В следующей таблице показано, как свойства [ресурса](https://docs.microsoft.com/rest/api/media/assets/createorupdate#asset)в v3 сопоставляются со свойствами ресурса в версии 2.
-
-|v3, свойства|свойства v2|
-|---|---|
-|`id`-(Unique) полный путь Azure Resource Manager см. в разделе примеры в [активе](https://docs.microsoft.com/rest/api/media/assets/createorupdate) .||
-|`name`-(Unique) см. [соглашения об именовании](media-services-apis-overview.md#naming-conventions) ||
-|`alternateId`|`AlternateId`|
-|`assetId`|`Id`-(уникальное) значение начинается с префикса `nb:cid:UUID:`.|
-|`created`|`Created`|
-|`description`|`Name`|
-|`lastModified`|`LastModified`|
-|`storageAccountName`|`StorageAccountName`|
-|`storageEncryptionFormat`| `Options` (параметры создания)|
-|`type`||
-
-## <a name="storage-side-encryption"></a>Шифрование на стороне хранилища
-
-Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в Службах мультимедиа.
-
-|Вариант шифрования|Description|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
-|---|---|---|---|
-|Шифрование хранилища Служб мультимедиа|Шифрование AES-256, ключ, управляемый службами мультимедиа.|Поддерживается<sup>(1)</sup>|Не поддерживается<sup>(2)</sup>|
-|[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure, ключом, управляемым Azure или клиентом.|Поддерживается|Поддерживается|
-|[Шифрование хранилища на стороне клиента](https://docs.microsoft.com/azure/storage/common/storage-client-side-encryption)|Шифрование на стороне клиента, предлагаемое службой хранилища Azure, ключ, управляемый клиентом, в Key Vault.|Не поддерживается|Не поддерживается|
-
-<sup>1</sup> хотя службы мультимедиа поддерживают обработку содержимого в Clear/без какой-либо формы шифрования, делать это не рекомендуется.
-
-<sup>2</sup>В Службах мультимедиа версии 3 для обратной совместимости поддерживается шифрование хранилища (шифрование AES-256), только если ресурсы созданы с помощью Служб мультимедиа версии 2. Это означает, что v3 работает с существующими зашифрованными ресурсами хранилища, но не позволяет создавать новые.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

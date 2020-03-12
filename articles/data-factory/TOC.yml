@@ -479,6 +479,8 @@
           href: control-flow-webhook-activity.md
     - name: Преобразования потока данных
       items:
+        - name: Общие сведения о преобразовании
+          href: data-flow-transformation-overview.md
         - name: Статистическое
           href: data-flow-aggregate.md
         - name: Изменение строк

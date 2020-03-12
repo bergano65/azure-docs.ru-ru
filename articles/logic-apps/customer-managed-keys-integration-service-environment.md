@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 01/14/2020
-ms.openlocfilehash: 6f4e0744aad5f053cdda0a52b382ad3c86982c2f
-ms.sourcegitcommit: d48afd9a09f850b230709826d4a5cd46e57d19fa
+ms.date: 03/11/2020
+ms.openlocfilehash: fa39c8f65b00283044ef31dc7577a4668b3e634b
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75904984"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127650"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps
 
@@ -19,7 +19,7 @@ Azure Logic Apps использует хранилище Azure для хране
 
 При создании [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) для размещения приложений логики и необходимости более эффективного управления ключами шифрования, используемыми службой хранилища Azure, можно настроить, использовать и управлять собственным ключом с помощью [Azure Key Vault](../key-vault/key-vault-overview.md). Эта возможность также называется "создание собственных ключей" (BYOK), а ключ называется "ключом, управляемым клиентом".
 
-В этом разделе показано, как настроить и указать собственный ключ шифрования для использования при создании интегрированной среды сценариев. 
+В этом разделе показано, как настроить и указать собственный ключ шифрования для использования при создании интегрированной среды сценариев с помощью REST API Logic Apps. Общие действия по созданию интегрированной среды сценариев с помощью Logic Apps REST API см. [в разделе Создание окружения службы интеграции (ISE) с помощью Logic Apps REST API](../logic-apps/create-integration-service-environment-rest-api.md).
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -33,9 +33,9 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * В течение *30 минут* после отправки запроса HTTPS-размещения, который создает интегрированную среду сценариев, необходимо [предоставить Key Vault доступ к удостоверению, назначенному системой ISE](#identity-access-to-key-vault). В противном случае создание интегрированной среды сценариев завершается сбоем и вызывает ошибку разрешений.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+* Те же [условия](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) и [требования, необходимые для обеспечения доступа к интегрированной среде сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) , как при создании интегрированной среды сценариев в портал Azure
 
 * Хранилище ключей Azure, в котором включены **обратимое удаление** и **не** удаляются свойства.
 
@@ -66,6 +66,15 @@ Azure Logic Apps использует хранилище Azure для хране
 
 > [!IMPORTANT]
 > Для Logic Apps REST API версии 2019-05-01 необходимо сделать собственный запрос HTTP-размещения для соединителей ISE.
+
+Для завершения развертывания обычно требуется два часа. Иногда развертывание может занять до четырех часов. Чтобы проверить состояние развертывания, в [портал Azure](https://portal.azure.com)на панели инструментов Azure щелкните значок уведомления, чтобы открыть панель уведомлений.
+
+> [!NOTE]
+> Если развертывание завершается сбоем или вы удаляете интегрированную среду сценариев, то перед освобождением подсетей Azure может пройти до часа. Эта задержка означает, что может потребоваться подождать, прежде чем повторно использовать эти подсети в другой интегрированной среде сценариев.
+>
+> При удалении виртуальной сети Azure, как правило, занимает до двух часов, прежде чем выпустить подсети, но эта операция может занять больше времени. 
+> При удалении виртуальных сетей убедитесь, что все ресурсы не подключены. 
+> См. раздел [Удаление виртуальной сети](../virtual-network/manage-virtual-network.md#delete-a-virtual-network).
 
 ### <a name="request-header"></a>Заголовок запроса
 
@@ -220,4 +229,4 @@ Azure Logic Apps использует хранилище Azure для хране
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [Azure Key Vault](../key-vault/key-vault-overview.md)
+* См. дополнительные сведения об [Azure Key Vault](../key-vault/key-vault-overview.md).

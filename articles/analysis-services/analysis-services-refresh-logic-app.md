@@ -6,12 +6,12 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
-ms.openlocfilehash: a44aa5b355bea675f5d99761d97b8876a9b2a7d7
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 78bc629598c0635b7760285d0507b7a85a4ab551
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73572341"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79127010"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -26,9 +26,9 @@ ms.locfileid: "73572341"
 ## <a name="design-the-logic-app"></a>Проектирование приложения логики
 
 > [!IMPORTANT]
-> В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен.  Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть список разрешений в брандмауэре Azure Analysis Services. Дополнительные сведения о диапазонах IP-адресов приложений логики для каждого региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#firewall-configuration-ip-addresses).
+> В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть список разрешений в брандмауэре Azure Analysis Services. Дополнительные сведения о Azure Logic Apps диапазонах IP-адресов для региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#configuration).
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 #### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -64,18 +64,18 @@ ms.locfileid: "73572341"
 
 |Свойство  |Значение  |
 |---------|---------|
-|**Метод**     |ПУБЛИКАЦИЯ         |
-|**URI**     | https:// */серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https: \//westus. asazure. Windows. NET/Servers/MyServer/Models/AdventureWorks/обновляет|
+|**Метод**     |POST         |
+|**URI**     | https:// */серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refreshes|
 |**Заголовки**     |   Content-Type, Application/JSON <br /> <br />  ![Заголовки](./media/analysis-services-async-refresh-logic-app/6.png)    |
 |**Текст**     |   Дополнительные сведения о создании текста запроса см. в разделе [асинхронное обновление с помощью REST API-POST/рефрешес](analysis-services-async-refresh.md#post-refreshes). |
-|**Проверка подлинности**     |Active Directory OAuth         |
+|**Аутентификация**     |Active Directory OAuth         |
 |**Клиентом**     |Заполните Azure Active Directory TenantId         |
 |**Аудитория**     |HTTPS://*. asazure. Windows. NET         |
 |**Идентификатор клиента**     |Введите имя участника-службы ClientID         |
 |**Тип учетных данных**     |Секрет         |
 |**Секрет**     |Введите секретное имя субъекта-службы         |
 
-Пример:
+Пример
 
 ![Завершенное действие HTTP](./media/analysis-services-async-refresh-logic-app/7.png)
 
@@ -116,4 +116,4 @@ ms.locfileid: "73572341"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
-[ИНТЕРФЕЙС REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)
+[REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

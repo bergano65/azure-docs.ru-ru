@@ -3,12 +3,12 @@ title: Запуск функций Azure из пакета
 description: Настройте запуск функций в среде выполнения Функций Azure путем подключения файла пакета развертывания, содержащего файлы проекта приложения-функции.
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: a3e11a7c4f3fd91df2fd9dd7a44f3922c4922585
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 3ae287939f22469b03f0e10f184f067274464905
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77921119"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087023"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
@@ -35,7 +35,7 @@ ms.locfileid: "77921119"
 
 Чтобы настроить запуск приложения-функции из пакета, нужно просто добавить `WEBSITE_RUN_FROM_PACKAGE` в параметрах приложения-функции. Параметр `WEBSITE_RUN_FROM_PACKAGE` может иметь одно из следующих значений:
 
-| Значение  | Описание  |
+| Значение  | Description  |
 |---------|---------|
 | **`1`**  | Рекомендуется для приложений функций, работающих в Windows. Запуск из файла пакета в папке `d:\home\data\SitePackages` приложения-функции. Если развертывание не выполняется [с помощью ZIP-развертывания](#integration-with-zip-deployment), для этого параметра требуется, чтобы папка также соимела файл с именем `packagename.txt`. Этот файл содержит только имя файла пакета в папке без каких-либо пробелов. |
 |**`<URL>`**  | Расположение определенного файла пакета, который вы хотите запустить. При использовании хранилища BLOB-объектов следует использовать закрытый контейнер с [подписанным URL-адресом (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer), чтобы настроить доступ к пакету в среде выполнения функций. Можно использовать [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для передачи файлов пакета в учетную запись хранения больших двоичных объектов. При указании URL-адреса необходимо также [синхронизировать триггеры](functions-deployment-technologies.md#trigger-syncing) после публикации обновленного пакета. |
@@ -85,14 +85,15 @@ ms.locfileid: "77921119"
 - [Key Vault ссылки для службы приложений](../app-service/app-service-key-vault-references.md)
 - [Шифрование неактивных данных в службе хранилища Azure](../storage/common/storage-service-encryption.md)
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 - Запуск из пакета делает `wwwroot` только для чтения, поэтому при записи файлов в этот каталог возникнет ошибка.
 - Форматы tar и gzip не поддерживаются.
 - Эта функция не сопоставлена с локальным кэшем.
 - Для повышения производительности холодного запуска используйте параметр local ZIP (`WEBSITE_RUN_FROM_PACKAGE`= 1).
+- Запуск из пакета несовместим с параметром настройки развертывания (`SCM_DO_BUILD_DURING_DEPLOYMENT=true`). во время развертывания шаг сборки будет пропущен.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)

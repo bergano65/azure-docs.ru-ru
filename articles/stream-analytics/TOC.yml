@@ -120,6 +120,8 @@
           href: blob-output-managed-identity.md
         - name: "Аутентификация на основе управляемых удостоверений в Power\_BI"
           href: powerbi-output-managed-identity.md
+        - name: Шифрование данных
+          href: data-protection.md
     - name: Создание решений
       items:
         - name: Анализ тональности в Twitter
@@ -167,6 +169,8 @@
           href: 'https://github.com/Azure/azure-stream-analytics/tree/master/Samples/ASAOneClick'
         - name: Использование API для заданий IoT Edge
           href: stream-analytics-cicd-api.md
+        - name: Экспортирование и развертывание с помощью Azure Resource Manager
+          href: resource-manager-export.md
     - name: Visual Studio
       items:
         - name: Средства установки

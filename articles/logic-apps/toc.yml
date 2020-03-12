@@ -105,8 +105,10 @@
           href: logic-apps-diagnosing-failures.md
     - name: Доступ к виртуальным сетям Azure
       items:
-        - name: Подключение к виртуальным сетям с средами служб интеграции
+        - name: "Создание среды службы интеграции\_— портал Azure"
           href: connect-virtual-network-vnet-isolated-environment.md
+        - name: "Создание среды службы интеграции\_— REST API"
+          href: create-integration-service-environment-rest-api.md
         - name: Настройка доступа для нескольких сред служб интеграции
           href: connect-virtual-network-vnet-set-up-single-ip-address.md
         - name: Добавление ресурсов в среды службы интеграции

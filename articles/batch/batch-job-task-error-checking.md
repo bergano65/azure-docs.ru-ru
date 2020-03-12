@@ -5,14 +5,14 @@ services: batch
 author: mscurrell
 ms.service: batch
 ms.topic: article
-ms.date: 12/01/2019
+ms.date: 03/10/2019
 ms.author: markscu
-ms.openlocfilehash: c4e36d76bf85b9715a817dbeb7c690aa77f8d978
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 4ace0de6d252680eb64990277b9478adf752f54d
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852189"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087001"
 ---
 # <a name="job-and-task-error-checking"></a>Проверка ошибок заданий и задач
 
@@ -56,7 +56,7 @@ ms.locfileid: "74852189"
 - Все экземпляры выполняемой задачи выпуска задания можно получить из задания с помощью функции [подготовки списка API и состояния задачи выпуска](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus). Как и в случае с любой задачей, доступны [сведения о выполнении](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus#jobpreparationandreleasetaskexecutioninformation) со свойствами, такими как `failureInfo`, `exitCode`и `result`.
 - Если одна или несколько задач выпуска задания завершаются неудачно, задание будет по-прежнему завершено и переходить в состояние `completed`.
 
-## <a name="tasks"></a>Задачи
+## <a name="tasks"></a>Задания
 
 Задачи заданий могут завершаться сбоем по нескольким причинам:
 
@@ -72,6 +72,17 @@ ms.locfileid: "74852189"
 Влияние сбоев задач на задание и всех зависимостей задач должно быть рассмотрено.  Свойство [екситкондитионс](https://docs.microsoft.com/rest/api/batchservice/task/add#exitconditions) можно указать для задачи, чтобы настроить действие для зависимостей и для задания.
 - Для зависимостей [DependencyAction](https://docs.microsoft.com/rest/api/batchservice/task/add#dependencyaction) определяет, блокируются или выполняются задачи, зависящие от невыполненной задачи.
 - Для задания [жобактион](https://docs.microsoft.com/rest/api/batchservice/task/add#jobaction) определяет, будет ли невыполненная задача приводить к отключению, завершению или оставлению неизмененного задания.
+
+### <a name="task-command-line-failures"></a>Сбои командной строки задачи
+
+При выполнении командной строки задачи выходные данные записываются в `stderr.txt` и `stdout.txt`. Кроме того, приложение может выполнять запись в файлы журналов, относящиеся к приложению.
+
+Если узел пула, на котором выполняется задача, все еще существует, то файлы журнала можно получить и просмотреть. Например, портал Azure список и может просматривать файлы журнала для задачи или узла пула. Несколько интерфейсов API также позволяют получать и получать список файлов задач, например [получить из задачи](https://docs.microsoft.com/rest/api/batchservice/file/getfromtask).
+
+Так как пулы и узлы пула часто являются временными, при этом узлы постоянно добавляются и удаляются, поэтому рекомендуется сохранять файлы журналов. [Выходные файлы задач](https://docs.microsoft.com/azure/batch/batch-task-output-files) — это удобный способ сохранения файлов журнала в службе хранилища Azure.
+
+### <a name="output-file-failures"></a>Ошибки выходного файла
+В каждом сеансе передачи файла пакетная служба записывает в вычислительный узел два файла журнала: `fileuploadout.txt` и `fileuploaderr.txt`. Для получения дополнительных сведений о конкретной ошибке можно проанализировать файлы журнала. В случаях, когда передача файла никогда не выполнялась, например из-за невозможности выполнения задачи, эти файлы журналов не будут существовать.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
