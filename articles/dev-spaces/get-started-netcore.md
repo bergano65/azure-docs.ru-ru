@@ -5,12 +5,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: e23685d410b2d663efde8c530be01adaab637bf8
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 306e1c7a43ddd10faa0a537d567257fe95336c23
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78252420"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78942504"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и .NET Core с Azure Dev Spaces
 
@@ -81,7 +81,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-key
 Для разработчиков .NET Core и Node.js, которые используют VS Code, доступны широкие возможности, такие как функция отладки Kubernetes.
 
 1. Если у вас не установлен язык [VS Code](https://code.visualstudio.com/Download), установите его.
-1. Скачайте и установите расширение [VS Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и расширения для работы с [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). Для каждого расширения щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code.
+1. Скачайте и установите расширение [VS Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и расширения для работы с [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Для каждого расширения щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code.
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 

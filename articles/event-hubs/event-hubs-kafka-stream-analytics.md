@@ -13,12 +13,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 02/20/2020
 ms.author: spelluru
-ms.openlocfilehash: d7b060a2b35ca41bf87b69be706284174d7b1012
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 8047ac5d3db2db230a00583e888a4afea3b282b9
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587164"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78969370"
 ---
 # <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство по Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий с поддержкой Kafka и обработка с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
@@ -60,7 +60,7 @@ ms.locfileid: "77587164"
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{CONNECTION STRING for EVENT HUB NAMESPACE}";
     ```
 
-5. Перейдите в `azure-event-hubs-for-kafka/quickstart/java/producer/src/main/java/com/example/app` и откройте файл **TestDataReporter.java** в любом редакторе по своему усмотрению. 
+5. Перейдите в `azure-event-hubs-for-kafka/quickstart/java/producer/src/main/java/` и откройте файл **TestDataReporter.java** в любом редакторе по своему усмотрению. 
 6. Закомментируйте следующую строку кода.
 
     ```java

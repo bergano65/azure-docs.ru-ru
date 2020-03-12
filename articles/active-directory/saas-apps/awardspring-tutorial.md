@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с AwardSpring | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с AwardSpring | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и AwardSpring.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9d397d179a3f5bd50479e76c04e5eb709a3ef1f
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 7ab8f18c065b283883cfca0a0d555a5fa3bb9d5a
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260775"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78897813"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-awardspring"></a>Руководство. Интеграция единого входа Azure Active Directory с AwardSpring
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-awardspring"></a>Руководство по Интеграция единого входа Azure Active Directory с AwardSpring
 
 В этом учебнике описано, как интегрировать AwardSpring с Azure Active Directory (Azure AD). Интеграция AwardSpring с Azure AD обеспечивает следующие возможности:
 
@@ -104,7 +104,7 @@ ms.locfileid: "76260775"
     | Имя | user.givenname |
     | Фамилия | user.surname |
     | Email | user.mail |
-    | Имя пользователя | user.userprinicipalname |
+    | Имя пользователя | user.userprincipalname |
     | studentID | < ИД учащегося > |
 
     > [!NOTE]

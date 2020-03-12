@@ -1,5 +1,5 @@
 ---
-title: Руководство. развертыванию Функций Azure в виде модулей с использованием Azure IoT Edge
+title: Руководство по развертыванию Функций Azure в виде модулей с использованием Azure IoT Edge
 description: В этом руководстве описано, как разработать Функции Azure в виде модуля IoT Edge с последующим развертыванием на устройстве.
 author: kgremban
 manager: philmea
@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: e490f9a5b6801ed86ca7d594dfd6069a380d5fe5
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 1f4b3387375b52b28600590a099884277f3de63e
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772288"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943034"
 ---
-# <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство. Развертывание Функций Azure как модулей IoT Edge
+# <a name="tutorial-deploy-azure-functions-as-iot-edge-modules"></a>Руководство по Развертывание Функций Azure как модулей IoT Edge
 
 Службу "Функции Azure" можно использовать для развертывания кода, который реализует нужную бизнес-логику, непосредственно на устройствах Azure IoT Edge. В этом руководстве рассматривается создание и развертывание службы "Функции Azure", которая фильтрует данные датчика на имитированном устройстве IoT Edge. Вы используете имитированное устройство IoT Edge, созданное с помощью процедуры развертывания Azure IoT Edge на имитированном устройстве, описанной в кратких руководствах для [Windows](quickstart.md) или [Linux](quickstart-linux.md). В этом руководстве описано следующее:
 
@@ -51,7 +51,7 @@ ms.locfileid: "76772288"
 
 Для разработки модуля IoT Edge с Функциями Azure установите на компьютере разработки следующие дополнительные компоненты:
 
-* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
+* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 * [пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download).
 
 ## <a name="create-a-function-project"></a>Создание проекта функции

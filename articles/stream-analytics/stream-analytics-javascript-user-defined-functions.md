@@ -8,18 +8,18 @@ ms.topic: tutorial
 ms.reviewer: mamccrea
 ms.custom: mvc
 ms.date: 04/01/2018
-ms.openlocfilehash: f82add78eef418e3644a5961d984708d3721a8dd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: feb0361b460f5b18b5a8aaa585332e2179023458
+ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426062"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78851169"
 ---
-# <a name="tutorial-azure-stream-analytics-javascript-user-defined-functions"></a>Руководство. Определяемые пользователем функции JavaScript в Azure Stream Analytics
+# <a name="tutorial-azure-stream-analytics-javascript-user-defined-functions"></a>Руководство по Определяемые пользователем функции JavaScript в Azure Stream Analytics
  
 Azure Stream Analytics поддерживает определяемые пользователем функции, написанные на языке JavaScript. Благодаря обширному набору методов, которые предоставляют объекты JavaScript **String**, **RegExp**, **Math**, **Array** и **Date**, в заданиях Stream Analytics стало проще создавать сложные преобразования данных.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * задавать определяемые пользователем функции JavaScript;
@@ -104,7 +104,7 @@ Stream Analytics | JavaScript
 BIGINT | Число (JavaScript может представлять целые числа только до значения 2^53).
 Дата и время | Дата (JavaScript поддерживает только миллисекунды)
 double | Number
-nvarchar(MAX) | String
+nvarchar(MAX) | Строка
 Записей | Объект
 Array | Array
 NULL | NULL
@@ -117,7 +117,7 @@ JavaScript | Stream Analytics
 --- | ---
 Number | Значение типа bigint, если это целое число в диапазоне от long.MinValue до long.MaxValue. Иначе используется тип double.
 Дата | Дата и время
-String | nvarchar(MAX)
+Строка | nvarchar(MAX)
 Объект | Записей
 Array | Array
 NULL, не определено | NULL
@@ -147,7 +147,7 @@ SELECT
     DataString,
     DataValue,
     HexValue,
-    UDF.json_stringify(input) As InputEvent
+    UDF.jsonstringify(input) As InputEvent
 INTO
     output
 FROM

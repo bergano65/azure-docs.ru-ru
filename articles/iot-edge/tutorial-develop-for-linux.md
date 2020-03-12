@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 38ffd4931f318b15f1ac06fcfd742bde8e5c6838
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 4a127c8c77f97708729cf91d6ced214e98924fb6
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772971"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943008"
 ---
-# <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство. Разработка модулей IoT Edge для устройств Linux
+# <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 
 Для разработки и развертывания кода на устройствах Linux с IoT Edge используйте Visual Studio Code.
 
@@ -65,7 +65,7 @@ ms.locfileid: "76772971"
   * Убедитесь, что компьютер для разработки поддерживает вложенную виртуализацию. Эта возможность необходима для запуска подсистемы контейнеров, установка которой описывается в следующем разделе.
 * Для разработки модулей IoT Edge для устройств Linux можно использовать большинство операционных систем, на базе которых может работать платформа контейнеров. В этом учебнике используется компьютер под управлением Windows, но при этом отмечены известные различия в MacOS или Linux.
 * Установите [Git](https://git-scm.com/), чтобы получить пакеты шаблонов модулей далее в этом учебнике.  
-* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
+* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 * [Пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download).
 
 Устройство Azure IoT Edge на платформе Linux:

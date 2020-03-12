@@ -9,14 +9,14 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c13d6ed773b582e1ca59ec31de9101fa1541dcb5
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 53e1863f6f3421a6d8df9112f463f16443cff93e
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759966"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943045"
 ---
-# <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Руководство. Разработка модулей IoT Edge на языке C# для устройств Linux
+# <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Linux
 
 Для разработки и развертывания кода C# на устройствах Linux с Azure IoT Edge используйте Visual Studio Code.
 
@@ -59,7 +59,7 @@ ms.locfileid: "76759966"
 
 Для работы с этими учебниками подготовьте дополнительные необходимые компоненты на компьютере для разработки:
 
-* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
+* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 * [Пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download).
 
 ## <a name="create-a-module-project"></a>Создание проекта модуля

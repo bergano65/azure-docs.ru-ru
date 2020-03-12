@@ -9,14 +9,14 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/28/2019
 ms.custom: mvc
-ms.openlocfilehash: ba94c9f2af737af3ae1ebcccf6685643a54da237
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: fdd2eb2ca1a0e6b93cd3f7a75beeb8057a4ea19c
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110703"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674379"
 ---
-# <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство. Реализация обновления встроенного ПО устройства
+# <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство по Реализация обновления встроенного ПО устройства
 
 Вам может потребоваться обновление встроенного ПО устройств, подключенных к Центру Интернета вещей. Например, вы можете добавить новые функции во встроенное ПО или применить исправления безопасности. Во многих сценариях Интернета вещей нецелесообразно физически получать доступ, а затем вручную применять обновления встроенного ПО на устройствах. В этом руководстве показано, как можно удаленно запускать и контролировать процесс обновления встроенного ПО через внутреннее приложение, подключенное к центру.
 
@@ -63,7 +63,7 @@ hubname=tutorial-iot-hub
 location=centralus
 
 # Install the IoT extension if it's not already installed
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 
 # Create a resource group
 az group create --name tutorial-iot-hub-rg --location $location

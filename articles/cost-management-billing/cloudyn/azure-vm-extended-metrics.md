@@ -9,12 +9,12 @@ ms.date: 01/24/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.custom: seodec18
-ms.openlocfilehash: 9f1f60fd16aa830372bd0f5b19e22e7003de496b
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 84a9d6aa6203b8a518b0e33bed0ec2707c4389a1
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76770319"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082920"
 ---
 # <a name="add-extended-metrics-for-azure-virtual-machines"></a>Добавление расширенных метрик для виртуальных машин Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "76770319"
 
 ## <a name="determine-whether-extended-metrics-are-enabled"></a>Определение доступности расширенных метрик
 
-1. Войдите на портал Azure по адресу https://portal.azure.com.
+1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. В разделе **Виртуальные машины** выберите виртуальную машину, а затем в разделе **Мониторинг** выберите **Метрики**. Отобразится список доступных метрик.
 3. Выберите несколько метрик, и на графике отобразятся их данные.  
     ![Пример метрики. Загрузка ЦП на узле](./media/azure-vm-extended-metrics/metric01.png)
