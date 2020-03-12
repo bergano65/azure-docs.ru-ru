@@ -4,12 +4,12 @@ description: Создание бессерверной функции PowerShell
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: ''
-ms.openlocfilehash: 51146886e3f52cb6a60d49da0d57aea1e2c55106
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 9dbb22a2449e4c41bff802ab827da4489fc7ffeb
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196541"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78331031"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Руководство по применению функции Azure, активируемой HTTP-запросами, для создания группы контейнеров
 
@@ -42,7 +42,7 @@ ms.locfileid: "78196541"
 
 ## <a name="enable-an-azure-managed-identity-in-the-function-app"></a>Настройка в приложении-функции удостоверения, управляемого Azure
 
-Здесь вы настроите в приложении-функции [управляемое удостоверение](../app-service/overview-managed-identity.md?toc=/azure/azure-functions/toc.json#adding-a-system-assigned-identity), назначаемое системой. С его помощью выполняющий приложение узел PowerShell сможет автоматически выполнять проверку подлинности, позволяя функциям выполнять действия со службами Azure, к которым предоставляет доступ это удостоверение. Далее вы предоставите управляемому удостоверению права на создание ресурсов в группе ресурсов для приложения-функции. 
+Здесь вы настроите в приложении-функции [управляемое удостоверение](../app-service/overview-managed-identity.md?toc=/azure/azure-functions/toc.json#add-a-system-assigned-identity), назначаемое системой. С его помощью выполняющий приложение узел PowerShell сможет автоматически выполнять проверку подлинности, позволяя функциям выполнять действия со службами Azure, к которым предоставляет доступ это удостоверение. Далее вы предоставите управляемому удостоверению права на создание ресурсов в группе ресурсов для приложения-функции. 
 
 Прежде всего выполните команду [az group show][az-group-show], чтобы получить идентификатор группы ресурсов для приложения-функции и сохраните его в переменной среды. В этом примере предполагается, что команда выполняется в оболочке Bash.
 
