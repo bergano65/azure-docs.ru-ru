@@ -6,19 +6,22 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 02/24/2020
-ms.openlocfilehash: cca22c499efde74bb1469222d2f8a6e576452aa2
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.date: 03/11/2020
+ms.openlocfilehash: 1a6b50456a5dc3ff89fe7b513f406dc68bd2401e
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381965"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129168"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Сопоставление потоков данных о производительности и настройке
 
 Сопоставление потоков данных в фабрике данных Azure обеспечивает интерфейс без кода для проектирования, развертывания и координации преобразований данных в масштабе. Если вы не знакомы с потоками данных сопоставления, см. раздел [Общие сведения о потоке данных сопоставления](concepts-data-flow-overview.md).
 
 При проектировании и тестировании потоков данных от пользовательского интерфейса ADF необходимо переключиться в режим отладки для выполнения потоков данных в режиме реального времени, не дожидаясь прогрева кластера. Дополнительные сведения см. в разделе [режим отладки](concepts-data-flow-debug-mode.md).
+
+В этом видео показаны некоторые примеры преобразования данных с помощью потоков данных.
+> [!VIDEO https://www.youtube.com/watch?v=6CSbWm4lRhw]
 
 ## <a name="monitoring-data-flow-performance"></a>Наблюдение за производительностью потока данных
 

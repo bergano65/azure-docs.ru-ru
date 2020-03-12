@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: thweiss
-ms.openlocfilehash: 171542c89b900eb8bf282156c79303a1deb5a5f7
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 58a1ee13afa76b152723cb71d4037f9c31cc8d4e
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78364523"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129398"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -19,7 +19,7 @@ ms.locfileid: "78364523"
 
 ## <a name="indexing-policy-examples"></a>Примеры политик индексирования
 
-Ниже приведены примеры политик индексирования в формате JSON, в котором они доступны на портале Azure. Значения параметров можно задать с помощью Azure CLI или любого пакета SDK.
+Ниже приведены некоторые примеры политик индексации, которые отображаются в [формате JSON](index-policy.md#include-exclude-paths), то есть о том, как они представлены в портал Azure. Значения параметров можно задать с помощью Azure CLI или любого пакета SDK.
 
 ### <a name="opt-out-policy-to-selectively-exclude-some-property-paths"></a>Политика отказа для выборочного исключения некоторых путей к свойствам
 
@@ -153,7 +153,7 @@ ms.locfileid: "78364523"
     ],
     "excludedPaths": [
         {
-            "path": "/\"_etag\"/?"
+            "path": "/_etag/?"
         }
     ],
     "spatialIndexes": [
@@ -737,7 +737,7 @@ indexingPolicy['compositeIndexes'] = [
 response = database_client.replace_container(container_client, container['partitionKey'], indexingPolicy)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 

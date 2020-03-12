@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: b22f779d616751ebaa3dad853d5aa23ec4969f23
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 08177165439ff7d3205e31757e5d1e28759a9836
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381161"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128487"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub"></a>Потоковая передача данных мониторинга Azure в концентратор событий
 Azure Monitor предоставляет полное решение для мониторинга стека для приложений и служб в Azure, в других облаках и в локальной среде. В дополнение к использованию Azure Monitor для анализа этих данных и использования их в различных сценариях мониторинга, может потребоваться отправить его другим средствам мониторинга в вашей среде. Наиболее эффективный способ потоковой передачи данных мониторинга на внешние средства в большинстве случаев заключается в использовании [концентраторов событий Azure](/azure/event-hubs/). Эта статья содержит краткое описание того, как можно выполнить потоковую передачу данных мониторинга из разных источников в концентратор событий и получить ссылки на подробные инструкции.
@@ -35,7 +35,7 @@ Azure Monitor предоставляет полное решение для мо
 | Уровень | Данные | Метод |
 |:---|:---|:---|
 | [Клиент Azure](data-sources.md#azure-tenant) | Журналы аудита Azure Active Directory | Настройте параметр диагностики клиента в клиенте AAD. Дополнительные сведения см. [в статье учебник. потоковая Azure Active Directory журналов в концентратор событий Azure](../../active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub.md) . |
-| [Подписка Azure.](data-sources.md#azure-subscription) | Журнал действий Azure | Создайте профиль журнала для экспорта событий журнала действий в концентраторы событий.  Дополнительные сведения см. [в статье Экспорт журнала действий Azure в хранилище или в концентраторы событий Azure](activity-log-export.md) . |
+| [Подписка Azure.](data-sources.md#azure-subscription) | Журнал действий Azure | Создайте профиль журнала для экспорта событий журнала действий в концентраторы событий.  Дополнительные сведения см. [в статье потоковая передача журналов платформы Azure в концентраторы событий Azure](resource-logs-stream-event-hubs.md) . |
 | [Ресурсы Azure](data-sources.md#azure-resources) | Метрики платформы<br> Журналы ресурсов |Оба типа данных отправляются в концентратор событий с использованием параметра диагностики ресурсов. Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в концентратор событий](resource-logs-stream-event-hubs.md) . |
 | [Операционная система (гость)](data-sources.md#operating-system-guest) | Виртуальные машины Azure | Установите [расширение система диагностики Azure](diagnostics-extension-overview.md) на виртуальных машинах Windows и Linux в Azure. Дополнительные сведения о виртуальных машинах Windows и об [использовании диагностического расширения Linux для мониторинга метрик и журналов](../../virtual-machines/extensions/diagnostics-linux.md#protected-settings) см. в статье [потоковая передача система диагностики Azure данных в критическом пути с помощью концентраторов событий](diagnostics-extension-stream-event-hubs.md) . |
 | [Код приложения](data-sources.md#application-code) | Application Insights | Application Insights не предоставляет прямой метод для потоковой передачи данных в концентраторы событий. Вы можете [настроить непрерывный экспорт](../../azure-monitor/app/export-telemetry.md) данных Application Insights в учетную запись хранения, а затем использовать приложение логики для отправки данных в концентратор событий, как описано в разделе [потоковая передача вручную с помощью приложения логики](#manual-streaming-with-logic-app). |

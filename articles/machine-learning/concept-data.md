@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 12/09/2019
-ms.openlocfilehash: 4149e90e07bbcd03a0df41060b42b8902b89e774
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: a2af1e87ce7b17183ae09fb02b2652a04f585e84
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396192"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129381"
 ---
 # <a name="data-access-in-azure-machine-learning"></a>Доступ к данным в Машинное обучение Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "78396192"
 
 + [Обучение моделей машинного обучения](how-to-train-with-datasets.md).
 + Использование наборов данных в 
-     + [автоматические эксперименты ML](how-to-create-portal-experiments.md)
+     + [автоматические эксперименты ML](how-to-use-automated-ml-for-ml-models.md)
      + [конструктор](tutorial-designer-automobile-price-train-score.md#import-data) 
 + Доступ к наборам данных для оценки с помощью вывода пакетов в [конвейерах машинного обучения](how-to-create-your-first-pipeline.md).
 + Создайте [проект меток данных](#label).
@@ -114,7 +114,7 @@ ms.locfileid: "78396192"
 В контексте машинного обучения смещение данных — это изменение входных данных модели, которое приводит к снижению производительности модели. Это одна из основных причин, с которой точность снижается с течением времени, поэтому отслеживание смещения данных помогает выявить проблемы с производительностью модели.
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://aka.ms/dataset-tutorial).

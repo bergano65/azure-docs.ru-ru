@@ -3,12 +3,12 @@ title: Поддерживаемые типы ресурсов в службе р
 description: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: ec194287e8a8e06d3bb14c4b202cc2f11063d1dd
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: 3ba7b308c0c7671df8a652194830cb910cb89acc
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78925595"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129429"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
@@ -189,6 +189,11 @@ ms.locfileid: "78925595"
 |---|
 |<ul><li>Сталкиваются ли клиенты с ошибками, связанными со Служебной шиной?</li><li>Возникает ли у пользователей увеличение переходных ошибок из-за обновления пространства имен Служебной шины?</li></ul>|
 
+## <a name="microsoftservicefabricclusters"></a>Microsoft. ServiceFabric/кластеры
+|Выполняемые проверки|
+|---|
+|<ul><li>Работает ли кластер Service Fabric?</li><li>Можно ли управлять кластером Service Fabric с помощью Azure Resource Manager?</li></ul>|
+
 ## <a name="microsoftsqlmanagedinstancesdatabases"></a>Microsoft. SQL/Манажединстанцес/базы данных
 |Выполняемые проверки|
 |---|
@@ -219,7 +224,7 @@ ms.locfileid: "78925595"
 |---|
 |<ul><li>Сервер узла запущен и работает?</li><li>Работает ли сервер Internet Information?</li><li>Работает ли подсистема балансировки нагрузки?</li><li>Доступно ли веб-приложение из центра обработки данных?</li><li>Доступна ли учетная запись хранения, в которой размещается контент сайта?</li></ul>|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 -  Дополнительные сведения см. в [общих сведениях о панели мониторинга работоспособности службы Azure](service-health-overview.md) и [общих сведениях о службе "Работоспособность ресурсов Azure"](resource-health-overview.md). 
 -  [Azure Resource Health FAQ](resource-health-faq.md) (Часто задаваемые вопросы о службе работоспособности ресурсов Azure)
 - Настройте оповещения о проблемах, связанных с работоспособностью. Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md). 

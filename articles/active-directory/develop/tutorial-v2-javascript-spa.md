@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5657a2d2c348b371f81aed74c92e52b5199cdc61
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 51a456a05e1d41057e80b92e44f997e1b52cb132
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78377408"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128779"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -28,6 +28,9 @@ ms.locfileid: "78377408"
 - войти в личные, рабочие и учебные учетные записи; 
 - Получение маркера доступа
 - вызвать API Microsoft Graph и другие API, которым требуются маркеры доступа от *конечной точки платформы удостоверений Майкрософт*.
+
+>[!NOTE]
+> Если вы не знакомы с платформой Microsoft Identity, рекомендуем начать с [входа в систему пользователей и получить маркер доступа в руководстве по JavaScript Spa](quickstart-v2-javascript.md).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 

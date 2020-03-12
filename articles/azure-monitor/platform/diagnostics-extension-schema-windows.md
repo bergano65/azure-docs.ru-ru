@@ -6,12 +6,12 @@ ms.topic: reference
 author: bwren
 ms.author: bwren
 ms.date: 01/20/2020
-ms.openlocfilehash: 3adf4b59c0605859ada75577c083094541815984
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 4c711e1b0a63fbcf978c0e4467eadaed8d91f3de
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384124"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128714"
 ---
 # <a name="windows-diagnostics-extension-schema"></a>Схема расширения диагностики Windows
 Расширение система диагностики Azure — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок ресурсов вычислений Azure. В этой статье подробно описывается схема, используемая для настройки расширения системы диагностики на виртуальных машинах Windows и других ресурсов вычислений.
@@ -506,7 +506,7 @@ ms.locfileid: "78384124"
 ```
 
 > [!NOTE]
-> Определение приемника Azure Monitor общедоступной конфигурации имеет два свойства: *PrincipalId* и *Secret*. Для работы классических Виртуальных машин и классических облачных служб требуются только они. Эти свойства не следует использовать для других ресурсов.
+> Определение приемника Azure Monitor частного файла конфигурации имеет два свойства: *PrincipalId* и *Secret*. Для работы классических Виртуальных машин и классических облачных служб требуются только они. Эти свойства не следует использовать для других ресурсов.
 
 
 ```json
