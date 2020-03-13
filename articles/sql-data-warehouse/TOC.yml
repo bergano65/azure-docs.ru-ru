@@ -57,7 +57,7 @@
               href: quickstart-configure-workload-isolation-tsql.md
 - name: Основные понятия
   items:
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Обзор
           href: sql-data-warehouse-overview-manage-security.md
@@ -94,7 +94,7 @@
         - name: Управление доступом
           items:
             - name: Обзор
-              href: ../sql-database/sql-database-control-access.md?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json
+              href: ../sql-database/sql-database-manage-logins.md?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json
             - name: Защита на уровне столбцов
               href: column-level-security.md
             - name: Безопасность на уровне строк
@@ -181,7 +181,7 @@
               href: sql-data-warehouse-table-constraints.md
             - name: Индексы
               href: sql-data-warehouse-tables-index.md
-            - name: Удостоверение
+            - name: Идентификация
               href: sql-data-warehouse-tables-identity.md
             - name: Секции
               href: sql-data-warehouse-tables-partition.md

@@ -68,6 +68,8 @@
           displayName: 'azure, resource, key, upgrade, pricing, tier,'
         - name: Создание плана обеспечения непрерывности бизнес-процессов
           href: How-To/business-continuity-plan.md
+        - name: Совместная работа
+          href: How-To/collaborate-knowledge-base.md
     - name: Управление базой знаний
       items:
         - name: Создание базы знаний
@@ -79,8 +81,6 @@
         - name: Миграция на новую базу знаний
           href: Tutorials/migrate-knowledge-base.md
           displayName: 'metadata, pair'
-        - name: Совместная работа
-          href: How-To/collaborate-knowledge-base.md
         - name: Тест
           href: How-To/test-knowledge-base.md
     - name: Управление наборами вопросов и ответов
