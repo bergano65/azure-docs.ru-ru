@@ -80,6 +80,8 @@
           items:
             - name: Ограничение доступа с помощью виртуальной сети (предварительная версия)
               href: container-registry-vnet.md
+            - name: Интеграция со службой "Приватный канал Azure" (предварительная версия)
+              href: container-registry-private-link.md
             - name: Доступ за брандмауэром
               href: container-registry-firewall-access-rules.md
             - name: Аутентификация
@@ -102,8 +104,10 @@
               href: container-registry-repository-scoped-permissions.md
             - name: Доверие к содержимому
               href: container-registry-content-trust.md
-            - name: Проверка образов с помощью Центра безопасности (предварительная версия)
+            - name: Проверка образов с помощью Центра безопасности
               href: ../security-center/azure-container-registry-integration.md?toc=/azure/container-registry/toc.json&bc=/azure/container-registry/breadcrumb/toc.json
+            - name: Шифрование данных реестра (предварительная версия)
+              href: container-registry-customer-managed-keys.md
         - name: Реестры и другие службы Azure
           expanded: false
           items:

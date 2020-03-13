@@ -116,6 +116,8 @@
       href: how-to-modify-assessment.md
     - name: Добавление средств миграции
       href: how-to-migrate.md
+    - name: 'Перенос виртуальных машин VMware на виртуальные машины Azure, зашифрованные с помощью SSE и CMK'
+      href: how-to-migrate-vmware-vms-with-cmk-disks.md
     - name: Подготовка компьютеров к миграции
       href: prepare-for-migration.md
     - name: Удаление проекта службы "Миграция Azure"

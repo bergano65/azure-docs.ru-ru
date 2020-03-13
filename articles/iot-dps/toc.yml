@@ -93,10 +93,12 @@
       href: concepts-device-reprovision.md
     - name: Устройства
       href: concepts-device.md
-    - name: безопасность
+    - name: Безопасность
       href: concepts-security.md
     - name: Служба
       href: concepts-service.md
+    - name: Основные сведения об IP-адресах DPS
+      href: iot-dps-understand-ip-address.md
     - name: Аттестация доверенного платформенного модуля
       href: concepts-tpm-attestation.md
     - name: Аттестация симметричных ключей
@@ -127,6 +129,8 @@
           href: how-to-manage-dps-with-cli.md
         - name: Управление доступом к API службы подготовки
           href: how-to-control-access.md
+        - name: Настройка фильтрации IP
+          href: iot-dps-ip-filtering.md
     - name: Подготовка устройств IoT Edge
       items:
         - name: Linux

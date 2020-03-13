@@ -12,6 +12,8 @@
       href: ./servers/onboard-portal.md
     - name: Подключение компьютеров в большом масштабе с помощью субъекта-службы
       href: ./servers/onboard-service-principal.md
+    - name: Подключение компьютеров к Azure Arc с помощью PowerShell DSC
+      href: ./servers/onboard-dsc.md
 - name: Справочник
   items:
     - name: Интерфейс CLI агента подключенного компьютера Azure

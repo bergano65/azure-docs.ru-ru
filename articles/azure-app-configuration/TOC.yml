@@ -88,6 +88,8 @@
           href: concept-disaster-recovery.md
 - name: Практические руководства
   items:
+    - name: Включение функции для подмножества пользователей
+      href: howto-feature-filters-aspnet-core.md
     - name: Импорт и экспорт данных конфигурации
       href: howto-import-export-data.md
     - name: Маршрутизация событий в пользовательскую конечную точку

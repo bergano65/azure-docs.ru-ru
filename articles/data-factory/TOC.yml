@@ -392,14 +392,22 @@
       items:
         - name: Копирование данных с помощью действия копирования
           href: copy-activity-overview.md
+        - name: Мониторинг действия копирования
+          href: copy-activity-monitoring.md
         - name: Удаление файлов с помощью действия удаления
           href: delete-activity.md
         - name: Средство копирования данных
           href: copy-data-tool.md
         - name: Поддержка сжатия и форматирования
           href: supported-file-formats-and-compression-codecs.md
-        - name: Производительность и настройка
-          href: copy-activity-performance.md
+        - name: Производительность действия копирования
+          items:
+            - name: Руководство по производительности и масштабируемости
+              href: copy-activity-performance.md
+            - name: Устранение неполадок с производительностью
+              href: copy-activity-performance-troubleshooting.md
+            - name: Функции для повышения производительности
+              href: copy-activity-performance-features.md
         - name: Сохранение метаданных и списков ACL
           href: copy-activity-preserve-metadata.md
         - name: Сопоставление типа и схемы
@@ -689,6 +697,8 @@
       href: frequently-asked-questions.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=data-factory'
+    - name: Блог
+      href: 'https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog#'
     - name: "Задать вопрос\_— форум MSDN"
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory&filter=alltypes&sort=lastpostdesc'
     - name: "Задать вопрос\_— Stack Overflow"

@@ -71,13 +71,9 @@
           displayName: 'compliance, fedramp, soc, fact, fisc, hitrust, pci, iso'
         - name: Лучшие методики обеспечения безопасности
           href: sql-database-security-best-practice.md
-        - name: Управление доступом
-          items:
-            - name: Управление доступом
-              href: sql-database-control-access.md
-            - name: Имена входа и пользователи
-              href: sql-database-manage-logins.md
-        - name: Аутентификация
+        - name: 'Имена для входа, учетные записи пользователей, роли и разрешения'
+          href: sql-database-manage-logins.md
+        - name: Аутентификация Azure AD
           href: sql-database-aad-authentication.md
           items:
             - name: "Настройка аутентификации Azure\_AD"
@@ -86,6 +82,8 @@
               href: sql-database-ssms-mfa-authentication.md
             - name: Настройка многофакторной проверки подлинности
               href: sql-database-ssms-mfa-authentication-configure.md
+            - name: Условный доступ
+              href: sql-database-conditional-access.md
         - name: Защита данных
           items:
             - name: Прозрачное шифрование данных (TDE)
@@ -108,12 +106,12 @@
                   href: sql-database-always-encrypted.md
                 - name: Использование Azure Key Vault
                   href: sql-database-always-encrypted-azure-key-vault.md
-        - name: 'Мониторинг, ведение журналов и аудит'
+        - name: Аудит
           items:
-            - name: Аудит
-              items:
-                - name: Начало работы с аудитом Базы данных SQL
-                  href: sql-database-auditing.md
+            - name: Начало работы с аудитом Базы данных SQL
+              href: sql-database-auditing.md
+            - name: Формат журналов аудита
+              href: sql-database-audit-log-format.md
         - name: Управление безопасностью
           items:
             - name: Расширенная защита данных
@@ -140,18 +138,12 @@
                   href: sql-database-vnet-service-endpoint-rule-powershell.md
             - name: Приватный канал
               href: sql-database-private-endpoint-overview.md
-            - name: Формат журналов аудита
-              href: sql-database-audit-log-format.md
-            - name: Условный доступ
-              href: sql-database-conditional-access.md
         - name: Обеспечение защиты управляемого экземпляра
           items:
             - name: Обеспечение безопасности общедоступных конечных точек
               href: sql-database-managed-instance-public-endpoint-securely.md
             - name: Аудит управляемого экземпляра
               href: sql-database-managed-instance-auditing.md
-        - name: Базовые средства безопасности
-          href: security-baseline.md
     - name: Подключение и выполнение запросов
       href: sql-database-connect-query.md
       items:
@@ -240,36 +232,40 @@
           href: sql-database-monitoring-tuning-index.yml
         - name: Общие сведения о мониторинге и производительности
           href: sql-database-monitor-tune-overview.md
-        - name: Мониторинг производительности
+        - name: Помощники по базам данных и анализ производительности запросов
           items:
-            - name: Мониторинг с помощью Аналитики SQL Azure
-              href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql'
-            - name: Ведение журналов диагностических данных телеметрии
-              href: sql-database-metrics-diag-logging.md
-        - name: Интеллектуальная производительность
-          items:
-            - name: Автоматическая настройка
-              href: sql-database-automatic-tuning.md
-            - name: Интеллектуальные сведения о производительности
-              href: sql-database-intelligent-insights.md
-            - name: Действия и рекомендации по настройке
-              href: sql-database-performance.md
             - name: Рекомендации по производительности Помощника по базам данных
               href: sql-database-advisor.md
-        - name: Мониторинг и настройка базы данных
+            - name: Сведения о производительности запросов
+              href: sql-database-query-performance.md
+        - name: Автоматическая настройка
+          href: sql-database-automatic-tuning.md
+        - name: Intelligent Insights и аналитика SQL
           items:
-            - name: Настройка вручную
+            - name: Интеллектуальные сведения о производительности
+              href: sql-database-intelligent-insights.md
+            - name: Ведение журналов диагностических данных телеметрии
+              href: sql-database-metrics-diag-logging.md
+            - name: Использование журнала диагностики Intelligent Insights
+              href: sql-database-intelligent-insights-use-diagnostics-log.md
+            - name: Устранение проблем с производительностью с помощью Intelligent Insights
+              href: sql-database-intelligent-insights-troubleshoot-performance.md
+            - name: Аналитика SQL
+              href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql'
+        - name: Мониторинг и настройка вручную
+          items:
+            - name: Выявление проблем с производительностью запросов
+              href: sql-database-identify-query-performance-issues.md
+            - name: Руководство по настройке приложений и баз данных
               href: sql-database-performance-guidance.md
             - name: Использование динамических административных представлений для мониторинга производительности
               href: sql-database-monitoring-with-dmvs.md
-            - name: Использование хранилища запросов для мониторинга производительности
-              href: sql-database-operate-query-store.md
-            - name: Устранение проблем с производительностью с помощью Intelligent Insights
-              href: sql-database-intelligent-insights-troubleshoot-performance.md
-            - name: Использование журнала диагностики Intelligent Insights
-              href: sql-database-intelligent-insights-use-diagnostics-log.md
             - name: Мониторинг используемого пространства в хранилище выполняющейся в памяти OLTP
               href: sql-database-in-memory-oltp-monitoring.md
+            - name: Диагностика производительности при гипермасштабировании
+              href: sql-database-hyperscale-performance-diagnostics.md
+            - name: Управление ресурсами в сжатых эластичных пулах
+              href: sql-database-elastic-pool-resource-management.md
             - name: Расширенные события
               items:
                 - name: Расширенные события
@@ -278,10 +274,6 @@
                   href: sql-database-xevent-code-event-file.md
                 - name: 'Расширенные события: кольцевой буфер'
                   href: sql-database-xevent-code-ring-buffer.md
-        - name: Диагностика производительности при гипермасштабировании
-          href: sql-database-hyperscale-performance-diagnostics.md
-        - name: Управление ресурсами в сжатых эластичных пулах
-          href: sql-database-elastic-pool-resource-management.md
     - name: Масштабируемость
       items:
         - name: Документация по масштабируемости
@@ -538,8 +530,6 @@
               href: sql-database-resource-limits-database-server.md
             - name: Архитектура подключения
               href: sql-database-connectivity-architecture.md
-            - name: Параметры подключения
-              href: sql-database-connectivity-settings.md
         - name: Синхронизация данных
           items:
             - name: Data Sync Agent
@@ -552,10 +542,6 @@
               href: sql-database-best-practices-data-sync.md
             - name: Устранение ошибок Синхронизации данных
               href: sql-database-troubleshoot-data-sync.md
-        - name: Мониторинг производительности
-          items:
-            - name: Анализ производительности запросов
-              href: sql-database-query-performance.md
         - name: Отличия T-SQL
           href: sql-database-transact-sql-information.md
         - name: Компоненты

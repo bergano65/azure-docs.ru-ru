@@ -50,6 +50,8 @@
       href: named-entity-types.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
+    - name: Смещение текста
+      href: concepts/text-offsets.md
 - name: Практические руководства
   items:
     - name: Вызов API "Анализ текста"

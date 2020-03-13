@@ -161,6 +161,9 @@
         - name: Данные в Коллекции решений
           displayName: export
           href: ai-gallery-control-personal-data-dsr.md
+        - name: Скачивание записных книжек
+          displayName: export
+          href: download-notebooks-data.md
 - name: Справочник
   items:
     - name: Справочник по алгоритмам и модулям

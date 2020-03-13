@@ -125,6 +125,8 @@
       href: event-grid-tutorial.md
     - name: Получение уведомлений с помощью Сетки событий и Logic Apps
       href: event-grid-logicapps.md
+    - name: Смена секретов для ресурсов с одним пользователем
+      href: tutorial-rotation.md
     - name: Интеграция со службой "Поиск Azure"
       href: azure-policy.md
     - name: Интеграция со службой "Приватный канал Azure" (предварительная версия)

@@ -4,7 +4,11 @@
   items:
     - name: Сведения о Бастионе Azure
       href: bastion-overview.md
-- name: Руководства
+- name: Краткие руководства
+  items:
+    - name: Создание узла-бастиона в разделе параметров виртуальной машины
+      href: quickstart-host-portal.md
+- name: Практические руководства
   items:
     - name: Создание узла-бастиона
       items:
@@ -34,7 +38,7 @@
       href: diagnostic-logs.md
     - name: Мониторинг и администрирование сеансов
       href: session-monitoring.md
-    - name: Устранение неполадок
+    - name: Диагностика
       href: troubleshoot.md
 - name: Ресурсы
   items:
