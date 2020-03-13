@@ -163,7 +163,7 @@ EXPOSE 80
 ]
 ```
 
-### <a name="when-i-scale-out-all-of-my-containers-are-affected-including-running-ones"></a>При развертывании затрагиваются все контейнеры, включая запущенные
+### <a name="when-i-scale-out-all-of-my-containers-are-affected-including-running-ones"></a>При горизонтальном увеличении масштаба затрагиваются все контейнеры, включая запущенные
 
 Над устранением этой ошибки работают.
 

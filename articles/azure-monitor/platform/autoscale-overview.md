@@ -11,7 +11,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75364379"
 ---
-# <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Обзор автомасштабирования в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
+# <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Общие сведения об автомасштабировании в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
 В этой статье объясняется, что такое автомасштабирование Microsoft Azure, каковы преимущества этой функции и как начать ее использовать.  
 
 Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).

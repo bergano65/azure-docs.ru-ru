@@ -6,14 +6,14 @@ ms.date: 05/09/2019
 ms.author: glenga
 ms.openlocfilehash: 4643bb7f95e4fd1249d3ab6699c1f835c77f18fe
 ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/13/2020
 ms.locfileid: "77198349"
 ---
 | Ресурс | [План потребления](../articles/azure-functions/functions-scale.md#consumption-plan) | [План Premium](../articles/azure-functions/functions-scale.md#premium-plan) | [План службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)<sup>1</sup> |
 | --- | --- | --- | --- |
-| Масштабирование | Управляемые событиями | Управляемые событиями | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
+| Горизонтальное увеличение масштаба | Управляемые событиями | Управляемые событиями | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
 | Максимальное число экземпляров | 200 | 100 | 10-20 |
 |[Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) по умолчанию (мин.) |5 | 30 |30<sup>2</sup> |
 |Макс. [Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) (мин.) |10 | без привязки<sup>8</sup> | без привязки<sup>3</sup> |
