@@ -117,18 +117,12 @@
   items:
     - name: Операции с кластером
       items:
-        - name: Создание кластера AKS
-          href: '/cli/azure/aks#az-aks-create'
-          maintainContext: true
         - name: Масштабирование кластера AKS
           href: scale-cluster.md
         - name: Обновление кластера AKS
           href: upgrade-cluster.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md
-        - name: Удаление кластера AKS
-          href: '/cli/azure/aks#az-aks-delete'
-          maintainContext: true
         - name: Интеграция ACR с кластером AKS
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов
