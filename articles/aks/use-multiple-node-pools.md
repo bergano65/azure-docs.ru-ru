@@ -4,12 +4,12 @@ description: Узнайте, как создать несколько пулов
 services: container-service
 ms.topic: article
 ms.date: 03/10/2020
-ms.openlocfilehash: cf127cc75377c3ca3a18cdeaedbc1d450d6c3826
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.openlocfilehash: b7025b896a1bd156c448ccfcd0e9001c49146be4
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79082211"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79368287"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -93,9 +93,7 @@ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluste
 
 В следующем примере выходных данных показано, что *минодепул* успешно создан с тремя узлами в пуле узлов. При создании кластера AKS на предыдущем шаге создается *nodepool1* по умолчанию с числом узлов, равным *2*.
 
-```console
-$ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
-
+```output
 [
   {
     ...
@@ -148,9 +146,11 @@ az aks nodepool upgrade \
 
 Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *обновления* до *1.15.7*:
 
-```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```azurecli
+az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```
 
+```output
 [
   {
     ...
@@ -234,9 +234,11 @@ az aks nodepool scale \
 
 Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *масштабирования* с новым числом узлов, равным *5* .
 
-```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```azurecli
+az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```
 
+```output
 [
   {
     ...
@@ -284,9 +286,11 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name myn
 
 Следующий пример выходных данных команды [AZ AKS node Pool List][az-aks-nodepool-list] показывает, что *минодепул* находится в состоянии *удаления* :
 
-```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```azurecli
+az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```
 
+```output
 [
   {
     ...
@@ -337,9 +341,11 @@ az aks nodepool add \
 
 В следующем примере выходных данных команды [AZ AKS node Pool List][az-aks-nodepool-list] показано, что *гпунодепул* *создает* узлы с указанным *VmSize*:
 
-```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```azurecli
+az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```
 
+```output
 [
   {
     ...
@@ -375,8 +381,10 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 Теперь у вас есть два пула узлов в кластере — пул узлов по умолчанию изначально создан и пул узлов на основе GPU. Используйте команду [kubectl Get Nodes][kubectl-get] , чтобы просмотреть узлы в кластере. В следующем примере выходных данных показаны узлы:
 
 ```console
-$ kubectl get nodes
+kubectl get nodes
+```
 
+```output
 NAME                                 STATUS   ROLES   AGE     VERSION
 aks-gpunodepool-28993262-vmss000000  Ready    agent   4m22s   v1.15.7
 aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.15.7
@@ -431,8 +439,10 @@ kubectl apply -f gpu-toleration.yaml
 Планирование Pod и извлечение образа NGINX займет несколько секунд. Чтобы просмотреть состояние Pod, используйте команду [kubectl описание Pod][kubectl-describe] . В следующем сжатом примере выходных данных показано, что применяется отклонения *SKU = GPU:* with. В разделе событий планировщик назначил модулю Pod узел *AKS-гпунодепул-28993262-vmss000000* на основе GPU:
 
 ```console
-$ kubectl describe pod mypod
+kubectl describe pod mypod
+```
 
+```output
 [...]
 Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
                  node.kubernetes.io/unreachable:NoExecute for 300s
@@ -563,9 +573,11 @@ az aks nodepool add \
 
 В следующем примере выходных данных команды [AZ AKS нодепул List][az-aks-nodepool-list] показано, что *тагнодепул* *создает* узлы с указанным *тегом*:
 
-```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```azurecli
+az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
+```
 
+```output
 [
   {
     ...

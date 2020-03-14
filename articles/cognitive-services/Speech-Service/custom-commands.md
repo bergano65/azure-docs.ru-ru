@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 03/11/2020
 ms.author: travisw
-ms.openlocfilehash: 9349969f1f9b037a271cb727233517daba999acd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2e1b6ee0bd6c392804915fac6ff23278a00b6d33
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446977"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79367845"
 ---
-# <a name="custom-commands-preview"></a>Пользовательские команды (предварительная версия)
+# <a name="what-are-custom-commands-preview"></a>Что такое пользовательские команды (Предварительная версия)?
 
 Голосовые приложения, такие как [голосовые помощники](voice-assistants.md) , прослушивают пользователей и принимают меры в ответе, часто говорят. Они используют [речь в тексте](speech-to-text.md) для транскрипция речи пользователя, а затем принимают меры по естественному пониманию текста. Это действие часто включает в себя речевой вывод от помощника, созданного с помощью преобразования [текста в речь](text-to-speech.md). Устройства подключаются к помощникам с помощью объекта `DialogServiceConnector` SDK для распознавания речи.
 

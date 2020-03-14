@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Документация по голосовым устройствам
+title: Документация по устройствам, подключаемым к службе "Речь"
 summary: Пакет SDK для речевых устройств — это предварительно настроенная библиотека, связанная со специально созданными пакетами разработки для микрофонной решетки.
 metadata:
   title: Документация по голосовым устройствам. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
@@ -10,20 +10,20 @@ metadata:
   layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
-  ms.date: 02/11/2020
+  ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: f7105a4f0330c61ee10d8dee00d40ce17bc40188
-  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.openlocfilehash: cbdbcce25d357530775140bc8b5fdf82808c64ad
+  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/22/2020
-  ms.locfileid: "77562859"
+  ms.lasthandoff: 03/14/2020
+  ms.locfileid: "79369256"
 landingContent:
-- title: Начало работы
+- title: О пакете SDK для речевых устройств
   linkLists:
   - linkListType: overview
     links:
-    - text: Сведения о пакете SDK для устройств в службе "Речь"
+    - text: Что такое пакет SDK для речевых устройств?
       url: speech-devices-sdk.md
   - linkListType: quickstart
     links:
@@ -33,7 +33,7 @@ landingContent:
       url: speech-devices-sdk-quickstart.md?pivots=platform-linux
     - text: Использование пакета SDK для речевых устройств (Android)
       url: speech-devices-sdk-quickstart.md?pivots=platform-android
-- title: Пошаговые руководства
+- title: Разработка с помощью пакета SDK для речевых устройств
   linkLists:
   - linkListType: how-to-guide
     links:

@@ -3,17 +3,17 @@ title: Отправка виртуального жесткого диска в 
 description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск в регионах с помощью Azure PowerShell, используя прямую передачу.
 author: roygara
 ms.author: rogarana
-ms.date: 05/06/2019
+ms.date: 03/13/2020
 ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 8a7e5243428eb88a2757b675c7d66dbfb3c66a30
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 883fea1e25ded26c35e96d11edd8f417e96db30e
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459982"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79369562"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
 
@@ -23,11 +23,11 @@ ms.locfileid: "75459982"
 
 В настоящее время прямая отправка поддерживается для дисков уровня "Стандартный", "Стандартный SSD" и "Премиум", управляемых на SSD. Она пока не поддерживается для Ultra SSDs.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
-- Если планируется передать виртуальный жесткий диск из локальной среды, VHD, который [был подготовлен для Azure](prepare-for-upload-vhd-image.md), хранится локально.
+- Если вы планируете передать виртуальный жесткий диск из локальной среды, выполните предварительную загрузку виртуального жесткого диска с фиксированным размером, который [был подготовлен для Azure](prepare-for-upload-vhd-image.md)и хранится локально.
 - Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
@@ -77,8 +77,6 @@ $disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
 AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas.AccessSAS --blob-type PageBlob
 ```
 
-Если срок действия SAS истекает во время отправки и вы еще не вызывали `revoke-access`, можно получить новый SAS, чтобы продолжить передачу с помощью `grant-access`.
-
 После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
 ```powershell
@@ -124,7 +122,7 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его к виртуальной машине и начать использовать.
 

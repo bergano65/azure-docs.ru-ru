@@ -8,16 +8,18 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: e9e2fe92939088420f973c5ca112b5f59d07f212
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 848fd89444281d82d6d0d1bfc4df15d499c09ee0
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78252685"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79370497"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
 Вы можете обрабатывать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$Web*. Размещение содержимого в службе хранилища Azure позволяет использовать бессерверные архитектуры, включающие [функции Azure](/azure/azure-functions/functions-overview) и другие службы "платформа как услуга" (PaaS).
+
+[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!NOTE]
 > Если ваш сайт зависит от кода на стороне сервера, используйте вместо него [службу приложений Azure](/azure/app-service/overview) .
@@ -50,7 +52,7 @@ ms.locfileid: "78252685"
 
 Пользователи могут просматривать содержимое сайта в браузере с помощью общедоступного URL-адреса веб – сайта. URL-адрес можно найти с помощью портал Azure, Azure CLI или PowerShell. Используйте эту таблицу в качестве справочника.
 
-|Инструмент| Руководство |
+|Средство| Руководство |
 |----|----|
 |**Портал Azure** | [Поиск URL-адреса веб-сайта с помощью портал Azure](storage-blob-static-website-how-to.md#portal-find-url) |
 |**Azure CLI** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
@@ -108,7 +110,7 @@ URL-адрес сайта содержит региональный код. На
 
 Сведения о включении метрик на статических страницах веб-сайта см. в разделе [Включение метрик на статических страницах веб-сайта](storage-blob-static-website-how-to.md#metrics).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Размещение статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md)
 * [Map a custom domain to an Azure Blob Storage endpoint](storage-custom-domain-name.md) (Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure)

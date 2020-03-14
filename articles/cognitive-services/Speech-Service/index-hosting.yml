@@ -10,32 +10,32 @@ metadata:
   layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
-  ms.date: 02/11/2020
+  ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: ead45759891d4b2a41a380c88cf32f4e504b6e2c
-  ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+  ms.openlocfilehash: ff12c357ba273c6965b11db4eabc1890925439be
+  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77920881"
+  ms.lasthandoff: 03/14/2020
+  ms.locfileid: "79366706"
 landingContent:
-- title: Начало работы
+- title: Сведения о размещении
   linkLists:
   - linkListType: concept
     links:
-    - text: Контейнеры службы речи
+    - text: Установка и запуск речевых контейнеров
       url: speech-container-howto.md
-    - text: Контейнеры службы речи с Kubernetes
+    - text: Контейнеры речи с Kubernetes и Helm
       url: speech-container-howto-on-premises.md
-    - text: Контейнеры службы речи в службе "экземпляры контейнеров Azure"
+    - text: Контейнеры распознавания речи в службе "экземпляры контейнеров Azure"
       url: deploy-speech-on-container-instances.md
-- title: Пошаговые руководства
+- title: Создание и настройка
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Создание ресурса речи Azure
       url: get-started.md#new-resource
-    - text: Настройка контейнеров
+    - text: Настройка контейнеров речи
       url: speech-container-configuration.md
 - title: Ссылки
   linkLists:
@@ -43,5 +43,5 @@ landingContent:
     links:
     - text: Поддерживаемые регионы
       url: regions.md
-    - text: Облака независимых
+    - text: Национальные облака
       url: sovereign-clouds.md

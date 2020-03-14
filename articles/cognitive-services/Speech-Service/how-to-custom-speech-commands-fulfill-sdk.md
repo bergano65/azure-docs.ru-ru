@@ -1,5 +1,5 @@
 ---
-title: Выполнение пользовательских команд на клиенте с помощью пакета SDK для распознавания речи
+title: Как выполнять команды от клиента с помощью пакета SDK для распознавания речи
 titleSuffix: Azure Cognitive Services
 description: В этой статье объясняется, как управлять действиями настраиваемых команд на клиенте с помощью пакета SDK для распознавания речи.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: yetian
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/09/2019
+ms.date: 03/12/2020
 ms.author: donkim
-ms.openlocfilehash: b55bb1c8379cf0a80a95aa0ba1a29297154d5831
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: e109955774722da7f55defe1417de35ff202cce8
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156511"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79367755"
 ---
-# <a name="how-to-fulfill-commands-on-the-client-with-the-speech-sdk-preview"></a>Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)
+# <a name="fulfill-commands-from-a-client-with-the-speech-sdk-preview"></a>Выполнение команд из клиента с помощью пакета SDK для распознавания речи (Предварительная версия)
 
 Для выполнения задач с помощью пользовательского приложения команды можно отправить пользовательские полезные данные на подключенное клиентское устройство.
 
@@ -26,7 +26,7 @@ ms.locfileid: "76156511"
 - Определение и Отправка пользовательских полезных данных JSON из приложения пользовательских команд
 - Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из C# клиентского приложения SDK для обработки речи UWP
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 - Ключ подписки Azure для службы речи
@@ -131,7 +131,7 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
 };
 ```
 
-## <a name="try-it-out"></a>Попробуйте в деле
+## <a name="try-it-out"></a>Попробуйте продукт
 
 1. Запуск приложения
 1. Выберите включить микрофон

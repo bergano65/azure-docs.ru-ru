@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 08/01/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c00ab8a5e0d307d89ae483db55bdb0b1258ae6a4
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 72aefb8de57e27718b14dba6a6d82deb8b63466f
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78246409"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79367284"
 ---
 # <a name="editing-textual-runbooks-in-azure-automation"></a>Изменение текстовых модулей Runbook в службе автоматизации Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "78246409"
 
 ### <a name="insert-an-asset-into-a-runbook"></a>Вставка ресурса в модуль Runbook
 
-1. На холсте текстового редактора установите курсор в то место, куда нужно вставить код для дочернего модуля Runbook.
+1. В элементе управления Canvas текстового редактора поместите курсор в то место, куда нужно поместить код для дочернего модуля Runbook.
 2. Разверните узел **Ресурс-контейнеры** в элементе управления «Библиотека».
 3. Разверните узел для нужного типа ресурса.
 4. Щелкните правой кнопкой мыши имя ресурса, которое нужно вставить, и выберите **Добавить на холст**. Для [переменных ресурсов](automation-variables.md)выберите либо **Добавить "получить переменную" к холсту** , либо **Добавить "задать переменную" на холст**, в зависимости от того, требуется ли получить или задать переменную.
@@ -67,7 +67,7 @@ ms.locfileid: "78246409"
 
 ## <a name="editing-an-azure-automation-runbook-using-windows-powershell"></a>Изменение модуля Runbook службы автоматизации Azure с помощью Windows PowerShell
 
-Чтобы изменить модуль Runbook с помощью Windows PowerShell, воспользуйтесь редактором по своему усмотрению и сохраните модуль Runbook в файл PS1. Для получения содержимого модуля Runbook можно использовать командлет [Export-азаутоматионрунбук](/powershell/module/Az.Automation/Export-AzAutomationRunbook) . С помощью командлета [Import-азаутоматионрунбук](/powershell/module/Az.Automation/import-azautomationrunbook) можно заменить существующий черновик Runbook на измененный.
+Чтобы изменить модуль Runbook с помощью Windows PowerShell, воспользуйтесь редактором по своему усмотрению и сохраните модуль Runbook в **PS1** -файл. Для получения содержимого модуля Runbook можно использовать командлет [Export-азаутоматионрунбук](/powershell/module/Az.Automation/Export-AzAutomationRunbook) . С помощью командлета [Import-азаутоматионрунбук](/powershell/module/Az.Automation/import-azautomationrunbook) можно заменить существующий черновик Runbook на измененный.
 
 ### <a name="retrieve-the-contents-of-a-runbook-using-windows-powershell"></a>Получение содержимого модуля Runbook с помощью Windows PowerShell
 

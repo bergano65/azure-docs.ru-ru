@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/21/2017
 ms.author: bburns
 ms.custom: mvc
-ms.openlocfilehash: 6ce78ca19458b497980cf2cfc374f787d3a5d9f5
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 01abcc961d1c2ad9d3e2cf35f82e62929bc2fb89
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76276983"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371143"
 ---
 # <a name="deprecated-using-the-kubernetes-web-ui-with-azure-container-service"></a>(УСТАРЕЛО) Использование веб-интерфейса Kubernetes со Службой контейнеров Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "76276983"
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).
 
 
@@ -29,8 +29,8 @@ ms.locfileid: "76276983"
 
 Чтобы проверить наличие средства `az`, выполните такую команду:
 
-```console
-$ az --version
+```azurecli
+az --version
 ```
 
 Если средство `az` не установлено, следуйте инструкциям, приведенным [здесь](https://github.com/azure/azure-cli#installation).
@@ -38,13 +38,13 @@ $ az --version
 Чтобы проверить наличие средства `kubectl`, выполните такую команду:
 
 ```console
-$ kubectl version
+kubectl version
 ```
 
 Если средство `kubectl` не установлено, выполните команду:
 
-```console
-$ az acs kubernetes install-cli
+```azurecli
+az acs kubernetes install-cli
 ```
 
 ## <a name="overview"></a>Обзор
@@ -52,8 +52,8 @@ $ az acs kubernetes install-cli
 ### <a name="connect-to-the-web-ui"></a>Подключение к веб-интерфейсу
 Для запуска веб-интерфейса Kubernetes используйте такую команду:
 
-```console
-$ az acs kubernetes browse -g [Resource Group] -n [Container service instance name]
+```azurecli
+az acs kubernetes browse -g [Resource Group] -n [Container service instance name]
 ```
 
 В результате откроется браузер с настроенным подключением к защищенному прокси-серверу, который установит подключение вашего локального компьютера к веб-интерфейсу Kubernetes.

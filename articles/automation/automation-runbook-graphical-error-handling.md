@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4f975af233973ce5fac75ca46e334af5d91e8edc
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: f1aa605b3e6f32b260ea4a9eee9c056277fcd12d
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78246273"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79367080"
 ---
 # <a name="error-handling-in-azure-automation-graphical-runbooks"></a>Обработка ошибок в графических модулях Runbook в службе автоматизации Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "78246273"
 1. Отправляет уведомление об этой проблеме.
 2. Запускает другой модуль Runbook, который автоматически подготавливает новую виртуальную машину.
 
-Одно из решений — наличие ссылки на ошибку в модуле Runbook, указывающего на действие, которое обрабатывает шаг 1. Например, модуль Runbook может подключить командлет **Write-Warning** к действию на шаге 2, например командлет [Start-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.5.0) .
+Одно из решений — наличие ссылки на ошибку в модуле Runbook, указывающего на действие, которое обрабатывает шаг 1. Например, модуль Runbook может подключить командлет `Write-Warning` к действию на шаге 2, например командлет [Start-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.5.0) .
 
 Это поведение можно также обобщить для использования во многих модулях Runbook, поместив эти два действия в отдельный модуль обработки ошибок. Прежде чем исходный модуль Runbook вызовет эту ошибку при обработке модуля Runbook, он может создать пользовательское сообщение из его данных, а затем передать его в качестве параметра в Runbook обработки ошибок.
 
@@ -60,9 +60,9 @@ ms.locfileid: "78246273"
 
 В следующем примере модуль Runbook получает переменную, которая содержит имя компьютера виртуальной машины. Затем он пытается запустить виртуальную машину со следующим действием.<br><br> ![Пример обработки ошибок Runbook службы автоматизации](media/automation-runbook-graphical-error-handling/runbook-example-error-handling.png)<br><br>      
 
-Действие **Get-AutomationVariable** и командлет [Start-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Start-AzVM?view=azps-3.5.0) настраиваются для преобразования исключений в ошибки. Если при получении переменной или запуске виртуальной машины возникли проблемы, код создает ошибки.<br><br> ![параметры действий обработки ошибок модуля Runbook службы автоматизации](media/automation-runbook-graphical-error-handling/activity-blade-convertexception-option.png).
+Действие `Get-AutomationVariable` и командлет [Start-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Start-AzVM?view=azps-3.5.0) настраиваются для преобразования исключений в ошибки. Если при получении переменной или запуске виртуальной машины возникли проблемы, код создает ошибки.<br><br> ![параметры действий обработки ошибок модуля Runbook службы автоматизации](media/automation-runbook-graphical-error-handling/activity-blade-convertexception-option.png).
 
-Ссылки на ошибки передаются из этих действий в одно действие кода **управления ошибками** . Это действие настраивается с помощью простого выражения PowerShell, которое использует ключевое слово **throw** для завершения обработки, а также `$Error.Exception.Message` для получения сообщения, описывающего текущее исключение.<br><br> Пример кода для обработки ошибок модуля Runbook службы автоматизации ![](media/automation-runbook-graphical-error-handling/runbook-example-error-handling-code.png)
+Ссылки на ошибки передаются из этих действий в одно `error management`ое действие кода. Это действие настраивается с помощью простого выражения PowerShell, которое использует ключевое слово `throw` для завершения обработки, а также `$Error.Exception.Message` для получения сообщения, описывающего текущее исключение.<br><br> Пример кода для обработки ошибок модуля Runbook службы автоматизации ![](media/automation-runbook-graphical-error-handling/runbook-example-error-handling-code.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

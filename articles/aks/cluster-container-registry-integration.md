@@ -5,12 +5,12 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 02/25/2020
-ms.openlocfilehash: 5d8b45137ff82db6b23b5bf31eb3e8063de343bb
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: f83faf05eb7099557d5b653e0b24591062c44d11
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78191339"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79368457"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -41,6 +41,7 @@ az acr create -n $MYACR -g myContainerRegistryResourceGroup --sku basic
 # Create an AKS cluster with ACR integration
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr $MYACR
 ```
+
 Кроме того, можно указать имя записи контроля доступа с помощью идентификатора ресурса записей контроля доступа в следующем формате:
 
 `/subscriptions/\<subscription-id\>/resourceGroups/\<resource-group-name\>/providers/Microsoft.ContainerRegistry/registries/\<name\>` 
@@ -58,17 +59,22 @@ az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-ac
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>
 ```
+
 или
-```
+
+```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 ```
 
 Вы также можете удалить интеграцию между записью контроля доступа и кластером AKS, выполнив следующие
+
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
 ```
+
 или диспетчер конфигурации служб
-```
+
+```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
 ```
 
@@ -93,7 +99,7 @@ az aks get-credentials -g myResourceGroup -n myAKSCluster
 
 Создайте файл с именем записи **контроля доступа nginx. YAML** , который содержит следующее:
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -118,16 +124,20 @@ spec:
 ```
 
 Затем запустите это развертывание в кластере AKS:
-```
+
+```console
 kubectl apply -f acr-nginx.yaml
 ```
 
 Вы можете отслеживать развертывание, выполнив:
-```
+
+```console
 kubectl get pods
 ```
+
 Необходимо иметь два работающих модуля.
-```
+
+```output
 NAME                                 READY   STATUS    RESTARTS   AGE
 nginx0-deployment-669dfc4d4b-x74kr   1/1     Running   0          20s
 nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s
