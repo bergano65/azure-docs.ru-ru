@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: 6342e6a75c8397712e028874b4d727bf3d6f5ff4
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 98326d23f5aca1264bc47168cc25b427c3db331d
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77087122"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79135961"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -74,12 +74,38 @@ ms.locfileid: "77087122"
 
     Полный список доступных пакетов можно найти в [указателе пакетов](https://pypi.python.org/pypi). Его также можно получить из других источников. Например, можно установить пакеты, предоставляемые посредством [conda-forge](https://conda-forge.org/feedstocks/).
 
-    -   `seaborn` — имя пакета, который вы хотите установить.
-    -   `-n py35new` указать имя виртуальной среды, которое было только что создано. Не забудьте изменить имя в соответствии с созданной виртуальной средой.
+    Используйте приведенную ниже команду, если вы хотите установить библиотеку с последней версией:
+    
+    - Использовать канал conda:
 
-    ```bash
-    sudo /usr/bin/anaconda/bin/conda install seaborn -n py35new --yes
-    ```
+        -   `seaborn` — имя пакета, который вы хотите установить.
+        -   `-n py35new` указать имя виртуальной среды, которое было только что создано. Не забудьте изменить имя в соответствии с созданной виртуальной средой.
+
+        ```bash
+        sudo /usr/bin/anaconda/bin/conda install seaborn -n py35new --yes
+        ```
+
+    - Или используйте репозиторий PyPi, измените `seaborn` и `py35new` соответствующим образом:
+        ```bash
+        sudo /usr/bin/anaconda/env/py35new/bin/pip install seaborn
+        ```        
+
+    Используйте приведенную ниже команду, если вы хотите установить библиотеку с определенной версией:
+
+    - Использовать канал conda:
+
+        -   `numpy=1.16.1` — это имя и версия пакета, которые вы хотите установить.
+        -   `-n py35new` указать имя виртуальной среды, которое было только что создано. Не забудьте изменить имя в соответствии с созданной виртуальной средой.
+
+        ```bash
+        sudo /usr/bin/anaconda/bin/conda install numpy=1.16.1 -n py35new --yes
+        ```
+
+    - Или используйте репозиторий PyPi, измените `numpy==1.16.1` и `py35new` соответствующим образом:
+
+        ```bash
+        sudo /usr/bin/anaconda/env/py35new/bin/pip install numpy==1.16.1
+        ```
 
     Если вы не знакомы с именем виртуальной среды, вы можете SSH-подключение к головному узлу кластера и запустить `/usr/bin/anaconda/bin/conda info -e`, чтобы отобразить все виртуальные среды.
 
