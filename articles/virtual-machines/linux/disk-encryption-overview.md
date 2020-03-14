@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 28d37ba6796799ea27bbd5338247a504ea82388f
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: ff1b37c3053ffa91dcb432cd97a7dd6fd71dad1c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78970455"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250430"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Шифрование дисков Azure для виртуальных машин Linux 
 
@@ -81,7 +81,7 @@ ms.locfileid: "78970455"
 > [!NOTE]
 > Новая реализация шифрования дисков Azure поддерживается для RHEL ОС и диска данных для образов RHEL7 с оплатой по мере использования.  
 >
-> ADE также поддерживается для RHELных образов с собственной подпиской, но только **после** регистрации подписки. Дополнительные сведения см. [в статье Red Hat Enterprise Linux собственные образы на основе собственных подписок в Azure](../workloads/redhat/byos.md##encrypt-red-hat-enterprise-linux-bring-your-own-subscription-gold-images) .
+> ADE также поддерживается для RHELных образов с собственной подпиской, но только **после** регистрации подписки. Дополнительные сведения см. [в статье Red Hat Enterprise Linux собственные образы на основе собственных подписок в Azure](../workloads/redhat/byos.md#encrypt-red-hat-enterprise-linux-bring-your-own-subscription-gold-images) .
 
 ## <a name="additional-vm-requirements"></a>Дополнительные требования к виртуальным машинам
 
