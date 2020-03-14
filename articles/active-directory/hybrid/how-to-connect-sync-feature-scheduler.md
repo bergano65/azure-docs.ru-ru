@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 309adfbebd4f4b615ac1f4061823ca01f3d3ee15
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378106"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79261077"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: планировщик
 В этом разделе описывается встроенный планировщик в Azure AD Connect Sync (модуль синхронизации).
@@ -204,7 +204,7 @@ Get-ADSyncConnectorRunStatus
 ## <a name="scheduler-and-installation-wizard"></a>Планировщик и мастер установки
 При запуске мастера установки планировщик приостанавливается. Это связано с тем, что вы можете внести изменения в конфигурацию, а во время активной работы модуля синхронизации их нельзя будет применить. Пока мастер установки открыт, модуль синхронизации не выполняет никаких действий по синхронизации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

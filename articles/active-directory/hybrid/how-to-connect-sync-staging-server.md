@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bc88640cdff4f716902a80bb149913b961d40ae3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376210"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79261025"
 ---
 # <a name="azure-ad-connect-staging-server-and-disaster-recovery"></a>Azure AD Connect: промежуточный сервер и аварийное восстановление
 Когда сервер работает в промежуточном режиме, вы можете вносить изменения в конфигурацию и просматривать их, прежде чем активировать сервер. Этот режим также позволяет запустить полный импорт и полную синхронизацию, чтобы проверить, все ли изменения имеют нужный вид, прежде чем вносить их в рабочую среду.
@@ -64,7 +64,7 @@ ms.locfileid: "78376210"
 Если вы внесли какие-либо изменения на сервере-источнике и хотите сравнить конфигурацию с промежуточным сервером, то воспользуйтесь [средством документирования конфигураций Azure AD Connect](https://github.com/Microsoft/AADConnectConfigDocumenter).
 
 #### <a name="import-and-synchronize"></a>Импорт и синхронизация
-1. Выберите пункт **Соединители**, а затем выберите первый соединитель с типом **Доменные службы Active Directory**. Щелкните **Запуск**, выберите **Полный импорт** и нажмите кнопку **ОК**. Проделайте это для всех соединителей данного типа.
+1. Щелкните **Соединители** и выберите первый соединитель типа **Доменные службы Active Directory**. Щелкните **Запуск**, выберите **Полный импорт** и нажмите кнопку **ОК**. Проделайте это для всех соединителей данного типа.
 2. Выберите соединитель типа **Azure Active Directory (Майкрософт)** . Щелкните **Запуск**, выберите **Полный импорт** и нажмите кнопку **ОК**.
 3. Убедитесь, что все еще выбрана вкладка "Соединители". Для каждого соединителя типа **Доменные службы Active Directory** щелкните **Запуск**, выберите **Синхронизация изменений** и нажмите кнопку **ОК**.
 4. Выберите соединитель типа **Azure Active Directory (Майкрософт)** . Щелкните **Запуск**, выберите**Синхронизация изменений**) и нажмите кнопку **ОК**.
@@ -267,7 +267,7 @@ Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
 $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 **Обзорные статьи**  
 
 * [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)  

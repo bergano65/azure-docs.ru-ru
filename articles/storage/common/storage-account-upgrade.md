@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: tamram
 ms.openlocfilehash: 42cef26143eaeb49c4aa80dc5e1b05eb7be943cc
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77616831"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268461"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновление до учетной записи хранения общего назначения версии 2
 
@@ -165,6 +165,6 @@ az storage account update -g <resource-group> -n <storage-account> --set kind=St
 > [!NOTE]
 > Более подробный пример расчета затрат на использование "горячего" или "холодного" уровня доступа к хранилищу см. в ответе на вопрос *Что такое "горячий" и "холодный" уровень доступа и как определить, какой из них следует использовать?* на странице [Цены на хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [создать учетную запись хранения;](storage-account-create.md)

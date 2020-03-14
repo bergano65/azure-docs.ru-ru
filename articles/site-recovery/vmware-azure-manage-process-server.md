@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 04/28/2019
 ms.author: ramamill
 ms.openlocfilehash: ef16e3b75ca8e051b1b7abb1a92843279884c697
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954333"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257255"
 ---
 # <a name="manage-process-servers"></a>Управление серверами обработки
 
@@ -61,7 +61,7 @@ ms.locfileid: "73954333"
 3. Щелкните сервер обработки, с которого необходимо переключить рабочую нагрузку.
 4. Щелкните **переключатель**, выберите целевой сервер обработки, на который требуется переместить рабочую нагрузку. Затем нажмите кнопку **ОК** .
 
-    ![Switch](media/vmware-azure-manage-process-server/Switch.PNG)
+    ![Параметр](media/vmware-azure-manage-process-server/Switch.PNG)
 
 5. В хранилище отслеживайте ход выполнения задания в разделе **мониторинг** > **site Recoveryных заданий**.
 

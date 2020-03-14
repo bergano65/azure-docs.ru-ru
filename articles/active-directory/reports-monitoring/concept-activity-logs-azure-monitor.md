@@ -18,11 +18,11 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 46e29fff3308f35b16dbff2f9cead82abc222a5c
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014499"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266550"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Журналы действий Azure AD в Azure Monitor
 
@@ -48,7 +48,7 @@ ms.locfileid: "74014499"
 > В настоящее время журналы действий аудита и входов в систему в клиенте B2C не поддерживаются.
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этой функции необходимо иметь следующее.
 
@@ -79,7 +79,7 @@ ms.locfileid: "74014499"
 | Категория журнала | Количество пользователей | Событий в день | Объем данных в месяц (прим.) | Затраты в месяц (прим.) | Затраты в год (прим.) |
 |--------------|-----------------|----------------------|--------------------------------------|----------------------------|---------------------------|
 | Аудит | 100 000 | 1,5&nbsp;млн | 90 ГБ | 1,93 долл. США | 23,12 долл. США |
-| Аудит | 1000 | 15 000 | 900 МБ | 0,02 долл. США | 0,24 долл. США |
+| Аудит | 1000 | 15 000 | 900 МБ | 0,02 долл. США | 0,24 долл. США |
 | Вход в систему | 1000 | 34 800 | 4 ГБ | 0,13 долл. США | 1,56 долл. США |
 | Вход в систему | 100 000 | 15&nbsp;млн | 1,7 TБ | 35,41 долл. США | 424,92 долл. США |
  
@@ -131,21 +131,21 @@ ms.locfileid: "74014499"
 
 В этом разделе содержатся ответы на часто задаваемые вопросы и известные проблемы с журналами Azure AD в Azure Monitor.
 
-**Вопрос. Какие журналы включены?**
+**Вопрос: Какие журналы включены?**
 
-**Ответ.** Журналы входа в систему и журналы аудита доступны для направления через эту функцию, несмотря на то, что события аудита в клиенте B2C в настоящее время не поддерживаются. Чтобы узнать, какие типы журналов и какие журналы компонентов поддерживаются в настоящее время, ознакомьтесь со статьями [Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor](reference-azure-monitor-audit-log-schema.md) и [Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md). 
+**Ответ:** Журналы входа в систему и журналы аудита доступны для направления через эту функцию, несмотря на то, что события аудита в клиенте B2C в настоящее время не поддерживаются. Чтобы узнать, какие типы журналов и какие журналы компонентов поддерживаются в настоящее время, ознакомьтесь со статьями [Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor](reference-azure-monitor-audit-log-schema.md) и [Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md). 
 
 ---
 
 **Вопрос: Через какое время после выполнения действия соответствующие журналы отобразятся в концентраторе событий?**
 
-**Ответ:** Журналы должны появляться в центре событий в течение двух-пяти минут после выполнения действия. Дополнительные сведения о Центрах событий см. в статье [Что такое Центры событий Azure?](../../event-hubs/event-hubs-about.md)
+**Ответ:**  Журналы должны появляться в центре событий в течение двух-пяти минут после выполнения действия. Дополнительные сведения о Центрах событий см. в статье [Что такое Центры событий Azure?](../../event-hubs/event-hubs-about.md)
 
 ---
 
 **Вопрос: Через какое время после выполнения действия соответствующие журналы отобразятся в учетной записи хранения?**
 
-**Ответ.** Для учетных записей хранения Azure время ожидания составляет от 5 до 15 минут с момента выполнения действия.
+**Ответ:** Для учетных записей хранения Azure время ожидания составляет от 5 до 15 минут с момента выполнения действия.
 
 ---
 
@@ -155,7 +155,7 @@ ms.locfileid: "74014499"
 
 ---
 
-**Вопрос. Сколько будет стоить хранение данных?**
+**Вопрос: Сколько будет стоить хранение данных?**
 
 **Ответ.** Затраты на хранение зависят как от размеров журналов, так и от сроков их хранения. Сведения о размере ожидаемых затрат для клиентов, которые зависят от объема созданных журналов, см. в разделе [Размер хранилища для журналов действий](#storage-size-for-activity-logs).
 
@@ -167,7 +167,7 @@ ms.locfileid: "74014499"
 
 ---
 
-**Вопрос. Как интегрировать журналы действий Azure AD с системой SIEM?**
+**Вопрос: Как интегрировать журналы действий Azure AD с системой SIEM?**
 
 **Ответ:** Это можно сделать двумя способами:
 
@@ -177,13 +177,13 @@ ms.locfileid: "74014499"
 
 ---
 
-**Вопрос. Какие средства SIEM поддерживаются в настоящее время?** 
+**Вопрос: Какие средства SIEM поддерживаются в настоящее время?** 
 
-**Ответ.** Сейчас Azure Monitor поддерживают [Splunk](tutorial-integrate-activity-logs-with-splunk.md), QRadar и [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory). Дополнительные сведения о работе соединителей см. в статье [Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+**Ответ:** Сейчас Azure Monitor поддерживают [Splunk](tutorial-integrate-activity-logs-with-splunk.md), QRadar и [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory). Дополнительные сведения о работе соединителей см. в статье [Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
 
 ---
 
-**Вопрос. Как интегрировать журналы действий Azure AD с экземпляром Splunk?**
+**Вопрос: Как интегрировать журналы действий Azure AD с экземпляром Splunk?**
 
 **Ответ:** Сначала [направьте журналы действий Azure AD в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md), а затем выполните следующие действия, чтобы [интегрировать журналы действий со Splunk](tutorial-integrate-activity-logs-with-splunk.md).
 
@@ -191,7 +191,7 @@ ms.locfileid: "74014499"
 
 **Вопрос: Как интегрировать журналы действий Azure AD с Sumo Logic?** 
 
-**Ответ.** Сначала [направьте журналы действий Azure AD в концентратор событий](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Collect_Logs_for_Azure_Active_Directory), а затем выполните следующие действия, чтобы [установить приложение Azure AD и просмотреть панели мониторинга в SumoLogic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Install_the_Azure_Active_Directory_App_and_View_the_Dashboards).
+**Ответ:** Сначала [направьте журналы действий Azure AD в концентратор событий](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Collect_Logs_for_Azure_Active_Directory), а затем выполните следующие действия, чтобы [установить приложение Azure AD и просмотреть панели мониторинга в SumoLogic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Install_the_Azure_Active_Directory_App_and_View_the_Dashboards).
 
 ---
 
@@ -202,7 +202,7 @@ ms.locfileid: "74014499"
 ---
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство. Архивация журналов Azure Active Directory в учетной записи хранения Azure (предварительная версия)](quickstart-azure-monitor-route-logs-to-storage-account.md)
 * [Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)](quickstart-azure-monitor-stream-logs-to-event-hub.md)

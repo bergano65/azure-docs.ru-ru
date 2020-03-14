@@ -12,11 +12,11 @@ ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 ms.date: 11/19/2019
 ms.openlocfilehash: fa41649e002bd4845b95e787c1d0589ed1987588
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391095"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79255929"
 ---
 # <a name="sql-database-resource-limits-and-resource-governance"></a>Ограничения ресурсов базы данных SQL и управление ресурсами
 
@@ -27,7 +27,7 @@ ms.locfileid: "78391095"
 
 ## <a name="maximum-resource-limits"></a>Максимальное ограничение ресурсов
 
-| Ресурс | Предельное количество |
+| Ресурс | Ограничение |
 | :--- | :--- |
 | Баз данных на сервер | 5000 |
 | Количество серверов по умолчанию на одну подписку в любом регионе | 20 |
@@ -132,7 +132,7 @@ ms.locfileid: "78391095"
 - Если загружаемые данные являются временными, например промежуточные данные в процессе ETL, их можно загрузить в базу данных tempdb (с минимальным протоколированием). 
 - Для аналитических сценариев загрузите в таблицу, охваченную кластеризованным индексом columnstore. Это сокращает необходимую частоту ведения журнала из-за сжатия. Этот метод увеличивает загрузку ЦП и применяется только к наборам данных, которые используют преимущества кластеризованных индексов columnstore. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-purchase-models.md#dtu-based-purchasing-model).

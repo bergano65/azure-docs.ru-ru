@@ -11,11 +11,11 @@ ms.date: 04/16/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 8358d3378ea892ebeef653bcb51243c9f1aa0b8d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365182"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79259777"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Запрос маркера доступа в Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "78365182"
 > [!NOTE]
 > **Цепочки веб-API ("от имени") не поддерживаются в Azure AD B2C.** Многие архитектуры включают веб-API, который должен вызывать другой нисходящий веб-API, защищенный Azure AD B2C. Этот сценарий распространен в клиентах, имеющих серверную веб-API, который, в свою очередь, вызывает другую службу. Этот сценарий веб-API с цепочками может поддерживаться с помощью предоставления учетных данных носителя маркера JWT OAuth 2.0 или потока On-Behalf-Of. Однако в Azure AD B2C поток On-Behalf-Of еще не реализован.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 - [Добавьте приложение веб-API в клиент Azure Active Directory B2C](add-web-application.md), если вы еще этого не сделали.
@@ -135,6 +135,6 @@ grant_type=authorization_code
 }.[Signature]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [настройке маркеров в Azure AD B2C](configure-tokens.md)

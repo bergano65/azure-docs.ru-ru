@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/03/2019
+ms.date: 03/10/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 77324dff7e3f34574f36aa3bb775aed6a945a3bd
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: d7e4843bfbd622ad99cad4d9048e91a0cb49b1c1
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75665280"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136250"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-powershell"></a>Настройка ключей, управляемых клиентом, с Azure Key Vault с помощью PowerShell
 
@@ -97,9 +97,18 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
 
 Чтобы изменить ключ, используемый для шифрования службы хранилища Azure, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) , как показано в разделе [Настройка шифрования с помощью управляемых клиентом ключей](#configure-encryption-with-customer-managed-keys) и предоставление нового имени и версии ключа. Если новый ключ находится в другом хранилище ключей, также обновите URI хранилища ключей.
 
+## <a name="revoke-customer-managed-keys"></a>Отозвать ключи, управляемые клиентом
+
+Если вы считаете, что ключ может быть скомпрометирован, можно отозвать ключи, управляемые клиентом, удалив политику доступа к хранилищу ключей. Чтобы отозвать ключ, управляемый клиентом, вызовите команду [Remove-азкэйваултакцессполици](/powershell/module/az.keyvault/remove-azkeyvaultaccesspolicy) , как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+
+```powershell
+Remove-AzKeyVaultAccessPolicy -VaultName $keyVault.VaultName `
+    -ObjectId $storageAccount.Identity.PrincipalId `
+```
+
 ## <a name="disable-customer-managed-keys"></a>Отключение ключей, управляемых клиентом
 
-При отключении управляемых пользователем ключей учетная запись хранения шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) с параметром `-StorageEncryption`, как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
+При отключении управляемых пользователем ключей учетная запись хранения снова шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, вызовите [Set-азсторажеаккаунт](/powershell/module/az.storage/set-azstorageaccount) с параметром `-StorageEncryption`, как показано в следующем примере. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `

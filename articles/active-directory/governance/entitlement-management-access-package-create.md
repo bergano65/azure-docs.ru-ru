@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7c858a17d4574e6e45283df7c1276cd303f25297
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376753"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262013"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -83,7 +83,7 @@ ms.locfileid: "78376753"
 
     Создаваемый пакет Access и все ресурсы, включенные в него, будут добавлены в новый каталог. Вы также можете добавить дополнительных владельцев каталога позже.
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
 ## <a name="resource-roles"></a>Роли ресурсов
 
@@ -105,9 +105,9 @@ ms.locfileid: "78376753"
 
     ![Доступ к пакету — Выбор роли ресурсов](./media/entitlement-management-access-package-create/resource-roles-role.png)
 
-1. Нажмите кнопку **Далее**.
+1. Щелкните **Далее**.
 
-## <a name="requests"></a>Запросы
+## <a name="requests"></a>Requests
 
 На вкладке **запросы** Создайте первую политику, чтобы указать, кто может запрашивать пакет доступа, а также параметры утверждения. Позднее можно создать дополнительные политики запросов, чтобы разрешить дополнительным группам пользователей запрашивать пакет доступа с помощью собственных параметров утверждения.
 
@@ -141,7 +141,7 @@ ms.locfileid: "78376753"
 1. [Создайте акцесспаккажеассигнментполици](https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-post?view=graph-rest-beta).
 1. [Создайте акцесспаккажересаурцеролескопе](https://docs.microsoft.com/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta) для каждой роли ресурса, необходимой для пакета доступа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ссылка на общий доступ для запроса пакета Access](entitlement-management-access-package-settings.md)
 - [Изменение ролей ресурсов для пакета Access](entitlement-management-access-package-resources.md)

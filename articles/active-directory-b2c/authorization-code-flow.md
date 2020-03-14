@@ -12,11 +12,11 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 8248ca0abb1d633786b09b894bcd6b1089ab2d8c
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78671813"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260895"
 ---
 # <a name="oauth-20-authorization-code-flow-in-azure-active-directory-b2c"></a>Поток кода авторизации OAuth 2.0 в Azure Active Directory B2C
 
@@ -52,7 +52,7 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 ```
 
 
-| Параметр | Обязательно? | Описание |
+| Параметр | Обязательно? | Description |
 | --- | --- | --- |
 |клиентом| Обязательно | Имя клиента Azure AD B2C|
 | политик | Обязательно | Выполняемый пользователем поток. Укажите имя потока пользователей, созданного в Azure AD B2C клиенте. Например: `b2c_1_sign_in`, `b2c_1_sign_up`или `b2c_1_edit_profile`. |
@@ -76,7 +76,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...        // the auth
 &state=arbitrary_data_you_can_receive_in_the_response                // the value provided in the request
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | код |Запрашиваемый приложением код авторизации. Приложение может использовать код авторизации для запроса маркера доступа для целевого ресурса. Срок действия кодов авторизации крайне мал. и обычно истекает по прошествии порядка 10 минут. |
 | state |Полное описание см. в таблице выше. Если запрос содержит параметр `state`, то в ответе должно отображаться то же значение. Приложение должно проверить, совпадают ли значения параметра `state` в запросе и ответе. |
@@ -90,7 +90,7 @@ error=access_denied
 &state=arbitrary_data_you_can_receive_in_the_response
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | ошибка |Строка кода ошибки, которую можно использовать для классификации типов возникающих ошибок и реагирования на них. |
 | error_description |Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки аутентификации. |
@@ -110,7 +110,7 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 
 ```
 
-| Параметр | Обязательно? | Описание |
+| Параметр | Обязательно? | Description |
 | --- | --- | --- |
 |клиентом| Обязательно | Имя клиента Azure AD B2C|
 |политик| Обязательно| Поток пользователя, который использовался для получения кода авторизации. Другой поток пользователя в этом запросе использовать нельзя. |
@@ -133,7 +133,7 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
     "refresh_token": "AAQfQmvuDy8WtUv-sd0TBwWVQs1rC-Lfxa_NDkLqpg50Cxp5Dxj0VPF1mx2Z...",
 }
 ```
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | not_before |Момент времени, в который маркер начинает считаться действительным (с начала эпохи). |
 | token_type |Значение типа маркера. Единственный тип, поддерживаемый Azure AD — носитель. |
@@ -151,7 +151,7 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 }
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | ошибка |Строка кода ошибки, которую можно использовать для классификации типов возникающих ошибок и реагирования на них. |
 | error_description |Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки аутентификации. |
@@ -176,7 +176,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6 offline_access&refresh_token=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&redirect_uri=urn:ietf:wg:oauth:2.0:oob
 ```
 
-| Параметр | Обязательно? | Описание |
+| Параметр | Обязательно? | Description |
 | --- | --- | --- |
 |клиентом| Обязательно | Имя клиента Azure AD B2C|
 |политик |Обязательно |Поток пользователя, который использовался для получения исходного маркера обновления. Другой поток пользователя в этом запросе использовать нельзя. |
@@ -199,7 +199,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=90
     "refresh_token": "AAQfQmvuDy8WtUv-sd0TBwWVQs1rC-Lfxa_NDkLqpg50Cxp5Dxj0VPF1mx2Z...",
 }
 ```
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | not_before |Момент времени, в который маркер начинает считаться действительным (с начала эпохи). |
 | token_type |Значение типа маркера. Единственный тип, поддерживаемый Azure AD — носитель. |
@@ -217,7 +217,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=90
 }
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | ошибка |Строка кода ошибки, которую можно использовать для классификации типов возникающих ошибок и реагирования на них. |
 | error_description |Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки аутентификации. |

@@ -12,11 +12,11 @@ manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 5/14/2019
 ms.openlocfilehash: 70367a38fbf7b59486e2eaaf6c05634aa7575869
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927439"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260713"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
@@ -79,7 +79,7 @@ ms.locfileid: "74927439"
 
 Для  [настройки и администрирования аутентификации Azure AD с использованием SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure) выполните следующие действия.
 
-1.  На портале Azure выберите **Все службы**  ->  **Серверы SQL Server** на левой панели навигации.
+1.  На портале Azure выберите **Все службы** -> **Серверы SQL Server** на левой панели навигации.
 
 2.  Выберите сервер Базы данных SQL Azure, для которого нужно настроить аутентификацию Azure AD.
 
@@ -105,7 +105,7 @@ ms.locfileid: "74927439"
 
 5. Выберите **подключить** и завершите процесс входа.
 
-6. В **обозревателе объектов** разверните папку **Базы данных**  ->  **Системные базы данных**.
+6. В **обозревателе объектов** разверните папку **Базы данных** -> **Системные базы данных**.
 
 7. Щелкните правой кнопкой мыши базу данных **master** и выберите **Создать запрос**.
 
@@ -159,7 +159,7 @@ ms.locfileid: "74927439"
 
 2.  Подключитесь к Управляемый экземпляр с помощью учетной записи SQL Server, которая является **sysadmin**. Это временное ограничение, которое будет удалено после того, как участники сервера Azure AD (имена входа) для Управляемый экземпляр Базы данных SQL Azure станут общедоступными. При попытке использовать учетную запись администратора Azure AD для создания имени входа вы увидите следующую ошибку: сообщение 15247, уровень 16, состояние 1, пользователь строки 1 не имеет разрешения на выполнение этого действия.
 
-3.  В **обозревателе объектов** разверните папку **Базы данных**  ->  **Системные базы данных**.
+3.  В **обозревателе объектов** разверните папку **Базы данных** -> **Системные базы данных**.
 
 4.  Щелкните правой кнопкой мыши базу данных **master** и выберите **Создать запрос**.
 
@@ -198,7 +198,7 @@ ms.locfileid: "74927439"
 
 1.  Установите модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018) .
 
-2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример.
+2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример:
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
@@ -223,8 +223,8 @@ ms.locfileid: "74927439"
 
 При запуске пакетов служб SSIS на Azure-SSIS IR можно использовать проверку подлинности управляемого удостоверения для подключения к различным ресурсам Azure. Сейчас мы уже поддерживали аутентификацию управляемого удостоверения в следующих диспетчерах соединений.
 
-- [Диспетчер подключений OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
+- [Диспетчер соединений OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
 
-- [Диспетчер соединений ADO.NET](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
+- [Диспетчер подключений ADO.NET](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
 
 - [Диспетчер подключений службы хранилища Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication)

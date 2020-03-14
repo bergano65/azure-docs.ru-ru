@@ -12,11 +12,11 @@ ms.topic: reference
 ms.date: 02/25/2020
 ms.author: juliako
 ms.openlocfilehash: d4a206bbddedfe9f23a943df27c6ac4b5fe17e8a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78359284"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251353"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Схемы службы "Сетка событий Azure" для событий Служб мультимедиа
 
@@ -206,7 +206,7 @@ ms.locfileid: "78359284"
 
 | Свойство | Тип | Description |
 | -------- | ---- | ----------- |
-| outputs | Array | Получить выходные данные задания.|
+| выводы | Array | Получить выходные данные задания.|
 
 ### <a name="joboutputstatechange"></a>JobOutputStateChange
 
@@ -662,7 +662,7 @@ ms.locfileid: "78359284"
 | eventType | строка | Один из зарегистрированных типов событий для этого источника событий. Пример: Microsoft.Media.JobStateChange. |
 | eventTime | строка | Время создания события с учетом времени поставщика в формате UTC. |
 | идентификатор | строка | Уникальный идентификатор события. |
-| . | объект | Данные события Служб мультимедиа. |
+| . | object | Данные события Служб мультимедиа. |
 | dataVersion | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
 | metadataVersion | строка | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
 

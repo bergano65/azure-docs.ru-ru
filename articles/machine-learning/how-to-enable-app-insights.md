@@ -9,18 +9,22 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: larryfr
 author: blackmist
-ms.date: 11/12/2019
-ms.openlocfilehash: 34aba3c00ac0026abebbdfc93143aa5e7f788e8b
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.date: 03/12/2020
+ms.openlocfilehash: 464ec1fcf0986dc04bd92bbe9e31b5675e5822d4
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78268476"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136199"
 ---
 # <a name="monitor-and-collect-data-from-ml-web-service-endpoints"></a>Мониторинг и получение данных из конечных точек веб-службы ML
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как получать данные из и отслеживать модели, развернутые в конечных точках веб-службы в службе Azure Kubernetes Service (AKS) или экземплярах контейнеров Azure (ACI), включив Azure Application Insights. Помимо сбора входных данных и ответов конечной точки, вы можете отслеживать:
+Из этой статьи вы узнаете, как получать данные из и отслеживать модели, развернутые в конечных точках веб-службы в службе Azure Kubernetes Service (AKS), или службу "экземпляры контейнеров Azure" (ACI), включив Application Insights Azure через 
+* [Пакет SDK Python для Машинного обучения Azure](#python)
+* [Машинное обучение Azure Studio](#studio) в https://ml.azure.com
+
+Помимо сбора выходных данных и ответов конечной точки, можно отслеживать:
 
 * Частоты запросов, времени отклика и частоты сбоев.
 * Частоты зависимостей, времени отклика и частоты сбоев.
@@ -29,11 +33,12 @@ ms.locfileid: "78268476"
 Дополнительные [сведения об Azure Application Insights](../azure-monitor/app/app-insights-overview.md). 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) прямо сейчас.
+* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) прямо сейчас.
 
 * Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со скриптами и пакет SDK машинного обучения Azure для Python. Чтобы узнать, как выполнить эти предварительные требования, см. статью [Настройка среды разработки](how-to-configure-environment.md) .
+
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. Руководство [обучение модели классификации изображений](tutorial-train-models-with-aml.md)
 
 ## <a name="web-service-metadata-and-response-data"></a>Метаданные веб-службы и данные ответа
@@ -42,6 +47,8 @@ ms.locfileid: "78268476"
 > Azure Application Insights записывает в журнал только полезные данные размером до 64 КБ. При достижении этого предела регистрируются только самые последние выходные данные модели. 
 
 Метаданные и ответ на службу, соответствующие метаданным веб-службы и прогнозам модели, записываются в трассировки Application Insights Azure в `"model_data_collection"`сообщения. Вы можете запросить Azure Application Insights напрямую для доступа к этим данным или настроить [непрерывный экспорт](https://docs.microsoft.com/azure/azure-monitor/app/export-telemetry) в учетную запись хранения для более длительного хранения или дальнейшей обработки. Данные модели можно использовать в Машинное обучение Azure для настройки меток, переобучения, пояснения, анализа данных или других способов использования. 
+
+<a name="python"></a>
 
 ## <a name="use-python-sdk-to-configure"></a>Использование пакета SDK для Python для настройки 
 
@@ -86,11 +93,27 @@ ms.locfileid: "78268476"
 <service_name>.update(enable_app_insights=False)
 ```
 
+<a name="studio"></a>
+
+## <a name="use-azure-machine-learning-studio-to-configure"></a>Использование Машинное обучение Azure Studio для настройки
+
+Вы также можете включить Azure Application Insights из Машинное обучение Azure Studio, когда будете готовы к развертыванию модели с помощью этих шагов.
+
+1. Войдите в рабочую область по адресу https://ml.azure.com/
+1. Перейдите к разделу **модели** и выберите модель, которую требуется развернуть.
+1. Выбрать **+ развернуть**
+1. Заполнение формы « **развертывание модели** »
+1. Развернуть меню " **Дополнительно** "
+
+    ![Форма развертывания](./media/how-to-enable-app-insights/deploy-form.png)
+1. Выберите **включить диагностику Application Insights и сбор данных**
+
+    ![Включить App Insights](./media/how-to-enable-app-insights/enable-app-insights.png)
 ## <a name="evaluate-data"></a>Данные оценки
 Данные службы хранятся в учетной записи Azure Application Insights в той же группе ресурсов, что и Машинное обучение Azure.
 Чтобы их просмотреть:
 
-1. Перейдите в рабочую область Машинное обучение Azure в [машинное обучение Azure Studio](https://ml.azure.com) и щелкните ссылку Application Insights
+1. Перейдите к рабочей области Машинное обучение Azure в [портал Azure](https://ms.portal.azure.com/) и щелкните ссылку Application Insights
 
     [![AppInsightsLoc](./media/how-to-enable-app-insights/AppInsightsLoc.png)](././media/how-to-enable-app-insights/AppInsightsLoc.png#lightbox)
 
@@ -128,7 +151,7 @@ ms.locfileid: "78268476"
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как развернуть модель в кластере службы Azure Kubernetes](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-kubernetes-service) или [как развернуть модель в службе "экземпляры контейнеров Azure](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-azure-container-instance) ", чтобы развернуть модели в конечных точках веб-службы и разрешить Azure Application Insights использовать сбор данных и мониторинг конечных точек.
 * Дополнительные сведения об использовании данных, собираемых из моделей в рабочей среде, см. в разделе [млопс. Управление, развертывание и мониторинг моделей с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-model-management-and-deployment) . Такие данные позволяют постоянно улучшать процесс машинного обучения.

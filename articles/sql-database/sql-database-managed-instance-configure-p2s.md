@@ -12,19 +12,19 @@ ms.author: srbozovi
 ms.reviewer: sstein, carlrab, bonova, jovanpop
 ms.date: 03/13/2019
 ms.openlocfilehash: 30b2ba92174996ea2bae34e7553a3258d8ebee27
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818918"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268890"
 ---
 # <a name="quickstart-configure-a-point-to-site-connection-to-an-azure-sql-database-managed-instance-from-on-premises"></a>Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера
 
 В этом кратком руководстве показано, как подключиться к Управляемому экземпляру Базы данных SQL Azure в [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) (SSMS) с локального клиентского компьютера через подключение "точка — сеть". См. сведения о [подключениях "точка — сеть"](../vpn-gateway/point-to-site-about.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-В этом кратком руководстве выполняются следующие требования.
+В этом кратком руководстве:
 
 - В качестве начальной точки используются ресурсы, созданные в руководстве по [созданию управляемого экземпляра](sql-database-managed-instance-get-started.md).
 - Требуется PowerShell 5,1 и AZ PowerShell 1.4.0 или более поздней версии на локальном клиентском компьютере. При необходимости ознакомьтесь с инструкциями по [установке модуля PowerShell для Azure](https://docs.microsoft.com/powershell/azure/install-az-ps#install-the-azure-powershell-module).
@@ -81,7 +81,7 @@ ms.locfileid: "73818918"
 1. Перейдите к **VPN** в **сети & Интернет** на локальном клиентском компьютере и выберите виртуальную сеть управляемый экземпляр, чтобы установить подключение к этой виртуальной сети. На следующем рисунке такая виртуальная сеть называется **MyNewVNet**.
 
     ![VPN-подключение](./media/sql-database-managed-instance-configure-p2s/vpn-connection.png)  
-2. Нажмите кнопку **Подключиться**.
+2. Выберите **Подключиться**.
 3. В диалоговом окне выберите **Подключиться**.
 
     ![VPN-подключение](./media/sql-database-managed-instance-configure-p2s/vpn-connection2.png)  

@@ -9,11 +9,11 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: 3c09a95309e001def306698bbba4f6d0a1a2804d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78388168"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79255539"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 
@@ -21,7 +21,7 @@ ms.locfileid: "78388168"
 
 DistCp предоставляет различные параметры командной строки, поэтому мы настоятельно рекомендуем вам прочитать эту статью для того, чтобы использовать их оптимально. В этой статье описаны основные функциональные возможности этого средства и использование его для копирования данных в учетную запись с включенным иерархическим пространством имен.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен)** .

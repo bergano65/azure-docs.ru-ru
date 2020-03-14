@@ -17,12 +17,12 @@ ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f24412aa7e53c52f0fcbf0c266b57db077d41eb1
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.openlocfilehash: a0ba46abcc6e3b837dc0b13422bdc3d714ed0022
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77612048"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262689"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода платформы удостоверений Microsoft Identity (версия 2.0, конечная точка)
 
@@ -44,7 +44,7 @@ ms.locfileid: "77612048"
 
 В этих примерах показано, как создать одностраничное приложение, защищенное с помощью платформы идентификации Майкрософт. В этих примерах используется одна из разновидностей MSAL. js.
 
-| Платформа | Описание | Ссылка |
+| Платформа | Description | Ссылка |
 | -------- | --------------------- | -------- |
 | ![этом изображении показан логотип JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызывает Microsoft Graph |[javascript-graphapi-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
 | ![этом изображении показан логотип JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызывает B2C |[B2C-JavaScript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
@@ -52,7 +52,7 @@ ms.locfileid: "77612048"
 | ![этом изображении показан логотип угловой JS](media/sample-v2-code/logo_angular.png) [JavaScript (MSAL AngularJS)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs)| Вызывает Microsoft Graph  | [MsalAngularjsDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/MsalAngularjsDemoApp)
 | ![этом изображении показан угловой логотип](media/sample-v2-code/logo_angular.png) [JavaScript (MSAL под углом)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)| Вызывает Microsoft Graph  | [JavaScript-singlepageapp-угловой](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) |
 
-## <a name="web-applications"></a>веб-приложения
+## <a name="web-applications"></a>Веб-приложения
 
 В следующем примере показаны веб-приложения для входа пользователей. В некоторых примерах приложение вызывает Microsoft Graph или веб-API с использованием удостоверения пользователя.
 
@@ -112,8 +112,9 @@ ms.locfileid: "77612048"
 | Платформа | Пример |
 | -------- | ------------------- |
 | ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2,2 | ASP.NET Core веб-API (служба) [DotNet-Native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi-calls-msgraph)  |
-| ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NET.png)</p>ASP.NET MVC | Веб-API (служба) [MS-Identity-ASPNET-webapi-OnBehalfOf](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) |
+| ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NET.png)</p>ASP.NET MVC 3 | Веб-API (служба) [MS-Identity-ASPNET-webapi-OnBehalfOf](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) |
 | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | Веб-API (служба) [MS-Identity-Java-webapi](https://github.com/Azure-Samples/ms-identity-java-webapi) |
+| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png) | Веб-API (служба) [Active-Directory-JavaScript-NodeJS-webapi-v2](https://github.com/Azure-Samples/active-directory-javascript-nodejs-webapi-v2) |
 
 ## <a name="azure-functions-as-web-apis"></a>Функции Azure в качестве веб-API
 
@@ -122,16 +123,15 @@ ms.locfileid: "77612048"
 | Платформа | Пример |
 | -------- | ------------------- |
 | ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2,2 | ASP.NET Core службы веб-API (служба) Azure [DotNet-Native-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)  |
-| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)</p>NodeJS | Веб-API (служба) [NodeJS и Passport-Azure-AD](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
+| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) [NodeJS и Passport-Azure-AD](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
 | ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png)</p>Python | Веб-API (служба) [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) |
-| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)</p>NodeJS | Веб-API (служба) [NodeJS и Passport-AD, используя от имени](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
+| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) [NodeJS и Passport-AD, используя от имени](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
 
 ## <a name="other-microsoft-graph-samples"></a>Другие примеры Microsoft Graph
 
 Дополнительные сведения о [примерах](https://github.com/microsoftgraph/msgraph-community-samples/tree/master/samples#aspnet) и учебниках, в которых приводятся различные шаблоны использования API Microsoft Graph, включая аутентификацию в Azure AD, см. в статье [Microsoft Graph Community samples & tutorials](https://github.com/microsoftgraph/msgraph-community-samples) (Примеры и учебники сообщества Microsoft Graph).
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 - [Azure Active Directory (версия 1.0): руководством разработчика](../azuread-dev/v1-overview.md)
-- [Основные понятия и справочные материалы по Azure AD API Graph](https://msdn.microsoft.com/library/azure/hh974476.aspx)
-- [Библиотека вспомогательных методов для Azure AD Graph API](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)
+- [Общие сведения о Microsoft Graph API и справочнике](https://docs.microsoft.com/graph/use-the-api?context=graph%2Fapi%2Fbeta&view=graph-rest-beta)

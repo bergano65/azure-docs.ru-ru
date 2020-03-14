@@ -14,11 +14,11 @@ ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: de91bd7e1e4c5f9909213f663dd3ede0f979d4de
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376858"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262156"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 
@@ -108,7 +108,7 @@ ms.locfileid: "78376858"
 
 - **Убедитесь, что у вас нет неуправляемых клиентов Power BI.** Если пользователи активировали Power BI через функцию самостоятельной регистрации и создали неуправляемый клиент для организации, необходимо взять на себя управление в качестве внутреннего или внешнего администратора с помощью PowerShell. Дополнительные сведения см. в [Смена неуправляемого каталога от имени администратора в Azure Active Directory](../users-groups-roles/domains-admin-takeover.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавьте в каталог еще одного глобального администратора. Дополнительные сведения см. в статье [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](active-directory-users-assign-role-azure-portal.md).
 

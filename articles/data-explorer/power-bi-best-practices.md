@@ -8,11 +8,11 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/26/2019
 ms.openlocfilehash: db1d530c9cab77ae612c83a0d4f52478fb9ee270
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395223"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251743"
 ---
 # <a name="best-practices-for-using-power-bi-to-query-and-visualize-azure-data-explorer-data"></a>Рекомендации по использованию Power BI для запроса и визуализации данных обозреватель данных Azure
 
@@ -98,7 +98,7 @@ in
     Source = Kusto.Contents("<Cluster>", "<Database>", "<Query>", [])
     ```
    
-   Например:
+   Пример:
 
     ```powerquery-m
     Source = Kusto.Contents("Help", "Samples", "StormEvents | where State == 'ALABAMA' | take 100", [])
@@ -144,7 +144,7 @@ Power BI включает Планировщик обновления данны
 
 Если выполнение запроса в Power BI приводит к следующей ошибке: _"DataSource. Error: Web. contents не удалось получить содержимое из..."_ запрос может быть длиннее 2000 символов. Power BI использует **PowerQuery** для запроса Kusto, ВЫДАВАЯ HTTP-запрос GET, который кодирует запрос как часть получаемого URI. Таким образом, Kusto запросы, выданные Power BI, ограничиваются максимальной длиной URI запроса (2000 символов, за вычетом небольшого смещения). В качестве обходного решения можно определить [хранимую функцию](/azure/kusto/query/schema-entities/stored-functions) в Kusto и иметь Power BI использовать эту функцию в запросе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Визуализация данных с помощью соединителя Azure обозреватель данных для Power BI](power-bi-connector.md)
 

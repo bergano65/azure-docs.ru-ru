@@ -14,11 +14,11 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 8080d4cf4c3f0091f7837b3fccead5474c42db55
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78377228"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262858"
 ---
 # <a name="single-sign-on-with-msaljs"></a>Единый вход с использованием MSAL.js
 
@@ -87,7 +87,7 @@ userAgentApplication.acquireTokenSilent(request).then(function(response) {
 
 **Использование подсказки для входа**
 
-Если вы не настроили заявку SID или не хотите обойти запрос выбора учетной записи в интерактивных вызовах проверки подлинности, это можно сделать, предоставив `login_hint` в параметрах запроса и, возможно, `domain_hint` как `extraQueryParameters` в интерактивных методах MSAL. js (`loginPopup`, `loginRedirect`, `acquireTokenPopup` и `acquireTokenRedirect`). Например:
+Если вы не настроили заявку SID или не хотите обойти запрос выбора учетной записи в интерактивных вызовах проверки подлинности, это можно сделать, предоставив `login_hint` в параметрах запроса и, возможно, `domain_hint` как `extraQueryParameters` в интерактивных методах MSAL. js (`loginPopup`, `loginRedirect`, `acquireTokenPopup` и `acquireTokenRedirect`). Пример:
 
 ```javascript
 var request = {
@@ -169,6 +169,6 @@ const myMSALObj = new UserAgentApplication(config);
 
 После настройки MSAL. js сможет считывать кэшированное состояние пользователя, прошедшего проверку подлинности, в ADAL. js и использовать его для предоставления единого входа в MSAL. js.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [сеансе единого входа и значениях времени существования маркеров](active-directory-configurable-token-lifetimes.md) в Azure AD.

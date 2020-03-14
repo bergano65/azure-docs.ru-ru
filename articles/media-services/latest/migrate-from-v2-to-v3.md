@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/09/2020
 ms.author: juliako
-ms.openlocfilehash: b432f381bae79d783663130d06dbf874f00a9994
-ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
-ms.translationtype: HT
+ms.openlocfilehash: 5083dc79b146598142ac27eb6ac7ef9ed436f37d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79129457"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251561"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -67,7 +67,7 @@ ms.locfileid: "79129457"
     * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
     * [Получение сведений о доступе к API](access-api-portal.md). 
 
-Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+    Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 * Подготовьте зарезервированные единицы мультимедиа (MRU) в вашей учетной записи, чтобы управлять параллелизмом и производительностью заданий, особенно тех, что касаются видео- или аудиоанализа. Дополнительные сведения см. в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md). Управлять единицами MRU можно с помощью [CLI 2.0 для Служб мультимедиа версии 3](media-reserved-units-cli-how-to.md), [портала Azure](../previous/media-services-portal-scale-media-processing.md) или [API-интерфейсов версии 2](../previous/media-services-dotnet-encoding-units.md). Подготавливать единицы MRU нужно с учетом того, какая версия API Служб мультимедиа используется: версия 2 или 3.
 * С помощью API версии 2 нельзя управлять сущностями Cлужбы мультимедиа, созданными с помощью API версии 3.  
 * Не все сущности в API v2 автоматически отображаются в API V3.  Ниже приведены примеры сущностей в двух версиях, которые несовместимы:  

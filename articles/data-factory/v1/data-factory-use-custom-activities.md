@@ -13,11 +13,11 @@ ms.author: abnarain
 manager: anandsub
 robots: noindex
 ms.openlocfilehash: 54cb06f1c77ab68818d8531b57d6eb936deda8d7
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385353"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79265731"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -1021,7 +1021,7 @@ namespace DataFactoryAPITestApp
 Пример [локальной среды фабрики данных Azure](https://github.com/gbrueckl/Azure.DataFactory.LocalEnvironment) на портале GitHub включает в себя инструмент, который позволяет выполнять отладку настраиваемых действий .NET в Visual Studio.
 
 ## <a name="sample-custom-activities-on-github"></a>Примеры настраиваемых действий на портале GitHub
-| Образец | Результат настраиваемого действия |
+| Пример | Результат настраиваемого действия |
 | --- | --- |
 | [Загрузчик данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |Загрузка данных из конечной точки HTTP в хранилище BLOB-объектов с помощью настраиваемого действия C# в фабрике данных Azure. |
 | [Пример анализа мнений с помощью Twitter](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |Вызов модели Студии машинного обучения Azure и выполнение анализа мнений, оценки, прогнозирования и т. д. |

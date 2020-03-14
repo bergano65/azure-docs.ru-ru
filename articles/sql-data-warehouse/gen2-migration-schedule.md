@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 01/21/2020
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: 00180c1791e765240f3f8feac188b9250162408e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380789"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256709"
 ---
 # <a name="upgrade-your-sql-pool-to-gen2"></a>Обновление пула SQL до Gen2
 
@@ -120,7 +120,7 @@ ms.locfileid: "78380789"
 
 - О. Нет. После обновления региона создание новых экземпляров 1-го поколения будет отключено.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Действия по обновлению](upgrade-to-latest-generation.md)
 - [Период обслуживания](maintenance-scheduling.md)

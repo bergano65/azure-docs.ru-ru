@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 06/17/2019
 ms.author: alkohli
 ms.openlocfilehash: 7c14988706ef193ef5da868c55f6c4f55e7d98f9
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380321"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260141"
 ---
 # <a name="understand-logs-to-troubleshoot-data-upload-issues-in-azure-data-box-disk"></a>Сведения о журналах для устранения неполадок, связанных с отправкой данных, в Диск Azure Data Box
 
@@ -156,7 +156,7 @@ ms.locfileid: "78380321"
 
 Ошибки, возникшие при отправке данных в Azure, приведены в следующей таблице.
 
-| Код ошибки | Описание                   |
+| Код ошибки | Description                   |
 |-------------|------------------------------|
 |`None` |  Успешно завершено.           |
 |`Renamed` | Большой двоичный объект успешно переименован.   |
@@ -181,6 +181,6 @@ ms.locfileid: "78380321"
 |`DiskRenamed` |Эти файлы не соответствуют соглашениям об именовании Azure и были переименованы. Проверьте поле `BlobPath` для нового имени. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Открывайте запрос в службу поддержки для диск Data Boxных проблем](data-box-disk-contact-microsoft-support.md).

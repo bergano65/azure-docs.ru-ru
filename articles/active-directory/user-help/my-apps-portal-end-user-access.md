@@ -13,11 +13,11 @@ ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: a5dae30c8b8f43602581b39005389211da83cb9e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375891"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253186"
 ---
 # <a name="sign-in-and-start-apps-from-the-my-apps-portal"></a>Вход и запуск приложений с портала "Мои приложения"
 
@@ -185,7 +185,7 @@ ms.locfileid: "78375891"
 >[!Note]
 >Если вы не видите доступных коллекций или категорий, это означает, что администратор их не настроил или не предоставил вам доступ. Обратитесь в службу технической поддержки своей организации, чтобы получить дополнительную помощь или разрешения на просмотр общих коллекций.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После перехода на страницу **приложения** вы можете:
 

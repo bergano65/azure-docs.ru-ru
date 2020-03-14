@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: b05d1f36d1e74b3d915e216676859654fbcbacf3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365994"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79254889"
 ---
 # <a name="replace-an-ebod-controller-on-your-storsimple-device"></a>Замена контроллера EBOD на устройстве StorSimple
 
@@ -54,7 +54,7 @@ ms.locfileid: "78365994"
    
      **Рис. 1.** Задняя поверхность модуля EBOD
    
-   | Метка | Описание |
+   | Метка | Description |
    |:--- |:--- |
    | 1 |Индикатор сбоя |
    | 2 |Индикатор питания |
@@ -86,7 +86,7 @@ ms.locfileid: "78365994"
    
     **Рис. 4**. Повторное подключение кабелей
    
-   | Метка | Описание |
+   | Метка | Description |
    |:--- |:--- |
    | 1 |Основной корпус |
    | 2 |PCM 0 |
@@ -98,6 +98,6 @@ ms.locfileid: "78365994"
    | 8 |Корпус EBOD |
    | 9 |Блоки распределения питания |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте подробнее о [замене компонентов оборудования StorSimple](storsimple-8000-hardware-component-replacement.md).
 

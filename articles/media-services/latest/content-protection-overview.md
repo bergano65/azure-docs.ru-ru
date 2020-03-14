@@ -16,11 +16,11 @@ ms.date: 10/29/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 18e80383bfcbebc6a442663c141100faa56fd061
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78393493"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269800"
 ---
 # <a name="protect-your-content-with-media-services-dynamic-encryption"></a>Защита содержимого с помощью динамического шифрования служб мультимедиа
 
@@ -159,7 +159,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 
 Общие браузеры поддерживают следующие клиенты DRM:
 
-|Браузер.|Шифрование|
+|Браузер|Шифрование|
 |---|---|
 |Chrome|Widevine|
 |Microsoft ребро, Internet Explorer 11|PlayReady|
@@ -236,7 +236,7 @@ HLS/КМАФ + FairPlay (включая HEVC/H. 265) поддерживаетс�
 * `StreamingPolicyWidevineConfiguration.CustomLicenseAcquisitionUrlTemplate`: то же, что и предыдущий шаблон, только для Widevine. 
 * `StreamingPolicyFairPlayConfiguration.CustomLicenseAcquisitionUrlTemplate`: то же, что и предыдущий шаблон, только для FairPlay.  
 
-Например:
+Пример:
 
 ```csharp
 streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://mykeyserver.hostname.com/envelopekey/{AlternativeMediaId}/{ContentKeyId}";
@@ -259,7 +259,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)
 * [Защита с помощью DRM](protect-with-drm.md)

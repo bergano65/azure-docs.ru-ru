@@ -11,11 +11,11 @@ ms.custom: seodec18
 ms.date: 02/12/2020
 ms.author: shvija
 ms.openlocfilehash: fc81226e754178ad0edfff96a494dd7522662261
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395441"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264899"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -85,7 +85,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
 *   идемпотентный производитель;
-*   Transaction
+*   транзакция:
 *   Сжатие
 *   хранение на основе размера;
 *   сжатие журнала;
@@ -93,7 +93,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 *   поддержка API HTTP Kafka;
 *   потоки Kafka.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Дополнительные сведения см. по следующим ссылкам:
 

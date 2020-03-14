@@ -4,11 +4,11 @@ description: Масштабировать Service Fabric кластер в ил�
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.openlocfilehash: 26ef13f38d525e4e493ad933bfb906dd36ed0070
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587487"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258737"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>увеличение или уменьшение масштаба кластера;
 
@@ -247,7 +247,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о планировании емкости кластера, обновлении кластера и секционировании служб см. в следующих статьях:
 
 * [Планирование емкости кластера](service-fabric-cluster-capacity.md)

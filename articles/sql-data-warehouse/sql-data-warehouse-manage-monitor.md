@@ -12,11 +12,11 @@ ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: synapse-analytics
 ms.openlocfilehash: f00ab883f9e2b1365c4e7486d61b55157cecb2a7
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78383743"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256579"
 ---
 # <a name="monitor-your-azure-synapse-analytics-sql-pool-workload-using-dmvs"></a>Мониторинг рабочей нагрузки пула SQL Azure синапсе Analytics с помощью динамических административных представлений
 
@@ -301,6 +301,6 @@ ORDER BY
     gb_processed desc;
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о динамических административных представлениях см. в разделе [System views](sql-data-warehouse-reference-tsql-system-views.md).

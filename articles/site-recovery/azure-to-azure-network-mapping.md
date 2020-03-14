@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: mayg
 ms.openlocfilehash: b8f0512f978f25ca196ad6e9a7a03243c47f0662
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396886"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258087"
 ---
 # <a name="set-up-network-mapping-and-ip-addressing-for-vnets"></a>Настройка сетевого сопоставления и IP-адресации для виртуальных сетей
 
 В этой статье описан процесс сопоставления двух экземпляров виртуальной сети Azure, размещенных в разных регионах Azure, и настройки IP-адресации между ними. Сетевое сопоставление предоставляет поведение по умолчанию для выбора целевой сети на основе исходной сети во время включения репликации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить сетевое сопоставление, у вас должны быть созданы [виртуальные сети Azure](../virtual-network/virtual-networks-overview.md) в исходном и целевом регионах Azure. 
 
@@ -92,7 +92,7 @@ ms.locfileid: "78396886"
 - Значение целевого IP-адреса можно изменить в параметрах **Вычисления и сеть** для виртуальной машины.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [рекомендации по управлению сетями](site-recovery-azure-to-azure-networking-guidance.md) для аварийного восстановления виртуальных машин Azure.
 - [Изучите рекомендации](site-recovery-retain-ip-azure-vm-failover.md) по сохранению IP-адресов после отработки отказа.

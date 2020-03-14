@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: sngun
 ms.openlocfilehash: dc9d10a6539c7fc3a7c5c8b3db290cc951c24883
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623318"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79252471"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 
@@ -192,7 +192,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
    > [!NOTE] 
    > Свойство Макситемкаунт не должно использоваться только для назначения разбивки на страницы. Это основное использование для повышения производительности запросов за счет уменьшения максимального количества элементов, возвращаемых на одной странице.  
 
-   Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet) в FeedOptions позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если `maxItemCount` имеет значение-1, пакет SDK автоматически находит наиболее оптимальное значение в зависимости от размера документа. Например:
+   Размер страницы также можно задать с помощью доступных пакетов SDK для Azure Cosmos DB. Свойство [макситемкаунт](/dotnet/api/microsoft.azure.documents.client.feedoptions.maxitemcount?view=azure-dotnet) в FeedOptions позволяет задать максимальное число элементов, возвращаемых операцией перечисления. Если `maxItemCount` имеет значение-1, пакет SDK автоматически находит наиболее оптимальное значение в зависимости от размера документа. Пример:
     
    ```csharp
     IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
@@ -264,7 +264,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Плата за запрос (т. е. затраты на обработку запросов) данной операции напрямую соотносится с размером документа. За операции с большими документами взимается больше единиц запроса, чем за операции с мелкими документами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Пример приложения, используемого в сценариях оценки производительности Azure Cosmos DB на нескольких клиентских компьютерах, см. в статье [Проверка производительности и масштабирования с помощью Azure Cosmos DB](performance-testing.md).
 
 Дополнительные сведения о создании собственного масштабируемого приложения с высокой производительностью см. в статье [Секционирование, ключи секции и масштабирование в DocumentDB](partition-data.md).

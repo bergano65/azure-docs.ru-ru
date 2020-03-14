@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 11bc97be7ff8d924f7ccd0b4672a8f4cb0a178ff
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78366802"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79254863"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-storage-account-credentials"></a>Использование службы диспетчера устройств StorSimple для управления учетными данными учетной записи хранения
 
@@ -169,7 +169,7 @@ ms.locfileid: "78366802"
 
 #### <a name="to-synchronize-keys-for-storage-accounts-outside-of-the-service-subscription"></a>Синхронизация ключей для учетных записей хранения вне подписки на службу
 1. На странице **Службы** выберите вкладку **Настройка**.
-2. Щелкните **Добавить/изменить учетную запись хранения**.
+2. Нажмите кнопку **Добавить/изменить учетные записи хранения**.
 3. В диалоговом окне сделайте следующее.
    
    1. Выберите учетную запись хранения с ключом доступа, который необходимо обновить.

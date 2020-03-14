@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/26/2020
 ms.author: avverma
 ms.openlocfilehash: 021faad28fb575c4ffeb4d895ad451d8cd82b1a5
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392912"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79254122"
 ---
 # <a name="instance-protection-for-azure-virtual-machine-scale-set-instances"></a>Защита экземпляра для экземпляров масштабируемых наборов виртуальных машин Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "78392912"
 1. Выберите имя экземпляра, который необходимо защитить.
 1. Перейдите на вкладку **Политика защиты** .
 1. В колонке **Политика защиты** выберите параметр **защитить от масштабирования** .
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
 ### <a name="rest-api"></a>REST API
 
@@ -120,7 +120,7 @@ az vmss update \
 1. Выберите имя экземпляра, который необходимо защитить.
 1. Перейдите на вкладку **Политика защиты** .
 1. В колонке **Политика защиты** выберите параметр **защитить от действий масштабируемого набора** .
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
 ### <a name="rest-api"></a>REST API
 
@@ -188,5 +188,5 @@ az vmss update \
 ### <a name="not-able-to-apply-instance-protection"></a>Не удается применить защиту экземпляра
 Защита экземпляра поддерживается только в API версии 2019-03-01 и выше. Проверьте используемую версию API и обновите ее при необходимости. Вам также может потребоваться обновить PowerShell или CLI до последней версии.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

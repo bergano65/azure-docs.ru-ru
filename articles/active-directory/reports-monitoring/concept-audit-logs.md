@@ -18,11 +18,11 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ad399fc24b2cdfbdc51e7feccba2c05786216b19
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376997"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253238"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
 
@@ -77,11 +77,11 @@ ms.locfileid: "78376997"
 
 Данные аудита можно отфильтровать в следующих полях:
 
-- Service
+- Служба
 - Категория
 - Действие
 - Состояние
-- Target
+- Назначение
 - инициатор (субъект);
 - Диапазон даты
 
@@ -125,7 +125,7 @@ ms.locfileid: "78376997"
 - керберосдомаин
 - кэйманажемент
 - Метка
-- Прочее
+- Другие
 - пермиссионгрантполици
 - Политика
 - ResourceManagement
@@ -139,7 +139,7 @@ ms.locfileid: "78376997"
 Фильтр **состояния** позволяет выполнять фильтрацию на основе состояния операции аудита. Состояние может быть одним из следующих:
 
 - Все
-- Выполнено
+- Успешно
 - Failure
 
 Фильтр **цели** позволяет искать определенный целевой объект, начиная с имени или имени участника-пользователя (UPN). В имени целевого сервера и имени участника-пользователя учитывается регистр. 
@@ -214,7 +214,7 @@ ms.locfileid: "78376997"
 
 Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Справочные материалы по действиям аудита в Azure AD](reference-audit-activities.md)
 - [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

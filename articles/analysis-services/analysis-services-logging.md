@@ -8,11 +8,11 @@ ms.date: 10/31/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 0f13f297facedceb50920c0f6afca63fe1df0b48
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375120"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266186"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -38,8 +38,8 @@ ms.locfileid: "78375120"
 |Отчеты о ходе выполнения     |   Progress Report Begin      |
 |Отчеты о ходе выполнения     |   Progress Report End      |
 |Отчеты о ходе выполнения     |   Progress Report Current      |
-|Запросы     |  Query Begin       |
-|Запросы     |   Query End      |
+|запросы,     |  Query Begin       |
+|запросы,     |   Query End      |
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
 |Ошибки и предупреждения     |   Ошибка      |
@@ -55,7 +55,7 @@ ms.locfileid: "78375120"
 
 ### <a name="service"></a>Служба
 
-|Имя операции  |Когда выполняется  |
+|Имя операции  |Когда возникает  |
 |---------|---------|
 |ResumeServer     |    Возобновление работы сервера.     |
 |SuspendServer    |   Приостановка работы сервера.      |
@@ -228,7 +228,7 @@ window
 Connect-AzAccount
 ```
 
-Во всплывающем окне браузера введите имя пользователя и пароль учетной записи Azure. Azure PowerShell получает все подписки, связанные с этой учетной записью, и по умолчанию использует первую из них.
+Во всплывающем окне браузера введите имя пользователя и пароль для учетной записи Azure. Azure PowerShell получает все подписки, связанные с этой учетной записью, и по умолчанию использует первую из них.
 
 Если у вас есть несколько подписок, возможно, вам нужно будет указать ту, которая использовалась для создания хранилища ключей Azure. Чтобы увидеть подписки для своей учетной записи, введите следующую команду:
 

@@ -7,11 +7,11 @@ author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
 ms.openlocfilehash: ce389f9281b02662f87353f00c9bca92cdf86937
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083765"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257580"
 ---
 # <a name="manage-site-recovery-access-with-role-based-access-control-rbac"></a>Управление доступом к Site Recovery с помощью управления доступом на основе ролей (RBAC)
 
@@ -43,38 +43,38 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 
 | **Тип ресурса** | **Модель развертывания** | **Разрешение** |
 | --- | --- | --- |
-| Среда выполнения приложений | Диспетчер ресурсов | Microsoft.Compute/availabilitySets/read |
+| Службы вычислений | Resource Manager | Microsoft.Compute/availabilitySets/read |
 |  |  | Microsoft.Compute/virtualMachines/read |
 |  |  | Microsoft.Compute/virtualMachines/write |
 |  |  | Microsoft.Compute/virtualMachines/delete |
-|  | Классический | Microsoft.ClassicCompute/domainNames/read |
+|  | Classic | Microsoft.ClassicCompute/domainNames/read |
 |  |  | Microsoft.ClassicCompute/domainNames/write |
 |  |  | Microsoft.ClassicCompute/domainNames/delete |
 |  |  | Microsoft.ClassicCompute/virtualMachines/read |
 |  |  | Microsoft.ClassicCompute/virtualMachines/write |
 |  |  | Microsoft.ClassicCompute/virtualMachines/delete |
-| Network | Диспетчер ресурсов | Microsoft.Network/networkInterfaces/read |
+| Сеть | Resource Manager | Microsoft.Network/networkInterfaces/read |
 |  |  | Microsoft.Network/networkInterfaces/write |
 |  |  | Microsoft.Network/networkInterfaces/delete |
 |  |  | Microsoft.Network/networkInterfaces/join/action |
 |  |  | Microsoft.Network/virtualNetworks/read |
 |  |  | Microsoft.Network/virtualNetworks/subnets/read |
 |  |  | Microsoft.Network/virtualNetworks/subnets/join/action |
-|  | Классический | Microsoft.ClassicNetwork/virtualNetworks/read |
+|  | Classic | Microsoft.ClassicNetwork/virtualNetworks/read |
 |  |  | Microsoft.ClassicNetwork/virtualNetworks/join/action |
-| служба хранилища. | Диспетчер ресурсов | Microsoft.Storage/storageAccounts/read |
+| Память | Resource Manager | Microsoft.Storage/storageAccounts/read |
 |  |  | Microsoft.Storage/storageAccounts/listkeys/action |
-|  | Классический | Microsoft.ClassicStorage/storageAccounts/read |
+|  | Classic | Microsoft.ClassicStorage/storageAccounts/read |
 |  |  | Microsoft.ClassicStorage/storageAccounts/listKeys/action |
-| resource group | Диспетчер ресурсов | Microsoft.Resources/deployments/* |
+| Группа ресурсов | Resource Manager | Microsoft.Resources/deployments/* |
 |  |  | Microsoft.Resources/subscriptions/resourceGroups/read |
 
 Попробуйте использовать [встроенные роли](../role-based-access-control/built-in-roles.md) "Участник виртуальных машин" и "Участник классических виртуальных машин" для развертывания с помощью модели Resource Manager и классической модели соответственно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление доступом на основе ролей](../role-based-access-control/role-assignments-portal.md). Начало работы с RBAC на портале Azure.
 * Сведения об управлении доступом с помощью следующих средств:
   * [PowerShell](../role-based-access-control/role-assignments-powershell.md)
-  * [Интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md)
-  * [ИНТЕРФЕЙС REST API](../role-based-access-control/role-assignments-rest.md)
+  * [Azure CLI](../role-based-access-control/role-assignments-cli.md)
+  * [REST API](../role-based-access-control/role-assignments-rest.md)
 * [Устранение неполадок при управлении доступом на основе ролей](../role-based-access-control/troubleshooting.md). Рекомендации по устранению распространенных проблем.

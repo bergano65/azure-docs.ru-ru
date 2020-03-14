@@ -9,11 +9,11 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.openlocfilehash: 3d5f3ade3ef3b79ddb3996b5bf2d609b11aff8a5
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75748560"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79255968"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -470,14 +470,14 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 | Источник | Уровень детализации | Уровень детализации | Идентификатор запроса клиента | Operation Text |
 | --- | --- | --- | --- | --- |
-| Microsoft. Azure. Storage |Информация |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
-| Microsoft. Azure. Storage |Информация |3 |85d077ab -… |Запуск синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
-| Microsoft. Azure. Storage |Информация |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Запуск синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
 | Microsoft. Azure. Storage |Предупреждение |2 |85d077ab -… |При ожидании ответа возникло исключение: удаленный сервер вернул ошибку 403 (Запрещено). |
-| Microsoft. Azure. Storage |Информация |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |
 | Microsoft. Azure. Storage |Предупреждение |2 |85d077ab -… |Во время операции возникло исключение: удаленный сервер вернул ошибку 403 (Запрещено). |
-| Microsoft. Azure. Storage |Информация |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = удаленный сервер вернул ошибку 403 (Запрещено). |
-| Microsoft. Azure. Storage |Информация |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = удаленный сервер вернул ошибку 403 (Запрещено). |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
 | Microsoft. Azure. Storage |Ошибка |1 |85d077ab -… |Retry policy did not allow for a retry. Failing with The remote server returned an error: (403) Forbidden. (Политика повтора не позволила выполнить повтор. Сбой, при котором удаленный сервер вернул ошибку: (403) — запрещено.) |
 
 В этой ситуации вам нужно разобраться, почему срок действия маркера SAS истекает, до того как клиент отправит его серверу.
@@ -569,7 +569,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | Request status (Состояние запроса)     | SASAuthorizationError        |
 | HTTP status code (Код состояния HTTP)   | 404                          |
 | Authentication type (Тип проверки подлинности)| SAS                          |
-| Тип службы       | BLOB-объекты                         |
+| Service type (Тип службы)       | BLOB-объект                         |
 | Request URL (URL-адрес запроса)        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
 | &nbsp;                 |   ?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&;api-version=2014-02-14 |
 | Request ID header (Заголовок идентификатора запроса)  | a1f348d5-8032-4912-93ef-b393e5252a3b |

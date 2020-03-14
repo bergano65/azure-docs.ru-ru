@@ -11,11 +11,11 @@ ms.date: 12/20/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 9879f98e72e22fc0745a9e91f29216cbe74ab8fe
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373687"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79255305"
 ---
 # <a name="managing-concurrency-in-microsoft-azure-storage"></a>Управление параллелизмом в службе хранилища Microsoft Azure
 
@@ -90,15 +90,15 @@ catch (StorageException ex)
 
 | Операция | Возврат значения ETag для контейнера | Принятие дополнительных заголовков |
 |:--- |:--- |:--- |
-| Создание контейнера |Да |Нет |
-| Get Container Properties (Получение свойств контейнера) |Да |Нет |
-| Get Container Metadata (Получение метаданных контейнера) |Да |Нет |
+| Create Container (Создание контейнера) |Да |нет |
+| Get Container Properties (Получение свойств контейнера) |Да |нет |
+| Get Container Metadata (Получение метаданных контейнера) |Да |нет |
 | Set Container Metadata (Определение метаданных контейнера) |Да |Да |
-| Get Container ACL (Получение списка управления доступом для контейнера) |Да |Нет |
+| Get Container ACL (Получение списка управления доступом для контейнера) |Да |нет |
 | Set Container ACL (Задание списка управления доступом для контейнера) |Да |Да (*) |
-| Delete Container (Удаление контейнера) |Нет |Да |
+| Delete Container (Удаление контейнера) |нет |Да |
 | Lease Container (Аренда контейнера) |Да |Да |
-| List Blobs (Отображение списка BLOB-объектов) |Нет |Нет |
+| List Blobs (Отображение списка BLOB-объектов) |нет |нет |
 
 (*) Разрешения, определенные SetContainerACL, кэшируются, а обновление разрешений занимает 30 секунд, в течение которых нельзя гарантировать согласованность обновлений.  
 
@@ -115,11 +115,11 @@ catch (StorageException ex)
 | Lease Blob (Аренда BLOB-объекта) (*) |Да |Да |
 | Создание моментального снимка большого двоичного объекта |Да |Да |
 | Копирование BLOB-объекта |Да |Да (для исходного и целевого большого двоичного объекта) |
-| Прерывание копирования большого двоичного объекта |Нет |Нет |
-| Delete BLOB (Удаление BLOB-объекта) |Нет |Да |
-| Put Block (Вставка блокировки) |Нет |Нет |
+| Прерывание копирования большого двоичного объекта |нет |нет |
+| Delete BLOB (Удаление BLOB-объекта) |нет |Да |
+| Put Block (Вставка блокировки) |нет |нет |
 | Put Block List (Вставка списка блокировки) |Да |Да |
-| Get Block List (Получение списка блокировки) |Да |Нет |
+| Get Block List (Получение списка блокировки) |Да |нет |
 | Put Page (Вставка страницы) |Да |Да |
 | Get Page Ranges (Получение диапазона страницы) |Да |Да |
 
@@ -244,13 +244,13 @@ customer.ETag = "*";
 
 | Операция | Returns ETag value (Возврат значения ETag) | Requires If-Match request header (Требует заголовок запроса If-Match) |
 |:--- |:--- |:--- |
-| Query Entities (Сущности запроса) |Да |Нет |
-| Insert Entity (Вставка сущности ) |Да |Нет |
+| Query Entities (Сущности запроса) |Да |нет |
+| Insert Entity (Вставка сущности ) |Да |нет |
 | Update Entity (Обновление сущности) |Да |Да |
 | Merge Entity (Слияние сущностей) |Да |Да |
-| Delete Entity (Удаление сущности) |Нет |Да |
-| Insert or Replace Entity (Вставка или замена сущности) |Да |Нет |
-| Insert or Merge Entity (Вставка или слияние сущностей) |Да |Нет |
+| Delete Entity (Удаление сущности) |нет |Да |
+| Insert or Replace Entity (Вставка или замена сущности) |Да |нет |
+| Insert or Merge Entity (Вставка или слияние сущностей) |Да |нет |
 
 Обратите внимание, что операции **Insert or Replace Entity** и **Insert or Merge Entity***не* проверяют параллелизм, так как они не отправляют значение ETag в службу таблиц.  
 
@@ -281,7 +281,7 @@ customer.ETag = "*";
 
 * [Управление блокировкой файлов](https://msdn.microsoft.com/library/azure/dn194265.aspx)  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полный образец приложения, упомянутый в блоге:  
 

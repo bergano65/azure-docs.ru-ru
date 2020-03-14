@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aa66299753ab11dcad280361cb5fb6f0c31ef242
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378311"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263924"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -166,6 +166,6 @@ ms.locfileid: "78378311"
 > [!WARNING]
 > Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Включите обратную запись паролей с помощью руководства [Руководство. Включение компонента обратной записи паролей](tutorial-enable-writeback.md).

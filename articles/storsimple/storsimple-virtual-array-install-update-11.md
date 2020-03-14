@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 07/18/2018
 ms.author: alkohli
 ms.openlocfilehash: 88b903d68e4398b4e30b0b7435279c29bee6cd6b
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384833"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79254486"
 ---
 # <a name="install-update-11-on-your-storsimple-virtual-array"></a>Установка обновления 1.1 для виртуального массива StorSimple
 
@@ -76,7 +76,7 @@ ms.locfileid: "78384833"
    
     ![Поиск в каталоге](./media/storsimple-virtual-array-install-update-11/download1.png)
 
-4. Нажмите кнопку **Загрузить**.
+4. Щелкните элемент **Загрузить**.
 
 5. Скачайте два файла в папку. Эту папку также можно скопировать в сетевую папку, доступную с вашего устройства.
 
@@ -125,6 +125,6 @@ ms.locfileid: "78384833"
 6. Повторите шаги 2–4 для установки исправлений системы безопасности Windows с помощью файла `Windows8.1-KB4284815-x64`. Виртуальный массив перезапускается после установки, и вам потребуется войти в локальной веб-интерфейс.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).

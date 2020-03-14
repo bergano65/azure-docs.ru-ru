@@ -13,11 +13,11 @@ ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: f72dd5595d67ae989cec5681d22def9a2f929adf
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78377956"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253160"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>Устранение неполадок на портале "Мои приложения"
 
@@ -81,7 +81,7 @@ ms.locfileid: "78377956"
 
 Если после выполнения этих действий вы по-прежнему не можете получить доступ к приложению, обратитесь в службу технической поддержки вашей организации за помощью.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После входа на портал " **Мои приложения** " можно также обновить сведения о профиле и учетной записи, сведения о группе и сведения об проверке доступа (если у вас есть разрешение).
 

@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 12/24/2019
 ms.author: ramamill
 ms.openlocfilehash: 01aef3aca4f6967b1681bff9598c7dd7a24739cd
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77611749"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257268"
 ---
 # <a name="manage-vmware-vcenter-server"></a>Управление VMware vCenter Server
 
@@ -53,7 +53,7 @@ ms.locfileid: "77611749"
 1. В окне **Добавление vCenter**укажите понятное имя узла vSphere или сервера vCenter.
 1. Укажите IP-адрес или полное доменное имя сервера.
 1. Если серверы VMware настроены на прослушивание запросов через другой порт, оставьте порт 443.
-1. Выберите учетную запись, используемую для подключения к серверу VMware vCenter или vSphere ESXi. Затем нажмите кнопку **ОК**.
+1. Выберите учетную запись, используемую для подключения к серверу VMware vCenter или vSphere ESXi. Нажмите кнопку **ОК**.
 
 ## <a name="modify-credentials"></a>Изменение учетных данных
 
@@ -120,6 +120,6 @@ ms.locfileid: "77611749"
 1. [Добавьте старый vCenter Server](#add-vmware-server-to-the-vault) и его IP-адрес на сервер конфигурации.
 1. [Повторно включите репликацию](vmware-azure-tutorial.md#enable-replication) для виртуальных машин, оставшихся на старом сервере.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникнут проблемы, см. раздел [Устранение неполадок vCenter Server обнаружения](vmware-azure-troubleshoot-vcenter-discovery-failures.md).

@@ -10,12 +10,12 @@ ms.date: 01/02/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f592872e67ff8559060706ddb3b1e45839b6acaf
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: 5f091341bee65d17b42e289bab1192142d095637
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75665472"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136131"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-the-azure-portal"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault портал Azure
 
@@ -94,7 +94,7 @@ ms.locfileid: "75665472"
 
 ## <a name="disable-customer-managed-keys"></a>Отключение ключей, управляемых клиентом
 
-При отключении управляемых пользователем ключей учетная запись хранения шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, выполните следующие действия.
+При отключении управляемых пользователем ключей учетная запись хранения снова шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, выполните следующие действия.
 
 1. Перейдите к своей учетной записи хранения и отобразите параметры **шифрования** .
 1. Снимите флажок рядом с параметром **использовать собственный ключ** .

@@ -12,11 +12,11 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.openlocfilehash: 4146191453e7c7a589dacc41345a36a29a540de5
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964359"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260778"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "76964359"
 
 В этой статье показано, как подготавливать Azure-SSIS IR с помощью портал Azure, Azure PowerShell и шаблона Azure Resource Manager.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -75,7 +75,7 @@ ms.locfileid: "76964359"
 
 В следующей таблице сравниваются некоторые функции сервера базы данных SQL Azure и управляемого экземпляра, которые связаны с Azure-ССИР IR.
 
-| Функция | Одна база данных или эластичный пул| Управляемый экземпляр |
+| Компонент | Одна база данных или эластичный пул| управляемый экземпляр |
 |---------|--------------|------------------|
 | **Планирование** | Агент SQL Server недоступна.<br/><br/>См. раздел [Планирование выполнения пакета в конвейере фабрики данных](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity).| Доступен агент Управляемый экземпляр. |
 | **Аутентификация** | Экземпляр SSISDB можно создать с пользователем автономной базы данных, который представляет любую группу Azure AD с управляемым удостоверением фабрики данных в качестве члена роли **db_owner** .<br/><br/>См. раздел [Включение аутентификации Azure AD для создания экземпляра SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Экземпляр SSISDB можно создать с пользователь автономной базы данных, который представляет управляемое удостоверение фабрики данных. <br/><br/>См. раздел [Включение аутентификации Azure AD для создания экземпляра SSISDB в управляемом экземпляре базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database-managed-instance). |
@@ -118,7 +118,7 @@ ms.locfileid: "76964359"
 
    1. Для параметра **сохранить деньги**выберите параметр преимущество гибридного использования Azure для среды выполнения интеграции: **Да** или **нет**. Если для экономии вы намерены использовать гибридный режим с собственной лицензией SQL Server по программе Software Assurance, выберите **Да**.
 
-   1. Выберите **Далее**.
+   1. Нажмите кнопку **Далее**.
 
 1. В разделе **Параметры SQL** выполните следующие шаги.
 
@@ -368,7 +368,7 @@ if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) . Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
 Если группа ресурсов уже существует, не копируйте этот код в скрипт. 
 

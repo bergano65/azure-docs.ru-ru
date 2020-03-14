@@ -11,11 +11,11 @@ ms.author: mlandzic
 ms.reviewer: ''
 ms.date: 09/03/2019
 ms.openlocfilehash: 0dbed3db8e106b9bfe1b48ff2b9bc52840fc4c3a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380106"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256098"
 ---
 # <a name="time-zones-in-azure-sql-database-managed-instance"></a>Часовые пояса в Управляемый экземпляр Базы данных SQL Azure
 
@@ -146,7 +146,7 @@ ms.locfileid: "78380106"
 | Середина-Атлантическое время (зима) | (UTC-02:00) Середина-Атлантическое-старое |
 | Азорские острова (зима) | (UTC-01:00) Острова |
 | Кабо — стандартное время | (UTC-01:00) Кабо-Верде. |
-| Формат UTC. | (UTC) Время в формате UTC |
+| время в формате UTC | (UTC) Время в формате UTC |
 | GMT — зимнее время | (UTC + 00:00) Дублин, Эдинбург, Лиссабон, Лондон |
 | Стандартное время по Гринвичу | (UTC + 00:00) Монровия, Рейкьявике |
 | Ц. Европа (зима) | (UTC + 01:00) Амстердам, Берлин, Берн, Рим, Стокгольм, Вена |

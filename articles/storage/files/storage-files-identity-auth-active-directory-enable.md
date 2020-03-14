@@ -4,14 +4,14 @@ description: Узнайте, как включить проверку подли
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/03/2020
+ms.date: 03/11/2020
 ms.author: rogarana
-ms.openlocfilehash: 1f904435622c8128810bb0e381308c8a308dd360
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: d9d2e06cc3beae8a7bb8ea1b4eee15fb1641ddd4
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79129386"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79255227"
 ---
 # <a name="enable-active-directory-authentication-over-smb-for-azure-file-shares"></a>Включение проверки подлинности Active Directory в SMB для файловых ресурсов Azure
 
@@ -129,7 +129,8 @@ Connect-AzAccount
 #Select the target subscription for the current session
 Select-AzSubscription -SubscriptionId "<your-subscription-id-here>"
 
-#Register the target storage account with your active directory environment under the target OU
+#Register the target storage account with your active directory environment under the target OU (for example: "OU=ComputersOU,DC=prod,DC=corp,DC=contoso,DC=com")
+#You can choose to create the identity that represents the storage account as either a Service Logon Account or Computer Account, depends on the AD permission you have and preference. 
 join-AzStorageAccountForAuth -ResourceGroupName "<resource-group-name-here>" -Name "<storage-account-name-here>" -DomainAccountType "<ServiceLogonAccount|ComputerAccount>" -OrganizationalUnitName "<ou-name-here>"
 ```
 
@@ -142,7 +143,7 @@ join-AzStorageAccountForAuth -ResourceGroupName "<resource-group-name-here>" -Na
 
 Во первых, он проверяет вашу среду. В частности, он проверяет, установлен ли [Active Directory PowerShell](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps) и выполняется ли оболочка с правами администратора. Затем он проверяет, установлен ли [модуль AZ. Storage 1.11.1-Preview](https://www.powershellgallery.com/packages/Az.Storage/1.11.1-preview) , и устанавливает его, если это не так. Если эти проверки пройдены, он проверит ваше рекламное объявление на наличие [учетной записи компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (по умолчанию) или [учетной записи входа службы](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) , которая уже создана с именем субъекта-службы или UPN, как CIFS/My-Storage-Account-Name-here. File. Core. Windows. NET. Если учетная запись не существует, она будет создана, как описано в разделе b ниже.
 
-#### <a name="b-creating-an-identity-representing-the-storage-account-in-your-ad-manually"></a>b. Создание удостоверения, представляющего учетную запись хранения в AD вручную
+#### <a name="b-creating-an-identity-representing-the-storage-account-in-your-ad-manually"></a>б. Создание удостоверения, представляющего учетную запись хранения в AD вручную
 
 Чтобы создать эту учетную запись вручную, создайте ключ Kerberos для учетной записи хранения с помощью `New-AzStorageAccountKey -KeyName kerb1`. Затем используйте этот ключ Kerberos в качестве пароля для вашей учетной записи. Этот ключ используется только во время настройки и не может использоваться для операций управления или плоскости данных в учетной записи хранения.
 
@@ -150,7 +151,7 @@ join-AzStorageAccountForAuth -ResourceGroupName "<resource-group-name-here>" -Na
 
 Если подразделение использует срок действия пароля, необходимо обновить пароль до максимального срока действия пароля, чтобы предотвратить сбои проверки подлинности при доступе к файловым ресурсам Azure. Дополнительные сведения см. в [статье об обновлении пароля учетной записи AD](#update-ad-account-password) .
 
-Сохраним идентификатор безопасности только что созданной учетной записи, он понадобится для следующего шага.
+Сохраним идентификатор безопасности только что созданной учетной записи, он понадобится для следующего шага. Удостоверение AD, которое вы только что создали, представляющее учетную запись хранения, не требуется синхронизировать с Azure AD.
 
 ##### <a name="c-enable-the-feature-on-your-storage-account"></a>c. Включение функции в учетной записи хранения
 

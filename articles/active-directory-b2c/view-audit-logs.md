@@ -13,11 +13,11 @@ ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 83086fa2cb96eba423b9111134a0406d7256821f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378831"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264223"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -37,7 +37,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 |Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, администратор, обращающийся к списку политик B2C).         |
 |Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора с помощью портал Azure. |
 |Приложение | Операции создания, чтения, обновления и удаления (CRUD) в приложениях B2C. |
-|Клавиши |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
+|Ключ |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
 |Ресурс |Операции CRUD с ресурсами B2C. Например, политики и поставщики удостоверений.
 |Аутентификация |Проверка учетных данных пользователя и выдачи маркера.|
 

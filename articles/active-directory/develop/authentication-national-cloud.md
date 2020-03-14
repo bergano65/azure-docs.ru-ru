@@ -14,11 +14,11 @@ ms.author: negoe
 ms.reviewer: negoe,celested
 ms.custom: aaddev
 ms.openlocfilehash: 20a053369149dc29d6485c49bb091a75bb9fb591
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78377187"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263001"
 ---
 # <a name="national-clouds"></a>Местные облака
 
@@ -74,7 +74,7 @@ ms.locfileid: "78377187"
 
 Чтобы узнать, как создать приложение с помощью платформы Microsoft Identity, следуйте указаниям в [руководстве по библиотеке проверки подлинности Майкрософт (MSAL)](msal-national-cloud.md). В частности, это приложение будет входить в систему пользователя и получить маркер доступа для вызова API Microsoft Graph.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. также:
 

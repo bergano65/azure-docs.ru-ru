@@ -5,11 +5,11 @@ services: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.openlocfilehash: e4945535417f7d8d33308121267ba97e1f835e13
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374673"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79259608"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Возможности контроля доступа и идентификации в Службе Azure Kubernetes (AKS)
 
@@ -68,7 +68,7 @@ ms.locfileid: "78374673"
 
 Элемент ClusterRoleBinding действует аналогичным образом, привязывая роли к пользователям, но его можно применить к ресурсам в пределах всего кластера, а не в определенном пространстве имен. Такой подход позволяет предоставить администраторам или инженерам службы поддержки доступ ко всем ресурсам в кластере AKS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с Azure AD и Kubernetes RBAC, см. статью [интеграция Azure Active Directory с AKS][aks-aad].
 

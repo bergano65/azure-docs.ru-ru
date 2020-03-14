@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: aprameyr
 ms.openlocfilehash: cf21af43de553a2802289e44eaece12952d077d3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391370"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258568"
 ---
 # <a name="replicas-and-instances"></a>Реплики и экземпляры 
 В этой статье приводится обзор жизненного цикла реплик служб с отслеживанием состояния и экземпляров служб без отслеживания состояния.
@@ -132,7 +132,7 @@ Service Fabric открывает нерабочую реплику должны
 > Модели программирования более высокого уровня, такие как [Reliable Actors](service-fabric-reliable-actors-introduction.md) и [Reliable Services](service-fabric-reliable-services-introduction.md), скрывают представление о роли реплики от разработчика. В Reliable Actors понятие роли не требуется. В Reliable Services оно сильно упрощено для большинства сценариев.
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 [Жизненный цикл Reliable Services (C#)](service-fabric-reliable-services-lifecycle.md)

@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6feed11fcfc597658f3ec148b5dd18bb7e3f8f83
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376238"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253550"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 
@@ -311,11 +311,11 @@ ms.locfileid: "78376238"
 
     а. Запустите [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
 
-    b. Щелкните **Соединители**.
+    б. Щелкните **Соединители**.
 
     c. Выберите **соединитель Active Directory**, к которому относится пользователь.
 
-    d. Выберите **Search Connector Space**(Поиск пространства соединителя).
+    . Выберите **Search Connector Space**(Поиск пространства соединителя).
 
     д) В поле **Scope** (Область) выберите **DN or Anchor** (Различающееся имя или привязка), а затем введите полное различающееся имя пользователя, для которого требуется устранить неполадки.
 
@@ -333,7 +333,7 @@ ms.locfileid: "78376238"
 
     ![Сведения о пользователе в журнале обращений и преобразований](./media/tshoot-connect-password-hash-synchronization/cspasswordsync.png)  
 
-    i. Щелкните **Metaverse Object Properties** (Свойства объекта метавселенной), чтобы показать список атрибутов пользователя.  
+    и. Щелкните **Metaverse Object Properties** (Свойства объекта метавселенной), чтобы показать список атрибутов пользователя.  
 
     ![Сведения метавселенной](./media/tshoot-connect-password-hash-synchronization/mvpasswordsync.png)  
 

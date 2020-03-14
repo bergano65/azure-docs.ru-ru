@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: ca4051e56f7d51ac7ac5fbe534cb8fc536d64a68
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: b43169b59425e97b0aa614eb64a5c86c20179a8d
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78368691"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136822"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакет SDK для Android
 
@@ -109,7 +109,7 @@ Android Studio позволяет настроить виртуальное ус
     * настроить сведения о проверке подлинности Azure Maps;
     * получить экземпляр элемента управления картой в методе **onCreate**.
 
-    Настройка сведений о проверке подлинности для класса `AzureMaps` глобально с помощью методов `setSubscriptionKey` или `setAadProperties` делает его ненужным, поэтому вам не придется добавлять данные проверки подлинности в каждое представление. 
+    Если задать сведения о проверке подлинности в классе `AzureMaps` глобально с помощью методов `setSubscriptionKey` или `setAadProperties`, не нужно будет добавлять эти сведения в каждое представление. 
 
     Элемент управления картой содержит собственные методы жизненного цикла для управления жизненным циклом OpenGL Android. Эти методы жизненного цикла должны вызываться непосредственно из содержащего их действия. Чтобы приложение правильно вызывало методы жизненного цикла элемента управления картой, необходимо переопределить следующие методы жизненного цикла в действии, которое содержит элемент управления Map. И необходимо вызвать соответствующий метод управления картой. 
 
@@ -273,7 +273,7 @@ mapControl.onReady(map -> {
 Узнайте, как добавить данные наложения на карту.
 
 > [!div class="nextstepaction"]
-> [Добавление слоя символов на карту Android](https://review.docs.microsoft.com/azure/azure-maps/how-to-add-symbol-to-android-map)
+> [Добавление слоя символов на карту Android](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Добавление фигур на карту Android](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)

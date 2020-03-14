@@ -4,11 +4,11 @@ description: Справочная документация по параметр
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.openlocfilehash: 3853ccbfd492bfaf4a82d62e6d31ab938285ee2e
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76963705"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277834"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "76963705"
 
 |Ключ|Образец значения|
 |---|------------|
-|AzureWebJobsDashboard|DefaultEndpointsProtocol = HTTPS; AccountName =<name>; AccountKey =<key>|
+|AzureWebJobsDashboard|DefaultEndpointsProtocol=https;AccountName=<name>;AccountKey=<key>|
 
 > [!NOTE]
 > Для повышения производительности и эффективности среда выполнения версии 2. x и более поздних версий использует APPINSIGHTS_INSTRUMENTATIONKEY и App Insights для мониторинга, а не `AzureWebJobsDashboard`.
@@ -47,7 +47,7 @@ ms.locfileid: "76963705"
 
 |Ключ|Образец значения|
 |---|------------|
-|AzureWebJobsDisableHomepage|true|
+|AzureWebJobsDisableHomepage|Да|
 
 Если пропустить этот параметр приложения или задать для него значение `false`, то в ответ на URL-адрес `<functionappname>.azurewebsites.net` отобразится страница, аналогичная приведенной ниже.
 
@@ -59,7 +59,7 @@ ms.locfileid: "76963705"
 
 |Ключ|Образец значения|
 |---|------------|
-|AzureWebJobsDotNetReleaseCompilation|true|
+|AzureWebJobsDotNetReleaseCompilation|Да|
 
 ## <a name="azurewebjobsfeatureflags"></a>AzureWebJobsFeatureFlags
 
@@ -120,7 +120,7 @@ ms.locfileid: "76963705"
 
 |Ключ|Образец значения|
 |---|------------|
-|РЕЖИМ\_СОВМЕСТИМОСТИ функций\_v2\_|true|
+|РЕЖИМ\_СОВМЕСТИМОСТИ функций\_v2\_|Да|
 
 ## <a name="functions_worker_process_count"></a>ФУНКЦИИ\_число\_рабочих процессов\_
 
@@ -191,7 +191,7 @@ _Только Windows._
 
 |Ключ|Значение|Description|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|Вызовы с URL-адресом внутреннего сервера, указывающим на функцию в локальном приложение-функция больше не будут отправляться непосредственно в функцию, а вместо этого будут переданы обратно в интерфейс HTTP для приложение-функция|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|Да|Вызовы с URL-адресом внутреннего сервера, указывающим на функцию в локальном приложение-функция больше не будут отправляться непосредственно в функцию, а вместо этого будут переданы обратно в интерфейс HTTP для приложение-функция|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Это значение по умолчанию. Вызовы с URL-адресом внутреннего сервера, указывающим на функцию в локальном приложение-функция будут переадресовываться непосредственно в эту функцию|
 
 
@@ -201,7 +201,7 @@ _Только Windows._
 
 |Ключ|Значение|Description|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|Да|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|
 
 ### <a name="example"></a>Пример
@@ -221,9 +221,9 @@ _Только Windows._
     }
 }
 ```
-|Декодирование URL-адреса|Входные данные|Выходные данные|
+|Декодирование URL-адреса|Входные данные|Вывод|
 |-|-|-|
-|true|myfunction.com/test%2fapi|example.com/test/api
+|Да|myfunction.com/test%2fapi|example.com/test/api
 |false|myfunction.com/test%2fapi|example.com/test%2fapi|
 
 

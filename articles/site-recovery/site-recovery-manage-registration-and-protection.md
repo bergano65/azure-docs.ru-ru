@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: rajanaki
 ms.openlocfilehash: a411fc9a95bef595a8fc49cad77189bb88fb7661
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875799"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257632"
 ---
 # <a name="remove-servers-and-disable-protection"></a>Удаление серверов и отключение защиты
 
@@ -46,8 +46,8 @@ ms.locfileid: "67875799"
 
 1. Отключите репликацию для виртуальных машин Hyper-V, расположенных на узле.
 2. Отмените политики для сайта Hyper-V. Выберите **Site Recovery Infrastructure (Инфраструктура Site Recovery)**  > **For Hyper-V Sites (Для сайтов Hyper-V)**  >  **Политики репликации** и щелкните дважды соответствующую политику. Щелкните сайт правой кнопкой мыши и выберите **Отменить**.
-3. Удалите узлы Hyper-V. Выберите **Site Recovery Infrastructure** (Инфраструктура Site Recovery)  >  **For Hyper-V Sites** (Для сайтов Hyper-V)  >  **Hyper-V Hosts** (Узлы Hyper-V), а затем щелкните сервер правой кнопкой мыши и выберите **Удалить**.
-4. После того как все узлы на сайте Hyper-V будут удалены, удалите сайт Hyper-V. Выберите **Site Recovery Infrastructure** (Инфраструктура Site Recovery)  >  **For Hyper-V Sites** (Для сайтов Hyper-V)  >  **Hyper-V Sites** (Сайты Hyper-V), а затем щелкните сайт правой кнопкой мыши и выберите **Удалить**.
+3. Удалите узлы Hyper-V. Выберите **Site Recovery Infrastructure** (Инфраструктура Site Recovery)  > **For Hyper-V Sites** (Для сайтов Hyper-V)  > **Hyper-V Hosts** (Узлы Hyper-V), а затем щелкните сервер правой кнопкой мыши и выберите **Удалить**.
+4. После того как все узлы на сайте Hyper-V будут удалены, удалите сайт Hyper-V. Выберите **Site Recovery Infrastructure** (Инфраструктура Site Recovery)  > **For Hyper-V Sites** (Для сайтов Hyper-V)  > **Hyper-V Sites** (Сайты Hyper-V), а затем щелкните сайт правой кнопкой мыши и выберите **Удалить**.
 5. Если узел Hyper-V был **отключен**, то на каждом удаленном узле Hyper-V запустите приведенный ниже сценарий. Этот скрипт очистит параметры на сервере и отменит его регистрацию в хранилище.
 
 
@@ -157,7 +157,7 @@ ms.locfileid: "67875799"
 
 -  Выберите **Защищенные элементы** > **Реплицированные элементы**, щелкните виртуальную машину правой кнопкой мыши и выберите **Отключить репликацию**.
 > [!NOTE]
-> Служба Mobility Service не будет удалена с защищенных серверов, ее необходимо удалить вручную. Если вы планируете еще раз защитить сервер, вы можете пропустить удаление службы Mobility Service.
+> Служба мобильности не будет удалена с защищенных серверов, вам необходимо удалить ее вручную. Если вы планируете повторно защитить сервер, то удаление службы мобильности можно пропустить.
 
 ## <a name="disable-protection-for-a-hyper-v-virtual-machine-hyper-v-to-azure"></a>Отключение защиты виртуальной машины Hyper-V (из Hyper-V в Azure)
 

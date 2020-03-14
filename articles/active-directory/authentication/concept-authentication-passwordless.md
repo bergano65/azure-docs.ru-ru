@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ffe3d359dffea3278337de00bea42e0b959e10f6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378273"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264041"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Параметры проверки подлинности с паролем для Azure Active Directory
 
@@ -92,7 +92,7 @@ Windows Hello для бизнеса идеально подходит для и�
    - Microsoft Authenticator приложение. работает в сценариях, где используется проверка подлинности Azure AD, включая все браузеры, во время установки Windows 10 из Box (OOBE) и интегрированные мобильные приложения в любой операционной системе.
    - Ключи безопасности. Работа на экране блокировки для Windows 10 и веб-страниц в поддерживаемых браузерах, таких как Microsoft ребро (как устаревшие, так и новые).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включение параметров пассвордлессс ключа безопасности FIDO2 в Организации](howto-authentication-passwordless-security-key.md)
 

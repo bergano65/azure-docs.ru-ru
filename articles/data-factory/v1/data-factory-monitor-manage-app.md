@@ -13,11 +13,11 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: de56ba1281d0f20c8be838fa1bc9ebc24905b26c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384766"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260375"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
 > [!div class="op_single_selector"]
@@ -79,7 +79,7 @@ ms.locfileid: "78384766"
 
 Дополнительные сведения об окнах действий см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md).
 
-### <a name="diagram-view"></a>Представление "Схема"
+### <a name="diagram-view"></a>Представление схемы
 Представление схемы позволяет отслеживать состояние фабрики данных и всех ее ресурсов, а также управлять ими. При выборе сущности фабрики данных (набора данных или конвейера) в представлении схемы вы заметите следующее:
 
 * сущность фабрики данных выбрана в представлении в виде дерева;
@@ -159,10 +159,10 @@ ms.locfileid: "78384766"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Description</th>
 </tr>
 <tr>
-    <td rowspan="8">Ожидание</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
+    <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
 </tr>
 <tr>
 <td>DatasetDependencies</td><td>Восходящие зависимости не готовы.</td>
@@ -204,13 +204,13 @@ ms.locfileid: "78384766"
 <tr>
 <td>-</td><td>Не удалось создать или проверить окно действий.</td>
 </tr>
-<td>Готово</td><td>-</td><td>Окно действия готово к использованию.</td>
+<td>Ready</td><td>-</td><td>Окно действия готово к использованию.</td>
 </tr>
 <tr>
 <td>Пропущено</td><td>-</td><td>Окно действий не обработано.</td>
 </tr>
 <tr>
-<td>Нет</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>
+<td>None</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>
 </tr>
 </table>
 

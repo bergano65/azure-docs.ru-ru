@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b6da67589b15b4ab043510c0375c26c12f645adb
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378104"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263885"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure на основе облачных служб
 
@@ -277,7 +277,7 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 
 Выберите, что произойдет, если пользователи, не зарегистрированные с помощью MFA, попытаются пройти проверку подлинности. Используйте параметр реестра `REQUIRE_USER_MATCH` в пути реестра `HKLM\Software\Microsoft\AzureMFA` для управления поведением функции. Этот параметр имеет один параметр конфигурации.
 
-| Клавиши | Значение | По умолчанию |
+| Ключ | Значение | По умолчанию |
 | --- | --- | --- |
 | `REQUIRE_USER_MATCH` | TRUE/FALSE | Не задано (эквивалентно значению True) |
 

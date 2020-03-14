@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 2ff987448e3900c2a533789b2f38fd3ced71ce72
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365590"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267460"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
 
@@ -122,7 +122,7 @@ ms.locfileid: "78365590"
    
    Скопируйте этот ключ и сохраните его для регистрации новых устройств в службе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [приступить к работе](storsimple-virtual-array-deploy1-portal-prep.md) с виртуальным массивом StorSimple.
 * Узнайте, как [администрировать устройство StorSimple](storsimple-ova-web-ui-admin.md).
 

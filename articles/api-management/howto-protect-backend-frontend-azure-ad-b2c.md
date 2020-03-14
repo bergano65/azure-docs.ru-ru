@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/20/2020
 ms.author: wieastbu
 ms.custom: fasttrack-new
-ms.openlocfilehash: fde48d63bd343fbed1f82e60819131ffb043a795
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: ae776fc3fb1f9eb4b7fa9747f2769dcccb25e042
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78967635"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136352"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Защита серверной части SPA с помощью OAuth 2,0, Azure Active Directory B2C и Azure API Management
 
@@ -250,7 +250,7 @@ ms.locfileid: "78967635"
 
    > [!NOTE]
    > Следующий раздел является необязательным и не применяется к уровню **потребления** , который не поддерживает портал разработчика.
-   > Если вы не планируете использовать портал разработчика или не можете использовать его, так как вы используете уровень потребления, пропустите этот шаг и сразу переходите к [разделу "Построение JavaScript SPA для использования API"](##build-the-javascript-spa-to-consume-the-api).
+   > Если вы не планируете использовать портал разработчика или не можете использовать его, так как вы используете уровень потребления, пропустите этот шаг и сразу переходите к [разделу "Построение JavaScript SPA для использования API"](#build-the-javascript-spa-to-consume-the-api).
 
 ## <a name="optional-configure-the-developer-portal"></a>Используемых Настройка портала разработчика
 

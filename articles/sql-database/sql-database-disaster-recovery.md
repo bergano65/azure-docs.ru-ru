@@ -12,11 +12,11 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 06/21/2019
 ms.openlocfilehash: d28edd28dcbe31bfe63c2d0a9c3e975967efef04
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78359174"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256384"
 ---
 # <a name="restore-an-azure-sql-database-or-failover-to-a-secondary"></a>Восстановление базы данных SQL Azure или переход на базу данных-получатель при отказе
 
@@ -116,7 +116,7 @@ ms.locfileid: "78359174"
 
 Если для доступа к базе данных требуется аудит, то после восстановления базы данных необходимо включить аудит. Дополнительные сведения см. в статье [Аудит базы данных](sql-database-auditing.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [создаваемых автоматически резервных копий базы данных SQL](sql-database-automated-backups.md)
 - Чтобы изучить сценарии проектирования и восстановления непрерывности бизнес-процессов, ознакомьтесь со [сценариями обеспечения непрерывности](sql-database-business-continuity.md)

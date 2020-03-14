@@ -4,11 +4,11 @@ description: Узнайте, как настроить защищенный кл
 ms.topic: conceptual
 ms.date: 09/06/2018
 ms.openlocfilehash: 0f384da75f09390e9b0988722b974e7e16d13e63
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363387"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258802"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -198,7 +198,7 @@ ms.locfileid: "78363387"
 ## <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Удаленное подключение к экземпляру из набора масштабирования виртуальных машин или узлу кластера
 Каждый из типов узлов, задаваемый в кластере, отражается на конфигурации масштабируемого набора виртуальных машин. <!--See [Remote connect to a Virtual Machine Scale Set instance][remote-connect-to-a-vm-scale-set] for details. -->
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 На этом этапе у вас имеется защищенный кластер, использующий сертификаты для аутентификации управления. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).  Кроме того, узнайте [о вариантах поддержки Service Fabric](service-fabric-support.md).
 
 <!-- Links -->

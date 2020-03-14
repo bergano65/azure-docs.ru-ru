@@ -5,11 +5,11 @@ services: container-service
 ms.topic: article
 ms.date: 01/03/2019
 ms.openlocfilehash: f759f15cf98546cb95ba0adb5890885f85ca6aa1
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77592794"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79259387"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -104,7 +104,7 @@ AzureDiagnostics
 
 Чтобы проанализировать данные журнала, в следующей таблице представлена схема, используемая для каждого события:
 
-| Имя поля               | Описание |
+| Имя поля               | Description |
 |--------------------------|-------------|
 | *resourceId*             | Ресурс Azure, с помощью которого был создан журнал |
 | *time*                   | Метка времени — время передачи журнала |
@@ -117,13 +117,13 @@ AzureDiagnostics
 
 ## <a name="log-roles"></a>Роли журнала
 
-| Role                     | Описание |
+| Роль                     | Description |
 |--------------------------|-------------|
 | *акссервице*             | Отображаемое имя в журнале аудита для операции плоскости управления (из Хкпсервице) |
 | *мастерклиент*           | Отображаемое имя в журнале аудита для Мастерклиентцертификате — сертификат, полученный с помощью команды AZ AKS Get-credentials. |
 | *нодеклиент*             | Отображаемое имя для ClientCertificate, которое используется узлами агента |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как включить и просмотреть журналы для основных компонентов Kubernetes в своем кластере AKS. Чтобы отслеживать и устранять неполадки, можно также [Просмотреть журналы Kubelet][kubelet-logs] и [включить доступ к узлам SSH][aks-ssh].
 

@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 79ebf543a3880a4f2c8ee8c0d706c268ef3f08d2
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78671712"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263651"
 ---
 # <a name="troubleshoot-on-premises-azure-ad-password-protection"></a>Устранение неполадок: Локальная защита паролей Azure AD
 
@@ -247,7 +247,7 @@ PS C:\> Get-AzureADPasswordProtectionDCAgent | Where-Object {$_.SoftwareVersion 
 
    Этот путь будет другим, если общий ресурс sysvol настроен в нестандартном местоположении.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Часто задаваемые вопросы о функции защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
 

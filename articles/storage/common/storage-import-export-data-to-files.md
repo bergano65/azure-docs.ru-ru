@@ -9,11 +9,11 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 201d0c0a545c5ba7ae1bb0b5e119f7acb1ae362f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363914"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268305"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -115,7 +115,7 @@ ms.locfileid: "78363914"
 ## <a name="step-2-create-an-import-job"></a>Шаг 2. Создание задания импорта
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
-1. Войдите в систему по адресу https://portal.azure.com/.
+1. Войдите в https://portal.azure.com/.
 2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта**.
 
     ![Перейдите к импорту и экспорту](./media/storage-import-export-data-to-blobs/import-to-blob1.png)

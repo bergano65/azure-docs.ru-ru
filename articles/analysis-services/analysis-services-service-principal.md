@@ -8,11 +8,11 @@ ms.date: 02/18/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: dc163de9a7fb46d62f4bc2983e040e68bbf9231c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375160"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266147"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -24,14 +24,14 @@ Analysis Services также поддерживает операции, выпо
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
  
-Субъекты-службы можно создать на портале Azure или с помощью PowerShell. Дополнительные сведения см. в следующих разделах:
+Субъекты-службы можно создать на портале Azure или с помощью PowerShell. Дополнительные сведения см. на следующих ресурсах:
 
 [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)   
 [Создание субъекта-службы с помощью PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 ## <a name="store-credential-and-certificate-assets-in-azure-automation"></a>Хранение учетных данных и сертификатов в службе автоматизации Azure
 
-Учетные данные и сертификаты субъектов-служб могут храниться в службе автоматизации Azure для выполнения операций с модулями runbook. Дополнительные сведения см. в следующих разделах:
+Учетные данные и сертификаты субъектов-служб могут храниться в службе автоматизации Azure для выполнения операций с модулями runbook. Дополнительные сведения см. на следующих ресурсах:
 
 [Ресурсы учетных данных в службе автоматизации Azure](../automation/automation-credentials.md)   
 [Сертификация активов в службе автоматизации Azure](../automation/automation-certificates.md)
@@ -108,6 +108,6 @@ tbl.RequestRefresh(RefreshType.Full);
 db.Model.SaveChanges();
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
 [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)   

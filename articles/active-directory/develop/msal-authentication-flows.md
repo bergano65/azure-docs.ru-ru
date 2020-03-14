@@ -14,11 +14,11 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: ace636152f6a0c9bf3896860eb17cc291bef2887
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77085126"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262910"
 ---
 # <a name="authentication-flows"></a>Потоки проверки подлинности
 
@@ -39,7 +39,7 @@ ms.locfileid: "77085126"
  
 В зависимости от того, как строится клиент, он может использовать один (или несколько) потоков проверки подлинности, поддерживаемых платформой Microsoft Identity.  Эти потоки могут создавать различные маркеры (id_tokens, маркеры обновления, маркеры доступа), а также коды авторизации, и для их работы требуются разные токены. На этой диаграмме представлен обзор:
  
-|Поток | Необходима | id_token | Twitter, | маркер обновления | Код авторизации | 
+|Поток | необходима | id_token | Twitter, | маркер обновления | Код авторизации | 
 |-----|----------|----------|--------------|---------------|--------------------|
 |[Поток кода авторизации](v2-oauth2-auth-code-flow.md) | | x | x | x | x|  
 |[Неявный поток](v2-oauth2-implicit-grant-flow.md) | | x        | x    |      |                    |

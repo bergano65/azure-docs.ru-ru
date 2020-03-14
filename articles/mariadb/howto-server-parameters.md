@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 12/9/2019
 ms.openlocfilehash: ba091d05aa243fab08138c96827d2f657d9755de
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363557"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251509"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mariadb-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MariaDB с помощью портала Azure
 
@@ -39,8 +39,8 @@ ms.locfileid: "78363557"
 
 |**Ценовая категория**| **Виртуальные ядра**|**Буферный пул InnoDB**|
 |---|---|---|
-|Базовый| 1| 1024|
-|Базовый| 2| 2560|
+|Basic| 1| 1024|
+|Basic| 2| 2560|
 |Общее назначение| 2| 3584|
 |Общее назначение| 4| 7680|
 |Общее назначение| 8| 15360|

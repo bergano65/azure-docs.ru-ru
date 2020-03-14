@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 602f5a794f90e52ac80ea71ea2ed3656a7e0e5e7
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.openlocfilehash: 5bab70b6b023a4e6510e32368d407a38388cde2f
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78269459"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256072"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "78269459"
 - Хранение резервных копий и восстановление данных, аварийное восстановление и архивация.
 - Хранение данных для анализа локальной службой или службой, размещенной в Azure.
 
-Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage/client), [Java](https://docs.microsoft.com/java/api/overview/azure/storage), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
+Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](/dotnet/api/overview/azure/storage?view=azure-dotnet), [Java](https://docs.microsoft.com/java/api/overview/azure/storage), [Node.js](https://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](https://azure.github.io/azure-storage-php/) и [Ruby](https://azure.github.io/azure-storage-ruby).
 
 Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище объектов в Azure](../blobs/storage-blobs-introduction.md).
 
@@ -84,9 +84,9 @@ ms.locfileid: "78269459"
 
 Дополнительные сведения о хранилище таблиц см. в статье [Обзор табличного хранилища](../tables/table-storage-overview.md).
 
-## <a name="disk-storage"></a>Дисковый накопитель
+## <a name="disk-storage"></a>Хранилище дисков
 
-Управляемый диск Azure — это виртуальный жесткий диск (VHD). Его можно представить как физический диск на локальном сервере, но который является виртуализированным. Управляемые диски Azure хранятся в виде страничных BLOB-объектов, которые являются произвольным объектом хранения ввода-вывода в Azure. Эти диски называются управляемыми, так как это абстракция на основе страничных BLOB-объектов, а также контейнеров больших двоичных объектов и учетных записей хранения Azure. В случае с управляемыми дисками вам нужно только подготовить диск к работе, а Azure позаботится об остальном.
+Управляемый диск Azure — это виртуальный жесткий диск (VHD). Его можно представить как физический диск на локальном сервере, но который является виртуализированным. Управляемые диски Azure хранятся в виде страничных BLOB-объектов, которые являются произвольным объектом хранения ввода-вывода в Azure. Мы вызываем управляемый диск "Managed", так как он является абстракцией для страничных BLOB-объектов, контейнеров больших двоичных объектов и учетных записей хранения Azure. В случае с управляемыми дисками вам нужно только подготовить диск к работе, а Azure позаботится об остальном.
 
 Дополнительные сведения об управляемых дисках см. [в статье Введение в управляемые диски Azure](../../virtual-machines/windows/managed-disks-overview.md).
 
@@ -167,6 +167,6 @@ ms.locfileid: "78269459"
 - [Клиентские инструменты службы хранилища Azure](../storage-explorers.md)
 - [Средства для разработчиков Azure](https://azure.microsoft.com/tools/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать работу со службой хранилища Azure, см. дополнительные сведения о [создании учетной записи хранения](storage-account-create.md).

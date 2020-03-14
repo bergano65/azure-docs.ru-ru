@@ -10,17 +10,17 @@ ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 137623e4c52d24061aec8ec11fca0fc02ca54c7f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372511"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79252692"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
 В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. Для Windows это агент Log Analytics для Windows, который также называется Microsoft Monitoring Agent (MMA). Для Linux это Log Analytics агент для Linux.
 
@@ -231,7 +231,7 @@ Machine is already registered
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HybridRunbookWorker`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

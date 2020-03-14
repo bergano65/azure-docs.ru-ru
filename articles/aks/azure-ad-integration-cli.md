@@ -5,11 +5,11 @@ services: container-service
 ms.topic: article
 ms.date: 04/16/2019
 ms.openlocfilehash: d17ae12beecf9d83ef6d688af799787c5ccf322b
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395371"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253056"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
@@ -19,7 +19,7 @@ ms.locfileid: "78395371"
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
-Действуют следующие ограничения.
+Действительны следующие ограничения.
 
 - Azure Active Directory можно включить только при создании нового кластера с поддержкой RBAC. Вы не можете включить эту службу в существующем кластере AKS.
 
@@ -76,7 +76,7 @@ serverApplicationSecret=$(az ad sp credential reset \
 
 Azure AD требуются разрешения для выполнения следующих действий:
 
-* Чтение данных каталога
+* Прочитать данные каталога
 * Вход в систему и чтение профиля пользователя.
 
 Назначьте эти разрешения с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] :
@@ -241,7 +241,7 @@ error: You must be logged in to the server (Unauthorized)
 * Пользователь не может быть членом более чем 200 групп.
 * Секрет, определенный в регистрации приложения для сервера, совпадает со значением, настроенным с помощью `--aad-server-app-secret`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полный сценарий, содержащий команды, приведенные в этой статье, см. в разделе [сценарий интеграции Azure AD в репозитории примеров AKS][complete-script].
 

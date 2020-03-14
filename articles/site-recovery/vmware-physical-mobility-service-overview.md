@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: c5acc9637fe5afe8f7dd32d23fbdbb80373b4f61
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77539388"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256839"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -123,7 +123,7 @@ ms.locfileid: "77539388"
 /Role | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 /InstallLocation| Необязательный параметр. Указывает расположение установки (любая папка).
 /Platform | Mandatory. Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.<br/><br/> Если виртуальные машины Azure разрабатывается как физические компьютеры, укажите **VMware**.
-/Silent| Необязательно. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+/Silent| Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**
@@ -161,7 +161,7 @@ ms.locfileid: "77539388"
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 -d | Необязательный параметр. Указывает расположение установки службы Mobility Service: /usr/local/ASR.
 -v | Mandatory. Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.
--q | Необязательно. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+-Q | Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**
@@ -193,6 +193,6 @@ Microsoft-ASR\_UA\*UBUNTU-16.04-64\*release.tar.gz | Сервер Ubuntu Linux 1
 Microsoft-ASR_UA\*DEBIAN7-64\*release.tar.gz | Debian 7
 Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов](vmware-azure-install-mobility-service.md)

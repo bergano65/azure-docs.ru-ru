@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 12/06/2019
 ms.assetid: 9aafa5a0-1e57-4644-bf79-97124db27aa2
 ms.openlocfilehash: 6cecbb18e0cd6f548e1688ef978f10dcee7d9fbc
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395534"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79252367"
 ---
 # <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций хранилища служб восстановления Azure с помощью REST API
 
@@ -43,9 +43,9 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Успешный ответ для операции GET показан ниже:
 
-|Имя  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
-|200, ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
 ##### <a name="example-response"></a>Пример ответа
 
@@ -83,11 +83,11 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Дополнительные сведения см. [в документации по REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/update#request-body)
 
-|Имя  |Обязательно  |Тип  |Описание  |
+|Имя  |Обязательно  |Тип  |Description  |
 |---------|---------|---------|---------|
 |eTag     |         |   String      |  Необязательный eTag       |
-|расположение     |  true       |String         |   Расположение ресурса      |
-|подключения     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
+|location     |  Да       |String         |   Расположение ресурса      |
+|properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |tags     |         | Объект        |     Теги ресурсов    |
 
 #### <a name="example-request-body"></a>Примеры текста запроса
@@ -107,9 +107,9 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Успешный ответ для операции PATCH показан ниже:
 
-|Имя  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
-|200, ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
+|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
 ##### <a name="example-response"></a>Пример ответа
 
@@ -127,7 +127,7 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Create Azure Recovery Services backup policies using REST API](backup-azure-arm-userestapi-createorupdatepolicy.md) (Создание политик резервного копирования Служб восстановления Azure с помощью REST API)
 

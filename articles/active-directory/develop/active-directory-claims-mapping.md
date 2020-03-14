@@ -14,11 +14,11 @@ ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.openlocfilehash: 49860504da8dd2a1b994a23a24df95f59c959c90
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375806"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263196"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "78375806"
 
 Существуют определенные наборы утверждений, которые определяют, как и когда они используются в токенах.
 
-| Набор утверждений | Описание |
+| Набор утверждений | Description |
 |---|---|
 | Набор основных утверждений | Имеется в каждом токене, независимо от политики. Эти утверждения также считаются ограниченными, изменить их не удастся. |
 | Набор базовых утверждений | Включает в себя утверждения, которые по умолчанию добавляются в токены (в дополнение к основному набору утверждений). Вы можете опустить или изменить базовые утверждения с помощью политик сопоставления утверждений. |
@@ -105,7 +105,7 @@ ms.locfileid: "78375806"
 | grant_type |
 | graph |
 | group_sids |
-| Имя_команды |
+| groups |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -142,7 +142,7 @@ ms.locfileid: "78375806"
 | onprem_sam_account_name |
 | onprem_sid |
 | openid2_id |
-| пароль |
+| password |
 | platf |
 | polids |
 | pop_jwk |
@@ -158,10 +158,10 @@ ms.locfileid: "78375806"
 | request_nonce |
 | ресурс |
 | роль |
-| роли |
+| roles |
 | Область |
 | scp |
-| SID |
+| sid |
 | сигнатура |
 | signin_state |
 | src1 |
@@ -284,20 +284,20 @@ ms.locfileid: "78375806"
 
 #### <a name="table-3-valid-id-values-per-source"></a>Таблица 3. Допустимый идентификатор значения для источника
 
-| Источник | ИДЕНТИФИКАТОР | Описание |
+| Источник | ID | Description |
 |-----|-----|-----|
-| Пользователь | surname | Имя семейства |
+| Пользователь | surname | Фамилия |
 | Пользователь | givenname | Имя |
 | Пользователь | displayname | Отображаемое имя |
 | Пользователь | objectid | ObjectID |
-| Пользователь | почта | Электронная почта |
+| Пользователь | mail | Электронная почта |
 | Пользователь | userprincipalname | Имя участника-пользователя |
 | Пользователь | department|отдел;|
 | Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
 | Пользователь | netbiosname| NetBIOS-имя |
 | Пользователь | dnsdomainname | Доменное DNS-имя |
 | Пользователь | onpremisesecurityidentifier | Локальный идентификатор безопасности |
-| Пользователь | companyname| Имя организации |
+| Пользователь | companyname| Название организации |
 | Пользователь | streetaddress | Почтовый адрес |
 | Пользователь | postalcode | Почтовый индекс |
 | Пользователь | preferredlanguange | Предпочитаемый язык |
@@ -321,7 +321,7 @@ ms.locfileid: "78375806"
 | Пользователь | othermail | Остальные сообщения |
 | Пользователь | country | Страна |
 | Пользователь | city | Город |
-| Пользователь | state | Состояние |
+| Пользователь | state | Штат |
 | Пользователь | jobtitle | Должность |
 | Пользователь | employeeid | Код сотрудника |
 | Пользователь | facsimiletelephonenumber | Номер телефона, факса |
@@ -358,10 +358,10 @@ ms.locfileid: "78375806"
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Таблица 4. Методы преобразования и ожидаемые входные и выходные данные
 
-|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Описание|
+|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Description|
 |-----|-----|-----|-----|
 |Join|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
-|ExtractMailPrefix|почта|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
+|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
@@ -384,9 +384,9 @@ ms.locfileid: "78375806"
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Таблица 5. Атрибуты, разрешенные в качестве источника данных для идентификатора имени SAML NameID
 
-|Источник|ИДЕНТИФИКАТОР|Описание|
+|Источник|ID|Description|
 |-----|-----|-----|
-| Пользователь | почта|Электронная почта|
+| Пользователь | mail|Электронная почта|
 | Пользователь | userprincipalname|Имя участника-пользователя|
 | Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
 | Пользователь | employeeid|Код сотрудника|
@@ -410,7 +410,7 @@ ms.locfileid: "78375806"
 
 | TransformationMethod | Ограничения |
 | ----- | ----- |
-| ExtractMailPrefix | Нет |
+| ExtractMailPrefix | None |
 | Join | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
@@ -435,7 +435,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 В Azure AD существует множество сценариев, когда можно настроить утверждения, добавляемые в токены для определенных субъектов-служб. В этом разделе рассматриваются наиболее распространенные сценарии, которые помогут вам понять, как использовать политики сопоставления утверждений.
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>предварительные требования
 
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не работали с Azure AD, прежде чем продолжить работу с этими примерами, советуем ознакомиться со статьей [Краткое руководство: настройка среды разработки](quickstart-create-new-tenant.md).
 
@@ -524,6 +524,6 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портал Azure, см [. раздел как настроить утверждения, выданные в токене SAML для корпоративных приложений](active-directory-saml-claims-customization.md) .

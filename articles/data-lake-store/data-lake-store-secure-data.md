@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: cebdff5ed233516683df3330e8fd3332ded664e5
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78361398"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260310"
 ---
 # <a name="securing-data-stored-in-azure-data-lake-storage-gen1"></a>Защита данных, хранимых в Azure Data Lake Storage 1-го поколения
 Для защиты данных, хранимых в Azure Data Lake Storage 1-го поколения, необходимо выполнить три шага.  При управлении доступом на основе ролей (RBAC) и при использовании списков управления доступом (ACL) режим доступа должен обеспечивать пользователям и группам безопасности полный доступ к данным.
