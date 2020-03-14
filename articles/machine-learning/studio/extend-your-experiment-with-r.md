@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: d6174459237399ea370ee9c36ba537391104a917
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 7b4b869695eb2073121a889cd81d99c4fc06d4b9
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168555"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79218036"
 ---
 # <a name="azure-machine-learning-studio-classic-extend-your-experiment-with-r"></a>Машинное обучение Azure Studio (классическая модель): расширение эксперимента с помощью R 
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 Функциональные возможности Машинное обучение Azure Studio (классическая модель) можно расширить с помощью языка R, используя модуль « [выполнение сценария r][execute-r-script] ».
 
 Этот модуль принимает несколько входных наборов данных и выдает один выходной набор данных. Можно ввести скрипт R в параметр **r Script** модуля [EXECUTE r Script][execute-r-script] .

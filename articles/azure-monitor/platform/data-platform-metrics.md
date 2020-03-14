@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
 ms.openlocfilehash: 80bbf83da17d833c4f8bb1abac9610d70e9a23cb
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78362279"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274831"
 ---
 # <a name="metrics-in-azure-monitor"></a>Метрики в Azure Monitor
 
@@ -34,7 +34,7 @@ ms.locfileid: "78362279"
 |:---|:---|
 | Анализ | Используйте [Обозреватель метрик](metrics-charts.md) для анализа собранных метрик на диаграмме и сравнения метрик из разных ресурсов. |
 | Визуализация | Закрепление диаграммы из обозревателя метрик на [панели мониторинга Azure](../learn/tutorial-app-dashboards.md).<br>Создание [книги](../app/usage-workbooks.md) для объединения с несколькими наборами данных в интерактивном отчете. Экспортируйте результаты запроса в [Grafana](grafana-plugin.md) , чтобы использовать его панель мониторинга и объединить с другими источниками данных. |
-| Оповещение | Настройте [правило оповещения метрики](alerts-metric.md) , которое отправляет уведомление или выполняет [Автоматическое действие](action-groups.md) , когда значение метрики пересекает порог. |
+| Предупреждение | Настройте [правило оповещения метрики](alerts-metric.md) , которое отправляет уведомление или выполняет [Автоматическое действие](action-groups.md) , когда значение метрики пересекает порог. |
 | Автоматизация |  Используйте [Автомасштабирование](autoscale-overview.md) для увеличения или уменьшения ресурсов на основе значения метрики, перевернутого пороговое значение. |
 | Экспорт | [Перенаправление метрик в журналы](resource-logs-collect-storage.md) для анализа данных в Azure Monitor метриках вместе с данными в журналах Azure Monitor и для хранения значений метрик дольше 93 дней.<br>Потоковая передача метрик в [концентратор событий](stream-monitoring-data-event-hubs.md) для их направления на внешние системы. |
 | Получение | Доступ к значениям метрик из командной строки с помощью [командлетов PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights)<br>Доступ к значениям метрик из пользовательского приложения с помощью [REST API](rest-api-walkthrough.md).<br>Доступ к значениям метрик из командной строки с помощью [CLI](/cli/azure/monitor/metrics). |
@@ -115,7 +115,7 @@ ms.locfileid: "78362279"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [платформе Azure Monitor Data Platform](data-platform.md).
 - Сведения о [данных журнала в Azure Monitor](data-platform-logs.md).

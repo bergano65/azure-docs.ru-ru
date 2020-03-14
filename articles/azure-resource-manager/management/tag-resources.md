@@ -4,11 +4,11 @@ description: Здесь описано, как применить теги, чт
 ms.topic: conceptual
 ms.date: 01/03/2020
 ms.openlocfilehash: c7f8d8672e205fa677bff33c8ed173c1105b26c6
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77166604"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274506"
 ---
 # <a name="use-tags-to-organize-your-azure-resources"></a>Использование тегов для организации ресурсов в Azure
 

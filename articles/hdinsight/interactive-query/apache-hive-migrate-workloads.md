@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/13/2019
-ms.openlocfilehash: eceb4b312476d701ec8ce4eb0ce4886621824b3a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: ec96189185a06c1fcbd95eed6216ade47f3089c3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841597"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79214644"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
 
@@ -39,33 +39,81 @@ ms.locfileid: "76841597"
 
 Если вы используете внутренний хранилище метаданных, можно использовать запросы для экспорта определений объектов в хранилище метаданных Hive и их импорта в новую базу данных.
 
+После завершения этого сценария предполагается, что старый кластер больше не будет использоваться для доступа к любой из таблиц или баз данных, на которые ссылается скрипт.
+
+> [!NOTE]
+> В случае таблиц ACID будет создана новая копия данных, расположенных под таблицей.
+
 1. Подключитесь к кластеру HDInsight с помощью [клиента Secure Shell (SSH)](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 1. Подключитесь к HiveServer2 с помощью [клиента Beeline](../hadoop/apache-hadoop-use-hive-beeline.md) из открытого сеанса SSH, введя следующую команду:
 
     ```hiveql
-    for d in `beeline -u "jdbc:hive2://localhost:10001/;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show databases;"`; do echo "create database $d; use $d;" >> alltables.sql; for t in `beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show tables;"` ; do ddl=`beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show create table $t;"`; echo "$ddl ;" >> alltables.sql ; echo "$ddl" | grep -q "PARTITIONED\s*BY" && echo "MSCK REPAIR TABLE $t ;" >> alltables.sql ; done; done
+    for d in `beeline -u "jdbc:hive2://localhost:10001/;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show databases;"`; 
+    do
+        echo "Scanning Database: $d"
+        echo "create database if not exists $d; use $d;" >> alltables.hql; 
+        for t in `beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show tables;"`;
+        do
+            echo "Copying Table: $t"
+            ddl=`beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show create table $t;"`;
+
+            echo "$ddl;" >> alltables.hql;
+            lowerddl=$(echo $ddl | awk '{print tolower($0)}')
+            if [[ $lowerddl == *"'transactional'='true'"* ]]; then
+                if [[ $lowerddl == *"partitioned by"* ]]; then
+                    # partitioned
+                    raw_cols=$(beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show create table $t;" | tr '\n' ' ' | grep -io "CREATE TABLE .*" | cut -d"(" -f2- | cut -f1 -d")" | sed 's/`//g');
+                    ptn_cols=$(beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show create table $t;" | tr '\n' ' ' | grep -io "PARTITIONED BY .*" | cut -f1 -d")" | cut -d"(" -f2- | sed 's/`//g');
+                    final_cols=$(echo "(" $raw_cols "," $ptn_cols ")")
+
+                    beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "create external table ext_$t $final_cols TBLPROPERTIES ('transactional'='false');";
+                    beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "insert into ext_$t select * from $t;";
+                    staging_ddl=`beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show create table ext_$t;"`;
+                    dir=$(echo $staging_ddl | grep -io " LOCATION .*" | grep -m1 -o "'.*" | sed "s/'[^-]*//2g" | cut -c2-);
+
+                    parsed_ptn_cols=$(echo $ptn_cols| sed 's/ [a-z]*,/,/g' | sed '$s/\w*$//g');
+                    echo "create table flattened_$t $final_cols;" >> alltables.hql;
+                    echo "load data inpath '$dir' into table flattened_$t;" >> alltables.hql;
+                    echo "insert into $t partition($parsed_ptn_cols) select * from flattened_$t;" >> alltables.hql;
+                    echo "drop table flattened_$t;" >> alltables.hql;
+                    beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "drop table ext_$t";
+                else
+                    # not partitioned
+                    beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "create external table ext_$t like $t TBLPROPERTIES ('transactional'='false');";
+                    staging_ddl=`beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "show create table ext_$t;"`;
+                    dir=$(echo $staging_ddl | grep -io " LOCATION .*" | grep -m1 -o "'.*" | sed "s/'[^-]*//2g" | cut -c2-);
+
+                    beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "insert into ext_$t select * from $t;";
+                    echo "load data inpath '$dir' into table $t;" >> alltables.hql;
+                    beeline -u "jdbc:hive2://localhost:10001/$d;transportMode=http" --showHeader=false --silent=true --outputformat=tsv2 -e "drop table ext_$t";
+                fi
+            fi
+            echo "$ddl" | grep -q "PARTITIONED\s*BY" && echo "MSCK REPAIR TABLE $t;" >> alltables.hql;
+        done;
+    done
     ```
 
-    Эта команда создает файл с именем **аллтаблес. SQL**. Так как база данных по умолчанию не может быть удалена или создана повторно, удалите инструкцию `create database default;` в **аллтаблес. SQL**.
+    Эта команда создает файл с именем **аллтаблес. HQL**.
 
-1. Выйдите из сеанса SSH. Затем введите команду scp, чтобы загрузить **аллтаблес. SQL** локально.
+1. Выйдите из сеанса SSH. Затем введите команду scp, чтобы загрузить **аллтаблес. HQL** локально.
 
     ```bash
-    scp sshuser@CLUSTERNAME-ssh.azurehdinsight.net:alltables.sql c:/hdi
+    scp sshuser@CLUSTERNAME-ssh.azurehdinsight.net:alltables.hql c:/hdi
     ```
 
-1. Отправьте **аллтаблес. SQL** в *Новый* кластер HDInsight.
+1. Отправьте **аллтаблес. HQL** в *Новый* кластер HDInsight.
 
     ```bash
-    scp c:/hdi/alltables.sql sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/home/sshuser/
+    scp c:/hdi/alltables.hql sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/home/sshuser/
     ```
 
 1. Затем с помощью SSH подключитесь к *новому* кластеру HDInsight. Запустите следующий код из сеанса SSH:
 
     ```bash
-    beeline -u "jdbc:hive2://localhost:10001/;transportMode=http" -i alltables.sql
+    beeline -u "jdbc:hive2://localhost:10001/;transportMode=http" -i alltables.hql
     ```
+
 
 ## <a name="upgrade-metastore"></a>Обновление хранилище метаданных
 
@@ -78,7 +126,7 @@ ms.locfileid: "76841597"
 |Тип скрипта|- Custom|
 |Имя|Обновление Hive|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh`|
-|Типы узлов|Head|
+|Типы узлов|Заголовок|
 |Параметры|SQLSERVERNAME ИМЯ ПОЛЬЗОВАТЕЛЯ, ПАРОЛЬ|
 
 > [!Warning]  
@@ -181,7 +229,7 @@ alter table myacidtable compact 'major';
 |Тип скрипта|- Custom|
 |Имя|DAS|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh`|
-|Типы узлов|Head|
+|Типы узлов|Заголовок|
 
 Подождите 10 – 15 минут, а затем запустите Data Analytics Studio с помощью этого URL-адреса: `https://CLUSTERNAME.azurehdinsight.net/das/`.
 

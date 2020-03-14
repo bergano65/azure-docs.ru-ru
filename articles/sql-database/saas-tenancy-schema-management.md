@@ -12,11 +12,11 @@ ms.author: sstein
 ms.reviewer: billgib
 ms.date: 09/19/2018
 ms.openlocfilehash: b6802d97b964b8863f6c2fce0cebfe16782b46fe
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78397162"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269215"
 ---
 # <a name="manage-schema-in-a-saas-application-using-the-database-per-tenant-pattern-with-azure-sql-database"></a>Управление схемой в приложении SaaS с помощью шаблона с однотенантной базой данных с использованием Базы данных SQL Azure
  
@@ -47,7 +47,7 @@ ms.locfileid: "78397162"
 
 Шаблон с однотенантной базой данных эффективно изолирует данные клиента, но увеличивает количество баз данных для управления и обслуживания. [Задания обработки эластичных БД](elastic-jobs-overview.md) упрощают администрирование баз данных SQL и управление ими. Задания позволяют вам безопасно и надежно выполнять задачи (скрипты Transact-SQL) в группах баз данных. Эти задания могут развертывать схемы и обычные изменения эталонных данных по всем клиентским базам данных в приложении. Задания обработки эластичных БД также могут использоваться для обслуживания *шаблона* базы данных, применяемого для создания клиентов, обеспечивая его самыми последними схемами и эталонными данными.
 
-![экран](media/saas-tenancy-schema-management/schema-management-dpt.png)
+![конструктора](media/saas-tenancy-schema-management/schema-management-dpt.png)
 
 
 ## <a name="elastic-jobs-limited-preview"></a>Ограниченная предварительная версия заданий обработки эластичных БД

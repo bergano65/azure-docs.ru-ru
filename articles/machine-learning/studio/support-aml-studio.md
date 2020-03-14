@@ -9,14 +9,16 @@ ms.topic: conceptual
 author: peterclu
 ms.author: amlstudiodocs
 ms.date: 01/18/2019
-ms.openlocfilehash: ee4ef451888638c0ba33d7938c88b836b28f3fe5
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: f7146db33368877b8eb029e106559477376c5953
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894628"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79217907"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Техническая поддержка и обучение для Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 В этой статье содержатся сведения о том, как узнать больше о Машинное обучение Azure Studio (классическая модель) и получить поддержку по вопросам и вопросам.
 

@@ -15,11 +15,11 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: e2ccce13e4ef09426d0f3a02dcbce2f330b0ead8
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78366848"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251028"
 ---
 # <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки Media Encoder Standard
 
@@ -69,7 +69,7 @@ ms.locfileid: "78366848"
 | MPEG-2 (до 422 Profile и High Level, включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs® и D10) |До 422 Profile |
 | MPEG-1 |Да |
 | VC-1/WMV9 |Да |
-| Canopus HQ/HQX |Нет |
+| Canopus HQ/HQX |нет |
 | MPEG-4, часть 2 |Да |
 | [Theora](https://en.wikipedia.org/wiki/Theora) |Да |
 | YUV420 без сжатия или мезонинный файл |Да |
@@ -93,10 +93,10 @@ ms.locfileid: "78366848"
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Да |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Да |
 | AMR (adaptive multi-rate) |Да |
-| AES (SMPTE 331M и 302M, AES3-2003) |Нет |
-| Dolby® E |Нет |
-| Dolby® Digital (AC3) |Нет |
-| Dolby® Digital Plus (E-AC3) |Нет |
+| AES (SMPTE 331M и 302M, AES3-2003) |нет |
+| Dolby® E |нет |
+| Dolby® Digital (AC3) |нет |
+| Dolby® Digital Plus (E-AC3) |нет |
 
 ## <a name="output-formats-and-codecs"></a>Выходные форматы и кодеки
 В следующей таблице перечислены кодеки и форматы файлов, поддерживаемые для экспорта.
@@ -112,7 +112,7 @@ ms.locfileid: "78366848"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 [Кодирование содержимого по запросу с помощью служб мультимедиа Azure](media-services-encode-asset.md)
 
 [Кодирование с помощью стандартного кодировщика мультимедиа](media-services-dotnet-encode-with-media-encoder-standard.md)

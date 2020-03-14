@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
-ms.date: 12/19/2018
-ms.openlocfilehash: bea6a572e55f1a79515c385fd7b79881c54ae65e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 03/10/2020
+ms.openlocfilehash: 958dcd441d35b5c28746ff79a0b341e5aa7383a6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73802922"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79214026"
 ---
 # <a name="monitoring-performance-azure-sql-database-using-dynamic-management-views"></a>Мониторинг производительности Базы данных SQL Azure с помощью динамических административных представлений
 
@@ -28,7 +28,7 @@ ms.locfileid: "73802922"
 - динамические представления управления, относящиеся к выполнению;
 - динамические представления управления, относящиеся к транзакциям.
 
-Подробные сведения о динамических административных представлениях см. в статье [Динамические административные представления и функции (Transact-SQL)](https://msdn.microsoft.com/library/ms188754.aspx) электронной документации по SQL Server. 
+Подробные сведения о динамических административных представлениях см. в статье [Динамические административные представления и функции (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views) электронной документации по SQL Server.
 
 ## <a name="permissions"></a>Разрешения
 
@@ -40,6 +40,17 @@ GRANT VIEW DATABASE STATE TO database_user;
 ```
 
 В экземпляре локального сервера SQL Server динамические административные представления возвращают сведения о состоянии сервера. В базе данных SQL они возвращают сведения только о текущей логической базе данных.
+
+Эта статья содержит коллекцию запросов динамического административного представления, которые можно выполнять с помощью SQL Server Management Studio или Azure Data Studio, чтобы обнаружить следующие типы проблем с производительностью запросов.
+
+- [Определение запросов, связанных с чрезмерным потреблением ресурсов ЦП](#identify-cpu-performance-issues)
+- [PAGELATCH_ * и WRITE_LOG ожидания, связанные с узкими местами ввода-вывода](#identify-io-performance-issues)
+- [PAGELATCH_ * ожидания вызваны состязанием за Биттемпдб](#identify-tempdb-performance-issues)
+- [RESOURCE_SEMAHPORE ожиданий, вызванных проблемами предоставления памяти](#identify-memory-grant-wait-performance-issues)
+- [Определение размеров базы данных и объекта](#calculating-database-and-objects-sizes)
+- [Получение сведений об активных сеансах](#monitoring-connections)
+- [Получение сведений об использовании ресурсов в масштабе всей системы и базы данных](#monitor-resource-use)
+- [Получение сведений о производительности запроса](#monitoring-query-performance)
 
 ## <a name="identify-cpu-performance-issues"></a>Выявление проблем производительности ЦП
 
@@ -56,11 +67,11 @@ GRANT VIEW DATABASE STATE TO database_user;
 ```sql
 PRINT '-- top 10 Active CPU Consuming Queries (aggregated)--';
 SELECT TOP 10 GETDATE() runtime, *
-FROM(SELECT query_stats.query_hash, SUM(query_stats.cpu_time) 'Total_Request_Cpu_Time_Ms', SUM(logical_reads) 'Total_Request_Logical_Reads', MIN(start_time) 'Earliest_Request_start_Time', COUNT(*) 'Number_Of_Requests', SUBSTRING(REPLACE(REPLACE(MIN(query_stats.statement_text), CHAR(10), ' '), CHAR(13), ' '), 1, 256) AS "Statement_Text"
-     FROM(SELECT req.*, SUBSTRING(ST.text, (req.statement_start_offset / 2)+1, ((CASE statement_end_offset WHEN -1 THEN DATALENGTH(ST.text)ELSE req.statement_end_offset END-req.statement_start_offset)/ 2)+1) AS statement_text
+FROM (SELECT query_stats.query_hash, SUM(query_stats.cpu_time) 'Total_Request_Cpu_Time_Ms', SUM(logical_reads) 'Total_Request_Logical_Reads', MIN(start_time) 'Earliest_Request_start_Time', COUNT(*) 'Number_Of_Requests', SUBSTRING(REPLACE(REPLACE(MIN(query_stats.statement_text), CHAR(10), ' '), CHAR(13), ' '), 1, 256) AS "Statement_Text"
+    FROM (SELECT req.*, SUBSTRING(ST.text, (req.statement_start_offset / 2)+1, ((CASE statement_end_offset WHEN -1 THEN DATALENGTH(ST.text)ELSE req.statement_end_offset END-req.statement_start_offset)/ 2)+1) AS statement_text
           FROM sys.dm_exec_requests AS req
-               CROSS APPLY sys.dm_exec_sql_text(req.sql_handle) AS ST ) AS query_stats
-     GROUP BY query_hash) AS t
+                CROSS APPLY sys.dm_exec_sql_text(req.sql_handle) AS ST ) AS query_stats
+    GROUP BY query_hash) AS t
 ORDER BY Total_Request_Cpu_Time_Ms DESC;
 ```
 
@@ -72,14 +83,14 @@ ORDER BY Total_Request_Cpu_Time_Ms DESC;
 PRINT '--top 10 Active CPU Consuming Queries by sessions--';
 SELECT TOP 10 req.session_id, req.start_time, cpu_time 'cpu_time_ms', OBJECT_NAME(ST.objectid, ST.dbid) 'ObjectName', SUBSTRING(REPLACE(REPLACE(SUBSTRING(ST.text, (req.statement_start_offset / 2)+1, ((CASE statement_end_offset WHEN -1 THEN DATALENGTH(ST.text)ELSE req.statement_end_offset END-req.statement_start_offset)/ 2)+1), CHAR(10), ' '), CHAR(13), ' '), 1, 512) AS statement_text
 FROM sys.dm_exec_requests AS req
-     CROSS APPLY sys.dm_exec_sql_text(req.sql_handle) AS ST
+    CROSS APPLY sys.dm_exec_sql_text(req.sql_handle) AS ST
 ORDER BY cpu_time DESC;
 GO
 ```
 
 ### <a name="the-cpu-issue-occurred-in-the-past"></a>Проблема с ЦП была в прошлом
 
-Если проблема возникла в прошлом и вы хотите найти первопричину, используйте [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store). Пользователи с доступом к базе данных могут использовать T-SQL для запроса данных из хранилища запросов.  В конфигурации хранилища запросов по умолчанию используется степень детализации 1 час.  Используйте следующий запрос для поиска деятельности ресурсоемких запросов. Этот запрос возвращает 15 самых ресурсоемких запросов.  Не забудьте изменить `rsi.start_time >= DATEADD(hour, -2, GETUTCDATE()`:
+Если проблема возникла в прошлом и вы хотите найти первопричину, используйте [хранилище запросов](https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store). Пользователи с доступом к базе данных могут использовать T-SQL для запроса данных из хранилища запросов. В конфигурации хранилища запросов по умолчанию используется степень детализации 1 час. Используйте следующий запрос для поиска деятельности ресурсоемких запросов. Этот запрос возвращает 15 самых ресурсоемких запросов. Не забудьте изменить `rsi.start_time >= DATEADD(hour, -2, GETUTCDATE()`:
 
 ```sql
 -- Top 15 CPU consuming queries by query hash
@@ -242,8 +253,8 @@ GO
 Для состязаний за tempdb рекомендуется сократить или повторно написать код приложения, который зависит от `tempdb`.  Распространенные области использования `tempdb`:
 
 - Временные таблицы
-- Переменные таблицы
-- Параметры, которые возвращают табличное значение
+- Табличные переменные
+- Возвращающие табличные значения параметры
 - Использование хранилища версий (в частности, связанное с длительными транзакциями)
 - Запросы с планами запросов, которые используют сортировку, хэш-соединения и буферы
 
@@ -541,7 +552,7 @@ FROM sys.dm_db_resource_stats;
 
 ![Использование ресурсов Базы данных SQL](./media/sql-database-performance-guidance/sql_db_resource_utilization.png)
 
-Судя по этим данным, пиковая нагрузка на процессор составляет чуть более 50 % от максимальной нагрузки для объема вычислительных ресурсов P2 (полдень вторника). Если мощность процессора была главным фактором ресурсного профиля приложения, то клиент может решить, что P2 — оптимальный объем вычислительных ресурсов, который гарантирует стабильную работу с учетом средней нагрузки. Если ожидается рост нагрузки на приложение с течением времени, рекомендуется увеличить запас ресурсов, чтобы приложения не достигло предела производительности. Увеличив объем вычислительных ресурсов, можно избежать заметных пользователю ошибок, которые могут возникнуть из-за нехватки в базе данных мощности для эффективной обработки запросов, особенно в средах, чувствительных к задержкам. Это может быть база данных, поддерживающая приложение, создающее веб-страницы на основе запросов к базе данных.
+Судя по этим данным, пиковая нагрузка на процессор составляет чуть более 50 % от максимальной нагрузки для объема вычислительных ресурсов P2 (полдень вторника). Если ЦП является главным фактором в профиле ресурса приложения, можно решить, что P2 — это правильный вычислительный размер, гарантирующий, что Рабочая нагрузка всегда будет соответствовать. Если ожидается рост нагрузки на приложение с течением времени, рекомендуется увеличить запас ресурсов, чтобы приложения не достигло предела производительности. Увеличив объем вычислительных ресурсов, можно избежать заметных пользователю ошибок, которые могут возникнуть из-за нехватки в базе данных мощности для эффективной обработки запросов, особенно в средах, чувствительных к задержкам. Это может быть база данных, поддерживающая приложение, создающее веб-страницы на основе запросов к базе данных.
 
 Для других приложений эту диаграмму можно интерпретировать иначе. Например, если приложение обрабатывало данные по зарплате каждый день и получало ту же диаграмму, то выполнение таких "пакетных заданий" будет эффективным и для объема вычислительных ресурсов P1. Объем вычислительных ресурсов Р1 предоставляет 100 единиц DTU, а P2 — 200 единиц DTU. Таким образом, объем вычислительных ресурсов P1 предоставляет половину объема вычислительных ресурсов P2. Таким образом, 50 процентов использования ЦП на уровне P2 равняется 100 процентам использования ЦП на уровне P1. Если в работе приложения не возникает пауз, возможно, не имеет значения, сколько времени выполняется задание — 2 или 2,5 часа, а важно только, чтобы оно было завершено сегодня. Приложение такой категории может использовать объем вычислительных ресурсов Р1. Вы можете воспользоваться тем, что в определенное время дня использование ресурсов ниже, и перенести пиковую нагрузку именно на этот период. Объем вычислительных ресурсов Р1 может отлично подойти для такого приложения (и сэкономить деньги), если задания будут завершаться вовремя в течение одного дня.
 
@@ -563,7 +574,7 @@ ORDER BY start_time DESC
 
 Ниже показаны различные способы использования представления каталога **sys.resource_stats** для получения сведений об использовании ресурсов в базе данных SQL.
 
-1. Чтобы просмотреть данные использования ресурсов на прошлой неделе для базы данных userdb1, можно выполнить следующий запрос:
+1. Чтобы просмотреть использование ресурсов за прошлую неделю для базы данных userdb1, можно выполнить следующий запрос:
 
     ```sql
     SELECT *
@@ -635,25 +646,25 @@ ORDER BY start_time DESC
 
 Чтобы просмотреть число параллельных запросов, выполните в Базе данных SQL этот запрос Transact-SQL:
 
-    ```sql
-    SELECT COUNT(*) AS [Concurrent_Requests]
-    FROM sys.dm_exec_requests R;
-    ```
+```sql
+SELECT COUNT(*) AS [Concurrent_Requests]
+FROM sys.dm_exec_requests R;
+```
 
 Чтобы проанализировать рабочую нагрузку локальной базы данных SQL Server, следует изменить этот запрос для фильтрации конкретной базы данных, которую необходимо проанализировать. Например, если у вас есть локальная база данных с именем MyDatabase, для получения числа параллельных запросов в этой базе данных можно использовать следующий запрос Transact-SQL:
 
-    ```sql
-    SELECT COUNT(*) AS [Concurrent_Requests]
-    FROM sys.dm_exec_requests R
-    INNER JOIN sys.databases D ON D.database_id = R.database_id
-    AND D.name = 'MyDatabase';
-    ```
+```sql
+SELECT COUNT(*) AS [Concurrent_Requests]
+FROM sys.dm_exec_requests R
+INNER JOIN sys.databases D ON D.database_id = R.database_id
+AND D.name = 'MyDatabase';
+```
 
 Это только моментальный снимок в один момент времени. Для лучшего понимания рабочей нагрузки и требований к параллельным запросам потребуется собрать большое количество примеров с течением времени.
 
 ### <a name="maximum-concurrent-logins"></a>Максимальное число параллельных операций входа
 
-Чтобы получить представление о частоте входа, можно проанализировать шаблоны работы пользователей и приложений. Кроме того, можно запустить реальные нагрузки в тестовой среде, чтобы убедиться в том, что вы не приближаетесь к этим или другим ограничениям, описанным в этой статье. Нет единого запроса или динамического административного представления, с помощью которых можно просмотреть количество параллельных операций входа или журнал.
+Чтобы получить представление о частоте входа, можно проанализировать шаблоны работы пользователей и приложений. Кроме того, можно запустить реальные нагрузки в тестовой среде, чтобы убедиться в том, что вы не приближаетесь к этим или другим ограничениям, описанным в этой статье. Не существует отдельного запроса или динамического административного представления, которое может показывать одновременно текущие количество входов или историю.
 
 Если несколько клиентов используют ту же строку подключения, служба проверяет подлинность каждого входа. Если 10 пользователей одновременно подключаются к базе данных с использованием того же имени пользователя и пароля, это будет 10 параллельных операций входа. Это ограничение применяется только на время входа и проверки подлинности. Если те же 10 пользователей последовательно подключатся к базе данных, количество параллельных операций входа никогда не будет больше 1.
 
@@ -664,18 +675,22 @@ ORDER BY start_time DESC
 
 Чтобы просмотреть число текущих активных сеансов, выполните в Базе данных SQL этот запрос Transact-SQL:
 
-    SELECT COUNT(*) AS [Sessions]
-    FROM sys.dm_exec_connections
+```sql
+SELECT COUNT(*) AS [Sessions]
+FROM sys.dm_exec_connections
+```
 
 При анализе рабочей нагрузки локального SQL Server измените запрос, чтобы сосредоточиться на определенной базе данных. Это поможет определить возможные потребности в сеансах для этой базы данных, если вы собираетесь переместить ее в Базу данных SQL Azure.
 
-    SELECT COUNT(*)  AS [Sessions]
-    FROM sys.dm_exec_connections C
-    INNER JOIN sys.dm_exec_sessions S ON (S.session_id = C.session_id)
-    INNER JOIN sys.databases D ON (D.database_id = S.database_id)
-    WHERE D.name = 'MyDatabase'
+```sql
+SELECT COUNT(*) AS [Sessions]
+FROM sys.dm_exec_connections C
+INNER JOIN sys.dm_exec_sessions S ON (S.session_id = C.session_id)
+INNER JOIN sys.databases D ON (D.database_id = S.database_id)
+WHERE D.name = 'MyDatabase'
+```
 
-Опять же, эти запросы возвращают значение счетчика на определенный момент времени. Сбор нескольких образцов за определенный период времени обеспечивает лучшее понимание использования сеансов.
+Опять же, эти запросы возвращают значение счетчика на определенный момент времени. При сборе нескольких выборок с течением времени вы получите лучшее представление об использовании сеанса.
 
 Для анализа базы данных SQL можно получить журнал статистики использования сеансов, запросив представление [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) и просмотрев столбец **active_session_count**.
 
@@ -687,22 +702,22 @@ ORDER BY start_time DESC
 
 В следующем примере возвращаются сведения о пяти первых запросах, отсортированных по среднему времени ЦП. В этом примере выполняется сбор запросов по хэшу запроса, то есть логически схожие запросы группируются по общему потреблению ресурсов.
 
-    ```sql
-    SELECT TOP 5 query_stats.query_hash AS "Query Hash",
-       SUM(query_stats.total_worker_time) / SUM(query_stats.execution_count) AS "Avg CPU Time",
-       MIN(query_stats.statement_text) AS "Statement Text"
-    FROM
-       (SELECT QS.*,
+```sql
+SELECT TOP 5 query_stats.query_hash AS "Query Hash",
+    SUM(query_stats.total_worker_time) / SUM(query_stats.execution_count) AS "Avg CPU Time",
+     MIN(query_stats.statement_text) AS "Statement Text"
+FROM
+    (SELECT QS.*,
         SUBSTRING(ST.text, (QS.statement_start_offset/2) + 1,
-        ((CASE statement_end_offset
-           WHEN -1 THEN DATALENGTH(ST.text)
-           ELSE QS.statement_end_offset END
-           - QS.statement_start_offset)/2) + 1) AS statement_text
-    FROM sys.dm_exec_query_stats AS QS
-    CROSS APPLY sys.dm_exec_sql_text(QS.sql_handle) as ST) as query_stats
-    GROUP BY query_stats.query_hash
-    ORDER BY 2 DESC;
-    ```
+            ((CASE statement_end_offset
+                WHEN -1 THEN DATALENGTH(ST.text)
+                ELSE QS.statement_end_offset END
+            - QS.statement_start_offset)/2) + 1) AS statement_text
+FROM sys.dm_exec_query_stats AS QS
+CROSS APPLY sys.dm_exec_sql_text(QS.sql_handle) as ST) as query_stats
+GROUP BY query_stats.query_hash
+ORDER BY 2 DESC;
+```
 
 ### <a name="monitoring-blocked-queries"></a>Мониторинг заблокированных запросов
 
@@ -712,26 +727,26 @@ ORDER BY start_time DESC
 
 Неэффективный план запросов может повысить потребление ресурсов ЦП. В следующем примере представление [sys.dm_exec_query_stats](https://msdn.microsoft.com/library/ms189741.aspx) используется, чтобы определить, какой запрос использует наибольшее количество ресурсов ЦП.
 
-    ```sql
-    SELECT
-       highest_cpu_queries.plan_handle,
-       highest_cpu_queries.total_worker_time,
-       q.dbid,
-       q.objectid,
-       q.number,
-       q.encrypted,
-       q.[text]
-    FROM
-       (SELECT TOP 50
+```sql
+SELECT
+    highest_cpu_queries.plan_handle,
+    highest_cpu_queries.total_worker_time,
+    q.dbid,
+    q.objectid,
+    q.number,
+    q.encrypted,
+    q.[text]
+FROM
+    (SELECT TOP 50
         qs.plan_handle,
         qs.total_worker_time
     FROM
         sys.dm_exec_query_stats qs
-    ORDER BY qs.total_worker_time desc) AS highest_cpu_queries
-    CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS q
-    ORDER BY highest_cpu_queries.total_worker_time DESC;
-    ```
+ORDER BY qs.total_worker_time desc) AS highest_cpu_queries
+CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS q
+ORDER BY highest_cpu_queries.total_worker_time DESC;
+```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также раздел
 
 [Введение в базы данных SQL](sql-database-technical-overview.md)

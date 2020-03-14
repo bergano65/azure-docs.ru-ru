@@ -3,12 +3,12 @@ title: Таблица поддержки Azure Backup
 description: В этой статье предлагается сводка параметров и ограничений поддержки для службы Azure Backup.
 ms.topic: conceptual
 ms.date: 02/17/2019
-ms.openlocfilehash: 788da5708178cfa533d4382a4a417cef73f46a5e
-ms.sourcegitcommit: d4a4f22f41ec4b3003a22826f0530df29cf01073
+ms.openlocfilehash: d036e527880a98d323e8de2f3a8721d7e12dbb07
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78254908"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273271"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Матрица поддержки для Azure Backup
 
@@ -84,7 +84,7 @@ Azure Backup использует хранилища служб восстано
 
 ## <a name="daylight-saving-time-support"></a>Поддержка перехода на летнее время
 
-Azure Backup не поддерживает автоматическую настройку часов для перехода на летнее время для резервного копирования виртуальных машин Azure. Измените политики резервного копирования вручную при необходимости.
+Azure Backup не поддерживает автоматическую настройку часов для перехода на летнее время для резервного копирования виртуальных машин Azure. Он не смещает час резервной копии вперед или назад. Чтобы обеспечить выполнение резервного копирования в нужное время, необходимо вручную изменить политики резервного копирования.
 
 ## <a name="disk-deduplication-support"></a>Поддержка дедупликации дисков
 

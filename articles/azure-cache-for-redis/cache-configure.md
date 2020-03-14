@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
 ms.openlocfilehash: f10be8efcd2d8e838b4b5f62310eb405f6ed0158
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76714633"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278744"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.

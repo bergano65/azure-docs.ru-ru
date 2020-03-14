@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 04/08/2019
-ms.openlocfilehash: 7b084954cb53d19739a0f633661e0c76fa82dd13
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 7bca36bdb41c5800a8718f76d48afcfde6f9333e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820944"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79208835"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>Основные сведения об отдельной базе данных в Базе данных SQL Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "73820944"
 
 ## <a name="monitoring-and-alerting"></a>Мониторинг и оповещения
 
-Вы можете использовать встроенные средства [мониторинга производительности](sql-database-performance.md) и [оповещений](sql-database-insights-alerts-portal.md) в сочетании с рейтингами производительности. Используя эти средства, вы сможете быстро оценить эффект от увеличения и уменьшения масштаба, исходя из текущей или планируемой загрузки. Кроме того, база данных SQL может [выдавать значения метрик и журналы диагностики](sql-database-metrics-diag-logging.md) для упрощения мониторинга.
+Вы можете использовать встроенные средства [мониторинга производительности](sql-database-performance.md) и [оповещений](sql-database-insights-alerts-portal.md) в сочетании с рейтингами производительности. Используя эти средства, вы сможете быстро оценить эффект от увеличения и уменьшения масштаба, исходя из текущей или планируемой загрузки. Кроме того, база данных SQL может [создавать метрики и журналы ресурсов](sql-database-metrics-diag-logging.md) для упрощения мониторинга.
 
 ## <a name="availability-capabilities"></a>Возможности доступности
 
@@ -50,7 +50,7 @@ ms.locfileid: "73820944"
 
 Дополнительные сведения см. в статье [Отличия Transact-SQL Базы данных SQL Azure](sql-database-transact-sql-information.md).
 
-## <a name="security"></a>Безопасность
+## <a name="security"></a>безопасность
 
 База данных SQL обеспечивает ряд [встроенных функций безопасности и соответствия](sql-database-security-overview.md), чтобы выполнить различные требования по защите вашего приложения.
 

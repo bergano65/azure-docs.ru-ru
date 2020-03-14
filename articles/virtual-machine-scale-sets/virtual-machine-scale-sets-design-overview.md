@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 06/01/2017
 ms.author: manayar
 ms.openlocfilehash: b427319fdba634ea3c61681baa30547450709dc1
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78390420"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250781"
 ---
 # <a name="design-considerations-for-scale-sets"></a>Рекомендации по проектированию масштабируемых наборов
 В этой статье рассматриваются вопросы проектирования масштабируемых наборов виртуальных машин. Сведения о том, что такое масштабируемые наборы виртуальных машин, см. в статье [Обзор масштабируемых наборов виртуальных машин](virtual-machine-scale-sets-overview.md).

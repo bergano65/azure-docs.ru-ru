@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/18/2020
+ms.date: 03/12/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9b3a1175b5e22b787c62365d3b113e02ec1d1326
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: 6b0d967dad250b06988865cde2f4ce11367f8acb
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78207002"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245776"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Active Directory доменных служб](../active-directory-domain-services/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.AAD/unregister/action | Отмена регистрации службы домена |
 > | Действие | Microsoft.AAD/register/action | Регистрация службы домена |
@@ -55,7 +55,7 @@ ms.locfileid: "78207002"
 Аналитика Microsoft Monitoring Insights
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **DiagnosticSettings** |  |
 > | Действие | microsoft.aadiam/diagnosticsettings/write | Запись параметра диагностики. |
@@ -73,7 +73,7 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Addons/register/action | Регистрирует указанную подписку в Microsoft.Addons. |
 > |  | **Operations** |  |
@@ -90,7 +90,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Active Directory](../active-directory/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ADHybridHealthService/configuration/action | Обновляет конфигурацию клиента. |
 > | Действие | Microsoft.ADHybridHealthService/services/action | Обновляет экземпляр службы в клиенте. |
@@ -219,7 +219,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Помощник по Azure](../advisor/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Advisor/generateRecommendations/action | Возвращает состояние создания рекомендаций. |
 > | Действие | Microsoft.Advisor/register/action | Регистрирует подписку для Microsoft Advisor. |
@@ -250,7 +250,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Monitor](../azure-monitor/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.AlertsManagement/register/action | Регистрация подписки для Управления оповещениями (Майкрософт). |
 > |  | **актионрулес** |  |
@@ -289,7 +289,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Analysis Services](../analysis-services/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.AnalysisServices/register/action | Регистрация поставщика ресурсов для служб Analysis Services. |
 > |  | **расположения** |  |
@@ -317,7 +317,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Управление API](../api-management/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ApiManagement/register/action | Регистрирует подписку для поставщика ресурсов Microsoft.ApiManagement. |
 > | Действие | Microsoft.ApiManagement/unregister/action | Отменяет регистрацию подписки для поставщика ресурсов Microsoft.ApiManagement. |
@@ -448,10 +448,9 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. ApiManagement/служба/шлюзы/чтение | Содержит коллекцию шлюзов, зарегистрированных в экземпляре службы. или возвращает сведения о шлюзе, заданном его идентификатором. |
 > | Действие | Microsoft. ApiManagement/служба/шлюзы/запись | Создает или обновляет шлюз, используемый в экземпляре управления API. или обновляет сведения о шлюзе, заданном идентификатором. |
 > | Действие | Microsoft. ApiManagement/служба/шлюзы/удаление | Удаляет конкретный шлюз. |
-> | Действие | Microsoft. ApiManagement/служба/шлюзы/ключи/действие | Получает ключи шлюза. |
-> | Действие | Microsoft. ApiManagement/служба/шлюзы/Реженератепримарикэй/действие | Повторно создает ключ первичного шлюза инвалидатионг все созданные им токены. |
-> | Действие | Microsoft. ApiManagement/служба/шлюзы/Реженератесекондарикэй/действие | Повторно создает вторичный ключ шлюза инвалидатионг все созданные им токены. |
-> | Действие | Microsoft. ApiManagement/служба/шлюзы, токен или действие | Возвращает маркер авторизации общего доступа для шлюза. |
+> | Действие | Microsoft. ApiManagement/служба/шлюзы/listKeys/действие | Получает ключи шлюза. |
+> | Действие | Microsoft. ApiManagement/служба/шлюзы/Реженератекэй/действие | Повторно создает указанный ключ шлюза инвалидатионг все созданные им токены. |
+> | Действие | Microsoft. ApiManagement/служба/шлюзы/generateToken/действие | Возвращает маркер авторизации общего доступа для шлюза. |
 > |  | **службы, шлюзы и интерфейсы API** |  |
 > | Действие | Microsoft. ApiManagement/служба/шлюзы/API/чтение | Содержит коллекцию интерфейсов API, связанных с шлюзом. |
 > | Действие | Microsoft. ApiManagement/служба/шлюзы/API/запись | Добавляет API в указанный шлюз. |
@@ -483,7 +482,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. ApiManagement/Service/Намедвалуес/Read | Перечисляет коллекцию именованных значений, определенных в экземпляре службы. или возвращает сведения об именованном значении, заданном его идентификатором. |
 > | Действие | Microsoft. ApiManagement/Service/Намедвалуес/Write | Создает или обновляет именованное значение. или обновляет конкретное именованное значение. |
 > | Действие | Microsoft. ApiManagement/Service/Намедвалуес/Delete | Удаляет конкретное именованное значение из экземпляра службы управления API. |
-> | Действие | Microsoft. ApiManagement/Service/Намедвалуес/Листсекретс/Action | Возвращает секреты именованного значения, заданного его идентификатором. |
+> | Действие | Microsoft. ApiManagement/Service/Намедвалуес/значение списка/Action | Возвращает секрет именованного значения, заданного его идентификатором. |
 > |  | **Служба или NetworkStatus** |  |
 > | Действие | Microsoft.ApiManagement/service/networkstatus/read | Получение состояния доступа к сетевым ресурсам, от которых зависит служба. |
 > |  | **Служба и уведомления** |  |
@@ -616,7 +615,7 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Аппконфигуратион/Register/действие | Регистрирует подписку для использования конфигурации приложения Майкрософт. |
 > |  | **чеккнамеаваилабилити** |  |
@@ -667,7 +666,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Resource Manager](../azure-resource-manager/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Authorization/elevateAccess/action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
 > |  | **классикадминистраторс** |  |
@@ -721,7 +720,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Автоматизация](../automation/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Automation/register/action | Регистрирует подписку в службе автоматизации Azure. |
 > |  | **automationAccounts** |  |
@@ -809,6 +808,18 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Automation/automationAccounts/nodes/reports/content/read | Считывает содержимое отчета Azure Automation DSC. |
 > |  | **automationAccounts/Обжектдататипес/поля** |  |
 > | Действие | Microsoft.Automation/automationAccounts/objectDataTypes/fields/read | Получение полей типов службы автоматизации Azure. |
+> |  | **automationAccounts/Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионпроксиес/чтение | Чтение прокси-сервера подключения частной конечной точки службы автоматизации Azure |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионпроксиес/запись | Создает прокси-сервер подключения частной конечной точки службы автоматизации Azure |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка запроса на подключение частной конечной точки (проверка groupId) |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионпроксиес/удаление | Удаление прокси-сервера подключения частной конечной точки службы автоматизации Azure |
+> |  | **automationAccounts/Приватиндпоинтконнектионпроксиес/Оператионресултс** |  |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионпроксиес/Оператионресултс/чтение | Получение результатов операции прокси-сервера частной конечной точки службы автоматизации Azure. |
+> |  | **automationAccounts/Приватиндпоинтконнектионс** |  |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионс/чтение | Получение состояния подключения к частной конечной точке службы автоматизации Azure |
+> | Действие | Microsoft. Automation/automationAccounts/Приватиндпоинтконнектионс/запись | Утверждение или отклонение подключения к частной конечной точке службы автоматизации Azure |
+> |  | **automationAccounts/Привателинкресаурцес** |  |
+> | Действие | Microsoft. Automation/automationAccounts/Привателинкресаурцес/чтение | Чтение сведений о группе для частных конечных точек |
 > |  | **automationAccounts/python2Packages** |  |
 > | Действие | Microsoft.Automation/automationAccounts/python2Packages/read | Получает пакет Python 2 службы автоматизации Azure |
 > | Действие | Microsoft.Automation/automationAccounts/python2Packages/write | Создает или обновляет пакет Python 2 службы автоматизации Azure |
@@ -890,7 +901,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Active Directory B2C](../active-directory-b2c/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.AzureActiveDirectory/register/action | Регистрация подписки в поставщике ресурсов Microsoft.AzureActiveDirectory. |
 > |  | **b2cDirectories** |  |
@@ -907,9 +918,11 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.AzureStack/register/action | Регистрация подписки в поставщике ресурсов Microsoft.AzureStack. |
+> |  | **клаудманифестфилес** |  |
+> | Действие | Microsoft. AzureStack/Клаудманифестфилес/Read | Получает файл манифеста облака. |
 > |  | **Операции** |  |
 > | Действие | Microsoft.AzureStack/Operations/read | Получение свойств операции поставщика ресурсов. |
 > |  | **регистрации** |  |
@@ -927,15 +940,13 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. AzureStack/регистрация/продукты/продукты/действие | Получение списка продуктов Azure Stack Marketplace |
 > | Действие | Microsoft. AzureStack/регистрация/продукты/продукт/действие | Получает продукт Azure Stack Marketplace |
 > | Действие | Microsoft. AzureStack/регистрация/продукты/Уплоадпродуктлог/действие | Состояние операции продукта "запись Azure Stack Marketplace" и метка времени |
-> |  | **верификатионкэйс** |  |
-> | Действие | Microsoft. AzureStack/Верификатионкэйс/Жеткурренткэй/Action | Возвращает текущую версию Azure Stack подписи открытого ключа |
 
 ## <a name="microsoftbatch"></a>Microsoft.Batch
 
 Службы Azure: [Пакетная](../batch/index.yml) служба
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Batch/register/action | Регистрирует подписку для поставщика ресурсов пакетной службы и позволяет создавать учетные записи пакетной службы. |
 > | Действие | Microsoft.Batch/unregister/action | Отмена регистрации подписки для поставщика ресурсов пакетной службы, которая не позволяет создавать учетные записи пакетной службы. |
@@ -994,7 +1005,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Управление затратами + выставление счетов](../cost-management-billing/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Billing/Валидатеаддресс/действие |  |
 > | Действие | Microsoft.Billing/register/action |  |
@@ -1010,6 +1021,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Write |  |
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Read |  |
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Write |  |
+> | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Write |  |
 > |  | **Биллингаккаунтс/Биллингпрофилес/Биллингпермиссионс** |  |
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Биллингпермиссионс/Read |  |
 > |  | **Биллингаккаунтс/Биллингпрофилес/клиенты** |  |
@@ -1019,6 +1031,7 @@ ms.locfileid: "78207002"
 > |  | **Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс** |  |
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Write |  |
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Read |  |
+> | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Write |  |
 > |  | **Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингпермиссионс** |  |
 > | Действие | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингпермиссионс/Read |  |
 > |  | **Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Биллингсубскриптионс** |  |
@@ -1059,7 +1072,7 @@ ms.locfileid: "78207002"
 Служба Azure: [карты Bing](https://docs.microsoft.com/BingMaps/)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. BingMaps/Упдатекоммуникатионпреференце/действие | Обновляет настройки связи для владельца Microsoft. BingMaps |
 > | Действие | Microsoft. BingMaps/Листкоммуникатионпреференце/действие | Возвращает настройки связи для владельца Microsoft. BingMaps. |
@@ -1078,7 +1091,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Служба Блокчейн Azure](../blockchain/workbench/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Блокчейн/Register/действие | Регистрирует подписку для поставщика ресурсов Блокчейн. |
 > |  | **блоккчаинмемберс** |  |
@@ -1109,7 +1122,7 @@ ms.locfileid: "78207002"
 Служба Azure: схемы [Azure](../governance/blueprints/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Blueprint/register/action | Регистрация поставщика ресурсов схемы Azure. |
 > |  | **блуепринтассигнментс** |  |
@@ -1139,7 +1152,7 @@ ms.locfileid: "78207002"
 Служба Azure: [служба Azure Bot](https://docs.microsoft.com/azure/bot-service/)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Ботсервице/чеккнамеаваилабилити/действие | Проверка доступности имени для программы-робота |
 > | Действие | Microsoft. Ботсервице/листауссервицепровидерс/действие | Список поставщиков служб проверки подлинности |
@@ -1168,7 +1181,7 @@ ms.locfileid: "78207002"
 Служба Azure: [кэш Azure для Redis](../azure-cache-for-redis/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Cache/checknameavailability/action | Проверяет, доступно ли имя для нового кэша Redis. |
 > | Действие | Microsoft.Cache/register/action | Регистрирует поставщик ресурсов Microsoft.Cache для подписки. |
@@ -1208,7 +1221,7 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Capacity/calculateprice/action | Вычисление цены резервирования. |
 > | Действие | Microsoft.Capacity/checkoffers/action | Проверка наличия предложений для подписок. |
@@ -1257,20 +1270,12 @@ ms.locfileid: "78207002"
 Служба Azure: [сеть доставки содержимого](../cdn/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Cdn/register/action | Регистрация подписки для поставщика ресурсов CDN и разрешение создания профилей CDN. |
 > | Действие | Microsoft.Cdn/CheckNameAvailability/action |  |
 > | Действие | Microsoft.Cdn/ValidateProbe/action |  |
 > | Действие | Microsoft.Cdn/CheckResourceUsage/action |  |
-> |  | **кднвебаппликатионфиреваллманажедрулесетс** |  |
-> | Действие | Microsoft. CDN/кднвебаппликатионфиреваллманажедрулесетс/чтение |  |
-> | Действие | Microsoft. CDN/кднвебаппликатионфиреваллманажедрулесетс/запись |  |
-> | Действие | Microsoft. CDN/кднвебаппликатионфиреваллманажедрулесетс/удаление |  |
-> |  | **кднвебаппликатионфиреваллполиЦиес** |  |
-> | Действие | Microsoft. CDN/кднвебаппликатионфиреваллполиЦиес/чтение |  |
-> | Действие | Microsoft. CDN/кднвебаппликатионфиреваллполиЦиес/запись |  |
-> | Действие | Microsoft. CDN/кднвебаппликатионфиреваллполиЦиес/удаление |  |
 > |  | **едженодес** |  |
 > | Действие | Microsoft.Cdn/edgenodes/read |  |
 > | Действие | Microsoft.Cdn/edgenodes/write |  |
@@ -1279,10 +1284,6 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Cdn/operationresults/read |  |
 > | Действие | Microsoft.Cdn/operationresults/write |  |
 > | Действие | Microsoft.Cdn/operationresults/delete |  |
-> |  | **оператионресултс/кднвебаппликатионфиреваллполициресултс** |  |
-> | Действие | Microsoft. CDN/оператионресултс/кднвебаппликатионфиреваллполициресултс/чтение |  |
-> | Действие | Microsoft. CDN/оператионресултс/кднвебаппликатионфиреваллполициресултс/запись |  |
-> | Действие | Microsoft. CDN/оператионресултс/кднвебаппликатионфиреваллполициресултс/Delete |  |
 > |  | **оператионресултс/профилересултс** |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/read |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/write |  |
@@ -1306,6 +1307,10 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/customdomainresults/delete |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/customdomainresults/DisableCustomHttps/action |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/customdomainresults/EnableCustomHttps/action |  |
+> |  | **оператионресултс/профилересултс/ендпоинтресултс/оригинграупресултс** |  |
+> | Действие | Microsoft. CDN/оператионресултс/профилересултс/ендпоинтресултс/оригинграупресултс/Read |  |
+> | Действие | Microsoft. CDN/оператионресултс/профилересултс/ендпоинтресултс/оригинграупресултс/Write |  |
+> | Действие | Microsoft. CDN/оператионресултс/профилересултс/ендпоинтресултс/оригинграупресултс/Delete |  |
 > |  | **оператионресултс/профилересултс/ендпоинтресултс/оригинресултс** |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/originresults/read |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/originresults/write |  |
@@ -1335,6 +1340,10 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Cdn/profiles/endpoints/customdomains/delete |  |
 > | Действие | Microsoft.Cdn/profiles/endpoints/customdomains/DisableCustomHttps/action |  |
 > | Действие | Microsoft.Cdn/profiles/endpoints/customdomains/EnableCustomHttps/action |  |
+> |  | **профили, конечные точки/оригинграупс** |  |
+> | Действие | Microsoft. CDN/Profiles/Endpoints/оригинграупс/Read |  |
+> | Действие | Microsoft. CDN/Profiles/Endpoints/оригинграупс/Write |  |
+> | Действие | Microsoft. CDN/Profiles/Endpoints/оригинграупс/Delete |  |
 > |  | **профили, конечные точки и источники** |  |
 > | Действие | Microsoft.Cdn/profiles/endpoints/origins/read |  |
 > | Действие | Microsoft.Cdn/profiles/endpoints/origins/write |  |
@@ -1345,7 +1354,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Сертификаты службы приложений](../app-service/configure-ssl-certificate.md#import-an-app-service-certificate)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.CertificateRegistration/provisionGlobalAppServicePrincipalInUserTenant/Action | Подготавливает субъект-службу для субъекта приложения-службы. |
 > | Действие | Microsoft.CertificateRegistration/validateCertificateRegistrationInformation/Action | Проверяет объект покупки сертификата без его отправки. |
@@ -1374,7 +1383,7 @@ ms.locfileid: "78207002"
 Служба Azure: виртуальная машина классической модели развертывания
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ClassicCompute/register/action | Выполняет регистрацию в классической вычислительной среде. |
 > | Действие | Microsoft.ClassicCompute/checkDomainNameAvailability/action | Проверяет доступность заданного доменного имени. |
@@ -1504,7 +1513,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.ClassicCompute/virtualMachines/performMaintenance/action | Выполнение обслуживания виртуальной машины. |
 > | Действие | Microsoft.ClassicCompute/virtualMachines/restart/action | Перезапускает виртуальные машины. |
 > | Действие | Microsoft.ClassicCompute/virtualMachines/stop/action | Останавливает виртуальную машину. |
-> | Действие | Microsoft.ClassicCompute/virtualMachines/shutdown/action | Завершите работу виртуальной машины. |
+> | Действие | Microsoft.ClassicCompute/virtualMachines/shutdown/action | Завершает работу виртуальной машины. |
 > | Действие | Microsoft.ClassicCompute/virtualMachines/attachDisk/action | Подключает диск данных к виртуальной машине. |
 > | Действие | Microsoft.ClassicCompute/virtualMachines/detachDisk/action | Отключает диск данных от виртуальной машины. |
 > | Действие | Microsoft.ClassicCompute/virtualMachines/downloadRemoteDesktopConnectionFile/action | Скачивает RDP-файл для виртуальной машины. |
@@ -1548,7 +1557,7 @@ ms.locfileid: "78207002"
 Служба Azure: виртуальная сеть классической модели развертывания
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ClassicNetwork/register/action | Выполняет регистрацию в классической сети. |
 > |  | **експрессраутекроссконнектионс** |  |
@@ -1655,7 +1664,7 @@ ms.locfileid: "78207002"
 Служба Azure: хранилище классической модели развертывания
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ClassicStorage/register/action | Выполняет регистрацию в классической службе хранилища. |
 > | Действие | Microsoft.ClassicStorage/checkStorageAccountAvailability/action | Проверяет доступность учетной записи хранения. |
@@ -1754,8 +1763,9 @@ ms.locfileid: "78207002"
 Служба Azure: [Cognitive Services](../cognitive-services/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
+> | Действие | Microsoft.CognitiveServices/register/action | Действие регистрации подписки |
 > | Действие | Microsoft.CognitiveServices/register/action | Регистрация подписки для Cognitive Services. |
 > | Действие | Microsoft. CognitiveServices/Чеккдомаинаваилабилити/действие | Считывает доступные номера SKU для подписки. |
 > | Действие | Microsoft.CognitiveServices/register/action | Регистрация подписки для Cognitive Services. |
@@ -2101,21 +2111,21 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Commerce/Register/действие | Регистрация подписки для Microsoft Commerce Усажеаггрегате |
 > | Действие | Microsoft. Commerce, отмена регистрации или действие | Отмена регистрации подписки для Microsoft Commerce Усажеаггрегате |
 > |  | **RateCard** |  |
 > | Действие | Microsoft.Commerce/RateCard/read | Возвращает данные предложения, метаданные ресурсов и единиц измерения и тарифы для заданной подписки. |
 > |  | **UsageAggregates** |  |
-> | Действие | Microsoft.Commerce/UsageAggregates/read | Извлекает данные о потреблении ресурсов Microsoft Azure по подписке. Результат содержит статистические данные об использовании, а также сведения о подписке и ресурсах за определенный диапазон времени. |
+> | Действие | Microsoft.Commerce/UsageAggregates/read | Извлекает потребление Microsoft Azure по подписке. Результат содержит статистические данные об использовании, а также сведения о подписке и ресурсах за определенный диапазон времени. |
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
 Служба Azure: [виртуальные машины](../virtual-machines/index.yml), [масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Compute/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.Compute. |
 > | Действие | Microsoft. COMPUTE, отмена регистрации или действие | Отмена регистрации подписки с помощью поставщика ресурсов Microsoft. COMPUTE. |
@@ -2323,7 +2333,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Управление затратами](../cost-management-billing/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Consumption/register/action | Регистрация в поставщике используемых ресурсов. |
 > |  | **аггрегатедкост** |  |
@@ -2381,7 +2391,7 @@ ms.locfileid: "78207002"
 Служба Azure: [экземпляры контейнеров](../container-instances/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ContainerInstance/register/action | Регистрирует подписку в поставщике ресурсов экземпляра контейнера и включает возможность создания групп контейнеров. |
 > |  | **контаинерграупс** |  |
@@ -2424,7 +2434,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Реестр контейнеров](../container-registry/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ContainerRegistry/register/action | Регистрирует подписку для поставщика ресурсов реестра контейнеров и позволяет создавать реестры контейнеров. |
 > |  | **чеккнамеаваилабилити** |  |
@@ -2447,6 +2457,8 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.ContainerRegistry/registries/queueBuild/action | Создает новую сборку на основе параметров запроса и добавляет ее в очередь сборки. |
 > | Действие | Microsoft.ContainerRegistry/registries/listBuildSourceUploadUrl/action | Получение расположения URL-адреса передачи источника для реестра контейнеров. |
 > | Действие | Microsoft.ContainerRegistry/registries/scheduleRun/action | Планирование запуска по реестру контейнеров. |
+> |  | **реестры и ажентпулс** |  |
+> | Действие | Microsoft. ContainerRegistry/реестров/ажентпулс/Листкуеуестатус/Action | Список всех состояний очереди ажентпул для реестра контейнеров. |
 > |  | **реестры и артефакты** |  |
 > | Действие | Microsoft. ContainerRegistry/реестры/артефакты/удаление | Удаление артефакта в реестре контейнеров. |
 > |  | **реестры и сборки** |  |
@@ -2510,6 +2522,8 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. ContainerRegistry/Registry/Скопемапс/Оператионстатусес/Read | Возвращает состояние асинхронной операции с картой области. |
 > |  | **реестры и подписывание** |  |
 > | Действие | Microsoft.ContainerRegistry/registries/sign/write | Передача или извлечение метаданных доверия к содержимому для реестра контейнеров. |
+> |  | **реестры и таскрунс** |  |
+> | Действие | Microsoft. ContainerRegistry/реестров/таскрунс/Листдетаилс/Action | Вывод списка всех сведений о ходе выполнения для реестра контейнеров. |
 > |  | **реестры и задачи** |  |
 > | Действие | Microsoft.ContainerRegistry/registries/tasks/read | Получение задачи для реестра контейнеров или списка всех задач. |
 > | Действие | Microsoft.ContainerRegistry/registries/tasks/write | Создание или обновление задачи для реестра контейнеров. |
@@ -2538,7 +2552,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Служба Kubernetes Azure (AKS)](../aks/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ContainerService/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.ContainerService. |
 > | Действие | Microsoft.ContainerService/unregister/action | Отменяет регистрацию подписки в поставщике ресурсов Microsoft.ContainerService. |
@@ -2596,7 +2610,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Управление затратами](../cost-management-billing/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.CostManagement/query/action | Запрос данных об использовании в области. |
 > | Действие | Microsoft.CostManagement/reports/action | Планирование создания отчетов о данных об использовании в области. |
@@ -2660,7 +2674,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Data Box](../databox-family/index.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataBox/register/action | Регистрация поставщика Microsoft.Databox. |
 > | Действие | Microsoft. Датабокс/отменить регистрацию или действие | Отмена регистрации поставщика Microsoft. Датабокс |
@@ -2691,7 +2705,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Data Box Edge](../databox-online/data-box-edge-overview.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **датабокседжедевицес** |  |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/uploadCertificate/action | Отправляет сертификат для регистрации устройства |
@@ -2797,7 +2811,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Databricks](../azure-databricks/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Databricks/register/action | Регистрация в Databricks. |
 > |  | **расположения** |  |
@@ -2812,6 +2826,9 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Databricks/workspaces/delete | Удаление рабочей области Databricks. |
 > | Действие | Microsoft. кирпичы/рабочие области/Рефрешпермиссионс/действие | Разрешения на обновление для рабочей области |
 > | Действие | Microsoft. кирпичы/рабочие области/Упдатеденяссигнмент/действие | Обновление запрета назначения для управляемой группы ресурсов рабочей области |
+> | Действие | Microsoft. кирпичы/рабочие области/Рефрешворкспацес/действие | Обновление рабочей области с новыми сведениями, такими как URL-адрес |
+> |  | **рабочие области и Дбворкспацес** |  |
+> | Действие | Microsoft. кирпичы/рабочие области/Дбворкспацес/запись | Инициализирует рабочую область "кирпичи" (только внутренние) |
 > |  | **рабочие области и поставщики/Microsoft. Insights/diagnosticSettings** |  |
 > | Действие | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/diagnosticSettings/read | Задание доступных параметров диагностики для рабочей области Databricks |
 > | Действие | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/diagnosticSettings/write | Добавляет или изменяет параметры диагностики. |
@@ -2830,7 +2847,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Каталог данных](../data-catalog/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataCatalog/register/action | Регистрация подписки для поставщика ресурсов каталога данных |
 > | Действие | Microsoft.DataCatalog/unregister/action | Отмена регистрации подписки для поставщика ресурсов каталога данных |
@@ -2852,7 +2869,7 @@ ms.locfileid: "78207002"
 Служба Azure: [фабрика данных](../data-factory/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataFactory/register/action | Регистрирует подписку для поставщика ресурсов фабрики данных. |
 > | Действие | Microsoft.DataFactory/unregister/action | Отменяет регистрацию подписки для поставщика ресурсов фабрики данных. |
@@ -3024,7 +3041,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Data Lake Analytics](../data-lake-analytics/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataLakeAnalytics/register/action | Регистрация подписки для Data Lake Analytics. |
 > |  | **организаций** |  |
@@ -3074,7 +3091,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Data Lake Store](../storage/blobs/data-lake-storage-introduction.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataLakeStore/register/action | Регистрация подписки для Data Lake Store. |
 > |  | **организаций** |  |
@@ -3121,7 +3138,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Database Migration Service](../dms/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DataMigration/register/action | Регистрация подписки в поставщике Azure Database Migration Service. |
 > |  | **расположения и Оператионресултс** |  |
@@ -3173,7 +3190,7 @@ ms.locfileid: "78207002"
 Служба Azure: [база данных Azure для MariaDB](../mariadb/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Дбформариадб/Register/действие | Регистрация поставщика ресурсов MariaDB |
 > | Действие | Microsoft. Дбформариадб/Чеккнамеаваилабилити/действие | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
@@ -3282,7 +3299,7 @@ ms.locfileid: "78207002"
 Служба Azure: [база данных Azure для MySQL](../mysql/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Дбформискл/Register/действие | Регистрация поставщика ресурсов MySQL |
 > | Действие | Microsoft. Дбформискл/Чеккнамеаваилабилити/действие | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
@@ -3391,7 +3408,7 @@ ms.locfileid: "78207002"
 Служба Azure: [база данных Azure для PostgreSQL](../postgresql/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Дбфорпостгрескл/Register/действие | Регистрация поставщика ресурсов PostgreSQL |
 > | Действие | Microsoft. Дбфорпостгрескл/Чеккнамеаваилабилити/действие | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
@@ -3470,7 +3487,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
 > |  | **серверы и поставщики/Microsoft. Insights/Логдефинитионс** |  |
-> | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы серверов Postgres. |
+> | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/logDefinitions/read | Получение доступных журналов для серверов PostgreSQL. |
 > |  | **серверы и поставщики/Microsoft. Insights/metricDefinitions** |  |
 > | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/metricDefinitions/read | Возвращает типы метрик, доступных для баз данных. |
 > |  | **серверы и Куеритекстс** |  |
@@ -3506,7 +3523,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. Дбфорпостгрескл/serversv2/providers/Microsoft. Insights/diagnosticSettings/Read | Получение параметра диагностики для ресурса. |
 > | Действие | Microsoft. Дбфорпостгрескл/serversv2/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики для ресурса. |
 > |  | **serversv2/providers/Microsoft. Insights/Логдефинитионс** |  |
-> | Действие | Microsoft.DBforPostgreSQL/serversv2/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы серверов Postgres. |
+> | Действие | Microsoft.DBforPostgreSQL/serversv2/providers/Microsoft.Insights/logDefinitions/read | Получение доступных журналов для серверов PostgreSQL. |
 > |  | **serversv2/providers/Microsoft. Insights/metricDefinitions** |  |
 > | Действие | Microsoft. Дбфорпостгрескл/serversv2/providers/Microsoft. Insights/metricDefinitions/Read | Возвращает типы метрик, доступных для баз данных. |
 
@@ -3515,7 +3532,7 @@ ms.locfileid: "78207002"
 Служба Azure: [центр Интернета вещей](../iot-hub/index.yml), [Служба подготовки устройств для центра Интернета вещей](../iot-dps/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Devices/register/action | Регистрирует подписку в поставщике ресурсов Центра Интернета вещей и позволяет создавать ресурсы Центра Интернета вещей. |
 > | Действие | Microsoft.Devices/checkNameAvailability/Action | Проверяет, доступно ли имя Центра Интернета вещей. |
@@ -3597,6 +3614,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Devices/iotHubs/listkeys/Action | Возвращает все ключи Центра Интернета вещей. |
 > | Действие | Microsoft.Devices/iotHubs/exportDevices/Action | Экспортирует устройства. |
 > | Действие | Microsoft.Devices/iotHubs/importDevices/Action | Импортирует устройства. |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионсаппровал/действие | Утверждение или отклонение подключения к частной конечной точке |
 > |  | **iotHubs и сертификаты** |  |
 > | Действие | Microsoft.Devices/iotHubs/certificates/Read | Возвращает сертификат. |
 > | Действие | Microsoft.Devices/iotHubs/certificates/Write | Создание или обновление сертификата. |
@@ -3611,6 +3629,10 @@ ms.locfileid: "78207002"
 > |  | **IotHubs/diagnosticSettings** |  |
 > | Действие | Microsoft.Devices/IotHubs/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
 > | Действие | Microsoft.Devices/IotHubs/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
+> |  | **iotHubs/Дигиталтвинслинкс** |  |
+> | Действие | Microsoft. Devices/iotHubs/Дигиталтвинслинкс/Write |  |
+> | Действие | Microsoft. Devices/iotHubs/Дигиталтвинслинкс/Read |  |
+> | Действие | Microsoft. Devices/iotHubs/Дигиталтвинслинкс/Delete |  |
 > |  | **iotHubs/Евентгридфилтерс** |  |
 > | Действие | Microsoft.Devices/iotHubs/eventGridFilters/Write | Создание фильтра сетки событий или обновление существующего. |
 > | Действие | Microsoft.Devices/iotHubs/eventGridFilters/Read | Получение фильтра сетки событий. |
@@ -3631,6 +3653,21 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Devices/IotHubs/metricDefinitions/read | Возвращает доступные метрики для службы Центра Интернета вещей. |
 > |  | **iotHubs/оператионресултс** |  |
 > | Действие | Microsoft.Devices/iotHubs/operationresults/Read | Получение результата операции (устаревший API). |
+> |  | **iotHubs/Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверяет входные данные прокси-сервера подключения к частной конечной точке во время создания |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионпроксиес/Read | Возвращает свойства для указанного прокси-сервера подключения частной конечной точки. |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионпроксиес/Write | Создает или обновляет прокси-сервер подключения частной конечной точки. |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионпроксиес/Delete | Удаляет существующий прокси-сервер подключения частной конечной точки. |
+> |  | **iotHubs/Приватиндпоинтконнектионпроксиес/Оператионресултс** |  |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионпроксиес/Оператионресултс/Read | Получение результата асинхронной операции на прокси-сервере подключения частной конечной точки |
+> |  | **iotHubs/Приватиндпоинтконнектионс** |  |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионс/Read | Возвращает свойства для указанного подключения частной конечной точки. |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионс/Delete | Удаляет существующее подключение к частной конечной точке |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионс/Write | Создает или обновляет подключение к частной конечной точке |
+> |  | **iotHubs/Приватиндпоинтконнектионс/Оператионресултс** |  |
+> | Действие | Microsoft. Devices/iotHubs/Приватиндпоинтконнектионс/Оператионресултс/Read | Получение результата асинхронной операции для подключения к частной конечной точке |
+> |  | **iotHubs/Привателинкресаурцес** |  |
+> | Действие | Microsoft. Devices/iotHubs/Привателинкресаурцес/Read | Получение ресурсов частной ссылки для IotHub |
 > |  | **iotHubs/Куотаметрикс** |  |
 > | Действие | Microsoft.Devices/iotHubs/quotaMetrics/Read | Возвращает метрики квоты. |
 > |  | **iotHubs и маршрутизация** |  |
@@ -3687,7 +3724,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure dev Spaces](../dev-spaces/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DevSpaces/register/action | Создание поставщика ресурсов Microsoft Dev Spaces с подпиской |
 > |  | **Контролер** |  |
@@ -3707,7 +3744,7 @@ ms.locfileid: "78207002"
 Служба Azure: [службы лаборатории Azure](../lab-services/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DevTestLab/register/action | Регистрирует подписку. |
 > |  | **лабцентерс** |  |
@@ -3856,7 +3893,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Cosmos DB](../cosmos-db/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DocumentDB/register/action |  Регистрация поставщика ресурсов Microsoft DocumentDB для подписки. |
 > |  | **датабасеаккаунтнамес** |  |
@@ -4079,7 +4116,7 @@ ms.locfileid: "78207002"
 Служба Azure: [служба приложений](../app-service/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.DomainRegistration/generateSsoRequest/Action | Создает запрос на вход в центр управления доменами. |
 > | Действие | Microsoft.DomainRegistration/validateDomainRegistrationInformation/Action | Проверяет объект покупки домена без его отправки. |
@@ -4111,7 +4148,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Сетка событий](../event-grid/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.EventGrid/register/action | Регистрирует подписку для поставщика ресурсов EventGrid. |
 > | Действие | Microsoft.EventGrid/unregister/action | Отмена регистрации подписки для поставщика ресурсов EventGrid. |
@@ -4121,6 +4158,17 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.EventGrid/domains/delete | Удаление домена |
 > | Действие | Microsoft.EventGrid/domains/listKeys/action | Получение списка ключей для домена |
 > | Действие | Microsoft.EventGrid/domains/regenerateKey/action | Повторное создание ключа для домена |
+> |  | **домены/Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка Приватиндпоинтконнектионпроксиес для доменов |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионпроксиес/Read | Чтение Приватиндпоинтконнектионпроксиес для доменов |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионпроксиес/Write | Запись Приватиндпоинтконнектионпроксиес для доменов |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионпроксиес/Delete | Удаление Приватиндпоинтконнектионпроксиес для доменов |
+> |  | **домены/Приватиндпоинтконнектионс** |  |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионс/Read | Чтение Приватиндпоинтконнектионс для доменов |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионс/Write | Запись Приватиндпоинтконнектионс для доменов |
+> | Действие | Microsoft. EventGrid/Domains/Приватиндпоинтконнектионс/Delete | Удаление Приватиндпоинтконнектионс для доменов |
+> |  | **домены/Привателинкресаурцес** |  |
+> | Действие | Microsoft. EventGrid/Domains/Привателинкресаурцес/Read | Получение или перечисление Привателинкресаурцес для доменов |
 > |  | **домены и поставщики/Microsoft. Insights/Логдефинитионс** |  |
 > | Действие | Microsoft. EventGrid/Domains/providers/Microsoft. Insights/Логдефинитионс/Read | Разрешает доступ к журналам диагностики |
 > |  | **домены и поставщики/Microsoft. Insights/metricDefinitions** |  |
@@ -4160,12 +4208,56 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.EventGrid/operations/read | Вывод списка операций EventGrid. |
 > |  | **оператионсстатус** |  |
 > | Действие | Microsoft.EventGrid/operationsStatus/read | Чтение состояния операции |
+> |  | **партнернамеспацес** |  |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/запись | Создание или обновление пространства имен партнера |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/Read | Чтение пространства имен партнера |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/Delete | Удаление пространства имен партнера |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/listKeys/Action | Вывод списка ключей для пространства имен партнера |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/Реженератекэй/Action | Повторное создание ключа для пространства имен партнера |
+> |  | **Партнернамеспацес/eventChannels** |  |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/eventChannels/Read | Чтение канала событий |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/eventChannels/запись | Создание или обновление канала событий |
+> | Действие | Microsoft. EventGrid/Партнернамеспацес/eventChannels/Delete | Удаление канала событий |
+> |  | **партнеррегистратионс** |  |
+> | Действие | Microsoft. EventGrid/Партнеррегистратионс/запись | Создание или обновление регистрации партнера |
+> | Действие | Microsoft. EventGrid/Партнеррегистратионс/Read | Чтение регистрации партнера |
+> | Действие | Microsoft. EventGrid/Партнеррегистратионс/Delete | Удаление регистрации партнера |
+> |  | **партнертопикс** |  |
+> | Действие | Microsoft. EventGrid/Партнертопикс/Read | Чтение раздела партнера |
+> | Действие | Microsoft. EventGrid/Партнертопикс/запись | Создание или обновление раздела партнера |
+> | Действие | Microsoft. EventGrid/Партнертопикс/Delete | Удалить раздел партнера |
+> | Действие | Microsoft. EventGrid/Партнертопикс/активация/действие | Тема активации партнера |
+> | Действие | Microsoft. EventGrid/Партнертопикс/деактивация/действие | Раздел деактивации партнера |
+> |  | **sku** |  |
+> | Действие | Microsoft. EventGrid/SKU/чтение | Чтение доступных определений SKU для ресурсов сетки событий |
+> |  | **системтопикс** |  |
+> | Действие | Microsoft. EventGrid/Системтопикс/Read | Ознакомьтесь с системным разделом |
+> | Действие | Microsoft. EventGrid/Системтопикс/запись | Создание или обновление системного раздела |
+> | Действие | Microsoft. EventGrid/Системтопикс/Delete | Удаление системного раздела |
+> |  | **Системтопикс/providers/Microsoft. Insights/diagnosticSettings** |  |
+> | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/diagnosticSettings/Read | Получает параметр диагностики для системных разделов |
+> | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики для системных разделов |
+> |  | **Системтопикс/providers/Microsoft. Insights/Логдефинитионс** |  |
+> | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/Логдефинитионс/Read | Разрешает доступ к журналам диагностики |
+> |  | **Системтопикс/providers/Microsoft. Insights/metricDefinitions** |  |
+> | Действие | Microsoft. EventGrid/Системтопикс/providers/Microsoft. Insights/metricDefinitions/Read | Получение доступных метрик для системных разделов |
 > |  | **topics** |  |
 > | Действие | Microsoft.EventGrid/topics/write | Создание или обновление раздела. |
 > | Действие | Microsoft.EventGrid/topics/read | Чтение раздела. |
-> | Действие | Microsoft.EventGrid/topics/delete | Удаление темы |
+> | Действие | Microsoft.EventGrid/topics/delete | Удаление раздела |
 > | Действие | Microsoft.EventGrid/topics/listKeys/action | Получение списка ключей для раздела |
 > | Действие | Microsoft.EventGrid/topics/regenerateKey/action | Повторное создание ключа для раздела |
+> |  | **разделы и Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. EventGrid/Topics/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка Приватиндпоинтконнектионпроксиес для разделов |
+> | Действие | Microsoft. EventGrid/темы/Приватиндпоинтконнектионпроксиес/чтение | Дополнительные сведения см. в Приватиндпоинтконнектионпроксиес |
+> | Действие | Microsoft. EventGrid/темы/Приватиндпоинтконнектионпроксиес/запись | Создание Приватиндпоинтконнектионпроксиес для разделов |
+> | Действие | Microsoft. EventGrid/Topics/Приватиндпоинтконнектионпроксиес/Delete | Удалить Приватиндпоинтконнектионпроксиес для разделов |
+> |  | **разделы и Приватиндпоинтконнектионс** |  |
+> | Действие | Microsoft. EventGrid/темы/Приватиндпоинтконнектионс/чтение | Дополнительные сведения см. в Приватиндпоинтконнектионс |
+> | Действие | Microsoft. EventGrid/темы/Приватиндпоинтконнектионс/запись | Создание Приватиндпоинтконнектионс для разделов |
+> | Действие | Microsoft. EventGrid/Topics/Приватиндпоинтконнектионс/Delete | Удалить Приватиндпоинтконнектионс для разделов |
+> |  | **разделы и Привателинкресаурцес** |  |
+> | Действие | Microsoft. EventGrid/темы/Привателинкресаурцес/чтение | Дополнительные сведения см. в Привателинкресаурцес |
 > |  | **разделы и поставщики/Microsoft. Insights/diagnosticSettings** |  |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для разделов. |
 > | Действие | Microsoft.EventGrid/topics/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметра диагностики для разделов. |
@@ -4185,7 +4277,7 @@ ms.locfileid: "78207002"
 Служба Azure: [концентраторы событий](../event-hubs/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.EventHub/checkNamespaceAvailability/action | Проверяет доступность пространства имен в заданной подписке. Этот API не рекомендуется. Вместо него используйте CheckNameAvailability. |
 > | Действие | Microsoft.EventHub/checkNameAvailability/action | Проверяет доступность пространства имен в заданной подписке. |
@@ -4259,6 +4351,11 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. EventHub/пространства имен, нетворкрулесетс/удаление | Удаление ресурса правила виртуальной сети |
 > |  | **пространства имен/оператионресултс** |  |
 > | Действие | Microsoft.EventHub/namespaces/operationresults/read | Получение состояния операции пространства имен. |
+> |  | **пространства имен/Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионпроксиес/чтение | Получение прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. EventHub/пространства имен/Приватиндпоинтконнектионпроксиес/запись | Создание прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. EventHub/пространства имен, Приватиндпоинтконнектионпроксиес/удаление | Удаление прокси-сервера подключения частной конечной точки |
 > |  | **пространства имен/поставщики/Microsoft. Insights/diagnosticSettings** |  |
 > | Действие | Microsoft.EventHub/namespaces/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает список описаний параметров диагностики пространства имен. |
 > | Действие | Microsoft.EventHub/namespaces/providers/Microsoft.Insights/diagnosticSettings/write | Возвращает список описаний параметров диагностики пространства имен. |
@@ -4285,7 +4382,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Resource Manager](../azure-resource-manager/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Features/register/action | Регистрирует компонент подписки. |
 > |  | **features** |  |
@@ -4302,7 +4399,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Политика Azure](../governance/policy/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Гуестконфигуратион/Register/действие | Регистрирует подписку для поставщика ресурсов Microsoft. Гуестконфигуратион. |
 > |  | **гуестконфигуратионассигнментс** |  |
@@ -4319,7 +4416,7 @@ ms.locfileid: "78207002"
 Служба Azure: [HDInsight](../hdinsight/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. HDInsight, регистрация/действие | Регистрация поставщика ресурсов HDInsight для подписки |
 > | Действие | Microsoft. HDInsight, отмена регистрации или действие | Отмена регистрации поставщика ресурсов HDInsight для подписки |
@@ -4358,7 +4455,7 @@ ms.locfileid: "78207002"
 Служба Azure: [дуга Azure](../azure-arc/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Хибридкомпуте/Register/действие | Регистрирует подписку для поставщика ресурсов Microsoft. Хибридкомпуте. |
 > | Действие | Microsoft. Хибридкомпуте/отменить регистрацию или действие | Отменяет регистрацию подписки для поставщика ресурсов Microsoft. Хибридкомпуте. |
@@ -4381,7 +4478,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Импорт и экспорт Azure](../storage/common/storage-import-export-service.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ImportExport/register/action | Регистрирует подписку для поставщика ресурсов импорта и экспорта и позволяет создавать задания импорта и экспорта. |
 > |  | **jobs** |  |
@@ -4399,7 +4496,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Monitor](../azure-monitor/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Insights/Metrics/Action | Действие метрики |
 > | Действие | Microsoft.Insights/Register/Action | Регистрирует поставщик Microsoft Insights. |
@@ -4885,6 +4982,8 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. Insights/Миворкбукс/чтение | Чтение частной книги |
 > |  | **Операции** |  |
 > | Действие | Microsoft.Insights/Operations/Read | Считывает операции. |
+> |  | **привателинкскопеоператионстатусес** |  |
+> | Действие | Microsoft. Insights/Привателинкскопеоператионстатусес/чтение | Чтение состояния операции с областью действия частной ссылки |
 > |  | **привателинкскопес** |  |
 > | Действие | Microsoft. Insights/Привателинкскопес/чтение | Чтение области частной ссылки |
 > | Действие | Microsoft. Insights/Привателинкскопес/запись | Создание или обновление области видимости частной связи |
@@ -4934,7 +5033,7 @@ ms.locfileid: "78207002"
 Аналитика Microsoft Monitoring Insights
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **DiagnosticSettings** |  |
 > | Действие | Microsoft.Intune/diagnosticsettings/write | Запись параметра диагностики. |
@@ -4948,7 +5047,7 @@ ms.locfileid: "78207002"
 Служба Azure: [IOT Central](../iot-central/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.IoTCentral/checkNameAvailability/action | Проверка доступности для имени приложения IoT Central |
 > | Действие | Microsoft.IoTCentral/checkSubdomainAvailability/action | Проверка доступности для поддомена приложения IoT Central |
@@ -4966,7 +5065,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Digital двойников](../digital-twins/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.IoTSpaces/register/action | Регистрация подписки для поставщика ресурсов Graph Microsoft.IoTSpaces, чтобы обеспечить создание ресурсов. |
 > |  | **Graph** |  |
@@ -4979,7 +5078,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Key Vault](../key-vault/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.KeyVault/register/action | Регистрирует подписку. |
 > | Действие | Microsoft.KeyVault/unregister/action | Отмена регистрации подписки. |
@@ -5063,7 +5162,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Обозреватель данных Azure](../data-explorer/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Kusto/Register/действие | Действие регистрации подписки |
 > | Действие | Microsoft. Kusto/Register/действие | Регистрирует подписку в поставщике ресурсов Kusto. |
@@ -5131,7 +5230,7 @@ ms.locfileid: "78207002"
 Служба Azure: [службы лаборатории Azure](../lab-services/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.LabServices/register/action | Регистрирует подписку. |
 > |  | **лабаккаунтс** |  |
@@ -5199,7 +5298,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Logic Apps](../logic-apps/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Logic/register/action | Регистрация поставщика ресурсов Microsoft.Logic для заданной подписки. |
 > |  | **интегратионаккаунтс** |  |
@@ -5351,7 +5450,7 @@ ms.locfileid: "78207002"
 Служба Azure: [машинное обучение Studio](../machine-learning/studio/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.MachineLearning/register/action | Регистрирует подписку для поставщика ресурсов веб-службы машинного обучения и позволяет создавать веб-службы. |
 > | Действие | Microsoft.MachineLearning/webServices/action | Создает свойства региональной веб-службы для поддерживаемых регионов. |
@@ -5389,7 +5488,7 @@ ms.locfileid: "78207002"
 Служба Azure: [служба машинное обучение](../machine-learning/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.MachineLearningServices/register/action | Регистрирует подписку для поставщика ресурсов служб машинного обучения. |
 > |  | **расположения** |  |
@@ -5538,7 +5637,7 @@ ms.locfileid: "78207002"
 Служба Azure: [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ManagedIdentity/register/action | Регистрирует подписку для поставщика ресурсов управляемых удостоверений. |
 > |  | **идентификаци** |  |
@@ -5556,7 +5655,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure лигхсаусе](../lighthouse/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. ManagedServices/Register/действие | Регистрация в управляемых службах. |
 > | Действие | Microsoft. ManagedServices/отменить регистрацию или действие | Отмените регистрацию в управляемых службах. |
@@ -5580,7 +5679,7 @@ ms.locfileid: "78207002"
 Служба Azure: [группы управления](../governance/management-groups/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Management/checkNameAvailability/action | Проверка того, является ли имя указанной группы управления допустимым и уникальным. |
 > | Действие | Microsoft.Management/getEntities/action | Вывод списка всех сущностей (групп управления, подписок и т. д.) для прошедшего проверку подлинности пользователя. |
@@ -5604,7 +5703,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Maps](../azure-maps/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Maps/register/action | Регистрация поставщика. |
 > |  | **организаций** |  |
@@ -5627,9 +5726,10 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Marketplace/register/action | Регистрирует поставщик ресурсов Microsoft.Marketplace в подписке. |
+> | Действие | Microsoft. Marketplace/Приватесторес/действие | Обновляет Приватесторе. |
 > |  | **Оффертипес/Publishers/Offers/Plans/Agreement** |  |
 > | Действие | Microsoft.Marketplace/offerTypes/publishers/offers/plans/agreements/read | Возвращает соглашение. |
 > | Действие | Microsoft.Marketplace/offerTypes/publishers/offers/plans/agreements/write | Принимает подписанное соглашение. |
@@ -5637,13 +5737,20 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Marketplace/offerTypes/publishers/offers/plans/configs/read | Возвращает файл конфигурации. |
 > | Действие | Microsoft.Marketplace/offerTypes/publishers/offers/plans/configs/write | Сохраняет файл конфигурации. |
 > | Действие | Microsoft.Marketplace/offerTypes/publishers/offers/plans/configs/importImage/action | Импортирует образ в запись контроля доступа конечного пользователя. |
+> |  | **приватесторес** |  |
+> | Действие | Microsoft. Marketplace/Приватесторес/запись | Создает Приватесторе. |
+> | Действие | Microsoft. Marketplace/Приватесторес/удаление | Удаляет Приватесторе. |
+> | Действие | Microsoft. Marketplace/Приватесторес/предложения/действие | Предложения обновлений в Приватесторе. |
+> |  | **Приватесторес/предложения** |  |
+> | Действие | Microsoft. Marketplace/Приватесторес/предложения/запись | Создает предложение в Приватесторе. |
+> | Действие | Microsoft. Marketplace/Приватесторес/предложения/удаление | Удаляет предложение из Приватесторе. |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **классикдевсервицес** |  |
 > | Действие | Microsoft.MarketplaceApps/ClassicDevServices/read | Выполнение операции GET в классической службе разработки. |
@@ -5659,7 +5766,7 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **договоров** |  |
 > | Действие | Microsoft.MarketplaceOrdering/agreements/read | Возвращение всех соглашений в указанной подписке. |
@@ -5678,7 +5785,7 @@ ms.locfileid: "78207002"
 Служба Azure: [службы мультимедиа](../media-services/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Media/register/action | Регистрация подписки для поставщика ресурсов служб мультимедиа и разрешение создания учетных записей служб мультимедиа. |
 > | Действие | Microsoft.Media/unregister/action | Отмена регистрации подписки для поставщика ресурсов Media Services. |
@@ -5763,7 +5870,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Миграция Azure](../migrate/migrate-services-overview.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Migrate/register/action | Регистрирует подписки в поставщике ресурсов Microsoft.Migrate |
 > |  | **ассессментпрожектс** |  |
@@ -5856,7 +5963,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Пространственные привязки Azure](../spatial-anchors/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Микседреалити/Register/действие | Регистрирует подписку для поставщика ресурсов Mixed Reality. |
 > |  | **Ремотерендерингаккаунтс/providers/Microsoft. Insights/metricDefinitions** |  |
@@ -5897,7 +6004,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure NetApp Files](../azure-netapp-files/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. NetApp/Register/действие | Действие регистрации подписки |
 > | Действие | Microsoft. NetApp/отменить регистрацию или действие | Отмена регистрации подписки с помощью поставщика ресурсов Microsoft. NetApp. |
@@ -5956,7 +6063,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Виртуальная сеть](../virtual-network/index.yml), [Load Balancer](../load-balancer/index.yml), [шлюз приложений](../application-gateway/index.yml), [Azure DNS](../dns/index.yml), [ExpressRoute](../expressroute/index.yml), [VPN-шлюз](../vpn-gateway/index.yml), [диспетчер трафика](../traffic-manager/index.yml), [наблюдатель за сетями](../network-watcher/index.yml), служба [брандмауэра](../firewall/index.yml) Azure для [передней дверцы](../frontdoor/index.yml), [Azure бастиона](../bastion/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Network/register/action | Регистрирует подписку. |
 > | Действие | Microsoft.Network/unregister/action | Отменяет регистрацию подписки. |
@@ -5988,6 +6095,10 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. Network/АппликатионгатевайвебаппликатионфиреваллполиЦиес/чтение | Возвращает политику WAF шлюза приложений. |
 > | Действие | Microsoft. Network/АппликатионгатевайвебаппликатионфиреваллполиЦиес/запись | Создает политику WAF для шлюза приложений или обновляет политику WAF шлюза приложений. |
 > | Действие | Microsoft. Network/АппликатионгатевайвебаппликатионфиреваллполиЦиес/удаление | Удаляет политику WAF шлюза приложений. |
+> |  | **аппликатионрулеколлектионс** |  |
+> | Действие | Microsoft. Network/Аппликатионрулеколлектионс/чтение | Получение Аппликатионрулеколлектион брандмауэра Azure |
+> | Действие | Microsoft. Network/Аппликатионрулеколлектионс/запись | Аппликатионрулеколлектион брандмауэр Креатесорупдатес Azure |
+> | Действие | Microsoft. Network/Аппликатионрулеколлектионс/удаление | Удаляет Аппликатионрулеколлектион брандмауэра Azure. |
 > |  | **аппликатионсекуритиграупс** |  |
 > | Действие | Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action | Присоединение конфигурации IP-адреса к группам безопасности приложений. Не оповещать. |
 > | Действие | Microsoft.Network/applicationSecurityGroups/joinNetworkSecurityRule/action | Присоединение правила безопасности к группам безопасности приложений. Не оповещать. |
@@ -6042,48 +6153,48 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Network/dnszones/write | Создает или обновляет зону DNS в группе ресурсов.  Используется для обновления тегов в ресурсе зоны DNS. Обратите внимание, что эту команду невозможно использовать для создания или обновления наборов записей в зоне. |
 > | Действие | Microsoft.Network/dnszones/delete | Удаляет зону DNS в формате JSON. К свойствам зоны относятся tags, etag, numberOfRecordSets и maxNumberOfRecordSets. |
 > |  | **днсзонес/A** |  |
-> | Действие | Microsoft.Network/dnszones/A/read | Возвращает набор записей типа A в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/A/write | Создает или обновляет набора записей типа A в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/A/delete | Удаляет из зоны DNS набор записей типа A с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/A/read | Получение набора записей типа "A" в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/A/write | Создание или обновление набора записей типа "A" в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/A/delete | Удаление набора записей с заданным именем и типа "A" из зоны DNS. |
 > |  | **днсзонес/AAAA** |  |
-> | Действие | Microsoft.Network/dnszones/AAAA/read | Возвращает набор записей типа AAAA в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/AAAA/write | Создает или обновляет набора записей типа AAAA в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/AAAA/delete | Удаляет из зоны DNS набор записей типа AAAA с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/AAAA/read | Получение набора записей типа AAAA в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/AAAA/write | Создание или обновление набора записей типа AAAA в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/AAAA/delete | Удаление набора записей с заданным именем и типа "AAAA" из зоны DNS. |
 > |  | **днсзонес/все** |  |
 > | Действие | Microsoft.Network/dnszones/all/read | Возвращает набор записей DNS разного типа. |
 > |  | **днсзонес/CAA** |  |
-> | Действие | Microsoft.Network/dnszones/CAA/read | Получение набора записей типа CAA в формате JSON. Набор записей содержит срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/CAA/write | Создание или обновление набора записей типа CAA в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/CAA/delete | Удаление из зоны DNS набора записей типа CAA с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/CAA/read | Получение набора записей типа "CAA" в формате JSON. Набор записей содержит срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/CAA/write | Создание или обновление набора записей типа "CAA" в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/CAA/delete | Удалить из зоны DNS набор записей с заданным именем и типом "CAA". |
 > |  | **днсзонес и CNAME** |  |
-> | Действие | Microsoft.Network/dnszones/CNAME/read | Возвращает набор записей типа CNAME в формате JSON. Набор записей содержит срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/CNAME/write | Создает или обновляет набора записей типа CNAME в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/CNAME/delete | Удаляет из зоны DNS набор записей типа CNAME с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/CNAME/read | Получение набора записей типа "CNAME" в формате JSON. Набор записей содержит срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/CNAME/write | Создание или обновление набора записей типа CNAME в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/CNAME/delete | Удаление набора записей с заданным именем и типа "CNAME" из зоны DNS. |
 > |  | **днсзонес/MX** |  |
-> | Действие | Microsoft.Network/dnszones/MX/read | Возвращает набор записей типа MX в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/MX/write | Создает или обновляет набора записей типа MX в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/MX/delete | Удаляет из зоны DNS набор записей типа MX с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/MX/read | Получение набора записей типа MX в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/MX/write | Создание или обновление набора записей типа MX в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/MX/delete | Удаление набора записей с заданным именем и типа MX из зоны DNS. |
 > |  | **днсзонес/NS** |  |
 > | Действие | Microsoft.Network/dnszones/NS/read | Возвращает набор записей DNS типа NS. |
 > | Действие | Microsoft.Network/dnszones/NS/write | Создает или обновляет набор записей DNS типа NS. |
 > | Действие | Microsoft.Network/dnszones/NS/delete | Удаляет набор записей DNS типа NS. |
 > |  | **днсзонес/PTR** |  |
-> | Действие | Microsoft.Network/dnszones/PTR/read | Возвращает набор записей типа PTR в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/PTR/write | Создает или обновляет набора записей типа PTR в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/PTR/delete | Удаляет из зоны DNS набор записей типа PTR с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/PTR/read | Получение набора записей типа PTR в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/PTR/write | Создание или обновление набора записей типа PTR в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/PTR/delete | Удалить из зоны DNS набор записей с заданным именем и типом "PTR". |
 > |  | **днсзонес и наборы записей** |  |
 > | Действие | Microsoft.Network/dnszones/recordsets/read | Возвращает набор записей DNS разного типа. |
 > |  | **днсзонес/SOA** |  |
 > | Действие | Microsoft.Network/dnszones/SOA/read | Возвращает набор записей DNS типа SOA. |
 > | Действие | Microsoft.Network/dnszones/SOA/write | Создает или обновляет набор записей DNS типа SOA. |
 > |  | **днсзонес/SRV** |  |
-> | Действие | Microsoft.Network/dnszones/SRV/read | Возвращает набор записей типа SRV в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/SRV/read | Получение набора записей типа "SRV" в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
 > | Действие | Microsoft.Network/dnszones/SRV/write | Создает или обновляет набор записей типа SRV. |
-> | Действие | Microsoft.Network/dnszones/SRV/delete | Удаляет из зоны DNS набор записей типа SRV с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/SRV/delete | Удалить из зоны DNS набор записей с заданным именем и типом "SRV". |
 > |  | **днсзонес/TXT** |  |
-> | Действие | Microsoft.Network/dnszones/TXT/read | Возвращает набор записей типа TXT в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
-> | Действие | Microsoft.Network/dnszones/TXT/write | Создает или обновляет набора записей типа TXT в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
-> | Действие | Microsoft.Network/dnszones/TXT/delete | Удаляет из зоны DNS набор записей типа TXT с заданным именем. |
+> | Действие | Microsoft.Network/dnszones/TXT/read | Получение набора записей типа "TXT" в формате JSON. Набор записей содержит список записей, а также срок жизни, теги и ETag. |
+> | Действие | Microsoft.Network/dnszones/TXT/write | Создание или обновление набора записей типа TXT в зоне DNS. Указанные записи заменят текущие записи в наборе записей. |
+> | Действие | Microsoft.Network/dnszones/TXT/delete | Удаление набора записей с заданным именем и типа "TXT" из зоны DNS. |
 > |  | **expressRouteCircuits** |  |
 > | Действие | Microsoft.Network/expressRouteCircuits/read | Возвращает канал ExpressRoute. |
 > | Действие | Microsoft.Network/expressRouteCircuits/write | Создает новый канал ExpressRoute или обновляет существующий. |
@@ -6259,6 +6370,22 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Network/locations/usages/read | Возвращает метрики использования ресурсов. |
 > |  | **расположения и Виртуалнетворкаваилаблиндпоинтсервицес** |  |
 > | Действие | Microsoft.Network/locations/virtualNetworkAvailableEndpointServices/read | Получение списка доступных служб конечных точек виртуальной сети. |
+> |  | **натрулеколлектионс** |  |
+> | Действие | Microsoft. Network/Натрулеколлектионс/чтение | Получение Натрулеколлектион брандмауэра Azure |
+> | Действие | Microsoft. Network/Натрулеколлектионс/запись | Натрулеколлектион брандмауэр Креатесорупдатес Azure |
+> | Действие | Microsoft. Network/Натрулеколлектионс/удаление | Удаляет Натрулеколлектион брандмауэра Azure. |
+> |  | **нетворкекспериментпрофилес** |  |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/чтение | Получение профиля Internet Analyzer |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/запись | Создание или обновление профиля Internet Analyzer |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/удаление | Удаление профиля Internet Analyzer |
+> |  | **Нетворкекспериментпрофилес и эксперименты** |  |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/эксперименты/чтение | Получение теста Internet Analyzer |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/эксперименты/запись | Создание или обновление теста Internet Analyzer |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/эксперименты/удаление | Удаление теста Internet Analyzer |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/эксперименты/TimeSeries/действие | Получение временных рядов для проверки Internet Analyzer |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/эксперименты/Латенцискорекард/действие | Получение системы показателей задержки теста Internet Analyzer |
+> |  | **Нетворкекспериментпрофилес/Преконфигуредендпоинтс** |  |
+> | Действие | Microsoft. Network/Нетворкекспериментпрофилес/Преконфигуредендпоинтс/чтение | Получение предварительно настроенных конечных точек профиля анализатора Интернета |
 > |  | **нетворкинтентполиЦиес** |  |
 > | Действие | Microsoft.Network/networkIntentPolicies/read | Получает описание политики намерений сети |
 > | Действие | Microsoft.Network/networkIntentPolicies/write | Создает политику намерения сети или обновляет существующую |
@@ -6287,6 +6414,10 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.Network/networkProfiles/setContainers/action | Задает контейнеры |
 > | Действие | Microsoft.Network/networkProfiles/removeContainers/action | Удаляет контейнеры |
 > | Действие | Microsoft.Network/networkProfiles/setNetworkInterfaces/action | Задает интерфейсы сетевых контейнеров |
+> |  | **нетворкрулеколлектионс** |  |
+> | Действие | Microsoft. Network/Нетворкрулеколлектионс/чтение | Получение Нетворкрулеколлектион брандмауэра Azure |
+> | Действие | Microsoft. Network/Нетворкрулеколлектионс/запись | Нетворкрулеколлектион брандмауэр Креатесорупдатес Azure |
+> | Действие | Microsoft. Network/Нетворкрулеколлектионс/удаление | Удаляет Нетворкрулеколлектион брандмауэра Azure. |
 > |  | **networkSecurityGroups** |  |
 > | Действие | Microsoft.Network/networkSecurityGroups/read | Возвращает определение группы безопасности сети. |
 > | Действие | Microsoft.Network/networkSecurityGroups/write | Создает новую группу безопасности сети или обновляет существующую. |
@@ -6608,7 +6739,7 @@ ms.locfileid: "78207002"
 Служба Azure: [центры уведомлений](../notification-hubs/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.NotificationHubs/register/action | Регистрирует подписку для поставщика ресурсов центров уведомлений и позволяет создавать пространства имен и центры уведомлений. |
 > | Действие | Microsoft.NotificationHubs/unregister/action | Отменяет регистрацию подписки для поставщика ресурсов центров уведомлений, позволяющей создавать пространства имен и центры уведомлений. |
@@ -6650,7 +6781,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Миграция Azure](../migrate/migrate-services-overview.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.OffAzure/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.OffAzure. |
 > | Действие | Microsoft.OffAzure/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.OffAzure. |
@@ -6922,7 +7053,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Monitor](../azure-monitor/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.OperationalInsights/register/action | Регистрирует подписку для поставщика ресурсов. |
 > | Действие | Microsoft. operationalinsights/Register/действие | Рергистерс подписку. |
@@ -7030,6 +7161,18 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфактивитирун/чтение | Чтение данных из таблицы Адфактивитирун |
 > |  | **рабочие области/запрос/Адфпипелинерун** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфпипелинерун/чтение | Чтение данных из таблицы Адфпипелинерун |
+> |  | **рабочие области/запрос/Адфссисинтегратионрунтимелогс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфссисинтегратионрунтимелогс/чтение | Чтение данных из таблицы Адфссисинтегратионрунтимелогс |
+> |  | **рабочие области/запрос/Адфссиспаккажеевентмессажеконтекст** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфссиспаккажеевентмессажеконтекст/чтение | Чтение данных из таблицы Адфссиспаккажеевентмессажеконтекст |
+> |  | **рабочие области/запрос/Адфссиспаккажеевентмессажес** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфссиспаккажеевентмессажес/чтение | Чтение данных из таблицы Адфссиспаккажеевентмессажес |
+> |  | **рабочие области/запрос/Адфссиспаккажеексекутаблестатистикс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфссиспаккажеексекутаблестатистикс/чтение | Чтение данных из таблицы Адфссиспаккажеексекутаблестатистикс |
+> |  | **рабочие области/запрос/Адфссиспаккажеексекутионкомпонентфасес** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфссиспаккажеексекутионкомпонентфасес/чтение | Чтение данных из таблицы Адфссиспаккажеексекутионкомпонентфасес |
+> |  | **рабочие области/запрос/Адфссиспаккажеексекутиондатастатистикс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфссиспаккажеексекутиондатастатистикс/чтение | Чтение данных из таблицы Адфссиспаккажеексекутиондатастатистикс |
 > |  | **рабочие области/запрос/Адфтригжеррун** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Адфтригжеррун/чтение | Чтение данных из таблицы Адфтригжеррун |
 > |  | **рабочие области/запрос/Адрепликатионресулт** |  |
@@ -7052,14 +7195,30 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Амлкомпутежобевент/чтение | Чтение данных из таблицы Амлкомпутежобевент |
 > |  | **рабочие области/запрос/Апиманажементгатевайлогс** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Апиманажементгатевайлогс/чтение | Чтение данных из таблицы Апиманажементгатевайлогс |
+> |  | **рабочие области/запрос/Аппаваилабилитиресултс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппаваилабилитиресултс/чтение | Чтение данных из таблицы Аппаваилабилитиресултс |
+> |  | **рабочие области/запрос/Аппбровсертимингс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппбровсертимингс/чтение | Чтение данных из таблицы Аппбровсертимингс |
 > |  | **рабочие области/запрос/Аппцентереррор** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/AppCenterError/read | Чтение данных из таблицы AppCenterError |
+> |  | **рабочие области/запрос/АппдепенденЦиес** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/АппдепенденЦиес/чтение | Чтение данных из таблицы АппдепенденЦиес |
+> |  | **рабочие области/запрос/Аппевентс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппевентс/чтение | Чтение данных из таблицы Аппевентс |
 > |  | **рабочие области/запрос/ApplicationInsights** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/ApplicationInsights/read | Чтение данных из таблицы ApplicationInsights. |
+> |  | **рабочие области/запрос/Аппметрикс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппметрикс/чтение | Чтение данных из таблицы Аппметрикс |
+> |  | **рабочие области/запрос/Апппажевиевс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Апппажевиевс/чтение | Чтение данных из таблицы Апппажевиевс |
+> |  | **рабочие области/запрос/Аппперформанцекаунтерс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппперформанцекаунтерс/чтение | Чтение данных из таблицы Аппперформанцекаунтерс |
 > |  | **рабочие области/запрос/Аппплатформлогсфорспринг** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппплатформлогсфорспринг/чтение | Чтение данных из таблицы Аппплатформлогсфорспринг |
 > |  | **рабочие области/запрос/Аппплатформсистемлогс** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппплатформсистемлогс/чтение | Чтение данных из таблицы Аппплатформсистемлогс |
+> |  | **рабочие области/запрос/Аппрекуестс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппрекуестс/чтение | Чтение данных из таблицы Аппрекуестс |
 > |  | **рабочие области/запрос/Аппсервицеапплогс** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппсервицеапплогс/чтение | Чтение данных из таблицы Аппсервицеапплогс |
 > |  | **рабочие области/запрос/Аппсервицеаудитлогс** |  |
@@ -7072,6 +7231,10 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппсервицефилеаудитлогс/чтение | Чтение данных из таблицы Аппсервицефилеаудитлогс |
 > |  | **рабочие области/запрос/Аппсервицехттплогс** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппсервицехттплогс/чтение | Чтение данных из таблицы Аппсервицехттплогс |
+> |  | **рабочие области/запрос/Аппсистемевентс** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Аппсистемевентс/чтение | Чтение данных из таблицы Аппсистемевентс |
+> |  | **рабочие области/запрос/Апптрацес** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Апптрацес/чтение | Чтение данных из таблицы Апптрацес |
 > |  | **рабочие области/запрос/AuditLogs** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/AuditLogs/read | Чтение данных из таблицы AuditLogs |
 > |  | **рабочие области/запрос/Аутоскаливалуатионслог** |  |
@@ -7086,6 +7249,8 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/AzureActivity/read | Чтение данных из таблицы AzureActivity. |
 > |  | **рабочие области/запрос/Азуреассессментрекоммендатион** |  |
 > | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Азуреассессментрекоммендатион/чтение | Чтение данных из таблицы Азуреассессментрекоммендатион |
+> |  | **рабочие области/запрос/AzureDiagnostics** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/AzureDiagnostics/чтение | Чтение данных из таблицы AzureDiagnostics |
 > |  | **рабочие области/запрос/Азуреметрикс** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/AzureMetrics/read | Чтение данных из таблицы AzureMetrics. |
 > |  | **рабочие области/запрос/Баиклустеревент** |  |
@@ -7424,6 +7589,8 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/SPAssessmentRecommendation/read | Чтение данных из таблицы SPAssessmentRecommendation. |
 > |  | **рабочие области/запрос/Склассессментрекоммендатион** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/SQLAssessmentRecommendation/read | Чтение данных из таблицы SQLAssessmentRecommendation. |
+> |  | **рабочие области/запрос/Склдатаклассификатион** |  |
+> | Действие | Microsoft. OperationalInsights/рабочие области/запрос/Склдатаклассификатион/чтение | Чтение данных из таблицы Склдатаклассификатион |
 > |  | **рабочие области/запрос/Склкуериперформанце** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/SQLQueryPerformance/read | Чтение данных из таблицы SQLQueryPerformance. |
 > |  | **рабочие области/запрос/Склсреатпротектионлогинаудитс** |  |
@@ -7527,7 +7694,7 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.OperationalInsights/workspaces/savedSearches/write | Создает сохраненный поисковый запрос. |
 > | Действие | Microsoft.OperationalInsights/workspaces/savedSearches/delete | Удаляет сохраненный поисковый запрос. |
 > |  | **рабочие области/саведсеарчес/результаты** |  |
-> | Действие | microsoft.operationalinsights/workspaces/savedsearches/results/read | Получение сохраненных результатов поиска. Устарело |
+> | Действие | microsoft.operationalinsights/workspaces/savedsearches/results/read | Получение сохраненных результатов поиска. Не рекомендуется |
 > |  | **рабочие области/саведсеарчес/расписания** |  |
 > | Действие | microsoft.operationalinsights/workspaces/savedsearches/schedules/read | Получение запланированного поиска. |
 > | Действие | microsoft.operationalinsights/workspaces/savedsearches/schedules/delete | Удаление запланированного поиска. |
@@ -7560,7 +7727,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Monitor](../azure-monitor/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.OperationsManagement/register/action | Регистрирует подписку для поставщика ресурсов. |
 > |  | **манажементассоЦиатионс** |  |
@@ -7581,7 +7748,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Политика Azure](../governance/policy/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.PolicyInsights/register/action | Регистрирует поставщик ресурсов Microsoft Policy Insights и включает на нем действия. |
 > | Действие | Microsoft. Полициинсигхтс/отменить регистрацию или действие | Отменяет регистрацию поставщика ресурсов Microsoft Policy Insights. |
@@ -7621,7 +7788,7 @@ ms.locfileid: "78207002"
 Служба Azure: [портал Azure](../azure-portal/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Portal/register/action | Регистрация на портале. |
 > |  | **консоли** |  |
@@ -7642,7 +7809,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Power BI Embedded](https://docs.microsoft.com/azure/power-bi-embedded/)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.PowerBIDedicated/register/action | Регистрация выделенного поставщика ресурсов Power BI. |
 > |  | **емкости** |  |
@@ -7669,7 +7836,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Site Recovery](../site-recovery/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.RecoveryServices/register/action | Регистрация подписки для заданного поставщика ресурсов. |
 > |  | **Расположения** |  |
@@ -7784,6 +7951,21 @@ ms.locfileid: "78207002"
 > |  | **Хранилища и Мониторингконфигуратионс** |  |
 > | Действие | Microsoft.RecoveryServices/Vaults/monitoringConfigurations/read | Возвращает конфигурацию уведомлений хранилища служб восстановления. |
 > | Действие | Microsoft.RecoveryServices/Vaults/monitoringConfigurations/write | Настройка уведомлений по электронной почте в хранилище служб восстановления. |
+> |  | **Хранилища и Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/удаление | Получение всех защищаемых контейнеров. |
+> | Действие | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/чтение | Получение всех защищаемых контейнеров. |
+> | Действие | Microsoft. recoveryservices/Vault/Приватиндпоинтконнектионпроксиес/проверка/действие | Получение всех защищаемых контейнеров. |
+> | Действие | Microsoft. recoveryservices/Vault/Приватиндпоинтконнектионпроксиес/запись | Получение всех защищаемых контейнеров. |
+> |  | **Хранилища: Приватиндпоинтконнектионпроксиес/Оператионресултс** |  |
+> | Действие | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/Оператионресултс/чтение | Получение всех защищаемых контейнеров. |
+> |  | **Хранилища: Приватиндпоинтконнектионпроксиес/Оператионсстатус** |  |
+> | Действие | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/Оператионсстатус/чтение | Получение всех защищаемых контейнеров. |
+> |  | **Хранилища и Приватиндпоинтконнектионс** |  |
+> | Действие | Microsoft. recoveryservices/Vault/Приватиндпоинтконнектионс/запись | Получение всех защищаемых контейнеров. |
+> |  | **Хранилища: Приватиндпоинтконнектионс/Оператионресултс** |  |
+> | Действие | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионс/Оператионресултс/чтение | Получение всех защищаемых контейнеров. |
+> |  | **Хранилища: Приватиндпоинтконнектионс/Оператионсстатус** |  |
+> | Действие | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионс/Оператионсстатус/чтение | Получение всех защищаемых контейнеров. |
 > |  | **Хранилища и Регистередидентитиес** |  |
 > | Действие | Microsoft.RecoveryServices/Vaults/registeredIdentities/write | Операцию регистрации контейнера в службе можно использовать для регистрации контейнера в службе восстановления. |
 > | Действие | Microsoft.RecoveryServices/Vaults/registeredIdentities/read | Операцию получения контейнеров можно использовать для получения контейнеров, зарегистрированных для ресурса. |
@@ -7960,7 +8142,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Relay](../service-bus-relay/relay-what-is-it.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Relay/checkNamespaceAvailability/action | Проверяет доступность пространства имен в заданной подписке. Этот API не рекомендуется. Вместо него используйте CheckNameAvailability. |
 > | Действие | Microsoft.Relay/checkNameAvailability/action | Проверяет доступность пространства имен в заданной подписке. |
@@ -8008,6 +8190,11 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. Relay/пространства имен/нетворкрулесетс/Delete | Удаление ресурса правила виртуальной сети |
 > |  | **пространства имен/оператионресултс** |  |
 > | Действие | Microsoft.Relay/namespaces/operationresults/read | Получение состояния операции пространства имен. |
+> |  | **пространства имен/Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. Relay/Namespaces/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/чтение | Получение прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/запись | Создание прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. Relay/пространства имен/Приватиндпоинтконнектионпроксиес/Delete | Удаление прокси-сервера подключения частной конечной точки |
 > |  | **пространства имен/поставщики/Microsoft. Insights/diagnosticSettings** |  |
 > | Действие | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/diagnosticSettings/чтение | Возвращает список описаний параметров диагностики пространства имен. |
 > | Действие | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/diagnosticSettings/запись | Возвращает список описаний параметров диагностики пространства имен. |
@@ -8034,7 +8221,7 @@ ms.locfileid: "78207002"
 Служба Azure: [работоспособность службы Azure](../service-health/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ResourceHealth/register/action | Регистрация подписки на службу "Работоспособность ресурсов Microsoft". |
 > | Действие | Microsoft.ResourceHealth/unregister/action | Отмена регистрации подписки для ResourceHealth (Майкрософт) |
@@ -8043,6 +8230,8 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft.ResourceHealth/AvailabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > |  | **Аваилабилитистатусес/Current** |  |
 > | Действие | Microsoft.ResourceHealth/AvailabilityStatuses/current/read | Возвращает состояние доступности для указанного ресурса. |
+> |  | **емергингиссуес** |  |
+> | Действие | Microsoft. Ресаурцехеалс/емергингиссуес/Read | Получение новых проблем служб Azure |
 > |  | **events** |  |
 > | Действие | Microsoft.ResourceHealth/events/read | Получение событий работоспособности служб для данной подписки. |
 > |  | **возвращаемых healthevent** |  |
@@ -8065,7 +8254,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Resource Manager](../azure-resource-manager/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Resources/checkResourceName/action | Проверяет допустимость имени ресурса. |
 > | Действие | Microsoft. Resources/Калкулатетемплатехаш/действие | Вычислите хэш предоставленного шаблона. |
@@ -8144,7 +8333,7 @@ ms.locfileid: "78207002"
 Служба Azure: [планировщик](../scheduler/index.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **жобколлектионс** |  |
 > | Действие | Microsoft.Scheduler/jobcollections/read | Возвращает коллекцию заданий. |
@@ -8166,7 +8355,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Поиск Azure](../search/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Search/register/action | Регистрирует подписку для поставщика ресурсов службы поиска и позволяет создавать службы поиска. |
 > | Действие | Microsoft.Search/checkNameAvailability/action | Проверяет доступность имени службы. |
@@ -8195,7 +8384,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Центр безопасности](../security-center/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Security/register/action | Регистрация подписки в центре безопасности Azure. |
 > | Действие | Microsoft.Security/unregister/action | Отменяет регистрацию подписки в центре безопасности Azure |
@@ -8216,6 +8405,9 @@ ms.locfileid: "78207002"
 > |  | **оценки** |  |
 > | Действие | Microsoft. Security/оценке/чтение | Получение оценок безопасности для подписки |
 > | Действие | Microsoft. Security/оценки/запись | Создание или обновление оценок безопасности в подписке |
+> |  | **аутопровисионингсеттингс** |  |
+> | Действие | Microsoft. Security/Аутопровисионингсеттингс/Read | Получить параметр автоматической подготовки безопасности для подписки |
+> | Действие | Microsoft. Security/Аутопровисионингсеттингс/Write | Создать или обновить параметр автоматической подготовки безопасности для подписки |
 > |  | **комплианцересултс** |  |
 > | Действие | Microsoft.Security/complianceResults/read | Получение результатов соответствия для ресурса. |
 > |  | **информатионпротектионполиЦиес** |  |
@@ -8279,7 +8471,7 @@ ms.locfileid: "78207002"
 Аналитика Microsoft Monitoring Insights
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **DiagnosticSettings** |  |
 > | Действие | Microsoft.SecurityGraph/diagnosticsettings/write | Запись параметра диагностики. |
@@ -8293,7 +8485,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Sentinel Azure](../sentinel/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Секуритинсигхтс/Register/действие | Регистрация подписки в Azure Sentinel |
 > | Действие | Microsoft. Секуритинсигхтс/отменить регистрацию или действие | Отмена регистрации подписки в Azure Sentinel |
@@ -8346,7 +8538,7 @@ ms.locfileid: "78207002"
 Служба Azure: служебная [шина](../service-bus/index.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ServiceBus/checkNamespaceAvailability/action | Проверяет доступность пространства имен в заданной подписке. Этот API не рекомендуется. Вместо него используйте CheckNameAvailability. |
 > | Действие | Microsoft.ServiceBus/checkNameAvailability/action | Проверяет доступность пространства имен в заданной подписке. |
@@ -8406,6 +8598,11 @@ ms.locfileid: "78207002"
 > | Действие | Microsoft. ServiceBus/пространства имен/нетворкрулесетс/Delete | Удаление ресурса правила виртуальной сети |
 > |  | **пространства имен/оператионресултс** |  |
 > | Действие | Microsoft.ServiceBus/namespaces/operationresults/read | Получение состояния операции пространства имен. |
+> |  | **пространства имен/Приватиндпоинтконнектионпроксиес** |  |
+> | Действие | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/чтение | Получение прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/запись | Создание прокси-сервера подключения к частной конечной точке |
+> | Действие | Microsoft. ServiceBus/пространства имен/Приватиндпоинтконнектионпроксиес/Delete | Удаление прокси-сервера подключения частной конечной точки |
 > |  | **пространства имен/поставщики/Microsoft. Insights/diagnosticSettings** |  |
 > | Действие | Microsoft.ServiceBus/namespaces/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает список описаний параметров диагностики пространства имен. |
 > | Действие | Microsoft.ServiceBus/namespaces/providers/Microsoft.Insights/diagnosticSettings/write | Возвращает список описаний параметров диагностики пространства имен. |
@@ -8462,7 +8659,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Service Fabric](../service-fabric/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.ServiceFabric/register/action | Регистрация любого действия. |
 > |  | **КБайт** |  |
@@ -8511,7 +8708,7 @@ ms.locfileid: "78207002"
 Служба Azure: [служба Azure SignalR](../azure-signalr/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.SignalRService/register/action | Регистрирует поставщика ресурсов Microsoft.SignalRService в подписке. |
 > | Действие | Microsoft.SignalRService/unregister/action | Отменяет регистрацию поставщика ресурсов Microsoft.SignalRService в подписке. |
@@ -8556,7 +8753,7 @@ ms.locfileid: "78207002"
 Служба Azure: [управляемые приложения Azure](../azure-resource-manager/managed-applications/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Solutions/register/action | Регистрация в решениях. |
 > | Действие | Microsoft. Solutions/Unregister/действие | Отменяет регистрацию в решениях. |
@@ -8588,7 +8785,7 @@ ms.locfileid: "78207002"
 Служба Azure: [база данных SQL Azure](../sql-database/index.yml), [хранилище данных SQL](../sql-data-warehouse/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Sql/checkNameAvailability/action | Проверка того, доступно ли данное имя сервера для подготовки по всему миру для данной подписки. |
 > | Действие | Microsoft.Sql/register/action | Регистрация подписки для поставщика ресурсов базы данных SQL Azure и разрешение создания баз данных Microsoft SQL. |
@@ -9203,7 +9400,7 @@ ms.locfileid: "78207002"
 Служба Azure: [SQL Server на виртуальных машинах Azure](../virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. Склвиртуалмачине/Register/действие | Регистрация подписки с помощью поставщика ресурсов Microsoft. Склвиртуалмачине |
 > | Действие | Microsoft. Склвиртуалмачине/отменить регистрацию или действие | Отмена регистрации подписки с помощью поставщика ресурсов Microsoft. Склвиртуалмачине |
@@ -9235,7 +9432,7 @@ ms.locfileid: "78207002"
 Служба Azure: [хранилище](../storage/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Storage/register/action | Регистрирует подписку для поставщика ресурсов службы хранилища и позволяет создавать учетные записи хранения. |
 > |  | **чеккнамеаваилабилити** |  |
@@ -9367,7 +9564,7 @@ ms.locfileid: "78207002"
 Служба Azure: [хранилище](../storage/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft. storagesync/Register/действие | Регистрирует подписку для поставщика синхронизации хранилища. |
 > | Действие | Microsoft. storagesync/отменить регистрацию или действие | Отменяет регистрацию подписки для поставщика синхронизации хранилища. |
@@ -9426,7 +9623,7 @@ ms.locfileid: "78207002"
 Служба Azure: [StorSimple](../storsimple/index.md)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.StorSimple/register/action | Регистрирует поставщик Microsoft.StorSimple. |
 > |  | **Диспетчер** |  |
@@ -9691,7 +9888,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Stream Analytics](../stream-analytics/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.StreamAnalytics/Register/action | Регистрация подписки в поставщике ресурсов Stream Analytics. |
 > |  | **расположения и квоты** |  |
@@ -9750,7 +9947,7 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Subscription/CreateSubscription/action | Создание подписки Azure. |
 > | Действие | Microsoft.Subscription/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.Subscription. |
@@ -9765,7 +9962,7 @@ ms.locfileid: "78207002"
 Служба Azure: Core
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.Support/register/action | Регистрирует поставщик ресурсов поддержки |
 > | Действие | Microsoft. support/Чеккнамеаваилабилити/действие | Проверяет, является ли имя допустимым и не используется для типа ресурса |
@@ -9791,7 +9988,7 @@ ms.locfileid: "78207002"
 Служба Azure: [аналитика временных рядов](../time-series-insights/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.TimeSeriesInsights/register/action | Регистрация подписки для поставщика ресурсов службы "Аналитика временных рядов" с возможностью создания сред данной службы. |
 > |  | **возможным** |  |
@@ -9818,7 +10015,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure DevOps](https://docs.microsoft.com/azure/devops/)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | Microsoft.VisualStudio/Register/Action | Регистрирует подписку Azure у поставщика Microsoft.VisualStudio. |
 > |  | **Учетная запись** |  |
@@ -9844,7 +10041,7 @@ ms.locfileid: "78207002"
 Служба Azure: [служба приложений](../app-service/index.yml), [функции](../azure-functions/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > | Действие | microsoft.web/unregister/action | Отменяет регистрацию поставщика ресурсов Microsoft.Web для подписки. |
 > | Действие | microsoft.web/validate/action | Выполняет проверку. |
@@ -10503,7 +10700,7 @@ ms.locfileid: "78207002"
 Служба Azure: [Azure Monitor](../azure-monitor/index.yml)
 
 > [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
+> | Тип действия | Операция | Description |
 > | --- | --- | --- |
 > |  | **компонента** |  |
 > | Действие | Microsoft.WorkloadMonitor/components/read | Возвращает компоненты ресурса. |
@@ -10522,7 +10719,7 @@ ms.locfileid: "78207002"
 > |  | **Operations** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли Azure](custom-roles.md)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 46044d4c6dd65944291aff157229be0abc60d3d7
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.openlocfilehash: 7003dc19a7bfc405809de91534028aba8e0416c5
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77913248"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136856"
 ---
 # <a name="create-your-first-azure-function-with-java-and-intellij"></a>Создание первой функции Azure с помощью Java и IntelliJ
 
@@ -46,7 +46,7 @@ ms.locfileid: "77913248"
 1. Заполните следующие поля в окне **Add Archetype** (Добавить архетип).
     - _GroupId_: com.microsoft.azure
     - _ArtifactId_: azure-functions-archetype
-    - _Версия_: используйте последнюю версию **1,22** из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
+    - _Версия_: Проверьте и используйте последнюю версию из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
     ![создания проекта Maven из архетипа в IntelliJ идее](media/functions-create-first-java-intellij/functions-create-intellij.png)  
 1. Нажмите кнопку **ОК**, а затем кнопку **Далее**.
 1. Введите подробные сведения и выберите **Готово**.
@@ -107,7 +107,7 @@ Maven создает файлы проекта в новой папке с им�
    [INFO] ------------------------------------------------------------------------
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.

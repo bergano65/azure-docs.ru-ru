@@ -4,11 +4,11 @@ description: Используйте приглашения и контекст �
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.openlocfilehash: abdde09fbb1f6b066772366c5cea933824cb5864
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210420"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220625"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Использование дальнейших подсказок для создания диалога с несколькими шагами
 
@@ -365,7 +365,7 @@ The `promptsToDelete` array provides the ...
 
 QnA Maker поддерживает управление версиями, включая шаги множественного включения диалога в экспортированный файл.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об контекстных диалогах см. в этом [образце диалогового окна](https://aka.ms/qnamakermultiturnsample) или дополнительные сведения о [концептуальном проектировании для нескольких диалогов](https://docs.microsoft.com/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
 

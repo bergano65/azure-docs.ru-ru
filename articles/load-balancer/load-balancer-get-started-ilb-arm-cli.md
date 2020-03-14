@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 06/27/2018
 ms.author: allensu
 ms.openlocfilehash: 8726991682ca8c2eabd628f1539ff940bf94e03d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392011"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284113"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -233,5 +233,5 @@ for i in `seq 1 2`; do
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы создали внутреннюю подсистему балансировки нагрузки уровня "Базовый", подключили к ней виртуальные машины, настроили правило трафика подсистемы балансировки нагрузки, зонд работоспособности, а также проверили работу подсистемы балансировки нагрузки. Дополнительные сведения о подсистемах балансировки нагрузки и связанных с ними ресурсах см. в статьях с инструкциями.

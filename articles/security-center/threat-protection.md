@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 08/25/2019
 ms.author: memildin
-ms.openlocfilehash: 8bd66b602201dbbb47a1fdba879c52a8ac441762
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: 031423d72aecacc1feed692aaa32bcd1ff7efbab
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373044"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282709"
 ---
 # <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
@@ -127,6 +127,10 @@ ms.locfileid: "78373044"
 
 Кроме того, наша глобальная группа исследователей безопасности постоянно отслеживает ландшафт угроз. Они добавляют связанные с контейнером предупреждения и уязвимости по мере их обнаружения.
 
+> [!TIP]
+> Вы можете имитировать оповещения контейнеров, следуя инструкциям в [этой записи блога](https://techcommunity.microsoft.com/t5/azure-security-center/how-to-demonstrate-the-new-containers-features-in-azure-security/ba-p/1011270).
+
+
 
 
 
@@ -209,6 +213,9 @@ Azure Key Vault — это облачная служба, которая обе
 * [Список оповещений системы защиты от угроз для службы хранилища Azure](alerts-reference.md#alerts-azurestorage)
 
 
+> [!TIP]
+> Вы можете имитировать оповещения службы хранилища Azure, следуя инструкциям в [этой записи блога](https://techcommunity.microsoft.com/t5/azure-security-center/validating-atp-for-azure-storage-detections-in-azure-security/ba-p/1068131).
+
 
 
 
@@ -266,14 +273,14 @@ Azure Cosmos DB оповещения создаются необычными и 
 
 Известно, что атаки типа "отказ в обслуживании" (от атак DDoS) являются простыми в выполнении. Они стали отличным вопросом безопасности, особенно если вы перемещаете приложения в облако. 
 
-Целью DDoS-атаки является исчерпание ресурсов приложения, чтобы приложение стало недоступным для обычных пользователей. Атаки от атак DDoS могут ориентироваться на любые конечные точки, к которым можно получить доступ через Интернет.
+Целью DDoS-атаки является исчерпание ресурсов приложения, чтобы оно стало недоступным для обычных пользователей. Атаки от атак DDoS могут ориентироваться на любые конечные точки, к которым можно получить доступ через Интернет.
 
 Чтобы защититься от атак от атак DDoS, Приобретите лицензию на Azure от атак DDoS Protection и убедитесь, что вы используете рекомендации по проектированию приложений. Защита от атак DDoS предоставляет различные уровни служб. Дополнительные сведения см. в статье [Общие сведения о защите Azure от атак DDoS](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview).
 
 Список оповещений Azure от атак DDoS Protection см. в [справочной таблице оповещений](alerts-reference.md#alerts-azureddos).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об оповещениях системы безопасности из этих средств защиты от угроз см. в следующих статьях:
 
 * [Справочная таблица для всех оповещений центра безопасности Azure](alerts-reference.md)

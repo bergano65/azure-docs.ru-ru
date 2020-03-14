@@ -4,11 +4,11 @@ description: Сведения о форматах содержимого, под
 ms.topic: article
 ms.date: 08/30/2019
 ms.openlocfilehash: ab915385f46f83c7b655acd1a48d66df84b50653
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78361797"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79247011"
 ---
 # <a name="content-formats-supported-in-azure-container-registry"></a>Форматы содержимого, поддерживаемые в Реестре контейнеров Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "78361797"
 
 Реестр контейнеров Azure может размещать репозитории для [диаграмм Helm](https://helm.sh/), формат упаковки, используемый для быстрого управления и развертывания приложений для Kubernetes. Поддерживается [клиент Helm](https://docs.helm.sh/using_helm/#installing-helm) версии 2 (2.11.0 или более поздней).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [принудительно отправлять и извлекать](container-registry-get-started-docker-cli.md) образы с помощью Реестра контейнеров Azure.
 

@@ -4,11 +4,11 @@ description: Из этой статьи вы узнаете, как выполн
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.openlocfilehash: f85451e0da6458de34aea936836b46781f4c4a21
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382514"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273544"
 ---
 # <a name="back-up-azure-files-with-powershell"></a>Резервное копирование файлов Azure с помощью PowerShell
 
@@ -296,6 +296,6 @@ testAzureFS       Backup               Completed            11/12/2018 2:42:07 P
 > [!WARNING]
 > Убедитесь, что версия PS обновлена до минимальной версии "az. RecoveryServices 2.6.0" для резервного копирования AFS в модулях Runbook службы автоматизации. Вам потребуется заменить старый модуль "AzureRM" на модуль "AZ". В этой версии фильтр "friendlyName" доступен для ```Get-AzRecoveryServicesBackupItem``` команды. Передайте имя общего файлового ресурса Azure в параметр friendlyName. Если имя файлового ресурса Azure передается в параметр "имя", эта версия выдает предупреждение, чтобы передать это понятное имя в параметр понятного имени.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Сведения о](backup-afs.md) резервном копировании файлов Azure в портал Azure.

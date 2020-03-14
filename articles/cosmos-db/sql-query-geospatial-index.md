@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: tisande
-ms.openlocfilehash: 2cf682a404154b9c1bb94680b3adb673892c1c72
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.openlocfilehash: eb0a2b2778b3217e185b9883def6eaa54674cc5b
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
-ms.locfileid: "77566378"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79137909"
 ---
 # <a name="index-geospatial-data-with-azure-cosmos-db"></a>Индексирование геопространственных данных с помощью Azure Cosmos DB
 
@@ -25,6 +25,44 @@ ms.locfileid: "77566378"
 > Azure Cosmos DB поддерживает индексирование точек, LineString, многоугольников и многомногоугольниковых элементов
 >
 >
+
+## <a name="modifying-geospatial-data-type"></a>Изменение типа геопространственных данных
+
+В контейнере `geospatialConfig` указывает, как будут индексироваться геопространственные данные. Необходимо указать один `geospatialConfig` на контейнер: geography или geometry. Если не указано, `geospatialConfig` будет по умолчанию иметь тип данных geography. При изменении `geospatialConfig`все существующие геопространственные данные в контейнере будут переиндексированы.
+
+> [!NOTE]
+> В настоящее время Azure Cosmos DB поддерживает изменения в Жеоспатиалконфиг в пакете SDK для .NET только в версиях 3,6 и выше.
+>
+
+Ниже приведен пример изменения типа геопространственных данных на `geometry` путем установки свойства `geospatialConfig` и добавления **BoundingBox**:
+
+```csharp
+    //Retrieve the container's details
+    ContainerResponse containerResponse = await client.GetContainer("db", "spatial").ReadContainerAsync();
+    //Set GeospatialConfig to Geometry
+    GeospatialConfig geospatialConfig = new GeospatialConfig(GeospatialType.Geometry);
+    containerResponse.Resource.GeospatialConfig = geospatialConfig;
+    // Add a spatial index including the required boundingBox
+    SpatialPath spatialPath = new SpatialPath
+            {  
+                Path = "/locations/*",
+                BoundingBox = new BoundingBoxProperties(){
+                    Xmin = 0,
+                    Ymin = 0,
+                    Xmax = 10,
+                    Ymax = 10
+                }
+            };
+    spatialPath.SpatialTypes.Add(SpatialType.Point);
+    spatialPath.SpatialTypes.Add(SpatialType.LineString);
+    spatialPath.SpatialTypes.Add(SpatialType.Polygon);
+    spatialPath.SpatialTypes.Add(SpatialType.MultiPolygon);
+
+    containerResponse.Resource.IndexingPolicy.SpatialIndexes.Add(spatialPath);
+
+    // Update container with changes
+    await client.GetContainer("db", "spatial").ReplaceContainerAsync(containerResponse.Resource);
+```
 
 ## <a name="geography-data-indexing-examples"></a>Примеры индексирования географических данных
 
@@ -58,13 +96,66 @@ ms.locfileid: "77566378"
 
 > [!NOTE]
 > Если значение расположения GeoJSON в документе сформировано неверно или является недействительным, оно не будет индексироваться для пространственных запросов. Проверить значение расположения можно с помощью ST_ISVALID и ST_ISVALIDDETAILED.
->
->
->
 
 [Политику индексирования](how-to-manage-indexing-policy.md) также можно изменить с помощью Azure CLI, PowerShell или любого пакета SDK.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="geometry-data-indexing-examples"></a>Примеры индексирования геометрических данных
+
+Для типа данных **Geometry** , аналогичного типу данных geography, необходимо указать соответствующие пути и типы для индексирования. Кроме того, необходимо также указать `boundingBox` в политике индексирования, чтобы указать требуемую область для индексирования по определенному пути. Для каждого геопространственного пути требуется собственная`boundingBox`.
+
+Ограничивающий прямоугольник состоит из следующих свойств:
+
+- **xmin**: минимальная индексированная Координата x
+- **ymin**: минимальная индексированная координата y
+- **xmax**: максимальная индексированная Координата x
+- **ymax**: максимальная индексированная координата y.
+
+Ограничивающий прямоугольник является обязательным, так как геометрические данные занимают плоскость, которая может быть бесконечна. Однако для пространственных индексов требуется конечное пространство. Для типа данных **Geography** земля является границей, и вам не нужно задавать ограничивающий прямоугольник.
+
+Необходимо создать ограничивающий прямоугольник, который содержит все (или все) данные. Пространственный индекс может использовать только операции, вычисленные для объектов, полностью находящихся внутри ограничивающего прямоугольника. Не следует делать размер ограничивающего прямоугольника значительно больше, чем необходимо, так как это отрицательно повлияет на производительность запросов.
+
+Ниже приведен пример политики индексации, которая индексирует **геометрические** данные с **жеоспатиалконфиг** , для которых задано значение `geometry`.
+
+```json
+ {
+    "indexingMode": "consistent",
+    "automatic": true,
+    "includedPaths": [
+        {
+            "path": "/*"
+        }
+    ],
+    "excludedPaths": [
+        {
+            "path": "/\"_etag\"/?"
+        }
+    ],
+    "spatialIndexes": [
+        {
+            "path": "/locations/*",
+            "types": [
+                "Point",
+                "LineString",
+                "Polygon",
+                "MultiPolygon"
+            ],
+            "boundingBox": {
+                "xmin": -10,
+                "ymin": -20,
+                "xmax": 10,
+                "ymax": 20
+            }
+        }
+    ]
+}
+```
+
+Указанная выше политика индексирования имеет **BoundingBox** (-10, 10) для координат x и (-20, 20) для координат y. Контейнер с указанной выше политикой индексации будет индексировать все точки, многоугольники, многомногоугольники и LineString, которые полностью находятся в пределах этого региона.
+
+> [!NOTE]
+> Если вы попытаетесь добавить политику индексирования с **BoundingBox** в контейнер с типом данных `geography`, произойдет сбой. Необходимо изменить **жеоспатиалконфиг** контейнера так, чтобы он `geometry` перед добавлением **BoundingBox**. Вы можете добавить данные и изменить оставшуюся часть политики индексирования (например, пути и типы) до или после выбора геопространственного типа данных для контейнера.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с предварительными сведениями о поддержке геопространственных данных в Azure Cosmos DB, вы можете сделать следующее:
 

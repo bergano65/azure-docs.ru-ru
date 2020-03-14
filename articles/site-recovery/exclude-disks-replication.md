@@ -4,11 +4,11 @@ description: Как исключить диски из репликации в A
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.openlocfilehash: 57bf06f0fde85714530c06cbd008db08de7460d2
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75498271"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79281851"
 ---
 # <a name="exclude-disks-from-disaster-recovery"></a>Исключение дисков из аварийного восстановления
 

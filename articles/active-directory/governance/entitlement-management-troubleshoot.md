@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e291a032c1aac45ebc783126e69b524e1d0af95b
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376516"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79261688"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
 
@@ -57,7 +57,7 @@ ms.locfileid: "78376516"
 
 * Если новый внешний пользователь, который ранее не входил в каталог, получит пакет для доступа, в который входит сайт SharePoint Online, его пакет будет отображаться как предоставленный неполностью, пока в SharePoint Online не будет подготовлена учетная запись. Дополнительные сведения о параметрах общего доступа см. [в статье Просмотр параметров внешнего общего доступа в SharePoint Online](entitlement-management-external-users.md#review-your-sharepoint-online-external-sharing-settings).
 
-## <a name="requests"></a>Запросы
+## <a name="requests"></a>Requests
 
 * Когда пользователь хочет запросить доступ к пакету Access, убедитесь, что он использует **ссылку на портал доступа** для пакета Access. Дополнительные сведения см. [в разделе Совместное использование ссылки для запроса пакета Access](entitlement-management-access-package-settings.md).
 
@@ -129,7 +129,7 @@ ms.locfileid: "78376516"
 
 * Если применяются несколько политик, то политика, которая автоматически выбирается, или политики, отображаемые запрашивающему, основаны на следующей логике приоритета:
 
-    | Приоритет политики | Область видимости |
+    | Приоритет политики | Область |
     | --- | --- |
     | P1 | Определенные пользователи и группы в каталоге или в конкретных подключенных организациях |
     | P2 | Все элементы в каталоге (за исключением гостей) |
@@ -138,7 +138,7 @@ ms.locfileid: "78376516"
     
     Если любая политика имеет более высокий приоритет, категории с низким приоритетом не учитываются. Пример того, как в запрашивающей части отображается несколько политик с одинаковым приоритетом, см. в разделе [Выбор политики](entitlement-management-request-access.md#select-a-policy).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление доступом для внешних пользователей](entitlement-management-external-users.md)
 - [Просмотр отчетов о том, как пользователи получили доступ в управлении назначениями](entitlement-management-reports.md)

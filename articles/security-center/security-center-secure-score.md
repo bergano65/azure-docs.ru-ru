@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 01/15/2019
 ms.author: memildin
 ms.openlocfilehash: 15a94a9724fac29d36f6bb88ee4810b3bc7ca607
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77603480"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245256"
 ---
 # <a name="improve-your-secure-score-in-azure-security-center"></a>Улучшение оценки безопасности в центре безопасности Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "77603480"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье показано, как повысить безопасность с помощью **оценки** безопасности в центре безопасности Azure. Дополнительные сведения о центре безопасности см. в следующих статьях:
 
 * [Центр безопасности Azure: часто задаваемые вопросы](faq-general.md)— часто задаваемые вопросы о службе и о безопасности.

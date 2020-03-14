@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 04/03/2018
 ms.author: srrengar
 ms.openlocfilehash: b9a448ff41c66fa3a38c124f7acde062bacbe9ba
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980208"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282501"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью Диагностики Azure для Windows
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "75980208"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В этом руководстве используются инструменты, представленные ниже.
 
 * [Azure Resource Manager](../azure-resource-manager/management/overview.md)
@@ -300,7 +300,7 @@ Service Fabric настраивает несколько [стандартных
 
 ## <a name="collect-performance-counters"></a>Сбор данных счетчиков производительности
 
-Для сбора метрик производительности из кластера добавьте счетчики производительности в элемент WadCfg > DiagnosticMonitorConfiguration в шаблоне Resource Manager для кластера. Дополнительные сведения о том, как изменить `WadCfg`, чтобы собрать данные конкретных счетчиков производительности, см. в статье [Performance monitoring with Windows Azure Diagnostics extension](service-fabric-diagnostics-perf-wad.md) (Мониторинг производительности с помощью расширения системы диагностики Microsoft Azure). Список счетчиков производительности Service Fabric, которые мы рекомендуем собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
+Для сбора метрик производительности из кластера добавьте счетчики производительности в элемент WadCfg > DiagnosticMonitorConfiguration в шаблоне Resource Manager для кластера. Дополнительные сведения о том, как изменить [, чтобы собрать данные конкретных счетчиков производительности, см. в статье ](service-fabric-diagnostics-perf-wad.md)Performance monitoring with Windows Azure Diagnostics extension`WadCfg` (Мониторинг производительности с помощью расширения системы диагностики Microsoft Azure). Список счетчиков производительности Service Fabric, которые мы рекомендуем собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
   
 Если вы используете приемник Application Insights, как описано в разделе ниже, и вам нужно, чтобы эти метрики отображались в Application Insights, добавьте имя приемника в соответствующем разделе, как показано выше. Это позволит автоматически отправлять счетчики производительности, отдельно настроенные для ресурса Application Insights.
 

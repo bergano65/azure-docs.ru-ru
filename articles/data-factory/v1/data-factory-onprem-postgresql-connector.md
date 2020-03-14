@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 37c83e77cadae002ff701a08c4b36a86f7cab9a0
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78387352"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79281240"
 ---
 # <a name="move-data-from-postgresql-using-azure-data-factory"></a>Перемещение данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -32,7 +32,7 @@ ms.locfileid: "78387352"
 
 Вы можете скопировать данные из локального хранилища данных PostgreSQL в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает перемещение данных из базы данных PostgreSQL в другие хранилища данных, но не наоборот.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Служба фабрики данных поддерживает подключение к локальным источникам PostgreSQL с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке.
 
@@ -70,15 +70,15 @@ ms.locfileid: "78387352"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе PostgreSQL.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Description | Обязательно |
 | --- | --- | --- |
-| тип |Для свойства type необходимо задать значение **OnPremisesPostgreSql** |Да |
-| сервер |Имя сервера, PostgreSQL. |Да |
-| база данных |Имя базы данных PostgreSQL. |Да |
-| схема |Имя схемы в базе данных. Имя схемы чувствительно к регистру. |Нет |
+| type |Для свойства type необходимо задать значение **OnPremisesPostgreSql** |Да |
+| server |Имя сервера, PostgreSQL. |Да |
+| База данных |Имя базы данных PostgreSQL. |Да |
+| схема |Имя схемы в базе данных. Имя схемы чувствительно к регистру. |нет |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных PostgreSQL. Возможными значениями являются: анонимная, обычная и Windows. |Да |
-| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
-| пароль |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
+| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |нет |
+| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |нет |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных PostgreSQL. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
@@ -86,7 +86,7 @@ ms.locfileid: "78387352"
 
 Раздел typeProperties во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел typeProperties набора данных с типом **RelationalTable** (который включает набор данных PostgreSQL) содержит приведенные ниже свойства.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Description | Обязательно |
 | --- | --- | --- |
 | tableName |Имя таблицы в экземпляре базы данных PostgreSQL, на которое ссылается связанная служба. Свойство tableName чувствительно к регистру. |Нет (если для свойства **RelationalSource** задано значение **query**). |
 
@@ -97,7 +97,7 @@ ms.locfileid: "78387352"
 
 Если источник относится к типу **RelationalSource** (который содержит PostgreSQL), то в разделе typeProperties доступны следующие свойства:
 
-| Свойство | Описание | Допустимые значения | Обязательно |
+| Свойство | Description | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например: `"query": "select * from \"MySchema\".\"MyTable\""`. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
@@ -305,7 +305,7 @@ ms.locfileid: "78387352"
 | Тип базы данных PostgreSQL | Псевдонимы PostgresSQL | Тип .NET Framework |
 | --- | --- | --- |
 | abstime | |Datetime |
-| bigint |int8 |Int64 |
+| BIGINT |int8 |Int64 |
 | bigserial |serial8 |Int64 |
 | bit [(n)] | |Byte[], String |
 | bit varying [ (n) ] |varbit |Byte[], String |
@@ -319,7 +319,7 @@ ms.locfileid: "78387352"
 | circle | |Byte[], String |
 | Дата | |Datetime |
 | daterange | |String |
-| double precision |float8 |С двойной точностью |
+| double precision |float8 |Double |
 | inet | |Byte[], String |
 | intarry | |String |
 | int4range | |String |
@@ -328,7 +328,7 @@ ms.locfileid: "78387352"
 | interval [fields] [(p)] | |Timespan |
 | json | |String |
 | jsonb | |Byte[] |
-| график | |Byte[], String |
+| line | |Byte[], String |
 | lseg | |Byte[], String |
 | macaddr | |Byte[], String |
 | money | |Decimal |
@@ -337,13 +337,13 @@ ms.locfileid: "78387352"
 | oid | |Int32 |
 | path | |Byte[], String |
 | pg_lsn | |Int64 |
-| регистрации | |Byte[], String |
-| многоугольник | |Byte[], String |
+| point | |Byte[], String |
+| polygon | |Byte[], String |
 | real |float4 |Один |
 | smallint |int2 |Int16 |
 | smallserial |serial2 |Int16 |
 | serial |serial4 |Int32 |
-| текст | |String |
+| text | |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).

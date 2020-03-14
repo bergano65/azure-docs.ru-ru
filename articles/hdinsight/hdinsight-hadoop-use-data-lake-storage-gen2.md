@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/20/2020
 ms.openlocfilehash: d711cc7e58fb055eda62cfc364a5552a7d10f7bd
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623156"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272296"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -81,7 +81,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 
     ![Снимок экрана, на котором показано, как назначить роль RBAC](./media/hdinsight-hadoop-use-data-lake-storage-gen2/add-rbac-role3-window.png)
 
-1. Нажмите кнопку **Сохранить**. Выбранное пользователем удостоверение теперь отображается под выбранной ролью.
+1. Щелкните **Сохранить**. Выбранное пользователем удостоверение теперь отображается под выбранной ролью.
 1. После завершения первоначальной настройки вы можете создать кластер на портале. Кластер должен быть расположен в том же регионе Azure, что и учетная запись хранения. На вкладке **хранилище** в меню Создание кластера выберите следующие параметры.
 
     * В качестве **основного типа хранилища**выберите **Azure Data Lake Storage 2-го поколения**.
@@ -100,7 +100,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 
 Вы можете [скачать пример файла шаблона](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/hdinsight-adls-gen2-template.json) и [скачать пример файла параметров](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/parameters.json). Перед использованием шаблона и приведенного ниже фрагмента кода Azure CLI Замените следующие заполнители их правильными значениями:
 
-| Заместитель | Описание |
+| Заполнитель | Description |
 |---|---|
 | `<SUBSCRIPTION_ID>` | Идентификатор подписки Azure |
 | `<RESOURCEGROUPNAME>` | Группа ресурсов, в которой вы хотите создать новый кластер и учетную запись хранения. |
@@ -254,7 +254,7 @@ LOCATION 'abfs:///example/data/';
 LOCATION '/example/data/';
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure HDInsight integration with Data Lake Storage Gen2 preview - ACL and security update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/) (Интеграция Azure HDInsight с Data Lake Storage 2-го поколения (предварительная версия) — обновление списка управления доступом и системы безопасности)
 * [Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)](../storage/blobs/data-lake-storage-introduction.md)

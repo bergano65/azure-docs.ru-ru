@@ -14,11 +14,11 @@ ms.date: 08/13/2019
 ms.author: curtand
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: 5f81181ac3107307a352cdbcd0b5cc4a555deacb
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375346"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253225"
 ---
 # <a name="manage-app-passwords-for-two-step-verification"></a>Управление паролями приложения для двухфакторной проверки подлинности
 
@@ -122,7 +122,7 @@ ms.locfileid: "78375346"
 
 Убедитесь, что пароль был правильно введен. Если вы уверены, что правильно ввели свой пароль, попробуйте снова войти в систему и создать новый пароль приложения. Если ни один из этих вариантов не устранит проблему, обратитесь в службу технической поддержки Организации, чтобы они могли удалять существующие пароли приложений, позволяя создавать новые.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md)
 

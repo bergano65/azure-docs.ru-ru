@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: 276e691351d852d6dcb0075d47bf33af6767fc10
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394276"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260336"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -55,7 +55,7 @@ ms.locfileid: "78394276"
 
 **RWX** означает разрешения на **чтение, запись и выполнение**. Существует еще более краткая форма — цифровая, согласно которой **чтение = 4**, **запись = 2**, **выполнение = 1**, а их сумма выражает предоставленные разрешения. Ниже приводятся некоторые примеры.
 
-| Цифровая форма | Краткая форма |      Что означает     |
+| Цифровая форма | Краткая форма |      Значение     |
 |--------------|------------|------------------------|
 | 7            | `RWX`        | чтение, запись и выполнение |
 | 5            | `R-X`        | Чтение + выполнение         |
@@ -76,7 +76,7 @@ ms.locfileid: "78394276"
 | Чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
 | Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
 | Удаление    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
-| Создать    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Создание    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Список      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
 | Список      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
 | Список      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |
@@ -297,6 +297,6 @@ GUID отображается, если пользователь не сущес
 * [POSIX ACL on Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs) (POSIX ACL для Ubuntu)
 * [ACL: Using Access Control Lists on Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/) (ACL: использование списков управления доступом в Linux)
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 * [Обзор Azure Data Lake Storage Gen1](data-lake-store-overview.md)

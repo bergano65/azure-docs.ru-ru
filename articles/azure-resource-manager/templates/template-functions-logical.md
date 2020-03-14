@@ -4,11 +4,11 @@ description: Описываются функции, используемые в 
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: aef520a26124a85f414c4f4aa1a3e307d383c29b
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207219"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248688"
 ---
 # <a name="logical-functions-for-azure-resource-manager-templates"></a>Логические функции для шаблонов Azure Resource Manager
 
@@ -69,7 +69,7 @@ Resource Manager предоставляет ряд функций для вып�
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | andExampleOutput | Bool | False |
-| orExampleOutput | Bool | True |
+| orExampleOutput | Bool | Истина |
 | notExampleOutput | Bool | False |
 
 ## <a name="bool"></a>bool
@@ -121,9 +121,9 @@ Resource Manager предоставляет ряд функций для вып�
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| trueString | Bool | True |
+| trueString | Bool | Истина |
 | falseString | Bool | False |
-| trueInt | Bool | True |
+| trueInt | Bool | Истина |
 | falseInt | Bool | False |
 
 ## <a name="if"></a>if
@@ -278,7 +278,7 @@ Resource Manager предоставляет ряд функций для вып�
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | andExampleOutput | Bool | False |
-| orExampleOutput | Bool | True |
+| orExampleOutput | Bool | Истина |
 | notExampleOutput | Bool | False |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) используется **not** и [equals](template-functions-comparison.md#equals).
@@ -301,7 +301,7 @@ Resource Manager предоставляет ряд функций для вып�
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkNotEquals | Bool | True |
+| checkNotEquals | Bool | Истина |
 
 ## <a name="or"></a>или диспетчер конфигурации служб
 
@@ -352,7 +352,7 @@ Resource Manager предоставляет ряд функций для вып�
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | andExampleOutput | Bool | False |
-| orExampleOutput | Bool | True |
+| orExampleOutput | Bool | Истина |
 | notExampleOutput | Bool | False |
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -3,12 +3,12 @@ title: Установка агента Службы восстановления
 description: Узнайте, как установить агент Службы восстановления Microsoft Azure (MARS) для резервного копирования компьютеров Windows.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: cf6b332c308bb0224dbfed546f8b3ba819abcb02
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: b9a6791709d5aff82d11bbf10e5f084fd8c1a000
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78673089"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79247765"
 ---
 # <a name="install-the-azure-backup-mars-agent"></a>Установка агента MARS Azure Backup
 
@@ -99,6 +99,10 @@ Azure Backup использует агент MARS для резервного к
 
 Для всех предыдущих URL-адресов и IP-адреса используется протокол HTTPS через порт 443.
 
+### <a name="private-endpoints"></a>Частные конечные точки
+
+[!INCLUDE [Private Endpoints](../../includes/backup-private-endpoints.md)]
+
 ## <a name="download-the-mars-agent"></a>Скачать агент MARS
 
 Скачайте агент MARS, чтобы его можно было установить на компьютерах, для которых требуется создать резервную копию.
@@ -124,7 +128,7 @@ Azure Backup использует агент MARS для резервного к
 
     ![Скачивание учетных данных хранилища](./media/backup-try-azure-backup-in-10-mins/download-vault-credentials.png)
 
-1. Нажмите кнопку **Сохранить**. Файл будет скачан в папку "Downloads". Невозможно открыть файл учетных данных хранилища.
+1. Щелкните **Сохранить**. Файл будет скачан в папку "Downloads". Невозможно открыть файл учетных данных хранилища.
 
 ## <a name="install-and-register-the-agent"></a>Установка и регистрация агента
 
@@ -155,6 +159,6 @@ Azure Backup использует агент MARS для резервного к
 
 1. Нажмите кнопку **Готово**. Теперь агент установлен, и ваш компьютер зарегистрирован в хранилище. вы можете настроить параметры резервного копирования, в том числе расписание.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [выполнять резервное копирование компьютеров Windows с помощью агента MARS Azure Backup](backup-windows-with-mars-agent.md)

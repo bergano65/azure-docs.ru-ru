@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/28/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ca3df9e68e1d7e82675a6765f0320d42599a63da
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.openlocfilehash: d9cf78f3cc5399a9e974cd9b4f0b3f24c80dacce
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78943640"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79214125"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database"></a>Базовый план безопасности Azure для базы данных SQL Azure
 
@@ -238,13 +238,12 @@ https://docs.microsoft.com/azure/virtual-machines/windows/time-sync
 
 Кроме того, вы можете передавать данные телеметрии диагностики SQL Azure в Аналитика SQL Azure, облачное решение, которое отслеживает производительность баз данных SQL Azure, эластичных пулов и управляемых экземпляров в масштабе и нескольких подписках. Решение поможет собирать и визуализировать показатели производительности Базы данных SQL Azure, а также обладает встроенными интеллектуальными возможностями для устранения неполадок производительности.
 
-
 Как настроить аудит для базы данных SQL Azure:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-auditing
 
 
-Как получить журналы и метрики платформы с помощью Azure Monitor:
+Как получить метрики и журналы ресурсов с помощью Azure Monitor:
 
 https://docs.microsoft.com/azure/sql-database/sql-database-metrics-diag-logging
 

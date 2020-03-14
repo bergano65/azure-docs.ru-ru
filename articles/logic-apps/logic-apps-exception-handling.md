@@ -9,11 +9,11 @@ ms.reviewer: klam, estfan, logicappspm
 ms.date: 01/11/2020
 ms.topic: article
 ms.openlocfilehash: 73b116117530e5a2103b604efbf757d691006508
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906698"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284035"
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Обработка ошибок и исключений в Azure Logic Apps
 
@@ -21,7 +21,7 @@ ms.locfileid: "76906698"
 
 <a name="retry-policies"></a>
 
-## <a name="retry-policies"></a>политики повтора;
+## <a name="retry-policies"></a>Политики повтора
 
 Для наиболее простого исключения и обработки ошибок можно использовать *политику повтора* в любом действии или триггере, где это возможно, например, в разделе [действие HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-trigger). Политика повторов указывает, каким образом и повторяет ли действие или триггер запрос, когда истекает время ожидания первоначального запроса или запрос завершается ошибкой, т.е. на запрос дается ответ 408, 429 или 5xx. Если политика повтора не задана, используется политика по умолчанию.
 
@@ -112,7 +112,7 @@ ms.locfileid: "76906698"
 }
 ```
 
-### <a name="none"></a>Нет
+### <a name="none"></a>None
 
 Чтобы указать, что действие или триггер не повторяет неудавшиеся запросы, задайте параметру <*retry-policy-type*> значение `none`.
 

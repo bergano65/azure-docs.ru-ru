@@ -11,11 +11,11 @@ ms.date: 03/09/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 3abf38a4b1ea798c39150454ac33f73ea588b782
-ms.sourcegitcommit: 3616b42a0d6bbc31b965995d861930e53d2cf0d3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78933070"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264379"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -209,7 +209,7 @@ ms.locfileid: "78933070"
 
 | ID | Значение по умолчанию |
 | -- | ------------- |
-|verification_control_but_change_claims |Change |
+|verification_control_but_change_claims |Изменить |
 |verification_control_fail_send_code |Не удалось отправить код. Повторите попытку позже. |
 |verification_control_fail_verify_code |Не удалось проверить код. Повторите попытку позже. |
 |verification_control_but_send_code |Отправить код |

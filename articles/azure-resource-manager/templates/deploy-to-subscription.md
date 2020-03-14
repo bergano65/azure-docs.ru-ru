@@ -2,23 +2,17 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 03/06/2020
-ms.openlocfilehash: 1ec761a8136d631c60a7a2021f5462dbf3d7f790
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.date: 03/09/2020
+ms.openlocfilehash: 1a76e41b4b2264bc535752e8f765b3303080abbd
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78924973"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248415"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Как правило, вы развертываете ресурсы Azure в группу ресурсов в подписке Azure. Однако вы также можете создавать ресурсы в:
-
-* уровень подписки (рассматривается в этой статье)
-* [уровень группы управления](deploy-to-management-group.md)
-* [уровень клиента](deploy-to-tenant.md)
-
-Развертывания на уровне подписки используются для выполнения действий, имеющих смысл на этом уровне, таких как создание групп ресурсов или назначение [управления доступом на основе ролей](../../role-based-access-control/overview.md).
+Чтобы упростить управление ресурсами в подписке Azure, можно определить и назначить [политики](../../governance/policy/overview.md) или [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в рамках подписки. С помощью шаблонов уровня подписки декларативно применяются политики и назначаются роли в подписке. Вы также можете создавать группы ресурсов и развертывать ресурсы.
 
 Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
 
@@ -36,7 +30,7 @@ ms.locfileid: "78924973"
 * [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
 * [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
 
-### <a name="schema"></a>Схема
+### <a name="schema"></a>схема
 
 Схема, используемая для развертываний на уровне подписки, отличается от схемы развертываний группы ресурсов.
 
@@ -46,10 +40,10 @@ ms.locfileid: "78924973"
 https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#
 ```
 
-Для файлов параметров используйте:
+Схема для файла параметров одинакова для всех областей развертывания. Для файлов параметров используйте:
 
 ```json
-https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentParameters.json#
+https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#
 ```
 
 ## <a name="deployment-commands"></a>Команды развертывания
@@ -382,10 +376,9 @@ New-AzSubscriptionDeployment `
 * [Создайте группу ресурсов, заблокируйте ее и предоставьте ей разрешения](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
 * [Создайте группу ресурсов, политику и назначение политики](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
 * Примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
-* Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](template-syntax.md).
-* Список доступных в шаблоне функций см. в статье о [функциях шаблонов](template-functions.md).
+* Вы также можете развернуть шаблоны на уровне [группы управления](deploy-to-management-group.md) и на [уровне клиента](deploy-to-tenant.md).

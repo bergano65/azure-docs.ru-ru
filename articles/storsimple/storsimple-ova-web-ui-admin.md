@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 12/1/2016
 ms.author: alkohli
 ms.openlocfilehash: 92671206a4171ca838423f55b526191ef30e5c35
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365727"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79254733"
 ---
 # <a name="use-the-web-ui-to-administer-your-storsimple-virtual-array"></a>Использование пользовательского веб-интерфейса для администрирования виртуального массива StorSimple
 ![Последовательность операций процесса настройки](./media/storsimple-ova-web-ui-admin/manage4.png)
@@ -109,6 +109,6 @@ ms.locfileid: "78365727"
    
     Во время перезапуска будет потеряно подключение к пользовательскому интерфейсу. Перезапуск можно контролировать. Для этого периодически обновляйте пользовательский интерфейс. Кроме того, можно выполнять мониторинг состояния перезапуска устройства с помощью диспетчера Hyper-V.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [использовать службу StorSimple Manager для управления вашим устройством](storsimple-virtual-array-manager-service-administration.md).
 

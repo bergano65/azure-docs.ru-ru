@@ -16,11 +16,11 @@ ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 1fdf776570b6f10a363fb98dfe343387d86219d6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78389071"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79249793"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "78389071"
    > Дополнительные сведения об этих параметрах см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md).
 
 
-1. Выберите **Создать**.
+1. Нажмите кнопку **Создать**.
 
 
 ## <a name="1-configure-basic-settings"></a>1. Настройка основных параметров
@@ -118,7 +118,7 @@ ms.locfileid: "78389071"
 
 ![Параметры сети виртуальной машины SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-networking.png)
 
-#### <a name="monitoring"></a>Мониторинг
+#### <a name="monitoring"></a>Наблюдение
 
 На вкладке **мониторинг** Настройте мониторинг и автоматическое завершение работы. 
 
@@ -143,7 +143,7 @@ ms.locfileid: "78389071"
 | [Службы машинного обучения](#machine-learning-services) |
 
 
-### <a name="connectivity"></a>Возможности подключения
+### <a name="connectivity"></a>Соединение
 
 В разделе **Подключение SQL**укажите необходимый тип доступа к экземпляру SQL Server на этой виртуальной машине. В рамках этого пошагового руководства выберите **Общедоступный (Интернет)** для подключения к SQL Server с компьютеров или из служб в Интернете. Если выбран этот параметр, Azure автоматически настроит брандмауэр и группу безопасности сети, чтобы разрешить трафик по выбранному порту.
 
@@ -185,7 +185,7 @@ ms.locfileid: "78389071"
 
 В следующей таблице перечислены параметры, необходимые для настройки интеграции с хранилищем ключей Azure.
 
-| ПАРАМЕТР | ОПИСАНИЕ | ПРИМЕР |
+| ПАРАМЕТР | DESCRIPTION | ПРИМЕР |
 | --- | --- | --- |
 | **URL-адрес хранилища ключей** |Расположение хранилища ключей. |HTTPS:\//contosokeyvault.vault.azure.net/ |
 | **Имя субъекта** |Имя субъекта-службы Azure Active Directory. Этот имя также называется идентификатором клиента. |fde2b411-33d5-4e11-af04eb07b669ccf2 |
@@ -281,6 +281,6 @@ ms.locfileid: "78389071"
   > В этом примере используется общий порт 1433. Однако это значение потребуется изменить, если во время развертывания SQL Server виртуальной машины был указан другой порт (например, 1401). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании SQL Server в Azure см. в статье [Приступая к работе с SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md) и [Часто задаваемые вопросы об SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-faq.md).

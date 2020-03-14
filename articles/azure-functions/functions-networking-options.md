@@ -5,12 +5,12 @@ author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: f06c50c35e25f2f64948c5f18672e00382d4ef42
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.openlocfilehash: d8c3357325eadefec7bb97faba5d600e9c6793a9
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78892906"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276716"
 ---
 # <a name="azure-functions-networking-options"></a>Параметры сети функций Azure
 
@@ -54,6 +54,8 @@ ms.locfileid: "78892906"
     * Дополнительные сведения см. в разделе [конечные точки службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md).
     * Помните, что при использовании конечных точек службы функция по-прежнему имеет полный исходящий доступ к Интернету, даже если настроена интеграция с виртуальной сетью.
 * Доступ к частному сайту также доступен в Среда службы приложений, настроенном с внутренней подсистемой балансировки нагрузки (ILB). Дополнительные сведения см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
+
+Сведения о настройке частного доступа к веб-сайту см. в разделе [Установка функций Azure для доступа к частным сайтам](functions-create-private-site-access.md).
 
 ## <a name="virtual-network-integration"></a>Интеграция виртуальной сети
 
@@ -144,11 +146,11 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 При интеграции приложения-функции в план Premium или план службы приложений с виртуальной сетью приложение по умолчанию может выполнять исходящие вызовы через Интернет. Добавив параметр приложения `WEBSITE_VNET_ROUTE_ALL=1`, вы принудительно передаете весь исходящий трафик в виртуальную сеть, где можно использовать правила группы безопасности сети для ограничения трафика.
 
-## <a name="troubleshooting"></a>Диагностика 
+## <a name="troubleshooting"></a>Устранение неполадок 
 
 [!INCLUDE [app-service-web-vnet-troubleshooting](../../includes/app-service-web-vnet-troubleshooting.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе с сетью и функциях Azure:
 

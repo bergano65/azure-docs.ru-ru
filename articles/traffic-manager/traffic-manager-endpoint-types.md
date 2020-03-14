@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: rohink
 ms.openlocfilehash: 3d8f899a7899243129d31c2620a51dc764a8e917
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392649"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250937"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 
@@ -103,7 +103,7 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 
 * [Разделы справки переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о том, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 * Узнайте больше о [мониторинге конечных точек и автоматической отработке отказов](traffic-manager-monitoring.md)диспетчера трафика.

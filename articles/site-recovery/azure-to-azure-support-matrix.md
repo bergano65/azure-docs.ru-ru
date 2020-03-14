@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: raynew
 ms.openlocfilehash: d278f96acf8d8efc57a9ae7fb57f9a758339162a
-ms.sourcegitcommit: 6e87ddc3cc961945c2269b4c0c6edd39ea6a5414
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77444083"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258113"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Матрица поддержки для аварийного восстановления виртуальных машин Azure между регионами Azure
 

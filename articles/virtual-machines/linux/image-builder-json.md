@@ -9,11 +9,11 @@ ms.service: virtual-machines-linux
 ms.subservice: imaging
 manager: gwallace
 ms.openlocfilehash: 870c8856cdc22b0586199051575de02312420990
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78945015"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267265"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительная версия: Создание шаблона Azure Image Builder 
 
@@ -56,14 +56,14 @@ ms.locfileid: "78945015"
     "apiVersion": "2019-05-01-preview",
 ```
 
-## <a name="location"></a>Расположение
+## <a name="location"></a>Location
 
 Расположение — это регион, в котором будет создан пользовательский образ. Для предварительной версии построителя образов поддерживаются следующие регионы:
 
-- Восток США
+- Восточная часть США
 - восточная часть США 2
 - центрально-западная часть США
-- Запад США
+- западная часть США
 - западная часть США 2
 
 
@@ -103,7 +103,7 @@ ms.locfileid: "78945015"
 
 Дополнительные сведения см. в разделе [Определение зависимостей ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-define-dependencies#dependson).
 
-## <a name="identity"></a>Тождество
+## <a name="identity"></a>Удостоверение
 По умолчанию построитель образов поддерживает использование скриптов или копирование файлов из нескольких расположений, таких как GitHub и хранилище Azure. Для использования этих данных они должны быть общедоступными.
 
 Вы также можете использовать управляемое пользователем удостоверение Azure, определяемое вами, чтобы разрешить построителю образов доступ к хранилищу Azure при условии, что удостоверение было предоставлено как минимум "модуль чтения данных BLOB-объекта хранилища" в учетной записи хранения Azure. Это означает, что вам не нужно делать большие двоичные объекты хранилища доступными извне или настраивать маркеры SAS.
@@ -447,7 +447,7 @@ az resource show \
         --api-version=2019-05-01-preview
 ```
 
-Выходные данные.
+Выходные данные:
 ```json
 {
   "id": "/subscriptions/xxxxxx/resourcegroups/rheltest/providers/Microsoft.VirtualMachineImages/imageTemplates/ImageTemplateLinuxRHEL77/runOutputs/rhel77",
@@ -568,7 +568,7 @@ az resource show \
 > [!NOTE]
 > После создания виртуального жесткого диска скопируйте его в другое расположение, как можно скорее. Виртуальный жесткий диск хранится в учетной записи хранения во временной группе ресурсов, созданной при отправке шаблона образа в службу Azure Image Builder. При удалении шаблона образа виртуальный жесткий диск будет утерян. 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Существуют образцы JSON-файлов для различных сценариев в GitHub в [Azure Image Builder](https://github.com/danielsollondon/azvmimagebuilder).
  

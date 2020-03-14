@@ -11,15 +11,15 @@ ms.custom: seodec18
 ms.date: 12/02/2019
 ms.author: shvija
 ms.openlocfilehash: 3b46c574ea47622ec97e70c0d2f2cdc3aa54ec0d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78393656"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264964"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы о Центрах событий
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-an-event-hubs-namespace"></a>Что такое пространство имен Центров событий?
 Пространство имен — это контейнер, ограничивающий область действия для Центра событий и (или) разделов Kafka. Оно предоставляет уникальное [полное доменное имя (FQDN)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name). Пространство имен выполняет роль контейнера приложений, в котором могут размещаться несколько Центров событий и (или) разделов Kafka. 
@@ -71,7 +71,7 @@ ms.locfileid: "78393656"
 
 В следующей таблице приведены исходящие порты, которые необходимо открыть для использования этих протоколов для взаимодействия с концентраторами событий Azure. 
 
-| Протокол | Порты | Подробности | 
+| Протокол | порты; | Сведения | 
 | -------- | ----- | ------- | 
 | AMQP | 5671 и 5672 | См. раздел [Путеводитель по протоколу AMQP](../service-bus-messaging/service-bus-amqp-protocol-guide.md) | 
 | HTTP, HTTPS | 80, 443 |  |
@@ -113,7 +113,7 @@ ms.locfileid: "78393656"
 
 bootstrap.servers={ПОЛНОЕ.ДОМЕННОЕ.ИМЯ.ЦЕНТРОВ.СОБЫТИЙ}:9093 request.timeout.ms=60000 security.protocol=SASL_SSL sasl.mechanism=PLAIN sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{СТРОКА.ПОДКЛЮЧЕНИЯ.ДЛЯ.ЦЕНТРОВ.СОБЫТИЙ}";
 
-Пример.
+Пример
 
 bootstrap.servers=dummynamespace.servicebus.windows.net:9093 request.timeout.ms=60000 security.protocol=SASL_SSL sasl.mechanism=PLAIN sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://dummynamespace.servicebus.windows.net/;SharedAccessKeyName=DummyAccessKeyName;SharedAccessKey=5dOntTRytoC24opYThisAsit3is2B+OGY1US/fuL3ly=";
 
@@ -233,7 +233,7 @@ bootstrap.servers=dummynamespace.servicebus.windows.net:9093 request.timeout.ms=
 
 Список всех квот для Центров событий см. в статье [Квоты для Центров событий](event-hubs-quotas.md).
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="why-am-i-not-able-to-create-a-namespace-after-deleting-it-from-another-subscription"></a>Почему я не могу создать пространство имен после удаления его из другой подписки? 
 При удалении пространства имен из подписки подождите 4 часа, прежде чем создать его заново с тем же именем в другой подписке. Иначе можно получить сообщение об ошибке `Namespace already exists`. 
@@ -252,7 +252,7 @@ bootstrap.servers=dummynamespace.servicebus.windows.net:9093 request.timeout.ms=
 
 Дополнительные сведения о соглашении об уровне обслуживания см. на странице [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 

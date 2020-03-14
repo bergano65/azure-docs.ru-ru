@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: zivr
 ms.openlocfilehash: b61a84f2b284177b7443be00efeea65e7eb8aaef
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374820"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266797"
 ---
 # <a name="co-locate-resource-for-improved-latency"></a>Совместное размещение ресурса для повышения задержки
 
@@ -27,7 +27,7 @@ ms.locfileid: "78374820"
 
 [!INCLUDE [virtual-machines-common-ppg-overview](../../../includes/virtual-machines-common-ppg-overview.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Разверните виртуальную машину в [группе размещения](proximity-placement-groups.md) с помощью Azure PowerShell.
 

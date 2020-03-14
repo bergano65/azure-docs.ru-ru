@@ -12,11 +12,11 @@ ms.date: 03/09/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 80cf0d101a29de7fca9d4dd36e188a500d35e290
-ms.sourcegitcommit: 3616b42a0d6bbc31b965995d861930e53d2cf0d3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78933036"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246036"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
@@ -118,9 +118,9 @@ ms.locfileid: "78933036"
 
 #### <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | Описание|
+| attribute | Обязательно | Description|
 | --- | --- | --- |
-| алвайсфетчклаимсфромпровидер | Нет | В настоящее время не используется, может игнорироваться. |
+| алвайсфетчклаимсфромпровидер | нет | В настоящее время не используется, может игнорироваться. |
 
 ### <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
 
@@ -148,10 +148,10 @@ ms.locfileid: "78933036"
 ```
 #### <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | Описание|
+| attribute | Обязательно | Description|
 | --- | --- | --- |
-| IncludeSessionIndex | Нет | В настоящее время не используется, может игнорироваться.|
-| RegisterServiceProviders | Нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
+| IncludeSessionIndex | нет | В настоящее время не используется, может игнорироваться.|
+| RegisterServiceProviders | нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
 
 
 

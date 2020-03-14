@@ -16,11 +16,11 @@ ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4eb212cb6122803f78b13e6c17a55bac5bc48286
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77587878"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250729"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -42,7 +42,7 @@ ms.locfileid: "77587878"
 
 Помимо расширений, созданных для конкретных процессов, существует расширение пользовательских сценариев для виртуальных машин под управлением Windows и Linux. Расширение пользовательских скриптов для Windows позволяет запустить на виртуальной машине любой скрипт PowerShell. Пользовательские сценарии могут пригодиться при проектировании развертывания Azure, для которого требуется дополнительная настройка, ее невозможно выполнить собственными средствами Azure. Подробнее см. [Использование расширений пользовательских сценариев для виртуальной машины Windows с шаблонами Azure Resource Manager](custom-script-windows.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы расширения работали на виртуальной машине, необходимо установить агент Windows для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
 
@@ -263,7 +263,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- Расширения
+- Модули
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -421,13 +421,13 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 4. Выберите **Удалить**.
 
 ## <a name="common-vm-extensions-reference"></a>Справочники по распространенным расширениям виртуальной машины
-| Имя расширения | Описание | Дополнительные сведения |
+| Имя расширения | Description | Дополнительные сведения |
 | --- | --- | --- |
 | Расширение Custom Script в ОС Windows |Выполняет сценарии на виртуальных машинах Azure. |[Расширение Custom Script в ОС Windows](custom-script-windows.md) |
 | Расширение DSC в ОС Windows |Расширение PowerShell DSC (настройка требуемого состояния) |[Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md) |
 | Расширение Диагностики Azure |Управляет системой диагностики Azure |[Расширение системы диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение VM Access для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

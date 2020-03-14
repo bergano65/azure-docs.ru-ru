@@ -4,11 +4,11 @@ description: Для развертывания ресурсов в Azure исп�
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.openlocfilehash: fc386f51073c256fd083a04bbed39316784827b1
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152516"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273817"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-resource-manager-rest-api"></a>Развертывание ресурсов с использованием шаблонов и REST API Resource Manager
 

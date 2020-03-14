@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: 9c292246f947e4d3a364f79b31fe7a1deebd33d9
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78368300"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275702"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Каналы телеметрии в Application Insights
 
@@ -164,7 +164,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый пакет SDK для Application Insights, каналы являются открытым кодом. Прочтите и отучите код или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выборка](../../azure-monitor/app/sampling.md)
 * [Устранение неполадок пакета SDK](../../azure-monitor/app/asp-net-troubleshoot-no-data.md)

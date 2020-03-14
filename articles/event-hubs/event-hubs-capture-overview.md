@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 02/12/2020
 ms.author: shvija
 ms.openlocfilehash: c166f4cace6a8cc25b36a84f4614033801e69a51
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78925473"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79265016"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 Концентраторы событий Azure позволяют автоматически записывать данные потоковой передачи в концентраторы событий в [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или Azure Data Lake Storage из любой учетной записи [поколения 1 или Gen 2](https://azure.microsoft.com/services/data-lake-store/) с дополнительной гибкостью при указании интервала времени или размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-scalability.md#throughput-units) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.

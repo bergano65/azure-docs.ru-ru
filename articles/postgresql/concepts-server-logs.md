@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.openlocfilehash: 2636e9a225002148e4cd79bb2176e0883aed623a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844944"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280499"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 База данных Azure для PostgreSQL позволяет настраивать и получать доступ к стандартным журналам postgres. Журналы могут использоваться для обнаружения, устранения и исправления ошибок конфигурации и неоптимальной производительности. Сведения о ведении журнала, которые можно настроить и получить доступ, включают ошибки, сведения о запросах, записи автоочистки, подключения и контрольные точки. (Доступ к журналам транзакций недоступен).
@@ -117,7 +117,7 @@ AzureDiagnostics
 | DatatypeName | Имя типа данных (если применимо) |
 | LogicalServerName | Имя сервера | 
 | _ResourceId | Универсальный код ресурса (URI) |
-| Код | Префикс строки журнала |
+| Prefix | Префикс строки журнала |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

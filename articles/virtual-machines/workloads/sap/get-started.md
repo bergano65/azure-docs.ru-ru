@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 03/10/2020
+ms.date: 03/11/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: be403815838233350929c7d4ca0eed979d7dfa8c
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.openlocfilehash: 27fdf966f99ac2cba394515cb654ed74178d6673
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79080331"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79137651"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -43,7 +43,7 @@ ms.locfileid: "79080331"
 - Какие сценарии развертывания SAP поддерживаются с виртуальными машинами Azure и крупными экземплярами HANA. Сведения о поддерживаемых сценариях можно найти в документах:
     - [Рабочая нагрузка SAP в поддерживаемых сценариях виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-planning-supported-configurations)
     - [Поддерживаемые сценарии для крупных экземпляров HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-supported-scenario)
-- Какие службы Azure, типы виртуальных машин Azure и хранилище Azure доступны в разных регионах Azure, проверьте продукты сайта, [Доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/) . 
+- Какие службы Azure, типы виртуальных машин Azure и службы хранилища Azure доступны в разных регионах Azure, проверьте продукты сайта, [Доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/) . 
 
  
 ## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
@@ -110,6 +110,8 @@ ms.locfileid: "79080331"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 03/11/2020: изменение [рабочей нагрузки SAP в поддерживаемых сценариях виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-planning-supported-configurations) для уточнения нескольких баз данных на поддержку каждого экземпляра СУБД
+- 03/11/2020: изменение в [планировании и реализации SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) с объяснениями виртуальных машин поколения 1 и поколения 2
 - 03/10/2020: измените [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) , чтобы уточнить реальные ограничения пропускной способности использовании.
 - 03/09/2020: изменение [высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse), [Высокая доступность для SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NETAPP Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files), [Высокая доступность для NFS на виртуальных машинах Azure на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs), [Настройка Pacemaker на SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker), [высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure в SuSE Linux Enterprise Server с Pacemaker](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms-guide-ha-ibm) [Высокая доступность SAP HANA на виртуальных машинах Azure в SuSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability) и [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure в RHEL с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-multi-sid) для обновления ресурсов кластера с помощью агента ресурсов Azure-фунтов 
 - 03/05/2020: изменение структуры и изменение содержимого для регионов Azure и виртуальных машин Azure на [виртуальных машинах Azure планирование и реализация SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide)

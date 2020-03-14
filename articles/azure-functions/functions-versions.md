@@ -4,11 +4,11 @@ description: Решение "Функции Azure" поддерживает ра
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.openlocfilehash: 21a7b25087efd5d4adf2154c935636c263df9afd
-ms.sourcegitcommit: 3c925b84b5144f3be0a9cd3256d0886df9fa9dc0
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77919759"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276560"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -182,7 +182,7 @@ ms.locfileid: "77919759"
 </configuration>
 ```
 
-## <a name="bindings"></a>Bindings
+## <a name="bindings"></a>Привязки
 
 Начиная с версии 2. x среда выполнения использует новую [модель расширяемости привязки](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview) , которая предоставляет следующие преимущества:
 
@@ -200,9 +200,9 @@ ms.locfileid: "77919759"
 
 [!INCLUDE [Timeout Duration section](../../includes/functions-timeout-duration.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих источниках.
+Для получения дополнительных сведений см. следующие ресурсы:
 
 * [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md)
 * [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md)

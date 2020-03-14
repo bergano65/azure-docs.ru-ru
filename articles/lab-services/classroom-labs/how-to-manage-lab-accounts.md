@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 02/14/2020
 ms.author: spelluru
 ms.openlocfilehash: c82b5d02ab3928eb0472f2a047cdca2238bf0b63
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382933"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284295"
 ---
 # <a name="manage-lab-accounts-in-azure-lab-services"></a>Управление учетными записями лабораторий в Службах лабораторий Azure 
 В службах лаборатории Azure лабораторная учетная запись — это контейнер для управляемых лабораторных типов, таких как учебные лаборатории. Администратор задает учетную запись лаборатории с помощью Служб лабораторий Azure и предоставляет доступ владельцам лабораторий, которые могут создать лаборатории в учетной записи. В этой статье содержатся подробные сведения о том, как создавать, просматривать и удалять учетные записи лабораторий.
@@ -112,7 +112,7 @@ ms.locfileid: "78382933"
 > [!NOTE]
 > Для управления учетными записями лаборатории можно также использовать модуль PowerShell AZ. Лабсервицес (Предварительная версия). Дополнительные сведения см. на [домашней странице AZ. лабсервицес на сайте GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:
 
 - [Разрешить создателю лаборатории выбрать расположение лаборатории](allow-lab-creator-pick-lab-location.md)

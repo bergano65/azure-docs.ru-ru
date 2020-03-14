@@ -11,11 +11,11 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.openlocfilehash: e7b32579712e89c0d5595303ee7e03d8b2462607
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615428"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283658"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных 
 
@@ -26,7 +26,7 @@ ms.locfileid: "75615428"
 |    |           |
 | ------------- | ------------- |
 | Поддерживаемые языковые версии | Python 2,7 и 3,7 |
-| Поддерживаемые выпуски DSVM      | Windows Server 2016     |
+| Поддерживаемые выпуски DSVM      | Windows Server 2016     |
 | Настройка и установка на DSVM  | Создаются две глобальные среды `conda`: <br /> * `root` среда, расположенная по адресу `/anaconda/`, является Python 3,7. <br/> * `python2` среда, расположенная по адресу `/anaconda/envs/python2`, является Python 2,7.       |
 | Ссылки на примеры      | Добавлены примеры записных книжек Jupyter для Python.     |
 | Связанные средства на DSVM      | PySpark, R, Julia.      |
@@ -118,7 +118,7 @@ ms.locfileid: "75615428"
 
 * Выполните команду в командной строке:
 
-  Откройте командную строку и введите: `R`.
+  Откройте командную строку и введите `R`.
 
 * Использование в интегрированной среде разработки:
 
@@ -196,7 +196,7 @@ ms.locfileid: "75615428"
 
   Расположение Julia по умолчанию — это глобальная среда, доступная для чтения всеми пользователями. Но только администраторы могут записывать и устанавливать глобальные пакеты. Чтобы установить пакеты в глобальную среду, запустите Julia с помощью одного из описанных выше методов. Затем можно выполнить команды диспетчера пакетов Julia, например `Pkg.add()`, чтобы установить или обновить пакеты.
 
-## <a name="other-languages"></a>Остальные языки
+## <a name="other-languages"></a>Другие языки
 
 **C#** : Доступно в Windows и доступно в выпуске Visual Studio Community или в `Developer Command Prompt for Visual Studio`, где можно выполнить команду `csc`.
 

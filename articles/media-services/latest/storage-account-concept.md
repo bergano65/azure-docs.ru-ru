@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 07/01/2019
 ms.author: juliako
 ms.openlocfilehash: 4bbadd7e10f0fd6896932dd79a5ca42d9906d2a2
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78393496"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251327"
 ---
 # <a name="azure-storage-accounts"></a>Учетные записи хранения Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "78393496"
 
 Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в службах мультимедиа версии 3.
 
-|Вариант шифрования|Описание|Службы мультимедиа версии 3|
+|Вариант шифрования|Description|Службы мультимедиа версии 3|
 |---|---|---|
 |Шифрование хранилища Служб мультимедиа| Шифрование AES-256. Ключами управляют Службы мультимедиа|Не поддерживается<sup>(1)</sup>|
 |[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживается|
@@ -67,6 +67,6 @@ ms.locfileid: "78393496"
 
 Службы мультимедиа Azure не поддерживают учетные записи хранения с включенным брандмауэром хранилища Azure или [частными конечными точками](https://docs.microsoft.com/azure/storage/common/storage-network-security) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о присоединении учетной записи хранения к учетной записи Служб мультимедиа см. в статье [Краткое руководство по созданию учетной записи Служб мультимедиа Azure](create-account-cli-quickstart.md).

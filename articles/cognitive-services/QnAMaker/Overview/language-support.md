@@ -11,11 +11,11 @@ ms.topic: reference
 ms.date: 09/24/2019
 ms.author: diberry
 ms.openlocfilehash: 96440bf0e9c26e6f222f3bc94c8fabb0bc8f488d
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720986"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220559"
 ---
 # <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Поддержка языков для QnA Maker ресурсов и баз знаний
 
@@ -29,15 +29,15 @@ ms.locfileid: "73720986"
 
 В следующем списке содержатся языки, поддерживаемые для ресурса QnA Maker. 
 
-|язык|
+|Язык|
 |--|
 |Арабский|
 |Армянский|
 |Бенгальский|
 |Баскский|
 |Болгарский|
-|Каталанский|
-|Китайский (упрощенное письмо)|
+|Каталонский|
+|Китайский, упрощенное письмо|
 |Китайский, традиционное письмо|
 |Хорватский|
 |Чешский|
@@ -52,7 +52,7 @@ ms.locfileid: "73720986"
 |Греческий|
 |Гуджарати|
 |Иврит|
-|Хинди|
+|Hindi|
 |Венгерский|
 |Исландский|
 |Индонезийский|

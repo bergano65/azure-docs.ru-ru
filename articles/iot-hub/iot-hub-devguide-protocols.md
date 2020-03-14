@@ -9,11 +9,11 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.openlocfilehash: 6d1ab50e471c9c603c7886130375dc74e9b2a755
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78669365"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284633"
 ---
 # <a name="reference---choose-a-communication-protocol"></a>Справочник — выбор протокола связи
 
@@ -64,6 +64,6 @@ ms.locfileid: "78669365"
 
 После создания Центра Интернета вещей в регионе Azure IP-адрес центра остается неизменным в течение всего времени его существования. Однако для обеспечения качества обслуживания при перемещении корпорацией Майкрософт Центра Интернета вещей в другую единицу масштабирования центру назначается новый IP-адрес.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о реализации Центром Интернета вещей протокола MQTT см. в статье [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md).

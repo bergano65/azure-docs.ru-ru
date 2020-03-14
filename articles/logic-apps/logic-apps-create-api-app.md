@@ -7,11 +7,11 @@ ms.reviewer: klam, jehollan, logicappspm
 ms.topic: article
 ms.date: 05/26/2017
 ms.openlocfilehash: bb6c99ea12e5b53631d42a04b36b7bfef2337e42
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77191444"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79270541"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
@@ -171,7 +171,7 @@ API-интерфейсы можно разместить в [службе при
 
 | Включает ли запрос `triggerState`? | Ответ API | 
 | -------------------------------- | -------------| 
-| Нет | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
+| нет | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
 | Да | Проверка службы на наличие файлов, добавленных после `DateTime` для `triggerState`. | 
 ||| 
 
@@ -228,7 +228,7 @@ API-интерфейсы можно разместить в [службе при
 
 * Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обработка ошибок и исключений](../logic-apps/logic-apps-exception-handling.md)
 * [Вызовы, срабатывания триггеров и создание вложенных приложений логики с конечными точками HTTP](../logic-apps/logic-apps-http-endpoint.md)

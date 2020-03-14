@@ -15,11 +15,11 @@ ms.author: curtand
 ms.custom: pim ; H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 04bd0993873568ba7cce368ddd9277ed356b636c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375427"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266576"
 ---
 # <a name="azure-ad-roles-security-wizard-in-privileged-identity-management"></a>Мастер безопасности ролей Azure AD в управление привилегированными пользователями
 
@@ -67,7 +67,7 @@ ms.locfileid: "78375427"
 
 Если вам нужно преобразовать другие назначения привилегированных ролей во временные, запустите мастер еще раз. Если вместо мастера требуется использовать интерфейс управление привилегированными пользователями, см. раздел [назначение ролей Azure AD в Управление привилегированными пользователями](pim-how-to-add-role-to-user.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение ролей Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Предоставление другим администраторам доступа для управления управление привилегированными пользователями](pim-how-to-give-access-to-pim.md)

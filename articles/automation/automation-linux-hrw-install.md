@@ -6,11 +6,11 @@ ms.subservice: process-automation
 ms.date: 03/02/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2579748d9c68512e51fe46ec70084c30d06953bc
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372644"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278770"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -44,7 +44,7 @@ ms.locfileid: "78372644"
 
 | **Требуемый пакет** | **Описание** | **Минимальная версия**|
 |--------------------- | --------------------- | -------------------|
-|Glibc |Библиотека GNU C| 2.5-12 |
+|Glibc |Библиотека C GNU| 2.5-12 |
 |Openssl| Библиотеки OpenSSL | 1.0 (поддерживается TLS 1.1 и TLS 1.2)|
 |Curl | Веб-клиент cURL | 7.15.5|
 |Python-ctypes | Требуется Python 2. x |
@@ -110,7 +110,7 @@ ms.locfileid: "78372644"
 * Графический
 * графический модуль рабочего процесса PowerShell.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".

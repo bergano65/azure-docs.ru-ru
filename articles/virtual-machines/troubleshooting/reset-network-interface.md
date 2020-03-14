@@ -13,11 +13,11 @@ ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
 ms.openlocfilehash: a8bd12d98b76d5848753987c4f7bcb76d4e2266d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391082"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250079"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows 
 
@@ -84,7 +84,7 @@ ms.locfileid: "78391082"
 4.  Выберите **IP-адреса**.
 5.  Если для **назначения частного IP-адреса** не установлено значение **Статический**, установите **его**.
 6.  Изменение **IP-адреса** на другой, который доступен в подсети.
-7.  Нажмите кнопку **Сохранить**.
+7.  Щелкните **Сохранить**.
 8.  Виртуальная машина будет перезапущена, чтобы инициализировать новый NIC в системе.
 9.  Попробуйте подключиться к компьютеру по протоколу удаленного рабочего стола. В случае успешного подключения вы можете отменить изменение частного IP-адреса на исходный.  
 

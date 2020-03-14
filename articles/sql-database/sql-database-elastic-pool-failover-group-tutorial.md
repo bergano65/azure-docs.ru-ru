@@ -12,11 +12,11 @@ ms.author: mathoma
 ms.reviewer: sstein, carlrab
 ms.date: 08/27/2019
 ms.openlocfilehash: c57f9eed2147504dd7b3313d58468fb76ab40caa
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380015"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268981"
 ---
 # <a name="tutorial-add-an-azure-sql-database-elastic-pool-to-a-failover-group"></a>Учебник. Добавление эластичного пула базы данных SQL Azure в группу отработки отказа
 
@@ -28,7 +28,7 @@ ms.locfileid: "78380015"
 > - Создайте [группу отработки отказа](sql-database-auto-failover-group.md) для двух эластичных пулов между двумя логическими серверами SQL.
 > - Тестовая отработка отказа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого руководства вам потребуются: 
 
@@ -118,7 +118,7 @@ ms.locfileid: "78380015"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool) | Создает пул эластичных баз данных для базы данных SQL Azure.| 
 | [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) | Определяет свойства базы данных или перемещает ее в эластичный пул. | 
@@ -236,7 +236,7 @@ ms.locfileid: "78380015"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создание правила брандмауэра для логического сервера. | 
@@ -344,7 +344,7 @@ ms.locfileid: "78380015"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает или перечисляет группы отработки отказа для Базы данных SQL Azure. |
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup)| Выполняет отработку отказа для группы отработки отказа Базы данных SQL Azure. |
@@ -381,7 +381,7 @@ ms.locfileid: "78380015"
 
 В этой части руководства используется следующий командлет PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
@@ -398,7 +398,7 @@ ms.locfileid: "78380015"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
@@ -419,7 +419,7 @@ ms.locfileid: "78380015"
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы добавили эластичный пул базы данных SQL Azure в группу отработки отказа и проверили отработку отказа. Вы ознакомились с выполнением следующих задач:
 

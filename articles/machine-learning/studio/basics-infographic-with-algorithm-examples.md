@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodc18
 ms.date: 03/04/2019
-ms.openlocfilehash: 7a82c8af518ec062eb38f921ebf85848d10da129
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 34316b13c93ca2739e87262dd09dcbaf38186b16
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168920"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204483"
 ---
 # <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Загружаемая инфографика по основам машинного обучения с примерами алгоритмов
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Скачайте понятную инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами, которые используются для ответа на распространенные вопросы о машинном обучении. Примеры алгоритмов помогут начинающему пользователю машинного обучения понять, какие алгоритмы используются и с какой целью.
 

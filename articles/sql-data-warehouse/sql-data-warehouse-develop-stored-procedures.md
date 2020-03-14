@@ -12,11 +12,11 @@ ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: e6e1144043cbbbc8124785351e1e56a776b84527
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78383754"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269358"
 ---
 # <a name="using-stored-procedures-in-sql-data-warehouse"></a>Использование хранимых процедур в хранилище данных SQL
 Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.
@@ -72,20 +72,20 @@ EXEC prc_nesting
 ## <a name="limitations"></a>Ограничения
 Существуют некоторые аспекты хранимых процедур Transact-SQL, которые не реализованы в хранилище данных SQL.
 
-Подробные сведения.
+К ним относятся:
 
 * временные хранимые процедуры;
 * нумерованные хранимые процедуры;
-* расширенные хранимые процедуры
+* расширенные хранимые процедуры;
 * хранимые процедуры CLR;
 * возможность шифрования;
 * возможность репликации;
 * параметры с табличным значением;
 * параметры только для чтения;
-* параметры по умолчанию
+* параметры по умолчанию;
 * контекст выполнения;
-* Оператор return
+* инструкция Return.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).
 

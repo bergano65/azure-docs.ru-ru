@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 09/03/2019
 ms.custom: seodec18
 ms.openlocfilehash: db56cf0897cd90f1e6e51199032d0d9712530f1c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75478894"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274025"
 ---
 # <a name="azure-resource-manager-resource-group-and-resource-deletion"></a>Azure Resource Manager удаления группы ресурсов и ресурса
 
@@ -47,7 +47,7 @@ Resource Manager отправляет вызов GET для каждого ре�
 
 Если операция GET возвращает ошибку, Resource Manager повторяет операцию GET для следующего кода ошибки:
 
-* Менее 100
+* меньше 100;
 * 408
 * 429
 * больше 500.
@@ -58,19 +58,19 @@ Resource Manager отправляет вызов GET для каждого ре�
 
 Чтобы удалить группу ресурсов, используйте один из следующих методов.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name ExampleResourceGroup
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group delete --name ExampleResourceGroup
 ```
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. На [портале](https://portal.azure.com)выберите группу ресурсов, которую нужно удалить.
 
@@ -86,7 +86,7 @@ az group delete --name ExampleResourceGroup
 
 Для удаления ресурса используйте один из следующих методов.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 Remove-AzResource `
@@ -95,7 +95,7 @@ Remove-AzResource `
   -ResourceType Microsoft.Compute/virtualMachines
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az resource delete \
@@ -104,7 +104,7 @@ az resource delete \
   --resource-type "Microsoft.Compute/virtualMachines"
 ```
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. На [портале](https://portal.azure.com)выберите ресурс, который необходимо удалить.
 

@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
 ms.openlocfilehash: 1d244d7b62fcfefeec6f628f473274ae982bf4d8
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394285"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272998"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -118,7 +118,7 @@ Cloud Shell поддерживает последние версии следу�
 - Apple Safari
   - Использование Safari в режиме защищенного просмотра не поддерживается.
 
-### <a name="copy-and-paste"></a>путем копирования и вставки;
+### <a name="copy-and-paste"></a>Копирование и вставка
 
 [!INCLUDE [copy-paste](../../includes/cloud-shell-copy-paste.md)]
 

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: wesmc
 ms.openlocfilehash: d1de29124825a7f398b9722bb2455d1105e9c9f7
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78393640"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284425"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -134,7 +134,7 @@ ms.locfileid: "78393640"
 
 Если вы приближаетесь к максимальному ограничению сообщений в центре Интернета вещей, вы можете использовать эти [шаги для автоматического масштабирования](https://azure.microsoft.com/resources/samples/iot-hub-dotnet-autoscale/) , чтобы увеличить единицу центра Интернета вещей на том же уровне центра Интернета вещей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о возможностях центра Интернета вещей и сведения о производительности см. в разделе [цены на центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub) или [квоты и регулирования центра Интернета](iot-hub-devguide-quotas-throttling.md)вещей.
 

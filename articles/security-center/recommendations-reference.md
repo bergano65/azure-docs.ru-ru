@@ -13,11 +13,11 @@ ms.workload: na
 ms.date: 03/11/2020
 ms.author: memildin
 ms.openlocfilehash: 1d8a42a4ec106418b481ac705d3ce1b33f58a312
-ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79086473"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243553"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Рекомендации по безопасности — справочное руководство
 

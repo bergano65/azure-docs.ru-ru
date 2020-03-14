@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 8/24/2018
 ms.author: dekapur
 ms.openlocfilehash: 37162287e130b05dc41453c579b3a628ac878fca
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78388417"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282267"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -23,9 +23,9 @@ ms.locfileid: "78388417"
 ## <a name="events"></a>События
 | Имя события | Идентификатор события | Level | Описание события |
 | --- | --- | --- | --- |
-| StatefulRunAsyncInvocation |1 |Информационное |Генерируется, когда запускается задача RunAsync службы. |
-| StatefulRunAsyncCancellation |2 |Информационное |Генерируется, когда отменяется задача RunAsync службы. |
-| StatefulRunAsyncCompletion |3 |Информационное |Генерируется, когда завершается задача RunAsync службы. |
+| StatefulRunAsyncInvocation |1 |Informational |Генерируется, когда запускается задача RunAsync службы. |
+| StatefulRunAsyncCancellation |2 |Informational |Генерируется, когда отменяется задача RunAsync службы. |
+| StatefulRunAsyncCompletion |3 |Informational |Генерируется, когда завершается задача RunAsync службы. |
 | StatefulRunAsyncSlowCancellation |4 |Предупреждение |Генерируется, когда отмена задачи RunAsync службы выполняется слишком долго. |
 | StatefulRunAsyncFailure |5 |Ошибка |Генерируется, когда задача RunAsync службы вызывает исключение. |
 
@@ -41,7 +41,7 @@ ms.locfileid: "78388417"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения служб Reliable Services определяет указанные ниже категории счетчиков производительности.
 
-| Категория | Описание |
+| Категория | Description |
 | --- | --- |
 | Репликатор транзакций Service Fabric |Счетчики для репликатора транзакций Azure Service Fabric |
 | Service Fabric TStore |Счетчики для Azure Service Fabric TStore |
@@ -95,7 +95,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric Transactional Replicator`.
 
- Имя счетчика | Описание |
+ Имя счетчика | Description |
 | --- | --- |
 | Операций начала транзакций/с | Число новых транзакций записи, создаваемых в секунду.|
 | Операций транзакций/с | Число операций добавления, обновления и удаления, выполненных для надежных коллекций, в секунду.|
@@ -108,12 +108,12 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric TStore`.
 
- Имя счетчика | Описание |
+ Имя счетчика | Description |
 | --- | --- |
 | Число элементов | Число элементов в хранилище.|
 | Размер диска | Общий размер в байтах, занимаемый на диске файлами контрольных точек хранилища.|
 | Запись в файл контрольной точки, байт/с | Число байтов, записываемых в секунду в последний файл контрольной точки.|
 | Передача на диск при копировании (байт/с) | Число байтов, считываемых (с первичной реплики) или записываемых (на вторичную реплику) в секунду при копировании хранилища.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

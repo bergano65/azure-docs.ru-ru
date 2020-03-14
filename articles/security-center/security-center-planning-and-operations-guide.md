@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
 ms.openlocfilehash: 63b947a27c3aa24b42252bf33febd031f7caefbf
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372882"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282696"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Руководство по планированию использования центра безопасности Azure и работе в нем
 Это руководством для ИТ-специалистов, ИТ-архитекторов, аналитиков информационной безопасности и облачных администраторов, планирующих использовать центр безопасности Azure.

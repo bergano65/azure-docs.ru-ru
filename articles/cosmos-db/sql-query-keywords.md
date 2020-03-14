@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: mjbrown
 ms.openlocfilehash: 711e961bd5eb1607e2e6f11b0b5762423d78c0e7
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78898763"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246582"
 ---
 # <a name="keywords-in-azure-cosmos-db"></a>Ключевые слова в Azure Cosmos DB
 В этой статье описываются ключевые слова, которые могут использоваться в запросах Azure Cosmos DB SQL.
@@ -163,7 +163,7 @@ TOP можно использовать с постоянным значение
     }]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
 - [Joins](sql-query-join.md)

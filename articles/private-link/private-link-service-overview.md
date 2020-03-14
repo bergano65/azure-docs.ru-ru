@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: sumi
 ms.openlocfilehash: 2cc6c577abdb3698ef6aca1f1f04d239f09d119c
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79082971"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280434"
 ---
 # <a name="what-is-azure-private-link-service"></a>Что такое служба частной связи Azure?
 
@@ -107,7 +107,7 @@ ms.locfileid: "79082971"
 |Поле |Длина (октетов)  |Description  |
 |---------|---------|----------|
 |Тип  |1        |PP2_TYPE_AZURE (0xEE)|
-|Длина  |2      |Длина значения|
+|Продолжительность  |2      |Длина значения|
 |Значение  |1     |PP2_SUBTYPE_AZURE_PRIVATEENDPOINT_LINKID (0x01)|
 |  |4        |UINT32 (4 байта), представляющее LINKID для закрытой конечной точки. Кодировка в формате с прямым порядком байтов.|
 

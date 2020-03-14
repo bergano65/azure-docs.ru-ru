@@ -15,11 +15,11 @@ ms.date: 01/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 2493e893f9afda0642bd838c94538dd0b984bce5
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76720662"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243488"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "76720662"
 
 ### <a name="differences-for-guest-users"></a>Отличия гостевых пользователей
 
-Гостевые пользователи, которым назначена роль соадминистратора, могут видеть некоторые отличия от пользователей-членов с ролью соадминистратора. Рассмотрим следующий сценарий.
+Гостевые пользователи, которым назначена роль соадминистратора, могут видеть некоторые отличия от пользователей-членов с ролью соадминистратора. Рассмотрим следующий сценарий:
 
 - Пользователь A с учетной записью Azure AD (Рабочая или учебная учетная запись) является администратором службы для подписки Azure.
 - Пользователь B имеет учетную запись Майкрософт.

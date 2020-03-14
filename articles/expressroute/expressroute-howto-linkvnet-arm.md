@@ -9,11 +9,11 @@ ms.date: 05/20/2018
 ms.author: ganesr
 ms.custom: seodec18
 ms.openlocfilehash: 2685b9b519eaac453726f4923c46f1604cbd4681
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384246"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280863"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>Подключение виртуальной сети к каналу ExpressRoute
 > [!div class="op_single_selector"]
@@ -174,7 +174,7 @@ $connection.RoutingWeight = 100
 Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection
 ```
 
-Диапазон значений *RoutingWeight*: 0 до 32 000. По умолчанию используется значение 0.
+Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
 
 ## <a name="configure-expressroute-fastpath"></a>Настройка Фастпас ExpressRoute 
 Вы можете включить [ExpressRoute фастпас](expressroute-about-virtual-network-gateways.md) , если канал expressroute включен в [expressroute Direct](expressroute-erdirect-about.md) , а шлюз виртуальной сети — Ultra Performance или ErGw3AZ. Фастпас улучшает производительность пути к данным, например количество пакетов в секунду и число подключений в секунду между локальной сетью и виртуальной сетью. 
@@ -195,5 +195,5 @@ $connection.ExpressRouteGatewayBypass = $True
 Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection
 ``` 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

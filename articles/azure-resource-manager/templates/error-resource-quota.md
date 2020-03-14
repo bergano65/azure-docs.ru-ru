@@ -4,11 +4,11 @@ description: Описывает, как устранять ошибки квот
 ms.topic: troubleshooting
 ms.date: 03/09/2018
 ms.openlocfilehash: 410b086b39d63d03491d390364f4aec6300fc7c1
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78945487"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273791"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
 

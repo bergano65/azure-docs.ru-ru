@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: vigunase
 ms.subservice: B2C
-ms.openlocfilehash: 6c737af85e2a7205dca6a56174dfda565da1410d
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: a76852a6e3cc5ffcdfcac62ce29fe47c97af3df1
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78304398"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136165"
 ---
 # <a name="recommendations-and-best-practices-for-azure-active-directory-b2c"></a>Рекомендации и рекомендации для Azure Active Directory B2C
 
@@ -51,7 +51,7 @@ ms.locfileid: "78304398"
 
 |  |  |
 |--|--|
-| Изменение настраиваемых политик с помощью расширения Azure AD B2C для Visual Studio Code | Скачайте Visual Studio Code и созданное сообществом [расширение из Visual Studio Code Marketplace]((https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c)). Хотя это и не официальный продукт корпорации Майкрософт, расширение Azure AD B2C для Visual Studio Code содержит несколько функций, облегчающих работу с пользовательскими политиками. |
+| Изменение настраиваемых политик с помощью расширения Azure AD B2C для Visual Studio Code | Скачайте Visual Studio Code и созданное сообществом [расширение из Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c). Хотя это и не официальный продукт корпорации Майкрософт, расширение Azure AD B2C для Visual Studio Code содержит несколько функций, облегчающих работу с пользовательскими политиками. |
 | Узнайте, как устранять неполадки Azure AD B2C | Узнайте, как [устранять неполадки пользовательских политик](https://docs.microsoft.com/azure/active-directory-b2c/troubleshoot-custom-policies?tabs=applications) во время разработки. Узнайте, как выглядит нормальный поток проверки подлинности, и используйте средства для обнаружения аномалий и ошибок. Например, используйте [Application Insights](troubleshoot-with-application-insights.md) , чтобы просматривать выходные журналы пути взаимодействия пользователя. |
 | Использование нашей библиотеки проверенных шаблонов пользовательских политик | Найдите [примеры](https://github.com/azure-ad-b2c/samples) для нескольких улучшенных Azure AD B2C путей взаимодействия пользователей и управления доступом клиентов (CIAM). |
 

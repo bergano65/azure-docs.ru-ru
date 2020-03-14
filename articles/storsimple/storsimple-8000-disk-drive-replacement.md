@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 8/25/2017
 ms.author: alkohli
 ms.openlocfilehash: 3d6ef22e4df36996d68194589f43ea0f57def22c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365995"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267915"
 ---
 # <a name="replace-a-disk-drive-on-your-storsimple-8000-series-device"></a>Замена диска на устройстве StorSimple серии 8000
 
@@ -46,7 +46,7 @@ ms.locfileid: "78365995"
    
     **Рис. 1.** Защитная защелка закрыта
    
-   | Метка | Описание |
+   | Метка | Description |
    |:--- |:--- |
    | 1 |Щель индикатора |
    | 2 |Защитная защелка |
@@ -109,6 +109,6 @@ ms.locfileid: "78365995"
    > [!NOTE]
    > После замены диска на изменение состояния диска в портале управления может потребоваться несколько часов.
   
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте подробнее о [замене компонентов оборудования StorSimple](storsimple-8000-hardware-component-replacement.md).
 

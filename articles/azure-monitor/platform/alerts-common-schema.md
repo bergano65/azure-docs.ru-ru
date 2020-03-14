@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 03/14/2019
 ms.openlocfilehash: 1445e8cf38b2694146fc8749ba5e77f2297de969
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77668185"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79249052"
 ---
 # <a name="common-alert-schema"></a>Общая схема оповещений
 
@@ -118,7 +118,7 @@ ms.locfileid: "77668185"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие определения схемы предупреждений для веб-перехватчиков/Logic Apps, функций Azure и модулей Runbook службы автоматизации.](https://aka.ms/commonAlertSchemaDefinitions)
 - [Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 

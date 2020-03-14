@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 44d5edd7b5808b6c212a832dd95de7a9cb4b7c08
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978588"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282839"
 ---
 # <a name="security-and-data-privacy-in-azure-cognitive-search"></a>Безопасность и конфиденциальность данных в Azure Когнитивный поиск
 
@@ -118,7 +118,7 @@ ms.locfileid: "75978588"
 > [!VIDEO https://www.youtube.com/embed/r1cyTL8JqRg]
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](search-create-index-dotnet.md)
 + [Создание индекса службы поиска Azure с помощью REST API](search-create-index-rest-api.md)

@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: aahi
 ms.openlocfilehash: 5add9597924aa77ede875d0056e83eceb4f99598
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111438"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220306"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Поиск видео с помощью API Поиска видео Bing
 
@@ -37,7 +37,7 @@ Host: api.cognitive.microsoft.com
 
 Все запросы должны быть выполнены на сервере.
 
-Если вы впервые вызовете любой из API-интерфейсов Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
+Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
 
 Чтобы получить видео с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
 

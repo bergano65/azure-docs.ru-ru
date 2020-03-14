@@ -1,24 +1,18 @@
 ---
 title: Поддержка Azure для виртуальных машин поколения 2
 description: Обзор поддержки Azure для виртуальных машин поколения 2
-services: virtual-machines-linux
-documentationcenter: ''
 author: ju-shim
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 8b1acb4676d97ff16410543828493428059ad0fb
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: b68179caed4df5efd3696d7d6a3739a1e07a3c80
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392895"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267304"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин поколения 2 в Azure
 
@@ -206,6 +200,6 @@ az vm image list --publisher Canonical --sku gen2 --output table --all
     1. Убедитесь, что для свойства **Создание виртуальной машины** задано значение **Gen 2** на вкладке **Дополнительно** .
     1. Убедитесь, что вы ищете [Размер виртуальной машины, который поддерживает виртуальные машины Gen2](#generation-2-vm-sizes).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [виртуальных машинах версии 2 в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).

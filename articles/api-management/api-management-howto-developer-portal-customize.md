@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 03/05/2020
 ms.author: apimpm
 ms.openlocfilehash: af7c995c11322a538dd9e27a905f1ddbc723e8ab
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78893174"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79244099"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
@@ -36,7 +36,7 @@ ms.locfileid: "78893174"
 
 ![Портал разработчика управления API — режим администратора](media/api-management-howto-developer-portal-customize/cover.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
 - Импортируйте и опубликуйте экземпляр службы управления API Azure. Дополнительные сведения см. в разделе [Импорт и публикация](import-and-publish.md) .
@@ -93,7 +93,7 @@ ms.locfileid: "78893174"
 > [!NOTE]
 > Из-за особенностей интеграции следующие страницы невозможно удалить или переместить под другим URL-адресом: `/404`, `/500`, `/captcha`, `/change-password`, `/config.json`, `/confirm/invitation`, `/confirm-v2/identities/basic/signup`, `/confirm-v2/password`, `/internal-status-0123456789abcdef`, `/publish`, `/signin`, `/signin-sso`, `/signup`.
 
-### <a name="home-page"></a>Домашняя страница
+### <a name="home-page"></a>главная страница
 
 **Домашняя** страница по умолчанию заполнена фиктивным содержимым. Можно либо удалить все разделы с содержимым, либо удержать структуру и скорректировать элементы по одному. Замените созданный текст и изображения собственными и убедитесь, что ссылки указывают на нужные расположения.
 
@@ -130,7 +130,7 @@ ms.locfileid: "78893174"
 
 Необходимо включить CORS (общий доступ к ресурсам между источниками) в API, чтобы посетители портала протестируют API через встроенную интерактивную консоль. Дополнительные сведения см. в [этой статье документации](api-management-howto-developer-portal.md#cors) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о портале разработчика:
 

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 08/14/2019
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 662a04dbcc39f3fa95b0098eb8fe556b18b3495b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230568"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276950"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
 
@@ -23,9 +23,9 @@ ms.locfileid: "74230568"
 В этой статье описывается настройка приложений функций и управление ими. 
 
 > [!TIP]  
-> Многие параметры конфигурации можно также управлять с помощью [Интерфейс командной строки Azure]. 
+> Многие параметры конфигурации можно также управлять с помощью [Azure CLI]. 
 
-## <a name="get-started-in-the-azure-portal"></a>Начните работу на портале Azure
+## <a name="get-started-in-the-azure-portal"></a>Начало работы в портал Azure
 
 Для начала перейдите на [портал Azure] и войдите, используя свою учетную запись Azure. На панели поиска в верхней части портала введите имя приложения-функции и выберите его в списке. После выбора приложения-функции появляется следующая страница:
 
@@ -43,7 +43,7 @@ ms.locfileid: "74230568"
 
 ![Параметры приложения функции в портал Azure.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Команда [`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list) возвращает существующие параметры приложения, как показано в следующем примере:
 
@@ -79,7 +79,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 Оставшаяся часть этой статьи посвящена следующим функциям службы приложений в портал Azure, которые полезны для функций:
 
 + [Редактор службы приложений](#editor)
-+ [Console](#console)
++ [Консоль](#console)
 + [Дополнительные инструменты (Kudu)](#kudu)
 + [Варианты развертывания](#deployment)
 + [CORS](#cors)
@@ -101,7 +101,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 Консоль на портале оптимально подходит разработчикам, желающим взаимодействовать с приложением-функцией из командной строки. Стандартные команды включают создание каталогов и файлов и навигацию по ним, а также выполнение пакетных файлов и сценариев. 
 
-При разработке локально рекомендуется использовать [Azure functions Core Tools](functions-run-local.md) и [Интерфейс командной строки Azure].
+При разработке локально рекомендуется использовать [Azure functions Core Tools](functions-run-local.md) и [Azure CLI].
 
 ### <a name="kudu"></a>Дополнительные инструменты (Kudu)
 
@@ -143,10 +143,10 @@ az functionapp cors add --name <FUNCTION_APP_NAME> \
 Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. Служба приложений поддерживает Azure Active Directory проверку подлинности и вход с помощью поставщиков социальных сетей, таких как Facebook, Microsoft и Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
-+ [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)
++ [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
 
-[Интерфейс командной строки Azure]: /cli/azure/
-[портал Azure]: https://portal.azure.com
+[Azure CLI]: /cli/azure/
+[Портал Azure]: https://portal.azure.com

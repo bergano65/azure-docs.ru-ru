@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/24/2020
-ms.openlocfilehash: c32e58a43b5409fd9f8ede536167d185270c6a22
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: e83ecb3888ed4b19933233f3ab511d1e86fb37af
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721580"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136996"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Работа с результатами поиска в Azure Когнитивный поиск
 В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Параметры, связанные со страницей, которые вносят данные или сведения в результаты поиска, задаются с помощью запросов [документов поиска](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) , отправленных в службу когнитивный Поиск Azure. 
@@ -25,7 +25,7 @@ ms.locfileid: "76721580"
 + Используйте [генератор приложений](search-create-app-portal.md) на портале, чтобы создать HTML-страницу с панелью поиска, структурной навигацией и областью результатов.
 + Чтобы создать функциональный клиент, выполните инструкции из руководства [Создание первого приложения в C# ](tutorial-csharp-create-first-app.md) руководстве.
 
-В состав нескольких примеров кода входит интерфейс веб-интерфейса, который можно найти по следующему адресу: учебное [приложение в Нью-Йорке](https://azjobsdemo.azurewebsites.net/), [пример кода JavaScript с демонстрационным веб-узлом](https://github.com/liamca/azure-search-javascript-samples)и [когнитивесеарчфронтенд](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
+В состав нескольких примеров кода входит интерфейс веб-интерфейса, который можно найти по следующему адресу: учебное [приложение в Нью-Йорке](https://aka.ms/azjobsdemo), [пример кода JavaScript с демонстрационным веб-узлом](https://github.com/liamca/azure-search-javascript-samples)и [когнитивесеарчфронтенд](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
 
 > [!NOTE]
 > Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запросов см. в статье [Azure когнитивный Поиск API-интерфейсы RESTful](https://docs.microsoft.com/rest/api/searchservice).

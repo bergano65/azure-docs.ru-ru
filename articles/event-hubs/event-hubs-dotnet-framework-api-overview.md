@@ -9,16 +9,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: f67351fa38543504d63dbf8d86c9537feea24a4f
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: b14759ed39037bfa172366a2ed8f8ca089786ec6
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76312623"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79137617"
 ---
 # <a name="event-hubs-net-framework-api-overview"></a>Обзор API Центров событий для платформы .NET Framework
 
-В этой статье перечислены некоторые ключевые [клиентские API Центров событий Azure для .NET Framework](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Существуют две категории: API управления и API среды выполнения. API среды выполнения состоят из всех операций, необходимых для отправки и получения сообщения. Операции управления позволяют управлять состоянием сущности Центров событий путем создания, обновления и удаления сущностей.
+В этой статье перечислены некоторые ключевые [клиентские API Центров событий Azure для .NET Framework](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Существуют две категории: API управления и API среды выполнения. API среды выполнения состоят из всех операций, необходимых для отправки и получения сообщения. Операции управления позволяют управлять состоянием сущности Центров событий путем создания, обновления и удаления сущностей.
 
 [Сценарии мониторинга](event-hubs-metrics-azure-monitor.md) распространяются как на управление, так и на среду выполнения. Подробную справочную документацию по API .NET см. в руководстве по [.NET Framework](/dotnet/api/microsoft.servicebus.messaging.eventhubclient), [.NET Standard](/dotnet/api/microsoft.azure.eventhubs) и [API EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor).
 
@@ -26,7 +26,7 @@ ms.locfileid: "76312623"
 
 Для выполнения указанных ниже операций управления требуется разрешение на **управление** пространством имен Центров событий.
 
-### <a name="create"></a>Create
+### <a name="create"></a>Создание
 
 ```csharp
 // Create the event hub
@@ -35,7 +35,7 @@ ehd.PartitionCount = SampleManager.numPartitions;
 await namespaceManager.CreateEventHubAsync(ehd);
 ```
 
-### <a name="update"></a>Обновить
+### <a name="update"></a>Update
 
 ```csharp
 var ehd = await namespaceManager.GetEventHubAsync(eventHubName);
@@ -48,7 +48,7 @@ ehd.Authorization.Add(new SharedAccessAuthorizationRule(ruleName, ruleKey, new A
 await namespaceManager.UpdateEventHubAsync(ehd);
 ```
 
-### <a name="delete"></a>Удалить
+### <a name="delete"></a>Удаление
 
 ```csharp
 await namespaceManager.DeleteEventHubAsync("event hub name");

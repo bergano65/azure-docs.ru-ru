@@ -4,11 +4,11 @@ description: Описывает функции, используемые в ша
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.openlocfilehash: f8d19179461693331a6091ec7a3562f536b959e4
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207067"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274207"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
 
@@ -407,11 +407,11 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringTrue | Bool | True |
+| stringTrue | Bool | Истина |
 | stringFalse | Bool | False |
-| objectTrue | Bool | True |
+| objectTrue | Bool | Истина |
 | objectFalse | Bool | False |
-| arrayTrue | Bool | True |
+| arrayTrue | Bool | Истина |
 | arrayFalse | Bool | False |
 
 ## <a name="datauri"></a>dataUri
@@ -585,9 +585,9 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayEmpty | Bool | True |
-| objectEmpty | Bool | True |
-| stringEmpty | Bool | True |
+| arrayEmpty | Bool | Истина |
+| objectEmpty | Bool | Истина |
+| stringEmpty | Bool | Истина |
 
 ## <a name="endswith"></a>endsWith
 
@@ -648,11 +648,11 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| startsTrue | Bool | True |
-| startsCapTrue | Bool | True |
+| startsTrue | Bool | Истина |
+| startsCapTrue | Bool | Истина |
 | startsFalse | Bool | False |
-| endsTrue | Bool | True |
-| endsCapTrue | Bool | True |
+| endsTrue | Bool | Истина |
+| endsCapTrue | Bool | Истина |
 | endsFalse | Bool | False |
 
 ## <a name="first"></a>first
@@ -1471,11 +1471,11 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| startsTrue | Bool | True |
-| startsCapTrue | Bool | True |
+| startsTrue | Bool | Истина |
+| startsCapTrue | Bool | Истина |
 | startsFalse | Bool | False |
-| endsTrue | Bool | True |
-| endsCapTrue | Bool | True |
+| endsTrue | Bool | Истина |
+| endsCapTrue | Bool | Истина |
 | endsFalse | Bool | False |
 
 ## <a name="string"></a>строка

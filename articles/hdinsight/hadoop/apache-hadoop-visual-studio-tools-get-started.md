@@ -10,11 +10,11 @@ ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.openlocfilehash: 4ad58bc2d61f063dce2c23f60a65dcbec48a2303
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824941"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272790"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio
 
@@ -26,7 +26,7 @@ ms.locfileid: "73824941"
 
 Средства Data Lake для Visual Studio можно использовать для доступа к Azure Data Lake Analytics и HDInsight. Дополнительные сведения см. в статье [Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio](../../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы завершить работу с этой статьей и использовать средства Data Lake для Visual Studio, вам потребуются следующие компоненты:
 
@@ -54,7 +54,7 @@ ms.locfileid: "73824941"
 
 Далее Убедитесь, что вы обновляете Data Lake средства до последней версии.
 
-1. Откройте Visual Studio.
+1. Запустите Visual Studio.
 
 2. В окне **Пуск** выберите **Продолжить без кода**.
 
@@ -84,7 +84,7 @@ ms.locfileid: "73824941"
 
 Чтобы подключиться к подписке Azure, сделайте следующее:
 
-1. Откройте Visual Studio.
+1. Запустите Visual Studio.
 
 2. В окне **Пуск** выберите **Продолжить без кода**.
 
@@ -129,7 +129,7 @@ ms.locfileid: "73824941"
 
     ![Связывание кластера, HDInsight, Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-link-cluster-dialog.png)
 
-3. Выберите **Готово**. Если связывание с кластером прошло успешно, кластер будет отображаться в узле **HDInsight** .
+3. Нажмите кнопку **Готово**. Если связывание с кластером прошло успешно, кластер будет отображаться в узле **HDInsight** .
 
 Чтобы обновить связанный кластер, щелкните правой кнопкой мыши кластер и выберите команду **изменить**. Затем можно обновить сведения о кластере.
 

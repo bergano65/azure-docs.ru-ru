@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 1f42c6c9b0086d49e539040334c83cfc0c6feb42
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75410226"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278224"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -87,7 +87,7 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 > [!NOTE]
-> Объект `context` в JavaScript не представляет DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `df` объекта `context`.
+> Объект `context` в JavaScript не представляет DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `context` объекта `df`.
 
 > [!NOTE]
 > Для оркестраторов JavaScript нужно использовать `return`. Библиотека `durable-functions` отвечает за вызов метода `context.done`.

@@ -8,11 +8,11 @@ ms.date: 10/14/2016
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 8a83c2f6ac7599ff37237834a85b7771cf4ee502
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374983"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243878"
 ---
 # <a name="network-configuration-details-for-app-service-environment-for-powerapps-with-azure-expressroute"></a>Сведения о конфигурации сети для Среды службы приложений для PowerApps с Azure ExpressRoute
 
@@ -85,7 +85,7 @@ ms.locfileid: "78374983"
 
 В этом разделе показан пример настройки UDR для Среды службы приложений.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 * Установите Azure PowerShell на [странице загрузок Azure][AzureDownloads]. Выберите загрузку с датой июнь 2015 г. или позже. В **программе командной строки** > **Windows PowerShell** выберите **Установить**, чтобы установить последние командлеты PowerShell.
 
@@ -138,7 +138,7 @@ ms.locfileid: "78374983"
 
 Теперь вы готовы к развертыванию Среды службы приложений!
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с Среда службы приложений PowerApps, см. статью [Общие сведения о среда службы приложений][IntroToAppServiceEnvironment].
 

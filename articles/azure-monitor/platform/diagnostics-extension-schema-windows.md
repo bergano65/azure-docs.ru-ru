@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 01/20/2020
 ms.openlocfilehash: 4c711e1b0a63fbcf978c0e4467eadaed8d91f3de
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79128714"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274714"
 ---
 # <a name="windows-diagnostics-extension-schema"></a>Схема расширения диагностики Windows
 Расширение система диагностики Azure — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок ресурсов вычислений Azure. В этой статье подробно описывается схема, используемая для настройки расширения системы диагностики на виртуальных машинах Windows и других ресурсов вычислений.

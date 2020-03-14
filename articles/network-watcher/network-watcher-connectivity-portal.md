@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 08/03/2017
 ms.author: damendo
 ms.openlocfilehash: e405a91b1ea541b4ed3328fdb3bf80ca82731c93
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78390235"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283242"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-portal"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" с помощью портала Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "78390235"
 
 ![Результаты проверки возможности подключения веб-сайта][2]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 

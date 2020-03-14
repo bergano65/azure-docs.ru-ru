@@ -4,11 +4,11 @@ description: Обзор службы "Работоспособность рес�
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: f22b41e66f15dd12d973c5744870969fae795bc1
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78925251"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258204"
 ---
 # <a name="resource-health-overview"></a>Обзор Работоспособность ресурсов
  

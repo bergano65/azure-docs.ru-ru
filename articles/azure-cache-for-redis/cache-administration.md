@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 07/05/2017
 ms.author: yegu
 ms.openlocfilehash: 69686cad20bc4ce70bff2a92a216c9430522c301
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122534"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278848"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
@@ -65,14 +65,14 @@ ms.locfileid: "74122534"
 ### <a name="can-i-reboot-my-cache-using-powershell-cli-or-other-management-tools"></a>Можно ли перезагрузить кэш с помощью PowerShell, интерфейса командной строки или других средств управления?
 Да, инструкции по использованию PowerShell см. в разделе, посвященном [перезагрузке кэша Redis для Azure](cache-how-to-manage-redis-cache-powershell.md#to-reboot-an-azure-cache-for-redis).
 
-## <a name="schedule-updates"></a>запланировать обновления
+## <a name="schedule-updates"></a>Планирование обновлений
 Колонка **обновления в расписании** позволяет указать период обслуживания для экземпляра кэша. Если задан период обслуживания, то любые обновления сервера Redis выполняются в этот период. 
 
 > [!NOTE] 
 > Данный период обслуживания относится только к обновлениям сервера Redis, а не ко всем обновлениям Azure или операционной системы виртуальных машин, на которых размещен кэш.
 >
 
-![запланировать обновления](./media/cache-administration/redis-schedule-updates.png)
+![Планирование обновлений](./media/cache-administration/redis-schedule-updates.png)
 
 Чтобы задать период обслуживания, отметьте необходимые дни и укажите, когда будет начинаться период обслуживания в каждый из дней, а затем нажмите кнопку **ОК**. Обратите внимание, что время периода обслуживания указывается в формате UTC. 
 
@@ -97,6 +97,6 @@ ms.locfileid: "74122534"
 * [New-AzRedisCacheScheduleEntry](/powershell/module/az.rediscache/new-azrediscachescheduleentry);
 * [Remove-AzRedisCachePatchSchedule](/powershell/module/az.rediscache/remove-azrediscachepatchschedule).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о возможностях [кэша Redis для Azure ценовой категории "Премиум"](cache-premium-tier-intro.md).
 

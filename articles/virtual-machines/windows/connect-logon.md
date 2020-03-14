@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 152df830f11cd5a73235559c5c5d65ced44f22fa
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74842124"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266771"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее
 Чтобы запустить сеанс удаленного рабочего стола, на портале Azure нажмите кнопку **Подключиться** на рабочем столе Windows. Сначала подключитесь к виртуальной машине, а затем войдите в систему.
 
 Чтобы подключиться к виртуальной машине Windows с компьютера Mac, необходимо установить клиент RDP для Mac, например [Удаленный рабочий стол (Майкрософт)](https://aka.ms/rdmac).
 
-## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
+## <a name="connect-to-the-virtual-machine"></a>Подключитесь к виртуальной машине
 1. Перейдите к [портал Azure](https://portal.azure.com/) , чтобы подключиться к виртуальной машине. Найдите и выберите **виртуальные машины**.
 2. Затем выберите виртуальную машину из списка.
 3. В начале страницы виртуальной машины выберите **подключить**.

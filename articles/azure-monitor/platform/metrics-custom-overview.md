@@ -8,11 +8,11 @@ ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 0050112dc7d9d2fa20da612691f1ff0927df93fb
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385329"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274376"
 ---
 # <a name="custom-metrics-in-azure-monitor"></a>Пользовательские метрики в Azure Monitor
 
@@ -176,11 +176,11 @@ ms.locfileid: "78385329"
 | **США и Канада** | |
 |центрально-западная часть США | HTTPS:\//westcentralus.monitoring.azure.com/ |
 |западная часть США 2       | HTTPS:\//westus2.monitoring.azure.com/ |
-|Центрально-северная часть США | HTTPS:\//northcentralus.monitoring.azure.com
+|Центрально-северная часть США | HTTPS:\//northcentralus.monitoring.azure.com
 |Центрально-южная часть США| HTTPS:\//southcentralus.monitoring.azure.com/ |
 |Центральная часть США      | HTTPS:\//centralus.monitoring.azure.com |
 |Центральная Канада | HTTPS:\//канадацентрал.Мониторинг.Азуре.КОМК
-|Восток США| HTTPS:\//eastus.monitoring.azure.com/ |
+|Восточная часть США| HTTPS:\//eastus.monitoring.azure.com/ |
 | **Европа** | |
 |Северная Европа    | HTTPS:\//northeurope.monitoring.azure.com/ |
 |Западная Европа     | HTTPS:\//westeurope.monitoring.azure.com/ |
@@ -200,15 +200,15 @@ ms.locfileid: "78385329"
 ## <a name="quotas-and-limits"></a>Квоты и ограничения
 Azure Monitor налагает указанные ниже ограничения на использование пользовательских метрик.
 
-|Категория|Предельное количество|
+|Категория|Ограничение|
 |---|---|
-|Активные временные серии, подписки, регион|50 000|
+|Активные временные серии, подписки, регион|50 000|
 |Ключи измерений на метрику|10|
 |Длина строки для имен и пространств имен метрик, а также ключей и имен измерений|256 символов|
 
 Активная временная серия — это уникальное сочетание метрики, ключа и значения измерения, содержащее значения метрик, опубликованные за последние 12 часов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Используйте пользовательские метрики из различных служб: 
  - [Виртуальные машины](collect-custom-metrics-guestos-resource-manager-vm.md)
  - [Масштабируемый набор виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md)

@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: akjosh
 ms.openlocfilehash: c388f433327b5328483f10fbef637a6fdfd08832
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78383331"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250547"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -29,17 +29,17 @@ ms.locfileid: "78383331"
 Инструкции по установке драйверов вручную и текущим поддерживаемым версиям доступны [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Linux серии N](hpccompute-gpu-linux.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
 Это расширение поддерживает следующие операционные системы:
 
-| Распределение | Версия |
+| Distribution | Версия |
 |---|---|
 | Windows 10 | Основные сведения |
 | Windows Server 2016 | Основные сведения |
-| Windows Server 2012 R2 | Основные сведения |
+| Windows Server 2012 R2 | Основные сведения |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -74,9 +74,9 @@ ms.locfileid: "78383331"
 | Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | Дата |
-| publisher | Microsoft.HpcCompute | string |
-| тип | NvidiaGpuDriverWindows | string |
-| typeHandlerVersion | 1.2 | int |
+| publisher | Microsoft.HpcCompute | строка |
+| type | NvidiaGpuDriverWindows | строка |
+| typeHandlerVersion | 1.2 | INT |
 
 
 ## <a name="deployment"></a>Развертывание
@@ -173,7 +173,7 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).
 
 См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../windows/sizes-gpu.md).

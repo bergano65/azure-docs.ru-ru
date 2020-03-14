@@ -4,11 +4,11 @@ description: Поиск, создание, управление и удален�
 ms.topic: how-to
 ms.date: 02/17/2020
 ms.openlocfilehash: a49595f0580e71048239d5c5d8f4d1a66e24fe6d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392739"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269644"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
@@ -85,6 +85,6 @@ ms.locfileid: "78392739"
        
 2. [Следуйте инструкциям](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

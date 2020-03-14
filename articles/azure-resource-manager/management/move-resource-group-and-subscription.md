@@ -4,11 +4,11 @@ description: Перемещайте ресурсы в новую группу р
 ms.topic: conceptual
 ms.date: 03/02/2020
 ms.openlocfilehash: 40432c55a7f7e289d2e5cbc8afe94847074e4ca8
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250168"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248857"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 

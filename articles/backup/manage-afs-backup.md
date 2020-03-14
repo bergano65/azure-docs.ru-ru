@@ -4,11 +4,11 @@ description: В этой статье описаны распространен�
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.openlocfilehash: cb764fa441c063328dc350cf26f42c5bc7a0ca99
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76936202"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79247661"
 ---
 # <a name="manage-azure-file-share-backups"></a>Управление резервными копиями файловых ресурсов Azure
 

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 03/14/2019
 ms.openlocfilehash: b0b398be919364b5a146e86ca1a1790674bb7d01
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395754"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275026"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
@@ -71,7 +71,7 @@ ms.locfileid: "78395754"
 
 ## <a name="essentials"></a>Основные компоненты
 
-| Поле | Описание|
+| Поле | Description|
 |:---|:---|
 | alertId | Идентификатор GUID, однозначно определяющий экземпляр предупреждения. |
 | alertRule | Имя правила генерации оповещений, создавшего экземпляр предупреждения. |
@@ -479,7 +479,7 @@ ms.locfileid: "78395754"
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).
 - Узнайте [, как создать приложение логики, которое использует общую схему оповещений для обработки всех ваших оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations). 

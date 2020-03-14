@@ -17,13 +17,13 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/08/2019
 ms.openlocfilehash: 6ddadcafd4f068f6516039017a3d491095c78e30
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75378268"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280551"
 ---
-# <a name="registration-management"></a>Управление регистрациями
+# <a name="registration-management"></a>Управление регистрацией
 
 В этом разделе описывается регистрация устройств в центрах уведомлений для получения push-уведомлений. Сначала приводится общее описание, затем демонстрируются два основных типа регистрации устройств: регистрация с устройства непосредственно в центре уведомлений и регистрация с помощью серверной части приложения.
 
@@ -263,7 +263,7 @@ catch (Microsoft.WindowsAzure.Messaging.RegistrationGoneException e)
 
 Для управления регистрацией из серверной части требуется дополнительный код. Приложение с устройства должно предоставлять обновленный маркер PNS серверной части при каждом запуске приложения (а также теги и шаблоны), а серверная часть должна обновлять этот маркер в центре уведомлений. На следующем рисунке показана схема работы.
 
-![Управление регистрациями](./media/notification-hubs-registration-management/notification-hubs-registering-on-backend.png)
+![Управление регистрацией](./media/notification-hubs-registration-management/notification-hubs-registering-on-backend.png)
 
 Преимуществом управления регистрациями из серверной части является возможность изменения тегов для регистраций даже в том случае, когда соответствующее приложение на устройстве неактивно, а также возможность проверять подлинность клиентского приложения перед добавлением тега в его регистрацию.
 
@@ -317,7 +317,7 @@ public async Task<HttpResponseMessage> Put(DeviceInstallation deviceUpdate)
 
 ### <a name="example-code-to-register-with-a-notification-hub-from-a-device-using-a-registration-id"></a>Пример кода регистрации в центре уведомлений с устройства, использующего идентификатор регистрации
 
-Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Пример.
+Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Пример:
 
 ```csharp
 var hub = NotificationHubClient.CreateClientFromConnectionString("{connectionString}", "hubName");

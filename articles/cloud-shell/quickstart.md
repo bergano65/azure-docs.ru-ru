@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
 ms.openlocfilehash: 574841b3a89385a3b8bf048d5ed36f40fac99a83
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72757398"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79252133"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -58,7 +58,7 @@ az account set --subscription 'my-subscription-name'
 az group create --location westus --name MyRG
 ```
 
-### <a name="create-a-linux-vm"></a>Создание ВМ Linux
+### <a name="create-a-linux-vm"></a>Создание виртуальной машины Linux
 Создайте виртуальную машину Ubuntu в новой группе ресурсов. Azure CLI создаст ключи SSH и настроит с их помощью виртуальную машину. <br>
 
 ```azurecli-interactive

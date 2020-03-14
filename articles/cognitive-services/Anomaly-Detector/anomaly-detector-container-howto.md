@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: dapine
 ms.openlocfilehash: 45abd904ea95cf8e68583ba5630a485af59479ec
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78390714"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220350"
 ---
 # <a name="install-and-run-anomaly-detector-containers-preview"></a>Установка и запуск контейнеров детекторов аномалий (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "78390714"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем использовать контейнеры детекторов аномалий, необходимо выполнить следующие предварительные требования:
 
@@ -60,7 +60,7 @@ ms.locfileid: "78390714"
 
 В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для контейнера детекторов обнаружения аномалий.
 
-| QPS (запросов в секунду) | Минимум | Рекомендуемая |
+| QPS (запросов в секунду) | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | 10 QPS | 4 ядра, 1 ГБ памяти | 8-ядерный 2 ГБ памяти |
 | 20 QPS | 8 ядер, 2 ГБ памяти | 16-ядерный 4 ГБ памяти |
@@ -73,7 +73,7 @@ ms.locfileid: "78390714"
 
 Воспользуйтесь командой [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера.
 
-| Контейнер | Репозиторий |
+| Контейнер | Хранилище |
 |-----------|------------|
 | обнаружение аномалий-службы-детектор | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest` |
 
@@ -162,7 +162,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если контейнер запускается с выходным [подключением](anomaly-detector-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
@@ -193,7 +193,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services контейнеры не отправляют данные клиента (например, анализируемые данные временных рядов) в корпорацию Майкрософт.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](anomaly-detector-container-configuration.md).
 * [Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"](how-to/deploy-anomaly-detection-on-container-instances.md)

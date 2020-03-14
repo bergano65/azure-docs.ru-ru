@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: andyxu
 author: gogowings
 ms.date: 11/04/2019
-ms.openlocfilehash: 5ec953ace6bb9583c622f89cfcd0196482b1c683
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: d8a975487c68a21b2c8b6fa2f07d86c312243f12
+ms.sourcegitcommit: d322d0a9d9479dbd473eae239c43707ac2c77a77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75541755"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139051"
 ---
 # <a name="consume-azure-machine-learning-events-preview"></a>Использование событий Машинное обучение Azure (Предварительная версия)
 
@@ -42,6 +42,7 @@ ms.locfileid: "75541755"
 | `Microsoft.MachineLearningServices.ModelRegistered` | Возникает при регистрации модели машинного обучения в рабочей области |
 | `Microsoft.MachineLearningServices.ModelDeployed` | Возникает при завершении развертывания службы вывода с одной или несколькими моделями |
 | `Microsoft.MachineLearningServices.DatasetDriftDetected` | Возникает при завершении задания обнаружения смещения данных для двух наборов данных |
+| `Microsoft.MachineLearningServices.RunStatusChanged` | Вызывается при изменении состояния выполнения, которое возникает только в том случае, если состояние выполнения — "Failed" |
 
 ## <a name="subscribe-to-machine-learning-events"></a>Подпишитесь на Машинное обучение события
 
@@ -61,6 +62,7 @@ ms.locfileid: "75541755"
 | `Microsoft.MachineLearningServices.ModelRegistered` | `models/{modelName}:{modelVersion}` | `models/sklearn_regression_model:3` |
 | `Microsoft.MachineLearningServices.ModelDeployed` | `endpoints/{serviceId}` | `endpoints/my_sklearn_aks` |
 | `Microsoft.MachineLearningServices.DatasetDriftDetected` | `datadrift/{data.DataDriftId}/run/{data.RunId}` | `datadrift/4e694bf5-712e-4e40-b06a-d2a2755212d4/run/my_driftrun1_1550564444_fbbcdc0f` |
+| `Microsoft.MachineLearningServices.RunStatusChanged` | `experiments/{ExperimentId}/runs/{RunId}` | `experiments/b1d7966c-f73a-4c68-b846-992ace89551f/runs/my_exp1_1554835758_38dbaa94` | 
 
 ### <a name="advanced-filtering"></a>Расширенная фильтрация
 

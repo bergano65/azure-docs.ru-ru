@@ -12,14 +12,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 ms.date: 03/28/2017
-ms.openlocfilehash: 0ae545fd3ecafda74b90a6a4694dd6f506fb44b1
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 144a3bc0d9e0499a238e4033d37d5e4d3fa61e05
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838806"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204070"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Развертывание веб-служб Машинное обучение Azure Studio (классическая модель), использующих модули импорта и экспорта данных
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 При создании прогнозного эксперимента обычно добавляются вход и выход веб-службы. Если вы развернете эксперимент, то пользователи смогут отправлять и получать данные из веб-службы через входы и выходы. В некоторых приложениях данные пользователя могут быть доступны через веб-канал данных или уже находиться во внешнем источнике данных, таком как хранилище BLOB-объектов Azure. В этих случаях для чтения и записи данных им не требуются входы и выходы веб-службы. Вместо этого они могут использовать службу выполнения пакетов (BES) для чтения из источника данных с помощью модуля импорта данных, а записывать результаты оценки в другое расположение с помощью модуля экспорта данных.
 

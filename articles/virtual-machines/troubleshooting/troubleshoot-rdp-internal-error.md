@@ -13,11 +13,11 @@ ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
 ms.openlocfilehash: 8046e4f42db50db15c840a13b95ae1f3620a8c7f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381690"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266927"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол
 
@@ -196,7 +196,7 @@ ms.locfileid: "78381690"
 #### <a name="reset-the-permission-for-machinekeys-folder"></a>Сброс разрешения для папки MachineKeys
 
 1. Откройте сеанс командной строки с повышенными привилегиями (**запуск от имени администратора**).
-2. Запустите указанный ниже сценарий. В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
+2. Выполните следующий сценарий. В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
 
         Md F:\temp
 

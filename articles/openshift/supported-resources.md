@@ -7,11 +7,11 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: 1b794852390141d31a3218a1a434c21133db914c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381461"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243670"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Ресурсы Azure Red Hat OpenShift
 
@@ -61,6 +61,6 @@ REST API Azure Red Hat OpenShift поддерживают следующие р�
 |Стандартный D16s v3|16|64 ГБ|
 |Стандартный D32s v3|32|128 ГБ|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Воспользуйтесь учебником [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) .

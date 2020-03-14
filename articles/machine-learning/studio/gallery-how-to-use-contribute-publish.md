@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: 6a82c4d6eecec3a3a9ef690536988c8402444ffc
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 882b52b74603465bd0a55a12fd9ef03f7b625046
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168544"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204330"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Поиск и публикация ресурсов в коллекции решений ИИ Azure
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 **[Коллекция решений ИИ Azure](https://gallery.azure.ai)** — это управляемый сообществом сайт для поиска и обмена решениями, созданными с помощью ИИ Azure.
 В коллекции есть множество ресурсов, которые вы можете использовать для разработки собственных аналитических решений.
@@ -86,7 +88,7 @@ ms.locfileid: "77168544"
 
 1. В списке действий под холстом эксперимента выберите **Publish to Gallery** (Опубликовать в коллекции).
 
-1. В коллекции введите описательные значения для полей **Name** (Имя) и **Tags** (Тэги). Выделите конкретные методы, которые вы использовали, или проблему, которую вы решаете. Вот пример описательного названия эксперимента: "Двоичная классификация: анализ тональности в Twitter".
+1. В коллекции введите описательные значения для полей **Name** (Имя) и **Tags** (Тэги). Выделите конкретные методы, которые вы использовали, или проблему, которую вы решаете. Ниже приведен пример описательного эксперимента "двоичная классификация: Twitter анализ тональности".
 
 1. В поле **SUMMARY** (СВОДКА) введите сводку по эксперименту. Дайте краткое описание проблемы и подхода для ее решения в эксперименте.
 

@@ -10,11 +10,11 @@ ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
 ms.openlocfilehash: f90ada6b6cd1760b3b779010625f252533fa611d
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595766"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79219514"
 ---
 # <a name="how-to-manage-settings"></a>Как управлять параметрами
 
@@ -101,6 +101,6 @@ ms.locfileid: "68595766"
 
     ![Общий доступ к параметрам разрешения](media/how-to/sharing-permission-settings.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [перенести рабочую область и проект](how-to-migrate.md) из [Microsoft Translator Hub](https://hub.microsofttranslator.com).

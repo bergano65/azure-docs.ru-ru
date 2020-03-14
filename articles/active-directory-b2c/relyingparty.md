@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5911f7235f1469fed460f173b808fbfdf9c853e8
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 90ac6f35cafbe63e8c6cdb77450089d00c0e3099
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78183879"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264353"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
@@ -173,7 +173,7 @@ ms.locfileid: "78183879"
 
 | attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
-| Идентификатор | Да | Значение должно быть равно `PolicyProfile`. |
+| Id | Да | Значение должно быть равно `PolicyProfile`. |
 
 Элемент **TechnicalProfile** содержит следующие элементы:
 

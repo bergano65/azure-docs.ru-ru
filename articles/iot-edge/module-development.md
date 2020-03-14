@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 96bd6b461a5374b5f5bc578c5f58dbcd09cd7087
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78358689"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79271386"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -51,7 +51,7 @@ ms.locfileid: "78358689"
 
 Сообщения с устройства в облако, обрабатываемые концентратором Edge, имеют следующие свойства системы:
 
-| Свойство | Описание |
+| Свойство | Description |
 | -------- | ----------- |
 | $connectionDeviceId | Идентификатор устройства клиента, отправившего сообщение. |
 | $connectionModuleId | Идентификатор модуля, отправившего сообщение. |
@@ -95,7 +95,7 @@ IoT Edge поддерживает несколько операционных с
 | C | Visual Studio 2017 или 2019 |
 | C# | Visual Studio Code (без возможностей отладки)<br>Visual Studio 2017 или 2019 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подготовка среды разработки и тестирования для IoT Edge](development-environment.md)
 

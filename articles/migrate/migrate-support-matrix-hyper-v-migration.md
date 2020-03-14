@@ -4,11 +4,11 @@ description: Узнайте о поддержке миграции Hyper-V с п
 ms.topic: conceptual
 ms.date: 01/08/2020
 ms.openlocfilehash: 1eab96df7ee58a8170f75b41c5a2a06f033ced19
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064467"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245828"
 ---
 # <a name="support-matrix-for-hyper-v-migration"></a>Матрица поддержки для миграции Hyper-V
 

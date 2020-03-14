@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 11/08/2019
 ms.author: cawa
 ms.openlocfilehash: 7886d5a1ad0745550767b7d6f19592ca3c84b00a
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73891238"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79279797"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -23,9 +23,9 @@ ms.locfileid: "73891238"
 
 ![Обозреватель службы хранилища Microsoft Azure][0]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 Обозреватель службы хранилища поддержки следующих версий Windows:
 
@@ -35,13 +35,13 @@ ms.locfileid: "73891238"
 
 Для всех версий Windows Обозреватель службы хранилища требуется .NET Framework 4.6.2 или более поздней версии.
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 Следующие версии macOS поддерживают Обозреватель службы хранилища:
 
 * macOS 10,12 Сьерра и более поздние версии
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 Обозреватель службы хранилища доступен в [хранилище привязкой](https://snapcraft.io/storage-explorer) для большинства распространенных дистрибутивов Linux. Для этой установки рекомендуется использовать хранилище оснастки. Обозреватель службы хранилищаная привязка устанавливает все свои зависимости и обновления, когда новые версии публикуются в хранилище привязки.
 
@@ -65,7 +65,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 
 ---
 
-## <a name="download-and-install"></a>Загрузка и установка
+## <a name="download-and-install"></a>Загрузите и установите
 
 Сведения о загрузке и установке Обозреватель службы хранилища см. в разделе [Обозреватель службы хранилища Azure](https://www.storageexplorer.com).
 
@@ -87,7 +87,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 
 1. Теперь служба **управления учетными** записями отображает все учетные записи Azure, в которые вы вошли. Чтобы подключиться к другой учетной записи, выберите **Добавить учетную запись**.
 
-1. В разделе **Подключение к Службе хранилища Azure** выберите облако для **Среды Azure** , чтобы войти в национальное облако или Azure Stack. Выбрав среду, нажмите кнопку **Далее**.
+1. В окне **Подключение к службе хранилища Azure**выберите Облако Azure из **среды Azure** , чтобы войти в Национальный облако или Azure Stack. Выбрав среду, нажмите кнопку **Далее**.
 
     ![Параметр для входа][2]
 
@@ -266,7 +266,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление ресурсами хранилища BLOB-объектов Azure с помощью Обозреватель службы хранилища](vs-azure-tools-storage-explorer-blobs.md)
 * [Работа с данными с помощью Обозреватель службы хранилища Azure](./cosmos-db/storage-explorer.md)

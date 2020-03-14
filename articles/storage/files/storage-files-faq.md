@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: f1be146a5173c86a8b19bca5c7b3b8c72d72b9c5
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 093f4b11d10396199e9fac1e22fd82197f3a5e79
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78362427"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268188"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -81,6 +81,9 @@ ms.locfileid: "78362427"
   **мне действительно нужно, чтобы в службу файлов Azure был добавлен конкретный компонент. Можно ли добавить его?**  
     Рабочая группа службы файлов Azure готова рассмотреть все предложения и отзывы в отношении своей работы. Проголосуйте за вариант, который вам понравился, на странице, посвященной [оптимизации службы хранилища Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files). Мы заинтересованы в разработке новых полезных функций.
 
+  **Поддерживает ли служба "файлы Azure" блокировку файлов?**  
+    Да, служба файлов Azure полностью поддерживает блокировку файлов в формате SMB/Windows. Дополнительные [сведения см](https://docs.microsoft.com/rest/api/storageservices/managing-file-locks). в этой статье. 
+    
 ## <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
 
 * <a id="afs-region-availability"></a>
@@ -211,6 +214,11 @@ ms.locfileid: "78362427"
 
     Да, вы можете включить проверку подлинности Azure AD DS или AD в общей папке, управляемой службой синхронизации файлов Azure. Изменения в ACL каталога или файла для локальных файловых серверов будут распределены по уровням в службе файлов Azure и наоборот.
 
+* <a id="ad-aad-smb-files"></a>
+**как проверить, включена ли проверка подлинности AD для учетной записи хранения и сведений о ДОМЕНЕ AD?**
+
+    Чтобы проверить, включена ли проверка подлинности AD для файлов Azure в учетной записи хранения, и получить сведения о домене Active Directory, см. инструкции в этой [статье](https://docs.microsoft.com/azure/storage/files/storage-files-identity-auth-active-directory-enable#enable-ad-authentication-for-your-account) .
+    
 * <a id="encryption-at-rest"></a>
 **Как обеспечить шифрование неактивных данных файлового ресурса Azure?**  
 

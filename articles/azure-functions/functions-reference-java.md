@@ -4,11 +4,11 @@ description: Информация о разработке функций на я
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.openlocfilehash: 4af2a860657f6066112146e1f88d81861d9430ea
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769036"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276755"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "75769036"
 
 В следующих средах разработки есть Инструментарий функций Azure, позволяющий создавать проекты функций Java: 
 
-+ [Код Visual Studio](https://code.visualstudio.com/docs/java/java-azurefunctions)
++ [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions)
 + [Eclipse](functions-create-maven-eclipse.md)
 + [IntelliJ](functions-create-maven-intellij.md)
 
@@ -102,7 +102,7 @@ _* Проект Котлин выглядит очень похожим, так 
 > [!IMPORTANT] 
 > Учетную запись хранения Azure необходимо настроить в [локальном. Settings. JSON](/azure/azure-functions/functions-run-local#local-settings-file) для запуска хранилища BLOB-объектов Azure, хранилища очередей Azure или для локальных триггеров хранилища таблиц Azure.
 
-Пример:
+Пример
 
 ```java
 public class Function {
@@ -160,7 +160,7 @@ public class Function {
 
 В [портал Azure](https://portal.azure.com)используйте [вкладку Параметры приложения](functions-how-to-use-azure-function-app-settings.md#settings) , чтобы добавить параметр `JAVA_OPTS`.
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Для установки `JAVA_OPTS`можно использовать команду [AZ functionapp config appSettings Set](/cli/azure/functionapp/config/appsettings) , как показано в следующем примере:
 
@@ -331,7 +331,7 @@ public class Function {
 
  Они определяются в `azure-functions-java-library`. Они являются вспомогательными типами для работы с HttpTrigger функциями.
 
-| Специализированный тип      |       Выбор пути миграции        | Типичное использование                  |
+| Специализированный тип      |       Назначение        | Типичное использование                  |
 | --------------------- | :-----------------: | ------------------------------ |
 | `HttpRequestMessage<T>`  |    Триггер HTTP     | Возвращает метод, заголовки или запросы |
 | `HttpResponseMessage` | Привязка к выходным данным HTTP | Возвращает состояние, отличное от 200   |
@@ -385,7 +385,7 @@ public class Function {
 
 Используйте `getLogger`, определенные в `ExecutionContext`, для записи журналов из кода функции.
 
-Пример:
+Пример
 
 ```java
 

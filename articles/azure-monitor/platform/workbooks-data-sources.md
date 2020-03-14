@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
 ms.openlocfilehash: d57910ae31d4db9be17b3dc46b5920a925ab4fcf
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77658377"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248584"
 ---
 # <a name="azure-monitor-workbooks-data-sources"></a>Источники данных Azure Monitor книг
 
@@ -81,7 +81,7 @@ Azure Monitor обладает функциональными возможнос
 
 ![Снимок экрана окна запроса Kusto](./media/workbooks-overview/data-explorer.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

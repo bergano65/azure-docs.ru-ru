@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: 5400f10be3d4ef0954102e55ab578f5bc5ccc00a
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 1a913e714565ffb99237357e331ef5cf0189c40f
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169154"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204227"
 ---
 # <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создавайте эксперименты Машинное обучение Azure Studio (классические) на основе рабочих примеров в Коллекция решений ИИ Azure
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Узнайте, как использовать примеры экспериментов машинного обучения из [коллекции решений Azure AI](https://gallery.azure.ai/), чтобы не создавать собственные решения с нуля. Эти примеры помогут вам создать решение машинного обучения.
 

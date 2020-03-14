@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: abhisram
 ms.openlocfilehash: e6e9fb66368461e0d3ebdd2709f4ced0e796bea5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75376738"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282332"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Диагностика и мониторинг производительности в Reliable Actors
 В среде выполнения субъектов Reliable Actors предусмотрены события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) и [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). содержащие полезную информацию о работоспособности среды выполнения и помогающие устранять неполадки и контролировать производительность.
@@ -83,7 +83,7 @@ ms.locfileid: "75376738"
 ### <a name="actor-method-events-and-performance-counters"></a>События и счетчики производительности методов субъектов
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [методами субъектов](service-fabric-reliable-actors-introduction.md).
 
-| Имя события | Идентификатор события | Уровень | Ключевое слово | Description |
+| Имя события | Идентификатор события | Level | Ключевое слово | Description |
 | --- | --- | --- | --- | --- |
 | ActorMethodStart |7 |Подробный |0x2 |Среда выполнения субъектов готовится к вызову метода субъекта. |
 | ActorMethodStop |8 |Подробный |0x2 |Выполнение метода субъекта завершено. Это значит, что асинхронный метод субъекта, вызванный средой выполнения, вернулся и задача, возвращенная методом субъекта, завершена. |
@@ -100,7 +100,7 @@ ms.locfileid: "75376738"
 ### <a name="concurrency-events-and-performance-counters"></a>События и счетчики производительности для параллелизма
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [параллелизмом](service-fabric-reliable-actors-introduction.md#concurrency).
 
-| Имя события | Идентификатор события | Уровень | Ключевое слово | Description |
+| Имя события | Идентификатор события | Level | Ключевое слово | Description |
 | --- | --- | --- | --- | --- |
 | ActorMethodCallsWaitingForLock |12 |Подробный |0x8 |Это событие записывается в начале каждой новой очереди для субъекта. Оно содержит количество вызовов субъекта, ожидающих получение блокировки субъекта, обеспечивающей "поочередный" параллелизм. |
 
@@ -115,7 +115,7 @@ ms.locfileid: "75376738"
 ### <a name="actor-state-management-events-and-performance-counters"></a>События и счетчики производительности управления состоянием субъектов
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [управлением состояниями субъектов](service-fabric-reliable-actors-state-management.md).
 
-| Имя события | Идентификатор события | Уровень | Ключевое слово | Description |
+| Имя события | Идентификатор события | Level | Ключевое слово | Description |
 | --- | --- | --- | --- | --- |
 | ActorSaveStateStart |10 |Подробный |0x4 |Среда выполнения субъектов готовится к сохранению состояния субъекта. |
 | ActorSaveStateStop |11 |Подробный |0x4 |Среда выполнения субъектов завершила сохранение состояния субъекта. |
@@ -130,7 +130,7 @@ ms.locfileid: "75376738"
 ### <a name="events-related-to-actor-replicas"></a>События, связанные с репликами субъектов
 Среда выполнения Reliable Actors создает следующие события, связанные с [репликами субъектов](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-actors).
 
-| Имя события | Идентификатор события | Уровень | Ключевое слово | Description |
+| Имя события | Идентификатор события | Level | Ключевое слово | Description |
 | --- | --- | --- | --- | --- |
 | ReplicaChangeRoleToPrimary |1 |Informational |0x1 |Роль реплики субъекта стала основной. Это означает, что субъекты для этой секции будут создаваться в этой реплике. |
 | ReplicaChangeRoleFromPrimary |2 |Informational |0x1 |Роль реплики субъекта стала неосновной. Это означает, что в этой реплике больше нельзя создавать субъекты для этой секции. Новые запросы не будут доставляться субъектам, уже созданным в этой реплике. После выполнения всех незавершенных запросов субъекты уничтожаются. |
@@ -138,7 +138,7 @@ ms.locfileid: "75376738"
 ### <a name="actor-activation-and-deactivation-events-and-performance-counters"></a>События активации и деактивации субъектов и счетчики производительности
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [активацией и деактивацией субъектов](service-fabric-reliable-actors-lifecycle.md).
 
-| Имя события | Идентификатор события | Уровень | Ключевое слово | Description |
+| Имя события | Идентификатор события | Level | Ключевое слово | Description |
 | --- | --- | --- | --- | --- |
 | ActorActivated |5 |Informational |0x1 |Субъект активирован. |
 | ActorDeactivated |6 |Informational |0x1 |Субъект отключен. |

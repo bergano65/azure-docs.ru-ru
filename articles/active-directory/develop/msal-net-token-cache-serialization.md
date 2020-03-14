@@ -14,11 +14,11 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 1bd348ad27d892d0421b13c16ce81bc4f5dfb021
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78377481"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262806"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Сериализация кэша маркеров в MSAL.NET
 Библиотека аутентификации Майкрософт (MSAL) кэширует каждый [полученный маркер](msal-acquire-cache-tokens.md).  В коде приложения следует сначала попытаться получить маркер из кэша, а лишь затем использовать для этого другие средства.  В этой статье рассматриваются стандартная и пользовательская сериализации для кэша маркеров в MSAL.NET.
@@ -275,10 +275,10 @@ namespace CommonCacheMsalV3
 
 Примеры использования кэша маркеров для веб-приложений и веб-API вы найдете в [учебнике по веб-приложениям ASP.NET Core](https://ms-identity-aspnetcore-webapp-tutorial), на этапе [2-2. Кэш маркеров](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache). Для реализаций просмотрите папку [токенкачепровидерс](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/Microsoft.Identity.Web/TokenCacheProviders) в библиотеке [Microsoft-Authentication-Extensions-for-DotNet](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet) (в папке [Microsoft. Identity. Client. Extensions. Web](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web) . 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Приведенные ниже примеры демонстрируют сериализацию кэша маркеров.
 
-| Пример | Платформа | Описание|
+| Пример | Платформа | Description|
 | ------ | -------- | ----------- |
 |[active-directory-dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | Классическое приложение (WPF) | Приложение Windows для классических приложений .NET (WPF), вызывающее API Microsoft Graph. ![Топология](media/msal-net-token-cache-serialization/topology.png)|
 |[active-directory-dotnet-v1-to-v2](https://github.com/Azure-Samples/active-directory-dotnet-v1-to-v2) | Классическое приложение (консольное) | Набор решений Visual Studio, демонстрирующий преобразование приложений AAD версии 1.0 (с использованием ADAL.NET) в приложения AAD версии 2.0 (с использованием MSAL.NET), которые также называются конвергированными приложениями. Отдельное внимание уделяется [переносу кэша маркеров](https://github.com/Azure-Samples/active-directory-dotnet-v1-to-v2/blob/master/TokenCacheMigration/README.md).|

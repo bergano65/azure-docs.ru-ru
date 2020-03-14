@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
 ms.openlocfilehash: dcdc338bdcdb2c04f6b8894ccb358bc773b95c07
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365089"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258932"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -265,7 +265,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте кластер на виртуальных машинах или компьютерах под управлением Windows Server: [Service Fabric создания кластера для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).

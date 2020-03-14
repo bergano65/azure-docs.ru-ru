@@ -9,17 +9,17 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2019
 ms.openlocfilehash: e7b8f8a33b741a8dcf2d1a68ae3cf86d6e3687eb
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392537"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284607"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
 По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы ( **/messages/events**), которая совместима с [Центрами событий](https://azure.microsoft.com/documentation/services/event-hubs/). Сейчас эта конечная точка предоставляется только по протоколу [AMQP](https://www.amqp.org/) на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
 
-| Свойство            | Описание |
+| Свойство            | Description |
 | ------------------- | ----------- |
 | **Количество секций** | Это свойство задается во время создания, чтобы определить количество [разделов](../event-hubs/event-hubs-features.md#partitions) для приема событий, отправляемых с устройства в облако. |
 | **Время хранения**  | Это свойство задает время в днях, в течение которого сообщения хранятся в Центре Интернета вещей. Значение по умолчанию — один день, но это значение можно увеличить до семи дней. |
@@ -53,7 +53,7 @@ ms.locfileid: "78392537"
 | Имя | Значение |
 | ---- | ----- |
 | Конечная точка | sb://abcd1234namespace.servicebus.windows.net/ |
-| Hostname | abcd1234namespace.servicebus.windows.net |
+| Имя узла | abcd1234namespace.servicebus.windows.net |
 | Пространство имен | abcd1234namespace |
 
 Затем можно использовать любую политику общего доступа с разрешениями **ServiceConnect**, которые позволяют подключаться к указанному концентратору событий.
@@ -76,7 +76,7 @@ ms.locfileid: "78392537"
 * [интеграция Apache Spark.](../hdinsight/spark/apache-spark-eventhub-streaming.md)
 * [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о конечных точках Центра Интернета вещей см. в статье [Руководство. Конечные точки Центра Интернета вещей](iot-hub-devguide-endpoints.md).
 

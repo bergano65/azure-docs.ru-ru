@@ -12,11 +12,11 @@ ms.reviewer: larryfr
 ms.date: 01/07/2020
 ms.custom: seodec18
 ms.openlocfilehash: 4c3e60e9c296dc8e3a1e31a52a262d8462237407
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75765669"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283697"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -88,7 +88,7 @@ ms.locfileid: "75765669"
 
 |Метод проверки подлинности|ACI|AKS|
 |---|---|---|
-|Ключ|По умолчанию отключено| По умолчанию включено|
+|Ключ|По умолчанию отключено| Включено по умолчанию|
 |Токен| Недоступно| По умолчанию отключено |
 
 При отправке запроса к службе, защищенной с помощью ключа или токена, используйте заголовок __authorization__ для передачи ключа или маркера. Ключ или маркер должен быть отформатирован как `Bearer <key-or-token>`, где `<key-or-token>` является значением ключа или токена.

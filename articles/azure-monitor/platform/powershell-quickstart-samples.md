@@ -5,11 +5,11 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 2/14/2018
 ms.openlocfilehash: 9f039f71954998ef561d1efd1e559318740c86ab
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373385"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274324"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Примеры для быстрого запуска Azure Monitor с помощью PowerShell
 В этой статье показаны примеры команд PowerShell, с помощью которых можно быстро получить доступ к функциям Azure Monitor.
@@ -149,11 +149,11 @@ Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resou
 | параметр | value |
 | --- | --- |
 | Имя |simpletestdiskwrite |
-| Расположение этого правила генерации оповещений |Восток США |
+| Расположение этого правила генерации оповещений |Восточная часть США |
 | ResourceGroup |montest |
 | TargetResourceId |/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig |
 | MetricName созданного оповещения |\PhysicalDisk(_Total)\Disk Writes/sec. Точные имена метрик можно получить с помощью командлета `Get-MetricDefinitions`. |
-| operator |GreaterThan |
+| оператор |GreaterThan |
 | Пороговое значение (число/с для этой метрики) |1 |
 | WindowSize (в формате чч:мм:сс) |00:05:00 |
 | агрегатор (статистические данные о метрике — в этом случае при использовании среднего значения) |Среднее |

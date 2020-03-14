@@ -4,11 +4,11 @@ description: Получение сведений о пользователях �
 ms.topic: conceptual
 ms.date: 09/19/2019
 ms.openlocfilehash: 9f34267a1820f8b2365a41569bd3c8eaed9f2f9c
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77671024"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275650"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -166,7 +166,7 @@ ms.locfileid: "77671024"
 
 Все новые клиенты телеметрии автоматически добавляют указанное значение свойства. Отдельные события телеметрии могут переопределять значения по умолчанию.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
    - [Пользователи, сеансы, события](usage-segmentation.md)
    - [Воронки](usage-funnels.md)
    - [Сохранение](usage-retention.md)

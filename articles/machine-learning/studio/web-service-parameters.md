@@ -12,14 +12,17 @@ ms.subservice: studio
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/12/2017
-ms.openlocfilehash: 984d2e02ff75df459275fd10e313a4950c8d79c0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d6ddd9603f22bd3820d18be020b9c620cf06aa42
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432184"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204415"
 ---
 # <a name="use-azure-machine-learning-studio-classic-web-service-parameters"></a>Использование параметров веб-службы Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
 
 Распространенным примером является настройка модуля [Импорт данных][reader] , чтобы пользователь опубликованной веб-службы мог указать другой источник данных при доступе к веб-службе. Или настройки модуля [Export Data][writer] , чтобы можно было указать другое назначение. Некоторые другие примеры включают изменение числа битов для модуля [хэширования функций][feature-hashing] или числа требуемых функций для модуля [выбора компонентов на основе фильтра][filter-based-feature-selection] . 

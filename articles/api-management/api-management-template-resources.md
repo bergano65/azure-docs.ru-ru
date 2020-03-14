@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: c3b6123c63bf530463379a175745ef86baf2c5a3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374433"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79249507"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -164,7 +164,7 @@ ms.locfileid: "78374433"
 |Имя|текст|  
 |----------|----------|  
 |ButtonLabelCancel|Отмена|  
-|ButtonLabelSave|Сохранять|  
+|ButtonLabelSave|Сохранить|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
 |NoItemsToDisplay|Нет элементов для отображения|  
 |PagerButtonLabelFirst|Первый|  
@@ -249,16 +249,16 @@ ms.locfileid: "78374433"
 |OAuth2ClientId_ImplicitGrant_AuthorizationRequest|Обязательный параметр. Идентификатор клиента.|  
 |OAuth2Code_AuthorizationCodeGrant_AuthorizationResponse|Обязательный параметр. Код авторизации, созданный сервером авторизации.|  
 |OAuth2Code_AuthorizationCodeGrant_TokenRequest|Обязательный параметр. Код авторизации, полученный из сервера авторизации.|  
-|OAuth2ErrorDescription_AuthorizationCodeGrant_AuthorizationErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_AuthorizationCodeGrant_TokenErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_ClientCredentialsGrant_TokenErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_ImplicitGrant_AuthorizationErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorDescription_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|OPTIONAL. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
-|OAuth2ErrorUri_AuthorizationCodeGrant_AuthorizationErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_AuthorizationCodeGrant_TokenErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_ClientCredentialsGrant_TokenErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_ImplicitGrant_AuthorizationErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
-|OAuth2ErrorUri_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|OPTIONAL. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorDescription_AuthorizationCodeGrant_AuthorizationErrorResponse|НЕОБЯЗАТЕЛЬНО. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_AuthorizationCodeGrant_TokenErrorResponse|НЕОБЯЗАТЕЛЬНО. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_ClientCredentialsGrant_TokenErrorResponse|НЕОБЯЗАТЕЛЬНО. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_ImplicitGrant_AuthorizationErrorResponse|НЕОБЯЗАТЕЛЬНО. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorDescription_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|НЕОБЯЗАТЕЛЬНО. Понятный для пользователя текст ASCII, предоставляющий дополнительные сведения.|  
+|OAuth2ErrorUri_AuthorizationCodeGrant_AuthorizationErrorResponse|НЕОБЯЗАТЕЛЬНО. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_AuthorizationCodeGrant_TokenErrorResponse|НЕОБЯЗАТЕЛЬНО. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_ClientCredentialsGrant_TokenErrorResponse|НЕОБЯЗАТЕЛЬНО. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_ImplicitGrant_AuthorizationErrorResponse|НЕОБЯЗАТЕЛЬНО. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
+|OAuth2ErrorUri_ResourceOwnerPasswordCredentialsGrant_TokenErrorResponse|НЕОБЯЗАТЕЛЬНО. URI, идентифицирующий понятную для пользователя веб-страницу с помощью сведений об ошибке.|  
 |OAuth2Error_AuthorizationCodeGrant_AuthorizationErrorResponse|Обязательный параметр. Один код ошибки ASCII из следующих параметров: invalid_request, unauthorized_client, access_denied, unsupported_response_type, invalid_scope, server_error, temporarily_unavailable.|  
 |OAuth2Error_AuthorizationCodeGrant_TokenErrorResponse|Обязательный параметр. Один код ошибки ASCII из следующих параметров: invalid_request, invalid_client, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope.|  
 |OAuth2Error_ClientCredentialsGrant_TokenErrorResponse|Обязательный параметр. Один код ошибки ASCII из следующих параметров: invalid_request, invalid_client, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope.|  
@@ -272,21 +272,21 @@ ms.locfileid: "78374433"
 |OAuth2GrantType_ClientCredentialsGrant_TokenRequest|Обязательный параметр. Для него необходимо задать значение client_credentials.|  
 |OAuth2GrantType_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Обязательный параметр. Для него необходимо задать значение password.|  
 |OAuth2Password_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Обязательный параметр. Пароль владельца ресурса.|  
-|OAuth2RedirectUri_AuthorizationCodeGrant_AuthorizationRequest|OPTIONAL. URI перенаправления конечной точки должен быть абсолютным URI.|  
+|OAuth2RedirectUri_AuthorizationCodeGrant_AuthorizationRequest|НЕОБЯЗАТЕЛЬНО. URI перенаправления конечной точки должен быть абсолютным URI.|  
 |OAuth2RedirectUri_AuthorizationCodeGrant_TokenRequest|Обязательный параметр, если параметр redirect_uri включен в запрос на авторизацию, и их значения должны быть одинаковыми.|  
-|OAuth2RedirectUri_ImplicitGrant_AuthorizationRequest|OPTIONAL. URI перенаправления конечной точки должен быть абсолютным URI.|  
-|OAuth2RefreshToken_AuthorizationCodeGrant_TokenResponse|OPTIONAL. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
-|OAuth2RefreshToken_ClientCredentialsGrant_TokenResponse|OPTIONAL. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
-|OAuth2RefreshToken_ResourceOwnerPasswordCredentialsGrant_TokenResponse|OPTIONAL. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
+|OAuth2RedirectUri_ImplicitGrant_AuthorizationRequest|НЕОБЯЗАТЕЛЬНО. URI перенаправления конечной точки должен быть абсолютным URI.|  
+|OAuth2RefreshToken_AuthorizationCodeGrant_TokenResponse|НЕОБЯЗАТЕЛЬНО. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
+|OAuth2RefreshToken_ClientCredentialsGrant_TokenResponse|НЕОБЯЗАТЕЛЬНО. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
+|OAuth2RefreshToken_ResourceOwnerPasswordCredentialsGrant_TokenResponse|НЕОБЯЗАТЕЛЬНО. Маркер обновления, который можно использовать для получения нового маркера доступа.|  
 |OAuth2ResponseType_AuthorizationCodeGrant_AuthorizationRequest|Обязательный параметр. Для него необходимо задать значение code.|  
 |OAuth2ResponseType_ImplicitGrant_AuthorizationRequest|Обязательный параметр. Для него необходимо задать значение token.|  
-|OAuth2Scope_AuthorizationCodeGrant_AuthorizationRequest|OPTIONAL. Область запроса доступа.|  
+|OAuth2Scope_AuthorizationCodeGrant_AuthorizationRequest|НЕОБЯЗАТЕЛЬНО. Область запроса доступа.|  
 |OAuth2Scope_AuthorizationCodeGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
-|OAuth2Scope_ClientCredentialsGrant_TokenRequest|OPTIONAL. Область запроса доступа.|  
+|OAuth2Scope_ClientCredentialsGrant_TokenRequest|НЕОБЯЗАТЕЛЬНО. Область запроса доступа.|  
 |OAuth2Scope_ClientCredentialsGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
-|OAuth2Scope_ImplicitGrant_AuthorizationRequest|OPTIONAL. Область запроса доступа.|  
+|OAuth2Scope_ImplicitGrant_AuthorizationRequest|НЕОБЯЗАТЕЛЬНО. Область запроса доступа.|  
 |OAuth2Scope_ImplicitGrant_AuthorizationResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
-|OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenRequest|OPTIONAL. Область запроса доступа.|  
+|OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenRequest|НЕОБЯЗАТЕЛЬНО. Область запроса доступа.|  
 |OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
 |OAuth2State_AuthorizationCodeGrant_AuthorizationErrorResponse|Обязательный параметр, если параметр state присутствовал в запросе на авторизацию клиента.  Точное значение предоставляет клиент.|  
 |OAuth2State_AuthorizationCodeGrant_AuthorizationRequest|Рекомендуемый параметр. Непрозрачное значение, используемое клиентом для поддержания состояния между запросом и обратным вызовом.  Сервер авторизации включает это значение при перенаправлении агента пользователя в клиент.  Параметр следует использовать для предотвращения подделки межсайтовых запросов.|  
@@ -326,7 +326,7 @@ ms.locfileid: "78374433"
 |SectionHeadingRequestParameters|Параметры запроса|  
 |SectionHeadingRequestUrl|Request URL (URL-адрес запроса)|  
 |SectionHeadingResponse|Ответ|  
-|SectionHeadingRequestHeaders|Заголовки запросов|  
+|SectionHeadingRequestHeaders|Заголовки запроса|  
 |FormLabelSubtextOptional|необязательный|  
 |SectionHeadingCodeSamples|Примеры кода|  
 |TextblockOpenidConnectHeaderDescription|Маркер OpenID Connect Connect ID получен от < i\>{0}</i\>. Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
@@ -388,7 +388,7 @@ ms.locfileid: "78374433"
 |ErrorYouNeedToAgreeWithLegalTerms|Прежде чем продолжить, необходимо принять условия использования.|  
 |ButtonLabelAddSubscription|Добавление подписки|  
 |LinkLabelChangeSubscriptionName|Изменить|  
-|ButtonLabelConfirm|Подтверждение|  
+|ButtonLabelConfirm|Confirm|  
 |TextblockMultipleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}|  
 |TextblockSingleSubscriptionsCount|У вас есть такое количество подписок на продукт: {0}|  
 |TextblockSingleApisCount|Этот продукт содержит такое количество API: {0}.|  
@@ -424,7 +424,7 @@ ms.locfileid: "78374433"
 |ValidationErrorPasswordInvalid|Недопустимый пароль. Исправьте ошибки и повторите попытку.|  
 |PropertyTooShort|{0} содержит слишком мало символов.|  
 |WebAuthenticationAddresserEmailInvalidErrorMessage|Недопустимый адрес электронной почты.|  
-|ValidationMessageNewPasswordConfirmationRequired|Подтвердите новый пароль.|  
+|ValidationMessageNewPasswordConfirmationRequired|Подтверждение пароля|  
 |ValidationErrorPasswordConfirmationRequired|Поле подтверждения пароля пустое.|  
 |WebAuthenticationEmailChangeNotice|Ожидание сообщения электронной почты с подтверждением изменения для {0}. Следуйте инструкциям в нем, чтобы подтвердить свой новый адрес электронной почты. Если сообщение электронной почты не поступило в папку "Входящие" в течение нескольких минут, проверьте папку нежелательной почты.|  
 |WebAuthenticationEmailChangeNoticeHeader|Запрос на изменение электронной почты успешно обработан.|  
@@ -582,7 +582,7 @@ ms.locfileid: "78374433"
 |TextboxLabelEmailLastName|Фамилия|  
 |TextboxLabelNotificationsSenderEmail|Электронная почта отправителя уведомлений|  
 |TextboxLabelOrganizationName|Название организации|  
-|SubscriptionStateActive|Активна|  
+|SubscriptionStateActive|Активно|  
 |SubscriptionStateCancelled|Отменено|  
 |SubscriptionStateExpired|Срок действия истек|  
 |SubscriptionStateRejected|Отклонено|  

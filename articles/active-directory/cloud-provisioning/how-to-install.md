@@ -12,11 +12,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4581ab89f74425682f569425f62714ead2c27c5
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77620932"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263352"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>Установка агента подготовки облака Azure AD Connect
 В этом документе описывается процесс установки агента подготовки Azure Active Directory (Azure AD) Connect и его первоначальной настройки в портал Azure.
@@ -45,7 +45,7 @@ ms.locfileid: "77620932"
    ![Экран пакета агента подготовки Microsoft Azure AD подключения](media/how-to-install/install1.png)</br>
 
 1. После завершения этой операции запускается мастер настройки. Войдите с учетной записью глобального администратора Azure AD.
-1. На экране **подключение Active Directory** выберите **Добавить каталог**. Затем войдите с помощью учетной записи администратора Active Directory. Эта операция добавляет локальный каталог. Выберите **Далее**.
+1. На экране **подключение Active Directory** выберите **Добавить каталог**. Затем войдите с помощью учетной записи администратора Active Directory. Эта операция добавляет локальный каталог. Нажмите кнопку **Далее**.
 
    ![Экран подключения Active Directory](media/how-to-install/install3.png)</br>
 

@@ -5,11 +5,11 @@ ms.subservice: logs
 ms.topic: reference
 ms.date: 10/22/2019
 ms.openlocfilehash: de102c5dc4104aafc44b87b14aeea0b30cb7c083
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670395"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248818"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-resource-logs"></a>Поддерживаемые службы, схемы и категории для журналов ресурсов Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "77670395"
 
 ## <a name="top-level-resource-logs-schema"></a>Схема журналов ресурсов верхнего уровня
 
-| Имя | Обязательный/необязательный | Описание |
+| Имя | Обязательный/необязательный | Description |
 |---|---|---|
 | time | Обязательно | Метка времени события (UTC). |
 | resourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
@@ -36,15 +36,15 @@ ms.locfileid: "77670395"
 | durationMs | Необязательно | Время выполнения операции в миллисекундах. |
 | callerIpAddress | Необязательно | IP-адрес вызывающего объекта, если операция соответствует вызову API, который будет приходить с объекта с общедоступным IP-адресом. |
 | correlationId | Необязательно | Идентификатор GUID, используемый для формирования набора связанных событий. Как правило, если два события имеют одно и то же значение параметра operationName, но имеют различные состояния (например, "Запущен" и "Успешно"), они совместно используют один и тот же идентификатор корреляции. Идентификатор может также представлять другие связи между событиями. |
-| удостоверение | Необязательно | BLOB-объект типа JSON, описывающий идентификацию пользователя или приложения, выполнившего операцию. Обычно он включает авторизацию и утверждения или токен JWT из Active Directory. |
+| identity | Необязательно | BLOB-объект типа JSON, описывающий идентификацию пользователя или приложения, выполнившего операцию. Обычно он включает авторизацию и утверждения или токен JWT из Active Directory. |
 | Level | Необязательно | Уровень серьезности события. Должен быть одним из следующих значений: "Информационное", "Предупреждение", "Ошибка" или "Критическое". |
-| расположение | Необязательно | Регион ресурса, создавшего событие, например "Восточная часть США" или "Южная Франция" |
-| подключения | Необязательно | Любые расширенные свойства, связанные с этой конкретной категорией событий. Все пользовательские или уникальные свойства должны быть размещены внутри этой "части B" схемы. |
+| location | Необязательно | Регион ресурса, создавшего событие, например "Восточная часть США" или "Южная Франция" |
+| properties | Необязательно | Любые расширенные свойства, связанные с этой конкретной категорией событий. Все пользовательские или уникальные свойства должны быть размещены внутри этой "части B" схемы. |
 
 ## <a name="service-specific-schemas-for-resource-logs"></a>Зависящие от службы схемы для журналов ресурсов
 Схема для журналов диагностики ресурсов зависит от типа ресурса и категории журнала. В этом списке перечислены все службы, которые делают доступными журналы ресурсов и ссылки на схему службы и конкретной категории, где это возможно.
 
-| Service | Схемы и документы |
+| Служба | Схемы и документы |
 | --- | --- |
 | Azure Active Directory | [Общие сведения](../../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), [схема журнала аудита](../../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) и [схема входа](../../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
 | Службы Analysis Services | https://azure.microsoft.com/blog/azure-analysis-services-integration-with-azure-diagnostic-logs/ |
@@ -57,7 +57,7 @@ ms.locfileid: "77670395"
 | Azure Data Explorer | [Журналы обозреватель данных Azure](../../data-explorer/using-diagnostic-logs.md) |
 | Cognitive Services | [Ведение журнала для Cognitive Services Azure](../../cognitive-services/diagnostic-logging.md) |
 | Реестр контейнеров | [Ведение журнала для реестра контейнеров Azure](../../container-registry/container-registry-diagnostics-audit-logs.md) |
-| Сеть кэширующих серверов | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
+| Сеть доставки содержимого | [Журналы Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/logging.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам для Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
@@ -76,7 +76,7 @@ ms.locfileid: "77670395"
 | Службы восстановления | [Модель данных для Azure Backup](../../backup/backup-azure-reports-data-model.md)|
 | Поиск |[Включение и использование аналитики поискового трафика](../../search/search-traffic-analytics.md) |
 | Служебная шина |[Журналы служебной шины Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
-| база данных SQL | [Ведение журнала базы данных SQL Azure](../../sql-database/sql-database-metrics-diag-logging.md) |
+| База данных SQL | [Ведение журнала базы данных SQL Azure](../../sql-database/sql-database-metrics-diag-logging.md) |
 | Stream Analytics |[Журналы заданий](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
 | Диспетчер трафика | Схема журнала диспетчера трафика |
 | Виртуальные сети | Схема недоступна. |
@@ -99,7 +99,7 @@ ms.locfileid: "77670395"
 |Microsoft. AAD/domainServices|аккаунтлогон|аккаунтлогон|
 |microsoft.aadiam/tenants|Signin|Signin|
 |Microsoft.AnalysisServices/servers|Подсистема|Подсистема|
-|Microsoft.AnalysisServices/servers|Service|Service|
+|Microsoft.AnalysisServices/servers|Служба|Служба|
 |Microsoft.ApiManagement/service|GatewayLogs|Журналы, относящихся к шлюзу ApiManagement.|
 |Microsoft. Аппплатформ/пружина|аппликатионконсоле|Консоль приложения|
 |Microsoft.Automation/automationAccounts|JobLogs|Журналы заданий|
@@ -123,12 +123,12 @@ ms.locfileid: "77670395"
 |Microsoft.ContainerService/managedClusters|KUBE — аудит|Аудит Kubernetes|
 |Microsoft.ContainerService/managedClusters|cluster-autoscaler|Средство автомасштабирования кластера Kubernetes|
 |Microsoft. кирпичы и рабочие области|dBFS|Файловая система Databricks|
-|Microsoft. кирпичы и рабочие области|кластеры|Кластеры кирпичей|
-|Microsoft. кирпичы и рабочие области|учетные записи|Учетные записи кирпичей|
-|Microsoft. кирпичы и рабочие области|задания|Задания кирпичей|
+|Microsoft. кирпичы и рабочие области|clusters|Кластеры кирпичей|
+|Microsoft. кирпичы и рабочие области|accounts|Учетные записи кирпичей|
+|Microsoft. кирпичы и рабочие области|jobs|Задания кирпичей|
 |Microsoft. кирпичы и рабочие области|записная книжка|Записная книжка Databricks|
 |Microsoft. кирпичы и рабочие области|ssh|SSH-сеансы|
-|Microsoft. кирпичы и рабочие области|workspace|Рабочая область "кирпичи"|
+|Microsoft. кирпичы и рабочие области|Рабочая область|Рабочая область "кирпичи"|
 |Microsoft. кирпичы и рабочие области|секретные коды|Секретные данные кирпичей|
 |Microsoft. кирпичы и рабочие области|склпермиссионс|Склпермиссионсы блоков|
 |Microsoft. кирпичы и рабочие области|инстанцепулс|Пулы экземпляров|
@@ -137,10 +137,10 @@ ms.locfileid: "77670395"
 |Microsoft.DataFactory/factories;|PipelineRuns|Журнал запусков конвейера|
 |Microsoft.DataFactory/factories;|TriggerRuns|Журнал запусков триггера|
 |Microsoft.DataLakeAnalytics/accounts|Аудит|Журналы аудита|
-|Microsoft.DataLakeAnalytics/accounts|Запросы|Журналы запросов|
+|Microsoft.DataLakeAnalytics/accounts|Requests|Журналы запросов|
 |Microsoft.DataLakeStore/accounts|Аудит|Журналы аудита|
-|Microsoft.DataLakeStore/accounts|Запросы|Журналы запросов|
-|Microsoft. файл или учетные записи|Общие ресурсы|Общие ресурсы|
+|Microsoft.DataLakeStore/accounts|Requests|Журналы запросов|
+|Microsoft. файл или учетные записи|Общие папки|Общие папки|
 |Microsoft. файл или учетные записи|шаресубскриптионс|Предоставление общего доступа к подпискам|
 |Microsoft. файл или учетные записи|сентшареснапшотс|Отправленные моментальные снимки общих ресурсов|
 |Microsoft. файл или учетные записи|рецеиведшареснапшотс|Получено моментальных снимков общих ресурсов|
@@ -162,9 +162,9 @@ ms.locfileid: "77670395"
 |Microsoft. Десктопвиртуализатион/Хостпулс|Контрольная точка|Контрольная точка|
 |Microsoft. Десктопвиртуализатион/Хостпулс|Ошибка|Ошибка|
 |Microsoft. Десктопвиртуализатион/Хостпулс|Управление|Управление|
-|Microsoft. Десктопвиртуализатион/Хостпулс|Подключение|Подключение|
+|Microsoft. Десктопвиртуализатион/Хостпулс|Соединение|Соединение|
 |Microsoft. Десктопвиртуализатион/Хостпулс|хострегистратион|хострегистратион|
-|Microsoft.Devices/IotHubs|Подключения|Подключения|
+|Microsoft.Devices/IotHubs|Соединения|Соединения|
 |Microsoft.Devices/IotHubs|DeviceTelemetry|Телеметрия устройства|
 |Microsoft.Devices/IotHubs|C2DCommands|Команды, отправляемые из облака на устройство|
 |Microsoft.Devices/IotHubs|DeviceIdentityOperations|Операции с удостоверениями устройства|
@@ -179,7 +179,7 @@ ms.locfileid: "77670395"
 |Microsoft.Devices/IotHubs|Конфигурации|Конфигурации|
 |Microsoft.Devices/IotHubs|девицестреамс|Потоки устройств (Предварительная версия)|
 |Microsoft.Devices/provisioningServices|DeviceOperations|Операции с устройствами|
-|Microsoft.Devices/provisioningServices|ServiceOperations|Операции службы|
+|Microsoft.Devices/provisioningServices|ServiceOperations|Операции со службой|
 |Microsoft.DocumentDB/databaseAccounts|DataPlaneRequests|DataPlaneRequests|
 |Microsoft.DocumentDB/databaseAccounts|MongoRequests|MongoRequests|
 |Microsoft.DocumentDB/databaseAccounts|QueryRuntimeStatistics|QueryRuntimeStatistics|
@@ -187,7 +187,7 @@ ms.locfileid: "77670395"
 |Microsoft.DocumentDB/databaseAccounts|контролпланерекуестс|контролпланерекуестс|
 |Microsoft. Ентерприсекновледжеграф/Services|AuditEvent|Журнал AuditEvent|
 |Microsoft. Ентерприсекновледжеграф/Services|Ошибка в процессе|Журнал проблем|
-|Microsoft. Ентерприсекновледжеграф/Services|Запросы|Журнал конфигурации|
+|Microsoft. Ентерприсекновледжеграф/Services|Requests|Журнал конфигурации|
 |Microsoft.EventHub/namespaces|ArchiveLogs|Журналы архивации|
 |Microsoft.EventHub/namespaces|OperationalLogs|Журналы операций|
 |Microsoft.EventHub/namespaces|AutoScaleLogs|Журналы автомасштабирования.|
@@ -199,9 +199,9 @@ ms.locfileid: "77670395"
 |Microsoft.Insights/AutoscaleSettings|AutoscaleEvaluations|Оценки автомасштабирования|
 |Microsoft.Insights/AutoscaleSettings|AutoscaleScaleActions|Действия автоматического увеличения масштаба|
 |Microsoft.IoTSpaces/Graph|Трассировка|Трассировка|
-|Microsoft.IoTSpaces/Graph|Оперативный|Оперативный|
+|Microsoft.IoTSpaces/Graph|Операционный|Операционный|
 |Microsoft.IoTSpaces/Graph|Аудит|Аудит|
-|Microsoft.IoTSpaces/Graph|Пользовательская функция|Пользовательская функция|
+|Microsoft.IoTSpaces/Graph|UserDefinedFunction|UserDefinedFunction|
 |Microsoft.IoTSpaces/Graph|Входящий трафик|Входящий трафик|
 |Microsoft.IoTSpaces/Graph|Исходящие|Исходящие|
 |Microsoft.KeyVault/vaults|AuditEvent|Журналы аудита|
@@ -265,7 +265,7 @@ ms.locfileid: "77670395"
 |Microsoft.Sql/servers/databases|AutomaticTuning|Автоматическая настройка|
 |Microsoft.Sql/servers/databases|QueryStoreRuntimeStatistics|Статистика среды выполнения хранилища запросов|
 |Microsoft.Sql/servers/databases|QueryStoreWaitStatistics|Статистика времени ожидания хранилища запросов|
-|Microsoft.Sql/servers/databases|Ошибки|Ошибки|
+|Microsoft.Sql/servers/databases|ошибки|ошибки|
 |Microsoft.Sql/servers/databases|DatabaseWaitStatistics|Статистика времени ожидания базы данных|
 |Microsoft.Sql/servers/databases|Время ожидания|Время ожидания|
 |Microsoft.Sql/servers/databases|Блоки|Блоки|
@@ -282,7 +282,7 @@ ms.locfileid: "77670395"
 |Microsoft.Sql/managedInstances/databases|SQLInsights|Аналитика SQL|
 |Microsoft.Sql/managedInstances/databases|QueryStoreRuntimeStatistics|Статистика среды выполнения хранилища запросов|
 |Microsoft.Sql/managedInstances/databases|QueryStoreWaitStatistics|Статистика времени ожидания хранилища запросов|
-|Microsoft.Sql/managedInstances/databases|Ошибки|Ошибки|
+|Microsoft.Sql/managedInstances/databases|ошибки|ошибки|
 |Microsoft.Storage/storageAccounts/tableServices|сторажереад|сторажереад|
 |Microsoft.Storage/storageAccounts/tableServices|сторажеврите|сторажеврите|
 |Microsoft.Storage/storageAccounts/tableServices|сторажеделете|сторажеделете|
@@ -296,7 +296,7 @@ ms.locfileid: "77670395"
 |Microsoft.Storage/storageAccounts/queueServices|сторажеврите|сторажеврите|
 |Microsoft.Storage/storageAccounts/queueServices|сторажеделете|сторажеделете|
 |Microsoft.StreamAnalytics/streamingjobs|Выполнение|Выполнение|
-|Microsoft.StreamAnalytics/streamingjobs|Создание и настройка|Создание и настройка|
+|Microsoft.StreamAnalytics/streamingjobs|Разработка|Разработка|
 |Microsoft. Web/hostingenvironments|аппсервицеенвиронментплатформлогс|Журналы платформы Среда службы приложений|
 |microsoft.web/sites|функтионапплогс|Журналы приложений функций|
 |microsoft.web/sites|аппсервицехттплогс|Журналы HTTP|
@@ -311,7 +311,7 @@ ms.locfileid: "77670395"
 |microsoft.web/sites/slots|аппсервицефилеаудитлогс|Журналы аудита изменения содержимого сайта|
 |microsoft.web/sites/slots|аппсервицеаудитлогс|Доступ к журналам аудита|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * [Дополнительные сведения о журналах ресурсов](../../azure-monitor/platform/platform-logs-overview.md)
 * [Потоковая передача журналов ресурсов в **концентраторы событий**](../../azure-monitor/platform/resource-logs-stream-event-hubs.md)

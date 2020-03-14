@@ -16,11 +16,11 @@ ms.date: 03/18/2019
 ms.author: xpouyat
 ms.reviewer: anilmur;juliako
 ms.openlocfilehash: 27bdf82d4515678e28eadf07fe325860fe5df063
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392981"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251002"
 ---
 # <a name="using-multiple-input-files-and-component-properties-with-premium-encoder"></a>Использование нескольких входных файлов и свойств компонентов в кодировщике Premium
 ## <a name="overview"></a>Обзор
@@ -83,7 +83,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 
 **setRuntimeProperties** используется для переопределения свойства в компонентах рабочего процесса.
 
-Пример.
+Пример
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -99,7 +99,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 ### <a name="property-with-an-xml-value"></a>Свойство со значением XML
 Для задания свойства, которое ожидает значение XML, необходима инкапсуляция с использованием синтаксиса `<![CDATA[ and ]]>`.
 
-Пример.
+Пример
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -466,7 +466,7 @@ public ITask AddNew(string taskName, IMediaProcessor mediaProcessor, string conf
 
 * Закодированный ресурс будет содержать звуковые дорожки на нескольких языках, которые будут доступны для выбора в Проигрывателе мультимедиа Azure.
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 * [Знакомство со Службой кодирования категории "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
 * [Использование Службы кодирования категории "Премиум" в службах мультимедиа Azure](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
 * [Обзор и сравнение кодировщиков мультимедиа Azure по запросу](media-services-encode-asset.md#media-encoder-premium-workflow)

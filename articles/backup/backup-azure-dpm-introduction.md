@@ -4,11 +4,11 @@ description: Из этой статьи вы узнаете, как подгот
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.openlocfilehash: 2119d46ca6102286ca879777058a49938b501ad6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381514"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273466"
 ---
 # <a name="prepare-to-back-up-workloads-to-azure-with-system-center-dpm"></a>Подготовка к резервному копированию рабочих нагрузок в Azure с помощью System Center DPM
 
@@ -51,7 +51,7 @@ Components | На сервере DPM должен быть установлен 
 Azure ExpressRoute | Если Azure ExpressRoute настроен с частным подключением или пиринг Майкрософт, его нельзя использовать для резервного копирования данных в Azure.<br/><br/> Если Azure ExpressRoute настроен с общедоступным пиринга, его можно использовать для резервного копирования данных в Azure.<br/><br/> **Примечание.** Общедоступный пиринг не рекомендуется использовать для новых каналов.
 Агент Azure Backup | Если DPM работает под управлением System Center 2012 SP1, установите накопительный пакет 2 для DPM с пакетом обновления 1 или более позднюю версию. Это необходимо для установки агента.<br/><br/> В этой статье описывается развертывание последней версии агента Azure Backup, также известного как агент Служб восстановления Microsoft Azure (MARS). Если у вас развернута старая версия, обновите ее до последней версии, чтобы резервное копирование работало ожидаемым образом.
 
-Чтобы начать работу, вам нужна учетная запись Azure с включенным компонентом Azure Backup. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Ознакомьтесь с [ценами на доступ к службе архивации Azure](https://azure.microsoft.com/pricing/details/backup/).
+Чтобы начать работу, вам нужна учетная запись Azure с включенным компонентом Azure Backup. Если такой записи нет, потратьте пару минут на создание бесплатной пробной учетной записи. Ознакомьтесь с [ценами на доступ к службе архивации Azure](https://azure.microsoft.com/pricing/details/backup/).
 
 [!INCLUDE [backup-create-rs-vault.md](../../includes/backup-create-rs-vault.md)]
 

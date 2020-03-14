@@ -6,11 +6,11 @@ author: bwren
 ms.author: bwren
 ms.date: 06/14/2019
 ms.openlocfilehash: 4d0ceacd37748e9761903d02fd7e052d70b10e15
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78362288"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275104"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
@@ -89,7 +89,7 @@ ms.locfileid: "78362288"
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 
-2. Откройте **панель управления**.
+2. Откройте **Панель управления**.
 
 3. Выберите **Microsoft Monitoring Agent** и перейдите на вкладку **Azure Log Analytics**.
 
@@ -172,7 +172,7 @@ $mma.ReloadConfiguration()
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 
-2. Откройте **панель управления**.
+2. Откройте **Панель управления**.
 
 3. Выберите **Microsoft Monitoring Agent** и перейдите на вкладку **Параметры прокси-сервера**.
 
@@ -231,7 +231,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 #### <a name="uninstall-from-control-panel"></a>Удаление из панели управления
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 
-2. На **панели управления** щелкните элемент **Программы и компоненты**.
+2. На **панели управления** выберите **Программы и компоненты**.
 
 3. В окне **Программы и компоненты** выберите **Microsoft Monitoring Agent**, щелкните **Удалить**, а затем нажмите кнопку **Да**.
 
@@ -261,7 +261,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 
-2. Откройте **панель управления**.
+2. Откройте **Панель управления**.
 
 3. Щелкните **Microsoft Monitoring Agent** и перейдите на вкладку **Operations Manager**.
 
@@ -290,7 +290,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 3. Перезапустите сервер OMI: `sudo /opt/omi/bin/service_control restart`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь [с разрешениями по устранению неполадок агента Linux в](agent-linux-troubleshoot.md) случае возникновения проблем при установке агента Linux или управлении им.
 

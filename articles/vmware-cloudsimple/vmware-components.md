@@ -10,11 +10,11 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 9c9b80cd4d8a7a7ac5597d10bbb87095564bd461
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78386859"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79279511"
 ---
 # <a name="private-cloud-vmware-components"></a>Компоненты для частного облака VMware
 
@@ -33,7 +33,7 @@ ms.locfileid: "78386859"
 |-----------|---------|------------------|
 | ESXi | 6.7 U2 | Корпоративный Плюс |
 | vCenter | 6.7 U2 | Стандартный vCenter |
-| vSAN | 6.7 | Enterprise |
+| vSAN | 6.7 | Корпоративная |
 | Центр обработки данных НСКС | 2.4.1 | Дополнительно |
 
 ## <a name="esxi"></a>ESXi

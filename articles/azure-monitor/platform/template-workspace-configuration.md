@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
 ms.openlocfilehash: 1b084b8cbf87817a4ff12fdb56f44b740a6d6a12
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373324"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248610"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
@@ -39,10 +39,10 @@ ms.locfileid: "78373324"
 
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область   | рабочие области    | 2017-03-15-preview |
+| Рабочая область   | workspaces    | 2017-03-15-preview |
 | Поиск      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
-| Решение    | решения     | 2015-11-01-preview |
+| Решение    | solutions     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
@@ -656,7 +656,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 

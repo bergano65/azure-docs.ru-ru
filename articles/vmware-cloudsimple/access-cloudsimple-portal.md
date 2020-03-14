@@ -9,11 +9,11 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 95d27bab243f6805436465f5027e519d33e20f6f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384203"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79244736"
 ---
 # <a name="access-the-vmware-solution-by-cloudsimple-portal-from-the-azure-portal"></a>Доступ к решению VMware с помощью портала Клаудсимпле из портал Azure
 
@@ -69,7 +69,7 @@ Microsoft.VMwareCloudSimple/dedicatedCloudServices/*/write
 
 ![Согласие на авторизацию службы Клаудсимпле — требуются администраторы](media/cloudsimple-azure-consent-requires-administrator.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [создать частное облако](https://docs.azure.cloudsimple.com/create-private-cloud/)
 * Узнайте, как [настроить среду частного облака](quickstart-create-private-cloud.md)

@@ -4,11 +4,11 @@ description: Из этой статьи вы узнаете, как создат
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.openlocfilehash: 9f4df83ed60ba94913702b9a32a298f0ac62f9f4
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78362228"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276326"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
 
@@ -19,7 +19,7 @@ ms.locfileid: "78362228"
 * [Инициализаторы телеметрии добавляют или изменяют свойства](#add-properties) к любым данным телеметрии, отправляемым из приложения, включая данные телеметрии из стандартных модулей. Например, можно добавить вычисляемые значения или номера версий, по которым будут отфильтрованы данные на портале.
 * [API пакета SDK](../../azure-monitor/app/api-custom-events-metrics.md) используется для отправки пользовательских событий и показателей.
 
-Перед началом.
+Перед началом:
 
 * Установите соответствующий пакет SDK для приложения: [ASP.NET](asp-net.md), [ASP.NET Core](asp-net-core.md), [не HTTP/Worker для .NET, .NET Core](worker-service.md), [Java](../../azure-monitor/app/java-get-started.md) или [JavaScript](javascript.md)
 

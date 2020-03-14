@@ -5,11 +5,11 @@ services: container-service
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.openlocfilehash: 523f08ddbf22e175af5b0604b04d4a2460ffd634
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77595082"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79259426"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -140,7 +140,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
         ```
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 Учетные данные субъекта-службы для кластера AKS кэшируются Azure CLI. Если срок действия этих учетных данных истек, возникнут ошибки при развертывании кластеров AKS. Следующее сообщение об ошибке при выполнении команды [AZ AKS Create][az-aks-create] может указывать на проблему с кэшированными учетными данными субъекта-службы:
 

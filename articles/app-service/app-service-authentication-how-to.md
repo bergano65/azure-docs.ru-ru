@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 10/24/2019
 ms.custom: seodec18
 ms.openlocfilehash: d57b196bf95ebdf31bc459ad4b9d718fd32ca495
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672235"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280837"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "74672235"
 
 В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)** .
 
-На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример.
+На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
 
 ```HTML
 <a href="/.auth/login/aad">Log in with Azure AD</a>
@@ -55,7 +55,7 @@ ms.locfileid: "74672235"
 
 При входе с помощью клиента приложение входит в систему поставщика вручную, а затем отправляет токен проверки подлинности службе приложений для проверки (см. [Поток проверки подлинности](overview-authentication-authorization.md#authentication-flow)). Эта проверка сама по себе не предоставляет вам доступ к требуемым ресурсам приложения, но успешная проверка даст вам токен сеанса, который вы можете использовать для доступа к ресурсам приложений. 
 
-Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример. 
+Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример: 
 
 ```
 POST https://<appname>.azurewebsites.net/.auth/login/aad HTTP/1.1
@@ -86,7 +86,7 @@ Content-Type: application/json
 }
 ```
 
-Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример. 
+Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример: 
 
 ```
 GET https://<appname>.azurewebsites.net/api/products/1
@@ -107,7 +107,7 @@ X-ZUMO-AUTH: <authenticationToken_value>
 <a href="/.auth/logout">Sign out</a>
 ```
 
-После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример.
+После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример:
 
 ```
 GET /.auth/logout?post_logout_redirect_uri=/index.html
@@ -223,7 +223,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с вашей собственной фирменной страницей входа в Azure AD (например, `contoso.com`). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
 
-В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  **_\< имя\_ подписки_**  > **resourceGroups** >  **_\< имя\_ группы\_ ресурсов>_**  > **providers** > **Microsoft.Web** > **sites** >  **_\< имя\_ приложения>_**  > **config** > **authsettings**. 
+В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  **_\<имя\_подписки_**  > **resourceGroups** >  **_\<имя\_группы\_ресурсов>_**  > **providers** > **Microsoft.Web** > **sites** >  **_\<имя\_приложения>_**  > **config** > **authsettings**. 
 
 Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Обязательно замените _\<domain\_имя>_ необходимым доменом.
 
@@ -269,7 +269,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="identity-provider-level"></a>Уровень поставщика удостоверений
 
-Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример.
+Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример:
 
 - Для [службы приложений Azure](configure-authentication-provider-aad.md)вы можете [управлять доступом на уровне предприятия](../active-directory/manage-apps/what-is-access-management.md) непосредственно в Azure AD. Инструкции см. [в разделе Удаление доступа пользователя к приложению](../active-directory/manage-apps/methods-for-removing-user-access.md).
 - Для [Google](configure-authentication-provider-google.md), проектов Google API, входящих в [организацию](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) , можно настроить разрешение доступа только для пользователей в вашей организации (см. [страницу поддержки **OAuth 2,0** в Google](https://support.google.com/cloud/answer/6158849?hl=en)).

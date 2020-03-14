@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 01/29/2018
 ms.author: tagore
 ms.openlocfilehash: 61c794ba03934ae1828ba310f3f776bfb61b652b
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384139"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273102"
 ---
 # <a name="introduction-to-cloud-service-monitoring"></a>Введение в мониторинг облачных служб
 
@@ -42,7 +42,7 @@ ms.locfileid: "78384139"
 * Журналы приложений
 * Журналы событий Windows
 * источник событий .NET;
-* Журналы IIS
+* Журналы служб IIS
 * Трассировка событий Windows на основе манифестов
 * Аварийные дампы
 * пользовательские журналы ошибок.

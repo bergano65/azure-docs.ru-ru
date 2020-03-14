@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 7b5569738721038beadc78d94c81393803b6d36a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78366916"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79250989"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Сценарии и доступность функций служб мультимедиа в центрах обработки данных
 
@@ -33,7 +33,7 @@ ms.locfileid: "78366916"
 
 ## <a name="overview"></a>Обзор
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Приступить к использованию служб мультимедиа Azure можно только при наличии следующих компонентов.
 
@@ -179,8 +179,8 @@ ms.locfileid: "78366916"
 
 |Имя|Состояние|Центры обработки данных
 |---|---|---|
-|Стандартный|GA|Все|
-|Расширенный|GA|Все|
+|Standard|GA|Все|
+|Premium|GA|Все|
 
 ### <a name="live-encoding"></a>Кодирование в реальном времени
 
@@ -210,12 +210,12 @@ AMS предлагает два кодировщика по требованию
 
 |Имя обработчика мультимедиа|Состояние|Центры обработки данных
 |---|---|---|
-|Azure Media Face Detector|Предварительный просмотр|Все|
+|Azure Media Face Detector|Preview (Предварительный просмотр)|Все|
 |Azure Media Indexer|GA|Все|
-|Azure Media Motion Detector|Предварительный просмотр|Все|
-|Azure Media OCR|Предварительный просмотр|Все|
+|Azure Media Motion Detector|Preview (Предварительный просмотр)|Все|
+|Azure Media OCR|Preview (Предварительный просмотр)|Все|
 |Azure Media Redactor|GA|Все|
-|Azure Media Video Thumbnails|Предварительный просмотр|Все|
+|Azure Media Video Thumbnails|Preview (Предварительный просмотр)|Все|
 
 ### <a name="protection"></a>Защита
 
@@ -259,7 +259,7 @@ AMS предлагает два кодировщика по требованию
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите схемы обучения работе со службами мультимедиа.
 

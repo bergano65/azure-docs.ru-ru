@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/06/2019
 ms.author: charwen
 ms.openlocfilehash: aba07e0a1dd8e7b1db8677907672d919ef034057
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374194"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272933"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-classic"></a>Настройка параллельных подключений ExpressRoute и "сайт — сайт" (классическая версия)
 > [!div class="op_single_selector"]
@@ -225,6 +225,6 @@ VPN-подключение типа "сеть-сеть" можно настро�
                 </Gateway>
 6. На этом этапе вы будете иметь виртуальную сеть без шлюзов. Чтобы создать новые шлюзы и завершить подключение, перейдите к шагу 4 ( [Создайте шлюз ExpressRoute](#gw)) из предыдущего раздела.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 

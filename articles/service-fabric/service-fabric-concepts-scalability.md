@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: masnider
 ms.openlocfilehash: 17827342b67d37d9fbeb56654824e004367823ef
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378933"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282566"
 ---
 # <a name="scaling-in-service-fabric"></a>Масштабирование в Service Fabric
 Azure Service Fabric упрощает создание масштабируемых приложений, обеспечивая управление службами, секциями и репликами на узлах кластера. Выполнение множества рабочих нагрузок на одном и том же оборудовании обеспечивает не только максимальное использование ресурсов, но и гибкость в выборе способа масштабирования рабочих нагрузок. В этом видео Channel 9 объясняется, как создавать масштабируемые приложения для микрослужб:

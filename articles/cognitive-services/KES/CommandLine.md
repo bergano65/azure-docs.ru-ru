@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/24/2016
 ms.author: paulhsu
 ms.openlocfilehash: 018552982a8ece3bbbaea2d60e2a6e64f681f822
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385641"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220108"
 ---
 # <a name="command-line-interface"></a>Интерфейс командной строки
 
@@ -36,7 +36,7 @@ ms.locfileid: "78385641"
 
 `kes.exe build_index <schemaFile> <dataFile> <indexFile> [options]`
 
-| Параметр      | Описание               |
+| Параметр      | Description               |
 |----------------|---------------------------|
 | `<schemaFile>` | Путь к входной схеме |
 | `<dataFile>`   | Путь к входным данным   |
@@ -61,7 +61,7 @@ ms.locfileid: "78385641"
 
 `kes.exe build_grammar <xmlFile> <grammarFile>`
 
-| Параметр       | Описание               |
+| Параметр       | Description               |
 |-----------------|---------------------------|
 | `<xmlFile>`     | Путь к входной спецификации грамматики в формате XML |
 | `<grammarFile>` | Путь к выходной скомпилированной грамматике         |
@@ -76,7 +76,7 @@ ms.locfileid: "78385641"
 
 `kes.exe host_service <grammarFile> <indexFile> [options]`
 
-| Параметр       | Описание                |
+| Параметр       | Description                |
 |-----------------|----------------------------|
 | `<grammarFile>` | Путь к входной двоичной грамматике         |
 | `<indexFile>`   | Путь к входному двоичному индексу           |
@@ -94,7 +94,7 @@ ms.locfileid: "78385641"
 
 `kes.exe deploy_service <grammarFile> <indexFile> <serviceName> <vmSize>[options]`
 
-| Параметр       | Описание                  |
+| Параметр       | Description                  |
 |-----------------|------------------------------|
 | `<grammarFile>` | Путь к входной двоичной грамматике           |
 | `<indexFile>`   | Путь к входному двоичному индексу             |
@@ -114,7 +114,7 @@ ms.locfileid: "78385641"
 
 `kes.exe describe_index <indexFile>`
 
-| Параметр     | Описание      |
+| Параметр     | Description      |
 |---------------|------------------|
 | `<indexFile>` | Путь к входному индексу |
 
@@ -128,7 +128,7 @@ ms.locfileid: "78385641"
 
 `kes.exe describe_grammar <grammarFile>`
 
-| Параметр       | Описание      |
+| Параметр       | Description      |
 |-----------------|------------------|
 | `<grammarFile>` | Путь к входной грамматике |
 

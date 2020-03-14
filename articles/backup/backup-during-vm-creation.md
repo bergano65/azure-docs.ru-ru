@@ -4,11 +4,11 @@ description: В этой статье описано, как включить р
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.openlocfilehash: 0cfea6579791c4fd23c1b7acdfe722d57b5ec2fd
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363756"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79247856"
 ---
 # <a name="enable-backup-when-you-create-an-azure-vm"></a>Включение резервного копирования при создании виртуальной машины Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "78363756"
 
 В предыдущих шагах объясняется, как использовать портал Azure для создания виртуальной машины и ее защиты в хранилище служб восстановления. Чтобы быстро развернуть одну или несколько виртуальных машин и защитить их в хранилище служб восстановления, см. шаблон [развертывание виртуальной машины Windows и включение резервного копирования](https://azure.microsoft.com/resources/templates/101-recovery-services-create-vm-and-configure-backup/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы защитили виртуальную машину, вы узнаете, как управлять ими и восстанавливать их.
 

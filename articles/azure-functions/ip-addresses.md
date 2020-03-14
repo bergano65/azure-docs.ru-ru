@@ -4,11 +4,11 @@ description: Узнайте, как найти входящий и исходя�
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.openlocfilehash: a1c4174b8f1f2349cbd35c32cbee468ee5b4cd4a
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75612893"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276495"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-адреса в Функциях Azure
 

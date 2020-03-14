@@ -9,16 +9,16 @@ author: ramakoni1
 ms.author: ramakoni
 ms.reviewer: carlrab,vanto
 ms.date: 01/14/2020
-ms.openlocfilehash: 6baf9d4edba9ba8db008c5c6a8d7af6832ba3273
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.openlocfilehash: 578d076dfc2fc383051c0c3a8528cdbb0fbcdb15
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77591240"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79208788"
 ---
 # <a name="troubleshooting-connectivity-issues-and-other-errors-with-microsoft-azure-sql-database"></a>Устранение проблем с подключением и другие ошибки с База данных SQL Microsoft Azure
 
-При сбоях подключения к базе данных SQL Azure отображаются сообщения об ошибке. Эти проблемы с подключением могут быть вызваны переконфигурацией базы данных SQL Azure, параметрами брандмауэра, временем ожидания подключения, неверными сведениями для входа или неудачами при применении рекомендаций и рекомендаций по проектированию во время [разработки приложений] ( sql-database-develop-overview.md). Кроме того, если достигнуто максимальное ограничение на некоторые ресурсы базы данных SQL Azure, вы не сможете подключиться к базе данных SQL Azure.
+При сбоях подключения к базе данных SQL Azure отображаются сообщения об ошибке. Эти проблемы с подключением могут быть вызваны переконфигурацией базы данных SQL Azure, параметрами брандмауэра, временем ожидания подключения, неверными сведениями для входа или неудачами при применении рекомендаций и рекомендаций по проектированию в процессе [разработки приложения](sql-database-develop-overview.md) . Кроме того, если достигнуто максимальное ограничение на некоторые ресурсы базы данных SQL Azure, вы не сможете подключиться к базе данных SQL Azure.
 
 ## <a name="transient-fault-error-messages-40197-40613-and-others"></a>Сообщения о временных ошибках сбоя (40197, 40613 и др.)
 

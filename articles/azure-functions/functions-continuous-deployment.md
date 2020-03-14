@@ -5,11 +5,11 @@ ms.assetid: 361daf37-598c-4703-8d78-c77dbef91643
 ms.topic: conceptual
 ms.date: 09/25/2019
 ms.openlocfilehash: cc1e100a0c2e652ab081869409fd24dbf88017a3
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230899"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277028"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "74230899"
 
 6. Просмотрите все сведения, а затем нажмите кнопку **Готово** , чтобы завершить настройку развертывания.
 
-    ![summary](./media/functions-continuous-deployment/summary.png)
+    ![Сводка](./media/functions-continuous-deployment/summary.png)
 
 По завершении процесса весь код из указанного источника развертывается в приложении. В этот момент изменения в источнике развертывания активируют развертывание этих изменений в приложении-функции в Azure.
 
@@ -80,7 +80,7 @@ ms.locfileid: "74230899"
 > [!NOTE]
 > После настройки непрерывной интеграции вы больше не сможете изменять исходные файлы на портале функций.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Рекомендации по Функциям Azure](functions-best-practices.md)
+> [Рекомендации по функциям Azure](functions-best-practices.md)

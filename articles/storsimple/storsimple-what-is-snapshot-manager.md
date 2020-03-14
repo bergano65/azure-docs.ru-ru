@@ -16,11 +16,11 @@ ms.date: 02/27/2017
 ms.author: twooley
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: e58e2d929dd1e4db16ce495ad54045e9dc3a6fb1
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365760"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267421"
 ---
 # <a name="an-introduction-to-storsimple-snapshot-manager"></a>Введение в StorSimple Snapshot Manager
 
@@ -87,7 +87,7 @@ ms.locfileid: "78365760"
 > 
 
 ## <a name="integration-with-windows-volume-shadow-copy-service"></a>Интеграция со службой теневого копирования томов Windows
-Диспетчер моментальных снимков StorSimple использует службу теневого копирования томов Windows (VSS) для сбора данных, согласованных с приложением. VSS повышает согласованность с приложениями путем взаимодействия с приложениями, поддерживающими VSS, для координации создания добавочных моментальных снимков. VSS обеспечивает временное отключение приложений во время создания моментальных снимков. 
+Диспетчер моментальных снимков StorSimple использует службу теневого копирования томов Windows (VSS) для сбора данных, согласованных с приложением. VSS повышает согласованность с приложениями путем взаимодействия с приложениями, поддерживающими VSS, для координации создания добавочных моментальных снимков. VSS обеспечивает временную неактивность или бездействие приложений во время создания моментального снимка. 
 
 Реализация VSS диспетчера моментальных снимков StorSimple работает с SQL Server и универсальными томами NTFS. Применяется следующая обработка. 
 

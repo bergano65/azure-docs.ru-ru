@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 04/04/2017
-ms.openlocfilehash: 9d94b6627348d08c76fa040255ba0856a2ffa945
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 4f8bb1f20dcc3a7900e3347616018a6e156962d0
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168817"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79218185"
 ---
 # <a name="use-powershell-to-create-studio-classic-models-and-web-service-endpoints-from-one-experiment"></a>Использование PowerShell для создания моделей (классической модели) и веб-служб в одном эксперименте
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 При машинном обучении часто возникает следующая задача: требуется создать множество моделей с одинаковым рабочим процессом обучения и одинаковым алгоритмом. Но для их обучения нужно использовать разные входные наборы данных. В этой статье показано, как сделать это в масштабе в Машинное обучение Azure Studio (классическая модель), используя только один эксперимент.
 

@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: d0a9f643516af5945037acb3dd1da24b06944171
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396486"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284412"
 ---
 # <a name="401003-iothubunauthorized"></a>401003 IoTHubUnauthorized
 
@@ -53,7 +53,7 @@ ms.locfileid: "78396486"
 
 ## <a name="solution"></a>Решение
 
-### <a name="solution-1"></a>Решение 1
+### <a name="solution-1"></a>Способ 1
 
 При использовании пакета SDK для IoT для подключения с использованием строки подключения устройства никаких действий не требуется. Пакет SDK для IoT повторно создает новый токен для повторного подключения по истечении срока действия маркера SAS. 
 

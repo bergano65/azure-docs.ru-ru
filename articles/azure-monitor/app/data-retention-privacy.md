@@ -4,11 +4,11 @@ description: Заявление о политике хранении и конф
 ms.topic: conceptual
 ms.date: 09/29/2019
 ms.openlocfilehash: 30878eecf795c85713b9f09b8325b326416022b8
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78368045"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276001"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор, хранение и хранение данных в Application Insights
 
@@ -213,7 +213,7 @@ AzureLogHandler(
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings). |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Н/Д
+|Windows Vista | Не поддерживается. | Недоступно
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -247,15 +247,15 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 | Ваше действие | Собираемые классы данных (см. следующую таблицу) |
 | --- | --- |
-| [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Запросы<br/>**Исключения**<br/>Сеанс<br/>пользователи |
+| [Добавление пакета SDK для Application Insights в веб-проект .NET][greenbrown] |ServerContext<br/>Выводимые<br/>Счетчики производительности<br/>Requests<br/>**Исключения**<br/>Сеанс<br/>users |
 | [Установка монитор состояния на IIS][redfield] |Зависимости<br/>ServerContext<br/>Выводимые<br/>Счетчики производительности |
-| [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>пользователи |
+| [Добавление пакета SDK для Application Insights в веб-приложение Java][java] |ServerContext<br/>Выводимые<br/>Запрос<br/>Сеанс<br/>users |
 | [Добавление пакета SDK для JavaScript на веб-страницу][client] |ClientContext <br/>Выводимые<br/>Страница<br/>ClientPerf<br/>Ajax |
 | [Определение свойств по умолчанию][apiproperties] |**Свойства** всех стандартных и настраиваемых событий |
 | [Вызов TrackMetric][api] |числовых значений;<br/>**Свойства** |
 | [Направление вызова *][api] |Имя события<br/>**Свойства** |
 | [Вызов TrackException][api] |**Исключения**<br/>Дамп стека<br/>**Свойства** |
-| Пакету SDK не может собрать данные. Например: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
+| Пакету SDK не может собрать данные. Пример: <br/> не удается получить доступ к счетчикам производительности;<br/> порождается исключение в инициализаторе телеметрии. |Диагностика SDK |
 
 Сведения о пакетах [SDK для других платформ][platforms]см. в их документах.
 
@@ -274,7 +274,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 | PageViews |URL-адрес и имя страницы или имя экрана |
 | Производительность клиента |URL-адрес или имя страницы, время загрузки браузера |
 | Ajax |Вызовы HTTP от веб-страницы на сервер |
-| Запросы |URL-адрес, длительность, код ответа |
+| Requests |URL-адрес, длительность, код ответа |
 | Зависимости |Тип (SQL, HTTP,...), строка подключения или URI, синхронизация/асинхронная, длительность, успешно, инструкция SQL (с монитор состояния) |
 | **Исключения** |Тип, **сообщение**, стеки вызовов, исходный файл, номер строки, `thread id` |
 | Сбои |`Process id`, `parent process id`, `crash thread id`; исправление приложения, `id`, сборка;  тип исключения, адрес, причина; скрытые символы и регистры, двоичные начальные и конечные адреса, имя двоичного файла и путь, тип ЦП |

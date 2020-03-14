@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
-ms.date: 04/26/2019
-ms.openlocfilehash: 940baf219f1b3994585472f0eed9d171ba319d4e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.date: 03/10/2020
+ms.openlocfilehash: 92d6dccec3ce6483072a81c8739b65e81ce2c7fe
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78359931"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268578"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
@@ -106,10 +106,11 @@ else {
 
 ### <a name="vcore-based-purchasing-model"></a>Модель приобретения на основе виртуальных ядер
 
-- Хранилище может быть расширено до максимально возможного размера с шагом приращения в 1 ГБ. Минимальный настраиваемый размер хранилища данных составляет 5 ГБ.
-- Хранилище для отдельной базы данных можно подготовить, увеличив или уменьшив ее максимальный размер с помощью [портала Azure](https://portal.azure.com), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
-- База данных SQL автоматически выделяет 30 % доступного места для хранения файлов журнала и 32 ГБ на виртуальное ядро для базы данных tempdb, но при этом их суммарный объем не должен превышать 384 ГБ. База данных tempdb находится на подключенном диске SSD на всех уровнях служб.
-- Стоимость хранилища для отдельной базы данных равна суммарному объему хранилища данных и журналов, умноженному на цену единицы хранения для этого уровня служб. Стоимость базы данных tempdb включена в стоимость виртуального ядра. Сведения о цене на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
+- Хранилище можно подготовить к максимальному размеру хранилища данных с шагом в 1 ГБ. Минимальное настраиваемое хранилище данных — 1 ГБ. См. раздел Документация по ограничению ресурсов для [отдельных баз данных](sql-database-vcore-resource-limits-single-databases.md) и [эластичных пулов](sql-database-vcore-resource-limits-elastic-pools.md) для ограничения максимального размера хранилища данных в каждой цели обслуживания.
+- Хранилище данных для отдельной базы данных может быть подготовлено путем увеличения или уменьшения максимального размера с помощью [портал Azure](https://portal.azure.com), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update)или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update). Если значение максимального размера указано в байтах, оно должно быть кратно 1 ГБ (1073741824 байт).
+- Объем данных, которые могут храниться в файлах данных базы данных, ограничен максимальным размером хранилища данных. Помимо этого хранилища, база данных SQL автоматически выделяет 30% больше места для хранения журнала транзакций.
+- База данных SQL автоматически выделяет 32 ГБ на виртуальное ядро для базы данных `tempdb`. `tempdb` находится в локальном хранилище SSD на всех уровнях служб.
+- Стоимость хранилища для отдельной базы данных или эластичного пула — это сумма хранилища данных и объемов хранилища журнала транзакций, умноженная на цену единицы хранения уровня службы. Стоимость `tempdb` включена в цену. Дополнительные сведения о ценах на хранение см. в разделе [цены на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).

@@ -7,11 +7,11 @@ ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
 ms.openlocfilehash: 7bc637b5719da3c5f5e5607436aa7da0721f5a9e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373660"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266017"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -108,7 +108,7 @@ ms.locfileid: "78373660"
 ### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Как применить пассивный режим для подключения к FTP в Службе приложений Azure?
 Служба приложений Azure поддерживает подключение как в активном, так и в пассивном режимах. Пассивный режим является предпочтительным, так как компьютеры развертывания обычно защищены брандмауэром (встроенным в операционную систему или развернутым отдельно в домашней или корпоративной сети). См. также [пример из документации по WinSCP](https://winscp.net/docs/ui_login_connection). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 

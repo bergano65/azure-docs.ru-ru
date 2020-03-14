@@ -8,12 +8,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 02/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8bde9a9e9227f0c8715b38a9a376fad3015c7bf3
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 7465ec4ef717f709aacb5e543a8f1cf4fa37bfb5
+ms.sourcegitcommit: d322d0a9d9479dbd473eae239c43707ac2c77a77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77586263"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139017"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Подключение гибридных компьютеров к Azure на портале Azure
 
@@ -56,6 +56,7 @@ ms.locfileid: "77586263"
 ## <a name="install-and-validate-the-agent-on-windows"></a>Установка и проверка агента в ОС Windows
 
 ### <a name="install-manually"></a>Установка вручную
+
 Агент подключенного компьютера можно установить вручную, запустив пакет установщика Windows *AzureConnectedMachineAgent.msi*. 
 
 > [!NOTE]
@@ -159,7 +160,7 @@ bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
 1. Чтобы удалить агент Windows с компьютера, выполните следующие действия:
 
     а. Войдите в систему компьютера, используя учетную запись с правами администратора.  
-    b. Откройте **Панель управления**, выберите раздел **Программы и компоненты**.  
+    б. Откройте **Панель управления**, выберите раздел **Программы и компоненты**.  
     c. В разделе **Программы и компоненты** выберите **Azure Connected Machine Agent** (Агент подключенного компьютера Azure), затем **Удалить**, а затем **Да**.  
 
     >[!NOTE]
@@ -168,7 +169,7 @@ bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
     Если вы хотите создать скрипт для удаления агента, можно использовать следующий пример, который извлекает код продукта и удаляет агент с помощью командной строки Msiexec. exe — `msiexec /x {Product Code}`. Для этого:  
     
     а. откройте редактор реестра;  
-    b. в разделе реестра `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall` найдите и скопируйте код GUID продукта;  
+    б. в разделе реестра `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall` найдите и скопируйте код GUID продукта;  
     c. после этого агент можно удалить с помощью Msiexec.
 
     В следующем примере показано, как удалить агент:

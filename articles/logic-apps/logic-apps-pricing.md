@@ -8,12 +8,12 @@ ms.author: klam
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 07/19/2019
-ms.openlocfilehash: 6c7112b6b5944042036fd3e7af6ec6f6dfbde0c0
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: 795acd67a8d4a9f8b8b7d78799a92134f249cf8d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77526150"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79270463"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Модель ценообразования для Azure Logic Apps
 
@@ -64,7 +64,7 @@ ms.locfileid: "77526150"
 
   Дополнительные сведения об ограничениях учетной записи интеграции см. в разделе [ограничения Logic Apps и конфигурация](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits). Дополнительные сведения об [уровнях учетных записей интеграции и их модели ценообразования см](#integration-accounts) . Далее в этом разделе.
 
-Если выбрать SKU "Премиум" интегрированной среды сценариев, базовое устройство будет иметь фиксированную емкость. Если требуется дополнительная пропускная способность, можно [добавить дополнительные единицы масштабирования](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity)во время создания или после. SKU для разработчиков ИНТЕГРИРОВАНной среды разработки не имеют возможности добавлять дополнительные единицы масштабирования. Приложения логики, работающие в интегрированной среде сценариев, не приводят к затратам на хранение данных.
+Если выбрать SKU "Премиум" интегрированной среды сценариев, базовое устройство будет иметь фиксированную емкость. Если требуется дополнительная пропускная способность, можно [добавить дополнительные единицы масштабирования](../logic-apps/ise-manage-integration-service-environment.md#add-capacity)во время создания или после. SKU для разработчиков ИНТЕГРИРОВАНной среды разработки не имеют возможности добавлять дополнительные единицы масштабирования. Приложения логики, работающие в интегрированной среде сценариев, не приводят к затратам на хранение данных.
 
 Цены см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps).
 

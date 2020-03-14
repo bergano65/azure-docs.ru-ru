@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 09/10/2019
 ms.author: memildin
 ms.openlocfilehash: 456f379e2b3c2ff411b196d45aef4663fddb0fe6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392494"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245412"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Выбытие средств центра безопасности (Июль 2019)
 
@@ -61,7 +61,7 @@ ms.locfileid: "78392494"
 
 Центр безопасности Azure в настоящее время использует Azure Monitor Поиск журналов для извлечения и анализа данных безопасности. Этот экран служит в качестве окна Log Analytics странице поиска и позволяет пользователям выполнять поисковые запросы в выбранной рабочей области. Дополнительные сведения см. в разделе [Поиск центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-search). Мы вышли из этого окна поиска:
 
-![Страница «Поиск»][4]
+![Страница "Поиск"][4]
 
 ### <a name="search-menu-entry---the-new-experience"></a>Запись меню "Поиск" — новый интерфейс
 
@@ -189,7 +189,7 @@ ms.locfileid: "78392494"
 
 Вы можете получить исходные Log Analytics запросы, которые заполняют панель мониторинга безопасность и аудит в [репозитории GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Legacy%20Log%20Analytics%20dashboards) для центра безопасности.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения о [Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/).
 - Дополнительные сведения об [Azure Sentinel](https://docs.microsoft.com/azure/sentinel).

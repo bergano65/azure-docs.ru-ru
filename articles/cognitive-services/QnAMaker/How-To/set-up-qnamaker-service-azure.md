@@ -4,11 +4,11 @@ description: Перед созданием базы знаний службы Qn
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.openlocfilehash: 663cbce0e096c6189d97cf7872d466383d272f06
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77650424"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220592"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -189,7 +189,7 @@ ms.locfileid: "77650424"
 
 При создании службы QnA с помощью шаблонов Azure Resource Manager можно создать все ресурсы и управлять созданием службы приложений для использования существующей службы поиска.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [службе приложений](../../../app-service/index.yml) и службе [поиска](../../../search/index.yml).
 

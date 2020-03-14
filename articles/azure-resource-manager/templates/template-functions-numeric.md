@@ -4,11 +4,11 @@ description: Описывает функции, используемые в ша
 ms.topic: conceptual
 ms.date: 11/08/2017
 ms.openlocfilehash: 91aa637701acb278e81b7eb86aa3ae2db15acc28
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380636"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273661"
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Числовые функции для шаблонов Azure Resource Manager
 
@@ -36,10 +36,10 @@ ms.locfileid: "78380636"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- | 
-|операнд1 |Да |int |Первое слагаемое. |
-|операнд2 |Да |int |Второе слагаемое. |
+|операнд1 |Да |INT |Первое слагаемое. |
+|операнд2 |Да |INT |Второе слагаемое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -107,12 +107,12 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
-| loopName | Нет | string | Имя цикла для получения итерации. |
-| смещение |Нет |int |Число, добавляемое к отсчитываемому от нуля значению итерации. |
+| loopName | нет | строка | Имя цикла для получения итерации. |
+| offset |нет |INT |Число, добавляемое к отсчитываемому от нуля значению итерации. |
 
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Remarks
 
 Эта функция всегда используется с объектом **copy**. Если значение **offset** не указано, возвращается текущее значение итерации. Значение итерации начинается с нуля. Циклы итерации можно использовать при определении ресурсов или переменных.
 
@@ -153,10 +153,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |int |Делимое. |
-| операнд2 |Да |int |Делитель. Не может иметь значение 0. |
+| операнд1 |Да |INT |Делимое. |
+| операнд2 |Да |INT |Делитель. Не может иметь значение 0. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -224,7 +224,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка или целое число |Значение, которое необходимо преобразовать в число с плавающей запятой. |
 
@@ -251,14 +251,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="int" />
 
-## <a name="int"></a>int
+## <a name="int"></a>INT
 `int(valueToConvert)`
 
 Преобразует указанное значение в целое число.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Да |строка или целое число |Значение, которое необходимо преобразовать в целое число. |
 
@@ -318,7 +318,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить максимальное значение. |
 
@@ -382,7 +382,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить минимальное значение. |
 
@@ -446,10 +446,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |int |Делимое. |
-| операнд2 |Да |int |Делитель, не может быть равен 0. |
+| операнд1 |Да |INT |Делимое. |
+| операнд2 |Да |INT |Делитель, не может быть равен 0. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Целое число, представляющее остаток.
@@ -516,10 +516,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |int |Первый множитель. |
-| операнд2 |Да |int |Второй множитель. |
+| операнд1 |Да |INT |Первый множитель. |
+| операнд2 |Да |INT |Второй множитель. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -587,10 +587,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание |
+| Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Да |int |Уменьшаемое. |
-| операнд2 |Да |int |Вычитаемое. |
+| операнд1 |Да |INT |Уменьшаемое. |
+| операнд2 |Да |INT |Вычитаемое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Целое число, представляющее разность.
@@ -648,7 +648,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/sub.json
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).

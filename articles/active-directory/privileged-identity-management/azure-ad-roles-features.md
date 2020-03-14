@@ -17,11 +17,11 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f5d63577cbdbdf18cb17618bdb5c9e3b5de0e44a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375410"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245984"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Возможности управления для ролей Azure AD в управление привилегированными пользователями
 
@@ -64,7 +64,7 @@ ms.locfileid: "78375410"
 
 Для клиентов, использующих модуль управление привилегированными пользователями PowerShell для ролей Azure AD, PowerShell перестанет работать с этим обновлением. Вместо предыдущих командлетов необходимо использовать командлеты управление привилегированными пользователями в модуле PowerShell предварительной версии Azure AD. Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Теперь вы можете [ознакомиться с документацией и примерами операций PIM в этом модуле PowerShell](powershell-for-azure-ad-roles.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

@@ -11,11 +11,11 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.openlocfilehash: bc1f40760c1602d81da042bf6909e44a540d35de
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75612161"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283762"
 ---
 # <a name="development-tools-on-the-azure-data-science-virtual-machine"></a>Средства разработки на виртуальной машине Azure для обработки и анализа данных
 
@@ -35,7 +35,7 @@ ms.locfileid: "75612161"
 > [!NOTE]
 > Может появиться сообщение о том, что период ознакомления завершился. Введите учетные данные для учетной записи Майкрософт. Вы можете создать новую бесплатную учетную запись, чтобы получить доступ к Visual Studio Community.
 
-## <a name="visual-studio-code"></a>Код Visual Studio 
+## <a name="visual-studio-code"></a>Visual Studio Code 
 
 |    |           |
 | ------------- | ------------- |

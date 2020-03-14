@@ -4,11 +4,11 @@ description: Используйте агент Службы восстановл
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.openlocfilehash: 0e1f7044c62bbaa9969b97690bf16b9ed446c27c
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78673052"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79247778"
 ---
 # <a name="back-up-windows-machines-by-using-the-azure-backup-mars-agent"></a>Резервное копирование компьютеров Windows с помощью агента MARS Azure Backup
 
@@ -30,7 +30,7 @@ ms.locfileid: "78673052"
 * [Проверьте доступ к Интернету](install-mars-agent.md#verify-internet-access) на компьютерах, для которых требуется создать резервную копию.
 * Если агент MARS не установлен, Узнайте, [как его установить](install-mars-agent.md).
 
-## <a name="create-a-backup-policy"></a>Создание политики резервного копирования
+## <a name="create-a-backup-policy"></a>создание политики архивации;
 
 Политика архивации определяет, когда следует создавать моментальные снимки данных для создания точек восстановления. Также указывается время хранения точек восстановления. Для настройки политики резервного копирования используется агент MARS.
 
@@ -155,6 +155,6 @@ Azure Backup не учитывает переход на летнее время
 
 Дополнительные сведения см. [в разделе Создание политики архивации](#create-a-backup-policy).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [восстановить файлы в Azure](backup-azure-restore-windows-server.md).

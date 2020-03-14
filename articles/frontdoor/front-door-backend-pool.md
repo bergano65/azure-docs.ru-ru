@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: b764799d3f40cef24a0412ac950026af650d4ec7
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382097"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272855"
 ---
 # <a name="backends-and-backend-pools-in-azure-front-door-service"></a>Серверные системы и серверные пулы в службе Azure Front Door
 В этой статье описываются основные понятия о том, как сопоставлять развертывание приложений с помощью службы "Передняя дверца Azure". В нем также объясняются различные термины в конфигурации передней дверцы вокруг серверной части приложения.

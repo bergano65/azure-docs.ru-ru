@@ -6,11 +6,11 @@ ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: a9d875e2c3899fa91b9cc41c0ee3b5a93ec5b8c8
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372084"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266082"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не совпадают с учетными данными подписки Azure.
@@ -76,6 +76,6 @@ az webapp deployment user set --user-name <username> --password <password>
 
 Чтобы сбросить учетные данные уровня приложения, выберите **Сброс учетных данных** в том же диалоговом окне.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как использовать эти учетные данные для развертывания приложения из [локального репозитория Git](deploy-local-git.md) или с помощью [FTP(S)](deploy-ftp.md).

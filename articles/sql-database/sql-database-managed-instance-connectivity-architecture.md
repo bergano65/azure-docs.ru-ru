@@ -12,11 +12,11 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 04/16/2019
 ms.openlocfilehash: ec1430e7dd79378473cce9dbb77bedecd14600c8
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78228283"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256787"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключения для управляемого экземпляра в базе данных SQL Azure
 
@@ -105,7 +105,7 @@ ms.locfileid: "78228283"
 
 | Имя       |Порт                        |Протокол|Источник           |Назначение|Действие|
 |------------|----------------------------|--------|-----------------|-----------|------|
-|Intune  |9000, 9003, 1438, 1440, 1452|TCP     |SqlManagement    |MI SUBNET  |Разрешение |
+|управление  |9000, 9003, 1438, 1440, 1452|TCP     |SqlManagement    |MI SUBNET  |Разрешение |
 |            |9000, 9003                  |TCP     |корпнетсав       |MI SUBNET  |Разрешение |
 |            |9000, 9003                  |TCP     |65.55.188.0/24, 167.220.0.0/16, 131.107.0.0/16, 94.245.87.0/24|MI SUBNET  |Разрешение |
 |mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
@@ -115,7 +115,7 @@ ms.locfileid: "78228283"
 
 | Имя       |Порт          |Протокол|Источник           |Назначение|Действие|
 |------------|--------------|--------|-----------------|-----------|------|
-|Intune  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Разрешение |
+|управление  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Разрешение |
 |mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
 
 ### <a name="user-defined-routes-with-service-aided-subnet-configuration"></a>Определяемые пользователем маршруты с конфигурацией подсети с разавтоматизированной службой 
@@ -300,7 +300,7 @@ ms.locfileid: "78228283"
 
 | Имя       |Порт                        |Протокол|Источник           |Назначение|Действие|
 |------------|----------------------------|--------|-----------------|-----------|------|
-|Intune  |9000, 9003, 1438, 1440, 1452|TCP     |Любой              |MI SUBNET  |Разрешение |
+|управление  |9000, 9003, 1438, 1440, 1452|TCP     |Любой              |MI SUBNET  |Разрешение |
 |mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
 |health_probe|Любой                         |Любой     |AzureLoadBalancer|MI SUBNET  |Разрешение |
 
@@ -308,7 +308,7 @@ ms.locfileid: "78228283"
 
 | Имя       |Порт          |Протокол|Источник           |Назначение|Действие|
 |------------|--------------|--------|-----------------|-----------|------|
-|Intune  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Разрешение |
+|управление  |443, 12000    |TCP     |MI SUBNET        |AzureCloud; |Разрешение |
 |mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Разрешение |
 
 > [!IMPORTANT]
@@ -427,7 +427,7 @@ ms.locfileid: "78228283"
 |Mi-216-220-208-20-NextHop-Internet|216.220.208.0/20|Интернет|
 ||||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения см. в разделе [Advanced Data Security базы данных SQL](sql-database-managed-instance.md).
 - Узнайте, как [настроить новую виртуальную сеть Azure](sql-database-managed-instance-create-vnet-subnet.md) или [существующую виртуальную сеть Azure](sql-database-managed-instance-configure-vnet-subnet.md) , в которой можно развернуть управляемые экземпляры.

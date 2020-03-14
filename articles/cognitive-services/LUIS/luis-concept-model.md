@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: diberry
 ms.openlocfilehash: d721ceb25b3ce2408563a0bed16457d05affe7b4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280866"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79219998"
 ---
 # <a name="design-with-intent-and-entity-models"></a>Проектирование с намерениями и моделями сущностей 
 
@@ -155,6 +155,6 @@ LUIS поддерживает составные сущности с помощ�
 * LUIS рекомендовать новый текст или фразы, чтобы рекомендовать этот дескриптор
 * Исправление ошибки для обучающих данных
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Понимание [целей](luis-concept-intent.md) и [сущностей](luis-concept-entity-types.md). 

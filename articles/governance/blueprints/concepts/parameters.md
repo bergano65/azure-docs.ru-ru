@@ -4,11 +4,11 @@ description: Сведения о статических и динамическ�
 ms.date: 03/12/2019
 ms.topic: conceptual
 ms.openlocfilehash: 68987b3e0f418721986003dc796f00ac1dd6dda1
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75644976"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264717"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Создание динамических схем с использованием параметров
 

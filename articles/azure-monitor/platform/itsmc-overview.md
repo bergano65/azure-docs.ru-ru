@@ -7,11 +7,11 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.openlocfilehash: 50bab4c26046059b993c19a030a8f840ae336ef2
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373332"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274545"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -90,7 +90,7 @@ ms.locfileid: "78373332"
    ![Подключения ITSM](media/itsmc-overview/itsm-connections.png)
 
    На этой странице отобразится список подключений.
-3. Нажмите кнопку **Добавить подключение**.
+3. Щелкните **Добавить подключение**.
 
    ![Добавление подключения ITSM](media/itsmc-overview/add-new-itsm-connection.png)
 
@@ -112,7 +112,7 @@ ms.locfileid: "78373332"
 
 Группы действий предоставляют модульный и многократно используемый способ активации действий для оповещений Azure. Группы действий можно использовать с оповещениями о метриках, оповещениями журнала действий и Azure Log Analytics на портале Azure.
 
-Воспользуйтесь следующей процедурой.
+Выполните перечисленные ниже действия.
 
 1. На портале Azure выберите **Монитор**.
 2. В левой области щелкните **Группы действий**. Откроется окно **Добавить группу действий**.
@@ -178,22 +178,22 @@ ServiceDeskWorkItemType_s="Incident"
 
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
-- Состояние
+- Штат
 - срочность
 - Влияние
-- Priority
+- Приоритет
 - Escalation (Эскалация);
 - Автор
-- Кем разрешено
-- Кем закрыт
+- "Кем разрешено";
+- Closed By (Кем закрыто);
 - Источник
-- Кому назначено:
+- Кому назначено
 - Категория
-- Заголовок
-- Описание
-- Дата создания
-- Дата закрытия
-- Дата разрешения
+- Title
+- Description
+- "Дата создания";
+- Closed Date (Дата закрытия);
+- Resolved Date (Дата разрешения);
 - "Дата последнего изменения";
 - Компьютер
 
@@ -206,29 +206,29 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
 - Автор
-- Кем закрыт
+- Closed By (Кем закрыто);
 - Источник
-- Кому назначено:
-- Заголовок
+- Кому назначено
+- Title
 - Тип
 - Категория
-- Состояние
+- Штат
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
 - срочность
-- Priority
+- Приоритет
 - Риски
 - Влияние
-- Кому назначено:
-- Дата создания
-- Дата закрытия
+- Кому назначено
+- "Дата создания";
+- Closed Date (Дата закрытия);
 - "Дата последнего изменения";
 - Requested Date (Запрошенная дата);
 - Planned Start Date (Планируемая дата начала);
 - Planned End Date (Планируемая дата окончания);
 - Work Start Date (Дата начала работы);
 - Work End Date (Дата окончания работы);
-- Описание
+- Description
 - Компьютер
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Выходные данные инцидента ServiceNow
@@ -236,10 +236,10 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | Поле Log Analytics | Поле ServiceNow |
 |:--- |:--- |
 | ServiceDeskId_s| Number |
-| IncidentState_s | Состояние |
+| IncidentState_s | Штат |
 | Urgency_s |срочность |
 | Impact_s |Влияние|
-| Priority_s | Priority |
+| Priority_s | Приоритет |
 | CreatedBy_s | Opened by (Кем открыто) |
 | ResolvedBy_s | "Кем разрешено"|
 | ClosedBy_s  | Closed By (Кем закрыто) |
@@ -258,24 +258,24 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | Log Analytics | Поле ServiceNow |
 |:--- |:--- |
 | ServiceDeskId_s| Number |
-| CreatedBy_s | Автор запроса |
+| CreatedBy_s | "Кем запрошено" |
 | ClosedBy_s | Closed By (Кем закрыто) |
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
 | Type_s|  Тип |
 | Category_s|  Категория |
-| CRState_s|  Состояние|
+| CRState_s|  Штат|
 | Urgency_s|  срочность |
-| Priority_s| Priority|
+| Priority_s| Приоритет|
 | Risk_s| Риски|
 | Impact_s| Влияние|
 | RequestedDate_t  | Requested by date |
-| ClosedDate_t | Дата закрытия |
+| ClosedDate_t | Closed Date (Дата закрытия) |
 | PlannedStartDate_t  |     Planned Start Date (Планируемая дата начала) |
 | PlannedEndDate_t  |   Planned End Date (Планируемая дата окончания) |
-| WorkStartDate_t  | Фактическая дата начала |
+| WorkStartDate_t  | Actual start date (Фактическая дата начала) |
 | WorkEndDate_t | Фактическая дата окончания|
-| Description_s | Описание |
+| Description_s | Description |
 | Компьютер  | Элемент конфигурации |
 
 
@@ -302,5 +302,5 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 Свяжитесь с нами по адресу [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com), чтобы оставить отзывы или запросы касательно соединителя управления ИТ-службами.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-connections.md)

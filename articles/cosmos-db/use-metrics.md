@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 06/18/2019
 ms.reviewer: sngun
 ms.openlocfilehash: ef457fe8c21bc7e62f910a78913069df32bea1a3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78387936"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246465"
 ---
 # <a name="monitor-and-debug-with-metrics-in-azure-cosmos-db"></a>Мониторинг и отладка с помощью метрик в Azure Cosmos DB
 
@@ -107,7 +107,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 Свойство *QueryMetrics* предоставляет подробные сведения о длительности выполнения каждого компонента запроса. Основная первопричина медленного выполнения запросов — сканирования. Это означает, что запрос не может использовать индексы. Эту проблему можно устранить, настроив оптимальное условие фильтра.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы знаете, как отслеживать и отлаживать неполадки с помощью метрик, предоставленных на портале Azure. Узнать больше о повышении производительности базы данных можно из следующих статей:
 

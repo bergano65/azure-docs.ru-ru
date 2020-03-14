@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9bbbcc38116c5681e3b5c867690c296f60507ad1
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: dd8be482009e067bf9016cc8e351fc42a2db39c7
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78196116"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79271737"
 ---
 # <a name="about-keys-secrets-and-certificates"></a>Сведения о ключах, секретах и сертификатах
 
@@ -120,6 +120,7 @@ Key Vault поддерживает ключи RSA таких размеров: 2
 -   **ES384** — ECDSA для хэшей SHA-384 и ключей, созданных на основе кривой P-384. Этот алгоритм описан в документации по [RFC7518](https://tools.ietf.org/html/rfc7518).
 -   **ES512** — ECDSA для хэшей SHA-512 и ключей, созданных на основе кривой P-521. Этот алгоритм описан в документации по [RFC7518](https://tools.ietf.org/html/rfc7518).
 
+
 ###  <a name="rsa-algorithms"></a>Алгоритмы RSA  
  Ниже приведены идентификаторы алгоритмов, которые поддерживаются ключами RSA и RSA-HSM в Key Vault.  
 
@@ -130,6 +131,9 @@ Key Vault поддерживает ключи RSA таких размеров: 2
 
 #### <a name="signverify"></a>SIGN/VERIFY
 
+-   **PS256** -РСАССА-PSS, использующий sha-256 и ГЕНЕРАЦИИ маски MGF1 с sha-256, как описано в [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **PS384** -РСАССА-PSS, использующий sha-384 и ГЕНЕРАЦИИ маски MGF1 с sha-384, как описано в [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **PS512** -РСАССА-PSS, использующий sha-512 и ГЕНЕРАЦИИ маски MGF1 с sha-512, как описано в [RFC7518](https://tools.ietf.org/html/rfc7518).
 -   **RS256** — RSASSA-PKCS-v1_5, использующий SHA-256. Предоставленное приложением значение хэш-кода должно быть вычислено с помощью SHA-256 и иметь длину в 32 байта.  
 -   **RS384** — RSASSA-PKCS-v1_5, использующий SHA-384. Предоставленное приложением значение хэш-кода должно быть вычислено с помощью SHA-384 и иметь длину в 48 байтов.  
 -   **RS512** — RSASSA-PKCS-v1_5, использующий SHA-512. Предоставленное приложением значение хэш-кода должно быть вычислено с помощью SHA-512 и иметь длину в 64 байта.  

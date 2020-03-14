@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 12/17/2019
+ms.date: 3/5/2020
 ms.subservice: alerts
-ms.openlocfilehash: 9585e74170d21ad899224462b6e41e7e9bb75727
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: e4dfc33756a287b6d2f6e41edded3332ca85241d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77664820"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274935"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -30,60 +30,64 @@ Azure Monitor теперь поддерживает [новый тип опов�
 
 |Тип ресурса  |Поддерживаемые измерения |Оповещения о нескольких ресурсах| Доступные метрики|
 |---------|---------|-----|----------|
-|Microsoft.ApiManagement/service | Да| Нет | [Управление API](../../azure-monitor/platform/metrics-supported.md#microsoftapimanagementservice)|
-|Microsoft. Аппплатформ/пружина |Нет| Да|
-|Microsoft.Automation/automationAccounts | Да| Нет | [Учетные записи службы автоматизации](../../azure-monitor/platform/metrics-supported.md#microsoftautomationautomationaccounts)|
-|Microsoft.Batch/batchAccounts | Н/Д| Нет | [Учетные записи пакетной службы](../../azure-monitor/platform/metrics-supported.md#microsoftbatchbatchaccounts)|
-|Microsoft.Cache/Redis;|Да| Нет |[Кэш Azure для Redis](../../azure-monitor/platform/metrics-supported.md#microsoftcacheredis)|
-|Microsoft. Классикстораже/storageAccounts/ммксклассик|Нет|Да|
-|Microsoft. Классикстораже/storageAccounts/ммксклассик/Блобсервицес|Нет|Да|
-|Microsoft. Классикстораже/storageAccounts/ммксклассик/Филесервицес|Нет|Да|
-|Microsoft. Классикстораже/storageAccounts/ммксклассик/Куеуесервицес|Нет|Да|
-|Microsoft. Классикстораже/storageAccounts/ммксклассик/Таблесервицес|Нет|Да| |
-|Microsoft.CognitiveServices/accounts| Н/Д | Нет | [Cognitive Services](../../azure-monitor/platform/metrics-supported.md#microsoftcognitiveservicesaccounts)|
+|Microsoft.ApiManagement/service | Да| нет | [Управление API](../../azure-monitor/platform/metrics-supported.md#microsoftapimanagementservice)|
+|Microsoft. Аппплатформ/пружина |нет| Да|
+|Microsoft.Automation/automationAccounts | Да| нет | [Учетные записи службы автоматизации](../../azure-monitor/platform/metrics-supported.md#microsoftautomationautomationaccounts)|
+|Microsoft.Batch/batchAccounts | Недоступно| нет | [Учетные записи пакетной службы](../../azure-monitor/platform/metrics-supported.md#microsoftbatchbatchaccounts)|
+|Microsoft.Cache/Redis;|Да| нет |[Кэш Azure для Redis](../../azure-monitor/platform/metrics-supported.md#microsoftcacheredis)|
+|Microsoft. Классикстораже/storageAccounts/ммксклассик|нет|Да|
+|Microsoft. Классикстораже/storageAccounts/ммксклассик/Блобсервицес|нет|Да|
+|Microsoft. Классикстораже/storageAccounts/ммксклассик/Филесервицес|нет|Да|
+|Microsoft. Классикстораже/storageAccounts/ммксклассик/Куеуесервицес|нет|Да|
+|Microsoft. Классикстораже/storageAccounts/ммксклассик/Таблесервицес|нет|Да| |
+|Microsoft.CognitiveServices/accounts| Недоступно | нет | [Cognitive Services](../../azure-monitor/platform/metrics-supported.md#microsoftcognitiveservicesaccounts)|
 |Microsoft.Compute/virtualMachines |Да | Да | [Виртуальные машины](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachines)|
-|Microsoft.Compute/virtualMachineScaleSets; |Н/Д | Да |[Масштабируемые наборы виртуальных машин](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachinescalesets)|
-|Microsoft.ContainerInstance/containerGroups | Да| Нет | [Группы контейнеров](../../azure-monitor/platform/metrics-supported.md#microsoftcontainerinstancecontainergroups)|
-|Microsoft.ContainerService/managedClusters | Да | Нет | [Управляемые кластеры](../../azure-monitor/platform/metrics-supported.md#microsoftcontainerservicemanagedclusters)|
+|Microsoft.Compute/virtualMachineScaleSets; |Недоступно | Да |[Масштабируемые наборы виртуальных машин](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachinescalesets)|
+|Microsoft.ContainerInstance/containerGroups | Да| нет | [Группы контейнеров](../../azure-monitor/platform/metrics-supported.md#microsoftcontainerinstancecontainergroups)|
+|Microsoft.ContainerService/managedClusters | Да | нет | [Управляемые кластеры](../../azure-monitor/platform/metrics-supported.md#microsoftcontainerservicemanagedclusters)|
 |Microsoft. Датабокседже/Датабокседжедевицес | Да | Да | |
-|Microsoft.DataFactory/datafactories| Да| Нет | [Фабрики данных V1](../../azure-monitor/platform/metrics-supported.md#microsoftdatafactorydatafactories)|
-|Microsoft.DataFactory/factories; |Да | Нет |[Фабрики данных V2](../../azure-monitor/platform/metrics-supported.md#microsoftdatafactoryfactories)|
-|Microsoft. файл или учетные записи |Нет| Да|
-|Microsoft.DBforMySQL/servers |Н/Д| Нет |[База данных для MySQL](../../azure-monitor/platform/metrics-supported.md#microsoftdbformysqlservers)|
-|Microsoft.DBforPostgreSQL/servers |Н/Д | Нет | [База данных для PostgreSQL](../../azure-monitor/platform/metrics-supported.md#microsoftdbforpostgresqlservers)|
-|Microsoft.Devices/IotHubs | Н/Д | Нет |[Метрики центра Интернета вещей](../../azure-monitor/platform/metrics-supported.md#microsoftdevicesiothubs)|
-|Microsoft.Devices/provisioningServices| Да | Нет |[Метрики DPS](../../azure-monitor/platform/metrics-supported.md#microsoftdevicesprovisioningservices)|
-|Microsoft. EventGrid/Domains|Нет|Да| |
-|Microsoft.EventGrid/topics |Да | Нет |[Статьи по сетке событий](../../azure-monitor/platform/metrics-supported.md#microsofteventgridtopics)|
-|Microsoft.EventHub/clusters |Да| Нет |[Кластеры концентраторов событий](../../azure-monitor/platform/metrics-supported.md#microsofteventhubclusters)|
-|Microsoft.EventHub/namespaces |Да| Нет |[Центры событий](../../azure-monitor/platform/metrics-supported.md#microsofteventhubnamespaces)|
-|Microsoft.KeyVault/vaults| Нет |Нет |[Хранилища](../../azure-monitor/platform/metrics-supported.md#microsoftkeyvaultvaults)|
-|Microsoft.Logic/workflows |Н/Д | Нет |[Logic Apps](../../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows) |
-|Microsoft.MachineLearningServices/workspaces|Да| Нет | [Машинное обучение](../../azure-monitor/platform/metrics-supported.md#microsoftmachinelearningservicesworkspaces) |
-|Microsoft.Network/applicationGateways|Н/Д| Нет |  |
-|Microsoft.Network/dnsZones | Н/Д| Нет | [Зоны DNS](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkdnszones) |
-|Microsoft.Network/expressRouteCircuits | Н/Д | Нет |[Цепи Express Route](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkexpressroutecircuits) |
-|Microsoft.Network/loadBalancers (только для SKU "Стандартный")| Да| Нет | [Подсистемы балансировки нагрузки.](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkloadbalancers) |
-|Microsoft. Network/Натгатевайс|Нет|Да|
-|Microsoft. Network/Приватиндпоинтс|Нет|Да|
-|Microsoft. Network/Привателинксервицес|Нет|Да|
-|Microsoft.Network/publicipaddresses; |Н/Д | Нет |[Общедоступные IP-адреса](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses)|
-|Microsoft.Network/trafficManagerProfiles | Да | Нет | [Профили диспетчера трафика](../../azure-monitor/platform/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) |
-|Microsoft.OperationalInsights/workspaces| Да | Нет | [Рабочие области Log Analytics](../../azure-monitor/platform/metrics-supported.md#microsoftoperationalinsightsworkspaces)|
-|Microsoft.Relay/namespaces | Да | Нет | [Передает](../../azure-monitor/platform/metrics-supported.md#microsoftrelaynamespaces)|
-|Microsoft. пиринг/Пирингсервицес|Нет|Да|
-|Microsoft.PowerBIDedicated/capacities | Н/Д | Нет | [Емкости](../../azure-monitor/platform/metrics-supported.md#microsoftpowerbidedicatedcapacities)|
-|Microsoft.Search/searchServices |Н/Д|Нет | [Службы поиска](../../azure-monitor/platform/metrics-supported.md#microsoftsearchsearchservices)|
-|Microsoft.ServiceBus/namespaces |Да| Нет |[Служебная шина](../../azure-monitor/platform/metrics-supported.md#microsoftservicebusnamespaces)|
-|Microsoft.Sql/servers/elasticPools |   Нет | Да |
-|Microsoft.Sql/servers/databases    | Нет | Да |
-|Microsoft.Storage/storageAccounts |Да | Нет | [Учетные записи хранения](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccounts)|
-|Microsoft.Storage/storageAccounts/services | Да| Нет | [Службы BLOB-объектов](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsblobservices), [службы файлов](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices), [службы очередей](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices) и [службы таблиц](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountstableservices)|
-|Microsoft.StreamAnalytics/streamingjobs |Н/Д| Нет | [Stream Analytics](../../azure-monitor/platform/metrics-supported.md#microsoftstreamanalyticsstreamingjobs)|
-|Microsoft. Microsoft. Вмвареклаудсимпле/virtualMachines |Да|Нет |[Клаудсимпле виртуальные машины](../../azure-monitor/platform/metrics-supported.md#microsoftvmwarecloudsimplevirtualmachines)|
-|Microsoft.Web/serverfarms | Да | Нет | [Планы службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebserverfarms)|
-|Microsoft.Web/sites | Да | Нет | [Службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebsites-excluding-functions) и [Функции](../../azure-monitor/platform/metrics-supported.md#microsoftwebsites-functions)|
-|Microsoft.Web/sites/slots | Да | Нет | [Слоты Службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebsitesslots)|
+|Microsoft.DataFactory/datafactories| Да| нет | [Фабрики данных V1](../../azure-monitor/platform/metrics-supported.md#microsoftdatafactorydatafactories)|
+|Microsoft.DataFactory/factories; |Да | нет |[Фабрики данных V2](../../azure-monitor/platform/metrics-supported.md#microsoftdatafactoryfactories)|
+|Microsoft. файл или учетные записи |нет| Да|
+|Microsoft.DBforMySQL/servers |Недоступно| нет |[База данных для MySQL](../../azure-monitor/platform/metrics-supported.md#microsoftdbformysqlservers)|
+|Microsoft.DBforPostgreSQL/servers |Недоступно | нет | [База данных для PostgreSQL](../../azure-monitor/platform/metrics-supported.md#microsoftdbforpostgresqlservers)|
+|Microsoft.Devices/IotHubs | Недоступно | нет |[Метрики центра Интернета вещей](../../azure-monitor/platform/metrics-supported.md#microsoftdevicesiothubs)|
+|Microsoft.Devices/provisioningServices| Да | нет |[Метрики DPS](../../azure-monitor/platform/metrics-supported.md#microsoftdevicesprovisioningservices)|
+|Microsoft. EventGrid/Domains|нет|Да| |
+|Microsoft.EventGrid/topics |Да | нет |[Статьи по сетке событий](../../azure-monitor/platform/metrics-supported.md#microsofteventgridtopics)|
+|Microsoft.EventHub/clusters |Да| нет |[Кластеры концентраторов событий](../../azure-monitor/platform/metrics-supported.md#microsofteventhubclusters)|
+|Microsoft.EventHub/namespaces |Да| нет |[Центры событий](../../azure-monitor/platform/metrics-supported.md#microsofteventhubnamespaces)|
+|Microsoft.KeyVault/vaults| нет |нет |[Хранилища](../../azure-monitor/platform/metrics-supported.md#microsoftkeyvaultvaults)|
+|Microsoft.Logic/workflows |Недоступно | нет |[Logic Apps](../../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows) |
+|Microsoft.MachineLearningServices/workspaces|Да| нет | [Машинное обучение](../../azure-monitor/platform/metrics-supported.md#microsoftmachinelearningservicesworkspaces) |
+|Microsoft.NetApp/netAppAccounts/capacityPools |Да| нет | [Пулы ресурсов Azure NetApp](../../azure-monitor/platform/metrics-supported.md#microsoftnetappnetappaccountscapacitypools) |
+|Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/Volumes |Да| нет | [Тома NetApp для Azure](../../azure-monitor/platform/metrics-supported.md#microsoftnetappnetappaccountscapacitypoolsvolumes) |
+|Microsoft.Network/applicationGateways|Недоступно| нет |  |
+|Microsoft.Network/dnsZones | Недоступно| нет | [Зоны DNS](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkdnszones) |
+|Microsoft.Network/expressRouteCircuits | Недоступно | нет |[Цепи Express Route](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkexpressroutecircuits) |
+|Microsoft.Network/loadBalancers (только для SKU "Стандартный")| Да| нет | [Подсистемы балансировки нагрузки.](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkloadbalancers) |
+|Microsoft. Network/Натгатевайс|нет|Да|
+|Microsoft. Network/Приватиндпоинтс|нет|Да|
+|Microsoft. Network/Привателинксервицес|нет|Да|
+|Microsoft.Network/publicipaddresses; |Недоступно | нет |[Общедоступные IP-адреса](../../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses)|
+|Microsoft.Network/trafficManagerProfiles | Да | нет | [Профили диспетчера трафика](../../azure-monitor/platform/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) |
+|Microsoft.OperationalInsights/workspaces| Да | нет | [Рабочие области Log Analytics](../../azure-monitor/platform/metrics-supported.md#microsoftoperationalinsightsworkspaces)|
+|Microsoft.Relay/namespaces | Да | нет | [Передает](../../azure-monitor/platform/metrics-supported.md#microsoftrelaynamespaces)|
+|Microsoft. пиринг/Пирингсервицес|нет|Да|
+|Microsoft.PowerBIDedicated/capacities | Недоступно | нет | [Емкости](../../azure-monitor/platform/metrics-supported.md#microsoftpowerbidedicatedcapacities)|
+|Microsoft.Search/searchServices |Недоступно|нет | [Службы поиска](../../azure-monitor/platform/metrics-supported.md#microsoftsearchsearchservices)|
+|Microsoft.ServiceBus/namespaces |Да| нет |[Служебная шина](../../azure-monitor/platform/metrics-supported.md#microsoftservicebusnamespaces)|
+|Microsoft.Sql/servers/elasticPools |   нет | Да |
+|Microsoft.Sql/servers/databases    | нет | Да |
+|Microsoft.Storage/storageAccounts |Да | нет | [Учетные записи хранения](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccounts)|
+|Microsoft.Storage/storageAccounts/services | Да| нет | [Службы BLOB-объектов](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsblobservices), [службы файлов](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices), [службы очередей](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices) и [службы таблиц](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountstableservices)|
+|Microsoft.StreamAnalytics/streamingjobs |Недоступно| нет | [Stream Analytics](../../azure-monitor/platform/metrics-supported.md#microsoftstreamanalyticsstreamingjobs)|
+|Microsoft. Microsoft. Вмвареклаудсимпле/virtualMachines |Да|нет |[Клаудсимпле виртуальные машины](../../azure-monitor/platform/metrics-supported.md#microsoftvmwarecloudsimplevirtualmachines)|
+|Microsoft.Web/hostingEnvironments/multiRolePools | Да | нет | [Среда службы приложений пулов с несколькими ролями](../../azure-monitor/platform/metrics-supported.md#microsoftwebhostingenvironmentsmultirolepools)|
+|Microsoft.Web/hostingEnvironments/workerPools | Да | нет | [Пулы рабочих ролей Среда службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebhostingenvironmentsworkerpools)|
+|Microsoft.Web/serverfarms | Да | нет | [Планы службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebserverfarms)|
+|Microsoft.Web/sites | Да | нет | [Службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebsites-excluding-functions) и [Функции](../../azure-monitor/platform/metrics-supported.md#microsoftwebsites-functions)|
+|Microsoft.Web/sites/slots | Да | нет | [Слоты Службы приложений](../../azure-monitor/platform/metrics-supported.md#microsoftwebsitesslots)|
 
 ## <a name="payload-schema"></a>Схема полезных данных
 
@@ -144,7 +148,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Получите дополнительные сведения об [интерфейсе оповещений](../../azure-monitor/platform/alerts-overview.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](../../azure-monitor/platform/alerts-unified-log.md).

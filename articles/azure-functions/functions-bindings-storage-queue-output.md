@@ -7,11 +7,11 @@ ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 76af5f398edd736874fa79095f2e80c02298eac0
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78164650"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277340"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
 
@@ -300,7 +300,7 @@ public class HttpTriggerQueueOutput {
 }
 ```
 
-| Свойство    | Описание |
+| Свойство    | Description |
 |-------------|-----------------------------|
 |`name`       | Объявляет имя параметра в сигнатуре функции. При активации функции значение этого параметра будет иметь содержимое сообщения очереди. |
 |`queueName`  | Объявляет имя очереди в учетной записи хранения. |
@@ -314,7 +314,7 @@ public class HttpTriggerQueueOutput {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Queue`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** | Недоступно | Нужно задать значение `queue`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Недоступно | Нужно задать значение `out`. Это свойство задается автоматически при создании триггера на портале Azure. |
@@ -382,7 +382,7 @@ public class HttpTriggerQueueOutput {
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Ссылки |
+| Привязка |  Справочник |
 |---|---|
 | Очередь | [Коды ошибок очередей](https://docs.microsoft.com/rest/api/storageservices/queue-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
@@ -412,7 +412,7 @@ public class HttpTriggerQueueOutput {
 }
 ```
 
-|Свойство  |По умолчанию | Описание |
+|Свойство  |По умолчанию | Description |
 |---------|---------|---------|
 |maxPollingInterval|00:00:01|Максимальный интервал между опросами очереди. Минимальное значение — 00:00:00.100 (100 мс) и увеличивается до 00:01:00 (1 мин.).  В 1. x тип данных равен миллисекундам, а в 2. x и более поздней — интервал времени.|
 |visibilityTimeout|00:00:00|Интервал времени между повторными попытками, когда при обработке сообщения возникает сбой. |
@@ -420,7 +420,7 @@ public class HttpTriggerQueueOutput {
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
 |newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции как изменения данных хранилища очередей (триггер)](./functions-bindings-storage-queue-trigger.md)
 

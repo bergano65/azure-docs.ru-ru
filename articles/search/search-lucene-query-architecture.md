@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: d46d0309b3d2ffb638016e88ba022e49009eedf2
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78379775"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282943"
 ---
 # <a name="how-full-text-search-works-in-azure-cognitive-search"></a>Как работает полнотекстовый поиск в Azure Когнитивный поиск
 
@@ -278,17 +278,17 @@ Spacious,||air-condition*+"Ocean view"
 | located | 2
 | north | 2
 | ocean | 1, 2, 3
-| по | 2
-| на |2
+| of | 2
+| on |2
 | quiet | 4
 | rooms  | 1, 3
 | secluded | 4
 | shore | 2
 | spacious | 1
 | the | 1, 2
-| до | 1
-| view | 1, 2, 3
-| прогуляться | 1
+| значение | 1
+| представление | 1, 2, 3
+| walking | 1
 | на | 3
 
 
@@ -379,7 +379,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 В этой статье рассматривается полнотекстовый поиск в контексте Когнитивный поиск Azure. Мы надеемся, вы достаточно хорошо разобрались с этим вопросом и сможете применить полученные знания для разрешения распространенных проблем запросов. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + Создайте пример индекса, попробуйте выполнить различные запросы и проанализируйте результаты. Дополнительные сведения см. в разделе о [запросе индекса](search-get-started-portal.md#query-index).
 
@@ -391,7 +391,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 + [Настройте пользовательские анализаторы](https://docs.microsoft.com/rest/api/searchservice/custom-analyzers-in-azure-search) для минимальной или специализированной обработки определенных полей.
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure)) 
 

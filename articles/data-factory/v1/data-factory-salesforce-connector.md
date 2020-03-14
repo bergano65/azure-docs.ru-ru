@@ -13,11 +13,11 @@ ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 8b94f6388d77cca2ef74c802aec7648091172775
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78387465"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79281136"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -34,7 +34,7 @@ ms.locfileid: "78387465"
 ## <a name="supported-versions"></a>Поддерживаемые версии
 Этот соединитель поддерживает следующие выпуски Salesforce: Developer Edition, Professional Edition, Enterprise Edition или Unlimited Edition. Он также поддерживает копирование из рабочей среды Salesforce, песочницы и пользовательского домена.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * Требуется включить разрешения API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 * Чтобы скопировать данные из Salesforce в локальное хранилище данных, в локальной среде необходимо установить шлюз управления данными версии не ниже 2.0.
 
@@ -66,12 +66,12 @@ ms.locfileid: "78387465"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Salesforce.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Description | Обязательно |
 | --- | --- | --- |
-| тип |Для свойства type нужно задать значение **Salesforce**. |Да |
-| environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> -По умолчанию — "https:\//login.salesforce.com". <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |Нет |
+| type |Для свойства type нужно задать значение **Salesforce**. |Да |
+| environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> -По умолчанию — "https:\//login.salesforce.com". <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |нет |
 | username |Укажите имя пользователя для учетной записи пользователя. |Да |
-| пароль |Укажите пароль для учетной записи пользователя. |Да |
+| password |Укажите пароль для учетной записи пользователя. |Да |
 | securityToken |Укажите маркер безопасности для учетной записи пользователя. Инструкции по получению и сбросу маркера безопасности см. в статье [Get security token](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) (Получение маркера безопасности). Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API). |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
@@ -79,7 +79,7 @@ ms.locfileid: "78387465"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел typeProperties для набора данных типа **RelationalTable** содержит следующие свойства.
 
-| Свойство | Описание | Обязательно |
+| Свойство | Description | Обязательно |
 | --- | --- | --- |
 | tableName |Имя таблицы в Salesforce |Нет (если для свойства **RelationalSource** задано значение **query**). |
 
@@ -95,7 +95,7 @@ ms.locfileid: "78387465"
 
 В случае действия копирования, если источник относится к типу **RelationalSource** (который содержит Salesforce), в разделе typeProperties доступны следующие свойства.
 
-| Свойство | Описание | Допустимые значения | Обязательно |
+| Свойство | Description | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) . Например: `select * from MyTable__c`. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
@@ -106,7 +106,7 @@ ms.locfileid: "78387465"
 
 ## <a name="query-tips"></a>Советы по запросам
 ### <a name="retrieving-data-using-where-clause-on-datetime-column"></a>Получение данных с использованием предложения WHERE в столбце даты и времени
-При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Например:
+При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Пример:
 
 * **Пример SOQL**: `$$Text.Format('SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= {0:yyyy-MM-ddTHH:mm:ssZ} AND LastModifiedDate < {1:yyyy-MM-ddTHH:mm:ssZ}', WindowStart, WindowEnd)`
 * **Пример SQL**:
@@ -298,7 +298,7 @@ ms.locfileid: "78387465"
 | Процент |Decimal |
 | Номер телефона |String |
 | Список выбора |String |
-| Text |String |
+| текст |String |
 | Текстовое поле |String |
 | Текстовое поле (длинное) |String |
 | Текстовое поле (расширенное) |String |

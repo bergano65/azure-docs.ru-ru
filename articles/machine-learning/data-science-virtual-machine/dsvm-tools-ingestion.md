@@ -11,11 +11,11 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.openlocfilehash: d86858f8d7f09628457b718ca3c481934d720081
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75612635"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79270060"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Средства приема данных виртуальных машин для обработки и анализа данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "75612635"
 | Ссылки на примеры      | [С помощью AdlCopy](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)      |
 | Связанные средства на DSVM      | AzCopy, Azure CLI     |
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 |    |           |
 | ------------- | ------------- |
@@ -69,7 +69,7 @@ ms.locfileid: "75612635"
 | Ссылки на примеры      | [Импорт данных CosmosDB](https://docs.microsoft.com/azure/cosmos-db/import-data)      |
 | Связанные средства на DSVM      | AzCopy, AdlCopy      |
 
-## <a name="azure-storage-explorer"></a>Обозреватель хранилища Azure
+## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
 
 |    |           |
 | ------------- | ------------- |
@@ -100,4 +100,4 @@ ms.locfileid: "75612635"
 | Распространенные способы применения      | Чтение и запись больших двоичных объектов в контейнере.      |
 |  Как использовать и запускать его?    |   В окне терминала запустите _blobfuse_.    |
 | Ссылки на примеры      | [blobfuse в GitHub](https://github.com/Azure/azure-storage-fuse)      |
-| Связанные средства на DSVM      | Интерфейс командной строки Azure      |
+| Связанные средства на DSVM      | Azure CLI      |

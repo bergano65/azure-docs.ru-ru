@@ -16,11 +16,11 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
 ms.openlocfilehash: 3ff4b2cb6a59a35dc6da4748a7c7fbb4758a4fcf
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981000"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283229"
 ---
 # <a name="understand-role-definitions-for-azure-resources"></a>Общие сведения об определениях ролей для ресурсов Azure
 
@@ -158,7 +158,7 @@ AssignableScopes []
 
 Для просмотра операций с данными и работы с ними необходимо иметь правильные версии средств или пакетов SDK:
 
-| Средство  | Версия  |
+| Инструмент  | Версия  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 или более поздней версии |
 | [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |

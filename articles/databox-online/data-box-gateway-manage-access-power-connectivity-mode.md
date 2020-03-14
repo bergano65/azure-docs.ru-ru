@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 06/03/2019
 ms.author: alkohli
 ms.openlocfilehash: e2e82c551117f2ae96e026b39c08ccf56e7ce8e2
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561822"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79265458"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>Управление доступом, питанием и режимом подключения для Шлюз Azure Data Box
 
@@ -37,9 +37,9 @@ ms.locfileid: "77561822"
 1. В локальном пользовательском веб-интерфейсе перейдите в раздел **Обслуживания > Изменение пароля**.
 2. Введите текущий пароль, а затем — новый. Длина пароля должна быть не меньше 8 и не больше 16 знаков. Пароль должен содержать 3 знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки. Подтвердите новый пароль.
 
-    ![Смена пароля](media/data-box-gateway-manage-access-power-connectivity-mode/change-password-1.png)
+    ![Изменить пароль](media/data-box-gateway-manage-access-power-connectivity-mode/change-password-1.png)
 
-3. Щелкните **Изменение пароля**.
+3. Щелкните **Изменить пароль**.
  
 ### <a name="reset-device-password"></a>Сброс пароля устройства
 

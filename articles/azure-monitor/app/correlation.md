@@ -7,11 +7,11 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.openlocfilehash: 06897fffda490cdfcbb2a9cf6f55c7945e8afda0
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77672061"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276131"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -45,7 +45,7 @@ Application Insights определяет [модель данных](../../azur
 
 Обратите внимание, что в результатах все элементы телеметрии используют корневой `operation_Id`. При вызове Ajax с страницы новый уникальный идентификатор (`qJSXU`) назначается телеметрии зависимости, а идентификатор pageView используется как `operation_ParentId`. Запрос сервера затем использует идентификатор Ajax как `operation_ParentId`.
 
-| itemType   | name                      | ИДЕНТИФИКАТОР           | operation_ParentId | operation_Id |
+| itemType   | name                      | ID           | operation_ParentId | operation_Id |
 |------------|---------------------------|--------------|--------------------|--------------|
 | pageView   | Stock page                |              | STYz               | STYz         |
 | dependency | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
@@ -356,7 +356,7 @@ ASP.NET Core 2,0 поддерживает извлечение заголовк�
 
   Начальная загрузочная загрузка автоматически назначает `cloudRoleName` значению, введенному для свойства `spring.application.name`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Напишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md).
 - Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в разделе [Track Custom Operations](custom-operations-tracking.md).

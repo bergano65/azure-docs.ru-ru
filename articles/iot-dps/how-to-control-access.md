@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: wesmc
 ms.openlocfilehash: 2a7e0932d226b1533c039b8529c2c11de06cf525
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396059"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79285153"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
@@ -75,7 +75,7 @@ SharedAccessSignature sr =
 
 Это ожидаемые значения:
 
-| Значение | Описание |
+| Значение | Description |
 | --- | --- |
 | {signature} |Строка подписи HMAC-SHA256 формата `{URL-encoded-resourceURI} + "\n" + expiry`. **Важно!** Ключ шифруется в кодировке base64 и используется для вычислений HMAC-SHA256.|
 | {expiry} |Строки в формате UTF8, отображающие количество секунд с начала эры 00:00:00 (в формате UTC) 1 января 1970 г. |

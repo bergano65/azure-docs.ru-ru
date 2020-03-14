@@ -3,12 +3,12 @@ title: Разрабатывайте функции Azure с помощью Visua
 description: Узнайте, как разрабатывать и тестировать функции Azure с помощью расширения "функции Azure" для Visual Studio Code.
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 41a1a64be4823769f6bf23b251fec94fd68eb0f0
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: 2d33b7dddf29d37d174bdb7734e9048bc1658840
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77484797"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277171"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>Разрабатывайте функции Azure с помощью Visual Studio Code
 
@@ -299,7 +299,7 @@ URL-адрес функции копируется в буфер обмена в
 
     | Язык | Требование |
     | -------- | --------- |
-    | **C#** | [расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp);<br/>[Средства .NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)   |
+    | **C#** | [расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp);<br/>[Средства .NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x)   |
     | **Java** | [Отладчик для расширения Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)<br/>[Java 8](https://aka.ms/azure-jdks);<br/>[Maven 3 или более поздней версии](https://maven.apache.org/) |
     | **JavaScript** | [Node.js](https://nodejs.org/)<sup>*</sup> |  
     | **Python** | [Расширение Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)<br/>Рекомендуемый [3.6.8 Python](https://www.python.org/downloads/)|

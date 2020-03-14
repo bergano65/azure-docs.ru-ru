@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 10/06/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 01e07eaee705634b03cc4462c4058e290daa8bc2
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198502"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278133"
 ---
 # <a name="developers-guide-to-durable-entities-in-net"></a>Рекомендации разработчика по устойчивым сущностям в .NET
 
@@ -203,7 +203,7 @@ public class Counter : ICounter
 
 ### <a name="example-client-signals-entity-through-interface"></a>Пример. Клиент оповещает сущность через интерфейс
 
-Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Например:
+Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Пример:
 
 ```csharp
 [FunctionName("DeleteCounter")]
@@ -507,7 +507,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 * `SignalEntity(EntityId, operation, input)`: отправляет одностороннее сообщение в сущность.
 * `CreateNewOrchestration(orchestratorFunctionName, input)`: запускает новое согласование.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о концепциях сущностей](durable-functions-entities.md)

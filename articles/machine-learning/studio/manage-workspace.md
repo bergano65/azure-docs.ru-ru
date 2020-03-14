@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/27/2017
-ms.openlocfilehash: 996cf4451811b46a99e7c0b64ca0fa21c1eba5f9
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 68c9ca4c7b5f30d6f62d333014f4098fe7826c99
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168484"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79217946"
 ---
 # <a name="manage-an-azure-machine-learning-studio-classic-workspace"></a>Управление рабочей областью Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 > [!NOTE]
 > Сведения об управлении веб-службами на портале веб-служб машинного обучения см. в разделе [Управление веб-службой с помощью портала веб-служб машинного обучения Azure](manage-new-webservice.md).

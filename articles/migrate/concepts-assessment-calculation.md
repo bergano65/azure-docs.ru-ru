@@ -4,11 +4,11 @@ description: Сведения об оценках в службе "миграц�
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.openlocfilehash: 0cf933dd1c8c61edfcea20ea954c5813f3848b28
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392857"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269696"
 ---
 # <a name="about-assessments-in-azure-migrate"></a>Об оценках в службе "миграция Azure"
 

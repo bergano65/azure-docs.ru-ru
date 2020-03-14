@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
-ms.topic: overview
-ms.date: 02/25/2020
+ms.topic: conceptual
+ms.date: 03/04/2020
 ms.author: aahi
-ms.openlocfilehash: 560f34d21a68cecc4950db5dcceb9c8ef7b05a49
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
-ms.translationtype: HT
+ms.openlocfilehash: 6847059de2a8685a56719f07a041a40456f2aa06
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77614436"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79219250"
 ---
 # <a name="example-user-scenarios-for-the-text-analytics-api"></a>Примеры пользовательских сценариев для API Анализа текста
 
@@ -45,11 +45,11 @@ API Преобразования текста в речь, Анализа тон
 
 ![Схема отслеживания отзывов потребителей о продукте или компании в социальных сетях с использованием функции извлечения ключевых фраз](media/use-cases/social-feed.svg)
 
-## <a name="classify-and-redact-documents-that-have-sensitive-information"></a>Классификация и исправление документов с конфиденциальной информацией
+## <a name="classify-and-redact-documents-that-have-sensitive-information"></a>Классификация и редактирование документов с конфиденциальной информацией
 
-Используйте Распознавание именованных сущностей, чтобы определять персональные и конфиденциальные сведения в документах. Используйте данные, чтобы классифицировать документы или исправить их и предоставить к ним безопасный общий доступ.
+Используйте распознавание именованных сущностей для распознавания персональных и конфиденциальных сведений в документах. Используйте данные, чтобы классифицировать документы или исправить их, чтобы их можно было безопасно использовать совместно.
 
-![Изображение, описывающее использование NER для обнаружения персональных данных, а также классификации и исправления документов](media/use-cases/sensitive-docs.jpg)
+![Изображение, описывающее использование NER для обнаружения персональных данных и классификации и исправления документов](media/use-cases/sensitive-docs.jpg)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

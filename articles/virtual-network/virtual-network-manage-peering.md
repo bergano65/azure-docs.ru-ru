@@ -16,17 +16,17 @@ ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: anavin
 ms.openlocfilehash: 4103930e0d089f5f7c17586f22616431c8aa11d9
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978352"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79279654"
 ---
 # <a name="create-change-or-delete-a-virtual-network-peering"></a>Создание, изменение и удаление пиринга в виртуальной сети
 
 Узнайте, как создавать, изменять и удалять пиринг в виртуальной сети. Пиринг виртуальных сетей — это механизм подключения между виртуальными сетями, находящимися в одном регионе и между регионами (также известный как пиринг глобальной виртуальной сети), через магистральную сеть Azure. После создания пиринга управление виртуальными сетями все равно осуществляется как отдельными ресурсами. Если у вас нет опыта работы с пиринговой связью между виртуальными сетями, вы можете получить дополнительные сведения в [обзорной статье](virtual-network-peering-overview.md) или пройти [учебник](tutorial-connect-virtual-networks-portal.md).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -142,7 +142,7 @@ ms.locfileid: "75978352"
 
 Если вашей учетной записи не назначена ни одна из перечисленных выше ролей, ей должна быть назначена [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json), предоставляющая разрешения, указанные в таблице ниже.
 
-| Действия                                                          | Имя |
+| Действие                                                          | Имя |
 |---                                                              |---   |
 | Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write  | Требуется для создания пиринга между виртуальной сетью А и виртуальной сетью Б. Виртуальная сеть А должна быть развернута с помощью Resource Manager.          |
 | Microsoft.Network/virtualNetworks/peer/action                   | Требуется для создания пиринга между виртуальной сетью Б, развернутой с помощью Resource Manager, и виртуальной сетью A.                                                       |

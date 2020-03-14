@@ -4,11 +4,11 @@ description: В этом руководстве описывается испр�
 ms.date: 02/26/2020
 ms.topic: how-to
 ms.openlocfilehash: 5cf26f5235fbc35cdc9bfc8527967c3cc5ca91b8
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670803"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264535"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
@@ -181,7 +181,7 @@ Start-AzPolicyRemediation -Name 'myRemedation' -PolicyAssignmentId '/subscriptio
 
 Другие командлеты и примеры исправления см. в разделе [AZ. полициинсигхтс](/powershell/module/az.policyinsights/#policy_insights) Module.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).

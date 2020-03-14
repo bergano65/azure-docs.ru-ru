@@ -7,11 +7,11 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/20/2019
 ms.openlocfilehash: baa6e5732221d120ff71217a3a86a942794c53f4
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75666743"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283944"
 ---
 # <a name="perform-data-operations-in-azure-logic-apps"></a>Выполнение операций с данными в Azure Logic Apps
 
@@ -29,7 +29,7 @@ ms.locfileid: "75666743"
 
 Эти действия помогают работать с массивами данных.
 
-| Действия | Description |
+| Действие | Description |
 |--------|-------------|
 | [**Создать таблицу CSV**](#create-csv-table-action) | Создание таблицы значений с разделителями-запятыми (CSV) из массива. |
 | [**Создать таблицу HTML**](#create-html-table-action) | Создание таблицы HTML из массива. |
@@ -42,7 +42,7 @@ ms.locfileid: "75666743"
 
 Эти действия помогают работать с данными в формате нотации объектов JavaScript (JSON).
 
-| Действия | Description |
+| Действие | Description |
 |--------|-------------|
 | [**Создать**](#compose-action) | Создание сообщения или строки из нескольких наборов входных данных, которые могут иметь разные типы данных. Затем можно использовать эту строку как единый ввод данных, а не повторно вводить одни и те же данные. Например, можно создать одно сообщение JSON с разных входных данных. |
 | [**Анализ JSON**](#parse-json-action) | Создание удобных маркеров данных для свойств в содержимом JSON, чтобы можно было более легко использовать свойства в приложениях логики. |
@@ -50,7 +50,7 @@ ms.locfileid: "75666743"
 
 Чтобы создать более сложные преобразования JSON, см. раздел [Выполнение сложных преобразований JSON с помощью шаблона Liquid](../logic-apps/logic-apps-enterprise-integration-liquid-transform.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -200,7 +200,7 @@ Oranges,2
 
    `item()?['<array-property-name>']`
 
-   Пример.
+   Пример:
 
    * `item()?['Description']`
    * `item()?['Product_ID']`
@@ -232,7 +232,7 @@ Oranges,2
    }
    ```
 
-   Пример.
+   Пример:
 
    ```json
    "Create_CSV_table": {
@@ -351,7 +351,7 @@ Oranges,2
 
    `item()?['<array-property-name>']`
 
-   Пример.
+   Пример:
 
    * `item()?['Description']`
    * `item()?['Product_ID']`
@@ -383,7 +383,7 @@ Oranges,2
    }
    ```
 
-   Пример.
+   Пример:
 
    ```json
    "Create_HTML_table": {

@@ -8,11 +8,11 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 5a42b1e0dc82b3340bbebe176c71cb1754d00664
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391498"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243384"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)
 
@@ -219,7 +219,7 @@ ms.locfileid: "78391498"
 1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа**.
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Нажмите кнопку **Сохранить**.
+4. Выберите команду **Сохранить**.
 
 ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -454,6 +454,6 @@ ms.locfileid: "78391498"
 ```
 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Включение шифрования дисков Azure с помощью Azure AD на виртуальных машинах Windows (предыдущий выпуск)](disk-encryption-windows-aad.md)

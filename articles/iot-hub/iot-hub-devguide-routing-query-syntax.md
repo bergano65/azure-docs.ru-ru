@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
 ms.openlocfilehash: b76ef431e4c0ad63929378c1f48c6ab06776cb25
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78344106"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79271113"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Синтаксис запросов маршрутизации сообщений центра Интернета вещей
 

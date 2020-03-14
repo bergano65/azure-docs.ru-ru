@@ -15,11 +15,11 @@ ms.date: 11/05/2019
 ms.author: bwren
 ms.subservice: ''
 ms.openlocfilehash: dc784fa2dd5317932294af6e9c9d36dcce7d32f1
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373351"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274402"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor
 
@@ -504,7 +504,7 @@ Operation | where OperationCategory == 'Data Collection Status'
 Существует несколько дополнительных ограничений Log Analytics, некоторые из которых зависят от ценовой категории Log Analytics. Эти данные описаны [здесь](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#log-analytics-workspaces).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об использовании языка поиска см. [в статье Поиск по журналам в Azure Monitor журналах](../log-query/log-query-overview.md) . Вы можете использовать поисковые запросы, чтобы выполнить дополнительный анализ данных об использовании.
 - Выполните действия, описанные в разделе о [создании оповещений журналов](alerts-metric.md), чтобы получать уведомления при выполнении условий поиска.

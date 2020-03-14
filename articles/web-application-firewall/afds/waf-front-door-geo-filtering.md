@@ -5,15 +5,15 @@ services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
-ms.openlocfilehash: eb91dfd5d774e591d3c3c3964668dcc626086181
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7c49892f97d9c15efcaecccb6133c67133e81c87
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73512578"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79137566"
 ---
 # <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door"></a>Сведения о геофильтрации в домене для Azure Front Door
 
@@ -21,7 +21,7 @@ ms.locfileid: "73512578"
 
 Политика брандмауэра веб-приложения обычно содержит набор настраиваемых правил. Правило состоит из соответствующего условия, действия и приоритета. В условии соответствия определяется переменная, оператор и значение соответствия.  Для правила геофильтрации переменной соответствия является REMOTE_ADDR, оператором — GeoMatch, а значением — двухбуквенный код необходимой страны. Условие GeoMatch можно объединить с условием строки соответствия REQUEST_URI, чтобы создать правило геофильтрации на основе пути.
 
-Политику геофильтрации можно настроить для Front Door, используя [Azure PowerShell](waf-front-door-tutorial-geo-filtering.md) или [шаблон быстрого запуска](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-geo-filtering).
+Вы можете настроить политику географической настройки для передней дверцы, используя портал Azure, [Azure PowerShell](waf-front-door-tutorial-geo-filtering.md) или [шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-geo-filtering)быстрого запуска.
 
 ## <a name="country-code-reference"></a>Справочник с кодами стран
 
@@ -30,7 +30,7 @@ ms.locfileid: "73512578"
 | AD | Андорра |
 | AE | ОАЭ|
 | AF | Афганистан|
-| AG | Антигуа и Барбуда|
+| ГД | Антигуа и Барбуда|
 | AL | Албания|
 | AM | Армения|
 | АО | Ангола|
@@ -57,7 +57,7 @@ ms.locfileid: "73512578"
 | BW | Ботсвана|
 | BY | Беларусь|
 | BZ | Белиз|
-| CA | Канада|
+| CA | Canada|
 | CD | Демократическая Республика Конго|
 | CF | Центрально-Африканская Республика|
 | CH | Швейцария|
@@ -84,7 +84,7 @@ ms.locfileid: "73512578"
 | FJ | Фиджи|
 | FM | Микронезия, Федеративные Штаты|
 | СВ | Франция|
-| GB | Великобритания|
+| ГБ | United Kingdom|
 | GE | Джорджия|
 | GF | Французская Гвиана|
 | GH | Гана|
@@ -98,7 +98,7 @@ ms.locfileid: "73512578"
 | HR | Хорватия|
 | HT | Гаити|
 | HU | Венгрия|
-| ИД | Индонезия|
+| ID | Индонезия|
 | IE | Ирландия|
 | IL | Израиль|
 | IN | Индия|
@@ -145,12 +145,12 @@ ms.locfileid: "73512578"
 | MX | Мексика|
 | MY | Малайзия|
 | MZ | Мозамбик|
-| Нет данных | Намибия|
+| Н/Д | Намибия|
 | NE | Нигер|
 | NG | Нигерия|
 | NI | Никарагуа|
 | NL | Нидерланды|
-| НЕТ | Норвегия|
+| NO | Норвегия|
 | NP | Непал|
 | NR | Науру|
 | NZ | Новая Зеландия|
@@ -167,7 +167,7 @@ ms.locfileid: "73512578"
 | QA | Катар|
 | RE | Реюньон|
 | RO | Румыния|
-| RS | Сербия|
+| Сервер отчетов | Сербия|
 | RU | Российская Федерация|
 | RW | Руанда|
 | SA | Саудовская Аравия|
@@ -180,7 +180,7 @@ ms.locfileid: "73512578"
 | SO | Сомали|
 | SR | Суринам|
 | SS | Южный Судан|
-| SV | Эль-Сальвадор|
+| SV | Сальвадор|
 | SY | Сирия|
 | SZ | Свазиленд|
 | TC | Острова Теркс и Кайкос|

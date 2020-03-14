@@ -6,11 +6,11 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.openlocfilehash: c6e15c9a99a78f0f3637f718b35462fe49fd5ee6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371089"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277249"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Выходная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -349,7 +349,7 @@ public static void Run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Blob`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** | Недоступно | Нужно задать значение `blob`. |
 |**direction** | Недоступно | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#usage). |
@@ -391,13 +391,13 @@ public static void Run(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Ссылки |
+| Привязка |  Справочник |
 |---|---|
-| Большой двоичный объект | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
+| BLOB-объект | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции при изменении данных хранилища BLOB-объектов](./functions-bindings-storage-blob-trigger.md)
 - [Чтение данных хранилища BLOB-объектов при выполнении функции](./functions-bindings-storage-blob-input.md)

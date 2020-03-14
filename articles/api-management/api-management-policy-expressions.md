@@ -14,16 +14,16 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
 ms.openlocfilehash: 6614e70d130abe46067c657bda3ccdd7000caddc
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374278"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79244008"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
-В этой статье рассматривается синтаксис выражений политики в C# 7. Каждому выражению предоставлен доступ к неявно заданной переменной [context](api-management-policy-expressions.md#ContextVariables) и допустимому [подмножеству](api-management-policy-expressions.md#CLRTypes) типов платформы .NET Framework.
+В этой статье рассматривается синтаксис выражений политики в C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
 
-Дополнительные сведения см. в разделе:
+Дополнительные сведения
 
 - Способы передачи сведений о контексте во внутреннюю службу. Используйте политики [настройки параметра строки запроса](api-management-transformation-policies.md#SetQueryStringParameter) и [настройки HTTP-заголовка](api-management-transformation-policies.md#SetHTTPheader), чтобы передать эти сведения.
 - Использование политики [проверки JWT](api-management-access-restriction-policies.md#ValidateJWT) для предварительной авторизации доступа к операциям на основе утверждений маркеров.
@@ -210,7 +210,7 @@ ms.locfileid: "78374278"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Deployment](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
+|контекст|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Deployment](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>локального. API|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>локального. Развертывания|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>локального. LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
@@ -246,7 +246,7 @@ ms.locfileid: "78374278"
 |bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает `true`, если проверка прошла успешнее; `false`, если проверка завершается неудачно.|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

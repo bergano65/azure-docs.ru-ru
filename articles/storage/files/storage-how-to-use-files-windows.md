@@ -8,11 +8,11 @@ ms.date: 06/07/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 4bd9c64e1b9219f6752172d9dc518af71ad67e70
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77598591"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268149"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -27,7 +27,7 @@ ms.locfileid: "77598591"
 | Windows 10<sup>1</sup> | SMB 3.0 | Да | Да |
 | Semi-Annual Channel<sup>2</sup> для Windows Server | SMB 3.0 | Да | Да |
 | Windows Server 2016 | SMB 3.0 | Да | Да |
-| Windows 8.1 | SMB 3.0 | Да | Да |
+| Windows 8.1 | SMB 3.0 | Да | Да |
 | Windows Server 2012 R2 | SMB 3.0 | Да | Да |
 | Windows Server 2012 | SMB 3.0 | Да | Да |
 | Windows 7<sup>3</sup> | SMB 2.1 | Да | нет |
@@ -234,13 +234,13 @@ Remove-PSDrive -Name <desired-drive-letter>
 | Windows Server 2019                       | Выключено             | Удаление с помощью функции Windows |
 | Windows Server версии 1709 или выше            | Выключено             | Удаление с помощью функции Windows |
 | Windows 10 версии 1709 или выше                | Выключено             | Удаление с помощью функции Windows |
-| Windows Server 2016                       | Активировано              | Удаление с помощью функции Windows |
-| Windows 10 версии 1507, 1607 и 1703 | Активировано              | Удаление с помощью функции Windows |
-| Windows Server 2012 R2                    | Активировано              | Удаление с помощью функции Windows | 
-| Windows 8.1                               | Активировано              | Удаление с помощью функции Windows | 
-| Windows Server 2012                       | Активировано              | Отключение с помощью реестра       | 
-| Windows Server 2008 R2                    | Активировано              | Отключение с помощью реестра       |
-| Windows 7                                 | Активировано              | Отключение с помощью реестра       | 
+| Windows Server 2016                       | Активировать              | Удаление с помощью функции Windows |
+| Windows 10 версии 1507, 1607 и 1703 | Активировать              | Удаление с помощью функции Windows |
+| Windows Server 2012 R2                    | Активировать              | Удаление с помощью функции Windows | 
+| Windows 8.1                               | Активировать              | Удаление с помощью функции Windows | 
+| Windows Server 2012                       | Активировать              | Отключение с помощью реестра       | 
+| Windows Server 2008 R2                    | Активировать              | Отключение с помощью реестра       |
+| Windows 7                                 | Активировать              | Отключение с помощью реестра       | 
 
 ### <a name="auditing-smb-1-usage"></a>Аудит использования SMB 1
 > Относится к Windows Server 2019, полугодовой канал Windows Server (версии 1709 и 1803), Windows Server 2016, Windows 10 (версии 1507, 1607, 1703, 1709 и 1803), Windows Server 2012 R2 и Windows 8.1

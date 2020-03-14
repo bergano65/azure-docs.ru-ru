@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
 ms.openlocfilehash: 70523dc12f3f20362fcf4a2c3cb456a182038e8a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982248"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280239"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Создание, изменение или удаление виртуальной сети
 
@@ -25,7 +25,7 @@ ms.locfileid: "75982248"
 
 Узнайте, как создать и удалить виртуальную сеть, а также как изменить такие параметры существующей виртуальной сети, как DNS-серверы и пространства IP-адресов. Если у вас нет опыта работы с виртуальными сетями, вы можете получить дополнительные сведения в [обзорной статье](virtual-networks-overview.md) или пройти [учебник](quick-create-portal.md). Виртуальная сеть содержит подсети. Чтобы узнать, как создавать, изменять и удалять подсети, прочитайте статью [Создание, изменение или удаление виртуальной сети](virtual-network-manage-subnet.md).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед выполнением действий, описанных в любом разделе этой статьи, выполните следующие задачи.
 
@@ -171,7 +171,7 @@ ms.locfileid: "75982248"
 
 Для выполнения задач в виртуальных сетях учетной записи должна быть назначена роль [Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) или [пользовательская](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) роль, которой назначены соответствующие действия, перечисленные в следующей таблице.
 
-| Действия                                  |   Имя                                |
+| Действие                                  |   Имя                                |
 |---------------------------------------- |   --------------------------------    |
 |Microsoft.Network/virtualNetworks/read   |   Чтение виртуальной сети.              |
 |Microsoft.Network/virtualNetworks/write  |   Создание или обновление виртуальной сети.  |

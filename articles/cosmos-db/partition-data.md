@@ -7,11 +7,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: cbd171e10cc1a8b27de98d9d4d779f345ac5a3ed
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371607"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246621"
 ---
 # <a name="partitioning-and-horizontal-scaling-in-azure-cosmos-db"></a>Секционирование и горизонтальное масштабирование в Azure Cosmos DB
 
@@ -37,7 +37,7 @@ ms.locfileid: "78371607"
 
 В отличие от логических, физические секции являются внутренней реализацией системы. Нельзя управлять размером, размещением или количеством физических секций, а также управлять сопоставлением между логическими и физическими секциями. Однако можно управлять числом логических секций и распределением данных, рабочей нагрузки и пропускной способности, [выбрав правильный ключ логической секции](partitioning-overview.md#choose-partitionkey).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как выбрать ключ секции](partitioning-overview.md#choose-partitionkey).
 * Дополнительные сведения о подготовленной пропускной способности в базе данных Azure Cosmos DB см. в [этой статье](request-units.md).

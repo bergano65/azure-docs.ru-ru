@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: 7c77527b7300c1149e96c94a4dbe122da226ac6d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382559"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280824"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door-service"></a>Поддержка протокола для заголовков HTTP в службе "Передняя дверь" Azure
 В этой статье описывается протокол, поддерживаемый службой Front дверь с частями пути вызова (см. изображение). В следующих разделах содержатся дополнительные сведения о заголовках HTTP, поддерживаемых службой Front дверь.
@@ -53,7 +53,7 @@ ms.locfileid: "78382559"
 | ------------- | ------------- |
 | X — Azure-ref |  *X-Azure-ref: 0zxV + XAAAAABKMMOjBv2NT4TY6SQVjC0zV1NURURHRTA2MTkANDM3YzgyY2QtMzYwYS00YTU0LTk0YzMtNWZmNzA3NjQ3Nzgz* </br> Это уникальная эталонная строка, которая идентифицирует запрос, обслуженный Front Door. Это важно для устранения неполадок, так как оно используется для поиска в журналах доступа.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание передней дверцы](quickstart-create-front-door.md)
 - [Принцип работы передней дверцы](front-door-routing-architecture.md)

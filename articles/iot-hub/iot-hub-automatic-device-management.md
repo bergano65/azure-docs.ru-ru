@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: chrisgre
 ms.openlocfilehash: 75c6b7d89e7ae540e7428afde127281aa3f15fc6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75429329"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79271308"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-portal"></a>Автоматическое управление устройствами IoT и модулем с помощью портал Azure
 
@@ -106,7 +106,7 @@ ms.locfileid: "75429329"
 
 2. Введите запрос для параметра **Metric Criteria** (Критерии метрики).  Запрос основан на сообщаемых свойствах двойников устройств.  Метрика представляет количество строк, возвращаемых запросом.
 
-Пример.
+Пример:
 
 ```sql
 SELECT deviceId FROM devices 
@@ -121,7 +121,7 @@ SELECT deviceId FROM devices
   WHERE configurations.[[yourconfigname]].status='Applied'
 ```
 
-Если вы собираете метрику для создания отчета о настроенных модулях, выберите `moduleId` из `devices.modules`. Пример.
+Если вы собираете метрику для создания отчета о настроенных модулях, выберите `moduleId` из `devices.modules`. Пример:
 
 ```sql
 SELECT deviceId, moduleId FROM devices.modules

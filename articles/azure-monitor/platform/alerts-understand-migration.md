@@ -7,11 +7,11 @@ ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
 ms.openlocfilehash: 8cc77d13567910797cd519ac193b848f3ea434da
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384554"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274818"
 ---
 # <a name="understand-how-the-migration-tool-works"></a>Принципы работы средства миграции
 
@@ -134,7 +134,7 @@ ms.locfileid: "78384554"
 
 Для служб учетных записей хранения, таких как BLOB-объекты, таблицы, файлы и очереди, следующие метрики сопоставляются с эквивалентными метриками, как показано ниже.
 
-| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Comments|
+| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Комментарии|
 |--------------------------|---------------------------------|---------|
 | AnonymousAuthorizationError| Метрика транзакций с измерениями «ResponseType» = «AuthorizationError» и «Authentication» = «Anonymous»| |
 | AnonymousClientOtherError | Метрика транзакций с измерениями «ResponseType» = «Клиентосереррор» и «Authentication» = «Anonymous» | |
@@ -161,17 +161,17 @@ ms.locfileid: "78384554"
 | SASSuccess | Метрика транзакций с измерениями "ResponseType" = "Success" и "Authentication" = "SAS" | |
 | ServerOtherError | Метрика транзакций с измерениями "ResponseType" = "Серверосереррор" | |
 | ServerTimeOutError | Метрика транзакций с измерениями "ResponseType" = "ServerTimeOutError"  | |
-| Выполнено | Метрика транзакций с измерениями "ResponseType" = "Success" | |
-| TotalBillableRequests| Транзакции | |
+| Успешно | Метрика транзакций с измерениями "ResponseType" = "Success" | |
+| TotalBillableRequests| Transactions | |
 | TotalEgress | Исходящие | |
 | TotalIngress | Входящий трафик | |
-| TotalRequests | Транзакции | |
+| TotalRequests | Transactions | |
 
 ### <a name="microsoftinsightscomponents"></a>Microsoft. Insights/компоненты
 
 Для Application Insights эквивалентными метриками могут быть, как показано ниже:
 
-| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Comments|
+| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Комментарии|
 |--------------------------|---------------------------------|---------|
 | доступность. Аваилабилитиметрик. значение | availabilityResults/Аваилабилитиперцентаже|   |
 | доступность. Дуратионметрик. значение | availabilityResults/duration| Умножьте исходное пороговое значение на 1000 в качестве единиц для классической метрики в секундах, а для новой — в миллисекундах.  |
@@ -201,7 +201,7 @@ ms.locfileid: "78384554"
 
 Для Cosmos DB эквивалентными метриками могут быть, как показано ниже:
 
-| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Comments|
+| Метрика в классических оповещениях | Эквивалентная метрика в новых предупреждениях | Комментарии|
 |--------------------------|---------------------------------|---------|
 | AvailableStorage     |AvailableStorage|   |
 | Размер данных | DataUsage| |
@@ -270,7 +270,7 @@ ms.locfileid: "78384554"
 - Исключение подписок или групп ресурсов на время процесса миграции из назначения политики. Дополнительные [сведения об управлении областью исключения политик](../../governance/policy/tutorials/create-and-manage.md#exempt-a-non-compliant-or-denied-resource-using-exclusion).
 - Удаление или изменение влияния на "Audit" или "Append" (например, может решить проблемы, связанные с отсутствующими тегами). Дополнительные [сведения об управлении последствиями политик](../../governance/policy/concepts/definition-structure.md#policy-rule).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Подготовка к миграции](alerts-prepare-migration.md)

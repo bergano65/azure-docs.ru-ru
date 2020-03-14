@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 4cb832f8fe11ac2581e97d9cdcc777eaff702ee9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231470"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278198"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Диагностика в Устойчивых функциях в Azure
 
@@ -150,7 +150,7 @@ traces
 
 ![Запрос Application Insights](./media/durable-functions-diagnostics/app-insights-single-summary-query.png)
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Logging
 
 Очень важно помнить о поведении воспроизведения оркестратора при записи журналов непосредственно из функции оркестратора. Например, рассмотрим следующую функцию оркестратора:
 
@@ -381,7 +381,7 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 > [!TIP]
 > При задании точек останова в функциях Orchestrator, если требуется только прерывание выполнения без воспроизведения, можно задать условную точку останова, которая будет прерываться, только если `IsReplaying` `false`.
 
-## <a name="storage"></a>Служба хранилища
+## <a name="storage"></a>Память
 
 По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Такое поведение означает, что вы можете проверить состояние оркестрации с помощью таких средств, как [Обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 
@@ -392,7 +392,7 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 > [!WARNING]
 > Хотя просматривать журнал выполнения в службе таблиц более удобно, избегайте использования зависимостей в таблице. Они могут измениться при развитии расширения устойчивых функций.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о мониторинге в функциях Azure](../functions-monitoring.md)

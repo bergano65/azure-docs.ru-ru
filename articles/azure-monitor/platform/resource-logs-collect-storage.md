@@ -8,16 +8,16 @@ ms.date: 12/15/2019
 ms.author: bwren
 ms.subservice: logs
 ms.openlocfilehash: 843c179826b2064a1be24d3cee84b398987b4aed
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394932"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274220"
 ---
 # <a name="archive-azure-resource-logs-to-storage-account"></a>Архивация журналов ресурсов Azure в учетную запись хранения
 [Журналы платформы](platform-logs-overview.md) в Azure, в том числе журнал действий Azure и журналы ресурсов, предоставляют подробные сведения о диагностике и аудите для ресурсов Azure и платформы Azure, от которых они зависят.  В этой статье описывается сбор журналов платформы в учетную запись хранения Azure для хранения данных для архивирования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Если у вас еще нет [учетной записи хранения Azure](../../storage/common/storage-account-create.md) , ее необходимо создать. Учетная запись хранения не обязательно должна находиться в той же подписке, что и журнал, отправляющий журналы, если пользователь, настроив параметр, имеет соответствующий доступ RBAC к обеим подпискам.
 
 
@@ -60,7 +60,7 @@ insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/xxxxxxxx
 > [!NOTE]
 > Журналы платформы записываются в хранилище BLOB-объектов с помощью [строк JSON](http://jsonlines.org/), где каждое событие является линией, а символ новой строки обозначает новое событие. Этот формат был реализован в ноябре 2018. До этой даты журналы были записаны в хранилище BLOB-объектов в виде массива записей JSON, как описано в разделе [Подготовка к изменению формата для Azure Monitor журналов платформы, архивов которых является учетная запись хранения](resource-logs-blob-format.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения см. в статье о журналах ресурсов](platform-logs-overview.md).
 * [Создайте параметр диагностики для сбора журналов и метрик в Azure](diagnostic-settings.md).

@@ -3,12 +3,12 @@ title: Справочник разработчика Python. Функции Azur
 description: Сведения о разработке функций на языке Python
 ms.topic: article
 ms.date: 12/13/2019
-ms.openlocfilehash: 1b94cb51bcb4e2634cdb04c389efbab44bb024bb
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: 30f40db33b6aa8b40202c023f301265565257180
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78206339"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276690"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -65,16 +65,16 @@ def main(req: azure.functions.HttpRequest) -> str:
 
 ```
  __app__
- | - MyFirstFunction
+ | - my_first_function
  | | - __init__.py
  | | - function.json
  | | - example.py
- | - MySecondFunction
+ | - my_second_function
  | | - __init__.py
  | | - function.json
- | - SharedCode
- | | - myFirstHelperFunction.py
- | | - mySecondHelperFunction.py
+ | - shared_code
+ | | - my_first_helper_function.py
+ | | - my_second_helper_function.py
  | - host.json
  | - requirements.txt
  tests
@@ -89,19 +89,47 @@ def main(req: azure.functions.HttpRequest) -> str:
 
 У каждой функции есть собственный файл кода и файл конфигурации привязки. 
 
-Общий код должен храниться в отдельной папке в \_\_приложении\_\_. Для ссылок на модули в папке SharedCode можно использовать следующий синтаксис:
-
-```python
-from __app__.SharedCode import myFirstHelperFunction
-```
-
-Для ссылки на модули, локальные для функции, можно использовать синтаксис относительного импорта следующим образом:
-
-```python
-from . import example
-```
-
 При развертывании проекта в приложении-функции в Azure все содержимое главного проекта ( *\_\_приложения\_\_* ) должно быть включена в пакет, но не в саму папку. Рекомендуется хранить тесты в папке, отдельной от папки проекта, в этом примере `tests`. Это позволяет не развертывать тестовый код в приложении. Дополнительные сведения см. в разделе [модульное тестирование](#unit-testing).
+
+## <a name="import-behavior"></a>Поведение при импорте
+
+Вы можете импортировать модули в коде функции, используя явные относительные и абсолютные ссылки. В зависимости от показанной выше структуры папок следующие операции импорта работают из файла функции *\_\_приложение\_\_\\_первая\_функция\\_\_init\_\_. Корректировка*:
+
+```python
+from . import example #(explicit relative)
+```
+
+```python
+from ..shared_code import my_first_helper_function #(explicit relative)
+```
+
+```python
+from __app__ import shared_code #(absolute)
+```
+
+```python
+import __app__.shared_code #(absolute)
+```
+
+Следующие операции импорта *не работают* в одном и том же файле:
+
+```python
+import example
+```
+
+```python
+from example import some_helper_code
+```
+
+```python
+import shared_code
+```
+
+Общий код должен храниться в отдельной папке в *\_\_приложении\_\_* . Для ссылки на модули в *общей папке\_Code* можно использовать следующий синтаксис:
+
+```python
+from __app__.shared_code import my_first_helper_function
+```
 
 ## <a name="triggers-and-inputs"></a>Триггеры и входные данные
 
@@ -158,7 +186,7 @@ def main(req: func.HttpRequest,
 При активации этой функции HTTP-запрос передается в функцию с помощью `req`. Запись будет извлечена из хранилища больших двоичных объектов Azure на основе _идентификатора_ в URL-адресе маршрута и стала доступна как `obj` в теле функции.  Здесь указанная учетная запись хранения является строкой подключения в параметре приложения AzureWebJobsStorage, которая является той же учетной записью хранения, используемой приложением-функцией.
 
 
-## <a name="outputs"></a>Outputs
+## <a name="outputs"></a>Выходные данные
 
 Выходные данные можно выразить как возвращаемое значение или параметры вывода. Если используется только один вывод, мы рекомендуем использовать возвращаемое значение. Для нескольких выводов нужно использовать параметры вывода.
 
@@ -220,7 +248,7 @@ def main(req):
 
 Доступны и другие методы ведения журнала, которые позволяют выводить сообщения в консоль на разных уровнях трассировки.
 
-| Метод                 | Описание                                |
+| Метод                 | Description                                |
 | ---------------------- | ------------------------------------------ |
 | **`critical(_message_)`**   | Записывает сообщение с уровнем CRITICAL в корневое средство ведения журнала.  |
 | **`error(_message_)`**   | Записывает сообщение с уровнем ERROR в корневое средство ведения журнала.    |
@@ -276,7 +304,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 В таких случаях можно повысить производительность, применяя асинхронные шаблоны и используя несколько языковых рабочих процессов.
 
-### <a name="async"></a>Async
+### <a name="async"></a>Асинхронный режим
 
 Поскольку Python является однопотоковым временем выполнения, экземпляр узла для Python может одновременно обрабатывать только один вызов функции. Для приложений, обрабатывающих большое количество событий ввода-вывода и/или связанных с вводом-выводом, можно повысить производительность, выполняя функции асинхронно.
 
@@ -306,7 +334,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 Чтобы получить контекст вызова функции во время выполнения, включите в сигнатуру аргумент [`context`](/python/api/azure-functions/azure.functions.context?view=azure-python) . 
 
-Например:
+Пример:
 
 ```python
 import azure.functions
@@ -366,7 +394,18 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 ## <a name="python-version"></a>Версия Python 
 
-В настоящее время функции Azure поддерживают как Python 3.6. x, так и 3.7. x (официальное распространение CPython). При локальном запуске среда выполнения использует доступную версию Python. Чтобы запросить конкретную версию Python при создании приложения-функции в Azure, используйте параметр `--runtime-version` команды [`az functionapp create`](/cli/azure/functionapp#az-functionapp-create) . Изменение версии разрешено только при создании приложение-функция.  
+Функции Azure поддерживают следующие версии Python:
+
+| Версия службы "Функции" | Версии<sup>*</sup> Python |
+| ----- | ----- |
+| 3.x | 3.8<br/>3,7<br/>3.6 |
+| 2.x | 3,7<br/>3.6 |
+
+<sup>*</sup> Официальные дистрибутивы CPython
+
+Чтобы запросить конкретную версию Python при создании приложения-функции в Azure, используйте параметр `--runtime-version` команды [`az functionapp create`](/cli/azure/functionapp#az-functionapp-create) . Версия среды выполнения функций задается параметром `--functions-version`. Версия Python задается при создании приложения-функции и не может быть изменена.  
+
+При локальном запуске среда выполнения использует доступную версию Python. 
 
 ## <a name="package-management"></a>Управление пакетами
 
@@ -627,9 +666,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 Этот метод HTTP используется веб-браузерами для согласования списка разрешенных источников. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих источниках.
+Для получения дополнительных сведений см. следующие ресурсы:
 
 * [Документация по API пакета функций Azure](/python/api/azure-functions/azure.functions?view=azure-python)
 * [Рекомендации по функциям Azure](functions-best-practices.md)

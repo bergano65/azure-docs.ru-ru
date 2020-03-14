@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: ff01aed92669acb193ff149ea9298550134f42a3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391748"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257060"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
 В этой статье описано, как настроить исходное локальное окружение для репликации виртуальных машин VMware в Azure. Эта статья содержит инструкции по выбору сценария репликации, настройке локального компьютера в качестве сервера конфигурации Site Recovery и автоматическому обнаружению локальных виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что вы:
 
@@ -59,7 +59,7 @@ ms.locfileid: "78391748"
 - C:\Program Files\Microsoft Azure Site Recovery Configuration Manager. 
 - C:\Program Files\Microsoft Azure Site Recovery Error Collection Tool. 
   - C:\thirdparty.
-  - C:\Temp
+  - C:\Temp.
   - C:\strawberry.
   - C:\ProgramData\MySQL.
   - C:\Program Files (x86)\MySQL.
@@ -84,5 +84,5 @@ ms.locfileid: "78391748"
 7. Azure Site Recovery каталог установки сервера обработки с балансировкой нагрузки, например: C:\Program Files (x86) \Microsoft Azure Site Recovery
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Настройка целевой среды](./vmware-azure-set-up-target.md) 

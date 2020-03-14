@@ -4,11 +4,11 @@ description: Описание рекомендуемых подходов для
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.openlocfilehash: f623255a64404f0e041173fd29488ded24cd03b3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78389203"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248272"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
 
@@ -32,7 +32,7 @@ ms.locfileid: "78389203"
 
 Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. разделе [Использование связанных шаблонов в при развертывании ресурсов Azure](linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
 
-## <a name="resource-group"></a>Группа ресурсов
+## <a name="resource-group"></a>группа ресурсов.
 
 При развертывании ресурсов в группе ресурсов Группа ресурсов хранит метаданные о ресурсах. Метаданные хранятся в расположении группы ресурсов.
 
@@ -277,7 +277,7 @@ ms.locfileid: "78389203"
    > 
    > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о структуре файла шаблона Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](template-syntax.md).
 * Рекомендации о том, как создавать шаблоны, которые работают во всех облачных средах Azure, см. в статье [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](templates-cloud-consistency.md).

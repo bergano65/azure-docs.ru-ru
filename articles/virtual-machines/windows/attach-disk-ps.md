@@ -8,11 +8,11 @@ ms.date: 10/16/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: ce995a84d2290845e83416caf9c8b0004242eed4
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033685"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267759"
 ---
 # <a name="attach-a-data-disk-to-a-windows-vm-with-powershell"></a>Подключение диска данных к виртуальной машине Windows с помощью PowerShell
 
@@ -115,6 +115,6 @@ $vm = Add-AzVMDataDisk -CreateOption Attach -Lun 0 -VM $vm -ManagedDiskId $disk.
 Update-AzVM -VM $vm -ResourceGroupName $rgName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете развернуть управляемые диски с помощью шаблонов. Дополнительные сведения см. в статьях [Использование управляемых дисков в](using-managed-disks-template-deployments.md) шаблонах Azure Resource Manager или [шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk) быстрого запуска для развертывания нескольких дисков данных.

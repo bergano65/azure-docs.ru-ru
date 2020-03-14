@@ -14,11 +14,11 @@ ms.date: 02/07/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5048cefaae10cd55091dd72f0b73a3cf9d731a35
-ms.sourcegitcommit: 0a9419aeba64170c302f7201acdd513bb4b346c8
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77498845"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253277"
 ---
 # <a name="assign-azure-ad-roles-in-privileged-identity-management"></a>Назначение ролей Azure AD в управление привилегированными пользователями
 
@@ -153,7 +153,7 @@ ms.locfileid: "77498845"
 
     ![Список участников с постоянными ролями](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members-permanent.png)
 
-## <a name="remove-a-user-from-a-role"></a>Удаление пользователя из роли
+## <a name="remove-a-user-from-a-role"></a>Удаляет пользователя из роли
 
 Вы можете удалить пользователей из назначений ролей, но убедитесь, что всегда есть хотя бы один пользователь, являющийся постоянным глобальным администратором. Если вам неизвестно, каким пользователям по-прежнему требуются назначенные им роли, можно [запустить проверку доступа для роли](pim-how-to-start-security-review.md).
 

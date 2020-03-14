@@ -14,11 +14,11 @@ ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
 ms.openlocfilehash: 72c2c90f7a71bd9bf251adb492168fa5d2baa60a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380121"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79244788"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -143,7 +143,7 @@ ms.locfileid: "78380121"
 
 Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конечных точек службы виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

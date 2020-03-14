@@ -6,11 +6,11 @@ ms.subservice: update-management
 ms.date: 03/02/2020
 ms.topic: conceptual
 ms.openlocfilehash: 7f226c4d297d25644b2650d085655f70d8326927
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78373250"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79279030"
 ---
 # <a name="configure-windows-update-settings-for-update-management"></a>Настройка параметров Центр обновления Windows для Управление обновлениями
 
@@ -62,6 +62,6 @@ $ServiceManager.AddService2($ServiceId,7,"")
 
 Чтобы ограничить виртуальные машины только внутренней службой обновления, настройте не [подключаться к центр обновления Windows расположениям в Интернете](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#do-not-connect-to-any-windows-update-internet-locations). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки параметров Центр обновления Windows можно запланировать развертывание обновлений, следуя инструкциям в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).

@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 07/29/2019
 ms.author: memildin
 ms.openlocfilehash: 408b0f020be72b8e6b10dd6c97298afda1b91360
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394639"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245308"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Рекомендации по безопасности в Центре безопасности Azure 
 В этом разделе объясняется, как просмотреть и изучить рекомендации в центре безопасности Azure, которые помогут защитить ресурсы Azure.

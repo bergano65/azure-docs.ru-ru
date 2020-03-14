@@ -4,11 +4,11 @@ description: Описывает функции, используемые в ша
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: 67cb1c1f92694ca217e99fb6528fb1d00f2cfcf6
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207318"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248714"
 ---
 # <a name="comparison-functions-for-azure-resource-manager-templates"></a>Функции сравнения для шаблонов Azure Resource Manager
 
@@ -126,10 +126,10 @@ Resource Manager предоставляет ряд функций для вып�
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkInts | Bool | True |
-| checkStrings | Bool | True |
-| checkArrays | Bool | True |
-| checkObjects | Bool | True |
+| checkInts | Bool | Истина |
+| checkStrings | Bool | Истина |
+| checkArrays | Bool | Истина |
+| checkObjects | Bool | Истина |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -164,7 +164,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkNotEquals | Bool | True |
+| checkNotEquals | Bool | Истина |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -240,7 +240,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | False |
-| checkStrings | Bool | True |
+| checkStrings | Bool | Истина |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -316,7 +316,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | checkInts | Bool | False |
-| checkStrings | Bool | True |
+| checkStrings | Bool | Истина |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -391,7 +391,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkInts | Bool | True |
+| checkInts | Bool | Истина |
 | checkStrings | Bool | False |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
@@ -467,7 +467,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| checkInts | Bool | True |
+| checkInts | Bool | Истина |
 | checkStrings | Bool | False |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:

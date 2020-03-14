@@ -5,11 +5,11 @@ ms.reviewer: saurse
 ms.topic: conceptual
 ms.date: 09/07/2018
 ms.openlocfilehash: e12596b496483b872f76ccd610fd70710327b586
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396809"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248051"
 ---
 # <a name="restore-files-to-windows-by-using-the-azure-resource-manager-deployment-model"></a>Восстановление файлов в Windows с помощью модели развертывания Azure Resource Manager
 
@@ -142,6 +142,6 @@ ms.locfileid: "78396809"
     > Если не нажать кнопку **Отключить**, то том восстановления останется подключенным в течение 6 часов с момента подключения. В случае, если выполняется копирование файлов, время подключения продлевается максимум на 24 часа. И пока он останется подключенным, невозможно будет выполнять какие-либо операции архивации. Все операции резервного копирования, запланированные на период, когда том восстановления подключен, будут выполнены после его отключения.
     >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь после восстановления файлов и папок можно [управлять резервными копиями](backup-azure-manage-windows-server.md).

@@ -11,11 +11,11 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.openlocfilehash: bfae8147c348c76fa0e406fec283144ebc26e86b
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615519"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79270112"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "75615519"
 
 В DSVM поддерживаются следующие инструменты платформы данных.
 
-## <a name="sql-server-developer-edition"></a>SQL Server Developer Edition
+## <a name="sql-server-developer-edition"></a>Выпуск SQL Server Developer
 
 | | |
 | ------------- | ------------- |

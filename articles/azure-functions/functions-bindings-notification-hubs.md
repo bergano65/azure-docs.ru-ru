@@ -6,11 +6,11 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
 ms.openlocfilehash: 211f8c8a203b81a4df6a8e9515b403f99cec572a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371090"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277288"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Выходная привязка Центра уведомлений для службы "Функции Azure"
 
@@ -247,7 +247,7 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `NotificationHub`:
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** |Недоступно| Нужно задать значение `notificationHub`. |
 |**direction** |Недоступно| Нужно задать значение `out`. | 
@@ -296,11 +296,11 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Ссылки |
+| Привязка | Справочник |
 |---|---|
 | Центр уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

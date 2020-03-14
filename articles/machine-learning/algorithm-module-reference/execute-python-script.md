@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 03/10/2020
-ms.openlocfilehash: 52eb3bdb463389d075421661610b5ee94d14d77d
-ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
+ms.openlocfilehash: 3370c7ebb8e0253543e6b9cb6ce7614811fb5bd0
+ms.sourcegitcommit: d322d0a9d9479dbd473eae239c43707ac2c77a77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79037089"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79140796"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -114,7 +114,10 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 }
 ```
 
-После успешной отправки конвейера можно просмотреть изображение на правой панели модуля ![отправленного образа](media/module/upload-image-in-python-script.png)
+После успешной отправки конвейера можно просмотреть изображение на правой панели модуля.
+
+[!div class="mx-imgBorder"]
+![Отправлено —](media/module/upload-image-in-python-script.png) образа
 
 ## <a name="how-to-configure-execute-python-script"></a>Настройка выполнения скрипта Python
 
@@ -132,7 +135,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
     ![Выполнить входную карту Python](media/module/python-module.png)
 
-4. Чтобы включить новые пакеты или код Python, добавьте сжатый ZIP-файл, содержащий эти настраиваемые ресурсы, в **пакет сценариев**. Вход в **пакет сценариев** должен быть ZIP-файлом, переданным в рабочую область в виде набора данных типа файлов. 
+4. Чтобы включить новые пакеты или код Python, добавьте сжатый ZIP-файл, содержащий эти настраиваемые ресурсы, в **пакет сценариев**. Вход в **пакет сценариев** должен быть ZIP-файлом, переданным в рабочую область в виде набора данных типа файлов. Набор данных можно загрузить на странице ресурсов « **наборы** данных», а затем перетащить модуль DataSet из списка **Мои наборы** , расположенного в левом дереве модулей на странице Создание конструктора. 
 
     Любой файл, содержащийся в загруженном ZIP-архиве, можно использовать во время выполнения конвейера. Если архив содержит структуру каталогов, структура сохраняется, но необходимо добавить в путь каталог с именем **src** .
 

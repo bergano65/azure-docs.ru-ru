@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: aahi
-ms.openlocfilehash: 3e5fd2315a5d352ed5abee9253b5c84eea3b73a9
-ms.sourcegitcommit: 6ee876c800da7a14464d276cd726a49b504c45c5
+ms.openlocfilehash: 72b00d78d19ed0e963b4dad01b82033c659e1efd
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77462281"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79219613"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -25,7 +25,7 @@ ms.locfileid: "77462281"
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -34,7 +34,7 @@ ms.locfileid: "77462281"
 
 Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index#az-login) :
 
-```console
+```azurecli-interactive
 az login
 ```
 
@@ -76,7 +76,7 @@ az group create \
 
 ### <a name="multi-service"></a>Несколько служб
 
-| Service                    | Вид                      |
+| Служба                    | Вид                      |
 |----------------------------|---------------------------|
 | Несколько служб. Дополнительные сведения см. на странице с [ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) .            | `CognitiveServices`     |
 
@@ -86,7 +86,7 @@ az group create \
 
 ### <a name="vision"></a>Зрение
 
-| Service                    | Вид                      |
+| Служба                    | Вид                      |
 |----------------------------|---------------------------|
 | API Компьютерного зрения            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
@@ -97,7 +97,7 @@ az group create \
 
 ### <a name="search"></a>Поиск
 
-| Service            | Вид                  |
+| Служба            | Вид                  |
 |--------------------|-----------------------|
 | API Автозаполнения Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
@@ -107,14 +107,14 @@ az group create \
 
 ### <a name="speech"></a>Речь
 
-| Service            | Вид                 |
+| Служба            | Вид                 |
 |--------------------|----------------------|
 | Службы "Речь"    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
 
-| Service            | Вид                |
+| Служба            | Вид                |
 |--------------------|---------------------|
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
@@ -124,7 +124,7 @@ az group create \
 
 ### <a name="decision"></a>Решение
 
-| Service           | Вид               |
+| Служба           | Вид               |
 |-------------------|--------------------|
 | Детектор аномалий  | `AnomalyDetector`  |
 | Content Moderator | `ContentModerator` |
@@ -156,7 +156,7 @@ az cognitiveservices account create \
 
 Чтобы войти в локальную установку интерфейса командной строки (CLI), используйте команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) .
 
-```console
+```azurecli-interactive
 az login
 ```
 
@@ -198,7 +198,7 @@ az cognitiveservices account list-usage \
 az group delete --name cognitive-services-resource-group
 ```
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Что такое Azure Cognitive Services?](Welcome.md)

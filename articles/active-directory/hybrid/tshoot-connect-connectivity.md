@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7519f47037d2d7ff37564ab27c1cc58b65ff6c14
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376043"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253602"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -43,7 +43,7 @@ Azure AD Connect использует для аутентификации сов
 
 Для этих URL-адресов в приведенной ниже таблице показаны минимальные условия, которые должны соблюдаться для подключения к Azure AD. Этот список не включает дополнительные функции, такие как обратная запись паролей или Azure AD Connect Health. Он предназначен только для поиска и устранения неполадок, связанных с начальной конфигурацией.
 
-| URL-адрес | Порт | Описание |
+| URL-адрес | Порт | Description |
 | --- | --- | --- |
 | mscrl.microsoft.com |HTTP/80 |Используется для загрузки списков CRL. |
 | \*.verisign.com |HTTP/80 |Используется для загрузки списков CRL. |
@@ -113,7 +113,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Подключение к Azure AD**
 
-| Время | URL-адрес |
+| Time | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:31 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:31 |connect://adminwebservice.microsoftonline.com:443 |
@@ -124,7 +124,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Настройка**
 
-| Время | URL-адрес |
+| Time | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:43 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:43 |connect://*bba800-anchor*.microsoftonline.com:443 |
@@ -140,7 +140,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Первоначальная синхронизация**
 
-| Время | URL-адрес |
+| Time | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:48 |connect://login.windows.net:443 |
 | 1/11/2016 8:49 |connect://adminwebservice.microsoftonline.com:443 |
@@ -235,5 +235,5 @@ Azure AD Connect использует для аутентификации сов
   ![netshshow](./media/tshoot-connect-connectivity/netshshow.png)
 * Если конфигурация выглядит нормально, выполните действия, описанные в разделе [Проверка подключения прокси-сервера](#verify-proxy-connectivity) , и убедитесь в том, что проблема возникает не только в мастере.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

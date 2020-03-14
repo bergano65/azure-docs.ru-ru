@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/05/2019
 ms.openlocfilehash: 8ec6f32d7db0161cef00330aa38601ba9bdb309d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392712"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245724"
 ---
 # <a name="how-to-configure-server-parameters-in-azure-database-for-mysql-by-using-the-azure-portal"></a>Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure
 
@@ -39,8 +39,8 @@ ms.locfileid: "78392712"
 
 |**Ценовая категория**|**Виртуальные ядра**|**Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 4 ТБ хранилища)**| **Размер InnoDB буферного пула в МБ <br>(серверы, поддерживающие до 16 ТБ хранилища)**|
 |:---|---:|---:|---:|
-|Базовый| 1| 832| |
-|Базовый| 2| 2560| |
+|Basic| 1| 832| |
+|Basic| 2| 2560| |
 |Общее назначение| 2| 3584| 7168|
 |Общее назначение| 4| 7680| 15360|
 |Общее назначение| 8| 15360| 30720|
@@ -102,6 +102,6 @@ SET time_zone = 'US/Pacific';
 
 Описание [функций даты и времени](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_convert-tz) можно прочитать в документации по MySQL.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

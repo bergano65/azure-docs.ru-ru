@@ -9,18 +9,18 @@ ms.service: azure-supportability
 ms.topic: article
 ms.date: 01/23/2020
 ms.author: kfollis
-ms.openlocfilehash: 6218a1089352ce9ee3e2d1d10f3282e64eae8c51
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 28a29bbb94f63657a69e873bb8f969e96ee92c76
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547665"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248493"
 ---
-# <a name="how-to-create-an-azure-support-request"></a>Как создать запрос на получение поддержки Azure
+# <a name="how-to-create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
 ## <a name="overview"></a>Обзор
 
-Клиенты Azure могут создавать запросы на поддержку в [портал Azure](https://portal.azure.com)и управлять ими.
+Azure позволяет создавать запросы на поддержку, также называемые билетами на поддержку, и управлять ими. Вы можете создавать запросы и управлять ими в [портал Azure](https://portal.azure.com), как описано в этой статье. Вы также можете создавать запросы и управлять ими программно с помощью REST API запросов в [службу поддержки Azure](/rest/api/support).
 
 > [!NOTE]
 > URL-адрес портал Azure зависит от облака Azure, в которой развернута ваша организация.
@@ -41,15 +41,15 @@ ms.locfileid: "76547665"
 
 **Справку и поддержку** можно получить в портал Azure. Он доступен в меню портал Azure, в глобальном заголовке или в меню ресурсов для службы. Прежде чем можно будет отправить запрос в службу поддержки, необходимо иметь соответствующие разрешения.
 
-### <a name="role-based-access-control"></a>Контроль доступа на основе ролей
+### <a name="role-based-access-control"></a>Управление доступом на основе ролей
 
-Чтобы создать запрос на поддержку, необходимо быть администратором или назначить роль [участника "запрос поддержки](../../role-based-access-control/built-in-roles.md#support-request-contributor) ".
+Чтобы создать запрос на поддержку, вы должны быть администратором или назначены роли " [участник запроса на поддержку](../../role-based-access-control/built-in-roles.md#support-request-contributor) " на уровне подписки.
 
 ### <a name="go-to-help--support-from-the-global-header"></a>Перейдите в раздел Справка и поддержка из глобального заголовка.
 
 Чтобы начать запрос в службу поддержки из любого места портал Azure:
 
-1. Выберите значок **?** . в глобальном заголовке. Затем выберите **Справка и поддержка**.
+1. Выберите **?** в глобальном заголовке. Затем выберите **Справка и поддержка**.
 
    ![Справка и поддержка](./media/how-to-create-azure-support-request/helpandsupportnewlower.png)
 

@@ -15,17 +15,17 @@ ms.topic: conceptual
 ms.date: 12/01/2019
 ms.author: b-juche
 ms.openlocfilehash: 9e8817f802ca1d73ca0f6bfa2b32b1b14b37d7da
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74773557"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274090"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
-Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1) и SMBv3. При использовании емкости тома учитывается подготовленная емкость пула. В этой статье показано, как создать том NFS. Если вы хотите создать том SMB, см. раздел [Создание тома SMB для Azure NetApp Files](azure-netapp-files-create-volumes-smb.md). 
+Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1) и SMBv3. Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том NFS. Если вы хотите создать том SMB, см. раздел [Создание тома SMB для Azure NetApp Files](azure-netapp-files-create-volumes-smb.md). 
 
-## <a name="before-you-begin"></a>Перед началом работы 
+## <a name="before-you-begin"></a>Перед началом 
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
@@ -36,7 +36,7 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 * Выбор используемой версии NFS  
   NFSv3 может поддерживать широкий спектр вариантов использования и обычно развертывается в большинстве корпоративных приложений. Необходимо проверить, какая версия (NFSv3 или Нфсв 4.1) требуется приложению, и создать том с использованием соответствующей версии. Например, при использовании [Apache активемк](https://activemq.apache.org/shared-file-system-master-slave)рекомендуется блокировать файл с помощью нфсв 4.1 вместо NFSv3. 
 
-* Безопасность  
+* безопасность  
   Поддержка бит в режиме UNIX (чтение, запись и выполнение) доступна для NFSv3 и Нфсв 4.1. Для подключения томов NFS требуется доступ на корневом уровне к клиенту NFS.
 
 * Поддержка локальных пользователей и групп и LDAP для Нфсв 4.1  

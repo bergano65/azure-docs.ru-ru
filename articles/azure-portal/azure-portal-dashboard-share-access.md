@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 01/29/2020
 ms.author: mblythe
 ms.openlocfilehash: e8d251cef9e67cb8fc0c11df8ce546383f75a679
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78389712"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248467"
 ---
 # <a name="share-azure-dashboards-by-using-role-based-access-control"></a>Предоставление общего доступа к панелям мониторинга Azure с помощью управления доступом на основе ролей
 
@@ -36,8 +36,8 @@ ms.locfileid: "78389712"
 
 С помощью управления доступом на основе ролей пользователям можно назначать роли на трех разных уровнях:
 
-* подписка
-* группа ресурсов
+* Подписка
+* resource group
 * ресурс
 
 Назначенные разрешения наследуются от подписки к ресурсу. Опубликованная панель мониторинга — это ресурс. Возможно, у вас уже есть пользователи, которым назначены роли для подписки, которая применяется к опубликованной панели мониторинга.
@@ -90,7 +90,7 @@ ms.locfileid: "78389712"
 
     ![назначенные роли](./media/azure-portal-dashboard-share-access/assigned-roles.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Список ролей см. [в статье встроенные роли для ресурсов Azure](../role-based-access-control/built-in-roles.md).
 * Дополнительные сведения об управлении ресурсами см. [в статье Управление ресурсами Azure с помощью портал Azure](resource-group-portal.md).

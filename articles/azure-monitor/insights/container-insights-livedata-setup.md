@@ -4,11 +4,11 @@ description: В этой статье описывается, как настр�
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.openlocfilehash: f19071ca642cd229cbd7d49b4eab90c970672eee
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395376"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275377"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -140,6 +140,6 @@ AKS выпустил эту новую привязку роли в январе
 
 Дополнительные сведения о настройке **клустерролебиндинг**кластера AKS см. в разделе [Создание привязки RBAC](../../aks/azure-ad-integration-cli.md#create-rbac-binding).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили проверку подлинности, вы можете просматривать в кластере [метрики](container-insights-livedata-metrics.md), [развертывания](container-insights-livedata-deployments.md), [события и журналы](container-insights-livedata-overview.md) в реальном времени.

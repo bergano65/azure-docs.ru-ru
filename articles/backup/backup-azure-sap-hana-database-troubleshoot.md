@@ -4,11 +4,11 @@ description: Описание способов устранения распро
 ms.topic: troubleshooting
 ms.date: 11/7/2019
 ms.openlocfilehash: 8872cfe87df9b8d0553d777f72fe7102d08dea4d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382498"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273297"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Устранение неполадок резервного копирования баз данных SAP HANA в Azure
 
@@ -124,6 +124,6 @@ ms.locfileid: "78382498"
 - Повторно запустите [сценарий предварительной регистрации](https://aka.ms/scriptforpermsonhana). Как правило, мы обнаружили, что процесс обновления удаляет необходимые роли. Выполнение скрипта предварительной регистрации поможет проверить все необходимые роли.
 - Снова [возобновите защиту](sap-hana-db-manage.md#resume-protection-for-an-sap-hana-database) базы данных
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [часто задаваемыми вопросами](https://docs.microsoft.com/azure/backup/sap-hana-faq-backup-azure-vm) о резервном копировании SAP HANA баз данных на виртуальных машинах Azure]

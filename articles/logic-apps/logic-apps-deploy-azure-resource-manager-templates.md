@@ -7,11 +7,11 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/01/2019
 ms.openlocfilehash: 95bfa7b1918da09e4f5913eeb2b57c290b093efe
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78162387"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79270450"
 ---
 # <a name="deploy-azure-resource-manager-templates-for-azure-logic-apps"></a>Развертывание шаблонов Azure Resource Manager для Azure Logic Apps
 
@@ -126,7 +126,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Если вместо авторизации подключений используется [субъект-служба](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory (Azure AD), Узнайте, как [указать параметры субъекта — службы в шаблоне приложения логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#authenticate-connections).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Мониторинг приложений логики](../logic-apps/monitor-logic-apps.md)

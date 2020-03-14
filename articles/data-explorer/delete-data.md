@@ -1,41 +1,56 @@
 ---
 title: Удаление данных из обозревателя данных Azure
-description: В этой статье описаны сценарии массового удаления данных в обозревателе данных Azure, включая очистку и удаление на основе срока хранения.
+description: В этой статье описываются сценарии удаления в Azure обозреватель данных, включая очистку, удаление экстентов и удаление на основе хранения.
 author: orspod
 ms.author: orspodek
-ms.reviewer: mblythe
+ms.reviewer: avneraa
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 9c1b21e119a38c6d306b9c564ab7958ba21a1c41
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 03/12/2020
+ms.openlocfilehash: 681cfd71d2666630b192935d66ba32eaf16c92de
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60445674"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204619"
 ---
 # <a name="delete-data-from-azure-data-explorer"></a>Удаление данных из обозревателя данных Azure
 
-Обозреватель данных Azure поддерживает несколько методик массового удаления, которые рассматриваются в этой статье. Он не поддерживает удаление отдельных записей в режиме реального времени, так как оптимизирован для быстрого доступа на чтение.
+Azure обозреватель данных поддерживает различные сценарии удаления, описанные в этой статье. 
 
-* Если не нужна одна или несколько таблиц, удалите их с помощью команды drop table или drop tables.
+## <a name="delete-data-using-the-retention-policy"></a>Удаление данных с помощью политики хранения
 
-    ```Kusto
-    .drop table <TableName>
+Azure обозреватель данных автоматически удаляет данные на основе [политики хранения](/azure/kusto/management/retentionpolicy). Этот метод является наиболее эффективным и нетрудоемким способом удаления данных. Задайте политику хранения на уровне базы данных или таблицы.
 
-    .drop tables (<TableName1>, <TableName2>,...)
+Рассмотрим базу данных или таблицу со сроком хранения в 90 дней. Если требуются данные только 60 дней, удалите старые данные следующим образом:
+
+```kusto
+.alter-merge database <DatabaseName> policy retention softdelete = 60d
+
+.alter-merge table <TableName> policy retention softdelete = 60d
+```
+
+## <a name="delete-data-by-dropping-extents"></a>Удаление данных путем удаления экстентов
+
+[Экстент (сегмент данных)](/azure/kusto/management/extents-overview) — это внутренняя структура, в которой хранятся данные. Каждый экстент может содержать до миллиона записей. Экстенты можно удалять по отдельности или в виде группы с помощью [команд DROP экстента (s)](/azure/kusto/management/extents-commands#drop-extents). 
+
+### <a name="examples"></a>Примеры
+
+Можно удалить все строки в таблице или только конкретный экстент.
+
+* Удалить все строки в таблице:
+
+    ```kusto
+    .drop extents from TestTable
     ```
 
-* Если хранить старые данные больше не требуется, удалите их изменив срок хранения на уровне базы данных или таблицы.
+* Удаление определенного экстента:
 
-    Рассмотрим базу данных или таблицу со сроком хранения в 90 дней. Потребности компании изменились, так что теперь требуется хранить данные только в течение 60 дней. В этом случае можно удалить устаревшие данные одним из следующих способов.
-
-    ```Kusto
-    .alter-merge database <DatabaseName> policy retention softdelete = 60d
-
-    .alter-merge table <TableName> policy retention softdelete = 60d
+    ```kusto
+    .drop extent e9fac0d2-b6d5-4ce3-bdb4-dea052d13b42
     ```
 
-    Дополнительные сведения см. в статье [Retention policy](https://docs.microsoft.com/azure/kusto/concepts/retentionpolicy) (Политика хранения).
+## <a name="delete-individual-rows-using-purge"></a>Удаление отдельных строк с помощью функции очистки
 
-Если вам нужна помощь в устранении проблем с удалением данных, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
+[Очистка данных](/azure/kusto/management/data-purge) может использоваться для удаления строк отдельных пользователей. Удаление не производится немедленно и требует значительных системных ресурсов. Таким образом, рекомендуется только для сценариев соответствия требованиям.  
+

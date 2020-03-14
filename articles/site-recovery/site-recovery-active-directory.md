@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: 8c1f85217db12b60cdcd8ea0bdb65792b8d02648
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084580"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257814"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
 
@@ -22,10 +22,10 @@ ms.locfileid: "74084580"
 
 Из этой статьи вы узнаете, как создать решение аварийного восстановления для Active Directory. Здесь указаны предварительные требования и инструкции по отработке отказа. Перед началом работы необходимо ознакомиться с Active Directory и Site Recovery.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
 * Если выполняется репликация в Azure, [подготовьте ресурсы Azure](tutorial-prepare-azure.md), включая подписку, виртуальную сеть Azure, учетную запись хранения и хранилище служб восстановления.
-* Ознакомьтесь с [требованиями поддержки ](site-recovery-support-matrix-to-azure.md) для всех компонентов.
+* [Ознакомьтесь](site-recovery-support-matrix-to-azure.md) с требованиями поддержки для всех компонентов.
 
 ## <a name="replicate-the-domain-controller"></a>Репликация контроллера домена
 
@@ -207,5 +207,5 @@ Site Recovery можно использовать для защиты вирту
 
     `dnscmd /config contoso.com /allowupdate 1`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о [защите корпоративных приложений с помощью службы Azure Site Recovery](site-recovery-workload.md).

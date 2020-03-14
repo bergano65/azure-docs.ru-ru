@@ -13,11 +13,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 75fdc59b9110c3bfc29fe52be917a7d6e6636b8a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376294"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253589"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -27,11 +27,11 @@ ms.locfileid: "78376294"
 
 В таблице ниже приведен список связанных разделов.
 
-Раздел |  Подробности
+Раздел |  Сведения
 --------- | --------- |
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Разрешения, необходимые для установки обновления, см. в [этом](reference-connect-accounts-permissions.md#upgrade) разделе.
-Загрузить| [Скачать Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771)
+Скачивание| [Скачать Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771)
 
 >[!NOTE]
 >Выпуск новой версии Azure AD Connect — это процесс, который требует нескольких действий по контролю качества, чтобы обеспечить функциональность службы, и пока мы проверим этот процесс, будет обновлен номер версии нового выпуска, а также состояние выпуска. для отражения последнего состояния.
@@ -496,7 +496,7 @@ ms.locfileid: "78376294"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-Тип     | Имя                          | доступ               | Применимо к
+Тип     | Имя                          | Доступ               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 Разрешение    | SYSTEM                        | Полный доступ         | этому объекту  |
 Разрешение    | Администраторы предприятия             | Полный доступ         | этому объекту  |
@@ -505,9 +505,9 @@ ms.locfileid: "78376294"
 Разрешение    | Контроллеры домена предприятия | Вывод списка содержимого        | этому объекту  |
 Разрешение    | Контроллеры домена предприятия | Чтение всех свойств  | этому объекту  |
 Разрешение    | Контроллеры домена предприятия | Разрешения на чтение     | этому объекту  |
-Разрешение    | Прошедшие проверку           | Вывод списка содержимого        | этому объекту  |
-Разрешение    | Прошедшие проверку           | Чтение всех свойств  | этому объекту  |
-Разрешение    | Прошедшие проверку           | Разрешения на чтение     | этому объекту  |
+Разрешение    | Прошедшие проверку пользователи           | Вывод списка содержимого        | этому объекту  |
+Разрешение    | Прошедшие проверку пользователи           | Чтение всех свойств  | этому объекту  |
+Разрешение    | Прошедшие проверку пользователи           | Разрешения на чтение     | этому объекту  |
 
 Чтобы настроить параметры для учетной записи службы AD DS, можно выполнить [этот скрипт PowerShell](https://gallery.technet.microsoft.com/Prepare-Active-Directory-ef20d978). Скрипт PowerShell назначит указанные выше разрешения учетной записи AD DS.
 
@@ -530,7 +530,7 @@ Where
 >[!NOTE] 
 >$credential.UserName необходимо указывать в формате "FQDN\имя_пользователя". Пример: contoso.com\admin. 
 
-##### <a name="example"></a>Пример.
+##### <a name="example"></a>Пример
 
 ```powershell
 Set-ADSyncRestrictedPermissions -ObjectDN "CN=TestAccount1,CN=Users,DC=bvtadwbackdc,DC=com" -Credential $credential 
@@ -839,9 +839,9 @@ CBool(
     |CertFriendlyName|CertThumbprint|CertExtensionOids|
     |CertFormat|CertNotAfter|CertPublicKeyOid|
     |CertSerialNumber|CertNotBefore|CertPublicKeyParametersOid|
-    |CertVersion|CertSignatureAlgorithmOid|Выбрать|
+    |CertVersion|CertSignatureAlgorithmOid|Выберите пункт|
     |CertKeyAlgorithmParams|CertHashString|Where|
-    |||На|
+    |||With|
 
 * Чтобы разрешить пользователям создавать пользовательские правила синхронизации для потока sAMAccountName, domainNetBios и domainFQDN для объектов-групп, а также distinguishedName для объектов-пользователей, были введены следующие изменения схемы:
 
@@ -1358,5 +1358,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

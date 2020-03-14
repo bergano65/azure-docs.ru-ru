@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.subservice: alerts
 ms.openlocfilehash: c1ca85ba9c79f828b5ddcf0d640cfe7f8b6e097c
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77668015"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79249442"
 ---
 # <a name="switch-api-preference-for-log-alerts"></a>Переключение предпочтений API для оповещений журнала
 
@@ -111,7 +111,7 @@ armclient GET /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor](alerts-unified-log.md).
 - Узнайте о том, как создать [журнал оповещений в оповещениях Azure](alerts-log.md).

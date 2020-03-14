@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
 ms.openlocfilehash: 46d566dc7527097d36b72886ada1f8c94f727535
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198757"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79285140"
 ---
 # <a name="load-balancer-health-probes"></a>Пробы работоспособности Load Balancer
 
@@ -243,7 +243,7 @@ UDP не требует соединения, поэтому состояние 
 
 Не включайте [метки времени протокола TCP](https://tools.ietf.org/html/rfc1323).  Включение отметок времени TCP может вызвать сбой пробы работоспособности из-за разрыва пакетов TCP в стеке TCP гостевой ОС виртуальной машины, что приводит к Load Balancer пометке соответствующей конечной точки.  Метки времени протокола TCP обычно включены по умолчанию на защищенных образах виртуальных машин и должны быть отключены.
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 Как общедоступные, так и внутренние [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md) предоставляют состояние зонда работоспособности для конечных точек и внутренних конечных точек как многомерные метрики с помощью Azure Monitor. Эти метрики можно использовать в других службах Azure или партнерских приложениях. 
 
@@ -254,7 +254,7 @@ UDP не требует соединения, поэтому состояние 
 - Пробы HTTPS не поддерживают взаимную проверку подлинности с помощью сертификата клиента.
 - При включении отметок времени TCP следует предположить, что зонды работоспособности завершаются ошибкой.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 - [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell](quickstart-create-standard-load-balancer-powershell.md)

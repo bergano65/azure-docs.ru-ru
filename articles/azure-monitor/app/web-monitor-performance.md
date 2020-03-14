@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 05/10/2018
 ms.reviewer: sdash
 ms.openlocfilehash: e398f23559729580ae4ad8b6507c2f09328052b5
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384159"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275624"
 ---
 # <a name="monitor-performance-in-web-applications"></a>Отслеживание производительности в веб-приложениях
 
@@ -46,7 +46,7 @@ Application Insights можно отслеживать веб-приложени
 ## <a name="metrics"></a>Что все это означает? Плитки и отчеты о производительности
 Имеются различные метрики производительности, которые можно получить. Начнем с тех, которые отображаются в колонке приложения по умолчанию.
 
-### <a name="requests"></a>Запросы
+### <a name="requests"></a>Requests
 Это число HTTP-запросов, полученных за указанный период. Сравните это значение с результатами в других отчетах, чтобы узнать, как ведет себя приложение при изменении нагрузки.
 
 HTTP-запросы включают в себя все запросы GET и POST для страниц, данных и изображений.

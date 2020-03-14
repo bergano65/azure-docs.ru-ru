@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 09/17/2018
 ms.subservice: alerts
 ms.openlocfilehash: 9f61c62bc4960cb8e5bff31f84bd73a14240b613
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78368025"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274974"
 ---
 # <a name="create-metric-alerts-for-logs-in-azure-monitor"></a>Создание оповещений о метриках для журналов в Azure Monitor
 
@@ -685,7 +685,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile metricfrom
 az group deployment create --resource-group myRG --template-file metricfromLogsAlertDynamic.json --parameters @metricfromLogsAlertDynamic.parameters.json
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения об [оповещениях о метриках](alerts-metric.md).
 - Ознакомьтесь со сведениями об [оповещениях журналов в Azure](../../azure-monitor/platform/alerts-unified-log.md).

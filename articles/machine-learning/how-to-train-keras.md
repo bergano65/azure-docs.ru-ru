@@ -12,11 +12,11 @@ ms.reviewer: peterlu
 ms.date: 08/01/2019
 ms.custom: seodec18
 ms.openlocfilehash: ba7976d602412037578d0a324916718b2d515aac
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771791"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269969"
 ---
 # <a name="train-and-register-a-keras-classification-model-with-azure-machine-learning"></a>Обучение и регистрация модели классификации keras с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -29,7 +29,7 @@ Keras — это высокоуровневый API нейронной сети,
 
 Сведения о различиях между машинным обучением и глубоким обучением см. в этой [статье](concept-deep-learning-vs-machine-learning.md) .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Запустите этот код в любой из этих сред:
 

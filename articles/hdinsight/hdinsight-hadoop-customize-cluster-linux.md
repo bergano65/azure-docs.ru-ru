@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/26/2020
 ms.openlocfilehash: 12e6892930afe8ba9c7bad9b05fd39eeaf8835fc
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78206730"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272504"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -314,7 +314,7 @@ Azure HDInsight предоставляет метод настройки, наз
 
 ### <a name="azure-cli"></a>Azure CLI
 
-| Команда | Описание |
+| Get-Help | Description |
 | --- | --- |
 | [AZ hdinsight Script — действие DELETE](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-delete) |Удаляет указанное действие сохраненного скрипта в кластере. Эта команда не отменяет действия, выполняемые сценарием, он удаляет только флаг PERSISTED.|
 |[AZ hdinsight Script — выполнение действия](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-execute)|Выполнение действий сценария в указанном кластере HDInsight.|
@@ -361,7 +361,7 @@ Azure HDInsight предоставляет метод настройки, наз
 
 3. **Примеры.** Корпорация Майкрософт и другие компании могут предоставлять примеры использования популярных настраиваемых компонентов в кластерах HDInsight. Эти примеры представляются без поддержки.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Вы можете использовать веб-интерфейс Ambari для просмотра сведений, регистрируемых действиями сценариев. Если при создании кластера произошел сбой скрипта, вы можете просмотреть журналы в учетной записи хранения по умолчанию, связанной с кластером. Этот раздел содержит сведения о том, как получить журналы обоими этими способами.
 
@@ -447,7 +447,7 @@ sudo pip install azure-storage==0.20.0
 
     Из-за конфликта имен имеющихся сценариев в этом кластере не будут выполняться новые действия сценариев. Имена сценариев, указанные при создании кластера, должны быть уникальными. Имеющиеся сценарии выполняются при изменении размера.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
 * [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)

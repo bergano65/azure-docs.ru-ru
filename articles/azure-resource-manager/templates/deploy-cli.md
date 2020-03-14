@@ -3,12 +3,12 @@ title: Развертывание ресурсов с помощью Azure CLI �
 description: Используйте Azure Resource Manager и Azure CLI для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
 ms.date: 10/09/2019
-ms.openlocfilehash: 64f60a6e15a0c51e5ee506340c064804f7588693
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 17307b1657afc133a7e1b1d7714363329573e48c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250662"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273908"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-cli"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI
 
@@ -24,13 +24,13 @@ ms.locfileid: "78250662"
 
 Для развертывания в **группе ресурсов**используйте команду [AZ Group Deployment Create](/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create):
 
-```azurecli
+```azurecli-interactive
 az group deployment create --resource-group <resource-group-name> --template-file <path-to-template>
 ```
 
 Для развертывания в **подписке**используйте команду [AZ Deployment Create](/cli/azure/deployment?view=azure-cli-latest#az-deployment-create):
 
-```azurecli
+```azurecli-interactive
 az deployment create --location <location> --template-file <path-to-template>
 ```
 
@@ -103,7 +103,7 @@ az group deployment create --resource-group examplegroup \
 
 Чтобы передать встроенные параметры, укажите значения в `parameters`. Например, строки и массив передаются в шаблон из оболочки Bash следующим образом:
 
-```azurecli
+```azurecli-interactive
 az group deployment create \
   --resource-group testgroup \
   --template-file demotemplate.json \
@@ -114,7 +114,7 @@ az group deployment create \
 
 Можно также получить содержимое файла и предоставлять его в виде встроенного параметра.
 
-```azurecli
+```azurecli-interactive
 az group deployment create \
   --resource-group testgroup \
   --template-file demotemplate.json \

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 3/9/2018
 ms.author: vturecek
 ms.openlocfilehash: 92c717fa2c82dd147acd3c28333e37ccf8dd2e89
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391880"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282306"
 ---
 # <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Использование платформы Service Fabric надежными субъектами
 В этой статье объясняется, как работают субъекты Reliable Actors на платформе Azure Service Fabric. Субъекты Reliable Actors выполняются в среде, размещенной в реализации службы Reliable Services с отслеживанием состояния под названием *служба субъектов*. Служба субъектов содержит все компоненты, необходимые для управления жизненным циклом и диспетчеризации относящихся к субъектам сообщений:
@@ -87,7 +87,7 @@ ActorProxyBase.create(MyActor.class, new ActorId(1234));
 При использовании строк и GUID или UUID значения хэшируются в значения типа Int64. Однако, если значение типа Int64 предоставляется в `ActorId` напрямую, Int64 сопоставляется с секцией напрямую без дополнительного хэширования. Этот метод можно использовать для управления тем, в каких секциях будут размещаться субъекты.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъектов и сбор мусора](service-fabric-reliable-actors-lifecycle.md)
 * [Справочная документация по API субъектов](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.actors?redirectedfrom=MSDN&view=azure-dotnet)

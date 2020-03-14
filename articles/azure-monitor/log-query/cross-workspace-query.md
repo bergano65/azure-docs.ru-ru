@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 06/05/2019
 ms.openlocfilehash: 4740034bd970f42833125fa43bfdf72f710ac147
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77670276"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79249611"
 ---
 # <a name="perform-cross-resource-log-queries-in-azure-monitor"></a>Выполнение запросов журнала между ресурсами в Azure Monitor  
 
@@ -52,7 +52,7 @@ ms.locfileid: "77670276"
 
 * Идентификатор ресурса Azure — это уникальный идентификатор рабочей области в Azure. Он используется, если имя ресурса является неоднозначным.  Для рабочих областей используется следующий формат: */subscriptions/subscriptionId/resourcegroups/resourceGroup/providers/microsoft.OperationalInsights/workspaces/componentName*.  
 
-    Например:
+    Пример:
     ``` 
     workspace("/subscriptions/e427519-5645-8x4e-1v67-3b84b59a1985/resourcegroups/ContosoAzureHQ/providers/Microsoft.OperationalInsights/workspaces/contosoretail-it").Update | count
     ```
@@ -83,7 +83,7 @@ ms.locfileid: "77670276"
 
 * Идентификатор ресурса Azure — это уникальный идентификатор приложения в Azure. Он используется, если имя ресурса является неоднозначным. Используется такой формат: */subscriptions/subscriptionId/resourcegroups/resourceGroup/providers/microsoft. Компоненты/OperationalInsights/componentName*.  
 
-    Например:
+    Пример:
     ```
     app("/subscriptions/b459b4f6-912x-46d5-9cb1-b43069212ab4/resourcegroups/Fabrikam/providers/microsoft.insights/components/fabrikamapp").requests | count
     ```
@@ -134,7 +134,7 @@ applicationsScoping
 
 ![Timechart](media/cross-workspace-query/chart.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите статью [Анализ данных журнала в Azure Monitor](log-query-overview.md), где описываются запросы журнала и структуры данных журнала Azure Monitor.
 - Сведения о всех ресурсах см. в статье [Azure Monitor log queries](query-language.md) (Запросы журнала Azure Monitor).

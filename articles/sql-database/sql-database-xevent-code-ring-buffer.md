@@ -3,7 +3,7 @@ title: Код кольцевого буфера XEvent
 description: Содержит пример кода Transact-SQL, обеспечивающего простоту и удобство использования целевого объекта "Кольцевой буфер" в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: monitor
+ms.subservice: performance
 ms.custom: ''
 ms.devlang: PowerShell
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: 7adffac045ddb2ba369993b1b805e3ce2304fb38
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: ad98b61d6339388551af93671b3d4d892942f4e4
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822314"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79213966"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Код целевого объекта "Кольцевой буфер" для расширенных событий в базе данных SQL
 
@@ -40,7 +40,7 @@ ms.locfileid: "73822314"
 7. Удаляет целевой объект "Кольцевой буфер" для освобождения ресурсов.
 8. Удаляет сеанс событий и демонстрационную таблицу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 * Любая база данных, позволяющая создать таблицу.
@@ -54,7 +54,7 @@ ms.locfileid: "73822314"
 
 ## <a name="code-sample"></a>Пример кода
 
-С небольшими изменениями приведенный ниже пример кода кольцевого буфера можно выполнять как в базе данных SQL Azure, так и на Microsoft SQL Server. Разница заключается в наличии узла "_database" в имени некоторых динамических административных представлений, используемых в части FROM (шаг 5). Например:
+С небольшими изменениями приведенный ниже пример кода кольцевого буфера можно выполнять как в базе данных SQL Azure, так и на Microsoft SQL Server. Разница заключается в наличии узла "_database" в имени некоторых динамических административных представлений, используемых в части FROM (шаг 5). Пример:
 
 * sys.dm_xe<strong>_database</strong>_session_targets
 * sys.dm_xe_session_targets

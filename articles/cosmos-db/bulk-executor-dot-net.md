@@ -10,11 +10,11 @@ ms.date: 09/01/2019
 ms.author: ramkris
 ms.reviewer: sngun
 ms.openlocfilehash: d7600267dcd196a9a5c06c29774ea21d582cd7ce
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365505"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246881"
 ---
 # <a name="use-the-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Используйте библиотеку .NET для NET выполнителя, чтобы выполнять групповые операции в Azure Cosmos DB
 
@@ -22,7 +22,7 @@ ms.locfileid: "78365505"
 
 В настоящее время Библиотека, исполняющий исполнитель, поддерживает только учетные записи API Azure Cosmos DB SQL и API Gremlin. В этой статье описывается, как использовать библиотеку NET выполнителя .NET с учетными записями API SQL. Дополнительные сведения об использовании библиотеки NET выполнителя .NET с учетными записями API Gremlin см. в разделе [Выполнение массовых операций в api Azure Cosmos DB Gremlin](bulk-executor-graph-dotnet.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать [Visual studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Убедитесь, что во время установки Visual Studio включен параметр "Разработка Azure".
 
@@ -196,6 +196,6 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
   </system.diagnostics>
   ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о пакете NuGet и заметках о выпуске [см. в](sql-api-sdk-bulk-executor-dot-net.md)этой статье.

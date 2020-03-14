@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/28/2018
 ms.author: terrylan
-ms.openlocfilehash: f7d993799fed637fbec55afc8f06d90c8fc6910f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 1b0a4627d377f5fa9ca997d1cc96bc38b0a6c37f
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726782"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79217224"
 ---
 # <a name="best-practices-for-securing-paas-databases-in-azure"></a>Рекомендации по защите баз данных PaaS в Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "68726782"
 
 Чтобы узнать больше о брандмауэре SQL Azure и ограничениях IP-адресов, ознакомьтесь со следующими статьями:
 
-- [Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"](../../sql-database/sql-database-control-access.md)
+- [Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"](../../sql-database/sql-database-manage-logins.md)
 - [Правила брандмауэра службы "База данных SQL Azure" и "Хранилище данных SQL"](../../sql-database/sql-database-firewall-configure.md)
 
 
@@ -83,7 +83,7 @@ SQL Azure обеспечивает шифрование столбцов с по
 
 Для защиты базы данных можно принять дополнительные меры предосторожности, такие как проектирование безопасной системы, шифрование конфиденциальных ресурсов и создание брандмауэра на серверах базы данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен набор рекомендаций по безопасности Базы данных SQL и хранилища данных SQL, предназначенных для защиты веб-приложений и мобильных приложений PaaS. Дополнительные сведения о безопасности развернутых служб PaaS см. в следующих статьях:
 
 - [Защита развернутых приложений PaaS](paas-deployments.md)

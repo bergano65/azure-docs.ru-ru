@@ -17,11 +17,11 @@ ms.reviewer: jroth
 experimental: true
 experimental_id: d51f3cc6-753b-4e
 ms.openlocfilehash: 4627d9c4fa5c87e8e80ab80892062dabd77e9229
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78389054"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79249715"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure-classic-deployment"></a>Подключение к виртуальной машине SQL Server в Azure (классическое развертывание)
 > [!div class="op_single_selector"]
@@ -103,7 +103,7 @@ ms.locfileid: "78389054"
 
 [!INCLUDE [Connect to SQL Server in a VM Classic Steps](../../../../includes/virtual-machines-sql-server-connection-steps-classic.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 Если вы также планируете использовать группы доступности AlwaysOn для обеспечения высокого уровня доступности и аварийного восстановления, следует реализовать прослушиватель. Клиенты баз данных подключаются к прослушивателю, а не непосредственно к одному из экземпляров SQL Server. Прослушиватель направляет клиентов к первичной реплике в группе доступности. Дополнительные сведения см. в статье [Настройка прослушивателя внутренней подсистемы балансировки нагрузки для группы доступности AlwaysOn в Azure](../classic/ps-sql-int-listener.md).
 
 Важно просмотреть все рекомендации по обеспечению безопасности для системы SQL Server, выполняемой на виртуальной машине Azure. Дополнительные сведения см. в статье [Вопросы безопасности SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-sql-security.md).

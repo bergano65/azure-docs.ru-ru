@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 12/27/2019
 ms.custom: seodec18
 ms.openlocfilehash: 32db7b19b7ec63135c3359f9685dd767dd0921f5
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169848"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283710"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]

@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.custom: seodec18
 ms.openlocfilehash: ce0a170a629f347e2687a2e9f63fb3438fe2bd2f
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77592532"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79280174"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -244,7 +244,7 @@ ms.locfileid: "77592532"
 
 См. статью [Настройка пользовательского контейнера Linux для службы приложений Azure](containers/configure-custom-container.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка личного доменного имени в службе приложений Azure]
 - [Настройка промежуточных сред в службе приложений Azure]

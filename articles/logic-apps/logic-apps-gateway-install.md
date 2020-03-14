@@ -7,11 +7,11 @@ ms.reviewer: arthii, logicappspm
 ms.topic: article
 ms.date: 12/05/2019
 ms.openlocfilehash: 797cd82327d68003d4e5f007d1f16e9534092ac0
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77191358"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79283996"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -26,7 +26,7 @@ ms.locfileid: "77191358"
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетная запись и подписка Azure. Если у вас нет учетной записи Azure с подпиской, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -265,7 +265,7 @@ ms.locfileid: "77191358"
 * [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
 * [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md)
 * [Возможности интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

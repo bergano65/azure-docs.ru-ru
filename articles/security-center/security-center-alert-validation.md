@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 10ea15168d61d5e73aff976ef641e07b6327dbca
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.openlocfilehash: 5146878adf10e452f38fecb115ec40792ffa84f3
+ms.sourcegitcommit: d322d0a9d9479dbd473eae239c43707ac2c77a77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77604565"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79140003"
 ---
 # <a name="alert-validation-eicar-test-file-in-azure-security-center"></a>Проверка предупреждений (файл теста EICAR) в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -75,8 +75,7 @@ ms.locfileid: "77604565"
 ## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
+* [Проверка Azure Key Vault обнаружения угроз в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts) на них — Узнайте, как управлять оповещениями и реагировать на инциденты безопасности в центре безопасности.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
 * Сведения об [оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type) — сведения о различных типах оповещений системы безопасности.
-* [Руководство по устранению неполадок в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide) . Узнайте, как устранять распространенные проблемы в центре безопасности.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) . Найдите записи в блоге о безопасности и соответствии требованиям в Azure.

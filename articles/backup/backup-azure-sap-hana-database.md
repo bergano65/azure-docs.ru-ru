@@ -3,12 +3,12 @@ title: Резервное копирование базы данных SAP HANA 
 description: Из этой статьи вы узнаете, как создать резервную копию базы данных SAP HANA на виртуальных машинах Azure со службой Azure Backup.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: a5fd09e0e487d103e8bd78964c11b572a62e28fa
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.openlocfilehash: deedd4d2553b3b06f76f698fdb2425a8d3878d23
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382434"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79248064"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
 
@@ -88,6 +88,10 @@ SAP HANA базы данных — это критически важные ра
 Использование тегов службы NSG | Упрощенное управление благодаря автоматическому объединению изменений диапазона <br/><br/> Нет дополнительных затрат <br/><br/> | Может использоваться только с NSG <br/><br/> Предоставляет доступ ко всей службе
 Использование тегов полного доменного имени службы "Брандмауэр Azure" | Проще управлять, так как требуемые управляются FQDN автоматически | Можно использовать только с брандмауэром Azure
 Использование прокси-сервера HTTP | Разрешено точное управление разрешенными URL-адресами хранилища в прокси-сервере <br/><br/> Единая точка доступа к виртуальным машинам через Интернет <br/><br/> Не подвергается влиянию изменений IP-адресов Azure | Дополнительные затраты для запуска виртуальной машины с программным обеспечением прокси-сервера
+
+#### <a name="private-endpoints"></a>Частные конечные точки
+
+[!INCLUDE [Private Endpoints](../../includes/backup-private-endpoints.md)]
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
@@ -195,12 +199,12 @@ SAP HANA базы данных — это критически важные ра
 2. Отключите резервное копирование журналов и задайте в качестве каталога резервного копирования файловую систему для соответствующей базы данных.
 3. Для этого дважды щелкните **системдб** > **Configuration** > **выберите База данных** > **фильтр (журнал)** .
 4. Задайте для параметра **enable_auto_log_backup** значение **нет**.
-5. Задайте для Log_backup_using_backint **значение false**.
+5. Задайте **log_backup_using_backint** для Log_backup_using_backint **значение false**.
 6. Создайте полную резервную копию базы данных по требованию.
 7. Дождитесь завершения полного резервного копирования и резервного копирования каталога.
 8. Верните предыдущие параметры в Azure.
     * Задайте для параметра **enable_auto_log_backup** значение **Да**.
-    * Задайте для Log_backup_using_backint **значение true**.
+    * Задайте **log_backup_using_backint** для Log_backup_using_backint **значение true**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

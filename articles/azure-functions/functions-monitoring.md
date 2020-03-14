@@ -5,11 +5,11 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.openlocfilehash: dda62e3041d04d5becc9179fff1c56d0c587ba1e
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292932"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276872"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -119,7 +119,7 @@ requests
 
 Доступные таблицы показаны на вкладке **схема** слева. Данные, создаваемые при вызовах функций, вы найдете в следующих таблицах:
 
-| Таблицы | Description |
+| Таблица | Description |
 | ----- | ----------- |
 | **отладоч** | Журналы, созданные средой выполнения и кодом функции. |
 | **requests** | Один запрос для каждого вызова функции. |
@@ -159,11 +159,11 @@ traces
 |------------|---|
 |Трассировка       | 0 |
 |Отладка       | 1 |
-|Информация | 2 |
+|Сведения | 2 |
 |Предупреждение     | 3 |
 |Ошибка       | 4 |
-|Критический    | 5 |
-|Нет        | 6 |
+|Critical    | 5 |
+|None        | 6 |
 
 Уровень ведения журнала `None` описан в следующем разделе. 
 
@@ -209,7 +209,7 @@ traces
 В этом примере настраиваются следующие правила:
 
 * Для журналов с `Host.Results`ом категории или `Function`отправки в Application Insights только `Error`ный уровень и выше. Данные журналов с уровнем `Warning` и ниже игнорируются.
-* Все журналы с категорией `Host.Aggregator` отправляются в Application Insights. Уровень ведения журнала `Trace` — это то же, что в некоторых средствах ведения журналов именуется как `Verbose`. В файле [Host. JSON] необходимо использовать `Trace`.
+* Все журналы с категорией `Host.Aggregator` отправляются в Application Insights. Уровень ведения журнала `Trace` — это то же, что в некоторых средствах ведения журналов именуется как `Verbose`. В файле `Trace`host.json[Host. JSON].
 * Для всех остальных журналов в Application Insights отправляются данные с уровнем `Information` и выше.
 
 Значение категории в [Host. JSON] управляет ведением журнала для всех категорий, название которых начинается с аналогичного значения. `Host` в [Host. JSON] управляет ведением журнала для `Host.General`, `Host.Executor`, `Host.Results`и т. д.
@@ -634,7 +634,7 @@ module.exports = function (context, req) {
 
 ![Просмотр Live Metrics Stream на портале](./media/functions-monitoring/live-metrics-stream.png) 
 
-### <a name="visual-studio-code"></a>Код Visual Studio
+### <a name="visual-studio-code"></a>Visual Studio Code
 
 [!INCLUDE [functions-enable-log-stream-vs-code](../../includes/functions-enable-log-stream-vs-code.md)]
 
@@ -642,7 +642,7 @@ module.exports = function (context, req) {
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Вы можете включить журналы потоковой передачи с помощью [Azure CLI](/cli/azure/install-azure-cli). Используйте следующие команды для входа в систему, выбора подписки и потоковой передачи файлов журнала:
 

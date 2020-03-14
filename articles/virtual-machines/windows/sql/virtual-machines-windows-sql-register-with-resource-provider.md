@@ -15,11 +15,11 @@ ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 01e683e31905281d25fdcf976bc58397c052a6c3
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78388757"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243189"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -57,7 +57,7 @@ ms.locfileid: "78388757"
 <iframe src="https://channel9.msdn.com/Shows/Data-Exposed/Benefit-from-SQL-VM-Resource-Provider-when-self-installing-SQL-Server-on-Azure/player" width="960" height="540" allowFullScreen frameBorder="0" title="Преимущества от поставщика ресурсов виртуальной машины SQL при самостоятельной установке SQL Server в Azure — видео Microsoft Channel 9"></iframe>
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы зарегистрировать виртуальную машину SQL Server с поставщиком ресурсов, вам потребуется: 
 
@@ -455,7 +455,7 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 Да. Регистрация SQL Server экземпляра на виртуальной машине Azure с помощью поставщика ресурсов виртуальной машины SQL не ограничена, если вы участвуете в конфигурации группы доступности Always On.
 
 **Каковы затраты на регистрацию в поставщике ресурсов виртуальной машины SQL или обновление до полного режима управления?**
-Нет Не взимается плата, связанная с регистрацией в поставщике ресурсов виртуальной машины SQL, или с использованием любого из трех режимов управления. Управление виртуальной машиной SQL Server с помощью поставщика ресурсов полностью бесплатное. 
+Нет. Не взимается плата, связанная с регистрацией в поставщике ресурсов виртуальной машины SQL, или с использованием любого из трех режимов управления. Управление виртуальной машиной SQL Server с помощью поставщика ресурсов полностью бесплатное. 
 
 **Каково влияние на производительность при использовании различных режимов управления?**
 При использовании *операторов* «а» и « *упрощенная* управляемость» не возникает никаких последствий. При использовании режима *полной* управляемости из двух служб, установленных в ОС, возможны минимальные последствия. Их можно отслеживать с помощью диспетчера задач и просматривать во встроенной консоли служб Windows. 
@@ -465,7 +465,7 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 - `SQLIaaSExtension` (отображаемое имя — `Microsoft SQL Server IaaS Agent`)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях: 
 

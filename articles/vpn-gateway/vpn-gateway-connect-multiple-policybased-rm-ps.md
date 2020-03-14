@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/26/2020
 ms.author: yushwang
 ms.openlocfilehash: 028ed1a632016fcbdf29bb47ab81a36f659785da
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77660509"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79279316"
 ---
 # <a name="connect-azure-vpn-gateways-to-multiple-on-premises-policy-based-vpn-devices-using-powershell"></a>Подключение VPN-шлюзов Azure к нескольким локальным VPN-устройствам на основе политики с помощью PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "77660509"
 
 |                          | **VPN-шлюзы на основе политики** | **VPN-шлюзы на основе маршрута**       |**VPN-шлюзы на основе маршрута**                          |
 | ---                      | ---                         | ---                              |---                                                 |
-| **SKU шлюза Azure**    | Базовый                       | Базовый                            | Standard, HighPerformance, VpnGw1, VpnGw2, VpnGw3  |
+| **SKU шлюза Azure**    | Basic                       | Basic                            | Standard, HighPerformance, VpnGw1, VpnGw2, VpnGw3  |
 | **Версия IKE**          | IKEv1                       | IKEv2                            | IKEv1 и IKEv2                                    |
 | **Максимальной. Подключения S2S** | **1**                       | 10                               |Стандартный: 10<br> Другие номера SKU: 30                     |
 |                          |                             |                                  |                                                    |
@@ -204,7 +204,7 @@ ms.locfileid: "77660509"
       Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection6 -UsePolicyBasedTrafficSelectors $False
       ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Дополнительные сведения о настраиваемых политиках IPsec/IKE см. в статье [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md).

@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 2719bba0e88ba3125bd5ba163804e31885b286a2
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534526"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79282995"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Индексаторы в Azure Когнитивный поиск
 
@@ -32,7 +32,7 @@ ms.locfileid: "74534526"
 
 * [Мастер импорта данных > портала](search-import-data-portal.md)
 * [API REST службы](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
-* [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
+* [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
 
@@ -50,7 +50,7 @@ ms.locfileid: "74534526"
 * [Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) (Предварительная версия)
 * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
-* [база данных SQL Azure;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [База данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [SQL Server на виртуальных машинах Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 * [Управляемые экземпляры SQL в Azure](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
 

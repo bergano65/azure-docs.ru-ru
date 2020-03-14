@@ -4,11 +4,11 @@ description: Сведения об отработке отказа и сбое �
 ms.topic: conceptual
 ms.date: 12/24/2019
 ms.openlocfilehash: d9b54f3c452212e12419a5ffd67b116c8660308d
-ms.sourcegitcommit: 163be411e7cd9c79da3a3b38ac3e0af48d551182
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77539524"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79281812"
 ---
 # <a name="about-on-premises-disaster-recovery-failoverfailback"></a>Об отработке отказа локального аварийного восстановления и восстановлении размещения
 
@@ -157,7 +157,7 @@ Site Recovery предоставляет различные варианты о�
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Отработка отказа [конкретных виртуальных машин VMware](vmware-azure-tutorial-failover-failback.md)
 - Отработка отказа [конкретных виртуальных машин Hyper-V](hyper-v-azure-failover-failback-tutorial.md).
 - [Создайте](site-recovery-create-recovery-plans.md) план восстановления.

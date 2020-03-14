@@ -6,11 +6,11 @@ ms.topic: conceptual
 description: Описание процессов, Azure Dev Spaces и их настройки в файле конфигурации аздс. YAML
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
 ms.openlocfilehash: e96541b0008dca9cbaeda92152f835c188036971
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771144"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79259920"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Как работает Azure Dev Spaces и настроена
 
@@ -415,7 +415,7 @@ ingress:
 
 Производное пространство разработки также будет Intelligent маршрутизировать запросы между собственными приложениями и приложениями, которые совместно используются от его родителя. Маршрутизация работает, пытаясь направить запрос к приложению в производном пространстве разработки и вернуться к общему приложению из родительского пространства разработки. Маршрутизация вернется к общему приложению в области «бабушке», если приложение не находится в родительском пространстве.
 
-Пример.
+Пример:
 * Пространство разработки *по умолчанию* имеет приложения *Service* a и *serviceB* .
 * *Azureuser* пространства разработки является производным от *значения по умолчанию*.
 * Обновленная версия *Service* a развертывается в *azureuser*.

@@ -5,11 +5,11 @@ ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 09/17/2019
 ms.openlocfilehash: 05ad6c4eab61ccf5bc0884da63ebda7ba76ac583
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363886"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273557"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Как восстановить данные виртуальной машины Azure в портал Azure
 
@@ -248,7 +248,7 @@ Azure Backup предоставляет несколько способов во
 - Если виртуальная машина восстановлена в той же группе ресурсов и с тем же именем, что и первоначально заархивированная виртуальная машина, то резервное копирование будет продолжено и после восстановления виртуальной машины.
 - Если восстановить виртуальную машину в другой группе ресурсов или задать для нее другое имя, необходимо настроить резервную копию для восстановленной виртуальной машины.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если у вас возникли трудности во время процесса восстановления, [просмотрите](backup-azure-vms-troubleshoot.md#restore) распространенные проблемы и ошибки.
 - После восстановления виртуальной машины ознакомьтесь со сведениями об [управлении виртуальными машинами](backup-azure-manage-vms.md).

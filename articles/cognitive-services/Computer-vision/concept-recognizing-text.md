@@ -12,11 +12,11 @@ ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: a4c90ed12c8023e0b9ebc509b20d8d9224b49f1b
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78365485"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220163"
 ---
 # <a name="recognize-printed-and-handwritten-text"></a>Распознавание печатного и рукописного текста
 
@@ -92,6 +92,6 @@ API Распознавание текста похож на OCR, но выпол
 * Слишком большой или отсутствующий прописные буквы в начале слов.
 * Подстрочный, надстрочный или зачеркнутый текст.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следуйте инструкциям краткого руководства по [извлечению текста (Read)](./QuickStarts/CSharp-hand-text.md) , чтобы реализовать C# распознавание текста в простом приложении.

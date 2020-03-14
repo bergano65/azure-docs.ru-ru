@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
 ms.openlocfilehash: 779bb88d15ea6c52f4399f17223b89916e22653d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381675"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79267018"
 ---
 # <a name="azure-serial-console"></a>Последовательная консоль Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "78381675"
 * Аккуратно [Перезагрузка или принудительное выключение виртуальной машины](./serial-console-power-options.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительная документация по последовательной консоли доступна на боковой панели.
 - Дополнительные сведения доступны для [последовательной консоли для виртуальных машин Linux](./serial-console-linux.md).
 - Дополнительные сведения доступны для [последовательной консоли для виртуальных машин Windows](./serial-console-windows.md).

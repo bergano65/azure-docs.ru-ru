@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
 ms.openlocfilehash: 1045f86db5e1a9ed1979a266937974045e401e27
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78360892"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275572"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения мониторинга сетей Azure в Azure Monitor
 
@@ -212,7 +212,7 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 3. Обновите все сохраненные запросы, панели мониторинга и оповещения, чтобы использовать новый тип данных.
    + Тип меняется на AzureDiagnostics. Параметр ResourceType можно использовать для фильтрации по журналам сети.
 
-     | Вместо этого: | Используйте: |
+     | Вместо этого: | Используйте следующую команду: |
      | --- | --- |
      | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayAccess" |
      | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayPerformance" |
@@ -225,8 +225,8 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 
 Данные, собранные до этого изменения, не отображаются в новом решении. Эти данные по-прежнему можно запрашивать с помощью старых имен типов и полей.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [запросы журналов в Azure Monitor](../log-query/log-query-overview.md) для просмотра подробных данных диагностики Azure.

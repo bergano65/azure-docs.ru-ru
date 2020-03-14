@@ -13,11 +13,11 @@ ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: a6bcfa7fc58d47e64bff0838ff698bc59eda4e70
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374726"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79266342"
 ---
 # <a name="update-your-profile-and-account-information-on-the-my-apps-portal"></a>Обновление данных профиля и учетной записи на портале "Мои приложения"
 
@@ -83,7 +83,7 @@ ms.locfileid: "78374726"
 
     ![Страница изменения пароля](media/my-apps-portal/my-apps-portal-change-password-page.png)
 
-3. Нажмите кнопку **Отправить**.
+3. Нажмите кнопку **Submit** (Отправить).
 
     Пароль изменен. Вам потребуется войти в все приложения, которые ранее вошли в рабочую или учебную учетную запись.
 
@@ -138,7 +138,7 @@ ms.locfileid: "78374726"
 
 2. В окне подтверждения при выходе **везде** выберите **Да** , чтобы подтвердить выход из всех сеансов и устройств. Если вы передумали, выберите **нет** .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После завершения обновления на странице **профиля** можно выполнить следующие действия.
 

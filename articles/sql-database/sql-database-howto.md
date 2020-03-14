@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 11/14/2019
-ms.openlocfilehash: e45baba74d7bf752718e5e36a148a91987cd3ffb
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: c3f7b33e4b42b08334cfb687024985c878dc3713
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082430"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209423"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "74082430"
 
 - [Настройка вручную](sql-database-performance-guidance.md)
 - [Использование динамических административных представлений для мониторинга производительности](sql-database-monitoring-with-dmvs.md)
-- [Использование хранилища запросов для мониторинга производительности](sql-database-operate-query-store.md)
+- [Использование хранилища запросов для мониторинга производительности](https://docs.microsoft.com/sql/relational-databases/performance/best-practice-with-the-query-store#Insight)
 - [Устранение проблем производительности с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md)
 - [Использование журнала диагностики Intelligent Insights](sql-database-intelligent-insights-use-diagnostics-log.md)
 - [Мониторинг используемого пространства в хранилище выполняющейся в памяти OLTP](sql-database-in-memory-oltp-monitoring.md)
@@ -92,7 +92,7 @@ ms.locfileid: "74082430"
 - [Индексатор видео SaaS](saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Использование Управляемого экземпляра](sql-database-howto-managed-instance.md).
 - [Использование отдельной базы данных](sql-database-howto-single-database.md).

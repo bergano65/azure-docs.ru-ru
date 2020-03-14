@@ -15,11 +15,11 @@ ms.date: 01/25/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: e2458b07602bca3b6f12b2f486b509c11d705461
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138344"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246361"
 ---
 # <a name="add-or-remove-role-assignments-using-azure-rbac-and-the-azure-portal"></a>Добавление и удаление назначений ролей с помощью Azure RBAC и портал Azure
 

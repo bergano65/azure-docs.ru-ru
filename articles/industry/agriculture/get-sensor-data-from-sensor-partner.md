@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: 9364c344c58d17f9f6e6404dd8aa850af032cee9
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385162"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79271815"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -65,7 +65,7 @@ Azure Фармбеатс помогает перенести потоковые 
 
 7. Перейдите в каталог, в который был отправлен файл. По умолчанию файлы передаются в корневой каталог по имени пользователя.
 
-8. Запустите указанный ниже сценарий. Сценарий запрашивает идентификатор клиента, который можно получить на странице обзора Azure Active Directory->.
+8. Выполните следующий сценарий. Сценарий запрашивает идентификатор клиента, который можно получить на странице обзора Azure Active Directory->.
 
     ```azurepowershell-interactive 
 
@@ -154,7 +154,7 @@ Azure Фармбеатс помогает перенести потоковые 
 1. На домашней странице в меню выберите **датчики** , чтобы открыть страницу **датчиков** .
 2. Выберите устройство, которое нужно удалить, и в окне подтверждения выберите **Удалить** .
 
-    ![Кнопка Удаление](./media/get-sensor-data-from-sensor-partner/delete-sensors-1.png)
+    ![Кнопка "Удалить"](./media/get-sensor-data-from-sensor-partner/delete-sensors-1.png)
 
 Появится сообщение с подтверждением об успешном удалении датчика.
 
@@ -165,8 +165,8 @@ Azure Фармбеатс помогает перенести потоковые 
 1. На домашней странице в меню выберите пункт **устройства** , чтобы открыть страницу **устройства** .
 2. Выберите устройство, которое нужно удалить, и в окне подтверждения выберите **Удалить** .
 
-    ![Кнопка Удаление](./media/get-sensor-data-from-sensor-partner/delete-device-1.png)
+    ![Кнопка "Удалить"](./media/get-sensor-data-from-sensor-partner/delete-device-1.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь данные датчиков передаются в экземпляр Azure Фармбеатс. Теперь Узнайте, как [создавать карты](generate-maps-in-azure-farmbeats.md#generate-maps) для ферм.
