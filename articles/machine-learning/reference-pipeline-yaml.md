@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: sanpil
 author: sanpil
 ms.date: 11/11/2019
-ms.openlocfilehash: 474a184b24ca3318a33adb89b25640939a814474
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: a677aaa891e21f4c9eeda02eebcb94e9d79a55ad
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771638"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79368831"
 ---
 # <a name="define-machine-learning-pipelines-in-yaml"></a>Определение конвейеров машинного обучения в YAML
 
@@ -23,18 +23,18 @@ ms.locfileid: "75771638"
 
 В следующей таблице перечислены, что и сейчас не поддерживается при определении конвейера в YAML.
 
-| Тип шага | Поддержка |
+| Тип шага | Поддерживается? |
 | ----- | :-----: |
 | писонскриптстеп | Да |
 | адластеп | Да |
 | азуребатчстеп | Да |
 | датабрикксстеп | Да |
 | дататрансферстеп | Да |
-| аутомлстеп | Нет |
-| хипердривестеп | Нет |
-| модулестеп | Нет |
-| мпистеп | Нет |
-| естиматорстеп | Нет |
+| аутомлстеп | нет |
+| хипердривестеп | нет |
+| модулестеп | Да |
+| мпистеп | нет |
+| естиматорстеп | нет |
 
 ## <a name="pipeline-definition"></a>Определение конвейера
 
@@ -76,7 +76,7 @@ pipeline:
             default: 4
 ```
 
-## <a name="data-reference"></a>Справочник по данным
+## <a name="data-reference"></a>Описание данных
 
 В разделе `data_references` используются следующие ключи, которые соответствуют [ссылке](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py)на объект.
 
@@ -100,7 +100,7 @@ pipeline:
             path_on_datastore: "adla_sample/sample_input.csv"
 ```
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 Шаги определяют вычислительную среду, а также файлы для выполнения в среде. Чтобы определить тип шага, используйте ключ `type`:
 

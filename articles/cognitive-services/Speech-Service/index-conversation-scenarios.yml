@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Документация по сценариям диалога
+title: Документация по сценариям бесед
 summary: Изучите различные сценарии беседы, запись разговора или беседы с несколькими устройствами.
 metadata:
   title: Документация по сценариям диалога. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
@@ -10,46 +10,50 @@ metadata:
   layout: LandingPage
   ms.service: speech-service
   ms.topic: landing-page
-  ms.date: 02/11/2020
+  ms.date: 03/10/2020
   ms.author: dapine
-  ms.openlocfilehash: d6ea318c2745f7d80a49e5fcb1b47381a9f276f7
-  ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+  ms.openlocfilehash: 0df2992564dcf90f6b927b5a917993caec18af45
+  ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/22/2020
-  ms.locfileid: "77562958"
+  ms.lasthandoff: 03/14/2020
+  ms.locfileid: "79365796"
 landingContent:
 - title: Транскрибирование бесед
   linkLists:
   - linkListType: overview
     links:
-    - text: О транскрипции беседы
+    - text: Что такое запись разговора?
       url: conversation-transcription.md
   - linkListType: how-to-guide
     links:
-    - text: Транскрибирование беседы в реальном времени
+    - text: Работа со сценариями центра обработки вызовов
+      url: call-center-transcription.md
+    - text: Запись разговора в реальном времени
       url: how-to-use-conversation-transcription.md
     - text: Асинхронное транскрибирование бесед
       url: how-to-async-conversation-transcription.md
-    - text: Работа с сценариями центра обработки вызовов
-      url: call-center-transcription.md
-- title: Ведение беседы с использованием нескольких устройств
+  - linkListType: reference
+    links:
+    - text: Поддержка языка для транскрипции
+      url: conversation-transcription.md#language-support
+- title: О беседе с несколькими устройствами
   linkLists:
   - linkListType: overview
     links:
-    - text: О беседе с несколькими устройствами
+    - text: Что такое беседа с использованием нескольких устройств?
       url: multi-device-conversation.md
   - linkListType: quickstart
     links:
     - text: Начало беседы и присоединение к ней
       url: quickstarts/multi-device-conversation.md
-- title: Ссылки
+  - linkListType: reference
+    links:
+    - text: Поддержка языков бесед на нескольких устройствах
+      url: multi-device-conversation.md#language-support
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
-    - text: Поддержка языка для транскрипции
-      url: conversation-transcription.md#language-support
-    - text: Поддержка языков бесед на нескольких устройствах
-      url: multi-device-conversation.md#language-support
-    - text: Цены
+    - text: Цены на речевое распознавание речи
       url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/

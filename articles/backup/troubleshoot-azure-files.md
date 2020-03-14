@@ -4,11 +4,11 @@ description: Сведения об устранении неполадок, во
 ms.date: 08/20/2019
 ms.topic: troubleshooting
 ms.openlocfilehash: 050df5b96c265e468346535ff011e1baf7d86ad5
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382533"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79252393"
 ---
 # <a name="troubleshoot-problems-backing-up-azure-file-shares"></a>Устранение неполадок с резервным копированием файловых ресурсов Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "78382533"
 | Для этого элемента выполняется другая настройка защиты. | Подождите, пока завершится предыдущая операция изменения политики и повторите попытку через некоторое время.|
 | В выбранном элементе выполняется другая операция. | Дождитесь завершения текущей операции и повторите попытку через некоторое время. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервном копировании файловых ресурсов Azure см. в следующих статьях:
 

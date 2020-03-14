@@ -1,21 +1,14 @@
 ---
 title: Тип сущности List — LUIS
-titleSuffix: Azure Cognitive Services
 description: Сущности списка представляют фиксированный, закрытый набор связанных слов вместе с их синонимами. LUIS не обнаруживает дополнительные значения для сущностей списка. Используйте функцию "рекомендовать", чтобы просмотреть предложения для новых слов на основе текущего списка.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 11/11/2019
-ms.author: diberry
-ms.openlocfilehash: 4313a1d644750c0961298bbee3ae211946de360a
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.date: 03/12/2020
+ms.openlocfilehash: 795d16bc2e0c4223ff3ac283a72493923d3ab355
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849774"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79297243"
 ---
 # <a name="list-entity"></a>Сущность списка
 
@@ -28,7 +21,7 @@ ms.locfileid: "74849774"
 * Значения данных являются известным набором.
 * Не изменяется часто. Если необходимо часто изменить список или хотите, чтобы список был самостоятельно раскрыт, то лучше выбрать простую сущность, увеличивающуюся со списком фраз.
 * Набор не превышает максимальные [ограничения](luis-boundaries.md) LUIS для этого типа сущности.
-* Текст в высказывании в точности совпадает с синонимом или каноническим именем. LUIS не использует список вне точных текстовых совпадений. Нечеткое соответствие, без учета регистра, извлечение корней, множественные числа и другие вариации не разрешаются с помощью сущности списка. Для управления вариантами рекомендуется применять [шаблон](reference-pattern-syntax.md#syntax-to-mark-optional-text-in-a-template-utterance) с синтаксисом, имеющим необязательный текст.
+* Текст в utterance — это совпадение без учета регистра с синонимом или каноническим именем. LUIS не использует список за пределами соответствия. Нечеткие совпадения, извлечение корней, множественные числа и другие варианты не разрешаются с помощью сущности списка. Для управления вариантами рекомендуется применять [шаблон](reference-pattern-syntax.md#syntax-to-mark-optional-text-in-a-template-utterance) с синтаксисом, имеющим необязательный текст.
 
 ![сущность списка](./media/luis-concept-entities/list-entity.png)
 
@@ -70,7 +63,7 @@ ms.locfileid: "74849774"
 
 В предыдущем высказывании слово `paris` сопоставляется с элементом paris как часть сущности списка `Cities`. Сущность списка совпадает с нормализованным именем элемента, а также с синонимами элемента.
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
 ```JSON
   "entities": [
@@ -88,7 +81,7 @@ ms.locfileid: "74849774"
   ]
 ```
 
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
 
 Это JSON, если в строке запроса задано `verbose=false`:
@@ -132,7 +125,7 @@ ms.locfileid: "74849774"
 
 * * *
 
-|Объект данных|Имя сущности|Value|
+|Объект данных|Имя сущности|Значение|
 |--|--|--|
 |Сущность списка|`Cities`|`paris`|
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5527b96ddf6ccebb60ca8130e48f6aae87a3f715
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 42362a170f493afd51a5d4ee139620ad25b54e79
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78246549"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79367369"
 ---
 # <a name="child-runbooks-in-azure-automation"></a>Дочерние модули Runbook в службе автоматизации Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "78246549"
 
 * [Модуль Runbook PowerShell](automation-runbook-types.md#powershell-runbooks) и [графический модуль Runbook](automation-runbook-types.md#graphical-runbooks) могут вызывать друг друга, как и на основе PowerShell.
 * [Runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks) и графический модуль Runbook рабочего процесса PowerShell могут вызывать друг друга, как и на основе рабочих процессов PowerShell.
-* Типы PowerShell и типов рабочих процессов PowerShell не могут вызывать друг друга в строке и должны использовать **Start-азаутоматионрунбук**.
+* Типы PowerShell и типов рабочих процессов PowerShell не могут вызывать друг друга и должны использовать `Start-AzAutomationRunbook`.
 
 Когда зависит порядок публикации?
 
 Порядок публикации модулей Runbook имеет значение только для рабочих процессов PowerShell и графических модулей Runbook рабочих процессов PowerShell.
 
-Когда модуль Runbook обращается к графическому модулю или дочернему Runbook рабочего процесса PowerShell с помощью встроенного выполнения, он использует имя модуля Runbook. Имя должно начинаться с **.\\** , чтобы указать, что сценарий находится в локальном каталоге.
+Когда модуль Runbook обращается к графическому модулю или дочернему Runbook рабочего процесса PowerShell с помощью встроенного выполнения, он использует имя модуля Runbook. Имя должно начинаться с `.\\`, чтобы указать, что скрипт находится в локальном каталоге.
 
 ### <a name="example"></a>Пример
 
@@ -62,15 +62,15 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 ## <a name="starting-a-child-runbook-using-a-cmdlet"></a>Запуск дочернего модуля Runbook с помощью командлета
 
 > [!IMPORTANT]
-> Если модуль Runbook вызывает дочерний модуль Runbook с помощью командлета **Start-азаутоматионрунбук** с параметром *Wait* , а дочерний модуль Runbook создает результат объекта, операция может столкнуться с ошибкой. Чтобы обойти эту ошибку, см. раздел [дочерние модули Runbook с выводом объекта](troubleshoot/runbooks.md#child-runbook-object) , чтобы узнать, как реализовать логику для опроса результатов с помощью командлета [Get-азаутоматионжобаутпутрекорд](/powershell/module/az.automation/get-azautomationjoboutputrecord) .
+> Если модуль Runbook вызывает дочерний модуль Runbook с помощью командлета `Start-AzAutomationRunbook` с параметром `Wait` и дочерний модуль Runbook создает результат объекта, операция может столкнуться с ошибкой. Чтобы обойти эту ошибку, см. раздел [дочерние модули Runbook с выводом объекта](troubleshoot/runbooks.md#child-runbook-object) , чтобы узнать, как реализовать логику для опроса результатов с помощью командлета [Get-азаутоматионжобаутпутрекорд](/powershell/module/az.automation/get-azautomationjoboutputrecord) .
 
-Можно использовать **Start-азаутоматионрунбук** для запуска модуля Runbook, как описано в разделе [, чтобы запустить модуль Runbook с помощью Windows PowerShell](start-runbooks.md#start-a-runbook-with-powershell). Этот командлет можно использовать в двух режимах. В одном режиме командлет возвращает идентификатор задания при создании задания для дочернего модуля Runbook. В другом режиме, который включает сценарий, указав параметр *Wait* , командлет ожидает завершения дочернего задания и возвращает выходные данные дочернего модуля Runbook.
+Вы можете использовать `Start-AzAutomationRunbook` для запуска модуля Runbook, как описано в разделе [, чтобы запустить модуль Runbook с помощью Windows PowerShell](start-runbooks.md#start-a-runbook-with-powershell). Этот командлет можно использовать в двух режимах. В одном режиме командлет возвращает идентификатор задания при создании задания для дочернего модуля Runbook. В другом режиме, который включает сценарий, указав параметр *Wait* , командлет ожидает завершения дочернего задания и возвращает выходные данные дочернего модуля Runbook.
 
 Задание из дочернего модуля Runbook, запущенного с помощью командлета, выполняется отдельно от родительского задания Runbook. Это приводит к большему результату заданий, чем запуск встроенного модуля Runbook, и затрудняет их отслеживание. Родитель может асинхронно запускать несколько дочерних модулей Runbook, не дожидаясь завершения каждого из них. Для этого параллельного выполнения, вызывающего встроенные дочерние модули Runbook, родительский модуль Runbook должен использовать [ключевое слово Parallel](automation-powershell-workflow.md#parallel-processing).
 
-Выходные данные дочернего модуля Runbook надежно не возвращаются в родительский Runbook из-за времени. Кроме того, такие переменные, как *$VerbosePreference*, *$WarningPreference*и другие, могут не распространяться на дочерние модули Runbook. Чтобы избежать этих проблем, можно запустить дочерние модули Runbook в качестве отдельных заданий автоматизации с помощью командлета **Start-азаутоматионрунбук** с параметром *Wait* . Этот метод блокирует родительский модуль Runbook до завершения дочернего модуля Runbook.
+Выходные данные дочернего модуля Runbook надежно не возвращаются в родительский Runbook из-за времени. Кроме того, такие переменные, как `$VerbosePreference`, `$WarningPreference`и другие, могут не распространяться на дочерние модули Runbook. Чтобы избежать этих проблем, можно запустить дочерние модули Runbook в качестве отдельных заданий автоматизации, используя `Start-AzAutomationRunbook` с параметром `Wait`. Этот метод блокирует родительский модуль Runbook до завершения дочернего модуля Runbook.
 
-Если вы не хотите, чтобы родительский модуль Runbook блокировался в ожидании, можно запустить дочерний Runbook с помощью командлета **Start-азаутоматионрунбук** без параметра *Wait* . В этом случае модуль Runbook должен использовать командлет [Get-азаутоматионжоб](/powershell/module/az.automation/get-azautomationjob) для ожидания завершения задания. Для получения результатов также необходимо использовать [Get-азаутоматионжобаутпут](/powershell/module/az.automation/get-azautomationjoboutput) и [Get-азаутоматионжобаутпутрекорд](/powershell/module/az.automation/get-azautomationjoboutputrecord) .
+Если вы не хотите, чтобы родительский модуль Runbook блокировался в ожидании, можно запустить дочерний Runbook с помощью `Start-AzAutomationRunbook` без параметра `Wait`. В этом случае модуль Runbook должен использовать командлет [Get-азаутоматионжоб](/powershell/module/az.automation/get-azautomationjob) для ожидания завершения задания. Для получения результатов также необходимо использовать [Get-азаутоматионжобаутпут](/powershell/module/az.automation/get-azautomationjoboutput) и [Get-азаутоматионжобаутпутрекорд](/powershell/module/az.automation/get-azautomationjoboutputrecord) .
 
 Параметры для дочернего модуля Runbook, запущенного с помощью командлета, предоставляются в виде хэш-таблицы, как описано в разделе [Параметры модуля Runbook](start-runbooks.md#runbook-parameters). Можно использовать только простые типы данных. Если у Runbook есть параметр со сложным типом данных, то для него необходимо использовать встроенный вызов.
 
@@ -80,7 +80,7 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 
 ### <a name="example"></a>Пример
 
-В следующем примере запускается дочерний модуль Runbook с параметрами, а затем выполняется ожидание его завершения с помощью командлета **Start-азаутоматионрунбук** с параметром *Wait* . После завершения этот пример собирает выходные данные командлета из дочернего модуля Runbook. Чтобы использовать **Start-азаутоматионрунбук**, сценарий должен пройти проверку подлинности в подписке Azure.
+В следующем примере запускается дочерний модуль Runbook с параметрами, а затем выполняется ожидание его завершения с помощью командлета `Start-AzAutomationRunbook` с параметром `Wait`. После завершения этот пример собирает выходные данные командлета из дочернего модуля Runbook. Чтобы использовать `Start-AzAutomationRunbook`, сценарий должен пройти проверку подлинности в подписке Azure.
 
 ```azurepowershell-interactive
 # Ensure that the runbook does not inherit an AzContext

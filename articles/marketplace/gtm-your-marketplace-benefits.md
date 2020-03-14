@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 02/08/2020
 ms.author: evansma
 ms.openlocfilehash: 1ecb48751715d32e1e67f09e0e3d4bf9577c8eab
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392877"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269943"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Преимущества коммерческого рынка
 
@@ -105,7 +105,7 @@ ms.locfileid: "78392877"
 
 Транзакции, которые считаются мошенническими, не будут учитываться на [уровне программы выставления счетов](https://aka.ms/marketplacepublisherrewards)издателя, как указано в [списке, пробной версии,](#list-trial-and-consulting-benefits) в разделе "преимущества для [участников Transact](#marketplace-rewards-for-transact-partners) " и в [подробном колоде программ](https://aka.ms/marketplacepublisherrewards). Корпорация Майкрософт выделит партнеров на уровни приемлемости на основе фактических выставляемых продаж, после того как мошенничеств будет удалено. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы создали предложение в [портал Cloud Partner](https://cloudpartner.azure.com), войдите, чтобы создать или настроить предложение.
 

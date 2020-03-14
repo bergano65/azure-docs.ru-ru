@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: 516f0b2080fc894ec00f222c712ffdea4ee74356
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.openlocfilehash: 42956d115590fd322d2851fd546c505a76a851fa
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78851107"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79297046"
 ---
 # <a name="troubleshoot-data-encryption-in-azure-database-for-mysql"></a>Устранение неполадок шифрования данных в базе данных Azure для MySQL
 
@@ -57,6 +57,6 @@ ms.locfileid: "78851107"
 - Определите хранилище ключей и перейдите к нему на портале Azure.
 - Убедитесь, что URI ключа определяет имеющийся ключ.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование портал Azure для настройки шифрования данных с помощью управляемого клиентом ключа в базе данных Azure для MySQL](howto-data-encryption-portal.md)

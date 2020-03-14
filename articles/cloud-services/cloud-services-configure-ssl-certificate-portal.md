@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 05/26/2017
 ms.author: tagore
 ms.openlocfilehash: 6ddb7001f770a9d8aea38d1a4698e15c167aeaa4
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385388"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273141"
 ---
 # <a name="configuring-ssl-for-an-application-in-azure"></a>Настройка SSL для приложения в Azure
 
@@ -76,7 +76,7 @@ SSL-шифрование — это наиболее распространен
 
    Разрешениям (атрибуту`permissionLevel`) можно присвоить одно из приведенных ниже значений.
 
-   | Значение разрешения | Описание |
+   | Значение разрешения | Description |
    | --- | --- |
    | limitedOrElevated |**(По умолчанию).** Все процессы роли могут получить доступ к закрытому ключу. |
    | elevated |Доступ к закрытому ключу могут получить только процессы повышенного уровня. |
@@ -139,7 +139,7 @@ SSL-шифрование — это наиболее распространен
 
     ![Публикация облачной службы](media/cloud-services-configure-ssl-certificate-portal/browse.png)
 
-2. Нажмите кнопку **Сертификаты**.
+2. Щелкните **Сертификаты**.
 
     ![Щелкните значок «сертификаты»](media/cloud-services-configure-ssl-certificate-portal/certificate-item.png)
 
@@ -171,7 +171,7 @@ SSL-шифрование — это наиболее распространен
    > Создайте сертификат с общим именем, значение которого равно URL-адресу на основе GUID (например, **328187776e774ceda8fc57609d404462.cloudapp.net**). С помощью портала добавьте этот сертификат в промежуточную облачную службу. Затем добавьте сведения об этом сертификате в CSDEF- и CSCFG-файлы, перепакуйте приложение и обновите промежуточное развертывание для использования нового пакета.
    >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).

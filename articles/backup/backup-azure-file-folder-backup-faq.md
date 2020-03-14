@@ -4,11 +4,11 @@ description: Здесь рассматриваются распростране�
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.openlocfilehash: adcbf5c3b404de46634423f8f59c4798d44bebe0
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78673076"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273427"
 ---
 # <a name="common-questions-about-backing-up-files-and-folders"></a>Распространенные вопросы о резервном копировании файлов и папок
 

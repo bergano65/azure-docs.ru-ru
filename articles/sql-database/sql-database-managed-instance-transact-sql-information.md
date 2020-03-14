@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova, danil
-ms.date: 02/10/2020
+ms.date: 03/11/2020
 ms.custom: seoapril2019
-ms.openlocfilehash: d3e631fae4899fffafad9bd140abaae4fb170624
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 8c995a40e621f7155ad0741004d10b1146523489
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78360031"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256059"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -65,7 +65,6 @@ ms.locfileid: "78360031"
 
 - С помощью управляемого экземпляра можно создать резервную копию базы данных экземпляра в резервной копии с количеством полос до 32, что достаточно для баз данных размером до 4 ТБ, если используется сжатие резервных копий.
 - Невозможно выполнить `BACKUP DATABASE ... WITH COPY_ONLY` в базе данных, зашифрованной с помощью прозрачное шифрование данных, управляемого службами (TDE). Управляемые службой TDE принудительное шифрование резервных копий с помощью внутреннего ключа TDE. Ключ не может быть экспортирован, поэтому восстановить резервную копию невозможно. Используйте автоматическое резервное копирование и восстановление на момент времени или используйте [управляемую клиентом (BYOK) TDE](transparent-data-encryption-azure-sql.md#customer-managed-transparent-data-encryption---bring-your-own-key) . Также можно отключить шифрование базы данных.
-- Резервное копирование вручную в хранилище BLOB-объектов Azure поддерживается только для [учетных записей блоккблобстораже](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
 - Максимальный размер полосы резервного копирования с помощью команды `BACKUP` в управляемом экземпляре составляет 195 ГБ, что является максимальным размером большого двоичного объекта. Чтобы уменьшить размер отдельного чередующегося набора и соблюсти это ограничение, можно увеличить число чередующихся наборов в команде резервного копирования.
 
     > [!TIP]
@@ -79,7 +78,7 @@ ms.locfileid: "78360031"
 
 Сведения о резервном копировании с помощью T-SQL см. в статье [BACKUP (Transact-SQL)](/sql/t-sql/statements/backup-transact-sql).
 
-## <a name="security"></a>Безопасность
+## <a name="security"></a>безопасность
 
 ### <a name="auditing"></a>Аудит
 
@@ -140,8 +139,8 @@ WITH PRIVATE KEY (<private_key_options>)
     Управляемый экземпляр поддерживает субъекты базы данных Azure AD с синтаксисом `CREATE USER [AADUser/AAD group] FROM EXTERNAL PROVIDER`. Эта функция также называется пользователями автономной базы данных Azure AD.
 
 - Имена входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются. Используйте пользователей и имена для входа Azure Active Directory.
-- Пользователь Azure AD, создавший экземпляр, имеет [неограниченные права администратора](sql-database-manage-logins.md#unrestricted-administrative-accounts).
-- Пользователи уровня базы данных Azure AD без прав администратора могут создаваться с помощью синтаксиса `CREATE USER ... FROM EXTERNAL PROVIDER`. См [. раздел Создание пользователя... ОТ внешнего поставщика](sql-database-manage-logins.md#non-administrator-users).
+- Пользователь Azure AD, создавший экземпляр, имеет [неограниченные права администратора](sql-database-manage-logins.md).
+- Пользователи уровня базы данных Azure AD без прав администратора могут создаваться с помощью синтаксиса `CREATE USER ... FROM EXTERNAL PROVIDER`. См [. раздел Создание пользователя... ОТ внешнего поставщика](sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities).
 - Участники сервера Azure AD (имена входа) поддерживают функции SQL только в пределах одного управляемого экземпляра. Функции, требующие взаимодействия между экземплярами, независимо от того, находятся ли они в одном клиенте Azure AD или разных клиентах, не поддерживаются для пользователей Azure AD. Ниже приведены примеры таких функций:
 
   - Репликация транзакций SQL.
@@ -154,7 +153,7 @@ WITH PRIVATE KEY (<private_key_options>)
   - Только участники уровня SQL Server (имена входа), являющиеся частью роли `sysadmin`, могут выполнять следующие операции, предназначенные для участников Azure AD:
 
     - EXECUTE AS USER;
-    - EXECUTE AS LOGIN
+    - EXECUTE AS LOGIN.
 
 - Экспорт и импорт базы данных с использованием BACPAC-файлов поддерживается для пользователей Azure AD в управляемом экземпляре с помощью [SSMS v 18.4 или более поздней версии](/sql/ssms/download-sql-server-management-studio-ssms)или [SqlPackage. exe](/sql/tools/sqlpackage-download).
   - С помощью BACPAC-файла базы данных поддерживаются следующие конфигурации: 
@@ -192,7 +191,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Расширение буферного пула](/sql/database-engine/configure-windows/buffer-pool-extension) не поддерживается.
 - `ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION` не поддерживается. См. статью [ALTER SERVER CONFIGURATION (Transact-SQL)](/sql/t-sql/statements/alter-server-configuration-transact-sql).
 
-### <a name="collation"></a>Collation
+### <a name="collation"></a>Параметры сортировки
 
 Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](/sql/t-sql/statements/collations).
 
@@ -303,7 +302,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - прокси-серверы;
 - Планирование заданий на неактивном ЦП
 - Включение или отключение агента
-- Предупреждения
+- видны узлы
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](/sql/ssms/agent/sql-server-agent).
 
@@ -414,7 +413,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Репликация между издателем и подписчиком MI](replication-with-sql-database-managed-instance.md)
 - [Репликация между издателем MI, распространителем MI и подписчиком SQL Server](sql-database-managed-instance-configure-replication-tutorial.md)
 
-### <a name="restore-statement"></a>RESTORE, инструкция 
+### <a name="restore-statement"></a>Инструкция RESTORE 
 
 - Поддерживаемый синтаксис:
   - `RESTORE DATABASE`
@@ -470,6 +469,7 @@ WITH PRIVATE KEY (<private_key_options>)
   - `allow polybase export`
   - `allow updates`
   - `filestream_access_level`
+  - `remote access`
   - `remote data archive`
   - `remote proc trans`
 - `sp_execute_external_scripts` не поддерживается. См. раздел [Примеры](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql#examples).
@@ -704,7 +704,7 @@ using (var scope = new TransactionScope())
 
 **Обходной путь:** По возможности используйте контекстные соединения в модуле CLR.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об управляемых экземплярах см [. в разделе понятие управляемого экземпляра.](sql-database-managed-instance.md)
 - Список функций и сравнительных списков см. в статье [Сравнение функций базы данных SQL Azure](sql-database-features.md).

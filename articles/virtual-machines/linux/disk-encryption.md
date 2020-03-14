@@ -2,19 +2,19 @@
 title: Шифрование управляемых дисков Azure на стороне сервера — Azure CLI
 description: Служба хранилища Azure защищает ваши данные путем шифрования неактивных данных перед их сохранением в кластерах хранилища. Для шифрования управляемых дисков можно использовать ключи, управляемые корпорацией Майкрософт, или ключи, управляемые клиентом, для управления шифрованием с помощью собственных ключей.
 author: roygara
-ms.date: 01/13/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: 495bdcfb619ff17a4a4b074fa673c5d2fb185730
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: f50115732940eab14db30842be85b47cb4a552e1
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78970528"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79299529"
 ---
-# <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование на стороне сервера для управляемых дисков Azure
+# <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование управляемых дисков Azure на стороне сервера
 
 Управляемые диски Azure автоматически шифруют данные по умолчанию при сохранении их в облаке. Шифрование на стороне сервера защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. Данные на управляемых дисках Azure шифруются прозрачно с помощью 256-битного [шифрования AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), одним из наиболее подданных блоков блочных шифров и совместимым с FIPS 140-2.   
 
@@ -30,11 +30,15 @@ ms.locfileid: "78970528"
 
 ## <a name="platform-managed-keys"></a>Ключи, управляемые платформой
 
-По умолчанию управляемые диски используют управляемые платформой ключи шифрования. Начиная с 10 июня 2017, все новые управляемые диски, моментальные снимки, образы и новые данные, записанные на существующие управляемые диски, автоматически шифруются с помощью управляемых платформой ключей. 
+По умолчанию управляемые диски используют управляемые платформой ключи шифрования. Начиная с 10 июня 2017, все новые управляемые диски, моментальные снимки, образы и новые данные, записанные на существующие управляемые диски, автоматически шифруются с помощью управляемых платформой ключей.
 
 ## <a name="customer-managed-keys"></a>Ключи, управляемые клиентом
 
 Вы можете управлять шифрованием на уровне каждого управляемого диска с помощью собственных ключей. Шифрование на стороне сервера для управляемых дисков с ключами, управляемыми клиентом, обеспечивает интегрированную работу с Azure Key Vault. Вы можете либо импортировать [ключи RSA](../../key-vault/key-vault-hsm-protected-keys.md) в Key Vault, либо создать новые ключи rsa в Azure Key Vault. Управляемые диски Azure обрабатывают шифрование и расшифровку полностью прозрачным способом с помощью [шифрования конвертов](../../storage/common/storage-client-side-encryption.md#encryption-and-decryption-via-the-envelope-technique). Он шифрует данные с помощью ключа шифрования данных на основе [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 256 (DEK), который, в свою очередь, защищен с помощью ключей. Вы должны предоставить доступ к управляемым дискам в Key Vault, чтобы использовать ключи для шифрования и расшифровки DEK. Это обеспечивает полный контроль над данными и ключами. Вы можете отключить ключи или отозвать доступ к управляемым дискам в любое время. Кроме того, можно проводить аудит использования ключа шифрования с Azure Key Vault мониторинга, чтобы обеспечить доступ к ключам только управляемых дисков или других доверенных служб Azure.
+
+Для твердотельных накопителей Premium, стандартных твердотельных накопителей и жестких дисков уровня "Стандартный": при отключении или удалении ключа все виртуальные машины с дисками, использующие этот ключ, автоматически завершат работу. После этого виртуальные машины не будут использоваться, пока ключ не будет включен снова или не назначен новый ключ.
+
+Если вы отключаете или удаляете ключ для Ultra Disks, все виртуальные машины с Ultra Disks, использующие этот ключ, не будут автоматически завершаться. После отмены распределения и перезапуска виртуальных машин диски будут прекращаться с помощью ключа, а виртуальные машины не будут возвращаться в оперативный режим. Чтобы вернуть виртуальные машины в оперативный режим, необходимо назначить новый ключ или включить существующий ключ.
 
 На следующей схеме показано, как управляемые диски используют Azure Active Directory и Azure Key Vault для выполнения запросов с помощью управляемого клиентом ключа:
 
@@ -56,15 +60,14 @@ ms.locfileid: "78970528"
 
 ### <a name="supported-regions"></a>Поддерживаемые регионы
 
-В настоящее время поддерживаются только следующие регионы:
-
-- Доступно в качестве общедоступного предложения в восточной части США, западной части США 2 и юго-центральном регионе США.
-- Доступно в виде общедоступной предварительной версии в западной части США, восточной части США 2, в центральной части Канады и в Северной Европе.
+[!INCLUDE [virtual-machines-disks-encryption-regions](../../../includes/virtual-machines-disks-encryption-regions.md)]
 
 ### <a name="restrictions"></a>Ограничения
 
 Сейчас ключи, управляемые клиентом, имеют следующие ограничения.
 
+- Если эта функция включена для диска, отключить ее нельзя.
+    Если необходимо обойти эту ошибку, необходимо [скопировать все данные](disks-upload-vhd-to-managed-disk-cli.md#copy-a-managed-disk) на совершенно другой управляемый диск, не использующий ключи, управляемые клиентом.
 - Поддерживаются только [«мягкие» и «жесткие» ключи RSA](../../key-vault/about-keys-secrets-and-certificates.md#keys-and-key-types) размером 2080, а другие ключи и размеры отсутствуют.
 - Диски, созданные на основе пользовательских образов, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же самых управляемых клиентом ключей и должны находиться в одной подписке.
 - Моментальные снимки, созданные на основе дисков, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же управляемых клиентом ключей.
@@ -99,28 +102,28 @@ ms.locfileid: "78970528"
     az keyvault key create --vault-name $keyVaultName -n $keyName --protection software
     ```
 
-1.  Создайте экземпляр Дискенкриптионсет. 
+1.    Создайте экземпляр Дискенкриптионсет. 
     
-    ```azurecli
-    keyVaultId=$(az keyvault show --name $keyVaultName --query [id] -o tsv)
+        ```azurecli
+        keyVaultId=$(az keyvault show --name $keyVaultName --query [id] -o tsv)
+    
+        keyVaultKeyUrl=$(az keyvault key show --vault-name $keyVaultName --name $keyName --query [key.kid] -o tsv)
+    
+        az disk-encryption-set create -n $diskEncryptionSetName -l $location -g $rgName --source-vault $keyVaultId --key-url $keyVaultKeyUrl
+        ```
 
-    keyVaultKeyUrl=$(az keyvault key show --vault-name $keyVaultName --name $keyName --query [key.kid] -o tsv)
+1.    Предоставьте ресурсу Дискенкриптионсет доступ к хранилищу ключей. 
 
-    az disk-encryption-set create -n $diskEncryptionSetName -l $location -g $rgName --source-vault $keyVaultId --key-url $keyVaultKeyUrl
-    ```
+        > [!NOTE]
+        > Создание удостоверения Дискенкриптионсет в Azure Active Directory может занять несколько минут Azure. Если при выполнении следующей команды появляется сообщение об ошибке, например "не удается найти объект Active Directory", подождите несколько минут и повторите попытку.
 
-1.  Предоставьте ресурсу Дискенкриптионсет доступ к хранилищу ключей. 
-
-    > [!NOTE]
-    > Создание удостоверения Дискенкриптионсет в Azure Active Directory может занять несколько минут Azure. Если при выполнении следующей команды появляется сообщение об ошибке, например "не удается найти объект Active Directory", подождите несколько минут и повторите попытку.
-
-    ```azurecli
-    desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
-
-    az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --key-permissions wrapkey unwrapkey get
-
-    az role assignment create --assignee $desIdentity --role Reader --scope $keyVaultId
-    ```
+        ```azurecli
+        desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
+    
+        az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --key-permissions wrapkey unwrapkey get
+    
+        az role assignment create --assignee $desIdentity --role Reader --scope $keyVaultId
+        ```
 
 #### <a name="create-a-vm-using-a-marketplace-image-encrypting-the-os-and-data-disks-with-customer-managed-keys"></a>Создание виртуальной машины с помощью образа Marketplace, шифрование дисков операционной системы и данных с помощью управляемых клиентом ключей
 

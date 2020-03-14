@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: 1ae3caa2d1f90bbbae1070d95d676eb206a361a0
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 0988c8154c63bb408493edf3243078e625c80d53
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73647346"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371228"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -39,7 +39,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 ## <a name="supported-regions-and-service-offerings"></a>Поддерживаемые регионы и предложения услуг
 
-Поддержка виртуальных сетей для Cognitive Services ограничена в регионах Azure *ранний-Central US (euap)* , *Западная Европа*и *Западная часть США 2* . Кроме того, не все предложения по обприятию услуг поддерживают виртуальные сети. Следующие предложения по обприятию службы позволяют использовать виртуальные сети. Если предложение услуги отсутствует в списке, оно не поддерживает виртуальные сети.
+Поддержка виртуальных сетей для Cognitive Services, перечисленных ниже, ограничена *центральным (euap)ом*США, *Юго-центральным*регионом США, *Восточная*часть US, *Запад США 2*, *Северная Европа*, *Южная Африка Север*, *Западная Европа*, *Центральная Индия*, *Восточная Австралия*, *Западная часть США*и *US gov (Вирджиния)* регионы Azure. Если предложение услуги отсутствует в списке, оно не поддерживает виртуальные сети.
 
 > [!div class="checklist"]
 > * [Детектор аномалий](./anomaly-detector/index.yml)
@@ -49,8 +49,29 @@ Azure Cognitive Services предоставляет многоуровневую
 > * [Распознавание лиц](./face/index.yml)
 > * [Распознаватель форм](./form-recognizer/index.yml)
 > * [LUIS](./luis/index.yml)
-> * [Персонализация](./personalizer/index.yml)
+> * [Персонализатор](./personalizer/index.yml)
 > * [Анализ текста](./text-analytics/index.yml)
+> * [QnA Maker](./qnamaker/index.yml)
+
+Поддержка виртуальных сетей для Cognitive Services, перечисленных ниже, ограничена *центральным (euap)ом*, *Юго-центральным*регионом США, *Восточная*часть США, *Западная*часть сша 2, а также *глобальными*и *US gov (Вирджиния)* регионами Azure.
+> [!div class="checklist"]
+> * [Перевод текстов](./translator/index.yml)
+
+## <a name="service-tags"></a>Теги службы
+Помимо поддержки конечных точек службы виртуальной сети для указанных выше служб, Cognitive Services также поддерживает тег службы для конфигурации исходящих сетевых правил. В тег службы Когнитивесервицесманажемент включены следующие службы.
+> [!div class="checklist"]
+> * [Детектор аномалий](./anomaly-detector/index.yml)
+> * [Компьютерное зрение](./computer-vision/index.yml)
+> * [Content Moderator](./content-moderator/index.yml)
+> * [Пользовательское визуальное распознавание](./custom-vision-service/index.yml)
+> * [Распознавание лиц](./face/index.yml)
+> * [Распознаватель форм](./form-recognizer/index.yml)
+> * [LUIS](./luis/index.yml)
+> * [Персонализатор](./personalizer/index.yml)
+> * [Анализ текста](./text-analytics/index.yml)
+> * [QnA Maker](./qnamaker/index.yml)
+> * [Перевод текстов](./translator/index.yml)
+> * [Служба "Речь"](./speech-service/index.yml)
 
 ## <a name="change-the-default-network-access-rule"></a>Изменение сетевого правила доступа по умолчанию
 
@@ -63,7 +84,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 Вы можете управлять правилами сетевого доступа по умолчанию для Cognitive Services ресурсов с помощью портал Azure, PowerShell или Azure CLI.
 
-# <a name="azure-portaltabportal"></a>[портал Azure](#tab/portal)
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
 1. Перейдите к ресурсу Cognitive Services, который необходимо защитить.
 
@@ -78,7 +99,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 1. Щелкните **Сохранить**, чтобы применить изменения.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-az-ps) и [выполните вход](/powershell/azure/authenticate-azureps), или выберите **попробовать**.
 
@@ -114,7 +135,7 @@ Azure Cognitive Services предоставляет многоуровневую
     Update-AzCognitiveServicesAccountNetworkRuleSet @parameters
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli), или выберите **попробовать**.
 
@@ -165,7 +186,7 @@ Cognitive Services ресурс и виртуальные сети, которы
 
 Вы можете управлять правилами виртуальной сети для Cognitive Servicesных ресурсов с помощью портал Azure, PowerShell или Azure CLI.
 
-# <a name="azure-portaltabportal"></a>[портал Azure](#tab/portal)
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
 1. Перейдите к ресурсу Cognitive Services, который необходимо защитить.
 
@@ -200,7 +221,7 @@ Cognitive Services ресурс и виртуальные сети, которы
 
 1. Щелкните **Сохранить**, чтобы применить изменения.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-az-ps) и [выполните вход](/powershell/azure/authenticate-azureps), или выберите **попробовать**.
 
@@ -260,7 +281,7 @@ Cognitive Services ресурс и виртуальные сети, которы
     Remove-AzCognitiveServicesAccountNetworkRule @parameters
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli), или выберите **попробовать**.
 
@@ -340,7 +361,7 @@ Cognitive Services ресурс и виртуальные сети, которы
 
 Вы можете управлять правилами IP-сети для Cognitive Servicesных ресурсов с помощью портал Azure, PowerShell или Azure CLI.
 
-# <a name="azure-portaltabportal"></a>[портал Azure](#tab/portal)
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
 1. Перейдите к ресурсу Cognitive Services, который необходимо защитить.
 
@@ -358,7 +379,7 @@ Cognitive Services ресурс и виртуальные сети, которы
 
 1. Щелкните **Сохранить**, чтобы применить изменения.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-az-ps) и [выполните вход](/powershell/azure/authenticate-azureps), или выберите **попробовать**.
 
@@ -416,7 +437,7 @@ Cognitive Services ресурс и виртуальные сети, которы
     Remove-AzCognitiveServicesAccountNetworkRule @parameters
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli), или выберите **попробовать**.
 
@@ -464,7 +485,7 @@ Cognitive Services ресурс и виртуальные сети, которы
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите различные [Cognitive Services Azure](welcome.md)
 * Дополнительные сведения о [конечных точках службы виртуальной сети Azure](../virtual-network/virtual-network-service-endpoints-overview.md)

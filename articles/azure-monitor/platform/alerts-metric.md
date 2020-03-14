@@ -4,14 +4,14 @@ description: Узнайте, как использовать портал Azure 
 author: harelbr
 ms.author: harelbr
 ms.topic: conceptual
-ms.date: 02/16/2020
+ms.date: 03/13/2020
 ms.subservice: alerts
-ms.openlocfilehash: 5452f67a9da9a71a72c9387bc3e62d6735929984
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: cefccd08ea66638f08f00e280fe2704444a7f916
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363445"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79369392"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -53,7 +53,7 @@ ms.locfileid: "78363445"
 
 10. При необходимости уточните условие, изменив **гранулярность статистической обработки** и **частоту вычисления**. 
 
-11. Нажмите кнопку **Done**(Готово).
+11. Нажмите кнопку **Готово**.
 
 12. При необходимости добавьте еще один критерий, если вы хотите отслеживать сложное правило генерации оповещений. Сейчас пользователи могут применять правила оповещения с одиночным условием динамического порогового значения.
 
@@ -134,9 +134,9 @@ ms.locfileid: "78363445"
     az monitor metrics alert delete -g {ResourceGroup} -n {AlertRuleName}
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-enable-template.md).
+- [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md).
 - [Сведения о работе оповещений метрики в Azure Monitor](alerts-metric-overview.md).
 - [Оповещения с динамическими пороговыми значениями в Azure Monitor (ограниченная закрытая предварительная версия)](alerts-dynamic-thresholds.md).
 - [Схема полезных данных](../../azure-monitor/platform/alerts-metric-near-real-time.md#payload-schema)

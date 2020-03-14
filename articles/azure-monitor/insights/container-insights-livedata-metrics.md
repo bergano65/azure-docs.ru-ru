@@ -3,12 +3,12 @@ title: Просмотр метрик в режиме реального врем
 description: В этой статье описывается представление метрик в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: fbb08a8ed3deeff061065916241ee2d724603be3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4604635c985057ec0b7f49a0d1cca7111dfc8eec
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75404934"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79216588"
 ---
 # <a name="how-to-view-metrics-in-real-time"></a>Просмотр метрик в режиме реального времени
 
@@ -24,7 +24,7 @@ ms.locfileid: "75404934"
 
 Чтобы получить справку по настройке и устранению неполадок интерактивных данных (Предварительная версия), ознакомьтесь с нашим [руководством по установке](container-insights-livedata-setup.md).
 
-## <a name="how-it-works"></a>Принципы работы 
+## <a name="how-it-works"></a>Принцип работы 
 
 Функция интерактивных данных (Предварительная версия) напрямую обращается к API Kubernetes, а дополнительные сведения о модели проверки подлинности можно найти [здесь](https://kubernetes.io/docs/concepts/overview/kubernetes-api/). 
 
@@ -34,7 +34,7 @@ ms.locfileid: "75404934"
 
 Интервал опроса настраивается из раскрывающегося списка **задать интервал** , что позволяет установить опрос для новых данных каждые 1, 5, 15 и 30 секунд. 
 
-![Интервал опроса "в реальном времени"](./media/container-insights-livedata-metrics/cluster-view-polling-interval-dropdown.ping.png)
+![Интервал опроса "в реальном времени"](./media/container-insights-livedata-metrics/cluster-view-polling-interval-dropdown.png)
 
 >[!IMPORTANT]
 >Рекомендуется установить интервал опроса равным одной секунде при устранении проблемы в течение короткого периода времени. Эти запросы могут повлиять на доступность и регулирование API Kubernetes в кластере. Затем перенастройте его на более длительный интервал опроса. 

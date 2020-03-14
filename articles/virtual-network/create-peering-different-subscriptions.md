@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: anavin
 ms.openlocfilehash: d085279167b498b13cfb79b97703cfdff7d6dd8a
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201770"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79245126"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках
 
@@ -27,8 +27,8 @@ ms.locfileid: "77201770"
 
 |Модель развертывания Azure  | Подписка Azure.  |
 |--------- |---------|
-|[Обе Resource Manager](tutorial-connect-virtual-networks-portal.md) |То же самое|
-|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models.md) |То же самое|
+|[Обе Resource Manager](tutorial-connect-virtual-networks-portal.md) |Аналогично|
+|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models.md) |Аналогично|
 |[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Разные|
 
 Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
@@ -60,7 +60,7 @@ ms.locfileid: "77201770"
 6. В колонке **myVnetA — управление доступом (IAM)** выберите **+ Добавить назначение ролей**.
 7. Выберите **Участник сети** в поле **Роль**.
 8. В поле **Выбор** выберите *пользователя B* или введите его адрес электронной почты для поиска.
-9. Нажмите кнопку **Сохранить**.
+9. Щелкните **Сохранить**.
 10. В вертикальном списке вариантов слева в колонке **myVnetA — управление доступом (IAM)** щелкните **Свойства**. Скопируйте **Идентификатор ресурса**, он понадобится нам позже. Идентификатор ресурса аналогичен следующему примеру: `/subscriptions/<Subscription Id>/resourceGroups/myResourceGroupA/providers/Microsoft.Network/virtualNetworks/myVnetA`.
 11. Выйдите с портала как пользователь A, а затем войдите как пользователь B.
 12. Выполните шаги 2–3, введя или выбрав следующие значения на шаге 3.
@@ -326,7 +326,7 @@ ms.locfileid: "77201770"
    Remove-AzResourceGroup -Name myResourceGroupB -force
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Внимательно ознакомьтесь с важными [ограничениями и особенностями работы пиринга виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints), прежде чем создавать пиринг виртуальных сетей для рабочей среды.
 - Узнайте о [параметрах пиринга виртуальных сетей](virtual-network-manage-peering.md#create-a-peering).

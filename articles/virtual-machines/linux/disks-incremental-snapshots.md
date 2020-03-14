@@ -1,18 +1,18 @@
 ---
-title: Добавочные моментальные снимки (Предварительная версия) для управляемых дисков
-description: Дополнительные сведения о добавочных моментальных снимках (Предварительная версия) для управляемых дисков, включая их создание с помощью PowerShell и Azure Resource Manager.
+title: Добавочные моментальные снимки для управляемых дисков
+description: Дополнительные сведения о добавочных моментальных снимках для управляемых дисков, включая их создание с помощью интерфейса командной строки и Azure Resource Manager.
 author: roygara
-ms.service: virtual-machines
+ms.service: virtual-machines-linux
 ms.topic: conceptual
-ms.date: 09/23/2019
+ms.date: 03/13/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 74c1c84b4deb1f2d904f88887fcf81b880f0f8ec
-ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
+ms.openlocfilehash: cc2685c234bceb302b86ebd84d0ec091ac11f098
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78970413"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79370871"
 ---
-# <a name="creating-an-incremental-snapshot-preview-for-managed-disks"></a>Создание добавочного моментального снимка (Предварительная версия) для управляемых дисков
-[!INCLUDE [virtual-machines-disks-incremental-snapshot](../../../includes/virtual-machines-disks-incremental-snapshot.md)]
+# <a name="create-an-incremental-snapshot-for-managed-disks---cli"></a>Создание добавочного моментального снимка для управляемых дисков — CLI
+[!INCLUDE [virtual-machines-disks-incremental-snapshot-cli](../../../includes/virtual-machines-disks-incremental-snapshot-cli.md)]

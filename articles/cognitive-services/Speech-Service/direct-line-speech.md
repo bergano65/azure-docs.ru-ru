@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 01/31/2020
+ms.date: 03/11/2020
 ms.author: dapine
-ms.openlocfilehash: 230fbd14ce33b52b1e7a1f9cc9cd530ccdec169a
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 714cdefa7100160a510d1922a2547ae53692d76c
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562536"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79367811"
 ---
-# <a name="about-direct-line-speech"></a>О прямой голосовой речи
+# <a name="what-is-direct-line-speech"></a>Что такое Direct Line Speech?
 
 **Прямая речь** — это надежное комплексное решение для создания гибкого, расширяемого голосового помощника. Она работает на основе платформы Bot и ее прямого голосового канала, которая оптимизирована для взаимодействия с выходом из речи с программы-роботы.
 
@@ -62,7 +62,7 @@ ms.locfileid: "77562536"
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 * [Получение пакета SDK для распознавания речи](speech-sdk.md)

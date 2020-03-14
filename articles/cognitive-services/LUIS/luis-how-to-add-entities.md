@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: diberry
 ms.openlocfilehash: 1f2b293acdc77e25e6b932c47d466cc28a04a2b6
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383684"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220911"
 ---
 # <a name="add-entities-to-extract-data"></a>Добавление сущностей для извлечения данных 
 
@@ -46,7 +46,7 @@ ms.locfileid: "74383684"
 |Тип сущности|Где создать сущность на портале LUIS|
 |--|--|
 |Сущность, прошедшая машинное обучение|Сущности или сведения о намерениях|
-|Сущности списка|Сущности или сведения о намерениях|
+|Сущность списка|Сущности или сведения о намерениях|
 |Сущность регулярного выражения|Сущности|
 |Сущность Pattern.any|Сущности|
 |Предварительно созданная сущность|Сущности|
@@ -177,7 +177,7 @@ ms.locfileid: "74383684"
 
 <a name="create-a-pattern-from-an-utterance"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Использование предварительно созданных моделей](howto-add-prebuilt-models.md) 

@@ -12,11 +12,11 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cf2ca3bde0cfee97adee8bb875df1522e95b1f53
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74869323"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263508"
 ---
 # <a name="add-azure-active-directory-b2b-collaboration-users-in-the-azure-portal"></a>Добавление пользователей службы совместной работы B2B на портале Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74869323"
 > [!IMPORTANT]
 > Добавьте URL-адрес заявления о конфиденциальности вашей организации, следуя инструкциям в статье [Практическое руководство. Добавление сведений о конфиденциальности организации в Azure Active Directory](https://aka.ms/adprivacystatement). В рамках процесса первой активации приглашения приглашенный пользователь должен согласиться на ваши условия конфиденциальности, чтобы продолжить. 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Убедитесь, что параметры внешнего сотрудничества в вашей организации настроены таким образом, что вы можете приглашать гостей. По умолчанию все пользователи и администраторы могут приглашать гостей. Но внешние политики совместной работы вашей организации могут быть настроены таким образом, чтобы запретить некоторым пользователям или администраторам приглашать гостей. Чтобы узнать, как просмотреть и настроить эти политики, см. раздел [Включение внешней совместной работы B2B и управление пользователями, которые могут приглашать гостей](delegate-invitations.md).
 

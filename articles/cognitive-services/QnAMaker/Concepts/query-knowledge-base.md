@@ -4,11 +4,11 @@ description: База знаний должна быть опубликован�
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.openlocfilehash: cb777aa16fada50811cce1bbf49f28662c62b49b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843325"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220724"
 ---
 # <a name="query-the-knowledge-base-for-answers"></a>Запрос ответов в базе знаний
 
@@ -16,7 +16,7 @@ ms.locfileid: "76843325"
 
 ## <a name="how-qna-maker-processes-a-user-query-to-select-the-best-answer"></a>Как QnA Maker обрабатывает запрос пользователя для выбора лучшего ответа
 
-База знаний с обученным и [опубликованным](/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base#publish-the-knowledge-base) QnA Maker получает пользовательский запрос от робота или другого клиентского приложения на [API GenerateAnswer](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage). На следующей схеме показан процесс получения запроса пользователя.
+База знаний с обученным и [опубликованным](/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base#publish-the-knowledge-base) QnA Maker получает пользовательский запрос от робота или другого клиентского приложения на [API женератеансвер](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage). На следующей схеме показан процесс получения запроса пользователя.
 
 ![Процесс ранжирования модели для пользовательского запроса](../media/qnamaker-concepts-knowledgebase/rank-user-query-first-with-azure-search-then-with-qna-maker.png)
 
@@ -24,7 +24,7 @@ ms.locfileid: "76843325"
 
 Этот процесс описан в следующей таблице.
 
-|Шаг|Цель|
+|Шаг|Назначение|
 |--|--|
 |1|Клиентское приложение отправляет пользовательский запрос в [API женератеансвер](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage).|
 |2|QnA Maker предварительно обрабатывает пользовательский запрос с помощью распознавания языка, средств проверки орфографии и средств разбиения по словам.|

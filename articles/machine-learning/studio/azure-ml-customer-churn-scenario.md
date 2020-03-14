@@ -10,14 +10,17 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/18/2017
-ms.openlocfilehash: 79a7b157d5daf8940aba454808c65ed433cfe29c
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 4cf918abae51ca330054ef86e57095d29a21a37a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168997"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79204534"
 ---
 # <a name="analyze-customer-churn-using-azure-machine-learning-studio-classic"></a>Анализ обновлений клиентов с помощью Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 ## <a name="overview"></a>Обзор
 В этой статье представлена эталонная реализация проекта "анализ клиентских данных", созданного с помощью Машинное обучение Azure Studio (классическая модель). Кроме того, здесь рассматриваются соответствующие универсальные модели для комплексного решения проблем оттока промышленных клиентов. Здесь также измеряется точность моделей, построенных с использованием машинного обучения, и оцениваются направления дальнейшего развития.  
 

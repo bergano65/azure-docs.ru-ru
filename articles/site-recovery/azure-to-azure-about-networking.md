@@ -6,14 +6,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 1/23/2020
+ms.date: 3/13/2020
 ms.author: sutalasi
-ms.openlocfilehash: aeab1960b065538635fdd63c43d779287f8cd9ee
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 5dcae83714ee3693288abf54afe8df7bb55dd578
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759829"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371449"
 ---
 # <a name="about-networking-in-azure-vm-disaster-recovery"></a>Сведения о сетях в аварийном восстановлении виртуальной машины Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "76759829"
 
 В этой статье предоставлены указания по организации сети при репликации и восстановлении виртуальных машин Azure из одного региона в другой с помощью [Azure Site Recovery](site-recovery-overview.md).
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 Узнайте, как Site Recovery обеспечивает аварийное восстановление для [этого сценария](azure-to-azure-architecture.md).
 
@@ -52,6 +52,8 @@ ms.locfileid: "76759829"
 login.microsoftonline.com | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery.
 *.hypervrecoverymanager.windowsazure.com | Требуется для обмена данными между службой Site Recovery и виртуальной машиной.
 *.servicebus.windows.net | Необходимые для записи данные наблюдения и диагностики Site Recovery из виртуальной машины.
+*.vault.azure.net | Разрешает доступ для включения репликации для виртуальных машин с поддержкой ADE через портал
+*. automation.ext.azure.com | Позволяет включить автоматическое обновление агента мобильности для реплицированного элемента с помощью портала
 
 ## <a name="outbound-connectivity-for-ip-address-ranges"></a>Исходящие подключения для диапазонов IP-адресов
 
@@ -63,6 +65,8 @@ login.microsoftonline.com | Требуется для авторизации и 
 - Создайте [тег службы Azure Active Directory (AAD)](../virtual-network/security-overview.md#service-tags) на основе правила NSG, чтобы разрешить доступ ко всем IP-адресам, соответствующим AAD.
 - Создайте правило NSG на основе тега службы Евентшуб для целевого региона, разрешив доступ к Site Recoveryному мониторингу.
 - Создайте правило NSG на основе тега службы Азуреситерековери, чтобы разрешить доступ к Site Recovery службе в любом регионе.
+- Создайте правило NSG на основе тега службы AzureKeyVault. Это необходимо только для включения репликации виртуальных машин с поддержкой ADE через портал.
+- Создайте правило NSG на основе тега службы Гуестандхибридманажемент. Это необходимо только для включения автоматического обновления агента мобильности для реплицированного элемента с помощью портала.
 - Мы советуем создать необходимые правила NSG в тестовой группе безопасности сети и проверить наличие проблем, прежде чем создавать правила для рабочей группы безопасности.
 
 ## <a name="example-nsg-configuration"></a>Конфигурация примера группы безопасности сети
@@ -119,7 +123,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 Вы можете переопределить системный маршрут Azure по умолчанию для префикса адреса 0.0.0.0/0, указав [настраиваемый маршрут](../virtual-network/virtual-networks-udr-overview.md#custom-routes), и перенаправить трафик виртуальных машин на локальный сетевой виртуальный модуль (NVA), но такая конфигурация не рекомендуется для репликации Site Recovery. При использовании настраиваемых маршрутов рекомендуется создать в виртуальной сети для хранилища [конечную точку службы для виртуальной сети](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage), чтобы трафик репликации не покидал границ Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Включите защиту рабочих нагрузок, [выполнив репликацию виртуальных машин Azure](site-recovery-azure-to-azure.md).
 - Узнайте больше о [сохранении IP-адресов](site-recovery-retain-ip-azure-vm-failover.md) при отработке отказа виртуальных машин Azure.
 - Узнайте больше об аварийном восстановлении [виртуальных машин Azure с помощью ExpressRoute](azure-vm-disaster-recovery-with-expressroute.md).

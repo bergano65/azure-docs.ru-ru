@@ -1,17 +1,17 @@
 ---
-title: Устранение неполадок шифрования данных в базе данных Azure для PostgreSQL — один сервер
+title: Устранение неполадок шифрования данных — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как устранить неполадки шифрования данных в базе данных Azure для PostgreSQL — один сервер.
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: bd3303117bae307bb562390cec1fdfb62c01b7c6
-ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
+ms.openlocfilehash: 2902ff17ac14a48f1a11259339c2ab1bc4595980
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78851083"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79299266"
 ---
 # <a name="troubleshoot-data-encryption-in-azure-database-for-postgresql---single-server"></a>Устранение неполадок шифрования данных в базе данных Azure для PostgreSQL — один сервер
 
@@ -57,6 +57,6 @@ ms.locfileid: "78851083"
 - Определите хранилище ключей и перейдите к нему на портале Azure.
 - Убедитесь, что URI ключа определяет имеющийся ключ.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование портал Azure для настройки шифрования данных с помощью управляемого клиентом ключа в базе данных Azure для PostgreSQL](howto-data-encryption-portal.md)

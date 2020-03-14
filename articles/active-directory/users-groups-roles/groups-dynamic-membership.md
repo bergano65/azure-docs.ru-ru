@@ -15,11 +15,11 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: da983f87977de922ec547c3ade2972dfb4d69363
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374758"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253082"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -91,7 +91,7 @@ user.department -eq "Sales"
 | AccountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
-### <a name="properties-of-type-string"></a>Свойства типа строка
+### <a name="properties-of-type-string"></a>Свойства строкового типа
 
 | Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
@@ -104,7 +104,7 @@ user.department -eq "Sales"
 | facsimileTelephoneNumber |Любое строковое значение или *null*. |(user.facsimileTelephoneNumber -eq "value") |
 | givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
 | jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
-| почта |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
+| mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
 | mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
@@ -117,12 +117,12 @@ user.department -eq "Sales"
 | state |Любое строковое значение или *null*. |(user.state -eq "value") |
 | streetAddress |Любое строковое значение или *null*. |(user.streetAddress -eq "value") |
 | surname |Любое строковое значение или *null*. |(user.surname -eq "value") |
-| telephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |
+| TelephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |
 | usageLocation |Двухбуквенный код страны. |(user.usageLocation -eq "US") |
 | userPrincipalName |Любое строковое значение |(user.userPrincipalName -eq "alias@domain") |
 | userType |member, guest, *null* |(user.userType -eq "Member") |
 
-### <a name="properties-of-type-string-collection"></a>Свойства типа коллекция строк
+### <a name="properties-of-type-string-collection"></a>Свойства типа коллекции строк
 
 | Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
@@ -176,9 +176,9 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 Используемые в выражении значения могут состоять из нескольких типов, включая следующие:
 
-* Строки
+* строк
 * логическое (true или false);
-* Номера
+* Числа
 * массивы (чисел или строк).
 
 Включая значение в выражение, важно использовать правильный синтаксис, чтобы избежать ошибок. Вот несколько советов по синтаксису:
@@ -395,7 +395,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 > [!Note]  
 > При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

@@ -3,12 +3,12 @@ title: Запуск функций Azure из пакета
 description: Настройте запуск функций в среде выполнения Функций Azure путем подключения файла пакета развертывания, содержащего файлы проекта приложения-функции.
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: 3ae287939f22469b03f0e10f184f067274464905
-ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
+ms.openlocfilehash: d40896d6a4659945dbeda9ca965366f0b2ca4bd2
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79087023"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79365277"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
@@ -58,32 +58,6 @@ ms.locfileid: "79087023"
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 
-### <a name="use-key-vault-references"></a>Использование Key Vault ссылок
-
-Для повышения безопасности можно использовать ссылки Key Vault в сочетании с внешним URL-адресом. Это обеспечивает шифрование неактивных URL-адресов и позволяет использовать Key Vault для управления секретами и их смены. Рекомендуется использовать хранилище BLOB-объектов Azure, чтобы можно было легко поворачивать соответствующий ключ SAS. Хранилище BLOB-объектов Azure шифруется при хранении, что обеспечивает безопасность данных приложения, если оно не развернуто в службе приложений.
-
-1. Создайте хранилище ключей Azure.
-
-    ```azurecli
-    az keyvault create --name "Contoso-Vault" --resource-group <group-name> --location eastus
-    ```
-
-1. Добавьте внешний URL-адрес в качестве секрета в Key Vault.
-
-    ```azurecli
-    az keyvault secret set --vault-name "Contoso-Vault" --name "external-url" --value "<insert-your-URL>"
-    ```
-
-1. Создайте параметр приложения `WEBSITE_RUN_FROM_PACKAGE` и задайте в качестве значения Key Vault ссылку на внешний URL-адрес.
-
-    ```azurecli
-    az webapp config appsettings set --settings WEBSITE_RUN_FROM_PACKAGE="@Microsoft.KeyVault(SecretUri=https://Contoso-Vault.vault.azure.net/secrets/external-url/<secret-version>"
-    ```
-
-Дополнительные сведения см. в следующих статьях.
-
-- [Key Vault ссылки для службы приложений](../app-service/app-service-key-vault-references.md)
-- [Шифрование неактивных данных в службе хранилища Azure](../storage/common/storage-service-encryption.md)
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

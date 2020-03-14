@@ -8,16 +8,18 @@ ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: f0db35e188aeca4de7b74d6c3e4dfc45b349279a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 360930b708d6358692de2af7325701b73d5cf9c9
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75972724"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79370565"
 ---
 # <a name="soft-delete-for-azure-storage-blobs"></a>Обратимое удаление больших двоичных объектов службы хранилища Azure
 
 Служба хранилища Azure теперь предоставляет возможность обратимого удаления больших двоичных объектов. Это упрощает восстановление данных, если они ошибочно изменены или удалены приложением или другим пользователем учетной записи хранения.
+
+[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="how-soft-delete-works"></a>Как работает обратимое удаление
 
@@ -41,7 +43,7 @@ ms.locfileid: "75972724"
 
 Функция обратимого удаления сохраняет данные во многих случаях, в которых большие двоичные объекты или их моментальные снимки удаляются или перезаписываются.
 
-Когда большой двоичный объект перезаписывается с помощью функции **размещения большого двоичного объекта**, **помещение блока**, **помещение в список блокировок**или **копирование BLOB-объекта** , моментальный снимок состояния большого двоичного объекта до операции записи создается автоматически. Этот моментальный снимок является обратимо удаляемым. Он невидим, если только обратимо удаляемые объекты не перечислены явно. Чтобы узнать, как получить список обратимо удаляемых объектов, см. раздел [о восстановлении](#recovery).
+Когда большой двоичный объект перезаписывается с помощью функции **размещения большого двоичного объекта**, **помещение блока**, **помещение в черный список**или **копирование BLOB-объекта** , моментальный снимок состояния большого двоичного объекта до операции записи создается автоматически. Этот моментальный снимок является обратимо удаляемым. Он невидим, если только обратимо удаляемые объекты не перечислены явно. Чтобы узнать, как получить список обратимо удаляемых объектов, см. раздел [о восстановлении](#recovery).
 
 ![](media/storage-blob-soft-delete/storage-blob-soft-delete-overwrite.png)
 
@@ -72,7 +74,7 @@ ms.locfileid: "75972724"
 
 В следующей таблице описано ожидаемое поведение, если обратимое удаление включено:
 
-| Операция REST API | Тип ресурса | Description | Изменение в поведении |
+| Операция REST API | Тип ресурса | Описание | Изменение в поведении |
 |--------------------|---------------|-------------|--------------------|
 | [Удаление](/rest/api/storagerp/StorageAccounts/Delete) | Учетная запись | Удаляет учетную запись хранения, а также все содержащиеся в ней контейнеры и большие двоичные объекты.                           | Без изменения. Контейнеры и большие двоичные объекты в удаленной учетной записи невозможно восстановить. |
 | [Delete Container](/rest/api/storageservices/delete-container) | Контейнер | Удаляет контейнер вместе со всеми большими двоичными объектами, которые в нем содержатся. | Без изменения. Большие двоичные объекты в удаленном контейнере невозможно восстановить. |
@@ -146,11 +148,11 @@ Copy a snapshot over the base blob:
 
 При первоначальном включении обратимого удаления рекомендуется использовать небольшой период хранения, чтобы лучше понять, как использование этой функции отразится на счете.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 Ниже показано, как приступить к работе с обратимым удалением.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Включите обратимое удаление для больших двоичных объектов в учетной записи хранения с помощью портал Azure:
 
@@ -190,7 +192,7 @@ Copy a snapshot over the base blob:
 
 ![](media/storage-blob-soft-delete/storage-blob-soft-delete-portal-promote-snapshot.png)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -227,7 +229,7 @@ $Blobs.ICloudBlob.Undelete()
    Get-AzStorageServiceProperty -ServiceType Blob -Context $account.Context
 ```
 
-# <a name="clitabazure-cli"></a>[CLI](#tab/azure-CLI)
+# <a name="cli"></a>[CLI](#tab/azure-CLI)
 
 Чтобы включить обратимое удаление, обновите свойства клиентской службы BLOB-объектов:
 
@@ -241,7 +243,7 @@ az storage blob service-properties delete-policy update --days-retained 7  --acc
 az storage blob service-properties delete-policy show --account-name mystorageaccount 
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Чтобы включить обратимое удаление, обновите свойства клиентской службы BLOB-объектов:
 
@@ -259,7 +261,7 @@ block_blob_service.set_blob_service_properties(
     delete_retention_policy=DeleteRetentionPolicy(enabled=True, days=7))
 ```
 
-# <a name="nettabnet"></a>[.NET](#tab/net)
+# <a name="net"></a>[.NET](#tab/net)
 
 Чтобы включить обратимое удаление, обновите свойства клиентской службы BLOB-объектов:
 
@@ -307,7 +309,7 @@ blockBlob.StartCopy(copySource);
 
 Если существует вероятность случайного изменения или удаления данных приложением или другим пользователем учетной записи хранения, рекомендуется включить обратимое удаление. Включение обратимого удаления для часто перезаписанных данных может привести к увеличению расходов на емкость хранилища и увеличению задержки при перечислении больших двоичных объектов. Вы можете уменьшить эту дополнительную стоимость и задержку, сохранив часто перезаписанные данные в отдельной учетной записи хранения, в которой отключено обратимое удаление. 
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>Вопросы и ответы
 
 ### <a name="for-which-storage-services-can-i-use-soft-delete"></a>Для каких служб хранилища можно использовать обратимое удаление?
 
@@ -363,7 +365,7 @@ blockBlob.StartCopy(copySource);
 
 Воспользоваться преимуществами обратимого удаления можно вне зависимости от используемой версии API. Однако, чтобы перечислить и восстановить обратимо удаленные большие двоичные объекты и моментальные снимки, необходимо использовать версию 2017-07-29 [REST API служб хранилища](https://docs.microsoft.com/rest/api/storageservices/Versioning-for-the-Azure-Storage-Services) или более позднюю. Корпорация Майкрософт рекомендует всегда использовать последнюю версию API службы хранилища Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пример кода .NET](https://github.com/Azure-Samples/storage-dotnet-blob-soft-delete)
 * [Blob Service REST API](/rest/api/storageservices/blob-service-rest-api) (API-интерфейс REST службы BLOB-объектов)

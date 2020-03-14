@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/03/2020
+ms.date: 03/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83133fed401dac51a8dd6a653ccfd86117e956ed
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 147a131eb79c74dc38c4217d167c7d65ee8a9274
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77046468"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79366178"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -42,7 +42,7 @@ ms.locfileid: "77046468"
 
 ## <a name="activity-based-automatic-renewal"></a>Автоматическое продление на основе действий
 
-Благодаря Azure AD Intelligence теперь группы автоматически обновляются в зависимости от того, были ли они использованы недавно. Эта функция устраняет потребность в ручных действиях владельцами групп, так как она основана на действиях пользователей в группах для Office 365, таких как Outlook, SharePoint, Teams или Yammer. Например, если владелец или член группы выполняет такие действия, как отправка документа в SharePoint, доступ к каналу команд или отправка сообщения электронной почты группе в Outlook, группа автоматически обновляется, и владелец не получает уведомлений о продлении.
+Благодаря Azure AD Intelligence теперь группы автоматически обновляются в зависимости от того, были ли они использованы недавно. Эта функция устраняет потребность в ручных действиях владельцами групп, поскольку она основана на действиях пользователей в группах по Office 365, например Outlook, SharePoint или командам. Например, если владелец или член группы выполняет такие действия, как отправка документа в SharePoint, доступ к каналу команд или отправка сообщения электронной почты группе в Outlook, группа автоматически обновляется, и владелец не получает уведомлений о продлении.
 
 ### <a name="activities-that-automatically-renew-group-expiration"></a>Действия, которые автоматически возобновляют срок действия группы
 
@@ -134,7 +134,7 @@ ms.locfileid: "77046468"
    Connect-AzureAD
    ```
 
-1. Настройте параметры срока действия с помощью командлета New-AzureADMSGroupLifecyclePolicy, чтобы задать время существования всех групп Office 365 в Организации Azure AD до 365 дней. Уведомления о продлении действия групп Office 365 без владельцев будут отправляться на адрес emailaddress@contoso.com.
+1. Настройте параметры срока действия с помощью командлета New-AzureADMSGroupLifecyclePolicy, чтобы задать время существования всех групп Office 365 в Организации Azure AD до 365 дней. Уведомления об обновлении для групп Office 365 без владельцев будут отправлены на "emailaddress@contoso.com"
   
    ``` PowerShell
    New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails emailaddress@contoso.com
@@ -144,7 +144,7 @@ ms.locfileid: "77046468"
 
    - идентификатор политики;
    - Срок жизни всех групп Office 365 в Организации Azure AD составляет 365 дней.
-   - уведомления о продлении действия групп Office 365 без владельцев будут отправляться на адрес emailaddress@contoso.com.
+   - Уведомления об обновлении для групп Office 365 без владельцев будут отправляться на "emailaddress@contoso.com".
   
    ```powershell
    Get-AzureADMSGroupLifecyclePolicy

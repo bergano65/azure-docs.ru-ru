@@ -10,11 +10,11 @@ ms.workload: storage-backup-recovery
 ms.date: 01/08/2020
 ms.author: mayg
 ms.openlocfilehash: 6de37daa0b9e0ebc711a5dacbdce352e3675a3db
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754425"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257749"
 ---
 # <a name="troubleshoot-errors-when-failing-over-vmware-vm-or-physical-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины VMware или физического компьютера в Azure
 
@@ -160,12 +160,12 @@ RegisterHostStaticInfo encountered exception config/talwrapper.cpp(107)[post] Cu
    - Используйте средство для доступа к контексту пользователя системы и определите, настроен ли адрес прокси-сервера. 
    - Если прокси-сервер настроен, откройте IE в контексте пользователя системы с помощью средства PsExec.
   
-     **psexec -s -i "%programfiles%\Internet Explorer\iexplore.exe"**
+     **PsExec-s-i "%Програмфилес%\интернет Explorer\iexplore.exe"**
 
    - Чтобы убедиться, что главный целевой сервер может обмениваться данными с сервером конфигурации:
   
      - Измените параметры прокси-сервера в Internet Explorer, чтобы обойти IP-адрес главного целевого сервера через прокси-сервер.   
-     или
+     либо
      - Отключите прокси-сервер на главном целевом сервере. 
 
 

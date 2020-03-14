@@ -11,11 +11,11 @@ ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.openlocfilehash: 6e4b5bc6d30f6caa2809b7aa1e72be70ae12dbc1
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78396617"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79256592"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-architecture"></a>Архитектура Azure синапсе Analytics (ранее — хранилище данных SQL) 
 
@@ -105,7 +105,7 @@ SQL Analytics использует службу хранилища Azure для 
 
 ![Реплицированная таблица](media/sql-data-warehouse-distributed-data/replicated-table.png "Реплицированная таблица") 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы уже знакомы с Azure синапсе, Узнайте, как быстро [создать пул SQL](./sql-data-warehouse-get-started-provision.md) и [загрузить демонстрационные данные](./sql-data-warehouse-load-sample-databases.md). Если вы раньше не работали с Azure, используйте [глоссарий Azure Глоссарий](../azure-glossary-cloud-terminology.md) , чтобы узнать значение новых терминов. Или просмотрите некоторые из этих ресурсов Azure синапсе.  
 
 * [Истории успеха клиентов](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)

@@ -1,7 +1,7 @@
 ---
 title: 'Известные проблемы: оперативная миграция с PostgreSQL на базу данных Azure для PostgreSQL'
 titleSuffix: Azure Database Migration Service
-description: Сведения об известных проблемах и ограничениях миграции с помощью оперативной миграции из PostgreSQL в базу данных Azure для Постгреск с использованием Azure Database Migration Service.
+description: Сведения об известных проблемах и ограничениях миграции с помощью оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL с использованием Azure Database Migration Service.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: ded3302c590a55f0da8e4e37869f2b7f5a702838
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: f149d8de6b736379388c4a93045b6a0178067892
+ms.sourcegitcommit: d322d0a9d9479dbd473eae239c43707ac2c77a77
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77650509"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79138303"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения миграции при оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL
 

@@ -12,18 +12,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/06/2019
+ms.date: 03/13/2020
 ms.author: mimart
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eafd209073b36265d24dbad4a66b3870d8f593db
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 0082d841faf22745e609d38444f4a97553b3c867
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73148642"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79365872"
 ---
-# <a name="how-to-configure-azure-ad-saml-token-encryption-preview"></a>Как настроить шифрование маркеров SAML для Azure AD (Предварительная версия)
+# <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Как настроить шифрование маркеров SAML в Azure AD
 
 > [!NOTE]
 > Шифрование токенов — это функция уровня "Премиум" в Azure Active Directory (Azure AD). Дополнительные сведения о выпусках, функциях и ценах на Azure AD см. на странице [цен на Azure AD](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -123,26 +123,21 @@ ms.locfileid: "73148642"
 
 ### <a name="to-configure-token-encryption-using-powershell"></a>Настройка шифрования токенов с помощью PowerShell
 
-Эта функция будет доступна в ближайшее время. 
+1. Используйте последнюю версию модуля Azure AD PowerShell для подключения к вашему клиенту.
 
-<!--
-1. Use the latest Azure AD PowerShell module to connect to your tenant.
-
-1. Set the token encryption settings using the **[Set-AzureApplication](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** command.
+1. Задайте параметры шифрования маркеров с помощью команды **[Set-азуреаппликатион](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** .
 
     ```
     Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
     ```
 
-1. Read the token encryption settings using the following commands.
+1. Прочтите параметры шифрования маркеров с помощью следующих команд.
 
     ```powershell
     $app=Get-AzureADApplication -ObjectId <ApplicationObjectId>
     $app.KeyCredentials
     $app.TokenEncryptionKeyId
     ```
-
--->
 
 ### <a name="to-configure-token-encryption-using-the-application-manifest"></a>Настройка шифрования токенов с использованием манифеста приложения
 

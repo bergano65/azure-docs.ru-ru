@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.openlocfilehash: 9a3a58cab2d9673a4660967e3a11d7f88900e718
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844961"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269436"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Журналы запросов в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -140,6 +140,6 @@ ms.locfileid: "76844961"
     | where query_time_d > 10
     ```    
     
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 - [Настройка журналов запросов от портал Azure](howto-configure-server-logs-in-portal.md)
 - [Настройка журналов запросов от Azure CLI](howto-configure-server-logs-in-cli.md).

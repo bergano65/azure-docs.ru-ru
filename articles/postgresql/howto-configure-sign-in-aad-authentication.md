@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c929ac1c171547a4ff485fc43f0f329440f9c3b5
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: aacffbfdec67d7faa58cb8bd08f99963fb78263a
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74763646"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79299283"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Использование Azure Active Directory для проверки подлинности с помощью PostgreSQL
 
@@ -47,7 +47,7 @@ ms.locfileid: "74763646"
 3. Создание `<user>@yourtenant.onmicrosoft.com` ролей в базе данных Azure для PostgreSQL.
 4. Сделайте `<user>@yourtenant.onmicrosoft.com` членом azure_ad_user ролей. Эта возможность должна быть предоставлена только пользователям Azure AD.
 
-**Пример.**
+**Пример**.
 
 ```sql
 CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
@@ -60,7 +60,7 @@ CREATE ROLE "user1@yourtenant.onmicrosoft.com" WITH LOGIN IN ROLE azure_ad_user;
 
 Чтобы разрешить группе Azure AD доступ к базе данных, используйте тот же механизм, что и для пользователей, но вместо этого укажите имя группы:
 
-**Пример.**
+**Пример**.
 
 ```sql
 CREATE ROLE "Prod DB Readonly" WITH LOGIN IN ROLE azure_ad_user;
@@ -163,7 +163,7 @@ export PGPASSWORD=<copy/pasted TOKEN value from step 2>
 Теперь вы можете инициировать подключение к базе данных Azure для PostgreSQL, как обычно:
 
 ```shell
-psql "host=mydb.postgres... user=user@tenant.onmicrosoft.com@mydb dbname=postgres"
+psql "host=mydb.postgres... user=user@tenant.onmicrosoft.com@mydb dbname=postgres sslmode=require"
 ```
 
 Теперь вы прошли проверку подлинности на сервере PostgreSQL с помощью аутентификации Azure AD.

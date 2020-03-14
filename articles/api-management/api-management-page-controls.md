@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ff608cac9786ebc0d3908ce4d88fb501e621be6c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78374496"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79244021"
 ---
 # <a name="azure-api-management-page-controls"></a>Элементы управления страницей в службе управления API Azure
 Служба управления API Azure предоставляет следующие элементы управления страницей для использования в шаблонах портала разработчика.  
@@ -60,7 +60,7 @@ ms.locfileid: "78374496"
   
 ### <a name="parameters"></a>Параметры  
   
-|Параметр|Описание|  
+|Параметр|Description|  
 |---------------|-----------------|  
 |appId|Идентификатор приложения.|  
   
@@ -81,7 +81,7 @@ ms.locfileid: "78374496"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `basic-signin` можно использовать в следующих шаблонах портала разработчика:  
@@ -100,7 +100,7 @@ ms.locfileid: "78374496"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `paging-control` можно использовать в следующих шаблонах портала разработчика:  
@@ -123,7 +123,7 @@ ms.locfileid: "78374496"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `providers` можно использовать в следующих шаблонах портала разработчика:  
@@ -142,7 +142,7 @@ ms.locfileid: "78374496"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `search-control` можно использовать в следующих шаблонах портала разработчика:  
@@ -163,7 +163,7 @@ ms.locfileid: "78374496"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `sign-up` можно использовать в следующих шаблонах портала разработчика:  
@@ -182,7 +182,7 @@ ms.locfileid: "78374496"
 ```  
   
 ### <a name="parameters"></a>Параметры  
- Нет  
+ Нет.  
   
 ### <a name="developer-portal-templates"></a>Шаблоны портала разработчика  
  Элемент управления `subscribe-button` можно использовать в следующих шаблонах портала разработчика:  
@@ -204,7 +204,7 @@ ms.locfileid: "78374496"
   
 ### <a name="parameters"></a>Параметры  
   
-|Параметр|Описание|  
+|Параметр|Description|  
 |---------------|-----------------|  
 |subscriptionId|Идентификатор подписки, которую нужно отменить.|  
 |cancelUrl|URL-адрес для отмены подписки.|  
@@ -214,5 +214,5 @@ ms.locfileid: "78374496"
   
 -   [Продукт](api-management-product-templates.md#Product)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

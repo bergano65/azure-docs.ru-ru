@@ -8,12 +8,12 @@ ms.date: 03/11/2020
 ms.service: storage
 ms.reviewer: rukmani-msft
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: e8266e5750a14542e7f115e021daa40b2b0bf8f6
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: 245bcac81189ac8aa63f81fbe4ed30655a457bc8
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79130067"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371892"
 ---
 # <a name="migrate-azure-data-lake-storage-from-gen1-to-gen2"></a>Перенос Azure Data Lake Storage из Gen1 в Gen2
 
@@ -132,7 +132,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Списание Gen1.
 
-![Шаблон точности и сдвига](./media/data-lake-storage-migrate-gen1-to-gen2/lift-and-shift.png)
+> [!div class="mx-imgBorder"]
+> ![](./media/data-lake-storage-migrate-gen1-to-gen2/lift-and-shift.png) шаблона точности и сдвига
 
 #### <a name="considerations-for-using-the-lift-and-shift-pattern"></a>Рекомендации по использованию шаблона точности и сдвига
 
@@ -152,7 +153,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Списание Gen1.
 
-![Шаблон добавочного копирования](./media/data-lake-storage-migrate-gen1-to-gen2/incremental-copy.png)
+> [!div class="mx-imgBorder"]
+> ![шаблона добавочного копирования](./media/data-lake-storage-migrate-gen1-to-gen2/incremental-copy.png)
 
 #### <a name="considerations-for-using-the-incremental-copy-pattern"></a>Рекомендации по использованию шаблона добавочного копирования:
 
@@ -172,7 +174,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Останавливает все операции записи в Gen1, а затем списание Gen1.
 
-![Шаблон двойного конвейера](./media/data-lake-storage-migrate-gen1-to-gen2/dual-pipeline.png)
+> [!div class="mx-imgBorder"]
+> ![шаблона двойного конвейера](./media/data-lake-storage-migrate-gen1-to-gen2/dual-pipeline.png)
 
 #### <a name="considerations-for-using-the-dual-pipeline-pattern"></a>Рекомендации по использованию шаблона двойного конвейера:
 
@@ -190,7 +193,8 @@ Azure Data Lake Storage 2-го поколения построены в [хра�
 
 4. Списание Gen1.
 
-![Шаблон двунаправленного письма](./media/data-lake-storage-migrate-gen1-to-gen2/bidirectional-sync.png)
+> [!div class="mx-imgBorder"]
+> ![шаблон двунаправленного письма](./media/data-lake-storage-migrate-gen1-to-gen2/bidirectional-sync.png)
 
 #### <a name="considerations-for-using-the-bi-directional-sync-pattern"></a>Рекомендации по использованию шаблона двунаправленной синхронизации:
 

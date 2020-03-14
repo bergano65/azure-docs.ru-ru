@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 03/13/2020
 ms.author: mayg
-ms.openlocfilehash: 50a236154a0340bd49e84a8ca02f656e3cd9994a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 70d84516e2d7a42b1c6a3714d9060bedf6535f58
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395021"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79366302"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -76,7 +76,7 @@ ms.locfileid: "78395021"
 
 | Требование к серверу | Description|
 |---|---|
-|Профилирование и измерение пропускной способности| <ul><li>Операционная система: Windows Server 2016 или Windows Server 2012 R2.<br>(в идеале соответствует [рекомендациям по размеру сервера конфигурации](https://aka.ms/asr-v2a-on-prem-components)).</li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli).</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Интернет-доступ к Azure с этого сервера.</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1,000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Параметрам уровня статистики vCenter VMware можно присвоить значение 1 или выше.</li><li>Разрешение порта vCenter (по умолчанию 443). Планировщик развертывания Site Recovery использует этот порт для подключения к серверу vCenter или к хосту ESXi.</ul></ul>|
+|Профилирование и измерение пропускной способности| <ul><li>Операционная система: Windows Server 2016 или Windows Server 2012 R2.<br>(в идеале соответствует [рекомендациям по размеру сервера конфигурации](https://aka.ms/asr-v2a-on-prem-components)).</li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli).</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Доступ в Интернет к Azure (*. blob.core.windows.net) с этого сервера, порт 443<br>[Это необязательно. Вы можете указать доступную пропускную способность во время создания отчета вручную.]</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1,000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Параметрам уровня статистики vCenter VMware можно присвоить значение 1 или выше.</li><li>Разрешение порта vCenter (по умолчанию 443). Планировщик развертывания Site Recovery использует этот порт для подключения к серверу vCenter или к хосту ESXi.</ul></ul>|
 | Создание отчетов. | Компьютер, поддерживающий Windows или Windows Server с Excel 2013 или более поздней версии.<li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli) необходим только при передаче параметра пользователя в команде генерации отчета для получения последней информации о конфигурации для виртуальных машин. Планировщик развертывания подключается к серверу vCenter. Разрешите порту vCenter (по умолчанию 443) подключиться к серверу vCenter.</li>|
 | Разрешения пользователя | Разрешение только на чтение для учетной записи пользователя, используемой для доступа к серверу VMware vCenter Server или узлу VMware vSphere ESXi во время профилирования. |
 

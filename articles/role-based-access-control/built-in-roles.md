@@ -1,6 +1,6 @@
 ---
 title: Встроенные роли Azure для Azure RBAC
-description: Описание встроенных ролей Azure для управления доступом на основе ролей Azure (Azure RBAC). Выводит список элементов Actions, NotActions, DataActions и NotDataActions.
+description: В этой статье описываются встроенные роли Azure для управления доступом на основе ролей (RBAC) Azure. В нем перечислены действия, неизменность, действия с Нотдатаактионс и.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,30 +11,30 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 02/18/2020
+ms.date: 03/12/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: b7b944880074b64f6a9e66e177082e52632e9c9d
-ms.sourcegitcommit: 1fa2bf6d3d91d9eaff4d083015e2175984c686da
+ms.openlocfilehash: 5b6da05f07636f6a6dde16cf6d8061629a72adfa
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78205897"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79281110"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
-[Управление доступом на основе ролей в Azure (Azure RBAC)](overview.md) имеет несколько встроенных ролей Azure, которые можно назначить пользователям, группам, субъектам-службам и управляемым удостоверениям. Назначение ролей является способом управления доступом к ресурсам Azure. Если встроенные роли не соответствуют конкретным потребностям Организации, можно создать собственные [пользовательские роли Azure](custom-roles.md).
+[Управление доступом на основе ролей (RBAC) в Azure](overview.md) имеет несколько встроенных ролей Azure, которые можно назначить пользователям, группам, субъектам-службам и управляемым удостоверениям. Назначение ролей является способом управления доступом к ресурсам Azure. Если встроенные роли не соответствуют конкретным потребностям Организации, можно создать собственные [пользовательские роли Azure](custom-roles.md).
 
-В этой статье перечислены встроенные роли для ресурсов Azure, которые всегда развиваются. Чтобы получить последние роли, используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list). Если вам нужен список ролей администратора Azure Active Directory, см. статью [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
+В этой статье перечислены встроенные роли для ресурсов Azure, которые всегда развиваются. Чтобы получить последние роли, используйте команду [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list). Если вы ищете роли администратора для Azure Active Directory (Azure AD), ознакомьтесь [с разрешениями роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
 ## <a name="descriptions-and-ids"></a>Описания и идентификаторы
 
-В следующей таблице приводится краткое описание и уникальный идентификатор каждой встроенной роли. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли. Сведения о значении этих действий и как они применяются в области управления и области данных см. в статье [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md).
+В следующей таблице приводится краткое описание и уникальный идентификатор каждой встроенной роли. Выберите имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions`и `NotDataActions` для каждой роли. Сведения о значении этих действий и как они применяются в области управления и области данных см. в статье [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md).
 
 
 > [!div class="mx-tableFixed"]
-> | Встроенные роли | Описание | ИДЕНТИФИКАТОР |
+> | Встроенные роли | Description | ID |
 > | --- | --- | --- |
 > | [акрделете](#acrdelete) | Удаление записи контроля доступа | c2f4ef07-c644-48eb-af81-4b1b4947fb11 |
 > | [AcrImageSigner](#acrimagesigner) | Средство подписывания образов ACR. | 6cef56e8-d556-48e5-a04f-b8e64114680f |
@@ -173,10 +173,10 @@ ms.locfileid: "78205897"
 > | [Читатель книг](#workbook-reader) | Может считывать книги. | b279062a-9be3-42a0-92ae-8b3cf002ec4d |
 
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 
-### <a name="contributor"></a>Contributor
+### <a name="contributor"></a>Участник
 
 Позволяет управлять всем, кроме предоставления доступа к ресурсам.
 
@@ -1059,7 +1059,7 @@ ms.locfileid: "78205897"
   "assignableScopes": [
     "/"
   ],
-  "description": "Lets you manage classic virtual machines, but not access to them, and not the virtual network or storage account they’re connected to.",
+  "description": "Lets you manage classic virtual machines, but not access to them, and not the virtual network or storage account they're connected to.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/d73bb868-a0df-4d4d-bd69-98a00b01fccb",
   "name": "d73bb868-a0df-4d4d-bd69-98a00b01fccb",
   "permissions": [
@@ -2052,7 +2052,7 @@ ms.locfileid: "78205897"
   "assignableScopes": [
     "/"
   ],
-  "description": "Lets you manage SQL Managed Instances and required network configuration, but can’t give access to others.",
+  "description": "Lets you manage SQL Managed Instances and required network configuration, but can't give access to others.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/4939a1f6-9ae0-4e48-a1e0-f2cbe897382d",
   "name": "4939a1f6-9ae0-4e48-a1e0-f2cbe897382d",
   "permissions": [
@@ -2711,7 +2711,7 @@ ms.locfileid: "78205897"
 }
 ```
 
-## <a name="identity"></a>Тождество
+## <a name="identity"></a>Удостоверение
 
 
 ### <a name="managed-identity-contributor"></a>Участник управляемого удостоверения
@@ -2820,7 +2820,7 @@ ms.locfileid: "78205897"
 }
 ```
 
-## <a name="integration"></a>Integration
+## <a name="integration"></a>Интеграция
 
 
 ### <a name="api-management-service-contributor"></a>Участник службы управления API
@@ -3853,10 +3853,7 @@ ms.locfileid: "78205897"
 
 ### <a name="blueprint-operator"></a>Оператор схемы
 
-Может назначать существующие опубликованные проекты, но не может создавать новые. 
-
-> [!NOTE] 
-> Это работает только в том случае, если назначение выполняется с управляемым удостоверением, назначенным пользователем.
+Может назначать существующие опубликованные проекты, но не может создавать новые. Примечание. это работает только в том случае, если назначение выполняется с управляемым удостоверением, назначенным пользователем.
 
 > [!div class="mx-tableFixed"]
 > |  |  |
@@ -4316,6 +4313,8 @@ ms.locfileid: "78205897"
 > | Microsoft.WorkloadMonitor/monitors/* |  |
 > | Microsoft.WorkloadMonitor/notificationSettings/* |  |
 > | Microsoft. Алертсманажемент/Смартдетекторалертрулес/* |  |
+> | Microsoft. Алертсманажемент/Актионрулес/* |  |
+> | Microsoft. Алертсманажемент/Смартграупс/* |  |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -4359,7 +4358,9 @@ ms.locfileid: "78205897"
         "Microsoft.Support/*",
         "Microsoft.WorkloadMonitor/monitors/*",
         "Microsoft.WorkloadMonitor/notificationSettings/*",
-        "Microsoft.AlertsManagement/smartDetectorAlertRules/*"
+        "Microsoft.AlertsManagement/smartDetectorAlertRules/*",
+        "Microsoft.AlertsManagement/actionRules/*",
+        "Microsoft.AlertsManagement/smartGroups/*"
       ],
       "notActions": [],
       "dataActions": [],
@@ -5322,7 +5323,7 @@ ms.locfileid: "78205897"
   "assignableScopes": [
     "/"
   ],
-  "description": "Can manage CDN endpoints, but can’t grant access to other users.",
+  "description": "Can manage CDN endpoints, but can't grant access to other users.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/426e0c7f-0c7e-4658-b36f-ff54d6c29b45",
   "name": "426e0c7f-0c7e-4658-b36f-ff54d6c29b45",
   "permissions": [
@@ -5376,7 +5377,7 @@ ms.locfileid: "78205897"
   "assignableScopes": [
     "/"
   ],
-  "description": "Can view CDN endpoints, but can’t make changes.",
+  "description": "Can view CDN endpoints, but can't make changes.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/871e35f6-b5c1-49cc-a043-bde969a0f2cd",
   "name": "871e35f6-b5c1-49cc-a043-bde969a0f2cd",
   "permissions": [
@@ -5430,7 +5431,7 @@ ms.locfileid: "78205897"
   "assignableScopes": [
     "/"
   ],
-  "description": "Can manage CDN profiles and their endpoints, but can’t grant access to other users.",
+  "description": "Can manage CDN profiles and their endpoints, but can't grant access to other users.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/ec156ff8-a8d1-4d15-830c-5b80698ca432",
   "name": "ec156ff8-a8d1-4d15-830c-5b80698ca432",
   "permissions": [
@@ -5484,7 +5485,7 @@ ms.locfileid: "78205897"
   "assignableScopes": [
     "/"
   ],
-  "description": "Can view CDN profiles and their endpoints, but can’t make changes.",
+  "description": "Can view CDN profiles and their endpoints, but can't make changes.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/8f96442b-4075-438f-813d-ad51ab4019af",
   "name": "8f96442b-4075-438f-813d-ad51ab4019af",
   "permissions": [
@@ -5718,7 +5719,7 @@ ms.locfileid: "78205897"
 }
 ```
 
-## <a name="security"></a>Безопасность
+## <a name="security"></a>безопасность
 
 
 ### <a name="azure-sentinel-contributor"></a>Участник Sentinel Azure
@@ -5731,7 +5732,7 @@ ms.locfileid: "78205897"
 > | **Действия** |  |
 > | Microsoft. Секуритинсигхтс/* |  |
 > | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
-> | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Microsoft.OperationalInsights/workspaces/*/read | Просмотр данных log Analytics |
 > | Microsoft.OperationalInsights/workspaces/savedSearches/* |  |
 > | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
 > | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
@@ -5763,7 +5764,7 @@ ms.locfileid: "78205897"
       "actions": [
         "Microsoft.SecurityInsights/*",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
-        "Microsoft.OperationalInsights/workspaces/read",
+        "Microsoft.OperationalInsights/workspaces/*/read",
         "Microsoft.OperationalInsights/workspaces/savedSearches/*",
         "Microsoft.OperationsManagement/solutions/read",
         "Microsoft.OperationalInsights/workspaces/query/read",
@@ -5797,7 +5798,8 @@ ms.locfileid: "78205897"
 > | **Действия** |  |
 > | Microsoft. Секуритинсигхтс/*/Реад |  |
 > | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
-> | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Microsoft.OperationalInsights/workspaces/*/read | Просмотр данных log Analytics |
+> | Microsoft. OperationalInsights/рабочие области/LinkedServices/чтение | Получение связанных служб в заданной рабочей области. |
 > | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
 > | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
 > | Microsoft.OperationalInsights/workspaces/query/read | Выполнение запросов к данным в рабочей области |
@@ -5829,7 +5831,8 @@ ms.locfileid: "78205897"
       "actions": [
         "Microsoft.SecurityInsights/*/read",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
-        "Microsoft.OperationalInsights/workspaces/read",
+        "Microsoft.OperationalInsights/workspaces/*/read",
+        "Microsoft.OperationalInsights/workspaces/LinkedServices/read",
         "Microsoft.OperationalInsights/workspaces/savedSearches/read",
         "Microsoft.OperationsManagement/solutions/read",
         "Microsoft.OperationalInsights/workspaces/query/read",
@@ -5863,8 +5866,9 @@ ms.locfileid: "78205897"
 > | **Действия** |  |
 > | Microsoft. Секуритинсигхтс/*/Реад |  |
 > | Microsoft. Секуритинсигхтс/cases/* |  |
+> | Microsoft. Секуритинсигхтс/происшествия/* |  |
 > | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
-> | Microsoft.OperationalInsights/workspaces/read | Возвращает существующую рабочую область. |
+> | Microsoft.OperationalInsights/workspaces/*/read | Просмотр данных log Analytics |
 > | Microsoft. OperationalInsights/рабочие области/источники данных/чтение | Возвращает источники данных в рабочей области. |
 > | Microsoft.OperationalInsights/workspaces/savedSearches/read | Возвращает сохраненный поисковый запрос. |
 > | Microsoft.OperationsManagement/solutions/read | Возвращает существующее решение OMS. |
@@ -5897,8 +5901,9 @@ ms.locfileid: "78205897"
       "actions": [
         "Microsoft.SecurityInsights/*/read",
         "Microsoft.SecurityInsights/cases/*",
+        "Microsoft.SecurityInsights/incidents/*",
         "Microsoft.OperationalInsights/workspaces/analytics/query/action",
-        "Microsoft.OperationalInsights/workspaces/read",
+        "Microsoft.OperationalInsights/workspaces/*/read",
         "Microsoft.OperationalInsights/workspaces/dataSources/read",
         "Microsoft.OperationalInsights/workspaces/savedSearches/read",
         "Microsoft.OperationsManagement/solutions/read",
@@ -6655,6 +6660,7 @@ ms.locfileid: "78205897"
 > | Microsoft.RecoveryServices/locations/operationStatus/read | Возвращает состояние операции для данной операции |
 > | Microsoft.RecoveryServices/Vaults/backupProtectionIntents/read | Вывод списка всех целей защиты для резервного копирования. |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
+> | Microsoft.RecoveryServices/locations/backupValidateFeatures/action | Проверка компонентов. |
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
@@ -6709,7 +6715,8 @@ ms.locfileid: "78205897"
         "Microsoft.RecoveryServices/operations/read",
         "Microsoft.RecoveryServices/locations/operationStatus/read",
         "Microsoft.RecoveryServices/Vaults/backupProtectionIntents/read",
-        "Microsoft.RecoveryServices/Vaults/usages/read"
+        "Microsoft.RecoveryServices/Vaults/usages/read",
+        "Microsoft.RecoveryServices/locations/backupValidateFeatures/action"
       ],
       "notActions": [],
       "dataActions": [],
@@ -7843,7 +7850,7 @@ ms.locfileid: "78205897"
 }
 ```
 
-## <a name="other"></a>Прочее
+## <a name="other"></a>Другие
 
 
 ### <a name="biztalk-contributor"></a>Участник BizTalk
@@ -7898,7 +7905,7 @@ ms.locfileid: "78205897"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли Azure](custom-roles.md)

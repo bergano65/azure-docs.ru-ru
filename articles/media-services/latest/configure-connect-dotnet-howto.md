@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.author: juliako
 ms.openlocfilehash: b8f4de1a5b9d8216ae2442631f5f9135c3c72d0b
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899892"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79269813"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API служб мультимедиа v3 — .NET
 
 В этой статье показано, как подключиться к пакету SDK .NET для служб мультимедиа Azure v3 с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
 - Установите инструмент, который вы хотите использовать для разработки .NET. Действия, описанные в этой статье, показывают, как использовать [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. раздел [Работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другой редактор кода.
@@ -34,18 +34,18 @@ ms.locfileid: "74899892"
 
 ## <a name="create-a-console-application"></a>Создание консольного приложение
 
-1. Запустите Visual Studio. 
+1. Запустите среду Visual Studio. 
 1. В меню **файл** выберите пункт **создать** > **проект**. 
 1. Создайте консольное приложение **.NET Core** .
 
 Пример приложения в этом разделе предназначен для `netcoreapp2.0`. В коде используется "Async Main", который доступен начиная с C# 7,1. Дополнительные сведения см. в этом [блоге](https://blogs.msdn.microsoft.com/benwilli/2017/12/08/async-main-is-available-but-hidden/) .
 
-## <a name="add-required-nuget-packages"></a>Добавьте необходимые пакеты NuGet
+## <a name="add-required-nuget-packages"></a>Добавление необходимых пакетов NuGet
 
 1. В Visual Studio выберите **инструменты** > **диспетчер пакетов NuGet** > **консоли диспетчера NuGet**.
-2. В окне **консоли диспетчера пакетов** используйте команду `Install-Package`, чтобы добавить следующие пакеты NuGet. Пример: `Install-Package Microsoft.Azure.Management.Media`.
+2. В окне **консоли диспетчера пакетов** используйте команду `Install-Package`, чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
 
-|Package|Описание|
+|Пакет|Description|
 |---|---|
 |`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последний пакет служб мультимедиа Azure, проверьте [Microsoft. Azure. Management. Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
 |`Microsoft.Rest.ClientRuntime.Azure.Authentication`|Библиотека проверки подлинности ADAL для пакета Azure SDK для NET|
@@ -145,7 +145,7 @@ namespace ConsoleApp1
 
 Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В приведенном ниже коде функция Жеткредентиалсасинк создает объект Сервицеклиенткредентиалс на основе учетных данных, указанных в локальном файле конфигурации.
 
-1. Откройте `Program.cs`.
+1. Откройте среду `Program.cs`.
 1. Вставьте следующий код:
 
 ```csharp
@@ -240,7 +240,7 @@ namespace ConsoleApp1
 - [Создание фильтров с помощью Служб мультимедиа для .NET](filters-dynamic-manifest-dotnet-howto.md)
 - [Дополнительные примеры видео по запросу с использованием Функций Azure версии 2 и Cлужб мультимедиа версии 3](https://aka.ms/ams3functions)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также раздел
 
 * [Справочник по .NET](https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
 * Дополнительные примеры кода см. в репозитории [примеров пакета SDK для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet) .

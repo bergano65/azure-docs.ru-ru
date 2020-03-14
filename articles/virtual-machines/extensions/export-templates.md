@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: akjosh
 ms.openlocfilehash: 79991dad96742109817d579b951082d1a30e3951
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073124"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253914"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины
 
@@ -33,7 +33,7 @@ ms.locfileid: "74073124"
 
 Скрипт службы автоматизации поддерживает следующие расширения.
 
-| Добавочный номер ||||
+| Расширение ||||
 |---|---|---|---|
 | Резервное копирование Acronis | Агент Datadog для Windows | Исправления для ОС Linux | Моментальные снимки виртуальной машины Linux
 | Резервное копирование Acronis для Linux | Расширение Docker | Агент Puppet |
@@ -41,7 +41,7 @@ ms.locfileid: "74073124"
 | Агент BMC CTM для Linux | Dynatrace для Linux | Site 24x7 для сервера Linux |
 | Агент BMC CTM для Windows | Dynatrace для Windows | Site 24x7 для сервера Windows Server |
 | Клиент Chef | Защитник приложений HPE Security | Trend Micro DSA |
-| Custom Script | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
+| Пользовательский скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
 | Расширение пользовательских сценариев | Диагностика IaaS | VM Access для Linux |
 | Custom Script для Linux | Клиент Chef для Linux | VM Access для Linux |
 | Агент Datadog для Linux | Диагностика Linux | Моментальный снимок виртуальной машины |

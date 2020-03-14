@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 01fde82e69917f59f6519524c4c8828feb84a4f9
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.openlocfilehash: 1f068c9d98a827afd16da01bdc40cbb6ca5dc465
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73795969"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79297838"
 ---
 # <a name="expose-a-websocket-server-to-application-gateway"></a>Предоставление серверу WebSocket доступа к шлюзу приложений
 
-Как описано в документации по шлюзу приложений версии 2, она [обеспечивает встроенную поддержку протоколов WebSocket и HTTP/2](https://docs.microsoft.com/azure/application-gateway/overview#websocket-and-http2-traffic). Обратите внимание, что для шлюза приложений и входящих в Kubernetes данных нет настраиваемых пользователем параметров, позволяющих выборочно включать или отключать поддержку WebSocket.
+Как описано в документации по шлюзу приложений версии 2, она [обеспечивает встроенную поддержку протоколов WebSocket и HTTP/2](features.md#websocket-and-http2-traffic). Обратите внимание, что для шлюза приложений и входящих в Kubernetes данных нет настраиваемых пользователем параметров, позволяющих выборочно включать или отключать поддержку WebSocket.
 
 В Kubernetes Deployment YAML ниже показана минимальная конфигурация, используемая для развертывания сервера WebSocket, что аналогично развертыванию обычного веб-сервера.
 ```yaml
@@ -75,7 +75,7 @@ spec:
               servicePort: 80
 ```
 
-Учитывая, что все необходимые компоненты выполнены и у вас есть шлюз приложений, управляемый Kubernetes входящими в AKS, развертывание выше может привести к тому, что сервер WebSockets будет предоставляться через порт 80 общедоступного IP-адреса шлюза приложений и `ws.contoso.com` поддомен.
+Учитывая, что все необходимые компоненты выполнены и у вас есть шлюз приложений, управляемый Kubernetes входящими в AKS, развертывание выше может привести к тому, что сервер WebSockets будет предоставляться через порт 80 общедоступного IP-адреса шлюза приложений и домена `ws.contoso.com`.
 
 Следующая команда заключается в проверке развертывания сервера WebSocket:
 ```sh

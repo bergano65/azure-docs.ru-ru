@@ -10,22 +10,24 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: 5831f83d8cd38cc07c64fdc398405c3a70935485
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 85bae9bfc10460b51935c6eb1e14e3a3dd816a8c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169086"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79217798"
 ---
 # <a name="migrate-analytics-from-excel-to-azure-machine-learning-studio-classic"></a>Перенос аналитики из Excel в Машинное обучение Azure Studio (классическая модель)
 
-> *Кейт Барони* (Kate Baroni) и *Бен Боутмен* (Ben Boatman) — архитекторы корпоративных решений в Научно-инновационном центре анализа данных корпорации Майкрософт. В этой статье описывается процесс переноса существующего набора регрессионного анализа в облачное решение с помощью Машинное обучение Azure Studio (классическая модель).
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
+> *Кейт Барони* и *Бен* — это архитекторы корпоративных решений в центре Microsoft Data Insights. В этой статье описывается процесс переноса существующего набора регрессионного анализа в облачное решение с помощью Машинное обучение Azure Studio (классическая модель).
 
 ## <a name="goal"></a>Цель
 
 У нашего проекта было две цели: 
 
-1. Использование прогнозной аналитики для увеличения точности проекции ежемесячных доходов организации. 
+1. Использование прогнозной аналитики для повышения точности месячных проекций доходов нашей Организации 
 2. Используйте Машинное обучение Azure Studio (классическая модель) для подтверждения, оптимизации, повышения скорости и масштабирования результатов. 
 
 Как и множество других компаний, наша организация прогнозирует свой ежемесячный доход. Наша небольшая группа бизнес-аналитиков была создана с помощью Машинное обучение Azure Studio (классическая модель) для поддержки процесса и повышения точности прогнозов. Несколько месяцев группа занималась сбором данных из нескольких источников и статистическим анализом атрибутов данных, который позволил определить ключевые атрибуты, относящиеся к прогнозированию продаж услуг. Дальнейшие действия состояли в создании прототипов моделей статистической регрессии для данных в Excel. Спустя несколько недель мы получили модель регрессии для Excel, которая превзошла возможности современных процессов отраслевого и финансового прогнозирования. Это стало базовым результатом прогноза. 
@@ -132,8 +134,8 @@ ms.locfileid: "77169086"
 ## <a name="resources"></a>Ресурсы
 Ниже перечислены некоторые ресурсы, которые помогут вам в работе с регрессией. 
 
-* Регрессия в Excel. Если вы никогда не работали с регрессией в Excel, это руководство упростит задачу: [https://www.excel-easy.com/examples/regression.html](https://www.excel-easy.com/examples/regression.html).
-* Сравнение регрессии и прогнозирования. Тайлер Чессмен (Tyler Chessman) написал статью в блоге, в которой он рассказывает, как спрогнозировать временные ряды в Excel. [https://www.itprotoday.com/sql-server/understanding-time-series-forecasting-concepts](https://www.itprotoday.com/sql-server/understanding-time-series-forecasting-concepts) 
+* Регрессия в Excel. Если вы никогда не пробовали регрессию в Excel, этот учебник упрощает: [https://www.excel-easy.com/examples/regression.html](https://www.excel-easy.com/examples/regression.html)
+* Сравнение регрессии и прогнозирования. Тайлер Chess написала статью блога, в которой объясняется, как выполнять прогнозирование временных рядов в Excel, что содержит хорошее описание линейной регрессии для начинающих. [https://www.itprotoday.com/sql-server/understanding-time-series-forecasting-concepts](https://www.itprotoday.com/sql-server/understanding-time-series-forecasting-concepts) 
 * Линейная регрессия по методу наименьших квадратов. Недостатки, проблемы и ошибки. Введение и обсуждение регрессии: [https://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/](https://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/)
 
 <!-- Module References -->

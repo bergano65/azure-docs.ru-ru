@@ -4,11 +4,11 @@ description: Справочная документация по файлу host.
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.openlocfilehash: 949d4f2c5d8c1d8034ccc392915bc40f1f2fddda
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77605141"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79277002"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Справочник по Host. JSON для функций Azure 2. x и более поздних версий 
 

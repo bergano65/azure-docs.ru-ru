@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/13/2020
-ms.openlocfilehash: 5c5e1a8cee8cdad0659ae00829d170bf3fa7bf87
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.date: 03/10/2020
+ms.openlocfilehash: c235562834ae78a12b690fcd1b96d6a3640e0c66
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941425"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371670"
 ---
 # <a name="configure-ssl-connectivity-in-azure-database-for-postgresql---single-server"></a>Настройка SSL-подключений в базе данных Azure для PostgreSQL — один сервер
 
@@ -28,9 +28,6 @@ ms.locfileid: "75941425"
 ## <a name="configure-enforcement-of-ssl"></a>Настройка применения SSL
 
 При необходимости применение SSL-соединений можно отключить. Для повышения безопасности Microsoft Azure рекомендует всегда включать параметр **Enforce SSL connection** (Применять SSL-соединение).
-
-> [!NOTE]
-> Сейчас версия TLS, поддерживаемая для базы данных Azure для PostgreSQL, — это TLS 1,0, TLS 1,1, TLS 1,2.
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
@@ -68,6 +65,31 @@ psql "sslmode=verify-full sslrootcert=BaltimoreCyberTrustRoot.crt host=mydemoser
 
 > [!TIP]
 > Убедитесь, что значение, передаваемое в `sslrootcert`, совпадает с путем к файлу сохраненного сертификата.
+
+## <a name="tls-connectivity-in-azure-database-for-postgresql-single-server"></a>Подключение TLS в базе данных Azure для PostgreSQL Single Server
+
+База данных Azure для PostgreSQL — единый сервер поддерживает шифрование для клиентов, подключающихся к серверу базы данных с помощью протокола TLS. TLS — это стандартный промышленный протокол, обеспечивающий безопасность сетевых подключений между сервером базы данных и клиентскими приложениями, что позволяет соблюдать требования соответствия.
+
+### <a name="tls-settings"></a>Параметры протокола TLS
+
+Теперь у клиентов есть возможность принудительно применить версию TLS для клиента, подключающегося к базе данных Azure для PostgreSQL одного сервера. Чтобы использовать параметр TLS, используйте параметр **минимальной версии TLS** . Для этого параметра можно использовать следующие значения:
+
+|  Минимальная Настройка TLS             | Поддерживаемая версия TLS                |
+|:---------------------------------|-------------------------------------:|
+| Тлсенфорцементдисаблед (по умолчанию) | TLS не требуется                      |
+| TLS1_0                           | TLS 1,0, TLS 1,1, TLS 1,2 и более поздние версии |
+| TLS1_1                           | TLS 1,1, TLS 1,2 и более поздние версии          |
+| TLS1_2                           | TLS версии 1,2 и выше           |
+
+
+Например, если установить для минимальной версии параметра TLS значение TLS 1,0, то сервер разрешит подключения клиентов, использующих TLS 1,0, 1,1 и 1.2. Кроме того, если задать для этого параметра значение 1,2, то разрешаются подключения только от клиентов, использующих TLS 1,2, а все соединения с TLS 1,0 и TLS 1,1 будут отклонены.
+
+> [!Note] 
+> По умолчанию для одного сервера базы данных Azure для PostgreSQL используется TLS для всех новых серверов.
+>
+> Сейчас поддерживаемые версии TLS поддерживают базу данных Бязуре для PostgreSQL: TLS 1,0, 1,1 и 1,2.
+
+Сведения о настройке параметра TLS для отдельного сервера базы данных Azure для PostgreSQL см. в разделе [Настройка параметра TLS](howto-tls-configurations.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

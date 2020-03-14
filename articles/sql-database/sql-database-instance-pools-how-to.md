@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab
 ms.date: 09/05/2019
-ms.openlocfilehash: 5a45b9e3ba59a91f580ce0f2dc180adf5d20c87d
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 4a27165d929cc9bc5f18e372f7f108887e466e43
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754059"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79299368"
 ---
 # <a name="azure-sql-database-instance-pools-preview-how-to-guide"></a>Руководство по пулам экземпляров баз данных SQL Azure (Предварительная версия)
 
@@ -28,11 +28,11 @@ ms.locfileid: "75754059"
 
 |Get-Help|Портал Azure|PowerShell|
 |:---|:---|:---|
-|Создание пула экземпляров|Нет|Да|
-|Обновление пула экземпляров (ограниченное число свойств)|Нет |Да |
-|Проверка использования и свойств пула экземпляров|Нет|Да |
-|Удаление пула экземпляров|Нет|Да|
-|Создание управляемого экземпляра в пуле экземпляров|Нет|Да|
+|Создание пула экземпляров|нет|Да|
+|Обновление пула экземпляров (ограниченное число свойств)|нет |Да |
+|Проверка использования и свойств пула экземпляров|нет|Да |
+|Удаление пула экземпляров|нет|Да|
+|Создание управляемого экземпляра в пуле экземпляров|нет|Да|
 |Обновление использования ресурсов управляемого экземпляра|Да |Да|
 |Проверка использования и свойств управляемого экземпляра|Да|Да|
 |Удаление управляемого экземпляра из пула|Да|Да|
@@ -50,7 +50,7 @@ ms.locfileid: "75754059"
 |[Get-Азсклинстанцепулусаже](/powershell/module/az.sql/get-azsqlinstancepoolusage/) | Возвращает сведения об использовании пула экземпляров SQL Azure. |
 
 
-Чтобы использовать PowerShell, [установите последнюю версию PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell#powershell-core)и следуйте инструкциям по [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Чтобы использовать PowerShell, [установите последнюю версию PowerShell Core](https://docs.microsoft.com/powershell/scripting/install/installing-powershell#powershell)и следуйте инструкциям по [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 Для операций, связанных с экземплярами в пулах и в одном экземпляре, используйте стандартные [команды управляемого экземпляра](sql-database-managed-instance-create-manage.md#powershell-create-and-manage-managed-instances), но при использовании этих команд для экземпляра в пуле необходимо заполнить свойство *имя пула экземпляров* .
 

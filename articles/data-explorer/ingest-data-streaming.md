@@ -7,12 +7,12 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: 1857c1154af5e3de72803f297e8a3151b0dd7aeb
-ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
+ms.openlocfilehash: d7d2bcf487c37fbb523b648d5aa4c572add5dfa9
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78330980"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79297090"
 ---
 # <a name="streaming-ingestion-preview"></a>Прием потоковой передачи (Предварительная версия)
 
@@ -72,7 +72,7 @@ ms.locfileid: "78330980"
 
 ## <a name="limitations"></a>Ограничения
 
-* Прием потоковой передачи не поддерживает [курсоры базы данных](/azure/kusto/management/databasecursor) или [сопоставление данных](/azure/kusto/management/mappings). Поддерживается только [предварительно созданное](/azure/kusto/management/tables#create-ingestion-mapping) сопоставление данных. 
+* Прием потоковой передачи не поддерживает [курсоры базы данных](/azure/kusto/management/databasecursor) или [сопоставление данных](/azure/kusto/management/mappings). Поддерживается только [предварительно созданное](/azure/kusto/management/create-ingestion-mapping-command) сопоставление данных. 
 * Производительность приема потоковой передачи и масштабирование емкости с увеличением размера виртуальной машины и кластера. Параллельные приемы ограничены шестью приема на ядро. Например, для 16 основных SKU, таких как D14 и L16, максимальный поддерживаемый объем нагрузки составляет 96 параллельных приемов. Для двух основных номеров SKU, таких как D11, максимальная поддерживаемая нагрузка составляет 12 параллельных приемов.
 * Ограничение на размер данных для запроса приема — 4 МБ.
 * Обновления схемы, такие как создание и изменение таблиц и сопоставлений приема, могут занять до пяти минут для службы приема потоковой передачи.

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: ec53c4b2f80fb095f58bee9c15ac5daafb8d59ef
-ms.sourcegitcommit: 390cfe85629171241e9e81869c926fc6768940a4
+ms.openlocfilehash: ad8c05b3347ed4741d574a5e6bcc1d928db08411
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78226245"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79366842"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "78226245"
 
 ### <a name="create-a-runbook-with-powershell"></a>Создание модуля Runbook с помощью PowerShell
 
-Для создания пустого [модуля Runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks)можно использовать командлет [New-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationrunbook?view=azps-3.5.0) . Используйте параметр *типа* , чтобы указать один из типов Runbook, определенных для командлета **New-азаутоматионрунбук**.
+Для создания пустого [модуля Runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks)можно использовать командлет [New-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationrunbook?view=azps-3.5.0) . Используйте параметр `Type`, чтобы указать один из типов Runbook, определенных для `New-AzAutomationRunbook`.
 
 В следующем примере показано, как создать новый пустой Runbook.
 
@@ -75,7 +75,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 ### <a name="import-a-runbook-from-a-script-file-with-windows-powershell"></a>Импорт модуля Runbook из файла скрипта с помощью Windows PowerShell
 
-Используйте командлет [Import-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/import-azautomationrunbook?view=azps-3.5.0) , чтобы импортировать файл скрипта в качестве черновика Runbook рабочего процесса PowerShell. Если модуль Runbook уже существует, импорт завершится ошибкой, если не использовать параметр *Force* с командлетом.
+Используйте командлет [Import-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/import-azautomationrunbook?view=azps-3.5.0) , чтобы импортировать файл скрипта в качестве черновика Runbook рабочего процесса PowerShell. Если модуль Runbook уже существует, импорт завершится ошибкой, если не использовать параметр `Force` с командлетом.
 
 В следующем примере показано, как импортировать файл скрипта в модуль Runbook.
 
@@ -92,7 +92,7 @@ Import-AzAutomationRunbook -Name $runbookName -Path $scriptPath `
 
 ## <a name="test-a-runbook"></a>Тестирование runbook
 
-При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, но [выходные данные](automation-runbook-output-and-messages.md#output-stream) и потоки [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода теста. Сообщения в [подробный поток](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода только в том случае, если переменная *VerbosePreference* ] (Automation-Runbook-Output-and-messages. md # предпочтения-переменные) установлена в значение **Continue**.
+При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, но [выходные данные](automation-runbook-output-and-messages.md#output-stream) и потоки [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода теста. Сообщения в [подробный поток](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода только в том случае, если переменная `VerbosePreference`] (Automation-Runbook-Output-and-messages. md # предпочтения-переменные) установлена в значение Continue.
 
 Несмотря на то что выполняется черновая версия, модуль Runbook работает в обычном режиме и выполняет все действия с использованием ресурсов среды. В связи с этим тестировать модули Runbook можно только в непроизводственных ресурсах.
 

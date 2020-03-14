@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
 ms.openlocfilehash: 1805f6f7a61f7e0b0a6e4d5bd6931c0a7d1f1b6f
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883705"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220317"
 ---
 # <a name="searching-for-entities-with-the-bing-entity-api"></a>Поиск сущностей с помощью API Bing для сущностей
 
-## <a name="suggest-search-terms-with-the-bing-autosuggest-api"></a>Предложение условий поиска с помощью API Автозаполнения Bing
+## <a name="suggest-search-terms-with-the-bing-autosuggest-api"></a>Предложение условий поиска с помощью API автозаполнения Bing
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
@@ -189,7 +189,7 @@ ms.locfileid: "68883705"
 > [!NOTE]
 > Ответы сущности поддерживают разные рынки, но ответ Places поддерживает только расположения организаций в США. 
 
-Локальные запросы на объекты, такие как *ресторан рядом со мной*, требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation` [QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true**. 
+Локальные запросы на объекты, такие как *ресторан рядом со мной*, требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation`[QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true**. 
 
 ```json
 {
@@ -269,7 +269,7 @@ ms.locfileid: "68883705"
 
 Если договорное правило содержит поле `targetPropertyName`, это правило применяется только к целевому полю. В противном случае правило применяется к родительскому объекту, который содержит поле `contractualRules`.
 
-В приведенном ниже примере правило `LinkAttribution` содержит поле `targetPropertyName`, поэтому это правило применяется к полю `description`. Если правила, применяемые к определенным полям, сразу после целевых данных необходимо включить строку, содержащую гиперссылки на веб-сайта поставщика. Например, чтобы определить принадлежность текста описания, сразу после него включите строку с гиперссылкой на веб-сайта поставщика. В этом случае создайте ссылку на сайт contoso.com.
+В приведенном ниже примере правило `LinkAttribution` содержит поле `targetPropertyName`, поэтому это правило применяется к полю `description`. Для правил, применяемых к определенным полям, сразу после целевых данных необходимо включить строку, содержащую гиперссылку на веб-сайт поставщика. Например, чтобы определить принадлежность текста описания, сразу после него включите строку с гиперссылкой на веб-сайта поставщика. В этом случае создайте ссылку на сайт contoso.com.
 
 ```json
 "entities": {
@@ -302,7 +302,7 @@ ms.locfileid: "68883705"
 
 Как правило, правила [LinkAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#linkattribution) и [TextAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#textattribution) определяют поставщика данных. Поле `targetPropertyName` определяет поле, к которому применяется правило.
 
-Чтобы определить принадлежность поставщиков, сразу после содержимого, к которому применяется определение принадлежности (например, целевое поле), добавьте строку. Строка должна четко указывать, что данные принадлежат этим поставщикам. Например, "Данные с contoso.com". Если используются правила `LinkAttribution`, необходимо создать гиперссылку на веб-сайта поставщика.
+Чтобы определить принадлежность поставщиков, сразу после содержимого, к которому применяется определение принадлежности (например, целевое поле), добавьте строку. Строка должна четко указывать, что данные принадлежат этим поставщикам. Например, "Данные с contoso.com". Если используются правила `LinkAttribution`, необходимо создать гиперссылку на веб-сайт поставщика.
 
 Ниже приведен пример с использованием правил `LinkAttribution` и `TextAttribution`.
 
@@ -310,7 +310,7 @@ ms.locfileid: "68883705"
 
 ### <a name="media-attribution"></a>Определение принадлежности медиаданных
 
-Если сущность содержит изображение, необходимо указать ссылку для перехода на веб-сайта поставщика. Если сущность включает правило [MediaAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#mediaattribution), создайте такую ссылку, указав URL-адрес правила. В противном случае используйте URL-адрес в поле `provider` изображения.
+Если сущность содержит изображение, необходимо указать ссылку для перехода на веб-сайт поставщика. Если сущность включает правило [MediaAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#mediaattribution), создайте такую ссылку, указав URL-адрес правила. В противном случае используйте URL-адрес в поле `provider` изображения.
 
 Ниже приведен пример, в котором используется поле `provider` изображения и договорные правила. Так как в этом примере содержится договорное правило, вы должны игнорировать поле `provider` изображения и применить правило `MediaAttribution`.
 
@@ -331,6 +331,6 @@ ms.locfileid: "68883705"
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы приступить к поиску сущностей с помощью API Поиска сущностей Bing, ознакомьтесь с [этим кратким руководством](../quickstarts/csharp.md).

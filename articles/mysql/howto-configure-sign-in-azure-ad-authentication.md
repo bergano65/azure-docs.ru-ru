@@ -1,17 +1,17 @@
 ---
-title: Использование Azure Active Directory — база данных Azure для MySQL — одиночный сервер
-description: Узнайте, как настроить Azure Active Directory (Azure AD) для проверки подлинности с помощью базы данных Azure для MySQL — одиночного сервера
+title: Использование Azure Active Directory — база данных Azure для MySQL
+description: Узнайте, как настроить Azure Active Directory (Azure AD) для проверки подлинности с помощью базы данных Azure для MySQL.
 author: lfittl-msft
 ms.author: lufittl
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: bb3a8c94b377fb9c9150945ec4cf5980e006dd34
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: 0403edadd491609c2c88d5b5ac6980d97163f8d6
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110615"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79299011"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-mysql"></a>Использование Azure Active Directory для проверки подлинности с помощью MySQL
 
@@ -205,7 +205,7 @@ CREATE AADUSER 'Prod_DB_Readonly';
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с общими концепциями [Azure Active Directory аутентификации с помощью базы данных Azure для MySQL — одиночного сервера](concepts-azure-ad-authentication.md) .
+* Ознакомьтесь с общими концепциями [Azure Active Directory аутентификации с помощью базы данных Azure для MySQL](concepts-azure-ad-authentication.md) .
 
 <!--Image references-->
 

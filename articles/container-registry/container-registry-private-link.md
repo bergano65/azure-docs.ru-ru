@@ -3,12 +3,12 @@ title: Настройка частной ссылки
 description: Настройка частной конечной точки в реестре контейнеров и включение закрытой ссылки в локальной виртуальной сети
 ms.topic: article
 ms.date: 03/10/2020
-ms.openlocfilehash: b7dcf2d1eb1a77ea8b9660318ed2a7d4ec183b42
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: 57c2a59ad8b16c39c7c577173feae68dcb263277
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79128383"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79203361"
 ---
 # <a name="configure-azure-private-link-for-an-azure-container-registry"></a>Настройка частной ссылки Azure для реестра контейнеров Azure 
 
@@ -28,7 +28,14 @@ ms.locfileid: "79128383"
 ## <a name="prerequisites"></a>предварительные требования
 
 * Чтобы использовать Azure CLI действия, описанные в этой статье, рекомендуется Azure CLI версии 2.2.0 или более поздней. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli]. Или запустите в [Azure Cloud Shell](../cloud-shell/quickstart.md).
-* Если у вас еще нет реестра контейнеров, создайте его (требуемый уровень Premium) и отправьте пример изображения, например `hello-world` из DOCKER Hub. Например, для создания реестра используйте [портал Azure][quickstart-portal] или [Azure CLI][quickstart-cli] . 
+* Если у вас еще нет реестра контейнеров, создайте его (требуемый уровень Premium) и отправьте пример изображения, например `hello-world` из DOCKER Hub. Например, для создания реестра используйте [портал Azure][quickstart-portal] или [Azure CLI][quickstart-cli] .
+* Если вы хотите настроить доступ к реестру с помощью частной ссылки в другой подписке Azure, необходимо зарегистрировать поставщик ресурсов для реестра контейнеров Azure в этой подписке. Пример:
+
+  ```azurecli
+  az account set --subscription <Name or ID of subscription of private link>
+
+  az provider register --namespace Microsoft.ContainerRegistry
+  ``` 
 
 В Azure CLI примерах в этой статье используются следующие переменные среды. Замените значения, соответствующие вашей среде. Все примеры отформатированы для оболочки bash:
 

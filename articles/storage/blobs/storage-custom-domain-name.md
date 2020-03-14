@@ -9,16 +9,18 @@ ms.date: 01/23/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 892f8bb24da00f1bd5827725f40fdc4359be0937
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9d05677ec47851557594ef47499da653accad141
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906547"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79370480"
 ---
 # <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure
 
 Вы можете сопоставлять личный домен с конечной точкой службы BLOB-объектов или с конечной точкой для [статического сайта](storage-blob-static-website.md) . 
+
+[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!NOTE] 
 > Это сопоставление работает только для поддоменов (например, `www.contoso.com`). Если вы хотите, чтобы конечная точка веб-узла была доступна в корневом домене (например, `contoso.com`), необходимо использовать Azure CDN. Инструкции см. в разделе о [сопоставлении пользовательского домена с включенным протоколом HTTPS](#enable-https) этой статьи. Так как вы переходите к этому разделу этой статьи, чтобы включить корневой домен личного домена, шаг в этом разделе для включения HTTPS является необязательным. 
@@ -231,7 +233,7 @@ ms.locfileid: "76906547"
 
 Чтобы удалить сопоставление пользовательского домена, отмените регистрацию пользовательского домена. Используйте одну из следующих процедур.
 
-#### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+#### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Чтобы удалить параметр личного домена, выполните приведенные ниже действия.
 
@@ -246,7 +248,7 @@ ms.locfileid: "76906547"
 
 После успешного удаления личного домена вы увидите уведомление на портале о том, что ваша учетная запись хранения успешно обновлена.
 
-#### <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Воспользуйтесь командой интерфейса командной строки [az storage account update](https://docs.microsoft.com/cli/azure/storage/account) и укажите пустую строку (`""`) в качестве значения аргумента `--custom-domain`, чтобы отменить регистрацию личного домена.
 
@@ -268,7 +270,7 @@ ms.locfileid: "76906547"
       --custom-domain ""
   ```
 
-#### <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+#### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -324,6 +326,6 @@ ms.locfileid: "76906547"
 
    * [Цены и выставление счетов при использовании хранилища BLOB-объектов с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения о размещении статических веб-сайтов в хранилище больших двоичных объектов Azure](storage-blob-static-website.md)
