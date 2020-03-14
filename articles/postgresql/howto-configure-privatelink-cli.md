@@ -1,24 +1,24 @@
 ---
-title: Частная ссылка для службы "база данных Azure для PostgreSQL — метод установки CLI для одного сервера (Предварительная версия)"
+title: Частная ссылка — Azure CLI — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как настроить частную ссылку для базы данных Azure для PostgreSQL-Single Server из Azure CLI
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 0eacf0f65346247d5fda5b26ead924a8cfd94dd9
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: d4288b901a0e6e132e32f8391d108e79861fc331
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562094"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371041"
 ---
-# <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-preview-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для PostgreSQL — один сервер (Предварительная версия) с помощью интерфейса командной строки
+# <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и базы данных Azure для PostgreSQL с помощью частной конечной точки Azure.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
+> Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL-Single Server поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

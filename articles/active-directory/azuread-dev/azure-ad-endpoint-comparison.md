@@ -12,14 +12,14 @@ ms.date: 11/26/2019
 ms.author: ryanwi
 ms.reviewer: saeeda, hirsin, jmprieur, sureshja, jesakowi, lenalepa, kkrishna, negoe
 ms.custom: aaddev
-ms.openlocfilehash: 56a5221504a3905855fa5dc713707f34ae357aea
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: d910a76397a40a14d960b59f60561cbee470f5c4
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77165141"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263690"
 ---
-# <a name="why-update-to-microsoft-identity-platform-v20"></a>Зачем обновлять платформу Microsoft Identity Platform (v 2.0)?
+# <a name="why-update-to-microsoft-identity-platform-v20"></a>Зачем выполнять обновление до платформы удостоверений Майкрософт (версия 2.0)?
 
 При разработке нового приложения важно помнить о различиях между конечными точками платформы Microsoft Identity Platform (v 2.0) и Azure Active Directory (v 1.0). В этой статье рассматриваются основные различия между конечными точками и некоторыми существующими ограничениями для платформы Microsoft Identity.
 
@@ -34,7 +34,7 @@ ms.locfileid: "77165141"
 * Конечная точка платформы Microsoft Identity позволяет выполнять вход с помощью рабочих и учебных учетных записей Azure AD и персональных учетных записей Майкрософт (MSA), таких как hotmail.com, outlook.com и msn.com.
 * Обе конечные точки также принимают вход *[гостевых пользователей](https://docs.microsoft.com/azure/active-directory/b2b/what-is-b2b)* каталога Azure AD для приложений, настроенных в качестве *[одного клиента](../develop/single-and-multi-tenant-apps.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json)* , или для приложений с *несколькими клиентами* , настроенных для указания на конечную точку конкретного клиента (`https://login.microsoftonline.com/{TenantId_or_Name}`).
 
-Конечная точка платформы Microsoft Identity позволяет создавать приложения, принимающие операции входа из личных учетных записей Майкрософт, а также рабочие и учебные учетные записи. Это дает возможность создавать приложения, абсолютно не зависящие от типа учетной записи. Например, если приложение вызывает [Microsoft Graph](https://graph.microsoft.io), пользователям с рабочими учетными записями будут доступны некоторые дополнительные функции и данные, такие как сайты SharePoint или данные каталога. Но для многих действий, таких как [чтение почты пользователя](https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/user_list_messages), тот же код сможет получить доступ к электронной почте как для личных, так и для рабочих и учебных учетных записей.
+Конечная точка платформы Microsoft Identity позволяет создавать приложения, принимающие операции входа из личных учетных записей Майкрософт, а также рабочие и учебные учетные записи. Это дает возможность создавать приложения, абсолютно не зависящие от типа учетной записи. Например, если приложение вызывает [Microsoft Graph](https://graph.microsoft.io), пользователям с рабочими учетными записями будут доступны некоторые дополнительные функции и данные, такие как сайты SharePoint или данные каталога. Но для многих действий, таких как [чтение почты пользователя](https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0), тот же код сможет получить доступ к электронной почте как для личных, так и для рабочих и учебных учетных записей.
 
 Для конечных точек платформы идентификации Майкрософт можно использовать библиотеку проверки подлинности Майкрософт (MSAL), чтобы получить доступ к потребителям, образовательных и корпоративным мировым уровням. Конечная точка Azure AD версии 1.0 принимает вход только с рабочими и учебными учетными записями.
 
@@ -70,7 +70,7 @@ ms.locfileid: "77165141"
 ```text
 GET https://login.microsoftonline.com/common/oauth2/authorize?
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-&resource=https://graph.windows.net/
+&resource=https://graph.microsoft.com/
 ...
 ```
 
@@ -81,7 +81,7 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 ```text
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
 client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-&scope=https://graph.windows.net/directory.read%20https://graph.windows.net/directory.write
+&scope=https://graph.microsoft.com/directory.read%20https://graph.microsoft.com/directory.write
 ...
 ```
 

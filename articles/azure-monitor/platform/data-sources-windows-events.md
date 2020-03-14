@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
 ms.openlocfilehash: aa34196233ce4037ef6fa49b782b9aa958f7632d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394413"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274688"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Источники данных для журнала событий Windows в Azure Monitor
 Журналы событий Windows — это один из самых распространенных [источников данных](agent-data-sources.md), используемый для сбора данных агентами Windows, так как он применяется большинством приложений для записи сведений.  События можно собирать из стандартных журналов, таких как журналы системы и приложений, а также указывать пользовательские журналы приложений, которые необходимо отслеживать.
@@ -40,7 +40,7 @@ Azure Monitor собирает события только из журналов
 ## <a name="windows-event-records-properties"></a>Свойства записей о событиях Windows
 Записи о событиях Windows имеют тип **Событие** и свойства, описанные в приведенной ниже таблице.
 
-| Свойство | Описание |
+| Свойство | Description |
 |:--- |:--- |
 | Компьютер |Имя компьютера, с которого было получено событие. |
 | EventCategory |Категория события. |
@@ -54,13 +54,13 @@ Azure Monitor собирает события только из журналов
 | RenderedDescription |Описание события со значениями параметров. |
 | Источник |Источник события. |
 | SourceSystem |Тип агента, из которого было получено событие. <br> OpsManager — агент Windows, подключенный напрямую или управляемый с помощью Operations Manager. <br> Linux — все агенты Linux  <br> AzureStorage – диагностика Azure |
-| Время создания |Дата и время создания события в Windows. |
+| TimeGenerated |Дата и время создания события в Windows. |
 | UserName |Имя пользователя учетной записи, который зафиксировал событие. |
 
 ## <a name="log-queries-with-windows-events"></a>Запросы журнала для получения событий Windows
 Ниже приведены различные примеры запросов журнала, которые извлекают записи о событиях Windows.
 
-| Запрос | Описание |
+| Запрос | Description |
 |:---|:---|
 | Событие |Все события Windows. |
 | Event &#124; where EventLevelName == "error" |Все события Windows с указанием серьезности ошибки. |
@@ -68,7 +68,7 @@ Azure Monitor собирает события только из журналов
 | Event &#124; where EventLevelName == "error" &#124; summarize count() by Source |Число событий ошибок Windows по источникам. |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Настройте службу Log Analytics для сбора других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 * Настройте [коллекцию счетчиков производительности](data-sources-performance-counters.md) из агентов Windows.

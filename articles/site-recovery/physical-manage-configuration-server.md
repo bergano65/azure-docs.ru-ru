@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 02/28/2019
 ms.author: mayg
 ms.openlocfilehash: f443f0362ecad8448895322686a7175b2813141e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78367113"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257788"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -20,7 +20,7 @@ ms.locfileid: "78367113"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В приведенной ниже таблице перечислены предварительные требования для развертывания серверного компьютера в локальной конфигурации.
 
@@ -31,16 +31,16 @@ ms.locfileid: "78367113"
 | Количество дисков | 3 (диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения)) |
 | Свободное место на диске (кэш сервера обработки) | 600 ГБ
 | Свободное место на диске (диск хранения) | 600 ГБ|
-| Операционная система  | Windows Server 2012 R2 <br> Windows Server 2016 |
+| Операционная система  | Windows Server 2012 R2 <br> Windows Server 2016 |
 | Язык операционной системы | Английский (США)|
 | Версия VMware vSphere PowerCLI | Не требуется|
 | Роли Windows Server | Не включайте эти роли: <br> — доменные службы Active Directory; <br>— службы IIS; <br> — Hyper-V. |
 | Групповые политики| Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения сценариев; <br> [Дополнительные сведения](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)|
 | IIS | — Должен отсутствовать предварительно созданный веб-сайт по умолчанию. <br> — включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx);  <br> — Должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных на порте 443.<br>|
 | Тип сетевой карты | VMXNET3 (при развертывании в качестве виртуальной машины VMware) |
-| Тип IP-адреса | Static |
-| Доступ к сети Интернет | Сервер должен иметь доступ к этим URL-адресам: <br> - \*.accesscontrol.windows.net<br> - \*.backup.windowsazure.com <br>- \*.store.core.windows.net<br> - \*.blob.core.windows.net<br> - \*.hypervrecoverymanager.windowsazure.com <br> - https://management.azure.com <br> - *.services.visualstudio.com <br> - https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi (не требуется для серверов обработки горизонтального масштабирования) <br> time.nist.gov <br> time.windows.com |
-| Порты | 443 (оркестрация канала управления)<br>9443 (передача данных)|
+| Тип IP-адреса | Статические |
+| Доступ к Интернету | Сервер должен иметь доступ к этим URL-адресам: <br> - \*.accesscontrol.windows.net<br> - \*.backup.windowsazure.com <br>- \*.store.core.windows.net<br> - \*.blob.core.windows.net<br> - \*.hypervrecoverymanager.windowsazure.com <br> - https://management.azure.com <br> - *.services.visualstudio.com <br> - https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi (не требуется для серверов обработки горизонтального масштабирования) <br> time.nist.gov <br> time.windows.com |
+| порты; | 443 (оркестрация канала управления)<br>9443 (передача данных)|
 
 ## <a name="download-the-latest-installation-file"></a>Скачивание последней версии файла установки
 
@@ -60,7 +60,7 @@ ms.locfileid: "78367113"
 1. Запустите файл единой установки.
 2. На странице **Перед началом работы** выберите **Install the configuration server and process server** (Установить сервер конфигурации и сервер обработки).
 
-    ![Прежде чем начать](./media/physical-manage-configuration-server/combined-wiz1.png)
+    ![Перед началом работы](./media/physical-manage-configuration-server/combined-wiz1.png)
 
 3. В окне **Third-Party Software License** (Лицензия на программное обеспечение стороннего поставщика) щелкните **I Accept** (Принимаю), чтобы скачать и установить MySQL.
 4. В окне **Internet Settings** (Параметры Интернета) укажите параметры для подключения поставщика, который будет выполняться на сервере конфигурации, к Azure Site Recovery через Интернет. Убедитесь, что вам предоставлены необходимые URL-адреса.
@@ -71,7 +71,7 @@ ms.locfileid: "78367113"
      ![Брандмауэр](./media/physical-manage-configuration-server/combined-wiz4.png)
 6. В окне **Проверка необходимых компонентов** программа установки проверяет возможность установки. Если появится предупреждение о **проверке глобальной синхронизации времени**, убедитесь, что время системных часов (параметры **даты и времени**) соответствует часовому поясу.
 
-    ![Предварительные требования](./media/physical-manage-configuration-server/combined-wiz5.png)
+    ![предварительные требования](./media/physical-manage-configuration-server/combined-wiz5.png)
 7. На странице **Конфигурация MySQL** создайте учетные данные для входа в экземпляр сервера MySQL, который будет установлен.
 
     ![MySQL](./media/physical-manage-configuration-server/combined-wiz6.png)
@@ -108,7 +108,7 @@ ms.locfileid: "78367113"
 
 ### <a name="parameters"></a>Параметры
 
-|Имя параметра| Тип | Описание| Значения|
+|Имя параметра| Тип | Description| Значения|
 |-|-|-|-|
 | /ServerMode|Обязательно|Указывает, нужно ли установить и сервер конфигурации, и сервер обработки или только север обработки.|CS<br>PS|
 |/InstallLocation|Обязательно|Папка для установки компонентов.| Любая папка на компьютере.|
@@ -217,7 +217,7 @@ ProxyPassword="Password"
 
 ## <a name="upgrade-a-configuration-server"></a>Обновление сервера конфигурации
 
-Для обновления сервера конфигурации запускаются накопительные пакеты обновления. Обновления применимы к версиям вплоть до N-4. Например:
+Для обновления сервера конфигурации запускаются накопительные пакеты обновления. Обновления применимы к версиям вплоть до N-4. Пример:
 
 - Если вы используете версии 9.7, 9.8, 9.9 или 9.10, можно обновить их непосредственно до версии 9.11.
 - Если вы используете версию 9.6 или ниже и хотите обновить ее до версии 9.11, сначала выполните обновление до версии 9.7, а затем — до версии 9.11.
@@ -313,7 +313,7 @@ ProxyPassword="Password"
 ## <a name="common-issues"></a>Распространенные проблемы
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с руководствами по настройке аварийного восстановления [физических серверов](tutorial-physical-to-azure.md) в Azure.
 

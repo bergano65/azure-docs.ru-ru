@@ -12,11 +12,11 @@ ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 12/04/2018
 ms.openlocfilehash: fc328c34c1543a75fdc885087d44b28e24c0850a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380089"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268682"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Уровень "Критически важный для бизнеса" для Базы данных SQL Azure
 
@@ -57,7 +57,7 @@ Azure прозрачно обновляет и исправляет базову
 - Более высокая доступность — уровень критически важный для бизнеса в конфигурации с несколькими AZ гарантирует доступность 99,995% по сравнению с 99,99% уровня общего назначения.
 - Для быстрого георепликации критически важный для бизнеса уровень, настроенный с георепликацией, имеет гарантированную целевую точку восстановления (RPO) 5 секунд и целевое время восстановления (RTO) в 30 секунд для 100% развернутых часов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Найдите характеристики ресурсов (количество ядер, операций ввода-вывода, памяти) критически важный для бизнеса уровня в [управляемый экземпляр](sql-database-managed-instance-resource-limits.md#service-tier-characteristics), отдельной базе данных в модели [Виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#business-critical---provisioned-compute---gen4) или [модели DTU](sql-database-dtu-resource-limits-single-databases.md#premium-service-tier)или эластичном пуле в модели [Виртуальное ядро](sql-database-vcore-resource-limits-elastic-pools.md#business-critical---provisioned-compute---gen4) и [DTU](sql-database-dtu-resource-limits-elastic-pools.md#premium-elastic-pool-limits).
 - См. дополнительные сведения об уровнях [Общего назначения](sql-database-service-tier-general-purpose.md) и [Гипермасштабирование](sql-database-service-tier-hyperscale.md).

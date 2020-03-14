@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 03/11/2020
 ms.author: travisw
-ms.openlocfilehash: d687d1d353c1734c5d98121f658003afde2eb182
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.openlocfilehash: 9219c9a72ce9e1cfba3504b0b8e16ade77f8a5e5
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394827"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79369902"
 ---
-# <a name="about-voice-assistants"></a>О помощниках
+# <a name="what-is-a-voice-assistant"></a>Что такое голосовой помощник?
 
 Речевые помощники, использующие службу распознавания речи, позволяют разработчикам создавать естественные, человеческие в своем опыте интерфейсы общения для своих приложений и работы.
 

@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e9c0c88064c00c97de7dc58a500910e81c04eef
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78671889"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263287"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>Настройка управления сеансом проверки подлинности с помощью условного доступа
 
@@ -128,7 +128,7 @@ ms.locfileid: "78671889"
 
 Чтобы убедиться, что политика работает должным образом, рекомендуется протестировать ее перед развертыванием в рабочей среде. В идеале для проверки правильности работы новой политики следует использовать тестовый клиент. Дополнительные сведения см. в статье рекомендации [по условному доступу в Azure Active Directory](best-practices.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Если вы хотите узнать, как настроить политику условного доступа, см. статью [запрос MFA для конкретных приложений с Azure Active Directory условным доступом](app-based-mfa.md).
 * Если вы готовы к настройке политик условного доступа для своей среды, см. статью рекомендации [по условному доступу в Azure Active Directory](best-practices.md).

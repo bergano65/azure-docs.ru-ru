@@ -7,11 +7,11 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.openlocfilehash: a0058bf309e0ff4fbe687731d676e907d1c3fd82
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394281"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246595"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Единицы запросов в базе данных Azure Cosmos DB
 
@@ -64,7 +64,7 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 
 * **Использование скриптов**: как и в случае с запросами, хранимые процедуры и триггеры используют в базе данных, которая усложняет выполнение операций. При разработке приложения изучите [заголовок расхода на запрос](optimize-cost-queries.md#evaluate-request-unit-charge-for-a-query) , чтобы лучше понять, сколько ресурсов в единицах потребляет каждая операция.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробнее о [подготовке пропускной способности в контейнерах и базах данных Azure Cosmos](set-throughput.md).
 * Подробнее о [логических секциях](partition-data.md).

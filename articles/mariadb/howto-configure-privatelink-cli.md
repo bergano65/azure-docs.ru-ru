@@ -1,26 +1,26 @@
 ---
-title: Частная ссылка для метода настройки CLI базы данных Azure для MariaDB (Предварительная версия)
+title: Частная ссылка — Azure CLI — база данных Azure для MariaDB
 description: Узнайте, как настроить частную ссылку на базу данных Azure для MariaDB из Azure CLI
 author: kummanish
 ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: b2d9fb9d4dc8268c0be45f8a6f24759a7be58427
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: c28c5494c1cff2c198a94ea6b92003ae74ee2c8e
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77561805"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371806"
 ---
-# <a name="create-and-manage-private-link-for-azure-database-for-mariadb-preview-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB (Предварительная версия) с помощью интерфейса командной строки
+# <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью интерфейса командной строки
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и сервера базы данных Azure для MariaDB с частной конечной точкой Azure.
 
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для MariaDB поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -38,7 +38,7 @@ ms.locfileid: "77561805"
 az group create --name myResourceGroup --location westeurope
 ```
 
-## <a name="create-a-virtual-network"></a>Создание виртуальной сети
+## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
@@ -170,8 +170,8 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя соединения| Выберите нужное имя подключения.|
-    | Hostname | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
+    | Имя подключения| Выберите нужное имя подключения.|
+    | Имя узла | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
     | Имя пользователя | Введите Username как *username@servername* , которое предоставляется во время создания сервера MariaDB. |
     | Пароль | Введите пароль, указанный при создании сервера MariaDB. |
     ||
@@ -189,5 +189,5 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)

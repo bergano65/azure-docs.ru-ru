@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6a82766be01476890bbf18b518ce21febe0d07f1
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78376041"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79253615"
 ---
 # <a name="azure-ad-connect-sync-attributes-synchronized-to-azure-active-directory"></a>Службы синхронизации Azure AD Connect: атрибуты, синхронизируемые с Azure Active Directory
 В этой статье перечислены атрибуты, которые синхронизируются при помощи служб синхронизации Azure AD Connect.  
@@ -58,7 +58,7 @@ ms.locfileid: "78376041"
 | assistant |X |X | | |
 | altRecipient |X | | |Требуется Azure AD Connect сборки 1.1.552.0 или более поздних версий. |
 | authOrig |X |X |X | |
-| c |X |X | | |
+| с |X |X | | |
 | cn |X | |X | |
 | co |X |X | | |
 | company |X |X | | |
@@ -87,13 +87,13 @@ ms.locfileid: "78376041"
 | givenName |X |X | | |
 | homePhone |X |X | | |
 | сведения |X |X |X |Сейчас этот атрибут не используется для групп. |
-| Инициалы |X |X | | |
+| Initials |X |X | | |
 | l |X |X | | |
 | legacyExchangeDN |X |X |X | |
 | mailNickname |X |X |X | |
 | managedBy | | |X | |
 | manager |X |X | | |
-| член | | |X | |
+| member | | |X | |
 | mobile |X |X | | |
 | msDS-HABSeniorityIndex |X |X |X | |
 | msDS-PhoneticDisplayName |X |X |X | |
@@ -164,7 +164,7 @@ ms.locfileid: "78376041"
 | streetAddress |X |X | | |
 | targetAddress |X |X | | |
 | telephoneAssistant |X |X | | |
-| telephoneNumber |X |X | | |
+| TelephoneNumber |X |X | | |
 | thumbnailphoto |X |X | | |
 | title |X |X | | |
 | unauthOrig |X |X |X | |
@@ -179,7 +179,7 @@ ms.locfileid: "78376041"
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | authOrig |X |X |X | |
-| c |X |X | | |
+| с |X |X | | |
 | cn |X | |X | |
 | co |X |X | | |
 | company |X |X | | |
@@ -212,11 +212,11 @@ ms.locfileid: "78376041"
 | Initials |X |X | | |
 | ipPhone |X |X | | |
 | l |X |X | | |
-| почта |X |X |X | |
+| mail |X |X |X | |
 | mailNickname |X |X |X | |
 | managedBy | | |X | |
 | manager |X |X | | |
-| член | | |X | |
+| member | | |X | |
 | middleName |X |X | | |
 | mobile |X |X | | |
 | msExchTeamMailboxExpiration |X | | | |
@@ -246,7 +246,7 @@ ms.locfileid: "78376041"
 | streetAddress |X |X | | |
 | targetAddress |X |X | | |
 | telephoneAssistant |X |X | | |
-| telephoneNumber |X |X | | |
+| TelephoneNumber |X |X | | |
 | thumbnailphoto |X |X | | |
 | title |X |X | | |
 | unauthOrig |X |X |X | |
@@ -260,7 +260,7 @@ ms.locfileid: "78376041"
 | Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
-| c |X |X | | |
+| с |X |X | | |
 | cn |X | |X | |
 | co |X |X | | |
 | company |X |X | | |
@@ -272,11 +272,11 @@ ms.locfileid: "78376041"
 | homePhone |X |X | | |
 | ipPhone |X |X | | |
 | l |X |X | | |
-| почта |X |X |X | |
+| mail |X |X |X | |
 | mailNickname |X |X |X | |
 | managedBy | | |X | |
 | manager |X |X | | |
-| член | | |X | |
+| member | | |X | |
 | mobile |X |X | | |
 | msExchHideFromAddressLists |X |X |X | |
 | msRTCSIP-ApplicationOptions |X | | | |
@@ -297,7 +297,7 @@ ms.locfileid: "78376041"
 | sourceAnchor |X |X |X |Механическое свойство. Неизменяемый идентификатор для поддержания связи между доменными службами Active Directory и Azure AD. |
 | st |X |X | | |
 | streetAddress |X |X | | |
-| telephoneNumber |X |X | | |
+| TelephoneNumber |X |X | | |
 | thumbnailphoto |X |X | | |
 | title |X |X | | |
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
@@ -310,8 +310,8 @@ ms.locfileid: "78376041"
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
 | cn |X | |X |Общее имя или псевдоним. Чаще всего префикс значения [mail]. |
 | displayName |X |X |X |Строка, представляющая имя. Часто отображается как понятное имя (имя и фамилия). |
-| почта |X |X |X |Полный адрес электронной почты. |
-| член | | |X | |
+| mail |X |X |X |Полный адрес электронной почты. |
+| member | | |X | |
 | objectSID |X | |X |Механическое свойство. Идентификатор пользователя AD, используемый для обеспечения синхронизации между Azure AD и AD. |
 | proxyAddresses |X |X |X |Механическое свойство. Используется в Azure AD. Содержит все дополнительные адреса электронной почты пользователя. |
 | pwdLastSet |X | | |Механическое свойство. Используется, чтобы определить, когда необходимо сделать недействительными уже выданные маркеры. |
@@ -323,13 +323,13 @@ ms.locfileid: "78376041"
 | Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
-| c |X |X | | |
+| с |X |X | | |
 | cn |X | |X | |
 | description |X |X |X | |
 | displayName |X |X |X | |
-| почта |X |X |X | |
+| mail |X |X |X | |
 | mailNickname |X |X |X | |
-| член | | |X | |
+| member | | |X | |
 | objectSID |X | |X |Механическое свойство. Идентификатор пользователя AD, используемый для обеспечения синхронизации между Azure AD и AD. |
 | proxyAddresses |X |X |X | |
 | pwdLastSet |X | | |Механическое свойство. Используется, чтобы определить, когда необходимо сделать недействительными уже выданные маркеры. Используется для синхронизации хэша паролей, сквозной аутентификации и федерации. |
@@ -341,7 +341,7 @@ ms.locfileid: "78376041"
 | Имя атрибута | Пользователь | Контакт | Группа | Комментарий |
 | --- |:---:|:---:|:---:| --- |
 | AccountEnabled |X | | |Определяет, включена ли учетная запись. |
-| c |X |X | | |
+| с |X |X | | |
 | cn |X | |X | |
 | co |X |X | | |
 | company |X |X | | |
@@ -353,7 +353,7 @@ ms.locfileid: "78376041"
 | l |X |X | | |
 | managedBy | | |X | |
 | manager |X |X | | |
-| член | | |X | |
+| member | | |X | |
 | mobile |X |X | | |
 | objectSID |X | |X |Механическое свойство. Идентификатор пользователя AD, используемый для обеспечения синхронизации между Azure AD и AD. |
 | physicalDeliveryOfficeName |X |X | | |
@@ -364,7 +364,7 @@ ms.locfileid: "78376041"
 | sourceAnchor |X |X |X |Механическое свойство. Неизменяемый идентификатор для поддержания связи между доменными службами Active Directory и Azure AD. |
 | st |X |X | | |
 | streetAddress |X |X | | |
-| telephoneNumber |X |X | | |
+| TelephoneNumber |X |X | | |
 | title |X |X | | |
 | usageLocation |X | | |Механическое свойство. Страна или регион пользователя. Используется для назначения лицензии. |
 | userPrincipalName |X | | |Имя участника-пользователя является именем для входа. Чаще всего соответствует значению [mail]. |
@@ -384,10 +384,10 @@ ms.locfileid: "78376041"
 | displayName |X |X |X | |
 | employeeID |X |  |  | |
 | givenName |X |X | | |
-| почта |X | |X | |
+| mail |X | |X | |
 | managedBy | | |X | |
 | mailNickName |X |X |X | |
-| член | | |X | |
+| member | | |X | |
 | objectSID |X | | |Механическое свойство. Идентификатор пользователя AD, используемый для обеспечения синхронизации между Azure AD и AD. |
 | proxyAddresses |X |X |X | |
 | pwdLastSet |X | | |Механическое свойство. Используется, чтобы определить, когда необходимо сделать недействительными уже выданные маркеры. Используется для синхронизации хэша паролей, сквозной аутентификации и федерации. |
@@ -440,7 +440,7 @@ ms.locfileid: "78376041"
 | Имя атрибута | PublicFolder | Комментарий |
 | --- | :---:| --- |
 | displayName | X |  |
-| почта | X |  |
+| mail | X |  |
 | msExchRecipientTypeDetails | X |  |
 | objectGUID | X |  |
 | proxyAddresses | X |  |
@@ -470,7 +470,7 @@ ms.locfileid: "78376041"
 * Если используется альтернативный идентификатор, то локальный атрибут userPrincipalName синхронизируется с атрибутом Azure AD onPremisesUserPrincipalName. Атрибут "Альтернативный идентификатор", например почта, синхронизируется с атрибутом Azure AD userPrincipalName.
 * В списках выше тип объекта **User** также относится к типу объекта **iNetOrgPerson**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

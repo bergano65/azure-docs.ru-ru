@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.custom: sfrev
 ms.openlocfilehash: 6897854820339fc78dd9083c82147dce95ab68b6
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78391407"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258659"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 
@@ -67,7 +67,7 @@ ms.locfileid: "78391407"
 
 Если политики работоспособности кластера соблюдены, обновление считается успешным и помечается как завершенное. Это может произойти во время первоначального или повторного запусков обновлений на этом этапе. В случае успешного выполнения сообщение с подтверждением не отправляется.
 
-## <a name="manage-certificates"></a>управление сертификатами
+## <a name="manage-certificates"></a>Управление сертификатами
 
 Service Fabric использует [сертификаты сервера X.509](service-fabric-cluster-security.md), указываемые при создании кластера, для защиты обмена данными между узлами кластера и проверки подлинности клиентов. Вы можете добавлять, обновлять или удалять сертификаты для кластера и клиента с помощью [портала Azure](https://portal.azure.com), PowerShell или Azure CLI.  Подробнее о [добавлении или удалении сертификатов](service-fabric-cluster-security-update-certs-azure.md).
 
@@ -102,7 +102,7 @@ Service Fabric использует [сертификаты сервера X.509
 
 Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избегать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как настроить некоторые [параметры Service Fabric для кластера](service-fabric-cluster-fabric-settings.md)
 * Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md)

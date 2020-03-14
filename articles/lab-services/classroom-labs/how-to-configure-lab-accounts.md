@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 02/14/2020
 ms.author: spelluru
 ms.openlocfilehash: fa9dba62b3b58687ec6a2bfc29e8722f7016b679
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78361007"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284308"
 ---
 # <a name="configure-lab-accounts-in-azure-lab-services"></a>Настройка учетных записей лаборатории в службах лаборатории Azure 
 В службах лаборатории Azure лабораторная учетная запись — это контейнер для управляемых лабораторных типов, таких как учебные лаборатории. Администратор задает учетную запись лаборатории с помощью Служб лабораторий Azure и предоставляет доступ владельцам лабораторий, которые могут создать лаборатории в учетной записи. 

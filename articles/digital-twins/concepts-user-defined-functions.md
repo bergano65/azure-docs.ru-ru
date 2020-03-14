@@ -9,11 +9,11 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/03/2020
 ms.openlocfilehash: 75ed2029582438ede43687addfd54c0a187e0120
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382256"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79265185"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Обработка данных и определяемые пользователем функции
 
@@ -118,7 +118,7 @@ Azure Digital Twins предлагает расширенные вычислит
 
 Сопоставитель может запускать UDF-функцию, которая не имеет назначений ролей. В этом случае определяемая пользователем функция не сможет считывать данные из графа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнать, как маршрутизировать события и сообщения телеметрии к другим службам Azure, в [этой статье](./concepts-events-routing.md).
 

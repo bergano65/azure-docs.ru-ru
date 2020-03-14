@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 462f8dafdffa7ee01e6ccf7945a1abfdff90db42
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395854"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79254876"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-and-manage-jobs-update-3-and-later"></a>Использование службы диспетчера устройств StorSimple для просмотра и администрирования заданий StorSimple (обновление 3 или более поздней версии)
 
@@ -77,15 +77,15 @@ ms.locfileid: "78395854"
 
 
 ### <a name="to-cancel-a-job"></a>Отмена задания
-1. На странице **Задания** отображаются выполняемые задания, которые необходимо отменить в результате выполнения запроса с подходящими фильтрами. Выберите задание.
+1. На странице **Задания** можно отобразить задания, которые нужно отменить, выполнив запрос с соответствующими фильтрами. Выберите задание.
 
 2. Щелкните выбранное задание правой кнопкой мыши, чтобы открыть контекстное меню, и выберите действие **Отмена**.
 
     ![Сведения о задании](./media/storsimple-8000-manage-jobs-u2/jobs2.png)
 
-3. При запросе подтверждения нажмите кнопку **Да**. Теперь это задание отменено.
+3. При появлении запроса на подтверждение нажмите кнопку **Да**. Теперь это задание отменено.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте об [управлении политиками архивации StorSimple](storsimple-8000-manage-backup-policies-u2.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

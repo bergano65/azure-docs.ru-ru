@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: mikhegn
 ms.openlocfilehash: 80e3d990b6e8026c57ffff0048d0447a95529564
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78364975"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79258191"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с помощью обозревателя Service Fabric
 
@@ -119,7 +119,7 @@ EventStore — это функция, предлагаемая этой пла�
 
 ![Схема кластера в обозревателе Service Fabric][sfx-imagestore]
 
-## <a name="backup-and-restore"></a>Архивация и восстановление
+## <a name="backup-and-restore"></a>Резервное копирование и восстановление
 Service Fabric Explorer предлагает возможность взаимодействия с [резервным копированием и восстановлением](./service-fabric-reliable-services-backup-restore.md). Для просмотра функций резервного копирования и восстановления в SFX необходимо включить расширенный режим.
 
 ![Включить расширенный режим][0]
@@ -133,7 +133,7 @@ Service Fabric Explorer предлагает возможность взаимо
 * Активация и отслеживание восстановления для секции.
 
 Дополнительные сведения о службе резервного копирования и восстановления см. в [справочнике по REST API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore).
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 * [Развертывание приложений Service Fabric с помощью PowerShell](service-fabric-deploy-remove-applications.md)
 

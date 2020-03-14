@@ -5,11 +5,11 @@ ms.date: 12/5/2019
 ms.topic: conceptual
 ms.subservice: alerts
 ms.openlocfilehash: 2f1734d30136be904aedf7d880922ba052130ec7
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384516"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79274922"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
@@ -141,7 +141,7 @@ ms.locfileid: "78384516"
 Полный список поддерживаемых типов ресурсов можно найти в этой [статье](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание и просмотр оповещений о метриках, а также управление ими с помощью Azure Monitor](alerts-metric.md)
 - [Сведения о развертывании оповещений о метриках с помощью шаблонов Azure Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md)

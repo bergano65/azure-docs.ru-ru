@@ -16,11 +16,11 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 636c7c654b98ced5f93c3ace0e4a99bfc9bf7def
-ms.sourcegitcommit: f15f548aaead27b76f64d73224e8f6a1a0fc2262
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77611800"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79262611"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, вызывающее веб-API: получение маркера
 
@@ -599,7 +599,7 @@ private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
 ---
 
-## <a name="username-and-password"></a>Имя пользователя и пароль
+## <a name="username-and-password"></a>Имя пользователя и пароль
 
 Можно также получить маркер, указав имя пользователя и пароль. Этот поток ограничен и не рекомендуется, но по-прежнему используются случаи, когда это необходимо.
 
@@ -1391,7 +1391,7 @@ namespace CommonCacheMsalV3
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API из классического приложения](scenario-desktop-call-api.md)

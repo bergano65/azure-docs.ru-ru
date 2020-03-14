@@ -6,11 +6,11 @@ ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
 ms.openlocfilehash: d41fd7f66ecef3a563345424d7dc4366e47d3f0e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226561"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276508"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "74226561"
 | Пример сценария | Триггер | Входная привязка | Выходная привязка |
 |-------------|---------|---------------|----------------|
 | Поступает новое сообщение очереди, которое запускает функцию для записи в другую очередь. | <sup>*</sup> очереди | *None* | <sup>*</sup> очереди |
-|Запланированное задание считывает содержимое хранилища BLOB-объектов и создает новый документ Cosmos DB. | Таймер | Хранилище BLOB-объектов | База данных Cosmos |
+|Запланированное задание считывает содержимое хранилища BLOB-объектов и создает новый документ Cosmos DB. | Таймер | Хранилище BLOB-объектов | Cosmos DB |
 |Сетка событий используется для чтения изображения из хранилища BLOB-объектов и документа из Cosmos DB для отправки сообщения электронной почты. | Сетка событий Azure | Хранилище BLOB-объектов и Cosmos DB | SendGrid |
 | Веб-перехватчик, использующий Microsoft Graph для обновления листа Excel. | HTTP | *None* | Microsoft Graph |
 
@@ -41,7 +41,7 @@ ms.locfileid: "74226561"
 
 Триггеры и привязки определяются по-разному в зависимости от подхода к разработке.
 
-| платформа | Триггеры и привязки настраиваются... |
+| Платформа | Триггеры и привязки настраиваются... |
 |-------------|--------------------------------------------|
 | Библиотека классов C# | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;оформления методов и параметров с C# помощью атрибутов |
 | Все остальные (включая портал Azure) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;обновление [Function. JSON](./functions-reference.md) ([схема](http://json.schemastore.org/function)) |
@@ -61,7 +61,7 @@ ms.locfileid: "74226561"
 }
 ```
 
-Другие параметры для `dataType`: `stream` и `string`.
+Другие варианты для `dataType` — `stream` и `string`.
 
 ## <a name="binding-direction"></a>Направление привязки
 
@@ -88,6 +88,6 @@ ms.locfileid: "74226561"
   - [Запуск функции, не активируемой HTTP-запросом, вручную](functions-manually-run-non-http.md)
 - [Обработка ошибок привязки](./functions-bindings-errors.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Регистрация расширений привязки функций Azure](./functions-bindings-register.md)

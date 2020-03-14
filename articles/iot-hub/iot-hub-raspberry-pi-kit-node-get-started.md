@@ -2,20 +2,20 @@
 title: Подключение Raspberry Pi к центру Интернета вещей Azure в облаке (Node. js)
 description: Узнайте, как настроить и подключить Raspberry Pi к центру Интернета вещей Azure для Raspberry Pi, чтобы отправить данные на облачную платформу Azure в этом руководстве.
 author: wesmc7777
-manager: philmea
+manager: eliotgra
 keywords: Raspberry Pi и Центр Интернета вещей Azure, Raspberry Pi и Центр Интернета вещей, отправка данных с Raspberry Pi в облако, подключение Raspberry Pi к облаку
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 03/13/2020
 ms.author: wesmc
-ms.openlocfilehash: 5780477be71988653e89379ae17e9009337bbc0f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7c32ae73f065aa5cd1d0dabec421d354684fbb3c
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457097"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79371513"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -45,9 +45,9 @@ ms.locfileid: "75457097"
 
 * Как отправить данные датчика в Центр Интернета вещей.
 
-## <a name="what-you-need"></a>Необходимые элементы
+## <a name="what-you-need"></a>Что нужно
 
-![Необходимые элементы](./media/iot-hub-raspberry-pi-kit-node-get-started/0-starter-kit.png)
+![Что нужно](./media/iot-hub-raspberry-pi-kit-node-get-started/0-starter-kit.png)
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
 
@@ -96,17 +96,17 @@ ms.locfileid: "75457097"
 
    а. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
 
-   b. Извлеките образ ОС Raspbian в папку на компьютере.
+   б. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
 
    а. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
 
-   b. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
+   б. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
-   c. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
+   в. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
 
-   d. Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
+   . Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
 
    д) По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
 
@@ -173,7 +173,7 @@ ms.locfileid: "75457097"
 
    а. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
-   b. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
+   б. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
    ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7-putty-windows.png)
 
@@ -202,13 +202,13 @@ ms.locfileid: "75457097"
 3. Клонируйте пример приложения.
 
    ```bash
-   git clone https://github.com/Azure-Samples/iot-hub-node-raspberrypi-client-app
+   git clone https://github.com/Azure-Samples/azure-iot-samples-node.git
    ```
 
 4. Установите все пакеты для примера, в том числе пакет SDK для устройств Azure IoT, библиотеку датчика BME280 и библиотеку Wiring Pi.
 
    ```bash
-   cd iot-hub-node-raspberrypi-client-app
+   cd azure-iot-samples-node/iot-hub/Tutorials/RaspberryPiApp
    npm install
    ```
 
@@ -254,8 +254,8 @@ ms.locfileid: "75457097"
 
 Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
+Вы запустили пример приложения для регистрации данных датчика и их отправки в центр Интернета вещей.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

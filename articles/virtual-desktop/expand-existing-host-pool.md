@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/21/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 37c3e57fd96a0161564b23ce18d01573d0dd73f9
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: aee5195fe86fed3e631908a38d3bdb7d5e4883b8
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79127894"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79365225"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Развертывание существующего пула узлов с новыми узлами сеансов
 
@@ -71,7 +71,7 @@ ms.locfileid: "79127894"
 
 ## <a name="run-the-azure-marketplace-offering"></a>Запуск предложения Azure Marketplace
 
-Следуйте инструкциям в статье [Создание пула узлов с помощью Azure Marketplace](./create-host-pools-azure-marketplace.md) , пока не будет достигнуто [предложение Azure Marketplace для создания пула узлов](./create-host-pools-azure-marketplace.md#run-the-azure-marketplace-offering-to-provision-a-new-host-pool). При переходе к этому моменту необходимо ввести следующие сведения для каждой колонки:
+Следуйте инструкциям в статье [Создание пула узлов с помощью Azure Marketplace](./create-host-pools-azure-marketplace.md) , пока не будет достигнуто [предложение Azure Marketplace для создания пула узлов](./create-host-pools-azure-marketplace.md#run-the-azure-marketplace-offering-to-provision-a-new-host-pool). При переходе к этому моменту необходимо ввести следующие сведения для каждой вкладки:
 
 ### <a name="basics"></a>Основы
 

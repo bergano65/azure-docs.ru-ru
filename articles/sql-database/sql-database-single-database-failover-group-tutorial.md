@@ -12,11 +12,11 @@ ms.author: mathoma
 ms.reviewer: sstein, carlrab
 ms.date: 06/19/2019
 ms.openlocfilehash: b88557468c386bc07c2432e154a82fd1f4fcb438
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380025"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79255799"
 ---
 # <a name="tutorial-add-an-azure-sql-database-single-database-to-a-failover-group"></a>Учебник. Добавление отдельной базы данных SQL Azure в группу отработки отказа
 
@@ -27,7 +27,7 @@ ms.locfileid: "78380025"
 > - Создайте [группу отработки отказа](sql-database-auto-failover-group.md) для отдельной базы данных между двумя логическими серверами SQL.
 > - Тестовая отработка отказа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 В рамках этого руководства вам потребуются: 
@@ -157,7 +157,7 @@ ms.locfileid: "78380025"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создание правила брандмауэра для логического сервера. | 
@@ -188,7 +188,7 @@ ms.locfileid: "78380025"
 
 В этой части руководства используются следующие командлеты AZ CLI:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Создает правила брандмауэра сервера. | 
@@ -277,7 +277,7 @@ ms.locfileid: "78380025"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает или перечисляет группы отработки отказа для Базы данных SQL Azure. |
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup)| Выполняет отработку отказа для группы отработки отказа Базы данных SQL Azure. |
@@ -313,7 +313,7 @@ ms.locfileid: "78380025"
 
 В этой части руководства используются следующие командлеты AZ CLI:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az sql failover-group list](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-list) | Перечисляет группы отработки отказа на сервере. |
 | [az sql failover-group set-primary](/cli/azure/sql/failover-group?view=azure-cli-latest#az-sql-failover-group-set-primary) | Задает первичную точку группы отработки отказа. Для этого выполняется отработка отказа всех баз данных с текущего сервера-источника. | 
@@ -346,7 +346,7 @@ ms.locfileid: "78380025"
 
 В этой части руководства используются следующие командлеты PowerShell:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов. | 
 
@@ -363,7 +363,7 @@ ms.locfileid: "78380025"
 
 В этой части руководства используются следующие командлеты AZ CLI:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
@@ -382,7 +382,7 @@ ms.locfileid: "78380025"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
@@ -401,7 +401,7 @@ ms.locfileid: "78380025"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) | Позволяет указать подписку в качестве текущей активной подписки. | 
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
@@ -420,7 +420,7 @@ ms.locfileid: "78380025"
 
 Другие скрипты базы данных SQL Azure можно найти здесь: [Azure PowerShell](sql-database-powershell-samples.md) и [Azure CLI](sql-database-cli-samples.md). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы добавили одну базу данных SQL Azure в группу отработки отказа и проверили отработку отказа. Вы ознакомились с выполнением следующих задач: 
 

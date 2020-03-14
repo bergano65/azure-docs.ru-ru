@@ -8,11 +8,11 @@ ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: b2469a2b5819b3011f919a2b483933bb030eed70
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78925563"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268201"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -34,7 +34,7 @@ ms.locfileid: "78925563"
 uname -r
 ```
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 <a id="smb-client-reqs"></a>
 
 * <a id="install-cifs-utils"></a>**Убедитесь, что пакет CIFS-utils установлен.**  
@@ -199,24 +199,24 @@ uname -r
 
 Начиная с Linux ядра 4,18, модуль ядра SMB, именуемый `cifs` по старым причинам, предоставляет новый параметр модуля (часто называемый *ParM* различными внешними документацией), именуемый `disable_legacy_dialects`. Несмотря на то, что впервые появились в ядре Linux 4,18, некоторые поставщики отменяли это изменение на более старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля в распространенных дистрибутивах Linux.
 
-| Распределение | Можно отключить SMB 1 |
+| Distribution | Можно отключить SMB 1 |
 |--------------|-------------------|
-| Ubuntu 14.04 — 16.04 | Нет |
+| Ubuntu 14.04 — 16.04 | нет |
 | Ubuntu 18.04 | Да |
 | Ubuntu 19.04 + | Да |
-| Debian 8-9 | Нет |
+| Debian 8-9 | нет |
 | Debian 10 + | Да |
 | Fedora 29 + | Да |
-| CentOS 7 | Нет | 
+| CentOS 7 | нет | 
 | CentOS 8 + | Да |
-| Red Hat Enterprise Linux 6. x-7. x | Нет |
+| Red Hat Enterprise Linux 6. x-7. x | нет |
 | Red Hat Enterprise Linux 8 + | Да |
-| openSUSE LEAP 15,0 | Нет |
+| openSUSE LEAP 15,0 | нет |
 | openSUSE LEAP 15.1 + | Да |
 | openSUSE Тумблевид | Да |
-| SUSE Linux Enterprise 11. x-12. x | Нет |
-| SUSE Linux Enterprise 15 | Нет |
-| SUSE Linux Enterprise 15,1 | Нет |
+| SUSE Linux Enterprise 11. x-12. x | нет |
+| SUSE Linux Enterprise 15 | нет |
+| SUSE Linux Enterprise 15,1 | нет |
 
 Проверить, поддерживает ли дистрибутив Linux параметр модуля `disable_legacy_dialects`, можно с помощью следующей команды.
 
@@ -278,7 +278,7 @@ cat /sys/module/cifs/parameters/disable_legacy_dialects
 
 Файлы Azure для группы пользователей Linux включают форум, на котором можно поделиться своим мнением и опытом адаптации хранилища файлов в Linux. Чтобы вступить в группу пользователей, отправьте электронное письмо в группу [Пользователи файлов Azure в Linux](mailto:azurefiles@microsoft.com).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)

@@ -9,11 +9,11 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 12/30/2019
 ms.openlocfilehash: cafec321e7c40e27d8de731feda1103451271507
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382282"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79265211"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -97,7 +97,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
 Все вызовы API должны пройти аутентификацию с помощью [OAuth](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). В API-интерфейсах выполняются [рекомендации по REST API от корпорации Майкрософт](https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md). Большинство API-интерфейсов, возвращающих коллекции, поддерживают параметры системного запроса [OData](https://www.odata.org/getting-started/basic-tutorial/#queryData).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о подключении к устройству и отправке сообщений телеметрии в Digital Twins см. в статье [Возможность подключения устройств и входящие данные телеметрии](concepts-device-ingress.md).
 

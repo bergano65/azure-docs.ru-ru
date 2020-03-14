@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: 6812393b01172cda5d2fa4dcbe9de2bf4264a99f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 9cec91ccc80b9072b1a3da756f26f47eb88b951c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980774"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79268617"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "75980774"
 
 ### <a name="optimize-performance-after-the-migration-completes"></a>Оптимизация производительности после завершения миграции
 
-[Обновите статистику](https://msdn.microsoft.com/library/ms187348.aspx) с использованием полной проверки после завершения миграции.
+[Обновите статистику](https://docs.microsoft.com/sql/t-sql/statements/update-statistics-transact-sql) с использованием полной проверки после завершения миграции.
 
 ## <a name="method-2-use-transactional-replication"></a>Метод 2. Использование репликации транзакций
 

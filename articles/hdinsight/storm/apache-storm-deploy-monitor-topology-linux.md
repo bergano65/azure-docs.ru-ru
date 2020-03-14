@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
 ms.openlocfilehash: e890289230b3215bd102d8c5a78dca4f1b7b90f8
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75494972"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79271906"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight
 
 С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий [Apache Storm](https://storm.apache.org/), работающих в Storm в кластерах HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
@@ -40,7 +40,7 @@ ms.locfileid: "75494972"
 
 1. Запустите среду Visual Studio.
 
-1. В окне **Пуск** выберите **создать новый проект**.
+1. В окне **Начало работы** выберите **Создать проект**.
 
 1. В окне **Создание нового проекта** выберите поле поиска и введите `Storm`. Затем выберите **выборка из списка** результатов и нажмите кнопку **Далее**.
 
@@ -251,11 +251,11 @@ storm rebalance TOPOLOGYNAME
 
 | Метод обнаружения FQDN | Description |
 | --- | --- |
-| Сеанс SSH | Используйте команду, `headnode -f` из сеанса SSH в кластер. |
+| Сеанс SSH | Из сеанса SSH в кластер примените команду `headnode -f`. |
 | Веб-Ambari | На веб-странице кластера Ambari (`https://CLUSTERNAME.azurehdinsight.net`) выберите **службы** в верхней части страницы, а затем выберите **множество.** На вкладке **Summary** (Сводка) выберите **Storm UI Server** (Сервер пользовательского интерфейса Storm). Полное доменное имя узла, на котором размещены пользовательский интерфейс Storm и REST API, отображено в верхней части страницы. |
-| Ambari REST API | Используйте команду `curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/STORM/components/STORM_UI_SERVER"`, чтобы получить сведения об узле, на котором выполняются пользовательский интерфейс и REST API. Замените два экземпляра *имя_кластера* именем кластера. При появлении запроса введите пароль для учетной записи пользователя (администратора). В ответе запись "host_name" выходных данных JSON содержит полное доменное имя узла. |
+| Ambari REST API | Используйте команду `curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/STORM/components/STORM_UI_SERVER"`, чтобы получить сведения об узле с выполняемыми пользовательскими интерфейсами Storm и REST API. Замените два экземпляра *имя_кластера* именем кластера. При появлении запроса введите пароль для учетной записи пользователя (администратора). В ответе запись "host_name" выходных данных JSON содержит полное доменное имя узла. |
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Запросы к REST API должны использовать *обычную проверку подлинности*, поэтому необходимо использовать имя администратора и пароль для кластера HDInsight.
 

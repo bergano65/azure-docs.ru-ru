@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: 2f92c2b800c6d30cc5f365e6d24925a70d3db55a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980322"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79257931"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Настройка аварийного восстановления в Azure для локальных физических серверов
 
@@ -27,7 +27,7 @@ ms.locfileid: "75980322"
 > * Создание политики репликации
 > * Включение репликации для сервера.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -71,7 +71,7 @@ ms.locfileid: "75980322"
 - Сеть должна располагаться в том же регионе, что и хранилище служб восстановления.
 
 
-## <a name="set-up-an-azure-storage-account"></a>Настройка учетной записи хранения Azure
+## <a name="set-up-an-azure-storage-account"></a>Настроить учетную запись хранения Azure
 
 Настройте [учетную запись хранения Azure](../storage/common/storage-account-create.md).
 
@@ -146,7 +146,7 @@ ms.locfileid: "75980322"
 2. Укажите целевую модель развертывания.
 3. Site Recovery проверяет наличие одной или нескольких совместимых учетных записей хранения и сетей Azure.
 
-   ![Выбор пути миграции](./media/physical-azure-disaster-recovery/network-storage.png)
+   ![Назначение](./media/physical-azure-disaster-recovery/network-storage.png)
 
 
 ## <a name="create-a-replication-policy"></a>Создание политики репликации

@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca6ef244a887e75a0d8b9bb663d5325a33cd1e89
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78378214"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263911"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Включение входа с использованием ключа безопасности без пароля для устройств Windows 10 с Azure Active Directory (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "78378214"
 
 ## <a name="requirements"></a>Требования
 
-| Тип устройства | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
+| тип устройства; | присоединение к Azure AD; | присоединение к Azure AD (гибридные устройства). |
 | --- | --- | --- |
 | [Многофакторная идентификация Azure](howto-mfa-getstarted.md) | X | X |
 | [Общая Предварительная версия регистрации сведений о безопасности](concept-registration-mfa-sspr-combined.md) | X | X |
@@ -160,7 +160,7 @@ ms.locfileid: "78378214"
    - Подкатегория: FIDO
 1. Для записи журналов используйте параметр, чтобы **повторно создать мою проблему**
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Разрешение доступа к локальным ресурсам для Azure AD и гибридных устройств, присоединенных к Azure AD](howto-authentication-passwordless-security-key-on-premises.md)
 

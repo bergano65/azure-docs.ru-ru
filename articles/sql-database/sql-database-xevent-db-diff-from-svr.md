@@ -3,7 +3,7 @@ title: Расширенные события
 description: В статье описываются расширенные события (XEvents) в Базе данных SQL Azure и отличия соответствующих сеансов событий от сеансов событий в Microsoft SQL Server.
 services: sql-database
 ms.service: sql-database
-ms.subservice: monitor
+ms.subservice: performance
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
 ms.date: 12/19/2018
-ms.openlocfilehash: cab5b5baf318eb9eadc398ce525e0de716d0df2d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: cb4eb4474ad074a3e69dc146c97b48d54343595b
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822301"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79213949"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -31,10 +31,10 @@ ms.locfileid: "73822301"
 
 Дополнительные сведения о расширенных событиях для Базы данных SQL Azure и Microsoft SQL Server доступны в следующих разделах.
 
-- [Quick Start: Extended events in SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
+- [Краткое руководство. Расширенные события в SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 
@@ -81,25 +81,25 @@ ms.locfileid: "73822301"
 
 Функцию расширенных событий поддерживают несколько [представлений каталога](https://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
 
-| Имя<br/>представления каталога | Description (Описание) |
+| Имя<br/>представления каталога | Description |
 |:--- |:--- |
-| **sys.database_event_session_actions** |Возвращает строку для каждого действия с каждым событием в сеансе событий. |
+| **sys.database_event_session_actions** |Возвращает строку для каждого действия над каждым событием из сеанса событий. |
 | **sys.database_event_session_events** |Возвращает строку для каждого события в сеансе событий. |
 | **sys.database_event_session_fields** |Возвращает строку для каждого настраиваемого столбца, который можно прямо задавать для событий и целевых объектов. |
-| **sys.database_event_session_targets** |Возвращает строку для каждого целевого объекта события в сеансе событий. |
+| **sys.database_event_session_targets** |Возвращает строку для каждой цели события для сеанса событий. |
 | **sys.database_event_sessions** |Возвращает строку для каждого сеанса событий в Базе данных SQL. |
 
 В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_* . Шаблон имени выглядит как **sys.server_event_%** .
 
-## <a name="new-dynamic-management-views-dmvshttpsmsdnmicrosoftcomlibraryms188754aspx"></a>Новые динамические административные представления [(DMV)](https://msdn.microsoft.com/library/ms188754.aspx)
+## <a name="new-dynamic-management-views-dmvs"></a>Новые динамические административные представления [(DMV)](https://msdn.microsoft.com/library/ms188754.aspx)
 
 База данных SQL Azure включает [динамические административные представления (DMV)](https://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
 
-| Имя DMV | Description (Описание) |
+| Имя DMV | Description |
 |:--- |:--- |
-| **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях в сеансе событий. |
-| **sys.dm_xe_database_session_events** |Возвращает сведения о событиях в сеансе. |
-| **sys.dm_xe_database_session_object_columns** |Отображает значения конфигурации для объектов, привязанных к сеансу. |
+| **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях сеанса событий. |
+| **sys.dm_xe_database_session_events** |Возвращает сведения о событиях сеанса. |
+| **sys.dm_xe_database_session_object_columns** |Отображает значения конфигурации объектов, привязанных к сеансу. |
 | **sys.dm_xe_database_session_targets** |Возвращает сведения о целевых объектах сеанса. |
 | **sys.dm_xe_database_sessions** |Возвращает строку для каждого сеанса событий, относящегося к текущей базе данных. |
 
@@ -169,11 +169,11 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 
 Маркер SAS, сформированный для вашего контейнера хранилища Azure, должен указывать **rwl** для разрешений. Значение **rwl** обеспечивает следующие разрешения:
 
-- чтение
+- Чтение
 - запись
-- список
+- Список
 
-## <a name="performance-considerations"></a>Рекомендации по производительности
+## <a name="performance-considerations"></a>Вопросы производительности
 
 Существуют сценарии, в которых интенсивное использование расширенных событий может задействовать больше активной памяти, чем допустимо для сохранения работоспособности всей системы. В связи с этим система Базы данных SQL Azure динамически устанавливает и корректирует ограничения на объем активной памяти, который может использоваться сеансом событий. Динамические расчеты выполняются с учетом множества факторов.
 

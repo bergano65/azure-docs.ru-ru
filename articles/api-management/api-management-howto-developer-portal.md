@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 311ce34a4b5cfbb9a54a285094dac34c7dd5a225
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: b6b11242831e68787fe225d4d0b66638f1388de6
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79126531"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79297991"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -156,6 +156,12 @@ API описан в [разделе вики репозитория GitHub][2]. 
     </expose-headers>
 </cors>
 ```
+
+Примените CORS к глобальной области, чтобы убедиться, что она включена для всех API-интерфейсов.
+
+1. Перейдите ко **всем API** в разделе **API** службы управления API в портал Azure.
+2. Щелкните значок **</>** в разделе **обработка входящего трафика** .
+3. Вставьте политику в раздел **<inbound>** XML-файла. Убедитесь, что значение **<origin>** соответствует домену портала разработчика.
 
 > [!NOTE]
 > 

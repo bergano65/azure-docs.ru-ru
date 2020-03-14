@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/25/2020
 ms.openlocfilehash: 30664d533215cb49fa6f436ec4cf88fa319c3300
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78387214"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79272270"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
 
@@ -69,7 +69,7 @@ ms.locfileid: "78387214"
 
     Чтобы найти существующую конфигурацию безопасности, используйте следующие команды Azure PowerShell или Azure CLI:
 
-    * Сетевые группы безопасности
+    * Группы безопасности сети
 
         Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
 
@@ -262,7 +262,7 @@ Azure предоставляет разрешение имен для служб
 > [!IMPORTANT]
 > Начиная с 30 июня 2020, Azure HDInsight будет применять TLS 1,2 или более поздние версии для всех подключений HTTPS. Рекомендуем убедиться, что все клиенты готовы к работе с TLS 1.2 или более поздней версии. Дополнительные сведения см. в статье [принудительное применение Azure HDINSIGHT TLS 1,2](https://azure.microsoft.com/updates/azure-hdinsight-tls-12-enforcement/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Примеры кода и примеры создания виртуальных сетей Azure см. в статье [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md).
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение HDInsight к локальной сети](./connect-on-premises-network.md).

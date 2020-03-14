@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: diberry
 ms.openlocfilehash: 9d213c8fa03ad2ca5e5fd7e620e52aa502749be2
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969342"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220966"
 ---
 # <a name="authoring-and-runtime-keys"></a>Ключи разработки и среды выполнения
 
@@ -44,7 +44,7 @@ Language Understanding (LUIS) содержит две службы и набор
 
 LUIS позволяет выполнять три типа ресурсов Azure: 
  
-|Ключ|Цель|`kind` службы для переприятия|`type` службы для переприятия|
+|Клавиши|Назначение|`kind` службы для переприятия|`type` службы для переприятия|
 |--|--|--|--|
 |[Ключ разработки](#programmatic-key)|Доступ к данным приложения и управление ими с помощью разработки, обучения, публикации и тестирования. Создайте ключ создания LUIS, если планируется программное создание приложений LUIS.<br><br>Ключ `LUIS.Authoring` позволяет выполнять следующие действия:<br>* Программное управление Language Understanding приложениями и моделями, включая обучение и публикацию<br> * Управление разрешениями на создание ресурсов путем назначения пользователям [роли участника](#contributions-from-other-authors).|`LUIS.Authoring`|`Cognitive Services`|
 |[Ключ прогнозирования](#prediction-endpoint-runtime-key)| Запросы конечной точки прогнозирования запросов. Создайте ключ прогнозирования LUIS, прежде чем клиентское приложение запросит прогнозы за пределами 1 000 запросов, предоставленных начальным ресурсом. |`LUIS`|`Cognitive Services`|

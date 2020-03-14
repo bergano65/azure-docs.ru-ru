@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 05/29/2018
 ms.author: kumud
 ms.openlocfilehash: f84e8a24e8f28cdccc987afbd1449cb17422ce0c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78388875"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79279758"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
 
@@ -175,8 +175,8 @@ az vm show \
 | Назначение             | IP-адрес виртуальной машины, диапазон IP-адресов или все адреса в подсети. |
 | Диапазоны портов назначения | 80                                                                                 |
 | Протокол                | TCP                                                                                |
-| Действие                  | Разрешение                                                                              |
-| Priority                | 100                                                                                |
+| Действие                  | Allow                                                                              |
+| Приоритет                | 100                                                                                |
 | Имя                    | Allow-HTTP-All                                                                     |
 
 Когда вы создадите правило, входящий трафик из Интернета через порт 80 будет разрешен, так как приоритет этого правила выше, чем приоритет правила безопасности по умолчанию с именем *DenyAllInBound*, запрещающего передачу трафика. Узнайте, как [создать правило безопасности](manage-network-security-group.md#create-a-security-rule). Если с сетевым интерфейсом и подсетью связаны разные группы NSG, создайте одинаковое правило в обеих NSG.
@@ -201,7 +201,7 @@ az vm show \
   * Брандмауэр, запущенный в операционной системе виртуальной машины.
   * Маршруты, настроенные для виртуальных устройств или локального трафика. Интернет-трафик перенаправляется в вашу локальную сеть путем [принудительного туннелирования](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md?toc=%2fazure%2fvirtual-network%2ftoc.json). При принудительном туннелировании интернет-трафика в виртуальный модуль или локальное расположение иногда не удается подключиться к виртуальной машине из Интернета. Чтобы узнать, как диагностировать проблемы с маршрутизацией, которые могут уменьшить объем исходящего трафика виртуальной машины, см. [эту статью](diagnose-network-routing-problem.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения обо всех задачах, свойствах и параметрах для [группы безопасности сети](manage-network-security-group.md#work-with-network-security-groups) и [правил безопасности](manage-network-security-group.md#work-with-security-rules).
 - См. сведения о [правилах безопасности по умолчанию](security-overview.md#default-security-rules), [тегах служб](security-overview.md#service-tags) и о том, [как в Azure обрабатываются правила безопасности для входящего и исходящего трафика](security-overview.md#network-security-groups) виртуальной машины.

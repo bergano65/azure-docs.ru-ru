@@ -4,11 +4,11 @@ description: Узнайте, как включить мониторинг для
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.openlocfilehash: c731826f2780c45358730f9ce20d6a6151f6f259
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75405447"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275442"
 ---
 # <a name="enable-monitoring-of-a-new-azure-kubernetes-service-aks-cluster"></a>Включение мониторинга нового кластера Azure Kubernetes Service (AKS)
 
@@ -16,7 +16,7 @@ ms.locfileid: "75405447"
 
 Мониторинг кластера AKS можно включить с помощью одного из поддерживаемых методов:
 
-* Интерфейс командной строки Azure
+* Azure CLI
 * Terraform
 
 ## <a name="enable-using-azure-cli"></a>Включение мониторинга с помощью Azure CLI

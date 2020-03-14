@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 11/08/2019
 ms.author: diberry
 ms.openlocfilehash: d3f8696388a33a8ea112aae438c6bbe9af520c61
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904265"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79220834"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: Вы можете создать приложение LUIS на портале LUIS или с помощью [API-интерфейсов](developer-reference-resource.md)разработки Luis.
@@ -77,6 +77,6 @@ ms.locfileid: "73904265"
 * Экспорт журналов конечных точек в качестве `.csv`для автономного анализа
 * Удаление приложения
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если проект приложения включает обнаружение намерения, [Создайте новые](luis-how-to-add-intents.md)цели и добавьте пример фразы продолжительностью. Если проект приложения предназначен только для извлечения данных, добавьте пример фразы продолжительностью к намерению None, затем [Создайте сущности](luis-how-to-add-example-utterances.md)и пометка примера фразы продолжительностью с этими сущностями. 

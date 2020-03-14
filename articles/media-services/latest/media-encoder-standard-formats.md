@@ -15,11 +15,11 @@ ms.date: 02/10/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: f1d4d4f4006702ebe0d057e56cf24a022e73b83e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: HT
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78363965"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251366"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
 
@@ -62,7 +62,7 @@ ms.locfileid: "78363965"
 | MPEG-2 (до 422 Profile и High Level, включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs® и D10) |До 422 Profile |
 | MPEG-1 |Да |
 | VC-1/WMV9 |Да |
-| Canopus HQ/HQX |Нет |
+| Canopus HQ/HQX |нет |
 | MPEG-4, часть 2 |Да |
 | [Theora](https://en.wikipedia.org/wiki/Theora) |Да |
 | YUV420 без сжатия или мезонинный файл |Да |
@@ -86,10 +86,10 @@ ms.locfileid: "78363965"
 | [Opus](https://go.microsoft.com/fwlink/?LinkId=822667) |Да |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a> |Да |
 | AMR (adaptive multi-rate) |Да |
-| AES (SMPTE 331M и 302M, AES3-2003) |Нет |
-| Dolby® E |Нет |
-| Dolby® Digital (AC3) |Нет |
-| Dolby® Digital Plus (E-AC3) |Нет |
+| AES (SMPTE 331M и 302M, AES3-2003) |нет |
+| Dolby® E |нет |
+| Dolby® Digital (AC3) |нет |
+| Dolby® Digital Plus (E-AC3) |нет |
 
 ## <a name="output-formats-and-codecs"></a>Выходные форматы и кодеки
 В следующей таблице перечислены кодеки и форматы файлов, поддерживаемые для экспорта.
@@ -99,6 +99,6 @@ ms.locfileid: "78363965"
 | MP4 <br/><br/>(включая контейнеры MP4 с несколькими скоростями) |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md)

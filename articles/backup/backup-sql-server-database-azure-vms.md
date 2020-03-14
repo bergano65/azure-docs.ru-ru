@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как выполн
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 7a6bae3a850b5e67af8da80a06b862e7e2e7561d
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 5b10907738feeecbec06669175e82578f2915f92
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120830"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79273336"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -97,6 +97,10 @@ SQL Server базы данных — это критически важные р
 Использование тегов службы NSG | Упрощенное управление благодаря автоматическому объединению изменений диапазона <br/><br/> Нет дополнительных затрат <br/><br/> | Может использоваться только с NSG <br/><br/> Предоставляет доступ ко всей службе
 Использование тегов полного доменного имени службы "Брандмауэр Azure" | Проще управлять, так как требуемые управляются FQDN автоматически | Можно использовать только с брандмауэром Azure
 Использование прокси-сервера HTTP | Единая точка доступа к виртуальным машинам через Интернет <br/> | Дополнительные затраты для запуска виртуальной машины с программным обеспечением прокси-сервера <br/> Нет опубликованных полных доменных имен, разрешение правил будет изменено на IP-адрес Azure
+
+#### <a name="private-endpoints"></a>Частные конечные точки
+
+[!INCLUDE [Private Endpoints](../../includes/backup-private-endpoints.md)]
 
 ### <a name="database-naming-guidelines-for-azure-backup"></a>Рекомендации по именованию баз данных для Azure Backup
 

@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: 35046d33a85eaed913454f188f2a4526715526a9
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 5b8dab14a9416795eccef1f71988a048c8bedb48
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168780"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79218166"
 ---
 # <a name="define-custom-r-modules-for-azure-machine-learning-studio-classic"></a>Определение пользовательских модулей R для Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 В этом разделе описывается создание и развертывание пользовательского R Studio (классическая модель). Здесь поясняется, что такое пользовательский R-модуль, и какие файлы используются для его создания. В этом разделе также описан способ создания файлов, определяющих модуль, и регистрации модуля для его развертывания в рабочей области Машинного обучения. Затем более подробно описываются элементы и атрибуты, используемые в определении пользовательского модуля. Кроме этого, здесь рассматриваются способы использования дополнительных функций, файлов и нескольких наборов выходных данных. 
 
@@ -200,7 +202,7 @@ ms.locfileid: "77168780"
     </Ports> 
 
 
-Затем возвратите список объектов в виде списка с правильным порядком в файле CustomAddRows.R:
+И возвращают список объектов в списке в правильном порядке в "CustomAddRows. R":
 
     CustomAddRows <- function(dataset1, dataset2, swap=FALSE) { 
         if (swap) { dataset <- rbind(dataset2, dataset1)) } 
@@ -337,7 +339,7 @@ ms.locfileid: "77168780"
 > 
 > 
 
-Предположим, например, что из набора данных необходимо удалить все повторяющиеся строки и строки, в которых частично отсутствуют данные, перед выводом в функцию CustomAddRows, и вы уже написали R-функцию, которая выполняет это действие в файле RemoveDupNARows.R:
+Например, предположим, что нужно удалить из набора данных все строки с помощью NAs, а также удалить все дублирующиеся строки, прежде чем поместить их в CustomAddRows, и вы уже написали функцию R, которая делает это в файле RemoveDupNARows. R:
 
     RemoveDupNARows <- function(dataFrame) {
         #Remove Duplicate Rows:
@@ -359,7 +361,7 @@ ms.locfileid: "77168780"
         return (dataset)
     }
 
-Затем передать ZIP-файл, содержащий CustomAddRows.R, CustomAddRows.xml и RemoveDupNARows.R, в качестве пользовательского R-модуля.
+Затем отправьте ZIP-файл, содержащий "CustomAddRows. R", "CustomAddRows. XML" и "RemoveDupNARows. R", в качестве пользовательского модуля R.
 
 ## <a name="execution-environment"></a>Среда выполнения
 В среде выполнения R-скрипта используется та же версия R, что и в модуле **Выполнение R-скрипта** , и могут использоваться те же пакеты по умолчанию. В пользовательский модуль также можно добавить дополнительные пакеты R, включая их в ZIP-пакет. Просто загрузите их в R-скрипт так же, как в среду R. 

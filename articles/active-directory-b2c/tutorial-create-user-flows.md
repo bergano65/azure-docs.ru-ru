@@ -11,11 +11,11 @@ ms.date: 06/07/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 51adbb74635f66ca86347b536dc2607566dcb725
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78389926"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79264249"
 ---
 # <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Учебник. Создание потоков пользователей в Azure Active Directory B2C
 

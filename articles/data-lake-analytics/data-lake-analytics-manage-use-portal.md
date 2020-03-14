@@ -10,11 +10,11 @@ ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 8a6b7cb3fd45e17b84519efcaa826b569083e156
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78361313"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79265705"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "78361313"
 
 ## <a name="manage-data-lake-analytics-accounts"></a>Управление учетными записями Data Lake Analytics
 
-### <a name="create-an-account"></a>Создать учетную запись
+### <a name="create-an-account"></a>Создание учетной записи
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Последовательно выберите **Создать ресурс** > **Data + Analytics** (Данные и аналитика) > **Data Lake Analytics**.
@@ -161,7 +161,7 @@ Data Lake Analytics позволяет дополнительно блокиро
 2. Выберите **Подробные сведения о заданиях**. По умолчанию на вкладке "Все задания" можно просмотреть список выполняющихся и завершенных заданий, а также заданий, поставленных в очередь.
 3. Перейдите на вкладку **повторяющиеся задания** . Будет показан список повторяющихся заданий вместе со сводной статистикой для каждого повторяющегося задания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Управление Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)

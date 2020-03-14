@@ -17,11 +17,11 @@ ms.reviewer: japere
 ms.custom: H1Hack27Feb2017; it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7be9a17bed2a39d16f813332c2d6effc03393264
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78375722"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79244229"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Устранение неполадок и сообщения об ошибках прокси приложения
 
@@ -89,7 +89,7 @@ ms.locfileid: "78375722"
 
 Если вы столкнулись с ошибкой и проблемой в работе прокси приложения Azure AD, не указанной в этом руководстве по устранению неполадок, нам бы хотелось услышать об этом. Отправьте нашей [команде по отзывам и предложениям](mailto:aadapfeedback@microsoft.com) электронное сообщение с описанием обнаруженной ошибки.
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также раздел
 * [Включение прокси приложения Azure AD](application-proxy-add-on-premises-application.md)
 * [Опубликуйте приложения с помощью прокси-сервера приложений.](application-proxy-add-on-premises-application.md)
 * [Доступ с единым входом](application-proxy-configure-single-sign-on-with-kcd.md)

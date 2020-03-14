@@ -4,11 +4,11 @@ description: Поиск и фильтрация необработанных д�
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.openlocfilehash: 8039a55784f63030f330d6c1e2061e99b8b63bbf
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78368317"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79275988"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 
@@ -95,14 +95,14 @@ ms.locfileid: "78368317"
 | String | *Не* найдено | Найдено |
 | --- | --- | --- |
 | HomeController.About |`home`<br/>`controller`<br/>`out` | `homecontroller`<br/>`about`<br/>`"homecontroller.about"`|
-|Соединенные Штаты|`Uni`<br/>`ted`|`united`<br/>`states`<br/>`united AND states`<br/>`"united states"`
+|США|`Uni`<br/>`ted`|`united`<br/>`states`<br/>`united AND states`<br/>`"united states"`
 
 Вот доступные поисковые выражения:
 
 | Пример запроса | Действие |
 | --- | --- |
 | `apple` |Поиск всех событий в диапазоне времени, поля которых включают слово "apple". |
-| `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Краткая форма. |
+| `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Короткая форма. |
 | `apple OR banana` |Поиск событий, содержащих любое из этих слов. Используйте «OR» заглавными буквами, а не «or». |
 | `apple NOT banana` |Поиск событий, содержащих только одно из этих слов, но не содержащих другое. |
 

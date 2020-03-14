@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: ferno
 ms.reviewer: mathoma
 ms.date: 02/07/2019
-ms.openlocfilehash: 7356f627c8a85cb89f3900e1af84d5e0a7d4be17
-ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
+ms.openlocfilehash: 9af7b471210ca3cc69428e68aef4aafaee159344
+ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79096207"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79299079"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure
 
@@ -42,7 +42,6 @@ ms.locfileid: "79096207"
 
 Настройка управляемого экземпляра для работы в качестве издателя и (или) распространителя требует:
 
-- Чтобы сейчас управляемый экземпляр не был связан с георепликацией.
 - Управляемый издателем экземпляр находится в той же виртуальной сети, что и распространитель и подписчик, либо между виртуальными сетями всех трех сущностей установлен [пиринг](../virtual-network/tutorial-connect-virtual-networks-powershell.md) виртуальных сетей. 
 - При подключении используется аутентификация SQL между участниками репликации.
 - Общий ресурс учетной записи хранения Azure для рабочей папки репликации.

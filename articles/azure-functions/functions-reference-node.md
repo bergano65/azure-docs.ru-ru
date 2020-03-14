@@ -4,12 +4,12 @@ description: Узнайте, как разрабатывать функции с
 ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: reference
 ms.date: 12/17/2019
-ms.openlocfilehash: b0cd9541deac106525cfe80244d1867f513825f0
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 345df8e1ea88caa6f8dbe941245c1f989c3e81c6
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77584495"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276833"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -97,7 +97,7 @@ module.exports = async function (context, req) {
 }
 ```
 
-## <a name="bindings"></a>Bindings 
+## <a name="bindings"></a>Привязки 
 В JavaScript [привязки](functions-triggers-bindings.md) настраиваются и определяются в файле function.json функции. Функции взаимодействуют с привязками несколькими способами.
 
 ### <a name="inputs"></a>Входные данные
@@ -128,7 +128,7 @@ module.exports = async function (context, req) {
    };
    ```
 
-### <a name="outputs"></a>Outputs
+### <a name="outputs"></a>Выходные данные
 Выходные данные (привязки `direction === "out"`) могут быть записаны в функцию несколькими способами. Во всех случаях свойство `name` привязки, определенное в файле *function.json*, соответствует имени элемента объекта, записанного в функции. 
 
 Вы можете назначить данные выходным привязкам одним из следующих способов (не объединяя эти методы):
@@ -265,7 +265,7 @@ context.log(message)
 Этот метод позволяет делать записи в потоковые журналы функций на уровне трассировки по умолчанию. В `context.log` доступны дополнительные методы ведения журнала, позволяющие выполнять запись в журналы функций на других уровнях трассировки:
 
 
-| Метод                 | Описание                                |
+| Метод                 | Description                                |
 | ---------------------- | ------------------------------------------ |
 | **error(_message_)**   | Записывает сообщение в журнал на уровне ошибок или более низком.   |
 | **warn(_message_)**    | Записывает сообщение в журнал на уровне предупреждений или более низком. |
@@ -342,7 +342,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (запроса) `context.req` есть следующие свойства:
 
-| Свойство      | Описание                                                    |
+| Свойство      | Description                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Объект, содержащий текст запроса.               |
 | _headers_     | Объект, содержащий заголовок запроса.                   |
@@ -357,12 +357,13 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (ответа) `context.res` есть следующие свойства:
 
-| Свойство  | Описание                                               |
+| Свойство  | Description                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Объект, содержащий текст ответа.         |
 | _headers_ | Объект, содержащий заголовок ответа.             |
 | _isRaw_   | Указывает, что форматирование пропускается для ответа.    |
 | _status_  | Код состояния HTTP ответа.                     |
+| _сеанс_ | Массив объектов cookie HTTP, заданных в ответе. Объект cookie HTTP содержит `name`, `value`и другие свойства файла cookie, такие как `maxAge` или `sameSite`. |
 
 ### <a name="accessing-the-request-and-response"></a>Доступ к запросу и ответу 
 
@@ -694,9 +695,9 @@ module.exports = async function (context) {
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих источниках.
+Для получения дополнительных сведений см. следующие ресурсы:
 
 + [Рекомендации по функциям Azure](functions-best-practices.md)
 + [Справочник разработчика по функциям Azure](functions-reference.md)

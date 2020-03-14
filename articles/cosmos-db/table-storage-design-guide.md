@@ -9,11 +9,11 @@ author: sakash279
 ms.author: akshanka
 ms.custom: seodec18
 ms.openlocfilehash: 166076d366cbbf7bef24648772beaba9b3a88253
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78395654"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79246478"
 ---
 # <a name="azure-table-storage-table-design-guide-scalable-and-performant-tables"></a>Руководство по проектированию таблиц хранилища таблиц Azure. масштабируемые и высокопроизводительные таблицы
 
@@ -51,7 +51,7 @@ ms.locfileid: "78395654"
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -71,7 +71,7 @@ ms.locfileid: "78395654"
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -100,7 +100,7 @@ ms.locfileid: "78395654"
 </td>
 </tr>
 <tr>
-<td>Продажи</td>
+<td>Sales</td>
 <td>00010</td>
 <td>2014-08-22T00:50:44Z</td>
 <td>
@@ -108,7 +108,7 @@ ms.locfileid: "78395654"
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -663,7 +663,7 @@ EGT нельзя использовать для поддержания согл
 ![Рисунок сущности отделов и сущностей сотрудников][16]
 
 #### <a name="solution"></a>Решение
-Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:  
+Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Пример:  
 
 ![Рисунок денормализованной и Объединенной сущности отдела][17]
 
@@ -1138,7 +1138,7 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1158,7 +1158,7 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1195,7 +1195,7 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1231,7 +1231,7 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1253,7 +1253,7 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1294,7 +1294,7 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Время существования</th>
+<th>Возраст</th>
 <th>Email</th>
 </tr>
 <tr>

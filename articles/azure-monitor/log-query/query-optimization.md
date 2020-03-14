@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/28/2019
-ms.openlocfilehash: e5c3da94cf2440b30dc59fe20bc51a34095f7d5f
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.openlocfilehash: 7316415a0f0c423a8a37477020a4ffd0ec044d73
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78269066"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79369477"
 ---
 # <a name="optimize-log-queries-in-azure-monitor"></a>Оптимизация запросов журналов в Azure Monitor
 Azure Monitor журналы используют [Azure обозреватель данных (ADX)](/azure/data-explorer/) для хранения данных журнала и выполнения запросов для анализа этих данных. Он создает, управляет и обслуживает кластеры ADX, а также оптимизирует их для рабочей нагрузки анализа журналов. При выполнении запроса он оптимизирован и направляется в соответствующий кластер ADX, в котором хранятся данные рабочей области. В обоих журналах Azure Monitor и Azure обозреватель данных используется множество механизмов автоматического оптимизации запросов. Хотя автоматическая оптимизация обеспечивает значительное повышение производительности, в некоторых случаях можно значительно повысить производительность запросов. В этой статье описываются вопросы производительности и несколько способов их устранения.
@@ -83,6 +83,7 @@ SecurityEvent
 | extend FilePath = tostring(Details.UserData.RuleAndFileData.FilePath)
 | extend FileHash = tostring(Details.UserData.RuleAndFileData.FileHash)
 | summarize count() by FileHash, FilePath
+| where FileHash != "" // No need to filter out %SYSTEM32 here as it was removed before
 ```
 
 Запросы, содержащие предложения [WHERE](/azure/kusto/query/whereoperator) для вычисляемого столбца, а не для столбцов, которые физически находятся в наборе данных, теряют эффективность. Фильтрация по вычисляемым столбцам предотвращает некоторые системные оптимизации при обработке больших наборов данных.

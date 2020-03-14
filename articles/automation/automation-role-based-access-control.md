@@ -7,11 +7,11 @@ ms.subservice: shared-capabilities
 ms.date: 05/17/2018
 ms.topic: conceptual
 ms.openlocfilehash: 8caf502db91ab09eea48fc8a902dacf6bf40f24c
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372968"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79278640"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "78372968"
 | **Роль** | **Описание** |
 |:--- |:--- |
 | Владелец |Роль владельца обеспечивает доступ ко всем ресурсам и действиям в учетной записи службы автоматизации, включая предоставление доступа на управление учетной записью службы автоматизации другим пользователям, группам и приложениям. |
-| Contributor |Роль участника позволяет управлять всем, кроме изменения разрешений других пользователей на доступ к учетной записи службы автоматизации. |
+| Участник |Роль участника позволяет управлять всем, кроме изменения разрешений других пользователей на доступ к учетной записи службы автоматизации. |
 | Читатель |Роль читателя позволяет просматривать все ресурсы в учетной записи службы автоматизации, но не дает возможность вносить какие-либо изменения. |
 | Оператор службы автоматизации |Роль оператора службы автоматизации позволяет просматривать имя и свойства модуля runbook, а также создавать задания и управлять ими для всех модулей runbook в учетной записи службы автоматизации. Эта роль полезна, если вы хотите защитить ресурсы учетной записи службы автоматизации, такие как активы учетных данных и модули Runbook, из просмотра или изменения, но по-прежнему разрешить членам вашей организации выполнять эти модули Runbook. |
 |Оператор заданий службы автоматизации|Роль оператора заданий службы автоматизации позволяет создавать задания и управлять ими для всех модулей runbook в учетной записи службы автоматизации.|
@@ -43,11 +43,11 @@ ms.locfileid: "78372968"
 
 Владелец может управлять всем, включая доступ. В следующей таблице показаны разрешения, предоставленные для этой роли.
 
-|Действия|Описание|
+|Действия|Description|
 |---|---|
 |Microsoft.Automation/automationAccounts/|Создание ресурсов всех типов и управление ими.|
 
-### <a name="contributor"></a>Contributor
+### <a name="contributor"></a>Участник
 
 Участник может управлять всем, кроме доступа. В следующей таблице показаны разрешения, которые предоставлены и запрещены для этой роли.
 
@@ -214,16 +214,16 @@ ms.locfileid: "78372968"
 |---------|---------|---------|
 |Запись нового развертывания      | Microsoft.Resources/deployments/*          |Subscription          |
 |Запись новой группы ресурсов      | Microsoft.Resources/subscriptions/resourceGroups/write        | Subscription          |
-|Создание рабочего пространства по умолчанию      | Microsoft.OperationalInsights/workspaces/write         | Группа ресурсов         |
-|Создание учетной записи      |  Microsoft.Automation/automationAccounts/write        |Группа ресурсов         |
+|Создание рабочего пространства по умолчанию      | Microsoft.OperationalInsights/workspaces/write         | группа ресурсов.         |
+|Создание учетной записи      |  Microsoft.Automation/automationAccounts/write        |группа ресурсов.         |
 |Связывание рабочей области и учетной записи      |Microsoft.OperationalInsights/workspaces/write</br>Microsoft.Automation/automationAccounts/read|Рабочая область</br>Учетная запись службы автоматизации
-|Создание расширения MMA      | Microsoft.Compute/virtualMachines/write         | Virtual Machine         |
+|Создание расширения MMA      | Microsoft.Compute/virtualMachines/write         | Виртуальная машина         |
 |Создание сохраненного поискового запроса      | Microsoft.OperationalInsights/workspaces/write          | Рабочая область         |
 |Создание конфигурации области      | Microsoft.OperationalInsights/workspaces/write          | Рабочая область         |
 |Проверка состояния подключения — чтение рабочей области      | Microsoft.OperationalInsights/workspaces/read         | Рабочая область         |
 |Проверка состояния подключения — чтение свойств связанной рабочей области учетной записи     | Microsoft.Automation/automationAccounts/read      | Учетная запись службы автоматизации        |
 |Проверка состояния подключения — чтение решения      | Microsoft.OperationalInsights/workspaces/intelligencepacks/read          | Решение         |
-|Проверка состояния подключения — чтение виртуальной машины      | Microsoft.Compute/virtualMachines/read         | Virtual Machine         |
+|Проверка состояния подключения — чтение виртуальной машины      | Microsoft.Compute/virtualMachines/read         | Виртуальная машина         |
 |Проверка состояния подключения — чтение учетной записи      | Microsoft.Automation/automationAccounts/read  |  Учетная запись службы автоматизации   |
 | Проверка рабочей области адаптации для ВМ<sup>1</sup>       | Microsoft.OperationalInsights/workspaces/read         | Subscription         |
 | Регистрация поставщика Log Analytics |Microsoft. Insights, регистрация/действие | Subscription|
@@ -236,7 +236,7 @@ ms.locfileid: "78372968"
 |---------|---------|---------|
 |Создание развертывания     | Microsoft.Resources/deployments/*        | Subscription         |
 |Создание группы ресурсов     | Microsoft.Resources/subscriptions/resourceGroups/write         | Subscription        |
-|Колонка AutomationOnboarding — создание рабочей области     |Microsoft.OperationalInsights/workspaces/write           | Группа ресурсов        |
+|Колонка AutomationOnboarding — создание рабочей области     |Microsoft.OperationalInsights/workspaces/write           | группа ресурсов.        |
 |Колонка AutomationOnboarding — чтение связанной рабочей области     | Microsoft.Automation/automationAccounts/read        | Учетная запись службы автоматизации       |
 |Колонка AutomationOnboarding — чтение решения     | Microsoft.OperationalInsights/workspaces/intelligencepacks/read         | Решение        |
 |Колонка AutomationOnboarding — чтение рабочей области     | Microsoft.OperationalInsights/workspaces/intelligencepacks/read        | Рабочая область        |
@@ -246,7 +246,7 @@ ms.locfileid: "78372968"
 |Создание или изменение конфигурации области     | Microsoft.OperationalInsights/workspaces/write        | Рабочая область        |
 | Регистрация поставщика Log Analytics |Microsoft. Insights, регистрация/действие | Subscription|
 |**Шаг 2. Подключение нескольких виртуальных машин**     |         |         |
-|Колонка VMOnboarding — создание расширения MMA     | Microsoft.Compute/virtualMachines/write           | Virtual Machine        |
+|Колонка VMOnboarding — создание расширения MMA     | Microsoft.Compute/virtualMachines/write           | Виртуальная машина        |
 |Создание или изменение сохраненного поискового запроса     | Microsoft.OperationalInsights/workspaces/write           | Рабочая область        |
 |Создание или изменение конфигурации области  | Microsoft.OperationalInsights/workspaces/write   | Рабочая область|
 
@@ -261,7 +261,7 @@ ms.locfileid: "78372968"
 |Рабочая область Log Analytics     | участник Log Analytics.| Рабочая область Log Analytics        |
 |Рабочая область Log Analytics |читатель Log Analytics;| Subscription|
 |Решение     |участник Log Analytics.         | Решение|
-|Virtual Machine     | Участник виртуальной машины        | Virtual Machine        |
+|Виртуальная машина     | Участник виртуальной машины        | Виртуальная машина        |
 
 ## <a name="configure-rbac-for-your-automation-account"></a>Настройки RBAC для учетной записи службы автоматизации
 
@@ -283,7 +283,7 @@ ms.locfileid: "78372968"
 
 3. В поле **Выбор** введите имя пользователя, которому необходимо предоставить разрешения. Выберите пользователя из списка и нажмите кнопку **сохранить**.
 
-   ![Добавить пользователей](media/automation-role-based-access-control/automation-04-add-users.png)
+   ![Добавление пользователей](media/automation-role-based-access-control/automation-04-add-users.png)
 
    Теперь вы должны увидеть пользователя, добавленного на страницу Пользователи, с назначенной ролью.
 
@@ -423,7 +423,7 @@ New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runb
 
 ![Может только запускать](media/automation-role-based-access-control/automation-only-start.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о способах настройки RBAC для службы автоматизации Azure см. в статье [Управление RBAC с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 * Дополнительные сведения о способах запуска модуля Runbook см. в разделе [Запуск модуля Runbook](automation-starting-a-runbook.md).

@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2020
 ms.author: allensu
 ms.openlocfilehash: 39cd5b5d6e9d6007994ccc29732186ec6a8bdc2e
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78381037"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79284139"
 ---
 # <a name="configure-tcp-idle-timeout-settings-for-azure-load-balancer"></a>Настройка параметров времени ожидания простоя TCP для Azure Load Balancer
 
@@ -55,13 +55,13 @@ Set-AzPublicIpAddress -PublicIpAddress $publicIP
 
 ## <a name="set-the-tcp-timeout-on-a-load-balanced-rule-to-15-minutes"></a>Установите время ожидания TCP для правила балансировки нагрузки 15 минут.
 
-Чтобы установить время ожидания простоя для балансировщика нагрузки, в правиле балансировки нагрузки задается значение "Идлетимеаутинминутес". Например:
+Чтобы установить время ожидания простоя для балансировщика нагрузки, в правиле балансировки нагрузки задается значение "Идлетимеаутинминутес". Пример:
 
 ```azurepowershell-interactive
 $lb = Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroup "MyResourceGroup"
 $lb | Set-AzLoadBalancerRuleConfig -Name myLBrule -IdleTimeoutInMinutes 15
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 

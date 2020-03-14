@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/02/2019
 ms.author: alkohli
 ms.openlocfilehash: 6c9f3455a07001a8d1b9b8a1e84f2af3392b5690
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78384602"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79260219"
 ---
 # <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Управление устройством Шлюз Azure Data Box с помощью Windows PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "78384602"
 
 - Подключение к интерфейсу PowerShell
 - Создать пакет поддержки.
-- Отправка сертификата
+- Передача сертификата
 - Загрузка в среде без DHCP
 - Просмотр сведений об устройстве
 
@@ -37,7 +37,7 @@ ms.locfileid: "78384602"
 
 [!INCLUDE [Create a support package](../../includes/data-box-edge-gateway-create-support-package.md)]
 
-## <a name="upload-certificate"></a>Отправка сертификата
+## <a name="upload-certificate"></a>Передача сертификата
 
 [!INCLUDE [Upload certificate](../../includes/data-box-edge-gateway-upload-certificate.md)]
 
@@ -49,6 +49,6 @@ ms.locfileid: "78384602"
 
 [!INCLUDE [View device information](../../includes/data-box-edge-gateway-view-device-info.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Разверните [Шлюз Azure Data Box](data-box-gateway-deploy-prep.md) на портале Azure.

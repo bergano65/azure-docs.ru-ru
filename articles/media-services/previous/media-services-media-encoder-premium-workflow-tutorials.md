@@ -16,18 +16,18 @@ ms.date: 03/18/2019
 ms.author: christoc
 ms.reviewer: xpouyat; juliako
 ms.openlocfilehash: 1ab70d56bd3def58d0e814035070cf027a88cd3d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392935"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79251015"
 ---
 # <a name="advanced-media-encoder-premium-workflow-tutorials"></a>Руководства по расширенному рабочему процессу кодировщика мультимедиа
 ## <a name="overview"></a>Обзор
 Этот документ содержит пошаговые инструкции, описывающие способы настройки рабочих процессов с помощью **конструктора рабочих процессов**. Файлы фактического рабочего процесса можно найти [здесь](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/PremiumEncoderWorkflowSamples).  
 
 ## <a name="toc"></a>ОГЛАВЛЕНИЕ
-Рассматриваются следующие темы.
+Рассмотрены следующие вопросы:
 
 * [Кодирование MXF в файл MP4 с одной скоростью](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4)
   * [Запуск нового рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_start_new)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: iainfou
-ms.openlocfilehash: c4b2dea05b459d6e9ae4eb086fa127d88a84a768
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: e17112cbe2a494a585cd5a09c36cfe449d3d433c
+ms.sourcegitcommit: 512d4d56660f37d5d4c896b2e9666ddcdbaf0c35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78249211"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79365821"
 ---
 # <a name="common-errors-and-troubleshooting-steps-for-azure-active-directory-domain-services"></a>Распространенные ошибки и действия по устранению неполадок для Azure Active Directory доменных служб
 
@@ -30,7 +30,7 @@ ms.locfileid: "78249211"
 
 | **Пример сообщения об ошибке** | **Способы устранения:** |
 | --- |:--- |
-| *Имя addscontoso.com уже используется в этой сети. Укажите неиспользуемое имя.* |[Конфликт доменных имен в виртуальной сети](troubleshoot.md#domain-name-conflict) |
+| *Имя aaddscontoso.com уже используется в этой сети. Укажите неиспользуемое имя.* |[Конфликт доменных имен в виртуальной сети](troubleshoot.md#domain-name-conflict) |
 | *Не удалось включить доменные службы в этом клиенте Azure AD. Служба не имеет достаточных разрешений для приложения с именем "Синхронизация доменных служб Azure AD". Удалите приложение с именем "Синхронизация доменных служб Azure AD" и попытайтесь включить доменные службы для вашего клиента Azure AD.* |[Доменные службы не имеют достаточных разрешений для приложения синхронизации доменных служб Azure AD.](troubleshoot.md#inadequate-permissions) |
 | *Не удалось включить доменные службы в этом клиенте Azure AD. Приложение доменных служб в вашем клиенте Azure AD не имеет необходимых разрешений для включения доменных служб. Удалите приложение с идентификатором приложения d87dcbc6-a371-462e-88e3-28ad15ec4e64, а затем попытайтесь включить доменные службы для вашего клиента Azure AD.* |[Приложение доменных служб не настроено должным образом в клиенте Azure AD](troubleshoot.md#invalid-configuration) |
 | *Не удалось включить доменные службы в этом клиенте Azure AD. Microsoft Azure ADное приложение отключено в клиенте Azure AD. Включите приложение с идентификатором 00000002-0000-0000-C000-000000000000, а затем попробуйте включить доменные службы для вашего клиента Azure AD.* |[Приложение Microsoft Graph отключено в клиенте Azure AD](troubleshoot.md#microsoft-graph-disabled) |

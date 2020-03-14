@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dff80d849268c770e4227ff8c99b8f4d133c4d78
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: b9e6d2d6cf602bca74c8899586eef0a8108fde3c
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77620727"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79263339"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ: условия
 
@@ -72,7 +72,7 @@ ms.locfileid: "77620727"
       - Этот параметр включает клиенты, использующие стандартные или устаревшие протоколы проверки подлинности, которые не поддерживают современную проверку подлинности.
          - SMTP, прошедший проверку подлинности, используется клиентом POP и IMAP для отправки сообщений электронной почты.
          - Автообнаружение — используется клиентами Outlook и EAS для поиска почтовых ящиков в Exchange Online и подключения к ним.
-         - Exchange Online PowerShell — используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. [в статье подключение к Exchange Online PowerShell с использованием многофакторной проверки подлинности](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
+         - Exchange Online PowerShell — используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. [в статье подключение к Exchange Online PowerShell с использованием многофакторной проверки подлинности](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
          - Веб-службы Exchange (EWS) — программный интерфейс, используемый Outlook, Outlook для Mac и сторонние приложения.
          - IMAP4 — используется клиентами электронной почты IMAP.
          - MAPI через HTTP (MAPI/HTTP) — используется в Outlook 2010 и более поздних версиях.
@@ -142,8 +142,8 @@ ms.locfileid: "77620727"
 | Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения" | Android и iOS |
 | Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
-| Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](https://docs.microsoft.com/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
-| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](https://docs.microsoft.com/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
+| Приложения Office 2016, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
+| Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), [клиент синхронизации OneDrive](/onedrive/enable-conditional-access) | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). | Office 365 SharePoint Online | macOS |
 | Office 2019| Office 365 SharePoint Online | Windows 10, macOS |
 | Мобильные приложения Office | Office 365 SharePoint Online | Android, iOS |
