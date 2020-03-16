@@ -28,6 +28,8 @@
           href: virtual-wan-configure-automation-providers.md
     - name: Политики IPsec
       href: virtual-wan-ipsec.md
+    - name: "Общие сведения о VPN-подключении типа \"точка\_— сеть\""
+      href: ../vpn-gateway/point-to-site-about.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
 - name: Практические руководства
   items:
     - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
@@ -56,6 +58,10 @@
           href: certificates-point-to-site.md
         - name: "Настройка клиента Azure\_AD для VPN пользователя"
           href: openvpn-azure-ad-tenant.md
+        - name: Настройка VPN-туннеля Always On для пользователя
+          href: ../vpn-gateway/vpn-gateway-howto-always-on-user-tunnel.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
+        - name: Настройка VPN-туннеля Always On для устройства
+          href: ../vpn-gateway/vpn-gateway-howto-always-on-device-tunnel.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
         - name: Включение многофакторной идентификации для VPN пользователя
           href: openvpn-azure-ad-mfa.md
         - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
@@ -91,7 +97,7 @@
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/networking'
     - name: Ограничения подписки и службы
-      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/virtual-wan'
     - name: Калькулятор цен

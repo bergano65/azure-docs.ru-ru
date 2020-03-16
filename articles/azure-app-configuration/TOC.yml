@@ -64,8 +64,6 @@
   items:
     - name: Хранилище ключ-значение
       href: concept-key-value.md
-    - name: Шифрование с помощью управляемых клиентом ключей
-      href: concept-customer-managed-keys.md
     - name: Моментальный снимок на определенный момент времени
       href: concept-point-time-snapshot.md
     - name: Управление функциями
@@ -74,8 +72,12 @@
       href: concept-github-action.md
     - name: Обработка событий
       href: concept-app-configuration-event.md
-    - name: Аутентификация
+    - name: Безопасность
       items:
+        - name: Шифрование с помощью управляемых клиентом ключей
+          href: concept-customer-managed-keys.md
+        - name: Защита хранилища конфигураций с помощью частных конечных точек
+          href: concept-private-endpoint.md
         - name: Интеграции с управляемыми удостоверениями Azure
           href: howto-integrate-azure-managed-service-identity.md
         - name: Предоставление доступа с помощью Azure Active Directory

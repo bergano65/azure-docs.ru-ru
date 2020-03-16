@@ -648,8 +648,10 @@
           href: snapshot-copy-managed-disk.md
         - name: Зарезервировать Хранилище дисков
           href: disks-reserved-capacity.md
-        - name: Создание добавочного моментального снимка
+        - name: "Создание добавочного моментального снимка\_— CLI"
           href: disks-incremental-snapshots.md
+        - name: "Создание добавочного моментального снимка\_— портал"
+          href: disks-incremental-snapshots-portal.md
         - name: Резервное копирование неуправляемых дисков
           href: incremental-snapshots.md
         - name: Миграция и преобразование

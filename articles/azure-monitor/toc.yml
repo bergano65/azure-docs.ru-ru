@@ -1245,6 +1245,8 @@
           href: app/docker.md
         - name: Прекращение поддержки портала OMS
           href: platform/oms-portal-transition.md
+        - name: Устаревшие метрики диска
+          href: platform/portal-disk-metrics-deprecation.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
