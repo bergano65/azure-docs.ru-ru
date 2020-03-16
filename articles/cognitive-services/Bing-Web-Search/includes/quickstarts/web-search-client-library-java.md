@@ -6,14 +6,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 02/24/2020
+ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: f1dc7c5b6e86df3b7b2ecc308e204e4ecb959735
-ms.sourcegitcommit: 96dc60c7eb4f210cacc78de88c9527f302f141a9
+ms.openlocfilehash: c204f8482d46d6586d490cb2bd3dd1a4cddac682
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77651749"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925352"
 ---
 Клиентская библиотека Поиска в Интернете Bing позволяет интегрировать поиск Bing в любое приложение Java. В этом кратком руководстве описано, как отправлять запрос, получать ответ в формате JSON, фильтровать и анализировать результаты.
 

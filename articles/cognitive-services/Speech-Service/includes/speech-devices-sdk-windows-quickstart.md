@@ -5,12 +5,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: dapine
-ms.openlocfilehash: d2f8603b659fe44f83b725a92fb7b73cfe34cf37
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 11d2f9788f41e259058af50a728b8b82eeb10131
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562734"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78383811"
 ---
 В этом кратком руководстве вы узнаете, как использовать пакет Speech Devices SDK для Windows для создания устройства с поддержкой речевых функций или его использования в качестве устройства [Транскрипция диалога](../conversation-transcription-service.md) (Conversation Transcription). Для транскрибирования бесед поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/). Для других речевых функций используются линейные микрофонные решетки, обеспечивающие геометрию микрофонной решетки.
 
@@ -74,7 +74,7 @@ ms.locfileid: "77562734"
         <dependency>
              <groupId>com.microsoft.cognitiveservices.speech</groupId>
              <artifactId>client-sdk</artifactId>
-             <version>1.9.0</version>
+             <version>1.10.0</version>
         </dependency>
     </dependencies>
    ```
