@@ -6,11 +6,11 @@ author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
 ms.openlocfilehash: 5414a70180a82be8253dace7d800c90c1ae6a9bd
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ms.sourcegitcommit: 7b25c9981b52c385af77feb022825c1be6ff55bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79082536"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79276079"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -201,7 +201,7 @@ dataset
 
 Вы можете связать ресурс Application Insights с контейнером хранилища BLOB-объектов Azure, чтобы автоматически деминификацию стеки вызовов. Чтобы приступить к работе, см. раздел [Автоматическая поддержка карт исходного кода](./source-map-support.md).
 
-### <a name="drag-and-drop"></a>Перетаскивание
+### <a name="drag-and-drop"></a>путем перетаскивания.
 
 1. Выберите элемент телеметрии исключения в портал Azure, чтобы просмотреть сведения о сквозной транзакции.
 2. Определяет, какие исходные карты соответствуют этому стеку вызовов. Исходная таблица должна соответствовать исходному файлу кадра стека, но с суффиксом `.map`
