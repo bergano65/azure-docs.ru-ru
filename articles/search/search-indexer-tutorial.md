@@ -106,7 +106,7 @@ ms.locfileid: "78193974"
 
 1. В обозревателе решений откройте файл **appsettings.json**, чтобы предоставить сведения о подключении.
 
-1. Для `searchServiceName`, если у полного URL-адреса формат https://my-demo-service.search.windows.net, нужно указать имя службы my-demo-service.
+1. Для `searchServiceName`, если у полного URL-адреса формат "https://my-demo-service.search.windows.net", нужно указать имя службы my-demo-service.
 
 1. Для `AzureSqlConnectionString` формат строки аналогичен следующему: `"Server=tcp:{your_dbname}.database.windows.net,1433;Initial Catalog=hotels-db;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"`
 
