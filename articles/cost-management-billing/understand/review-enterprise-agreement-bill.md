@@ -6,14 +6,14 @@ ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
 ms.topic: tutorial
-ms.date: 03/03/2020
+ms.date: 03/06/2020
 ms.author: banders
-ms.openlocfilehash: ca1064ce3414f4a796110c022125b68c0674e0d6
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.openlocfilehash: 5de6baf81f67ef6bee43b54e7aa0d62088c15be9
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78270191"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898638"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Общие сведения о счете по соглашению Azure Enterprise
 
@@ -118,7 +118,7 @@ ms.locfileid: "78270191"
 
 Этот раздел применяется, только если вы пребываете в Австралии, Японии или Сингапуре.
 
-Сравните общую сумму для Azure Marketplace, указанную в разделе **Отчеты** > **Сведения об использовании** на корпоративном портале со счетом Marketplace. Счета Marketplace применяются только для использования и покупок в Azure Marketplace. Суммы в разделе **Сведения об использовании** не включают налоги.
+Сравните общую сумму для Azure Marketplace, указанную в разделе **Отчеты** > **Сведения об использовании** на корпоративном портале со счетом Marketplace. Счета Marketplace применяются только для использования и покупок в Azure Marketplace. Суммы в **сводке по использованию** уже включают налог, который определяется издателем.
 
 Войдите на [корпоративный портал](https://ea.azure.com) и выберите **Отчеты**. В правом верхнем углу вкладки переключите представление с **M** на **C** и сопоставьте период с данными в счете.  
 

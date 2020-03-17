@@ -1,14 +1,15 @@
 ---
 title: Руководство. Создание кластера виртуальных машин Azure с помощью Terraform и реестра модулей
-description: Узнайте, как использовать модули Terraform для создания кластера виртуальных машин в Azure
+description: Из этого руководства вы узнаете, как использовать модули Terraform для создания кластера виртуальных машин Windows в Azure
+keywords: Azure DevOps, Terraform, виртуальная машина, кластер виртуальных машин, реестр модулей
 ms.topic: tutorial
-ms.date: 10/26/2019
-ms.openlocfilehash: d17a0d7c26cc1a16ab73350fe6e8c28ba4af6ff2
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.date: 03/09/2020
+ms.openlocfilehash: 9faeee9bb2f0fb6dc148a3868f6fc0dae3833a2a
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77472215"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945286"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Руководство по Создание кластера виртуальных машин Azure с помощью Terraform и реестра модулей
 
@@ -36,6 +37,8 @@ variable client_id {}
 variable client_secret {}
 
 provider "azurerm" {
+    version = "~>1.40"
+
     subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     tenant_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     client_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"

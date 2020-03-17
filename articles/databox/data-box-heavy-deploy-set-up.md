@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: c96caf7a90f35913bcba04a00553ad1df2689999
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: dbf3531f84d218543b0ab1fb2199a66bdbde2926
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514431"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79117253"
 ---
 ::: zone target = "docs"
 
-# <a name="tutorial-cable-and-connect-to-your-azure-data-box-heavy"></a>Руководство. Присоединение кабелей и подключение к Azure Data Box Heavy
+# <a name="tutorial-cable-and-connect-to-your-azure-data-box-heavy"></a>Руководство по Присоединение кабелей и подключение к Azure Data Box Heavy
 
 ::: zone-end
 
@@ -100,7 +100,7 @@ ms.locfileid: "76514431"
 
 Выполните следующие действия с одним из узлов устройства, чтобы подключить его к сети.
 
-1. С помощью сетевого кабеля RJ-45 CAT 6 (синий кабель на фото) подсоедините главный компьютер к порту управления со скоростью 1 Гбит/с.
+1. С помощью сетевого кабеля RJ-45 CAT 6 (кабель в правом верхнем углу, присоединенный к разъему с меткой MGMT) подсоедините главный компьютер к порту управления со скоростью 1 Гбит/с.
 2. Для подключения по крайней мере одного сетевого интерфейса на 40 Гбит/с (предпочтительнее, чем на 1 Гбит/с) для передачи данных используйте кабель QSFP+ (волоконный или медный). При использовании коммутатора на 10 Гбит/с подключите сетевой интерфейс со скоростью 40 Гбит/с для передачи данных с помощью кабеля SFP+ с адаптером QSFP+ на SFP+ (адаптер QSA).
 
     ![Порты устройства Data Box Heavy с подсоединенными кабелями](media/data-box-heavy-deploy-set-up/data-box-heavy-ports-cabled.png)

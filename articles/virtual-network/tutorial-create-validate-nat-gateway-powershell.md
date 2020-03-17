@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: faaf32b08fdf2415b1c60192f917fc2aedc14704
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: e0fb78be363795bbb09fb0f14bd018fceea34a48
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77660994"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78897897"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-powershell-and-test-the-nat-service"></a>Руководство по созданию шлюза NAT с помощью Azure PowerShell и проверке NAT
 
@@ -271,7 +271,7 @@ New-AzVirtualNetwork -Name $vdn -ResourceGroupName $rsg -Location $loc -AddressP
 
 ### <a name="create-public-ip-for-destination-vm"></a>Создание общедоступного IP-адреса для виртуальной машины назначения
 
-Мы создадим общедоступный IP-адрес для доступа к исходной виртуальной машине.  Выполните командлет [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=latest), чтобы создать ресурс общедоступного IP-адреса с именем **myPublicIPdestinationVM** в группе **myResourceGroupNAT**.  Результат этой команды будет храниться в переменной с именем **$publicIpdestinationVM** для последующего использования.
+Мы создадим общедоступный IP-адрес для доступа к целевой виртуальной машине.  Выполните командлет [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=latest), чтобы создать ресурс общедоступного IP-адреса с именем **myPublicIPdestinationVM** в группе **myResourceGroupNAT**.  Результат этой команды будет храниться в переменной с именем **$publicIpdestinationVM** для последующего использования.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'

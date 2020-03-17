@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание хранилища данных (PowerShell)
-description: Узнайте, как быстро создать логический сервер хранилища данных Azure Synapse Analytics с правилом брандмауэра на уровне сервера с помощью Azure PowerShell.
+title: Создание пула SQL Synapse и отправка в него запросов с помощью Azure PowerShell
+description: Сведения о том, как быстро создать логический сервер пула SQL Synapse с правилом брандмауэра на уровне сервера с помощью Azure PowerShell.
 services: sql-data-warehouse
 author: XiaoyuMSFT
 manager: craigg
@@ -11,23 +11,23 @@ ms.date: 4/11/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 9df9b4b1bdb33a856d9e31d65981e8654af049d2
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: 3cf55a400c1894794d555e1362f2197aad44a96b
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78200011"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79130292"
 ---
-# <a name="quickstart-create--query-a-data-warehouse-with-azure-powershell"></a>Краткое руководство. Создание хранилища данных и отправка запросов к нему с помощью Azure PowerShell
+# <a name="quickstart-create-and-query-a-synapse-sql-pool-with-azure-powershell"></a>Краткое руководство. Создание пула SQL Synapse и отправка в него запросов с помощью Azure PowerShell
 
-Создайте хранилище данных Azure Synapse Analytics, выполнив подготовку пула SQL с помощью Azure PowerShell.
+Создайте пул SQL Synapse (хранилище данных) в Azure Synapse Analytics с помощью Azure PowerShell.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-> [!NOTE]
-> Создание хранилища может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
+> [!IMPORTANT]
+> Создание пула SQL может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -94,7 +94,9 @@ New-AzSqlServer -ResourceGroupName $resourcegroupname `
 
 ## <a name="configure-a-server-firewall-rule"></a>Настройка правил брандмауэра сервера
 
-Создайте [правило брандмауэра на уровне сервера SQL Azure](../sql-database/sql-database-firewall-configure.md) с помощью команды [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule). Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как SQL Server Management Studio или программе sqlcmd, подключаться к Хранилищу данных SQL через брандмауэр службы Хранилища данных SQL. В следующем примере брандмауэр открыт только для других ресурсов Azure. Чтобы включить возможность внешнего подключения, измените IP-адрес на соответствующий адрес своей среды. Чтобы открыть все IP-адреса, используйте 0.0.0.0 как начальный IP-адрес, а 255.255.255.255 — как конечный.
+Создайте [правило брандмауэра на уровне сервера SQL Azure](../sql-database/sql-database-firewall-configure.md) с помощью команды [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule). Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как SQL Server Management Studio или программе SQLCMD, подключаться к пулу SQL через брандмауэр службы пула SQL. 
+
+В следующем примере брандмауэр открыт только для других ресурсов Azure. Чтобы включить возможность внешнего подключения, измените IP-адрес на соответствующий адрес своей среды. Чтобы открыть все IP-адреса, используйте 0.0.0.0 как начальный IP-адрес, а 255.255.255.255 — как конечный.
 
 ```powershell
 New-AzSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
@@ -107,8 +109,8 @@ New-AzSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 >
 
 
-## <a name="create-a-data-warehouse"></a>Создание хранилища данных
-В этом примере создается хранилище данных с использованием ранее определенных переменных.  Он определяет цель службы как DW100c, что является бюджетной начальной точкой для хранилища данных. 
+## <a name="create-a-sql-pool"></a>Создание пула SQL
+В следующем примере создается пул SQL с использованием ранее определенных переменных.  Он определяет цель службы как DW100c, что является бюджетной начальной точкой для пула SQL. 
 
 ```Powershell
 New-AzSqlDatabase `
@@ -124,10 +126,10 @@ New-AzSqlDatabase `
 Ниже перечислены необходимые параметры.
 
 * **RequestedServiceObjectiveName**: количество запрашиваемых [единиц хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md). Увеличение этого количества приведет к повышению стоимости вычислений. Список поддерживаемых значений см. в статье [Ограничения параллелизма и памяти для хранилища данных SQL Azure](memory-concurrency-limits.md).
-* **DatabaseName**: имя создаваемого хранилища данных.
+* **DatabaseName**: Имя создаваемого пула SQL.
 * **ServerName**: имя сервера, который используется для создания.
 * **ResourceGroupName**: используемая группа ресурсов. Чтобы найти доступные группы ресурсов, входящие в вашу подписку, используйте командлет Get-AzureResource.
-* **Выпуск**: для создания хранилища данных необходим выпуск DataWarehouse.
+* **Выпуск**: для создания пула SQL необходим выпуск DataWarehouse.
 
 Необязательные параметры.
 
@@ -151,6 +153,4 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы создали хранилище данных, создали правило брандмауэра, подключились к этому хранилищу данных и выполнили несколько запросов. Дополнительные сведения см. в учебнике по загрузке данных.
-> [!div class="nextstepaction"]
->[Загрузка данных в хранилище данных](load-data-from-azure-blob-storage-using-polybase.md)
+Вы создали пул SQL, создали правило брандмауэра, подключились к этому пулу SQL и выполнили несколько запросов. Чтобы узнать больше, перейдите к статье о [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md).

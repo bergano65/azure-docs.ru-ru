@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: helohr
-ms.openlocfilehash: 1e26af6c4bf86cfd412df7435379e610ffd69e85
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 5bdc51f47a170922d4fc33e8538695af29e5159c
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367418"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128112"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-by-using-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с использованием PowerShell
 
@@ -44,7 +45,7 @@ ms.locfileid: "77367418"
 
 ## <a name="create-a-service-principal-in-azure-active-directory"></a>Создание субъекта-службы в Azure Active Directory
 
-После того как вы выполните все предварительные требования в сеансе PowerShell, запустите указанные ниже командлеты PowerShell, чтобы создать мультитенатный субъект-службу в Azure.
+Выполнив все предварительные требования в сеансе PowerShell, запустите указанные ниже командлеты PowerShell, чтобы создать мультитенатный субъект-службу в Azure.
 
 ```powershell
 Import-Module AzureAD

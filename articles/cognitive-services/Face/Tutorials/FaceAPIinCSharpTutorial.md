@@ -1,5 +1,5 @@
 ---
-title: Руководство. Определение лиц и отображение данных о них на изображении с использованием пакета SDK для .NET
+title: Руководство по Определение лиц и отображение данных о них на изображении с использованием пакета SDK для .NET
 titleSuffix: Azure Cognitive Services
 description: С помощью этого руководства вы создадите простое приложение Windows, которое использует службу "Распознавание лиц" для определения и выделения лиц на изображении.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: face-api
 ms.topic: tutorial
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: ab0ed56b953cf2c0d96fd2d91d9a3b09fddace72
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: a5cf3c59c94134e1d0751c1467cd324a95c366eb
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76165922"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898816"
 ---
-# <a name="tutorial-create-a-windows-presentation-framework-wpf-app-to-display-face-data-in-an-image"></a>Руководство. созданию приложения Windows Presentation Framework (WPF) для отображения данных о лицах на изображении
+# <a name="tutorial-create-a-windows-presentation-framework-wpf-app-to-display-face-data-in-an-image"></a>Руководство по созданию приложения Windows Presentation Framework (WPF) для отображения данных о лицах на изображении
 
 Из этого руководства вы узнаете, как с помощью службы "Распознавание лиц" Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите приложение WPF, которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
 
@@ -49,7 +49,7 @@ ms.locfileid: "76165922"
 1. В Visual Studio откройте диалоговое окно "Новый проект". Разверните **Установленные**, а затем — **Visual C#** и выберите **Приложение WPF (.NET Framework)** .
 1. Присвойте приложению имя **FaceTutorial** и нажмите кнопку **ОК**.
 1. Получите необходимые пакеты NuGet. Щелкните проект правой кнопкой мыши в обозревателе решений и выберите **Управление пакетами NuGet**, а затем найдите и установите следующий пакет:
-    - [Microsoft.Azure.CognitiveServices.Vision.Face 2.2.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview).
+    - [Microsoft.Azure.CognitiveServices.Vision.Face 2.5.0-preview.1](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.5.0-preview.1)
 
 ## <a name="add-the-initial-code"></a>Добавление исходного кода
 

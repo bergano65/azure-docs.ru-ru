@@ -351,7 +351,7 @@ private static async Task CreateAndRunBlobIndexer(string indexName, SearchServic
 
 На портале Azure откройте страницу **Обзор** для службы поиска и найдите в списке **Индексы** созданный индекс **hotel-rooms-sample**.
 
-  ![Список индексов службы "Когнитивный поиск Azure"](media/tutorial-multiple-data-sources/index-list.png "Список индексов службы "Когнитивный поиск Azure"")
+  ![Список индексов службы Когнитивный поиск Azure](media/tutorial-multiple-data-sources/index-list.png "Список индексов службы Когнитивный поиск Azure")
 
 Щелкните индекс hotel-rooms-sample в этом списке. Вы увидите интерфейс обозревателя поиска для этого индекса. Введите запрос для поиска термина, например Luxury. Вы увидите результат поиска с хотя бы одним документом, в котором отображается список объектов номеров из массива rooms.
 

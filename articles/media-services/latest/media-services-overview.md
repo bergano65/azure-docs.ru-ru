@@ -14,15 +14,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 02/03/2020
+ms.date: 03/09/2020
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 873db6315841b585aa0ba6bcb843bfe05567836f
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: 7e4a242c1f81a504872dae6399683483c836daf2
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78299267"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79086908"
 ---
 # <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -31,7 +31,9 @@ ms.locfileid: "78299267"
 Пакеты SDK Служб мультимедиа версии 3 разработаны на основе [спецификации OpenAPI (Swagger) для Служб мультимедиа версии 3](https://aka.ms/ams-v3-rest-sdk).
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+> В настоящее время вы можете использовать [портал Azure](https://portal.azure.com/) для: управления [трансляциями](live-events-outputs-concept.md) в Службах мультимедиа версии 3, просмотра (без управления) [активов](assets-concept.md) версии 3, а также [получения сведений о доступе к интерфейсам API](access-api-portal.md). Для всех других задач управления (например, [преобразований и заданий](transforms-jobs-concept.md), а также [защиты содержимого](content-protection-overview.md)) следует использовать [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="compliance-privacy-and-security"></a>Соответствие требованиям, конфиденциальность и безопасность
 
@@ -39,7 +41,7 @@ ms.locfileid: "78299267"
 
 Перед загрузкой видео или изображений в службы мультимедиа необходимо иметь все соответствующие права на использование видео или изображения, в том числе, если это требуется законом, все необходимые разрешения от лиц на видео или изображения, позволяющие их использовать, обрабатывать и хранить их данные в службах мультимедиа и Azure. Некоторые юрисдикции могут накладывать особые юридические требования для сбора, обработки в сети и хранения определенных категорий данных, таких как биометрические данные. Прежде чем использовать службы мультимедиа и Azure для обработки и хранения любых данных в соответствии с особыми юридическими требованиями, необходимо обеспечить соответствие всем юридическим требованиям, которые могут быть применимы к вам.
 
-Чтобы узнать о соответствии требованиям, конфиденциальности и безопасности в службах мультимедиа, посетите [Центр управления безопасностью](https://www.microsoft.com/trust-center/?rtc=1) корпорации Майкрософт. Обязательства Майкрософт по обеспечению конфиденциальности, рекомендации по обработке, хранению и удалению данных см. в [Заявлении о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [Условиях использования веб-служб](https://www.microsoft.com/licensing/product-licensing/products?rtc=1) (OST) и [Приложении к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) (DPA). Используя службы мультимедиа, вы соглашаетесь соблюдать OST, DPA и Заявление о конфиденциальности.
+Чтобы узнать о соответствии требованиям, конфиденциальности и безопасности в службах мультимедиа, посетите [Центр управления безопасностью](https://www.microsoft.com/trust-center/?rtc=1) корпорации Майкрософт. Обязательства Майкрософт по обеспечению конфиденциальности, рекомендации по обработке, хранению и удалению данных см. в [Заявлении о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [Условиях использования веб-служб](https://www.microsoft.com/licensing/product-licensing/products?rtc=1) (OST) и [Приложении к заявлению об обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) (DPA). Используя службы мультимедиа, вы соглашаетесь соблюдать OST, DPA и Заявление о конфиденциальности.
  
 ## <a name="what-can-i-do-with-media-services"></a>Какие функциональные возможности представлены в Службах мультимедиа?
 

@@ -1,14 +1,15 @@
 ---
 title: Руководство. Создание кластера виртуальных машин Azure с помощью Terraform и HCL
-description: Создание кластера виртуальной машины Linux с подсистемой балансировки нагрузки в Azure с помощью Terraform и HCL
+description: В этом руководстве показано, как создать кластер виртуальной машины Linux с подсистемой балансировки нагрузки в Azure с помощью модулей Terraform и HCL
+keywords: Azure DevOps, Terraform, виртуальная машина, кластер виртуальных машин
 ms.topic: tutorial
-ms.date: 10/26/2019
-ms.openlocfilehash: 39e9857ad0119c08e949bbe5f6accb07432f3469
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.date: 03/09/2020
+ms.openlocfilehash: ae1b8eac15309ff27297d9472e70d32e68acaaac
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77470876"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945270"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Руководство по созданию кластера виртуальных машин Azure с помощью Terraform и HCL
 
@@ -49,6 +50,8 @@ ms.locfileid: "77470876"
    variable client_secret {}
   
    provider "azurerm" {
+      version = "~>1.40"
+     
       subscription_id = var.subscription_id
       tenant_id = var.tenant_id
       client_id = var.client_id
@@ -129,7 +132,6 @@ ms.locfileid: "77470876"
       name                          = "testConfiguration"
       subnet_id                     = azurerm_subnet.test.id
       private_ip_address_allocation = "dynamic"
-      load_balancer_backend_address_pools_ids = [azurerm_lb_backend_address_pool.test.id]
     }
    }
 

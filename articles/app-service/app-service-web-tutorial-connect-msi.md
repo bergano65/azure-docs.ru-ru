@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/18/2019
 ms.custom: mvc, cli-validate
-ms.openlocfilehash: b57ee458b857db5692f34e51f388ca8374a3c03b
-ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+ms.openlocfilehash: af44f4a96567cc86c9f884cdfe5e28ff6b7bd8f3
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77524399"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78897700"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -127,6 +127,9 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
 
 - Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и _\<db-name>_ на имя вашего сервера и имя базы данных.
 
+> [!NOTE]
+> Только что зарегистрированный класс SqlAuthenticationProvider основывается на библиотеке AppAuthentication, установленной ранее. По умолчанию он использует назначенное системой удостоверение. Чтобы использовать назначенное пользователем удостоверение, необходимо предоставить дополнительную конфигурацию. Сведения о библиотеке AppAuthentication см. в разделе [Поддержка строки подключения](../key-vault/service-to-service-authentication.md#connection-string-support).
+
 Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
 
 Введите `Ctrl+F5`, чтобы снова запустить приложение. То же приложение CRUD в вашем браузере теперь подключается к базе данных SQL Azure напрямую, используя аутентификацию Azure AD. Эта настройка позволяет запускать перенос базы данных из Visual Studio.
@@ -189,6 +192,9 @@ conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceT
 
 Затем настройте приложение службы приложений для подключения к базе данных SQL с назначенным системой управляемым удостоверением.
 
+> [!NOTE]
+> Хотя инструкции в этом разделе касаются назначенного системой удостоверения, можно так же легко использовать удостоверение, назначенное пользователем. Для этого потребуется изменить `az webapp identity assign command`, чтобы назначить нужное удостоверение, назначенное пользователем. Затем при создании пользователя SQL вместо имени сайта следует использовать имя ресурса назначенного пользователем удостоверения.
+
 ### <a name="enable-managed-identity-on-app"></a>Включение управляемого удостоверения в приложении
 
 Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app-name>* .
@@ -237,9 +243,12 @@ ALTER ROLE db_ddladmin ADD MEMBER [<identity-name>];
 GO
 ```
 
-*\<Identity-name>*  — имя управляемого удостоверения в Azure AD. Так как оно назначено системой, оно всегда совпадает с именем приложения службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
+*\<Identity-name>*  — имя управляемого удостоверения в Azure AD. Если удостоверение назначено системой, имя всегда совпадает с именем приложения Службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
 
 Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell.
+
+> [!NOTE]
+> Серверные службы управляемых удостоверений также [поддерживают кэш маркеров](overview-managed-identity.md#obtain-tokens-for-azure-resources), который обновляет маркер целевого ресурса только по истечении срока его действия. Если вы допустите ошибку при настройке разрешений Базы данных SQL и попытаетесь изменить разрешения *после* попытки получить маркер в приложении, вы получите новый маркер с обновленными разрешениями только после того, как истечет срок действия кэшированного маркера.
 
 ### <a name="modify-connection-string"></a>Изменение строки подключения
 

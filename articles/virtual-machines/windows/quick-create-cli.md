@@ -15,18 +15,18 @@ ms.workload: infrastructure
 ms.date: 07/02/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: a3ad81091fa93993f71c6d65175e50f6ee216757
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: fd74b3fad7f0b26eff2fdedddae171a1b7297dcd
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073470"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898905"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-with-the-azure-cli"></a>Краткое руководство. Создание виртуальной машины Windows с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве показано, как с помощью Azure CLI развернуть в Azure виртуальную машину под управлением Windows Server 2016. Чтобы проверить работу виртуальной машины, вы подключитесь к ней по протоколу удаленного рабочего стола (RDP) и установите веб-сервер IIS.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -46,16 +46,15 @@ az group create --name myResourceGroup --location eastus
 
 Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). В следующем примере создается виртуальная машина с именем *myVM*. В этом примере используется *azureuser* для имени пользователя с правами администратора. 
 
-Необходимо изменить значение `--admin-password` или произойдет ошибка. Измените его на пароль, отвечающий [требованиям к паролям для виртуальных машин Azure](/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm
-). Имя пользователя и пароль будут использоваться позже при подключении к виртуальной машине.
+Потребуется указать пароль, отвечающий [требованиям к паролям для виртуальных машин Azure](/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm
+). Когда вы примените приведенный ниже пример, появится запрос на ввод пароля в командной строке. Можете также добавить параметр `--admin-password` со значением пароля. Имя пользователя и пароль будут использоваться позже при подключении к виртуальной машине.
 
 ```azurecli-interactive
 az vm create \
     --resource-group myResourceGroup \
     --name myVM \
     --image win2016datacenter \
-    --admin-username azureuser \
-    --admin-password myPassword
+    --admin-username azureuser 
 ```
 
 Создание виртуальной машины и вспомогательных ресурсов занимает несколько минут. В следующем примере выходных данных показано, что виртуальная машина успешно создана.
@@ -115,7 +114,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этим кратким руководством вы развернули простую виртуальную машину, открыли сетевой порт для веб-трафика и установили базовый веб-сервер. Дополнительные сведения о виртуальных машинах Azure см. в руководстве по работе с виртуальными машинами Windows.
 

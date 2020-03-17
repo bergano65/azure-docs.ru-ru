@@ -10,24 +10,24 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 02/10/2020
 ms.author: dapine
-ms.openlocfilehash: 45719eebb9cd74b0a5c4278e87b90978dcc3790f
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 6baa98d50c50146e93b4832053f63f3bead90a6d
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119675"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78330841"
 ---
 # <a name="quickstart-create-a-voice-assistant-with-the-speech-sdk-java-preview"></a>Краткое руководство. Создание помощника по обработке голоса с помощью пакета SDK службы "Речь", Java (предварительная версия)
 
 Кроме того, доступны краткие руководства по [преобразованию речи в текст](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java&tabs=jre), [преобразованию текста в речь](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-java&tabs=jre) и [переводу речи](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-java&tabs=jre).
 
-Из этой статьи вы узнаете, как создать консольное приложение Java с помощью [пакета SDK для службы "Речь" в Azure Cognitive Services](speech-sdk.md). Приложение подключается к ранее созданному боту, настроенному на использование канала "Речь Direct Line", отправляет голосовой запрос и вернет действие голосового ответа (если настроено). Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE для Windows, Ubuntu Linux или macOS. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+Из этой статьи вы узнаете, как создать консольное приложение Java с помощью [пакета SDK для службы "Речь" в Azure Cognitive Services](speech-sdk.md). Приложение подключается к ранее созданному боту, настроенному на использование канала "Речь Direct Line", отправляет голосовой запрос и вернет действие голосового ответа (если настроено). Приложение создается с помощью пакета SDK Maven службы "Речь" и Java IDE Eclipse для Windows, Linux или macOS. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
-- Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04 или 18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии.
+- Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04 или 18.04 (64-разрядная версия), RHEL/CentOS 8 (64-разрядная версия), а также macOS 10.13 или более поздней версии.
 - [Eclipse Java IDE](https://www.eclipse.org/downloads/).
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 - Ключ подписки Azure для службы "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
@@ -42,6 +42,17 @@ ms.locfileid: "77119675"
 sudo apt-get update
 sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 ```
+
+В RHEL/CentOS 8:
+
+```sh
+sudo yum update
+sudo yum groupinstall "Development tools"
+sudo yum install alsa-lib java-1.8.0-openjdk-devel openssl wget
+```
+
+> [!NOTE]
+> Если используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 Если вы используете Windows (64-разрядная версия), убедитесь, что у вас установлен Распространяемый компонент Microsoft Visual C++ для вашей платформы.
 

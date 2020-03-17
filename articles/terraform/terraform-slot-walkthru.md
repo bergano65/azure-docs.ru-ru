@@ -1,14 +1,15 @@
 ---
 title: Руководство. Подготовка инфраструктуры со слотами развертывания Azure с помощью Terraform
-description: Руководство по использованию слотов развертывания поставщика Terraform с Azure
+description: Из этого руководства вы узнаете, как использовать Terraform со слотами развертывания поставщика в Azure
+keywords: Azure DevOps, Terraform, слоты развертывания
 ms.topic: tutorial
-ms.date: 11/07/2019
-ms.openlocfilehash: 68c790b4fad442d94e6ac82d1a545b8554d2dd4f
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.date: 03/09/2020
+ms.openlocfilehash: ddd4d84ee8bf4ab1e90dd68da185cdd9075fe1e0
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159177"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943489"
 ---
 # <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Руководство по подготовке инфраструктуры со слотами развертывания Azure с помощью Terraform
 
@@ -18,7 +19,7 @@ ms.locfileid: "74159177"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
+- **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
 - **Учетная запись GitHub**. Учетная запись [GitHub](https://www.github.com) необходима для создания вилки и использования тестового репозитория GitHub.
 
@@ -68,7 +69,12 @@ ms.locfileid: "74159177"
 
     ```hcl
     # Configure the Azure provider
-    provider "azurerm" { }
+    provider "azurerm" { 
+        # The "feature" block is required for AzureRM provider 2.x. 
+        # If you are using version 1.x, the "features" block is not allowed.
+        version = "~>2.0"
+        features {}
+    }
 
     resource "azurerm_resource_group" "slotDemo" {
         name = "slotDemoResourceGroup"
@@ -247,7 +253,12 @@ ms.locfileid: "74159177"
 
     ```hcl
     # Configure the Azure provider
-    provider "azurerm" { }
+    provider "azurerm" { 
+        # The "feature" block is required for AzureRM provider 2.x. 
+        # If you are using version 1.x, the "features" block is not allowed.
+        version = "~>2.0"
+        features {}
+    }
 
     # Swap the production slot and the staging slot
     resource "azurerm_app_service_active_slot" "slotDemoActiveSlot" {
@@ -291,7 +302,7 @@ terraform apply
 
 После переключения приложения отобразится исходная конфигурация.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Terraform в Azure](/azure/terraform)

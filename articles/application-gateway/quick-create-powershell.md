@@ -6,50 +6,53 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 11/14/2019
+ms.date: 03/05/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 9c3fac7aecaf37b5822ad6e8c655867f6f2c683c
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: abb38dfc342c8ff692ed1a3a05376b5dcefe8a3d
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872712"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399558"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway-using-azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
-В этом кратком руководстве показано, как быстро создать шлюз приложений с помощью Azure PowerShell.  Создав шлюз приложений, протестируйте его, чтобы убедиться в том, что он работает правильно. Шлюз приложений Azure позволяет направлять веб-трафик приложения к определенным ресурсам. Для этого портам назначаются прослушиватели, создаются определенные правила и в серверный пул добавляются соответствующие ресурсы. Чтобы упростить восприятие, в этой статье используется простая настройка с открытым интерфейсным IP-адресом, базовый прослушиватель для размещения одного сайта на этом шлюзе приложений, две виртуальные машины, используемые для серверного пула, и базовое правило маршрутизации запросов.
+В этом кратком руководстве рассказывается о том, как создать шлюз приложений с помощью Azure PowerShell, а затем протестировать его, чтобы убедиться в его правильной работе. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Шлюз приложений направляет веб-трафик приложений на определенные ресурсы в серверном пуле. Вы назначаете прослушиватели портам, создаете правила и добавляете ресурсы в серверный пул. Для простоты в этой статье используется простая настройка с открытым интерфейсным IP-адресом, базовый прослушиватель для размещения одного сайта на шлюзе приложений, базовое правило маршрутизации запросов и две виртуальные машины, используемые для серверного пула.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+Инструкции в этом кратком руководстве можно также выполнить с помощью [Azure CLI](quick-create-cli.md) или [портала Azure](quick-create-portal.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="azure-powershell-module"></a>модуль Azure PowerShell;
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
+- [Azure PowerShell версии 1.0.0 или более поздней версии](/powershell/azure/install-az-ps) (при локальном запуске Azure PowerShell).
 
-Чтобы установить и использовать Azure PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 1.0.0 или более поздней версии.
+## <a name="connect-to-azure"></a>Подключение к Azure
 
-1. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). 
-2. Чтобы создать подключение к Azure, выполните команду `Login-AzAccount`.
+Чтобы подключиться к Azure, выполните `Connect-AzAccount`.
 
-### <a name="resource-group"></a>группа ресурсов.
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. В этом примере вы создадите группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup). 
+В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую.
+
+Чтобы создать новую группу ресурсов, используйте командлет `New-AzResourceGroup`. 
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myResourceGroupAG -Location eastus
 ```
-
-### <a name="required-network-resources"></a>Необходимые сетевые ресурсы
+## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
 В Azure для обмена между создаваемыми ресурсами необходима виртуальная сеть.  Подсеть шлюза приложений может содержать только шлюзы приложений. Другие ресурсы запрещены.  Вы можете создать новую подсеть для шлюза приложений или использовать уже существующую. В этом примере вы создаете две подсети: одну — для шлюза приложений, а вторую — для внутренних серверов. Вы можете настроить интерфейсный IP-адрес как общедоступный или частный, в зависимости от варианта использования шлюза приложений. В этом примере мы будем использовать общедоступный интерфейсный IP-адрес.
 
-1. Создайте конфигурации подсетей, вызвав [New-AzVirtualNetworkSubnetConfig](/powershell/module/Az.network/new-Azvirtualnetworksubnetconfig).
-2. Создайте виртуальную сеть с конфигурациями подсетей, вызвав [New-AzVirtualNetwork](/powershell/module/Az.network/new-Azvirtualnetwork). 
-3. Создайте общедоступный IP-адрес, вызвав [New-AzPublicIpAddress](/powershell/module/Az.network/new-Azpublicipaddress). 
+1. Создайте конфигурации подсети с помощью `New-AzVirtualNetworkSubnetConfig`.
+2. Создайте виртуальную сеть с конфигурациями подсетей с помощью `New-AzVirtualNetwork`. 
+3. Создайте общедоступный IP-адрес с помощью `New-AzPublicIpAddress`. 
 
 ```azurepowershell-interactive
 $agSubnetConfig = New-AzVirtualNetworkSubnetConfig `
@@ -75,9 +78,9 @@ New-AzPublicIpAddress `
 
 ### <a name="create-the-ip-configurations-and-frontend-port"></a>Создание IP-конфигураций и интерфейсного порта
 
-1. Используйте [New-AzApplicationGatewayIPConfiguration](/powershell/module/Az.network/new-Azapplicationgatewayipconfiguration), чтобы создать конфигурацию, которая позволяет связать созданную подсеть со шлюзом приложений. 
-2. Используйте командлет [New-AzApplicationGatewayFrontendIPConfig](/powershell/module/Az.network/new-Azapplicationgatewayfrontendipconfig), чтобы создать конфигурацию, которая позволяет назначить шлюзу приложений созданный вами общедоступный IP-адрес. 
-3. Используйте командлет [New-AzApplicationGatewayFrontendPort](/powershell/module/Az.network/new-Azapplicationgatewayfrontendport), чтобы назначить порт 80 для доступа к шлюзу приложений.
+1. Используйте `New-AzApplicationGatewayIPConfiguration`, чтобы создать конфигурацию, которая позволяет связать созданную подсеть со шлюзом приложений. 
+2. Используйте командлет `New-AzApplicationGatewayFrontendIPConfig`, чтобы создать конфигурацию, которая позволяет назначить шлюзу приложений созданный вами общедоступный IP-адрес. 
+3. Используйте `New-AzApplicationGatewayFrontendPort`, чтобы назначить порт 80 для доступа к шлюзу приложений.
 
 ```azurepowershell-interactive
 $vnet   = Get-AzVirtualNetwork -ResourceGroupName myResourceGroupAG -Name myVNet
@@ -96,8 +99,8 @@ $frontendport = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pool"></a>Создание внутреннего пула
 
-1. Создайте внутренний пул для шлюза приложений с помощью командлета [New-AzApplicationGatewayBackendAddressPool](/powershell/module/Az.network/new-Azapplicationgatewaybackendaddresspool). Сейчас серверный пул будет пустым. Позже вы добавите в него создаваемые сетевые адаптеры внутреннего сервера (см. следующий раздел).
-2. Настройте параметры для серверного пула с помощью командлета [New-AzApplicationGatewayBackendHttpSetting](/powershell/module/Az.network/new-Azapplicationgatewaybackendhttpsetting).
+1. Используйте `New-AzApplicationGatewayBackendAddressPool`, чтобы создать серверный пул для шлюза приложений. Сейчас серверный пул будет пустым. Позже вы добавите в него создаваемые сетевые адаптеры внутреннего сервера (см. следующий раздел).
+2. Настройте параметры для серверного пула с помощью `New-AzApplicationGatewayBackendHttpSetting`.
 
 ```azurepowershell-interactive
 $address1 = Get-AzNetworkInterface -ResourceGroupName myResourceGroupAG -Name myNic1
@@ -116,8 +119,8 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSetting `
 
 Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. Azure требует правило для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. 
 
-1. Создайте прослушиватель, используя [New-AzApplicationGatewayHttpListener](/powershell/module/Az.network/new-Azapplicationgatewayhttplistener) с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. 
-2. Используйте командлет [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/Az.network/new-Azapplicationgatewayrequestroutingrule), чтобы создать правило с именем *rule1*. 
+1. Создайте прослушиватель созданными ранее конфигурацией внешнего интерфейса и интерфейсным портом, используя командлет `New-AzApplicationGatewayHttpListener`. 
+2. Используйте `New-AzApplicationGatewayRequestRoutingRule`, чтобы создать правило с именем *rule1*. 
 
 ```azurepowershell-interactive
 $defaultlistener = New-AzApplicationGatewayHttpListener `
@@ -137,8 +140,8 @@ $frontendRule = New-AzApplicationGatewayRequestRoutingRule `
 
 Теперь, поскольку вы уже создали необходимые вспомогательные ресурсы, создайте шлюз приложений.
 
-1. Используйте командлет [New-AzApplicationGatewaySku](/powershell/module/Az.network/new-Azapplicationgatewaysku), чтобы задать параметры для шлюза приложений.
-2. Используйте командлет [New-AzApplicationGateway](/powershell/module/Az.network/new-Azapplicationgateway), чтобы создать шлюз приложений.
+1. Используйте `New-AzApplicationGatewaySku`, чтобы задать параметры для шлюза приложений.
+2. Используйте `New-AzApplicationGateway`, чтобы создать шлюз приложений.
 
 ```azurepowershell-interactive
 $sku = New-AzApplicationGatewaySku `
@@ -165,12 +168,12 @@ New-AzApplicationGateway `
 
 #### <a name="create-two-virtual-machines"></a>Создание двух виртуальных машин
 
-1. Получите недавно созданную конфигурацию внутреннего пула Шлюза приложений с помощью [Get-AzApplicationGatewayBackendAddressPool](/powershell/module/Az.network/get-Azapplicationgatewaybackendaddresspool).
-2. Создайте сетевой интерфейс с помощью командлета [New-AzNetworkInterface](/powershell/module/Az.network/new-Aznetworkinterface). 
-3. Создайте конфигурацию виртуальной машины, используя командлет [New-AzVMConfig](/powershell/module/Az.compute/new-Azvmconfig).
-4. Создайте виртуальную машину с помощью команды [New-AzVM](/powershell/module/Az.compute/new-Azvm).
+1. Получите недавно созданную конфигурацию серверного пула Шлюза приложений с помощью `Get-AzApplicationGatewayBackendAddressPool`.
+2. Создайте сетевой интерфейс с помощью `New-AzNetworkInterface`.
+3. Создайте конфигурацию виртуальной машины с помощью `New-AzVMConfig`.
+4. Создайте виртуальную машину с помощью `New-AzVM`.
 
-Во время запуска следующего примера кода для создания виртуальных машин Azure запрашивает ваши учетные данные. Введите *azureuser* в качестве имени пользователя и *Azure123456!* в качестве пароля:
+Во время запуска следующего примера кода для создания виртуальных машин Azure запрашивает ваши учетные данные. Введите *azureuser* в качестве имени пользователя и пароля:
     
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway -ResourceGroupName myResourceGroupAG -Name myAppGateway
@@ -223,7 +226,7 @@ for ($i=1; $i -le 2; $i++)
 
 Для создания шлюза приложений не требуется устанавливать IIS. Но в рамках этого руководства они устанавливаются, чтобы проверить, создан ли шлюз приложений. Используйте IIS для тестирования шлюза приложений.
 
-1. Запустите командлет [Get-AzPublicIPAddress](/powershell/module/Az.network/get-Azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. 
+1. Запустите командлет `Get-AzPublicIPAddress`, чтобы получить общедоступный IP-адрес шлюза приложений. 
 2. Скопируйте и вставьте общедоступный IP-адрес в адресную строку браузера. Когда вы обновляете браузер, должно отобразиться имя виртуальной машины. Допустимый ответ подтверждает, что шлюз приложений создан и может успешно подключиться к серверу.
 
 ```azurepowershell-interactive
@@ -237,13 +240,13 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 Если вам уже не нужны ресурсы, созданные с помощью шлюза приложений, удалите группу ресурсов. Удалив ее, вы также удалите шлюз приложений и все связанные с ним ресурсы. 
 
-Удалите группу ресурсов, вызвав командлет [Remove-AzResourceGroup](/powershell/module/Az.resources/remove-Azresourcegroup).
+Чтобы удалить группу ресурсов, вызовите командлет `Remove-AzResourceGroup`:
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Manage web traffic with an application gateway using Azure PowerShell](./tutorial-manage-web-traffic-powershell.md) (Управление веб-трафиком с помощью шлюза приложений в Azure PowerShell)

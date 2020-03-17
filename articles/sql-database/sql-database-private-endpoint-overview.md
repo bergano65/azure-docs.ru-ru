@@ -7,15 +7,15 @@ titleSuffix: Azure SQL Database and SQL Data Warehouse
 ms.service: sql-database
 ms.topic: overview
 ms.reviewer: vanto
-ms.date: 09/17/2019
-ms.openlocfilehash: 427ba0e46f8f4090ce8c2080b1d6780b165e864c
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.date: 03/09/2020
+ms.openlocfilehash: ab9c5c5c1134d2e09a790a788a3b7e55f807dd9b
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76121086"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78945370"
 ---
-# <a name="private-link-for-azure-sql-database-and-data-warehouse-preview"></a>Приватный канал для Базы данных и Хранилища данных SQL Azure (предварительная версия)
+# <a name="private-link-for-azure-sql-database-and-data-warehouse"></a>Приватный канал для Базы данных и Хранилища данных SQL Azure
 
 Приватный канал позволяет подключаться к различным службам PaaS в Azure через **частную конечную точку**. Чтобы получить список служб PaaS, поддерживающих функции Приватного канала, перейдите на страницу [документации по Приватному каналу](../private-link/index.yml). Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../virtual-network/virtual-networks-overview.md) и подсети. 
 
@@ -145,7 +145,7 @@ Nmap done: 256 IP addresses (1 host up) scanned in 207.00 seconds
 
 ### <a name="check-connectivity-using-sql-server-management-studio-ssms"></a>Проверка подключения с помощью SQL Server Management Studio (SSMS)
 > [!NOTE]
->Используйте **полное доменное имя** сервера в строках подключения для клиентов. Любые попытки входа, выполненные непосредственно на IP-адресе, будут завершаться ошибкой проектирования.
+> Используйте **полное доменное имя (FQDN)** сервера в строках подключения для клиентов. Любые попытки входа, выполненные непосредственно на IP-адресе, будут завершаться ошибкой. Такое поведение предусмотрено, так как частная конечная точка направляет трафик в шлюз SQL в регионе. При этом для успешного входа нужно указать FQDN.
 
 Выполните следующие действия, чтобы использовать [SSMS для подключения к базе данных SQL](sql-database-connect-query-ssms.md). После подключения к Базе данных SQL с помощью SSMS убедитесь, что вы подключаетесь с частного IP-адреса виртуальной машины Azure, выполнив следующий запрос:
 
@@ -153,8 +153,9 @@ Nmap done: 256 IP addresses (1 host up) scanned in 207.00 seconds
 select client_net_address from sys.dm_exec_connections 
 where session_id=@@SPID
 ````
-> [!NOTE]
-> В предварительной версии подключения к частной конечной точке поддерживают в качестве [политики подключения](sql-database-connectivity-architecture.md#connection-policy) только **Прокси-сервер**.
+
+## <a name="limitations"></a>Ограничения 
+Подключения к частной конечной точке поддерживают в качестве [политики подключения](sql-database-connectivity-architecture.md#connection-policy) только **прокси-сервер**.
 
 
 ## <a name="connecting-from-an-azure-vm-in-peered-virtual-network-vnet"></a>Подключение из виртуальной машины Azure в одноранговой виртуальной сети (VNet) 

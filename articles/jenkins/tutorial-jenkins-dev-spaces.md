@@ -3,12 +3,12 @@ title: Использование подключаемого модуля Azure 
 description: Из этой статьи вы узнаете, как использовать подключаемый модуль Azure Dev Spaces в конвейере непрерывной интеграции.
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 7b23893eb331f55ff41992a2ca660e79f44a609a
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 281565cec5ee947781ab8ee9f62a00e01f9ababb
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250903"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037026"
 ---
 # <a name="tutorial-using-the-azure-dev-spaces-plug-in-for-jenkins-with-azure-kubernetes-service"></a>Руководство по Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes 
 
@@ -265,7 +265,7 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 ![Поток конвейера Jenkins](media/tutorial-jenkins-dev-spaces/jenkins-pipeline-flow.png)
 
-1. Скачайте измененную версию проекта *mywebapi* из https://github.com/azure-devops/mywebapi. Этот проект содержит несколько файлов, которые потребуются для создания конвейера, в том числе *Jenkinsfile*, *Dockerfiles* и чарт Helm.
+1. Скачайте измененную версию проекта *mywebapi* по адресу [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi). Этот проект содержит несколько файлов, которые потребуются для создания конвейера, в том числе *Jenkinsfile*, *Dockerfiles* и чарт Helm.
 
 2. Войдите в Jenkins. В меню слева выберите **Add Item** (Добавить элемент).
 

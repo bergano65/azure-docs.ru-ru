@@ -1,6 +1,6 @@
 ---
-title: 'Краткое руководство. Масштабирование вычислительных ресурсов на портале Azure '
-description: Масштабирование вычислительных ресурсов в пуле SQL с помощью портала Azure. Масштабируйте вычислительные ресурсы, чтобы повысить производительность, или выполняйте обратное масштабирование, чтобы сократить расходы.
+title: Масштабирование вычислительных ресурсов пула SQL Synapse (портал Azure)
+description: Вы можете масштабировать вычислительные ресурсы для пула SQL Synapse (хранилища данных) с помощью портал Azure.
 services: sql-data-warehouse
 author: Antvgski
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 7463849223fdf81466237c7d0c912763988e80e6
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: df0b21e98812faf99b6e67f262cec6e9c29db2f1
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78200361"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79130265"
 ---
-# <a name="quickstart-scale-compute-in-azure-synapse-analytics-sql-pool-in-the-azure-portal"></a>Краткое руководство. Масштабирование вычислительных ресурсов в пуле SQL Azure Synapse Analytics на портале Azure
+# <a name="quickstart-scale-compute-for-synapse-sql-pool-with-the-azure-portal"></a>Краткое руководство. Масштабирование вычислительных ресурсов пула SQL Synapse с помощью портала Azure
 
-Масштабирование вычислительных ресурсов в пуле SQL с помощью портала Azure. [Горизонтально масштабируйте вычислительные ресурсы](sql-data-warehouse-manage-compute-overview.md), чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить затраты. 
+Вы можете масштабировать вычислительные ресурсы для пула SQL Synapse (хранилища данных) с помощью портал Azure. [Горизонтально масштабируйте вычислительные ресурсы](sql-data-warehouse-manage-compute-overview.md), чтобы повысить производительность, или уменьшайте их масштаб, чтобы сократить затраты. 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -30,9 +30,9 @@ ms.locfileid: "78200361"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Вы можете масштабировать уже существующий пул SQL или создать его с именем **mySampleDataWarehouse**, воспользовавшись кратким руководством [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md).  В этом кратком руководстве масштабируется хранилище **mySampleDataWarehouse**.
+Вы можете масштабировать уже существующий пул SQL или создать его с именем **mySampleDataWarehouse**, воспользовавшись кратким руководством по [созданию и подключению на портале](create-data-warehouse-portal.md). В этом кратком руководстве масштабируется хранилище **mySampleDataWarehouse**.
 
->[!Note]
+>[!IMPORTANT] 
 >Чтобы можно было изменить масштаб пула SQL, он должен быть подключен к сети. 
 
 ## <a name="scale-compute"></a>Масштабирование вычислительных ресурсов
@@ -52,7 +52,4 @@ ms.locfileid: "78200361"
     ![Переместите ползунок](media/quickstart-scale-compute-portal/scale-dwu.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Вы научились масштабировать вычислительные ресурсы для пула SQL. Чтобы узнать больше о пуле SQL, перейдите к учебнику по загрузке данных.
-
-> [!div class="nextstepaction"]
->[Загрузка данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md)
+Чтобы узнать больше о пуле SQL, перейдите к руководству по [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md). 

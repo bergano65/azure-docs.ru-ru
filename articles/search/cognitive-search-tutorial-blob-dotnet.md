@@ -8,12 +8,12 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 02/27/2020
-ms.openlocfilehash: 0b9e7732e5274fd71c773a19d17e09ecdaa2ceb0
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.openlocfilehash: 169a33d12e98235dcb4e4f317dbb8d91eb7446a4
+ms.sourcegitcommit: f5e4d0466b417fa511b942fd3bd206aeae0055bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78270019"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78851132"
 ---
 # <a name="tutorial-use-c-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Руководство по использованию C# и искусственного интеллекта для создания доступного для поиска содержимого на основе данных больших двоичных объектов Azure
 
@@ -186,7 +186,7 @@ namespace EnrichwithAI
 
 ### <a name="create-a-client"></a>Создание клиента
 
-Создайте экземпляр класса `SearchServiceClient` в разделе Main.
+Создайте экземпляр класса `SearchServiceClient` в разделе `Main`.
 
 ```csharp
 public static void Main(string[] args)
@@ -213,6 +213,22 @@ private static SearchServiceClient CreateSearchServiceClient(IConfigurationRoot 
 > [!NOTE]
 > Класс `SearchServiceClient` управляет подключениями к службе поиска. Во избежание открытия слишком большого числа подключений в приложении рекомендуется по возможности совместно использовать один экземпляр `SearchServiceClient` . Его методы поддерживают такое использование, так как являются потокобезопасными.
 > 
+
+### <a name="add-function-to-exit-the-program-during-failure"></a>Добавление функции для выхода из программы во время сбоя
+
+Этот учебник поможет вам разобраться в каждом этапе работы конвейера индексирования. Если произошла критическая ошибка, которая не позволяет программе создать источник данных, набор навыков, индекс или индексатор, программа выдаст сообщение об ошибке и выполнит выход, чтобы можно было разобраться в ее причине и устранить ее.
+
+Добавьте `ExitProgram` в `Main`, чтобы обработать сценарии, требующие завершения работы программы.
+
+```csharp
+private static void ExitProgram(string message)
+{
+    Console.WriteLine("{0}", message);
+    Console.WriteLine("Press any key to exit the program...");
+    Console.ReadKey();
+    Environment.Exit(0);
+}
+```
 
 ## <a name="3---create-the-pipeline"></a>3\. Создание конвейера
 
@@ -251,7 +267,7 @@ private static DataSource CreateOrUpdateDataSource(SearchServiceClient serviceCl
 
 При успешном выполнении запроса метод вернет сведения о созданном источнике данных. Если при выполнении запроса возникнет ошибка, например из-за недопустимого параметра, метод вернет исключение.
 
-Теперь добавьте строку в Main, чтобы вызвать только что добавленную функцию `CreateOrUpdateDataSource`.
+Теперь добавьте строку в раздел `Main`, чтобы вызвать только что добавленную функцию `CreateOrUpdateDataSource`.
 
 ```csharp
 public static void Main(string[] args)
@@ -537,7 +553,7 @@ private static Skillset CreateOrUpdateDemoSkillSet(SearchServiceClient serviceCl
 }
 ```
 
-Добавьте следующие строки в Main.
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
     // Create the skills
@@ -675,7 +691,7 @@ private static Index CreateDemoIndex(SearchServiceClient serviceClient)
 
 При тестировании вы можете обнаружить, что пытаетесь создать уже существующий индекс. Поэтому предварительно проверяйте, не создан ли он.
 
-Добавьте следующие строки в Main.
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
     // Create the index
@@ -779,7 +795,7 @@ private static Indexer CreateDemoIndexer(SearchServiceClient serviceClient, Data
     return indexer;
 }
 ```
-Добавьте следующие строки в Main.
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
     // Create the indexer, map fields, and execute transformations
@@ -840,7 +856,7 @@ private static void CheckIndexerOverallStatus(SearchServiceClient serviceClient,
 
 Предупреждения часто возникают с некоторыми исходными файлами и комбинациями навыков и не всегда указывают на проблему. В этом руководстве предупреждения являются неопасными (например, нет текстовых входных данных из файлов JPEG).
 
-Добавьте следующие строки в Main.
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
     // Check indexer overall status
@@ -854,7 +870,7 @@ private static void CheckIndexerOverallStatus(SearchServiceClient serviceClient,
 
 Для проверки запросите индекс для всех полей.
 
-Добавьте следующие строки в Main.
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
 DocumentSearchResult<DemoIndex> results;
@@ -890,7 +906,7 @@ private static SearchIndexClient CreateSearchIndexClient(IConfigurationRoot conf
 }
 ```
 
-Добавьте следующий код в Main. Первый запрос try-catch возвращает определение индекса с именем и типом, а также атрибуты каждого поля. Второй — параметризованный запрос, где `Select` указывает, какие поля включать в результаты, например `organizations`. Строка поиска `"*"` возвращает все содержимое одного поля.
+Добавьте в раздел `Main` следующий код. Первый запрос try-catch возвращает определение индекса с именем и типом, а также атрибуты каждого поля. Второй — параметризованный запрос, где `Select` указывает, какие поля включать в результаты, например `organizations`. Строка поиска `"*"` возвращает все содержимое одного поля.
 
 ```csharp
 //Verify content is returned after indexing is finished

@@ -5,16 +5,70 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 02/05/2020
-ms.openlocfilehash: ecee13850e735f827a5465e0f49039f514afe233
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.date: 03/05/2020
+ms.openlocfilehash: b42acdf64612da6837bc67752f7a22169ddef7e2
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77657747"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78673326"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="march-2020"></a>Март 2020 г.
+
+### <a name="agents"></a>Агенты
+Несколько обновлений в рамках перезаписи содержимого расширения диагностики.
+
+- [Обзор агентов мониторинга Azure](platform/agents-overview.md) — реструктурированы таблицы для улучшения описания уникальных функций каждого агента.
+- [Обзор расширения "Диагностика Azure"](platform/diagnostics-extension-overview.md) — полностью перезаписан.
+- [Использование хранилища BLOB-объектов для IIS и хранилища таблиц для событий в Azure Monitor](platform/diagnostics-extension-logs.md) — внесены общие исправления для большей ясности и обновлены некоторые сведения.
+- [Установка и настройка расширения "Диагностика Microsoft Azure" (WAD)](platform/diagnostics-extension-windows-install.md) — новая статья. 
+- [Схема расширения "Диагностика Windows"](platform/diagnostics-extension-schema-windows.md) — реорганизовано содержимое.
+- [Отправка данных из расширения "Диагностика Windows Azure" в Центры событий Azure](platform/diagnostics-extension-stream-event-hubs.md) — полностью переписана и обновлена вся статья.
+- [Хранение и просмотр диагностических данных в службе хранилища Azure](platform/diagnostics-extension-to-storage.md) — полностью переписана и обновлена вся статья.
+- [Расширение виртуальной машины с Log Analytics для Windows](../virtual-machines/extensions/oms-windows.md) — лучше объяснена связь с агентом Log Analytics.
+- [Расширение виртуальной машины с Azure Monitor для Linux](../virtual-machines/extensions/oms-linux.md) — лучше объяснена связь с агентом Log Analytics.
+
+
+
+
+### <a name="application-insights"></a>Application Insights
+- [Строки подключения в Azure Application Insights](app/sdk-connection-string.md) — новая статья.
+
+### <a name="insights-and-solutions"></a>Полезные сведения и решения
+
+#### <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
+- [Интеграция Azure Active Directory со Службой контейнеров Azure](../aks/azure-ad-integration.md) — добавлено примечание о создании клиентского приложения для поддержки кластера с поддержкой RBAC, обеспечивающего поддержку Azure Monitor для контейнеров.
+
+#### <a name="azure-monitor-for-vms"></a>Azure Monitor для виртуальных машин
+- [Часто задаваемые вопросы об Azure Monitor для виртуальных машин (общедоступная версия)](insights/vminsights-ga-release-faq.md) — изменение способа хранения данных производительности.
+
+#### <a name="office-365"></a>Office 365
+- [Решение для управления Office 365 в Azure](insights/solution-office-365.md) — обновленная дата устаревания.
+
+
+### <a name="logs"></a>Журналы
+- [Оптимизация запросов журналов в Azure Monitor](log-query/query-optimization.md) — новая статья.
+- [Управление использованием и затратами для журналов Azure Monitor](platform/manage-cost-storage.md) — улучшены примеры запросов, помогающие понять использование.
+
+### <a name="metrics"></a>Метрики
+- [Метрики платформы Azure Monitor, экспортируемые с использованием параметров диагностики](platform/metrics-supported-export-diagnostic-settings.md) — добавлен раздел об изменении поведения для значений NULL и нулевых значениях.
+
+
+### <a name="visualizations"></a>Визуализации
+Несколько новых статей с инструкциями по переходу с конструктора представлений на книги.
+
+- [Руководство по переходу с конструктора представлений Azure Monitor на книги](platform/view-designer-conversion-overview.md) — новая статья.
+- [Варианты перехода с конструктора представлений Azure Monitor на книги](platform/view-designer-conversion-options.md) — новая статья.
+- [Переход с плиток в конструкторе представлений Azure Monitor на книги](platform/view-designer-conversion-tiles.md) — новая статья.
+- [Общие сведения о переходе с конструктора представлений Azure Monitor на книги и доступе к ним](platform/view-designer-conversion-access.md) — новая статья.
+- [Общие задачи для перехода с конструктора представлений Azure Monitor на книги](platform/view-designer-conversion-tasks.md) — новая статья.
+- [Примеры перехода с конструктора представлений Azure Monitor на книги](platform/view-designer-conversion-examples.md) — новая статья.
+
+
+
 
 ## <a name="january-2020"></a>Январь 2020 г.
 
@@ -43,14 +97,14 @@ ms.locfileid: "77657747"
 ### <a name="insights-and-solutions"></a>Полезные сведения и решения
 
 #### <a name="azure-monitor-for-containers"></a>Azure Monitor для контейнеров
-- [Настройка Azure Monitor для сбора данных агента контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-agent-config) — добавлены сведения об обновлении агента в Azure Red Hat OpenShift и дополнительные сведения о различиях методов обновления агента.
-- [Создание оповещений о производительности для контейнеров Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-alerts) — пересмотрены сведения и обновлены инструкции для создания оповещения на основе данных о производительности, хранящихся в рабочей области, с помощью функции контекстных оповещений рабочей области.
-- [Использование мониторинга Kubernetes с Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-analyze) — обновлены статьи с общими сведениями и анализом, посвященные поддержке кластеров Kubernetes Windows.
-- [Настройка кластеров Azure Red Hat OpenShift с Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-azure-redhat-setup) — добавлены сведения об обновлении агента в Azure Red Hat OpenShift и дополнительные сведения о различиях методов обновления агента.
-- [Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-hybrid-setup) — в статью добавлено описание дополнительной поддержки защищенного порта 10250 с помощью Kubelet cAdvisor.
-- [Как управлять Azure Monitor для агента контейнера](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-manage-agent) — обновлены сведения о поведении и конфигурации сбора метрик с помощью Azure Red Hat OpenShift в сравнении с другими типами кластеров Kubernetes.
-- [Настройка Azure Monitor для интеграции контейнеров Prometheus](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-prometheus-integration) — обновлены сведения о поведении и конфигурации сбора метрик с помощью Azure Red Hat OpenShift в сравнении с другими типами кластеров Kubernetes.
-- [Как обновить Azure Monitor для контейнеров метрик](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-update-metrics) — обновлены сведения о поведении и конфигурации сбора метрик с помощью Azure Red Hat OpenShift в сравнении с другими типами кластеров Kubernetes.
+- [Настройка Azure Monitor для сбора данных агента контейнеров](insights/container-insights-agent-config.md) — добавлены сведения об обновлении агента в Azure Red Hat OpenShift и дополнительные сведения о различиях методов обновления агента.
+- [Создание оповещений о производительности для контейнеров Azure Monitor](insights/container-insights-alerts.md) — пересмотрены сведения и обновлены инструкции для создания оповещения на основе данных о производительности, хранящихся в рабочей области, с помощью функции контекстных оповещений рабочей области.
+- [Использование мониторинга Kubernetes с Azure Monitor для контейнеров](insights/container-insights-analyze.md) — обновлены статьи с общими сведениями и анализом, посвященные поддержке кластеров Kubernetes Windows.
+- [Настройка кластеров Azure Red Hat OpenShift с Azure Monitor для контейнеров](insights/container-insights-azure-redhat-setup.md) — добавлены сведения об обновлении агента в Azure Red Hat OpenShift и дополнительные сведения о различиях методов обновления агента.
+- [Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров](insights/container-insights-hybrid-setup.md) — в статью добавлено описание дополнительной поддержки защищенного порта 10250 с помощью Kubelet cAdvisor.
+- [Как управлять Azure Monitor для агента контейнера](insights/container-insights-manage-agent.md) — обновлены сведения о поведении и конфигурации сбора метрик с помощью Azure Red Hat OpenShift в сравнении с другими типами кластеров Kubernetes.
+- [Настройка Azure Monitor для интеграции контейнеров Prometheus](insights/container-insights-prometheus-integration.md) — обновлены сведения о поведении и конфигурации сбора метрик с помощью Azure Red Hat OpenShift в сравнении с другими типами кластеров Kubernetes.
+- [Как обновить Azure Monitor для контейнеров метрик](insights/container-insights-update-metrics.md) — обновлены сведения о поведении и конфигурации сбора метрик с помощью Azure Red Hat OpenShift в сравнении с другими типами кластеров Kubernetes.
 
 
 #### <a name="azure-monitor-for-vms"></a>Azure Monitor для виртуальных машин

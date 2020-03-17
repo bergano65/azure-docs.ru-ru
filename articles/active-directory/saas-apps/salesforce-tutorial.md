@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Salesforce | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 02/17/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 564e8dd8e6d7c4c0e3747469875e030be30b1a9b
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: a875cee7e6796a2c865bde4a62f2f0463eb12130
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77046711"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967736"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство. Интеграция единого входа Azure Active Directory с Salesforce
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство по Интеграция единого входа Azure Active Directory с Salesforce
 
 В этом руководстве описано, как интегрировать Salesforce с Azure Active Directory (Azure AD). Интеграция Salesforce с Azure AD обеспечивает следующие возможности.
 
@@ -180,7 +180,7 @@ ms.locfileid: "77046711"
 
     ![Настройка единого входа](./media/salesforce-tutorial/xmlchoose.png)
 
-1. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Щелкните "Сохранить".
+1. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Установите флажок **User Provisioning Enabled** (Подготовка пользователей включена) и нажмите кнопку **Save** (Сохранить).
 
     ![Настройка единого входа](./media/salesforce-tutorial/salesforcexml.png)
 

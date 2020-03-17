@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+title: Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
 description: Это одностраничное приложение показывает, как можно использовать API Bing для поиска в Интернете, чтобы извлекать, анализировать и отображать актуальные результаты поиска в одностраничном приложении.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: tutorial
-ms.date: 12/09/2019
+ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: 1acc17f9c2fbeb53b992891174866433d14f128d
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: f692367ad431dc8f1623e1b3d5109c313e351934
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986667"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943873"
 ---
-# <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+# <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
 Это одностраничное приложение показывает, как можно извлекать, анализировать и отображать актуальные результаты поиска из API Bing для поиска в Интернете. fВ этом руководстве используется стандартный HTML и CSS и оно ориентировано на код JavaScript. HTML, CSS и JS-файлы доступны на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/Tutorials/Bing-Web-Search) вместе с кратким руководством.
 
@@ -37,8 +37,7 @@ ms.locfileid: "76986667"
 Для запуска приложения необходимы следующие элементы:
 
 * Node.js 8 или более поздняя версия.
-* ключ подписки;
-
+* Ключ подписки для API "Поиск Bing". Если у вас нет такого ключа, [создайте ресурс для Поиска Bing версии 7](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7). Можно также использовать [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 ## <a name="get-the-source-code-and-install-dependencies"></a>Получение исходного кода и установка зависимостей
 
 Первым шагом является клонирование репозитория с исходным кодом примера приложения.

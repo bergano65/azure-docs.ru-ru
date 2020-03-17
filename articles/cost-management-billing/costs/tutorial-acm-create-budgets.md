@@ -4,17 +4,17 @@ description: Это руководство помогает планироват
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 03/02/2020
+ms.date: 03/11/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: f5943e37267a79ad342fbd9afe0256a4ca7182e6
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: b81236fd63d9289f797056cf7aaceb7d826511af
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251169"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128351"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство по Создание бюджетов Azure и управление ими
 
@@ -40,7 +40,7 @@ ms.locfileid: "78251169"
 
 Бюджеты поддерживаются для различных типов учетных записей Azure. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](understand-cost-mgt-data.md) (Интерпретация данных службы "Управление затратами"). Чтобы просмотреть данные о бюджете, вам нужен как минимум доступ на чтение для учетной записи Azure.
 
-Если вы используете новую подписку, вы не сможете сразу создать бюджет или использовать другие функции Управления затратами. Полная активация всех функций Управления затратами может потребовать до 48 часов.
+Если вы используете новую подписку, вы не сможете сразу создать бюджет или использовать другие функции службы "Управление затратами". Полная активация всех функций Управления затратами может потребовать до 48 часов.
 
 Для подписок Azure EA вам необходимо иметь доступ на чтение для просмотра данных о бюджете. А для создания и администрирования бюджетов требуется разрешение уровня участника. Вы можете создать отдельные бюджеты для подписок EA и групп ресурсов. Однако вы не можете создать бюджеты для учетных записей выставления счетов EA.
 
@@ -54,7 +54,7 @@ ms.locfileid: "78251169"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-- Войдите на портал Azure по адресу https://portal.azure.com.
+- Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-a-budget-in-the-azure-portal"></a>Создание бюджета на портале Azure
 
@@ -164,7 +164,7 @@ New-AzureRmConsumptionBudget -Amount 100 -Name TestPSBudget -Category Cost -Star
 ```
 ## <a name="create-a-budget-with-an-azure-resource-manager-template"></a>Создание бюджета с помощью шаблона Azure Resource Manager
 
-Вы можете создать бюджет, используя шаблон Azure Resource Manager. Шаблон помогает создать бюджет в группе ресурсов. Шаблон поддерживает только клиенты с соглашением Enterprise.
+Вы можете создать бюджет, используя шаблон Azure Resource Manager. Шаблон помогает создать бюджет в группе ресурсов. 
 
 Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон:
 

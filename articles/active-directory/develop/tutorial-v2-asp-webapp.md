@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 50eb88373b05d979d7f4b67b317e98c2a944459b
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: e33f52d5c1f9c06a5acbae5c66b051ca82ef14c0
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701336"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126642"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -30,6 +30,9 @@ ms.locfileid: "76701336"
 Завершив работу, вы получите приложение, которое поддерживает вход с использованием личных учетных записей служб outlook.com, live.com и т. п. Для входа в это приложение можно также использовать рабочие и учебные учетные записи любой компании или организации, интегрированной с платформой удостоверений Майкрософт.
 
 > Для работы с этим руководством требуется Microsoft Visual Studio 2019.  У вас его нет?  [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
+
+>[!NOTE]
+> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Добавление функции входа платформы удостоверений Майкрософт в веб-приложение ASP.NET](quickstart-v2-aspnet-webapp.md).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 

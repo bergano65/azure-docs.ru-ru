@@ -1,19 +1,19 @@
 ---
 title: Интеграция со службой "Приватный канал Azure"
 description: Узнайте, как интегрировать Azure Key Vault со службой "Приватный канал Azure"
-author: msmbaldwin
-ms.author: mbaldwin
-ms.date: 01/28/2020
+author: ShaneBala-keyvault
+ms.author: sudbalas
+ms.date: 03/08/2020
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: e058e643f4c37336f09b43c41cd09aa361a23d15
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 6a5cc5bbdb56e308d79b8eb2c8db546184cedb39
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76908638"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79080349"
 ---
-# <a name="integrate-key-vault-with-azure-private-link-preview"></a>Интеграция Key Vault со службой "Приватный канал Azure" (предварительная версия)
+# <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
 Приватный канал Azure обеспечивает доступ к службам Azure (например, к Azure Key Vault, службе хранилища Azure и Azure Cosmos DB), а также размещенным в Azure службам клиентов или партнеров через частную конечную точку виртуальной сети.
 
@@ -34,7 +34,7 @@ ms.locfileid: "76908638"
 
 Частная конечная точка использует частный IP-адрес в виртуальной сети.
 
-## <a name="establish-a-private-link-connection-to-key-vault"></a>Установка подключения Приватного канала к хранилищу ключей
+## <a name="establish-a-private-link-connection-to-key-vault-using-the-azure-portal"></a>Установка подключения Приватного канала к хранилищу ключей с помощью портала Azure 
 
 Сначала создайте виртуальную сеть, выполнив действия, описанные в статье [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md).
 
@@ -79,6 +79,60 @@ ms.locfileid: "76908638"
 ![Изображение](./media/private-link-service-3.png)
 ![Изображение](./media/private-link-service-4.png)
 
+## <a name="establish-a-private-link-connection-to-key-vault-using-cli"></a>Установка подключения Приватного канала к Key Vault с помощью интерфейса командой строки
+
+### <a name="login-to-azure-cli"></a>Вход в Azure CLI
+```console
+az login 
+```
+### <a name="select-your-azure-subscription"></a>Выбор подписки Azure 
+```console
+az account set --subscription {AZURE SUBSCRIPTION ID}
+```
+### <a name="create-a-new-resource-group"></a>Создание новой группы ресурсов 
+```console
+az group create -n {RG} -l {AZURE REGION}
+```
+### <a name="register-microsoftkeyvault-as-a-provider"></a>Регистрация Microsoft.KeyVault в качестве поставщика 
+```console
+az provider register -n Microsoft.KeyVault
+```
+### <a name="create-a-new-key-vault"></a>Создание Key Vault
+```console
+az keyvault create --name {KEY VAULT NAME} --resource-group {RG} --location {AZURE REGION}
+```
+### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
+```console
+az network vnet create --resource-group {RG} --name {vNet NAME} --location {AZURE REGION}
+```
+### <a name="add-a-subnet"></a>Добавление подсети
+```console
+az network vnet subnet create --resource-group {RG} --vnet-name {vNet NAME} --name {subnet NAME} --address-prefixes {addressPrefix}
+```
+### <a name="disable-virtual-network-policies"></a>Отключение политик виртуальной сети 
+```console
+az network vnet subnet update --name {subnet NAME} --resource-group {RG} --vnet-name {vNet NAME} --disable-private-endpoint-network-policies true
+```
+### <a name="add-a-private-dns-zone"></a>Добавление частной зоны DNS 
+```console
+az network private-dns zone create --resource-group {RG} --name privatelink.vaultcore.azure.net
+```
+### <a name="link-private-dns-zone-to-virtual-network"></a>Связывание частной зоны DNS с виртуальной сетью 
+```console
+az network private-dns link vnet create --resoruce-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.vaultcore.azure.net --name {dnsZoneLinkName} --registration-enabled true
+```
+### <a name="create-a-private-endpoint-automatically-approve"></a>Создание частной конечной точки (автоматическое утверждение) 
+```console
+az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.KeyVault/vaults/ {KEY VAULT NAME}" --group-ids vault --connection-name {Private Link Connection Name} --location {AZURE REGION}
+```
+### <a name="create-a-private-endpoint-manually-request-approval"></a>Создание частной конечной точки (запрос утверждения вручную) 
+```console
+az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.KeyVault/vaults/ {KEY VAULT NAME}" --group-ids vault --connection-name {Private Link Connection Name} --location {AZURE REGION} --manual-request
+```
+### <a name="show-connection-status"></a>Отображение строк подключения 
+```console
+az network private-endpoint show --resource-group {RG} --name {Private Endpoint Name}
+```
 ## <a name="manage-private-link-connection"></a>Управление подключением Приватного канала
 
 При создании частной конечной точки подключение должно быть утверждено. Если ресурс, для которого создается частная конечная точка, расположен в вашем каталоге, вы сможете одобрить запрос на подключение при наличии необходимых разрешений. При подключении к ресурсу Azure из другого каталога необходимо дождаться, пока владелец этого ресурса не одобрит запрос на подключение.
@@ -92,7 +146,7 @@ ms.locfileid: "76908638"
 | Reject | Отклонено | Подключение отклонил владелец ресурса Приватного канала. |
 | Удалить | Отключено | Подключение удалил владелец ресурса Приватного канала. Частная конечная точка станет информативной и подлежит удалению для очистки. |
  
-###  <a name="how-to-manage-a-private-endpoint-connection-to-key-vault"></a>Управление подключением частной конечной точки к хранилищу ключей
+###  <a name="how-to-manage-a-private-endpoint-connection-to-key-vault-using-the-azure-portal"></a>Управление подключением частной конечной точки к Key Vault с помощью портала Azure 
 
 1. Войдите на портал Azure.
 1. В строке поиска введите "хранилища ключей".
@@ -104,6 +158,23 @@ ms.locfileid: "76908638"
 1. Если есть подключения к частным конечным точкам, которые вы хотите отклонить (по запросу в ожидании или существующее подключение), выберите подключение и нажмите кнопку "Отклонить".
 
     ![Образ —](./media/private-link-service-7.png)
+
+##  <a name="how-to-manage-a-private-endpoint-connection-to-key-vault-using-azure-cli"></a>Управление подключением частной конечной точки к Key Vault с помощью Azure CLI
+
+### <a name="approve-a-private-link-connection-request"></a>Утверждение запроса на подключение к Приватному каналу
+```console
+az keyvault private-endpoint-connection approve --approval-description {"OPTIONAL DESCRIPTION"} --resource-group {RG} --vault-name {KEY VAULT NAME} –name {PRIVATE LINK CONNECTION NAME}
+```
+
+### <a name="deny-a-private-link-connection-request"></a>Отклонение запроса на подключение к Приватному каналу
+```console
+az keyvault private-endpoint-connection reject --rejection-description {"OPTIONAL DESCRIPTION"} --resource-group {RG} --vault-name {KEY VAULT NAME} –name {PRIVATE LINK CONNECTION NAME}
+```
+
+### <a name="delete-a-private-link-connection-request"></a>Удаление запроса на подключение к Приватному каналу
+```console
+az keyvault private-endpoint-connection delete --resource-group {RG} --vault-name {KEY VAULT NAME} --name {PRIVATE LINK CONNECTION NAME}
+```
 
 ## <a name="validate-that-the-private-link-connection-works"></a>Проверка работоспособности подключения Приватного канала
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50d1875ce2529222e8ff7472c48bf6d4dd878667
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 917ba9274276fec5d01a40bdf7219e8d4fee1395
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772873"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78897758"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-fiori"></a>Руководство по Интеграции единого входа Azure Active Directory с SAP Fiori
 
@@ -35,9 +35,9 @@ ms.locfileid: "70772873"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка SAP Fiori с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "70772873"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в SAP Fiori](#configure-sap-fiori-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя SAP Fiori](#create-sap-fiori-test-user)** требуется для того, чтобы в SAP Fiori существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -140,11 +140,11 @@ ms.locfileid: "70772873"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
@@ -173,7 +173,7 @@ ms.locfileid: "70772873"
 
     1. Из списка **Преобразование** выберите **ExtractMailPrefix()** .
 
-    1. Из списка **Параметр 1** выберите **user.userprinicipalname**.
+    1. Из списка **Параметр 1** выберите **user.userprincipalname**.
 
     1. Щелкните **Сохранить**.
 
@@ -205,7 +205,7 @@ ms.locfileid: "70772873"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к SAP Fiori.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **SAP Fiori**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -231,15 +231,15 @@ ms.locfileid: "70772873"
 
     ![Параметры "Add" (Добавить) и "Upload Metadata File" (Отправить файл метаданных) в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-uploadmetadata.png)
 
-1. Передайте файл метаданных, скачанный с портала Azure. Щелкните **Далее**.
+1. Передайте файл метаданных, скачанный с портала Azure. Выберите **Далее**.
 
     ![Выбор файла метаданных для передачи в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-metadatafile.png)
 
-1. На следующей странице в поле **Alias** (Псевдоним) введите псевдоним. Например, **aadsts**. Щелкните **Далее**.
+1. На следующей странице в поле **Alias** (Псевдоним) введите псевдоним. Например, **aadsts**. Выберите **Далее**.
 
     ![Поле "Alias" (Псевдоним) в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-aliasname.png)
 
-1. Убедитесь, что поле **Digest Algorithm** (Алгоритм выборки сообщений) содержит значение **SHA-256**. Щелкните **Далее**.
+1. Убедитесь, что поле **Digest Algorithm** (Алгоритм выборки сообщений) содержит значение **SHA-256**. Выберите **Далее**.
 
     ![Проверка значения поля "Digest Algorithm" (Алгоритм выборки сообщений) в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-identityprovider.png)
 
@@ -259,7 +259,7 @@ ms.locfileid: "70772873"
 
     ![Параметры в разделе "Authentication Requirements" (Требования аутентификации) и параметр "Finish" (Готово) в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-authentication.png)
 
-1. Выберите **Trusted Provider** (Надежный поставщик)  > **Identity Federation** (Федерация удостоверений) (внизу страницы). Выберите **Изменить**
+1. Выберите **Trusted Provider** (Надежный поставщик)  > **Identity Federation** (Федерация удостоверений) (внизу страницы). Выберите команду **Изменить**.
 
     ![Вкладки "Trusted Provider" (Надежный поставщик) и "Identity Federation" (Федерация удостоверений) в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-trustedprovider.png)
 
@@ -267,7 +267,7 @@ ms.locfileid: "70772873"
 
     ![Параметр "Add" (Добавить) на вкладке "Identity Federation" (Федерация удостоверений)](./media/sapfiori-tutorial/tutorial-sapnetweaver-addidentityprovider.png)
 
-1. В диалоговом окне **Supported NameID Formats** (Поддерживаемые форматы NameID) выберите **Unspecified** (Не указано). Нажмите кнопку **ОК**.
+1. В диалоговом окне **Supported NameID Formats** (Поддерживаемые форматы NameID) выберите **Unspecified** (Не указано). Щелкните **ОК**.
 
     ![Диалоговое окно "Supported NameID Formats" (Поддерживаемые форматы NameID) и параметры в SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-nameid.png)
 
@@ -323,9 +323,9 @@ ms.locfileid: "70772873"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -6,19 +6,23 @@ ms.author: lcozzens
 ms.date: 03/05/2020
 ms.topic: quickstart
 ms.service: azure-app-configuration
-ms.custom: mvc
-ms.openlocfilehash: 7c6f4b2ea9494c004067a8b19df2c2f098ac2b7f
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.custom:
+- mvc
+- subject-armqs
+ms.openlocfilehash: c45f6855c33dff2790ced306fd7f049b98dd1387
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78274513"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79126382"
 ---
-# <a name="quickstart-automated-vm-deployment-with-app-configuration"></a>Краткое руководство. Автоматизированное развертывание виртуальной машины с помощью Конфигурации приложений
+# <a name="quickstart-automated-vm-deployment-with-app-configuration-and-resource-manager-template"></a>Краткое руководство. Автоматизированное развертывание виртуальной машины с помощью службы "Конфигурация приложений" и шаблона Resource Manager
 
 Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командлетов или скриптов PowerShell. В этом кратком руководстве показано, как использовать Azure PowerShell и шаблоны Azure Resource Manager для развертывания хранилища службы "Конфигурация приложений Azure". Затем вы также узнаете, как использовать пары "ключ-значение" в хранилище для развертывания виртуальной машины.
 
 Вы будете использовать необходимый шаблон, чтобы создать хранилище Конфигурации приложений, а затем добавите в него пары "ключ-значение" с помощью портала Azure или Azure CLI. Основной шаблон ссылается на имеющиеся конфигурации пар "ключ-значение" из существующего хранилища конфигураций. Извлеченные значения используются для установки свойств ресурсов, созданных шаблоном, например виртуальной машины в этом примере.
+
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -85,7 +89,7 @@ New-AzResourceGroup `
       },
       "skuName": {
         "type": "string",
-        "defaultValue": "free",
+        "defaultValue": "standard",
         "metadata": {
           "description": "Specifies the SKU of the app configuration store."
         }
@@ -332,7 +336,7 @@ New-AzResourceGroup `
                     "imageReference": {
                         "publisher": "MicrosoftWindowsServer",
                         "offer": "WindowsServer",
-                        "sku": "[listKeyValue(variables('appConfigRef'), '2019-02-01-preview', variables('windowsOSVersionParameters')).value]",
+                        "sku": "[listKeyValue(variables('appConfigRef'), '2019-10-01', variables('windowsOSVersionParameters')).value]",
                         "version": "latest"
                     },
                     "osDisk": {
@@ -340,7 +344,7 @@ New-AzResourceGroup `
                     },
                     "dataDisks": [
                         {
-                            "diskSizeGB": "[listKeyValue(variables('appConfigRef'), '2019-02-01-preview', variables('diskSizeGBParameters')).value]",
+                            "diskSizeGB": "[listKeyValue(variables('appConfigRef'), '2019-10-01', variables('diskSizeGBParameters')).value]",
                             "lun": 0,
                             "createOption": "Empty"
                         }

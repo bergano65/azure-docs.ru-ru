@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
-ms.openlocfilehash: 9077d5c471911c9967c327c457d683b06856b920
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 40f5935c7d653ce90aa56bc5ee2bb15711bb9dd8
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78249070"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399255"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
@@ -82,9 +82,11 @@ ms.locfileid: "78249070"
 > [Скачивание примера кода]()
 
 > [!div renderon="docs"]
+
 > #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 >
-> В папке *JavaScriptSPA* измените файл *authConfig.js* и установите значения `clientID` и `authority` в разделе `msalConfig`.
+> В папке *JavaScriptSPA* измените файл *authConfig.js* и установите значения `clientID`, `authority` и `redirectUri` в разделе `msalConfig`.
+>
 > ```javascript
 >
 >  // Config object to be passed to Msal on creation
@@ -97,10 +99,10 @@ ms.locfileid: "78249070"
 >    cache: {
 >      cacheLocation: "sessionStorage", // This configures where your cache will be stored
 >      storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
->      forceRefresh: false // Set this to "true" to skip a cached token and go to the server to get a new
 >    }
 >  };  
-> ```
+>
+>```
 
 > [!div renderon="portal"]
 > > [!NOTE]
@@ -124,6 +126,27 @@ ms.locfileid: "78249070"
 > Мы настроили проект, указав значения свойств приложения. 
 
 > [!div renderon="docs"]
+> 
+> Затем в той же папке измените файл *graphConfig.js*, задав значения `graphMeEndpoint` и `graphMeEndpoint` для объекта `apiConfig`.
+> ```javascript
+>   // Add here the endpoints for MS Graph API services you would like to use.
+>   const graphConfig = {
+>     graphMeEndpoint: "Enter_the_Graph_Endpoint_Herev1.0/me",
+>     graphMailEndpoint: "Enter_the_Graph_Endpoint_Herev1.0/me/messages"
+>   };
+>
+>   // Add here scopes for access token to be used at MS Graph API endpoints.
+>   const tokenRequest = {
+>       scopes: ["Mail.Read"]
+>   };
+> ```
+>
+
+> [!div renderon="docs"]
+>
+> Где:
+> - *\<Enter_the_Graph_Endpoint_Here>*  — это конечная точка, для которой будут выполняться вызовы API. Для основной или глобальной службы API Microsoft Graph просто введите `https://graph.microsoft.com`. Дополнительные сведения см. в статье [Национальные облачные развертывания](https://docs.microsoft.com/graph/deployments).
+>
 > #### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
 
 Запустите проект с помощью веб-сервера, используя [Node.js](https://nodejs.org/en/download/):
@@ -155,7 +178,6 @@ MSAL — это библиотека, используемая для выпо�
 > [!TIP]
 > Приведенную выше версию можно заменить последней выпущенной версией в разделе с [выпусками MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases).
 
-
 Кроме того, если вы установили Node.js, последнюю версию можно скачать с помощью диспетчера пакетов Node.js (NPM):
 
 ```batch
@@ -177,7 +199,6 @@ npm install msal
     cache: {
       cacheLocation: "sessionStorage", // This configures where your cache will be stored
       storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
-      forceRefresh: false // Set this to "true" to skip a cached token and go to the server to get a new
     }
   };  
 
@@ -228,7 +249,7 @@ myMSALObj.loginPopup(loginRequest)
 Метод `acquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого выполнения метода `loginRedirect` или `loginPopup` обычно используется метод `acquireTokenSilent`, чтобы получить маркеры для доступа к защищенным ресурсам для последующих вызовов. Вызовы для запроса или обновления маркеров выполняются автоматически.
 
 ```javascript
-// Add scopes for the access token to be used at Microsoft Graph API endpoints.
+
 const tokenRequest = {
     scopes: ["Mail.Read"]
 };

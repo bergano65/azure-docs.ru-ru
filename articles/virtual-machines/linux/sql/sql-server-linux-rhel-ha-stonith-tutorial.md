@@ -7,13 +7,13 @@ ms.topic: tutorial
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
-ms.date: 01/27/2020
-ms.openlocfilehash: 0eaff1685cea88d352f1a22f382b7af2ed0ed6cb
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.date: 02/27/2020
+ms.openlocfilehash: 40c91f67231fb6a9d01191ee5215eae8d4dc045b
+ms.sourcegitcommit: be53e74cd24bbabfd34597d0dcb5b31d5e7659de
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77252218"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79096701"
 ---
 # <a name="tutorial-configure-availability-groups-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство по Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure 
 
@@ -360,8 +360,8 @@ Description : The fence-agents-azure-arm package contains a fence agent for Azur
  3. Щелкните [**Регистрация приложений**](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
  4. Щелкните **Новая регистрация**
  5. Введите **имя**, например `<resourceGroupName>-app`, выберите **Accounts in this organization directory only** (Учетные записи только из этого каталога организации)
- 6. Выберите тип приложения **Веб**, введите URL-адрес входа (например, http://localhost) ) и нажмите кнопку "Добавить". URL-адрес входа не используется и может быть любым допустимым URL-адресом.
- 7. Выберите **Certificates and secrets** (Сертификаты и секреты), а затем щелкните **Новый секрет клиента**
+ 6. Выберите тип приложения **Веб**, введите URL-адрес входа (например, http://localhost) ) и нажмите кнопку "Добавить". URL-адрес входа не используется и может быть любым допустимым URL-адресом. После этого щелкните **Зарегистрировать**.
+ 7. Выберите **Сертификаты и секреты**, а затем щелкните **Новый секрет клиента**.
  8. Введите описание нового ключа (секрета клиента), выберите **Срок действия не ограничен** и нажмите кнопку **Добавить**
  9. Запишите значение секрета. Он используется в качестве пароля субъекта-службы.
 10. Щелкните **Обзор**. Запишите идентификатор приложения. Он используется в качестве имени пользователя (идентификатор входа в следующих шагах) субъекта-службы
@@ -569,12 +569,14 @@ sudo systemctl restart mssql-server
 ```sql
 CREATE CERTIFICATE dbm_certificate WITH SUBJECT = 'dbm';
 GO
+
 BACKUP CERTIFICATE dbm_certificate
    TO FILE = '/var/opt/mssql/data/dbm_certificate.cer'
    WITH PRIVATE KEY (
            FILE = '/var/opt/mssql/data/dbm_certificate.pvk',
            ENCRYPTION BY PASSWORD = '<Private_Key_Password>'
        );
+GO
 ```
 
 Выйдите из сеанса SQL CMD, выполнив команду `exit` и вернитесь в сеанс SSH.
@@ -623,6 +625,7 @@ BACKUP CERTIFICATE dbm_certificate
         FILE = '/var/opt/mssql/data/dbm_certificate.pvk',
         DECRYPTION BY PASSWORD = '<Private_Key_Password>'
                 );
+    GO
     ```
 
 ### <a name="create-the-database-mirroring-endpoints-on-all-replicas"></a>Создайте конечные точки на всех репликах зеркального отображения базы данных
@@ -640,6 +643,7 @@ ENCRYPTION = REQUIRED ALGORITHM AES
 GO
 
 ALTER ENDPOINT [Hadr_endpoint] STATE = STARTED;
+GO
 ```
 
 ### <a name="create-the-availability-group"></a>Создание группы доступности
@@ -677,6 +681,7 @@ CREATE AVAILABILITY GROUP [ag1]
 GO
 
 ALTER AVAILABILITY GROUP [ag1] GRANT CREATE ANY DATABASE;
+GO
 ```
 
 ### <a name="create-a-sql-server-login-for-pacemaker"></a>Создание учетных данных SQL Server для Pacemaker
@@ -688,9 +693,12 @@ ALTER AVAILABILITY GROUP [ag1] GRANT CREATE ANY DATABASE;
 ```sql
 USE [master]
 GO
+
 CREATE LOGIN [pacemakerLogin] with PASSWORD= N'<password>';
 GO
+
 ALTER SERVER ROLE [sysadmin] ADD MEMBER [pacemakerLogin];
+GO
 ```
 
 Сохраните учетные данные, используемые для входа SQL Server на всех серверах SQL Server. 
@@ -733,6 +741,7 @@ ALTER SERVER ROLE [sysadmin] ADD MEMBER [pacemakerLogin];
     GO
 
     ALTER AVAILABILITY GROUP [ag1] GRANT CREATE ANY DATABASE;
+    GO
     ```
 
 1. Выполните следующий сценарий Transact-SQL на первичной реплике и каждой вторичной реплике:
@@ -742,6 +751,7 @@ ALTER SERVER ROLE [sysadmin] ADD MEMBER [pacemakerLogin];
     GO
     
     GRANT VIEW SERVER STATE TO pacemakerLogin;
+    GO
     ```
 
 1. После объединения вторичных реплик их можно увидеть в обозревателе объектов SSMS, развернув узел **высокого уровня доступности Always On**:
@@ -766,6 +776,7 @@ BACKUP DATABASE [db1] -- backs up the database to disk
 GO
 
 ALTER AVAILABILITY GROUP [ag1] ADD DATABASE [db1]; -- adds the database db1 to the AG
+GO
 ```
 
 ### <a name="verify-that-the-database-is-created-on-the-secondary-servers"></a>Убедитесь, что база данных создана на вторичных серверах.
@@ -805,7 +816,6 @@ SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.d
     Master/Slave Set: ag_cluster-master [ag_cluster]
     Masters: [ <VM1> ]
     Slaves: [ <VM2> <VM3> ]
-    virtualip      (ocf::heartbeat:IPaddr2):       Started <VM1>
     ```
 
 ### <a name="create-a-virtual-ip-resource"></a>Создание ресурса виртуального IP-адреса
@@ -946,7 +956,6 @@ Daemon Status:
          Masters: [ <VM2> ]
          Slaves: [ <VM1> <VM3> ]
     virtualip      (ocf::heartbeat:IPaddr2):       Started <VM2>
-     
     ```
 
 ## <a name="test-fencing"></a>Тестирование ограждения
@@ -975,7 +984,7 @@ Node: <VM3> fenced
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы использовать Прослушиватель группы доступности для серверов SQL, созданных в Azure, сначала создайте и настройте LB.
+Чтобы использовать прослушиватель группы доступности для серверов SQL, нужно создать и настроить подсистему балансировки нагрузки.
 
 > [!div class="nextstepaction"]
-> [Create and configure the load balancer in the Azure portal](../../../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener.md#create-and-configure-the-load-balancer-in-the-azure-portal) (Создание и настройка LB на портале Azure)
+> [Руководство. Настройка прослушивателя группы доступности для SQL Server на виртуальных машинах RHEL в Azure](sql-server-linux-rhel-ha-listener-tutorial.md)

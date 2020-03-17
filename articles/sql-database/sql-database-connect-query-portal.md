@@ -12,12 +12,12 @@ author: Ninarn
 ms.author: ninarn
 ms.reviewer: carlrab
 ms.date: 10/24/2019
-ms.openlocfilehash: 3990d7ec63c312d38168fe76269e1a920f1a6817
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: b3ccc2a5343cf02127990dca80a1300959fa06a3
+ms.sourcegitcommit: 20429bc76342f9d365b1ad9fb8acc390a671d61e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827109"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79087177"
 ---
 # <a name="quickstart-use-the-azure-portals-sql-query-editor-to-connect-and-query-data"></a>Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса
 
@@ -32,9 +32,9 @@ ms.locfileid: "73827109"
   || Отдельная база данных |
   |:--- |:--- |
   | Создание| [Портал](sql-database-single-database-get-started.md) |
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) |
+  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)|
+  | Configure | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)|
   |||
 
 > [!NOTE]
@@ -42,7 +42,7 @@ ms.locfileid: "73827109"
 
 ## <a name="sign-in-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="connect-using-sql-authentication"></a>Подключение с помощью проверки подлинности SQL
 
@@ -167,6 +167,8 @@ ms.locfileid: "73827109"
 
 * Редактор запросов использует порты 443 и 1443 для обмена данными.  Убедитесь, что вы включили исходящий трафик HTTPS на этих портах. Кроме того, необходимо будет добавить исходящий IP-адрес к правилам брандмауэра, разрешенным для сервера, для доступа к базам данных и хранилищам данных.
 
+* Для работы редактора со службой "Приватный канал" не нужно добавлять IP-адрес клиента в брандмауэр Базы данных SQL.
+
 * Если нажать клавишу F5, страница редактора запросов обновится, а выполняемый запрос будет закрыт.
 
 * Редактор запросов не поддерживает подключение к базе данных `master`.
@@ -178,6 +180,8 @@ ms.locfileid: "73827109"
 * Поддержка IntelliSense для таблиц и представлений баз данных отсутствует. Однако редактор поддерживает автозаполнение имен, введенных ранее.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о поддержке Transact-SQL в базах данных SQL Azure см. в статье [Отличия Transact-SQL базы данных SQL Azure](sql-database-transact-sql-information.md).

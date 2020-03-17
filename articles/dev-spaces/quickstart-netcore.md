@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: f3e91ec11e054e0a069eb97a3700b051476be0a1
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 6593cc3d5926fae05b2afd1e926552a2996ae885
+ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251982"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78943707"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio-code-and-net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio Code и .NET Core в Azure Dev Spaces
 
@@ -30,7 +30,7 @@ Azure Dev Spaces также позволяет выполнять отладку
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Средство Visual Studio Code](https://code.visualstudio.com/download).
-- Расширения [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) для Visual Studio Code установлены.
+- Расширения [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) для Visual Studio Code установлены.
 - [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
@@ -110,6 +110,9 @@ git clone https://github.com/Azure/dev-spaces
 > Если вы не видите никаких команд Azure Dev Spaces в *палитре команд*, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend* в Visual Studio Code.
 
 Вы увидите, что служба запущена, перейдя по общедоступному URL-адресу.
+
+> [!Note]
+> На начальном этапе общедоступный URL-адрес может возвращать ошибку *Bad Gateway* (Недопустимый шлюз). Подождите несколько секунд, прежде чем обновлять веб-страницу, и вы увидите, что служба запущена.
 
 Щелкните *Отладка*, а затем выберите *Остановить отладку*, чтобы остановить отладчик.
 

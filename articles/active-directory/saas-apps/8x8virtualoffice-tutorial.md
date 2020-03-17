@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/20/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f49c2b445af9acb0761d01b731250e068cb96a36
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 9c598222978a1c831be6f5e9db9eb87b2d6b6b96
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562329"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78968639"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-8x8"></a>Руководство по Интеграция единого входа Azure Active Directory с 8x8
 
@@ -30,7 +30,7 @@ ms.locfileid: "77562329"
 * Автоматический вход пользователей в 8x8 с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -86,20 +86,9 @@ ms.locfileid: "77562329"
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в одном из следующих форматов:
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://sso.8x8.com/saml2`
 
-    |||
-    |-|-|
-    | `https://sso.8x8.com/saml2`|
-    | `https://sso.8x8pilot.com/saml2`|
-
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в одном из следующих форматов:
-
-    |||
-    |-|-|
-    | `https://sso.8x8.com/saml2`|
-    | `https://sso.8x8pilot.com/saml2`|
-
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://sso.8x8.com/saml2`
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере. Этот сертификат вам потребуется позже, при выполнении инструкций **по настройке единого входа на стороне 8x8**.
 
@@ -151,9 +140,15 @@ ms.locfileid: "77562329"
 
 1. На домашней странице щелкните **Identity Management** (Управление идентификаторами).
 
+    ![8x8 Configuration Manager](./media/8x8virtualoffice-tutorial/configure1.png)
+
 1. Установите флажок **Single Sign On (SSO)** (Единый вход) и выберите **Microsoft Azure AD**.
 
+    ![8x8 Configuration Manager](./media/8x8virtualoffice-tutorial/configure2.png)
+
 1. Скопируйте три URL-адреса и сертификат подписи со страницы **Настройка единого входа с помощью SAML** в Azure AD в раздел **Microsoft Azure AD SAML Settings** (Параметры SAML для Microsoft Azure AD) в 8x8 Configuration Manager.
+
+    ![8x8 Configuration Manager](./media/8x8virtualoffice-tutorial/configure3.png)
 
     а. Скопируйте **URL-адрес входа** в поле **URL-адреса входа поставщика удостоверений**.
 
@@ -171,15 +166,27 @@ ms.locfileid: "77562329"
 
 1. На панели приложения выберите **Virtual Office Account Mgr** (Диспетчер учетных записей Virtual Office).
 
+    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_001.png)
+
 1. Выберите в качестве учетной записи, которой нужно управлять, **Business** (Рабочая) и нажмите кнопку **Sign In** (Вход).
+
+    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_002.png)
 
 1. В списке меню щелкните вкладку **ACCOUNTS** (Учетные записи).
 
+    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_003.png)
+
 1. В списке Accounts (Учетные записи) щелкните **Single Sign On** (Единый вход).
+
+    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_004.png)
 
 1. В разделе "Authentication methods" (Методы аутентификации) установите флажок **Signle Sign On** (Единый вход), а затем щелкните **SAML**.
 
+    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_005.png)
+
 1. В разделе **SAML Single Sign on** (Единый вход SAML) выполните следующие действия.
+
+    ![Настройка на стороне приложения](./media/8x8virtualoffice-tutorial/tutorial_8x8virtualoffice_006.png)
 
     а. В текстовое поле **Sign In URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -205,7 +212,7 @@ ms.locfileid: "77562329"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

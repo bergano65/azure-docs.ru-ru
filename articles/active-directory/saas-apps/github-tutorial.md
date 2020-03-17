@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с GitHub | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с GitHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GitHub.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ddc2622a67979f989c030d615c402387e7762d5
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 3f4084532ac370880df69d825927240c297dd371
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983493"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129908"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство. Интеграция единого входа Azure Active Directory с GitHub
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство по Интеграция единого входа Azure Active Directory с GitHub
 
 В этом руководстве описано, как интегрировать GitHub с Azure Active Directory (Azure AD). Интеграция GitHub с Azure AD обеспечивает следующие возможности.
 
@@ -163,6 +163,8 @@ ms.locfileid: "76983493"
     c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Public Certificate** (Общедоступный сертификат).
 
     d. Щелкните значок **Изменить**, чтобы изменить **метод подписи** и **метод выборки** с **RSA-SHA1** и **SHA1** на **RSA-SHA256** и **SHA256**, как показано ниже.
+    
+    д) Замените URL-адрес по умолчанию на **URL-адрес службы обработчика утверждений (URL-адрес ответа)** , чтобы URL-адрес в GitHub совпадал с URL-адресом на странице регистрации приложения в Azure.
 
     ![Изображение](./media/github-tutorial/tutorial_github_sha.png)
 

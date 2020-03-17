@@ -2,19 +2,19 @@
 author: IEvangelist
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 03/09/2020
+ms.date: 03/10/2020
 ms.author: dapine
-ms.openlocfilehash: b260bf8afc33972875a05c773e503edf0b5634fd
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
-ms.translationtype: MT
+ms.openlocfilehash: fe895bc3c3a46c7b6ed9ccd34e3b1201152e4f5d
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78942700"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037277"
 ---
-По умолчанию используется формат потоковой передачи звука: WAV (16 кГц, 16-битный и моно PCM). За пределами WAV/PCM поддерживаются следующие сжатые форматы входных данных кодеков:
+По умолчанию используется формат потоковой передачи звука WAV (16 кГц, 16-бит, моно PCM). Кроме WAV/PCM также поддерживаются следующие сжатые форматы входных кодеков:
 
 - MP3
-- ОПУС/OGG
+- OPUS/OGG
 - FLAC
-- АЛАВ в контейнере WAV
-- МУЛАВ в контейнере WAV
+- ALAW в контейнере WAV
+- MULAW в контейнере WAV

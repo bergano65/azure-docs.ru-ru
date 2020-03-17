@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 9efedd5b619a2a3bd592019fea3ca48b7244ca10
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 6274e24bae2e2a6eade0122fe244652eb29cacf9
+ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278500"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78399220"
 ---
 # <a name="deprecated-deploy-a-dcos-cluster"></a>Развертывание кластера DC/OS (не рекомендуется)
 
@@ -128,19 +128,19 @@ dcos config set core.dcos_url http://localhost
 
 Выполните следующую команду для планирования работы приложения в кластере DC/OS.
 
-```azurecli
+```console
 dcos marathon app add marathon-app.json
 ```
 
 Чтобы просмотреть состояние развертывания для приложения, выполните следующую команду.
 
-```azurecli
+```console
 dcos marathon app list
 ```
 
 Когда значение столбца **WAITING** изменится с *True* на *False*, развертывание приложения завершено.
 
-```azurecli
+```output
 ID     MEM  CPUS  TASKS  HEALTH  DEPLOYMENT  WAITING  CONTAINER  CMD   
 /test   32   1     1/1    ---       ---      False      DOCKER   None
 ```

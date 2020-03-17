@@ -13,18 +13,21 @@ ms.date: 08/30/2019
 ms.author: jmprieur
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 7704779ff605e28358f6f82c22ccda84d371dba9
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: abf083aacbdc643d780a8061b405752f36e27e45
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77084372"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129934"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-or-macos-app"></a>Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS
 
 Из этого руководства вы узнаете, как интегрировать приложение iOS или macOS в платформу удостоверений Майкрософт. Приложение сможет авторизовать пользователя, получить маркер доступа для вызова API Microsoft Graph и выполнить запрос к API Microsoft Graph.  
 
 Когда вы завершите работу с этим руководством, ваше приложение сможет принимать операции входа с помощью личных учетных записей Майкрософт (включая outlook.com, live.com и другие), а также рабочих или учебных учетных записей из любой компании или организации, в которых используется Azure Active Directory.
+
+>[!NOTE]
+> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Вход пользователей и вызов API Microsoft Graph из приложения iOS или macOS](quickstart-v2-ios.md).
 
 ## <a name="how-this-tutorial-works"></a>Как работает это руководство
 

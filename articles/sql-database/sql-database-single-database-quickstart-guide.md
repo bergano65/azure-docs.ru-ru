@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
 ms.date: 07/29/2019
-ms.openlocfilehash: 4332d57c8d5587a34ba3a593deb9bd635132b03d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6070b53e5f906bc378402d98275b8f798f57b505
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820952"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674427"
 ---
 # <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Начало работы с отдельной базой данных в Базе данных SQL Azure
 
@@ -34,10 +34,8 @@ ms.locfileid: "73820952"
 
 Для создания, настройки и масштабирования базы данных можно использовать PowerShell или Azure CLI.
 
-- [Создание и настройка отдельной базы данных с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md)
-- [Создание и настройка отдельной базы данных с помощью Azure CLI](scripts/sql-database-create-and-configure-database-cli.md)
-- [Обновление отдельной базы данных и масштабирование ресурсов с помощью PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md)
-- [Обновление отдельной базы данных и масштабирование ресурсов с помощью Azure CLI](scripts/sql-database-monitor-and-scale-database-cli.md)
+- Создание и настройка отдельной базы данных с помощью [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) или [Azure CLI](scripts/sql-database-create-and-configure-database-cli.md)
+- Обновление отдельной базы данных и масштабирование ресурсов с помощью [PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md) или [Azure CLI](scripts/sql-database-monitor-and-scale-database-cli.md).
 
 ## <a name="migrating-to-a-single-database-with-minimal-downtime"></a>Перенос в отдельную базу данных с минимальным временем простоя
 
@@ -51,7 +49,7 @@ ms.locfileid: "73820952"
 - [Разработка и настройка приложения ASP.NET, обращающегося к Базе данных SQL Azure](https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/)
 - [Защита базы данных SQL Azure](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [кратким списком поддерживаемых возможностей в Базе данных SQL Azure](sql-database-features.md).
 - Узнайте, как [повысить безопасность базы данных](sql-database-security-tutorial.md).

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 2477d91ac885d4ef39df7b9246f7272d66c3f7ee
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: b424fe315737b84479283eed2d77398c8ce4f148
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78251863"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898834"
 ---
 # <a name="quickstart-create-a-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Краткое руководство. Создание Load Balancer с помощью портала Azure для распределения нагрузки между виртуальными машинами
 
@@ -34,7 +34,7 @@ ms.locfileid: "78251863"
 
 ## <a name="create-a-load-balancer"></a>Создание Load Balancer
 
-В этом разделе вы создадите Load Balancer, помогающий распределять нагрузку виртуальных машин. Вы можете создать общественный или внутренний Load Balancer. Вместе с общедоступным экземпляром Load Balancer необходимо также создать новый общедоступный IP-адрес, настроенный в качестве внешнего интерфейсного (с именем *LoadBalancerFrontend* по умолчанию).
+В этом разделе вы создадите Load Balancer, помогающий распределять нагрузку виртуальных машин. Вы можете создать общественный или внутренний Load Balancer. Вместе с общедоступным экземпляром Load Balancer необходимо также создать новый общедоступный IP-адрес, настроенный в качестве внешнего интерфейсного адреса (с именем *LoadBalancerFrontend* по умолчанию).
 
 1. Вверху слева выберите последовательно **Создать ресурс** > **Сети** > **Load Balancer**.
 2. На вкладке **Основные сведения** страницы **Создание подсистемы балансировки нагрузки** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Review + create** (Проверить и создать).

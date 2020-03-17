@@ -16,14 +16,14 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: ec6664e7c55057c29c5b741203b326ce460c6e91
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 635b12cc2ffc4d318eaaa74fffc17e4ce4d58c0b
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701235"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129953"
 ---
-# <a name="tutorial-build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Руководство. Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
+# <a name="tutorial-build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
 
 В этом учебнике вы узнаете, как использовать платформу удостоверений Майкрософт для доступа к данным бизнес-клиентов Майкрософт с использованием продолжительного неинтерактивного процесса. Пример управляющей программы использует [предоставление учетных данных клиента OAuth2](v2-oauth2-client-creds-grant-flow.md) для получения маркера доступа. Затем управляющая программа использует этот маркер для вызова [Microsoft Graph](https://graph.microsoft.io) и доступа к данным организации.
 
@@ -39,7 +39,8 @@ ms.locfileid: "76701235"
 
 Компонент управляющей программы в этом примере является контроллером API `SyncController.cs`. При вызове этот контроллер извлекает список пользователей в арендаторе Azure Active Directory (Azure AD) клиента из Microsoft Graph. `SyncController.cs` активируется AJAX-вызовом в веб-приложении. Контроллер использует [библиотеку аутентификации Майкрософт (MSAL) для .NET](msal-overview.md), чтобы получить маркер доступа для Microsoft Graph.
 
-Более простой пример консольной управляющей программы вы найдете в статье [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения](quickstart-v2-netcore-daemon.md).
+>[!NOTE]
+> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать с руководства по [управляющей программе .NET Core](quickstart-v2-netcore-daemon.md).
 
 ## <a name="scenario"></a>Сценарий
 

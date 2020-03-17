@@ -2,17 +2,16 @@
 title: Учебник. Создание диаграммы метрик в Azure Monitor
 description: Сведения о том, как создать диаграмму метрик с помощью обозревателя метрик Azure.
 author: bwren
-services: azure-monitor
+ms.author: bwren
 ms.subservice: metrics
 ms.topic: tutorial
-ms.date: 12/16/2019
-ms.author: bwren
-ms.openlocfilehash: be4f026ba20ce1582f5626ec7483740831c25c1a
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.date: 03/09/2020
+ms.openlocfilehash: d8f72471dd3109bf584d18f032ec2f4d949a4993
+ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661470"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082818"
 ---
 # <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Руководство по Создание диаграммы метрик в Azure Monitor
 Обозреватель метрик является компонентом Azure Monitor и доступен на портале Microsoft Azure. Он позволяет создавать диаграммы, визуально сопоставлять тенденции и изучать пики и спады в значениях метрик. Используйте обозреватель метрик для анализа работоспособности и использования ресурсов Azure или для построения диаграмм по пользовательским метрикам. 
@@ -23,6 +22,10 @@ ms.locfileid: "77661470"
 > * Выбор метрики, для которой нужно построить диаграмму.
 > * Выполнение агрегатов по значениям метрик.
 > * Изменение диапазона времени и степени детализации для диаграммы.
+
+Ниже приведен видеоролик, в котором рассматривается более подробный сценарий, чем процедура, описанная в этой статье. Если вы не знакомы с метриками, рекомендуем сначала ознакомиться с этой статьей, а затем просмотреть видео, чтобы получить дополнительные сведения. 
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4qO59]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

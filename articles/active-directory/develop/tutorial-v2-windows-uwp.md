@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 4a62026ecec2317173361f166adcc3a7981f6d1c
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 68473ff5a3faddd36bd4299dfdc882f679acd068
+ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701184"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129882"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
@@ -32,6 +32,9 @@ ms.locfileid: "76701184"
 
 >[!NOTE]
 > Для работы с этим руководством требуется Visual Studio с установленным компонентом "Разработка приложений для универсальной платформы Windows". Ознакомьтесь со статьей о [настройке](https://docs.microsoft.com/windows/uwp/get-started/get-set-up) для получения инструкций по скачиванию и настройке Visual Studio для разработки приложений для универсальной платформы Windows.
+
+>[!NOTE]
+> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)](quickstart-v2-uwp.md).
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 

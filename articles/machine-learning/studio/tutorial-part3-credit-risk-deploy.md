@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 9353e5749906aca1f0c91b622c93ba6028cd3bef
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8ab6904a2569e508c0697cc273af4fd40a1767de
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432195"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78898752"
 ---
 # <a name="tutorial-3-deploy-credit-risk-model---azure-machine-learning-studio-classic"></a>Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure (классической)
 
@@ -40,7 +40,7 @@ ms.locfileid: "75432195"
 > * Управление веб-службой
 > * Доступ к веб-службе
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните действия, описанные во [второй части этого руководства](tutorial-part2-credit-risk-train.md).
 
@@ -227,11 +227,7 @@ ms.locfileid: "75432195"
 * **Запрос и ответ** — пользователь отправляет одну или несколько строк данных о кредитах в службу с помощью протокола HTTP, а служба в качестве ответа возвращает один или несколько наборов результатов.
 * **Пакетное выполнение** — пользователь сохраняет одну или несколько строк данных о кредитах в BLOB-объекте Azure, а затем отправляет адрес BLOB-объекта в Azure. Служба оценивает все строки данных во входном BLOB-объекте, сохраняет результаты в другом BLOB-объекте и возвращает URL-адрес данного контейнера.  
 
-Быстрее и проще всего получить доступ к классической веб-службе через [веб-приложение службы "запрос-ответ" машинного обучения Azure](https://azure.microsoft.com/marketplace/partners/microsoft/azuremlaspnettemplateforrrs/) или [шаблон веб-приложения службы пакетного выполнения машинного обучения Azure](https://azure.microsoft.com/marketplace/partners/microsoft/azuremlbeswebapptemplate/).
-
-С помощью шаблонов веб-служб можно создать пользовательское веб-приложение, которое "знает" входные данные вашей веб-службы и ожидаемые результаты. Вам нужно всего лишь предоставить доступ к веб-службе и данным, а шаблон выполнит все остальные действия.
-
-Дополнительные сведения об использовании шаблонов веб-приложений см.в статье [Использование веб-службы машинного обучения Azure с шаблоном веб-приложения](/azure/machine-learning/studio/consume-web-services).
+Дополнительные сведения о доступе к веб-службе и ее использовании см. в статье [Использование веб-службы машинного обучения Azure с шаблоном веб-приложения](/azure/machine-learning/studio/consume-web-services).
 
 
 

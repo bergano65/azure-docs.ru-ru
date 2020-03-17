@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/04/2020
 ms.author: allensu
-ms.openlocfilehash: 268f5f5b7bf1bed27a01085974bea72af6a84f3b
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ms.openlocfilehash: 51713db8532eb33f102de9320dea9eaeb98c4019
+ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/05/2020
-ms.locfileid: "78304061"
+ms.locfileid: "78359086"
 ---
 # <a name="azure-virtual-network-nat-metrics"></a>Метрики NAT виртуальной сети Azure
 
@@ -57,8 +57,10 @@ ms.locfileid: "78304061"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [NAT виртуальной сети](nat-overview.md).
-- Дополнительные сведения о [ресурсе шлюза NAT](nat-gateway-resource.md).
-- Дополнительные сведения об [Azure Monitor](../azure-monitor/overview.md).
-- Дополнительные сведения об [устранении неполадок ресурсов шлюза NAT](troubleshoot-nat.md).
+* Дополнительные сведения о [NAT виртуальной сети](nat-overview.md).
+* Дополнительные сведения о [ресурсе шлюза NAT](nat-gateway-resource.md).
+* Дополнительные сведения об [Azure Monitor](../azure-monitor/overview.md).
+* Дополнительные сведения об [устранении неполадок ресурсов шлюза NAT](troubleshoot-nat.md).
+* [Расскажите в UserVoice, что нам следует создать далее для NAT виртуальной сети](https://aka.ms/natuservoice).
+
 

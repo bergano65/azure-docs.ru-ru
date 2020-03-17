@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d383acae83f0f42f9c16fcb5d4ea7efbdf2b5f8
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+ms.openlocfilehash: ccc64fb8dd8bd8abc198d9bfc9d643ef618188ea
+ms.sourcegitcommit: 5f39f60c4ae33b20156529a765b8f8c04f181143
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486482"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78967778"
 ---
 # <a name="tutorial-enable-azure-active-directory-self-service-password-reset-writeback-to-an-on-premises-environment"></a>Руководство по Включение самостоятельного сброса пароля в Azure Active Directory с использованием обратной записи в локальную среду
 
@@ -42,6 +42,7 @@ ms.locfileid: "77486482"
     * При необходимости [завершите работу с предыдущим руководством, чтобы включить Azure AD SSPR](tutorial-enable-sspr.md).
 * Локальная среда AD DS с поддержкой текущей версии Azure AD Connect.
     * При необходимости настройте Azure AD Connect с помощью [стандартных](../hybrid/how-to-connect-install-express.md) или [пользовательских](../hybrid/how-to-connect-install-custom.md) параметров.
+    * Для использования компонента обратной записи паролей контроллеры домена должны быть под управлением Windows Server 2008 R2 или более поздней версии.
 
 ## <a name="configure-account-permissions-for-azure-ad-connect"></a>Настройка разрешений учетной записи для Azure AD Connect
 

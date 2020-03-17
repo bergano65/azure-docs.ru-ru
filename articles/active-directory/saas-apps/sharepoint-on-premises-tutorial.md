@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 60ff8769192191ba112008e7baee23740147dfe9
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: bd9e916d1e50d9d5bc0717a1d283b3dcf5d383c9
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367032"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037014"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство по Интеграция Azure Active Directory с локальной версией SharePoint
 
@@ -271,7 +271,7 @@ ms.locfileid: "77367032"
 10. Настройте AzureCP на локальной ферме SharePoint или настройте альтернативный пользовательский поставщик утверждений.  В этом примере мы используем AzureCP.
 
     > [!NOTE]
-    > Обратите внимание на то, что AzureCP не является продуктом корпорации Майкрософт и не обслуживается службой технической поддержки Майкрософт. Скачайте приложение AzureCP на локальной ферме SharePoint по адресу https://yvand.github.io/AzureCP/. Установите и настройте программу. 
+    > Обратите внимание на то, что AzureCP не является продуктом корпорации Майкрософт и не обслуживается службой технической поддержки Майкрософт. Скачивание, установка и настройка AzureCP на локальной ферме SharePoint: [https://yvand.github.io/AzureCP/](https://yvand.github.io/AzureCP/) 
 
 11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**. Группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
 
