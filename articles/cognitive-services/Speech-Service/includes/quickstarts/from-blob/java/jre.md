@@ -4,20 +4,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/13/2020
 ms.author: dapine
-ms.openlocfilehash: 1225a1e528b32401f350374fb9393c52225c49e8
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 02e0e1494a897b31cb6ef28083677fa48f854c91
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942812"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924911"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre&pivots=programmming-language-java)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?pivots=programmming-language-java)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre&pivots=programmming-language-java).
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
 
@@ -32,7 +31,9 @@ ms.locfileid: "75942812"
 ## <a name="add-a-reference-to-gson"></a>Добавление ссылки на Gson
 В этом кратком руководстве будет использоваться внешний сериализатор и десериализатор JSON. Для Java мы выбрали [Gson](https://github.com/google/gson).
 
-Откройте файл pom.xml и добавьте следующую ссылку: [!code-xml[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/from-blob/pom.xml?range=19-25)]
+Откройте файл pom.xml и добавьте указанную ниже ссылку.
+
+[!code-xml[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/from-blob/pom.xml?range=19-25)]
 
 ## <a name="start-with-some-boilerplate-code"></a>Добавление стандартного кода
 

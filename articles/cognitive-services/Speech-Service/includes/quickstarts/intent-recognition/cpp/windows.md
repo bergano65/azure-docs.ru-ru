@@ -6,19 +6,18 @@ ms.date: 01/27/2020
 ms.topic: include
 ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 1c5411778bf2e8ab25ce3e71dba92227b2653c3d
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: bc624197930044575a46666cbb74e5fe452e96ab
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446380"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924859"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект C++, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md?tabs=windows" target="_blank">создать пустой пример проекта <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=windows" target="_blank">Установите пакет SDK службы "Речь" для среды разработки <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=windows" target="_blank">Установите пакет SDK службы "Речь" для среды разработки и создайте пустой пример проекта<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 
@@ -47,7 +46,7 @@ ms.locfileid: "77446380"
 Вставьте код в метод `recognizeIntent()`. Обязательно обновите следующие значения:
 
 * Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.  Используйте **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion).
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.  Использование **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion)
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).

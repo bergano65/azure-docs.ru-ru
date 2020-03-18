@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: ae4c69ce103d8b7852aa4422ee724fd848867d65
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: b2f0bbe56d31d583f1a4328460c55591261a2aeb
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445497"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924942"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +23,7 @@ ms.locfileid: "77445497"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=windows)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=windows)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=windows).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 

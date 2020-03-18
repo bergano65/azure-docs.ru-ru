@@ -10,21 +10,21 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: 83ae1c83e536e1fdf87fe17c9254e5bef0fdc120
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f95fd8aa66e83e6be8f4b0eef9635750d83ce55e
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75468038"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924871"
 ---
-Здесь также описано, как установить [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для универсальной платформы Windows (UWP) C#.
+Здесь также описано, как установить [пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для универсальной платформы Windows (UWP) C#. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `Install-Package Microsoft.CognitiveServices.Speech` в консоли NuGet.
 
 > [!NOTE]
 > Универсальная платформа Windows позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройств.
 
 [!INCLUDE [License Notice](~/includes/cognitive-services-speech-service-license-notice.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 

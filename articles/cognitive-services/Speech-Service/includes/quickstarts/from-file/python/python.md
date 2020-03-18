@@ -1,20 +1,15 @@
 ---
-title: Краткое руководство. Распознавание речи из звукового файла в службе "Речь" с помощью Python
-titleSuffix: Azure Cognitive Services
-services: cognitive-services
 author: IEvangelist
-manager: nitinme
 ms.service: cognitive-services
-ms.subservice: speech-service
 ms.topic: include
-ms.date: 01/30/2020
+ms.date: 03/10/2020
 ms.author: dapine
-ms.openlocfilehash: f3a6ffeede05c1a2e9a883d40df19819e6a4bb3b
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: b3d7ea44acac99cc8077993f679bdcea2e5018fa
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446384"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79082219"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +18,7 @@ ms.locfileid: "77446384"
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Создать приложение LUIS и получить ключ конечной точки](../../../../quickstarts/create-luis.md).
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?pivots=programming-language-python)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?pivots=programming-language-python)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?pivots=programming-language-python).
 
 [!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 
@@ -93,7 +87,7 @@ elif result.reason == speechsdk.ResultReason.Canceled:
 
 ### <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
 
-1. Скачайте и установите 64-разрядную версию [Python](https://www.python.org/downloads/) (версия 3.5 или более поздняя) на компьютере.
+1. Скачайте и установите 64-разрядную версию [Python](https://www.python.org/downloads/) (версия 3.5 или 3.8) на компьютере.
 1. Скачайте и установите [Visual Studio Code](https://code.visualstudio.com/Download).
 1. Откройте Visual Studio Code и установите расширение Python. В меню выберите **Файл** > **Параметры** > **Расширения**. Выполните поиск по запросу **Python**.
 

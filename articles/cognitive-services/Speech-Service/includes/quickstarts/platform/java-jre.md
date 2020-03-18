@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/11/2019
 ms.author: erhopf
-ms.openlocfilehash: 5f6b994bce1d38872cffb1e6e389136742be6d48
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7147f0d13c88c1d2e17e81a360a5aee55ee760ed
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75469029"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925573"
 ---
-а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для 64-разрядной версии среды JRE Java 8.
+а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для 64-разрядной версии среды JRE Java 8. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, учитывайте, что пакет SDK для Java недоступен в центральном репозитории Maven. Независимо от того, что вы используете: Gradle или файл зависимостей `pom.xml`, нужно добавить пользовательский репозиторий с указанием на `https://csspeechstorage.blob.core.windows.net/maven/` (имя пакета см. ниже).
 
 > [!NOTE]
 > Ознакомьтесь с пакетом SDK службы "Речь" и устройством Roobo в разделе [Сведения о пакете SDK для речевых устройств](~/articles/cognitive-services/speech-service/speech-devices-sdk.md).
@@ -29,9 +29,9 @@ ms.locfileid: "75469029"
 - Пакет SDK службы "Речь" для Java доступен для таких операционных систем:
   - Windows: только 64-разрядная версия.
   - MAC: macOS X версии 10.13 или более поздней.
-  - Linux: только 64-разрядная версия для Ubuntu 16.04, Ubuntu 18.04 или Debian 9.
+  - Linux: только 64-разрядная версия (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
@@ -51,6 +51,16 @@ ms.locfileid: "75469029"
         sudo apt-get update
         sudo apt-get install build-essential libssl1.0.2 libasound2
         ```
+
+  - Чтобы установить необходимые пакеты в RHEL/CentOS 8, выполните следующие команды:
+
+        ```sh
+        sudo yum update
+        sudo yum install alsa-lib java-1.8.0-openjdk-devel openssl
+        ```
+
+> [!NOTE]
+> Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 - В Windows для вашей платформы необходим [распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). Обратите внимание, что при первой установке может потребоваться перезагрузить Windows, чтобы продолжить работу с данным руководством.
 

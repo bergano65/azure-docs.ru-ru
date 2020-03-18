@@ -10,21 +10,21 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 4af31b281f4b2e7cdd7ed217753df55ce8009fa9
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: df2c3fc2ab6f6c742f56273119923a7e02cf8e43
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446075"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384079"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Ключ подписки Azure для службы "Речь". [Получить бесплатно](~/articles/cognitive-services/Speech-Service/get-started.md).
-* [Python 3.5 или более поздней версии](https://www.python.org/downloads/).
+* [Python 3.5–3.8](https://www.python.org/downloads/).
 * Пакет SDK службы "Речь" для Python доступен для таких операционных систем:
     * Windows x64 или x86.
     * MAC: macOS X версии 10.12 или более поздней.
-    * Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9 на x64.
+    * Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8, 64-разрядная версия.
 * Чтобы установить необходимые пакеты в Linux, выполните следующие команды.
 
   * В Ubuntu:
@@ -40,6 +40,16 @@ ms.locfileid: "77446075"
     sudo apt-get update
     sudo apt-get install build-essential libssl1.0.2 libasound2
     ```
+
+  * В RHEL/CentOS 8:
+
+    ```sh
+    sudo yum update
+    sudo yum install alsa-lib openssl python3
+    ```
+
+> [!NOTE]
+> Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 * В Windows для вашей платформы необходим [распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -110,7 +120,7 @@ elif result.reason == speechsdk.ResultReason.Canceled:
 
 ### <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
 
-1. Скачайте и установите 64-разрядную версию [Python](https://www.python.org/downloads/) (версия 3.5 или более поздняя) на компьютере.
+1. Скачайте и установите 64-разрядную версию [Python](https://www.python.org/downloads/) (версия 3.5 или 3.8) на компьютере.
 1. Скачайте и установите [Visual Studio Code](https://code.visualstudio.com/Download).
 1. Откройте Visual Studio Code и установите расширение Python. В меню выберите **Файл** > **Параметры** > **Расширения**. Выполните поиск по запросу **Python**.
 

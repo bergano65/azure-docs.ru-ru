@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 6/24/2019
 ms.author: yinhew
-ms.openlocfilehash: 6e732237b22bec6e2a66d44f12ac25e5f9adca3f
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: ba6a373f678f8d34b34a669b3fbb3b570c90ed0d
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818282"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925934"
 ---
 > [!NOTE]
 > .NET Core — это кроссплатформенная платформа .NET с открытым кодом, которая реализует спецификацию [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
@@ -26,8 +26,8 @@ ms.locfileid: "74818282"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnetcore)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnetcore)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=dotnetcore).
+
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
 1. Откройте файл `Program.cs` и замените все содержимое приведенным ниже кодом.
@@ -54,11 +54,11 @@ ms.locfileid: "74818282"
 
     ![Снимок экрана с выходными данными в консоли после успешного синтезирования](~/articles/cognitive-services/Speech-Service/media/sdk/qs-tts-csharp-dotnet-windows-console-output.png "Выходные данные в консоли после успешного синтеза")
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

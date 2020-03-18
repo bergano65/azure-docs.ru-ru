@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 09/19/2019
 ms.author: yulili
-ms.openlocfilehash: d7ca86092b973d369d37cbeac1bc9f8cfcf9b462
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: a49fadee598d1fa87c6dddbbf6ad388243ea6fb8
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818436"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78926048"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +23,7 @@ ms.locfileid: "74818436"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -49,11 +48,11 @@ ms.locfileid: "74818436"
 Нажмите клавишу F11 или выберите **Запустить** > **Отладка**.
 Когда появится запрос, введите текст. После этого вы услышите синтезированный звук из динамика по умолчанию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

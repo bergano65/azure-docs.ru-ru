@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: 9c16e2e1726fcbf1e0b55ee0e9808a607b611ea6
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: c969b5e5daa4c4cfd84695fef70f0a2a5c50ce02
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445834"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925917"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -22,8 +22,7 @@ ms.locfileid: "77445834"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=dotnet).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
@@ -56,17 +55,23 @@ ms.locfileid: "77445834"
 
 В объекте `SpeechRecognizer` необходимо вызвать метод `RecognizeOnceAsync()`. С помощью этого метода служба "Речь" узнает, что для распознавания отправляется одна фраза и что после идентификации фразы необходимо остановить распознавание речи.
 
-В операторе using добавьте этот код: [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs?range=20)]
+В операторе using добавьте указанный ниже код.
+
+[!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs?range=20)]
 
 ## <a name="display-the-recognition-results-or-errors"></a>Отображение результатов распознавания (или ошибок)
 
 Когда служба "Речь" возвращает результат распознавания, необходимо с ним что-то сделать. Мы оставим его как есть и выведем результат в консоли.
 
-В операторе using под `RecognizeOnceAsync()` добавьте этот код: [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs?range=22-41)]
+В операторе using под `RecognizeOnceAsync()` добавьте указанный ниже код.
+
+[!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs?range=22-41)]
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так: [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs)]
+На этом этапе код должен выглядеть, как показано ниже.
+
+[!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-microphone/helloworld/Program.cs)]
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 

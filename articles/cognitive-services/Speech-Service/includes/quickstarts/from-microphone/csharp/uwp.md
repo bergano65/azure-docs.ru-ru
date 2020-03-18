@@ -9,21 +9,20 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: e6934e908111773cef3f7ddcfc2a971d8e1706bf
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 93a5a29c225912a48cf99ba6126690c298dfef9d
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75927947"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925116"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=uwp)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=uwp)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=uwp).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.
@@ -64,7 +63,9 @@ ms.locfileid: "75927947"
 
 В объекте `SpeechRecognizer` необходимо вызвать метод `RecognizeOnceAsync()`. С помощью этого метода служба "Речь" узнает, что для распознавания отправляется одна фраза и что после идентификации фразы необходимо остановить распознавание речи.
 
-В операторе using добавьте этот код: [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/uwp/from-microphone/helloworld/MainPage.xaml.cs?range=66)]
+В операторе using добавьте указанный ниже код.
+
+[!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/uwp/from-microphone/helloworld/MainPage.xaml.cs?range=66)]
 
 ## <a name="display-the-recognition-results-or-errors"></a>Отображение результатов распознавания (или ошибок)
 

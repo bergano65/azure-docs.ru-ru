@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
-ms.openlocfilehash: ed37e4f5b84431355b63b3d59b0e49b78eaeed86
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 2ed41f424dfe985cc078314da5b138c7d7bcdf37
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445838"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925955"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +23,7 @@ ms.locfileid: "77445838"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=xamarin)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=xamarin)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=xamarin).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: eb131f3f53e04809ca21efda7367f03a79081bbc
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 95e8a30eaa59762ad7cf5b388326c9d3c9723d8e
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445623"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925728"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -17,8 +17,7 @@ ms.locfileid: "77445623"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="add-sample-code"></a>Добавление примеров кода

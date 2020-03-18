@@ -6,19 +6,18 @@ ms.date: 01/27/2020
 ms.topic: include
 ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 7faf4a029168c12a3213bc9a06891200e9ac6142
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 4f8fe92a0a36bae2d5e7595bee7bf71fcd926da9
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446446"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925988"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект C#, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md?tabs=dotnet" target="_blank">создать пустой пример проекта <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=dotnet" target="_blank">Установите пакет SDK службы "Речь" для среды разработки <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=dotnet" target="_blank">Установите пакет SDK службы "Речь" для среды разработки и создайте пустой пример проекта<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 
@@ -76,7 +75,9 @@ ms.locfileid: "77446446"
 
 В объекте `IntentRecognizer` необходимо вызвать метод `RecognizeOnceAsync()`. С помощью этого метода служба "Речь" узнает, что для распознавания отправляется одна фраза и что после идентификации фразы необходимо остановить распознавание речи.
 
-В операторе using добавьте указанный ниже код под строкой модели: [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=46)]
+В операторе using добавьте указанный ниже код под строкой модели.
+
+[!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/intent-recognition/helloworld/Program.cs?range=46)]
 
 ## <a name="display-recognition-results-or-errors"></a>Отображение результатов распознавания (или ошибок)
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 08/24/2019
 ms.author: yinhew
-ms.openlocfilehash: 35c8eb640e3c8c9e33486d5126f83dd40b5b96e0
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: ab2193a1ea34b176e5f97806f0099dfc86d75965
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818384"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924742"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +23,7 @@ ms.locfileid: "74818384"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=windows)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=windows)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=windows).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -44,17 +43,17 @@ ms.locfileid: "74818384"
 
 1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-1. Выберите **Отладка** > **Начать отладку**(или нажмите клавишу **F5**), чтобы запустить приложение **helloworld**.
+1. Выберите **Отладка** > **Начать отладку** (или нажмите клавишу **F5**), чтобы запустить приложение **helloworld**.
 
 1. Введите фразу или предложение на английском языке. Приложение передает текст в службу "Речь", которая отправляет синтезированную речь в приложение для воспроизведения динамиком.
 
    ![Выходные данные в консоли после успешного синтеза речи](~/articles/cognitive-services/Speech-Service/media/sdk/qs-tts-cpp-windows-console-output.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

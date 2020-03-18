@@ -4,20 +4,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/13/2020
 ms.author: dapine
-ms.openlocfilehash: bfecfa1918d2e9199971b2f9738530dc1b4e3c4c
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 646cce25efcbebab6229389f63912346e3712cdd
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942686"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925848"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md).
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
 

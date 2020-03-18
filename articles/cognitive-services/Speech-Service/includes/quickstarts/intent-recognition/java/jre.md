@@ -6,19 +6,18 @@ ms.date: 01/27/2020
 ms.topic: include
 ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: bd15a19a352120e01da04aeca0f3b27d3fce092f
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 3481d751aacd4183bf5a999422b9631ec0e21edb
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445681"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925694"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект Java (JRE), воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md?tabs=jre" target="_blank">создать пустой пример проекта <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=jre" target="_blank">Установите пакет SDK службы "Речь" для среды разработки <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=jre" target="_blank">Установите пакет SDK службы "Речь" для среды разработки и создайте пустой пример проекта<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 
@@ -82,7 +81,9 @@ ms.locfileid: "77445681"
 
 Когда служба "Речь" возвращает результат распознавания, необходимо с ним что-то сделать. Мы оставим его как есть и выведем результат в консоли.
 
-Вставьте приведенный ниже код под вызовом `recognizeOnceAsync()`: [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=43-64)]
+Вставьте приведенный ниже код под вызовом `recognizeOnceAsync()`.
+
+[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=43-64)]
 
 ## <a name="release-resources"></a>Высвобождение ресурсов
 

@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: 531e9dbec55c5a6a305b321df7a11067c0ade92a
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: be8497cb07bd3c761c59bfc55e773b5dcc937c50
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445616"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924766"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
@@ -25,8 +25,7 @@ ms.locfileid: "77445616"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=unity)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=unity)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=unity).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.

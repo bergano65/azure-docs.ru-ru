@@ -5,16 +5,16 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: dapine
-ms.openlocfilehash: 87aa9f8201b924c1719f3ac805f79fb82631ecfd
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 81c77b2f6ae0c4f8497716c168a937657ceb57dd
+ms.sourcegitcommit: 021ccbbd42dea64d45d4129d70fff5148a1759fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562726"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78384103"
 ---
 В этом кратком руководстве вы узнаете, как использовать пакет SDK для речевых устройств в Linux для создания устройства с поддержкой речевых функций или его использования в качестве устройства для [транскрибирования бесед](../conversation-transcription-service.md). Сейчас поддерживается только [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/).
 
-Приложение создается с использованием пакета SDK для службы "Речь" и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии ОС Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9). Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+Приложение создается с использованием пакета SDK для службы "Речь" и интегрированной среды разработки Eclipse Java (версия 4) в 64-разрядной версии ОС Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8). Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 Для этого руководства требуется [учетная запись Azure Cognitive Services](../get-started.md) и ресурс службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
@@ -24,7 +24,7 @@ ms.locfileid: "77562726"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* Операционная система: 64-разрядная версия Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9).
+* Операционная система: 64-разрядная версия Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8).
 * [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * Только [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
@@ -48,6 +48,16 @@ ms.locfileid: "77562726"
   sudo apt-get update
   sudo apt-get install libssl1.0.2 libasound2
   ```
+
+В RHEL/CentOS 8:
+
+  ```sh
+  sudo yum update
+  sudo yum install alsa-lib openssl
+  ```
+
+> [!NOTE]
+> Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 Сейчас транскрибирование бесед доступно для американского английского и китайского языков в регионах "центральная часть США" и "Восточная Азия". Для использования транскрибирования бесед вам понадобится речевой ключ в одном из упомянутых регионов.
 
@@ -89,7 +99,7 @@ ms.locfileid: "77562726"
         <dependency>
              <groupId>com.microsoft.cognitiveservices.speech</groupId>
              <artifactId>client-sdk</artifactId>
-             <version>1.9.0</version>
+             <version>1.10.0</version>
         </dependency>
     </dependencies>
    ```

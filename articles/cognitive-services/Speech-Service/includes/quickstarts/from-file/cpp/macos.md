@@ -1,20 +1,15 @@
 ---
-title: Краткое руководство. Распознавание речи из звукового файла в службе "Речь" с помощью C++ (macOS)
-titleSuffix: Azure Cognitive Services
-services: cognitive-services
-author: erhopf
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
-ms.subservice: speech-service
 ms.topic: include
-ms.date: 01/14/2020
-ms.author: erhopf
-ms.openlocfilehash: 622087a914b77712df850d4200ac381439f3bd85
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.date: 03/10/2020
+ms.author: dapine
+ms.openlocfilehash: 22258bebee232b617ebdac76e87598fd24c031a1
+ms.sourcegitcommit: b8d0d72dfe8e26eecc42e0f2dbff9a7dd69d3116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77445750"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79081868"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -22,8 +17,7 @@ ms.locfileid: "77445750"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=macos)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=macos)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=macos).
 
 [!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 

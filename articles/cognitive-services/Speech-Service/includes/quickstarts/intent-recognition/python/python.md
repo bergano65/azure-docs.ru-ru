@@ -6,19 +6,18 @@ ms.date: 01/27/2020
 ms.topic: include
 ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 1a9a85ebc9d883db0415382ecf40de343d300667
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 724f52317ce2afda023ae0514a330da0032e8710
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446064"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925157"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект Python, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md" target="_blank">создать пустой пример проекта <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md" target="_blank">Установите пакет SDK службы "Речь" для среды разработки <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md" target="_blank">Установите пакет SDK службы "Речь" для среды разработки и создайте пустой пример проекта<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 
@@ -74,7 +73,7 @@ ms.locfileid: "77446064"
 
 В объекте `IntentRecognizer` необходимо вызвать метод `recognize_once()`. С помощью этого метода служба "Речь" узнает, что для распознавания отправляется одна фраза и что после идентификации фразы необходимо остановить распознавание речи.
 
-Вставьте приведенный ниже код под строкой модели:
+Вставьте приведенный ниже код под строкой модели.
 
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=35)]
 
@@ -82,11 +81,13 @@ ms.locfileid: "77446064"
 
 Когда служба "Речь" возвращает результат распознавания, необходимо с ним что-то сделать. Мы оставим его как есть и выведем результат в консоли.
 
-Под вызовом `recognize_once()` добавьте следующий код: [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=38-47)]
+Под вызовом `recognize_once()` добавьте указанный ниже код.
+
+[!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=38-47)]
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так:
+На этом этапе код должен выглядеть, как показано ниже.
 
 > [!NOTE]
 > Мы добавили несколько комментариев к этой версии.

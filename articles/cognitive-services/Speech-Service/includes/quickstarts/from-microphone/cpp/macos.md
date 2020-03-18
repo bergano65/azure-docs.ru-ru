@@ -9,12 +9,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/17/2019
 ms.author: wolfma
-ms.openlocfilehash: eb2032ce9fd6efed4a45aa30b469cb67926f17c9
-ms.sourcegitcommit: dfa543fad47cb2df5a574931ba57d40d6a47daef
+ms.openlocfilehash: 96836c494cdf8f3df1621ee0e2eea6c6f64a039c
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77446531"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78925024"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -22,8 +22,7 @@ ms.locfileid: "77446531"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=macos)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=macos)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=macos).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="add-sample-code"></a>Добавление примеров кода

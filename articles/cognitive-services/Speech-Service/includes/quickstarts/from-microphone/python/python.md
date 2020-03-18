@@ -10,21 +10,20 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: 086a77a9d7096870b8d381d301bfc0f31ab390f9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a2d5614aeeedb88cd9b2c41baed317761443d17c
+ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75469477"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78924901"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="support-and-updates"></a>Поддержка и обновления
@@ -56,7 +55,7 @@ python quickstart.py
 
 ### <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
 
-1. Скачайте и установите 64-разрядную версию [Python](https://www.python.org/downloads/) (версия 3.5 или более поздняя) на компьютере.
+1. Скачайте и установите 64-разрядную версию [Python](https://www.python.org/downloads/) (версия 3.5 или 3.8) на компьютере.
 1. Скачайте и установите [Visual Studio Code](https://code.visualstudio.com/Download).
 1. Откройте Visual Studio Code и установите расширение Python. В меню выберите **Файл** > **Параметры** > **Расширения**. Выполните поиск по запросу **Python**.
 
