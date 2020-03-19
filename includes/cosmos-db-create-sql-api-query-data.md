@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cosmos-db
 author: SnehaGunda
 ms.service: cosmos-db
@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 04/05/2019
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: 9971b16da42cdf1de0464857291c74a947535735
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 64c900e01496dad0d5f6a96d8d790ae0c2a8c95a
+ms.sourcegitcommit: 9cbd5b790299f080a64bab332bb031543c2de160
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185832"
+ms.lasthandoff: 03/08/2020
+ms.locfileid: "78927380"
 ---
 Вы можете применить запросы в обозревателе данных для получения и фильтрации данных.
 
-1. В верхней части вкладки **Документы** в обозревателе данных просмотрите запрос по умолчанию `SELECT * FROM c`. Этот запрос извлекает и отображает все документы в коллекции по порядку идентификаторов. 
+1. В верхней части вкладки **Элементы** в обозревателе данных просмотрите запрос по умолчанию `SELECT * FROM c`. Этот запрос извлекает и отображает все документы в коллекции по порядку идентификаторов. 
    
    ![Стандартный запрос SELECT * FROM c в обозревателе данных](./media/cosmos-db-create-sql-api-query-data/azure-cosmosdb-data-explorer-query.png)
    

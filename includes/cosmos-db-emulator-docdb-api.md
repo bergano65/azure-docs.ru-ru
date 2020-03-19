@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cosmos-db
 documentationcenter: ''
 author: SnehaGunda
@@ -16,11 +16,11 @@ ms.workload: ''
 ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: c071cd289a1304a561a821fc6b5ad86d9bf986af
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 315d4d6b85a28337b0e7c43ad7054e4d31eba670
+ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71299305"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674216"
 ---
-[Бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) можно использовать без подписки Azure, без оплаты и каких-либо обязательств. Или вы можете применить [эмулятор Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) с URI `https://localhost:8081`. Сведения о ключе для использования с эмулятором см. в [этом разделе](../articles/cosmos-db/local-emulator.md#authenticating-requests).
+Вы можете [бесплатно опробовать Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и обязательств или создать [учетную запись Azure Cosmos DB уровня "Бесплатный"](../articles/cosmos-db/optimize-dev-test.md#azure-cosmos-db-free-tier) с первыми 400 ЕЗ/с и хранилищем объемом 5 ГБ, которые предоставляются бесплатно. Также вы можете применить [эмулятор Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) с URI `https://localhost:8081`. Сведения о ключе для использования с эмулятором см. в [этом разделе](../articles/cosmos-db/local-emulator.md#authenticating-requests).

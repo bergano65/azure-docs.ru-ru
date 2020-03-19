@@ -3,89 +3,177 @@ author: MashaMSFT
 ms.service: sql-database
 ms.subservice: single-database
 ms.topic: include
-ms.date: 02/14/2020
+ms.date: 03/10/2020
 ms.author: mathoma
 ms.reviewer: vanto
-ms.openlocfilehash: d800d273cce995c618422a3a9d0934b2657e6ef5
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: c1ca87b6e7b8afb50522e73107707e15782a0a91
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78194310"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79200105"
 ---
-На этом этапе вы создадите отдельную базу данных в службе "База данных SQL Azure". 
+На этом шаге вы создадите сервер базы данных SQL Azure и одну базу данных, в которой используются образцы данных AdventureWorksLT. Базу данных можно создать с помощью меню и экранов портала Azure либо с помощью Azure CLI или сценария PowerShell в Azure Cloud Shell.
 
-> [!IMPORTANT]
-> Убедитесь, что правила брандмауэра настроены для использования общедоступного IP-адреса компьютера, на котором выполняются инструкции из этой статьи.
->
-> Дополнительные сведения см. в статье о [создании правила брандмауэра на уровне базы данных](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database). Чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для компьютера, обратитесь к статье о [создании правила брандмауэра на уровне сервера](../sql-database-server-level-firewall-rule.md).  
+Все эти методы предусматривают настройку правила брандмауэра на уровне сервера, чтобы открыть общедоступный IP-адрес компьютера, который вы используете для доступа к серверу. Дополнительные сведения о создании правил брандмауэра сервера см. в разделе [Создание брандмауэра на уровне сервера](../sql-database-server-level-firewall-rule.md). Можно также задать правила брандмауэра на уровне базы данных. См. [Создание правила брандмауэра уровня базы данных](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database). 
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-Создайте группу ресурсов и отдельную базу данных с помощью портала Azure.
+Чтобы создать группу ресурсов, SQL Server и одну базу данных на портале Azure:
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **Azure SQL** отсутствует в списке, выберите **Все службы** и в поле поиска введите *Azure SQL*. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
-2. Щелкните **+ Добавить**, чтобы открыть страницу **Выбор варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения о различных базах данных, выберите **Показать сведения** на плитке **Базы данных**.
-3. Нажмите кнопку **Создать**.
+1. Войдите на [портал](https://portal.azure.com).
+1. В строке поиска найдите и выберите **Azure SQL**.
+1. На странице **Azure SQL** выберите **Добавить**. 
+   
+   ![Добавление в Azure SQL](../media/sql-database-single-database-get-started/sqldbportal.png)
+   
+1. На странице **Выберите вариант развертывания SQL** выберите плитку **Базы данных SQL** и **Одна база данных** в **Тип ресурса**. Чтобы просмотреть дополнительные сведения о различных базах данных, выберите **Показать подробности**.
+1. Нажмите кнопку **создания**.
+   
+   ![Создание отдельной базы данных](../media/sql-database-single-database-get-started/create-single-database.png)
+   
+1. На вкладке **Основные сведения** формы **Создание базы данных SQL** в разделе **Сведения о проекте** выберите подходящую **подписку Azure** если она еще не выбрана.
+1. В разделе **Группа ресурсов** выберите **Создать**, введите *myResourceGroup* и нажмите кнопку **ОК**.
+1. В разделе **Сведения о базе данных** в поле **Имя базы данных** введите *mySampleDatabase*.
+1. В группе **Сервер** выберите **Создать** и заполните форму **Новый сервер** следующим образом:
+   - **Имя сервера**: Введите *mysqlserver* и добавьте еще символы, чтобы имя было уникальным.
+   - **Имя для входа администратора сервера**. Введите *azureuser*.
+   - **Пароль**. Введите пароль, соответствующий требованиям, и введите его еще раз в поле **Подтверждение пароля**.
+   - **Расположение.** В раскрывающемся списке выберите расположение, например **(США) Восточная часть США**.
+   
+   Щелкните **ОК**.
+   
+   ![Новый сервер](../media/sql-database-single-database-get-started/new-server.png)
+   
+   Запишите имя и пароль администратора сервера, чтобы выполнить вход на сервер и в базы данных. Если вы забыли имя входа или пароль, узнать имя входа или сбросить пароль можно на странице **SQL Server** после создания базы данных. Чтобы открыть страницу **SQL Server**, выберите имя сервера на странице **Обзор** для базы данных.
+   
+1. Если вы хотите изменить параметры по умолчанию, в разделе **Compute + storage** (Вычисления и хранение) выберите **Настроить базу данных**.
+   
+   На странице **Настройка** можно дополнительно:
+   - Изменить **Уровень вычислений** с **Подготовленный** на **Без сервера**.
+   - Проверить и измените параметры **Виртуальные ядра** и **Максимальный размер данных**.
+   - Выберите **Изменить конфигурацию**, чтобы изменить создание оборудования.
+   
+   После внесения изменений нажмите кнопку **Применить**.
+   
+1. По завершении выберите **Next: Networking** (Далее: сеть) в нижней части экрана.
+   
+   ![Новая база данных SQL — вкладка "Основные сведения"](../media/sql-database-single-database-get-started/new-sql-database-basics.png)
+   
+1. На вкладке **Сеть** в разделе **Метод подключения** выберите **Общедоступная конечная точка**. 
+1. В разделе **Правила брандмауэра** установите переключатель **Добавить текущий IP-адрес клиента** в положение **Да**.
+1. По завершении выберите **Next: Additional settings** (Далее: дополнительные параметры) в нижней части страницы.
+   
+   ![Вкладка "Сеть"](../media/sql-database-single-database-get-started/networking.png)
+   
+   Дополнительные сведения о параметрах брандмауэра см. в разделе [Управление доступом к сети для базы данных SQL Azure и хранилища данных](../sql-database-networkaccess-overview.md) и [Что такое частная конечная точка Azure?](../../private-link/private-endpoint-overview.md).
+   
+1. На вкладке **Дополнительные параметры** в разделе **Источник данных** для параметра **Использовать существующие данные** выберите значение **Пример**.
+1. В нижней части страницы выберите **Review + create** (Проверить и создать).
+   
+   ![Вкладка "Дополнительные параметры"](../media/sql-database-single-database-get-started/additional-settings.png)
+   
+1. Проверив параметры, нажмите кнопку **Создать**.
 
-   ![Создание отдельной базы данных](../media/sql-database-get-started-portal/create-single-database.png)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-4. На вкладке **Основные сведения**  в разделе **Сведения о проекте** введите или выберите следующие значения:
+Вы можете создать группу ресурсов Azure, SQL Server и одну базу данных с помощью интерфейса командной строки Azure (Azure CLI). Если вы не хотите использовать Azure Cloud Shell, [установите Azure CLI](/cli/azure/install-azure-cli) на компьютере.
 
-   - **Подписка**: Раскройте раскрывающийся список и выберите правильную подписку, если она не отобразится автоматически.
-   - **Группа ресурсов.** Выберите **Создать**, введите `myResourceGroup` и щелкните **ОК**.
+Чтобы запустить следующий пример кода в Azure Cloud Shell, нажмите **Попробовать** в строке заголовка примера кода. После открытия Cloud Shell выберите **Копировать** в строке заголовка примера кода и вставьте пример кода в окно Cloud Shell. В коде замените `<Subscription ID>` идентификатором подписки Azure, а для `$startip` и `$endip` замените `0.0.0.0` общедоступным IP-адресом используемого компьютера.
 
-     ![Новая база данных SQL — вкладка основных сведений](../media/sql-database-get-started-portal/new-sql-database-basics.png)
+Следуйте инструкциям на экране, чтобы войти в Azure и запустить код. 
 
-5. В разделе **Сведения о базе данных** введите или выберите следующие значения:
+Можно также использовать Azure Cloud Shell из портала Azure, щелкнув значок Cloud Shell на верхней панели. 
+   
+   ![Azure Cloud Shell](../media/sql-database-single-database-get-started/cloudshell.png)
+   
+При первом использовании Cloud Shell на портале выберите **Bash** в диалоговом окне **Добро пожаловать**. В последующих сеансах Azure CLI будет использоваться в среде Bash, или же можно выбрать **Bash** в панели управления Cloud Shell. 
 
-   - **Имя базы данных**. Введите `mySampleDatabase`.
-   - **Сервер**: Выберите **Создать**, введите следующие значения и щелкните **Выбрать**.
-       - **Имя сервера**: Введите `mysqlserver` и несколько цифр для уникальности имени.
-       - **Имя для входа администратора сервера**. Введите `azureuser`.
-       - **Пароль**. Введите сложный пароль, который соответствует требованиям к паролю.
-       - **Расположение.** Выберите расположение из раскрывающегося списка, например `West US`.
+Следующий код Azure CLI создает группу ресурсов Azure, SQL Server, отдельную базу данных и правило брандмауэра для доступа к серверу. Обязательно запишите созданные имена группы ресурсов и сервера, чтобы впоследствии можно было управлять этими ресурсами.
 
-         ![Новый сервер](../media/sql-database-get-started-portal/new-server.png)
+```azurecli-interactive
+#!/bin/bash
 
-      > [!IMPORTANT]
-      > Запомните или запишите имя входа и пароль администратора сервера, чтобы можно было войти на сервер и в базы данных для выполнения действий, описанных в этом и других кратких руководствах. Если вы забыли имя входа или пароль, получить имя входа или сбросить пароль можно на странице **сервера SQL server**. Чтобы открыть страницу **сервера SQL**, выберите имя сервера на странице **Обзор** для базы данных после создания базы данных.
+# Sign in to Azure and set execution context (if necessary)
+az login
+az account set --subscription <Subscription ID>
 
-   - **Хотите использовать пул эластичных БД SQL?** Выберите **Нет**.
-   - **Вычисления и хранилище**. Выберите **Настройка базы данных**. 
+# Set the resource group name and location for your server
+resourceGroupName=myResourceGroup-$RANDOM
+location=westus2
 
-     ![Сведения о Базе данных SQL](../media/sql-database-get-started-portal/sql-db-basic-db-details.png)
+# Set an admin login and password for your database
+adminlogin=azureuser
+password=Azure1234567
 
-   - Выберите **Подготовлено**.  Кроме того, можно выбрать **Бессерверная**, чтобы создать бессерверную базу данных.
+# Set a logical server name that is unique in the system
+servername=server-$RANDOM
 
-     ![Элементы "Подготовлено" и "4-е поколение"](../media/sql-database-get-started-portal/create-database-provisioned.png)
+# Set the ip address range that can access your database
+startip=0.0.0.0
+endip=0.0.0.0
 
-   - Проверьте параметры **виртуальных ядер** и **максимального размера данных**. Измените их при необходимости. 
-     - При необходимости можно также выбрать команду **Изменить конфигурацию**, чтобы изменить параметры создания оборудования.
-   - Нажмите кнопку **Применить**.
+# Create a resource group
+az group create \
+    --name $resourceGroupName \
+    --location $location
 
-6. Щелкните вкладку **Сеть** и выберите [**Разрешить доступ к серверу службам и ресурсам Azure**](../sql-database-networkaccess-overview.md) либо [Добавить частную конечную точку](../../private-link/private-endpoint-overview.md).
+# Create a logical server in the resource group
+az sql server create \
+    --name $servername \
+    --resource-group $resourceGroupName \
+    --location $location  \
+    --admin-user $adminlogin \
+    --admin-password $password
 
-   ![Вкладка "Сеть"](../media/sql-database-get-started-portal/create-database-networking.png)
+# Configure a firewall rule for the server
+az sql server firewall-rule create \
+    --resource-group $resourceGroupName \
+    --server $servername \
+    -n AllowYourIp \
+    --start-ip-address $startip \
+    --end-ip-address $endip
 
-7. Перейдите на вкладку **Дополнительные параметры**. 
-8. В разделе **Источник данных** для параметра **Использовать имеющиеся данные** выберите `Sample`.
+# Create a gen5 2 vCore database in the server
+az sql db create \
+    --resource-group $resourceGroupName \
+    --server $servername \
+    --name mySampleDatabase \
+    --sample-name AdventureWorksLT \
+    --edition GeneralPurpose \
+    --family Gen5 \
+    --capacity 2 \
+```
 
-   ![Дополнительные параметры Базы данных SQL](../media/sql-database-get-started-portal/create-sql-database-additional-settings.png)
+В приведенном выше коде используются следующие команды Azure CLI.
 
-   > [!IMPORTANT]
-   > Не забудьте выбрать данные **Пример (AdventureWorksLT)** , чтобы изучить это руководство и другие краткие руководства по Базе данных SQL Azure, в которых используются эти данные.
+| Get-Help | Описание |
+|---|---|
+| [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) | Позволяет указать подписку в качестве текущей активной подписки. | 
+| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
+| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-create) | Создает правила брандмауэра сервера. | 
+| [az sql db create](/cli/azure/sql/db#az-sql-db-create?view=azure-cli-latest) | Создает базу данных. | 
 
-9. Оставьте остальные значения заданными по умолчанию и нажмите кнопку **Просмотр и создание** в нижней части формы.
-10. Проверьте параметры и нажмите кнопку **Создать**.
-
-11. В форме **База данных SQL** щелкните **Создать**, чтобы развернуть и подготовить группу ресурсов, сервер и базу данных.
+Дополнительные примеры Azure CLI для базы данных SQL Azure см. в разделе [Примеры для Azure CLI](../sql-database-cli-samples.md).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
+Вы можете создать группу ресурсов Azure, SQL Server и одну базу данных с помощью Windows PowerShell. Если вы не хотите использовать Azure Cloud Shell, [установите модуль Azure PowerShell](/powershell/azure/install-az-ps).
+
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Создайте группу ресурсов и отдельную базу данных с помощью PowerShell.
+Чтобы запустить следующий пример кода в Azure Cloud Shell, нажмите **Попробовать** в строке заголовка кода. После открытия Cloud Shell выберите **Копировать** в строке заголовка примера кода и вставьте пример кода в окно Cloud Shell. В коде замените `<Subscription ID>` идентификатором подписки Azure, а для `$startIp` и `$endIp` замените `0.0.0.0` общедоступным IP-адресом используемого компьютера. 
+
+Следуйте инструкциям на экране, чтобы войти в Azure и запустить код. 
+
+Можно также использовать Azure Cloud Shell из портала Azure, щелкнув значок Cloud Shell на верхней панели. 
+   
+   ![Azure Cloud Shell](../media/sql-database-single-database-get-started/cloudshell.png)
+   
+При первом использовании Cloud Shell на портале выберите **PowerShell** в диалоговом окне **Добро пожаловать**. В последующих сеансах будет использоваться PowerShell, или его можно выбрать на панели управления Cloud Shell. 
+
+Следующий код PowerShell создает группу ресурсов Azure, SQL Server, отдельную базу данных и правило брандмауэра для доступа к серверу. Обязательно запишите созданные имена группы ресурсов и сервера, чтобы впоследствии можно было управлять этими ресурсами.
 
    ```powershell-interactive
    # Set variables for your server and database
@@ -93,18 +181,16 @@ ms.locfileid: "78194310"
    $resourceGroupName = "myResourceGroup-$(Get-Random)"
    $location = "West US"
    $adminLogin = "azureuser"
-   $password = "PWD27!"+(New-Guid).Guid
+   $password = "Azure1234567"
    $serverName = "mysqlserver-$(Get-Random)"
    $databaseName = "mySampleDatabase"
 
    # The ip address range that you want to allow to access your server 
-   # (leaving at 0.0.0.0 will prevent outside-of-azure connections to your DB)
    $startIp = "0.0.0.0"
    $endIp = "0.0.0.0"
 
    # Show randomized variables
    Write-host "Resource group name is" $resourceGroupName 
-   Write-host "Password is" $password  
    Write-host "Server name is" $serverName 
 
    # Connect to Azure
@@ -147,56 +233,15 @@ ms.locfileid: "78194310"
    $database
    ```
 
-В этом сценарии используются следующие командлеты PowerShell:
+В приведенном выше коде используются следующие командлеты PowerShell:
 
 | Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создание правила брандмауэра для логического сервера. | 
-| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создание отдельной базы данных в Базе данных SQL Azure. | 
+| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает отдельную базу данных в Базе данных SQL Azure. | 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-Создайте группу ресурсов и отдельную базу данных с помощью Azure CLI.
-
-   ```azurecli-interactive
-   #!/bin/bash
-   # set variables
-   $subscription = "<subscriptionID>"
-   $randomIdentifier = $(Get-Random)
-
-   $resourceGroup = "resource-$randomIdentifier"
-   $location = "East US"
-   
-   $login = "sampleLogin"
-   $password = "samplePassword123!"
-
-   $server = "server-$randomIdentifier"
-   $database = "database-$randomIdentifier"
-  
-   az login # connect to Azure
-   az account set -s $subscription # set subscription context for the Azure account
-
-   echo "Creating resource group..."
-   az group create --name $resourceGroup --location $location
-
-   echo "Creating primary logical server..."
-   az sql server create --name $server --resource-group $resourceGroup --location $location --admin-user $login --admin-password $password
-
-   echo "Creating a gen5 2 vCore database..."
-   az sql db create --resource-group $resourceGroup --server $server --name $database --sample-name AdventureWorksLT --edition GeneralPurpose --family Gen5 --capacity 2
-   ```
-
-Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
-
-| Get-Help | Примечания |
-|---|---|
-| [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) | Позволяет указать подписку в качестве текущей активной подписки. | 
-| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
-| [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule) | Создает правила брандмауэра сервера. | 
-| [az sql db create](/cli/azure/sql/db?view=azure-cli-latest) | Создает базу данных. | 
-
+Дополнительные примеры PowerShell для Базы данных SQL Azure см. в разделе [Примеры сценариев Azure PowerShell](../sql-database-powershell-samples.md).
 
 ---
