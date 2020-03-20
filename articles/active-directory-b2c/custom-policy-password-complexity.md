@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: af6a7611381cbf7a251e65969d156f4c40d71843
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
-ms.translationtype: HT
+ms.openlocfilehash: b16790e288f6569f08ce14e5a7c751bbd8083faf
+ms.sourcegitcommit: d322d0a9d9479dbd473eae239c43707ac2c77a77
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79126773"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79138440"
 ---
 # <a name="configure-password-complexity-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -153,4 +153,4 @@ ms.locfileid: "79126773"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [настроить сложность пароля в настраиваемых политиках в Azure Active Directory B2C](custom-policy-password-change.md).
-- - Дополнительные сведения о [предикатах](predicates.md) и элементах [предикатевалидатионс](predicates.md#predicatevalidations) см. в справочнике по инфраструктура процедур идентификации.
+- Дополнительные сведения о [предикатах](predicates.md) и элементах [предикатевалидатионс](predicates.md#predicatevalidations) см. в справочнике по инфраструктура процедур идентификации.

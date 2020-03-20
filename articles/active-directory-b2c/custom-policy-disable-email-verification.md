@@ -11,25 +11,28 @@ ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8ec60f694000985f51db25db621e5814df62cdb3
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: 13a5fa6a030d876d92651ca587e37fdc6a3ec600
+ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79126812"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79136148"
 ---
 # <a name="disable-email-verification-during-customer-sign-up-using-a-custom-policy-in-azure-active-directory-b2c"></a>Отключить проверку электронной почты во время регистрации клиента с помощью настраиваемой политики в Azure Active Directory B2C
 
 [!INCLUDE [disable email verification intro](../../includes/active-directory-b2c-disable-email-verification.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md). У вас должна быть Рабочая настраиваемая политика для регистрации и входа с помощью социальных сетей и локальных учетных записей.
 
 ## <a name="add-the-metadata-to-the-self-asserted-technical-profile"></a>Добавление метаданных в самостоятельно утвержденный технический профиль
 
-Технический профиль **локалаккаунтсигнупвислогонемаил** — это [самоподтвержденный](self-asserted-technical-profile.md), который вызывается во время процесса регистрации. Чтобы отключить проверку по электронной почте, задайте для метаданных `EnforceEmailVerification` значение false. Переопределите технические профили Локалаккаунтсигнупвислогонемаил в файле расширения. Найдите элемент `ClaimsProviders`. Добавьте в элемент `ClaimsProviders` следующий поставщик утверждений:
+Технический профиль **локалаккаунтсигнупвислогонемаил** — это [самоподтвержденный](self-asserted-technical-profile.md), который вызывается во время процесса регистрации. Чтобы отключить проверку по электронной почте, задайте для метаданных `EnforceEmailVerification` значение false. Переопределите технические профили Локалаккаунтсигнупвислогонемаил в файле расширения. 
 
+1. Откройте файл расширений политики. Например, <em>`SocialAndLocalAccounts/` **`TrustFrameworkExtensions.xml`** </em>.
+1. Найдите элемент `ClaimsProviders`. Если такой элемент не существует, добавьте его.
+1. Добавьте в элемент `ClaimsProviders` следующий поставщик утверждений:
 
 ```XML
 <ClaimsProvider>
