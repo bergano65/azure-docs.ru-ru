@@ -4,10 +4,10 @@ description: Индекс встроенных определений Полит
 ms.date: 01/31/2020
 ms.topic: sample
 ms.openlocfilehash: 11e36ba71e1b88f279e824948dffa809f16fd443
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "77168032"
 ---
 # <a name="azure-policy-samples"></a>Примеры для Политики Azure
@@ -34,6 +34,6 @@ ms.locfileid: "77168032"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со встроенными определениями в [репозитории GitHub для Политики Azure](https://github.com/Azure/azure-policy).
+- Ознакомьтесь со встроенными инициативами в [репозитории GitHub для Политики Azure](https://github.com/Azure/azure-policy).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
 - Изучите [сведения о действии политик](../concepts/effects.md).

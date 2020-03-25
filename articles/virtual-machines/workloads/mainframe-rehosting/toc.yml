@@ -10,7 +10,7 @@
       items:
         - name: Службы вычислений
           href: concepts/mainframe-compute-azure.md
-        - name: Хранилище
+        - name: Память
           href: concepts/mainframe-storage-azure.md
     - name: Micro Focus
       items:

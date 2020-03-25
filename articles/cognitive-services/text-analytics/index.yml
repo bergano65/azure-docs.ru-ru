@@ -8,18 +8,17 @@ metadata:
   description: 'API Анализа текста — это облачная служба, которая обеспечивает расширенную обработку необработанного текста на естественных языках и включает в себя четыре основные функции: анализ тональности, извлечение ключевых фраз, распознавание именованных сущностей и определение языка. Узнайте, как анализировать содержимое разными способами, ознакомившись с нашими краткими руководствами, примерами и учебниками.'
   author: aahill
   manager: nitinme
-  layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: text-analytics
   ms.topic: landing-page
   ms.date: 01/29/2019
   ms.author: aahi
-  ms.openlocfilehash: c98f6b9994dfa80f51a78d9be22e283cca700ce9
-  ms.sourcegitcommit: 3c8fbce6989174b6c3cdbb6fea38974b46197ebe
+  ms.openlocfilehash: 468315f79f7d0f9d10013c4068b5bb29436b3166
+  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/21/2020
-  ms.locfileid: "77524603"
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "79415144"
 landingContent:
 - title: Об API Анализа текста
   linkLists:

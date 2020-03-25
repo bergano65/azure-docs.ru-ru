@@ -68,13 +68,13 @@ sections:
               - href: null
               - href: null
               - href: null
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: list
         style: cards
         className: cardsD
         items:
-          - title: Большие двоичные объекты
+          - title: BLOB-объекты
             html: <p>Передача и обработка данных изображений в облаке</p><ul><li><a href="/azure/storage/blobs/storage-upload-process-images">Отправка и получение данных изображений в облаке</a></li><li><a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Активация Функций Azure для обработки больших двоичных объектов</a></li><li><a href="/azure/storage/blobs/storage-secure-access-application">Защита данных приложения</a></li><li><a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Мониторинг и устранение неполадок хранилища</a></li></ul><p>Обеспечение высокого уровня доступности при проектировании приложения</p><ul><li><a href="/azure/storage/blobs/storage-create-geo-redundant-storage">Обеспечение высокого уровня доступности данных приложения</a></li><li><a href="/azure/storage/blobs/storage-simulate-failure-ragrs-account-app">Моделирование сбоя при чтении данных в основном регионе</a></li></ul>
           - title: Data Lake Storage 2-го поколения
             html: '<p><a href="/azure/storage/blobs/data-lake-storage-handle-data-using-databricks">Извлечение, преобразование и загрузка данных с помощью Azure Databricks</a></p><p><a href="/azure/storage/blobs/data-lake-storage-use-databricks-spark">Доступ к данным Azure Data Lake Storage 2-го поколения с помощью DataBricks и Spark</a></p><p><a href="/azure/storage/blobs/data-lake-storage-tutorial-extract-transform-load-hive">Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight</a></p>'
@@ -112,8 +112,8 @@ sections:
               src: /learn/achievements/create-azure-storage-account.svg
               href: /learn/modules/create-azure-storage-account/
       - type: paragraph
-        text: <a href="/learn/browse/?products=azure-storage">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
+        text: <a href="/learn/browse/?products=azure-storage">Дополнительные интерактивные руководства…</a>
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
@@ -129,7 +129,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
               href: 'https://app.pluralsight.com/library/courses/developing-nodejs-microsoft-azure-getting-started/table-of-contents'
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: cards

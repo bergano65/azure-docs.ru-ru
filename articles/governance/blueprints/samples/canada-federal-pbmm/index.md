@@ -4,10 +4,10 @@ description: Обзор примера схемы Canada Federal PBMM. Этот 
 ms.date: 09/04/2019
 ms.topic: sample
 ms.openlocfilehash: c1c5f9c6ec8dc49db4c93d0fbf9caa379a4ab160
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "74544504"
 ---
 # <a name="overview-of-the-canada-federal-pbmm-blueprint-sample"></a>Обзор примера схемы Canada Federal PBMM
@@ -18,7 +18,7 @@ ms.locfileid: "74544504"
 
 Этот пример схемы позволяет развернуть базовый набор политик для любой архитектуры на основе Azure, требующей аккредитации или соответствия требованиям платформы Canada Federal PBMM. В разделе о [сопоставлении средств управления](./control-mapping.md) описаны политики, используемые в рамках этой инициативы, и методы, с помощью которых эти политики помогают обеспечить соответствие разным средствам управления, определенным на платформе Canada Federal PBMM. Назначаемые архитектуре ресурсы оцениваются Политикой Azure на предмет соответствия назначенным политикам.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с обзором примера схемы Canada Federal PBMM. Дополнительные сведения о сопоставлении элементов управления и развертывании этого примера см. в следующих статьях:
 

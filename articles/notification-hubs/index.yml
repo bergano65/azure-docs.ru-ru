@@ -49,7 +49,7 @@ sections:
           - html: '<a href="https://github.com/Azure/azure-notificationhubs-dotnet">Пакет SDK для .NET</a>'
           - html: '<a href="https://github.com/Azure/azure-notificationhubs-samples">Репозиторий примеров (для других платформ)</a>'
           - html: <a href="/azure/notification-hubs/samples-powershell">PowerShell</a>
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: unordered

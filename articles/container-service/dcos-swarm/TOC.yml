@@ -4,7 +4,7 @@
   items:
     - name: Общие сведения о службе контейнеров
       href: container-service-intro.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Docker Swarm
@@ -57,7 +57,7 @@
               href: container-service-monitoring-dynatrace.md
     - name: Docker Swarm
       items:
-        - name: Краткое руководство Docker CE
+        - name: Краткое руководство по Docker CE
           href: container-service-swarm-mode-walkthrough.md
         - name: Docker и Docker Compose
           href: container-service-docker-swarm.md
@@ -65,9 +65,9 @@
           href: container-service-docker-swarm-setup-ci-cd.md
         - name: CI/CD с использованием Docker Swarm (обработчика ACS) и Azure DevOps
           href: container-service-docker-swarm-mode-setup-ci-cd-acs-engine.md
-- name: Справочные материалы
+- name: Справочник
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/acs
     - name: PowerShell
       href: /powershell/module/az.compute
@@ -77,15 +77,15 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: container-service-faq.md
     - name: "Шаблоны\_— модуль\_ACS"
       href: 'https://github.com/Azure/acs-engine'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/container-service/'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-container-service'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest'

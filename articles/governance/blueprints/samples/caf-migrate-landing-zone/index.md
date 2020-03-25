@@ -4,10 +4,10 @@ description: Обзор и описание архитектуры Cloud Adoptio
 ms.date: 08/20/2019
 ms.topic: sample
 ms.openlocfilehash: 08171a39c83ea6822243d7239882a19b053f213e
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "74545497"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-migration-landing-zone-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы зоны размещения для миграции в соответствии с CAF
@@ -16,7 +16,7 @@ ms.locfileid: "74545497"
 
 Пример схемы [CAF Foundation](../caf-foundation/index.md) дополняет этот пример.
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Этот пример схемы зоны размещения для миграции в соответствии с CAF развертывает ресурсы инфраструктуры в Azure, которые организации могут использовать для подготовки подписок к выполнению миграции виртуальных машин. Кроме того, этот с помощью этого примера можно настроить элементы управления, требуемые для администрирования облачной инфраструктуры. В примере будут развернуты и применены ресурсы, политики и шаблоны, позволяющие организации уверенно приступить к работе с Azure.
 
@@ -38,7 +38,7 @@ ms.locfileid: "74545497"
 
 См. сведения о [миграции в соответствии с Microsoft Cloud Adoption Framework для Azure](/azure/architecture/cloud-adoption/migrate/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с обзором и описанием архитектуры примера схемы зоны размещения для миграции в соответствии с CAF.
 

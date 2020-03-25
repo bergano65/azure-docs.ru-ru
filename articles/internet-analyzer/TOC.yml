@@ -10,7 +10,7 @@
       href: internet-analyzer-create-test-portal.md
     - name: Создание теста Анализатора Интернета с помощью CLI
       href: internet-analyzer-cli.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Внедрение клиента
       href: internet-analyzer-embed-client.md

@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Документация по API "Перевод текстов"
-summary: "\"Перевод текстов\" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. \"Пользовательский переводчик\" — это расширение API-интерфейса \"Перевод текстов\", которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API \"Перевод текстов\" или служб \"Речь\" от Майкрософт."
+summary: "\"Перевод текстов\" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. \"Пользовательский переводчик\" — это расширение API-интерфейса \"Перевод текстов\", которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API \"Перевод текстов\" или службы \"Речь\" от Майкрософт."
 metadata:
   title: Документация по API "Перевод текстов". Краткие руководства, учебные материалы и справочник по API
   titleSuffix: Azure Cognitive Services
@@ -8,18 +8,17 @@ metadata:
   services: cognitive-services
   author: erhopf
   manager: nitinme
-  layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: translator-text
   ms.topic: landing-page
   ms.date: 10/14/2019
   ms.author: erhopf
-  ms.openlocfilehash: 7103e8e6e64c60507b8f72d843fe05afa2e3561f
-  ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+  ms.openlocfilehash: 2d6b5f07cdefe874a8c25338e5c31664fccb8055
+  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/12/2019
-  ms.locfileid: "73960620"
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "79415731"
 landingContent:
 - title: API перевода
   linkLists:
@@ -35,7 +34,7 @@ landingContent:
       url: https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/
     - text: Создание подписки
       url: translator-text-how-to-signup.md
-    - text: Часто задаваемые вопросы
+    - text: ВОПРОСЫ И ОТВЕТЫ
       url: https://www.microsoft.com/translator/faq.aspx
 - title: API Перевода текстов
   linkLists:

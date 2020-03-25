@@ -24,7 +24,7 @@
           href: quickstarts/detect-data-anomalies-java.md
         - name: Использование Python
           href: quickstarts/detect-data-anomalies-python.md
-- name: Руководства
+- name: Учебники
   items:
     - name: "Визуализация аномалий в пакетном режиме с помощью Power\_BI"
       href: tutorials/batch-anomaly-detection-powerbi.md
@@ -48,7 +48,7 @@
   items:
     - name: Рекомендации по работе с API Детектора аномалий
       href: concepts/anomaly-detection-best-practices.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по REST API
       href: 'https://aka.ms/anomaly-detector-rest-api-ref'

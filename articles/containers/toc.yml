@@ -47,7 +47,7 @@
       items:
         - name: Обзор. Service Fabric и контейнеры
           href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview'
-        - name: Практическое руководство
+        - name: Инструкции
           items:
             - name: Создание приложения-контейнера в Windows
               href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-containers'
@@ -75,7 +75,7 @@
               href: ../openshift/tutorial-scale-cluster.md
             - name: "3.\_Удаление кластера Azure Red Hat OpenShift"
               href: ../openshift/tutorial-delete-cluster.md
-    - name: Справочные материалы
+    - name: Справочник
       items:
         - name: Служба "Экземпляры контейнеров Azure" (az container)
           href: 'https://docs.microsoft.com/cli/azure/container'

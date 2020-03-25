@@ -38,7 +38,7 @@
       href: analysis-services-bcdr.md
     - name: Поддерживаемые источники данных
       href: analysis-services-datasource.md
-- name: Инструкции
+- name: Практическое руководство
   items:
     - name: Сервер
       items:
@@ -76,7 +76,7 @@
           href: analysis-services-refresh-logic-app.md
         - name: Обновление с помощью службы автоматизации Azure
           href: analysis-services-refresh-azure-automation.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Управление пользователями баз данных
           href: analysis-services-database-users.md
@@ -90,7 +90,7 @@
           href: analysis-services-connect-pbi.md
         - name: Создание ODC-файла
           href: analysis-services-odc.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: PowerShell
       href: analysis-services-powershell.md
@@ -120,7 +120,7 @@
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
     - name: Состояние Azure
       href: 'https://azure.microsoft.com/status/'
-    - name: Отзыв
+    - name: Отзывы
       href: 'https://feedback.azure.com/forums/556165-azure-analysis-services'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/analysis-services/'

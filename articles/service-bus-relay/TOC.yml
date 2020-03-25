@@ -32,7 +32,7 @@
       href: 'https://github.com/Azure/azure-relay/tree/master/samples/wcf-relay'
 - name: Основные понятия
   items:
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Аутентификация и авторизация
           href: relay-authentication-and-authorization.md

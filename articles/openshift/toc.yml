@@ -41,6 +41,8 @@
           href: howto-azure-monitor-v4.md
     - name: Развертывание изолированного экземпляра Prometheus в кластере Azure Red Hat OpenShift
       href: howto-deploy-prometheus.md
+    - name: Управление проектами в кластере Azure Red Hat OpenShift
+      href: howto-manage-projects.md
     - name: Создание частного кластера Azure Red Hat OpenShift
       href: howto-create-private-cluster.md
     - name: Мониторинг и ведение журнала

@@ -9,7 +9,7 @@
       maintainContext: true
 - name: Краткие руководства
   items:
-    - name: "REST\_API"
+    - name: REST API
       expanded: true
       items:
         - name: 'Использование C#'
@@ -28,11 +28,11 @@
       items:
         - name: 'Использование C#'
           href: sdk-quickstart-spell-check.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание веб-приложения для проверки орфографии
       href: tutorials/spellcheck.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Обновление с версии 5 до версии 7
       href: bing-spell-check-upgrade-guide-v5-to-v7.md
@@ -46,7 +46,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Spell+Check'
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Проверки орфографии Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference'
@@ -86,5 +86,5 @@
       href: 'https://azure.microsoft.com/services/cognitive-services/spell-check/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598195-bing-spell-check'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

@@ -83,8 +83,6 @@
       items:
         - name: Начало работы на портале Azure EA
           href: ea-portal-get-started.md
-        - name: Интерпретация счета EA
-          href: ../understand/review-enterprise-agreement-bill.md
         - name: Роли EA в Azure
           href: understand-ea-roles.md
         - name: Администрирование на портале Azure EA

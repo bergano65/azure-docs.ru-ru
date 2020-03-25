@@ -1,4 +1,4 @@
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
@@ -6,6 +6,6 @@
       tocHref: /azure/cognitive-services/
       topicHref: /azure/cognitive-services/index
       items:
-        - name: Службы распознавания речи
+        - name: Службы "Речь"
           tocHref: /azure/cognitive-services/translator/
           topicHref: /azure/cognitive-services/speech-service/index

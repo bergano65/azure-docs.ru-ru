@@ -1,5 +1,5 @@
 ---
-title: Предельная сумма расходов Azure | Документация Майкрософт
+title: Предельная сумма расходов Azure
 description: В этой статье описывается, как работает предельная сумма расходов Azure и как ее удалить.
 author: bandersmsft
 ms.reviewer: judupont
@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: ef1ed399f2ed3401612543b3dcaf94dfbafb6715
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 6feac116c92f8dac7bd1dde2084f9b25f5e559f8
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200560"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79238063"
 ---
 # <a name="azure-spending-limit"></a>Предельная сумма расходов Azure
 

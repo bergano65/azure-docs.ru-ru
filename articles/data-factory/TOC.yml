@@ -537,7 +537,7 @@
           href: control-flow-system-variables.md
         - name: Параметризация потоков данных для сопоставления
           href: parameters-data-flow.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Вопросы безопасности при перемещении данных
           href: data-movement-security-considerations.md

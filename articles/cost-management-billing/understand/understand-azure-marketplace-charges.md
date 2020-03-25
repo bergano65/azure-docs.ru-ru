@@ -10,10 +10,10 @@ ms.date: 02/24/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 7955e9bc75b2a27ac42d381df1e686ec8a0ed04b
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77587817"
 ---
 # <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешние службы в Azure

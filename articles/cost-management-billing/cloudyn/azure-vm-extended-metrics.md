@@ -1,20 +1,20 @@
 ---
-title: Добавление расширенных метрик для виртуальных машин Azure | Документация Майкрософт
+title: Добавление расширенных метрик для виртуальных машин Azure
 description: В этой статье описывается, как включить и настроить расширенные метрики диагностики для виртуальных машин Azure.
-keywords: ''
 author: bandersmsft
 ms.reviewer: vitavor
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.custom: seodec18
-ms.openlocfilehash: 84a9d6aa6203b8a518b0e33bed0ec2707c4389a1
-ms.sourcegitcommit: 72c2da0def8aa7ebe0691612a89bb70cd0c5a436
+ROBOTS: NOINDEX
+ms.openlocfilehash: b4c646f3d42edc39f457cd735f16409f4ef05d2c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79082920"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79481625"
 ---
 # <a name="add-extended-metrics-for-azure-virtual-machines"></a>Добавление расширенных метрик для виртуальных машин Azure
 
@@ -30,7 +30,9 @@ ms.locfileid: "79082920"
 Например, вам может потребоваться отслеживать процент используемой памяти и загрузки ЦП виртуальных машин Azure. Для этого используются такие метрики виртуальной машины Azure, как _Загрузка ЦП_ и _\Память\% использование выделенной памяти (в байтах)_ .
 
 > [!NOTE]
-> Расширенный сбор данных метрик поддерживается только с помощью мониторинга Azure на уровне гостя. Служба Cloudyn не совместима с [агентом Log Analytics](../../azure-monitor/platform/agents-overview.md). 
+> Расширенный сбор данных метрик поддерживается только с помощью мониторинга Azure на уровне гостя. Служба Cloudyn не совместима с [агентом Log Analytics](../../azure-monitor/platform/agents-overview.md).
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="determine-whether-extended-metrics-are-enabled"></a>Определение доступности расширенных метрик
 

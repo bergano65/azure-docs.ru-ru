@@ -7,7 +7,7 @@
       href: ../azure-management.md
     - name: Группы управления
       href: ./overview.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: Создание групп управления

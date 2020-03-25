@@ -1,14 +1,14 @@
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-    - name: Безопасность
+    - name: безопасность
       tocHref: /azure/
       topicHref: /azure/security/index
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-    - name: Безопасность
+    - name: безопасность
       tocHref: /azure/architecture/
       topicHref: /azure/security/index

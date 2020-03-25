@@ -11,11 +11,11 @@ ms.date: 02/12/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 84b36c1357bedfc120cec72af84fdd79f52a2f57
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78245390"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79238165"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -109,7 +109,7 @@ ms.locfileid: "78245390"
 - [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/)
 - [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/)
-- [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p/)
+- [Visual Studio Enterprise: Bizspark](https://azure.microsoft.com/offers/ms-azr-0064p/)
 - [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/)
 - [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/)
 - [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g/)\*\*
@@ -124,7 +124,7 @@ ms.locfileid: "78245390"
 
 Этот раздел вопросов и ответов предназначен для тех пользователей, которые передают права владения на выставление счетов для подписки Azure другой учетной записи.
 
-### <a name="whoisaa"></a> Кто является администратором выставления счетов для учетной записи?
+### <a name="who-is-a-billing-administrator-of-an-account"></a><a name="whoisaa"></a> Кто является администратором выставления счетов для учетной записи?
 
 Администратором выставления счетов — это пользователь, у которого есть права на управление выставлением счетов для учетной записи. Этот пользователь имеет доступ к разделу выставления счетов на [портале Azure](https://portal.azure.com), где он выполняет разные задачи для выставления счетов, такие как создание подписок, просмотр и оплата счетов, изменение методов оплаты.
 
@@ -142,7 +142,7 @@ ms.locfileid: "78245390"
 
 ### <a name="does-everything-transfer-including-resource-groups-vms-disks-and-other-running-services"></a>Можно ли передать все группы ресурсов, виртуальные машины, диски и другие работающие службы?
 
-Все ресурсы, включая виртуальные машины, диски и веб-сайты, переносятся в новую учетную запись. Но если подписка передается в учетную запись пользователя в другом клиенте Azure AD, с ней [не передаются](#transfer-a-subscription-to-another-azure-ad-tenant-account) назначения [ролей администратора](add-change-subscription-administrator.md) и [RBAC](../../role-based-access-control/role-assignments-portal.md) для управления ресурсами в подписке. Кроме того, не передаются данные о [регистрации приложений](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) и другие службы, привязанные к конкретному клиенту.
+Все ресурсы, включая виртуальные машины, диски и веб-сайты, переносятся в новую учетную запись. Но если подписка передается в учетную запись пользователя в другом клиенте Azure AD, с ней [не передаются](add-change-subscription-administrator.md) назначения [ролей администратора](../../role-based-access-control/role-assignments-portal.md) и [RBAC](#transfer-a-subscription-to-another-azure-ad-tenant-account) для управления ресурсами в подписке. Кроме того, не передаются данные о [регистрации приложений](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) и другие службы, привязанные к конкретному клиенту.
 
 ### <a name="can-i-transfer-ownership-to-an-account-in-another-country"></a>Можно ли передать права владения подпиской учетной записи из другой страны?
 К сожалению, такую передачу прав невозможно выполнить на портале Azure. Чтобы перенести подписку в другую страну, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
@@ -206,15 +206,15 @@ ms.locfileid: "78245390"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
+### <a name="why-dont-i-see-the-transfer-subscription-button"></a><a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 
 Самостоятельный перенос подписки недоступен для вашей учетной записи выставления счетов. В настоящее время мы не поддерживаем передачу прав владения на выставление счетов для подписок EA на портале Azure. Кроме того, учетные записи по Клиентскому соглашению Майкрософт, которые были созданы при сотрудничестве с представителем корпорации Майкрософт, не поддерживают передачу прав на выставление счетов.
 
-### <a id="no-button"></a> Почему мой тип подписки не поддерживается для передачи прав?
+### <a name="why-doesnt-my-subscription-type-support-transfer"></a><a id="no-button"></a> Почему мой тип подписки не поддерживается для передачи прав?
 
 Не все типы подписок поддерживают передачу прав владения на выставление счетов. Список типов подписок, которые поддерживают перенос см. в разделе [Поддерживаемые типы подписок](#supported-subscription-types).
 
-### <a id="no-button"></a> Почему я получаю сообщение об отказе в доступе при попытке передать права владения на выставление счетов для подписки?
+### <a name="why-am-i-receiving-an-access-denied-error-when-i-try-to-transfer-billing-ownership-of-a-subscription"></a><a id="no-button"></a> Почему я получаю сообщение об отказе в доступе при попытке передать права владения на выставление счетов для подписки?
 
 Такая ошибка возникает, если вы пытаетесь переместить подписку плана Microsoft Azure, но у вас нет необходимых разрешений. Чтобы переместить подписку плана Microsoft Azure, необходимо быть владельцем или участником в разделе счета, по которому оплачивается эта подписка. Дополнительные сведения см. в разделе об [управлении подписками в разделе счета](understand-mca-roles.md#manage-subscriptions-for-invoice-section).
 

@@ -9,7 +9,7 @@
       maintainContext: true
 - name: Краткие руководства
   items:
-    - name: "REST\_API"
+    - name: REST API
       expanded: true
       items:
         - name: 'Использование C#'
@@ -56,7 +56,7 @@
     - name: Аналитика для API Визуального поиска
       maintainContext: true
       href: ../bing-web-search/bing-web-stats.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Получение сведений с помощью маркеров
       href: use-insights-token.md
@@ -67,7 +67,7 @@
       href: tutorial-visual-search-insights-token.md
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-visual-search-single-page-app.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: REST API версии 7
       href: 'https://aka.ms/bingvisualsearchreferencedoc'
@@ -96,5 +96,5 @@
       href: 'https://stackoverflow.com/questions/tagged/bing-search'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/555907-bing-search'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
