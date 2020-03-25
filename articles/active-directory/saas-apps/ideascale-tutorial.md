@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с IdeaScale | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с IdeaScale | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении IdeaScale.
 services: active-directory
 documentationCenter: na
@@ -17,10 +17,10 @@ ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 81594e6a21372f2b4dacedbda638cc87bad966db
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227562"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ideascale"></a>Руководство. Интеграция Azure Active Directory с IdeaScale
@@ -35,11 +35,11 @@ ms.locfileid: "74227562"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с IdeaScale, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка IdeaScale с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74227562"
 
     ![Сведения о домене и URL-адресах единого входа приложения IdeaScale](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.ideascale.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.ideascale.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
@@ -126,11 +126,11 @@ ms.locfileid: "74227562"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-ideascale-single-sign-on"></a>Настройка единого входа для приложения IdeaScale
 
@@ -152,13 +152,13 @@ ms.locfileid: "74227562"
 
     ![Параметры единого входа](./media/ideascale-tutorial/ic790850.png "Параметры единого входа")
 
-    a. В текстовое поле **SAML IdP Entity ID** (Идентификатор сущности выдающей точки распространения SAML) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовое поле **SAML IdP Entity ID** (Идентификатор сущности выдающей точки распространения SAML) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. Откройте скачанный на портале Azure файл метаданных в Блокноте, скопируйте содержимое и вставьте его в текстовое поле **SAML IdP Metadata** (Метаданные выдающей точки распространения SAML).
 
     c. В текстовое поле **Logout Success URL** (URL-адрес успешного выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    d. Нажмите кнопку **Сохранить изменения**.
+    d. Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -233,9 +233,9 @@ ms.locfileid: "74227562"
 
     ![Добавление участника](./media/ideascale-tutorial/ic790853.png "Добавить участника")
 
-    a. В текстовом поле **Адреса электронной почты** введите адрес действующей учетной записи Azure AD, которую желаете подготовить.
+    а. В текстовом поле **Адреса электронной почты** введите адрес действующей учетной записи Azure AD, которую желаете подготовить.
 
-    b. Нажмите кнопку **Сохранить изменения**.
+    b. Щелкните **Сохранить изменения**.
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией.

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Bersin | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Bersin | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bersin.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6c6794baab00dbb59df89187c8ab91f1a42ab03e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158889"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bersin"></a>Руководство по Интеграция Azure Active Directory с Bersin
+# <a name="tutorial-azure-active-directory-integration-with-bersin"></a>Руководство. Интеграция Azure Active Directory с Bersin
 
 В этом руководстве описано, как интегрировать Bersin с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Bersin обеспечивает следующие преимущества.
@@ -35,12 +35,12 @@ ms.locfileid: "73158889"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Bersin, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* подписка Bersin с поддержкой единого входа.
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Bersin{1}{2}с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -105,7 +105,7 @@ ms.locfileid: "73158889"
 
     ![Сведения о домене и URL-адресах единого входа приложения Bersin](common/idp-identifier-relay.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.bersin.com/shibboleth`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.bersin.com/shibboleth`.
 
     b. Щелкните **Задать дополнительные URL-адреса**.
 
@@ -125,11 +125,11 @@ ms.locfileid: "73158889"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-bersin-single-sign-on"></a>Настройка единого входа в Bersin
 
@@ -151,7 +151,7 @@ ms.locfileid: "73158889"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

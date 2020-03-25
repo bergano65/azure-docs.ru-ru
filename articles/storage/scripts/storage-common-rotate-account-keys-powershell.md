@@ -4,17 +4,18 @@ titleSuffix: Azure Storage
 description: Сведения о создании учетной записи хранения Azure и последующей операции извлечения и смены одного из ее ключей доступа.
 services: storage
 author: tamram
-ms.custom: mvc
 ms.service: storage
+ms.subservice: blobs
+ms.devlang: powershell
 ms.topic: sample
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 54a7a6cb89c88726853a39ab5b2a61e1f0cde0b5
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 52ebed3de093f15d8188ee5fec49d75d5a4a206d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894925"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80060813"
 ---
 # <a name="rotate-storage-account-access-keys-with-powershell"></a>Смена ключей учетной записи хранения с помощью PowerShell
 
@@ -40,7 +41,7 @@ Remove-AzResourceGroup -Name rotatekeystestrg
 
 Ниже приведены команды, на основе которых скрипт создает учетную запись хранения, извлекает и обновляет один из ее ключей доступа. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-AzLocation](/powershell/module/az.resources/get-azlocation) | Выводит все расположения и поддерживаемых в каждом из них поставщиков ресурсов. |
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группы ресурсов Azure. |
@@ -48,7 +49,7 @@ Remove-AzResourceGroup -Name rotatekeystestrg
 | [Get-AzStorageAccountKey](/powershell/module/az.storage/get-azstorageaccountkey) | Выводит список ключей доступа для учетной записи хранения Azure. |
 | [New-AzStorageAccountKey](/powershell/module/az.storage/new-azstorageaccountkey) | Повторно создает ключ доступа учетной записи хранения Azure. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 

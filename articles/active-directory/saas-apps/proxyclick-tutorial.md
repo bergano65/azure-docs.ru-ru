@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Proxyclick | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением Proxyclick | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход между Azure Active Directory и Proxyclick.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 6a4d1c8a390ebd1194d14c057bb32d3111bf39be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093495"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Руководство по Интеграция Azure Active Directory с Proxyclick
+# <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Руководство по интеграции Azure Active Directory с Proxyclick
 
 В этом руководстве описано, как интегрировать Proxyclick с Azure Active Directory (Azure AD).
 Такая интеграция обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67093495"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Proxyclick, вам потребуется:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 * подписка Proxyclick с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -257,5 +257,5 @@ ms.locfileid: "67093495"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -9,10 +9,10 @@ description: В этом руководстве описано, как испо�
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
 ms.openlocfilehash: 352671b2fe31095b0ffcaffb49195071a456a892
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78245023"
 ---
 # <a name="team-development-using-java-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в Java и Visual Studio Code
@@ -101,7 +101,7 @@ azds space select --name scott
 Давайте посмотрим на это в действии.
 
 ### <a name="make-a-code-change"></a>Измените код
-В окне VS Code перейдите к `mywebapi` и в `src/main/java/com/ms/sample/mywebapi/Application.java` измените код на метод `String index()`, например так:
+В окне VS Code перейдите к `mywebapi` и в `String index()` измените код на метод `src/main/java/com/ms/sample/mywebapi/Application.java`, например так:
 
 ```java
 @RequestMapping(value = "/", produces = "text/plain")

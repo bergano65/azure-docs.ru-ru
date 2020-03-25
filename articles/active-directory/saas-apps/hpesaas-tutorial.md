@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с HPE SaaS | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с HPE SaaS | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и HPE SaaS.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c881068fa97361176e4bef2bc156ea213a79c54
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159015"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hpe-saas"></a>Руководство по Интеграция Azure Active Directory с HPE SaaS
+# <a name="tutorial-azure-active-directory-integration-with-hpe-saas"></a>Руководство. Интеграция Azure Active Directory с HPE SaaS
 
 В этом учебнике описано, как интегрировать приложение HPE SaaS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с HPE SaaS обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159015"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с HPE SaaS, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка HPE SaaS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73159015"
 
     ![Сведения о домене и URL-адресах единого входа для приложения HPE SaaS](common/sp-identifier.png)
 
-    a. В текстовом поле **Sign on URL** (URL-адрес входа) введите URL-адрес в формате: `https://login.saas.hpe.com/msg`
+    а. В текстовом поле **Sign on URL** (URL-адрес входа) введите URL-адрес в формате: `https://login.saas.hpe.com/msg`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.saas.hpe.com`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73159015"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-hpe-saas-single-sign-on"></a>Настройка единого входа HPE SaaS
 

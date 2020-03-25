@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Rally Software | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Rally Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Rally Software.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: de84d03c3e0e433dbe7bc24c47b1766b32ad7bc4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093178"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rally-software"></a>Руководство по Интеграция Azure Active Directory с Rally Software
+# <a name="tutorial-azure-active-directory-integration-with-rally-software"></a>Учебник. Интеграция Azure Active Directory с Rally Software
 
 В этом учебнике описано, как интегрировать Rally Software с Azure Active Directory (Azure AD).
 Интеграция Rally Software с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67093178"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Rally Software, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Rally Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67093178"
 
     ![Сведения о домене и URL-адресах единого входа приложения Rally Software](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.rally.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.rally.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenant-name>.rally.com`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67093178"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -132,7 +132,7 @@ ms.locfileid: "67093178"
 
 2. На панели инструментов вверху щелкните **Setup** (Настройка), затем выберите **Subscription** (Подписка).
    
-    ![Подписка](./media/rally-software-tutorial/ic769531.png "Подписка")
+    ![подписка](./media/rally-software-tutorial/ic769531.png "Subscription")
 
 3. Нажмите кнопку **Действие**. В правой верхней части панели инструментов выберите **Изменение подписки**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "67093178"
    
     ![Аутентификация](./media/rally-software-tutorial/ic769542.png "Аутентификация")
    
-    a. Из раскрывающегося списка "Аутентификация" выберите пункт **Rally or SSO authentication** (Аутентификация Rally или путем единого входа).
+    а. Из раскрывающегося списка "Аутентификация" выберите пункт **Rally or SSO authentication** (Аутентификация Rally или путем единого входа).
 
     b. В текстовое поле **Identity provider URL** (URL-адрес поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное с портала Azure. 
 
@@ -212,9 +212,9 @@ ms.locfileid: "67093178"
 
 4. В разделе **Создание пользователя** выполните следующие действия.
    
-    ![Создание пользователя](./media/rally-software-tutorial/ic781040.png "Создание пользователя")
+    ![Создание пользователя](./media/rally-software-tutorial/ic781040.png "Создать пользователя")
 
-    a. В текстовое поле **Имя пользователя** введите имя пользователя, например **Brittsimon**.
+    а. В текстовое поле **Имя пользователя** введите имя пользователя, например **Brittsimon**.
    
     b. В текстовое поле **Адрес электронной почты** введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
@@ -222,7 +222,7 @@ ms.locfileid: "67093178"
 
     d. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    д. Щелкните **Save & Close** (Сохранить и закрыть).
+    д) Щелкните **Save & Close** (Сохранить и закрыть).
 
    >[!NOTE]
    >Вы можете использовать любые другие инструменты создания учетных записей пользователя Rally Software или API, предоставляемые Rally Software для подготовки учетных записей пользователя Azure AD.
@@ -239,5 +239,5 @@ ms.locfileid: "67093178"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

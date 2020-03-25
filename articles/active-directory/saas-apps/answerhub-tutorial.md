@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с AnswerHub | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с AnswerHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении AnswerHub.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a124832bd42a0a144ebc6000b818fb825aa422ef
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73152991"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Руководство по Интеграция Azure Active Directory с AnswerHub
+# <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Руководство. Интеграция Azure Active Directory с AnswerHub
 
 В этом руководстве описано, как интегрировать AnswerHub с Azure Active Directory (Azure AD).
 Интеграция Azure AD с AnswerHub обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73152991"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с AnswerHub, вам потребуется следующее:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете на один месяц получить пробную версию по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете на один месяц получить пробную версию по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 * Подписка AnswerHub с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73152991"
 
     ![Раздел базовой конфигурации SAML](common/sp-identifier.png)
 
-    a. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<company>.answerhub.com`.
+    а. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<company>.answerhub.com`.
 
     b. В поле **Идентификатор (сущности)** введите URL-адрес в формате `https://<company>.answerhub.com`.
 
@@ -147,7 +147,7 @@ ms.locfileid: "73152991"
 
     ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785172.png "Настройка SAML")  
   
-    a. В поле **IDP Login URL** (URL-адрес для входа через поставщик удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В поле **IDP Login URL** (URL-адрес для входа через поставщик удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
   
     b. В поле **IDP Logout URL** (URL-адрес для выхода через поставщик удостоверений) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
@@ -159,7 +159,7 @@ ms.locfileid: "73152991"
 
     ![Раздел "Ключи и сертификаты"](./media/answerhub-tutorial/ic785173.png "Ключи и сертификаты")  
 
-    a. Откройте в Блокноте скачанный на портале Azure сертификат в кодировке Base64, скопируйте его содержимое и вставьте его в поле **IDP Public Key (x509 Format)** (Открытый ключ поставщика удостоверений в формате x509).
+    а. Откройте в Блокноте скачанный на портале Azure сертификат в кодировке Base64, скопируйте его содержимое и вставьте его в поле **IDP Public Key (x509 Format)** (Открытый ключ поставщика удостоверений в формате x509).
   
     b. Щелкните **Сохранить**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "73152991"
 
     ![Свойства пользователя](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@<ваш_домен.доменная_зона>** .  
     Например, BrittaSimon@contoso.com.
@@ -236,7 +236,7 @@ ms.locfileid: "73152991"
 
 4. На панели слева, в области **Manage Users** (Управление пользователями) выберите **Create or import users** (Создать или импортировать пользователей), а затем **Users and groups** (Пользователи и группы).
 
-   ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785175.png "Users & Groups")
+   ![Вкладка "Пользователи и группы"](./media/answerhub-tutorial/ic785175.png "Пользователи и группы")
 
 5. В соответствующих полях введите **адрес электронной почты**, **имя пользователя** и **пароль** существующей учетной записи AAD, которую вы хотите добавить, а затем щелкните **Save** (Сохранить).
 

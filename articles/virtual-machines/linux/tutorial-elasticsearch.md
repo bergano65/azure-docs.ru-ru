@@ -13,12 +13,12 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 10/11/2017
 ms.author: routlaw
-ms.openlocfilehash: 4d6dce952eca3d528a310685106a017dd7e3b80f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1b7b4d3c25794a62bc19925ade278159ebb37615
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66166036"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80066548"
 ---
 # <a name="install-the-elastic-stack-on-an-azure-vm"></a>Установка Elastic Stack на виртуальной машине в Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "66166036"
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
@@ -55,7 +55,7 @@ az group create --name myResourceGroup --location eastus
 
 В следующем примере создаются виртуальная машина *myVM* и ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm create \
     --resource-group myResourceGroup \
     --name myVM \
@@ -66,7 +66,7 @@ az vm create \
 
 После создания виртуальной машины в Azure CLI отображается информация следующего вида. Запишите значение `publicIpAddress`. Этот адрес используется для доступа к виртуальной машине.
 
-```azurecli-interactive 
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
@@ -234,9 +234,9 @@ az vm open-port --port 5601 --resource-group myResourceGroup --name myVM
 
 ![Обзор событий системного журнала в Kibana](media/elasticsearch-install/kibana-search-filter.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы развернули Elastic Stack на виртуальной машине разработки в Azure. Вы научились выполнять следующие задачи:
+В этом руководстве вы развернули Elastic Stack на виртуальной машине разработки в Azure. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Ubuntu в группе ресурсов Azure.

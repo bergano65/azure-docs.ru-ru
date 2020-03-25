@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: site-recovery
 author: mayurigupta13
 manager: rochakm
@@ -10,10 +10,10 @@ ms.date: 02/28/2019
 ms.author: mayg
 ms.custom: include file
 ms.openlocfilehash: 7c682105113dac7c1d457489cf926210ead77993
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67185001"
 ---
 1. Запустите файл единой установки.
@@ -35,7 +35,7 @@ ms.locfileid: "67185001"
      ![Брандмауэр](./media/site-recovery-add-configuration-server/combined-wiz4.png)
 6. В окне **Проверка необходимых компонентов** программа установки проверяет возможность установки. Если появится предупреждение о **проверке глобальной синхронизации времени**, убедитесь, что время системных часов (параметры **даты и времени**) соответствует часовому поясу.
 
-    ![Предварительные требования](./media/site-recovery-add-configuration-server/combined-wiz5.png)
+    ![предварительные требования](./media/site-recovery-add-configuration-server/combined-wiz5.png)
 7. На странице **Конфигурация MySQL** создайте учетные данные для входа в экземпляр сервера MySQL, который будет установлен.
 
     ![MySQL](./media/site-recovery-add-configuration-server/combined-wiz6.png)

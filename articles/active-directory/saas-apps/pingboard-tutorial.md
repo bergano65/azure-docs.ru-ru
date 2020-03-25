@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Pingboard | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Pingboard | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Pingboard.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 341d8dd712b858572ec5df76b176258ca87c8857
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67094428"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство по Интеграция Azure Active Directory с Pingboard
+# <a name="tutorial-azure-active-directory-integration-with-pingboard"></a>Руководство по интеграции Azure Active Directory с Pingboard
 
 В этом руководстве описано, как интегрировать приложение Pingboard с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Pingboard обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67094428"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Pingboard, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Pingboard с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "67094428"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Pingboard](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `http://app.pingboard.com/sp`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `http://app.pingboard.com/sp`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<entity-id>.pingboard.com/auth/saml/consume`.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67094428"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -222,7 +222,7 @@ ms.locfileid: "67094428"
 
     ![Приглашение пользователей](./media/pingboard-tutorial/create_testuser_name.png)
 
-    a. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**.
+    а. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**.
 
     b. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com** .
 
@@ -230,7 +230,7 @@ ms.locfileid: "67094428"
 
     d. Из раскрывающегося списка **Location** (Расположение) выберите расположение пользователя Britta Simon.
 
-    д. Щелкните **Добавить**.
+    д) Нажмите кнопку **Добавить**.
 
 4. Откроется окно подтверждения добавления пользователя.
 
@@ -251,6 +251,6 @@ ms.locfileid: "67094428"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/pingboard-provisioning-tutorial)

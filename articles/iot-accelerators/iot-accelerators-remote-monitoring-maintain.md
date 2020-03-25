@@ -10,13 +10,13 @@ ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: 853fa2b80e04dd8d9225d023db8030fed044ed7f
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73890918"
 ---
-# <a name="tutorial-troubleshoot-and-fix-device-issues"></a>Руководство по Устранение неполадок и проблем с устройствами
+# <a name="tutorial-troubleshoot-and-fix-device-issues"></a>Руководство по устранению неполадок и проблем с устройствами
 
 В этом руководстве показано, как выявлять и устранять проблемы на подключенных устройствах Интернета вещей с помощью акселератора решения для удаленного мониторинга. С помощью оповещений в панели мониторинга акселератора решений вы можете выявлять проблемы, а затем устранять их с помощью удаленных заданий.
 
@@ -82,7 +82,7 @@ Contoso тестирует новый **прототип** устройства 
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве описывается, как использовать оповещения для выявления проблем на устройствах, а также какие действия следует предпринять для их устранения. Сведения о подключении реального устройства к акселератору решений см. в соответствующих статьях с инструкциями.
 

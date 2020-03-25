@@ -9,10 +9,10 @@ ms.date: 12/07/2017
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 5c828644cb03d83df38265719cd8afabc24cf739
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "66242572"
 ---
 # <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Перенос данных в учетную запись API таблиц в Azure Cosmos DB
@@ -26,11 +26,11 @@ ms.locfileid: "66242572"
 > * импорт данных с помощью AzCopy.
 > * миграция из API таблицы (предварительная версия) в API таблицы. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * **Увеличьте пропускную способность.** Продолжительность переноса данных зависит от пропускной способности, настроенной для отдельного контейнера или набора контейнеров. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности на портале Azure см. в статье об уровнях производительности и ценовых категориях в Azure Cosmos DB.
 
-* **Создайте ресурсы Azure Cosmos DB**. Прежде чем переносить данные, создайте все таблицы на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании таблиц Azure Cosmos DB.
+* **Создайте ресурсы Azure Cosmos DB.** Перед началом переноса данных заранее создайте все таблицы на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании таблиц Azure Cosmos DB.
 
 ## <a name="data-migration-tool"></a>Средство переноса данных
 
@@ -99,7 +99,7 @@ ms.locfileid: "66242572"
 dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Table storage account name>;AccountKey=<Account Key>;EndpointSuffix=core.windows.net /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
 ```
 <a id="table-api-preview"></a>
-### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Пример команды: источник — API таблиц Azure Cosmos DB (предварительная версия)
+### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Пример команды: источник — API таблицы Azure Cosmos DB (предварительная версия)
 
 Ниже приведен пример команды для импорта данных из API таблицы (предварительная версия) в API таблицы (общедоступная версия):
 
@@ -119,7 +119,7 @@ dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=
 AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.cosmosdb.windows.net/mytable1/ /DestKey:key /Manifest:"myaccount_mytable_20140103T112020.manifest" /EntityOperation:InsertOrReplace
 ```
 
-## <a name="migrate-from-table-api-preview-to-table-api"></a>Перенос из API таблицы (предварительная версия) в API таблицы
+## <a name="migrate-from-table-api-preview-to-table-api"></a>перенос из API таблицы (предварительная версия) в API таблицы.
 
 > [!WARNING]
 > Если вы хотите воспользоваться преимуществами общедоступных таблиц, выполните перенос имеющихся таблиц в предварительной версии, как указано в этом разделе. В противном случае в течение нескольких недель будет выполнен автоматический перенос для имеющихся клиентов предварительной версии. Однако обратите внимание, что для автоматически перенесенных таблиц предварительной версии появятся определенные ограничения, в то время как для созданных таблиц ограничений не будет.
@@ -135,7 +135,7 @@ AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.cosmosdb.windows.net/m
 
 3. Перенесите данные клиента из таблиц предварительной версии в общедоступную версию таблицы с помощью средства переноса данных. Инструкции по использованию средства переноса данных см. в [этом](#data-migration-tool) разделе. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 

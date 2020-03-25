@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с BitaBIZ | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с BitaBIZ | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и BitaBIZ.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6f827945cbeccacfdf048865b6e89b6947fe7de9
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159386"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bitabiz"></a>Руководство по Интеграция Azure Active Directory с BitaBIZ
+# <a name="tutorial-azure-active-directory-integration-with-bitabiz"></a>Руководство по интеграции Azure Active Directory с BitaBIZ
 
 В этом руководстве описано, как интегрировать BitaBIZ с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением BitaBIZ обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159386"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с BitaBIZ, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка BitaBIZ с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -125,11 +125,11 @@ ms.locfileid: "73159386"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-bitabiz-single-sign-on"></a>Настройка единого входа в BitaBIZ
 
@@ -147,7 +147,7 @@ ms.locfileid: "73159386"
 
     ![Настройка BitaBIZ](./media/bitabiz-tutorial/settings3.png)
 
-    a. Скопируйте значение из текстового поля **Entity ID (”Identifier” in Azure AD)** (Идентификатор сущности ("Идентификатор" в Azure AD)) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure. 
+    а. Скопируйте значение из текстового поля **Entity ID (”Identifier” in Azure AD)** (Идентификатор сущности ("Идентификатор" в Azure AD)) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure. 
 
     b. В текстовое поле **Azure AD Single Sign-On Service URL** (URL-адрес службы единого входа в Azure AD) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -155,9 +155,9 @@ ms.locfileid: "73159386"
 
     d. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Azure AD Signing Certificate (Base64 encoded)** (Сертификат для подписи Azure AD (в кодировке Base64)).
 
-    д. Добавьте коммерческое имя домена электронной почты, то есть mycompany.com, в текстовое поле **Domain name** (Доменное имя), чтобы назначить единый вход для пользователей в организации с этим доменом электронной почты (необязательно).
+    д) Добавьте коммерческое имя домена электронной почты, то есть mycompany.com, в текстовое поле **Domain name** (Доменное имя), чтобы назначить единый вход для пользователей в организации с этим доменом электронной почты (необязательно).
 
-    Е. Установите флажок **SSO enabled** (единый вход включен) для учетной записи BitaBIZ.
+    е) Установите флажок **SSO enabled** (единый вход включен) для учетной записи BitaBIZ.
 
     ж. Нажмите кнопку **Save Azure AD configuration** (Сохранить конфигурацию Azure AD), чтобы сохранить и активировать конфигурацию единого входа.
 
@@ -237,7 +237,7 @@ ms.locfileid: "73159386"
 
     ![Добавление пользователя BitaBIZ](./media/bitabiz-tutorial/user3.png)
 
-    a. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
+    а. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
@@ -245,9 +245,9 @@ ms.locfileid: "73159386"
 
     d. Выберите дату в поле **Date of employment** (Дата приема на работу).
 
-    д. Существуют другие необязательные атрибуты, которые можно настроить для пользователя. Дополнительные сведения о настройке сотрудника см. [здесь](https://help.bitabiz.dk/manage-or-set-up-your-account/on-boarding-employees/new-employee).
+    д) Существуют другие необязательные атрибуты, которые можно настроить для пользователя. Дополнительные сведения о настройке сотрудника см. [здесь](https://help.bitabiz.dk/manage-or-set-up-your-account/on-boarding-employees/new-employee).
 
-    Е. Нажмите кнопку **Save employee** (Сохранить сотрудника).
+    е) Нажмите кнопку **Save employee** (Сохранить сотрудника).
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.

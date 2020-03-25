@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Learningpool Act | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Learningpool Act | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Learningpool Act.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5bc0b395fcc874190b67bd99262c3a1c9294c0ac
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74229273"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство по Интеграция Azure Active Directory с Learningpool Act
+# <a name="tutorial-azure-active-directory-integration-with-learningpool-act"></a>Руководство по интеграции Azure Active Directory с Learningpool Act
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Learningpool Act.
 Интеграция приложения Learningpool Act с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "74229273"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Learningpool Act, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа Learningpool Act.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74229273"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Learningpool Act](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
@@ -125,7 +125,7 @@ ms.locfileid: "74229273"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | ------------------- | -------------------- |
     | urn:oid:1.2.840.113556.1.4.221 | user.userprincipalname |
     | urn:oid:2.5.4.42 | user.givenname |
@@ -133,7 +133,7 @@ ms.locfileid: "74229273"
     | urn:oid:2.5.4.4 | user.surname |
     | | |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -145,9 +145,9 @@ ms.locfileid: "74229273"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -159,11 +159,11 @@ ms.locfileid: "74229273"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-learningpool-act-single-sign-on"></a>Настройка единого входа в Learningpool Act
 

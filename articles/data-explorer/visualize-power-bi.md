@@ -1,5 +1,5 @@
 ---
-title: Руководство по Визуализация данных из Azure Data Explorer в Power BI
+title: Руководство. Визуализация данных из обозревателя данных Azure в Power BI
 description: В этом руководстве вы узнаете, как подключиться к обозревателю данных Azure с помощью Power BI и визуализировать ваши данные.
 author: orspod
 ms.author: orspodek
@@ -8,19 +8,19 @@ ms.service: data-explorer
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.openlocfilehash: ec1579792a6e247bf49946bb8609a626154fbd46
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74037360"
 ---
-# <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство по Визуализация данных из Azure Data Explorer в Power BI
+# <a name="tutorial-visualize-data-from-azure-data-explorer-in-power-bi"></a>Руководство. Визуализация данных из обозревателя данных Azure в Power BI
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Power BI — это решение бизнес-аналитики, позволяющее визуализировать данные и делиться результатами с коллегами. В этом руководстве вы сначала научитесь отображать визуальные элементы в обозревателе данных Azure. Затем вы подключитесь к обозревателю данных Azure с помощью Power BI, создадите отчет на основе примера данных и опубликуете отчет в службе Power BI.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу. Если вы не зарегистрированы в Power BI Pro, [зарегистрируйтесь для получения бесплатной пробной версии](https://app.powerbi.com/signupredirect?pbi_source=web), прежде чем начать.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Отображение визуальных элементов в обозревателе данных Azure
@@ -29,7 +29,7 @@ ms.locfileid: "74037360"
 > * Создание отчета с визуальными элементами
 > * Публикация и совместное использование отчета
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В дополнение к подпискам Azure и Power BI для работы с этим руководством вам потребуется следующее:
 
@@ -225,7 +225,7 @@ ms.locfileid: "74037360"
 
 1. Подтвердите удаление.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Написание запросов](write-queries.md)

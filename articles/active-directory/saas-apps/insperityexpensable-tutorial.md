@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Insperity ExpensAble | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Insperity ExpensAble | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Insperity ExpensAble.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 43b24bec557d1cc879be9568bea451f1a8b0b310
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67625318"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Руководство по Интеграция Azure Active Directory с Insperity ExpensAble
+# <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Учебник. Интеграция Azure Active Directory с Insperity ExpensAble
 
 В этом учебнике описано, как интегрировать Insperity ExpensAble с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Insperity ExpensAble обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67625318"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Insperity ExpensAble, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Insperity ExpensAble с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "67625318"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -195,4 +195,4 @@ ms.locfileid: "67625318"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

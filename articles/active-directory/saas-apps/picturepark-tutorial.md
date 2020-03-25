@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Picturepark | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Picturepark | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Picturepark.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 08c5bd8da0dda74156b2d44c8106ed345ef749dd
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73177018"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство по Интеграция Azure Active Directory с Picturepark
+# <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство по интеграции Azure Active Directory с Picturepark
 
 В этом руководстве описано, как интегрировать Picturepark с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Picturepark обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73177018"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Picturepark, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Picturepark с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73177018"
 
     ![Сведения о домене и URL-адресах единого входа для Picturepark](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.picturepark.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.picturepark.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
@@ -121,7 +121,7 @@ ms.locfileid: "73177018"
 
 5. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Изменить сертификат подписи SAML](common/edit-certificate.png)
+    ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
 6. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его на компьютере.
 
@@ -134,7 +134,7 @@ ms.locfileid: "73177018"
 
     ![Копирование URL-адресов настройки](./media/picturepark-tutorial/configurls.png)
 
-    a. Идентификатор Azure AD
+    а. Идентификатор Azure AD
 
     b. URL-адрес выхода.
 
@@ -154,7 +154,7 @@ ms.locfileid: "73177018"
    
     ![Конфигурация поставщика удостоверений](./media/picturepark-tutorial/ic795064.png "Конфигурация поставщика удостоверений")
    
-    a. Щелкните **Добавить**.
+    а. Нажмите кнопку **Добавить**.
   
     b. Введите имя конфигурации.
    
@@ -162,7 +162,7 @@ ms.locfileid: "73177018"
    
     d. В текстовое поле **Issuer URI** (URI издателя) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
    
-    д. В текстовое поле **Trusted Issuer Thumb Print** (Отпечаток доверенного издателя) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**. 
+    д) В текстовое поле **Trusted Issuer Thumb Print** (Отпечаток доверенного издателя) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**. 
 
 5. Щелкните **JoinDefaultUsersGroup**.
 
@@ -240,7 +240,7 @@ ms.locfileid: "73177018"
    
     ![Создание пользователя](./media/picturepark-tutorial/ic795069.png "Создать пользователя")
    
-    a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, `BrittaSimon@contoso.com`.  
+    а. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, `BrittaSimon@contoso.com`.  
    
     b. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
    
@@ -248,9 +248,9 @@ ms.locfileid: "73177018"
    
     d. В текстовое поле **Last Name** (Фамилия) введите **фамилию** пользователя, **Simon**.
    
-    д. В текстовое поле **Company** (Компания) введите **название компании** пользователя. 
+    д) В текстовое поле **Company** (Компания) введите **название компании** пользователя. 
    
-    Е. В текстовом поле **Country** (Страна) выберите **страну или регион** пользователя.
+    е) В текстовом поле **Country** (Страна) выберите **страну или регион** пользователя.
   
     ж. В текстовое поле **ZIP** (Почтовый индекс) введите **почтовый индекс** города.
    

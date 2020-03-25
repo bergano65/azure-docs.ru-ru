@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Evidence.com | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Evidence.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Evidence.com.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e3a80c7ff16ae1d0d7c2b7de2b0ceb9e46e724da
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158229"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-evidencecom"></a>Руководство по Интеграция Azure Active Directory с Evidence.com
+# <a name="tutorial-azure-active-directory-integration-with-evidencecom"></a>Руководство. Интеграция Azure Active Directory с Evidence.com
 
 В этом руководстве описано, как интегрировать Evidence.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Evidence.com обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73158229"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Evidence.com, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Evidence.com с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73158229"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Evidence.com](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<yourtenant>.evidence.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<yourtenant>.evidence.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<yourtenant>.evidence.com`.
 
@@ -121,7 +121,7 @@ ms.locfileid: "73158229"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "73158229"
 
 3. Щелкните **Add User**(Добавить пользователя).
 
-4. Нажмите кнопку **Add** (Добавить).
+4. Нажмите кнопку **Добавить** .
 
 5. Параметр **Email Address** (Адрес электронной почты) для нового пользователя должен совпадать с именем пользователя в Azure AD, которому вы хотите предоставить доступ. Возможно, в вашей организации в качестве имени пользователя не используется адрес электронной почты. Тогда зайдите на портале Azure в раздел **Evidence.com > Атрибуты > Единый вход** и измените параметр nameidentifier (идентификатор имени, отправляемый приложению Evidence.com) так, чтобы передавался именно адрес электронной почты.
 

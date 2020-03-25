@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LINE WORKS | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с LINE WORKS | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в LINE WORKS.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7e1dfe10cdf80f750efbb7f08d001c7ce25fe068
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086658"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство по Интеграция Azure Active Directory с LINE WORKS
+# <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство по интеграции Azure Active Directory с приложением LINE WORKS
 
 В этом руководстве описано, как интегрировать LINE WORKS с Azure Active Directory (Azure AD).
 Интеграция LINE WORKS с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67086658"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LINE WORKS, требуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка LINE WORKS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -110,7 +110,7 @@ ms.locfileid: "67086658"
 
     ![Сведения о домене и URL-адресах единого входа в приложении LINE WORKS](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://auth.worksmobile.com/d/login/<domain>/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://auth.worksmobile.com/d/login/<domain>/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `worksmobile.com`
 
@@ -122,7 +122,7 @@ ms.locfileid: "67086658"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -201,4 +201,4 @@ ms.locfileid: "67086658"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

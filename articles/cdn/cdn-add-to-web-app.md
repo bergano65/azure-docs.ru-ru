@@ -16,13 +16,13 @@ ms.date: 05/14/2018
 ms.author: magattus
 ms.custom: mvc
 ms.openlocfilehash: 1b67522834497a264d95fc9b80246b16841d6026
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67594227"
 ---
-# <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство по Добавление сети доставки содержимого Azure в веб-приложение Службы приложений Azure
+# <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство по добавлению сети доставки содержимого Azure в веб-приложение службы приложений Azure
 
 В этом руководстве показано, как добавить [сеть доставки содержимого Azure (CDN)](cdn-overview.md) в [веб-приложение службы приложений Azure](../app-service/overview.md). Веб-приложения — это служба для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. 
 
@@ -38,7 +38,7 @@ ms.locfileid: "67594227"
 > * использование строк запросов для управления кэшированными версиями;
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -49,7 +49,7 @@ ms.locfileid: "67594227"
 
 ## <a name="create-the-web-app"></a>Создание веб-приложения
 
-Чтобы создать веб-приложение, с которым вы будете работать, следуйте инструкциям в разделе **Переход в приложение** статьи [Создание статического веб-приложения HTML в Azure](../app-service/app-service-web-get-started-html.md).
+Чтобы создать веб-приложение, с которым вы будете работать, следуйте инструкциям в разделе [Переход в приложение](../app-service/app-service-web-get-started-html.md) статьи **Создание статического веб-приложения HTML в Azure**.
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -72,7 +72,7 @@ ms.locfileid: "67594227"
 
 ![Создание профиля и конечной точки на портале](media/cdn-add-to-web-app/portal-new-endpoint.png)
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+| Параметр | Рекомендуемое значение | Description |
 | ------- | --------------- | ----------- |
 | **Профиль CDN** | myCDNProfile | Профиль CDN представляет собой коллекцию конечных точек сети CDN из одной ценовой категории. |
 | **Ценовая категория** | Akamai уровня "Стандартный" | От [ценовой категории](cdn-features.md) зависят поставщик и доступные возможности. В этом руководстве используется *Akamai уровня "Стандартный"* . |
@@ -256,7 +256,7 @@ http://<endpointname>.azureedge.net/index.html?q=1
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 
@@ -268,6 +268,6 @@ http://<endpointname>.azureedge.net/index.html?q=1
 Чтобы узнать, как оптимизировать производительность CDN, см. следующие статьи:
 
 > [!div class="nextstepaction"]
-> [Руководство. Добавление личного домена к конечной точке Azure CDN](cdn-map-content-to-custom-domain.md)
+> [Руководство. Добавление личного домена к конечной точке CDN Azure](cdn-map-content-to-custom-domain.md)
 
 

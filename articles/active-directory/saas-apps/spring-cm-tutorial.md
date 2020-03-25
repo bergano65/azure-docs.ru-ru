@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SpringCM | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SpringCM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SpringCM.
 services: active-directory
 documentationCenter: na
@@ -17,10 +17,10 @@ ms.date: 04/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9bd9ea5565ea64415c00a458236456bed04b6c38
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233385"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство. Интеграция Azure Active Directory с SpringCM
@@ -35,11 +35,11 @@ ms.locfileid: "74233385"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением SpringCM, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка SpringCM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -119,7 +119,7 @@ ms.locfileid: "74233385"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -137,7 +137,7 @@ ms.locfileid: "74233385"
    
     ![Конфигурация поставщика удостоверений](./media/spring-cm-tutorial/ic797052.png "Конфигурация поставщика удостоверений")
     
-    a. Чтобы отправить загруженный сертификат Azure Active Directory, щелкните **Select Issuer Certificate** (Выбрать сертификат издателя) или **Change Issuer Certificate** (Изменить сертификат издателя).
+    а. Чтобы отправить загруженный сертификат Azure Active Directory, щелкните **Select Issuer Certificate** (Выбрать сертификат издателя) или **Change Issuer Certificate** (Изменить сертификат издателя).
     
     b. В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
     
@@ -145,7 +145,7 @@ ms.locfileid: "74233385"
             
     d. Для параметра **SAML Enabled** (SAML включен) установите значение **Enabled** (Включено).
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

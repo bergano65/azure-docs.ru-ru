@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Dossier | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Dossier | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Dossier.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/04/2019
 ms.author: jeedes
 ms.openlocfilehash: 2feb65384e8586b30840a37a66aaee5375881c22
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67103936"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dossier"></a>Руководство по Интеграция Azure Active Directory с Dossier
+# <a name="tutorial-azure-active-directory-integration-with-dossier"></a>Руководство. Интеграция Azure Active Directory с Dossier
 
 В этом руководстве описано, как интегрировать Dossier с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Dossier обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67103936"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Dossier, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Dossier с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67103936"
 
     ![Сведения о едином входе в доменах и URL-адресах для приложения Dossier](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
     | |
     |-|-|
@@ -138,7 +138,7 @@ ms.locfileid: "67103936"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -146,7 +146,7 @@ ms.locfileid: "67103936"
 
 ### <a name="configure-dossier-single-sign-on"></a>Настройка единого входа в Dossier
 
-Чтобы настроить единый вход на стороне **Dossier**, отправьте [группе поддержки Dossier](mailto:support@intellimedia.ca) **URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Dossier**, отправьте **группе поддержки Dossier**[URL-адрес метаданных федерации приложения](mailto:support@intellimedia.ca). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -214,5 +214,5 @@ ms.locfileid: "67103936"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

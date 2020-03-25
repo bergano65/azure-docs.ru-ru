@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Compliance ELF | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Compliance ELF | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Compliance ELF.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f3e23a4c3c3b668939c9f0ac1331214ddbb7cdf
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159369"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство по Интеграция Azure Active Directory с Compliance ELF
+# <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство по интеграции Azure Active Directory с Compliance ELF
 
 Из этого руководства вы узнаете, как интегрировать Compliance ELF с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Compliance ELF обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73159369"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Compliance ELF, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Compliance ELF с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -123,7 +123,7 @@ ms.locfileid: "73159369"
 
 ### <a name="configure-compliance-elf-single-sign-on"></a>Настройка единого входа Compliance ELF
 
-Чтобы настроить единый вход на стороне **Compliance ELF**, отправьте [группе поддержки Compliance ELF](mailto:support@complianceelf.com) **URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Compliance ELF**, отправьте **группе поддержки Compliance ELF**[URL-адрес метаданных федерации приложения](mailto:support@complianceelf.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

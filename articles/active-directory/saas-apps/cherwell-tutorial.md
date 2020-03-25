@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Cherwell | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Cherwell | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Cherwell.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 05/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6fde8c38722e39d530c2890ef9c9a045b28b6e49
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67105686"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cherwell"></a>Руководство по Интеграция Azure Active Directory с Cherwell
+# <a name="tutorial-azure-active-directory-integration-with-cherwell"></a>Руководство. Интеграция Azure Active Directory с Cherwell
 
 В этом руководстве описано, как интегрировать Cherwell с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Cherwell обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67105686"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Cherwell, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * Подписка Cherwell с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -119,7 +119,7 @@ ms.locfileid: "67105686"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -148,7 +148,7 @@ ms.locfileid: "67105686"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
@@ -201,4 +201,4 @@ ms.locfileid: "67105686"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

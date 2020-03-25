@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 1/30/2019
 ms.author: rgarcia
 ms.openlocfilehash: 0dab71b6d169e26a3d7dc208dd09efe1143fbe13
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67184976"
 ---
 ### <a name="open-the-publish-wizard"></a>Запуск мастера публикации
@@ -41,10 +41,10 @@ ms.locfileid: "67184976"
 
 В диалоговом окне **Настройка плана размещения** используйте следующие параметры:
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+| Параметр | Рекомендуемое значение | Description |
 |-|-|-|
 |План обслуживания приложения| MySharingServicePlan | Имя плана службы приложений. |
-| Расположение | Запад США | Центр обработки данных, где размещается веб-приложение. |
+| Location | западная часть США | Центр обработки данных, где размещается веб-приложение. |
 | Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), которая определяет возможности размещения. |
 
 Нажмите кнопку **ОК**.

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Consent2Go | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Consent2Go | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Consent2Go.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4010119c17360353bb470b03c46e1bad906704b1
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158474"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-consent2go"></a>Руководство по Интеграция Azure Active Directory с Consent2Go
+# <a name="tutorial-azure-active-directory-integration-with-consent2go"></a>Руководство по интеграции Azure Active Directory с Consent2Go
 
 В этом руководстве описано, как интегрировать Consent2Go с Azure Active Directory (Azure AD).
 Интеграция Consent2Go с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73158474"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Consent2Go, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Consent2Go с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария

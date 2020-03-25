@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 01/07/2020
 ms.custom: include file
 ms.openlocfilehash: 9ccdc7a438d1dade534d39dc97a39a3bdae37dc4
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75895394"
 ---
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -33,10 +33,10 @@ ms.locfileid: "75895394"
    [![Создание ресурса и подтверждение развертывания](./media/create-digital-twins-portal/azure-create-and-confirm-resource.png)](./media/create-digital-twins-portal/azure-create-and-confirm-resource.png#lightbox)
 
 1. В области **Digital Twins** введите следующие сведения:
-   * **Имя ресурса**: Задайте уникальное имя для экземпляра Digital Twins.
-   * **Подписка**: Выберите подписку, в которой будет создан экземпляр Digital Twins. 
-   * **Группа ресурсов.** Выберите или создайте [группу ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups) для экземпляра Digital Twins.
-   * **Расположение.** Выберите ближайшее к вашим устройствам расположение.
+   * **Имя ресурса**. Задайте уникальное имя для экземпляра Digital Twins.
+   * **Подписка**. Выберите подписку, в которой будет создан экземпляр Digital Twins. 
+   * **Группа ресурсов**. Выберите или создайте [группу ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups) для экземпляра Digital Twins.
+   * **Расположение**. Выберите ближайшее расположение для своих устройств.
 
      [![Область Digital Twins с введенными сведениями](./media/create-digital-twins-portal/create-digital-twins-param.png)](./media/create-digital-twins-portal/create-digital-twins-param.png#lightbox)
 

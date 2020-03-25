@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Datahug | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Datahug | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Datahug.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9271d8b5657769ce70c46b5e428d995ddc642608
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158447"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство по Интеграция Azure Active Directory с Datahug
+# <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство. Интеграция Azure Active Directory с Datahug
 
 В этом руководстве описано, как интегрировать приложение Datahug с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Datahug обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73158447"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Datahug, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Datahug с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "73158447"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Datahug](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://apps.datahug.com/identity/<uniqueID>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://apps.datahug.com/identity/<uniqueID>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://apps.datahug.com/identity/<uniqueID>/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://apps.datahug.com/identity/<uniqueID>/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -127,7 +127,7 @@ ms.locfileid: "73158447"
 
     ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
-    a. В поле **Вариант подписывания** выберите **Утверждение знака SAML**.
+    а. В поле **Вариант подписывания** выберите **Утверждение знака SAML**.
 
     b. В поле **Алгоритм подписи** выберите **SHA-1**.
     
@@ -139,11 +139,11 @@ ms.locfileid: "73158447"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-datahug-single-sign-on"></a>Настройка единого входа в Datahug
 
@@ -165,7 +165,7 @@ ms.locfileid: "73158447"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

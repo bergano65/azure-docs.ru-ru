@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с 123ContactForm | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с 123ContactForm | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении 123ContactForm.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3e8328ac4008950d67cf5645c6a48c48d1196085
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73154926"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-123contactform"></a>Руководство по Интеграция Azure Active Directory с 123ContactForm
+# <a name="tutorial-azure-active-directory-integration-with-123contactform"></a>Руководство по интеграции Azure Active Directory с 123ContactForm
 
 В этом руководстве описано, как интегрировать 123ContactForm с Azure Active Directory (Azure AD).
 Интеграция 123ContactForm с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73154926"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с 123ContactForm, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка 123ContactForm с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "73154926"
 
     ![Сведения о домене и URL-адресах единого входа для приложения 123ContactForm](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.123contactform.com/saml/azure_ad/<tenant_id>/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.123contactform.com/saml/azure_ad/<tenant_id>/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.123contactform.com/saml/azure_ad/<tenant_id>/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.123contactform.com/saml/azure_ad/<tenant_id>/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -128,11 +128,11 @@ ms.locfileid: "73154926"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-123contactform-single-sign-on"></a>Настройка единого входа в 123ContactForm
 
@@ -140,7 +140,7 @@ ms.locfileid: "73154926"
 
     ![Настройка единого входа](./media/123contactform-tutorial/submit.png) 
 
-    a. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon\@Contoso.com**.
+    а. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon\@Contoso.com**.
 
     b. Выберите **Upload** (Передать) и выберите XML-файл метаданных, скачанный с портала Azure.
 
@@ -150,7 +150,7 @@ ms.locfileid: "73154926"
 
     ![Настройка единого входа](./media/123contactform-tutorial/url3.png)
 
-    a. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком удостоверений**, скопируйте значение **идентификатора** для своего экземпляра и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком удостоверений**, скопируйте значение **идентификатора** для своего экземпляра и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком удостоверений**, скопируйте значение **URL-адреса ответа** для своего экземпляра и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 

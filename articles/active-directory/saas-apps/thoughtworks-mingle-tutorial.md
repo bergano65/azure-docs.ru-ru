@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Thoughtworks Mingle | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Thoughtworks Mingle | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Thoughtworks Mingle.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: a12d4dca61734275ef0e56dfe2a800c64dc52540
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233291"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-thoughtworks-mingle"></a>Руководство по Интеграция Azure Active Directory с Thoughtworks Mingle
+# <a name="tutorial-azure-active-directory-integration-with-thoughtworks-mingle"></a>Учебник. Интеграция Azure Active Directory с Thoughtworks Mingle
 
 В этом руководстве описано, как интегрировать Thoughtworks Mingle с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Thoughtworks Mingle обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "74233291"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Thoughtworks Mingle, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Thoughtworks Mingle с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "74233291"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -136,9 +136,9 @@ ms.locfileid: "74233291"
    
     ![Конфигурация единого входа](./media/thoughtworks-mingle-tutorial/ic785158.png "Конфигурация единого входа")
     
-    a. Чтобы отправить файл метаданных, нажмите кнопку **Выбрать файл**. 
+    а. Чтобы отправить файл метаданных, нажмите кнопку **Выбрать файл**. 
 
-    b. Нажмите кнопку **Сохранить изменения**.
+    b. Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -214,7 +214,7 @@ ms.locfileid: "74233291"
    
     ![Диалоговое окно нового пользователя](./media/thoughtworks-mingle-tutorial/ic785163.png "Новый пользователь")  
  
-    a. Введите в текстовые поля **Sign-in name** (Учетное имя), **Display name** (Отображаемое имя), **Choose password** (Выберите пароль) и **Confirm password** (Подтвердите пароль) соответствующие данные действующей учетной записи Azure AD, которую вы хотите подготовить. 
+    а. Введите в текстовые поля **Sign-in name** (Учетное имя), **Display name** (Отображаемое имя), **Choose password** (Выберите пароль) и **Confirm password** (Подтвердите пароль) соответствующие данные действующей учетной записи Azure AD, которую вы хотите подготовить. 
 
     b. В поле **User type** (Тип пользователя) выберите значение **Full user** (С полным доступом).
 

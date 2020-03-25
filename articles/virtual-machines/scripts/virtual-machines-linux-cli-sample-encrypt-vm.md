@@ -17,10 +17,10 @@ ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: 26d453adb4ded59de162fda0ae62322399fa4d9a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74040278"
 ---
 # <a name="encrypt-a-linux-virtual-machine-in-azure"></a>Шифрование виртуальной машины Linux в Azure
@@ -47,7 +47,7 @@ az group delete --name myResourceGroup
 
 Этот сценарий использует приведенные ниже команды для создания группы ресурсов, Azure Key Vault, субъекта-службы, виртуальной машины и всех связанных ресурсов. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az keyvault create](https://docs.microsoft.com/cli/azure/keyvault) | Создает Azure Key Vault для хранения защищенных данных, таких как ключи шифрования. |
@@ -59,7 +59,7 @@ az group delete --name myResourceGroup
 | [az vm encryption show](https://docs.microsoft.com/cli/azure/vm/encryption) | Отображает состояние шифрования виртуальной машины. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

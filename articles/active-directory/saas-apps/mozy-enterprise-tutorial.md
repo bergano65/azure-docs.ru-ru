@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Mozy Enterprise | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Mozy Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mozy Enterprise.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 7d3b7f8982a24856818cbb6ce86060beac969fc2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233499"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство по Интеграция Azure Active Directory с Mozy Enterprise
+# <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Учебник. Интеграция Azure Active Directory с Mozy Enterprise
 
 В этом руководстве описано, как интегрировать Mozy Enterprise с Azure Active Directory (Azure AD).
 Интеграция Mozy Enterprise с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74233499"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mozy Enterprise, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Mozy Enterprise с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "74233499"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -136,7 +136,7 @@ ms.locfileid: "74233499"
    
     ![Политика проверки подлинности](./media/mozy-enterprise-tutorial/ic777315.png "Политика проверки подлинности")
    
-    a. Для параметра **Поставщик** выберите значение **Служба каталогов**.
+    а. Для параметра **Поставщик** выберите значение **Служба каталогов**.
    
     b. Выберите **Использовать LDAP для отправки**.
    
@@ -144,13 +144,13 @@ ms.locfileid: "74233499"
    
     d. В текстовое поле **Authentication URL** (URL-адрес для аутентификации) вставьте **URL-адрес входа**, скопированный на портале Azure.
    
-    д. В текстовое поле **SAML Endpoint** (Конечная точка SAML) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+    д) В текстовое поле **SAML Endpoint** (Конечная точка SAML) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
    
-    Е. Откройте скачанный сертификат в кодировке Base-64 в блокноте, скопируйте его содержимое в буфер обмена и вставьте весь сертификат в текстовое поле **SAML Certificate** (Сертификат SAML).
+    е) Откройте скачанный сертификат в кодировке Base-64 в блокноте, скопируйте его содержимое в буфер обмена и вставьте весь сертификат в текстовое поле **SAML Certificate** (Сертификат SAML).
    
     ж. Установите флажок **Включить единый вход для администраторов для входа с учетными данными сети**.
    
-    h. Нажмите кнопку **Сохранить изменения**.
+    h. Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -225,7 +225,7 @@ ms.locfileid: "74233499"
    
     ![Добавление пользователей](./media/mozy-enterprise-tutorial/ic777318.png "Добавление пользователей")
    
-    a. В списке **Выберите группу** выберите группу.
+    а. В списке **Выберите группу** выберите группу.
    
     b. В списке **Тип пользователя** выберите тип.
    
@@ -233,9 +233,9 @@ ms.locfileid: "74233499"
    
     d. В текстовом поле **Электронная почта** введите адрес электронной почты пользователя Azure AD.
    
-    д. Выберите **Отправить пользователю электронное сообщение с указаниями**.
+    д) Выберите **Отправить пользователю электронное сообщение с указаниями**.
    
-    Е. Щелкните **Добавить пользователей**.
+    е) Щелкните **Добавить пользователей**.
 
      >[!NOTE]
      > После создания учетной записи соответствующему пользователю Azure AD будет отправлено электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией.

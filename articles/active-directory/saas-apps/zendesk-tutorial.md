@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Zendesk | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Zendesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zendesk.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4887457f457ff533a0eaf10be7db1627a950f5bd
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233263"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zendesk"></a>Руководство по Интеграция Azure Active Directory с Zendesk
+# <a name="tutorial-azure-active-directory-integration-with-zendesk"></a>Руководство. Интеграция Azure Active Directory с Zendesk
 
 В этом руководстве описано, как интегрировать Zendesk с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Zendesk обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "74233263"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zendesk, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Zendesk с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,7 +108,7 @@ ms.locfileid: "74233263"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Zendesk](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.zendesk.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.zendesk.com`.
 
    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.zendesk.com`.
 
@@ -121,7 +121,7 @@ ms.locfileid: "74233263"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -133,9 +133,9 @@ ms.locfileid: "74233263"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. Из списка **Атрибут источника** выберите значение соответствующего атрибута.
+    д) Из списка **Атрибут источника** выберите значение соответствующего атрибута.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -150,11 +150,11 @@ ms.locfileid: "74233263"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 9. Существует два способа настройки Zendesk: автоматический и настройка вручную.
   
@@ -176,11 +176,11 @@ ms.locfileid: "74233263"
 
 4. На странице **Безопасность** сделайте следующее:
 
-    ![Безопасность](././media/zendesk-tutorial/ic773089.png "Безопасность")
+    ![Безопасность](././media/zendesk-tutorial/ic773089.png "безопасность")
 
     ![Единый вход](././media/zendesk-tutorial/ic773090.png "Единый вход")
 
-    a. Щелкните вкладку **Admin & Agents** (Администраторы и агенты).
+    а. Щелкните вкладку **Admin & Agents** (Администраторы и агенты).
 
     b. Выберите **Single sign-on (SSO) and SAML** (Единый вход и SAML), а затем щелкните **SAML**.
 
@@ -188,9 +188,9 @@ ms.locfileid: "74233263"
 
     d. В текстовое поле **URL-адрес удаленного выхода** вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
-    д. В текстовое поле **Certificate Fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
+    д) В текстовое поле **Certificate Fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -278,6 +278,6 @@ ms.locfileid: "74233263"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](zendesk-provisioning-tutorial.md)

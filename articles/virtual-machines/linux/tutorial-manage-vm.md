@@ -15,14 +15,14 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b7660d2bcb6f2bb8b738ed92401937c0b988fef2
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: e5474387933404c29536759d383a4f2c85236949
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034421"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80060203"
 ---
-# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по Создание виртуальных машин Linux и управление ими с помощью Azure CLI
+# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по созданию виртуальных машин Linux и управлению ими с помощью Azure CLI
 
 Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве рассматриваются основные элементы развертывания виртуальной машины Azure, например выбор ее размера, образа и ее развертывание. Вы узнаете, как выполнять следующие задачи:
 
@@ -43,7 +43,7 @@ ms.locfileid: "74034421"
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Группу ресурсов следует создавать до виртуальной машины. В этом примере создается группа ресурсов с именем *myResourceGroupVM* в регионе *eastus*. 
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroupVM --location eastus
 ```
 
@@ -66,7 +66,7 @@ az vm create \
 
 Создание виртуальной машины может занять несколько минут. После создания виртуальной машины Azure CLI выводит информацию о ней. Запишите `publicIpAddress`. Этот адрес может использоваться для доступа к виртуальной машине. 
 
-```azurecli-interactive 
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/d5b9d4b7-6fc1-0000-0000-000000000000/resourceGroups/myResourceGroupVM/providers/Microsoft.Compute/virtualMachines/myVM",
@@ -105,7 +105,7 @@ az vm image list --output table
 
 Она отобразит наиболее популярные образы виртуальных машин в Azure.
 
-```bash
+```output
 Offer          Publisher               Sku                 Urn                                                             UrnAlias             Version
 -------------  ----------------------  ------------------  --------------------------------------------------------------  -------------------  ---------
 WindowsServer  MicrosoftWindowsServer  2016-Datacenter     MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest     Win2016Datacenter    latest
@@ -129,7 +129,7 @@ az vm image list --offer CentOS --all --output table
 
 Частичные выходные данные приведены ниже.
 
-```azurecli-interactive 
+```output
 Offer             Publisher         Sku   Urn                                     Version
 ----------------  ----------------  ----  --------------------------------------  -----------
 CentOS            OpenLogic         6.5   OpenLogic:CentOS:6.5:6.5.201501         6.5.201501
@@ -142,7 +142,7 @@ CentOS            OpenLogic         6.5   OpenLogic:CentOS:6.5:6.5.20170207     
 
 Чтобы развернуть виртуальную машину с помощью определенного образа, запишите значение в столбце *Urn*, которое состоит из сведений об издателе, предложении, номера SKU и (необязательно) номера версии для [идентификации](cli-ps-findimage.md#terminology) образа. При указании образа его номер версии можно заменить ключевым словом latest. В этом случае будет выбрана последняя версия дистрибутива. В данном примере добавлен аргумент `--image`, чтобы указать последнюю версию образа CentOS 6.5.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm create --resource-group myResourceGroupVM --name myVM2 --image OpenLogic:CentOS:6.5:latest --generate-ssh-keys
 ```
 
@@ -154,7 +154,7 @@ az vm create --resource-group myResourceGroupVM --name myVM2 --image OpenLogic:C
 
 В приведенной ниже таблицы указаны категории размеров и примеры использования.  
 
-| type                     | Распространенные размеры           |    ОПИСАНИЕ       |
+| Тип                     | Распространенные размеры           |    Description       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Универсальные](sizes-general.md)         |B, Dsv3, Dv3, DSv2, Dv2, Av2, DC| Сбалансированное соотношение ресурсов ЦП и памяти. Идеально подходят для разработки и тестирования малых и средних приложений и решений для обработки данных.  |
 | [Оптимизированные для вычислений](sizes-compute.md)   | Fsv2          | Высокое соотношение ресурсов ЦП и памяти. Подходят для приложений со средним объемом трафика, сетевых устройств и пакетных процессов.        |
@@ -174,7 +174,7 @@ az vm list-sizes --location eastus --output table
 
 Частичные выходные данные приведены ниже.
 
-```azurecli-interactive 
+```output
   MaxDataDiskCount    MemoryInMb  Name                      NumberOfCores    OsDiskSizeInMb    ResourceDiskSizeInMb
 ------------------  ------------  ----------------------  ---------------  ----------------  ----------------------
                  2          3584  Standard_DS1                          1           1047552                    7168
@@ -199,7 +199,7 @@ az vm list-sizes --location eastus --output table
 
 В предыдущем примере создания виртуальной машины размер не был указан, что привело к использованию размера по умолчанию. Размер виртуальной машины можно выбрать во время ее создания с помощью команды [az vm create](/cli/azure/vm) и аргумента `--size`. 
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm create \
     --resource-group myResourceGroupVM \
     --name myVM3 \
@@ -221,6 +221,7 @@ az vm show --resource-group myResourceGroupVM --name myVM --query hardwareProfil
 ```azurecli-interactive 
 az vm list-vm-resize-options --resource-group myResourceGroupVM --name myVM --query [].name
 ```
+
 Если желаемый размер доступен, то размер виртуальной машины можно изменить во включенном состоянии, однако виртуальную машину нужно будет перезагрузить. Используйте команду [az vm resize]( /cli/azure/vm) для изменения размера.
 
 ```azurecli-interactive 
@@ -229,19 +230,19 @@ az vm resize --resource-group myResourceGroupVM --name myVM --size Standard_DS4_
 
 Если желаемый размер в текущем кластере недоступен, то перед изменением размера виртуальную машину нужно освободить. Используйте команду [az vm deallocate]( /cli/azure/vm), чтобы остановить и освободить виртуальную машину. Обратите внимание на то, что после повторного включения виртуальной машины все данные на временном диске могут быть удалены. Кроме того, изменится общедоступный IP-адрес, если только не используется статический IP-адрес. 
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm deallocate --resource-group myResourceGroupVM --name myVM
 ```
 
 После освобождения виртуальной машины ее размер можно изменить. 
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm resize --resource-group myResourceGroupVM --name myVM --size Standard_GS1
 ```
 
 После изменения размера можно запустить будет виртуальную машину.
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm start --resource-group myResourceGroupVM --name myVM
 ```
 
@@ -251,12 +252,12 @@ az vm start --resource-group myResourceGroupVM --name myVM
 
 ### <a name="power-states"></a>Состояния включения
 
-| Состояние включения | ОПИСАНИЕ
+| Состояние включения | Description
 |----|----|
 | Запуск | Указывает, что виртуальная машина запущена. |
-| Выполнение | Указывает, что виртуальная машина работает. |
+| Запущен | Указывает, что виртуальная машина работает. |
 | Остановка | Указывает, что виртуальная машина останавливается. | 
-| Остановлено | Указывает, что виртуальная машина остановлена. За виртуальные машины в остановленном состоянии по-прежнему взимается плата за вычислительные операции.  |
+| Остановлена | Указывает, что виртуальная машина остановлена. За виртуальные машины в остановленном состоянии по-прежнему взимается плата за вычислительные операции.  |
 | Отмена выделения | Указывает, что виртуальная машина освобождается. |
 | Освобождено | Указывает, что виртуальная машина удалена из гипервизора, но по-прежнему доступна в плоскости управления. За виртуальные машины в освобожденном состоянии не взимается плата за вычислительные операции. |
 | - | Указывает, что состояние включенной виртуальной машины неизвестно. |
@@ -265,7 +266,7 @@ az vm start --resource-group myResourceGroupVM --name myVM
 
 Чтобы получить сведения о состоянии конкретной виртуальной машины, используйте команду [az vm get-instance-view](/cli/azure/vm). Необходимо указать допустимое имя виртуальной машины и группы ресурсов. 
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm get-instance-view \
     --name myVM \
     --resource-group myResourceGroupVM \
@@ -274,7 +275,7 @@ az vm get-instance-view \
 
 Выходные данные:
 
-```azurecli-interactive 
+```output
 ode                DisplayStatus    Level
 ------------------  ---------------  -------
 PowerState/running  VM running       Info
@@ -288,19 +289,19 @@ PowerState/running  VM running       Info
 
 Эта команда возвращает частный и общедоступный IP-адрес виртуальной машины.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm list-ip-addresses --resource-group myResourceGroupVM --name myVM --output table
 ```
 
 ### <a name="stop-virtual-machine"></a>Прекращение работы виртуальной машины
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm stop --resource-group myResourceGroupVM --name myVM
 ```
 
 ### <a name="start-virtual-machine"></a>Запуск виртуальной машины
 
-```azurecli-interactive 
+```azurecli-interactive
 az vm start --resource-group myResourceGroupVM --name myVM
 ```
 
@@ -308,11 +309,11 @@ az vm start --resource-group myResourceGroupVM --name myVM
 
 При удалении группы ресурсов будут также удалены все ресурсы, содержащиеся в ней: виртуальная машина, виртуальная сеть и диск. При использовании параметра `--no-wait` управление возвращается в командную строку без ожидания завершения операции. Параметр `--yes` подтверждает, что вы хотите удалить ресурсы без дополнительного запроса.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete --name myResourceGroupVM --no-wait --yes
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого руководства вы изучили основы создания виртуальной машины и управления ею. Вы узнали, как выполнять следующие задачи:
 

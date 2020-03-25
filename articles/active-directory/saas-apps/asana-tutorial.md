@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Asana | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Asana | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Asana.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5531a7c1a95e472239c639e3307623fc4ccedd37
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157869"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-asana"></a>Руководство по Интеграция Azure Active Directory с Asana
+# <a name="tutorial-azure-active-directory-integration-with-asana"></a>Руководство. Интеграция Azure Active Directory с Asana
 
 В этом руководстве описано, как интегрировать Asana с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Asana обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73157869"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Asana, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Asana с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,7 +108,7 @@ ms.locfileid: "73157869"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Asana](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.asana.com/`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.asana.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://app.asana.com/`.
 
@@ -120,11 +120,11 @@ ms.locfileid: "73157869"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-asana-single-sign-on"></a>Настройка единого входа в Asana
 
@@ -136,7 +136,7 @@ ms.locfileid: "73157869"
 
     ![Настройка параметров единого входа организации](./media/asana-tutorial/tutorial_asana_10.png)  
 
-    a. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**.
+    а. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**.
 
     b. Щелкните правой кнопкой мыши сертификат, скачанный с портала Azure, а затем откройте файл сертификата в Блокноте или в любом текстовом редакторе. Скопируйте содержимое между операторами begin и end заголовка сертификата в текстовое поле **X.509 Certificate** (Сертификат X.509).
 
@@ -221,6 +221,6 @@ ms.locfileid: "73157869"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](asana-provisioning-tutorial.md)

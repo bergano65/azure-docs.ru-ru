@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с HireVue | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с HireVue | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HireVue.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 198901f7b692f2dd1d97019ad5e8455b8cc93d28
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159021"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hirevue"></a>Руководство по Интеграция Azure Active Directory с HireVue
+# <a name="tutorial-azure-active-directory-integration-with-hirevue"></a>Руководство. Интеграция Azure Active Directory с HireVue
 
 Цель этого руководства — показать, как интегрировать Azure Active Directory (Azure AD) с приложением HireVue.
 Интеграция Azure AD с приложением HireVue обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73159021"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с HireVue, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на HireVue с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73159021"
 
     ![Сведения о домене и URL-адресах единого входа приложения HireVue](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
     | Среда | URL-адрес |
     |-------------|---|
@@ -131,11 +131,11 @@ ms.locfileid: "73159021"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-hirevue-single-sign-on"></a>Настройка единого входа в HireVue
 

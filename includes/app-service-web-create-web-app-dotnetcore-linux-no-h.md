@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: app-service
 author: cephalin
 ms.service: app-service
@@ -9,10 +9,10 @@ ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: include file
 ms.openlocfilehash: 2dc35727a82459750b4414b6e3eeddf28b31b718
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68824742"
 ---
 Создайте [веб-приложение](../articles/app-service/containers/app-service-linux-intro.md) в плане службы приложений `myAppServicePlan`. 

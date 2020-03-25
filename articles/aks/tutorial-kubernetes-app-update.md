@@ -6,13 +6,13 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
 ms.openlocfilehash: d5457d790cd3c95bb23ec0c517097b443a2389ed
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77593382"
 ---
-# <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство по Обновление приложения в Службе Azure Kubernetes (AKS)
+# <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
 После развертывания приложения в Kubernetes его можно обновить, указав новый образ контейнера или версию образа. Обновление выполняется поэтапно, поэтому одновременно обновляется только часть развертывания. Такое поэтапное обновление позволяет приложению продолжать работать во время обновления. Оно также обеспечивает механизм отката на случай, если произойдет сбой развертывания.
 

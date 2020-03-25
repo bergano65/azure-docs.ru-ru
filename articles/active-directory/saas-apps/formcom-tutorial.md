@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Form.com | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Form.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Form.com.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: aa6585b981626d3752f2383db20f8e149a2ed007
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73156115"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по Интеграция Azure Active Directory с Form.com
+# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по интеграции Azure Active Directory с Form.com
 
 В этом руководстве описано, как интегрировать Form.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Form.com обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73156115"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Form.com, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Form.com с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73156115"
 
     ![Сведения о домене и URL-адресах единого входа для Form.com](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.wa-form.com`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.wa-form.com`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.form.com`.
 
@@ -127,11 +127,11 @@ ms.locfileid: "73156115"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-formcom-single-sign-on"></a>Настройка единого входа в Form.com
 

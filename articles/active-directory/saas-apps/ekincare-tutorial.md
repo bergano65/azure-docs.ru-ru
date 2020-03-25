@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с eKincare | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с eKincare | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и eKincare.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b5e9b9c852d1c5a8e2300986b3a13b5603332768
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158347"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ekincare"></a>Руководство по Интеграция Azure Active Directory с eKincare
+# <a name="tutorial-azure-active-directory-integration-with-ekincare"></a>Руководство. Интеграция Azure Active Directory с eKincare
 
 В этом руководстве описано, как интегрировать eKincare с Azure Active Directory (Azure AD).
 Интеграция приложения eKincare с Azure AD обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73158347"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с eKincare, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка eKincare с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,9 +108,9 @@ ms.locfileid: "73158347"
 
     ![Сведения о домене и URL-адресах единого входа для приложения eKincare](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<instancename>.ekincare.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<instancename>.ekincare.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<instancename>.ekincare.com/hul/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<instancename>.ekincare.com/hul/saml`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов eKincare](mailto:tech@ekincare.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -121,13 +121,13 @@ ms.locfileid: "73158347"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
-    | ИМЯ | Исходный атрибут |
+    | Имя | Исходный атрибут |
     | ---------------| --------------- |    
     | employeeid | *user.extensionattribute1* |
     | organizationid | *"uniquevalue"* |
     | organizationname | *user.companyname* |
     
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -139,9 +139,9 @@ ms.locfileid: "73158347"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -153,11 +153,11 @@ ms.locfileid: "73158347"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-ekincare-single-sign-on"></a>Настройка единого входа в eKincare
 

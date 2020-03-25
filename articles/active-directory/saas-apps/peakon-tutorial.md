@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Peakon | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением Peakon | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Peakon.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: b093a26848701254ad674081037c266f1fb012b2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67094723"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-peakon"></a>Руководство по Интеграция Azure Active Directory с Peakon
+# <a name="tutorial-azure-active-directory-integration-with-peakon"></a>Руководство. Интеграция Azure Active Directory с Peakon
 
 В этом руководстве описано, как интегрировать Peakon с Azure Active Directory (AAD).
 Интеграция AAD с приложением Peakon обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67094723"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию AAD с Peakon, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Peakon с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "67094723"
 
     ![Сведения о домене и URL-адресах единого входа приложения Peakon](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.peakon.com/saml/<companyid>/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.peakon.com/saml/<companyid>/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.peakon.com/saml/<companyid>/assert`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.peakon.com/saml/<companyid>/assert`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67094723"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -152,7 +152,7 @@ ms.locfileid: "67094723"
 
     ![SAML](./media/peakon-tutorial/tutorial_peakon_saml.png)
 
-    a. В текстовое поле **SSO Login URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **SSO Login URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. В текстовое поле **SSO Logout URL** (URL-адрес единого выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
@@ -160,9 +160,9 @@ ms.locfileid: "67094723"
 
     d. Щелкните **значок**, чтобы скопировать значение **Entity ID** (Идентификатор сущности), и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    д. Щелкните **значок**, чтобы скопировать значение **Reply URL (ACS)** (URL-адрес ответа (ACS)), и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    д) Щелкните **значок**, чтобы скопировать значение **Reply URL (ACS)** (URL-адрес ответа (ACS)), и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    Е. Нажмите кнопку **Сохранить**
+    е) Нажмите кнопку **Сохранить**
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -236,7 +236,7 @@ ms.locfileid: "67094723"
 
      ![Новый сотрудник](./media/peakon-tutorial/tutorial_peakon_create.png)
 
-    a. В текстовое поле **Name** (Имя) введите имя **Britta** и фамилию **Simon**.
+    а. В текстовое поле **Name** (Имя) введите имя **Britta** и фамилию **Simon**.
 
     b. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты, например **Brittasimon\@contoso.com**.
 
@@ -254,5 +254,5 @@ ms.locfileid: "67094723"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

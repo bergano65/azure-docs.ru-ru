@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением Splunk Enterprise and Splunk Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложениями Splunk Enterprise и Splunk Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Splunk Enterprise и Splunk Cloud.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb0941a6cdde5b60b71da6f58ea6b0fd2ccbb262
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160966"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Руководство по Интеграция Azure Active Directory с приложением Splunk Enterprise and Splunk Cloud
+# <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Руководство. Интеграция Azure Active Directory с приложениями Splunk Enterprise и Splunk Cloud
 
 В этом руководстве описано, как интегрировать Splunk Enterprise и Splunk Cloud с Azure Active Directory (Azure AD).
 Интеграция Splunk Enterprise и Splunk Cloud с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73160966"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложениями Splunk Enterprise и Splunk Cloud, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Splunk Enterprise and Splunk Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73160966"
 
     ![Сведения о домене Splunk Enterprise and Splunk Cloud и URL-адресах единого входа](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<splunkserverUrl>/en-US/app/launcher/home`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<splunkserverUrl>/en-US/app/launcher/home`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<splunkserverUrl>`.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Allbound SSO | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Allbound SSO | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Allbound SSO.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec519e9296d8f8b5373e4db84f4efb4af5f07a9e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73153609"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Руководство по Интеграция Azure Active Directory с Allbound SSO
+# <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Руководство по интеграции Azure Active Directory с Allbound SSO
 
 В этом руководстве описано, как интегрировать Allbound SSO с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Allbound SSO обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73153609"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Allbound SSO, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Allbound SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "73153609"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Allbound SSO](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.allbound.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.allbound.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.allbound.com/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.allbound.com/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -128,11 +128,11 @@ ms.locfileid: "73153609"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-allbound-sso-single-sign-on"></a>Настройка единого входа Allbound SSO
 
@@ -154,7 +154,7 @@ ms.locfileid: "73153609"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

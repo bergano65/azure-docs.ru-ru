@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Greenhouse | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Greenhouse | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Greenhouse.
 services: active-directory
 documentationCenter: na
@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 1cf60e13f7b3ad13d204d67cb7c538d1d11a5dbe
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227549"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenhouse"></a>Руководство. Интеграция Azure Active Directory с Greenhouse
@@ -34,11 +34,11 @@ ms.locfileid: "74227549"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Greenhouse, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа Greenhouse.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74227549"
 
     ![Сведения о домене и URL-адресах единого входа приложения Greenhouse](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.greenhouse.io`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.greenhouse.io`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.greenhouse.io`.
 
@@ -120,11 +120,11 @@ ms.locfileid: "74227549"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-greenhouse-single-sign-on"></a>Настройка единого входа в Greenhouse
 
@@ -204,7 +204,7 @@ ms.locfileid: "74227549"
    
     ![Добавление нового пользователя](./media/greenhouse-tutorial/ic790793.png "Добавить нового пользователя")
 
-    a. В текстовом поле **Введите адреса электронной почты пользователей** укажите адрес электронной почты действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
+    а. В текстовом поле **Введите адреса электронной почты пользователей** укажите адрес электронной почты действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
     b. Выберите команду **Сохранить**.    
    

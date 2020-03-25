@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LogicMonitor | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с LogicMonitor | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении LogicMonitor.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 463a8981689614d96100e03965117c9344aa5d50
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159514"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-logicmonitor"></a>Руководство по Интеграция Azure Active Directory с LogicMonitor
+# <a name="tutorial-azure-active-directory-integration-with-logicmonitor"></a>Руководство. Интеграция Azure Active Directory с LogicMonitor
 
 В этом руководстве описано, как интегрировать LogicMonitor с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением LogicMonitor обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159514"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LogicMonitor, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка LogicMonitor с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73159514"
 
     ![Сведения о домене и URL-адресах единого входа для приложения LogicMonitor](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.logicmonitor.com`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73159514"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-logicmonitor-single-sign-on"></a>Настройка единого входа в LogicMonitor
 
@@ -133,7 +133,7 @@ ms.locfileid: "73159514"
 
 2. В верхнем меню нажмите пункт **Параметры**.
 
-    ![Параметры](./media/logicmonitor-tutorial/ic790052.png "Параметры")
+    ![Параметры](./media/logicmonitor-tutorial/ic790052.png "Настройки")
 
 3. В расположенной слева области навигации нажмите **Единый вход**
 
@@ -143,13 +143,13 @@ ms.locfileid: "73159514"
 
     ![Параметры единого входа](./media/logicmonitor-tutorial/ic790054.png "Параметры единого входа")
 
-    a. Выберите пункт **Включить единый вход**.
+    а. Выберите пункт **Включить единый вход**.
 
     b. Выберите для параметра **Default Role Assignment** (Назначение ролей по умолчанию) значение **readonly** (только для чтения).
 
     c. Откройте скачанный файл метаданных в Блокноте и вставьте содержимое этого файла в текстовое поле **Метаданные поставщика удостоверений** .
 
-    d. Нажмите кнопку **Сохранить изменения**.
+    d. Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -214,17 +214,17 @@ ms.locfileid: "73159514"
 
     ![Роли и пользователи](./media/logicmonitor-tutorial/ic790056.png "Роли и пользователи")
 
-3. Щелкните **Добавить**.
+3. Нажмите кнопку **Добавить**.
 
 4. В разделе **Добавить учетную запись** выполните следующие действия.
 
     ![Добавление учетной записи](./media/logicmonitor-tutorial/ic790057.png "Добавить учетную запись")
 
-    a. В соответствующие текстовые поля введите значения **имени пользователя**, **адреса электронной почты**, **пароля** и **подтверждения пароля** пользователя Azure Active Directory, которого требуется подготовить.
+    а. В соответствующие текстовые поля введите значения **имени пользователя**, **адреса электронной почты**, **пароля** и **подтверждения пароля** пользователя Azure Active Directory, которого требуется подготовить.
 
     b. Выберите **Роли**, **Просмотр разрешений** и **Состояние**.
 
-    c. Нажмите кнопку **Submit**(Отправить).
+    c. Щелкните **Отправить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства создания учетной записи пользователя LogicMonitor или API, предоставляемые LogicMonitor для подготовки учетных записей пользователя Azure Active Directory.

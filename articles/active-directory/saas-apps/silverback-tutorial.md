@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Silverback | Документы Майкрософт
+title: Руководство по интеграции Azure Active Directory с Silverback | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Silverback.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 3c4eab02ed0c7c09fe9b5893bbaaf7cbe1c8028f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090911"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство по Интеграция Azure Active Directory с Silverback
+# <a name="tutorial-azure-active-directory-integration-with-silverback"></a>Руководство: интеграция Azure Active Directory с Silverback
 
 В этом руководстве описано, как интегрировать Silverback с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Silverback обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67090911"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Silverback, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Silverback с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67090911"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Silverback](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/ssp`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOURSILVERBACKURL>.com/ssp`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<YOURSILVERBACKURL>.com`.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67090911"
 
     ![Администратор](./media/silverback-tutorial/tutorial_silverback_admin.png)
 
-    a.  Выберите **Import from URL** (Импорт из URL-адреса).
+    а.  Выберите **Import from URL** (Импорт из URL-адреса).
 
     b.  Вставьте скопированный URL-адрес метаданных и нажмите кнопку **ОК**.
 
@@ -136,9 +136,9 @@ ms.locfileid: "67090911"
 
     d.  Включите параметр **Show on Login Page** (Отображать на странице входа).
 
-    д.  Включите параметр **Dynamic User Creation** (Динамическое создание пользователя), если хотите автоматически добавлять авторизованных пользователей Azure AD (необязательно).
+    д)  Включите параметр **Dynamic User Creation** (Динамическое создание пользователя), если хотите автоматически добавлять авторизованных пользователей Azure AD (необязательно).
 
-    Е.  Задайте **Title** (название) для кнопки на портале самообслуживания.
+    е)  Задайте **Title** (название) для кнопки на портале самообслуживания.
 
     ж.  Загрузите **Icon** (значок), щелкнув кнопку **Choose File** (выбрать файл).
 
@@ -211,7 +211,7 @@ ms.locfileid: "67090911"
 
     ![Пользователь](./media/silverback-tutorial/tutorial_silverback_user.png)
 
-    a. В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
+    а. В текстовое поле **Username** (Имя пользователя) введите имя пользователя, например **Britta Simon**.
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -219,9 +219,9 @@ ms.locfileid: "67090911"
 
     d. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon@contoso.com** .
 
-    д. Введите пароль в поле **Password** (Пароль).
+    д) Введите пароль в поле **Password** (Пароль).
 
-    Е. В поле **Confirm Password** (Подтверждение пароля) повторно введите пароль и подтвердите.
+    е) В поле **Confirm Password** (Подтверждение пароля) повторно введите пароль и подтвердите.
 
     ж. Выберите команду **Сохранить**.
 
@@ -240,5 +240,5 @@ ms.locfileid: "67090911"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

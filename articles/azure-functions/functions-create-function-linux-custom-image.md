@@ -4,13 +4,13 @@ description: Узнайте, как создавать функции Azure по
 ms.date: 01/15/2020
 ms.topic: tutorial
 ms.custom: mvc
-zone_pivot_groups: programming-languages-set-functions01
-ms.openlocfilehash: b714806c163a94bbae7069c357e603b82ba797ba
-ms.sourcegitcommit: 98a5a6765da081e7f294d3cb19c1357d10ca333f
+zone_pivot_groups: programming-languages-set-functions
+ms.openlocfilehash: 8c074c677c645dd03e3cf5288d82aa3e65720e8b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77482366"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223731"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Создание функции на Linux с помощью пользовательского контейнера
 
@@ -18,7 +18,7 @@ ms.locfileid: "77482366"
 
 Вы также можете использовать контейнер Службы приложений Azure по умолчанию, как описано в статье [Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки](functions-create-first-azure-function-azure-cli-linux.md). Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
 
-В этом руководстве описано следующее:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание приложения-функции и Dockerfile с помощью Azure Functions Core Tools.
@@ -33,7 +33,7 @@ ms.locfileid: "77482366"
 
 Этот учебник можно запускать на любом компьютере под управлением Windows, Mac OS или Linux. Завершение этого учебника приведет к расходам в несколько долларов США в вашей учетной записи Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Azure Functions Core Tools](./functions-run-local.md#v2) 2.7.1846 или более поздней версии
@@ -70,7 +70,7 @@ ms.locfileid: "77482366"
 
 1. В терминале или командной строке создайте папку для этого учебника в соответствующем расположении, а затем перейдите в эту папку.
 
-1. Следуйте инструкциям в разделе [Создание и активация виртуальной среды](functions-create-first-function-python.md#create-and-activate-a-virtual-environment), чтобы создать виртуальную среду, необходимую для целей для этого учебника.
+1. Следуйте инструкциям в разделе [Создание и активация виртуальной среды](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python#create-venv), чтобы создать виртуальную среду, необходимую для целей для этого учебника.
 
 1. Чтобы создать проект приложения-функции в папке с именем `LocalFunctionsProject`, выполните следующую команду для выбранного языка. Параметр `--docker` создает `Dockerfile` для проекта, который определяет настраиваемый контейнер, который подходит для Функций Azure и выбранной среды выполнения.
 
@@ -333,14 +333,15 @@ Docker Hub — это реестр контейнеров, который со�
     az functionapp create --name <app_name> --storage-account <storage_name> --resource-group AzureFunctionsContainers-rg --plan myPremiumPlan --deployment-container-image-name <docker_id>/azurefunctionsimage:v1.0.0
     ```
     
-    Параметр *Deployment-Container-Image-Name* указывает образ, используемый для приложения-функции. Чтобы просмотреть сведения об образе, используемом для развертывания, можно использовать команду[az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show). Кроме того вы можете использовать команду[az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set),чтобы развернуть из другого образа.
+    Параметр *Deployment-Container-Image-Name* указывает образ, используемый для приложения-функции. Чтобы просмотреть сведения об образе, используемом для развертывания, можно использовать команду[az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show). Кроме того вы можете использовать команду[az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set),чтобы развернуть другой образ.
 
 1. Получите строку подключения для учетной записи хранения, созданной с помощью команды [az storage account show-connection-string](/cli/azure/storage/account), назначив ее переменной оболочки `storageConnectionString`.
 
     ```azurecli
     az storage account show-connection-string --resource-group AzureFunctionsContainers-rg --name <storage_name> --query connectionString --output tsv
+    ```
     
-1. Add this setting to the function app by using the [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) command. In the following command, replace `<app_name>` with the name of your function app, and replace `<connection_string>` with the connection string from the previous step (a long encoded string that begins with "DefaultEndpointProtocol="):
+1. Добавьте этот параметр в приложение-функцию, выполнив команду [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). В следующей команде замените `<app_name>` именем приложения-функции, а `<connection_string>` — строкой подключения из предыдущего шага (длинная зашифрованная строка, которая начинается с "DefaultEndpointProtocol="):
  
     ```azurecli
     az functionapp config appsettings set --name <app_name> --resource-group AzureFunctionsContainers-rg --settings AzureWebJobsStorage=<connection_string>

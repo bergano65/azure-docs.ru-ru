@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 10/16/2019
 ms.author: mimart
 ms.openlocfilehash: 71a6654acd436c27bd2370646dede81778113860
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78186153"
 ---
 #### <a name="applications"></a>[Приложения](#tab/applications/)
@@ -18,7 +18,7 @@ ms.locfileid: "78186153"
 1. Щелкните **Доступ через API**, а затем выберите **Добавить**.
 1. В раскрывающемся списке **Выбрать API** выберите API, к которому должен быть предоставлен доступ веб-приложению. Например, *webapi1*.
 1. В раскрывающемся списке **Выбрать области** выберите области, определенные ранее. Например, *demo.read* и *demo.write*.
-1. Щелкните **ОК**.
+1. Нажмите кнопку **ОК**.
 
 #### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 

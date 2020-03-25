@@ -9,10 +9,10 @@ ms.date: 11/14/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: ef623b95e104b485c6bfc8b2f489afeca436d81e
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74084171"
 ---
 # <a name="prepare-azure-resources-for-hyper-v-disaster-recovery"></a>Подготовка ресурсов Azure для аварийного восстановления Hyper-V
@@ -36,7 +36,7 @@ ms.locfileid: "74084171"
 
 ## <a name="sign-in"></a>Вход
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="verify-account-permissions"></a>Проверка разрешений учетной записи
 
@@ -82,7 +82,7 @@ ms.locfileid: "74084171"
 
 При создании виртуальных машин Azure из хранилища после отработки отказа они присоединяются к сети.
 
-1. На [портале Azure](https://portal.azure.com) выберите **Создать ресурс** > **Networking** (Сеть)  > **Виртуальная сеть**. Оставьте диспетчер ресурсов в качестве модели развертывания.
+1. На [портале Azure](https://portal.azure.com) последовательно выберите **Создать ресурс** > **Сети** > **Виртуальная сеть** Оставьте диспетчер ресурсов в качестве модели развертывания.
 2. В разделе **Name** (Имя) введите имя сети. Имя должно быть уникальным в пределах группы ресурсов Azure. Мы будем использовать префикс **ContosoASRnet**.
 3. Укажите группу ресурсов, чтобы создать сеть. Мы будем использовать имеющуюся группу ресурсов **contosoRG**.
 4. В поле **Диапазон адресов** введите диапазон для сети **10.0.0.0/24**. Не выявлено подсети для этой сети.
@@ -103,7 +103,7 @@ ms.locfileid: "74084171"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Prepare the on-premises Hyper-V infrastructure for disaster recovery to Azure](hyper-v-prepare-on-premises-tutorial.md) (Подготовка локальных серверов Hyper-V для аварийного восстановления в Azure)

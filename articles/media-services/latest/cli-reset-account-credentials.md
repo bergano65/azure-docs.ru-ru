@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 08/20/2019
 ms.author: juliako
 ms.openlocfilehash: 09c93e2d851bea22e9d54dde35398f36335eb896
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70967575"
 ---
-# <a name="cli-example-reset-the-account-credentials"></a>Пример использования CLI. Сбросьте данные учетной записи
+# <a name="cli-example-reset-the-account-credentials"></a>Пример CLI: сброс учетных данных учетной записи
 
 В сценарии Azure CLI в этой статье показано, как сбросить учетные данные учетной записи и вернуть параметры app.config.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 
@@ -43,7 +43,7 @@ az ams account sp reset-credentials \
   --resource-group $resourceGroup 
  ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [az ams](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
 * [Сброс учетных данных](https://docs.microsoft.com/cli/azure/ams/account/sp?view=azure-cli-latest#az-ams-account-sp-reset-credentials)

@@ -11,10 +11,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: df7198b68a083abf9be4ffe88e7a5dd848b2c535
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76119522"
 ---
 # <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview"></a>Интеграция поддержки Apache Kafka Connect в Центрах событий Azure (предварительная версия)
@@ -34,11 +34,11 @@ ms.locfileid: "76119522"
 > * Выполнение Kafka Connect
 > * Создание соединителей
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Для работы с этим пошаговым руководством выполните следующие предварительные требования:
 
 - Подписка Azure. Если ее нет, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/).
-- [Git](https://www.git-scm.com/downloads);
+- [Git](https://www.git-scm.com/downloads)
 - Linux/MacOS
 - Выпуск Kafka (версии 1.1.1, Scala версии 2.11) доступен на сайте [kafka.apache.org](https://kafka.apache.org/downloads#1.1.1)
 - Ознакомьтесь со статьей [Центры событий Azure для Apache Kafka (предварительная версия)](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview).
@@ -134,7 +134,7 @@ plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka
     ```bash
     curl -s http://localhost:8083/connectors/file-source/status
     ```
-    При необходимости, чтобы убедиться, что события были получены из раздела `connect-quickstart`, можно использовать [Explorer служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/releases).
+    При необходимости, чтобы убедиться, что события были получены из раздела [, можно использовать ](https://github.com/paolosalvatori/ServiceBusExplorer/releases)Explorer служебной шины`connect-quickstart`.
 
 5. Создайте соединитель FileStreamSink.  Еще раз убедитесь, что вы заменили фигурные скобки своим путем к домашнему каталогу.
     ```bash

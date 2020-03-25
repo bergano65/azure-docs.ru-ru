@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Citrix ShareFile | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Citrix ShareFile | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Citrix ShareFile.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 71d2fe97a4af07f48038ffd88de648247b56bb80
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160027"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство по Интеграция Azure Active Directory с Citrix ShareFile
+# <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
 В этом руководстве описано, как интегрировать Citrix ShareFile с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Citrix ShareFile обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73160027"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Citrix ShareFile, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Citrix ShareFile с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73160027"
 
     ![Сведения о домене и URL-адресах единого входа приложения Citrix ShareFile](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.sharefile.com/saml/login`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.sharefile.com/saml/login`.
 
     b. В текстовом поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате.
 
@@ -138,11 +138,11 @@ ms.locfileid: "73160027"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-citrix-sharefile-single-sign-on"></a>Настройка единого входа в Citrix ShareFile
 
@@ -158,7 +158,7 @@ ms.locfileid: "73160027"
    
     ![Единый вход](./media/sharefile-tutorial/ic773628.png "Единый вход")
    
-    a. Выберите команду **Enable SAML**(Включить SAML).
+    а. Выберите команду **Enable SAML**(Включить SAML).
     
     b. В текстовое поле **Your IDP Issuer/ Entity ID** (Издатель поставщика удостоверений/идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -166,7 +166,7 @@ ms.locfileid: "73160027"
     
     d. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
     
-    д. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
+    д) В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
 5. Нажмите **Сохранить** на портале управления Citrix ShareFile.
 
@@ -237,7 +237,7 @@ ms.locfileid: "73160027"
    
     ![Основные сведения](./media/sharefile-tutorial/IC799951.png "Основные сведения")
    
-    a. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты пользователя Britta Simon: **brittasimon\@contoso.com**.
+    а. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты пользователя Britta Simon: **brittasimon\@contoso.com**.
    
     b. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
    

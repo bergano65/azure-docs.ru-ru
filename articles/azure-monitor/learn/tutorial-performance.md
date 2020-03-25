@@ -8,11 +8,11 @@ ms.author: mbullwin
 ms.date: 08/13/2019
 ms.custom: mvc
 ms.openlocfilehash: 98d7c1552a7b1f2b02ae4df1cad24e20f7ac76e1
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78367707"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223681"
 ---
 # <a name="find-and-diagnose-performance-issues-with-azure-application-insights"></a>Поиск и диагностика проблем производительности с помощью Azure Application Insights
 
@@ -25,7 +25,7 @@ Azure Application Insights собирает данные телеметрии и
 > * Анализ сведений просмотра страниц с помощью языка запросов.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -108,7 +108,7 @@ Application Insights собирает данные о производитель
     ![Журналы с интеллектуальной диагностикой](media/tutorial-performance/11-page-view-logs-dsmart.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как определить исключения времени выполнения, перейдите к следующему руководству, чтобы научиться создавать оповещения в ответ на неполадки.
 
 > [!div class="nextstepaction"]

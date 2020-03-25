@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Dow Jones Factiva | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Dow Jones Factiva | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Dow Jones Factiva.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d894a024f8847af806be526493d23d562410dc25
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157314"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>Руководство по Интеграция Azure Active Directory с Dow Jones Factiva
+# <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>Руководство по интеграции Azure Active Directory с Dow Jones Factiva
 
 В этом руководстве описано, как интегрировать Dow Jones Factiva с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Dow Jones Factiva обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73157314"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Dow Jones Factiva, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на Dow Jones Factiva с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -114,11 +114,11 @@ ms.locfileid: "73157314"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-dow-jones-factiva-single-sign-on"></a>Настройка единого входа в Dow Jones Factiva
 

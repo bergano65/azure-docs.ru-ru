@@ -11,10 +11,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 5bd25604844ce0521b6bac2d637a2d48a6ef089b
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72555732"
 ---
 # <a name="connect-your-apache-spark-application-with-kafka-enabled-azure-event-hubs"></a>Подключение приложения Apache Spark с помощью Центров событий Azure с поддержкой Kafka
@@ -23,7 +23,7 @@ ms.locfileid: "72555732"
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/spark/).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 > * Создание пространства имен в Центрах событий
 > * Клонирование примера проекта
@@ -31,7 +31,7 @@ ms.locfileid: "72555732"
 > * Чтение из Центров событий для Kafka.
 > * Запись в Центры событий для Kafka.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с данным руководством необходимо выполнить описанные ниже условия.
 -   Подписка Azure. Если ее нет, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/).
@@ -54,7 +54,7 @@ git clone https://github.com/Azure/azure-event-hubs-for-kafka.git
 cd azure-event-hubs-for-kafka/tutorials/spark
 ```
 
-## <a name="read-from-event-hubs-for-kafka"></a>Чтение из Центров событий для Kafka
+## <a name="read-from-event-hubs-for-kafka"></a>Чтение из Центров событий для Kafka.
 Внеся несколько изменений в конфигурации, вы сможете запустить чтение из Центров событий для Kafka. Обновите **BOOTSTRAP_SERVERS** и **EH_SASL** сведениями о пространстве имен, чтобы запустить потоковую передачу с помощью Центров событий так же, как с Kafka. Чтобы ознакомиться с полным примером кода, просмотрите файл sparkConsumer.scala на сайте GitHub. 
 
 ```scala
@@ -99,7 +99,7 @@ df.writeStream
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как выполнить потоковую передачу с помощью соединителя Spark-Kafka и Центров событий для Kafka. Вы выполнили следующие шаги: 
 

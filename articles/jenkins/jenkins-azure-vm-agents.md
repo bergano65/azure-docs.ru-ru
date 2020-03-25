@@ -5,10 +5,10 @@ keywords: jenkins, azure, devops, virtual machine, agents
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.openlocfilehash: 2e811d628c017316a5bc50a8ddc22ee24d6f744e
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74158536"
 ---
 # <a name="scale-your-jenkins-deployments-to-meet-demand-with-azure-vm-agents"></a>Масштабирование развертываний Jenkins в соответствии с требованиями агентов виртуальных машин Azure
@@ -27,7 +27,7 @@ ms.locfileid: "74158536"
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure
 * Главный сервер Jenkins. Если у вас его нет, просмотрите [краткое руководство](install-jenkins-solution-template.md) по его настройке в Azure.
@@ -48,7 +48,7 @@ ms.locfileid: "74158536"
 1. Прокрутите до нижней части страницы и найдите раздел **Cloud** (Облако) с раскрывающимся списком **Add new cloud** (Добавление нового облака) и выберите **Microsoft Azure VM Agents** (Агенты виртуальных машин Microsoft Azure).
 1. Выберите имеющийся субъект-службу в раскрывающемся списке **Add** (Добавить) в разделе **Azure Credentials** (Учетные данные Azure). Если его в списке нет, выполните действия ниже, чтобы [создать субъект-службу](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager) для учетной записи Azure и добавить его в конфигурацию Jenkins.   
 
-    a. Щелкните **Add** (Добавить) рядом с разделом **Azure Credentials** (Учетные данные Azure) и выберите **Jenkins**.   
+    а. Щелкните **Add** (Добавить) рядом с разделом **Azure Credentials** (Учетные данные Azure) и выберите **Jenkins**.   
     b. В диалоговом окне **добавления учетных данных** выберите **субъект-службу Microsoft Azure** в раскрывающемся списке **Kind** (Вид).   
     c. Создайте субъект-службу Active Directory с помощью Azure CLI или [Cloud Shell](/azure/cloud-shell/overview).
     
@@ -100,8 +100,8 @@ ms.locfileid: "74158536"
 Настройте шаблон для определения агента виртуальных машин Azure. Этот шаблон определяет вычислительные ресурсы, созданные каждым агентом.
 
 1. Выберите **Add** (Добавить) рядом с параметром **Add Azure Virtual Machine Template** (Добавить шаблон виртуальной машины Azure).
-1. В поле **Name** (Имя) введите `defaulttemplate`.
-1. В поле **Label** (Метка) введите `ubuntu`.
+1. В поле `defaulttemplate`Name **(Имя) введите**.
+1. В поле `ubuntu`Label **(Метка) введите**.
 1. Выберите нужный [регион Azure](https://azure.microsoft.com/regions/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) в поле со списком.
 1. Выберите [размер виртуальной машины](/azure/virtual-machines/linux/sizes) в раскрывающемся списке в разделе **Virtual Machine Size** (Размер виртуальной машины). В этом руководстве используется размер общего назначения `Standard_DS1_v2`.   
 1. Для параметра **Retention time** (Время хранения) задайте значение `60`. Этот параметр определяет время ожидания (в минутах) Jenkins перед его освобождением от неактивных агентов. Укажите 0, если не хотите, чтобы неактивные агенты удалялись автоматически.
@@ -122,10 +122,10 @@ ms.locfileid: "74158536"
 
 1. На панели мониторинга Jenkins щелкните элемент **New Item**(Создать элемент). 
 1. В поле имени введите `demoproject1`, выберите **Freestyle project** (Универсальный проект) и нажмите кнопку **ОК**.
-1. На вкладке **General** (Общие) выберите **Restrict where project can be run** (Ограничения для запуска проекта) и введите для **выражения метки** значение `ubuntu`. Появится сообщение, подтверждающее обработку метки конфигурацией облака, созданной на предыдущем шаге. 
+1. На вкладке **General** (Общие) выберите **Restrict where project can be run** (Ограничения для запуска проекта) и введите для `ubuntu`выражения метки**значение**. Появится сообщение, подтверждающее обработку метки конфигурацией облака, созданной на предыдущем шаге. 
    ![Настройка задания](./media/jenkins-azure-vm-agents/job-config.png)
 1. На вкладке **Source Code Management** (Управление исходным кодом) выберите **Git** и добавьте следующий URL-адрес в поле **Repository URL** (URL-адрес репозитория): `https://github.com/spring-projects/spring-petclinic.git`.
-1. На вкладке **Build** (Сборка) выберите **Add build step** (Добавить шаг сборки), а затем — **Invoke top-level Maven targets** (Вызов целевых объектов Maven верхнего уровня). В поле **Goals** (Цели) введите `package`.
+1. На вкладке **Build** (Сборка) выберите **Add build step** (Добавить шаг сборки), а затем — **Invoke top-level Maven targets** (Вызов целевых объектов Maven верхнего уровня). В поле `package`Goals **(Цели) введите**.
 1. Чтобы сохранить определение задания, выберите **Save** (Сохранить).
 
 ## <a name="build-the-new-job-on-an-azure-vm-agent"></a>Сборка задания в агенте виртуальной машины Azure
@@ -140,7 +140,7 @@ ms.locfileid: "74158536"
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Развертывание в службе приложений Azure с использованием подключаемого модуля Jenkins](java-deploy-webapp-tutorial.md)

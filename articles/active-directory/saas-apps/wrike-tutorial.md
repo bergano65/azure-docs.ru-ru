@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Wrike | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Wrike | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wrike.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 47af0a43e4d081f50fedf685d46347f0f36233fd
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68825626"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-wrike"></a>Руководство по Интеграция Azure Active Directory с Wrike
+# <a name="tutorial-azure-active-directory-integration-with-wrike"></a>Руководство. Интеграция Azure Active Directory с Wrike
 
 В этом руководстве описано, как интегрировать Wrike с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Wrike обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "68825626"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Wrike, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Wrike с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -122,7 +122,7 @@ ms.locfileid: "68825626"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

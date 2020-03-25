@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 12/03/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 5b9bc78f6af833d89a3404de0295ddad78ebdf20
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74870145"
 ---
 # <a name="query-data-by-using-azure-cosmos-dbs-api-for-mongodb"></a>Запрос данных с использованием API Azure Cosmos DB для MongoDB
@@ -58,7 +58,7 @@ ms.locfileid: "74870145"
   "isRegistered": false
 }
 ```
-## <a id="examplequery1"></a> Пример запроса 1 
+## <a name="example-query-1"></a><a id="examplequery1"></a> Пример запроса 1 
 
 С учетом приведенного выше образца документа сведений о семье следующий запрос возвращает документы, у которых поле идентификации соответствует `WakefieldFamily`.
 
@@ -108,7 +108,7 @@ ms.locfileid: "74870145"
     "isRegistered": false
     }
 
-## <a id="examplequery2"></a> Пример запроса 2 
+## <a name="example-query-2"></a><a id="examplequery2"></a> Пример запроса 2 
 
 Следующий запрос возвращает перечень всех детей в семье. 
 
@@ -141,7 +141,7 @@ ms.locfileid: "74870145"
     }
 
 
-## <a id="examplequery3"></a> Пример запроса 3 
+## <a name="example-query-3"></a><a id="examplequery3"></a> Пример запроса 3 
 
 Следующий запрос возвращает перечень всех семей, которые зарегистрированы. 
 
@@ -150,7 +150,7 @@ ms.locfileid: "74870145"
     db.families.find( { "isRegistered" : true })
 **Результаты**: документ не будет возвращен. 
 
-## <a id="examplequery4"></a> Пример запроса 4
+## <a name="example-query-4"></a><a id="examplequery4"></a> Пример запроса 4
 
 Следующий запрос возвращает перечень всех семей, которые не зарегистрированы. 
 
@@ -194,7 +194,7 @@ ms.locfileid: "74870145"
     "isRegistered": false
 }
 
-## <a id="examplequery5"></a> Пример запроса 5
+## <a name="example-query-5"></a><a id="examplequery5"></a> Пример запроса 5
 
 Следующий запрос возвращает перечень всех семей, которые не зарегистрированы и живут в штате Нью-Йорк. 
 
@@ -240,7 +240,7 @@ ms.locfileid: "74870145"
 }
 
 
-## <a id="examplequery6"></a> Пример запроса 6
+## <a name="example-query-6"></a><a id="examplequery6"></a> Пример запроса 6
 
 Следующий запрос возвращает все семьи, где дети ходят в 8-й класс.
 
@@ -285,7 +285,7 @@ ms.locfileid: "74870145"
     "isRegistered": false
 }
 
-## <a id="examplequery7"></a> Пример запроса 7
+## <a name="example-query-7"></a><a id="examplequery7"></a> Пример запроса 7
 
 Следующий запрос возвращает семьи, где 3 детей.
 
@@ -297,7 +297,7 @@ ms.locfileid: "74870145"
 
 Результаты не будут выведены, так как у семей в документе не больше двоих детей. Этот запрос будет успешным и вернет полный документ, только если параметр будет равен 2.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили следующее:
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SAP HANA | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SAP HANA | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP HANA.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 44a34fe5637e895ea69b6fc4c277b7722b306c97
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73161184"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-hana"></a>Руководство по Интеграция Azure Active Directory с SAP HANA
+# <a name="tutorial-azure-active-directory-integration-with-sap-hana"></a>Руководство по интеграции Azure Active Directory с SAP HANA
 
 В этом руководстве описано, как интегрировать SAP HANA с Azure Active Directory (Azure AD).
 Интеграция SAP HANA с Azure AD обеспечивает следующие преимущества:
@@ -35,7 +35,7 @@ ms.locfileid: "73161184"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SAP HANA, вам потребуется:
 
@@ -49,7 +49,7 @@ ms.locfileid: "73161184"
 
 При проверке действий в этом руководстве соблюдайте следующие рекомендации:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка SAP HANA с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -117,7 +117,7 @@ ms.locfileid: "73161184"
 
     ![Сведения о домене и URL-адресах для единого входа в приложение SAP HANA](common/idp-intiated.png)
 
-    a. В поле **Идентификатор** введите следующее: `HA100`
+    а. В поле **Идентификатор** введите следующее: `HA100`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<Customer-SAP-instance-url>/sap/hana/xs/saml/login.xscfunc`.
 
@@ -130,7 +130,7 @@ ms.locfileid: "73161184"
 
 6. В разделе **Атрибуты пользователя** в диалоговом окне **User Attributes & Claims** (Атрибуты пользователя и утверждения) выполните следующие действия.
  
-    a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](./media/saphana-tutorial/tutorial_usermail.png)
 
@@ -157,7 +157,7 @@ ms.locfileid: "73161184"
 
     ![Добавление поставщика удостоверений](./media/saphana-tutorial/sap1.png)
 
-    a. В области **Add Identity Provider Info** (Добавление сведений о поставщике удостоверений) в текстовое поле **Metadata** (Метаданные) добавьте содержимое XML-файла метаданных, скачанного с портала Azure.
+    а. В области **Add Identity Provider Info** (Добавление сведений о поставщике удостоверений) в текстовое поле **Metadata** (Метаданные) добавьте содержимое XML-файла метаданных, скачанного с портала Azure.
 
     ![Добавление параметров поставщика удостоверений](./media/saphana-tutorial/sap2.png)
 

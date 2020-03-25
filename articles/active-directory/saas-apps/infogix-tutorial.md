@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Infogix Data3Sixty Govern | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Infogix Data3Sixty Govern | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Infogix Data3Sixty Govern.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: a0b8dbb3992808bdcb94291d876192431c72f6c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67100345"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство по Интеграция Azure Active Directory с Infogix Data3Sixty Govern
+# <a name="tutorial-azure-active-directory-integration-with-infogix-data3sixty-govern"></a>Руководство по интеграции Azure Active Directory с Infogix Data3Sixty Govern
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Infogix Data3Sixty Govern.
 Интеграция Infogix Data3Sixty Govern с Azure AD обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67100345"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Infogix Data3Sixty Govern, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Infogix Data3Sixty Govern с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67100345"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Infogix Data3Sixty Govern](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://data3sixty.com/ui`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://data3sixty.com/ui`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.data3sixty.com/sso/acs`.
 
@@ -125,13 +125,13 @@ ms.locfileid: "67100345"
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | -----------| -------------- |
     | firstname  | user.givenname |
     | lastname   | user.surname |
-    | Имя пользователя   | user.mail    |
+    | username   | user.mail    |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -143,9 +143,9 @@ ms.locfileid: "67100345"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -157,7 +157,7 @@ ms.locfileid: "67100345"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -237,5 +237,5 @@ ms.locfileid: "67100345"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

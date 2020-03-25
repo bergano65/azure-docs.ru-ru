@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Kintone | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Kintone | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kintone.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 6786b44aca9ceed3cec5daf0f858a51e2dd12833
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227577"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kintone"></a>Руководство по Интеграция Azure Active Directory с Kintone
+# <a name="tutorial-azure-active-directory-integration-with-kintone"></a>Руководство по интеграции Azure Active Directory с Kintone
 
 В этом руководстве описано, как интегрировать Kintone с Azure Active Directory (Azure AD).
 Интеграция Kintone с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74227577"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Kintone, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Kintone с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74227577"
 
     ![Сведения о домене и URL-адресах единого входа приложения Kintone](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.kintone.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.kintone.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
@@ -125,7 +125,7 @@ ms.locfileid: "74227577"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -137,7 +137,7 @@ ms.locfileid: "74227577"
 
 1. Щелкните **значок параметров**.
 
-    ![Параметры](./media/kintone-tutorial/ic785879.png "Параметры")
+    ![Параметры](./media/kintone-tutorial/ic785879.png "Настройки")
 
 1. Щелкните **Users & System Administration** (Администрирование пользователей и системы).
 
@@ -145,7 +145,7 @@ ms.locfileid: "74227577"
 
 1. Перейдите в раздел **System Administration \> Security** (Системное администрирование > Безопасность) и щелкните **Login** (Вход).
 
-    ![Имя входа](./media/kintone-tutorial/ic785881.png "Вход")
+    ![Имя входа](./media/kintone-tutorial/ic785881.png "Имя входа")
 
 1. Установите флажок **Включить проверку подлинности SAML**.
 
@@ -155,7 +155,7 @@ ms.locfileid: "74227577"
 
     ![Проверка подлинности SAML](./media/kintone-tutorial/ic785883.png "Проверка подлинности SAML")
 
-    a. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure.
 
@@ -224,7 +224,7 @@ ms.locfileid: "74227577"
 
 1. Щелкните **значок параметров**.
 
-    ![Параметры](./media/kintone-tutorial/ic785879.png "Параметры")
+    ![Параметры](./media/kintone-tutorial/ic785879.png "Настройки")
 
 1. Щелкните **Users & System Administration** (Администрирование пользователей и системы).
 
@@ -242,7 +242,7 @@ ms.locfileid: "74227577"
 
     ![Новые пользователи](./media/kintone-tutorial/ic785890.png "Новые пользователи")
 
-    a. Задайте значения в полях **Display Name** (Отображаемое имя), **Login Name** (Имя для входа), **New Password** (Новый пароль), **Confirm Password** (Подтверждение пароля), **E-mail Address** (Адрес электронной почты) и другие данные действующей учетной записи Azure AD, которую вы хотите подготовить.
+    а. Задайте значения в полях **Display Name** (Отображаемое имя), **Login Name** (Имя для входа), **New Password** (Новый пароль), **Confirm Password** (Подтверждение пароля), **E-mail Address** (Адрес электронной почты) и другие данные действующей учетной записи Azure AD, которую вы хотите подготовить.
 
     b. Выберите команду **Сохранить**.
 

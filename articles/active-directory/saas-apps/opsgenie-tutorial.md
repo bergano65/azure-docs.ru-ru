@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с OpsGenie | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с OpsGenie | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OpsGenie.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 446ac54d84f7b2b3bf3aaf6eaf5536f0dfb804fe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67095758"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Руководство по Интеграция Azure Active Directory с OpsGenie
+# <a name="tutorial-azure-active-directory-integration-with-opsgenie"></a>Руководство. Интеграция Azure Active Directory с OpsGenie
 
 В этом руководстве описано, как интегрировать OpsGenie с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением OpsGenie обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67095758"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с OpsGenie, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка OpsGenie с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -115,7 +115,7 @@ ms.locfileid: "67095758"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -141,11 +141,11 @@ ms.locfileid: "67095758"
    
     ![Параметры OpsGenie](./media/opsgenie-tutorial/tutorial_opsgenie_09.png)
     
-    a. В текстовое поле **SAML 2.0 Endpoint** (Конечная точка SAML 2.0) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовое поле **SAML 2.0 Endpoint** (Конечная точка SAML 2.0) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
     
     b. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
     
-    c. Нажмите кнопку **Сохранить изменения**.
+    c. Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -163,7 +163,7 @@ ms.locfileid: "67095758"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **B. Simon**.
+    а. В поле **Имя** введите **B. Simon**.
   
     b. В поле **Имя пользователя** введите **bsimon@yourcompanydomain.extension** .  
     Например BSimon@contoso.com.
@@ -214,14 +214,14 @@ ms.locfileid: "67095758"
    
     ![Параметры OpsGenie](./media/opsgenie-tutorial/tutorial_opsgenie_11.png)
    
-    a. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя B. Simon в Azure Active Directory.
+    а. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя B. Simon в Azure Active Directory.
    
     b. В текстовом поле **Full Name** (Полное имя) введите **B. Simon**.
    
     c. Выберите команду **Сохранить**. 
 
 >[!NOTE]
->B. Пользователь Simon получит электронное сообщение с инструкциями по настройке профиля.
+>Б. Пользователь Simon получит электронное сообщение с инструкциями по настройке профиля.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -235,5 +235,5 @@ ms.locfileid: "67095758"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

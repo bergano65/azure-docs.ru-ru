@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Workrite | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Workrite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Workrite.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 026ad76fa82a28ca3e7f29de2e656994b9cad634
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086768"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workrite"></a>Руководство по Интеграция Azure Active Directory с Workrite
+# <a name="tutorial-azure-active-directory-integration-with-workrite"></a>Руководство. Интеграция Azure Active Directory с Workrite
 
 В этом руководстве описано, как интегрировать Workrite с Azure Active Directory (Azure AD).
 Интеграция Workrite с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67086768"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Workrite, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Workrite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "67086768"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -198,7 +198,7 @@ ms.locfileid: "67086768"
    
     ![Диалоговое окно создания пользователя][402]
     
-    a. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+    а. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
@@ -206,7 +206,7 @@ ms.locfileid: "67086768"
     
     d. Выберите значение **Client Administrator** (Администратор клиента) в поле **Choose Role** (Выберите роль).
     
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -220,7 +220,7 @@ ms.locfileid: "67086768"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

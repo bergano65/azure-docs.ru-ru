@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Reward Gateway | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Reward Gateway | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и Reward Gateway.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: fcd12b0c47dc587153df51d4d30eb2abe4cc2657
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74081953"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Руководство. Интеграция Azure Active Directory с Reward Gateway
+# <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Учебник. Интеграция Azure Active Directory с Reward Gateway
 
 В этом учебнике описано, как интегрировать Reward Gateway с Azure Active Directory (Azure AD).
 Интеграция Reward Gateway с Azure AD обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "74081953"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Reward Gateway, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Reward Gateway с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -47,7 +47,7 @@ ms.locfileid: "74081953"
 
 * Reward Gateway поддерживает единый вход, инициируемый **поставщиком удостоверений**.
 
-## <a name="adding-reward-gateway-from-the-gallery"></a>Добавление Reward Gateway из коллекции.
+## <a name="adding-reward-gateway-from-the-gallery"></a>Добавление Reward Gateway из коллекции
 
 Чтобы настроить интеграцию Reward Gateway с Azure AD, необходимо добавить Reward Gateway из коллекции в список управляемых приложений SaaS.
 
@@ -105,7 +105,7 @@ ms.locfileid: "74081953"
 
     ![Сведения о домене и URL-адресах для единого входа для приложения Reward Gateway](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
     
     | |
     |--|
@@ -134,11 +134,11 @@ ms.locfileid: "74081953"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-reward-gateway-single-sign-on"></a>Настройка единого входа для Reward Gateway
 

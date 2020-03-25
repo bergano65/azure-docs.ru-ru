@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Questetra BPM Suite | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Questetra BPM Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Questetra BPM Suite.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: f58d6cbc6ec04e51e105662dff31c60ff502584c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093362"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-questetra-bpm-suite"></a>Руководство по Интеграция Azure Active Directory с Questetra BPM Suite
+# <a name="tutorial-azure-active-directory-integration-with-questetra-bpm-suite"></a>Учебник. Интеграция Azure Active Directory с Questetra BPM Suite
 
 В этом руководстве описано, как интегрировать Questetra BPM Suite с Azure Active Directory (Azure AD).
 Интеграция Questetra BPM Suite с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67093362"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Questetra BPM Suite, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Questetra BPM Suite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67093362"
 
     ![Сведения о домене и URL-адресах единого входа приложения Questetra BPM Suite](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67093362"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -140,7 +140,7 @@ ms.locfileid: "67093362"
 
 4. На своем корпоративном сайте **Questetra BPM Suite** в разделе **SP Information** (Сведения о SP) выполните следующие действия.
 
-    a. Скопируйте **URL-адрес ACS** и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте **URL-адрес ACS** и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
     
     b. Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -148,7 +148,7 @@ ms.locfileid: "67093362"
    
     ![Настройка единого входа][15]
    
-    a. Выберите пункт **Включить единый вход**.
+    а. Выберите пункт **Включить единый вход**.
    
     b. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
     
@@ -156,9 +156,9 @@ ms.locfileid: "67093362"
     
     d. В текстовое поле **Sign-out page URL** (URL-адрес страницы выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
     
-    д. В текстовом поле **NameID format** (Формат идентификатора имени) введите `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`.
+    д) В текстовом поле **NameID format** (Формат идентификатора имени) введите `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`.
 
-    Е. Откройте в Блокноте сертификат в кодировке **Base64**, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **Validation certificate** (Сертификат проверки). 
+    е) Откройте в Блокноте сертификат в кодировке **Base64**, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **Validation certificate** (Сертификат проверки). 
 
     ж. Выберите команду **Сохранить**.
 
@@ -226,7 +226,7 @@ ms.locfileid: "67093362"
    
     ![Создание тестового пользователя][300] 
    
-    a. В текстовое поле **Name** (Имя) введите **имя** пользователя britta.simon@contoso.com.
+    а. В текстовое поле **Name** (Имя) введите **имя** пользователя britta.simon@contoso.com.
    
     b. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты** пользователя britta.simon@contoso.com.
    
@@ -246,7 +246,7 @@ ms.locfileid: "67093362"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

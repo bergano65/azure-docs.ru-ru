@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с New Relic | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с New Relic | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и New Relic.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: dfa5fbcf5df8ee314aab3e4a8228d81e7e14565b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233513"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-new-relic"></a>Руководство по Интеграция Azure Active Directory с New Relic
+# <a name="tutorial-azure-active-directory-integration-with-new-relic"></a>Учебник. Интеграция Azure Active Directory с New Relic
 
 В этом руководстве описано, как интегрировать New Relic с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением New Relic обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74233513"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с New Relic, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка New Relic с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74233513"
 
     ![Сведения о домене и URL-адресах единого входа приложения New Relic](common/sp-identifier.png)
 
-    a. В поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://rpm.newrelic.com/accounts/{acc_id}/sso/saml/login`. Не забудьте подставить собственный идентификатор учетной New Relic.
+    а. В поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://rpm.newrelic.com/accounts/{acc_id}/sso/saml/login`. Не забудьте подставить собственный идентификатор учетной New Relic.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `rpm.newrelic.com`
 
@@ -117,11 +117,11 @@ ms.locfileid: "74233513"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-new-relic-single-sign-on"></a>Настройка единого входа в New Relic
 
@@ -139,7 +139,7 @@ ms.locfileid: "74233513"
    
     ![SAML](./media/new-relic-tutorial/ic797038.png "SAML")
    
-    a. Щелкните **Выбор файла** , чтобы передать скачанный сертификат Azure Active Directory.
+    а. Щелкните **Выбор файла** , чтобы передать скачанный сертификат Azure Active Directory.
 
     b. В текстовое поле **Remote login URL** (URL-адрес удаленного входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
    
@@ -218,7 +218,7 @@ ms.locfileid: "74233513"
    
     ![Активные пользователи](./media/new-relic-tutorial/ic797042.png "Активные пользователи")
    
-    a. В текстовом поле **Электронная почта** введите электронный адрес действующего пользователя Azure Active Directory, которого вы хотите подготовить.
+    а. В текстовом поле **Электронная почта** введите электронный адрес действующего пользователя Azure Active Directory, которого вы хотите подготовить.
 
     b. Для параметра **Role** (Роль) выберите значение **User** (Пользователь).
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Reflektive | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Reflektive | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Reflektive.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: d26e8a21865304b2065a28da5e241f58cb5ab34c
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68383220"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Руководство по Интеграция Azure Active Directory с Reflektive
+# <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Руководство по интеграции Azure Active Directory с Reflektive
 
 В этом руководстве описано, как интегрировать Reflektive с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Reflektive обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "68383220"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Reflektive, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Reflektive с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -130,7 +130,7 @@ ms.locfileid: "68383220"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

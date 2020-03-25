@@ -16,18 +16,18 @@ ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: 6b763d08dc898566bfe0d7a28bf6471d4edf4c59
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74064957"
 ---
-# <a name="tutorial-use-azure-security-center-to-monitor-windows-virtual-machines"></a>Руководство по Использование центра безопасности Azure для мониторинга виртуальных машин Windows в Azure
+# <a name="tutorial-use-azure-security-center-to-monitor-windows-virtual-machines"></a>Руководство. Использование центра безопасности Azure для мониторинга виртуальных машин Windows в Azure
 
 Центр безопасности Azure поможет получить рекомендации по безопасности ресурсов Azure. Центр безопасности предлагает встроенный мониторинг безопасности. Это позволяет распознавать угрозы, которые в противном случае могли быть не замечены. В этом руководстве вы узнаете о центре безопасности Azure и научитесь:
 
 > [!div class="checklist"]
-> * Настраивать сбор данных.
+> * Настройка сбора данных
 > * Устанавливать политики безопасности.
 > * Просматривать и устранять неполадки конфигурации.
 > * Просматривать обнаруженные угрозы.
@@ -123,8 +123,8 @@ ms.locfileid: "74064957"
 
 ![Атака по протоколу RDP](./media/tutorial-azure-security/rdp-attack.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы настроили центр безопасности Azure, а затем проверили в нем виртуальные машины. Вы научились выполнять следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы настроили центр безопасности Azure, а затем проверили в нем виртуальные машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Настройка сбора данных

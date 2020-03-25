@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SAML SSO for Bamboo by resolution GmbH | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SAML SSO for Bamboo by resolution GmbH | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и SAML SSO for Bamboo by resolution GmbH.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 044a2f9a9ecd0ccceb99ce7999af7e2c8578950d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67106536"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-bamboo-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Bamboo by resolution GmbH
+# <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-bamboo-by-resolution-gmbh"></a>Руководство по интеграции Azure Active Directory с SAML SSO for Bamboo by resolution GmbH
 
 В этом руководстве описано, как интегрировать SAML SSO for Bamboo by resolution GmbH с Azure Active Directory (Azure AD).
 Интеграция SAML SSO for Bamboo by resolution GmbH с Azure AD предоставляет следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67106536"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для настройки интеграции Azure AD с SAML SSO for Bamboo by resolution GmbH требуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка SAML SSO for Bamboo by resolution GmbH с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "67106536"
 
     ![Информация о едином входе доменов и URL-адресов приложения SAML SSO for Bamboo by resolution GmbH](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67106536"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -154,7 +154,7 @@ ms.locfileid: "67106536"
 
     ![Поставщик удостоверений](./media/bamboo-tutorial/tutorial_bamboo_identityprovider.png)
 
-    a. Выберите **Azure AD** в качестве **типа поставщика удостоверений**.
+    а. Выберите **Azure AD** в качестве **типа поставщика удостоверений**.
 
     b. В текстовом поле **Имя** введите имя.
 
@@ -242,4 +242,4 @@ ms.locfileid: "67106536"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

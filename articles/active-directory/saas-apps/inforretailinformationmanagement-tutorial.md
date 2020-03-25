@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением Infor Retail – Information Management | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Infor Retail – Information Management | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Infor Retail – Information Management.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6572560833e6336495b3bec782a096b584be1ec0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67100283"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infor-retail--information-management"></a>Руководство по Интеграция Azure Active Directory с приложением Infor Retail – Information Management
+# <a name="tutorial-azure-active-directory-integration-with-infor-retail--information-management"></a>Руководство. Интеграция Azure Active Directory с приложением Infor Retail – Information Management
 
 В этом руководстве описано, как интегрировать приложение Infor Retail – Information Management с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Infor Retail – Information Management обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67100283"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Infor Retail – Information Management, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Infor Retail – Information Management с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67100283"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Infor Retail – Information Management](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
     
     | |
     |--|
@@ -132,7 +132,7 @@ ms.locfileid: "67100283"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -208,4 +208,4 @@ ms.locfileid: "67100283"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

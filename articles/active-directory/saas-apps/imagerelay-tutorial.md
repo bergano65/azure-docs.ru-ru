@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Image Relay | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Image Relay | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Image Relay.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4fd0637a632b277eae019ac4aebfbc7cdb87e8e2
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158972"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство по Интеграция Azure Active Directory с Image Relay
+# <a name="tutorial-azure-active-directory-integration-with-image-relay"></a>Руководство по интеграции Azure Active Directory с приложением Image Relay
 
 В этом учебнике описано, как интегрировать Image Relay с Azure Active Directory (Azure AD).
 Интеграция Image Relay с Azure AD обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73158972"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Image Relay, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Image Relay с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73158972"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Image Relay](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.imagerelay.com/sso/metadata`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73158972"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-image-relay-single-sign-on"></a>Настройка единого входа в Image Relay
 
@@ -155,7 +155,7 @@ ms.locfileid: "73158972"
 
     ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_12.png)
 
-    a. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
+    а. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
 
     b. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
@@ -163,11 +163,11 @@ ms.locfileid: "73158972"
 
     d. В разделе **Binding Options for Requests from the Service Provider (Image Relay)** (Обязательные параметры для запросов от поставщика услуг (Image Relay)) выберите **POST Binding** (Привязка POST).
 
-    д. В разделе **Сертификат X.509** щелкните **Обновить сертификат**.
+    д) В разделе **Сертификат X.509** щелкните **Обновить сертификат**.
 
     ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_17.png)
 
-    Е. Откройте скачанный сертификат в блокноте, а затем скопируйте и вставьте его содержимое в текстовое поле **x.509 Certificate** (Сертификат X.509).
+    е) Откройте скачанный сертификат в блокноте, а затем скопируйте и вставьте его содержимое в текстовое поле **x.509 Certificate** (Сертификат X.509).
 
     ![Настройка единого входа](./media/imagerelay-tutorial/tutorial_imagerelay_18.png)
 

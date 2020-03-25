@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с TurboRater | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TurboRater | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении TurboRater.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 3/8/2019
 ms.author: jeedes
 ms.openlocfilehash: 3777cf09ec669fe3df6bca13f6960f53c689767c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088272"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-turborater"></a>Руководство по Интеграция Azure Active Directory с TurboRater
+# <a name="tutorial-azure-active-directory-integration-with-turborater"></a>Руководство по интеграции Azure Active Directory с TurboRater
 
 В этом руководстве описано, как интегрировать TurboRater с Azure Active Directory (Azure AD).
 
@@ -34,11 +34,11 @@ ms.locfileid: "67088272"
 
 Дополнительные сведения об интеграции приложения SaaS с Azure AD см. в статье [о доступе к приложениям и едином входе с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TurboRater, вам потребуется следующее:
 
-* подписка Azure AD Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* подписка Azure AD; Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * подписка TurboRater с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -51,7 +51,7 @@ TurboRater поддерживает единый вход, инициируем�
 
 Чтобы настроить интеграцию TurboRater с Azure AD, необходимо добавить TurboRater из Azure Marketplace в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com?azure-portal=true).
+1. Войдите на [портал Azure](https://portal.azure.com?azure-portal=true).
 1. В области слева выберите **Azure Active Directory**.
 
     ![Пункт Azure Active Directory](common/select-azuread.png)
@@ -112,7 +112,7 @@ TurboRater поддерживает единый вход, инициируем�
        | Среда | URL-адрес |
        | ---------------| --------------- |
        | Тест  | `https://ratingqa.itcdataservices.com/webservices/imp/saml/login` |
-       | Активная  | `https://www.itcratingservices.com/webservices/imp/saml/login` |
+       | Реальные данные  | `https://www.itcratingservices.com/webservices/imp/saml/login` |
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки TurboRater](https://www.getitc.com/support). Можно также посмотреть шаблоны на панели **Базовая конфигурация SAML** на портале Azure.
@@ -199,4 +199,4 @@ TurboRater поддерживает единый вход, инициируем�
 
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-* [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

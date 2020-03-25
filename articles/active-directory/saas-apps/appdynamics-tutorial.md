@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с AppDynamics | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с AppDynamics | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении AppDynamics.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 43245a88ee48b016e1947047d12349423cca6047
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73152892"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство по Интеграция Azure Active Directory с AppDynamics
+# <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство. Интеграция Azure Active Directory с AppDynamics
 
 В этом руководстве описано, как интегрировать приложение AppDynamics с Azure Active Directory (Azure AD).
 Интеграция AppDynamics с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73152892"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с AppDynamics, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка с поддержкой единого входа AppDynamics.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,7 +108,7 @@ ms.locfileid: "73152892"
 
     ![Сведения о домене и URL-адресах единого входа для приложения AppDynamics](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com?accountName=<companyname>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com?accountName=<companyname>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.saas.appdynamics.com/controller`.
 
@@ -123,11 +123,11 @@ ms.locfileid: "73152892"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-appdynamics-single-sign-on"></a>Настройка единого входа в AppDynamics
 
@@ -145,7 +145,7 @@ ms.locfileid: "73152892"
 
    ![Конфигурация SAML](./media/appdynamics-tutorial/ic790225.png "Настройка SAML")
 
-   a. Для параметра **Authentication Provider** (Поставщик проверки подлинности) выберите значение **SAML**.
+   а. Для параметра **Authentication Provider** (Поставщик проверки подлинности) выберите значение **SAML**.
 
    b. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -153,7 +153,7 @@ ms.locfileid: "73152892"
 
    d. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат** .
 
-   д. Выберите команду **Сохранить**.
+   д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

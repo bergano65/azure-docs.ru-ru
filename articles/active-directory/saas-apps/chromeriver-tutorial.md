@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Chromeriver | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Chromeriver | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Chromeriver.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5d07a54024ab3972734533767e6bf7c040efa94e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157477"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-chromeriver"></a>Руководство по Интеграция Azure Active Directory с Chromeriver
+# <a name="tutorial-azure-active-directory-integration-with-chromeriver"></a>Руководство. Интеграция Azure Active Directory с Chromeriver
 
 В этом руководстве описано, как интегрировать Chromeriver с Azure Active Directory (Azure AD).
 Интеграция Chromeriver с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73157477"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Chromeriver, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Chromeriver с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "73157477"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Chromeriver](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.chromeriver.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.chromeriver.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.chromeriver.com/login/sso/saml/consume?customerId=<uniqueid>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.chromeriver.com/login/sso/saml/consume?customerId=<uniqueid>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу технической поддержки Chromeriver](https://www.chromeriver.com/services/support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -121,11 +121,11 @@ ms.locfileid: "73157477"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-chromeriver-single-sign-on"></a>Настройка единого входа в Chromeriver
 

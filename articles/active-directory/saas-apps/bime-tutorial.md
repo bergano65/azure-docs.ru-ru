@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Bime | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Bime | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bime.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7774fd55a64df198a9b025a67ce377deebefe8fe
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74232070"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bime"></a>Руководство по Интеграция Azure Active Directory с Bime
+# <a name="tutorial-azure-active-directory-integration-with-bime"></a>Руководство по интеграции Azure Active Directory с Bime
 
 В этом руководстве описано, как интегрировать Bime с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Bime обеспечивает перечисленные ниже преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "74232070"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Bime, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Bime с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74232070"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Bime](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.Bimeapp.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.Bimeapp.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenant-name>.Bimeapp.com`.
 
@@ -125,11 +125,11 @@ ms.locfileid: "74232070"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-bime-single-sign-on"></a>Настройка единого входа в Bime
 
@@ -137,13 +137,13 @@ ms.locfileid: "74232070"
 
 2. На панели инструментов щелкните **Admin** (Администратор), а затем — **Account** (Учетная запись).
   
-    ![Администратор](./media/bime-tutorial/ic775558.png "Администратор")
+    ![Администратор](./media/bime-tutorial/ic775558.png "Административный")
 
 3. На странице конфигурации учетной записи выполните следующие действия.
   
     ![Настройка единого входа](./media/bime-tutorial/ic775559.png "Настройка единого входа")
 
-    a. Установите флаг **Включить проверку подлинности SAML**.
+    а. Установите флаг **Включить проверку подлинности SAML**.
 
     b. В текстовое поле **Remote Login URL** (URL-адрес удаленного входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -212,7 +212,7 @@ ms.locfileid: "74232070"
 
 2. На панели инструментов щелкните **Admin** (Администратор), а затем — **Users** (Пользователи).
 
-    ![Администратор](./media/bime-tutorial/ic775561.png "Администратор")
+    ![Администратор](./media/bime-tutorial/ic775561.png "Административный")
 
 3. В разделе **Users List** (Список пользователей) щелкните **Add New User** (Добавить пользователя) ("+").
 
@@ -222,7 +222,7 @@ ms.locfileid: "74232070"
 
     ![Сведения о пользователе](./media/bime-tutorial/ic775563.png "Сведения о пользователе")
 
-    a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
 

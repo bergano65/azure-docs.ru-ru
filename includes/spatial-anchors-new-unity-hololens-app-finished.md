@@ -7,10 +7,10 @@ ms.topic: include
 ms.author: pmorgan
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 96439479ebb007507efdd577e963532d9cdf90d4
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67722949"
 ---
 ## <a name="putting-everything-together"></a>Итоговое объединение
@@ -394,7 +394,7 @@ public class AzureSpatialAnchorsScript : MonoBehaviour
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы узнаете больше об использовании службы "Пространственные привязки Azure" в новом приложении Unity HoloLens. Чтобы узнать больше об использовании Пространственных привязок Azure в новом приложении Android, перейдите к следующему руководству.
 

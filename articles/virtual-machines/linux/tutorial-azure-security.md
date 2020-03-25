@@ -16,13 +16,13 @@ ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: 5c5a8bc06c676121c20f6e1f83a26dd9343e6847
-ms.sourcegitcommit: 0cc25b792ad6ec7a056ac3470f377edad804997a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77605526"
 ---
-# <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство по Использование Центра безопасности Azure для мониторинга виртуальных машин Linux
+# <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство. Использование центра безопасности Azure для мониторинга виртуальных машин Linux в Azure
 
 Центр безопасности Azure поможет получить рекомендации по безопасности ресурсов Azure. Центр безопасности предлагает встроенный мониторинг безопасности. Это позволяет распознавать угрозы, которые в противном случае могли быть не замечены. В этом руководстве вы узнаете о центре безопасности Azure и научитесь:
  

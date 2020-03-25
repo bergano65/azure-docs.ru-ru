@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Zscaler ZSCloud | Документы Майкрософт
+title: Руководство по интеграции Azure Active Directory с Zscaler ZSCloud | Документы Майкрософт
 description: Вы можете узнать, как настроить единый вход Azure Active Directory в Zscaler ZSCloud.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
 ms.openlocfilehash: 43d7e58f0c267afe8a22c217d9800abb041df8cb
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68723059"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Руководство по Интеграция Azure Active Directory с Zscaler ZSCloud
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Руководство. Интеграция Azure Active Directory с Zscaler ZSCloud
 
 Это руководство описывает, как интегрировать Zscaler ZSCloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Zscaler ZSCloud обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "68723059"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zscaler ZSCloud, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка с поддержкой единого входа Zscaler ZSCloud.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,11 +118,11 @@ ms.locfileid: "68723059"
 
 6. В дополнение к описанному выше приложение Zscaler ZSCloud ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
-    | ИМЯ | Исходный атрибут |
+    | Имя | Исходный атрибут |
     | ---------| ------------ |
     | memberOf     | user.assignedroles |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -134,9 +134,9 @@ ms.locfileid: "68723059"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
     
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
@@ -149,7 +149,7 @@ ms.locfileid: "68723059"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -171,7 +171,7 @@ ms.locfileid: "68723059"
    
     ![Администрирование](./media/zscaler-zscloud-tutorial/ic800206.png "Администрирование")
 
-    a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
+    а. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
     b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
@@ -179,7 +179,7 @@ ms.locfileid: "68723059"
             
     ![Управление пользователями и проверкой подлинности](./media/zscaler-zscloud-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
     
-    a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
@@ -187,9 +187,9 @@ ms.locfileid: "68723059"
 
     d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
-    д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
+    д) В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
-    Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
+    е) В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
 
     ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
 
@@ -199,9 +199,9 @@ ms.locfileid: "68723059"
 
     ![Администрирование](./media/zscaler-zscloud-tutorial/ic800207.png)
 
-    a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
+    а. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    b. Щелкните **Активировать**.
+    b. Нажмите кнопку **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -214,7 +214,7 @@ ms.locfileid: "68723059"
 
 3. Щелкните вкладку **Подключения** .   
   
-     ![Подключения](./media/zscaler-zscloud-tutorial/ic769493.png "Подключения")
+     ![Соединения](./media/zscaler-zscloud-tutorial/ic769493.png "Соединения")
 
 4. Нажмите кнопку **Настройка сети**, чтобы открыть диалоговое окно **Настройка сети**.
 
@@ -222,7 +222,7 @@ ms.locfileid: "68723059"
    
     ![Прокси-сервер](./media/zscaler-zscloud-tutorial/ic769494.png "Прокси-сервер")
 
-    a. Установите флажок **Использовать прокси-сервер для локальной сети**.
+    а. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
     b. В текстовом поле "Адрес" введите **gateway.Zscaler ZSCloud.net**.
 
@@ -230,7 +230,7 @@ ms.locfileid: "68723059"
 
     d. Установите флаг **Не использовать прокси-сервер для локальных адресов**.
 
-    д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
+    д) Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
 6. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.
 

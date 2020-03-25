@@ -6,10 +6,10 @@ ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для командной разработки в приложении Node.js в службе Azure Kubernetes
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 ms.openlocfilehash: abcf4934af056d508ac136f80758597294d40b1a
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78251940"
 ---
 # <a name="team-development-using-nodejs-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в Node.js и Visual Studio Code
@@ -98,7 +98,7 @@ azds space select --name scott
 Давайте посмотрим на это в действии.
 
 ### <a name="make-a-code-change"></a>Измените код
-В окне VS Code перейдите к `mywebapi` и в `server.js` измените код в обработчике GET по умолчанию `/`, например так:
+В окне VS Code перейдите к `mywebapi` и в `/` измените код в обработчике GET по умолчанию `server.js`, например так:
 
 ```javascript
 app.get('/', function (req, res) {

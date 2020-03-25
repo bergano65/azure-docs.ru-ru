@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ProMaster (от Inlogik) | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с ProMaster (от Inlogik) | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и ProMaster (от Inlogik).
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: c0a1f58705a64a973bb91e47e6e9fce87a48ce99
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bb4520e221209acc6461c6ea949a2012d652b91b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67094213"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79475725"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-promaster-by-inlogik"></a>Руководство. Интеграция Azure Active Directory с ProMaster (от Inlogik)
 
@@ -34,11 +34,11 @@ ms.locfileid: "67094213"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ProMaster (от Inlogik), вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка ProMaster (от Inlogik) с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67094213"
 
     ![Сведения о домене и URL-адресах единого входа для приложения ProMaster (от Inlogik)](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
     | |
     | - |-|
@@ -129,8 +129,8 @@ ms.locfileid: "67094213"
 
     | |
     | - |-|
-    | `https://secure.inlogik.com/<COMPANYNAME>/saml/acs`|
-    | `https://<CUSTOMDOMAIN>/SAMLBASE/saml/acs`|
+    | `https://secure.inlogik.com/<COMPANYNAME>`|
+    | `https://<CUSTOMDOMAIN>/SAMLBASE`|
     | |
 
     > [!NOTE]
@@ -210,5 +210,5 @@ ms.locfileid: "67094213"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Riskware | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Riskware | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Riskware.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 6eaa1be81d3ac0733c0829bc45e1b62f8aae5755
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72027120"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-riskware"></a>Руководство по Интеграция Azure Active Directory с Riskware
+# <a name="tutorial-azure-active-directory-integration-with-riskware"></a>Руководство по интеграции Azure Active Directory с Riskware
 
 В этом руководстве описано, как интегрировать Riskware с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Riskware обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "72027120"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Riskware, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Riskware с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "72027120"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Riskware](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
     
     | Среда| Шаблон URL-адреса|
     |--|--|
@@ -134,7 +134,7 @@ ms.locfileid: "72027120"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -156,7 +156,7 @@ ms.locfileid: "72027120"
 
     ![Настройка Riskware, настройка аутентификации](./media/riskware-tutorial/tutorial_riskware_config.png)
 
-    a. Выберите для параметра аутентификации **Type** (Тип) значение **SAML**.
+    а. Выберите для параметра аутентификации **Type** (Тип) значение **SAML**.
 
     b. В текстовом поле **Code** (Код) введите код, например AZURE_UAT.
 
@@ -164,9 +164,9 @@ ms.locfileid: "72027120"
 
     d. В текстовое поле **Single Sign On Page** (Страница единого входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    д. В текстовое поле **Sign out Page** (Страница выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    д) В текстовое поле **Sign out Page** (Страница выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    Е. В текстовое поле **Post Form Field** (Поле формы POST) введите имя поля из ответа POST, которое содержит значение SAML, например SAMLResponse.
+    е) В текстовое поле **Post Form Field** (Поле формы POST) введите имя поля из ответа POST, которое содержит значение SAML, например SAMLResponse.
 
     ж. В текстовом поле **XML Identity Tag Name** (Имя тега идентификатора XML) введите имя атрибута ответа SAML, который содержит уникальный идентификатор, например NameID.
 
@@ -256,7 +256,7 @@ ms.locfileid: "72027120"
 
     ![Настройка Riskware, подробные сведения](./media/riskware-tutorial/tutorial_riskware_details.png)
 
-    a. Выберите **Person Type** (Тип роли), например Employee (Сотрудник).
+    а. Выберите **Person Type** (Тип роли), например Employee (Сотрудник).
 
     b. В текстовое поле **First Name** (Имя) введите имя, например **Britta**.
 
@@ -266,7 +266,7 @@ ms.locfileid: "72027120"
 
     ![Настройка Riskware, безопасность](./media/riskware-tutorial/tutorial_riskware_security.png)
 
-    a. В разделе **Authentication** (Аутентификация) выберите настроенный ранее **режим аутентификации**, например "Конфигурация AZURE для единого входа".
+    а. В разделе **Authentication** (Аутентификация) выберите настроенный ранее **режим аутентификации**, например "Конфигурация AZURE для единого входа".
 
     b. В разделе **Logon Details** (Данные для входа) введите в текстовое поле **User ID** (Идентификатор пользователя) адрес электронной почты пользователя, например `brittasimon@contoso.com`.
 
@@ -276,7 +276,7 @@ ms.locfileid: "72027120"
 
     ![Настройка Riskware, организация](./media/riskware-tutorial/tutorial_riskware_org.png)
 
-    a. Выберите параметр от имени организации **Level1**.
+    а. Выберите параметр от имени организации **Level1**.
 
     b. В разделе **Person's Primary Workplace** (Основное рабочее место) введите описание расположения в текстовое поле **Location** (Расположение).
 

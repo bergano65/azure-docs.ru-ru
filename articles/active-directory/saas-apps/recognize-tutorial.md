@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Recognize | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Recognize | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Recognize.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: c0a513ad8fe772839813615d065616f2c911a031
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68943343"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство по Интеграция Azure Active Directory с Recognize
+# <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство по интеграции Azure Active Directory с Recognize
 
 В этом руководстве описано, как интегрировать Recognize с Azure Active Directory (Azure AD).
 Интеграция Recognize с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "68943343"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Recognize, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Recognize с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "68943343"
     >[!NOTE]
     >Вы получите **файл метаданных поставщика служб**, выполнив инструкции из раздела **Настройка единого входа в Recognize** этого руководства.
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "68943343"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -153,7 +153,7 @@ ms.locfileid: "68943343"
    
     ![Настройка единого входа на стороне приложения](./media/recognize-tutorial/tutorial_recognize_002.png)
     
-    a. Для параметра **Enable SSO** (Включить единый вход) установите значение **ON** (Включено).
+    а. Для параметра **Enable SSO** (Включить единый вход) установите значение **ON** (Включено).
 
     b. В текстовое поле **IDP Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
     
@@ -161,9 +161,9 @@ ms.locfileid: "68943343"
     
     d. В текстовое поле **Slo target url** (Целевой URL-адрес единого выхода) вставьте **URL-адрес выхода**, скопированный на портале Azure. 
     
-    д. Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Certificate** (Сертификат).
+    д) Откройте скачанный файл **сертификата в кодировке Base64** в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Certificate** (Сертификат).
     
-    Е. Нажмите кнопку **Сохранить параметры** . 
+    е) Нажмите кнопку **Сохранить параметры** . 
 
 5. Кроме сведений в разделе **SSO Settings** (Параметры единого входа), сохраните URL-адрес из раздела **Service Provider Metadata url** (URL-адрес метаданных поставщика службы).
    
@@ -241,7 +241,7 @@ ms.locfileid: "68943343"
    
     ![Новый пользователь](./media/recognize-tutorial/tutorial_recognize_005.png "Новый пользователь")
    
-    a. В поле **Sync Enabled** (Синхронизация включена) выберите **ON** (Включено).
+    а. В поле **Sync Enabled** (Синхронизация включена) выберите **ON** (Включено).
    
     b. Для параметра **Choose sync provider** (Выбор поставщика синхронизации) выберите значение **Microsoft/Office 365**.
    

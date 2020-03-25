@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 8915970cd4c70228fad3b49921f4c81d6d90aa72
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78195361"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
@@ -38,7 +38,7 @@ ms.locfileid: "78195361"
 
 Общие сведения о Key Vault см. в статье [Что такое хранилище ключей Azure?](key-vault-overview.md) Сведения о регионах доступности Key Vault можно узнать на [странице цен](https://azure.microsoft.com/pricing/details/key-vault/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником необходимо наличие следующих компонентов.
 
@@ -46,7 +46,7 @@ ms.locfileid: "78195361"
 * Azure PowerShell, начиная с версии 1.0.0. Чтобы установить решение Azure PowerShell и связать его с подпиской Azure, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview). Если средство Azure PowerShell у вас установлено, но вы не знаете его версию, введите `$PSVersionTable.PSVersion` в консоли Azure PowerShell.  
 * Достаточный объем хранилища в Azure для журналов хранилищ ключей.
 
-## <a id="connect"></a>Подключение к подписке хранилища ключей
+## <a name="connect-to-your-key-vault-subscription"></a><a id="connect"></a>Подключение к подписке хранилища ключей
 
 Для настройки ведения журнала ключей первым делом подключите Azure PowerShell к нужному хранилищу ключей.
 
@@ -72,7 +72,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 
 Подключение PowerShell к правильной подписке очень важно, особенно если с учетной записью связано несколько подписок. Дополнительные сведения о настройке Azure PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
-## <a id="storage"></a>Создание учетной записи хранения для журналов
+## <a name="create-a-storage-account-for-your-logs"></a><a id="storage"></a>Создание учетной записи хранения для журналов
 
 Хотя вы можете использовать и существующую учетную запись хранения для журналов, мы создадим учетную запись, которая будет использоваться для сбора данных хранилища ключей. Эти сведения нам нужно будет указать позже. Сейчас же для удобства работы мы сохраним их в переменной с именем **sa**.
 
@@ -87,7 +87,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 >
 >
 
-## <a id="identify"></a>Определение хранилища ключей для журналов
+## <a name="identify-the-key-vault-for-your-logs"></a><a id="identify"></a>Определение хранилища ключей для журналов
 
 В [руководстве по началу работы](key-vault-get-started.md) использовалось имя **ContosoKeyVault** для хранилища ключей. Мы сохраним это же имя и сохраним его в переменной с именем **kv**:
 
@@ -95,7 +95,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
 ```
 
-## <a id="enable"></a>Включение ведения журналов
+## <a name="enable-logging"></a><a id="enable"></a>Включение ведения журналов
 
 Мы включим ведение журналов хранилища ключей с помощью командлета **Set-AzDiagnosticSetting** и переменных, которые мы создали для новой учетной записи хранения и хранилища ключей. Мы также установим для флага **-Enabled** значение **$true** и зададим категорию **AuditEvent** (единственная категория для ведения журнала Key Vault).
 
@@ -132,7 +132,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
   * подписывание, проверка, шифрование, расшифровка, упаковка и распаковка ключей, получение секретов и вывод списка ключей и секретов (и их версий);
 * непроверенные запросы, которые приводят к появлению ответа 401 (например, запросы без токена носителя, с недействительным токеном, а также запросы неправильного формата или просроченные запросы).  
 
-## <a id="access"></a>Доступ к журналам
+## <a name="access-your-logs"></a><a id="access"></a>Доступ к журналам
 
 Журналы Key Vault сохраняются в контейнере **insights-logs-auditevent** в указанной вами учетной записи хранения. Чтобы просмотреть эти журналы, скачайте большие двоичные объекты.
 
@@ -214,7 +214,7 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 * Запрос состояния параметров диагностики для ресурса хранилища ключей: `Get-AzDiagnosticSetting -ResourceId $kv.ResourceId`
 * Отключение ведения журнала для ресурса хранилища ключей: `Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $false -Category AuditEvent`
 
-## <a id="interpret"></a>Интерпретация журналов хранилища ключей
+## <a name="interpret-your-key-vault-logs"></a><a id="interpret"></a>Интерпретация журналов хранилища ключей
 
 Отдельные BLOB-объекты хранятся как текст в формате JSON. Давайте рассмотрим пример записи журнала. Выполните следующую команду:
 
@@ -249,7 +249,7 @@ Get-AzKeyVault -VaultName 'contosokeyvault'`
 
 В следующей таблице перечислены имена и описания полей.
 
-| Имя поля | Описание |
+| Имя поля | Description |
 | --- | --- |
 | **time** |Дата и время (в формате UTC). |
 | **resourceId** |Идентификатор ресурса Azure Resource Manager. Для журналов хранилища ключей это всегда идентификатор ресурса хранилища ключей. |
@@ -303,13 +303,13 @@ Get-AzKeyVault -VaultName 'contosokeyvault'`
 | **SecretList** |[Список секретов в хранилище](https://msdn.microsoft.com/library/azure/dn903614.aspx) |
 | **SecretListVersions** |[Список версий секрета](https://msdn.microsoft.com/library/azure/dn986824.aspx) |
 
-## <a id="loganalytics"></a>Использование журналов Azure Monitor
+## <a name="use-azure-monitor-logs"></a><a id="loganalytics"></a>Использование журналов Azure Monitor
 
 Решение Key Vault в журналах Azure Monitor позволяет просматривать журналы **AuditEvent** для Key Vault. В журналах Azure Monitor запросы по журналам используются для анализа данных и получения необходимых сведений. 
 
 Дополнительные сведения, включая инструкции по настройке, см. в статье [Решение Azure Key Vault в журналах Azure Monitor](../azure-monitor/insights/azure-key-vault.md). В этой статье также содержатся инструкции на случай переноса из старого решения Key Vault, которое предлагалось в предварительной версии журналов Azure Monitor, где сначала требовалось направить журналы в учетную запись хранения Azure и настроить чтение из этой учетной записи в журналах Azure Monitor.
 
-## <a id="next"></a>Следующие шаги
+## <a name="next-steps"></a><a id="next"></a>Следующие шаги
 
 Руководство по использованию Azure Key Vault в веб-приложении .NET см. в [этой статье](tutorial-net-create-vault-azure-web-app.md).
 

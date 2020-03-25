@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Fieldglass | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Fieldglass | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Fieldglass.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ada7092fa626987513416f7be0a52f6abeefaeb5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158190"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство по Интеграция Azure Active Directory с Fieldglass
+# <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство по интеграции Azure Active Directory с Fieldglass
 
 В этом учебнике описано, как интегрировать приложение Fieldglass с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Fieldglass обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73158190"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Fieldglass, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на Fieldglass с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -48,7 +48,7 @@ ms.locfileid: "73158190"
 
 * Fieldglass поддерживает единый вход, инициированный **поставщиком удостоверений**.
 
-## <a name="adding-fieldglass-from-the-gallery"></a>Добавление Fieldglass из коллекции
+## <a name="adding-fieldglass-from-the-gallery"></a>Добавление Fieldglass из коллекции.
 
 Чтобы настроить интеграцию Fieldglass с Azure AD, необходимо добавить Fieldglass из коллекции в список управляемых приложений SaaS.
 
@@ -106,7 +106,7 @@ ms.locfileid: "73158190"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Fieldglass](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес `https://www.fieldglass.com` или URL-адрес в следующем формате: `https://<company name>.fgvms.com`
+    а. В текстовом поле **Идентификатор** введите URL-адрес `https://www.fieldglass.com` или URL-адрес в следующем формате: `https://<company name>.fgvms.com`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
     
@@ -126,11 +126,11 @@ ms.locfileid: "73158190"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-fieldglass-single-sign-on"></a>Настройка единого входа в Fieldglass
 

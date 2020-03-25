@@ -8,10 +8,10 @@ ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
 ms.openlocfilehash: 9386b95bbc2a3bfd3e3ea362488fcfcdd0a98299
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75441569"
 ---
 # <a name="get-throughput-rus-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Оценка пропускной способности (ЕЗ/с) для пространства ключей или таблицы в Azure Cosmos DB — API Cassandra

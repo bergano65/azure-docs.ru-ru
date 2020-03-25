@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и беспроводной системой мониторинга температуры SensoScientific.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea2f5e33859852388357526052c39fa432471efb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67091268"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство по Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
+# <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство по интеграции Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
 
 Это руководство содержит сведения об интеграции беспроводной системы мониторинга температуры SensoScientific с Azure Active Directory (Azure AD).
 Интеграция беспроводной системы мониторинга температуры SensoScientific с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67091268"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с беспроводной системой мониторинга температуры SensoScientific, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на беспроводную систему мониторинга температуры SensoScientific с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -114,7 +114,7 @@ ms.locfileid: "67091268"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -128,7 +128,7 @@ ms.locfileid: "67091268"
 
     ![Настройка единого входа](./media/sensoscientific-tutorial/tutorial_sensoscientificwtms_admin.png)
 
-    a. В качестве **имени издателя** выберите Azure AD.
+    а. В качестве **имени издателя** выберите Azure AD.
 
     b. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
@@ -136,9 +136,9 @@ ms.locfileid: "67091268"
 
     d. В текстовое поле **Single Sign-Out Service URL** (URL-адрес службы единого выхода) вставьте значение **Logout URL** (URL-адрес выхода), скопированное на портале Azure.
 
-    д. Перейдите к сертификату, скачанному на портале Azure, и загрузите его сюда.
+    д) Перейдите к сертификату, скачанному на портале Azure, и загрузите его сюда.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -206,5 +206,5 @@ ms.locfileid: "67091268"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

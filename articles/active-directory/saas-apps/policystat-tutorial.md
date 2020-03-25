@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с PolicyStat | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с PolicyStat | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PolicyStat.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 327e470d60235e6bf400293e80e3aec5f6144ff4
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68943443"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по Интеграция Azure Active Directory с PolicyStat
+# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по интеграции Azure Active Directory с PolicyStat
 
 В этом руководстве описано, как интегрировать PolicyStat с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением PolicyStat обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "68943443"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с PolicyStat, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка PolicyStat с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "68943443"
 
     ![Сведения о домене и URL-адресах единого входа для приложения PolicyStat](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.policystat.com/saml2/metadata/`.
 
@@ -124,11 +124,11 @@ ms.locfileid: "68943443"
 
 6. В дополнение к описанному выше приложение PolicyStat ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
-    | ИМЯ | Исходный атрибут |
+    | Имя | Исходный атрибут |
     |------------------- | -------------------- |
     | uid | ExtractMailPrefix([mail]) |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
     
     ![image](common/new-save-attribute.png)
 
@@ -140,9 +140,9 @@ ms.locfileid: "68943443"
 
     d. В качестве источника выберите **преобразование**.
 
-    д. В списке **Преобразование** выберите значение атрибута, отображаемое для этой строки.
+    д) В списке **Преобразование** выберите значение атрибута, отображаемое для этой строки.
     
-    Е. В списке **Параметр 1** введите значение атрибута, отображаемое для этой строки.
+    е) В списке **Параметр 1** введите значение атрибута, отображаемое для этой строки.
 
     ж. Выберите команду **Сохранить**.
 
@@ -150,7 +150,7 @@ ms.locfileid: "68943443"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -172,7 +172,7 @@ ms.locfileid: "68943443"
    
     ![Конфигурация единого входа](./media/policystat-tutorial/ic808635.png "Конфигурация единого входа")
    
-    a. В текстовом поле **Username Attribute** (Атрибут имени пользователя) введите значение **uid**.
+    а. В текстовом поле **Username Attribute** (Атрибут имени пользователя) введите значение **uid**.
 
     b. В текстовое поле **First Name Attribute** (Атрибут имени) введите **имя** пользователя, **Britta**.
 
@@ -180,15 +180,15 @@ ms.locfileid: "68943443"
 
     d. В текстовое поле **Email Attribute** (Атрибут электронной почты) введите значение **электронной почты** пользователя `BrittaSimon@contoso.com`.
 
-    д. Нажмите кнопку **Сохранить изменения**.
+    д) Щелкните **Сохранить изменения**.
 
 5. Щелкните **Your IDP Metadata** (Метаданные вашего поставщика удостоверений), а затем в разделе **Your IDP Metadata** (Метаданные вашего поставщика удостоверений) сделайте следующее.
    
     ![Конфигурация единого входа](./media/policystat-tutorial/ic808636.png "Конфигурация единого входа")
    
-    a. Откройте скачанный файл метаданных, скопируйте его содержимое и вставьте его в текстовое поле **Your Identity Provider Metadata** (Метаданные поставщика удостоверений).
+    а. Откройте скачанный файл метаданных, скопируйте его содержимое и вставьте его в текстовое поле **Your Identity Provider Metadata** (Метаданные поставщика удостоверений).
 
-    b. Нажмите кнопку **Сохранить изменения**.
+    b. Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

@@ -16,17 +16,17 @@ ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: 0f94f4d312cefec80a0f294e256ee1ad908b903c
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74068131"
 ---
-# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Руководство по Создание и развертывание виртуальных машин высокого уровня доступности с помощью Azure PowerShell
+# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure PowerShell
 
 В этом руководстве показано, как повысить доступность и надежность виртуальных машин с помощью групп доступности. Группы доступности распределяют развернутые в Azure виртуальные машины между несколькими изолированными аппаратными узлами в кластере. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * "Создать группу доступности"
@@ -128,9 +128,9 @@ Get-AzVMSize `
 Войдите на [портал Azure](https://portal.azure.com), выберите **Все службы** и введите **Помощник**. Панель мониторинга службы "Помощник" отображает персонализированные рекомендации для выбранной подписки. Дополнительные сведения можно найти в разделе [Приступая к работе с Azure Advisor](../../advisor/advisor-get-started.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * "Создать группу доступности"
@@ -141,6 +141,6 @@ Get-AzVMSize `
 Перейдите к следующему руководству, чтобы узнать о масштабируемых наборах виртуальных машин.
 
 > [!div class="nextstepaction"]
-> [Создание масштабируемого набора виртуальных машин](tutorial-create-vmss.md)
+> [Создание масштабируемого набора виртуальной машины](tutorial-create-vmss.md)
 
 

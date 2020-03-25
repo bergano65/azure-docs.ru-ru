@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory со Skills Manager | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory со Skills Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Skills Manager.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 03cc443197746909eb37efa699cebd8cfd460ac0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090422"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skills-manager"></a>Руководство по Интеграция Azure Active Directory со Skills Manager
+# <a name="tutorial-azure-active-directory-integration-with-skills-manager"></a>Руководство. Интеграция Azure Active Directory со Skills Manager
 
 В этом руководстве описано, как интегрировать Skills Manager с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Skills Manager обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67090422"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Skills Manager, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Skills Manager с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "67090422"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Skills Manager](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/kennametal`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/kennametal`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/public/SamlLogin2.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.skills-manager.com/public/SamlLogin2.aspx`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Для получения этих значений обратитесь к [группе поддержки клиентов Skills Manager](https://www.ibm.com/support/uk/?lnk=msu_uk). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -120,7 +120,7 @@ ms.locfileid: "67090422"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -197,4 +197,4 @@ ms.locfileid: "67090422"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

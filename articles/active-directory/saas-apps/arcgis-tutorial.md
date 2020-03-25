@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ArcGIS Online | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с ArcGIS Online | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ArcGIS Online.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 74cf0c1e055570df7702465df79dcdfbd8ea9e9f
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74232091"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Online
+# <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство по интеграции Azure Active Directory с ArcGIS Online
 
 В этом руководстве описано, как интегрировать ArcGIS Online с Azure Active Directory (Azure AD).
 Интеграция ArcGIS Online с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "74232091"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ArcGIS Online, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка ArcGIS Online с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74232091"
 
     ![Сведения о домене и URL-адресах единого входа для приложения ArcGIS Online](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.maps.arcgis.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.maps.arcgis.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `<companyname>.maps.arcgis.com`.
 
@@ -131,9 +131,9 @@ ms.locfileid: "74232091"
 
     ![Изменить параметры](./media/arcgis-tutorial/ic784742.png "Изменить параметры")
 
-3. Щелкните **Security**(Безопасность).
+3. Перейдите на вкладку **Безопасность**.
 
-    ![Безопасность](./media/arcgis-tutorial/ic784743.png "Безопасность")
+    ![Безопасность](./media/arcgis-tutorial/ic784743.png "безопасность")
 
 4. В разделе **Enterprise Logins** (Корпоративные имена для входа) установите флажок **Set Identity Provider** (Задать поставщик удостоверений).
 
@@ -143,7 +143,7 @@ ms.locfileid: "74232091"
 
     ![Назначить поставщика удостоверений](./media/arcgis-tutorial/ic784745.png "Назначить поставщика удостоверений")
 
-    a. В текстовое поле **Name** (Имя) введите название своей организации.
+    а. В текстовое поле **Name** (Имя) введите название своей организации.
 
     b. Для параметра **Metadata for the Enterprise Identity Provider will be supplied using** (В предоставлении метаданных для корпоративного поставщика удостоверений будет использоваться) выберите значение **Файл**.
 
@@ -223,7 +223,7 @@ ms.locfileid: "74232091"
    
      ![Добавить и просмотреть](./media/arcgis-tutorial/ic784749.png "Добавить и просмотреть")
     
-     a. Введите в поля **Адрес электронной почты**, **Имя** и **Фамилия** соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
+     а. Введите в поля **Адрес электронной почты**, **Имя** и **Фамилия** соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
   
      b. Нажмите кнопку **ADD AND REVIEW** (Добавить и просмотреть).
 5. Просмотрите введенные данные и нажмите кнопку **ADD MEMBERS** (Добавить участников).

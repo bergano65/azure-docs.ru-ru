@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Comeet Recruiting Software | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Comeet Recruiting Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Comeet Recruiting Software.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 25a88e3abd7eacc323b5d45fd4fae1304010253b
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158546"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-comeet-recruiting-software"></a>Руководство по Интеграция Azure Active Directory с Comeet Recruiting Software
+# <a name="tutorial-azure-active-directory-integration-with-comeet-recruiting-software"></a>Руководство по интеграции Azure Active Directory с Comeet Recruiting Software
 
 В этом руководстве описано, как интегрировать Comeet Recruiting Software с Azure Active Directory (Azure AD).
 Интеграция Comeet Recruiting Software с Azure AD обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73158546"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Comeet Recruiting Software, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Comeet Recruiting Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "73158546"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Comeet Recruiting Software](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.comeet.co/adfs_auth/acs/<UNIQUEID>/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Comeet Recruiting Software](https://support.comeet.co/knowledgebase/adfs-single-sign-on/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -125,12 +125,12 @@ ms.locfileid: "73158546"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
-    | ИМЯ |  Исходный атрибут|
+    | Имя |  Исходный атрибут|
     | ---------------| --------------- |
     | nameidentifier | user.mail |
     | comeet_id | user.userprincipalname |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -142,9 +142,9 @@ ms.locfileid: "73158546"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -156,11 +156,11 @@ ms.locfileid: "73158546"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-comeet-recruiting-software-single-sign-on"></a>Настройка единого входа в Comeet Recruiting Software
 

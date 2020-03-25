@@ -8,10 +8,10 @@ ms.date: 02/20/2018
 ms.author: rogarana
 ms.subservice: blobs
 ms.openlocfilehash: dc0f8171e18598e4f805a03a4bc6d17de220fbe1
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68698978"
 ---
 # <a name="verify-throughput-and-latency-metrics-for-a-storage-account"></a>Проверка метрик пропускной способности и задержки для учетной записи хранения
@@ -62,7 +62,7 @@ ms.locfileid: "68698978"
 
 Ставшие ненужными группу ресурсов, виртуальную машину и все связанные ресурсы можно удалить, выполнив следующую команду. Чтобы сделать это, выберите группу ресурсов для виртуальной машины и щелкните "Удалить".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В четвертой части этой серии руководств вы узнали, как просматривать метрики для примера решения, в частности как выполнить следующие действия:
 

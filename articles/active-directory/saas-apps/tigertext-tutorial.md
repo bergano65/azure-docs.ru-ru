@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с TigerText Secure Messenger | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TigerText Secure Messenger | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TigerText Secure Messenger.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: ea3bda1dd51a7c3a2e5e3f8b669d7138898f1595
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088676"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство по Интеграция Azure Active Directory с TigerText Secure Messenger
+# <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство по интеграции Azure Active Directory с TigerText Secure Messenger
 
 В этом руководстве описано, как интегрировать приложение TigerText Secure Messenger с Azure Active Directory (Azure AD).
 
@@ -34,11 +34,11 @@ ms.locfileid: "67088676"
 
 Дополнительные сведения об интеграции приложения SaaS с Azure AD см. в статье [о доступе к приложениям и едином входе с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TigerText Secure Messenger, вам потребуется:
 
-* подписка Azure AD Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* подписка Azure AD; Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * подписка TigerText Secure Messenger с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -51,7 +51,7 @@ TigerText Secure Messenger поддерживает единый вход, ин�
 
 Чтобы настроить интеграцию TigerText Secure Messenger с Azure AD, необходимо добавить TigerText Secure Messenger из Azure Marketplace в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com?azure-portal=true).
+1. Войдите на [портал Azure](https://portal.azure.com?azure-portal=true).
 1. В области слева выберите **Azure Active Directory**.
 
     ![Пункт Azure Active Directory](common/select-azuread.png)
@@ -196,4 +196,4 @@ TigerText Secure Messenger поддерживает единый вход, ин�
 
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-* [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

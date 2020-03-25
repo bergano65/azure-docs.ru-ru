@@ -5,13 +5,13 @@ keywords: Jenkins, Azure, DevOps, виртуальная машина, CI/CD
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.openlocfilehash: cae28b293a6217996b44c839dc8836ec940c3155
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78192614"
 ---
-# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
+# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
 Непрерывная интеграция (CI) и непрерывное развертывание (CD) представляют собой конвейер, с помощью которого можно выполнить сборку, выпустить и развернуть свой код. Azure DevOps Services предоставляет полнофункциональный набор инструментов для автоматизации CI и CD для развертывания в Azure. Jenkins — это популярный сторонний серверный инструмент CI и CD стороннего поставщика, который также обеспечивает автоматизацию этих процессов. Вы можете использовать Azure DevOps Services и Jenkins вместе, чтобы настроить способ доставки своего облачного приложения или службы.
 
@@ -74,7 +74,7 @@ ms.locfileid: "78192614"
 ## <a name="configure-a-jenkins-freestyle-project-for-nodejs"></a>Настройка универсального проекта Jenkins для Node.js
 
 1. Выберите **New Item** (Создать элемент). Введите имя элемента.
-2. Выберите **Freestyle project** (Универсальный проект). Щелкните **ОК**.
+2. Выберите **Freestyle project** (Универсальный проект). Нажмите кнопку **ОК**.
 3. На вкладке **Source Code Management** (Управление исходным кодом) выберите **Git** и введите сведения о репозитории и ветви, содержащей код приложения.    
     ![Добавление репозитория в сборку](media/tutorial-build-deploy-jenkins/jenkins-git.png)
 4. На вкладке **Build Triggers** (Триггеры сборки) выберите **Poll SCM** (Опрос SCM) и введите расписание `H/03 * * * *` для опроса репозитория Git на наличие изменений каждые три минуты. 

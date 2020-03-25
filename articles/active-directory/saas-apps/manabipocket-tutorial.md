@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Manabi Pocket | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Manabi Pocket | Документы Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и Manabi Pocket.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
 ms.openlocfilehash: 44cbad443cb1341ea080f517bbe614ec6fc46b13
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67097819"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-manabi-pocket"></a>Руководство по Интеграция Azure Active Directory с Manabi Pocket
+# <a name="tutorial-azure-active-directory-integration-with-manabi-pocket"></a>Руководство. Интеграция Azure Active Directory с Manabi Pocket
 
 В этом руководстве описано, как интегрировать Manabi Pocket с Azure Active Directory (Azure AD).
 Интеграция Manabi Pocket с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67097819"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Manabi Pocket, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Manabi Pocket с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67097819"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Manabi Pocket](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://ed-cl.com/`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://ed-cl.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67097819"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -196,5 +196,5 @@ ms.locfileid: "67097819"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

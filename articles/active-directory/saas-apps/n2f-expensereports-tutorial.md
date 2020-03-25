@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с N2F - Expense reports | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложение N2F - Expense reports | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и приложением N2F - Expense reports.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 11f5e2f7763008c3af09c5367d90265af6a9653a
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73161286"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-n2f---expense-reports"></a>Руководство по Интеграция Azure Active Directory с N2F - Expense reports
+# <a name="tutorial-azure-active-directory-integration-with-n2f---expense-reports"></a>Руководство по интеграции Azure Active Directory с приложением N2F - Expense reports
 
 В этом руководстве описано, как интегрировать приложение N2F - Expense reports с Azure Active Directory (Azure AD).
 Интеграция приложение N2F - Expense reports с Azure AD обеспечивают следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73161286"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с N2F - Expense reports, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка N2F — Expense reports с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -119,7 +119,7 @@ ms.locfileid: "73161286"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -149,7 +149,7 @@ ms.locfileid: "73161286"
 
     ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/configure5.png)
 
-    a. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. В текстовое поле **Metadata URL** (URL-адрес метаданных) вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure.
 
@@ -230,7 +230,7 @@ ms.locfileid: "73161286"
 
     ![Конфигурация N2F - Expense reports](./media/n2f-expensereports-tutorial/user3.png)
 
-    a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
+    а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     b. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -238,7 +238,7 @@ ms.locfileid: "73161286"
 
     d. Выберите **роль, непосредственного руководителя (N + 1)** и **отделение** в соответствии с требованиями своей организации.
 
-    д. Нажмите кнопку **Validate and send invitation** (Проверить и отправить приглашение).
+    д) Нажмите кнопку **Validate and send invitation** (Проверить и отправить приглашение).
 
     > [!NOTE]
     > Если во время добавления пользователя возникают проблемы, обратитесь в [службу поддержки N2F - Expense reports](mailto:support@n2f.com)

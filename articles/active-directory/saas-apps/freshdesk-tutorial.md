@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с FreshDesk | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с FreshDesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FreshDesk.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e75a45bc4ccd2614520fda39e09996c2286bdbd0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227613"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Руководство по Интеграция Azure Active Directory с FreshDesk
+# <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Руководство по интеграции Azure Active Directory с FreshDesk
 
 В этом руководстве описано, как интегрировать приложение FreshDesk с Azure Active Directory (Azure AD).
 Интеграция Azure AD с FreshDesk обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "74227613"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с FreshDesk, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка FreshDesk с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74227613"
 
     ![Сведения о домене и URL-адресах единого входа FreshDesk](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://<tenant-name>.freshdesk.com` или любом другом, поддерживаемом Freshdesk.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://<tenant-name>.freshdesk.com` или любом другом, поддерживаемом Freshdesk.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в формате `https://<tenant-name>.freshdesk.com` или любом другом, поддерживаемом Freshdesk.
 
@@ -119,11 +119,11 @@ ms.locfileid: "74227613"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
     
-    | ИМЯ | Исходный атрибут |
+    | Имя | Исходный атрибут |
     | ---------------| --------------- |
     | Уникальный идентификатор пользователя | user.mail |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -135,9 +135,9 @@ ms.locfileid: "74227613"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -147,7 +147,7 @@ ms.locfileid: "74227613"
 
 8. Откройте **командную строку** и выполните следующие команды:
 
-    a. Введите в командной строке значение `certutil.exe -dump FreshDesk.cer`.
+    а. Введите в командной строке значение `certutil.exe -dump FreshDesk.cer`.
 
     > [!NOTE]
     > В нашем случае **FreshDesk.cer** — это сертификат, загруженный с портала Azure.
@@ -158,11 +158,11 @@ ms.locfileid: "74227613"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-freshdesk-single-sign-on"></a>Настройка FreshDesk с поддержкой единого входа
 
@@ -172,7 +172,7 @@ ms.locfileid: "74227613"
 
     ![Единый вход](./media/freshdesk-tutorial/IC776770.png "Единый вход")
   
-    a. Выберите для параметра **Single Sign On (SSO)** (Единый вход) значение **On** (Включено).
+    а. Выберите для параметра **Single Sign On (SSO)** (Единый вход) значение **On** (Включено).
 
     b. Выберите **Единый вход SAML**.
 
@@ -180,9 +180,9 @@ ms.locfileid: "74227613"
 
     d. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    д. В текстовое поле **Security Certificate Fingerprint** (Отпечаток сертификата безопасности) вставьте значение **Cert Hash(sha256)** , полученное ранее.
+    д) В текстовое поле **Security Certificate Fingerprint** (Отпечаток сертификата безопасности) вставьте значение **Cert Hash(sha256)** , полученное ранее.
   
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -246,7 +246,7 @@ ms.locfileid: "74227613"
 
 2. В верхнем меню щелкните **Администратор**.
 
-    ![Администратор](./media/freshdesk-tutorial/IC776772.png "Администратор")
+    ![Администратор](./media/freshdesk-tutorial/IC776772.png "Административный")
 
 3. На вкладке **General Settings** (Общие параметры) выберите **Agents** (Агенты).
   
@@ -260,7 +260,7 @@ ms.locfileid: "74227613"
 
     ![Сведения об агенте](./media/freshdesk-tutorial/IC776775.png "Сведения об агенте")
 
-    a. В текстовое поле **Электронная почта** введите адрес электронной почты той учетной записи Azure AD, которую вы хотите подготовить.
+    а. В текстовое поле **Электронная почта** введите адрес электронной почты той учетной записи Azure AD, которую вы хотите подготовить.
 
     b. В текстовое поле **Полное имя** введите имя учетной записи Azure AD, которую желаете подготовить.
 

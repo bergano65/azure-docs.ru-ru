@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Cloud Platform.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89ea2c45e16dfeb63801f70fa4480c0d865a890f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160088"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по Интеграция Azure Active Directory с SAP Cloud Platform
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по интеграции Azure Active Directory с SAP Cloud Platform
 
 В этом руководстве описано, как интегрировать SAP Cloud Platform с Azure Active Directory (Azure AD).
 Интеграция Azure AD с SAP Cloud Platform обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73160088"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SAP Cloud Platform, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка SAP Cloud Platform с поддержкой единого входа
 
 По завершении работы с этим руководством пользователи Azure AD, назначенные SAP Cloud Platform, смогут выполнять единый вход в приложение следуя указаниям в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md).
@@ -112,7 +112,7 @@ ms.locfileid: "73160088"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SAP Cloud Platform](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес, который пользователи используют для входа в приложение **Sign On URL**. Это URL-адрес защищенного ресурса для конкретной учетной записи в приложении SAP Cloud Platform. URL-адрес имеет следующий формат: `https://<applicationName><accountName>.<landscape host>.ondemand.com/<path_to_protected_resource>`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес, который пользователи используют для входа в приложение **Sign On URL**. Это URL-адрес защищенного ресурса для конкретной учетной записи в приложении SAP Cloud Platform. URL-адрес имеет следующий формат: `https://<applicationName><accountName>.<landscape host>.ondemand.com/<path_to_protected_resource>`.
       
      >[!NOTE]
      >Это URL-адрес в приложении SAP Cloud Platform, запрашивающий аутентификацию пользователя.
@@ -163,7 +163,7 @@ ms.locfileid: "73160088"
 
     ![Управление доверием](./media/sap-hana-cloud-platform-tutorial/ic793931.png "Управление доверием")
    
-    a. Нажмите кнопку **Изменить**.
+    а. Нажмите кнопку **Изменить**.
 
     b. Для параметра **Configuration Type** (Тип конфигурации) выберите значение **Custom** (Настраиваемая).
 
@@ -171,9 +171,9 @@ ms.locfileid: "73160088"
 
     d. Чтобы создать пару ключей **Signing Key** (Ключ подписывания) и **Signing Certificate** (Сертификат подписывания), щелкните **Generate Key Pair** (Создать пару ключей).
 
-    д. Для параметра **Principal Propagation** (Распространение субъектов) выберите значение **Disabled** (Отключено).
+    д) Для параметра **Principal Propagation** (Распространение субъектов) выберите значение **Disabled** (Отключено).
 
-    Е. Для параметра **Force Authentication** (Принудительная аутентификация) выберите значение **Disabled** (Отключено).
+    е) Для параметра **Force Authentication** (Принудительная аутентификация) выберите значение **Disabled** (Отключено).
 
     ж. Выберите команду **Сохранить**.
 
@@ -181,7 +181,7 @@ ms.locfileid: "73160088"
    
     ![Получение метаданных](./media/sap-hana-cloud-platform-tutorial/ic793930.png "Получить метаданные")
 
-    a. Скачайте файл метаданных SAP Cloud Platform, щелкнув ссылку **Get Metadata** (Получить метаданные).
+    а. Скачайте файл метаданных SAP Cloud Platform, щелкнув ссылку **Get Metadata** (Получить метаданные).
 
     b. Откройте скачанный XML-файл метаданных SAP Cloud Platform, а затем найдите тег **ns3:AssertionConsumerService**.
  
@@ -210,7 +210,7 @@ ms.locfileid: "73160088"
     
     ![Атрибуты](./media/sap-hana-cloud-platform-tutorial/ic790804.png "Атрибуты") 
 
-    a. Щелкните **Add Assertion-Based Attribute** (Добавить атрибут на основе утверждений) и добавьте следующие атрибуты на основе утверждений:
+    а. Щелкните **Add Assertion-Based Attribute** (Добавить атрибут на основе утверждений) и добавьте следующие атрибуты на основе утверждений:
        
     | Атрибут утверждения | Атрибут субъекта |
     | --- | --- |
@@ -299,7 +299,7 @@ ms.locfileid: "73160088"
    
     ![Авторизации](./media/sap-hana-cloud-platform-tutorial/ic790805.png "Authorizations")
    
-    a. Щелкните **Авторизация**.
+    а. Щелкните **Авторизация**.
 
     b. Откройте вкладку **Пользователи** .
 
@@ -307,7 +307,7 @@ ms.locfileid: "73160088"
 
     d. Щелкните **Назначить** , чтобы назначить роль пользователю.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

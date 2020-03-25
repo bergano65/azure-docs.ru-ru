@@ -5,10 +5,10 @@ keywords: jenkins, azure, devops, app service, cli
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.openlocfilehash: bd9192974f6860d08d84a9028702ce2203f562e7
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74158816"
 ---
 # <a name="deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Развертывание в службу приложений Azure с помощью Jenkins и Azure CLI
@@ -143,7 +143,7 @@ withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
 ## <a name="create-jenkins-pipeline"></a>Создание конвейера Jenkins
 Откройте Jenkins в веб-браузере, щелкните **New Item** (Создать элемент). 
 
-* Укажите имя задания и выберите **Pipeline** (Конвейер). Последовательно выберите **ОК**.
+* Укажите имя задания и выберите **Pipeline** (Конвейер). Нажмите кнопку **ОК**.
 * Откройте вкладку **Pipeline** (Конвейер), находящуюся рядом. 
 * Для параметра **Definition** (Определение) выберите значение **Pipeline script from SCM** (Сценарий конвейера из SCM).
 * Для параметра **SCM** выберите значение **Git**.
@@ -211,8 +211,8 @@ withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
 
     Перейдите по адресу: http://&lt;имя_приложени>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y> (замените &lt;x> и &lt;y> любыми числами) для получения суммы x и y.
     
-## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы настроили конвейер Jenkins, который извлекает исходный код в репозитории GitHub. Он запускает Maven для построения WAR-файла, а затем использует Azure CLI для развертывания в службу приложений Azure. Вы научились выполнять следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы настроили конвейер Jenkins, который извлекает исходный код в репозитории GitHub. Он запускает Maven для построения WAR-файла, а затем использует Azure CLI для развертывания в службу приложений Azure. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Jenkins

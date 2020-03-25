@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.subservice: change-inventory-management
 ms.custom: mvc
 ms.openlocfilehash: 136521799dbc928a03c339ecc1cef6fdd3d029b2
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78372805"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223781"
 ---
 # <a name="discover-what-software-is-installed-on-your-azure-and-non-azure-machines"></a>Получение данных об установленном программном обеспечении на виртуальных машинах Azure и других компьютерах
 
@@ -27,7 +27,7 @@ ms.locfileid: "78372805"
 > * просмотреть установленное программное обеспечение;
 > * поиск установленного программного обеспечения в журналах инвентаризации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -127,7 +127,7 @@ ConfigurationData
 | summarize by Publisher, SoftwareName
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как использовать решение для инвентаризации программного обеспечения и как выполнить следующие действия:
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Settling music | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Settling music | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Settling music.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 08f084bc0231bceeaf2c7d87dc0a160cdf188978
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090979"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-settling-music"></a>Руководство по Интеграция Azure Active Directory с Settling music
+# <a name="tutorial-azure-active-directory-integration-with-settling-music"></a>Руководство по интеграции Azure Active Directory с Settling music
 
 В этом руководстве описано, как интегрировать Settling music с Azure Active Directory (Azure AD).
 Интеграция Settling music с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67090979"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD со Settling music, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Settling music с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67090979"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Settling music](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.rakurakuseisan.jp/<USERACCOUNT>/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.rakurakuseisan.jp/<USERACCOUNT>/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.rakurakuseisan.jp/<USERACCOUNT>/`.
 
@@ -121,7 +121,7 @@ ms.locfileid: "67090979"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -147,7 +147,7 @@ ms.locfileid: "67090979"
 
     ![Settling music: шаг 5](./media/settlingmusic-tutorial/tutorial_settlingmusic_step4.png)
 
-    a. Щелкните **To enable** (Включение).
+    а. Щелкните **To enable** (Включение).
 
     b. В текстовое поле **Login URL of the ID provider** (URL-адрес входа поставщика удостоверений) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -155,7 +155,7 @@ ms.locfileid: "67090979"
 
     d. Нажмите кнопку **Choose File** (Выбрать файл), чтобы передать **сертификат в формате Base64**, скачанный с портала Azure.
 
-    д. Нажмите кнопку **Сохранить** .
+    д) Нажмите кнопку **Сохранить** .
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -223,4 +223,4 @@ ms.locfileid: "67090979"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

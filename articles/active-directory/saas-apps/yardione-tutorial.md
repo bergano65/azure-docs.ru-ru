@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с YardiOne | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с YardiOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и YardiOne.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 757d0b09c652e97e9dddc924c4c700819e333409
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086459"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yardione"></a>Руководство по Интеграция Azure Active Directory с YardiOne
+# <a name="tutorial-azure-active-directory-integration-with-yardione"></a>Руководство. Интеграция Azure Active Directory с YardiOne
 
 В этом руководстве описано, как интегрировать YardiOne с Azure Active Directory (Azure AD).
 Интеграция YardiOne с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67086459"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с YardiOne, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка YardiOne с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "67086459"
 
     ![Сведения о домене и URL-адресах единого входа приложения YardiOne](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<y1-subdomain>.yardione.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<y1-subdomain>.yardione.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `http://<y1-subdomain>.yardione.com/yAuth2/trust`.
 
@@ -191,5 +191,5 @@ ms.locfileid: "67086459"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

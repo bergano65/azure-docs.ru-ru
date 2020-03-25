@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Flatter Files | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Flatter Files | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Flatter Files.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 13012474e34af80c84b034703a3b34f0208036bc
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73156268"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство по Интеграция Azure Active Directory с Flatter Files
+# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство. Интеграция Azure Active Directory с Flatter Files
 
 В этом руководстве описано, как интегрировать приложение Flatter Files с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Flatter Files обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73156268"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Flatter Files, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Flatter Files с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -113,11 +113,11 @@ ms.locfileid: "73156268"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-flatter-files-single-sign-on"></a>Настройка единого входа в приложении Flatter Files
 
@@ -131,7 +131,7 @@ ms.locfileid: "73156268"
    
     ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_06.png)  
     
-    a. Установите флажок **Use SAML 2.0 For Authentication**(Использовать SAML 2.0 для проверки подлинности).
+    а. Установите флажок **Use SAML 2.0 For Authentication**(Использовать SAML 2.0 для проверки подлинности).
     
     b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
@@ -139,7 +139,7 @@ ms.locfileid: "73156268"
    
     ![Настройка единого входа](./media/flatter-files-tutorial/tutorial_flatter_files_08.png)  
    
-    a. В поле **Домен** укажите свой зарегистрированный домен.
+    а. В поле **Домен** укажите свой зарегистрированный домен.
    
    > [!NOTE]
    > Если у вас нет зарегистрированного домена, обратитесь в службу поддержки Flatter Files по адресу [support@flatterfiles.com](mailto:support@flatterfiles.com). 
@@ -219,13 +219,13 @@ ms.locfileid: "73156268"
    
     ![Создание пользователя Flatter Files](./media/flatter-files-tutorial/tutorial_flatter_files_10.png)
 
-    a. В текстовом поле **Имя** введите **Britta**.
+    а. В текстовом поле **Имя** введите **Britta**.
    
     b. В текстовом поле **Фамилия** введите **Simon**. 
    
     c. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя Britta Simon на портале Azure.
    
-    d. Нажмите кнопку **Submit**(Отправить).   
+    d. Щелкните **Отправить**.   
 
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 

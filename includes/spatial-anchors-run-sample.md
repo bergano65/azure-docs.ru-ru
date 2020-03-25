@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/23/2019
 ms.author: shreshar
 ms.openlocfilehash: fbc91b2610d97fe071e6585a58d7789dca873a9a
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72882340"
 ---
 Развертывание приложения на устройстве После запуска приложения в диалоговом окне **Choose A Demo** (Выбор демонстрации) используйте стрелки влево или вправо, чтобы выбрать параметр **LocalShare**, а затем нажмите кнопку**Go!** (Вперед!). Следуйте указаниям в приложении. Вы можете выбрать **Create & Share Anchor** (Создать привязку и предоставить к ней общий доступ) или **Locate Shared Anchor** (Найти общую привязку).

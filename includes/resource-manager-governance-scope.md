@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
@@ -9,10 +9,10 @@ ms.date: 02/21/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: dc4281c17b92e1720625764a52a34a94d6f296ab
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67185218"
 ---
 Прежде чем создавать элементы, давайте узнаем, что такое область. В Azure предоставляется четыре уровня управления: группы управления, подписки, группы ресурсов и ресурсы. [Группы управления](../articles/billing/billing-enterprise-mgmt-group-overview.md) доступны в режиме предварительной версии. Пример этих уровней приведен на следующем изображении.

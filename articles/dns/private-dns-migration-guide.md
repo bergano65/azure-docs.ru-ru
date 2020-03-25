@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: rohink
 ms.openlocfilehash: d29885104d6f39a17b5bdeb786cda8f56f58d987
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76939351"
 ---
 # <a name="migrating-legacy-azure-dns-private-zones-to-new-resource-model"></a>Перенос устаревших частных зон Azure DNS на новую модель ресурсов
@@ -25,7 +25,7 @@ az account set --subscription <SubscriptionId>
 az network dns zone list --query "[?zoneType=='Private']"
 ```
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Убедитесь, что установлена последняя версия Azure PowerShell. Дополнительные сведения по средству Azure PowerShell (Az) и его установке см. по адресу https://docs.microsoft.com/powershell/azure/new-azureps-module-az.
 

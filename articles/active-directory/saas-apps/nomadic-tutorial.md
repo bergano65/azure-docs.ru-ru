@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Nomadic | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Nomadic | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Nomadic.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
 ms.openlocfilehash: 259d20474ef075f6247878b2b7798c6fa8e608aa
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73161265"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство по Интеграция Azure Active Directory с Nomadic
+# <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство. Интеграция Azure Active Directory с Nomadic
 
 В этом руководстве описано, как интегрировать Nomadic с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Nomadic обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73161265"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Nomadic, вам потребуются:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Nomadic с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73161265"
 
     ![Сведения о домене и URL-адресах единого входа приложения Nomadic](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.nomadic.fm/signin`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.nomadic.fm/signin`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
@@ -125,7 +125,7 @@ ms.locfileid: "73161265"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

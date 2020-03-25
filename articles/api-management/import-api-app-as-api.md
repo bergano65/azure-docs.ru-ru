@@ -13,33 +13,33 @@ ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
 ms.openlocfilehash: bf4039b661ac7e0ee9630b86b9e15d1388991431
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74108488"
 ---
-# <a name="import-an-api-app-as-an-api"></a>Импорт приложения API в качестве API
+# <a name="import-an-api-app-as-an-api"></a>импорт приложения API в качестве API;
 
 В этой статье объясняется, как импортировать приложение API в качестве API. Также здесь показано, как проверить API службы управления API.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * импорт приложения API в качестве API;
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-+ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
++ Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + Убедитесь, что в вашей подписке есть приложение API. Дополнительные сведения см. в [документации по службе приложений](https://docs.microsoft.com/azure/app-service/).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="create-api"> </a>Импорт и публикация API серверной части
+## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
-1. Выберите **Интерфейсы API** в разделе **Управление API**.
+1. Выберите **Интерфейсы API** в разделе **УПРАВЛЕНИЕ API**.
 2. Выберите **Приложение API** в списке **Add a new API** (Добавление нового API).
 
     ![приложение API;](./media/import-api-app-as-api/api-app.png)
@@ -75,7 +75,7 @@ ms.locfileid: "74108488"
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Преобразование и защита опубликованного API](transform-api.md)

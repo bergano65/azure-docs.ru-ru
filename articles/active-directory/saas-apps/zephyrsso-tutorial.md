@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с ZephyrSSO | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с ZephyrSSO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ZephyrSSO.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 2ffc9f105f4e2429ac8add679511e9aec5875e0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086214"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zephyrsso"></a>Руководство по Интеграция Azure Active Directory с ZephyrSSO
+# <a name="tutorial-azure-active-directory-integration-with-zephyrsso"></a>Руководство по интеграции Azure Active Directory с ZephyrSSO
 
 В этом руководстве описано, как интегрировать ZephyrSSO с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением ZephyrSSO обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67086214"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ZephyrSSO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка ZephyrSSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "67086214"
 
     ![Сведения о домене и URL-адресах единого входа для приложения ZephyrSSO](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.yourzephyr.com/Zephyrsso`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.yourzephyr.com/Zephyrsso`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.yourzephyr.com/flex/saml/sso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.yourzephyr.com/flex/saml/sso`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ZephyrSSO](https://support.getzephyr.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -120,7 +120,7 @@ ms.locfileid: "67086214"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -196,5 +196,5 @@ ms.locfileid: "67086214"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

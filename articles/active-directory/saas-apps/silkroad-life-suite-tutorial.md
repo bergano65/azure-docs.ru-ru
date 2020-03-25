@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SilkRoad Life Suite | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с решением SilkRoad Life Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и SilkRoad Life Suite.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
 ms.openlocfilehash: 63165da69815c77afb8692e1e68c1710beb8df8c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090821"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство по Интеграция Azure Active Directory с SilkRoad Life Suite
+# <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство по интеграции Azure Active Directory с решением SilkRoad Life Suite
 
 В этом руководстве описано, как интегрировать SilkRoad Life Suite с Azure Active Directory (Azure AD).
 Интеграция SilkRoad Life Suite с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67090821"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SilkRoad Life Suite, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка SilkRoad Life Suite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,13 +106,13 @@ ms.locfileid: "67090821"
     > [!NOTE]
     > Как получить **файл метаданных поставщика услуг** описано далее в этом руководстве.
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
-    ![изображение](common/upload-metadata.png)
+    ![image](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![изображение](common/browse-upload-metadata.png)
+    ![image](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
 
@@ -127,7 +127,7 @@ ms.locfileid: "67090821"
 
     ![Сведения о домене и URL-адресах единого входа приложения SilkRoad Life Suite](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате:
 
@@ -154,7 +154,7 @@ ms.locfileid: "67090821"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -187,7 +187,7 @@ ms.locfileid: "67090821"
 
     ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_10.png)
   
-    a. В разделе **Option 2 - Metadata File** (Вариант 2 — файл метаданных) нажмите кнопку **Browse** (Обзор), чтобы отправить скачанный файл метаданных с портала Azure.
+    а. В разделе **Option 2 - Metadata File** (Вариант 2 — файл метаданных) нажмите кнопку **Browse** (Обзор), чтобы отправить скачанный файл метаданных с портала Azure.
   
     b. Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
 
@@ -199,17 +199,17 @@ ms.locfileid: "67090821"
 
     ![единого входа Azure AD](./media/silkroad-life-suite-tutorial/tutorial_silkroad_12.png)
 
-    a. В поле **Enabled** (Включено) выберите **Yes** (Да).
+    а. В поле **Enabled** (Включено) выберите **Yes** (Да).
 
     b. В текстовое поле **EntityId** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
-    c. В текстовом поле **IdP Description** (Описание IdP) введите описание своей конфигурации (например, *Azure AD SSO*).
+    c. В текстовом поле **IdP Description** (Описание IdP) введите описание вашей конфигурации (например, *Azure AD SSO*).
 
     d. В текстовом поле **Файл метаданных** передайте файл **метаданных**, загруженный с портала Azure.
   
-    д. В текстовом поле **IdP Name** (Имя IdP) введите уникальное имя своей конфигурации (например, *Azure SP*).
+    д) В текстовом поле **IdP Name** (Имя IdP) введите уникальное имя вашей конфигурации (например, *Azure SP*).
   
-    Е. В текстовое поле **Logout Service URL** (URL-адрес службы выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    е) В текстовое поле **Logout Service URL** (URL-адрес службы выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
     ж. В текстовом поле **Sign-On service URL** (URL-адрес службы входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -286,4 +286,4 @@ ms.locfileid: "67090821"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 01/01/2020
 ms.custom: mvc
 ms.openlocfilehash: 1d327f558806e0205540c183c56b92ba31e33cb7
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77031226"
 ---
 # <a name="prepare-for-assessment-and-migration-of-hyper-v-vms-to-azure"></a>Подготовка виртуальных машин Hyper-V к оценке и переносу в Azure
@@ -17,7 +17,7 @@ ms.locfileid: "77031226"
 
 Служба [Миграция Azure](migrate-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения.
 
-Это руководство является первым в серии, в которой показано, как оценивать и переносить виртуальные машины Hyper-V в Azure. В этом руководстве описано следующее:
+Это руководство является первым в серии, в которой показано, как оценивать и переносить виртуальные машины Hyper-V в Azure. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Подготовьте Azure. Настройка разрешений для своей учетной записи Azure и ресурсов для работы с Миграцией Azure.
@@ -30,7 +30,7 @@ ms.locfileid: "77031226"
 > В руководствах показан простейший путь развертывания сценария, использование которого позволяет быстро настроить проверку концепции. В руководствах по возможности используются параметры по умолчанию и показаны не все возможные параметры и пути. Для получения подробных инструкций ознакомьтесь со статьей о выполнении оценки и миграции Hyper-V.
 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу.
 
 
 ## <a name="prepare-azure"></a>Подготовка Azure
@@ -79,13 +79,13 @@ ms.locfileid: "77031226"
     ![Разрешения Azure AD](./media/tutorial-prepare-hyper-v/aad.png)
 
 > [!NOTE]
-> Это значение по умолчанию, которое разрешает выполнять регистрацию. [Подробнее](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-applications-are-added#who-has-permission-to-add-applications-to-my-azure-ad-instance).
+> Это значение по умолчанию, которое разрешает выполнять регистрацию. [Дополнительные сведения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-applications-are-added#who-has-permission-to-add-applications-to-my-azure-ad-instance)
 
 
 
 #### <a name="assign-application-developer-role"></a>Назначение роли разработчика приложения
 
-Администратор клиента и глобальный администратор могут назначить учетной записи роль разработчика приложений. [Подробнее](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal).
+Администратор клиента и глобальный администратор могут назначить учетной записи роль разработчика приложений. [Дополнительные сведения](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal)
 
 
 ## <a name="prepare-hyper-v-for-assessment"></a>Подготовка Hyper-V к оценке
@@ -139,7 +139,7 @@ ms.locfileid: "77031226"
 
 Хэш-значениями являются:
 
-| **Хэш** | **Значение** |
+| **Хэш** | **Value** |
 | --- | --- |
 | **MD5** | 0ef418f31915d01f896ac42a80dc414e |
 | **SHA256** | 0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2 |

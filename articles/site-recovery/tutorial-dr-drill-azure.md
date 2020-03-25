@@ -9,11 +9,11 @@ ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: 5bd9f5316f8b8799633de8c0c84c61424c0e4f4a
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954418"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222691"
 ---
 # <a name="run-a-disaster-recovery-drill-to-azure"></a>Отработка аварийного восстановления в Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "73954418"
 
 Если вам нужно, чтобы после отработки отказа к виртуальным машинам Azure можно было подключиться по протоколу RDP/SSH, то выполните действия по [подготовке к подключению](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover). Если после отработки отказа с подключением возникли проблемы, выполните шаги, описанные в руководстве по [устранению неполадок](site-recovery-failover-to-azure-troubleshoot.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Выполнение отработки отказа и восстановления для виртуальных машин VMware](vmware-azure-tutorial-failover-failback.md)

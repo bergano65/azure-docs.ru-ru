@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Cisco Cloud | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Cisco Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Cloud.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 342101c623d451b71a33b2394ec6617482f388d6
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157456"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-cloud"></a>Руководство по Интеграция Azure Active Directory с Cisco Cloud
+# <a name="tutorial-azure-active-directory-integration-with-cisco-cloud"></a>Руководство по интеграции Azure Active Directory с Cisco Cloud
 
 В этом руководстве описано, как интегрировать Cisco Cloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Cisco Cloud обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73157456"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Cisco Cloud, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на Cisco Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "73157456"
 
     ![Сведения о домене и URL-адресах единого входа приложения Cisco Cloud](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `<subdomain>.cisco.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `<subdomain>.cisco.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.cisco.com/sp/ACS.saml2`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.cisco.com/sp/ACS.saml2`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -125,13 +125,13 @@ ms.locfileid: "73157456"
 
 7. В дополнение к описанному выше приложение Cisco Cloud ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | -----------| ------------|
     | country    | user.country |
     | company    | user.companyname |
     | | |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -143,9 +143,9 @@ ms.locfileid: "73157456"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 

@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dacoulte
 ms.openlocfilehash: 2876acd62e573b746b8c0abf671aa6472cec3104
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "79381797"
 ---
-|Имя |Описание |Политики |Версия |
+|Имя |Description |Политики |Версия |
 |---|---|---|---|
 |[Проверка виртуальных машин Linux, на которых не установлены указанные приложения](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Guest%20Configuration/GuestConfiguration_InstalledApplicationLinux.json) |Эта инициатива развертывает требуемые компоненты политики и проверяет виртуальные машины Linux, на которых не установлены указанные приложения. Дополнительные сведения о политиках гостевой конфигурации: https://aka.ms/gcpol |2 |1.1.0 |
 |[Проверка виртуальных машин Linux, на которых установлены указанные приложения](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Guest%20Configuration/GuestConfiguration_NotInstalledApplicationLinux.json) |Эта инициатива развертывает требуемые компоненты политики и проверяет виртуальные машины Linux, на которых установлены указанные приложения. Дополнительные сведения о политиках гостевой конфигурации: https://aka.ms/gcpol |2 |1.1.0 |

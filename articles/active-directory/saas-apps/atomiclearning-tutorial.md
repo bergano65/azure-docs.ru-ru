@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Atomic Learning | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Atomic Learning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложение Atomic Learning.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 78f5c701a009f8510c62f6cfa736d20205e383a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67106607"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-atomic-learning"></a>Руководство по Интеграция Azure Active Directory с Atomic Learning
+# <a name="tutorial-azure-active-directory-integration-with-atomic-learning"></a>Руководство. Интеграция Azure Active Directory с Atomic Learning
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Atomic Learning.
 Интеграция приложения Atomic Learning с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67106607"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Atomic Learning, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на Atomic Learning с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -120,7 +120,7 @@ ms.locfileid: "67106607"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -196,4 +196,4 @@ ms.locfileid: "67106607"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

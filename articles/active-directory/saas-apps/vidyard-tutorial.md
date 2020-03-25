@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Vidyard | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Vidyard | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Vidyard.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: a55ec7afc94440ea8b6a48ed1507476d362df6c0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67087420"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-vidyard"></a>Руководство по Интеграция Azure Active Directory с Vidyard
+# <a name="tutorial-azure-active-directory-integration-with-vidyard"></a>Руководство по интеграции Azure Active Directory с Vidyard
 
 В этом руководстве описано, как интегрировать Vidyard с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Vidyard обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67087420"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Vidyard, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Vidyard с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "67087420"
 
     ![Сведения о домене и URL-адресах единого входа приложения Vidyard](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://secure.vidyard.com/sso/saml/<unique id>/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://secure.vidyard.com/sso/saml/<unique id>/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://secure.vidyard.com/sso/saml/<unique id>/consume`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://secure.vidyard.com/sso/saml/<unique id>/consume`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67087420"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -150,7 +150,7 @@ ms.locfileid: "67087420"
 
     ![Настройка Vidyard](./media/vidyard-tutorial/configure3.png)
 
-    a. Введите общее имя профиля в текстовом поле **Profile Name** (Имя профиля).
+    а. Введите общее имя профиля в текстовом поле **Profile Name** (Имя профиля).
 
     b. Скопируйте значение в поле **SSO User Login Page** (Страница единого входа пользователя) и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -158,9 +158,9 @@ ms.locfileid: "67087420"
 
     d. Скопируйте значение **Issuer/Metadata URL** (URL-адрес метаданных издателя) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    д. Откройте в Блокноте скачанный с портала Azure файл сертификата, а затем скопируйте и вставьте его содержимое в текстовое поле **X.509 Certificate** (Сертификат X.509).
+    д) Откройте в Блокноте скачанный с портала Azure файл сертификата, а затем скопируйте и вставьте его содержимое в текстовое поле **X.509 Certificate** (Сертификат X.509).
 
-    Е. В текстовое поле **SAML Endpoint URL** (URL-адрес конечной точки SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    е) В текстовое поле **SAML Endpoint URL** (URL-адрес конечной точки SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     ж. Щелкните **Confirm** (Подтвердить).
 
@@ -251,5 +251,5 @@ ms.locfileid: "67087420"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

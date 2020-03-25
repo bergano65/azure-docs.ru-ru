@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SimpleNexus | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SimpleNexus | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении SimpleNexus.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: d368b6cd809ccf4e428974bf7c82c01bc5e035b7
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233423"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-simplenexus"></a>Руководство по Интеграция Azure Active Directory с SimpleNexus
+# <a name="tutorial-azure-active-directory-integration-with-simplenexus"></a>Учебник. Интеграция Azure Active Directory с SimpleNexus
 
 В этом руководстве описано, как интегрировать SimpleNexus с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SimpleNexus обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74233423"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SimpleNexus, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка SimpleNexus с активированной функцией единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74233423"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SimpleNexus](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://simplenexus.com/<companyname>_login`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://simplenexus.com/<companyname>_login`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://simplenexus.com/<companyname>`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "74233423"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

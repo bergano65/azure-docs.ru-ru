@@ -9,15 +9,15 @@ ms.date: 04/22/2018
 ms.author: zhshang
 ms.custom: mvc
 ms.openlocfilehash: d30804d132eec3c9f324413acd68014d1adaa710
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74158042"
 ---
 # <a name="create-a-web-app-that-uses-signalr-service-and-github-authentication"></a>Создание веб-приложения с аутентификацией через службу SignalR и GitHub
 
-Этот пример скрипта создает новый ресурс службы Azure SignalR, который используется для принудительной отправки обновлений клиентам в режиме реального времени. Также скрипт добавляет новое веб-приложение и план службы приложений, чтобы разместить веб-приложение ASP.NET Core, которое использует эту службу SignalR. Для веб-приложения указываются настройки, позволяющие подключиться к созданному ресурсу службы SignalR и применить [аутентификацию GitHub](https://developer.github.com/v3/guides/basics-of-authentication/). Также в веб-приложении настраивается локальный репозиторий Git в качестве источника развертывания.
+Этот пример скрипта создает новый ресурс службы Azure SignalR, который используется для принудительной отправки обновлений клиентам в режиме реального времени. Также с помощью скрипта добавляется новое веб-приложение и план службы приложений, чтобы разместить веб-приложение ASP.NET Core, которое использует эту службу SignalR. Для веб-приложения указываются настройки, позволяющие подключиться к созданному ресурсу службы SignalR и применить [аутентификацию GitHub](https://developer.github.com/v3/guides/basics-of-authentication/). Также в веб-приложении настраивается локальный репозиторий Git в качестве источника развертывания.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -105,7 +105,7 @@ az webapp deployment source config-local-git --name $myWebAppName --resource-gro
 
 Для каждой команды в таблице приведены ссылки на соответствующую документацию. Этот сценарий использует следующие команды:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az signalr create](/cli/azure/signalr#az-signalr-create) | Создание ресурса службы Azure SignalR. |
@@ -116,7 +116,7 @@ az webapp deployment source config-local-git --name $myWebAppName --resource-gro
 | [az webapp deployment user set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) | Обновляет учетные данные для развертывания. |
 | [az webapp deployment source config-local-git](/cli/azure/webapp/deployment/source#az-webapp-deployment-source-config-local-git) | Получает URL-адрес конечной точки репозитория Git, который позволяет клонировать и обновлять развертывание веб-приложения. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

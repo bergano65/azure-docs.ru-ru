@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -9,10 +9,10 @@ ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 6f910dbe91ed8e1cb65eefa6dfc48c72a689bf25
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73491556"
 ---
 1. Найдите созданную виртуальную глобальную сеть. На странице "Виртуальная глобальная сеть" в разделе **Возможность подключения** выберите **Концентраторы**.
@@ -24,7 +24,7 @@ ms.locfileid: "73491556"
     **Сведения о проекте**
 
    * Регион (ранее этот параметр назывался расположением).
-   * ИМЯ
+   * Имя
    * Закрытое адресное пространство концентратора. Минимальное адресное пространство —/24 для создания концентратора. Это значит, что использование любого диапазона от /25 до /32 вызовет ошибку во время создания.
 4. Перейдите на вкладку **ExpressRoute**.
 

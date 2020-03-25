@@ -6,13 +6,13 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
 ms.openlocfilehash: 6b8d520a539f69889b1e1bd23d255f3fe19b8717
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77593212"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222531"
 ---
-# <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство по Развертывание реестра контейнеров Azure и его использование
+# <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
 
 Реестр контейнеров Azure (ACR) — это частный реестр для образов контейнеров. Частный реестр контейнеров позволяет безопасно выполнять сборку и развертывать приложения, а также пользовательский код. В этом руководстве (здесь представлена вторая его часть из семи) вы развернете экземпляр ACR и отправите образ контейнера в экземпляр. Вы узнаете, как выполнять следующие задачи:
 

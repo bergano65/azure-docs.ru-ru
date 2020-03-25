@@ -6,13 +6,13 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
 ms.openlocfilehash: feab8495536b3306fd96793323d51644570b401b
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77593166"
 ---
-# <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство по Подготовка приложения для Службы Azure Kubernetes (AKS)
+# <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство. Подготовка приложения для Службы Azure Kubernetes (AKS)
 
 В этом руководстве (часть 1 из 7) выполняется подготовка многоконтейнерного приложения к использованию в Kubernetes. Имеющиеся средства разработки, такие как Docker Compose, используются для локального создания приложения и его тестирования. Вы узнаете, как выполнять следующие задачи:
 

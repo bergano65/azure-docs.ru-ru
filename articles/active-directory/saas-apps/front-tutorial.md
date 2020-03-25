@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Front | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Front | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Front.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 33ed2f98ba66704072e8139654dfbc4cde8ab3be
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73155642"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-front"></a>Руководство по Интеграция Azure Active Directory с Front
+# <a name="tutorial-azure-active-directory-integration-with-front"></a>Учебник. Интеграция Azure Active Directory с Front
 
 В этом руководстве описано, как интегрировать Front с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Front обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73155642"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Front, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа Front.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "73155642"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Front](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<companyname>.frontapp.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<companyname>.frontapp.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.frontapp.com/sso/saml/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.frontapp.com/sso/saml/callback`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Front](mailto:support@frontapp.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -120,11 +120,11 @@ ms.locfileid: "73155642"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-front-single-sign-on"></a>Настройка единого входа для Front
 
@@ -154,7 +154,7 @@ ms.locfileid: "73155642"
 
     ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_005.png)
 
-    a. Скопируйте значение **Entity ID** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения Front** на портале Azure.
+    а. Скопируйте значение **Entity ID** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения Front** на портале Azure.
 
     b. Скопируйте значение **ACS URL** (URL-адрес ACS) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Front** на портале Azure.
     

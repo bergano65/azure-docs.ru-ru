@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Wikispaces | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Wikispaces | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Wikispaces.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 7a683923ba48b1f354f90ac94d746cb92f359e7a
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233320"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-wikispaces"></a>Руководство по Интеграция Azure Active Directory с Wikispaces
+# <a name="tutorial-azure-active-directory-integration-with-wikispaces"></a>Руководство. Интеграция Azure Active Directory с Wikispaces
 
 В этом руководстве описано, как интегрировать приложение Wikispaces с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Wikispaces обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74233320"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Wikispaces, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Wikispaces с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74233320"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Wikispaces](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.wikispaces.net`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.wikispaces.net`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://session.wikispaces.net/<instancename>`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "74233320"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -190,7 +190,7 @@ ms.locfileid: "74233320"
 
 2. Перейдите в раздел **Участники**.
    
-    ![Участники](./media/wikispaces-tutorial/ic787193.png "Участники")
+    ![Участники](./media/wikispaces-tutorial/ic787193.png "Члены")
 
 3. Щелкните **Пригласить пользователей**.
    
@@ -200,7 +200,7 @@ ms.locfileid: "74233320"
    
     ![Приглашение пользователей](./media/wikispaces-tutorial/ic787208.png "Приглашение пользователей")
    
-    a. Введите **имя пользователя или электронный адрес** для действующей учетной записи AAD, которую вы хотите подготовить, в соответствующие текстовые поля.
+    а. Введите **имя пользователя или электронный адрес** для действующей учетной записи AAD, которую вы хотите подготовить, в соответствующие текстовые поля.
    
     b. Нажмите кнопку **Отправить**.  
       

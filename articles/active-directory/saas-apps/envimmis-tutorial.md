@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Envi MMIS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Envi MMIS | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Envi MMIS.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c1689517042713e9a3ce75c6ada822cb3d6ff138
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158266"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство по Интеграция Azure Active Directory с Envi MMIS
+# <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство. Интеграция Azure Active Directory с Envi MMIS
 
 В этом руководстве описано, как интегрировать приложение Envi MMIS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Envi MMIS обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73158266"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Envi MMIS, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Envi MMIS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "73158266"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Envi MMIS](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.<CUSTOMER DOMAIN>.com/Account`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.<CUSTOMER DOMAIN>.com/Account`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.<CUSTOMER DOMAIN>.com/Account/Acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.<CUSTOMER DOMAIN>.com/Account/Acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -127,11 +127,11 @@ ms.locfileid: "73158266"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-envi-mmis-single-sign-on"></a>Настройка единого входа в Envi MMIS
 
@@ -157,7 +157,7 @@ ms.locfileid: "73158266"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/envimmis-tutorial/configure5.png)
 
-    a. Выберите вариант **File** (Файл) из раскрывающегося списка **Upload From** (Отправить из).
+    а. Выберите вариант **File** (Файл) из раскрывающегося списка **Upload From** (Отправить из).
 
     b. Чтобы отправить файл метаданных, загруженный с портала Azure, выберите значок **выбора файла**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "73158266"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
@@ -238,7 +238,7 @@ ms.locfileid: "73158266"
 
     ![Добавление сотрудника](./media/envimmis-tutorial/user3.png)
 
-    a. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя для учетной записи Britta Simon, например **brittasimon\@contoso.com**.
+    а. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя для учетной записи Britta Simon, например **brittasimon\@contoso.com**.
     
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -246,9 +246,9 @@ ms.locfileid: "73158266"
 
     d. В текстовое поле **Title** (Обращение) введите обращение к пользователю.
     
-    д. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon, например **brittasimon\@contoso.com**.
+    д) В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon, например **brittasimon\@contoso.com**.
 
-    Е. В текстовое поле **User Name SSO** (Имя пользователя для единого входа) введите имя пользователя для учетной записи Britta Simon, например **brittasimon\@contoso.com**.
+    е) В текстовое поле **User Name SSO** (Имя пользователя для единого входа) введите имя пользователя для учетной записи Britta Simon, например **brittasimon\@contoso.com**.
 
     ж. Выберите команду **Сохранить**.
 

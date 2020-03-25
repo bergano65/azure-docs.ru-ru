@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Flock | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением Flock | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Flock.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 1751cc5d5bcf47f8fa269853051eee4185d4e3aa
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73156362"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-flock"></a>Руководство по Интеграция Azure Active Directory с Flock
+# <a name="tutorial-azure-active-directory-integration-with-flock"></a>Руководство по интеграции Azure Active Directory с приложением Flock
 
 В этом руководстве описано, как интегрировать Flock с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Flock обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73156362"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Flock, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Flock с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73156362"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Flock](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.flock.com/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.flock.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.flock.com/`.
 
@@ -120,11 +120,11 @@ ms.locfileid: "73156362"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-flock-single-sign-on"></a>Настройка единого входа для Flock
 
@@ -138,7 +138,7 @@ ms.locfileid: "73156362"
 
     ![Конфигурация Flock](./media/flock-tutorial/configure2.png)
 
-    a. В текстовое поле **SAML 2.0 Endpoint(HTTP)** (Конечная точка SAML 2.0 (HTTP)) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовое поле **SAML 2.0 Endpoint(HTTP)** (Конечная точка SAML 2.0 (HTTP)) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. В текстовое поле **Издатель поставщика удостоверений** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 

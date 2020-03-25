@@ -13,30 +13,30 @@ ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
 ms.openlocfilehash: 359b90cc434dad04fc0296c54fcc762f3a75062d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74107658"
 ---
-# <a name="import-soap-api"></a>Импорт SOAP API
+# <a name="import-soap-api"></a>импорт SOAP API;
 
 В этой статье показано, как импортировать стандартное XML-представление SOAP API. Также здесь показано, как проверить API службы управления API.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * импорт SOAP API;
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
+Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="create-api"> </a>Импорт и публикация API серверной части
+## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
 1. Выберите **Интерфейсы API** в разделе **УПРАВЛЕНИЕ API**.
 2. В списке **Add a new API** (Добавление нового API) выберите пункт **WSDL**.
@@ -77,7 +77,7 @@ ms.locfileid: "74107658"
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Преобразование и защита опубликованного API](transform-api.md)

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: notification-hubs
 author: spelluru
 ms.service: notification-hubs
@@ -9,10 +9,10 @@ ms.date: 08/01/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 45bdd569741dc13181bcaf9e8587a02b3d02c621
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68728825"
 ---
 1. Войдите в [консоль Firebase](https://firebase.google.com/console/). Создайте проект Firebase, если его еще нет.
@@ -21,14 +21,14 @@ ms.locfileid: "68728825"
     ![Добавление Firebase в приложение Android](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-add-firebase-to-android-app.png)
 
 3. Выполните следующие действия на странице **Add Firebase to your Android app** (Добавление Firebase в приложение Android): 
-    1. В поле **Android package name** (Имя пакета Android) введите имя пакета. Например, `tutorials.tutoria1.xamarinfcmapp`. 
+    1. В поле **Android package name** (Имя пакета Android) введите имя пакета. Например: `tutorials.tutoria1.xamarinfcmapp`. 
 
         ![Указание имени пакета.](./media/notification-hubs-enable-firebase-cloud-messaging/specify-package-name-fcm-settings.png)
     2. Выберите **Регистрация приложения**.  
     1. Выберите **Download google-services.json** (Скачать Download google-services.json). Затем сохраните файл в папку проекта и щелкните **Далее**. Если вы еще не создали проект Visual Studio, этот шаг можно выполнить после создания проекта. 
 
         ![Загрузка файла google-services.json.](./media/notification-hubs-enable-firebase-cloud-messaging/download-google-service-button.png)
-    6. Щелкните **Далее**. 
+    6. Выберите **Далее**. 
     7. Выберите **Пропустить этот шаг**. 
 
         ![Пропуск последнего шага.](./media/notification-hubs-enable-firebase-cloud-messaging/skip-this-step.png)
