@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с IBM Kenexa Survey Enterprise | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с IBM Kenexa Survey Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в IBM Kenexa Survey Enterprise.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/08/2019
 ms.author: jeedes
 ms.openlocfilehash: c649b966b3e210f6b026b06a9654761e0f97aea1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099055"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ibm-kenexa-survey-enterprise"></a>Руководство по Интеграция Azure Active Directory с IBM Kenexa Survey Enterprise
+# <a name="tutorial-azure-active-directory-integration-with-ibm-kenexa-survey-enterprise"></a>Руководство по интеграции Azure Active Directory с IBM Kenexa Survey Enterprise
 
 В этом руководстве описано, как интегрировать IBM Kenexa Survey Enterprise с Azure Active Directory (Azure AD).
 Интеграция IBM Kenexa Survey Enterprise с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67099055"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с IBM Kenexa Survey Enterprise, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка IBM Kenexa Survey Enterprise с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "67099055"
 
     ![Сведения о домене и URL-адресах IBM Kenexa Survey Enterprise](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://surveys.kenexa.com/<companycode>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://surveys.kenexa.com/<companycode>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://surveys.kenexa.com/<companycode>/tools/sso.asp`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://surveys.kenexa.com/<companycode>/tools/sso.asp`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов IBM Kenexa Survey Enterprise](https://www.ibm.com/support/home/?lnk=fcw). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -126,7 +126,7 @@ ms.locfileid: "67099055"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -205,5 +205,5 @@ ms.locfileid: "67099055"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

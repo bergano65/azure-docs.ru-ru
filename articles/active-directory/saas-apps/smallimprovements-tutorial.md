@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со Small Improvements | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory со Small Improvements | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Small Improvements.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: d2d0bbc7a6e1c680434041d1b9d55e39a96b6f44
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090361"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-small-improvements"></a>Руководство. Интеграция Azure Active Directory со Small Improvements
+# <a name="tutorial-azure-active-directory-integration-with-small-improvements"></a>Учебник. Интеграция Azure Active Directory со Small Improvements
 
 В этом руководстве описано, как интегрировать Small Improvements с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Small Improvements обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67090361"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD со Small Improvements, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Small Improvements с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67090361"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Small Improvements](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.small-improvements.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.small-improvements.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.small-improvements.com`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67090361"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -142,7 +142,7 @@ ms.locfileid: "67090361"
 
     ![Настройка единого входа](./media/smallimprovements-tutorial/tutorial_smallimprovements_08.png)  
 
-    a. В текстовое поле **HTTP Endpoint** (Конечная точка HTTP) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовое поле **HTTP Endpoint** (Конечная точка HTTP) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. Откройте загруженный сертификат в блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат X.509** . 
 
@@ -150,7 +150,7 @@ ms.locfileid: "67090361"
 
     d. Введите значение имени единого входа в текстовом поле **SAML Prompt** (Приглашение SAML).  
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -225,7 +225,7 @@ ms.locfileid: "67090361"
 
     ![Создание тестового пользователя Azure AD](./media/smallimprovements-tutorial/tutorial_smallimprovements_12.png)
 
-    a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -233,7 +233,7 @@ ms.locfileid: "67090361"
 
     d. Кроме того, вы можете ввести персональное сообщение в поле **Отправить уведомление по электронной почте** . Если уведомление отправлять не нужно, снимите этот флажок.
 
-    д. Щелкните **Создать пользователей**.
+    д) Щелкните **Создать пользователей**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -247,4 +247,4 @@ ms.locfileid: "67090361"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -6,13 +6,13 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
 ms.openlocfilehash: 3b614fcb6692f35884af2fc4e19210267ab8ab04
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77593280"
 ---
-# <a name="tutorial-run-applications-in-azure-kubernetes-service-aks"></a>Руководство по Запуск приложений в Службе Azure Kubernetes (AKS)
+# <a name="tutorial-run-applications-in-azure-kubernetes-service-aks"></a>Руководство. Запуск приложения в службе Azure Kubernetes
 
 Kubernetes предоставляет распределенную платформу для контейнерных приложений. Вы создаете и развертываете собственные приложения и службы в кластере Kubernetes, а также предоставляете кластеру возможность управлять доступностью и подключением. В этом руководстве (часть 4 из 7) выполняется развертывание примера приложения в кластер Kubernetes. Вы узнаете, как выполнять следующие задачи:
 

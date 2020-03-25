@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 1ec668fac087773001ca401eefb5ca8bc10ea2b8
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: ba5ecc29edbcd69324500e87add846e4395ce0a3
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78367114"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80067568"
 ---
 # <a name="prepare-azure-for-on-premises-disaster-recovery-to-azure"></a>Подготовка Azure к локальному аварийному восстановлению в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "78367114"
 > [!NOTE]
 > В учебниках описан самый простой способ развертывания для определенного сценария. В них везде, где возможно, используются значения по умолчанию, и описаны не все возможные параметры и пути. Подробные инструкции см. в разделе с инструкциями в материалах по Site Recovery.
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
 - Ознакомьтесь с архитектурой для аварийного восстановления [VMware](vmware-azure-architecture.md), [Hyper-V](hyper-v-azure-architecture.md) и [физического сервера](physical-azure-architecture.md).
 - Ознакомьтесь с распространенными вопросами о [VMware](vmware-azure-common-questions.md) и [Hyper-V](hyper-v-azure-common-questions.md).
@@ -79,7 +79,7 @@ ms.locfileid: "78367114"
 7. В поле **Расположение** выберите регион, в котором было создано хранилище Служб восстановления. В нашем учебнике это **Западная Европа**. Сеть должна располагаться в том же регионе, что и хранилище.
 8. В поле **Диапазон адресов** введите диапазон для сети. Мы используем сеть **10.1.0.0/24**, а не подсеть.
 9. Мы сохраняем значения по умолчанию: базовые средства защиты от атак DDoS и отсутствие конечной точки службы или брандмауэра в сети.
-9. Выберите **Создать**.
+9. Нажмите кнопку **Создать**.
 
    ![Создание виртуальной сети](media/tutorial-prepare-azure/create-network.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "78367114"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Для аварийного восстановления VMware [подготовьте локальную инфраструктуру VMware](tutorial-prepare-on-premises-vmware.md).
 - Для аварийного восстановления Hyper-V [подготовьте локальные серверы Hyper-V](hyper-v-prepare-on-premises-tutorial.md).

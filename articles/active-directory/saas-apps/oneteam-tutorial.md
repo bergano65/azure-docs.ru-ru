@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Oneteam | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Oneteam.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: 195fa26a38d89d9ef738e6060ff7dab602d5c234
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67095912"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство по Интеграция Azure Active Directory с Oneteam
+# <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство. Интеграция Azure Active Directory с Oneteam
 
 В этом руководстве описано, как интегрировать Oneteam с Azure Active Directory (Azure AD).
 Интеграция Oneteam с Azure AD обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67095912"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Oneteam, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Oneteam с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "67095912"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Oneteam](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67095912"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -208,5 +208,5 @@ ms.locfileid: "67095912"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

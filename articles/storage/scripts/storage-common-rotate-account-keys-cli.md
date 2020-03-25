@@ -2,25 +2,19 @@
 title: Пример скрипта Azure CLI для смены ключей доступа учетных записей хранения | Документы Майкрософт
 description: Сведения о создании учетной записи хранения Azure и последующих операциях извлечения и смены ее ключей доступа.
 services: storage
-documentationcenter: na
 author: tamram
-manager: timlt
-editor: tysonn
-ms.assetid: ''
-ms.custom: mvc
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: azurecli
+ms.subservice: blobs
+ms.devlang: cli
 ms.topic: sample
 ms.date: 06/22/2017
 ms.author: tamram
-ms.openlocfilehash: ac58886225221677aa003833167ff58cd578255d
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: aa7cba00d865bb7b2c1e0fd1f0059fb35ffff690
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55693927"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80060832"
 ---
 # <a name="create-a-storage-account-and-rotate-its-account-access-keys"></a>Создание учетной записи хранения и смена ее ключей доступа
 
@@ -34,7 +28,7 @@ ms.locfileid: "55693927"
 
 [!code-azurecli-interactive[main](../../../cli_scripts/storage/rotate-storage-account-keys/rotate-storage-account-keys.sh "Rotate storage account keys")]
 
-## <a name="clean-up-deployment"></a>Очистка развертывания 
+## <a name="clean-up-deployment"></a>Очистка развертывания
 
 Выполните команду ниже, чтобы удалить группу ресурсов, учетную запись хранения и все связанные ресурсы.
 
@@ -46,14 +40,14 @@ az group delete --name myResourceGroup
 
 Этот скрипт использует следующие команды для создания учетной записи хранения и извлечения и смены ее ключей доступа. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account) | Создает учетную запись хранения Azure в указанной группе ресурсов. |
 | [az storage account keys list](/cli/azure/storage/account/keys) | Отображает ключи доступа для указанной учетной записи хранения. |
 | [az storage account keys renew](/cli/azure/storage/account/keys) | Повторно создает первичный или вторичный ключи доступа учетной записи хранения. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

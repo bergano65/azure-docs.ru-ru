@@ -10,19 +10,19 @@ ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
 ms.openlocfilehash: 78b9d81e20013db41693c24aa8c4a649c724c8b8
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78674414"
 ---
-# <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство по Проверка подключения к центру Интернета вещей с помощью имитированного устройства
+# <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство. Проверка подключения к центру Интернета вещей с помощью имитированного устройства
 
 В этом руководстве описано, как применять инструменты на портале Центра Интернета вещей Azure и команды Azure CLI для проверки возможности подключения устройств. В этом руководстве используется простая имитация устройства, выполняемая на обычном компьютере.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-В этом руководстве описано следующее:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 > * проверка аутентификации устройств;
 > * Проверка подключения с устройства в облако
@@ -31,7 +31,7 @@ ms.locfileid: "78674414"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Сценарии CLI, которые вы будете выполнять при работе с этим руководством, используют [расширение Интернета вещей Microsoft Azure для Azure CLI](https://github.com/Azure/azure-iot-cli-extension/blob/master/README.md). Чтобы установить это расширение, выполните следующую команду CLI:
 

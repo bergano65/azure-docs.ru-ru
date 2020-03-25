@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Wizergos Productivity Software | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Wizergos Productivity Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Wizergos Productivity Software.
 services: active-directory
 documentationCenter: na
@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: b6491013cb35f2473eff6c2019fe2a80dd9e9b08
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086987"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wizergos-productivity-software"></a>Руководство. Интеграция Azure Active Directory с Wizergos Productivity Software
@@ -34,11 +34,11 @@ ms.locfileid: "67086987"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Wizergos Productivity Software, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на Wizergos Productivity Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -115,7 +115,7 @@ ms.locfileid: "67086987"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -137,7 +137,7 @@ ms.locfileid: "67086987"
 
     ![Настройка единого входа на стороне приложения](./media/wizergosproductivitysoftware-tutorial/tutorial_wizergosproductivitysoftware_003.png)
     
-    a. Чтобы отправить сертификат, скачанный с Azure AD, нажмите кнопку **UPLOAD** (Отправить).
+    а. Чтобы отправить сертификат, скачанный с Azure AD, нажмите кнопку **UPLOAD** (Отправить).
     
     b. В текстовое поле **URL-адрес издателя** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
     
@@ -145,7 +145,7 @@ ms.locfileid: "67086987"
     
     d. В текстовое поле **Single Sign-Out URL** (URL-адрес единого выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
     
-    д. Нажмите кнопку **Сохранить** .
+    д) Нажмите кнопку **Сохранить** .
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -213,5 +213,5 @@ ms.locfileid: "67086987"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

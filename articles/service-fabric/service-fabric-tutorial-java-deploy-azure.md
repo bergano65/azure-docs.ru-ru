@@ -7,13 +7,13 @@ ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
 ms.openlocfilehash: b7754a289c06dff37aedcf8da76d35dfac4b183d
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78252802"
 ---
-# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по Развертывание приложения Java в кластере Service Fabric в Azure
+# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
 
 Это руководство является третьей частью цикла. В нем показано, как развернуть приложение Service Fabric в кластере в Azure.
 
@@ -32,7 +32,7 @@ ms.locfileid: "78252802"
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-java-elk.md)
 > * [Настройка процесса непрерывной интеграции и доставки](service-fabric-tutorial-java-jenkins.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с FM:Systems | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с FM:Systems | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и FM:Systems.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
-ms.openlocfilehash: e7f5e003a058cd94e6e4a4440c512217c387fda3
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 9f869d595aeb3ff2ab7c3fd0bab7b52c72ab904b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73158155"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80048607"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Руководство по Интеграция Azure Active Directory с FM:Systems
+# <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Руководство по интеграции Azure Active Directory с FM:Systems
 
 В этом учебнике описано, как интегрировать FM:Systems с Azure Active Directory (Azure AD).
 Интеграция FM:Systems с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73158155"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с FM:Systems, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка FM:Systems с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "73158155"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -184,7 +184,7 @@ ms.locfileid: "73158155"
 
 2. Последовательно выберите **System Administration \> Manage Security \> Users \> User list** (Системное администрирование > Управление безопасностью > Пользователи > Список пользователей).
    
-    ![Системное администрирование](./media/fm-systems-tutorial/ic795905.png "Системное администрирование")
+    ![Системное администрирование](./media/fm-systems-tutorial/ic795905.png "Администрирование системы")
 
 3. Нажмите **Создать нового пользователя**.
    
@@ -194,7 +194,7 @@ ms.locfileid: "73158155"
    
     ![Создание пользователя](./media/fm-systems-tutorial/ic795907.png "Создать пользователя")
    
-    a. В текстовых полях **Имя пользователя**, **Пароль**, **Подтверждение пароля**, **Адрес электронной почты** и **Идентификатор сотрудника** введите соответствующие данные для действующей учетной записи Azure Active Directory, которую хотите подготовить.
+    а. В текстовых полях **Имя пользователя**, **Пароль**, **Подтверждение пароля**, **Адрес электронной почты** и **Идентификатор сотрудника** введите соответствующие данные для действующей учетной записи Azure Active Directory, которую хотите подготовить.
    
     b. Щелкните **Далее**.
 

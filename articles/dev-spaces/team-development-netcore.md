@@ -6,10 +6,10 @@ ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для командной разработки в приложении .NET Core в службе Azure Kubernetes.
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 ms.openlocfilehash: 69434c6168bfadbf3291c6efe85fb2f1934c8d11
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78251963"
 ---
 # <a name="team-development-using-net-core-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio Code
@@ -98,7 +98,7 @@ azds space select --name scott
 Давайте посмотрим на это в действии.
 
 ### <a name="make-a-code-change"></a>Измените код
-В окне VS Code перейдите к `mywebapi` и в `Controllers/ValuesController.cs` измените код на метод `string Get(int id)`, например так:
+В окне VS Code перейдите к `mywebapi` и в `string Get(int id)` измените код на метод `Controllers/ValuesController.cs`, например так:
 
 ```csharp
 [HttpGet("{id}")]

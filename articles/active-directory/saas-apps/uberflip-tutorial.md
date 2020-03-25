@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Uberflip | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Uberflip | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Uberflip.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 6710344e73e3c0ea6f9b3491209689871cc14a4f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: d20c05e6ec5a413b81ede9cb4906de2595967115
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160953"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80048478"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Руководство по Интеграция Azure Active Directory с Uberflip
+# <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Руководство. Интеграция Azure Active Directory с Uberflip
 
 В этом руководстве описано, как интегрировать Uberflip с Azure Active Directory (Azure AD).
 
@@ -34,11 +34,11 @@ ms.locfileid: "73160953"
 
 Дополнительные сведения об интеграции приложения SaaS с Azure AD см. в статье [о доступе к приложениям и едином входе с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Uberflip, вам потребуется:
 
-* подписка Azure AD Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* подписка Azure AD; Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Подписка Uberflip с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -54,7 +54,7 @@ Uberflip поддерживает следующие функции:
 
 Чтобы настроить интеграцию Uberflip с Azure AD, необходимо добавить Uberflip из Azure Marketplace в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. В области слева выберите **Azure Active Directory**.
 
    ![Пункт Azure Active Directory](common/select-azuread.png)

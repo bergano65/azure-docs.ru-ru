@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dacoulte
 ms.openlocfilehash: 830572388fe0ef5453cfb36a7f549b82bbcdfb1c
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "79382128"
 ---
-|Имя |Описание |Действие |Версия |GitHub |
+|Имя |Description |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Допустимые расположения](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe56962a6-4747-49cd-b67b-bf8b01975c4c) |Эта политика позволяет ограничить расположения, которые ваша организация может указать при развертывании ресурсов. Используется для соблюдения географических требований. Исключает группы ресурсов, каталоги Microsoft.AzureActiveDirectory/b2cDirectories и ресурсы, в которых используется "глобальный" регион. |deny |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/AllowedLocations_Deny.json)
 |[Разрешенные расположения для групп ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe765b5de-1225-4ba3-bd56-1ac6695af988) |Эта политика позволяет ограничить расположения, которые ваша организация может указать при создании групп ресурсов. Используется для соблюдения географических требований. |deny |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/ResourceGroupAllowedLocations_Deny.json)

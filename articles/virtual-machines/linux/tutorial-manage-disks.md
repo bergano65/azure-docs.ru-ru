@@ -16,12 +16,12 @@ ms.date: 11/14/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.subservice: disks
-ms.openlocfilehash: dc987fa1a3476b81b198726350d56333b53c795f
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: 78b47075ba0c717ffd8e813f6cf1ebb86031a7e3
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385007"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80060213"
 ---
 # <a name="tutorial---manage-azure-disks-with-the-azure-cli"></a>Руководство по управлению дисками Azure с помощью Azure CLI.
 
@@ -117,7 +117,7 @@ az vm disk attach \
 
 Создайте SSH-подключение к виртуальной машине. Замените IP-адреса в примере общедоступным IP-адресом виртуальной машины.
 
-```azurecli-interactive
+```console
 ssh 10.101.10.10
 ```
 
@@ -256,7 +256,7 @@ az vm disk attach \
    --name $datadisk
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы ознакомились с дисками виртуальных машин, а именно с:
 

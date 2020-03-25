@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Ziflow | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением Ziflow | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Ziflow.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: d9745bdb1cb6de86a96946564865958433d49732
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086197"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство по Интеграция Azure Active Directory с Ziflow
+# <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство. Интеграция Azure Active Directory с Ziflow
 
 В этом руководстве описано, как интегрировать Ziflow с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Ziflow обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67086197"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Ziflow, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Ziflow с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67086197"
 
     ![Сведения о домене и URL-адресах единого входа приложения Ziflow](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://ziflow-production.auth0.com/login/callback?connection=<UniqueID>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://ziflow-production.auth0.com/login/callback?connection=<UniqueID>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<UniqueID>`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67086197"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -142,7 +142,7 @@ ms.locfileid: "67086197"
 
     ![Одна конфигурация Ziflow](./media/ziflow-tutorial/tutorial_ziflow_page.png)
 
-    a. Выберите в качестве **типа** значение **SAML2.0**.
+    а. Выберите в качестве **типа** значение **SAML2.0**.
 
     b. В текстовое поле **Sign In URL** (URL-адрес входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -150,7 +150,7 @@ ms.locfileid: "67086197"
 
     d. В текстовое поле **Sign Out URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    д. В разделе **Configuration Settings for your Identifier Provider** (Параметры конфигурации для поставщика удостоверений) скопируйте выделенное значение уникального идентификатора и добавьте к нему идентификатор и URL-адрес для входа из раздела **Базовая конфигурация SAML** на портале Azure.
+    д) В разделе **Configuration Settings for your Identifier Provider** (Параметры конфигурации для поставщика удостоверений) скопируйте выделенное значение уникального идентификатора и добавьте к нему идентификатор и URL-адрес для входа из раздела **Базовая конфигурация SAML** на портале Azure.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -222,7 +222,7 @@ ms.locfileid: "67086197"
 
     ![Настройка Ziflow: добавление пользователей](./media/ziflow-tutorial/tutorial_ziflow_adduser.png)
 
-    a. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например brittasimon@contoso.com.
+    а. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
@@ -230,7 +230,7 @@ ms.locfileid: "67086197"
 
     d. Укажите свою роль Ziflow.
 
-    д. Нажмите кнопку **Add 1 user** (Добавить 1 пользователя).
+    д) Нажмите кнопку **Add 1 user** (Добавить 1 пользователя).
 
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
@@ -247,5 +247,5 @@ ms.locfileid: "67086197"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание федерации среды одного AD с Azure | Документация Майкрософт
+title: Учебник. Федерация среды одного леса AD с Azure | Документы Майкрософт
 description: Демонстрируется настройка гибридной среды идентификации с помощью федерации.
 services: active-directory
 documentationcenter: ''
@@ -15,22 +15,22 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a51175d192a5afb1f84f8d0ed2de9796f198f82d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58102406"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "60296744"
 ---
-# <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство. Создание федерации среды одного леса AD в облаке с использованием PHS
+# <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Учебник. Федерация среды одного леса AD с облаком
 
 ![Создание](media/tutorial-federation/diagram.png)
 
 В этом руководстве последовательно рассматривается создание гибридной среды идентификации с помощью синхронизации.  Затем эту среду можно использовать для тестирования или дальнейшего знакомства с принципами работы гибридной идентификации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Для работы с этим учебником требуется следующее:
 - Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
--  [Подписка Azure](https://azure.microsoft.com/free)
+- [Подписка Azure](https://azure.microsoft.com/free)
 - - [Внешний сетевой адаптер](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
 - Копия Windows Server 2016.
 - [Личный домен](../../active-directory/fundamentals/add-custom-domain.md), который можно проверить.
@@ -48,7 +48,7 @@ ms.locfileid: "58102406"
 >[!NOTE]
 >Если вы никогда не запускали скрипт в PowerShell на компьютере узла, необходимо выполнить команду `Set-ExecutionPolicy remotesigned` и ответить "да" в PowerShell перед запуском скриптов.
 
-Выполните следующее:
+Выполните следующие действия.
 
 1. Откройте интегрированную среду сценариев PowerShell от имени администратора.
 2. Выполните следующий сценарий.
@@ -88,12 +88,12 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
 7. Установите флажок "Я принимаю условия лицензии" и нажмите кнопку **Далее**.
-8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная).
-9. Щелкните **Далее**
+8. Выберите вариант **Пользовательская: установить только Windows (расширенная)**
+9. Нажмите кнопку **Далее**
 10. Когда установка завершится, перезапустите виртуальную машину, выполните вход и запустите обновление Windows, чтобы обеспечить актуальность виртуальной машины.  Установите последние обновления.
 
 ## <a name="install-active-directory-pre-requisites"></a>Установка необходимых компонентов для Active Directory
-Создав виртуальную машину, необходимо выполнить ряд действий перед установкой Active Directory.  В частности, нужно переименовать виртуальную машину, задать статический IP-адрес и сведения DNS, а также установить средства удаленного администрирования сервера.   Выполните следующее:
+Создав виртуальную машину, необходимо выполнить ряд действий перед установкой Active Directory.  В частности, нужно переименовать виртуальную машину, задать статический IP-адрес и сведения DNS, а также установить средства удаленного администрирования сервера.   Выполните следующие действия.
 
 1. Откройте интегрированную среду сценариев PowerShell от имени администратора.
 2. Выполните команду `Set-ExecutionPolicy remotesigned` и ответьте "да для всех" [A].  Нажмите клавишу ВВОД.
@@ -130,7 +130,7 @@ Restart-Computer
 ```
 
 ## <a name="create-a-windows-server-ad-environment"></a>Создание среды AD для Windows Server
-Создав виртуальную машину, переименовав ее и назначив ей статический IP-адрес, мы можем установить и настроить доменные службы Active Directory.  Выполните следующее:
+Создав виртуальную машину, переименовав ее и назначив ей статический IP-адрес, мы можем установить и настроить доменные службы Active Directory.  Выполните следующие действия.
 
 1. Откройте интегрированную среду сценариев PowerShell от имени администратора.
 2. Выполните следующий сценарий.
@@ -160,7 +160,7 @@ Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath $DatabasePath -Doma
 ```
 
 ## <a name="create-a-windows-server-ad-user"></a>Создание пользователя AD для Windows Server
-Теперь, когда среда Active Directory создана, нам требуется тестовая учетная запись.  Она будет создана в локальной среде AD, а затем синхронизирована с Azure AD.  Выполните следующее:
+Теперь, когда среда Active Directory создана, нам требуется тестовая учетная запись.  Она будет создана в локальной среде AD, а затем синхронизирована с Azure AD.  Выполните следующие действия.
 
 1. Откройте интегрированную среду сценариев PowerShell от имени администратора.
 2. Выполните следующий сценарий.
@@ -184,7 +184,7 @@ Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogo
 ```
 
 ## <a name="create-a-certificate-for-ad-fs"></a>Создание сертификата для AD FS
-Теперь мы создадим SSL-сертификат, который будет использоваться службами AD FS.  Это будет самозаверяющий сертификат только для тестирования.  Корпорация Майкрософт не рекомендует использовать самозаверяющий сертификат в рабочей среде. Выполните следующее:
+Теперь мы создадим SSL-сертификат, который будет использоваться службами AD FS.  Это будет самозаверяющий сертификат только для тестирования.  Корпорация Майкрософт не рекомендует использовать самозаверяющий сертификат в рабочей среде. Выполните следующие действия.
 
 1. Откройте интегрированную среду сценариев PowerShell от имени администратора.
 2. Выполните следующий сценарий.
@@ -198,7 +198,7 @@ $Location = "cert:\LocalMachine\My"
 New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 ```
 
-## <a name="create-an-azure-ad-tenant"></a>Создание клиента Azure AD
+## <a name="create-an-azure-ad-tenant"></a>Создание клиента Azure AD
 Теперь нужно создать клиент Azure AD, чтобы синхронизировать пользователей с облаком.  Чтобы создать клиент Azure AD, выполните указанные ниже действия.
 
 1. Перейдите на [портал Azure](https://portal.azure.com) и выполните вход с учетной записью, имеющей подписку Azure.
@@ -221,7 +221,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 5. Смените пароль глобального администратора и запомните новый пароль.
 
 ## <a name="add-the-custom-domain-name-to-your-directory"></a>Добавьте имя личного домена в каталог.
-Теперь, когда у нас есть клиент и глобальный администратор, необходимо добавить личный домен, чтобы платформа Azure могла проверить его.  Выполните следующее:
+Теперь, когда у нас есть клиент и глобальный администратор, необходимо добавить личный домен, чтобы платформа Azure могла проверить его.  Выполните следующие действия.
 
 1. Вернувшись на [портал Azure](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview), закройте колонку **Все пользователи**.
 2. В левой части экрана щелкните **Имена пользовательских доменов**.
@@ -234,7 +234,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 ![Федерация](media/tutorial-federation/custom3.png)</br>
 
 ## <a name="download-and-install-azure-ad-connect"></a>Скачивание и установка Azure AD Connect
-Теперь пора скачать и установить Azure AD Connect.  После скачивания мы произведем экспресс-установку.  Выполните следующее:
+Теперь пора скачать и установить Azure AD Connect.  После скачивания мы произведем экспресс-установку.  Выполните следующие действия.
 
 1. Скачайте [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 2. Перейдите к файлу **AzureADConnect.msi**и дважды щелкните его.
@@ -287,7 +287,7 @@ New-SelfSignedCertificate -DnsName $DNSname -CertStoreLocation $Location
 
 Вы успешно настроили среду гибридной идентификации, которую можно использовать для тестирования и ознакомления с возможностями Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
 - [Настраиваемые параметры](how-to-connect-install-custom.md)

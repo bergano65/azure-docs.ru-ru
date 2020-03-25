@@ -5,10 +5,10 @@ ms.topic: sample
 ms.date: 07/03/2018
 ms.custom: mvc
 ms.openlocfilehash: 5ee80283ed39789eabb702a48aa97f678a6409f9
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75922711"
 ---
 # <a name="create-an-azure-function-that-connects-to-an-azure-cosmos-db"></a>Создание функции Azure, которая подключается к Azure Cosmos DB
@@ -31,7 +31,7 @@ ms.locfileid: "75922711"
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-Этот сценарий использует следующие команды: Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+В этом сценарии используются следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
 | Get-Help | Примечания |
 |---|---|
