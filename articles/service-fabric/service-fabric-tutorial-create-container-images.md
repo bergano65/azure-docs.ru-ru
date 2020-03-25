@@ -7,13 +7,13 @@ ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
 ms.openlocfilehash: fe06da759a1ad42ef5cef888f98c440cdfb9569c
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78252791"
 ---
-# <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство по Создание образов контейнеров в кластере Service Fabric на платформе Linux
+# <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство. Создание образов контейнеров в кластере Service Fabric в Linux
 
 Это руководство представляет собой первую часть цикла руководств, посвященного использованию контейнеров в кластере Service Fabric на платформе Linux. В этом руководстве выполняется подготовка многоконтейнерного приложения к использованию в Service Fabric. В последующих руководствах созданные образы используются как часть приложения Service Fabric. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -31,7 +31,7 @@ ms.locfileid: "78252791"
 > * [создание и развертывание приложения Service Fabric с использованием контейнеров](service-fabric-tutorial-package-containers.md);
 > * [отработка отказа и масштабирование в Service Fabric](service-fabric-tutorial-containers-failover.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Настроенная среда разработки Linux для Service Fabric. Следуйте [этим](service-fabric-get-started-linux.md) инструкциям по настройке среды Linux.
 * Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).

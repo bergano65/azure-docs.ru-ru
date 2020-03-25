@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Voyance | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Voyance | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Voyance.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 3c286c004885cdc2cc83899bd06af19176c5581b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67087573"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-voyance"></a>Руководство по Интеграция Azure Active Directory с Voyance
+# <a name="tutorial-azure-active-directory-integration-with-voyance"></a>Руководство по интеграции Azure Active Directory с Voyance
 
 В этом руководстве описано, как интегрировать Voyance с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Voyance обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67087573"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Voyance, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Voyance с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "67087573"
 
     ![Сведения о домене и URL-адресах единого входа Voyance](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<companyname>.nyansa.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<companyname>.nyansa.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.nyansa.com/saml/create/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.nyansa.com/saml/create/`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67087573"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -158,7 +158,7 @@ ms.locfileid: "67087573"
 
     ![Настройка единого входа на стороне приложения. SAML v2](./media/voyance-tutorial/tutorial-voyance-005.png)
     
-    a. Щелкните **Включено**.
+    а. Щелкните **Включено**.
     
     b. В текстовое поле **Login URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -235,5 +235,5 @@ ms.locfileid: "67087573"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

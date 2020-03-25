@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Zscaler Private Access Administrator | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Zscaler Private Access Administrator | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Zscaler Private Access Administrator.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7f0bc04bb8e7358f5bdb2e4dfc3db198e24303f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67085647"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство по Интеграция Azure Active Directory с Zscaler Private Access Administrator
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство по интеграции Azure Active Directory с Zscaler Private Access Administrator
 
 В этом руководстве описано, как интегрировать Zscaler Private Access Administrator с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Zscaler Private Access Administrator обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67085647"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zscaler Private Access Administrator, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Zscaler Private Access Administrator с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "67085647"
 
     ![Сведения о домене и URL-адресах единого входа для Zscaler Private Access Administrator](common/idp-relay.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.private.zscaler.com/auth/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.private.zscaler.com/auth/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.private.zscaler.com/auth/sso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.private.zscaler.com/auth/sso`.
 
     c. Щелкните **Задать дополнительные URL-адреса**.
 
@@ -131,7 +131,7 @@ ms.locfileid: "67085647"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -153,7 +153,7 @@ ms.locfileid: "67085647"
  
     ![Выбор IdP в Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_idpselect.png)
 
-    a. Щелкните **Select File** (Выбрать файл), чтобы передать скачанный файл метаданных из Azure AD и указать его в поле **IdP Metadata File Upload** (Передача файла метаданных IdP).
+    а. Щелкните **Select File** (Выбрать файл), чтобы передать скачанный файл метаданных из Azure AD и указать его в поле **IdP Metadata File Upload** (Передача файла метаданных IdP).
 
     b. Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
 
@@ -163,7 +163,7 @@ ms.locfileid: "67085647"
 
     d. Выберите домен в поле **Domains** (Домены).
     
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -239,7 +239,7 @@ ms.locfileid: "67085647"
 
     ![Администратор Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_useradmin.png)
 
-    a. В текстовом поле **Username** (Имя пользователя) введите адрес электронной почты пользователя, например BrittaSimon@contoso.com.
+    а. В текстовом поле **Username** (Имя пользователя) введите адрес электронной почты пользователя, например BrittaSimon@contoso.com.
 
     b. В текстовом поле **Password** (Пароль) введите пароль.
 
@@ -247,9 +247,9 @@ ms.locfileid: "67085647"
 
     d. Для параметра **Role** (Роль) выберите значение **Zscaler Private Access Administrator**.
 
-    д. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например BrittaSimon@contoso.com.
+    д) В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например BrittaSimon@contoso.com.
 
-    Е. В текстовом поле **Phone** (Телефон) введите номер телефона.
+    е) В текстовом поле **Phone** (Телефон) введите номер телефона.
 
     ж. В текстовом поле **Timezone** (Часовой пояс) выберите часовой пояс.
 
@@ -267,5 +267,5 @@ ms.locfileid: "67085647"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

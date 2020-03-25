@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 01dbbcddf7df8e261e865fbb61c1fcfd5abbd5fc
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 12bde51222e1e648f97476d5dab039b4ad2adfe8
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278250"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80067057"
 ---
 # <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство. Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure CLI
 В масштабируемых наборах виртуальных машин на дисках хранится операционная система, приложения и данные. Для создания масштабируемого набора и управления им важно выбрать размер диска и конфигурацию в соответствии с ожидаемой рабочей нагрузкой. В этом руководстве объясняется, как создать диски виртуальной машины и управлять ими. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -146,7 +146,7 @@ az vmss list-instance-connection-info \
 
 Используйте собственный общедоступный IP-адрес и номер порта для подключения к первому экземпляру виртуальной машины, как показано в следующем примере:
 
-```azurecli-interactive
+```console
 ssh azureuser@52.226.67.166 -p 50001
 ```
 
@@ -198,7 +198,7 @@ sudo df -h
 
 Выходные данные следующего примера показывают, что файловые системы трех дисков правильно подключены к дискам данных */datadisks*:
 
-```bash
+```output
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda1        30G  1.3G   28G   5% /
 /dev/sdb1        50G   52M   47G   1% /mnt

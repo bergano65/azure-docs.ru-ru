@@ -15,13 +15,13 @@ ms.custom: mvc
 ms.date: 02/10/2020
 ms.author: spelluru
 ms.openlocfilehash: a1a3e62646fedd468a02eac7b1a48d0b2d00fd74
-ms.sourcegitcommit: 99ac4a0150898ce9d3c6905cbd8b3a5537dd097e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77591988"
 ---
-# <a name="tutorial-track-usage-of-a-lab-in-azure-lab-service"></a>Руководство по Отслеживание использования лаборатории в Службах лабораторий Azure
+# <a name="tutorial-track-usage-of-a-lab-in-azure-lab-service"></a>Руководство: отслеживание использования лаборатории в Службах лабораторий Azure
 В этом руководстве показано, как создатель или владелец лаборатории может отследить ее использование.
 
 Вот какие действия выполняются в этом руководстве:

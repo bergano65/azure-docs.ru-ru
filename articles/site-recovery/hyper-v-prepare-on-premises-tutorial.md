@@ -8,11 +8,11 @@ ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: b36e4688ebd6e929a56869a6bb191d98b2f1f432
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78385107"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79224031"
 ---
 # <a name="prepare-on-premises-hyper-v-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов Hyper-V для аварийного восстановления в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "78385107"
 > [!NOTE]
 > В учебниках описан самый простой способ развертывания для определенного сценария. В них везде, где возможно, используются значения по умолчанию, и описаны не все возможные параметры и пути. Подробные инструкции см. в разделе с инструкциями в материалах по Site Recovery.
 
-## <a name="before-you-start"></a>Прежде чем начать
+## <a name="before-you-start"></a>Перед началом работы
 
 Убедитесь, что среда Azure подготовлена, как описано в [первом учебнике этой серии](tutorial-prepare-azure.md).
 
@@ -91,7 +91,7 @@ ms.locfileid: "78385107"
 
 После отработки отказа доступ к виртуальным машинам Azure можно получить с помощью IP-адреса, который используется для доступа к реплицированным локальным виртуальным машинам, либо с помощью другого IP-адреса. [Подробнее ](concepts-on-premises-to-azure-networking.md) о настройке назначения IP-адресов для отработки отказа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure](tutorial-hyper-v-to-azure.md)

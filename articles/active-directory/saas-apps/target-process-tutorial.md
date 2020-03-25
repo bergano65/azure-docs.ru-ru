@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с TargetProcess | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TargetProcess | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TargetProcess.
 services: active-directory
 documentationCenter: na
@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 60cd043c34ba2aee365c59feb38cc9dd02d45746
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67089043"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
@@ -34,11 +34,11 @@ ms.locfileid: "67089043"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением TargetProcess, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка TargetProcess с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67089043"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TargetProcess](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`.
 
@@ -121,7 +121,7 @@ ms.locfileid: "67089043"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -145,7 +145,7 @@ ms.locfileid: "67089043"
 
 5. Перейдите на вкладку **Settings** (Параметры).
 
-    ![Параметры](./media/target-process-tutorial/tutorial_target_process_06.png)
+    ![Настройки](./media/target-process-tutorial/tutorial_target_process_06.png)
 
 6. Щелкните вкладку **Single Sign-on** (Единый вход).
 
@@ -155,7 +155,7 @@ ms.locfileid: "67089043"
 
     ![Настройка единого входа](./media/target-process-tutorial/tutorial_target_process_08.png)
 
-    a. Щелкните **Enable Single Sign-on**(Включить единый вход).
+    а. Щелкните **Enable Single Sign-on**(Включить единый вход).
 
     b. В текстовом поле **Sign-on URL** (URL-адрес единого входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -163,7 +163,7 @@ ms.locfileid: "67089043"
 
     d. Установите флажок **Enable JIT Provisioning**(Включить JIT-подготовку).
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -235,4 +235,4 @@ ms.locfileid: "67089043"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

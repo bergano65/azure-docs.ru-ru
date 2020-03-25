@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Workspot Control | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Workspot Control | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Workspot Control.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: jeedes
 ms.openlocfilehash: 086ec95531b01477be56d4b1a19d189f167a020f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086679"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workspot-control"></a>Руководство по Интеграция Azure Active Directory с Workspot Control
+# <a name="tutorial-azure-active-directory-integration-with-workspot-control"></a>Руководство по интеграции Azure Active Directory с Workspot Control
 
 В этом руководстве описано, как интегрировать Workspot Control с Azure Active Directory (Azure AD). Интеграция Workspot Control с Azure AD обеспечивает следующие возможности.
 
@@ -32,11 +32,11 @@ ms.locfileid: "67086679"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD со Workspot Control, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 
 * подписка Workspot Control с поддержкой единого входа.
 
@@ -90,7 +90,7 @@ ms.locfileid: "67086679"
 
 Чтобы настроить единый вход Azure Active Directory в Workspot Control, сделайте следующее.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Workspot Control** выберите **Единый вход**.
+1. На **портале Azure** на странице интеграции с приложением [Workspot Control](https://portal.azure.com/) выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -142,7 +142,7 @@ ms.locfileid: "67086679"
 
 2. На панели инструментов в верхней части страницы щелкните **Setup** (Настройка), затем — **SAML**.
 
-    ![Параметры настройки](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_setup.png)
+    ![Параметры установки](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_setup.png)
 
 3. В окне **Security Assertion Markup Language Configuration** (Конфигурация SAML) выполните следующие действия.
  
@@ -248,4 +248,4 @@ ms.locfileid: "67086679"
 
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

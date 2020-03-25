@@ -9,11 +9,11 @@ ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 72d25582d15e745b0bdefcde5f68af94eab49293
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277284"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222611"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-unity"></a>Создание и поиск привязок с помощью Пространственных привязок Azure в Unity
 
@@ -32,7 +32,7 @@ ms.locfileid: "74277284"
 - передавать их в облако;
 - обнаруживать и удалять пространственные привязки в облаке.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с руководством вам потребуется следующее:
 

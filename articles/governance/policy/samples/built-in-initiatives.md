@@ -4,11 +4,11 @@ description: 'Список инициатив встроенных полити�
 ms.date: 01/31/2020
 ms.topic: sample
 ms.openlocfilehash: f98a5d611e807875390102d67efd1b0f0f262628
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78387270"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223901"
 ---
 # <a name="azure-policy-built-in-initiative-definitions"></a>Определения встроенных инициатив в Политике Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "78387270"
 
 [!INCLUDE [azure-policy-samples-policyset-index](../../../../includes/azure-policy-samples-policyset-index.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со встроенными инициативами в [репозитории GitHub для Политики Azure](https://github.com/Azure/azure-policy).
 - Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).

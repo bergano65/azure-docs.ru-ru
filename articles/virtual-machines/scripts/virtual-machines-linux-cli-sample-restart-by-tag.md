@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/01/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 5545fc07bd7b30225bcaf01eee8f10a141cd8d57
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 47a6db8d554cd0e6b913e887a4dd3d7bdc438ed0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74040250"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80066457"
 ---
 # <a name="restart-vms"></a>Перезапуск виртуальных машин
 
@@ -33,13 +33,13 @@ ms.locfileid: "74040250"
 
 Первый пример перезапускает все виртуальные машины в группе ресурсов.
 
-```bash
+```azurecli
 az vm restart --ids $(az vm list --resource-group myResourceGroup --query "[].id" -o tsv)
 ```
 
 Второй возвращает виртуальные машины с тегами с помощью команды `az resource list`, применяет фильтр, оставляя только те ресурсы, которые являются виртуальными машинами, и перезапускает их.
 
-```bash
+```azurecli
 az vm restart --ids $(az resource list --tag "restart-tag" --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
 ```
 
@@ -77,7 +77,7 @@ az vm restart --ids $(az resource list --tag "restart-tag" --query "[?type=='Mic
 
 После выполнения примера сценария можно удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы, выполнив следующую команду:
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete -n myResourceGroup --no-wait --yes
 ```
 
@@ -85,7 +85,7 @@ az group delete -n myResourceGroup --no-wait --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set) | Создает виртуальные машины.  |
@@ -94,7 +94,7 @@ az group delete -n myResourceGroup --no-wait --yes
 | [az vm restart](https://docs.microsoft.com/cli/azure/vm) | Перезагружает виртуальные машины. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

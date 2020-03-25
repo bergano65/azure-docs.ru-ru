@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dacoulte
 ms.openlocfilehash: 6f1e9117f142048add01ed8980bd06c1506feaef
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "79382216"
 ---
-|Имя |Описание |Действие |Версия |GitHub |
+|Имя |Description |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Развернуть параметры диагностики для Key Vault в концентраторе событий](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fed7c8c13-51e7-49d1-8a43-8490431a0da2) |Развертывает параметры диагностики для Key Vault для потоковой передачи в региональный концентратор событий при создании или изменении любого ресурса Key Vault, где эти параметры диагностики отсутствуют. |deployIfNotExists |2.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_DiagnosticLog_Deploy.json)
 |[Журналы диагностики в Key Vault должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcf820ca0-f99e-4f3e-84fb-66e913812d21) |Аудит активации журналов диагностики. Это позволит воссоздать действия для расследования в случае инцидентов безопасности или компрометации сети. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_AuditDiagnosticLog_Audit.json)

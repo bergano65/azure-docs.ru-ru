@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Boxcryptor | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Boxcryptor | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boxcryptor.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1017eb02783e2d0d970804fc1a20fd2bdb525637
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158785"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство по Интеграция Azure Active Directory с Boxcryptor
+# <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство. Интеграция Azure Active Directory с Boxcryptor
 
 В этом руководстве описано, как интегрировать Boxcryptor с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Boxcryptor обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73158785"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Boxcryptor, вам потребуются:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Boxcryptor с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "73158785"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Boxcryptor](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.boxcryptor.com/app`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.boxcryptor.com/app`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите значение: `boxcryptor`
 
@@ -119,11 +119,11 @@ ms.locfileid: "73158785"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-boxcryptor-single-sign-on"></a>Настройка единого входа в Boxcryptor
 

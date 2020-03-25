@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с itslearning | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с itslearning | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении itslearning.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 9a4a95452c11993f57674bcbd16cf3ed5ea828e4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099552"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Руководство по Интеграция Azure Active Directory с itslearning
+# <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Учебник. Интеграция Azure Active Directory с itslearning
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением itslearning.
 Интеграция приложения itslearning с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67099552"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с itslearning, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка itslearning с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67099552"
 
     ![Сведения о домене и URL-адресах единого входа для itslearning](common/sp-identifier.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес:
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес:
     
     | |
     |--|
@@ -123,7 +123,7 @@ ms.locfileid: "67099552"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -199,4 +199,4 @@ ms.locfileid: "67099552"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

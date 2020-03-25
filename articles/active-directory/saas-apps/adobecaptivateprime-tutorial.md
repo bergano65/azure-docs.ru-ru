@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Adobe Captivate Prime | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Adobe Captivate Prime | Документы Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и Adobe Captivate Prime.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fdc93cb5d04630307026c2786fda117e16f60f4e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73153986"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-captivate-prime"></a>Руководство по Интеграция Azure Active Directory с Adobe Captivate Prime
+# <a name="tutorial-azure-active-directory-integration-with-adobe-captivate-prime"></a>Руководство по интеграции Azure Active Directory с Adobe Captivate Prime
 
 В этом руководстве описано, как интегрировать приложение Adobe Captivate Prime с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Adobe Captivate Prime обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73153986"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Adobe Captivate Prime, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа Adobe Captivate Prime.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73153986"
 
     ![Сведения о домене и URL-адресах единого входа приложения Adobe Captivate Prime](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://captivateprime.adobe.com`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://captivateprime.adobe.com`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://captivateprime.adobe.com/saml/SSO`
 
@@ -118,11 +118,11 @@ ms.locfileid: "73153986"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 7. Откройте вкладку **Свойства**, скопируйте **URL-адрес пользовательского доступа** и вставьте его в Блокнот.
 

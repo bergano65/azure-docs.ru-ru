@@ -5,10 +5,10 @@ keywords: jenkins, azure, devops, kubernetes, k8s, aks, blue green deployment, c
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.openlocfilehash: 9d6551f910bd99322f844b44130ebb03732df83c
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78251477"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
@@ -26,11 +26,11 @@ ms.locfileid: "78251477"
 > * Настройка кластера Kubernetes вручную
 > * Создание и запуск задания Jenkins
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 - [Учетная запись GitHub](https://github.com). Вам понадобится учетная запись GitHub, чтобы клонировать пример из репозитория.
-- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
+- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
 - [Chocolatey](https://chocolatey.org). Это диспетчер пакетов, используемый для установки kubectl.
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) Интерфейс командной строки, используемый для выполнения команд кластеров Kubernetes.
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Интерфейс командной строки, используемый для выполнения команд кластеров Kubernetes.
 - [jq](https://stedolan.github.io/jq/download/). Небольшой процессор командной строки JSON.
 
 ## <a name="clone-the-sample-app-from-github"></a>Клонирование примера приложения из GitHub
@@ -187,7 +187,7 @@ ms.locfileid: "78251477"
 
 ## <a name="prepare-the-jenkins-server"></a>Подготовка сервера Jenkins
 
-В этом разделе вы узнаете, как подготовить сервер Jenkins для выполнения сборки, удобной для тестирования. Тем не менее следует использовать [агент виртуальной машины Azure](https://plugins.jenkins.io/azure-vm-agents) или [агент контейнеров Azure](https://plugins.jenkins.io/azure-container-agents) для выполнения развертывания агента и запуска сборки. Дополнительные сведения см. в статье о [вопросах безопасности при сборке в главном узле](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) в документации по Jenkins.
+В этом разделе вы узнаете, как подготовить сервер Jenkins для выполнения сборки, удобной для тестирования. Тем не менее следует использовать [агент виртуальной машины Azure](https://plugins.jenkins.io/azure-vm-agents) или [агент контейнеров Azure](https://plugins.jenkins.io/azure-container-agents) для выполнения развертывания агента и запуска сборки. Дополнительные сведения см. в статье [Влияние безопасности построения на образец](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) о Jenkins.
 
 1. Разверните [Jenkins Master в Azure](https://aka.ms/jenkins-on-azure).
 
@@ -255,7 +255,7 @@ ms.locfileid: "78251477"
 
 ## <a name="run-the-job"></a>Запуск задания
 
-1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Это делается так. [выполнению проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
+1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Вот инструкции [выполнения проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
 
 1. Выполните задания Jenkins При выполнении задания в первый раз Jenkins развертывает приложение списка задач в синей среде, которая является неактивной по умолчанию. 
 

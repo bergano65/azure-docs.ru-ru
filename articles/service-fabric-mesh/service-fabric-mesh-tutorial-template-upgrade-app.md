@@ -7,10 +7,10 @@ ms.date: 01/11/2019
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: 42db17fa6474d3230bc523d0cf65b375cf01276e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75351731"
 ---
 # <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство. Обновление приложения Service Fabric, работающего в Сетке Service Fabric
@@ -44,7 +44,7 @@ ms.locfileid: "75351731"
 
 Одним из основных преимуществ развертывания приложений в Сетке Service Fabric является возможность легкого обновления конфигураций приложения.  Например, ресурсов ЦП или памяти для служб.
 
-В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение имеет две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с использованием 0,5 ресурсов ЦП.  Чтобы просмотреть ресурсы ЦП службы WebFrontEnd, используйте следующую команду:
+В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение содержит две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с использованием 0,5 ресурсов ЦП.  Чтобы просмотреть ресурсы ЦП службы WebFrontEnd, используйте следующую команду:
 
 ```azurecli
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp

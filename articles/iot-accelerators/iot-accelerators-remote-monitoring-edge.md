@@ -10,13 +10,13 @@ ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: a812155474b244682613b38b9b9379fa6cdcdcd8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "66117505"
 ---
-# <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство по Обнаружение аномалий на пограничных устройствах с помощью акселератора решения для удаленного мониторинга
+# <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство. Обнаружение аномалий на пограничных устройствах с помощью акселератора решения для удаленного мониторинга
 
 Изучив это руководство, вы настроите в решении для удаленного мониторинга реагирование на аномалии, обнаруженные на устройстве IoT Edge. Устройства IoT Edge позволяют обрабатывать данные телеметрии в пограничной зоне. Это дает возможность сократить объем данных телеметрии, отправляемых в решение, и ускорить реагирование на события на устройствах. Дополнительные сведения о преимуществах обработки данных на пограничных устройствах см. в статье [Что такое Azure IoT Edge](../iot-edge/about-iot-edge.md).
 
@@ -82,9 +82,9 @@ ms.locfileid: "66117505"
     | ------- | ----- |
     | Задание     | Теги  |
     | Имя задания | AddEdgeTag |
-    | Ключ     | IsOilPump |
+    | Клавиши     | IsOilPump |
     | Значение   | Да     |
-    | type    | текст  |
+    | Тип    | текст  |
 
     [![Добавление тега](./media/iot-accelerators-remote-monitoring-edge/addtag-inline.png)](./media/iot-accelerators-remote-monitoring-edge/addtag-expanded.png#lightbox)
 
@@ -96,11 +96,11 @@ ms.locfileid: "66117505"
 
     | Параметр | Значение |
     | ------- | ----- |
-    | ИМЯ    | OilPumps |
+    | Имя    | OilPumps |
     | Поле   | Tags.IsOilPump |
     | Оператор | = Equals |
     | Значение    | Да |
-    | type     | текст |
+    | Тип     | текст |
 
     [![Создание группы устройств](./media/iot-accelerators-remote-monitoring-edge/createdevicegroup-inline.png)](./media/iot-accelerators-remote-monitoring-edge/createdevicegroup-expanded.png#lightbox)
 
@@ -161,9 +161,9 @@ ms.locfileid: "66117505"
     | Параметр | Значение |
     | ------ | ----- |
     | Имя задания | EdgeDeviceJob |
-    | Подписка | Ваша подписка Azure. |
-    | Группа ресурсов | IoTEdgeDevices |
-    | Расположение | Восточная часть США |
+    | Subscription | Ваша подписка Azure. |
+    | группа ресурсов. | IoTEdgeDevices |
+    | Location | Восточная часть США |
     | Среда размещения | Edge |
     | Единицы потоковой передачи | 1 |
 
@@ -275,9 +275,9 @@ ms.locfileid: "66117505"
 
     | Параметр | Значение |
     | ------ | ----- |
-    | ИМЯ   | OilPumpDevices |
+    | Имя   | OilPumpDevices |
     | Тип пакета | Edge Manifest (Манифест Edge) |
-    | Package | oil-pump-device.json |
+    | Пакет | oil-pump-device.json |
     | Группа устройств | OilPumps |
     | Приоритет | 10 |
 
@@ -315,13 +315,13 @@ ms.locfileid: "66117505"
     | Параметр | Значение |
     | ------ | ----- |
     | Имя правила | Oil pump temperature (Температура станка-качалки) |
-    | ОПИСАНИЕ | Oil pump temperature exceeded 300 (Температура станка-качалки превысила значение 300) |
+    | Description | Oil pump temperature exceeded 300 (Температура станка-качалки превысила значение 300) |
     | Группа устройств | OilPumps |
     | Вычисление | Мгновенное |
     | Поле | Температура |
     | Оператор | > |
     | Значение | 300 |
-    | Уровень серьезности | Сведения |
+    | Степень серьезности | Сведения |
 
     [![Создание правила](./media/iot-accelerators-remote-monitoring-edge/newrule-inline.png)](./media/iot-accelerators-remote-monitoring-edge/newrule-expanded.png#lightbox)
 
@@ -329,7 +329,7 @@ ms.locfileid: "66117505"
 
 1. Перейдите на страницу **Панель мониторинга**. Если температура устройства **oil-pump** превысит значение 300, на панели **Оповещения** появится соответствующее предупреждение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как добавить и настроить устройство IoT Edge в акселераторе решения для удаленного мониторинга. Дополнительные сведения о работе с пакетами IoT Edge в решении для удаленного мониторинга см. в следующем руководстве:
 

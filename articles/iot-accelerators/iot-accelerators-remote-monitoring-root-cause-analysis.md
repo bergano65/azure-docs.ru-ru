@@ -9,13 +9,13 @@ ms.date: 11/20/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: c3cb940583677d813873c07fbfa679fdcc1dff59
-ms.sourcegitcommit: f27b045f7425d1d639cf0ff4bcf4752bf4d962d2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77565474"
 ---
-# <a name="tutorial-conduct-a-root-cause-analysis-on-an-alert"></a>Руководство по Анализ первопричин с помощью оповещений
+# <a name="tutorial-conduct-a-root-cause-analysis-on-an-alert"></a>Руководство. Анализ первопричин с помощью оповещений
 
 Из этого руководства вы узнаете, как использовать акселератор решения удаленного мониторинга для выявления первопричины. Вы увидите, что оповещение активируется на информационной панели решения для удаленного мониторинга, а затем используйте обозреватель Аналитики временных рядов Azure для выявления первопричины.
 
@@ -30,7 +30,7 @@ ms.locfileid: "77565474"
 > * проведете анализ первопричин;
 > * создадите новое правило с учетом результатов изучения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 

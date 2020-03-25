@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.openlocfilehash: 64c4e65ca7b69c7d61c706b48591ac19be3bfcf5
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72792528"
 ---
 # <a name="add-suggestions-or-autocomplete-to-your-azure-cognitive-search-application"></a>Добавление предложений или автозаполнение в приложениях Когнитивного поиска Azure
@@ -36,7 +36,7 @@ ms.locfileid: "72792528"
 > * В C# определите действия предложений и автозаполнения в HomeController.cs.
 > * В JavaScript воспользуетесь прямым вызовом интерфейсов REST API, который предоставляет те же возможности.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Служба "Когнитивный поиск Azure" не является обязательной для этого упражнения, так как решение использует службу песочницы с заранее подготовленным демонстрационным индексом NYCJobs. Если вы хотите выполнить этот пример в собственной службе поиска, воспользуйтесь инструкциями из статьи [о настройке индекса NYCJobs](#configure-app).
 
@@ -308,7 +308,7 @@ var autocompleteUri = "https://" + searchServiceName + ".search.windows.net/inde
 
 1. Нажмите клавишу F5 для запуска приложения. Пример веб-приложения откроется в браузере по умолчанию. У него такой же интерфейс, как и у версии для песочницы, но теперь индекс и данные размещаются в вашей службе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Этот пример демонстрирует основные шаги по созданию поля поиска, которое поддерживает автозавершения и предложения. Вы узнали, как можно создать приложение ASP.NET MVC и использовать REST API или пакет SDK .NET для Когнитивного поиска Azure, чтобы получать предложения.
 

@@ -11,10 +11,10 @@ ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
 ms.openlocfilehash: ed593cb3f53878ceb1d4913a9244369ff4600371
-ms.sourcegitcommit: 8f4d54218f9b3dccc2a701ffcacf608bbcd393a6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78397571"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Примеры кода Azure Active Directory B2C
@@ -23,7 +23,7 @@ ms.locfileid: "78397571"
 
 ## <a name="mobile-and-desktop-apps"></a>Мобильные и классические приложения
 
-| Образец | Описание |
+| Образец | Description |
 |--------| ----------- |
 | [ios-swift-native-msal](https://github.com/Azure-Samples/active-directory-b2c-ios-swift-native-msal) | Приложение iOS в Swift для аутентификации пользователей Azure AD B2C и вызова API с помощью OAuth 2.0. |
 | [android-native-msal](https://github.com/Azure-Samples/active-directory-b2c-android-native-msal) | Простое приложение Android для аутентификации пользователей с помощью Azure Active Directory B2C и MSAL и получения доступа к веб-API с помощью полученных маркеров. |
@@ -34,7 +34,7 @@ ms.locfileid: "78397571"
 
 ## <a name="web-apps-and-apis"></a>Веб-приложения и API
 
-| Образец | Описание |
+| Образец | Description |
 |--------| ----------- |
 | [dotnet-webapp-and-webapi](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi) | Веб-приложение .NET для вызова веб-API .NET (оба компонента защищены с помощью Azure AD B2C). |
 | [dotnetcore-webapp](https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapp) | Веб-приложение ASP.NET Core для входа пользователей с помощью Azure AD B2C, получения маркера доступа с помощью MSAL.NET и вызова API. |
@@ -44,6 +44,6 @@ ms.locfileid: "78397571"
 
 ## <a name="single-page-apps"></a>Одностраничные приложения
 
-| Образец | Описание |
+| Образец | Description |
 |--------| ----------- |
 | [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Одностраничное приложение (SPA) для вызова веб-API. Аутентификация осуществляется с помощью Azure AD B2C и MSAL.js. |

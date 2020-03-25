@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7288e5d8c01122bea7650274cdaf358c7fc24cd0
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: 940de5e100da934e0bc4efdfc6686f8040e10954
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78392393"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79457327"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -23,7 +23,7 @@ ms.locfileid: "78392393"
 - Поддержка восстанавливаемого удаления хранилища ключей
 - Поддержка восстанавливаемого удаления объектов хранилища ключей (например, ключей, секретов и сертификатов).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Azure CLI. Если в вашей среде этот инструмент не установлен, ознакомьтесь со статьей [Управление Key Vault с помощью интерфейса командной строки 2.0](key-vault-manage-with-cli2.md).
 
@@ -33,10 +33,10 @@ ms.locfileid: "78392393"
 
 Операции Key Vault контролируются отдельно, посредством разрешений управления доступом на основе ролей (RBAC). Это осуществляется следующим образом.
 
-| Операция | Описание | Разрешение пользователя |
+| Операция | Description | Разрешение пользователя |
 |:--|:--|:--|
 |Список|Выводит список удаленных хранилищ ключей.|Microsoft.KeyVault/deletedVaults/read|
-|Восстановить|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
+|Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
 |Purge|Окончательно удаляет удаленное хранилище ключей и все его содержимое.|Microsoft.KeyVault/locations/deletedVaults/purge/action|
 
 Дополнительные сведения о разрешениях и управлении доступом см. в разделе [Защита хранилища ключей](key-vault-secure-your-key-vault.md).
@@ -53,7 +53,7 @@ ms.locfileid: "78392393"
 Включите обратимое удаление для существующего хранилища ключей ContosoVault следующим образом. 
 
 ```azurecli
-az resource update --id $(az keyvault show --name ContosoVault -o tsv | awk '{print $1}') --set properties.enableSoftDelete=true
+az keyvault update -n ContosoVault --enable-soft-delete true
 ```
 
 ### <a name="new-key-vault"></a>Новое хранилище ключей
@@ -233,13 +233,13 @@ az keyvault purge --location westus --name ContosoVault
 
 Чтобы включить функции удаления с возможностью восстановления и защиты от очистки при создании хранилища, используйте команду [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create).
 
-```
+```azurecli
 az keyvault create --name ContosoVault --resource-group ContosoRG --location westus --enable-soft-delete true --enable-purge-protection true
 ```
 
 Чтобы включить защиту от очистки в существующем хранилище (в котором уже включена функция удаления с возможностью восстановления), используйте команду [az keyvault update](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-update).
 
-```
+```azurecli
 az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge-protection true
 ```
 

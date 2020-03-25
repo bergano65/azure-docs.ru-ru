@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dacoulte
 ms.openlocfilehash: 6391a70a8a7283d6218c6ec54609f7879b605ae5
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "79382001"
 ---
-|Имя |Описание |Действие |Версия |GitHub |
+|Имя |Description |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Приложение API должно быть доступно только по HTTPS](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb7ddfbdc-1260-477d-91fd-98bd9be789a6) |Использование HTTPS обеспечивает проверку подлинности сервера и служб, а также защищает передаваемые данные от перехвата на сетевом уровне. |Audit, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppServiceApiApp_AuditHTTP_Audit.json)
 |[Должна быть включена проверка подлинности для приложения API](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc4ebc54a-46e1-481a-bee2-d4411e95d828) |Проверка подлинности в Службе приложений Azure — это функция, позволяющая блокировать доступ к приложению API для анонимных HTTP-запросов и выполнять проверку подлинности для запросов с токеном. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppService_Authentication_ApiApp_Audit.json)

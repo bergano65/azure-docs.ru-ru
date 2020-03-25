@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dacoulte
 ms.openlocfilehash: d11107ca7c8d41c66f9336b5c1506f24777ceb4f
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "79382166"
 ---
-|Имя |Описание |Действие |Версия |GitHub |
+|Имя |Description |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Параметры расширенной защиты данных для управляемого экземпляра SQL должны содержать адрес электронной почты для получения оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3965c43d-b5f4-482e-b74a-d89ee0e0b3a8) |Проверка на то, что в поле "Кому отправлять оповещения" в параметрах сервера Расширенной защиты данных указан адрес электронной почты. На этот адрес приходят уведомления об обнаруженных подозрительных действиях на управляемых экземплярах SQL. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmails_Audit.json)
 |[Параметры Расширенной защиты данных для сервера SQL должны содержать адрес электронной почты для получения оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9677b740-f641-4f3c-b9c5-466005c85278) |Проверка на то, что в поле "Кому отправлять оповещения" в параметрах сервера Расширенной защиты данных указан адрес электронной почты. На этот адрес приходят уведомления об обнаруженных подозрительных действиях на серверах SQL. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurityEmails_Audit.json)

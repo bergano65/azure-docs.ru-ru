@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с RolePoint | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с RolePoint | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход Azure Active Directory в RolePoint.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 0b6fd17d2f8577532778733866260f43e9ac7685
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67092735"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по Интеграция Azure Active Directory с RolePoint
+# <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по интеграции Azure Active Directory с RolePoint
 
 В этом руководстве описано, как интегрировать RolePoint с Azure Active Directory (Azure AD).
 Такая интеграция обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67092735"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с RolePoint, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка RolePoint с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -192,7 +192,7 @@ ms.locfileid: "67092735"
 
 Теперь необходимо проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
 
-Щелкнув элемент "RolePoint" на Панели доступа, вы автоматически войдете в экземпляр RolePoint, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Доступ и использование приложений на портале Мои приложения](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув элемент "RolePoint" на Панели доступа, вы автоматически войдете в экземпляр RolePoint, для которого настроили единый вход. Дополнительные сведения о Панели доступа см. в статье [Access and use apps on the My Apps portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Доступ к приложениям и их использование на портале "Мои приложения").
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -200,4 +200,4 @@ ms.locfileid: "67092735"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

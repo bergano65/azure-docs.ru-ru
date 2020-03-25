@@ -10,10 +10,10 @@ ms.date: 09/05/2018
 ms.author: jopapa
 ms.reviewer: sngun
 ms.openlocfilehash: 4efaa90281ddcebf1b800e1016578e38c24be651
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "69614117"
 ---
 # <a name="create-a-mongodb-app-with-react-and-azure-cosmos-db"></a>Создание приложения MongoDB с помощью React и Azure Cosmos DB  
@@ -34,7 +34,7 @@ ms.locfileid: "69614117"
 
 Хотите создать такое же приложение с помощью Angular? См. [серию видеоруководств по Angular](tutorial-develop-mongodb-nodejs.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * [Node.js](https://www.nodejs.org)
 
 ### <a name="finished-project"></a>Готовый проект
@@ -92,7 +92,7 @@ ms.locfileid: "69614117"
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите имя созданного ресурса. 
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 

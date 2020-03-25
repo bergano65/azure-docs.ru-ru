@@ -15,17 +15,17 @@ ms.workload: na
 ms.date: 05/01/2019
 ms.author: juliako
 ms.openlocfilehash: d6720200da341ee466339edde6dded02dd4fddc6
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74970114"
 ---
-# <a name="cli-example-upload-a-local-file-to-a-container"></a>Пример использования CLI. Отправка локального файла в контейнер 
+# <a name="cli-example-upload-a-local-file-to-a-container"></a>Пример для CLI. Отправка локального файла в контейнер 
 
 В скрипте Azure CLI в этой статье показано, как отправить локальный файл в контейнер для хранения.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
 
@@ -60,6 +60,6 @@ echo "press  [ENTER]  to continue."
 read continue
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)

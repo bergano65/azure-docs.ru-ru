@@ -10,15 +10,15 @@ ms.topic: tutorial
 ms.date: 06/21/2019
 ms.custom: mvc
 ms.openlocfilehash: bda8f1e3419f80faabb2f469a9ac5fd5c77bd79e
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78674394"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 
-# <a name="tutorial-configure-your-devices-from-a-back-end-service"></a>Руководство по Настройка устройств из внутренней службы
+# <a name="tutorial-configure-your-devices-from-a-back-end-service"></a>Руководство. Настройка устройств из внутренней службы
 
 Кроме получения данных телеметрии с устройств, вам, возможно, потребуется настроить устройства из внутренней службы. При отправке требуемой конфигурации на устройства вам могут понадобиться обновления состояния и соответствия с этих устройств. Например, вы можете задать целевой рабочий диапазон температур для устройства или получить сведения о версии встроенного ПО устройства.
 
@@ -37,7 +37,7 @@ ms.locfileid: "78674394"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Примеры приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки.
 

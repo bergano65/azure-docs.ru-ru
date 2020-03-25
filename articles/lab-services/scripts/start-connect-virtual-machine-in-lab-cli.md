@@ -15,11 +15,11 @@ ms.date: 04/12/2018
 ms.author: spelluru
 ms.custom: mvc
 ms.openlocfilehash: 2159e594f0cc6a43905f3562c0ad6f3e3c9984fe
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56867513"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "61084474"
 ---
 # <a name="use-azure-cli-to-start-a-virtual-machine-in-a-lab-in-azure-devtest-labs"></a>Запуск виртуальной машины в лаборатории в Azure DevTest Labs с помощью Azure CLI
 
@@ -38,11 +38,11 @@ ms.locfileid: "56867513"
 
 Этот сценарий использует следующие команды:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az lab vm start](/cli/azure/lab/vm?view=azure-cli-latest#az-lab-vm-start) | Запуск виртуальной машины в лаборатории. Эта операция может занять некоторое время. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

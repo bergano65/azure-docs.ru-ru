@@ -17,10 +17,10 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ca6863a6b02e867afd732ce1662136051b8afec8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093664"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-procore-sso"></a>Руководство. Интеграция Azure Active Directory с Procore SSO
@@ -35,11 +35,11 @@ ms.locfileid: "67093664"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Procore SSO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на Procore SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -114,7 +114,7 @@ ms.locfileid: "67093664"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -128,11 +128,11 @@ ms.locfileid: "67093664"
 
     ![Настройка единого входа](./media/procoresso-tutorial/procore_tool_admin.png)
 
-3. Вставьте в поля нужные значения, как описано ниже
+3. Вставьте в поля нужные значения, как описано ниже.
 
     ![Настройка единого входа](./media/procoresso-tutorial/procore_setting_admin.png)  
 
-    a. В текстовое поле **URL-адреса издателя единого входа** вставьте значение **идентификатора AAD**, скопированное на портале Azure.
+    а. В текстовое поле **URL-адреса издателя единого входа** вставьте значение **идентификатора AAD**, скопированное на портале Azure.
 
     b. В поле **целевого URL-адреса входа SAML** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -206,7 +206,7 @@ ms.locfileid: "67093664"
 
     ![Настройка единого входа](./media/procoresso-tutorial/Procore_user_add.png)
 
-    a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -214,7 +214,7 @@ ms.locfileid: "67093664"
 
     d. Для параметра **Permission Template** (Шаблон разрешений) выберите значение **Apply Permission Template Later** (Применить шаблон разрешений позже).
 
-    д. Нажмите кнопку **Создать**.
+    д) Нажмите кнопку **Создать**.
 
 4. Проверьте и измените при необходимости сведения о добавляемом сотруднике.
 
@@ -236,5 +236,5 @@ ms.locfileid: "67093664"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

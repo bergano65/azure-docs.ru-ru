@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 60a4646b77f083590a6eb8a8648d6dea932f0bdd
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 263b4e76d334aab82f6bbac9aa268a50f4dd3784
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849757"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223841"
 ---
 # <a name="secure-a-custom-dns-name-with-an-ssl-binding-in-azure-app-service"></a>Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "74849757"
 - [Добавление в Службу приложений закрытого сертификата](configure-ssl-certificate.md), который отвечает всем [требованиям для привязок SSL](configure-ssl-certificate.md#private-certificate-requirements).
 -  Создание привязки SSL к соответствующему личному домену. В этой статье рассматривается второй этап.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Выбор более высокой ценовой категории.
@@ -33,7 +33,7 @@ ms.locfileid: "74849757"
 > * Принудительное применение TLS 1.1/1.2
 > * автоматизация управления TLS с помощью скриптов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ознакомьтесь со следующими статьями:
 
@@ -50,7 +50,7 @@ ms.locfileid: "74849757"
 
 ## <a name="secure-a-custom-domain"></a>Защита личного домена
 
-Сделайте следующее:
+Выполните следующие шаги:
 
 На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
 
@@ -79,7 +79,7 @@ ms.locfileid: "74849757"
 
 Чтобы настроить привязку SSL в диалоговом окне **Привязка TLS/SSL**, воспользуйтесь сведениями из следующей таблицы и щелкните **Добавить привязку**.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Description |
 |-|-|
 | Личный домен | Имя домена, для которого будет добавлена привязка SSL. |
 | Отпечаток закрытого сертификата | Привязка сертификата. |
@@ -131,7 +131,7 @@ ms.locfileid: "74849757"
 
 ![Принудительное использование HTTPS](./media/configure-ssl-bindings/enforce-https.png)
 
-По завершении операции перейдите по любому из URL-адресов HTTP, которые указывают на ваше приложение. Например:
+По завершении операции перейдите по любому из URL-адресов HTTP, которые указывают на ваше приложение. Пример:
 
 - `http://<app_name>.azurewebsites.net`
 - `http://contoso.com`
@@ -147,9 +147,15 @@ ms.locfileid: "74849757"
 
 После этой операции приложение отклоняет все подключения с более ранними версиями TLS.
 
+## <a name="handle-ssl-termination"></a>Обработка завершения SSL
+
+В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
+
+Руководства по настройке для конкретного языка, например [руководство по настройке Node.js в Linux](containers/configure-language-nodejs.md#detect-https-session), описывают возможность обнаруживать сеанс HTTPS в коде приложения.
+
 ## <a name="automate-with-scripts"></a>Автоматизация с помощью сценариев
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 [!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom SSL certificate to a web app")] 
 
@@ -160,4 +166,4 @@ ms.locfileid: "74849757"
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
 * [Использование SSL-сертификата в коде приложения Службы приложений Azure](configure-ssl-certificate-in-code.md)
-* [FAQ: SSL certificates for Web Apps and App Service Certificates](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (SSL-сертификаты для веб-приложений и сертификаты Службы приложений: вопросы и ответы)
+* [FAQ : App Service Certificates](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (Вопросы по сертификатам службы приложений и ответы на них)

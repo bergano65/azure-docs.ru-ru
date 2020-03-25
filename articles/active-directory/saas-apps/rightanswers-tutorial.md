@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с RightAnswers | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с RightAnswers | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении RightAnswers.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 8b1f7590e13be97841aae95ec47eaaa61ab004a9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b83c080b692802c4361165f5f60b45172969abaa
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233488"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79475742"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Руководство по Интеграция Azure Active Directory с RightAnswers
+# <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Учебник. Интеграция Azure Active Directory с RightAnswers
 
 В этом учебнике описано, как интегрировать приложение RightAnswers с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением RightAnswers обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74233488"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с RightAnswers, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка RightAnswers с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,12 +105,12 @@ ms.locfileid: "74233488"
 
     ![Сведения о домене и URL-адресах единого входа для RightAnswers](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.rightanswers.com/portal/ss/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.rightanswers.com/portal/ss/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.rightanswers.com:<identifier>/portal`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RightAnswers](https://support.rightanswers.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RightAnswers](https://uplandsoftware.com/rightanswers/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -120,7 +120,7 @@ ms.locfileid: "74233488"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -128,7 +128,7 @@ ms.locfileid: "74233488"
 
 ### <a name="configure-rightanswers-single-sign-on"></a>Настройка единого входа в RightAnswers
 
-Чтобы настроить единый вход на стороне **RightAnswers**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки RightAnswers](https://support.rightanswers.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **RightAnswers**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки RightAnswers](https://uplandsoftware.com/rightanswers/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!NOTE]
 > Настройка единого входа должна выполняться службой поддержки RightAnswers. Как только единый вход для вашей подписки будет включен, вы получите уведомление.

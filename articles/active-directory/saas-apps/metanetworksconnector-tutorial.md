@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Meta Networks Connector | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Meta Networks Connector | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Meta Networks Connector.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.openlocfilehash: a09eda25e8c7cc087770210cdfbe7e2bc9832acf
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160640"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство по Интеграция Azure Active Directory с Meta Networks Connector
+# <a name="tutorial-azure-active-directory-integration-with-meta-networks-connector"></a>Руководство по интеграции Azure Active Directory с Meta Networks Connector
 
 В этом руководстве описано, как интегрировать Meta Networks Connector с Azure Active Directory (Azure AD).
 Интеграция Meta Networks Connector с Azure AD обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73160640"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Meta Networks Connector, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Meta Networks Connector с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,15 +107,15 @@ ms.locfileid: "73160640"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/saml/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/sso/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.nsof.io/v1/<ORGANIZATION-SHORT-NAME>/sso/saml`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Meta Networks Connector](common/both-advanced-urls.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/login`.
 
     b. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`.
 
@@ -128,7 +128,7 @@ ms.locfileid: "73160640"
     
 7. В дополнение к описанному выше приложение Meta Networks Connector ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
-    | ИМЯ | Атрибут источника | Пространство имен|
+    | Имя | Атрибут источника | Пространство имен|
     | ---------------| --------------- | -------- |
     | firstname | user.givenname | |
     | lastname | user.surname | |
@@ -136,7 +136,7 @@ ms.locfileid: "73160640"
     | name | user.userprincipalname| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims` |
     | phone | user.telephonenumber | |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -148,9 +148,9 @@ ms.locfileid: "73160640"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -162,7 +162,7 @@ ms.locfileid: "73160640"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -191,7 +191,7 @@ ms.locfileid: "73160640"
     
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure2.png)
     
-    a. Скопируйте значение **SSO URL** (URL-адрес единого входа) и вставьте его в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
+    а. Скопируйте значение **SSO URL** (URL-адрес единого входа) и вставьте его в текстовое поле **URL-адрес входа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
     b. Скопируйте значение **Recipient URL** (URL-адрес получателя) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Meta Networks Connector**.
     
@@ -203,7 +203,7 @@ ms.locfileid: "73160640"
 
     ![Настройка единого входа](./media/metanetworksconnector-tutorial/configure5.png)
 
-    a. В поле **URL-адрес единого входа для поставщика удостоверений** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В поле **URL-адрес единого входа для поставщика удостоверений** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. В поле **Издатель поставщика удостоверений** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -227,7 +227,7 @@ ms.locfileid: "73160640"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

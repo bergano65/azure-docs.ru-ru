@@ -15,11 +15,11 @@ ms.custom: mvc
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 44539c6779afaece6d955a907819ef82d8cd7d5a
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78380964"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79224131"
 ---
 # <a name="tutorial-set-up-a-lab-by-using-azure-devtest-labs"></a>Руководство. Настройка лаборатории с помощью Azure DevTest Labs
 С помощью этого руководства вы создадите лабораторию на портале Azure. Администратор лаборатории настраивает в организации лабораторию, в которой он создает виртуальные машины и настраивает политики. Пользователи лаборатории (например, разработчик и тестировщики) запрашивают виртуальные машины лаборатории, подключаются к ним и используют их. 

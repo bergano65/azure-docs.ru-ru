@@ -4,10 +4,10 @@ description: Примеры Azure CLI (az) и Azure Service Fabric CLI (sfctl)
 ms.topic: sample
 ms.date: 04/09/2018
 ms.openlocfilehash: 96339f929c25db213fabe5224dd478022ff43427
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75526657"
 ---
 # <a name="azure-cli-az-and-azure-service-fabric-cli-sfctl-samples"></a>Примеры Azure CLI (az) и Azure Service Fabric CLI (sfctl)

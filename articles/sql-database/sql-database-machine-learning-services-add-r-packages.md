@@ -14,10 +14,10 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/29/2019
 ms.openlocfilehash: ce85f45d823df42e70af53824e175968439621d3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73819865"
 ---
 # <a name="add-an-r-package-to-azure-sql-database-machine-learning-services-preview"></a>Добавление пакета R в Службу машинного обучения в Базе данных SQL Azure (предварительная версия)
@@ -26,7 +26,7 @@ ms.locfileid: "73819865"
 
 [!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Установите [R](https://www.r-project.org) и [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) на локальном компьютере. Пакет R доступен для операционной системы Windows, macOS и Linux. В этом документе предполагается, что вы используете Windows.
 
@@ -35,7 +35,7 @@ ms.locfileid: "73819865"
 > [!NOTE]
 > Вы не можете установить пакет, выполнив скрипт R с помощью **sp_execute_external_script** в Azure Data Studio или SSMS. Вы можете только установить и удалить пакеты с помощью командной строки R и RStudio, как описано в этой статье. После установки пакета можно получить доступ к функциям пакета в скрипте R с помощью **sp_execute_external_script**.
 
-## <a name="list-r-packages"></a>Вывод списка пакетов R
+## <a name="list-r-packages"></a>Получение списка пакетов R
 
 Корпорация Майкрософт предоставляет ряд пакетов R, предварительно установленных с помощью Службы машинного обучения в базе данных SQL Azure.
 Чтобы отобразился список установленных пакетов R, выполните следующую команду в Azure Data Studio или SSMS.
@@ -92,7 +92,7 @@ WITH RESULT SETS((
 
 ### <a name="add-the-package"></a>Добавление пакета
 
-1. Откройте RStudio и создайте файл **скрипта R**. 
+1. Откройте RStudio и создайте файл **сценария R**. 
 
 1. Используйте следующий код R для установки пакета **glue** с помощью **sqlmlutils**. Подставьте собственные сведения о подключении к Базе данных SQL Azure.
 
@@ -108,7 +108,7 @@ WITH RESULT SETS((
     ```
 
     > [!TIP]
-    > **Область** может быть либо **общедоступной**, либо **частной**. Общедоступная область полезна администратору базы данных для установки пакетов, которые могут использовать все пользователи. Частная область делает пакет доступным только для пользователя, который его устанавливает. Если область не указана, областью по умолчанию является **частная**.
+    > Параметр **scope** может иметь значение **PUBLIC** или **PRIVATE**. Общая область полезна администратору базы данных для установки пакетов, которые могут использовать все пользователи. В личной области пакет доступен только устанавливающему его пользователю. Если область не указана, по умолчанию используется область **PRIVATE**.
 
 ### <a name="verify-the-package"></a>Проверка пакета
 
@@ -166,7 +166,7 @@ sql_remove.packages(connectionString = connection, pkgs = "glue", scope = "PUBLI
 > [!TIP]
 > Другой способ установить пакет R в базе данных SQL Azure — отправить пакет R из потока байтов с помощью инструкции T-SQL **CREATE EXTERNAL LIBRARY**. Ознакомьтесь с разделом [Создание библиотеки из потока байтов](/sql/t-sql/statements/create-external-library-transact-sql#create-a-library-from-a-byte-stream) в справочной документации [CREATE EXTERNAL LIBRARY](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Службе машинного обучения с использованием R в Базе данных SQL Azure (предварительная версия) см. в следующих статьях.
 

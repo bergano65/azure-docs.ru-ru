@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Reviewsnap | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Reviewsnap | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Reviewsnap.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 6a925752a0e1de09c22350dff6a274a57b117a23
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67092983"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство по Интеграция Azure Active Directory с Reviewsnap
+# <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство по интеграции Azure Active Directory с Reviewsnap
 
 В этом руководстве описано, как интегрировать Reviewsnap с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Reviewsnap обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67092983"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Reviewsnap, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Reviewsnap с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67092983"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Reviewsnap](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://app.reviewsnap.com`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://app.reviewsnap.com`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.reviewsnap.com/auth/saml/callback?namespace=<CUSTOMER_NAMESPACE>`.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67092983"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -203,4 +203,4 @@ ms.locfileid: "67092983"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

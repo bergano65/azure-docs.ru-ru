@@ -10,10 +10,10 @@ ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для командной разработки в приложении .NET Core в службе Azure Kubernetes
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 ms.openlocfilehash: b4520ce35807fb022fa39ae9b00347a27e192380
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78245052"
 ---
 # <a name="team-development-using-net-core-and-visual-studio-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio
@@ -64,7 +64,7 @@ _Без_ использования сред Dev Spaces у Василия был
 1. Выберите вкладку **Отладка** слева, чтобы отобразить параметры Azure Dev Spaces.
 1. Выберите **Изменить**, чтобы создать пространство, которое будет использоваться в службе при нажатии клавиш F5 или Ctrl+F5.
 1. В раскрывающемся списке пространства выберите **\<Create New Space…\>** (Создать пространство…).
-1. Убедитесь, что родительскому пространству присвоено значение **\<none\>** , и введите имя **dev** для пространства. Щелкните ОК.
+1. Убедитесь, что родительскому пространству присвоено значение **\<none\>** , и введите имя **dev** для пространства. Нажмите кнопку «ОК».
 1. Нажмите сочетание клавиш Ctrl+F5, чтобы запустить _mywebapi_ без подключенного отладчика.
 1. Переключитесь в окно Visual Studio с проектом _webfrontend_ и нажмите сочетание клавиш CTRL+F5, чтобы запустить и его.
 

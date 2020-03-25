@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 01/29/2018
 ms.author: labrenne
 ms.openlocfilehash: b19f5dbe27ba0ecabdca6557e4e8e1996fbef78a
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77017128"
 ---
-# <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>Пример использования CLI. Добавление приложения в учетную запись пакетной службы Azure
+# <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>Пример использования CLI: добавление приложения в учетную запись пакетной службы Azure
 
 В этом скрипте показано, как добавить приложение для использования в пуле или задаче пакетной службы Azure. Чтобы настроить приложение для его добавления в учетную запись пакетной службы, упакуйте его исполняемый файл и зависимые компоненты в ZIP-файл. 
 

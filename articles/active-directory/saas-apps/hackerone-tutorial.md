@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: effd0593384190eb1a1cf261305dd61818c3d0b0
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76120841"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
+# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Учебник. Интеграция Azure Active Directory с HackerOn
 
 В данном руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением HackerOne.
 Интеграция HackerOn с Azure AD дает приведенные далее преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "76120841"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с HackerOn, вам потребуется:
 
-* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на HackerOne с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,7 +101,7 @@ ms.locfileid: "76120841"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 

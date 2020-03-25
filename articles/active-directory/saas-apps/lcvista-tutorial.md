@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LCVista | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LCVista | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и LCVista.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 86e1c0487a33d8ca90cc8bf43ec53e2707a4d027
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159629"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lcvista"></a>Руководство по Интеграция Azure Active Directory с LCVista
+# <a name="tutorial-azure-active-directory-integration-with-lcvista"></a>Руководство. Интеграция Azure Active Directory с LCVista
 
 В этом руководстве описано, как интегрировать LCVista с Azure Active Directory (Azure AD).
 Интеграция LCVista c Azure AD обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159629"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LCVista, вам потребуются следующие компоненты:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка LCVista с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73159629"
 
     ![Сведения о домене и URL-адресах единого входа для приложения LCVista](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.lcvista.com/rainier/login`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.lcvista.com/rainier/login`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.lcvista.com`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73159629"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-lcvista-single-sign-on"></a>Настройка единого входа в LCVista
 
@@ -135,7 +135,7 @@ ms.locfileid: "73159629"
 
     ![Настройка единого входа](./media/lcvista-tutorial/tutorial_lcvista_config.png)
 
-    a. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
     b. В текстовое поле **URL** (URL-адрес) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -143,13 +143,13 @@ ms.locfileid: "73159629"
 
     d. В текстовом поле **First name attribute** (Атрибут имени) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    д. В текстовом поле **Last name attribute** (Атрибут фамилии) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    д) В текстовом поле **Last name attribute** (Атрибут фамилии) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
-    Е. В текстовом поле **Email attribute** (Атрибут электронной почты) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    е) В текстовом поле **Email attribute** (Атрибут электронной почты) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     ж. В текстовом поле **Username** (Атрибут имени пользователя) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
-    д. Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
+    д) Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

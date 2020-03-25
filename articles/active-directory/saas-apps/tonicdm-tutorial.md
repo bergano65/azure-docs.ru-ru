@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с TonicDM | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TonicDM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TonicDM.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 40409dbc860341e36501eec7ba77e2dd727c995e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088625"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tonicdm"></a>Руководство по Интеграция Azure Active Directory с TonicDM
+# <a name="tutorial-azure-active-directory-integration-with-tonicdm"></a>Руководство по интеграции Azure Active Directory с TonicDM
 
 В этом руководстве описано, как интегрировать TonicDM с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TonicDM обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67088625"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TonicDM, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка TonicDM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "67088625"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TonicDM](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://tonicdm.com/`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://tonicdm.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://tonicdm.com/saml/metadata`
 
@@ -119,7 +119,7 @@ ms.locfileid: "67088625"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -195,5 +195,5 @@ ms.locfileid: "67088625"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

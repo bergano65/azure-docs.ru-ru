@@ -7,13 +7,13 @@ ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
 ms.openlocfilehash: b283982e11449d234da966f15b86cc5b638a026c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75376667"
 ---
-# <a name="tutorial-monitor-your-service-fabric-applications-using-elk"></a>Руководство. мониторингу приложений Service Fabric с помощью ELK
+# <a name="tutorial-monitor-your-service-fabric-applications-using-elk"></a>Руководство. Мониторинг приложений Service Fabric с помощью ELK
 
 Это руководство представляет собой четвертую часть цикла. В нем показано, как использовать стек ELK (Elasticsearch, Logstash и Kibana) для мониторинга приложений Service Fabric, работающих в Azure.
 
@@ -100,7 +100,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
     logstash-plugin install logstash-input-azureeventhub
     ```
 
-4. Создайте или измените существующий файл конфигурации Logstash со следующим содержимым: Если вы создаете файл, он должен создаваться в ```/opt/bitnami/logstash/conf/access-log.conf``` при использовании образа ELK от Bitnami в Azure.
+4. Создайте файл конфигурации Logstash с приведенным ниже содержимым или измените содержимое существующего файла. Если вы создаете файл, сохраните его в каталоге ```/opt/bitnami/logstash/conf/access-log.conf``` при использовании образа ELK от Bitnami в Azure.
 
     ```json
     input

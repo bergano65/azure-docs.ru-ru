@@ -16,10 +16,10 @@ ms.date: 01/29/2018
 ms.author: labrenne
 ms.custom: mvc
 ms.openlocfilehash: dd95511365a25c8f642cb7dcc5ef477f90926d31
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77022704"
 ---
 # <a name="azure-cli-examples-for-azure-batch"></a>Примеры использования Azure CLI для пакетной службы Azure

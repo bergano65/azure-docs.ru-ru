@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 26c309eeebd7226c6777ec41ae674587da796dd4
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78199671"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
@@ -23,7 +23,7 @@ ms.locfileid: "78199671"
 - Поддержка восстанавливаемого удаления хранилища ключей
 - Поддержка восстанавливаемого удаления объектов хранилища ключей (например, ключей, секретов и сертификатов).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "78199671"
 
 Операции Key Vault контролируются отдельно, посредством разрешений управления доступом на основе ролей (RBAC). Это осуществляется следующим образом.
 
-| Операция | Описание | Разрешение пользователя |
+| Операция | Description | Разрешение пользователя |
 |:--|:--|:--|
 |Список|Выводит список удаленных хранилищ ключей.|Microsoft.KeyVault/deletedVaults/read|
 |Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с OrgChart Now | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с OrgChart Now | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OrgChart Now.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: b96606b5558e0fbb81733b2f548a89bfb38d5f99
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67095429"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-orgchart-now"></a>Руководство по Интеграция Azure Active Directory с OrgChart Now
+# <a name="tutorial-azure-active-directory-integration-with-orgchart-now"></a>Руководство. Интеграция Azure Active Directory с OrgChart Now
 
 В этом руководстве описано, как интегрировать OrgChart Now с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением OrgChart Now обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67095429"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с OrgChart Now, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка OrgChart Now с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -124,7 +124,7 @@ ms.locfileid: "67095429"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -191,7 +191,7 @@ ms.locfileid: "67095429"
 
 1. Приложение OrgChart Now поддерживает JIT-подготовку. Эта функция включена по умолчанию. Пользователь будет создан при попытке получить доступ к приложению OrgChart Now (если он еще не создан). Функция JIT-подготовки пользователей создаст **пользователя только для чтения**, если запрос SSO поступает из распознанного IDP, а в списке пользователей не найдено сообщение электронной почты в утверждении SAML. Для этой функции автоматической подготовки в OrgChart Now необходимо создать группу доступа с названием **Общие**. Чтобы создать группу доступа, выполните приведенные ниже действия.
 
-    a. Перейдите к параметру **Manage Groups** (Управление группами), щелкнув значок **шестеренки** в правом верхнем углу пользовательского интерфейса.
+    а. Перейдите к параметру **Manage Groups** (Управление группами), щелкнув значок **шестеренки** в правом верхнем углу пользовательского интерфейса.
 
     ![Группы OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_manage.png)    
 
@@ -209,7 +209,7 @@ ms.locfileid: "67095429"
 
 2. Для создания **администраторов** и пользователей **с доступом для чтения и записи** необходимо вручную создать пользователя, чтобы получить доступ к их уровню прав через единый вход. Чтобы подготовить учетную запись пользователя, выполните следующие действия.
 
-    a. Войдите в OrgChart Now с правами администратора безопасности.
+    а. Войдите в OrgChart Now с правами администратора безопасности.
 
     b.  Щелкните **Settings** (Параметры) в верхнем правом углу, а затем выберите **Manage Users** (Управление пользователями).
 
@@ -223,7 +223,7 @@ ms.locfileid: "67095429"
 
     * В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
-    * Щелкните **Добавить**.
+    * Нажмите кнопку **Добавить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -237,5 +237,5 @@ ms.locfileid: "67095429"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

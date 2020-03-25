@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Kantega SSO for Bamboo | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Kantega SSO for Bamboo | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Kantega SSO for Bamboo.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 8c951d7f5f1629447b1b5c1fc6e8a1c202246d74
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099111"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bamboo"></a>Руководство по Интеграция Azure Active Directory с Kantega SSO for Bamboo
+# <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bamboo"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for Bamboo
 
 В этом руководстве описано, как интегрировать Kantega SSO for Bamboo с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Kantega SSO for Bamboo обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67099111"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Kantega SSO for Bamboo, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Kantega SSO for Bamboo с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "67099111"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Bamboo](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67099111"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -148,7 +148,7 @@ ms.locfileid: "67099111"
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon21.png)
 
-1. Установка завершится. Нажмите кнопку **Закрыть**
+1. Установка завершится. Щелкните **Закрыть**.
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon33.png)
 
@@ -172,7 +172,7 @@ ms.locfileid: "67099111"
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon6.png)
 
-    a. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Щелкните **Далее**.
 
@@ -180,7 +180,7 @@ ms.locfileid: "67099111"
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon7.png)
 
-    a. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
+    а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
     b. Щелкните **Далее**.
 
@@ -188,7 +188,7 @@ ms.locfileid: "67099111"
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon8.png)
 
-    a. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
+    а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
     b. Щелкните **Далее**.
 
@@ -200,11 +200,11 @@ ms.locfileid: "67099111"
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon10.png)
 
-    a. Щелкните переключатель **Create users in Bamboo's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Bamboo) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
+    а. Щелкните переключатель **Create users in Bamboo's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Bamboo) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
     b. Щелкните **Далее**.
 
-1. Нажмите кнопку **Готово**
+1. Нажмите кнопку **Готово**.
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon11.png)
 
@@ -212,7 +212,7 @@ ms.locfileid: "67099111"
 
     ![Настройка единого входа](./media/kantegassoforbamboo-tutorial/addon12.png)
 
-    a. Щелкните **Known domains** (Известные домены) на левой панели страницы.
+    а. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
     b. Введите имя домена в текстовое поле **Known domains** (Известные домены).
 
@@ -285,7 +285,7 @@ ms.locfileid: "67099111"
 
     ![Добавление сотрудника](./media/kantegassoforbamboo-tutorial/user2.png)
 
-    a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
+    а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
     b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
@@ -293,9 +293,9 @@ ms.locfileid: "67099111"
 
     d. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
-    д. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+    д) В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -309,4 +309,4 @@ ms.locfileid: "67099111"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

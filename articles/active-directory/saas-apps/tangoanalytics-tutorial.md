@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Tango Analytics | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Tango Analytics | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Tango Analytics.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 6d7b06d809d7ec3c421254b51a3cbd4a36d494ab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67089103"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-tango-analytics"></a>Руководство по Интеграция Azure Active Directory с Tango Analytics
+# <a name="tutorial-azure-active-directory-integration-with-tango-analytics"></a>Руководство по интеграции Azure Active Directory с Tango Analytics
 
 В этом руководстве описано, как интегрировать Tango Analytics с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Tango Analytics обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67089103"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Tango Analytics, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Tango Analytics с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67089103"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Tango Analytics](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите значение: `TACORE_SSO`.
+    а. В текстовом поле **Идентификатор** введите значение: `TACORE_SSO`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://mts.tangoanalytics.com/saml2/sp/acs/post`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67089103"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -197,4 +197,4 @@ ms.locfileid: "67089103"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

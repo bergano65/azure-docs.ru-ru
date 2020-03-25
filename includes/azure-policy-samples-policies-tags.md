@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 03/12/2020
 ms.author: dacoulte
 ms.openlocfilehash: 700bc8f8f65124a1c39a9259e9418d3da799c730
-ms.sourcegitcommit: c29b7870f1d478cec6ada67afa0233d483db1181
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "79382037"
 ---
-|Имя |Описание |Действие |Версия |GitHub |
+|Имя |Description |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Добавление тегов в группы ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F726aca4c-86e9-4b04-b0c5-073027359532) |Добавляет указанный тег и значение при создании или обновлении любой группы ресурсов, пропустившей этот тег. Существующие группы ресурсов можно исправить, активировав задачу исправления. Если тег существует с другим значением, он не изменится. |modify |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Tags/AddTag_ResourceGroup_Modify.json)
 |[Добавление тегов к ресурсам](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4f9dc7db-30c1-420c-b61a-e1d640128d26) |Добавляет указанный тег и значение при создании или обновлении любого ресурса, пропустившего этот тег. Существующие ресурсы можно исправить, активировав задачу исправления. Если тег существует с другим значением, он не изменится. Не изменяет теги в группах ресурсов. |modify |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Tags/AddTag_Modify.json)
