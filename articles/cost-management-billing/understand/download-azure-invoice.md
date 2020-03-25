@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
 ms.openlocfilehash: 691d27acebf238e84265870e8c01976bfc2412b2
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77200271"
 ---
 # <a name="view-and-download-your-microsoft-azure-invoice"></a>Просмотр и скачивание счета Microsoft Azure
@@ -33,7 +33,7 @@ ms.locfileid: "77200271"
 
 <!-- For more information about billing roles for Microsoft Customer Agreements, see [Billing profile roles and tasks](../manage/understand-mca-roles.md#billing-profile-roles-and-tasks). -->
 
-## <a name="noinvoice"></a> Почему вы можете не получить счет
+## <a name="why-you-might-not-get-an-invoice"></a><a name="noinvoice"></a> Почему вы можете не получить счет
 
 Это может происходить по нескольким причинам:
 

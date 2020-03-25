@@ -17,7 +17,7 @@
       href: concept-identity-protection-user-experience.md
     - name: Защита идентификации и пользователи B2B
       href: concept-identity-protection-b2b.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: Настройка уведомлений
@@ -42,7 +42,7 @@
       href: howto-identity-protection-risk-feedback.md
     - name: Часто задаваемые вопросы
       href: troubleshooting-identity-protection-faq.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Глоссарий
       href: reference-identity-protection-glossary.md

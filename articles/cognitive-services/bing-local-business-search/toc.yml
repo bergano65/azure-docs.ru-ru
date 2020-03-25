@@ -12,7 +12,7 @@
       maintainContext: true
 - name: Краткие руководства
   items:
-    - name: "REST\_API"
+    - name: REST API
       expanded: true
       items:
         - name: 'Использование C#'
@@ -31,7 +31,7 @@
       href: specify-geographic-search.md
     - name: Категории поиска местных компаний
       href: local-categories.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Требования к использованию и отображению
       href: ../Bing-Web-Search/use-display-requirements.md
@@ -44,5 +44,5 @@
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api'
     - name: Сведения о ценах
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/search-api/'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

@@ -16,7 +16,7 @@
       href: service-health-overview.md
     - name: Работоспособность ресурса
       href: resource-health-overview.md
-- name: Практическое руководство
+- name: Инструкции
   items:
     - name: Настройка оповещений о событиях работоспособности служб
       href: alerts-activity-log-service-notifications.md
@@ -34,7 +34,7 @@
       href: service-health-rest.md
     - name: Настройка оповещений о событиях работоспособности ресурсов
       href: resource-health-alert-arm-template-guide.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Свойства уведомлений о работоспособности службы
       href: service-health-notifications-properties.md

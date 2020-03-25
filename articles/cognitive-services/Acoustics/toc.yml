@@ -3,7 +3,7 @@
   items:
     - name: Что такое Project Acoustics?
       href: what-is-acoustics.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Краткое руководство по использованию Unity
       href: unity-quickstart.md

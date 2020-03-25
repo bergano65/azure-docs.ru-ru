@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: 'Azure Synapse Analytics (прежнее название: Хранилище данных SQL Azure)'
+summary: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
+metadata:
+  title: Azure Synapse Analytics
+  description: Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе.
+  services: sql-data-warehouse
+  ms.service: sql-data-warehouse
+  ms.subservice: design
+  ms.topic: landing-page
+  ms.collection: collection
+  author: julieMSFT
+  ms.author: jrasnick
+  ms.date: 10/03/2019
+  ms.openlocfilehash: 36943d330d0bd97fe6139f5cfa19da571fc70835
+  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "80135680"
+landingContent:
+- title: About Azure Synapse Analytics
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Synapse?
+      url: sql-data-warehouse-overview-what-is.md
+  - linkListType: architecture
+    links:
+    - text: Архитектура Azure Synapse
+      url: massively-parallel-processing-mpp-architecture.md
+    - text: Советы и рекомендации
+      url: cheat-sheet.md
+    - text: Эталонная архитектура
+      url: https://docs.microsoft.com/azure/architecture/reference-architectures/data/enterprise-bi-synapse
+- title: Начало работы
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Создание пула SQL (хранилища данных)
+      url: create-data-warehouse-portal.md
+- title: Загрузка данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Разработка стратегии загрузки данных
+      url: design-elt-data-loading.md
+    - text: Рекомендации
+      url: guidance-for-loading-data.md
+  - linkListType: how-to-guide
+    links:
+    - text: Загрузка данных из Azure Data Lake Storage
+      url: sql-data-warehouse-load-from-azure-data-lake-store.md
+  - linkListType: tutorial
+    links:
+    - text: Загрузка данных из хранилища BLOB-объектов Azure
+      url: load-data-from-azure-blob-storage-using-polybase.md
+- title: Настройка производительности
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Рекомендации
+      url: sql-data-warehouse-best-practices.md
+    - text: Настройка упорядоченного кластеризованного индекса columnstore
+      url: performance-tuning-ordered-cci.md
+    - text: Использование материализованных представлений для настройки рабочей нагрузки
+      url: performance-tuning-materialized-views.md
+  - linkListType: how-to-guide
+    links:
+    - text: Анализ рабочей нагрузки
+      url: analyze-your-workload.md
+- title: Управление и мониторинг
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения об мониторинге хранилища данных и управлении им
+      url: sql-data-warehouse-overview-manageability-monitoring.md
+  - linkListType: how-to-guide
+    links:
+    - text: Мониторинг рабочей нагрузки с помощью динамических административных представлений
+      url: sql-data-warehouse-manage-monitor.md
+    - text: Администрирование и мониторинг уровня важности рабочей нагрузки
+      url: sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md
+- title: Защита хранилища данных
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о защите хранилища данных
+      url: sql-data-warehouse-overview-manage-security.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка аутентификации Azure Active Directory
+      url: /azure/sql-database/sql-database-aad-authentication-configure?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json
+- title: Ресурсы
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Просмотрите последние видеоматериалы по Хранилищу данных
+      url: sql-data-warehouse-videos.md

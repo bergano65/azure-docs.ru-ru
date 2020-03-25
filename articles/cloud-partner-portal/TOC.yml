@@ -1,21 +1,21 @@
 - name: Обзор
   items:
-    - name: Сведения об облачном портале для партнеров
+    - name: Сведения о Портале Cloud Partner
       href: ./cloud-partner-portal-what-is-the-cloud-partner-portal.md
 - name: Начало работы
   items:
-    - name: Начало работы с облачным порталом для партнеров
+    - name: Начало работы с Порталом Cloud Partner
       href: ./cloud-partner-portal-getting-started-with-the-cloud-partner-portal.md
     - name: Поддерживаемые продукты
       href: ./Cloud-partner-portal-products-that-can-get-published-via-portal.md
 - name: Практические руководства
   items:
-    - name: Управление виртуальными машинами
+    - name: Управление Виртуальными машинами
       items:
         - name: Создание предложения виртуальной машины
           href: ./cloud-partner-portal-publish-virtual-machine.md
           items:
-            - name: Предварительные требования
+            - name: предварительные требования
               href: './cloud-partner-portal-publish-virtual-machine.md#what-are-pre-requisites-for-publishing-a-vm'
             - name: Регистрация учетной записи разработчика Майкрософт
               href: ./cloud-partner-portal-dev-center-accounts-registration.md
@@ -40,14 +40,14 @@
           href: ./cloud-partner-portal-update-existing-offer.md
         - name: Удаление предложения или номера SKU виртуальной машины
           href: ./cloud-partner-portal-delete-an-offer.md
-        - name: Переход на облачный портал для партнеров
+        - name: Миграция в Портал Cloud Partner
           href: ./cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md
     - name: Руководство по Azure Marketplace для продавца
       href: ./cloud-partner-portal-seller-guide.md
     - name: Получение интересов
       href: ./cloud-partner-portal-get-customer-leads.md
       items:
-        - name: таблицу Azure;
+        - name: Таблица Azure
           href: ./cloud-partner-portal-lead-management-instructions-azure-table.md
         - name: Dynamics CRM Online
           href: ./cloud-partner-portal-lead-management-instructions-dynamics.md
