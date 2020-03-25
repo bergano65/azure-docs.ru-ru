@@ -9,10 +9,10 @@ ms.date: 12/19/2019
 ms.author: jenhayes
 ms.custom: include file
 ms.openlocfilehash: e32b55ed655b1e47f85640eb7f494a89f3274667
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "75456737"
 ---
 Мы предоставляем различные шаблоны для конкретных сценариев адаптации. Выберите наиболее подходящий вариант и обязательно измените файл параметров в соответствии со своей средой. Дополнительные сведения о том, как использовать эти файлы в развертывании, см. в статье о [подключении клиентов к системе делегированного управления ресурсами Azure](../articles/lighthouse/how-to/onboard-customer.md).

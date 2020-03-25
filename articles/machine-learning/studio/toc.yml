@@ -143,8 +143,6 @@
           href: consuming-from-excel.md
         - name: Использование надстройки Excel
           href: excel-add-in-for-web-services.md
-        - name: Использование пула пакетной службы
-          href: dedicated-capacity-for-bes-jobs.md
     - name: Варианты использования
       items:
         - name: Уход клиентов

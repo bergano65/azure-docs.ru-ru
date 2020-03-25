@@ -33,7 +33,7 @@
       href: concepts-events-routing.md
     - name: Ограничения в общедоступной предварительной версии службы
       href: concepts-service-limits.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Лучшие методики обеспечения безопасности
           href: security-best-practices.md

@@ -22,7 +22,7 @@
       href: app-service-mobile-xamarin-forms-get-started.md
     - name: Xamarin.iOS
       href: app-service-mobile-xamarin-ios-get-started.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Планирование и разработка
       items:
@@ -172,7 +172,7 @@
         - name: Виртуальная сеть Azure
           href: ../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
         - name: Группы ресурсов
-          href: '../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json#app-service-limitations'
+          href: ../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
           items:
             - name: Выполнение фоновых задач с веб-заданиями
               href: ../app-service/webjobs-create.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
@@ -261,12 +261,10 @@
       href: 'https://azure.github.io/azure-mobile-apps-js-client/'
     - name: Клиентский пакет SDK для Windows и Xamarin
       href: 'https://msdn.microsoft.com/library/azure/mt419521.aspx'
-- name: Сопутствующие материалы
+- name: Ресурсы
   items:
     - name: Репозитории GitHub
       href: 'https://github.com/Azure/azure-mobile-apps'
-- name: Ресурсы
-  items:
     - name: Рекомендации по работе со Службой приложений
       href: ../app-service/app-service-best-practices.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json
     - name: Стратегия развития Azure

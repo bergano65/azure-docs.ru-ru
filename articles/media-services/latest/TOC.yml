@@ -75,7 +75,7 @@
       items:
         - name: Обзор
           href: encoding-concept.md
-          displayName: 'encoding, presets, jobs, adaptive, bitrate, billing'
+          displayName: 'encode, encoding, presets, jobs, adaptive, bitrate, billing'
         - name: Форматы кодировщика ценовой категории "Стандартный"
           displayName: 'containers, codecs'
           href: media-encoder-standard-formats.md
@@ -87,7 +87,7 @@
       items:
         - name: Обзор
           href: analyzing-video-audio-files-concept.md
-          displayName: 'analyzing, presets, jobs'
+          displayName: 'analyze, analyzing, presets, jobs'
         - name: Преобразования и задания
           href: transforms-jobs-concept.md
     - name: Потоковая передача в реальном времени
@@ -113,7 +113,7 @@
     - name: Упаковка и доставка
       items:
         - name: Динамическая упаковка
-          displayName: 'origin, packager, HLS, DASH, CMAF, Smooth, manifest, deliver, format, URL, streaming'
+          displayName: 'origin, packager, HLS, DASH, CMAF, Smooth, manifest, deliver, format, URL, streaming, audio, video'
           href: dynamic-packaging-overview.md
         - name: Динамические манифесты
           href: filters-dynamic-manifest-overview.md
@@ -202,20 +202,13 @@
     - name: Начало работы
       items:
         - name: Создание учетной записи
-          items:
-            - name: С помощью портала
-              href: create-account-portal.md
-            - name: С помощью CLI
-              href: create-account-cli-how-to.md
-              displayName: storage
+          href: create-account-howto.md
+          displayName: 'portal, cli, storage'
         - name: Сбросьте данные учетной записи
           href: cli-reset-account-credentials.md
         - name: Доступ к API
-          items:
-            - name: С помощью портала
-              href: access-api-portal.md
-            - name: С помощью CLI
-              href: access-api-cli-how-to.md
+          displayName: 'portal, cli'
+          href: access-api-howto.md
         - name: Масштабирование зарезервированных единиц мультимедиа
           href: media-reserved-units-cli-how-to.md
         - name: Создание ресурса
@@ -344,6 +337,7 @@
     - name: Диагностика
       items:
         - name: Часто задаваемые вопросы
+          displayName: faqs
           href: frequently-asked-questions.md
         - name: Коды ошибок
           items:
@@ -359,7 +353,7 @@
       href: 'https://aka.ms/ams-v3-rest-sdk'
       displayName: schema
     - name: REST
-      href: 'https://aka.ms/ams-v3-rest-ref'
+      href: 'https://docs.microsoft.com/rest/api/media/'
     - name: Azure CLI
       href: 'https://aka.ms/ams-v3-cli-ref'
     - name: Пакеты SDK

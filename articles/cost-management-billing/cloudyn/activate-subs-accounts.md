@@ -1,26 +1,28 @@
 ---
-title: Активация подписок и учетных записей Azure | Документация Майкрософт
+title: Активация подписок и учетных записей Azure
 description: Сведения о предоставлении доступа к новым и имеющимся учетным записям с использованием API Azure Resource Manager и устранении распространенных проблем с учетными записями.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: vitavor
 ms.custom: secdec18
-ms.openlocfilehash: 2467ee65b3f7090e5854bdd7848abab667ccfe55
-ms.sourcegitcommit: f915d8b43a3cefe532062ca7d7dbbf569d2583d8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 62138163b3c3f94d60c55cf93d84db5dff446823
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78301375"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79474668"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 
 Добавляя или обновляя учетные данные Azure Resource Manager, вы позволяете службе Cloudyn обнаруживать все учетные записи и подписки в клиенте Azure. Если на виртуальных машинах включено расширение системы диагностики Azure, служба Cloudyn может собирать расширенные метрики, такие как показатели загрузки ЦП и памяти. В этой статье показано, как разрешить доступ к новым и имеющимся учетным записям с использованием API Azure Resource Manager. Здесь также рассматривается, как устранять распространенные проблемы с учетными записями.
 
 Служба Cloudyn не имеет доступа к большинству данных подписки Azure, если подписка _не активирована_. Необходимо изменить _неактивированные_ учетные записи, чтобы служба Cloudyn могла получить к ним доступ.
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="required-azure-permissions"></a>Необходимые разрешения Azure
 
