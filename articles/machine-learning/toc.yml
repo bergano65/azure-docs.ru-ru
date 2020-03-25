@@ -13,6 +13,7 @@
       displayName: 'architecture, concepts, definitions, glossary'
       href: concept-azure-machine-learning-architecture.md
 - name: Учебники
+  expanded: true
   items:
     - name: Студия и конструктор
       items:
@@ -87,10 +88,10 @@
       href: concept-workspace.md
     - name: Среды
       href: concept-environments.md
-    - name: Доступ к данным
-      href: concept-data.md
     - name: Прием данных
       href: concept-data-ingestion.md
+    - name: Доступ к данным
+      href: concept-data.md
     - name: Обучение модели
       displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
       href: concept-train-machine-learning-model.md

@@ -33,6 +33,10 @@
       href: cli-samples.md
 - name: Основные понятия
   items:
+    - name: безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Отработка отказа и установка исправлений
       href: cache-failover.md
     - name: Рекомендации
@@ -44,7 +48,7 @@
     - name: План
       items:
         - name: Выбор уровня кэша
-          href: 'cache-faq.md#what-redis-cache-offering-and-size-should-i-use'
+          href: 'cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use'
         - name: Распределение кэша с помощью кластеризации
           href: cache-how-to-premium-clustering.md
         - name: Сохранение кэша с помощью функции сохраняемости данных Redis
@@ -113,7 +117,7 @@
       items:
         - name: Обновление до другого размера и уровня
           href: cache-how-to-scale.md
-        - name: Использование кластера Redis для свертывания и развертывания
+        - name: Использование кластера Redis для горизонтального увеличения и уменьшения масштаба
           href: cache-how-to-premium-clustering.md
 - name: Справочник
   items:

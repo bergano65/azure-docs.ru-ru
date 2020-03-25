@@ -1,20 +1,20 @@
 ---
 title: Управление бюджетами Cloudyn в Azure
 description: Сведения в этой статье помогут вам быстро составить бюджеты и приступить к управлению ими в Cloudyn.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: vitavor
 ms.custom: seodec18
-ms.openlocfilehash: 1436c9b3b612a231760b6cdb04b5166fb45d7962
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ROBOTS: NOINDEX
+ms.openlocfilehash: f2f8fdbf2b470e9f1eb0d82c4c6de230c2a9e78f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201141"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79464161"
 ---
 # <a name="manage-azure-budgets-with-cloudyn"></a>Управление бюджетами в Azure с помощью Cloudyn
 
@@ -27,6 +27,8 @@ ms.locfileid: "77201141"
 Назначенный бюджет доступен в отчетах о бюджете. Пользователи могут отслеживать, когда их затраты превышают, не достигают или находятся наравне с показателями потребления за определенный период времени. При выборе параметра **Показать или скрыть поля** в верхней части отчета о бюджете можно увидеть затраты, бюджет, накопленные затраты или общий бюджет.
 
 Служба "Управление затратами Azure" предоставляет те же возможности, что и Cloudyn. Служба "Управление затратами Azure" является собственным решением Azure по управлению затратами. Она позволяет анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с целью экономии средств. Дополнительные сведения о бюджетах в службе "Управление затратами" см. в статье [Руководство. Создание и управление бюджетами Azure](../costs/tutorial-acm-create-budgets.md).
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="create-budgets"></a>Создание бюджетов
 

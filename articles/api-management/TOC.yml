@@ -51,7 +51,7 @@
           href: api-management-howto-policies.md
         - name: Индекс справочника по политикам
           href: api-management-policies.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Встроенные средства управления безопасностью
           href: api-management-security-controls.md

@@ -10,7 +10,7 @@
       href: hpc-cache-namespace.md
 - name: Практические руководства
   items:
-    - name: Предварительные требования
+    - name: предварительные требования
       href: hpc-cache-prereqs.md
     - name: Создание кэша
       href: hpc-cache-create.md

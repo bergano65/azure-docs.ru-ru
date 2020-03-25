@@ -43,7 +43,7 @@
       href: cli-samples.md
 - name: Основные понятия
   items:
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md

@@ -1,19 +1,18 @@
 ---
 title: Использование общего анализа затрат в службе "Управление затратами Azure"
 description: В этой статье объясняется, как получить результаты для общих задач анализа затрат в службе "Управление затратами Azure".
-keywords: ''
 author: bandersmsft
 ms.author: banders
 ms.date: 02/21/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: adwise
-ms.openlocfilehash: 1d9a498185e76f9771ec98656b1cad914b0f3214
-ms.sourcegitcommit: dd3db8d8d31d0ebd3e34c34b4636af2e7540bd20
+ms.openlocfilehash: 901f271ac401cb985e59c434b9e6d7f8db03889f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77562587"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79203106"
 ---
 # <a name="common-cost-analysis-uses"></a>Использование анализа общих затрат
 

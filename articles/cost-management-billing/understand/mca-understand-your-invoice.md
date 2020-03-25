@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: banders
 ms.openlocfilehash: 4c4b105bb4b67e855de27b6a57d2080fde068421
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77200220"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237910"
 ---
 # <a name="terms-in-your-microsoft-customer-agreement-invoice"></a>Термины в счете клиентского соглашения Майкрософт
 
@@ -35,7 +35,7 @@ ms.locfileid: "77200220"
 
 ![Раздел "Сводка по счету"](./media/mca-understand-your-invoice/invoicesummary.png)
 
-| Термин | Описание |
+| Термин | Description |
 | --- | --- |
 | Покупатель |Адрес юридического лица в свойствах учетной записи выставления счетов|
 | Получатель счета |Адрес выставления счета для получающего счет профиля выставления счетов в свойствах профиля выставления счетов|
@@ -51,7 +51,7 @@ ms.locfileid: "77200220"
 
 ![Раздел сводки по выставлению счетов](./media/mca-understand-your-invoice/billingsummary.png)
 
-| Термин | Описание |
+| Термин | Description |
 | --- | --- |
 | Расходы|Общая сумма расходов корпорации Майкрософт для этого профиля выставления счетов с последнего расчетного периода |
 | Баллы |Деньги на счете, полученные от возвратов |
@@ -75,7 +75,7 @@ ms.locfileid: "77200220"
 
 ![Сведения по разделу счета](./media/mca-understand-your-invoice/invoicesectiondetails.png)
 
-| Термин |Описание |
+| Термин |Description |
 | --- | --- |
 | Цена за единицу | Эффективная цена за единицу службы (в валюте ценообразования) по ставке использования. Она уникальна для продукта, группы услуг, единицы измерения и предложения. |
 | Количество | Количество, приобретенное или потребленное в течение расчетного периода |

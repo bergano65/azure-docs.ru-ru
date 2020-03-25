@@ -132,7 +132,7 @@
           href: runtime-troubleshoot.md
         - name: Устранение неполадок с обновлением .NET
           href: dotnet-upgrade-troubleshoot.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.datalakeanalytics

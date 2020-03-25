@@ -20,7 +20,7 @@
       items:
         - name: Создание плана выполнения
           href: example-terraform-bash.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Использование Cloud Shell для пользователей Windows
       href: cloud-shell-windows-users.md
@@ -36,7 +36,7 @@
   href: using-cloud-shell-editor.md
 - name: Устранение неполадок и ограничения
   href: troubleshooting.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure

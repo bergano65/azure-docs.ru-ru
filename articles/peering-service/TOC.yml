@@ -8,7 +8,7 @@
   items:
     - name: Расположения и партнеры
       href: location-partners.md
-    - name: Подключение
+    - name: Соединение
       href: connection.md
     - name: Данные телеметрии подключений
       href: connection-telemetry.md
@@ -22,15 +22,15 @@
           href: azure-portal.md
         - name: Azure PowerShell
           href: powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: cli.md
     - name: Измерение телеметрии подключения
       href: measure-connection-telemetry.md
-- name: Справочники
+- name: Ссылки
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.peering
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/ext/peering/peering
 - name: Ресурсы
   items:

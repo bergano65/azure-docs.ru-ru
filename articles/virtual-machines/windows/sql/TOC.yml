@@ -101,7 +101,7 @@
               href: virtual-machines-windows-sql-workgroup-availability-group.md
             - name: Настройка вручную
               items:
-                - name: Предварительные требования
+                - name: предварительные требования
                   href: virtual-machines-windows-portal-sql-availability-group-prereq.md
                 - name: Учебник
                   href: virtual-machines-windows-portal-sql-availability-group-tutorial.md

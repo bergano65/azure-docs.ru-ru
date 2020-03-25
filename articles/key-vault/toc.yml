@@ -69,7 +69,7 @@
   items:
     - name: Основные понятия
       href: basic-concepts.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
@@ -103,7 +103,7 @@
           href: create-certificate-scenarios.md
 - name: Практические руководства
   items:
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Рекомендации
           href: security-recommendations.md
@@ -129,7 +129,7 @@
       href: tutorial-rotation.md
     - name: Интеграция со службой "Поиск Azure"
       href: azure-policy.md
-    - name: Интеграция со службой "Приватный канал Azure" (предварительная версия)
+    - name: Интеграция со службой "Приватный канал Azure"
       href: private-link-service.md
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md

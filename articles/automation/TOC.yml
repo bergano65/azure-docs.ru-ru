@@ -305,11 +305,11 @@
 - name: Управление общими ресурсами
   items:
     - name: Сертификаты
-      href: automation-certificates.md
+      href: shared-resources/certificates.md
     - name: Соединения
       href: automation-connections.md
     - name: Учетные данные
-      href: automation-credentials.md
+      href: shared-resources/credentials.md
     - name: Модули PowerShell
       items:
         - name: Модули
@@ -319,9 +319,9 @@
         - name: Обновление модулей Azure PowerShell
           href: automation-update-azure-modules.md
     - name: Расписания
-      href: automation-schedules.md
+      href: shared-resources/schedules.md
     - name: Переменные
-      href: automation-variables.md
+      href: shared-resources/variables.md
     - name: "Управление пакетами Python\_2"
       href: python-packages.md
     - name: Устранение неполадок с общими ресурсами

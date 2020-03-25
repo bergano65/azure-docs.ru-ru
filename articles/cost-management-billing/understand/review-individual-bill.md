@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 02/13/2020
 ms.author: banders
 ms.openlocfilehash: 8ebda9716df2e9e45050760ee8d0434c12838370
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77199132"
 ---
 # <a name="tutorial-review-your-individual-azure-bill"></a>Учебник. Просмотр отдельного счета Azure
@@ -120,7 +120,7 @@ ms.locfileid: "77199132"
 
 ![Плата за потребление в счете](./media/review-individual-bill/invoice-usage-charges.png)
 
-## <a name="external"></a>Счета за внешние службы выставляются отдельно
+## <a name="external-services-billed-separately"></a><a name="external"></a>Счета за внешние службы выставляются отдельно
 
 Затраты на внешние службы (или Marketplace) включают те ресурсы, которые были созданы сторонними поставщиками программного обеспечения. Эти ресурсы доступны для использования через Azure Marketplace. Например, брандмауэр Barracuda является ресурсом Azure Marketplace и создан сторонним разработчиком. Все счета за этот брандмауэр и расходуемые им ресурсы будут отображаться в как затраты на внешние службы.
 
@@ -149,7 +149,7 @@ Azure не включает стоимость ресурсов в счета н
 
 В CSV-файле с данными об использовании вы видите те счетчики, которые использовались для составления счета.
 
-## <a name="payment"></a>Оплата счетов
+## <a name="pay-your-bill"></a><a name="payment"></a>Оплата счетов
 
 Если в качестве метода оплаты вы указали кредитную карту, то оплата производится автоматически в течение 10 дней после истечения периода выставления счетов. В строке из выписки по кредитной карте вы увидите элемент **MSFT Azure**.
 

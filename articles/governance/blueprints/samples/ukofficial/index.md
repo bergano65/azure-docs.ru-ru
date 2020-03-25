@@ -4,10 +4,10 @@ description: Общие сведения о примерах схем UK OFFICIA
 ms.date: 06/26/2019
 ms.topic: sample
 ms.openlocfilehash: e6ba277c879f8569e32ec963aaa15a2e14fe78c0
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "74546376"
 ---
 # <a name="overview-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Общие сведения о примерах схем UK OFFICIAL и UK NHS
@@ -18,7 +18,7 @@ ms.locfileid: "74546376"
 
 В разделе о сопоставлении средств управления описаны политики, используемые в рамках этой инициативы, и методы, с помощью которых эти политики помогают обеспечить соответствие с разными средствами управления, определенными платформами UK OFFICIAL и UK NHS. Назначаемые архитектуре ресурсы оцениваются Политикой Azure на предмет соответствия назначенным политикам. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../../policy/overview.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с общими сведениями о примерах схем UK OFFICIAL и UK NHS и их архитектуре. Дополнительные сведения о сопоставлении элементов управления и развертывании этого примера см. в следующих статьях:
 
