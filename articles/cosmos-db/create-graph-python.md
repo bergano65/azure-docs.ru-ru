@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: lbosq
 ms.openlocfilehash: b1286daaa76c71f88d44ea387a92876a8676783c
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77062249"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-python-and-the-azure-portal"></a>Краткое руководство. Создание графовой базы данных в Azure Cosmos DB с помощью Python и портала Azure
@@ -93,7 +93,7 @@ ms.locfileid: "77062249"
 
 Теперь вернитесь на портал Azure, чтобы получить данные для подключения. Скопируйте эти данные в приложение. Эти настройки обеспечат обмен данными между вашим приложением и размещенной базой данных.
 
-1. Выберите **Ключи** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
+1. В учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/) выберите элемент **Ключи**. 
 
     Скопируйте первую часть значения URI.
 
