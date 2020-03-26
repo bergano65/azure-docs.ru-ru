@@ -12,31 +12,31 @@ ms.reviewer: v-masebo
 ms.date: 03/25/2019
 ms.custom: seo-java-july2019. seo-java-august2019
 ms.openlocfilehash: 034f92ca3b7552373ae69148d09d58d3a5dd166a
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76768643"
 ---
-# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Java для создания запросов к базе данных SQL Azure
+# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием Java
 
 В этом кратком руководстве вы будете использовать Java для подключения к базе данных SQL Azure, а затем выполните запрос данных с помощью инструкций T-SQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [База данных SQL Azure](sql-database-single-database-get-started.md)
 - Программное обеспечение, связанное с [Java](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server)
 
-  # <a name="macostabmacos"></a>[macOS](#tab/macos)
+  # <a name="macos"></a>[macOS](#tab/macos)
 
   Установите Homebrew и Java, а затем Maven, выполнив действия **1.2** и **1.3** статьи [Create Java apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/java/mac/) (Создание приложений Java с помощью SQL Server в macOS).
 
-  # <a name="ubuntutabubuntu"></a>[Ubuntu](#tab/ubuntu)
+  # <a name="ubuntu"></a>[Ubuntu](#tab/ubuntu)
 
   Установите Java, комплект SDK для Java, а затем Maven, выполнив действия **1.2**, **1.3** и **1.4** статьи [Create Java apps using SQL Server on Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu/) (Создание приложений Java с помощью SQL Server на Ubuntu).
 
-  # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+  # <a name="windows"></a>[Windows](#tab/windows)
 
   Установите Java, а затем Maven, выполнив действия **1.2** и **1.3** статьи [Create Java apps using SQL Server on Windows](https://www.microsoft.com/sql-server/developer-get-started/java/windows/) (Создание приложений Java с помощью SQL Server на Windows).
 

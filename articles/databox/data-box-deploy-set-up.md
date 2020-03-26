@@ -10,15 +10,15 @@ ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
 ms.openlocfilehash: e892a8bfa3b4b0bb53d7a943e475d4e2a8228add
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76514142"
 ---
 ::: zone target="docs"
 
-# <a name="tutorial-cable-and-connect-to-your-azure-data-box"></a>Руководство. Присоединение кабелей и подключение к Azure Data Box
+# <a name="tutorial-cable-and-connect-to-your-azure-data-box"></a>Руководство: присоединение кабелей и подключение к Azure Data Box
 
 ::: zone-end
 
@@ -32,17 +32,17 @@ ms.locfileid: "76514142"
 
 В этом руководстве описывается, как присоединить кабели, подключить и включить Azure Data Box.
 
-В этом руководстве описано следующее:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Подключение кабелей к Data Box.
 > * Подключение к Data Box.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед тем как начать, убедитесь в следующем.
 
-1. Вы завершили [руководство по оформлению заказа на Azure Data Box](data-box-deploy-ordered.md).
+1. Вы изучили статью [Tutorial: Order an Azure Data Box](data-box-deploy-ordered.md) (Руководство. Заказ Azure Data Box).
 2. Вы получили Data Box; состояние заказа на портале **Доставлено**. 
     - На устройстве под текущей этикеткой будет транспортная этикетка в прозрачном пакетике. Храните эту этикетку, так как она нужна для возврата устройства.
     - В некоторые регионы Европе устройство поставляется упакованным в коробку. Обязательно сохраните упаковку на случай возврата устройства.

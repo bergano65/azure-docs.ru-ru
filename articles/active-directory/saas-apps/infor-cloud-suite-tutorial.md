@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Infor CloudSuite | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Infor CloudSuite | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Infor CloudSuite.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b9bb3d260b808e61f15ec85752c299bfeb3ab6fd
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67588554"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infor-cloudsuite"></a>Руководство. Интеграция Azure Active Directory с Infor CloudSuite
+# <a name="tutorial-azure-active-directory-integration-with-infor-cloudsuite"></a>Руководство по Интеграция Azure Active Directory с Infor CloudSuite
 
 В этом руководстве описано, как интегрировать Infor CloudSuite с Azure Active Directory (Azure AD).
 Интеграция Infor CloudSuite с Azure AD обеспечивает следующие преимущества:
@@ -39,7 +39,7 @@ ms.locfileid: "67588554"
 
 Чтобы настроить интеграцию Azure AD с Infor CloudSuite, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Infor CloudSuite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,13 +101,13 @@ ms.locfileid: "67588554"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения Infor CloudSuite](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
     | | |
     |-|-|
@@ -151,7 +151,7 @@ ms.locfileid: "67588554"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -227,4 +227,4 @@ ms.locfileid: "67588554"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

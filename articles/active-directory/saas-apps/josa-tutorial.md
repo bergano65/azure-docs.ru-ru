@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с JOSA | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с JOSA | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и JOSA.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/08/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e51adefe29f71c9e1a4886f0892af7b93fb48070
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76266076"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-josa"></a>Руководство. Интеграция единого входа Azure Active Directory с JOSA
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-josa"></a>Руководство по Интеграция единого входа Azure Active Directory с JOSA
 
 В этом учебнике описано, как интегрировать JOSA с Azure Active Directory (Azure AD). Интеграция JOSA с Azure AD обеспечивает следующие возможности:
 

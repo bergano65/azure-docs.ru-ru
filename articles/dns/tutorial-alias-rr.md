@@ -1,5 +1,5 @@
 ---
-title: Руководство. созданию записи псевдонима для ссылки на запись ресурса в зоне
+title: Руководство по созданию записи псевдонима для ссылки на запись ресурса в зоне
 titleSuffix: Azure DNS
 description: В этом руководстве описывается процесс создания записи псевдонима Azure DNS для ссылки на запись ресурса в зоне.
 services: dns
@@ -9,13 +9,13 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: 2b122a34cfd382a58f7680743d3a1cb1ae598fd1
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76939251"
 ---
-# <a name="tutorial-create-an-alias-record-to-refer-to-a-zone-resource-record"></a>Руководство. Создание записи псевдонима для ссылки на запись ресурса в зоне
+# <a name="tutorial-create-an-alias-record-to-refer-to-a-zone-resource-record"></a>Руководство по Создание записи псевдонима для ссылки на запись ресурса в зоне
 
 Записи псевдонимов могут ссылаться на другие наборы записей одного типа. Например, вы можете иметь набор записей DNS CNAME, как псевдоним для другого набора записей CNAME того же типа. Эта возможность полезна, если вы хотите иметь некоторые наборы записей в качестве псевдонимов, а другие не как псевдонимы по поведению.
 

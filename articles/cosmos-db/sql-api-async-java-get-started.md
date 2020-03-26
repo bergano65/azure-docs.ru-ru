@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложения Java с помощью пакета SDK Async Java Azure Cosmos DB для управления учетной записью API SQL
+title: Руководство по Создание приложения Java с помощью пакета SDK Async Java Azure Cosmos DB для управления учетной записью API SQL
 description: В этом руководстве показано, как с помощью приложения Async Java хранить данные в учетной записи API SQL в Azure Cosmos DB и получить к ним доступ.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -10,13 +10,13 @@ ms.date: 11/05/2019
 ms.author: sngun
 Customer intent: As a developer, I want to build a Java application with the Async Java SDK to access and manage Azure Cosmos DB resources so that customers can utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
 ms.openlocfilehash: 8704e399156b9cfc6b04ff47af49b956b597a539
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75444890"
 ---
-# <a name="tutorial-build-a-java-app-with-the-async-java-sdk-to-manage-data-stored-in-a-sql-api-account"></a>Руководство. Создание приложения Java с помощью пакета SDK Async Java для управления данными, хранящимися в учетной записи API SQL
+# <a name="tutorial-build-a-java-app-with-the-async-java-sdk-to-manage-data-stored-in-a-sql-api-account"></a>Руководство по Создание приложения Java с помощью пакета SDK Async Java для управления данными, хранящимися в учетной записи API SQL
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-get-started.md)
@@ -36,7 +36,7 @@ ms.locfileid: "75444890"
 > * создание документов JSON;
 > * выполнение запросов к коллекции;
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Убедитесь, что у вас есть указанные ниже ресурсы.
 
@@ -54,7 +54,7 @@ ms.locfileid: "75444890"
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-## <a id="GitClone"></a>Клонирование репозитория GitHub
+## <a name="clone-the-github-repository"></a><a id="GitClone"></a>Клонирование репозитория GitHub
 
 [Чтобы приступить к работе с Azure Cosmos DB и Java](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-async-java-getting-started), сначала клонируйте репозиторий GitHub. Например, чтобы получить образец проекта в локальной среде, в локальном каталоге выполните следующую команду.
 
@@ -75,7 +75,7 @@ cd azure-cosmosdb-get-started
 </dependency>
 ```
 
-## <a id="Connect"></a>Подключение к учетной записи Azure Cosmos
+## <a name="connect-to-an-azure-cosmos-account"></a><a id="Connect"></a>Подключение к учетной записи Azure Cosmos
 
 Далее вернитесь на [портал Azure](https://portal.azure.com), чтобы получить конечную точку и первичный главный ключ. Конечная точка и первичный ключ Azure Cosmos DB позволяют приложению предоставлять данные о расположении, в котором будет устанавливаться подключение, делая подключение вашего приложения доверенным для Azure Cosmos DB. Файл `AccountSettings.java` содержит первичный ключ и значения универсального кода ресурса (URI). 
 
@@ -112,7 +112,7 @@ client = new AsyncDocumentClient.Builder()
          .build();
 ```
 
-## <a id="CreateDatabase"></a>Создание базы данных
+## <a name="create-a-database"></a><a id="CreateDatabase"></a>Создание базы данных
 
 Создайте базу данных Azure Cosmos с использованием метода `createDatabaseIfNotExists()` в классе DocumentClient. База данных представляет собой логический контейнер для хранения документов JSON, разделенных между коллекциями.
 
@@ -156,7 +156,7 @@ private void createDatabaseIfNotExists() throws Exception
 }
 ```
 
-## <a id="CreateColl"></a>Создание коллекции
+## <a name="create-a-collection"></a><a id="CreateColl"></a>Создание коллекции
 
 Вы можете создать коллекцию с использованием метода `createDocumentCollectionIfNotExists()` в классе DocumentClient. Коллекция представляет собой контейнер документов JSON и связанной логики приложения на JavaScript.
 
@@ -200,7 +200,7 @@ private void createDocumentCollectionIfNotExists() throws Exception
     }
 ```
 
-## <a id="CreateDoc"></a>Создание документов JSON
+## <a name="create-json-documents"></a><a id="CreateDoc"></a>Создание документов JSON
 
 Создайте документ с помощью метода createDocument класса DocumentClient. Документы относятся к пользовательскому (произвольному) содержимому JSON. Теперь мы можем добавить один или несколько документов. Файл src/main/java/com/microsoft/azure/cosmosdb/sample/Families.java определяет семейство документов JSON. 
 
@@ -220,7 +220,7 @@ public static Family getJohnsonFamilyDocument() {
     }
 ```
 
-## <a id="Query"></a>Запрос ресурсов Azure Cosmos DB
+## <a name="query-azure-cosmos-db-resources"></a><a id="Query"></a>Запрос ресурсов Azure Cosmos DB
 
 Azure Cosmos DB поддерживает полнофункциональные запросы к документам JSON, хранящимся в каждой коллекции. Ниже приведен пример кода, который позволяет запросить документы в Azure Cosmos DB, используя синтаксис SQL с методом `queryDocuments`.
 
@@ -254,7 +254,7 @@ private void executeSimpleQueryAsyncAndRegisterListenerForResult(CountDownLatch 
 }
 ```
 
-## <a id="Run"></a>Запуск консольного приложения Java
+## <a name="run-your-java-console-application"></a><a id="Run"></a>Запуск консольного приложения Java
 
 Чтобы запустить приложение из консоли, перейдите в папку проекта и выполните компиляцию с помощью Maven:
 

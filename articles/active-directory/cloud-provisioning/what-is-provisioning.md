@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 28513c57101af67695d10056b3dc8e6537dcddb2
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76712552"
 ---
 # <a name="what-is-identity-provisioning"></a>Что такое подготовка удостоверений?
@@ -24,7 +24,7 @@ ms.locfileid: "76712552"
 
 Подготовка — это процесс создания объекта на основе определенных условий, поддержание актуального состояния объекта и его удаление при невыполнении условий. Например, когда новый пользователь присоединяется к организации, он входит в систему управления персоналом.  На этом этапе подготовка может создать соответствующую учетную запись пользователя в облаке, в Active Directory и в различных приложениях, к которым пользователю необходим доступ.  Это позволяет пользователю начать работу и получить доступ к нужным приложениям и системам в первый день. 
 
-![облачная подготовка](media/what-is-provisioning/cloud1.png)
+![подготовка облака](media/what-is-provisioning/cloud1.png)
 
 Что касается Azure Active Directory, подготовка может быть разбита на следующие ключевые сценарии.  
 
@@ -34,7 +34,7 @@ ms.locfileid: "76712552"
 
 ## <a name="hr-driven-provisioning"></a>Подготовка на основе управления персоналом
 
-![облачная подготовка](media/what-is-provisioning/cloud2.png)
+![подготовка облака](media/what-is-provisioning/cloud2.png)
 
 Подготовка от управления персоналом до облака включает создание объектов (пользователей, ролей, групп и т. д.) на основе сведений, которые находятся в системе управления персоналом.  
 
@@ -48,13 +48,13 @@ ms.locfileid: "76712552"
 
 ## <a name="app-provisioning"></a>Подготовка приложений
 
-![облачная подготовка](media/what-is-provisioning/cloud3.png)
+![подготовка облака](media/what-is-provisioning/cloud3.png)
 
 В Azure Active Directory (Azure AD) термин **[подготовка приложений](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning)** относится к автоматическому созданию удостоверений и ролей пользователей в облачных приложениях, к которым пользователям требуется доступ. Кроме создания удостоверений пользователей, автоматическая подготовка включает в себя обслуживание и удаление удостоверений пользователей по мере изменения их статуса или ролей. Типичные сценарии включают подготовку пользователя Azure AD к таким приложениям, как [Dropbox](https://docs.microsoft.com/azure/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial), [Salesforce](https://docs.microsoft.com/azure/active-directory/saas-apps/salesforce-provisioning-tutorial), [ServiceNow](https://docs.microsoft.com/azure/active-directory/saas-apps/servicenow-provisioning-tutorial), и других.
 
 ## <a name="directory-provisioning"></a>Подготовка каталога
 
-![облачная подготовка](media/what-is-provisioning/cloud4.png)
+![подготовка облака](media/what-is-provisioning/cloud4.png)
 
 Локальная подготовка включает подготовку из локальных источников (например, Active Directory) в Azure AD.  
 
@@ -64,5 +64,5 @@ ms.locfileid: "76712552"
  
 ## <a name="next-steps"></a>Дальнейшие действия 
 
-- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
-- [Установка средств облачной подготовки](how-to-install.md)
+- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Установка средства подготовки облака](how-to-install.md)

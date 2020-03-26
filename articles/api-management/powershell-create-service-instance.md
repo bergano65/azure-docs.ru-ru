@@ -13,10 +13,10 @@ ms.custom: mvc
 ms.date: 11/15/2017
 ms.author: apimpm
 ms.openlocfilehash: 7cd4810059199ddfc88261e27bc910331abe096d
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "66730636"
 ---
 # <a name="create-a-new-azure-api-management-service-instance"></a>Создание экземпляра службы управления API Azure
@@ -62,7 +62,7 @@ New-AzApiManagement -ResourceGroupName "myResourceGroup" -Location "West US" -Na
 Remove-AzResourceGroup -Name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Импорт и публикация первого API](import-and-publish.md)

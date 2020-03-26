@@ -5,13 +5,13 @@ keywords: ansible, azure, devops, bash, playbook, networking, route, route table
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 1f08aebe7e9dcc1c5687f50ac91c7cb8cc8a62eb
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75659803"
 ---
-# <a name="tutorial-configure-azure-route-tables-using-ansible"></a>Руководство. Настройка таблицы маршрутов Azure с помощью Ansible
+# <a name="tutorial-configure-azure-route-tables-using-ansible"></a>Руководство по Настройка таблицы маршрутов Azure с помощью Ansible
 
 [!INCLUDE [ansible-27-note.md](../../includes/ansible-28-note.md)]
 
@@ -23,7 +23,7 @@ Azure автоматически направляет трафик между п
 >
 > Создание таблицы маршрутов. Создание виртуальной сети и подсети. Связывание таблицы маршрутов с подсетью. Отмена связывания таблицы маршрутов с подсетью. Создание и удаление маршрутов. Запрос таблицы маршрутов. Удаление таблицы маршрутов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 10/25/2017
 ms.author: sewatson
 ms.openlocfilehash: 40fd16f25e46e0833b7d41d75cd9995f550a5d83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227042"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "64727130"
 ---
 # <a name="virtual-machines-documentation"></a>Документация по виртуальным машинам
 Виртуальные машины Azure предоставляют по запросу безопасную высокомасштабируемую виртуализированную инфраструктуру. Вы можете создавать виртуальные машины Windows либо виртуальные машины Linux под управлением Red Hat, Ubuntu или дистрибутива Linux на ваш выбор. Чтобы узнать, как это сделать, ознакомьтесь со следующими материалами:

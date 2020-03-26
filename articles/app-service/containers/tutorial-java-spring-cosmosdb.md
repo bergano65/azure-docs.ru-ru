@@ -6,13 +6,13 @@ ms.author: routlaw
 ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
-ms.custom: seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 5109c33acf4a92a3227fe79d6d2c997a54adec08
-ms.sourcegitcommit: b8f2fee3b93436c44f021dff7abe28921da72a6d
+ms.custom: mvc, seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: e5dcb39430158db1ee9a18524d0214335a2bbbba
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77425278"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80045377"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Руководство по созданию веб-приложения Java Spring Boot с помощью Службы приложений Azure в Linux и Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "77425278"
 > * Подключение примера приложения к базе данных и его локальное тестирование
 > * Развертывание примера приложения в Azure
 > * Потоковая передача журналов диагностики из службы приложений
-> * Добавление дополнительных экземпляров для масштабирования примера приложения
+> * Добавление дополнительных экземпляров для горизонтального увеличения масштаба примера приложения
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -185,7 +185,7 @@ bash-3.2$ mvn package spring-boot:run
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.8.0</version>
+        <version>1.9.0</version>
         <configuration>
             <schemaVersion>v2</schemaVersion>
 
@@ -250,7 +250,7 @@ bash-3.2$ mvn azure-webapp:deploy
 [INFO] Building spring-todo-app 2.0-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
 [INFO] 
-[INFO] --- azure-webapp-maven-plugin:1.8.0:deploy (default-cli) @ spring-todo-app ---
+[INFO] --- azure-webapp-maven-plugin:1.9.0:deploy (default-cli) @ spring-todo-app ---
 [INFO] Target Web App doesn't exist. Creating a new one...
 [INFO] Creating App Service Plan 'ServicePlanb6ba8178-5bbb-49e7'...
 [INFO] Successfully created App Service Plan.
@@ -285,9 +285,9 @@ open https://spring-todo-app.azurewebsites.net
 [!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
 
 
-## <a name="scale-out-the-todo-app"></a>Масштабирование приложения со списком задач
+## <a name="scale-out-the-todo-app"></a>Горизонтальное увеличение масштаба приложения со списком задач
 
-Выполните масштабирование приложения, добавив другую рабочую роль:
+Выполните горизонтальное увеличение масштаба приложения, добавив другую рабочую роль:
 
 ```bash
 az appservice plan update --number-of-workers 2 \

@@ -12,10 +12,10 @@ ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 4e2953b107b017d032e737e2878472166c677839
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78194960"
 ---
 # <a name="what-is-azure-key-vault"></a>Что такое хранилище ключей Azure?
@@ -80,5 +80,5 @@ Key Vault можно интегрировать с учетными запися
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](quick-create-cli.md)
+- [Краткое руководство. Создание Azure Key Vault с помощью CLI](quick-create-cli.md)
 - [Tutorial: Configure an Azure web application to read a secret from Key Vault](tutorial-web-application-keyvault.md) (Руководство. Настройка веб-приложения Azure для считывания секрета из Key Vault)

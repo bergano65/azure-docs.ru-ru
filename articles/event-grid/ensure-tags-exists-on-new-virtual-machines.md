@@ -11,15 +11,15 @@ ms.workload: infrastructure-services
 ms.date: 05/10/2019
 ms.author: eamono
 ms.openlocfilehash: 9f99ce5862850c2453e9e72241fff77fe091616f
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "65521426"
 ---
-# <a name="tutorial-integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Руководство. Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams
+# <a name="tutorial-integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Руководство по Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * импорт примера runbook для Сетки событий;
@@ -28,7 +28,7 @@ ms.locfileid: "65521426"
 > * создание подписки в службе "Сетка событий";
 > * создание виртуальной машины, которая запускает runbook.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -124,9 +124,9 @@ ms.locfileid: "65521426"
 
     ![Уведомление для Microsoft Teams](media/ensure-tags-exists-on-new-virtual-machines/teams-vm-message.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы настроили интеграцию между Сеткой событий и службой автоматизации. Вы научились выполнять следующие задачи:
+В этом руководстве вы настроили интеграцию между Сеткой событий и службой автоматизации. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * импорт примера runbook для Сетки событий;

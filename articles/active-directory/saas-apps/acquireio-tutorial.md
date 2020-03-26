@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с AcquireIO | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с AcquireIO | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложение AcquireIO.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 10/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 01bcc3678485119afae1d567d97eff9dcebe6b95
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76714625"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Руководство. интеграции единого входа Azure Active Directory с AcquireIO
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Руководство по интеграции единого входа Azure Active Directory с AcquireIO
 
 В этом руководстве описано, как интегрировать AcquireIO с Azure Active Directory (Azure AD). Интеграция AcquireIO с Azure AD обеспечивает следующие возможности.
 

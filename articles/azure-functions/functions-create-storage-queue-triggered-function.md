@@ -6,10 +6,10 @@ ms.topic: quickstart
 ms.date: 10/01/2018
 ms.custom: mvc, cc996988-fb4f-47
 ms.openlocfilehash: 3d4cfc40f1849ecd2745b1d662973c7f64a0a60c
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75769257"
 ---
 # <a name="create-a-function-triggered-by-azure-queue-storage"></a>Создание функции, активируемой хранилищем очередей Azure
@@ -46,7 +46,7 @@ ms.locfileid: "75769257"
 
 1. В поле поиска введите `queue` и выберите шаблон **Триггер очереди**.
 
-1. Если появится соответствующий запрос, щелкните **Установить**, чтобы установить в приложение-функцию расширение Службы хранилища Azure и другие необходимые зависимости. По завершении установки щелкните **Продолжить**.
+1. Если появится соответствующий запрос, щелкните **Установить**, чтобы установить в приложение-функцию расширение службы хранилища Azure и другие необходимые зависимости. По завершении установки щелкните **Продолжить**.
 
     ![Установка расширений привязки](./media/functions-create-storage-queue-triggered-function/functions-create-queue-storage-trigger-portal.png)
 

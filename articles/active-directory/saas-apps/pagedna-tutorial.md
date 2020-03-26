@@ -17,10 +17,10 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3c7f8c8efcad0a07a3d3a56925866b10d94f82ed
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68227477"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagedna"></a>Руководство по интеграции Azure Active Directory с PageDNA
@@ -39,7 +39,7 @@ ms.locfileid: "68227477"
 
 Чтобы настроить интеграцию Azure AD с PageDNA, вам потребуется:
 
-* подписка Azure AD Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure AD. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * подписка PageDNA с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -56,7 +56,7 @@ PageDNA поддерживает следующие функции:
 
 Чтобы настроить интеграцию PageDNA с Azure AD, необходимо добавить PageDNA из Azure Marketplace в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com?azure-portal=true).
+1. Войдите на [портал Azure](https://portal.azure.com?azure-portal=true).
 1. В области слева выберите **Azure Active Directory**.
 
     ![Пункт Azure Active Directory](common/select-azuread.png)
@@ -102,7 +102,7 @@ PageDNA поддерживает следующие функции:
 
 1. На панели **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша), чтобы открыть панель **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В области **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -167,7 +167,7 @@ PageDNA поддерживает следующие функции:
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -211,5 +211,5 @@ PageDNA поддерживает следующие функции:
 
 * [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-* [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

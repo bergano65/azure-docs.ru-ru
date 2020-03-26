@@ -6,10 +6,10 @@ ms.date: 07/10/2019
 ms.author: atsenthi
 ms.custom: mvc
 ms.openlocfilehash: 477d47fabc59c5718c449418f225d6a38838b270
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75466267"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
@@ -144,7 +144,7 @@ Thumbprint                                Subject
 
 Откройте браузер и перейдите по адресу, указанному в поле **Конечная точка подключения** на предыдущем шаге. При необходимости можно добавить в начало URL-адреса идентификатор схемы `http://` и порт `:80`. Например http:\//mysfcluster.SouthCentralUS.cloudapp.azure.com:80.
 
- Должна открыться веб-страница служб IIS по умолчанию. ![Страница служб IIS по умолчанию][iis-default]
+ Откроется веб-страница IIS по умолчанию. ![Веб-страница IIS по умолчанию][iis-default]
 
 ## <a name="clean-up"></a>Очистка
 
