@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: tutorial
 ms.date: 5/6/2019
 ms.openlocfilehash: d1958c6ef0f7ed52e939967b5e82886fe1373ed8
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74774743"
 ---
 # <a name="tutorial-monitor-and-tune-azure-database-for-postgresql---single-server"></a>Руководство по мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
@@ -23,7 +23,7 @@ ms.locfileid: "74774743"
 > * Анализ базы данных для получения рекомендаций по производительности
 > * Применение рекомендаций по повышению производительности
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 Вам нужна база данных Azure для сервера PostgreSQL с PostgreSQL версии 9.6 или 10. Для создания сервера выполните действия, описанные в [этом руководстве](tutorial-design-database-using-azure-portal.md).
 
 > [!IMPORTANT]
@@ -32,7 +32,7 @@ ms.locfileid: "74774743"
 ## <a name="enabling-data-collection"></a>Включение сбора данных
 [Хранилище запросов](concepts-query-store.md) записывает историю запросов, а также собирает статистику по серверу и сохраняет ее в базу данных **azure_sys** на вашем сервере. Это подключаемая возможность. Чтобы ее включить, выполните следующие действия:
 
-1. Перейдите на портал Azure.
+1. Откройте портал Azure.
 
 2. Выберите сервер базы данных Azure для PostgreSQL.
 
@@ -92,5 +92,5 @@ ms.locfileid: "74774743"
 ### <a name="permissions"></a>Разрешения
 Для выполнения анализа с помощью функции рекомендаций по повышению производительности требуются разрешения **владельца** или **участника**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) см. в базе данных Azure для PostgreSQL.

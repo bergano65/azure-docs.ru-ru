@@ -7,13 +7,13 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: brendm
 ms.openlocfilehash: 657aa70d77fd1af9fd2121a3e98ea3aca7773642
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76277540"
 ---
-# <a name="tutorial-bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>Руководство. привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
+# <a name="tutorial-bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>Руководство по привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
 
 С помощью Azure Spring Cloud можно автоматически привязать выбранные службы Azure к приложениям, не настраивая приложение Spring Boot вручную. Изучив этот учебник, вы узнаете, как привязать свое приложение к экземпляру Базы данных Azure для MySQL.
 

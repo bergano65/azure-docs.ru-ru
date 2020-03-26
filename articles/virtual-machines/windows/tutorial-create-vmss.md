@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание масштабируемого набора виртуальных машин Windows
+title: Руководство по Создание масштабируемого набора виртуальных машин Windows
 description: Узнайте, как с помощью Azure PowerShell создать и развернуть высокодоступное приложение на виртуальных машинах Windows с помощью масштабируемого набора виртуальных машин
 services: virtual-machine-scale-sets
 documentationcenter: ''
@@ -17,13 +17,13 @@ ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: bf53b2777c5d1e4d774a9f5ee9df119a0deac9d9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75464980"
 ---
-# <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-windows-with-azure-powershell"></a>Руководство. Создание масштабируемого набора виртуальных машин и развертывание в Windows приложения высокого уровня доступности с помощью Azure PowerShell
+# <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-windows-with-azure-powershell"></a>Руководство по Создание масштабируемого набора виртуальных машин и развертывание в Windows приложения высокого уровня доступности с помощью Azure PowerShell
 Масштабируемый набор виртуальных машин позволяет развернуть набор одинаковых виртуальных машин с возможностью автомасштабирования и управлять этим набором. Количество виртуальных машин в масштабируемом наборе можно изменять вручную. Также можно задавать правила автомасштабирования на основе использования ресурсов, например ЦП, памяти или сетевого трафика. В этом руководстве вы развернете масштабируемый набор виртуальных машин в Azure и научитесь выполнять следующие операции:
 
 > [!div class="checklist"]

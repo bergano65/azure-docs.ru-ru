@@ -17,10 +17,10 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3d916e783554e63ca20a9c841ddd0ece84aebf33
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67103640"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edubrite-lms"></a>Руководство по Интеграция Azure Active Directory с EduBrite LMS
@@ -39,7 +39,7 @@ ms.locfileid: "67103640"
 
 Чтобы настроить интеграцию Azure AD с EduBrite LMS, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка EduBrite LMS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -102,15 +102,15 @@ ms.locfileid: "67103640"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения EduBrite LMS](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<customer-specific>.edubrite.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<customer-specific>.edubrite.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer-specific>.edubrite.com/oltpublish/site/samlLoginResponse.do`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer-specific>.edubrite.com/oltpublish/site/samlLoginResponse.do`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -129,7 +129,7 @@ ms.locfileid: "67103640"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -205,5 +205,5 @@ ms.locfileid: "67103640"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

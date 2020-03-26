@@ -11,13 +11,13 @@ ms.author: genemi
 ms.reviewer: carlrab
 ms.date: 07/29/2019
 ms.openlocfilehash: 0f1140bbefc7508666e763fcd4f1a04ba48cdfdd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75354941"
 ---
-# <a name="tutorial-design-a-relational-database-in-a-single-database-within-azure-sql-database-cx23-and-adonet"></a>Руководство. Проектирование отдельной реляционной базы данных в службе "База данных SQL Azure" на языке C# с помощью ADO.NET
+# <a name="tutorial-design-a-relational-database-in-a-single-database-within-azure-sql-database-cx23-and-adonet"></a>Руководство по Проектирование отдельной реляционной базы данных в службе "База данных SQL Azure" на языке C# с помощью ADO.NET
 
 База данных SQL Azure — это реляционная база данных как услуга (DBaaS) в Microsoft Cloud (Azure). Из этого руководства вы узнаете, как с помощью портала Azure и ADO.NET с Visual Studio выполнить следующие действия:
 
@@ -34,7 +34,7 @@ ms.locfileid: "75354941"
 > [!TIP]
 > Следующий модуль Microsoft Learn поможет вам бесплатно научиться [разрабатывать и настраивать приложение ASP.NET, которое запрашивает базу данных SQL Azure](https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/), а также создавать простую базу данных.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Установленная среда [Visual Studio 2019](https://www.visualstudio.com/downloads/) или более поздней версии.
 
@@ -51,21 +51,21 @@ ms.locfileid: "75354941"
 
 3. Заполните форму **База данных SQL**, указав следующую информацию, как показано на предыдущем рисунке.
 
-    | Параметр       | Рекомендуемое значение | Description |
+    | Параметр       | Рекомендуемое значение | Описание |
     | ------------ | ------------------ | ------------------------------------------------- |
     | **Имя базы данных** | *yourDatabase* | Допустимые имена баз данных см. в статье [Идентификаторы баз данных](/sql/relational-databases/databases/database-identifiers). |
-    | **подписка** | *yourSubscription*  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-    | **группа ресурсов** | *yourResourceGroup* | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
+    | **Подписка** | *yourSubscription*  | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
+    | **Группа ресурсов** | *yourResourceGroup* | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
     | **Выбрать источник** | Пустая база данных | Указывает, что должна быть создана пустая база данных. |
 
 4. Щелкните **Сервер**, чтобы использовать имеющийся сервер базы данных или создать и настроить новый сервер базы данных. Выберите существующий сервер или нажмите кнопку **Создать сервер** и заполните форму **Новый сервер**, указав следующие сведения.
 
-    | Параметр       | Рекомендуемое значение | Description |
+    | Параметр       | Рекомендуемое значение | Описание |
     | ------------ | ------------------ | ------------------------------------------------- |
     | **Имя сервера** | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming). |
     | **Имя для входа администратора сервера** | Любое допустимое имя | Сведения о допустимых именах для входа см. в статье [Идентификаторы базы данных](/sql/relational-databases/databases/database-identifiers). |
     | **Пароль** | Любой допустимый пароль | Длина пароля должна составлять минимум восемь символов. В пароле должны использоваться символы трех категорий из перечисленных: прописные буквы, строчные буквы, цифры и специальные символы. |
-    | **Местоположение** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |
+    | **Расположение** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |
 
     ![Создание базы данных — сервер](./media/sql-database-design-first-database/create-database-server.png)
 

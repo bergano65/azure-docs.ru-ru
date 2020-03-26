@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
 ms.openlocfilehash: c83e56a47f4b212a5612cb9e6965ce8e73228dcb
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74892895"
 ---
 # <a name="tutorial---encrypt-and-decrypt-blobs-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
@@ -29,7 +29,7 @@ ms.locfileid: "74892895"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником требуется:
+Для работы с этим учебником необходимо наличие следующих компонентов.
 
 * Учетная запись хранения Azure
 * Visual Studio 2013 или более поздней версии
@@ -52,7 +52,7 @@ ms.locfileid: "74892895"
 
 * Создать хранилище ключей.
 * Добавить ключ или секрет в хранилище ключей.
-* Зарегистрировать приложение в Azure Active Directory.
+* Зарегистрируйте приложение в Azure Active Directory.
 * Разрешить приложению использовать ключ или секрет.
 
 Запишите ClientID и ClientSecret, сформированные при регистрации приложения в Azure Active Directory.
@@ -230,9 +230,9 @@ SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
     CancellationToken.None).GetAwaiter().GetResult();
 ```
 
-Вот и все. Так просто!
+Вот и все. Вот и все!
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании службы хранилища Microsoft Azure с C# см. в статье [Клиентская библиотека службы хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 

@@ -18,13 +18,13 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 09/11/2019
 ms.openlocfilehash: c2d3789082130cbbc42021a0706249dd3966b9ef
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75531128"
 ---
-# <a name="tutorial-send-push-notifications-to-specific-android-apps-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure
+# <a name="tutorial-send-push-notifications-to-specific-android-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "75531128"
 > * Обновление приложения Android.
 > * Тестирование приложения
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Пройдите [руководство по Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md).
 

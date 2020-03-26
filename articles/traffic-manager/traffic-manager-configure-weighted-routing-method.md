@@ -13,13 +13,13 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: rohink
 ms.openlocfilehash: 8bdc710b36cae70d29d32333f431b8a9dda154cc
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76938714"
 ---
-# <a name="tutorial-configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Руководство. Настройка метода взвешенной маршрутизации трафика в диспетчере трафика
+# <a name="tutorial-configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>Руководство по Настройка метода взвешенной маршрутизации трафика в диспетчере трафика
 
 Общепринятый подход к методу маршрутизации трафика состоит в предоставлении набора идентичных конечных точек (облачных служб и веб-сайтов) и равномерной отправке трафика в каждую из них. Ниже приведены инструкции по настройке такого метода маршрутизации трафика.
 

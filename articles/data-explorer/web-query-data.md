@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 07/04/2019
 ms.openlocfilehash: 145e452a3a914e1026d6da11f2ce38e85fa724f0
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "67797190"
 ---
 # <a name="quickstart-query-data-in-azure-data-explorer-web-ui"></a>Краткое руководство. Запрос данных в пользовательском веб-интерфейсе Azure Data Explorer
@@ -189,6 +189,6 @@ ms.locfileid: "67797190"
 
 В этом кратком руководстве не было создано никаких ресурсов, однако если вы хотите удалить один или оба кластера из приложения, щелкните кластер правой кнопкой и выберите **Удалить подключение**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Написание запросов для обозревателя данных Azure](write-queries.md)

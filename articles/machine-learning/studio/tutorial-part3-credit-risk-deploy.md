@@ -10,14 +10,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 8ab6904a2569e508c0697cc273af4fd40a1767de
-ms.sourcegitcommit: 668b3480cb637c53534642adcee95d687578769a
+ms.openlocfilehash: 9fb0b59374edf322e5e2221b90e912ee2c665bac
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78898752"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79204159"
 ---
 # <a name="tutorial-3-deploy-credit-risk-model---azure-machine-learning-studio-classic"></a>Руководство 3. Развертывание модели кредитных рисков в Студии машинного обучения Azure (классической)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 В этом руководстве подробно описывается процесс разработки решения прогнозной аналитики. Мы создадим в Студии машинного обучения (классической) простую модель,  а затем развернем ее в качестве веб-службы машинного обучения Azure.  Развернутая модель позволяет создавать прогнозы на основе новых данных. Это руководство представляет собой **третью, заключительную часть серии руководств**.
 

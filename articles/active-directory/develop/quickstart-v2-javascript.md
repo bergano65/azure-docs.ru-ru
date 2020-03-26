@@ -7,17 +7,17 @@ author: navyasric
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript
 ms.topic: quickstart
 ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
-ms.openlocfilehash: 40f5935c7d653ce90aa56bc5ee2bb15711bb9dd8
-ms.sourcegitcommit: 05b36f7e0e4ba1a821bacce53a1e3df7e510c53a
+ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript
+ms.openlocfilehash: 2649d885d31bcd0fef403e7e4eddbc828fd17b93
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78399255"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80050256"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
@@ -79,10 +79,9 @@ ms.locfileid: "78399255"
 > Запустите проект с помощью веб-сервера, используя Node.js.
 
 > [!div renderon="portal" id="autoupdate" class="nextstepaction"]
-> [Скачивание примера кода]()
+> [Скачивание примера кода](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip)
 
 > [!div renderon="docs"]
-
 > #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 >
 > В папке *JavaScriptSPA* измените файл *authConfig.js* и установите значения `clientID`, `authority` и `redirectUri` в разделе `msalConfig`.

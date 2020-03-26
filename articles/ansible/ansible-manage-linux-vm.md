@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: gwallace
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 90113373535c835e5cddf707bcb520789e596aec
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: d94858391951aaf9387394afeb5ad2ae373fa7b5
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77202436"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80239538"
 ---
 # <a name="quickstart-manage-linux-virtual-machines-in-azure-using-ansible"></a>Краткое руководство. Управление виртуальными машинами Linux в Azure с помощью Ansible
 
@@ -34,7 +34,7 @@ Ansible позволяет автоматизировать развертыва
 
 1. Создайте файл `azure-vm-stop.yml` и откройте его в редакторе.
 
-    ```azurecli-interactive
+    ```bash
     code azure-vm-stop.yml
     ```
 
@@ -87,7 +87,7 @@ Ansible позволяет автоматизировать развертыва
 
 1. Создайте файл `azure-vm-start.yml` и откройте его в редакторе.
 
-    ```azurecli-interactive
+    ```bash
     code azure-vm-start.yml
     ```
 

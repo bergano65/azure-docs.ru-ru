@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 3b965ab7dfafd6c78c801cf3692463efe366c852
-ms.sourcegitcommit: 225a0b8a186687154c238305607192b75f1a8163
+ms.openlocfilehash: c0bb391348548ecca595fd1a6472bafcb22ed4ee
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/29/2020
-ms.locfileid: "78198088"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79472662"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-python"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows на языке Python
 
@@ -35,13 +35,13 @@ Azure Key Vault помогает защитить секреты, такие к�
 
 Перед началом работы ознакомьтесь c [основными понятиями службы Key Vault](basic-concepts.md). 
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для Windows, Mac и Linux:
   * [Git](https://git-scm.com/downloads);
-  * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://review.docs.microsoft.com/cli/azure/install-azure-cli).
+  * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="about-managed-service-identity"></a>Основные сведения об MSI
 
@@ -117,7 +117,7 @@ az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourRe
 
 Обратите внимание на присвоенный системой идентификатор, который отображается в следующем коде. Выходные данные приведенной выше команды выглядят следующим образом. 
 
-```azurecli
+```output
 {
   "systemAssignedIdentity": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "userAssignedIdentities": {}
@@ -148,7 +148,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
   При этом также извлекается токен из Azure AD.
 1. Передача токена в хранилище ключей и получение секрета. 
 
-```
+```python
     # importing the requests library 
     import requests 
 
@@ -170,7 +170,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 Выполнив следующий код, вы можете отобразить значение секрета. 
 
-```
+```console
 python Sample.py
 ```
 

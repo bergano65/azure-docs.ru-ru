@@ -6,10 +6,10 @@ ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
 ms.openlocfilehash: 09df78955de6423244c2d8ec94e1e1c06ecab257
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75648741"
 ---
 # <a name="create-and-use-a-custom-provider"></a>Создание и использование настраиваемого поставщика
@@ -31,7 +31,7 @@ ms.locfileid: "75648741"
 }
 ```
 
-Свойство | Обязательно | Description
+Свойство | Обязательно | Описание
 ---|---|---
 **name** | Да | Имя определения конечной точки. Azure предоставляет это имя через свой API-интерфейс в разделе "/subscriptions/{ИД_подписки}/resourceGroups/{Имя_группы_ресурсов}/providers/Microsoft.CustomProviders/<br>/resourceProviders/{имя_поставщика_ресурсов}/{имя_определения_конечной_точки}
 **routingType** | нет | Тип контракта конечной точки. Если это значение не указано, по умолчанию используется тип Proxy (Прокси-сервер).
@@ -109,7 +109,7 @@ ms.locfileid: "75648741"
 
 ### <a name="custom-actions"></a>Настраиваемые действия
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 > [!NOTE]
 > Замените заполнители `{subscriptionId}` и `{resourceGroupName}` именами подписки и группы ресурсов, где развернут настраиваемый поставщик.
@@ -123,13 +123,13 @@ az resource invoke-action --action myCustomAction \
                             }'
 ```
 
-Параметр | Обязательно | Description
+Параметр | Обязательно | Описание
 ---|---|---
 *action* | Да | Имя действия, определенного в настраиваемом поставщике.
 *ids* | Да | Идентификатор ресурса настраиваемого поставщика.
 *request-body* | нет | Текст запроса, который будет отправляться в конечную точку.
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Нет.
 
@@ -137,7 +137,7 @@ az resource invoke-action --action myCustomAction \
 
 ### <a name="custom-resources"></a>Настраиваемые ресурсы
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 > [!NOTE]
 > Замените заполнители `{subscriptionId}` и `{resourceGroupName}` именами подписки и группы ресурсов, где развернут настраиваемый поставщик.
@@ -156,7 +156,7 @@ az resource create --is-full-object \
                     }'
 ```
 
-Параметр | Обязательно | Description
+Параметр | Обязательно | Описание
 ---|---|---
 *is-full-object* | Да | Указывает, включает ли объект свойств другие параметры, такие как расположение, теги, номер SKU и (или) план.
 *идентификатор* | Да | Идентификатор ресурса настраиваемого ресурса. Этот идентификатор — расширение идентификатора ресурса для настраиваемого поставщика.
@@ -168,7 +168,7 @@ az resource create --is-full-object \
 az resource delete --id /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/myCustomProvider/myCustomResources/myTestResourceName1
 ```
 
-Параметр | Обязательно | Description
+Параметр | Обязательно | Описание
 ---|---|---
 *идентификатор* | Да | Идентификатор ресурса настраиваемого ресурса. Этот идентификатор — расширение идентификатора ресурса для настраиваемого поставщика.
 
@@ -178,11 +178,11 @@ az resource delete --id /subscriptions/{subscriptionId}/resourceGroups/{resource
 az resource show --id /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/myCustomProvider/myCustomResources/myTestResourceName1
 ```
 
-Параметр | Обязательно | Description
+Параметр | Обязательно | Описание
 ---|---|---
 *идентификатор* | Да | Идентификатор ресурса настраиваемого ресурса. Этот идентификатор — расширение идентификатора ресурса для настраиваемого поставщика.
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Пример шаблона Resource Manager
 
@@ -204,7 +204,7 @@ az resource show --id /subscriptions/{subscriptionId}/resourceGroups/{resourceGr
 }
 ```
 
-Параметр | Обязательно | Description
+Параметр | Обязательно | Описание
 ---|---|---
 *resourceTypeName* | Да | Значение `name` из свойства **resourceType**, которое определено в настраиваемом поставщике.
 *resourceProviderName* | Да | Имя экземпляра настраиваемого поставщика.

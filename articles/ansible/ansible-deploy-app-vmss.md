@@ -5,13 +5,13 @@ keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machi
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.openlocfilehash: d638ae3f0c33734b42ef5456772fcd2bc62e35a4
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75940859"
 ---
-# <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство. развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
+# <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 
 [!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "75940859"
 > * Установка JRE (среды выполнения Java) в масштабируемом наборе
 > * Развертывание приложения Java в масштабируемом наборе
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 

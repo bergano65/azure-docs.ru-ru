@@ -12,13 +12,13 @@ ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops
 ms.openlocfilehash: bb7c773d02c5da5c115af79cd9e90c78e71eb6bf
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76988334"
 ---
-# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
+# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
 
 Непрерывная интеграция (CI) и непрерывное развертывание (CD) — это конвейер, с помощью которого можно выполнить сборку, выпустить и развернуть свой код после каждой фиксации. Этот документ описывает, как настроить конвейер CI/CD для Azure Pipelines, чтобы выполнять развертывания на нескольких компьютера.
 
@@ -53,7 +53,7 @@ Azure Pipelines предоставляет комплексный и полно�
 
 Но если вы только начинаете работу, лучше использовать наш пример кода. В этом случае создайте вилку этого репозитория в GitHub:
 
-#### <a name="javatabjava"></a>[Java](#tab/java)
+#### <a name="java"></a>[Java](#tab/java)
 
 ```
 https://github.com/spring-projects/spring-petclinic
@@ -62,7 +62,7 @@ https://github.com/spring-projects/spring-petclinic
 > [!NOTE]
 > Petclinic — это приложение [Java Spring Boot](https://spring.io/guides/gs/spring-boot), созданное с помощью [Maven](https://spring.io/guides/gs/maven/).
 
-#### <a name="javascripttabjava-script"></a>[JavaScript](#tab/java-script)
+#### <a name="javascript"></a>[JavaScript](#tab/java-script)
 
 ```
 https://github.com/azure-devops/fabrikam-node
@@ -82,13 +82,13 @@ https://github.com/azure-devops/fabrikam-node
 Упомянутые выше примеры приложений были протестированы на Ubuntu 16.04. Мы рекомендуем использовать для этого краткого руководства эту версию виртуальной машины Linux.
 Выполните описанные ниже дополнительные действия с учетом стека среды выполнения, который вы используете для приложения.
 
-#### <a name="javatabjava"></a>[Java](#tab/java)
+#### <a name="java"></a>[Java](#tab/java)
 
 - Для развертывания приложений на основе Java Spring Boot и Spring Cloud создайте в Azure виртуальную машину Linux, используя [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804), который включает среду выполнения на основе OpenJDK с полной поддержкой.
 - Для развертывания сервлетов Java на сервере Tomcat создайте виртуальную машину Linux, используя Java 8 и [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804), и [настройте Tomcat 9.x в качестве службы](https://tomcat.apache.org/tomcat-9.0-doc/setup.html).
 - Для развертывания приложения на базе Java EE используйте шаблон Azure, чтобы создать [виртуальную машину Linux с Java и WebSphere 9.x](https://azuremarketplace.microsoft.com/marketplace/apps/midvision.websphere-application-server-nde-90), [виртуальную машину Linux с Java и WebLogic 12.x](https://azuremarketplace.microsoft.com/marketplace/apps/oracle.20191009-arm-oraclelinux-wls-admin) или [виртуальную машину Linux с Java и WildFly/JBoss 14](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804). 
 
-#### <a name="javascripttabjava-script"></a>[JavaScript](#tab/java-script)
+#### <a name="javascript"></a>[JavaScript](#tab/java-script)
 
 Чтобы установить приложение JavaScript или Node.js, вам потребуется виртуальная машина Linux с веб-сервером Nginx.
 Если у вас нет виртуальной машины Linux с Nginx, [создайте ее в Azure](/azure/virtual-machines/linux/quick-create-cli).
@@ -141,7 +141,7 @@ https://github.com/azure-devops/fabrikam-node
 
 1. Azure Pipelines проанализирует этот репозиторий и предложит подходящий шаблон конвейера.
 
-#### <a name="javatabjava"></a>[Java](#tab/java)
+#### <a name="java"></a>[Java](#tab/java)
 
 Выберите **базовый** шаблон и скопируйте приведенный ниже фрагмент кода YAML, который компилирует проект Java и выполняет тесты с помощью Apache Maven.
 
@@ -165,7 +165,7 @@ https://github.com/azure-devops/fabrikam-node
 
 См. сведения о том, как [создать приложение Java с помощью Maven](https://docs.microsoft.com/azure/devops/pipelines/ecosystems/java).
 
-#### <a name="javascripttabjava-script"></a>[JavaScript](#tab/java-script)
+#### <a name="javascript"></a>[JavaScript](#tab/java-script)
 
 Выберите **базовый** шаблон и скопируйте приведенный ниже фрагмент кода YAML, который компилирует общий проект Node.js с помощью npm.
 

@@ -5,19 +5,19 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
 ms.openlocfilehash: 086379e788966b300f988e06ec42c94b880b8281
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75551732"
 ---
-# <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство. развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
+# <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть в Azure кластер Service Fabric на платформе Windows в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети](../virtual-network/virtual-networks-nsg.md) с помощью шаблона и PowerShell. Выполнив инструкции из этого учебника, вы получите кластер в облаке, в котором можно разворачивать приложения. Создание кластера Linux с помощью Azure CLI описывается в статье о [создании защищенного кластера Linux в Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 В этом руководстве описывается рабочий сценарий. Если вы хотите создать небольшой кластер для тестирования, ознакомьтесь с [этой статьей](./scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание виртуальной сети в Azure с помощью PowerShell;
@@ -42,7 +42,7 @@ ms.locfileid: "75551732"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 

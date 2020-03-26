@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2f3d96926221a69e1cf216be81368a2eb87c938a
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "76758345"
 ---
 # <a name="quickstart-add-guest-users-to-your-directory-in-the-azure-portal"></a>Краткое руководство. Добавление гостевых пользователей в каталог на портале Azure
@@ -44,7 +44,7 @@ ms.locfileid: "76758345"
 
 4.  Затем выберите **Новый гостевой пользователь**.
 
-    ![Снимок экрана с подсказкой, где выбрать параметр "Новый гостевой пользователь"](media/quickstart-add-users-portal/quickstart-users-portal-user-3.png)
+    ![Снимок экрана с подсказкой, где выбрать команду "Новый гостевой пользователь"](media/quickstart-add-users-portal/quickstart-users-portal-user-3.png)
 
 5. На странице **Новый пользователь** выберите **Пригласить пользователя**, а затем добавьте сведения о пользователе-госте. 
 

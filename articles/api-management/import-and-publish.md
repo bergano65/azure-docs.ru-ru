@@ -14,10 +14,10 @@ ms.topic: tutorial
 ms.date: 02/27/2020
 ms.author: apimpm
 ms.openlocfilehash: 886063dcf886d79ac960814f20b3789e8e3b6839
-ms.sourcegitcommit: 1f738a94b16f61e5dad0b29c98a6d355f724a2c7
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78163516"
 ---
 # <a name="import-and-publish-your-first-api"></a>Импорт и публикация первого API 
@@ -41,7 +41,7 @@ ms.locfileid: "78163516"
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="create-api"> </a>Импорт и публикация API серверной части
+## <a name="import-and-publish-a-backend-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
 В этом разделе показано, как импортировать и опубликовать API серверной части "Спецификация OpenAPI".
  
@@ -84,7 +84,7 @@ ms.locfileid: "78163516"
    
    Служба серверной части вернет ответ **200 OK** и другие данные.
 
-## <a name="next-steps"> </a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
 

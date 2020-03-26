@@ -6,14 +6,14 @@ ms.author: jzim
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 05/06/2019
-ms.openlocfilehash: bf9172f0c84834c951446520ff0bfcc3ef756c9c
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: c6334aa20b543dfbf87fedcfe45d54bbcf7a219a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278310"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79477023"
 ---
-# <a name="tutorial-scale-an-azure-red-hat-openshift-cluster"></a>Руководство. масштабированию кластера Azure Red Hat OpenShift
+# <a name="tutorial-scale-an-azure-red-hat-openshift-cluster"></a>Руководство по масштабированию кластера Azure Red Hat OpenShift
 
 Это руководство представляет собой вторую часть цикла. Из него вы узнаете, как создать кластер Microsoft Azure Red Hat OpenShift с помощью Azure CLI, выполнить его масштабирование, а затем удалить, чтобы очистить ресурсы.
 
@@ -38,7 +38,7 @@ ms.locfileid: "76278310"
 
 Если интерфейс Azure CLI запущен локально, выполните командлет `az login`, чтобы войти в Azure.
 
-```bash
+```azurecli
 az login
 ```
 
@@ -54,7 +54,7 @@ CLUSTER_NAME=yourclustername
 
 Теперь с помощью Azure CLI давайте выполним масштабирование кластера до пяти узлов:
 
-```bash
+```azurecli
 az openshift scale --resource-group $CLUSTER_NAME --name $CLUSTER_NAME --compute-count 5
 ```
 

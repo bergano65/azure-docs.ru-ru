@@ -5,18 +5,19 @@ description: Моделирование ошибки при чтении дан�
 services: storage
 author: tamram
 ms.service: storage
+ms.subservice: blobs
 ms.topic: tutorial
 ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: artek
-ms.openlocfilehash: 522ed13681a98535c35552128fc8432782ec1ca2
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 3693ae8c9c425c35ab1a4ebf88b6cd3dfb58f92c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162707"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80061293"
 ---
-# <a name="tutorial-simulate-a-failure-in-reading-data-from-the-primary-region"></a>Руководство. Моделирование сбоя при чтении данных в основном регионе
+# <a name="tutorial-simulate-a-failure-in-reading-data-from-the-primary-region"></a>Руководство по Моделирование сбоя при чтении данных в основном регионе
 
 Это руководство представляет собой вторую часть цикла. Из него вы узнаете больше о преимуществах [геоизбыточного хранилища с доступом на чтение](../common/storage-redundancy.md) (RA-GRS) с помощью имитации сбоя.
 

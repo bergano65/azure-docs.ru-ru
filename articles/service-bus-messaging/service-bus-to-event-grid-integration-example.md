@@ -1,6 +1,6 @@
 ---
-title: Руководство. Примеры интеграции служебной шины Azure со службой "Сетка событий"
-description: Руководство. В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
+title: Руководство по Примеры интеграции служебной шины Azure со службой "Сетка событий"
+description: Руководство по В статье представлены примеры интеграции обмена сообщениями через служебную шину с Сеткой событий.
 services: service-bus-messaging
 documentationcenter: .net
 author: spelluru
@@ -14,25 +14,32 @@ ms.devlang: multiple
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 3fb2f4a4969e8df94a60ac20c761f073b6a9d030
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fef325b67c38eda09a05dac9d74bd5b97df164cc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462091"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80067764"
 ---
-# <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство. Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
-Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. Вы сделаете следующее:
- 
-- Создадите функцию проверки Azure для отладки и просмотра начального потока событий из Сетки событий.
-- Создайте функцию Azure для приема и обработки сообщений служебной шины Azure на основе событий, зарегистрированных службой "Сетка событий".
-- Создадите приложение логики для реагирования на события Сетки событий.
+# <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство по Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
+Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. 
 
-Создав артефакты служебной шины, Сетки событий, Функций Azure и Logic Apps, вы сделаете следующее: 
+В этом руководстве описано следующее:
+> [!div class="checklist"]
+> * Создание пространства имен служебной шины
+> * Подготовка примера приложения для отправки сообщений
+> * Настройка проверочной функции в Azure
+> * Подключение функции и пространства имен с помощью службы "Сетка событий"
+> * Отправка сообщений в раздел служебной шины
+> * Получение сообщений с помощью службы "Функции Azure"
+> * Получение сообщений с помощью Logic Apps
 
-1. Отправите сообщения в раздел служебной шины. 
-2. Убедитесь, что подписки на раздел получили эти сообщения.
-3. Убедитесь, что функция или приложение логики с подпиской на событие получили это событие. 
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим руководством вам потребуются:
+
+- [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](https://www.visualstudio.com/vs) или более новая версия.
+- [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
 
 ## <a name="create-a-service-bus-namespace"></a>Создание пространства имен служебной шины
 Выполните инструкции, описанные здесь: [Краткое руководство. Создание раздела служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Так вы сделаете следующее:
@@ -65,7 +72,7 @@ ms.locfileid: "75462091"
 Затем сделайте следующее: 
 
 
-# <a name="azure-functions-v2tabv2"></a>[Функции Azure версии 2](#tab/v2)
+# <a name="azure-functions-v2"></a>[Функции Azure версии 2](#tab/v2)
 
 1. Разверните **Функции** в представлении в виде дерева и выберите нужную функцию. Замените код в функции следующим кодом: 
 
@@ -122,7 +129,7 @@ ms.locfileid: "75462091"
 
     ![Получение URL-адреса функции](./media/service-bus-to-event-grid-integration-example/get-function-url.png)
 
-# <a name="azure-functions-v1tabv1"></a>[Функции Azure версии 1](#tab/v1)
+# <a name="azure-functions-v1"></a>[Функции Azure версии 1](#tab/v1)
 
 1. Настройте функцию для использования **версии 1**: 
     1. Разверните приложение-функцию в представлении в виде дерева и выберите **Параметры приложения-функции**. 
@@ -294,7 +301,7 @@ ms.locfileid: "75462091"
     6. Выберите **RootManageSharedAccessKey**.
 
         ![Конструктор Logic Apps — выбор общего ключа доступа](./media/service-bus-to-event-grid-integration-example/logic-app-shared-access-key.png) 
-    7. Нажмите кнопку **Создать**. 
+    7. Нажмите кнопку **создания**. 
     8. Выберите раздел и подписку. 
     
         ![Конструктор Logic Apps — выбор подписки и раздела служебной шины](./media/service-bus-to-event-grid-integration-example/logic-app-select-topic-subscription.png)

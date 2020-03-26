@@ -5,13 +5,13 @@ ms.topic: tutorial
 ms.date: 08/29/2018
 ms.custom: mvc
 ms.openlocfilehash: 9cf619eddd07bbe55cd7aea5f27051a7d0415c24
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75614138"
 ---
-# <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
+# <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство по Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
 
 Это второе руководство из цикла. В нем описано, как настроить непрерывные интеграцию и развертывание для приложения-контейнера Azure Service Fabric с помощью Visual Studio Azure DevOps.  Вам потребуется существующее приложение Service Fabric. В качестве примера используется приложение, созданное в руководстве [по развертыванию приложения .NET из контейнера Windows в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 
@@ -23,7 +23,7 @@ ms.locfileid: "75614138"
 > * Создание определения выпуска в Visual Studio Team Explorer
 > * Автоматическое развертывание и обновление приложения
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 

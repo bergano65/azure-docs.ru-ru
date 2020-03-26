@@ -5,10 +5,10 @@ ms.date: 12/06/2019
 ms.topic: tutorial
 ms.reviewer: chrisseg
 ms.openlocfilehash: 5b901ab904425a22d2fe9643ffa75a4e978efa88
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74972882"
 ---
 # <a name="tutorial-create-buildanddeploysmartcontracts-on-azure-blockchain-service"></a>Руководство по Создание, сборка и развертывание смарт-контрактов в службе "Блокчейн Azure"
@@ -19,7 +19,7 @@ ms.locfileid: "74972882"
 
 > [!div class="checklist"]
 > * Создание смарт-контракта
-> * развертывание смарт-контракта;
+> * Развертывание смарт-контракта
 > * выполнение функции смарт-контракта путем транзакции;
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
@@ -113,7 +113,7 @@ Truffle использует скрипты миграции для развер
 1. На портале Azure перейдите к **группам ресурсов** в области навигации слева и выберите группу ресурсов, которую необходимо удалить.
 1. Выберите **Удалить группу ресурсов**. Подтвердите удаление, введя имя группы ресурсов и выбрав **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать проект Solidity с помощью комплекта SDK службы "Блокчейн Azure". Вы создали и развернули смарт-контракт, а также вызывали функцию через транзакцию в сети блокчейн-консорциума, размещенной в службе "Блокчейн Azure".
 

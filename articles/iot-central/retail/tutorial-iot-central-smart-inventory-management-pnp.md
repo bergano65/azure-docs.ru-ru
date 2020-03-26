@@ -8,13 +8,13 @@ ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
 ms.openlocfilehash: 5632d98d9d853d9a4b0882c28cad1836bb6f3cef
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77025475"
 ---
-# <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Руководство. развертыванию шаблона приложения для интеллектуального управления запасами для IoT Central и его использованию
+# <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Руководство по развертыванию шаблона приложения для интеллектуального управления запасами для IoT Central и его использованию
 
 
 

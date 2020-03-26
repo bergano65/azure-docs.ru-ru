@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство. Создание C# приложения ASP.NET
+title: Краткое руководство. Создание приложения ASP.NET на C#
 description: Узнайте, как запускать веб-приложения в Службе приложений Azure, развертывая шаблон веб-приложения ASP.NET на C# по умолчанию в Visual Studio.
 ms.assetid: 04a1becf-7756-4d4e-92d8-d9471c263d23
 ms.topic: quickstart
 ms.date: 10/21/2019
-ms.custom: seodec18
-ms.openlocfilehash: f2e31723dc2761007994f652d9d6c28ab3f7d47d
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.custom: mvc, devcenter, seodec18
+ms.openlocfilehash: 4688cc358ec6ff792be58254b0607f5416422a21
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78388199"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80047661"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Создание веб-приложения ASP.NET Framework в Azure
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.
 
 В этом кратком руководстве рассматривается развертывание первого веб-приложения ASP.NET в Службе приложений Azure. По завершении вы получите план службы приложений. У вас также будет приложение Службы приложений с развернутым веб-приложением.
 
@@ -29,7 +29,7 @@ ms.locfileid: "78388199"
 - Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить обновления**.
 - Добавьте рабочую нагрузку, выбрав **Инструменты** > **Получить средства и компоненты**.
 
-## Создание веб-приложения ASP.NET <a name="create-and-publish-the-web-app"></a>
+## <a name="create-an-aspnet-web-app"></a>Создание веб-приложения ASP.NET <a name="create-and-publish-the-web-app"></a>
 
 Создайте веб-приложение ASP.NET, сделав следующее:
 
@@ -43,7 +43,7 @@ ms.locfileid: "78388199"
 
 4. Вы можете развернуть любой тип веб-приложения ASP.NET в Azure. В рамках этого краткого руководства выберите шаблон **MVC**.
 
-5. Обязательно выберите **Без проверки подлинности** в параметрах аутентификации. Выберите **Создать**.
+5. Обязательно выберите **Без проверки подлинности** в параметрах аутентификации. Нажмите кнопку **создания**.
 
    ![Создание веб-приложения ASP.NET](./media/app-service-web-get-started-dotnet-framework/select-mvc-template-vs2019.png)
 
@@ -51,7 +51,7 @@ ms.locfileid: "78388199"
 
    ![Локальный запуск приложения](./media/app-service-web-get-started-dotnet-framework/local-web-app.png)
 
-## Публикация веб-приложения <a name="launch-the-publish-wizard"></a>
+## <a name="publish-your-web-app"></a>Публикация веб-приложения <a name="launch-the-publish-wizard"></a>
 
 1. Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "78388199"
    ```HTML
    <div class="jumbotron">
        <h1>ASP.NET in Azure!</h1>
-       <p class="lead">This is a simple app that we’ve built that demonstrates how to deploy a .NET app to Azure App Service.</p>
+       <p class="lead">This is a simple app that we've built that demonstrates how to deploy a .NET app to Azure App Service.</p>
    </div>
    ```
 
@@ -137,7 +137,7 @@ ms.locfileid: "78388199"
 
    В меню слева доступно несколько страниц для настройки приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)

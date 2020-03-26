@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.openlocfilehash: 340017a121d12c95c7c04bbfe67b336638209e9c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75439010"
 ---
-# <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство. Создание первой фабрики данных с помощью портала Azure
+# <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство по Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
@@ -42,7 +42,7 @@ ms.locfileid: "75439010"
 > 
 > Конвейер может содержать сразу несколько действий. Два действия можно объединить в цепочку (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Дополнительные сведения см. в разделе [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Ознакомьтесь с [обзором руководства](data-factory-build-your-first-pipeline.md) и выполните действия, описанные в разделе "Предварительные требования".
 
 Здесь не приводятся общие сведения о службе фабрики данных. Дополнительные сведения о службе см. в статье [Введение в фабрику данных Azure](data-factory-introduction.md).  
@@ -76,7 +76,7 @@ ms.locfileid: "75439010"
 
 1. Установите флажок **Закрепить на панели мониторинга**.
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
    > [!IMPORTANT]
    > Создавать экземпляры фабрики данных может пользователь с ролью [Участник Data Factory](../../role-based-access-control/built-in-roles.md#data-factory-contributor) на уровне подписки или группы ресурсов.
@@ -147,7 +147,7 @@ ms.locfileid: "75439010"
 
     В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-   | Свойство | Description |
+   | Свойство | Описание |
    |:--- |:--- |
    | clusterSize |Указывает размер кластера HDInsight. |
    | timeToLive | Указывает, сколько времени может простаивать кластер HDInsight, прежде чем он будет удален. |
@@ -208,7 +208,7 @@ ms.locfileid: "75439010"
     ```
     В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-   | Свойство | Где находится | Description |
+   | Свойство | Где находится | Описание |
    |:--- |:--- |:--- |
    | type | properties |Для свойства типа задано значение **AzureBlob**, так как данные хранятся в хранилище BLOB-объектов. |
    | linkedServiceName | format |Ссылается на созданную ранее службу AzureStorageLinkedService. |
@@ -435,7 +435,7 @@ ms.locfileid: "75439010"
 В этой статье вы создали конвейер с действием преобразования (действие HDInsight), которое выполняет сценарий Hive в кластере HDInsight по требованию. Сведения о копировании данных из хранилища BLOB-объектов в базу данных SQL с помощью действия копирования см. в [этом руководстве](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 ## <a name="see-also"></a>См. также раздел
-| Раздел | Description |
+| Раздел | Описание |
 |:--- |:--- |
 | [Конвейеры](data-factory-create-pipelines.md) |Эта статья поможет вам понять сущность конвейеров и действий в фабрике данных, а также научиться с их помощью создавать комплексные рабочие процессы, управляемые данными, для конкретных бизнес-сценариев. |
 | [Наборы данных](data-factory-create-datasets.md) |Эта статья поможет вам понять, что такое наборы данных в фабрике данных. |

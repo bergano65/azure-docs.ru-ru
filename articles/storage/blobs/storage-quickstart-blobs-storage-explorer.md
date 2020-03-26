@@ -4,17 +4,17 @@ titleSuffix: Azure Storage
 description: В этом кратком руководстве описано, как использовать Обозреватель службы хранилища Azure для создания контейнера и большого двоичного объекта, скачивания большого двоичного объекта на локальный компьютер и просмотра всех больших двоичных объектов в контейнере.
 services: storage
 author: tamram
-ms.custom: mvc
 ms.service: storage
+ms.subservice: blobs
 ms.topic: quickstart
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: f19152b5b8bc569fa07109b6135fa85b9b55bff1
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 04530844316610bb8a97e8a299b5fb41ebf49955
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892470"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80061375"
 ---
 # <a name="quickstart-use-azure-storage-explorer-to-create-a-blob"></a>Краткое руководство. Создание большого двоичного объекта с помощью Обозревателя службы хранилища Azure
 
@@ -94,7 +94,7 @@ ms.locfileid: "74892470"
 
 ![Обозреватель службы хранилища Microsoft Azure — список больших двоичных объектов в контейнере](media/storage-quickstart-blobs-storage-explorer/sharedaccesssignature.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью **обозревателя службы хранилища Azure**. Дополнительные сведения о работе с хранилищем BLOB-объектов см. в соответствующем практическом руководстве.
 

@@ -11,11 +11,11 @@ ms.author: trbye
 ms.reviewer: trbye
 ms.date: 02/10/2020
 ms.openlocfilehash: a6f977c0cdca670b40ccdc01db64a493962e3dda
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78355844"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79224101"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "78355844"
 >[!IMPORTANT] 
 > Запишите **рабочую область** и **подписку**. Они понадобятся вам для того, чтобы создать эксперимент в нужном месте. 
 
-## <a name="azure"></a>Запуск записной книжки в рабочей области
+## <a name="run-notebook-in-your-workspace"></a><a name="azure"></a>Запуск записной книжки в рабочей области
 
 В этом учебнике в качестве предварительно настроенного интерфейса, не требующего установки, используется облачный сервер записных книжек в рабочей области. Используйте [собственную среду](how-to-configure-environment.md#local), если вы предпочитаете контролировать среду, пакеты и зависимости.
 

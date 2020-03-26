@@ -3,13 +3,13 @@ title: Краткое руководство. Контейнер Windows (пре
 description: Разверните первый настраиваемый контейнер Windows в Службе приложений Azure. Воспользуйтесь преимуществами контейнеризации и настройте контейнер Windows так, как вам необходимо.
 ms.topic: quickstart
 ms.date: 08/30/2019
-ms.custom: seodec18
-ms.openlocfilehash: 7901498772b8e746fb2c87a5237f06ab279e3b64
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.custom: mvc, seodec18
+ms.openlocfilehash: cd6b78e5fd824cc013cc946d23677237923f485e
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75922300"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80047108"
 ---
 # <a name="run-a-custom-windows-container-in-azure-preview"></a>Запуск пользовательского контейнера Windows в Azure (предварительная версия)
 
@@ -17,9 +17,9 @@ ms.locfileid: "75922300"
 
 В этом кратком руководстве показано, как развернуть приложение ASP.NET в образе Windows на сайте [Docker Hub](https://hub.docker.com/) из Visual Studio. Приложение можно запустить в пользовательском контейнере в Службе приложений Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 - <a href="https://hub.docker.com/" target="_blank">зарегистрируйте учетную запись центра Docker</a>.
 - <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">Установите Docker для ОС Windows</a>.
@@ -43,7 +43,7 @@ ms.locfileid: "75922300"
 
 1. Вы можете развернуть любой тип веб-приложения ASP.NET в Azure. В рамках этого краткого руководства выберите шаблон **MVC**.
 
-1. Выберите **Поддержка Docker** и обязательно выберите **Без проверки подлинности** в параметрах проверки подлинности. Нажмите кнопку **Создать**.
+1. Выберите **Поддержка Docker** и обязательно выберите **Без проверки подлинности** в параметрах проверки подлинности. Нажмите кнопку **создания**.
 
    ![Создание веб-приложения ASP.NET](./media/app-service-web-get-started-windows-container/select-mvc-template-for-container.png)
 
@@ -145,7 +145,7 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
    ```HTML
    <div class="jumbotron">
        <h1>ASP.NET in Azure!</h1>
-       <p class="lead">This is a simple app that we’ve built that demonstrates how to deploy a .NET app to Azure App Service.</p>
+       <p class="lead">This is a simple app that we've built that demonstrates how to deploy a .NET app to Azure App Service.</p>
    </div>
    ```
 

@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 08/12/2019
 ms.openlocfilehash: 3ece5a9d225e48654a0a3a96c3b7b78327565841
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74975182"
 ---
 # <a name="quickstart-ingest-sample-data-into-azure-data-explorer"></a>Краткое руководство. Прием демонстрационных данных в обозреватель данных Azure
@@ -57,8 +57,8 @@ ms.locfileid: "74975182"
 
     ![Результаты запроса](media/ingest-sample-data/query-results.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о методах приема данных см. в [этой статье](ingest-data-overview.md).
-* [Краткое руководство по запросу данных в пользовательском веб-интерфейсе Azure Data Explorer](web-query-data.md).
+* [Краткое руководство. по запросу данных в пользовательском веб-интерфейсе Azure Data Explorer](web-query-data.md).
 * [Написание запросов](write-queries.md) с помощью языка запросов Kusto.
