@@ -13,10 +13,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 02/14/2019
 ms.openlocfilehash: 53abc28a6923c2d55b3bb39defb08778485a9744
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "71212443"
 ---
 # <a name="create-an-azure-notification-hub-in-the-azure-portal"></a>Создание центра уведомлений Azure с помощью портала Azure 
@@ -32,7 +32,7 @@ ms.locfileid: "71212443"
 ## <a name="create-a-notification-hub-in-an-existing-namespace"></a>Создание центра уведомлений в имеющемся пространстве имен
 В этом разделе создается центр уведомлений в имеющемся пространстве имен. 
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Все службы** в меню слева, выполните поиск **центра уведомлений**, выберите **звездочку** (`*`) рядом с полем **Пространства имен концентратора уведомлений**, чтобы добавить его в раздел **Избранное** в меню слева. Выберите **Пространства имен концентратора уведомлений**. 
 
       ![Портал Azure. Выбор параметра "Пространства имен концентратора уведомлений".](./media/create-notification-hub-portal/select-notification-hub-namespaces-all-services.png)
@@ -55,5 +55,5 @@ ms.locfileid: "71212443"
 
       ![Портал Azure — "Уведомления" -> Go to resource (Перейти к ресурсу)](./media/create-notification-hub-portal/hub-home-page.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом кратком руководстве вы создали центр уведомлений. Чтобы узнать, как настроить центр с помощью системы уведомлений платформы, ознакомьтесь с [этой статьей](configure-notification-hub-portal-pns-settings.md). 

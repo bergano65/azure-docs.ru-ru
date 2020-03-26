@@ -3,12 +3,12 @@ title: Руководство. Тестирование модулей Terraform
 description: Узнайте, как с помощью Terratest тестировать модули Terraform.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 41f7f9c00f626cf622ea781f01da6db1f46cd805
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 687a793af2b9b75efe463b042d121c32f18974d6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158959"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79370803"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>Руководство по Тестирование модулей Terraform в Azure с помощью Terratest
 
@@ -248,14 +248,17 @@ func TestUT_StorageAccountName(t *testing.T) {
 
 Для выполнения модульных тестов сделайте следующее в командной строке.
 
+```azurecli
+az login    # Required when no service principal environment variables are present
+```
+
 ```shell
-$ cd [Your GoPath]/src/staticwebpage
-GoPath/src/staticwebpage$ dep init    # Run only once for this folder
-GoPath/src/staticwebpage$ dep ensure  # Required to run if you imported new packages in test cases
-GoPath/src/staticwebpage$ cd test
-GoPath/src/staticwebpage/test$ go fmt
-GoPath/src/staticwebpage/test$ az login    # Required when no service principal environment variables are present
-GoPath/src/staticwebpage/test$ go test -run TestUT_StorageAccountName
+cd [Your GoPath]/src/staticwebpage
+dep init    # Run only once for this folder
+dep ensure  # Required to run if you imported new packages in test cases
+cd test
+go fmt
+go test -run TestUT_StorageAccountName
 ```
 
 Традиционный результат теста Go возвращается в течение одной минуты.
@@ -369,21 +372,24 @@ func TestIT_HelloWorldExample(t *testing.T) {
 
 Для выполнения тестов интеграции сделайте следующее в командной строке:
 
+```azurecli
+az login    # Required when no service principal environment variables are present
+```
+
 ```shell
-$ cd [Your GoPath]/src/staticwebpage
-GoPath/src/staticwebpage$ dep init    # Run only once for this folder
-GoPath/src/staticwebpage$ dep ensure  # Required to run if you imported new packages in test cases
-GoPath/src/staticwebpage$ cd test
-GoPath/src/staticwebpage/test$ go fmt
-GoPath/src/staticwebpage/test$ az login    # Required when no service principal environment variables are present
-GoPath/src/staticwebpage/test$ go test -run TestIT_HelloWorldExample
+cd [Your GoPath]/src/staticwebpage
+dep init    # Run only once for this folder
+dep ensure  # Required to run if you imported new packages in test cases
+cd test
+go fmt
+go test -run TestIT_HelloWorldExample
 ```
 
 Традиционный результат теста Go возвращается в течение двух минут. Вы также можете запустить и модульные тесты, и тесты интеграции, выполнив эти команды:
 
 ```shell
-GoPath/src/staticwebpage/test$ go fmt
-GoPath/src/staticwebpage/test$ go test
+go fmt
+go test
 ```
 
 Тесты интеграции занимают гораздо больше времени, чем модульные (две минуты для одного случая интеграции в сравнении с одной минутой для пяти модульных случаев). Но вам решать, что использовать в сценарии: модульные тесты или тесты интеграции. Как правило, мы предпочитаем применять модульные тесты для сложной логики с использованием функций Terraform HCL, а тесты интеграции — с точки зрения комплексной перспективы пользователя.
@@ -496,13 +502,16 @@ func Clean() error {
 
 Для выполнения полного набора тестов можно использовать следующие команды. Код аналогичен шагам, которые выполнялись в предыдущем разделе. 
 
+```azurecli
+az login    # Required when no service principal environment variables are present
+```
+
 ```shell
-$ cd [Your GoPath]/src/staticwebpage
-GoPath/src/staticwebpage$ dep init    # Run only once for this folder
-GoPath/src/staticwebpage$ dep ensure  # Required to run if you imported new packages in magefile or test cases
-GoPath/src/staticwebpage$ go fmt      # Only required when you change the magefile
-GoPath/src/staticwebpage$ az login    # Required when no service principal environment variables are present
-GoPath/src/staticwebpage$ mage
+cd [Your GoPath]/src/staticwebpage
+dep init    # Run only once for this folder
+dep ensure  # Required to run if you imported new packages in magefile or test cases
+go fmt      # Only required when you change the magefile
+mage
 ```
 
 Последнюю командную строку можно заменить дополнительными действиями mage. Например, вы можете использовать `mage unit` или `mage clean`. Хорошая идея — внедрить команды `dep` и `az login` в magefile. Мы не показываем код здесь. 
@@ -513,7 +522,7 @@ GoPath/src/staticwebpage$ mage
  
 Вместо выполнения команды `az login` перед тестом проверку подлинности Azure можно выполнить, задав переменные среды субъекта-службы. Terraform выводит [список имен переменных среды](https://www.terraform.io/docs/providers/azurerm/index.html#testing). (Требуются только первые четыре переменных среды.) Terraform также выводит подробные инструкции о том, как [получить значение этих переменных среды](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Страница GitHub Terratest](https://github.com/gruntwork-io/terratest).

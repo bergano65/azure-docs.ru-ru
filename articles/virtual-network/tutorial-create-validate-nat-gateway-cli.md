@@ -13,19 +13,16 @@ ms.topic: tutorial
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 988bd6dbb157276a9ee37c8ca3051a808f8b6499
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: b3e10b3abbe5c9815e51ce67786882dbd294df3f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661079"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202243"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-cli-and-test-the-nat-service"></a>Руководство по созданию шлюза NAT с помощью Azure CLI и проверке NAT
 
 Из этого учебника вы узнаете, как создать шлюз NAT для обеспечения исходящего подключения в виртуальных машинах в Azure. Чтобы протестировать шлюз NAT, необходимо развернуть виртуальные машины источника и назначения. Чтобы проверить шлюз NAT, установите исходящие подключения по общедоступному IP-адресу. Из исходной виртуальной машины будут выполняться подключения к виртуальной машине назначения. В этом учебнике развертываются исходная виртуальная машина и виртуальная машина назначения в двух разных виртуальных сетях, но для простоты — в одной и той же группе ресурсов.
-
->[!NOTE] 
->Услуга NAT виртуальной сети Azure сейчас доступно в общедоступной предварительной версии и в ограниченной группе [регионов](./nat-overview.md#region-availability). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms).
 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -425,7 +422,6 @@ hey -n 100 -c 10 -t 30 --disable-keepalive http://<ip-address-destination>/100k
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью Azure CLI](./quickstart-create-nat-gateway-cli.md).
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью Azure PowerShell](./quickstart-create-nat-gateway-powershell.md).
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью портала Azure](./quickstart-create-nat-gateway-portal.md).
-- [Отправьте отзыв об общедоступной предварительной версии](https://aka.ms/natfeedback)
 
 > [!div class="nextstepaction"]
 

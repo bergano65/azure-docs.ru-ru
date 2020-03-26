@@ -4,10 +4,10 @@ description: Здесь вы узнаете, как создать базовы�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.openlocfilehash: 82c3f5e640789547abb716b55959e1821a61e6d0
-ms.sourcegitcommit: 64def2a06d4004343ec3396e7c600af6af5b12bb
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77472151"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>Руководство по Создание базового шаблона Terraform в Azure с использованием Yeoman

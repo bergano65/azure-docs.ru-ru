@@ -17,10 +17,10 @@ ms.date: 08/29/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 28f3fca731c9ceb28f66ecd1c178e5c025f80ede
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70163546"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-envoy"></a>Руководство по интеграции единого входа Azure Active Directory с Envoy
@@ -35,9 +35,9 @@ ms.locfileid: "70163546"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Envoy с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -49,7 +49,7 @@ ms.locfileid: "70163546"
 * Envoy поддерживает **JIT**-подготовку пользователей.
 
 > [!NOTE]
-> Идентификатор этого приложения является фиксированным строковым значением, поэтому в одном клиенте можно настроить только один экземпляр.
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 ## <a name="adding-envoy-from-the-gallery"></a>Добавление Envoy из коллекции
 
@@ -73,7 +73,7 @@ ms.locfileid: "70163546"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Envoy](#configure-envoy-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Envoy](#create-envoy-test-user)** нужно для того, чтобы в Envoy существовал пользователь B. Simon, связанный с одноименным пользователем в Azure Active Directory.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -83,7 +83,7 @@ ms.locfileid: "70163546"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -120,7 +120,7 @@ ms.locfileid: "70163546"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Envoy.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Envoy**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -152,7 +152,7 @@ ms.locfileid: "70163546"
 
 5. Нажмите **Компания**.
 
-    ![Company](./media/envoy-tutorial/ic776783.png "Компания")
+    ![Company](./media/envoy-tutorial/ic776783.png "Company")
 
 6. Нажмите кнопку **SAML**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "70163546"
     >[!NOTE]
     >Значение для идентификатора расположения штаб-квартиры автоматически создается приложением.
     
-    a. В текстовое поле **Fingerprint** (Отпечаток) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
+    а. В текстовое поле **Fingerprint** (Отпечаток) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.
     
     b. Вставьте значение **URL-адреса входа**, скопированное на портале Azure, в текстовое поле **IDENTITY PROVIDER HTTP SAML URL** (URL-адрес входа SAML поставщика удостоверений HTTP).
     
@@ -183,9 +183,9 @@ ms.locfileid: "70163546"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. принятию и получению данных в Azure Data Share
+title: Руководство по принятию и получению данных в Azure Data Share
 description: Руководство по принятию и получению данных с помощью службы Azure Data Share.
 author: joannapea
 ms.author: joanpo
@@ -7,13 +7,13 @@ ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.openlocfilehash: 5b7d9cd7e7d438cf2beac76d5d8bcc78d377a8f4
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77083107"
 ---
-# <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство. Прием и получение данных с помощью Azure Data Share  
+# <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство по Прием и получение данных с помощью Azure Data Share  
 
 В этом руководстве вы узнаете, как принять приглашение в общий ресурс данных с помощью службы Azure Data Share, а также как получить данные, к которым вам предоставили доступ и включить интервал регулярного обновления, чтобы всегда иметь последний моментальный снимок этих данных. 
 

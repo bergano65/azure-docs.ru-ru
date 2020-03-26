@@ -9,10 +9,10 @@ ms.date: 07/02/2019
 ms.author: hrasheed
 ms.custom: hdinsightactive,mvc
 ms.openlocfilehash: d1136c153a529f58db1de277ec84ac332b9f78ae
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73494150"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Руководство по извлечению, преобразованию и загрузке данных с помощью интерактивного запроса в Azure HDInsight
@@ -42,7 +42,7 @@ ms.locfileid: "73494150"
 
 2. Очистите все поля на странице, а затем выберите следующие значения:
 
-   | ИМЯ | Значение |
+   | Имя | Значение |
    | --- | --- |
    | Фильтр года |2019 |
    | Период фильтра |Январь |
@@ -293,7 +293,7 @@ ms.locfileid: "73494150"
 
 Инструкции по удалению кластера см. в статье [Delete an HDInsight cluster using your browser, PowerShell, or the Azure CLI](../hdinsight-delete-cluster.md) (Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого учебника вы извлекли CSV-файл с необработанными данными, импортировали их в хранилище кластера HDInsight, а затем преобразовали эти данные с помощью интерактивного запроса в Azure HDInsight.  Перейдите к следующему учебнику, чтобы ознакомиться со сведениями о соединителе хранилища Apache Hive.
 

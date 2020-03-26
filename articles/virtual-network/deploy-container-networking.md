@@ -17,10 +17,10 @@ ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
 ms.openlocfilehash: 5146675b6eefd11fc1e6875ed9009ece92753ffb
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "72028092"
 ---
 # <a name="deploy-the-azure-virtual-network-container-network-interface-plug-in"></a>Развертывание подключаемого модуля сетевого интерфейса контейнера виртуальной сети Azure
@@ -31,7 +31,7 @@ ms.locfileid: "72028092"
 
 Обработчик ACS развертывает кластер Kubernetes с помощью шаблона Azure Resource Manager. Конфигурация кластера указана в файле JSON, который передается в средство при создании шаблона. Полный список поддерживаемых параметров кластера и их описание см. в разделе [Обработчик службы контейнеров Azure Microsoft — определения кластера](https://github.com/Azure/acs-engine/blob/master/docs/clusterdefinition.md). Подключаемый модуль — это подключаемый модуль сети по умолчанию для кластеров, созданных с использованием обработчика ACS. Следующие параметры конфигурации сети важны при настройке подключаемого модуля:
 
-  | Параметр                              | ОПИСАНИЕ                                                                                                           |
+  | Параметр                              | Описание                                                                                                           |
   |--------------------------------------|------------------------------------------------------------------------------------------------------                 |
   | firstConsecutiveStaticIP             | IP-адрес, выделенный для главного узла. Это обязательный параметр.                                     |
   | clusterSubnet в kubernetesConfig | CIDR подсети виртуальной сети, где развернут кластер, из которого IP-адреса выделяются для pod   |

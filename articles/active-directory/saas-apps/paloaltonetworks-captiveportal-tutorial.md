@@ -17,10 +17,10 @@ ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f926741bde3bdcc69cb4ea30f54daca79606047e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160162"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
@@ -139,7 +139,7 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
     
     2. Рядом с параметром **Identity Provider Metadata** (Метаданные поставщика удостоверений) выберите **Обзор**. Выберите файл Metadata.xml, скачанный с портала Azure.
     
-    3. Нажмите кнопку **ОК**.
+    3. Щелкните **ОК**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -163,7 +163,7 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
     3. В поле **Пароль** введите пароль. Мы рекомендуем сохранить введенный пароль. Вы можете выбрать флажок **Показать пароль** для отображения пароля.
 
-    4. Нажмите кнопку **Создать**.
+    4. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

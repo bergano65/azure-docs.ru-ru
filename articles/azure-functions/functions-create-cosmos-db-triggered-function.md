@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.date: 10/02/2018
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 830c7cdee247118ed24fc9b3a2a9efe8609c75d0
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75863305"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Создание функции, активируемой с помощью Azure Cosmos DB
 
-Узнайте, как создать функцию, которая активируется при добавлении или изменении данных в Azure Cosmos DB. Дополнительные сведения о службе Azure Cosmos DB см. в статье [ Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure](../cosmos-db/serverless-computing-database.md).
+Узнайте, как создать функцию, которая активируется при добавлении или изменении данных в Azure Cosmos DB. Дополнительные сведения об Azure Cosmos DB см. в статье [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md).
 
 ![Просмотр сообщения в журналах](./media/functions-create-cosmos-db-triggered-function/quickstart-completed.png)
 

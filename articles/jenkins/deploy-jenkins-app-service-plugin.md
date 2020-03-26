@@ -5,10 +5,10 @@ keywords: jenkins, azure, devops, app service
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.openlocfilehash: fcaf45003e865cc5aac3f6bd4580479a27d38b50
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78251461"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
@@ -46,7 +46,7 @@ sudo apt-get install -y maven
 
 Чтобы развернуть веб-приложения для контейнеров, установите Docker в главном экземпляре Jenkins или агенте виртуальной машины, который используется для сборки. Инструкции см. в статье [Choose Docker CE or Docker EE on Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/) (Выбор Docker CE и Docker EE в Ubuntu).
 
-## <a name="service-principal"></a> Добавление субъекта-службы Azure в учетные данные Jenkins
+## <a name="add-an-azure-service-principal-to-the-jenkins-credentials"></a><a name="service-principal"></a> Добавление субъекта-службы Azure в учетные данные Jenkins
 
 Для развертывания в Azure требуется субъект-служба Azure. 
 

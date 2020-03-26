@@ -17,10 +17,10 @@ ms.date: 07/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bf05fc30a2b111a12c0b8e131db5117ec784075b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74232121"
 ---
 # <a name="tutorial-integrate-adaptive-insights-with-azure-active-directory"></a>Руководство по Интеграции Adaptive Insights с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "74232121"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка с поддержкой единого входа на Adaptive Insights.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "74232121"
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя Adaptive Insights](#create-adaptive-insights-test-user)** нужно для того, чтобы в Adaptive Insights также существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,13 +79,13 @@ ms.locfileid: "74232121"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`.
 
     > [!NOTE]
     > Идентификатор сущности и URL-адрес ответа можно получить на странице **Параметры единого входа SAML** Adaptive Insights.
@@ -104,7 +104,7 @@ ms.locfileid: "74232121"
 
 2. Перейдите в раздел **Administration**(Администрирование).
 
-    ![Администратор](./media/adaptivesuite-tutorial/ic805644.png "Администратор")
+    ![Администратор](./media/adaptivesuite-tutorial/ic805644.png "Административный")
 
 3. В разделе **Users and Roles** (Пользователи и роли) щелкните **SAML SSO Settings** (Параметры единого входа SAML).
 
@@ -114,7 +114,7 @@ ms.locfileid: "74232121"
 
     ![Параметры единого входа SAML](./media/adaptivesuite-tutorial/ic805646.png "Параметры единого входа SAML")
 
-    a. Введите имя конфигурации в текстовое поле **Identity provider name** (Имя поставщика удостоверений).
+    а. Введите имя конфигурации в текстовое поле **Identity provider name** (Имя поставщика удостоверений).
 
     b. Вставьте значение поля **Идентификатор Azure AD**, скопированное на портале Azure, в текстовое поле **Идентификатор сущности поставщика удостоверений**.
 
@@ -122,9 +122,9 @@ ms.locfileid: "74232121"
 
     d. Вставьте значение поля **URL-адрес выхода**, скопированное на портале Azure, в текстовое поле **Пользовательский URL-адрес для выхода**.
 
-    д. Чтобы отправить загруженный сертификат, нажмите кнопку **Выбрать файл**.
+    д) Чтобы отправить загруженный сертификат, нажмите кнопку **Выбрать файл**.
 
-    f. Выберите следующие параметры:
+    е) Выберите следующие параметры:
 
      * Для параметра **SAML user id** (Идентификатор пользователя SAML) выберите значение **User’s Adaptive Insights user name** (Имя пользователя Adaptive Insights).
 
@@ -154,7 +154,7 @@ ms.locfileid: "74232121"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Adaptive Insights.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Adaptive Insights**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -178,7 +178,7 @@ ms.locfileid: "74232121"
 
 2. Перейдите в раздел **Administration**(Администрирование).
 
-   ![Администратор](./media/adaptivesuite-tutorial/IC805644.png "Администратор")
+   ![Администратор](./media/adaptivesuite-tutorial/IC805644.png "Административный")
 
 3. В разделе **Users and Roles** (Пользователи и роли) щелкните **Пользователи**.
 
@@ -188,11 +188,11 @@ ms.locfileid: "74232121"
 
    ![Отправить](./media/adaptivesuite-tutorial/IC805649.png "Submit")
 
-   a. Введите в текстовые поля **Name** (Имя), **Username** (Имя пользователя), **Email** (Адрес электронной почты) и **Password** (Пароль) соответствующие данные действующего пользователя Azure Active Directory, для которого выполняется подготовка.
+   а. Введите в текстовые поля **Name** (Имя), **Username** (Имя пользователя), **Email** (Адрес электронной почты) и **Password** (Пароль) соответствующие данные действующего пользователя Azure Active Directory, для которого выполняется подготовка.
 
    b. Выберите **Роль**.
 
-   c. Нажмите кнопку **Submit**(Отправить).
+   c. Щелкните **Отправить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства создания учетной записи пользователя Adaptive Insights или API, предоставляемые Adaptive Insights, для подготовки учетных записей пользователя AAD.
@@ -205,9 +205,9 @@ ms.locfileid: "74232121"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

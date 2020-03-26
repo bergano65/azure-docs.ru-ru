@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
 ms.openlocfilehash: 0b1f09cfaf107802e1ce6586b3f96b14269aaced
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74664868"
 ---
 # <a name="quickstart-onboard-azure-security-center-for-iot-service-in-iot-hub"></a>Краткое руководство. Включение службы "Центр безопасности Azure для Интернета вещей" в Центре Интернета вещей
@@ -75,7 +75,7 @@ ms.locfileid: "74664868"
 2. Выберите экран **Параметры** и измените параметры безопасности какого-либо центра Интернета вещей в подписке Azure по своему усмотрению.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы настроить решение, перейдите к следующей статье.
 

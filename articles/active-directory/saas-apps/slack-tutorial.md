@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory со Slack | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory со Slack | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Slack.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6c80963976783321d05fc6f32bb24daed36fa105
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76985563"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство. интеграции единого входа Azure Active Directory со Slack
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство по интеграции единого входа Azure Active Directory со Slack
 
 В этом учебнике описано, как интегрировать Slack с Azure Active Directory (Azure AD). Интеграция Slack с Azure AD дает следующие возможности.
 

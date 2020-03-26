@@ -17,10 +17,10 @@ ms.date: 09/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 571d8849fd7cae5c872a56182858848dbb43ef42
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72026684"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sonarqube"></a>Руководство по интеграции единого входа Azure Active Directory с Sonarqube
@@ -35,9 +35,9 @@ ms.locfileid: "72026684"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Sonarqube с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "72026684"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Sonarqube](#configure-sonarqube-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя в Sonarqube](#create-sonarqube-test-user)** требуется для того, чтобы в Sonarqube существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -81,7 +81,7 @@ ms.locfileid: "72026684"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -119,7 +119,7 @@ ms.locfileid: "72026684"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив ему доступ к приложению Sonarqube.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Sonarqube**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -145,7 +145,7 @@ ms.locfileid: "72026684"
 
     ![Настройка Sonarqube](./media/sonarqube-tutorial/config01.png)
 
-    a. Для параметра **Enabled** (Включено) переключите значение на **yes** (да).
+    а. Для параметра **Enabled** (Включено) переключите значение на **yes** (да).
 
     b. В текстовом поле **Application ID** (Идентификатор приложения) введите имя, например **sonarqube**.
 
@@ -153,9 +153,9 @@ ms.locfileid: "72026684"
 
     d. В текстовое поле **Provider ID** (Идентификатор поставщика) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    д. В текстовое поле **SAML login URL** (URL-адрес входа SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    д) В текстовое поле **SAML login URL** (URL-адрес входа SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    Е. Откройте сертификат в кодировке Base64 в Блокноте, скопируйте его содержимое и вставьте его в текстовое поле **Provider certificate** (Сертификат поставщика).
+    е) Откройте сертификат в кодировке Base64 в Блокноте, скопируйте его содержимое и вставьте его в текстовое поле **Provider certificate** (Сертификат поставщика).
 
     ж. В текстовом поле **SAML user login attribute** (Атрибут имени для входа пользователя SAML) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
@@ -177,9 +177,9 @@ ms.locfileid: "72026684"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

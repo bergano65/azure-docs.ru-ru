@@ -15,13 +15,13 @@ ms.date: 04/27/2018
 ms.author: damendo
 ms.custom: mvc
 ms.openlocfilehash: 974e45b761fb45e4bc1c451fa6755e16cab49e11
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76834694"
 ---
-# <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство. Диагностика проблем с обменом данными между сетями на портале Azure
+# <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
 
 Шлюз виртуальной сети соединяет виртуальную сеть Azure с локальной или другой виртуальной сетью. В этом руководстве описано следующее:
 

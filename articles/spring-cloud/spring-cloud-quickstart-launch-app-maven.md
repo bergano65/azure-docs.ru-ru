@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: brendm
-ms.openlocfilehash: dd8ce6d9b4dc63592e491a06a0055a7d065252b5
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: d1e6d6db1465b20f1f32a8ffb2f978d0a04a1033
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77201443"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79470849"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-app-using-the-maven-plug-in"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью подключаемого модуля Maven
 
@@ -77,13 +77,13 @@ ms.locfileid: "77201443"
 
 1. Клонируйте репозиторий Git, выполнив следующую команду:
 
-    ```azurecli
+    ```console
     git clone https://github.com/Azure-Samples/PiggyMetrics
     ```
   
 1. Перейдите в каталог и создайте проект, выполнив следующую команду:
 
-    ```azurecli
+    ```console
     cd piggymetrics
     mvn clean package -DskipTests
     ```
@@ -92,7 +92,7 @@ ms.locfileid: "77201443"
 
 1. Создайте конфигурации, выполнив приведенную ниже команду в корневой папке PiggyMetrics, содержащей родительский файл POM.
 
-    ```azurecli
+    ```console
     mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.0.0:config
     ```
 
@@ -106,7 +106,7 @@ ms.locfileid: "77201443"
 
 1. Теперь файл POM содержит зависимости и конфигурации подключаемого модуля. Разверните приложения с помощью следующей команды.
 
-   ```azurecli
+   ```console
    mvn azure-spring-cloud:deploy
    ```
 

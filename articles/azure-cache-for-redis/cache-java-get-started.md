@@ -9,10 +9,10 @@ ms.date: 05/23/2018
 ms.author: yegu
 ms.custom: mvc, seo-java-august2019, seo-java-september2019
 ms.openlocfilehash: 6163392c80d40b6ea65e681aa175c21c244099b9
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74122708"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-java"></a>Краткое руководство. Использование кэша Azure для Redis с приложениями Java
@@ -24,7 +24,7 @@ ms.locfileid: "74122708"
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Apache Maven](https://maven.apache.org/download.cgi)
 
-## <a name="create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Redis для Azure
+## <a name="create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
 
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
@@ -150,9 +150,9 @@ mvn exec:java -D exec.mainClass=example.demo.App
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как использовать кэш Redis для Azure в приложениях Java. Переходите к следующему краткому руководству по использованию кэша Redis для Azure в веб-приложении ASP.NET.
+Из этого краткого руководства вы узнали, как использовать кэш Redis для Azure в приложениях Java. Переходите к следующему краткому руководству по использованию кэша Azure для Redis в веб-приложениях ASP.NET.
 
 > [!div class="nextstepaction"]
 > [Создание веб-приложения ASP.NET, в котором используется кэш Azure для Redis](./cache-web-app-howto.md)

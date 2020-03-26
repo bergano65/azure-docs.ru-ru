@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 01/09/2019
 ms.custom: mvc
 ms.openlocfilehash: acf5f3cdf761e1773d6e9384a4ceb99a645ed7cc
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74773540"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-using-azure-cli"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI
@@ -36,7 +36,7 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
-В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении `westus`.
+В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
 
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
@@ -51,11 +51,11 @@ name | mydemoserver | Выберите уникальное имя, иденти
 resource-group | myresourcegroup | Укажите имя группы ресурсов Azure.
 sku-name | GP_Gen5_2 | Имя номера SKU. В сокращенной записи соответствует схеме {ценовая категория}\_{поколение вычислительных ресурсов}\_{число виртуальных ядер}. Под этой таблицей приведены дополнительные сведения о параметре sku-name.
 backup-retention | 7 | Срок хранения резервной копии. Указывается в днях. Можно указать от 7 до 35 дней. 
-geo-redundant-backup | Отключено | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: Enabled, Disabled.
+geo-redundant-backup | Выключено | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: Enabled, Disabled.
 location | westus | Расположение сервера в Azure.
-ssl-enforcement | Включено | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: Enabled, Disabled.
+ssl-enforcement | Активировано | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: Enabled, Disabled.
 storage-size | 51 200 | Объем хранилища сервера (в мегабайтах). Допустимое минимальное значение storage-size составляет 5120 МБ и может быть увеличено с шагом в 1024 МБ. Ознакомьтесь с документом о [ценовых категориях](./concepts-pricing-tiers.md), чтобы узнать больше об ограничениях размера хранилища. 
-версия | 5.7 | Основной номер версии MySQL.
+version | 5.7 | Основной номер версии MySQL.
 admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
 admin-password | *Надежный пароль* | Пароль администратора. Пароль должен содержать от 8 до 128 символов. Пароль должен содержать символы из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 
@@ -67,7 +67,7 @@ admin-password | *Надежный пароль* | Пароль админист
 
 Допустимые значения для каждого региона и каждого уровня указаны в документации по [ценовым категориям](./concepts-pricing-tiers.md).
 
-В примере ниже показано создание сервера MySQL 5.7 с именем `mydemoserver` в группе ресурсов `myresourcegroup` с именем пользователя администратора сервера `myadmin`. Это сервер **4-го поколения** **общего назначения** с **2 виртуальными ядрами**. Замените `<server_admin_password>` собственным значением.
+В примере ниже показано создание сервера MySQL 5.7 с именем `mydemoserver` в группе ресурсов `myresourcegroup` с именем пользователя администратора сервера `myadmin`. Это сервер **4-го поколения** **общего назначения** с **двумя виртуальными ядрами**. Замените `<server_admin_password>` собственным значением.
 
 ```azurecli-interactive
 az mysql server create --resource-group myresourcegroup --name mydemoserver  --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 --version 5.7
@@ -208,7 +208,7 @@ mysql>
 |---|---|---|
 |   Имя подключения | Мое подключение | Укажите любую метку для этого подключения. |
 | Способ подключения | Выберите стандартный способ (по протоколу TCP/IP). | Используйте протокол TCP/IP для подключения к базе данных Azure для MySQL. |
-| имя узла; | mydemoserver.mysql.database.azure.com | Имя сервера, которое вы записали ранее. |
+| Имя узла | mydemoserver.mysql.database.azure.com | Имя сервера, которое вы записали ранее. |
 | Порт | 3306 | Для MySQL используется порт по умолчанию. |
 | Имя пользователя | myadmin@mydemoserver | Имя для входа администратора сервера, которое вы записали ранее. |
 | Пароль | **** | Используйте пароль учетной записи администратора, настроенный ранее. |
@@ -228,7 +228,7 @@ az group delete --name myresourcegroup
 az mysql server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проектирование первой базы данных Azure для MySQL](./tutorial-design-database-using-cli.md)

@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.date: 02/24/2020
-ms.openlocfilehash: 7d2dd65224aad231db9574aa5a1fa4a00b328da8
-ms.sourcegitcommit: 5a71ec1a28da2d6ede03b3128126e0531ce4387d
+ms.openlocfilehash: 8939d9b342094342d576c00cf02e622286c8fc0f
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77623566"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80130567"
 ---
 # <a name="quickstart-create-apache-hadoop-cluster-in-azure-hdinsight-using-azure-portal"></a>Краткое руководство. Создание кластера Apache Hadoop в Azure HDInsight с помощью портала Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "77623566"
     |Имя пользователя для Secure Shell (SSH) | Имя пользователя по умолчанию — **sshuser**.  Можно указать другое имя пользователя SSH. |
     |Использование пароля для входа в кластер для SSH| Установите этот флажок, чтобы использовать одинаковый пароль для пользователя SSH и имени для входа для кластера.|
 
-    ![Начало работы с HDInsight в Linux. Предоставление базовых значений кластера](./media/apache-hadoop-linux-create-cluster-get-started-portal/azure-portal-cluster-basics-blank.png "Предоставление базовых значений для создания кластера HDInsight")
+    ![Начало работы с HDInsight в Linux. Предоставление базовых значений кластера](./media/apache-hadoop-linux-create-cluster-get-started-portal/azure-portal-cluster-basics.png "Предоставление базовых значений для создания кластера HDInsight")
 
     Нажмите кнопку **Далее: Хранилище >>** для перехода к настройкам хранилища.
 

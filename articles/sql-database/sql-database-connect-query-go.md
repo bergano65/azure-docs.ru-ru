@@ -12,10 +12,10 @@ ms.author: craigg
 ms.reviewer: MightyPen
 ms.date: 02/12/2019
 ms.openlocfilehash: 9b85b1bfb8935b5e311bb7d9503c17261a210127
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73827082"
 ---
 # <a name="quickstart-use-golang-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Golang для создания запросов к базе данных SQL Azure
@@ -28,12 +28,12 @@ ms.locfileid: "73827082"
 
 - База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
 
-  || Отдельная база данных | Управляемый экземпляр |
+  || Отдельная база данных | управляемый экземпляр |
   |:--- |:--- |:---|
   | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
   || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  | Configure | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
   |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
   |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
@@ -52,7 +52,7 @@ ms.locfileid: "73827082"
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
@@ -74,7 +74,7 @@ ms.locfileid: "73827082"
    go install github.com/denisenkom/go-mssqldb
    ```
 
-## <a name="create-sample-data"></a>Создание примера данных
+## <a name="create-sample-data"></a>Создание примера набора данных
 
 1. С помощью текстового редактора создайте файл **CreateTestData.sql** в папке **SqlServerSample**. Вставьте следующий код T-SQL, который создает схему и таблицу, а также вставляет несколько строк, в файл.
 
@@ -325,7 +325,7 @@ ms.locfileid: "73827082"
    Deleted 1 row(s) successfully.
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проектирование первой базы данных SQL Azure](sql-database-design-first-database.md)
 - [A pure Go MSSQL driver for Go's database/sql package](https://github.com/denisenkom/go-mssqldb) ("Чистый" драйвер MSSQL для пакета базы данных и SQL Go)

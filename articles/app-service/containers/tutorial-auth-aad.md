@@ -7,13 +7,13 @@ ms.topic: tutorial
 ms.date: 08/14/2019
 ms.custom: seodec18
 ms.openlocfilehash: 71aec33d5afe1a909f460ddae2d5cb0552857fee
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74688944"
 ---
-# <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
+# <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство по Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
 
 [Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Кроме того, служба приложений имеет встроенную поддержку [проверки подлинности и авторизации пользователя](../overview-authentication-authorization.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json). В этом руководстве показано, как защитить ваши приложения с помощью проверки подлинности и авторизации в службе приложений. В качестве примера в нем используется приложение ASP.NET Core с интерфейсом Angular.js. При проверке подлинности и авторизации в службе приложений поддерживаются все языковые среды выполнения. Вы узнаете, как применить их к предпочитаемому языку, следуя руководству.
 
@@ -44,7 +44,7 @@ ms.locfileid: "74688944"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * [Установка Git](https://git-scm.com/).
 * [Установите .NET Core](https://www.microsoft.com/net/core/).
@@ -415,7 +415,7 @@ az group delete --name myAuthResourceGroup
 Ее выполнение может занять до минуты.
 
 <a name="next"></a>
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

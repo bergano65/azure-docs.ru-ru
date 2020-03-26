@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/05/2019
 ms.author: spelluru
 ms.openlocfilehash: 229ed2b00582f2c73ce68c47406d68325abda736
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73718832"
 ---
 # <a name="tutorial-azure-wcf-relay-rest-tutorial"></a>Руководство по Руководство по REST для ретранслятора WCF Azure
@@ -634,7 +634,7 @@ namespace Microsoft.ServiceBus.Samples
 1. Скопируйте из командной строки адрес и вставьте его в браузере, чтобы увидеть изображение.
 1. Когда все будет готово, нажмите клавишу ВВОД в окне командной строки, чтобы закрыть приложение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились создавать приложение, которое использует службу ретранслятора Azure. Дополнительные сведения можно найти в следующих статьях:
 

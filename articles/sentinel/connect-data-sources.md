@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: yelevin
-ms.openlocfilehash: 311bb367748be98af704ab11919abea6e38d0ff3
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 9d2d1985b23e1c7f5e0f7d9fd2795bd85e28ace0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77588337"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79214812"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -56,7 +56,6 @@ Azure Sentinel поддерживает следующие методы подк
     - [Office 365](connect-office-365.md)
     - [ATP в Microsoft Defender](connect-microsoft-defender-advanced-threat-protection.md)
     - [Брандмауэр веб-приложения (Майкрософт)](connect-microsoft-waf.md)
-    - [События безопасности Windows](connect-windows-security-events.md) 
     - [Брандмауэр Windows](connect-windows-firewall.md)
     - [События безопасности Windows](connect-windows-security-events.md)
 
@@ -91,7 +90,7 @@ Azure Sentinel поддерживает следующие методы подк
     - Серверы Linux
     - Другие облака
     
-## Параметры подключения агента<a name="agent-options"></a>
+## <a name="agent-connection-options"></a>Параметры подключения агента<a name="agent-options"></a>
 
 Чтобы подключить внешнее устройство к Azure Sentinel, агент должен быть развернут на выделенном компьютере (виртуальной машине или локальном компьютере) для поддержки связи между устройством и Azure Sentinel. Вы можете развернуть агент автоматически или вручную. Автоматическое развертывание доступно только в том случае, если выделенный компьютер является новой созданной в Azure виртуальной машиной. 
 

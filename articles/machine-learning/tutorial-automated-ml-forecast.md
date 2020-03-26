@@ -11,13 +11,13 @@ ms.reviewer: nibaccam
 author: cartacioS
 ms.date: 01/27/2020
 ms.openlocfilehash: 11e0a8a0076fb2e68c379b279f471ff74846df2e
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77088328"
 ---
-# <a name="tutorial-forecast-bike-sharing-demand-with-automated-machine-learning"></a>Руководство. Прогнозирование спроса на прокат велосипедов с помощью автоматизированного машинного обучения
+# <a name="tutorial-forecast-bike-sharing-demand-with-automated-machine-learning"></a>Руководство по Прогнозирование спроса на прокат велосипедов с помощью автоматизированного машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
 
 Во время работы с этим руководством вы создадите в Студии машинного обучения Azure с помощью автоматизированного машинного обучения модель прогнозирования временных рядов для прогнозирования спроса для службы проката велосипедов.

@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: 4c6a9a2b5991c9f99bf728ecfed144cc77e4c49a
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: b8dbbb2810277bef20cb3b9b47a63deeea3e0ff9
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314340"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79290472"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -21,7 +21,7 @@ ms.locfileid: "76314340"
 
 Службу "Машинное обучение Microsoft Azure" можно использовать для машинного обучения любого рода — от классического машинного обучения до глубокого обучения, контролируемого и неконтролируемого обучения. Если вы предпочитаете писать код Python или R или варианты без кода или с минимальным созданием кода, например [конструктор](tutorial-designer-automobile-price-train-score.md), вы можете создавать, изучать и отслеживать высокоточные модели машинного обучения и глубокого обучения в рабочей области машинного обучения Azure. 
 
-Начните обучение на локальном компьютере, а затем выполните развертывание в облаке. 
+Начните обучение на локальном компьютере, а затем перенесите его в облако. 
 
 Служба также взаимодействует с популярными средствами с открытым кодом, такими как PyTorch, TensorFlow и scikit-learn.
 
@@ -56,7 +56,7 @@ ms.locfileid: "76314340"
 
 ## <a name="build-ml-models-in-python-or-r"></a>Создание моделей машинного обучения на языке Python или R
 
-Начните обучение на локальном компьютере с помощью <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a> или <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакета SDK для R</a> для службы "Машинное обучение Microsoft Azure". Затем можно выполнить развертывание в облаке. 
+Начните обучение на локальном компьютере с помощью <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK для Python</a> или <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакета SDK для R</a> для службы "Машинное обучение Microsoft Azure". Затем можно выполнить горизонтальное увеличение масштаба в облаке. 
 
 С большинством доступных [целевых объектов вычислений](how-to-set-up-training-targets.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
 
@@ -66,7 +66,7 @@ ms.locfileid: "76314340"
 
 Для обучения и развертывания без кода или с минимальным созданием кода попробуйте использовать:
 
-+ **Конструктор Машинного обучения Azure**
++ **Конструктор Машинного обучения Azure (предварительная версия).**
 
   Используйте конструктор для подготовки данных, обучения, тестирования, развертывания, мониторинга моделей машинного обучения и управления ими без написания кода. Никакое программирование не требуется. Выполните визуальное соединение наборов данных и модулей, чтобы создать модель. Ознакомьтесь с [учебником по конструктору](tutorial-designer-automobile-price-train-score.md).
 
@@ -116,7 +116,7 @@ ms.locfileid: "76314340"
 
 Учетную запись хранения Azure, целевые объекты вычислений и другие ресурсы можно безопасно использовать в виртуальной сети для обучения моделей и выполнения их вывода. Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
 
-## <a name="sku"></a>Выпуски "Базовый" и "Корпоративный"
+## <a name="basic--enterprise-editions"></a><a name="sku"></a>Выпуски "Базовый" и "Корпоративный"
 
 Служба "Машинное обучение Microsoft Azure" предлагает два выпуска, предназначенных для ваших потребностей машинного обучения:
 + "Базовый" (общедоступная версия);

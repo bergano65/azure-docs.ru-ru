@@ -1,5 +1,5 @@
 ---
-title: Руководство. созданию записи псевдонима Azure DNS для ссылки на общедоступный IP-адрес Azure
+title: Руководство по созданию записи псевдонима Azure DNS для ссылки на общедоступный IP-адрес Azure
 description: В этом руководстве описывается процесс создания записи псевдонима Azure DNS для ссылки на общедоступный IP-адрес Azure.
 services: dns
 author: rohinkoul
@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: d4517314742f3ec8e9968d20745ffb697d96f324
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77149938"
 ---
-# <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Руководство. записи псевдонима для ссылки на общедоступный IP-адрес Azure 
+# <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Руководство по записи псевдонима для ссылки на общедоступный IP-адрес Azure 
 
 В этом руководстве описано следующее:
 

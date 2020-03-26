@@ -10,11 +10,11 @@ ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
 ms.openlocfilehash: fb2fd89664517e44cf5128a5c82e583f03087061
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70307695"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79214264"
 ---
 ::: zone target="docs"
 
@@ -52,7 +52,7 @@ ms.locfileid: "70307695"
 
 Для клиента Windows нужно также установить следующие компоненты.
 
-| **Программное обеспечение**| **Версия** |
+| **Программное обеспечение**.| **Версия** |
 | --- | --- |
 | Windows PowerShell |5.0 |
 | .NET Framework |4.5.1 |
@@ -76,8 +76,8 @@ ms.locfileid: "70307695"
 
 | **Учетная запись хранения** | **Примечания** |
 | --- | --- |
-| Классический | Стандартная |
-| Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
+| Классический | Standard |
+| Общее назначение  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
 | Учетная запись хранения больших двоичных объектов | |
 
 >[!NOTE]
@@ -97,7 +97,7 @@ ms.locfileid: "70307695"
 
 ::: zone target="docs"
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * [Deploy your Azure Data Box Disk](data-box-disk-deploy-ordered.md) (Развертывание диска Azure Data Box)
 

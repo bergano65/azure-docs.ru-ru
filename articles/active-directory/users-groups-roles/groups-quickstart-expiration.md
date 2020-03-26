@@ -15,13 +15,13 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 16b6e4f521568c89e415e6e9fa621175052cf34d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74026899"
 ---
-# <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
+# <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
 
 В этом кратком руководстве описано, как задать политику срока действия групп Office 365. Если у пользователя есть возможность настройки собственных групп, количество неиспользуемых групп увеличивается. Первый способ управления неиспользуемыми группами — задание срока действия этих групп, чтобы сократить обслуживание при их удалении вручную.
 
@@ -82,7 +82,7 @@ ms.locfileid: "74026899"
 1. Выберите **Azure Active Directory** > **Группы** > **Общие**. 
 2. Нажмите кнопку **Нет** для параметра **Пользователи могут создавать группы Office 365 на порталах Azure**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. подробнее об окончании срока действия, включая инструкции для PowerShell и технические ограничения:
 

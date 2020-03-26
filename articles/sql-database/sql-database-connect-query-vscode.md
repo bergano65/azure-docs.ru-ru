@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
 ms.openlocfilehash: 28b35f273783b2e4d0b8f59c5bc5be384b933ba2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73826895"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение и запрос базы данных SQL Azure с помощью Visual Studio Code
@@ -27,12 +27,12 @@ ms.locfileid: "73826895"
 
 - База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
 
-  || Отдельная база данных | Управляемый экземпляр |
+  || Отдельная база данных | управляемый экземпляр |
   |:--- |:--- |:---|
   | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
   || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  | Configure | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
   |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
   |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
@@ -72,7 +72,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
@@ -105,19 +105,19 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 4. Следуйте инструкциям на экране, чтобы указать свойства для нового профиля подключения. Укажите все значения и нажмите клавишу **ВВОД** для продолжения.
 
-   | Свойство       | Рекомендуемое значение | ОПИСАНИЕ |
+   | Свойство       | Рекомендуемое значение | Описание |
    | ------------ | ------------------ | ------------------------------------------------- |
-   | **Server name** (Имя сервера) | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
-   | **Database name** (Имя базы данных) | mySampleDatabase | База данных для подключения. |
-   | **Аутентификация** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
-   | **Имя пользователя** | Имя пользователя | Имя пользователя учетной записи администратора сервера, используемое для создания сервера. |
-   | **Password (SQL Login)** (Пароль для входа в SQL) | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
-   | **Save Password?** (Сохранить пароль?) | "Да" или "Нет" | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
-   | **Укажите имя для этого профиля** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. |
+   | **Имя сервера** | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
+   | **Имя базы данных** | mySampleDatabase | База данных для подключения. |
+   | **Аутентификация** | Имя входа SQL| В этом руководстве используется проверка подлинности SQL. |
+   | **User name** | Имя пользователя | Имя пользователя учетной записи администратора сервера, используемое для создания сервера. |
+   | **Пароль (имя входа SQL)** | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
+   | **Сохранить пароль?** | "Да" или "Нет". | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
+   | **Введите имя для этого профиля** | Имя профиля, например **mySampleProfile** | Сохраненный профиль повышает скорость подключения при последующих входах. |
 
    В случае успешного выполнения появится уведомление о том, что профиль создан и подключен.
 
-## <a name="query-data"></a>Запрашивание данных
+## <a name="query-data"></a>Данные запросов
 
 Выполните указанную нижу инструкцию Transact-SQL [SELECT](https://msdn.microsoft.com/library/ms189499.aspx), чтобы запросить 20 основных продуктов из категории.
 
@@ -189,7 +189,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 2. Нажмите клавиши **CTRL**+**SHIFT**+**E**, чтобы удалить указанную строку в таблице `Product`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о подключении и отправке запросов с помощью SQL Server Management Studio см. в статье [Краткое руководство. База данных SQL Azure: подключение к базе данных Azure SQL и создание запросов к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md).
 - Сведения о подключении и отправке запросов с помощью портала Azure см. в статье [Краткое руководство. Портал Azure: использование редактора SQL-запросов для подключения к данным и создания запросов к данным](sql-database-connect-query-portal.md).

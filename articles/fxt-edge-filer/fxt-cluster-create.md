@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание кластера кэша Azure FXT Edge Filer
+title: Руководство по Создание кластера кэша Azure FXT Edge Filer
 description: Создание гибридного хранилища кластера кэша с помощью Azure FXT Edge Filer
 author: ekpgh
 ms.author: rohogue
@@ -7,13 +7,13 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.openlocfilehash: bfe1d1aeeac55039acf0c7eb295001277be9cd2e
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551273"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223131"
 ---
-# <a name="tutorial-create-the-azure-fxt-edge-filer-cluster"></a>Руководство. Создание кластера Azure FXT Edge Filer
+# <a name="tutorial-create-the-azure-fxt-edge-filer-cluster"></a>Руководство по Создание кластера Azure FXT Edge Filer
 
 После установки и инициализации аппаратных узлов Azure FXT Edge Filer для кэша, используйте программное обеспечение кластера FXT для создания кластера кэша. 
 
@@ -30,7 +30,7 @@ ms.locfileid: "75551273"
 
 Эта процедура занимает 15–45 минут в зависимости от того, сколько исследований необходимо выполнить для определения IP адресов и сетевых ресурсов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните предварительные условия перед началом работы с этим руководством:
 

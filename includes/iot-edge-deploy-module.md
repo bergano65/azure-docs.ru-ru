@@ -9,10 +9,10 @@ ms.date: 12/31/2019
 ms.author: kgremban
 ms.custom: include file
 ms.openlocfilehash: abbde0cb8137650faad563248c8fafe7dc0f469a
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75564694"
 ---
 Одной из ключевых возможностей Azure IoT Edge является развертывание кода на устройствах IoT Edge из облака. **Модули IoT Edge** — это выполняемые пакеты, которые реализованы в виде контейнеров. В этом разделе будет развернут предварительно созданный модуль из раздела [Модули IoT Edge в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules) непосредственно из Центра Интернета вещей Azure.

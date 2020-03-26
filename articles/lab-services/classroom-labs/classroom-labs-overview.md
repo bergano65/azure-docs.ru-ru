@@ -14,10 +14,10 @@ ms.topic: overview
 ms.date: 11/26/2019
 ms.author: spelluru
 ms.openlocfilehash: bbbea0c943758c2682f7b166e461807d2914f790
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74561674"
 ---
 # <a name="introduction-to-classroom-labs"></a>Общие сведения о классных лабораториях
@@ -37,7 +37,7 @@ ms.locfileid: "74561674"
 ## <a name="example-class-types"></a>Примеры типов классов
 С помощью Служб лабораторий Azure вы можете настроить лаборатории для нескольких типов классов. Несколько типов классов, для которых можно настроить лаборатории с помощью Служб лабораторий Azure, см. в [этой статье](class-types.md). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Начните с настройки лабораторной учетной записи, необходимой для создания классной лаборатории с использованием Службы лабораторий Azure:
 
 - [Настройка учетной записи лаборатории](tutorial-setup-lab-account.md)

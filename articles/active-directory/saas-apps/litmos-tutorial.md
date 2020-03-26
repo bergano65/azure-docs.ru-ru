@@ -17,10 +17,10 @@ ms.date: 08/26/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a935ef6d14b4de67964c555e0ffa610bbe992459
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "70171546"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-litmos"></a>Руководство по интеграции единого входа Azure Active Directory с Litmos
@@ -35,9 +35,9 @@ ms.locfileid: "70171546"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Litmos с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "70171546"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Litmos](#configure-litmos-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Litmos](#create-litmos-test-user)** требуется для того, чтобы в Litmos существовал пользователь B. Simon, связанный с представлением пользователя в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,13 +79,13 @@ ms.locfileid: "70171546"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Настройка единого входа с помощью SAML** введите значения для следующих полей:
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<companyname>.litmos.com/account/Login`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<companyname>.litmos.com/account/Login`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.litmos.com/integration/samllogin`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<companyname>.litmos.com/integration/samllogin`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Вместо этих значений укажите фактический идентификатор и URL-адрес ответа, к которым мы вернемся позже в этом руководстве, или, чтобы получить эти значения, обратитесь в [группу поддержки клиентов Litmos](https://www.litmos.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -114,7 +114,7 @@ ms.locfileid: "70171546"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к приложению Litmos.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Litmos**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -152,11 +152,11 @@ ms.locfileid: "70171546"
 
     ![Приложение Litmos][25]
 
-    a. Выберите команду **Enable SAML**(Включить SAML).
+    а. Выберите команду **Enable SAML**(Включить SAML).
 
     b. Откройте сертификат в кодировке Base 64 в блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **SAML X.509 Certificate** (Сертификат SAML X.509).
 
-    c. Нажмите кнопку **Сохранить изменения**.
+    c. Щелкните **Сохранить изменения**.
 
 ### <a name="create-litmos-test-user"></a>Создание тестового пользователя Litmos
 
@@ -190,9 +190,9 @@ ms.locfileid: "70171546"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

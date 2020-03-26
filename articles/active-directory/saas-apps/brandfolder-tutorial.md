@@ -17,10 +17,10 @@ ms.date: 01/29/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fec9ac9e2a8dbe27516f3050f41a82d15c268c37
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158749"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brandfolder"></a>Руководство по Интеграция Azure Active Directory с Brandfolder
@@ -39,7 +39,7 @@ ms.locfileid: "73158749"
 
 Чтобы настроить интеграцию Azure AD с Brandfolder, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Brandfolder с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -102,15 +102,15 @@ ms.locfileid: "73158749"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Brandfolder](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://brandfolder.com/organizations/<ORG_SLUG>/saml/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://brandfolder.com/organizations/<ORG_SLUG>/saml/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://brandfolder.com/organizations/<ORG_SLUG>/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://brandfolder.com/organizations/<ORG_SLUG>/saml`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Brandfolder](mailto:support@brandfolder.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -121,7 +121,7 @@ ms.locfileid: "73158749"
 
 ### <a name="configure-brandfolder-single-sign-on"></a>Настройка единого входа в Brandfolder
 
-Чтобы настроить единый вход на стороне **Brandfolder**, отправьте [группе поддержки Brandfolder](mailto:support@brandfolder.com) **URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Brandfolder**, отправьте [группе поддержки Brandfolder](mailto:support@brandfolder.com)**URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -139,7 +139,7 @@ ms.locfileid: "73158749"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

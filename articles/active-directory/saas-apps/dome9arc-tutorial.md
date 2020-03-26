@@ -17,10 +17,10 @@ ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b46ac34db21576c7e2de2271a468e3e782ff6aa9
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73885350"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-check-point-cloudguard-dome9-arc"></a>Руководство по интеграции единого входа Azure Active Directory с Check Point CloudGuard Dome9 Arc
@@ -35,9 +35,9 @@ ms.locfileid: "73885350"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Check Point CloudGuard Dome9 Arc с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "73885350"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа Check Point CloudGuard Dome9 Arc](#configure-check-point-cloudguard-dome9-arc-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Check Point CloudGuard Dome9 Arc](#create-check-point-cloudguard-dome9-arc-test-user)** требуется для того, чтобы в Check Point CloudGuard Dome9 Arc существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -81,11 +81,11 @@ ms.locfileid: "73885350"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://secure.dome9.com/`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://secure.dome9.com/`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://secure.dome9.com/sso/saml/<yourcompanyname>`.
 
@@ -98,11 +98,11 @@ ms.locfileid: "73885350"
 
 1. Приложение Check Point CloudGuard Dome9 Arc ожидает проверочные утверждения SAML в определенном формате, что требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение Check Point CloudGuard Dome9 Arc ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | ИМЯ |  Исходный атрибут|
+    | Имя |  Исходный атрибут|
     | ---------------| --------------- |
     | memberof | user.assignedroles |
 
@@ -133,7 +133,7 @@ ms.locfileid: "73885350"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Check Point CloudGuard Dome9 Arc.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Check Point CloudGuard Dome9 Arc**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -171,7 +171,7 @@ ms.locfileid: "73885350"
 
     ![Конфигурация Check Point CloudGuard Dome9 Arc](./media/dome9arc-tutorial/configure3.png)
 
-    a. Введите название компании в текстовом поле **Account ID** (Идентификатор учетной записи). Это значение будет использоваться в URL-адресе **ответа** и **входа**, как упоминалось в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Введите название компании в текстовом поле **Account ID** (Идентификатор учетной записи). Это значение будет использоваться в URL-адресе **ответа** и **входа**, как упоминалось в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. В текстовое поле **Issuer** (Издатель) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -179,7 +179,7 @@ ms.locfileid: "73885350"
 
     d. Откройте загруженный сертификат в кодировке Base64 с помощью блокнота, скопируйте содержимое файла в буфер обмена, а затем вставьте его в текстовое поле **X.509 certificate** (Сертификат X.509).
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-check-point-cloudguard-dome9-arc-test-user"></a>Создание тестового пользователя Check Point CloudGuard Dome9 Arc
 
@@ -204,7 +204,7 @@ ms.locfileid: "73885350"
 
     ![Добавление сотрудника](./media/dome9arc-tutorial/user3.png)
 
-    a. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например B.Simon@contoso.com.
+    а. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например B.Simon@contoso.com.
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например B.
 
@@ -212,7 +212,7 @@ ms.locfileid: "73885350"
 
     d. Установите для параметра **SSO User** (Пользователь единого входа) значение **On** (Вкл.).
 
-    д. Нажмите кнопку **Create** (Создать).
+    д) Нажмите кнопку **Create** (Создать).
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -222,9 +222,9 @@ ms.locfileid: "73885350"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

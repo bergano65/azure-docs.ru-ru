@@ -7,11 +7,11 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 40dd7066d959b56f4554ea9d0390e8b1eb41e77f
-ms.sourcegitcommit: 7f929a025ba0b26bf64a367eb6b1ada4042e72ed
+ms.openlocfilehash: 79771e082a4a6ffae15f33f636b0300e93bcdaba
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77587572"
 ---
 # <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
@@ -120,13 +120,13 @@ ms.locfileid: "77587572"
 
 В метод `Main` добавьте следующий код для инициализации объекта CosmosClient.
 
-:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="CreateClient":::
+[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=CreateClient)]
 
 После включения массового выполнения CosmosClient выполняет внутреннее группирование параллельных операций в отдельные вызовы службы. Это позволяет оптимизировать использование пропускной способности за счет распределения вызовов службы между секциями и последующего назначения отдельных результатов исходным вызывающим сторонам.
 
 Затем можно будет создать контейнер для хранения всех элементов.  Определите `/pk` в качестве ключа секции, подготовленную пропускную способность в 50 000 ЕЗ/с и настраиваемую политику индексации, которая будет исключать все поля для оптимизации пропускной способности записи. Добавьте приведенный ниже код после инструкции инициализации CosmosClient.
 
-:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Initialize":::
+[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Initialize)]
 
 ## <a name="step-6-populate-a-list-of-concurrent-tasks"></a>Шаг 6. Заполнение списка параллельных задач
 
@@ -141,22 +141,22 @@ ms.locfileid: "77587572"
 
 Добавьте определение элементов, которые необходимо сохранить. Необходимо определить класс `Item` в файле `Program.cs`.
 
-:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Model":::
+[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Model)]
 
 Затем создайте вспомогательную функцию внутри класса `Program`. Эта вспомогательная функция получит число элементов, которые вы определили для добавления, и создаст случайные данные.
 
-:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Bogus":::
+[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Bogus)]
 
 Считайте элементы и выполните их сериализацию в экземпляры потока с помощью класса `System.Text.Json`. Ввиду характера автоматически созданных данных они сериализуются в потоки. Кроме того, обращаясь к экземплярам элементов напрямую, но преобразовывая их в потоки, можно воспользоваться производительностью потоковых интерфейсов API в CosmosClient. Обычно к данным можно обращаться напрямую, если известен ключ секции. 
 
 
 Чтобы преобразовать данные в экземпляры потока, в метод `Main` добавьте следующий код сразу после создания контейнера.
 
-:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="Operations":::
+[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Operations)]
 
 Далее используйте потоки данных для создания параллельных задач и заполните список задач для добавления элементов в контейнер. Чтобы выполнить эту операцию, добавьте следующий код в класс `Program`.
 
-:::code language="csharp" source="~/cosmos-dotnet-bulk-import/src/Program.cs" id="ConcurrentTasks":::
+[!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=ConcurrentTasks)]
 
 Все эти параллельные операции с точками будут выполняться одновременно (то есть массово), как описано во вводном разделе.
 

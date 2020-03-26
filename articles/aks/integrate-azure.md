@@ -6,17 +6,17 @@ ms.topic: overview
 ms.date: 12/05/2017
 ms.author: zarhoads
 ms.openlocfilehash: 2eddedea7d626a92e21442c81aa49e00491958a1
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "78273015"
 ---
 # <a name="integrate-with-azure-managed-services-using-open-service-broker-for-azure-osba"></a>Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
 
 Вместе с [каталогом услуг Kubernetes][kubernetes-service-catalog] открытый компонент Service Broker для Azure (OSBA) позволяет разработчикам использовать службы под управлением Azure в Kubernetes. Это руководство посвящено развертыванию каталога услуг Kubernetes, открытого компонента Service Broker для Azure (OSBA) и приложений, использующих службы под управлением Azure с помощью Kubernetes.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 * Подписка Azure
 
 * Azure CLI. [Установите его локально][azure-cli-install] или используйте в [Azure Cloud Shell][azure-cloud-shell].

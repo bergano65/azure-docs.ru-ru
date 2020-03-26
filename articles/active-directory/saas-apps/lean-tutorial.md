@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 3e01fc292f2b04dc85066a19954104468e84e2ba
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159604"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lean"></a>Руководство по Интеграция Azure Active Directory с Lean
@@ -38,7 +38,7 @@ ms.locfileid: "73159604"
 
 Чтобы настроить интеграцию Azure AD с Lean, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Lean с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,13 +101,13 @@ ms.locfileid: "73159604"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Lean](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.goodpractice.net/api/gpsso`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.goodpractice.net/api/gpsso`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `bloom-goodpractice-<SUBDOMAIN>`.
 
@@ -122,7 +122,7 @@ ms.locfileid: "73159604"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

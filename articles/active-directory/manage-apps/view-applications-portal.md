@@ -17,17 +17,17 @@ ms.reviewer: arvinh
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1d40e968bb7079d50e3fa18889ae996c9b59c90f
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74421813"
 ---
 # <a name="quickstart-view-your-azure-active-directory-tenant-applications"></a>Краткое руководство. Просмотр клиентских приложений в Azure Active Directory
 
 В этом кратком руководстве используется портал Azure для просмотра приложений в клиенте Azure Active Directory (Azure AD).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Чтобы увидеть результаты, необходимо иметь хотя бы одно приложение в клиенте Azure AD. Дополнительные сведения о добавлении приложения см. в кратком руководстве [Quickstart: Add an application to your Azure Active Directory tenant](add-application-portal.md) (Краткое руководство. Добавление приложения в клиент Azure Active Directory).
 
@@ -72,7 +72,7 @@ ms.locfileid: "74421813"
 
     ![Пример, показывающий все приложения, которые начинаются с Sales](media/view-applications-portal/search-by-prefix.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как просмотреть приложения в клиенте Azure AD. Вы узнали, как фильтровать список приложений по типу приложения, состоянию и видимости. Вы также узнали, как искать конкретное приложение.
 

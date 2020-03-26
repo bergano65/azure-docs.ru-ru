@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5bdc51f47a170922d4fc33e8538695af29e5159c
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: 61b5017609d99f2f0074c67d3838cf351ea38bea
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79128112"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79365429"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-by-using-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с использованием PowerShell
 
@@ -113,4 +113,4 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com" -Credential $
 После создания субъекта-службы и назначения ему роли в клиенте Виртуального рабочего стола Windows его можно использовать для создания пула узлов. Дополнительные сведения см. в руководстве по созданию пула узлов в Виртуальном рабочем столе Windows.
 
  > [!div class="nextstepaction"]
- > [Руководство по созданию пула узлов в Виртуальном рабочем столе Windows](./create-host-pools-azure-marketplace.md)
+ > [Создание пула узлов с помощью Azure Marketplace](./create-host-pools-azure-marketplace.md)

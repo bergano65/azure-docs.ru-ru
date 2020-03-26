@@ -17,10 +17,10 @@ ms.date: 10/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2631b34f5658c9d4f76ca26d378bc63fe59ad156
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72373269"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-teamphoria"></a>Руководство по интеграции единого входа Azure Active Directory с Teamphoria
@@ -35,9 +35,9 @@ ms.locfileid: "72373269"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Teamphoria с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72373269"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Teamphoria](#configure-teamphoria-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Teamphoria](#create-teamphoria-test-user)** требуется для того, чтобы в Teamphoria существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,7 +78,7 @@ ms.locfileid: "72373269"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -111,7 +111,7 @@ ms.locfileid: "72373269"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Teamphoria.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Teamphoria**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "72373269"
 
     ![Настройка единого входа](./media/teamphoria-tutorial/Teamphoria_sso_save.png)
 
-    a. **Отображаемое имя**. Введите отображаемое имя подключаемого модуля на странице администрирования.
+    а. **Отображаемое имя**. Введите отображаемое имя подключаемого модуля на странице администрирования.
 
     b. **BUTTON NAME** (Имя кнопки). Имя вкладки, которая будет отображаться на странице входа при едином входе.
 
@@ -157,7 +157,7 @@ ms.locfileid: "72373269"
 
     d. **ENTRY POINT** (Точка входа). Вставьте **URL-адрес входа**, скопированный ранее на портале Azure.
 
-    д. Установите переключатель в положение **Вкл.** и нажмите кнопку **Сохранить**.
+    д) Установите переключатель в положение **Вкл.** и нажмите кнопку **Сохранить**.
 
 ### <a name="create-teamphoria-test-user"></a>Создание тестового пользователя в Teamphoria
 
@@ -179,7 +179,7 @@ ms.locfileid: "72373269"
 
     ![Приглашение пользователей](./media/teamphoria-tutorial/manual_user_invite.png)
 
-    a. В текстовом поле **EMAIL ADDRESS** (Адрес электронной почты) введите адрес **электронной почты** пользователя, например пользователя B. Simon.
+    а. В текстовом поле **EMAIL ADDRESS** (Адрес электронной почты) введите адрес **электронной почты** пользователя, например пользователя B. Simon.
 
     b. В текстовом поле **FIRST NAME** (Имя) введите имя пользователя, например **B**.
 
@@ -195,9 +195,9 @@ ms.locfileid: "72373269"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

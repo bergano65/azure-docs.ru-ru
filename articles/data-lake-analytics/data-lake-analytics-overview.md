@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: overview
 ms.date: 06/23/2017
 ms.openlocfilehash: 3572c308310c49eed48ccb25dfa7cb0fb161515f
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "70164512"
 ---
 # <a name="what-is-azure-data-lake-analytics"></a>Что такое аналитика озера данных Azure
@@ -44,7 +44,7 @@ Data Lake Analytics тесно интегрируется с Visual Studio. Вы
   
 Data Lake Analytics работает со службой Azure Data Lake Storage, обеспечивающей максимальную производительность, пропускную способность и параллелизацию, а также с большими двоичными объектами службы хранилища Azure, службой "База данных SQL Azure" и хранилищем данных Azure.
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
  
   * Начало работы с Data Lake Analytics с помощью [портала Azure](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) | [CLI](data-lake-analytics-get-started-cli.md)
   * Управление Data Lake Analytics с использованием [портала Azure](data-lake-analytics-manage-use-portal.md) | [Azure PowerShell](data-lake-analytics-manage-use-powershell.md) | [CLI](data-lake-analytics-manage-use-cli.md) | [Azure .NET SDK](data-lake-analytics-manage-use-dotnet-sdk.md) | [Node.js](data-lake-analytics-manage-use-nodejs.md)

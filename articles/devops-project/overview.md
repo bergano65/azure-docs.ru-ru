@@ -15,15 +15,15 @@ ms.workload: ''
 ms.date: 05/03/2018
 ms.author: mlearned
 ms.openlocfilehash: d39702f8e30046dd3cf634fc67ed7095471cd629
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "71971473"
 ---
 # <a name="overview-of-azure-devops-projects"></a>Общие сведения об Azure DevOps Projects
 
- Служба Azure DevOps Projects помогает быстро приступить к работе с Azure. Она позволяет запустить любое приложение в выбранной службе Azure, выполнив всего несколько действий на портале Azure. 
+ Azure DevOps Projects упрощает начало работы с Azure. Она позволяет запустить любое приложение в выбранной службе Azure, выполнив всего несколько действий на портале Azure. 
 
  DevOps Projects устанавливает все компоненты, необходимые для разработки, развертывания и мониторинга приложения. Панель мониторинга DevOps Projects позволяет отслеживать фиксации кода, операции сборки и развертывания в едином представлении на портале Azure.
 

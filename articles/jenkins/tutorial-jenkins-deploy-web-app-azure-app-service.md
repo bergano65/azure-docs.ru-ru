@@ -5,13 +5,13 @@ ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
 ms.openlocfilehash: 9fcf178b71ac1f07bfb58cd2502701ae5392b472
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74158402"
 ---
-# <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
+# <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство по Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
 В рамках этого руководства мы развернем пример веб-приложения Java из GitHub в [Службе приложений Azure на платформе Linux](/azure/app-service/containers/app-service-linux-intro), настроив непрерывную интеграцию (CI) и непрерывное развертывание (CD) в Jenkins. Когда вы обновляете приложение, фиксируя изменения в GitHub, Jenkins автоматически выполняет сборку и повторную публикацию приложения в Службе приложений Azure. Пример приложения, используемый в этом руководстве, разработан на платформе [Spring Boot](https://projects.spring.io/spring-boot/). 
 
@@ -158,7 +158,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    ![Добавление учетных данных субъекта-службы Azure](media/tutorial-jenkins-deploy-web-app-azure-app-service/add-service-principal-credentials.png)
 
-   | Свойство | Значение | ОПИСАНИЕ | 
+   | Свойство | Значение | Описание | 
    |----------|-------|-------------| 
    | **Идентификатор подписки** | <*yourAzureSubscription-ID*> | Значение идентификатора GUID для подписки Azure. <p>**Совет**. Если вы не знаете идентификатор своей подписки Azure, выполните следующую команду Azure CLI из командной строки или Cloud Shell, а затем используйте значение GUID `id`. <p>`az account list` | 
    | **Идентификатор клиента** | <*yourAzureServicePrincipal-ID*> | Значение GUID `appId`, ранее созданное для субъекта-службы Azure. | 
@@ -321,7 +321,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме с конкретным компонентом в [Jenkins JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование агентов виртуальных машин для непрерывной интеграции с Jenkins](/azure/jenkins/jenkins-azure-vm-agents)

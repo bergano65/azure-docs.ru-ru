@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 01/21/2020
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 4e896c5fa6f8656be29eed7eb8d4e8854a94ecfa
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: eceb4a9d4e0cc84166280f30b094b82088f53a4a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77116617"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79475312"
 ---
-# <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство. использованию ссылок Key Vault в приложении ASP.NET Core
+# <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство по использованию ссылок Key Vault в приложении ASP.NET Core
 
 В этом учебнике вы узнаете, как использовать службу "Конфигурация приложений Azure" с Azure Key Vault. Конфигурация приложений Azure и Key Vault — это дополняющие службы, которые используются параллельно в большинстве развертываний приложений.
 
@@ -110,7 +110,6 @@ ms.locfileid: "77116617"
     "tenantId": "35ad10f1-7799-4766-9acf-f2d946161b77",
     "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
     "resourceManagerEndpointUrl": "https://management.azure.com/",
-    "activeDirectoryGraphResourceId": "https://graph.windows.net/",
     "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
     "galleryEndpointUrl": "https://gallery.azure.com/",
     "managementEndpointUrl": "https://management.core.windows.net/"
@@ -245,13 +244,13 @@ ms.locfileid: "77116617"
 
 1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-    ```
+    ```dotnetcli
     dotnet build
     ```
 
 1. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
-    ```
+    ```dotnetcli
     dotnet run
     ```
 

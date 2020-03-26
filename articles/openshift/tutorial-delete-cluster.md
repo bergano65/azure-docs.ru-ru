@@ -7,13 +7,13 @@ ms.topic: tutorial
 ms.service: container-service
 ms.date: 05/06/2019
 ms.openlocfilehash: c335236a2b0b05f03bef1ebef37f1129a5d0352b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76278777"
 ---
-# <a name="tutorial-delete-an-azure-red-hat-openshift-cluster"></a>Руководство. удаление кластера Azure Red Hat OpenShift.
+# <a name="tutorial-delete-an-azure-red-hat-openshift-cluster"></a>Руководство по удаление кластера Azure Red Hat OpenShift.
 
 Это последняя часть руководства. После тестирования примера кластера удалите его и связанные с ним ресурсы, чтобы за них больше не взималась плата.
 

@@ -7,10 +7,10 @@ ms.topic: overview
 ms.date: 07/01/2019
 ms.author: rohogue
 ms.openlocfilehash: acf35015ff7851f7ea2a2527852be2573512e35d
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "72254841"
 ---
 # <a name="what-is-azure-fxt-edge-filer-hybrid-storage-cache"></a>Основные сведения о кэше гибридного хранилища Azure FXT Edge Filer
@@ -43,7 +43,7 @@ Azure FXT Edge Filer можно использовать для поддержк
 
 Разверните центр обработки данных в облачное хранилище с помощью Azure FXT Edge Filer в качестве точки доступа. 
 
-## <a name="features"></a>Функции 
+## <a name="features"></a>Компоненты 
 
 Доступны две модели оборудования. 
 
@@ -53,7 +53,7 @@ Azure FXT Edge Filer можно использовать для поддержк
 | FXT 6400 | 768 ГБ | 12,8 ТБ | 6 x 25ГБ/10ГБ + 2 x 1ГБ |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы продолжить изучение Azure FXT Edge Filer, ознакомьтесь со [спецификациями](fxt-specs.md) или [учебником по установке](fxt-install.md).
 * Дополнительные сведения о том, как приобрести Azure FXT Edge Filer, см. на [странице продукта Azure FXT Edge Filer](https://azure.microsoft.com/services/fxt-edge-filer/).

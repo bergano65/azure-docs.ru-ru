@@ -12,10 +12,10 @@ ms.author: sachinp
 ms.reviewer: vanto, carlrab
 ms.date: 02/11/2019
 ms.openlocfilehash: ff2508952b75bad88ff8ff92388c20ba52f50f42
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73818258"
 ---
 # <a name="quickstart-create-a-server-level-firewall-rule-for-single-and-pooled-databases-using-the-azure-portal"></a>Краткое руководство. Создание правила брандмауэра на уровне сервера для отдельной базы данных или базы данных в пуле с помощью портала Azure
@@ -28,7 +28,7 @@ ms.locfileid: "73818258"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-a-server-level-ip-firewall-rule"></a>Создание правила брандмауэра для IP-адресов на уровне сервера
 
@@ -45,7 +45,7 @@ ms.locfileid: "73818258"
 
 2. Скопируйте полное имя сервера, которое понадобится вам при роботе с последующими руководствами для подключения к серверу и связанным базам данных.
 
-   ![Имя сервера](./media/sql-database-get-started-portal/server-name.png)
+   ![имя сервера](./media/sql-database-get-started-portal/server-name.png)
 
 3. На панели инструментов щелкните **Настройка брандмауэра для сервера**. Для сервера базы данных откроется страница **Параметры брандмауэра**.
 
@@ -70,7 +70,7 @@ ms.locfileid: "73818258"
 1. На портале Azure в меню слева щелкните **Группы ресурсов**, а затем выберите **myResourceGroup**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **myResourceGroup** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Теперь, когда у вас есть база данных, вы можете [подключиться и создать запрос](sql-database-connect-query.md), используя одно из привычных средств или языков, в том числе
   - [подключиться и создать запрос с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md);

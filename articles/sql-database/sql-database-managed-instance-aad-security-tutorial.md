@@ -10,10 +10,10 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 11/06/2019
 ms.openlocfilehash: bd65a21c2aa21643c76966410931949db7d17ad6
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73822791"
 ---
 # <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Руководство по Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
@@ -25,7 +25,7 @@ ms.locfileid: "73822791"
 - использовать авторизацию на основе разрешений и членства с учетом ролей.
 - Включение функций безопасности
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > - создание субъекта сервера (имени для входа) Azure Active Directory (AD) для управляемого экземпляра;
@@ -44,7 +44,7 @@ ms.locfileid: "73822791"
 
 - [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
 - Управляемый экземпляр Базы данных SQL Azure.
-  - Следуйте инструкциям из этой статьи: [Краткое руководство Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
+  - Следуйте инструкциям из этой статьи: [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 - Возможность доступа к управляемому экземпляру и [подготовленный пользователь с правами администратора Azure AD для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance). Дополнительные сведения см. на следующих ресурсах:
     - [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md). 
     - [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).
@@ -65,8 +65,8 @@ ms.locfileid: "73822791"
 
 Примеры подключения к управляемому экземпляру см. в следующих статьях:
 
-- [Краткое руководство Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md)
-- [Краткое руководство Настройка соединения "точка — сеть" с помощью управляемого экземпляра базы данных SQL Azure](sql-database-managed-instance-configure-p2s.md)
+- [Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md)
+- [Краткое руководство. Настройка соединения "точка — сеть" с помощью управляемого экземпляра базы данных SQL Azure](sql-database-managed-instance-configure-p2s.md)
 
 1. Войдите в управляемый экземпляр с помощью стандартной учетной записи SQL Server (не Azure AD), который является `sysadmin` или администратором Azure AD для MI, используя [SQL Server Management Studio](sql-database-managed-instance-configure-p2s.md#use-ssms-to-connect-to-the-managed-instance).
 
@@ -108,7 +108,7 @@ ms.locfileid: "73822791"
 
 Чтобы создать другие субъекты сервера (имена для входа) Azure AD, субъекту (SQL или Azure AD) необходимо предоставить роли или разрешения SQL Server.
 
-### <a name="sql-authentication"></a>Аутентификация SQL
+### <a name="sql-authentication"></a>Проверка подлинности SQL
 
 - Если имя для входа представляет собой субъект SQL, команду create для создания имен для входа для учетной записи Azure AD можно использовать только с именами для входа, которые являются частью роли `sysadmin`.
 
@@ -191,7 +191,7 @@ ms.locfileid: "73822791"
 
 1. Откройте окно нового запроса в SQL Server Management Studio.
 
-    В этом примере предполагается, что в Azure AD существует группа с именем _mygroup_. Выполните следующую команду.
+    В этом примере предполагается, что в Azure AD существует группа с именем _mygroup_. Выполните следующую команду:
 
     ```sql
     USE master
@@ -424,15 +424,15 @@ ms.locfileid: "73822791"
 ## <a name="additional-scenarios-supported-for-azure-ad-server-principals-logins"></a>Дополнительные скрипты, поддерживаемые для субъектов сервера (имен для входа) Azure AD
 
 - Субъекты сервера (имена для входа) Azure AD поддерживают выполнение заданий и управление агентом SQL Server.
-- Операции резервного копирования и восстановления базы данных могут быть выполнены с помощью субъектов сервера (имен для входа) Azure AD.
+- Операции резервного копирования и восстановления базы данных могут быть выполнены с помощью субъектов сервера (имен для входа) Azure AD.
 - Поддерживается [аудит](sql-database-managed-instance-auditing.md) всех инструкций, связанных с субъектами сервера (именами для входа) Azure AD и событиями проверки подлинности.
 - Выделенное административное соединение для субъектов сервера (имен для входа) Azure AD, которые являются участниками роли сервера `sysadmin`.
 - Субъекты сервера (имена для входа) Azure AD поддерживают использование [служебной программы sqlcmd](/sql/tools/sqlcmd-utility) и средства [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms).
-- Триггеры входа поддерживаются для событий входа, поступающих от субъектов сервера (имен для входа) Azure AD.
+- Триггеры входа поддерживаются для событий входа, поступающих от субъектов сервера (имен для входа) Azure AD.
 - С использованием субъектов сервера (имен для входа) Azure AD можно настроить компоненты Service Broker и Database Mail.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="enable-security-features"></a>Включение функций безопасности
 

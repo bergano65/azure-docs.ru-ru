@@ -9,11 +9,11 @@ ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: 741d4718b5e6140f4ddd2bb22e1a2ec830763176
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74029945"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79224041"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "74029945"
 
 Это третье руководство в серии. В нем показано, как настроить аварийное восстановление локальных виртуальных машин Hyper-V в Azure. Этот учебник предназначен для виртуальных машин Hyper-V, управление которыми осуществляется не в System Center Virtual Machine Manager (VMM).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Выбор источника и целевого объекта репликации.
@@ -34,7 +34,7 @@ ms.locfileid: "74029945"
 
 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Это третье руководство в серии. В нем предполагается, что вы уже выполнили задачи из предыдущих учебников.
 
@@ -49,7 +49,7 @@ ms.locfileid: "74029945"
 4. В разделе **Куда следует реплицировать компьютеры?** выберите **To Azure** (В Azure).
 5. В разделе **Ваши компьютеры виртуализированы?** выберите **Да, с Hyper-V**.
 6. В поле **Are you using System Center VMM to manage your Hyper-V hosts?** (Используете ли вы System Center VMM для управления узлами Hyper-V?) выберите **Нет**.
-7. Нажмите кнопку **ОК**.
+7. Щелкните **ОК**.
 
     ![Цель репликации](./media/hyper-v-azure-tutorial/replication-goal.png)
 
@@ -103,7 +103,7 @@ Azure Site Recovery извлечет метаданные с сервера Hype
 
     `AzureSiteRecoveryProvider.exe /x:. /q`
  
-2. Запустите `.\setupdr.exe /i`. Результаты будут записаны в журнал %Programdata%\ASRLogs\DRASetupWizard.log.
+2. Выполните `.\setupdr.exe /i`. Результаты будут записаны в журнал %Programdata%\ASRLogs\DRASetupWizard.log.
 
 3. Зарегистрируйте сервер с помощью следующей команды:
 
@@ -144,6 +144,6 @@ Site Recovery проверяет наличие одной или несколь
 
    Ход выполнения действия **включения защиты** можно отслеживать, выбрав **Задания** > **Задания Azure Site Recovery**. После выполнения задания **Завершить подготовку защиты** начальная репликация завершается, а виртуальная машина готова к отработке отказа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Выполнение отработки аварийного восстановления](tutorial-dr-drill-azure.md)

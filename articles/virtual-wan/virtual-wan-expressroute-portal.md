@@ -9,10 +9,10 @@ ms.date: 02/13/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
 ms.openlocfilehash: 35ca071cd8495611f0f350511ef9406f82c5be23
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77209432"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan"></a>Руководство по созданию связи ExpressRoute с помощью Виртуальной глобальной сети Azure
@@ -44,7 +44,7 @@ ms.locfileid: "77209432"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="openvwan"></a>Создание виртуальной глобальной сети
+## <a name="create-a-virtual-wan"></a><a name="openvwan"></a>Создание виртуальной глобальной сети
 
 В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
 
@@ -62,19 +62,19 @@ ms.locfileid: "77209432"
 4. Заполнив поля, нажмите кнопку **Просмотр и создание**.
 5. После прохождения проверки нажмите кнопку **Создать**, чтобы создать виртуальную глобальную сеть.
 
-## <a name="hub"></a>Создание виртуального концентратора и шлюза
+## <a name="create-a-virtual-hub-and-gateway"></a><a name="hub"></a>Создание виртуального концентратора и шлюза
 
 Виртуальный концентратор — это виртуальная сеть, которая создается и используется Виртуальной глобальной сетью. Он может содержать различные шлюзы, например VPN и ExpressRoute. В этом разделе показано, как создать шлюз ExpressRoute для виртуального концентратора. Шлюз можно создать при [создании виртуального концентратора](#newhub) или в [имеющемся концентраторе](#existinghub), изменив его. 
 
 Шлюзы ExpressRoute подготавливаются с пропускной способностью 2 Гбит/с. 1 единица масштабирования = 2 Гбит/с с поддержкой до 10 единиц масштабирования = 20 Гбит/с. Чтобы полностью создать виртуальный концентратор и шлюз, требуется около 30 минут.
 
-### <a name="newhub"></a>Создание виртуального концентратора и шлюза
+### <a name="to-create-a-new-virtual-hub-and-a-gateway"></a><a name="newhub"></a>Создание виртуального концентратора и шлюза
 
 Создайте виртуальный концентратор. За созданный концентратор будет взиматься плата, даже если вы не присоединяете сайты.
 
 [!INCLUDE [Create a hub](../../includes/virtual-wan-tutorial-er-hub-include.md)]
 
-### <a name="existinghub"></a>Создание шлюза в имеющемся концентраторе
+### <a name="to-create-a-gateway-in-an-existing-hub"></a><a name="existinghub"></a>Создание шлюза в имеющемся концентраторе
 
 Вы также можете создать шлюз в имеющемся концентраторе. Для этого концентратор необходимо изменить.
 
@@ -90,7 +90,7 @@ ms.locfileid: "77209432"
 
 ![Просмотр шлюза](./media/virtual-wan-expressroute-portal/viewgw.png "просмотр шлюза")
 
-## <a name="connectvnet"></a>Подключение виртуальной сети к концентратору
+## <a name="connect-your-vnet-to-the-hub"></a><a name="connectvnet"></a>Подключение виртуальной сети к концентратору
 
 В этом разделе показано, как создать пиринговое подключение между концентратором и виртуальной сетью. Повторите эти шаги для каждой виртуальной сети, которую вы хотите подключить.
 
@@ -103,7 +103,7 @@ ms.locfileid: "77209432"
     * **Подписка**. Проверьте подписку.
     * **Виртуальная сеть**. Выберите виртуальную сеть, которую вы хотите подключить к этому концентратору. В виртуальной сети не должно быть шлюза виртуальной сети (ни VPN, ни ExpressRoute).
 
-## <a name="connectcircuit"></a>Подключение канала к шлюзу концентратора
+## <a name="connect-your-circuit-to-the-hub-gateway"></a><a name="connectcircuit"></a>Подключение канала к шлюзу концентратора
 
 После создания шлюза можно подключить к нему канал [ExpressRoute](../expressroute/expressroute-howto-circuit-portal-resource-manager.md). Каналы ExpressRoute ценовой категории "Премиум", которые находятся в поддерживаемых расположениях ExpressRoute Global Reach, могут подключаться к шлюзу ExpressRoute Виртуальной глобальной сети.
 
@@ -116,7 +116,7 @@ ms.locfileid: "77209432"
 
    ![подключение каналов](./media/virtual-wan-expressroute-portal/cktconnect.png "подключение каналов")
 
-### <a name="authkey"></a>Подключение с помощью активации ключа авторизации
+### <a name="to-connect-by-redeeming-an-authorization-key"></a><a name="authkey"></a>Подключение с помощью активации ключа авторизации
 
 Используйте для подключения предоставленные вам ключ авторизации и URI канала.
 

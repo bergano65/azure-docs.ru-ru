@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.date: 07/03/2018
 ms.author: labrenne
 ms.custom: mvc
-ms.openlocfilehash: 8d725834cb2dd86163909b2ae598e61026ae4bb9
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 6ce0066765de3d99f8309bf568b467518f38923e
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024115"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79215312"
 ---
-# <a name="quickstart-run-your-first-batch-job-in-the-azure-portal"></a>Краткое руководство. Выполнение пакетного задания на портале Azure
+# <a name="quickstart-run-your-first-batch-job-in-the-azure-portal"></a>Краткое руководство по выполнению первого пакетного задания на портале Azure
 
 В этом кратком руководстве показано, как использовать портал Azure для создания учетной записи пакетной службы, *пула* вычислительных узлов (виртуальных машин) и *заданий*, выполняющих основные *задачи* в пуле. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 
@@ -24,7 +24,7 @@ ms.locfileid: "77024115"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure 
 
-Войдите на портал Azure по адресу https://portal.azure.com.
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-a-batch-account"></a>Создание учетной записи Пакетной службы
 

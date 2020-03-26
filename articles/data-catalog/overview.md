@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: overview
 ms.date: 08/01/2019
 ms.openlocfilehash: 9b7a5d5ca6cbad897839c8e28c9e3efd1eeabaf0
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "68736979"
 ---
 # <a name="what-is-azure-data-catalog"></a>Что такое каталог данных Azure?
@@ -68,9 +68,9 @@ ms.locfileid: "68736979"
 * [Как настроить бизнес-глоссарий для регулируемого добавления тегов](data-catalog-how-to-business-glossary.md)
 * [Часто задаваемые вопросы](data-catalog-frequently-asked-questions.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать работу с Каталогом данных, перейдите к следующим ресурсам:
 
-* [Краткое руководство Создание каталога данных Azure](data-catalog-get-started.md)
+* [Краткое руководство. Создание каталога данных Azure](data-catalog-get-started.md)
 * [Войти в Каталог данных Azure](https://www.azuredatacatalog.com)

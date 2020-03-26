@@ -14,19 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/24/2020
 ms.author: allensu
-ms.openlocfilehash: 4baf12533bed523c81ff41a81975f5bf5b918ac2
-ms.sourcegitcommit: e4c33439642cf05682af7f28db1dbdb5cf273cc6
+ms.openlocfilehash: 7c26487018b9632b5780dcd7c56ab36f286f8cac
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78250808"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80059999"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-the-azure-portal-and-test-the-nat-service"></a>Руководство по созданию шлюза NAT с помощью портала Azure и проверке NAT
 
 Из этого учебника вы узнаете, как создать шлюз NAT для обеспечения исходящего подключения в виртуальных машинах в Azure. Чтобы протестировать шлюз NAT, необходимо развернуть виртуальные машины источника и назначения. Чтобы проверить шлюз NAT, установите исходящие подключения по общедоступному IP-адресу из исходной виртуальной машины к виртуальной машине назначения.  В этом учебнике развертываются исходная виртуальная машина и виртуальная машина назначения в двух разных виртуальных сетях, но для простоты — в одной и той же группе ресурсов.
 
->[!NOTE] 
->Услуга NAT виртуальной сети Azure сейчас доступно в общедоступной предварительной версии и в ограниченной группе [регионов](./nat-overview.md#region-availability). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms).
+При желании эти действия можно выполнить с помощью [Azure CLI](tutorial-create-validate-nat-gateway-cli.md) или [Azure PowerShell](tutorial-create-validate-nat-gateway-powershell.md) вместо портала.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -315,7 +314,6 @@ hey -n 100 -c 10 -t 30 --disable-keepalive http://<ip-address-destination>/100k
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью Azure CLI](./quickstart-create-nat-gateway-cli.md).
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью Azure PowerShell](./quickstart-create-nat-gateway-powershell.md).
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью портала Azure](./quickstart-create-nat-gateway-portal.md).
-- [Отправьте отзыв об общедоступной предварительной версии](https://aka.ms/natfeedback)
 
 > [!div class="nextstepaction"]
 

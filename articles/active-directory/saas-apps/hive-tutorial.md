@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Hive | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Hive | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Hive.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb4b19a20b70f8bca1968b6ff7162ca273a3da67
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77050180"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hive"></a>Руководство. Интеграция единого входа Azure Active Directory с Hive
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hive"></a>Руководство по Интеграция единого входа Azure Active Directory с Hive
 
 В этом руководстве описано, как интегрировать Hive с Azure Active Directory (Azure AD). Интеграция Hive с Azure AD обеспечивает следующие возможности:
 

@@ -7,13 +7,13 @@ ms.date: 09/18/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: e3a6ee382208119e46a816790c15ae47f16be57e
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75495185"
 ---
-# <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>Руководство. Создание, отладка, развертывание и обновление приложения на базе нескольких служб в Сетке Service Fabric
+# <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>Руководство по Создание, отладка, развертывание и обновление приложения на базе нескольких служб в Сетке Service Fabric
 
 Это руководство представляет первую часть цикла. Здесь описывается, как с помощью Visual Studio создать приложение Сетки Azure Service Fabric с веб-интерфейсом ASP.NET и серверной службой веб-API ASP.NET Core. Затем вы выполните отладку приложения в локальном кластере разработки. Вы опубликуете приложение в Azure, а затем внесете изменения в конфигурацию и код и обновите приложение. Наконец, вы удалите неиспользуемые ресурсы Azure, чтобы за них не взималась плата.
 
@@ -41,7 +41,7 @@ ms.locfileid: "75495185"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 

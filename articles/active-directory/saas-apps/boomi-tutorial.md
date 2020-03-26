@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Boomi | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Boomi | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boomi.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a22a36d5e6c36008c3a574cbcf9be8ec4f52b82b
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77086445"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-boomi"></a>Руководство. интеграции единого входа Azure Active Directory с Boomi
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-boomi"></a>Руководство по интеграции единого входа Azure Active Directory с Boomi
 
 В этом руководстве вы узнаете, как интегрировать Boomi с Azure Active Directory (Azure AD). Интеграция Boomi с Azure AD обеспечивает следующие возможности.
 

@@ -7,11 +7,11 @@ ms.topic: quickstart
 ms.date: 02/06/2020
 ms.custom: mvc
 ms.openlocfilehash: 4bff53516447408486a6e40f2f7059ebc811aaa4
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78394364"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79215332"
 ---
 # <a name="back-up-a-virtual-machine-in-azure"></a>Резервное копирование виртуальной машины в Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "78394364"
 
     ![Удаление группы ресурсов на портале Azure](./media/quick-backup-vm-portal/delete-resource-group.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище служб восстановления, включили защиту на виртуальной машине и создали начальную точку восстановления. Дополнительные сведения о службе Azure Backup и службах восстановления см. в соответствующих руководствах.
 

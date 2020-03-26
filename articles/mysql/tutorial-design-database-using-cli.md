@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 12/02/2019
 ms.custom: mvc
 ms.openlocfilehash: 00beae5a65e61f814d3498dbb41af02aaf0287fb
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74771219"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
@@ -20,11 +20,11 @@ ms.locfileid: "74771219"
 База данных Azure для MySQL — это служба реляционной базы данных в Microsoft Cloud на основе ядра СУБД MySQL Community Edition. Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 
 > [!div class="checklist"]
-> * создание базы данных Azure для MySQL;
+> * Создание Базы данных Azure для MySQL
 > * настройка брандмауэра сервера;
 > * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) для создания базы данных.
 > * Загрузка примера данных
-> * Запрос данных
+> * Данные запросов
 > * Обновление данных
 > * восстановление данных.
 
@@ -44,7 +44,7 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), выполнив команду [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
-В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении `westus`.
+В следующем примере создается группа ресурсов с именем `myresourcegroup` в расположении именем `westus`.
 
 ```azurecli-interactive
 az group create --name myresourcegroup --location westus
@@ -185,7 +185,7 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 
 Для команды `az mysql server restore` необходимо настроить следующие параметры:
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
@@ -196,14 +196,14 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 
 Команда выполняется в синхронном режиме и будет возвращена после восстановления сервера. После завершения восстановления найдите созданный сервер. Убедитесь, что данные восстановлены надлежащим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнять следующие операции:
 > [!div class="checklist"]
 > * Создайте сервер базы данных Azure для MySQL.
 > * настройка брандмауэра сервера;
 > * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) для создания базы данных.
 > * Загрузка примера данных
-> * Запрос данных
+> * Данные запросов
 > * Обновление данных
 > * восстановление данных.
 

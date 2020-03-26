@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, azure app service, web app, ja
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 2891ff47b17900c4c1c8e1c21f22495b65108fd5
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74156567"
 ---
 # <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>Руководство по настройке приложений в Службе приложений Azure с помощью Ansible
@@ -35,7 +35,7 @@ ms.locfileid: "74156567"
 Код из сборника схем в этом разделе определяет следующие ресурсы:
 
 * группа ресурсов Azure, в которой развертываются план службы приложений и приложение;
-* служба приложений со средой выполнения контейнеров Java 8 и Tomcat.
+* служба приложений со средой выполнения контейнеров Java 8 и Tomcat;
 
 Сохраните следующий сборник схем как `firstwebapp.yml`:
 
@@ -241,7 +241,7 @@ PLAY RECAP
 localhost                  : ok=9    changed=6    unreachable=0    failed=0
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Руководство. масштабированию приложений в Службе приложений Azure с помощью Ansible](/azure/ansible/ansible-scale-azure-web-apps)

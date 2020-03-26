@@ -8,17 +8,17 @@ ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
 ms.openlocfilehash: 89e9faeb3c67d0fd0c57adea3a3f69ec5438e3a0
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73044645"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство по настройке политик Apache HBase в HDInsight с Корпоративным пакетом безопасности
 
 Сведения о настройке политик Apache Ranger для кластеров Apache HBase с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к различным семействам столбцов в таблице HBase.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание пользователей домена
@@ -26,11 +26,11 @@ ms.locfileid: "73044645"
 > * Создание таблиц в кластере HBase.
 > * Создание политик Ranger
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
-* Войдите на [портале Azure](https://portal.azure.com/).
+* Войдите на [портал Azure](https://portal.azure.com/).
 
 * Создайте [кластер HBase в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md).
 
@@ -235,13 +235,13 @@ ms.locfileid: "73044645"
 
 Если вы не собираетесь использовать это приложение в дальнейшем, удалите созданный кластер HBase, сделав следующее:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. В поле **Поиск** в верхней части страницы введите **HDInsight**. 
 1. Выберите **Кластеры HDInsight** в разделе **Службы**.
 1. В списке кластеров HDInsight, который отобразится, щелкните **...** рядом с кластером, созданным при работе с этим руководством. 
-1. Нажмите кнопку **Delete**(Удалить). Щелкните **Да**.
+1. Щелкните **Удалить**. Нажмите кнопку **Да**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Начало работы с Apache HBase](../hbase/apache-hbase-tutorial-get-started-linux.md)

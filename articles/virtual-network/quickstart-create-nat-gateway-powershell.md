@@ -14,19 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 7e8cbadf2c68b97451b40afb876ceb7d88d3758e
-ms.sourcegitcommit: 747a20b40b12755faa0a69f0c373bd79349f39e3
+ms.openlocfilehash: 1d5f8d6e0b2499bbecd32e7cb3fda2cd2cad4d19
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77661062"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202247"
 ---
 # <a name="quickstart-create-a-nat-gateway-using-azure-powershell"></a>Краткое руководство. Создание шлюза NAT с помощью Azure PowerShell
 
 В этом кратком руководстве показано, как использовать услугу преобразования сетевых адресов (NAT) в виртуальной сети Azure. Вы узнаете, как создать шлюз NAT для обеспечения исходящего подключения в виртуальных машинах в Azure. 
-
->[!NOTE] 
->Услуга NAT виртуальной сети Azure сейчас доступно в общедоступной предварительной версии и в ограниченной группе [регионов](https://azure.microsoft.com/global-infrastructure/regions/). Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms).
 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -293,7 +290,6 @@ Remove-AzResourceGroup -Name myResourceGroupNAT
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью Azure CLI](./quickstart-create-nat-gateway-cli.md).
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью Azure PowerShell](./quickstart-create-nat-gateway-powershell.md).
 - Краткое руководство по развертыванию [ресурса Шлюза NAT с помощью портала Azure](./quickstart-create-nat-gateway-portal.md).
-- [Отправьте отзыв об общедоступной предварительной версии](https://aka.ms/natfeedback)
 > [!div class="nextstepaction"]
 
 

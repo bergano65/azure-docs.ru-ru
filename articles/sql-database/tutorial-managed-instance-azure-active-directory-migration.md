@@ -11,10 +11,10 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 10/30/2019
 ms.openlocfilehash: 2c8d7252b4e4ca8caa465727c0d2328c4aafaefb
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227923"
 ---
 # <a name="tutorial-migrate-sql-server-on-premises-windows-users-and-groups-to-azure-sql-database-managed-instance-using-t-sql-ddl-syntax"></a>Руководство по Перенос локальных пользователей и групп Windows, настроенных для SQL Server, в управляемый экземпляр Базы данных SQL Azure с использованием синтаксиса T-SQL DDL
@@ -24,7 +24,7 @@ ms.locfileid: "74227923"
 
 В этой статье описан перенос локальных пользователей и групп Windows, настроенных для SQL Server, в существующий управляемый экземпляр Базы данных SQL Azure с использованием синтаксиса T-SQL.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > - создание имен для входа в SQL Server;
@@ -46,7 +46,7 @@ ms.locfileid: "74227923"
 - [Предоставление администратора Azure Active Directory для управляемого экземпляра](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
 - Вы можете подключиться к управляемому экземпляру из локальной сети. Дополнительные сведения см. в следующих статьях: 
     - [Connect your application to Azure SQL Database managed instance](sql-database-managed-instance-connect-app.md) (Подключение приложения к управляемому экземпляру Базы данных SQL Azure)
-    - [Краткое руководство Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md)
+    - [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md)
     - [Настройка общедоступной конечной точки в Управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance-public-endpoint-configure.md)
 
 ## <a name="t-sql-ddl-syntax"></a>Синтаксис T-SQL DDL
@@ -75,7 +75,7 @@ _= loginName\@domainName.com_</br>
 _groupName_</br>
 Указывает имя группы, найденной в базе данных.
 
-## <a name="part-1-create-logins-for-sql-server-on-premises-users-and-groups"></a>Часть 1. Создание имен для локальных пользователей и групп SQL Server
+## <a name="part-1-create-logins-for-sql-server-on-premises-users-and-groups"></a>Часть 1. Создание имен для локальных пользователей и групп SQL Server
 
 > [!IMPORTANT]
 > Описанный ниже синтаксис позволяет создать в SQL Server имена пользователей и групп. Перед выполнением описанного ниже синтаксиса необходимо убедиться, что пользователь и группа есть в Active Directory (AD). </br> </br>
@@ -114,7 +114,7 @@ create database migration
 go
 ```
 
-## <a name="part-2-create-windows-users-and-groups-then-add-roles-and-permissions"></a>Часть 2. Создание пользователей и групп Windows, добавление ролей и разрешений
+## <a name="part-2-create-windows-users-and-groups-then-add-roles-and-permissions"></a>Часть 2. Создание пользователей и групп Windows, добавление ролей и разрешений
 
 Используйте описанный ниже синтаксис, чтобы создать тестового пользователя.
 
@@ -220,7 +220,7 @@ go
 
 Выполните команду ALTER USER, чтобы завершить миграцию в управляемом экземпляре.
 
-1. Подключитесь к управляемому экземпляру с учетной записью администратора AAD. Затем создайте в управляемом экземпляре имя для входа в AAD, используя следующий синтаксис. Дополнительные сведения см. в статье [Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md).
+1. Подключитесь к управляемому экземпляру с учетной записью администратора AAD. Затем создайте в управляемом экземпляре имя для входа в AAD, используя следующий синтаксис. Дополнительные сведения см. в статье [Учебник. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md).
 
     ```sql
     use master 
@@ -344,6 +344,6 @@ go
 The specified schema name "testGroupUser@aadsqlmi.net" either does not exist or you do not have permission to use it.` </br> </br>
 > Сейчас можно использовать обходное решение, создавая таблицу с существующей схемой, например <dbo.new> для примера выше.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство. Перенос баз данных SQL Server в управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме](../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json)

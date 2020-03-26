@@ -1,5 +1,5 @@
 ---
-title: Что такое отчеты в Azure Active Directory | Документация Майкрософт
+title: Что такое отчеты в Azure Active Directory | Документы Майкрософт
 description: Общий обзор отчетов Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b655fa2f12eac894e97c61cc931983aa58fff7a9
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74007927"
 ---
 # <a name="what-are-azure-active-directory-reports"></a>Что такое отчеты в Azure Active Directory
@@ -99,7 +99,7 @@ ms.locfileid: "74007927"
 
 Кроме пользовательского интерфейса Azure AD также предоставляет [программный доступ](concept-reporting-api.md) к данным отчетов с использованием набора API на основе REST. Эти интерфейсы API можно вызвать, используя различные языки и инструменты программирования. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [отчетом о входах, представляющих риск](concept-risky-sign-ins.md);
 - [отчетом о журналах аудита](concept-audit-logs.md);

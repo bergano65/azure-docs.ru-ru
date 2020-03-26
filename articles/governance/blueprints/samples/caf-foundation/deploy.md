@@ -4,10 +4,10 @@ description: Процедура развертывания для образца
 ms.date: 08/20/2019
 ms.topic: sample
 ms.openlocfilehash: df17f8c3f539e25635ea4718be9d51d5e5e3f708
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74545520"
 ---
 # <a name="deploy-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Развертывание примера схемы Microsoft Cloud Adoption Framework для Azure Foundation
@@ -19,7 +19,7 @@ ms.locfileid: "74545520"
 > - установка метки копии образца **Опубликовано**;
 > - назначение копии схемы существующей подписке;
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
 
 ## <a name="create-blueprint-from-sample"></a>Создание схемы на основе примера
 
@@ -100,7 +100,7 @@ ms.locfileid: "74545520"
 
 Следующая таблица содержит полный список параметров артефактов схемы.
 
-|Имя артефакта|Тип артефакта|Имя параметра|ОПИСАНИЕ|
+|Имя артефакта|Тип артефакта|Имя параметра|Описание|
 |-|-|-|-|
 |Допустимые номера SKU учетных записей хранения|Назначение политики|Policy_Allowed-StorageAccount-SKUs|Номер SKU, используемый в учетных записях хранения журналов диагностики|
 |Allowed virtual machine SKUs;|Назначение политики|Policy_Allowed-VM-SKUs|Allowed virtual machine SKUs;|
@@ -110,7 +110,7 @@ ms.locfileid: "74545520"
 |Развертывание Log Analytics|Шаблон Resource Manager|LogAnalytics_DataRetention|**Locked** — количество дней, в течение которых данные будут храниться в Log Analytics|
 |Развертывание Log Analytics|Шаблон Resource Manager|LogAnalytics_Location|**Locked** — регион, используемый при создании рабочей области|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с шагами по развертыванию примера схемы CAF Foundation, перейдите к следующей статье, чтобы узнать об архитектуре:
 

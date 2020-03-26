@@ -6,24 +6,24 @@ ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: quickstart
-ms.date: 12/02/2019
+ms.date: 3/18/2020
 ms.custom: mvc
-ms.openlocfilehash: 5cfdcf2664871849d4488be4320f6aa03e296ce7
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: f83af794a179634b9b6b7adedd329ea6f4a7b8d0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770039"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79536468"
 ---
 # <a name="create-an-azure-database-for-mariadb-server-by-using-the-azure-cli"></a>Создание сервера Базы данных Azure для MariaDB с помощью Azure CLI
 
-Azure CLI можно использовать для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве описывается создание сервера Базы данных Azure для MariaDB в группе ресурсов Azure с помощью Azure CLI за 5 минут. 
+Azure CLI можно использовать для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве описывается создание сервера Базы данных Azure для MariaDB в группе ресурсов Azure с помощью Azure CLI за 5 минут.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
 
-Если вы устанавливаете и используете CLI локально, для этого краткого руководства вам потребуется Azure CLI версии 2.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Если вы устанавливаете и используете CLI локально, для этого краткого руководства вам потребуется Azure CLI версии 2.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 Если у вас несколько подписок, выберите подписку, содержащую ресурс, или подписку, на которую выставляются счета. Выберите конкретный идентификатор подписки вашей учетной записи, выполнив команду [az account set](/cli/azure/account#az-account-set).
 
@@ -45,17 +45,17 @@ az group create --name myresourcegroup --location westus
 
 Создайте сервер Базы данных Azure для MariaDB, выполнив команду [az mariadb server create](/cli/azure/mariadb/server#az-mariadb-server-create). Сервер может управлять несколькими базами данных. Как правило, для каждого проекта и для каждого пользователя используется отдельная база данных.
 
-Параметр | Образец значения | ОПИСАНИЕ
+Параметр | Образец значения | Описание
 ---|---|---
 name | **mydemoserver** | Введите уникальное имя, идентифицирующее сервер Базы данных Azure для MariaDB. Имя сервера может содержать только строчные буквы, цифры и знак дефиса (-). Оно должно содержать от 3 до 63 символов.
 resource-group | **myresourcegroup** | Введите имя группы ресурсов Azure.
 sku-name | **GP_Gen5_2** | Имя номера SKU. Сокращенная запись соответствует соглашению: *ценовая категория*\_*поколение вычислительных ресурсов*\_*число виртуальных ядер*. Под этой таблицей приведены дополнительные сведения о параметре **sku-name**.
 backup-retention | **7** | Срок хранения резервной копии. Указывается в днях. Диапазон: 7–35 
-geo-redundant-backup | **Disabled** | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: **Enabled**, **Disabled**.
+geo-redundant-backup | **Отключено** | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: **Enabled**, **Disabled**.
 location | **westus** | Расположение сервера в Azure.
-ssl-enforcement | **Включено** | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: **Enabled**, **Disabled**.
+ssl-enforcement | **Enabled** | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: **Enabled**, **Disabled**.
 storage-size | **51200** | Объем хранилища сервера (в мегабайтах). Допустимые размеры хранилища: 5120 МБ (минимум) с шагом увеличения в 1024 МБ. Ознакомьтесь с документом о [ценовых категориях](./concepts-pricing-tiers.md), чтобы узнать больше об ограничениях размера хранилища. 
-версия | **10.2** | Основной номер версии ядра СУБД MariaDB.
+version | **10.2** | Основной номер версии ядра СУБД MariaDB.
 admin-user | **myadmin** | Имя для входа администратора. Не используйте для параметра **admin-user** такие значения: **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
 admin-password | *ваш пароль* | Пароль администратора. Ваш пароль должен состоять из 8–128 символов. Пароль должен содержать знаки из таких трех категорий: прописные латинские буквы, строчные латинские буквы, цифры и небуквенно-цифровые знаки.
 
@@ -74,13 +74,12 @@ az mariadb server create --resource-group myresourcegroup --name mydemoserver  -
 
 > [!NOTE]
 > Используйте ценовую категорию "Базовый", если для вашей рабочей нагрузки не требуется большое количество вычислительных ресурсов и операций ввода-вывода. Обратите внимание, что серверы, созданные в ценовой категории "Базовый", нельзя масштабировать до ценовых категорий "Общего назначения" или "Оптимизировано для памяти". Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/mariadb/).
-> 
 
 ## <a name="configure-a-firewall-rule"></a>Настройка правила брандмауэра
 
-Создайте правило брандмауэра на уровне сервера Базы данных Azure для MariaDB, выполнив команду [az mariadb server firewall-rule create](/cli/azure/mariadb/server/firewall-rule#az-mariadb-server-firewall-rule-create). Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как программа командной строки mysql или MySQL Workbench, подключаться к серверу через брандмауэр службы "База данных Azure для MariaDB". 
+Создайте правило брандмауэра на уровне сервера Базы данных Azure для MariaDB, выполнив команду [az mariadb server firewall-rule create](/cli/azure/mariadb/server/firewall-rule#az-mariadb-server-firewall-rule-create). Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как программа командной строки mysql или MySQL Workbench, подключаться к серверу через брандмауэр службы "База данных Azure для MariaDB".
 
-В приведенном ниже примере создается правило брандмауэра с именем `AllowMyIP`, которое разрешает подключения с определенного IP-адреса — 192.168.0.1. Замените IP-адрес или диапазон IP-адресов в соответствии с расположением, из которого вы подключаетесь. 
+В приведенном ниже примере создается правило брандмауэра с именем `AllowMyIP`, которое разрешает подключения с определенного IP-адреса — 192.168.0.1. Замените IP-адрес или диапазон IP-адресов в соответствии с расположением, из которого вы подключаетесь.
 
 ```azurecli-interactive
 az mariadb server firewall-rule create --resource-group myresourcegroup --server mydemoserver --name AllowMyIP --start-ip-address 192.168.0.1 --end-ip-address 192.168.0.1
@@ -88,14 +87,13 @@ az mariadb server firewall-rule create --resource-group myresourcegroup --server
 
 > [!NOTE]
 > Подключитесь к Базе данных Azure для MariaDB через порт 3306. Если вы пытаетесь подключиться из корпоративной сети, исходящий трафик через порт 3306 может быть запрещен. В таком случае вы не сможете подключиться к серверу. Для этого ваш ИТ-отдел должен открыть порт 3306.
-> 
 
 ## <a name="configure-ssl-settings"></a>Настройка параметров SSL
 
 По умолчанию между сервером и клиентскими приложениями применяется SSL-соединение. Эта настройка по умолчанию гарантирует безопасное перемещение данных за счет шифрования потока данных через Интернет. В этом руководстве отключите SSL-соединения для вашего сервера. Мы не рекомендуем так делать для рабочих серверов. Дополнительные сведения см. в статье [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB](./howto-configure-ssl.md).
 
 Следующий пример отключает применение SSL на сервере Базы данных Azure для MariaDB:
- 
+
 ```azurecli-interactive
 az mariadb server update --resource-group myresourcegroup --name mydemoserver --ssl-enforcement Disabled
 ```
@@ -156,9 +154,10 @@ az mariadb server show --resource-group myresourcegroup --name mydemoserver
    ```sql
    status
    ```
+
    У вас должен отобразиться примерно такой текст.
 
-   ```bash
+   ```cmd
    C:\Users\>mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p
    Enter password: ***********
    Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -211,11 +210,11 @@ az mariadb server show --resource-group myresourcegroup --name mydemoserver
 
    ![Настройка нового подключения](./media/quickstart-create-mariadb-server-database-using-azure-cli/setup-new-connection.png)
 
-   | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+   | Параметр | Рекомендуемое значение | Описание |
    |---|---|---|
    | Имя подключения | **Подключение demo** | Введите метку для этого подключения (имя подключения может быть любым) |
    | Способ подключения | **Standard (TCP/IP)** (Стандартный способ (по протоколу TCP/IP)) | Используйте протокол TCP/IP для подключения к Базе данных Azure для MariaDB. |
-   | имя узла; | **mydemoserver.mariadb.database.azure.com** | Имя сервера, которое вы записали ранее. |
+   | Имя узла | **mydemoserver.mariadb.database.azure.com** | Имя сервера, которое вы записали ранее. |
    | Порт | **3306** | Порт по умолчанию Базы данных Azure для MariaDB. |
    | Имя пользователя | **myadmin\@mydemoserver** | Имя для входа администратора сервера, которое вы указали ранее. |
    | Пароль | *ваш пароль* | Используйте пароль учетной записи администратора, настроенный ранее. |
@@ -238,7 +237,7 @@ az group delete --name myresourcegroup
 az mariadb server delete --resource-group myresourcegroup --name mydemoserver
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проектирование базы данных MariaDB с помощью Azure CLI](./tutorial-design-database-cli.md)

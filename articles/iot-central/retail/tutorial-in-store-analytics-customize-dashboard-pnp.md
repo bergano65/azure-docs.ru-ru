@@ -12,13 +12,13 @@ ms.author: timlt
 author: timlt
 ms.date: 11/12/2019
 ms.openlocfilehash: fea3440dd7c017b85d6fffa2ec0fe5d26cd98b97
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77022177"
 ---
-# <a name="tutorial--customize-the-operator-dashboard-and-manage-devices-in-azure-iot-central"></a>Руководство.  Настройка панели мониторинга оператора и управление устройствами в Azure IoT Central
+# <a name="tutorial--customize-the-operator-dashboard-and-manage-devices-in-azure-iot-central"></a>Руководство по  Настройка панели мониторинга оператора и управление устройствами в Azure IoT Central
 
 
 В этом руководстве в качестве построителя вы узнаете, как настраивать панель мониторинга оператора в приложении аналитики магазина в Azure IoT Central. Операторы приложения могут использовать настроенную панель мониторинга для запуска приложения и управления подключенными устройствами.

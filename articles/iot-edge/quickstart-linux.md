@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: e2dd17a324c8920f44e972987508352a69383bb9
-ms.sourcegitcommit: bc792d0525d83f00d2329bea054ac45b2495315d
-ms.translationtype: MT
+ms.openlocfilehash: 52258a8bc287df36158ec143e4aad74c34455ea4
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78893354"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80236074"
 ---
-# <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. развертывание первого модуля IoT Edge на виртуальном устройстве Linux
+# <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
 Проверьте работу Azure IoT Edge, как описано в этом кратком руководстве, развернув контейнерный код на виртуальном устройстве IoT Edge. IoT Edge позволяет удаленно управлять кодом на устройствах, чтобы вы могли передавать больше рабочих нагрузок на пограничные устройства. При работе с этим кратким руководством мы рекомендуем использовать виртуальную машину Azure для устройства IoT Edge. Так вы сможете быстро создать виртуальную машину для тестирования со всеми установленными компонентами, а затем удалить ее по завершении работы.
 
@@ -45,7 +45,7 @@ ms.locfileid: "78893354"
    
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Облачные ресурсы.
 
@@ -138,7 +138,7 @@ ms.locfileid: "78893354"
 
 Остальная часть команд из этого краткого руководства выполняется на вашем устройстве IoT Edge, таким образом, вы можете увидеть происходящее на устройстве. Если вы используете виртуальную машину, подключитесь к ней сейчас с помощью общедоступного IP-адреса, который был выведен командой создания. Общедоступный IP-адрес можно также узнать на странице общих сведений о виртуальной машине на портале Azure. Подключитесь к виртуальной машине, используя приведенную ниже команду. Замените значение `{azureuser}`, если вы использовали имя пользователя, отличное от предложенного в предварительных требованиях. Замените `{publicIpAddress}` адресом своей виртуальной машины.
 
-   ```azurecli-interactive
+   ```console
    ssh azureuser@{publicIpAddress}
    ```
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск доступных комнат в Azure Digital двойников | Документация Майкрософт
+title: Краткое руководство. Поиск свободных помещений — Azure Digital Twins | Документация Майкрософт
 description: В этом кратком руководстве вы запустите два примера приложения .NET Core для отправки смоделированных данных телеметрии движения и уровня углекислого газа в пространство Digital Twins. Цель — найти свободные помещения со свежим воздухом с помощью API управления после выполнения вычислительных процессов в облаке.
 ms.author: alinast
 author: alinamstanciu
@@ -10,14 +10,16 @@ ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc seodec18
 ms.date: 01/10/2020
-ms.openlocfilehash: 6c9c5df27f4a361e534bac2fe21b2c470f8d0186
-ms.sourcegitcommit: 509b39e73b5cbf670c8d231b4af1e6cfafa82e5a
-ms.translationtype: MT
+ms.openlocfilehash: de8611e53339d38a03836bc9272ad42ff88a59b8
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78382227"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79371432"
 ---
 # <a name="quickstart-find-available-rooms-by-using-azure-digital-twins"></a>Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins
+
+[!INCLUDE [digital-twins-preview-limit-alert](../../includes/digital-twins-preview-limit-alert.md)]
 
 Служба Digital Twins позволяет воссоздать цифровой образ вашей физической среды. В результате вы сможете получать уведомления о событиях в своей среде и настраивать ответы на эти события.
 
@@ -55,9 +57,9 @@ ms.locfileid: "78382227"
 1. Выполните `cd occupancy-quickstart/src`.
 1. Выполните `dotnet restore`.
 1. Измените файл [appSettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/appSettings.json), чтобы обновить следующие переменные:
-    - **ClientId**: введите идентификатор приложения из регистрации приложения Azure AD, записанный при работе с предыдущим разделом.
-    - **Tenant**: введите идентификатор каталога клиента Azure AD, записанный при работе с предыдущим разделом.
-    - **BaseUrl**: URL-адрес API управления экземпляра Digital Twins в формате `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Замените заполнители в этом URL-адресе значениями для своего экземпляра из предыдущего раздела.
+    - **ClientId:** введите идентификатор приложения из регистрации приложения Azure AD, записанный при работе с предыдущим разделом.
+    - **Tenant:** введите идентификатор каталога клиента Azure AD, записанный при работе с предыдущим разделом.
+    - **BaseUrl:** URL-адрес API управления экземпляра Digital Twins в формате `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Замените заполнители в этом URL-адресе значениями для своего экземпляра из предыдущего раздела.
 
     Сохраните обновленный файл.
 
@@ -109,7 +111,7 @@ ms.locfileid: "78382227"
 1. Пусть этот симулятор работает, чтобы вы могли просматривать результаты параллельно с окном, где выполняются дальнейшие действия. В этом окне появятся данные смоделированных датчиков, отправленные в службу Digital Twins. На следующем шаге в режиме реального времени будет выполнен запрос для поиска свободных помещений со свежим воздухом.
 
     >[!TIP]
-    > Если при выполнении этого шага возникает ошибка `DeviceConnectionString`, проверьте, правильно ли скопирована строка `EXIT: Unexpected error: The input is not a valid Base-64 string ...`.
+    > Если при выполнении этого шага возникает ошибка `EXIT: Unexpected error: The input is not a valid Base-64 string ...`, проверьте, правильно ли скопирована строка `DeviceConnectionString`.
 
 ## <a name="find-available-spaces-with-fresh-air"></a>Поиск свободного пространства со свежим воздухом
 
@@ -159,9 +161,9 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
     > [!TIP]
     > Если ранее при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве использовался простой сценарий и примеры приложений, чтобы продемонстрировать использование Digital Twins для поиска комнат с хорошими рабочими условиями. Для глубокого анализа этого сценария изучите это руководство:
 
 >[!div class="nextstepaction"]
->[Руководство по развертыванию Azure Digital Twins и настройке пространственного графа](tutorial-facilities-setup.md)
+>[Руководство. развертыванию Azure Digital Twins и настройке пространственного графа](tutorial-facilities-setup.md)

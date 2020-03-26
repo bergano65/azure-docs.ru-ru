@@ -9,17 +9,17 @@ ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: e07fc34c7177e3a1dace34ab298b64dc3aa6a06a
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74011362"
 ---
-# <a name="tutorial-create-an-application-gateway-that-improves-web-application-access"></a>Руководство. Создание шлюза приложений, который улучшает доступ к веб-приложениям
+# <a name="tutorial-create-an-application-gateway-that-improves-web-application-access"></a>Руководство по Создание шлюза приложений, который улучшает доступ к веб-приложениям
 
 Если вы ИТ-администратор и желаете улучшить доступ к веб-приложениям, то можете оптимизировать шлюз приложений таким образом, чтобы он выполнял масштабирование на основе пользовательского спроса и охватывал несколько зон доступности. Это руководство поможет вам настроить компоненты Шлюза приложений Azure, которые отвечают за автоматическое масштабирование, избыточность в пределах зоны и зарезервированные виртуальные IP-адреса (статический IP-адрес). Чтобы решить проблему, вы будете использовать командлеты Azure PowerShell и модель развертывания с помощью Azure Resource Manager.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание самозаверяющего сертификата
@@ -30,7 +30,7 @@ ms.locfileid: "74011362"
 > * Создание шлюза приложений
 > * Тестирование шлюза приложений
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -190,7 +190,7 @@ $appgw = New-AzApplicationGateway -Name "AutoscalingAppGw" -Zone 1,2,3 `
 
 `Remove-AzResourceGroup -Name $rg`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-powershell.md)

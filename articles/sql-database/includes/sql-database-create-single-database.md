@@ -7,10 +7,10 @@ ms.date: 03/10/2020
 ms.author: mathoma
 ms.reviewer: vanto
 ms.openlocfilehash: c1ca87b6e7b8afb50522e73107707e15782a0a91
-ms.sourcegitcommit: 05a650752e9346b9836fe3ba275181369bd94cf0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "79200105"
 ---
 На этом шаге вы создадите сервер базы данных SQL Azure и одну базу данных, в которой используются образцы данных AdventureWorksLT. Базу данных можно создать с помощью меню и экранов портала Azure либо с помощью Azure CLI или сценария PowerShell в Azure Cloud Shell.

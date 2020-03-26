@@ -5,13 +5,13 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
 ms.openlocfilehash: 93a7e2507ab3a467ef83924479872694cae2dd5b
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75614015"
 ---
-# <a name="tutorial-create-azure-vm-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство. созданию инфраструктуры виртуальных машин Azure для размещения кластера Service Fabric
+# <a name="tutorial-create-azure-vm-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство по созданию инфраструктуры виртуальных машин Azure для размещения кластера Service Fabric
 
 Изолированные кластеры Service Fabric предоставляют возможность выбрать собственную среду и создать кластер в рамках подхода "любая ОС, любое облако", который применяется на платформе Service Fabric. Из этой серии руководств вы узнаете, как создать изолированный кластер, размещенный в виртуальной машине Azure, и установить в нем приложение.
 
@@ -25,7 +25,7 @@ ms.locfileid: "75614015"
 > * Вход на один из экземпляров.
 > * Подготовка экземпляра для Service Fabric.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется подписка Azure.  Если у вас еще нет учетной записи, создайте ее, перейдя в [портал Azure](https://portal.azure.com).
 

@@ -17,10 +17,10 @@ ms.date: 11/01/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e33af932e405552cf9d8f5aaf6d42cbd095607b0
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74085017"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-user-authentication"></a>Руководство по интеграции единого входа Azure Active Directory с Netskope User Authentication
@@ -35,9 +35,9 @@ ms.locfileid: "74085017"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Netskope User Authentication с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "74085017"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Netskope User Authentication](#configure-netskope-user-authentication-sso)** . Настройка единого входа на стороне приложения.
     * **[Создание тестового пользователя Netskope User Authentication](#create-netskope-user-authentication-test-user)** требуется для того, чтобы в Netskope User Authentication существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,13 +79,13 @@ ms.locfileid: "74085017"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.goskope.com/<customer entered string>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.goskope.com/<customer entered string>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.goskope.com/nsauth/saml2/http-post/<customer entered string>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.goskope.com/nsauth/saml2/http-post/<customer entered string>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Они объяснены далее в этом учебнике.
@@ -121,7 +121,7 @@ ms.locfileid: "74085017"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Netskope User Authentication.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Netskope User Authentication**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -151,7 +151,7 @@ ms.locfileid: "74085017"
 
     ![Настройка приложения Netskope User Authentication](./media/netskope-user-authentication-tutorial/configure-copyurls.png)
 
-    a. Скопируйте значение **SAML Entity ID** (Идентификатор сущности SAML) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте значение **SAML Entity ID** (Идентификатор сущности SAML) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Скопируйте значение **SAML ACS URL** (URL-адрес ACS SAML) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -163,7 +163,7 @@ ms.locfileid: "74085017"
 
     ![Настройка приложения Netskope User Authentication](./media/netskope-user-authentication-tutorial/config-settings1.png)
 
-    a. В текстовом поле **NAME** (ИМЯ) введите имя, например Azure AD.
+    а. В текстовом поле **NAME** (ИМЯ) введите имя, например Azure AD.
 
     b. В текстовое поле **IDP URL** (URL-АДРЕС ПОСТАВЩИКА УДОСТОВЕРЕНИЙ) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -171,7 +171,7 @@ ms.locfileid: "74085017"
 
     d. Откройте скачанный файл метаданных в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **IDP CERTIFICATE** (СЕРТИФИКАТ ПОСТАВЩИКА УДОСТОВЕРЕНИЙ).
 
-    д. Щелкните **СОХРАНИТЬ**.
+    д) Щелкните **СОХРАНИТЬ**.
 
 ### <a name="create-netskope-user-authentication-test-user"></a>Создание тестового пользователя в Netskope User Authentication
 
@@ -205,9 +205,9 @@ ms.locfileid: "74085017"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

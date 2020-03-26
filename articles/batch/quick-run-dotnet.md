@@ -11,13 +11,13 @@ ms.date: 11/29/2018
 ms.author: labrenne
 ms.custom: mvc
 ms.openlocfilehash: 809ca9d9aafa813e05dea81eb05616eefcc65472
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77017213"
 ---
-# <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство. Выполнение пакетного задания Azure с помощью API для .NET
+# <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство по выполнению первого пакетного задания Azure с помощью API для .NET
 
 В этом кратком руководстве описаны действия по запуску задания пакетной службы Azure из приложения C#, созданного в API пакетной службы Azure для.NET. Приложение отправляет несколько файлов входных данных в службу хранилища Azure, а затем создает *пул* вычислительных узлов пакетной службы (виртуальных машин). Затем оно создает образец *задания*, которое запускает *задачи* для обработки каждого входного файла в пуле путем использования основных команд. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 
@@ -25,7 +25,7 @@ ms.locfileid: "77017213"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/vs), или [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) для Linux, macOS или Windows. 
 

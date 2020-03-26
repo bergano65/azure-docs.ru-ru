@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: eba44252672248b983d7f6e0c843f638e5f73447
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74007656"
 ---
 # <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub"></a>Руководство по Потоковая передача журналов Azure Active Directory в концентратор событий Azure
@@ -39,7 +39,7 @@ ms.locfileid: "74007656"
 
 ## <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 
 2. Щелкните **Azure Active Directory** > **Мониторинг** > **Журналы аудита**. 
 
@@ -88,7 +88,7 @@ ms.locfileid: "74007656"
 * **Настройте специальные инструменты**. Если текущий инструмент SIEM пока не поддерживается в системе диагностики Azure Monitor, можно настроить пользовательские инструменты с помощью API Центров событий. Дополнительные сведения см. в статье [Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor](howto-integrate-activity-logs-with-arcsight.md)
 * [Integrate Azure AD logs with Splunk by using Azure Monitor (preview)](tutorial-integrate-activity-logs-with-splunk.md) (Интеграция журналов Azure AD со Splunk с помощью Azure Monitor (предварительная версия))

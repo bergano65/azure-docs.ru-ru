@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: kumud
 ms.openlocfilehash: 5ce10cf37b61b0269e6c8f2279b8814d9dc4a4f9
-ms.sourcegitcommit: d45fd299815ee29ce65fd68fd5e0ecf774546a47
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "78271205"
 ---
 # <a name="azure-cli-samples-for-virtual-network"></a>Примеры Azure CLI для виртуальной сети

@@ -17,10 +17,10 @@ ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3756f2743a651a62b8ad6ab4486ea1c19364e429
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73155259"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-idrive"></a>Руководство по Интеграция Azure Active Directory с IDrive
@@ -39,7 +39,7 @@ ms.locfileid: "73155259"
 
 Чтобы настроить интеграцию Azure AD с IDrive, вам понадобится следующее.
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка IDrive с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,7 +100,7 @@ ms.locfileid: "73155259"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
@@ -120,11 +120,11 @@ ms.locfileid: "73155259"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-idrive-single-sign-on"></a>Настройка единого входа в IDrive
 

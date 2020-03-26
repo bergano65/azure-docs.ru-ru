@@ -4,11 +4,11 @@ description: В этом кратком руководстве вы выполн
 ms.date: 11/21/2019
 ms.topic: quickstart
 ms.openlocfilehash: dd96324671f46f98d5b6c8bae1839a5b02d38b23
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74304138"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79215632"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -68,7 +68,7 @@ ms.locfileid: "74304138"
    > [!NOTE]
    > Так как этот пример запроса не меняет сортировку, например `order by`, выполнение этого запроса несколько раз может получить различные наборы ресурсов для каждого запроса.
 
-1. Обновите запрос свойством `order by` **Имя**:
+1. Обновите запрос свойством `order by`**Имя**:
 
    ```azurepowershell-interactive
    # Run Azure Resource Graph query with 'order by'
@@ -105,7 +105,7 @@ Uninstall-Module -Name 'Az.ResourceGraph'
 > [!NOTE]
 > Это не приводит к удалению скачанного ранее файла модуля. Он удаляется только из открытого сеанса PowerShell.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этим кратким руководством вы добавили модуль Resource Graph в среду Azure PowerShell и выполнили первый запрос. Чтобы узнать больше о языке Resource Graph, перейдите на страницу сведений о языке запросов.
 

@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/06/2020
 ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: 6b3375ea8c82ce916f3d6a5e0e29f2845400cc76
-ms.sourcegitcommit: f97d3d1faf56fb80e5f901cd82c02189f95b3486
+ms.openlocfilehash: d01d749300c6ad07e498c75c9487b554810e68cd
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79117761"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79454080"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Руководство по Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
@@ -54,17 +54,17 @@ ms.locfileid: "79117761"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Зарегистрируйте поставщик ресурсов службы "Сетка событий" в подписке, если вы еще не сделали это.
-
-```azurecli-interactive
-az provider register --namespace Microsoft.EventGrid
-```
-
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.14 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 Если вы не используете Cloud Shell, сначала выполните вход с помощью `az login`.
+
+Зарегистрируйте поставщик ресурсов службы "Сетка событий" в подписке, если вы еще не сделали это.
+
+```azurecli-interactive
+az provider register --namespace Microsoft.EventGrid
+```
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 

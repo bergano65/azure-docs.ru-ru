@@ -14,10 +14,10 @@ ms.custom: mvc, seodec18
 ms.date: 12/07/2018
 ms.author: mbaldwin
 ms.openlocfilehash: dd5ce117645ef2b368bbf8f0e441770d6e746b5b
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "70881078"
 ---
 # <a name="what-is-azure-dedicated-hsm"></a>Что такое служба выделенных устройств HSM Azure?
@@ -81,7 +81,7 @@ ms.locfileid: "70881078"
 - Шифрование данных в службе хранилища Azure на стороне клиента.
 - Постоянное шифрование данных SQL Server и базы данных SQL Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Это узкоспециализированная служба. Поэтому мы рекомендуем хорошо изучить все ключевые концепции, используемые в этом наборе документации, в том числе по вопросам цен, поддержки и соглашений об уровне обслуживания. 
 

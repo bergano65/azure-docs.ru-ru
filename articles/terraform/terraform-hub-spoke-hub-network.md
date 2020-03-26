@@ -4,10 +4,10 @@ description: В этом руководстве описывается, как �
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.openlocfilehash: 6669e90c3d12fcf55bcb1ad69c3b275c5117a8fc
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74159044"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Руководство по созданию виртуальной сети концентратора в Azure с помощью Terraform
@@ -225,7 +225,7 @@ ms.locfileid: "74159044"
     
 3. Сохраните файл и закройте редактор.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Создание устройства виртуальной сети концентратора с помощью Terraform в Azure](./terraform-hub-spoke-hub-nva.md)

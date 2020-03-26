@@ -7,13 +7,13 @@ ms.date: 01/11/2019
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: 1b9070e826c30bbeafdee4185ea45cfb53d9efd2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75351824"
 ---
-# <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство. Масштабирование приложения, работающего в Сетке Service Fabric
+# <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство по Масштабирование приложения, работающего в Сетке Service Fabric
 
 Это руководство представляет собой вторую часть цикла. Узнайте, как вручную изменять число экземпляров службы приложения, которое было [развернуто в Сетке Service Fabric](service-fabric-mesh-tutorial-template-deploy-app.md). По завершении у вас будет интерфейсная служба с тремя работающими экземплярами и служба данных с двумя запущенными экземплярами.
 
@@ -32,7 +32,7 @@ ms.locfileid: "75351824"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -56,7 +56,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 az mesh service show --resource-group myResourceGroup --name ToDoService --app-name todolistapp --query "replicaCount"
 ```
 
-В шаблоне развертывания ресурса приложения для каждой службы определено свойство *replicaCount*, с помощью которого можно настроить число развертываний этой службы. Приложение может состоять из нескольких служб с уникальными номерами *replicaCount*, развертывание которых и управление которыми осуществляется вместе. Чтобы изменить количество реплик службы, в шаблоне развертывания или файле параметров измените значение *replicaCount* для каждой службы, которую необходимо масштабировать.  Затем обновите приложение.
+В шаблоне развертывания ресурса приложения для каждой службы определено свойство *replicaCount*, с помощью которого можно настроить число развертываний этой службы. Приложение может состоять из нескольких служб с уникальными номерами *replicaCount*, развертывание которых и управление которыми осуществляется вместе. Чтобы изменить количество реплик службы, в шаблоне развертывания или файле параметров измените значение *replicaCount* для каждой службы, для которой необходимо горизонтально уменьшить масштаб.  Затем обновите приложение.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Изменение параметров шаблона развертывания
 

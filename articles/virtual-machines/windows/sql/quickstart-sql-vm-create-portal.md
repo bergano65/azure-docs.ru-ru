@@ -14,10 +14,10 @@ ms.date: 07/11/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 801a6fc0602882d1af49c06bafcfd51942e6da2e
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75965654"
 ---
 # <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
@@ -33,11 +33,11 @@ ms.locfileid: "75965654"
   > - В этом кратком руководстве приводятся инструкции по быстрой подготовке виртуальной машины SQL Server и подключению к ней. Дополнительные сведения о других вариантах подготовки виртуальных машин SQL Server см. в [руководстве по подготовке виртуальных машин SQL Server на платформе Windows с помощью портала Azure](virtual-machines-windows-portal-sql-server-provision.md).
   > - Если у вас есть вопросы по виртуальным машинам SQL Server, см. раздел [часто задаваемых вопросов](virtual-machines-windows-sql-server-iaas-faq.md).
 
-## <a id="subscription"></a> Оформление подписки Azure
+## <a name="get-an-azure-subscription"></a><a id="subscription"></a> Оформление подписки Azure
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a id="select"></a> Выбор образа виртуальной машины SQL Server
+## <a name="select-a-sql-server-vm-image"></a><a id="select"></a> Выбор образа виртуальной машины SQL Server
 
 1. Войдите на [портал Azure](https://portal.azure.com), используя свои учетные данные.
 
@@ -47,17 +47,17 @@ ms.locfileid: "75965654"
 
    ![Окно поиска](./media/quickstart-sql-vm-create-portal/select-sql-2017-vm-image.png)
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
    ![Окно поиска](./media/quickstart-sql-vm-create-portal/create-sql-2017-vm-image.png)
 
-## <a id="configure"></a> Указание основных сведений
+## <a name="provide-basic-details"></a><a id="configure"></a> Указание основных сведений
 
 На вкладке **Основные сведения** укажите следующую информацию.
 
 1. В разделе **Сведения о проекте** выберите подписку Azure, а затем выберите **Создать**, чтобы создать группу ресурсов. В качестве имени введите _SQLVM-RG_.
 
-   ![Subscription](media/quickstart-sql-vm-create-portal/basics-project-details.png)
+   ![Подписка](media/quickstart-sql-vm-create-portal/basics-project-details.png)
 
 1. В разделе **Сведения об экземпляре**:
     1. Введите _SQLVM_ для параметра **Имя виртуальной машины**. 
@@ -116,7 +116,7 @@ ms.locfileid: "75965654"
 
     ![подключение SSMS](./media/quickstart-sql-vm-create-portal/ssms-connect.png)
 
-## <a id="remotedesktop"></a> Удаленный вход на виртуальную машину
+## <a name="log-in-to-the-vm-remotely"></a><a id="remotedesktop"></a> Удаленный вход на виртуальную машину
 
 Выполните следующие действия, чтобы подключиться к виртуальной машине SQL Server через удаленный рабочий стол.
 

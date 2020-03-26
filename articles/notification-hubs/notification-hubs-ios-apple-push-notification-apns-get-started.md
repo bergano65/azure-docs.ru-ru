@@ -19,10 +19,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 05/21/2019
 ms.openlocfilehash: 032ca8d4ecbcf1fc7f3c22cbe5a0ee934fc5e17c
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74407170"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
@@ -33,10 +33,10 @@ ms.locfileid: "74407170"
 
 При работе с этим руководством вы отправите push-уведомления в приложения iOS с помощью Центров уведомлений Azure. Вы создадите пустое приложение iOS, получающее push-уведомления с помощью [Службы push-уведомлений Apple (APNs)](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 
-В этом руководстве вы выполните следующие задачи:
+При работе с этим руководством вы выполните следующие задачи:
 
 > [!div class="checklist"]
-> * создание файла запроса на подпись сертификата;
+> * Создание файла запроса на подпись сертификата
 > * регистрация приложения для работы с push-уведомлениями;
 > * Создание профиля подготовки для приложения
 > * настройка push-уведомлений iOS в центре уведомлений;
@@ -122,7 +122,7 @@ ms.locfileid: "74407170"
 
         ![Распаковка пакета SDK Azure][10]
 
-6. Добавьте новый файл заголовка в проект с именем **Constants.h**. Для этого щелкните имя проекта правой кнопкой мыши и выберите **New File...** (Создать файл...). Затем выберите **Файл заголовка**. Этот файл содержит константы для центра уведомлений. Затем нажмите кнопку **Далее**. Назовите файл **Constants.h**.
+6. Добавьте новый файл заголовка в проект с именем **Constants.h**. Для этого щелкните имя проекта правой кнопкой мыши и выберите **New File...** (Создать файл...). Затем выберите **Файл заголовка**. Этот файл содержит константы для центра уведомлений. Выберите **Далее**. Назовите файл **Constants.h**.
 
 7. Добавьте в него указанный ниже код:
 
@@ -479,7 +479,7 @@ ms.locfileid: "74407170"
 
 ## <a name="send-test-push-notifications"></a>Отправка тестовых push-уведомлений
 
-Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портал Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
+Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [Портал Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
 
 ![Портал Azure — тестовая отправка][30]
 
@@ -493,13 +493,13 @@ ms.locfileid: "74407170"
 
     ![Проверка регистрации push-уведомления приложения iOS][33]
 
-2. Отправьте тестовое push-уведомление с [портал Azure], как описано в предыдущем разделе.
+2. Отправьте тестовое push-уведомление с [Портал Azure], как описано в предыдущем разделе.
 
 3. Push-уведомление будет отправлено на все устройства, зарегистрированные для получения уведомлений от того или иного центра уведомлений.
 
     ![Проверка получения push-уведомления приложения iOS][35]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом простом примере мы отправили push-уведомления на все зарегистрированные устройства iOS. Сведения о том, как отправлять push-уведомления на конкретные устройства iOS, см. в следующем руководстве:
 
@@ -530,4 +530,4 @@ ms.locfileid: "74407170"
 [Azure Notification Hubs Notify Users for iOS with .NET backend]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-ios-xplat-segmented-apns-push-notification.md
 [Local and Push Notification Programming Guide]: https://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
-[портал Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com

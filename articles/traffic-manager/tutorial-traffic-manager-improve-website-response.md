@@ -12,13 +12,13 @@ ms.workload: infrastructure-services
 ms.date: 07/23/2018
 ms.author: rohink
 ms.openlocfilehash: f7778b60a5e84f5d8900b8e37bfa655a7915d403
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77136384"
 ---
-# <a name="tutorial-improve-website-response-using-traffic-manager"></a>Руководство. Улучшение отклика веб-сайта с помощью диспетчера трафика
+# <a name="tutorial-improve-website-response-using-traffic-manager"></a>Руководство по Улучшение отклика веб-сайта с помощью диспетчера трафика
 
 В этом руководстве показано, как создать быстродействующий веб-сайт, используя профиль диспетчера трафика, направляющий трафик пользователей на веб-сайт с минимальной задержкой. Обычно центр обработки данных с минимальной задержкой является одним из географически ближайших.
 

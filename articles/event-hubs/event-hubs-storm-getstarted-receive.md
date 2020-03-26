@@ -16,10 +16,10 @@ ms.custom: seodec18
 ms.date: 11/05/2019
 ms.author: shvija
 ms.openlocfilehash: 90293da07d3a7ef1c32e5f82d35198d4ffa536b1
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73717611"
 ---
 # <a name="quickstart-receive-events-from-event-hubs-using-apache-storm"></a>Краткое руководство. Получение событий из Центров событий с помощью Apache Storm
@@ -242,7 +242,7 @@ ms.locfileid: "73717611"
 
     Этот класс создает новую воронку Центров событий, используя свойства в файле конфигурации для создания ее экземпляра. Важно отметить, что в данном примере создается такое же количество задач spout, сколько и разделов в концентраторе событий, чтобы обеспечить максимальный параллелизм, допустимый для этого концентратора событий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 
 * [Общие сведения о Центрах событий][Event Hubs overview]

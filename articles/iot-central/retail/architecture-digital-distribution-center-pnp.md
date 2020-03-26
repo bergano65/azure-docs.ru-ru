@@ -8,10 +8,10 @@ ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
 ms.openlocfilehash: 359aaf7bbde5501716f3d8c4229b2b90918fd5de
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "77020987"
 ---
 # <a name="architecture-of-iot-central-digital-distribution-center-application-template"></a>Архитектура шаблона приложения цифрового центра дистрибуции для IoT Central
@@ -23,8 +23,8 @@ ms.locfileid: "77020987"
 > [!div class="mx-imgBorder"]
 > ![Цифровой центр дистрибуции](./media/concept-ddc-architecture/digital-distribution-center-architecture.png)
 
-1. Набор датчиков Интернета вещей, отправляющих данные телеметрии на устройство шлюза
-2. Устройства шлюза, отправляющие данные телеметрии и агрегированные аналитические сведения в IoT Central
+1. Набор датчиков Интернета вещей отправляет данные телеметрии на устройство шлюза.
+2. Устройства шлюза отправляют данные телеметрии и агрегированные аналитические сведения в IoT Central.
 3. Данные направляются в нужную службу Azure для обработки.
 4. Службы Azure, такие как ASA или Функции Azure, можно использовать для переформатирования потоков данных и их отправки в соответствующие учетные записи хранения. 
 5. Обработанные данные хранятся в "горячем" хранилище для операций практически в режиме реального времени или в "холодном" хранилище для дополнительного улучшения аналитических сведений с помощью машинного обучения или пакетного анализа. 
