@@ -9,7 +9,7 @@ ms.author: evansma
 ms.service: marketplace
 ms.openlocfilehash: 6bb05513d59870b7fa0d997eb31510494a9938e0
 ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2020
 ms.locfileid: "75931880"
@@ -125,7 +125,7 @@ ms.locfileid: "75931880"
 | Лихтенштейн                    | Да               | Да                                      | Да    | Да             |
 | Литва                        | Да               | Да                                      | Да    | Нет              |
 | Люксембург                       | Да               | Да                                      | Да    | Да             |
-| Македония                        | Нет                | Да                                      | Да    | Нет              |
+| Северная Македония                        | Нет                | Да                                      | Да    | Нет              |
 | Мадагаскар                       | Да               | Да                                      | Да    | Нет              |
 | Малави                           | Да               | Да                                      | Да    | Да             |
 | Малайзия                         | Да               | Да                                      | Да    | Да             |
